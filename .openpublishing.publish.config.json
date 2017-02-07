@@ -32,6 +32,7 @@
         "RestApi": "Content"
       },
       "build_entry_point": "op",
+      "template_folder": "_themes",
       "is_dynamic_rendering": false
     }
   ],
