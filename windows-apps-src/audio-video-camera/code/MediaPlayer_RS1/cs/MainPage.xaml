@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="MediaPlayer_Win10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaPlayer_Win10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="200"/>
+            <RowDefinition MaxHeight="200"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        
+            <!--<SnippetMediaPlayerElementXAML>-->
+            <MediaPlayerElement x:Name="_mediaPlayerElement" AreTransportControlsEnabled="False" HorizontalAlignment="Stretch"  Grid.Row="0"/>
+            <!--</SnippetMediaPlayerElementXAML>-->
+
+        
+        <MediaPlayerElement x:Name="_mediaPlayerElement2" AreTransportControlsEnabled="False" HorizontalAlignment="Stretch" Grid.Row="1"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <Button x:Name="_playButton" Content="Play" Click="PlayButton_Click"/>
+                <Button x:Name="_pauseButton" Content="Pause" Click="PauseButton_Click"/>
+                <Button x:Name="_fastForwardButton" Content="FastForward" Click="FastForwardButton_Click"/>
+                <Button x:Name="_rewindButton" Content="Rewind" Click="RewindButton_Click"/>
+            <Slider x:Name="_positionSlider" ValueChanged="_positionSlider_ValueChanged" Width="300"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <Slider x:Name="_timelineOffsetSlider1" ValueChanged="_timelineOffsetSlider1_ValueChanged" Value="0" Width="100"/>
+            <Slider x:Name="_timelineOffsetSlider2" ValueChanged="_timelineOffsetSlider2_ValueChanged" Value="0" Width="100"/>
+        </StackPanel>
+        <StackPanel  Grid.Row="4" Orientation="Horizontal">
+                <Button x:Name="ActionButton1" Content="Action 1" Click="ActionButton1_Click"/>
+                <Button x:Name="ActionButton2" Content="Action 2" Click="ActionButton2_Click"/>
+                <ComboBox x:Name="_audioDeviceComboBox" SelectionChanged="_audioDeviceComboBox_SelectionChanged"/>
+                <ToggleButton x:Name="_speedToggleButton" Content="2x" IsChecked="False" Checked="_speedToggleButton_Checked" Unchecked="_speedToggleButton_Unchecked"/>
+                <Button x:Name="_skipForwardButton" Content="Skip forward" Click="_skipForwardButton_Click"/>
+                <Canvas x:Name="_compositionCanvas" Width="200" Height="200" Background="LimeGreen"/>
+            </StackPanel>
+
+    </Grid>
+</Page>

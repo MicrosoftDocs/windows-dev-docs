@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="MediaSource_Win10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaSource_Win10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <!--<SnippetMediaElement>--> 
+            <MediaElement x:Name="mediaElement" />
+            <!--</SnippetMediaElement>-->
+            <!--<SnippetVideoComboBox>-->
+            <ComboBox x:Name="videoTracksComboBox" SelectionChanged="videoTracksComboBox_SelectionChanged"/>
+            <!--</SnippetVideoComboBox>-->
+            <!--<SnippetAudioComboBox>-->
+            <ComboBox x:Name="audioTracksComboBox" SelectionChanged="audioTracksComboBox_SelectionChanged"/>
+            <!--</SnippetAudioComboBox>-->
+            <!--<SnippetMetaStackPanel>-->
+            <StackPanel x:Name="MetadataButtonPanel" Orientation="Horizontal"/>
+            <!--</SnippetMetaStackPanel>-->
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="prevButton" Content="prev" Click="prevButton_Click"/>
+                <Button x:Name="nextButton" Content="next" Click="nextButton_Click"/>
+                <Button x:Name="shuffleButton" Content="shuffle" Click="shuffleButton_Click"/>
+                <Button x:Name="autoRepeatButton" Content="repeat" Click="autoRepeatButton_Click"/>
+                <TextBlock x:Name="clipTitleTextBlock" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

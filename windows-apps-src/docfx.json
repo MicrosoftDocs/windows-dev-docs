@@ -1,0 +1,29 @@
+{
+  "build": {
+    "content":
+      [
+        {
+          "files": ["**/**.md"],
+          "exclude": ["**/obj/**"]
+        }
+      ],
+    "resource": [
+        {
+          "files": ["**/images/**"],
+          "exclude": ["**/obj/**"]
+        }
+    ],
+    "globalMetadata": {
+        "ROBOTS": "INDEX, FOLLOW",
+        "Search.Product": "eADQiWindows 10XVcnh",
+        "uhfHeaderId": "MSDocsHeader-WinUWP",
+        "titleSuffix": "UWP app developer",
+		"breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+		"extendBreadcrumb": true
+    },
+    "externalReference": [
+    ],
+    "template": "op.html",
+    "dest": "windows-apps-src"
+  }
+}

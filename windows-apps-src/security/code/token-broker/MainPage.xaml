@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="token_broker.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:token_broker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="LoginButton" Content="Log in" Click="LoginButton_Click" />
+            <TextBlock x:Name="UserIdTextBlock"/>
+            <TextBlock x:Name="UserNameTextBlock"/>
+            <Button x:Name="SignOutButton" Content="Log in" Click="SignOutButton_Click" />
+        </StackPanel>
+
+    </Grid>
+</Page>

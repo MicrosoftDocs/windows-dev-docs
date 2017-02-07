@@ -1,0 +1,12 @@
+{
+  "locales": [ "ja-jp", "de-de", "fr-fr", "zh-cn", "zh-tw", "ko-kr", "es-es", "it-it", "ru-ru", "pt-br" ],
+  "files": ["!/*.md", "**/**/*.md", "**/*.md"],
+  "includeDependencies": false,
+  "autoPush": true,
+  "xliffVersion": "2.0",
+  "useJavascriptMarkdownTransformer": true,
+  "markdownTransformerOptions": {
+  	"lockBackslashEscapeChars": false,
+    "linkifyHeaders": true
+  }
+}

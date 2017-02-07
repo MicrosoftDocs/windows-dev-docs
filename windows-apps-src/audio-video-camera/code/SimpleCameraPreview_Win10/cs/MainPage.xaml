@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="SimpleCameraPreview_Win10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleCameraPreview_Win10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+            <Canvas Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+                <!--<SnippetCaptureElement>-->
+                <CaptureElement Name="PreviewControl" Stretch="Uniform"/>
+                <!--</SnippetCaptureElement>-->
+                <Image x:Name="PauseImage" Stretch="UniformToFill" Canvas.ZIndex="10" Opacity=".25"/>
+            </Canvas>
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                <Button Content="start preview" HorizontalAlignment="Stretch" Click="StartPreviewButton_Click"/>
+                <Button Content="capt software bmp" HorizontalAlignment="Stretch" Click="CaptureToSoftwareBitmapButton_Click"/>
+                <Button Content="capt file" HorizontalAlignment="Stretch" Click="CaptureToFileButton_Click"/>
+                <Button Content="start vid capt" HorizontalAlignment="Stretch" Click="StartVideoCaptureButton_Click"/>
+                <Button Content="stop vid capt" HorizontalAlignment="Stretch" Click="StopVideoCaptureButton_Click"/>
+                <Button Content="pause simple" HorizontalAlignment="Stretch" Click="PauseVideoCaptureSimpleButton_Click"/>
+                <Button Content="resume simple" HorizontalAlignment="Stretch" Click="ResumeVideoCaptureSimpleButton_Click"/>
+                <Button Content="pause w result" HorizontalAlignment="Stretch" Click="PauseVideoCaptureWithResultButton_Click"/>
+                <Button Content="resume w result" HorizontalAlignment="Stretch" Click="ResumeVideoCaptureWithResultButton_Click"/>
+                <Button Content="capt audio" HorizontalAlignment="Stretch" Click="CaptureAudioButton_Click"/>
+                <Button Content="init w orientation" HorizontalAlignment="Stretch" Click="InitializeMediaCaptureWithOrientationButton_Click"/>
+                <Button Content="cap pic w orientation" HorizontalAlignment="Stretch" Click="CapturePhotoWithOrientationButton_Click"/>
+                <Button Content="start rec w orientation" HorizontalAlignment="Stretch" Click="StartRecordingWithOrientationButton_Click"/>
+                <Button Content="stop rec w orientation" HorizontalAlignment="Stretch" Click="StopRecordingWithOrientation_Click"/>
+
+                <Button Content="mock photo button" HorizontalAlignment="Stretch" x:Name="CapturePhotoButton" Visibility="Collapsed"/>
+                <Button Content="mock video button" HorizontalAlignment="Stretch" x:Name="CaptureVideoButton" Visibility="Collapsed"/>
+                </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="EffectsStackPanel">
+                <Button Content="add stabilization fx" HorizontalAlignment="Stretch" Click="AddStabilizationEffectButton_Click"/>
+                <Button Content="rmv stabilization fx" HorizontalAlignment="Stretch" Click="RemoveStabilizationEffectButton_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
