@@ -7,5 +7,6 @@
     topicHref: /windows/
     items:
       - name: UWP
-        tocHref: /uwp/
-        topicHref: "https://developer.microsoft.com/windows/apps" 
+        tocHref: /windows/uwp/
+        topicHref: "https://developer.microsoft.com/windows/apps"
+ 
