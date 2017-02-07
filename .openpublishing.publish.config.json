@@ -9,6 +9,22 @@
       "build_output_subfolder": "hub",
       "locale": "en-us",
       "version": 0,
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes",
+      "is_dynamic_rendering": false
+    },
+    {
+      "docset_name": "windows-apps",
+      "build_source_folder": "windows-apps-src",
+      "build_output_subfolder": "windows-apps-src",
+      "locale": "en-us",
+      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -20,22 +36,6 @@
       "is_dynamic_rendering": false,
 	  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp/",
 	  "git_repository_branch_open_to_public_contributors": "docs"
-    },
-    {
-      "docset_name": "windows-apps",
-      "build_source_folder": "windows-apps-src",
-      "build_output_subfolder": "windows-apps-src",
-      "locale": "en-us",
-      "version": 0,
-      "open_to_public_contributors": false,
-      "type_mapping": {
-        "Conceptual": "Content",
-        "ManagedReference": "Content",
-        "RestApi": "Content"
-      },
-      "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "is_dynamic_rendering": false
     }
   ],
   "notification_subscribers": [
