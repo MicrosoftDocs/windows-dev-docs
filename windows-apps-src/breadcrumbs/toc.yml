@@ -8,11 +8,4 @@
     items:
       - name: UWP
         tocHref: /uwp/
-        topicHref: "https://developer.microsoft.com/windows/apps"
-        items:    
-        - name: API reference
-          tocHref: /uwp/api/
-          topicHref: /uwp/api/
-        - name: Documentation
-          tocHref: /windows/uwp/
-          topicHref: "https://developer.microsoft.com/windows/apps"  
+        topicHref: "https://developer.microsoft.com/windows/apps" 
