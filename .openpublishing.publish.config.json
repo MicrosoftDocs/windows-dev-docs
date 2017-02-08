@@ -2,7 +2,7 @@
   "build_entry_point": "op",
   "need_generate_pdf": false,
   "need_generate_intellisense": false,
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp/",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp",
 "git_repository_branch_open_to_public_contributors": "docs",
   "docsets_to_publish": [
     {
