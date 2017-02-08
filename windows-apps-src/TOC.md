@@ -1014,7 +1014,7 @@
 ### [Ad mediation report](publish/ad-mediation-report.md)
 ### [Advertising performance report](publish/advertising-performance-report.md)
 ### [Affiliates performance report](publish/affiliates-performance-report.md)
-### [App install ads report](publish/app-install-ads-reports.md)
+### [Promote your app report](publish/promote-your-app-report.md)
 ### [Download analytics reports](publish/download-analytic-reports.md)
 ## [Create customer groups](publish/create-customer-groups.md)
 ### [Create customer segments](publish/create-customer-segments.md)
