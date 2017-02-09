@@ -1,5 +1,5 @@
 ---
-title: Get Started Tutorial: A UWP game in JavaScript
+title: Get Started Tutorial - A UWP game in JavaScript
 description: A simple UWP game for the Windows Store, written in JavaScript and CreateJS
 author: jken
 ms.author: wdg-dev-content
