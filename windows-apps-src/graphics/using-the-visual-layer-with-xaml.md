@@ -225,10 +225,10 @@ Create an effect that blurs and tints background content. Note that developers n
 public MainPage()
 {
     InitializeComponent();
-    InitializedFrostedGlass(GlassHost);
+    InitializeFrostedGlass(GlassHost);
 }
 
-private void InitializedFrostedGlass(UIElement glassHost)
+private void InitializeFrostedGlass(UIElement glassHost)
 {
     Visual hostVisual = ElementCompositionPreview.GetElementVisual(glassHost);
     Compositor compositor = hostVisual.Compositor;
