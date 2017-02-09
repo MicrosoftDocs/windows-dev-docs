@@ -275,3 +275,4 @@ What next? Here are a few suggestions for features to add to your (soon to be) a
 * [Make a simple Windows game with JavaScript](https://www.sitepoint.com/creating-a-simple-windows-8-game-with-javascript-game-basics-createjseaseljs/)
 * [Picking an HTML/JS game engine](https://html5gameengine.com/)
 * [Using CreateJS in your JS based game](https://blogs.msdn.microsoft.com/cbowen/2012/09/19/using-createjs-in-your-javascript-based-windows-8-game/)
+* [Game development courses on LinkedIn Learning](https://www.linkedin.com/learning/topics/game-development)
