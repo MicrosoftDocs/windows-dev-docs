@@ -15,7 +15,7 @@ ms.technology: uwp
 
 # What's next?
 
-So you want to write an app and publish it to the Windows Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> courses. If you are already familiar with XAML and C#, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+So you want to write an app and publish it to the Windows Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> and [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming) courses. If you are already familiar with XAML and C#, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 There are many tools and frameworks available to help you write apps, and many support cross-platform development. For example, if you want to write 2D games, you might want to look at <a href="http://www.monogame.net">Monogame</a> or some of the many [JavaScript/HTML frameworks](https://html5gameengine.com/). For 3D games, there's <a href="http://www.unity3d.com">Unity</a>, and don't forget <a href="http://www.xamarin.com">Xamarin</a> if your focus is mobile devices.
 
@@ -91,12 +91,11 @@ The [Windows Developer Blog](https://blogs.windows.com/buildingapps) includes re
 
 ## Finding help in the Dev Center
 
-The [Microsoft Dev Center](http://developer.microsoft.com) contains a mountain of documentation for many different tools, frameworks and platforms. When you are searching for topics and samples, you should make sure you are reading UWP specific content. How can you be sure you're reading the right content?
-Conceptual content, that is, non-API reference content, will have UWP in the topic's URL. API content will have a path that includes Windows Runtime APIs. 
+The [docs.microsoft.com](http://docs.microsoft.com) site contains a mountain of documentation for many different tools, frameworks and platforms. When you are browsing for topics and samples, you should make sure you are reading UWP specific content. 
+You'll find the UWP reference starts at the [Windows Dev Center](https://developer.microsoft.com/windows/apps), and the API reference you need is at [Develop UWP apps](https://docs.microsoft.com/uwp/api/).
+When reading content for UWP. the URL path will contain **uwp**, and so will the path displayed at the top of the page, like ths:
 
-![An example UWP conceptual topic](images/devcenter-topic2.png)
-
-![An example UWP reference topic](images/devcenter-topic1.png)
+![Finding UWP docs](images/UWP-docs.png)
 
 When using a search engine, appending "Windows app development" to your search string will more often than not lead you to UWP content.
 
