@@ -237,7 +237,7 @@
 ### [Manage appointments](contacts-and-calendar/managing-appointments.md)
 ### [Connect your app to actions on a contact card](contacts-and-calendar/integrating-with-contacts.md)
 ## [Data access](data-access/index.md)
-### [Entity framework 7 with SQLite for C# apps](data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
+### [Entity framework Core with SQLite for C# apps](data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
 ### [SQLite databases](data-access/sqlite-databases.md)
 ## [Data binding](data-binding/index.md)
 ### [Data binding overview](data-binding/data-binding-quickstart.md)
