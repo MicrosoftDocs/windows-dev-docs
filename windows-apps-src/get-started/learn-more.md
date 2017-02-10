@@ -20,7 +20,7 @@ So you want to write an app and publish it to the Windows Store: where do you st
 There are many tools and frameworks available to help you write apps, and many support cross-platform development. For example, if you want to write 2D games, you might want to look at <a href="http://www.monogame.net">Monogame</a> or some of the many [JavaScript/HTML frameworks](https://html5gameengine.com/). For 3D games, there's <a href="http://www.unity3d.com">Unity</a>, and don't forget <a href="http://www.xamarin.com">Xamarin</a> if your focus is mobile devices.
 
 If you want to get started writing something that isn't a game, our recommendation is that you look through the UWP topics to get a feel for the platform, and then investigate creating your user interface by using, and then customizing, XAML controls. 
-You'll use XAML to layout your app ([here's a tutorial](../layout/grid-tutorial.md) that will walk you through it), but XAML's main strength is the use of *data binding* which couples the controls to the information your app wants to display: if you are new to the Windows platform, this will be an important concept to understand. 
+You'll use XAML to design your app ([here's a tutorial](../layout/grid-tutorial.md) that will walk you through it), but XAML's main strength is the use of *data binding* which couples the controls to the information your app wants to display: if you are new to the Windows platform, this will be an important concept to understand. 
 <table class="wdg-noborder">
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
@@ -91,9 +91,9 @@ The [Windows Developer Blog](https://blogs.windows.com/buildingapps) includes re
 
 ## Finding help in the Dev Center
 
-The [docs.microsoft.com](http://docs.microsoft.com) site contains a mountain of documentation for many different tools, frameworks and platforms. When you are browsing for topics and samples, you should make sure you are reading UWP specific content. 
+The [docs.microsoft.com](http://docs.microsoft.com) site contains a multitude of documentation for many different tools, frameworks and platforms. When you are browsing for topics and samples, you should make sure you are reading UWP specific content. 
 You'll find the UWP reference starts at the [Windows Dev Center](https://developer.microsoft.com/windows/apps), and the API reference you need is at [Develop UWP apps](https://docs.microsoft.com/uwp/api/).
-When reading content for UWP. the URL path will contain **uwp**, and so will the path displayed at the top of the page, like ths:
+When reading content taht is specifically for UWP, the URL path will contain **uwp**, and so will the path displayed at the top of the page, like this:
 
 ![Finding UWP docs](images/UWP-docs.png)
 
