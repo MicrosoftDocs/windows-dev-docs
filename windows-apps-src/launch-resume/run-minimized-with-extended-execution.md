@@ -1,4 +1,5 @@
----author: TylerMSFT
+---
+author: TylerMSFT
 description: Learn how to use extended execution to keep your app running while it is minimized
 title: Run while minimized with extended execution
 ms.author: twhitney
@@ -8,4 +9,239 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
----# Run while minimized with extended executionThis article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized.When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md).There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time.Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**.## Run while minimizedSpecify **ExtendedExecutionReason.Unspecified** when you create an **ExtendedExecutionSession** to request additional time before your app moves into the background for scenarios such as media processing, project compilation, or keeping a network connection alive. On desktop devices running Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), this is the approach to use if an app needs to avoid being suspended while it is minimized.Request the extension when starting a long running operation in order to defer the **Suspending** state transition that otherwise occurs when the app moves into the background. On desktop devices, extended execution sessions created with **ExtendedExecutionReason.Unspecified** have a battery-aware time limit. If the device is connected to wall power, there is no limit to the length of the extended execution time period. If the device is on battery power, the extended execution time period can run up to ten minutes in the background. A tablet or laptop user can get the same long running behavior at the expense of battery life when the **Always Allowed** option is selected in **Battery Usage Settings**.On all OS editions this kind of extended execution session stops when the device enters Connected Standby. On mobile devices running Windows 10 Mobile, this kind of extended execution session will run as long as the screen is on. When the screen turns off, the device immediately attempts to enter the low-power Connected-Standby mode. On desktop devices, the session will continue running if the lock screen appears. The device does not enter Connected Standby for a period of time after the screen turns off. On the Xbox OS Edition, the device enters Connect Standby after one hour unless the user changes the default.## Track the user's locationSpecify **ExtendedExecutionReason.LocationTracking** when you create an **ExtendedExecutionSession** if your app needs to regularly log the location from the [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx). Apps for fitness tracking and navigation that need to regularly monitor the user's location and should use this reason.A location tracking extended execution session can run as long as needed. However, there can only be one such session running per device. A location tracking extended execution session can only be requested in the foreground, and the app must be in the **Running** state. This ensures that the user is aware that the app has initiated an extended location tracking session. It is still possible to use the GeoLocator while the app is in the background by using a background task, or an app service, without requesting a location tracking extended execution session.## Save Critical Data LocallySpecify **ExtendedExecutionReason.SavingData** when you create an **ExtendedExecutionSession** to save user data in the case where not saving the data before the app is terminated will result in data loss and a negative user experience.Don't use this kind of session to extend the lifetime of an app to upload or download data. If you need to upload data, request a [background transfer](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) or register a **MaintenanceTrigger** to handle the transfer when AC power is available. A **ExtendedExecutionReason.SavingData** extended execution session can be requested either when the app is in the foreground and in the **Running** state, or in the background and in the **Suspending** state.The **Suspending** state is the last opportunity during the app lifecycle that an app can do work before the app is terminated. Requesting a **ExtendedExecutionReason.SavingData** extended execution session while the app is in the **Suspending** state creates a potential issue that you should be aware of. If an extended execution session is requested while in the **Suspending** state, and the user requests the app be launched again, it may appear to take a long time to launch. This is because the extended execution session time period must complete before the old instance of the app can be closed and a new instance of the app can be launched. Launch performance time is sacrificed in order to guarantee that user state is not lost.## Request, disposal, and revocationThere are three fundamental interactions with an extended execution session: the request, disposal, and revocation.  Making the request is modeled in the following code snippet.### Request```csharpvar newSession = new ExtendedExecutionSession();newSession.Reason = ExtendedExecutionReason.Unspecified;newSession.Description = "Raising periodic toasts";newSession.Revoked += SessionRevoked;ExtendedExecutionResult result = await newSession.RequestExtensionAsync();switch (result){    case ExtendedExecutionResult.Allowed:        DoLongRunningWork();        break;    default:    case ExtendedExecutionResult.Denied:        DoShortRunningWork();        break;}```[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  Calling **RequestExtensionAsync** checks with the operating system to see if the user has approved background activity for the app and whether the system has the available resources to enable background execution.You can check the [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) beforehand to determine the [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396), which is the user setting that indicates whether your app can run in the background or not. To learn more about these user settings see [Background Activity and Energy Awareness](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97).The **ExtendedExecutionReason** indicates the operation your app is performing in the background. The **Description** string is a human-readable string that explains why your app needs to perform the operation. The **Revoked** event handler is required so that an extended execution session can halt gracefully if the user, or the system, decides that the app can no longer run in the background.### RevokedIf an app has an active extended execution session and the system requires background activity to halt, then the session is revoked. An extended execution session time period is never terminated without first firing the **Revoked** event handler.When the **Revoked** event is fired for an **ExtendedExecutionReason.SavingData** extended execution session, the app has one second to complete the operation it was performing and finish **Suspending**.Revocation can occur for many reasons: an execution time limit was reached, a background energy quota was reached, or memory needs to be reclaimed in order for the user to open a new app in the foreground.Here is an example of a Revoked event handler:```csprivate async void SessionRevoked(object sender, ExtendedExecutionRevokedEventArgs args){    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>    {        switch (args.Reason)        {            case ExtendedExecutionRevokedReason.Resumed:                rootPage.NotifyUser("Extended execution revoked due to returning to foreground.", NotifyType.StatusMessage);                break;            case ExtendedExecutionRevokedReason.SystemPolicy:                rootPage.NotifyUser("Extended execution revoked due to system policy.", NotifyType.StatusMessage);                break;        }        EndExtendedExecution();    });}```[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)### DisposeThe final step is to dispose of the extended execution session. You want to dispose of the session, and any other memory intensive assets, because otherwise the energy used by the app while it is waiting for the session to close will be counted against the app's energy quota. To preserve as much of the energy quota for the app as possible, it is important to dispose of the session when you are done with your work for the session so that the app can move into the **Suspended** state more quickly.Disposing of the session yourself, rather than waiting for the revocation event, reduces your app's energy quota usage. This means that your app will be permitted to run in the background longer in future sessions because you'll have more energy quota available to do so. You must maintain a reference to the **ExtendedExecutionSession** object until the end of the operation so that you can call its **Dispose** method.A snippet that disposes an extended execution session follows:```csvoid ClearExtendedExecution(ExtendedExecutionSession session){    if (session != null)    {        session.Revoked -= SessionRevoked;        session.Dispose();        session = null;    }}```[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)An app can only have one **ExtendedExecutionSession** active at a time. Many apps use asynchronous tasks in order to complete complex operations that require access to resources such as storage, network, or network-based services. If an operation requires multiple asynchronous tasks to complete, then the state of each of these tasks must be accounted for before disposing the **ExtendedExecutionSession** and allowing the app to be suspended. This requires reference counting the number of tasks that are still running, and not disposing of the session until that value reaches zero.Here is some example code for managing multiple tasks during an extended execution session period:```csstatic class ExtendedExecutionHelper{    private static ExtendedExecutionSession session = null;    private static int taskCount = 0;    public static bool IsRunning    {        get        {            if (session != null)            {                return true;            }            else            {                return false;            }        }    }    public static async Task<ExtendedExecutionResult> RequestSessionAsync(ExtendedExecutionReason reason, TypedEventHandler<object, ExtendedExecutionRevokedEventArgs> revoked)    {        // The previous Extended Execution must be closed before a new one can be requested.               ClearSession();        var newSession = new ExtendedExecutionSession();        newSession.Reason = ExtendedExecutionReason.Unspecified;        newSession.Description = "Running multiple tasks";        newSession.Revoked += SessionRevoked;        if(revoked != null)        {            newSession.Revoked += revoked;        }        ExtendedExecutionResult result = await newSession.RequestExtensionAsync();        switch (result)        {            case ExtendedExecutionResult.Allowed:                session = newSession;                break;            default:            case ExtendedExecutionResult.Denied:                newSession.Dispose();                break;        }        return result;    }    public static void ClearSession()    {        if (session != null)        {            session.Dispose();            session = null;        }        taskCount = 0;    }    public static Deferral GetExecutionDeferral()    {        if (session == null)        {            throw new InvalidOperationException("No extended execution session is active");        }        taskCount++;        return new Deferral(OnTaskCompleted);    }    private static void OnTaskCompleted()    {        if (taskCount > 0)        {            taskCount--;        }        else if (taskCount == 0 && session != null)        {            ClearSession();        }    }    private static void SessionRevoked(object sender, ExtendedExecutionRevokedEventArgs args)    {        if (session != null)        {            session.Dispose();            session = null;        }    }}```[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)## Ensure that your app uses resources wellTuning your app's memory and energy use is key to ensuring that the operating system will allow your app to continue to run when it is no longer the foreground app. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your app is using. The more memory your app uses, the harder it is for the OS to keep your app running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants.## See also[Extended Execution Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  [Application Lifecycle](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  [Background Memory Management](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  [Background Transfers](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  [Battery Awareness and Background Activity](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  [MemoryManager class](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  [Play Media in the Background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+---
+
+# Run while minimized with extended execution
+
+This article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized.
+
+When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md).
+
+There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time.
+
+Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**.
+
+## Run while minimized
+
+Specify **ExtendedExecutionReason.Unspecified** when you create an **ExtendedExecutionSession** to request additional time before your app moves into the background for scenarios such as media processing, project compilation, or keeping a network connection alive. On desktop devices running Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), this is the approach to use if an app needs to avoid being suspended while it is minimized.
+
+Request the extension when starting a long running operation in order to defer the **Suspending** state transition that otherwise occurs when the app moves into the background. On desktop devices, extended execution sessions created with **ExtendedExecutionReason.Unspecified** have a battery-aware time limit. If the device is connected to wall power, there is no limit to the length of the extended execution time period. If the device is on battery power, the extended execution time period can run up to ten minutes in the background. A tablet or laptop user can get the same long running behavior at the expense of battery life when the **Always Allowed** option is selected in **Battery Usage Settings**.
+
+On all OS editions this kind of extended execution session stops when the device enters Connected Standby. On mobile devices running Windows 10 Mobile, this kind of extended execution session will run as long as the screen is on. When the screen turns off, the device immediately attempts to enter the low-power Connected-Standby mode. On desktop devices, the session will continue running if the lock screen appears. The device does not enter Connected Standby for a period of time after the screen turns off. On the Xbox OS Edition, the device enters Connect Standby after one hour unless the user changes the default.
+
+## Track the user's location
+
+Specify **ExtendedExecutionReason.LocationTracking** when you create an **ExtendedExecutionSession** if your app needs to regularly log the location from the [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx). Apps for fitness tracking and navigation that need to regularly monitor the user's location and should use this reason.
+
+A location tracking extended execution session can run as long as needed. However, there can only be one such session running per device. A location tracking extended execution session can only be requested in the foreground, and the app must be in the **Running** state. This ensures that the user is aware that the app has initiated an extended location tracking session. It is still possible to use the GeoLocator while the app is in the background by using a background task, or an app service, without requesting a location tracking extended execution session.
+
+## Save Critical Data Locally
+
+Specify **ExtendedExecutionReason.SavingData** when you create an **ExtendedExecutionSession** to save user data in the case where not saving the data before the app is terminated will result in data loss and a negative user experience.
+
+Don't use this kind of session to extend the lifetime of an app to upload or download data. If you need to upload data, request a [background transfer](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) or register a **MaintenanceTrigger** to handle the transfer when AC power is available. A **ExtendedExecutionReason.SavingData** extended execution session can be requested either when the app is in the foreground and in the **Running** state, or in the background and in the **Suspending** state.
+
+The **Suspending** state is the last opportunity during the app lifecycle that an app can do work before the app is terminated. Requesting a **ExtendedExecutionReason.SavingData** extended execution session while the app is in the **Suspending** state creates a potential issue that you should be aware of. If an extended execution session is requested while in the **Suspending** state, and the user requests the app be launched again, it may appear to take a long time to launch. This is because the extended execution session time period must complete before the old instance of the app can be closed and a new instance of the app can be launched. Launch performance time is sacrificed in order to guarantee that user state is not lost.
+
+## Request, disposal, and revocation
+
+There are three fundamental interactions with an extended execution session: the request, disposal, and revocation.  Making the request is modeled in the following code snippet.
+
+### Request
+
+```csharp
+var newSession = new ExtendedExecutionSession();
+newSession.Reason = ExtendedExecutionReason.Unspecified;
+newSession.Description = "Raising periodic toasts";
+newSession.Revoked += SessionRevoked;
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+
+switch (result)
+{
+    case ExtendedExecutionResult.Allowed:
+        DoLongRunningWork();
+        break;
+
+    default:
+    case ExtendedExecutionResult.Denied:
+        DoShortRunningWork();
+        break;
+}
+```
+[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+
+Calling **RequestExtensionAsync** checks with the operating system to see if the user has approved background activity for the app and whether the system has the available resources to enable background execution.
+
+You can check the [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) beforehand to determine the [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396), which is the user setting that indicates whether your app can run in the background or not. To learn more about these user settings see [Background Activity and Energy Awareness](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97).
+
+The **ExtendedExecutionReason** indicates the operation your app is performing in the background. The **Description** string is a human-readable string that explains why your app needs to perform the operation. The **Revoked** event handler is required so that an extended execution session can halt gracefully if the user, or the system, decides that the app can no longer run in the background.
+
+### Revoked
+
+If an app has an active extended execution session and the system requires background activity to halt, then the session is revoked. An extended execution session time period is never terminated without first firing the **Revoked** event handler.
+
+When the **Revoked** event is fired for an **ExtendedExecutionReason.SavingData** extended execution session, the app has one second to complete the operation it was performing and finish **Suspending**.
+
+Revocation can occur for many reasons: an execution time limit was reached, a background energy quota was reached, or memory needs to be reclaimed in order for the user to open a new app in the foreground.
+
+Here is an example of a Revoked event handler:
+
+```cs
+private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventArgs args)
+{
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    {
+        switch (args.Reason)
+        {
+            case ExtendedExecutionRevokedReason.Resumed:
+                rootPage.NotifyUser("Extended execution revoked due to returning to foreground.", NotifyType.StatusMessage);
+                break;
+
+            case ExtendedExecutionRevokedReason.SystemPolicy:
+                rootPage.NotifyUser("Extended execution revoked due to system policy.", NotifyType.StatusMessage);
+                break;
+        }
+
+        EndExtendedExecution();
+    });
+}
+```
+[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+
+### Dispose
+
+The final step is to dispose of the extended execution session. You want to dispose of the session, and any other memory intensive assets, because otherwise the energy used by the app while it is waiting for the session to close will be counted against the app's energy quota. To preserve as much of the energy quota for the app as possible, it is important to dispose of the session when you are done with your work for the session so that the app can move into the **Suspended** state more quickly.
+
+Disposing of the session yourself, rather than waiting for the revocation event, reduces your app's energy quota usage. This means that your app will be permitted to run in the background longer in future sessions because you'll have more energy quota available to do so. You must maintain a reference to the **ExtendedExecutionSession** object until the end of the operation so that you can call its **Dispose** method.
+
+A snippet that disposes an extended execution session follows:
+
+```cs
+void ClearExtendedExecution(ExtendedExecutionSession session)
+{
+    if (session != null)
+    {
+        session.Revoked -= SessionRevoked;
+        session.Dispose();
+        session = null;
+    }
+}
+```
+[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+
+An app can only have one **ExtendedExecutionSession** active at a time. Many apps use asynchronous tasks in order to complete complex operations that require access to resources such as storage, network, or network-based services. If an operation requires multiple asynchronous tasks to complete, then the state of each of these tasks must be accounted for before disposing the **ExtendedExecutionSession** and allowing the app to be suspended. This requires reference counting the number of tasks that are still running, and not disposing of the session until that value reaches zero.
+
+Here is some example code for managing multiple tasks during an extended execution session period:
+
+```cs
+static class ExtendedExecutionHelper
+{
+    private static ExtendedExecutionSession session = null;
+    private static int taskCount = 0;
+
+    public static bool IsRunning
+    {
+        get
+        {
+            if (session != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+
+    public static async Task<ExtendedExecutionResult> RequestSessionAsync(ExtendedExecutionReason reason, TypedEventHandler<object, ExtendedExecutionRevokedEventArgs> revoked)
+    {
+        // The previous Extended Execution must be closed before a new one can be requested.       
+        ClearSession();
+
+        var newSession = new ExtendedExecutionSession();
+        newSession.Reason = ExtendedExecutionReason.Unspecified;
+        newSession.Description = "Running multiple tasks";
+        newSession.Revoked += SessionRevoked;
+
+        if(revoked != null)
+        {
+            newSession.Revoked += revoked;
+        }
+
+        ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
+
+        switch (result)
+        {
+            case ExtendedExecutionResult.Allowed:
+                session = newSession;
+                break;
+            default:
+            case ExtendedExecutionResult.Denied:
+                newSession.Dispose();
+                break;
+        }
+        return result;
+    }
+
+    public static void ClearSession()
+    {
+        if (session != null)
+        {
+            session.Dispose();
+            session = null;
+        }
+
+        taskCount = 0;
+    }
+
+    public static Deferral GetExecutionDeferral()
+    {
+        if (session == null)
+        {
+            throw new InvalidOperationException("No extended execution session is active");
+        }
+
+        taskCount++;
+        return new Deferral(OnTaskCompleted);
+    }
+
+    private static void OnTaskCompleted()
+    {
+        if (taskCount > 0)
+        {
+            taskCount--;
+        }
+        else if (taskCount == 0 && session != null)
+        {
+            ClearSession();
+        }
+    }
+
+    private static void SessionRevoked(object sender, ExtendedExecutionRevokedEventArgs args)
+    {
+        if (session != null)
+        {
+            session.Dispose();
+            session = null;
+        }
+    }
+}
+```
+[See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+
+## Ensure that your app uses resources well
+
+Tuning your app's memory and energy use is key to ensuring that the operating system will allow your app to continue to run when it is no longer the foreground app. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your app is using. The more memory your app uses, the harder it is for the OS to keep your app running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.
+
+Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants.
+
+## See also
+
+[Extended Execution Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[Application Lifecycle](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
+[Background Memory Management](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
+[Background Transfers](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
+[Battery Awareness and Background Activity](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[MemoryManager class](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
+[Play Media in the Background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
