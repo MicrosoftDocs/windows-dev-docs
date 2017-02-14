@@ -1,7 +1,7 @@
 ---
 author: Mtoepke
-title: Known issues with UWP on Xbox One Developer Program
-description: 
+title: Known issues with UWP on Xbox Developer Program
+description: Lists the known issues for the UWP on Xbox developer program.
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article

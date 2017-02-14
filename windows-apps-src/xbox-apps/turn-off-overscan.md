@@ -1,7 +1,7 @@
 ---
 author: payzer
 title: How to draw UI to the edge of the screen
-description: 
+description: How to turn off automatic scaling for title-safe area.
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
