@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
 description: Get the information you need to get started using the Microsoft advertising libraries to add banner and video interstitial ads to your apps.
-title: Get started with the Microsoft advertising libraries
+title: Get started with the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, get started
 ---
 
-# Get started with the Microsoft advertising libraries
+# Get started with the advertising libraries
 
 
 

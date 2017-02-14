@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: Use the Windows Store reviews API to programmatically submit responses to reviews of your app in the Store.
-title: Respond to reviews using Windows Store services
+title: Respond to reviews using Store services
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store reviews API, respond to reviews
 ---
 
-# Respond to reviews using Windows Store services
+# Respond to reviews using Store services
 
 Use the *Windows Store reviews API* to programmatically respond to reviews of your app in the Store. This API is especially useful for developers who want to bulk respond to many reviews without using the Windows Dev Center dashboard. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 

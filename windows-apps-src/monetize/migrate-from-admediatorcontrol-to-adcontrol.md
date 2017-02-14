@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 9621641A-7462-425D-84CC-101877A738DA
 description: Learn about how to migrate from the AdMediatorControl to AdControl in your UWP apps.
-title: Migrate from AdMediatorControl to AdControl for UWP apps
+title: Migrate from AdMediatorControl to AdControl
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, AdMediatorControl, AdControl, migrate
 ---
 
-# Migrate from AdMediatorControl to AdControl for UWP apps
+# Migrate from AdMediatorControl to AdControl
 
 Previous advertising SDK releases from Microsoft enabled Universal Windows Platform (UWP) apps to display banner ads using the **AdMediatorControl** class, which enabled developers to optimize their ad revenue by displaying banner ads from our partner networks (AOL and AppNexus) as well as AdDuplex. The [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) no longer supports the **AdMediatorControl** class. If you have an existing app that uses the **AdMediatorControl** class from a previous SDK and you want to migrate it to a UWP app that uses the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk), follow the instructions in this article to update your code to use the **AdControl** class instead of the **AdMediatorControl** class. You can optionally configure your app to mediate ads with AdDuplex, using a weighted or ranked approach.
 

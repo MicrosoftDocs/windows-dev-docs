@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Review the release notes for the Microsoft advertising libraries in the Microsoft Store Services SDK.
-title: Release notes for the Microsoft advertising libraries
+title: Release notes for the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, release notes
 ---
 
-# Release notes for the Microsoft advertising libraries
+# Release notes for the advertising libraries
 
 
 

@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Learn about known issues for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK.
-title: Known issues for the Microsoft advertising libraries
+title: Known issues for the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, known issues
 ---
 
-# Known issues for the Microsoft advertising libraries
+# Known issues for the advertising libraries
 
 
 

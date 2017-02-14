@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Use the Windows Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Dev Center account.
-title: Access analytics data using Windows Store services
+title: Access analytics data using Store services
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store services, Windows Store analytics API
 ---
 
-# Access analytics data using Windows Store services
+# Access analytics data using Store services
 
 Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
