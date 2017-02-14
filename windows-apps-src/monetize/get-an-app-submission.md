@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: Use this method in the Windows Store submission API to get data for an existing app submission.
-title: Get an app submission using the Windows Store submission API
+title: Get an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, app submission
 ---
 
-# Get an app submission using the Windows Store submission API
+# Get an app submission
 
 
 Use this method in the Windows Store submission API to get data for an existing app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).

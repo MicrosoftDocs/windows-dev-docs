@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: Use the walkthroughs in this section to learn how to add banner ads and video interstitial ads to apps by using the Microsoft advertising libraries.
-title: Developer walkthroughs for the Microsoft advertising libraries
+title: Developer walkthroughs
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, walkthroughs
 ---
 
-# Developer walkthroughs for the Microsoft advertising libraries
+# Developer walkthroughs
 
 
 

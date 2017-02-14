@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Use this method in the Windows Store submission API to get data for a package flight for an app that is registered to your Windows Dev Center account.
-title: Get a package flight using the Windows Store submission API
+title: Get a package flight
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, flight, package flight
 ---
 
-# Get a package flight using the Windows Store submission API
+# Get a package flight
 
 
 

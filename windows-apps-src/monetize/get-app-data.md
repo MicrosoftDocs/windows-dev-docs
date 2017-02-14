@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: Use these methods in the Windows Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
-title: Get app data using the Windows Store submission API
+title: Get app data
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, app data
 ---
 
-# Get app data using the Windows Store submission API
+# Get app data
 
 Use the following methods in the Windows Store submission API to get data for existing apps in your Dev Center account. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 

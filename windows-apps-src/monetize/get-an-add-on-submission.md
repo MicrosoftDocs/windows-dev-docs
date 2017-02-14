@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: Use this method in the Windows Store submission API to get data for an existing add-on submission.
-title: Get an add-on submission using the Windows Store submission API
+title: Get an add-on submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, add-on submission, in-app product, IAP
 ---
 
-# Get an add-on submission using the Windows Store submission API
+# Get an add-on submission
 
 Use this method in the Windows Store submission API to get data for an existing add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 

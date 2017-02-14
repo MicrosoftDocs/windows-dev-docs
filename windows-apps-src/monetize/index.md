@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: The Windows SDK, Microsoft Store Services SDK, and the Windows Store provide many features that enable you to make more money from your apps and gain customers from engaging with your users.
-title: Monetization, customer engagement, and Store services
+title: Monetization, engagement, and Store services
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, monetize, engage, promote, Store services
 ---
 
-# Monetization, customer engagement, and Store services
+# Monetization, engagement, and Store services
 
 The Windows SDK, the Microsoft Store Services SDK, and the Windows Store provide features that enable you to make more money from your apps and gain customers by engaging with your users. The topics in this section show you how to build these features into your app.
 

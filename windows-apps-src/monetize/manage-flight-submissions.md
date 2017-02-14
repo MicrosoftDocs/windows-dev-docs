@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Use these methods in the Windows Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
-title: Manage package flight submissions using the Windows Store submission API
+title: Manage package flight submissions
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, flight submissions
 ---
 
-# Manage package flight submissions using the Windows Store submission API
+# Manage package flight submissions
 
 The Windows Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 

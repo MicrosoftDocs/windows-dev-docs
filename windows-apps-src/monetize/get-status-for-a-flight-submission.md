@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: Use this method in the Windows Store submission API to get the status of a package flight submission.
-title: Get the status of a package flight submission using the Windows Store submission API
+title: Get the status of a package flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, flight submission, status
 ---
 
-# Get the status of a package flight submission using the Windows Store submission API
+# Get the status of a package flight submission
 
 
 

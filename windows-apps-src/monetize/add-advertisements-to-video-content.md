@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: Learn how to use the AdScheduler class to add advertisements to video content.
-title: Add advertisements to video content in HTML 5 and JavaScript
+title: Add advertisements to video content
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, video, scheduler, javascript
 ---
 
-# Add advertisements to video content in HTML 5 and JavaScript
+# Add advertisements to video content
 
 
 This walkthrough shows how to use the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) class to add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.

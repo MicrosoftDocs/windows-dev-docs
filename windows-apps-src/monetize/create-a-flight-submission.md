@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: Use this method in the Windows Store submission API to create a new package flight submission for an app that is registered to your Windows Dev Center account.
-title: Create a package flight submission using the Windows Store submission API
+title: Create a package flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, create flight submission
 ---
 
-# Create a package flight submission using the Windows Store submission API
+# Create a package flight submission
 
 Use this method in the Windows Store submission API to create a new submission for a package flight for an app. After you successfully create a new submission by using this method, [update the submission](update-a-flight-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-a-flight-submission.md) for ingestion and publishing.
 

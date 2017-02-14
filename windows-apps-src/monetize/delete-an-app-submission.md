@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: Use this method in the Windows Store submission API to delete an existing app submission.
-title: Delete an app submission using the Windows Store submission API
+title: Delete an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, app submission, delete
 ---
 
-# Delete an app submission using the Windows Store submission API
+# Delete an app submission
 
 
 

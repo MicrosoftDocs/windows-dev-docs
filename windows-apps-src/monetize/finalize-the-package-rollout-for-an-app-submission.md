@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Use this method in the Windows Store submission API to finalize the package rollout for an app submission.
-title: Finalize the package rollout for an app submission using the Windows Store submission API
+title: Finalize the rollout for an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Windows Store submission API, package rollout, app su
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ---
 
-# Finalize the package rollout for an app submission using the Windows Store submission API
+# Finalize the rollout for an app submission
 
 
 Use this method in the Windows Store submission API to [finalize the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for an app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).

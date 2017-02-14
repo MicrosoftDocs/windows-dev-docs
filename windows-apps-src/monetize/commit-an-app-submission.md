@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: Use this method in the Windows Store submission API to commit a new or updated app submission to Windows Dev Center.
-title: Commit an app submission using the Windows Store submission API
+title: Commit an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, commit app submission
 ---
 
-# Commit an app submission using the Windows Store submission API
+# Commit an app submission
 
 
 Use this method in the Windows Store submission API to commit a new or updated app submission to Windows Dev Center. The commit action alerts Dev Center that the submission data has been uploaded (including any related packages and images). In response, Dev Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in the Dev Center dashboard.

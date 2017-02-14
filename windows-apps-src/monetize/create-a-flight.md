@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: Use this method in the Windows Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
-title: Create a package flight using the Windows Store submission API
+title: Create a package flight
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, create flight
 ---
 
-# Create a package flight using the Windows Store submission API
+# Create a package flight
 
 
 

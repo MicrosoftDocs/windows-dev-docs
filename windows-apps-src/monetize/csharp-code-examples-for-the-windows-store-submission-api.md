@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: Use the C# code examples in this section to learn more about using the Windows Store submission API.
-title: C# code examples for the Windows Store submission API
+title: C# code examples for the submission API
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, code examples
 ---
 
-# C\# code examples for the Windows Store submission API
+# C\# code examples for the submission API
 
 This article provides C# code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 

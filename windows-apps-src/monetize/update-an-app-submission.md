@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: Use this method in the Windows Store submission API to update an existing app submission.
-title: Update an app submission using the Windows Store submission API
+title: Update an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, app submission, update
 ---
 
-# Update an app submission using the Windows Store submission API
+# Update an app submission
 
 Use this method in the Windows Store submission API to update an existing app submission. After you successfully update a submission by using this method, you must [commit the submission](commit-an-app-submission.md) for ingestion and publishing.
 

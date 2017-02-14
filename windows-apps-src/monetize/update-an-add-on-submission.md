@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: Use this method in the Windows Store submission API to update an existing add-on submission.
-title: Update an add-on submission using the Windows Store submission API
+title: Update an add-on submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, add-on submission, update, in-app product, IAP
 ---
 
-# Update an add-on submission using the Windows Store submission API
+# Update an add-on submission
 
 
 Use this method in the Windows Store submission API to update an existing add-on (also known as in-app product or IAP) submission. After you successfully update a submission by using this method, you must [commit the submission](commit-an-add-on-submission.md) for ingestion and publishing.

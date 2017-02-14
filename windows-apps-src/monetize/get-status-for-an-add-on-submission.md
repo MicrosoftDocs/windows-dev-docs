@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: Use this method in the Windows Store submission API to get the status of an add-on submission.
-title: Get the status of an add-on submission using the Windows Store submission API
+title: Get the status of an add-on submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, add-on submission, status
 ---
 
-# Get the status of an add-on submission using the Windows Store submission API
+# Get the status of an add-on submission
 
 
 

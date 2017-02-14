@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Use this method in the Windows Store submission API to halt the package rollout for an app submission.
-title: Halt the package rollout for an app submission using the Windows Store submission API
+title: Halt the rollout for an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Windows Store submission API, package rollout, app su
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ---
 
-# Halt the package rollout for an app submission using the Windows Store submission API
+# Halt the rollout for an app submission
 
 
 Use this method in the Windows Store submission API to [halt the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for an app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).

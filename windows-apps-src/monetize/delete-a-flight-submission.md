@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: Use this method in the Windows Store submission API to delete an existing package flight submission.
-title: Delete a package flight submission using the Windows Store submission API
+title: Delete a package flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, flight submission, delete, package flight
 ---
 
-# Delete a package flight submission using the Windows Store submission API
+# Delete a package flight submission
 
 
 

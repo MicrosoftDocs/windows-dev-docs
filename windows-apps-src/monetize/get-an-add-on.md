@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
 description: Use this method in the Windows Store submission API to retrieve information about an add-on for an app that is registered to your Windows Dev Center account.
-title: Get an add-on using the Windows Store submission API
+title: Get an add-on
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, add-on, in-app product, IAP
 ---
 
-# Get an add-on using the Windows Store submission API
+# Get an add-on
 
 
 

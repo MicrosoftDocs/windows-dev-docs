@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: Use this method in the Windows Store submission API to retrieve information about all apps that are registered to your Windows Dev Center account.
-title: Get all apps using the Windows Store submission API
+title: Get all apps
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, apps
 ---
 
-# Get all apps using the Windows Store submission API
+# Get all apps
 
 
 

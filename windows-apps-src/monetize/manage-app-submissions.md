@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Windows Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
-title: Manage app submissions using the Windows Store submission API
+title: Manage app submissions
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, app submissions
 ---
 
-# Manage app submissions using the Windows Store submission API
+# Manage app submissions
 
 The Windows Store submission API provides methods you can use to manage submissions for your apps, including gradual package rollouts. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 

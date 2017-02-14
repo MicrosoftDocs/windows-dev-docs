@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: Use the Python code examples in this section to learn more about using the Windows Store submission API.
-title: Python code examples for the Windows Store submission API
+title: Python code examples for the submission API
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, code examples
 ---
 
-# Python code examples for the Windows Store submission API
+# Python code examples for the submission API
 
 This article provides Python code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 

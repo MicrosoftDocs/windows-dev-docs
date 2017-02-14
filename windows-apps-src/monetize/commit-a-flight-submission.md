@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: Use this method in the Windows Store submission API to commit a new or updated package flight submission to Windows Dev Center.
-title: Commit a package flight submission using the Windows Store submission API
+title: Commit a package flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, commit flight submission
 ---
 
-# Commit a package flight submission using the Windows Store submission API
+# Commit a package flight submission
 
 
 

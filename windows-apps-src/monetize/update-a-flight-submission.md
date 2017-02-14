@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: Use this method in the Windows Store submission API to update an existing package flight submission.
-title: Update a package flight submission using the Windows Store submission API
+title: Update a package flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, flight submission, update
 ---
 
-# Update a package flight submission using the Windows Store submission API
+# Update a package flight submission
 
 
 Use this method in the Windows Store submission API to update an existing package flight submission. After you successfully update a submission by using this method, you must [commit the submission](commit-a-flight-submission.md) for ingestion and publishing.

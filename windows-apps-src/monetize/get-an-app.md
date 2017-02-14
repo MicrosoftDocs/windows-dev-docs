@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: Use this method in the Windows Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
-title: Get an app using the Windows Store submission API
+title: Get an app
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, app
 ---
 
-# Get an app using the Windows Store submission API
+# Get an app
 
 
 

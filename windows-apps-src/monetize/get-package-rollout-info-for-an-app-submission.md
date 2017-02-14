@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Use this method in the Windows Store submission API to get package rollout info for an app submission.
-title: Get package rollout info for an app submission using the Windows Store submission API
+title: Get rollout info for an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Windows Store submission API, package rollout, app su
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ---
 
-# Get package rollout info for an app submission using the Windows Store submission API
+# Get rollout info for an app submission
 
 
 Use this method in the Windows Store submission API to get [package rollout](../publish/gradual-package-rollout.md) info for a package flight submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).

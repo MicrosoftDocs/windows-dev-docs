@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
 description: Use this method in the Windows Store submission API to commit a new or updated add-on submission to Windows Dev Center.
-title: Commit an add-on submission using the Windows Store submission API
+title: Commit an add-on submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, commit add-on submission, in-app product, IAP
 ---
 
-# Commit an add-on submission using the Windows Store submission API
+# Commit an add-on submission
 
 
 

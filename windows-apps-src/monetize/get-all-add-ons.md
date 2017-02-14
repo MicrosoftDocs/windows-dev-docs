@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: Use this method in the Windows Store submission API to retrieve all add-on data for all the apps that are registered to your Windows Dev Center account.
-title: Get all add-ons using the Windows Store submission API
+title: Get all add-ons
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, add-ons, in-app products, IAPs
 ---
 
-# Get all add-ons using the Windows Store submission API
+# Get all add-ons
 
 
 

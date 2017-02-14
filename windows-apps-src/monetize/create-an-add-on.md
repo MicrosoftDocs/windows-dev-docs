@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: Use this method in the Windows Store submission API to create an add-on for an app that is registered to your Windows Dev Center account.
-title: Create an add-on using the Windows Store submission API
+title: Create an add-on
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, create add-on, in-app product, IAP
 ---
 
-# Create an add-on using the Windows Store submission API
+# Create an add-on
 
 
 

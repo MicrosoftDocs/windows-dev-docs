@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: Use these methods in the Windows Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
-title: Manage add-ons using the Windows Store submission API
+title: Manage add-ons
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, add-ons, in-app product, IAP
 ---
 
-# Manage add-ons using the Windows Store submission API
+# Manage add-ons
 
 Use the following methods in the Windows Store submission API to manage add-ons (also known as in-app products or IAPs) for your apps. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 

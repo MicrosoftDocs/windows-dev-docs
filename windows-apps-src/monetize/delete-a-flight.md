@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: Use this method in the Windows Store submission API to delete a package flight for an app that is registered to your Windows Dev Center account.
-title: Delete a package flight using the Windows Store submission API
+title: Delete a package flight
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store submission API, delete flight
 ---
 
-# Delete a package flight using the Windows Store submission API
+# Delete a package flight
 
 
 

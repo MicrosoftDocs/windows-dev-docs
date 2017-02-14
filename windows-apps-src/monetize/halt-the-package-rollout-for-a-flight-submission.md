@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Use this method in the Windows Store submission API to halt a package rollout for a package flight.
-title: Halt the package rollout for a package flight using the Windows Store submission API
+title: Halt the rollout for a flight
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Windows Store submission API, package rollout, flight
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ---
 
-# Halt the package rollout for a package flight using the Windows Store submission API
+# Halt the rollout for a flight
 
 
 Use this method in the Windows Store submission API to [halt the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for a package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Use this method in the Windows Store submission API to update the package rollout percentage for a package flight submission.
-title: Update the package rollout percentage for a package flight submission using the Windows Store submission API
+title: Update the rollout percentage for a flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Windows Store submission API, package rollout, flight
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ---
 
-# Update the package rollout percentage for a package flight submission using the Windows Store submission API
+# Update the rollout percentage for a flight submission
 
 
 Use this method in the Windows Store submission API to [update the rollout percentage](../publish/gradual-package-rollout.md#setting-the-rollout-percentage) for a package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).

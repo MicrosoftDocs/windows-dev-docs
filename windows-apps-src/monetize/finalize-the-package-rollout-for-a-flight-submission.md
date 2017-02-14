@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: Use this method in the Windows Store submission API to finalize the package rollout for a package flight submission.
-title: Finalize the package rollout for a package flight submission using the Windows Store submission API
+title: Finalize the rollout for a flight submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Windows Store submission API, package rollout, flight
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ---
 
-# Finalize the package rollout for a package flight submission using the Windows Store submission API
+# Finalize the rollout for a flight submission
 
 
 Use this method in the Windows Store submission API to [finalize the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for a package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
