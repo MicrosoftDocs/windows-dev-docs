@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: Learn how to register your UWP app to receive push notifications that you send from Windows Dev Center.
-title: Configure your app for targeted push notifications
+title: Configure your app for targeted notifications
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, targeted push notificat
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ---
 
-# Configure your app for targeted push notifications
+# Configure your app for targeted notifications
 
 You can use the **Push notifications** page in the Windows Dev Center dashboard to directly engage with customers by sending targeted push notifications to the devices on which your Universal Windows Platform (UWP) app is installed. For example, you can use targeted push notifications to encourage your customers to take an action, such as rating your app or trying a new feature. You can send several different types of push notifications, including toast notifications, tile notifications, and raw XML notifications. You can also track the rate of app launches that resulted from your push notifications. For more information about this feature, see [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md).
 

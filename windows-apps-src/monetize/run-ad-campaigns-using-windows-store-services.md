@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: Use the Windows Store promotions API to programmatically manage promotional ad campaigns for apps that are registered to your or your organization''s Windows Dev Center account.
-title: Run ad campaigns using Windows Store services
+title: Run ad campaigns using Store services
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store promotions API, ad campaigns
 ---
 
-# Run ad campaigns using Windows Store services
+# Run ad campaigns using Store services
 
 Use the *Windows Store promotions API* to programmatically manage promotional ad campaigns for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to create, update and monitor your campaigns and other related assets such as targeting and creatives. This API is especially useful for developers who create large volumes of campaigns, and who want to do so without using the Windows Dev Center dashboard. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 

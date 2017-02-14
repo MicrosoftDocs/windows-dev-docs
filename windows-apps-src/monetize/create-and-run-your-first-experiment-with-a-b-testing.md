@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
-title: Create and run your first A/B experiment
+title: Create and run your first experiment
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ---
 
-# Create and run your first A/B experiment
+# Create and run your first experiment
 
 In this walkthrough, you will:
 * Create an experimentation [project](run-app-experiments-with-a-b-testing.md#terms) on the Dev Center dashboard that defines several remote variables that represent the text and color of an app button.

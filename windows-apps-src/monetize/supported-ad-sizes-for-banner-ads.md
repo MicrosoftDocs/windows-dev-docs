@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
 description: Learn about the supported banner ad sizes.
-title: Supported ad sizes for banner ads
+title: Supported banner ad sizes
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, sizes, banner
 ---
 
-# Supported ad sizes for banner ads
+# Supported banner ad sizes
 
 
 

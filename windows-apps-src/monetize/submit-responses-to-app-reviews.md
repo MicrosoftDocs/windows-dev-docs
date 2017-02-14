@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: Use this method in the Windows Store reviews API to submit responses to reviews of your app.
-title: Submit responses to app reviews
+title: Submit responses to reviews
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store services, Windows Store reviews API, add-on acquisitions
 ---
 
-# Submit responses to app reviews
+# Submit responses to reviews
 
 
 Use this method in the Windows Store reviews API to programmatically respond to reviews of your app. When you call this method, you must specify the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Windows Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).

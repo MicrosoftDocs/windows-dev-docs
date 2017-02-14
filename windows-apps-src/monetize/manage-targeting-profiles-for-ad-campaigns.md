@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: Use this method in the Windows Store promotions API to manage targeting profiles for promotional ad campaigns.
-title: Manage targeting profiles for ad campaigns
+title: Manage targeting profiles
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store promotions API, ad campaigns
 ---
 
-# Manage targeting profiles for ad campaigns
+# Manage targeting profiles
 
 
 Use these methods in the Windows Store promotions API to select the users, geographies and inventory types that you want to target for each delivery line in a promotional ad campaign. Targeting profiles can be created and reused across multiple delivery lines.
