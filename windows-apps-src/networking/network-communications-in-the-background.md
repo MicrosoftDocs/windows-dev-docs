@@ -20,7 +20,6 @@ keywords: windows 10, uwp
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-
 Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground: The socket broker, and control channel triggers. Apps that use sockets for long-term connections can delegate ownership of a socket to a system socket broker when they leave the foreground. The broker then activates the app when traffic arrives on the socket, transfers ownership back to the app, and the app processes the arriving traffic.
 
 ## Performing short-lived network operations in background tasks
@@ -37,7 +36,6 @@ In order for your app to receive and process data received on a socket when your
 
 The one-time setup steps are to create a trigger, to register a background task for the trigger, and to enable the socket for the socket broker:
   - Create a **SocketActivityTrigger** and register a background task for the trigger with the TaskEntryPoint parameter set to your code for processing a received packet.
-  
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
             socketTaskBuilder.Name = _backgroundTaskName; 
@@ -46,9 +44,7 @@ The one-time setup steps are to create a trigger, to register a background task 
             socketTaskBuilder.SetTrigger(trigger); 
             _task = socketTaskBuilder.Register(); 
 ```
-
   - Call **EnableTransferOwnership** on the socket, before you bind the socket.
-  
 ```csharp
            _tcpListener = new StreamSocketListener(); 
           
@@ -88,22 +84,17 @@ An app transfers ownership of a socket to a socket broker and passes the ID for 
         deferral.Complete(); 
     } 
 ```
-
 In your background task's event handler:
    -  First, get a background task deferral so that you can handle the event using asynchronous methods.
-   
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
-
    -  Next, extract the SocketActivityTriggerDetails from the event arguments, and find the reason that the event was raised:
-   
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
     var socketInformation = details.SocketInformation; 
     switch (details.Reason) 
 ```
-
    -   If the event was raised because of socket activity, create a DataReader on the socket, load the reader asynchronously, and then use the data according to your app's design. Note that you must return ownership of the socket back to the socket broker, in order to be notified of further socket activity again.
 
    In the following example, the text received on the socket is displayed in a toast.

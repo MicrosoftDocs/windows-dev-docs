@@ -1,4 +1,5 @@
----author: shawjohn
+---
+author: shawjohn
 Description: Learn how to create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Create customer groups
 ms.author: johnshaw
@@ -8,4 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
----# Create customer groupsThere are times when you may want to target a subset of your app’s customer base for promotions, testing, or other purposes. You can use the Windows Dev Center dashboard to accomplish this by creating customer groups that include the customers that you want to target.To view and create your customer groups, click **Customers** near the top of your dashboard.Currently, two types of customer groups are supported:- **Segments.** These are dynamically-created groups of Windows 10 customers who meet the demographic or revenue criteria that you choose. Segments are typically used to [send targeted push notifications](send-push-notifications-to-your-apps-customers.md) to a group of customers as part of an engagement campaign. For more info, see [Create customer segments](create-customer-segments.md).- **Flight groups.** These are groups of specific customers, created from the email addresses associated with their Microsoft accounts. Flight groups are typically used with [package flighting](package-flights.md) in order to deliver specific packages to customers in a flight group. For more info, see [Create a new flight group](package-flights.md#create-a-new-flight-group).
+---
+
+# Create customer groups
+
+There are times when you may want to target a subset of your app’s customer base for promotions, testing, or other purposes. You can use the Windows Dev Center dashboard to accomplish this by creating customer groups that include the customers that you want to target.
+
+To view and create your customer groups, click **Customers** near the top of your dashboard.
+
+Currently, two types of customer groups are supported:
+
+- **Segments.** These are dynamically-created groups of Windows 10 customers who meet the demographic or revenue criteria that you choose. Segments are typically used to [send targeted push notifications](send-push-notifications-to-your-apps-customers.md) to a group of customers as part of an engagement campaign. For more info, see [Create customer segments](create-customer-segments.md).
+- **Flight groups.** These are groups of specific customers, created from the email addresses associated with their Microsoft accounts. Flight groups are typically used with [package flighting](package-flights.md) in order to deliver specific packages to customers in a flight group. For more info, see [Create a new flight group](package-flights.md#create-a-new-flight-group).

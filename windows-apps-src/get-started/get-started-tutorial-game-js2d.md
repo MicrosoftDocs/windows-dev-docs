@@ -42,7 +42,7 @@ This project makes use of the CreateJS JavaScript framework. CreateJS is a free 
 
 ## Getting started
 
-The complete source code for the app is stored on [GitHub](https://github.com/Microsoft/Windows-appsample-GetStarted-JS2D).
+The complete source code for the app is stored on [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js2d).
 
 The simplest way to get started it to visit GitHub, click on the green **Clone or download** button, and select **Open in Visual Studio**. 
 
