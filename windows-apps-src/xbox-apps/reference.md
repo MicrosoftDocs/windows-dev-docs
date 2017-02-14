@@ -15,7 +15,7 @@ ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 
 This section contains reference topics for the UWP on Xbox One APIs.
 
-| URI      | Description |
+| URI        | Description |
 |------------|-------------|
 |[/api/app/packagemanager/register](wdp-loose-folder-register-api.md)| Registers an app that is contained in a loose folder. |
 |[/api/app/packagemanager/upload](wdp-folder-upload.md)| Uploads an entire folder to the console. |
