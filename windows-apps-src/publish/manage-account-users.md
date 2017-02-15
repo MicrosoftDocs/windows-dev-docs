@@ -26,7 +26,7 @@ Note that only one Dev Center account can be associated with an Azure AD. Simila
 
 > **Note**   If the users you want to add are not part of your organization’s Azure AD, and you don't want to create new Azure AD accounts for them, you can [invite users by email](#add-and-manage-account-users).
 
-## Associate your Dev Center account with your organization’s existing Azure AD
+### Associate your Dev Center account with your organization’s existing Azure AD
 
 If your organization already uses Azure AD, follow these steps to link your Dev Center account.
 
@@ -36,7 +36,7 @@ If your organization already uses Azure AD, follow these steps to link your Dev 
 4.  Review the organization and domain name for your Azure AD account. To complete the association, click **Confirm**.
 5.  If the association is successful, you will then be ready to add and manage account users on the **Manage users** page of your account as described in the sections below.
 
-## Create a brand new Azure AD to associate with your Dev Center account
+### Create a brand new Azure AD to associate with your Dev Center account
 
 If you need to set up a new Azure AD to link with your Dev Center account, follow these steps.
 
