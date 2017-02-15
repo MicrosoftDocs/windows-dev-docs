@@ -14,11 +14,6 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-** Important APIs **
-
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
-
 Each device has associated [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties that you can use when you need specific information or when you are building a device selector. These properties can be specified an AQS filter to limit the devices that you are enumerating over in order to find the devices with the specified traits. You can also use these properties to indicate what information you want returned for each device. That enables you to specify the device information that is returned to your application.
 
 For more information about using [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties in your device selector, see [Build a device selector](build-a-device-selector.md). This topic goes into how to request information properties and also lists some common properties and their purpose.
