@@ -4,7 +4,7 @@ Description: View the names that you've reserved for your app, reserve additiona
 title: Manage app names
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,11 +32,11 @@ If you no longer want to use a name you've previously reserved, you can release 
 
 To delete one of your app's reserved names, find the name you no longer want to use and then click **Delete**. In the confirmation dialog, click **Delete** again to confirm.
 
-Note that your app needs to have at least one reserved name. To completely remove an app from your dashboard (which also release all of the you've reserved for that app), you can click **Delete this app** from its **Overview** page.
+Note that your app needs to have at least one reserved name. To completely remove an app from your dashboard (and release all the names you've reserved for that app), you can click **Delete this app** from its **Overview** page. If you have a submission for the app in progress, you'll need to delete that submission first (and if you've already published the app to the Store, you can't delete it from your dashboard).
 
 ## Rename an app that has already been published
 
-If your app is already in the Windows Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app. Note that you'll have to update your package to include the new name in order for the Store to display the app under the new name. Be sure to use the new name in the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) element in the app manifest, and update any graphics or text that includes the app's name. You'll also want to review your app's description and change the name if you mention it anywhere there.
+If your app is already in the Windows Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app. Note that you'll have to update your package to include the new name in order for the Store to display the app under the new name. Be sure to use the new name in the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/en-us/library/windows/apps/dn934748.aspx) element in the app manifest, and update any graphics or text that includes the app's name. You'll also want to review your app's description and change the name if you mention it anywhere there.
 
 Once your app has been published with the new name, you can delete the old name that you no longer need to use.
 
