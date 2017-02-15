@@ -44,7 +44,7 @@ These methods use [StorePackageUpdate](https://msdn.microsoft.com/library/window
 The following code examples demonstrate how to download and install package updates in your app. These example assume:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
 * The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.
-* The code file has a **using** statement for the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace.
+* The code file has a **using** statement for the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.
 * The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object instead of the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method.
 
 <span/>
