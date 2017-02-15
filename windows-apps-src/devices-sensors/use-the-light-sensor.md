@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+**Important APIs**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
@@ -67,8 +67,8 @@ This section is divided into two subsections. The first subsection will take you
         public sealed partial class BlankPage : Page
         {
             private LightSensor _lightsensor; // Our app' s lightsensor object
-           
-            // This event handler writes the current light-sensor reading to 
+
+            // This event handler writes the current light-sensor reading to
             // the textbox named "txtLUX" on the app' s main page.
 
             private void ReadingChanged(object sender, LightSensorReadingChangedEventArgs e)
@@ -155,7 +155,7 @@ _lightsensor.ReportInterval = reportInterval;
 The new light-sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the value to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
-_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
+_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -170,4 +170,3 @@ These new values are written to a TextBlock found in the project's XAML.
 
 * [LightSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-

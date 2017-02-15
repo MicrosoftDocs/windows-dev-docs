@@ -15,9 +15,9 @@ keywords: windows 10, uwp
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Important APIs **
+**Important APIs**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Building a device selector will enable you to limit the devices you are searching through when enumerating devices. This will enable you to only get relevant results and will also improve the performance of the system. In most scenarios you get a device selector from a device stack. For example, you might use [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) for devices discovered over USB. These device selectors return an Advanced Query Syntax (AQS) string. If you are not familiar with the AQS format, you can read more at [Using Advanced Query Syntax Programmatically](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
 
@@ -71,7 +71,7 @@ The following examples demonstrate how the AQS syntax can be used to limit the d
 When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceInterface**, it enumerates all objects that contain the Audio Capture interface class and that are currently enabled. **=** translates to **COP\_EQUALS**.
 
 ``` syntax
-System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
+System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
@@ -108,7 +108,3 @@ System.Devices.IpAddress:=[]
  
 
  
-
-
-
-

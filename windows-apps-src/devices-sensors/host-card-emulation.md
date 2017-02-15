@@ -38,7 +38,7 @@ Windows 10 supports emulation of smart cards that are based on ISO-DEP (ISO-IEC
 
 Only Windows 10 Mobile devices are enabled with the card emulation feature. SIM-based and HCE-based card emulation is not available on other versions of Windows 10.
 
-The architecture for HCE and SIM based card emulation support is shown in the diagram below. 
+The architecture for HCE and SIM based card emulation support is shown in the diagram below.
 
 ![Architecture for HCE and SIM card emulation](./images/nfc-architecture.png)
 
@@ -222,7 +222,7 @@ public static byte[] AID_PPSE =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Host);
@@ -239,7 +239,7 @@ public static byte[] AID_OTHER =
         };
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_OTHER.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -298,7 +298,7 @@ public static byte[] AID_Foreground =
         {};
 
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_Foreground.AsBuffer()},
                                 SmartCardEmulationCategory.Other,
                                 SmartCardEmulationType.Host);
@@ -343,15 +343,15 @@ case Never:
 // you can take the user to the NFC settings to turn "tap and pay" on
 await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings-nfctransactions:"));
 break;
- 
- case Always: 
+
+ case Always:
 return "Card emulation always on";
 
  case ScreenOn:
  return "Card emulation on only when screen is on";
 
  case ScreenUnlocked:
- return "Card emulation on only when screen unlocked"; 
+ return "Card emulation on only when screen unlocked";
 }
 ```
 
@@ -365,7 +365,7 @@ Your app's background task will be launched even if the phone is locked and/or t
         {
             // Launch above the lock with some arguments
             var result = await eventDetails.TryLaunchSelfAsync("app-specific arguments", SmartCardLaunchBehavior.AboveLock);
-        } 
+        }
 ```
 
 ## AID registration and other updates for SIM based apps
@@ -374,7 +374,7 @@ Card emulation apps that use the SIM as the secure element can register with the
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(
-                        "Example DisplayName", 
+                        "Example DisplayName",
                                 new List<IBuffer> {AID_PPSE.AsBuffer()},
                                 SmartCardEmulationCategory.Payment,
                                 SmartCardEmulationType.Uicc);
@@ -382,6 +382,3 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 ** Important **  
 The legacy binary SMS intercept support in Windows Phone 8.1 has been removed and replaced with new broader SMS support in Windows 10 Mobile, but any legacy Windows Phone 8.1 apps relying on that must update to use the new Windows 10 Mobile SMS APIs.
-
-
-

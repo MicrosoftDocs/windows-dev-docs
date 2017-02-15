@@ -20,7 +20,7 @@ This section describes how to utilize the [3D print API](https://msdn.microsoft.
 
 For more information on 3D printing with Windows 10, including resources for hardware partners, community discussion forums, and general info on 3D print capabilities, see the [3D printing with Windows 10](https://developer.microsoft.com/windows/hardware/3d-print-support-windows-10) site on the Hardware Dev Center.
 
-| Topic | Description | 
+| Topic | Description |
 |-------|-------------|
 | [3D print from your app](3d-print-from-app.md) | Learn how to add 3D printing functionality to your Universal Windows app. This topic covers how to launch the 3D print dialog after ensuring your 3D model is printable and in the correct format. |
 | [Generate a 3MF package](generate-3mf.md) | Describes the structure of the 3D Manufacturing Format file type and how it can be created and manipulated with the Windows.Graphics.Printing3D API. |
@@ -32,4 +32,3 @@ For more information on 3D printing with Windows 10, including resources for har
 * [UWP 3D printing from Unity sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
  
-

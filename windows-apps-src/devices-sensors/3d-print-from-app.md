@@ -138,7 +138,3 @@ Finally, it is a good practice to de-register your event handlers once your app 
  
 
  
-
-
-
-

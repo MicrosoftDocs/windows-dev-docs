@@ -15,7 +15,7 @@ keywords: windows 10, uwp
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Important APIs **
+**Important APIs**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
@@ -186,4 +186,3 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 * [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-

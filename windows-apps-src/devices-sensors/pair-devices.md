@@ -15,9 +15,9 @@ keywords: windows 10, uwp
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Important APIs **
+**Important APIs**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 Some devices need to be paired before they can be used. The [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace supports three different ways to pair devices.
 
@@ -71,7 +71,3 @@ To download a sample showing how to use the [**Windows.Devices.Enumeration**](ht
  
 
  
-
-
-
-

@@ -14,9 +14,9 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+**Important APIs**
 
--   [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [**PointofService Printer**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
 Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
@@ -38,7 +38,7 @@ The example below shows how to use ESC/POS commands to print in bold and double 
 ```csharp
 // … prior plumbing code removed for brevity
 // this code assumed you've already created a receipt print job (printJob)
-// and also that you've already checked the PosPrinter Capabilities to 
+// and also that you've already checked the PosPrinter Capabilities to
 // verify that the printer supports Bold and DoubleHighDoubleWide print modes
 
 const string ESC = "\u001B";
@@ -58,5 +58,3 @@ printJob.ExecuteAsync();
 ```
 
 For more information on ESC/POS, including available commands, check out the [Epson ESC/POS FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). For details on [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) and all the available functionality, see [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) on MSDN.
-
-

@@ -15,7 +15,7 @@ keywords: windows 10, uwp
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Important APIs **
+**Important APIs**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
@@ -247,10 +247,10 @@ Next prepare print options. As an example, this section will describe how to set
 
 This step creates a new print option, defines a list of values that the option supports, and then adds the option to the print preview UI. The page range option has these settings:
 
-| Option name          | Action | 
+| Option name          | Action |
 |----------------------|--------|
 | **Print all**        | Print all pages in the document. |
-| **Print Selection**  | Print only the content the user selected. | 
+| **Print Selection**  | Print only the content the user selected. |
 | **Print Range**      | Display an edit control into which the user can enter the pages to print. |
  
 First, modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to add the code to get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object.
@@ -394,4 +394,3 @@ When printing a subset of the pages, there are several ways to show the content 
 * [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
