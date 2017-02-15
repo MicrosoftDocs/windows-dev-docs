@@ -1,1 +1,138 @@
----author: TylerMSFTtitle: Handle app suspenddescription: Learn how to save important application data when the system suspends your app.ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0ms.author: twhitneyms.date: 02/08/2017ms.topic: articlems.prod: windowsms.technology: uwpkeywords: windows 10, uwp---# Handle app suspend\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]**Important APIs**- [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event and saves a string to a file.## Important change introduced in Windows 10, version 1607Prior to Windows 10, version 1607, you would put the code to save your state in your suspend handler. Now we recommend that you save your state when you enter the background state, as described in [Windows 10 universal Windows platform app lifecycle ](app-lifecycle.md).## Register the suspending event handlerRegister to handle the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, which indicates that your app should save its application data before the system suspends it.> [!div class="tabbedCodeSnippets"]> ```cs> using System;> using Windows.ApplicationModel;> using Windows.ApplicationModel.Activation;> using Windows.UI.Xaml;>> partial class MainPage> {>    public MainPage()>    {>       InitializeComponent();>       Application.Current.Suspending += new SuspendingEventHandler(App_Suspending);>    }> }> ```> ```vb> Public NotInheritable Class MainPage>>    Public Sub New()>       InitializeComponent()>       AddHandler Application.Current.Suspending, AddressOf App_Suspending>    End Sub>    > End Class> ```> ```cpp> using namespace Windows::ApplicationModel;> using namespace Windows::ApplicationModel::Activation;> using namespace Windows::Foundation;> using namespace Windows::UI::Xaml;> using namespace AppName;>> MainPage::MainPage()> {>    InitializeComponent();>    Application::Current->Suspending +=>        ref new SuspendingEventHandler(this, &MainPage::App_Suspending);> }> ```## Save application data before suspensionWhen your app handles the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously.> [!div class="tabbedCodeSnippets"]> ```cs> partial class MainPage> {>     async void App_Suspending(>         Object sender,>         Windows.ApplicationModel.SuspendingEventArgs e)>     {>         // TODO: This is the time to save app data in case the process is terminated>     }> }> ```> ```vb> Public NonInheritable Class MainPage>>     Private Sub App_Suspending(>         sender As Object,>         e As Windows.ApplicationModel.SuspendingEventArgs) Handles OnSuspendEvent.Suspending>>         ' TODO: This is the time to save app data in case the process is terminated>     End Sub>> End Class> ```> ```cpp> void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)> {>     // TODO: This is the time to save app data in case the process is terminated> }> ```## Release resourcesYou should release exclusive resources and file handles so that other apps can access them while your app is suspended. Examples of exclusive resources include cameras, I/O devices, external devices, and network resources. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app is suspended. When the app is resumed, it should reacquire  its exclusive resources and file handles.## RemarksThe system suspends your app whenever the user switches to another app or to the desktop or Start screen. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](http://aka.ms/Kt66iv) method on the [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) object that is passed to your event handler to delay suspension until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) method on the returned [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object.A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*.> **Note**  To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows or between 1 and 10 seconds on Windows Phone. You cannot extend or alter this timeout window.> **A note about debugging using Visual Studio:**  Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.## Related topics* [App lifecycle](app-lifecycle.md)* [Handle app activation](activate-an-app.md)* [Handle app resume](resume-an-app.md)* [UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)  
+---
+author: TylerMSFT
+title: Handle app suspend
+description: Learn how to save important application data when the system suspends your app.
+ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+---
+
+# Handle app suspend
+
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+**Important APIs**
+
+- [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)
+
+Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event and saves a string to a file.
+
+## Important change introduced in Windows 10, version 1607
+
+Prior to Windows 10, version 1607, you would put the code to save your state in your suspend handler. Now we recommend that you save your state when you enter the background state, as described in [Windows 10 universal Windows platform app lifecycle ](app-lifecycle.md).
+
+## Register the suspending event handler
+
+Register to handle the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, which indicates that your app should save its application data before the system suspends it.
+
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> using System;
+> using Windows.ApplicationModel;
+> using Windows.ApplicationModel.Activation;
+> using Windows.UI.Xaml;
+>
+> partial class MainPage
+> {
+>    public MainPage()
+>    {
+>       InitializeComponent();
+>       Application.Current.Suspending += new SuspendingEventHandler(App_Suspending);
+>    }
+> }
+> ```
+> ```vb
+> Public NotInheritable Class MainPage
+>
+>    Public Sub New()
+>       InitializeComponent()
+>       AddHandler Application.Current.Suspending, AddressOf App_Suspending
+>    End Sub
+>    
+> End Class
+> ```
+> ```cpp
+> using namespace Windows::ApplicationModel;
+> using namespace Windows::ApplicationModel::Activation;
+> using namespace Windows::Foundation;
+> using namespace Windows::UI::Xaml;
+> using namespace AppName;
+>
+> MainPage::MainPage()
+> {
+>    InitializeComponent();
+>    Application::Current->Suspending +=
+>        ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
+> }
+> ```
+
+## Save application data before suspension
+
+When your app handles the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously.
+
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> partial class MainPage
+> {
+>     async void App_Suspending(
+>         Object sender,
+>         Windows.ApplicationModel.SuspendingEventArgs e)
+>     {
+>         // TODO: This is the time to save app data in case the process is terminated
+>     }
+> }
+> ```
+> ```vb
+> Public NonInheritable Class MainPage
+>
+>     Private Sub App_Suspending(
+>         sender As Object,
+>         e As Windows.ApplicationModel.SuspendingEventArgs) Handles OnSuspendEvent.Suspending
+>
+>         ' TODO: This is the time to save app data in case the process is terminated
+>     End Sub
+>
+> End Class
+> ```
+> ```cpp
+> void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
+> {
+>     // TODO: This is the time to save app data in case the process is terminated
+> }
+> ```
+
+## Release resources
+
+You should release exclusive resources and file handles so that other apps can access them while your app is suspended. Examples of exclusive resources include cameras, I/O devices, external devices, and network resources. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app is suspended. When the app is resumed, it should reacquire  its exclusive resources and file handles.
+
+## Remarks
+
+The system suspends your app whenever the user switches to another app or to the desktop or Start screen. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
+
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
+
+The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
+
+If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](http://aka.ms/Kt66iv) method on the [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) object that is passed to your event handler to delay suspension until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) method on the returned [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object.
+
+A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*.
+
+> **Note**  To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows or between 1 and 10 seconds on Windows Phone. You cannot extend or alter this timeout window.
+
+> **A note about debugging using Visual Studio:**  Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.
+
+## Related topics
+
+* [App lifecycle](app-lifecycle.md)
+* [Handle app activation](activate-an-app.md)
+* [Handle app resume](resume-an-app.md)
+* [UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)
+
+
+ 
+
+ 

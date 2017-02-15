@@ -8,6 +8,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 835d5393-427f-4155-a737-d509ea1de99f
 ---
 
 # What's New in Windows

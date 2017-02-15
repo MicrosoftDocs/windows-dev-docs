@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ---
 # Supported UWP APIs for apps converted with the Desktop Bridge
 

@@ -1,4 +1,4 @@
-﻿---
+---
  redirect_url: https://msdn.microsoft.com/windows/uwp/publish/add-on-acquisitions-report
 ---
 

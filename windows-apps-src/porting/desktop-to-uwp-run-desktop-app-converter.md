@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ---
 
 # Desktop App Converter
