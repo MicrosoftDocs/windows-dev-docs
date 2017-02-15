@@ -3,7 +3,7 @@ author: rmpablos
 title: Set up automated builds for your UWP app
 description: How to configure your automate builds to produce sideload and/or store packages.
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ In this article, we’ll look at different ways to do that.  We’ll also show y
 ## Select the right type of build agent
 
 Choose the type of build agent that you want VSTS to use when it executes the build process. 
-A hosted build agent is deployed with the most common tools and sdks, and it will work for most scenarios, see the [Software on the hosted build server](https://www.visualstudio.com/en-us/docs/build/admin/agents/hosted-pool#software) article. However, you can create a custom build agent if you need more control over the build steps. You can use the following table to help you make that decision.
+A hosted build agent is deployed with the most common tools and sdks, and it will work for most scenarios, see the [Software on the hosted build server](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software) article. However, you can create a custom build agent if you need more control over the build steps. You can use the following table to help you make that decision.
 
 |**Scenario**|**Custom Agent**|**Hosted Build Agent**|
 -------------|----------------|----------------------|
@@ -30,13 +30,13 @@ A hosted build agent is deployed with the most common tools and sdks, and it wil
 |Run unit tests|:white_check_mark:||
 |Use incremental builds|:white_check_mark:||
 
->Note: If you plan to target the Windows Anniversary Update SDK (Build 14393) you will need to set up your custom build agent, since the hosted build pool only supports SDK 10586 and 10240. More information to [choose a UWP version](https://msdn.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version)
+>Note: If you plan to target the Windows Anniversary Update SDK (Build 14393) you will need to set up your custom build agent, since the hosted build pool only supports SDK 10586 and 10240. More information to [choose a UWP version](https://msdn.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)
 
 #### Create a custom build agent (optional)
 
 If you choose to create a custom build agent, you’ll need the Universal Windows Platform tools. These tools are part of Visual Studio. You can use the community edition of Visual Studio.
 
-To learn more, see [Deploy an agent on Windows.](https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows) 
+To learn more, see [Deploy an agent on Windows.](https://www.visualstudio.com/docs/build/admin/agents/v2-windows) 
 
 To run UWP unit tests, you’ll have to do these things:
 •	Deploy and start your app. 
@@ -116,7 +116,7 @@ VSTS uses the `$Build.ArtifactStagingDirectory)\AppxPackages` folder that we pre
 Because we’ve set the `UapAppxPackageBuildMode` property to `StoreUpload`, the artifacts folder includes the package that you upload to the store (appxupload) as well as the packages that enable side loading (appxbundle).
 
 
->Note: By default, the VSTS agent maintains the latest appx generated packages. If you want to store only the artifacts of the current build, configure the build to clean the binaries directory. To do that, add a variable named `Build.Clean` and then set it to the value `all`. To learn more, see [Specify the repository.](https://www.visualstudio.com/en-us/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
+>Note: By default, the VSTS agent maintains the latest appx generated packages. If you want to store only the artifacts of the current build, configure the build to clean the binaries directory. To do that, add a variable named `Build.Clean` and then set it to the value `all`. To learn more, see [Specify the repository.](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
 
 #### The types of automated builds
 Next, you’ll use your build definition to create an automated build. 
@@ -330,11 +330,11 @@ If you want to distribute your appx packages from a website such as VSTS or Hock
 
 <span id="certificates-best-practices"/>
 ### Best Practices for Signing Certificates 
-Visual Studio generates a certificate for each project. This makes it difficult to maintain a curated list of valid certificates. If you plan to create several apps, you can create a single certificate to sign all of your apps. Then, each device that trusts your certificate will be able to sideload any of your apps without installing another certificate. To learn more, see [How to create an app package signing certificate.](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)
+Visual Studio generates a certificate for each project. This makes it difficult to maintain a curated list of valid certificates. If you plan to create several apps, you can create a single certificate to sign all of your apps. Then, each device that trusts your certificate will be able to sideload any of your apps without installing another certificate. To learn more, see [How to create an app package signing certificate.](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
 
 
 #### Create a Signing Certificate
-Use the [MakeCert.exe](https://msdn.microsoft.com/en-us/library/windows/desktop/ff548309.aspx)  tool to create a certificate. 
+Use the [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/ff548309.aspx)  tool to create a certificate. 
 The following example, creates a certificate by using the MakeCert.exe tool.
 
 ```
@@ -371,7 +371,7 @@ Register the public key of the certificate in the Trusted People or Trust Root l
 The easiest way to register the certificate is to double-click in the .cer file, and then follow the steps in the wizard to save the certificate in the Local Machine and Trusted People store.
 
 ## Related Topics
-* [Build your .NET app for Windows](https://www.visualstudio.com/en-us/docs/build/get-started/dot-net) 
+* [Build your .NET app for Windows](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [How to create an app package signing certificate](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [How to create an app package signing certificate](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
