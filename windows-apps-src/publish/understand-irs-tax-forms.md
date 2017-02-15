@@ -57,10 +57,10 @@ EIN: \*\*\*\*\*4442<br>
     <td valign="top">None of the above apply.</td>
     <td valign="top">None</td>
   </tr>
-</table>
-
-
-<table>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
   <tr>
      <th>If I'm a United States developer selling paid apps and ... </th>
      <th> I should receive this form</th>
