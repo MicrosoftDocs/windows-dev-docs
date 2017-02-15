@@ -26,7 +26,7 @@ Note that only one Dev Center account can be associated with an Azure AD. Simila
 
 > **Note**   If the users you want to add are not part of your organization’s Azure AD, and you don't want to create new Azure AD accounts for them, you can [invite users by email](#add-and-manage-account-users).
 
-### Associate your Dev Center account with your organization’s existing Azure AD
+## Associate your Dev Center account with your organization’s existing Azure AD
 
 If your organization already uses Azure AD, follow these steps to link your Dev Center account.
 
@@ -36,7 +36,7 @@ If your organization already uses Azure AD, follow these steps to link your Dev 
 4.  Review the organization and domain name for your Azure AD account. To complete the association, click **Confirm**.
 5.  If the association is successful, you will then be ready to add and manage account users on the **Manage users** page of your account as described in the sections below.
 
-### Create a brand new Azure AD to associate with your Dev Center account
+## Create a brand new Azure AD to associate with your Dev Center account
 
 If you need to set up a new Azure AD to link with your Dev Center account, follow these steps.
 
@@ -67,7 +67,7 @@ When managing users, keep the following in mind:
 -   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using [custom permissions](set-custom-permissions-for-account-users.md) to grant the access you'd like.
 -   A user with a certain role (or set of [custom permissions](set-custom-permissions-for-account-users.md)) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
 
-### Roles and permissions
+## Roles and permissions
 
 When adding a user, group, or Azure AD application, you must specify their permissions. You can do this by granting them a **standard role**, or by [customizing their permissions](set-custom-permissions-for-account-users.md).
 
@@ -97,7 +97,7 @@ The table below shows some of the specific features available to each of these r
 
 If none of the standard roles are appropriate, or you wish to limit access to specific apps and/or add-ons, you can grant custom permissions to the user by clicking **Customize permissions**. For more info, see [Set custom permissions for account users](set-custom-permissions-for-account-users.md).
 
-### Add and manage account users
+## Add and manage account users
 
 To identify users that you want to add to your Dev Center account and assign them a role, click **Add users**.
 
@@ -166,7 +166,7 @@ If you've provided a **Password recovery email** when creating the user account,
 
    > **Important**  Be sure to print or copy this info and provide it to the user, as you won't be able to access the temporary password after you leave this page.
 
-### Add and manage groups
+## Add and manage groups
 
 When you add a group from your organization's directory to your Dev Center account, every user who is a member of that group will be able to access it, with the permissions associated with the group's assigned role. Keep in mind that any changes made to groups (including their name or membership) will be reflected in your organization's directory.
 
@@ -201,7 +201,7 @@ You can make changes to group accounts that you've added to your Dev Center acco
 3.  To change the group role, select or deselect the role(s) that you want to apply to the group, or assign customized permissions.
 4.  Click **Save**.
 
-### Add and manage Azure AD applications
+## Add and manage Azure AD applications
 
 You can allow applications or services that are part of your organization's Azure AD to access your Dev Center account.
 
@@ -257,13 +257,13 @@ If your Azure AD application reads and writes data in Microsoft Azure AD, it wil
 
 4.  If you want to create more keys, click **Add another key**.
 
-### View history for account users
+## View history for account users
 
 As an account owner, you can view the detailed browsing history for any additional users you’ve added to the account.
 
 On the **Manage users** page, click the link shown under **Last activity** for the user whose browsing history you’d like to review. You'll be able to view the URLs for all pages that the user visited in the last 30 days.
 
-### Removing users, groups, and Azure AD applications
+## Removing users, groups, and Azure AD applications
 
 To remove a user, group, or Azure AD application from your Dev Center account, click the **Remove** link that appears by their name on the **Manage users** page. After confirming that you want to remove it, that user, group, or Azure AD application will no longer be able to access to your Dev Center account (unless you add it again later).
 
