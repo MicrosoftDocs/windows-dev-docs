@@ -107,6 +107,7 @@ Often apps offer an embedded view where video is played within a page. Now you o
 Don’t draw XAML elements on top of video when it’s in embedded mode. If you do, the framework is forced to do a little extra work to compose the scene. Placing transport controls below an embedded media element instead of on top of the video is a good example of optimizing for this situation. In this image, the red bar indicates a set of transport controls (play, pause, stop, etc.).
 
 ![MediaPlayerElement with overlaying elements](images/videowithoverlay.png)
+
 Don’t place these controls on top of media that is not full screen. Instead place the transport controls somewhere outside of the area where the media is being rendered. In the next image, the controls are placed below the media.
 
 ![MediaPlayerElement with neighboring elements](images/videowithneighbors.png)
@@ -150,7 +151,7 @@ Images are captured at very high resolutions, which can lead to apps using more 
 Don't do this:
 
 ```xaml
-<Image Source="ms-appx:///Assets/highresCar.jpg" 
+<Image Source="ms-appx:///Assets/highresCar.jpg"
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
@@ -159,7 +160,7 @@ Instead, do this:
 ```xaml
 <Image>
     <Image.Source>
-    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg" 
+    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg"
                  DecodePixelWidth="300" DecodePixelHeight="200"/>
     </Image.Source>
 </Image>
@@ -269,14 +270,14 @@ One use case for scaling images is creating thumbnails. Although you could use [
 > picker.FileTypeFilter.Add(".jpeg");
 > picker.FileTypeFilter.Add(".png");
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-> 
+>
 > StorageFile file = await picker.PickSingleFileAsync();
-> 
+>
 > StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
-> 
+>
 > BitmapImage bmp = new BitmapImage();
 > bmp.SetSource(fileThumbnail);
-> 
+>
 > Image img = new Image();
 > img.Source = bmp;
 > ```
@@ -287,14 +288,14 @@ One use case for scaling images is creating thumbnails. Although you could use [
 > picker.FileTypeFilter.Add(".jpeg")
 > picker.FileTypeFilter.Add(".png")
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
-> 
+>
 > Dim file As StorageFile = Await picker.PickSingleFileAsync()
-> 
+>
 > Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
-> 
+>
 > Dim bmp As New BitmapImage()
 > bmp.SetSource(fileThumbnail)
-> 
+>
 > Dim img As New Image()
 > img.Source = bmp
 > ```
@@ -302,4 +303,3 @@ One use case for scaling images is creating thumbnails. Although you could use [
 ### Decode images once
 
 To prevent images from being decoded more than once, assign the [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) property from an Uri rather than using memory streams. The XAML framework can associate the same Uri in multiple places with one decoded image, but it cannot do the same for multiple memory streams that contain the same data and creates a different decoded image for each memory stream.
-
