@@ -15,9 +15,6 @@ ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
 
 This topic is intended to be a simple high-level introduction to the Xbox multi-user model.
 
-> [!NOTE]
-> Multi-user applications are currently not enabled. 
-
 The Xbox One user model is tuned to the requirements of a gaming console that supports multiple users playing games cooperatively on a single device. 
 It enables multiple users, each with their own controller, to be signed in and using the console at the same time in a single interactive session. 
 This is different from other Windows devices. For example:
