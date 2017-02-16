@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
-title: Using the Windows.ApplicationModel.Store namespace
+title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: uwp, in-app purchases, IAPs, add-ons, trials, Windows.ApplicationModel.Store
 ---
 
-# Using the Windows.ApplicationModel.Store namespace
+# In-app purchases and trials using the Windows.ApplicationModel.Store namespace
 
 You can use members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
 

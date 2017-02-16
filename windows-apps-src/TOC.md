@@ -652,7 +652,7 @@
 #### [Manage your experiment in the dashboard](monetize/manage-your-experiment.md)
 #### [Create and run your first experiment](monetize/create-and-run-your-first-experiment-with-a-b-testing.md)
 ### [Launch Feedback Hub from your app](monetize/launch-feedback-hub-from-your-app.md)
-### [Configure your app for targeted notifications](monetize/configure-your-app-to-receive-dev-center-notifications.md)
+### [Configure your app for targeted push notifications](monetize/configure-your-app-to-receive-dev-center-notifications.md)
 ### [Log custom events for Dev Center](monetize/log-custom-events-for-dev-center.md)
 ### [Display ads in your app](monetize/display-ads-in-your-app.md)
 #### [Get started](monetize/get-started-with-microsoft-advertising-libraries.md)
