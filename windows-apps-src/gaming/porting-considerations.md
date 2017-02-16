@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
+title: Moving from DirectX 9 to DirectX 11 and UWP
 description: This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ms.author: mtoepke

@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: Create a simple Universal Windows Platform (UWP) game with DirectX
+title: Create a DirectX Universal Windows Platform (UWP) game
 description: In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++.
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords:
