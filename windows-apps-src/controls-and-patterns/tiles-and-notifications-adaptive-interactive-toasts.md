@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 ---
 # Adaptive and interactive toast notifications
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 
@@ -114,7 +114,30 @@ ToastContent content = new ToastContent()
 };
 ```
 
-And a visual representation of the structure:
+Next we need to convert the toast into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. If you defined the toast in an XML file (here named "content.xml"), use this code:
+
+```CSharp
+string xmlText = File.ReadAllText("content.xml");
+XmlDocument xmlContent = new XmlDocument();
+xmlContent.LoadXml(xmlText);
+```
+
+Or, if you defined the toast template in C#, use this:
+
+```CSharp
+XmlDocument xmlContent = content.GetXml();
+```
+
+Regardless of how you create the XMLDocument, you can then use this code to create and send the toast:
+
+```CSharp
+ToastNotification notification = new ToastNotification(xmlContent);
+ToastNotificationManager.CreateToastNotifier().Show(notification);
+```
+
+To see a complete app that shows toast notifications in action, see the [Quickstart on Sending a local toast notifications](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10).
+
+Here is a visual representation of the structure:
 
 ![toast notification structure](images/adaptivetoasts-structure.jpg)
 
@@ -125,7 +148,7 @@ Inside the visual element, you must have exactly one binding element that contai
 Tile notifications in Universal Windows Platform (UWP) apps support multiple templates that are based on different tile sizes. Toast notifications, however, have only one template name: **ToastGeneric**. Having just the one template name means:
 
 -   You can change the toast content, such as adding another line of text, adding an inline image, or changing the thumbnail image from displaying the app icon to something else, and do any of these things without worrying about changing the entire template or creating an invalid payload due to a mismatch between the template name and the content.
--   You can use the same code to construct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
+-   You can use the same code to cons truct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
 
 For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
 
@@ -245,9 +268,9 @@ ToastContent content = new ToastContent()
 
  
 
-**Notification with actions, example 1**
+**Notification with actions**
 
-This example shows...
+This example creates a notification with two possible response actions.
 
 ```XML
 <toast launch="app-defined-string">
@@ -305,73 +328,11 @@ ToastContent content = new ToastContent()
 
 ![notification with actions, example 1](images/adaptivetoasts-xmlsample02.jpg)
 
- 
 
-**Notification with actions, example 2**
-
-This example shows...
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Restaurant suggestion...</text>
-      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
-    </binding>
-  </visual>
-  <actions>
-    <action activationType="foreground" content="Reviews" arguments="reviews" />
-    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
-  </actions>
-</toast>
-```
-
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Restaurant suggestion..."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("Reviews", "reviews"),
- 
-            new ToastButton("Show map", "bingmaps:?q=sushi")
-            {
-                ActivationType = ToastActivationType.Protocol
-            }
-        }
-    }
-};
-```
-
-![notification with actions, example 2](images/adaptivetoasts-xmlsample03.jpg)
-
- 
 
 **Notification with text input and actions, example 1**
 
-This example shows...
+This example creates a notification that accepts text input, along with two resonse actions.
 
 ```XML
 <toast launch="developer-defined-string">
@@ -452,7 +413,7 @@ ToastContent content = new ToastContent()
 
 **Notification with text input and actions, example 2**
 
-This example shows...
+This example creates a notification that accepts text input and a single action.
 
 ```XML
 <toast launch="developer-defined-string">
@@ -529,7 +490,7 @@ ToastContent content = new ToastContent()
 
 **Notification with selection input and actions**
 
-This example shows...
+This example creates a notification with a drop-down selection menu, and two possible actions.
 
 ```XML
 <toast launch="developer-defined-string">
@@ -613,7 +574,7 @@ ToastContent content = new ToastContent()
 
 **Reminder notification**
 
-This example shows...
+Using a selection menu and two actions as in the previous example, we can create a reminder notification:
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
