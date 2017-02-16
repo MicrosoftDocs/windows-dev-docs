@@ -61,11 +61,11 @@ If you're ready to enlighten your app, see one of these guides:
 
 **For Universal Windows Platform (UWP) apps that you build by using C#**
 
-[Build an enlightened app that consumes both enterprise and personal data](wip-dev-guide.md).
+[Windows Information Protection (WIP) developer guide](wip-dev-guide.md).
 
 **For Desktop apps that you build by using C++**
 
-[Build an enlightened app that consumes both enterprise and personal data (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
+[Windows Information Protection (WIP) developer guide (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
 
 
 ## Create non-enlightened enterprise app
