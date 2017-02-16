@@ -600,7 +600,7 @@ Universal Windows Platform Bridges are technologies that bring your existing app
 
 Unity 5 is the next generation of the award-winning development platform for creating 2D and 3D games and interactive experiences. Unity 5 brings new artistic power, enhanced graphics capabilities, and improved efficiency.
 
-On the [Unity roadmap](https://unity3d.com/unity/roadmap), support for DirectX 12 will be coming in a future version of Unity.
+Beginning with Unity 5.4, Unity supports Direct3D 12 development.
 
 <table>
     <colgroup>

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Hosted Web Apps, port web apps to Windows 10, convert website to Windows, packaging web apps for Windows Store
+ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
 ---
 
 # Convert your web application to a Universal Windows Platform (UWP) app

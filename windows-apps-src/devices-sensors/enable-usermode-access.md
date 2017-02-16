@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ---
 # Enable usermode access on Windows 10 IoT Core
 

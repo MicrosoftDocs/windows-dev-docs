@@ -1,4 +1,4 @@
-﻿---
+---
  redirect_url: https://msdn.microsoft.com/windows/uwp/publish/create-app-store-listings
 ---
 

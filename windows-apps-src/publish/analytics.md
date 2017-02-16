@@ -38,7 +38,7 @@ In this section you'll find details about the info presented in each of the foll
 -   [Ad mediation report](ad-mediation-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
 -   [Affiliates performance report](affiliates-performance-report.md)
--   [App install ads report](app-install-ads-reports.md)
+-   [Promote your app report](promote-your-app-report.md)
 
 > [!NOTE]
 > You may not see data in all of these reports, depending on your app's specific features and implementation.

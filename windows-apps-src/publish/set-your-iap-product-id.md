@@ -1,4 +1,4 @@
-﻿---
+---
  redirect_url: https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id
 ---
 

@@ -8,6 +8,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ---
 
 # What's New in Windows version 1511

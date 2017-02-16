@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, app, installs, installation, report, analytics
+ms.assetid: 46c08fd2-00bd-4be5-b29f-01a3b5fea4c2
 ---
 
 # Installs report

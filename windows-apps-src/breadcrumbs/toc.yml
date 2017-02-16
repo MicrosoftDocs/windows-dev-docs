@@ -1,0 +1,12 @@
+- name: Docs
+  tocHref: /
+  topicHref: /
+  items:
+  - name: Windows
+    tocHref: /windows/
+    topicHref: /windows/
+    items:
+      - name: UWP
+        tocHref: /windows/uwp/
+        topicHref: "https://developer.microsoft.com/windows/apps"  
+
