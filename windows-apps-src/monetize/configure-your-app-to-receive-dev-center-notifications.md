@@ -52,15 +52,22 @@ To register your app to receive targeted push notifications from Dev Center:
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
 
-  >#### Understanding how your app responds when the user launches your app
+<span id="notification-customers" />
+### Understanding how targeted push notifications are routed to customers
 
-  >After your app is registered to receive notifications and you [send a push notification to your app's customers from Dev Center](../publish/send-push-notifications-to-your-apps-customers.md), one of the following entry points in your app will be called when the user launches your app in response to your push notification. If you have some code that you want to run when the user launches your app, you can add the code to one of these entry points in your app.
+When your app calls **RegisterNotificationChannelAsync**, this method collects the Microsoft account of the customer who is currently signed in to the device. Later, when you send a targeted push notification to a segment that includes this customer, Dev Center sends the notification to devices that are associated with this customer's Microsoft account.
 
-  >* If the push notification has a foreground activation type, override the [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) method of the **App** class in your project and add your code to this method.
+If the customer who started your app gives their device to someone else to use while they are still signed in to the device with their Microsoft account, be aware that the other person may see the notification that was targeted at the original customer. This can have unintended consequences, particularly for apps that offer services that customers can sign in to use. To prevent other users from seeing your targeted notifications in this scenario, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method when customers sign out of your app. For more information, see [Unregister for push notifications](#unregister) later in this article.
 
-  >* If the push notification has a background activation type, add your code to the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method for your [background task](../launch-resume/support-your-app-with-background-tasks.md).
+### Understanding how your app responds when the user launches your app
 
-  >For example, you might want to reward the users of your app that have purchased any paid add-ons in your app by granting them a free add-on. In this case, you can send a push notification to a [customer segment](../publish/create-customer-segments.md) that targets these users. Then, you can add code to grant them a free [in-app purchase](in-app-purchases-and-trials.md) in one of the entry points listed above.
+After your app is registered to receive notifications and you [send a push notification to your app's customers from Dev Center](../publish/send-push-notifications-to-your-apps-customers.md), one of the following entry points in your app will be called when the user launches your app in response to your push notification. If you have some code that you want to run when the user launches your app, you can add the code to one of these entry points in your app.
+
+  * If the push notification has a foreground activation type, override the [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) method of the **App** class in your project and add your code to this method.
+
+  * If the push notification has a background activation type, add your code to the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method for your [background task](../launch-resume/support-your-app-with-background-tasks.md).
+
+For example, you might want to reward the users of your app that have purchased any paid add-ons in your app by granting them a free add-on. In this case, you can send a push notification to a [customer segment](../publish/create-customer-segments.md) that targets these users. Then, you can add code to grant them a free [in-app purchase](in-app-purchases-and-trials.md) in one of the entry points listed above.
 
 ## Notify Dev Center of your app launch
 
@@ -80,6 +87,7 @@ The way you call this method depends on the activation type of the targeted push
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
 
+<span id="unregister" />
 ## Unregister for push notifications
 
 If you want your app to stop receiving targeted Windows Dev Center push notifications, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method.
