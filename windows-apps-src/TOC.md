@@ -210,6 +210,7 @@
 ##### [Legacy background media playback](audio-video-camera/legacy-background-media-playback.md)
 #### [Adaptive streaming](audio-video-camera/adaptive-streaming.md)
 ##### [HLS tag support](audio-video-camera/hls-tag-support.md)
+##### [DASH profile support](audio-video-camera/dash-profile-support.md)
 #### [Media casting](audio-video-camera/media-casting.md)
 #### [PlayReady DRM](audio-video-camera/playready-client-sdk.md)
 ##### [Hardware DRM](audio-video-camera/hardware-drm.md)
