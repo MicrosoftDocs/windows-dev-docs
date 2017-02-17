@@ -227,8 +227,8 @@ Developer forums are a great place to ask and answer game development questions 
         <td>[XBOX Developer Forums: Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX early access program forums</td>
-        <td>[DirectX 12 forum](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>DirectX forums</td>
+        <td>[DirectX 12 forum](http://forums.directxtech.com/index.php)</td>
     </tr>
 </table>
 
