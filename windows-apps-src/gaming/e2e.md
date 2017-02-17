@@ -207,16 +207,16 @@ Developer forums are a great place to ask and answer game development questions 
     </colgroup>
     <tr>
         <td>Windows apps developer forums</td>
-        <td>[Windows store and apps forums](https://social.msdn.microsoft.com/Forums/home?category=windowsapps)</td>
+        <td>[Windows store and apps forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps)</td>
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
-        <td>[Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
+        <td>[Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop)</td>
     </tr>
 
     <tr>
         <td>Desktop applications developer forums</td>
-        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
         <td>DirectX Windows Store games (archived forum posts)</td>
