@@ -5,7 +5,7 @@
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp",
   "git_repository_branch_open_to_public_contributors": "docs",
   "branch_target_mapping": {
-    "docs": [
+    "live": [
       "Publish",
       "Pdf"
     ]
