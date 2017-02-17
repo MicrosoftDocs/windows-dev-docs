@@ -31,7 +31,7 @@ Before you write any code, follow these steps to add a reference to the Microsof
 
 To register your app to receive targeted push notifications from Dev Center:
 
-1. In your project, locate a section of code that runs during startup in which you can register your app to receive Dev Center notifications.
+1. In your project, locate a section of code that runs during startup in which you can register your app to receive notifications.
 2. Add the following statement to the top of the code file.
 
   > [!div class="tabbedCodeSnippets"]
@@ -71,11 +71,11 @@ For example, you might want to reward the users of your app that have purchased 
 
 ## Notify Dev Center of your app launch
 
-If you select the **Track app launch rate** option for a Dev Center push notification, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method from the appropriate entry point in your app to notify Dev Center that your app was launched in response to a push notification.
+If you select the **Track app launch rate** option for your targeted push notification in Dev Center, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method from the appropriate entry point in your app to notify Dev Center that your app was launched in response to a push notification.
 
-This method also returns the original launch arguments for your app. After you choose to track the app launch rate for a Dev Center push notification, an opaque tracking ID is added to the launch arguments to help track the app launch in Dev Center. You must pass the launch arguments for your app to the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method, and this method sends the tracking ID to Dev Center, removes the tracking ID from the launch arguments, and returns the original launch arguments to your code.
+This method also returns the original launch arguments for your app. When you choose to track the app launch rate for your push notification, an opaque tracking ID is added to the launch arguments to help track the app launch in Dev Center. You must pass the launch arguments for your app to the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method, and this method sends the tracking ID to Dev Center, removes the tracking ID from the launch arguments, and returns the original launch arguments to your code.
 
-The way you call this method depends on the activation type of the targeted push notification:
+The way you call this method depends on the activation type of the push notification:
 
 * If the push notification has a foreground activation type, call this method from the [OnActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx) method override in your app and pass the arguments that are available in the [ToastNotificationActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.toastnotificationactivatedeventargs.aspx) object that is passed to this method. The following code example assumes that your code file has **using** statements for the **Microsoft.Services.Store.Engagement** and  **Windows.ApplicationModel.Activation** namespaces.
 
@@ -90,12 +90,12 @@ The way you call this method depends on the activation type of the targeted push
 <span id="unregister" />
 ## Unregister for push notifications
 
-If you want your app to stop receiving targeted Windows Dev Center push notifications, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method.
+If you want your app to stop receiving targeted push notifications from Dev Center, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
 
-Note that this method invalidates the channel that is being used for notifications so the app no longer receives push notifications from *any* services. After it has been closed, the channel can never be used again for any services, including targeted Windows Dev Center push notifications and other notifications using WNS. To resume sending push notifications to this app, the app must request a new channel.
+Note that this method invalidates the channel that is being used for notifications so the app no longer receives push notifications from *any* services. After it has been closed, the channel cannot be used again for any services, including targeted push notifications from Dev Center and other notifications using WNS. To resume sending push notifications to this app, the app must request a new channel.
 
 ## Related topics
 
