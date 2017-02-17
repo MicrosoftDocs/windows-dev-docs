@@ -24,7 +24,7 @@ When considering the content of your notifications, keep in mind:
 - Your notification content should not include confidential or potentially sensitive info. 
 - While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery. 
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).
-- Be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) later gives their device to someone to use, the other person may see the notification that was targeted at the original customer. (For more info, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers)
+- Be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) later gives their device to someone to use, the other person may see the notification that was targeted at the original customer. For more info, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers).
 
 ## Getting started with push notifications
 
@@ -56,7 +56,7 @@ If you haven’t created a segment yet, select **Create new customer group**. No
    - **Base URI** (interactive toast type). For more details, see [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712).
    - **Add image query** (interactive toast type). For more details, see [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847).
    - **Visual**. An image, video, or sound. For more details, see [visual](https://msdn.microsoft.com/library/windows/apps/br230847).
-   - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md#actions)
+   - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md#actions).
    - **Binding** (interactive tile type). The toast template. For more details, see [binding](https://msdn.microsoft.com/library/windows/apps/br230843).
 
    > **Tip**  Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
