@@ -254,7 +254,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     String s = e.NewValue as String; //null checks omitted
     if (s == String.Empty)
     {
-        iwlc.HasLabelValue = false;s
+        iwlc.HasLabelValue = false;
     } else {
         iwlc.HasLabelValue = true;
     }
