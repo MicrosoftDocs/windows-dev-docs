@@ -10,7 +10,6 @@ keywords: windows 10, uwp
 ms.assetid:
 
 # Barcode Scanner
-<!-- ADD LINK -->
 Enables application developers to access barcode scanners to retrieve decoded data from a variety of barcode symbologies such as UPC and QR Codes depending on support from the hardware. See the [BarcodeSymbologies](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodesymbologies) class for a full list of supported symbologies.
 
 This topic covers the following:
@@ -24,7 +23,6 @@ The barcode scanner device type has these types of members:
 +	Enumerations
 
 ### Classes
-<!-- ADD LINKS -->
 | Class | Description |
 |-------|-------------|
 | [BarcodeScanner](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescanner) | Represents the barcode scanner device.
