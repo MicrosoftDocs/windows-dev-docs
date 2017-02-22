@@ -48,7 +48,7 @@ To declare a startup task, add the following to your app's manifest:
 - *Extension Category* should always have the value "windows.startupTask ".
 - *Extension Executable* is the relative path to the .exe to start.
 - *Extension EntryPoint* should always have the value "Windows.FullTrustApplication".
-- *StartupTask TaskId* is a unique identifier for your task. Using this identifier, your app can call the APIs in the **Windows.ApplicationModel.StartupTask** class to programmatically enable or disable a startup task.
+- *StartupTask TaskId* is a unique identifier for your task. Using this identifier, your app can call the APIs in the [**Windows.ApplicationModel.StartupTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task.
 - *StartupTask Enabled* indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). 
 - *StartupTask DisplayName* is the name of the task that appears in Task Manager. This string is localizable using ```ms-resource```. 
 

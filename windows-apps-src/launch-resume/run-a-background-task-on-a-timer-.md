@@ -41,13 +41,13 @@ Learn how to schedule a one-time background task, or run a periodic background t
 
     For example, this trigger will cause a background task to run once an hour:
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-    > ```
-    > ```cpp
-    > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
+> ```
+> ```cpp
+> TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
+> ```
 
 ## (Optional) Add a condition
 
@@ -55,25 +55,25 @@ Learn how to schedule a one-time background task, or run a periodic background t
 
     In this example the condition is set to **UserPresent** so that, once triggered, the task only runs once the user is active. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
-    > ```
-    > ```cpp
-    > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
+> ```
+> ```cpp
+> SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
+> ```
 
 ##  Call RequestAccessAsync()
 
 -   Before trying to register the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > BackgroundExecutionManager.RequestAccessAsync();
-    > ```
-    > ```cpp
-    > BackgroundExecutionManager::RequestAccessAsync();
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> BackgroundExecutionManager.RequestAccessAsync();
+> ```
+> ```cpp
+> BackgroundExecutionManager::RequestAccessAsync();
+> ```
 
 ## Register the background task
 
@@ -85,21 +85,21 @@ Learn how to schedule a one-time background task, or run a periodic background t
 
     The following code registers a background task that runs out-of-process:
 
-    > > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > string taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
-    > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > String ^ taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> string taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
+> ```cpp
+> String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> String ^ taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
 
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
 
 ## Remarks
