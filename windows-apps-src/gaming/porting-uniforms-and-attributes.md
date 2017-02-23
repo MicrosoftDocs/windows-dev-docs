@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
+title: Port OpenGL ES 2.0 buffers, uniforms, vertexes to Direct3D
 description: During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke

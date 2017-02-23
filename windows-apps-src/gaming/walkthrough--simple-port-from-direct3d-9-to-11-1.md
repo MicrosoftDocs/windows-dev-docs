@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: Walkthrough-- Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
+title: Walkthrough-- Porting Direct3D 9 to DirectX 11 and UWP
 description: This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.author: mtoepke

@@ -1,1 +1,33 @@
----title: Diffuse light mapsdescription: Matte surfaces have diffuse light reflection.ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541keywords:- Diffuse light mapsauthor: PeterTurcanms.author: petturms.date: 02/08/2017ms.topic: articlems.prod: windowsms.technology: uwp---# Diffuse light mapsMatte surfaces have diffuse light reflection. The brightness of diffuse light depends on the distance from the light source and the angle between the surface normal and the light source direction vector. Texture light maps can simulate complex diffuse lighting.The diffuse lighting effects simulated by lighting calculations produce only general effects. Your application can simulate more complex diffuse lighting with texture light maps.## <span id="related-topics"></span>Related topics[Light mapping with textures](light-mapping-with-textures.md)  
+---
+title: Diffuse light maps
+description: Matte surfaces have diffuse light reflection.
+ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541
+keywords:
+- Diffuse light maps
+author: PeterTurcan
+ms.author: pettur
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+---
+
+# Diffuse light maps
+
+
+Matte surfaces have diffuse light reflection. The brightness of diffuse light depends on the distance from the light source and the angle between the surface normal and the light source direction vector. Texture light maps can simulate complex diffuse lighting.
+
+The diffuse lighting effects simulated by lighting calculations produce only general effects. Your application can simulate more complex diffuse lighting with texture light maps.
+
+## <span id="related-topics"></span>Related topics
+
+
+[Light mapping with textures](light-mapping-with-textures.md)
+
+ 
+
+ 
+
+
+
+

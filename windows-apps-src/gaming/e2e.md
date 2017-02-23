@@ -207,16 +207,16 @@ Developer forums are a great place to ask and answer game development questions 
     </colgroup>
     <tr>
         <td>Windows apps developer forums</td>
-        <td>[Windows store and apps forums](https://social.msdn.microsoft.com/Forums/home?category=windowsapps)</td>
+        <td>[Windows store and apps forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps)</td>
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
-        <td>[Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
+        <td>[Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop)</td>
     </tr>
 
     <tr>
         <td>Desktop applications developer forums</td>
-        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
         <td>DirectX Windows Store games (archived forum posts)</td>
@@ -227,8 +227,8 @@ Developer forums are a great place to ask and answer game development questions 
         <td>[XBOX Developer Forums: Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX early access program forums</td>
-        <td>[DirectX 12 forum](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>DirectX forums</td>
+        <td>[DirectX 12 forum](http://forums.directxtech.com/index.php)</td>
     </tr>
 </table>
 
@@ -600,7 +600,7 @@ Universal Windows Platform Bridges are technologies that bring your existing app
 
 Unity 5 is the next generation of the award-winning development platform for creating 2D and 3D games and interactive experiences. Unity 5 brings new artistic power, enhanced graphics capabilities, and improved efficiency.
 
-On the [Unity roadmap](https://unity3d.com/unity/roadmap), support for DirectX 12 will be coming in a future version of Unity.
+Beginning with Unity 5.4, Unity supports Direct3D 12 development.
 
 <table>
     <colgroup>
