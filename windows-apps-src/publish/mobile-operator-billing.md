@@ -68,7 +68,7 @@ The legacy implementation of Mobile Operator Billing is supported by these mobil
 | Indonesia            | Indosat, Telkomsel, Hutchinson CP Telecommunications (HCPT)        |
 | Ireland              | O2, Vodafone, Three                                                |
 | Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
-| Mexico               | Iusacell, Telcel, Movistar                                         |
+| Mexico               | Telcel, Movistar                                         |
 | Netherlands          | T-Mobile, Vodafone                                                 |
 | Poland               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
 | Romania              | Orange, Vodafone                                                   |

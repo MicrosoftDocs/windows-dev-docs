@@ -3,7 +3,7 @@ Description: Here’s the info you need to create a Universal Windows app that c
 title: How-to guides for Windows 10 apps - Windows app development
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
-redirect_url: https://developer.microsoft.com/en-us/windows/develop
+redirect_url: https://developer.microsoft.com/en-us/windows/apps
 ---
 
 
