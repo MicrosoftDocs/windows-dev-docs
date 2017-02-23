@@ -583,6 +583,7 @@
 #### [Composition brushes](graphics/composition-brushes.md)
 #### [Composition native DX and D2D interoperation with BeginDraw and EndDraw](graphics/composition-native-interop.md)
 #### [Using XAML](graphics/using-the-visual-layer-with-xaml.md)
+## [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
 ## [Launching, resuming, and background tasks](launch-resume/index.md)
 ### [App lifecycle](launch-resume/app-lifecycle.md)
 #### [Handle app prelaunch](launch-resume/handle-app-prelaunch.md)
