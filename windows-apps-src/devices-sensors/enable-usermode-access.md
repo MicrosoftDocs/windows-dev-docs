@@ -706,9 +706,9 @@ Simple command line tools for Gpio, I2c, Spi, and Serial are available on the ms
 
 | Tool | Link |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool	| https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |	https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/gpiotesttool |
+| I2cTestTool	| https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |	https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (Serial) |	https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## Resources
@@ -726,9 +726,9 @@ Simple command line tools for Gpio, I2c, Spi, and Serial are available on the ms
 | GpioClx	| https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C Tests | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool	| https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |	https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/GPIOTestTool |
+| I2cTestTool	| https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |	https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (Serial) |	https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -736,7 +736,7 @@ Simple command line tools for Gpio, I2c, Spi, and Serial are available on the ms
 
 ### Appendix A - Raspberry Pi ASL Listing
 
-Header pinout: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
+Header pinout: https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -898,7 +898,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### Appendix B - MinnowBoardMax ASL Listing
 
-Header pinout: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
+Header pinout: https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
