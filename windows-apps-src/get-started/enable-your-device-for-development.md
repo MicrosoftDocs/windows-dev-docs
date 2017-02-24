@@ -43,7 +43,8 @@ You can enable a device for development, or just for sideloading.
     - Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
     - (Desktop only) Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
 
-For more detailed info about the options, see [Which settings should I choose: sideload apps or developer mode?](https://msdn.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#which-settings-should-i-choose-sideload-apps-or-developer-mode)
+For detailed info about the options, see the section **Which settings should I choose: sideload apps or developer mode?** below. 
+
 
 **To use developer features**
 
