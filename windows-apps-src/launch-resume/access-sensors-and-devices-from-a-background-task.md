@@ -118,9 +118,7 @@ This table indicates which task initiation policies apply to a Universal Windows
 | The device is accessible to the app using the supported device peripheral APIs (the Windows Runtime APIs for USB, HID, Bluetooth, Sensors, and so on). If your app can't access the device or sensor, access to the background task is denied. | ![policy applies](images/ap-tools.png) |
 | Background task entry point provided by the app is registered in the app package manifest. | ![policy applies](images/ap-tools.png) |
 | Only one [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) background task is running per app. | ![policy applies](images/ap-tools.png) |
-| The maximum number of [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) background tasks has not yet been reached on the device (on which your app is running). | desktop device family: An unlimited number of tasks can be registered and run in parallel. |
-|  |  |
-|  | mobile device family: 1 task on a 512 MB device; otherwise, 2 tasks can be registered and run in parallel. |
+| The maximum number of [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) background tasks has not yet been reached on the device (on which your app is running). | **Desktop device family**: An unlimited number of tasks can be registered and run in parallel. **Mobile device family**: 1 task on a 512 MB device; otherwise, 2 tasks can be registered and run in parallel. |
 | The maximum number of peripheral devices or sensors that your app can access from a single [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) background task, when using the supported APIs/protocols. | unlimited |
 | Your background task consumes 400ms of CPU time (assuming a 1GHz CPU) every minute when the screen is locked, or every 5 minutes when the screen is not locked. Failure to meet this policy can result in cancellation of your task. | ![policy applies](images/ap-tools.png) |
  
