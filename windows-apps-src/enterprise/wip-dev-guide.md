@@ -39,15 +39,15 @@ You'll need these:
 
 You'll do these things:
 
-* [Install the WIP Setup Developer Assistant onto your test VM](#install-assistant).
+* [Install the WIP Setup Developer Assistant onto your test VM](#install-assistant)
 
-* [Create a protection policy by using the WIP Setup Developer Assistant](#create-protection-policy).
+* [Create a protection policy by using the WIP Setup Developer Assistant](#create-protection-policy)
 
-* [Setup a Visual Studio project](#setup-vs-project).
+* [Setup a Visual Studio project](#setup-vs-project)
 
-* [Setup remote debugging](#setup-remote-debugging).
+* [Setup remote debugging](#setup-remote-debugging)
 
-* [Add namespaces to your code files](#add-namespaces).
+* [Add namespaces to your code files](#add-namespaces)
 
 <span id="install-assistant" />
 ### Install the WIP Setup Developer Assistant onto your test VM
@@ -142,10 +142,10 @@ Windows Information Protection gives your app permission if your app is on the p
 
 **In this section:**
 
-* [Read data from a file](#read-file).
-* [Read data from a network endpoint](#read-network).
-* [Read data from the clipboard](#read-clipboard).
-* [Read data from a Share contract](#read-contract).
+* [Read data from a file](#read-file)
+* [Read data from a network endpoint](#read-network)
+* [Read data from the clipboard](#read-clipboard)
+* [Read data from a Share contract](#read-contract)
 
 <span id="read-file" />
 ### Read data from a file
@@ -495,15 +495,15 @@ Protect enterprise data that leaves your app. Data leaves your app when you show
 
 **In this section:**
 
-* [Protect data that appears in pages](#protect-pages).
-* [Protect data to a file as a background process](#protect-background).
-* [Protect part of a file](#protect-part-file).
-* [Read the protected part of a file](#read-protected).
-* [Protect data to a folder](#protect-folder).
-* [Protect data to a network end point](#protect-network).
-* [Protect data that your app shares through a share contract](#protect-share).
-* [Protect files that you copy to another location](#protect-other-location).
-* [Protect enterprise data when the screen of the device is locked](#protect-locked).
+* [Protect data that appears in pages](#protect-pages)
+* [Protect data to a file as a background process](#protect-background)
+* [Protect part of a file](#protect-part-file)
+* [Read the protected part of a file](#read-protected)
+* [Protect data to a folder](#protect-folder)
+* [Protect data to a network end point](#protect-network)
+* [Protect data that your app shares through a share contract](#protect-share)
+* [Protect files that you copy to another location](#protect-other-location)
+* [Protect enterprise data when the screen of the device is locked](#protect-locked)
 
 <span id="protect-pages" />
 ### Protect data that appears in pages
