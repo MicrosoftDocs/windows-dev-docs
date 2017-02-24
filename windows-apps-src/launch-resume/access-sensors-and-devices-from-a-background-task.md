@@ -133,9 +133,7 @@ This table indicates which runtime policies apply to a Universal Windows app.
 | The device is attached to the system (or in range for a wireless device). | ![policy check applies](images/ap-tools.png) |
 | Task is performing regular I/O to the device (1 I/O every 5 seconds). | ![policy check applies](images/ap-tools.png) |
 | App has not canceled the task. | ![policy check applies](images/ap-tools.png) |
-| Wall-clock time limit – the total amount of time your app’s task can run in the background. | desktop device family: 10 minutes. |
-|  |  |
-|  | mobile device family: No time limit. To conserve resources, no more than 1 or 2 tasks can execute at once. |
+| Wall-clock time limit – the total amount of time your app’s task can run in the background. | **Desktop device family**: 10 minutes. **Mobile device family**: No time limit. To conserve resources, no more than 1 or 2 tasks can execute at once. |
 | App has not exited. | ![policy check applies](images/ap-tools.png) |
 
 ## Best practices
