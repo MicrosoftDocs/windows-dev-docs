@@ -21,7 +21,7 @@ keywords: windows 10, uwp
 Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
 
 ## Debugging out-of-process vs. in-process background tasks
-This topic primarily addresses background tasks that run in a separate process than the host app. If you are debugging an in-process background task, then you won't have a separate background task project and can  set a breakpoint on **OnBackgroundActivated()** (where your in-process background code runs) and see step 2 in [Trigger background tasks manually to debug background task code](#Trigger-background-tasks-manually-to-debug-background-task-code), below, for instructions about how to trigger your background code to execute.
+This topic primarily addresses background tasks that run in a separate process than the host app. If you are debugging an in-process background task, then you won't have a separate background task project and can  set a breakpoint on **OnBackgroundActivated()** (where your in-process background code runs) and see step 2 in [Trigger background tasks manually to debug background task code](#trigger-background-tasks-manually-to-debug-background-task-code), below, for instructions about how to trigger your background code to execute.
 
 ## Make sure the background task project is set up correctly
 
