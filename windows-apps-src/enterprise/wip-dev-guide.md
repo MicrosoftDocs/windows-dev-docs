@@ -5,7 +5,7 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP) developer guide
 ms.author: normesta
-ms.date: 02/16/2017
+ms.date: 02/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -154,34 +154,33 @@ Let's start with files.
 
 **Step 2: Determine whether your app can open the file**
 
-Determine whether the file is protected. If it is, your app can open that file if these two things are true:
-
-* The file's identity is managed by policy.
-* Your app is on the allowed list of that policy.
-
-If either of these conditions aren't true, [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx) returns **false** and you can't open that file.
+Call [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx) to determine whether your app can open the file.
 
 ```csharp
 FileProtectionInfo protectionInfo = await FileProtectionManager.GetProtectionInfoAsync(file);
 
-if (protectionInfo.Status == FileProtectionStatus.Protected)
+if ((protectionInfo.Status != FileProtectionStatus.Protected ||
+    protectionInfo.Status != FileProtectionStatus.Unprotected))
 {
-    if (!ProtectionPolicyManager.IsIdentityManaged(protectionInfo.Identity))
-    {
-        return false;
-    }
+    return false;
 }
+
 else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 {
     // Code goes here to handle this situation. Perhaps, show UI
     // saying that the user's data has been revoked.
 }
 ```
+
+A [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) value of **Protected** means that the file is protected and your app can open it because your app is on the policy's allowed list.
+
+A [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) value of **UnProtected** means that the file is not protected and your app can open the file even your app is not on the policy's allowed list.
+
 > **APIs** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
-[ProtectionPolicyManager.IsIdentityManaged](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx)
+
 
 **Step 3: Read the file into a stream or buffer**
 
@@ -567,8 +566,7 @@ FileProtectionInfo fileProtectionInfo =
 *Write a stream*
 
 ```csharp
-    if (fileProtectionInfo.Identity == identity &&
-        fileProtectionInfo.Status == FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
     {
         var stream = await storageFile.OpenAsync(FileAccessMode.ReadWrite);
 
@@ -586,8 +584,7 @@ FileProtectionInfo fileProtectionInfo =
 *Write a buffer*
 
 ```csharp
-     if (fileProtectionInfo.Identity == identity &&
-         fileProtectionInfo.Status == FileProtectionStatus.Protected)
+     if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
      {
          var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
              enterpriseData, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
@@ -640,8 +637,7 @@ ProtectedFileCreateResult protectedFileCreateResult =
 This example writes a stream to a file.
 
 ```csharp
-if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
-    protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
+if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
 {
     IOutputStream outputStream =
         protectedFileCreateResult.Stream.GetOutputStreamAt(0);
@@ -839,8 +835,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
     FileProtectionInfo fileProtectionInfo =
         await FileProtectionManager.ProtectAsync(newStorageFolder, identity);
 
-    if (fileProtectionInfo.Identity != identity ||
-        fileProtectionInfo.Status != FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status != FileProtectionStatus.Protected)
     {
         // Protection failed.
         return false;
