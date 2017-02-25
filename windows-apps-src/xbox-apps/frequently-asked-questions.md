@@ -82,9 +82,11 @@ You can [publish apps](../publish/index.md) through Dev Center if you have a [de
 ### Can I publish my game?
 
 You can use UWP and your Xbox One in Developer Mode to build and test your games on Xbox One. 
-To publish UWP games, you must register with [ID@XBOX](http://www.xbox.com/Developers/id). 
+To publish UWP games, you must register with [ID@XBOX](http://www.xbox.com/Developers/id) or be part of the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator). 
 [ID@XBOX](http://www.xbox.com/Developers/id) provides developers full access to Xbox Live APIs for their games, including Gamerscore and Achievements, as well as the ability to take advantage of multiplayer between devices, cloud saves, and all the features of Xbox Live on Xbox One. 
 [ID@XBOX](http://www.xbox.com/Developers/id) can also provide access to Xbox One development kits for games that require access to the maximum potential of the Xbox One hardware.
+
+The [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) is currently in Preview and allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10.
 
 ### Will the standard Game engines work?
 
