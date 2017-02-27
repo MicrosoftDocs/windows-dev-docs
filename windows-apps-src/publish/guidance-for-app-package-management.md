@@ -18,7 +18,7 @@ Learn how your app's packages are made available to your customers, and how to m
 
 -   [OS versions and package distribution](#os-versions-and-package-distribution)
 -   [Adding packages for Windows 10 to a previously-published app](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [Maintaining package compatibility for Windows Phone 8.1](#maintaining-package-compatibility-for-windows-phone-8-1)
+-   [Maintaining package compatibility for Windows Phone 8.1](#maintaining-package-compatibility-for-windows-phone-81)
 -   [Removing an app from the Store](#removing-an-app-from-the-store)
 -   [Removing packages for a previously-supported device family](#removing-packages-for-a-previously-supported-device-family)
 
