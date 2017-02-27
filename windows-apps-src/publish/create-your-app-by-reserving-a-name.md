@@ -14,7 +14,7 @@ ms.technology: uwp
 # Create your app by reserving a name
 
 
-The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for [choosing a great name for your app](#choosing-your-app-s-name). Each reserved name must be unique throughout the entire Store.
+The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for [choosing a great name for your app](#choosing-your-apps-name). Each reserved name must be unique throughout the entire Store.
 
 > **Note**  If you have a Windows Phone app that you created earlier, and you never reserved a name for it, you can still manage and submit that app. However, in order to upload .appx packages for it, or to [view app identity details](view-app-identity-details.md) specific to creating .appx packages, you'll need to reserve a unique name by following the steps below. This also prevents anyone else from reserving that name for themselves.
 
