@@ -25,8 +25,8 @@ If you only plan to list free apps (and don't plan to offer in-app purchases or 
 
 After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Windows Store:
 
--   [Set up your payout account](#setting_up_your_payout_account)
--   [Fill out your tax forms](#paying_taxes)
+-   [Set up your payout account](#payout-account)
+-   [Fill out your tax forms](#tax-forms)
 
 > **Note**  For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
 
@@ -37,7 +37,7 @@ After you have [set up your developer account](opening-a-developer-account.md), 
 
 A payout account is the bank account to which we send the proceeds from your sales. This bank account must be located in the same country where you registered your developer account.
 
-> **Note**  In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal) below for more details.
+> **Note**  In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal-info) below for more details.
 
  
 **To set up your payout account**
@@ -119,7 +119,7 @@ To ensure your payout is successful, please also keep in mind the following:
 ## Tax forms
 
 
-After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#receiving_payments), you can create your *tax profile* for the Windows Store by completing the following steps:
+After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#payout-account), you can create your *tax profile* for the Windows Store by completing the following steps:
 
 -   Specify your country of residence and citizenship.
 -   Fill out the appropriate tax forms.
