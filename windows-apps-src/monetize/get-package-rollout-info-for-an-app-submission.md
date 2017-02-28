@@ -74,7 +74,7 @@ The following example demonstrates the JSON response body for a successful call 
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -85,7 +85,7 @@ If the app submission does not have gradual package rollout enabled, the followi
 ```json
 {
     "isPackageRollout": false,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutNotStarted",
     "fallbackSubmissionId": "0"
 }
