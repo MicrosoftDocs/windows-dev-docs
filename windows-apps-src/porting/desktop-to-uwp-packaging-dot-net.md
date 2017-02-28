@@ -2,7 +2,7 @@
 author: awkoren
 Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package your converted Desktop Bridge app.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop Bridge Packaging Guide for .NET Desktop apps with Visual Studio
+title: Desktop to UWP Bridge Packaging .NET apps using Visual Studio
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ---
 
-# Desktop Bridge Packaging Guide for .NET Desktop apps with Visual Studio
+# Desktop to UWP Bridge: Packaging .NET apps using Visual Studio
 
 The Windows 10 Anniversary Update allows developers to use the Desktop Bridge to package existing Win32 apps using the new package model (.appx), which enables Store publishing or easy sideloading. This guide explains how to configure your Visual Studio Solution so you can edit, debug, and package your app. 
 

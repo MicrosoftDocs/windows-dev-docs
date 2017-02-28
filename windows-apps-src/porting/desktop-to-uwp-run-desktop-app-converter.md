@@ -2,7 +2,7 @@
 author: awkoren
 Description: Run the Desktop Converter App to convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop App Converter
+title: Desktop to UWP Bridge Desktop App Converter
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ---
 
-# Desktop App Converter
+# Desktop to UWP Bridge: Desktop App Converter
 
 [Get the Desktop App Converter](https://aka.ms/converter)
 

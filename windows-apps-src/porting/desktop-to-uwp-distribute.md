@@ -2,7 +2,7 @@
 author: awkoren
 Description: Distribute your UWP app converted with the Desktop to UWP Bridge
 Search.Product: eADQiWindows 10XVcnh
-title: Distribute your UWP app converted with the Desktop to UWP Bridge
+title: Desktop to UWP Bridge Distribute
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ---
 
-# Distribute apps converted with the Desktop Bridge
+# Desktop to UWP Bridge: Distribute
 
 There are three main ways to deploy your converted app: the Windows Store, sideloading, and loose file registration.  
 
