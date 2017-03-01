@@ -114,11 +114,11 @@ The following example demonstrates the JSON response body for a successful call 
           }
         ],
         "recommendedHardware": [],
-        "title": "ApiTestApp For Devbox"
+        "title": "Contoso ebook reader"
       },
       "platformOverrides": {
         "Windows81": {
-          "description": "Ebook reader for Windows 8.1",
+          "description": "Ebook reader for Windows 8.1"
         }
       }
     }

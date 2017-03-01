@@ -16,6 +16,8 @@ ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 
 Use this method in the Windows Store submission API to [halt the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for an app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).
 
+>**Note**&nbsp;&nbsp;If you halt the rollout for an app submission and then [create a new app submission](create-an-app-submission.md), the new submission is a clone of the halted submission.
+
 
 ## Prerequisites
 
