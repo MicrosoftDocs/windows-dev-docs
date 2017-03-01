@@ -92,7 +92,7 @@ You can change how a button raises the Click event by changing the [**ClickMode*
 
 Button is a [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Its XAML content property is [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), which enables a syntax like this for XAML: `<Button>A button's content</Button>`. You can set any object as the button's content. If the content is a [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), it is rendered in the button. If the content is another type of object, its string representation is shown in the button.
 
-Here, a **StackPanel** that contains an image of a banana and text is set as the content of a button.
+Here, a **StackPanel** that contains an image of an Orange and text is set as the content of a button.
 
 ```xaml
 <Button Click="Button_Click" 
