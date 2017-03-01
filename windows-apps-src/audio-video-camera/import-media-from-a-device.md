@@ -57,7 +57,7 @@ These classes are provided in the [**MediaImport sample**](https://github.com/Mi
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 
 
-# Find available sources from which media can be imported
+## Find available sources from which media can be imported
 
 In the click handler for the find sources button, call the static method [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) to start the system searching for devices from which media can be imported. After awaiting the completion of the operation, loop through each [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) object in the returned list and add an entry to the **ComboBox**, setting the **Tag** property to the source object itself so it can be easily retrieved when the user makes a selection.
 
@@ -71,7 +71,7 @@ In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/Wi
 
 [!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
 
-# Find items to import
+## Find items to import
 
 Add class member variables of type [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) and [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) which will be used in the following steps.
 
