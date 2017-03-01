@@ -2,7 +2,7 @@
 author: awkoren
 Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package your converted Desktop Bridge app.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop Bridge Packaging Guide for .NET Desktop apps with Visual Studio
+title: Desktop to UWP Bridge Packaging .NET apps using Visual Studio
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ---
 
-# Desktop Bridge Packaging Guide for .NET Desktop apps with Visual Studio
+# Desktop to UWP Bridge: Packaging .NET apps using Visual Studio
 
 The Windows 10 Anniversary Update allows developers to use the Desktop Bridge to package existing Win32 apps using the new package model (.appx), which enables Store publishing or easy sideloading. This guide explains how to configure your Visual Studio Solution so you can edit, debug, and package your app. 
 
@@ -59,7 +59,7 @@ Let's start with Step 1 in the journey.
 
 This step shows how to create a Desktop Bridge app from an existing Win32 project. In this example, we'll use a basic WinForms Project that performs read and write operations on the registry.
 
-![](images/desktop-to-uwp/net-1.png)
+![visual studio solution explorer](images/desktop-to-uwp/net-1.png)
 
 #### Add the UWP project 
 
@@ -67,7 +67,7 @@ To create the Desktop Bridge package, add a JavaScript UWP project to the same s
 
 > Note: even though we are using a JavaScript UWP template, we are not going to write any JavaScript code. We are only using the project as a tool.
 
-![](images/desktop-to-uwp/net-2.png)
+![visual studio new project](images/desktop-to-uwp/net-2.png)
 
 #### Add the Win32 binaries to the win32 folder
 
@@ -151,7 +151,7 @@ Here's a complete example of the manifest file:
 
 To include the binaries needed by your app in the output package, select each file in Visual Studio. Set its properties as "Content", and its build behavior to "Copy if newer". 
 
-![](images/desktop-to-uwp/net-3.png)
+![visual studio solution explorer](images/desktop-to-uwp/net-3.png)
 
 If you want to avoid committing binary files to your source code repository, you can use the .gitignore file to exclude all the files in the win32 folder. 
 
@@ -180,7 +180,7 @@ If you want to call the UWP APIs available from your Win32 code, you need add a 
 
 Because this file is not needed in Windows 10, you don't need to distribute it. In the reference properties, set the property "Copy Local" to false.
 
-![](images/desktop-to-uwp/net-4.png)
+![visual studio solution explorer](images/desktop-to-uwp/net-4.png)
 
 To add the Win32 binaries, use the same instructions as in Step 1. 
 
@@ -225,7 +225,7 @@ To submit packages with the *fullTrust* capability, you need to generate an appx
 
 In steps 1 and 2, your package does not contain any CoreCLR binaries, so you don't need to worry about which platform to choose. Select "Neutral" and "Release (Any CPU)", as shown in the figure below.
 
-![](images/desktop-to-uwp/net-5.png)
+![visual studio appxupload](images/desktop-to-uwp/net-5.png)
 
 After you select the "Generate Store packages" option, the wizard will generate the appxupload file ready to submit to the store.
 
@@ -233,13 +233,13 @@ After you select the "Generate Store packages" option, the wizard will generate 
 
 You should also build for Release, and in this case, it's mandatory to specify which platforms we want to target because it is required for .NET Native to produce the native binaries for each platform.
 
-![](images/desktop-to-uwp/net-6.png)
+![visual studio appxupload 6](images/desktop-to-uwp/net-6.png)
 
 To create the new appxupload file, we will create a new zip archive to include the generated appxsym and appxbundle from the _Test folder.
 
 Create a new zip file that contains the appxsym and appxbundle files, and then rename the extension to appxupload.
 
-![](images/desktop-to-uwp/net-7.png)
+![file explorer](images/desktop-to-uwp/net-7.png)
 
 <span id="debugging-anchor" />
 ## Debugging your Desktop Bridge app
@@ -252,17 +252,17 @@ Although you can start your projects from Visual Studio without debugging (Ctrl 
 
 Once you have successfully launched your app using Ctrl + F5, you can attach to your Win32 process; however, you will not be able to debug .NET Native modules. 
 
-![](images/desktop-to-uwp/net-8.png)
+![visual studio attach to process](images/desktop-to-uwp/net-8.png)
 
 #### Attach to an installed App
 
 You can also attach to any existing Appx package, using the option Debug -> Other Debug Targets -> Debug Installed App Package.
 
-![](images/desktop-to-uwp/net-9.png)
+![visual studio attach to process](images/desktop-to-uwp/net-9.png)
 
 Where you can select your local machine, or connect to a remote one.
 
-![](images/desktop-to-uwp/net-10.png)
+![visual studio attach to process](images/desktop-to-uwp/net-10.png)
 
 Using this option, you should be able to debug .NET Native code.
 
@@ -276,12 +276,12 @@ This project allows you to debug any Win32 app that is being migrated to UWP usi
 
 To start, add a new Desktop Bridge Debugging Project to your project to your solution.
 
-![](images/desktop-to-uwp/net-11.png)
+![visual studio new project](images/desktop-to-uwp/net-11.png)
 
 To configure this project, you need to define the PackageLayout property in the properties window for each configuration/platform you want to use for debugging.
 To configure for Debug/x86 we will set the package layout property to the folder bin\x86\debug folder of the UWP project using a relative path: `..\MyDesktopApp.Package\bin\x86\Debug`. 
 
-![](images/desktop-to-uwp/net-12.png)
+![visual studio project config](images/desktop-to-uwp/net-12.png)
 
 And edit the AppXFileLayout.xml file to specify your entry point:
 
@@ -304,11 +304,11 @@ Finally, you should configure your solution dependencies to make sure that the p
 
 As an example, let's review the solution created for Step 3.
 
-![](images/desktop-to-uwp/net-13.png)
+![visual studio solution explorer](images/desktop-to-uwp/net-13.png)
 
 To configure the build order, you can use the Project Dependencies configuration. Right-click your solution and select the Project Dependencies option. Once you set the right dependencies, you can validate the build order as shown below (for Step 3):
 
-![](images/desktop-to-uwp/net-14.png)
+![visual studio build order](images/desktop-to-uwp/net-14.png)
 
 <span id="known-issues-anchor" />
 ## Known issues with C#/VB.NET and C++ UWP projects

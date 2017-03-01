@@ -20,7 +20,7 @@ If you have previously published apps to the Store for either Windows or Windows
 
  
 
-## Consideration for apps that shared identity in the Windows Store and Windows Phone Store
+## Apps that shared identity in the Windows Store and Windows Phone Store
 
 
 If you have used the same reserved name for an app published to both Stores (often referred to as sharing your app’s identity), these will now be considered one app, not two. In the dashboard, you'll see them as a single app with Windows and Windows Phone packages.
@@ -48,7 +48,7 @@ Trial options were different in the two earlier Stores, so if you used them, it'
 Your app will be available to Windows 10 customers in every market where you had previously published the app. This applies even if you had different market selections for each Store.
 
 ### Categories
-If your app appeared in different categories in the two Stores, we'll use the category from the Windows Store to determine its new category. Note that some categories are different in the Store for Windows 10 customers, so be sure to review the [table](#cat) below.
+If your app appeared in different categories in the two Stores, we'll use the category from the Windows Store to determine its new category. Note that some categories are different in the Store for Windows 10 customers, so be sure to review the [table](#category-changes) below.
 
 ### Age rating
 If you provided different age ratings, the stricter (higher age) rating is used.

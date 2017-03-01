@@ -2,7 +2,7 @@
 author: awkoren
 Description: In addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. This article describes these extensions and how to use them.
 Search.Product: eADQiWindows 10XVcnh
-title: Converted desktop app extensions
+title: Desktop to UWP Bridge App Extensions
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ---
 
-# Desktop Bridge app extensions
+# Desktop to UWP Bridge: App extensions
 
 You can enhance your converted Desktop application with a wide range of Universal Windows Platform (UWP) APIs. However, in addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. These features focus on scenarios such as launching a process when the user logs on and File Explorer integration, and are designed to smooth the transition between the original desktop app and the converted app package.
 

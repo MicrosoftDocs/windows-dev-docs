@@ -2,7 +2,7 @@
 author: awkoren
 Description: This article contains known issues with the Desktop to UWP Bridge.
 Search.Product: eADQiWindows 10XVcnh
-title: Known issues with the Desktop Bridge
+title: Desktop to UWP Bridge Known Issues
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ---
-# Known issues with the Desktop Bridge
+
+# Desktop to UWP Bridge: Known issues
 
 This article contains known issues with the Desktop to UWP Bridge.
 
