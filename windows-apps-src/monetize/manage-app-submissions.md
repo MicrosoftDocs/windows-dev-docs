@@ -220,7 +220,7 @@ This resource describes an app submission.
     "marketSpecificPricings": {},
     "sales": [],
     "priceId": "Tier2",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -229,26 +229,37 @@ This resource describes an app submission.
     "en-us": {
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
-        "keywords": [],
+        "keywords": [
+          "epub"
+        ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
-        "features": [],
+        "features": [
+          "free ebook reader"
+        ],
         "releaseNotes": "",
         "images": [
           {
             "fileName": "contoso.png",
             "fileStatus": "Uploaded",
             "id": "1152921504672272757",
+            "description": "Main page",
             "imageType": "Screenshot"
           }
         ],
         "recommendedHardware": [],
         "title": "ApiTestApp For Devbox"
       },
-      "platformOverrides": {}
+      "platformOverrides":
+      {
+        "Windows81":
+        {
+          "description": "Ebook reader for Windows 8.1",
+        }
+      }
     }
   },
   "hardwarePreferences": [
@@ -292,7 +303,7 @@ This resource describes an app submission.
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
