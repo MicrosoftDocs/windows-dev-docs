@@ -103,6 +103,9 @@ ms.prod: windows
                                             <p>
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monetize</a>
                                             </p>
+                                            <p>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">API reference</a>
+                                            <p>
                                         </div>
                                     </div>
                                 </div>
@@ -208,18 +211,18 @@ ms.prod: windows
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Holographic</h3>
+                                            <h3>Mixed Reality</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">Get started</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">Academy</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/academy">Academy</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">Development</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/documentation">Documentation</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">Design</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/community">Community</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">Community and Support</a>
                                             </p>
                                         </div>
                                     </div>

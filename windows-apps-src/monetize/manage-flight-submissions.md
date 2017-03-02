@@ -235,7 +235,7 @@ This resource describes a package flight submission.
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -347,7 +347,7 @@ This resource contains gradual package rollout and mandatory update settings for
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -376,6 +376,8 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 | packageRolloutPercentage    | float    |  The percentage of users who will receive the packages in the gradual rollout.    |  
 | packageRolloutStatus    |  string   |  One of the following strings that indicates the status of the gradual package rollout: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  string   |  The ID of the submission that will be received by customers who do not get the gradual rollout packages.   |          
+
+>**Note**&nbsp;&nbsp;The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Dev Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored. 
 
 <span/>
 
