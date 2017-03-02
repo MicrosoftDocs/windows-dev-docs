@@ -3,7 +3,7 @@ author: JnHs
 Description: Learn how to send targeted push notifications from Windows Dev Center to your app to encourage customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 02/17/2017
+ms.date: 02/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,8 +21,8 @@ You can use targeted push notifications to encourage your customers to take an a
 
 When considering the content of your notifications, keep in mind:
 - The content in your notifications must comply with the Store [Content Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies).
-- Your notification content should not include confidential or potentially sensitive info. 
-- While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery. 
+- Your notification content should not include confidential or potentially sensitive info.
+- While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).
 - Be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) later gives their device to someone to use, the other person may see the notification that was targeted at the original customer. For more info, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers).
 
@@ -35,18 +35,21 @@ At a high-level, you need to do three things to use push notifications to engage
 
 ## To create and send a targeted push notification
 
-1. If you haven’t done so already, install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) and call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in startup code in your app to register your app to receive notifications. For more information about how to call this method, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
-2.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select your app.
-3.	In the left navigation menu, expand **Services**, and select **Push notifications**.
-4.	On the **Targeted push notifications** page, select **New notification**.
-5.	In the **Select a template** section, choose the type of notification you want to send. For details, see [Notification template types](#notification-template-types).
+Follow these steps to create a push notification in the dashboard and send it to a particular customer segment.
+
+> **Note** Before your app can receive targeted push notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+
+1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select your app.
+2.	In the left navigation menu, expand **Services**, and select **Push notifications**.
+3.	On the **Targeted push notifications** page, select **New notification**.
+4.	In the **Select a template** section, choose the type of notification you want to send. For details, see [Notification template types](#notification-template-types).
   ![Notification templates](images/push-notifications-template.png)
-6.	In the **Notification settings** section, choose a **Name** for your notification and choose the **Customer group** you want to send the notification to.
+5.	In the **Notification settings** section, choose a **Name** for your notification and choose the **Customer group** you want to send the notification to.
 If you haven’t created a segment yet, select **Create new customer group**. Note that it takes 24 hours for a new segment to be available to use for notifications. For more info, see [Create customer segments](create-customer-segments.md).
-7.	If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time.
-8.	If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time.
-9.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
-10.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
+6.	If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time.
+7.	If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time.
+8.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
+9.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
    The available options vary, depending on which notification type you are using. Some of the options are:
    - **Activation type** (interactive toast type). You can choose **Foreground**, **Background**, or **Protocol**.
    - **Launch** (interactive toast type). You can choose to have the notification open an app or website.
@@ -61,7 +64,7 @@ If you haven’t created a segment yet, select **Create new customer group**. No
 
    > **Tip**  Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
 
-11.	Select **Save as draft** to continue working on the notification later, or select **Send** if you’re all done.
+10.	Select **Save as draft** to continue working on the notification later, or select **Send** if you’re all done.
 
 ## Notification template types
 

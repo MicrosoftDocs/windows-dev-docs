@@ -1,7 +1,7 @@
 ---
 author: awkoren
 Description: This article provides a deeper dive on how the Desktop to UWP bridge works under the covers.
-title: Behind the scenes of the Desktop Bridge
+title: Desktop to UWP Bridge Behind the Scenes
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ---
 
-# Behind the scenes of the Desktop Bridge
+# Desktop to UWP Bridge: Behind the scenes
 
 This article provides a deeper dive on how the Desktop to UWP Bridge works under the covers.
 

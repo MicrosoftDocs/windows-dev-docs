@@ -1,13 +1,14 @@
+---
 author: mukin
 title: Barcode Scanner
 description: This article contains information about the barcode scanner point of service family of devices
-ms.author: mukin
+ms.author: wdg-dev-content
 ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.assetid:
+---
 
 # Barcode Scanner
 Enables application developers to access barcode scanners to retrieve decoded data from a variety of barcode symbologies such as UPC and QR Codes depending on support from the hardware. See the [BarcodeSymbologies](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodesymbologies) class for a full list of supported symbologies.

@@ -31,7 +31,7 @@ For more information on your obligations under COPPA, please see [this page](htt
 
 ## Microsoft affiliate ads
 
-Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and bus products in the Store within a given attribution window, you will earn a commission on approved purchases.
+Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and buys products in the Store within a given attribution window, you will earn a commission on approved purchases.
 
 If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
 

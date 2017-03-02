@@ -48,7 +48,7 @@ If you'd like to set custom prices for your app in specific markets, you can do 
 
 Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](age-ratings.md) for more info.
 
-> **Note**  For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8-x). Also keep in mind that customers on Windows 8 or Windows 8.1 will only see the app listed at its base price, even if you change the price in their market.
+> **Note**  For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8x). Also keep in mind that customers on Windows 8 or Windows 8.1 will only see the app listed at its base price, even if you change the price in their market.
 
  
 

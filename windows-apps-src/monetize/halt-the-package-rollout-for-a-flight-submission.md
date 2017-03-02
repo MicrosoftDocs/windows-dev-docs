@@ -13,8 +13,9 @@ ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 
 # Halt the rollout for a flight
 
+Use this method in the Windows Store submission API to [halt the rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for a package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
 
-Use this method in the Windows Store submission API to [halt the package rollout](../publish/gradual-package-rollout.md#completing-the-rollout) for a package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
+>**Note**&nbsp;&nbsp;If you halt the rollout for a package flight submission and then [create a new package flight submission](create-a-flight-submission.md), the new submission is a clone of the halted submission.
 
 ## Prerequisites
 
@@ -76,7 +77,7 @@ The following example demonstrates the JSON response body for a successful call 
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutStopped",
     "fallbackSubmissionId": "1212922684621243058"
 }

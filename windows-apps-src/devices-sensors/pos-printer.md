@@ -1,13 +1,14 @@
+---
 author: mukin
 title: POS Printer
 description: This article contains information about the point of service printer family of devices
-ms.author: mukin
+ms.author: wdg-dev-content
 ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.assetid:
+---
 
 # POS Printer
 

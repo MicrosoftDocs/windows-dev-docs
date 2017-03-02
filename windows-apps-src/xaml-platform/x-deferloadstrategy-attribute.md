@@ -31,7 +31,7 @@ The restrictions for using **x:DeferLoadStrategy** are:
 
 -   Requires an [x:Name](x-name-attribute.md) defined, as there needs to be a way to find the element later.
 -   Only a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) can be marked as deferred, with the exception of types deriving from [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Root elements can not be deferred in a [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol), nor a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Root elements can not be deferred in a [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol), nor a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 -   Elements in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) cannot be deferred.
 -   Does not work with loose XAML loaded with [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
 -   Moving a parent element will clear out any elements that have not been realized.

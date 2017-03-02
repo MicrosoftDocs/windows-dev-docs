@@ -5,7 +5,7 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP) developer guide
 ms.author: normesta
-ms.date: 02/16/2017
+ms.date: 02/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,11 +15,11 @@ ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 
 # Windows Information Protection (WIP) developer guide
 
-__Note__ Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.
-
 An *enlightened* app differentiates between corporate and personal data and knows which to protect based on Windows Information Protection (WIP) policies defined by the administrator.
 
 In this guide, we'll show you how to build one. When you're done, policy administrators will be able to trust your app to consume their organization's data. And employees will love that you've kept their personal data intact on their device even if they un-enroll from the organization's mobile device management (MDM) or leave the organization entirely.
+
+__Note__ This guide helps you enlighten a UWP app. If you want to enlighten a C++ Windows desktop app, see [Windows Information Protection (WIP) developer guide (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
 
 You can read more about WIP and enlightened apps here: [Windows Information Protection (WIP)](wip-hub.md).
 
@@ -31,37 +31,38 @@ If you're ready to go through each task, let's start.
 
 You'll need these:
 
-* A test Virtual Machine (VM) that runs Windows 10, version 1607. You'll debug your app against this test VM.
+* A test Virtual Machine (VM) that runs Windows 10, version 1607 or higher. You'll debug your app against this test VM.
 
-* A development computer that runs Windows 10, version 1607. This could be your test VM if you have Visual Studio installed on it.
+* A development computer that runs Windows 10, version 1607 or higher. This could be your test VM if you have Visual Studio installed on it.
 
 ## Setup your development environment
 
 You'll do these things:
 
-* Install the WIP Setup Developer Assistant onto your test VM.
+* [Install the WIP Setup Developer Assistant onto your test VM](#install-assistant)
 
-* Create a protection policy by using the WIP Setup Developer Assistant.
+* [Create a protection policy by using the WIP Setup Developer Assistant](#create-protection-policy)
 
-* Setup a Visual Studio project.
+* [Setup a Visual Studio project](#setup-vs-project)
 
-* Setup remote debugging.
+* [Setup remote debugging](#setup-remote-debugging)
 
-* Add namespaces to your code files
+* [Add namespaces to your code files](#add-namespaces)
 
-**Install the WIP Setup Developer Assistant onto your test VM**
+<span id="install-assistant" />
+### Install the WIP Setup Developer Assistant onto your test VM
 
  Use this tool to setup a Windows Information Protection policy on your test VM.
 
  Download the tool here: [WIP Setup Developer Assistant](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf).
-
-**Create a protection policy**
+<span id="create-protection-policy" />
+### Create a protection policy
 
 Define your policy by adding information to each section in the WIP setup developer assistant. Choose the help icon next to any setting to learn more about how to use it.
 
 For more general guidance about how to use this tool, see the Version notes section on the app download page.
-
-**Setup a Visual Studio project**
+<span id="setup-vs-project" />
+### Setup a Visual Studio project
 
 1. On your development computer, open your project.
 
@@ -89,14 +90,14 @@ For more general guidance about how to use this tool, see the Version notes sect
     ```
 
     This way, if your app runs on a version of the Windows operating system that doesn't support restricted capabilities, Windows will ignore the ``enterpriseDataPolicy`` capability.
-
-**Setup remote debugging**
+<span id="setup-remote-debugging" />
+### Setup remote debugging
 
 Install Visual Studio Remote Tools on your test VM only if you are developing your app on a computer other than your VM. Then, on your development computer start the remote debugger and see if your app runs on the test VM.
 
 See [Remote PC instructions](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions).
-
-**Add these namespaces to your code files**
+<span id="add-namespaces" />
+### Add these namespaces to your code files
 
 Add these using statements to the top of your code files(The snippets in this guide use them):
 
@@ -113,33 +114,40 @@ using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
 ```
 
-## Determine whether the operating system that runs your app supports WIP
+## Determine whether to use WIP APIs in your app
 
-Use the [**IsApiContractPresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) function to determine this.
+Ensure that the operating system that runs your app supports WIP and that WIP is enabled on the device.
 
 ```csharp
-bool wipSupported = ApiInformation.IsApiContractPresent("Windows.Security.EnterpriseData.EnterpriseDataContract", 3);
+bool use_WIP_APIs = false;
 
-if (wipSupported)
+if ((ApiInformation.IsApiContractPresent
+    ("Windows.Security.EnterpriseData.EnterpriseDataContract", 3)
+    && ProtectionPolicyManager.IsProtectionEnabled))
 {
-    // WIP is supported on the platform
+    use_WIP_APIs = true;
 }
 else
 {
-    // WIP is not supported on the platform
+    use_WIP_APIs = false;
 }
 ```
-
-Windows Information Protection is supported on Windows 10, version 1607.
+Don't call WIP APIs if the operating system doesn't support WIP or WIP is not enabled on the device.
 
 ## Read enterprise data
 
-File, network endpoints, clipboard data and data that you accept from a Share contract all have an enterprise ID.
+To read protected files, network endpoints, clipboard data and data that you accept from a Share contract, your app will have to request access.
 
-To read data from any of those sources, your app will have to verify that the enterprise ID is managed by policy.
+Windows Information Protection gives your app permission if your app is on the protection policy's allowed list.
 
-Let's start with files.
+**In this section:**
 
+* [Read data from a file](#read-file)
+* [Read data from a network endpoint](#read-network)
+* [Read data from the clipboard](#read-clipboard)
+* [Read data from a Share contract](#read-contract)
+
+<span id="read-file" />
 ### Read data from a file
 
 **Step 1: Get the file handle**
@@ -154,22 +162,15 @@ Let's start with files.
 
 **Step 2: Determine whether your app can open the file**
 
-Determine whether the file is protected. If it is, your app can open that file if these two things are true:
-
-* The file's identity is managed by policy.
-* Your app is on the allowed list of that policy.
-
-If either of these conditions aren't true, [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx) returns **false** and you can't open that file.
+Call [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx) to determine whether your app can open the file.
 
 ```csharp
 FileProtectionInfo protectionInfo = await FileProtectionManager.GetProtectionInfoAsync(file);
 
-if (protectionInfo.Status == FileProtectionStatus.Protected)
+if ((protectionInfo.Status != FileProtectionStatus.Protected ||
+    protectionInfo.Status != FileProtectionStatus.Unprotected))
 {
-    if (!ProtectionPolicyManager.IsIdentityManaged(protectionInfo.Identity))
-    {
-        return false;
-    }
+    return false;
 }
 else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 {
@@ -177,6 +178,11 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
     // saying that the user's data has been revoked.
 }
 ```
+
+A [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) value of **Protected** means that the file is protected and your app can open it because your app is on the policy's allowed list.
+
+A [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) value of **UnProtected** means that the file is not protected and your app can open the file even your app is not on the policy's allowed list.
+
 > **APIs** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
@@ -196,7 +202,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
-
+<span id="read-network" />
 ### Read data from a network endpoint
 
 Create a protected thread context to read from an enterprise endpoint.
@@ -331,6 +337,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
+<span id="read-clipboard" />
 ### Read data from the clipboard
 
 **Get permission to use data from the clipboard**
@@ -427,7 +434,7 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-
+<span id="read-share" />
 ### Read data from a Share contract
 
 When employees choose your app to share their information, your app will open a new item that contains that content.
@@ -486,7 +493,20 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 Protect enterprise data that leaves your app. Data leaves your app when you show it in a page, save it to a file or network endpoint, or through a share contract.
 
-### <a id="display-data"></a>Protect data that appears in pages
+**In this section:**
+
+* [Protect data that appears in pages](#protect-pages)
+* [Protect data to a file as a background process](#protect-background)
+* [Protect part of a file](#protect-part-file)
+* [Read the protected part of a file](#read-protected)
+* [Protect data to a folder](#protect-folder)
+* [Protect data to a network end point](#protect-network)
+* [Protect data that your app shares through a share contract](#protect-share)
+* [Protect files that you copy to another location](#protect-other-location)
+* [Protect enterprise data when the screen of the device is locked](#protect-locked)
+
+<span id="protect-pages" />
+### Protect data that appears in pages
 
 When you show data in a page, let Windows know what type of data it is (personal or enterprise). To do that, *tag* the current app view or tag the entire app process.
 
@@ -532,6 +552,7 @@ bool result =
 > **APIs** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
+<span id="protect-file" />
 ### Protect data to a file
 
 Create a protected file and then write to it.
@@ -567,8 +588,7 @@ FileProtectionInfo fileProtectionInfo =
 *Write a stream*
 
 ```csharp
-    if (fileProtectionInfo.Identity == identity &&
-        fileProtectionInfo.Status == FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
     {
         var stream = await storageFile.OpenAsync(FileAccessMode.ReadWrite);
 
@@ -586,8 +606,7 @@ FileProtectionInfo fileProtectionInfo =
 *Write a buffer*
 
 ```csharp
-     if (fileProtectionInfo.Identity == identity &&
-         fileProtectionInfo.Status == FileProtectionStatus.Protected)
+     if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
      {
          var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
              enterpriseData, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
@@ -601,8 +620,7 @@ FileProtectionInfo fileProtectionInfo =
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 
-
-
+<span id="protect-background" />
 ### Protect data to a file as a background process
 
 This code can run while the screen of the device is locked. If the administrator configured a secure "Data protection under lock" (DPL) policy, Windows removes the encryption keys required to access protected resources from device memory. This prevents data leaks if the device is lost. This same feature also removes keys associated with protected files when their handles are closed.
@@ -667,6 +685,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
+<span id="protect-part-file" />
 ### Protect part of a file
 
 In most cases, it's cleaner to store enterprise and personal data separately but you can store them to the same file if you want. For example, Microsoft Outlook can store enterprise mails alongside of personal mails in a single archive file.
@@ -742,7 +761,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     (metaDataFile, "<EnterpriseDataMarker start='0' end='" + enterpriseData.Length.ToString() +
     "'></EnterpriseDataMarker>");
 ```
-
+<span id="read-protected" />
 ### Read the protected part of a file
 
 Here's how you'd read the enterprise data out of that file.
@@ -822,7 +841,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectioninfo.aspx)<br>
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
-
+<span id="protect-folder" />
 ### Protect data to a folder
 
 You can create a folder and protect it. That way any items that you add to that folder are automatically protected.
@@ -839,8 +858,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
     FileProtectionInfo fileProtectionInfo =
         await FileProtectionManager.ProtectAsync(newStorageFolder, identity);
 
-    if (fileProtectionInfo.Identity != identity ||
-        fileProtectionInfo.Status != FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status != FileProtectionStatus.Protected)
     {
         // Protection failed.
         return false;
@@ -857,7 +875,7 @@ Make sure that the folder is empty before you protect it. You can't protect a fo
 [FileProtectionInfo.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.identity.aspx)<br>
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
-
+<span id="protect-network" />
 ### Protect data to a network end point
 
 Create a protected thread context to send that data to an enterprise endpoint.  
@@ -910,6 +928,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
+<span id="protect-share" />
 ### Protect data that your app shares through a share contract
 
 If you want users to share content from your app, you'll have to implement a share contract and handle the [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) event.
@@ -941,7 +960,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-
+<span id="protect-other-location" />
 ### Protect files that you copy to another location
 
 ```csharp
@@ -963,7 +982,7 @@ private async void CopyProtectionFromOneFileToAnother
 > **APIs** <br>
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
-
+<span id="protect-locked" />
 ### Protect enterprise data when the screen of the device is locked
 
 Remove all sensitive data in memory when the device is locked. When the user unlocks the device, your app can safely add that data back.
@@ -1087,6 +1106,3 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 ## Related topics
 
 [Windows Information Protection (WIP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
- 
-
- 
