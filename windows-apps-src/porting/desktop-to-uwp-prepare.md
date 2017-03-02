@@ -2,7 +2,7 @@
 author: awkoren
 Description: This article lists things you need to know before converting your app with the Desktop to UWP Bridge. You may not need to do much to get your app ready for the conversion process.
 Search.Product: eADQiWindows 10XVcnh
-title:Desktop to UWP Bridge Prepare 
+title: Desktop to UWP Bridge Prepare 
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
