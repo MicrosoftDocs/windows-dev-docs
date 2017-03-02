@@ -56,7 +56,7 @@ At this point the permission is _sticky_ until you sign the user out, even if yo
  
 There is another type of exemption that is only available for child accounts. A child account requires a parent to sign in to grant permission, but when they do, the parent has the option of choosing to **Always** allow the child to launch the app. That exemption is stored in the cloud and will persist even if the child signs out and signs back in.
 
-## StorageFile.CopyAsync fails to copy encrypted files to nonencrypted destination 
+## StorageFile.CopyAsync fails to copy encrypted files to unencrypted destination 
 
 When StorageFile.CopyAsync is used to copy a file that is encrypted to a destination that is not encrypted, the call will fail with the following exception:
 
