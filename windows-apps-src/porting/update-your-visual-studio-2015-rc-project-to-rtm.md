@@ -17,7 +17,7 @@ keywords: windows 10, uwp
 
 If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM. The recommended method is to create a new Windows 10 project in Visual Studio 2015 RTM and copy your files into it. Alternatively, you can follow advanced documentation to edit your existing project files and move them over to the new format.
 
-## What you see when you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM
+## What you see when you open a Windows 10 Visual Studio 2015 RC project in Visual Studio 2015 RTM
 
 When you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM, you'll see an "update required" message in **Solution Explorer**.
 

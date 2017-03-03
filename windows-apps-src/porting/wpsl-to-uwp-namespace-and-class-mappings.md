@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Windows Phone Silverlight to UWP namespace and class mappings
+# Windows Phone Silverlight to UWP API mappings
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
