@@ -65,8 +65,8 @@ System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070
 ```
 
 This can affect Xbox developers who want to copy files that are deployed as part of their app package to another location. 
-The reason for this is that the package contents are encrypted on an Xbox in retail mode. 
-They are not in Dev Mode. As a result, the app may appear to work fine during development and testing but then fail once it has been published and then installed to a retail Xbox.
+The reason for this is that the package contents are encrypted on an Xbox in retail mode, but not in Dev Mode. 
+As a result, the app may appear to work as expected during development and testing, but then fail once it has been published and then installed to a retail Xbox.
 
 <!--### x86 vs. x64
 
