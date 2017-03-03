@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+redirect_url: /visualstudio/porting/port-migrate-and-upgrade-visual-studio-projects
 ---
 
 # Update your UWP Microsoft Visual Studio 2015 RC project to RTM
@@ -40,4 +41,3 @@ If you access the context menu for the project in **Solution Explorer** and choo
 One significant difference between the Windows 10 project format of Visual Studio 2015 RC and Visual Studio 2015 RTM is that the RTM format uses [NuGet](http://docs.nuget.org/) version 3. Bear this difference in mind if you intend to manually update your project.
 
 If you do want to manually update your project, or if you're interested in knowing the differences between the project formats of Visual Studio 2015 RC and Visual Studio 2015 RTM, then see [Migrate apps to the Universal Windows Platform (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
-
