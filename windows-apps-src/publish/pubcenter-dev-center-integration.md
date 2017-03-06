@@ -1,58 +1,7 @@
----
-author: jnHs
-Description: Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
-title: pubCenter-Dev Center integration
-ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+﻿---
+redirect_url: https://docs.microsoft.com/windows/uwp/publish/monetize-with-ads
 ---
 
 # pubCenter-Dev Center integration
 
-Microsoft Advertising on pubCenter has been integrated into Windows Dev Center. **As of October 1, 2016, access to pubCenter has been disabled, and you should now manage all of your payout info for Microsoft Advertising earnings in Dev Center.** See the following frequently asked questions for more info.
-
-**I can’t access my pubCenter dashboard – why?**
-
-As of October 1, 2016, you no longer have access to the pubCenter dashboard. Please visit your [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/apps/overview) for all ad management and reporting. If you haven’t linked any of your pubCenter accounts to a Dev Center account, [contact support](http://go.microsoft.com/fwlink/?LinkId=393643).
-
-**How do I create ad units in Dev Center?**
-
-From your app's page in Dev Center, click **Monetization > Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
-
-**How do I view my ad performance reports in Dev Center?**
-
-Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong. Note: if you cannot find a particular pubCenter ad unit on your **Advertising performance report**, we may have been unable to successfully link that ad unit to an app in Dev Center. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the [account-level Advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report) from your dashboard overview page. 
-
-**How do I manage my payment method and tax details in Dev Center?**
-
-See [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
-
-**Where can I find payout reports in Dev Center?**
-
-Payout reports can be viewed or downloaded by clicking **Payout** in Dev Center. For more info, see [Payout summary](payout-summary.md).
-
-**How much do I need to earn in order to receive payments, and when will the payments reach my account?**
-
-For Microsoft Advertising, the payment threshold is $50 or local equivalent. The time for payments to reach your account depends on the payment method used. For more info, see the [Microsoft Advertising section](payment-thresholds-methods-and-timeframes.md#microsoft-advertising) of [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
-
-**How do I create promotions in Dev Center?**
-
-From your app's page in Dev Center, click **Monetization > Promote your app**. For more info, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
-
-**I don’t see ad units under the app I used them in. Where can I find them?**
-
-If you can’t find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if you used that ad unit in multiple apps, if you used that ad unit in apps that do not belong to the same Dev Center account, or if the ad unit has not been serving any ads in the last few days. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance report** and select the pubCenter app name. 
-
-**I used to see my ad units under an app in my Dev Center account, but now I can't find them. What’s going on?**
-
-This could happen if no ads served in your ad units for a few days. Go to the [account-level Advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report) in Dev Center and look for data for these ad units.
-
-If your question isn’t answered here and you need additional support, please open a [support ticket](http://go.microsoft.com/fwlink/p/?LinkId=733342).
-
-
-
- 
+This page has been redirected to: Monetize with ads
