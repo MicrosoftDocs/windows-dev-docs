@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Windows Runtime 8.x to UWP case study: QuizGame peer-to-peer sample app
+# Windows Runtime 8.x to UWP case study: QuizGame sample app
 
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]

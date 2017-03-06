@@ -11,35 +11,7 @@ keywords: windows 10, uwp
 ---
 
 # Barcode Scanner
-Enables application developers to access barcode scanners to retrieve decoded data from a variety of barcode symbologies such as UPC and QR Codes depending on support from the hardware. See the [BarcodeSymbologies](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodesymbologies) class for a full list of supported symbologies.
-
-This topic covers the following:
-+	Members
-+	Requirements
-+ Device support
-
-## Members
-The barcode scanner device type has these types of members:
-+	Classes
-+	Enumerations
-
-### Classes
-| Class | Description |
-|-------|-------------|
-| [BarcodeScanner](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescanner) | Represents the barcode scanner device.
-| [BarcodeScannerCapabilities](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannercapabilities) | Represents the barcode scanner capabilities. |
-| [BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs) | Provides the barcode data from the DataReceived event. |
-| [BarcodeScannerErrorOccurredEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannererroroccurredeventargs) | Provides data for the ErrorOccurred event. |
-| [BarcodeScannerImagePreviewReceivedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannerimagepreviewreceivedeventargs) | Provides the data from the ImagePreviewReceived event. |
-| [BarcodeScannerReport](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannerreport) | Contains the barcode scanner data. |
-| [BarcodeScannerStatusUpdatedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannerstatusupdatedeventargs) | Provides information about an operation status change. |
-| [BarcodeSymbologies](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodesymbologies) | Contains the barcode symbology. |
-| [ClaimedBarcodeScanner](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) | Represents the claimed barcode scanner.
-
-### Enumerations
-| Enumeration | Description |
-|-------------|-------------|
-| [BarcodeScannerStatus](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescannerstatus) | Defines the constants that indicates the barcode scanner status. |
+Enables application developers to access [barcode scanners](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodescanner) to retrieve decoded data from a variety of barcode symbologies such as UPC and QR Codes depending on support from the hardware. See the [BarcodeSymbologies](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.barcodesymbologies) class for a full list of supported symbologies.
 
 ## Requirements
 Applications which require this namespace require the addition of “pointOfService” [DeviceCapability](https://msdn.microsoft.com/library/4353c4fd-f038-4986-81ed-d2ec0c6235ef) to the app package manifest.

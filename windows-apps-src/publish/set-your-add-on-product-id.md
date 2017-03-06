@@ -23,14 +23,14 @@ First, you'll need to indicate which type of add-on you are offering. This selec
 
 > **Note** You won't be able to change the product type after you save this page to create the add-on. If you did choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
 
-If the product can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** proudct types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info on including consumable add-ons in your app, see [Enable consumable add-on purchases](../monetize/enable-consumable-add-on-purchases.md).
+If the product can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** product types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info on including consumable add-ons in your app, see [Enable consumable add-on purchases](../monetize/enable-consumable-add-on-purchases.md).
 
 There are two types of consumable add-ons that you can select:
 
 - **Developer-managed consumable**: Supported on all OS versions. Balance and fulfillment must be managed within your app. 
 - **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you cannot submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in your dashboard and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** page.
 
-You should select **Durable** if your product can be purchased only once. Durable add-ons are often used to unlock additional functionality in an app. Durable add-ons are not consumed, but you can set the **Product lifetime** so that they expire after a set duration (with options from 1-365 days). The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You can change this to a different duration in the [Add-on properties](enter-add-on-properties.md) step of the add-on submission process.
+If your product can be purchased only one time, select **Durable**. Durable add-ons are often used to unlock additional functionality in an app. Durable add-ons are not consumed, but you can set the **Product lifetime** so that they expire after a set duration (with options from 1-365 days). The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You can change this to a different duration in the [Add-on properties](enter-add-on-properties.md) step of the add-on submission process.
 
 ## Product ID
 
@@ -42,7 +42,7 @@ Here are a few things to keep in mind when choosing a product ID:
 -   You can’t change or delete an add-on's product ID after it's been published.
 -   A product ID can't be more than 100 characters in length.
 -   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   To offer your add-on on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
+-   To offer your add-on in all OS versions, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
 -   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
  
 

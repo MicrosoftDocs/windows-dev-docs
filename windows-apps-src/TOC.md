@@ -829,7 +829,6 @@
 #### [Distribute](porting/desktop-to-uwp-distribute.md)
 #### [Behind the scenes](porting/desktop-to-uwp-behind-the-scenes.md)
 #### [Known issues](porting/desktop-to-uwp-known-issues.md)
-### [Update your UWP Microsoft Visual Studio 2015 RC project to RTM](porting/update-your-visual-studio-2015-rc-project-to-rtm.md)
 ### [Windows apps concept mapping for Android and iOS developers](porting/android-ios-uwp-map.md)
 ### [Move from iOS to UWP](porting/ios-to-uwp-root.md)
 #### [Selecting an approach to iOS and UWP app development](porting/selecting-an-approach-to-ios-and-uwp-app-development.md)

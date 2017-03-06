@@ -13,40 +13,7 @@ ms.assetid:
 
 # Cash Drawer
 
-Enables application developers to interact with cash drawers.
-This topic covers the following:
-+	Members
-+	Requirements
-+ Device support
-
-## Members
-The cash drawer device type has these types of members:
-+	Classes
-+	Enumerations
-+	Interfaces
-
-### Classes
-| Class | Description |
-|-------|-------------|
-| [CashDrawer](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawer) | Represents a cash drawer device in a retail scenario. |
-| [CashDrawerCapabilities](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawercapabilities) | Represents the cash drawer capabilities. |
-| [CashDrawerCloseAlarm](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawerclosealarm) | The cash drawer close alarm. Parameter defaults are provided, however the user can update them as appropriate. |
-| [CashDrawerClosedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawerclosedeventargs) | This object is passed as a parameter to the event handlers for the DrawerClosed event. |
-| [CashDrawerEventSource](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawereventsource) | Provides event sources that allow a developer to detect when the cash drawer is opened or closed. |
-| [CashDrawerOpenedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdraweropenedeventargs) | This object is passed as a parameter to the event handlers for the DrawerOpened event. |
-| [CashDrawerStatus](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawerstatus) | Provides the current power and availability status of the cash drawer. |
-| [CashDrawerStatusUpdatedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawerstatusupdatedeventargs) | This object is passed as a parameter to the event handlers for the StatusUpdated event. |
-| [ClaimedCashDrawer](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.claimedcashdrawer) | Provides access to exclusive and privileged methods, properties, and events on a point-of-service cash drawer device. |
-
-### Enumerations
-| Enumeration |	Description |
-|-------------|-------------|
-| [CashDrawerStatusKind](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawerstatuskind) | Defines the constants that indicates the barcode scanner status. |
-
-### Interfaces
-| Interface |	Description |
-|-----------|-------------|
-| [ICashDrawerEventSourceEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.icashdrawereventsourceeventargs) | Defines the constants that indicates the barcode scanner status. |
+Enables application developers to interact with [cash drawers](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.cashdrawer).
 
 ## Requirements
 Applications which require this namespace require the addition of “pointOfService” [DeviceCapability](https://msdn.microsoft.com/library/4353c4fd-f038-4986-81ed-d2ec0c6235ef) to the app package manifest.
