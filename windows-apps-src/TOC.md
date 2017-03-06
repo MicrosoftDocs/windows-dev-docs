@@ -9,6 +9,7 @@
 ### [Create a "Hello, world" app (JS)](get-started/create-a-hello-world-app-js-universal.md)
 ### [Create a "Hello, world" app (C++)](get-started/create-a-basic-windows-10-app-in-cpp.md)
 ### [A UWP game in JavaScript](get-started/get-started-tutorial-game-js2d.md)
+### [A UWP game in MonoGame](get-started/get-started-tutorial-game-mg2d.md)
 ### [Plan your app](get-started/plan-your-app.md)
 ### [What's next?](get-started/learn-more.md)
 ## [Get UWP app samples](get-started/get-uwp-app-samples.md)
