@@ -21,7 +21,7 @@ Learn how to write a Universal Windows Platform (UWP) app that can provide servi
 
 Starting in Windows 10, version 1607, you can create app services that run in the same process as the host app. This article focuses on creating app services that run in a separate background process. See [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) for more details about app services that run in the same process as the provider.
 
-For more App Service samples, see [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+For more app service samples, see [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
 
 ## Create a new app service provider project
 
