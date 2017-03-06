@@ -17,6 +17,8 @@ The Windows 10 Creators Update will continue to provide the tools, features, and
 
 These features will not be made publically available until the release of the Windows 10 Creators Update. For now, they can be used in preview builds accesible to [Windows Insiders](https://insider.windows.com/). This page may be updated with information on more upcoming features as more documentation becomes available.
 
+Additionally, you can [explore prerelease documentation for new and updated API namespaces in preview builds.](windows-10-build-15021-api-diff.md)
+
 For more information on the highlighted features of this and other Windows updates, see [the Windows Developer Day site](https://developer.microsoft.com/en-us/windows/projects/campaigns/windows-developer-day) and [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/en-us/windows/platform/features) for a high-level overview of both past and future feature additions.
 
 Feature | Description
