@@ -957,6 +957,7 @@
 ## [Choose a UWP version](updates-and-versions/choose-a-uwp-version.md)
 ## [Services](https://developer.microsoft.com/windows/develop/microsoft-services)
 ## [What's new in Windows 10 for developers](whats-new/windows-10-creators-preview.md)
+### [Prerelease APIs in Windows 10 preview builds](whats-new/windows-10-build-15021-api-dff.md)
 ### [What's new in Windows 10, version 1607](whats-new/windows-10-version-1607.md)
 #### [API additions in Windows 10, version 1607](whats-new/windows-10-version-1607-api-diff.md)
 ### [What's new in Windows 10, version 1607 Preview](whats-new/windows-10-sdk-preview.md)
