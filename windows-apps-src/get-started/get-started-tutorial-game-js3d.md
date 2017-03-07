@@ -656,7 +656,7 @@ var DINOSCALE = 20;  // How big our dino is scaled to
 
 var clock;
 var dino;
-var loader = new **three.js**ONLoader();
+var loader = new THREE.JSONLoader();
 
 var instructions = document.getElementById('instructions');
 ```
