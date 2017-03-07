@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 title: Windows 10 build 15021 API changes
-description: 
+description: Developers can use the following list to identify new or changed namespaces in Windows 10 SDK Preview Build 15021
 keywords: what's new, whats new, update, flighted, flights, API, 15021
 ms.author: quradic
 ms.date: 3/6/2017
