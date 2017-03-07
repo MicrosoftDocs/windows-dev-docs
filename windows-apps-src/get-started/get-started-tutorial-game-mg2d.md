@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ---
 
 # Get Started Tutorial: A UWP game in MonoGame 2D

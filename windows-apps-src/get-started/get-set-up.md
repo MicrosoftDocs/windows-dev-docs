@@ -44,6 +44,10 @@ When you install Visual Studio, use the custom option and make sure all Universa
 
 Need some help with Visual Studio? See [Get Started with Visual Studio](https://www.visualstudio.com/vs/getting-started).
 
+If you have already started using Visual Studio, but discover you are missing some components, you can launch the installer again from the *New project* dialog:
+
+   ![How to repeat the installation process](images/win10-cs-install.png)
+
 
 ## 3. Enable your device for development
 
