@@ -4,7 +4,7 @@ ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ Welcome: these tutorials will help you create your first UWP app in the language
 
 -   Create a UWP app project in Microsoft Visual Studio.
 -   Add UI elements and code to the project.
--   Build and debug your app on the local machine and on a phone emulator.
+-   Build and debug your app on the local machine.
 
 To get started, choose the language you prefer.
 
@@ -56,6 +56,12 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 We assume you're already comfortable with XAML and either C#. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
 
+If you are ready to attempt something more fun, try the C# and MonoGame tutorial:
+
+* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d)
+
+And as a refresher:
+
 * [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
 * [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
 * [A Developer's Guide to Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
@@ -74,7 +80,10 @@ We assume you're already comfortable with XAML and C++. If you want to learn the
 
 Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
 
-* [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-universal.md)
+* [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
+* [Create a "Hello, world" app using HTML and JavaScript, and WinJS](create-a-hello-world-app-js-universal.md)
+* [A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
+* [A 3D UWP game for the Windows Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
 
 We assume you're already comfortable with HTML5, CSS3, and JavaScript. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
 

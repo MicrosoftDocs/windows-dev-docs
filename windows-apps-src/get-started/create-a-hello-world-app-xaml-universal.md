@@ -4,7 +4,7 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: Create a Hello, world app (XAML)
 description: This tutorial teaches you how to use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows 10.
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,39 +17,43 @@ This tutorial teaches you how to use XAML and C# to create a simple "Hello, worl
 
 Here you'll learn how to:
 
--   Create a new **Visual Studio 2015** project that targets **Windows 10** and the **UWP**.
+-   Create a new **Visual Studio 2017** project that targets **Windows 10** and the **UWP**.
 -   Write XAML to change the UI on your start page.
--   Run the project on the local desktop and on the phone emulator in Visual Studio.
+-   Run the project on the local desktop in Visual Studio.
 -   Use a SpeechSynthesizer to make the app talk when you press a button.
 
 ## Before you start...
 
 -   [What's a Universal Windows app](whats-a-uwp.md)?
--   To complete this tutorial, you need Windows 10 and Visual Studio 2015. [Get set up](get-set-up.md).
+-   To complete this tutorial, you need Windows 10 and Visual Studio 2017. [Get set up](get-set-up.md).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
+> [!NOTE]
+> This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
-## If you would rather watch a video...
-
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
-
-If you prefer a visual approach over a step-by-step guide, this video covers the same material but with a nice soundtrack.
 
 ## Step 1: Create a new project in Visual Studio.
 
-1.  Launch Visual Studio 2015.
+1.  Launch Visual Studio 2017.
 
 2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
 
 3.  From the list of templates on the left, open **Installed > Templates > Visual C# > Windows**, and then choose **Universal** to see the list of UWP project templates.
 
-    (If you don't see any Universal templates, you might not have Visual Studio 2015, or may be missing the components for creating UWP apps. Please see [Get set up](get-set-up.md) to fix your tools.)
+    (If you don't see any Universal templates, you might be missing the components for creating UWP apps. You can repeat the installation process and add UWP support by clicking **Open Visual Studio installer** on the *New Project* dialog. See [Get set up](get-set-up.md)
+
+    ![How to repeat the installation process](images/win10-cs-install.png)
 
 4.  Choose the **Blank App (Universal Windows)** template, and enter "HelloWorld" as the **Name**. Select **OK**.
 
     ![The new project window](images/win10-cs-01.png)
 
-5.  The target version/minimum version dialog appears. The default settings are fine, so select **OK** to create the project.
+> [!NOTE]
+> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
+
+ ![Activate Developer mode dialog](images/win10-cs-00.png)
+
+5.  The target version/minimum version dialog appears. The default settings are fine for this tutorial, so select **OK** to create the project.
 
     ![The solution explorer window](images/win10-cs-02.png)
 
@@ -175,40 +179,6 @@ It doesn't do much—yet—but congratulations, you've built your first UWP app!
    –or–
 
    Close the app window.
-
-### Start the app on a mobile device emulator
-
-Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
-
-In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
-
--   **Device**
--   **Emulator <SDK version> WVGA 4 inch 512MB**
--   **Emulator <SDK version> WVGA 4 inch 1GB**
--   etc... (Various emulators in other configurations)
-
-(Don't see the emulators? See [Get set up](get-set-up.md) to make sure you have the Universal Windows App Development Tools installed.)
-
-**To start debugging on a mobile device emulator**
-
-1.  It's a good practice to test your app on a device with a small screen and limited memory, so in the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.14393.0 WVGA 4 inch 512MB**.
-
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
-
-   –or–
-
-   From the **Debug** menu, click **Start Debugging**.
-
-   –or–
-
-   Press F5.
-
-Visual Studio starts the selected emulator and then deploys and starts your app. This might take a little time the first time it starts up. On the mobile device emulator, the app looks like this.
-
-![Initial app screen on mobile device](images/win10-cs-09.png)
-
-If you have a Windows Phone running Windows 10, you can also connect it to the computer and deploy and run the app on it directly (although you will need to [enable developer mode](enable-your-device-for-development.md) first).
-
 
 ## Step 3: Event handlers
 
