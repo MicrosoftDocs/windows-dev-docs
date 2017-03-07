@@ -81,7 +81,7 @@ We assume you're already comfortable with XAML and C++. If you want to learn the
 Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
 
 * [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
-* [Create a "Hello, world" app using HTML and JavaScript, and WebJS](create-a-hello-world-app-js-universal.md)
+* [Create a "Hello, world" app using HTML and JavaScript, and WinJS](create-a-hello-world-app-js-universal.md)
 * [A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
 * [A 3D UWP game for the Windows Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
 
