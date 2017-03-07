@@ -49,7 +49,7 @@ Once the solution has been loaded into Visual Studio, you'll see several files, 
 - css/ - a folder containing the CSS to be used.
 -	js/ - a folder containing the JavaScript files. The main.js file is our game while the other files are the third-party libraries.
 -	models/ - a folder containing the 3D models. For this game, we only have one for the dinosaur.
--	index.html - the webpage which contains the canvas object which hosts the game's graphics.
+-	index.html - the webpage that hosts the game's renderer.
 
 Now you can run the game!
 
