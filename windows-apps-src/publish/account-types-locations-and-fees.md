@@ -41,7 +41,7 @@ Having a company account does not guarantee that apps using these capabilities w
 
 ## Account verification
 
-After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, we use Symantec or Dun & Bradstreet to verify that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](https://msdn.microsoft.com/library/windows/apps/JJ657967), access your Windows Dev Center dashboard, and continue building and testing your app.
+After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, we use Symantec or Dun & Bradstreet to verify that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md), access your Windows Dev Center dashboard, and continue building and testing your app.
 
 You can check your verification status on the **Account settings** page. 
 
@@ -53,7 +53,7 @@ In the following table, the **Registration fee** is the current cost to register
 
 > **Note**  We'll add any applicable taxes and fees to the registration fee when you sign up. Also, when we pay you, your bank might charge a fee to receive the payment.
 
-The **Payout** column describes how we'll [pay you](getting-paid.md) the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
+The **Payout** column describes how we'll [pay you](getting-paid-apps.md) the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
 
 > **Note**  Some markets do not support paid apps (**payout**). In those markets, only free apps can be submitted.
 
