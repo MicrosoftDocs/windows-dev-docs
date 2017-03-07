@@ -16,15 +16,15 @@ keywords: windows 10, uwp
 
 For web developers or JavaScript tinkerers, developing UWP apps with JavaScript is an easy way in to getting your apps out to the world. No need to worry about learning a language like C# or C++!
 
- For this sample, we’re going to be taking advantage of the **three.js** library. This library builds off of WebGL, an API that is used for rendering 2D and 3D graphics for web browsers. **three.js** takes this complicated API and simplifies it, making 3D development much easier. 
+For this sample, we’re going to be taking advantage of the **three.js** library. This library builds off of WebGL, an API that's used for rendering 2D and 3D graphics for web browsers. **three.js** takes this complicated API and simplifies it, making 3D development much easier. 
 
 
 Want to get a glimpse of the app we'll be making before reading further? Check it out on CodePen!
 
-<p data-height="300" data-theme-id="23761" data-slug-hash="54bdab8afb16c5dc0a9e5f38247935ac" data-default-tab="js,result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Dino final" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/54bdab8afb16c5dc0a9e5f38247935ac/">Dino game</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="300" data-theme-id="23761" data-slug-hash="NpKejy" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Dino game final" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/">Dino game final</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
-> This is a not a complete (or good!) game; it is designed to demonstrate using JavaScript and a third-party library to make an app ready to publish to the Windows Store.
+> This is a not a complete game; it is designed to demonstrate using JavaScript and a third-party library to make an app ready to publish to the Windows Store.
 
 
 ## Requirements
@@ -32,15 +32,17 @@ Want to get a glimpse of the app we'll be making before reading further? Check i
 To play with this project, you'll need the following:
 -	A Windows computer (or a virtual machine) running the current version of Windows 10.
 -	A copy of Visual Studio. The free Visual Studio Community Edition can be downloaded from the [Visual Studio homepage](http://visualstudio.com/).
-This project makes use of the **three.js** and **tween.js** JavaScript libraries. Both **three.js** and **tween.js** are released under an MIT license. These libraries are already present in the project (look for js/libs in the Solution Explorer view). More information about these libraries can be found at the [**three.js**](https://threejs.org/) and [**tween.js**](https://github.com/tweenjs/tween.js) home pages.
+This project makes use of the **three.js** JavaScript library. **three.js** is released under the MIT license. This library is already present in the project (look for `js/libs` in the Solution Explorer view). More information about this library can be found at the [**three.js**](https://threejs.org/) home page.
 
 ## Getting started
 
 The complete source code for the app is stored on [GitHub](https://github.com/Microsoft/Windows-appsample-get-started-js3d).
 
-The simplest way to get started it to visit GitHub, click on the green Clone or download button, and select Open in Visual Studio. 
- 
-You can also download the project as a zip file, or use any other standard ways to work with GitHub projects.
+The simplest way to get started is to visit GitHub, click on the green Clone or download button, and select Open in Visual Studio. 
+
+![clone or download button](images/3dclone.png)
+
+If you don't want to clone the project, you can download it as a zip file.
 Once the solution has been loaded into Visual Studio, you'll see several files, including:
 -	Images/ - a folder containing the various icons required by UWP apps.
 - css/ - a folder containing the CSS to be used.
@@ -50,13 +52,13 @@ Once the solution has been loaded into Visual Studio, you'll see several files, 
 
 Now you can run the game!
 
-Press F5 to start the app running. You should see a window open, prompting you to click on the screen. You’ll also see a dinosaur moving around in the background. Go ahead and close out of the game and we’ll begin examining the app and its key components.
+Press F5 to start the app. You should see a window open, prompting you to click on the screen. You’ll also see a dinosaur moving around in the background. Go ahead and close out of the game and we’ll begin examining the app and its key components.
  
 > Something go wrong? Be sure you have installed Visual Studio with web support. You can check by creating a new project - if there is no support for JavaScript, you will need to re-install Visual Studio and check the Microsoft Web Developer Tools box.
 
 ## Walkthrough
 
-When you start up this game, you’ll see a prompt to click on the screen. the Pointer Lock API is used to allow you to look around with your mouse. Moving is done by pressing the W, A, S, D / arrow keys.
+When you start up this game, you’ll see a prompt to click on the screen. The [Pointer Lock API]([Pointer Lock API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock)) is used to allow you to look around with your mouse. Moving is done by pressing the W, A, S, D/arrow keys.
 The goal of this game is to stay away from the dinosaur. Once the dinosaur is close enough to you, it’ll start chasing you until you either get out of range or get too close and lose the game.
 
 ### 1. Setting up your initial HTML file
@@ -77,9 +79,7 @@ Right now, we'll set it up with the libraries we'll be using and the `div` (name
     <body>
         <div id='container'></div>
         <script src='js/libs/three.js'></script>
-        <script src="js/libs/tween.js"></script>
         <script src="js/controls/PointerLockControls.js"></script>
-
         <script src="js/main.js"></script>
     </body>
 
@@ -95,7 +95,7 @@ In the section of the walkthrough we're going to adding the foundation of the ga
 
 We'll start off by fleshing out a `scene`. A `scene` in **three.js** is where your camera, objects, and lights will be added. You'll also need a renderer which will take what your camera sees in the scene and display it.
 
-In main.js we'll make a function that does all of this called `init()` which calls on some additional functions:
+In **main.js** we'll make a function that does all of this called `init()` which calls on some additional functions:
 
 ```javascript
 var UNITWIDTH = 90; // Width of a cubes in the maze
@@ -258,7 +258,7 @@ You can copy and paste all the JavaScript in this CodePen to get caught up if yo
 
 ### 3. Making the maze
 
-While staring at a cube is breathtaking, what’s even more beautiful is a whole maze made out of cubes! It’s a pretty well-known secret in the games community that one of the quickest ways to creating a level is by placing cubes all over with a 2D array.
+While staring at a cube is breathtaking, what’s even better is a whole maze made out of cubes! It’s a pretty well-known secret in the games community that one of the quickest ways to creating a level is by placing cubes all over with a 2D array.
  
 ![maze made with a 2D array](images/dinomap.png)
 
@@ -372,6 +372,7 @@ function createPerimWalls() {
         perimWallLR.position.set(halfMap * sign, UNITHEIGHT / 2, 0);
         perimWallLR.rotation.y = degreesToRadians(90);
         scene.add(perimWallLR);
+        // Used later for collision detection
         collidableObjects.push(perimWallLR);
         // Create front/back wall
         perimWallFB.position.set(0, UNITHEIGHT / 2, halfMap * sign);
@@ -386,7 +387,7 @@ function createPerimWalls() {
 ```
 
 
-Don't forget to add a call to `createGround()` and `createPerimWalls` after `createMazeCubes()` in your `init()` function so that they're run!
+Don't forget to add a call to `createGround()` and `createPerimWalls` after `createMazeCubes()` in your `init()` function so that they get compiled!
 ___
 
 We now have a beautiful maze to look at but can't really get a feel for just how cool it is because our camera is stuck in one spot. It's time to kick this game up a notch and add in some camera controls.
@@ -407,11 +408,9 @@ First let's add some new elements to our **index.html** file:
 
 ```html
 <div id="blocker">
-
     <div id="instructions">
     <strong>Click to look!</strong>
     </div>
-
 </div>
 
 <script src="main.js"></script>
@@ -439,7 +438,7 @@ scene.add(controls.getObject());
 
 The camera is now connected, but we need to somehow let the mouse and controller interact so that we can look around. 
 
-For this situation, the [Pointer Lock API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) comes to the rescue by letting us connect mouse movements to our camera. The Pointer Lock API also makes the mouse disappear for a more immersive experience, with a press of ESC ending the mouse-to-camera connection and causing it to reappear. The `getPointerLock()` and `lockChange()` functions will help us to just that.
+For this situation, the [Pointer Lock API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) comes to the rescue by letting us connect mouse movements to our camera. The Pointer Lock API also makes the mouse disappear for a more immersive experience. By pressing ESC we end the mouse to camera connection and make the mouse reappear. Additions of the `getPointerLock()` and `lockChange()` functions will help us do just that.
 
 The `getPointerLock()` function listens for when a mouse click happens. After the click, our rendered game (in the `container` element) tries to get control of the mouse. We also add an event listener to detect when the player activates or deactivates the lock which then calls `lockChange()`. 
 
@@ -491,7 +490,7 @@ At this point we now have the ability to **look** around, but the real 'wow' fac
 
 To dig into how to get our player moving, we've got to think back to our calculus days. We want to apply velocity (movement) to the `camera` along a certain vector (direction).
 
-Let's add a few more global variables to keep track of which direction the player is moving, and setting an initial velocity vector:
+Let's add a few more global variables to keep track of which direction the player is moving, and set an initial velocity vector:
 
 ```javascript
 // Flags to determine which direction the player is moving
@@ -509,7 +508,7 @@ var PLAYERSPEED = 800.0;
 var clock;
 ```
 
-In the beginning of the `init()` function, set `clock` to a new `Clock` object. We'll be using this to keep track of the change in time (delta) it takes to render new frames. You'll also need to add a call to `listenForPlayerMovement()`. This function is what we'll use to gather user input. 
+In the beginning of the `init()` function, set `clock` to a new `Clock` object. We'll be using this to keep track of the change in time (delta) it takes to render new frames. You'll also need to add a call to `listenForPlayerMovement()`, which gathers user input. 
 
 ```
 clock = new THREE.Clock();
@@ -635,11 +634,13 @@ In the end, we apply the whatever the updated `x` and `y` values are to the came
 
 ---
 
-Congratulations! You now have a player controlled camera that can move and look around. We still slip right through walls, but that's something to worry about later. We have a dinosaur to add! 
+Congratulations! You now have a player controlled camera that can move and look around. We still slip right through walls, but that's something to worry about later. Next we'll add our dinosaur.
 
 <p data-height="300" data-theme-id="23761" data-slug-hash="ab804473fa3545d1153061a6078b346d" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Player movement" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/ab804473fa3545d1153061a6078b346d">Player movement</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
+> [!NOTE]
+> If you use these controls in your UWP app you may experience movement lag and unregistered `keyUp` events. We're looking into this and hope to fix this portion of the sample soon!
 
 ### 6. Load that dino!
 
@@ -659,9 +660,9 @@ var instructions = document.getElementById('instructions');
 ```
 
 Now that we have our `JSONLoader` created, we'll pass in the path to our **dino.json** and a callback with the geometry and materials gathered from the file.
-Loading the dino is an asynchronous task, meaning nothing will render until the dino is completely loaded. In our **index.html** we changed the string in the `instructions` element to `"loading..."` to let the player know things are in progress.
+Loading the dino is an asynchronous task, meaning nothing will render until the dino is completely loaded. In our **index.html** we changed the string in the `instructions` element to `"Loading..."` to let the player know things are in progress.
 
-After the dino is loaded, we update the `instructions` element with the actual instructions of the game, and remove the `animate()` function from `init()` to the end of this function.
+After the dino is loaded, update the `instructions` element with the actual instructions of the game, and move the `animate()` function from the end of `init()` to the end of the function callback seen below:
 
 ```javascript
    // load the dino JSON model and start animating once complete
@@ -729,18 +730,18 @@ Watching the dino sail away isn't very fun, but once we add collision detection 
 
 ### 8. Collision detection for the player
 
-So we not have the player and the dino moving around, but there's that annoying issue with everyone going through walls. When we first started adding out cubes and walls earlier in this tutorial, we pushed them into the `collidableObjects` array. This array is what we'll be using to tell if a player is too close to something they shouldn't walk through.
+So we now have the player and the dino moving around, but there's still that annoying issue with everyone going through walls. When we first started adding our cubes and walls earlier in this tutorial, we pushed them into the `collidableObjects` array. This array is what we'll be using to tell if a player is too close to something they can't walk through.
 
-We'll be using raycasters to determine when an intersection is about to occur. You could imagine a raycaster as a laser beam coming out of the camera at some specified direction, reporting back if it's hit an object and exactly how far away it is.
+We'll be using raycasters to determine when an intersection is about to occur. You could imagine a raycaster as a laser beam coming out of the camera at some specified direction, reporting back if it hit an object and exactly how far away it is.
 
 ```javascript
 var PLAYERCOLLISIONDISTANCE = 20;
 ```
 
 We'll be making a new function called `detectPlayerCollision()` that will return `true` if the player is too close to a collidable object.
-For the player, we're going to apply one raycaster to it, changing which direction it's pointing in depending on which direction they're going.
+For the player, we're going to apply one raycaster to it, changing which direction it's pointing depending on which direction they're going.
 
-To do this, we create `rotationMatrix`, an undefined matrix. As we check which direction we're going, we'll end up with either a defined `rotationmatrix`, or undefined if they're moving forward.
+To do this, we create `rotationMatrix`, an undefined matrix. As we check which direction we're going, we'll end up with either a defined `rotationMatrix`, or undefined if you're moving forward.
 If defined, the `rotationMatrix` will be applied to the direction of the controls. 
 
 A raycaster will then be created, starting from and camera and reaching out in the `cameraDirection` direction.
@@ -787,13 +788,13 @@ function detectPlayerCollision() {
 ```
 
 Our `detectPlayerCollision()` function relies on the `rayIntersect()` helper function.
-This takes a raycaster and how far away they want to stop from an object in the `collidableObjects` array.
-`true is returned if the raycaster has determined that it's too close.
+This takes a raycaster and value representing how close we can get to an object in the `collidableObjects` array before determining a collision has occured.
 
 ```javascript
 function rayIntersect(ray, distance) {
     var intersects = ray.intersectObjects(collidableObjects);
     for (var i = 0; i < intersects.length; i++) {
+        // Check if there's a collision
         if (intersects[i].distance < distance) {
             return true;
         }
@@ -855,7 +856,7 @@ We'll need to set anothe global variable for the collision distance:
 var DINOCOLLISIONDISTANCE = 55;     
 ```
 
-Now that we've specifed at what distance we want our dino to collide at, let's add in a function similar to `detectPlayerCollision()`, but a bit simpler.
+Now that we've specifed at what distance we want our dino to collide at, let's add a function similar to `detectPlayerCollision()`, but a bit simpler.
 The `detectDinoCollision` function is simple in that we always have one raycaster coming straight out the front of the dino. No need to rotate it around like for the player collision.
 
 ```javascript
@@ -902,7 +903,7 @@ function animateDino(delta) {
         var randomDirection = degreesToRadians(90 * directionMultiples[randomIndex]);
 
         dinoVelocity.z += DINOSPEED * delta;
-        rotateAnimation(randomDirection);
+        dino.rotation.y += randomDirection;
     }
 }
 ```
@@ -918,77 +919,13 @@ function getRandomInt(min, max) {
 }
 ```
 
-Once this is all done, we multiply the random index of the array by 90 to get the degree (converted to radians) of rotation and pass it into a new function, `rotateAnimation()`.
-
-
-Our `rotateAnimation()` function uses ****tween.js**** to make our dino rotate.
-In ****three.js****, when you tell an object to rotate 90 degrees it snap by 90 degrees in an instant. What would be much nicer is to have the dino smoothly rotate.
-That's where the ****tween.js**** library. "Tween" stand for in-between, meaning it renders the frames in-between movement, color transitions, etc., creating smooth animations.
-
-
-**tween.js** works by passing in a starting point, an ending point, and a time for how long we want the animation to take.
-For our rotations, we've set a constant to represent a time of one second (100 milliseconds) and have added two variables to keep track of time:
-
-```javascript
-var ROTATIONTIME = 1000;
-
-var collideTime, animateTime = 0;
-```
-
-The `collideTime` is the timestamp that a collision has occured, while `animateTime` is the time animation started.
-
-Things get a little complicated in this function, so let's walk through what happens when the first collision occurs.
-
-First, we check the timestamp of the collision. The stamp was initialized to 0, so we proceed to start rotating the dino around its `y` axis until it reaches it's current `y` rotation plus the added rotation amount. This will take one second. 
-
-We also have an `onStart()` call starts another animation which holds the dino in it's same position for one second. Since this animation fires when the rotation animation starts, the end result is that on collision, the dino will stop and rotate a certain degree over a one second duration.
-
-Since our collision detection is always running, having a rotation this slow will cause this function to be called over and over again because we're still techincally colliding with the wall.
-To let the animation finish and not get interrupted and repeated over and over again, we set a final check to see if the next `collideTime` is past when the animation started plus `ROTATIONTIME` (when the animation should be complete). If it is, we set `collideTime` to `0` so that it'll pass on the next reported collide. If it's not, we update `collideTime` and keep waiting for the animation to finish.
-
-```javascript
-function rotateAnimation(radianRotation) {
-    // Check if we can start an animation
-    if (collideTime == 0) {
-        // Set the time when the animation started
-        animateTime = performance.now();
-
-        // Rotate a certain amount in ROTATIONTIME milliseconds
-        new TWEEN.Tween(dino.rotation)
-            .to({ y: dino.rotation.y + radianRotation }, ROTATIONTIME)
-            .easing(TWEEN.Easing.Linear.None)
-            .onStart(function () {
-                // Make dino stay in one spot while rotating
-                new TWEEN.Tween(dino.position)
-                    .to(dino.position, ROTATIONTIME)
-                    .easing(TWEEN.Easing.Linear.None)
-                    .start();
-            })
-            .onComplete(function () {
-                var rotation = radiansToDegrees(dino.rotation.y);
-                // Make sure dino is always going an angle that's a multiple of 90 or is 0
-                dino.rotation.y = degreesToRadians(Math.floor(rotation / 90) * 90);
-
-            })
-            .start();
-    }
-
-    // If the animation is over, set the collideTime to 0 so a new animation can begin
-    if (collideTime >= animateTime + ROTATIONTIME) {
-        collideTime = 0;
-    // Get the time of this collision, but don't do anything since we're still doing an animation
-    } else {
-        collideTime = performance.now();
-    }
-}
-```
-
-To make the animations happen, we'll need them to update every time the `animate()` function is called by placing `TWEEN.update` as the end of it.
+Once this is all done, we multiply the random index of the array by 90 to get the degree (converted to radians) of rotation.
+By adding this value to the dino's `y` rotation with `dino.rotation.y += randomDirection;`, the dino now makes random turns upon collision.
 
 
 ---
 
-Ww did it! We now have a dino with AI that can move around our maze!
+We did it! We now have a dino with AI that can move around our maze!
 
 <p data-height="300" data-theme-id="23761" data-slug-hash="dd6e3a8f7df08851034aa470fea5d208" data-default-tab="js,result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Moving the dino - collision and animation" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/dd6e3a8f7df08851034aa470fea5d208/">Moving the dino - collision and animation</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
@@ -997,7 +934,7 @@ Ww did it! We now have a dino with AI that can move around our maze!
 
 Once the dino is within a certain distance to the player, we want it to start chasing them. Since this is just an example, there aren't any advanced algorithms applied for the dino to track the player down. Instead, the dino will look at the player and walk towards them. In an open part of the maze this works great, but the dino does get stuck when a wall is in the way.
 
-In our `animate()` function we'll add a boolean variable that is determines by what is returned by `triggerChase()`:
+In our `animate()` function we'll add a boolean variable that is determined by what is returned by `triggerChase()`:
 
 ```javascript
 function animate() {
@@ -1012,11 +949,10 @@ function animate() {
 
     animateDino(delta);
     animatePlayer(delta);
-    TWEEN.update();
 }
 ```
 
-Our `triggerChase` function will check to see if the player is in chasing range of the dino, and then make the dino always face the player. This causes it to always move towards the direction of the player. 
+Our `triggerChase` function will check to see if the player is in chasing range of the dino, and then make the dino always face the player, which allows it to move in the player's direction. 
 
 ```javascript
 function triggerChase() {
@@ -1045,7 +981,7 @@ function triggerChase() {
 }
 ```
 
-The second half of `triggerChase` deals with displaying some text letting the player know how far away the dino is from them. We also introduce `CATCHOFFSET` to specify how far away `0` should be. If we didn't have the offset, `0` would be right on top of the player which doesn't make for a very cinematic end to all this.
+The second half of `triggerChase` deals with displaying some text that lets the player know how far away the dino is. We also introduce `CATCHOFFSET` to specify how far away `0` should be. If we didn't have the offset, `0` would be right on top of the player which doesn't make for a very cinematic end to all this.
 
 
 
@@ -1056,7 +992,7 @@ dinoAlert.style.display = 'none';
 
 ---
 
-At this point we have a crazy dinosaur that start following the player around once it gets too close, and doesn't stop until it's position is on top of the player.
+At this point we have a wild dinosaur that starts following the player once you get too close, and doesn't stop until it's position is on top of the player.
 The final step is to add some game over conditions once the dino is `CATCHOFFSET` units away.
 
 <p data-height="300" data-theme-id="23761" data-slug-hash="fa75ffb13070dd4245cc152cb513509a" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="The chase" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/fa75ffb13070dd4245cc152cb513509a/">The chase</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
@@ -1075,7 +1011,7 @@ var gameOver = false;
 ```
 
 Now we need to update our `animate()` function one last time to check if the dino is too close to the player.
-If the dino is too close, we'll start a new function called `caughtAnimation()` and will stop the player and dino from moving, if not, we'll carry on with business as usual and let the player and dino move around.
+If the dino is too close, we'll start a new function called `caught()` and will stop the player and dino from moving, if not, we'll carry on with business as usual and let the player and dino move around.
 
 ```javascript
 function animate() {
@@ -1090,34 +1026,22 @@ function animate() {
     var isBeingChased = triggerChase();
     // If the player is too close, trigger the end of the game
     if (dino.position.distanceTo(controls.getObject().position) < CATCHOFFSET) {
-        caughtAnimation();
+        caught();
     // Player is at an undetected distance
     // Keep the dino moving and let the player keep moving too
     } else {
         animateDino(delta);
         animatePlayer(delta);
     }
-    TWEEN.update();
 }
 ```
 
-If the dino catches the player, `caughtAnimation()` will make the player's camera to a one full 360 degree rotation that will take 20 seconds.
-It will also display our `blocker` element and update the text to indicate that the game has been lost and hides out `dinoAlert` element.
-
-Setting `gameOver` to `true` is the last thing it does, which now lets us know the game is over.  
+If the dino catches the player, `caught()` will display our `blocker` element and update the text to indicate that the game has been lost.
+The `gameOver` variable is also set to `true`, which now lets us know the game is over.  
 
 
 ```javascript
-var rotations = 0;
-
-function caughtAnimation() {
-    if (rotations == 0) {
-        new TWEEN.Tween(controls.getObject().rotation)
-            .to({ y: degreesToRadians(360) }, 20000)
-            .easing(TWEEN.Easing.Linear.None)
-            .start();
-        rotations++;
-    }
+function caught() {
     blocker.style.display = '';
     instructions.innerHTML = "GAME OVER </br></br></br> Press ESC to restart";
     gameOver = true;
@@ -1127,7 +1051,7 @@ function caughtAnimation() {
 ```
 
 
-Now that we know whether the game is over or not, we can add a check for if the game is over to our `lockChange()` function.
+Now that we know whether the game is over or not, we can add a check for game over to our `lockChange()` function.
 Now when the user presses ESC once the game is over, we can add `location.reload` to restart the game.
 
 ```javascript
@@ -1147,7 +1071,7 @@ function lockChange() {
 
 ---
 
-That's it! It was quite the journey, but we now have a game made with ****three.js****.
+That's it! It was quite the journey, but we now have a game made with **three.js**.
 
 Head back up to the top of the page to see the final CodePen!
 
