@@ -58,7 +58,7 @@ We assume you're already comfortable with XAML and either C#. If you want to lea
 
 If you are ready to attempt something more fun, try the C# and MonoGame tutorial:
 
-* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d)
+* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
 
 And as a refresher:
 
