@@ -52,14 +52,16 @@ To register your app to receive targeted push notifications from Dev Center:
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
 
+>**Note**&nbsp;&nbsp;When you call the **RegisterNotificationChannelAsync** method, a file named MicrosoftStoreEngagementSDKId.txt is created in the local app data store for your app (the folder returned by the [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalFolder) property). This file contains an ID that is used by the targeted push notifications infrastructure. Make sure that your app does not modify or delete this file. Otherwise, your users may receive multiple instances of notifications, or the notifications may not behave properly in other ways.
+
 <span id="notification-customers" />
-### Understanding how targeted push notifications are routed to customers
+### How targeted push notifications are routed to customers
 
 When your app calls **RegisterNotificationChannelAsync**, this method collects the Microsoft account of the customer who is currently signed in to the device. Later, when you send a targeted push notification to a segment that includes this customer, Dev Center sends the notification to devices that are associated with this customer's Microsoft account.
 
 If the customer who started your app gives their device to someone else to use while they are still signed in to the device with their Microsoft account, be aware that the other person may see the notification that was targeted at the original customer. This can have unintended consequences, particularly for apps that offer services that customers can sign in to use. To prevent other users from seeing your targeted notifications in this scenario, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method when customers sign out of your app. For more information, see [Unregister for push notifications](#unregister) later in this article.
 
-### Understanding how your app responds when the user launches your app
+### How your app responds when the user launches your app
 
 After your app is registered to receive notifications and you [send a push notification to your app's customers from Dev Center](../publish/send-push-notifications-to-your-apps-customers.md), one of the following entry points in your app will be called when the user launches your app in response to your push notification. If you have some code that you want to run when the user launches your app, you can add the code to one of these entry points in your app.
 
