@@ -18,7 +18,7 @@ ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
 This article explains how to create and export a certificate for app package signing using PowerShell tools. It's recommended that you use Visual Studio for [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps), but you can still package a Store ready app manually if you did not use Visual Studio to develop your app.
 
 > [!IMPORTANT] 
-> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to create and sign your app package. For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to import a certificate and sign your app package. For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 ## Prerequisites
 

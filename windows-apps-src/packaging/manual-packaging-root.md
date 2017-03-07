@@ -1,3 +1,4 @@
+---
 author: laurenhughes
 ms.assetid: ee51eae3-ed55-419e-ad74-6adf1e1fb8b9
 title: Manual app packaging
