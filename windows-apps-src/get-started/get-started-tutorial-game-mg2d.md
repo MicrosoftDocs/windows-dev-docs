@@ -12,6 +12,14 @@ ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ---
 
 # Get Started Tutorial: A UWP game in MonoGame 2D
+
+## A simple 2D UWP game for the Windows Store, written in C# and MonoGame
+
+
+![Walking Dino sprite sheet](images/JS2D_0.png)
+
+## Introduction
+
 MonoGame is a lightweight game development framework. This tutorial will teach you the basics of game development in MonoGame, including how to load content, draw sprites, animate them, and handle user input. Some more advanced concepts like collision detection and scaling up for high-DPI screens are also discussed. This tutorial takes 30-60 minutes.
 
 ## Prerequisites

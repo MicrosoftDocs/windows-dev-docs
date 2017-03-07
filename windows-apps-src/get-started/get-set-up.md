@@ -34,11 +34,11 @@ Are you an MSDN subscriber? You can get ISO downloads here:
 
 Microsoft Visual Studio 2017 helps you design, code, test, and debug your apps.
 
-If you don't already have Visual Studio 2017, click this link to install the free Microsoft Visual Studio Community 2017. This download includes device simulators for testing your apps:
+If you don't already have Visual Studio 2017, you can install the free Microsoft Visual Studio Community 2017. This download includes device simulators for testing your apps:
 
 -   [Download Windows 10 developer tools](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
-When you install Visual Studio, use the custom option and make sure all Universal Windows App Development Tools options are selected, as shown here.
+When you install Visual Studio, make sure to select the Universal Windows App Development Tools option, as shown here:
 
 ![Visual Studio tools for UWP](images/vs-2017-community-setup.png)
 
