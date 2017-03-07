@@ -23,7 +23,8 @@ Want to get a glimpse of the app we'll be making before reading further? Check i
 
 <p data-height="300" data-theme-id="23761" data-slug-hash="NpKejy" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="Dino game final" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/NpKejy/">Dino game final</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
+
+> [!NOTE] 
 > This is a not a complete game; it is designed to demonstrate using JavaScript and a third-party library to make an app ready to publish to the Windows Store.
 
 
@@ -53,7 +54,8 @@ Once the solution has been loaded into Visual Studio, you'll see several files, 
 Now you can run the game!
 
 Press F5 to start the app. You should see a window open, prompting you to click on the screen. You’ll also see a dinosaur moving around in the background. Go ahead and close out of the game and we’ll begin examining the app and its key components.
- 
+
+> [!NOTE] 
 > Something go wrong? Be sure you have installed Visual Studio with web support. You can check by creating a new project - if there is no support for JavaScript, you will need to re-install Visual Studio and check the Microsoft Web Developer Tools box.
 
 ## Walkthrough
@@ -1073,7 +1075,7 @@ function lockChange() {
 
 That's it! It was quite the journey, but we now have a game made with **three.js**.
 
-Head back up to the top of the page to see the final CodePen!
+Head back up to the top of the page to see the [final CodePen](#introduction)!
 
 
 ## Publishing to the Windows Store
