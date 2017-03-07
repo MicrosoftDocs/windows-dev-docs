@@ -23,6 +23,8 @@ An app can support the Share feature in two ways. First, it can be a source app 
 
 In addition to the Share contract, apps can also integrate classic techniques for transferring data, such as dragging and dropping or copy and pasting. In addition to communication between UWP apps, these methods also support sharing to and from desktop applications.
 
+
+
 ## In this section
 
 | Topic | Description |

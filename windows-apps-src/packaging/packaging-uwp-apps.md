@@ -33,7 +33,7 @@ After you have completed the steps above, you are ready to sell your app in the 
 
 ## Configure an app package
 
-The app manifest file (package.appxmanifest.xml) has the properties and settings that are required to create your app package. For example, properties in the manifest file describe the image to use as the tile of your app and the orientations that your app supports when a user rotates the device.
+The app manifest file (package.appxmanifest) has the properties and settings that are required to create your app package. For example, properties in the manifest file describe the image to use as the tile of your app and the orientations that your app supports when a user rotates the device.
 
 Visual Studio has a manifest designer that makes it easy for you to update the manifest file without editing the raw XML of the file.
 

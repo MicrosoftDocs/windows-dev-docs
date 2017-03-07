@@ -2,7 +2,7 @@
 author: awkoren
 Description: This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP).
 Search.Product: eADQiWindows 10XVcnh
-title: Supported UWP APIs for converted desktop apps
+title: Desktop to UWP Bridge Supported UWP APIs
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ---
-# Supported UWP APIs for apps converted with the Desktop Bridge
+# Desktop to UWP Bridge: Supported UWP APIs
 
 Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the availble classes your converted app can use. 
 

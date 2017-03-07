@@ -159,7 +159,7 @@ namespace SMTC_Win10
             SystemMediaTransportControlsDisplayUpdater updater = _systemMediaTransportControls.DisplayUpdater;
 
             // Music metadata.
-            updater.MusicProperties.AlbumArtist = "artist";
+            updater.MusicProperties.Artist = "artist";
             updater.MusicProperties.AlbumArtist = "album artist";
             updater.MusicProperties.Title = "song title";
 

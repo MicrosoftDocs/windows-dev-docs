@@ -15,7 +15,7 @@ ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 
 Get started building apps for the Universal Windows Platform (UWP) on Xbox One.
 
-UWP on Xbox One supports developing both apps and games. You don't need to be an [ID@Xbox](http://www.xbox.com/Developers/id) developer to experiment, create, and test games or apps on Xbox, but you do need to enroll with [ID@Xbox](http://www.xbox.com/Developers/id) if you want to publish and sell a game on Xbox One or take advantage of Xbox Live on Windows 10. To join our community of independent developers and enthusiasts, register for [ID@Xbox](http://www.xbox.com/Developers/id). 
+UWP on Xbox One supports developing both apps and games. You don't have to part of a developer program to experiment, create, and test games or apps on Xbox. When you are ready to publish and sell games on Xbox One or take advantage of Xbox Live on Windows 10, you need to join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) or be an [ID@Xbox](http://www.xbox.com/Developers/id) developer. For more info, see [Developer Program Overview](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html).
 
 This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application. 
 

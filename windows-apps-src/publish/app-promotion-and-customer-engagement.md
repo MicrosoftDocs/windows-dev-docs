@@ -18,7 +18,7 @@ Once your app is in the Windows Store, it's time to get it in front of as many c
 
 -   [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
 -   [Create a custom app promotion campaign](create-a-custom-app-promotion-campaign.md)
--   [Send targeted push notifications to your app's customers](/send-push-notifications-to-your-apps-customers.md)
+-   [Send targeted push notifications to your app's customers](send-push-notifications-to-your-apps-customers.md)
 -   [Generate promotional codes](generate-promotional-codes.md)
 -   [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md)
 -   [Respond to customer feedback](respond-to-customer-feedback.md)

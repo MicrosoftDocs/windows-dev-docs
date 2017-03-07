@@ -54,7 +54,19 @@ To work around this issue, either temporarily disable Parental Controls, or:
 
 At this point the permission is _sticky_ until you sign the user out, even if you uninstall and reinstall the app.
  
-There is another type of exemption that is only available for child accounts. A child account requires a parent to sign in to grant permission, but when they do, the parent has the option of choosing to **Always** allow the child to launch the app. That exemption is stored in the cloud and will persist even if the child signs out and signs back in.   
+There is another type of exemption that is only available for child accounts. A child account requires a parent to sign in to grant permission, but when they do, the parent has the option of choosing to **Always** allow the child to launch the app. That exemption is stored in the cloud and will persist even if the child signs out and signs back in.
+
+## StorageFile.CopyAsync fails to copy encrypted files to unencrypted destination 
+
+When StorageFile.CopyAsync is used to copy a file that is encrypted to a destination that is not encrypted, the call will fail with the following exception:
+
+```
+System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070005)
+```
+
+This can affect Xbox developers who want to copy files that are deployed as part of their app package to another location. 
+The reason for this is that the package contents are encrypted on an Xbox in retail mode, but not in Dev Mode. 
+As a result, the app may appear to work as expected during development and testing, but then fail once it has been published and then installed to a retail Xbox.
 
 <!--### x86 vs. x64
 

@@ -2,7 +2,7 @@
 author: awkoren
 Description: In addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. This article describes these extensions and how to use them.
 Search.Product: eADQiWindows 10XVcnh
-title: Converted desktop app extensions
+title: Desktop to UWP Bridge App Extensions
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ---
 
-# Desktop Bridge app extensions
+# Desktop to UWP Bridge: App extensions
 
 You can enhance your converted Desktop application with a wide range of Universal Windows Platform (UWP) APIs. However, in addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. These features focus on scenarios such as launching a process when the user logs on and File Explorer integration, and are designed to smooth the transition between the original desktop app and the converted app package.
 
@@ -48,7 +48,7 @@ To declare a startup task, add the following to your app's manifest:
 - *Extension Category* should always have the value "windows.startupTask ".
 - *Extension Executable* is the relative path to the .exe to start.
 - *Extension EntryPoint* should always have the value "Windows.FullTrustApplication".
-- *StartupTask TaskId* is a unique identifier for your task. Using this identifier, your app can call the APIs in the **Windows.ApplicationModel.StartupTask** class to programmatically enable or disable a startup task.
+- *StartupTask TaskId* is a unique identifier for your task. Using this identifier, your app can call the APIs in the [**Windows.ApplicationModel.StartupTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task.
 - *StartupTask Enabled* indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). 
 - *StartupTask DisplayName* is the name of the task that appears in Task Manager. This string is localizable using ```ms-resource```. 
 

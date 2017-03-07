@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, debug, test, performance
 ---
 
-# Deploying and debugging Universal Windows Platform (UWP) apps
+# Deploying and debugging UWP apps
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -90,7 +90,7 @@ To do this, search for **Remote Debugger** in the **Start** menu, open it, and i
 
 To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
 
-For more information, see the [Remote Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=717039) download page.
+For more information, see the [Visual studio Download Center](https://www.visualstudio.com/downloads/) page.
 
 ## Authentication modes
 

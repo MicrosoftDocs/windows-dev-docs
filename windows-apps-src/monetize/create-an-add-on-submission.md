@@ -119,7 +119,7 @@ The following example demonstrates the JSON response body for a successful call 
       }
     ],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",

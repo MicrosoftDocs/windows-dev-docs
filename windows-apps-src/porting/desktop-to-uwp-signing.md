@@ -2,7 +2,7 @@
 author: awkoren
 Description: This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP).
 Search.Product: eADQiWindows 10XVcnh
-title: Sign an app converted with the Desktop to UWP Bridge.
+title: Desktop to UWP Bridge Sign
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 232c3012-71ff-4f76-a81e-b1758febb596
 ---
 
-# Sign an app converted with the Desktop Bridge
+# Desktop to UWP Bridge: Sign
 
 This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP). You must sign your .appx package with a certificate before you can deploy it.
 

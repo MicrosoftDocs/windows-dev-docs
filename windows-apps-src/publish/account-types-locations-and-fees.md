@@ -4,7 +4,7 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 03/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ We offer two types of developer accounts: individual accounts, and company accou
 
 > **Note**  Whether you create an account for a company or an individual, you can associate only one Microsoft account with the developer account. When signing up for an account, make sure to sign in with the Microsoft account that you want to use for your developer account.
 
-When you [begin the signup process](http://go.microsoft.com/fwlink/p/?LinkId=615100) you'll need to choose whether to create an individual account or a company account. Individual accounts are intended for a single developer working on their own. Company accounts are intended for organizations and businesses. Company accounts give you access to some additional app capabilities. We also require greater verification for company accounts after you register, to confirm that you’re authorized to set up the account for your company. This verification can take from a few days to a couple of weeks, and often includes a phone call to your company. Both types of accounts will allow you to submit apps, add-ins, and services.
+When you [begin the signup process](http://go.microsoft.com/fwlink/p/?LinkId=615100) you'll need to choose whether to create an individual account or a company account. Both types of accounts will allow you to submit apps, add-ins, and services. Individual accounts are intended for a single developer working on their own. Company accounts are intended for organizations and businesses, and allow access to some additional app capabilities. For company accounts, We require greater [verification](#account-verification) to confirm that you’re authorized to set up the account for your company. 
 
 > **Important**  You cannot change the account type once you make your selection, so be sure to choose the right type.
 
@@ -27,9 +27,7 @@ Here are the essential differences between the two account types.
 |--------------------|-----------------|
 | <ul><li>Restricted from using certain app capabilities</li><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> | <ul><li>Requires verification through Symantec or Dun & Bradstreet</li><li>Greater access to app capabilities</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> |
 
-> **Important**   If you decide to create a company account, be sure to review our [guidelines for company accounts](opening-a-developer-account.md#additional-guidelines-for-company-accounts).
-
-Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. One of the main benefits of having a company account is the ability to submit apps that declare additional [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. Company accounts also allow you to submit apps that declare additional [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
 
 Specifically, you must have a company account in order to publish apps that use the following three capabilities:
 
@@ -41,7 +39,11 @@ Specifically, you must have a company account in order to publish apps that use 
 
 Having a company account does not guarantee that apps using these capabilities will pass certification. These capabilities are intended for very specific scenarios, and most apps shouldn't declare them. For more information, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
 
-For company accounts, we use Symantec or Dun & Bradstreet to verify that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](https://msdn.microsoft.com/library/windows/apps/JJ657967), access your Windows Dev Center dashboard, and continue building and testing your app.
+## Account verification
+
+After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, we use Symantec or Dun & Bradstreet to verify that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md), access your Windows Dev Center dashboard, and continue building and testing your app.
+
+You can check your verification status on the **Account settings** page. 
 
 ## Developer account and app-submission markets
 
@@ -51,13 +53,13 @@ In the following table, the **Registration fee** is the current cost to register
 
 > **Note**  We'll add any applicable taxes and fees to the registration fee when you sign up. Also, when we pay you, your bank might charge a fee to receive the payment.
 
-The **Payout** column describes how we'll pay you the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
+The **Payout** column describes how we'll [pay you](getting-paid-apps.md) the money you earn from your apps. You'll be able to choose the [payout account](setting-up-your-payout-account-and-tax-forms.md) into which we'll deposit this money.
 
 > **Note**  Some markets do not support paid apps (**payout**). In those markets, only free apps can be submitted.
 
-The **PayPal** column indicates whether PayPal is a supported payment method that can be used for your [payout account](https://msdn.microsoft.com/library/windows/apps/Bg124529) (and, except where noted, for your developer account registration fee).
+The **PayPal** column indicates whether PayPal is a supported payment method that can be used for your [payout account](setting-up-your-payout-account-and-tax-forms.md) (and, except where noted, for your developer account registration fee).
 
-| Country/region | Individual Reg. fee | Company Reg. fee | Payout | PayPal |
+| Country/region | Individual reg. fee | Company reg. fee | Payout | PayPal |
 |----------------|---------------------|------------------|--------|--------|
 | Afghanistan | 19 USD | 99 USD | USD paid to bank | No |
 | Albania | 19 USD | 99 USD | USD paid to bank | No |
@@ -253,9 +255,3 @@ The **PayPal** column indicates whether PayPal is a supported payment method tha
 
 \* PayPal can be used as a payment method for payout accounts in this market, but can't be used to pay for the developer account registration fee.
 
-## Related topics
-
-* [Opening a developer account](opening-a-developer-account.md)
-* [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md)
-* [Getting paid](getting-paid-apps.md)
- 

@@ -4,6 +4,10 @@ hide_bc: true
 title: Windows Documentation
 description: Find developer, hardware, and IT pro docs to help you build and maintain your Windows solution.
 ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: hub-page
+ms.prod: windows
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -99,6 +103,9 @@ ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
                                             <p>
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monetize</a>
                                             </p>
+                                            <p>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">API reference</a>
+                                            <p>
                                         </div>
                                     </div>
                                 </div>
@@ -204,18 +211,18 @@ ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Holographic</h3>
+                                            <h3>Mixed Reality</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/getting_started">Get started</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/academy">Academy</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/academy">Academy</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/development">Development</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/documentation">Documentation</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/design">Design</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/holographic/community">Community</a>
+                                                <a href="https://developer.microsoft.com/windows/mixed-reality/community">Community and Support</a>
                                             </p>
                                         </div>
                                     </div>

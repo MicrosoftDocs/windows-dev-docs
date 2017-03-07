@@ -33,7 +33,7 @@ This guide will be updated as additional Windows 10 game development resources a
 
 From documentation to developer programs, forums, blogs, and samples, there are many resources available to help you on your game development journey. Here's a roundup of resources to know about as you begin developing your Windows 10 game.
 
-> **Note**   Xbox One development and select Windows 10 gaming features (Xbox Live Services, for example) are managed through programs such as ID@Xbox and Microsoft Studios. This guide covers a broad range of resources, so you may find that some resources are inaccessible depending on the program you are in or your specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
+> **Note**   Xbox One development and select Windows 10 gaming features (Xbox Live Services, for example) are managed through various programs. This guide covers a broad range of resources, so you may find that some resources are inaccessible depending on the program you are in or your specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
 
 ### Game development documentation
 
@@ -124,6 +124,23 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
     </tr>
 </table>
 
+#### Xbox Live Creators Program
+
+The Xbox Live Creators Program is currently in Preview. This program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. To start developing with the Xbox Live Creators Program, sign up for the Preview today. The sign-ups for the Preview program is currently limited but more spaces will be made available periodically.
+
+If you want access to even more Xbox Live capabilities, be featured in the main Xbox One store, or receive dedicated marketing and development support, you can apply to the [ID@Xbox](http://www.xbox.com/Developers/id) program.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Xbox Live Creators Program Preview</td>
+        <td>[Integrate Xbox Live into your title](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
+    </tr>
+</table>
+
 #### Xbox tools and middleware
 
 The Xbox Tools and Middleware Program licenses Xbox development kits to professional developers of game tools and middleware. Developers accepted into the program can share and distribute their Xbox XDK technologies to other licensed Xbox developers.
@@ -207,16 +224,16 @@ Developer forums are a great place to ask and answer game development questions 
     </colgroup>
     <tr>
         <td>Windows apps developer forums</td>
-        <td>[Windows store and apps forums](https://social.msdn.microsoft.com/Forums/home?category=windowsapps)</td>
+        <td>[Windows store and apps forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps)</td>
     </tr>
     <tr>
         <td>UWP apps developer forum</td>
-        <td>[Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)</td>
+        <td>[Developing Universal Windows Platform apps](https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop)</td>
     </tr>
 
     <tr>
         <td>Desktop applications developer forums</td>
-        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
         <td>DirectX Windows Store games (archived forum posts)</td>
@@ -227,8 +244,8 @@ Developer forums are a great place to ask and answer game development questions 
         <td>[XBOX Developer Forums: Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX early access program forums</td>
-        <td>[DirectX 12 forum](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>DirectX forums</td>
+        <td>[DirectX 12 forum](http://forums.directxtech.com/index.php)</td>
     </tr>
 </table>
 
@@ -1500,7 +1517,7 @@ To update your published game, submit a new app package with a higher version nu
 ## Adding Xbox Live to your game
 
 
-> **Note**   Xbox Live development is managed through programs such as ID@Xbox and Microsoft Studios. This guide covers a broad range of resources, and you may find that some resources are inaccessible depending on your program participation or specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
+> **Note**   Xbox Live development is managed through various programs. This guide covers a broad range of resources, and you may find that some resources are inaccessible depending on your program participation or specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
 
 <table>
     <colgroup>

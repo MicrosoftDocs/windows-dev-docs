@@ -927,7 +927,7 @@ This responses is sent from the server to the client. This is sent as text and y
     "Events":[
         {
             "Timestamp": int,
-            "Provider": string,
+            "ProviderName": string,
             "ID": int, 
             "TaskName": string,
             "Keyword": int,

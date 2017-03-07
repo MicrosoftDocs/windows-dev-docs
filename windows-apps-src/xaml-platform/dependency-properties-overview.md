@@ -51,7 +51,7 @@ Here is a summation of the terminology that we use in the documentation when dis
 |------|-------------|
 | Dependency property | A property that exists on a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier (see below). Usually this identifier is available as a static member of the defining **DependencyObject** derived class. |
 | Dependency property identifier | A constant value to identify the property, it is typically public and read-only. |
-| Property wrapper | The callable **get** and **set** implementations for a Windows Runtime property. Or, the language-specific projection of the original definition. A **get** property wrapper implementation calls [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx), passing the relevant dependency property identifier. | 
+| Property wrapper | The callable **get** and **set** implementations for a Windows Runtime property. Or, the language-specific projection of the original definition. A **get** property wrapper implementation calls [**GetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx), passing the relevant dependency property identifier. | 
 
 The property wrapper is not just convenience for callers, it also exposes the dependency property to any process, tool or projection that uses Windows Runtime definitions for properties.
 
@@ -181,7 +181,7 @@ The state machine principle is embodied by the use of storyboarded animations as
 
 Property-changed behavior is the origin of the "dependency" part of dependency property terminology. Maintaining valid values for a property when another property can influence the first property's value is a difficult development problem in many frameworks. In the Windows Runtime property system, each dependency property can specify a callback that is invoked whenever its property value changes. This callback can be used to notify or change related property values, in a generally synchronous manner. Many existing dependency properties have a property-changed behavior. You can also add similar callback behavior to custom dependency properties, and implement your own property-changed callbacks. See [Custom dependency properties](custom-dependency-properties.md) for an example.
 
-Windows 10 introduces the [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) method. This enables application code to register for change notifications when the specified dependency property is changed on an instance of [**DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx).
+Windows 10 introduces the [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) method. This enables application code to register for change notifications when the specified dependency property is changed on an instance of [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx).
 
 ### Default value and **ClearValue**
 

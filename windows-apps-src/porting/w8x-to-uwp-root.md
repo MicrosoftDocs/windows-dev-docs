@@ -58,10 +58,6 @@ When porting a Universal 8.1 app to the model for UWP apps, virtually all of you
 
 Before or during the porting, consider whether your app could be improved by refactoring it so that code with a similar purpose is gathered together in layers and not scattered arbitrarily. Factoring your app into layers like those described above makes it easier for you to make your app correct, to test it, and then subsequently to read and maintain it. You can make functionality more reusable by following the Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) pattern. This pattern keeps the data, business, and UI parts of your app separate from one another. Even within the UI it can keep state and behavior separate, and separately testable, from the visuals. With MVVM, you can write your data and business logic once and use it on all devices no matter the UI. It's likely that you'll be able to re-use much of the view model and view parts across devices, too.
 
-## If you have a Microsoft Visual Studio 2015 RC project
-
-If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then see [Update your UWP Microsoft Visual Studio 2015 RC project to RTM](update-your-visual-studio-2015-rc-project-to-rtm.md).
- 
 | Topic | Description |
 |-------|-------------|
 | [Porting the project](w8x-to-uwp-porting-to-a-uwp-project.md) | You have two options when you begin the porting process. One is to edit a copy of your existing project files, including the app package manifest (for that option, see the info about updating your project files in [Migrate apps to the Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/mt148501.aspx)). The other option is to create a new Windows 10 project in Visual Studio and copy your files into it. |
@@ -78,4 +74,3 @@ If you have a Windows 10 project that you created with Microsoft Visual Studio�
 * [Windows Runtime reference](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [Building Universal Windows apps for all Windows devices](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [Designing UX for apps](https://msdn.microsoft.com/library/windows/apps/hh767284)
-

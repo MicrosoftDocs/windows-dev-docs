@@ -12,7 +12,7 @@ keywords: Chrome extensions for Windows, Chrome apps for Windows, hwa-cli, conve
 ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
 ---
 
-# Convert your existing Chrome app to a Universal Windows Platform app
+# Convert your existing Chrome app to a UWP app
 
 We have made it easy to convert your existing Chrome hosted app to an app running on the Universal Windows Platform (UWP). There are two ways to convert your Chrome app:
 

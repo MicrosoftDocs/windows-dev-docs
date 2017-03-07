@@ -22,7 +22,7 @@ For info about how to enable Developer mode, see [Enable your device for develop
 
 ### Turn on device discovery and pairing
 
-To connect to Device Portal, you must enable Device discovery and Device Portal. This lets you pair your phone with a PC or other Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB.
+To connect to Device Portal, you must enable Device discovery and Device Portal in your phone's settings. This lets you pair your phone with a PC or other Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB.
 
 The first time you connect to Device Portal, you are asked for a case-sensitive, 6 character security code. This ensures that you have access to the phone, and keeps you safe from attackers. Press the Pair button on your phone to generate and display the code, then enter the 6 characters into the text box in the browser.
 

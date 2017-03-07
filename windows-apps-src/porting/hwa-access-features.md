@@ -12,7 +12,7 @@ keywords: Hosted Web Apps, WinRT APIs for JavaScript, Win10 web app, Windows Jav
 ms.assetid: 86ca4590-2675-4de2-b825-c586d9669b8e
 ---
 
-# Accessing Universal Windows Platform (UWP) features
+# Accessing UWP features
 
 Your web application can have full access to the Universal Windows Platform (UWP), activating native features on Windows devices, [benefiting from Windows security](#keep-your-app-secure--setting-application-content-uri-rules-acurs), [calling Windows Runtime APIs](#call-windows-runtime-apis) directly from script hosted on a server, leveraging [Cortana integration](#integrate-cortana-voice-commands), and using an [online authentication provider](#web-authentication-broker). [Hybrid apps](#create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps) are also supported as you can include local code to be called from the hosted script and manage app navigation between remote and local pages.
 

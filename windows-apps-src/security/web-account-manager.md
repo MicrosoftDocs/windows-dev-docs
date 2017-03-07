@@ -161,7 +161,7 @@ To obtain a token, use the RequestTokenAsync method like this:
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 {
 	WebTokenRequest request = new WebTokenRequest(command.WebAccountProvider, "wl.basic");
-	WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+	WebTokenRequestResult result = await WebAuthenticationCoreManager.RequestTokenAsync(request);
 }
 ```
 
@@ -180,7 +180,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 	string clientId = "your_guid_here"; // Obtain your clientId from the Azure Portal
 	WebTokenRequest request = new WebTokenRequest(provider, "User.Read", clientId);
 	request.Properties.Add("resource", "https://graph.microsoft.com");
-	WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+	WebTokenRequestResult result = await WebAuthenticationCoreManager.RequestTokenAsync(request);
 }
 ```
 

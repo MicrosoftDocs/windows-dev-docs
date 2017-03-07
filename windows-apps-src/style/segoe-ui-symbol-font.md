@@ -58,7 +58,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 ## Icon list
 
-<table>
+<table style="background-color: white; color: black">
 
  <tr>
   <td>Symbol</td>
