@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 ---
 # Create a "Hello, world" app (JS)
 
