@@ -12,41 +12,18 @@ keywords: windows 10, uwp
 ---
 # Create your first app
 
-Welcome: these tutorials will help you create your first UWP app in the language of your choice. Here, you'll learn how to:
+## Write a UWP app using your favorite programming language
+
+![Build your app](images/build-your-app.png)
+
+Welcome to the UWP platform! These tutorials will help you create your first UWP app in the language of your choice. You'll learn how to:
 
 -   Create a UWP app project in Microsoft Visual Studio.
--   Add UI elements and code to the project.
--   Build and debug your app on the local machine.
+-   Add UI elements and code to your project.
+-   Use third party libraries to add new functionality.
+-   Build and debug your app on your local machine.
 
 To get started, choose the language you prefer.
-
-
-<!--
-
-<table Width="100%">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<Col width="33%" />
-</colgroup>
-
-
-<tbody>
-
-<tr style="background-color: #f2f2f2">
-<td align="left"><strong style="color: #8888ff">C# and XAML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
-<td align="left"><strong style="color: #8888ff">C++ and XAML</strong><p><ul><li><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">C++</a>Hello World, C++</a></li><li>Link to docs</li></ul></p></td>
-<td align="left"><strong style="color: #8888ff">JS and HTML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
-
-
-</tr>
-
-
-
-</table>
-
--->
-
 
 ### C# and XAML tutorial
 
@@ -56,15 +33,16 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 We assume you're already comfortable with XAML and either C#. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
 
-If you are ready to attempt something more fun, try the C# and MonoGame tutorial:
-
-* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
-
-And as a refresher:
+And as a language refresher:
 
 * [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
 * [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
 * [A Developer's Guide to Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+
+If you are ready to attempt something more fun than "Hello, World!", try this C# and MonoGame tutorial:
+
+* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
+
 
 ### Visual C++ component extensions (C++/CX) and XAML tutorial
 
@@ -81,7 +59,6 @@ We assume you're already comfortable with XAML and C++. If you want to learn the
 Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
 
 * [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
-* [Create a "Hello, world" app using HTML and JavaScript, and WinJS](create-a-hello-world-app-js-universal.md)
 * [A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
 * [A 3D UWP game for the Windows Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
 
