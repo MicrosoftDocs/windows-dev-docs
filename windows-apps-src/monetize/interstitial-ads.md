@@ -32,7 +32,7 @@ We provide two types of interstitial ads to use in your apps and games:
 
 * **Interstitial banner ads**: These are only available for UWP apps for Windows 10.
 
->**Note**&nbsp;&nbps;The API for interstitial ads does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
+>**Note**&nbsp;&nbsp;The API for interstitial ads does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
 
 ## Build an app with interstitial ads
 
@@ -151,7 +151,7 @@ The following instructions assume you have created a Universal Windows project f
   > [!div class="tabbedCodeSnippets"]
   ```js
   if (interstitialAd) {
-      interstitialAd.requestAd(MicrosoftNSJS.Advertising.Interstiti  alAdType.display, applicationId, adUnitId);
+      interstitialAd.requestAd(MicrosoftNSJS.Advertising.InterstitialAdType.display, applicationId, adUnitId);
   }
   ```
 
