@@ -4,7 +4,7 @@ ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: Install apps with the WinAppDeployCmd.exe tool
 description: Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device.
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,27 +24,29 @@ The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\P
 
 ## WinAppDeployCmd syntax and options
 
-Here is the possible syntax that you can use for **WinAppDeployCmd.exe**
-
-``` syntax
+This is the general syntax used for **WinAppDeployCmd.exe**:
+```syntax
 WinAppDeployCmd command -option <argument> ...
-    WinAppDeployCmd devices
-    WinAppDeployCmd devices <x>
-    WinAppDeployCmd install -file <path> -ip <address>
-    WinAppDeployCmd install -file <path> -guid <address> -pin <p>
-    WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> ...
-    WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b> ...
-    WinAppDeployCmd uninstall -file <path>
-    WinAppDeployCmd uninstall -package <name>
-    WinAppDeployCmd update -file <path>
-    WinAppDeployCmd list -ip <address>
-    WinAppDeployCmd list -guid <address>
-    WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
-    WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
-    WinAppDeployCmd getcreds -credserver <server> -ip <address>
-    WinAppDeployCmd deletecreds -credserver <server> -ip <address>
+```
 
+Here are some additional syntax examples for using various commands:
+```syntax
+WinAppDeployCmd devices
+WinAppDeployCmd devices <x>
+WinAppDeployCmd install -file <path> -ip <address>
+WinAppDeployCmd install -file <path> -guid <address> -pin <p>
+WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> ...
+WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b> ...
+WinAppDeployCmd uninstall -file <path>
+WinAppDeployCmd uninstall -package <name>
+WinAppDeployCmd update -file <path>
+WinAppDeployCmd list -ip <address>
+WinAppDeployCmd list -guid <address>
+WinAppDeployCmd deployfiles -file <path> -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd registerfiles -remotedeploydir <remoterelativepath> -ip <address>
+WinAppDeployCmd addcreds -credserver <server> -credusername <username> -credpassword <password> -ip <address>
+WinAppDeployCmd getcreds -credserver <server> -ip <address>
+WinAppDeployCmd deletecreds -credserver <server> -ip <address>
 ```
 
 You can install or uninstall an app on the target device, or you can update an app that's already installed. To keep data or settings saved by an app that's already installed, use the **update** options instead of the **install** options.
