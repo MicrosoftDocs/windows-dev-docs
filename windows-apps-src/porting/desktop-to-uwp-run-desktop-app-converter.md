@@ -24,11 +24,11 @@ The converter runs the desktop installer in an isolated Windows environment usin
 
 ## What's new
 
-The latest version of the DAC is v1.0.8.0. New in this update: 
+The latest version of the DAC is v1.0.6.0. New in this update:
 
-* No-Installer conversion: If your app is installed using xcopy or you’re familiar with the changes your app’s installer makes to the system, you can run conversion without an installer by setting the -Installer parameter to the root directory of your app files.
-* App package validation: Use the new `-Verify` flag to validate your converted app package against Desktop Bridge and Store requirements
-
+* Icon Extraction: The DAC uses icons in your desktop app to generate visual assets used by your converted app package.
+* Improved cleanup of expanded base images, temporary files and the container network & feature.
+* Several bug fixes. 
 
 ## System requirements
 
@@ -47,8 +47,6 @@ The latest version of the DAC is v1.0.8.0. New in this update:
 + [Windows Software Development Kit (SDK) for Windows 10](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## Set up the Desktop App Converter
-
-*(These steps are not required for no-installer conversion)*
 
 The Desktop App Converter relies on the latest Windows 10 features. Please ensure that you're on the Windows 10 Anniversary Update (14393.0) or later builds.
 
@@ -84,24 +82,14 @@ DesktopAppConverter.exe
 [<CommonParameters>]  
 ```
 
-### Examples
+### Example
 
-The following examples shows how to convert a desktop app named *MyApp* by *MyPublisher* to a Windows app package.
+The following example shows how to convert a desktop app named *MyApp* by *&lt;publisher_name&gt;* to a UWP package (AppX).
 
-#### No-installer conversion 
-
-With No-installer conversion, the `-Installer` parameter points to the root directory of your app files and the `-AppExecutable` parameter is required. 
-
-```cmd
-DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose
-```
-
-#### Installer based conversion
-
-With installer based conversion, `-Installer` points to your app's setup installer.
-
-```cmd
-DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose
+```CMD
+DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe 
+-InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
+-Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
 ```
 
 ## Deploy your converted AppX
@@ -191,7 +179,7 @@ Get-Help DesktopAppConverter.exe -detailed
 |---------|-----------|
 |```-AppInstallPath <String> [optional]``` | The full path to your application's root folder for the installed files if it were installed (e.g., "C:\Program Files (x86)\MyApp").| 
 |```-Destination <String>``` | The desired destination for the converter's appx output - DesktopAppConverter can create this location if it doesn't already exist.|
-|```-Installer <String>``` | The path to the installer for your application - must be able to run unattended/silently. No-installer conversion, this is the path to the root directory of your app files. |
+|```-Installer <String>``` | The path to the installer for your application - must be able to run unattended/silently|
 |```-InstallerArguments <String>``` [optional] | A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path ```<log_folder>```, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE: The unattended/silent flags and log arguments will vary between installer technologies.** <br><br>An example usage for this parameter: ```-InstallerArguments "/silent /log <log_folder>\install.log"``` Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path ```<log_folder>``` if you want the converter to capture it and put it in the final log folder.|
 |```-InstallerValidExitCodes <Int32>``` [optional] | A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
 
@@ -207,7 +195,7 @@ Get-Help DesktopAppConverter.exe -detailed
 
 |Parameter|Description|
 |---------|-----------|
-|```-AppExecutable <String> [optional]``` [optional] | The name of your application's main executable (eg "MyApp.exe"). This parameter is required for a no-installer conversion. |
+|```-AppExecutable <String> [optional]``` [optional] | The name of your application's main executable (eg "MyApp.exe"). |
 |```-AppFileTypes <String>``` [optional] | A comma-separated list of file types which the application will be associated with (eg. ".txt, .doc", without the quotes).|
 |```-AppId <String>``` [optional] | Specifies a value to set Application Id to in the appx manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
 |```-AppDisplayName <String>``` [optional] | Specifies a value to set Application Display Name to in the appx manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
@@ -222,9 +210,8 @@ Get-Help DesktopAppConverter.exe -detailed
 |```-ExpandedBaseImage <String>``` [optional] | Full path to an already expanded base image.|
 |```-MakeAppx [<SwitchParameter>]``` [optional] | A switch that, when present, tells this script to call MakeAppx on the output. |
 |```-LogFile <String>``` [optional] | Specifies a log file. If omitted, a log file temporary location will be created. |
-| ```-Sign [<SwitchParameter>] [optional]``` | Tells this script to sign the output appx. This switch should be present alongside the switch ```-MakeAppx```. 
+| ```Sign [<SwitchParameter>] [optional]``` | Tells this script to sign the output appx. This switch should be present alongside the switch ```-MakeAppx```. 
 |```<Common parameters>``` | This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
-| ```-Verify [<SwitchParameter>] [optional]``` | A switch that, when present, tells the DAC to validate the converted app package against Desktop Bridge and Windows Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`.
 
 ### Cleanup Parameters
 
