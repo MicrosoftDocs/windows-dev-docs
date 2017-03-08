@@ -4,13 +4,17 @@ ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: Get set up
 description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
+
 # Get set up
+
+![Get ready to use Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
+
 
 It's easier than you think to get going. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
 
@@ -28,17 +32,22 @@ Are you an MSDN subscriber? You can get ISO downloads here:
 
 ## 2. Download or update Visual Studio
 
-Microsoft Visual Studio 2015 helps you design, code, test, and debug your apps.
+Microsoft Visual Studio 2017 helps you design, code, test, and debug your apps.
 
-If you don't already have Visual Studio 2015, click this link to install the free Microsoft Visual Studio Community 2015. This download includes device and phone simulators for testing your apps:
+If you don't already have Visual Studio 2017, you can install the free Microsoft Visual Studio Community 2017. This download includes device simulators for testing your apps:
 
 -   [Download Windows 10 developer tools](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
-When you install Visual Studio, use the custom option and make sure all Universal Windows App Development Tools options are selected, as shown here.
+When you install Visual Studio, make sure to select the Universal Windows App Development Tools option, as shown here:
 
-![Visual Studio tools for UWP](images/vs-2015-community-setup.png)
+![Visual Studio tools for UWP](images/vs-2017-community-setup.png)
 
 Need some help with Visual Studio? See [Get Started with Visual Studio](https://www.visualstudio.com/vs/getting-started).
+
+If you have already started using Visual Studio, but discover you are missing some components, you can launch the installer again from the *New project* dialog:
+
+   ![How to repeat the installation process](images/win10-cs-install.png)
+
 
 ## 3. Enable your device for development
 

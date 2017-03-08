@@ -13,7 +13,7 @@ ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 
 # Get Started Tutorial: A UWP game in JavaScript
 
-## A simple UWP game for the Windows Store, written in JavaScript and CreateJS
+## A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS
 
 
 ![Walking Dino sprite sheet](images/JS2D_1.png)

@@ -1,18 +1,22 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
-description: This tutorial teaches you how to use JavaScript and HTML to create a simple &\#0034;Hello, world&\#0034; app that targets the Universal Windows Platform (UWP) on Windows 10.
+title: Create a "Hello, world" app (WinJS)
+description: This tutorial teaches you how to use JavaScript and HTML to create a simple &\#0034;Hello, world&\#0034; app that targets the Universal Windows Platform (UWP) on Windows 10 using WinJS.
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, WinJS
 ---
-# Create a "Hello, world" app (JS)
+# Create a "Hello, world" app (WinJS)
 
-This tutorial teaches you how to use JavaScript and HTML to create a simple "Hello, world" app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
+This tutorial teaches you how to use JavaScript and HTML to create a simple "Hello, world" WinJS app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
+
+> [!NOTE]
+> This tutorial uses WinJS to create an app. If you are looking for a JavaScript-only solution, see [this project](create-a-hello-world-app-js-uwp.md) instead.
+
 
 Here you'll learn how to:
 

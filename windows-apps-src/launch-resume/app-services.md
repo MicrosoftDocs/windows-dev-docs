@@ -22,3 +22,4 @@ This section describes how to integrate app services into your UWP app to allow 
 
 ## Related Topics
 * [Communicate with a remote app service](communicate-with-a-remote-app-service.md)
+* [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices) 

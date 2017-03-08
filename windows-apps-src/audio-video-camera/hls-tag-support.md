@@ -17,7 +17,7 @@ The following table lists the HLS tags that are supported for UWP apps.
 > [!NOTE] 
 > Custom tags that start with "X-" can be accessed as timed metadata as described in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md).
 
-|Tag |Introduced in HLS Protocol version|HLS Protocol Document Draft Version|Required on Client|July release of Windows 10|Windows 10, Version 1511|Windows 10, Version 1606 |
+|Tag |Introduced in HLS Protocol version|HLS Protocol Document Draft Version|Required on Client|July release of Windows 10|Windows 10, Version 1511|Windows 10, Version 1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  Basic Tags                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|REQUIRED|Supported|Supported|Supported|

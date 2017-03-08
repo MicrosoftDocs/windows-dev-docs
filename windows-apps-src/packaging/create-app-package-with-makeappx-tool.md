@@ -3,11 +3,11 @@ author: laurenhughes
 title: Create an app package with the MakeAppx.exe tool
 description: MakeAppx.exe creates, encrypts, decrypts, and extracts files from app packages and bundles.
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, packaging
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ---
 
@@ -17,7 +17,8 @@ ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 
 **MakeAppx.exe** creates both app packages and app package bundles. **MakeAppx.exe** also extracts files from an app package or bundle and encrypts or decrypts app packages and bundles. This tool is included in the Windows 10 SDK and can be used from a command prompt or a script file.
 
-If you would like to use the Microsoft Visual Studio wizard to create an app package, or if you would like a complete guide on how to configure, create, and test your app package for the Store, see [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+> [!IMPORTANT] 
+> If you used Visual Studio to develop your app, it's recommended that you use the Visual Studio wizard to create your app package. For more information, see [Package a UWP app with Visual Studio](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
 Note that **MakeAppx.exe** does not create an .appxupload file. The .appxupload file is created as part of the Visual Studio packaging process and contains two other files: .appx and .appxsym. The .appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) in the Windows Dev Center. A regular .appx file can be submitted as well, but there will be no crash analytic or debugging information available. For more information on submitting packages to the store, see [Upload app packages](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages). 
 
