@@ -152,6 +152,10 @@ void DirectXPage::RequestAdButton_Click(Object^ sender, RoutedEventArgs^ e)
     //<Snippet5>
     m_interstitialAd->RequestAd(AdType::Video, myAppId, myAdUnitId);
     //</Snippet5>
+	
+    //<Snippet8>
+    m_interstitialAd->RequestAd(AdType::Display, myAppId, myAdUnitId);
+    //</Snippet8>
 }
 
 // This example attempts to show the interstitial ad when the "Show ad" button is clicked.

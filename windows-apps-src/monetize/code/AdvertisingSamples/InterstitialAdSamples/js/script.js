@@ -34,6 +34,12 @@
             interstitialAd.requestAd(MicrosoftNSJS.Advertising.InterstitialAdType.video, applicationId, adUnitId);
         }
         //</Snippet3>
+		
+        //<Snippet6>
+        if (interstitialAd) {
+            interstitialAd.requestAd(MicrosoftNSJS.Advertising.InterstitialAdType.display, applicationId, adUnitId);
+        }
+        //</Snippet6>
     }
 
     // This example attempts to show the interstitial ad when the "Show ad" button is clicked.

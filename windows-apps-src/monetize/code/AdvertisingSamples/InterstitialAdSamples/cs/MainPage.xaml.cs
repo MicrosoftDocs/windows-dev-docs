@@ -41,6 +41,10 @@ namespace InterstitialAdSamplesCSharp
             //<Snippet4>
             myInterstitialAd.RequestAd(AdType.Video, myAppId, myAdUnitId);
             //</Snippet4>
+			
+            //<Snippet7>
+            myInterstitialAd.RequestAd(AdType.Display, myAppId, myAdUnitId);
+            //</Snippet7>
         }
 
         // This example attempts to show the interstitial ad when the "Show ad" button is clicked.
