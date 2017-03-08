@@ -13,24 +13,22 @@ keywords: windows 10, uwp
 
 # Create a "hello world" app in C++ (Windows 10)
 
-With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
+With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
-For tutorials in other programming languages, see:
+> [!NOTE]
+> This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
 
--   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
-
--   [Create your first Windows Store app using C#](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
 ## Before you start...
 
--   To complete this tutorial, you must use Visual Studio 2015 Community or later, or one of the non-Community versions of Visual Studio 2015, on a computer that's running Windows 10 or Windows 8.1. To download, see [Get the tools](http://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   To complete this tutorial, you must use Visual Studio Community 2017, or one of the non-Community versions of Visual Studio 2017, on a computer that's running Windows 10. To download, see [Get the tools](http://go.microsoft.com/fwlink/p/?LinkId=532666).
 -   We assume you have a basic understanding of standard C++, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
 
 
 ## Comparing C++ desktop apps to Windows apps
 
-If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of Windows Store app and Windows Phone app programming are familiar, but other aspects require some learning.
+If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of writing apps for the UWP are familiar, but other aspects require some learning.
 
 ### What's the same?
 
@@ -60,11 +58,11 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 ## Hello World Store app in C++
 
-Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, and so on.
+Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, VR devices and so on.
 
 We'll start with the basics:
 
--   How to create a Universal Windows project in Visual Studio 2015 or later.
+-   How to create a Universal Windows project in Visual Studio 2017.
 
 -   How to understand the projects and files that are created.
 
@@ -74,7 +72,10 @@ We'll start with the basics:
 
 1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project**.
 
-2.  In the **New Project** dialog box, in the left pane, expand **Installed** > **Visual C++** > **Windows** > **Universal**.
+2.  In the **New Project** dialog box, in the left pane, expand **Installed** > **Visual C++** > **Windows Universal**.
+
+> [!NOTE]
+> You may be prompted to install the Windows Universal tools for C++ development.
 
 3.  In the center pane, select **Blank App (Universal Windows)**.
 
@@ -82,17 +83,18 @@ We'll start with the basics:
 
 4.  Enter a name for the project. We'll name it HelloWorld.
 
- ![C++ project templates in the New Project dialog box ](images/vs2015-newuniversalproject-cpp.png)
+ ![C++ project templates in the New Project dialog box ](images/vs2017-uwp-01.png)
 
 5.  Choose the **OK** button.
 
-   If this is the first UWP project you've created, and you haven't enabled Developer Mode on your computer, the Enable Developer mode dialog box appears. Click on the link to bring up the Settings page that lets you set Developer Mode. Developer Mode allows your apps to be deployed and run locally.
+> [!NOTE]
+> If this is the first time you have used Visual Studio, you might see a Settings dialog asking you to enable **Developer mode**. Developer mode is a special setting that enables certain features, such as permission to run apps directly, rather than only from the Store. For more information, please read [Enable your device for development](enable-your-device-for-development.md). To continue with this guide, select **Developer mode**, click **Yes**, and close the dialog.
 
    Your project files are created.
 
 Before we go on, let’s look at what's in the solution.
 
-![Univeral app solution with nodes collapsed](images/vs2015-solutionexploreruniversal-0-cpp.png)
+![Univeral app solution with nodes collapsed](images/vs2017-uwp-02.png)
 
 ### About the project files
 
@@ -236,42 +238,6 @@ To stop debugging and close the app, return to Visual Studio and press Shift+F5.
 For more information, see [Run a Store app from Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
 In the app, you can type in the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), but clicking the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event, which displays a personalized greeting.
-
-## Start the app on a mobile device emulator
-
-Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone. This section requires a Windows Phone running Windows 10, or access to a Windows Phone emulator and it requires that Visual Studio be running on a physical computer (not a virtual machine) with HyperV supported and enabled.
-
-In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
-
--   **Device**
--   **Emulator 10.0.0.0 WVGA 4 inch 512MB**
--   Various emulators in other configurations
-
-(If you don't see the emulators, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more info.)
-
-It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.0.0 WVGA 4 inch 512MB** option.
-**Tip**  For more info about using the phone emulator, see [Run Windows Phone apps in the emulator](http://go.microsoft.com/fwlink/p/?LinkId=394233).
-
-To debug your app on a physical device, you must have a device that’s registered for development. For more info, see [Register your Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
-
-**To start debugging on a mobile device emulator**
-
-1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.0.0 WVGA 4 inch 512MB**.
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
-
-   –or–
-
-   From the **Debug** menu, click **Start Debugging**.
-
-   –or–
-
-   Press F5.
-
-On the mobile device emulator, the app looks like this.
-
-![Initial app screen on mobile device](images/hw10-screen1-mob.png)
-
-Visual Studio starts the selected emulator and then deploys and starts your app. The first thing you'll notice is that the 120-pixel left margin that looks good on the local machine pushes your content off the smaller screen of a mobile device. Later in this tutorial, you'll learn how to adapt the UI to different screen sizes so your app always looks good.
 
 ## Step 2: Create an event handler
 
