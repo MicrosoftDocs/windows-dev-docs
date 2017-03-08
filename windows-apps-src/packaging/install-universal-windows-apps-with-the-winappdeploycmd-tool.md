@@ -26,7 +26,7 @@ The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\P
 
 This is the general syntax used for **WinAppDeployCmd.exe**:
 ```syntax
-WinAppDeployCmd command -option <argument> ...
+WinAppDeployCmd command -option <argument>
 ```
 
 Here are some additional syntax examples for using various commands:
@@ -35,8 +35,8 @@ WinAppDeployCmd devices
 WinAppDeployCmd devices <x>
 WinAppDeployCmd install -file <path> -ip <address>
 WinAppDeployCmd install -file <path> -guid <address> -pin <p>
-WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> ...
-WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b> ...
+WinAppDeployCmd install -file <path> -ip <address> -dependency <a> <b> 
+WinAppDeployCmd install -file <path> -guid <address> -dependency <a> <b>
 WinAppDeployCmd uninstall -file <path>
 WinAppDeployCmd uninstall -package <name>
 WinAppDeployCmd update -file <path>

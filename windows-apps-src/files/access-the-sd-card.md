@@ -4,7 +4,7 @@ ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: Access the SD card
 description: You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -73,22 +73,20 @@ Use code like the following to determine whether an SD card is present and to ge
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
-
-            if (sdCard != null)
-            {
-                // An SD card is present and the sdCard variable now contains a reference to it.
-            }
-            else
-            {
-                // No SD card is present.
-            }
+if (sdCard != null)
+{
+    // An SD card is present and the sdCard variable now contains a reference to it.
+}
+else
+{
+    // No SD card is present.
+}
 ```
 
 ### Querying the contents of the SD card
@@ -116,32 +114,30 @@ The name of the property that contains this ID is **WindowsPhone.ExternalStorage
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
+if (sdCard != null)
+{
+    var allProperties = sdCard.Properties;
+    IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
 
-            if (sdCard != null)
-            {
-                var allProperties = sdCard.Properties;
-                IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
+    var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
 
-                var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
+    string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
 
-                string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
-
-                if (...) // If cardID matches the cached ID of a recognized card.
-                {
-                    // Card is recognized. Index contents opportunistically.
-                }
-                else
-                {
-                    // Card is not recognized. Index contents immediately.
-                }
-            }
+    if (...) // If cardID matches the cached ID of a recognized card.
+    {
+        // Card is recognized. Index contents opportunistically.
+    }
+    else
+    {
+        // Card is not recognized. Index contents immediately.
+    }
+}
 ```
 
  
