@@ -70,7 +70,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 When used elegantly, interstitial ads can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
 
-The following sections provide recommendations for how to implement interstitial ads in your app using [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
+The following sections provide recommendations for how to implement interstitial video ads and interstitial banner ads in your app using [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
 
 ### Best practices
 
@@ -86,7 +86,7 @@ We recommend that you follow these best practices when you implement interstitia
 
     * Custom avatar features, like a tattoo or hat.
 
-* If your app requires that a video ad be watched to completion, mention that rule upfront so they aren’t surprised with an error message upon hitting the close button.
+* If your app requires that an interstitial video ad be watched to completion, mention that rule upfront so they aren’t surprised with an error message upon hitting the close button.
 
 * Pre-fetch the ad (by calling [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)) ideally 30-60 seconds before you need to show it.
 
@@ -100,13 +100,13 @@ We recommend that you follow these best practices when you implement interstitia
 
     * If you opt to save user bandwidth based on [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx), there are APIs in the **ConnectionProfile** class which can help.
 
-* Use the default (30 second) timeout unless you have a valid reason to do otherwise, in which case don’t go below 10 seconds. Video ads take substantially longer to download than banners, especially in markets that don’t have high speed connections.
+* Use the default (30 second) timeout unless you have a valid reason to do otherwise, in which case don’t go below 10 seconds. Interstitial ads take substantially longer to download than standard banner ads, especially in markets that don’t have high speed connections.
 
 <span/>
 
-* Be mindful of the user’s data plan. For example, either don’t show, or warn user, before serving a video ad on a mobile device that is near/over its data limit. There are APIs in the [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) class which can help.
+* Be mindful of the user’s data plan. For example, either don’t show, or warn user, before serving an interstitial video ad on a mobile device that is near/over its data limit. There are APIs in the [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) class which can help.
 
-* Continuously improve your app after the initial submission. Look at the [ad reports](../publish/advertising-performance-report.md) and make design changes to improve fill and video completion rates.
+* Continuously improve your app after the initial submission. Look at the [ad reports](../publish/advertising-performance-report.md) and make design changes to improve fill and interstitial video completion rates.
 
 <span />
 ### Practices to avoid
@@ -115,13 +115,13 @@ We recommend that you avoid these practices when you implement interstitial ads 
 
 * Don’t overdo it. Don’t force ads more than every 5 minutes or so, unless the user explicitly engages with an optional tangible benefit, beyond just playing the game.
 
-* Don’t show video interstitials at app launch, since users may believe they clicked the wrong tile.
+* Don’t show interstitials at app launch, since users may believe they clicked the wrong tile.
 
-* Don’t show video interstitials at exit. This is bad inventory, since completion rates will be near zero.
+* Don’t show interstitials at exit. This is bad inventory, since completion rates will be near zero.
 
 * Don't show two or more interstitial ads back to back. Users will be frustrated to see the ad progress bar reset to the starting point. Many will think it’s just a coding or ad serving bug.
 
-* Don’t fetch a video ad more than 5 minutes before calling [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx). Good inventory will maximize the conversion of pre-fetched ads to billable impressions.
+* Don’t fetch an interstitial video ad more than 5 minutes before calling [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx). Good inventory will maximize the conversion of pre-fetched ads to billable impressions.
 
 * Don’t penalize a user for failures in ad serving, such as no ad available. For example, if you show a UI option to “Watch an ad to get *xxx*”, you should provide *xxx* if the user did her part. Two options to consider:
 
