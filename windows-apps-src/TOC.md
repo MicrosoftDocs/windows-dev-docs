@@ -295,6 +295,7 @@
 #### [POS Printer](devices-sensors/pos-printer.md)
 #### [Out-of-band pairing](devices-sensors/out-of-band-pairing.md)
 #### [Epson ESC/POS with formatting](devices-sensors/epson-esc-pos-with-formatting.md)
+#### [Deploy barcode scanner profiles](devices-sensors/deploy-scanner-profiles-with-mdm.md)
 ### [Sensors](devices-sensors/sensors.md)
 #### [Calibrate sensors](devices-sensors/calibrate-sensors.md)
 #### [Sensor orientation](devices-sensors/sensor-orientation.md)
