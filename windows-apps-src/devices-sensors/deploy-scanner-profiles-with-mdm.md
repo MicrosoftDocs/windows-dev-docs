@@ -15,4 +15,5 @@ Microsoft does not define the specifics of a scanner profile or how to implement
 
 ## Related topics
 [Barcode Scanner](barcode-scanner.md)
+
 [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025)
