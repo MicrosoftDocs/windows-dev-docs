@@ -23,13 +23,13 @@ After you finish testing your app and you are ready to submit it to Windows Dev 
 To set up the application ID and ad units for your live app:
 
 1.  On the Windows Dev Center dashboard, select your app and then click **Monetization > Monetize with ads**.
-2.  In the **Microsoft Advertising ad units** section on this page, create an ad unit. For the ad unit type, select **Banner** if you are using an **AdControl**, or select **Video interstitial** if you are using an **InterstitialAd**. For more information about this page, see [Monetize with ads](../publish/monetize-with-ads.md).
+2.  In the **Microsoft Advertising ad units** section on this page, create an ad unit. For the ad unit type, select **Banner** if you are using an **AdControl**, or select **Video interstitial** if you are using an **InterstitialAd** to show interstitial video ads. For more information about this page, see [Monetize with ads](../publish/monetize-with-ads.md).
 
 3.  For each generated ad unit, you will see an **Application ID** and an **Ad unit ID** on this page. To show ads in your app, you'll need to use these values in your apps code:
 
     * If your app shows banner ads, assign these values to the **ApplicationId** and **AdUnitId** properties of your **AdControl** object.
 
-    * If your app shows video interstitial ads, pass these values to the **RequestAd** method of your **InterstitialAd** object.
+    * If your app shows interstitial ads, pass these values to the **RequestAd** method of your **InterstitialAd** object.
 
  
 

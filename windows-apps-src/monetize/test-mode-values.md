@@ -18,9 +18,9 @@ When you use an [AdControl](https://msdn.microsoft.com/library/windows/apps/micr
 
 If you try to use test values in your app after you publish it, your live app not receive ads. To receive ads in your published app, you must update your code to use an application ID and ad unit ID provided by the Windows Dev Center dashboard. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
  
-Here are the test values to use for video interstitial and banner ads.
+Here are the test values to use for interstitial and banner ads.
 
-* For video interstitial ads:
+* For interstitial ads:
 
     <table>
     <colgroup>

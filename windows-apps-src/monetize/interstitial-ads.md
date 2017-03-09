@@ -24,7 +24,7 @@ Unlike standard banner ads, which are confined to a portion of a UI in an app or
 
     ![whatisaninterstitial](images/13-ed0a333b-0fc8-4ca9-a4c8-11e8b4392831.png)
 
-* With *Rewards Based* ads the user is explicitly seeking some benefit, such as a hint or extra time to complete the level, and initializes the video ad through the app’s user interface.
+* With *Rewards Based* ads the user is explicitly seeking some benefit, such as a hint or extra time to complete the level, and initializes the ad through the app’s user interface.
 
 We provide two types of interstitial ads to use in your apps and games:
 

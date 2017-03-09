@@ -18,7 +18,7 @@ keywords: windows 10, uwp, ads, advertising, code samples
 
 This section provides examples that demonstrate how to use the properties, methods, and events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  classes in the Microsoft advertising libraries to target users, manually refresh ads, and handle events. For introductory walkthroughs that demonstrate how to add these controls to your app, see [Developer walkthroughs](developer-walkthroughs.md).
 
-For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+For complete sample projects that demonstrate how to add banner and interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
 ## In this section
 
