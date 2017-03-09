@@ -229,7 +229,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 <span/>
 ### Release your app with live ads using Windows Dev Center
 
-1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create an ad unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Video interstitial**. Make note of both the ad unit ID and the application ID.
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create an ad unit](../publish/monetize-with-ads.md). For the ad unit type, choose **Video interstitial** or **Banner interstitial**, depending on what type of interstitial ad you are showing. Make note of both the ad unit ID and the application ID.
 
 2.  In your code, replace the test ad unit values with the live values you generated in Dev Center.
 
