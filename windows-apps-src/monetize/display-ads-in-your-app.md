@@ -18,11 +18,10 @@ The Universal Windows Platform (UWP) and Windows Store provide several ways to m
 
 ## Display banner and interstitial ads using the Microsoft advertising libraries
 
-Make more money from your apps by including the following types of ads in your app:
+Make more money from your apps by including banner or interstitial ads in your app.
 
-* Interstitial video ads.
-* Interstitial banner ads (supported in UWP apps only).
-* Standard banner ads.
+* *Banner ads* are small advertisements that utilize a portion of a page in an app, usually at the top or bottom of the page.
+* *Interstitial ads* are full-screen advertisements that typically force the user to watch a video or click through them to continue in the app or game. We support two types of interstitial ads for UWP apps: video and banner.
 
 To include these types of ads in your apps, use the **AdControl** and **InterstitialAd** controls in the advertising libraries that are distributed in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).
 
