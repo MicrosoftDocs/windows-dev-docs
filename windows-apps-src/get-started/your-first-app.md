@@ -23,9 +23,9 @@ Welcome to the UWP platform! These tutorials will help you create your first UWP
 -   Use third party libraries to add new functionality.
 -   Build and debug your app on your local machine.
 
-To get started, choose the language you prefer.
+To get started, choose your favorite language!
 
-### C# and XAML tutorial
+## C# and XAML
 
 Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
@@ -43,18 +43,7 @@ If you are ready to attempt something more fun than "Hello, World!", try this C#
 
 * [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
 
-
-### Visual C++ component extensions (C++/CX) and XAML tutorial
-
-Take advantage of your C++ programming expertise to build apps using Visual C++ component extensions (C++/CX) with XAML.
-
-* [Create a "Hello, world" app using XAML with C++/CX](create-a-basic-windows-10-app-in-cpp.md)
-
-We assume you're already comfortable with XAML and C++. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
-
-* [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-
-### JavaScript and HTML tutorial
+## JavaScript and HTML
 
 Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
 
@@ -67,23 +56,36 @@ We assume you're already comfortable with HTML5, CSS3, and JavaScript. If you wa
 * [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
 * [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-### Objective-C
+
+## Visual C++ component extensions (C++/CX) and XAML
+
+Take advantage of your C++ programming expertise to build apps using Visual C++ component extensions (C++/CX) with XAML.
+
+* [Create a "Hello, world" app using XAML with C++/CX](create-a-basic-windows-10-app-in-cpp.md)
+
+We assume you're already comfortable with XAML and C++. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+
+* [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+
+
+## Objective-C
 
 Are you more of an iOS developer? 
 
 * Use the [Windows Bridge for iOS](https://developer.microsoft.com/windows/bridges/ios) to convert your existing code to a UWP app, and keep developing in Objective C.
 
 
-### Cross-platform and mobile development
+## Cross-platform and mobile development
 
 * Need to target Android and iOS? Check out [Xamarin](https://www.xamarin.com).
 
 ## Related topics
 
+* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](whats-a-uwp.md)
 * [Get set up](get-set-up.md)
-* [Sign up](sign-up.md)
+* [Sign up for Windows account](sign-up.md)
 
 
