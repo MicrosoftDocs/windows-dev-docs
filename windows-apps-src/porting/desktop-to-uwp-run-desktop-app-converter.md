@@ -24,7 +24,7 @@ The converter runs the desktop installer in an isolated Windows environment usin
 
 ## What's new
 
-The latest version of the DAC is v1.0.8.0. New in this update: 
+The latest version of the DAC is v1.0.9.0. New in this update: 
 
 * No-Installer conversion: If your app is installed using xcopy or you’re familiar with the changes your app’s installer makes to the system, you can run conversion without an installer by setting the -Installer parameter to the root directory of your app files.
 * App package validation: Use the new `-Verify` flag to validate your converted app package against Desktop Bridge and Store requirements
