@@ -1,10 +1,10 @@
 ---
-author: awkoren
+author: normesta
 Description: Distribute your UWP app converted with the Desktop to UWP Bridge
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Distribute
-ms.author: alkoren
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ There are three main ways to deploy your converted app: the Windows Store, sidel
 
 ## Windows Store
 
-The Windows Store is the most convenient way for customers to get your app. To get started, fill out the form at [Bring your existing apps and games to the Windows Store with the Desktop Bridge](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. 
+The Windows Store is the most convenient way for customers to get your app. To get started, fill out the form at [Bring your existing apps and games to the Windows Store with the Desktop Bridge](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process.
 
 Note that you need to be the developer and/or publisher of the app or game to bring it to the Windows Store. As such, make sure your name and e-mail address match with the website you submit as the URL below, so we can validate you are the developer and/or publisher.
 
@@ -26,9 +26,9 @@ Note that you need to be the developer and/or publisher of the app or game to br
 
 Sideloading provides an easy means for deploying to across multiple machines. It is especially useful in enterprise / line of business LOB) scenarios where you want finer control over the distribution experience and don't want to get involved with Store certificate.
 
-Before you deploy your via sideload app, you'll need to sign it with a certificate. For information on creating a certificate, see [Sign your .Appx Package](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx). 
+Before you deploy your via sideload app, you'll need to sign it with a certificate. For information on creating a certificate, see [Sign your Windows app package](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx).
 
-Here's how you import a certificate that you created previously. You can import the cert directly with CERTUTIL, or you can install it from an appx that you've signed, like the customer will. 
+Here's how you import a certificate that you created previously. You can import the cert directly with CERTUTIL, or you can install it from an Windows app package that you've signed, like the customer will.
 
 To install cert via CERTUTIL, run the following command from an administrator command prompt:
 
@@ -36,9 +36,9 @@ To install cert via CERTUTIL, run the following command from an administrator co
 Certutil -addStore TrustedPeople <testcert.cer>
 ```
 
-To import the cert from the appx like a customer would:
+To import the cert from the Windows app package like a customer would:
 
-1.	In File Explorer, right click an appx that you've signed with a test cert and choose **Properties** from the context menu.
+1.	In File Explorer, right click an Windows app package that you've signed with a test cert and choose **Properties** from the context menu.
 2.	Click or tap the **Digital Signatures** tab.
 3.	Click or tap on the certificate and choose **Details**.
 4.	Click or tap **View Certificate**.
@@ -59,7 +59,7 @@ but terminated in a rootcertificate which is not trusted by the trust provider.
 in the app package must be trusted."
 ```
 
-Now that the cert has been trusted, there are 2 ways you can install the package – through the powershell or just double-click on the appx package file to install it.  To install via powershell, run the following cmdlet:
+Now that the cert has been trusted, there are 2 ways you can install the package – through the powershell or just double-click on the Windows app package file to install it.  To install via powershell, run the following cmdlet:
 
 ```powershell
 Add-AppxPackage <MyApp>.appx
@@ -69,13 +69,13 @@ Add-AppxPackage <MyApp>.appx
 
 Loose file registration is useful for debugging purposes where the files are laid out on disk in a location you can easily access and update, and does not require signing or a cert.  
 
-To deploy your app during development, run the following PowerShell cmdlet: 
+To deploy your app during development, run the following PowerShell cmdlet:
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 To update your app's .exe or .dll files, simply replace the existing files in your package with the new ones, increase the version number in AppxManifest.xml, and then run the above command again.
 
-Note the following: 
+Note the following:
 
 * Any drive that you install your converted app on to must be formatted to NTFS format.
 * A converted app always runs as the interactive user.
