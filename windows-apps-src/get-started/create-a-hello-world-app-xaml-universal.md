@@ -193,7 +193,7 @@ An "event handler" sounds complicated, but it's just another name for the code t
 3.  Edit the event handler code in *MainPage.xaml.cs*, the code-behind page. This is where things get interesting. The default event handler looks like this:
 
 ```C#
-private void button_Click(object sender, RouteEventArgs e)
+private void Button_Click(object sender, RouteEventArgs e)
 {
 
 }
@@ -202,7 +202,7 @@ private void button_Click(object sender, RouteEventArgs e)
   Let's change it, so it looks like this:
 
 ```C#
-private async void button_Click(object sender, RoutedEventArgs e)
+private async void Button_Click(object sender, RoutedEventArgs e)
         {
             MediaElement mediaElement = new MediaElement();
             var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
