@@ -8,21 +8,19 @@ ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, sd card, storage
 ---
 # Access the SD card
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
+You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage and have a slot for an SD card.
 
 In most cases, you have to specify the **removableStorage** capability in the app manifest file before your app can store and access files on the SD card. Typically you also have to register to handle the type of files that your app stores and accesses.
 
 You can store and access files on the optional SD card by using the following methods:
-
 - File pickers.
-
 - The [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) APIs.
 
 ## What you can and can't access on the SD card
@@ -30,15 +28,12 @@ You can store and access files on the optional SD card by using the following me
 ### What you can access
 
 - Your app can only read and write files of file types that the app has registered to handle in the app manifest file.
-
 - Your app can also create and manage folders.
 
 ### What you can't access
 
 - Your app can't see or access system folders and the files that they contain.
-
 - Your app can't see files that are marked with the Hidden attribute. The Hidden attribute is typically used to reduce the risk of deleting data accidentally.
-
 - Your app can't see or access the Documents library by using [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). However you can access the Documents library on the SD card by traversing the file system.
 
 ## Security and privacy considerations
@@ -46,7 +41,6 @@ You can store and access files on the optional SD card by using the following me
 When an app saves files in a global location on the SD card, those files are not encrypted so they are typically accessible to other apps.
 
 - While the SD card is in the device, your files are accessible to other apps that have registered to handle the same file type.
-
 - When the SD card is removed from the device and opened from a PC, your files are visible in File Explorer and accessible to other apps.
 
 When an app installed on the SD card saves files in its [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), however, those files are encrypted and are not accessible to other apps.
@@ -89,6 +83,9 @@ else
 }
 ```
 
+> [!NOTE]
+> If your SD card reader is an embedded reader (e.g., a slot in the laptop or PC itself), it may not be accessible through KnownFolders.RemovableDevices.
+
 ### Querying the contents of the SD card
 
 The SD card can contain many folders and files that aren't recognized as known folders and can't be queried by using a location from [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). To find files, your app has to enumerate the contents of the card by traversing the file system recursively. Use [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) and [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) to get the contents of the SD card efficiently.
@@ -100,7 +97,6 @@ Your app can also require the user to choose specific folders by using the folde
 When you access the file system on the SD card with a path that you derived from [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), the following methods behave in the following way.
 
 -   The [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) method returns the union of the file extensions that you have registered to handle and the file extensions associated with any media library capabilities that you have specified.
-
 -   The [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) method fails if you have not registered to handle the file extension of the file you are trying to access.
 
 ## Identifying the individual SD card
