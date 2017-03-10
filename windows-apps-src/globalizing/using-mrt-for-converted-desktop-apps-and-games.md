@@ -99,12 +99,12 @@ This section outlines the final changes needed to separate your resources into s
 <h3>Not covered in this document</h3>
 After completing Phases 0-3 above, you will have an application "bundle" that can be submitted to the Windows Store and that will minimize the download & install size for users by omitting 
 the resources they don't need (eg, languages they don't speak). Further improvements in application size and functionality can be made by taking one final step. 
-</h4>Phase 4: Migrate to MRT resource formats and APIs</h4>
+<h4>Phase 4: Migrate to MRT resource formats and APIs</h4>
 This phase is beyond the scope of this document; it entails moving your resources (particularly strings) from legacy formats such as MUI DLLs or .NET resource assemblies into PRI files. 
 This can lead to further space savings for download & install sizes. It also allows use of other MRT features such as minimizing the download and install of image files by based on scale 
 factor, accessibility settings, and so on.
 
-</h2>Phase 0: Build an application package</h2>
+<h2>Phase 0: Build an application package</h2>
 Before you make any changes to your application's resources, you must first replace your current packaging and installation technology with the standard UWP packaging and deployment 
 technology. There are three ways to do this:
 
