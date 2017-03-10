@@ -13,8 +13,10 @@ keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app c
 <h1>Migrating legacy resources to the Windows 10 resource management platform</h1>
 
 <h2>Executive Summary</h2>
-Win32 applications are often localized into different languages, expanding their total addressable market<sup>1</sup>. There are many ways to localize traditional Win32 applications, 
-but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) (referred to as "MRT" in this document<sup>2</sup>)
+Win32 applications are often localized into different languages, expanding their total addressable market<a name="footnote1_ref" href="#footnote1"><sup>1</sup></a>. 
+There are many ways to localize traditional Win32 applications, 
+but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) (referred to as "MRT" in this document
+<a name="footnote2_ref" href="#footnote2"><sup>2</sup></a>)
 that works across programming languages, across application types, and provides functionality over and above simple localization. Combined with AppX-based deployment (eg, from the 
 Windows Store), MRT can automatically deliver only the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
@@ -25,7 +27,8 @@ is made, additional benefits (such as the ability to segment resources by scale 
 both UWP applications and Win32 applications processed by the Desktop Bridge (aka "Centennial").
 
 In many situations, you can continue to use your existing localization formats and source code whilst integrating with MRT for resolving resources at runtime and minimizing download 
-sizes - it's not an all-or-nothing approach. The following table summarizes the work and estimated cost / benefit of each stage<sup>3</sup>:
+sizes - it's not an all-or-nothing approach. The following table summarizes the work and estimated cost / benefit of each stage
+<a name="footnote3_ref" href="#footnote3"><sup>3</sup></a>:
 
 <table>
 <tr>
@@ -70,14 +73,17 @@ file-based resources are implemented as references to the external data (the fil
 
 <h3>Example</h3>
 Here's a simple example of an application that has text labels on two buttons (`openButton` and `saveButton`) and a PNG file used for a logo (`logoImage`). The text labels are 
-localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and hi-resolution phones (300% scale factor)<sup>4</sup>. Note this diagram 
+localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and hi-resolution phones (300% scale factor)
+<a name="footnote4_ref" href="#footnote4"><sup>4</sup></a>. Note this diagram 
 presents a high-level, conceptual view of the model; it does not map exactly to implementation:
 
-<img src="images\conceptual-resource-model.png"/>
+<p><img src="images\conceptual-resource-model.png"/></p>
 
 In the graphic, the application code references the three logical resource names. At runtime, the `GetResource` pseudo-function uses MRT to look those resource names up in the resource
 table (known as PRI file) and find the most appropriate candidate based on the ambient conditions (the user's language and the display's scale-factor). In the case of the labels, the 
-strings are used directly. In the case of the logo image, the strings are interpreted as filenames and the files are read off disk. If the user speaks a language other than English or
+strings are used directly. In the case of the logo image, the strings are interpreted as filenames and the files are read off disk. 
+
+If the user speaks a language other than English or
 German, or has a display scale-factor other than 100% or 300%, MRT picks the "closest" matching candidate based on a set of fallback rules (see [the **Resource Management System** 
 topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) for more background). 
 
@@ -110,26 +116,26 @@ This phase is beyond the scope of this document; it entails moving your resource
 This can lead to further space savings for download & install sizes. It also allows use of other MRT features such as minimizing the download and install of image files by based on scale 
 factor, accessibility settings, and so on.
 
+***
+
 <h2>Phase 0: Build an application package</h2>
 Before you make any changes to your application's resources, you must first replace your current packaging and installation technology with the standard UWP packaging and deployment 
 technology. There are three ways to do this:
 
-* If you have a large Desktop application with a complex installer or you utilize lots of OS extensibility points, you can use the Desktop App Converter tool to generate the UWP file layout
+0. If you have a large Desktop application with a complex installer or you utilize lots of OS extensibility points, you can use the Desktop App Converter tool to generate the UWP file layout
 and manifest information from your existing app installer (eg, an MSI)
-* If you have a smaller Desktop application with relatively few files or a simple installer and no extensibility hooks, you can create the file layout and manifest information manually
-* If you're rebuilding from source and want to update your app to be a "pure" UWP application, you can create a new project in Visual Studio and rely on the IDE to do much of the work for 
+0. If you have a smaller Desktop application with relatively few files or a simple installer and no extensibility hooks, you can create the file layout and manifest information manually
+0. If you're rebuilding from source and want to update your app to be a "pure" UWP application, you can create a new project in Visual Studio and rely on the IDE to do much of the work for 
 you
 
-If you want to use the [Desktop App Converter](https://aka.ms/converter), you'll need to get a [Base Windows Image file](https://aka.ms/converterimages) that is compatible with your host 
-OS and then run through the conversion steps to build an AppX package. Please refer to [the **Desktop to UWP Bridge: Desktop App Converter** topic on MSDN](https://aka.ms/converterdocs) 
+If you want to use the [Desktop App Converter](https://aka.ms/converter), please refer to [the **Desktop to UWP Bridge: Desktop App Converter** topic on MSDN](https://aka.ms/converterdocs) 
 for more information on the conversion process. A complete example can be found **TODO: INSERT GITHUB LINK HERE**.
 
 If you want to manually create the package, you will need to create a directory structure that includes all your application's files (executables and content, but not source code) and 
 an `AppXManifest.xml` file. A complete example can be found **TODO: INSERT GITHUB LINK HERE**, but a basic `AppXManifest.xml` file that runs the Desktop executable named `ContosoDemo.exe` 
 is as follows, where the <span style="background-color: yellow">highlighted text</span> would be replaced by your own values:
 
-<blockquote>
-    <pre>
+```XML
 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
 &lt;Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
          xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
@@ -145,14 +151,17 @@ is as follows, where the <span style="background-color: yellow">highlighted text
     &lt;Logo&gt;Assets\StoreLogo.png&lt;/Logo&gt;
   &lt;/Properties&gt;
     &lt;Dependencies&gt;
-    &lt;TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" /&gt;
+    &lt;TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" 
+                        MaxVersionTested="10.0.14393.0" /&gt;
   &lt;/Dependencies&gt;
     &lt;Resources&gt;
     &lt;Resource Language="<span style="background-color: yellow">en-US</span>" /&gt;
   &lt;/Resources&gt;
     &lt;Applications&gt;
-    &lt;Application Id="<span style="background-color: yellow">ContosoDemo</span>" Executable="<span style="background-color: yellow">ContosoDemo.exe</span>" EntryPoint="Windows.FullTrustApplication"&gt;
-    &lt;uap:VisualElements DisplayName="<span style="background-color: yellow">Contoso Demo</span>" BackgroundColor="#777777" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" 
+    &lt;Application Id="<span style="background-color: yellow">ContosoDemo</span>" Executable="<span style="background-color: yellow">ContosoDemo.exe</span>" 
+                 EntryPoint="Windows.FullTrustApplication"&gt;
+    &lt;uap:VisualElements DisplayName="<span style="background-color: yellow">Contoso Demo</span>" BackgroundColor="#777777" 
+                        Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" 
         Description="<span style="background-color: yellow">Contoso Demo</span>"&gt;
       &lt;/uap:VisualElements&gt;
     &lt;/Application&gt;
@@ -161,14 +170,15 @@ is as follows, where the <span style="background-color: yellow">highlighted text
     &lt;rescap:Capability Name="runFullTrust" /&gt;
   &lt;/Capabilities&gt;
 &lt;/Package&gt;
-</pre>
-</blockquote>
+```
 
 For more information about the `AppXManifest.xml` file and package layout, see [the **App package manifest** topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/br211474.aspx).
 
 Finally, if you're using Visual Studio to create a new project and migrate your existing code across, see [the MSDN documentation for building a new UWP project](https://msdn.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal). 
 You can include your existing code into the new project, but you will likely have to make significant code changes (particularly in the user interface) in order to run as a "pure" UWP. 
 These changes are outside the scope of this document.
+
+***
 
 <h2>Phase 1: Localize the application manifest</h2>
 
@@ -185,9 +195,9 @@ Studio.
 If you want to create the resources manually:
 
 0. Create an XML file named `resources.resw` and place it in a `Strings\en-us` subfolder of your project. 
-* You can use a different BCP-47 code if your default language is not US English 
+ * You can use a different BCP-47 code if your default language is not US English 
 0. In the XML file, add the following content, where the <span style="background-color: yellow">highlighted text</span> is replaced with the appropriate text for your app, in your default
-language<sup>5</sup>
+language<a name="footnote5_ref" href="#footnote5"><sup>5</sup></a>
 
 <blockquote>
 <pre>
@@ -215,7 +225,7 @@ language<sup>5</sup>
 If you want to use the designer in Visual Studio:
 
 0. Create the `Strings\en-us` folder (or other language as appropriate) in your project, and add a **New Item** to the root folder of your project, using the default name of `resources.resw`
-* Be sure to choose `Resources File (.resw)` and **not** `Resource Dictionary`
+ * Be sure to choose **Resources File (.resw)** and not **Resource Dictionary** - a Resource Dictionary is a file used by XAML applications
 0. Using the designer, enter the following strings (use the same `Names` but replace the `Values` with the appropriate text for your application):
 
 <img src="images\editing-resources-resw.png"/>
@@ -228,7 +238,7 @@ Once you have the values defined in the `.resw` file, the next step is to update
 Visual Studio Manifest Designer.
 
 If you are editing XML directly, open the `AppxManifest.xml` file and make the following changes to the <span style="background-color: lightgreen">highlighted values</span> - use this 
-*exact* text, not text specific to your application<sup>6</sup>. These names should match the `Names` you created in the `.resw` file, prefixed with the `ms-resource:` scheme and the 
+*exact* text, not text specific to your application<a name="footnote6_ref" href="#footnote6"><sup>6</sup></a>. These names should match the `Names` you created in the `.resw` file, prefixed with the `ms-resource:` scheme and the 
 `Resources/` namespace. 
 
 *Note: many elements of the manifest have been omitted from this snippet - do not delete anything!*
@@ -263,7 +273,7 @@ the `Application` tab and the `Packaging` tab:
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-<h3>Step 1.2: Build `.pri` file, make an AppX package, and verify it's working</h3>
+<h3>Step 1.2: Build PRI file, make an AppX package, and verify it's working</h3>
 You should now be able to build the `.pri` file and deploy the application to verify that the correct information (in your default language) is appearing in the Start Menu. 
 
 If you're building in Visual Studio, simply press `Ctrl+Shift+B` to build the project and then right-click on the project and choose `Deploy` from the context menu. 
@@ -274,93 +284,96 @@ If you're building manually, follow these steps to create a configuration file f
 0. Open a developer command prompt from the `Visual Studio 2015` folder in the Start menu
 0. Switch to the project root directory (the one that contains the `AppxManifest.xml` file and the `Strings` folder)
 0. Type the following command, replacing "contoso_demo.xml" with a name suitable for your project, and "en-US" with the default language of your app (or keep it en-US if applicable). 
-Note the xml file is created in the parent directory (**not** in the project directory) since it's not part of the application<sup>7</sup>:
+Note the xml file is created in the parent directory (**not** in the project directory) since it's not part of the application<a name="footnote7_ref" href="#footnote7"><sup>7</sup></a>:
 
     `makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o`
 0. You can type `makepri createconfig /?` to see what each parameter does, but in summary:
-** `/cf` sets the Configuration Filename (the output of this command)
-** `/dq` sets the Default Qualifiers, in this case the language `en-US`
-** `/pv` sets the Platform Version, in this case Windows 10
-** `/o` sets it to Overwrite the output file if it exists
+ * `/cf` sets the Configuration Filename (the output of this command)
+ * `/dq` sets the Default Qualifiers, in this case the language `en-US`
+ * `/pv` sets the Platform Version, in this case Windows 10
+ * `/o` sets it to Overwrite the output file if it exists
 0. Now you have a configuration file, run `MakePRI` again to actually search the disk for resources and package them into a PRI file. Replace "contoso_demop.xml" with the XML filename 
 you used in the previous step, and be sure to specify the parent directory for both input and output: 
 
     `makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o`
 0. You can type `makepri new /?` to see what each parameter does, but in a nutshell:
-** `/pr` sets the Project Root (in this case, the current directory)
-** `/cf` sets the Configuration Filename, created in the previous step
-** `/of` sets the Output File 
-** `/mf` creates a Mapping File (so we can exclude files in the package in a later step)
-** `/o` sets it to Overwrite the output file if it exists
+ * `/pr` sets the Project Root (in this case, the current directory)
+ * `/cf` sets the Configuration Filename, created in the previous step
+ * `/of` sets the Output File 
+ * `/mf` creates a Mapping File (so we can exclude files in the package in a later step)
+ * `/o` sets it to Overwrite the output file if it exists
 0. Now you have a `.pri` file with the default language resources (eg, en-US). To verify that it worked correctly, you can run the following command:
 
     `makepri dump /if ..\resources.pri /of ..\resources /o`
 0. You can type `makepri dump /?` to see what each parameter does, but in a nutshell:
-* `/if` sets the Input Filename 
-* `/of` sets the Output Filename (`.xml` will be appended automatically)
-* `/o` sets it to Overwrite the output file if it exists
-0. Finally, you can open `..\resources.xml` in a text editor and verify it lists your `&lt;NamedResource&gt;` values (like `ApplicationDescription` and `PublisherDisplayName`) along 
-with `&lt;Candidate&gt;` values for your chosen default language (there will be other content in the beginning of the file; ignore that for now).
+ * `/if` sets the Input Filename 
+ * `/of` sets the Output Filename (`.xml` will be appended automatically)
+ * `/o` sets it to Overwrite the output file if it exists
+0. Finally, you can open `..\resources.xml` in a text editor and verify it lists your `<NamedResource>` values (like `ApplicationDescription` and `PublisherDisplayName`) along 
+with `<Candidate>` values for your chosen default language (there will be other content in the beginning of the file; ignore that for now).
 
 If you like, you can open the mapping file `..\resources.map.txt` to verify it contains the files needed for your project (including the PRI file, which is not part of the project's 
 directory). Importantly, the mapping file will *not* include a reference to your `resources.resw` file because the contents of that file have already been embedded in the PRI file. 
-It will, however, contain other resources like images.
+It will, however, contain other resources like the filenames of your images.
 
 <h4>Building and signing the package</h4>
 Now the PRI file is built, you can build and sign the package:
 
-0. To create the app package, run the following command replacing "contoso_demo.appx" with the name of the AppX file you want to create and making sure to choose a different directory 
+0. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the AppX file you want to create and making sure to choose a different directory 
 for the `.AppX` file (this sample uses the parent directory; it can be anywhere but should **not** be the project directory):
 
     `makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o`
 0. You can type `makeappx pack /?` to see what each parameter does, but in a nutshell:
-* `/m` sets the Manifest file to use
-* `/f` sets the mapping File to use (created in the previous step) 
-* `/p` sets the output Package name
-* `/o` sets it to Overwrite the output file if it exists
+ * `/m` sets the Manifest file to use
+ * `/f` sets the mapping File to use (created in the previous step) 
+ * `/p` sets the output Package name
+ * `/o` sets it to Overwrite the output file if it exists
 0. Once the package is created, it must be signed. The easiest way to get a signing certificate is by creating an empty Universal Windows project in Visual Studio and copying the `.pfx` 
-file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in the [**How to create an app package signing certificate** topic on MSDN]
+file it creates, but you can create one manually using the `MakeCert` and `Pvk2Pfx` utilities as described in [the **How to create an app package signing certificate** topic on MSDN]
 (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx). 
-* ***Important:*** If you manually create a signing certificate, make sure you place the files in a different directory than your source project or your package source, otherwise it 
+ * **Important:** If you manually create a signing certificate, make sure you place the files in a different directory than your source project or your package source, otherwise it 
 might get included as part of the package, including the private key!
 0. To sign the package, use the following command. Note that the `Publisher` specified in the `Identity` element of the `AppxManifest.xml` must match the `Subject` of the certificate 
-(this is **not** the `&lt;PublisherDisplayName&gt;` element, which is the localized display name to show to users). As usual, replace the "contoso_demo" filenames with the names 
-appropriate for your project, and (***very important***) make sure the `.pfx` file is not in the current directory (otherwise it would have been created as part of your package, 
+(this is **not** the `<PublisherDisplayName>` element, which is the localized display name to show to users). As usual, replace the `contoso_demo...` filenames with the names 
+appropriate for your project, and (**very important**) make sure the `.pfx` file is not in the current directory (otherwise it would have been created as part of your package, 
 including the private signing key!):
 
     `signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx`
 0. You can type `signtool sign /?` to see what each parameter does, but in a nutshell:
-* `/fd` sets the File Digest algorithm (SHA256 is the default for AppX)
-* `/a` will Automatically select the best certificate
-* `/f` specifies the input File that contains the signing certificate
+ * `/fd` sets the File Digest algorithm (SHA256 is the default for AppX)
+ * `/a` will Automatically select the best certificate
+ * `/f` specifies the input File that contains the signing certificate
 
 Finally, you can now double-click on the `.appx` file to install it, or if you prefer the command-line you can open a PowerShell prompt, change to the directory containing the package, 
-and type the following (replacing "contoso_demo.appx" with your package name):
+and type the following (replacing `contoso_demo.appx` with your package name):
 
-    `add-appxpackage contoso_demo.appx`
-If you receive errors about the certificate not being trusted, make sure it is added to the machine store (not the user store). To add the certificate to the machine store, you can 
+    add-appxpackage contoso_demo.appx
+If you receive errors about the certificate not being trusted, make sure it is added to the machine store (**not** the user store). To add the certificate to the machine store, you can 
 either use the command-line or Windows Explorer.
 
 To use the command-line:
 
-0. Run a Visual Studio command prompt as an Administrator.
-0. Switch to the directory that contains the `.cer` file (remember to ensure this is outside of your source or project directories)
-0. Type the following command, replacing "contoso_demo.cer" with your filename:
+0. Run a Visual Studio 2015 command prompt as an Administrator.
+0. Switch to the directory that contains the `.cer` file (remember to ensure this is outside of your source or project directories!)
+0. Type the following command, replacing `contoso_demo.cer` with your filename:
 
     `certutil -addstore TrustedPeople contoso_demo.cer`
 0. You can run `certutil -addstore /?` to see what each parameter does, but in a nutshell:
-* `TrustedPeople` indicates the store into which the certificate is placed
+ * `-addstore` adds a certificate to a certificate store
+ * `TrustedPeople` indicates the store into which the certificate is placed
 
 To use Windows Explorer:
 
 0. Navigate to the folder that contains the `.pfx` file
-0. Double-click on the `.pfx` file
+0. Double-click on the `.pfx` file and the **Certicicate Import Wizard** should appear
 0. Choose `Local Machine` and click `Next`
 0. Accept the User Account Control admin elevation prompt, if it appears, and click `Next`
-0. Enter the password, if there is one, and click `Next`
+0. Enter the password for the private key, if there is one, and click `Next`
 0. Select `Place all certificates in the following store`
-0. Click `Browse`, and choose the `Trusted People` folder (*not* "Trusted Publishers")
+0. Click `Browse`, and choose the `Trusted People` folder (**not** "Trusted Publishers")
 0. Click `Next` and then `Finish`
+
+After adding the certificate to the `Trusted People` store, try installing the package again.
 
 You should now see your app appear in the Start Menu's "All Apps" list, with the correct information from the `.resw` / `.pri` file. If you see a blank string or the string 
 `ms-resource:...` then something has gone wrong - double check your edits and make sure they're correct. If you right-click on your app in the Start Menu, you can Pin it as a tile and 
@@ -405,29 +418,28 @@ The following steps assume you added resources for both `de-DE` and `fr-FR`, but
 
 <h4>Update AppX manifest to list supported languages</h4>
 The AppX manifest must be updated to list the languages supported by the app. The Desktop App Converter adds the default language, but the others must be added explicitly. If you're 
-editing the `AppxManifest.xml` file directly, update the `Resources` node as follows, adding as many elements as you need, and substituting the appropriate languages you support 
-(the first entry in the list should be the default language). In this example, the default is English (US) with additional support for both German (Germany) and French (France):
+editing the `AppxManifest.xml` file directly, update the `Resources` node as follows, adding as many elements as you need, and substituting the 
+<span style="background-color: yellow">appropriate languages you support</span> and making sure the first entry in the list is the default (fallback) language. 
+In this example, the default is English (US) with additional support for both German (Germany) and French (France):
 
 <blockquote>
 <pre>
   &lt;Resources&gt;
-    &lt;Resource Language="EN-US" /&gt;
-    &lt;Resource Language="DE-DE" /&gt;
-    &lt;Resource Language="FR-FR" /&gt;
+    &lt;Resource Language="<span style="background-color: yellow">EN-US</span>" /&gt;
+    &lt;Resource Language="<span style="background-color: yellow">DE-DE</span>" /&gt;
+    &lt;Resource Language="<span style="background-color: yellow">FR-FR</span>" /&gt;
   &lt;/Resources&gt;
 </pre>
 </blockquote>
 
-If you are using Visual Studio, you shouldn't need to do anything; if you look at `Package.appxmanifest` you should see the special `x-generate` value, which causes the build process 
+If you are using Visual Studio, you shouldn't need to do anything; if you look at `Package.appxmanifest` you should see the special <span style="background-color: yellow">`x-generate`</span> value, which causes the build process 
 to insert the languages it finds in your project (based on the folders named with BCP-47 codes). Note that this is not a valid value for a real Appx Manifest; it only works for Visual 
 Studio projects:
 
 <blockquote>
 <pre>
   &lt;Resources&gt;
-    &lt;Resource Language="x-generate" /&gt;
-    &lt;Resource Language="DE-DE" /&gt;
-    &lt;Resource Language="FR-FR" /&gt;
+    &lt;Resource Language="<span style="background-color: yellow">x-generate</span>" /&gt;
   &lt;/Resources&gt;
 </pre>
 </blockquote>
@@ -439,11 +451,13 @@ for how to change your language are below).
 For Visual Studio, again you can just use `Ctrl+Shift+B` to build, and right-click the project to `Deploy`.
 
 If you're manually building the project, follow the same steps as above but add the additional languages, separated by underscores, to the default qualifiers list (`/dq`) when creating 
-the configuration file. For example, to support the English, German, and French resources added in the previous step:
+the configuration file. For example, to support the <span style="background-color: yellow">English, German, and French resources</span> added in the previous step:
 
-    `makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o`
+    makepri createconfig /cf ..\contoso_demo.xml /dq <span style="background-color: yellow">en-US_de-DE_fr-FR</span> /pv 10.0 /o
 
-This will create a PRI file that contains English (US), German (Germany), and French (France) resources that you can easily use for testing.
+This will create a PRI file that contains all the specified languagesthat you can easily use for testing. If the total size of your resources is small, or you only support a small
+number of languages, this might be acceptable for your shipping app; it's only if you want the benefits of minimizing install / download size for your resources that you need
+to do the additional work of building separate language packs.
 
 <h4>Test with the localized values</h4>
 To test the new localized changes, you simply add a new preferred UI language to Windows. There is no need to download language packs, reboot the system, or have your entire Windows 
@@ -454,7 +468,7 @@ UI appear in a foreign language.
 0. Go to `Region & language`
 0. Click `Add a language`
 0. Type (or select) the language you want (eg `Deutsch` or `German`)
-0. If there are sub-languages, choose the one you want (eg, `Deutsch / Deutschland`)
+ * If there are sub-languages, choose the one you want (eg, `Deutsch / Deutschland`)
 0. Select the new language in the language list
 0. Click `Set as default`
 
@@ -464,19 +478,19 @@ list.
 
 <h3>Step 1.4: Localizing more parts of the AppX manifest (optional)</h3>
 Other sections of the AppX Manifest can be localized. For example, if your application handles file-extensions then it should have a `windows.fileTypeAssociation` extension in the 
-manifest, where the values `uap:DisplayName` and `uap:InfoTip` are copied exactly as shown (since they will refer to resources), and the `uap:FileType Content Type` is specific to your 
-application:
+manifest, replacing <span style="background-color: lightgreen">these highlighted values</span> are copied exactly as shown (since they will refer to resources), and 
+<span style="background-color: yellow">this highlighted value</span> is specific to your application:
 
 <blockquote>
 <pre>
 &lt;Extensions&gt;
   &lt;uap:Extension Category="windows.fileTypeAssociation"&gt;
     &lt;uap:FileTypeAssociation Name="default"&gt;
-      &lt;uap:DisplayName&gt;ms-resource:Resources/FileTypeDisplayName&lt;/uap:DisplayName&gt;
+      &lt;uap:DisplayName&gt;<span style="background-color: lightgreen">ms-resource:Resources/FileTypeDisplayName</span>&lt;/uap:DisplayName&gt;
       &lt;uap:Logo&gt;Assets\StoreLogo.png&lt;/uap:Logo&gt;
-      &lt;uap:InfoTip&gt;ms-resource:Resources/FileTypeInfoTip&lt;/uap:InfoTip&gt;
+      &lt;uap:InfoTip&gt;<span style="background-color: lightgreen">ms-resource:Resources/FileTypeInfoTip</span>&lt;/uap:InfoTip&gt;
       &lt;uap:SupportedFileTypes&gt;
-        &lt;uap:FileType ContentType="application/x-contoso"&gt;.contoso&lt;/uap:FileType&gt;
+        &lt;uap:FileType ContentType="<span style="background-color: yellow">application/x-contoso"&gt;.contoso</span>&lt;/uap:FileType&gt;
       &lt;/uap:SupportedFileTypes&gt;
     &lt;/uap:FileTypeAssociation&gt;
   &lt;/uap:Extension&gt;
@@ -484,30 +498,34 @@ application:
 </pre>
 </blockquote>
 
-You can also add this information using the Visual Studio Manifest Designer, using the `Declarations` tab:
+You can also add this information using the Visual Studio Manifest Designer, using the `Declarations` tab, taking note of the
+<span style="background-color: lightgreen">highlighted values</span>:
 
-<img src="images\editing-declarations-info.png"/>
+<p><img src="images\editing-declarations-info.png"/></p>
 
-Now add the corresponding resource names to each of your `.resw` files, replacing the "Contoso" values with the appropriate text for your app (in each supported language):
+Now add the corresponding resource names to each of your `.resw` files, replacing the <span style="background-color: yellow">highlighted values</span> with the appropriate 
+text for your app (remember to do this for *each supported language!*):
 
 <blockquote>
 <pre>
   ... existing content...
 
   &lt;data name="FileTypeDisplayName"&gt;
-    &lt;value&gt;Contoso Demo File&lt;/value&gt;
+    &lt;value&gt;<span style="background-color: yellow">Contoso Demo File</span>&lt;/value&gt;
   &lt;/data&gt;
   &lt;data name="FileTypeInfoTip"&gt;
-    &lt;value&gt;Files used by Contoso Demo App&lt;/value&gt;
+    &lt;value&gt;<span style="background-color: yellow">Files used by Contoso Demo App</span>&lt;/value&gt;
   &lt;/data&gt;
 </pre>
 </blockquote>
 
 This will then show up in parts of the Windows shell, such as File Explorer:
 
-<img src="images\file-type-tool-tip.png"/>
+<p><img src="images\file-type-tool-tip.png"/></p>
 
 Build and test the package as before, exercising any new scenarios that should show the new UI strings.
+
+***
 
 <h2>Phase 2: Use MRT to identify and locate resources</h2>
 The previous section showed how to use MRT to localize your app's manifest file so that the Windows Shell can correctly display the app's name and other metadata. No code changes 
@@ -525,24 +543,27 @@ in different folders with BCP-47 names (`en-US`, `de-DE`, etc.). It doesn't matt
 are, etc. The only thing that matters is that every *logical* resource has the same filename (but placed in a different *physical* directory). 
 
 As a counter-example, if your application uses a flat file-structure with a single `Resources` directory containing the files `english_strings.dll` and `french_strings.dll`, it 
-**would not** map well to MRT. A better structure would be a `Resources` directory with subdirectories and files `en\strings.dll` and `fr\strings.dll`<sup>8</sup>. Note that it is 
-still possible to use MRT and the benefits of AppX packaging even if you have different file-names; it just requires more work. A future whitepaper will cover this case. 
+**would not** map well to MRT. A better structure would be a `Resources` directory with subdirectories and files `en\strings.dll` and `fr\strings.dll`
+<a name="footnote8_ref" href="#footnote8"><sup>8</sup></a>. Note that it is 
+still possible to use MRT and the benefits of AppX packaging even if you can't follow this filenaming convention; it just requires more work. 
+A future whitepaper will cover this case. 
 
-In our example, the application has a set of custom UI commands (used for button labels etc.) in a simple text file named `ui.txt`, laid out under a `UICommands` folder:
+For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span style="background-color: yellow">`ui.txt`</span>, 
+laid out under a <span style="background-color: yellow">`UICommands`</span> folder:
 
 <blockquote>
 <pre>
 + ProjectRoot
 |--+ Strings
-|  |--+ en-us
+|  |--+ en-US
 |  |  \--- resources.resw
 |  \--+ de-DE
 |     \--- resources.resw
-|--+ UICommands
-|  |--+ en-us
-|  |  \--- ui.txt
+|--+ <span style="background-color: yellow">UICommands</span>
+|  |--+ en-US
+|  |  \--- <span style="background-color: yellow">ui.txt</span>
 |  \--+ de-DE
-|     \--- ui.txt
+|     \--- <span style="background-color: yellow">ui.txt</span>
 |--- AppxManifest.xml
 |--- ...rest of project...
 </pre>
@@ -598,10 +619,13 @@ In pseudo-code, the way you would resolve a given resource file name (like `UICo
     // Get the string value (the filename) from the ResourceCandidate
     set absoluteFileName = bestCandidate.ValueAsString
 
+Note in particular that the code does **not** request a specific language folder - like `UICommands\en-US\ui.txt` - even though that is how the files exist on-disk. Instead, it
+asks for the *logical* filename `UICommands\ui.txt` and relies on MRT to find the appropriate on-disk file in one of the language directories.
+
 From here, the sample app could continue to use `CreateFile` to load the `absoluteFileName` and parse the `name=value` pairs just as before; none of that logic needs to change in the 
-app. If you are writing in C# or C++/CX, the actual code is not much more complicated than this (and in fact many of the intermediate variables can be elided) - see the section on .NET 
-resources, below. C++/WRL-based applications will be more complex due to the low-level COM-based APIs used to activate and call the WinRT APIs, but the fundamental steps you take are 
-the same - see the section on MUI resources, below.
+app. If you are writing in C# or C++/CX, the actual code is not much more complicated than this (and in fact many of the intermediate variables can be elided) - see the section on **Loading .NET 
+resources**, below. C++/WRL-based applications will be more complex due to the low-level COM-based APIs used to activate and call the WinRT APIs, but the fundamental steps you take are 
+the same - see the section on **Loading Win32 MUI resources**, below.
 
 <h4>Loading .NET resources</h4>
 Because .NET has a built-in mechanism for locating and loading resources (known as "Satellite Assemblies"), there is no explicit code to replace as in the synthetic example above - in 
@@ -631,14 +655,14 @@ After conversion to AppX, the layout will look something like this, assuming `en
 + WindowsAppsRoot
 |--+ MainApp_neutral
 |  |--+ en-us
-|  |  \--- MainApp.resources.dll
+|  |  \--- <span style="background-color: yellow">MainApp.resources.dll</span>
 |  \--- MainApp.exe
 |--+ MainApp_neutral_resources.language_de
 |  \--+ de-de
-|     \--- MainApp.resources.dll
+|     \--- <span style="background-color: yellow">MainApp.resources.dll</span>
 \--+ MainApp_neutral_resources.language_fr
    \--+ fr-fr
-      \--- MainApp.resources.dll
+      \--- <span style="background-color: yellow">MainApp.resources.dll</span>
 </pre>
 </blockquote>
 
@@ -650,6 +674,7 @@ A concise example of how to use the WinRT APIs to locate satellite assemblies us
 although you can see it maps closely to the pseudo-code above, with the passed-in `ResolveEventArgs` providing the name of the assembly we need to locate. A runnable version of this code 
 (with detailed comments and error-handling) can be found in the file `PriResourceRsolver.cs` in the TODO: GET LINK TO GIT SAMPLE
 
+```CSharp
     static class PriResourceResolver
     {
       internal static Assembly ResolveResourceDll(object sender, ResolveEventArgs args)
@@ -664,13 +689,14 @@ although you can see it maps closely to the pseudo-code above, with the passed-i
         return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
       }
     }
+```
 
 Given the class above, you would add the following line of code early-on in your application's startup code (before any localized resources would need to load):
 
     AppDomain.CurrentDomain.AssemblyResolve += PriResourceResolver.ResolveResourceDll;
 
 The .NET runtime will raise the `AssemblyResolve` event whenever it can't find the resource DLLs, at which point the provided event handler will locate the desired file via MRT and 
-return the assembly<sup>9</sup>.
+return the assembly<a name="footnote9_ref" href="#footnote9"><sup>9</sup></a>.
 
 <h4>Loading Win32 MUI resources</h4>
 Loading Win32 MUI resources is essentially the same as loading .NET Satellite Assemblies, but using either C++/CX or C++/WRL code instead. Using C++/CX allows for much simpler code 
@@ -811,16 +837,16 @@ This will produce a signed `.appxbundle` file that contains the main package plu
 install the app plus any appropriate language(s) based on the user's Windows language preferences. 
  
 <h2>Footnotes</h2>
-1. This paper provides no further motivation for localization itself; it is assumed the reader already understands this.
-2. Historically this stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) 
+<a name="footnote1" href="#footnote1_ref">1.</a> This paper provides no further motivation for localization itself; it is assumed the reader already understands this.
+<a name="footnote2" href="#footnote2_ref">2.</a> Historically this stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) 
 or PRI (Package Resource Index).
-3. This table doesn't include non-localization tasks, such as providing high-resolution or high-contrast application icons. See MSDN for more information about providing multiple 
+<a name="footnote3" href="#footnote3_ref">3.</a> This table doesn't include non-localization tasks, such as providing high-resolution or high-contrast application icons. See MSDN for more information about providing multiple 
 assets for tiles, icons, etc.
-4. The specifics of scale factor are not covered here
-5. Note that there are restrictions on the lengths of some of these strings; see [the **VisualElements** topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/br211471.aspx) 
+<a name="footnote4" href="#footnote4_ref">4.</a> The specifics of scale factor are not covered here
+<a name="footnote5" href="#footnote5_ref">5.</a> Note that there are restrictions on the lengths of some of these strings; see [the **VisualElements** topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/br211471.aspx) 
 for more information 
-6. There is no requirement to use these exact resource names - you can choose your own - but whatever you choose must exactly match whatever is in the `.resw` file.
-7. You can choose any other directory you want, but be sure to substitute that in future commands
-8. It's also possible to use the same base filename but with embedded qualifiers, such as `strings.lang-en.dll` and `strings.lang-fr.dll`, but using directories with the language codes 
+<a name="footnote6" href="#footnote6_ref">6.</a> There is no requirement to use these exact resource names - you can choose your own - but whatever you choose must exactly match whatever is in the `.resw` file.
+<a name="footnote7" href="#footnote7_ref">7.</a> You can choose any other directory you want, but be sure to substitute that in future commands
+<a name="footnote8" href="#footnote8_ref">8.</a> It's also possible to use the same base filename but with embedded qualifiers, such as `strings.lang-en.dll` and `strings.lang-fr.dll`, but using directories with the language codes 
 is conceptually simpler so it's what we'll focus on.
-9. Note that if your app already has an `AssemblyResolve` handler for other purposes, you will need to integrate the resource-resolving code with your existing code.
+<a name="footnote9" href="#footnote9_ref">9.</a> Note that if your app already has an `AssemblyResolve` handler for other purposes, you will need to integrate the resource-resolving code with your existing code.
