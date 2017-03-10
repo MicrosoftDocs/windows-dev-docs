@@ -513,7 +513,7 @@ ms.prod: windows
                             </a>
                         </li> 
                         <li>
-                            <a href="https://technet.microsoft.com/en-us/library/mt267544.aspx">
+                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
