@@ -454,11 +454,11 @@ In this example, the default is English (US) with additional support for both Ge
 
 <blockquote>
 <pre>
-  &lt;Resources&gt;
-    &lt;Resource Language="<span style="background-color: yellow">EN-US</span>" /&gt;
-    &lt;Resource Language="<span style="background-color: yellow">DE-DE</span>" /&gt;
-    &lt;Resource Language="<span style="background-color: yellow">FR-FR</span>" /&gt;
-  &lt;/Resources&gt;
+&lt;Resources&gt;
+  &lt;Resource Language="<span style="background-color: yellow">EN-US</span>" /&gt;
+  &lt;Resource Language="<span style="background-color: yellow">DE-DE</span>" /&gt;
+  &lt;Resource Language="<span style="background-color: yellow">FR-FR</span>" /&gt;
+&lt;/Resources&gt;
 </pre>
 </blockquote>
 
@@ -468,9 +468,9 @@ Studio projects:
 
 <blockquote>
 <pre>
-  &lt;Resources&gt;
-    &lt;Resource Language="<span style="background-color: yellow">x-generate</span>" /&gt;
-  &lt;/Resources&gt;
+&lt;Resources&gt;
+  &lt;Resource Language="<span style="background-color: yellow">x-generate</span>" /&gt;
+&lt;/Resources&gt;
 </pre>
 </blockquote>
 
@@ -543,14 +543,14 @@ text for your app (remember to do this for *each supported language!*):
 
 <blockquote>
 <pre>
-  ... existing content...
+... existing content...
 
-  &lt;data name="FileTypeDisplayName"&gt;
-    &lt;value&gt;<span style="background-color: yellow">Contoso Demo File</span>&lt;/value&gt;
-  &lt;/data&gt;
-  &lt;data name="FileTypeInfoTip"&gt;
-    &lt;value&gt;<span style="background-color: yellow">Files used by Contoso Demo App</span>&lt;/value&gt;
-  &lt;/data&gt;
+&lt;data name="FileTypeDisplayName"&gt;
+  &lt;value&gt;<span style="background-color: yellow">Contoso Demo File</span>&lt;/value&gt;
+&lt;/data&gt;
+&lt;data name="FileTypeInfoTip"&gt;
+  &lt;value&gt;<span style="background-color: yellow">Files used by Contoso Demo App</span>&lt;/value&gt;
+&lt;/data&gt;
 </pre>
 </blockquote>
 
@@ -726,9 +726,12 @@ static class PriResourceResolver
   {
     var fullAssemblyName = new AssemblyName(args.Name);
     var fileName = string.Format(@"{0}.dll", fullAssemblyName.Name);
+
     var resourceContext = ResourceContext.GetForViewIndependentUse();
     resourceContext.Languages = new[] { fullAssemblyName.CultureName };
+
     var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
+
     // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
     // in general is discouraged. The full sample provides a safer wrapper of this method
     return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
@@ -736,10 +739,13 @@ static class PriResourceResolver
 }
 ```
 
-Given the class above, you would add the following line of code early-on in your application's startup code (before any localized resources would need to load):
+Given the class above, you would add the following somewhere early-on in your application's startup code (before any localized resources would need to load):
 
 ```C#
-AppDomain.CurrentDomain.AssemblyResolve += PriResourceResolver.ResolveResourceDll;
+void EnableMrtResourceLookup()
+{
+  AppDomain.CurrentDomain.AssemblyResolve += PriResourceResolver.ResolveResourceDll;
+}
 ```
 
 The .NET runtime will raise the `AssemblyResolve` event whenever it can't find the resource DLLs, at which point the provided event handler will locate the desired file via MRT and 
@@ -835,13 +841,17 @@ If you're manually editing files, follow these steps:
     `makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_es-MX /pv 10.0 /o`
 0. Manually open the created `.xml` file and delete the entire `&lt;packaging&rt;` section (but keep everything else intact):
 
-    &lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt; 
-    &lt;resources targetOsVersion="10.0.0" majorVersion="1"&gt;
-      &lt;!-- Packaging section has been deleted... --&gt;
-      &lt;index root="\" startIndexAt="\"&gt;
-        &lt;default&gt;
-        ...
-        ...
+<blockquote>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes" ?&gt; 
+&lt;resources targetOsVersion="10.0.0" majorVersion="1"&gt;
+  &lt;!-- Packaging section has been deleted... --&gt;
+  &lt;index root="\" startIndexAt="\"&gt;
+    &lt;default&gt;
+    ...
+    ...
+</pre>
+</blockquote>
 
 0. Build the `.pri` file and the `.appx` package as before, using the updated configuration file and the appropriate directory and file names (see above for more information on 
 these commands):
@@ -891,7 +901,7 @@ The final step to building the package is Signing.
 Once you have created the `.appxbundle` file (either through the Bundle Generator tool or manually) you will have a single file that contains the main package plus all the resource 
 packages. The final step is to sign the file so that Windows will install it:
 
-    `signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appxbundle`
+    signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appxbundle
 
 This will produce a signed `.appxbundle` file that contains the main package plus all the language-specific resource packages. It can be double-clicked just like a package file to 
 install the app plus any appropriate language(s) based on the user's Windows language preferences. 
