@@ -108,7 +108,7 @@ This section outlines how to get your existing Desktop application building as a
 This section outlines how to localize your application's manifest (so that it appears correctly in the Windows Shell) whilst still using your legacy resource format and API to package 
 and locate resources. 
 
-** Phase 2: Use MRT to identify and locate resources**
+**Phase 2: Use MRT to identify and locate resources**
 
 This section outlines how to modify your application code (and possibly resource layout) to locate resources using MRT, whilst still using your existing resource formats and APIs to 
 load and consume the resources. 
@@ -175,7 +175,8 @@ is as follows, where the <span style="background-color: yellow">highlighted text
     &lt;Application Id="<span style="background-color: yellow">ContosoDemo</span>" Executable="<span style="background-color: yellow">ContosoDemo.exe</span>" 
                  EntryPoint="Windows.FullTrustApplication"&gt;
     &lt;uap:VisualElements DisplayName="<span style="background-color: yellow">Contoso Demo</span>" BackgroundColor="#777777" 
-                        Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" 
+                        Square150x150Logo="Assets\Square150x150Logo.png" 
+                        Square44x44Logo="Assets\Square44x44Logo.png" 
         Description="<span style="background-color: yellow">Contoso Demo</span>"&gt;
       &lt;/uap:VisualElements&gt;
     &lt;/Application&gt;
@@ -212,7 +213,7 @@ Studio.
 If you want to create the resources manually:
 
 0. Create an XML file named `resources.resw` and place it in a `Strings\en-us` subfolder of your project. 
- * You can use a different BCP-47 code if your default language is not US English 
+ * Use the appropriate BCP-47 code if your default language is not US English 
 0. In the XML file, add the following content, where the <span style="background-color: yellow">highlighted text</span> is replaced with the appropriate text for your app, in your default
 language<a name="footnote5_ref" href="#footnote5"><sup>5</sup></a>
 
@@ -241,7 +242,7 @@ language<a name="footnote5_ref" href="#footnote5"><sup>5</sup></a>
 
 If you want to use the designer in Visual Studio:
 
-0. Create the `Strings\en-us` folder (or other language as appropriate) in your project, and add a **New Item** to the root folder of your project, using the default name of `resources.resw`
+0. Create the `Strings\en-us` folder (or other language as appropriate) in your project and add a **New Item** to the root folder of your project, using the default name of `resources.resw`
  * Be sure to choose **Resources File (.resw)** and not **Resource Dictionary** - a Resource Dictionary is a file used by XAML applications
 0. Using the designer, enter the following strings (use the same `Names` but replace the `Values` with the appropriate text for your application):
 
@@ -305,7 +306,10 @@ If you're building manually, follow these steps to create a configuration file f
 0. Type the following command, replacing "contoso_demo.xml" with a name suitable for your project, and "en-US" with the default language of your app (or keep it en-US if applicable). 
 Note the xml file is created in the parent directory (**not** in the project directory) since it's not part of the application<a name="footnote7_ref" href="#footnote7"><sup>7</sup></a>:
 
-    `makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o`
+```CMD
+    makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o
+```
+
 0. You can type `makepri createconfig /?` to see what each parameter does, but in summary:
  * `/cf` sets the Configuration Filename (the output of this command)
  * `/dq` sets the Default Qualifiers, in this case the language `en-US`
@@ -367,7 +371,10 @@ including the private signing key!):
 Finally, you can now double-click on the `.appx` file to install it, or if you prefer the command-line you can open a PowerShell prompt, change to the directory containing the package, 
 and type the following (replacing `contoso_demo.appx` with your package name):
 
+```CMD
     add-appxpackage contoso_demo.appx
+```
+
 If you receive errors about the certificate not being trusted, make sure it is added to the machine store (**not** the user store). To add the certificate to the machine store, you can 
 either use the command-line or Windows Explorer.
 
@@ -475,9 +482,11 @@ for how to change your language are below).
 For Visual Studio, again you can just use `Ctrl+Shift+B` to build, and right-click the project to `Deploy`.
 
 If you're manually building the project, follow the same steps as above but add the additional languages, separated by underscores, to the default qualifiers list (`/dq`) when creating 
-the configuration file. For example, to support the <span style="background-color: yellow">English, German, and French resources</span> added in the previous step:
+the configuration file. For example, to support the English, German, and French resources added in the previous step:
 
-    makepri createconfig /cf ..\contoso_demo.xml /dq <span style="background-color: yellow">en-US_de-DE_fr-FR</span> /pv 10.0 /o
+```CMD
+    makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
+```
 
 This will create a PRI file that contains all the specified languagesthat you can easily use for testing. If the total size of your resources is small, or you only support a small
 number of languages, this might be acceptable for your shipping app; it's only if you want the benefits of minimizing install / download size for your resources that you need
@@ -513,10 +522,10 @@ manifest, using the <span style="background-color: lightgreen">green highlighted
   &lt;uap:Extension Category="windows.fileTypeAssociation"&gt;
     &lt;uap:FileTypeAssociation Name="default"&gt;
       &lt;uap:DisplayName&gt;<span style="background-color: lightgreen">ms-resource:Resources/FileTypeDisplayName</span>&lt;/uap:DisplayName&gt;
-      &lt;uap:Logo&gt;Assets\StoreLogo.png&lt;/uap:Logo&gt;
+      &lt;uap:Logo&gt;<span style="background-color: yellow">Assets\StoreLogo.png</span>&lt;/uap:Logo&gt;
       &lt;uap:InfoTip&gt;<span style="background-color: lightgreen">ms-resource:Resources/FileTypeInfoTip</span>&lt;/uap:InfoTip&gt;
       &lt;uap:SupportedFileTypes&gt;
-        &lt;uap:FileType ContentType="<span style="background-color: yellow">application/x-contoso"&gt;.contoso</span>&lt;/uap:FileType&gt;
+        &lt;uap:FileType ContentType="<span style="background-color: yellow">application/x-contoso</span>"&gt;<span style="background-color: yellow">.contoso</span>&lt;/uap:FileType&gt;
       &lt;/uap:SupportedFileTypes&gt;
     &lt;/uap:FileTypeAssociation&gt;
   &lt;/uap:Extension&gt;
@@ -603,12 +612,12 @@ laid out under a <span style="background-color: yellow">UICommands</span> folder
 This whitepaper assumes that at some point in your code you want to locate the file that contains a localized resource, load it, and then use it. The APIs used to load the resources, 
 the APIs used to extract the resources, etc. are not important. In pseudocode, there are basically three steps:
 
-```CSharp
-    set userLanguage = GetUsersPreferredLanguage()
-    set resourceFile = FindResourceFileForLanguage(MY_RESOURCE_NAME, userLanguage)
-    set resource = LoadResource(resourceFile) 
+```
+set userLanguage = GetUsersPreferredLanguage()
+set resourceFile = FindResourceFileForLanguage(MY_RESOURCE_NAME, userLanguage)
+set resource = LoadResource(resourceFile) 
     
-    // now use 'resource' however you want
+// now use 'resource' however you want
 ```
 
 MRT only requires changing the first two steps in this process - how you determine the best candidate resources and how you locate them. It doesn't require you to change how you load 
@@ -633,25 +642,25 @@ this example, the file-based resources vs. the string resources)
 
 In pseudo-code, the way you would resolve a given resource file name (like `UICommands\ui.txt` in the sample above) is as follows:
 
-```CSharp
-    // Get the ResourceContext that applies to this app
-    set resourceContext = ResourceContext.GetForViewIndependentUse()
+```
+// Get the ResourceContext that applies to this app
+set resourceContext = ResourceContext.GetForViewIndependentUse()
     
-    // Get the current ResourceManager (there's one per app)
-    set resourceManager = ResourceManager.Current
+// Get the current ResourceManager (there's one per app)
+set resourceManager = ResourceManager.Current
     
-    // Get the "Files" ResourceMap from the ResourceManager
-    set fileResources = resourceManager.MainResourceMap.GetSubtree("Files")
+// Get the "Files" ResourceMap from the ResourceManager
+set fileResources = resourceManager.MainResourceMap.GetSubtree("Files")
     
-    // Find the NamedResource with the logical filename we're looking for,
-    // by indexing into the ResourceMap
-    set desiredResource = fileResources["UICommands\ui.txt"]
+// Find the NamedResource with the logical filename we're looking for,
+// by indexing into the ResourceMap
+set desiredResource = fileResources["UICommands\ui.txt"]
     
-    // Get the ResourceCandidate that best matches our ResourceContext
-    set bestCandidate = desiredResource.Resolve(resourceContext)
-    
-    // Get the string value (the filename) from the ResourceCandidate
-    set absoluteFileName = bestCandidate.ValueAsString
+// Get the ResourceCandidate that best matches our ResourceContext
+set bestCandidate = desiredResource.Resolve(resourceContext)
+   
+// Get the string value (the filename) from the ResourceCandidate
+set absoluteFileName = bestCandidate.ValueAsString
 ```
 
 Note in particular that the code does **not** request a specific language folder - like `UICommands\en-US\ui.txt` - even though that is how the files exist on-disk. Instead, it
@@ -710,27 +719,27 @@ A concise example of how to use the WinRT APIs to locate satellite assemblies us
 although you can see it maps closely to the pseudo-code above, with the passed-in `ResolveEventArgs` providing the name of the assembly we need to locate. A runnable version of this code 
 (with detailed comments and error-handling) can be found in the file `PriResourceRsolver.cs` in the TODO: GET LINK TO GIT SAMPLE
 
-```CSharp
-    static class PriResourceResolver
-    {
-      internal static Assembly ResolveResourceDll(object sender, ResolveEventArgs args)
-      {
-        var fullAssemblyName = new AssemblyName(args.Name);
-        var fileName = string.Format(@"{0}.dll", fullAssemblyName.Name);
-        var resourceContext = ResourceContext.GetForViewIndependentUse();
-        resourceContext.Languages = new[] { fullAssemblyName.CultureName };
-        var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
-        // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
-        // in general is discouraged. The full sample provides a safer wrapper of this method
-        return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
-      }
-    }
+```C#
+static class PriResourceResolver
+{
+  internal static Assembly ResolveResourceDll(object sender, ResolveEventArgs args)
+  {
+    var fullAssemblyName = new AssemblyName(args.Name);
+    var fileName = string.Format(@"{0}.dll", fullAssemblyName.Name);
+    var resourceContext = ResourceContext.GetForViewIndependentUse();
+    resourceContext.Languages = new[] { fullAssemblyName.CultureName };
+    var resource = ResourceManager.Current.MainResourceMap.GetSubtree("Files")[fileName];
+    // Note use of 'UnsafeLoadFrom' - this is required for apps installed with AppX, but
+    // in general is discouraged. The full sample provides a safer wrapper of this method
+    return Assembly.UnsafeLoadFrom(resource.Resolve(resourceContext).ValueAsString);
+  }
+}
 ```
 
 Given the class above, you would add the following line of code early-on in your application's startup code (before any localized resources would need to load):
 
-```CSharp
-    AppDomain.CurrentDomain.AssemblyResolve += PriResourceResolver.ResolveResourceDll;
+```C#
+AppDomain.CurrentDomain.AssemblyResolve += PriResourceResolver.ResolveResourceDll;
 ```
 
 The .NET runtime will raise the `AssemblyResolve` event whenever it can't find the resource DLLs, at which point the provided event handler will locate the desired file via MRT and 
@@ -746,58 +755,58 @@ The following sample function shows how to use C++/WRL to load a specific resour
 resource APIs. Note that unlike the C# sample that explicitly initializes the `ResourceContext` with the language requested by the .NET runtime, this code relies on the user's current 
 language.
 
-```Cpp
-    #include <roapi.h>
-    #include <wrl\client.h>
-    #include <wrl\wrappers\corewrappers.h>
-    #include <Windows.ApplicationModel.resources.core.h>
-    #include <Windows.Foundation.h>
+```CPP
+#include <roapi.h>
+#include <wrl\client.h>
+#include <wrl\wrappers\corewrappers.h>
+#include <Windows.ApplicationModel.resources.core.h>
+#include <Windows.Foundation.h>
+   
+#define IF_FAIL_RETURN(hr) if (FAILED((hr))) return hr;
     
-    #define IF_FAIL_RETURN(hr) if (FAILED((hr))) return hr;
+HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandle)
+{
+  using namespace Microsoft::WRL;
+  using namespace Microsoft::WRL::Wrappers;
+  using namespace ABI::Windows::ApplicationModel::Resources::Core;
+  using namespace ABI::Windows::Foundation;
     
-    HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandle)
-    {
-      using namespace Microsoft::WRL;
-      using namespace Microsoft::WRL::Wrappers;
-      using namespace ABI::Windows::ApplicationModel::Resources::Core;
-      using namespace ABI::Windows::Foundation;
+  *resourceHandle = nullptr;
+  HRESULT hr{ S_OK };
+  RoInitializeWrapper roInit{ RO_INIT_SINGLETHREADED };
+  IF_FAIL_RETURN(roInit);
     
-      *resourceHandle = nullptr;
-      HRESULT hr{ S_OK };
-      RoInitializeWrapper roInit{ RO_INIT_SINGLETHREADED };
-      IF_FAIL_RETURN(roInit);
+  // Get Windows.ApplicationModel.Resources.Core.ResourceManager statics
+  ComPtr<IResourceManagerStatics> resourceManagerStatics;
+  IF_FAIL_RETURN(GetActivationFactory(
+    HStringReference(
+    RuntimeClass_Windows_ApplicationModel_Resources_Core_ResourceManager).Get(),
+    &resourceManagerStatics));
     
-      // Get Windows.ApplicationModel.Resources.Core.ResourceManager statics
-      ComPtr<IResourceManagerStatics> resourceManagerStatics;
-      IF_FAIL_RETURN(GetActivationFactory(
-        HStringReference(
-        RuntimeClass_Windows_ApplicationModel_Resources_Core_ResourceManager).Get(),
-        &resourceManagerStatics));
+  // Get .Current property
+  ComPtr<IResourceManager> resourceManager;
+  IF_FAIL_RETURN(resourceManagerStatics->get_Current(&resourceManager));
     
-      // Get .Current property
-      ComPtr<IResourceManager> resourceManager;
-      IF_FAIL_RETURN(resourceManagerStatics->get_Current(&resourceManager));
+  // get .MainResourceMap property
+  ComPtr<IResourceMap> resourceMap;
+  IF_FAIL_RETURN(resourceManager->get_MainResourceMap(&resourceMap));
     
-      // get .MainResourceMap property
-      ComPtr<IResourceMap> resourceMap;
-      IF_FAIL_RETURN(resourceManager->get_MainResourceMap(&resourceMap));
+  // Call .GetValue with supplied filename
+  ComPtr<IResourceCandidate> resourceCandidate;
+  IF_FAIL_RETURN(resourceMap->GetValue(HStringReference(resourceFilePath).Get(),
+    &resourceCandidate));
     
-      // Call .GetValue with supplied filename
-      ComPtr<IResourceCandidate> resourceCandidate;
-      IF_FAIL_RETURN(resourceMap->GetValue(HStringReference(resourceFilePath).Get(),
-        &resourceCandidate));
+  // Get .ValueAsString property
+  HString resolvedResourceFilePath;
+  IF_FAIL_RETURN(resourceCandidate->get_ValueAsString(
+    resolvedResourceFilePath.GetAddressOf()));
     
-      // Get .ValueAsString property
-      HString resolvedResourceFilePath;
-      IF_FAIL_RETURN(resourceCandidate->get_ValueAsString(
-        resolvedResourceFilePath.GetAddressOf()));
+  // Finally, load the DLL and return the hInst.
+  *resourceHandle = LoadLibraryEx(resolvedResourceFilePath.GetRawBuffer(nullptr),
+    nullptr, LOAD_LIBRARY_AS_DATAFILE | LOAD_LIBRARY_AS_IMAGE_RESOURCE);
     
-      // Finally, load the DLL and return the hInst.
-      *resourceHandle = LoadLibraryEx(resolvedResourceFilePath.GetRawBuffer(nullptr),
-        nullptr, LOAD_LIBRARY_AS_DATAFILE | LOAD_LIBRARY_AS_IMAGE_RESOURCE);
-    
-      return S_OK;
-    }
+  return S_OK;
+}
 ```
 
 ## Phase 3: Building resource packs
@@ -837,8 +846,11 @@ If you're manually editing files, follow these steps:
 0. Build the `.pri` file and the `.appx` package as before, using the updated configuration file and the appropriate directory and file names (see above for more information on 
 these commands):
 
-   `makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o`
-    `makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o`
+```CMD
+makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o
+makeappx pack /m AppXManifest.xml /f ..\resources.map.txt /p ..\contoso_demo.appx /o
+```
+
 0. Once the package has been created, use the following command to create the bundle, using the appropriate directory and file names:
 
     `BundleGenerator.exe -Package ..\contoso_demo.appx -Destination ..\bundle -BundleName contoso_demo`
@@ -874,7 +886,7 @@ the `.appx` files are put into a separate directory in the previous step):
 
 The final step to building the package is Signing.
 
-### Step 3,2: Signing the bundle
+### Step 3.2: Signing the bundle
 
 Once you have created the `.appxbundle` file (either through the Bundle Generator tool or manually) you will have a single file that contains the main package plus all the resource 
 packages. The final step is to sign the file so that Windows will install it:
@@ -885,6 +897,8 @@ This will produce a signed `.appxbundle` file that contains the main package plu
 install the app plus any appropriate language(s) based on the user's Windows language preferences. 
  
 ## Footnotes
+
+Click on the number to return to the source location in the document.
 
 <a name="footnote1" href="#footnote1_ref">1.</a> This paper provides no further motivation for localization itself; it is assumed the reader already understands this.
 
