@@ -10,15 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
 ---
 
-<h1>Migrating legacy resources to the Windows 10 resource management platform</h1>
+# Migrating legacy resources to the Windows 10 resource management platform
 
-<h2>Executive Summary</h2>
+## Executive Summary
+
 Win32 applications are often localized into different languages, expanding their total addressable market<a name="footnote1_ref" href="#footnote1"><sup>1</sup></a>. 
 There are many ways to localize traditional Win32 applications, 
 but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) (referred to as "MRT" in this document
 <a name="footnote2_ref" href="#footnote2"><sup>2</sup></a>)
-that works across programming languages, across application types, and provides functionality over and above simple localization. Combined with AppX-based deployment (eg, from the 
-Windows Store), MRT can automatically deliver only the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
+that works across programming languages, across application types, and provides functionality over and above simple localization. 
+
+Combined with AppX-based deployment (eg, from the 
+Windows Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
 localized listings in the Windows Shell and the Windows Store, automatic fallback logic when a user's preferred language doesn't match your available resources.
 
@@ -58,11 +61,12 @@ sizes - it's not an all-or-nothing approach. The following table summarizes the 
 </tr>
 </table>
 
-<h2>Introduction</h2>
+## Introduction
+
 Most non-trivial applications contain user-interface elements known as *resources* that are decoupled from the application's code (contrasted with *hard-coded values* that are 
 authored in the source code itself). There are several reasons to prefer resources over hard-coded values - ease of editing by non-developers, for example - but one of the key reasons
 is to enable the application to pick different representations of the same logical resource at runtime. For example, the text to display on a button (or the image to display in an 
-icon) might differ depending on the language(s) the user understands, the characteristics of the display device, or whether the user has any assistive technologies enabled. 
+icon) might differ depending on the language(s) the user understands, the characteristics of the display device, or whether the user has any assistive technologies enabled.
 
 Thus the primary purpose of any resource-management technology is to translate, at runtime, a request for a logical or symbolic *resource name* (such as `SAVE_BUTTON_LABEL`) into the 
 best possible actual *value* (eg, "Save") from a set of possible *candidates* (eg, "Save", "Speichern", or "저장"). MRT provides such a function, and enables applications to 
@@ -71,7 +75,8 @@ environmental factors. MRT even supports custom qualifiers for applications that
 in with an account vs. guest users, without explicitly adding this check into every part of their application). MRT works with both string resources and file-based resources, where 
 file-based resources are implemented as references to the external data (the files themselves). 
 
-<h3>Example</h3>
+### Example
+
 Here's a simple example of an application that has text labels on two buttons (`openButton` and `saveButton`) and a PNG file used for a logo (`logoImage`). The text labels are 
 localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and hi-resolution phones (300% scale factor)
 <a name="footnote4_ref" href="#footnote4"><sup>4</sup></a>. Note this diagram 
@@ -90,35 +95,43 @@ topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.as
 Note that MRT supports resources that are tailored to more than one qualifier - for example, if the logo image contained embedded text that also needed to be localized, the logo would 
 have four candidates: EN/Scale-100, DE/Scale-100, EN/Scale-300 and DE/Scale-300.
 
-<h3>Sections in this document</h3>
+### Sections in this document
+
 The following sections outline the high-level tasks required to integrate MRT with your application.
 
-<h4>Phase 0: Build an application package</h4>
+**Phase 0: Build an application package**
+
 This section outlines how to get your existing Desktop application building as an application package. No MRT features are used at this stage.
 
-<h4>Phase 1: Localize the application manifest</h4>
+**Phase 1: Localize the application manifest**
+
 This section outlines how to localize your application's manifest (so that it appears correctly in the Windows Shell) whilst still using your legacy resource format and API to package 
 and locate resources. 
 
-<h4>Phase 2: Use MRT to identify and locate resources</h4>
+** Phase 2: Use MRT to identify and locate resources**
+
 This section outlines how to modify your application code (and possibly resource layout) to locate resources using MRT, whilst still using your existing resource formats and APIs to 
 load and consume the resources. 
 
-<h4>Phase 3: Build resource packs</h4>
+**Phase 3: Build resource packs**
+
 This section outlines the final changes needed to separate your resources into separate *resource packs*, minimizing the download (and install) size of your app.
 
-<h3>Not covered in this document</h3>
+### Not covered in this document
+
 After completing Phases 0-3 above, you will have an application "bundle" that can be submitted to the Windows Store and that will minimize the download & install size for users by omitting 
 the resources they don't need (eg, languages they don't speak). Further improvements in application size and functionality can be made by taking one final step. 
 
-<h4>Phase 4: Migrate to MRT resource formats and APIs</h4>
+**Phase 4: Migrate to MRT resource formats and APIs**
+
 This phase is beyond the scope of this document; it entails moving your resources (particularly strings) from legacy formats such as MUI DLLs or .NET resource assemblies into PRI files. 
 This can lead to further space savings for download & install sizes. It also allows use of other MRT features such as minimizing the download and install of image files by based on scale 
 factor, accessibility settings, and so on.
 
-***
+- - -
 
-<h2>Phase 0: Build an application package</h2>
+## Phase 0: Build an application package
+
 Before you make any changes to your application's resources, you must first replace your current packaging and installation technology with the standard UWP packaging and deployment 
 technology. There are three ways to do this:
 
@@ -135,7 +148,8 @@ If you want to manually create the package, you will need to create a directory 
 an `AppXManifest.xml` file. A complete example can be found **TODO: INSERT GITHUB LINK HERE**, but a basic `AppXManifest.xml` file that runs the Desktop executable named `ContosoDemo.exe` 
 is as follows, where the <span style="background-color: yellow">highlighted text</span> would be replaced by your own values:
 
-```XML
+<blockquote>
+<pre>
 &lt;?xml version="1.0" encoding="utf-8" ?&gt;
 &lt;Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
          xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
@@ -170,7 +184,8 @@ is as follows, where the <span style="background-color: yellow">highlighted text
     &lt;rescap:Capability Name="runFullTrust" /&gt;
   &lt;/Capabilities&gt;
 &lt;/Package&gt;
-```
+</pre>
+</blockquote>
 
 For more information about the `AppXManifest.xml` file and package layout, see [the **App package manifest** topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/br211474.aspx).
 
@@ -180,15 +195,17 @@ These changes are outside the scope of this document.
 
 ***
 
-<h2>Phase 1: Localize the application manifest</h2>
+## Phase 1: Localize the application manifest
 
-<h3>Step 1.1: Update strings & assets in the AppXManifest</h3>
+### Step 1.1: Update strings & assets in the AppXManifest
+
 In Phase 0 you created a basic `AppXManifest.xml` file for your application (based on values provided to the converter, extracted from the MSI, or manually entered into the manifest) 
 but it will not contain localized information, nor will it support additional features like high-resolution Start tile assets, etc. 
 
 To ensure your application's name and description are correctly localized, you must define some resources in a set of resource files, and update the AppX Manifest to reference them.
 
-<h4>Creating a default resource file</h4>
+**Creating a default resource file**
+
 The first step is to create a default resource file in your default language (eg, US English). You can do this either manually with a text editor, or via the Resource Designer in Visual 
 Studio.
 
@@ -233,7 +250,8 @@ If you want to use the designer in Visual Studio:
 Note: if you start with the Visual Studio designer, you can always edit the XML directly by pressing `F7`. But if you start with a minimal XML file, *the designer will not recognize the 
 file* because it's missing a lot of additional metadata; you can fix this by copying the boilerplate XSD information from a designer-generated file into your hand-edited XML file. 
 
-<h4>Update the manifest to reference the resources</h4>
+**Update the manifest to reference the resources**
+
 Once you have the values defined in the `.resw` file, the next step is to update the manifest to reference the resource strings. Again, you can edit an XML file directly, or rely on the 
 Visual Studio Manifest Designer.
 
@@ -273,7 +291,8 @@ the `Application` tab and the `Packaging` tab:
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-<h3>Step 1.2: Build PRI file, make an AppX package, and verify it's working</h3>
+### Step 1.2: Build PRI file, make an AppX package, and verify it's working
+
 You should now be able to build the `.pri` file and deploy the application to verify that the correct information (in your default language) is appearing in the Start Menu. 
 
 If you're building in Visual Studio, simply press `Ctrl+Shift+B` to build the project and then right-click on the project and choose `Deploy` from the context menu. 
@@ -316,7 +335,8 @@ If you like, you can open the mapping file `..\resources.map.txt` to verify it c
 directory). Importantly, the mapping file will *not* include a reference to your `resources.resw` file because the contents of that file have already been embedded in the PRI file. 
 It will, however, contain other resources like the filenames of your images.
 
-<h4>Building and signing the package</h4>
+**Building and signing the package**
+
 Now the PRI file is built, you can build and sign the package:
 
 0. To create the app package, run the following command replacing `contoso_demo.appx` with the name of the AppX file you want to create and making sure to choose a different directory 
@@ -379,17 +399,19 @@ You should now see your app appear in the Start Menu's "All Apps" list, with the
 `ms-resource:...` then something has gone wrong - double check your edits and make sure they're correct. If you right-click on your app in the Start Menu, you can Pin it as a tile and 
 verify the correct information is displayed there also.
 
-<h3>Step 1.3: Add more supported languages</h3>
+### Step 1.3: Add more supported languages
+
 Once the changes have been made to the AppX manifest and the initial `resources.resw` file has been created, adding additional languages is easy.
 
-<h4>Create additional localized resources</h4>
+**Create additional localized resources**
+
 First, create the additional localized resource values. 
 
 Within the `Strings` folder, create additional folders for each language you support using the appropriate BCP-47 code (for example, `Strings\de-DE`). Within each of these folders, 
 create a `resources.resw` file (using either an XML editor or the Visual Studio designer) that includes the translated resource values. It is assumed you already have the localized 
 strings available somewhere, and you just need to copy them into the `.resw` file; this document does not cover the translation step itself. 
 
-For example, the `Strings\de-DE\resources.resw` file might look like this, with the <span style="background-color: yellow">highlighted values</span> changed from `en-US`:
+For example, the `Strings\de-DE\resources.resw` file might look like this, with the <span style="background-color: yellow">highlighted text</span> changed from `en-US`:
 
 <blockquote>
 <pre>
@@ -416,7 +438,8 @@ For example, the `Strings\de-DE\resources.resw` file might look like this, with 
 
 The following steps assume you added resources for both `de-DE` and `fr-FR`, but the same pattern can be followed for any language.
 
-<h4>Update AppX manifest to list supported languages</h4>
+**Update AppX manifest to list supported languages**
+
 The AppX manifest must be updated to list the languages supported by the app. The Desktop App Converter adds the default language, but the others must be added explicitly. If you're 
 editing the `AppxManifest.xml` file directly, update the `Resources` node as follows, adding as many elements as you need, and substituting the 
 <span style="background-color: yellow">appropriate languages you support</span> and making sure the first entry in the list is the default (fallback) language. 
@@ -432,7 +455,7 @@ In this example, the default is English (US) with additional support for both Ge
 </pre>
 </blockquote>
 
-If you are using Visual Studio, you shouldn't need to do anything; if you look at `Package.appxmanifest` you should see the special <span style="background-color: yellow">`x-generate`</span> value, which causes the build process 
+If you are using Visual Studio, you shouldn't need to do anything; if you look at `Package.appxmanifest` you should see the special <span style="background-color: yellow">x-generate</span> value, which causes the build process 
 to insert the languages it finds in your project (based on the folders named with BCP-47 codes). Note that this is not a valid value for a real Appx Manifest; it only works for Visual 
 Studio projects:
 
@@ -444,7 +467,8 @@ Studio projects:
 </pre>
 </blockquote>
 
-<h4>Re-build with the localized values</h4>
+**Re-build with the localized values**
+
 Now you can build and deploy your application, again, and if you change your language preference in Windows you should see the newly-localized values appear in the Start menu (instructions 
 for how to change your language are below).
 
@@ -459,7 +483,8 @@ This will create a PRI file that contains all the specified languagesthat you ca
 number of languages, this might be acceptable for your shipping app; it's only if you want the benefits of minimizing install / download size for your resources that you need
 to do the additional work of building separate language packs.
 
-<h4>Test with the localized values</h4>
+**Test with the localized values**
+
 To test the new localized changes, you simply add a new preferred UI language to Windows. There is no need to download language packs, reboot the system, or have your entire Windows 
 UI appear in a foreign language. 
 
@@ -476,10 +501,11 @@ Now open the Start menu and search for your application, and you should see the 
 see the localized name right away, wait a few minutes until the Start Menu's cache is refreshed. To return to your native language, just make it the default language in the language 
 list. 
 
-<h3>Step 1.4: Localizing more parts of the AppX manifest (optional)</h3>
+### Step 1.4: Localizing more parts of the AppX manifest (optional)
+
 Other sections of the AppX Manifest can be localized. For example, if your application handles file-extensions then it should have a `windows.fileTypeAssociation` extension in the 
-manifest, replacing <span style="background-color: lightgreen">these highlighted values</span> are copied exactly as shown (since they will refer to resources), and 
-<span style="background-color: yellow">this highlighted value</span> is specific to your application:
+manifest, using the <span style="background-color: lightgreen">green highlighted text</span> exactly as shown (since it will refer to resources), and replacing the
+<span style="background-color: yellow">yellow highlighted text</span> with information specific to your application:
 
 <blockquote>
 <pre>
@@ -503,7 +529,7 @@ You can also add this information using the Visual Studio Manifest Designer, usi
 
 <p><img src="images\editing-declarations-info.png"/></p>
 
-Now add the corresponding resource names to each of your `.resw` files, replacing the <span style="background-color: yellow">highlighted values</span> with the appropriate 
+Now add the corresponding resource names to each of your `.resw` files, replacing the <span style="background-color: yellow">highlighted text</span> with the appropriate 
 text for your app (remember to do this for *each supported language!*):
 
 <blockquote>
@@ -525,19 +551,22 @@ This will then show up in parts of the Windows shell, such as File Explorer:
 
 Build and test the package as before, exercising any new scenarios that should show the new UI strings.
 
-***
+- - -
 
-<h2>Phase 2: Use MRT to identify and locate resources</h2>
+## Phase 2: Use MRT to identify and locate resources
+
 The previous section showed how to use MRT to localize your app's manifest file so that the Windows Shell can correctly display the app's name and other metadata. No code changes 
 were required for this; it simply required the use of `.resw` files and some additional tools. This section will show how to use MRT to locate resources in your existing resource 
 formats and using your existing resource-handling code with minimal changes.
 
-<h3>Assumptions about existing file layout & application code</h3>
+### Assumptions about existing file layout & application code
+
 Because there are many ways to localize Win32 Desktop apps, this paper will make some simplifying assumptions about the existing application's structure that you will need to map 
 to your specific environment. You might need to make some changes to your existing codebase or resource layout to conform to the requirements of MRT, and those are largely out of 
 scope for this document.
 
-<h4>Resource file layout</h4>
+**Resource file layout**
+
 This whitepaper assumes your localized resources all have the same filenames (eg, `contoso_demo.exe.mui` or `contoso_strings.dll` or `contoso.strings.xml`) but that they are placed 
 in different folders with BCP-47 names (`en-US`, `de-DE`, etc.). It doesn't matter how many resource files you have, what their names are, what their file-formats / associated APIs 
 are, etc. The only thing that matters is that every *logical* resource has the same filename (but placed in a different *physical* directory). 
@@ -548,8 +577,8 @@ As a counter-example, if your application uses a flat file-structure with a sing
 still possible to use MRT and the benefits of AppX packaging even if you can't follow this filenaming convention; it just requires more work. 
 A future whitepaper will cover this case. 
 
-For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span style="background-color: yellow">`ui.txt`</span>, 
-laid out under a <span style="background-color: yellow">`UICommands`</span> folder:
+For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span style="background-color: yellow">ui.txt</span>, 
+laid out under a <span style="background-color: yellow">UICommands</span> folder:
 
 <blockquote>
 <pre>
@@ -569,15 +598,18 @@ laid out under a <span style="background-color: yellow">`UICommands`</span> fold
 </pre>
 </blockquote>
 
-<h4>Resource loading code</h4>
+**Resource loading code**
+
 This whitepaper assumes that at some point in your code you want to locate the file that contains a localized resource, load it, and then use it. The APIs used to load the resources, 
 the APIs used to extract the resources, etc. are not important. In pseudocode, there are basically three steps:
 
+```CSharp
     set userLanguage = GetUsersPreferredLanguage()
     set resourceFile = FindResourceFileForLanguage(MY_RESOURCE_NAME, userLanguage)
     set resource = LoadResource(resourceFile) 
     
     // now use 'resource' however you want
+```
 
 MRT only requires changing the first two steps in this process - how you determine the best candidate resources and how you locate them. It doesn't require you to change how you load 
 or use the resources (although it provides facilities for doing that if you want to take advantage of them).
@@ -586,7 +618,8 @@ For example, the application might use the Win32 API `GetUserPreferredUILanguage
 above, then manually parse the text file looking for `name=value` pairs. (The details are not important; this is merely to illustrate that MRT has no impact on the techniques used to 
 handle resources once they have been located).
 
-<h3>Step 2.1: Code changes to use MRT to locate files</h3>
+### Step 2.1: Code changes to use MRT to locate files
+
 Switching your code to use MRT for locating resources is not difficult. It requires using a handful of WinRT types and a few lines of code. The main types that you will use are as follows:
 
 * [ResourceContext](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext), which encapsulates the currently active set of qualifier values 
@@ -600,6 +633,7 @@ this example, the file-based resources vs. the string resources)
 
 In pseudo-code, the way you would resolve a given resource file name (like `UICommands\ui.txt` in the sample above) is as follows:
 
+```CSharp
     // Get the ResourceContext that applies to this app
     set resourceContext = ResourceContext.GetForViewIndependentUse()
     
@@ -618,6 +652,7 @@ In pseudo-code, the way you would resolve a given resource file name (like `UICo
     
     // Get the string value (the filename) from the ResourceCandidate
     set absoluteFileName = bestCandidate.ValueAsString
+```
 
 Note in particular that the code does **not** request a specific language folder - like `UICommands\en-US\ui.txt` - even though that is how the files exist on-disk. Instead, it
 asks for the *logical* filename `UICommands\ui.txt` and relies on MRT to find the appropriate on-disk file in one of the language directories.
@@ -627,7 +662,8 @@ app. If you are writing in C# or C++/CX, the actual code is not much more compli
 resources**, below. C++/WRL-based applications will be more complex due to the low-level COM-based APIs used to activate and call the WinRT APIs, but the fundamental steps you take are 
 the same - see the section on **Loading Win32 MUI resources**, below.
 
-<h4>Loading .NET resources</h4>
+**Loading .NET resources**
+
 Because .NET has a built-in mechanism for locating and loading resources (known as "Satellite Assemblies"), there is no explicit code to replace as in the synthetic example above - in 
 .NET you just need your resource DLLs in the appropriate directories and they are automatically located for you. When an app is packaged as an AppX using resource packs, the directory 
 structure is somewhat different - rather than having the resource directories be subdirectories of the main application directory, they are peers of it (or not present at all if the 
@@ -693,12 +729,15 @@ although you can see it maps closely to the pseudo-code above, with the passed-i
 
 Given the class above, you would add the following line of code early-on in your application's startup code (before any localized resources would need to load):
 
+```CSharp
     AppDomain.CurrentDomain.AssemblyResolve += PriResourceResolver.ResolveResourceDll;
+```
 
 The .NET runtime will raise the `AssemblyResolve` event whenever it can't find the resource DLLs, at which point the provided event handler will locate the desired file via MRT and 
 return the assembly<a name="footnote9_ref" href="#footnote9"><sup>9</sup></a>.
 
-<h4>Loading Win32 MUI resources</h4>
+**Loading Win32 MUI resources**
+
 Loading Win32 MUI resources is essentially the same as loading .NET Satellite Assemblies, but using either C++/CX or C++/WRL code instead. Using C++/CX allows for much simpler code 
 that closely matches the C# code above, but it uses C++ language extensions, compiler switches, and additional runtime overheard you might wish to avoid. If that is the case, using 
 C++/WRL provides a much lower-impact solution at the cost of more verbose code. Nevertheless, if you are familiar with ATL programming (or COM in general) then WRL should feel familiar. 
@@ -707,6 +746,7 @@ The following sample function shows how to use C++/WRL to load a specific resour
 resource APIs. Note that unlike the C# sample that explicitly initializes the `ResourceContext` with the language requested by the .NET runtime, this code relies on the user's current 
 language.
 
+```Cpp
     #include <roapi.h>
     #include <wrl\client.h>
     #include <wrl\wrappers\corewrappers.h>
@@ -758,8 +798,10 @@ language.
     
       return S_OK;
     }
+```
 
-<h2>Phase 3: Building resource packs</h2>
+## Phase 3: Building resource packs
+
 Now that you have a "fat pack" that contains all resources, there are two paths towards building separate main package and resource packages in order to minimize download and install 
 sizes:
 
@@ -768,8 +810,10 @@ have a build system that already produces a fat pack and you want to post-proces
 0. Directly produce the individual resource packages and build them into a bundle. This is the preferred approach if you have more control over your build system and can build the 
 packages directly.
 
-<h3>Step 3.1: Creating the bundle</h3>
-<h4>Using the Bundle Generator tool</h4>
+### Step 3.1: Creating the bundle
+
+**Using the Bundle Generator tool**
+
 In order to use the Bundle Generator tool, the PRI config file created for the package needs to be manually updated to remove the `&lt;packaging&gt;` section.
 
 If you're using Visual Studio, refer to [the **Ensure that resources are installed…** topic on MSDN](https://msdn.microsoft.com/en-us/library/dn482043.aspx) for information on 
@@ -800,7 +844,9 @@ these commands):
     `BundleGenerator.exe -Package ..\contoso_demo.appx -Destination ..\bundle -BundleName contoso_demo`
 
 Now you can move to the final step, which is Signing (see below).
-<h4>Manually creating resource packages</h4>
+
+**Manually creating resource packages**
+
 Manually creating resource packages requires running a slightly different set of commands to build separate `.pri` and `.appx` files - these are all similar to the commands used 
 above to create fat packages, so minimal explanation is given. Note: All the commands assume that the current directory is the directory containing the `AppXManifest.xml` file, 
 but all files are placed into the parent directory (you can use a different directory, if necessary, but you shouldn't pollute the project directory with any of these files). As 
@@ -827,7 +873,9 @@ the `.appx` files are put into a separate directory in the previous step):
     `makeappx bundle /d ..\bundle /p ..\contoso_demo.appxbundle /o`
 
 The final step to building the package is Signing.
-<h3>Step 3,2: Signing the bundle</h3>
+
+### Step 3,2: Signing the bundle
+
 Once you have created the `.appxbundle` file (either through the Bundle Generator tool or manually) you will have a single file that contains the main package plus all the resource 
 packages. The final step is to sign the file so that Windows will install it:
 
@@ -836,17 +884,26 @@ packages. The final step is to sign the file so that Windows will install it:
 This will produce a signed `.appxbundle` file that contains the main package plus all the language-specific resource packages. It can be double-clicked just like a package file to 
 install the app plus any appropriate language(s) based on the user's Windows language preferences. 
  
-<h2>Footnotes</h2>
+## Footnotes
+
 <a name="footnote1" href="#footnote1_ref">1.</a> This paper provides no further motivation for localization itself; it is assumed the reader already understands this.
+
 <a name="footnote2" href="#footnote2_ref">2.</a> Historically this stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) 
 or PRI (Package Resource Index).
+
 <a name="footnote3" href="#footnote3_ref">3.</a> This table doesn't include non-localization tasks, such as providing high-resolution or high-contrast application icons. See MSDN for more information about providing multiple 
 assets for tiles, icons, etc.
+
 <a name="footnote4" href="#footnote4_ref">4.</a> The specifics of scale factor are not covered here
+
 <a name="footnote5" href="#footnote5_ref">5.</a> Note that there are restrictions on the lengths of some of these strings; see [the **VisualElements** topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/br211471.aspx) 
 for more information 
+
 <a name="footnote6" href="#footnote6_ref">6.</a> There is no requirement to use these exact resource names - you can choose your own - but whatever you choose must exactly match whatever is in the `.resw` file.
+
 <a name="footnote7" href="#footnote7_ref">7.</a> You can choose any other directory you want, but be sure to substitute that in future commands
+
 <a name="footnote8" href="#footnote8_ref">8.</a> It's also possible to use the same base filename but with embedded qualifiers, such as `strings.lang-en.dll` and `strings.lang-fr.dll`, but using directories with the language codes 
 is conceptually simpler so it's what we'll focus on.
+
 <a name="footnote9" href="#footnote9_ref">9.</a> Note that if your app already has an `AssemblyResolve` handler for other purposes, you will need to integrate the resource-resolving code with your existing code.
