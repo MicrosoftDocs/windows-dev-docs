@@ -211,7 +211,7 @@ If you want to use the designer in Visual Studio:
 * Be sure to choose `Resources File (.resw)` and **not** `Resource Dictionary`
 0. Using the designer, enter the following strings (use the same `Names` but replace the `Values` with the appropriate text for your application):
 
-<img src="images\editing-resources-resw"/>
+<img src="images\editing-resources-resw.png"/>
 
 Note: if you start with the Visual Studio designer, you can always edit the XML directly by pressing `F7`. But if you start with a minimal XML file, *the designer will not recognize the 
 file* because it's missing a lot of additional metadata; you can fix this by copying the boilerplate XSD information from a designer-generated file into your hand-edited XML file. 
