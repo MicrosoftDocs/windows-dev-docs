@@ -68,7 +68,7 @@ This section provides C# examples, but Visual Basic and C++ are also supported f
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
-4.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and several string fields that represent the application ID and ad unit ID for your interstitial ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the test values provided in [Test mode values](test-mode-values.md). These values are used only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
+4.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and several string fields that represent the application ID and ad unit ID for your interstitial ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the test values provided in [Test mode values](test-mode-values.md). These values are only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
@@ -83,7 +83,7 @@ This section provides C# examples, but Visual Basic and C++ are also supported f
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-  If you want to show an *interstitial banner* ad (for UWP apps only): Several seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType.Display** for the ad type.
+  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType.Display** for the ad type.
 
   > [!div class="tabbedCodeSnippets"]
   ```csharp
@@ -131,7 +131,7 @@ The following instructions assume you have created a Universal Windows project f
   <script src="/MSAdvertisingJS/ads/ad.js"></script>
   ```
 
-4.  In a .js file in your project, declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and several fields that contain the application ID and ad unit ID for your interstitial ad. The following code example assigns the `applicationId` and `adUnitId` fields to the test values provided in [Test mode values](test-mode-values.md). These values are used only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
+4.  In a .js file in your project, declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and several fields that contain the application ID and ad unit ID for your interstitial ad. The following code example assigns the `applicationId` and `adUnitId` fields to the test values provided in [Test mode values](test-mode-values.md). These values are only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
 
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
@@ -146,7 +146,7 @@ The following instructions assume you have created a Universal Windows project f
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-  If you want to show an *interstitial banner* ad (for UWP apps only): Several seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **InterstitialAdType.display** for the ad type.
+  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **InterstitialAdType.display** for the ad type.
 
   > [!div class="tabbedCodeSnippets"]
   ```js
@@ -187,7 +187,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
   > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
 
-3.  In the same header file, declare several string fields that represent the application ID and ad unit ID for your interstitial ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the test values provided in [Test mode values](test-mode-values.md). These values are used only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
+3.  In the same header file, declare several string fields that represent the application ID and ad unit ID for your interstitial ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the test values provided in [Test mode values](test-mode-values.md). These values are only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
@@ -207,7 +207,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
   > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-  If you want to show an *interstitial banner* ad (for UWP apps only): Several seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType::Display** for the ad type.
+  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType::Display** for the ad type.
 
   > [!div class="tabbedCodeSnippets"]
   ```cpp
