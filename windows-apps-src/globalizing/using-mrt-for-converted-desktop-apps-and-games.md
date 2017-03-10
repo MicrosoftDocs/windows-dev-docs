@@ -11,7 +11,7 @@ keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app c
 ---
 
 <h1>Migrating legacy resources to the Windows 10 resource management platform</h1>
-<font size="smaller">With a focus on localization for Centennial apps and AAA games</font>
+
 <h2>Executive Summary</h2>
 Win32 applications are often localized into different languages, expanding their total addressable market<sup>1</sup>. There are many ways to localize traditional Win32 applications, 
 but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) (referred to as "MRT" in this document<sup>2</sup>)
@@ -86,19 +86,25 @@ have four candidates: EN/Scale-100, DE/Scale-100, EN/Scale-300 and DE/Scale-300.
 
 <h3>Sections in this document</h3>
 The following sections outline the high-level tasks required to integrate MRT with your application.
+
 <h4>Phase 0: Build an application package</h4>
 This section outlines how to get your existing Desktop application building as an application package. No MRT features are used at this stage.
+
 <h4>Phase 1: Localize the application manifest</h4>
 This section outlines how to localize your application's manifest (so that it appears correctly in the Windows Shell) whilst still using your legacy resource format and API to package 
 and locate resources. 
+
 <h4>Phase 2: Use MRT to identify and locate resources</h4>
 This section outlines how to modify your application code (and possibly resource layout) to locate resources using MRT, whilst still using your existing resource formats and APIs to 
 load and consume the resources. 
+
 <h4>Phase 3: Build resource packs</h4>
 This section outlines the final changes needed to separate your resources into separate *resource packs*, minimizing the download (and install) size of your app.
+
 <h3>Not covered in this document</h3>
 After completing Phases 0-3 above, you will have an application "bundle" that can be submitted to the Windows Store and that will minimize the download & install size for users by omitting 
 the resources they don't need (eg, languages they don't speak). Further improvements in application size and functionality can be made by taking one final step. 
+
 <h4>Phase 4: Migrate to MRT resource formats and APIs</h4>
 This phase is beyond the scope of this document; it entails moving your resources (particularly strings) from legacy formats such as MUI DLLs or .NET resource assemblies into PRI files. 
 This can lead to further space savings for download & install sizes. It also allows use of other MRT features such as minimizing the download and install of image files by based on scale 
@@ -165,6 +171,7 @@ You can include your existing code into the new project, but you will likely hav
 These changes are outside the scope of this document.
 
 <h2>Phase 1: Localize the application manifest</h2>
+
 <h3>Step 1.1: Update strings & assets in the AppXManifest</h3>
 In Phase 0 you created a basic `AppXManifest.xml` file for your application (based on values provided to the converter, extracted from the MSI, or manually entered into the manifest) 
 but it will not contain localized information, nor will it support additional features like high-resolution Start tile assets, etc. 
@@ -256,7 +263,7 @@ the `Application` tab and the `Packaging` tab:
 <img src="images\editing-application-info.png"/>
 <img src="images\editing-packaging-info.png"/>
 
-<H3>Step 1.2: Build PRI file, make an AppX package, and verify it's working</h3>
+<h3>Step 1.2: Build `.pri` file, make an AppX package, and verify it's working</h3>
 You should now be able to build the `.pri` file and deploy the application to verify that the correct information (in your default language) is appearing in the Start Menu. 
 
 If you're building in Visual Studio, simply press `Ctrl+Shift+B` to build the project and then right-click on the project and choose `Deploy` from the context menu. 
@@ -271,23 +278,23 @@ Note the xml file is created in the parent directory (**not** in the project dir
 
     `makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o`
 0. You can type `makepri createconfig /?` to see what each parameter does, but in summary:
-* `/cf` sets the Configuration Filename (the output of this command)
-* `/dq` sets the Default Qualifiers, in this case the language `en-US`
-* `/pv` sets the Platform Version, in this case Windows 10
-* `/o` sets it to Overwrite the output file if it exists
+** `/cf` sets the Configuration Filename (the output of this command)
+** `/dq` sets the Default Qualifiers, in this case the language `en-US`
+** `/pv` sets the Platform Version, in this case Windows 10
+** `/o` sets it to Overwrite the output file if it exists
 0. Now you have a configuration file, run `MakePRI` again to actually search the disk for resources and package them into a PRI file. Replace "contoso_demop.xml" with the XML filename 
 you used in the previous step, and be sure to specify the parent directory for both input and output: 
 
     `makepri new /pr . /cf ..\contoso_demo.xml /of ..\resources.pri /mf AppX /o`
 0. You can type `makepri new /?` to see what each parameter does, but in a nutshell:
-* `/pr` sets the Project Root (in this case, the current directory)
-* `/cf` sets the Configuration Filename, created in the previous step
-* `/of` sets the Output File 
-* `/mf` creates a Mapping File (so we can exclude files in the package in a later step)
-* `/o` sets it to Overwrite the output file if it exists
-0. Now you have a PRI file with the default language resources (eg, en-US). To verify that it worked correctly, you can run the following command:
+** `/pr` sets the Project Root (in this case, the current directory)
+** `/cf` sets the Configuration Filename, created in the previous step
+** `/of` sets the Output File 
+** `/mf` creates a Mapping File (so we can exclude files in the package in a later step)
+** `/o` sets it to Overwrite the output file if it exists
+0. Now you have a `.pri` file with the default language resources (eg, en-US). To verify that it worked correctly, you can run the following command:
 
-    makepri dump /if ..\resources.pri /of ..\resources /o
+    `makepri dump /if ..\resources.pri /of ..\resources /o`
 0. You can type `makepri dump /?` to see what each parameter does, but in a nutshell:
 * `/if` sets the Input Filename 
 * `/of` sets the Output Filename (`.xml` will be appended automatically)
