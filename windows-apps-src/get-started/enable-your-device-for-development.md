@@ -5,7 +5,7 @@ title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,11 +13,11 @@ ms.technology: uwp
 
 # Enable your device for development
 
-## How to activate Developer Mode, sideload apps and access other developer features
+## Activate Developer Mode, sideload apps and access other developer features
 
 ![Enable your devices for development](images/developer-poster.png)
 
-If you are using Visual Studio on a computer for first time, you will need to enable Developer Mode on both the development PC, and on any devices on which you'll test your code. Opening a UWP project when Developer Mode is not enabled will either open the **For developers** settings page, or cause this dialog to appear in Visual Studio:
+If you are using Visual Studio on a computer for first time, you will need to enable Developer Mode on both the development PC, and on any devices you'll use to test your code. Opening a UWP project when Developer Mode is not enabled will either open the **For developers** settings page, or cause this dialog to appear in Visual Studio:
 
 ![Enable developer mode dialog that is displayed in Visual Studio](images/latestenabledialog.png)
 
@@ -44,7 +44,7 @@ Here's the settings page on the mobile device family:
 
 ![From Settings on your phone, choose Update and security](images/devmode-mob.png)
 
-## Which settings should I choose: sideload apps or Developer Mode?
+## Which setting should I choose: sideload apps or Developer Mode?
 
 You can enable a device for development, or just for sideloading.
 
