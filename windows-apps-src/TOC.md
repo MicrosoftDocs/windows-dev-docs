@@ -233,6 +233,7 @@
 ### [Import media from a device](audio-video-camera/import-media-from-a-device.md)
 ### [Camera-independent Flashlight](audio-video-camera/camera-independent-flashlight.md)
 ### [Supported codecs](audio-video-camera/supported-codecs.md)
+### [Query for codecs installed on a device](audio-video-camera/codec-query.md)
 ## [Contacts and calendar](contacts-and-calendar/index.md)
 ### [Select contacts](contacts-and-calendar/selecting-contacts.md)
 ### [Send email](contacts-and-calendar/sending-email.md)
