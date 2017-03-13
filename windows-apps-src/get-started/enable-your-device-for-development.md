@@ -5,7 +5,7 @@ title: Enable your device for development
 description: Configure your Windows 10 device for development and debugging.
 keywords: Get started Developer license Visual Studio, developer license enable device
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,61 +13,91 @@ ms.technology: uwp
 
 # Enable your device for development
 
-Before you can write apps, you will need to enable Developer Mode on both your development PC, and on any devices on which you'll test your code. 
+## Activate Developer Mode, sideload apps and access other developer features
 
 ![Enable your devices for development](images/developer-poster.png)
 
-## Use developer features
-
-### Develop your app with Microsoft Visual Studio
-
-You must enable Developer Mode on your PC before you can open a UWP app project in Visual Studio. If you open a UWP project and Developer Mode is not enabled, the **For developers** settings page opens automatically. Follow the instructions in the next section to enable Developer Mode.
-
-When you open a UWP app project in Visual Studio on Windows 10, version 1511 or earlier, you will see this dialog in Visual Studio. 
+If you are using Visual Studio on a computer for first time, you will need to enable Developer Mode on both the development PC, and on any devices you'll use to test your code. Opening a UWP project when Developer Mode is not enabled will either open the **For developers** settings page, or cause this dialog to appear in Visual Studio:
 
 ![Enable developer mode dialog that is displayed in Visual Studio](images/latestenabledialog.png)
 
-When you see this dialog, click **settings for developers** to open the **For developers** settings page and enable Developer Mode.
-
-> You can go to the **For developers** page at any time to enable or disable Developer Mode: simply enter "developer settings" into the Cortana search box in the taskbar.
-
-### Enable your Windows 10 devices
-
-You can enable a device for development, or just for sideloading.
-
--   *Sideloading* is installing and then running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.
--   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
-
-    When you enable Developer Mode, a package of options is installed that includes:
-    - Installs Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
-    - Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
-    - (Desktop only) Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
-
-For detailed info about the options, see the section **Which settings should I choose: sideload apps or developer mode?** below. 
-
-
-**To use developer features**
-
-1.  On your device that you want to enable, go to **Settings**. Choose **Update & security**, then choose **For developers**.
-2.  Choose the level of access that you need - to develop UWP apps, choose **Developer Mode**. 
-3.  Read the disclaimer for the setting you chose, then click **Yes** to accept the change.
+When you see this dialog, click **settings for developers** to open the **For developers** settings page.
 
 > [!NOTE]
-> If your device is owned by an organization, some options might be disabled by your organization as shown here.
+> You can go to the **For developers** page at any time to enable or disable Developer Mode: simply enter "for developers" into the Cortana search box in the taskbar.
 
-Here's the settings page on the desktop device family.
+## Accessing settings for Developers
+
+To enable Developer mode, or access other settings:
+
+1.  From the **For developers** settings dialog, choose the level of access that you need.
+2.  Read the disclaimer for the setting you chose, then click **Yes** to accept the change.
+
+> [!NOTE]
+> If your device is owned by an organization, some options might be disabled by your organization.
+
+Here's the settings page on the desktop device family:
 
 ![Go to Settings, choose Update and security and then choose For developers to view your options](images/devmode-pc-options.png)
 
-Here's the settings page on the mobile device family.
+Here's the settings page on the mobile device family:
 
 ![From Settings on your phone, choose Update and security](images/devmode-mob.png)
 
-## Developer Mode features
+## Which setting should I choose: sideload apps or Developer Mode?
+
+You can enable a device for development, or just for sideloading.
+
+-   *Windows Store apps* is the default setting. If you aren't development apps, or using special internal apps issued by your company, keep this setting active.
+-   *Sideloading* is installing and then running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.
+-   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
+
+By default, you can only install Universal Windows Platform (UWP) apps from the Windows Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
+
+### Sideload apps
+
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Windows Store. In this case, it's common for the organization to enforce a policy that disables the *Windows Store apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+
+Device family specific info
+
+-   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](../packaging/packaging-uwp-apps.md).
+
+-   On the mobile device family: If the required certificate is already installed, you can tap the file to install any .appx sent to you via email or on an SD card.
+
+**Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
+
+> [!NOTE]
+> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Windows Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Windows Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
+
+### Developer Mode
+
+Developer Mode replaces the Windows 8.1 requirements for a developer license.  In addition to sideloading, the Developer Mode setting enables debugging and additional deployment options. This includes starting an SSH service to allow this device to be deployed to. In order to stop this service, you have to disable Developer Mode.
+
+Device family specific info
+
+-   On the desktop device family:
+
+    Enable Developer Mode to develop and debug apps in Visual Studio. As stated previously, you will be prompted in Visual Studio if Developer Mode is not enabled.
+
+    Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
+
+-   On the mobile device family:
+
+    Enable developer mode to deploy apps from Visual Studio and debug them on the device.
+
+    You can tap the file to install any .appx sent to you via email or on an SD card. Do not install apps from unverified sources.
+
+## Additional Developer Mode features
 
 For each device family, additional developer features might be available. These features are available only when Developer Mode is enabled on the device, and might vary depending on your OS version.
 
-This image shows developer features for the mobile device family on Windows 10, Version 1511.
+When you enable Developer Mode, a package of options is installed that includes:
+- Installs Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
+- Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
+- (Desktop only) Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
+
+
+This image shows developer features for the mobile device family on Windows 10:
 
 ![Developer mode options for mobile devices](images/devmode-mob-options.png) 
 
@@ -111,42 +141,7 @@ Collecting crash dumps on your phone gives you instant access to important crash
 
  On the desktop device family, the **For developers** settings page has shortcuts to settings that you can use to optimize your PC for development tasks. For each setting, you can select the checkbox and click **Apply**, or click the **Show settings** link to open the settings page for that option. 
 
-## Which settings should I choose: sideload apps or developer mode?
 
-By default, you can only install Universal Windows Platform (UWP) apps from the Windows Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
-
-### Sideload apps
-
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Windows Store. In this case, it's common for the organization to enforce a policy that disables the *Windows Store apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
-
-Device family specific info
-
--   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](../packaging/packaging-uwp-apps.md).
-
--   On the mobile device family: If the required certificate is already installed, you can tap the file to install any .appx sent to you via email or on an SD card.
-
-**Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
-
-> [!NOTE]
-> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Windows Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Windows Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
-
-### Developer Mode
-
-Developer Mode replaces the Windows 8.1 requirements for a developer license.  In addition to sideloading, the Developer Mode setting enables debugging and additional deployment options. This includes starting an SSH service to allow this device to be deployed to. In order to stop this service, you have to disable Developer Mode.
-
-Device family specific info
-
--   On the desktop device family:
-
-    Enable Developer Mode to develop and debug apps in Visual Studio. As stated previously, you will be prompted in Visual Studio if Developer Mode is not enabled.
-
-    Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
-
--   On the mobile device family:
-
-    Enable developer mode to deploy apps from Visual Studio and debug them on the device.
-
-    You can tap the file to install any .appx sent to you via email or on an SD card. Do not install apps from unverified sources.
 
 **Tip**  
 There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 mobile device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Either of the ways listed installs only the app package (.appx); they do not install certificates.
@@ -215,3 +210,9 @@ When you create or sideload apps on your Windows 8.1 device, you have to instal
 After this you need to enable your device for development as described in this topic so that you can continue to develop on this device. If you don't do that, you might get an error when you debug your app, or you try to create a package for it. Here is an example of this error:
 
 Error : DEP0700 : Registration of the app failed.
+
+## See Also
+
+* [What's a Universal Windows app?](whats-a-uwp.md)
+* [Get set up](get-set-up.md)
+* [Sign up for Windows account](sign-up.md)

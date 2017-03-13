@@ -174,9 +174,9 @@ When you create a custom control, we recommend that you also implement or extend
 ## Assistive technology support in apps that support XAML / Microsoft DirectX interop  
 Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) or [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](http://go.microsoft.com/fwlink/p/?LinkID=309155) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
 
-<span id="related_topics"/>
 ## Related topics  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibility](accessibility.md)
+* [Get started with Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

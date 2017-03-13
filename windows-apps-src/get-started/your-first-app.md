@@ -35,7 +35,7 @@ We assume you're already comfortable with XAML and either C#. If you want to lea
 
 And as a language refresher:
 
-* [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
+* [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)
 * [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
 * [A Developer's Guide to Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
 
