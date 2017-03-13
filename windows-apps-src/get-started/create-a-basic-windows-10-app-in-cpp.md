@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Create a "hello world" app in C++ (Windows 10)
+# Create a "hello world" app in C++
 
 With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 

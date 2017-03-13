@@ -1,10 +1,10 @@
 ---
-author: awkoren
+author: normesta
 Description: This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP).
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Supported UWP APIs
-ms.author: alkoren
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,9 @@ ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ---
 # Desktop to UWP Bridge: Supported UWP APIs
 
-Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the availble classes your converted app can use. 
+Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your converted app can use.
 
-Most UWP APIs work well on converted desktop apps. However, some feature areas are not yet fully tested or currently functioning as intended. 
+Most UWP APIs work well on converted desktop apps. However, some feature areas are not yet fully tested or currently functioning as intended.
 
 <table><tr><th>Feature area</th><th>Details</th><tr>
 <tr><td>Appointments, contacts, and emails</td><td>Not all APIs are currently supported for converted apps.</td></tr>
@@ -37,15 +37,15 @@ Most UWP APIs work well on converted desktop apps. However, some feature areas a
 </table>
 
 
-Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become available in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead. 
+Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become available in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead.
 
 Some UWP APIs available to full desktop applications are not supported for converted apps. If your desktop application used UWP APIs before conversion, you should verify those APIs are still supported. For more information, see [Windows Runtime APIs for desktop apps](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
 ## List of APIs
 
-The following is a full list of UWP APIs supported in converted apps. You can view [APIs newly supported in converted apps](#new) or [APIs supported in both converted apps and desktop applications](#both). 
+The following is a full list of UWP APIs supported in converted apps. You can view [APIs newly supported in converted apps](#new) or [APIs supported in both converted apps and desktop applications](#both).
 
-For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application). 
+For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <span id="new" />
 ### APIs supported in newly converted apps
