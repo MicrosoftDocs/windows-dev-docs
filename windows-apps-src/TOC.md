@@ -781,8 +781,6 @@
 ##### [Query for products](monetize/query-for-products.md)
 ##### [Report consumable products as fulfilled](monetize/report-consumable-products-as-fulfilled.md)
 ##### [Grant free products](monetize/grant-free-products.md)
-##### [Get subscriptions for a user](monetize/get-subscriptions-for-a-user.md)
-##### [Change the billing state of a subscription for a user](monetize/change-the-billing-state-of-a-subscription-for-a-user.md)
 ##### [Renew a Windows Store ID key](monetize/renew-a-windows-store-id-key.md)
 #### [App metadata API for advertising networks](monetize/app-metadata-api-for-advertising-networks.md)
 ### [Create a Retail Demo Experience (RDX) app](monetize/retail-demo-experience.md)
