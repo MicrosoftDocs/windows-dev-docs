@@ -6,8 +6,6 @@ _site/
 Tools/NuGet/
 _site/
 .optemp/
-_themes/
-_themes.pdf/
 .vscode
 
 .openpublishing.build.mdproj
