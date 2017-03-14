@@ -124,7 +124,7 @@ The following list provides requirements for sideloading your app.
 
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64\_Test
-2.  On the target device, opent he test folder. For example, C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
+2.  On the target device, open the test folder. For example, C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
 3.  Right-click on the **Add-AppDevPackage.ps1** file, then choose **Run with PowerShell** and follow the prompts.<br/>
     ![File explorer navigated to PowerShell script shown](images/packaging-screen7.jpg)
 
