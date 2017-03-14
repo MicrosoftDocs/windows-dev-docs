@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ---
 
 # Discover remote devices
-Your app can use the wireless network, Bluetooth, and a cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device. Communal devices that can accept anonymous connections, such as the Surface Hub and Xbox One, are also discoverable. The remote devices do not need to have any special software installed in order to be discoverable.
+Your app can use the wireless network, Bluetooth, and a cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device. The remote devices do not need to have any special software installed in order to be discoverable.
 
 > [!NOTE]
 > This guide assumes you have already been granted access to the Remote Systems feature by following the steps in [Launch a remote app](launch-a-remote-app.md).
