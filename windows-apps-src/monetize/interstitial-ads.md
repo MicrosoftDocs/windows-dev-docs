@@ -46,7 +46,7 @@ To show interstitial ads in your app, follow the instructions for project type:
 ### Prerequisites
 
 * For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
-  >**Note**&nbsp;&nbsp;Interstitial banner ads require version 10.0.2 or later of the Microsoft Store Services SDK. Interstitial video ads are supported in all versions of the SDK.
+  >**Note**&nbsp;&nbsp;Interstitial banner ads require version 10.0.3 or later of the Microsoft Store Services SDK. Interstitial video ads are supported in all versions of the SDK.
 * For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
 <span id="interstitialadsxaml10"/>
@@ -84,7 +84,7 @@ This section provides C# examples, but Visual Basic and C++ are also supported f
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
-  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType.Display** for the ad type. This value is available starting in version 10.0.2 of the Microsoft Store Services SDK.
+  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType.Display** for the ad type. This value is available starting in version 10.0.3 of the Microsoft Store Services SDK.
 
   > [!div class="tabbedCodeSnippets"]
   ```csharp
@@ -147,7 +147,7 @@ The following instructions assume you have created a Universal Windows project f
   > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
-  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **InterstitialAdType.display** for the ad type. This value is available starting in version 10.0.2 of the Microsoft Store Services SDK.
+  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **InterstitialAdType.display** for the ad type. This value is available starting in version 10.0.3 of the Microsoft Store Services SDK.
 
   > [!div class="tabbedCodeSnippets"]
   ```js
@@ -208,7 +208,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
   > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
-  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType::Display** for the ad type. This value is available starting in version 10.0.2 of the Microsoft Store Services SDK.
+  If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType::Display** for the ad type. This value is available starting in version 10.0.3 of the Microsoft Store Services SDK.
 
   > [!div class="tabbedCodeSnippets"]
   ```cpp
