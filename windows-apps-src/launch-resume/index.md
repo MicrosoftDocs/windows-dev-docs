@@ -102,7 +102,7 @@ The [Background tasks](support-your-app-with-background-tasks.md) section shows 
 
 ## Remote Systems
 
-The [Connected apps and devices (Project "Rome")](connected-apps-and-devices.md) section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
+The [Connected apps and devices (Project Rome)](connected-apps-and-devices.md) section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
 
 | Topic | Description |
 |-------|-------------|
