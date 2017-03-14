@@ -9,7 +9,6 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Hosted Web Apps, WinRT APIs for JavaScript, Win10 web app, Windows JavaScript app, ApplicationContentUriRules, ACURs, msapplication-cortanavcd, Cortana for web apps
-ms.assetid: 86ca4590-2675-4de2-b825-c586d9669b8e
 ---
 
 # Accessing UWP features
