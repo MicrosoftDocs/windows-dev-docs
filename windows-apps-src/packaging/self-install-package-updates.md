@@ -4,7 +4,7 @@ ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: Download and install package updates for your app
 description: Learn how to mark packages as mandatory in the Dev Center dashboard and write code in your app to download and install package updates.
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,28 +14,28 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Starting in Windows 10, version 1607, you can use an API in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to programmatically check for package updates for the current app, and download and install the updated packages. You can also query for packages that have been [marked as mandatory on the Windows Dev Center dashboard](#mandatory-dashboard) and disable functionality in your app until the mandatory update is installed.
+Starting in Windows 10, version 1607, you can use an API in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to programmatically check for package updates for the current app, and download and install the updated packages. You can also query for packages that have been [marked as mandatory on the Windows Dev Center dashboard](#mandatory-dashboard) and disable functionality in your app until the mandatory update is installed.
 
 These features help you to automatically keep your user base up to date with the latest version of your app and related services.
 
 ## API overview
 
-Apps that targets Windows 10, version 1607 or later can use the following methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class to download and install package updates.
+Apps that targets Windows 10, version 1607 or later can use the following methods of the [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class to download and install package updates.
 
 |  Method  |  Description  |
 |----------|---------------|
-| [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) | Call this method to get the list of package updates that are available.<br/><br/>**Important**&nbsp;&nbsp;There is a latency of up to a day between the time when a package passes the certification process and when the [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) method recognizes that the package update is available to the app. |
-| [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) | Call this method to download (but not install) the available package updates. This OS displays a dialog that asks the user's permission to download the updates. |
-| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) | Call this method to download and install the available package updates. The OS displays dialogs that ask the user's permission to download and install the updates. If you already downloaded the package updates by calling [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx), this method skips the download process and only installs the updates.  |
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetAppAndOptionalStorePackageUpdatesAsync) | Call this method to get the list of package updates that are available. Note that there can be a delay of up to a day between the time when a package passes the certification process and when the **GetAppAndOptionalStorePackageUpdatesAsync** method recognizes that the package update is available to the app. |
+| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | Call this method to download (but not install) the available package updates. This OS displays a dialog that asks the user's permission to download the updates. |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadAndInstallStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | Call this method to download and install the available package updates. The OS displays dialogs that ask the user's permission to download and install the updates. If you already downloaded the package updates by calling **RequestDownloadStorePackageUpdatesAsync**, this method skips the download process and only installs the updates.  |
 
 <span/>
 
-These methods use [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) objects to represent available update packages. Use the following [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) properties to get information about an update package.
+These methods use [StorePackageUpdate](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate) objects to represent available update packages. Use the following **StorePackageUpdate** properties to get information about an update package.
 
 |  Property  |  Description  |
 |----------|---------------|
-| [Mandatory](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx) | Use this property to determine whether the package is marked as mandatory in the Dev Center dashboard. |
-| [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx) | Use this property to access the underlying package-related data. |
+| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Mandatory) | Use this property to determine whether the package is marked as mandatory in the Dev Center dashboard. |
+| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Package) | Use this property to access the underlying package-related data. |
 
 <span/>
 
@@ -44,8 +44,8 @@ These methods use [StorePackageUpdate](https://msdn.microsoft.com/library/window
 The following code examples demonstrate how to download and install package updates in your app. These example assume:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
 * The **Page** contains a [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx) named ```downloadProgressBar``` to provide status for the download operation.
-* The code file has a **using** statement for the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx), **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.
-* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object instead of the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method.
+* The code file has a **using** statement for the **Windows.Services.Store**, **Windows.Threading.Tasks**, and **Windows.UI.Popups** namespaces.
+* The app is a single-user app that runs only in the context of the user that launched the app. For a [multi-user app](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), use the [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetForUser_Windows_System_User_) method to get a **StoreContext** object instead of the [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetDefault) method.
 
 <span/>
 
@@ -214,12 +214,19 @@ private void HandleMandatoryPackageError()
 }
 ```
 
+### Display progress info for the download and install
+
+When you call **RequestDownloadStorePackageUpdatesAsync** or **RequestDownloadAndInstallStorePackageUpdatesAsync**, you can assign a [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) handler that is called one time for each step in the download (or download and install) process for each package in this request. The handler receives a [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) object that provides info about the update package that raised the progress notification. The previous examples use the **PackageDownloadProgress** field of the **StorePackageUpdateStatus** object to display the progress of the download and install process.
+
+Be aware that when you call **RequestDownloadAndInstallStorePackageUpdatesAsync** to download and install package updates in a single operation, the **PackageDownloadProgress** field increases from 0.0 to 0.8 during the download process for a package, and then it increases from 0.8 to 1.0 during the install. Therefore, if you map the percentage shown in your custom progress UI directly to the value of the **PackageDownloadProgress** field, your UI will show 80% when the package is finished downloading and the OS displays the installation dialog. If you want your custom progress UI to display 100% when the package is downloaded and ready to be installed, you can modify your code to assign 100% to your progress UI when the **PackageDownloadProgress** field reaches 0.8.
+
 <span id="mandatory-dashboard" />
 ## Make a package submission mandatory in the Dev Center dashboard
 
 When you create a package submission for an app that targets Windows 10, version 1607 or later, you can mark the package as mandatory and the date/time on which it becomes mandatory. When this property is set and your app discovers that the package update is available by using the API described earlier in this article, your app can determine whether the update package is mandatory and alter its behavior until the update is installed (for example, your app can disable features).
 
->**Note**&nbsp;&nbsp;The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed. Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.  
+> [!NOTE]
+> The mandatory status of a package update is not enforced by Microsoft, and the OS does not provide a UI to indicate to users that a mandatory app update must be installed. Developers are intended to use the mandatory setting to enforce mandatory app updates in their own code.  
 
 To mark a package submission as mandatory:
 
@@ -227,6 +234,7 @@ To mark a package submission as mandatory:
 2. Click the name of the submission that contains the package update you want to make mandatory.
 3. Navigate to the **Packages** page for the submission. Near the bottom of this page, select **Make this update mandatory** and then choose the day and time on which the package update becomes mandatory. This option applies to all UWP packages in the submission.
 
-For more information about configuring packages in the Dev Center dashboard, see [Upload app packages](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages).
+For more information about configuring packages in the Dev Center dashboard, see [Upload app packages](../publish/upload-app-packages.md).
 
-  >**Note**&nbsp;&nbsp;If you create a [package flight](https://msdn.microsoft.com/windows/uwp/publish/package-flights), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
+  > [!NOTE]
+  > If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
