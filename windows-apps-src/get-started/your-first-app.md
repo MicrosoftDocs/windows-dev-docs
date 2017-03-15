@@ -79,7 +79,7 @@ Are you more of an iOS developer?
 
 * Need to target Android and iOS? Check out [Xamarin](https://www.xamarin.com).
 
-## Related topics
+## See Also
 
 * [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
