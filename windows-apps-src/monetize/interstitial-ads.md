@@ -32,7 +32,8 @@ We provide two types of interstitial ads to use in your apps and games:
 
 * **Interstitial banner ads**: These are only available for UWP apps for Windows 10.
 
->**Note**&nbsp;&nbsp;The API for interstitial ads does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
+> [!NOTE]
+> The API for interstitial ads does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
 
 ## Build an app with interstitial ads
 
@@ -46,7 +47,10 @@ To show interstitial ads in your app, follow the instructions for project type:
 ### Prerequisites
 
 * For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
-  >**Note**&nbsp;&nbsp;Interstitial banner ads require version 10.0.3 or later of the Microsoft Store Services SDK. Interstitial video ads are supported in all versions of the SDK.
+
+  > [!NOTE]
+  > Interstitial banner ads require version 10.0.3 or later of the Microsoft Store Services SDK. Interstitial video ads are supported in all versions of the SDK.
+
 * For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
 <span id="interstitialadsxaml10"/>
