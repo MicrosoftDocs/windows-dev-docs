@@ -16,7 +16,10 @@ keywords: windows 10, uwp, ad, campaign, promote
 
 You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 
-> **Note**  You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
+You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
+
+> [!NOTE]
+> This section of the documentation describes how to create an ad campaign on the Dev Center dashboard. Alternatively, you can use the [Windows Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
 
 Here's how to create an ad campaign to promote your app.
 

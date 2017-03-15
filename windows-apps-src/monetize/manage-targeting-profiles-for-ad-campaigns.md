@@ -156,7 +156,7 @@ The *age* field in the [TargetingProfile](#targeting-profile) object contains on
 
 |  Integer value for *age* field  |  Corresponding age range  |  
 |---------------------------------|---------------------------|
-|     621     |            13 to 17             |
+|     651     |            13 to 17             |
 |     652     |           18 to 24             |
 |     653     |            25 to 34             |
 |     654     |            35 to 49             |
