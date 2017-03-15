@@ -1,7 +1,7 @@
 ---
 author: PatrickFarley
 title: Communicate with a remote app service
-description: Exchange messages with an app service running on a remote device using Project "Rome".
+description: Exchange messages with an app service running on a remote device using Project Rome.
 ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
 ms.author: pafarley
 ms.date: 02/08/2017
@@ -84,7 +84,7 @@ Now you have connected to an app service on a targeted host device, run an opera
 
 ## Related topics
 
-[Connected apps and devices (Project "Rome") overview](connected-apps-and-devices.md)  
+[Connected apps and devices (Project Rome) overview](connected-apps-and-devices.md)  
 [Launch a remote app](launch-a-remote-app.md)  
 [Create and consume an app service](how-to-create-and-consume-an-app-service.md)  
 [Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  

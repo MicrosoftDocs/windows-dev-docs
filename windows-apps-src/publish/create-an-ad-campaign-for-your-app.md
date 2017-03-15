@@ -13,10 +13,14 @@ keywords: windows 10, uwp, ad, campaign, promote
 
 # Create an ad campaign for your app
 
-
 You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 
-> **Note**  You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
+You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
+
+> [!NOTE]
+> This section of the documentation describes how to create an ad campaign on the Dev Center dashboard. Alternatively, you can use the [Windows Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
+
+## Instructions
 
 Here's how to create an ad campaign to promote your app.
 
@@ -39,7 +43,8 @@ Here's how to create an ad campaign to promote your app.
         - **Custom**. If you choose this option, your campaign budget will be spent during the date and time range you specify. This option is only available to developers who have a premium account. For more info about premium accounts, see [Common questions about ad campaigns](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
         - **Monthly**. If you choose this option, your campaign budget will be spent every month on a recurring basis until you stop the campaign.
 
-    > **Note**  If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
+    > [!NOTE]
+    > If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
 
 5.  If you chose **Increase app installations** as your campaign objective, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Manual** to expand the **Audience** section. If you want to go back to default targeting, select **Automatic**.
 
@@ -55,8 +60,8 @@ Here's how to create an ad campaign to promote your app.
 
 6.  If you chose **Increase app engagement** as your campaign objective, you can select one of your customer segments to target.
 
-    > **Note**  Ads created using this campaign will be shown only to the customers who are included in the segment. Only one segment can be selected per ad campaign. For info about segments, see [Create customer segments](create-customer-segments.md).
-
+    > [!NOTE]
+    > Ads created using this campaign will be shown only to the customers who are included in the segment. Only one segment can be selected per ad campaign. For info about segments, see [Create customer segments](create-customer-segments.md).
 
 7.  In the **Ad design** section, choose one of these options:
     -   **Custom**. Choose this option to use your own ad designs. Note that if you selected a customer segment in Step 6, you must use custom creatives. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
@@ -67,7 +72,8 @@ Here's how to create an ad campaign to promote your app.
     -   **Auto-generated**. Choose this option to use ads from a list of default templates. You have the following options to customize the content in the ads. As you make selections, the previews of your ads will update automatically.
         -   In the **Language** drop-down, select the language of the ads. The text for the Windows Store badge and your custom tag line text (if specified) will show in the language you select.
         -   To add an extra line of text to your ad, enter the text in the **Custom tag line** field.
-            > **Note**  The text you enter must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
+            > [!NOTE]
+            > The text you enter must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
 
         -   To further customize the ad, expand **Customize ad design / See all ad sizes** and choose any of the following:
             - **Background color**. Choose from the available options.
@@ -83,18 +89,25 @@ Here's how to create an ad campaign to promote your app.
     - If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 
 9.  Now choose your ad campaign's financial settings in the **Budget and payment** section.
-   > **Note**  If you are creating a house campaign or community campaign, the **Budget and payment** section will not appear, since these campaigns are free of charge.
+    > [!NOTE]
+    > If you are creating a house campaign or community campaign, the **Budget and payment** section will not appear, since these campaigns are free of charge.
 
     -   Under **Budget**, use the slider to set the amount of money you want to spend each month to run this ad.
 
         The monthly budget is prorated for the month in which the ad campaign is created. In other words, if you create an ad campaign halfway through a calendar month, you will be charged for half of your monthly budget for that month.
 
     -   Set a payment instrument for your ad campaign by clicking **Add new payment instrument** and fill in your account details.
-        > **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
+        > [!NOTE]
+        > The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
     -   If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
 
 10.  Finally, click **Review** to confirm your ad campaign's settings and, if it's a paid ad campaign, its budget and payment information. Click **Confirm** and your ads will typically start appearing on devices within a few hours.
-   > **Tip**  To see how your campaigns are performing, in the top navigation menu of the dashboard, select **Promotions**. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign. To edit a campaign, select its name in the list.
+
+## Review ad campaign performance
+
+To see how your campaigns are performing, in the top navigation menu of the dashboard, select **Promotions**. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign.
+
+To edit a campaign, select its name in the list.
 
 ## Related topics
 

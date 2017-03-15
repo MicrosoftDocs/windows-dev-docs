@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: Launch an app on a remote device
-description: Learn how to launch an app on a remote device using Project "Rome".
+description: Learn how to launch an app on a remote device using Project Rome.
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
@@ -63,6 +63,6 @@ The [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/
 ## Related topics
 
 [Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[Connected apps and devices (Project "Rome") overview](connected-apps-and-devices.md)  
+[Connected apps and devices (Project Rome) overview](connected-apps-and-devices.md)  
 [Discover remote devices](discover-remote-devices.md)  
 [Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
