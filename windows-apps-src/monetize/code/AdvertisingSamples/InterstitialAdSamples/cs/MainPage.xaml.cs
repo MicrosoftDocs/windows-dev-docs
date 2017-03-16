@@ -17,7 +17,7 @@ namespace InterstitialAdSamplesCSharp
         //<Snippet2>
         InterstitialAd myInterstitialAd = null;
         string myAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-        string myAdUnitId = "11389925";
+        string myAdUnitId = "test";
         //</Snippet2>
 
         public MainPage()

@@ -7,7 +7,7 @@
     //<Snippet1>
     var interstitialAd = null;
     var applicationId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-    var adUnitId = "11389925";
+    var adUnitId = "test";
     //</Snippet1>
 
     window.startInterstitial = function () {
