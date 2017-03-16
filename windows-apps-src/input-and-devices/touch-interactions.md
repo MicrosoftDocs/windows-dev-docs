@@ -252,21 +252,6 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-               Height="100" Width="200" Fill="Blue" />
-</Grid>
-```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-           Height="100" Width="200" Fill="Blue" />
-</Grid>
-```
-
 Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
 
 ```ManagedCPlusPlus
@@ -393,19 +378,19 @@ private void touchRectangle_PointerPressed(object sender, PointerRoutedEventArgs
 ```
 
 ```VisualBasic
-&#39; Handler for pointer exited event.
+' Handler for pointer exited event.
 Private Sub touchRectangle_PointerExited(sender As Object, e As PointerRoutedEventArgs)
     Dim rect As Rectangle = CType(sender, Rectangle)
 
-    &#39; Pointer moved outside Rectangle hit test area.
-    &#39; Reset the dimensions of the Rectangle.
+    ' Pointer moved outside Rectangle hit test area.
+    ' Reset the dimensions of the Rectangle.
     If (rect IsNot Nothing) Then
         rect.Width = 200
         rect.Height = 100
     End If
 End Sub
 
-&#39; Handler for pointer released event.
+' Handler for pointer released event.
 Private Sub touchRectangle_PointerReleased(sender As Object, e As PointerRoutedEventArgs)
     Dim rect As Rectangle = CType(sender, Rectangle)
 
@@ -473,22 +458,6 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-               Width="200" Height="200" Fill="Blue" 
-               ManipulationMode="All"/>
-</Grid>
-```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-           Width="200" Height="200" Fill="Blue" 
-           ManipulationMode="All"/>
-</Grid>
-```
-
 Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
 
 ```ManagedCPlusPlus
@@ -504,8 +473,8 @@ private TranslateTransform dragTranslation;
 ```
 
 ```VisualBasic
-&#39; Global translation transform used for changing the position of 
-&#39; the Rectangle based on input data from the touch contact.
+' Global translation transform used for changing the position of 
+' the Rectangle based on input data from the touch contact.
 Private dragTranslation As TranslateTransform
 ```
 
