@@ -145,10 +145,30 @@ Once an accent color is selected, light and dark shades of the accent color are 
 By default, hyperlinks will use the user's accent color. If the page background is a similar color, you can choose to assign a lighter (or darker) shade of accent to the hyperlinks for better contrast.
 
 
-<div class="uwpd-image-with-caption">
-	<img src="images/shades.png" alt="A single accent color with its 6 shades" />
-	<div>The various light/dark shades of the default accent color.</div>
-</div>
+<table class="uwpd-color-table" style="border: solid 4px white; width: 30pc">
+   <caption>The various light/dark shades of the default accent color.</caption>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #A6D8FF; color: black">3 shades lighter</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #76B9ED; color: black">2 shades lighter</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #429CE3; color: black">1 shade lighter</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #0078D7; color: white">Sample accent color</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #005A9E; color: white">1 shade darker</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #004275; color: white">2 shades darker</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #002642; color: white">3 shades darker</td>
+    </tr>
+</table>
 
 <div class="uwpd-image-with-caption">
 	<img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center" />
