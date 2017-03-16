@@ -21,6 +21,7 @@ ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 
 ## Introduction
 
+
 Publishing an app to the Windows Store means you can share it (or sell it!) with millions of people, on many different devices.  
 
 In order to publish your app to the Windows Store it must be written as a UWP (Universal Windows Platform) app. However the UWP is extremely flexible, and supports a wide variety of languages and frameworks. To prove the point, this sample is a simple game written in JavaScript, making use of several CreateJS libraries, and demonstrates how to draw sprites, create a game loop, support the keyboard and mouse, and adapt to different screen sizes.
@@ -162,6 +163,9 @@ Run the app again (press F5) and you'll see our clouds have appeared.
 Now we're going to make the clouds move. The secret to moving clouds - and moving anything, in fact - is to set-up a [ticker](http://www.createjs.com/docs/easeljs/classes/Ticker.html) function that is repeatedly called multiple times a second. 
 Every time this function is called, it redraws the graphics in a slightly different place.
 
+<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - Animating clouds</a> by Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+ 
 The code to do that is already in the **main.js** file, provided by the CreateJS library, EaselJS. It looks like this:
 
 ```

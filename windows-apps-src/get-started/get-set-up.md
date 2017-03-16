@@ -71,3 +71,12 @@ After you've installed the tools and gotten a developer license or a developer a
 
 For the complete list of tools and downloads, see [Downloads](http://go.microsoft.com/fwlink/p/?linkid=285935).
 
+
+## See Also
+
+* [Your first app](your-first-app.md)
+* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
+* [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
+* [What's a Universal Windows app?](whats-a-uwp.md)
+* [Sign up for Windows account](sign-up.md)

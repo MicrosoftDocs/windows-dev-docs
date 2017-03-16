@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Create a "hello world" app in C++
+# Create a "Hello world" app in C++
 
 With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
@@ -217,7 +217,7 @@ Let's add some content to the app.
         <TextBlock Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say \"Hello\""/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
@@ -252,7 +252,7 @@ In the app, you can type in the [**TextBox**](https://msdn.microsoft.com/library
    At the same time, in MainPage.xaml, the XAML for the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) is updated to declare the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event handler, like this:
 
     ```xaml
-    <Button Content="Say \"Hello\" Click="Button_Click"/>
+    <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
     ```
 
     You could also have simply added this to the xaml code manually, which can be helpful if the designer doesn't load. If you enter this manually, type "Click" and then let IntelliSense pop up the option to add a new event handler. That way, Visual Studio creates the necessary method declaration and stub.
@@ -340,7 +340,7 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say \"Hello\"" Click="Button_Click"/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
         </StackPanel>
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
     </StackPanel>

@@ -242,7 +242,6 @@ Certain Microsoft billing partners may collect and remit sales, use, goods and s
 | Mexico                             |
 | Peru                               |
 | Philippines                        |
-| Puerto Rico                        |
 | South Africa                       |
 | Vietnam                            |
 
