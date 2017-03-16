@@ -22,6 +22,7 @@ Here you'll learn how to:
 -   Run the project on the local desktop in Visual Studio.
 -   Use a SpeechSynthesizer to make the app talk when you press a button.
 
+
 ## Before you start...
 
 -   [What's a Universal Windows app](whats-a-uwp.md)?
@@ -30,6 +31,11 @@ Here you'll learn how to:
 
 > [!NOTE]
 > This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
+
+## Video summary
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
+
 
 
 ## Step 1: Create a new project in Visual Studio.
@@ -227,3 +233,13 @@ When you run the app and click on the button, your computer (or phone) will lite
 Congratulations, you've created your first app for Windows 10 and the UWP!
 
 To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../layout/grid-tutorial.md), or jump straight to [next steps](learn-more.md)?
+
+
+## See Also
+
+* [Your first app](your-first-app.md)
+* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
+* [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
+* [What's a Universal Windows app?](whats-a-uwp.md)
+* [Sign up for Windows account](sign-up.md)
