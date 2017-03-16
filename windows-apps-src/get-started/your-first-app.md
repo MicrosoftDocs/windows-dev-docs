@@ -4,7 +4,7 @@ ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
 ms.author: jken
-ms.date: 03/06/2017
+ms.date: 03/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 Welcome to the UWP platform! These tutorials will help you create your first UWP app in the language of your choice. You'll learn how to:
 
--   Create a UWP app project in Microsoft Visual Studio.
+-   Create UWP projects in Microsoft Visual Studio.
 -   Add UI elements and code to your project.
 -   Use third party libraries to add new functionality.
 -   Build and debug your app on your local machine.
@@ -31,31 +31,30 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 * [Create a "Hello, world" app using XAML with C#](create-a-hello-world-app-xaml-universal.md)
 
-We assume you're already comfortable with XAML and either C#. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
-
-And as a language refresher:
+If you want to learn the basics, or just refresh your memory, try reading these:
 
 * [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)
 * [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
 * [A Developer's Guide to Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
 
-If you are ready to attempt something more fun than "Hello, World!", try this C# and MonoGame tutorial:
+If you are ready to attempt something a little more fun than "Hello, World!", try this C# and MonoGame tutorial:
 
 * [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
 
 ## JavaScript and HTML
 
-Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
+Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.
 
 * [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
 * [A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
 * [A 3D UWP game for the Windows Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
 
-We assume you're already comfortable with HTML5, CSS3, and JavaScript. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+Need to brush up on your web skills?
 
 * [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
 * [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-
+* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## Visual C++ component extensions (C++/CX) and XAML
 
@@ -63,16 +62,16 @@ Take advantage of your C++ programming expertise to build apps using Visual C++
 
 * [Create a "Hello, world" app using XAML with C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
-We assume you're already comfortable with XAML and C++. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+Learn more about C++ here:
 
 * [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-
+* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## Objective-C
 
 Are you more of an iOS developer? 
 
-* Use the [Windows Bridge for iOS](https://developer.microsoft.com/windows/bridges/ios) to convert your existing code to a UWP app, and keep developing in Objective C.
+* Use the [Windows Bridge for iOS](https://developer.microsoft.com/windows/bridges/ios) to convert your existing code to a UWP app, and keep developing in Objective-C.
 
 
 ## Cross-platform and mobile development
