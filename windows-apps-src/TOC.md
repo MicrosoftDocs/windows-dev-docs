@@ -104,6 +104,7 @@
 #### [Raw notifications](controls-and-patterns/tiles-and-notifications-raw-notification-overview.md)
 ### [Toggle](controls-and-patterns/toggles.md)
 ### [Tooltip](controls-and-patterns/tooltips.md)
+### [Tree view ](controls-and-patterns/tree-view.md)
 ### [Web view](controls-and-patterns/web-view.md)
 ## [Inputs and devices](input-and-devices/index.md)
 ### [Input primer](input-and-devices/input-primer.md)
