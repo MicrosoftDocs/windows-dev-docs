@@ -39,8 +39,6 @@ The nav pane pattern consists of a pane for navigation categories, a content are
 
 To try out code implementing this pattern, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation) from GitHub.
 
-> [!NOTE]
-> Redlines for the nav pane and hamburger are available on [UNI](http://uni/DesignDepot.FrontEnd/#/Search?c=t&t=Windows%2BRS1%2BControls&f=NavPane_Hamburger).
 
 ### Pane
 
