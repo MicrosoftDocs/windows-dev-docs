@@ -432,7 +432,7 @@ The following example demonstrates how to implement shortcut keys. In this examp
 Note also that the page sets input focus to itself when it is loaded. Without this step, no control has initial input focus, and the app does not raise input events until the user sets the input focus manually (for example, by tabbing to or clicking a control).
 
 ```xaml
-<Grid KeyDown="Grid_KeyDown">
+<Grid KeyDown="Grid_KeyUp">
 
   <Grid.RowDefinitions>
     <RowDefinition Height="Auto" />
@@ -487,17 +487,10 @@ void KeyboardSupport::MainPage::MediaButton_Click(Platform::Object^ sender, Wind
     if (fe->Name == "StopButton") {DemoMovie->Stop();}
 }
 
-
-void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = true;
-}
-
-
 void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = false;
-    else if (isCtrlKeyPressed) {
+    if (Window::Current.CoreWindow.GetKeyState(VirtualKey::Control).HasFlag(CoreVirtualKeyStates.Down))
+    {
         if (e->Key==VirtualKey::P) {
             DemoMovie->Play();
         }
@@ -524,15 +517,9 @@ private void MediaButton_Click(object sender, RoutedEventArgs e)
     }
 }
 
-private void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
-{
-    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
-}
-
 private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
 {
-    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = true;
-    else if (isCtrlKeyPressed)
+    if (Window.Current.CoreWindow.GetKeyState(VirtualKey.Control).HasFlag(CoreVirtualKeyStates.Down))
     {
         switch (e.Key)
         {
@@ -545,20 +532,12 @@ private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
 ```
 
 ```VisualBasic
-Private isCtrlKeyPressed As Boolean
 Protected Overrides Sub OnNavigatedTo(e As Navigation.NavigationEventArgs)
 
 End Sub
 
-Private Sub Grid_KeyUp(sender As Object, e As KeyRoutedEventArgs)
-    If e.Key = Windows.System.VirtualKey.Control Then
-        isCtrlKeyPressed = False
-    End If
-End Sub
-
 Private Sub Grid_KeyDown(sender As Object, e As KeyRoutedEventArgs)
-    If e.Key = Windows.System.VirtualKey.Control Then isCtrlKeyPressed = True
-    If isCtrlKeyPressed Then
+    If Window.Current.CoreWindow.GetKeyState(Windows.System.VirtualKey.Control).HasFlag(CoreVirtualKeyStates.Down) == True
         Select Case e.Key
             Case Windows.System.VirtualKey.P
                 DemoMovie.Play()
