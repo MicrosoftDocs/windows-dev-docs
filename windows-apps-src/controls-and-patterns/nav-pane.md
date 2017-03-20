@@ -14,24 +14,14 @@ keywords: windows 10, uwp
 ---
 # Nav panes
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
 A navigation pane (or just "nav" pane) is a pattern that allows for many top-level navigation items while conserving screen real estate. The nav pane is widely used for mobile apps, but also works well on larger screens. When used as an overlay, the pane remains collapsed and out-of-the way until the user presses the button, which is handy for smaller screens. When used in its docked mode, the pane remains open, which allows greater utility if there's enough screen real estate.
 
 ![Example of a nav pane](images/navHero.png)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**SplitView class**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-</ul>
-</div>
 
+**Important APIs**
+
+* [**SplitView class**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## Is this the right pattern?
 
@@ -49,9 +39,6 @@ The nav pane pattern consists of a pane for navigation categories, a content are
 
 To try out code implementing this pattern, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation) from GitHub.
 
-<div class="microsoft-internal-note">
-Redlines for the nav pane and hamburger are available on [UNI](http://uni/DesignDepot.FrontEnd/#/Search?c=t&t=Windows%2BRS1%2BControls&f=NavPane_Hamburger).
-</div>
 
 ### Pane
 
