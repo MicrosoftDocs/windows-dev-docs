@@ -22,7 +22,6 @@
 #### [Navigate between two pages](layout/navigate-between-two-pages.md)
 #### [Show multiple views](layout/show-multiple-views.md)
 ### [Command basics](layout/commanding-basics.md)
-#### [Active canvas](layout/active-canvas.md)
 ### [Content basics](layout/content-basics.md)
 ### [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 ### [Define page layouts with XAML](layout/layouts-with-xaml.md)
