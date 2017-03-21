@@ -23,8 +23,6 @@ The following table lists the mappings that the .NET Framework makes between Uni
 
 Most of the types that have the same namespace name and type name in both the UWP and the .NET Framework are structures (or types associated with structures, such as enumerations). In the UWP, structures have no members other than fields, and require helper types, which the .NET Framework hides. The .NET Framework versions of these structures have properties and methods that provide the functionality of the hidden helper types.
 
-For more information about the way the .NET Framework uses Windows metadata to simplify programming with the Windows Runtime, download the [CLR and the Windows Runtime](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) white paper from the Windows Dev Center.
-
 Table 1: UWP types that map to .NET Framework types with a different name and/or namespace.
 
 | UWP type/namespace                                            | .NET Framework type/namespace                                          | .NET Framework assembly                           |
