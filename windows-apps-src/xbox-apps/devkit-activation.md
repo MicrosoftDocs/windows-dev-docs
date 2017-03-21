@@ -38,8 +38,8 @@ Developer Mode can be enabled on any retail Xbox One console. After Developer Mo
     ![Dev Mode Activation app](images/activation-step-3.png)
 4. Open the Dev Mode Activation app.    
     
-    > [!NOTE]
-    > To play games and apps, you must switch to Retail Mode. Sideloaded apps will work only in Developer Mode.
+> [!NOTE]
+> To play games and apps, you must switch to Retail Mode. Sideloaded apps will work only in Developer Mode.
 
 5.	Note the code displayed in the Dev Mode Activation app.  
 
