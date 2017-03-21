@@ -33,36 +33,24 @@ Developer Mode can be enabled on any retail Xbox One console. After Developer Mo
 2.	Search for and install the Dev Mode Activation app from the Xbox One store.  
     ![Install the Dev Mode Activation App](images/activation-store-search.png)
 
-3.	Navigate to **My games & apps** > **Apps**.
-
+3.	Navigate to **My games & apps** > **Apps**.  
     ![Dev Mode Activation app](images/activation-step-3.png)
-4. Open the Dev Mode Activation app.    
-    
-> [!NOTE]
-> To play games and apps, you must switch to Retail Mode. Sideloaded apps will work only in Developer Mode.
+
+4. Open the Dev Mode Activation app. To play games and apps, you must switch to Retail Mode. Sideloaded apps will work only in Developer Mode.
 
 5.	Note the code displayed in the Dev Mode Activation app.  
-
     ![Activation Step 5](images/activation-step-5.png)  
     
 6.	Go to [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate).
 7.	Sign in to Dev Center with your Dev Center account.  
-8.	Enter the activation code displayed in the Dev Mode Activation app.   
-   
-    > [!NOTE]
-    > You have a limited number of activations associated with your account. After Developer Mode has been activated, Dev Center will indicate you have used one of the activations associated with your account. 
-    
+8.	Enter the activation code displayed in the Dev Mode Activation app. You have a limited number of activations associated with your account. After Developer Mode has been activated, Dev Center will indicate you have used one of the activations associated with your account.  
     ![Activation Step 8](images/activation-step-8.png)    
     
-9.	Click **Agree and activate**. This will cause the page to reload, and you will see your device populate in the table.
-    
-    > [!NOTE]
-    > Terms for the Xbox One Developer Mode Activation Program agreement can be found at [Xbox One Developer Mode Activation Program](http://go.microsoft.com/fwlink/p/?LinkId=760399).
+9.	Click **Agree and activate**. This will cause the page to reload, and you will see your device populate in the table. Terms for the Xbox One Developer Mode Activation Program agreement can be found at [Xbox One Developer Mode Activation Program](http://go.microsoft.com/fwlink/p/?LinkId=760399).
 
 10.	After you’ve entered your activation code, your console will display a progress screen for the activation process.  
     
 11.	After activation has completed, open the Dev Mode Activation app and click **Switch and restart** to go to Developer Mode. Note that this will take longer than usual.  
-
     ![Activation Step 12](images/activation-step-12.png)   
     
 
