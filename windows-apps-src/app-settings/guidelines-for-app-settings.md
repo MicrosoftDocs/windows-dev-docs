@@ -16,6 +16,8 @@ keywords: windows 10, uwp
 
 # Guidelines for app settings
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 App settings are the user-customizable portions of your app and live within an app settings page. For example, app settings in a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app's settings could let the user choose between Celsius and Fahrenheit as the default unit of measurement. This article describes best practices for creating and displaying app settings.
 
 ![example of a settings pane](images/app-settings.png)
