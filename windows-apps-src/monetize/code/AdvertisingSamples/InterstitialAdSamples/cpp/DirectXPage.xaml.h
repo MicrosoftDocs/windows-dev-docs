@@ -68,7 +68,7 @@ namespace InterstitialAdSamplesCpp
 
         //<Snippet2>
         Platform::String^ myAppId = L"d25517cb-12d4-4699-8bdc-52040c712cab";
-        Platform::String^ myAdUnitId = L"11389925";
+        Platform::String^ myAdUnitId = L"test";
         //</Snippet2>
     };
 }

@@ -73,6 +73,10 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
         <td>[Building UWP apps on Xbox One](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)</td>
     </tr>
     <tr>
+        <td>UWP on HoloLens</td>
+        <td>[Building UWP apps on HoloLens](https://developer.microsoft.com/windows/mixed-reality/development_overview)</td>
+    </tr>
+    <tr>
         <td>Xbox Live documentation</td>
         <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
     </tr>

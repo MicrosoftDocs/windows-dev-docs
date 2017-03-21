@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: If your app uses ad mediation or displays banner or video interstitial ads from Microsoft Advertising, use the Monetization &gt; Monetize with ads page to manage your use of ads.
+Description: If your app uses ad mediation or displays banner or interstitial ads from Microsoft Advertising, use the Monetization &gt; Monetize with ads page to manage your use of ads.
 title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # Monetize with ads
 
 
-If your app uses an **AdMediatorControl**, **AdControl**, or **InterstitialAd** control to display banner or video interstitial ads, use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads.
+If your app uses an **AdMediatorControl**, **AdControl**, or **InterstitialAd** control to display banner or interstitial ads, use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads.
 
 ## Windows ad mediation
 
@@ -47,22 +47,22 @@ If you change this selection, you do not need to republish your app for the chan
 
 Use this section to create a Microsoft Advertising ad unit. You only need to create ad units in the following scenarios:
 
--   Your app shows banner ads from Microsoft Advertising by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
--   Your app shows video interstitial ads from Microsoft Advertising by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+-   Your app shows banner ads by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
+-   Your app shows interstitial ads by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
 
 To create an ad unit for these scenarios:
 
 1.  Name the ad unit.
-2.  Select the ad unit type (**Banner** or **Video interstitial**).
+2.  Select the ad unit type (**Banner**, **Video interstitial**, or **Banner interstitial**).
 3.  Select the device type (**Mobile** or **PC/Tablet**).
 4.  Click **Create ad unit**.
 
 Your ad units appear in a table at the bottom of this section. For each ad unit you will see an **Application ID** and an **Ad unit ID**. To show ads in your app, you'll need to use these values in your code:
 
--   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
--   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+-   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
+-   If your app shows interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
 
-> **Note**  If your app uses ad mediation to show banner ads from Microsoft Advertising (that is, it uses an **AdMediatorControl** object), you do not need to request ad units. In this scenario, Microsoft Advertising ad units are automatically generated for you.
+> **Note**  If your app uses an **AdMediatorControl** object to show banner ads from Microsoft Advertising, you do not need to request ad units. In this scenario, Microsoft Advertising ad units are automatically generated for you.
 
  
 

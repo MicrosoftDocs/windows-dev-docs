@@ -38,7 +38,7 @@ If there is a leftover **lastError** from the previous ad request, the event may
 
 ## Interstitial ads and navigation buttons on phones
 
-On phones (or emulators) that have software **Back**, **Start**, and **Search** buttons instead of hardware buttons, the countdown timer and click through buttons for video interstitial ads may be obscured.
+On phones (or emulators) that have software **Back**, **Start**, and **Search** buttons instead of hardware buttons, the countdown timer and click through buttons for interstitial ads may be obscured.
 
 ## Recently created ads are not being served to your app
 

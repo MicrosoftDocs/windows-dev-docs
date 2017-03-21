@@ -49,7 +49,7 @@ Use the instructions in the following walkthroughs to add an [AdControl](https:/
 
 When you use an **AdControl** or **InterstitialAd** to display ads in your app, you must specify an application ID and ad unit ID in your code to link your app to your Windows Dev Center account and to serve ads. While you are developing your app, use test application ID and ad unit ID values to see how your app renders ads during testing. This enables you to see how the app is receiving and rendering advertisements during testing. For more information, see [Test mode values](test-mode-values.md).
 
-For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+For complete sample projects that demonstrate how to add banner and interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
 ## Configure your app to receive live ads
 

@@ -16,12 +16,16 @@ keywords: windows 10, uwp, ads, advertising, banner, interstitial
 
 The Universal Windows Platform (UWP) and Windows Store provide several ways to monetize your app with ads.
 
-## Display banner and video interstitial ads using the Microsoft advertising libraries
+## Display banner and interstitial ads using the Microsoft advertising libraries
 
-Make more money from your UWP apps and your apps for Windows 8.1 and Windows Phone 8.x by including banner and video interstitial ads. The ads show in Windows apps for PCs, tablets, and phones. You can monitor your ad performance in real time by using the [advertising performance report](../publish/advertising-performance-report.md) in the Windows Dev Center dashboard.
+Make more money from your apps by including banner or interstitial ads in your app.
+
+* *Banner ads* are small advertisements that utilize a portion of a page in an app, usually at the top or bottom of the page.
+* *Interstitial ads* are full-screen advertisements that typically force the user to watch a video or click through them to continue in the app or game. We support two types of interstitial ads for UWP apps: video and banner.
 
 To include these types of ads in your apps, use the **AdControl** and **InterstitialAd** controls in the advertising libraries that are distributed in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).
 
+You can monitor your ad performance in real time by using the [advertising performance report](../publish/advertising-performance-report.md) in the Windows Dev Center dashboard.
 
 The following topics provide information about common tasks involving the Windows advertising libraries.
 
@@ -44,7 +48,7 @@ The following topics provide information about common tasks involving the Window
 
 For Windows 8.1 and Windows Phone 8.x apps, you can use the **AdMediatorControl** class to optimize your advertising revenue by displaying banner ads from multiple ad networks. After you add this control to your app, you configure your ad mediation settings on the Windows Dev Center dashboard, and we take care of mediating banner ad requests from the ad networks you choose. For more information, see [Use ad mediation to maximize ad revenue](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
 
->**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and video interstitial ads (**InterstitialAd**). For guidance about migrating from **AdMediatorControl** to **AdControl** in your UWP app, see [Migrate from AdMediatorControl to AdControl for UWP apps](migrate-from-admediatorcontrol-to-adcontrol.md).
+>**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and interstitial ads (**InterstitialAd**). For guidance about migrating from **AdMediatorControl** to **AdControl** in your UWP app, see [Migrate from AdMediatorControl to AdControl for UWP apps](migrate-from-admediatorcontrol-to-adcontrol.md).
 
 <span id="silverlight_support"/>
 ## Advertising support for Windows Phone 8.x Silverlight projects

@@ -7,7 +7,7 @@
     //<Snippet1>
     var interstitialAd = null;
     var applicationId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-    var adUnitId = "11389925";
+    var adUnitId = "test";
     //</Snippet1>
 
     window.startInterstitial = function () {
@@ -28,6 +28,8 @@
     // This example requests an interstitial ad when the "Request ad" button is clicked. In a real app, 
     // you should request the interstitial ad close to when you think it will be shown, but with 
     // enough advance time to make the request and prepare the ad (say 30 seconds to a few minutes).
+    // To show an interstitial banner ad instead of an interstitial video ad, replace InterstitialAdType.video 
+    // with InterstitialAdType.display.
     var requestAdButtonClick = function (evt) {
         //<Snippet3>
         if (interstitialAd) {

@@ -93,7 +93,7 @@ The [Windows Developer Blog](https://blogs.windows.com/buildingapps) includes re
 
 The [docs.microsoft.com](http://docs.microsoft.com) site contains a multitude of documentation for many different tools, frameworks and platforms. When you are browsing for topics and samples, you should make sure you are reading UWP specific content. 
 You'll find the UWP reference starts at the [Windows Dev Center](https://developer.microsoft.com/windows/apps), and the API reference you need is at [Develop UWP apps](https://docs.microsoft.com/uwp/api/).
-When reading content taht is specifically for UWP, the URL path will contain **uwp**, and so will the path displayed at the top of the page, like this:
+When reading content that is specifically for UWP, the URL path will contain **uwp**, and so will the path displayed at the top of the page, like this:
 
 ![Finding UWP docs](images/UWP-docs.png)
 

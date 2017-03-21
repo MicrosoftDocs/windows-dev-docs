@@ -100,7 +100,7 @@ Authorization: Bearer <your access token>
 
 | Value      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | array  | An array of objects that contain aggregate ratings data. For more information about the data in each object, see the [acquisition values](#acquisition-values) section below.                                                                                                                      |
+| Value      | array  | An array of objects that contain aggregate acquisition data for the app. For more information about the data in each object, see the [acquisition values](#acquisition-values) section below.                                                                                                                      |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of acquisition data for the query. |
 | TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
 

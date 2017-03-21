@@ -33,9 +33,9 @@ There are several different advertising libraries available in the Microsoft Sto
 
 * The Microsoft Advertising SDK for Windows and Windows Phone 8.x includes two sets of advertising libraries: the libraries for Microsoft advertising (which provide the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  classes for XAML and JavaScript/HTML apps) and the libraries for ad mediation (which provide the **AdMediatorControl** class).
 
-This documentation describes how to use the **AdControl** and **InterstitialAd** classes in the Microsoft advertising libraries to display banner or video interstitial ads. For information about using ad mediation for Windows 8.1 and Windows Phone 8.x apps, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
+This documentation describes how to use the **AdControl** and **InterstitialAd** classes in the Microsoft advertising libraries to display banner or interstitial ads. For information about using ad mediation for Windows 8.1 and Windows Phone 8.x apps, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
 
->**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and video interstitial ads (**InterstitialAd**).
+>**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and interstitial ads (**InterstitialAd**).
 
 Before you can use the any of the advertising controls in your app code, you must reference the appropriate library in your project. The following tables lists the names of each of the libraries as they appear in in the **Reference Manager** dialog box in Visual Studio.
 

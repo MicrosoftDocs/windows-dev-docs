@@ -17,7 +17,7 @@ namespace InterstitialAdSamplesCSharp
         //<Snippet2>
         InterstitialAd myInterstitialAd = null;
         string myAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
-        string myAdUnitId = "11389925";
+        string myAdUnitId = "test";
         //</Snippet2>
 
         public MainPage()
@@ -33,9 +33,11 @@ namespace InterstitialAdSamplesCSharp
             //</Snippet3>            
         }
 
-        // This example requests an interstitial ad when the "Request ad" button is clicked. In a real app, 
+        // This method requests an interstitial ad when the "Request ad" button is clicked. In a real app, 
         // you should request the interstitial ad close to when you think it will be shown, but with 
         // enough advance time to make the request and prepare the ad (say 30 seconds to a few minutes).
+        // To show an interstitial banner ad instead of an interstitial video ad, replace AdType.Video 
+        // with AdType.Display.
         private void requestAdButton_Click(object sender, RoutedEventArgs e)
         {
             //<Snippet4>
@@ -43,7 +45,7 @@ namespace InterstitialAdSamplesCSharp
             //</Snippet4>
         }
 
-        // This example attempts to show the interstitial ad when the "Show ad" button is clicked.
+        // This method attempts to show the interstitial ad when the "Show ad" button is clicked.
         private void showAdButton_Click(object sender, RoutedEventArgs e)
         {
             //<Snippet5>

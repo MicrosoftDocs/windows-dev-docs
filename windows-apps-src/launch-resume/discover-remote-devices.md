@@ -1,7 +1,7 @@
 ---
 author: PatrickFarley
 title: Discover remote devices
-description: Learn how to discover remote devices from your app using Project "Rome".
+description: Learn how to discover remote devices from your app using Project Rome.
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.author: pafarley
 ms.date: 02/08/2017
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ---
 
 # Discover remote devices
-Your app can use the wireless network, Bluetooth, and a cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device. Communal devices that can accept anonymous connections, such as the Surface Hub and Xbox One, are also discoverable. The remote devices do not need to have any special software installed in order to be discoverable.
+Your app can use the wireless network, Bluetooth, and a cloud connection to discover Windows devices that are signed on with the same Microsoft account as the discovering device. The remote devices do not need to have any special software installed in order to be discoverable.
 
 > [!NOTE]
 > This guide assumes you have already been granted access to the Remote Systems feature by following the steps in [Launch a remote app](launch-a-remote-app.md).
@@ -46,7 +46,7 @@ A **RemoteSystem** object is retrieved if a valid **HostName** object is provide
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetFindByHostName)]
 
 ## Related topics
-[Connected apps and devices (Project "Rome")](connected-apps-and-devices.md)  
+[Connected apps and devices (Project Rome)](connected-apps-and-devices.md)  
 [Launch a remote app](launch-a-remote-app.md)  
 [Remote Systems API reference](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.

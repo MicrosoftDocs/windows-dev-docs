@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: Get the information you need to get started using the Microsoft advertising libraries to add banner and video interstitial ads to your apps.
+description: Get the information you need to get started using the Microsoft advertising libraries to add banner and interstitial ads to your apps.
 title: Get started with the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -16,9 +16,9 @@ keywords: windows 10, uwp, ads, advertising, get started
 
 
 
-This topic provides the information you need to get started using the Microsoft advertising libraries to add banner and video interstitial ads to your apps. After you have read the topics in this section, move on to the [developer walkthroughs](developer-walkthroughs.md) to see examples about how to write the code that will show ads in your apps.
+This topic provides the information you need to get started using the Microsoft advertising libraries to add banner and interstitial ads to your apps. After you have read the topics in this section, move on to the [developer walkthroughs](developer-walkthroughs.md) to see examples about how to write the code that will show ads in your apps.
 
-For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+For complete sample projects that demonstrate how to add banner and interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
  
 
