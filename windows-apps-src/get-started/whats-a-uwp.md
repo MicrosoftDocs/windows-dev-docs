@@ -23,12 +23,16 @@ The bottom line: You can spend your time working with familiar programming langu
  
 ##So, what *exactly* is a UWP app?
 
-
 What makes a UWP app special? Here are some of the characteristics that make UWP apps on Windows 10 different.
 
--   **Apps target device families, not an OS**
+-   **There's a common API surface across all devices.**
 
-    A device family, like Xbox or PC, identifies the APIs, system characteristics, and behaviors that you can use in your app. Users with that kind of device can buy your app from the store.
+    The Universal Windows Platform (UWP) core APIs are the same for all classes of Windows device. If your app uses only the core APIs, it will run on any Windows 10 device, no matter if you are targetting a desktop PC, an Xbox or a Mixed Reality headset.
+
+-   **Extension SDKs make your app do cool stuff on specific device types.**
+
+    Extension SDKs add specialized APIs for each device class. For example, if your UWP app targets HoloLens, you can add HoloLens features in addition to the normal UWP core APIs.
+    If you target the universal APIs, your app package can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device specific APIs in the event it is running on a particular class of device, you can check at run-time if an API exists before calling it. 
 
 -   **Apps are packaged using the .AppX packaging format and distributed from the Store.**
 
@@ -36,19 +40,13 @@ What makes a UWP app special? Here are some of the characteristics that make UWP
 
 -   **There's one store for all devices.**
 
-    After you register as an app developer, you can submit your app to the store and make it available on all device families, or only those you choose. You submit and manage all your apps for Windows devices in one place.
+    After you register as an app developer, you can submit your app to the store and make it available on all types device, or only those you choose. You submit and manage all your apps for Windows devices in one place.
 
--   **There's a common API surface across device families.**
-
-    The Universal Windows Platform (UWP) core APIs are the same for all Windows device families. If your app uses only the core APIs, it will run on any Windows 10 device.
-
--   **Extension SDKs make your app light up on specialized devices.**
-
-    Extension SDKs add specialized APIs for each device family. If your app is intended for a particular device family, like HoloLens, you can add HoloLens features in addition to the normal UWP core APIs. Your app has a single app package that runs on all devices, but you can check what device family your app is running on before calling an extension API for HoloLens.
-
--   **Apps support adaptive controls and input**
+ -   **Apps support adaptive controls and input**
 
     UI elements use *effective pixels* (see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/Dn958435)), so they can respond with a layout that works based on the number of screen pixels available on the device. And they work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you adapt your UI to the devices your app may run on.
+
+
 
 ## Use a language you already know
 
