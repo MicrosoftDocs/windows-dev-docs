@@ -234,7 +234,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 ## Related topics
 
-
 * [Manage product entitlements from a service](view-and-grant-products-from-a-service.md)
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
