@@ -4,7 +4,7 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Use the Windows Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Dev Center account.
 title: Access analytics data using Store services
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -69,12 +69,20 @@ After your access token expires, you can refresh it by following the instruction
 
 After you have an Azure AD access token, you are ready to call the Windows Store analytics API. For information about the syntax of each method, see the following articles. You must pass the access token to the **Authorization** header of each method.
 
+| Scenario       | Methods      |
+|---------------|--------------------|
+| Acquisitions and installs |  <ul><li>[Get app acquisitions](get-app-acquisitions.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get app installs](get-app-installs.md)</li></ul> |
+| App errors | <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| Ratings and reviews | <ul><li>[Get app ratings](get-app-ratings.md)</li><li>[Get app reviews](get-app-reviews.md)</li></ul> |
+| In-app ads and ad campaigns | <ul><li>[Get ad performance data](get-ad-performance-data.md)</li><li>[Get ad campaign performance data](get-ad-campaign-performance-data.md)</li></ul> |
+
+The following additional methods are available for use by IHV and OEM developer accounts.
+
 | Scenario       | Description      |
 |---------------|--------------------|
-| Acquisitions |  Get acquisition data for your apps and add-ons. For more information about these methods, see the following articles: <ul><li>[Get app acquisitions](get-app-acquisitions.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li></ul> |
-| Errors | Get data about errors in your apps. For more information about these methods, see the following articles: <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
-| Ratings and reviews | Get ratings and reviews info for your apps. For more information about these methods, see the following articles: <ul><li>[Get app ratings](get-app-ratings.md)</li><li>[Get app reviews](get-app-reviews.md)</li></ul> |
-| In-app ads and ad campaigns | Get performance data for ads in your apps and your promotional ad campaigns. For more information about these methods, see the following articles: <ul><li>[Get ad performance data](get-ad-performance-data.md)</li><li>[Get ad campaign performance data](get-ad-campaign-performance-data.md)</li></ul> |
+| Errors in Windows 10 drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[Get details for a Windows 10 driver error](get-details-for-a-windows-10-driver-error.md)</li><li>[Download the CAB file for a Windows 10 driver error](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Errors in Windows 7/Windows 8.x drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 7 and Windows 8.x drivers](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Get details for a Windows 7 or Windows 8.x driver error](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Download the CAB file for a Windows 7 or Windows 8.x driver error](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| Hardware errors (for OEMs) |  <ul><li>[Get OEM hardware error reporting data](get-oem-hardware-error-reporting-data.md)</li><li>[Get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md)</li><li>[Download the CAB file for an OEM hardware error](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## Code example
 
@@ -105,15 +113,3 @@ The Windows Store analytics API returns error responses in a JSON object that co
     "source":"AnalyticsAPI"
 }
 ```
-
-## Related topics
-
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
-* [Get ad performance data](get-ad-performance-data.md)
-* [Get promotion campaign performance data](get-ad-campaign-performance-data.md)

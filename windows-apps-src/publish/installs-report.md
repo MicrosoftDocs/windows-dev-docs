@@ -13,7 +13,7 @@ ms.assetid: 46c08fd2-00bd-4be5-b29f-01a3b5fea4c2
 
 # Installs report
 
-The **Installs** report in the Windows Dev Center dashboard lets you see how many times customers have successfully installed your app on Windows 10 devices. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+The **Installs** report in the Windows Dev Center dashboard lets you see how many times customers have successfully installed your app on Windows 10 devices. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app installs](../monetize/get-app-installs.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 
 ## Apply filters
