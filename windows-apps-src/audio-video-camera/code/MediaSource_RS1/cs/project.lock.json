@@ -15774,14 +15774,14 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\drewbat.REDMOND\\.nuget\\packages\\": {}
+    "C:\\Users\\drewbat\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\MediaSource_RS1\\cs\\MediaSource_RS1.csproj",
+      "projectUniqueName": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\MediaSource_RS1\\cs\\MediaSource_RS1.csproj",
       "projectName": "MediaSource_RS1",
-      "projectPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\MediaSource_RS1\\cs\\MediaSource_RS1.csproj",
-      "projectJsonPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\MediaSource_RS1\\cs\\project.json",
+      "projectPath": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\MediaSource_RS1\\cs\\MediaSource_RS1.csproj",
+      "projectJsonPath": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\MediaSource_RS1\\cs\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

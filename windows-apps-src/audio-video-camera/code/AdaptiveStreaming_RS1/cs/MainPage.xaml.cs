@@ -20,7 +20,6 @@ using System.Threading.Tasks;
 using Windows.Storage.Streams;
 using Windows.Media.Playback;
 using Windows.Media.Core;
-
 //</SnippetAdaptiveStreamingUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -80,7 +79,7 @@ namespace AdaptiveStreaming_RS1
             {
                 ams = result.MediaSource;
                 mediaPlayerElement.SetMediaPlayer(new MediaPlayer());
-                mediaPlayerElement.MediaPlayer.SetMediaSource(ams);
+                mediaPlayerElement.MediaPlayer.Source = MediaSource.CreateFromAdaptiveMediaSource(ams);
                 mediaPlayerElement.MediaPlayer.Play();
 
 
@@ -89,15 +88,26 @@ namespace AdaptiveStreaming_RS1
                 //Register for download requests
                 ams.DownloadRequested += DownloadRequested;
 
+                //Register for download failure and completion events
+                ams.DownloadCompleted += DownloadCompleted;
+                ams.DownloadFailed += DownloadFailed;
+
                 //Register for bitrate change events
                 ams.DownloadBitrateChanged += DownloadBitrateChanged;
                 ams.PlaybackBitrateChanged += PlaybackBitrateChanged;
+
+                //Register for diagnostic event
+                ams.Diagnostics.DiagnosticAvailable += DiagnosticAvailable;
             }
             else
             {
                 // Handle failure to create the adaptive media source
+                MyLogMessageFunction($"Adaptive source creation failed: {uri} - {result.ExtendedError}");
             }
         }
+
+        
+
         //</SnippetInitializeAMS>
 
 
@@ -119,7 +129,7 @@ namespace AdaptiveStreaming_RS1
             {
                 ams = result.MediaSource;
                 mediaPlayerElement.SetMediaPlayer(new MediaPlayer());
-                mediaPlayerElement.MediaPlayer.SetMediaSource(ams);
+                mediaPlayerElement.MediaPlayer.Source = MediaSource.CreateFromAdaptiveMediaSource(ams);
                 mediaPlayerElement.MediaPlayer.Play();
 
                 txtDownloadBitrate.Text = ams.InitialBitrate.ToString();
@@ -135,6 +145,7 @@ namespace AdaptiveStreaming_RS1
             else
             {
                 // Handle failure to create the adaptive media source
+                MyLogMessageFunction($"Adaptive source creation failed: {manifestUri} - {result.ExtendedError}");
             }
         }
 
@@ -167,6 +178,41 @@ namespace AdaptiveStreaming_RS1
             return httpClient.GetBufferAsync(resourceUri).AsTask<IBuffer, Windows.Web.Http.HttpProgress>();
         }
 
+        //<SnippetAMSDownloadCompleted>
+        private void DownloadCompleted(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadCompletedEventArgs args)
+        {
+            var statistics = args.Statistics;
+
+            MyLogMessageFunction("download completed for: " + args.ResourceType + " - " +
+             args.ResourceUri +
+             " – RequestId:" + args.RequestId + 
+             " – Position:" + args.Position + 
+             " - TimeToHeadersReceived:" + statistics.TimeToHeadersReceived + 
+             " - TimeToFirstByteReceived:" + statistics.TimeToFirstByteReceived + 
+             " - TimeToLastByteReceived:" + statistics.TimeToLastByteReceived +
+             " - ContentBytesReceivedCount:" + statistics.ContentBytesReceivedCount);
+
+        }
+        //</SnippetAMSDownloadCompleted>
+
+        //<SnippetAMSDownloadFailed>
+        private void DownloadFailed(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadFailedEventArgs args)
+        {
+            var statistics = args.Statistics;
+
+            MyLogMessageFunction("download failed for: " + args.ResourceType + 
+             " - " + args.ResourceUri +
+             " – Error:" + args.ExtendedError.HResult +
+             " - RequestId" + args.RequestId + 
+             " – Position:" + args.Position + 
+             " - TimeToHeadersReceived:" + statistics.TimeToHeadersReceived + 
+             " - TimeToFirstByteReceived:" + statistics.TimeToFirstByteReceived + 
+             " - TimeToLastByteReceived:" + statistics.TimeToLastByteReceived +
+             " - ContentBytesReceivedCount:" + statistics.ContentBytesReceivedCount);
+
+        }
+        //</SnippetAMSDownloadFailed>
+
         //<SnippetAMSBitrateEvents>
         private async void DownloadBitrateChanged(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadBitrateChangedEventArgs args)
         {
@@ -184,5 +230,30 @@ namespace AdaptiveStreaming_RS1
             }));
         }
         //</SnippetAMSBitrateEvents>
+
+        //<SnippetAMSDiagnosticAvailable>
+        private void DiagnosticAvailable(AdaptiveMediaSourceDiagnostics sender, AdaptiveMediaSourceDiagnosticAvailableEventArgs args)
+        {
+            MySendTelemetryFunction(args.RequestId, args.Position,
+                                    args.DiagnosticType, args.SegmentId,
+                                    args.ResourceType, args.ResourceUri,
+                                    args.ResourceByteRangeOffset,
+                                    args.ResourceByteRangeLength, args.Bitrate);
+
+        }
+        //</SnippetAMSDiagnosticAvailable>
+
+
+        private void MyLogMessageFunction(string s)
+        {
+
+        }
+        private void MySendTelemetryFunction(int? requestId, TimeSpan? position,
+            AdaptiveMediaSourceDiagnosticType? type, ulong? segmentId,
+            AdaptiveMediaSourceResourceType? resourceType, Uri resourceUri,
+            ulong? byteRangeOffset, ulong? byteRangeLength, uint? bitrate)
+        {
+
+        }
     }
 }

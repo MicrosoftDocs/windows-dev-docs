@@ -637,7 +637,7 @@ namespace MediaSource_RS1
 
             // Enable word marker generation (false by default). 
             synthesizer.Options.IncludeWordBoundaryMetadata = true;
-            //synthesizer.Options.IncludeSentenceBoundaryMetadata = true;
+            synthesizer.Options.IncludeSentenceBoundaryMetadata = true;
 
             var stream = await synthesizer.SynthesizeTextToStreamAsync(inputText);
 
@@ -660,7 +660,7 @@ namespace MediaSource_RS1
         private void RegisterMetadataHandlerForWords(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
-            //if (timedTrack.DispatchType == "SpeechWord")
+            if (timedTrack.Id == "SpeechWord")
             {
                 timedTrack.CueEntered += metadata_SpeechWordCueEntered;
                 item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
@@ -705,7 +705,6 @@ namespace MediaSource_RS1
                 if (cue != null)
                 {
                     // Do something with the cue 
-                    //HighlightWordOnScreen(cue.StartPositionInInput, cue.EndPositionInInput);
                     System.Diagnostics.Debug.WriteLine($"{cue.StartPositionInInput} - {cue.EndPositionInInput}: {inputText.Substring((int)cue.StartPositionInInput, ((int)cue.EndPositionInInput - (int)cue.StartPositionInInput) + 1)}");
                 }
             }

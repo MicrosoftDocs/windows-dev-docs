@@ -20,7 +20,7 @@ This article shows you how to use manual device controls to enable enhanced phot
 
 The controls discussed in this article are all added to your app using the same pattern. First, check to see if the control is supported on the current device on which your app is running. If the control is supported, set the desired mode for the control. Typically, if a particular control is unsupported on the current device, you should disable or hide the UI element that allows the user to enable the feature.
 
-The code in this article was adapted from the [Camera Manual Controls SDK sample](http://go.microsoft.com/fwlink/p/?LinkId=619479). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [Camera Manual Controls SDK sample](https://go.microsoft.com/fwlink/?linkid=845228). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
 
 > [!NOTE]
 > This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
