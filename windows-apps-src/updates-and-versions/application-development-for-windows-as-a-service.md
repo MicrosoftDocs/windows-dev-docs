@@ -1,8 +1,8 @@
 ---
-title: Application development for Windows as a service (Windows 10)
+title: App development for Windows as a service
 description: Decouple app release and support from specific Windows builds.
-author: jdeckerMS
-ms.author: jdecker
+author: jken
+ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -2,7 +2,7 @@
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Windows Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
-title: Get error reporting data
+title: Get error reporting data for your app
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, Store services, Windows Store analytics API, errors
 ---
 
-# Get error reporting data
+# Get error reporting data for your app
 
 Use this method in the Windows Store analytics API to get aggregate error reporting data for your app in JSON format for a given date range and other optional filters. This information is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
 

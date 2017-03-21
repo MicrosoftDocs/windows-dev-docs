@@ -138,4 +138,3 @@ If you have questions about the Windows Store submission API or need assistance 
 * [Manage add-on submissions](manage-add-on-submissions.md)
 * [Manage package flights](manage-flights.md)
 * [Manage package flight submissions](manage-flight-submissions.md)
- 
