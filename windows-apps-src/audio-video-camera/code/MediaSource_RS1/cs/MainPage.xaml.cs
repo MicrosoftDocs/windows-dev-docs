@@ -60,10 +60,11 @@ namespace MediaSource_RS1
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            PlayMediaSource();
+            //PlayMediaSource();
             //PlayMediaPlaybackItem();
             //PlayMediaPlaybackItemWithCustomTracks();
             //PlayMediaPlaybackList();
+            InitSpeechCueScenario();
         }
         #region MediaSource
         private async void PlayMediaSource()
@@ -625,6 +626,89 @@ namespace MediaSource_RS1
 
         }
         //</SnippetItemFailed>
+        #endregion
+
+        #region SpeechCues
+
+        string inputText = "In the lake heading for the mountain, the flea swims";
+        public async void InitSpeechCueScenario()
+        {
+            var synthesizer = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+
+            // Enable word marker generation (false by default). 
+            synthesizer.Options.IncludeWordBoundaryMetadata = true;
+            synthesizer.Options.IncludeSentenceBoundaryMetadata = true;
+
+            var stream = await synthesizer.SynthesizeTextToStreamAsync(inputText);
+
+            // Create a media source from the stream, which also implements ITimedMetadataTrackProvider: 
+            var mediaSource = MediaSource.CreateFromStream(stream, "");
+
+            //Create a Media Playback Item   
+            var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
+
+            // Ensure that the app is notified for cues.  
+            RegisterForWordBoundaryEvents(mediaPlaybackItem);
+
+            // Set the source of the MediaElement or MediaPlayerElement to the MediaPlaybackItem 
+            // and start playing the synthesized audio stream. 
+            _mediaPlayer = new MediaPlayer();
+            mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+            _mediaPlayer.Source = mediaPlaybackItem;
+            _mediaPlayer.Play();
+        }
+        private void RegisterMetadataHandlerForWords(MediaPlaybackItem item, int index)
+        {
+            var timedTrack = item.TimedMetadataTracks[index];
+            if (timedTrack.Id == "SpeechWord")
+            {
+                timedTrack.CueEntered += metadata_SpeechWordCueEntered;
+                item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
+            }
+        }
+
+        private void RegisterForWordBoundaryEvents(MediaPlaybackItem item)
+        {
+
+            // Since the tracks are added later we will  
+            // monitor the tracks being added and subscribe to the ones of interest 
+            item.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
+            {
+                if (args.CollectionChange == CollectionChange.ItemInserted)
+                {
+                    RegisterMetadataHandlerForWords(sender, (int)args.Index);
+                }
+                else if (args.CollectionChange == CollectionChange.Reset)
+                {
+                    for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
+                    {
+                        RegisterMetadataHandlerForWords(sender, index);
+                    }
+                }
+            };     
+            
+            // If tracks were available at source resolution time, itterate through and register: 
+            for (int index = 0; index < item.TimedMetadataTracks.Count; index++)
+            {
+                RegisterMetadataHandlerForWords(item, index);
+            }
+        }
+
+        
+
+        private void metadata_SpeechWordCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
+        {
+            // Check in case there are different tracks and the handler was used for more tracks 
+            if (timedMetadataTrack.TimedMetadataKind == TimedMetadataKind.Speech)
+            {
+                var cue = args.Cue as SpeechCue;
+                if (cue != null)
+                {
+                    // Do something with the cue 
+                    System.Diagnostics.Debug.WriteLine($"{cue.StartPositionInInput} - {cue.EndPositionInInput}: {inputText.Substring((int)cue.StartPositionInInput, ((int)cue.EndPositionInInput - (int)cue.StartPositionInInput) + 1)}");
+                }
+            }
+        }
         #endregion
 
         private void ShowMessageToUser(string s) { }

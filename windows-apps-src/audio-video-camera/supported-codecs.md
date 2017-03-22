@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article lists the audio, video, and image codec and format support for UWP apps.
+This article lists the audio, video, and image codec and format availability for UWP apps by default for each device family. Note that these tables list the codecs that are included with the Windows 10 installation for the specified device family. Users and apps can install additional codecs that may be available to use. You can query at runtime for the set of codecs that are currently available for a specific device. For more information, see [Query for codecs installed on a device](codec-query.md).
 
 In the tables below "D" indicates decoder support and "E" indicates encoder support.
 

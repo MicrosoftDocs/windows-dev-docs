@@ -19,9 +19,13 @@ using Windows.Media.MediaProperties;
 using Windows.Media.Transcoding;
 //</SnippetUsing>
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+//<SnippetCodecQueryUsing>
+using Windows.Media.Core;
+//</SnippetCodecQueryUsing>
 
-namespace TranscodingWin10
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
+namespace TranscodeWin10
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -44,7 +48,7 @@ namespace TranscodingWin10
 
 
 
-        
+
         private async void TranscodeVideoFile()
         {
             // <SnippetTranscodeGetFile>
@@ -136,6 +140,64 @@ namespace TranscodingWin10
         private void TranscodeButton_Click(object sender, RoutedEventArgs e)
         {
             TranscodeVideoFile();
+        }
+
+        
+
+        private async void CodecQueryButton_Click(object sender, RoutedEventArgs e)
+        {
+            //<SnippetNewCodecQuery>
+            var codecQuery = new CodecQuery();
+            //</SnippetNewCodecQuery>
+
+            //<SnippetFindAllEncoders>
+            IReadOnlyList<CodecInfo> result =
+                await codecQuery.FindAllAsync(CodecKind.Video, CodecCategory.Encoder, "");
+
+            foreach (var codecInfo in result)
+            {
+                this.codecResultsTextBox.Text += "============================================================\n";
+                this.codecResultsTextBox.Text += string.Format("Codec: {0}\n", codecInfo.DisplayName);
+                this.codecResultsTextBox.Text += string.Format("Kind: {0}\n", codecInfo.Kind.ToString());
+                this.codecResultsTextBox.Text += string.Format("Category: {0}\n", codecInfo.Category.ToString());
+                this.codecResultsTextBox.Text += string.Format("Trusted: {0}\n", codecInfo.IsTrusted.ToString());
+
+                foreach (string subType in codecInfo.Subtypes)
+                {
+                    this.codecResultsTextBox.Text += string.Format("   Subtype: {0}\n", subType);
+                }
+            }
+            //</SnippetFindAllEncoders>
+
+
+            //<SnippetIsH264Supported>
+            IReadOnlyList<CodecInfo> h264Result = await codecQuery.FindAllAsync(CodecKind.Video, CodecCategory.Decoder, "H264");
+
+            if (h264Result.Count > 0)
+            {
+                this.codecResultsTextBox.Text = "H264 decoder is present.";
+            }
+            //</SnippetIsH264Supported>
+
+
+            //<SnippetIsFLACSupported>
+            IReadOnlyList<CodecInfo> flacResult = 
+                await codecQuery.FindAllAsync(CodecKind.Video, CodecCategory.Encoder, CodecSubtypes.AudioFormatFlac);
+
+            if (flacResult.Count > 0)
+            {
+                AudioEncodingProperties audioProps = new AudioEncodingProperties();
+                audioProps.Subtype = CodecSubtypes.AudioFormatFlac;
+                audioProps.SampleRate = 44100;
+                audioProps.ChannelCount = 2;
+                audioProps.Bitrate = 128000;
+                audioProps.BitsPerSample = 32;
+
+                MediaEncodingProfile encodingProfile = new MediaEncodingProfile();
+                encodingProfile.Audio = audioProps;
+                encodingProfile.Video = null;
+            }
+            //</SnippetIsFLACSupported>
         }
     }
 }
