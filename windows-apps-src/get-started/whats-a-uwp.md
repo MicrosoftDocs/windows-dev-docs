@@ -4,7 +4,7 @@ ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about the different types of Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
 ms.author: susanw
-ms.date: 02/08/2017
+ms.date: 03/22/2017
 ms.topic: article
 pms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,7 @@ What makes a UWP app special? Here are some of the characteristics that make UWP
 
     The Universal Windows Platform (UWP) core APIs are the same for all classes of Windows device. If your app uses only the core APIs, it will run on any Windows 10 device, no matter if you are targetting a desktop PC, an Xbox or a Mixed Reality headset.
 
--   **Extension SDKs make your app do cool stuff on specific device types.**
+-   **Extension SDKs let your app do cool stuff on specific device types.**
 
     Extension SDKs add specialized APIs for each device class. For example, if your UWP app targets HoloLens, you can add HoloLens features in addition to the normal UWP core APIs.
     If you target the universal APIs, your app package can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device specific APIs in the event it is running on a particular class of device, you can check at run-time if an API exists before calling it. 
@@ -42,7 +42,7 @@ What makes a UWP app special? Here are some of the characteristics that make UWP
 
     After you register as an app developer, you can submit your app to the store and make it available on all types device, or only those you choose. You submit and manage all your apps for Windows devices in one place.
 
- -   **Apps support adaptive controls and input**
+-   **Apps support adaptive controls and input**
 
     UI elements use *effective pixels* (see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/Dn958435)), so they can respond with a layout that works based on the number of screen pixels available on the device. And they work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you adapt your UI to the devices your app may run on.
 
@@ -56,7 +56,7 @@ UWP apps use the Windows Runtime, a native API built into the operating system. 
 -   DirectX UI and a C++ backend
 -   JavaScript and HTML
 
-Microsoft Visual Studio 2015 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Windows Store from within Visual Studio to get your app out to customers on any Windows 10 device.
+Microsoft Visual Studio 2017 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Windows Store from within Visual Studio to get your app out to customers on any Windows 10 device.
 
 ## UWP apps come to life on Windows
 
@@ -72,6 +72,12 @@ On Windows, your app can deliver relevant, real-time info to your users and keep
 -   Background execution and triggers bring your app to life just when the user needs it.
 
 -   Your app can use voice and Bluetooth LE devices to help users interact with the world around them.
+
+-   Support for rich, digital ink and the innovative Dial.
+
+-   Cortana adds personality to your software.
+
+-   XAML provides you with the tools to create smooth, animated user interfaces.
 
 Finally, you can use roaming data and the Windows Credential Locker to enable a consistent roaming experience across all of the Windows screens where users run your app. Roaming data gives you an easy way to store a user’s preferences and settings in the cloud, without having to build your own sync infrastructure. And you can store user credentials in the Credential Locker, where security and reliability are the top priority.
 
@@ -89,7 +95,7 @@ On Windows, you can choose how you'll monetize your app—across phones, tablets
 
 
 For a more detailed look at the UWP, read the [Guide to Universal Windows Platform apps](universal-application-platform-guide.md). 
-Then, check out [Get set up](get-set-up.md) to download the tools you need to start creating apps.
+Then, check out [Get set up](get-set-up.md) to download the tools you need to start creating apps, and then write [your first app](your-first-app.md)!
 
 
 ## More advanced topics
