@@ -142,10 +142,11 @@ and manifest information from your existing app installer (eg, an MSI)
 you
 
 If you want to use the [Desktop App Converter](https://aka.ms/converter), please refer to [the **Desktop to UWP Bridge: Desktop App Converter** topic on MSDN](https://aka.ms/converterdocs) 
-for more information on the conversion process. A complete example can be found **TODO: INSERT GITHUB LINK HERE**.
+for more information on the conversion process. A complete set of Desktop Converter samples can be found on [the **Desktop Bridge to UWP samples** GitHub repo](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
 
 If you want to manually create the package, you will need to create a directory structure that includes all your application's files (executables and content, but not source code) and 
-an `AppXManifest.xml` file. A complete example can be found **TODO: INSERT GITHUB LINK HERE**, but a basic `AppXManifest.xml` file that runs the Desktop executable named `ContosoDemo.exe` 
+an `AppXManifest.xml` file. An example can be found in [the **Hello, World** GitHub sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/blob/master/Samples/HelloWorldSample/CentennialPackage/AppxManifest.xml), 
+but a basic `AppXManifest.xml` file that runs the Desktop executable named `ContosoDemo.exe` 
 is as follows, where the <span style="background-color: yellow">highlighted text</span> would be replaced by your own values:
 
 <blockquote>
@@ -717,7 +718,7 @@ for the .NET resource subsystem.
 
 A concise example of how to use the WinRT APIs to locate satellite assemblies used by .NET is as follows; the code as-presented is intentionally compressed to show a minimal implementation, 
 although you can see it maps closely to the pseudo-code above, with the passed-in `ResolveEventArgs` providing the name of the assembly we need to locate. A runnable version of this code 
-(with detailed comments and error-handling) can be found in the file `PriResourceRsolver.cs` in the TODO: GET LINK TO GIT SAMPLE
+(with detailed comments and error-handling) can be found in the file `PriResourceRsolver.cs` in [the **.NET Assembly Resolver** sample on GitHub](https://aka.ms/fvgqt4).
 
 ```C#
 static class PriResourceResolver
@@ -829,9 +830,9 @@ packages directly.
 
 **Using the Bundle Generator tool**
 
-In order to use the Bundle Generator tool, the PRI config file created for the package needs to be manually updated to remove the `&lt;packaging&gt;` section.
+In order to use the Bundle Generator tool, the PRI config file created for the package needs to be manually updated to remove the `<packaging>` section.
 
-If you're using Visual Studio, refer to [the **Ensure that resources are installed…** topic on MSDN](https://msdn.microsoft.com/en-us/library/dn482043.aspx) for information on 
+If you're using Visual Studio, refer to [the **Ensure that resources are installed...** topic on MSDN](https://msdn.microsoft.com/en-us/library/dn482043.aspx) for information on 
 how to build all languages into the main package by creating the files `priconfig.packaging.xml` and `priconfig.default.xml`.
 
 If you're manually editing files, follow these steps: 
