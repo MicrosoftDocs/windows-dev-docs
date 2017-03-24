@@ -46,9 +46,6 @@ In the current release of the Microsoft advertising libraries in the Microsoft S
 
 The **AdControl** class no longer has **Latitude** and **Longitude** properties for UWP apps. Instead, code built into the ad control will detect and send these values to the ad servers on the app’s behalf.
 
-## Important notice
-
-Be sure to read the end user license agreement (EULA) in its entirety. See the topic [Important notice - EULA](important-notice-eula.md).
 
  
 

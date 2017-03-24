@@ -681,7 +681,6 @@
 ##### [Release notes](monetize/release-notes-for-the-advertising-libraries.md)
 ##### [Known issues](monetize/known-issues-for-the-advertising-libraries.md)
 ##### [Additional help](monetize/additional-help.md)
-##### [Important notice - EULA](monetize/important-notice-eula.md)
 #### [Developer information](monetize/developer-information.md)
 ##### [UI and user experience guidelines](monetize/ui-and-user-experience-guidelines.md)
 ##### [Test mode values](monetize/test-mode-values.md)
