@@ -51,7 +51,6 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
 8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from the Dev Center dashboard in the previous section.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 10. Save the code file and build the project.
@@ -74,7 +73,8 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
   9. Click the drop-down control again, choose **b**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **255**.  
 10. Click **Save** and then click **Activate**.
 
-> **Important**&nbsp;&nbsp;After you activate an experiment, you can no longer modify the experiment parameters unless it you clicked the **Editable experiment** check box when you created the experiment. Typically, we recommend that you code the experiment in your app before activating your experiment.
+> [!IMPORTANT]
+> After you activate an experiment, you can no longer modify the experiment parameters unless it you clicked the **Editable experiment** check box when you created the experiment. Typically, we recommend that you code the experiment in your app before activating your experiment.
 
 ## Run the app to gather experiment data
 
@@ -86,13 +86,15 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 
 Wait at least several hours after completing the previous section, and then follow these steps to review the results of your experiment and complete the experiment.
 
-> **Note**&nbsp;&nbsp;As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> [!NOTE]
+> As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
 
 1. In Dev Center, return to the **Experimentation** page for your app.
 2. In the **Active experiments** section, click **Optimize Button Clicks** to go to the page for this experiment.
 3. Confirm that the results shown in the **Results summary** and **Results details** sections matches what you expect to see. For more details about these sections, see [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md#review-the-results-of-your-experiment).
+    > [!NOTE]
+    > Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 
-  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 4. Now you are ready to end the experiment. In the **Results summary** section, in the **Variation B** column, click **Switch**. This switches all users of your app to the blue button.
 5. Click **OK** to confirm that you want to end the experiment.
 6. Run the **SampleExperiment** app you created in the previous section.
