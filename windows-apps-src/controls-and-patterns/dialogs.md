@@ -109,7 +109,7 @@ Light dismiss controls trap keyboard and gamepad focus inside the transient UI u
 ## Dialogs
 ### General guidelines
 
--   Clearly identify the issue or the user's objective in the first line of the dialog's text.
+d-   Clearly identify the issue or the user's objective in the first line of the dialog's text.
 -   The dialog title is the main instruction and is optional.
     -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
     -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
@@ -119,8 +119,7 @@ Light dismiss controls trap keyboard and gamepad focus inside the transient UI u
     -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
 -   At least one dialog button must appear.
     -   Buttons are the only mechanism for users to dismiss the dialog.
-    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
-	- Present the commit buttons in this order: 
+    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.	- Present the commit buttons in this order: 
 		-   OK/[Do it]/Yes
 		-   [Don't do it]/No
 		-   Cancel
@@ -150,7 +149,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
 
 ```csharp
-private async void DisplayNoWifiDialog()
+private async void displayNoWifiDialog()
 {
     ContentDialog noWifiDialog = new ContentDialog()
     {
@@ -168,7 +167,7 @@ When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com
 The dialog in this example asks a question and uses the returned [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to determine the user's response. 
 
 ```csharp
-private async void DisplayDeleteFileDialog()
+private async void displayDeleteFileDialog()
 {
     ContentDialog deleteFileDialog = new ContentDialog()
     {
