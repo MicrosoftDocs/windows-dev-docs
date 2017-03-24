@@ -93,7 +93,8 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 <li>Warnings and confirmations, including ones related to potentially destructive actions.</li>
 <li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
 </ul></p>
-  </div>
+
+</div>
 </div>
 </div>
 
@@ -118,7 +119,8 @@ Light dismiss controls trap keyboard and gamepad focus inside the transient UI u
     -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
 -   At least one dialog button must appear.
     -   Buttons are the only mechanism for users to dismiss the dialog.
-    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.	- Present the commit buttons in this order: 
+    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
+    -   Present the commit buttons in this order: 
 		-   OK/[Do it]/Yes
 		-   [Don't do it]/No
 		-   Cancel
