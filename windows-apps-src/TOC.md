@@ -111,7 +111,7 @@
 #### [Cortana](input-and-devices/cortana-interactions.md)
 ##### [Design guidelines](input-and-devices/cortana-design-guidelines.md)
 ##### [Launch a foreground app](input-and-devices/launch-a-foreground-app-with-voice-commands-in-cortana.md)
-##### [Modify VCD phrase lists](input-and-devices/dynamically-modify-voice-command-definition--vcd--phrase-lists.md)
+##### [Modify VCD phrase lists](input-and-devices/dynamically-modify-voice-command-definition-vcd-phrase-lists.md)
 ##### [Launch a background app](input-and-devices/launch-a-background-app-with-voice-commands-in-cortana.md)
 ##### [Interact with a background app](input-and-devices/interact-with-a-background-app-in-cortana.md)
 ##### [Deep link to a background app](input-and-devices/deep-link-into-your-app-from-cortana.md)
