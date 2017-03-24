@@ -53,9 +53,9 @@ Dialogs and flyouts are transient UI elements that appear when something happens
 * Don't use a flyout instead of [tooltip](tooltips.md) or [context menu](menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.  
 
 
-Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience. Because dialogs are modal (blocking), they interupt users, preventing them from doing anything else until they interact with the dialog. Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting. 
+Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience. Because dialogs are modal (blocking), they interrupt users, preventing them from doing anything else until they interact with the dialog. Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting. 
 
-Consider the importance of the information you want to share: is it important enough to interupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on. 
+Consider the importance of the information you want to share: is it important enough to interrupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on. 
 
 Flyouts and dialogs are frequently used to confirm an action (such as deleting a file) before executing it. If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time. 
 
@@ -79,7 +79,6 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
   <li>When the user is about to delete a valuable asset</li>
   <li>To confirm an in-app purchase</li>
 </ul>
-
 </li>
 <li>Error messages that apply to the overall app context, such as a connectivity error.</li>
 <li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
@@ -90,11 +89,12 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
    <p><b>Use a flyout for...</b> <br/>
 <ul>
 <li>Collecting additional information needed before an action can be completed.</li>
-<li>Displaying info that's only relevent some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
+<li>Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
 <li>Warnings and confirmations, including ones related to potentially destructive actions.</li>
 <li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
 </ul></p>
-  </div>
+
+</div>
 </div>
 </div>
 
@@ -102,7 +102,7 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 Light dismiss controls trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the new `LightDismissOverlayMode` property. By default, transient UIs will draw the light dismiss overlay on Xbox but not other device families, but apps can choose to force the overlay to be always **On** or always **Off**.
 
 ```xaml
-<MenuFlyout LightDismissOverlayMode=\"Off\">
+<MenuFlyout LightDismissOverlayMode="Off">
 ```
 </div>
 
@@ -120,7 +120,7 @@ Light dismiss controls trap keyboard and gamepad focus inside the transient UI u
 -   At least one dialog button must appear.
     -   Buttons are the only mechanism for users to dismiss the dialog.
     -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
-	- Present the commit buttons in this order: 
+    -   Present the commit buttons in this order: 
 		-   OK/[Do it]/Yes
 		-   [Don't do it]/No
 		-   Cancel
@@ -144,7 +144,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
     </li>
 </ul>
 
-> Some platforms put the affirmation button on the right instead of the left. So why do we recommend putting it on the left?  If you assume that the majority of users are right-handed and they hold their phone with that hand, it's actually more comfortable to press the affirmation button when it's on the left, because the button is more likely to be within the user's thumb-arc. Buttons on the right-side of the screen require the user to pull their thumb inward into an less-comfortable position.
+> Some platforms put the affirmation button on the right instead of the left. So why do we recommend putting it on the left?  If you assume that the majority of users are right-handed and they hold their phone with that hand, it's actually more comfortable to press the affirmation button when it's on the left, because the button is more likely to be within the user's thumb-arc. Buttons on the right-side of the screen require the user to pull their thumb inward into a less-comfortable position.
 
 ### Create a dialog
 To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
@@ -289,8 +289,7 @@ To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/
 <Flyout>
   <Flyout.FlyoutPresenterStyle>
     <Style TargetType="FlyoutPresenter">
-      <Setter Property="ScrollViewer.HorizontalScrollMode" 
-          Value="Disabled"/>
+      <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Disabled"/>
       <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
       <Setter Property="IsTabStop" Value="True"/>
       <Setter Property="TabNavigation" Value="Cycle"/>
