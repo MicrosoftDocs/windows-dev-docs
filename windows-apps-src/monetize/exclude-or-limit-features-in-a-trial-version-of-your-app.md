@@ -14,7 +14,8 @@ ms.technology: uwp
 # Exclude or limit features in a trial version
 
 
->**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to implement a trial version instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [Implement a trial version of your app](implement-a-trial-version-of-your-app.md).
+> [!NOTE]
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to implement a trial version instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [Implement a trial version of your app](implement-a-trial-version-of-your-app.md).
 
 If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. Determine which features should be limited before you begin coding, then make sure that your app only allows them to work when a full license has been purchased. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
@@ -101,7 +102,8 @@ If this path and file don't exist, you must create them, either during installat
 
 After you test your app with the simulated license server, and before you submit your app to a Store for certification, replace **CurrentAppSimulator** with **CurrentApp**, as shown in the next code sample.
 
->**Important**&nbsp;&nbsp;Your app must use the **CurrentApp** object when you submit your app to a Store or it will fail certification.
+> [!IMPORTANT]
+> Your app must use the **CurrentApp** object when you submit your app to a Store or it will fail certification.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
