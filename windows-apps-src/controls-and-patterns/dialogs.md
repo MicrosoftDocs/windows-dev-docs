@@ -79,7 +79,6 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
   <li>When the user is about to delete a valuable asset</li>
   <li>To confirm an in-app purchase</li>
 </ul>
-
 </li>
 <li>Error messages that apply to the overall app context, such as a connectivity error.</li>
 <li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
@@ -109,7 +108,7 @@ Light dismiss controls trap keyboard and gamepad focus inside the transient UI u
 ## Dialogs
 ### General guidelines
 
-d-   Clearly identify the issue or the user's objective in the first line of the dialog's text.
+-   Clearly identify the issue or the user's objective in the first line of the dialog's text.
 -   The dialog title is the main instruction and is optional.
     -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
     -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
