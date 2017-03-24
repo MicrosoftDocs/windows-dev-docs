@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ---
-                                    
+
 # Create an experiment project in the dashboard
 
 To get started with experimentation, create an experimentation [project](run-app-experiments-with-a-b-testing.md#terms) for your app in the Dev Center dashboard and define the remote variables that your app can access.
@@ -30,7 +30,8 @@ The following instructions describe the core steps to create a project. For a de
   3. When you are done adding variables, click **Save**.
 3. In the **SDK integration** section, make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this project ID in your code so you can receive variation data and report view and conversion events to Dev Center.
 
->**Note**&nbsp;&nbsp;You cannot edit, add, or remove remote variables while an experiment in the project is active. This limitation helps protect the integrity of the data for the control group for the active experiment.
+> [!NOTE]
+> You cannot edit, add, or remove remote variables while an experiment in the project is active. This limitation helps protect the integrity of the data for the control group for the active experiment.
 
 
 ## Next steps

@@ -22,7 +22,8 @@ To add this behavior to your app, you'll use APIs provided by the Microsoft Stor
 
 The following sections describe the general process of getting variations for your experiment and logging events to Dev Center. After you code your app for experimentation, you can [define an experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md). For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
 
->**Note**&nbsp;&nbsp;Some of the experimentation APIs in the Windows Store Services SDK use the [asynchronous pattern](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) to retrieve data from Dev Center. This means that part of the execution of these methods may take place after the methods are invoked, so your app's UI can remain responsive while the operations complete. The asynchronous pattern requires your app to use the **async** keyword and **await** operator when calling the APIs, as demonstrated by the code examples in this article. By convention, asynchronous methods end with **Async**.
+> [!NOTE]
+> Some of the experimentation APIs in the Windows Store Services SDK use the [asynchronous pattern](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) to retrieve data from Dev Center. This means that part of the execution of these methods may take place after the methods are invoked, so your app's UI can remain responsive while the operations complete. The asynchronous pattern requires your app to use the **async** keyword and **await** operator when calling the APIs, as demonstrated by the code examples in this article. By convention, asynchronous methods end with **Async**.
 
 ## Configure your project
 
@@ -34,7 +35,8 @@ To get started, install the Microsoft Store Services SDK on your development com
 3. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
 4. In the list of SDKs, select the check box next to **Microsoft Engagement Framework** and click **OK**.
 
->**Note**&nbsp;&nbsp;The code examples in this article assume that your code file has **using** statements for the **System.Threading.Tasks** and **Microsoft.Services.Store.Engagement** namespaces.
+> [!NOTE]
+> The code examples in this article assume that your code file has **using** statements for the **System.Threading.Tasks** and **Microsoft.Services.Store.Engagement** namespaces.
 
 ## Get variation data and log the view event for your experiment
 
@@ -51,7 +53,8 @@ The following steps describe the important parts of this process in detail.
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 1. Declare a string variable that is assigned to the [project ID](run-app-experiments-with-a-b-testing.md#terms) for the experiment you want to retrieve.
-  >**Note**&nbsp;&nbsp;You obtain a project ID when you [create a project in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). The project ID shown below is for example purposes only.
+  > [!NOTE]
+  > You obtain a project ID when you [create a project in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). The project ID shown below is for example purposes only.
 
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
