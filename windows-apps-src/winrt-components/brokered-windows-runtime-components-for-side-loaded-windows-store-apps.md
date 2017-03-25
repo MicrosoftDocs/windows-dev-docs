@@ -177,7 +177,7 @@ namespace Fabrikam
             throw new NotImplementedException();
         }
         
-        public event EventHandler&lt;string&gt; PeriodicEvent;
+        public event EventHandler<string> PeriodicEvent;
     }
 }
 ```

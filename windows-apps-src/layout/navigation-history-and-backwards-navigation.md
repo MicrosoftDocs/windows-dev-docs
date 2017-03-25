@@ -110,7 +110,7 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
-        this, &amp;App::App_BackRequested);
+        this, &App::App_BackRequested);
 ```
 
 Here's the corresponding [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event handler that calls [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) on the root frame of the app.
@@ -128,7 +128,7 @@ This handler is invoked on a global back event. If the in-app back stack is empt
 >
 >    // Navigate back if possible, and if the event has not 
 >    // already been handled .
->    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    if (rootFrame.CanGoBack && e.Handled == false)
 >    {
 >        e.Handled = true;
 >        rootFrame.GoBack();

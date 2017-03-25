@@ -64,36 +64,23 @@ You can use various types of constraints when performing speech recognition:
 
     First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
-```    CSharp
-private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
+    ```    CSharp
+    private static uint HResultPrivacyStatementDeclined = 0x80045509;
+    ```
 
     We then catch any standard exceptions during recogntion and test if the [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
 
     
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-catch (Exception exception)
+    ```    CSharp
+    catch (Exception exception)
     {
       // Handle the speech privacy policy error.
       if ((uint)exception.HResult == HResultPrivacyStatementDeclined)
       {
         resultTextBlock.Visibility = Visibility.Visible;
-        resultTextBlock.Text = "The privacy statement was declined. 
-          Go to Settings -> Privacy -> Speech, inking and typing, and ensure you 
-          have viewed the privacy policy, and &#39;Get To Know You&#39; is enabled.";
+        resultTextBlock.Text = "The privacy statement was declined." + 
+          "Go to Settings -> Privacy -> Speech, inking and typing, and ensure you" +
+          "have viewed the privacy policy, and 'Get To Know You' is enabled.";
         // Open the privacy/speech, inking, and typing settings page.
         await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts")); 
       }
@@ -103,7 +90,7 @@ catch (Exception exception)
         await messageDialog.ShowAsync();
       }
     }
-```
+    ```
 
 2.  **Programmatic list constraints** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
 
@@ -191,7 +178,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
     speechRecognizer.UIOptions.AudiblePrompt = "Say what you want to search for...";
-    speechRecognizer.UIOptions.ExampleText = @"Ex. &#39;weather for London&#39;";
+    speechRecognizer.UIOptions.ExampleText = "Ex. 'weather for London'";
     speechRecognizer.Constraints.Add(webSearchGrammar);
 
     // Compile the constraint.

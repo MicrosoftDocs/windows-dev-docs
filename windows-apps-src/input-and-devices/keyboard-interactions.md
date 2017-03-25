@@ -473,7 +473,7 @@ Note also that the page sets input focus to itself when it is loaded. Without th
 void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
 {
     (void) e;    // Unused parameter
-    this->Loaded+=ref new RoutedEventHandler(this,&amp;MainPage::ProgrammaticFocus);
+    this->Loaded+=ref new RoutedEventHandler(this, &MainPage::ProgrammaticFocus);
 }
 void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) {
     this->Focus(Windows::UI::Xaml::FocusState::Programmatic);

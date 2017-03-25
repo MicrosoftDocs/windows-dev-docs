@@ -147,7 +147,7 @@ public MainPage()
                 }
                 else
                 {
-                    // File couldn&#39;t be saved.
+                    // File couldn't be saved.
                 }
             }
             // User selects Cancel and picker returns null.
