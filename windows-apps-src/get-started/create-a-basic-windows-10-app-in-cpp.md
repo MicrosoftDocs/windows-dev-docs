@@ -4,7 +4,7 @@ ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Create a Hello World app in C++ (Windows 10)
 description: With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 # Create a "Hello world" app in C++
 
-With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
+With Microsoft Visual Studio 2017, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
 > [!NOTE]
 > This tutorial is using Visual Studio Community 2017. If you are using a different version of Visual Studio, it may look a little different for you.
@@ -284,7 +284,7 @@ It's easy to customize the look and feel of your app. By default, your app uses 
 2.  In the opening [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag, edit the [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
 
     ```xaml
-    RequestedTheme="Light"
+    RequestedTheme="Dark"
     ```
 
     Here's the full [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag with the dark theme :
@@ -337,12 +337,12 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
 
     ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="300" HorizontalAlignment="Left"/>
             <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
         </StackPanel>
-        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
+        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="18" x:Name="greetingOutput"/>
     </StackPanel>
     ```
 
