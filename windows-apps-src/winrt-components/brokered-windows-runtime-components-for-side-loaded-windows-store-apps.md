@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-title: Windows Runtime components
+title: Brokered Windows Runtime Components for a side-loaded Windows Store app
 description: This paper discusses an enterprise-targeted feature supported by Windows 10, which allows touch-friendly .NET apps to use the existing code responsible for key business-critical operations.
 ms.author: misatran
 ms.date: 02/08/2017
