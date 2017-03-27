@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, games, technology, directx
 ---
 
-# Game technologies for Universal Windows Platform (UWP) apps
+# Game technologies for UWP apps
 
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
