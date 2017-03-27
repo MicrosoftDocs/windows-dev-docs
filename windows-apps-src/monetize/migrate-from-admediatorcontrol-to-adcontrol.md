@@ -35,7 +35,6 @@ When you migrate your code to use the **AdControl** class, you must know your ap
 4. In the file, locate the ```<AdAdapterInfo>``` element with the child element ```<Name>MicrosoftAdvertising</Name>```. This section contains the configuration for Microsoft paid ads.
 5. In this ```<AdAdapterInfo>``` element, locate the ```<Property>``` elements that contain ```<Key>``` elements with the values **WApplicationId** and **WAdUnitId**. In the example below, the values of the ```<Value>``` elements are examples.
 
-  > [!div class="tabbedCodeSnippets"]
   ```xml
   <Metadata>
       <Property>
@@ -52,7 +51,6 @@ When you migrate your code to use the **AdControl** class, you must know your ap
 6. Copy both of the values in these ```<Value>``` elements for use later. These values contain the application ID and ad unit ID for the non-mobile ad unit for Microsoft paid ads.
 5. In the same ```<AdAdapterInfo>``` element, locate the ```<Property>``` elements that contain ```<Key>``` elements with the values **MApplicationId** and **MAdUnitId**. In the example below, the values of the ```<Value>``` elements are examples.
 
-  > [!div class="tabbedCodeSnippets"]
   ```xml
   <Metadata>
       <Property>
@@ -88,12 +86,10 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 5. Open the code file for the app **Page** on which you want to display ads.
 6. Add the following statement to the top of the code file, if it does not already exist.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[TrialVersion](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet1)]
 
 7. Add the following constant declarations to your **Page** class.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[TrialVersion](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet2)]
 
 7. For each of these constant declarations, replace the values as described below:
@@ -104,12 +100,10 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 
 8. Add the following variable declarations to your **Page** class.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet3)]
 
 5. Add the following code to your **Page** class constructor, after the call to the **InitializeComponent()** method.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet4)]
 
 ### Microsoft paid ads, house ads, and AdDuplex
@@ -126,12 +120,10 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 5. Open the code file for the app **Page** on which you want to display ads.
 6. Add the following statements to the top of the code file, if they do not already exist.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet1)]
 
 7. Add the following constant declarations to your **Page** class.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet2)]
 
 4. For these constant declarations, replace the values as described below:
@@ -148,15 +140,12 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 
 5. Add the following variable declarations to your **Page** class.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet3)]
 
 5. Add the following code to your **Page** class constructor, after the call to the **InitializeComponent()** method.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet4)]
 
 6. Finally, add the following methods to your **Page** class. These methods instantiate the Microsoft **AdControl** and AdDuplex **AdControl** objects, and they use a random number generator in conjunction with given weight values to refresh banner ads in these controls at regular timer intervals.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]

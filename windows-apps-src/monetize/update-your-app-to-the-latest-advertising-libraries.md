@@ -79,7 +79,6 @@ If your app uses **AdControl** to display banner ads, follow these instructions.
 
 2. Open Windows PowerShell, enter the following command, and assign the ```-Path``` argument to the full path to the extracted contents of your app package. This command displays all the advertising libraries that are referenced by your project and the version of each library.
 
-  > [!div class="tabbedCodeSnippets"]
   ```syntax
   get-childitem -Path "<path to your extracted package>" * -Recurse -include *advert*.dll,*admediator*.dll,*xamladcontrol*.dll,*universalsharedlibrary*.dll | where-object {$_.Name -notlike "*resources*" -and $_.Name -notlike "*design*" } | foreach-object { "{0}`t{1}" -f $_.FullName, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
   ```
@@ -162,7 +161,6 @@ If your app uses **AdMediatorControl** to display banner ads, follow these instr
 
 2. Open Windows PowerShell, enter the following command, and assign the ```-Path``` argument to the full path to the extracted contents of your app package. This command displays all the advertising libraries that are referenced by your project and the version of each library.
 
-  > [!div class="tabbedCodeSnippets"]
   ```syntax
   get-childitem -Path "<path to your extracted package>" * -Recurse -include *advert*.dll,*admediator*.dll,*xamladcontrol*.dll,*universalsharedlibrary*.dll | where-object {$_.Name -notlike "*resources*" -and $_.Name -notlike "*design*" } | foreach-object { "{0}`t{1}" -f $_.FullName, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).FileVersion }
   ```
@@ -184,7 +182,6 @@ If your app uses an old SDK release, follow these instructions to make sure you 
 
 2.	Open a **Command Prompt** window and run these commands to clean out any SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
 
-  > [!div class="tabbedCodeSnippets"]
   ```syntax
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}

@@ -70,39 +70,32 @@ This section provides C# examples, but Visual Basic and C++ are also supported f
 
 3.  In the appropriate code file in your app (for example, in MainPage.xaml.cs or a code file for some other page), add the following namespace reference.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
 
 4.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and several string fields that represent the application ID and ad unit ID for your interstitial ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the test values for interstitial video ads provided in [Test mode values](test-mode-values.md). These values are only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
 
 5.  In code that runs on startup (for example, in the constructor for the page), instantiate the **InterstitialAd** object and wire up event handlers for events of the object.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
 
 6.  If you want to show an *interstitial video* ad: Approximately 30-60 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType.Video** for the ad type.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
 
   If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType.Display** for the ad type. This value is available starting in version 10.0.2 of the Microsoft Store Services SDK.
 
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   myInterstitialAd.RequestAd(AdType.Display, myAppId, myAdUnitId);
   ```
 
 6.  At the point in your code where you want to show the interstitial video or interstitial banner ad, confirm that the **InterstitialAd** is ready to be shown and then show it by using the [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) method.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
 
 7.  Define the event handlers for the **InterstitialAd** object.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
 
 8.  Build and test your app to confirm it is showing test ads.
@@ -124,36 +117,30 @@ The following instructions assume you have created a Universal Windows project f
 
 3.  In the **&lt;head&gt;** section of the HTML file in the project, after the project’s JavaScript references of default.css and default.js, add the reference to ad.js. In a UWP project, add the following reference.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
   ```
 
   In a Windows 8.1 or Windows Phone 8.1 project, add the following reference.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <script src="/MSAdvertisingJS/ads/ad.js"></script>
   ```
 
 4.  In a .js file in your project, declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and several fields that contain the application ID and ad unit ID for your interstitial ad. The following code example assigns the `applicationId` and `adUnitId` fields to the test values for interstitial video ads provided in [Test mode values](test-mode-values.md). These values are only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
 
 5.  In code that runs on startup (for example, in the constructor for the page), instantiate the **InterstitialAd** object and wire up event handlers for the object.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
 
 5. If you want to show an *interstitial video* ad: Approximately 30-60 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **InterstitialAdType.video** for the ad type.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
 
   If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **InterstitialAdType.display** for the ad type. This value is available starting in version 10.0.2 of the Microsoft Store Services SDK.
 
-  > [!div class="tabbedCodeSnippets"]
   ```js
   if (interstitialAd) {
       interstitialAd.requestAd(MicrosoftNSJS.Advertising.InterstitialAdType.display, applicationId, adUnitId);
@@ -162,12 +149,10 @@ The following instructions assume you have created a Universal Windows project f
 
 6.  At the point in your code where you want to show the ad, confirm that the **InterstitialAd** is ready to be shown and then show it by using the [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) method.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet4)]
 
 7.  Define the event handlers for the **InterstitialAd** object.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet5)]
 
 9.  Build and test your app to confirm it is showing test ads.
@@ -189,44 +174,36 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 
 2.  In an appropriate header file for your app (for example, DirectXPage.xaml.h), declare an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) object and related event handler methods.  
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
 
 3.  In the same header file, declare several string fields that represent the application ID and ad unit ID for your interstitial ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the test values for interstitial video ads provided in [Test mode values](test-mode-values.md). These values are only used for testing; you must replace them with live values from Windows Dev Center before you publish your app.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
 
 4.  In the .cpp file where you want to add code to show an interstitial ad, add the following namespace reference. The following examples assume you are adding the code to DirectXPage.xaml.cpp file in your app.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
 
 6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **InterstitialAd** object and wire up event handlers for events of the object. In the following example, ```InterstitialAdSamplesCpp``` is the namespace for your project; change this name as necessary for your code.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
 
 7. If you want to show an *interstitial video* ad: Approximately 30-60 seconds before you need the interstitial ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType::Video** for the ad type.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
 
   If you want to show an *interstitial banner* ad (for UWP apps only): Approximately 5-8 seconds before you need the ad, use the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method to pre-fetch the ad. This allows enough time to request and prepare the ad before it should be shown. Be sure to specify **AdType::Display** for the ad type. This value is available starting in version 10.0.2 of the Microsoft Store Services SDK.
 
-  > [!div class="tabbedCodeSnippets"]
   ```cpp
   m_interstitialAd->RequestAd(AdType::Display, myAppId, myAdUnitId);
   ```
 
 7.  At the point in your code where you want to show the ad, confirm that the **InterstitialAd** is ready to be shown and then show it by using the [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) method.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet6)]
 
 8.  Define the event handlers for the **InterstitialAd** object.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet7)]
 
 9. Build and test your app to confirm it is showing test ads.

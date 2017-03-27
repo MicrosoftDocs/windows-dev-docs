@@ -82,7 +82,6 @@ To create a submission for an add-on, follow this process.
 
 3. Execute the following method in the Windows Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission. For more information, see [Create an add-on submission](create-an-add-on-submission.md).
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
   ```
@@ -95,7 +94,6 @@ To create a submission for an add-on, follow this process.
 
 5. Update the submission data with any required changes for the new submission, and execute the following method to update the submission. For more information, see [Update an add-on submission](update-an-add-on-submission.md).
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
@@ -113,7 +111,6 @@ To create a submission for an add-on, follow this process.
 
   The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
@@ -123,14 +120,12 @@ To create a submission for an add-on, follow this process.
 
 5. Commit the submission by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account. For more information, see [Commit an add-on submission](commit-an-add-on-submission.md).
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
   ```
 
 6. Check on the commit status by executing the following method. For more information, see [Get the status of an add-on submission](get-status-for-an-add-on-submission.md).
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
   ```

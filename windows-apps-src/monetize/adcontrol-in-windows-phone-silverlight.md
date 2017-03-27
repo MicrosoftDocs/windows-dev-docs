@@ -29,14 +29,12 @@ To get started, download and install the NuGet package that contains the Microso
 
   * If your project targets Windows Phone 8.0, enter this command.
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
   * If your project targets Windows Phone 8.1, enter this command.
 
-      > [!div class="tabbedCodeSnippets"]
       ```syntax
       Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
       ```
@@ -48,7 +46,6 @@ To get started, download and install the NuGet package that contains the Microso
 
 1.  Add the following capabilities to the in the **Capabilities** node in your WMAppManifest.xml file.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capability Name="ID_CAP_IDENTITY_USER"/>
   <Capability Name="ID_CAP_MEDIALIB_PHOTO"/>
@@ -57,7 +54,6 @@ To get started, download and install the NuGet package that contains the Microso
 
   For this example, your **Capabilities** node looks like:
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
@@ -83,14 +79,12 @@ To get started, download and install the NuGet package that contains the Microso
 
 5.  Modify the Silverlight markup in the MainPage.xaml file to include the **Microsoft.Advertising.Mobile.UI** namespace.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
   ```
 
   The header of your page will have the following code:
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
@@ -101,7 +95,6 @@ To get started, download and install the NuGet package that contains the Microso
 
   > **Note**&nbsp;&nbsp;You will replace the test **ApplicationId** and **AdUnitId** values with live values before submitting your app for submission.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   <Grid x:Name="ContentPanel" Grid.Row="1">
       <UI:AdControl
