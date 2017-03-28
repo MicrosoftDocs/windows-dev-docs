@@ -77,16 +77,6 @@ Universal Windows Platform (UWP) apps can run all supported task types without b
 -   Write background tasks that are short-lived. Background tasks are limited to 30 seconds of wall-clock usage.
 -   Do not rely on user interaction in background tasks.
 
-## Windows: Background task checklist for lock screen-capable apps
-
-Follow this guidance when developing background tasks for apps that are capable of being on the lock screen. Follow the guidance in [Guidelines and checklist for lock screen tiles](https://msdn.microsoft.com/library/windows/apps/hh465403).
-
--   Make sure your app needs to be on the lock screen before developing it as lock screen-capable. For more info see [Lock screen overview](https://msdn.microsoft.com/library/windows/apps/hh779720).
-
--   Make sure your app will still work without being on the lock screen.
-
--   Include a background task registered with [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), or [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) and declare it in the app manifest. Make sure the entry point and trigger types are correct. This is required for certification, and enables the user to place the app on the lock screen.
-
 **Note**  
 This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
