@@ -711,6 +711,7 @@
 #### [Troubleshooting guides](monetize/troubleshooting-guides.md)
 ##### [HTML and JavaScript troubleshooting guide](monetize/html-and-javascript-troubleshooting-guide.md)
 ##### [XAML and C# troubleshooting guide](monetize/xaml-and-c-troubleshooting-guide.md)
+### [Send requests to the Store](monetize/send-requests-to-the-store.md)
 ### [Windows Store services](monetize/using-windows-store-services.md)
 #### [Access analytics data](monetize/access-analytics-data-using-windows-store-services.md)
 ##### [Get app acquisitions](monetize/get-app-acquisitions.md)
