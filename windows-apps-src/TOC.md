@@ -66,8 +66,6 @@
 #### [Inverted lists](controls-and-patterns/inverted-lists.md)
 #### [Pull-to-refresh](controls-and-patterns/pull-to-refresh.md)
 #### [Nested UI](controls-and-patterns/nested-ui.md)
-### [Map control](maps-and-location/controls-map.md)
-#### [Display maps](maps-and-location/display-maps.md)
 ### [Master/details](controls-and-patterns/master-details.md)
 ### [Media playback](controls-and-patterns/media-playback.md)
 #### [Custom transport controls](controls-and-patterns/custom-transport-controls.md)
