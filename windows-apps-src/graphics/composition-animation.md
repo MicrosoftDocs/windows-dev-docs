@@ -668,7 +668,7 @@ implicitAnimationCollection["Offset"] = animationGroup;
 ### Using Animation Groups with Explicit Animations  
 Developers can create explicit animations such that the individual animations added will start when **StartAnimationGroup** is called. Note, that in this **StartAnimation** call, there is no targeted property for the group as individual animations could be targeting different properties. Ensure that the target property for each animation is set.  
 ```csharp
-visual.StartAnimationGourp(AnimationGroup);
+visual.StartAnimationGroup(AnimationGroup);
 ```  
 
 ### E2E sample 
