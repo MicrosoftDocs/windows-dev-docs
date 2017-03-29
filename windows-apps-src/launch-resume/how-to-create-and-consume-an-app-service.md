@@ -191,69 +191,68 @@ The app service provider app must be deployed before you can call it from a clie
 
    ```cs
    private AppServiceConnection inventoryService;
-    private async void button_Click(object sender, RoutedEventArgs e)
-    {
-        // Add the connection.
-        if (this.inventoryService == null)
-        {
-            this.inventoryService = new AppServiceConnection();
+   private async void button_Click(object sender, RoutedEventArgs e)
+   {
+       // Add the connection.
+       if (this.inventoryService == null)
+       {
+           this.inventoryService = new AppServiceConnection();
 
-            // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section.
-            this.inventoryService.AppServiceName = "com.microsoft.inventory";
+           // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section.
+           this.inventoryService.AppServiceName = "com.microsoft.inventory";
 
-            // Use Windows.ApplicationModel.Package.Current.Id.FamilyName within the app service provider to get this value.
-            this.inventoryService.PackageFamilyName = "replace with the package family name";
+           // Use Windows.ApplicationModel.Package.Current.Id.FamilyName within the app service provider to get this value.
+           this.inventoryService.PackageFamilyName = "replace with the package family name";
 
-            var status = await this.inventoryService.OpenAsync();
-            if (status != AppServiceConnectionStatus.Success)
-            {
-                button.Content = "Failed to connect";
-                return;
-            }
-        }
+           var status = await this.inventoryService.OpenAsync();
+           if (status != AppServiceConnectionStatus.Success)
+           {
+               button.Content = "Failed to connect";
+               return;
+           }
+       }
 
-        // Call the service.
-        int idx = int.Parse(textBox.Text);
-        var message = new ValueSet();
-        message.Add("Command", "Item");
-        message.Add("ID", idx);
-        AppServiceResponse response = await this.inventoryService.SendMessageAsync(message);
-        string result = "";
+       // Call the service.
+       int idx = int.Parse(textBox.Text);
+       var message = new ValueSet();
+       message.Add("Command", "Item");
+       message.Add("ID", idx);
+       AppServiceResponse response = await this.inventoryService.SendMessageAsync(message);
+       string result = "";
 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            // Get the data  that the service sent  to us.
-            if (response.Message["Status"] as string == "OK")
-            {
-                result = response.Message["Result"] as string;
-            }
-        }
+       if (response.Status == AppServiceResponseStatus.Success)
+       {
+           // Get the data  that the service sent  to us.
+           if (response.Message["Status"] as string == "OK")
+           {
+               result = response.Message["Result"] as string;
+           }
+       }
 
-        message.Clear();
-        message.Add("Command", "Price");
-        message.Add("ID", idx);
-        response = await this.inventoryService.SendMessageAsync(message);
+       message.Clear();
+       message.Add("Command", "Price");
+       message.Add("ID", idx);
+       response = await this.inventoryService.SendMessageAsync(message);
 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            // Get the data that the service sent to us.
-            if (response.Message["Status"] as string == "OK")
-            {
-                result += " : Price = " + response.Message["Result"] as string;
-            }
-        }
+       if (response.Status == AppServiceResponseStatus.Success)
+       {
+           // Get the data that the service sent to us.
+           if (response.Message["Status"] as string == "OK")
+           {
+               result += " : Price = " + response.Message["Result"] as string;
+           }
+       }
 
-        button.Content = result;
-    }
-    ```
+       button.Content = result;
+   }
+   ```
+Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].
 
-    Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].
+The code first establishes a connection with the app service. The connection will remain open until you dispose **this.inventoryService**. The app service name must match the **AppService Name** attribute that you added to the AppServiceProvider project's Package.appxmanifest file. In this example, it is `<uap:AppService Name="com.microsoft.inventory"/>`.
 
-    The code first establishes a connection with the app service. The connection will remain open until you dispose **this.inventoryService**. The app service name must match the **AppService Name** attribute that you added to the AppServiceProvider project's Package.appxmanifest file. In this example, it is `<uap:AppService Name="com.microsoft.inventory"/>`.
+A [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) named **message** is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the textbox in the ClientApp, and then call the service with the "Item" command to get the description of the item. Then, we make the call with the "Price" command to get the item's price. The button text is set to the result.
 
-    A [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) named **message** is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the textbox in the ClientApp, and then call the service with the "Item" command to get the description of the item. Then, we make the call with the "Price" command to get the item's price. The button text is set to the result.
-
-    Because [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) only indicates whether the operating system was able to connect the call to the app service, we check the "Status" key in the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) we receive from the app service to ensure that it was able to fulfill the request.
+Because [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) only indicates whether the operating system was able to connect the call to the app service, we check the "Status" key in the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) we receive from the app service to ensure that it was able to fulfill the request.
 
 6.  In Visual Studio, set the ClientApp project to be the startup project in the Solution Explorer window and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
 
