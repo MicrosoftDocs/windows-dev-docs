@@ -436,7 +436,7 @@ We can modify the example directly above, such that a property set is used to de
 ```cs
 _sharedProperties = _compositor.CreatePropertySet();
 _sharedProperties.InsertVector3("commonOffset", offset);
-var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + sharedProperties.commonOffset);
+var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + sharedProperties.commonOffset");
 expression.SetVector3Parameter("SomeOffset", childVisual.Offset);
 expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetReferenceParameter("sharedProperties", _sharedProperties);
@@ -617,8 +617,8 @@ exp.SetReferenceParameter("ScrollManipulation", manipPropSet);
 
 After setting up the reference parameter, you can reference the ManipulationPropertySet properties in the Expression.  
 ```csharp
-exp.Expression = “ScrollManipulation.Translation.Y / ScrollBounds”;
-_target.StartAnimation(“Opacity”, exp);
+exp.Expression = "ScrollManipulation.Translation.Y / ScrollBounds";
+_target.StartAnimation("Opacity", exp);
 ```
 
 ## Using Implicit Animations  
