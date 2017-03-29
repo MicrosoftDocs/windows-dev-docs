@@ -50,28 +50,27 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 6. Drag a **Button** from **Toolbox** to the page.
 7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
 8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from the Dev Center dashboard in the previous section.
+    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
-  [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
-
-10. Save the code file and build the project.
+9. Save the code file and build the project.
 
 ## Create the experiment in Windows Dev Center
 
 1. Return to the **Button Click Experiments** project page in the Windows Dev Center dashboard.
 2. In the **Experiments** section, click the **New experiment** button.
-5. In the **Experiment details** section, type the name **Optimize Button Clicks** in the **Experiment name** field.
-6. In the **View event** section, type **userViewedButton** in the **View event name** field. Note that this name matches the view event string that you logged in the code you added in the previous section.
-7. In the **Goals and conversion events** section, enter the following values:
+3. In the **Experiment details** section, type the name **Optimize Button Clicks** in the **Experiment name** field.
+4. In the **View event** section, type **userViewedButton** in the **View event name** field. Note that this name matches the view event string that you logged in the code you added in the previous section.
+5. In the **Goals and conversion events** section, enter the following values:
   * In the **Goal name** field, type **Increase Button Clicks**.
   * In the **Conversion event name** field, type the name **userClickedButton**. Note that this name matches the conversion event string that you logged in the code you added in the previous section.
   * In the **Objective** field, choose **Maximize**.
-8. In the **Remote variables and variations** section, confirm that the **Distribute equally** check box is selected so that the variations will be distributed equally to your app.
-9. Add variables to your experiment:
-  9. Click the drop-down control, choose **buttonText**, and click **Add variable**. The string **Grey Button** should automatically appear in the **Variation A** column (this value is derived from the project settings). In the **Variation B** column, type **Blue Button**.
-  9. Click the drop-down control again, choose **r**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.
-  9. Click the drop-down control again, choose **g**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.  
-  9. Click the drop-down control again, choose **b**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **255**.  
-10. Click **Save** and then click **Activate**.
+6. In the **Remote variables and variations** section, confirm that the **Distribute equally** check box is selected so that the variations will be distributed equally to your app.
+7. Add variables to your experiment:
+    1. Click the drop-down control, choose **buttonText**, and click **Add variable**. The string **Grey Button** should automatically appear in the **Variation A** column (this value is derived from the project settings). In the **Variation B** column, type **Blue Button**.
+    2. Click the drop-down control again, choose **r**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.
+    3. Click the drop-down control again, choose **g**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.  
+    4. Click the drop-down control again, choose **b**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **255**.  
+8. Click **Save** and then click **Activate**.
 
 > [!IMPORTANT]
 > After you activate an experiment, you can no longer modify the experiment parameters unless it you clicked the **Editable experiment** check box when you created the experiment. Typically, we recommend that you code the experiment in your app before activating your experiment.

@@ -30,10 +30,10 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
     > [!NOTE]
     > Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers). Editing an experiment while it is active will invalidate the experiment results.
 
-4. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
-5.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
-5. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
-6. In the **Goals and conversion events** section, define at least one goal for your experiment:
+7. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
+8.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
+9. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
+10. In the **Goals and conversion events** section, define at least one goal for your experiment:
   * In the **Goal name** field, type a descriptive name for your goal. After you run an experiment, this name appears in the results summary for the experiment.
   * In the **Conversion event name** field, type the name of the [conversion event](run-app-experiments-with-a-b-testing.md#terms) for this goal.
   * In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event. This information is used in the results summary for the experiment.

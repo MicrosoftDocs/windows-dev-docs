@@ -21,7 +21,8 @@ The following steps describe the end-to-end process:
 2.  Before you call a method in the Windows Store reviews API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store reviews API before the token expires. After the token expires, you can generate a new token.
 3.  [Call the Windows Store reviews API](#call-the-windows-store-reviews-api).
 
->**Note**&nbsp;&nbsp;In addition to using the Windows Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using the Windows Dev Center dashboard](../publish/respond-to-customer-reviews.md).
+> [!NOTE]
+> In addition to using the Windows Store reviews API to programmatically respond to reviews, you can alternatively respond to reviews [using the Windows Dev Center dashboard](../publish/respond-to-customer-reviews.md).
 
 <span id="prerequisites" />
 ## Step 1: Complete prerequisites for using the Windows Store reviews API
@@ -31,8 +32,8 @@ Before you start writing code to call the Windows Store reviews API, make sure t
 * You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) for no additional charge.
 
 * You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store reviews API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
-
-  >**Note**&nbsp;&nbsp;You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
+    > [!NOTE]
+    > You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
 
 To associate an Azure AD application with your Dev Center account and retrieve the required values:
 

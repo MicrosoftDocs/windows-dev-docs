@@ -15,9 +15,11 @@ keywords: windows 10, uwp, Windows Store submission API, add-on submissions, in-
 
 The Windows Store submission API provides methods you can use to manage add-on (also known as in-app product or IAP) submissions for your apps. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. This permission is being enabled to developer accounts in stages, and not all accounts have this permission enabled at this time. To request earlier access, log on to the Dev Center dashboard, click **Feedback** at the bottom of the dashboard, select **Submission API** for the feedback area, and submit your request. You'll receive an email when this permission is enabled for your account.
+> [!NOTE]
+> These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. This permission is being enabled to developer accounts in stages, and not all accounts have this permission enabled at this time. To request earlier access, log on to the Dev Center dashboard, click **Feedback** at the bottom of the dashboard, select **Submission API** for the feedback area, and submit your request. You'll receive an email when this permission is enabled for your account.
 
->**Important**&nbsp;&nbsp;If you use the Windows Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> [!IMPORTANT]
+> If you use the Windows Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-add-on-submissions" />
 ## Methods for managing add-on submissions
@@ -82,55 +84,52 @@ To create a submission for an add-on, follow this process.
 
 3. Execute the following method in the Windows Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission. For more information, see [Create an add-on submission](create-an-add-on-submission.md).
 
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
+    ```
 
-  The response body contains three items: the ID of the new submission, the data for the new submission (including all the listings and pricing information), and the shared access signature (SAS) URI for uploading any add-on icons for the submission to Azure Blob storage.
-
-  >**Note**&nbsp;&nbsp;A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+    The response body contains three items: the ID of the new submission, the data for the new submission (including all the listings and pricing information), and the shared access signature (SAS) URI for uploading any add-on icons for the submission to Azure Blob storage.
+        > [!NOTE]
+        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. If you are adding new icons for the submission, [prepare the icons](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) and add them to a ZIP archive.
 
 5. Update the submission data with any required changes for the new submission, and execute the following method to update the submission. For more information, see [Update an add-on submission](update-an-add-on-submission.md).
 
-  ``` syntax
-  PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
-  ```
-
-  <span/>
-  >**Note**&nbsp;&nbsp;If you are adding new icons for the submission, make sure you update the submission data to refer to the name and relative path of these files in the ZIP archive.
+    ```
+    PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
+    ```
+      > [!NOTE]
+      > If you are adding new icons for the submission, make sure you update the submission data to refer to the name and relative path of these files in the ZIP archive.
 
 4. If you are adding new icons for the submission, upload the ZIP archive to [Azure Blob storage](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage) using the SAS URI that was provided in the response body of the POST method you called earlier. There are different Azure libraries you can use to do this on a variety of platforms, including:
 
-  * [Azure Storage Client Library for .NET](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-  * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-  * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
+    * [Azure Storage Client Library for .NET](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-  <span/>
+    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
-  The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
-
-  ```csharp
-  string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-  Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
-  await blockBob.UploadFromStreamAsync(stream);
-  ```
+    ```csharp
+    string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
+    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
+        new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+    await blockBob.UploadFromStreamAsync(stream);
+    ```
 
 5. Commit the submission by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account. For more information, see [Commit an add-on submission](commit-an-add-on-submission.md).
 
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
+    ```
 
 6. Check on the commit status by executing the following method. For more information, see [Get the status of an add-on submission](get-status-for-an-add-on-submission.md).
 
-  ``` syntax
-  GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
-  ```
+    ```
+    GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
+    ```
 
-  To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
+    To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
 
 7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
 
@@ -143,7 +142,8 @@ The following articles provide detailed code examples that demonstrate how to cr
 * [Java code examples](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)
 
->**Note**&nbsp;&nbsp;In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+> [!NOTE]
+> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span/>
 ## Data resources
@@ -276,12 +276,10 @@ This resource contains pricing info for the add-on. This resource has the follow
 
 This resources contains sale info for an add-on.
 
->**Important**&nbsp;&nbsp;The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an add-on submission using the Windows Store submission API:
-
-   > * After calling the [GET method to get an add-on submission](get-an-add-on-submission.md), the *sales* value will be empty. You can continue to use the Dev Center dashboard to get the sale data for your add-on submission.
-   > * When calling the [PUT method to update an add-on submission](update-an-add-on-submission.md), the information in the *sales* value is ignored. You can continue to use the Dev Center dashboard to change the sale data for your add-on submission.
-
-> In the future, we will update the Windows Store submission API to introduce a new way to programmatically access sales information for add-on submissions.
+> [!IMPORTANT]
+> The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an add-on submission using the Windows Store submission API. In the future, we will update the Windows Store submission API to introduce a new way to programmatically access sales information for add-on submissions.
+>    * After calling the [GET method to get an add-on submission](get-an-add-on-submission.md), the *sales* value will be empty. You can continue to use the Dev Center dashboard to get the sale data for your add-on submission.
+>    * When calling the [PUT method to update an add-on submission](update-an-add-on-submission.md), the information in the *sales* value is ignored. You can continue to use the Dev Center dashboard to change the sale data for your add-on submission.
 
 This resource has the following values.
 

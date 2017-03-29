@@ -67,14 +67,12 @@ The main entry point to the **Windows.Services.Store** namespace is the [StoreCo
 
 * In a single-user app (that is, an app that runs only in the context of the user that launched the app), use the static [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method to get a **StoreContext** object that you can use to access Windows Store-related data for the user. Most Universal Windows Platform (UWP) apps are single-user apps.
 
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
 * In a [multi-user app](../xbox-apps/multi-user-applications.md), use the static [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a **StoreContext** object that you can use to access Windows Store-related data for a specific user who is signed in with their Microsoft account while using the app. The following example gets a **StoreContext** object for the first available user.
 
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   var users = await Windows.System.User.FindAllAsync();
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
@@ -105,7 +103,6 @@ To offer an in-app purchase to customers in your app using the **Windows.Service
 3. If the user chooses to purchase your app or add-on, use the appropriate method to purchase the product:
 
   * If the user is purchasing your app or a durable add-on, follow the instructions in [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md).
-
   * If the user is purchasing a consumable add-on, follow the instructions in [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md).
 
 4. Test your implementation by following the [testing guidance](#testing) in this article.
@@ -135,9 +132,7 @@ If your app uses APIs in the **Windows.Services.Store** namespace to access info
 2. Next, make sure you have completed the following:
 
   * Write code in your app that uses the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class and other related types in the **Windows.Services.Store** namespace to implement [in-app purchases](#implement-iap) or [trial functionality](#implement-trial).
-
   * If your app offers an add-on that customers can purchase, [create an add-on submission for your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions).
-
   * If you want to exclude or limit some features in a trial version of your app, [configure your app as a free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial).
 
 3. With your project open in Visual Studio, click the **Project menu**, point to **Store**, and then click **Associate App with the Store**. Complete the instructions in the wizard to associate the app project with the app in your Windows Dev Center account that you want to use for testing.
@@ -166,11 +161,9 @@ Many **StoreContext** members (and members of other related types that are acces
 
 To configure a **StoreContext** object in a desktop application that uses the Desktop Bridge, follow these steps.
 
-  1. Do one of the following to enable your app to access the [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) interface:
+1. Do one of the following to enable your app to access the [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) interface:
 
-    * If your application is written in a managed language such as C# or Visual Basic, declare the **IInitializeWithWindow** interface in your app's code with the [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) attribute as shown in the following C# example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
-
-      > [!div class="tabbedCodeSnippets"]
+  * If your application is written in a managed language such as C# or Visual Basic, declare the **IInitializeWithWindow** interface in your app's code with the [ComImport](https://msdn.microsoft.com/library/system.runtime.interopservices.comimportattribute.aspx) attribute as shown in the following C# example. This example assumes that your code file has a **using** statement for the **System.Runtime.InteropServices** namespace.
       ```csharp
       [ComImport]
       [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
@@ -180,12 +173,9 @@ To configure a **StoreContext** object in a desktop application that uses the De
           void Initialize(IntPtr hwnd);
       }
       ```
+  * If your application is written in C++, add a reference to the shobjidl.h header file in your code. This header file contains the declaration of the **IInitializeWithWindow** interface.
 
-    * If your application is written in C++, add a reference to the shobjidl.h header file in your code. This header file contains the declaration of the **IInitializeWithWindow** interface.
-
-  2. Get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object by using the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method (or [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article, and cast this object to an [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) object. Then, call the [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) method, and pass the handle of the window that you want to be the owner for any modal dialogs that are shown by **StoreContext** methods. The following C# example shows how to pass the handle of your app's main window to the method.
-
-    > [!div class="tabbedCodeSnippets"]
+2. Get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object by using the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method (or [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) if your app is a [multi-user app](../xbox-apps/multi-user-applications.md)) as described earlier in this article, and cast this object to an [IInitializeWithWindow](https://msdn.microsoft.com/library/windows/desktop/hh706981.aspx) object. Then, call the [IInitializeWithWindow.Initialize](https://msdn.microsoft.com/library/windows/desktop/hh706982.aspx) method, and pass the handle of the window that you want to be the owner for any modal dialogs that are shown by **StoreContext** methods. The following C# example shows how to pass the handle of your app's main window to the method.
     ```csharp
     StoreContext context = StoreContext.GetDefault();
     IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)context;
