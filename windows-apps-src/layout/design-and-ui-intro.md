@@ -14,7 +14,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-#  Introduction to UWP app design 
+#  Introduction to UWP app design
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -22,11 +22,11 @@ A Universal Windows Platform (UWP) app can run on any Windows-based device, from
 
 ![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
-Designing an app that looks good on such a wide variety of devices can be a big challenge. So how do you go about designing an app that provides a great UX on devices with dramatically different screen sizes and input methods? Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you do just that. 
+Designing an app that looks good on such a wide variety of devices can be a big challenge. So how do you go about designing an app that provides a great UX on devices with dramatically different screen sizes and input methods? Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you do just that.
 
 ![a design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
 
-This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. Let's start by taking a look at some of the features that you get when you create a UWP app. 
+This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. Let's start by taking a look at some of the features that you get when you create a UWP app.
 
 ## UWP app features
 
@@ -34,7 +34,7 @@ This articles describes the UI features and benefits of UWP apps and provides so
 
 UWP apps automatically adjust the size of controls, fonts, and other UI elements so that they are legible on all devices.
 
-When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5' phone that's a few inches away.
+When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5" phone that's a few inches away.
 
 ![viewing distances for different devices](images/1910808-hig-uap-toolkit-03.png)
 
@@ -89,8 +89,8 @@ The UWP also provides some useful building blocks that make it easier to design 
 
     ![a weather app with its own visual style](images/weather/uwp-weather-tab-phone-700.png)
 
-Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI. 
-    
+Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI.
+
 ## The anatomy of a typical UWP app
 
 
@@ -219,7 +219,3 @@ Here's an example of this technique applied to the design for a smart home app.
 - [What's a UWP app?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 
  
-
-
-
-
