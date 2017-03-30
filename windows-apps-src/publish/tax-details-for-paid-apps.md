@@ -101,7 +101,7 @@ To understand your tax considerations for price selection, payout implications, 
 | Hong Kong SAR                    | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Hungary                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 27% tax) | Microsoft          |
 | Iceland                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| India                            | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#tax-reporting-for-india-developers)    | 70% of selected price                 | Developer          |
+| India                            | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
 | Indonesia                        | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countriesregions) | 70% of selected price                 | Developer          |
 | Iraq                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Ireland                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
@@ -176,7 +176,7 @@ To understand your tax considerations for price selection, payout implications, 
 | São Tomé and Príncipe            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Saudi Arabia                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Senegal                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Serbia                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
+| Serbia                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
 | Seychelles                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Sierra Leone                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Singapore                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
@@ -235,7 +235,6 @@ Certain Microsoft billing partners may collect and remit sales, use, goods and s
 | Ecuador                            |
 | Egypt                              |
 | Guatemala                          |
-| India                              |
 | Indonesia                          |
 | Jordan                             |
 | Kenya                              |
