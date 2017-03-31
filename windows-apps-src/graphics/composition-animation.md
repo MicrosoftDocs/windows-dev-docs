@@ -214,7 +214,7 @@ animation.Duration = TimeSpan.FromSeconds(5);
 ## Easing Functions
 Easing functions (CompositionEasingFunction) indicate how intermediate values progress from the previous key frame value to the current key frame value. 
 If you do not provide an easing function for the KeyFrame, a default curve will be used.  
-There are two types of easing functions supported:
+There are three types of easing functions supported:
 *	Linear
 *	Cubic Bezier  
 *   Step  
