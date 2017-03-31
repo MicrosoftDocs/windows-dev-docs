@@ -75,7 +75,7 @@ Many apps use third-party sites for their login flows, e.g. Facebook and Google.
 
 Flash is not allowed in Windows 10 apps. You will need to make sure your app experience is not affected by its absence.
 
-For ads, you will need to make sure your ad provider has an HTML5 option. You can check out [Bing Ads](https://bingads.microsoft.com/) and the [Microsoft advertising libraries](../monetize/display-ads-in-your-app.md). 
+For ads, you will need to make sure your ad provider has an HTML5 option. You can check out [Bing Ads](https://bingads.microsoft.com/) and [Ads in Apps](http://adsinapps.microsoft.com/).
 
 YouTube videos should still work, as they now [default to HTML5 `<video>`,](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html) so long as you are using the [`<iframe>` embed method](https://developers.google.com/youtube/iframe_api_reference). If your app still uses the Flash API, you will need to switch to the aforementioned style of embed.
 

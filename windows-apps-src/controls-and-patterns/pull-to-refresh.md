@@ -229,7 +229,7 @@ In the sample, content for the refresh indicator is provided and controlled by t
 
 ## Composition animations
 
-By default, content in a scroll viewer stops when the scrollbar reaches the top. To let the user continue to pull the list down, you need to access the visual layer and animate the list content. The sample uses [composition animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation) for this; specifically, [expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
+By default, content in a scroll viewer stops when the scrollbar reaches the top. To let the user continue to pull the list down, you need to access the visual layer and animate the list content. The sample uses [composition animations](https://msdn.microsoft.com/windows/uwp/composition/composition-animation) for this; specifically, [expression animations](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations).
 
 In the sample, this work is done primarily in the `CompositionTarget_Rendering` event handler and the `UpdateCompositionAnimations` method.
 
@@ -239,4 +239,4 @@ In the sample, this work is done primarily in the `CompositionTarget_Rendering` 
 - [Touch interactions](../input-and-devices/touch-interactions.md)
 - [List view and grid view](listview-and-gridview.md)
 - [List view item templates](listview-item-templates.md)
-- [Expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
+- [Expression animations](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations)

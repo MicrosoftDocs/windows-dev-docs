@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
+
 # Bluetooth
+This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps. There are two different bluetooth technologies that you can choose to implement in your app.
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+## Classic Bluetooth (RFCOMM)
+Before Bluetooth LE, devices commonly used this protocol to communicate using Bluetooth. This protocol is simple and useful for device-to-device communication without the need of energy savings. For more information about this protocol, including code samples, see the [Bluetooth RFCOMM](send-or-receive-files-with-rfcomm.md) topic.
 
-This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
+## Bluetooth Low-Energy (LE)
+Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between devices that have an efficient energy usage requirement. For more information including code samples, see the [Bluetooth Low Energy](bluetooth-low-energy-overview.md) topic.
 
-|Topic|Description|
-|--------|------------------|
-| [RFCOMM](send-or-receive-files-with-rfcomm.md)   | This article provides an overview of the Bluetooth RFCOMM APIs in the [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) namespace, along with example code on how to send or receive a file. |
-| [GATT](gatt-scenarios.md) | This article provides an overview of the Bluetooth Generic Attribute Profile (GATT) APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) namespace, along with sample code for three common GATT scenarios: retrieving Bluetooth data, controlling a Bluetooth LE thermometer device, and controlling the presentation of Bluetooth LE device data. |
-| [Low Energy (LE) Advertisements](ble-beacon.md) | This article demonstrates how to send and receive Bluetooth Low Energy advertisements using the APIs in the [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/Dn894325) namespace.  | 
-| [Bluetooth developer FAQ](bluetooth-dev-faq.md) | This article provides some answers to commonly asked bluetooth developer questions. 
+## See Also
+- [Bluetooth developer FAQ](bluetooth-dev-faq.md)

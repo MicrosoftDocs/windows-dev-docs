@@ -11,36 +11,39 @@ ms.technology: uwp
 keywords: windows 10, uwp, codec, encoder, decoder, query
 ---
 
-# Query for installed codecs
-This article shows you how to query for audio and video encoders and decoders that are installed on a device. The article [Supported codecs](supported-codecs.md) lists the codecs that are included in the OS for each device family. On an individual device, the user or an app may install additional codecs. The [CodecQuery](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codecquery) class can be used to list the current set of encoders and decoders that are installed on the device on which your app is running.
+# Query for codecs installed on a device
+The [CodecQuery](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codecquery) class allows you to query for codecs installed on the current device. The list of codecs that are included with Windows 10 for different device families are listed in the article [Supported codecs](supported-codecs.md), but since users and apps can install additional codecs on a device, you may want to query for codec support at runtime to determine what codecs are available on the current device.
 
-The **CodecQuery** class is included in the [windows.media.core](https://docs.microsoft.com/en-us/uwp/api/windows.media.core) namespace and provides a constructor that takes no arguments.
+The CodecQuery API is a member of the [Windows.Media.Core](https://docs.microsoft.com/en-us/uwp/api/windows.media.core) namespace, so you will need to include this namespace in your app.
 
 [!code-cs[CodecQueryUsing](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetCodecQueryUsing)]
 
+Initialize a new instance of the **CodecQuery** class by calling the constructor.
+
 [!code-cs[NewCodecQuery](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetNewCodecQuery)]
 
-The [FindAllAsync](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codecquery#Windows_Media_Core_CodecQuery_FindAllAsync_Windows_Media_Core_CodecKind_Windows_Media_Core_CodecCategory_System_String_) method of the **CodecQuery** class returns all of the installed codecs that meet the specified parameters. These parameters include a value from the [CodecKind](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codeckind) enumeration which specifies whether audio or video codecs should be returned, and a [CodecCategory](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codeccategory) value which specifies whether audio or video codecs should be returned.
+The [FindAllAsync](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codecquery#Windows_Media_Core_CodecQuery_FindAllAsync_Windows_Media_Core_CodecKind_Windows_Media_Core_CodecCategory_System_String_) method returns all installed codecs that match the supplied parameters. These parameters include a [CodecKind](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codeckind) value specifying whether you are querying for audio or video codecs or both, a [CodecCategory](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codeccategory) value specifying whether you are querying for encoders or decoders, and a string that represents the media encoding subtype for which you are querying, such as H.264 video or MP3 audio.
 
-The final parameter is a string representing a media subtype, such as H264 video or FLAC audio, that must be supported by any codec returned from **FindAllAsync**. You can specify null or empty string for this parameter to return codecs for all media subtypes. The following example lists all video encoders installed on the current device.
+Specify empty string or null for the subtype value to return codecs for all subtypes. The following example lists all of the video encoders installed on the device.
 
 [!code-cs[FindAllEncoders](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetFindAllEncoders)]
 
-If you specify a media subtype, you must use the string representation of one of the subtype GUIDs listed in [Audio Subtype GUIDs](https://msdn.microsoft.com/library/windows/desktop/aa372553(v=vs.85).aspx) or [Video Subtype GUIDs](https://msdn.microsoft.com/library/windows/desktop/aa370819(v=vs.85).aspx). The [CodecSubtypes](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codecsubtypes) class provides properties for most supported media subtypes that return the string representation of the subtype GUID. You can also specify a FOURCC code for the media subtype parameter. For more information, see [FOURCC Codes](https://msdn.microsoft.com/library/windows/desktop/dd375802(v=vs.85).aspx). 
+The subtype string you pass into **FindAllAsync** can either be a string representation of the subtype GUID which is defined by the system or a FOURCC code for the subtype. The set of supported media subtype GUIDs are listed in the articles [Audio Subtype GUIDs](https://msdn.microsoft.com/library/windows/desktop/aa372553(v=vs.85).aspx) and [Video Subtype GUIDs](https://msdn.microsoft.com/library/windows/desktop/aa370819(v=vs.85).aspx), but the [CodecSubtypes](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.codecsubtypes) class provides properties that return the GUID values for each supported subtype. For more information on FOURCC codes, see [FOURCC Codes](https://msdn.microsoft.com/library/windows/desktop/dd375802(v=vs.85).aspx) 
 
-The following example uses the FOURCC code to query for video decoders that support H.264 video. An example scenario for this operation is to check to see if a video format is supported before attempting to play a video file.
+The following example specifies the FOURCC code "H264" to determine if there is an H.264 video decoder installed on the device. You could perform this query before attempting to play back H.264 video content. You can also handle unsupported codecs at playback time. For more information, see [Handle unsupported codecs and unknown errors when opening media items](https://docs.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource#handle-unsupported-codecs-and-unknown-errors-when-opening-media-items).
 
 [!code-cs[IsH264Supported](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetIsH264Supported)]
 
-The following example queries for audio encoders that support the FLAC media subtype. This example then creates an AudioEncodinAudioEncodingProperties object and a MediaEncodingProfile for the media subtype. This could be used to record audio in the specified format or to transcode audio from another format. For more information, see [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) and [Transcode media files](transcode-media-files.md).
+The following example queries to determine if a FLAC audio encoder is installed on the current device and, if so, a [MediaEncodingProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) is created for the subtype which could be used for capturing audio to a file or transcoding audio from another format to a FLAC audio file.
 
 [!code-cs[IsFLACSupported](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetIsFLACSupported)]
 
 ## Related topics
 
-* [Supported codecs](supported-codecs.md)
+* [Media playback](media-playback.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [Transcode media files](transcode-media-files.md)
+* [Supported codecs](supported-codecs.md)
  
 
  

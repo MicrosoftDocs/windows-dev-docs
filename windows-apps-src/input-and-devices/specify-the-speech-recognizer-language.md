@@ -24,16 +24,13 @@ Learn how to select an installed language to use for speech recognition.
 <li> [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)</li>
 <li>[**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)</li>
 <li>[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)</li>
-<li> </li>
-<li> </li>
-<li> </li>
 </ul>
 </div>
 
 
 Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.
 
-**Prerequisites:  **
+**Prerequisites:**
 
 This topic builds on [Speech recognition](speech-recognition.md).
 
@@ -44,7 +41,7 @@ If you're new to developing Universal Windows Platform (UWP) apps, have a look t
 -   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**User experience guidelines:  **
+**User experience guidelines:**
 
 For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) .
 
@@ -56,10 +53,7 @@ A speech recognizer uses the system speech language as its default recognition l
 We identify the default language by checking the [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) static property.
 
 ```CSharp
-var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
-</tr>
-</tbody>
-</table>
+var language = SpeechRecognizer.SystemSpeechLanguage; 
 ```
 
 ## Confirm an installed language
@@ -86,16 +80,6 @@ Here, we specify "en-US" as the recognition language.
 
 
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 var language = new Windows.Globalization.Language(“en-US”); 
 var recognizer = new SpeechRecognizer(language); 
 ```

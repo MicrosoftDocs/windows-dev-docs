@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 Description: Windows 10, Vesion 1507 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: What's new in Windows 10, Vesion 1507
+title: What's new in Windows 10, Vesion 1507 - July 2015
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1507
 ms.author: quradic
 ms.date: 02/08/2017

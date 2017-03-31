@@ -31,7 +31,7 @@ Windows 10, version 1607 introduces a new [**ConnectedAnimationService**](https:
 
 The animation library does not provide animations for every possible scenario. There are cases where you might wish to create a custom animation in XAML. For more info, see [Storyboarded animations](storyboarded-animations.md).
 
-Additionally, for certain advanced scenarios like animating an item based on scroll position of a ScrollViewer, developers may wish to use Visual Layer interoperation to implement custom animations. See [Visual Layer](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer) for more information.
+Additionally, for certain advanced scenarios like animating an item based on scroll position of a ScrollViewer, developers may wish to use Visual Layer interoperation to implement custom animations. See [Visual Layer](https://msdn.microsoft.com/windows/uwp/composition/visual-layer) for more information.
 
 ## Types of animations
 

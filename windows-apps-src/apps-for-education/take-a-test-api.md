@@ -1,14 +1,13 @@
 ---
-author: TylerMSFT
 Description: The JavaScript API for the Microsoft Take a Test app allows you to do secure assessments. Take a Test provides a secure browser that prevents students from using other computer or internet resources during a test.
 title: Take a Test JavaScript API.
 ms.author: twhitney
+ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 ---
 
 # Take a Test JavaScript API
@@ -19,7 +18,7 @@ Take a Test, powered by Microsoft's Edge browser, features a JavaScript API that
 
 The API (based on the [Common Core SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)) provides text-to-speech capability and the ability to query whether the device is locked down, what user and system processes are running, and more.
 
-See the [Take a Test app technical reference](https://technet.microsoft.com/edu/windows/take-a-test-app-technical) for information about the app itself.
+See the [Take a Test app technical reference](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) for information about the app itself.
 
 > [!Important]
 > These APIs do not work in a remote session.  
@@ -44,10 +43,12 @@ The security namespace you to lock down the device, check the list of user and s
 |[clearCache](#clearCache) | Clears cached web resources |
 |[close](#close) | Closes the browser and unlocks the device |
 |[enableLockDown](#enableLockDown) | Locks down the device. Also used to unlock the device |
+|[getCapability](#getCapability) | Queries whether a capability is enabled or disabled |
 |[getIPAddressList](#getIPAddressList) | Gets the list of IP addresses for the device |
 |[getMACAddress](#getMACAddress)|Gets the list of MAC addresses for the device|
 |[getProcessList](#getProcessList)|Gets the list of running user and system processes|
-|[isEnvironmentSecure](#isEnvironmentSecure)|Determines whether the lockdown context is still applied to the device|  
+|[isEnvironmentSecure](#isEnvironmentSecure)|Determines whether the lockdown context is still applied to the device| 
+|[setCapability](#setCapability)|Enables or disables the specified capability| 
 
 ---
 <span id="clearCache"/>
@@ -58,10 +59,10 @@ Clear cached web resources.
 `browser.security.clearCache();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`None`
+none
 
 **Requirements**  
 Windows 10, version 1607
@@ -73,13 +74,13 @@ Windows 10, version 1607
 Closes the browser and unlocks the device.
 
 **Syntax**  
-`browser.security.close(false);`
+`browser.security.close(restart);`
 
 **Parameters**  
 `restart` - this parameter is ignored but must be provided.
 
 **Return value**  
-`None`
+none
 
 **Requirements**  
 Windows 10, version 1607
@@ -91,16 +92,34 @@ Windows 10, version 1607
 Locks down the device. Also used to unlock the device.
 
 **Syntax**  
-`browser.security.enableLockDown(true|false);`
+`browser.security.enableLockDown(lockdown);`
 
 **Parameters**  
-`lockdown` - `true` to run the Take-a-Test app above the lock screen and apply policies discussed in this [document](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). `False` stops running Take-a-Test above the lock screen and closes it unless the app is not locked down; in which case there is no effect.
+`lockdown` - **true** to run the Take-a-Test app above the lock screen and apply policies discussed in this [document](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396). **false** stops running Take-a-Test above the lock screen and closes it unless the app is not locked down; in which case there is no effect.
 
 **Return value**  
-`None`
+none
 
 **Requirements**  
 Windows 10, version 1607
+
+---
+
+<span id="getCapability"/>
+### boolean getCapability(string name)
+Queries whether a capability is enabled or disabled. 
+
+**Syntax**  
+`browser.security.getCapability(capabilityString)`
+
+**Parameters**  
+`capabilityString` - string to determine which capability to query. Valid capability strings are "screenCapture" and "printing" (case insensitive).
+
+**Return Value**  
+A boolean value: **true** if the queried capability is enabled, **false** if the capability is not enabled or the capability string is invalid.
+
+**Requirements**
+Windows 10, version 1703
 
 ---
 
@@ -112,10 +131,13 @@ Gets the list of IP addresses for the device.
 `browser.security.getIPAddressList();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`An array of IP addresses.`
+An array of IP addresses.
+
+**Requirements**  
+Windows 10, version 1607
 
 ---
 
@@ -127,10 +149,10 @@ Gets the list of MAC addresses for the device.
 `browser.security.getMACAddress();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`An array of MAC addresses.`
+An array of MAC addresses.
 
 **Requirements**  
 Windows 10, version 1607
@@ -145,10 +167,10 @@ Gets the list the user’s running processes.
 `browser.security.getProcessList();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`An array of running process names.`
+An array of running process names.
 
 **Remarks**
 The list does not include system processes.
@@ -166,13 +188,32 @@ Determines whether the lockdown context is still applied to the device.
 `browser.security.isEnvironmentSecure();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`True indicates that the lockdown context is applied to the device; otherwise false.`
+**true** indicates that the lockdown context is applied to the device; otherwise **false**.
 
 **Requirements**  
 Windows 10, version 1607
+
+---
+
+<span id="setCapability" />
+### void setCapability(string name, boolean value)  
+Enables or disables the specified capability. 
+
+**Syntax**  
+`browser.security.setCapability(capabilityString,value)`
+
+**Parameters**  
+`capabilityString` - string to determine which capability to set. Valid capability strings are "screenCapture" and "printing" (case insensitive).  
+`value` - boolean value to enable or disable the specified capability
+
+**Return Value**  
+none
+
+**Requirements**
+Windows 10, version 1703
 
 ---
 
@@ -202,10 +243,10 @@ Gets the speech playback status.
 `browser.tts.getStatus();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
+The speech playback status. Possible values are: "available", "idle", "paused", and "speaking".
 
 **Requirements**  
 Windows 10, version 1607
@@ -220,10 +261,10 @@ Gets a list of available voice packs.
 `browser.tts.getVoices();`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
+The available voice packs. For example: "Microsoft Zira Mobile", "Microsoft Mark Mobile"
 
 **Requirements**  
 Windows 10, version 1607
@@ -240,11 +281,11 @@ Pauses speech synthesis.
 
 **Parameters**
 
-`None`
+none
 
 **Return value**
 
-`None`
+none
 
 **Requirements**  
 Windows 10, version 1607
@@ -259,10 +300,10 @@ Resume paused speech synthesis.
 `browser.tts.resume();`
 
 **Parameters**
-`None`
+none
 
 **Return value**
-`None`
+none
 
 **Requirements**  
 Windows 10, version 1607
@@ -290,7 +331,7 @@ var options = {
 ```
 
 **Return value**  
-`None`
+none
 
 **Remarks**
 Option variables must be lowercase. The gender, language, and voice parameters take strings.
@@ -310,10 +351,10 @@ Stops speech synthesis.
 `void browser.tts.speak(“Hello world”, options, callback);`
 
 **Parameters**  
-`None`
+none
 
 **Return value**  
-`None`
+none
 
 **Requirements**  
 Windows 10, version 1607

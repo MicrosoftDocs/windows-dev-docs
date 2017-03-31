@@ -17,7 +17,7 @@ keywords: windows 10, uwp
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:, ms-drive-to:, ms-walk-to:** and **ms-settings:** Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
+Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:, *ms-drive-to:, ms-walk-to:** and **ms-settings:** Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
 
 **Tip** To learn more about launching the Windows Maps app from your app, download the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
@@ -70,6 +70,7 @@ There are several ways to control the map center point and the zoom level. Using
 
 To control the type of view, use the *ss* (Streetside) and *sty* (style) and parameters. The *ss* parameter puts the map into a Streetside view. The *sty* parameter lets you switch between road, aerial, and 3D views. When using the 3D style, the *hdg*, *pit*, and *rad* parameters can be used to specify the 3D view. *hdg* specifies the heading of the view, *pit* specifies the pitch of the view, and *rad* specifies the distance from the center point to show in view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
+
 | Sample URI                                                                 | Results                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | bingmaps:?                                                                 | Opens the Maps app.                                                                                                                                                                                       |
@@ -89,6 +90,7 @@ To control the type of view, use the *ss* (Streetside) and *sty* (style) and par
 ## Display search results
 
 We recommend when doing a business search using the *q* parameter, make the terms specific as possible and use it in conjunction with either the *cp* or the *where* parameter to specify a location. If the user has not given the Maps app permission to use their location and you do not specify a location for a business search, the search may be performed at the country level and not return meaningful results. Search results are displayed in the most appropriate map view, so unless there is a need to set the *lvl* (zoom level), we recommend to allow the Maps app to decide. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
+
 
 | Sample URI                                                    | Results                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -139,7 +141,7 @@ You can display directions between two points using the *rtp* parameter; those p
 
 The **ms-drive-to:** and **ms-walk-to:** URI schemes let you launch directly into a turn-by-turn view of a route. These URI schemes can only provide directions from the user's current location. If you must provide directions between points that do not include the user's current location, use the **bingmaps:** URI scheme as described in the previous section. For more info about these URI schemes, see the [ms-drive-to:](#ms-drive-to-param-reference) and [ms-walk-to:](#ms-walk-to-param-reference) parameter reference.
 
-> **Important**  When the **ms-drive-to:** or **ms-walk-to:** URI schemes are launched, the Maps app will check to see if the device has ever had a GPS location fix. If it has, then the Maps app will proceed to turn-by-turn directions. If it hasn't, the app will display the route overview, as described in [Display directions and traffic](#display-directions-and-traffic).
+> **Important**  When the **ms-drive-to:** or **ms-walk-to:** URI schemes are launched, the Maps app will check to see if the device has ever had a GPS location fix. If it has, then the Maps app will proceed to turn-by-turn directions. If it hasn't, the app will display the route overview, as described in [Display directions and traffic](#display-directions-and-traffic).
 
  
 
@@ -380,14 +382,14 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 </tbody>
 </table>
 
- 
+  
 <span id="ms-drive-to-param-reference"/>
 ## ms-drive-to: parameter reference
 
 
 The URI to launch a request for turn-by-turn driving directions does not need to be encoded and has the following format.
 
-> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
+> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
 
  
 
@@ -404,8 +406,7 @@ The URI to launch a request for turn-by-turn driving directions does not need to
 
 The URI to launch a request for turn-by-turn walking directions does not need to be encoded and has the following format.
 
-> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
-
+> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#display-directions-and-traffic).
  
 
 | Parameter | Definition | Example | Details |

@@ -14,7 +14,8 @@ keywords: windows 10, uwp
 ---
 # Lists
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Lists display and enable interactions with collection-based content. The four list patterns covered in this article include:
 
@@ -177,10 +178,12 @@ If the collection in a combo box is long enough, a scroll bar will appear to acc
 
 -   Limit the text content of combo box items to a single line.
 -   Sort items in a combo box in the most logical order. Group together related options and place the most common options at the top. Sort names in alphabetical order, numbers in numerical order, and dates in chronological order.
+-   To make a combo box that live updates while the user is using the arrow keys (like a Font selection drop-down), set SelectionChangedTrigger to “Always”.  
 
 ### Text Search
 
-Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the “w” key to bring “Washington” into view for quick selection. 
+Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the “w” key to bring “Washington” into view for quick selection.
+
 
 ## List boxes
 

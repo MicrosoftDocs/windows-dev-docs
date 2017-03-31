@@ -68,7 +68,7 @@ Provides install/uninstall and management functionality for AppX packages and bu
 ![Device Portal for mobile](images/device-portal/mob-device-portal-apps.png)
 
 - **Installed apps**: Remove and start apps.
-- **Running apps**: Lists apps that are running currently.
+- **Running apps**: Lists apps that are running currently and provides the option to close them.
 - **Install app**: Select app packages for installation from a folder on your computer or network.
 - **Dependency**: Add dependencies for the app you are going to install.
 - **Deploy**: Deploy the selected app and dependencies to your device.

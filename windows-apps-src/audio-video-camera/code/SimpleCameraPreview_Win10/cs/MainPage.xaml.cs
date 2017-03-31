@@ -89,10 +89,7 @@ namespace SimpleCameraPreview_Win10
                 // This will be thrown if the user denied access to the camera in privacy settings
                 System.Diagnostics.Debug.WriteLine("The app was denied access to the camera");
             }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("MediaCapture initialization failed. {0}", ex.Message);
-            }
+
         }
         //</SnippetStartPreviewAsync>
 

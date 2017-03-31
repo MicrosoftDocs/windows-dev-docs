@@ -21958,14 +21958,14 @@
     "UAP,Version=v10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\drewbat\\.nuget\\packages\\": {}
+    "C:\\Users\\drewbat.REDMOND\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "c:\\users\\drewbat\\documents\\visual studio 2017\\Projects\\TranscodeWin10\\TranscodeWin10\\TranscodeWin10.csproj",
+      "projectUniqueName": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\TranscodeWin10\\cs\\TranscodeWin10.csproj",
       "projectName": "TranscodeWin10",
-      "projectPath": "c:\\users\\drewbat\\documents\\visual studio 2017\\Projects\\TranscodeWin10\\TranscodeWin10\\TranscodeWin10.csproj",
-      "projectJsonPath": "c:\\users\\drewbat\\documents\\visual studio 2017\\Projects\\TranscodeWin10\\TranscodeWin10\\project.json",
+      "projectPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\TranscodeWin10\\cs\\TranscodeWin10.csproj",
+      "projectJsonPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\TranscodeWin10\\cs\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: Support web-to-app linking with app URI handlers
-description: Drive user engagement with your app by using app URI handlers.
+title: Enable apps for websites using app URI handlers
+description: Drive user engagement with your app by supporting the Apps for Websites feature.
 keywords: Deep Linking Windows
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -11,11 +11,11 @@ ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ---
 
-# Support web-to-app linking with app URI handlers
+# Enable apps for websites using app URI handlers
 
-Learn how to drive user engagement with your app by supporting web-to-app linking. Web-to-app linking allows you to associate an app with a website. When users open an http or https link to your website, instead of opening the browser, your app is launched. If your app is not installed, a link is provided to open your website in the browser. Users can trust this experience because only verified content owners can register for a link.
+Learn how to drive user engagement with your app by supporting the Apps for Websites feature. This allows you to designate an app to handle the contents of a particular website. When users open an http or https link to your website, instead of opening the browser, your app is launched. If your app is not installed, a link is provided to open your website in the browser. Users can trust this experience because only verified content owners can register for a link. Users will be able to check all of their registered web-to-app links by going to Settings > Apps > Apps for websites.
 
-In order to enable web to app linking you will need:
+In order to enable web-to-app linking you will need:
 - Identify the URIs your app will handle in the manifest file
 - A JSON file with the app Package Family Name at the same host root as the app manifest declaration.
 - Handle the activation in the app.
@@ -168,8 +168,6 @@ Verify that your app is closed. Press **Windows Key + R** to open the **Run** di
 Additionally, you can test your app by launching it from another app using the [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API. You can use this API to test on phones as well.
 
 If you would like to follow the protocol activation logic, set a breakpoint in the **OnActivated** event handler.
-
-**Note:** If you click a link in the Microsoft Edge browser, it will not launch your app but will take you to your website.
 
 ## AppUriHandlers tips:
 

@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ---
 
-# Desktop to UWP Bridge: Desktop App Converter
+# Convert an app using the Desktop App Converter (Desktop to UWP Bridge)
 
 [Get the Desktop App Converter](https://aka.ms/converter)
 

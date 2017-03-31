@@ -1,26 +1,27 @@
 ---
-title: Get the Universal Windows Platform (UWP) samples from GitHub
-description: Learn how to download the UWP feature samples from GitHub
+
+title: Get UWP app samples
+description: Learn how to download the UWP code samples from GitHub
 author: JoshuaPartlow
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, sample code, code samples
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ---
 
-#Get the Universal Windows Platform (UWP) samples from GitHub
-The UWP app samples are available through repositories on GitHub. If this is your first time working with UWP, you'll want to start with the 
+#Get UWP app samples
+
+The Universal Windows Platform (UWP) app samples are available through repositories on GitHub. See [Samples](https://developer.microsoft.com/windows/samples "Dev Center samples") for a searchable, categorized list, or browse the
 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository")
 repository, which contains samples that demonstrate all of the UWP features
 and their API usage patterns.  
 ![GitHub UWP sample repo](images/GitHubUWPSamplesPage.png)
-Additional samples can be found using the [Samples](https://developer.microsoft.com/windows/samples "Dev Center samples")
-section of the Dev Center.  
 
 ##Download the code
+
 To download the samples, go to the
 [repository](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") and
 select **Clone or download**, then **Download ZIP**. Or, just click
@@ -34,12 +35,11 @@ the latest zip file.
 ![Sample download](images/SamplesDownloadButton.png)
 
 
-> **Note**: The UWP samples require Visual Studio 2015 and the Windows SDK to open, build, and run. If you don’t
-> have Visual Studio already installed, you can get a free copy of Visual
-> Studio 2015 Community Edition with support for building UWP apps
+> **Note**: The UWP samples require Visual Studio 2015 or later and the Windows SDK to open, build, and run. You can get a free copy of Visual
+> Studio Community with support for building UWP apps
 > [here](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows development tools downloads").  
 >
-> Also, be sure 
+> Also, be sure
 > to unzip the entire archive, and not just individual
 > samples. The samples all depend on the SharedContent folder in the
 > archive. The UWP feature samples use Linked files in Visual Studio to

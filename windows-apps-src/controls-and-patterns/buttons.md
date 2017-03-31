@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 ---
 # Buttons
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 A button gives the user a way to trigger an immediate action.
 
@@ -33,46 +33,52 @@ A button gives the user a way to trigger an immediate action.
 A button lets the user initiate an immediate action, such as submitting a form.
 
 Don't use a button when the action is to navigate to another page; use a link instead. See [Hyperlinks](hyperlinks.md) for more info.
-    
+
 > Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a back button.
 
 ## Example
 
-This example uses two buttons, Close all and Cancel, in a dialog in the Microsoft Edge browser. 
+This example uses two buttons, Allow and Block, in a dialog requesting location access.
 
-![Example of buttons, used in a dialog](images/control-examples/buttons-edge.png)
+![Example of buttons, used in a dialog](images/dialogs/dialog_RS2_two_button.png)
 
 ## Create a button
 
-This example shows a button that responds to a click. 
+This example shows a button that responds to a click.
 
 Create the button in XAML.
 
 ```xaml
-<Button Content="Submit" Click="SubmitButton_Click"/>
+<Button Content="Subscribe" Click="SubscribeButton_Click"/>
 ```
 
 Or create the button in code.
 
 ```csharp
-Button submitButton = new Button();
-submitButton.Content = "Submit";
-submitButton.Click += SubmitButton_Click;
+Button subscribeButton = new Button();
+subscribeButton.Content = "Subscribe";
+subscribeButton.Click += SubscribeButton_Click;
 
 // Add the button to a parent container in the visual tree.
-stackPanel1.Children.Add(submitButton);
+stackPanel1.Children.Add(subscribeButton);
 ```
 
 Handle the Click event.
 
 ```csharp
-private async void SubmitButton_Click(object sender, RoutedEventArgs e)
+private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 {
-    // Call app specific code to submit form. For example:
-    // form.Submit();
-    Windows.UI.Popups.MessageDialog messageDialog = 
-        new Windows.UI.Popups.MessageDialog("Thank you for your submission.");
-    await messageDialog.ShowAsync();
+    // Call app specific code to subscribe to the service. For example:
+    ContentDialog subscribeDialog = new ContentDialog
+    {
+        Title = "Subscribe to App Service?",
+        Content = "Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.",
+        CloseButtonText = "Not Now",
+        PrimaryButtonText = "Subscribe",
+        SecondaryButtonText = "Try it"
+    };
+
+    ContentDialogResult result = await subscribeDialog.ShowAsync();
 }
 ```
 
@@ -82,7 +88,7 @@ When you tap a Button with a finger or stylus, or press a left mouse button whil
 
 You generally can't handle low-level [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events on a Button because it has the Click behavior instead. For more info, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
 
-You can change how a button raises the Click event by changing the [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) property. The default ClickMode value is **Release**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch. 
+You can change how a button raises the Click event by changing the [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) property. The default ClickMode value is **Release**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch.
 
 
 ### Button content
@@ -92,8 +98,8 @@ Button is a [**ContentControl**](https://msdn.microsoft.com/library/windows/apps
 Here, a **StackPanel** that contains an image of an orange and text is set as the content of a button.
 
 ```xaml
-<Button Click="Button_Click" 
-        Background="#FF0D6AA3" 
+<Button Click="Button_Click"
+        Background="#FF0D6AA3"
         Height="100" Width="80">
     <StackPanel>
         <Image Source="Assets/Slices.png" Height="62"/>
@@ -143,7 +149,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 -   Make sure the purpose and state of a button are clear to the user.
 -   Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text content is a single word, a verb.
--   When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order: 
+-   When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order:
 	-   OK/[Do it]/Yes
 	-   [Don't do it]/No
 	-   Cancel
@@ -160,12 +166,27 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   Consider customizing your buttons. A button's shape is rectangular by default, but you can customize the visuals that make up the button's appearance. A button's content is usually text—for example, Accept or Cancel—but you could replace the text with an icon, or use an icon plus text.
 -   Make sure that as the user interacts with a button, the button changes state and appearance to provide feedback to the user. Normal, pressed, and disabled are examples of button states.
 -   Trigger the button's action when the user taps or presses the button. Usually the action is triggered when the user releases the button, but you also can set a button's action to trigger when a finger first presses it.
--   Don't use a command button to set state.
--   Don't change button text while the app is running; for example, don't change the text of a button that says "Next" to "Continue".
 -   Don't swap the default submit, reset, and button styles.
--   Don't put too much content inside a button. Make the content concise and easy to understand (nothing more than a picture and some text).
+-   Don't put too much content inside a button. Make the content concise and easy to understand.
+
+### Recommended single button layout
+
+If your layout requires only one button, it should be either left- or right-aligned based on its container context.
+
+-   Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs.md) and specify a single button, it will automatically right-align.
+
+![A button within a dialog](images/pushbutton_doc_dialog.png)
+
+-   If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should **right-align** the button within the container.
+
+![A button within a container](images/pushbutton_doc_container.png)
+
+-   In pages that contain a single button (for example, an "Apply" button at the bottom of a settings page), you should **left-align** the button. This ensures that the button aligns with the rest of the page content.
+
+![A button on a page](images/pushbutton_doc_page.png)
 
 ## Back buttons
+
 The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [History and backwards navigation](../layout/navigation-history-and-backwards-navigation.md)
 
 ## Get the sample code
@@ -179,5 +200,3 @@ The back button is a system-provided UI element that enables backward navigation
 - [Toggle switches](toggles.md)
 - [Check boxes](checkbox.md)
 - [**Button class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
-
-

@@ -30,7 +30,7 @@ By default, the InkToolbar includes buttons for drawing, erasing, highlighting, 
 > [!NOTE]
 > InkToolbar supports pen and mouse input and can be configured to recognize touch input.
 
-<img src="images/ink-tools-invoked-toolbar.png" width="300">
+<img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -85,7 +85,7 @@ The InkToolbar control must be used in conjunction with an InkCanvas. Incorporat
  ```
 
 This displays the following InkToolbar:
-<img src="images/ink-tools-uninvoked-toolbar.png" width="250">
+<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
 
 ### Built-in buttons
 

@@ -15,11 +15,11 @@ keywords: windows 10, uwp, games, input
 
 This section describes the different kinds of input devices that can be used in Universal Windows Platform (UWP) games on Windows 10 and Xbox One, demonstrates their basic usage, and recommends patterns and techniques for effective input programming in games.
 
-> **Note**    Other kinds of input devices exist and are available to be used in UWP games such as custom input devices that might be genre-specific or game-specific. Such devices and their programming are not discussed in this section. For information on the interfaces used to facilitate custom input devices, see the [Windows.Gaming.Input.Custom][] namespace.
+> **Note**    Other kinds of input devices exist and are available to be used in UWP games such as custom input devices that might be genre-specific or game-specific. Such devices and their programming are not discussed in this section. For information on the interfaces used to facilitate custom input devices, see the [Windows.Gaming.Input.Custom](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom) namespace.
 
 ## Gaming input devices
 
-Game input devices are supported in UWP games and apps for Windows 10 and Xbox One by the [Windows.Gaming.Input][] namespace.
+Game input devices are supported in UWP games and apps for Windows 10 and Xbox One by the [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) namespace.
 
 ### Gamepads
 
@@ -39,7 +39,19 @@ Racing wheels are input devices that resemble the feel of a real racecar cockpit
 
 For information on how to use racing wheels in your UWP game, see [Racing Wheel and force feedback](racing-wheel-and-force-feedback.md).
 
-### UI navigation controller
+### Flight sticks
+
+Flight sticks are gaming input devices that reproduce the feel of flight sticks that would be found in a plane or spaceship's cockpit. They're the perfect input device for quick and accurate control of flight.
+
+For more information on how to use flight sticks in your UWP game, see [Flight stick](flight-stick.md).
+
+### Raw game controllers
+
+A raw game controller is a generic representation of a game controller, with inputs found on many different kinds of common game controllers. These inputs are exposed as simple arrays of unnamed buttons, switches, and axes. Using a raw game controller, you can allow customers to create custom input mappings no matter what type of controller they're using.
+
+For more information on how to use raw game controllers in your UWP game, see [Raw game controller](raw-game-controller.md).
+
+### UI navigation controllers
 
 UI Navigation controllers are a logical input device that exists to provide a common vocabulary for UI navigation commands that promotes a consistent user experience across different games and physical input devices. A game's user interface should use the UINavigationController interfaces instead of device-specific interfaces.
 
@@ -58,8 +70,7 @@ Each input device and its connected headset can be associated with a specific us
 For information on how to manage users and their input devices, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices).
 
 ## See Also
-[Windows.Gaming.Input.Custom][]
 
-
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.Custom]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.custom.aspx
+* [Input practices for games](input-practices-for-games.md)
+* [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.Custom namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input.custom)

@@ -46,6 +46,10 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 <td align="left"><p>[Create tiles](tiles-and-notifications-creating-tiles.md)</p></td>
 <td align="left"><p>Customize the default tile for your app and provide assets for different screen sizes.</p></td>
 </tr>
+<tr>
+<td align="left"><p>[Primary tile API's](tiles-and-notifications-primary-tile-apis.md)</p></td>
+<td align="left"><p>Request to pin your app's primary tile, and check if the primary tile is currently pinned.</p></td>
+</tr>
 <tr class="even">
 <td align="left"><p>[Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
 <td align="left"><p>Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app.</p></td>
@@ -114,13 +118,3 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 </tr>
 </tbody>
 </table>
-
- 
-
- 
-
- 
-
-
-
-

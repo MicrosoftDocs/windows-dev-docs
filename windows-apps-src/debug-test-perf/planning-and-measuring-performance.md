@@ -82,7 +82,7 @@ You can now use your performance goals to influence your app's design. Using the
 -   Maximize parse and load time and memory efficiency for each page of your app's UI (especially the initial page) by [optimizing your XAML markup](optimize-xaml-loading.md). In a nutshell, defer loading UI and code until it's needed.
 -   For [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
 -   Declare UI in the form of markup, which the framework can load and re-use in chunks, rather than constructing it imperatively in code.
--   Collapse UI elements until the user needs them. See the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) property.
+-   Delay creating UI elements until the user needs them. See the [**x:Load**](../xaml-platform/x-load-attribute.md) attribute.
 -   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
 -   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) method.
 
@@ -192,4 +192,3 @@ If any changes are needed, make them and then go back to instrumenting or testin
 ## Optimizing
 
 Optimize only the performance-critical code paths in your app: those where most time is spent. Profiling will tell you which. Often, there is a trade-off between creating software that follows good design practices and writing code that performs at the highest optimization. It is generally better to prioritize developer productivity and good software design in areas where performance is not a concern.
-

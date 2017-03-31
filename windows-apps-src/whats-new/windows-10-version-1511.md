@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: What's New in Windows 10 version 1511
+title: What's New in Windows 10 version 1511 - November 2015
 description: Windows 10 version 1511 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1511, November
 ms.author: quradic
@@ -11,7 +11,7 @@ ms.technology: uwp
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ---
 
-# What's New in Windows version 1511
+# What's New in Windows
 
 Windows 10 version 1511 and updates to Windows developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 

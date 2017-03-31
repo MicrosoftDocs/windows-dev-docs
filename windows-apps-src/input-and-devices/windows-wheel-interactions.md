@@ -20,10 +20,10 @@ ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 
 ## Overview
 
-Windows Wheel devices, such as the Surface Dial, are a new category of input device that enable a host of compelling and unique user interaction experiences for Windows and Windows apps. 
+Windows wheel devices, such as the Surface Dial, are a new category of input device that enable a host of compelling and unique user interaction experiences for Windows and Windows apps. 
 
 > [!IMPORTANT]
-> In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows Wheel devices.
+> In this topic, we refer specifically to Surface Dial interactions, but the info is applicable to all Windows wheel devices.
 
 | Videos |   |
 | --- | --- |
@@ -336,7 +336,7 @@ In general, we recommend disabling haptic feedback when the rotation resolution 
 You can enable and disable haptic feedback for custom tools by setting the [**RadialController.UseAutomaticHapticFeedback**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.UseAutomaticHapticFeedback) property.
 
 > [!NOTE]
-> You cannot override the haptic behavior for system tools such as the volume control. For these tools, haptic feedback can be disabled only by the user from the Wheel settings page.
+> You cannot override the haptic behavior for system tools such as the volume control. For these tools, haptic feedback can be disabled only by the user from the wheel settings page.
 
 Here’s an example of how to customize the resolution of the rotation data and enable or disable haptic feedback.
 

@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: In addition to using voice commands within Cortana to access system features, you can also use voice commands through Cortana to launch a foreground app and specify an action or command to execute within the app.
-title: Launch a foreground app with voice commands in Cortana
+title: Activate a foreground app with voice commands through Cortana
 ms.assetid: 8D3D1F66-7D17-4DD1-B426-DCCBD534EF00
 label: Cortana-Launch a foreground app
 template: detail.hbs

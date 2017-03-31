@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-title: What's New in Windows 10 for Developers
+title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 version 1607 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
 keywords: what's new, whats new, update, updates, features, new, Windows 10, 1607, July, newest
 ms.author: quradic
@@ -11,7 +11,7 @@ ms.technology: uwp
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ---
 
-# What's New in Windows version 1607
+# What's New in Windows 10 for developers
 
 Windows 10 version 1607 and updates to Windows developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 

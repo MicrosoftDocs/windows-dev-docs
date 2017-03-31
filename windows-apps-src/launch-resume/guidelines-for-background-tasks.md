@@ -40,9 +40,10 @@ If you use a background task to play media in the background, see [Play media in
 
 Alternatively, request one deferral, and use **async/await** to complete asynchronous method calls. Close the deferral after the **await** method calls.
 
-**Update the app manifest:**  For background tasks that run out-of-process, declare each background task in the application manifest, along with the type of triggers it is used with. Otherwise your app will not be able to register the background task at runtime.
+**Update the app manifest:**  For background tasks that run out-of-process, [declare each background task in the application manifest](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest), along with the type of triggers it is used with. Otherwise your app will not be able to register the background task at runtime.  You can also declare in the manifest where your background tasks will run and how to group them by process.
 
-Background tasks that run in the same process as the foreground app do not need to declare themselves in the application manifest. For more information about declaring background tasks that run out-of-process in the manifest, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
+> [!NOTE]
+> Background tasks that run in the same process as the foreground app do not need to declare themselves in the application manifest. For more information about declaring background tasks that run out-of-process in the manifest, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
 **Prepare for app updates:** If your app will be updated, create and register a **ServicingComplete** background task (see [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) to unregister background tasks for the previous version of the app, and register the background tasks for the new version. This is also an appropriate time to perform app updates that may be necessary outside the context of running in the foreground.
 
@@ -58,7 +59,7 @@ Universal Windows Platform (UWP) apps can run all supported task types without b
 -   Associate your background task with the correct trigger.
 -   Add conditions to help ensure your background task runs successfully.
 -   Handle background task progress, completion, and cancellation.
--   Re-register your background tasks during app launch. This ensures that they are registered the first time the app is launched. It also provides a way to detect whether the user has disabled your app's background execution capabilities (in the event registration fails).
+-   Check your background task registration during app launch. Ensure that your app's ungrouped background tasks are present in BackgroundTaskBuilder.AllTasks. Re-register the ones that are not present. Unregister any tasks that are no longer needed. This ensures that all background tasks registrations are up-to-date every time the app is launched.
 -   Check for background task registration errors. If appropriate, attempt to register the background task again with different parameter values.
 -   For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
 
@@ -87,8 +88,8 @@ Follow this guidance when developing background tasks for apps that are capable 
 
 -   Include a background task registered with [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), or [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) and declare it in the app manifest. Make sure the entry point and trigger types are correct. This is required for certification, and enables the user to place the app on the lock screen.
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> [!NOTE]
+> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Related topics
 
@@ -106,7 +107,3 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
 * [Debug a background task](debug-a-background-task.md)
 * [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
- 
-
- 

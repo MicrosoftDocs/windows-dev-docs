@@ -31,6 +31,7 @@ Follow these best practices for [**geofencing**](https://msdn.microsoft.com/libr
     -   If the app doesn't currently have internet access, you can prompt the user to connect to the internet before you set up the geofence.
     -   If internet access isn't possible, avoid consuming the power required for the geofencing location checks.
 -   Ensure the relevance of geofencing notifications by checking the time stamp and current location when a geofence event indicates changes to an [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exited** state. See **Checking the time stamp and current location** below for more information.
+(#timestamp) below for more information.
 -   Create exceptions to manage cases when a device can't access location info, and notify the user if necessary. Location info may be unavailable because permissions are turned off, the device doesn't contain a GPS radio, the GPS signal is blocked, or the Wi-Fi signal isn't strong enough.
 -   In general, it isn't necessary to listen for geofence events in the foreground and background at the same time. However, if your app needs to listen for geofence events in both the foreground and background:
 

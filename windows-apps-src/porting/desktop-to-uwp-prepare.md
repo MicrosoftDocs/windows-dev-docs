@@ -4,7 +4,7 @@ Description: This article lists things you need to know before converting your a
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Prepare
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 03/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,17 +12,17 @@ keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ---
 
-# Desktop to UWP Bridge: Prepare
+# Prepare to convert an app (Desktop to UWP Bridge)
 
-This article lists things you need to know before converting your app with the Desktop to UWP Bridge. You may not need to do much to get your app ready for the conversion process, but if any of the items below applies to your application, you need to address it before conversion. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove those features from your codebase.
+This article lists the things you need to know before you convert your app by using the Desktop to UWP Bridge. You might not have to do much to get your app ready for the conversion process, but if any of the items below applies to your application, you need to address it before conversion. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
 
-+ __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You must retarget your app to .NET 4.6.1 before converting.
++ __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You'll have to retarget your app to .NET 4.6.1 before you convert it.
 
 + __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users.
 
 + __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
-+ __Your app's modules are loaded in-process to processes that are not in your Windows app package. This isn't permitted, which means that in-process extensions, like [shell extensions](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), aren't supported. But if you have two apps in the same package, you can do inter-process communication between them.
++ __Your app's modules are loaded in-process to processes that are not in your Windows app package__. This isn't permitted, which means that in-process extensions, like [shell extensions](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), aren't supported. But if you have two apps in the same package, you can do inter-process communication between them.
 
 + __Your app calls [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) or [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__. These functions are not currently supported for converted apps. We are working on adding support in a future release. As a workaround, you can copy any .dlls you were locating using these functions to your package root.
 
@@ -80,3 +80,5 @@ The dependencies will not get installed if the app is installed by sideloading. 
 	- __Your app adds a jump list shell link that references an executable in your package__. You cannot directly launch executables in your package from a jump list (with the exception of the absolute path of an app’s own .exe). Instead, register an app execution alias (which allows your converted app to start via a keyword as though it were on the PATH) and set the link target path to the alias instead. For details on how to use the appExecutionAlias extension, see [Desktop Bridge app extensions](desktop-to-uwp-extensions.md). Note that if you require assets of the link in jump list to match the original .exe, you will need to set assets such as the icon using [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) and the display name with PKEY_Title like you would for other custom entries.
 
 	- __Your app adds a jump list entries that references assets in the app's package by absolute paths__. The installation path of an app may change when its packages are updated, changing the location of assets (such as icons, documents, executable, and so on). If jump list entries reference such assets by absolute paths, then the app should refresh its jump list periodically (such as on app launch) to ensure paths resolve correctly. Alternatively, use the UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) APIs instead, which allow you to reference string and image assets using the package-relative ms-resource URI scheme (which is also language, DPI, and high contrast aware).
+
++ __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. Apps often start them because they provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. Use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t a separate executable to run, but more importantly, they keep app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a desktop bridge app.

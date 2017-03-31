@@ -1520,7 +1520,6 @@ To update your published game, submit a new app package with a higher version nu
 
 ## Adding Xbox Live to your game
 
-
 > **Note**   Xbox Live development is managed through various programs. This guide covers a broad range of resources, and you may find that some resources are inaccessible depending on your program participation or specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
 
 <table>

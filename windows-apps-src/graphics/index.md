@@ -27,7 +27,6 @@ Graphics and animation is designed for use by app developers using XAML. If you 
 | [Use brushes](using-brushes.md) | [Brush](https://msdn.microsoft.com/library/windows/apps/BR228076) objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI. |
 | [Animations overview](animations-overview.md) | Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app. |
 | [Transforms overview](transforms-overview.md)  | Learn how to use transforms in the Windows Runtime API, by changing the relative coordinate systems of elements in the UI. This can be used to adjust the appearance of individual XAML elements, such as scaling, rotating, or transforming the position in x-y space. |
-| [Visual layer](visual-layer.md) | The Windows.UI.Composition API gives you access to the composition layer between the framework layer (XAML), and the graphics layer (DirectX). The Windows.UI.Composition API allow you to create composition objects and apply powerful animations, effects and manipulations on those objects in your application. |
 
  
 

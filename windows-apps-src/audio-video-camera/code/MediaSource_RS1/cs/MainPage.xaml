@@ -8,10 +8,26 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <!--<SnippetMediaPlayerElement>-->
-            <MediaPlayerElement x:Name="mediaPlayerElement"/>
-            <!--</SnippetMediaPlayerElement>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+        <!--<SnippetMediaPlayerElement>-->
+        <MediaPlayerElement x:Name="mediaPlayerElement"/>
+        <!--</SnippetMediaPlayerElement>-->
+        </Border>
+        <StackPanel Grid.Row="1">
+            
+            <Button x:Name="PlayMediaSourceButton" Content="PlayMediaSource" Click="PlayMediaSourceButton_Click"/>
+            <Button x:Name="PlayMediaPlaybackItemButton" Content="PlayMediaPlaybackItem" Click="PlayMediaPlaybackItemButton_Click"/>
+            <Button x:Name="PlayMediaPlaybackItemWithCustomTracksButton" Content="PlayMediaPlaybackItemWithCustomTracks" Click="PlayMediaPlaybackItemWithCustomTracks_Click"/>
+            <Button x:Name="MediaPlaybackListButton" Content="MediaPlaybackList" Click="MediaPlaybackListButton_Click"/>
+            <Button x:Name="DisablePlaybackForItemsButton" Content="DisablePlaybackForItems" Click="DisablePlaybackForItemsButton_Click"/>
+            <Button x:Name="MediaBinderButton" Content="MediaBinder" Click="MediaBinderButton_Click"/>
+            <Button x:Name="SpeechCueButton" Content="SpeechCue" Click="SpeechCueButton_Click"/>
+            
+            
             <!--<SnippetVideoComboBox>-->
             <ComboBox x:Name="videoTracksComboBox" SelectionChanged="videoTracksComboBox_SelectionChanged"/>
             <!--</SnippetVideoComboBox>-->

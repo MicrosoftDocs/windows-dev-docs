@@ -5,7 +5,7 @@ description: Learn how to write a Universal Windows Platform (UWP) app that can 
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 03/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,25 +33,29 @@ In this how-to, we'll create everything in one solution for simplicity.
 
 In the AppServiceProvider project's Package.appxmanifest file, add the following AppService extension to the **&lt;Application&gt;** element. This example advertises the `com.Microsoft.Inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service app exposes the service to other apps. We recommend using a reverse domain name style for the service name.
 
-``` syntax
-...
-<Applications>
-    <Application Id="App"
-      Executable="$targetnametoken$.exe"
-      EntryPoint="AppServiceProvider.App">
-      <Extensions>
-        <uap:Extension Category="windows.appService" EntryPoint="MyAppService.Inventory">
-          <uap:AppService Name="com.microsoft.inventory"/>
-        </uap:Extension>
-      </Extensions>
-      ...
-    </Application>
-</Applications>
+``` xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application Id="App"
+          Executable="$targetnametoken$.exe"
+          EntryPoint="AppServiceProvider.App">
+          <Extensions>
+            <uap:Extension Category="windows.appService" EntryPoint="MyAppService.Inventory">
+              <uap:AppService Name="com.microsoft.inventory" uap4:SupportsMultipleInstances="True"/>
+            </uap:Extension>
+          </Extensions>
+          ...
+        </Application>
+    </Applications>
 ```
 
 The **Category** attribute identifies this application as an app service provider.
 
 The **EntryPoint** attribute identifies the class that implements the service, which we'll implement next.
+
+The **SupportsMultipleInstances** attribute indicates that each time the app service is called that it should run in a new process that gets its own resource limits (memory and CPU). This is not required but is available to you if you need that functionality.
 
 ## Create the app service
 
@@ -108,7 +112,7 @@ The **EntryPoint** attribute identifies the class that implements the service, w
 
 ## Write the code for the app service
 
-**OnRequestedReceived()** is where the code for the app service goes. Replace the stub **OnRequestedReceived()** in MyAppService's Class1.cs with the code from this example. This code gets an index for an inventory item and passes it, along with a command string, to the service to retrieve the name and the price of the specified inventory item. Error handling code has been removed for brevity.
+**OnRequestReceived()** is where the code for the app service goes. Replace the stub **OnRequestReceived()** in MyAppService's Class1.cs with the code from this example. This code gets an index for an inventory item and passes it, along with a command string, to the service to retrieve the name and the price of the specified inventory item. Error handling code has been removed for brevity.
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -160,7 +164,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-Note that **OnRequestedReceived()** is **async** because we make an awaitable method call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) in this example.
+Note that **OnRequestReceived()** is **async** because we make an awaitable method call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) in this example.
 
 A deferral is taken so that the service can use **async** methods in the OnRequestReceived handler. It ensures that the call to OnRequestReceived does not complete until it is done processing the message. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) is used to send a response alongside the completion. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) that OnRequestReceived has completed.
 
@@ -207,7 +211,7 @@ The app service provider app must be deployed before you can call it from a clie
            var status = await this.inventoryService.OpenAsync();
            if (status != AppServiceConnectionStatus.Success)
            {
-               button.Content = "Failed to connect";
+               textBox.Text= "Failed to connect";
                return;
            }
        }
@@ -243,7 +247,7 @@ The app service provider app must be deployed before you can call it from a clie
            }
        }
 
-       button.Content = result;
+       textBox.Text = result;
    }
    ```
 Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].

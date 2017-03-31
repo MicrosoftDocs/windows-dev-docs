@@ -34,7 +34,7 @@ This section provides information about creating Universal Windows Platform (UWP
 | [Import media from a device](import-media-from-a-device.md) | Describes how to import media from a device, including searching for available media sources, importing files such as videos, photos, and sidecar files, and deleting the imported files from the source device. |
 | [Camera-independent Flashlight](camera-independent-flashlight.md) | Shows you how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality. |
 | [Supported codecs](supported-codecs.md) | Lists the audio, video, and image codec and format support for UWP apps. |
-
+| [Query for installed codecs](codec-query.md) | Shows you how to query for audio and video encoders and decoders that are installed on a device. |
 
 ## See also
 - [Develop UWP apps](https://developer.microsoft.com/windows/develop)

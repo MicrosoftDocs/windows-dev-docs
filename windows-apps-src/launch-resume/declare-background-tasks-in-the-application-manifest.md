@@ -27,7 +27,7 @@ Enable the use of background tasks by declaring them as extensions in the app ma
 > [!Important]
 >  This article is specific to out-of-process background tasks. In-process background tasks are not declared in the manifest.
 
-out-of-process background tasks must be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, out-of-process background tasks must be declared in the application manifest to pass certification.
+Out-of-process background tasks must be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, out-of-process background tasks must be declared in the application manifest to pass certification.
 
 This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.
 
@@ -57,8 +57,7 @@ The following snippet is taken from the [background task sample](http://go.micro
  </Application>
 ```
 
-## Add a Background Task Extension
-
+## Add a Background Task Extension  
 
 Declare your first background task.
 
@@ -103,8 +102,7 @@ Copy this code into the Extensions element (you will add attributes in the follo
 </Extension>
 ```
 
-
-## Add Additional Background Task Extensions
+### Add multiple background task extensions
 
 Repeat step 2 for each additional background task class registered by your app.
 
@@ -149,17 +147,22 @@ The following example is the complete Application element from the [background t
 </Applications>
 ```
 
-## Declare your background task to run in a different process
+## Declare where your background task will run
 
-New functionality in Windows 10, version 1507, allows you to run your background task in a different process than BackgroundTaskHost.exe (the process where background tasks run by default).  There are two options: run in the same process as your foreground application; run in an instance of BackgroundTaskHost.exe that is separate from other instances of background tasks from the same application.  
+You can specify where your background tasks run:
 
-### Run in the foreground application
+* By default, they run in the BackgroundTaskHost.exe process.
+* In the same process as your foreground application.
+* Use `ResourceGroup` to place multiple background tasks into the same hosting process, or to separate them into different processes.
+* Use `SupportsMultipleInstances` to run the background process in a new process that gets its own resource limits (memory, cpu) each time a new trigger is fired.
 
-Here is example XML that declares a background task that runs in the same process as the foreground application. Note the `Executable` attribute:
+### Run in the same process as your foreground application
+
+Here is example XML that declares a background task that runs in the same process as the foreground application.
 
 ```xml
 <Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask">
         <BackgroundTasks>
             <Task Type="systemEvent" />
         </BackgroundTasks>
@@ -167,10 +170,9 @@ Here is example XML that declares a background task that runs in the same proces
 </Extensions>
 ```
 
-> [!Note]
-> Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).  
+When you specify **EntryPoint**, your application receives a callback to the specified method when the trigger fires. If you do not specify an **EntryPoint**, your application receives the callback via  [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).  See [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) for details.
 
-### Run in a different background host process
+### Specify where your background task runs with the ResourceGroup attribute.
 
 Here is example XML that declares a background task that runs in a BackgroundTaskHost.exe process, but in a separate one than other instances of background tasks from the same app. Note the `ResourceGroup` attribute, which identifies which background tasks will run together.
 
@@ -204,9 +206,32 @@ Here is example XML that declares a background task that runs in a BackgroundTas
 </Extensions>
 ```
 
+### Run in a new process each time a trigger fires with the SupportsMultipleInstances attribute
+
+This example declares a background task that runs in a new process that gets its own resource limits (memory and CPU) every time a new trigger is fired. Note the use of `SupportsMultipleInstances` which enables this behavior.
+
+```xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application ...>
+            ...
+            <Extensions>
+                <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
+                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                        <Task Type="timer" />
+                    </BackgroundTasks>
+                </Extension>
+            </Extensions>
+        </Application>
+    </Applications>
+```
+
+> [!NOTE]
+> You cannot specify `ResourceGroup` or `ServerName` in conjunction with `SupportsMultipleInstances`.
 
 ## Related topics
-
 
 * [Debug a background task](debug-a-background-task.md)
 * [Register a background task](register-a-background-task.md)

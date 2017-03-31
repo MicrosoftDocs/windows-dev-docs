@@ -9,9 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+redirect_url: windows-10-version-1703
 ---
 
 # What's New in the Windows 10 Creators Update preview
+
+This page has been redirected to [What's New in the Windows 10 Creators Update](windows-10-version-1703.md).
 
 The Windows 10 Creators Update will continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 

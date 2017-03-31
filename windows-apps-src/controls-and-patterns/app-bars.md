@@ -15,7 +15,7 @@ ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 ---
 # App bar and command bar
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Command bars (also called "app bars") provide users with easy access to your app's most common tasks, and can be used to show commands or options that are specific to the user's context, such as a photo selection or drawing mode. They can also be used for navigation among app pages or between app sections. Command bars can be used with any navigation pattern.
 
@@ -105,7 +105,7 @@ You can add commands to the **SecondaryCommands** collection, and these items ar
 
 The default overflow area is styled to be distinct from the bar. You can adjust the styling by setting the [**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) property to a [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) that targets the [**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
 
-You can programmatically move commands between the PrimaryCommands and SecondaryCommands as needed. 
+You can programmatically move commands between the PrimaryCommands and SecondaryCommands as needed.
 
 <div class="microsoft-internal-note">
 Commands can also automatically move in or out of the overflow as the command bar width changes, for example when users resize their app window. Dynamic overflow is on by default but apps can turn off this behavior by changing the value of `IsDynamicOverflowEnabled` property.
@@ -155,7 +155,7 @@ When the label wraps at the hinted location, it looks like this.
 
 You can add any XAML elements to the content area by setting the **Content** property. If you want to add more than one element, you need to place them in a panel container and make the panel the single child of the Content property.
 
-When there are both primary commands and content, the primary commands take precedence and may cause the content to be clipped. 
+When there are both primary commands and content, the primary commands take precedence and may cause the content to be clipped.
 <div class="microsoft-internal-note">
 Content will not clip when dynamic overflow is enabled because the primary commands would move into the overflow menu freeing up space for content.
 </div>
@@ -279,12 +279,15 @@ Consider logical groupings for the commands, such as placing Reply, Reply All, a
 
 ### Overflow menu
 
-![Example of command bar with "More" area](images/AppbarGuidelines_Illustration.png)
+![Example of a command bar with "More" area and icons](images/appbar_rs2_overflow_icons.png)
 
 -   The overflow menu is represented by the "see more" \[•••\] button, the visible entry point for the menu. It's on the far-right of the toolbar, adjacent to primary actions.
 -   The overflow area is allocated for actions that are less frequently used.
 -   Actions can come and go between the primary action space and the overflow menu at breakpoints. You can also designate actions to always remain in the primary action space regardless of screen or app window size.
 -   Infrequently used actions can remain in the overflow menu even when the app bar is expanded on larger screens.
+- AppBarButtons in the overflow menu will automatically show their icons.
+
+> The size of the icons in the overflow menu is 16x16px, which is smaller than the icons in the primary command area (which are 20x20px). If you use SymbolIcon, FontIcon, or PathIcon, the icon will automatically scale to the correct size with no loss of fidelity when the command enters the secondary command area.
 
 ## Adaptability
 
