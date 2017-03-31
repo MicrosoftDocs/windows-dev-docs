@@ -53,7 +53,7 @@ The next illustration shows design elements that don't map to the 4x4 grid. Thes
 ![design elements that do not align to the 4x4 pixel grid](images/rsp-design/offthegridillustration.png)
 
 > [!TIP]
-> When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. (For a list of size classes and effective resolutions, see the [Recommendations for specific size classes](#sizeclasses) section of this article.)
+> When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. For a list of size classes and effective resolutions, see the [Screen sizes and breakpoints article](screen-sizes-and-breakpoints-for-responsive-design.md).
 
 
 ### Universal input and smart interactions
