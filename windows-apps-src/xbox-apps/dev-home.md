@@ -23,7 +23,7 @@ To launch Dev Home on the November 2015 or later recovery:
 
  ![](images/dev_home_icons.png)   
   
-On earlier recoveries select the Dev Home tile on the right side of the home screen in **featured content** or view the application list in [Xbox One Manager](manager-tool.md) and launch **Dev Home**.   
+On earlier recoveries select the Dev Home tile on the right side of the home screen in **featured content** or view the application list in Xbox One Manager and launch **Dev Home**.   
  ![](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
@@ -35,10 +35,10 @@ On earlier recoveries select the Dev Home tile on the right side of the home scr
 The header of the Dev Home user interface contains the following important "at a glance" info about the development console:   
  
    *  **Console IP:** The current IP address of the console.   
-   *  **Console name:** The current hostname of the console. For more information about the hostname, see [Setting a Hostname for the Console IP Address](setting-a-hostname.md).   
-   *  **Sandbox:** The name of the sandbox that the console is in. For more information about sandboxes, see [Setting Up Sandboxes for Xbox Live Development](obtaining-ids.md).   
-   *  **OS version:** The current recovery version that is running on the console. For more information about Xbox One operating system versions, see [Flashing the OS Recovery onto Your Dev Kit](dev-kit-os.md).   
-   *  Current system time   
+   *  **Console name:** The current hostname of the console.  
+   *  **Sandbox:** The name of the sandbox that the console is in.  
+   *  **OS version:** The current recovery version that is running on the console.
+   *  Current system time.   
 
    
   

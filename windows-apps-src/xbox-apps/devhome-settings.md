@@ -64,7 +64,7 @@ The **Debug settings** pane is used to view and toggle common debug settings.
 ## Unattended script configuration  
    
   
-The **Unattended script configuration** pane manages setup scripts for Xbox One consoles. For more information about setup scripts, see [Configuring Your Dev Kit with an Unattended Setup Script](unattended-setup-script.md).   
+The **Unattended script configuration** pane manages setup scripts for Xbox One consoles.   
   
 <a id="ID4E3C"></a>
 

@@ -24,7 +24,7 @@ The **Xbox Live** page contains the following panes:
 ## XBTrace (advancedmp)  
    
   
-The **XBTrace (advancedmp)** page starts or stops capture of a multiplayer trace. It can also capture a snapshot of the current multiplayer state. For more information about multiplayer traces, see [Trace (xbtrace.exe)](xbtrace.md).   
+The **XBTrace (advancedmp)** page starts or stops capture of a multiplayer trace. It can also capture a snapshot of the current multiplayer state.   
   
 <a id="ID4E3B"></a>
 

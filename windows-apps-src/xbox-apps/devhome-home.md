@@ -49,7 +49,7 @@ The **Games & apps** pane can be used to perform the following actions:
    *  Quickly launch games and apps.  
    *  View the PLM state of games and apps.  
    *  Change PLM states from a context menu.  
-   *  Register and run a title from a remote network share. For more information, see [Run from PC Deployment](pc-deployment.md).  
+   *  Register and run a title from a remote network share.
 
   
 <a id="ID4EQD"></a>

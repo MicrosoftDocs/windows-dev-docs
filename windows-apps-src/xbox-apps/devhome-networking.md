@@ -33,7 +33,7 @@ The **Network simulation** pane runs a network simulation to test against variou
 ## XBTrace (netcap)  
    
   
-The **XBTrace (netcap)** pane starts or stops a network packet trace. For more information about network packet traces, see [Trace (xbtrace.exe)](xbtrace.md).   
+The **XBTrace (netcap)** pane starts or stops a network packet trace.   
   
 <a id="ID4E2B"></a>
 
