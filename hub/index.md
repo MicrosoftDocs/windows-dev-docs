@@ -104,7 +104,7 @@ ms.prod: windows
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monetize</a>
                                             </p>
                                             <p>
-                                                <a href="https://docs.microsoft.com/en-us/uwp/api/">API reference</a>
+                                                <a href="https://docs.microsoft.com/en-us/uwp/">API reference</a>
                                             <p>
                                         </div>
                                     </div>
