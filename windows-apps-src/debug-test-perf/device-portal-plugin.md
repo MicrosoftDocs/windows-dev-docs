@@ -15,7 +15,7 @@ keywords: windows 10, uwp
 
 Learn how to write a UWP app that uses th Windows Device Portal to host a web page and provide diagnostic information.
 
-Starting with the Creators Update, you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the appxmanifest changes, setting up your app’s connection to the Device Portal service, and handling an incoming request. A sample app [LINK] is also provided to get started. 
+Starting with the Creators Update, you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the appxmanifest changes, setting up your app’s connection to the Device Portal service, and handling an incoming request. A sample app is also provided to get started. 
 
 ## Create a new UWP app project
 In this guide, we'll create everything in one solution for simplicity.
