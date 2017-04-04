@@ -18,9 +18,9 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-For a typical app, navigation is the starting point of the user experience. Users navigate from page to page and within the page to get to the content and features they want. Creating a good navigation system is essential to a good user experience. 
+Navigation is the starting point of the user experience: users navigate from page to page and within the page to get to the content and features they want. Creating a good navigation system is essential to a good user experience. 
 
-## Prinicples of good navigation design 
+## Principles of good navigation design 
 Research and experience have shown that these three principles form the foundation of good navigation design: 
 
 * Be consistent: Meet user expectations.
