@@ -31,7 +31,6 @@
 ### [Alignment, margins, and padding](layout/alignment-margin-padding.md)
 ### [Creating app layouts with Grid and StackPanel](layout/grid-tutorial.md)
 ## [Style](style/index.md)
-### [Finding the right balance](style/balancing-style-and-consistency.md)
 ### [Color](style/color.md)
 ### [Icons](style/icons.md)
 ### [Motion and animation](style/motion.md)
