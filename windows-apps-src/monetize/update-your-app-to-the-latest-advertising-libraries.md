@@ -13,29 +13,26 @@ ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 
 # Update your app to the latest advertising libraries
 
-Apps that show banner ads from Microsoft advertising must use **AdControl** or **AdMediatorControl** from one of the following SDKs in order to continue to receive banner ads after April 1, 2017:
+Apps that show banner ads from Microsoft advertising must use **AdControl** or **AdMediatorControl** from one of the following SDKs:
 
   * [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (for UWP apps)
   * [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps)
 
-Before these SDKs were available, we previously released these controls in several older advertising SDK releases for Windows and Windows Phone apps. These older advertising SDK releases are no longer supported. After April 1, 2017, Microsoft may stop serving banner ads to apps that use the older advertising SDK releases at any time, without further warning.
+These SDK releases support a minimum set of advertising capabilities, including the ability to serve HTML5 rich media via the [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 specification](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) from the Interactive Advertising Bureau (IAB). Many of our advertisers seek these capabilities, and we require app developers to use one of these SDK releases to help make our app ecosystem more attractive to advertisers and ultimately drive more revenue to you.
 
-If you have an existing app (already in the Store or still under development) that displays banner ads using **AdControl** or **AdMediatorControl**, follow the instructions in this article to determine whether your app is affected by this change and to learn how to update your app if necessary.
+Before these SDKs were released, we previously provided these controls in several older advertising SDK releases for Windows and Windows Phone apps. These older advertising SDK releases are no longer supported because they do not support the minimum advertising capabilities described above.
 
-> [!NOTE]
-> In addition, after April 1, 2017, we will also stop serving banner ads for any ad unit that is used in more than one app. To prepare for this change, make sure that your ad units are each used in only one app.
-
-## More details about this change
-
-To provide some additional context about this change, we are removing support for older advertising SDK releases that do not support a minimum set of capabilities, including the ability to serve HTML5 rich media via the [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 specification](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) from the Interactive Advertising Bureau (IAB). Many of our advertisers seek these capabilities, and we are making this change to help make our app ecosystem more attractive to advertisers and ultimately drive more revenue to you.
-
-If your app is affected by this change and you do not update your app to use the latest advertising SDK for your target platform, you will see the following behavior when we stop serving banner ads to apps that use non-supported advertising SDK releases:
+As of April 1, 2017, we no longer serve banner ads to apps that use an unsupported advertising SDK release. If you have an app that still uses an unsupported advertising SDK release, you will see the following behavior:
 
 * Banner ads will no longer be served to any **AdControl** or **AdMediatorControl** controls in your app, and you will no longer earn advertising revenue from those controls.
 
 * When the **AdControl** or **AdMediatorControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
 
-If you encounter any issues or you need assistance, please [contact support](http://go.microsoft.com/fwlink/?LinkId=393643).
+* Any ad units that are associated with that app will be deactivated. You cannot remove these deactivated ad units from your Dev Center account. If you update your app to use a supported advertising SDK, ignore these ad units and create new ones.
+
+* Banner ads will also no longer be served for any ad unit that is used in more than one app. Make sure that your ad units are each used in only one app.
+
+If you have an existing app (already in the Store or still under development) that displays banner ads using **AdControl** or **AdMediatorControl** and you aren't sure which advertising SDK is being used by your app, follow the instructions in this article to determine whether you need to update your app to a supported SDK. If you encounter any issues or you need assistance, please [contact support](http://go.microsoft.com/fwlink/?LinkId=393643).
 
 > [!NOTE]
 > If your app already uses the [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (for UWP apps) or [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps), or you have previously updated your app to use one of these SDKs, your app already uses the latest available SDK and you do not need to make any further changes to your app.
@@ -228,10 +225,4 @@ Note the following:
 
 Test your app to make sure it displays banner ads as expected.
 
-If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in the Windows Dev Center dashboard to republish your app.
-
-
-
-
-
- 
+If the previous version of your app is already available in the Store, [create a new submission](../publish/app-submissions.md) for your updated app in the Dev Center dashboard to republish your app.
