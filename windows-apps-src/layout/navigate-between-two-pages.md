@@ -327,7 +327,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**. When you called `this.Frame.Navigate(typeof(Page2), tb1.Text)` in the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the `name.Text` property was passed to `Page2` and the value from the event data is used for the message displayed on the page.
+Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**. When you called `this.Frame.Navigate(typeof(Page2), name.Text)` in the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the `name.Text` property was passed to `Page2` and the value from the event data is used for the message displayed on the page.
 
 ## Cache a page
 
