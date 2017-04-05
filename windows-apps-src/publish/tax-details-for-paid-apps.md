@@ -4,7 +4,7 @@ Description: To understand your tax considerations for price selection, payout i
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
