@@ -267,6 +267,7 @@
 #### [Device Portal for Desktop](debug-test-perf/device-portal-desktop.md)
 #### [Device Portal for Mobile](debug-test-perf/device-portal-mobile.md)
 #### [Device Portal for Xbox](debug-test-perf/device-portal-xbox.md)
+#### [Device Portal for Hololens](debug-test-perf/device-portal-hololens.md)
 #### [Device Portal core APIs](debug-test-perf/device-portal-api-core.md)
 #### [Write a custom plugin for Device Portal](debug-test-perf/device-portal-plugin.md)
 ### [Windows App Certification Kit](debug-test-perf/windows-app-certification-kit.md)
