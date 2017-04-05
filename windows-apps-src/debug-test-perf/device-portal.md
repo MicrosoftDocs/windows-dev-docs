@@ -38,7 +38,7 @@ Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device.  To learn more, see the [Port Settings](device-portal-desktop.md#setting-port-numbers) section for desktop.  
 
 For device-specific setup instructions, see:
-- [Device Portal for HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal for HoloLens](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
 - [Device Portal for IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [Device Portal for Mobile](device-portal-mobile.md)
 - [Device Portal for Xbox](device-portal-xbox.md)
