@@ -75,8 +75,7 @@ The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
-[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)  
-[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
+[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)  [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)  
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
@@ -118,9 +117,9 @@ See [Reduce memory usage when your app moves to the background state](reduce-mem
 
 ### Save your state
 
-Previously, the suspending event handler was the best place to save your app state. But if you are doing work in the background (for example, audio playback or by using an extended execution session), it is best to save your data asynchronously from your **EnteredBackground** event handler. This is because it is possible for your app to be terminated while it is in the background. And because the app will not have gone through the suspended state in that case, your data will be lost.
+The suspending event handler is the best place to save your app state. However, if you are doing work in the background (for example, audio playback, using an extended execution session or in-proc background task), it is also a good practice to save your data asynchronously from your **EnteredBackground** event handler. This is because it is possible for your app to be terminated while it is at a lower priority in the background. And because the app will not have gone through the suspended state in that case, your data will be lost.
 
-Saving your data in your **EnteredBackground** event handler, before background activity begins, ensures a good user experience when the user brings your app to back to the foreground. You can use the application data APIs to save data and settings. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/library/windows/apps/mt299098).
+Saving your data in your **EnteredBackground** event handler, before background activity begins, ensures a good user experience when the user brings your app back to the foreground. You can use the application data APIs to save data and settings. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/library/windows/apps/mt299098).
 
 After you save your data, if you are over your memory usage limit, then you can release your data from memory since you can reload it later. That will free memory that can be used by the assets needed for background activity.
 
