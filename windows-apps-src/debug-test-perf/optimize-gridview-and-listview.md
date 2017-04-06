@@ -161,7 +161,7 @@ The general strategy for the [**ContainerContentChanging**](https://msdn.microso
         mc:Ignorable="d">
 
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <GridView ItemsSource="{x:Bind ViewModel.ExampleItems}" ContainerContentChanging="GridView-ContainerContentChanging">
+            <GridView ItemsSource="{x:Bind ViewModel.ExampleItems}" ContainerContentChanging="GridView_ContainerContentChanging">
                 <GridView.ItemTemplate>
                     <DataTemplate x:DataType="lotsOfItems:ExampleItem">
                         <StackPanel Height="100" Width="100" Background="OrangeRed">
@@ -193,7 +193,7 @@ The general strategy for the [**ContainerContentChanging**](https://msdn.microso
             public ExampleItemViewModel ViewModel { get; set; }
 
             // Display each item incrementally to improve performance.
-            private void GridView-ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
+            private void GridView_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)
             {
                 if (args.Phase != 0)
                 {
@@ -255,7 +255,7 @@ In some applications, you need to have different UI for different types of item 
 // DataTemplate when one is available. This example shows how to return different 
 // data templates based on the type of FileItem. Available ListViewItems are kept
 // in two separate lists based on the type of DataTemplate needed.
-private void lst-ChoosingItemContainer
+private void ListView_ChoosingItemContainer
     (ListViewBase sender, ChoosingItemContainerEventArgs args)
 {
     // Determines type of FileItem from the item passed in.
