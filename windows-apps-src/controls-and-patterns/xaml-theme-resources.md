@@ -55,7 +55,7 @@ DO NOT:
 
     EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
 
-**Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting_theme_resources) section.
+**Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting-theme-resources) section.
  
 
 ## The XAML color ramp and theme-dependent brushes
@@ -371,7 +371,7 @@ Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 
 ## Troubleshooting theme resources
 
 
-If you don’t follow the [guidelines for using theme resources](#guidelines_for_using_theme_resources), you might see unexpected behavior related to themes in your app.
+If you don’t follow the [guidelines for using theme resources](#guidelines-for-using-theme-resources), you might see unexpected behavior related to themes in your app.
 
 For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.
 
