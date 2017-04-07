@@ -158,6 +158,31 @@ In the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/Window
 
 Note that if the offset value of a player maps to a negative playback position, the clip will remain paused until the offset reaches zero and then playback will begin. Likewise, if the offset value maps to a playback position greater than the duration of the media item, the final frame will be shown, just as it does when a single media player reached the end of its content.
 
+## Play spherical video with MediaPlayer
+Starting with Windows 10, version 1703, **MediaPlayer** supports equirectangular projection for spherical video playback. Spherical video content is no different from regular, flat video in that **MediaPlayer** will render the video as long as the video encoding is supported. For spherical video that contains a metadata tag that specifies that the video uses equirectangular projection, **MediaPlayer** can render the video using a specified field-of-view and view orientation. This enables scenarios such as virtual reality video playback with a head-mounted display or simply allowing the user to pan around within spherical video content using the mouse or keyboard input.
+
+To play back spherical video, use the steps for playing back video content described previously in this article. The one additional step is to register a handler for the [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) event. This event gives you an opportunity to enable and control the spherical video playback parameters.
+
+[!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
+
+In the **MediaOpened** handler, first check the frame format of the newly opened media item by checking the [**PlaybackSession.SphericalVideoProjection.FrameFormat**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection#Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_FrameFormat_) property. If this value is [**SphericaVideoFrameFormat.Equirectangular**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat), then the system can automatically project the video content. First, set the [**PlaybackSession.SphericalVideoProjection.IsEnabled**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection#Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_IsEnabled_) property to **true**. You can also adjust properties such as the view orientation and field of view that the media player will use to project the video content. In this example, the field of view is set to a wide value of 120 degrees by setting the [**HorizontalFieldOfViewInDegrees**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection#Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_HorizontalFieldOfViewInDegrees_) property.
+
+If the video content is spherical, but is in a format other than equirectangular, you can implement your own projection algorithm using the media player's frame server mode to receive and process individual frames.
+
+[!code-cs[SphericalMediaOpened](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalMediaOpened)]
+
+The following example code illustrates how to adjust the spherical video view orientation using the left and right arrow keys.
+
+[!code-cs[SphericalOnKeyDown](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalOnKeyDown)]
+
+If your app supports playlists of video, you may want to identify playback items that contain spherical video in your UI. Media playlists are discussed in detail in the article, [Media items, playlists, and tracks](media-playback-with-mediasource.md). The following example shows creating a new playlist, adding an item, and registering a handler for the [**MediaPlaybackItem.VideoTracksChanged**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplaybackitem#Windows_Media_Playback_MediaPlaybackItem_VideoTracksChanged) event, which occurs when the video tracks for a media item are resolved.
+
+[!code-cs[SphericalList](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalList)]
+
+In the **VideoTracksChanged** event handler, get the encoding properties for any added video tracks by calling [**VideoTrack.GetEncodingProperties**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.videotrack#Windows_Media_Core_VideoTrack_GetEncodingProperties_). If the [**SphericalVideoFrameFormat**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.videoencodingproperties#Windows_Media_MediaProperties_VideoEncodingProperties_SphericalVideoFrameFormat_) property of the encoding properties is a value other than [**SphericaVideoFrameFormat.None**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat), then the video track contains spherical video and you can update your UI accordingly if you choose.
+
+[!code-cs[SphericalTracksChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalTracksChanged)]
+
 ## Related topics
 * [Media playback](media-playback.md)
 * [Media items, playlists, and tracks](media-playback-with-mediasource.md)

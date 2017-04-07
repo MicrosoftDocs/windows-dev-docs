@@ -214,12 +214,12 @@ Set the [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/
 [!code-cs[RepeatButton](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
 
-###Handle the failure of media items in a playback list
+### Handle the failure of media items in a playback list
 The [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) event is raised when an item in the list fails to open. The [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) property of the [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) object passed into the handler enumerates the specific cause of the failure when possible, including network errors, decoding errors, or encryption errors.
 
 [!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
 
-###Disable playback of items in a playback list
+### Disable playback of items in a playback list
 Starting with Windows 10, version 1703, you can disable playback of one or more items in a **MediaPlaybackItemList** by setting the [IsDisabledInPlaybackList](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackItem#Windows_Media_Playback_MediaPlaybackItem_IsDisabledInPlaybackList) property of a [MediaPlaybackItem](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackItem) to false. 
 
 A typical scenario for this feature is for apps that play music streamed from the internet. The app can listen for changes in the network connection status of the device and disable playback of items that are not fully downloaded. In the following example, a handler is registered for the [NetworkInformation.NetworkStatusChanged](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged) event.
@@ -230,7 +230,7 @@ In the handler for **NetworkStatusChanged**, check to see if [GetInternetConnect
 
 [!code-cs[NetworkStatusChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetNetworkStatusChanged)]
 
-###Defer binding of media content for items in a playback list by using MediaBinder
+### Defer binding of media content for items in a playback list by using MediaBinder
 In the previous examples, a **MediaSource** is created from a file, URL, or stream, after which a **MediaPlaybackItem** is created and added to a **MediaPlaybackList**. For some scenarios, such as if the user is being charged for viewing content, you may want to defer the retrieval of the content of a **MediaSource** until the item in the playback list is ready to actually be played. To implement this scenario, create an instance of the [**MediaBinder**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Core.MediaBinder) class. Set the [**Token**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Core.MediaBinder#Windows_Media_Core_MediaBinder_Token) property to an app-defined string that identifies the content for which you want to defer retrieval and then register a handler for the [**Binding**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Core.MediaBinder#Windows_Media_Core_MediaBinder_Binding) event. Next, create a **MediaSource** from the **Binder** by calling [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromMediaBinder_Windows_Media_Core_MediaBinder_). Then, create a **MediaPlaybackItem** from the **MediaSource** and add it to the playback list as usual.
 
 [!code-cs[InitMediaBinder](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetInitMediaBinder)]
@@ -242,6 +242,8 @@ When the system determines that the content associated with the **MediaBinder** 
 Note that if you are performing asynchronous operations, such as web requests, in the **Binding** event handler, you should call the [**MediaBindingEventArgs.GetDeferral**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_GetDeferral) method to instruct the system to wait for your operation to complete before continuing. Call [**Deferral.Complete**](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.deferral#Windows_Foundation_Deferral_Complete) after your operation is complete to instruct the system to continue.
 
 Starting with Windows 10, version 1703, you can supply an [**AdaptiveMediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) as bound content by calling [**SetAdaptiveMediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_SetAdaptiveMediaSource_Windows_Media_Streaming_Adaptive_AdaptiveMediaSource_). For more information on using adaptive streaming in your app, see [Adaptive streaming](adaptive-streaming.md).
+
+
 
 ## Related topics
 * [Media playback](media-playback.md)

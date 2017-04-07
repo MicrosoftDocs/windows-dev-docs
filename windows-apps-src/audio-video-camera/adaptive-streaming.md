@@ -67,7 +67,7 @@ The [**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn93
 
 ## Modify resource request properties using the DownloadRequested event
 
-You can use the **DownloadRequested** event handler to modify the resource request by updating the properties of the [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) object provided by the event args. In the example below, the URI from which the resource will be retrieved is modified by updating the [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) properties of the result object.
+You can use the **DownloadRequested** event handler to modify the resource request by updating the properties of the [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) object provided by the event args. In the example below, the URI from which the resource will be retrieved is modified by updating the [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) properties of the result object. You can also rewrite the byte range offset and length for media segments or, as shown the example below, change the resource URI to download the full resource and set the byte range offset and length to null.
 
 You can override the content of the requested resource by setting the [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) or [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) properties of the result object. In the example below, the contents of the manifest resource are replaced by setting the **Buffer** property. Note that if you are updating the resource request with data that is obtained asynchronously, such as retrieving data from a remote server or asynchronous user authentication, you must call [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) to get a deferral and then call [**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) when the operation is complete to signal the system that the download request operation can continue.
 
@@ -117,6 +117,7 @@ If you want to register event handlers for the bound adaptive media source, you 
 ## Related topics
 * [Media playback](media-playback.md)
 * [HLS tag support](hls-tag-support.md) 
+* [Dash profile support](dash-profile-support.md) 
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Play media in the background](background-audio.md) 
 
