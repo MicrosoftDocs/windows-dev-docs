@@ -75,25 +75,27 @@ Unlike other brushes, creating a [**CompositionColorBrush**](https://msdn.micros
 A [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) paints a visual with a composition surface (represented by a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) object). The following illustration shows a square visual painted with a bitmap of licorice rendered onto a **ICompositionSurface** using D2D.
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png)
-The first example initializes a composition surface for use with the brush. The composition surface is created using a helper method, LoadImage that takes in a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and a Url as a string. It loads the image from the Url, renders the image onto a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) and sets the surface as content of the **CompositionSurfaceBrush**. Note, **ICompositionSurface** is exposed in Native code only, hence LoadImage method is implemented in native code.
-
-```cs
-LoadImage(Brush,
-          "ms-appx:///Assets/liqorice.png");
-```
+The example initializes a composition surface for use with the brush. The composition surface is created using a 
+[**LoadedImageSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.loadedimagesurface) object, which loads an image onto a 
+composition surface. The **LoadedImageSurface** downloads, decodes and loads the image onto an underlying 
+[**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) using a Uniform Resource Identifier (URI) 
+that points to a local file. The **LoadedImageSurface** can then be set as the content for the **CompositionSurfaceBrush**. 
+Note, **ICompositionSurface** is exposed in Native code only, hence **LoadedImageSurface** is implemented in native code. 
 
 To create the surface brush, call the Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) method. The method returns a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) object. The code below illustrates the code that can be used to paint a visual with contents of a **CompositionSurfaceBrush**.
 
 ```cs
 Compositor _compositor;
-ContainerVisual _container;
-SpriteVisual visual;
 CompositionSurfaceBrush _surfaceBrush;
-
-_surfaceBrush = _compositor.CreateSurfaceBrush();
-LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
-visual.Brush = _surfaceBrush;
+SpriteVisual visual;
+ 
+ _surfaceBrush = _compositor.CreateSurfaceBrush(); 
+LoadedImageSurface _loadedSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/liqorice.png")); 
+_surfaceBrush.Surface = _loadedSurface; 
+visual.Brush = _surfaceBrush; 
 ```
+
+**Note:** [**LoadedImageSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.loadedimagesurface) is not available prior to Windows 10, version 1703.
 
 ## Configuring Stretch and Alignment
 
