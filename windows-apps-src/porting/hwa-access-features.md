@@ -123,7 +123,7 @@ You can use the web authentication broker to handle the login flow for your user
 <meta name="ms-webauth-uris" content="https://<providerstartpoint>?client_id=<clientid>&response_type=token, https://<appendpoint>"/>
 ```
 
-For more guidance, see [Web authentication broker considerations for online providers](../security/web-authentication-broker).
+For more guidance, see [Web authentication broker considerations for online providers](../security/web-authentication-broker.md).
 
 ## App capability declarations
 
