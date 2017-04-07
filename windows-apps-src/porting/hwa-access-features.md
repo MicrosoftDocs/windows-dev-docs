@@ -147,7 +147,7 @@ Some capabilities provide apps access to a sensitive resource. These resources a
 An easy way to turn your website into a UWP app is to use an **app manifest** and **manifoldjs**. The app manifest is an xml file that contains metadata about the app. It specifies such things as the app’s name, links to resources, display mode, URLs, and other data that describes how the app should be deployed and run. manifoldjs makes this process very easy, even on systems that do not support web apps. Please go to [manifoldjs.com](http://www.manifoldjs.com/) for more information on how it works. You can also view a manifoldjs demonstration as part of this [Windows 10 Web Apps presentation](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession).
 
 ## Related topics
-- [Windows Runtime API: JavaScript Code Samples](http://rjs.azurewebsites.net/)
+- [Windows Runtime API: JavaScript Code Samples]()
 - [Codepen: sandbox to use for calling Windows Runtime APIs](http://codepen.io/seksenov/pen/wBbVyb/)
 - [Cortana interactions](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
 - [Voice Command Definition (VCD) elements and attributes v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
