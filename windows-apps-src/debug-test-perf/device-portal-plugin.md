@@ -15,12 +15,12 @@ keywords: windows 10, uwp
 
 Learn how to write a UWP app that uses th Windows Device Portal to host a web page and provide diagnostic information.
 
-Starting with the Creators Update, you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the appxmanifest changes, setting up your app’s connection to the Device Portal service, and handling an incoming request. A sample app is also provided to get started. 
+Starting with the Creators Update, you can use Device Portal to host your app's diagnostic interfaces. This article covers the three pieces needed to create a DevicePortalProvider for your app – the appxmanifest changes, setting up your app’s connection to the Device Portal service, and handling an incoming request. A sample app is also provided to get started (Coming soon) . 
 
 ## Create a new UWP app project
 In this guide, we'll create everything in one solution for simplicity.
 
-In Microsoft Visual Studio 2017, create a new UWP app project. Go to File > New Project and select Templates > Visual C# > Windows Universal > Blank app (Windows Universal). Name it "DevicePortalProvider". This will be the app that contains the app service. Ensure that you choose the Creators Edition SDK to support.
+In Microsoft Visual Studio 2017, create a new UWP app project. Go to File > New Project and select Templates > Visual C# > Windows Universal > Blank app (Windows Universal). Name it "DevicePortalProvider". This will be the app that contains the app service. Ensure that you choose the Creators Update SDK to support.  You may need to update Visual Studio or install the new SDK - see [here](https://blogs.windows.com/buildingapps/2017/04/05/updating-tooling-windows-10-creators-update/) for details. 
 
 ## Add the devicePortalProvider extension to your package.appxmanifest file
 You will need to add some code to your *package.appxmanifest* file in order to make your app functional as a Device Portal plugin. First, add the following namespace definitions at the top of the file. Also add them to the `IgnorableNamespaces` attribute.
@@ -58,7 +58,7 @@ In order to declare that your app is a Device Portal Provider, you need to creat
 ...
 ```
 
-The `HandlerRoute` attribute references the REST namespace claimed by your app. Any HTTP requests on that namespace (implicitly followed by a wildcard) received by the Device Portal service will be sent to your app to be handled. In this case, any successfully authenticated HTTP request to `<ip_address>/MyNamespace/api/*` will be sent to your app. Conflicts between handler routes are settled via a "longest wins" check: whichever route matches more of the requests is selected, meaning that a request to "/MyNamespace/api/foo" will match against a provider with "/MyNamespace/foo" rather than one with "/MyNamespace".  
+The `HandlerRoute` attribute references the REST namespace claimed by your app. Any HTTP requests on that namespace (implicitly followed by a wildcard) received by the Device Portal service will be sent to your app to be handled. In this case, any successfully authenticated HTTP request to `<ip_address>/MyNamespace/api/*` will be sent to your app. Conflicts between handler routes are settled via a "longest wins" check: whichever route matches more of the requests is selected, meaning that a request to "/MyNamespace/api/foo" will match against a provider with "/MyNamespace/api" rather than one with "/MyNamespace".  
 
 Two new capabilities are required for this functionality. they must also be added to your *package.appxmanifest* file.
 
@@ -106,7 +106,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-There are two events that must be handled by the app to complete the request handling loop: **Closed**, for whenever the Device Portal service shuts down, and **RequestRecieved**, which communicates with HTTP requests and provides the main functionality of the Device Portal provider. 
+There are two events that must be handled by the app to complete the request handling loop: **Closed**, for whenever the Device Portal service shuts down, and [**RequestRecieved**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs), which surfaces incoming HTTP requests and provides the main functionality of the Device Portal provider. 
 
 ## Handle the RequestReceived event
 The **RequestReceived** event will be raised once for every HTTP request that is made on your plugin's specified Handler Route. The request handling loop for Device Portal providers is similar to that in NodeJS Express: the request and response objects are provided together with the event, and the handler responds by filling in the response object. In Device Portal providers, the **RequestReceived** event and its handlers use [**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage) and [**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage) objects.   
@@ -165,7 +165,7 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
     }
 }
 ```
-Make sure that all files inside of the content folder are marked as "Content" and set to "Copy if newer" or "Copy always" in Visual Studio’s Properties menu.   
+Make sure that all files inside of the content folder are marked as "Content" and set to "Copy if newer" or "Copy always" in Visual Studio’s Properties menu.  This ensures that the files will be inside your AppX Package when you deploy it.  
 
 ![configure static content file copying](images/device-portal/plugin-file-copying.png)
 
@@ -176,7 +176,7 @@ Static content served by a Device Portal provider is served on the same port as 
  
 Importantly, use of the HttpPost/DeleteExpect200 methods on webbRest will automatically do the [CSRF handling](https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) for you, which allows your webpage to call state-changing REST APIs.  
 
-> ![NOTE] 
+> [!NOTE] 
 > The static content included with Device Portal does not come with a guarantee against breaking changes. While the APIs are not expected to change often, they may, especially in the *common.js* and *controls.js* files, which your provider should not use. 
 
 ## Debugging the Device Portal connection
@@ -188,7 +188,7 @@ In order to debug your background task, you must change the way Visual Studio ru
 1.	Set a breakpoint in your RequestReceived handler function.
 ![break point at requestreceived handler](images/device-portal/plugin-requestreceived-breakpoint.png)
 1.	Press F5 to deploy your app
-1.	Turn Device Portal off, then turn it back on so that it finds your app (only needed when you change your app manifest – the rest of the time you can just deploy and go). 
+1.	Turn Device Portal off, then turn it back on so that it finds your app (only needed when you change your app manifest – the rest of the time you can simply re-deploy and skip this step). 
 1.	In your browser, access the provider's namespace, and the breakpoint should be hit.
 
 ## Related topics
