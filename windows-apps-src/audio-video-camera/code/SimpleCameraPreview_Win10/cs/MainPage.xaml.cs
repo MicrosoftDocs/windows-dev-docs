@@ -81,6 +81,10 @@ namespace SimpleCameraPreview_Win10
                 await _mediaCapture.StartPreviewAsync();
                 _isPreviewing = true;
 
+                if (_displayRequest == null)
+                {
+                    _displayRequest = new DisplayRequest();
+                }
                 _displayRequest.RequestActive();
                 DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
             }
