@@ -18,7 +18,7 @@ If you have a catalog of apps and add-ons (also known as in-app products or IAPs
 These APIs consist of REST methods that are designed to be used by developers with add-on catalogs that are supported by cross-platform services. These APIs enable you to do the following:
 
 -   Windows Store collection API: [Query for products owned by a user](query-for-products.md) and [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).
--   Windows Store purchase API: [Grant a free product to a user](grant-free-products.md).
+-   Windows Store purchase API: [Grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), and [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 > [!NOTE]
 > The Windows Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. To use these APIs, you (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory.
@@ -90,7 +90,7 @@ Depending on which methods you want to call in the Windows Store collection API 
 
   * If you want to call a method in the Windows Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Windows Store ID key that you can use with the Windows Store collection API.
 
-  * If you want to call a method in the Windows Store purchase API to [grant a free product to a user](grant-free-products.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Windows Store ID key that you can use with the Windows Store purchase API.
+  * If you want to call a method in the Windows Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Windows Store ID key that you can use with the Windows Store purchase API.
 
 <span />
 ### Create the tokens
@@ -149,7 +149,7 @@ Follow these steps to create a Windows Store ID key that you can use with the Wi
 <span />
 ### To create a Windows Store ID key for the Windows Store purchase API
 
-Follow these steps to create a Windows Store ID key that you can use with the Windows Store purchase API to [grant a free product to a user](grant-free-products.md).
+Follow these steps to create a Windows Store ID key that you can use with the Windows Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
 1.  Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI from your service to your client app.
 
@@ -171,6 +171,8 @@ After your service has a Windows Store ID key that enables it to access a specif
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Grant free products](grant-free-products.md)
+* [Get subscriptions for a user](get-subscriptions-for-a-user.md)
+* [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
 
 For each scenario, pass the following information to the API:
 
@@ -223,6 +225,8 @@ Here is an example of a decoded Windows Store ID key claim set.
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Grant free products](grant-free-products.md)
+* [Get subscriptions for a user](get-subscriptions-for-a-user.md)
+* [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
 * [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502)
 * [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500)
