@@ -952,6 +952,7 @@
 ### [Composition effects](composition/composition-effects.md)
 ### [Composition brushes](composition/composition-brushes.md)
 ### [Composition native interoperation](composition/composition-native-interop.md)
+### [Composition lighting](composition/lighting.md)
 ### [Using XAML](composition/using-the-visual-layer-with-xaml.md)
 ## [Windows Runtime components](winrt-components/index.md)
 ### [Creating Windows Runtime components in C++](winrt-components/creating-windows-runtime-components-in-cpp.md)

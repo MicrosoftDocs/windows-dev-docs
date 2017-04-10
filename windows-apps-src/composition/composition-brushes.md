@@ -22,6 +22,8 @@ A brush paints the area of a [**Visual**](https://msdn.microsoft.com/library/win
 
 All brushes inherit from [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398); they are created directly or indirectly by the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) and are device-independent resources. Although brushes are device-independent, [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paint a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) with contents from a composition surface which are device-dependent.
 
+Composition brushes can also be used to paint XAML UIElements using [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+
 -   [Prerequisites](./composition-brushes.md#prerequisites)
 -   [Color Basics](./composition-brushes.md#color-basics)
     -   [Alpha Modes](./composition-brushes.md#alpha-modes)
@@ -49,23 +51,23 @@ To create a color brush, call the Compositor.[**CreateColorBrush**](https://msdn
 ```cs
 Compositor _compositor;
 ContainerVisual _container;
-SpriteVisual _visual1, _visual2;
+SpriteVisual visual1, visual2;
 CompositionColorBrush _blackBrush, _greenBrush; 
 
 _compositor = new Compositor();
 _container = _compositor.CreateContainerVisual();
 
 _blackBrush = _compositor.CreateColorBrush(Colors.Black);
-_visual1 = _compositor.CreateSpriteVisual();
-_visual1.Brush = _blackBrush;
-_visual1.Size = new Vector2(156, 156);
-_visual1.Offset = new Vector3(0, 0, 0);
+visual1 = _compositor.CreateSpriteVisual();
+visual1.Brush = _blackBrush;
+visual1.Size = new Vector2(156, 156);
+visual1.Offset = new Vector3(0, 0, 0);
 
 _ greenBrush = _compositor.CreateColorBrush(Color.FromArgb(0xff, 0x9A, 0xCD, 0x32));
-_visual2 = _compositor.CreateSpriteVisual();
-_visual2.Brush = _greenBrush;
-_visual2.Size = new Vector2(150, 150);
-_visual2.Offset = new Vector3(3, 3, 0);
+Visual2 = _compositor.CreateSpriteVisual();
+Visual2.Brush = _greenBrush;
+Visual2.Size = new Vector2(150, 150);
+Visual2.Offset = new Vector3(3, 3, 0);
 ```
 
 Unlike other brushes, creating a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) is a relatively inexpensive operation. You may create **CompositionColorBrush** objects each time you render with little to no performance impact.
@@ -75,27 +77,25 @@ Unlike other brushes, creating a [**CompositionColorBrush**](https://msdn.micros
 A [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) paints a visual with a composition surface (represented by a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) object). The following illustration shows a square visual painted with a bitmap of licorice rendered onto a **ICompositionSurface** using D2D.
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png)
-The example initializes a composition surface for use with the brush. The composition surface is created using a 
-[**LoadedImageSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.loadedimagesurface) object, which loads an image onto a 
-composition surface. The **LoadedImageSurface** downloads, decodes and loads the image onto an underlying 
-[**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) using a Uniform Resource Identifier (URI) 
-that points to a local file. The **LoadedImageSurface** can then be set as the content for the **CompositionSurfaceBrush**. 
-Note, **ICompositionSurface** is exposed in Native code only, hence **LoadedImageSurface** is implemented in native code. 
+The first example initializes a composition surface for use with the brush. The composition surface is created using a helper method, LoadImage that takes in a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and a Url as a string. It loads the image from the Url, renders the image onto a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) and sets the surface as content of the **CompositionSurfaceBrush**. Note, **ICompositionSurface** is exposed in Native code only, hence LoadImage method is implemented in native code.
+
+```cs
+LoadImage(Brush,
+          "ms-appx:///Assets/liqorice.png");
+```
 
 To create the surface brush, call the Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) method. The method returns a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) object. The code below illustrates the code that can be used to paint a visual with contents of a **CompositionSurfaceBrush**.
 
 ```cs
 Compositor _compositor;
-CompositionSurfaceBrush _surfaceBrush;
+ContainerVisual _container;
 SpriteVisual visual;
- 
- _surfaceBrush = _compositor.CreateSurfaceBrush(); 
-LoadedImageSurface _loadedSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/liqorice.png")); 
-_surfaceBrush.Surface = _loadedSurface; 
-visual.Brush = _surfaceBrush; 
-```
+CompositionSurfaceBrush _surfaceBrush;
 
-**Note:** [**LoadedImageSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.loadedimagesurface) is not available prior to Windows 10, version 1703.
+_surfaceBrush = _compositor.CreateSurfaceBrush();
+LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
+visual.Brush = _surfaceBrush;
+```
 
 ## Configuring Stretch and Alignment
 
@@ -116,6 +116,4 @@ Sometimes, the contents of the [**ICompositionSurface**](https://msdn.microsoft.
 ## Related Topics
 [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
 
-
-
-
+[XAML brush interoperation with XamlCompositionBrush](../graphics/using-brushes.md#xamlcompositionbrushbase)

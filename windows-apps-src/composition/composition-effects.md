@@ -22,6 +22,8 @@ Brush effects are used to paint areas of an application by applying effects to a
 
 Effect brushes are used on composition tree visuals whose content comes from the output of an effect graph. Effects can reference existing surfaces/textures, but not the output of other composition trees.
 
+Effects can also be applied to XAML UIElements using an effect brush with [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+
 ## Effect Features
 
 -   [Effect Library](./composition-effects.md#effect-library)
@@ -237,6 +239,7 @@ brush.Surface = imageSource.Surface;
 -   [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 -   [Visual Tree Basics](composition-visual-tree.md)
 -   [Composition Brushes](composition-brushes.md)
+-   [XamlCompositionBrushBase](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 -   [Animation Overview](composition-animation.md)
 -   [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
 
