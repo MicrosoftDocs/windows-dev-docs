@@ -182,6 +182,7 @@
 #### [Prepare your app for localization](globalizing/prepare-your-app-for-localization.md)
 #### [Put UI strings into resources](globalizing/put-ui-strings-into-resources.md)
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
+#### [Migrate legacy resources](globalizing/using-mrt-for-converted-desktop-apps-and-games.md)
 ### [Guidelines for app help](in-app-help/guidelines-for-app-help.md)
 #### [Instructional UI](in-app-help/instructional-ui.md)
 #### [In-app help](in-app-help/in-app-help.md)
