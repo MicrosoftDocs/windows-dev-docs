@@ -77,6 +77,10 @@ Watch this video for a brief introduction on how to prepare your app for the wor
 <td align="left"><p>[Put UI strings into resources](put-ui-strings-into-resources.md)</p></td>
 <td align="left"><p>Put string resources for your UI into resource files. You can then reference those strings from your code or markup.</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>[Migrate legacy resources to the Windows 10 resource management platform](using-mrt-for-converted-desktop-apps-and-games.md)</p></td>
+<td align="left"><p>Move legacy Win32 resources to Windows 10 resource management platform with minimal code changes.</p></td>
+</tr>
 </tbody>
 </table>
 
