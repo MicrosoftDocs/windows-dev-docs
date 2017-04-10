@@ -220,7 +220,7 @@ In the preceding code, we create the toast and then spin up a thread-pool work i
 
 **Note** The async call in the preceding code uses ThreadPool.RunAsync solely to demonstrate a simple way to fire the event on a background thread. You could write this particular method as shown in the following example, and it would work fine because the .NET Task scheduler automatically marshals async/await calls back to the UI thread.
   
-````csharp
+```csharp
 	public async void MakeToast(string message)
     {
         Toast toast = new Toast(message)
