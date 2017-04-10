@@ -1,4 +1,4 @@
----
+--
 author: mukin
 title: Barcode Scanner
 description: This article contains information about the barcode scanner point of service family of devices
@@ -29,10 +29,10 @@ See the barcode scanner sample for an example implementation.
 ## Compatible Hardware
 | Category | Connectivity | Manufacturer / Model |
 |--------------|-----------|-----------|
-| ***1D Handheld Scanners*** | **USB** |Honeywell Voyager 1200g<br/>Honeywell Voyager 1202g<br/>Honeywell Voyager 1202-bf<br/>Honeywell Voyager 145Xg (Upgradable)<br/>Honeywell Voyager 1602g|
-| ***1D Handheld Scanners*** | **Bluetooth** |Socket Mobile CHS 7Ci<br/> Socket Mobile CHS 7Di<br/> Socket Mobile CHS 7Mi<br/> Socket Mobile CHS 7Pi<br/>Socket Mobile DuraScan D700<br/> Socket Mobile DuraScan D730<br/>Socket Mobile SocketScan S800 (formerly CHS 8Ci) <br/>|
-|***2D Handheld Scanners*** | **USB** |Code Reader™ 1021<br/>Code Reader™ 1421<br/> Honeywell Granit 198Xi<br/>Honeywell Granit 191Xi<br/>Honeywell Xenon 1900g<br/>Honeywell Xenon 1902g<br/>Honeywell Xenon 1902g-bf<br/>Honeywell Xenon 1900h<br/>Honeywell Xenon 1902h<br/>Honeywell Voyager 145Xg (Upgradable)<br/>Intermec SG20|
-|***2D Handheld Scanners*** | **Bluetooth** |Socket Mobile SocketScan S850 (formerly CHS 8Qi)|
-| ***Presentation Scanners*** | **USB** |Code Reader™ 5000<br/>Honeywell Genesis 7580g<br/>Honeywell Orbit 7190g|
-| ***In-Counter Scanners*** | **USB** |Honeywell Stratos 2700|
-| **Scan Engines** | **USB** | Honeywell N5600<br/>Honeywell N3680|
+| **1D Handheld Scanners** | **USB** |Honeywell Voyager 1200g<br/>Honeywell Voyager 1202g<br/>Honeywell Voyager 1202-bf<br/>Honeywell Voyager 145Xg (Upgradable)|
+| **1D Handheld Scanners** | **Bluetooth** |Socket Mobile CHS 7Ci<br/> Socket Mobile CHS 7Di<br/> Socket Mobile CHS 7Mi<br/> Socket Mobile CHS 7Pi<br/>Socket Mobile DuraScan D700<br/> Socket Mobile DuraScan D730<br/>Socket Mobile SocketScan S800 (formerly CHS 8Ci) <br/>|
+|**2D Handheld Scanners** | **USB** |Code Reader™ 1021<br/>Code Reader™ 1421<br/> Honeywell Granit 198Xi<br/>Honeywell Granit 191Xi<br/>Honeywell Xenon 1900g<br/>Honeywell Xenon 1902g<br/>Honeywell Xenon 1902g-bf<br/>Honeywell Xenon 1900h<br/>Honeywell Xenon 1902h<br/>Honeywell Voyager 145Xg (Upgradable)<br/>Honeywell Voyager 1602g<br/>Intermec SG20|
+|**2D Handheld Scanners** | **Bluetooth** |Socket Mobile SocketScan S850 (formerly CHS 8Qi)|
+| **Presentation Scanners** | **USB** |Code Reader™ 5000<br/>Honeywell Genesis 7580g<br/>Honeywell Orbit 7190g|
+| **In-Counter Scanners** | **USB** |Honeywell Stratos 2700|
+| **Scan Engines** | **USB** | Honeywell N5680<br/>Honeywell N3680|
