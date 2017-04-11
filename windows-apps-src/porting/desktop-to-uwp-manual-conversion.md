@@ -62,13 +62,14 @@ Your _appxmanifest.xml_ file needs to have the following content (at the minimum
 
 Have unplated assets you'd like to add? See the section on [unplated assets](#unplated-assets) later in this article for details on how.
 
+<span id="make-appx" />
 ## Run the MakeAppX tool
 
 Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) to generate a Windows app package for your project. MakeAppx.exe is included with the Windows 10 SDK.
 
 To run MakeAppx, first ensure you've created an manifest file as described above.
 
-Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Please note that relative file paths aren't relative to the file's location, but from where the MakeAppx.exe tool is ran. Here's an example:
+Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example:
 
 ```
 [Files]
@@ -83,8 +84,8 @@ Finally, run the following command:
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 ```
-
-## Sign your AppX package
+<span id="sign-appx" />
+## Sign your Windows app package
 
 The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), which ships in the Microsoft Windows 10 SDK, to sign the Windows app package.
 
