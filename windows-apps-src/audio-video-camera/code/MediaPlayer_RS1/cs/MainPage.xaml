@@ -7,13 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="LightGray">
         <Grid.RowDefinitions>
-            <RowDefinition MaxHeight="200"/>
-            <RowDefinition MaxHeight="200"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition MaxHeight="300"/>
+            <RowDefinition MaxHeight="100"/>
+            <RowDefinition MaxHeight="80"/>
+            <RowDefinition MaxHeight="50"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
 
         
@@ -23,24 +24,40 @@
 
         
         <MediaPlayerElement x:Name="_mediaPlayerElement2" AreTransportControlsEnabled="False" HorizontalAlignment="Stretch" Grid.Row="1"/>
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
+        <StackPanel Orientation="Vertical" Grid.Row="2">
+            <StackPanel Orientation="Horizontal" >
                 <Button x:Name="_playButton" Content="Play" Click="PlayButton_Click"/>
                 <Button x:Name="_pauseButton" Content="Pause" Click="PauseButton_Click"/>
                 <Button x:Name="_fastForwardButton" Content="FastForward" Click="FastForwardButton_Click"/>
                 <Button x:Name="_rewindButton" Content="Rewind" Click="RewindButton_Click"/>
+            </StackPanel>
             <Slider x:Name="_positionSlider" ValueChanged="_positionSlider_ValueChanged" Width="300"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3">
             <Slider x:Name="_timelineOffsetSlider1" ValueChanged="_timelineOffsetSlider1_ValueChanged" Value="0" Width="100"/>
             <Slider x:Name="_timelineOffsetSlider2" ValueChanged="_timelineOffsetSlider2_ValueChanged" Value="0" Width="100"/>
         </StackPanel>
-        <StackPanel  Grid.Row="4" Orientation="Horizontal">
-                <Button x:Name="ActionButton1" Content="Action 1" Click="ActionButton1_Click"/>
-                <Button x:Name="ActionButton2" Content="Action 2" Click="ActionButton2_Click"/>
-                <ComboBox x:Name="_audioDeviceComboBox" SelectionChanged="_audioDeviceComboBox_SelectionChanged"/>
-                <ToggleButton x:Name="_speedToggleButton" Content="2x" IsChecked="False" Checked="_speedToggleButton_Checked" Unchecked="_speedToggleButton_Unchecked"/>
-                <Button x:Name="_skipForwardButton" Content="Skip forward" Click="_skipForwardButton_Click"/>
-                <Canvas x:Name="_compositionCanvas" Width="200" Height="200" Background="LimeGreen"/>
+        <StackPanel  Grid.Row="4" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="SimpleFilePlaybackPickerButton" Content="SimpleFilePlaybackPicker" Click="SimpleFilePlaybackPickerButton_Click"/>
+                <Button x:Name="SimpleFilePlaybackButton" Content="SimpleFilePlayback" Click="SimpleFilePlaybackButton_Click"/>
+                <Button x:Name="GetPlayerFromElementButton" Content="GetPlayerFromElement" Click="GetPlayerFromElementButton_Click"/>
+                <Button x:Name="SetAudioEndpointButton" Content="SetAudioEndpoint" Click="SetAudioEndpointButton_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="RegisterGestureHandlerButton" Content="RegisterGestureHandler" Click="RegisterGestureHandlerButton_Click"/>
+                <Button x:Name="SetVideoVisualButton" Content="SetVideoVisual" Click="SetVideoVisualButton_Click"/>
+                <Button x:Name="SetTimelineControllerButton" Content="SetTimelineController" Click="SetTimelineControllerButton_Click"/>
+                <Button x:Name="GetMediaSourceLengthButton" Content="GetMediaSourceLength" Click="GetMediaSourceLengthButton_Click"/>
+                <Button x:Name="CloseButton" Content="Close" Click="CloseButton_Click"/>
+            </StackPanel>
+            <ComboBox x:Name="_audioDeviceComboBox" SelectionChanged="_audioDeviceComboBox_SelectionChanged"/>
+            <ToggleButton x:Name="_speedToggleButton" Content="2x" IsChecked="False" Checked="_speedToggleButton_Checked" Unchecked="_speedToggleButton_Unchecked"/>
+            <Button x:Name="_skipForwardButton" Content="Skip forward" Click="_skipForwardButton_Click"/>
+            <Button x:Name="FrameServerButton" Content="FrameServer" Click="FrameServerButton_Click"/>
+            <Button x:Name="SphericalVideoButton" Content="SphericalVideo" Click="SphericalVideoButton_Click"/>
+            <Button x:Name="SphericalVideoListButton" Content="SphericalVideoList" Click="SphericalVideoListButton_Click"/>
+            <Canvas x:Name="_compositionCanvas" Width="200" Height="200" Background="LimeGreen"/>
             </StackPanel>
 
     </Grid>

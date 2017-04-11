@@ -364,18 +364,18 @@ namespace AudioGraphSnippets
         private void CreateFrameOutputNode()
         {
             frameOutputNode = audioGraph.CreateFrameOutputNode();
-            audioGraph.QuantumProcessed += AudioGraph_QuantumProcessed;
+            audioGraph.QuantumStarted += AudioGraph_QuantumStarted;
         }
         //</SnippetCreateFrameOutputNode>
 
-        //<SnippetQuantumProcessed>
-        private void AudioGraph_QuantumProcessed(AudioGraph sender, object args)
+        //<SnippetQuantumStartedFrameOutput>
+        private void AudioGraph_QuantumStarted(AudioGraph sender, object args)
         {
             AudioFrame frame = frameOutputNode.GetFrame();
             ProcessFrameOutput(frame);
 
         }
-        //</SnippetQuantumProcessed>
+        //</SnippetQuantumStartedFrameOutput>
 
 
         //<SnippetProcessFrameOutput>

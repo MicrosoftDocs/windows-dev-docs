@@ -68,7 +68,7 @@ Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows
 
 To run MakeAppx, first ensure you've created an manifest file as described above.
 
-Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example:
+Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Please note that relative file paths aren't relative to the file's location, but from where the MakeAppx.exe tool is ran. Here's an example:
 
 ```
 [Files]

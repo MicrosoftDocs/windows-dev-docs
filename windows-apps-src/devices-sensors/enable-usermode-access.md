@@ -341,7 +341,7 @@ This document first describes the underlying interfaces and protocols involved i
 
 ### Pin Muxing Architecture 
 
-This section describes the underlying interfaces and protocols involved in pin muxing. Knowledge of the underlying protocols is not necessarily needed to support pin muxing with GpioClx/SpbCx/SerCx drivers. For details on how to support pin muxing with GpioCls/SpbCx/SerCx drivers, see [Implementing pin muxing support in GpioClx client drivers](#supporting-muxing-support-in-GpioClx-client-drivers) and [Consuming muxing support in SpbCx and SerCx controller drivers](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers). 
+This section describes the underlying interfaces and protocols involved in pin muxing. Knowledge of the underlying protocols is not necessarily needed to support pin muxing with GpioClx/SpbCx/SerCx drivers. For details on how to support pin muxing with GpioCls/SpbCx/SerCx drivers, see [Implementing pin muxing support in GpioClx client drivers](#supporting-muxing-support-in-gpioclx-client-drivers) and [Consuming muxing support in SpbCx and SerCx controller drivers](#supporting-muxing-in-spbcx-and-sercx-controller-drivers). 
 
 Pin muxing is accomplished by the cooperation of several components. 
 
@@ -516,7 +516,7 @@ When the client closes its resource handle, the pins are muxed back to their ini
 
 ###	Protocol description for pin muxing servers
 
-This section describes how a pin muxing server exposes its functionality to clients. This does not apply to `GpioClx` miniport drivers, since the framework implements this protocol on behalf of client drivers. For details on how to support pin muxing in `GpioClx` client drivers, see [Implementing muxing support in GpioClx Client Drivers](#supporting-muxing-support-in-GpioClx-client-drivers).
+This section describes how a pin muxing server exposes its functionality to clients. This does not apply to `GpioClx` miniport drivers, since the framework implements this protocol on behalf of client drivers. For details on how to support pin muxing in `GpioClx` client drivers, see [Implementing muxing support in GpioClx Client Drivers](#supporting-muxing-support-in-gpioclx-client-drivers).
 
 ####	Handling IRP_MJ_CREATE requests
 
@@ -609,7 +609,7 @@ Device(I2C1)
 
 In addition to the memory and interrupt resources typically required by a controller driver, a `MsftFunctionConfig()` resource is also specified. This resource enables the I2C controller driver to put pins 2 and 3 - managed by the device node at \\_SB.GPIO0 – in function 4 with pull-up resistor enabled. 
 
-### Supporting muxing support in GpioClx client drivers 
+## Supporting muxing support in GpioClx client drivers 
 
 `GpioClx` has built-in support for pin muxing. GpioClx miniport drivers (also referred to as “GpioClx client drivers”), drive GPIO controller hardware. As of Windows 10 build 14327, GpioClx miniport drivers can add support for pin muxing by implementing two new DDIs: 
 
@@ -625,7 +625,7 @@ In addition to these two new DDIs, existing DDIs should be audited for pin muxin
 
 For example, assume that a pin’s default muxing configuration is UART, and the pin can also be used as GPIO. When CLIENT_ConnectIoPins is called to connect the pin for GPIO, it should mux the pin to GPIO, and in CLIENT_DisconnectIoPins, it should mux the pin back to UART. In general, the _Disconnect routines should undo operations done by the _Connect routines. 
 
-### Supporting muxing in SpbCx and SerCx controller drivers 
+## Supporting muxing in SpbCx and SerCx controller drivers 
 
 As of Windows 10 build 14327, the `SpbCx` and `SerCx` frameworks contain built-in support for pin muxing that enables `SpbCx` and `SerCx` controller drivers to be pin muxing clients without any code changes to the controller drivers themselves. By extension, any SpbCx/SerCx peripheral driver that connects to a muxing-enabled SpbCx/SerCx controller driver will trigger pin muxing activity. 
 

@@ -13,8 +13,6 @@ keywords: windows 10, uwp
 
 # Connected animation for UWP apps
 
-> Note: This article is an early draft for a new feature of Windows 10 RS2. Feature names (such as "material"), terminology, and functionality are not final.
-
 ## What is connected animation?
 
 Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views. This helps the user maintain their context and provides continuity between the views.

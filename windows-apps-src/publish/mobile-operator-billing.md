@@ -4,7 +4,7 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 04/06/2017
+ms.date: 04/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -39,6 +39,7 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 | Russia          | Beeline              |
 | Sweden          | Telenor              |
 | Switzerland     | Swisscom             |
+| Turkey          | Turkcell             |
 | United States   | Sprint               |
 | United Kingdom  | O2, 3 UK             |
 

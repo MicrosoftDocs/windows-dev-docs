@@ -16,19 +16,36 @@ keywords: windows 10, uwp
 ## Introduction
 
 Most apps that consume Visual Layer capabilities will use XAML to define the main UI content. In the Windows 10 Anniversary Update, there are new features in the XAML framework and the Visual Layer that make it easier to combine these two technologies to create stunning user experiences.
-XAML and Visual Layer “interop” functionality can be used to create advanced animations and effects not available using XAML API’s alone. This includes:
+XAML and Visual Layer “interop” functionality can be used to create advanced animations and effects not available using XAML APIs alone. This includes:
 
--              Scroll driven animations and parallax
--              Automatic layout animations
--              Pixel perfect drop shadows
--              Blur and frosted glass effects
+- Brush effects like blur and frosted glass
+- Dynamic lighting effects
+- Scroll driven animations and parallax
+- Automatic layout animations
+- Pixel-perfect drop shadows
 
-These effects and animations can be applied to existing XAML content, so you don’t have to dramatically restructure your XAML app to take advantage of the new functionality.
+These effects and animations can be applied to existing XAML content, so you don't have to dramatically restructure your XAML app to take advantage of the new functionality.
 Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). The [WindowsUIDevLabs repository](https://github.com/Microsoft/WindowsUIDevLabs) also has several other samples for implementing animations, shadows and effects.
+
+## The **XamlCompositionBrushBase** class
+
+**XamlCompositionBrush** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
+
+See the [**Brushes**](../graphics/using-brushes.md#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
+
+For code examples, see the reference page for [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+
+## The **XamlLight** class
+
+**XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
+
+See the [**Lighting**](lighting.md) section for more info on using lights, including lighting XAML UI elements.
+
+For code examples, see the reference page for [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
 
 ## The **ElementCompositionPreview** class
 
-[**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](https://msdn.microsoft.com/en-us/windows/uwp/composition/visual-layer). The **ElementCompositionPreview** class provides the following methods:
+[**ElementCompositionPreview**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.aspx) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer). The **ElementCompositionPreview** class provides the following methods:
 
 -   [**GetElementVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual.aspx): Get a "handout" Visual that is used to render this element
 -   [**SetElementChildVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual.aspx): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
@@ -89,9 +106,9 @@ Using Composition Implicit Animations, a developer can automatically animate cha
 
 #### Implementation overview
 
-1.            Get the handout **Visual** for the target element
-2.            Create an **ImplicitAnimationCollection** that automatically animates changes in the **Offset** property
-3.            Associate the **ImplicitAnimationCollection** with the backing Visual
+1. Get the handout **Visual** for the target element
+2. Create an **ImplicitAnimationCollection** that automatically animates changes in the **Offset** property
+3. Associate the **ImplicitAnimationCollection** with the backing Visual
 
 #### XAML
 
@@ -133,12 +150,12 @@ Apply a pixel-perfect drop shadow to a **UIElement**, for example an **Ellipse**
 
 #### Implementation overview
 
-1.            Get the handout **Visual** for the host element
-2.            Create a Windows.UI.Composition **DropShadow**
-3.            Configure the **DropShadow** to get its shape from the target element via a mask
+1. Get the handout **Visual** for the host element
+2. Create a Windows.UI.Composition **DropShadow**
+3. Configure the **DropShadow** to get its shape from the target element via a mask
     - **DropShadow** is rectangular by default, so this is not necessary if the target is rectangular
-4.            Attach shadow to a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
-5.            Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
+4. Attach shadow to a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
+5. Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
 
 #### XAML
 
@@ -196,12 +213,12 @@ Create an effect that blurs and tints background content. Note that developers n
 
 #### Implementation overview
 
-1.            Get handout **Visual** for the host element
-2.            Create a blur effect tree using Win2D and **CompositionEffectSourceParameter**
-3.            Create a **CompositionEffectBrush** based on the effect tree
-4.            Set input of the **CompositionEffectBrush** to a **CompositionBackdropBrush**, which allows an effect to be applied to the content behind a **SpriteVisual**
-5.            Set the **CompositionEffectBrush** as the content of a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
-6.            Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
+1.  Get handout **Visual** for the host element
+2.  Create a blur effect tree using Win2D and **CompositionEffectSourceParameter**
+3.  Create a **CompositionEffectBrush** based on the effect tree
+4.  Set input of the **CompositionEffectBrush** to a **CompositionBackdropBrush**, which allows an effect to be applied to the content behind a **SpriteVisual**
+5.  Set the **CompositionEffectBrush** as the content of a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element. You could alternative use a XamlCompositionBrushBase.
+6.  Bind size of the **SpriteVisual** to the size of the host using an **ExpressionAnimation**
 
 #### XAML
 

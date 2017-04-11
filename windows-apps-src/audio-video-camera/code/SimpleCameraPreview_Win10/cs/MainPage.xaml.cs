@@ -55,7 +55,7 @@ namespace SimpleCameraPreview_Win10
         //</SnippetDeclareMediaCapture>
 
         //<SnippetDeclareDisplayRequest>
-        DisplayRequest _displayRequest;
+        DisplayRequest _displayRequest = new DisplayRequest();
         //</SnippetDeclareDisplayRequest>
 
         //<SnippetRegisterSuspending>
@@ -77,21 +77,46 @@ namespace SimpleCameraPreview_Win10
                 _mediaCapture = new MediaCapture();
                 await _mediaCapture.InitializeAsync();
 
-                PreviewControl.Source = _mediaCapture;
-                await _mediaCapture.StartPreviewAsync();
-                _isPreviewing = true;
-
                 _displayRequest.RequestActive();
                 DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
             }
             catch (UnauthorizedAccessException)
             {
                 // This will be thrown if the user denied access to the camera in privacy settings
-                System.Diagnostics.Debug.WriteLine("The app was denied access to the camera");
+                ShowMessageToUser("The app was denied access to the camera");
+                return;
+            }
+
+            try
+            {
+                PreviewControl.Source = _mediaCapture;
+                await _mediaCapture.StartPreviewAsync();
+                _isPreviewing = true;
+            }
+            catch (System.IO.FileLoadException)
+            {
+                _mediaCapture.CaptureDeviceExclusiveControlStatusChanged += _mediaCapture_CaptureDeviceExclusiveControlStatusChanged;
             }
 
         }
         //</SnippetStartPreviewAsync>
+
+        //<SnippetExclusiveControlStatusChanged>
+        private async void _mediaCapture_CaptureDeviceExclusiveControlStatusChanged(MediaCapture sender, MediaCaptureDeviceExclusiveControlStatusChangedEventArgs args)
+        {
+            if (args.Status == MediaCaptureDeviceExclusiveControlStatus.SharedReadOnlyAvailable)
+            {
+                ShowMessageToUser("The camera preview can't be displayed because another app has exclusive access");
+            }
+            else if (args.Status == MediaCaptureDeviceExclusiveControlStatus.ExclusiveControlAvailable && !_isPreviewing)
+            {
+                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+                {
+                    await StartPreviewAsync();
+                });
+            }
+        }
+        //</SnippetExclusiveControlStatusChanged>
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -609,7 +634,7 @@ namespace SimpleCameraPreview_Win10
         }
         #endregion
 
-        
+
     }
 
 
