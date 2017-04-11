@@ -352,6 +352,12 @@ The Desktop App Converter does not support Unicode; thus, no Chinese characters 
 
 ## Next steps
 
+### Find answers to specific questions
+
++ [Ask us in this forum](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)
+
++ To give feedback about this article, use the comments section below.
+
 ### Run your app / find and fix issues
 
 + [Debug a Windows Desktop Bridge App](desktop-to-uwp-debug.md)
