@@ -108,7 +108,7 @@ If you're interested in the internals of how the Desktop Bridge works under the 
 
 To give your app the best chance of being published on the Windows Store or becoming [Windows Certified](http://go.microsoft.com/fwlink/p/?LinkID=309666), validate and test it locally before you submit it for certification.
 
-If you're using the DAC to convert your app, you can use the new ``-Verify`` flag to validate your package against the Desktop Bridge and Store requirements. See [Desktop app Converter usage](desktop-to-uwp-run-desktop-app-converter.md#desktop-app-converter-usage).
+If you're using the DAC to convert your app, you can use the new ``-Verify`` flag to validate your package against the Desktop Bridge and Store requirements. See [Convert an app, sign the app, and prepare it for store submission](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
 
 If you're using Visual Studio, you can validate your app from the **Create App Packages** wizard. See [Create an app package](../packaging/packaging-uwp-apps.md#create-an-app-package).
 
