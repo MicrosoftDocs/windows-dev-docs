@@ -4,7 +4,7 @@ Description: The Windows Store reaches customers in over 200 countries and regio
 title: Define pricing and market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -60,6 +60,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Afghanistan
 -   Åland Islands
 -   Albania
+-   Algeria
 -   American Samoa
 -   Andorra
 -   Angola
@@ -68,12 +69,11 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Antigua and Barbuda
 -   Armenia
 -   Aruba
--   Azerbaijan
--   Algeria
 -   Argentina
 -   Australia
 -   Austria
--   Bahamas, The
+-   Azerbaijan
+-   Bahamas
 -   Bahrain
 -   Bangladesh
 -   Barbados
@@ -84,7 +84,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Bermuda
 -   Bhutan
 -   Bolivia
--   Bonaire, Saint Eustatius and Saba
+-   Bonaire
 -   Bosnia and Herzegovina
 -   Botswana
 -   Bouvet Island
@@ -137,7 +137,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   French Polynesia
 -   French Southern and Antarctic Lands
 -   Gabon
--   Gambia, The
+-   Gambia
 -   Georgia
 -   Germany
 -   Ghana
@@ -154,7 +154,6 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Guyana
 -   Haiti
 -   Heard Island and McDonald Islands
--   Holy See (Vatican City)
 -   Honduras
 -   Hong Kong SAR
 -   Hungary
@@ -186,7 +185,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Lithuania
 -   Luxembourg
 -   Macao SAR
--   Macedonia (FYROM)
+-   Macedonia, FYRO
 -   Madagascar
 -   Malawi
 -   Malaysia
@@ -260,15 +259,15 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Slovenia
 -   Solomon Islands
 -   Somalia
+-   South Africa
 -   South Georgia and the South Sandwich Islands
+-   Spain
 -   Sri Lanka
 -   Suriname
 -   Svalbard and Jan Mayen
 -   Swaziland
 -   Sweden
 -   Switzerland
--   South Africa
--   Spain
 -   Taiwan
 -   Tajikistan
 -   Tanzania
@@ -279,22 +278,23 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Tonga
 -   Trinidad and Tobago
 -   Tunisia
+-   Turkey
 -   Turkmenistan
 -   Turks and Caicos Islands
 -   Tuvalu
--   Turkey
+-   U.S. Minor Outlying Islands
+-   U.S. Virgin Islands
 -   Uganda
 -   Ukraine
 -   United Arab Emirates
 -   United Kingdom
 -   United States
 -   Uruguay
--   U.S. Minor Outlying Islands
--   U.S. Virgin Islands
 -   Uzbekistan
+-   Vanuatu
+-   Vatican City
 -   Venezuela
 -   Vietnam
--   Vanuatu
 -   Wallis and Futuna
 -   Yemen
 -   Zambia
@@ -307,31 +307,16 @@ Payment methods such as gift cards and mobile operator billing can help increase
 
 The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date. This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.
 
-| Country/region | Payment methods         | Commerce Expansion Adjustment | Effective date |
+&nbsp;
+
+| Country/region | Payment method         | Commerce Expansion Adjustment | Effective date |
 |----------------|-------------------------|-------------------------------|----------------|
-| Brazil         | Mobile operator billing | 13.9%                         | December 2014  |
-| Chile          | Mobile operator billing | 13.9%                         | March 2014     |
-| China          | Mobile operator billing | 13.9%                         | December 2014  |
-| Colombia       | Mobile operator billing | 13.9%                         | March 2014     |
-| Costa Rica     | Mobile operator billing | 13.9%                         | March 2014     |
-| Ecuador        | Mobile operator billing | 13.9%                         | November 2014  |
-| Egypt          | Mobile operator billing | 13.9%                         | June 2014      |
-| Guatemala      | Mobile operator billing | 13.9%                         | October 2014   |
-| India          | Mobile operator billing | 13.9%                         | December 2014  |
-| Jordan         | Mobile operator billing | 13.9%                         | March 2015     |
-| Kenya          | Mobile operator billing | 13.9%                         | July 2014      |
-| Malaysia       | Mobile operator billing | 13.9%                         | March 2014     |
-| Mexico         | Mobile operator billing | 13.9%                         | March 2014     |
-| Pakistan       | Mobile operator billing | 13.9%                         | October 2015   |
-| Peru           | Mobile operator billing | 13.9%                         | March 2014     |
-| Philippines    | Mobile operator billing | 13.9%                         | June 2015      |
-| Puerto Rico    | Mobile operator billing | 13.9%                         | June 2015      |
 | South Africa   | Mobile operator billing | 13.9%                         | March 2014     |
 | Vietnam        | Mobile operator billing | 13.9%                         | October 2014   |
 
-  
+&nbsp;
 
-| Country/region       | Payment methods | Commerce Expansion Adjustment | Effective date |
+| Country/region       | Payment method | Commerce Expansion Adjustment | Effective date |
 |----------------------|-----------------|-------------------------------|----------------|
 | Argentina            | Gift card       | 2.24%                         | March 2016     |
 | Australia            | Gift card       | 2.24%                         | March 2016     |
@@ -380,7 +365,7 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 ## "Rest of World" markets for Windows 8.x
 
 
-If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are now shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Windows Store dashboard, where there was one selectable "Rest of World" market option).
+If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Windows Store dashboard, where there was one selectable "Rest of World" market option).
 
 If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets. However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.
 
