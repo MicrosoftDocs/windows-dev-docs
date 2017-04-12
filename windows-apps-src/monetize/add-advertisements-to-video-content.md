@@ -30,7 +30,6 @@ Advertising for video content differs based upon whether the program is under te
 
   The following example shows how to declare a [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) in HTML markup. Typically, this markup belongs in the `<body>` section in the index.html file (or another html file as appropriate for your project).
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <div id="MediaPlayerDiv" data-win-control="TVJS.MediaPlayer">
     <video src="URL to your content">
@@ -40,7 +39,6 @@ Advertising for video content differs based upon whether the program is under te
 
   The following example shows how to establish a [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) in JavaScript code.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
 
 ## How to use the AdScheduler class in your code
@@ -65,7 +63,6 @@ Advertising for video content differs based upon whether the program is under te
 
 5.  Open the index.html file (or other html file as appropriate for your project). In the `<head>` section, after the project’s JavaScript references of default.css and main.js, add the reference to ad.js and adscheduler.js.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
   <script src="/js/adscheduler.js"></script>
@@ -76,19 +73,16 @@ Advertising for video content differs based upon whether the program is under te
 
 6.  In the main.js file in your project, add code that creates a new [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/hh440975.aspx).
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
 7.  Use the [requestSchedule](https://msdn.microsoft.com/library/windows/apps/mt732208.aspx) or [requestScheduleByUrl](https://msdn.microsoft.com/library/windows/apps/mt732210.aspx) methods to request an ad schedule from the server and insert it into the **MediaPlayer** timeline, and then play the video media.
 
   * If you are a Microsoft partner who has received permission to request an ad schedule from the Microsoft ad server, use [requestSchedule](https://msdn.microsoft.com/library/windows/apps/mt732208.aspx) and specify the application ID and ad unit ID that were provided to you by your Microsoft representative. This method takes the form of a **Promise**, which is an asynchronous construct where two function pointers are passed to handle the success and failure cases, respectively. For more information, see [Asynchronous patterns in UWP using JavaScript](https://msdn.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript).
 
-      > [!div class="tabbedCodeSnippets"]
       [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
   * To request an ad schedule from a non-Microsoft ad server, use [requestScheduleByUrl](https://msdn.microsoft.com/library/windows/apps/mt732210.aspx), and pass in the server URL. This method also takes the form of a **Promise**.
 
-      > [!div class="tabbedCodeSnippets"]
       [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
 
     <span/>
@@ -96,5 +90,4 @@ Advertising for video content differs based upon whether the program is under te
 
 8.  During playback, you can handle additional events that let your app track progress and/or errors which may occur after the initial ad matching process. The following code shows some of these events, including [onPodStart](https://msdn.microsoft.com/library/windows/apps/mt732206.aspx), [onPodEnd](https://msdn.microsoft.com/library/windows/apps/mt732205.aspx), [onPodCountdown](https://msdn.microsoft.com/library/windows/apps/mt732204.aspx), [onAdProgress](https://msdn.microsoft.com/library/windows/apps/mt732201.aspx), [onAllComplete](https://msdn.microsoft.com/library/windows/apps/mt732202.aspx), and [onErrorOccurred](https://msdn.microsoft.com/library/windows/apps/mt732203.aspx).
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]

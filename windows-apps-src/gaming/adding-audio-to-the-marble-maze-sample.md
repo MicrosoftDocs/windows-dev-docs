@@ -46,7 +46,7 @@ The document [XAudio2 Key Concepts](https://msdn.microsoft.com/library/windows/d
 -   A submix voice processes audio data. This processing can include changing the audio stream or combining multiple streams into one. Marble Maze uses submixes to create the reverb effect.
 -   A mastering voice combines data from source and submix voices and sends that data to the audio hardware.
 -   An audio graph contains one source voice for each active sound, zero or more submix voices, and only one mastering voice.
--   A callback informs client code that some event has occurred in a voice or in an engine object. By using callbacks, you can reuse memory when XAudio2 is finished with a buffer, react when the audio device changes (for example, when you connect or disconnect headphones), and more. The [Handling headphones and device changes](#handling-headphones-and-device-changes) section later in this document explains how Marble Maze uses this mechanism to handle device changes.
+-   A callback informs client code that some event has occurred in a voice or in an engine object. By using callbacks, you can reuse memory when XAudio2 is finished with a buffer, react when the audio device changes (for example, when you connect or disconnect headphones), and more. The [Handling headphones and device changes](#handling-headphones-and-device-changes) later in this document explains how Marble Maze uses this mechanism to handle device changes.
 
 Marble Maze uses two audio engines (in other words, two [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) objects) to process audio. One engine processes the background music, and the other engine processes game-play sounds.
 

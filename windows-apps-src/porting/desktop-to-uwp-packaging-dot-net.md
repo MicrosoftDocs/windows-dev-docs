@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ---
 
-# Desktop to UWP Bridge: Packaging .NET apps using Visual Studio
+# Package a .NET app by using Visual Studio (Desktop to UWP Bridge)
 
 The Windows 10 Anniversary Update allows developers to use the Desktop Bridge to package existing Win32 apps using the new package model (.appx), which enables Store publishing or easy sideloading. This guide explains how to configure your Visual Studio Solution so you can edit, debug, and package your app.
 

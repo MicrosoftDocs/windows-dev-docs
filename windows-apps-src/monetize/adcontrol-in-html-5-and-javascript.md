@@ -53,7 +53,6 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 
   In a UWP project, add the following code.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <!-- Microsoft advertising required references -->
   <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
@@ -61,7 +60,6 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 
   In a Windows 8.1 or Windows Phone 8.1 project, add the following code.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <!-- Microsoft advertising required references -->
   <script src="/MSAdvertisingJS/ads/ad.js"></script>
@@ -74,7 +72,6 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 
   > **Note**&nbsp;&nbsp;You will replace the test **applicationId** and **adUnitId** values with live values before submitting your app for submission.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
         data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -97,7 +94,6 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 
 ## Complete index.html for a sample UWP project
 
-> [!div class="tabbedCodeSnippets"]
 ``` html
 <!DOCTYPE html>
 <html>

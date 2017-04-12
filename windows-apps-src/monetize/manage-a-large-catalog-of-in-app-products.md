@@ -14,7 +14,8 @@ keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, catalog, Windows.App
 # Manage a large catalog of in-app products
 
 
->**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+> [!NOTE]
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
 If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog. In releases before Windows 10, the Store has a limit of 200 product listings per developer account, and the process described in this topic can be used to work around that limitation. Starting with Windows 10, the Store has no limit to the number of product listings per developer account, and the process described in this article is no longer necessary.
 

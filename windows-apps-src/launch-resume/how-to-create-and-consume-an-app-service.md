@@ -5,7 +5,7 @@ description: Learn how to write a Universal Windows Platform (UWP) app that can 
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 03/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,25 +33,29 @@ In this how-to, we'll create everything in one solution for simplicity.
 
 In the AppServiceProvider project's Package.appxmanifest file, add the following AppService extension to the **&lt;Application&gt;** element. This example advertises the `com.Microsoft.Inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service app exposes the service to other apps. We recommend using a reverse domain name style for the service name.
 
-``` syntax
-...
-<Applications>
-    <Application Id="App"
-      Executable="$targetnametoken$.exe"
-      EntryPoint="AppServiceProvider.App">
-      <Extensions>
-        <uap:Extension Category="windows.appService" EntryPoint="MyAppService.Inventory">
-          <uap:AppService Name="com.microsoft.inventory"/>
-        </uap:Extension>
-      </Extensions>
-      ...
-    </Application>
-</Applications>
+``` xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application Id="App"
+          Executable="$targetnametoken$.exe"
+          EntryPoint="AppServiceProvider.App">
+          <Extensions>
+            <uap:Extension Category="windows.appService" EntryPoint="MyAppService.Inventory">
+              <uap:AppService Name="com.microsoft.inventory" uap4:SupportsMultipleInstances="True"/>
+            </uap:Extension>
+          </Extensions>
+          ...
+        </Application>
+    </Applications>
 ```
 
 The **Category** attribute identifies this application as an app service provider.
 
 The **EntryPoint** attribute identifies the class that implements the service, which we'll implement next.
+
+The **SupportsMultipleInstances** attribute indicates that each time the app service is called that it should run in a new process that gets its own resource limits (memory and CPU). This is not required but is available to you if you need that functionality.
 
 ## Create the app service
 
@@ -108,7 +112,7 @@ The **EntryPoint** attribute identifies the class that implements the service, w
 
 ## Write the code for the app service
 
-**OnRequestedReceived()** is where the code for the app service goes. Replace the stub **OnRequestedReceived()** in MyAppService's Class1.cs with the code from this example. This code gets an index for an inventory item and passes it, along with a command string, to the service to retrieve the name and the price of the specified inventory item. Error handling code has been removed for brevity.
+**OnRequestReceived()** is where the code for the app service goes. Replace the stub **OnRequestReceived()** in MyAppService's Class1.cs with the code from this example. This code gets an index for an inventory item and passes it, along with a command string, to the service to retrieve the name and the price of the specified inventory item. Error handling code has been removed for brevity.
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -160,7 +164,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-Note that **OnRequestedReceived()** is **async** because we make an awaitable method call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) in this example.
+Note that **OnRequestReceived()** is **async** because we make an awaitable method call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) in this example.
 
 A deferral is taken so that the service can use **async** methods in the OnRequestReceived handler. It ensures that the call to OnRequestReceived does not complete until it is done processing the message. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) is used to send a response alongside the completion. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) that OnRequestReceived has completed.
 
@@ -191,69 +195,68 @@ The app service provider app must be deployed before you can call it from a clie
 
    ```cs
    private AppServiceConnection inventoryService;
-    private async void button_Click(object sender, RoutedEventArgs e)
-    {
-        // Add the connection.
-        if (this.inventoryService == null)
-        {
-            this.inventoryService = new AppServiceConnection();
+   private async void button_Click(object sender, RoutedEventArgs e)
+   {
+       // Add the connection.
+       if (this.inventoryService == null)
+       {
+           this.inventoryService = new AppServiceConnection();
 
-            // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section.
-            this.inventoryService.AppServiceName = "com.microsoft.inventory";
+           // Here, we use the app service name defined in the app service provider's Package.appxmanifest file in the <Extension> section.
+           this.inventoryService.AppServiceName = "com.microsoft.inventory";
 
-            // Use Windows.ApplicationModel.Package.Current.Id.FamilyName within the app service provider to get this value.
-            this.inventoryService.PackageFamilyName = "replace with the package family name";
+           // Use Windows.ApplicationModel.Package.Current.Id.FamilyName within the app service provider to get this value.
+           this.inventoryService.PackageFamilyName = "replace with the package family name";
 
-            var status = await this.inventoryService.OpenAsync();
-            if (status != AppServiceConnectionStatus.Success)
-            {
-                button.Content = "Failed to connect";
-                return;
-            }
-        }
+           var status = await this.inventoryService.OpenAsync();
+           if (status != AppServiceConnectionStatus.Success)
+           {
+               textBox.Text= "Failed to connect";
+               return;
+           }
+       }
 
-        // Call the service.
-        int idx = int.Parse(textBox.Text);
-        var message = new ValueSet();
-        message.Add("Command", "Item");
-        message.Add("ID", idx);
-        AppServiceResponse response = await this.inventoryService.SendMessageAsync(message);
-        string result = "";
+       // Call the service.
+       int idx = int.Parse(textBox.Text);
+       var message = new ValueSet();
+       message.Add("Command", "Item");
+       message.Add("ID", idx);
+       AppServiceResponse response = await this.inventoryService.SendMessageAsync(message);
+       string result = "";
 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            // Get the data  that the service sent  to us.
-            if (response.Message["Status"] as string == "OK")
-            {
-                result = response.Message["Result"] as string;
-            }
-        }
+       if (response.Status == AppServiceResponseStatus.Success)
+       {
+           // Get the data  that the service sent  to us.
+           if (response.Message["Status"] as string == "OK")
+           {
+               result = response.Message["Result"] as string;
+           }
+       }
 
-        message.Clear();
-        message.Add("Command", "Price");
-        message.Add("ID", idx);
-        response = await this.inventoryService.SendMessageAsync(message);
+       message.Clear();
+       message.Add("Command", "Price");
+       message.Add("ID", idx);
+       response = await this.inventoryService.SendMessageAsync(message);
 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            // Get the data that the service sent to us.
-            if (response.Message["Status"] as string == "OK")
-            {
-                result += " : Price = " + response.Message["Result"] as string;
-            }
-        }
+       if (response.Status == AppServiceResponseStatus.Success)
+       {
+           // Get the data that the service sent to us.
+           if (response.Message["Status"] as string == "OK")
+           {
+               result += " : Price = " + response.Message["Result"] as string;
+           }
+       }
 
-        button.Content = result;
-    }
-    ```
+       textBox.Text = result;
+   }
+   ```
+Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].
 
-    Replace the package family name in the line `this.inventoryService.PackageFamilyName = "replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained in \[Step 5: Deploy the service app and get the package family name\].
+The code first establishes a connection with the app service. The connection will remain open until you dispose **this.inventoryService**. The app service name must match the **AppService Name** attribute that you added to the AppServiceProvider project's Package.appxmanifest file. In this example, it is `<uap:AppService Name="com.microsoft.inventory"/>`.
 
-    The code first establishes a connection with the app service. The connection will remain open until you dispose **this.inventoryService**. The app service name must match the **AppService Name** attribute that you added to the AppServiceProvider project's Package.appxmanifest file. In this example, it is `<uap:AppService Name="com.microsoft.inventory"/>`.
+A [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) named **message** is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the textbox in the ClientApp, and then call the service with the "Item" command to get the description of the item. Then, we make the call with the "Price" command to get the item's price. The button text is set to the result.
 
-    A [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) named **message** is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the textbox in the ClientApp, and then call the service with the "Item" command to get the description of the item. Then, we make the call with the "Price" command to get the item's price. The button text is set to the result.
-
-    Because [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) only indicates whether the operating system was able to connect the call to the app service, we check the "Status" key in the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) we receive from the app service to ensure that it was able to fulfill the request.
+Because [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) only indicates whether the operating system was able to connect the call to the app service, we check the "Status" key in the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) we receive from the app service to ensure that it was able to fulfill the request.
 
 6.  In Visual Studio, set the ClientApp project to be the startup project in the Solution Explorer window and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
 

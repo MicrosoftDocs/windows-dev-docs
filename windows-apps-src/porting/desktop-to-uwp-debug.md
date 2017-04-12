@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ---
 
-# Desktop to UWP Bridge: Debug
+# Debug a Windows Desktop Bridge app
 
 This topic contains info to help you be successful debugging your app after converting it with the Desktop to UWP Bridge. You have a few options for debugging your converted app.
 

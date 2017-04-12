@@ -242,8 +242,3 @@ For general guidance for creating media compositions from video clips, see [Medi
 * [Media compositions and editing](media-compositions-and-editing.md)
 * [Win2D documentation](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [Media playback](media-playback.md)
-
- 
-
-
-

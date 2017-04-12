@@ -38,7 +38,7 @@ Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device.  To learn more, see the [Port Settings](device-portal-desktop.md#setting-port-numbers) section for desktop.  
 
 For device-specific setup instructions, see:
-- [Device Portal for HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal for HoloLens](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
 - [Device Portal for IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [Device Portal for Mobile](device-portal-mobile.md)
 - [Device Portal for Xbox](device-portal-xbox.md)
@@ -68,7 +68,7 @@ Provides install/uninstall and management functionality for AppX packages and bu
 ![Device Portal for mobile](images/device-portal/mob-device-portal-apps.png)
 
 - **Installed apps**: Remove and start apps.
-- **Running apps**: Lists apps that are running currently.
+- **Running apps**: Lists apps that are running currently and provides the option to close them.
 - **Install app**: Select app packages for installation from a folder on your computer or network.
 - **Dependency**: Add dependencies for the app you are going to install.
 - **Deploy**: Deploy the selected app and dependencies to your device.

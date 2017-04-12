@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ---
 
-# Desktop to UWP Bridge: Distribute
+# Distribute a Windows Desktop Bridge app
 
 There are three main ways to deploy your converted app: the Windows Store, sideloading, and loose file registration.  
 

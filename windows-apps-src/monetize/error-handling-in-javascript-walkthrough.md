@@ -22,7 +22,6 @@ These examples assume that you have a JavaScript/HTML app that contains an **AdC
 
 1.  In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**. Find the following code in the default.html file.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -32,7 +31,6 @@ These examples assume that you have a JavaScript/HTML app that contains an **AdC
 
   Following the **adUnitId** attribute, add the value for the **onErrorOccurred** event.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -42,7 +40,6 @@ These examples assume that you have a JavaScript/HTML app that contains an **AdC
 
 2.  Create a **div** that will display text so you can see the messages being generated. To do this, add the following code after the **div** for **myAd**.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
       <b>Ad Events</b><br />
@@ -52,7 +49,6 @@ These examples assume that you have a JavaScript/HTML app that contains an **AdC
 
 3.  Create an **AdControl** that will trigger an error event. There can only be one application id for all **AdControl** objects in an app. So creating an additional one with a different application id will trigger an error at runtime. To do this, after the previous **div** sections you have added, add the following code to the body of the default.html page.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` html
   <!-- Because only one applicationId can be used, the following ad control will fire an error event. -->
   <div id="liveAd" style="position: absolute; top:500px; left:0px; width:480px; height:80px"
@@ -63,7 +59,6 @@ These examples assume that you have a JavaScript/HTML app that contains an **AdC
 
 4.  In the project’s default.js file, after the default initialization function, you will add the event handler for **errorLogger**. Scroll to the end of the file and after the last semi-colon is where you will put the following code.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` javascript
   WinJS.Utilities.markSupportedForProcessing(
   window.errorLogger = function (sender, evt) {

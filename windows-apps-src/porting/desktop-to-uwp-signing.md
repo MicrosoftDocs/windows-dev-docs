@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 232c3012-71ff-4f76-a81e-b1758febb596
 ---
 
-# Desktop to UWP Bridge: Sign
+# Sign a Windows Desktop Bridge app
 
 This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP). You must sign your Windows app package with a certificate before you can deploy it.
 

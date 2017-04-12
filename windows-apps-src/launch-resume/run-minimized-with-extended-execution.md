@@ -1,4 +1,4 @@
----
+ ---
 author: TylerMSFT
 description: Learn how to use extended execution to keep your app running while it is minimized
 title: Run while minimized with extended execution
@@ -17,9 +17,9 @@ This article shows you how to use extended execution to postpone when your app i
 
 When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md).
 
-There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time.
+There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time. The amount of time you may get to perform background execution may be several minutes but you must be prepared to handle the session being revoked at any time.
 
-Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**.
+Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**. Do not use [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) and [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx), they require restricted capabilities and are not available for use in Store applications.
 
 ## Run while minimized
 

@@ -13,7 +13,7 @@ keywords: Hosted Web Apps, WinRT APIs for JavaScript, Win10 web app, Windows Jav
 
 # Accessing UWP features
 
-Your web application can have full access to the Universal Windows Platform (UWP), activating native features on Windows devices, [benefiting from Windows security](#keep-your-app-secure--setting-application-content-uri-rules-acurs), [calling Windows Runtime APIs](#call-windows-runtime-apis) directly from script hosted on a server, leveraging [Cortana integration](#integrate-cortana-voice-commands), and using an [online authentication provider](#web-authentication-broker). [Hybrid apps](#create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps) are also supported as you can include local code to be called from the hosted script and manage app navigation between remote and local pages.
+Your web application can have full access to the Universal Windows Platform (UWP), activating native features on Windows devices, [benefiting from Windows security](#keep-your-app-secure--setting-application-content-uri-rules-acurs), [calling Windows Runtime APIs](#call-windows-runtime-apis) directly from script hosted on a server, leveraging [Cortana integration](#integrate-cortana-voice-commands), and using an [online authentication provider](#web-authentication-broker). [Hybrid apps](##create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps) are also supported as you can include local code to be called from the hosted script and manage app navigation between remote and local pages.
 
 ## Keep your app secure – Setting Application Content URI Rules (ACURs)
 
@@ -123,22 +123,22 @@ You can use the web authentication broker to handle the login flow for your user
 <meta name="ms-webauth-uris" content="https://<providerstartpoint>?client_id=<clientid>&response_type=token, https://<appendpoint>"/>
 ```
 
-For more guidance, see [Web authentication broker considerations for online providers](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx).
+For more guidance, see [Web authentication broker considerations for online providers](../security/web-authentication-broker.md).
 
 ## App capability declarations
 
 If your app needs programmatic access to user resources like pictures or music, or to devices like a camera or a microphone, you must declare the appropriate capability. There are three app capability declaration categories: 
 
-- [General-use capabilities](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities) that apply to most common app scenarios. 
-- [Device capabilities](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities) that allow your app to access peripheral and internal devices. 
-- [Special-use capabilities](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities) that require a special company account for submission to the Store to use them. 
+- [General-use capabilities](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#general-use-capabilities) that apply to most common app scenarios. 
+- [Device capabilities](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#device-capabilities) that allow your app to access peripheral and internal devices. 
+- [Special-use capabilities](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities) that require a special company account for submission to the Store to use them. 
 
-For more info about company accounts, see [Account types, locations, and fees](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx).
+For more info about company accounts, see [Account types, locations, and fees](https://docs.microsoft.com/en-us/windows/uwp/publish/account-types-locations-and-fees).
 
 > [!NOTE]
 > It is important to know that when customers get your app from the Windows Store, they are notified of all the capabilities that the app declares. So do not use capabilities that your app does not need.
 
-You request access by declaring capabilities in your app’s [package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx). You can declare general capabilities by using the [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx#Configure) in Microsoft Visual Studio, or you can add them manually—-see [How to specify capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/br211477.aspx).
+You request access by declaring capabilities in your app’s [package manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest). For more information, see these articles on [Packaging for Universal Windows Platform (UWP) apps](https://docs.microsoft.com/en-us/windows/uwp/packaging/index).
 
 Some capabilities provide apps access to a sensitive resource. These resources are considered sensitive because they can access the user’s personal data or cost the user money. Privacy settings, managed by the Settings app, let the user dynamically control access to sensitive resources. Thus, it’s important that your app doesn’t assume a sensitive resource is always available. For more info about accessing sensitive resources, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx).
 
@@ -147,9 +147,9 @@ Some capabilities provide apps access to a sensitive resource. These resources a
 An easy way to turn your website into a UWP app is to use an **app manifest** and **manifoldjs**. The app manifest is an xml file that contains metadata about the app. It specifies such things as the app’s name, links to resources, display mode, URLs, and other data that describes how the app should be deployed and run. manifoldjs makes this process very easy, even on systems that do not support web apps. Please go to [manifoldjs.com](http://www.manifoldjs.com/) for more information on how it works. You can also view a manifoldjs demonstration as part of this [Windows 10 Web Apps presentation](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession).
 
 ## Related topics
-- [Windows Runtime API: JavaScript Code Samples](http://rjs.azurewebsites.net/)
+- [Windows Runtime API: JavaScript Code Samples](https://microsoft.github.io/WindowsRuntimeAPIs_Javascript_snippets/)
 - [Codepen: sandbox to use for calling Windows Runtime APIs](http://codepen.io/seksenov/pen/wBbVyb/)
-- [Cortana interactions](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
+- [Cortana interactions](https://developer.microsoft.com/en-us/cortana)
 - [Voice Command Definition (VCD) elements and attributes v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
-- [Web authentication broker considerations for online providers](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
-- [App capability declarations](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
+- [Web authentication broker considerations for online providers](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
+- [App capability declarations](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)

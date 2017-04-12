@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ---
-# Desktop to UWP Bridge: Supported UWP APIs
+# UWP APIs available to Window Desktop Bridge apps
 
 Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your converted app can use.
 
@@ -131,7 +131,7 @@ For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Sample
 * [Windows.Foundation.AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [Windows.Foundation.AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.VectorChangedEventHandler<T>)
+* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/br206656.aspx)
 * [Windows.Foundation.DeferralCompletedHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.DeferralCompletedHandler)
 * [Windows.Foundation.Diagnostics.FileLoggingSession](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -299,7 +299,6 @@ For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Sample
 * [Windows.Services.Store.StoreRequestHelper](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreRequestHelper)
 * [Windows.Services.Store.StoreSendRequestResult](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSku)
-* [Windows.Services.Store.StoreSubscriptionData](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSubscriptionData)
 * [Windows.Services.Store.StoreVideo](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreVideo)
 * [Windows.Storage.ApplicationDataSetVersionHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.ApplicationDataSetVersionHandler)
 * [Windows.Storage.CachedFileManager](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.CachedFileManager)
@@ -629,15 +628,15 @@ For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Sample
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
 * [Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
+* [Windows.Foundation.Collections.MapChangedEventHandler<K,.V>](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
+* [Windows.Foundation.TypedEventHandler<Tsender,.TResult>](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -944,7 +943,7 @@ For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Sample
 * [Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties)
 * [Windows.UI.Input.Inking.InkInputProcessingConfiguration](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkInputProcessingConfiguration)
 * [Windows.UI.Input.Inking.InkManager](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkManager)
-* [Windows.UI.Input.Inking.InkPoint](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPoint)
+* [Windows.UI.Input.Inking.InkPoint](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPoint)
 * [Windows.UI.Input.Inking.InkPresenter](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter)
 * [Windows.UI.Input.Inking.InkPresenterRuler](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenterRuler)
 * [Windows.UI.Input.Inking.InkRecognitionResult](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkRecognitionResult)

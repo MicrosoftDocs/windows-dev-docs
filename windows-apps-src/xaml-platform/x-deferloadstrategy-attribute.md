@@ -15,6 +15,8 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+**Note**  In RS2, **x:DeferLoadStrategy** has been superceded by the **x:Load** attribute instead. x:Load="True" is the same as x:DeferLoadStrategy="Lazy", but provides the ability to unload the UI if required. For more details see [x:Load attribute](x-load-attribute.md).
+
 **x:DeferLoadStrategy="Lazy"** is a feature that can be used to optimize the performance of the startup or tree creation scenarios of a XAML app. Using **x:DeferLoadStrategy="Lazy"** delays the creation of an element and its children, decreasing startup time and memory costs by not needing to create the element(s). This is useful to reduce the costs of elements that are not often or conditionally needed. The element will be realized when its referred to from code or VisualStateManager.
 
 However the book keeping for deferral adds about 600 bytes to the memory usage for each element affected. The larger the element tree you defer, the more startup time you'll save, but at the cost of a greater memory footprint. Therefore it's possible to overuse this attribute to the extent that your performance decreases.
@@ -88,4 +90,3 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-

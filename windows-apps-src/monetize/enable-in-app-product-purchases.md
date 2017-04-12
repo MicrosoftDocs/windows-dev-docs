@@ -13,11 +13,13 @@ ms.technology: uwp
 
 # Enable in-app product purchases
 
->**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+> [!NOTE]
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
 Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
 
-> **Note**&nbsp;&nbsp;In-app products cannot be offered from a trial version of an app. Customers using a trial version of your app can only buy an in-app product if they purchase a full version of your app.
+> [!NOTE]
+> In-app products cannot be offered from a trial version of an app. Customers using a trial version of your app can only buy an in-app product if they purchase a full version of your app.
 
 ## Prerequisites
 
@@ -36,7 +38,8 @@ When your app is initializing, get the [LicenseInformation](https://msdn.microso
 
 For each feature that you want to make available through an in-app product, create an offer and add it to your app.
 
-> **Important**&nbsp;&nbsp;You must add all the in-app products that you want to present to your customers to your app before you submit it to the Store. If you want to add new in-app products later, you must update your app and re-submit a new version.
+> [!IMPORTANT]
+> You must add all the in-app products that you want to present to your customers to your app before you submit it to the Store. If you want to add new in-app products later, you must update your app and re-submit a new version.
 
 1.  **Create an in-app offer token**
 

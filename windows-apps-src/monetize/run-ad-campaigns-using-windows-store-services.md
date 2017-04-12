@@ -23,7 +23,8 @@ The following steps describe the end-to-end process:
 
 You can alternatively create and manage ad campaigns using the Windows Dev Center dashboard, and any ad campaigns that you create programmatically via the Windows Store promotions API can also be accessed in the dashboard. For more information about managing ad campaigns in the dashboard, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
 
->**Note**&nbsp;&nbsp;Any developer with a Windows Dev Center account can use the Windows Store promotions API to manage ad campaigns for their apps. Media agencies can also request access to this API to run ad campaigns on behalf of their advertisers. If you are a media agency who wants to know more about this API or request access to it, send your request to storepromotionsapi@microsoft.com.
+> [!NOTE]
+> Any developer with a Windows Dev Center account can use the Windows Store promotions API to manage ad campaigns for their apps. Media agencies can also request access to this API to run ad campaigns on behalf of their advertisers. If you are a media agency who wants to know more about this API or request access to it, send your request to storepromotionsapi@microsoft.com.
 
 <span id="prerequisites" />
 ## Step 1: Complete prerequisites for using the Windows Store promotions API
@@ -35,8 +36,8 @@ Before you start writing code to call the Windows Store promotions API, make sur
 * You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) for no additional charge.
 
 * You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store promotions API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
-
-  >**Note**&nbsp;&nbsp;You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
+    > [!NOTE]
+    > You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
 
 To associate an Azure AD application with your Dev Center account and retrieve the required values:
 
@@ -96,7 +97,6 @@ The following diagram illustrates the relationship between campaigns, delivery l
 
 The following code example demonstrates how to obtain an Azure AD access token and call the Windows Store promotions API from a C# console app. To use this code example, assign the *tenantId*, *clientId*, *clientSecret*, and *appID* variables to the appropriate values for your scenario. This example requires the [Json.NET package](http://www.newtonsoft.com/json) from Newtonsoft to deserialize the JSON data returned by the Windows Store promotions API.
 
-> [!div class="tabbedCodeSnippets"]
 [!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 
 ## Related topics

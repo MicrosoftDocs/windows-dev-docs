@@ -442,8 +442,4 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [Family notes sample](https://aka.ms/cpubsample-familynotessample)
 
 
- 
-
-
-
 

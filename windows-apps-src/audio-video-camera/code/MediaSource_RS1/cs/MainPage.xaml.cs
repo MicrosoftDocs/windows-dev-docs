@@ -23,6 +23,8 @@ using Windows.Media.Playback;
 
 //</SnippetUsing>
 
+using Windows.Media.Streaming.Adaptive;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MediaSource_RS1
@@ -60,13 +62,17 @@ namespace MediaSource_RS1
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //PlayMediaSource();
-            //PlayMediaPlaybackItem();
+
             //PlayMediaPlaybackItemWithCustomTracks();
             //PlayMediaPlaybackList();
-            InitSpeechCueScenario();
+            //InitSpeechCueScenario();
         }
         #region MediaSource
+        private void PlayMediaSourceButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlayMediaSource();
+        }
+
         private async void PlayMediaSource()
         {
             //<SnippetPlayMediaSource>
@@ -104,6 +110,11 @@ namespace MediaSource_RS1
         #endregion
 
         #region MediaPlaybackItem
+        private void PlayMediaPlaybackItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlayMediaPlaybackItem();
+        }
+
         private async void PlayMediaPlaybackItem()
         {
             //Create a new picker
@@ -381,6 +392,10 @@ namespace MediaSource_RS1
         #endregion
 
         #region custommetadata
+        private void PlayMediaPlaybackItemWithCustomTracks_Click(object sender, RoutedEventArgs e)
+        {
+            PlayMediaPlaybackItemWithCustomTracks();
+        }
         private async void PlayMediaPlaybackItemWithCustomTracks()
         {
             //Create a new picker
@@ -499,7 +514,10 @@ namespace MediaSource_RS1
 
         #region MediaPlaybackList
 
-
+        private void MediaPlaybackListButton_Click(object sender, RoutedEventArgs e)
+        {
+            PlayMediaPlaybackList();
+        }
 
         private async void PlayMediaPlaybackList()
         {
@@ -530,6 +548,9 @@ namespace MediaSource_RS1
             _mediaPlaybackList.ItemOpened += MediaPlaybackList_ItemOpened;
             _mediaPlaybackList.ItemFailed += MediaPlaybackList_ItemFailed;
 
+            _mediaPlaybackList.MaxPlayedItemsToKeepOpen = 3;
+
+
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = _mediaPlaybackList;
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
@@ -554,17 +575,7 @@ namespace MediaSource_RS1
         //<SnippetMediaPlaybackListItemChanged>
         private void MediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
         {
-            _playbackItemQueue.Enqueue(args.OldItem);
-            if (_playbackItemQueue.Count > maxCachedItems)
-            {
-                MediaPlaybackItem oldestItem = _playbackItemQueue.Dequeue();
-
-                // If the oldest item doesn't have another entry in the queue and it's not the currently playing item
-                if (! (oldestItem == null || _playbackItemQueue.Contains<MediaPlaybackItem>(oldestItem) || oldestItem != args.NewItem))
-                {
-                    oldestItem.Source.Reset();
-                }
-            }
+            LogTelemetryData($"CurrentItemChanged reason: {args.Reason.ToString()}");
         }
         //</SnippetMediaPlaybackListItemChanged>
 
@@ -626,9 +637,174 @@ namespace MediaSource_RS1
 
         }
         //</SnippetItemFailed>
+
+        private void DisablePlaybackForItemsButton_Click(object sender, RoutedEventArgs e)
+        {
+            //<SnippetRegisterNetworkStatusChanged>
+            Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
+            //</SnippetRegisterNetworkStatusChanged>
+        }
+        //<SnippetNetworkStatusChanged>
+        private void NetworkInformation_NetworkStatusChanged(object sender)
+        {
+            if (Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile() == null)
+            {
+                // Check download status of each item in the list. (TotalDownloadProgress < 1 means not completely downloaded)
+                foreach (var item in _mediaPlaybackList.Items)
+                {
+                    if (item.TotalDownloadProgress < 1)
+                    {
+                        item.IsDisabledInPlaybackList = true;
+                    }
+                }
+            }
+            else
+            {
+                // Connected to internet, re-enable all playlist items
+                foreach (var item in _mediaPlaybackList.Items)
+                {
+                    item.IsDisabledInPlaybackList = true;
+                }
+            }
+        }
+        //</SnippetNetworkStatusChanged>
+        #endregion
+
+        #region MediaBinder
+
+        private void MediaBinderButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitMediaBinder_StorageFile();
+        }
+        private void InitMediaBinder()
+        {
+            //<SnippetInitMediaBinder>
+            _mediaPlaybackList = new MediaPlaybackList();
+
+            var binder = new MediaBinder();
+            binder.Token = "MyBindingToken1";
+            binder.Binding += Binder_Binding;
+            _mediaPlaybackList.Items.Add(new MediaPlaybackItem(MediaSource.CreateFromMediaBinder(binder)));
+
+            binder = new MediaBinder();
+            binder.Token = "MyBindingToken2";
+            binder.Binding += Binder_Binding;
+            _mediaPlaybackList.Items.Add(new MediaPlaybackItem(MediaSource.CreateFromMediaBinder(binder)));
+
+            _mediaPlayer = new MediaPlayer();
+            _mediaPlayer.Source = _mediaPlaybackList;
+            mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+            //</SnippetInitMediaBinder>
+        }
+        //<SnippetBinderBinding>
+        private void Binder_Binding(MediaBinder sender, MediaBindingEventArgs args)
+        {
+            // Get a deferral if you need to perform async operations
+            // var deferral = args.GetDeferral();
+
+            var contentUri = new Uri("http://contoso.com/media/" + args.MediaBinder.Token);
+            args.SetUri(contentUri);
+
+            // Call complete after your async operations are complete
+            // deferral.Complete();
+        }
+        //</SnippetBinderBinding>
+
+        IReadOnlyList<StorageFile> binderFiles;
+
+        private async void InitMediaBinder_StorageFile()
+        {
+            var filePicker = new FileOpenPicker();
+
+            //Add filetype filters.  In this case wmv and mp4.
+            filePicker.FileTypeFilter.Add(".wmv");
+            filePicker.FileTypeFilter.Add(".mp4");
+            filePicker.FileTypeFilter.Add(".mkv");
+            filePicker.FileTypeFilter.Add(".mp3");
+
+            //Set picker start location to the video library
+            filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
+            _mediaPlaybackList = new MediaPlaybackList();
+
+            binderFiles = await filePicker.PickMultipleFilesAsync();
+
+           
+
+            _mediaPlaybackList = new MediaPlaybackList();
+
+            var binder = new MediaBinder();
+            binder.Token = "MyBindingToken1";
+            binder.Binding += Binder_Binding_StorageFile;
+            _mediaPlaybackList.Items.Add(new MediaPlaybackItem(MediaSource.CreateFromMediaBinder(binder)));
+
+            binder = new MediaBinder();
+            binder.Token = "MyBindingToken2";
+            binder.Binding += Binder_Binding_StorageFile;
+            _mediaPlaybackList.Items.Add(new MediaPlaybackItem(MediaSource.CreateFromMediaBinder(binder)));
+
+            _mediaPlayer = new MediaPlayer();
+            _mediaPlayer.Source = _mediaPlaybackList;
+            mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+            mediaPlayerElement.MediaPlayer.Play();
+        }
+
+        private void Binder_Binding_StorageFile(MediaBinder sender, MediaBindingEventArgs args)
+        {
+            switch(args.MediaBinder.Token)
+            {
+                case "MyBindingToken1":
+                    args.SetStorageFile(binderFiles[0]);
+                    break;
+                case "MyBindingToken2":
+                    args.SetStorageFile(binderFiles[1]);
+                    break;
+            }
+        }
+
+        //<SnippetBinderBindingAMS>
+        private async void Binder_Binding_AdaptiveMediaSource(MediaBinder sender, MediaBindingEventArgs args)
+        {
+
+            var deferral = args.GetDeferral();
+
+            var contentUri = new Uri("http://contoso.com/media/" + args.MediaBinder.Token);
+            AdaptiveMediaSourceCreationResult result = await AdaptiveMediaSource.CreateFromUriAsync(contentUri);
+
+            if (result.MediaSource != null)
+            {
+                args.SetAdaptiveMediaSource(result.MediaSource);
+            }
+            args.SetUri(contentUri);
+
+            deferral.Complete();
+        }
+        //</SnippetBinderBindingAMS>
+        //<SnippetAMSBindingCurrentItemChanged>
+        private void AMSMediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
+        {
+            if(args.NewItem != null)
+            {
+                var ams = args.NewItem.Source.AdaptiveMediaSource;
+                if(ams != null)
+                {
+                    ams.PlaybackBitrateChanged += Ams_PlaybackBitrateChanged;
+                }
+            }
+        }
+        //</SnippetAMSBindingCurrentItemChanged>
+
+        private void Ams_PlaybackBitrateChanged(AdaptiveMediaSource sender, AdaptiveMediaSourcePlaybackBitrateChangedEventArgs args)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region SpeechCues
+
+        private void SpeechCueButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitSpeechCueScenario();
+        }
 
         string inputText = "In the lake heading for the mountain, the flea swims";
         public async void InitSpeechCueScenario()
@@ -712,6 +888,7 @@ namespace MediaSource_RS1
         #endregion
 
         private void ShowMessageToUser(string s) { }
+        private void LogTelemetryData(string s) { }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
@@ -720,5 +897,7 @@ namespace MediaSource_RS1
                 _mediaPlayer.Play();
             }
         }
+
+        
     }
 }

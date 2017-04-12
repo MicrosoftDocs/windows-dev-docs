@@ -157,9 +157,12 @@ An audio frame output node allows you to receive and process audio data output f
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-The [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event is raised when the audio graph has completed processing a quantum of audio data. You can access the audio data from within the handler for this event.
+The [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) event is raised when the audio graph has begins processing a quantum of audio data. You can access the audio data from within the handler for this event. 
 
-[!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
+> [!NOTE]  
+> If you want to retrieve audio frames on a regular cadence, synchronized with the audio graph, call [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) from within the synchronous **QuantumStarted** event handler. The **QuantumProcessed** event is raised asynchronously after the audio engine has completed audio processing, which means its cadence may be irregular. Therefore you should not use the **QuantumProcessed** event for synchronized processing of audio frame data.
+
+[!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
 -   Call [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) to get an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data from the graph.
 -   An example implementation of the **ProcessFrameOutput** helper method is shown below.

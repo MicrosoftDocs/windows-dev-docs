@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-title: Navigation basics for UWP apps (Windows apps)
+title: Navigation basics for UWP apps
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
@@ -18,11 +18,65 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
+Navigation is the starting point of the user experience: users navigate from page to page and within the page to get to the content and features they want. Creating a good navigation system is essential to a good user experience. 
+
+## Principles of good navigation design 
+Research and experience have shown that these three principles form the foundation of good navigation design: 
+
+* Be consistent: Meet user expectations.
+* Keep it simple: Don't do more than you need to.
+* Keep it clean: Don't let navigation features get in the user's way.
+
+### Be consistent 
+Navigation should be consistent with user expectations, leaning on standard conventions  for icons, location and styling. 
+
+For example, in the following illustration, you can see the spots where users will typically expect to find functionality, like the navigation pane and command bar. Different device families have their own conventions for navigational elements. For example,  the navigation pane typically appears on the left side of the screen for tablets, but up top for mobile devices.
+
+<figure class="wdg-figure">
+  ![Preferred location for navigation elements](images/nav/nav-component-layout.png)
+  <figcaption>Users expect to find certain UI elements in standard locations.</figcaption>
+</figure> 
+
+### Keep it simple
+Another important factor in navigation design is the Hick-Hyman Law, often cited in relation to navigational options. This law encourages us to add fewer options to the menu. The more options there are, the slower user interactions with them will be, particularly when users are exploring a new app. 
+
+<figure class="wdg-figure">
+  ![A simple versus a complex menu](images/nav/nav-simple-menus.png)
+  <figcaption> On the left, notice there are fewer options for the  user to select, whereas on the right, there are several. The  Hick-Hyman Law indicates that the menu on the left will be  easier for users to understand and utilize.
+</figcaption>
+</figure> 
+
+### Keep it clean
+The final key characteristic of navigation is clean interaction, which refers to the physical way that users interact with navigation across a variety of contexts. This is one area where putting yourself in the users position will inform your design. Try to understand your user and their behaviors. For example, if you're designing a cooking app, you might consider providing easy access to a shopping list and a timer. 
+
+## General rules
+Several rules of thumb help designers to encapsulate consistency, simplicity and clean interaction in their navigation design. Most of these come from the web design world and will apply to touch and non-touch devices. As with any rule of thumb, use them as starting points and tweak as needed. 
+
+1. Avoid deep navigational hierarchies. How many levels of navigation are best for your users? A top-level navigation and one level beneath it is usually plenty. If you go beyond three levels of navigation, then you break the principle of simplicity. Even worse, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
+
+2. Avoid too many navigational options. Three to six navigation elements per level are most common. If your navigation needs more than this, especially at the top level of your hierarchy, then you might consider splitting your app into multiple apps, since you may be trying to do too much in one place. Too many navigation elements in an app usually lead to inconsistent and unrelated objectives.
+
+3. Avoid pogo-sticking. Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again. Pogo-sticking violates the principle of clean interaction by requiring unnecessary clicks or interactions to achieve an obvious goal—in this case, looking at related content in a series. (The exception to this rule is in search and browse, where pogo-sticking may be the only way to provide the diversity and depth required.)
+<figure class="wdg-figure">
+  ![An example of pogo-sticking](images/nav/nav-pogo-sticking-1.png)
+  <figcaption> Pogo-sticking to navigate through an app—the user has to go back (green back arrow)  to the main page in order to navigate to the “Projects” tab.
+</figcaption>
+</figure> 
+<figure class="wdg-figure">
+  ![Lateral navigation via swiping fixes the pogo-sticking problem](images/nav/nav-pogo-sticking-2.png)
+  <figcaption>You can resolve some pogo-sticking issues with an icon (note the swipe gesture in green).
+</figcaption>
+</figure> 
+
+
+
+
+## Building blocks
 Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features. Together, they enable a variety of intuitive user experiences for moving between apps, pages, and content.
 
 In some cases, you might be able to fit all of your app's content and functionality onto a single page without requiring the user to do anything more than pan to navigate through that content. However, the majority of apps typically have multiple pages of content and functionality with which to explore, engage, and interact. When an app has more than one page, you need to provide the right navigation experience.
 
-To be successful and make sense to users, multi-page navigation experiences in UWP apps include (described in detail later):
+To be successful and make sense to users, multi-page navigation experiences in UWP apps include:
 
 -   **The right navigation structure**
 
@@ -242,7 +296,6 @@ Hierarchical navigation elements provide navigation between a parent page and it
 ### Combining navigation elements
 
 You can combine navigation elements to create a navigation experience that's right for your app. For example, your app might use a nav pane to provide access to top-level pages and tabs to provide access to second-level pages.
-
 
 
 

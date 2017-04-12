@@ -2,7 +2,7 @@
 author: msatranjr
 title: Raising Events in Windows Runtime Components
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
-description: 
+description: How to raise an event of a user-defined delegate type on a background thread so that JavaScript is able to receive the event.
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
@@ -220,7 +220,7 @@ In the preceding code, we create the toast and then spin up a thread-pool work i
 
 **Note** The async call in the preceding code uses ThreadPool.RunAsync solely to demonstrate a simple way to fire the event on a background thread. You could write this particular method as shown in the following example, and it would work fine because the .NET Task scheduler automatically marshals async/await calls back to the UI thread.
   
-````csharp
+```csharp
 	public async void MakeToast(string message)
     {
         Toast toast = new Toast(message)

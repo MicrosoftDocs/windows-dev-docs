@@ -33,7 +33,6 @@ For complete sample projects that demonstrate how to add banner and interstitial
 | [Release notes](release-notes-for-the-advertising-libraries.md)         |  Provides release notes for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).   |
 | [Known issues](known-issues-for-the-advertising-libraries.md)      |  Lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).   |
 | [Additional help](additional-help.md)                                    |   Provides links to more resources about developing apps with ads.  |
-| [Important notice - EULA](important-notice-eula.md)                                    |   Provides details about the end user license agreement (EULA) for the Microsoft advertising libraries.   |
 
 
  

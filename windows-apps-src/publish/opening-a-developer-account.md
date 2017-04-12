@@ -4,7 +4,7 @@ ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
 description: This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 03/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,11 +21,12 @@ This overview of how to register for a developer account for the Windows Store a
 > **Note**  In some cases, the screens and fields you see when registering for a developer account may vary slightly from what is outlined below, though the basic information and process is the same.
 
 1.  Go to the [registration page](http://go.microsoft.com/fwlink/p/?LinkId=615100) and click **Sign up**.
-2.  Select the [country/region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) in which you live, or where your business is located. You won't be able to change this later.
-3.  Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account. For a company account, be sure to review the [guidelines](#additional-guidelines-for-company-accounts) below.
-4.  Enter the contact info you want to use for your developer account.
+2.  If you're not already signed in with a Microsoft account, sign in now, or create a new Microsoft account. The Microsoft account you use here will be what you use to sign in to your developer account.
+3.  Select the [country/region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) in which you live, or where your business is located. You won't be able to change this later.
+4.  Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account. For a company account, be sure to review the [guidelines](#additional-guidelines-for-company-accounts) below.
+5.  Enter the contact info you want to use for your developer account.
 
-  > **Note**  We'll use this to contact you about account-related matters. For example, you'll receive an email confirmation message after you complete your registration. After that, we'll send messages when we pay you, or if you need to fix something with your account. We may also send informational emails as described above, unless you opt out of receiving non-transactional emails.
+  > **Note**  We'll use this info to contact you about account-related matters. For example, you'll receive an email confirmation message after you complete your registration. After that, we'll send messages when we pay you, or if you need to fix something with your account. We may also send informational emails as described above, unless you opt out of receiving non-transactional emails.
 
    If you are registering as a company, you'll also need to enter the name, email address, and phone number of the person who will approve your company's account.
 
@@ -53,8 +54,8 @@ When creating a company account, follow these guidelines if more than one person
 
 > **Important** To allow multiple users to access your Dev Center account, we recommend using Azure Active Directory to assign roles to individual users, who can access the account by signing in with their individual Azure AD credentials. For more info, see [Manage account users](manage-account-users.md).
 
--   Create your Microsoft account using an email address that belongs to your company's domain, but not to a single individual—for example, windowsapps@fabrikam.com.
--   Limit access to this Microsoft account to the smallest possible number of developers.
+-   Create your Microsoft account using an email address that doesn't already belong to you or another individual, such as MyCompany_DevCenter@outlook.com. You may not be able to use an email address at your company's domain, especially if your company already uses Azure AD.
+-   Limit access to this Microsoft account to the smallest possible number of users.
 -   Set up a corporate email distribution list that includes everyone who needs to access the developer account, and add this email address to your security info. This allows all of the employees on the list to receive security codes when needed and to manage your Microsoft account’s security info. If setting up a distribution list is not feasible, the owner of the individual email account will need to be available to access and share the security code when prompted (such as when new security info is added to the account or when it must be accessed from a new device).
 -   Add a company phone number that does not require an extension and is accessible to key team members.
 -   In general, have developers use trusted devices to log in to your company's developer account. All key team members should have access to these trusted devices. This will reduce the need for security codes to be sent when accessing the account.

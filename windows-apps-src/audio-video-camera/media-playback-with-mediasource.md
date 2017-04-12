@@ -37,11 +37,11 @@ The following example shows how to play back a user-selected media file in a **M
 
 You will need to include the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) and [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespaces in order to complete this scenario.
 
-[!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
+[!code-cs[Using](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetUsing)]
 
 Declare a variable of type **MediaSource**. For the examples in this article, the media source is declared as a class member so that it can be accessed from multiple locations.
 
-[!code-cs[DeclareMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
+[!code-cs[DeclareMediaSource](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
 
 Declare a variable to store the **MediaPlayer** object and, if you want to render the media content in XAML, add a **MediaPlayerElement** control to your page.
 
@@ -51,7 +51,7 @@ Declare a variable to store the **MediaPlayer** object and, if you want to rende
 
 To allow the user to pick a media file to play, use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847). With the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned from the picker's [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) method, initialize a new MediaObject by calling [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909). Finally, set the media source as the playback source for the **MediaElement** by calling the [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) method.
 
-[!code-cs[PlayMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
+[!code-cs[PlayMediaSource](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
 
 By default, the **MediaPlayer** does not begin playing automatically when the media source is set. You can manually begin playback by calling [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play).
 
@@ -67,7 +67,7 @@ Using a [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn9309
 
 Declare a variable to store your **MediaPlaybackItem**.
 
-[!code-cs[DeclareMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackItem)]
+[!code-cs[DeclareMediaPlaybackItem](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackItem)]
 
 Create a **MediaPlaybackItem** by calling the constructor and passing in an initialized **MediaSource** object.
 
@@ -75,44 +75,44 @@ If your app supports multiple audio, video, or data tracks in a media playback i
 
 Finally, set the playback source of the **MediaElement** or **MediaPlayer** to your **MediaPlaybackItem**.
 
-[!code-cs[PlayMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
+[!code-cs[PlayMediaPlaybackItem](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
 
 > [!NOTE] 
 > A **MediaSource** can only be associated with a single **MediaPlaybackItem**. After creating a **MediaPlaybackItem** from a source, attempting to create another playback item from the same source will result in an error. Also, after creating a **MediaPlaybackItem** from a media source, you can't set the **MediaSource** object directly as the source for a **MediaPlayer** but should instead use the **MediaPlaybackItem**.
 
 The [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) event is raised after a **MediaPlaybackItem** containing multiple video tracks is assigned as a playback source, and can be raised again if the list of video tracks changes for the item changes. The handler for this event gives you the opportunity to update your UI to allow the user to switch between available tracks. This example uses a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) to display the available video tracks.
 
-[!code-xml[VideoComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetVideoComboBox)]
+[!code-xml[VideoComboBox](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetVideoComboBox)]
 
 In the **VideoTracksChanged** handler, loop through all of the tracks in the playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list. For each track, a new [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349) is created. If the track does not already have a label, a label is generated from the track index. The [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) property of the combo box item is set to the track index so that it can be identified later. Finally, the item is added to the combo box. Note that these operations are performed within a [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) call because all UI changes must be made on the UI thread and this event is raised on a different thread.
 
-[!code-cs[VideoTracksChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksChanged)]
+[!code-cs[VideoTracksChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetVideoTracksChanged)]
 
 In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) handler for the combo box, the track index is retrieved from the selected item's **Tag** property. Setting the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) property of the media playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list causes the **MediaElement** or **MediaPlayer** to switch the active video track to the specified index.
 
-[!code-cs[VideoTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksSelectionChanged)]
+[!code-cs[VideoTracksSelectionChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetVideoTracksSelectionChanged)]
 
 Managing media items with multiple audio tracks works exactly the same as with video tracks. Handle the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) to update your UI with the audio tracks found in the playback item's [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) list. When the user selects an audio track, set the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) property of the **AudioTracks** list to cause the **MediaElement** or **MediaPlayer** to switch the active audio track to the specified index.
 
-[!code-xml[AudioComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetAudioComboBox)]
+[!code-xml[AudioComboBox](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetAudioComboBox)]
 
-[!code-cs[AudioTracksChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAudioTracksChanged)]
+[!code-cs[AudioTracksChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksChanged)]
 
-[!code-cs[AudioTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAudioTracksSelectionChanged)]
+[!code-cs[AudioTracksSelectionChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksSelectionChanged)]
 
 In addition to audio and video, a **MediaPlaybackItem** object may contain zero or more [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) objects. A timed metadata track can contain subtitle or caption text, or it may contain custom data that is proprietary to your app. A timed metadata track contains a list of cues represented by objects that inherit from [**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899), such as a [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) or a [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655). Each cue has a start time and a duration that determines when the cue is activated and for how long.
 
 Similar to audio tracks and video tracks, the timed metadata tracks for a media item can be discovered by handling the [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) event of a **MediaPlaybackItem**. With timed metadata tracks, however, the user may want to enable more than one metadata track at a time. Also, depending on your app scenario, you may want to enable or disable metadata tracks automatically, without user intervention. For illustration purposes, this example adds a [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795) for each metadata track in a media item to allow the user to enable and disable the track. The **Tag** property of each button is set to the index of the associated metadata track so that it can be identified when the button is toggled.
 
-[!code-xml[MetaStackPanel](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetMetaStackPanel)]
+[!code-xml[MetaStackPanel](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetMetaStackPanel)]
 
-[!code-cs[TimedMetadataTrackschanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
+[!code-cs[TimedMetadataTrackschanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
 
 Because more than one metadata track can be active at a time, you don't simply set the active index for the metadata track list. Instead, call the **MediaPlaybackItem** object's [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) method, passing in the index of the track you want to toggle, and then providing a value from the [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) enumeration. The presentation mode you choose depends on the implementation of your app. In this example, the metadata track is set to **PlatformPresented** when enabled. For text-based tracks, this means that the system will automatically display the text cues in the track. When the toggle button is toggled off, the presentation mode is set to **Disabled**, which means that no text is displayed and no cue events are raised. Cue events are discussed later in this article.
 
-[!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
+[!code-cs[ToggleChecked](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
-[!code-cs[ToggleUnchecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
+[!code-cs[ToggleUnchecked](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
 
 As you are processing the metadata tracks, you can access the set of cues within the track by accessing the [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) or [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues) properties. You can do this to update your UI to show the cue locations for a media item.
 
@@ -142,17 +142,17 @@ For some scenarios, you may have external files that contains timed text associa
 
 This example uses a **Dictionary** collection to store a list of the timed text sources for the media item using the source URI and the **TimedTextSource** object as the key/value pair in order to identify the tracks after they have been resolved.
 
-[!code-cs[TimedTextSourceMap](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceMap)]
+[!code-cs[TimedTextSourceMap](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetTimedTextSourceMap)]
 
 Create a new **TimedTextSource** for each external timed text file by calling [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190). Add an entry to the **Dictionary** for the timed text source. Add a handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event to handle if the item failed to load or to set additional properties after the item was loaded successfully.
 
 Register all of your **TimedTextSource** objects with the **MediaSource** by adding them to the [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) collection. Note that external timed text sources are added to directly the **MediaSource** and not the **MediaPlaybackItem** created from the source. To update your UI to reflect the external text tracks, register and handle the **TimedMetadataTracksChanged** event as described previously in this article.
 
-[!code-cs[TimedTextSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSource)]
+[!code-cs[TimedTextSource](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetTimedTextSource)]
 
 In the handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event, check the **Error** property of the [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) passed into the handler to determine if an error occurred while trying to load the timed text data. If the item was resolved successfully, you can use this handler to update additional properties of the resolved track. This example adds a label for each track based on the URI previously stored in the **Dictionary**.
 
-[!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
+[!code-cs[TimedTextSourceResolved](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
 ## Add additional metadata tracks
 
@@ -162,17 +162,17 @@ Create a new [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows
 
 Create a new cue object, appropriate for the type of metadata track you created, and set the ID, start time, and duration for the track. This example creates a data track, so a set of [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) objects are generated and a buffer containing app-specific data is provided for each cue. To register the new track, add it to the [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) collection of the **MediaSource** object.
 
-[!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
+[!code-cs[AddDataTrack](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
 The **CueEntered** event is raised when a cue's start time has been reached as long as the associated track has a presentation mode of **ApplicationPresented**, **Hidden**, or **PlatformPresented.** Cue events are not raised for metadata tracks while the presentation mode for the track is **Disabled**. This example simply outputs the custom data associated with the cue to the debug window.
 
-[!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
+[!code-cs[DataCueEntered](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
 This example adds a custom text track by specifying **TimedMetadataKind.Caption** when creating the track and using [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) objects to add cues to the track.
 
-[!code-cs[AddTextTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddTextTrack)]
+[!code-cs[AddTextTrack](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAddTextTrack)]
 
-[!code-cs[TextCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
+[!code-cs[TextCueEntered](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
 
 ## Play a list of media items with MediaPlaybackList
 
@@ -182,42 +182,68 @@ The [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn93
 
 To get started, declare a variable to store your **MediaPlaybackList**.
 
-[!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
+[!code-cs[DeclareMediaPlaybackList](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-Create a **MediaPlaybackItem** for each media item you want to add to your list using the same procedure described previously in this article. Initialize your **MediaPlaybackList** object and add the media playback items to it. Register a handler for the [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) event. This event allows you to update your UI to reflect the currently playing media item. Finally, set the playback source of the **MediaPlayer** to your **MediaPlaybackList**.
+Create a **MediaPlaybackItem** for each media item you want to add to your list using the same procedure described previously in this article. Initialize your **MediaPlaybackList** object and add the media playback items to it. Register a handler for the [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) event. This event allows you to update your UI to reflect the currently playing media item. You can also register for the [ItemOpened](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackList#Windows_Media_Playback_MediaPlaybackList_ItemOpened) event, which is raised when an item in the list is successfully opened, and the [ItemFailed](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackList#Windows_Media_Playback_MediaPlaybackList_ItemFailed) event, which is raised when an item in the list can't be opened.
 
-[!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
+Starting with Windows 10, version 1703, you can specify the maximum number of **MediaPlaybackItem** objects in the **MediaPlaybackList** that the system will keep open after they have been played by setting the [MaxPlayedItemsToKeepOpen](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackList#Windows_Media_Playback_MediaPlaybackList_MaxPlayedItemsToKeepOpen) property. When a **MediaPlaybackItem** is kept open, playback of the item can start instantaneously when the user switches to that item because the item doesn't need to be reloaded. But keeping items open also increases the memory consumption of your app, so you should consider the balance between responsiveness and memory usage when setting this value. 
+
+To enable playback of your list, set the playback source of the **MediaPlayer** to your **MediaPlaybackList**.
+
+[!code-cs[PlayMediaPlaybackList](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
 In the **CurrentItemChanged** event handler, update your UI to reflect the currently playing item, which can be retrieved using the [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) property of the [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) object passed into the event. Remember that if you update the UI from this event, you should do so within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) so that the updates are made on the UI thread.
 
-> [!NOTE] 
-> The system does not automatically dispose of media items after they are played. This means that if the user navigates backwards through the list, previous played songs can be played again gaplessly, but this means that as more items in the list are played, the memory usage of your app will increase. You must be sure to free up the resources for previously played media items periodically. This is especially important to address when your app is playing in the background and more tightly resource-constrained. 
+Starting with Windows 10, version 1703, you can check the [CurrentMediaPlaybackItemChangedEventArgs.Reason](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs#Windows_Media_Playback_CurrentMediaPlaybackItemChangedEventArgs_Reason) property to get a value that indicates the reason that the item changed, such as the app switching items programatically, the previously playing item reaching its end, or an error occurring.
 
-You can use the **CurrentItemChanged** event as an opportunity to release the resources from previously played media items. To keep a reference to previously played items, create a **Queue** collection. And set a variable that determines the maximum number of media items to keep in memory. In the handler, get a reference to the previously played item and add it to the queue and dequeue the oldest entry in the queue. Call [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) on the returned item to free up its resources, but first check to make sure it's not still on the queue or currently being played to handle cases where the item is played multiple times.
+[!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
-[!code-cs[DeclareItemQueue](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareItemQueue)]
-
-[!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
 Call [**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) or [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454) to cause the media player to play the previous or next item in your **MediaPlaybackList**.
 
-[!code-cs[PrevButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPrevButton)]
+[!code-cs[PrevButton](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPrevButton)]
 
-[!code-cs[NextButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetNextButton)]
+[!code-cs[NextButton](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetNextButton)]
 
 Set the [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) property to specify whether the media player should play the items in your list in random order.
 
-[!code-cs[ShuffleButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetShuffleButton)]
+[!code-cs[ShuffleButton](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetShuffleButton)]
 
 Set the [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) property to specify whether the media player should loop playback of your list.
 
-[!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
+[!code-cs[RepeatButton](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
 
-###Handle the failure of media items in a playback list
+### Handle the failure of media items in a playback list
 The [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) event is raised when an item in the list fails to open. The [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) property of the [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) object passed into the handler enumerates the specific cause of the failure when possible, including network errors, decoding errors, or encryption errors.
 
 [!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
+
+### Disable playback of items in a playback list
+Starting with Windows 10, version 1703, you can disable playback of one or more items in a **MediaPlaybackItemList** by setting the [IsDisabledInPlaybackList](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackItem#Windows_Media_Playback_MediaPlaybackItem_IsDisabledInPlaybackList) property of a [MediaPlaybackItem](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlaybackItem) to false. 
+
+A typical scenario for this feature is for apps that play music streamed from the internet. The app can listen for changes in the network connection status of the device and disable playback of items that are not fully downloaded. In the following example, a handler is registered for the [NetworkInformation.NetworkStatusChanged](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_NetworkStatusChanged) event.
+
+[!code-cs[RegisterNetworkStatusChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetRegisterNetworkStatusChanged)]
+
+In the handler for **NetworkStatusChanged**, check to see if [GetInternetConnectionProfile](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Connectivity.NetworkInformation#Windows_Networking_Connectivity_NetworkInformation_GetInternetConnectionProfile) returns null, which indicates that the network is not connected. If this is the case, loop through all of the items in the playback list, and if the [TotalDownloadProgress](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplaybackitem#Windows_Media_Playback_MediaPlaybackItem_TotalDownloadProgress) for the item is less than 1, meaning that the item has not fully downloaded, disable the item. If the network connection is enabled, loop through all of the items in the playback list and enable each item.
+
+[!code-cs[NetworkStatusChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetNetworkStatusChanged)]
+
+### Defer binding of media content for items in a playback list by using MediaBinder
+In the previous examples, a **MediaSource** is created from a file, URL, or stream, after which a **MediaPlaybackItem** is created and added to a **MediaPlaybackList**. For some scenarios, such as if the user is being charged for viewing content, you may want to defer the retrieval of the content of a **MediaSource** until the item in the playback list is ready to actually be played. To implement this scenario, create an instance of the [**MediaBinder**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Core.MediaBinder) class. Set the [**Token**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Core.MediaBinder#Windows_Media_Core_MediaBinder_Token) property to an app-defined string that identifies the content for which you want to defer retrieval and then register a handler for the [**Binding**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Core.MediaBinder#Windows_Media_Core_MediaBinder_Binding) event. Next, create a **MediaSource** from the **Binder** by calling [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromMediaBinder_Windows_Media_Core_MediaBinder_). Then, create a **MediaPlaybackItem** from the **MediaSource** and add it to the playback list as usual.
+
+[!code-cs[InitMediaBinder](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetInitMediaBinder)]
+
+When the system determines that the content associated with the **MediaBinder** needs to be retrieved, it will raise the **Binding** event. In the handler for this event, you can retrieve the **MediaBinder** instance from the [**MediaBindingEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs) passed into the event. Retrieve the string you specified for the **Token** property and use it to determine what content should be retrieved. The **MediaBindingEventArgs** provides methods for setting the bound content in several different representations, including [**SetStorageFile**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_SetStorageFile_Windows_Storage_IStorageFile_), [**SetStream**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_SetStream_Windows_Storage_Streams_IRandomAccessStream_System_String_), [**SetStreamReference**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_SetStreamReference_Windows_Storage_Streams_IRandomAccessStreamReference_System_String_), and [**SetUri**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_SetUri_Windows_Foundation_Uri_). 
+
+[!code-cs[BinderBinding](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetBinderBinding)]
+
+Note that if you are performing asynchronous operations, such as web requests, in the **Binding** event handler, you should call the [**MediaBindingEventArgs.GetDeferral**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_GetDeferral) method to instruct the system to wait for your operation to complete before continuing. Call [**Deferral.Complete**](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.deferral#Windows_Foundation_Deferral_Complete) after your operation is complete to instruct the system to continue.
+
+Starting with Windows 10, version 1703, you can supply an [**AdaptiveMediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) as bound content by calling [**SetAdaptiveMediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediabindingeventargs#Windows_Media_Core_MediaBindingEventArgs_SetAdaptiveMediaSource_Windows_Media_Streaming_Adaptive_AdaptiveMediaSource_). For more information on using adaptive streaming in your app, see [Adaptive streaming](adaptive-streaming.md).
+
+
 
 ## Related topics
 * [Media playback](media-playback.md)

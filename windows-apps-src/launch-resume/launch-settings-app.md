@@ -4,7 +4,7 @@ title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 04/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -131,7 +131,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
     </tr>
     <tr>
         <td>Bluetooth</td>
-        <td>Desktop only</td>
+        <td>Both</td>
         <td>ms-settings:bluetooth</td>
     </tr>
     <tr>

@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
-## Windows App Certification Kit tests
+# Windows App Certification Kit tests
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -665,8 +665,8 @@ Update the background JavaScript code to call Close() correctly.
 
 > **Note**  This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+## Related topics
 
- 
-
+* [Windows Desktop Bridge app tests](windows-desktop-bridge-app-tests.md)
+* [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

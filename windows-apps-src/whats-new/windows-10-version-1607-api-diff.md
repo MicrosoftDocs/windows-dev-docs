@@ -11,9 +11,9 @@ ms.technology: uwp
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ---
 
-# Windows 10 API changes
+# New APIs in Windows 10 vesion 1607
 
-Many runtime APIs have been added or changed in Windows 10 version 1607. This table lists the namespaces that have been added or changed in this release.
+Many runtime APIs have been added or changed in Windows 10 version 1607, also known as the Anniversary Update. This table lists the namespaces that have been added or changed in this release.
 
 
 **Item**

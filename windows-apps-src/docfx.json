@@ -18,8 +18,9 @@
         "Search.Product": "eADQiWindows 10XVcnh",
         "uhfHeaderId": "MSDocsHeader-WinUWP",
         "titleSuffix": "UWP app developer",
-		"breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
-		"extendBreadcrumb": true
+        "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+        "extendBreadcrumb": true,
+		"htmlDangerZone":  true
     },
     "externalReference": [
     ],

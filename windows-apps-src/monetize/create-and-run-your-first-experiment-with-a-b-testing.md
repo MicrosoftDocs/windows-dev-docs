@@ -50,31 +50,30 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 6. Drag a **Button** from **Toolbox** to the page.
 7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
 8. Replace the entire contents of the code file with the following code. Assign the ```projectId``` variable to the [project ID](run-app-experiments-with-a-b-testing.md#terms) value that you obtained from the Dev Center dashboard in the previous section.
+    [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
-  > [!div class="tabbedCodeSnippets"]
-  [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
-
-10. Save the code file and build the project.
+9. Save the code file and build the project.
 
 ## Create the experiment in Windows Dev Center
 
 1. Return to the **Button Click Experiments** project page in the Windows Dev Center dashboard.
 2. In the **Experiments** section, click the **New experiment** button.
-5. In the **Experiment details** section, type the name **Optimize Button Clicks** in the **Experiment name** field.
-6. In the **View event** section, type **userViewedButton** in the **View event name** field. Note that this name matches the view event string that you logged in the code you added in the previous section.
-7. In the **Goals and conversion events** section, enter the following values:
+3. In the **Experiment details** section, type the name **Optimize Button Clicks** in the **Experiment name** field.
+4. In the **View event** section, type **userViewedButton** in the **View event name** field. Note that this name matches the view event string that you logged in the code you added in the previous section.
+5. In the **Goals and conversion events** section, enter the following values:
   * In the **Goal name** field, type **Increase Button Clicks**.
   * In the **Conversion event name** field, type the name **userClickedButton**. Note that this name matches the conversion event string that you logged in the code you added in the previous section.
   * In the **Objective** field, choose **Maximize**.
-8. In the **Remote variables and variations** section, confirm that the **Distribute equally** check box is selected so that the variations will be distributed equally to your app.
-9. Add variables to your experiment:
-  9. Click the drop-down control, choose **buttonText**, and click **Add variable**. The string **Grey Button** should automatically appear in the **Variation A** column (this value is derived from the project settings). In the **Variation B** column, type **Blue Button**.
-  9. Click the drop-down control again, choose **r**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.
-  9. Click the drop-down control again, choose **g**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.  
-  9. Click the drop-down control again, choose **b**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **255**.  
-10. Click **Save** and then click **Activate**.
+6. In the **Remote variables and variations** section, confirm that the **Distribute equally** check box is selected so that the variations will be distributed equally to your app.
+7. Add variables to your experiment:
+    1. Click the drop-down control, choose **buttonText**, and click **Add variable**. The string **Grey Button** should automatically appear in the **Variation A** column (this value is derived from the project settings). In the **Variation B** column, type **Blue Button**.
+    2. Click the drop-down control again, choose **r**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.
+    3. Click the drop-down control again, choose **g**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **1**.  
+    4. Click the drop-down control again, choose **b**, and click **Add variable**. The string **128** should automatically appear in the **Variation A** column. In the **Variation B** column, type **255**.  
+8. Click **Save** and then click **Activate**.
 
-> **Important**&nbsp;&nbsp;After you activate an experiment, you can no longer modify the experiment parameters unless it you clicked the **Editable experiment** check box when you created the experiment. Typically, we recommend that you code the experiment in your app before activating your experiment.
+> [!IMPORTANT]
+> After you activate an experiment, you can no longer modify the experiment parameters unless it you clicked the **Editable experiment** check box when you created the experiment. Typically, we recommend that you code the experiment in your app before activating your experiment.
 
 ## Run the app to gather experiment data
 
@@ -86,13 +85,15 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 
 Wait at least several hours after completing the previous section, and then follow these steps to review the results of your experiment and complete the experiment.
 
-> **Note**&nbsp;&nbsp;As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> [!NOTE]
+> As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
 
 1. In Dev Center, return to the **Experimentation** page for your app.
 2. In the **Active experiments** section, click **Optimize Button Clicks** to go to the page for this experiment.
 3. Confirm that the results shown in the **Results summary** and **Results details** sections matches what you expect to see. For more details about these sections, see [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md#review-the-results-of-your-experiment).
+    > [!NOTE]
+    > Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 
-  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 4. Now you are ready to end the experiment. In the **Results summary** section, in the **Variation B** column, click **Switch**. This switches all users of your app to the blue button.
 5. Click **OK** to confirm that you want to end the experiment.
 6. Run the **SampleExperiment** app you created in the previous section.

@@ -3,7 +3,7 @@ author: v-angraf
 title: What's new for UWP on Xbox One
 description: Highlights new features for UWP apps on Xbox One.
 ms.author: v-angraf
-ms.date: 02/08/2017
+ms.date: 03/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,42 +13,42 @@ ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
 
 # What's new for developers in the latest update of UWP on Xbox One
 
-The July 2016 release of Universal Windows Platform (UWP) on Xbox One contains the following new features, 
+The latest update of Universal Windows Platform (UWP) on Xbox One contains the following new features, 
 updates to existing features, and bug fixes.
 
-## Networking using TCP/UDP sockets is now available  
-Inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is now available.
+## x86 apps and games are no longer supported on Xbox  
+Xbox no longer supports x86 app development or x86 app submissions to the store.
 
-## Fiddler support
-You can now enable Fiddler as a proxy for a console that has enabled UWP on Xbox One. Fiddler allows you to log and inspect all HTTP/HTTPS traffic to and from Xbox services and relying-party web services. For more information, see [How to use Fiddler with Xbox One when developing for UWP](uwp-fiddler.md).
+## Apps can now support navigating back to the previous app 
+UWP on Xbox One apps can now support navigating back to the previous app. To do this, subscribe to the 
+[**Windows.UI.Core.SystemNavigationManager.BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893595)
+event and set the **Handled** property to **false** in your event handler.
 
-## Mouse mode is now enabled by default
-Mouse mode is now enabled by default for XAML and Hosted Web Apps.
-We strongly recommend that you turn this off and optimize for directional controller navigation.
-To learn how to turn mouse mode off, see [How to disable mouse mode](how-to-disable-mouse-mode.md).
-For more information about how to build great apps for Xbox, see
-[Designing for Xbox and TV](../input-and-devices/designing-for-tv.md#mouse-mode).
+> [!NOTE]
+> For compatibility reasons, this functionality is available only to apps that are built with the most recent release of UWP on Xbox One. 
 
-## Extended UWP API surface area is now functional on the console
-Additional UWP APIs are now functional on the Xbox console. For more information about UWP API support, see 
-[UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/p/?LinkID=760755). 
+## Dev Home is now the default home experience on development consoles
+Development consoles now launch Dev Home as the default home experience. This lets you get right to work without the need to click through 
+from the retail Home screen. Dev Home now includes a quick action to launch the retail Home screen. Also, a new setting allows you to make 
+retail Home the default experience. 
 
-## Background music and audio capabilities
-You can now play music and audio from an app that is running in the background.
+## New Dev Home user interface
+The Dev Home user interface now includes the following productivity enhancements:
+ - Important data like IP address and recovery version is now displayed at the top of the screen for visibility. 
+ - Dev Home now has a tabbed UI that groups tools into logical sets, allowing quick navigation.
+ - Quick-action buttons on the first tab of Dev Home allow fast access to the most commonly used actions. 
 
-## XAML improvements
-The following improvements have been made to the XAML platform:
--	The focus rectangle is now styled for a television 10-foot experience.
--	Xbox sounds are now embedded in the XAML platform.
--	XY focus navigation between UI elements has been improved. 
+## WDP for Xbox enhancements
+The Windows Device Portal (WDP) now includes additional support for console settings. 
 
-## You can now change the size of allocated developer storage on the console
-A new setting in the Dev Home app allows you to increase or decrease the size of the allocated developer storage on your console. For more information about changing the size of your allocated developer storage, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
+## You can now switch the type of your UWP title between "App" and "Game"
+Switching the type of your UWP title between "App" and "Game" allows you to test game scenarios without publishing to the store. 
+In Dev Home, select the app in the **Games & Apps** pane, press the View button on the controller, select **App details** and then change the 
+type to "App" or "Game".
 
-## WDP tool enhancements
-The following improvements have been made to the Windows Device Portal (WDP) Tool for Xbox:
- - The tool includes additional console settings. For more information about console settings, see the [/ext/settings](wdp-xboxsettings-api.md) reference topic. 
- - Users can be signed in and out on the console. For more information about users, see the [/ext/user](wdp-user-management.md) reference topic.
+## See also
+- [Known issues](known-issues.md)
+- [UWP on Xbox One](index.md)
  - You can now capture a screenshot of the console. For more information about taking a screenshot, see the [/ext/screenshot](wdp-media-capture-api.md) reference topic.
  - The tool can deploy a loose file build of your app. For more information about loose file builds, see the [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) reference topic.
  - Developer files on your console can be accessed from File Explorer on your development PC. For more information about accessing files through File Explorer, see the [/ext/smb/developerfolder](wdp-smb-api.md) reference topic.

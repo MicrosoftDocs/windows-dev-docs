@@ -153,6 +153,8 @@ Background tasks can report progress, completion, and cancellation to your app u
 [Handle a cancelled background task](handle-a-cancelled-background-task.md)  
 [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 
+Check your background task registration during app launch. Ensure that your app's ungrouped background tasks are present in BackgroundTaskBuilder.AllTasks. Re-register the ones that are not present. Unregister any tasks that are no longer needed. This ensures that all background tasks registrations are up-to-date every time the app is launched.
+
 **Note**  
 This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
@@ -164,13 +166,14 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 
 **Related background task guidance**
 
-* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
+* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Create and register an out-of-process background task](create-and-register-a-background-task.md)
 * [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)
+* [Create and register an out-of-process background task](create-and-register-a-background-task.md)
 * [Debug a background task](debug-a-background-task.md)
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Group background task registration](group-background-tasks.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 * [Register a background task](register-a-background-task.md)

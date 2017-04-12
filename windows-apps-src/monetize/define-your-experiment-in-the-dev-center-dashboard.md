@@ -27,17 +27,19 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
 4. On the **Experimentation** page, identify the project where you want to add an experiment in the projects table, and click the **Add experiment** link for that project.
 5. In the **Experiment name** field, type a name that you can use to easily identify the experiment. After you create an experiment, this name appears in the list of existing experiments on the **Experimentation** page for your app and on the project's page.
 6. If you want to edit the experiment while it is active, click the **Editable experiment** check box. Check this box only if you are creating an experiment to validate all the variations through internal testing. For more information, see [Create an experiment for internal testing](define-your-experiment-in-the-dev-center-dashboard.md#test_experiments).
+    > [!NOTE]
+    > Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers). Editing an experiment while it is active will invalidate the experiment results.
 
-  > **Note**&nbsp;&nbsp;Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers). Editing an experiment while it is active will invalidate the experiment results.
-4. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
-5.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
-5. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
-6. In the **Goals and conversion events** section, define at least one goal for your experiment:
+7. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
+8.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
+9. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
+10. In the **Goals and conversion events** section, define at least one goal for your experiment:
   * In the **Goal name** field, type a descriptive name for your goal. After you run an experiment, this name appears in the results summary for the experiment.
   * In the **Conversion event name** field, type the name of the [conversion event](run-app-experiments-with-a-b-testing.md#terms) for this goal.
   * In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event. This information is used in the results summary for the experiment.
 
-  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
+> [!NOTE]
+> Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
 ### Define the remote variables and variations for your experiment
@@ -47,8 +49,9 @@ Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#term
 1. In the **Remote variables and variations** section, you should see two default variations, **Variation A (Control)** and **Variation B**. If you want more variations, click **Add variation**. Optionally, you can rename each variation.
 2. By default, variations are distributed equally to your app users. If you want to choose a specific distribution percentage, clear the **Distribute equally** check box and type the percentages in the **Distribution (%)** row.
 3. Add remote variables to your variations. In the drop-down control at the bottom of this section, choose each variable you want to add and click **Add variable**.
+    > [!NOTE]
+    > The variables listed in this control are inherited from the project for the experiment. The default value for the variable (as defined in the project) is automatically assigned to the control variation. If you want to create new variables that aren't listed here, go to the related project page and add the variables there.
 
-  >**Note**&nbsp;&nbsp; The variables listed in this control are inherited from the project for the experiment. The default value for the variable (as defined in the project) is automatically assigned to the control variation. If you want to create new variables that aren't listed here, go to the related project page and add the variables there.
 4. Edit the variable values for each unique variation in the experiment (that is, the variations other than the control variation).
 
 <span id="save-and-activate-your-experiment" />
@@ -58,7 +61,8 @@ When you finish entering the required fields for your experiment, click **Save**
 
 If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**. When the experiment is active, your app can retrieve variation variables and report view and conversion events to Dev Center. For more information, see [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
 
-> **Important**  A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
+> [!IMPORTANT]
+> A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
 
 <span id="test_experiments"/>
 ## Create an experiment for internal testing

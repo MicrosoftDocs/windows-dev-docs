@@ -105,7 +105,7 @@ Set an explicit decode size to create a version of the image at the exact size i
 
 ## Collapsed elements at load time
 
-A common pattern in apps is to hide elements in the UI initially and show them at a later time. In most cases these elements should be deferred using x:DeferLoadStrategy to avoid paying the cost of creating the element at load time.
+A common pattern in apps is to hide elements in the UI initially and show them at a later time. In most cases these elements should be deferred using x:Load or x:DeferLoadStrategy to avoid paying the cost of creating the element at load time.
 
 This includes cases where a boolean to visibility converter is used to hide items until a later time.
 
@@ -119,9 +119,9 @@ This rule was triggered because an element was collapsed at load time. Collapsin
 
 ### Solution
 
-Using x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible in the first frame. You can opt to load the element when needed, or as part of a set of delayed logic. To trigger loading, call findName on the element you wish to load.
+Using [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785), you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible in the first frame. You can opt to load the element when needed, or as part of a set of delayed logic. To trigger loading, call findName on the element you wish to load. x:Load extends the capabilities of x:DeferLoadStrategy enabling elements to be unloaded, and for the loading state to be controlled via x:Bind.
 
-In some cases, using findName to show a piece of UI may not be the answer. This is true if you are expecting to realize a significant piece of UI on the click of a button with very low latency. In this case, you should use x:DeferLoadStrategy and set Visibility to Collapsed on the element you wish to realize. After the page has been loaded and the UI thread is free, you can call findName when necessary to load the elements. The elements won't be visible to the user until you set the Visibility of the element to Visible.
+In some cases, using findName to show a piece of UI may not be the answer. This is true if you are expecting to realize a significant piece of UI on the click of a button with very low latency. In this case, you may want to trade off faster UI latency at the cost of additional memory, if so you should use x:DeferLoadStrategy and set Visibility to Collapsed on the element you wish to realize. After the page has been loaded and the UI thread is free, you can call findName when necessary to load the elements. The elements won't be visible to the user until you set the Visibility of the element to Visible.
 
 ## ListView is not virtualized
 

@@ -15,37 +15,38 @@ keywords: windows 10, uwp
 
 In this guide, you'll learn about the Universal Windows Platform (UWP) and Windows 10:
 
--   What a *device family* is, and how to decide which one to target.
+-   What a device family is and how to decide which one to target.
+-   What an Extension SDK is and how it provides access to APIs specific to a class of devices.
 -   New UI controls and panels for adapting your UI to different screen sizes or rotations.
 -   How to understand and control the API surface that is available to your app.
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform available on every device that runs Windows 10. With this evolution, apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the device family the app is running on. The UWP provides a guaranteed core API layer across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Windows Store provides a unified distribution channel to reach all the device types your app can run on.
+Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform available on every device that runs Windows 10. The UWP provides a guaranteed core API across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Windows Store provides a unified distribution channel to reach all the device types your app can run on. Apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the class of device that the app is running on.
 
 ![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, one dev center, and cloud services](images/universalapps-overview.png)
 
-Because your UWP app runs on a wide variety of devices with different form factors and types of input, you want it to be tailored to each device and be able to unlock the unique capabilities of each device. Each device family has unique APIs, in addition to the guaranteed core API layer. You can write code to access those unique APIs conditionally so that your app lights up features specific to one type of device while presenting a different experience on other devices. Adaptive UI controls and new layout panels help you to tailor your UI across a broad range of screen resolutions.
+Because your UWP app runs on a wide variety of devices with different form factors and types of input, you want it to be tailored to each device and be able to unlock the unique capabilities of each device. In addition to the guaranteed core API layer, you can write code to access device specific APIs so that your app lights up features specific to one type of device while presenting a different experience on other devices. Adaptive UI controls and new layout panels help you to tailor your UI across a broad range of device screen resolutions and sizes.
 
 ## Device families
 
-Windows 8.1 and Windows Phone 8.1 apps target an operating system (OS): either Windows, or Windows Phone. With Windows 10 you no longer target an operating system but you instead target your app to one or more device families. A device family identifies the APIs, system characteristics, and behaviors that you can expect across devices within the device family. It also determines the set of devices on which your app can be installed from the Store. Here is the device family hierarchy.
+In order to understand how Windows 10 allows you to target different classes of devices, it's helpful to understand a concept called device families. A device family identifies the APIs, system characteristics, and behaviors that you can expect across a class of devices. It also determines the set of devices on which your app can be installed from the Store. A device family (with the exception of the Universal device family) is implemented as an extension SDK, which we will discuss shortly. Here is the device family hierarchy.
 
 ![device families](images/device-family-tree.png)
 
-A device family is a set of APIs collected together and given a name and a version number. A device family is the foundation of an OS. PCs run the desktop OS, which is based on the desktop device family. Phones and tablets, etc., run the mobile OS, which is based on the mobile device family. And so on.
+A device family defines a set of APIs and is versioned. A device family is the foundation of an OS. PCs run the desktop OS, which is based on the desktop device family. Phones and tablets run the mobile OS, which is based on the mobile device family.
 
 The universal device family is special. It is not, directly, the foundation of any OS. Instead, the set of APIs in the universal device family is inherited by child device families. The universal device family APIs are thus guaranteed to be present in every OS and on every device.
 
 Each child device family adds its own APIs to the ones it inherits. The resulting union of APIs in a child device family is guaranteed to be present in the OS based on that device family, and on every device running that OS.
 
-One benefit of device families is that your app can run on any, or even all, of a variety of devices from phones, tablets, desktop computers, Surface Hubs, Xbox consoles, and HoloLens. Your app can also use adaptive code to dynamically detect and use features of a device that are outside of the universal device family.
+One benefit of the universal device family is that your app can run on any, or even all, of a variety of devices from phones, tablets, desktop computers, Surface Hubs, Xbox consoles, and HoloLens. Your app can also use adaptive code to dynamically detect and use features of a device that are outside of the universal device family.
 
 The decision about which device family (or families) your app will target is yours to make. And that decision impacts your app in these important ways. It determines:
 
 -   The set of APIs that your app can assume to be present when it runs (and can therefore call freely).
 -   The set of API calls that are safe only inside conditional statements.
--   The set of devices on which your app can be installed from the Store (and consequently the form factors that you need to consider).
+-   The set of devices on which your app can be installed from the Store (and consequently the form factors that you need to consider when you design the UI).
 
-There are two main consequences of making a device family choice: the API surface that can be called unconditionally by the app, and the number of devices the app can reach. These two factors involve tradeoffs and are inversely related. For example, a UWP app is an app that specifically targets the universal device family, and consequently is available to all devices. An app that targets the universal device family can assume the presence of only the APIs in the universal device family (because that's what it targets). Other APIs must be called conditionally. Also, such an app must have a highly adaptive UI and comprehensive input capabilities because it can run on a wide variety of devices. A Windows mobile app is an app that specifically targets the mobile device family, and is available to devices whose OS is based on the mobile device family (which includes phones, tablets, and similar devices). A mobile device family app can assume the presence of all APIs in the mobile device family, and its UI has to be moderately adaptive. An app that targets the IoT device family can be installed only on IoT devices and can assume the presence of all APIs in the IoT device family. That app can be very specialized in its UI and input capabilities because you know that it will run only on a specific type of device.
+There are two main consequences of making a device family choice: the API surface that can be called unconditionally by the app, and the number of devices the app can reach. These two factors involve tradeoffs and are inversely related. For example, a UWP app is an app that specifically targets the universal device family, and consequently is available to all devices. An app that targets the universal device family can assume the presence of only the APIs in the universal device family. Other APIs must be called conditionally. Also, such an app must have a highly adaptive UI and comprehensive input capabilities because it can run on a wide variety of devices. A Windows mobile app is an app that specifically targets the mobile device family, and is available to devices whose OS is based on the mobile device family (which includes phones, tablets, and similar devices). A mobile device family app can assume the presence of all APIs in the mobile device family, and its UI has to be moderately adaptive. An app that targets the IoT device family can be installed only on IoT devices and can assume the presence of all APIs in the IoT device family. That app can be very specialized in its UI and input capabilities because you know that it will run only on a specific type of device.
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
@@ -53,7 +54,7 @@ Here are some considerations to help you decide which device family to target:
 
 **Maximizing your app's reach**
 
-To reach the maximum range of devices with your app, and to have it run on as many kinds of devices as possible, your app will target the universal device family. By doing so, the app automatically targets every device family that's based on universal (in the diagram, all the children of universal). That means that the app runs on every OS based on those device families, and on all the devices that run those operating systems. The only APIs that are guaranteed to be available on all those devices is the set defined by the particular version of the universal device family that you target. (With this release, that version is always 10.0.x.0.) To find out how an app can call APIs outside of its target device family version, see Writing code later in this topic.
+To reach the maximum range of devices with your app, and to have it run on as many kinds of devices as possible, your app will target the universal device family. By doing so, the app automatically targets every device family that's based on universal (in the diagram, all the children of universal). That means that the app runs on every OS based on those device families, and on all the devices that run those operating systems. The only APIs that are guaranteed to be available on all those devices is the set defined by the particular version of the universal device family that you target. To find out how an app can call APIs outside of its target device family version, see [Writing Code](#writing-code) later in this topic.
 
 **Limiting your app to one kind of device**
 
@@ -68,6 +69,12 @@ Instead of targeting the universal device family, or targeting one of the child 
 In rare cases you may want your app to run everywhere except on devices with a particular version of a particular device family. For example, let's say your app targets version 10.0.x.0 of the universal device family. When the operating system version changes in the future, say to 10.0.x.2, at that point you can specify that your app runs everywhere except version 10.0.x.1 of Xbox by targeting your app to 10.0.x.0 of universal and 10.0.x.2 of Xbox. Your app will then be unavailable to the set of device family versions within Xbox 10.0.x.1 (inclusive) and earlier.
 
 By default, Microsoft Visual Studio specifies **Windows.Universal** as the target device family in the app package manifest file. To specify the device family or device families that your app is offered to from within the Store, manually configure the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your Package.appxmanifest file.
+
+## Extension SDKs
+
+Once you have decided on the device family that your app will target, add a reference to the Extension SDK(s) that implements the APIs for that device family.  If you are targeting the Universal device family, you don't need to reference an extension SDK. But if you are targeting a device family besides Universal, in Visual Studio you will add a reference to the extension SDK that matches the device family you have chosen.  For example, if you are targeting the mobile device family, you would add a reference to the _Windows Mobile Extensions for the UWP_ in Visual Studio's Reference Manager.
+
+Selecting a device family does not prohibit you from adding extension SDKs for other types of devices. You will just need to ensure that you test for the presence of APIs not included in the device family you have chosen as described below in [Writing Code](#writing-code).
 
 ## UI and universal input
 
@@ -187,23 +194,17 @@ The following APIs provide access to input:
 
 ## Writing code
 
-Your programming language options for your [Windows 10 project in Visual Studio](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) include Visual C++, C#, Visual Basic, and JavaScript. For Visual C++, C#, and Visual Basic, you can use XAML for a full-fidelity, native UI experience. For Visual C++ you can choose to draw with DirectX either instead of or as well as using XAML. For JavaScript, your presentation layer will be HTML, and HTML is of course a cross-platform web standard. Much of your code and UI will be universal and it will run the same way everywhere. But for code tailored to particular device families, and for UI tailored to particular form factors, you'll have the option to use adaptive code and adaptive UI. Let's look at these different cases.
+Your programming language options for your [Windows 10 project in Visual Studio](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) include Visual C++, C#, Visual Basic, and JavaScript. For Visual C++, C#, and Visual Basic, you can use XAML for a full-fidelity, native UI experience. For Visual C++ you can choose DirectX either instead of or as well as using XAML. For JavaScript, your presentation layer will be HTML, and HTML is of course a cross-platform web standard. Much of your code and UI will be universal and it will run the same way everywhere. But for code tailored to particular device families, and for UI tailored to particular form factors, you'll have the option to use adaptive code and adaptive UI. Let's look at these different cases.
 
 **Calling an API that's implemented by your target device family**
 
-Whenever you want to call an API, you'll need to know whether the API is implemented by the device family that your app is targeting. If in doubt, you can look it up in the API reference documentation. If you open the relevant topic and look at the Requirements section, you'll see what the implementing device family is. Let's say that your app is targeting version 10.0.x.0 of the universal device family and you want to call members of the [**Windows.UI.Core.SystemNavigationManager**](https://msdn.microsoft.com/library/windows/apps/dn893595) class. In this example, the device family is "Universal". It's a good idea to further confirm that the class members that you want to call are also within your target, and in this case they are. So in this example, you now know that the APIs are guaranteed to be present on every device that your app can be installed on, and you can call the APIs in your code just like you normally would.
+Whenever you want to call an API in a UWP app, you'll want to know whether the API is implemented by the device family that your app is targeting. Visual Studio Intellisense only shows you the APIs that are available for the extension SDKs that you have chosen. If you have not selected an extension SDK, you'll see only the APIs available to the Universal device family.
 
-```csharp
-    Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += TestView_BackRequested;
-```
-
-As another example, imagine that your app is targeting version 10.0.x.0 of the Xbox device family, and the reference topic for an API that you want to call says that the API was introduced in version 10.0.x.0 of the Xbox device family. In that case, again, the API is guaranteed to be present on every device that your app can be installed on. So you would be able to call that API in your code in the normal way.
-
-Note that Visual Studio's IntelliSense will not recognize APIs unless they are implemented by your app's target device family or any extension SDKs that you have referenced. Consequently, if you haven't referenced any extension SDKs, you can be sure that any APIs that appear in IntelliSense must therefore be in your target device family and you can call them freely.
+The API documentation also tells you which device family an API is part of. If you look at the Requirements section, you'll see what the implementing device family is and which version of that device family the API appears in.
 
 **Calling an API that's NOT implemented by your target device family**
 
-There will be cases when you want to call an API, but your target device family is not listed in the documentation. In that case you can opt to write adaptive code in order to call that API.
+There will be cases when you want to call an API in an extension SDK that you've referenced, but that API is not part of the device family you are targeting. For example, you may be targeting the universal device family, but have a desktop API that you'd like to use if the app happens to be running on a mobile device. In that case you can opt to write adaptive code in order to call that API.
 
 **Writing adaptive code with the ApiInformation class**
 

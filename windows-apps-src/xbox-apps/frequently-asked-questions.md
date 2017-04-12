@@ -3,7 +3,7 @@ author: Mtoepke
 title: Frequently asked questions
 description: FAQ about UWP on Xbox.
 ms.author: mtoepke
-ms.date: 02/08/2017
+ms.date: 03/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,19 +17,18 @@ Things not working the way you expected?
 Look through this page of frequently asked questions. 
 Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://go.microsoft.com/fwlink/?linkid=839446) forum. 
 
-### Why are my games and apps not working?
+### Why aren't my games and apps working?
 
-If your games and apps are not working, or if you don’t have access to the store or to Live services, you are probably running in Developer Mode. 
-You can tell you’re running in Developer Mode if you select Home and you see a big Dev Home tile on the right side of your screen, instead of the usual Gold/Live content. 
-If you want to play games, you can open Dev Home and switch back to Retail Mode by using the **Leave developer mode** button.
+If your games and apps aren't working, or if you don't have access to the store or to Live services, you are probably running in Developer Mode. 
+To figure out which mode you're currently in, press the **Home** button on your controller. If this takes you to Dev Home instead of 
+the retail Home experience, you're in Developer Mode. If you want to play games, you can open Dev Home and switch back to Retail Mode by using the **Leave developer mode** button.
 
-### Why can’t I connect to my Xbox One using Visual Studio?
+### Why can't I connect to my Xbox One using Visual Studio?
 
 Start by verifying that you are running in Developer Mode, and not in Retail Mode. 
 You cannot connect to your Xbox One when it is in Retail Mode. 
-You can simply check this by pressing the **Home** button and looking for the Dev Home tile on the right side of your screen. 
-If the tile is not there, but instead you see Gold/Live content, you are in Retail Mode. 
-You need to run the Dev Mode Activation app to switch to Developer Mode.
+To figure out which mode you're currently in, press the **Home** button on your controller. If you see Gold/Live content instead of Dev Home,
+you're in Retail Mode and you need to run the Dev Mode Activation app to switch to Developer Mode.
 
 > [!NOTE]
 > You must have a user signed in to deploy an app.
@@ -44,9 +43,9 @@ Follow the [Xbox One Developer Mode Activation](devkit-activation.md) instructio
 
 Follow the [Xbox One Developer Mode Activation](devkit-activation.md) instructions to understand more about these states. 
 
-You can simply check this by pressing the **Home** button and looking at the right side of the screen. 
-If you are in Developer Mode, you will see the Dev Home tile on the right side. 
-If you are in Retail Mode, you will see the usual Gold/Live content.
+To figure out which mode you're currently in, press the **Home** button on your controller. 
+- If this takes you to Dev Home, you're in Developer Mode.
+- If you see Gold/Live content, you're in Retail Mode.
 
 ### Will my games and apps still work if I activate Developer Mode?
 
@@ -59,7 +58,7 @@ Xbox no longer supports x86 app development or x86 app submissions to the store.
 ### Will I lose my games and apps or saved changes?
 
 If you decide to leave the Developer Program, you won't lose your installed games and apps. 
-In addition, as long as you were online when you played them, your saved games are all saved on your Live account cloud profile, so you won’t lose them.
+In addition, as long as you were online when you played them, your saved games are all saved on your Live account cloud profile, so you won't lose them.
 
 ### How do I leave the Developer Program?
 
@@ -70,14 +69,14 @@ See the [Xbox One Developer Mode Deactivation](devkit-deactivation.md) topic for
 If you no longer have access to your Xbox One, you can deactivate it in Windows Dev Center. 
 For details, see the **Deactivate your console using Windows Dev Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center) topic. 
 
-### I left the Developer Program using Windows Dev Center but I’m in still Developer Mode. What do I do?
+### I left the Developer Program using Windows Dev Center but I'm in still Developer Mode. What do I do?
 
 Start Dev Home and select the **Leave developer mode** button. 
 This will restart your console in Retail Mode. 
 
 ### Can I publish my app?
 
-You can [publish apps](../publish/index.md) through Dev Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today’s Xbox One standards.
+You can [publish apps](../publish/index.md) through Dev Center if you have a [developer account](https://developer.microsoft.com/store/register). UWP apps created and tested on a retail Xbox One console will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today's Xbox One standards.
 
 ### Can I publish my game?
 
@@ -101,7 +100,7 @@ Check out the [Known issues](known-issues.md) page for this release.
 
 ### Fixing deployment failures
 
-If you can’t deploy your app from Visual Studio, these steps may help you fix the problem. 
+If you can't deploy your app from Visual Studio, these steps may help you fix the problem. 
 If you get stuck, ask for help on the forum.
 
 > [!NOTE]
@@ -112,7 +111,7 @@ If Visual Studio cannot connect to your Xbox One:
 1. Make sure that you are in Developer Mode (discussed earlier on this page).
 2. Make sure that you have set up your development PC correctly. Did you follow *all* of the directions in [Getting started with UWP app development on Xbox One](getting-started.md)? 
 
-3. If you haven’t yet, read through the [Development environment setup](development-environment-setup.md) topic and the [Introduction to Xbox One tools](introduction-to-xbox-tools.md) topic.
+3. If you haven't yet, read through the [Development environment setup](development-environment-setup.md) topic and the [Introduction to Xbox One tools](introduction-to-xbox-tools.md) topic.
 
 4. Make sure that you can “ping” your console IP address from your development PC.
   > [!NOTE]
@@ -141,7 +140,7 @@ Go to Settings > System > Console info & updates > Reset console, and select the
 This will delete all of your games, apps, settings and content and deactivate Developer Mode.
 -->
 
-### If I’m building an app using HTML/JavaScript, how do I enable Gamepad navigation?
+### If I'm building an app using HTML/JavaScript, how do I enable Gamepad navigation?
 
 TVHelpers is a set of JavaScript and XAML/C# samples and libraries to help you build great Xbox One and TV experiences in JavaScript and C#. 
 TVJS is a library that helps you build premium UWP apps for Xbox One. TVJS includes support for automatic controller navigation, rich media playback, search, and more. 
@@ -151,4 +150,5 @@ For more information, see the [TVHelpers](https://github.com/Microsoft/TVHelpers
 
 ## See also
 - [Known issues with UWP on Xbox One](known-issues.md)
+- [UWP on Xbox One](index.md)
 - [UWP on Xbox One](index.md)

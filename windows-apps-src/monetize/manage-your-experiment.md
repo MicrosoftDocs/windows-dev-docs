@@ -15,7 +15,8 @@ keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 
 After you [define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to activate your experiment and use the Dev Center dashboard to review the results of your experiment. After you have obtained all the data you need, you can end your experiment and choose whether to keep using the variable values in the control variation for all your apps, or switch to using the variable values in one of your other variations.
 
-> **Note**&nbsp;&nbsp;When you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> [!NOTE]
+> When you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
 
 For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
 
@@ -30,8 +31,8 @@ When you are satisfied with the parameters of your experiment on the dashboard a
   * Click the **Activate** link for your experiment. Your experiment is added to the **Active experiments** section near the top of the page.
   * Click the experiment name, scroll to the bottom of the experiment page, and click **Activate**.
 
-> **Important**&nbsp;&nbsp;After you activate an experiment, you can no longer modify the experiment parameters unless you clicked the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
-
+> [!IMPORTANT]
+> After you activate an experiment, you can no longer modify the experiment parameters unless you clicked the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
 
 ## Review the results of your experiment
 
@@ -41,7 +42,8 @@ When you are satisfied with the parameters of your experiment on the dashboard a
   * The **Results summary** section lists your experiment goals and the conversion rate percentage for each variation.
   * The **Results details** section provides more details for each variation of all the goals in your experiment, including the views, conversions, unique users, conversion rate, delta %, confidence, and significance. The *confidence* is a statistical measure of the reliability of an estimate, which calculates the margin of error. The *significance* is a statistical measure, based on sample size, to determine the likelihood that a result is not due to chance, but is instead attributed to a specific cause.
 
-  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
+> [!NOTE]
+> Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 
 
 ## Complete your experiment

@@ -28,7 +28,7 @@ There are multiple concrete definitions of the MVVM pattern, and 3rd party frame
 
 -   XAML data binding (the {Binding} markup extension) was designed in part to enable model/view patterns. But {Binding} brings with it non-trivial working set and CPU overhead. Creating a {Binding} causes a series of allocations, and updating a binding target can cause reflection and boxing. These problems are being addressed with the {x:Bind} markup extension, which compiles the bindings at build time. **Recommendation:** use {x:Bind}.
 -   It’s popular in MVVM to connect Button.Click to the view-model using an ICommand, such as the common DelegateCommand or RelayCommand helpers. Those commands are extra allocations, though, including the CanExecuteChanged event listener, adding to the working set, and adding to the startup/navigation time for the page. **Recommendation:** As an alternative to using the convenient ICommand interface, consider putting event handlers in your code-behind and attaching them to the view events and call a command on your view-model when those events are raised. You'll also need to add extra code to disable the Button when the command is unavailable.
--   It’s popular in MVVM to create a Page with all possible configurations of the UI, then collapse parts of the tree by binding the Visibility property to properties in the VM. This adds unnecessarily to startup time and possibly to working set (because some parts of the tree may never become visible). **Recommendations:** Use the x:DeferLoadStrategy feature to defer unnecessary portions of the tree out of startup. Also, create separate user controls for the different modes of the page and use code-behind to keep only the necessary controls loaded.
+-   It’s popular in MVVM to create a Page with all possible configurations of the UI, then collapse parts of the tree by binding the Visibility property to properties in the VM. This adds unnecessarily to startup time and possibly to working set (because some parts of the tree may never become visible). **Recommendations:** Use the [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy attribute](../xaml-platform/x-deferloadstrategy-attribute.md) feature to defer unnecessary portions of the tree out of startup. Also, create separate user controls for the different modes of the page and use code-behind to keep only the necessary controls loaded.
 
 ## C++/CX recommendations
 
@@ -36,11 +36,3 @@ There are multiple concrete definitions of the MVVM pattern, and 3rd party frame
 -   **Disable RTTI (/GR-)**. RTTI is on by default in the compiler so, unless your build environment switches it off, you’re probably using it. RTTI has significant overhead, and unless your code has a deep dependency on it, you should turn it off. The XAML framework has no requirement that your code use RTTI.
 -   **Avoid heavy use of ppltasks**. Ppltasks are very convenient when calling async WinRT APIs, but they come with significant code size overhead. The C++/CX team is working on a language feature – await – that will provide much better performance. In the meantime, balance your use of ppltasks in the hot paths of your code.
 -   **Avoid use of C++/CX in the “business logic” of your app**. C++/CX is designed to be a convenient way to access WinRT APIs from C++ apps. It makes use of wrappers that have overhead. You should avoid C++/CX inside the business logic/model of your class, and reserve it for use at the boundaries between your code and WinRT.
-
- 
-
- 
-
-
-
-

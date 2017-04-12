@@ -19,7 +19,6 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
 1.  In your MainPage.xaml file, locate the definition for the **AdControl**. That code looks like this.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
@@ -33,7 +32,6 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
 2.   After the **Width** property, but before the closing tag, assign a name of an error event handler to the [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.erroroccurred.aspx) event. In this walkthrough, the name of the error event handler is **OnAdError**.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` xml
   <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
@@ -50,7 +48,6 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
     Define a second **AdControl** in MainPage.xaml just after the first **AdControl**, and set the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) property to zero (“0”).
 
-    > [!div class="tabbedCodeSnippets"]
     ``` xml
     <UI:AdControl
         ApplicationId="0"
@@ -65,7 +62,6 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
 3.  In MainPage.xaml.cs, add the following **OnAdError** event handler to the **MainPage** class. This event handler writes information to the Visual Studio **Output** window.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` csharp
   private void OnAdError(object sender, AdErrorEventArgs e)
   {
@@ -76,7 +72,6 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
 
 4.  Build and run the project. After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.
 
-  > [!div class="tabbedCodeSnippets"]
   ``` syntax
   AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
   ```

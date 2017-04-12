@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ---
 
-# Desktop to UWP Bridge: Known issues
+# Known Issues (Desktop to UWP Bridge)
 
 This article contains known issues with the Desktop to UWP Bridge.
 

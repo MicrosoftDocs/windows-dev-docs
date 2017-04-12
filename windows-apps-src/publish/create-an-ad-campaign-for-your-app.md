@@ -46,7 +46,7 @@ Here's how to create an ad campaign to promote your app.
     > [!NOTE]
     > If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
 
-5.  If you chose **Increase app installations** as your campaign objective, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Manual** to expand the **Audience** section. If you want to go back to default targeting, select **Automatic**.
+5.  If you chose **Increase installs for your app** as your campaign objective, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Manual** to expand the **Audience** section. If you want to go back to default targeting, select **Automatic**.
 
     If you select **Manual**, you can edit the following targeting information:
 
@@ -58,7 +58,7 @@ Here's how to create an ad campaign to promote your app.
 
     This section also displays an **Estimated Reach** graph. This graph shows the audience you can reach with your current targeting selections as a percentage of all Windows ad-enabled app users in the selected markets.
 
-6.  If you chose **Increase app engagement** as your campaign objective, you can select one of your customer segments to target.
+6.  If you chose **Increase engagement in your app** as your campaign objective, you can select one of your customer segments to target.
 
     > [!NOTE]
     > Ads created using this campaign will be shown only to the customers who are included in the segment. Only one segment can be selected per ad campaign. For info about segments, see [Create customer segments](create-customer-segments.md).
@@ -80,12 +80,12 @@ Here's how to create an ad campaign to promote your app.
             - **Images**. The available images are the images you have associated with your app in the Store.
             - **Show my app rating**. Select this checkbox if you want to show the app's rating.
             - **Show that my app is free**. If your app is free in all the selected markets, you will also have the option to select this checkbox.
-            - **Call to action**. If you chose **Increase app engagement** as your campaign objective, you can set your ad's call to action button to **Open**, **Play**, **Read**, **Listen**, or **Shop**.  
+            - **Call to action**. If you chose **Increase engagement in your app** as your campaign objective, you can set your ad's call to action button to **Open**, **Play**, **Read**, **Listen**, or **Shop**.  
 
 8.  If you have a [premium account](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), you can use the **Destination URL** box to control what happens when a customer clicks your ad.
     - If you leave the box empty, when a customer clicks your ad, your app's Store listing will be displayed.
     - If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Windows Store. For more information about install tracking with Kochava and Tune, see the [Kochava](http://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
-    - If you chose **Increase app engagement** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
+    - If you chose **Increase engagement in your app** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
     - If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 
 9.  Now choose your ad campaign's financial settings in the **Budget and payment** section.

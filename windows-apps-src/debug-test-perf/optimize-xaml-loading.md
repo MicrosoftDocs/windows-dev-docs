@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 
 Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
 
-At app startup, limit the XAML markup that is loaded to only what you need for your initial UI. Examine the markup in your initial page and confirm it contains nothing that it doesn't need. If a page references a user control or a resource defined in a different file, then the framework parses that file, too.
+At app startup, limit the XAML markup that is loaded to only what you need for your initial UI. Examine the markup in your initial page and confirm it contains nothing that it doesn't need. If a page references a user control or a resource defined in a different file, then the framework parses that file, too. You can delay loading elements using **x:DeferLoadStrategy="Lazy"** or in RS2, using **x:Load**.
 
 In this example, because InitialPage.xaml uses one resource from ExampleResourceDictionary.xaml, the whole of ExampleResourceDictionary.xaml must be parsed at startup.
 
@@ -90,6 +90,35 @@ The way to make the above counter-example more efficient is to move `SecondPageT
 
 Although the XAML platform is capable of displaying large numbers of elements, you can make your app lay out and render faster by using the fewest number of elements to achieve the visuals you want.
 
+-   Use x:Load instead of Visibility to control when an element is shown. When an element is marked as Visibility="Collapsed", then it will be skipped during the render pass, but you still pay the object instance costs in memory. Using x:Load instead will not create the object instance until it is needed, so the costs are even lower. This is great for delaying non visible content such as a secondary tab in a tab-like UI. The drawback is you pay a small memory overhead (approx 600 bytes) when the UI is not loaded.
+
+**Inefficient.**
+
+```xml
+<Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
+        <Rectangle Fill="Black" />
+        <Rectangle Fill="Blue" /> 
+</Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
+```
+
+**Better.**
+
+```xml
+<Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
+        <Rectangle Fill="Black" Visibility="Collapsed" />
+        <Rectangle Fill="Blue" Visibility="Visible" /> 
+</Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
+```
+
+**Most Efficient.**
+
+```xml
+<Grid>
+        <Rectangle Fill="Black" x:Load="False" />
+        <Rectangle Fill="Blue" x:Load="True" /> 
+</Grid>
+```
+
 -   Layout panels have a [**Background**](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) in front of a Panel just to color it.
 
 **Inefficient.**
@@ -152,7 +181,7 @@ Also check for brushes that use predefined colors: `"Orange"` and `"#FFFFA500"` 
 
 Overdrawing is where more than one object is drawn in the same screen pixels. Note that there is sometimes a trade-off between this guidance and the desire to minimize element count.
 
--   If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states then set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the major of visual states is best set locally on the element.
+-   If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states then use x:Load to control its state or set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the major of visual states is best set locally on the element.
 -   Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
 
 **Inefficient.**
@@ -289,4 +318,3 @@ XBF2 is a binary representation of XAML markup that avoids all text-parsing cost
 XAML built-in controls and dictionaries that the framework provides are already fully XBF2-enabled. For your own app, ensure that your project file declares TargetPlatformVersion 8.2 or later.
 
 To check whether you have XBF2, open your app in a binary editor; the 12th and 13th bytes are 00 02 if you have XBF2.
-

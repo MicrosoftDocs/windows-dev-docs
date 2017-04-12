@@ -54,7 +54,7 @@ The common approach of using an email address as the username makes a bad proble
 
 Solving the problems that passwords pose is tricky. Tightening password policies alone will not do it; users may just recycle, share, or write down passwords. Although user education is critical for authentication security, education alone does not eliminate the problem either.
 
-Microsoft Passport replaces passwords with strong two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects. 
+Windows Hello replaces passwords with strong two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects. 
 
 
 ## 2 What is Windows Hello?

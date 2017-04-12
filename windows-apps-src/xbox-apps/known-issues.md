@@ -3,7 +3,7 @@ author: Mtoepke
 title: Known issues with UWP on Xbox Developer Program
 description: Lists the known issues for the UWP on Xbox developer program.
 ms.author: mtoepke
-ms.date: 02/08/2017
+ms.date: 03/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,12 +26,6 @@ If you get stuck, read the information in this topic, see [Frequently asked ques
 
 
 <!--## Developing games-->
-
-## Issue when leaving Dev Mode
-At times, it may happen that you will not be able to leave Dev Mode neither from using DevHome or from Developer Settings.
-There are two possible workarounds for this: 
-1. Uncheck the box labeled **Delete side loaded games and apps** when leaving Dev Mode
-2. Go to My Games and Apps and uninstall any developer apps that you installed on your console
  
 <!--## Memory limits for background apps are partially enforced
  

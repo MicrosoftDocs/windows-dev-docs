@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ---
 
-# Desktop to UWP Bridge: Manual Conversion
+# Convert an app manually (Desktop to UWP Bridge)
 
 Using the [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) is convenient and automatic, and it's useful if there's any uncertainty about what your installer does. But if your app is installed by using xcopy, or if you're familiar with the changes that your app's installer makes to the system, you may want to create an app package and manifest manually. This article contains the steps for getting started. It also explains how to add unplated assets to your app, which is not covered by the DAC.
 
@@ -68,7 +68,7 @@ Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows
 
 To run MakeAppx, first ensure you've created an manifest file as described above.
 
-Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example:
+Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Please note that relative file paths aren't relative to the file's location, but from where the MakeAppx.exe tool is ran. Here's an example:
 
 ```
 [Files]

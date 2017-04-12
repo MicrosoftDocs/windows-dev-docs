@@ -26,7 +26,7 @@ You need to use the UI thread to make almost all changes to the UI thread, inclu
 
 Some of the slowest stages in an app can include startup, and switching views. Don't do more work than necessary to bring up the UI that the user sees initially. For example, don't create the UI for progressively-disclosed UI and the contents of popups.
 
--   Use [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) to delay-instantiate elements.
+-   Use [x:Load attribute](../xaml-platform/x-load-attribute.md) or [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) to delay-instantiate elements.
 -   Programmatically insert elements into the tree on-demand.
 
 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) queues work for the UI thread to process when it's not busy.
@@ -104,4 +104,3 @@ In this example, the `NextMove-Click` handler returns at the **await** in order 
 ## Related topics
 
 * [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-

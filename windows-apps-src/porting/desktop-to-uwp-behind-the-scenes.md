@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ---
 
-# Desktop to UWP Bridge: Behind the scenes
+# Behind the scenes of the Desktop to UWP Bridge
 
 This article provides a deeper dive on how the Desktop to UWP Bridge works under the covers.
 

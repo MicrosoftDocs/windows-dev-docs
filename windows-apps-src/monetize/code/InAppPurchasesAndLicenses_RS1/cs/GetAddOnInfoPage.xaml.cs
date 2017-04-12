@@ -29,8 +29,8 @@ namespace InAppPurchasesAndLicenses_UWP
         }
         
         //<GetAddOnInfo>
-		private StoreContext context = null;
-		
+        private StoreContext context = null;
+        
         public async void GetAddOnInfo()
         {
             if (context == null)

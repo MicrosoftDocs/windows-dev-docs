@@ -141,10 +141,4 @@ public class MyApplication
 * [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 * [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
- 
-
- 
-
-
-
 

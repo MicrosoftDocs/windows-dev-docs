@@ -10,7 +10,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ---
-# Bringing custom C++ games to UWP on Xbox
+# Bring custom C++ games to UWP on Xbox
 
 If you are writing a custom C++ engine, Xbox One has full support for C++. 
 

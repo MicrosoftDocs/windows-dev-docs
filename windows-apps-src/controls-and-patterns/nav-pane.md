@@ -111,6 +111,3 @@ To optimize your app's [10ft experience](http://go.microsoft.com/fwlink/?LinkId=
 * [Split view control](split-view.md)
 * [Master/details](master-details.md)
 * [Navigation basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
- 
-
- 

@@ -17,7 +17,8 @@ The [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) 
 
 To log a custom event from your app, pass the custom event string to the [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method provided by the Microsoft Store Services SDK. You can review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Dev Center dashboard.
 
->**Note**&nbsp;&nbsp;Custom events that you log to Dev Center are unrelated to [Windows events](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), and they do not appear in **Event Viewer**.
+> [!NOTE]
+> Custom events that you log to Dev Center are unrelated to [Windows events](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx), and they do not appear in **Event Viewer**.
 
 ## Prerequisites
 
@@ -32,12 +33,10 @@ Before you can review custom logging events in the **Usage report** for your app
 5. In the list of SDKs, click the check box next to **Microsoft Engagement Framework** and click **OK**.
 7. Add the following statement to the top of each code file where you want to log custom events.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
 
 8. In each section of your code where you want to log a custom event, get a [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) object and then call the [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method. Pass your custom event string to the method.
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
 
 ## Related topics

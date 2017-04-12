@@ -278,12 +278,12 @@ Although many of these fonts provide Latin characters.
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Yu Gothic;">Yu Gothic</td>
-<td align="left">Medium</td>
-<td align="left"></td>
+<td align="left">Light, Regular, Medium, Bold</td>
+<td align="left">Use Yu Gothic Medium for body text and similar content.</td>
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
-<td align="left">Regular</td>
+<td align="left">Light, Semilight, Regular, Semibold, Bold</td>
 <td align="left">User-interface font for Japanese.</td>
 </tr>
 </tbody>

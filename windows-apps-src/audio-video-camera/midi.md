@@ -36,6 +36,8 @@ Enumerating MIDI output devices works the exact same way as enumerating input de
 
 [!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
 
+
+
 ## Create a device watcher helper class
 
 The [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace provides the [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) which can notify your app if devices are added or removed from the system, or if the information for a device is updated. Since MIDI-enabled apps typically are interested in both input and output devices, this example creates a helper class that implements the **DeviceWatcher** pattern, so that the same code can be used for both MIDI input and MIDI output devices, without the need for duplication.

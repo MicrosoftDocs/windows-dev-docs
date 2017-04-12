@@ -100,9 +100,22 @@ The following example demonstrates the JSON response body for a successful call 
     "iabCategory":"Sports",
     "iabCategoryId":"IAB17",
     "coppa":false,
-    "downloadUrl":"https://www.microsoft.com/store/apps/9nblggh29dm8","isLive":true,
-    "iconUrls":["//store-images.microsoft.com/image/apps.15753.13510798883747357.b6981489-6fdd-4fec-b655-a822247d5a76.33529096-a723-4204-9da9-a5dd8b328d4e"],
-    "type":"App"
+    "downloadUrl":"https://www.microsoft.com/store/apps/9nblggh29dm8",
+    "isLive":true,
+    "iconUrls":[
+      "//store-images.microsoft.com/image/apps.15753.13510798883747357.b6981489-6fdd-4fec-b655-a822247d5a76.33529096-a723-4204-9da9-a5dd8b328d4e"
+    ],
+    "type":"App",
+    "devices":[
+      "PC",
+      "Phone"
+    ],
+    "platformVersions":[
+      "Windows.Universal"
+    ],
+    "screenshotUrls":[
+      "//store-images.microsoft.com/image/apps.15901.19810723133740207.c9781069-6fef-5fba-a055-c922051d59b6.40129896-d083-5604-ab79-aba68bfa084f"
+    ]
 }
 ```
 
@@ -118,10 +131,14 @@ For more details about the values in the response body, see the following table.
 | storeCategory           | string  | The category for the app in the Store. For the supported values, see the [category and subcategory table](../publish/category-and-subcategory-table.md) for apps in the Store.  |
 | iabCategory           | string  | The content category for the app as defined by the Interactive Advertising Bureau (IAB). For example, **News** or **Sports**. For a list of content categories, see the [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) page on the IAB web site.   |
 | iabCategoryId           | string  | The ID of the content category for the app. For example, **IAB12** is the ID for the News category, and **IAB17** is the ID for the Sports category. For a list of content category IDs, see section 5.1 in the [OpenRTB API Specification](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf). |
-| coppa           | boolean  | True if the app is directed at children under the age of 13 and therefore has obligations under the Children's Online Privacy Protection Act (COPPA); otherwise, false.  |
+| coppa           | Boolean  | True if the app is directed at children under the age of 13 and therefore has obligations under the Children's Online Privacy Protection Act (COPPA); otherwise, false.  |
 | downloadUrl           | string  | The link to the app's listing in the Store. This link is in the format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
-| iconUrls           | string  |  The relative path to the icon URLs associated with this app. To retrieve the icons, prepend *http* or *https* to the URLs.  |
+| isLive           | Boolean  | True if the app is currently available in the Store; otherwise, false.  |
+| iconUrls           | array  |  An array of one or more strings that contain the relative paths to the icon URLs associated with the app. To retrieve the icons, prepend *http* or *https* to the URLs.  |
 | type           | string  | One of the following strings: **App** or **Game**.  |
+| devices           |  array  | An array of one or more of the following strings that specify the device types that the app supports: **PC**, **Phone**, **Xbox**, **IoT**, **Server**, and **Holographic**.  |
+| platformVersions           | array  |  An array of one or more of the following strings that specify the platforms that the app supports: **Windows.Universal**, **Windows.Windows8x**, and **Windows.WindowsPhone8x**.  |
+| screenshotUrls           | array  | An array of one or more strings that contain the relative paths to the screenshot URLs for this app. To retrieve the screenshots, prepend *http* or *https* to the URLs.  |
 
 <span/>
 

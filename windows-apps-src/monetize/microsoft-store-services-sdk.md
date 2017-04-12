@@ -35,7 +35,8 @@ The Microsoft Store Services SDK requires:
 * Visual Studio 2015 or a later version.
 * Visual Studio Tools for Universal Windows Apps installed with your version of Visual Studio.
 
->**Note**&nbsp;&nbsp;To install the SDK with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information about this update to the Visual Studio Tools for Universal Windows Apps, see the [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
+> [!NOTE]
+> To install the SDK with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information about this update to the Visual Studio Tools for Universal Windows Apps, see the [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
 
 <span id="install" />
 ## Install the SDK
@@ -47,7 +48,8 @@ There are two options for installing the Microsoft Store Services SDK for use wi
 
 Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features. If you have existing projects that use the SDK and you want to use the latest version, download and install the latest version of the SDK on your development computer.
 
->**Note**&nbsp;&nbsp;To install the SDK with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information about this update to the Visual Studio Tools for Universal Windows Apps, see the [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
+> [!NOTE]
+> To install the SDK with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information about this update to the Visual Studio Tools for Universal Windows Apps, see the [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
 
 <span id="install-msi" />
 ### Install via MSI
@@ -86,14 +88,14 @@ To install the Microsoft Store Services SDK libraries for a specific project via
   ```
 
 3.  Start Visual Studio and open the project in which you want to use the Microsoft Store Services SDK libraries.
-
-  >**Note**&nbsp;&nbsp;If your project already includes library references from an earlier MSI installation of the SDK, remove these references from your project. These references will have warning icons next to them because the libraries they reference were removed in the previous steps.
+    > [!NOTE]
+    > If your project already includes library references from an earlier MSI installation of the SDK, remove these references from your project. These references will have warning icons next to them because the libraries they reference were removed in the previous steps.
 
 4. In Visual Studio, click **Project** and **Manage NuGet Packages**.
 
 5. In the search box, type **Microsoft.Services.Store.SDK** and install the Microsoft.Services.Store.SDK package.
-
-  >**Note**&nbsp;&nbsp;If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
+    > [!NOTE]
+    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
 
 6. Close your project and then reopen it.
 
@@ -107,8 +109,8 @@ To install the Microsoft Store Services SDK libraries for a specific project via
 After you install the Microsoft Store Services SDK via the MSI installer or NuGet, follow these instructions to reference the SDK libraries in your UWP project.
 
 1. Open your project in Visual Studio.
-
-  >**Note**&nbsp;&nbsp;If your project is a JavaScript app that targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**).
+    > [!NOTE]
+    > If your project is a JavaScript app that targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**).
 
 2. In **Solution Explorer**, right click **References** and select **Add Reference…**
 
@@ -120,7 +122,8 @@ After you install the Microsoft Store Services SDK via the MSI installer or NuGe
 
 3. Click **OK**.
 
->**Note**&nbsp;&nbsp;If you installed the SDK libraries via NuGet, your project will contain a **Microsoft.Services.Store.SDK** reference in addition to **Microsoft Advertising SDK for XAML** or **Microsoft Advertising SDK for JavaScript**. The **Microsoft.Services.Store.SDK** reference represents the NuGet package (rather than the libraries in it), and you can ignore it.
+> [!NOTE]
+> If you installed the SDK libraries via NuGet, your project will contain a **Microsoft.Services.Store.SDK** reference in addition to **Microsoft Advertising SDK for XAML** or **Microsoft Advertising SDK for JavaScript**. The **Microsoft.Services.Store.SDK** reference represents the NuGet package (rather than the libraries in it), and you can ignore it.
 
 <span id="framework" />
 ## Understanding framework packages in the SDK

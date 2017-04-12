@@ -130,13 +130,47 @@ The user can pick a single color called the accent from *Settings > Personalizat
       </tr>
   </table>
 
+Avoid using the accent color as a background, especially for text and icons. Because the accent color can change, if you must use it as a background, there’s some additional work you must do to ensure that foreground text is easy to read. For example, if your text is white and the accent color is light gray, your text will be difficult to see because the contrast ratio between white and light gray is small. You can work around the issue by testing the accent color to determine whether it’s a dark color:  
 
-<div class="microsoft-internal-note">
-As a rule of thumb, when the accent color is used as a background, always put white text overtop. The default accent color that ships with Windows offers great contrast ratio with white text. A user may select an accent color that has a poor contrast with white according to their preference, and that's ok. If they have trouble reading, they can always select a darker accent color.
-</div>
+Use the following algorithm to determine whether a background color is light or dark.
+
+```C#
+void accentColorUpdated(FrameworkElement elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+
+    bool colorIsDark = (5 * c.G + 2 * c.R + c.B) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }
+}
+```
 
 
-When users choose an accent color, it appears as part of their system theme. The areas affected are Start, Taskbar, window chrome, selected interaction states and hyperlinks within [common controls](../controls-and-patterns/index.md). Each app can further incorporate the accent color through their typography, backgrounds, and interactions—or override it to preserve their specific branding.
+```JS
+function accentColorUpdated(elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+    var colorIsDark (5 * c.g + 2 * c.r + c.b) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }     
+}
+```
+
+Once you’ve determined whether the accent color is light or dark, choose an appropriate foreground color. We recommend using the SystemControlForegroundBaseHighBrush from the light theme for dark backgrounds and using the dark-themed version for light backgrounds.
 
 ## Color palette building blocks
 
@@ -226,7 +260,7 @@ You can change themes easily by changing the **RequestedTheme** property in your
 </Application>
 ```
 
-Removing the **RequestedTheme** means that your application will honor the user’s app mode settings, and they will be able to choose to view your app in either the dark or light theme. 
+Removing the **RequestedTheme** means that your application will honor the user’s app mode settings, and they will be able to choose to view your app in either the dark or light theme.
 
 Make sure that you take the theme into consideration when creating your app, as the theme has a big impact on the look of your app.
 

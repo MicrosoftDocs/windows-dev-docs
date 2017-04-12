@@ -17,7 +17,8 @@ You can encourage your customers to leave feedback by adding a control (such as 
 
 To launch Feedback Hub from your app, use an API that is provided by the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). We recommend that you use this API to launch Feedback Hub from a UI element in your app that follows our design guidelines.
 
->**Note**&nbsp;&nbsp;Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families). We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
+> [!NOTE]
+> Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families). We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
 
 ## How to launch Feedback Hub from your app
 
@@ -32,30 +33,26 @@ To launch Feedback Hub from your app:
   * Set the font of the content shown in the control to **Segoe MDL2 Assets**.
   * Set the text in the control to the hexadecimal Unicode character code E939. This is the character code for the recommended feedback icon in the **Segoe MDL2 Assets** font.
   * Set the visibility of the control to hidden.
+    > [!NOTE]
+    > We recommend that you hide your feedback control by default and show it in your initialization code only if the Feedback Hub is available on the user's device. The next step demonstrates how to do this.
 
-    > **Note**&nbsp;&nbsp;We recommend that you hide your feedback control by default and show it in your initialization code only if the Feedback Hub is available on the user's device. The next step demonstrates how to do this.
+    The following code demonstrates the XAML definition of a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) that is configured as described above.
 
-  The following code demonstrates the XAML definition of a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) that is configured as described above.
-
-  > [!div class="tabbedCodeSnippets"]
-  ```xml
-  <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
-  ```
+    ```XML
+    <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
+    ```
 
 7. In your initialization code for the app page that hosts your feedback control, use the static [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) method of the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class to determine whether the Feedback Hub is available on the user's device. Feedback Hub is available only on devices that run version 10.0.14271 or later of a Windows 10 OS that is based on the desktop and mobile [device families](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families).
 
-  If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+    If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
 
-  > [!div class="tabbedCodeSnippets"]
-  [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
-
-  <span/>
-  >**Note**&nbsp;&nbsp;Although Feedback Hub is not supported on Xbox devices at this time, the **IsSupported** property currently returns **true** on Xbox devices that run version 10.0.14271 or later of Windows 10. This is a known issue that will be fixed in a future release of the Microsoft Store Services SDK.  
+    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
+      > [!NOTE]
+      > Although Feedback Hub is not supported on Xbox devices at this time, the **IsSupported** property currently returns **true** on Xbox devices that run version 10.0.14271 or later of Windows 10. This is a known issue that will be fixed in a future release of the Microsoft Store Services SDK.  
 
 8. In the event handler that runs when the user clicks the control, get a [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) object and call the [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) method to launch the Feedback Hub app. There are two overloads for this method: one without parameters, and another one that accepts a dictionary of key and value pairs that contain metadata that you want to associate with the feedback. The following example demonstrates how to launch Feedback Hub in the [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event handler for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
 
-  > [!div class="tabbedCodeSnippets"]
-  [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
+    [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 
 ## Design recommendations for your feedback UI
 

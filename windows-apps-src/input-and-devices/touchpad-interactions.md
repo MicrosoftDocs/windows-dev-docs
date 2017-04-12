@@ -125,7 +125,7 @@ For more info about querying device capabilities, see [Identify input devices](i
 
 
 -   When a touchpad cursor is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the touchpad cursor doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the touchpad UI gradually fade away. This keeps the UI clean and uncluttered.
--   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see [Cursors](#Cursors) below).
+-   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see the Cursors section below).
 -   Don't display visual feedback if an element doesn't support interaction (such as static text).
 -   Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.
 -   Display visual feedback concurrently for all elements that represent the same input target.
