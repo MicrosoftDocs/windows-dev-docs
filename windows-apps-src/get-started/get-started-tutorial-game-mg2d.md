@@ -215,7 +215,7 @@ After this, we have **dX**, **dY**, and **dA**, which are the per-second rates o
 When creating an instance of **SpriteClass**, we provide the constructor with the graphics device from **Game1.cs**, the path to the texture relative to the project folder, and the desired scale of the texture relative to its original size. We’ll set the rest of the class variables after we start the game, in the update method.
 
 ```CSharp
-public SpriteClass (GraphicsDevice graphicsDevice, string texturePath, float scale)
+public SpriteClass (GraphicsDevice graphicsDevice, string textureName, float scale)
 {
   this.scale = scale;
   if (texture == null)
