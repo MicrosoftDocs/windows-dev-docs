@@ -38,8 +38,7 @@ Learn how to schedule a one-time background task, or run a periodic background t
 
     **Note**  If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
  
-
-    For example, this trigger will cause a background task to run once an hour:
+For example, this trigger will cause a background task to run once an hour:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
