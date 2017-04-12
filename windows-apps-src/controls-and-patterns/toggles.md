@@ -16,7 +16,9 @@ keywords: windows 10, uwp
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
-The [**toggle switch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx) represents a physical switch that allows users to turn things on or off, like a light switch. Use **ToggleSwitch** controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in usually immediate noticeable actions. To create a toggle switch control, you use the  [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx).
+The [**toggle switch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx) represents a physical switch that allows users to turn things on or off, like a light switch. Use toggle switch controls to present users with two mutually exclusive options (such as on/off), where choosing an option provides immediate results. 
+
+To create a toggle switch control, you use the  [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx).
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -37,7 +39,6 @@ Think of the toggle switch as a physical power switch for a device: you flip it 
 
 To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights."  
 
-After the user toggles the switch on or off, perform the corresponding action immediately in a way that is noticeable to the user.
 
 ### Choosing between toggle switch and check box
 
