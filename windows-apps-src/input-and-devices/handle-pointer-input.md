@@ -492,7 +492,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 ```    CSharp
 // Fires for for various reasons, including: 
     //    - Touch contact canceled by pen coming into range of the surface.
-    //    - The device doesn&#39;t report an active contact for more than 100ms.
+    //    - The device doesn't report an active contact for more than 100ms.
     //    - The desktop is locked or the user logged off. 
     //    - The number of simultaneous contacts exceeded the number supported by the device.
     private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
@@ -930,7 +930,7 @@ namespace PointerInput
 
         // Fires for for various reasons, including: 
         //    - Touch contact canceled by pen coming into range of the surface.
-        //    - The device doesn&#39;t report an active contact for more than 100ms.
+        //    - The device doesn't report an active contact for more than 100ms.
         //    - The desktop is locked or the user logged off. 
         //    - The number of simultaneous contacts exceeded the number supported by the device.
         private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)

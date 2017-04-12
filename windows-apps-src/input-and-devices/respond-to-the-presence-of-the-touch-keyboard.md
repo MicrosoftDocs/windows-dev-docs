@@ -102,8 +102,8 @@ public class MyApplication
         {
             _StartElementRemovalAnimations();
 
-            // Don&#39;t use framework scroll- or visibility-related 
-            // animations that might conflict with the app&#39;s logic.
+            // Don't use framework scroll- or visibility-related 
+            // animations that might conflict with the app's logic.
             eventArgs.EnsuredFocusedElementInView = true; 
         }
     }
@@ -124,7 +124,7 @@ public class MyApplication
 
     private void _ResetToDefaultElements()
     {
-        // This function resets the window&#39;s elements to their default state.
+        // This function resets the window's elements to their default state.
     }
 }
 ```

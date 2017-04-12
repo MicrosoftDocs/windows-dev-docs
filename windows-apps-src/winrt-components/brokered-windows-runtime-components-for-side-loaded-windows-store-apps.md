@@ -177,7 +177,7 @@ namespace Fabrikam
             throw new NotImplementedException();
         }
         
-        public event EventHandler&lt;string&gt; PeriodicEvent;
+        public event EventHandler<string> PeriodicEvent;
     }
 }
 ```
@@ -837,5 +837,4 @@ list of loaded modules.
 
 -   [Deploying Windows Store apps to
     businesses](http://go.microsoft.com/fwlink/p/?LinkID=264770)
-
 
