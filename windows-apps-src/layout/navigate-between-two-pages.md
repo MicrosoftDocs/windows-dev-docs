@@ -193,7 +193,7 @@ Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.micros
 > 
 >     if (rootFrame.Content == null)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame.Navigate(typeof(Page1), e.Arguments);
@@ -217,7 +217,7 @@ Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.micros
 > 
 >         rootFrame->NavigationFailed += 
 >             ref new Windows::UI::Xaml::Navigation::NavigationFailedEventHandler(
->                 this, &amp;App::OnNavigationFailed);
+>                 this, &App::OnNavigationFailed);
 > 
 >         if (e->PreviousExecutionState == ApplicationExecutionState::Terminated)
 >         {
@@ -230,7 +230,7 @@ Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.micros
 > 
 >     if (rootFrame->Content == nullptr)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid), e->Arguments);

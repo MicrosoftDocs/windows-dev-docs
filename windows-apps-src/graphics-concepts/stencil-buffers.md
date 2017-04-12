@@ -33,7 +33,7 @@ Direct3D performs a test on the contents of the stencil buffer on a pixel-by-pix
 The above steps are shown in the following line of code:
 
 ```
-(StencilRef &amp; StencilMask) CompFunc (StencilBufferValue &amp; StencilMask)
+(StencilRef & StencilMask) CompFunc (StencilBufferValue & StencilMask)
 ```
 
 -   StencilRef represents the stencil reference value.
