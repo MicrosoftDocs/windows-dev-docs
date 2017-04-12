@@ -13,10 +13,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 # Toggle switches
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
-The toggle switch represents a physical switch that allows users to turn things on or off. Use **ToggleSwitch** controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate action.
+The [**toggle switch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx) represents a physical switch that allows users to turn things on or off, like a light switch. Use **ToggleSwitch** controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in usually immediate noticeable actions. To create a toggle switch control, you use the  [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx).
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -29,13 +29,15 @@ The toggle switch represents a physical switch that allows users to turn things 
 
 ## Is this the right control?
 
-Use a toggle switch for binary operations that take effect right after the user flips the toggle switch. For example, use a toggle switch to turn services or hardware components on or off, such as WiFi:
+Use a toggle switch for binary operations that take effect right after the user flips the toggle switch.
 
 ![WiFi toggle switch, on and off](images/toggleswitches01.png)
 
-If a physical switch would work for the action, a toggle switch is probably the best control to use.
+Think of the toggle switch as a physical power switch for a device: you flip it on or off when you want to enable or disable the action performed by the device.
 
-After the user toggles the switch on or off, we recommend that the corresponding action is immediately performed.
+To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights."  
+
+After the user toggles the switch on or off, perform the corresponding action immediately in a way that is noticeable to the user.
 
 ### Choosing between toggle switch and check box
 
@@ -45,25 +47,21 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 
     ![Toggle switch versus check box](images/toggleswitches02.png)
 
-    In the above example, it's clear with the toggle switch that the wireless is set to "On." But with the checkbox, the user needs to think about whether the wireless is on now or whether they need to check the box to turn wireless on.
+    In this example, it's clear with the toggle switch that the wireless is set to "On." But with the checkbox, the user needs to think about whether the wireless is on now or whether they need to check the box to turn wireless on.
 
+-   Use check boxes for optional ("nice to have") items. 
 -   Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
+-   Use check boxes when the user can select multiple items that are related to a single setting or feature. 
 
-    ![A checkbox and a Submit button](images/submitcheckbox.png)
+## Toggle switches in the the Windows UI
 
--   Use check boxes or a [list box](lists.md) when the user can select multiple items:
+These images show how the Windows UI uses toggle switches. Here's how the Smart Storage Settings screen uses toggle switches:
 
-    ![A checkbox that has multiple items selected](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
+![Toggle switches in Smart Storage](images/SmartStorageToggle.png)
 
-## Examples
+This example is from the Night Light Settings page:
 
-Toggle switches in the general settings of the News app.
-
-![Toggle switches in the general settings of the News app](images/control-examples/toggle-switch-news.png)
-
-Toggle switches in the start menu settings in Windows.
-
-![Toggle switches in the start menu settings in Windows](images/control-examples/toggle-switch-start-settings.png)
+![Toggle switches in the start menu settings in Windows](images/NightLightToggle.png)
 
 ## Create a toggle switch
 
@@ -100,7 +98,7 @@ In other cases, you can handle the [**Toggled**](https://msdn.microsoft.com/libr
 This example shows how to add a Toggled event handler in XAML and in code. The Toggled event is handled to turn a progress ring on or off, and change its visibility.
 
 ```xaml
-<ToggleSwitch x:Name="toggleSwitch1" IsOn="True" 
+<ToggleSwitch x:Name="toggleSwitch1" IsOn="True"
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
@@ -145,7 +143,7 @@ This example replaces the On/Off labels with Show/Hide labels.
 
 ```xaml
 <ToggleSwitch x:Name="imageToggle" Header="Show images"
-              OffContent="Show" OnContent="Hide" 
+              OffContent="Show" OnContent="Hide"
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
@@ -153,9 +151,9 @@ You can also use more complex content by setting the [**OnContentTemplate**](htt
 
 ## Recommendations
 
--   Replace the On and Off labels when there are more specific labels for the setting. If there are short (3-4 characters) labels that represent binary opposites that are more appropriate for a particular setting, use those. For example, you could use "Show/Hide" if the setting is "Show images." Using more specific labels can help when localizing the UI.
--   Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
--   Labels should be no more than 4 characters long.
+-	Use the default On and Off labels when you can; only replace them when it's necessary for the toggle switch to make sense. If you replace them, use a single word that more accurately describes the toggle. In general, if the words "On" and "Off" don't describe the action tied to a toggle switch, you might need a different control.
+-	Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
+
 
 ## Related articles
 
