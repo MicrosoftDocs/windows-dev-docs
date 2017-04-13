@@ -1,4 +1,4 @@
---
+---
 author: mukin
 title: Barcode Scanner
 description: This article contains information about the barcode scanner point of service family of devices
