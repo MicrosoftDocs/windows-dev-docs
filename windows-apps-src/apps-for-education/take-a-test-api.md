@@ -71,7 +71,7 @@ Windows 10, version 1607
 
 <span id="close"/>
 ### close(boolean restart)
-Closes the browser and unlocks the device.
+Closes the browser and unlocks the device. In Windows 10, version 1607, the device must be locked down initially. In later versions, this method closes the browser regardless of whether the device is locked down.
 
 **Syntax**  
 `browser.security.close(restart);`
@@ -88,7 +88,7 @@ Windows 10, version 1607
 ---
 
 <span id="enableLockDown"/>
-### enableLockdown(boolean lockdown)
+### enableLockDown(boolean lockdown)
 Locks down the device. Also used to unlock the device.
 
 **Syntax**  
