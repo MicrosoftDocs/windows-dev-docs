@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 04/01/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -163,7 +163,6 @@ To understand your tax considerations for price selection, payout implications, 
 | Philippines                      | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countriesregions)                                                                  | 70% of selected price                 | Developer          |
 | Poland                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
 | Portugal                         | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
-| Puerto Rico                      | Taxes are added to the price being selected. [Read more about tax considerations for this country.](#mixed-remittance-countriesregions)                                                                                                     | 70% of selected price                 | Microsoft          |
 | Qatar                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Romania                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 19% tax) | Microsoft          |
 | Russia                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 18% tax) | Microsoft          |
@@ -207,7 +206,7 @@ To understand your tax considerations for price selection, payout implications, 
 | Ukraine                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | United Arab Emirates             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | United Kingdom                   | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
-| United States                    | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
+| United States (includes Puerto Rico)  | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
 | Uruguay                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Uzbekistan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Vanuatu                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |

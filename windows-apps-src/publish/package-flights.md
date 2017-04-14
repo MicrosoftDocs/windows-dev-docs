@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: You can use package flights to distribute packages that are only given to a limited test group.
 title: Package flights
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, flighting
 ---
 
 # Package flights
@@ -23,11 +23,11 @@ When you set up package flights, you can choose the specific people who should g
 
 > **Important** On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your flight group).
 
-Note that package flights will not be distributed via the [Windows Store for Business](https://www.microsoft.com/business-store). This is because people in your flight groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via the Windows Store for Business will receive your non-flighted packages.
+Note that package flights will not be distributed via Microsoft Store for Business](https://www.microsoft.com/business-store). This is because people in your flight groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via Microsoft Store for Business will receive your non-flighted packages.
 
 > **Tip** Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
 
-> Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via the Windows Store for Business. 
+> Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via Microsoft Store for Business. 
 
 After you have published a submission for your app, you'll see a **Package flights** section on the App overview page. Click **New package flight** to get started. If you haven't set up any flight groups yet, you'll be prompted to create one before you can proceed.
 

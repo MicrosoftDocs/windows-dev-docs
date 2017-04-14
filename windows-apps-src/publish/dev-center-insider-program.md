@@ -1,9 +1,9 @@
----
+﻿---
 title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 03/03/2017
+ms.date: 04/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,6 +23,7 @@ Here are some of the features that we’ve made available exclusively to members
 
 | Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
+|**Email notification for analytic trend changes**: Get notified about significant changes in your apps' acquisitions. | If we detect a significant change in an app's acquisition numbers compared to its historical data, we'll automatically send you an email. |April 2017|
 |**App trends on overview page**: Get a quick look at how your app metrics have changed. | On your Overview page, look for the sparklines and arrows next to the metrics numbers. The sparklines give you a quick visual representation of recent trends. The direction of the arrow lets you know whether the numbers have recently increased or decreased significantly. Note that you may not see arrows next to every sparkline. |February 2017|
 |**Choose which products to show on your dashboard**: If you have created apps that you don’t plan to work on for a while, you can now hide them from your dashboard. | On your dashboard overview page, select **Show/hide products**. Uncheck the boxes for any products you wish to hide (or check boxes for any which you wish to restore), then click **Show/hide products** again. |January 2017| 
 |**Universal app promotion campaigns**: In addition to apps, your ad campaigns will now target MSN.com, Outlook.com, Skype, and other Microsoft premium properties. | To reach this larger set of potential new customers, just create a new ad campaign (**Promotions > Ad campaigns**). |December 2016|

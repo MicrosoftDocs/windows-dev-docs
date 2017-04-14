@@ -1,9 +1,9 @@
----
+﻿---
 author: JnHs
 Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
 title: Gradual package rollout
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 
 When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
 
-> **Important** Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later, and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via the [Windows Store for Business](https://www.microsoft.com/business-store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
+> **Important** Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later, and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via [Microsoft Store for Business](https://www.microsoft.com/business-store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
 
 Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers receive, both for new acquisitions and for updates to existing customers.
 

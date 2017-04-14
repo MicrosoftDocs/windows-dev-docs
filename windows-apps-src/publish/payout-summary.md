@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 title: Payout summary
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: When you are finished creating your app's submission and click Submit to the Store, it enters the certification step.
 title: The app certification process
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

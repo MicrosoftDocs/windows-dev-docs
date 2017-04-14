@@ -1,22 +1,22 @@
----
+﻿---
 author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available in the Store.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, lob, line-of-business, enterprise apps, store for business
 ---
 
 # Distribute LOB apps to enterprises
 
 
-You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available in the Store.
+You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business, without making the apps broadly available in the Store.
 
-> **Important**  At this time, only free apps can be distributed exclusively to enterprises via the Windows Store for Business. If you submit a paid app as LOB, it will not be available to the enterprise at this time. 
+> **Important**  At this time, only free apps can be distributed exclusively to enterprises via Microsoft Store for Business. If you submit a paid app as LOB, it will not be available to the enterprise at this time. 
 
 ## Setting up the enterprise association
 
@@ -32,7 +32,7 @@ To confirm the association, click **Accept**. Your account will then be able to 
 ## Submitting an LOB app
 
 
-Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same certification process, and must comply with all [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). There are just a few parts of the process that are different.
+Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same [certification process](the-app-certification-process.md), and must comply with all [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). There are just a few parts of the process that are different.
 
 ### Distribution and visibility
 
@@ -57,7 +57,7 @@ For LOB apps, the [age ratings](age-ratings.md) step of the submission process w
 
 ### Enterprise deployment of LOB apps
 
-After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Windows Store for Business portal. The enterprise can then deploy the app to its users.
+After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store for Business portal. The enterprise can then deploy the app to its users.
 
 > **Note** In order to get your LOB app, the organization must be located in a [supported market](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have excluded that market when submitting your app. 
 
@@ -75,7 +75,7 @@ If you want to stop offering an app that you’ve previously published as line-o
 
 Making apps available through Store for Business ensures that the app has been signed by the Store and complies with the standard Store Policies.
 
-In some cases, companies may not want their LOB apps to be submitted through the Windows Dev Center for various reasons (such as compliance reasons or apps that need additional capabilities). In this case, the enterprises can deploy apps directly to machines via sideloading, without using the Windows Store for Business.
+In some cases, companies may not want their LOB apps to be submitted through the Windows Dev Center for various reasons (such as compliance reasons or apps that need additional capabilities). In this case, the enterprises can deploy apps directly to machines via sideloading, without using Microsoft Store for Business.
 
 For more info, see [Sideload LOB apps in Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
 

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Windows Store reaches customers in over 200 countries and regions around the world.
 title: Define pricing and market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 04/11/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -232,7 +232,6 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Pitcairn Islands
 -   Poland
 -   Portugal
--   Puerto Rico
 -   Qatar
 -   Réunion
 -   Romania
@@ -296,6 +295,7 @@ You can choose to list your app (or add-on) in one or more of the following mark
 -   Venezuela
 -   Vietnam
 -   Wallis and Futuna
+-   Western Sahara (Disputed)
 -   Yemen
 -   Zambia
 -   Zimbabwe
@@ -383,7 +383,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   Armenia
 -   Aruba
 -   Azerbaijan
--   Bahamas, The
+-   Bahamas
 -   Bangladesh
 -   Barbados
 -   Belarus
@@ -392,7 +392,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   Bermuda
 -   Bhutan
 -   Bolivia
--   Bonaire, Saint Eustatius and Saba
+-   Bonaire
 -   Bosnia and Herzegovina
 -   Botswana
 -   Bouvet Island
@@ -430,7 +430,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   French Polynesia
 -   French Southern and Antarctic Lands
 -   Gabon
--   Gambia, The
+-   Gambia
 -   Georgia
 -   Ghana
 -   Gibraltar
@@ -445,7 +445,6 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   Guyana
 -   Haiti
 -   Heard Island and McDonald Islands
--   Holy See (Vatican City)
 -   Honduras
 -   Iceland
 -   Isle of Man
@@ -459,7 +458,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   Liberia
 -   Liechtenstein
 -   Macao SAR
--   Macedonia, FYROM
+-   Macedonia, FYRO
 -   Madagascar
 -   Malawi
 -   Maldives
@@ -494,7 +493,6 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   Papua New Guinea
 -   Paraguay
 -   Pitcairn Islands
--   Puerto Rico
 -   Réunion
 -   Rwanda
 -   Saint Barthélemy
@@ -530,6 +528,7 @@ The markets that are included in "Rest of World" for Windows 8.x are the followi
 -   U.S. Minor Outlying Islands
 -   U.S. Virgin Islands
 -   Uzbekistan
+-   Vatican City
 -   Venezuela
 -   Vietnam
 -   Vanuatu

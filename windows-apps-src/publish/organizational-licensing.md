@@ -1,20 +1,20 @@
----
+﻿---
 author: jnHs
-Description: You can indicate whether and how your app can be offered for volume purchases through the Windows Store for Business in the Organizational licensing section of the Pricing and availability page of an app submission.
+Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business in the Organizational licensing section of the Pricing and availability page of an app submission.
 title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, windows store for business, store for business, volume licensing
 ---
 
 # Organizational licensing options
 
 
-You can indicate whether and how your app can be offered for volume purchases through the Windows Store for Business in the **Organizational licensing** section of the [Pricing and availability](set-app-pricing-and-availability.md#organizational-licensing) page of an app submission.
+You can indicate whether and how your app can be offered for volume purchases through Microsoft Store for Business in the **Organizational licensing** section of the [Pricing and availability](set-app-pricing-and-availability.md#organizational-licensing) page of an app submission.
 
 Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to Windows 10 organizations across device types, including PCs, tablets and phones. You will also need to allow organizational licensing for [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
 
@@ -44,13 +44,13 @@ Offline licensing allows organizations to acquire your app on a volume basis, an
  
 ## Paid app support
 
-Currently, developer accounts in certain markets are able to offer paid apps for volume acquisition through the Windows Store for Business. 
+Currently, developer accounts located in certain markets are able to offer paid apps for volume acquisition through Microsoft Store for Business. 
 
-> **Note** In some markets, the price shown for an app in the Windows Store for Business may be different than the price shown to retail customers in the Windows Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+> **Note** In some markets, the price shown for an app in Microsoft Store for Business may be different than the price shown to retail customers in the Windows Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). For a list of markets where Microsoft Store for Business is available, see [Microsoft Store for Business overview](https://technet.microsoft.com/itpro/windows/manage/windows-store-for-business-overview#supported-markets).
 
-If your country or region is not listed below, your paid apps currently will not be offered in the Windows Store for Business. If so, the organizational licensing selections you make for your paid apps may be applied at a later time, as the Windows Store for Business continues to add support for paid app submissions from additional developer account markets.
+If your country or region is not listed below, your paid apps currently will not be offered in Microsoft Store for Business. If this is the case, the organizational licensing selections you make for your paid apps may be applied at a later time, as Microsoft Store for Business may add support for submissions from additional developer account markets in the future.
 
-At this time, developers in the following countries and regions can distribute paid apps to organizational customers via the Windows Store for Business:
+At this time, developers located in the following countries and regions can distribute paid apps to organizational customers via Microsoft Store for Business:
 
 - Austria
 - Belgium
