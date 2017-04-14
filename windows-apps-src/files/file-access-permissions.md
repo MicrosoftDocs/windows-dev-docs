@@ -4,7 +4,7 @@ ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 04/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,20 +27,23 @@ When you create a new app, you can access the following file system locations by
 
     1.  You can retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's install directory, like this:
         > [!div class="tabbedCodeSnippets"]
-        ```csharp
+        ```cs
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
         ```
         ```javascript
         var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
         ```
+        ```cpp
+        Windows::Storage::StorageFolder^ installedLocation = Windows::ApplicationModel::Package::Current->InstalledLocation;
+        ```
 
-       You can then access files and folders in the directory using [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) methods. In the example, this **StorageFolder** is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory by downloading the [App package information sample](http://go.microsoft.com/fwlink/p/?linkid=231526) for Windows 8.1 and re-using its source code in your Windows 10 app.
+       You can then access files and folders in the directory using [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) methods. In the example, this **StorageFolder** is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory from the [App package information sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Package) on GitHub.
 
     2.  You can retrieve a file directly from your app's install directory by using an app URI, like this:
         > [!div class="tabbedCodeSnippets"]
-        ```csharp
+        ```cs
         using Windows.Storage;            
-        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appx:///file.txt");
+        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
         ```
         ```javascript
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///file.txt").done(
@@ -49,8 +52,15 @@ When you create a new app, you can access the following file system locations by
             }
         );
         ```
+        ```cpp
+        auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appx:///file.txt")));
+        getFileTask.then([](StorageFile^ file) 
+        {
+            // Process file
+        });
+        ```
 
-        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the *file.txt* file in the app's install directory (`file` in the example).
+        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the `file.txt` file in the app's install directory (`file` in the example).
 
         The "ms-appx:///" prefix in the URI refers to the app's install directory. You can learn more about using app URIs in [How to use URIs to reference content](https://msdn.microsoft.com/library/windows/apps/hh781215).
 
@@ -66,23 +76,27 @@ When you create a new app, you can access the following file system locations by
 
         For example, you can use [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) to retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's local folder like this:
         > [!div class="tabbedCodeSnippets"]
-        ```csharp
+        ```cs
         using Windows.Storage;
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
         ```
         ```javascript
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
+        ```cpp
+        using namespace Windows::Storage;
+        StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
+        ```
 
         If you want to access your app's roaming or temporary folder, use the [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) or [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property instead.
 
-        After you retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents an app data location, you can access files and folders in that location by using **StorageFolder** methods. In the example, these **StorageFolder** objects are stored in the `localFolder` variable. You can learn more about using app data locations in [Managing application data](https://msdn.microsoft.com/library/windows/apps/hh465109), and by downloading the [Application data sample](http://go.microsoft.com/fwlink/p/?linkid=231478) for Windows 8.1 and re-using its source code in your Windows 10 app.
+        After you retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents an app data location, you can access files and folders in that location by using **StorageFolder** methods. In the example, these **StorageFolder** objects are stored in the `localFolder` variable. You can learn more about using app data locations from the guidance on the [ApplicationData class](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata) page, and by downloading the [Application data sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) from GitHub.
 
     2.  For example, you can retrieve a file directly from your app's local folder by using an app URI, like this:
         > [!div class="tabbedCodeSnippets"]
-        ```csharp
+        ```cs
         using Windows.Storage;
-        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
+        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdata:///local/file.txt"));
         ```
         ```javascript
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
@@ -91,8 +105,16 @@ When you create a new app, you can access the following file system locations by
             }
         );
         ```
+        ```cpp
+        using Windows::Storage;
+        auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appdata:///local/file.txt")));
+        getFileTask.then([](StorageFile^ file) 
+        {
+            // Process file
+        });
+        ```
 
-        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the *file.txt* file in the app's local folder (`file` in the example).
+        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the `file.txt` file in the app's local folder (`file` in the example).
 
         The "ms-appdata:///local/" prefix in the URI refers to the app's local folder. To access files in the app's roaming or temporary folders use "ms-appdata:///roaming/" or "ms-appdata:///temporary/" instead. You can learn more about using app URIs in [How to load file resources](https://msdn.microsoft.com/library/windows/apps/hh781229).
 
@@ -104,7 +126,8 @@ When you create a new app, you can access the following file system locations by
 
     Of course, you can also gain access to files and folders on a removable device by calling the file picker (using [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) and letting the user pick files and folders for your app to access. Learn how to use the file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
 
-    **Note**  For more info about accessing an SD card from a mobile app, see [Access the SD card](access-the-sd-card.md).
+    > [!NOTE] 
+    > For more info about accessing an SD card or other removable devices, see [Access the SD card](access-the-sd-card.md).
 
      
 
@@ -116,7 +139,7 @@ When you create a new app, you can access the following file system locations by
 
     -   You can create a file in the user's Downloads folder like this:
         > [!div class="tabbedCodeSnippets"]
-        ```csharp
+        ```cs
         using Windows.Storage;
         StorageFile newFile = await DownloadsFolder.CreateFileAsync("file.txt");
         ```
@@ -127,12 +150,20 @@ When you create a new app, you can access the following file system locations by
             }
         );
         ```
+        ```cpp
+        using Windows::Storage;
+        auto createFileTask = create_task(DownloadsFolder::CreateFileAsync(L"file.txt"));
+        createFileTask.then([](StorageFile^ newFile)
+        {
+            // Process file
+        });
+        ```
 
         [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) is overloaded so that you can specify what the system should do if there is already an existing file in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the file that was created. This file is called `newFile` in the example.
 
     -   You can create a subfolder in the user's Downloads folder like this:
         > [!div class="tabbedCodeSnippets"]
-        ```csharp
+        ```cs
         using Windows.Storage;
         StorageFolder newFolder = await DownloadsFolder.CreateFolderAsync("New Folder");
         ```
@@ -142,6 +173,14 @@ When you create a new app, you can access the following file system locations by
                 // Process folder
             }
         );
+        ```
+        ```cpp
+        using Windows::Storage;
+        auto createFolderTask = create_task(DownloadsFolder::CreateFolderAsync(L"New Folder"));
+        createFolderTask.then([](StorageFolder^ newFolder)
+        {
+            // Process folder
+        });
         ```
 
         [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) is overloaded so that you can specify what the system should do if there is already an existing subfolder in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents the subfolder that was created. This file is called `newFolder` in the example.
@@ -164,3 +203,6 @@ The following table lists additional locations that you can access by declaring 
 | Homegroup libraries  | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | Media server devices (DLNA) | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | Universal Naming Convention (UNC) folders | A combination of the following capabilities is needed. <br><br>The home and work networks capability: <br>- PrivateNetworkClientServer <br><br>And at least one internet and public networks capability: <br>- InternetClient <br>- InternetClientServer <br><br>And, if applicable, the domain credentials capability:<br>- EnterpriseAuthentication <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. | Retrieve a folder using: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Retrieve a file using: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+
+> [!NOTE]
+> For a complete list of app capabilities, see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).

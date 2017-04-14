@@ -25,7 +25,8 @@ keywords: windows 10, uwp
 
 Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-> **Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> [!NTOE] 
+> Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## Prerequisites
 
@@ -56,7 +57,6 @@ Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt"
 ```
 
 ## Writing to a file
-
 
 Here's how to write to a writable file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
 > [!div class="tabbedCodeSnippets"]
@@ -120,10 +120,10 @@ Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var outputStream = stream.GetOutputStreamAt(0))
-    {
-        // We'll add more code here in the next step.
-    }
-    stream.Dispose(); // Or use the stream variable (see previous code snippet) with a using statement as well.
+{
+    // We'll add more code here in the next step.
+}
+stream.Dispose(); // Or use the stream variable (see previous code snippet) with a using statement as well.
 ```
 ```vb
 Using outputStream = stream.GetOutputStreamAt(0)
@@ -135,28 +135,27 @@ End Using
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
-    {
-        dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
-    }
+{
+    dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
+}
 ```
 ```vb
-    Dim dataWriter As New DataWriter(outputStream)
-    dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
+Dim dataWriter As New DataWriter(outputStream)
+dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
 4.  Lastly, add this code (within the inner **using** statement) to save the text to your file with [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) and close the stream with [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).
 > [!div class="tabbedCodeSnippets"]
 ```cs
-    await dataWriter.StoreAsync();
-        await outputStream.FlushAsync();
+await dataWriter.StoreAsync();
+    await outputStream.FlushAsync();
 ```
 ```vb
-    Await dataWriter.StoreAsync()
-        Await outputStream.FlushAsync()
+Await dataWriter.StoreAsync()
+    Await outputStream.FlushAsync()
 ```
 
 ## Reading from a file
-
 
 Here's how to read from a file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
 > [!div class="tabbedCodeSnippets"]
@@ -197,13 +196,13 @@ Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
-    {
-        string text = dataReader.ReadString(buffer.Length);
-    }
+{
+    string text = dataReader.ReadString(buffer.Length);
+}
 ```
 ```vb
 Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer)
-    Dim text As String = dataReader.ReadString(buffer.Length)
+Dim text As String = dataReader.ReadString(buffer.Length)
 ```
 
 **Reading text from a file by using a stream (4 steps)**
@@ -230,9 +229,9 @@ Dim size = stream.Size
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var inputStream = stream.GetInputStreamAt(0))
-    {
-        // We'll add more code here in the next step.
-    }
+{
+    // We'll add more code here in the next step.
+}
 ```
 ```vb
 Using inputStream = stream.GetInputStreamAt(0)
@@ -244,15 +243,15 @@ End Using
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
-    {
-        uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
-        string text = dataReader.ReadString(numBytesLoaded);
-    }
+{
+    uint numBytesLoaded = await dataReader.LoadAsync((uint)size);
+    string text = dataReader.ReadString(numBytesLoaded);
+}
 ```
 ```vb
 Dim dataReader As New DataReader(inputStream)
-    Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
-    Dim text As String = dataReader.ReadString(numBytesLoaded)
+Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
+Dim text As String = dataReader.ReadString(numBytesLoaded)
 ```
 
  
