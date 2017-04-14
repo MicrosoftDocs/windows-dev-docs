@@ -100,7 +100,7 @@ var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 Compiling an effect with dynamic saturation:
 
 ```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{SaturationEffect.Saturation});
+var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{"SaturationEffect.Saturation"});
 _catEffect = effectFactory.CreateBrush();
 _catEffect.SetSourceParameter("mySource", surfaceBrush);
 _catEffect.Properties.InsertScalar("saturationEffect.Saturation", 0f);
