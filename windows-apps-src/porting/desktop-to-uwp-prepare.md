@@ -4,7 +4,7 @@ Description: This article lists things you need to know before converting your a
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Prepare
 ms.author: normesta
-ms.date: 03/31/2017
+ms.date: 04/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,7 +42,11 @@ This article lists the things you need to know before you convert your app by us
 
 + __Your app requires UIAccess__. If your application specifies `UIAccess=true` in the `requestedExecutionLevel` element of the UAC manifest, conversion to UWP isn't supported currently. For more info, see [UI Automation Security Overview](https://msdn.microsoft.com/library/ms742884.aspx).
 
-+ __Your app exposes COM objects or GAC assemblies for use by other processes__. In the current release, your app cannot expose COM objects or GAC assemblies for use by processes originating from executables external to your Windows app package. Processes from within the package can register and use COM objects and GAC assemblies as normal, but they will not be visible externally. This means interop scenarios like OLE will not function if invoked by external processes.
++ __Your app exposes COM objects__. Processes and extensions from within the package can register and use COM & OLE servers, both in-process and out-of-process (OOP).  The Creators Update adds Packaged COM support which provides the ability to register OOP COM & OLE servers that are now visible outside the package.  See [COM Server and OLE Document support for Desktop Bridge](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#bjPyETFgtpZBGrS1.97).
+
+   Packaged COM support works with existing COM APIs, but will not work for application extensions that rely upon directly reading the registry, as the location for Packaged COM is in a private location.
+
++ __Your app exposes GAC assemblies for use by other processes__. In the current release, your app cannot expose GAC assemblies for use by processes originating from executables external to your Windows app package. Processes from within the package can register and use GAC assemblies as normal, but they will not be visible externally. This means interop scenarios like OLE will not function if invoked by external processes.
 
 + __Your app is linking C runtime libraries (CRT) in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner.
 
@@ -83,10 +87,22 @@ The dependencies will not get installed if the app is installed by sideloading. 
 
 + __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. Apps often start them because they provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. Use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t a separate executable to run, but more importantly, they keep app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a desktop bridge app.
 
-+ __Your app hosts add-ins, plug-ins, or extensions__. Often times these terms are used to describe the same concept. In all cases, your app loads content produced by third party contributors.
-
-  In many cases, COM-style extensions will likely continue to work as long as the extension has not been converted by using the desktop bridge, and it installs as full trust. That's because those installers can use their full-trust capabilities to modify the registry and place extension files wherever your host app expects to find them. However, if those extensions are converted by using the desktop bridge, and then installed as Windows app package, they won't work because each package (the host app and the extension) will be isolated from one another. If you intend to convert your extensions, or you plan to encourage your contributors to convert them, consider how you might facilitate communication between the host app package and any extension packages. One way that you might be able to do this is by using an [app service](../launch-resume/app-services.md).
++ __Your app hosts add-ins, plug-ins, or extensions__.   In many cases, COM-style extensions will likely continue to work as long as the extension has not been converted by using the desktop bridge, and it installs as full trust. That's because those installers can use their full-trust capabilities to modify the registry and place extension files wherever your host app expects to find them. However, if those extensions are converted by using the desktop bridge, and then installed as Windows app package, they won't work because each package (the host app and the extension) will be isolated from one another. If you intend to convert your extensions, or you plan to encourage your contributors to convert them, consider how you might facilitate communication between the host app package and any extension packages. One way that you might be able to do this is by using an [app service](../launch-resume/app-services.md).
 
   If your extension loads content from folder locations that are inaccessible to your packaged app (For example: the **Program Files** folder), consider modifying your extensibility model to look for extensions in a folder that is more visible to all users such as subfolders in the **Documents** folder.
 
-+ __Your app generates code__. This is not supported in a converted app. While an app that generates code might work in the current release of Windows. It might not work in future versions.
++ __Your app generates code__. Your app can generate code that it consumes in memory, but it can't write generated code to disk. That's because you can't validate generated code, and all code must pass validation checks before it can be consumed by other processes.
+
+## Next steps
+
+**Convert your app**
+
+See [Convert](desktop-to-uwp-root.md#convert)
+
+**Find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback about this article**
+
+Use the comments section below.

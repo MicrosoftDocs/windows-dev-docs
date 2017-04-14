@@ -830,6 +830,7 @@ Integrate with other apps, start other processes or share information.
 
 * [Make your app appear as the print target in applications that support printing](#printing)
 * [Share fonts with other Windows applications](#fonts)
+* [Start a Win32 process from a Universal Windows Platform (UWP) app](#win32-process)
 
 <span id="printing" />
 ### Make your app appear as the print target in applications that support printing
@@ -920,7 +921,67 @@ Find the complete schema reference [here](https://review.docs.microsoft.com/uwp/
 ```
 
 
+<span id="win32-process" />
+### Start a Win32 process from a Universal Windows Platform (UWP) app
 
-## See also
+Start a Win32 process that runs in full-trust.
 
-[App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
+#### XML namespaces
+
+http://schemas.microsoft.com/appx/manifest/desktop/windows10
+
+#### Elements and attributes of this extension
+
+```XML
+<xtension Category="windows.fullTrustProcess" Executable="[executable file]">
+  <FullTrustProcess>
+    <ParameterGroup GroupId="[GroupID]" Parameters="[Parameters]"/>
+  </FullTrustProcess>
+</Extension>
+```
+
+|Name |Description |
+|-------|-------------|
+|Category |Always ``windows.fullTrustProcess``.
+|GroupID |A string that identifies a set of parameters that you want to pass to the executable. |
+|Parameters |Parameters that you want to pass to the executable. |
+
+#### Example
+
+```XML
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:rescap=
+"http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10">
+  ...
+  <Capabilities>
+      <rescap:Capability Name="runFullTrust"/>
+  </Capabilities>
+  <Applications>
+       ...
+      <Extensions>
+          <desktop:Extension Category="windows.fullTrustProcess" Executable="fulltrustprocess.exe">
+              <desktop:FullTrustProcess>
+                  <desktop:ParameterGroup GroupId="SyncGroup" Parameters="/Sync"/>
+                  <desktop:ParameterGroup GroupId="OtherGroup" Parameters="/Other"/>
+              </desktop:FullTrustProcess>
+           </desktop:Extension>
+      </Extensions>
+     ...
+  </Applications>
+</Package>
+```
+This extension might be useful if you want to create a Universal Windows Platform User interface that runs on all devices, but you want components of your Win32 app to continue running in full-trust.
+
+Just create a desktop bridge package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the desktop bridge package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more [app services](../launch-resume/app-services.md) to do that. You can read more about this scenario [here](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/).
+
+## Next steps
+
+**Find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback about this article**
+
+Use the comments section below.

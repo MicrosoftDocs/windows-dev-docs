@@ -4,7 +4,7 @@ Description: Deploy and debug a Universal Windows Platform (UWP) app converted f
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Debug
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -177,3 +177,13 @@ You can invoke custom processes inside the container of a specified app package.
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
+
+## Next steps
+
+**Find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback about this article**
+
+Use the comments section below.

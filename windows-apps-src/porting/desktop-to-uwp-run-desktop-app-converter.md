@@ -72,7 +72,13 @@ You can skip ahead to the next section if your app doesn't have an installer.
 
 3. In the console window that appeared when you started the Desktop App Converter, run this command: ```Set-ExecutionPolicy bypass```.
 4.	Set up the converter by running  this command: ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose```.
-5.	Restart your computer only if you're prompted to do so.
+5.	Restart your computer if you're prompted to do so.
+
+    Status messages appear in the console window as the converter expands the base image. If you don't see any status messages, press any key. This can cause the contents of the console window to refresh.
+
+    ![status messages in the console window](images/desktop-to-uwp/bas-image-setup.png)
+
+    When the base image is fully expanded, move to the next section.
 
 ## Convert an app
 
@@ -150,15 +156,17 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <span id="optional-parameters" />
-#### Convert an app, sign the app, and prepare it for store submission
+#### Convert an app, sign the app, and run validation checks on the package
 
-This example is similar to first one except it shows how you can sign your app and then validate your app against Desktop Bridge and Windows Store requirements.
-
-You can sign your app by using the optional ``Sign`` parameter and validate it by using the ``verify`` parameter.
+This example is similar to first one except it shows how you can sign your app for local testing, and then validate your app against Desktop Bridge and Windows Store requirements.
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
+
+The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the converted app](#run-app) section of this guide. This certificate only lets you test your app locally. To distribute your app, you'll have to use a certificate issued by a company. See [Sign a Windows Desktop Bridge App](desktop-to-uwp-signing.md).
+
+You can validate you app by using the ``Verify`` parameter.
 
 ### A quick look at optional parameters
 
@@ -221,17 +229,17 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-PackageDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
 |-PackagePublisherDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Publisher Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *Publisher*. |
 |<span id="cleanup-params" /><strong>Cleanup parameters</strong>|||
-|Cleanup [&lt;Option&gt;] |Required |Runs cleanup for the DesktopAppConverter artifacts. There are 3 valid options for the Cleanup mode. |
-|Cleanup All | |Deletes all expanded base images, removes any temporary converter files, removes the container network, and disables the optional Windows feature, Containers. |
-|Cleanup WorkDirectory |Required |Removes all the temporary converter files. |
-|Cleanup ExpandedImage |Required |Deletes all the expanded base images installed on your host machine. |
+|-Cleanup [&lt;Option&gt;] |Required |Runs cleanup for the DesktopAppConverter artifacts. There are 3 valid options for the Cleanup mode. |
+|-Cleanup All | |Deletes all expanded base images, removes any temporary converter files, removes the container network, and disables the optional Windows feature, Containers. |
+|-Cleanup WorkDirectory |Required |Removes all the temporary converter files. |
+|-Cleanup ExpandedImage |Required |Deletes all the expanded base images installed on your host machine. |
 |<span id="architecture-params" /><strong>Package architecture parameters</strong>|||
 |-PackageArch &lt;String&gt; |Required |Generates a package with the specified architecture. Valid options are 'x86' or 'x64'; for example, -PackageArch x86. This parameter is optional. If unspecified, the DesktopAppConverter will try to auto-detect package architecture. If auto-detection fails, it will default to x64 package. |
 |<span id="other-params" /><strong>Miscellaneous parameters</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |Optional |Full path to an already expanded base image.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
 |-LogFile &lt;String&gt;  |Optional |Specifies a log file. If omitted, a log file temporary location will be created. |
-| -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package. This switch should be present alongside the switch ```-MakeAppx```. |
+| -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package by using a generated certificate for testing purposes. This switch should be present alongside the switch ```-MakeAppx```. |
 |&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
 | -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the converted app package against Desktop Bridge and Windows Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
 
@@ -352,17 +360,18 @@ The Desktop App Converter does not support Unicode; thus, no Chinese characters 
 
 ## Next steps
 
-### Find answers to specific questions
+**Run your app / find and fix issues**
 
-+ [Ask us in this forum](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop)
+See [Debug a Windows Desktop Bridge App](desktop-to-uwp-debug.md)
 
-+ To give feedback about this article, use the comments section below.
+**Distribute your app**
 
-### Run your app / find and fix issues
+See [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md)
 
-+ [Debug a Windows Desktop Bridge App](desktop-to-uwp-debug.md)
+**Find answers to specific questions**
 
-### Sign your app and then distribute it
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
-+ [Sign a Windows Desktop Bridge app](desktop-to-uwp-signing.md)
-+ [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md)
+**Give feedback about this article**
+
+Use the comments section below.

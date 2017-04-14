@@ -79,3 +79,13 @@ Note the following:
 
 * Any drive that you install your converted app on to must be formatted to NTFS format.
 * A converted app always runs as the interactive user.
+
+## Next steps
+
+**Find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback about this article**
+
+Use the comments section below.

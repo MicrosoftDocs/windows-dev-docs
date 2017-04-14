@@ -48,6 +48,7 @@ The Desktop to UWP Bridge is designed for ease of use so you might not have to m
 
 Consult the article [Prepare your app for the Desktop to UWP Bridge](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you convert it.
 
+<span id="convert" />
 ## Convert
 
 Here are some ways to convert your app.
@@ -128,9 +129,17 @@ See [Sign an app converted with the Desktop Bridge](desktop-to-uwp-signing.md).
 
 ## Support and feedback
 
-If you run in to issues converting your app, you can visit the [forums](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) for help.
+**Find answers to specific questions**
 
-To give feedback or make feature suggestions, submit or upvote items on [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial).
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback or make feature suggestions**
+
+See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
+
+**Give feedback about this article**
+
+Use the comments section below.
 
 ## In this section
 

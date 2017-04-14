@@ -3,7 +3,7 @@ author: normesta
 Description: This article provides a deeper dive on how the Desktop to UWP bridge works under the covers.
 title: Desktop to UWP Bridge Behind the Scenes
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -89,3 +89,13 @@ Writes outside the package | Ignored by the bridge. Allowed if the user has perm
 ## Uninstallation
 
 When a package is uninstalled by the user, all files and folders located under *C:\Program Files\WindowsApps\package_name* are removed, as well as any redirected writes to AppData or the registry that were captured by the bridge.
+
+## Next steps
+
+**Find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback about this article**
+
+Use the comments section below.
