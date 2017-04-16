@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-title: Bluetooth GATT Client
+title: Bluetooth GATT Server
 description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) Server for Universal Windows Platform (UWP) apps, along with sample code for common use cases. 
 ms.author: misatran
 ms.date: 02/08/2017
