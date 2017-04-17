@@ -27,7 +27,7 @@ A JSON array in the following format:
 * DeployInfo
   * PackageFullName - Name of the package that we are requesting information about.
 
-###Response###
+###Response
 
 **Response body**
 
