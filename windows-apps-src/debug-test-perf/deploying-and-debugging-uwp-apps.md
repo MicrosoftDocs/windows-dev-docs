@@ -92,6 +92,24 @@ To change it to **no authentication**, in the **Remote Debugger**, go to **Tools
 
 For more information, see the [Visual studio Download Center](https://www.visualstudio.com/downloads/) page.
 
+## Passing command line debug arguments 
+In Visual Studio 2017, you can pass command line debug arguments when you start debugging UWP applications. You can access the command line debug arguments from the *args* parameter in the **OnLaunched** method of the [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) class. To specify command line debug arguments, open the project's properties and navigate to the **Debug** tab. 
+
+> [!NOTE]
+> This is available in Visual Studio 2017 (version 15.1) for C#, VB, and C++. JavaScript is available in later versions of Visual Studio 2017. Command line debug arguments are available for all deployment types except for the Simulator.
+
+For C# and VB UWP projects, you will see a **Command line arguments:** field under **Start options**. 
+
+![Command line arguments](images/command-line-arguments.png)
+
+For C++ and JS UWP projects, you will see **Command Line Arguments** as a field in the **Debugging Properties**.
+
+![Command line arguments C++ and JS](images/command-line-arguments-cpp.png)
+
+Once you specify the command line arguments, you can access the value of the argument in the App's **OnLaunched** method. The [**LaunchActivatedEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) object *args* will have an **Arguments** property with the value set to the text in the **Command Line Arguments** field. 
+
+![Command line arguments C++ and JS](images/command-line-arguments-debugging.png)
+
 ## Authentication modes
 
 There are three authentication modes for remote machine deployment:
