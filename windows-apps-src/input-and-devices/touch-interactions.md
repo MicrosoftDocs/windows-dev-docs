@@ -252,21 +252,6 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-               Height="100" Width="200" Fill="Blue" />
-</Grid>
-```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-           Height="100" Width="200" Fill="Blue" />
-</Grid>
-```
-
 Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
 
 ```ManagedCPlusPlus
@@ -470,22 +455,6 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
     <Rectangle Name="touchRectangle"
                Width="200" Height="200" Fill="Blue" 
                ManipulationMode="All"/>
-</Grid>
-```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-               Width="200" Height="200" Fill="Blue" 
-               ManipulationMode="All"/>
-</Grid>
-```
-
-```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Rectangle Name="touchRectangle"
-           Width="200" Height="200" Fill="Blue" 
-           ManipulationMode="All"/>
 </Grid>
 ```
 
