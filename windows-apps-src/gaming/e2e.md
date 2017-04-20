@@ -1,10 +1,10 @@
 ---
-author: mtoepke
+author: joannaleecy
 title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: joanlee
+ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -1565,6 +1565,10 @@ To update your published game, submit a new app package with a higher version nu
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>Game development videos</td>
+        <td>[Videos from major conferences like GDC and //build](https://docs.microsoft.com/windows/uwp/gaming/game-development-videos)</td>
+    </tr>
     <tr>
         <td>Indie game development (video)</td>
         <td>[New Opportunities for Independent Developers](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers)</td>
