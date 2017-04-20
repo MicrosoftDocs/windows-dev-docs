@@ -37,4 +37,5 @@ See the barcode scanner sample for an example implementation.
 | **Presentation Scanners** | **USB** |Code Reader™ 5000<br/>Honeywell Genesis 7580g<br/>Honeywell Orbit 7190g|
 | **In-Counter Scanners** | **USB** |Honeywell Stratos 2700|
 | **Scan Engines** | **USB** | Honeywell N5680<br/>Honeywell N3680|
+| **Windows Mobile Devices**| **Built-in** |Bluebird EF400<br/>Bluebird EF500<br/>Bluebird EF500R<br/>Honeywell CT50<br/>Honeywell D75e<br/>Janam XT2<br/>Panasonic FZ-E1<br/>Panasonic FZ-F1<br/>PointMobile PM80<br/>Zebra TC700j|
 | **Windows Mobile Devices**| **Custom** | HP Elite X3 with Barcode Scanner Jacket |
