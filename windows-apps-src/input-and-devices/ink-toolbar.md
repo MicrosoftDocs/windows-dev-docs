@@ -806,6 +806,7 @@ For more info on custom drying, see [Pen interactions and Windows Ink in UWP app
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 **Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+
