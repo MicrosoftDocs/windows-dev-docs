@@ -74,6 +74,9 @@ There are a few important things to notice here:
 
 An easy way to get started writing this file is to open up a new page in your favorite text editor, do a quick "Save As" of your file to your app's project folder, and name your newly created file: `SourceAppxContentGroupMap.xml`.
 
+> [!IMPORTANT]
+> If you are developing a C++ UWP app, you will need to adjust the file properties of your `SourceAppxContentGroupMap.xml`. Set the `Content` property to **true** and the `File Type` property to **XML File**. 
+
 When you're creating the `SourceAppxContentGroupMap.xml`, it's helpful to take advantage of using wildcards in file names, for more info, see the [Tips and tricks for using wildcards](#wildcards) section.
 
 If you developed your app using Visual Studio, it's recommended that you include this in your required content group:
