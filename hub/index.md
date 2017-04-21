@@ -399,7 +399,7 @@ ms.prod: windows
                             </div>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/windows-server-docs/get-started/windows-server-2016 ">
+                            <a href="https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-2016">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -418,7 +418,7 @@ ms.prod: windows
                             </a>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/itpro/windows/index">
+                            <a href="https://docs.microsoft.com/en-us/windows/windows-10/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -437,7 +437,7 @@ ms.prod: windows
                             </a>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/edu/windows/index">
+                            <a href="https://docs.microsoft.com/en-us/education/windows">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -455,27 +455,27 @@ ms.prod: windows
                                 </div>
                             </a>
                         </li>
-                         <li>
-                            <a href="https://technet.microsoft.com/itpro/hololens/index">
+                                 <li>
+                            <a href="https://docs.microsoft.com/en-us/microsoft-edge/deploy/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-7.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-4.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>HoloLens</h3>
-                                                <p>Learn to set up and manage HoloLens Commercial Suite.</p>
+                                                <h3>Microsoft Edge</h3>
+                                                <p>Learn to deploy and manage Microsoft Edge and Internet Explorer 11.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                        </li> 
+                        </li>
                         <li>
-                            <a href="https://technet.microsoft.com/itpro/surface/index">
+                            <a href="https://docs.microsoft.com/en-us/surface/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -494,7 +494,7 @@ ms.prod: windows
                             </a>
                         </li>
                         <li>
-                            <a href="https://technet.microsoft.com/itpro/surface-hub/index">
+                            <a href="https://docs.microsoft.com/en-us/surface-hub/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -513,24 +513,25 @@ ms.prod: windows
                             </a>
                         </li> 
                         <li>
-                            <a href="https://technet.microsoft.com/library/mt267544.aspx">
+                            <a href="https://docs.microsoft.com/en-us/hololens/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage bgdAccent1">
-                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-4.svg" alt="" />
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-7.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">
-                                                <h3>Browsers</h3>
-                                                <p>Learn to deploy and manage Microsoft Edge and Internet Explorer 11.</p>
+                                                <h3>HoloLens</h3>
+                                                <p>Learn to set up and manage HoloLens Commercial Suite.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </a>
-                        </li>
+                        </li> 
+                
                     </ul>
                 </li>
             </ul>
