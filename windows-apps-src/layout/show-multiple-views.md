@@ -18,7 +18,11 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-You can help your users be more productive by letting them view multiple independent parts of your app in separate windows. A typical example is an e-mail app where the main UI shows the list of emails and a preview of the selected e-mail. But users can also open messages in separate windows and view them side-by-side.
+Help your users be more productive by letting them view multiple independent parts of your app in separate windows. There's a variety of app scenarios that benefit from multiple views, for example
+ - An email app that allows users to view a list of received messages while composing a new email
+ - An address book app that allows users to compare saved contact information of multiple people side-by-side
+ - A music player app that allows users to see what's playing and also browse through the list of other available music
+ - A note-taking app that allows users to copy information from one page of notes to another
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -26,7 +30,9 @@ You can help your users be more productive by letting them view multiple indepen
 <li>[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)</li>
 <li>[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)</li>
 </ul>
-</div> 
+</div>
+
+While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the app content. Also consider including a context menu option to "Open in a new window".
 
 When you create multiple windows for an app, each window behaves independently. The taskbar shows each window separately. Users can move, resize, show, and hide app windows independently and can switch between app windows as if they were separate apps. Each window operates in its own thread.
 
@@ -137,10 +143,9 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 When you use [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097), you can choose if you want to close the initial window and remove it from the taskbar by specifying the value of [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105).
 
- 
+## Related articles
+
+* [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
+* [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
  
-
-
-
-
