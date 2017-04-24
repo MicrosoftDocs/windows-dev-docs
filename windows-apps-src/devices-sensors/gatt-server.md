@@ -119,10 +119,10 @@ GattServiceProviderAdvertisingParameters advParameters = new GattServiceProvider
 };
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **IsDiscoverable**: Expose the service to remote devices when the device performs service discovery. 
-- **IsConnectable**: Expose the service to remote devices by adding the service UUID to the Advertisement packet. Make very judicious use of Connectable advertisements. 
+- **IsDiscoverable**: Advertises the friendly name to remote devices in the advertisement, making the device discoverable.
+- **IsConnectable**:  Advertises a connectable advertisement for use in peripheral role.
 
-> There are only 31 bytes in the Advertisement packet and a 128-bit UUID takes up 16 of them!
+> When a service is both Discoverable and Connectable, the system will add the Service Uuid to the advertisement packet.  There are only 31 bytes in the Advertisement packet and a 128-bit UUID takes up 16 of them!
 
 ## Respond to Read and Write requests
 As we saw above while declaring the required characteristics, GattLocalCharacteristics have 3 types of events - ReadRequested, WriteRequested and SubscribedClientsChanged.
