@@ -68,7 +68,7 @@ For the resource name, you give the **Uid** attribute value, plus you specify wh
 Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## Add string resource identifiers to code and markup.
