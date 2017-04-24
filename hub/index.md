@@ -399,7 +399,7 @@ ms.prod: windows
                             </div>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-2016">
+                            <a href="https://docs.microsoft.com/en-us/windows-server/windows-server-2016">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
