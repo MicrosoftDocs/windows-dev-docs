@@ -316,7 +316,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     if (e.Parameter is string)
     {
-        greeting.Text = "Hi, " + e.Parameter.ToString();
+        greeting.Text = $"Hi, {e.Parameter.ToString()}";
     }
     else
     {
