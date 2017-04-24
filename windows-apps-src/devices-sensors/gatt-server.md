@@ -41,24 +41,13 @@ Each service, characteristic and descriptor is defined by it's own unique 128-bi
 
 If the attribute is standard and defined by the Bluetooth SIG-defined, it will also have a corresponding 16-bit short ID (e.g. Battery Level UUID  is 0000**2A19**-0000-1000-8000-00805F9B34FB and the short ID is 0x2A19). These standard UUIDs can be seen in [GattServiceUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids.aspx) and [GattCharacteristicUuids](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids.aspx).
 
-If your app is implementing it's own custom service, a custom UUID will have to be generated. This is easily done in Visual Studio through Tools -> CreateGuid (use option 5 to get it in the "xxxxxxxx-xxxx-...xxxx" format). 
-
-For our purposes, we will need a GattUuid object:
-
-```csharp
-Guid myGuid = Guid.Parse("34B1CF4D-1069-4AD6-89B6-E161D79BE4D0");
-GattUuid uuid = GattUuid.FromUuid(myGuid);
-```
-
-This uuid can now be used to declare new local services, characteristics or descriptors. 
+If your app is implementing it's own custom service, a custom UUID will have to be generated. This is easily done in Visual Studio through Tools -> CreateGuid (use option 5 to get it in the "xxxxxxxx-xxxx-...xxxx" format). This uuid can now be used to declare new local services, characteristics or descriptors. 
 
 ### Build up the heirarchy of services and characteristics
-Each service requires it's own ServiceProvider object that takes in a UUID and a Service Type: 
+The GattServiceProvider is used to create and advertise the root primary service definition.  Each service requires it's own ServiceProvider object that takes in a GUID: 
 
 ```csharp
-GattServiceProviderResult result = await GattServiceProvider.CreateAsync(
-                GattUuid.FromUuid(uuid),
-                GattServiceType.Primary);
+GattServiceProviderResult result = await GattServiceProvider.CreateAsync(uuid);
 
 if (result.Error == BluetoothError.Success)
 {
@@ -66,65 +55,72 @@ if (result.Error == BluetoothError.Success)
     // 
 }
 ```
-The Service Type specifies whether the service is a primary or secondary service. 
 > Primary services are the top level of the GATT tree. Primary services contain characteristics as well as other services (called 'Included' or secondary services). 
 
 Now, populate the service with the required characteristics and descriptors:
 
 ```csharp
-_readCharacteristic = await serviceProvider.CreateCharacteristicAsync(
-               GattUuid.FromUuid(uuid1),
-               ReadParameters
-               );
+GattLocalCharacteristicResult characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid1, ReadParameters);
+if (characteristicResult.Error != BluetoothError.Success)
+{
+    // An error occurred.
+    return;
+}
+_readCharacteristic = characteristicResult.Characteristic;
 _readCharacteristic.ReadRequested += ReadCharacteristic_ReadRequested;
 
-_writeCharacteristic = await serviceProvider.CreateCharacteristicAsync(
-               GattUuid.FromUuid(uuid2),
-               WriteParameters
-               );
+characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid2, WriteParameters);
+if (characteristicResult.Error != BluetoothError.Success)
+{
+    // An error occurred.
+    return;
+}
+_writeCharacteristic = characteristicResult.Characteristic;
 _writeCharacteristic.WriteRequested += WriteCharacteristic_WriteRequested;
-_notifyCharacteristic = await serviceProvider.CreateCharacteristicAsync(
-               GattUuid.FromUuid(uuid3),
-               GattNotifyParameters
-               );
+
+characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid3, NotifyParameters);
+if (characteristicResult.Error != BluetoothError.Success)
+{
+    // An error occurred.
+    return;
+}
+_notifyCharacteristic = characteristicResult.Characteristic;
 _notifyCharacteristic.SubscribedClientsChanged += SubscribedClientsChanged;
 ```
-As shown above, this is also a good place to declare event handlers for the operations each characteristic supports. 
+As shown above, this is also a good place to declare event handlers for the operations each characteristic supports.  To respond to requests correctly, an app must defined and set an event handler for each request type the attribute supports.  Failing to register a handler will result in the request being completed immediately with *UnlikelyError* by the system.
 
 ### Constant characteristics
 Sometimes, there are characteristic values that will not change during the course of the app's lifetime. In that case, it is advisable to declare a constant characteristic to prevent unnecessary app activation: 
 
 ```csharp
-
 byte[] value = new byte[] {0x21};
 var constantParameters = new GattLocalCharacteristicParameters
 {
     CharacteristicProperties = (GattCharacteristicProperties.Read),
-    Value = value.AsBuffer(),
+    StaticValue = value.AsBuffer(),
     ReadProtectionLevel = GattProtectionLevel.Plain,
 };
 
-var constantCharacteristic = await serviceProvider.CreateCharacteristicAsync(
-                                GattUuid.FromUuid(uuid4),
-                                constantParameters
-                                );
-
+var characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid4, constantParameters);
+if (characteristicResult.Error != BluetoothError.Success)
+{
+    // An error occurred.
+    return;
+}
 ```
 ## Publish the service
-Once the service has been fully defined, the next step is to publish support for the service. This informs the OS that the service should be returned when remote devices perform a service discovery.  You will have to set two properties - MakeDiscoverable and MakeConnectable:  
+Once the service has been fully defined, the next step is to publish support for the service. This informs the OS that the service should be returned when remote devices perform a service discovery.  You will have to set two properties - IsDiscoverable and IsConnectable:  
 
 ```csharp
-GattServiceProviderAdvertisingParameters advParameters = 
-new GattServiceProviderAdvertisingParameters
+GattServiceProviderAdvertisingParameters advParameters = new GattServiceProviderAdvertisingParameters
 {
-    MakeDiscoverable = true,
-    MakeConnectable = false
+    IsDiscoverable = true,
+    IsConnectable = true
 };
-
 serviceProvider.StartAdvertising(advParameters);
 ```
-- **MakeDiscoverable**: Expose the service to remote devices when the device performs service discovery. 
-- **MakeConnectable**: Expose the service to remote devices by adding the service UUID to the Advertisement packet. Make very judicious use of Connectable advertisements. 
+- **IsDiscoverable**: Expose the service to remote devices when the device performs service discovery. 
+- **IsConnectable**: Expose the service to remote devices by adding the service UUID to the Advertisement packet. Make very judicious use of Connectable advertisements. 
 
 > There are only 31 bytes in the Advertisement packet and a 128-bit UUID takes up 16 of them!
 
@@ -135,8 +131,8 @@ As we saw above while declaring the required characteristics, GattLocalCharacter
 When a remote device tries to read a value from a characteristic (and it's not a constant value), the ReadRequested event is called. The characteristic the read was called on as well as args (containing information about the remote device) is passed to the delegate: 
 
 ```csharp
-    characteristic.ReadRequested += Characteristic_ReadRequested;
-    // ... 
+characteristic.ReadRequested += Characteristic_ReadRequested;
+// ... 
 
 async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, GattReadRequestedEventArgs args)
 {
@@ -145,9 +141,8 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
     // populate writer w/ some data. 
     // ... 
 
-    GattReadResponse response = GattReadResponse.CreateWithValue(writer.DetachBuffer()); 
     var request = await args.GetRequestAsync();
-    request.Complete(response);
+    request.RespondWithValue(writer.DetachBuffer());
 }
 ``` 
 
@@ -155,8 +150,8 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
 When a remote device tries to write a value to a characteristic, the WriteRequested event is called with details about the remote device, which characteristic to write to and the value itself: 
 
 ```csharp
-    characteristic.ReadRequested += Characteristic_ReadRequested;
-    // ...
+characteristic.ReadRequested += Characteristic_ReadRequested;
+// ...
 
 async void WriteCharacteristic_WriteRequested(GattLocalCharacteristic sender, GattWriteRequestedEventArgs args)
 {
@@ -164,7 +159,10 @@ async void WriteCharacteristic_WriteRequested(GattLocalCharacteristic sender, Ga
     var reader = DataReader.FromBuffer(request.Value);
     // Parse data as necessary. 
 
-    request.Complete();
+    if (request.Option == GattWriteOption.WriteWithResponse)
+    {
+        request.Respond();
+    }
 }
 ```
 There are 2 types of Writes - with and without response. Use GattWriteOption (a property on the GattWriteRequest object) to figure out which type of write the remote device is performing. 
@@ -186,8 +184,8 @@ async void NotifyValue()
 When a new device subscribes for notifications, the SubscribedClientsChanged event gets called: 
 
 ```csharp
-    characteristic.SubscribedClientsChanged += SubscribedClientsChanged;
-    // ...
+characteristic.SubscribedClientsChanged += SubscribedClientsChanged;
+// ...
 
 void _notifyCharacteristic_SubscribedClientsChanged(GattLocalCharacteristic sender, object args)
 {
@@ -199,4 +197,4 @@ void _notifyCharacteristic_SubscribedClientsChanged(GattLocalCharacteristic send
 }
 
 ```
-
+> Note that an application can get the maximum notification size for a particular client with the MaxNotificationSize property.  Any data larger than the maximum size will be truncated by the system.
