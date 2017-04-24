@@ -292,7 +292,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>ss=1</p></td>
 <td align="left"><p>Indicates that street-level imagery is shown when <code>ss=1</code>. Omitting the **ss** parameter produces the same result as <code>ss=0</code>. Use in conjunction with the **cp** parameter to specify the location of the street-level view.</p>
 <div class="alert">
-> **Note**  Street-level imagery is not available in all regions.
+**Note**  Street-level imagery is not available in all regions.
 </div>
 <div>
  
@@ -306,7 +306,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>trfc=1</p></td>
 <td align="left"><p>Specifies whether traffic information is included on the map. Omitting the trfc parameter produces the same results as <code>trfc=0</code>.</p>
 <div class="alert">
-> **Note**  Traffic data is not available in all regions.
+**Note**  Traffic data is not available in all regions.
 </div>
 <div>
  
@@ -375,9 +375,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>Separate name and multiple points with tildes (**~**).</p>
 <p>If the item you specify contains a tilde, make sure the tilde is encoded as <code>%7E</code>. If not accompanied by Center point and Zoom Level parameters, the collection will provide the best map view.</p>
 
-<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p>
-
-<p>If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
+<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
 </tr>
 </tbody>
 </table>
