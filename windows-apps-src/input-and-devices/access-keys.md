@@ -5,12 +5,15 @@ title: Access keys design guidelines
 label: Access keys design guidelines
 keywords: keyboard, access key, keytip, accessibility, navigation, focus, text, input, user interaction
 template: detail.hbs
-keywords: Access keys, keyboard, accessibility, user interaction, input
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+pm-contact: miguelrb
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
 ---
 
 # Access keys
@@ -55,7 +58,7 @@ We recommend that you specify access keys wherever appropriate in your UI, and s
 
 2.  **Access keys make your app more usable** for power users who prefer
     to interact through the keyboard.
-    
+
     Experienced users often have a strong preference for using the keyboard, because keyboard-based commands can be entered more quickly and don't require them to remove their hands from the keyboard. For these users, efficiency and consistency are crucial; comprehensiveness is important only for the most frequently used commands.
 
 ## Set access key scope
@@ -107,7 +110,7 @@ public class CommandBarHack : CommandBar
     }
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-        
+
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;
@@ -166,13 +169,13 @@ _CommandBar secondary scope and supported access keys_
 
 Access key collisions occur when two or more elements in the same scope have duplicate access keys, or start with the same alphanumeric characters.
 
-The system resolves duplicate access keys by processing the access key of the first element added to the visual tree, ignoring all others. 
+The system resolves duplicate access keys by processing the access key of the first element added to the visual tree, ignoring all others.
 
 When multiple access keys start with the same character (for example, “A”, “A1”, and “AB”), the system processes the single character access key and ignores all others.
 
 Avoid collisions by using unique access keys or by scoping commands.
 
-## Choose access keys 
+## Choose access keys
 
 Consider the following when choosing access keys:
 
@@ -272,11 +275,11 @@ The KeyTipHorizontalOffset property indicates how far to move the key tip left o
 _Set vertical and horizontal offsets for a key tip_
 
 ``` xaml
-<Button 
-  Content="File" 
-  AccessKey="F" 
-  KeyTipPlacementMode="Bottom" 
-  KeyTipHorizontalOffset="20" 
+<Button
+  Content="File"
+  AccessKey="F"
+  KeyTipPlacementMode="Bottom"
+  KeyTipHorizontalOffset="20"
   KeyTipVerticalOffset="-8" />
 ```
 
@@ -320,4 +323,3 @@ This example demonstrates how to change these application resources:
 The XAML framework exposes Automation Properties that enable UI Automation clients to discover information about elements in the user interface.
 
 If you specify the AccessKey property on a UIElement or TextElement control, you can use the [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) property to get this value. Accessibility clients, such as Narrator, read the value of this property each time an element gets focus.
-
