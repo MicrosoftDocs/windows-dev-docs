@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 04/19/2017
+ms.date: 04/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,17 +32,30 @@ Here are some of the features that we’ve made available exclusively to members
 
 ## Coming soon: Dashboard enhancements for Dev Center Insiders
 
-Members of the Dev Center Insider Program will soon get an early look at our new dashboard design. We believe these changes will help boost your productivity. Please note that we haven't removed anything: all your app data and work in progress is still available in your dashboard. However, we've added new features and functionality that make it easier for you to do more in less time with Windows, as well as other programs you participate in, which you can now find right in the left navigation menu.
 
-Your Windows overview page will do much more, displaying richer data to highlight trends and key metrics to let you see how your apps are doing and stay informed about notable changes. Rather than having to go to a specific app first, now you can jump to that section using the navigation links in the left menu, and then choose the app you'd like to work with. You can switch to a different app at any time without having to leave the page.
 
-One of the ways we are working to improve your efficiency and productivity is by providing summary views for key areas and activities across your account. We've added views for these key areas:
+We're thrilled to announce that **the new developer dashboard is coming soon** and, as a member of the Dev Center Insider Program, you will be among the first to experience it!
 
-- **Attract**: Promote your apps with ad campaigns and see how many customers you're reaching. You can also generate promotional codes to let customers try out your products for free.
-- **Engage**: Respond to the reviews and feedback your customers leave. This is also where you create targeted notifications and manage groups of customers.
-- **Monetize**: Take advantage of our advertising monetization platform to earn money through in-app ads.
-- **Analyze**: Here's where you can access all your analytic data. You can choose the type of info you want to review, then optionally scope the data to a certain app. You may notice that we've combined some of the reports, so you can view related info in the same place. For instance, **Acquisitions** includes data on installs and channel conversions, and **Ratings** also shows reviews and feedback.
 
-To create submissions for apps and add-ons, you'll still choose the app first and then begin the submission process.
 
-As with any Dev Center Insider feature, we value your feedback. Please use the Feedback link in the bottom right corner of Dev Center to let us know what you think. And if you decide you're not ready to use the new dashboard design, you can always opt out of the Dev Center Insider Program in **Account Settings**.
+Beginning in early May, the new dashboard experience will be available for Insiders to use and provide us with feedback. It will include all of the existing Dev Center capabilities, while adding more of the ones you've been asking for.
+
+
+
+Some of the **highlights of the new dashboard** will include:
+
+- **Instant access to all of your developer programs** in one simple experience, without having to sign in and out to each one. We'll suggest new programs you might be interested in as they become available.
+
+- **A single location to access info relevant to you** including profile and account details, payout statements, and notifications.
+
+- **New account-level views** that allow you to quickly assess status and peform tasks without having to repeat the same steps for every product in your portfolio.
+
+- **A familiar, streamlined navigation model** to help you be more productive.
+
+
+
+As always, your participation and feedback helps us build the best capabilities and experiences possible so we can continue to succeed and grow together. Please use the **Feedback** link in the bottom right corner of Dev Center to let us know what you think. If you decide you're not ready to use the new dashboard design, you can always opt out of the Dev Center Insider Program in **Account Settings**.
+
+![New dashboard image 1](images/dashboard-1.png)
+
+![New dashboard image 2](images/dashboard-2.png)

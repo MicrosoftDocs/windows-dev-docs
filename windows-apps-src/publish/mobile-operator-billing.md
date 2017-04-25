@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 04/07/2017
+ms.date: 04/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,6 +29,7 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 | Country/region  | Mobile operators     |
 |-----------------|----------------------|
 | Austria         | Hutchison 3G Austria |
+| Canada          | Telus                |
 | Finland         | DNA, Elisa           |
 | France          | Orange               |
 | Germany         | O2                   |
@@ -64,7 +65,7 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Greece               | Vodafone                                                           |
 | Hungary              | Telenor, T-Mobile                                                  |
-| Indonesia            | Telkomsel, Hutchinson CP Telecommunications (HCPT)                 |
+| Indonesia            | Hutchinson CP Telecommunications (HCPT)                 |
 | Ireland              | O2, Vodafone, Three                                                |
 | Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
 | Netherlands          | T-Mobile, Vodafone                                                 |
