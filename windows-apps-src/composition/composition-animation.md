@@ -128,7 +128,7 @@ This is done by targeting the properties component of the Brush property on Spri
 
 ## Quick Formula: Getting Started with Composition Animations
 Before diving into the details on how to construct and use the different types of animations, below is a quick, high level formula for how to put together Composition Animations.  
-1.	Decide which property, sub channel property or Effect you want to animate - make note of the type.  
+1.	Get the compositor. This can be either from the page or the FrameworkElement you are animating on.  
 2.	Create a new object for your animation – this will either be a KeyFrame or Expression Animation.  
 	*  For KeyFrame animations, make sure you create a KeyFrame Animation type that matches the type of property you want to animate.  
 	*  There is only a single type of Expression Animation.  
@@ -139,12 +139,18 @@ Before diving into the details on how to construct and use the different types o
 
 ```cs
 // KeyFrame Animation Example to target Opacity property
+// Step 1 - Get the compositor
+_compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
+
 // Step 2 - Create your animation object
 var animation = _compositor.CreateScalarKeyFrameAnimation();
+
 // Step 3 - Define Content
-animation.InsertKeyFrameAnimation(1.0f, 0.2f); 
+animation.Duration = TimeSpan.FromSeconds(1);
+animation.InsertKeyFrame(1f, 0.2f);
+
 // Step 4 - Attach animation to Visual property and start animation
-_targetVisual.StartAnimation("Opacity", animation); 
+_targetVisual.StartAnimation(nameof(Visual.Opacity), animation); 
   
 // Expression Animation Example to target Opacity property
 // Step 2 - Create your animation object
