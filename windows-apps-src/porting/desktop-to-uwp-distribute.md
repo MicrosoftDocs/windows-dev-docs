@@ -4,7 +4,7 @@ Description: Distribute your UWP app converted with the Desktop to UWP Bridge
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Distribute
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 04/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,71 +14,32 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 
 # Distribute a Windows Desktop Bridge app
 
-There are three main ways to deploy your converted app: the Windows Store, sideloading, and loose file registration.  
+Publish your desktop bridge app to a Windows store or sideload it onto one or more devices.  
 
-## Windows Store
+## Distribute your app by publishing it to a Windows store
 
-The Windows Store is the most convenient way for customers to get your app. To get started, fill out the form at [Bring your existing apps and games to the Windows Store with the Desktop Bridge](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process.
+The [Windows app store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app. Publish your app to that store to reach the broadest audience.
 
-Note that you need to be the developer and/or publisher of the app or game to bring it to the Windows Store. As such, make sure your name and e-mail address match with the website you submit as the URL below, so we can validate you are the developer and/or publisher.
+Alternatively, you can distribute your app internally to users across your organization by using the [Windows Store for Business](https://www.microsoft.com/business-store).
 
-## Sideloading
+Whichever store you ultimately choose, start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge), and Microsoft will contact you to start the onboarding process.
 
-Sideloading provides an easy means for deploying to across multiple machines. It is especially useful in enterprise / line of business LOB) scenarios where you want finer control over the distribution experience and don't want to get involved with Store certificate.
+## Distribute your app without placing it onto a Windows store
 
-Before you deploy your via sideload app, you'll need to sign it with a certificate. For information on creating a certificate, see [Sign your Windows app package](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx).
+If you'd rather avoid the store, you can manually distribute apps to one or more devices.
 
-Here's how you import a certificate that you created previously. You can import the cert directly with CERTUTIL, or you can install it from an Windows app package that you've signed, like the customer will.
+This might make sense if you build apps for use in a small team and you're willing to handle the signing, hosting, and deployment of your app.
 
-To install cert via CERTUTIL, run the following command from an administrator command prompt:
+It can also make sense in cases where you want finer control over the distribution experience and don't want to get involved with the Windows Store certification process.
 
-```cmd
-Certutil -addStore TrustedPeople <testcert.cer>
-```
+Use this table to find the right steps for you.
 
-To import the cert from the Windows app package like a customer would:
-
-1.	In File Explorer, right click an Windows app package that you've signed with a test cert and choose **Properties** from the context menu.
-2.	Click or tap the **Digital Signatures** tab.
-3.	Click or tap on the certificate and choose **Details**.
-4.	Click or tap **View Certificate**.
-5.	Click or tap **Install Certificate**.
-6.	In the **Store Location** group, select **Local Machine**.
-7.	Click or tap **Next** and **OK** to confirm the UAC dialog.
-8.	In the next screen of the Certificate Import Wizard, change the selected option to **Place all certificates in the following store**.
-9.	Click or tap **Browse**. In the Select Certificate Store window, scroll down and select **Trusted People** and click or tap **OK**.
-10.	Click or tap **Next**. A new screen appears. Click or tap **Finish**.
-11.	A confirmation dialog should appear. If so, click **OK**. If a different dialog indicates that there is a problem with the certificate, you may need to do some certificate troubleshooting.
-
-Note: For Windows to trust the certificate, the certificate must be located in either the **Certificates (Local Computer) > Trusted Root Certification Authorities > Certificates** node or the **Certificates (Local Computer) > Trusted People > Certificates** node. Only certificates in these two locations can validate the certificate trust in the context of the local machine. Otherwise, an error message that resembles the following string appears:
-
-```CMD
-"Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
-but terminated in a rootcertificate which is not trusted by the trust provider.
-(Exception from HRESULT: 0x800B0109) error 0x800B0109: The root certificate of the signature
-in the app package must be trusted."
-```
-
-Now that the cert has been trusted, there are 2 ways you can install the package – through the powershell or just double-click on the Windows app package file to install it.  To install via powershell, run the following cmdlet:
-
-```powershell
-Add-AppxPackage <MyApp>.appx
-```
-
-### Loose file registration
-
-Loose file registration is useful for debugging purposes where the files are laid out on disk in a location you can easily access and update, and does not require signing or a cert.  
-
-To deploy your app during development, run the following PowerShell cmdlet:
-
-```Add-AppxPackage –Register AppxManifest.xml```
-
-To update your app's .exe or .dll files, simply replace the existing files in your package with the new ones, increase the version number in AppxManifest.xml, and then run the above command again.
-
-Note the following:
-
-* Any drive that you install your converted app on to must be formatted to NTFS format.
-* A converted app always runs as the interactive user.
+|Tool that you used to create your package |See|
+|--|--|
+|Visual Studio|[Sideload your app package](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps#sideload-your-app-package)|
+|Desktop App Converter (DAC)|[Run the converted app](desktop-to-uwp-run-desktop-app-converter.md#run-app) <br> Alternatively, use the links provided below for the manual approach.|
+|Manual approach | [Sign your Windows app package](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx) (first) <br>then <br>[Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)|
+|Third party tool/installer |See the documentation for that provider. <br>Alternatively, you can use the links provided above for the manual approach.|
 
 ## Next steps
 

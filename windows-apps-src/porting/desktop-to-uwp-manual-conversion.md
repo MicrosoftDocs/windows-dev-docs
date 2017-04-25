@@ -4,7 +4,7 @@ Description: Shows how to manually convert a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Manual Conversion
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 04/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,112 +14,187 @@ ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 
 # Convert an app manually (Desktop to UWP Bridge)
 
-Using the [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) is convenient and automatic, and it's useful if there's any uncertainty about what your installer does. But if your app is installed by using xcopy, or if you're familiar with the changes that your app's installer makes to the system, you may want to create an app package and manifest manually. This article contains the steps for getting started. It also explains how to add unplated assets to your app, which is not covered by the DAC.
+This topic shows you how to convert your app without using tools such as Visual Studio or the Desktop App Converter (DAC).
 
-Here's how to get started with manual conversion. Alternatively, if you have a .NET app and are using Visual Studio, see the article [Desktop Bridge Packaging Guide for .NET Desktop apps with Visual Studio](desktop-to-uwp-packaging-dot-net.md).  
+<div style="float: left; padding: 10px">
+    ![manual flow](images/desktop-to-uwp/manual-flow.png)
+</div>
 
-## Create a manifest by hand
+To manually convert your app, create a package manifest file, and then run a command line tool to generate a Windows app package.
 
-Your _appxmanifest.xml_ file needs to have the following content (at the minimum). Change placeholders that are formatted like \*\*\*THIS\*\*\* to actual values for your application.
+Consider manual conversion if you install your app by using the xcopy command, or you're familiar with the changes that your app's installer makes to the system and want more granular control over the process.
+
+If you're uncertain about what changes your installer makes to the system, or if you'd rather use automated tools to generate your package manifest, consider any of [these](desktop-to-uwp-root.md#convert) options.
+
+## Create a package manifest
+
+Create a file, name it **appxmanifest.xml**, and then add this XML to it.
+
+It's a basic template that contains the elements and attributes that your package needs. We'll add values to these in the next section.
 
 ```XML
-	<?xml version="1.0" encoding="utf-8"?>
-	<Package
-	   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-	   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-	   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-	  <Identity Name="***YOUR_PACKAGE_NAME_HERE***"
-		ProcessorArchitecture="x64"
-		Publisher="CN=***COMPANY_NAME***, O=***ORGANIZATION_NAME***, L=***CITY***, S=***STATE***, C=***COUNTRY***"
-		Version="***YOUR_PACKAGE_VERSION_HERE***" />
-	  <Properties>
-		<DisplayName>***YOUR_PACKAGE_DISPLAY_NAME_HERE***</DisplayName>
-		<PublisherDisplayName>Reserved</PublisherDisplayName>
-		<Description>No description entered</Description>
-		<Logo>***YOUR_PACKAGE_RELATIVE_DISPLAY_LOGO_PATH_HERE***</Logo>
-	  </Properties>
-	  <Resources>
-		<Resource Language="en-us" />
-	  </Resources>
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+	xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="" Version="" Publisher="" ProcessorArchitecture="" />
+    <Properties>
+       <DisplayName></DisplayName>
+       <PublisherDisplayName></PublisherDisplayName>
+			 <Description></Description>
+      <Logo></Logo>
+    </Properties>
+    <Resources>
+      <Resource Language="" />
+    </Resources>
 	  <Dependencies>
-		<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+	  <TargetDeviceFamily Name="Windows.Desktop" MinVersion="" MaxVersionTested="" />
 	  </Dependencies>
 	  <Capabilities>
-		<rescap:Capability Name="runFullTrust"/>
+	    <rescap:Capability Name="runFullTrust"/>
 	  </Capabilities>
-	  <Applications>
-		<Application Id="***YOUR_PRAID_HERE***" Executable="***YOUR_PACKAGE_RELATIVE_EXE_PATH_HERE***" EntryPoint="Windows.FullTrustApplication">
-		  <uap:VisualElements
-		   BackgroundColor="#464646"
-		   DisplayName="***YOUR_APP_DISPLAY_NAME_HERE***"
-		   Square150x150Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-		   Square44x44Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-		   Description="***YOUR_APP_DESCRIPTION_HERE***" />
-		</Application>
-	  </Applications>
-	</Package>
+    <Applications>
+      <Application Id="" Executable="" EntryPoint="Windows.FullTrustApplication">
+        <uap:VisualElements DisplayName="" Description=""	Square150x150Logo=""
+				   Square44x44Logo=""	BackgroundColor="" />
+      </Application>
+     </Applications>
+  </Package>
 ```
 
-Have unplated assets you'd like to add? See the section on [unplated assets](#unplated-assets) later in this article for details on how.
+## Fill in the package-level elements of your file
+
+Fill in this template with information that describes your package.
+
+### Identity information
+
+Here's an example **Identity** element with placeholder text for the attributes. You can set the ``ProcessorArchitecture`` attribute to ``x64`` or ``x86``.
+
+```XML
+<Identity Name="MyCompany.MySuite.MyApp"
+          Version="1.0.0.0"
+          Publisher="CN=MyCompany, O=MyCompany, L=MyCity, S=MyState, C=MyCountry"
+			    ProcessorArchitecture="x64">
+```
+
+### Properties
+
+The [Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) element has 3 required child elements. Here is an example **Properties** node with placeholder text for the elements. The **DisplayName** is the name of your app that you reserve in the store, for apps which are uploaded to the store.
+
+```XML
+<Properties>
+  <DisplayName>MyApp</DisplayName>
+  <PublisherDisplayName>MyCompany</PublisherDisplayName>
+  <Logo>images\icon.png</Logo>
+</Properties>
+```
+
+### Resources
+
+Here is an example [Resources](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources) node.
+
+```XML
+<Resources>
+  <Resource Language="en-us" />
+</Resources>
+```
+### Dependencies
+
+For desktop bridge apps, always set the ``Name`` attribute to ``Windows.Desktop``.
+
+```XML
+<Dependencies>
+<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.15063.0" />
+</Dependencies>
+```
+
+### Capabilities
+
+For desktop bridge apps, you'll have to add the ``runFullTrust`` capability.
+
+```XML
+<Capabilities>
+  <rescap:Capability Name="runFullTrust"/>
+</Capabilities>
+```
+## Fill in the application-level elements
+
+Fill in this template with information that describes your app.
+
+### Application element
+
+For desktop bridge apps, the ``EntryPoint`` attribute of the Application element is always ``Windows.FullTrustApplication``.
+
+```XML
+<Applications>
+  <Application Id="MyApp"     
+		Executable="MyApp.exe" EntryPoint="Windows.FullTrustApplication">
+   </Application>
+</Applications>
+```
+
+### Visual elements
+
+Here is an example [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) node.
+
+```XML
+<uap:VisualElements
+	BackgroundColor="#464646"
+	DisplayName="My App"
+	Square150x150Logo="images\icon.png"
+	Square44x44Logo="images\small_icon.png"
+	Description="A useful description" />
+```
+
+## (Optional) Add Target-based unplated assets
+
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets).
+
+1. Obtain the correct 44x44 images and then copy them into the folder that contains your images (i.e., Assets).
+
+2. For each 44x44 image, create a copy in the same folder and append **.targetsize-44_altform-unplated** to the file name. You should have two copies of each icon, each named in a specific way. For example, after completing the process, your assets folder might contain **MYAPP_44x44.png** and **MYAPP_44x44.targetsize-44_altform-unplated.png**.
+
+   > [!NOTE]
+   > In this example, the icon named **MYAPP_44x44.png** is the icon that you'll reference in the ``Square44x44Logo`` logo attribute of your Windows app package.
+
+3.	In the Windows app package, set the ``BackgroundColor`` for every icon you are making transparent.
+
+4.	Open CMD, change directory to the package's root folder, and then create a priconfig.xml file by running the command ``makepri createconfig /cf priconfig.xml /dq en-US``.
+
+5.	Create the resources.pri file(s) by using the command ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
+
+    For example, the command for your app might look like this: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
+
+6.	Package your Windows app package by using the instructions in the next step to see the results.
 
 <span id="make-appx" />
-## Run the MakeAppX tool
+## Generate a Windows app package
 
-Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) to generate a Windows app package for your project. MakeAppx.exe is included with the Windows 10 SDK.
+Use **MakeAppx.exe** to generate a Windows app package for your project. It's included with the Windows 10 SDK.
 
-To run MakeAppx, first ensure you've created an manifest file as described above.
+See [Create an app package with the MakeAppx.exe tool](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
 
-Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example:
+## Run the converted app
 
-```
-[Files]
-"C:\MyApp\StartPage.htm"     "default.html"
-"C:\MyApp\readme.txt"        "doc\readme.txt"
-"\\MyServer\path\icon.png"   "icon.png"
-"MyCustomManifest.xml"       "AppxManifest.xml"
-```
+You can run your app to test it out locally without having to obtain a certificate and sign it. Just run this PowerShell cmdlet:
 
-Finally, run the following command:
+```Add-AppxPackage –Register AppxManifest.xml```
 
-```cmd
-MakeAppx.exe pack /f mapping_filepath /p filepath.appx
-```
-<span id="sign-appx" />
-## Sign your Windows app package
+To update your app's .exe or .dll files, replace the existing files in your package with the new ones, increase the version number in AppxManifest.xml, and then run the above command again.
 
-The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), which ships in the Microsoft Windows 10 SDK, to sign the Windows app package.
-
-Example usage:
-
-```cmd
-C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
-C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
-C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
-```
-When you run MakeCert.exe and you're asked to enter a password, select **none**. For more info on certificates and signing, see the following:
-
-- [How to: Create Temporary Certificates for Use During Development](https://msdn.microsoft.com/library/ms733813.aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-- [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
-
-<span id="unplated-assets" />
-## Add unplated assets
-
-Here's how to optionally configure the 44x44 assets for your app that show up on the taskbar.
-
-1. Obtain the correct 44x44 images and copy them into the folder that contains your images (i.e., Assets).
-
-2. For each 44x44 image, create a copy in the same folder and append *.targetsize-44_altform-unplated* to the file name. You should have two copies of each icon, each named in a specific way. For example, after completing the process, your assets folder might contain *MYAPP_44x44.png* and *MYAPP_44x44.targetsize-44_altform-unplated.png* (note: the former is the icon referenced in the appxmanifest under VisualElements attribute *Square44x44Logo*).
-
-3.	In the AppXManifest, set the BackgroundColor for every icon you are fixing to transparent. This attribute can be found under VisualElements for each application.
-
-4.	Open CMD, change directory to the package's root folder, and create a priconfig.xml file by running the command ```makepri createconfig /cf priconfig.xml /dq en-US```.
-
-5.	Using CMD, staying in the package’s root folder, create the resources.pri file(s) using the command ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. For example, the command for your app might look like ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```.
-
-6.	Package your Windows app package using the instructions in the next step to see the results.
+> [!NOTE]
+> A converted app always runs as an interactive user, and any drive that you install your converted app on to must be formatted to NTFS format.
 
 ## Next steps
+
+**Step through code / find and fix issues**
+
+See [Debug a Windows Desktop Bridge App](desktop-to-uwp-debug.md)
+
+**Sign your app and then distribute it**
+
+See [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md)
 
 **Find answers to specific questions**
 

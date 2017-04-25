@@ -281,7 +281,7 @@ See [Run your converted app](#run-app).
 > [!NOTE]
 > If you're prompted for a password, use the default password "123456".
 
-To sign your app for distribution, see [Sign your Windows app package](desktop-to-uwp-manual-conversion.md#sign-appx).
+To sign your app for distribution, see [Sign your Windows app package](desktop-to-uwp-signing.md).
 
 **Videos**
 

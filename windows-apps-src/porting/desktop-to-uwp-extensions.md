@@ -53,7 +53,6 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration).
 
-
 |Name | Description |
 |-------|-------------|
 |Category |Always ``windows.desktopAppMigration``.
@@ -66,16 +65,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 <Package
   xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
   IgnorableNamespaces="rescap3">
-  ...
-  <rescap3:Extension Category="windows.desktopAppMigration">
-      <rescap3:DesktopAppMigration>
-          <rescap3:DesktopApp AumId="[your_app_aumid]" />
-          <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\[my_app].lnk" />
-          <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk" />
-          <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk"/>
-      </rescap3:DesktopAppMigration>
-  </rescap3:Extension>
-  ...
+  <Applications>
+    <Application>
+      <Extensions>
+        <rescap3:Extension Category="windows.desktopAppMigration">
+          <rescap3:DesktopAppMigration>
+            <rescap3:DesktopApp AumId="[your_app_aumid]" />
+            <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\[my_app].lnk" />
+            <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk" />
+            <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk"/>
+         </rescap3:DesktopAppMigration>
+        </rescap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 
@@ -118,16 +121,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
   IgnorableNamespaces="uap3, rescap3">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="Contoso">
-          <rescap3:MigrationProgIds>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="Contoso">
+            <rescap3:MigrationProgIds>
               <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
-          </rescap3:MigrationProgIds>
-      </uap3:FileTypeAssociation>
-  </uap:Extension>
-  ...
+            </rescap3:MigrationProgIds>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 <span id="associate" />
@@ -167,16 +174,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   IgnorableNamespaces="uap, uap3">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="Contoso">
-          <uap:SupportedFileTypes>
-	            <uap:FileType>.txt</uap:FileType>
-	            <uap:FileType>.avi</uap:FileType>
-          </uap:SupportedFileTypes>
-       </uap3:FileTypeAssociation>
-  </uap:Extension>
-  ...
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="Contoso">
+            <uap:SupportedFileTypes>
+      	      <uap:FileType>.txt</uap:FileType>
+      	      <uap:FileType>.avi</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 
@@ -226,16 +237,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
 
   IgnorableNamespaces="uap, uap2, uap3">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="Contoso">
-          <uap2:SupportedVerbs>
-	            <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
-	            <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
-          </uap2:SupportedVerbs>
-      </uap3:FileTypeAssociation>
-  </uap:Extension>
-  ...
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="Contoso">
+            <uap2:SupportedVerbs>
+      	      <uap3:Verb Id="Edit" Parameters="/e &quot;%1&quot;">Edit</uap3:Verb>
+      	      <uap3:Verb Id="Print" Extended="true" Parameters="/p &quot;%1&quot;">Print</uap3:Verb>
+            </uap2:SupportedVerbs>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 
@@ -278,16 +293,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   IgnorableNamespaces="uap, uap3">
-
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="documenttypes" UseUrl="True" Parameters="%1">
-          <uap:SupportedFileTypes>
-              <uap:FileType>.txt</uap:FileType>
-              <uap:FileType>.doc</uap:FileType>
-          </uap:SupportedFileTypes> 
-      </uap3:FileTypeAssociation>
-  </uap:Extension>
-  ...
+  <Applications>
+      <Application>
+        <Extensions>
+          <uap:Extension Category="windows.fileTypeAssociation">
+            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="True" Parameters="%1">
+              <uap:SupportedFileTypes>
+                <uap:FileType>.txt</uap:FileType>
+                <uap:FileType>.doc</uap:FileType>
+              </uap:SupportedFileTypes> 
+            </uap3:FileTypeAssociation>
+          </uap:Extension>
+        </Extensions>
+      </Application>
+    </Applications>
 </Package>
 ```
 
@@ -343,8 +362,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 <Package
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="desktop2">
-  ...
-  <desktop2:Extension Category="windows.firewallRules">  
+  <Extensions>
+    <desktop2:Extension Category="windows.firewallRules">  
       <desktop2:FirewallRules Executable="Contoso.exe">  
           <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all"/>  
           <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="1337" LocalPortMax="1338" Profile="domain"/>  
@@ -354,6 +373,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
           <desktop2:Rule Direction="out" IPProtocol="GRE" Profile="private"/>  
       </desktop2:FirewallRules>  
   </desktop2:Extension>
+</Extensions>
 </Package>
 ```
 
@@ -398,17 +418,21 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 <Package
   xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="desktop">
-  ...
-   <desktop:Extension
-       Category="windows.startupTask"
-       Executable="bin\MyStartupTask.exe"
-       EntryPoint="Windows.FullTrustApplication">
-	    <desktop:StartupTask
+  <Applications>
+    <Application>
+      <Extensions>
+        <desktop:Extension
+          Category="windows.startupTask"
+          Executable="bin\MyStartupTask.exe"
+          EntryPoint="Windows.FullTrustApplication">
+     	  <desktop:StartupTask
           TaskId="MyStartupTask"
           Enabled="true"
           DisplayName="My App Service" />
-   </desktop:Extension>
-   ...
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
  </Package>
 ```
 ## Integrate with File Explorer
@@ -472,18 +496,22 @@ Converted desktop apps have the same three options as regular desktop apps.
   xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   IgnorableNamespaces="uap, uap2, uap3">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-    <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
-        <uap2:SupportedVerbs>
-            <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
-            <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
-        </uap2:SupportedVerbs>
-	      <uap:SupportedFileTypes>
-		        <uap:FileType>.txt</uap:FileType>
-        </uap:SupportedFileTypes>
-  </uap:Extension>
-  ...
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="myapp" MultiSelectModel="Document">
+            <uap2:SupportedVerbs>
+              <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap3:Verb>
+              <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap3:Verb>
+            </uap2:SupportedVerbs>
+      	    <uap:SupportedFileTypes>
+      		    <uap:FileType>.txt</uap:FileType>
+            </uap:SupportedFileTypes>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 
@@ -537,19 +565,23 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="uap, uap2, uap3, desktop2">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="Contoso">
-          <uap2:SupportedFileTypes>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="Contoso">
+            <uap2:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-      </uap2:SupportedFileTypes>
-      <desktop2:ThumbnailHandler
-          Clsid  ="20000000-0000-0000-0000-000000000001"
-          Cutoff="20x20"
-          Treatment="Video Sprockets" />
-      </uap3:FileTypeAssociation>
-   </uap::Extension>
-...
+            </uap2:SupportedFileTypes>
+            <desktop2:ThumbnailHandler
+              Clsid  ="20000000-0000-0000-0000-000000000001"
+              Cutoff="20x20"
+              Treatment="Video Sprockets" />
+            </uap3:FileTypeAssociation>
+         </uap::Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 
@@ -596,16 +628,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="uap, uap2, uap3, desktop2">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="Contoso">
-          <uap2SupportedFileTypes>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="Contoso">
+            <uap2SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-          </uap2SupportedFileTypes>
-          <desktop2:DesktopPreviewHandler Clsid ="20000000-0000-0000-0000-000000000001" />
-      </uap3:FileTypeAssociation>
-  </uap:Extension>
-  ...
+                </uap2SupportedFileTypes>
+              <desktop2:DesktopPreviewHandler Clsid ="20000000-0000-0000-0000-000000000001" />
+           </uap3:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 
@@ -654,21 +690,25 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
   IgnorableNamespaces="uap, rescap">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-     <uap:FileTypeAssociation Name="Contoso">
-         <uap:SupportedFileTypes>
-             <uap:FileType>.m4a</uap:FileType>
-             <uap:FileType>.mta</uap:FileType>
-         </uap:SupportedFileTypes>
-         <rescap:KindMap>
-             <rescap:Kind value="Item">
-             <rescap:Kind value="Communications">
-           <rescap:Kind value="Task">
-         </rescap:KindMap>
-    </uap:FileTypeAssociation>
-</uap:Extension>
-...
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+           <uap:FileTypeAssociation Name="Contoso">
+             <uap:SupportedFileTypes>
+               <uap:FileType>.m4a</uap:FileType>
+               <uap:FileType>.mta</uap:FileType>
+             </uap:SupportedFileTypes>
+             <rescap:KindMap>
+               <rescap:Kind value="Item">
+               <rescap:Kind value="Communications">
+               <rescap:Kind value="Task">
+             </rescap:KindMap>
+          </uap:FileTypeAssociation>
+      </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 <span id="make" />
@@ -710,16 +750,20 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="uap, uap3, desktop2">
-  ...
-  <uap:Extension Category="windows.fileTypeAssociation">
-      <uap3:FileTypeAssociation Name="Contoso">
-          <uap:SupportedFileTypes>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap3:FileTypeAssociation Name="Contoso">
+            <uap:SupportedFileTypes>
               <uap:FileType>.bar</uap:FileType>
-          </uap:SupportedFileTypes>
-          <desktop2:DesktopPropertyHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
-      </uap3:FileTypeAssociation>
-  </uap:Extension>
-  ...
+            </uap:SupportedFileTypes>
+            <desktop2:DesktopPropertyHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
+          </uap3:FileTypeAssociation>
+        </uap:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 <span id="start" />
@@ -763,14 +807,18 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 <Package
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   IgnorableNamespaces="uap3">
-  ...
-  <uap3:Extension
-      Category="windows.protocol">
-	  <uap3:Protocol
-        Name="myapp-cmd"
-        Parameters="/p &quot;%1&quot;" />
-  </uap3:Extension>
-  ...
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension
+          Category="windows.protocol">
+      	<uap3:Protocol
+          Name="myapp-cmd"
+          Parameters="/p &quot;%1&quot;" />
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
 </Package>
 ```
 <span id="alias" />
@@ -867,15 +915,21 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 <Package
   xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
   IgnorableNamespaces="desktop2">
-  ...
-  <desktop2:Extension Category="windows.appPrinter">
-      <desktop2:AppPrinter
-           DisplayName="Send to Contoso"
-           Parameters="/insertdoc %1" />
-  </desktop2:Extension>
-  ...
+  <Applications>
+  <Application>
+    <Extensions>
+      <desktop2:Extension Category="windows.appPrinter">
+        <desktop2:AppPrinter
+          DisplayName="Send to Contoso"
+          Parameters="/insertdoc %1" />
+      </desktop2:Extension>
+    </Extensions>
+  </Application>
+</Applications>
 </Package>
 ```
+Find a sample that uses this extension [Here](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
+
 <span id="fonts" />
 ### Share fonts with other Windows applications
 
@@ -909,18 +963,20 @@ Find the complete schema reference [here](https://review.docs.microsoft.com/uwp/
 <Package
   xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
   IgnorableNamespaces="uap4">
-  ...
-  <uap4:Extension Category="windows.sharedFonts">
-      <uap4:SharedFonts>
-        <uap4:Font File="Fonts\JustRealize.ttf" />
-        <uap4:Font File="Fonts\JustRealizeBold.ttf" />
-      </uap4:SharedFonts>
-    </uap4:Extension>
-    ...
-  </Package>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap4:Extension Category="windows.sharedFonts">
+          <uap4:SharedFonts>
+            <uap4:Font File="Fonts\JustRealize.ttf" />
+            <uap4:Font File="Fonts\JustRealizeBold.ttf" />
+          </uap4:SharedFonts>
+        </uap4:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
 ```
-
-
 <span id="win32-process" />
 ### Start a Win32 process from a Universal Windows Platform (UWP) app
 
@@ -959,7 +1015,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
       <rescap:Capability Name="runFullTrust"/>
   </Capabilities>
   <Applications>
-       ...
+    <Application>
       <Extensions>
           <desktop:Extension Category="windows.fullTrustProcess" Executable="fulltrustprocess.exe">
               <desktop:FullTrustProcess>
@@ -968,7 +1024,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
               </desktop:FullTrustProcess>
            </desktop:Extension>
       </Extensions>
-     ...
+    </Application>
   </Applications>
 </Package>
 ```
