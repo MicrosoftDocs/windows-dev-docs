@@ -3,7 +3,7 @@ author: mukin
 Description: This tutorial-style article walks the reader through the steps to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
 title: Create a simple weather app by using Grid and StackPanel
 template: detail.hbs
-ms.author: wdg-dev-content
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
