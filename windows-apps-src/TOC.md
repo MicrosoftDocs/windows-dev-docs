@@ -46,7 +46,7 @@
 ### [Typography](style/typography.md)
 #### [Fonts](style/fonts.md)
 #### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
-### [Styling controls](controls-and-patterns/styling-controls.md)
+### [XAML Styles](controls-and-patterns/xaml-styles.md)
 #### [XAML Control templates](controls-and-patterns/control-templates.md)
 #### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
 #### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
