@@ -13,7 +13,7 @@ ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 
 # Choose a UWP version
 
-When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Currently, there are only three possible versions.
+When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Available versions are described in teh following table: 
 
 | Version | Description |
 | --- | --- |
