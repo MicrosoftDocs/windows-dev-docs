@@ -13,7 +13,7 @@ ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 
 # Choose a UWP version
 
-When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Currently, there are only three possible versions.
+Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Available versions are described in the following table:
 
 | Version | Description |
 | --- | --- |
@@ -21,6 +21,8 @@ When writing a UWP app in Microsoft Visual Studio, you can choose which version 
 | Build 14393 (Anniversary Update) | This version of Windows 10 was released in July 2016. Some highlighted features from this release include: </br> \* **Windows Ink:** New InkCanvas and InkToolbar controls. </br> \* **Cortana APIs:** Use new Cortana Actions to integrate Cortana support with specific functions of your app. </br> \* **Windows Hello:** Microsoft Edge now supports Windows Hello, giving web developers access to biometric authentication. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-version-1607.md)  |
 | Build 10586 | This version of Windows 10 was released in November 2015. Highlighted features include the introduction of ORTC (object real-time communications) APIs for video communication in Microsoft Edge and Providers APIs to enable apps to use Windows Hello face authentication. [More information on features introduced in this build.](../whats-new/windows-10-version-1511.md) |
 | Build 10240 | This is the initial release version of Windows 10, from July 2015. [More information on features introduced in this build.](../whats-new/windows-10-version-1507.md) |
+
+Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows.
 
 We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (15063). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
 
