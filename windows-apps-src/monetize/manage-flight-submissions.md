@@ -15,9 +15,6 @@ keywords: windows 10, uwp, Windows Store submission API, flight submissions
 
 The Windows Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 
-> [!NOTE]
-> These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. This permission is being enabled to developer accounts in stages, and not all accounts have this permission enabled at this time. To request earlier access, log on to the Dev Center dashboard, click **Feedback** at the bottom of the dashboard, select **Submission API** for the feedback area, and submit your request. You'll receive an email when this permission is enabled for your account.
-
 > [!IMPORTANT]
 > If you use the Windows Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 

@@ -28,8 +28,6 @@ To use this method, you need to first do the following:
 * Create a submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create an app submission](create-an-app-submission.md) method.
 * Enable a gradual package rollout for the submission. You can do this in the [Dev Center dashboard](../publish/gradual-package-rollout.md), or you can do this by [using the Windows Store submission API](manage-app-submissions.md#manage-gradual-package-rollout).
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
-
 ## Request
 
 This method has the following syntax. See the following sections for usage examples and descriptions of the header and request parameters.

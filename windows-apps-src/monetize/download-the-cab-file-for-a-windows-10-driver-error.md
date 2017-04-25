@@ -51,6 +51,7 @@ To use this method, you need to first do the following:
 
 | Parameter        | Type   |  Description      |  Required  |
 |---------------|--------|---------------|------|
+| applicationId | string | The product ID value of the driver for which you want to retrieve error data. |  Yes  |
 | cabIdHash | string | The unique ID of the CAB file you want to download. To get this ID, use the [get details for a Windows 10 driver error](get-details-for-a-windows-10-driver-error.md) method to retrieve details for a specific error in your app, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
 <span/>
@@ -60,7 +61,7 @@ To use this method, you need to first do the following:
 The following example demonstrates how to download a CAB file using this method.
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/driver/cabdownload?cabIdHash=c1a51104-d682-4230-be14-7278b18e3555 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/driver/cabdownload?applicationId=18430592857500421&cabIdHash=c1a51104-d682-4230-be14-7278b18e3555 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
