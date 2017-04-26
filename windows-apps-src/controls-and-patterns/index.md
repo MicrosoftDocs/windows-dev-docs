@@ -171,11 +171,9 @@ Detailed information about specific controls and patterns.
 </ul>
 </div>
 
-## Additional controls options
+## Additional controls
 
 Additional controls for UWP development are available from companies such as [Telerik](http://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),
 [Infragistics](http://www.infragistics.com/products/universal-windows-platform), [ComponentOne](https://www.componentone.com/Studio/Platform/UWP), and [ActiPro](http://www.actiprosoftware.com/products/controls/universal). These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.  
 
 If you're interested in learning more about these controls, check out the [Customer orders database](https://github.com/Microsoft/Windows-appsample-customers-orders-database) sample on GitHub. This sample makes use of the data grid control and data entry validation from Telerik, which is part of their UI for UWP suite. The UI for UWP suite is a collection of over 20 controls that is available as an open source project through the .NET foundation.
-
-![Customer orders database image](images/customerOrdersDataGrid.png)

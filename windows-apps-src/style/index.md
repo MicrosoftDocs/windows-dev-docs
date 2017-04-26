@@ -16,17 +16,7 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-  <p>Design guidance and code examples that teach you how to define your UWP app’s personality through color, typography, and motion.</p>
-  </div>
-  <div class="side-by-side-content-right">
-    ![Color, icon, motion, sound, and typography guidelines](images/style-header-v2.png)
-  </div>
-</div>
-</div>
-
+<p>Design guidance and code examples that teach you how to define your UWP app’s personality through color, typography, and motion.</p>
 
 <div class="side-by-side">
 <div class="side-by-side-content">

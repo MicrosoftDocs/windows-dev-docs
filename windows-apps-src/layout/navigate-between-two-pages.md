@@ -20,8 +20,6 @@ keywords: windows 10, uwp
 
 Learn how to navigate in a basic two page peer-to-peer Universal Windows Platform (UWP) app.
 
-![two-page peer-to-peer navigation example](images/nav-peertopeer-2page.png)
-
 <div class="important-apis" >
 <b>Important APIs</b><br/>
 <ul>

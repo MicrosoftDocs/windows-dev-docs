@@ -50,15 +50,6 @@ When options can be grouped, you can use an indeterminate check box to represent
 
 Both **check box** and **radio button** controls let the user select from a list of options. Check boxes let the user select a combination of options. In contrast, radio buttons let the user make a single choice from mutually exclusive options. When there is more than one option but only one can be selected, use a radio button instead.
 
-## Examples
-
-A check box in a dialog in the Microsoft Edge browser.
-
-![A check box in a dialog in the Microsoft Edge browser](images/control-examples/check-box-edge.png)
-
-Check boxes in the Alarms & Clock app in Windows.
-
-![Check boxes in the Alarms & Clock app in Windows](images/control-examples/check-box-alarm.png)
 
 ## Create a checkbox
 

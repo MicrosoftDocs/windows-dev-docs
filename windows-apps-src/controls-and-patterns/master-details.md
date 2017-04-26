@@ -70,15 +70,7 @@ For the master pane, a [list view](lists.md) control works well for presenting l
 
 For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
 
-## Examples
-
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
-
-![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
-
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
-
-![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
+## Get the code samples
 
 For sample code that shows the master/details pattern, see
 - [ListView and GridView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)

@@ -42,15 +42,11 @@ Because of how the scaling system works, when you design your UWP app, you're de
 
 -   You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class (for details, see the [Screen sizes and breakpoints article](screen-sizes-and-breakpoints-for-responsive-design.md)).
 
--   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes and positions of UI elements, and the position (but not the size—text can be any size) of text a multiple of 4 effective pixels.
+-   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes, and the positions of UI elements a multiple of 4 effective pixels. Note that text doesn't have this requirement; the text can have any size and position. 
 
 This illustration shows design elements that map to the 4x4 pixel grid. The design element will always have crisp, sharp edges.
 
 ![snapping to the 4x4 pixel grid](images/rsp-design/epx-4pixelgood.png)
-
-The next illustration shows design elements that don't map to the 4x4 grid. These design elements will have blurry, soft edges on some devices.
-
-![design elements that do not align to the 4x4 pixel grid](images/rsp-design/offthegridillustration.png)
 
 > [!TIP]
 > When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. For a list of size classes and effective resolutions, see the [Screen sizes and breakpoints article](screen-sizes-and-breakpoints-for-responsive-design.md).

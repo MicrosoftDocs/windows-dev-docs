@@ -39,12 +39,6 @@ Choose the right type of hyperlink based on your needs:
 -   Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
 -   Use a **HyperlinkButton** with an [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) as its content to make a clickable image.
 
-## Examples
-
-Hyperlinks in the Calculator app.
-
-![Example of a hyperlink in the Calculator app](images/control-examples/hyperlinks-calculator.png)
-
 ## Create a Hyperlink text element
 
 This example shows how to use a Hyperlink text element inside of a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx).
