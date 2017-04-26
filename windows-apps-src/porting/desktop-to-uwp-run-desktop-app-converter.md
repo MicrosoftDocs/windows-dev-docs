@@ -4,7 +4,7 @@ Description: Run the Desktop Converter App to convert a Windows desktop applicat
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop to UWP Bridge Desktop App Converter
 ms.author: normesta
-ms.date: 04/11/2017
+ms.date: 04/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,49 @@ You can install that package by using the Add-AppxPackage PowerShell cmdlet on y
 The converter runs the desktop installer in an isolated Windows environment by using a clean base image provided as part of the converter download. It captures any registry and file system I/O made by the desktop installer and packages it as part of the output.
 
 > [!NOTE]
-> Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/" target="_blank">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.  
+> Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/" target="_blank">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.
+
+## The DAC does more than just convert
+
+Here's a few extra things it can do for you.
+
+**Windows 10 Creators Update**
+
+<div style="float: left; ">
+    ![Check](images/desktop-to-uwp/check.png)
+</div>
+
+Automatically register your preview handlers, thumbnail handlers, property handlers, firewall rules, URL flags.
+
+<div style="float: left; ">
+    ![Check](images/desktop-to-uwp/check.png)
+</div>
+
+Automatically register file type mappings that enable users to group files by using the **Kind** column in File Explorer.
+
+<div style="float: left; ">
+    ![Check](images/desktop-to-uwp/check.png)
+</div>
+
+Register your public COM servers.
+
+**Windows 10 Anniversary Update or later**
+
+<div style="float: left; ">
+    ![Check](images/desktop-to-uwp/check.png)
+</div>
+
+Generate a certificate to that you can use to run your app.
+
+<div style="float: left; ">
+    ![Check](images/desktop-to-uwp/check.png)
+</div>
+
+Validate your app against Desktop Bridge and Windows Store requirements.
+
+To find a complete list of options, see the [Parameters](#command-reference) section of this guide.
+
+If you're ready to convert, let's start.
 
 ## First, make sure that your system can run the converter
 
@@ -214,7 +256,7 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-AppInstallPath &lt;String&gt;  |Optional |The full path to your application's root folder for the installed files if it were installed (e.g., "C:\Program Files (x86)\MyApp").|
 |-Destination &lt;String&gt; |Required |The desired destination for the converter's appx output - DesktopAppConverter can create this location if it doesn't already exist.|
 |-Installer &lt;String&gt; |Required |The path to the installer for your application - must be able to run unattended/silently. No-installer conversion, this is the path to the root directory of your app files. |
-|-InstallerArguments &lt;String&gt; |Optional |A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path &lt;log_folder&gt;, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE**: The unattended/silent flags and log arguments will vary between installer technologies. <br><br>An example usage for this parameter: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path ```&lt;log_folder&gt;``` if you want the converter to capture it and put it in the final log folder.|
+|-InstallerArguments &lt;String&gt; |Optional |A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path &lt;log_folder&gt;, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE**: The unattended/silent flags and log arguments will vary between installer technologies. <br><br>An example usage for this parameter: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path &lt;log_folder&gt; if you want the converter to capture it and put it in the final log folder.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Optional |A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
 |<span id="identity-params" /><strong>Package identity parameters</strong>||
 |-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package |
@@ -242,6 +284,7 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 | -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package by using a generated certificate for testing purposes. This switch should be present alongside the switch ```-MakeAppx```. |
 |&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
 | -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the converted app package against Desktop Bridge and Windows Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
+|-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you convert your app.
 
 <span id="run-app" />
 ## Run the converted app
@@ -341,6 +384,13 @@ To resolve this issue, try using your architecture-specific desktop installer (3
   + File System: %windir%\\SideBySide
 
 This is a known limitation and no workaround currently exists. That said, Inbox assemblies, like ComCtl, are shipped with the OS, so taking a dependency on them is safe.
+
+#### Error found in XML. The 'Executable' attribute is invalid - The value 'MyApp.EXE' is invalid according to its datatype
+
+This can happen if the executables in your application have a capitalized **.EXE** extension. Although, the casing of this extension shouldn't affect whether your app runs, this can cause the DAC to generate this error.
+
+To resolve this issue, try specifying the **-AppExecutable** flag when you convert, and use the lower case ".exe" as the extension of your main executable (For example: MYAPP.exe).    Alternately you can change the casing for all executables in your app from lowercase to uppercase (For example: from .EXE to .exe).
+
 
 ### Telemetry from Desktop App Converter
 
