@@ -23,6 +23,7 @@ Help your users be more productive by letting them view multiple independent par
  - An address book app that allows users to compare saved contact information of multiple people side-by-side
  - A music player app that allows users to see what's playing and also browse through the list of other available music
  - A note-taking app that allows users to copy information from one page of notes to another
+ - A reading app that allows users to open several articles for reading later, after an opportunity to peruse all high-level headlines
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -135,7 +136,7 @@ Other views, including all views that you create by calling [**CreateNewView**](
 
 ## Switch from one view to another
 
-You must provide a way for the user to navigate from a secondary window back to the main window. To do this, use the [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) method. You call this method from the thread of the window you're switching from and pass the view ID of the window you're switching to.
+Consider providing a way for the user to navigate from a secondary window back to the main window. To do this, use the [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) method. You call this method from the thread of the window you're switching from and pass the view ID of the window you're switching to.
 
 ```csharp
 await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
@@ -143,7 +144,14 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 When you use [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097), you can choose if you want to close the initial window and remove it from the taskbar by specifying the value of [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105).
 
-## Related articles
+## Do's and don'ts
+
+* Do provide a clear entry point to the secondary view by utilizing the "open new window" glyph.
+* Do communicate the purpose of the secondary view to users.
+* Do ensure that your app works is fully functional in a single view and users will open a secondary view only for convenience.
+* Don't rely on the secondary view to provide notifications or other transient visuals.
+
+## Related topics
 
 * [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
 * [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
