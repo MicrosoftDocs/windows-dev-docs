@@ -54,6 +54,7 @@ As mentioned previously, input devices such as the Xbox gamepad and remote contr
 Where necessary, we’ll identify key differences you should be aware of and describe any mitigations you should consider.
 
 Here are the devices and tools discussed in this topic:
+
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
 |Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP apps support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).|
