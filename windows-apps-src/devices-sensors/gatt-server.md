@@ -60,7 +60,7 @@ if (result.Error == BluetoothError.Success)
 Now, populate the service with the required characteristics and descriptors:
 
 ```csharp
-GattLocalCharacteristicResult characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid1, ReadParameters);
+GattLocalCharacteristicResult characteristicResult = await serviceProvider.Service.CreateCharacteristicAsync(uuid1, ReadParameters);
 if (characteristicResult.Error != BluetoothError.Success)
 {
     // An error occurred.
@@ -69,7 +69,7 @@ if (characteristicResult.Error != BluetoothError.Success)
 _readCharacteristic = characteristicResult.Characteristic;
 _readCharacteristic.ReadRequested += ReadCharacteristic_ReadRequested;
 
-characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid2, WriteParameters);
+characteristicResult = await serviceProvider.Service.CreateCharacteristicAsync(uuid2, WriteParameters);
 if (characteristicResult.Error != BluetoothError.Success)
 {
     // An error occurred.
@@ -78,7 +78,7 @@ if (characteristicResult.Error != BluetoothError.Success)
 _writeCharacteristic = characteristicResult.Characteristic;
 _writeCharacteristic.WriteRequested += WriteCharacteristic_WriteRequested;
 
-characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid3, NotifyParameters);
+characteristicResult = await serviceProvider.Service.CreateCharacteristicAsync(uuid3, NotifyParameters);
 if (characteristicResult.Error != BluetoothError.Success)
 {
     // An error occurred.
@@ -101,7 +101,7 @@ var constantParameters = new GattLocalCharacteristicParameters
     ReadProtectionLevel = GattProtectionLevel.Plain,
 };
 
-var characteristicResult = await serviceProvider.CreateCharacteristicAsync(uuid4, constantParameters);
+var characteristicResult = await serviceProvider.Service.CreateCharacteristicAsync(uuid4, constantParameters);
 if (characteristicResult.Error != BluetoothError.Success)
 {
     // An error occurred.
