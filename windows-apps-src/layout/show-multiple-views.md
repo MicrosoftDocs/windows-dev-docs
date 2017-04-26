@@ -7,7 +7,7 @@ label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 04/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
