@@ -98,8 +98,8 @@ The control comes in two modes:
 **Stationary**
 
 -   Pivots are stationary when all pivot headers fit within the allowed space.
--   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted. <br/>
-[!NOTE] Pivot headers should not carousel in a [10ft environment](../input-and-devices/designing-for-tv.md). Set the [**IsHeaderItemsCarouselEnabled**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot#Windows_UI_Xaml_Controls_Pivot_IsHeaderItemsCarouselEnabled) property to False if your app will run on Xbox.
+-   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
+> Note&nbsp;&nbsp; Pivot headers should not carousel in a [10ft environment](../input-and-devices/designing-for-tv.md). Set the [**IsHeaderItemsCarouselEnabled**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot#Windows_UI_Xaml_Controls_Pivot_IsHeaderItemsCarouselEnabled) property to False if your app will run on Xbox.
 
 
 **Carousel**
