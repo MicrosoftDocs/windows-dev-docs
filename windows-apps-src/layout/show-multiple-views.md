@@ -6,7 +6,7 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
+ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -18,27 +18,19 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Help your users be more productive by letting them view multiple independent parts of your app in separate windows. There's a variety of app scenarios that benefit from multiple views, for example
- - An email app that allows users to view a list of received messages while composing a new email
- - An address book app that allows users to compare saved contact information of multiple people side-by-side
- - A music player app that allows users to see what's playing and also browse through the list of other available music
- - A note-taking app that allows users to copy information from one page of notes to another
- - A reading app that allows users to open several articles for reading later, after an opportunity to peruse all high-level headlines
+Help your users be more productive by letting them view independent parts of your app in separate windows. When you create multiple windows for an app, each window behaves independently. The taskbar shows each window separately. Users can move, resize, show, and hide app windows independently and can switch between app windows as if they were separate apps. Each window operates in its own thread.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)</li>
-<li>[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)</li>
-</ul>
-</div>
+> **Important APIs**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
-While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the app content. Also consider including a context menu option to "Open in a new window".
-
-When you create multiple windows for an app, each window behaves independently. The taskbar shows each window separately. Users can move, resize, show, and hide app windows independently and can switch between app windows as if they were separate apps. Each window operates in its own thread.
+## When should an app use multiple views? 
+There's a variety of scenarios that can benefit from multiple views. Here are a few examples: 
+ - An email app that lets users view a list of received messages while composing a new email
+ - An address book app that lets users compare contact info for multiple people side-by-side
+ - A music player app that lets users see what's playing while browsing through a list of other available music
+ - A note-taking app that lets users copy information from one page of notes to another
+ - A reading app that lets users open several articles for reading later, after an opportunity to peruse all high-level headlines
 
 ## What is a view?
-
 
 An app view is the 1:1 pairing of a thread and a window that the app uses to display content. It's represented by a [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) object.
 
@@ -50,8 +42,9 @@ Likewise, the XAML framework wraps the [**CoreWindow**](https://msdn.microsoft.c
 
 ## Show a new view
 
+While each app layout is unique, we recommend including a "new window" button in a predictable location, such as the top right corner of the content that can be opened in a new window. Also consider including a context menu option to "Open in a new window".
 
-Before we go further, let's look at the steps to create a new view. Here, the new view is launched in response to a button click.
+Let's look at the steps to create a new view. Here, the new view is launched in response to a button click.
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -136,7 +129,7 @@ Other views, including all views that you create by calling [**CreateNewView**](
 
 ## Switch from one view to another
 
-Consider providing a way for the user to navigate from a secondary window back to the main window. To do this, use the [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) method. You call this method from the thread of the window you're switching from and pass the view ID of the window you're switching to.
+Consider providing a way for the user to navigate from a secondary window back to its parent window. To do this, use the [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) method. You call this method from the thread of the window you're switching from and pass the view ID of the window you're switching to.
 
 ```csharp
 await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
