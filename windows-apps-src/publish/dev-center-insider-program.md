@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 04/25/2017
+ms.date: 04/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,30 +32,35 @@ Here are some of the features that we’ve made available exclusively to members
 
 ## Coming soon: Dashboard enhancements for Dev Center Insiders
 
-
-
 We're thrilled to announce that **the new developer dashboard is coming soon** and, as a member of the Dev Center Insider Program, you will be among the first to experience it!
 
-
-
 Beginning in early May, the new dashboard experience will be available for Insiders to use and provide us with feedback. It will include all of the existing Dev Center capabilities, while adding more of the ones you've been asking for.
-
-
 
 Some of the **highlights of the new dashboard** will include:
 
 - **Instant access to all of your developer programs** in one simple experience, without having to sign in and out to each one. We'll suggest new programs you might be interested in as they become available.
-
 - **A single location to access info relevant to you** including profile and account details, payout statements, and notifications.
-
 - **New account-level views** that allow you to quickly assess status and peform tasks without having to repeat the same steps for every product in your portfolio.
-
 - **A familiar, streamlined navigation model** to help you be more productive.
 
-
-
-As always, your participation and feedback helps us build the best capabilities and experiences possible so we can continue to succeed and grow together. Please use the **Feedback** link in the bottom right corner of Dev Center to let us know what you think. If you decide you're not ready to use the new dashboard design, you can always opt out of the Dev Center Insider Program in **Account Settings**.
+To help you get up and running quickly, you'll see a brief tour when you first view the new dashboard experience. Until then, here’s a walkthrough of the experience to highlight key areas and show you where to find both familiar and new dashboard experiences. 
 
 ![New dashboard image 1](images/dashboard-1.png)
 
+The upper right corner of the dashboard is all about you and your relationship with Microsoft. Here's where you can select an account to sign in with, access your profile and settings, view your payout statement, get support, and use the new Message Center.
+
 ![New dashboard image 2](images/dashboard-2.png)
+
+In the upper left area, you'll find the programs that you've already signed up with.
+
+![New dashboard image 2](images/dashboard-3.png)
+
+And in the lower left, you’ll find opportunities to grow your business through additional programs and services.
+
+![New dashboard image 2](images/dashboard-4.png)
+
+As always, your participation and feedback helps us build the best capabilities and experiences possible so we can continue to succeed and grow together. Please use the **Feedback** link in the bottom right corner of Dev Center to let us know what you think. If you decide you're not ready to use the new dashboard design, you can always opt out of the Dev Center Insider Program in **Account Settings**.
+
+
+
+
