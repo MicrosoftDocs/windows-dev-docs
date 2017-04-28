@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: Get general developer information about the Microsoft advertising libraries in the Microsoft Store Services SDK.
+description: Get general developer information about the Microsoft advertising libraries.
 title: Developer information
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -13,7 +13,7 @@ keywords: windows 10, uwp, ads, advertising
 
 # Developer information
 
-The topics in this section provide useful information to developers about the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
+The topics in this section provide useful information to developers about the Microsoft advertising libraries in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).
 
 
 ## In this section

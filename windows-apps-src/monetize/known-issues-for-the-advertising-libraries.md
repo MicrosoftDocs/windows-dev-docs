@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: Learn about known issues for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK.
+description: Learn about known issues for the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK.
 title: Known issues for the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -16,11 +16,7 @@ keywords: windows 10, uwp, ads, advertising, known issues
 
 
 
-This topic lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
-
-## Installation of Microsoft Store Services SDK requires Visual Studio Tools for Universal Windows Apps
-
-To install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information, see the Visual Studio [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
+This topic lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
 
 ## Windows Phone 8.x Silverlight projects
 

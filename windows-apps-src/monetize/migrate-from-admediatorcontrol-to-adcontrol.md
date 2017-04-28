@@ -13,17 +13,17 @@ keywords: windows 10, uwp, ads, advertising, AdMediatorControl, AdControl, migra
 
 # Migrate from AdMediatorControl to AdControl
 
-Previous advertising SDK releases from Microsoft enabled Universal Windows Platform (UWP) apps to display banner ads using the **AdMediatorControl** class, which enabled developers to optimize their ad revenue by displaying banner ads from our partner networks (AOL and AppNexus) as well as AdDuplex. The [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) no longer supports the **AdMediatorControl** class. If you have an existing app that uses the **AdMediatorControl** class from a previous SDK and you want to migrate it to a UWP app that uses the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk), follow the instructions in this article to update your code to use the **AdControl** class instead of the **AdMediatorControl** class. You can optionally configure your app to mediate ads with AdDuplex, using a weighted or ranked approach.
+Previous advertising SDK releases from Microsoft enabled Universal Windows Platform (UWP) apps to display banner ads using the **AdMediatorControl** class, which enabled developers to optimize their ad revenue by displaying banner ads from our partner networks (AOL and AppNexus) as well as AdDuplex. The [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) no longer supports the **AdMediatorControl** class. If you have an existing app that uses the **AdMediatorControl** class from a previous SDK and you want to migrate it to a UWP app that uses the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), follow the instructions in this article to update your code to use the **AdControl** class instead of the **AdMediatorControl** class. You can optionally configure your app to mediate ads with AdDuplex, using a weighted or ranked approach.
 
 >**Note**&nbsp;&nbsp;The code examples in this article are provided for illustration purposes only. You may need to make adjustments to the code examples to work in your app.
 
 ## Prerequisites
 
 * A UWP app that is currently using the AdMediatorControl and is published in the Windows Store.
-* A development computer with Visual Studio 2015 and the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) installed.
+* A development computer with Visual Studio 2015 (or a later release) and the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) installed.
 * If you want to mediate ads with AdDuplex, you must also have the [AdDuplex Windows 10 SDK](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077) installed on your development computer.
 
-  >**Note**&nbsp;&nbsp;As an alternative to running the AdDuplex SDK installer from the link above, you can install the AdDuplex libraries for your UWP app project in Visual Studio 2015. With your UWP app project open in Visual Studio 2015, click **Project** > **Manage NuGet Packages**, search for the NuGet package named **AdDuplexWin10**, and install the package.
+  >**Note**&nbsp;&nbsp;As an alternative to running the AdDuplex SDK installer from the link above, you can install the AdDuplex libraries for your UWP app project in Visual Studio. With your UWP app project open in Visual Studio, click **Project** > **Manage NuGet Packages**, search for the NuGet package named **AdDuplexWin10**, and install the package.
 
 ## Step 1: Retrieve your application IDs and ad unit IDs
 

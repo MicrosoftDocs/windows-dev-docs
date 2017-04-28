@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
-description: The Microsoft Store Services SDK gives you several ways to monetize your app with ads.
+description: The Microsoft Advertising SDK gives you several ways to monetize your app with ads.
 title: Display ads in your app
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -23,7 +23,7 @@ Make more money from your apps by including banner or interstitial ads in your a
 * *Banner ads* are small advertisements that utilize a portion of a page in an app, usually at the top or bottom of the page.
 * *Interstitial ads* are full-screen advertisements that typically force the user to watch a video or click through them to continue in the app or game. We support two types of interstitial ads for UWP apps: video and banner.
 
-To include these types of ads in your apps, use the **AdControl** and **InterstitialAd** controls in the advertising libraries that are distributed in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).
+To include these types of ads in your apps, use the **AdControl** and **InterstitialAd** controls in the advertising libraries that are distributed in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps).
 
 You can monitor your ad performance in real time by using the [advertising performance report](../publish/advertising-performance-report.md) in the Windows Dev Center dashboard.
 
@@ -63,6 +63,6 @@ Some developer scenarios are no longer supported in Windows Phone 8.x Silverligh
 
 ## Related topics
 
-* [Microsoft Store Services SDK](microsoft-store-services-sdk.md)
+* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
 * [Monetize your app with ads](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [Advertising performance report](../publish/advertising-performance-report.md)

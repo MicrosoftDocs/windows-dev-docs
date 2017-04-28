@@ -20,10 +20,10 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 ## Prerequisites
 
 
-* For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* For UWP apps: install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release.
 * For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
-> **Note**&nbsp;&nbsp;If you have installed Windows 10 Anniversary SDK Preview Build 14295 or later with Visual Studio 2015, you must also install the WinJS library. This library used to be included in previous versions of the Windows SDK for Windows 10, but starting with the Windows 10 Anniversary SDK Preview Build 14295 this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> **Note**&nbsp;&nbsp;If you have installed Windows 10 Anniversary SDK Preview Build 14295 or later with Visual Studio, you must also install the WinJS library. This library used to be included in previous versions of the Windows SDK for Windows 10, but starting with the Windows 10 Anniversary SDK Preview Build 14295 this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 ## Code development
 
@@ -43,7 +43,7 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **Note**&nbsp;&nbsp;This image is for Visual Studio 2015 building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app or using Visual Studio 2013, your screen will look different.
+    > **Note**&nbsp;&nbsp;This image is for building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app, your screen will look different.
 
 5.  In **Reference Manager**, click OK.
 

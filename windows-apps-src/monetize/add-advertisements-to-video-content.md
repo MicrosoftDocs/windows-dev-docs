@@ -24,7 +24,7 @@ Advertising for video content differs based upon whether the program is under te
 
 ## Prerequisites
 
-* Install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release.
 
 * Your project must use the [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) control to serve the video content in which the ads will be scheduled. This control is available in the [TVHelpers](https://github.com/Microsoft/TVHelpers) collection of libraries available from Microsoft on GitHub.
 

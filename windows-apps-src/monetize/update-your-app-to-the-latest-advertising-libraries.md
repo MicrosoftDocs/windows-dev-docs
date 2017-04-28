@@ -15,7 +15,7 @@ ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 
 Apps that show banner ads from Microsoft advertising must use **AdControl** or **AdMediatorControl** from one of the following SDKs:
 
-  * [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (for UWP apps)
+  * [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps)
   * [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps)
 
 These SDK releases support a minimum set of advertising capabilities, including the ability to serve HTML5 rich media via the [Mobile Rich-media Ad Interface Definitions (MRAID) 1.0 specification](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf) from the Interactive Advertising Bureau (IAB). Many of our advertisers seek these capabilities, and we require app developers to use one of these SDK releases to help make our app ecosystem more attractive to advertisers and ultimately drive more revenue to you.
@@ -35,7 +35,7 @@ As of April 1, 2017, we no longer serve banner ads to apps that use an unsupport
 If you have an existing app (already in the Store or still under development) that displays banner ads using **AdControl** or **AdMediatorControl** and you aren't sure which advertising SDK is being used by your app, follow the instructions in this article to determine whether you need to update your app to a supported SDK. If you encounter any issues or you need assistance, please [contact support](http://go.microsoft.com/fwlink/?LinkId=393643).
 
 > [!NOTE]
-> If your app already uses the [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (for UWP apps) or [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps), or you have previously updated your app to use one of these SDKs, your app already uses the latest available SDK and you do not need to make any further changes to your app.
+> If your app already uses the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) or [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps), or you have previously updated your app to use one of these SDKs, your app already uses the latest available SDK and you do not need to make any further changes to your app.
 
 ## Prerequisites
 
@@ -162,7 +162,7 @@ If your app uses **AdMediatorControl** to display banner ads, follow these instr
 
 If your app uses an old SDK release, follow these instructions to make sure you have the latest SDK on your development computer.
 
-1. Make sure your development computer has Visual Studio 2015 (for UWP, Windows 8.1, or Windows Phone 8.x projects) or Visual Studio 2013 (for Windows 8.1 or Windows Phone 8.x projects) installed.
+1. Make sure your development computer has Visual Studio 2015 or a later release installed for UWP projects, or Visual Studio 2015 or Visual Studio 2013 installed for Windows 8.1 or Windows Phone 8.x projects.
     > [!NOTE]
     > If Visual Studio is open on your development computer, close it before you perform the following steps.
 
@@ -176,7 +176,7 @@ If your app uses an old SDK release, follow these instructions to make sure you 
     ```
 
 3.	Install the latest SDK for your app:
-  * For UWP apps on Windows 10, install the [Microsoft Store Services SDK](http://aka.ms/store-services-sdk).
+  * For UWP apps on Windows 10, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
   * For apps that target an earlier OS version, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
 
 ## Part 3: Update your project

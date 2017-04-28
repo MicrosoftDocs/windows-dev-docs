@@ -16,7 +16,7 @@ keywords: windows 10, uwp, ads, advertising, install, SDK, libraries
 
 
 
-For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertising libraries are included in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). This SDK is an extension to Visual Studio 2015 and later versions. For more information about installing this SDK, see [this article](microsoft-store-services-sdk.md).
+For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
 
 > **Note**&nbsp;&nbsp;If you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library if you want to add ads to a JavaScript/HTML UWP app. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
@@ -24,18 +24,16 @@ For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x, the Mic
 
 For Windows Phone Silverlight 8.x apps, the Microsoft advertising libraries are available in a NuGet package that you can download and install to your project. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 
-## Library names for advertising
+<span id="framework" />
+## Understanding framework packages in the Microsoft Advertising SDK for UWP apps
 
+The Microsoft.Advertising.dll library in the Microsoft Advertising SDK for UWP apps is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) and [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespaces.
 
-There are several different advertising libraries available in the Microsoft Store Services SDK and Microsoft Advertising SDK for Windows and Windows Phone 8.x:
+Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements. This helps to ensure that your customers always have the latest available version of the library installed on their devices.
 
-* The Microsoft Store Services SDK includes the Microsoft advertising libraries (which provide the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) classes for XAML and JavaScript/HTML apps).
+If we release a new version of the SDK that introduces new APIs or features in this library, you will need to install the latest version of the SDK to use those features. In this scenario, you would also need to publish your updated app to the Store.
 
-* The Microsoft Advertising SDK for Windows and Windows Phone 8.x includes two sets of advertising libraries: the libraries for Microsoft advertising (which provide the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  classes for XAML and JavaScript/HTML apps) and the libraries for ad mediation (which provide the **AdMediatorControl** class).
-
-This documentation describes how to use the **AdControl** and **InterstitialAd** classes in the Microsoft advertising libraries to display banner or interstitial ads. For information about using ad mediation for Windows 8.1 and Windows Phone 8.x apps, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
-
->**Note**&nbsp;&nbsp;Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps for Windows 10. Server-side mediation is coming soon for UWP apps using the same APIs for banner ads (**AdControl**) and interstitial ads (**InterstitialAd**).
+## Advertising library names
 
 Before you can use the any of the advertising controls in your app code, you must reference the appropriate library in your project. The following tables lists the names of each of the libraries as they appear in in the **Reference Manager** dialog box in Visual Studio.
 
