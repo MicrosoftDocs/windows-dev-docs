@@ -30,13 +30,12 @@ Here's a video that shows how to add live tiles to your apps.
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Updating a live tile from a background task</iframe>
 
-## Create the background task project
-
+## Create the background task project  
 
 To enable a live tile for your app, add a new Windows Runtime Component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
 
-1.  In Solution Explorer, right-click the solution, point to **Add**, and click or tap **New Project**.
-2.  In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Visual C# &gt; Windows Store** section.
+1.  In Solution Explorer, right-click the solution, click **Add**, and then click **New Project**.
+2.  In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Installed &gt; Other Languages &gt; Visual C# &gt; Windows Universal** section.
 3.  Name the project BackgroundTasks and click or tap **OK**. Microsoft Visual Studio adds the new project to the solution.
 4.  In the main project, add a reference to the BackgroundTasks project.
 
