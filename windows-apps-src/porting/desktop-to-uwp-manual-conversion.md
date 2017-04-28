@@ -26,6 +26,9 @@ Consider manual conversion if you install your app by using the xcopy command, o
 
 If you're uncertain about what changes your installer makes to the system, or if you'd rather use automated tools to generate your package manifest, consider any of [these](desktop-to-uwp-root.md#convert) options.
 
+## First, consider how you'll distribute your app
+If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to convert your app.
+
 ## Create a package manifest
 
 Create a file, name it **appxmanifest.xml**, and then add this XML to it.
@@ -77,6 +80,8 @@ Here's an example **Identity** element with placeholder text for the attributes.
           Publisher="CN=MyCompany, O=MyCompany, L=MyCity, S=MyState, C=MyCountry"
 			    ProcessorArchitecture="x64">
 ```
+> [!NOTE]
+> If you've reserved your app name in the Windows store, you can obtain the Name and Publisher by using the Windows Dev Center dashboard. If you plan to sideload your app onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
 
 ### Properties
 

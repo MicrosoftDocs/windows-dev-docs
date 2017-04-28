@@ -73,7 +73,10 @@ To find a complete list of options, see the [Parameters](#command-reference) sec
 
 If you're ready to convert, let's start.
 
-## First, make sure that your system can run the converter
+## First, consider how you'll distribute your app
+If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to convert your app.
+
+## Make sure that your system can run the converter
 
 Make sure that your system meets the following requirements:
 
@@ -127,6 +130,9 @@ You can skip ahead to the next section if your app doesn't have an installer.
 To convert your app, run the ``DesktopAppConverter.exe`` command in the console window that opened when you started the Desktop App Converter.  
 
 You'll specify the package name, publisher and version number of the app by using parameters.
+
+> [!NOTE]
+> If you've reserved your app name in the Windows store, you can obtain the package and publisher names by using the Windows Dev Center dashboard. If you plan to sideload your app onto other systems, you can provide your own names for these as long as the publisher name that you choose matches the name on the certificate you use to sign your app.
 
 ### A quick look at command parameters
 
@@ -289,9 +295,15 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 <span id="run-app" />
 ## Run the converted app
 
-To run your app, you'll have to sign it by using a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate a certificate for you. That file is named **auto-generated.cer**, and you can find it in the root folder of your converted app.
+There's two ways to run your app.
 
-1. Double-click the **auto-generated.cer** file to install it.
+One way is to open a PowerShell command prompt, and then type this command: ```Add-AppxPackage –Register AppxManifest.xml```. It's probably the easiest way to run your app because you don't have to sign it.
+
+Another way is to sign your app with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you. That file is named **auto-generated.cer**, and you can find it in the root folder of your converted app.
+
+Follow these steps to sign your app and then run it.
+
+1. Double-click the **auto-generated.cer** file to install the certificate.
 
    ![generated certificate file](images/desktop-to-uwp/generated-cert-file.png)
 

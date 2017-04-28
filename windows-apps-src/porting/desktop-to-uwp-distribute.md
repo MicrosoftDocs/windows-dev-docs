@@ -16,30 +16,154 @@ ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 
 Publish your desktop bridge app to a Windows store or sideload it onto one or more devices.  
 
-## Distribute your app by publishing it to a Windows store
+> [!NOTE]
+> Do you have a plan for how you might transition users to your converted app? Before you distribute your app, see the [Transition users to your desktop bridge app](#transition-users) section of this guide to get some ideas.
 
-The [Windows app store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app. Publish your app to that store to reach the broadest audience.
+## Distribute your app by publishing it to the Windows Store
 
-Alternatively, you can distribute your app internally to users across your organization by using the [Windows Store for Business](https://www.microsoft.com/business-store).
+The [Windows Store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app.
 
-Whichever store you ultimately choose, start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge), and Microsoft will contact you to start the onboarding process.
+<div style="float: left; padding: 10px">
+    ![Store icon](images/desktop-to-uwp/store.png)
+</div>
+ Publish your app to that store to reach the broadest audience. Also, organizational customers can contact you through the store to distribute your app internally to their organizations through the [Windows Store for Business](https://www.microsoft.com/business-store).
 
-## Distribute your app without placing it onto a Windows store
+If you plan to publish to the Windows Store, and you haven't reached out to us yet, please fill out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge), and Microsoft will contact you to start the onboarding process.
 
-If you'd rather avoid the store, you can manually distribute apps to one or more devices.
+You don't have to sign your app before you submit it to the store.
 
-This might make sense if you build apps for use in a small team and you're willing to handle the signing, hosting, and deployment of your app.
+## Distribute your app without placing it onto the Windows Store
 
-It can also make sense in cases where you want finer control over the distribution experience and don't want to get involved with the Windows Store certification process.
+If you'd rather distribute your app without using the store, you can manually distribute apps to one or more devices.
 
-Use this table to find the right steps for you.
+This might make sense if you want greater control over the distribution experience or you don't want to get involved with the Windows Store certification process.
 
-|Tool that you used to create your package |See|
-|--|--|
-|Visual Studio|[Sideload your app package](https://docs.microsoft.com/windows/uwp/packaging/packaging-uwp-apps#sideload-your-app-package)|
-|Desktop App Converter (DAC)|[Run the converted app](desktop-to-uwp-run-desktop-app-converter.md#run-app) <br> Alternatively, use the links provided below for the manual approach.|
-|Manual approach | [Sign your Windows app package](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx) (first) <br>then <br>[Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)|
-|Third party tool/installer |See the documentation for that provider. <br>Alternatively, you can use the links provided above for the manual approach.|
+To distribute your app to other devices without placing it onto the store, you have to obtain a certificate, sign your app by using that certificate, and then sideload your app onto those devices.
+
+You can [create a certificate](../packaging/create-certificate-package-signing.md) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
+
+If you create a certificate, you have to install it into the **Trusted Root** or **Trusted People** certificate store on each device that runs your app. If you get a certificate from a popular vendor, you won't have to install anything onto other systems besides your app.  
+
+> [!IMPORTANT]
+> Make sure that the publisher name on your certificate matches the publisher name of your app.
+
+To sign your app by using a certificate, see [Sign an app package using SignTool](../packaging/sign-app-package-using-signtool.md).
+
+To sideload your app onto other devices, see [Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10).
+
+**Videos**
+
+|Publish your app into the Windows Store |Distribute an enterprise app  |
+|---|---|
+|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
+
+<span id="transition-users" />
+## Transition users to your desktop bridge app
+
+Before you distribute your app, consider adding a few extensions to your package manifest to help users get into the habit of using your desktop bridge app. Here's a few things you can do.
+
+* Point existing Start tiles and taskbar buttons to your desktop bridge app.
+* Associate your converted app with a set of file types.
+* Make your desktop bridge app open certain types of files by default.
+
+For the complete list of extensions and the guidance for how to use them, see [Transition users to your app](desktop-to-uwp-extensions.md#transition-users-to-your-app).
+
+Also, consider adding code to your desktop bridge app that accomplishes these tasks:
+
+* Migrates user data associated with your desktop app to the appropriate folder locations of your desktop bridge app.
+* Gives users the option to uninstall the desktop version of your app.
+
+Let's talk about each one of these tasks. We'll start with user data migration.
+
+### Migrate user data
+
+If you're going to add code that migrates user data, it's best to run that code only when the app is first started. Before you migrate the users data, display a dialog box to the user that explains what is happening, why it is recommended, and what's going to happen to their existing data.
+
+Here's an example of how you could do this in a .NET-based desktop bridge app.
+
+```csharp
+private void MigrateUserData()
+{
+    String sourceDir = Environment.GetFolderPath
+        (Environment.SpecialFolder.ApplicationData) + "\\AppName";
+
+    if (sourceDir != null)
+    {
+        String migrateMessage =
+            "Would you like to migrate your data from the previous version of this app?";
+
+        DialogResult migrateResult = MessageBox.Show
+            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+
+        if (migrateResult.Equals(DialogResult.Yes))
+        {
+            String destinationDir =
+                Windows.Storage.ApplicationData.Current.LocalFolder.Path + "\\AppName";
+
+            Process process = new Process();
+            process.StartInfo.FileName = "robocopy.exe";
+            process.StartInfo.Arguments = "%LOCALAPPDATA%\\AppName " + destinationDir + " /move";
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            process.WaitForExit();
+
+            if (process.ExitCode > 1)
+            {
+                //Migration was unsuccessful -- you can choose to block/retry/other action
+            }
+        }
+    }
+}
+```
+
+### Uninstall the desktop version of your app
+
+It is better not to uninstall the users desktop app without first asking them for permission. Display a dialog box that asks the user for that permission. Users might decide not to uninstall the desktop version of your app. If that happens, you'll have to decide whether you want to block usage of the desktop app or support the side-by-side use of both apps.
+
+Here's an example of how you could do this in a .NET-based desktop bridge app.
+
+```csharp
+private void RemoveDesktopApp()
+{              
+    //Typically, you can find your uninstall string at this location.
+    String uninstallString = (String)Microsoft.Win32.Registry.GetValue
+        (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +
+         @"\Uninstall\{7AD02FB8-B85E-44BC-8998-F4803BA5A0E3}\", "UninstallString", null);
+
+    //Detect if the previous version of the Desktop App is installed.
+    if (uninstallString != null)
+    {
+        String uninstallMessage = "To have the best experience, condiser uninstalling the "
+            +" previous version of this app. Would you like to do that now?";
+
+        DialogResult uninstallResult = MessageBox.Show
+            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+
+        if (uninstallResult.Equals(DialogResult.Yes))
+        {
+                    string[] uninstallArgs = uninstallString.Split(' ');
+
+            Process process = new Process();
+            process.StartInfo.FileName = uninstallArgs[0];
+            process.StartInfo.Arguments = uninstallArgs[1];
+            process.StartInfo.CreateNoWindow = true;
+
+            process.Start();
+            process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            {
+                //Uninstallation was unsuccessful - You can choose to block the app here.
+            }
+        }
+    }
+
+}
+```
+
+### Video
+
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Transition-Taskbar-Pins-Start-Tiles-File-Type-Associations-and-Protocol-Handlers-MD5mv5WhD_2406218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## Next steps
 

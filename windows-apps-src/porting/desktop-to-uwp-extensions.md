@@ -2,7 +2,7 @@
 author: normesta
 Description: In addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. This article describes these extensions and how to use them.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge App Extensions
+title: Integrate apps with Windows 10 (Windows Desktop Bridge)
 ms.author: normesta
 ms.date: 03/27/2017
 ms.topic: article
@@ -12,9 +12,9 @@ keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ---
 
-# App extensions for Windows Desktop Bridge apps
+# Integrate your app with Windows 10 (Windows Desktop Bridge)
 
-Use extensions to interact with the system in predefined ways.
+Use extensions to integrate your app with Windows 10 in predefined ways.
 
 For example, use an extension to create a firewall exception, make your app the default app for a file type, or point start tiles to the converted version of your app. To use an extension, just add some XML to your app's package manifest file. No code is required.
 
@@ -381,6 +381,9 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 ### Start an executable file when users log into Windows
 
 Startup tasks allow your app to run an executable automatically whenever a user logs on.
+
+> [!NOTE]
+> The user has to start your app at least one time to register this startup task.
 
 Your app can declare multiple startup tasks. Each task starts independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name that you specify in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks.
 
