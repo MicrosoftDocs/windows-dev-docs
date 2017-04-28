@@ -36,6 +36,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="3">
             <Slider x:Name="_timelineOffsetSlider1" ValueChanged="_timelineOffsetSlider1_ValueChanged" Value="0" Width="100"/>
             <Slider x:Name="_timelineOffsetSlider2" ValueChanged="_timelineOffsetSlider2_ValueChanged" Value="0" Width="100"/>
+            <ProgressRing x:Name="_timelineProgressRing"/>
         </StackPanel>
         <StackPanel  Grid.Row="4" Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
@@ -59,6 +60,7 @@
             <Button x:Name="SphericalVideoListButton" Content="SphericalVideoList" Click="SphericalVideoListButton_Click"/>
             <Canvas x:Name="_compositionCanvas" Width="200" Height="200" Background="LimeGreen"/>
             </StackPanel>
+        <ProgressRing HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

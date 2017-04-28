@@ -315,7 +315,15 @@ namespace MediaPlayer_Win10
             _mediaPlayer2.CommandManager.IsEnabled = false;
             _mediaPlayer2.TimelineController = _mediaTimelineController;
             //</SnippetSetTimelineController>
+
+            
+ 
         }
+
+        
+
+        
+
 
         //<SnippetPlayButtonClick>
         private void PlayButton_Click(object sender, RoutedEventArgs e)
@@ -372,6 +380,10 @@ namespace MediaPlayer_Win10
             //<SnippetRegisterStateChanged>
             _mediaTimelineController.StateChanged += _mediaTimelineController_StateChanged;
             //</SnippetRegisterStateChanged>
+
+            //<SnippetRegisterFailed>
+            _mediaTimelineController.Failed += _mediaTimelineController_Failed;
+            //</SnippetRegisterFailed>
 
             // Do not include in snippet.
             mediaSource = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
@@ -457,13 +469,27 @@ namespace MediaPlayer_Win10
         //<SnippetStateChanged>
         private void _mediaTimelineController_StateChanged(MediaTimelineController sender, object args)
         {
-
+            if(sender.State == MediaTimelineControllerState.Stalled)
+            {
+                _timelineProgressRing.Visibility = Visibility.Visible;
+            }
+            else if (sender.State == MediaTimelineControllerState.Stalled && _timelineProgressRing.Visibility == Visibility.Visible)
+            {
+                _timelineProgressRing.Visibility = Visibility.Collapsed;
+            }
         }
         //</SnippetStateChanged>
 
+        //<SnippetTimelineControllerFailed>
+        private void _mediaTimelineController_Failed(MediaTimelineController sender, MediaTimelineControllerFailedEventArgs args)
+        {
+            // This is an internal error that can't be recovered from. Alert the user.
+        }
+        //</SnippetTimelineControllerFailed>
+
         #region frame server
-        
-        
+
+
         SoftwareBitmap _frameServerDest;
 
         private void FrameServerButton_Click(object sender, RoutedEventArgs e)

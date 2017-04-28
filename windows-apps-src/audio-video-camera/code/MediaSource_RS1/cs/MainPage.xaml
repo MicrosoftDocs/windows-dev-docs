@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="300"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
@@ -26,8 +26,11 @@
             <Button x:Name="DisablePlaybackForItemsButton" Content="DisablePlaybackForItems" Click="DisablePlaybackForItemsButton_Click"/>
             <Button x:Name="MediaBinderButton" Content="MediaBinder" Click="MediaBinderButton_Click"/>
             <Button x:Name="SpeechCueButton" Content="SpeechCue" Click="SpeechCueButton_Click"/>
-            
-            
+            <Canvas>
+                <Image x:Name="SubtitleImage"/>
+            </Canvas>
+            <TextBlock x:Name="ChapterTitleTextBlock"/>
+
             <!--<SnippetVideoComboBox>-->
             <ComboBox x:Name="videoTracksComboBox" SelectionChanged="videoTracksComboBox_SelectionChanged"/>
             <!--</SnippetVideoComboBox>-->

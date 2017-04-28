@@ -228,6 +228,7 @@
 #### [Media items, playlists, and tracks](audio-video-camera/media-playback-with-mediasource.md)
 #### [Integrate with the System Media Transport Controls](audio-video-camera/integrate-with-systemmediatransportcontrols.md)
 ##### [Manual control of the System Media Transport Controls](audio-video-camera/system-media-transport-controls.md)
+#### [System-supported timed metadata cues](audio-video-camera/system-supported-metadata-cues.md)
 #### [Create, schedule, and manage media breaks](audio-video-camera/create-schedule-and-manage-media-breaks.md)
 #### [Play media in the background](audio-video-camera/background-audio.md)
 ##### [Legacy background media playback](audio-video-camera/legacy-background-media-playback.md)

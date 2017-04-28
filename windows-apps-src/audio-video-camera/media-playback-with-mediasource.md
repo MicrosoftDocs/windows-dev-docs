@@ -162,6 +162,8 @@ Create a new [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows
 
 Create a new cue object, appropriate for the type of metadata track you created, and set the ID, start time, and duration for the track. This example creates a data track, so a set of [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) objects are generated and a buffer containing app-specific data is provided for each cue. To register the new track, add it to the [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) collection of the **MediaSource** object.
 
+Starting with Windows 10, version 1703, the **DataCue.Properties** property exposes a [**PropertySet**](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.collections.propertyset) that you can use to store custom properties in key/data pairs that can be retrieved in the **CueEntered** and **CueExited** events.  
+
 [!code-cs[AddDataTrack](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
 The **CueEntered** event is raised when a cue's start time has been reached as long as the associated track has a presentation mode of **ApplicationPresented**, **Hidden**, or **PlatformPresented.** Cue events are not raised for metadata tracks while the presentation mode for the track is **Disabled**. This example simply outputs the custom data associated with the cue to the debug window.
