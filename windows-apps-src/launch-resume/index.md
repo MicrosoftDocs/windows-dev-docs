@@ -22,6 +22,7 @@ This section includes information on the following:
 - How to use App services, which allow your Universal Windows Platform (UWP) app to share data and functionality with other apps.
 - How to use background tasks, which allow a UWP app to do work while the app itself is not in the foreground.
 - How to discover connected devices, launch an app on another device, and communicate with an app service on a remote device so that you can create user experiences that flow across devices.
+- How to choose the right technology to extend and componentize your app.
 - How to add and configure a splash screen for your app.
 
 ## The app lifecycle
@@ -76,6 +77,7 @@ The [App services](app-services.md) section describes how to integrate app servi
 |-------|-------------|
 | [Create and consume an app service](how-to-create-and-consume-an-app-service.md) | Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps and how to consume those services. |
 | [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) | Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider. |
+| [Extend your app with app services, extensions, and packages](extend-your-app-with-services-extensions-packages.md) | There are different technologies in Windows 10 that will help you extend and componentize your app. This topic will help you determine which technology is the right one to use and provides a brief overview of each. |
 
 ## Background tasks
 

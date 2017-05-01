@@ -636,6 +636,7 @@
 ### [Use app services](launch-resume/app-services.md)
 #### [Create and consume an app service](launch-resume/how-to-create-and-consume-an-app-service.md)
 #### [Convert an app service to run in the same process as its host app](launch-resume/convert-app-service-in-process.md)
+#### [Extend your app with services, extensions, and packages](launch-resume/extend-your-app-with-services-extensions-packages.md)
 ### [Support your app with background tasks](launch-resume/support-your-app-with-background-tasks.md)
 #### [Guidelines for background tasks](launch-resume/guidelines-for-background-tasks.md)
 #### [Access sensors and devices from a background task](launch-resume/access-sensors-and-devices-from-a-background-task.md)
