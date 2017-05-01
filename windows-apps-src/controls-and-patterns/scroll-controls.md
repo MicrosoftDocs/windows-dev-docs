@@ -1,47 +1,49 @@
 ---
 author: Jwmsft
 Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
-title: Guidelines for scroll bars
+title: Scroll viewer controls
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
-label: Scroll bars
+label: Scrollbars
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 04/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
-# Scroll bars
+# Scroll viewer controls
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
+When there is more UI content to show than you can fit in an area, use the scroll viewer control.
 
-A scroll viewer control is composed of as much content as will fit in the viewport, and either one or two scroll bars. Touch gestures can be used to pan and zoom (the scroll bars fade in only during manipulation), and the pointer can be used to scroll. The flick gesture pans with inertia.
+> **Important APIs**: [**ScrollViewer class**](https://msdn.microsoft.com/library/windows/apps/br209527), [**ScrollBar class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
-**Note**  Windows has two scroller visualizations, which are based on the user's input mode: scroll indicators when using touch or gamepad; and interactive scroll bars for other input devices including mouse, keyboard, and pen.
-
-![A sample of what standard scroll bar and panning indicator controls look like](images/SCROLLBAR.png)
-
-<div class="microsoft-internal-note">
-See complete redlines in [Design Depot](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805)
-</div>
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ScrollViewer class**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
-<li>[**ScrollBar class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
-</ul>
-</div>
-
-
-## Examples
-
-A [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) enables content to be displayed in a smaller area than its actual size. When the content of the scroll viewer is not entirely visible, the scroll viewer displays scrollbars that the user can use to move the content area that is visible. The area that includes all of the content of the scroll viewer is the *extent*. The visible area of the content is the *viewport*.
+Scroll viewers enable content to extend beyond the bounds of the viewport (visable area). Users reach this content by manipulating the scroll viewer surface through touch, mousewheel, keyboard, or a gamepad, or by using the mouse or pen cursor to interact with the scroll viewer's scrollbar. This image shows several examples of scroll viewer controls.
 
 ![A screenshot that illustrates the standard scrollbar control](images/ScrollBar_Standard.jpg)
+
+Depending on the situation, the scroll viewer's scrollbar uses two different visualizations, shown in the following illustration: the panning indicator (left) and the traditional scrollbar (right).
+
+![A sample of what standard scrollbar and panning indicator controls look like](images/SCROLLBAR.png)
+
+The scroll viewer is conscious of the user’s input method and uses it to determine which visualization to display.
+
+* When the region is scrolled without manipulating the scrollbar directly, for example, by touch, the panning indicator appears, displaying the current scroll position.
+* When the mouse or pen cursor moves over the panning indicator, it morphs into the traditional scrollbar.  Dragging the scrollbar thumb manipulates the scrolling region.
+
+<!--
+<div class="microsoft-internal-note">
+See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/0/dv/?t=Windows|Controls|ScrollControls&f=RS2
+</div>
+-->
+
+![Scroll bars in action](images/conscious-scroll.gif)
+
+> [!NOTE]
+> When the scrollbar is visible it is overlaid as 16px on top of the content inside your ScrollViewer. In order to ensure good UX design you will want to ensure that no interactive content is obscured by this overlay. Additionally if you would prefer not to have UX overlap, leave 16px of padding on the edge of the viewport to allow for the scrollbar.
+
 
 ## Create a scroll viewer
 To add vertical scrolling to your page, wrap the page content in a scroll viewer.
@@ -61,6 +63,7 @@ To add vertical scrolling to your page, wrap the page content in a scroll viewer
     </ScrollViewer>
 </Page>
 ```
+
 This XAML shows how to place an image in a scroll viewer and enable zooming.
 
 ```xaml
@@ -82,6 +85,7 @@ To make it possible for controls that include a ScrollViewer to influence some o
 **ScrollViewer XAML attached properties**
 
 ScrollViewer defines the following XAML attached properties:
+
 - [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
 - [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
@@ -99,7 +103,8 @@ ScrollViewer defines the following XAML attached properties:
 
 These XAML attached properties are intended for cases where the ScrollViewer is implicit, such as when the ScrollViewer exists in the default template for a ListView or GridView, and you want to be able to influence the scrolling behavior of the control without accessing template parts.
 
-For example, here's how to make the vertical scroll bars always visible for a ListView's built in scroll viewer.
+For example, here's how to make the vertical scrollbars always visible for a ListView's built in scroll viewer.
+
 ```xaml
 <ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
@@ -120,4 +125,5 @@ For cases where a ScrollViewer is explicit in your XAML, as is shown in the exam
 ## Related topics
 
 **For developers (XAML)**
+
 * [**ScrollViewer class**](https://msdn.microsoft.com/library/windows/apps/br209527)
