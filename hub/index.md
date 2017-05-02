@@ -3,11 +3,6 @@ layout: HubPage
 hide_bc: true
 title: Windows Documentation
 description: Find developer, hardware, and IT pro docs to help you build and maintain your Windows solution.
-ms.assetid: 56bbc230-b855-426e-b849-4f65a747b944
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
-ms.topic: hub-page
-ms.prod: windows
 ---
 <div id="main" class="v2">
   <div class="container">
@@ -104,8 +99,8 @@ ms.prod: windows
                                                 <a href="https://msdn.microsoft.com/windows/uwp/monetize/index">Monetize</a>
                                             </p>
                                             <p>
-                                                <a href="https://docs.microsoft.com/en-us/uwp/">API reference</a>
-                                            <p>
+                                                <a href="/uwp/">API Reference</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -454,8 +449,46 @@ ms.prod: windows
                                     </div>
                                 </div>
                             </a>
+                        </li>  
+                        <li>
+                            <a href="https://docs.microsoft.com/en-us/microsoft-store/">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-store-business.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Microsoft Store for Business</h3>
+                                                <p>Learn to find, acquire, distribute, and manage apps for your business with Microsoft Store for Business.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>  
+                         <li>
+                            <a href="https://docs.microsoft.com/en-us/microsoft-store/index?toc=/microsoft-store/education/toc.json">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_it-pro-store-education.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Microsoft Store for Education</h3>
+                                                <p>Learn to find, acquire, distribute, and manage apps for your school with Microsoft Store for Education.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </li>
-                                 <li>
+                        <li>
                             <a href="https://docs.microsoft.com/en-us/microsoft-edge/deploy/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
@@ -511,8 +544,8 @@ ms.prod: windows
                                     </div>
                                 </div>
                             </a>
-                        </li> 
-                        <li>
+                        </li>
+                         <li>
                             <a href="https://docs.microsoft.com/en-us/hololens/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
@@ -530,8 +563,7 @@ ms.prod: windows
                                     </div>
                                 </div>
                             </a>
-                        </li> 
-                
+                        </li>
                     </ul>
                 </li>
             </ul>
