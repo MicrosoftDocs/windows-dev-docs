@@ -1,4 +1,4 @@
- ---
+---
 author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: Optimize background activity
