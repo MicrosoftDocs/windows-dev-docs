@@ -183,6 +183,33 @@ In the **VideoTracksChanged** event handler, get the encoding properties for any
 
 [!code-cs[SphericalTracksChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalTracksChanged)]
 
+## Use MediaPlayer in frame server mode
+Starting with Windows 10, version 1703, you can use **MediaPlayer** in frame server mode. In this mode, the **MediaPlayer** does not automatically render frames to an associated **MediaPlayerElement**. Instead, your app copies the current frame from the **MediaPlayer** to an object that implements [**IDirect3DSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). The primary scenario this feature enables is using pixel shaders to process video frames provided by the **MediaPlayer**. Your app is responsible for displaying each frame after processing, such as by showing the frame in a XAML [**Image**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.image) control.
+
+In the following example, a new **MediaPlayer** is initialized and video content is loaded. Next, a handler for [**VideoFrameAvailable**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_VideoFrameAvailable) is registered. Frame server mode is enabled by setting the **MediaPlayer** object's [**IsVideoFrameServerEnabled**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_IsVideoFrameServerEnabled) property to **true**. Finally, media playback is started with a call to [**Play**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Play).
+
+[!code-cs[FrameServerInit](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetFrameServerInit)]
+
+The next example shows a handler for **VideoFrameAvailable** that uses [Win2D](https://github.com/Microsoft/Win2D) to add a simple blur effect to each frame of a video and then displays the processed frames in a XAML [Image](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.image) control.
+
+Whenever the **VideoFrameAvailable** handler is called, the [**CopyFrameToVideoSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_CopyFrameToVideoSurface_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_) method is used to copy the contents of the frame to an [**IDirect3DSurface**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). You can also use [**CopyFrameToStereoscopicVideoSurfaces**](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_CopyFrameToStereoscopicVideoSurfaces_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_) to copy 3D content into two surfaces, for processing the left eye and right eye content separately. To get an object that implements **IDirect3DSurface**  this example creates a [**SoftwareBitmap**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.softwarebitmap) and then uses that object to create a Win2D **CanvasBitmap**, which implements the necessary interface. A **CanvasImageSource** is a Win2D object that can be used as the source for an **Image** control, so a new one is created and set as the source for the **Image** in which the content will be displayed. Next, a **CanvasDrawingSession** is created. This is used by Win2D to render the blur effect.
+
+Once all of the necessary objects have been instantiated, **CopyFrameToVideoSurface** is called, which copies the current frame from the **MediaPlayer** into the **CanvasBitmap**. Next, a Win2D **GaussianBlurEffect** is created, with the **CanvasBitmap** set as the source of the operation. Finally, **CanvasDrawingSession.DrawImage** is called to draw the source image, with the blur effect applied, into the **CanvasImageSource** that has been associated with **Image** control, causing it to be drawn in the UI.
+
+[!code-cs[VideoFrameAvailable](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetVideoFrameAvailable)]
+
+For more information on Win2D, see the [Win2D GitHub repository](https://github.com/Microsoft/Win2D). To try out the sample code shown above, you will need to add the Win2D NuGet package to your project with the following instructions.
+
+**To add the Win2D NuGet package to your effect project**
+
+1.  In **Solution Explorer**, right-click your project and select **Manage NuGet Packages**.
+2.  At the top of the window, select the **Browse** tab.
+3.  In the search box, enter **Win2D**.
+4.  Select **Win2D.uwp**, and then select **Install** in the right pane.
+5.  The **Review Changes** dialog shows you the package to be installed. Click **OK**.
+6.  Accept the package license.
+
+
 ## Related topics
 * [Media playback](media-playback.md)
 * [Media items, playlists, and tracks](media-playback-with-mediasource.md)

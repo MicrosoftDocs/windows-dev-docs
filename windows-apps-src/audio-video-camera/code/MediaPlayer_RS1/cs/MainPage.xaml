@@ -56,6 +56,7 @@
             <ToggleButton x:Name="_speedToggleButton" Content="2x" IsChecked="False" Checked="_speedToggleButton_Checked" Unchecked="_speedToggleButton_Unchecked"/>
             <Button x:Name="_skipForwardButton" Content="Skip forward" Click="_skipForwardButton_Click"/>
             <Button x:Name="FrameServerButton" Content="FrameServer" Click="FrameServerButton_Click"/>
+            <Image x:Name="FrameServerImage" Width="320" Height="240"/>
             <Button x:Name="SphericalVideoButton" Content="SphericalVideo" Click="SphericalVideoButton_Click"/>
             <Button x:Name="SphericalVideoListButton" Content="SphericalVideoList" Click="SphericalVideoListButton_Click"/>
             <Canvas x:Name="_compositionCanvas" Width="200" Height="200" Background="LimeGreen"/>

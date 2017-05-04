@@ -31,6 +31,12 @@ using Windows.Graphics.Imaging;
 using Windows.Media.MediaProperties;
 using System.Numerics;
 
+
+using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.Graphics.Canvas;
+using Microsoft.Graphics.Canvas.UI.Xaml;
+using Windows.Graphics.Display;
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MediaPlayer_Win10
@@ -490,36 +496,65 @@ namespace MediaPlayer_Win10
         #region frame server
 
 
-        SoftwareBitmap _frameServerDest;
+        
 
         private void FrameServerButton_Click(object sender, RoutedEventArgs e)
         {
+            //<SnippetFrameServerInit>
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
-            _mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
-
-            // Muting during development
-            _mediaPlayer.IsMuted = true;
-
-            _frameServerDest = new SoftwareBitmap(BitmapPixelFormat.Bgra8, 320, 240);
-
             _mediaPlayer.VideoFrameAvailable += _mediaPlayer_VideoFrameAvailable;
             _mediaPlayer.IsVideoFrameServerEnabled = true;
+            _mediaPlayer.Play();
+            //</SnippetFrameServerInit>
         }
 
-        private void _mediaPlayer_VideoFrameAvailable(MediaPlayer sender, object args)
+        SoftwareBitmap _frameServerDest;
+        CanvasImageSource _canvasImageSource;
+
+        //<SnippetVideoFrameAvailable>
+        private async void _mediaPlayer_VideoFrameAvailable(MediaPlayer sender, object args)
         {
-            //_frameServerDest.
+            CanvasDevice canvasDevice = CanvasDevice.GetSharedDevice();
 
-            //_mediaPlayer.CopyFrameToVideoSurface()
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                if(_frameServerDest == null)
+                {
+                    _frameServerDest = new SoftwareBitmap(BitmapPixelFormat.Rgba8, (int)FrameServerImage.Width, (int)FrameServerImage.Height, BitmapAlphaMode.Ignore);
+                }
+                if(_canvasImageSource == null)
+                {
+                    _canvasImageSource = new CanvasImageSource(canvasDevice, (int)FrameServerImage.Width, (int)FrameServerImage.Height, DisplayInformation.GetForCurrentView().LogicalDpi);//96); 
+                    FrameServerImage.Source = _canvasImageSource;
+                }
+
+                using (CanvasBitmap inputBitmap = CanvasBitmap.CreateFromSoftwareBitmap(canvasDevice, _frameServerDest))
+                using (CanvasDrawingSession ds = _canvasImageSource.CreateDrawingSession(Windows.UI.Colors.Black))
+                {
+
+                    _mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
+
+                    var gaussianBlurEffect = new GaussianBlurEffect
+                    {
+                        Source = inputBitmap,
+                        BlurAmount = 5f,
+                        Optimization = EffectOptimization.Speed
+                    };
+
+                    ds.DrawImage(gaussianBlurEffect);
+
+                }
+            });
         }
+        //</SnippetVideoFrameAvailable>
         #endregion
 
         #region spherical video
 
-        #endregion
 
-        
+
+
         private void SphericalVideoButton_Click(object sender, RoutedEventArgs e)
         {
             //<SnippetOpenSphericalVideo>
@@ -598,7 +633,7 @@ namespace MediaPlayer_Win10
         //</SnippetSphericalTracksChanged>
     }
 
-
+    #endregion
 
 }
 
