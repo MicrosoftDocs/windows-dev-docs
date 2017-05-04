@@ -20,10 +20,12 @@ keywords: windows 10, uwp
 
 Help your users be more productive by letting them view independent parts of your app in separate windows. When you create multiple windows for an app, each window behaves independently. The taskbar shows each window separately. Users can move, resize, show, and hide app windows independently and can switch between app windows as if they were separate apps. Each window operates in its own thread.
 
+![Wireframe showing an app with multiple windows](images/multi-view.png)
+
 > **Important APIs**: [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094), [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
-## When should an app use multiple views? 
-There's a variety of scenarios that can benefit from multiple views. Here are a few examples: 
+## When should an app use multiple views?
+There's a variety of scenarios that can benefit from multiple views. Here are a few examples:
  - An email app that lets users view a list of received messages while composing a new email
  - An address book app that lets users compare contact info for multiple people side-by-side
  - A music player app that lets users see what's playing while browsing through a list of other available music

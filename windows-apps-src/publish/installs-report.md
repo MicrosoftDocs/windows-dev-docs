@@ -1,9 +1,9 @@
----
-author: shawjohn
+﻿---
+author: JnHs
 Description: The Installs report in the Windows Dev Center dashboard lets you see how many times your app has been successfully installed on Windows 10 devices.
 title: Installs report
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 05/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -41,8 +41,6 @@ The install total does not include or reflect:
 -   **Updates.** For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install (not two).
 -   **Preinstalls.** For example, if a customer buys a device that has your app preinstalled, we don’t count that as an install.
 -   **System-initiated installs.** For example, if Windows installs your app automatically for some reason, we don’t count that as an install.
-
-> **Note**  Currently, you can’t programmatically retrieve **Installs daily** data through an API.
 
 ## Markets
 

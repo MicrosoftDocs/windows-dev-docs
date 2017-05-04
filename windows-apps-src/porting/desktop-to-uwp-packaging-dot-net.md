@@ -209,7 +209,7 @@ To execute the Win32 process, use the [**FullTrustProcessLauncher**](https://msd
 
 ```xml
 ..
-xmlns:desktop=http://schemas.microsoft.com/appx/manifest/desktop/windows10
+xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
 ..
 <desktop:Extension Category="windows.fullTrustProcess"
                     Executable="win32\MyDesktopApp.exe" />

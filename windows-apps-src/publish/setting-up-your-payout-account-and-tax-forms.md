@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
 title: Setting up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,8 +15,6 @@ keywords: windows 10, uwp
 
 
 In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
-
-> **Note**  As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the same payout account you've set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
 If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile has been completed.
 
@@ -42,7 +40,7 @@ A payout account is the bank account to which we send the proceeds from your sal
  
 **To set up your payout account**
 
-1.  In the Windows Dev Center dashboard, and click **Account settings** in the left navigation menu.
+1.  In the Windows Dev Center dashboard, click the **Account settings** icon in the top right corner.
 2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
 
    > **Note**  Because this is sensitive info, you may be prompted to sign in again.
@@ -131,7 +129,7 @@ You can complete and submit your tax forms electronically in your dashboard; in 
  
 **To complete your tax profile**
 
-1.  In the Windows Dev Center dashboard, click **Account settings** in the left navigation menu.
+1.  In the Windows Dev Center dashboard, click the **Account settings** icon in the top right corner.
 2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
 
    > **Note**  Because this is sensitive info, you may be prompted to sign in again.
@@ -140,7 +138,7 @@ You can complete and submit your tax forms electronically in your dashboard; in 
 4.  Answer the questions about United States citizenship and residency, then click **Next**.
 5.  If your name and address info are displayed, confirm them for the purposes of filing taxes.
 
-Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or in-app products through the Windows Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
+Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or add-ons through the Windows Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
 
 A United States Individual Taxpayer Identification Number (or ITIN) is not required to receive payments from Microsoft or to claim tax treaty benefits.
 

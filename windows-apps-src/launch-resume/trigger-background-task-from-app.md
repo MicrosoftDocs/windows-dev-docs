@@ -1,0 +1,114 @@
+---
+author: TylerMSFT
+title: Trigger a background task from within your app
+description: Describes how to trigger a background task from within an application
+ms.author: twhitney
+ms.date: 04/25/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: background task trigger
+---
+
+# Trigger a background task from within your app
+
+Learn how to use the [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) to activate a background task from within your app.
+
+This topic assumes that you have a background task that you want to activate from your application. If you don't already have a background task, there is a sample background task at [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs). Or, follow the steps in [Create and register an out-of-process background task](create-and-register-a-background-task.md) to create one.
+
+## Create an application trigger
+
+- Create a new [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger).
+
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> ApplicationTrigger appTrigger = new ApplicationTrigger();
+> ```
+> ```cpp
+> ApplicationTrigger ^ appTrigger = ref new ApplicationTrigger();
+> ```
+
+## (Optional) Add a condition
+
+- You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
+
+    In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition userCondition = new SystemCondition(SystemConditionType.InternetAvailable);
+> ```
+> ```cpp
+> SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::InternetAvailable)
+> ```
+
+For more in-depth information on conditions and types of background triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+
+##  Call RequestAccessAsync()
+
+- Before trying to register the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+> ```
+
+## Register the background task
+
+- Register the background task by calling your background task registration function. For more information on registering background tasks, and to see the definition of the **RegisterBackgroundTask()** method in the sample code below, see [Register a background task](register-a-background-task.md).
+
+> [!Important]
+> For background tasks that run in the same process as your app, do not set `entryPoint`
+> For background tasks that run in a separate process from your app, set `entryPoint` to be the namespace, '.', and name of the class that contains your background task implementation.
+
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> string taskName   = "Example application trigger";
+>
+> BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, appTrigger, userCondition);
+> ```
+> ```cpp
+> String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> String ^ taskName   = "Example app background task";
+>
+> BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, appTrigger, userCondition);
+> ```
+
+> Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+
+## Managing resources for your background task
+
+Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants.
+
+- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.
+- CPU time: Background tasks are limited by the amount of wall-clock usage time they get based on trigger type. Background tasks triggered by the Application trigger are limited to about 10 minutes.
+
+See [Support your app with background tasks](support-your-app-with-background-tasks.md) for the resource constraints applied to background tasks.
+
+## Remarks
+
+> Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks.
+
+> A background task will only run using an **ApplicationTrigger** if you have called [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) first.
+
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+## Related topics
+
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Background activation code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)
+* [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
+* [Create and register an out-of-process background task](create-and-register-a-background-task.md)
+* [Debug a background task](debug-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Free memory when your app moves to the background](reduce-memory-usage.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run while minimized with extended execution](run-minimized-with-extended-execution.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)

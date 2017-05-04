@@ -13,15 +13,18 @@ keywords: windows 10, uwp
 
 # Monetize with ads
 
+Use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads for the following scenarios:
 
-If your app uses an **AdMediatorControl**, **AdControl**, or **InterstitialAd** control to display banner or interstitial ads, use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads.
+* Your UWP app uses an **AdControl** or **InterstitialAd** control from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
+* Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** control from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+* Your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
 
 ## Windows ad mediation
 
+If you have a Windows 8.x or Windows Phone 8.x app that uses an **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), use this section to configure your mediation settings and add required parameters for each of the ad networks used by your app. For more information about the options in this section, see [Submit your app and configure ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219689).
 
-If your app uses ad mediation, use this section to configure your mediation settings and add required parameters for each of the ad networks used by your app. For more information about the options in this section, see [Submit your app and configure ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219689).
-
-Ad mediation lets you optimize your in-app advertising revenue by mediating banner ad requests from multiple ad networks. For more information about ad mediation, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/mt219691).
+> [!NOTE]
+> Ad mediation for UWP apps that use an **AdControl** or **InterstitialAd** control from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) is coming soon.
 
 ## COPPA compliance
 
@@ -34,8 +37,6 @@ For more information on your obligations under COPPA, please see [this page](htt
 Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and buys products in the Store within a given attribution window, you will earn a commission on approved purchases.
 
 If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
-
-> **Note**  If your app uses ad mediation (that is, it uses an **AdMediatorControl** to display ads), your app can show affiliate ads only if your ad mediation settings are configured to show ads from Microsoft.
 
 ## Community ads
 
@@ -62,7 +63,7 @@ Your ad units appear in a table at the bottom of this section. For each ad unit 
 -   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
 -   If your app shows interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
 
-> **Note**  If your app uses an **AdMediatorControl** object to show banner ads from Microsoft Advertising, you do not need to request ad units. In this scenario, Microsoft Advertising ad units are automatically generated for you.
+> **Note**  If your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** object to show banner ads from Microsoft Advertising, you do not need to request ad units. In this scenario, ad units are automatically generated for you.
 
  
 
