@@ -1,4 +1,4 @@
----
+ ---
 author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: Optimize background activity
@@ -39,7 +39,7 @@ On desktop devices, the "Managed by Windows" setting is presented as a toggle sw
 
 In your app, you can use the [**BackgroundAccessStatus**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) enum value returned by a call to the [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) method to determine its current background activity permission setting.
 
-All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party.
+All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party. If your app has been denied permission to run in the background but requires background activity to complete an action for the user, then you can notify the user and point them to the Settings app. This can be accomplished by [**Launching the Settings App**](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app) to the Background Apps or Battery Usage Details page.
 
 ## Work with the Battery Saver feature
 Battery Saver is a system-level feature that users can configure in Settings. It cuts off all background activity of all apps when the battery level drops below a user-defined threshold, *except* for the background activity of apps that have been set to "Always allowed."
