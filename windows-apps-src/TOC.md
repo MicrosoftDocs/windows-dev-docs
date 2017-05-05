@@ -656,7 +656,7 @@
 #### [Trigger a background task from your app](launch-resume/trigger-background-task-from-app.md)
 #### [Update a live tile from a background task](launch-resume/update-a-live-tile-from-a-background-task.md)
 #### [Use a maintenance trigger](launch-resume/use-a-maintenance-trigger.md)
-### [Connected apps and devices (Project "Rome")](launch-resume/connected-apps-and-devices.md)
+### [Connected apps and devices (Project Rome)](launch-resume/connected-apps-and-devices.md)
 #### [Discover remote devices](launch-resume/discover-remote-devices.md)
 #### [Launch an app on a remote device](launch-resume/launch-a-remote-app.md)
 #### [Communicate with a remote app service](launch-resume/communicate-with-a-remote-app-service.md)
