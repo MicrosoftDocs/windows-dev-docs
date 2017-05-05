@@ -26,7 +26,7 @@ The [Windows Store](https://www.microsoft.com/store/apps) is a convenient way fo
 <div style="float: left; padding: 10px">
     ![Store icon](images/desktop-to-uwp/store.png)
 </div>
- Publish your app to that store to reach the broadest audience. Also, organizational customers can contact you through the store to distribute your app internally to their organizations through the [Windows Store for Business](https://www.microsoft.com/business-store).
+ Publish your app to that store to reach the broadest audience. Also, Also, organizational customers can acquire your app to distribute internally to their organizations through the [Windows Store for Business](https://www.microsoft.com/business-store).
 
 If you plan to publish to the Windows Store, and you haven't reached out to us yet, please fill out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge), and Microsoft will contact you to start the onboarding process.
 
@@ -41,6 +41,8 @@ This might make sense if you want greater control over the distribution experien
 To distribute your app to other devices without placing it onto the store, you have to obtain a certificate, sign your app by using that certificate, and then sideload your app onto those devices.
 
 You can [create a certificate](../packaging/create-certificate-package-signing.md) or obtain one from a popular vendor such as [Verisign](https://www.verisign.com/).
+
+If you plan to distribute your app onto devices that run Windows 10 S, your app has to be signed by the Windows Store so you'll have to go through the Store submission process before you can distribute your app onto those devices.
 
 If you create a certificate, you have to install it into the **Trusted Root** or **Trusted People** certificate store on each device that runs your app. If you get a certificate from a popular vendor, you won't have to install anything onto other systems besides your app.  
 

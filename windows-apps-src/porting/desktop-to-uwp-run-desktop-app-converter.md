@@ -371,7 +371,7 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 
 Here's some known issues and some things you can try to resolve them.
 
-#### E_CREATTING_ISOLATED_ENV_FAILED an E_STARTING_ISOLATED_ENV_FAILED errors    
+#### E_CREATING_ISOLATED_ENV_FAILED an E_STARTING_ISOLATED_ENV_FAILED errors    
 
 If you receive either of these errors, make sure that you're using a valid base image from the [download center](https://aka.ms/converterimages).
 If you’re using a valid base image, try using ``-Cleanup All`` in your command.
