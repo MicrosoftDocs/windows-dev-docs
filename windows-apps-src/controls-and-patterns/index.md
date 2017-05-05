@@ -137,29 +137,13 @@ Detailed information about specific controls and patterns.
 
 <li>[Tiles](tiles-and-notifications-creating-tiles.md)</li>
 
-<li>[Adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)</li>
-
-<li>[Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)</li>
-
-<li>[Asset guidelines](tiles-and-notifications-app-assets.md)</li>
-
-<li>[Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)</li>
-
-<li>[Adaptive and interactive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
+<li>[Toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
 
 <li>[Badge notifications](tiles-and-notifications-badges.md)</li>
 
-<li>[Notifications visualizer](tiles-and-notifications-notifications-visualizer.md)</li>
+<li>[Raw notifications](tiles-and-notifications-raw-notification-overview.md)</li>
 
 <li>[Notification delivery methods](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
-
-<li>[Local tile notifications](tiles-and-notifications-sending-a-local-tile-notification.md)</li>
-
-<li>[Periodic notifications](tiles-and-notifications-periodic-notification-overview.md)</li>
-
-<li>[WNS](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</li>
-
-<li>[Raw notifications](tiles-and-notifications-raw-notification-overview.md)</li>
 </ul>
 </li>
 
