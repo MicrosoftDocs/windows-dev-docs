@@ -35,9 +35,9 @@ In this section you'll find details about the info presented in each of the foll
 -   [Reviews report](reviews-report.md)
 -   [Feedback report](feedback-report.md)
 -   [Channels and conversions report](channels-and-conversions-report.md)
--   [Ad mediation report](ad-mediation-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
 -   [Affiliates performance report](affiliates-performance-report.md)
+-   [Ad mediation report](ad-mediation-report.md)
 -   [Promote your app report](promote-your-app-report.md)
 
 > [!NOTE]

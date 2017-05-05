@@ -24,7 +24,7 @@ These values are examples. In your code you will set the values of these functio
 <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
     data-win-control="MicrosoftNSJS.Advertising.AdControl"
     data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1',
-                       adUnitId: '10865270',
+                       adUnitId: 'test',
                        isAutoRefreshEnabled: false,
                        onAdRefreshed: myAdRefreshed,
                        onErrorOccurred: myAdError,

@@ -28,7 +28,7 @@ Here's how this program works:
 
     > **Note**  You can get paid for *any* product the user purchases within the attribution window, not just the product that was promoted in your app. For free apps that are promoted in your app, you can earn a revenue share for in-app purchases made by the user within the attribution window.
 
-* Any earnings you accrue in connection with the Microsoft affiliate ads program will be distributed to you in the [payout account you set up in Dev Center](setting-up-your-payout-account-and-tax-forms.md), along with your Microsoft advertising earnings.
+* Any earnings you accrue in connection with the Microsoft affiliate ads program will be distributed to you in the [payout account you set up in Dev Center](setting-up-your-payout-account-and-tax-forms.md), along with your other advertising earnings.
 * To track the performance of the affiliate ads in your app, refer to the [affiliates performance report](affiliates-performance-report.md). You can track daily purchases made through affiliate ads in your app and the revenue share that you received.  
 
   > **Note** After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated revenue**, **Purchases (approved)** and **Purchases (pending approval)** data on the [affiliates performance report](affiliates-performance-report.md) for a given day can change after purchases are approved or rejected.

@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 If you have [opted in to the Microsoft affiliate ads program](about-affiliate-ads.md), you can view performance data for the affiliate ads that appear in your app in the following reports on the Windows Dev Center dashboard:
 
 -   [App-level affiliates performance report](#app-level-affiliate-ads-performance-report). This report provides performance data for affiliate ads in the currently selected app in the dashboard.
--   [Dashboard-level affiliates performance report](#dashboard-level-affiliate-ads-performance-report). This report provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program.
+-   [Account-level affiliates performance report](#account-level-affiliate-ads-performance-report). This report provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program.
 
 These reports are updated daily. By default, the reports are filtered on performance from the last 30 days, on all devices. To change these filters, click **Page filters** and choose a different time frame or an individual device type. Note that all data is aggregated based using UTC, not your particular time zone.
 
@@ -36,11 +36,14 @@ The data is obtained from the following seven performance metrics we track for t
 -   **Purchases (approved)**: The number of approved purchases made by users clicking affiliate ads in your app.
 -   **Purchases (pending approval)**: The number of purchases pending approval that were made by users clicking affiliate ads in your app.
 
-> **Note**  After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated earnings (approved)**, **Estimated earnings (pending approval)**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.
+> [!NOTE]
+> After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated earnings (approved)**, **Estimated earnings (pending approval)**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.
 
-## Dashboard-level affiliate ads performance report
+## Account-level affiliate ads performance report
 
-The **Affiliates performance** section on your **Dashboard overview** page provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program, in graph and table form. This report shows the same performance metrics and filters as the app-level affiliates performance report described above.
+The **Affiliates performance** section at the bottom of the [account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report) provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program, in graph and table form. This report shows the same performance metrics and filters as the app-level affiliates performance report described above.
+
+To view this report, click **Analytics** &gt; **Advertising performance** in the navigation menu at the top of any page in the dashboard, and scroll down to the **Affiliates performance** section.
 
 ## Related topics
 

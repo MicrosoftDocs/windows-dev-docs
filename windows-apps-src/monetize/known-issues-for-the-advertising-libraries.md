@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: Learn about known issues for the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK.
+description: Learn about known issues for the current release of the Microsoft advertising libraries.
 title: Known issues for the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -58,7 +58,7 @@ You can also post a question in the [forum](http://go.microsoft.com/fwlink/p/?Li
 
 Test ads can be shown, even when you are expecting live ads. This can happen in the following scenarios:
 
-* Microsoft advertising cannot verify or find the live application ID used in the app store. In this case, when an ad unit is created by a user, its status can start as live (non-test) but will move to test status within 6 hours after the first ad request. It will change back to live if there are no requests from test apps for 10 days.
+* Our advertising platform cannot verify or find the live application ID used in the Store. In this case, when an ad unit is created by a user, its status can start as live (non-test) but will move to test status within 6 hours after the first ad request. It will change back to live if there are no requests from test apps for 10 days.
 
 * Side-loaded apps or apps that are running in the emulator will not show live ads.
 

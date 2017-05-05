@@ -13,7 +13,7 @@ keywords: windows 10, uwp, ads, advertising, testing
 
 # Test mode values
 
-When you use an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  to display ads in your app, you must specify an application ID and ad unit ID. While you are developing your app, use the test application ID and ad unit ID values from this article to see how your app renders ads during testing.
+When you use an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  to display ads in your app, you must specify an ad unit ID and application ID in the **AdUnitId** and **ApplicationId** properties. While you are developing your app, use the test application ID and ad unit ID values from this article to see how your app renders ads during testing.
 
 If you try to use test values in your app after you publish it, your live app not receive ads. To receive ads in your published app, you must update your code to use an application ID and ad unit ID provided by the Windows Dev Center dashboard. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
  
@@ -31,7 +31,7 @@ Here are the test values to use for interstitial and banner ads.
     <tr class="header">
     <th align="left">Target OS</th>
     <th align="left">AdUnitId</th>
-    <th align="left">AppId</th>
+    <th align="left">ApplicationId</th>
     </tr>
     </thead>
     <tbody>
@@ -61,7 +61,7 @@ Here are the test values to use for interstitial and banner ads.
     <tr class="header">
     <th align="left">Target OS</th>
     <th align="left">AdUnitId</th>
-    <th align="left">AppId</th>
+    <th align="left">ApplicationId</th>
     </tr>
     </thead>
     <tbody>
@@ -78,8 +78,8 @@ Here are the test values to use for interstitial and banner ads.
     </tbody>
     </table>
 
-
-> **Important**&nbsp;&nbsp;For an **AdControl**, the size of a live ad is defined by the **Width** and **Height** properties. For best results, make sure that the **Width** and **Height** properties in your code are one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md). The **Width** and **Height** properties will not change based on the size of a live ad.
+> [!IMPORTANT]
+> For an **AdControl**, the size of a live ad is defined by the **Width** and **Height** properties. For best results, make sure that the **Width** and **Height** properties in your code are one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md). The **Width** and **Height** properties will not change based on the size of a live ad.
 
 
  

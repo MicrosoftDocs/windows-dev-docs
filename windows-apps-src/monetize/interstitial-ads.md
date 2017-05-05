@@ -117,13 +117,13 @@ The following instructions assume you have created a Universal Windows project f
 
 3.  In the **&lt;head&gt;** section of the HTML file in the project, after the project’s JavaScript references of default.css and default.js, add the reference to ad.js. In a UWP project, add the following reference.
 
-  ``` html
+  ``` HTML
   <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
   ```
 
   In a Windows 8.1 or Windows Phone 8.1 project, add the following reference.
 
-  ``` html
+  ``` HTML
   <script src="/MSAdvertisingJS/ads/ad.js"></script>
   ```
 
@@ -213,11 +213,13 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 
 1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create an ad unit](../publish/monetize-with-ads.md). For the ad unit type, choose **Video interstitial** or **Banner interstitial**, depending on what type of interstitial ad you are showing. Make note of both the ad unit ID and the application ID.
 
-2.  In your code, replace the test ad unit values with the live values you generated in Dev Center.
+2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **InterstitialAd** by configuring the settings in the **Ad mediation** section on the **Monetize with ads** page for your app in the dashboard. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
 
-3.  [Submit your app](../publish/app-submissions.md) to the Store using the Windows Dev Center dashboard.
+3.  In your code, replace the test ad unit values with the live values you generated in Dev Center.
 
-4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
+4.  [Submit your app](../publish/app-submissions.md) to the Store using the Windows Dev Center dashboard.
+
+5.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
 <span id="interstitialbestpractices10"/>
 ## Interstitial best practices and policies
@@ -237,7 +239,3 @@ When using the Microsoft advertising libraries, you cannot target **Any CPU** in
 * [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md)
 * [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md)
 * [Advertising samples on GitHub](http://aka.ms/githubads)
-
- 
-
- 

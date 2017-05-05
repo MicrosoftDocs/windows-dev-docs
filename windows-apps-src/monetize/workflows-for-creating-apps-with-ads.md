@@ -13,9 +13,6 @@ keywords: windows 10, uwp, ads, advertising, AdControl, InterstitialAd
 
 # Workflows for creating apps with ads
 
-
-
-
 To display ads in your apps, your app needs to be able receive ads from an ad network. Microsoft provides a web service that allows Windows app developers to receive ads. When users click the ad in your app, you (being the *publisher* of the ad) earn money from the creator of the ads (the *advertiser*). The money earned from advertisers is paid to you using your account.
 
 The following high-level steps describe the general process of developing and publishing an app with ads.
@@ -23,7 +20,7 @@ The following high-level steps describe the general process of developing and pu
 1.  Development stage:
 
     * Set up your Windows Dev Center account.
-    * Develop your app using test mode values.
+    * Develop your app using test mode advertising values.
 
 2.  Ready to release:
 
@@ -34,9 +31,9 @@ For more information about each step, read its corresponding section below.
 
 ## Set up your Windows Dev Center account
 
-You need to have an account with Windows Dev Center to publish your app and receive ads. Advertising-related app management is also done in Windows Dev Center. If you have used Microsoft pubCenter to manage advertising in your apps, this has been replaced with features in Windows Dev Center
+You need to have an account with Windows Dev Center to publish your app and receive ads. Advertising-related app management is also done in Windows Dev Center. If you have used Microsoft pubCenter to manage advertising in your apps, this has been replaced by the **Monetize with ads** page in Windows Dev Center.
 
-To set up your account with Windows Dev Center, visit the [this page](http://go.microsoft.com/fwlink/p/?LinkId=615100).
+To set up your account with Windows Dev Center, visit [this page](http://go.microsoft.com/fwlink/p/?LinkId=615100).
 
 ## Develop your app using test mode values
 
@@ -53,14 +50,12 @@ For complete sample projects that demonstrate how to add banner and interstitial
 
 ## Configure your app to receive live ads
 
-After you finish testing your app and you are ready to submit it to Windows Dev Center, you must update your app code to use application ID and ad unit ID values from the [Windows Dev Center dashboard](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx). If you try to use test values in your live app, your app will not receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+After you finish testing your app and you are ready to submit it to Windows Dev Center, you must retrieve application ID and ad unit ID values from the **Monetize with ads** page for your app in the Windows Dev Center dashboard and then update your app code to use these values. If you try to use test values in your live app, your app will not receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md) and [Monetize with ads](../publish/monetize-with-ads.md).
 
-## Submit your app
+If your app is a UWP app for Windows 10, you can maximize your ad revenue and app promotion capabilities by enabling ad mediation for **AdControl** or **InterstitialAd** controls in your app to display ads from multiple ad networks. To start using ad mediation with one of these controls, go to the **Monetize with ads** page for your app in the dashboard and configure your ad mediation settings. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
+
+## Submit your app and review performance
 
 After you complete development of your app, you can publish your app in the Windows Store by using the Windows Dev Center dashboard. In addition to meeting requirements for all apps in the Windows Store, apps that display ads must meet several additional requirements. For more information, see [Submit an app with ads to the Windows Store](submit-an-app-with-ads-to-the-windows-store.md).
 
 After your app is published and available in the Windows Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
-
- 
-
- 

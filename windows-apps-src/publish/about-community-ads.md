@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 # About community ads
 
-If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
+If your app uses an **AdControl** to [display banner ads](../monetize/display-ads-in-your-app.md), you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
 
 Here's how this program works:
 
@@ -29,8 +29,11 @@ Here's how this program works:
 To opt in to community ads:
 
 1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
-2. In the **Community ads** section, check the **Show community ads in my app** box.
-   > **Note**  After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
+2. Do one of the following:
+  * If your app is a UWP app that targets Windows 10, go to the **Ad mediation** section on the page and check the **Microsoft Community ads** box in the **Other ad networks** list.
+  * If your app targets Windows 8.x or Windows Phone 8.x, go to the **Community ads** section on the page and check the **Show community ads in my app** box.
+    > [!NOTE]
+    > After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
 
 3. [Create an ad campaign](create-an-ad-campaign-for-your-app.md) for your app. For the campaign type, select **Free community ads**.
 

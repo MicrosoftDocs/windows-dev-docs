@@ -13,7 +13,7 @@ ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 
 # Update your app to the latest advertising libraries
 
-Apps that show banner ads from Microsoft advertising must use **AdControl** or **AdMediatorControl** from one of the following SDKs:
+Apps that show banner ads must use **AdControl** or **AdMediatorControl** from one of the following SDKs:
 
   * [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps)
   * [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps)

@@ -16,11 +16,11 @@ keywords: windows 10, uwp
 
 The **Payout summary** shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 
-If you use Microsoft Advertising to earn money, as of April 1, 2016, you'll also see payment info for advertising proceeds in the **Payout summary**. We’ll show the app in which these proceeds were earned, or “unmapped” for ad units utilized in multiple apps or that otherwise can’t be mapped to a specific app. 
+If you use advertising to earn money, as of April 1, 2016, you'll also see payment info for advertising proceeds in the **Payout summary**. We’ll show the app in which these proceeds were earned, or “unmapped” for ad units utilized in multiple apps or that otherwise can’t be mapped to a specific app. 
 
 If you sell products in the Azure Marketplace, you’ll also see info on successful payouts from November 1, 2015 and forward in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](http://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). More info about viewing earlier Azure Marketplace payout info can be found [here](http://go.microsoft.com/fwlink/p/?LinkID=722439).
 
-> **Note**  To be eligible for payout, your proceeds must reach the applicable [payment threshold](payment-thresholds-methods-and-timeframes.md). If the proceeds are less than the payment threshold, they will remain in the Reserved category until the threshold has been met. For more details about the payment threshold for app proceeds, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). For Microsoft Advertising proceeds, the payment threshold is $50 USD (or its equivalent in local currency). 
+> **Note**  To be eligible for payout, your proceeds must reach the applicable [payment threshold](payment-thresholds-methods-and-timeframes.md). If the proceeds are less than the payment threshold, they will remain in the Reserved category until the threshold has been met. For more details about the payment threshold for app proceeds, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). For advertising proceeds, the payment threshold is $50 USD (or its equivalent in local currency). 
 >
 > Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account. For more info, see [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
 
@@ -36,9 +36,9 @@ Near the top of the page, you’ll find your **Current proceeds and payments**, 
 ## Proceeds by app and adjustments
 
 
-This section breaks down the summary info to let you see specifics by app. If you earned money through Microsoft Advertising, the total amount of your advertising proceeds is shown here as a single line item.
+This section breaks down the summary info to let you see specifics by app. If you earned money through advertising, the total amount of your advertising proceeds is shown here as a single line item.
 
-By reviewing this section, you can determine which apps have earned money that’s currently in the **Reserved** or **Most recent payment** category. You can also see the total amount you’ve received for each app. If it was necessary to make any [adjustments](#proceeds-by-app-and-adjustments) to your account balance, you can view them here too. (Note that adjustments for Microsoft Advertising proceeds are not currently shown here.)
+By reviewing this section, you can determine which apps have earned money that’s currently in the **Reserved** or **Most recent payment** category. You can also see the total amount you’ve received for each app. If it was necessary to make any [adjustments](#proceeds-by-app-and-adjustments) to your account balance, you can view them here too. (Note that adjustments for advertising proceeds are not currently shown here.)
 
 ## Payment statements
 
@@ -75,7 +75,7 @@ The following table describes the fields that appear in the .csv file. Note that
 
 | Field name              | Description                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Windows Store, Windows Phone Store, Windows Store 8, Microsoft Advertising, etc.) |
+| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Windows Store, Windows Phone Store, Windows Store 8, advertising, etc.) |
 | Order ID          |  Unique order identifier. This ID allows you to identify purchase transactions with their respective non-purchase transactions (such as refunds, chargebacks, etc.). Both will have the same Order ID. Also, in the case of a split charge, where multiple payment methods were used for a single purchase, it will allow you to link the purchase transactions.                                                                                                          |
 | Transaction ID          |       Unique transaction identifier.  |
 | Transaction Date Time   | The date and time the transaction occurred (UTC).                                                                                        |

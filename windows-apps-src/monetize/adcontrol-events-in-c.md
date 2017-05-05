@@ -20,7 +20,6 @@ For more information about handling events in C#, see [Events and routed events 
 
 ## Examples
 
-> [!div class="tabbedCodeSnippets"]
 [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MainPage.xaml.cs#EventHandlers)]
 
 ## Related topics

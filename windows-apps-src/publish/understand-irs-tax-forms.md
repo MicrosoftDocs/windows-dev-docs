@@ -66,7 +66,7 @@ EIN: \*\*\*\*\*4442<br>
      <th> I should receive this form</th>
   </tr>
   <tr> 
-     <td valign="top">I received **at least $600 in payments** from ads in apps (Microsoft Advertising) in the applicable tax year</td>
+     <td valign="top">I received **at least $600 in payments** from ads in apps in the applicable tax year</td>
     <td valign="top">**1099-MISC** :<br>
 Payer: Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
@@ -74,7 +74,7 @@ EIN: \*\*\*\*\*0505<br>
 **Important:** Certain business entities will not receive 1099-MISC forms regardless of the payment amounts received from Microsoft.  Please consult your tax professional for further information.  </td>
   </tr>
   <tr> 
-     <td valign="top">I received **less than $600 in payments** from ads in apps (Microsoft Advertising) in the applicable tax year</td>
+     <td valign="top">I received **less than $600 in payments** from ads in apps in the applicable tax year</td>
      <td valign="top">None</td>
   </tr>
 </table>

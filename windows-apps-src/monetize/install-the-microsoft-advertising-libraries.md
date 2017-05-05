@@ -18,7 +18,8 @@ keywords: windows 10, uwp, ads, advertising, install, SDK, libraries
 
 For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
 
-> **Note**&nbsp;&nbsp;If you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library if you want to add ads to a JavaScript/HTML UWP app. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> [!NOTE]
+> If you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library if you want to add ads to a JavaScript/HTML UWP app. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
 
@@ -74,22 +75,6 @@ Before you can use the any of the advertising controls in your app code, you mus
 			<td>Windows Phone 8.1</td>
 			<td>Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)</td>
 			<td>8.5</td>
-		</tr>
-    <tr>
-			<td rowspan="3">**AdMediatorControl** (XAML only)</td>
-			<td>UWP</td>
-			<td>Microsoft Advertising Universal SDK</td>
-			<td>1.0</td>
-		</tr>
-		<tr>
-			<td>Windows 8.1</td>
-			<td>Ad Mediator SDK for Windows 8.1 XAML</td>
-			<td>1.0</td>
-		</tr>
-		<tr>
-			<td>Windows Phone 8.1</td>
-			<td>Ad Mediator SDK for Windows Phone 8.1 XAML</td>
-			<td>1.0</td>
 		</tr>
 	</tbody>
 </table>

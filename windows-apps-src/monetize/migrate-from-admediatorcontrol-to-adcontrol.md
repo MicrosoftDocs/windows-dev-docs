@@ -13,19 +13,31 @@ keywords: windows 10, uwp, ads, advertising, AdMediatorControl, AdControl, migra
 
 # Migrate from AdMediatorControl to AdControl
 
-Previous advertising SDK releases from Microsoft enabled Universal Windows Platform (UWP) apps to display banner ads using the **AdMediatorControl** class, which enabled developers to optimize their ad revenue by displaying banner ads from our partner networks (AOL and AppNexus) as well as AdDuplex. The [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) no longer supports the **AdMediatorControl** class. If you have an existing app that uses the **AdMediatorControl** class from a previous SDK and you want to migrate it to a UWP app that uses the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), follow the instructions in this article to update your code to use the **AdControl** class instead of the **AdMediatorControl** class. You can optionally configure your app to mediate ads with AdDuplex, using a weighted or ranked approach.
+Previous advertising SDK releases from Microsoft enabled Universal Windows Platform (UWP) apps to display banner ads using the **AdMediatorControl** class, which enabled developers to optimize their ad revenue by displaying banner ads from our partner networks (AOL and AppNexus) as well as AdDuplex. The [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) no longer supports the **AdMediatorControl** class. If you have an existing app that uses the **AdMediatorControl** class from a previous SDK and you want to migrate it to a UWP app that uses the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), you have two options:
 
->**Note**&nbsp;&nbsp;The code examples in this article are provided for illustration purposes only. You may need to make adjustments to the code examples to work in your app.
+* Replace all **AdMediatorControl** objects in your app with **AdControl** objects, create and assign new ad units to the **AdControl** objects, and then configure ad mediation settings in the **Monetize with ads** page of the Windows Dev Center dashboard. This is the easiest option, and it will let you mediate between a variety of paid ad networks as well as house ads and community ads from Microsoft. However, AdDuplex is not currently supported for ad mediation in UWP apps, so you will not be able to serve ads from AdDuplex if you choose this option.
 
-## Prerequisites
+  For more information about adding an **AdControl** to your app, see [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md) and [AdControl in HTML 5 and JavaScript](adcontrol-in-html-5-and-javascript.md). For more information about creating ad units and configuring ad mediation, see [Monetize with ads](../publish/monetize-with-ads.md).
+
+* Alternatively, if your **AdMediatorControl** is configured to serve ads from AdDuplex or if you want to continue using the existing ad units that are assigned to your **AdMediatorControl** instead of creating new ad units, you can follow the detailed instructions below.
+
+## Continue using AdDuplex or your existing ad units
+
+Follow these instructions if your **AdMediatorControl** is currently configured to serve ads from AdDuplex or if you want to continue using the existing ad units that are assigned to your **AdMediatorControl**.
+
+> [!NOTE]
+> The code examples in this section are provided for illustration purposes only. You may need to make adjustments to the code examples to work in your app.
+
+### Prerequisites
 
 * A UWP app that is currently using the AdMediatorControl and is published in the Windows Store.
 * A development computer with Visual Studio 2015 (or a later release) and the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) installed.
 * If you want to mediate ads with AdDuplex, you must also have the [AdDuplex Windows 10 SDK](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077) installed on your development computer.
 
-  >**Note**&nbsp;&nbsp;As an alternative to running the AdDuplex SDK installer from the link above, you can install the AdDuplex libraries for your UWP app project in Visual Studio. With your UWP app project open in Visual Studio, click **Project** > **Manage NuGet Packages**, search for the NuGet package named **AdDuplexWin10**, and install the package.
+  > [!NOTE]
+  > As an alternative to running the AdDuplex SDK installer from the link above, you can install the AdDuplex libraries for your UWP app project in Visual Studio 2015. With your UWP app project open in Visual Studio 2015, click **Project** > **Manage NuGet Packages**, search for the NuGet package named **AdDuplexWin10**, and install the package.
 
-## Step 1: Retrieve your application IDs and ad unit IDs
+### Step 1: Retrieve your application IDs and ad unit IDs
 
 When you migrate your code to use the **AdControl** class, you must know your application IDs and ad unit IDs. The best way to get the most recent IDs is to retrieve them from your mediation configuration file.
 
@@ -35,48 +47,49 @@ When you migrate your code to use the **AdControl** class, you must know your ap
 4. In the file, locate the ```<AdAdapterInfo>``` element with the child element ```<Name>MicrosoftAdvertising</Name>```. This section contains the configuration for Microsoft paid ads.
 5. In this ```<AdAdapterInfo>``` element, locate the ```<Property>``` elements that contain ```<Key>``` elements with the values **WApplicationId** and **WAdUnitId**. In the example below, the values of the ```<Value>``` elements are examples.
 
-  ```xml
-  <Metadata>
-      <Property>
-          <Key>WApplicationId</Key>
-          <Value>364d4938-c0f5-4c3d-8aae-090206211dc9</Value>
-      </Property>
-      <Property>
-          <Key>WAdUnitId</Key>
-          <Value>301568</Value>
-      </Property>
-  </Metadata>
-  ```
+    ```xml
+    <Metadata>
+        <Property>
+            <Key>WApplicationId</Key>
+            <Value>364d4938-c0f5-4c3d-8aae-090206211dc9</Value>
+        </Property>
+        <Property>
+            <Key>WAdUnitId</Key>
+            <Value>301568</Value>
+        </Property>
+    </Metadata>
+    ```
 
 6. Copy both of the values in these ```<Value>``` elements for use later. These values contain the application ID and ad unit ID for the non-mobile ad unit for Microsoft paid ads.
 5. In the same ```<AdAdapterInfo>``` element, locate the ```<Property>``` elements that contain ```<Key>``` elements with the values **MApplicationId** and **MAdUnitId**. In the example below, the values of the ```<Value>``` elements are examples.
 
-  ```xml
-  <Metadata>
-      <Property>
-          <Key>MApplicationId</Key>
-          <Value>e2cf8388-7018-4a11-8ab0de90f2a7a401</Value>
-      </Property>
-      <Property>
-          <Key>MAdUnitId</Key>
-          <Value>301056</Value>
-      </Property>
-  </Metadata>
-  ```
+    ```xml
+    <Metadata>
+        <Property>
+            <Key>MApplicationId</Key>
+            <Value>e2cf8388-7018-4a11-8ab0de90f2a7a401</Value>
+        </Property>
+        <Property>
+            <Key>MAdUnitId</Key>
+            <Value>301056</Value>
+        </Property>
+    </Metadata>
+    ```
 
 6. Copy both of the values in the ```<Value>``` elements for use later. These values contain the application ID and ad unit ID for the mobile ad unit for Microsoft paid ads.
 7. If you use [house ads](../publish/about-house-ads.md), locate the ```<AdAdapterInfo>``` element with the child element ```<Name>MicrosoftAdvertisingHouse</Name>```. In this element, locate ```<Key>``` elements with the values **MAdUnitId** and **WAdUnitId**, and save the values of the corresponding ```<Value>``` elements for use later. These are the mobile and non-mobile ad unit IDs for Microsoft house ads, respectively.
 8. If you use AdDuplex, locate the ```<AdAdapterInfo>``` element with the child element ```<Name>AdDuplex</Name>```. In this element, locate the ```<Key>``` elements with the values **AppKey** and **AdUnitId**, and save the values of the corresponding ```<Value>``` elements for use later. This is your AdDuplex app key and ad unit ID, respectively.
 
-## Step 2: Update your app code
+### Step 2: Update your app code
 
 Now that you have your application IDs and ad unit IDs, you are ready to update the code in your app to use **AdControl** instead of **AdMediatorControl**.
 
-### Microsoft paid ads only
+#### Microsoft paid ads only
 
 If you only use Microsoft paid ads in your ad mediation configuration, follow these steps.
 
-  >**Note**&nbsp;&nbsp;These steps assume that the app page on which you want to display ads contains an empty grid named **myAdGrid**, for example: ```<Grid x:Name="myAdGrid"/>```. In these steps, you will create and configure the ad controls entirely in code, rather than XAML.
+  > [!NOTE]
+  > These steps assume that the app page on which you want to display ads contains an empty grid named **myAdGrid**, for example: ```<Grid x:Name="myAdGrid"/>```. In these steps, you will create and configure the ad controls entirely in code, rather than XAML.
 
 1. In Visual Studio, open your UWP app project.
 2.  From the **Solution Explorer** window, right click **References**, and select **Add Reference…**.
@@ -86,11 +99,11 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 5. Open the code file for the app **Page** on which you want to display ads.
 6. Add the following statement to the top of the code file, if it does not already exist.
 
-  [!code-cs[TrialVersion](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet1)]
+    [!code-cs[TrialVersion](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet1)]
 
 7. Add the following constant declarations to your **Page** class.
 
-  [!code-cs[TrialVersion](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet2)]
+    [!code-cs[TrialVersion](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet2)]
 
 7. For each of these constant declarations, replace the values as described below:
 
@@ -100,17 +113,18 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 
 8. Add the following variable declarations to your **Page** class.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet3)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet3)]
 
 5. Add the following code to your **Page** class constructor, after the call to the **InitializeComponent()** method.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet4)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/MainPage.xaml.cs#Snippet4)]
 
-### Microsoft paid ads, house ads, and AdDuplex
+#### Microsoft paid ads, house ads, and AdDuplex
 
 If you use Microsoft house ads or AdDuplex as well as Microsoft paid ads and you want to continue to mediate ads with AdDuplex, follow the steps in this section. The code examples support both AdDuplex and Microsoft house ads. If you use AdDuplex but not Microsoft house ads or vice versa, remove the code that doesn't apply to your scenario.
 
-  >**Note**&nbsp;&nbsp;These steps assume that the app page on which you want to display ads contains an empty grid named **myAdGrid**, for example: ```<Grid x:Name="myAdGrid"/>```. In these steps, you will create and configure the ad controls entirely in code, rather than XAML.
+  > [!NOTE]
+  > These steps assume that the app page on which you want to display ads contains an empty grid named **myAdGrid**, for example: ```<Grid x:Name="myAdGrid"/>```. In these steps, you will create and configure the ad controls entirely in code, rather than XAML.
 
 1. In Visual Studio, open your UWP app project.
 2.  From the **Solution Explorer** window, right click **References**, and select **Add Reference…**.
@@ -120,11 +134,11 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
 5. Open the code file for the app **Page** on which you want to display ads.
 6. Add the following statements to the top of the code file, if they do not already exist.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet1)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet1)]
 
 7. Add the following constant declarations to your **Page** class.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet2)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet2)]
 
 4. For these constant declarations, replace the values as described below:
 
@@ -135,17 +149,17 @@ In **Reference Manager**, expand **Universal Windows**, click **Extensions**, an
   * **MAPPLICATIONID** and **MADUNITID_PAID**: Assign these to the **MApplicationId** and **MAdUnitId** values for Microsoft paid ads that you retrieved earlier from the mediation configuration file (these values are for the mobile ad unit for paid ads).
   * **MADUNITID_HOUSE**: Assign this to the **MAdUnitId** for house ads that you retrieved earlier from the mediation configuration file (this value is for the mobile ad unit for house ads).
   * **ADDUPLEX_APPKEY** and **ADDUPLEX_ADUNIT**: Assign these to the AdDuplex app key and ad unit ID values you retrieved earlier from the mediation configuration file.
-
-  >**Note**&nbsp;&nbsp;Do not change the **AD_REFRESH_SECONDS** and **MAX_ERRORS_PER_REFRESH** values shown in the previous example.
+      > [!NOTE]
+      > Do not change the **AD_REFRESH_SECONDS** and **MAX_ERRORS_PER_REFRESH** values shown in the previous example.
 
 5. Add the following variable declarations to your **Page** class.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet3)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet3)]
 
 5. Add the following code to your **Page** class constructor, after the call to the **InitializeComponent()** method.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet4)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet4)]
 
 6. Finally, add the following methods to your **Page** class. These methods instantiate the Microsoft **AdControl** and AdDuplex **AdControl** objects, and they use a random number generator in conjunction with given weight values to refresh banner ads in these controls at regular timer intervals.
 
-  [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
+    [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
