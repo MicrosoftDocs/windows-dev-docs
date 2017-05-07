@@ -38,9 +38,9 @@ To create a new key
 
 4.  If you don't already have a Bing Maps account, create a new Bing Maps account. Enter the **Account Name**, **Contact Name**, **Company Name**, **Email Address**, and **Phone Number**. After accepting the terms of use, click **Create**.
 
-5.  Under the **My account** menu, click **Create or view keys**.
+5.  Under the **My account** menu, click **My Keys**.
 
-6.  Click on the link **to create a new key**.
+6.  If you have previously created a key, click on the link to create a new key. Otherwise proceed to the Create Key form.
 
 7.  Complete the **Create Key** form and then click **Create**.
 
