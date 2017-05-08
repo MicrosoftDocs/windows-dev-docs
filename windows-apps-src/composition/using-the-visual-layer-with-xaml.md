@@ -207,6 +207,47 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
+#### C++
+
+This is the [C++/CX](https://docs.microsoft.com/en-us/cpp/cppcx/visual-c-language-reference-c-cx) equivalent of the previous C&#35; code using the same XAML structure.
+
+```cpp
+#include "WindowsNumerics.h"
+
+MainPage::MainPage()
+{
+    InitializeComponent();
+    InitializeDropShadow(ShadowHost, CircleImage);
+}
+
+void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Windows::UI::Xaml::Shapes::Shape^ shadowTarget)
+{
+    auto hostVisual = Windows::UI::Xaml::Hosting::ElementCompositionPreview::GetElementVisual(shadowHost);
+    auto compositor = hostVisual->Compositor;
+
+    // Create a drop shadow
+    auto dropShadow = compositor->CreateDropShadow();
+    dropShadow->Color = Windows::UI::ColorHelper::FromArgb(255, 75, 75, 80);
+    dropShadow->BlurRadius = 15.0f;
+    dropShadow->Offset = Windows::Foundation::Numerics::float3(2.5f, 2.5f, 0.0f);
+    // Associate the shape of the shadow with the shape of the target element
+    dropShadow->Mask = shadowTarget->GetAlphaMask();
+
+    // Create a Visual to hold the shadow
+    auto shadowVisual = compositor->CreateSpriteVisual();
+    shadowVisual->Shadow = dropShadow;
+
+    // Add the shadow as a child of the host in the visual tree
+    Windows::UI::Xaml::Hosting::ElementCompositionPreview::SetElementChildVisual(shadowHost, shadowVisual);
+
+    // Make sure size of shadow host and shadow visual always stay in sync
+    auto bindSizeAnimation = compositor->CreateExpressionAnimation("hostVisual.Size");
+    bindSizeAnimation->SetReferenceParameter("hostVisual", hostVisual);
+
+    shadowVisual->StartAnimation("Size", bindSizeAnimation);
+}
+```
+
 ### Frosted glass
 
 Create an effect that blurs and tints background content. Note that developers need to install the Win2D NuGet package to use effects. See the [Win2D homepage](http://microsoft.github.io/Win2D/html/Introduction.htm) for installation instructions.
