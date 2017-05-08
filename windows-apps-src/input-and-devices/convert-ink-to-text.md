@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition.
-title: Recognize Windows Ink strokes as text
+Description: Use handwriting recognition and ink analysis to recognize Windows Ink strokes as text and shapes.
+title: Recognize Windows Ink strokes as text and shapes
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
@@ -13,10 +13,10 @@ ms.prod: windows
 ms.technology: uwp
 ---
 
-# Recognize Windows Ink strokes as text
+# Recognize Windows Ink strokes as text and shapes
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Convert ink strokes to text using the handwriting recognition support in Windows Ink.
+Convert ink strokes to text using the built-in handwriting recognition supported by Windows Ink.
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -29,14 +29,14 @@ Convert ink strokes to text using the handwriting recognition support in Windows
 
 Handwriting recognition is built in to the Windows ink platform, and supports an extensive set of locales and languages.
 
-For all examples here, add the namespace references required for ink functionality. This includes "Windows.UI.Input.Inking".
-
 ## Basic handwriting recognition
 
+Here, we demonstrate how to use the Windows Ink handwriting recognition engine, associated with the default installed language pack, to interpret a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) as text input.
 
-Here, we demonstrate how to use the handwriting recognition engine, associated with the default installed language pack, to interpret a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+> [!NOTE]
+> The basic handwriting recognition shown in this step is best suited for straightforward, single-line, plain text scenarios such as form input. For richer recognition scenarios that include analysis and interpretation of document structure, list items, shapes, and drawings (in addition to text recognition), see the next section: [Rich recognition with ink analysis](rich-recognition-with-ink-analysis).
 
-The recognition is initiated by the user clicking a button when they are finished writing.
+In this example, recognition is initiated by the user clicking a button when they are finished writing.
 
 1.  First, we set up the UI.
 
@@ -72,7 +72,12 @@ The recognition is initiated by the user clicking a button when they are finishe
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2. For this example, you need to first add the namespace type references required for our ink functionality:
+- [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+- [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
+
+
+3.  We then set some basic ink input behaviors.
 
     The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). A listener for the click event on the "Recognize" button is also declared.
 ```    CSharp
@@ -97,7 +102,7 @@ public MainPage()
     }
 ```
 
-3.  Finally, we perform the basic handwriting recognition. For this example, we use the click event handler of the "Recognize" button to perform the handwriting recognition.
+4.  Finally, we perform the basic handwriting recognition. For this example, we use the click event handler of the "Recognize" button to perform the handwriting recognition.
 
     An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) stores all ink strokes in an [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) object. The strokes are exposed through the [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) property of the **InkPresenter** and retrieved using the [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) method.
 ```    CSharp
@@ -208,8 +213,267 @@ string str = "Recognition result\n";
     }
 ```
 
-## International recognition
+## Rich recognition with ink analysis
+Here, we demonstrate how to use the Windows Ink analysis engine ([Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)) to classify, analyze, and recognize a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) as either text or shapes.
 
+> [!NOTE]
+> In addition to text and shape recognition, ink analysis can be used to recognize document structure, bullet lists, and generic drawings. For basic, single-line, plain text scenarios such as form input, see the previous section: [Basic handwriting recognition](basic-handwriting-recognition).
+
+In this example, recognition is initiated by the user clicking a button when they are finished drawing.
+
+1.  First, we set up the UI.
+
+    The UI includes a "Recognize" button, an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and a standard [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). When the "Recognize" button is pressed, all ink strokes on the ink canvas are analyzed and (if recognized) corresponding shapes and text are drawn on the standard canvas. The original ink strokes are then deleted from the ink canvas.
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackPanel x:Name="HeaderPanel" 
+                Orientation="Horizontal" 
+                Grid.Row="0">
+        <TextBlock x:Name="Header" 
+                    Text="Basic ink analysis sample" 
+                    Style="{ThemeResource HeaderTextBlockStyle}" 
+                    Margin="10,0,0,0" />
+        <Button x:Name="recognize" 
+                Content="Recognize" 
+                Margin="50,0,10,0"/>
+    </StackPanel>
+    <Grid x:Name="drawingCanvas" Grid.Row="1">
+
+        <!-- The canvas where we render the replacement text and shapes. -->
+        <Canvas x:Name="recognitionCanvas" />
+        <!-- The canvas for ink input. -->
+        <InkCanvas x:Name="inkCanvas" />
+
+    </Grid>
+</Grid>
+```
+
+2. For this example, we first add the namespace type references required for our ink and ink analysis functionality to the UI code-behind file:
+    - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+    - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
+    - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
+
+3. We then specify our global variables:
+``` csharp
+    InkAnalyzer inkAnalyzer = new InkAnalyzer();
+    IReadOnlyList<InkStroke> inkStrokes = null;
+    InkAnalysisResult inkAnalysisResults = null;
+```
+
+3.  Next, we set some basic ink input behaviors:
+
+    - The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from pen, mouse, and touch as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). 
+    - Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). 
+    - A listener for the click event on the "Recognize" button is also declared.
+``` csharp
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set supported inking device types.
+        inkCanvas.InkPresenter.InputDeviceTypes =
+            Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+            Windows.UI.Core.CoreInputDeviceTypes.Pen | 
+            Windows.UI.Core.CoreInputDeviceTypes.Touch;
+
+        // Set initial ink stroke attributes.
+        InkDrawingAttributes drawingAttributes = new InkDrawingAttributes();
+        drawingAttributes.Color = Windows.UI.Colors.Black;
+        drawingAttributes.IgnorePressure = false;
+        drawingAttributes.FitToCurve = true;
+        inkCanvas.InkPresenter.UpdateDefaultDrawingAttributes(drawingAttributes);
+
+        // Listen for button click to initiate recognition.
+        recognize.Click += RecognizeStrokes_Click;
+    }
+```
+
+4.  For this example, we perform the ink analysis in the click event handler of the "Recognize" button.
+    - First, call [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer#Windows_UI_Input_Inking_InkStrokeContainer_GetStrokes) on the [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter#Windows_UI_Input_Inking_InkPresenter_StrokeContainer) of the [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas#Windows_UI_Xaml_Controls_InkCanvas_InkPresenter) to get the collection of all current ink strokes.
+    - If ink strokes are present, pass them in a call to [**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) of the InkAnalyzer.
+    - Call [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AnalyzeAsync) to initiate ink analysis and get the [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
+    - If [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult#Windows_UI_Input_Inking_Analysis_InkAnalysisResult_Status) returns a state of **Updated**, call [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot#Windows_UI_Input_Inking_Analysis_InkAnalysisRoot_FindNodes_Windows_UI_Input_Inking_Analysis_InkAnalysisNodeKind_) for both [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) and [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
+    - Iterate through both sets of node types and draw the respective text or shape on the recognition canvas (below the ink canvas).
+    - Finally, delete the recognized nodes from the InkAnalyzer and the corresponding ink strokes from the ink canvas.
+
+``` csharp
+    private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
+    {
+        inkStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+        // Ensure an ink stroke is present.
+        if (inkStrokes.Count > 0)
+        {
+            inkAnalyzer.AddDataForStrokes(inkStrokes);
+
+            // In this example, we try to recognizing both 
+            // writing and drawing, so the platform default 
+            // of "InkAnalysisStrokeKind.Auto" is used.
+            // If you're only interested in a specific type of recognition,
+            // such as writing or drawing, you can constrain recognition 
+            // using the SetStrokDataKind method as follows:
+            // foreach (var stroke in strokesText)
+            // {
+            //     analyzerText.SetStrokeDataKind(
+            //      stroke.Id, InkAnalysisStrokeKind.Writing);
+            // }
+            // This can improve both efficiency and recognition results.
+            inkAnalysisResults = await inkAnalyzer.AnalyzeAsync();
+
+            // Have ink strokes on the canvas changed?
+            if (inkAnalysisResults.Status == InkAnalysisStatus.Updated)
+            {
+                // Find all strokes that are recognized as handwriting and 
+                // create a corresponding ink analysis InkWord node.
+                var inkwordNodes = 
+                    inkAnalyzer.AnalysisRoot.FindNodes(
+                        InkAnalysisNodeKind.InkWord);
+
+                // Iterate through each InkWord node.
+                // Draw primary recognized text on recognitionCanvas 
+                // (for this example, we ignore alternatives), and delete 
+                // ink analysis data and recognized strokes.
+                foreach (InkAnalysisInkWord node in inkwordNodes)
+                {
+                    // Draw a TextBlock object on the recognitionCanvas.
+                    DrawText(node.RecognizedText, node.BoundingRect);
+
+                    foreach (var strokeId in node.GetStrokeIds())
+                    {
+                        var stroke = 
+                            inkCanvas.InkPresenter.StrokeContainer.GetStrokeById(strokeId);
+                        stroke.Selected = true;
+                    }
+                    inkAnalyzer.RemoveDataForStrokes(node.GetStrokeIds());
+                }
+                inkCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+
+                // Find all strokes that are recognized as a drawing and 
+                // create a corresponding ink analysis InkDrawing node.
+                var inkdrawingNodes =
+                    inkAnalyzer.AnalysisRoot.FindNodes(
+                        InkAnalysisNodeKind.InkDrawing);
+                // Iterate through each InkDrawing node.
+                // Draw recognized shapes on recognitionCanvas and
+                // delete ink analysis data and recognized strokes.
+                foreach (InkAnalysisInkDrawing node in inkdrawingNodes)
+                {
+                    if (node.DrawingKind == InkAnalysisDrawingKind.Drawing)
+                    {
+                        // Catch and process unsupported shapes (lines and so on) here.
+                    }
+                    // Process generalized shapes here (ellipses and polygons).
+                    else
+                    {
+                        // Draw an Ellipse object on the recognitionCanvas (circle is a specialized ellipse).
+                        if (node.DrawingKind == InkAnalysisDrawingKind.Circle || node.DrawingKind == InkAnalysisDrawingKind.Ellipse)
+                        {
+                            DrawEllipse(node);
+                        }
+                        // Draw a Polygon object on the recognitionCanvas.
+                        else
+                        {
+                            DrawPolygon(node);
+                        }
+                        foreach (var strokeId in node.GetStrokeIds())
+                        {
+                            var stroke = inkCanvas.InkPresenter.StrokeContainer.GetStrokeById(strokeId);
+                            stroke.Selected = true;
+                        }
+                    }
+                    inkAnalyzer.RemoveDataForStrokes(node.GetStrokeIds());
+                }
+                inkCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+            }
+        }
+    }
+```
+
+5. Here's the function for drawing a TextBlock on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
+
+``` csharp
+    // Draw text on the recognitionCanvas.
+    private void DrawText(string recognizedText, Rect boundingRect)
+    {
+        TextBlock text = new TextBlock();
+        TranslateTransform translateTransform = new TranslateTransform();
+        TransformGroup transformGroup = new TransformGroup();
+
+        translateTransform.X = boundingRect.Left;
+        translateTransform.Y = boundingRect.Top;
+        transformGroup.Children.Add(translateTransform);
+        text.RenderTransform = transformGroup;
+
+        text.Text = recognizedText;
+        text.FontSize = boundingRect.Height;
+
+        recognitionCanvas.Children.Add(text);
+    }
+```
+
+6. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
+
+``` csharp
+    // Draw an ellipse on the recognitionCanvas.
+    private void DrawEllipse(InkAnalysisInkDrawing shape)
+    {
+        var points = shape.Points;
+        Ellipse ellipse = new Ellipse();
+        ellipse.Width = Math.Sqrt((points[0].X - points[2].X) * (points[0].X - points[2].X) +
+                (points[0].Y - points[2].Y) * (points[0].Y - points[2].Y));
+        ellipse.Height = Math.Sqrt((points[1].X - points[3].X) * (points[1].X - points[3].X) +
+                (points[1].Y - points[3].Y) * (points[1].Y - points[3].Y));
+
+        var rotAngle = Math.Atan2(points[2].Y - points[0].Y, points[2].X - points[0].X);
+        RotateTransform rotateTransform = new RotateTransform();
+        rotateTransform.Angle = rotAngle * 180 / Math.PI;
+        rotateTransform.CenterX = ellipse.Width / 2.0;
+        rotateTransform.CenterY = ellipse.Height / 2.0;
+
+        TranslateTransform translateTransform = new TranslateTransform();
+        translateTransform.X = shape.Center.X - ellipse.Width / 2.0;
+        translateTransform.Y = shape.Center.Y - ellipse.Height / 2.0;
+
+        TransformGroup transformGroup = new TransformGroup();
+        transformGroup.Children.Add(rotateTransform);
+        transformGroup.Children.Add(translateTransform);
+        ellipse.RenderTransform = transformGroup;
+
+        var brush = new SolidColorBrush(Windows.UI.ColorHelper.FromArgb(255, 0, 0, 255));
+        ellipse.Stroke = brush;
+        ellipse.StrokeThickness = 2;
+        recognitionCanvas.Children.Add(ellipse);
+    }
+
+    // Draw a polygon on the recognitionCanvas.
+    private void DrawPolygon(InkAnalysisInkDrawing shape)
+    {
+        var points = shape.Points;
+        Polygon polygon = new Polygon();
+
+        foreach (var point in points)
+        {
+            polygon.Points.Add(point);
+        }
+
+        var brush = new SolidColorBrush(Windows.UI.ColorHelper.FromArgb(255, 0, 0, 255));
+        polygon.Stroke = brush;
+        polygon.StrokeThickness = 2;
+        recognitionCanvas.Children.Add(polygon);
+    }
+```
+
+Here's this sample in action:
+
+| Before analysis | After analysis |
+| --- | --- |
+| ![Before analysis](images\ink\ink-analysis-raw2.png) | ![After analysis](images\ink\ink-analysis-analyzed2.png) |
+
+## International recognition
 
 A comprehensive subset of languages supported by Windows can be used for handwriting recognition.
 
