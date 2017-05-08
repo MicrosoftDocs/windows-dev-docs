@@ -212,7 +212,7 @@ This example is similar to first one except it shows how you can sign your app f
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 
-The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the converted app](#run-app) section of this guide. This certificate only lets you test your app locally. To distribute your app, you'll have to use a certificate issued by a company. See [Sign a Windows Desktop Bridge App](desktop-to-uwp-signing.md).
+The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the converted app](#run-app) section of this guide.
 
 You can validate you app by using the ``Verify`` parameter.
 
@@ -336,7 +336,7 @@ See [Run your converted app](#run-app).
 > [!NOTE]
 > If you're prompted for a password, use the default password "123456".
 
-To sign your app for distribution, see [Sign your Windows app package](desktop-to-uwp-signing.md).
+To sign your app for distribution, see [Distribute your Windows Desktop Bridge app](desktop-to-uwp-distribute.md).
 
 **Videos**
 

@@ -90,11 +90,32 @@ See [Package a .NET app by using Visual Studio (Desktop to UWP Bridge)](desktop-
 
  Several popular third-party products and installers now support the Desktop to UWP Bridge. You can use them to generate MSI installers or converted app packages with only a few clicks. While we don't produce documentation on how to use these tools, visit their websites to learn more.
 
-* [Advanced Installer by Caphyon](http://www.advancedinstaller.com/)
-* [InstallShield by Flexera](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)
-* [WiX by FireGiant](https://www.firegiant.com/r/appx)
-* [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
-* [InstallAware](https://www.installaware.com/appx.htm)
+ Here's a few options:
+
+ #### Advanced Installer
+
+ Caphyon, a reliable Microsoft partner for many years, provides innovative solutions that help developers convert their Win32/.NET applications to UWP by extending the Desktop Bridge support from Microsoft.
+ <div style="float: left; padding: 10px; width: 20%">
+     ![desktop to UWP bridge image](images/desktop-to-uwp/Advanced_Installer_Vertical.png)
+ </div>
+ They provide a free, GUI-based, desktop app converter that helps you to generate a Windows app package for your application with only a few clicks. It converts any installer; even ones that run in silent mode, and performs a validation check to determine whether the app is suitable for conversion.
+
+ The desktop app converter also integrates with Hyper-V and [VMware](http://www.vmware.com/). This means that you can use your own virtual machines, without having to download a matching [Docker](https://docs.docker.com/) image that can be over 3GB in size.
+
+ You can use [Advanced Installer](http://www.advancedinstaller.com/) to generate MSI and [Windows app packages](http://www.advancedinstaller.com/uwp-app-package.html) from existing projects. You can also use Advanced installer to import Windows app packages that you generate by using the Microsoft Desktop App Converter. Once imported, you can maintain them by using visual tools that are specifically designed for UWP apps.
+
+ Advanced Installer also provides an extension for Visual Studio 2017 and 2015 that can use to [build and debug Desktop Bridge apps](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html).
+
+ See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) for a quick overview.
+
+ #### Other third-party Installers
+
+ These tools also offer excellent support for the Desktop Bridge.
+
+ * [InstallShield by Flexera](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)
+ * [WiX by FireGiant](https://www.firegiant.com/r/appx)
+ * [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
+ * [InstallAware](https://www.installaware.com/appx.htm)
 
 ## Enhance
 
@@ -161,7 +182,6 @@ Use the comments section below.
 | [Integrate your app with Windows 10 (Windows Desktop Bridge)](desktop-to-uwp-extensions.md) | Enhance your converted app with extensions to enable features like startup tasks and File Explorer integration. |
 | [UWP APIs available to Window Desktop Bridge apps](desktop-to-uwp-supported-api.md) | See what UWP APIs are available for your converted desktop app to use. |
 | [Debug a Windows Desktop Bridge app](desktop-to-uwp-debug.md) | Explains options for debugging your converted app. |
-| [Sign a Windows Desktop Bridge app](desktop-to-uwp-signing.md) | Learn how to sign your converted app package with a certificate. |
 | [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md) | See how you can distribute your converted app to users.  |
 | [Behind the scenes of the Desktop to UWP Bridge](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop to UWP Bridge works under the covers. |
 | [Known Issues (Desktop to UWP Bridge)](desktop-to-uwp-known-issues.md) | Lists known issues with the Desktop to UWP Bridge. |
