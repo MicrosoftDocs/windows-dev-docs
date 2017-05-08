@@ -67,7 +67,7 @@ Optional packages are used to either supplement or extend the original functiona
 
 **App Extension**
 
-[App extensions](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.appextensions) enable your Windows Store app to host content provided by other Windows Store apps. Discover, enumerate, and access read-only content from those apps.
+[App extensions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) enable your Windows Store app to host content provided by other Windows Store apps. Discover, enumerate, and access read-only content from those apps.
 
 If an app supports extensions, any developer can submit an extension for the app. Thus, the host app needs to be robust when it loads an extension that it hasn't been pre-tested with. Extensions should be considered untrusted.
 
@@ -75,7 +75,7 @@ Applications cannot load code from extensions. If you need code execution, consi
 
 **App Service**
 
-Windows app services enable app-to-app communication by allowing your UWP app to provide services to other Universal Windows app. App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. See [Create and consume an app service](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details.
+Windows app services enable app-to-app communication by allowing your UWP app to provide services to other Universal Windows app. App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) for details.
 
 App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.
 
@@ -85,8 +85,8 @@ Streaming Install is a way to optimize how your app is delivered to users. Rathe
 
 ## See Also
 
-[Create and consume an app service](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
+[Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)  
 [Optional packages and related set authoring](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)  
-[Windows.ApplicationModel.Extensions namespace](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.appextensions)  
+[Windows.ApplicationModel.Extensions namespace](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions)  
 [UWP App Streaming Install](https://docs.microsoft.com/windows/uwp/packaging/streaming-install)  
-[Windows.ApplicationModel.AppService namespace](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.AppService)    
+[Windows.ApplicationModel.AppService namespace](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService)    

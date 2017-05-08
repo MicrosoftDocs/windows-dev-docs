@@ -93,7 +93,7 @@ Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft
 
 To ensure that your Universal Windows app continues to run properly after you release an update, call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-**Limits on the number of trigger instances:** There are limits to how many instances of some triggers an app can register. An app can only register   [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) and [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) once per instance of the app. If an app goes over this limit, registration will throw an exception.
+**Limits on the number of trigger instances:** There are limits to how many instances of some triggers an app can register. An app can only register   [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) and [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) once per instance of the app. If an app goes over this limit, registration will throw an exception.
 
 ## System event triggers
 
@@ -182,7 +182,7 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Group background task registration](group-background-tasks.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 * [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Register a background task](register-a-background-task.md)

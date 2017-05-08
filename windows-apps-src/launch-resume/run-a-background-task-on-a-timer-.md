@@ -17,13 +17,13 @@ keywords: windows 10, uwp
 
 Learn how to use the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) to schedule a one-time background task, or run a periodic background task.
 
-See Scenario4 in the [Background activation sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation) to see an example of how to implement the time triggered background task described in this topic.
+See **Scenario4** in the [Background activation sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation) to see an example of how to implement the time triggered background task described in this topic.
 
 This topic assumes that you have a background task that needs to run periodically, or at a specific time. If you don't already have a background task, there is a sample background task at [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs). Or, follow the steps in [Create and register an in-process background task](create-and-register-an-inproc-background-task.md) or [Create and register an out-of-process background task](create-and-register-a-background-task.md) to create one.
 
 ## Create a time trigger
 
-- Create a new [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). The second parameter, *OneShot*, specifies whether the background task will run only once or keep running periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies the frequency at which the background task will run.
+Create a new [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). The second parameter, *OneShot*, specifies whether the background task will run only once or keep running periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies the frequency at which the background task will run.
 
 The built-in timer for Universal Windows Platform (UWP) apps that target the desktop or mobile device family runs background tasks in 15-minute intervals. (The timer runs in 15-minute intervals so that the system only needs to wake once every 15 minutes to wake up the apps that have requested TimerTriggers--which saves power.)
 
@@ -45,7 +45,7 @@ For example, this trigger will cause a background task to run once an hour:
 
 ## (Optional) Add a condition
 
-- You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
+You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
 In this example the condition is set to **UserPresent** so that, once triggered, the task only runs once the user is active. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
@@ -61,16 +61,21 @@ For more in-depth information on conditions and types of background triggers, se
 
 ##  Call RequestAccessAsync()
 
-- Before trying to register the **TimeTrigger** background task, you must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+Before registering the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) to determine the level of background activity the user allows because the user may have disabled background activity for your app. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
-> await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+> var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+> if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
+> {
+>    // Depending on the value of requestStatus, provide an appropriate response
+>    // such as notifying the user which functionality won't work as expected
+> }
 > ```
 
 ## Register the background task
 
-- Register the background task by calling your background task registration function. For more information on registering background tasks, and to see the definition of the **RegisterBackgroundTask()** method in the sample code below, see [Register a background task](register-a-background-task.md).
+Register the background task by calling your background task registration function. For more information on registering background tasks, and to see the definition of the **RegisterBackgroundTask()** method in the sample code below, see [Register a background task](register-a-background-task.md).
 
 > [!Important]
 > For background tasks that run in the same process as your app, do not set `entryPoint`
@@ -94,9 +99,9 @@ For more in-depth information on conditions and types of background triggers, se
 
 ## Manage resources for your background task
 
-Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants.
+Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.
 
-- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.
+- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.  
 - CPU time: Background tasks are limited by the amount of wall-clock usage time they get based on trigger type.
 
 See [Support your app with background tasks](support-your-app-with-background-tasks.md) for the resource constraints applied to background tasks.
@@ -112,7 +117,7 @@ See [Support your app with background tasks](support-your-app-with-background-ta
 ## Related topics
 
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Background activation code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)
+* [Background task code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)
 * [Create and register an out-of-process background task](create-and-register-a-background-task.md)
 * [Debug a background task](debug-a-background-task.md)

@@ -16,16 +16,16 @@ Learn how to write a background task that runs after your Universal Windows Plat
 
 The Update Task background task is invoked by the operating system after the user installs an update to an app that is installed on the device. This allows your app to perform initialization tasks such as initializing a new push notification channel, updating database schema, and so on, before the user launches your updated app.
 
-The Update Task differs from launching a background task using the [ServicingComplete](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) trigger because in that case your app must run at least once before it is updated in order to register the background task that will be activated by the **ServicingComplete** trigger.  The Update Task isn't registered and so an app that has never been run, but that is upgraded, will still have its update task triggered.
+The Update Task differs from launching a background task using the [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) trigger because in that case your app must run at least once before it is updated in order to register the background task that will be activated by the **ServicingComplete** trigger.  The Update Task isn't registered and so an app that has never been run, but that is upgraded, will still have its update task triggered.
 
 ## Step 1: Create the background task class
 
-As with other types of background tasks, you implement the Update Task background task as a Windows Runtime component. To create this component, follow the steps in the **Create the Background Task class** section of [Create and register an out-of-process background task](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/create-and-register-a-background-task). The steps include:
+As with other types of background tasks, you implement the Update Task background task as a Windows Runtime component. To create this component, follow the steps in the **Create the Background Task class** section of [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task). The steps include:
 
 - Adding a Windows Runtime Component project to your solution.
 - Creating a reference from your app to the component.
 - Creating a public, sealed class in the component that implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
-- Implementing the [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method, which is the required entry point that is called when the Update Task is run. If you are going to make asynchronous calls from your background task, [Create and register an out-of-process background task](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/create-and-register-a-background-task) explains how to use a deferral in your **Run** method.
+- Implementing the [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method, which is the required entry point that is called when the Update Task is run. If you are going to make asynchronous calls from your background task, [Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) explains how to use a deferral in your **Run** method.
 
 You don't need to register this background task (the "Register the background task to run" section in the **Create and register an out-of-process background task** topic) to use the Update Task. This is the main reason to use an Update Task because you don't need to add any code to your app to register the task and the app doesn't have to at least run once before being updated to register the background task.
 
@@ -89,8 +89,8 @@ Now, in Visual Studio 2017 when you press F5, your app will be updated and the s
 When the background task completes, you can launch the foreground app from the Windows start menu within the same debug session. The debugger will again automatically attach, this time to your foreground process, and you can step through your app's logic.
 
 > [!NOTE]
-> Visual Studio 2015 users: The above steps apply to Visual Studio 2017. If you are using Visual Studio 2015, you can use the same techniques to trigger and test the UpdateTask, except Visual Studio will not attach to it. An alternative procedure in VS 2015 is to setup an [ApplicationTrigger](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.applicationtrigger) that sets the UpdateTask as its Entry Point, and trigger the execution directly from the foreground app.
+> Visual Studio 2015 users: The above steps apply to Visual Studio 2017. If you are using Visual Studio 2015, you can use the same techniques to trigger and test the UpdateTask, except Visual Studio will not attach to it. An alternative procedure in VS 2015 is to setup an [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app) that sets the UpdateTask as its Entry Point, and trigger the execution directly from the foreground app.
 
 ## See also
 
-[Create and register an out-of-process background task](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/create-and-register-a-background-task)
+[Create and register an out-of-process background task](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

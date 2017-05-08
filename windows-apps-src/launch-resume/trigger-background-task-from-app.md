@@ -16,21 +16,25 @@ Learn how to use the [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Win
 
 This topic assumes that you have a background task that you want to activate from your application. If you don't already have a background task, there is a sample background task at [BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs). Or, follow the steps in [Create and register an out-of-process background task](create-and-register-a-background-task.md) to create one.
 
+## Why use an application trigger
+
+Use an **ApplicationTrigger** to run code in a separate process from the foreground app. An **ApplicationTrigger** is appropriate if your app has work that needs to be done in the background--even if the user closes the foreground app. If background work should halt when the app is closed, or should be tied to the state of the foreground process, then [Extended Execution](run-minimized-with-extended-execution.md) should be used, instead.
+
 ## Create an application trigger
 
-- Create a new [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger).
+Create a new [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger). You could store it in a field as is done in the snippet below. This is for convenience so that we don't have to create a new instance later when we want to signal the trigger. But you can use any **ApplicationTrigger** instance to signal the trigger.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
-> ApplicationTrigger appTrigger = new ApplicationTrigger();
+>  _AppTrigger = new ApplicationTrigger(); // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive as long as you need to trigger the background task. Or, you could create a new ApplicationTrigger instance and use that when you want to trigger the background task.
 > ```
 > ```cpp
-> ApplicationTrigger ^ appTrigger = ref new ApplicationTrigger();
+> ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger(); // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive as long as you need to trigger the background task. Or, you could create a new ApplicationTrigger instance and use that when you want to trigger the background task.
 > ```
 
 ## (Optional) Add a condition
 
-- You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
+You can create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met. For more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
     In this example the condition is set to **InternetAvailable** so that, once triggered, the task only runs once internet access is available. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
@@ -46,20 +50,23 @@ For more in-depth information on conditions and types of background triggers, se
 
 ##  Call RequestAccessAsync()
 
-- Before trying to register the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+Before registering the **ApplicationTrigger** background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) to determine the level of background activity the user allows because the user may have disabled background activity for your app. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
-> await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+> var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
+> if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
+> {
+>    // Depending on the value of requestStatus, provide an appropriate response
+>    // such as notifying the user which functionality won't work as expected
+> }
 > ```
 
 ## Register the background task
 
-- Register the background task by calling your background task registration function. For more information on registering background tasks, and to see the definition of the **RegisterBackgroundTask()** method in the sample code below, see [Register a background task](register-a-background-task.md).
+Register the background task by calling your background task registration function. For more information on registering background tasks, and to see the definition of the **RegisterBackgroundTask()** method in the sample code below, see [Register a background task](register-a-background-task.md).
 
-> [!Important]
-> For background tasks that run in the same process as your app, do not set `entryPoint`
-> For background tasks that run in a separate process from your app, set `entryPoint` to be the namespace, '.', and name of the class that contains your background task implementation.
+If you are considering using an Application Trigger to extend the lifetime of your foreground process, consider using [Extended Execution](run-minimized-with-extended-execution.md) instead. The Application Trigger is designed for creating a separately hosted process to do work in. The following code snippet registers an out-of-process background trigger.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -77,11 +84,25 @@ For more in-depth information on conditions and types of background triggers, se
 
 > Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
-## Managing resources for your background task
+## Trigger the background task
 
-Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants.
+Before you trigger the background task, use [BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) to verify that the background task is registered. A good time to verify that all of your background tasks are registered is during app launch.
 
-- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.
+Trigger the background task by calling [ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger). Any **ApplicationTrigger** instance will do.
+
+Note that **ApplicationTrigger.RequestAsync** can't be called from the background task itself, or when the app is in the background running state (see [App lifecycle](app-lifecycle.md) for more information about application states).
+It may return [DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult) if the user has set energy or privacy policies that prevent the app from performing background activity.
+Also, only one AppTrigger can run at a time. If you attempt to run an AppTrigger while another is already running, the function will return [CurrentlyRunning](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult).
+
+> ```cs
+> var result = await _AppTrigger.RequestAsync();
+> ```
+
+## Manage resources for your background task
+
+Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) to determine if the user has decided that your app’s background activity should be limited. Be aware of your battery usage and only run in the background when it is necessary to complete an action that the user wants. See [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) for more information about the ways users can control the settings for background activity.  
+
+- Memory: Tuning your app's memory and energy use is key to ensuring that the operating system will allow your background task to run. Use the [Memory Management APIs](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) to see how much memory your background task is using. The more memory your background task uses, the harder it is for the OS to keep it running when another app is in the foreground. The user is ultimately in control of all background activity that your app can perform and has visibility on the impact your app has on battery use.  
 - CPU time: Background tasks are limited by the amount of wall-clock usage time they get based on trigger type. Background tasks triggered by the Application trigger are limited to about 10 minutes.
 
 See [Support your app with background tasks](support-your-app-with-background-tasks.md) for the resource constraints applied to background tasks.
@@ -97,7 +118,7 @@ See [Support your app with background tasks](support-your-app-with-background-ta
 ## Related topics
 
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Background activation code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)
+* [Background task code sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
 * [Create and register an out-of-process background task](create-and-register-a-background-task.md)
 * [Debug a background task](debug-a-background-task.md)
