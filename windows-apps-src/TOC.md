@@ -8,6 +8,8 @@
 ### [Create a "Hello, world" app (C#)](get-started/create-a-hello-world-app-xaml-universal.md)
 ### [Create a "Hello, world" app (JS)](get-started/create-a-hello-world-app-js-uwp.md)
 ### [Create a "Hello, world" app (C++)](get-started/create-a-basic-windows-10-app-in-cpp.md)
+### [Support ink in your UWP app](get-started/ink-walkthrough.md)
+### [Support the Surface Dial (and other wheel devices) in your UWP app](get-started/radialcontroller-walkthrough.md)
 ### [A 2D UWP game in JavaScript](get-started/get-started-tutorial-game-js2d.md)
 ### [A 3D UWP game in JavaScript](get-started/get-started-tutorial-game-js3d.md)
 ### [A UWP game in MonoGame](get-started/get-started-tutorial-game-mg2d.md)

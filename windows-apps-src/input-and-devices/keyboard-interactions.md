@@ -61,7 +61,7 @@ Here are the devices and tools discussed in this topic:
 |Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](designing-for-tv.md).
 For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input.
-For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started).|
+For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
 
 ### Focus visuals <a name="focus-visual">
 
@@ -235,8 +235,8 @@ A shortcut is a keyboard combination that enhances productivity by providing an 
 -   An [accelerator key](#accelerators) is a shortcut to an app command. Your app may or may not have UI that corresponds exactly to the command. Accelerator keys consist of the Ctrl key plus a letter key.
 -   An [access key](#access-keys) is a shortcut to a piece of UI in your app. Access keys consist of the Alt key plus a letter key.
 
-Visit this page for exhaustive listing of [keyboard shortcuts for Windows](https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts)
-as well as [application specific keyboard shortcuts](https://support.microsoft.com/en-us/help/13805/windows-keyboard-shortcuts-in-apps) used by applications developed by Microsoft.
+Visit this page for exhaustive listing of [keyboard shortcuts for Windows](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)
+as well as [application specific keyboard shortcuts](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps) used by applications developed by Microsoft.
 
 #### Accelerators <a name="accelerators">
 
@@ -272,7 +272,7 @@ Access keys have the following characteristics:
 
 #### Common keyboard shortcuts
 
-The following table is a small sample of frequently used keyboard commands. For a complete list of keyboard commands, see [Windows Keyboard Shortcut Keys](https://support.microsoft.com/en-us/kb/126449).
+The following table is a small sample of frequently used keyboard commands. For a complete list of keyboard commands, see [Windows Keyboard Shortcut Keys](https://support.microsoft.com/kb/126449).
 
 | Action                               | Key command                                      |
 |--------------------------------------|--------------------------------------------------|
@@ -361,7 +361,7 @@ The following image shows an intuitive keyboard navigation behavior for a contro
 
 ### Keyboard and Narrator
 
-Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator. (The [Narrator basics page](https://support.microsoft.com/en-us/help/22808/windows-10-narrator-learning-basics) guides you through the Narrator user experience.)
+Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator. (The [Narrator basics page](https://support.microsoft.com/help/22808/windows-10-narrator-learning-basics) guides you through the Narrator user experience.)
 
 Some of the differences between UWP keyboard behaviors and those supported by Narrator include:
 -   Extra key combinations for navigation to UI elements that are not exposed through standard keyboard navigation, such as Caps lock + arrow keys to read control labels.
@@ -416,7 +416,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 
 #### Directional navigation <a name="directional-navigation">
 
-Directional navigation is managed by a UWP [Focus Manager](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
+Directional navigation is managed by a UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
 
 Unlike the keyboard, when an app opts out of [Mouse Mode](designing-for-tv.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control . Visit [XY focus navigation and interaction article](designing-for-tv.md#xy-focus-navigation-and-interaction) for more detail on directional navigation optimizations for gamepad and remote control.
 
@@ -581,4 +581,4 @@ The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; 
 
 ***On-Screen Keyboard***
 
-Visit [On-Screen keyboard page](https://support.microsoft.com/en-us/help/10762/windows-use-on-screen-keyboard) for more details about On-Screen Keyboard.
+Visit [On-Screen keyboard page](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) for more details about On-Screen Keyboard.

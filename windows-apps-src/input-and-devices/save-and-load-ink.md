@@ -18,6 +18,9 @@ ms.technology: uwp
 
 UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
 
+> [!NOTE]
+> ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
+
 <div class="important-apis" >
 <b>Important APIs</b><br/>
 <ul>
@@ -26,9 +29,6 @@ UWP apps that support Windows Ink can serialize and deserialize ink strokes to a
 </ul>
 </div>
 
-
-> [!NOTE]
-> ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
 
  
 
