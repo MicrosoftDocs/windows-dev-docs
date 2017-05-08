@@ -4,7 +4,7 @@ Description: The Pricing and availability page of the app submission process let
 title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 04/18/2017
+ms.date: 05/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,16 +24,13 @@ For more info, see [Define pricing and market selection](define-pricing-and-mark
 
 ## Free trial
 
-> [!IMPORTANT]
-> Microsoft is currently investigating an issue with time-limited trials which may enable customers to use multiple free trials for the same product. We will remove this note once the issue has been resolved.
-
 Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, an app will not be available as a free trial, but if you'd like to offer one, select a value from the **Free trial** dropdown.
 
 Choose **Trial never expires** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to [exclude or limit features in the trial version](../monetize/in-app-purchases-and-trials.md).
 
 You also have the option to select a time-limited trial of **1 day**, **7 days**, **15 days**, or **30 days**. You can still limit features during the trial period, or you can let customers access the full functionality during that period of time.
 
-> **Note**  Time-limited trials are not shown to customers on Windows Phone 8.1 and earlier.
+> **Note**  Time-limited trials are not shown to customers on Windows 10 build 10.0.10586 or earlier, or to customers on Windows Phone 8.1 and earlier.
 
 ## Markets and custom prices
 

@@ -14,24 +14,19 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Peer-to-peer navigation between two pages
+# Implement navigation between two pages
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Learn how to navigate in a basic two page peer-to-peer Universal Windows Platform (UWP) app.
+Learn how to use a frame and pages to enable basic navigation in your app. 
+<p></p>
+<table>
+	<tr>
+		<td>Important APIs:</td><td>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class, [**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class, [**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) namespace</td>
+	</tr>
+</table>
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)</li>
-<li>[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503)</li>
-<li>[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)</li>
-</ul>
-</div>
-
-
-
-## Create the blank app
+## 1. Create a blank app
 
 
 1.  On the Microsoft Visual Studio menu, choose **File &gt; New Project**.
@@ -47,7 +42,7 @@ Learn how to navigate in a basic two page peer-to-peer Universal Windows Platfor
 
 6.  Press Shift+F5 to stop debugging and return to Visual Studio.
 
-## Add basic pages
+## 2. Add basic pages
 
 Next, add two content pages to the project.
 
@@ -243,7 +238,7 @@ Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.micros
 
 Now, build and run the app. Click the link that says "Click to go to page 2". The second page that says "Page 2" at the top should be loaded and displayed in the frame.
 
-## Frame and Page classes
+## About the Frame and Page classes
 
 Before we add more functionality to our app, let's look at how the pages we added provide navigation support for the app.
 
@@ -259,7 +254,7 @@ In our example, `Page1` is passed to the [**Navigate**](https://msdn.microsoft.c
 
 Whenever a page is loaded into the frame, that page is added as a [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) to the [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543) or [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) of the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br227504).
 
-## Pass information between pages
+## 3. Pass information between pages
 
 Our app navigates between two pages, but it really doesn't do anything interesting yet. Often, when an app has multiple pages, the pages need to share information. Let's pass some information from the first page to the second page.
 
@@ -340,7 +335,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 
 Run the app, type your name in the text box, and then click the link that says **Click to go to page 2**. When you called `this.Frame.Navigate(typeof(Page2), name.Text)` in the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the `name.Text` property was passed to `Page2` and the value from the event data is used for the message displayed on the page.
 
-## Cache a page
+## 4. Cache a page
 
 Page content and state is not cached by default, you must enable it in each page of your app.
 

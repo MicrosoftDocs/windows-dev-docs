@@ -16,6 +16,8 @@ The [CodecQuery](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.cod
 
 The CodecQuery API is a member of the [Windows.Media.Core](https://docs.microsoft.com/en-us/uwp/api/windows.media.core) namespace, so you will need to include this namespace in your app.
 
+The CodecQuery API is a member of the [Windows.Media.Core](https://docs.microsoft.com/en-us/uwp/api/windows.media.core) namespace, so you will need to include this namespace in your app.
+
 [!code-cs[CodecQueryUsing](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetCodecQueryUsing)]
 
 Initialize a new instance of the **CodecQuery** class by calling the constructor.

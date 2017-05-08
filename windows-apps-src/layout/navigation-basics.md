@@ -14,14 +14,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-#  Navigation design basics for UWP apps
+# Navigation design basics for UWP apps
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Navigation is the starting point of the user experience: users navigate from page to page and within the page to get to the content and features they want. Creating a good navigation system is essential to a good user experience. 
+If you think of an app as a collection of pages, the term *navigation* describes the act of moving between pages and within the page. It's the starting point of the user experience. It's how users find the content and features they're interested in. It's very important, and it can be difficult to get right. 
 
-## Principles of good navigation design 
-Research and experience have shown that these three principles form the foundation of good navigation design: 
+Part of the reason it's difficult to get right is that, as app designers, we have a huge number of choices to make. If we were designing a book, our choices would be simple: what order do the chapters go in. With an app, we can create a navigation experience that mimics a book, requiring the user to go through a series of pages in order. Or we could provide a menu that lets the user jump directly to any page he or she wants--but if we have too many pages, we might overwhelm the user with choices. Or we could put everything on a single page and provide filtering mechanisms for viewing content. 
+
+While there's no single navigation design that works for every app, there are a set of principles and guidelines you can follow to help you figure out the right design for your app. 
+
+## Principles of good design 
+Let's start with the basic principles that research has shown form the foundation of good navigation design: 
 
 * Be consistent: Meet user expectations.
 * Keep it simple: Don't do more than you need to.
@@ -49,14 +53,14 @@ Another important factor in navigation design is the Hick-Hyman Law, often cited
 ### Keep it clean
 The final key characteristic of navigation is clean interaction, which refers to the physical way that users interact with navigation across a variety of contexts. This is one area where putting yourself in the users position will inform your design. Try to understand your user and their behaviors. For example, if you're designing a cooking app, you might consider providing easy access to a shopping list and a timer. 
 
-## General rules
-Several rules of thumb help designers to encapsulate consistency, simplicity and clean interaction in their navigation design. Most of these come from the web design world and will apply to touch and non-touch devices. As with any rule of thumb, use them as starting points and tweak as needed. 
+## Three general rules
+Now lets take our design principles--consistency, simplicity, and clean interaction--and use them to come up with some general rules. As with any rule of thumb, use them as starting points and tweak as needed. 
 
 1. Avoid deep navigational hierarchies. How many levels of navigation are best for your users? A top-level navigation and one level beneath it is usually plenty. If you go beyond three levels of navigation, then you break the principle of simplicity. Even worse, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
 
 2. Avoid too many navigational options. Three to six navigation elements per level are most common. If your navigation needs more than this, especially at the top level of your hierarchy, then you might consider splitting your app into multiple apps, since you may be trying to do too much in one place. Too many navigation elements in an app usually lead to inconsistent and unrelated objectives.
 
-3. Avoid pogo-sticking. Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again. Pogo-sticking violates the principle of clean interaction by requiring unnecessary clicks or interactions to achieve an obvious goal—in this case, looking at related content in a series. (The exception to this rule is in search and browse, where pogo-sticking may be the only way to provide the diversity and depth required.)
+3. Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again. Pogo-sticking violates the principle of clean interaction by requiring unnecessary clicks or interactions to achieve an obvious goal—in this case, looking at related content in a series. (The exception to this rule is in search and browse, where pogo-sticking may be the only way to provide the diversity and depth required.)
 <figure class="wdg-figure">
   ![An example of pogo-sticking](images/nav/nav-pogo-sticking-1.png)
   <figcaption> Pogo-sticking to navigate through an app—the user has to go back (green back arrow)  to the main page in order to navigate to the “Projects” tab.
@@ -69,139 +73,52 @@ Several rules of thumb help designers to encapsulate consistency, simplicity and
 </figure> 
 
 
+## Use the right structure 
+Now that you're familiar with general navigation principles and rules, it's time to make the most important of all navigation decisions: how should you structure your app? There are two general structures: flat and hierarchal. 
 
+### Flat/lateral
+In a flat/lateral structure, pages exist side-by-side. You can go from on page to another in any order. 
+<figure class="wdg-figure">
+  <img src="images/nav/nav-pages-peer.png" alt="Pages arranged in a flat structure" />
+<figcaption>Pages arranged in a flat structure</figcaption>
+</figure> 
 
-## Building blocks
-Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features. Together, they enable a variety of intuitive user experiences for moving between apps, pages, and content.
+Flat structures have many benefits: they're simple and they're easy to understand, and they let the user jump directly to a specific page without having to wade through intermediary pages.  In general, flat structures are great--but they don't work for every app. If your app has a lot of pages, a flat list can be overwhelming. If pages need to be viewed in a particular order, a flat structure doesn't work. 
 
-In some cases, you might be able to fit all of your app's content and functionality onto a single page without requiring the user to do anything more than pan to navigate through that content. However, the majority of apps typically have multiple pages of content and functionality with which to explore, engage, and interact. When an app has more than one page, you need to provide the right navigation experience.
-
-To be successful and make sense to users, multi-page navigation experiences in UWP apps include:
-
--   **The right navigation structure**
-
-    Building a navigation structure that makes sense to the user is crucial to creating an intuitive navigation experience.
-
--   **Compatible navigation elements** that support the chosen structure.
-
-    Navigation elements can help the user get to the content they want and can also let users know where they are within the app. However, they also take up space that could be used for content or commanding elements, so it's important to use the navigation elements that are right for your app's structure.
-
--   **Appropriate responses to system-level navigation features (such as Back)**
-
-    To provide a consistent experience that feels intuitive, respond to system-level navigation features in predictable ways.
-
-## Build the right navigation structure
-
-
-Let's look at an app as a collection of groups of pages, with each page containing a unique set of content or functionality. For example, a photo app might have a page for taking photos, a page for image editing, and another page for managing your image library. The way you arrange these pages into groups defines the app's navigation structure. There are two common ways to arrange a group of pages:
-
-<table class="uwpd-noborder uwpd-top-aligned-table">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">In a hierarchy</th>
-<th align="left">As peers</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><p><img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" /></p></td>
-<td style="text-align: center;"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
-</tr>
-<tr class="even">
-<td style="vertical-align: top">Pages are organized into a tree-like structure. Each child page has only one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent. </td>
-<td style="vertical-align: top"> Pages exist side-by-side. You can go from one page to another in any order. </td>
-</tr>
-</tbody>
-</table>
-
- 
-
-A typical app will use both arrangements, with some portions being arranged as peers and some portions being arranged into hierarchies.
-
-![an app with a hybrid structure](images/nav/nav-hybridstructure.png.png)
-
-So, when should you arrange pages into hierarchies and when you should arrange them as peers? To answer that question we must consider the number of pages in the group, whether the pages should be traversed in a particular order, and the relationship between the pages. In general, flatter structures are easier to understand and faster to navigate, but sometimes it's appropriate to have a deep hierarchy.
-
-
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">We recommend using a hierarchical relationship when
-<ul>
-<li>You expect the user to traverse the pages in a specific order. Arrange the hierarchy to enforce that order.</li>
-<li>There is a clear parent-child relationship between one of the pages and the other pages in the group.</li>
-<li>There are more than 7 pages in the group.
-<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
-</ul>
-  </div>
-  <div class="side-by-side-content-right">We recommend using a peer relationship when
+We recommend using a flat structure when: 
 <ul>
 <li>The pages can be viewed in any order.</li>
 <li>The pages are clearly distinct from each other and don't have an obvious parent/child relationship.</li>
-<li><p>There are fewer than 8 pages in the group.</p>
-<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
+<li>There are fewer than 8 pages in the group.<br/>
+When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</li>
 </ul>
-  </div>
-</div>
-</div>
- 
-
-## Use the right navigation elements
 
 
-Navigation elements can provide two services: they help the user get to the content they want, and some elements also let users know where they are within the app. However, they also take up space that the app could use for content or commanding elements, so it's important to use the navigation elements that are just right for your app's structure.
+### Hierarchical
 
-### Peer-to-peer navigation elements
+In a hierarchical structure, pages are organized into a tree-like structure. Each child page has only one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
 
-Peer-to-peer navigation elements enable navigation between pages in the same level of the same subtree.
+<figure class="wdg-figure">
+  <img src="images/nav/nav-pages-hiearchy.png" alt="Pages arranged in a hierarchy" />
+<figcaption>Pages arranged in a hierarchy</figcaption>
+</figure>
 
-![peer to peer navigation](images/nav/nav-lateralmovement.png)
+Hierarchical structures are good for organizing complex content that spans lots of pages or when pages should be viewed in a particular order. The downside is that hierarchical pages introduce some navigation overhead: the deeper the structure, the more clicks it takes for users to get from page to page. 
 
-For peer-to-peer navigation, we recommend using tabs or a navigation pane.
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="vertical-align:top;">[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)
-<p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td style="vertical-align:top;">Displays a persistent list of links to pages at the same level.
-<p>Use tabs/pivots when:</p>
+We recommend a hiearchical structure when: 
 <ul>
-<li><p>There are 2-5 pages.</p>
-<p>(You can use tabs/pivots when there are more than 5 pages, but it might be difficult to fit all the tabs/pivots on the screen.)</p></li>
-<li>You expect users to switch between pages frequently.</li>
+<li>You expect the user to traverse the pages in a specific order. Arrange the hierarchy to enforce that order.</li>
+<li>There is a clear parent-child relationship between one of the pages and the other pages in the group.</li>
+<li>There are more than 7 pages in the group.<br/>
+When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</li>
 </ul>
-<p>This design for a restaurant-finding app uses tabs/pivots:</p>
-<p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
-</tr>
-<tr class="even">
-<td style="vertical-align:top;">[Nav pane](../controls-and-patterns/nav-pane.md)
-<p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td style="vertical-align:top;">Displays a list of links to top-level pages.
-<p>Use a navigation pane when:</p>
-<ul>
-<li>You don't expect users to switch between pages frequently.</li>
-<li>You want to conserve space at the expense of slowing down navigation operations.</li>
-<li>The pages exist at the top level.</li>
-</ul>
-<p>This design for a smart home app features a nav pane:</p>
-<p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
-<p></p></td>
-</tr>
-</tbody>
-</table>
 
- 
+### Combining structures
+You don't have choose one structure or the other; many well-design apps use both flat and hierarchical structures:
+
+![an app with a hybrid structure](images/nav/nav-hybridstructure.png.png)
+
+These apps use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships. 
 
 If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the following illustration, which shows a navigation structure that has three levels:
 
@@ -210,98 +127,75 @@ If your navigation structure has multiple levels, we recommend that peer-to-peer
 -   At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
 
 ![an app with two subtrees](images/nav/nav-subtrees2.png)
+ 
 
-### Hierarchical navigation elements
+## Use the right controls
 
-Hierarchical navigation elements provide navigation between a parent page and its child pages.
+Once you've decided on a page structure, you need to decide how users navigate through those pages. UWP provides a variety of navigation controls to help you. Because these controls are available to every UWP app, using them helps ensure a consistent and reliable navigation experience. 
 
-![hiearchical navigation](images/nav/nav-verticalmovement.png)
 
 <table>
-<thead>
-<tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
+<tr>
+	<th>Control</th>
+	<th>Description</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="vertical-align:top;">[Hub](../controls-and-patterns/hub.md)
-<p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
-<td align="left">A hub is a special type of navigation control that provides previews/summaries of its child pages. Unlike the navigation pane or tabs, it provides navigation to these child pages through links and section headers embedded in the page itself.
-<p>Use a hub when:</p>
+<tr>
+	<td>Frame</td>
+	<td>With few exceptions, any app that has multiple pages uses the frame. In a typical setup, the app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.</td>
+</tr>
+<tr>
+	<td>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)<br/><br/>
+	<img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></td>
+	<td>Displays a list of links to pages at the same level.
+<p>Use tabs/pivots when:</p>
 <ul>
-<li>You expect that users would want to view some of the content of the child pages without having to navigate to each one.</li>
-</ul>
-<p>Hubs promote discovery and exploration, which makes them well suited for media, news-reader, and shopping apps.</p>
-<p></p></td>
+<li><p>There are 2-5 pages.</p>
+<p>(You can use tabs/pivots when there are more than 5 pages, but it might be difficult to fit all the tabs/pivots on the screen.)</p></li>
+<li>You expect users to switch between pages frequently.</li>
+</ul></td>
 </tr>
-
-<tr class="even">
-<td style="vertical-align:top;">[Master/details](../controls-and-patterns/master-details.md)
-<p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
-<td align="left">Displays a list (master view) of item summaries. Selecting an item displays its corresponding items page in the details section.
+<tr>
+	<td>[Nav view](../controls-and-patterns/navigationview-rs3.md)<br/><br/>
+	<img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></td>
+	<td>Displays a list of links to top-level pages.
+<p>Use a navigation pane when:</p>
+<ul>
+<li>You don't expect users to switch between pages frequently.</li>
+<li>You want to conserve space at the expense of slowing down navigation operations.</li>
+<li>The pages exist at the top level.</li>
+</ul></td>
+</tr>
+<tr>
+<td>[Master/details](../controls-and-patterns/master-details.md)<br/><br/>
+<img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></td>
+<td>Displays a list (master view) of item summaries. Selecting an item displays its corresponding items page in the details section.
 <p>Use the Master/details element when:</p>
 <ul>
 <li>You expect users to switch between child items frequently.</li>
 <li>You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.</li>
 </ul>
 <p>Master/details elements are well suited for email inboxes, contact lists, and data entry.</p>
-<p>This design for a stock-tracking app makes use of a master/details pattern:</p>
-<p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
+</td>
 </tr>
-</tbody>
-</table>
-
- 
-
-### Historical navigation elements
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="vertical-align:top;">[Back](navigation-history-and-backwards-navigation.md)</td>
+<tr>
+<td s>[Back](navigation-history-and-backwards-navigation.md)</td>
 <td style="vertical-align:top;">Lets the user traverse the navigation history within an app and, depending on the device, from app to app. For more info, see the [Navigation history and backwards navigation article](navigation-history-and-backwards-navigation.md).</td>
 </tr>
-</tbody>
-</table>
-
- 
-
-### Content-level navigation elements
-
-<table>
-<thead>
-<tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td style="vertical-align:top;">Hyperlinks and buttons</td>
-<td style="vertical-align:top;">Content-embedded navigation elements appear in a page's content. Unlike other navigation elements, which should be consistent across the page's group or subtree, content-embedded navigation elements are unique from page to page.</td>
+<td>Hyperlinks and buttons</td>
+<td>Content-embedded navigation elements appear in a page's content. Unlike other navigation elements, which should be consistent across the page's group or subtree, content-embedded navigation elements are unique from page to page.</td>
 </tr>
-</tbody>
 </table>
 
- 
-
-### Combining navigation elements
-
-You can combine navigation elements to create a navigation experience that's right for your app. For example, your app might use a nav pane to provide access to top-level pages and tabs to provide access to second-level pages.
+## Next: Add navigation code to your app
+The next article, [Implement basic navigation](navigate-between-two-pages.md), shows the XAML and code required to use a Frame control to enable basic navigation in your app. 
 
 
+<!--
+## History and the back button
+UWP provides a back button and a system for traversing the user's navigation hsitory within an app. This system does most of the work for you, but there are a few APIs you need to call so that it works properly. For more info and instructions, see [History and backwards navigation](navigation-history-and-backwards-navigation.md). 
+-->
 
-
-
- 
 
 
 

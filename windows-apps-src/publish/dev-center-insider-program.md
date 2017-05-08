@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 05/03/2017
+ms.date: 05/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,7 +44,11 @@ Some of the **highlights of the new dashboard** will include:
 - **New account-level views** that allow you to quickly assess status and peform tasks without having to repeat the same steps for every product in your portfolio.
 - **A new app picker** that allows you to select or search for a new product to work with, without returning to the main navigation or overview page.
 
-To help you get up and running quickly, you'll see a brief tour when you first view the new dashboard experience. Until then, here’s a walkthrough of the experience to highlight key areas and show you where to find both familiar and new dashboard experiences. 
+As an app developer, one of the biggest changes you'll notice is related to how we present analytic info. On your overview page, you'll see info about trends we think may be of interest. Additionally, we're combining some of the reports so that you can see more related info in the same place. Your **Acquisitions** report now also includes info on **Installs** and **Channels and conversions**, so you won't have to go to a separate report for each of those.
+
+As always, we'll publish more documentation to explain the new features in greater detail once the new dashboard is rolled out beyond members of the Dev Center Insider Program.
+
+To help you get up and running quickly, you'll see a brief tour when you first view the new dashboard experience.  
 
 ![New dashboard image 1](images/dashboard-1.png)
 
