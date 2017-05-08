@@ -930,6 +930,7 @@
 ### [Create a periodic work item](threading-async/create-a-periodic-work-item.md)
 ### [Submit a work item to the thread pool](threading-async/submit-a-work-item-to-the-thread-pool.md)
 ### [Use a timer to submit a work item](threading-async/use-a-timer-to-submit-a-work-item.md)
+### [Using Windows Runtime objects in a multithreaded environment](threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md)
 ## [UWP on Xbox One](xbox-apps/index.md)
 ### [Getting started](xbox-apps/getting-started.md)
 ### [What's new](xbox-apps/whats-new.md)
