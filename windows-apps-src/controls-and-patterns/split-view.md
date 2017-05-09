@@ -45,7 +45,7 @@ Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
 ## Is this the right control?
 
-The split view control can be used to make a [navigation pane](nav-pane.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view representing the nav items.
+The split view control can be used to make a [navigation pane](navigationview.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view representing the nav items.
 
 The split view control can also be used to create any "drawer" experience where users can open and close the supplemental pane.
 
@@ -75,7 +75,7 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 
 
 ## Related topics
-* [Nav pane pattern](nav-pane.md)
+* [Nav pane pattern](navigationview.md)
 * [List view](lists.md)
  
 

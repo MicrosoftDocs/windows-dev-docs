@@ -84,7 +84,7 @@
 ### [Media playback](controls-and-patterns/media-playback.md)
 #### [Custom transport controls](controls-and-patterns/custom-transport-controls.md)
 ### [Menus and context menus](controls-and-patterns/menus.md)
-### [Nav view](controls-and-patterns/navigationview-rs3.md)
+### [Nav view](controls-and-patterns/navigationview.md)
 ### [Person picture](controls-and-patterns/person-picture.md)
 ### [Progress](controls-and-patterns/progress-controls.md)
 ### [Radio button](controls-and-patterns/radio-button.md)

@@ -157,7 +157,7 @@ Once you've decided on a page structure, you need to decide how users navigate t
 </ul></td>
 </tr>
 <tr>
-	<td>[Nav view](../controls-and-patterns/navigationview-rs3.md)<br/><br/>
+	<td>[Nav view](../controls-and-patterns/navigationview.md)<br/><br/>
 	<img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></td>
 	<td>Displays a list of links to top-level pages.
 <p>Use a navigation pane when:</p>

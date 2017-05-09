@@ -46,7 +46,7 @@ The [color picker control](../controls-and-patterns/color-picker.md) enables use
 
 ![A default color picker](../controls-and-patterns/images/color-picker-default.png)
 
-The [navigation view control](../controls-and-patterns/navigationview-rs3.md) makes it easy to add top-level navigation to your app.  
+The [navigation view control](../controls-and-patterns/navigationview.md) makes it easy to add top-level navigation to your app.  
 
 ![NavigationView sections](../controls-and-patterns/images/navview_sections.png)
 

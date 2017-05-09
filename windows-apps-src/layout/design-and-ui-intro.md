@@ -106,7 +106,7 @@ To make things simpler, let's define the anatomy of an app from a design perspec
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
 <td align="left"><strong>Navigation elements</strong>
-<p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/nav-pane.md).</p>
+<p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/navigationview.md).</p>
 <p>Navigation elements are covered in detail in the [Navigation design basics](navigation-basics.md) article.</p>
 <strong>Command elements</strong>
 <p>Command elements initiate actions, such as manipulating, saving, or sharing content. Examples of command elements include [button](../controls-and-patterns/buttons.md) and the [command bar](../controls-and-patterns/app-bars.md). Command elements can also include keyboard shortcuts that aren't actually visible on the screen.</p>

@@ -93,7 +93,7 @@ Detailed information about specific controls and patterns.
 
 <li>[Menus and context menus](menus.md)</li>
 
-<li>[Nav pane](nav-pane.md)</li>
+<li>[Nav pane](navigationview.md)</li>
 
 <li>[Progress controls](progress-controls.md)</li>
 

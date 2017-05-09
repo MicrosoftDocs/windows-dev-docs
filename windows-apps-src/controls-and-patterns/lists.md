@@ -246,7 +246,7 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 
 - [Hub](hub.md)
 - [Master/details](master-details.md)
-- [Nav pane](nav-pane.md)
+- [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 

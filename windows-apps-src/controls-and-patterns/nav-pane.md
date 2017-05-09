@@ -1,5 +1,6 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: Provides top-level navigation while conserving screen real estate.
 title: Guidelines for navigation panes
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
@@ -13,6 +14,8 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 # Nav panes
+
+This article has moved here: [Navigation view](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview).
 
 A navigation pane (or just "nav" pane) is a pattern that allows for many top-level navigation items while conserving screen real estate. The nav pane is widely used for mobile apps, but also works well on larger screens. When used as an overlay, the pane remains collapsed and out-of-the way until the user presses the button, which is handy for smaller screens. When used in its docked mode, the pane remains open, which allows greater utility if there's enough screen real estate.
 

@@ -31,7 +31,7 @@ When building an app with pivot, there are a few key design variables to conside
 
 - **Header labels.**  Headers can have an icon with text, icon only, or text only.
 - **Header alignment.**  Headers can be left-justified or centered.
-- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](nav-pane.md) can serve as the primary level with pivot acting as secondary.
+- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](navigationview.md) can serve as the primary level with pivot acting as secondary.
 - **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
     1. Tap on a tab/pivot header to navigate to that category.
     2. Swipe left or right on the content area to navigate to the adjacent category.

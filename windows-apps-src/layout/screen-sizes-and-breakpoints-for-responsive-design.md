@@ -76,7 +76,7 @@ This table describes the different size classes and provides general recommendat
 <li>Dock [app bars](../controls-and-patterns/app-bars.md) to the bottom of the window for improved reachability</li>
 <li>Use one column/region at a time</li>
 <li>Use an icon to represent search (don't show a search box).</li>
-<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) in overlay mode to conserve screen space.</li>
+<li>Put the [navigation pane](../controls-and-patterns/navigationview.md) in overlay mode to conserve screen space.</li>
 <li>If you're using the [master details pattern](../controls-and-patterns/master-details.md), use the stacked presentation mode to save screen space.</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -85,7 +85,7 @@ This table describes the different size classes and provides general recommendat
 <li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
 <li>Up to two columns/regions</li>
 <li>Show the search box.</li>
-<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) into sliver mode so a narrow strip of icons always shows.</li>
+<li>Put the [navigation pane](../controls-and-patterns/navigationview.md) into sliver mode so a narrow strip of icons always shows.</li>
 <li>Consider further tailoring for [TV experiences](http://go.microsoft.com/fwlink/?LinkId=760736).</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -94,7 +94,7 @@ This table describes the different size classes and provides general recommendat
 <li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
 <li>Up to three columns/regions</li>
 <li>Show the search box.</li>
-<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) into docked mode so that it always shows.</li>
+<li>Put the [navigation pane](../controls-and-patterns/navigationview.md) into docked mode so that it always shows.</li>
 </ul></td>
 </tr>
 </tbody>
