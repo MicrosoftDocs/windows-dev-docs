@@ -20,13 +20,7 @@ The TextBox control lets a user type text into an app. It's typically used to ca
 
 TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The "clear all" button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**TextBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-<li>[**Text property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
-</ul>
-</div>
+> **Important APIs**: [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [**Text property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
 ## Is this the right control?

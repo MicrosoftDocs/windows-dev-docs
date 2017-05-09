@@ -23,14 +23,7 @@ Semantic zoom lets the user switch between two different views of the same conte
 
 For example, when viewing an address book, the user could zoom out to quickly jump to the letter "W", and zoom in on that letter to see the names associated with it. 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**SemanticZoom class**](https://msdn.microsoft.com/library/windows/apps/hh702601)</li>
-<li>[**ListView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</li>
-<li>[**GridView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</li>
-</ul>
-</div>
+> **Important APIs**: [**SemanticZoom class**](https://msdn.microsoft.com/library/windows/apps/hh702601), [**ListView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx), [**GridView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)
 
 **Features**:
 
@@ -73,7 +66,6 @@ Before you use a semantic zoom, you should understand how to use a list view wit
  
  This XAML shows the structure of the SemanticZoom control. You assign other controls to the ZoomedInView and ZoomedOutView properties.
  
- **XAML**
  ```xaml
 <SemanticZoom>
     <SemanticZoom.ZoomedInView>
@@ -92,7 +84,6 @@ The examples here are taken from the SemanticZoom page of the [XAML UI Basics sa
 
 Here's the GridView control for the zoomed-in view. The zoomed-in view should display the individual data items in groups. This example shows how to display the items in a grid with an image and text. 
 
-**XAML**
 ```xaml
 <SemanticZoom.ZoomedInView>
     <GridView ItemsSource="{x:Bind cvsGroups.View}" 
@@ -108,7 +99,6 @@ Here's the GridView control for the zoomed-in view. The zoomed-in view should di
  
 The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` recsource. The look of the items is defined in the `ZoomedInTemplate` resource. 
 
-**XAML**   
 ```xaml
 <DataTemplate x:Key="" x:DataType="data:ControlInfoDataGroup">
     <TextBlock Text="{x:Bind Title}" 
@@ -134,7 +124,6 @@ The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` re
 
 This XAML defines a ListView control for the zoomed-out view. This example shows how to display the group headers as text in a list.
 
-**XAML**
 ```xaml
 <SemanticZoom.ZoomedOutView>
     <ListView ItemsSource="{x:Bind cvsGroups.View.CollectionGroups}" 
@@ -145,7 +134,6 @@ This XAML defines a ListView control for the zoomed-out view. This example shows
 
  The look is defined in the `ZoomedOutTemplate` resource.
  
- **XAML**   
 ```xaml    
 <DataTemplate x:Key="ZoomedOutTemplate" x:DataType="wuxdata:ICollectionViewGroup">
     <TextBlock Text="{x:Bind Group.(data:ControlInfoDataGroup.Title)}" 
@@ -161,12 +149,10 @@ Any controls that you bind to the same CollectionViewSource always have the same
 
 If you don't use a CollectionViewSource to synchronize the views, you should handle the [**ViewChangeStarted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.viewchangestarted.aspx) event and synchronize the items in the event handler, as shown here.
 
-**XAML**
 ```xaml
 <SemanticZoom x:Name="semanticZoom" ViewChangeStarted="SemanticZoom_ViewChangeStarted">
 ```
 
-**C#**
 ```csharp
 private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChangedEventArgs e)
 {

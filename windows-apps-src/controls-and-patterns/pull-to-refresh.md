@@ -18,6 +18,8 @@ ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 
 The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on mobile apps, but is useful on any device with a touch screen. You can handle [manipulation events](../input-and-devices/touch-interactions.md#manipulation-events) to implement pull-to-refresh in your app.
 
+> **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+
 The [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635) shows how to extend a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) control to support this pattern. In this article, we use this sample to explain the key points of implementing pull-to-refresh.
 
 ![pull-to-refresh sample](images/ptr-phone-1.png)

@@ -19,13 +19,8 @@ A tooltip is a short description that is linked to another control or object. To
 
 ![A tooltip](images/controls/tool-tip.png)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
-<li>[**ToolTipService class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
-</ul>
-</div>
+> **Important APIs**: [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608), [**ToolTipService class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+
 
 ## Is this the right control?
 

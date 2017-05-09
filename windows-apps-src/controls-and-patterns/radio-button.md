@@ -6,7 +6,7 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,19 +18,11 @@ keywords: windows 10, uwp
 
 Radio buttons let users select one option from two or more choices. Each option is represented by one radio button; a user can select only one radio button in a radio button group.
 
+> **Important APIs**: [**RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544), [**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+
 (If you're curious about the name, radio buttons are named for the channel preset buttons on a radio.)
 
 ![Radio buttons](images/controls/radio-button.png)
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
-<li>[**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
-</ul>
-</div>
-
 
 ## Is this the right control?
 

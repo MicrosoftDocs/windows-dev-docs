@@ -18,7 +18,10 @@ keywords: windows 10, uwp
 
 Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.
 
-**Note**   To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+
+> [!NOTE]
+> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
 
 
 ## Getting started
@@ -45,7 +48,7 @@ The core components of toast content are...
 
 The toast content is defined in raw XML, but you can use our [NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to get a C# (or C++) object model for constructing the toast content. This article documents everything that goes within the toast content.
 
-```CSharp
+```csharp
 ToastContent content = new ToastContent()
 {
     Launch = "app-defined-string",
@@ -61,7 +64,7 @@ ToastContent content = new ToastContent()
 };
 ```
 
-```XML
+```xml
 <toast launch="app-defined-string">
 
   <visual>

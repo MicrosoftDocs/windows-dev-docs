@@ -18,12 +18,7 @@ keywords: windows 10, uwp
 
 Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**AutoSuggestBox class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> **Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## Elements of the search experience
 

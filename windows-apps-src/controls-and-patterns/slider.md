@@ -18,16 +18,9 @@ keywords: windows 10, uwp
 
 A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
 
-![A slider control](images/controls/slider.png)
+> **Important APIs**: [**Slider class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [**Value property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [**ValueChanged event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Slider class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
-<li>[**Value property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
-<li>[**ValueChanged event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
-</ul>
-</div>
+![A slider control](images/controls/slider.png)
 
 
 ## Is this the right control?

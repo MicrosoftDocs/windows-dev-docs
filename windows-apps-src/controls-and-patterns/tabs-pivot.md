@@ -18,16 +18,11 @@ keywords: windows 10, uwp
 
 The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and relies on text headers to articulate the different sections of content.
 
+> **Important APIs**: [**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)
+
 ![An examples of tabs](images/pivot_Hero_main.png)
 
 Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content. Tabs are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903) shows how to customize the Pivot control into the tabs pattern.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)</li>
-</ul>
-</div>
 
 
 ## The pivot pattern

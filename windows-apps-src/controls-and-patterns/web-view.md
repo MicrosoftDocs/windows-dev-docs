@@ -17,12 +17,7 @@ keywords: windows 10, uwp
 
 A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)</li>
-</ul>
-</div>
+> **Important APIs**: [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
 
 ## Is this the right control?
 

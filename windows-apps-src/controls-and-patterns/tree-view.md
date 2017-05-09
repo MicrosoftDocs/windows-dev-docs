@@ -8,9 +8,12 @@ template: detail.hbs
 # Tree view
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
+> [!IMPORTANT]
+> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+
 The new XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
->This article describes functionality that hasn’t been released yet: the tree view will be available in RS3 and later builds. Feature names (such as "tree view"), terminology, and functionality are not final.
+> **Important APIs**: [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem), [TreeViewList class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewlist), [TreeViewNode class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode)
 
 The TreeView APIs support the following features:
 
@@ -104,5 +107,7 @@ To provide the user the ability to add/remove items from the TreeView, we recomm
 
 
 ## Related articles
-- [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+
+- [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
+- [ListView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
 - [ListView and GridView](listview-and-gridview.md)

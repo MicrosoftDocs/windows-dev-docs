@@ -15,8 +15,9 @@ keywords: windows 10, uwp
 # Tiles, badges, and notifications for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
 Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+
+> **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
 A tile is an app's representation on the Start menu. Every UWP app has a tile. You can enable different tile sizes (small, medium, wide, and large).</p>
@@ -30,7 +31,7 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 
  
 ## Tiles
-| Topic | Description |
+| Article | Description |
 | --- | --- |
 | [Create tiles](tiles-and-notifications-creating-tiles.md) | Customize the default tile for your app and provide assets for different screen sizes. |
 | [App icon assets](tiles-and-notifications-app-assets.md) | App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons. |
@@ -43,7 +44,7 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 
 ## Notifications
 
-| Topic | Description |
+| Article | Description |
 | --- | --- |
 | [Toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md) | Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction. |
 | [Send a local toast notification](controls-and-patterns/tiles-and-notifications-send-local-toast.md) | Learn how to send an interactive toast notification. |
