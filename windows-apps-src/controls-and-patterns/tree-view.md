@@ -58,9 +58,9 @@ A combination of a chevron and a folder should be used only if non-node list ite
 
 TreeView has the following main classes.
 
-- The `TreeNode` class implements the hierarchical layout for the TreeView. It also holds the data that will be bound to it in the item's template.
-- The `TreeView` class implements events for ItemClick and expand/collapse of folders.
-- The `TreeViewItem` class has the styles, brushes, and glyphs for a folder type TreeViewItem.
+- The [TreeViewNode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode) class implements the hierarchical layout for the TreeView. It also holds the data that will be bound to it in the item's template.
+- The [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview) class implements events for ItemClick and expand/collapse of folders.
+- The [TreeViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem) class has the styles, brushes, and glyphs for a folder type TreeViewItem.
 
 ## Declare a TreeView in XAML
 
