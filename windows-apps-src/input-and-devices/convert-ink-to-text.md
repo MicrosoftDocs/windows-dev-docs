@@ -34,7 +34,7 @@ Handwriting recognition is built in to the Windows ink platform, and supports an
 Here, we demonstrate how to use the Windows Ink handwriting recognition engine, associated with the default installed language pack, to interpret a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) as text input.
 
 > [!NOTE]
-> The basic handwriting recognition shown in this step is best suited for straightforward, single-line, plain text scenarios such as form input. For richer recognition scenarios that include analysis and interpretation of document structure, list items, shapes, and drawings (in addition to text recognition), see the next section: [Rich recognition with ink analysis](rich-recognition-with-ink-analysis).
+> The basic handwriting recognition shown in this step is best suited for straightforward, single-line, plain text scenarios such as form input. For richer recognition scenarios that include analysis and interpretation of document structure, list items, shapes, and drawings (in addition to text recognition), see the next section: [Rich recognition with ink analysis](#rich-recognition-with-ink-analysis).
 
 In this example, recognition is initiated by the user clicking a button when they are finished writing.
 
@@ -73,8 +73,8 @@ In this example, recognition is initiated by the user clicking a button when the
 ```
 
 2. For this example, you need to first add the namespace type references required for our ink functionality:
-- [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
-- [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
+    - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+    - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
 
 
 3.  We then set some basic ink input behaviors.
@@ -217,7 +217,7 @@ string str = "Recognition result\n";
 Here, we demonstrate how to use the Windows Ink analysis engine ([Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)) to classify, analyze, and recognize a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) as either text or shapes.
 
 > [!NOTE]
-> In addition to text and shape recognition, ink analysis can be used to recognize document structure, bullet lists, and generic drawings. For basic, single-line, plain text scenarios such as form input, see the previous section: [Basic handwriting recognition](basic-handwriting-recognition).
+> In addition to text and shape recognition, ink analysis can be used to recognize document structure, bullet lists, and generic drawings. For basic, single-line, plain text scenarios such as form input, see the previous section: [Basic handwriting recognition](#basic-handwriting-recognition).
 
 In this example, recognition is initiated by the user clicking a button when they are finished drawing.
 
@@ -255,13 +255,8 @@ In this example, recognition is initiated by the user clicking a button when the
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
     - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
-    - [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)    
-``` csharp
-    using Windows.UI.Input.Inking;
-    using Windows.UI.Input.Inking.Analysis;
-    using Windows.UI.Xaml.Shapes;
-    using Windows.Storage.Streams;
-```
+    - [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)
+
 3. We then specify our global variables:
 ``` csharp
     InkAnalyzer inkAnalyzer = new InkAnalyzer();
@@ -713,7 +708,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## Dynamic handwriting recognition
+## Dynamic recognition
 
 
 The previous two examples require the user to press a button to start recognition. Your app can also perform dynamic recognition using stroke input paired with a basic timing function.
