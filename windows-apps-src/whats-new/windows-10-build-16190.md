@@ -11,11 +11,11 @@ ms.technology: uwp
 msdn.assetid: 0fdde031-97a5-430c-91af-846c5fbb028f
 ---
 
-# What's New in Windows 10 for developers
+# What's New in Windows 10 at Microsoft Build 20127
 
-Released to accompany the [Microsoft Build 2017 developer conference](http://build.microsoft.com/), Windows 10 SDK Preview Build 16190 will continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Released to accompany the [Microsoft Build 2017 developer conference](https://developer.microsoft.com/windows/projects/events/build/2017?ocid=wdgbld17_intreferral_devcenterhp_null_null_devcenter_hppost&utm_campaign=wdgbld17&utm_medium=internalreferral&utm_source=devcenterhp&utm_content=devcenter_hppost), Windows 10 SDK Preview Build 16190 will continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
-These features will not be made publically available until the release of the next major Windows update. For now, they can be used in preview builds accesible to [Windows Insiders](https://insider.windows.com/). This page may be updated with information on more upcoming features as more documentation becomes available. Additionally, you can [explore prerelease documentation for new and updated API namespaces this preview build.](windows-10-build-16190-api-diff.md)
+Many of the below features and tutorials have been released alongside the SDK Preview Build at the Build 2017 conference, but do not require the preview build to be used. For more information on the specific changes, you can [explore prerelease documentation for new and updated API namespaces in this preview build.](windows-10-build-16190-api-diff.md)
 
 For more information on the highlighted features of this and other Windows updates, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
 
@@ -35,13 +35,14 @@ The [Keyboard events](https://docs.microsoft.com/en-us/windows/uwp/input-and-dev
 
 The Project Rome team has released the remote sessions SDK for UWP developers (see the new members in the [RemoteSystems](https://docs.microsoft.com/en-us/uwp/api/windows.system.remotesystems) namespace, such as the [RemoteSystemSession](https://docs.microsoft.com/en-us/uwp/api/windows.system.remotesystems.remotesystemsession) class). Windows apps can now connect devices through "shared experiences," in which devices become participants in an exclusive two-way communication channel. Data packets can be sent to any or all of the other participants in the channel, enabling a number of new cross-device scenarios such as remote app messaging.
 
+The remote sessions SDK features are only available in the Windows SDK Preview build.
+
 #### Project Rome for iOS
 Microsoft's Project Rome feature has debuted on the iOS platform. With the new preview SDK, developers can write iOS apps that remotely launch apps and continue tasks on users' Windows devices. See the official [Project Rome repo for cross-platform scenarios](https://github.com/Microsoft/project-rome) to get started.
 
 #### Windows Ink
 
 The [Recognize Windows Ink strokes as text and shapes](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/convert-ink-to-text) topic contains details on rich recognition with the [Windows Ink analysis engine](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis). We demonstrate how to classify, analyze, and recognize a set of strokes as text or shapes (ink analysis can also be used to recognize document structure, bullet lists, and generic drawings).
-
 
 ### Samples and Tutorials
 
@@ -52,10 +53,6 @@ Updates have been made to the [Per-window DPI Awareness sample](https://github.c
 #### RadialController
 
 The [Support the Surface Dial (and other wheel devices) in your UWP app](https://docs.microsoft.com/en-us/windows/uwp/get-started/radialcontroller-walkthrough) tutorial has been released. It steps through how to use the RadialController APIs to customize the Dial experience in a sample app.
-
-#### Remote Sessions (Project Rome)
-
-We have released a [Universal Windows Platform (UWP) app sample that uses the Project Rome Remote Sessions API to enable a trivia game](https://github.com/microsoft/windows-appsample-RemoteSystemSessions). You can create a new game as a quiz session host on your local network, or join an existing game and answer questions from the quiz host. It demonstrates how to implement session creation, session discovery, joining a session, and messaging amongst session participants.
 
 #### WebVR
 

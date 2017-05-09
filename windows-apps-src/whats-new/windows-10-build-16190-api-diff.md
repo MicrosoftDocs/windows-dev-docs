@@ -15,6 +15,6 @@ redirect_url: windows-10-version-1703-api-diff
 
 # New APIs in the Windows 10 SDK Preview Build 16190
 
-New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16190. This release accompanies the [Microsoft Build 2017 developer conference](http://build.microsoft.com/).
+New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16190. This release accompanies the [Microsoft Build 2017 developer conference](https://developer.microsoft.com/windows/projects/events/build/2017?ocid=wdgbld17_intreferral_devcenterhp_null_null_devcenter_hppost&utm_campaign=wdgbld17&utm_medium=internalreferral&utm_source=devcenterhp&utm_content=devcenter_hppost).
 
 Below is a full list of prelease documentation published for namespaces added or modified since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). Please note that prerelease documentation may be incomplete and subject to change.
