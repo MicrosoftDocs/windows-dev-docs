@@ -224,49 +224,51 @@ In this example, recognition is initiated by the user clicking a button when the
 1.  First, we set up the UI.
 
     The UI includes a "Recognize" button, an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and a standard [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). When the "Recognize" button is pressed, all ink strokes on the ink canvas are analyzed and (if recognized) corresponding shapes and text are drawn on the standard canvas. The original ink strokes are then deleted from the ink canvas.
-
 ```xaml
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <StackPanel x:Name="HeaderPanel" 
-                Orientation="Horizontal" 
-                Grid.Row="0">
-        <TextBlock x:Name="Header" 
-                    Text="Basic ink analysis sample" 
-                    Style="{ThemeResource HeaderTextBlockStyle}" 
-                    Margin="10,0,0,0" />
-        <Button x:Name="recognize" 
-                Content="Recognize" 
-                Margin="50,0,10,0"/>
-    </StackPanel>
-    <Grid x:Name="drawingCanvas" Grid.Row="1">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="HeaderPanel" 
+                    Orientation="Horizontal" 
+                    Grid.Row="0">
+            <TextBlock x:Name="Header" 
+                        Text="Basic ink analysis sample" 
+                        Style="{ThemeResource HeaderTextBlockStyle}" 
+                        Margin="10,0,0,0" />
+            <Button x:Name="recognize" 
+                    Content="Recognize" 
+                    Margin="50,0,10,0"/>
+        </StackPanel>
+        <Grid x:Name="drawingCanvas" Grid.Row="1">
 
-        <!-- The canvas where we render the replacement text and shapes. -->
-        <Canvas x:Name="recognitionCanvas" />
-        <!-- The canvas for ink input. -->
-        <InkCanvas x:Name="inkCanvas" />
+            <!-- The canvas where we render the replacement text and shapes. -->
+            <Canvas x:Name="recognitionCanvas" />
+            <!-- The canvas for ink input. -->
+            <InkCanvas x:Name="inkCanvas" />
 
+        </Grid>
     </Grid>
-</Grid>
 ```
-
 2. For this example, we first add the namespace type references required for our ink and ink analysis functionality to the UI code-behind file:
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
     - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
-
+    - [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)    
+``` csharp
+    using Windows.UI.Input.Inking;
+    using Windows.UI.Input.Inking.Analysis;
+    using Windows.UI.Xaml.Shapes;
+    using Windows.Storage.Streams;
+```
 3. We then specify our global variables:
 ``` csharp
     InkAnalyzer inkAnalyzer = new InkAnalyzer();
     IReadOnlyList<InkStroke> inkStrokes = null;
     InkAnalysisResult inkAnalysisResults = null;
 ```
-
-3.  Next, we set some basic ink input behaviors:
-
+4.  Next, we set some basic ink input behaviors:
     - The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from pen, mouse, and touch as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). 
     - Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). 
     - A listener for the click event on the "Recognize" button is also declared.
@@ -292,15 +294,13 @@ In this example, recognition is initiated by the user clicking a button when the
         recognize.Click += RecognizeStrokes_Click;
     }
 ```
-
-4.  For this example, we perform the ink analysis in the click event handler of the "Recognize" button.
+5.  For this example, we perform the ink analysis in the click event handler of the "Recognize" button.
     - First, call [**GetStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkstrokecontainer#Windows_UI_Input_Inking_InkStrokeContainer_GetStrokes) on the [**StrokeContainer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter#Windows_UI_Input_Inking_InkPresenter_StrokeContainer) of the [**InkCanvas.InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.inkcanvas#Windows_UI_Xaml_Controls_InkCanvas_InkPresenter) to get the collection of all current ink strokes.
     - If ink strokes are present, pass them in a call to [**AddDataForStrokes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AddDataForStrokes_Windows_Foundation_Collections_IIterable_Windows_UI_Input_Inking_InkStroke__) of the InkAnalyzer.
     - Call [**AnalyzeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalyzer#Windows_UI_Input_Inking_Analysis_InkAnalyzer_AnalyzeAsync) to initiate ink analysis and get the [**InkAnalysisResult**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult).
     - If [**Status**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult#Windows_UI_Input_Inking_Analysis_InkAnalysisResult_Status) returns a state of **Updated**, call [**FindNodes**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisroot#Windows_UI_Input_Inking_Analysis_InkAnalysisRoot_FindNodes_Windows_UI_Input_Inking_Analysis_InkAnalysisNodeKind_) for both [**InkAnalysisNodeKind.InkWord**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind) and [**InkAnalysisNodeKind.InkDrawing**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis.inkanalysisnodekind).
     - Iterate through both sets of node types and draw the respective text or shape on the recognition canvas (below the ink canvas).
     - Finally, delete the recognized nodes from the InkAnalyzer and the corresponding ink strokes from the ink canvas.
-
 ``` csharp
     private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     {
@@ -392,9 +392,7 @@ In this example, recognition is initiated by the user clicking a button when the
         }
     }
 ```
-
-5. Here's the function for drawing a TextBlock on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
-
+6. Here's the function for drawing a TextBlock on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
 ``` csharp
     // Draw text on the recognitionCanvas.
     private void DrawText(string recognizedText, Rect boundingRect)
@@ -414,9 +412,7 @@ In this example, recognition is initiated by the user clicking a button when the
         recognitionCanvas.Children.Add(text);
     }
 ```
-
-6. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
-
+7. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
 ``` csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)
@@ -471,7 +467,7 @@ Here's this sample in action:
 
 | Before analysis | After analysis |
 | --- | --- |
-| ![Before analysis](images\ink\ink-analysis-raw2.png) | ![After analysis](images\ink\ink-analysis-analyzed2.png) |
+| ![Before analysis](images\ink\ink-analysis-raw2-small.png) | ![After analysis](images\ink\ink-analysis-analyzed2-small.png) |
 
 ## International recognition
 
