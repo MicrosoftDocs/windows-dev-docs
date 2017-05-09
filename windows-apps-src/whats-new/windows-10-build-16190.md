@@ -21,6 +21,48 @@ For more information on the highlighted features of this and other Windows updat
 
 ### New Features
 
+## Effects
+
+These new effects use depth, perspective, and movement to help users focus on important UI elements.
+
+[Acrylic material](../style/acrylic.md) is a type of brush that creates transparent textures. 
+
+![Acrylic in light theme](../style/images/Acrylic_DarkTheme_Base.png)
+
+The [Parallax effect](../style/parallax.md) adds three-dimensional depth and perspective to your app.
+
+![An example of parallax with a list and background image](../style/images/_Parallax_v2.gif)
+
+[Reveal](../style/reveal.md) highlights important elements of your app. 
+
+![Reveal Visual](../style/images/Nav_Reveal_Animation.gif)
+
+
+### Controls
+
+These new controls make it easier to quickly build a great looking UI. 
+
+The [color picker control](../controls-and-patterns/color-picker.md) enables users to browse through and select colors.  
+
+![A default color picker](../controls-and-patterns/images/color-picker-default.png)
+
+The [navigation view control](../controls-and-patterns/navigationview-rs3.md) makes it easy to add top-level navigation to your app.  
+
+![NavigationView sections](../controls-and-patterns/images/navview_sections.png)
+
+The [person picture control](../controls-and-patterns/person-picture.md) displays the avatar image for a person.
+
+![The person picture control](../controls-and-patterns/images/person-picture/person-picture_hero.png)
+
+The [rating control](../controls-and-patterns/rating.md) enables users to easily view and set ratings that reflect degrees of satisfaction with content and services.
+
+![Example of Ratings Control](../controls-and-patterns/images/rating_rs2_doc_ratings_intro.png)
+
+The [tree view control](../controls-and-patterns/tree-view.md) creates a hierarchical list with expanding and collapsing nodes that contain nested items.
+
+![Usage of the Chevron icon in TreeView](../controls-and-patterns/images/treeview_chevron.png)
+ 
+
 #### Keyboard
 
 With [Keyboard interactions](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/keyboard-interactions), design and optimize your UWP apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.
