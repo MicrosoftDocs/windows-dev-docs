@@ -3,7 +3,7 @@ author: JnHs
 Description: Learn how to send targeted push notifications from Windows Dev Center to your app to encourage customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 02/28/2017
+ms.date: 05/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,7 @@ When considering the content of your notifications, keep in mind:
 ## Getting started with push notifications
 
 At a high-level, you need to do three things to use push notifications to engage with your customers.
-1. **Register your app to receive push notifications.** You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between the Dev Center and your app. We’ll use that channel to deliver your push notifications to your customers. For details, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+1. **Register your app to receive push notifications.** You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between the Dev Center and your app. We’ll use that channel to deliver your push notifications to your customers. For details, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 2. **Create one or more customer segments that you want to target.** You can group your customers into segments based on demographic or revenue criteria. For more info, see [Create customer segments](create-customer-segments.md).
 3. **Create a push notification and send it to a particular customer segment.** For example, send a notification to encourage new customers to rate your app or send a notification with a special deal to purchase an add-on.
 
@@ -59,7 +59,7 @@ If you haven’t created a segment yet, select **Create new customer group**. No
    - **Base URI** (interactive toast type). For more details, see [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712).
    - **Add image query** (interactive toast type). For more details, see [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847).
    - **Visual**. An image, video, or sound. For more details, see [visual](https://msdn.microsoft.com/library/windows/apps/br230847).
-   - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md#actions).
+   - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md).
    - **Binding** (interactive tile type). The toast template. For more details, see [binding](https://msdn.microsoft.com/library/windows/apps/br230843).
 
    > **Tip**  Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
@@ -91,7 +91,7 @@ You can measure how well you’re engaging with your customers through each noti
 ###To measure notification performance
 
 1.	When you create a notification, in the **Notification content** section, select the **Track app launch rate** checkbox.
-2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method to notify Dev Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store SDK. For more information about how to call this method, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method to notify Dev Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 ###To view notification performance
 
@@ -125,7 +125,6 @@ Things to keep in mind about translation:
 ## Related topics
 - [Tiles, badges, and notifications for UWP apps](../controls-and-patterns/tiles-badges-notifications.md)
 - [Windows Push Notification Services (WNS) overview](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
-- [Windows Push Notification Services (WNS) overview (Windows Runtime apps)](https://msdn.microsoft.com/library/windows/apps/hh913756.aspx)
 - [Notifications Visualizer app](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [Customer segmentation and push notifications: a new Windows Dev Center Insider Program feature (blog post)](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)
