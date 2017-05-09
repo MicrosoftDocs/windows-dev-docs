@@ -21,16 +21,11 @@ The media player is used to view and listen to video and audio. Media playback c
 
 ![Media player element with transport controls](images/controls/mtc_double_video_inprod.png)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**MediaPlayerElement class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)</li>
-<li>[**MediaTransportControls class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)</li>
-</ul>
-</div>
+> **Important APIs**: [**MediaPlayerElement class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx), [**MediaTransportControls class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
 
 
-> **Note**&nbsp;&nbsp; **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10 you will need to use [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) instead. All of the recommendations on this page apply to MediaElement as well.
+> [!NOTE]
+> **MediaPlayerElement** is only available in Windows 10, version 1607 and up. If you are developing an app for an earlier version of Windows 10 you will need to use [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) instead. All of the recommendations on this page apply to MediaElement as well.
 
 ## Is this the right control?
 

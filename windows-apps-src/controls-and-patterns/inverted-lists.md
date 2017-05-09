@@ -17,20 +17,12 @@ ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 You can use a list view to present a conversation in a chat experience with items that are visually distinct to represent the sender/receiver.  Using different colors and horizontal alignment to separate messages from the sender/receiver helps the user quickly orient themselves in a conversation.
+
+> **Important APIs**:  [**ListView class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [**ItemsStackPanel class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx), [**ItemsUpdatingScrollMode property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)
  
 You will typically need to present the list such that it appears to grow from the bottom up instead of from the top down.  When a new message arrives and is added to the end, the previous messages slide up to make room drawing the user’s attention to the latest arrival.  However, if a user has scrolled up to view previous replies then the arrival of a new message must not cause a visual shift that would disrupt their focus.
 
-![chat app with inverted list](images/listview-inverted.png)
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ListView class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
-<li>[**ItemsStackPanel class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)</li>
-<li>[**ItemsUpdatingScrollMode property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)</li>
-</ul>
-</div>
-
+![Chat app with inverted list](images/listview-inverted.png)
 
 ## Create an inverted list
 

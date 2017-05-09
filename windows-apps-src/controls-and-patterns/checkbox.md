@@ -18,16 +18,9 @@ keywords: windows 10, uwp
 
 A check box is used to select or deselect action items. It can be used for a single item or for a list of multiple items that a user can choose from. The control has three selection states: unselected, selected, and indeterminate. Use the indeterminate state when a collection of sub-choices have both unselected and selected states.
 
-![Example of check box states](images/templates-checkbox-states-default.png)
+> **Important APIs**: [**CheckBox class**](https://msdn.microsoft.com/library/windows/apps/br209316), [**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**CheckBox class**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
+![Example of check box states](images/templates-checkbox-states-default.png)
 
 
 ## Is this the right control?

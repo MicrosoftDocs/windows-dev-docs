@@ -18,14 +18,7 @@ ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 
 Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)</li>
-<li>[Flyout class](https://msdn.microsoft.com/library/windows/apps/dn279496)</li>
-</ul>
-</div>
-
+> **Important APIs**: [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx), [Flyout class](https://msdn.microsoft.com/library/windows/apps/dn279496)
 
 <div class="side-by-side">
 <div class="side-by-side-content">

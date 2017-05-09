@@ -20,6 +20,8 @@ keywords: windows 10, uwp
 
 If you think of an app as a collection of pages, the term *navigation* describes the act of moving between pages and within the page. It's the starting point of the user experience. It's how users find the content and features they're interested in. It's very important, and it can be difficult to get right. 
 
+> **Important APIs**: [Frame](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame), [Pivot class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Pivot), [NavigationView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+
 Part of the reason it's difficult to get right is that, as app designers, we have a huge number of choices to make. If we were designing a book, our choices would be simple: what order do the chapters go in. With an app, we can create a navigation experience that mimics a book, requiring the user to go through a series of pages in order. Or we could provide a menu that lets the user jump directly to any page he or she wants--but if we have too many pages, we might overwhelm the user with choices. Or we could put everything on a single page and provide filtering mechanisms for viewing content. 
 
 While there's no single navigation design that works for every app, there are a set of principles and guidelines you can follow to help you figure out the right design for your app. 
@@ -140,7 +142,7 @@ Once you've decided on a page structure, you need to decide how users navigate t
 	<th>Description</th>
 </tr>
 <tr>
-	<td>Frame</td>
+	<td>[Frame](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame)</td>
 	<td>With few exceptions, any app that has multiple pages uses the frame. In a typical setup, the app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.</td>
 </tr>
 <tr>

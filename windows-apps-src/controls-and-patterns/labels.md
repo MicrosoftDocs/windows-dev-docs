@@ -18,20 +18,9 @@ keywords: windows 10, uwp
 
 A label is the name or title of a control or a group of related controls.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>Header property</li>
-<li>[**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)</li>
-</ul>
-</div>
-
+> **Important APIs**: Header property, [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) instead.
-
-
-## Example
-
 
 ![a screenshot that illustrates the standard label control](images/label-standard.png)
 
@@ -48,8 +37,6 @@ In XAML, many controls have a built-in Header property that you use to display t
 
 ## Related topics
 * [Text controls](text-controls.md)
-
-**For developers**
 * [**TextBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252861)
 * [**PasswordBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299051)
 * [**ToggleSwitch.Header property**](https://msdn.microsoft.com/library/windows/apps/br209713)

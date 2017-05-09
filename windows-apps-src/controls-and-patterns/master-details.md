@@ -6,7 +6,7 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,6 +17,8 @@ keywords: windows 10, uwp
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+
+> **Important APIs**: [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
 
@@ -72,7 +74,9 @@ For the details pane, use the content element that makes the most sense. If you 
 
 ## Get the code samples
 
-For sample code that shows the master/details pattern, see
+For sample code that shows the master/details pattern, see these samples: 
+
+- [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [ListView and GridView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -81,4 +85,4 @@ For sample code that shows the master/details pattern, see
 - [Lists](lists.md)
 - [Search](search.md)
 - [App and command bars](app-bars.md)
-- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

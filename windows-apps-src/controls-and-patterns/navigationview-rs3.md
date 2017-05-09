@@ -16,9 +16,12 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
+> [!IMPORTANT]
+> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
+
 The navigation view control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu. This control is designed to implement the nav pane, or hamburger menu, pattern and automatically adapts its layout to different window sizes.
 
->This article describes functionality that hasn’t been released yet: the navigation view will be available in RS3 and later builds. Feature names (such as "navigation view"), terminology, and functionality are not final.
+> **Important APIs**: [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview), [NavigationViewMenuItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationmenuitem), [NavigationViewDisplayMode enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
 
 ![Example of NavigationView](images/navview_wireframe.png)
 
@@ -268,7 +271,7 @@ NavigationView does not automatically show the back button in your app’s title
 
 ## Related topics
 
-* [Split view control](split-view.md)
+* [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 * [Master/details](master-details.md)
 * [Pivot control](tabs-pivot.md)
 * [Navigation basics](../layout/navigation-basics.md)

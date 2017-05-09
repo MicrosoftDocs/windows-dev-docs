@@ -18,15 +18,9 @@ keywords: windows 10, uwp
 
 Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the **Hyperlink** text element and **HyperlinkButton** control.
 
-![A hyperlink button](images/controls/hyperlink-button.png)
+> **Important APIs**: [**Hyperlink text element**](https://msdn.microsoft.com/library/windows/apps/dn279356), [**HyperlinkButton control**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Hyperlink text element**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**HyperlinkButton control**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![A hyperlink button](images/controls/hyperlink-button.png)
 
 
 ## Is this the right control?

@@ -449,6 +449,6 @@ To optimize your app for pen input, see the [pen and stylus interaction](http://
 * [ICommand Interface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand)
 * [Menus and Context Menus](http://windowsstyleguide/controls-and-patterns/menus/)
 * [Swipe](http://windowsstyleguide/controls-and-patterns/swipe/)
-* [Pull to refresh](http://windowsstyleguide/controls-and-patterns/pull-to-refresh-rs3/)
+* [Pull to refresh](http://windowsstyleguide/controls-and-patterns/pull-to-refresh)
 * [Pen and stylus interaction](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
 * [Tailor your app for gamepad and Xbox](http://windowsstyleguide/input-and-devices/designing-for-tv)

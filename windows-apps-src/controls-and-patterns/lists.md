@@ -24,16 +24,10 @@ Lists display and enable interactions with collection-based content. The four li
 -   Drop-down lists, which let users choose one item from an expanding list
 -   List boxes, which let users choose one item or multiple items from a box that can be scrolled
 
-Design guidelines, features, and examples are given for each list pattern. At the end of the article are links to related topics and APIs.
+Design guidelines, features, and examples are given for each list pattern.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **Important APIs**: [**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878), [**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705), [**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)
+
 
 ## List views
 

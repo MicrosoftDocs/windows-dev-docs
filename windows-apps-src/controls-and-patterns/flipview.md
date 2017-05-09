@@ -18,15 +18,8 @@ keywords: windows 10, uwp
 
 Use a flip view for browsing images or other items in a collection, such as photos in an album or items in a product details page, one item at a time. For touch devices, swiping across an item moves through the collection. For a mouse, navigation buttons appear on mouse hover. For a keyboard, arrow keys move through the collection.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**FlipView class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
-<li> [**ItemsSource property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
-<li>[**ItemTemplate property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+> **Important APIs**: [**FlipView class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx), [**ItemsSource property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx), [**ItemTemplate property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
-</ul>
-</div>
 
 ## Is this the right control?
 

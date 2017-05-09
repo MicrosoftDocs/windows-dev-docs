@@ -5,7 +5,7 @@ title: Buttons
 label: Buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,16 +17,9 @@ ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 
 A button gives the user a way to trigger an immediate action.
 
-![Example of buttons](images/controls/button.png)
+> **Important APIs**: [**Button class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), [**RepeatButton class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx), [**Click event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Button class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)</li>
-<li>[**RepeatButton class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</li>
-<li>[**Click event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)</li>
-</ul>
-</div>
+![Example of buttons](images/controls/button.png)
 
 ## Is this the right control?
 
