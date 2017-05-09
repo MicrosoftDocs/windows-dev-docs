@@ -182,4 +182,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-- [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030)

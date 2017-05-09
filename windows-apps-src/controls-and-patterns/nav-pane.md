@@ -21,7 +21,7 @@ A navigation pane (or just "nav" pane) is a pattern that allows for many top-lev
 
 **Important APIs**
 
-* [**SplitView class**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+* [SplitView class](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## Is this the right pattern?
 

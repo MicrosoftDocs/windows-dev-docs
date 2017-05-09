@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 A split view control has an expandable/collapsible pane and a content area.
 
-> **Important APIs**: [**SplitView class**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+> **Important APIs**: [SplitView class](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 

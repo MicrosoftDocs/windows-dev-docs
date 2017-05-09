@@ -24,7 +24,7 @@ doc-status: Build2017
 
 A color picker is used to browse through and select colors. By default, it lets a user navigate through colors on a color spectrum, or specify a color in either Red-Green-Blue (RGB), Hue-Saturation-Value (HSV), or Hexadecimal textboxes.
 
-> **Important APIs**: [**ColorPicker class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [**Color property**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_color), [**ColorChanged event**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_colorchanged)
+> **Important APIs**: [ColorPicker class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_color), [ColorChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_colorchanged)
 
 ![A default color picker](images/color-picker-default.png)
 

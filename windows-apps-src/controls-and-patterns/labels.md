@@ -18,9 +18,9 @@ keywords: windows 10, uwp
 
 A label is the name or title of a control or a group of related controls.
 
-> **Important APIs**: Header property, [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **Important APIs**: Header property, [TextBlock class](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) instead.
+In XAML, many controls have a built-in Header property that you use to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) instead.
 
 ![a screenshot that illustrates the standard label control](images/label-standard.png)
 
@@ -37,15 +37,15 @@ In XAML, many controls have a built-in Header property that you use to display t
 
 ## Related topics
 * [Text controls](text-controls.md)
-* [**TextBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**PasswordBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**ToggleSwitch.Header property**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**DatePicker.Header property**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**TimePicker.Header property**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Slider.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**ComboBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**RichEditBox.Header property**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [TextBox.Header property](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [PasswordBox.Header property](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [ToggleSwitch.Header property](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [DatePicker.Header property](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [TimePicker.Header property](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [Slider.Header property](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [ComboBox.Header property](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [RichEditBox.Header property](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [TextBlock class](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 

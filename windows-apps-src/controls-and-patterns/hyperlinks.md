@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the **Hyperlink** text element and **HyperlinkButton** control.
 
-> **Important APIs**: [**Hyperlink text element**](https://msdn.microsoft.com/library/windows/apps/dn279356), [**HyperlinkButton control**](https://msdn.microsoft.com/library/windows/apps/br242739)
+> **Important APIs**: [Hyperlink text element](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton control](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ![A hyperlink button](images/controls/hyperlink-button.png)
 
@@ -135,7 +135,7 @@ The default color of the hyperlink is the accent color of the system. You can se
 ## Recommendations
 
 -   Only use hyperlinks for navigation; don't use them for other actions.
--   Use the Body style from the type ramp for text-based hyperlinks. Read about [**fonts and the Windows 10 type ramp**](fonts.md).
+-   Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows 10 type ramp](fonts.md).
 -   Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
 -   Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
 
@@ -145,5 +145,5 @@ The default color of the hyperlink is the accent color of the system. You can se
 - [Guidelines for tooltips](tooltips.md)
 
 **For developers (XAML)**
-- [**Windows.UI.Xaml.Documents.Hyperlink class**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Windows.UI.Xaml.Controls.HyperlinkButton class**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Documents.Hyperlink class](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Windows.UI.Xaml.Controls.HyperlinkButton class](https://msdn.microsoft.com/library/windows/apps/br242739)

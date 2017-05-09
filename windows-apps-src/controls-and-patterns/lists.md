@@ -26,7 +26,7 @@ Lists display and enable interactions with collection-based content. The four li
 
 Design guidelines, features, and examples are given for each list pattern.
 
-> **Important APIs**: [**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878), [**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705), [**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)
+> **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878), [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
 ## List views
@@ -251,7 +251,7 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 - [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **For developers**
-- [**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox class**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [ListBox class](https://msdn.microsoft.com/library/windows/apps/br242868)

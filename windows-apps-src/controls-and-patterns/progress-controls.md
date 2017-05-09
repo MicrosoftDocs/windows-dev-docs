@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 A progress control provides feedback to the user that a long-running operation is underway. It can mean that the user cannot interact with the app when the progress indicator is visible, and can also indicate how long the wait time might be, depending on the indicator used.
 
-> **Important APIs**: [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [**IsIndeterminate property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [**IsActive property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+> **Important APIs**: [ProgressBar class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx), [IsIndeterminate property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx), [ProgressRing class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx), [IsActive property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
 ## Types of progress
 
@@ -161,8 +161,8 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 ## Related articles
 
 
-- [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [ProgressBar class](https://msdn.microsoft.com/library/windows/apps/br227529)
+- [ProgressRing class](https://msdn.microsoft.com/library/windows/apps/br227538)
 
 **For developers (XAML)**
 - [Adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)

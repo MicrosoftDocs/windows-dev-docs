@@ -19,7 +19,7 @@ keywords: windows 10, uwp
 
 A hub control lets you organize app content into distinct, yet related, sections or categories. Sections in a hub are meant to be traversed in a preferred order, and can serve as the starting point for more detailed experiences.
 
-> **Important APIs**: [**Hub class**](https://msdn.microsoft.com/library/windows/apps/dn251843), [**HubSection class**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+> **Important APIs**: [Hub class](https://msdn.microsoft.com/library/windows/apps/dn251843), [HubSection class](https://msdn.microsoft.com/library/windows/apps/dn251845)
 
 ![Example of a hub](images/hub_example_tablet.png)
 

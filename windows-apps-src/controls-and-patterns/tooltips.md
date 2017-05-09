@@ -19,7 +19,7 @@ A tooltip is a short description that is linked to another control or object. To
 
 ![A tooltip](images/controls/tool-tip.png)
 
-> **Important APIs**: [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608), [**ToolTipService class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+> **Important APIs**: [ToolTip class](https://msdn.microsoft.com/library/windows/apps/br227608), [ToolTipService class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
 
 ## Is this the right control?
@@ -67,4 +67,4 @@ A tooltip in the Bing Maps app.
 
 Related topics
 
-* [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
+* [ToolTip class](https://msdn.microsoft.com/library/windows/apps/br227608)

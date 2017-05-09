@@ -217,7 +217,7 @@ For more info about adding commands to your command bar, see [Command bar](app-b
 
 ## Related articles
 
-* [**Auto-suggest box**](auto-suggest-box.md)
+* [Auto-suggest box](auto-suggest-box.md)
 
 
  
