@@ -4,7 +4,6 @@ description:
 title: Person picture control
 template: detail.hbs
 label: Parallax View
-template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/10/2017
 ms.topic: article
