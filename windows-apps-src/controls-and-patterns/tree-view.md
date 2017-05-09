@@ -64,7 +64,7 @@ TreeView has the following main classes.
 Here's an example of a TreeView declared in XAML.
 
 ```xaml
-<controls:TreeView x:Name="sampleTreeView"/>
+<TreeView x:Name="sampleTreeView"/>
 ```
 
 ## Set up the data in your TreeView
@@ -76,10 +76,9 @@ public MainPage()
 {
     this.InitializeComponent();
 
-    workFolder = new TreeViewNode() {Data = "Work Documents" };
+    TreeViewNode workFolder = new TreeViewNode() {Data = "Work Documents" };
     workFolder.IsExpanded = true;
-    workFolder.Add(new TreeViewNode() { Data = "XYZ Functional Spec" });  
-    workFolder.Add(new TreeViewNode() { Data = "Feature Schedule" });                        
+    workFolder.Add(new TreeViewNode() { Data = "Feature Schedule" });
     workFolder.Add(new TreeViewNode() { Data = "Overall Project Plan" });
     workFolder.Add(new TreeViewNode() { Data = "Feature Rsource Allocation" });
 
@@ -90,13 +89,12 @@ public MainPage()
     remodelFolder.Add(new TreeViewNode() { Data = "Flooring woodgrain type" });
     remodelFolder.Add(new TreeViewNode() { Data = "Kitchen cabinet style" });
 
-    personalFolder = new TreeViewNode() { Data = "Personal Documents" };
+    TreeViewNode personalFolder = new TreeViewNode() { Data = "Personal Documents" };
     personalFolder.IsExpanded = true;
+
     personalFolder.Add(remodelFolder);
-
-    sampleTreeView.AddRootNode(workFolder);
-
-    sampleTreeView.AddRootNode(personalFolder);
+    workFolder.Add(personalFolder);
+    sampleTreeView.RootNode = workFolder;
 }
 ```
 

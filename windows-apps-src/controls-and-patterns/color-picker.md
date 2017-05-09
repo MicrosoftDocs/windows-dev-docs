@@ -111,7 +111,7 @@ In this example, you host a color picker in a Flyout with Confirm and Cancel but
 ```
 
 ```csharp
-Color mycolor;
+private Color mycolor;
 
 private void confirmColor_Click(object sender, RoutedEventArgs e)
 {

@@ -28,23 +28,24 @@ Perhaps the most common way to use the ratings control is to display an average 
 ![Representation of User Rating Once Set](images/rating_rs2_doc_movie_user.png)
 
 ```XAML
-<RatingsControl x:Name=”MyRatings” ValueChanged="RatingChanged"/>
+<RatingsControl x:Name="MyRatings" ValueChanged="RatingChanged"/>
 ```
 
 ```csharp
-private void RatingChanged(RatingsControl sender, object e)
+private void RatingChanged(RatingsControl sender, object args)
 {
     if (sender.Value == null)
     {
-        MyRatings.Caption = “(“ + SomeWebService.HowManyPreviousRatings() + “)”;
+        MyRatings.Caption = "(" + SomeWebService.HowManyPreviousRatings() + ")";
     }
 
     else
     {
-        MyRatings.Caption = “Your rating”;
+        MyRatings.Caption = "Your rating";
     }
 }
 ```
+
 ### Read Only Rating Mode
 
 Often times, you would like to show ratings of secondary content, such as that displayed in recommended content or when displaying a list of comments and their corresponding ratings. In this case, the user shouldn’t be able to edit the rating, so you can make the control read-only.
@@ -56,17 +57,7 @@ The read only mode is also the recommended way of using the ratings control when
 To do this you would do the following:
 
 ```XAML
-<StackPanel Orientation="Horizontal" Height="60">
-    <Image Height="40" Width="40" Source="facebook.png" />   
-    <StackPanel>
-        <TextBlock Text="Facebook" FontSize="20" />
-
-        <RatingsControl PlaceholderValue="6.2"
-                    ItemWidth="{ThemeResources RatingsControlItemCompactWidth}"
-                    IsReadOnly="True"
-                    ItemSpacing="{ThemeResources RatingsControlItemCompactSpacing}" />
-    </StackPanel>
-</StackPanel>
+<RatingsControl IsReadOnly="True"/>
 ```
 
 ## Additional Functionality
@@ -79,10 +70,3 @@ Here is a non-comprehensive list of additional functionality:
 -   Spacing customization
 -   Disable growth animations
 -   Customization of the number of stars
-
-
-<div class=”microsoft-internal-note”>
-<p>
-<p>
-Note: The [Rating Control Redlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) are a good resource if you'd like to learn more.
-</div>
