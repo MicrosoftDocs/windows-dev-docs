@@ -1,7 +1,7 @@
 ---
 description: Get the latest downloads and tools for UWP apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
-title: Design downloads for UWP apps - Windows app development
+title: Design toolkits and resources for UWP apps
 author: mijacobs
 ms.author: mijacobs
 ms.date: 02/08/2017
@@ -10,49 +10,33 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ---
-# Design downloads for UWP apps
+# Design toolkits and resources for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+<img src="images/illustrator.jpg" alt="Download the design templates for Adobe Illustrator" />
+  </div>
+  <div class="side-by-side-content-right">
+<img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" />
+  </div>
+</div>
+</div>
+
 
 This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
 
+## Design toolkits
 
-## Design templates
+These toolkits provide controls and layout templates for designing UWP apps.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-    <p><b>PowerPoint</b><br/>
-    This deck has everything you need to quickly mock up wireframes for UWP apps, including controls and layouts.<br/>[Download the design templates for PowerPoint](https://go.microsoft.com/fwlink/p/?LinkId=534632)</p>
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534632"><img src="images/powerpoint.jpg" alt="Download the PowerPoint design templates" /></a>
-  </div>
-</div>
-</div>
+* [Adobe XD toolkit]()
+* [Adobe Illustrator toolkit]()
+* [Adobe Photoshop toolkit]()
+* [Sketch toolkit]()
+* [Framer toolkit]()
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Adobe Illustrator</b><br/>
-            These Adobe Illustrator templates provide controls and layouts for designing UWP apps.<br/>[Download the design templates for Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534634"><img src="images/illustrator.jpg" alt="Download the design templates for Adobe Illustrator" /></a>
-  </div>
-</div>
-</div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Adobe Photoshop</b><br/>
-            Controls and layouts for designing UWP apps in Adobe Photoshop.<br/>[Download the design templates for Adobe Photoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
-  </div>
-  <div class="side-by-side-content-right">
-<a href="http://go.microsoft.com/fwlink/p/?LinkId=626453"><img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" /></a>
-  </div>
-</div>
-</div>
 
 ## Tools
 
