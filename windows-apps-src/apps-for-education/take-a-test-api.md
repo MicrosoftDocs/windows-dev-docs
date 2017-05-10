@@ -113,7 +113,7 @@ Queries whether a capability is enabled or disabled.
 `browser.security.getCapability(capabilityString)`
 
 **Parameters**  
-`capabilityString` - string to determine which capability to query. Valid capability strings are "screenCapture" and "printing" (case insensitive).
+`capabilityString` - string to determine which capability to query. Valid capability strings are "screenMonitoring", "printing", and "textSuggestions" (case insensitive).
 
 **Return Value**  
 A boolean value: **true** if the queried capability is enabled, **false** if the capability is not enabled or the capability string is invalid.
@@ -206,7 +206,7 @@ Enables or disables the specified capability.
 `browser.security.setCapability(capabilityString,value)`
 
 **Parameters**  
-`capabilityString` - string to determine which capability to set. Valid capability strings are "screenCapture" and "printing" (case insensitive).  
+`capabilityString` - string to determine which capability to set. Valid capability strings are "screenMonitoring", "printing", and "textSuggestions" (case insensitive).  
 `value` - boolean value to enable or disable the specified capability
 
 **Return Value**  
