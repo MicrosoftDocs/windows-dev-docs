@@ -424,7 +424,7 @@ A custom header that groups multiple notifications together within Action Center
 |---|---|---|---|
 | **id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Action Center. |
 | **title** | string | true | A title for the header. |
-| **action**| [Action](Schema.md#action) | false | Declares what action to take when the toast is clicked by the user. |
+| **action**| Action | false | Declares what action to take when the toast is clicked by the user. |
 
 
 ## Related topics

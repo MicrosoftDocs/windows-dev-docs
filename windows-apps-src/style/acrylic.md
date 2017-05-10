@@ -47,20 +47,20 @@ For apps with vertical navigation, we recommend applying acrylic to the secondar
 [NavigationView](../controls-and-patterns/navigationview.md) is a new common control for adding navigation to your app and includes acrylic in its visual design. NavigationView’s pane shows background acrylic when the pane is open side-by-side with primary content, and automatically transitions to in-app acrylic when the pane is open as an overlay.
 
 If your app is not able to leverage NavigationView and you plan on adding acrylic on your own, we recommend using relatively transparent acrylic with 60% tint opacity.
- - When the pane opens as an overlay above other app content, this should be [60% in-app acrylic](acrylic/#acrylic-theme-resources)
- - When the pane opens side-by-side with main app content, this should be [60% background acrylic](acrylic/#acrylic-theme-resources)
+ - When the pane opens as an overlay above other app content, this should be [60% in-app acrylic](#acrylic-theme-resources)
+ - When the pane opens side-by-side with main app content, this should be [60% background acrylic](#acrylic-theme-resources)
 
 ### Multiple acrylic panes
 
 For apps with three distinct vertical panes, we recommend adding acrylic to non-primary content.
- - For the secondary pane closest to primary content, use [80% background acrylic](acrylic/#acrylic-theme-resources)
- - For the tertiary pane further away from primary content, use [60% background acrylic](acrylic/#acrylic-theme-resources)
+ - For the secondary pane closest to primary content, use [80% background acrylic](#acrylic-theme-resources)
+ - For the tertiary pane further away from primary content, use [60% background acrylic](#acrylic-theme-resources)
 
 ![App pattern using a two vertical acrylic panes](images/acrylic_app-pattern_double-vertical.png)
 
 ### Horizontal acrylic pane
 
-For apps with horizontal navigation, commanding, or other strong horizontal elements across the top of the app, we recommend applying [70% acrylic](acrylic/#acrylic-theme-resources) to this visual element.
+For apps with horizontal navigation, commanding, or other strong horizontal elements across the top of the app, we recommend applying [70% acrylic](#acrylic-theme-resources) to this visual element.
 
 ![App pattern using a horizontal acrylic pane](images/acrylic_app-pattern_horizontal.png)
 

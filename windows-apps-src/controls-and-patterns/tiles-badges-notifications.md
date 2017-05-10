@@ -39,7 +39,7 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 | [Tile content](tiles-and-notifications-create-adaptive-tiles.md) | Tile notification content is specified using adaptive, a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. |
 | [Tile content schema](tiles-and-notifications-adaptive-tiles-schema.md) | Here are the elements and attributes you use to create adaptive tiles. |
 | [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md) | Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. |
-| [Send local tile notfication](controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification.md) | Learn how to send a local tile notification, adding rich dynamic content to your Live Tile. |
+| [Send local tile notfication](tiles-and-notifications-sending-a-local-tile-notification.md) | Learn how to send a local tile notification, adding rich dynamic content to your Live Tile. |
 
 
 ## Notifications
@@ -47,7 +47,7 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 | Article | Description |
 | --- | --- |
 | [Toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md) | Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction. |
-| [Send a local toast notification](controls-and-patterns/tiles-and-notifications-send-local-toast.md) | Learn how to send an interactive toast notification. |
+| [Send a local toast notification](tiles-and-notifications-send-local-toast.md) | Learn how to send an interactive toast notification. |
 | [Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md) | Notifications Visualizer is a new Universal Windows Platform (UWP) app in [the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) that helps developers design adaptive live tiles for Windows 10. |
 | [Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md) | This article covers the four notification options—local, scheduled, periodic, and push—that deliver tile and badge updates and toast notification content. |
 | [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md) | Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service. |
