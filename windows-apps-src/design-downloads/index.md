@@ -16,16 +16,16 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<img src="images/illustrator.jpg" alt="Download the design templates for Adobe Illustrator" />
+This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
   </div>
   <div class="side-by-side-content-right">
-<img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" />
+<img src="images/resources_720x405.png" alt="Download the design templates for Adobe Photoshop" />
   </div>
 </div>
 </div>
 
 
-This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
+
 
 ## Design toolkits
 
