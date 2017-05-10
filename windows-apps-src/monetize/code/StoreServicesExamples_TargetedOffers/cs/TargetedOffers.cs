@@ -24,7 +24,7 @@ namespace GetTargetedOffersSample
             // Get the Microsoft Account token for the current user.
             var msaToken = await GetMicrosoftAccountTokenAsync();
 
-            // Get all of the targeted offers for the current user.            
+            // Get all of the targeted offers for the current user.
             var httpClientGetOffers = new HttpClient();
 
             if (!string.IsNullOrEmpty(msaToken))
@@ -43,7 +43,7 @@ namespace GetTargetedOffersSample
 
             if (availableOfferData.Count != 0)
             {
-                // Get the product ID of the add-on that is associated with the first available offer 
+                // Get the product ID of the add-on that is associated with the first available offer
                 // in the response data.
                 TargetedOfferData offerData = availableOfferData[0];
                 string productId = offerData.Offers[0];
@@ -58,11 +58,11 @@ namespace GetTargetedOffersSample
                     CurrentApp.ReportProductFulfillment(productId);
                     var claim = new TargetedOfferClaim
                     {
-                        TrackingId = offerData.TrackingId,
-                        Confirmation = purchaseResult.ReceiptXml
+                        StoreOffer = offerData,
+                        Receipt = purchaseResult.ReceiptXml
                     };
 
-                    // Submit a request to claim the offer by sending a POST message to the 
+                    // Submit a request to claim the offer by sending a POST message to the
                     // Store endpoint for targeted offers.
                     using (var httpClientClaimOffer = new HttpClient())
                     {
@@ -123,11 +123,11 @@ namespace GetTargetedOffersSample
     // Represents the data in the request body for the claim targeted offer method.
     public class TargetedOfferClaim
     {
-        [JsonProperty(PropertyName = "confirmation")]
-        public string Confirmation { get; set; }
+        [JsonProperty(PropertyName = "receipt")]
+        public string Receipt { get; set; }
 
-        [JsonProperty(PropertyName = "trackingId")]
-        public string TrackingId { get; set; }
+        [JsonProperty(PropertyName = "storeOffer")]
+        public TargetedOfferData StoreOffer { get; set; }
     }
     //</GetTargetedOffersSample>
 }
