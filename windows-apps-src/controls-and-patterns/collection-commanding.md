@@ -31,7 +31,6 @@ This table shows some typical collection commands and ways to expose those comma
 | Command          | Input-agnostic | Mouse accelerator | Keyboard accelerator | Touch accelerator |
 | ---------------- | -------------- | ----------------- | -------------------- | ----------------- |
 | Delete item      | Context menu   | Hover button      | DEL key              | Swipe to delete   |
-| Rename item      | Context menu   | N/A               | F2 key               | Long press        |
 | Flag item        | Context menu   | Hover button      | Ctrl+Shift+G         | Swipe to flag     |
 | Refresh data     | Context menu   | N/A               | F5 key               | Pull to refresh   |
 | Favorite an item | Context menu   | Hover button      | F, Ctrl+S            | Swipe to favorite |
