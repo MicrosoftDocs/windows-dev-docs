@@ -460,7 +460,8 @@ Copy and paste this code into `restoreGame()`.
     });
     ```
 
-> [!TIP] If you're using Visual Studio Code, select all the lines of code you wish to uncomment, and press Crtl + K, U
+> [!TIP] 
+> If you're using Visual Studio Code, select all the lines of code you wish to uncomment, and press Crtl + K, U
 
 Here we use [`jQuery.ajax()`](http://api.jquery.com/jQuery.ajax/) and the **PUT** [`/guess`](#part-i-build-a-rest-api-backend) method created in Part I. 
 
@@ -534,7 +535,8 @@ This file extends the layout.pug file and will render our game. Inside of layout
                 script restoreGame();
     ```
 
-> [!TIP] Remember: Pug is whitespace sensitive. Make sure all of your indentations are correct!
+> [!TIP] 
+> Remember: Pug is whitespace sensitive. Make sure all of your indentations are correct!
 
 ### 4. Use Bootstrap's grid system to create a responsive layout
 Bootstrap's [grid system](http://getbootstrap.com/css/#grid) is a fluid grid system that scales a grid as a device's viewport changes. The cards in this game use Bootstrap's predefined grid system classes for the layout, including:
