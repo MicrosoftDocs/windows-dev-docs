@@ -435,6 +435,3 @@ See [Store and retrieve Windows Ink stroke data](https://docs.microsoft.com/en-u
 ## Summary
 
 Congratulations, you've completed the **Get Started Tutorial: Support ink in your UWP app**! We showed you the basic code required for supporting ink in your UWP apps, and how to provide some of the richer user experiences supported by the Windows Ink platform.
-
-## Find a problem?
-[Capture it](report-a-problem.md), so we can fix it later.

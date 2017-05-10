@@ -614,7 +614,3 @@ To see this in action (you'll need a Surface Studio):
 ## Summary
 
 Congratulations, you've completed the **Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app**! We showed you the basic code required for supporting a wheel device in your UWP apps, and how to provide some of the richer user experiences supported by the RadialController APIs.
-
-
-## Find a problem?
-[Capture it](report-a-problem.md), so we can fix it later.
