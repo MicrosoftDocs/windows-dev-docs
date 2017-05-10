@@ -11,7 +11,7 @@ ms.technology: uwp
 msdn.assetid: 0fdde031-97a5-430c-91af-846c5fbb028f
 ---
 
-# What's New in Windows 10 at Microsoft Build 20127
+# What's New in Windows 10 at Microsoft Build 2017
 
 Released to accompany the [Microsoft Build 2017 developer conference](https://developer.microsoft.com/windows/projects/events/build/2017?ocid=wdgbld17_intreferral_devcenterhp_null_null_devcenter_hppost&utm_campaign=wdgbld17&utm_medium=internalreferral&utm_source=devcenterhp&utm_content=devcenter_hppost), Windows 10 SDK Preview Build 16190 will continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
@@ -19,11 +19,11 @@ Many of the below features and tutorials have been released alongside the SDK Pr
 
 For more information on the highlighted features of this and other Windows updates, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
 
-### New Features
+## New Features
 
-## Effects
+### Effects
 
-These new effects use depth, perspective, and movement to help users focus on important UI elements.
+These new effects use depth, perspective, and movement to help users focus on important UI elements. They are only available in the SDK Preview Build.
 
 [Acrylic material](../style/acrylic.md) is a type of brush that creates transparent textures. 
 
@@ -40,7 +40,7 @@ The [Parallax effect](../style/parallax.md) adds three-dimensional depth and per
 
 ### Controls
 
-These new controls make it easier to quickly build a great looking UI. 
+These new controls make it easier to quickly build a great looking UI. They are only available in the SDK Preview Build.
 
 The [color picker control](../controls-and-patterns/color-picker.md) enables users to browse through and select colors.  
 
@@ -86,7 +86,7 @@ Microsoft's Project Rome feature has debuted on the iOS platform. With the new p
 
 The [Recognize Windows Ink strokes as text and shapes](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/convert-ink-to-text) topic contains details on rich recognition with the [Windows Ink analysis engine](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis). We demonstrate how to classify, analyze, and recognize a set of strokes as text or shapes (ink analysis can also be used to recognize document structure, bullet lists, and generic drawings).
 
-### Samples and Tutorials
+## Samples and Tutorials
 
 #### High DPI
 
