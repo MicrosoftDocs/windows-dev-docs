@@ -48,10 +48,6 @@ icardbuilderstatics <br> icardbuilderstatics.createcardelementfromjson
 
 icardelement <br> icardelement.tojson
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.cards.windows)
-
-windows.applicationmodel.cards
-
 ### [windows.applicationmodel.core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core)
 
 #### [coreapplication](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication)
@@ -102,10 +98,6 @@ paymentmediator.canmakepaymentasync
 
 coreuseractivitymanager <br> coreuseractivitymanager.createuseractivitysessioninbackground
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core.windows)
-
-windows.applicationmodel.useractivities.core
-
 ### [windows.applicationmodel.useractivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 #### [useractivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)
@@ -127,10 +119,6 @@ useractivitystate
 #### [useractivityvisualelements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements)
 
 useractivityvisualelements <br> useractivityvisualelements.backgroundcolor <br> useractivityvisualelements.content <br> useractivityvisualelements.description <br> useractivityvisualelements.displaytext <br> useractivityvisualelements.imageicon
-
-#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.windows)
-
-windows.applicationmodel.useractivities
 
 ## windows.devices
 
@@ -193,10 +181,6 @@ printticketvalue <br> printticketvalue.getvalueasinteger <br> printticketvalue.g
 #### [printticketvaluetype](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketvaluetype)
 
 printticketvaluetype
-
-#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.windows)
-
-windows.graphics.printing.printticket
 
 #### [workflowprintticket](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.workflowprintticket)
 
@@ -280,10 +264,6 @@ printworkflowuiactivatedeventargs <br> printworkflowuiactivatedeventargs.kind <b
 
 printworkflowxpsdataavailableeventargs <br> printworkflowxpsdataavailableeventargs.getdeferral <br> printworkflowxpsdataavailableeventargs.operation
 
-#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.windows)
-
-windows.graphics.printing.workflow
-
 ### [windows.graphics.printing3d](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
 
 #### [printing3d3mfpackage](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)
@@ -325,12 +305,6 @@ playreadyencryptionalgorithm
 #### [playreadyhardwaredrmfeatures](https://docs.microsoft.com/uwp/api/windows.media.protection.playready.playreadyhardwaredrmfeatures)
 
 playreadyhardwaredrmfeatures
-
-### [windows.media.speechrecognition](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition)
-
-#### [speechrecognizer](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer)
-
-speechrecognizer.trysetsystemspeechlanguageasync
 
 ### [windows.media.streaming.adaptive](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive)
 
@@ -566,22 +540,6 @@ visualtreeisland <br> visualtreeisland.children
 
 corewindow.dispatcherqueue
 
-### [windows.ui.input.spatial](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial)
-
-#### [spatialinteractionsource](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource)
-
-spatialinteractionsource.handedness
-
-#### [spatialinteractionsourcehandedness](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcehandedness)
-
-spatialinteractionsourcehandedness
-
-### [windows.ui.text.core](https://docs.microsoft.com/uwp/api/windows.ui.text.core)
-
-#### [coretextinputscope](https://docs.microsoft.com/uwp/api/windows.ui.text.core.coretextinputscope)
-
-coretextinputscope
-
 ### [windows.ui.viewmanagement](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement)
 
 #### [coreinputview](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.coreinputview)
@@ -668,10 +626,6 @@ displaymodechangedeventargs <br> displaymodechangedeventargs.displaymode <br> di
 
 hsvcolor
 
-#### [irefreshinfoprovider](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.irefreshinfoprovider)
-
-irefreshinfoprovider <br> irefreshinfoprovider.executionratio <br> irefreshinfoprovider.interactingforrefreshchanged <br> irefreshinfoprovider.interactionratio <br> irefreshinfoprovider.interactionratiochanged <br> irefreshinfoprovider.interactionratiopropertyname <br> irefreshinfoprovider.isinteractingforrefresh <br> irefreshinfoprovider.onrefreshcompleted <br> irefreshinfoprovider.onrefreshstarted
-
 #### [navigationmenuitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationmenuitem)
 
 navigationmenuitem <br> navigationmenuitem.compactpanelength <br> navigationmenuitem.icon <br> navigationmenuitem.iconproperty <br> navigationmenuitem.invoked <br> navigationmenuitem.isselected <br> navigationmenuitem.isselectedproperty <br> navigationmenuitem.navigationmenuitem <br> navigationmenuitem.text <br> navigationmenuitem.textproperty
@@ -724,41 +678,10 @@ ratingscontrol <br> ratingscontrol.caption <br> ratingscontrol.captionproperty <
 
 ratingscontrolautomationpeer <br> ratingscontrolautomationpeer.ratingscontrolautomationpeer
 
-#### [refreshcontainer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshcontainer)
-
-refreshcontainer <br> refreshcontainer.refreshcontainer
-
-#### [refreshinteractionratiochangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshinteractionratiochangedeventargs)
-
-refreshinteractionratiochangedeventargs <br> refreshinteractionratiochangedeventargs.interactionratio <br> refreshinteractionratiochangedeventargs.refreshinteractionratiochangedeventargs
-
-#### [refreshrequestedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshrequestedeventargs)
-
-refreshrequestedeventargs <br> refreshrequestedeventargs.getdeferral <br> refreshrequestedeventargs.refreshrequestedeventargs
-
-#### [refreshstatuschangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshstatuschangedeventargs)
-
-refreshstatuschangedeventargs <br> refreshstatuschangedeventargs.newstatus <br> refreshstatuschangedeventargs.oldstatus <br> refreshstatuschangedeventargs.refreshstatuschangedeventargs
-
-#### [refreshvisualizer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
-
-refreshvisualizer <br> refreshvisualizer.orientation <br> refreshvisualizer.orientationproperty <br> refreshvisualizer.progressindicator <br> refreshvisualizer.progressindicatorproperty <br> refreshvisualizer.refresh <br> refreshvisualizer.refreshinfoprovider <br> refreshvisualizer.refreshinfoproviderproperty <br> refreshvisualizer.refreshrequested <br> refreshvisualizer.refreshstatuschanged <br> refreshvisualizer.refreshvisualizer <br> refreshvisualizer.status <br> refreshvisualizer.statusproperty
-
-#### [refreshvisualizerorientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshvisualizerorientation)
-
-refreshvisualizerorientation
-
-#### [refreshvisualizerstatus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.refreshvisualizerstatus)
-
-refreshvisualizerstatus
 
 #### [reveallistviewitempresenter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.reveallistviewitempresenter)
 
 reveallistviewitempresenter <br> reveallistviewitempresenter.reveallistviewitempresenter
-
-#### [symbol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)
-
-symbol
 
 #### [treeview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
 
@@ -799,12 +722,6 @@ xamlbooleantovisibilityconverter <br> xamlbooleantovisibilityconverter.convert <
 #### [xamlintegertoindentationconverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.xamlintegertoindentationconverter)
 
 xamlintegertoindentationconverter <br> xamlintegertoindentationconverter.convert <br> xamlintegertoindentationconverter.convertback <br> xamlintegertoindentationconverter.xamlintegertoindentationconverter
-
-### [windows.ui.xaml.data](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data)
-
-#### [updatesourcetrigger](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.updatesourcetrigger)
-
-updatesourcetrigger
 
 ### [windows.ui.xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
 
