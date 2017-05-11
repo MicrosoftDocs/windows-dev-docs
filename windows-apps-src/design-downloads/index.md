@@ -20,9 +20,11 @@ This section contains design and UI-related downloads for UWP apps. For addition
 
 These toolkits provide controls and layout templates for designing UWP apps.
 
+* [Adobe XD toolkit](http://download.microsoft.com/download/1/3/C/13CE5C92-024E-40C8-A867-83D891CC4D39/Adobe XD design toolkit for UWP apps v1705.zip)
 * [Adobe Illustrator toolkit](http://download.microsoft.com/download/C/C/4/CC478BD5-6469-450D-80EF-52D27EEAD4C4/Adobe Illustrator design toolkit for UWP apps v1705.zip)
 * [Adobe Photoshop toolkit](http://download.microsoft.com/download/C/D/A/CDA7FC2B-D5EA-48A4-906D-C6F4A4B311BB/Adobe Photoshop design toolkit for UWP apps v1705.zip)
 * [Framer toolkit (on GitHub)](https://github.com/Microsoft/windows-framer-toolkit)
+* [Sketch toolkit](http://download.microsoft.com/download/B/4/C/B4C6B0B9-C8BC-4CE2-A833-DCE89399060E/Sketch design toolkit for UWP apps v1705.zip)
 
 ## Fonts
 
