@@ -1,6 +1,6 @@
 ---
 author: libbymc
-title: Get Started Tutorial: Single-page web app with REST API backend
+title: Get Started Tutorial - Single-page web app with REST API backend
 description: Use popular web technologies to build a Hosted Web App for the Windows Store
 keywords: hosted web app, HWA, REST API, single-page app, SPA
 ms.author: libbymc
