@@ -13,10 +13,6 @@ ms.technology: uwp
 
 # Input: Support the Surface Dial (and other wheel devices) in your UWP app
 
-* Karl Bridge
-
-* 20 minute lab
-
 The Surface Dial is a secondary input device that helps users to be more productive when using a primary input device (such as pen, touch, or mouse) intended for a single, dominant hand. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access to both system commands and other, more contextual, tools and functionality. 
 
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  

@@ -13,10 +13,6 @@ ms.technology: uwp
 
 # Input: Support ink in your UWP app
 
-* Karl Bridge
-
-* 20 minute lab
-
 With Windows Ink, you can provide your customers with the digital equivalent of almost any pen and paper experience imaginable, from quick handwritten notes and annotations to whiteboard demos to architectural and engineering drawings to personal masterpieces.
 
 ![Surface Pen](images/ink/ink-hero-small.png)  
