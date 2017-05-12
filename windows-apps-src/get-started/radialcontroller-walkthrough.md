@@ -2,7 +2,7 @@
 author: kbridge
 ms.assetid:
 title: UWP Academy - Input track - Support the Surface Dial (and other wheel devices) in your UWP app
-description: UWP Academy. Input track. A step by step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
+description: UWP Academy. Input track. A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
 keywords: UWP Academy
 ms.author: kbridge
 ms.date: 04/17/2017
@@ -13,24 +13,24 @@ ms.technology: uwp
 
 # Input: Support the Surface Dial (and other wheel devices) in your UWP app
 
-The Surface Dial is a secondary input device that helps users to be more productive when using a primary input device (such as pen, touch, or mouse) intended for a single, dominant hand. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access to both system commands and other, more contextual, tools and functionality. 
-
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
-*Surface Dial with Surface Studio and Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacedial)).
+*Surface Dial with Surface Studio and Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacedial)).
+
+The Surface Dial is a secondary input device that helps users to be more productive when also using a primary input device (such as pen, touch, or mouse) with their dominant hand. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access both to system commands and to other, more contextual, tools and functionality. 
 
 The Dial supports three basic gestures: 
-- Press and hold to display the built-in menu of commands
-- Rotate to highlight a menu item (if the menu is active) or to modify the current action in the app (if the menu is not active)
-- Click to select the highlighted menu item (if the menu is active) or to invoke a command in the app (if the menu is not active)
+- Press and hold to display the built-in menu of commands.
+- Rotate to highlight a menu item (if the menu is active) or to modify the current action in the app (if the menu is not active).
+- Click to select the highlighted menu item (if the menu is active) or to invoke a command in the app (if the menu is not active).
 
-In this topic, we step through how to use the RadialController APIs to customize the Dial experience in a sample app.
+In this tutorial, we use a sample app (see [Sample code](#sample-code)) to step through how the various [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) APIs can be used to customize the Dial experience.
 
 We focus on the following:
 * Specifying which built-in tools are displayed on the menu
 * Adding a custom tool
 * Controlling haptic feedback
 * Custom click interactions
-* Custom rotate interactions
+* Custom rotation interactions
 
 For more detail on implementing these features, see our [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/windows-wheel-interactions) topic)
 
