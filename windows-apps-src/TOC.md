@@ -887,6 +887,7 @@
 #### [Integrate with Windows 10](porting/desktop-to-uwp-extensions.md)
 #### [Available UWP APIs](porting/desktop-to-uwp-supported-api.md)
 #### [Run, debug, and test](porting/desktop-to-uwp-debug.md)
+##### [Test for Windows 10 S](porting/desktop-to-uwp-test-windows-s.md)
 #### [Distribute](porting/desktop-to-uwp-distribute.md)
 #### [Behind the scenes](porting/desktop-to-uwp-behind-the-scenes.md)
 #### [Known issues](porting/desktop-to-uwp-known-issues.md)
