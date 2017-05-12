@@ -201,7 +201,7 @@
 #### [Instructional UI](in-app-help/instructional-ui.md)
 #### [In-app help](in-app-help/in-app-help.md)
 #### [External help](in-app-help/external-help.md)
-## [Microsoft Design Language](https://developer.microsoft.com/windows/design/microsoft-design-language)
+## [Fluent Design System](http://fluent.microsoft.com/)
 ## [Design toolkits](design-downloads/index.md)
 # [Develop Windows apps](https://developer.microsoft.com/windows/apps/develop)
 ## [What's new in Windows 10 for developers](whats-new/windows-10-version-1703.md)
