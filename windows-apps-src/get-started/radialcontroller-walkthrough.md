@@ -11,40 +11,40 @@ ms.prod: windows
 ms.technology: uwp
 ---
 
-# Input: Support the Surface Dial (and other wheel devices) in your UWP app
+# Support the Surface Dial (and other wheel devices) in your UWP app
 
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial with Surface Studio and Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacedial)).
 
-The Surface Dial is a secondary input device that helps users to be more productive when also using a primary input device (such as pen, touch, or mouse) with their dominant hand. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access both to system commands and to other, more contextual, tools and functionality. 
+This tutorial steps through how to customize the user interaction experiences supported by wheel devices such as the Surface Dial. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) APIs discussed in each step.
+
+We focus on the following:
+* Specifying which built-in tools are displayed on the [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) menu
+* Adding a custom tool to the menu
+* Controlling haptic feedback
+* Customizing click interactions
+* Customizing rotation interactions
+
+For more about implementing these and other features, see [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/windows-wheel-interactions).
+
+## Introduction
+
+The Surface Dial is a secondary input device that helps users to be more productive when used together with a primary input device such as pen, touch, or mouse. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access both to system commands and to other, more contextual, tools and functionality. 
 
 The Dial supports three basic gestures: 
 - Press and hold to display the built-in menu of commands.
 - Rotate to highlight a menu item (if the menu is active) or to modify the current action in the app (if the menu is not active).
 - Click to select the highlighted menu item (if the menu is active) or to invoke a command in the app (if the menu is not active).
 
-In this tutorial, we use a sample app (see [Sample code](#sample-code)) to step through how the various [**RadialController**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller) APIs can be used to customize the Dial experience.
-
-We focus on the following:
-* Specifying which built-in tools are displayed on the menu
-* Adding a custom tool
-* Controlling haptic feedback
-* Custom click interactions
-* Custom rotation interactions
-
-For more detail on implementing these features, see our [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/windows-wheel-interactions) topic)
-
 ## Prerequisites
-To work with this project, you'll need the following:
 
-* A Windows computer (or a virtual machine) running the current version of Windows 10
-* [Visual Studio 2017 and the RS2 SDK](https://developer.microsoft.com/windows/downloads)
-* A wheel device (only the Surface Dial at this time)
-
-## Before you start
-If you're new to UWP app development with Visual Studio, have a look through these topics for help getting your devleopment environment set up and for getting familiar with the tools and the platform:  
-* [Get set up](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
-* [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+* A computer (or a virtual machine) running Windows 10 Creators Update, or newer
+* [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+* A wheel device (only the [Surface Dial](https://aka.ms/purchasesurfacedial) at this time)
+* If you're new to Universal Windows Platform (UWP) app development with Visual Studio, have a look through these topics before you start this tutorial:  
+    * [Get set up](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
+    * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## Set up your devices
 
