@@ -707,7 +707,6 @@
 ##### [Install the advertising libraries](monetize/install-the-microsoft-advertising-libraries.md)
 ##### [Workflows for creating apps with ads](monetize/workflows-for-creating-apps-with-ads.md)
 ##### [Update your app to the latest libraries](monetize/update-your-app-to-the-latest-advertising-libraries.md)
-##### [Migrate from AdMediatorControl to AdControl](monetize/migrate-from-admediatorcontrol-to-adcontrol.md)
 ##### [Release notes](monetize/release-notes-for-the-advertising-libraries.md)
 ##### [Known issues](monetize/known-issues-for-the-advertising-libraries.md)
 ##### [Additional help](monetize/additional-help.md)

@@ -62,13 +62,15 @@ If you already have an **AdControl** or **InterstitialAd** control in your UWP a
 > [!NOTE]
 > This section describes the **Ad mediation** options for UWP app packages. If your app package targets Windows 8.x or Windows Phone 8.x and uses the **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), the **Ad mediation** section in the dashboard displays a different set of options. For more information about configuring mediation settings for a Windows 8.x or Windows Phone 8.x app package that uses **AdMediatorControl**, see [this article](https://msdn.microsoft.com/library/windows/apps/mt219689).
 
-To configure ad mediation settings for an **AdControl** or **InterstitialAd** control in a UWP app package:
+To configure ad mediation settings for an **AdControl** or **InterstitialAd** control in a UWP app:
 
 1. In the **Configure mediation for** drop-down, select the UWP app package that contains the **AdControl** or **InterstitialAd** control you want to configure.
 
 2. In the **Ad unit type** drop down, select the type of ad unit that is associated with the control.
 
-3. In the **Ad unit** drop-down, select the name of the ad unit that is associated with the control.
+3. In the **Ad unit** drop-down, select the name of the UWP ad unit that is associated with the control.
+    > [!NOTE]
+    > When you enable ad mediation for an **AdControl** or **InterstitialAd** control in your UWP app, you do not need to obtain an ad unit from third-party ad networks. Our ad mediation service automatically creates any necessary third-party ad units. 
 
 4. By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. We recommend that you use this option. Otherwise, if you want to choose your own ad mediation settings, clear this check box.
     > [!NOTE]

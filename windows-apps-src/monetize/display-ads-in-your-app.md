@@ -54,7 +54,7 @@ In Windows 8.1 and Windows Phone 8.x apps, ad mediation is only available for ba
 For more information about using ad mediation in a Windows 8.1 or Windows Phone 8.x app, see [this article](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359.aspx).
 
 > [!NOTE]
-> Ad mediation for Windows 8.1 and Windows Phone 8.x apps is no longer under active development. To maximize your potential advertising revenue, we recommend that you build UWP apps that use ad mediation in an **AdControl** or **InterstitialAd**. If you have an existing Windows 8.1 or Windows Phone 8.x app that uses **AdMediatorControl** and you want to migrate it to a UWP app that uses **AdControl**, see [Migrate from AdMediatorControl to AdControl](migrate-from-admediatorcontrol-to-adcontrol.md).
+> Ad mediation for Windows 8.1 and Windows Phone 8.x apps is no longer under active development. To maximize your potential advertising revenue, we recommend that you build UWP apps that use ad mediation in an **AdControl** or **InterstitialAd**. 
 
 <span id="silverlight_support"/>
 ## Advertising support for Windows Phone 8.x Silverlight projects

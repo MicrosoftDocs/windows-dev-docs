@@ -142,7 +142,7 @@ If your app uses **AdMediatorControl** to display banner ads, follow these instr
 
 **UWP apps for Windows 10**
 
-* **AdMediatorControl** is no longer supported for UWP apps. You must migrate to using **AdControl** by following the instructions in the sections below. Proceed to [Part 2](update-your-app-to-the-latest-advertising-libraries.md#part-2).
+* **AdMediatorControl** is no longer supported for UWP apps. Modify your app to use **AdControl** instead. For more information about using **AdControl**, see [AdControl in XAML](adcontrol-in-xaml-and--net.md) and [AdControl in HTML](adcontrol-in-html-5-and-javascript.md).
 
 <span/>
 
@@ -187,9 +187,9 @@ Follow these instructions to update your project.
 
 <span/>
 
-If your app uses **AdMediatorControl**, [refactor your app to use AdControl](migrate-from-admediatorcontrol-to-adcontrol.md) instead. **AdMediatorControl** is no longer supported for UWP apps.
-
 If your app uses **AdControl**, remove all existing references to the Microsoft advertising libraries from the project and follow the [AdControl in XAML](adcontrol-in-xaml-and--net.md) or [AdControl in HTML](adcontrol-in-html-5-and-javascript.md) instructions to add the required references. This will ensure that your project uses the correct libraries. You can preserve your existing XAML markup and code.
+
+If your app uses **AdMediatorControl**, modify your app to use **AdControl** instead. **AdMediatorControl** is no longer supported for UWP apps. For more information about using **AdControl**, see [AdControl in XAML](adcontrol-in-xaml-and--net.md) and [AdControl in HTML](adcontrol-in-html-5-and-javascript.md).
 
 <span/>
 

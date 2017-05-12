@@ -13,7 +13,7 @@ keywords: windows 10, uwp, licenses, apps, add-ons, in-app purchases, IAPs, Wind
 
 # Get license info for apps and add-ons
 
-Apps that target Windows 10, version 1607, or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to get license info for the current app its add-ons (also known as in-app products or IAPs). For example, you can use this info to determine if the licenses for the app or its add-ons are active, or if they are trial licenses.
+Apps that target Windows 10, version 1607, or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to get license info for the current app and its add-ons (also known as in-app products or IAPs). For example, you can use this info to determine if the licenses for the app or its add-ons are active, or if they are trial licenses.
 
 > [!NOTE]
 > This article is applicable to apps that target Windows 10, version 1607, or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
