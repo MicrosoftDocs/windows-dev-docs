@@ -110,7 +110,7 @@ We don't recommend placing accent-colored text on your acrylic surfaces because 
 ## Acrylic theme resources
 You can easily apply acrylic to your app’s surfaces using the new XAML AcrylicBrush or predefined AcrylicBrush theme resources. First, you’ll need to decide whether to use in-app or background acrylic. Be sure to review common app patterns described earlier in this article for recommendations.
 
-We’ve created a collection of brush theme resources for both background and in-app acrylic types that respect the app’s theme and fall back to solid colors as needed. Resources named *AcrylicWindow* represent background acrylic, while *AcrylicElement* refers to in-app acrylic.
+We’ve created a collection of brush theme resources for both background and in-app acrylic types that respect the app’s theme and fall back to solid colors as needed. Resources named *Acrylic\*WindowBrush* represent background acrylic, while *Acrylic\*ElementBrush* refers to in-app acrylic.
 
 <table>
     <tr>
@@ -119,25 +119,25 @@ We’ve created a collection of brush theme resources for both background and in
         <th align="center">[Fallback color](color.md)</th>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowBrush, SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush, SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush, SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush, SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush, SystemControlAltLowAcrylicElementBrush </td>
+        <td> SystemControlAcrylicWindowBrush<br/>SystemControlAcrylicElementBrush </td>
         <td align="center"> 80% </td>
-        <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltLow </td>
+        <td> ChromeMedium </td>
     </tr>
     </tr>
         <td> **Recommended usage:** These are general-purpose acrylic resources that work well in a wide variety of usages. If your app uses secondary text of AltMedium color with text size smaller than 18px, place an 80% acrylic resource behind the text to [meet contrast ratio requirements](../accessibility/accessible-text-requirements.md). </td>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowMediumHighBrush, SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush, SystemControlBaseHighAcrylicElementMediumHighBrush </td>
+        <td> SystemControlAcrylicMediumHighWindowBrush<br/>SystemControlAcrylicMediumHighElementBrush </td>
         <td align="center"> 70% </td>
-        <td> ChromeMedium <br/><br/> BaseHigh </td>
+        <td> ChromeMedium </td>
     </tr>
     <tr>
         <td> **Recommended usage:** If your app uses secondary text of AltMedium color with a text size of 18px or larger, you can place these more transparent 70% acrylic resources behind the text. We recommend using these resources in your app's top horizontal navigation and commanding areas.  </td>
     </tr>
     <tr>
-        <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlAcrylicWindowMediumBrush, SystemControlAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
+        <td> SystemControlAcrylicMediumWindowBrush<br/>SystemControlAcrylicMediumElementBrush </td>
         <td align="center"> 60% </td>
-        <td> ChromeHigh <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
+        <td> ChromeMediumLow </td>
     </tr>
     <tr>
         <td> **Recommended usage:** When placing only primary text of AltHigh color over acrylic, your app can utilize these 60% resources. We recommend painting your app's [vertical navigation pane](../controls-and-patterns/navigationview.md), i.e. hamburger menu, with 60% acrylic. </td>
@@ -152,17 +152,17 @@ In addition to color-neutral acrylic, we've also added resources that tint acryl
         <th align="center">[Tint and Fallback colors](color.md)</th>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowAccentMediumHighBrush, SystemControlAcrylicElementAccentMediumHighBrush </td>
+        <td> SystemControlAcrylicAccentMediumHighWindowBrush<br/>SystemControlAcrylicAccentMediumHighElementBrush </td>
         <td align="center"> 70% </td>
         <td> SystemAccentColor </td>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowAccentDark1Brush, SystemControlAcrylicElementAccentDark1Brush </td>
+        <td> SystemControlAcrylicAccentDark1WindowBrush<br/>SystemControlAcrylicAccentDark1ElementBrush </td>
         <td align="center"> 80% </td>
         <td> SystemAccentColorDark1 </td>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowAccentDark2MediumHighBrush, SystemControlAcrylicElementAccentDark2MediumHighBrush </td>
+        <td> SystemControlAcrylicAccentDark2MediumHighWindowBrush<br/>SystemControlAcrylicAccentDark2MediumHighElementBrush </td>
         <td align="center"> 70% </td>
         <td> SystemAccentColorDark2 </td>
     </tr>
