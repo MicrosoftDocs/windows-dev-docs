@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: Set add-on pricing and availability
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,6 +15,9 @@ keywords: windows 10, uwp
 
 
 When submitting an add-on, the options on the **Pricing and availability** page determine what to charge for your add-on and how it should be offered to customers.
+
+> [!IMPORTANT]
+> We have made some updates to the pricing and availability options, and are in the process of rolling the changes out to all developer accounts. This topic does not yet reflect these changes. If you see different options on the **Pricing and availability** page of an add-on submission, more info about these options is available at [Set app pricing and availability](set-app-pricing-and-availability.md). Even though that topic describes the option for an app, they work similarly for add-ons. We will be updating this topic to reflect the newest changes shortly.
 
 ## Base price
 

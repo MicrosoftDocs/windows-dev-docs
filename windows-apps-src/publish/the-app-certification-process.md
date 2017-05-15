@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # The app certification process
 
-
 When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 16 hours for customers to see the app’s listing (or your updates to a previously published app) in the Store. You'll see a notification when your submission is published and available to customers, and the app's status in the dashboard will be **In the Store**.
 
 ## Preprocessing
@@ -42,7 +41,7 @@ While your app is in the publishing phase, the **Show details** link in the Stat
 
 ## In the Store 
 
-After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Windows Store for customers to download (unless you have chosen another [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option). 
+After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Windows Store for customers to download (unless you have chosen another [Visibility](set-app-pricing-and-availability.md#visibility) option). 
 
 **Note**  We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
 

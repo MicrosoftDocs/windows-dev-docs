@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: You can promote your app or add-on in the Windows Store by putting it on sale for a limited time.
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,11 +13,15 @@ keywords: windows 10, uwp
 
 # Put apps and add-ons on sale
 
-You can promote your app or add-on in the Windows Store by putting it on sale for a limited time.
+You can promote your app or add-on in the Windows Store by putting it on sale for a limited time. You can choose to offer the product either at a lower price tier or with a percentage-based discount.
 
-When you schedule a sale to temporarily lower the price of your app or add-on, customers viewing your Store listing will see that the price has been reduced, and they'll be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
+> [!IMPORTANT]
+> This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
 
-> **Note**  Sale pricing is only shown to your customers on Windows 10. On other operating systems, customers will see the regular price for your app or add-on. You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.
+When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see that the price has been reduced (as opposed to a [scheduled price change](set-and-schedule-app-pricing.md#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). When you put a product on sale, customers will be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
+
+> [!NOTE]
+> Sale pricing is only shown to your customers on Windows 10. On other operating systems, customers will see the regular price for your app or add-on. You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.
 
 ## Scheduling a sale
 
@@ -25,45 +29,51 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
 
 **To schedule a sale**
 
-1.  On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.
-2.  Click **New sale**.
-3.  Enter the date and time for the start and end of the sale period. The times shown are in UTC.
+1. On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.
+2. Select **Show options**, and then select **New sale**.
+3. The **Market selection** popup window will appear, allowing you to create a *market group* that will specify the market(s) in which the sale should be offered. You can click **Select all** to offer the sale to every market in which your app is available, select one individual market, or select multiple markets. You can optionally enter a name for your market group. When you’ve made your selections, click **Create**. (To edit the markets in the group later, click its name.)
 
-   > **Note**  For add-ons, you can't schedule sales that overlap with each other.
+   > [!NOTE]
+   > Market selections that you make in the Sale pricing section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets. If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.
+4. Choose one of the following options to specify the type of discount:
+   - **Price**: Use this option to select a lower price tier at which your app will be offered. You can change the currency drop-down to select the price in whichever currency you prefer. (The price will be converted to the corresponding tier for each currency. For more info, see [Pricing](set-app-pricing-and-availability.md).)
+   - **Percentage**: Use this option to select the percentage for a discount that will be applied to your app. The same discount percentage is used for all currencies.
+5. In the **Offered to** row, choose one of the following options:
+   - **Everyone**: The sale will be offered to all customers.
+   - **Owners of**: The sale will be offered to customers who already own one of your apps. You’ll need to select one of your published apps from the drop-down that appears.
+   - **Flight group**: The sale will be offered to the people in the [flight group](package-flights.md#create-a-new-flight-group) you select. You must already have created the flight group in order to use this option.
+   - **Segment**: The sale will be offered to the people in the customer segment you select. You can use a  [segment that you have already created](create-customer-segments.md) here. You can also choose **First time payers** to offer the sale only to customers who have never purchased anything in the Store. We offer this segment here because we've found that after a customer makes their first Store purchase, they often continue to make more purchases, so this can be a great group to entice with sale pricing.
+6. Enter the date and time for the start and end of the sale period. Choose one of the following time zone options:
+   - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the sale occurs at the same time everywhere.
+   - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.)
+7. To schedule an additional sale, select **New sale**. Otherwise, select **Save** at the bottom of the **Pricing and availability page**, then select **Submit to the Store** from the submission overview.
 
-4.  Choose your sale price from the drop-down list. You can pick any price, including **Free**.
-5.  If you'd like to enter custom prices for this sale, click **Show custom market pricing options**. You can set custom sale prices per market (or exclude specific markets from the sale) here. For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
+> [!NOTE]
+> It's possible to select a price tier that is higher than your app's base price. However, sale pricing will only be shown to customers if the sale price is lower than the regular price of the app in that market.
 
-    > **Note**  Market selections that you make in the **Sale pricing** section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets. If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.
-
-6.  Click **Done** to save the scheduled sale.
-7.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
-
-> **Note**  It's possible to select a price tier that is higher than your app's base price. However, sale pricing will only be shown to customers if the sale price is lower than the regular price of the app in that market. Selecting a price that is higher than your app's base price might be appropriate for your sale if you've already set custom prices in certain markets that are higher than your app's base price, and you want to temporarily lower the price in those markets (but the sale price is still higher than the app's base price). If your selections would result in the price of the app being raised in a certain market, we won't show that (higher) price to customers in that market; they will continue to see the app at its previous (lower) price. We'll also show customers the lowest price available if you schedule separate overlapping sales with different prices.
+> Selecting a price that is higher than your app's base price might be appropriate for your sale if you've already set custom prices in certain markets that are higher than your app's base price, and you want to temporarily lower the price in those markets (but the sale price is still higher than the app's base price). If your selections would result in the price of the app being raised in a certain market, we won't show that (higher) price to customers in that market; they will continue to see the app at its previous (lower) price. We'll also show customers the lowest price available if you schedule separate overlapping sales with different prices.
 
 ## Changing or canceling a scheduled sale
-
 
 To revise or cancel a sale that you've previously scheduled for an app or add-on, you'll need to create a new submission and submit it to the Store.
 
 **To edit a scheduled sale**
 
-1.  On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.
-2.  Find the sale that you want to update, then click its price to edit the sale.
-3.  Make your changes and then click **Done**.
-4.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
-
-After your submission goes through the certification process, the changes will take effect (even if the sale had already started).
-
-> **Tip**  You can reuse a completed sale in a new submission by editing its start and end dates. This is especially useful if you’ve configured a sale with complicated custom market pricing.
- 
-**To cancel a scheduled sale**
-
-1.  On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.
-2.  Find the sale that you want to cancel and click **Delete** to remove it.
+1.  On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale Pricing** section.
+2.  Find the sale that you want to update, then make your changes.
 3.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
 
-As long as the sale hasn't started by the time the submission completes the certification process, the deleted sale won't run at all. If you delete a sale that has already ended, the sale will simply be removed from your **Pricing and availability** page.
+After your submission goes through the certification process, the changes will take effect.
 
-> **Important**   Since customers can see the scheduled end date when viewing your app's Store listing, we don't recommend deleting a sale after it's started. If you delete a sale that is already in progress, the sale will end when the submission completes the certification process, which can be frustrating to your potential customers.
+> [!IMPORTANT]
+> If a sale has already started, you won't be able to edit the start date. While you can edit the end date, we recommend that you don't edit a sale to end sooner than its original end date. It can be frustrating to your potential customers if you end a sale before the date that was originally published (since customers see the scheduled end date when viewing your app's Store listing).
+
+ **To cancel a sale that hasn't started yet**
+
+1.  On the **Pricing and availability** page of an in-progress app or add-on submission, go to the **Sale pricing** section.
+2.  Find the sale that you want to cancel and click **Remove**.
+3.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview. As long as the sale hasn't started by the time the new submission completes the certification process, the removed sale won't run at all.
+
+
+
 
