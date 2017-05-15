@@ -101,7 +101,7 @@ private static void UnRegisterAllTasks()
 
 ## Register Persistent Events
 
-When using Background Task Registration Groups with in-process background tasks, the background activations are directed towards the group's event instead of the one on the Application or CoreApplication object. This enables multiple components within your app to handle the activation rather than place all activation code paths in the Application object. The following shows how to register for the group's background activated event. First check [BackgroundTaskRegistration.GetTaskGroup] to determine if the group has already been registered. If not then create a new group with your id and friendly name. Then register an event handler to the BackgroundActivated event on the group.
+When using Background Task Registration Groups with in-process background tasks, the background activations are directed towards the group's event instead of the one on the Application or CoreApplication object. This enables multiple components within your app to handle the activation rather than place all activation code paths in the Application object. The following shows how to register for the group's background activated event. First check [BackgroundTaskRegistration.GetTaskGroup](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) to determine if the group has already been registered. If not then create a new group with your id and friendly name. Then register an event handler to the BackgroundActivated event on the group.
 
 ```csharp
 void RegisterPersistentEvent()
