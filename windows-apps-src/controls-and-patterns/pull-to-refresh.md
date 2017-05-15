@@ -11,6 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
 ---
 # Pull to refresh
 

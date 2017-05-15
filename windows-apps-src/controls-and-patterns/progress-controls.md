@@ -11,6 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: jeffarn
+dev-contact: mitra
+doc-status: Published
 ---
 # Progress controls
 

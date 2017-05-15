@@ -3,6 +3,10 @@ author: mijacobs
 description:
 title: Ratings Control
 template: detail.hbs
+pm-contact: abarlow
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
 ---
 
 # Ratings Control

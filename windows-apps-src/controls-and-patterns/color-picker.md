@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-pm-contact: humakh
+pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
-doc-status: Build2017
+doc-status: Published
 ---
 # Color picker
 

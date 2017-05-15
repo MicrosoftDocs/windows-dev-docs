@@ -11,6 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
 ---
 # ListView and GridView
 

@@ -12,9 +12,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: abarlow
-design-contact: lorikr
-dev-contact: lorikr
-doc-status: Published/RS3
+design-contact: conrwi
+dev-contact: stpete
+doc-status: Published
 ---
 
 

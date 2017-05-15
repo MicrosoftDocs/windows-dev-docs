@@ -11,6 +11,8 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+design-contact: Judysa
+doc-status: Published
 ---
 
 # Icons for UWP apps

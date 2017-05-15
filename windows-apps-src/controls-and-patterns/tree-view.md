@@ -4,6 +4,10 @@ Description: Use the tree view control to create an expandable tree.
 title: Tree view
 label: Tree view
 template: detail.hbs
+pm-contact: predavid
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
 ---
 # Tree view
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">

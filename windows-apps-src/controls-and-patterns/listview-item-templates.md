@@ -11,6 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
 ---
 # Item containers and templates
 

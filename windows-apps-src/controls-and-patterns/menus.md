@@ -11,6 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: llongley
+doc-status: Published
 ---
 # Menus and context menus
 

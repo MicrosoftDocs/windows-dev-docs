@@ -11,6 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
 ---
 # Lists
 

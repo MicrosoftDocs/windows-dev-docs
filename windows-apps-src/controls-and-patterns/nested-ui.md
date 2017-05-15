@@ -11,6 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
+pm-contact: chigy
+design-contact: kimsea
+doc-status: Published
 ---
 # Nested UI in list items
 

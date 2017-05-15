@@ -11,6 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
 ---
 # Dialogs and flyouts
 

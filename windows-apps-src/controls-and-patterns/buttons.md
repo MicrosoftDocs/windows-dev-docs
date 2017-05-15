@@ -11,6 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
 ---
 # Buttons
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">

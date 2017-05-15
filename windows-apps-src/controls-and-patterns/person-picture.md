@@ -10,10 +10,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-pm-contact:  
-design-contact:  
-dev-contact:  
-doc-status: Published/RS3
+pm-contact: kevjey
+design-contact: kimsea
+dev-contact: kefodero
+doc-status: Published
 ---
 
 # Person picture control

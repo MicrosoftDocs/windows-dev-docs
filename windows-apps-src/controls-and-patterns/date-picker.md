@@ -12,6 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
 ---
 # Date picker
 

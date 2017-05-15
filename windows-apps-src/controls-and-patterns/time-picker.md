@@ -11,6 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
 ---
 # Time picker
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 

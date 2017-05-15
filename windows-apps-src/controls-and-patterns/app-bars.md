@@ -12,6 +12,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
+pm-contact: yulikl
+design-contact: ksulliv
+dev-contact: niallm
+doc-status: Published
 ---
 # Command bar
 

@@ -9,6 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: stmoy
+design-contact: conrwi
+doc-status: Published
 ---
 
 # Connected animation for UWP apps
