@@ -23,7 +23,8 @@ ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 MonoGame is a lightweight game development framework. This tutorial will teach you the basics of game development in MonoGame, including how to load content, draw sprites, animate them, and handle user input. Some more advanced concepts like collision detection and scaling up for high-DPI screens are also discussed. This tutorial takes 30-60 minutes.
 
 ## Prerequisites
-+	Windows 10 and Microsoft Visual Studio 2015. [Click here to learn how to get set up with Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++	Windows 10 and Microsoft Visual Studio 2017.  [Click here to learn how to get set up with Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up).
++ The .NET desktop development framework. If you don't already have this installed, you can get it by re-running the Visual Studio installer and modifying your installation of Visual Studio 2017.
 +	Basic knowledge of C# or a similar object-oriented programming language. [Click here to learn how to get started with C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 +	Familiarity with basic computer science concepts like classes, methods, and variables is a plus.
 
@@ -33,7 +34,7 @@ There’s no shortage of options when it comes to game development environments.
 ## Get the code
 If you don’t feel like working through the tutorial step-by-step and just want to see MonoGame in action, [click here to get the finished app](https://github.com/Microsoft/Windows-appsample-get-started-mg2d).
 
-Open the project in Visual Studio 2015, and press **F5** to run the sample. The first time you do this may take a while, as Visual Studio needs to fetch any NuGet packages that are missing from your installation.
+Open the project in Visual Studio 2017, and press **F5** to run the sample. The first time you do this may take a while, as Visual Studio needs to fetch any NuGet packages that are missing from your installation.
 
 If you’ve done this, skip the next section about setting up MonoGame to see a step-by-step walkthrough of the code.
 
@@ -42,7 +43,7 @@ If you’ve done this, skip the next section about setting up MonoGame to see a 
 ## Set up MonoGame project
 1. Install **MonoGame 3.6** for Visual Studio from [MonoGame.net](http://www.monogame.net/)
 
-2. Start Visual Studio 2015.
+2. Start Visual Studio 2017.
 
 3. Go to **File -> New -> Project**
 
