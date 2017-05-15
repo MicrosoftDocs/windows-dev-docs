@@ -110,7 +110,7 @@ Along with getting the screen’s height and width, we also set the app’s wind
 To load the texture into the grass variable, add the following to the **LoadContent** method:
 
 ```CSharp
-grass = Content.Load<Texture2D>("grass.png");
+grass = Content.Load<Texture2D>("grass");
 ```
 
 ### 6. Draw the sprite
@@ -254,7 +254,7 @@ The **Draw** method is called in the **Draw** method of Game1.cs, and is used to
 Now we have the SpriteClass built, we’ll use it to create two new game objects, The first is an avatar that the player can control with the arrow keys and the space bar. The second is an object that the player must avoid
 
 ### 1. Get the textures
-For the player’s avatar we’re going to use Microsoft’s very own ninja cat, riding on his trusty t-rex. [Click here to download the image](https://github.com/muhsinking/VeggieJump/blob/master/MonoGame2D/Content/ninja-cat-dino.png).
+For the player’s avatar we’re going to use Microsoft’s very own ninja cat, riding on his trusty t-rex. [Click here to download the image](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/ninja-cat-dino.png).
 
 Now for the obstacle that the player needs to avoid. What do ninja-cats and carnivorous dinosaurs both hate more than anything? Eating their veggies! [Click here to download the image](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png).
 
