@@ -679,7 +679,6 @@
 ## [Maps and location](maps-and-location/index.md)
 ### [Request authentication key](maps-and-location/authentication-key.md)
 ### [Display maps](maps-and-location/display-maps.md)
-### [Map control](maps-and-location/controls-map.md)
 ### [Display POI](maps-and-location/display-poi.md)
 ### [Display routes and directions](maps-and-location/routes-and-directions.md)
 ### [Overlay tiled images](maps-and-location/overlay-tiled-images.md)

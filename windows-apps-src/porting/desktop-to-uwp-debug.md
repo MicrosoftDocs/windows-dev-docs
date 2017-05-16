@@ -125,6 +125,16 @@ This option has the most amount of setup time, but you won't have to attach the 
   </Project>
 	```
 
+  If your app consumes dll files that are generated from other projects in your solution, and you want to step into the code that is contained in those dlls, include a **LayoutFile** element for each of those dll files.
+
+  ```XML
+  ...
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.Models.dll">
+      <PackagePath>$(PackageLayout)\MyDesktopApp.Models.dll</PackagePath>
+      </LayoutFile>
+  ...
+  ```
+
 10. Set the packaging project the start-up project.  
 
 	![alt](images/desktop-to-uwp/debug-5.png)
@@ -190,7 +200,7 @@ To test your app in a realistic setting as you prepare for distribution, it's be
 
 If you converted you app by using Visual Studio, you can run a script to sign your app and then install it. See [Sideload your package](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
 
-If you convert your app by using the Desktop App Converter, you can use the ``sign`` parameter to generate a certificate. Sign your app with that certificate, and then install the app. See [Run the converted app](desktop-to-uwp-run-desktop-app-converter.md#run-the-converted-app).   
+If you convert your app by using the Desktop App Converter, you can use the ``sign`` parameter to automatically sign your app by using a generated certificate. You'll have to install that certificate, and then install the app. See [Run the converted app](desktop-to-uwp-run-desktop-app-converter.md#run-the-converted-app).   
 
 You can also sign your app manually. Here's how
 
@@ -203,6 +213,11 @@ You can also sign your app manually. Here's how
   > [!IMPORTANT]
   > Make sure that the publisher name on your certificate matches the publisher name of your app.
 
+### Test your app for Windows 10 S
+
+Before you publish your app, make sure that it will operate correctly on devices that run Windows 10 S.
+
+See [Test your Windows app for Windows 10 S](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s).
 
 ### Run another process inside the full trust container
 

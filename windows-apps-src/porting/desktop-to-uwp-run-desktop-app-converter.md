@@ -61,7 +61,7 @@ Register your public COM servers.
     ![Check](images/desktop-to-uwp/check.png)
 </div>
 
-Generate a certificate to that you can use to run your app.
+Automatically sign your package so that you can test your app.
 
 <div style="float: left; ">
     ![Check](images/desktop-to-uwp/check.png)
@@ -299,13 +299,16 @@ There's two ways to run your app.
 
 One way is to open a PowerShell command prompt, and then type this command: ```Add-AppxPackage –Register AppxManifest.xml```. It's probably the easiest way to run your app because you don't have to sign it.
 
-Another way is to sign your app with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you. That file is named **auto-generated.cer**, and you can find it in the root folder of your converted app.
+Another way is to sign your app with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you, and then sign your app with it. That file is named **auto-generated.cer**, and you can find it in the root folder of your converted app.
 
-Follow these steps to sign your app and then run it.
+Follow these steps to install the generated certificate, and then run your app.
 
 1. Double-click the **auto-generated.cer** file to install the certificate.
 
    ![generated certificate file](images/desktop-to-uwp/generated-cert-file.png)
+
+   > [!NOTE]
+   > If you're prompted for a password, use the default password "123456".
 
 2. In the **Certificate** dialog box, choose the **Install Certificate** button.
 3. In the **Certificate Import Wizard**, install the certificate onto the **Local Machine**, and place the certificate into the **Trusted People** certificate store.
@@ -325,18 +328,10 @@ Follow these steps to sign your app and then run it.
 
 You'll likely make changes to your converted app to address bugs, add visual assets, or enhance your app with modern experiences such as live tiles.
 
-After you make your changes, you don't need to run the converter again. You can repackage your app by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Run the MakeAppx tool](desktop-to-uwp-manual-conversion.md#make-appx).
-
-You'll also have to sign your app to run it locally or distribute it.
-
-To sign your app so that you can test it locally, use the certificate that the Desktop App Converter creates for you.
-
-See [Run your converted app](#run-app).
+After you make your changes, you don't need to run the converter again. You can repackage your app by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Generate a Windows app package](desktop-to-uwp-manual-conversion.md#make-appx).
 
 > [!NOTE]
-> If you're prompted for a password, use the default password "123456".
-
-To sign your app for distribution, see [Distribute your Windows Desktop Bridge app](desktop-to-uwp-distribute.md).
+> If you make changes to registry settings that your installer makes, you will have to run the Desktop App Converter again to pick up those changes.
 
 **Videos**
 
