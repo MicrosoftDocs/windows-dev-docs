@@ -704,7 +704,7 @@
 ##### [Use receipts to verify product purchases](monetize/use-receipts-to-verify-product-purchases.md)
 ### [Display ads in your app](monetize/display-ads-in-your-app.md)
 #### [Get started](monetize/get-started-with-microsoft-advertising-libraries.md)
-##### [Install the advertising libraries](monetize/install-the-microsoft-advertising-libraries.md)
+##### [Install the Microsoft Advertising SDK](monetize/install-the-microsoft-advertising-libraries.md)
 ##### [Workflows for creating apps with ads](monetize/workflows-for-creating-apps-with-ads.md)
 ##### [Update your app to the latest libraries](monetize/update-your-app-to-the-latest-advertising-libraries.md)
 ##### [Release notes](monetize/release-notes-for-the-advertising-libraries.md)

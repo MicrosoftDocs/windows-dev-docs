@@ -100,9 +100,9 @@ To install the Microsoft Store Services SDK libraries for a specific project via
   Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add the appropriate Microsoft Store Services SDK library references to your project](#references).
 
 <span id="references" />
-## Add SDK library references to your project
+## Add the assembly reference to your project
 
-After you install the Microsoft Store Services SDK via the MSI installer or NuGet, follow these instructions to reference the SDK libraries in your UWP project.
+After you install the Microsoft Store Services SDK via the MSI installer or NuGet, follow these instructions to reference the SDK assembly in your UWP project.
 
 1. Open your project in Visual Studio.
     > [!NOTE]

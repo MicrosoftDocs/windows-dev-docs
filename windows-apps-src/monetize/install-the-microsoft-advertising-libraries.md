@@ -1,8 +1,8 @@
 ---
 author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: Learn about how to install the Microsoft advertising libraries.
-title: Install the Microsoft advertising libraries
+description: Learn about how to install the Microsoft Advertising SDK.
+title: Install the Microsoft Advertising SDK
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,10 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, install, SDK, libraries
 ---
 
-# Install the Microsoft advertising libraries
-
-
-
+# Install the Microsoft Advertising SDK
 
 For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
 
@@ -23,7 +20,32 @@ For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertis
 
 For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
 
-For Windows Phone Silverlight 8.x apps, the Microsoft advertising libraries are available in a NuGet package that you can download and install to your project. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
+<span id="references" />
+## Add the assembly reference to your project
+
+After you install the Microsoft Advertising SDK, follow these instructions to reference the appropriate library in your project to use the advertising APIs.
+
+1. Open your project in Visual Studio.
+    > [!NOTE]
+    > If your project targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**). If your project targets **Any CPU**, you will not be able to successfully add a reference to the Microsoft advertising library in the following steps. For more information, see [Reference errors caused by targeting Any CPU in your project](known-issues-for-the-advertising-libraries.md#reference_errors).
+
+2. In **Solution Explorer**, right click **References** and select **Add Reference…**
+
+3. In **Reference Manager**, select one of the following references depending on your project type:
+
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (for XAML apps) or **Microsoft Advertising SDK for JavaScript** (for apps built using JavaScript and HTML).
+
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML** (for XAML apps) or **Microsoft Advertising SDK for Windows 8.1 Native (JS)** (for apps built using JavaScript and HTML).
+
+    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML** (for XAML apps) or **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)** (for apps built using JavaScript and HTML).
+
+4.  In **Reference Manager**, click OK.
+
+For walkthroughs that show how to get started using the advertising APIs, see the following articles:
+
+* [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
+* [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
+* [Interstitial ads](interstitial-ads.md)
 
 <span id="framework" />
 ## Understanding framework packages in the Microsoft Advertising SDK for UWP apps
@@ -33,54 +55,3 @@ The Microsoft.Advertising.dll library in the Microsoft Advertising SDK for UWP a
 Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements. This helps to ensure that your customers always have the latest available version of the library installed on their devices.
 
 If we release a new version of the SDK that introduces new APIs or features in this library, you will need to install the latest version of the SDK to use those features. In this scenario, you would also need to publish your updated app to the Store.
-
-## Advertising library names
-
-Before you can use the any of the advertising controls in your app code, you must reference the appropriate library in your project. The following tables lists the names of each of the libraries as they appear in in the **Reference Manager** dialog box in Visual Studio.
-
-
-<table>
-	<thead>
-		<tr><th>Control name</th><th>Project type</th><th>Library name in Reference Manager</th><th>Version number</th></tr>
-	</thead>
-	<tbody>
-    <tr>
-			<td rowspan="3">**AdControl** and **InterstitialAd** (XAML)</td>
-			<td>UWP</td>
-			<td>Microsoft Advertising SDK for XAML</td>
-			<td>10.0</td>
-		</tr>
-		<tr>
-			<td>Windows 8.1</td>
-			<td>Ad Mediator SDK for Windows 8.1 XAML</td>
-			<td>1.0</td>
-		</tr>
-		<tr>
-			<td>Windows Phone 8.1</td>
-			<td>Ad Mediator SDK for Windows Phone 8.1 XAML</td>
-			<td>1.0</td>
-		</tr>
-    <tr>
-			<td rowspan="3">**AdControl** and **InterstitialAd** (JavaScript/HTML)</td>
-			<td>UWP</td>
-			<td>Microsoft Advertising SDK for JavaScript</td>
-			<td>10.0</td>
-		</tr>
-		<tr>
-			<td>Windows 8.1</td>
-			<td>Microsoft Advertising SDK for Windows 8.1 Native (JS)</td>
-			<td>8.5</td>
-		</tr>
-		<tr>
-			<td>Windows Phone 8.1</td>
-			<td>Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)</td>
-			<td>8.5</td>
-		</tr>
-	</tbody>
-</table>
-
- 
-
- 
-
- 

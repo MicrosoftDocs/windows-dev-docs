@@ -21,14 +21,11 @@ This section provides release notes for the current release of the Microsoft adv
 ## Installation
 
 
-The Microsoft advertising libraries are available as part of the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps). For more information about installing the SDKs and the libraries that are included in them, see [Install the Microsoft advertising libraries](install-the-microsoft-advertising-libraries.md).
-
-To get the Microsoft advertising assemblies for Windows Phone 8.x Silverlight projects, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), open your project in Visual Studio, and then go to **Project** > **Add Connected Service** > **Ad Mediator** to automatically download the assemblies. After doing this, you can remove the ad mediator references from your project if you do not want to use ad mediation. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
-
+The Microsoft advertising libraries are available as part of the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps). For more information about installing the SDKs and the libraries that are included in them, see [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
 
 ## Uninstall previous versions
 
-Before you install the Microsoft Advertising SDK (for UWP apps) or the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps), it is highly recommended that you uninstall all prior instances of the Microsoft Universal Ad Client SDK or the Microsoft Advertising SDK.
+Before you install the latest Microsoft Advertising SDK (for UWP apps) or the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps), it is highly recommended that you uninstall all prior instances of the Microsoft Universal Ad Client SDK or the Microsoft Advertising SDK.
 
 ## Target architecture-specific build outputs
 
