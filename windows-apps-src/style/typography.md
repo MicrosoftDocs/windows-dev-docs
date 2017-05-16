@@ -68,7 +68,7 @@ In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsof
   <div class="side-by-side-content-left">
 <h2>Kerning and tracking</h2>
 
-Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain it’s humanist integrity, the kerning and tracking settings must have specific values.
+Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain its humanist integrity, the kerning and tracking settings must have specific values.
 
 Kerning should be set to “metrics” and tracking should be set to “0”.
   </div>
