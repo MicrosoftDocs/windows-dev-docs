@@ -61,7 +61,7 @@ Reveal is best used when enabled on the main content of your app (hero content) 
 
 - [**ListView**](../controls-and-patterns/lists.md)
 - [**TreeView**](../controls-and-patterns/tree-view.md)
-- [**NavigationVew**](../controls-and-patterns/navigationview.md)
+- [**NavigationView**](../controls-and-patterns/navigationview.md)
 - [**AutosuggestBox**](../controls-and-patterns/auto-suggest-box.md)
 
 ## Enabling Reveal on other common controls
