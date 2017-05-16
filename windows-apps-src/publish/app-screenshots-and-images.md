@@ -143,6 +143,7 @@ Follow these recommendations to make your trailers effective:
 - Trailers should be of good quality and minimal length (2 minutes or less recommended). 
 - Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60. 
 - Use a different thumbnail for each trailer so that customers know they are unique.
+- Because some layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
 
 You must also follow the requirements stated below.
 
