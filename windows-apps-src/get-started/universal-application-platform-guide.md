@@ -34,8 +34,6 @@ In order to understand how Windows 10 allows you to target different classes of 
 
 A device family defines a set of APIs and is versioned. A device family is the foundation of an OS. PCs run the desktop OS, which is based on the desktop device family. Phones and tablets run the mobile OS, which is based on the mobile device family.
 
-In order to understand how Windows 10 allows you to target different classes of devices, it's helpful to understand a concept called device families. A device family identifies the APIs, system characteristics, and behaviors that you can expect across a class of devices. It also determines the set of devices on which your app can be installed from the Store. A device family (with the exception of the Universal device family) is implemented as an extension SDK, which we will discuss shortly. Here is the device family hierarchy.
-
 Each child device family adds its own APIs to the ones it inherits. The resulting union of APIs in a child device family is guaranteed to be present in the OS based on that device family, and on every device running that OS.
 
 One benefit of the universal device family is that your app can run on any, or even all, of a variety of devices from phones, tablets, desktop computers, Surface Hubs, Xbox consoles, and HoloLens. Your app can also use adaptive code to dynamically detect and use features of a device that are outside of the universal device family.
