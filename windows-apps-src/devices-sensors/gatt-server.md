@@ -144,6 +144,8 @@ serviceProvider.StartAdvertising(advParameters);
 
 > When a service is both Discoverable and Connectable, the system will add the Service Uuid to the advertisement packet.  There are only 31 bytes in the Advertisement packet and a 128-bit UUID takes up 16 of them!
 
+> Note that when a service is published in the foreground, an application must call StopAdvertising when the application suspends.
+
 ## Respond to Read and Write requests
 As we saw above while declaring the required characteristics, GattLocalCharacteristics have 3 types of events - ReadRequested, WriteRequested and SubscribedClientsChanged.
 
