@@ -34,7 +34,7 @@ This example shows how to create an image by using the [Image](https://msdn.micr
 
 
 ```XAML
-<Image Width="200" Source="licorice.jpg" />
+<Image Width="200" Source="sunset.jpg" />
 ```
 
 Here's the rendered Image object.
@@ -52,7 +52,7 @@ The next example shows how to use an ImageBrush to paint an Ellipse.
 ```XAML
 <Ellipse Height="200" Width="300">
    <Ellipse.Fill>
-     <ImageBrush ImageSource="licorice.jpg" />
+     <ImageBrush ImageSource="sunset.jpg" />
    </Ellipse.Fill>
 </Ellipse>
 ```
@@ -79,7 +79,7 @@ You can use the [Clip](https://msdn.microsoft.com/library/windows/apps/xaml/wind
 The next example shows how to use a [RectangleGeometry](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) as the clip region for an image. In this example, we define an **Image** object with a height of 200. A **RectangleGeometry** defines a rectangle for the area of the image that will be displayed. The [Rect](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) property is set to "25,25,100,150", which defines a rectangle starting at position "25,25" with a width of 100 and a height of 150. Only the part of the image that is within the area of the rectangle is displayed.
 
 ```xaml
-<Image Source="licorice.jpg" Height="200">
+<Image Source="sunset.jpg" Height="200">
     <Image.Clip>
         <RectangleGeometry Rect="25,25,100,150" />
     </Image.Clip>
@@ -95,7 +95,7 @@ Here's the clipped image on a black background.
 You can apply an [Opacity](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) to an image so that the image is rendered semi-translucent. The opacity values are from 0.0 to 1.0 where 1.0 is fully opaque and 0.0 is fully transparent. This example shows how to apply an opacity of 0.5 to an Image.
 
 ```xaml
-<Image Height="200" Source="licorice.jpg" Opacity="0.5" />
+<Image Height="200" Source="sunset.jpg" Opacity="0.5" />
 ```
 
 Here's the rendered image with an opacity of 0.5 and a black background showing through the partial opacity.
