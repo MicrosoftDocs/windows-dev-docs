@@ -1011,6 +1011,7 @@
 #### [x:Class attribute](xaml-platform/x-class-attribute.md)
 #### [x:FieldModifier attribute](xaml-platform/x-fieldmodifier-attribute.md)
 #### [x:Key attribute](xaml-platform/x-key-attribute.md)
+#### [x:Load attribute](xaml-platform/x-load-attribute.md)
 #### [x:Name attribute](xaml-platform/x-name-attribute.md)
 #### [x:DeferLoadStrategy attribute](xaml-platform/x-deferloadstrategy-attribute.md)
 #### [x:Phase attribute](xaml-platform/x-phase-attribute.md)
