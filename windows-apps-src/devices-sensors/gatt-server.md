@@ -136,6 +136,8 @@ characteristic.ReadRequested += Characteristic_ReadRequested;
 
 async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, GattReadRequestedEventArgs args)
 {
+    var deferral = args.GetDeferral();
+    
     // Our familiar friend - DataWriter.
     var writer = new DataWriter();
     // populate writer w/ some data. 
@@ -143,6 +145,8 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
 
     var request = await args.GetRequestAsync();
     request.RespondWithValue(writer.DetachBuffer());
+    
+    deferral.Complete();
 }
 ``` 
 
@@ -155,6 +159,8 @@ characteristic.ReadRequested += Characteristic_ReadRequested;
 
 async void WriteCharacteristic_WriteRequested(GattLocalCharacteristic sender, GattWriteRequestedEventArgs args)
 {
+    var deferral = args.GetDeferral();
+    
     var request = await args.GetRequestAsync();
     var reader = DataReader.FromBuffer(request.Value);
     // Parse data as necessary. 
@@ -163,6 +169,8 @@ async void WriteCharacteristic_WriteRequested(GattLocalCharacteristic sender, Ga
     {
         request.Respond();
     }
+    
+    deferral.Complete();
 }
 ```
 There are 2 types of Writes - with and without response. Use GattWriteOption (a property on the GattWriteRequest object) to figure out which type of write the remote device is performing. 
