@@ -7,6 +7,16 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
 <div id="main" class="v2">
   <div class="container">
       <ul class="cardsY panelContent featuredContent">
+          <li class="fullSpan">
+              <div class="warning-message" style="margin:0 0 2rem 0;">
+                  <div class="red-box" style="width:64px; height:64px; margin-right:12px; float:left; background-color:#d83b01;">
+                      <div class="warning-icon" style="margin:8px auto; width:48px; height:48px;">
+                          <img src="/media/hubs/windows/warning-msg.svg" />
+                      </div>
+                  </div>
+                  <p class="warning-msg" style="font-family: Segoe, 'Segoe UI','sans-serif';font-size: 1rem;font-weight:600;color: #222222;">A wide-spread ransomware attack targets Windows systems that do not have the latest updates. Given the severity of this threat, update your Windows systems as soon as possible. <a href="https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/" style="color:#d83b01 !important;">Learn More</a>.</p>
+              </div>
+          </li>
           <li>
               <a href="https://developer.microsoft.com/windows/downloads/virtual-machines">
                   <div class="cardSize">
