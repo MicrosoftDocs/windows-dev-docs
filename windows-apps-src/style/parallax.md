@@ -6,7 +6,7 @@ ms.assetid:
 label: Parallax View
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/10/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
