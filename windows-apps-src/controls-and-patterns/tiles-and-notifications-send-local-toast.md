@@ -1,12 +1,12 @@
 ---
-author: lex
+author: mijacobs
 Description: Learn how to send a local toast notification and handle the user clicking the toast.
 title: Send a local toast notification
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification
 template: detail.hbs
-ms.author: lex
-ms.date: 04/10/2017
+ms.author: mijacobs
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

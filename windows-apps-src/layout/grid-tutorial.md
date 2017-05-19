@@ -4,7 +4,7 @@ Description: This tutorial-style article walks the reader through the steps to c
 title: Create a simple weather app by using Grid and StackPanel
 template: detail.hbs
 ms.author: mukin
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
