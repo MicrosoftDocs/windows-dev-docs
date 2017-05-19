@@ -34,25 +34,26 @@ The primary functions of the Visual layer are:
 3. Animations: Expressive, framework-agnostic animations running independent of the UI thread 
   
 ### Content 
-Content is hosted, transformed and made available for use by the animation and effects system using visuals. Everything in the [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) class inherits from inherits from the base Visual including a  [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) to allow for children to create trees of visuals and a [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) that contain content and can be painted by CompositionBrushs.  
+Content is hosted, transformed and made available for use by the animation and effects system using visuals. At the base of the class hierarchy is the [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) class, a lightweight, thread-agile proxy in the app process for visual state in the compositor. Sub-classes of Visual include  [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) to allow for children to create trees of visuals and [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) that contains content and can be painted with either solid colors, custom drawn content or visual effects. Together, these Visual types make up the visual tree structure for 2D UI and back most visible XAML FrameworkElements.
 
 For more information, see the [Composition Visual](composition-visual-tree.md) overview.
  
 ### Effects 
-The Effects system inside Windows.UI.Composition lets you apply a chain of filter and transparency effects to a Visual or a tree of Visuals. Effects work in conjunction with the Animation system, allowing users to achieve smooth and dynamic animations of Effect properties, rendered independent of the UI thread. Effects in the Visual Layer provide the creative building blocks that can be combined and animated to construct tailored and interactive experiences.  
+The Effects system in the Visual layer lets you apply a chain of filter and transparency effects to a Visual or a tree of Visuals. This is a UI effects system, not to be confused with image and media effects. Effects work in conjunction with the Animation system, allowing users to achieve smooth and dynamic animations of Effect properties, rendered independent of the UI thread. Effects in the Visual Layer provide the creative building blocks that can be combined and animated to construct tailored and interactive experiences.  
+
 In addition to animatable effect chains, the Visual Layer also supports a Lighting model that allows Visuals to mimic material properties by responding to animatable Lights. Visuals may also cast Shadows. Lighting and Shadows can be combined to create a perception of depth and realism. 
 
 For more information, see the [Composition Effects](composition-effects.md) overview.
   
 ### Animations 
-The animation system inside Windows.UI.Composition lets you move visuals, animate effects, and drive transformations, clips, and other properties.  It is a framework agnostic system that has been designed from the ground up with performance in mind.  It runs independently from the UI thread to ensure smoothness and scalability.  While it lets you use familiar KeyFrame animations to drive property changes over time, it also lets you set up mathematical relationships between different properties, including user input, letting you directly craft seamless choreographed experiences. 
+The animation system in the Visual layer lets you move visuals, animate effects, and drive transformations, clips, and other properties.  It is a framework agnostic system that has been designed from the ground up with performance in mind.  It runs independently from the UI thread to ensure smoothness and scalability.  While it lets you use familiar KeyFrame animations to drive property changes over time, it also lets you set up mathematical relationships between different properties, including user input, letting you directly craft seamless choreographed experiences. 
 
 For more information, see the [Composition animations](composition-animation.md) overview.
 
 ### Working with your XAML UWP app
-In addition to creating a visual tree from scratch, the Composition API can interoperate with an existing XAML UI using the [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) class in [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
+You can get to a Visual created by the XAML framework, and backing a visible FrameworkElement, using the [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) class in [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908). Note that Visuals created for you by the framework come with some limits on customization. This is because the framework is managing offsets, transforms and lifetimes. You can however create your own Visuals and attach them to an existing XAML element via ElementCompositionPreview, or by adding it to an existing ContainerVisual somewhere in the visual tree structure.
 
-For more information, see the [Using XAML](using-the-visual-layer-with-xaml.md) overview.
+For more information, see the [Using Visual layer with XAML](using-the-visual-layer-with-xaml.md) overview.
 
 
 ## Additional resources 
