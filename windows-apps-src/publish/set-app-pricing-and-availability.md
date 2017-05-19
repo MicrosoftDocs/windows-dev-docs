@@ -15,6 +15,8 @@ keywords: windows 10, uwp
 
 > [!IMPORTANT]
 > This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
+> 
+> Please be aware that when your account switches over to use the latest functionality, any in-progress submissions will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the new options will become available with the next update after you publish your in-progress submission.
 
 The **Pricing and availability** page of the [app submission process](app-submissions.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
@@ -56,7 +58,7 @@ By default, the release date for your app will be the date when it appears in th
 
 ## Pricing
 
-You are required to select a base price for your app (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility] section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. 
+You are required to select a base price for your app (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](#visibility) section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. 
 
 For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.md).
 

@@ -18,6 +18,8 @@ The **Store listings** section of the [app submission process](app-submissions.m
 
 > [!IMPORTANT]
 > This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
+> 
+> Please be aware that when your account switches over to use the latest functionality, any in-progress submissions will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the new options will become available with the next update after you publish your in-progress submission.
 
 Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots).
 
