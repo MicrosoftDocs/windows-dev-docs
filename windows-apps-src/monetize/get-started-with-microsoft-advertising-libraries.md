@@ -11,10 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, get started
 ---
 
-# Get started with the advertising libraries
-
-
-
+# Get started with the Microsoft Advertising SDK
 
 This topic provides the information you need to get started using the Microsoft advertising libraries to add banner and interstitial ads to your apps. After you have read the topics in this section, move on to the [developer walkthroughs](developer-walkthroughs.md) to see examples about how to write the code that will show ads in your apps.
 
@@ -26,9 +23,9 @@ For complete sample projects that demonstrate how to add banner and interstitial
 
 | Topic                                                                                                       | Description                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md) |  Provides installation details and lists the names of the Microsoft advertising libraries as they appear in the **Reference Manager** dialog box in Visual Studio.  |
+| [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md) |  Provides installation details for the Microsoft Advertising SDK.  |
 | [Workflows for creating apps with ads](workflows-for-creating-apps-with-ads.md)     |  Provides high-level steps that describe the process of developing and publishing an app with ads.   |
-| [Update your app to the latest Microsoft advertising libraries](update-your-app-to-the-latest-advertising-libraries.md)  | If you have an existing app that displays banner ads using **AdControl** or **AdMediatorControl**, follow the instructions in this article to determine whether you need to update your app to use the latest advertising SDK in order for your app to continue to receive banner ads.  |
-| [Release notes](release-notes-for-the-advertising-libraries.md)         |  Provides release notes for the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).   |
-| [Known issues](known-issues-for-the-advertising-libraries.md)      |  Lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).   |
+| [Update your app to the latest Microsoft advertising libraries](update-your-app-to-the-latest-advertising-libraries.md)  | If you have an existing app that displays banner ads using **AdControl** or **AdMediatorControl**, follow the instructions in this article to determine whether you need to update your app to use the latest SDK in order for your app to continue to receive banner ads.  |
+| [Release notes](release-notes-for-the-advertising-libraries.md)         |  Provides release notes for the current release of the Microsoft Advertising SDK.   |
+| [Known issues](known-issues-for-the-advertising-libraries.md)      |  Lists the known issues with the current release of the Microsoft Advertising SDK.   |
 | [Additional help](additional-help.md)                                    |   Provides links to more resources about developing apps with ads.  |

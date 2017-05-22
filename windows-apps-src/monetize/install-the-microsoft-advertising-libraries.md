@@ -8,22 +8,75 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, install, SDK, libraries
+keywords: windows 10, uwp, ads, advertising, install, SDK, advertising library
 ---
 
 # Install the Microsoft Advertising SDK
 
-For Universal Windows Platform (UWP) apps for Windows 10, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
+To display ads in your Windows apps, install one of the following SDKs:
+
+* For UWP apps for Windows 10: Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
+* For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x: Install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
 
 > [!NOTE]
-> If you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library if you want to add ads to a JavaScript/HTML UWP app. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
-For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x, the Microsoft advertising libraries are included in the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
+<span id="install-msi" />
+## Install via MSI
 
-<span id="references" />
-## Add the assembly reference to your project
+To install the Microsoft Advertising SDK via the MSI installer:
 
-After you install the Microsoft Advertising SDK, follow these instructions to reference the appropriate library in your project to use the advertising APIs.
+1.  Close all instances of Visual Studio. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+
+2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
+  ```
+  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+  ```
+
+3.  Download and install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps for Windows 10) or [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x). It may take a few minutes to install. Be sure and wait until the process has finished.
+
+4.  Restart Visual Studio.
+
+5.  If you have an existing project that references advertising libraries from any earlier version of the Microsoft Advertising SDK, Universal Ad Client SDK, or Microsoft Store Engagement and Monetization SDK, we recommend that you open your project in Visual Studio and clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).
+
+  Otherwise, if you are using the Microsoft Advertising SDK for the first time in your project, you are now ready to [add a reference to the advertising library](#reference).
+
+<span id="install-nuget" />
+## Install via NuGet (UWP only)
+
+To install the advertising library in a specific UWP project via NuGet:
+
+1.  Close all instances of Visual Studio 2015 (or a later release). If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+
+2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
+  ```
+  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+  ```
+
+3.  Start Visual Studio and open the project in which you want to use the advertising library.
+    > [!NOTE]
+    > If your project already includes library references from an earlier MSI installation of the SDK, remove these references from your project. These references will have warning icons next to them because the libraries they reference were removed in the previous steps.
+
+4. In Visual Studio, click **Project** and **Manage NuGet Packages**.
+
+5. In the search box, type **Microsoft.Advertising.XAML** (for a XAML project) or **Microsoft.Advertising.JS** (for a JavaScript/HTML project) and install the corresponding package.
+    > [!NOTE]
+    > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
+
+6. Close your project and then reopen it.
+
+7.  If your project already references libraries from an earlier version of the Microsoft Advertising SDK that was installed via NuGet and you have updated your project to a newer release of the SDK, we recommend that you clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).
+
+  Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add a reference to the advertising library](#reference).
+
+<span id="reference" />
+## Add a reference to the advertising library
+
+After you install the Microsoft Advertising SDK, follow these instructions to reference the advertising library in your project so you can use the advertising APIs.
 
 1. Open your project in Visual Studio.
     > [!NOTE]
@@ -48,9 +101,9 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 * [Interstitial ads](interstitial-ads.md)
 
 <span id="framework" />
-## Understanding framework packages in the Microsoft Advertising SDK for UWP apps
+## Understanding framework packages in the Microsoft Advertising SDK (UWP only)
 
-The Microsoft.Advertising.dll library in the Microsoft Advertising SDK for UWP apps is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) and [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespaces.
+The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) and [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespaces.
 
 Because this library is a framework package, this means that after a user installs a version of your app that uses this library, this library is automatically updated on their device through Windows Update whenever we publish a new version of the library with fixes and performance improvements. This helps to ensure that your customers always have the latest available version of the library installed on their devices.
 
