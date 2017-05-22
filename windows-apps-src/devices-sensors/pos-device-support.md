@@ -84,6 +84,3 @@ While the classes, enumerations, and interfaces exposed in the API support recei
 | Manufacturer |	Model(s) |
 |--------------|-----------|
 | Epson |	Mobilink P20 (TM-P20), Mobilink P60 (TM-P60), Mobilink P80 (TM-P80) |
-
-## See also
-+   [Windows.Devices.PointOfService namespace](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice)
