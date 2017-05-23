@@ -204,18 +204,7 @@ Find-in-page has a match counter:
 
 For more info about adding commands to your command bar, see [Command bar](app-bars.md).
 
-<div class="microsoft-internal-note">
-## Globalization and localization checklist
-
-<table>
-<tr>
-<th>Vertical spacing</th><td>Use non-Latin characters for vertical spacing to ensure non-Latin scripts will display properly, including numbers.</td>
-</tr>
-<tr>
-<th>Bi-directional considerations</th><td>The magnifying glass icon should not be displayed in mirrored form in bidi.</td>
-</tr>
-</table>
-</div>
+ 
 
 
 ## Related articles

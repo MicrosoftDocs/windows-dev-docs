@@ -96,9 +96,11 @@ We also recommend adding a hyperlink to the Colors page of the Windows Settings 
 
 !["Choose a mode" section](images/appsettings_mode.png)
 
-<div class=”microsoft-internal-note”>
+<!--
+<div class="microsoft-internal-note">
 Detailed redlines showing preferred text strings for the "Choose a mode" section are available on [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
 </div>
+-->
 
 ## "About" section and "Give feedback" button
 

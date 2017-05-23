@@ -72,9 +72,12 @@ The content area is where most of the information for the selected nav category 
 We recommend 12px margins on your content’s sides when NavigationView is in Minimal mode and 24px margins otherwise.
 
 ## Visual style
+
+<!--
 <div class="microsoft-internal-note">
 Redlines for this control are available on [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/3050/2/dv/?t=Windows%7CControls%7CNavigationView&f=RS2).<br/><br/>
 </div>
+-->
 
 Navigation items have support for selected, disabled, pointer over, pressed, and focused visual states.
 

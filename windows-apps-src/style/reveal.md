@@ -47,9 +47,11 @@ The Reveal recipe breakdown is:
 - The backplate (that turns on and enables Hover Reveal)
 - The background (background of control)
 
+<!--
 <div class=”microsoft-internal-note”>
 To create your own Reveal lighting effect for static comps or prototype purposes, see the full [uni design guidance](http://uni/DesignDepot.FrontEnd/#/ProductNav/3020/1/dv/?t=Resources%7CToolkit%7CReveal&f=Neon) for this effect in illustrator.
 </div>
+-->
 
 ## How to use it
 
