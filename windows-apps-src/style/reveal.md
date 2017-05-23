@@ -19,7 +19,7 @@ doc-status: Published
 > [!IMPORTANT]
 > This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-Reveal is a new interaction visual that helps bring depth and focus to important content within your app.
+Reveal is a lighting effect that helps bring depth and focus to your app's interactive elements.
 
 > **Important APIs**: [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -77,13 +77,16 @@ These controls do not have Reveal by default as they are smaller controls that a
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
 | SemanticZoom | SemanticZoomRevealStyle |
-| ComboBox | ComboxBoxRevealStyle |
+| ComboBoxItem | ComboxBoxItemRevealStyle |
 
 To apply these styles, simply update the Style property like so:
 
 ```XAML
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
 ```
+
+> [!NOTE]
+> The 16190 version of the SDK does not make these styles automatically available. To get them, you need to manually copy them from generic.xaml into your app. Generic.xaml is typically located at C:\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.16190.0\Generic. This issue will be fixed in a later build. 
 
 ## Enabling Reveal on custom controls
 
