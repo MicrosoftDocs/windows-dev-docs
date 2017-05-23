@@ -74,7 +74,7 @@ For apps without a single continuous canvas, we recommend using background acryl
 
 ### Prevalent acrylic
 
-Apps that want to avoid creating distinct visual regions, instead focusing on a fluid, continuous experience, can add background acrylic to the full area of the app.
+Apps that want to focus on a fluid, continuous experience and avoid creating distinct visual regions can add background acrylic to the full area of the app.
 
 ![App pattern using a horizontal acrylic pane](images/acrylic_app-pattern_full.png)
 
