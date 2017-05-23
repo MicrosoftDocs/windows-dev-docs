@@ -95,6 +95,7 @@
 ### [Slider](controls-and-patterns/slider.md)
 ### [Split view](controls-and-patterns/split-view.md)
 ### [Tabs and pivot](controls-and-patterns/tabs-pivot.md)
+### [Taskbar](controls-and-patterns/taskbar.md)
 ### [Text](controls-and-patterns/text-controls.md)
 #### [Labels](controls-and-patterns/labels.md)
 #### [Password box](controls-and-patterns/password-box.md)
