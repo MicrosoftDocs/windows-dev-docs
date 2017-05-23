@@ -64,7 +64,7 @@ To order promotional codes for an app or add-on that you published to the Window
 
 ## Download and distribute promotional codes
 
-To download a fulfilled promotional code order and distrivute the codes to customers:
+To download a fulfilled promotional code order and distribute the codes to customers:
 
 1.  On Windows Dev Center dashboard, go to the **Promotional codes** page for your app (expand **Monetization** and click **Promotional codes**).
 2.  Click the **Download** link for your order and save the generated file to your computer. This file contains information about your promotional codes order in tab-separated value (TSV) format.
