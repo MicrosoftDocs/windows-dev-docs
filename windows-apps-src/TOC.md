@@ -1063,6 +1063,7 @@
 ### [Create app Store listings](publish/create-app-store-listings.md)
 #### [Write a great app description](publish/write-a-great-app-description.md)
 #### [App screenshots, images, and trailers](publish/app-screenshots-and-images.md)
+#### [Import and export Store listings](publish/import-and-export-store-listings.md)
 #### [Create platform-specific Store listings](publish/create-platform-specific-store-listings.md)
 ### [Notes for certification](publish/notes-for-certification.md)
 ### [The app certification process](publish/the-app-certification-process.md)
