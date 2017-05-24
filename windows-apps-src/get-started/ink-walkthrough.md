@@ -11,7 +11,7 @@ ms.prod: windows
 ms.technology: uwp
 ---
 
-# Input: Support ink in your UWP app
+# Support ink in your UWP app
 
 ![Surface Pen](images/ink/ink-hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacepen)).
@@ -130,7 +130,7 @@ To turn that frown upside down , you need to add a second line of code. This tim
 In this step, we introduce the [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) object, which provides finer-grained management of the input, processing, and rendering of ink input (standard and modified) on your [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas).
 
 > [!NOTE]
-> Standard ink input (pen tip or eraser tip/button) is not modified with a secondary affordance, such as a pen barrel button, right mouse button, or similar mechanism. 
+> Standard ink input (pen tip or eraser tip/button) is not modified with a secondary hardware affordance, such as a pen barrel button, right mouse button, or similar mechanism. 
 
 To enable mouse and touch inking, set the [**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter#Windows_UI_Input_Inking_InkPresenter_InputDeviceTypes) property of the [**InkPresenter**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.inkpresenter) to the combination of [**CoreInputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.core.coreinputdevicetypes) values that you want.
 
@@ -422,3 +422,15 @@ For more details about using the clipboard with ink, see [Store and retrieve Win
 ## Summary
 
 Congratulations, you've completed the **Input: Support ink in your UWP app** tutorial ! We showed you the basic code required for supporting ink in your UWP apps, and how to provide some of the richer user experiences supported by the Windows Ink platform.
+
+## Related articles
+
+* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+
+**Samples**
+* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
+* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
+* [Family notes sample](https://aka.ms/cpubsample-familynotessample)

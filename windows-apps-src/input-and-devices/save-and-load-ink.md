@@ -435,9 +435,10 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 **Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
 * [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
 * [Family notes sample](https://aka.ms/cpubsample-familynotessample)
 
