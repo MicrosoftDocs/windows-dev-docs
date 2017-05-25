@@ -1,10 +1,10 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package your converted Desktop Bridge app.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge Packaging .NET apps using Visual Studio
+title: Package a .NET app using Visual Studio (Desktop Bridge)
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ---
 
-# Package a .NET app by using Visual Studio (Desktop to UWP Bridge)
+# Package a .NET app using Visual Studio (Desktop Bridge)
 
 The Windows 10 Anniversary Update allows developers to use the Desktop Bridge to package existing Win32 apps using the new package model (.appx), which enables Store publishing or easy sideloading. This guide explains how to configure your Visual Studio Solution so you can edit, debug, and package your app.
 
@@ -28,7 +28,7 @@ Visual Studio allows you to generate the debug and release packages that can be 
 
 The [Desktop Bridge](desktop-to-uwp-root.md) allows different configurations to integrate Win32 binaries within the Windows app package (appx). We can think of the progression across the Desktop Bridge as a journey with four key steps.
 
-- **Step 1 - Convert**: Package existing Win32 binaries with zero or minimal code changes.
+- **Step 1 - Package**: Package existing Win32 binaries with zero or minimal code changes.
 - **Step 2 - Enhance**: Include some basic UWP features (such as a live tile) in the existing app by referencing Windows.winmd from the existing Win32 code.
 - **Step 3 - Extend**: Include advanced UWP capabilities (like background tasks) with the existing app. If your UWP and Win32 components are built using managed languages (like C# or VB.Net) the resulting package will have mixed binaries that need to be processed carefully to guarantee the correct .NET Native processing.
 - **Step 4 - Migrate**: You have migrated your UI to modern XAML and C#/VB.NET, but still have legacy Win32 code. The entry point is now a UWP .NET executable, but you still have binaries in the package that use some Win32 APIs.
@@ -37,7 +37,7 @@ The next table summarizes some of the differences for your app at each of the fo
 
 | Step | Binaries | EntryPoint | .NET Native | F5 Debug |
 |---|---|---|---|---|
-| 1 (Convert) | Win32 | Win32 | N/A | VS Extension |
+| 1 (Package) | Win32 | Win32 | N/A | VS Extension |
 | 2 (Enhance) | Refs WinMD | Win32 | N/A | VS Extension |
 | 3 (Extend) | Win32 + CoreCLR (*) | Win32 | By User (**) | VS Extension |
 | 4 (Migrate)	| CoreCLR (*) + Win32 | UWP | By User (**) | VS |
@@ -51,11 +51,11 @@ The next table summarizes some of the differences for your app at each of the fo
 
 Visual Studio includes the tools you need to configure your application package, such as the manifest editor and the Package Creation Wizard. To use these tools, you need a UWP project that will act as the Windows app package container for your app. While you can use any UWP project (including C#, VB.NET, C++, or JavaScript), there are some known issues with C#, VB.NET, and C++ projects (see the [Known Issues](#known-issues-anchor) section later in this document), so we will use JavaScript for this example.
 
-If you want to debug your app in the context of the Windows app package application model, you will need to add another project that will enable the F5 Windows app package debugging. For more information see the section [Debugging your Desktop Bridge app](#debugging-anchor).
+If you want to debug your app in the context of the Windows app package application model, you will need to add another project that will enable the F5 Windows app package debugging. For more information see the section [Run, debug, and test a packaged desktop app (Desktop Bridge)](#debugging-anchor).
 
 Let's start with Step 1 in the journey.
 
-### Step 1: Convert
+### Step 1: Package
 
 This step shows how to create a Desktop Bridge app from an existing Win32 project. In this example, we'll use a basic WinForms Project that performs read and write operations on the registry.
 
@@ -176,7 +176,7 @@ If your Win32 app needs several files, you can edit your project file to specify
 
 ### Step 2: Enhance
 
-If you want to call the UWP APIs available from your Win32 code, you need add a reference to `\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd`. The full list of UWP APIs available to your app is listed in the article [Supported UWP APIs for apps converted with the Desktop Bridge](desktop-to-uwp-supported-api.md).  
+If you want to call the UWP APIs available from your Win32 code, you need add a reference to `\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd`. The full list of UWP APIs available to your app is listed in the article [UWP APIs available to a packaged desktop app (Desktop Bridge)](desktop-to-uwp-supported-api.md).  
 
 Because this file is not needed in Windows 10, you don't need to distribute it. In the reference properties, set the property "Copy Local" to false.
 

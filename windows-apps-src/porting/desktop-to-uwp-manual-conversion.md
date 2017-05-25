@@ -1,10 +1,10 @@
 ---
 author: normesta
-Description: Shows how to manually convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
+Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge Manual Conversion
+title: Package an app manually (Desktop Bridge)
 ms.author: normesta
-ms.date: 04/19/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,22 +12,22 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ---
 
-# Convert an app manually (Desktop to UWP Bridge)
+# Package an app manually (Desktop Bridge)
 
-This topic shows you how to convert your app without using tools such as Visual Studio or the Desktop App Converter (DAC).
+This topic shows you how to package your app without using tools such as Visual Studio or the Desktop App Converter (DAC).
 
 <div style="float: left; padding: 10px">
     ![manual flow](images/desktop-to-uwp/manual-flow.png)
 </div>
 
-To manually convert your app, create a package manifest file, and then run a command line tool to generate a Windows app package.
+To manually package your app, create a package manifest file, and then run a command line tool to generate a Windows app package.
 
-Consider manual conversion if you install your app by using the xcopy command, or you're familiar with the changes that your app's installer makes to the system and want more granular control over the process.
+Consider manual packaging if you install your app by using the xcopy command, or you're familiar with the changes that your app's installer makes to the system and want more granular control over the process.
 
 If you're uncertain about what changes your installer makes to the system, or if you'd rather use automated tools to generate your package manifest, consider any of [these](desktop-to-uwp-root.md#convert) options.
 
 ## First, consider how you'll distribute your app
-If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to convert your app.
+If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
 ## Create a package manifest
 
@@ -180,7 +180,7 @@ Use **MakeAppx.exe** to generate a Windows app package for your project. It's in
 
 See [Create an app package with the MakeAppx.exe tool](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
 
-## Run the converted app
+## Run the packaged app
 
 You can run your app to test it out locally without having to obtain a certificate and sign it. Just run this PowerShell cmdlet:
 
@@ -189,17 +189,17 @@ You can run your app to test it out locally without having to obtain a certifica
 To update your app's .exe or .dll files, replace the existing files in your package with the new ones, increase the version number in AppxManifest.xml, and then run the above command again.
 
 > [!NOTE]
-> A converted app always runs as an interactive user, and any drive that you install your converted app on to must be formatted to NTFS format.
+> A packaged app always runs as an interactive user, and any drive that you install your packaged app on to must be formatted to NTFS format.
 
 ## Next steps
 
 **Step through code / find and fix issues**
 
-See [Debug a Windows Desktop Bridge App](desktop-to-uwp-debug.md)
+See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
 
 **Sign your app and then distribute it**
 
-See [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md)
+See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
 
 **Find answers to specific questions**
 

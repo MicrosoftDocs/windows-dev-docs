@@ -1,10 +1,10 @@
 ---
 author: normesta
-Description: This article contains known issues with the Desktop to UWP Bridge.
+Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge Known Issues
+title: DKnown Issues (Desktop Bridge)
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,9 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ---
 
-# Known Issues (Desktop to UWP Bridge)
+# Known Issues (Desktop Bridge)
 
-This article contains known issues with the Desktop to UWP Bridge.
+This article contains known issues with the Desktop Bridge.
 
 ## Blue screen with error code 0x139 (KERNEL_SECURITY_CHECK_FAILURE)
 

@@ -1,19 +1,19 @@
 ---
 author: normesta
-Description: Run, debug, and test a Windows Desktop Bridge app that you convert from a Windows desktop application (Win32, WPF, and Windows Forms) by using the Desktop to UWP Bridge.
+Description: Run your packaged app and see how it looks without having to sign it. Then, set breakpoints and step through code. When you're ready to test your app in a production environment, sign your app and then install it.
 Search.Product: eADQiWindows 10XVcnh
-title: Run, debug, and test a Windows Desktop Bridge app
+title: Run, debug, and test a packaged desktop app (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/01/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ---
-# Run, debug, and test a Windows Desktop Bridge app
+# Run, debug, and test a packaged desktop app (Desktop Bridge)
 
-Run your converted app and see how it looks without having to sign it. Then, set breakpoints and step through code. When you're ready to test your app in a production environment, sign your app and then install it. This topic shows you how to do each of these things.
+Run your packaged app and see how it looks without having to sign it. Then, set breakpoints and step through code. When you're ready to test your app in a production environment, sign your app and then install it. This topic shows you how to do each of these things.
 
 <span id="run-app" />
 ## Run your app
@@ -22,17 +22,17 @@ You can run your app to test it out locally without having to obtain a certifica
 
 If you created your package by using a UWP project in Visual Studio, just press CTRL+F5 to start your app.
 
-If you used the Desktop App Converter or you converted your app manually, open a Windows PowerShell command prompt, and from the **PacakgeFiles** subfolder of your output folder, run this cmdlet:
+If you used the Desktop App Converter or you package your app manually, open a Windows PowerShell command prompt, and from the **PacakgeFiles** subfolder of your output folder, run this cmdlet:
 
 ```
 Add-AppxPackage –Register AppxManifest.xml
 ```
 To start your app, find it in the Windows Start menu.
 
-![Converted app in the start menu](images/desktop-to-uwp/converted-app-installed.png)
+![Packaged app in the start menu](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
-> A converted app always runs as an interactive user, and any drive that you install your converted app on to must be formatted to NTFS format.
+> A packaged app always runs as an interactive user, and any drive that you install your packaged app on to must be formatted to NTFS format.
 
 ## Debug your app
 
@@ -42,9 +42,9 @@ Attach your app to the debugger or install an extension and debug your app witho
 
 This option has the least amount of setup time, but requires you to perform an extra step each time you want to start the debug session.
 
-#### Attach to the debugger with an app that you converted manually or by using the Desktop App Converter
+#### Attach to the debugger with an app that you packaged manually or by using the Desktop App Converter
 
-1. Start your converted app. See the [Run your app](#run-app) section above.
+1. Start your packaged app. See the [Run your app](#run-app) section above.
 
    If you want to debug your app with elevated permissions, start your app by using the **Run as Administrator** option.
 
@@ -58,17 +58,17 @@ This option has the least amount of setup time, but requires you to perform an e
 
 5. In the list of available processes, choose your desktop application process.
 
-#### Attach the debugger to an app that you converted by using Visual Studio
+#### Attach the debugger to an app that you packaged by using Visual Studio
 
 1. Start Visual Studio.
 
    If you want to debug your app with elevated permissions, start Visual Studio by using the **Run as Administrator** option.
 
-2. In Visual Studio, open the UWP project that your created to convert your app.
+2. In Visual Studio, open the UWP project that your created to package your app.
 
 3. In Visual Studio, choose **Debug**->**Start Without Debugging**.
 
-   The converted app starts.
+   The packaged app starts.
 
 4. In Visual Studio, choose **Debug**->**Attach To Process**.
 
@@ -198,9 +198,9 @@ If you make your changes to your app to fix bugs, repackage it by using the Make
 
 To test your app in a realistic setting as you prepare for distribution, it's best to sign your app and then install it.
 
-If you converted you app by using Visual Studio, you can run a script to sign your app and then install it. See [Sideload your package](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
+If you packaged you app by using Visual Studio, you can run a script to sign your app and then install it. See [Sideload your package](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
 
-If you convert your app by using the Desktop App Converter, you can use the ``sign`` parameter to automatically sign your app by using a generated certificate. You'll have to install that certificate, and then install the app. See [Run the converted app](desktop-to-uwp-run-desktop-app-converter.md#run-the-converted-app).   
+If you package your app by using the Desktop App Converter, you can use the ``sign`` parameter to automatically sign your app by using a generated certificate. You'll have to install that certificate, and then install the app. See [Run the packaged app](desktop-to-uwp-run-desktop-app-converter.md#run-app).   
 
 You can also sign your app manually. Here's how
 
