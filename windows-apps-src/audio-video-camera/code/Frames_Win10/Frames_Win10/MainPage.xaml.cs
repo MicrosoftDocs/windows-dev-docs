@@ -381,9 +381,10 @@ namespace Frames_Win10
         private string _colorSourceId = null;
         private string _depthSourceId = null;
 
-        public event EventHandler CorrelationFailed;
+        
         private readonly ManualResetEventSlim _frameReceived = new ManualResetEventSlim(false);
         private readonly CancellationTokenSource _tokenSource = new CancellationTokenSource();
+        public event EventHandler CorrelationFailed;
         //</SnippetMultiFrameDeclarations>
 
         private async void InitMultiFrame()
@@ -457,8 +458,6 @@ namespace Frames_Win10
             _multiFrameReader.FrameArrived += MultiFrameReader_FrameArrived;
 
             _frameRenderer = new FrameRenderer(_imageElement);
-            
-
 
             MultiSourceMediaFrameReaderStartStatus startStatus =
                 await _multiFrameReader.StartAsync();
