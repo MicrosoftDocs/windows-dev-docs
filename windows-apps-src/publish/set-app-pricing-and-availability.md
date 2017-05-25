@@ -15,6 +15,8 @@ keywords: windows 10, uwp
 
 > [!IMPORTANT]
 > This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
+> 
+> Please be aware that when your account switches over to use the latest functionality, any in-progress submissions will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the new options will become available with the next update after you publish your in-progress submission.
 
 The **Pricing and availability** page of the [app submission process](app-submissions.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
@@ -41,7 +43,8 @@ If you want to hide your app in the Store but still make it available to certain
 - **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device.** Even if a customer has a direct link, they can't download the app unless they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 device. When you give a code to a customer, they can use the link and code to get your app for free (on Windows 10 only), even though you aren't offering it to any other customers. Aside from using a promotional code, there is no way to get your app.
 - **Individuals on Windows Phone 8.x only: Only people you specify below can download this product on a Windows Phone 8.x device. Anyone with a direct link and a promotional code may download the product on a Windows 10 device.** This option may not appear for all submissions. It only applies if you have packages that can run on Windows Phone 8.x. Only the customers whose email addresses (associated with their Microsoft accounts) you enter in the box (separated by semicolons) can download your app on Windows Phone 8.x by using the direct link to its listing. You can also generate promotional codes to distribute to specific people on Windows 10 as described above. 
 
-> **Note**  To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method. This action will override any of the options you have chosen here: it won't be available to new customers at all. To make it available to new customers again, you can click **Make app available** from the App overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+> [!TIP]
+> To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method. This action will override any of the options you have chosen here: it won't be available to new customers at all. To make it available to new customers again, you can click **Make app available** from the App overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 ## Schedule
 
@@ -55,26 +58,45 @@ By default, the release date for your app will be the date when it appears in th
 
 ## Pricing
 
-You are required to select a base price for your app (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility] section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. 
+You are required to select a base price for your app (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](#visibility) section), choosing either **Free** or one of the available price tiers. You can also schedule price changes to indicate the date and time at which your app’s price should change. Additionally, you have the option to customize these changes for specific markets. 
 
 For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.md).
 
 ## Free trial
 
-<!-- add updates per doc -->
+Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, **No free trial** is selected, and there will be no trial for your app. If you’d like to offer a trial, you can select a value from the the **Free trial** dropdown.
 
-Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, an app will not be available as a free trial, but if you'd like to offer one, select a value from the **Free trial** dropdown.
+There are two types of trial you can choose, and you have the option to configure the date and time when the trial should start and stop being offered.
 
-Choose **Trial never expires** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to [exclude or limit features in the trial version](../monetize/in-app-purchases-and-trials.md).
+### Time-limited
 
-You also have the option to select a time-limited trial of **1 day**, **7 days**, **15 days**, or **30 days**. You can still limit features during the trial period, or you can let customers access the full functionality during that period of time.
+Choose **Time-limited** to allow customers to try your app for free for a certain number of days: **1 day**, **7 days**, **15 days**, or **30 days**. You can limit features by adding code to [exclude or limit features in the trial version](../monetize/in-app-purchases-and-trials.md), or you can let customers access the full functionality during that period of time. 
+> [!NOTE]
+> Time-limited trials are not shown to customers on Windows 10 build 10.0.10586 or earlier, or to customers on Windows Phone 8.1 and earlier.
 
-> **Note**  Time-limited trials are not shown to customers on Windows 10 build 10.0.10586 or earlier, or to customers on Windows Phone 8.1 and earlier.
+### Unlimited
+
+Choose **Unlimited** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to [exclude or limit features in the trial version](../monetize/in-app-purchases-and-trials.md).
+
+### Start and end dates
+
+By default, your trial will be available as soon as your app is published, and it will never stop being offered. If you’d like, you can specify the date and time that your trial should start to be offered and when it should stop being offered. 
+
+>[!NOTE]
+> These dates only apply for customers on Windows 10. If your trial applies to customers on earlier OS versions, the trial will be offered for as long as your product is available. 
+
+To set dates for when your trial should be offered, change the **Starts on** and/or **Ends on** dropdown to **at**, then choose the date and time. If you do so, you can either choose **UTC** so that the time you select will be Universal Coordinated Time (UTC) time, or choose **Local** so that these times will be used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.) 
+
+>[!NOTE]
+> Unlike the [Schedule](configure-precise-release-scheduling.md) section, the dates you select for your **Free trial** cannot be customized for specific markets. 
+
 
 
 ## Sale pricing
 
-If you want to offer your app at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
+If you want to offer your app at a reduced price for a limited period of time, you can create and schedule a sale.
+
+For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
 
 
 ## Organizational licensing

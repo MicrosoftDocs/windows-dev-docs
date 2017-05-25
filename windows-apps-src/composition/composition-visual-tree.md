@@ -23,18 +23,20 @@ There are three visual types that make up the visual tree structure plus a base 
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – base object, the majority of the properties are here, and inherited by the other Visual objects.
 -   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – derives from [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), and adds the ability to create children.
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Derives from [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) and adds the ability to associate a brush so that the Visual can render pixels including images, effects or a solid color.
--   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – Allows the application of an effect on the content of a Visual. There are a number of subclasses of CompositionBrush.
+
+You can apply content and effects to SpriteVisuals using the [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) and it's subclasses inlcuding the [**CompositionColorBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionColorBrush),[**CompositionSurfaceBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) and [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush). To learn more about brushes see our [**CompositionBrush Overeview**](https://docs.microsoft.com/en-us/windows/uwp/composition/composition-brushes).   
 
 ## The CompositionVisual Sample
 
-In the sample there are a number of solid color squares that can be clicked on and dragged about the screen. When a square is clicked on, it will come to the front, rotate 45 degrees, and become opaque when dragged about.
+
+In the sample are a number of solid color squares that can be clicked on and dragged about the screen. When a square is clicked on, it will come to the front, rotate 45 degrees, and become opaque when dragged about.
 
 This shows a number of basic concepts for working with the API including:
 
 -   Creating a compositor
--   Creating a SpriteVisual with a ColorBrush
--   Clipping a Visual
--   Rotating a Visual
+-   Creating a SpriteVisual with a CompositionColorBrush
+-   Clipping the Visual
+-   Rotating the Visual
 -   Setting Opacity
 -   Changing the Visual’s position in the collection.
 

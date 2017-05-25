@@ -1,9 +1,9 @@
----
+﻿---
 author: JnHs
 Description: Learn how to send targeted push notifications from Windows Dev Center to your app to encourage customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 05/11/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,9 +15,10 @@ ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 
 Engaging with your customers at the right time and with the right message is key to your success as an app developer. Windows Dev Center provides a data-driven customer engagement platform you can use to send push notifications to all of your customers or only to a subset of your Windows 10 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md).
 
-You can use targeted push notifications to encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app.
+You can use targeted push notifications to encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
 
-> **Important** Targeted push notifications can only be used with UWP apps.
+> [!IMPORTANT]
+> Targeted push notifications can only be used with UWP apps.
 
 When considering the content of your notifications, keep in mind:
 - The content in your notifications must comply with the Store [Content Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies).
@@ -37,7 +38,8 @@ At a high-level, you need to do three things to use push notifications to engage
 
 Follow these steps to create a push notification in the dashboard and send it to a particular customer segment.
 
-> **Note** Before your app can receive targeted push notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> [!NOTE]
+> Before your app can receive targeted push notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select your app.
 2.	In the left navigation menu, expand **Services**, and select **Push notifications**.
@@ -48,8 +50,9 @@ Follow these steps to create a push notification in the dashboard and send it to
 If you haven’t created a segment yet, select **Create new customer group**. Note that it takes 24 hours for a new segment to be available to use for notifications. For more info, see [Create customer segments](create-customer-segments.md).
 6.	If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time.
 7.	If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time.
-8.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
-9.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
+8.	If you want to filter the recipients so that your notification is only delivered to people who use certain languages, or who are in specific time zones, check the **Filters** checkbox. You can then select the languages and/or time zones by which you want to filter your recipients.
+9.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
+10.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
    The available options vary, depending on which notification type you are using. Some of the options are:
    - **Activation type** (interactive toast type). You can choose **Foreground**, **Background**, or **Protocol**.
    - **Launch** (interactive toast type). You can choose to have the notification open an app or website.
@@ -62,9 +65,10 @@ If you haven’t created a segment yet, select **Create new customer group**. No
    - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md).
    - **Binding** (interactive tile type). The toast template. For more details, see [binding](https://msdn.microsoft.com/library/windows/apps/br230843).
 
-   > **Tip**  Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
+   > [!TIP]
+   > Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
 
-10.	Select **Save as draft** to continue working on the notification later, or select **Send** if you’re all done.
+11.	Select **Save as draft** to continue working on the notification later, or select **Send** if you’re all done.
 
 ## Notification template types
 
@@ -74,15 +78,18 @@ You can choose from a variety of notification templates.
 -	**Blank (Tile).** Start with an empty tile notification that you can customize. Tiles are an app's representation on the Start screen. Tiles can be “live,” which means that the content that they display can change in response to notifications.
 -	**Ask for ratings (Toast).** A toast notification that asks your customers to rate your app. When the customer selects the notification, the Store ratings page for your app is displayed.
 -	**Ask for feedback (Toast).** A toast notification that asks your customers to provide feedback for your app. When the customer selects the notification, the Feedback Hub page for your app is displayed.
-   > **Note** If you choose this template type, in the **Launch** box, remember to replace the {PACKAGE_FAMILY_NAME} placeholder value with your app’s actual Package Family Name (PFN). You can find your app’s PFN on the [App identity](view-app-identity-details.md) page (**App management** > **App identity**).
+
+   > [!NOTE]
+   > If you choose this template type, in the **Launch** box, remember to replace the {PACKAGE_FAMILY_NAME} placeholder value with your app’s actual Package Family Name (PFN). You can find your app’s PFN on the [App identity](view-app-identity-details.md) page (**App management** > **App identity**).
 
    ![Feedback toast Launch box](images/push-notifications-feedback-toast-launch-box.png)
 -	**Cross-promote (Toast).** A toast notification to promote a different app of your choosing. When the customer selects the notification, the other app’s Store listing is displayed.
-  > **Note** If you choose this template type, in the **Launch** box, remember to replace the **{ProductId you want to promote here}** placeholder value with the actual Store ID of the item you want to cross promote. You can find the Store ID on the [App identity](view-app-identity-details.md) page (**App management** > **App identity**).
+   > [!NOTE]
+   > If you choose this template type, in the **Launch** box, remember to replace the **{ProductId you want to promote here}** placeholder value with the actual Store ID of the item you want to cross promote. You can find the Store ID on the [App identity](view-app-identity-details.md) page (**App management** > **App identity**).
 
   ![Cross-promote toast Launch box](images/push-notifications-promote-toast-launch-box.png)
 -	**Promote a sale (Toast).** A toast notification that you can use to announce a deal for your app. When the customer selects the notification, your app’s Store listing is displayed.
-- **Prompt for update (Toast).** A toast notification that encourages customers who are running an older version of your app to install the latest version. When the customer selects the notification, the **Downloads and updates** list in the Store app is displayed. Note that you don't need to create a customer segment to use this template. We’ll schedule this notification within 24 hours and we’ll make our best effort to target all users who are not yet running the latest version of your app.
+-	**Prompt for update (Toast).** A toast notification that encourages customers who are running an older version of your app to install the latest version. When the customer selects the notification, the **Downloads and updates** list in the Store app is displayed. Note that you don't need to create a customer segment to use this template. We’ll schedule this notification within 24 hours and we’ll make our best effort to target all users who are not yet running the latest version of your app.
 
 ## Measure notification performance
 
@@ -95,7 +102,7 @@ You can measure how well you’re engaging with your customers through each noti
 
 ###To view notification performance
 
-When you’ve configured the notification and your app to [measure notification performance](#to-measure-notification-performance) as described above, you can use the dashboard to see how well your notifications are performing.
+When you’ve configured the notification and your app to [measure notification performance](#measure-notification-performance) as described above, you can use the dashboard to see how well your notifications are performing.
 
 1.  In the dashboard, select one of your apps.
 2.  Expand the **Services** section on the left menu, then select **Push notifications** to see the notifications associated with that app.

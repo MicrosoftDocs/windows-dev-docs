@@ -5,7 +5,7 @@ title: Color Picker
 label: Color Picker
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -198,8 +198,10 @@ Hex values | IsHexInputVisible
 - [Pen and stylus interactions in UWP apps](../input-and-devices/pen-and-stylus-interactions.md)
 - [Inking](inking-controls.md)
 
+<!--
 <div class=”microsoft-internal-note”>
 <p>
 <p>
 Note: For more info, see the [color picker redlines](http://uni/DesignDepot.FrontEnd/#/ProductNav/3666/15/dv/?t=Windows%7CControls&f=RS2) on UNI.
 </div>
+-->

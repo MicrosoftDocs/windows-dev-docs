@@ -5,7 +5,7 @@ title: Primary tile API's
 label: Primary tile API's
 template: detail.hbs
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

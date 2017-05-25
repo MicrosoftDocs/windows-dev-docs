@@ -22,7 +22,7 @@ There is a new concept of optional tests for Windows Desktop Bridge apps which a
 
 ### 1. Digitally signed file test 
 **Background**  
-This test verifies that all portable executable (PE) files contain a valid signature. The presence of digitally signed files allows users to know thatthe software is genuine.
+This test verifies that all portable executable (PE) files contain a valid signature. The presence of digitally signed files allows users to know that the software is genuine.
 
 **Test details**  
 The test scans all of the portable executable files in the package and checks their headers for a signature. All the PE files are recommended to be digitally signed. A warning will be generated if any of the PE files is not signed.

@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages that an OEM can use to include your app in their image.
 title: Generate preinstall packages for OEMs
@@ -31,9 +31,12 @@ Once an account has been enabled with preinstall permissions, complete the follo
 1.  In your dashboard, navigate to the app that is to be preinstalled.
 2.  In the left navigation menu, expand **App management** and then click **Current packages**.
 3.  In the **Request packages for OS preinstallation** section, click **Enable downloadable packages**.
-4.  A confirmation dialog will appear, noting that apps preinstalled on an OS prior to Windows 10 must be free. Select **Enable.**
+4.  A confirmation dialog will appear, noting that apps preinstalled on an OS prior to Windows 10 must be free. Select **Enable**.
 5.  Find the package that you want to download, and click the appropriate **Generate package** link.
-    > **Note**  Generation time for preinstall packages will vary depending on the size of the package you have selected. You can leave this page and come back later, or leave the page open.
+
+    > [!NOTE]
+    > Generation time for preinstall packages will vary depending on the size of the package you have selected. You can leave this page and come back later, or leave the page open.
+
 6.  When the package has been generated, a link to **Download package** will appear. Click this link to download the .zip file.
 
 You can then provide this .zip file to the OEM for inclusion in their OS image.

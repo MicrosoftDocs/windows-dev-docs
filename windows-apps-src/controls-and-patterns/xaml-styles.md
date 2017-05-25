@@ -33,7 +33,7 @@ Each [Setter](https://msdn.microsoft.com/library/windows/apps/br208817) element 
 <Page.Resources>
     <Style TargetType="Button">
         <Setter Property="BorderThickness" Value="5" />
-        <Setter Property="Foreground" Value="Blue" />
+        <Setter Property="Foreground" Value="Black" />
         <Setter Property="BorderBrush" >
             <Setter.Value>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
@@ -72,30 +72,28 @@ In this example, the first style has an [x:Key attribute](../xaml-platform/x-key
 ```XAML
 <Page.Resources>
     <Style x:Key="PurpleStyle" TargetType="Button">
-        <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
-        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Foreground" Value="MediumOrchid"/>
+        <Setter Property="Foreground" Value="Purple"/>
     </Style>
 
     <Style TargetType="Button">
-        <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
-        <Setter Property="FontStyle" Value="Italic"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="RenderTransform">
             <Setter.Value>
                 <RotateTransform Angle="25"/>
             </Setter.Value>
         </Setter>
-        <Setter Property="BorderBrush" Value="Orange"/>
+        <Setter Property="BorderBrush" Value="Green"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="Foreground" Value="Orange"/>
+        <Setter Property="Foreground" Value="Green"/>
     </Style>
 </Page.Resources>
 
 <Grid x:Name="LayoutRoot">
     <Button Content="Button" Style="{StaticResource PurpleStyle}"/>
-    <Button Content="Button" />
+    <Button Content="Button"/>
 </Grid>
 ```
 

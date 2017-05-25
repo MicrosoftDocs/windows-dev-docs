@@ -1,25 +1,20 @@
 ---
 author: mukin
-title: Magnetic Stripe Reader
+title: Magnetic stripe reader device support
 description: This article contains information about the magnetic stripe reader point of service family of devices
 ms.author: wdg-dev-content
-ms.date: 02/21/2017
+ms.date: 05/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Magnetic Stripe Reader
+# Magnetic stripe reader device support
 
-Enables application developers to access [magnetic stripe readers](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.magneticstripereader) to retrieve data from magnetic stripe enabled cards such as credit/debit cards, loyalty cards, access cards, etc.
+Windows contains a in-box class driver for USB connected Magnetic stripe readers, which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](http://www.usb.org/developers/hidpage/).
 
-## Requirements
-Applications which require this namespace require the addition of “pointOfService” [DeviceCapability](https://msdn.microsoft.com/library/4353c4fd-f038-4986-81ed-d2ec0c6235ef) to the app package manifest.
-
-## Device support
-### USB
-### Supported vendor specific
+## Vendor specific support
 Windows provides support for the following magnetic stripe readers from Magtek and IDTech based on their Vendor ID and Product ID (VID/PID).
 
 | Manufacturer | 	Model(s) |	Part Number |
@@ -29,9 +24,10 @@ Windows provides support for the following magnetic stripe readers from Magtek a
 | Magtek | MagneSafe (VID:0801 PID:0011) |	210730xx |
 | |	Dynamag (VID:0801 PID:0002) |	210401xx |
 
-### Custom vendor specific
+## Custom vendor specific
 Windows supports implementation of additional vendor specific drivers to support additional magnetic stripe readers. Please check with your magnetic stripe reader manufacturer for availability.
 
-## Examples
-See the magnetic stripe reader sample for an example implementation.
+## See also
++   [Windows.Devices.PointOfService namespace](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice)
++   [MagneticStripeReader class](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice.magneticstripereader)
 +	[Magnetic stripe reader sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)

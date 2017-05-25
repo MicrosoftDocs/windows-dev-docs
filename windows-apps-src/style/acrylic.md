@@ -4,7 +4,7 @@ description:
 title: Acrylic material
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -74,7 +74,7 @@ For apps without a single continuous canvas, we recommend using background acryl
 
 ### Prevalent acrylic
 
-Apps that want to avoid creating distinct visual regions, instead focusing on a fluid, continuous experience, can add background acrylic to the full area of the app.
+Apps that want to focus on a fluid, continuous experience and avoid creating distinct visual regions can add background acrylic to the full area of the app.
 
 ![App pattern using a horizontal acrylic pane](images/acrylic_app-pattern_full.png)
 
@@ -266,6 +266,7 @@ We fine-tuned acrylic’s key components to arrive at its unique appearance and 
 ![Acrylic recipe](images/AcrylicRecipe_Diagram.png)
 <br/>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise
 
+<!--
 <div class="microsoft-internal-note">
 When designing your app, please utilize these [design resources](http://uni/DesignDepot.FrontEnd/#/Search?t=Resources%7CNeon%7CToolkit&f=Acrylic%20Material) to show acrylic in comps. The linked templates are the most accurate way to represent acrylic material in Photoshop and Illustrator. The ordering, as noted in the recipe diagram above, should start from the top: <br/>
  - Noise asset (tiled) at 4% opacity <br/>
@@ -273,6 +274,7 @@ When designing your app, please utilize these [design resources](http://uni/Desi
  - Exclusion blend (white @ 10% opacity) <br/>
  - Gaussian blur (30px radius) <br/>
 </div>
+-->
 
 
 ## Related articles

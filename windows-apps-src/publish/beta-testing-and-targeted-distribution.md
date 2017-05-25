@@ -4,7 +4,7 @@ Description: The Windows Dev Center dashboard gives you the option to make your 
 title: Beta testing and targeted distribution
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 05/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,7 +37,7 @@ For more info, see [Package flights](package-flights.md).
 If you want to limit distribution of an app to only a certain group of testers, **without** first publishing a submission that's broadly available, you can use the same [app submission process](app-submissions.md) as any app you submit. To allow only certain people to get the app free of charge, and prevent other customers from seeing its listing or downloading it, do the following:
 
 -   In your submission, in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page, select **Make this product available but not discoverable in the Store**.  Choose the option for **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device**. This prevents anyone from finding your app in the Store via searching or browsing.
--   After the app passes certification, [generate promotional codes](generate-promotional-codes.md) for the app and distribute them to your testers. You can generate up to 500 promotional codes for a single app in a six month period. These codes will give your testers a direct link to the app’s listing, and will allow them to download it for free, even if you have set a price for it when you created your submission.
+-   After the app passes certification, [generate promotional codes](generate-promotional-codes.md) for the app and distribute them to your testers. You can generate codes that allow up to 1600 redemptions for a single app in a six month period. These codes will give your testers a direct link to the app’s listing, and will allow them to download it for free, even if you have set a price for it when you created your submission.
 
 After you distribute the promotional code links to your testers, they can try it out and give you feedback to help you improve the app. Then, when you’re ready to make your app available to the public, simply create a new submission and change the **Visibility** option to **Make this app available and discoverable in the Store** (along with any other changes you'd like to make).
 
@@ -45,7 +45,7 @@ Here are some things to keep in mind when doing this:
 
 -   You can give your testers an updated version of your app at any time by creating a new submission. Make sure to keep the **Visibility** option set to **Make this product available but not discoverable in the Store** with the **Stop acquisition** option. The testers will get the update after it goes through the certification process, but no one else will be able to get it.
 -   Your testers must have a Windows 10 device on which they can install the app. (However, your app doesn't have to include Windows 10 packages in order to use this method of testing.)
--   You can create more [promotional codes](generate-promotional-codes.md) to distribute at any time (up to 500 codes every six months).
+-   You can create more [promotional codes](generate-promotional-codes.md) to distribute at any time (up to 1600 codes per app every six months).
 -   You can’t revoke access to the app after your testers download it. Once they have downloaded the app, they can continue to use it, and they’ll get any updates that you subsequently publish.
 -   You will need to determine how you’d like to collect feedback from your testers. Consider providing an email or website link in the beta app so that they can easily provide comments.
 -   You can review [analytic reports](analytics.md) for your app, including any ratings or reviews left by your testers.

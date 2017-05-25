@@ -3,7 +3,7 @@ author: QuinnRadich
 title: Choose a UWP version
 description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
 ms.author: quradic
-ms.date: 02/08/2017
+ms.date: 05/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,16 +13,16 @@ ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 
 # Choose a UWP version
 
-Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target. Available versions are described in the following table:
+Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target.
+
+The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have downloaded the appropriate build of the SDK in order to target that version.
 
 | Version | Description |
 | --- | --- |
-| Build 15063 (Creators Update) | This is the most recent version of Windows 10, released in March 2017. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows**. Some highlighted features from this release include:  </br> \* **Ink Analysis:** Windows Ink can now categorize ink strones into either writing or drawing strokes, and recognized text, shapes, and basid layout structures. </br> \* **Windows.Ui.Composition APIs:** Easily combine and apply animations across your app. </br> \* **Live Editing:** Edit XAML while your app is running, and see the changes applied in real-time. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-version-1703.md)  |
+| Build 15063 (Creators Update) | This is the most recent version of Windows 10, released in March 2017. **Please note that you _must_ be using Visual Studio 2017 in order to target this version of Windows**. Some highlighted features from this release include:  </br> \* **Ink Analysis:** Windows Ink can now categorize ink strokes into either writing or drawing strokes, and recognized text, shapes, and basid layout structures. </br> \* **Windows.Ui.Composition APIs:** Easily combine and apply animations across your app. </br> \* **Live Editing:** Edit XAML while your app is running, and see the changes applied in real-time. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-version-1703.md)  |
 | Build 14393 (Anniversary Update) | This version of Windows 10 was released in July 2016. Some highlighted features from this release include: </br> \* **Windows Ink:** New InkCanvas and InkToolbar controls. </br> \* **Cortana APIs:** Use new Cortana Actions to integrate Cortana support with specific functions of your app. </br> \* **Windows Hello:** Microsoft Edge now supports Windows Hello, giving web developers access to biometric authentication. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-version-1607.md)  |
 | Build 10586 | This version of Windows 10 was released in November 2015. Highlighted features include the introduction of ORTC (object real-time communications) APIs for video communication in Microsoft Edge and Providers APIs to enable apps to use Windows Hello face authentication. [More information on features introduced in this build.](../whats-new/windows-10-version-1511.md) |
 | Build 10240 | This is the initial release version of Windows 10, from July 2015. [More information on features introduced in this build.](../whats-new/windows-10-version-1507.md) |
-
-Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows.
 
 We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (15063). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
 
@@ -34,7 +34,7 @@ For reference topics that enumerate all device families and their versions, and 
 
 ## Choose which version to use for your app
 
-In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**.
+In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**. Additionally, you can change the **Target Version** and **Minimum Version** of your UWP app in the *application* section of the app's **Properties**.
 
 * **Target Version**. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903).
 * **Minimum Version**. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.

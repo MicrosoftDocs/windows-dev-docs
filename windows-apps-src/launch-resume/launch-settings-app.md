@@ -73,7 +73,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
         <td>ms-settings:</td>
     </tr>
     <tr>
-        <td rowspan="10">System</td>
+        <td rowspan="12">System</td>
         <td>Display</td>
         <td>Both</td>
         <td>ms-settings:screenrotation</td>
@@ -112,6 +112,16 @@ Use the following URIs to open various pages of the Settings app. Note that the 
         <td>About</td>
         <td>Both</td>
         <td>ms-settings:about</td>
+    </tr>
+    <tr>
+        <td>Storage</td>
+        <td>Both</td>
+        <td>ms-settings:storagesense</td>
+    </tr>
+    <tr>
+        <td>Storage Sense</td>
+        <td>Desktop only</td>
+        <td>ms-settings:storagepolicies</td>
     </tr>
     <tr>
         <td>Encryption</td>

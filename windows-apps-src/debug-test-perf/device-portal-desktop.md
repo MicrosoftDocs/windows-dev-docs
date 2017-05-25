@@ -90,7 +90,7 @@ This error may occur due to a network connectivity problem, Enterprise settings,
 To fix this issue:
 
 1. Ensure your computer is connected to the Internet. 
-2. If you are on a domain-joined computer, speak to your network administrator. 
+2. If you are on a domain-joined computer, speak to your network administrator. They are likley blocking the Developer Mode package by default in their WSUS setup. 
 3. Check for Windows updates in the Settings > Updates and Security > Windows Updates.
 4. Verify that the Windows Developer Mode package is present in Settings > System > Apps & Features > Manage optional features > Add a feature. If it is missing, Windows cannot find the correct package for your computer. 
 

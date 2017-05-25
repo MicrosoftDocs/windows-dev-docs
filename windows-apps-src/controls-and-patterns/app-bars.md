@@ -6,7 +6,7 @@ label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 05/10/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -103,9 +103,11 @@ The default overflow area is styled to be distinct from the bar. You can adjust 
 
 You can programmatically move commands between the PrimaryCommands and SecondaryCommands as needed.
 
+<!-- 
 <div class="microsoft-internal-note">
 Commands can also automatically move in or out of the overflow as the command bar width changes, for example when users resize their app window. Dynamic overflow is on by default but apps can turn off this behavior by changing the value of `IsDynamicOverflowEnabled` property.
 </div>
+-->
 
 ### App bar buttons
 
@@ -152,9 +154,12 @@ When the label wraps at the hinted location, it looks like this.
 You can add any XAML elements to the content area by setting the **Content** property. If you want to add more than one element, you need to place them in a panel container and make the panel the single child of the Content property.
 
 When there are both primary commands and content, the primary commands take precedence and may cause the content to be clipped.
+
+<!--
 <div class="microsoft-internal-note">
 Content will not clip when dynamic overflow is enabled because the primary commands would move into the overflow menu freeing up space for content.
 </div>
+-->
 
 When the [ClosedDisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) is **Compact**, the content can be clipped if it is larger than the compact size of the command bar. You should handle the [Opening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) and [Closed](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) events to show or hide parts of the UI in the content area so that they aren't clipped. See the [Open and closed states](#open-and-closed-states) section for more info.
 

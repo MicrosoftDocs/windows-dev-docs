@@ -33,7 +33,6 @@ Display maps with 2D, 3D, or Streetside views in your app by using APIs from the
 | Topic | Description |
 |-------|-------------|
 | [Request a maps authentication key](authentication-key.md) | Your app must be authenticated before it can use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. To authenticate your app, you must specify a maps authentication key. This article describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app. |
-| [Map control](controls-map.md) | The map control can display road maps and aerial views, directions, search results, and traffic. |
 | [Display maps with 2D, 3D, and Streetside views](display-maps.md) | Display customizable maps in your app by using the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) class. This topic also introduces aerial 3D and Streetside views. |
 | [Display points of interest (POI) on a map](display-poi.md) | Add points of interest (POI) to a map by using pushpins, images, shapes, and XAML UI elements. |
 | [Overlay tiled images on a map](overlay-tiled-images.md) | Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely. |

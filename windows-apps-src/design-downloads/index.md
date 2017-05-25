@@ -4,7 +4,7 @@ keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: Design toolkits and resources for UWP apps
 author: mijacobs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,8 +28,8 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 ## Fonts
 
-* [Segoe fonts](http://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe fonts v1705.zip)
-* [Hololens font (Windows only)](http://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens font.zip)
+* [Segoe UI and MDL2 icon fonts](http://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe fonts v1705.2.zip)
+* [Hololens icon font](http://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens-font-v1705.zip)
 
 ## Tools
 

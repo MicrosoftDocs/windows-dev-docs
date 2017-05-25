@@ -5,7 +5,7 @@ title: Buttons
 label: Buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/10/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -96,11 +96,11 @@ Here, a **StackPanel** that contains an image of an orange and text is set as th
 
 ```xaml
 <Button Click="Button_Click"
-        Background="#FF0D6AA3"
+        Background="LightGray"
         Height="100" Width="80">
     <StackPanel>
-        <Image Source="Assets/Slices.png" Height="62"/>
-        <TextBlock Text="Orange"  Foreground="White"
+        <Image Source="Assets/Photo.png" Height="62"/>
+        <TextBlock Text="Photos" Foreground="Black"
                    HorizontalAlignment="Center"/>
     </StackPanel>
 </Button>

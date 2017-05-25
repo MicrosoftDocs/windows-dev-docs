@@ -5,7 +5,7 @@ title: Typography
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -68,7 +68,7 @@ In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsof
   <div class="side-by-side-content-left">
 <h2>Kerning and tracking</h2>
 
-Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain it’s humanist integrity, the kerning and tracking settings must have specific values.
+Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain its humanist integrity, the kerning and tracking settings must have specific values.
 
 Kerning should be set to “metrics” and tracking should be set to “0”.
   </div>
@@ -170,9 +170,11 @@ The type ramp establishes a crucial design relationship from headlines to body t
 >Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).
 
 
+<!--
 <div class="microsoft-internal-note">
 SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## Primary and secondary text

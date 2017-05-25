@@ -7,7 +7,7 @@ dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -60,7 +60,7 @@ This XAML creates a [MediaPlayerElement](https://msdn.microsoft.com/library/wind
 ```
 
 ### Media transport controls
-[MediaPlayerElement]((https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set [AreTransportControlsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled.aspx) to **true**. To disable them, set **AreTransportControlsEnabled** to **false**. The transport controls are represented by the [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn831962) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn831962) class reference and [Create custom transport controls](custom-transport-controls.md).
+[MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set [AreTransportControlsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled.aspx) to **true**. To disable them, set **AreTransportControlsEnabled** to **false**. The transport controls are represented by the [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn831962) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/dn831962) class reference and [Create custom transport controls](custom-transport-controls.md).
 
 The transport controls support single- and double-row layouts. The first example here is a single-row layout, with the play/pause button located to the left of the media timeline. This layout is best reserved for inline media playback and compact screens.
 
