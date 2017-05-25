@@ -75,6 +75,7 @@ Device capabilities allow your app to access peripheral and internal devices. De
 | **Radio state** | The **radios** device capability allows apps to toggle the Wi-Fi and Bluetooth radios.<br/>This capability is required to use the APIs in the [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/Dn996447) namespace.  |
 | **Optical disc** | The **optical** device capability allows apps to access functions on optical disk drives such as CD, DVD, and Blu-ray.<br/>This capability is required to use some APIs in the [**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) namespace. |
 | **Motion activity** | The **activity** device capability allows apps to detect the current motion of the device.<br/>This capability is required to use some APIs in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace. |
+| **Serial communication** | The **serialcommunication** device capability provides access to APIs in the Windows.Devices.SerialCommunication namespace, which allows a Windows app to communicate with a device that exposes a serial port or some abstraction of a serial port. This capability is required to use the APIs in the [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) namespace. |
 
 ## Special and restricted capabilities
 
