@@ -25,7 +25,7 @@ We focus on the following:
 * Supporting basic shape recognition
 * Saving and loading ink
 
-For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/pen-and-stylus-interactions).
+For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions).
 
 ## Introduction
 
@@ -425,7 +425,7 @@ Congratulations, you've completed the **Input: Support ink in your UWP app** tut
 
 ## Related articles
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+* [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
 
 **Samples**
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
