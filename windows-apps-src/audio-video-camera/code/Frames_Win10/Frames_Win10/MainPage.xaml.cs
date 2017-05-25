@@ -74,6 +74,7 @@ namespace Frames_Win10
                    sourceGroup = group,
                    colorSourceInfo = group.SourceInfos.FirstOrDefault((sourceInfo) =>
                    {
+                       // On XBox/Kinect, omit the MediaStreamType and EnclosureLocation tests
                        return sourceInfo.MediaStreamType == MediaStreamType.VideoPreview
                        && sourceInfo.SourceKind == MediaFrameSourceKind.Color
                        && sourceInfo.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front;
@@ -116,7 +117,7 @@ namespace Frames_Win10
             var colorFrameSource = _mediaCapture.FrameSources[colorSourceInfo.Id];
             var preferredFormat = colorFrameSource.SupportedFormats.Where(format =>
             {
-                return format.VideoFormat.Width == 1080;
+                return format.VideoFormat.Width == 1920;
             }).FirstOrDefault();
 
             if (preferredFormat == null)
@@ -305,12 +306,9 @@ namespace Frames_Win10
                new
                {
                    sourceGroup = group,
-                   //colorSourceInfo = group.SourceInfos.FirstOrDefault()
                    colorSourceInfo = group.SourceInfos.FirstOrDefault((sourceInfo) =>
                    {
-                       //return sourceInfo.MediaStreamType == MediaStreamType.VideoPreview,
                        return sourceInfo.SourceKind == MediaFrameSourceKind.Color;
-                       //    && sourceInfo.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front;
                    })
 
                }).Where(t => t.colorSourceInfo != null)
@@ -346,17 +344,17 @@ namespace Frames_Win10
             var colorFrameSource = _mediaCapture.FrameSources[colorSourceInfo.Id];
             var preferredFormat = colorFrameSource.SupportedFormats.Where(format =>
             {
-                return format.VideoFormat.Width == 1080;
+                return format.VideoFormat.Width == 1920;
             }).FirstOrDefault();
 
-            /*
+
             if (preferredFormat == null)
             {
                 // Our desired format is not supported
                 return;
             }
             await colorFrameSource.SetFormatAsync(preferredFormat);
-            */
+
 
             _mediaFrameReader = await _mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32);
             _mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived_FrameRenderer;
@@ -368,9 +366,152 @@ namespace Frames_Win10
         }
         private void ColorFrameReader_FrameArrived_FrameRenderer(MediaFrameReader sender, MediaFrameArrivedEventArgs args)
         {
-
+            
 
             _frameRenderer.ProcessFrame(sender.TryAcquireLatestFrame());
         }
+
+        private void MultiFrameButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitMultiFrame();
+        }
+
+        //<SnippetMultiFrameDeclarations>
+        private MultiSourceMediaFrameReader _multiFrameReader = null;
+        private string _colorSourceId = null;
+        private string _depthSourceId = null;
+
+        public event EventHandler CorrelationFailed;
+        private readonly ManualResetEventSlim _frameReceived = new ManualResetEventSlim(false);
+        private readonly CancellationTokenSource _tokenSource = new CancellationTokenSource();
+        //</SnippetMultiFrameDeclarations>
+
+        private async void InitMultiFrame()
+        {
+            //<SnippetSelectColorAndDepth>
+            var allGroups = await MediaFrameSourceGroup.FindAllAsync();
+            var eligibleGroups = allGroups.Select(g => new
+            {
+                Group = g,
+
+                // For each source kind, find the source which offers that kind of media frame,
+                // or null if there is no such source.
+                SourceInfos = new MediaFrameSourceInfo[]
+                {
+                    g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Color),
+                    g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Depth)
+                }
+            }).Where(g => g.SourceInfos.Any(info => info != null)).ToList();
+
+            if (eligibleGroups.Count == 0)
+            {
+                System.Diagnostics.Debug.WriteLine("No source group with color, depth or infrared found.");
+                return;
+            }
+
+            var selectedGroupIndex = 0; // Select the first eligible group
+            MediaFrameSourceGroup selectedGroup = eligibleGroups[selectedGroupIndex].Group;
+            MediaFrameSourceInfo colorSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[0];
+            MediaFrameSourceInfo depthSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[1];
+            //</SnippetSelectColorAndDepth>
+
+
+            //<SnippetMultiFrameInitMediaCapture>
+            _mediaCapture = new MediaCapture();
+
+            var settings = new MediaCaptureInitializationSettings()
+            {
+                SourceGroup = selectedGroup,
+                SharingMode = MediaCaptureSharingMode.ExclusiveControl,
+                MemoryPreference = MediaCaptureMemoryPreference.Cpu,
+                StreamingCaptureMode = StreamingCaptureMode.Video
+            };
+
+            await _mediaCapture.InitializeAsync(settings);
+            //</SnippetMultiFrameInitMediaCapture>
+
+
+            //<SnippetGetColorAndDepthSource>
+            MediaFrameSource colorSource =
+                _mediaCapture.FrameSources.Values.FirstOrDefault(
+                    s => s.Info.SourceKind == MediaFrameSourceKind.Color);
+
+            MediaFrameSource depthSource =
+                _mediaCapture.FrameSources.Values.FirstOrDefault(
+                    s => s.Info.SourceKind == MediaFrameSourceKind.Depth);
+
+            if (colorSource == null || depthSource == null)
+            {
+                System.Diagnostics.Debug.WriteLine("MediaCapture doesn't have the Color and Depth streams");
+                return;
+            }
+
+            _colorSourceId = colorSource.Info.Id;
+            _depthSourceId = depthSource.Info.Id;
+            //</SnippetGetColorAndDepthSource>
+
+            //<SnippetInitMultiFrameReader>
+            _multiFrameReader = await _mediaCapture.CreateMultiSourceFrameReaderAsync(
+                new[] { colorSource, depthSource });
+
+            _multiFrameReader.FrameArrived += MultiFrameReader_FrameArrived;
+
+            _frameRenderer = new FrameRenderer(_imageElement);
+            
+
+
+            MultiSourceMediaFrameReaderStartStatus startStatus =
+                await _multiFrameReader.StartAsync();
+
+            if (startStatus != MultiSourceMediaFrameReaderStartStatus.Success)
+            {
+                throw new InvalidOperationException(
+                    "Unable to start reader: " + startStatus);
+            }
+
+            this.CorrelationFailed += MainPage_CorrelationFailed;
+            Task.Run(() => NotifyAboutCorrelationFailure(_tokenSource.Token));
+            //</SnippetInitMultiFrameReader>
+        }
+
+
+        //<SnippetMultiFrameArrived>
+        private void MultiFrameReader_FrameArrived(MultiSourceMediaFrameReader sender, MultiSourceMediaFrameArrivedEventArgs args)
+        {
+            using (MultiSourceMediaFrameReference muxedFrame =
+                sender.TryAcquireLatestFrame())
+            using (MediaFrameReference colorFrame =
+                muxedFrame.TryGetFrameReferenceBySourceId(_colorSourceId))
+            using (MediaFrameReference depthFrame =
+                muxedFrame.TryGetFrameReferenceBySourceId(_depthSourceId))
+            {
+                // Notify the listener thread that the frame has been received.
+                _frameReceived.Set();
+                _frameRenderer.ProcessFrame(depthFrame);
+            }
+        }
+        //</SnippetMultiFrameArrived>
+
+        //<SnippetNotifyCorrelationFailure>
+        private void NotifyAboutCorrelationFailure(CancellationToken token)
+        {
+            // If in 5 seconds the token is not cancelled and frame event is not signaled,
+            // correlation is most likely failed.
+            if (WaitHandle.WaitAny(new[] { token.WaitHandle, _frameReceived.WaitHandle }, 5000)
+                    == WaitHandle.WaitTimeout)
+            {
+                CorrelationFailed?.Invoke(this, EventArgs.Empty);
+            }
+        }
+        //</SnippetNotifyCorrelationFailure>
+        //<SnippetCorrelationFailure>
+        private async void MainPage_CorrelationFailed(object sender, EventArgs e)
+        {
+            await _multiFrameReader.StopAsync();
+            _multiFrameReader.FrameArrived -= MultiFrameReader_FrameArrived;
+            _mediaCapture.Dispose();
+            _mediaCapture = null;
+        }
+        //</SnippetCorrelationFailure>
     }
 }
