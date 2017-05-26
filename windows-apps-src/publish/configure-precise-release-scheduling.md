@@ -73,7 +73,8 @@ To add a schedule that will apply to multiple markets, you’ll create a *market
 
 To add a custom schedule for an additional market, or an additional market group, just click **Customize for specific markets** again and repeat these steps. To change the markets included in a market group, select its name. To remove the custom schedule for a market group (or individual market), click **Remove**.
 
-Note A market can’t belong to more than one of the market groups you use in the **Schedule** section. 
+> [!NOTE]
+> A market can’t belong to more than one of the market groups you use in the **Schedule** section. 
 
 
 

@@ -4,7 +4,7 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 04/25/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -64,8 +64,7 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | France               | Orange, SFR, Bouygues                                              |
 | Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Greece               | Vodafone                                                           |
-| Hungary              | Telenor, T-Mobile                                                  |
-| Indonesia            | Hutchinson CP Telecommunications (HCPT)                 |
+| Hungary              | T-Mobile                                                           |
 | Ireland              | O2, Vodafone, Three                                                |
 | Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
 | Netherlands          | T-Mobile, Vodafone                                                 |
@@ -75,7 +74,7 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | Slovakia             | T-Mobile                                                           |
 | South Africa         | Vodacom                                                            |
 | Spain                | Movistar, Vodafone, Orange                                         |
-| United Kingdom       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
+| United Kingdom       | Everything Everywhere (T-Mobile), Telefonica (O2), Vodafone        |
 | United States        | AT&T, T-Mobile                                                     |
 | Vietnam              | Viettel, Vinaphone, Mobifone                                       |
 
