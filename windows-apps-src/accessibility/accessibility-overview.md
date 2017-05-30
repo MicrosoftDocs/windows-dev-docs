@@ -179,4 +179,4 @@ Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**]
 * [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [Accessibility](accessibility.md)
-* [Get started with Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
