@@ -178,13 +178,14 @@ Accelerator buttons are buttons that can be used to speed up navigation through 
 
 The following table lists the accelerator support built into the UWP, as well as that which you can implement on your own. Utilize these behaviors in your custom UI to provide a consistent and friendly user experience.
 
-| Interaction   | Keyboard   | Gamepad      | Built-in for:  | Recommended for: |
+| Interaction   | Keyboard/Mouse   | Gamepad      | Built-in for:  | Recommended for: |
 |---------------|------------|--------------|----------------|------------------|
 | Page up/down  | Page up/down | Left/right triggers | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support vertical scrolling
 | Page left/right | None | Left/right bumpers | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support horizontal scrolling
 | Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
 | Open/close nav pane | None | View | None | Navigation panes |
 | [Search](#search-experience) | None | Y button | None | Shortcut to the main search function in the app |
+| [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout) | Context menus |
 
 ## XY focus navigation and interaction
 
@@ -447,7 +448,7 @@ For more information, including sample code for HTML/JavaScript, see [How to dis
 
 The following diagram shows the button mappings for gamepad/remote in mouse mode.
 
-![Button mappings for gamepad/remote in mouse mode](images/designing-for-tv/mouse-mode.png)
+![Button mappings for gamepad/remote in mouse mode](images/designing-for-tv/10ft_infographics_mouse-mode.png)
 
 > [!NOTE]
 > Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.

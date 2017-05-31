@@ -3,7 +3,7 @@ author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about the different types of Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
-ms.author: susanw
+ms.author: jken
 ms.date: 03/22/2017
 ms.topic: article
 pms.prod: windows
@@ -102,4 +102,4 @@ Then, check out [Get set up](get-set-up.md) to download the tools you need to st
 
 * [.NET Native - What it means for Universal Windows Platform (UWP) developers](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
 * [Universal Windows apps in .NET](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
-* [.NET for UWP apps](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
+* [.NET for UWP apps](https://msdn.microsoft.com/library/mt185501.aspx)

@@ -3,7 +3,7 @@ author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: Use the gyrometer
 description: Learn how to use the gyrometer to detect changes in user movement.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

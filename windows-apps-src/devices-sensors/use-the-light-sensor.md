@@ -3,7 +3,7 @@ author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: Use the light sensor
 description: Learn how to use the ambient light sensor to detect changes in lighting.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

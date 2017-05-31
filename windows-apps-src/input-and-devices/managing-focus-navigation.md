@@ -6,7 +6,7 @@ dev-contact: niallm
 doc-status: Published
 ---
 
-#Managing focus navigation
+# Managing focus navigation
 
 Many input namely keyboard, accessibility tools such as Windows
 Narrator, gamepad, and remote control share common underling mechanism
@@ -19,7 +19,7 @@ Following provide input agnostic way for application to move focus
 around the application’s UI which enable you to write single code that
 make your application work great with multiple input types.
 
-##Navigation Strategies properties to fine tune focus movements
+## Navigation Strategies properties to fine tune focus movements
 
 Use the XYFocus navigation strategy properties to specify which control
 should receive focus based on the arrow key pressed. These properties
@@ -120,7 +120,7 @@ right arrow uses the Projection strategy.
 />
 ```
 
-##Move focus programmatically
+## Move focus programmatically
 
 Use either the
 [FocusManager.TryMoveFocus](http://msdn.microsoft.com/en-us/library/windows/apps/xaml/Windows.UI.Xaml.Input.FocusManager.TryMoveFocus)
@@ -290,7 +290,7 @@ private void OnNoFocusCandidateFound (UIElement sender, NoFocusCandidateFoundEve
 }
 ```
 
-##Focus events
+## Focus events
 
 The
 [UIElement.GotFocus](http://msdn.microsoft.com/en-us/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.GotFocus)
@@ -412,7 +412,7 @@ Here is the order of execution:
 3.  Async LostFocus
 4.  Async GotFocus
 
-##Find the first and last focusable element <a name="findfirstfocusableelement">
+## Find the first and last focusable element <a name="findfirstfocusableelement">
 
 The **FocusManager.FindFirstFocusableElement** and the
 **FocusManager.FindLastFocusableElement** methods let you move focus to
