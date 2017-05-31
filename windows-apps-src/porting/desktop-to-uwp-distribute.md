@@ -135,7 +135,7 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, condiser uninstalling the "
+        String uninstallMessage = "To have the best experience, consider uninstalling the "
             +" previous version of this app. Would you like to do that now?";
 
         DialogResult uninstallResult = MessageBox.Show

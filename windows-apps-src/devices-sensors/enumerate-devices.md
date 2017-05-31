@@ -151,7 +151,7 @@ When enumerating **AssociationEndpoint**, **AssociationEndpointContainer**, or *
 ## Save a device for later use
 
 
-Any [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object is uniquely identified by a combination of two pieces of information: [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) and [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). If you keep these two pieces of information, you can recreate the **DeviceInformation** object after it lost by supplying this information to [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). If you do this, you can save user preferences for a device that integrates with your app.
+Any [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object is uniquely identified by a combination of two pieces of information: [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) and [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). If you keep these two pieces of information, you can recreate a **DeviceInformation** object after it is lost by supplying this information to [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). If you do this, you can save user preferences for a device that integrates with your app.
 
 
  
