@@ -3,7 +3,7 @@ author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: Use the orientation sensor
 description: Learn how to use the orientation sensors to determine the device orientation.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
