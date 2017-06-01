@@ -149,16 +149,13 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                                         <div class="cardText">
                                             <h3>Games</h3>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/getstarted">Get started</a>
+                                                <a href="https://developer.microsoft.com/games/uwp">UWP</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/design">UI Design</a>
+                                                <a href="https://developer.microsoft.com/games/xbox/xboxlive">Xbox Live</a>
                                             </p>
                                             <p>
-                                                <a href="https://developer.microsoft.com/windows/games/develop">Develop</a>
-                                            </p>
-                                            <p>
-                                                <a href="https://developer.microsoft.com/windows/games/publish">Publish</a>
+                                                <a href="https://developer.microsoft.com/games/support">Support</a>
                                             </p>
                                         </div>
                                     </div>

@@ -1,10 +1,10 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: Sensor orientation
 description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 05/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,12 +14,12 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Important APIs **
+**Important APIs**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-Sensor data from the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766), and [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
+Sensor data from the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766), and [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's reference frame and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
 
 ## Display orientation vs device orientation
 
@@ -45,7 +45,7 @@ Manufacturers produce both landscape-first and portrait-first devices. The refer
 |-------------|-----------------|----------------|
 | **Landscape** | ![Landscape-first device in Landscape orientation](images/sensor-orientation-0.PNG) | ![Portrait-first device in Landscape orientation](images/sensor-orientation-1.PNG) |
 | **Portrait** | ![Landscape-first device in Portrait orientation](images/sensor-orientation-2.PNG) | ![Portrait-first device in Portrait orientation](images/sensor-orientation-3.PNG) |
-| **LandscapeFlipped ** | ![Landscape-first device in LandscapeFlipped orientation](images/sensor-orientation-4.PNG) | ![Portrait-first device in LandscapeFlipped orientation](images/sensor-orientation-5.PNG) | 
+| **LandscapeFlipped** | ![Landscape-first device in LandscapeFlipped orientation](images/sensor-orientation-4.PNG) | ![Portrait-first device in LandscapeFlipped orientation](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/sensor-orientation-6.PNG)| ![Portrait-first device in PortraitFlipped orientation](images/sensor-orientation-7.PNG) |
 
 ## Devices broadcasting display and headless devices
@@ -160,10 +160,13 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
 ![Euler's formula](images/eulers-formula.png)
+
 To get the relative orientation you want, multiply the reference object against the absolute object. Note that this math is not commutative.
 
 ![Multiply the reference object against the absolute object](images/orientation-formula.png)
+
 In the preceding expression, the absolute object is returned by the sensor data.
+
 
 | Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|

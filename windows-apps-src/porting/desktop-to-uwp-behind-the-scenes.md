@@ -1,9 +1,9 @@
 ---
 author: normesta
-Description: This article provides a deeper dive on how the Desktop to UWP bridge works under the covers.
-title: Desktop to UWP Bridge Behind the Scenes
+Description: This article provides a deeper dive on how the Desktop Bridge works under the covers.
+title: Behind the scenes of the Desktop Bridge
 ms.author: normesta
-ms.date: 04/13/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,27 +11,27 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ---
 
-# Behind the scenes of the Desktop to UWP Bridge
+# Behind the scenes of the Desktop Bridge
 
-This article provides a deeper dive on how the Desktop to UWP Bridge works under the covers.
+This article provides a deeper dive on how the Desktop Bridge works under the covers.
 
-A key goal of the Desktop to UWP Bridge is to separate application state from system state as much as possible while maintaining compatibility with other apps. The bridge accomplishes this by placing the application inside a Universal Windows Platform (UWP) package, and then detecting and redirecting some changes  it makes to the file system and registry at runtime.
+A key goal of the Desktop Bridge is to separate application state from system state as much as possible while maintaining compatibility with other apps. The bridge accomplishes this by placing the application inside a Universal Windows Platform (UWP) package, and then detecting and redirecting some changes  it makes to the file system and registry at runtime.
 
-Converted app packages are desktop-only, full-trust applications and are not virtualized or sandboxed. This allows them to interact with other apps the same way classic desktop applications do.
+Packages that you create for your desktop app are desktop-only, full-trust applications and are not virtualized or sandboxed. This allows them to interact with other apps the same way classic desktop applications do.
 
 ## Installation
 
-App packages are installed under *C:\Program Files\WindowsApps\package_name*, with the executable titled *app_name.exe*. Each package folder contains a manifest (named AppxManifest.xml) that contains a special XML namespace for converted apps. Inside that manifest file is an ```<EntryPoint>``` element, which references the full-trust app. When that app is launched, it does not run inside an app container, but instead it runs as the user as it normally would.
+App packages are installed under *C:\Program Files\WindowsApps\package_name*, with the executable titled *app_name.exe*. Each package folder contains a manifest (named AppxManifest.xml) that contains a special XML namespace for packaged apps. Inside that manifest file is an ```<EntryPoint>``` element, which references the full-trust app. When that app is launched, it does not run inside an app container, but instead it runs as the user as it normally would.
 
 After deployment, package files are marked read-only and heavily locked down by the operating system. Windows prevents apps from launching if these files are tampered with.
 
 ## File system
 
-In order to contain app state, the bridge attempts to capture changes the app makes to AppData. All write to the user's AppData folder (e.g., *C:\Users\user_name\AppData*), including create, delete, and update, are copied on write to a private per-user, per-app location. This creates the illusion that the converted app is editing the real AppData when it is actually modifying a private copy. By redirecting writes this way, the system can track all file modifications made by the app. This allows the system to clean up those files when the app is uninstalled, thus reducing system "rot" and providing a better app removal experience for the user.
+In order to contain app state, the bridge attempts to capture changes the app makes to AppData. All write to the user's AppData folder (e.g., *C:\Users\user_name\AppData*), including create, delete, and update, are copied on write to a private per-user, per-app location. This creates the illusion that the packaged app is editing the real AppData when it is actually modifying a private copy. By redirecting writes this way, the system can track all file modifications made by the app. This allows the system to clean up those files when the app is uninstalled, thus reducing system "rot" and providing a better app removal experience for the user.
 
-In addition to redirecting AppData, the bridge also dynamically merges Windows' well-known folders (System32, Program Files (x86), etc) with corresponding directories in the app package. Each converted package contains a folder named "VFS" at its root. Any reads of directories or files in the VFS directory are merged at runtime with their respective native counterparts. For example, an app could contain *C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll* as part of its app package, but the file would appear to be installed at *C:\Windows\System32\vc10.dll*.  This maintains compatibility with desktop applications that may expect files to live in non-package locations.
+In addition to redirecting AppData, the bridge also dynamically merges Windows' well-known folders (System32, Program Files (x86), etc) with corresponding directories in the app package. Each package contains a folder named "VFS" at its root. Any reads of directories or files in the VFS directory are merged at runtime with their respective native counterparts. For example, an app could contain *C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll* as part of its app package, but the file would appear to be installed at *C:\Windows\System32\vc10.dll*.  This maintains compatibility with desktop applications that may expect files to live in non-package locations.
 
-Writes to files/folders in the converted app package are not allowed. Writes to files and folders that are not part of the package are ignored by the bridge and are allowed as long as the user has permission.
+Writes to files/folders in the app package are not allowed. Writes to files and folders that are not part of the package are ignored by the bridge and are allowed as long as the user has permission.
 
 ### Common operations
 
@@ -67,7 +67,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86, amd64
 
 ## Registry
 
-The bridge handles the registry similarly to the file system. Converted app packages contain a registry.dat file, which serves as the logical equivalent of *HKLM\Software* in the real registry. At runtime, this virtual registry merges the contents of this hive into the native system hive to provide a singular view of both. For example, if registry.dat contains a single key "Foo", then a read of *HKLM\Software* at runtime will also appear to contain "Foo" (in addition to all the native system keys).
+The bridge handles the registry similarly to the file system. App packages contain a registry.dat file, which serves as the logical equivalent of *HKLM\Software* in the real registry. At runtime, this virtual registry merges the contents of this hive into the native system hive to provide a singular view of both. For example, if registry.dat contains a single key "Foo", then a read of *HKLM\Software* at runtime will also appear to contain "Foo" (in addition to all the native system keys).
 
 Only keys under *HKLM\Software* are part of the package; keys under *HKCU* or other parts of the registry are not. Writes to keys or values in the package are not allowed. Writes to keys or values not part of the package are ignored by the bridge and allowed as long as the user has permission.
 

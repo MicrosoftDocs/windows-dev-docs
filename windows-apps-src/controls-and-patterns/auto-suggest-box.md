@@ -148,6 +148,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![Example of an auto suggest box with no search results](images/controls_autosuggest_noresults.png)
 
+<!--
 <div class="microsoft-internal-note">
 **Globalization and localization checklist**
 
@@ -160,6 +161,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 </tr>
 </table>
 </div>
+-->
 
 
 ## Related articles

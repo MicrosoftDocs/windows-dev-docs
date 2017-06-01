@@ -1,10 +1,10 @@
 ---
 author: normesta
-Description: Run the Desktop Converter App to convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
+Description: Run the Desktop Converter App to package a Windows desktop application (like Win32, WPF, and Windows Forms).
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge Desktop App Converter
+title: Package an app using the Desktop App Converter (Desktop Bridge)
 ms.author: normesta
-ms.date: 04/26/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ---
 
-# Convert an app using the Desktop App Converter (Desktop to UWP Bridge)
+# Package an app using the Desktop App Converter (Desktop Bridge)
 
 [Get the Desktop App Converter](https://aka.ms/converter)
 
@@ -22,7 +22,7 @@ You can use the Desktop App Converter (DAC) to bring your desktop apps to the Un
     ![DAC Icon](images/desktop-to-uwp/dac.png)
 </div>
 
-You can run your desktop installer through the converter in an unattended (silent) mode. When the conversion is complete, you'll get a Windows app package with a package identity and the ability to call a vast range of WinRT APIs.
+While the term "Converter" appears in the name of this tool, it doesn't actually convert your app. Your app remains unchanged. However, this tool generates a Windows app package with a package identity and the ability to call a vast range of WinRT APIs.
 
 You can install that package by using the Add-AppxPackage PowerShell cmdlet on your development machine.
 
@@ -31,7 +31,7 @@ The converter runs the desktop installer in an isolated Windows environment by u
 > [!NOTE]
 > Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/" target="_blank">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.
 
-## The DAC does more than just convert
+## The DAC does more than just generate a package for you
 
 Here's a few extra things it can do for you.
 
@@ -71,10 +71,10 @@ Validate your app against Desktop Bridge and Windows Store requirements.
 
 To find a complete list of options, see the [Parameters](#command-reference) section of this guide.
 
-If you're ready to convert, let's start.
+If you're ready to create your package, let's start.
 
 ## First, consider how you'll distribute your app
-If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to convert your app.
+If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
 ## Make sure that your system can run the converter
 
@@ -125,9 +125,9 @@ You can skip ahead to the next section if your app doesn't have an installer.
 
     When the base image is fully expanded, move to the next section.
 
-## Convert an app
+## Package an app
 
-To convert your app, run the ``DesktopAppConverter.exe`` command in the console window that opened when you started the Desktop App Converter.  
+To Package your app, run the ``DesktopAppConverter.exe`` command in the console window that opened when you started the Desktop App Converter.  
 
 You'll specify the package name, publisher and version number of the app by using parameters.
 
@@ -150,15 +150,15 @@ You can read about each one [here](#command-reference).
 
 ### Examples
 
-Here's a few common ways to convert your app.
+Here's a few common ways to package your app.
 
-* [Convert an app that has an installer (.msi) file](#installer-conversion)
-* [Convert an app that has a setup executable file](#setup-conversion)
-* [Convert an app that doesn't have an installer](#no-installer-conversion)
-* [Convert an app, sign the app, and prepare it for store submission](#optional-parameters)
+* [Package an app that has an installer (.msi) file](#installer-conversion)
+* Package an app that has a setup executable file](#setup-conversion)
+* [Package an app that doesn't have an installer](#no-installer-conversion)
+* [Package an app, sign the app, and prepare it for store submission](#optional-parameters)
 
 <span id="installer-conversion" />
-#### Convert an app that has an installer (.msi) file
+#### Package an app that has an installer (.msi) file
 
 Point to the installer file by using the ``Installer`` parameter.
 
@@ -174,7 +174,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-an-MSI-Installer-Kh1UU2WhD_7106218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <span id="setup-conversion" />
-#### Convert an app that has a setup executable file
+#### Package an app that has a setup executable file
 
 Point to the setup executable by using the ``Installer`` parameter.
 
@@ -189,7 +189,7 @@ The ``InstallerArguments`` parameter is an optional parameter. However, because 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-a-Setup-exe-Installer-amWit2WhD_5306218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <span id="no-installer-conversion" />
-#### Convert an app that doesn't have an installer
+#### Package an app that doesn't have an installer
 
 In this example, use the ``Installer`` parameter to point to the root folder of your app files.
 
@@ -204,7 +204,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <span id="optional-parameters" />
-#### Convert an app, sign the app, and run validation checks on the package
+#### Package an app, sign the app, and run validation checks on the package
 
 This example is similar to first one except it shows how you can sign your app for local testing, and then validate your app against Desktop Bridge and Windows Store requirements.
 
@@ -212,7 +212,7 @@ This example is similar to first one except it shows how you can sign your app f
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 
-The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the converted app](#run-app) section of this guide.
+The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the packaged app](#run-app) section of this guide.
 
 You can validate you app by using the ``Verify`` parameter.
 
@@ -289,17 +289,17 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-LogFile &lt;String&gt;  |Optional |Specifies a log file. If omitted, a log file temporary location will be created. |
 | -Sign [&lt;SwitchParameter&gt;] |Optional |Tells this script to sign the output Windows app package by using a generated certificate for testing purposes. This switch should be present alongside the switch ```-MakeAppx```. |
 |&lt;Common parameters&gt; |Required |This cmdlet supports the common parameters: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable*, and *OutVariable*. For more info, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
-| -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the converted app package against Desktop Bridge and Windows Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
-|-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you convert your app.
+| -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the app package against Desktop Bridge and Windows Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
+|-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you package your app.
 
 <span id="run-app" />
-## Run the converted app
+## Run the packaged app
 
 There's two ways to run your app.
 
 One way is to open a PowerShell command prompt, and then type this command: ```Add-AppxPackage –Register AppxManifest.xml```. It's probably the easiest way to run your app because you don't have to sign it.
 
-Another way is to sign your app with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you, and then sign your app with it. That file is named **auto-generated.cer**, and you can find it in the root folder of your converted app.
+Another way is to sign your app with a certificate. If you use the ```sign``` parameter, the Desktop App Converter will generate one for you, and then sign your app with it. That file is named **auto-generated.cer**, and you can find it in the root folder of your packaged app.
 
 Follow these steps to install the generated certificate, and then run your app.
 
@@ -315,7 +315,7 @@ Follow these steps to install the generated certificate, and then run your app.
 
    ![Trusted People Store](images/desktop-to-uwp/trusted-people-store.png)
 
-5. In root folder of your converted app, double click the Windows app package file.
+5. In root folder of your packaged app, double click the Windows app package file.
 
    ![Windows app package file](images/desktop-to-uwp/windows-app-package.png)
 
@@ -324,9 +324,9 @@ Follow these steps to install the generated certificate, and then run your app.
    ![Install button](images/desktop-to-uwp/install.png)
 
 
-## Modify the converted app
+## Modify the packaged app
 
-You'll likely make changes to your converted app to address bugs, add visual assets, or enhance your app with modern experiences such as live tiles.
+You'll likely make changes to your packaged app to address bugs, add visual assets, or enhance your app with modern experiences such as live tiles.
 
 After you make your changes, you don't need to run the converter again. You can repackage your app by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Generate a Windows app package](desktop-to-uwp-manual-conversion.md#make-appx).
 
@@ -339,7 +339,7 @@ After you make your changes, you don't need to run the converter again. You can 
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-The following two sections describe a couple of optional fix-ups to the converted app that you might consider.
+The following two sections describe a couple of optional fix-ups to the packaged app that you might consider.
 
 ### Delete unnecessary files and registry keys
 
@@ -396,7 +396,7 @@ This is a known limitation and no workaround currently exists. That said, Inbox 
 
 This can happen if the executables in your application have a capitalized **.EXE** extension. Although, the casing of this extension shouldn't affect whether your app runs, this can cause the DAC to generate this error.
 
-To resolve this issue, try specifying the **-AppExecutable** flag when you convert, and use the lower case ".exe" as the extension of your main executable (For example: MYAPP.exe).    Alternately you can change the casing for all executables in your app from lowercase to uppercase (For example: from .EXE to .exe).
+To resolve this issue, try specifying the **-AppExecutable** flag when you package, and use the lower case ".exe" as the extension of your main executable (For example: MYAPP.exe).    Alternately you can change the casing for all executables in your app from lowercase to uppercase (For example: from .EXE to .exe).
 
 
 ### Telemetry from Desktop App Converter
@@ -419,11 +419,11 @@ The Desktop App Converter does not support Unicode; thus, no Chinese characters 
 
 **Run your app / find and fix issues**
 
-See [Debug a Windows Desktop Bridge App](desktop-to-uwp-debug.md)
+See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
 
 **Distribute your app**
 
-See [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md)
+See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
 
 **Find answers to specific questions**
 

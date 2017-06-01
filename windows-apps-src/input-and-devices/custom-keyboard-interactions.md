@@ -5,7 +5,7 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ---
-#Custom keyboard interactions
+# Custom keyboard interactions
 
 Provide comprehensive and consistent keyboard interaction experiences in
 your UWP apps and custom controls for both keyboard power users and
@@ -17,7 +17,7 @@ experience is important for supporting accessibility tools such as
 Windows Narrator, using software keyboards such as the touch keyboard
 and the On-Screen Keyboard (OSK).
 
-##Providing 2D directional inner navigation <a name="xyfocuskeyboardnavigation">
+## Providing 2D directional inner navigation <a name="xyfocuskeyboardnavigation">
 
 Use the
 **XYFocusKeyboardNavigation** property to support 2D directional inner
@@ -234,7 +234,7 @@ that support complex arrow key navigation across region boundaries.
 </StackPanel>
 ```
 
-##Set the tab navigation behavior <a name="tab-navigation">
+## Set the tab navigation behavior <a name="tab-navigation">
 
 The
 UIElement.[TabFocusNavigation](http://msdn.microsoft.com/en-us/library/windows/apps/xaml/Windows.UI.Xaml.Controls.Control.TabNavigation)

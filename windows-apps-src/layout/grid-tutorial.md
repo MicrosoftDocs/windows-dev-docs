@@ -47,7 +47,7 @@ To start creating a layout, open **MainPage.xaml** by using the **Solution Explo
 </Grid>
 ```
 
-The new **Grid** creates a set of two rows and columns, which defines the layout of the app interface. The first column has a **Width** of "3\*", while the second has "5\*", dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a **Height** of "3\*" and "\*" respectively, so the **Grid** allocates three times as much space for the first row as for the second ("\*" is the same as "1\*"). These ratios are maintained even if the window is resized or the device is changed.
+The new **Grid** creates a set of two rows and columns, which defines the layout of the app interface. The first column has a **Width** of "3\*", while the second has "5\*", dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a **Height** of "2\*" and "\*" respectively, so the **Grid** allocates two times as much space for the first row as for the second ("\*" is the same as "1\*"). These ratios are maintained even if the window is resized or the device is changed.
 
 To learn about other methods of sizing rows and columns, see [Define layouts with XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 

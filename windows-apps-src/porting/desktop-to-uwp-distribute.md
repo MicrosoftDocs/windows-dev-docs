@@ -1,10 +1,10 @@
 ---
 author: normesta
-Description: Distribute your UWP app converted with the Desktop to UWP Bridge
+Description: Distribute a packaged desktop app (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge Distribute
+title: Publish your packaged desktop app to a Windows store or sideload it onto one or more devices.
 ms.author: normesta
-ms.date: 04/21/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,12 +12,12 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ---
 
-# Distribute a Windows Desktop Bridge app
+# Distribute a packaged desktop app (Desktop Bridge)
 
-Publish your desktop bridge app to a Windows store or sideload it onto one or more devices.  
+Publish your packaged desktop app to a Windows store or sideload it onto one or more devices.  
 
 > [!NOTE]
-> Do you have a plan for how you might transition users to your converted app? Before you distribute your app, see the [Transition users to your desktop bridge app](#transition-users) section of this guide to get some ideas.
+> Do you have a plan for how you might transition users to your packaged app? Before you distribute your app, see the [Transition users to your desktop bridge app](#transition-users) section of this guide to get some ideas.
 
 ## Distribute your app by publishing it to the Windows Store
 
@@ -65,7 +65,7 @@ To sideload your app onto other devices, see [Sideload LOB apps in Windows 10](h
 Before you distribute your app, consider adding a few extensions to your package manifest to help users get into the habit of using your desktop bridge app. Here's a few things you can do.
 
 * Point existing Start tiles and taskbar buttons to your desktop bridge app.
-* Associate your converted app with a set of file types.
+* Associate your packaged app with a set of file types.
 * Make your desktop bridge app open certain types of files by default.
 
 For the complete list of extensions and the guidance for how to use them, see [Transition users to your app](desktop-to-uwp-extensions.md#transition-users-to-your-app).
@@ -135,7 +135,7 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, condiser uninstalling the "
+        String uninstallMessage = "To have the best experience, consider uninstalling the "
             +" previous version of this app. Would you like to do that now?";
 
         DialogResult uninstallResult = MessageBox.Show

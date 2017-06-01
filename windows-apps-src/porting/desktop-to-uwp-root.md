@@ -1,10 +1,10 @@
 ---
 author: normesta
-Description: Get started with the Desktop to UWP Bridge and convert your Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
+Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monitization.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to Universal Windows Platform (UWP) Bridge
+title: Desktop Bridge
 ms.author: normesta
-ms.date: 03/30/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,24 +12,25 @@ keywords: windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ---
 
-# Desktop to Universal Windows Platform (UWP) Bridge
+# Desktop Bridge
 
-Get started with the Desktop to UWP Bridge and convert your Windows desktop application to a Universal Windows Platform (UWP) app.
+Take your existing desktop app and add modern experiences for Windows 10 users. Then, achieve greater reach across international markets by distributing it through the Windows Store. You can monetize your app in much simpler ways by leveraging features built right into the store. Of course, you don't have to use the store. Feel free to use your existing channels.
 <div style="float: left; padding: 10px">
     ![desktop to UWP bridge image](images/desktop-to-uwp/desktop-bridge-4.png)
 </div>
-The Desktop Bridge is a set of technologies that help you to convert your Windows desktop application (for example, Win32, Windows Forms, or WPF) or game to a UWP app or game. A converted app is packaged, serviced, and deployed in the form of a UWP app package (an .appx or an .appxbundle) that targets Windows 10 Desktop.
+The Desktop to UWP bridge is the infrastructure that we’ve built into the platform that lets you distribute your Windows Forms, WPF, or Win32 desktop app or game efficiently by using a modern Windows App package.
 
-There are two parts to this technology. The first part is the conversion process that takes your existing binaries and repackages them as a UWP package. Your code is still the same, it's just packaged differently.
+This package gives your app an identity and with that identity, your desktop app has access to Windows Universal Platform (UWP) APIs. You can use them to light up modern and engaging experiences such as live tiles and notifications.  Use simple conditional compilation and runtime checks to run UWP code only when your app runs on Windows 10.
 
-The second part comprises runtime technologies in the Windows Anniversary update that enable a UWP package to have executables that run as full trust instead of in an app container. This technology also gives a converted app a package identity. Your app will need that identity to use some UWP APIs.
+Aside from the code that you use to light up Windows 10 experiences, your app remains unchanged and you can continue to distribute it to your existing Windows 7, Windows Vista, or Windows XP user base. On Windows 10, your app continues to run in full-trust user mode just like it’s doing today.
+
 
 > [!NOTE]
 > Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/" target="_blank">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through the entire process of bringing your desktop app to the Universal Windows Platform (UWP).
 
 ## Benefits
 
-Here are some reasons to convert your Windows desktop application:
+Here are some reasons to create a Windows App package for your desktop application:
 
 **Streamlined deployment**. Apps and games that use the bridge have a great deployment experience. This experience ensures that users can confidently install an app and update it. If a user chooses to uninstall the app, it's removed completely with no trace left behind. This reduces time authoring setup experiences and keeping users up-to-date.
 
@@ -47,16 +48,16 @@ To view a more complete list of benefits, see [Desktop Bridge](https://developer
 
 Do you plan to publish your app to the [Windows app store](https://www.microsoft.com/store/apps). If so, start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to create Windows app package.
 
-Next, review the article [Prepare your app for the Desktop to UWP Bridge](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you convert it. You might not have to make many changes to your app before you convert it. However, there are a some situations that might require you to tweak your app before you convert it.
+Next, review the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you create a Windows app package for it. You might not have to make many changes to your app before you create the package. However, there are a some situations that might require you to tweak your app before you create a package for it.
 
 <span id="convert" />
-## Convert
+## Create a Windows app package
 
-Here are some tools that you can use to convert your app to a desktop bridge app.
+Here are some tools that you can use to create a Windows app package for your app.
 
 ### Desktop App Converter
 
-This tool automatically converts your app for you. This tool can be very convenient in cases where your app makes lots of system modifications, or if you have any uncertainty about what your installer does.
+While the term "Converter" appears in the name of this tool, it doesn't actually convert your app. Your app remains unchanged. However, this tool generates a Windows app package for you. It can be very convenient in cases where your app makes lots of system modifications, or if you have any uncertainty about what your installer does.
 
 The Desktop App Converter also does a few extra things for you. Here's a few of them.
 
@@ -70,37 +71,37 @@ The Desktop App Converter also does a few extra things for you. Here's a few of 
 
 * Validate your app against Desktop Bridge and Windows Store requirements.
 
-See [Convert an app using the Desktop App Converter (Desktop to UWP Bridge)](desktop-to-uwp-run-desktop-app-converter.md)
+See [Package an app using the Desktop App Converter (Desktop to UWP Bridge)](desktop-to-uwp-run-desktop-app-converter.md)
 
-### Manual conversion
+### Manual packaging
 
 If you like granular control over your conversion, you can create a manifest file, and then run the **MakeAppx.exe** tool to create your Windows app package.
 
-This approach might make sense if you're familiar with the changes that your installer makes to the system, or if you don't have an installer and the way that you install your app is by physically copying files to a folder location or by using commands like **xcopy**. Although don't let the absense of an installer move you to manually convert your app. You can use the Desktop App Converter to convert your app even if you don't have an installer.
+This approach might make sense if you're familiar with the changes that your installer makes to the system, or if you don't have an installer and the way that you install your app is by physically copying files to a folder location or by using commands like **xcopy**. Although don't let the absence of an installer move you to manually package your app. You can use the Desktop App Converter to package your app even if you don't have an installer.
 
-See [Convert an app manually (Desktop to UWP Bridge)](desktop-to-uwp-manual-conversion.md).
+See [Package an app manually (Desktop to UWP Bridge)](desktop-to-uwp-manual-conversion.md).
 
 ### Visual Studio
 
-This option is similar to the manual option described above except Visual Studio does a few things for you such as generate an app package and the visual assets for your app. Think of Visual Studio as a tool that you can use to manually convert your app along with a few extra conveniences.
+This option is similar to the manual option described above except Visual Studio does a few things for you such as generate an app package and the visual assets for your app. Think of Visual Studio as a tool that you can use to manually package your app along with a few extra conveniences.
 
 See [Package a .NET app by using Visual Studio (Desktop to UWP Bridge)](desktop-to-uwp-packaging-dot-net.md)
 
 ### Third-party installer
 
- Several popular third-party products and installers now support the Desktop to UWP Bridge. You can use them to generate MSI installers or converted app packages with only a few clicks. While we don't produce documentation on how to use these tools, visit their websites to learn more.
+ Several popular third-party products and installers now support the Desktop to UWP Bridge. You can use them to generate MSI installers or app packages with only a few clicks. While we don't produce documentation on how to use these tools, visit their websites to learn more.
 
  Here's a few options:
 
  #### Advanced Installer
 
- Caphyon, a reliable Microsoft partner for many years, provides innovative solutions that help developers convert their Win32/.NET applications to UWP by extending the Desktop Bridge support from Microsoft.
+ Caphyon, a reliable Microsoft partner for many years, provides innovative solutions that help developers package their Win32/.NET applications by extending the Desktop Bridge support from Microsoft.
  <div style="float: left; padding: 10px; width: 20%">
      ![desktop to UWP bridge image](images/desktop-to-uwp/Advanced_Installer_Vertical.png)
  </div>
- They provide a free, GUI-based, desktop app converter that helps you to generate a Windows app package for your application with only a few clicks. It converts any installer; even ones that run in silent mode, and performs a validation check to determine whether the app is suitable for conversion.
+ They provide a free, GUI-based, desktop app packaging tool that helps you to generate a Windows app package for your application with only a few clicks. It can use any installer; even ones that run in silent mode, and performs a validation check to determine whether the app is suitable for packaging.
 
- The desktop app converter also integrates with Hyper-V and [VMware](http://www.vmware.com/). This means that you can use your own virtual machines, without having to download a matching [Docker](https://docs.docker.com/) image that can be over 3GB in size.
+ The Desktop App Converter also integrates with Hyper-V and [VMware](http://www.vmware.com/). This means that you can use your own virtual machines, without having to download a matching [Docker](https://docs.docker.com/) image that can be over 3GB in size.
 
  You can use [Advanced Installer](http://www.advancedinstaller.com/) to generate MSI and [Windows app packages](http://www.advancedinstaller.com/uwp-app-package.html) from existing projects. You can also use Advanced installer to import Windows app packages that you generate by using the Microsoft Desktop App Converter. Once imported, you can maintain them by using visual tools that are specifically designed for UWP apps.
 
@@ -119,13 +120,13 @@ See [Package a .NET app by using Visual Studio (Desktop to UWP Bridge)](desktop-
 
 ## Enhance
 
-Once you've converted your apps to desktop bridge apps, you can light them up with features such as live tiles, and push notifications. Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add. Some enhancements require a bit more code. In all, you'll have access to a wide range of UWP APIs. for a complete list, see [UWP APIs available to Window Desktop Bridge apps](desktop-to-uwp-supported-api.md).
+Once you've packaged your apps, you can light them up with features such as live tiles, and push notifications. Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add. Some enhancements require a bit more code. In all, you'll have access to a wide range of UWP APIs. for a complete list, see [UWP APIs available to Window Desktop Bridge apps](desktop-to-uwp-supported-api.md).
 
 Check out these samples to get ideas.
 * [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 * [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples)
 
-If your app needs to integrate with the system (For example: establish firewall rules), you can do alot of things without having write any code at all. You'll just add some XML to your app package. You can use XML to do things like start a process when the user logs on, integrate your app into File Explorer, and add your app a list of print targets that appear in other apps.
+If your app needs to integrate with the system (For example: establish firewall rules), you can do a lot of things without having write any code at all. You'll just add some XML to your app package. You can use XML to do things like start a process when the user logs on, integrate your app into File Explorer, and add your app a list of print targets that appear in other apps.
 
 See [Integrate your app with Windows 10 (Windows Desktop Bridge)](desktop-to-uwp-extensions.md).
 
@@ -135,7 +136,7 @@ Using the bridge, you can gradually migrate your older code to UWP while still r
 
 ## Debug
 
-You can debug your app by using Visual Studio. See [Debug apps converted with the Desktop Bridge](desktop-to-uwp-debug.md).
+You can debug your app by using Visual Studio. See [Debug a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md).
 
 If you're interested in the internals of how the Desktop Bridge works under the covers, see [Behind the scenes of the Desktop Bridge](desktop-to-uwp-behind-the-scenes.md).
 
@@ -143,7 +144,7 @@ If you're interested in the internals of how the Desktop Bridge works under the 
 
 To give your app the best chance of being published on the Windows Store or becoming [Windows Certified](http://go.microsoft.com/fwlink/p/?LinkID=309666), validate and test it locally before you submit it for certification.
 
-If you're using the DAC to convert your app, you can use the new ``-Verify`` flag to validate your package against the Desktop Bridge and Store requirements. See [Convert an app, sign the app, and prepare it for store submission](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
+If you're using the DAC to package your app, you can use the new ``-Verify`` flag to validate your package against the Desktop Bridge and Store requirements. See [Package an app, sign the app, and prepare it for store submission](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
 
 If you're using Visual Studio, you can validate your app from the **Create App Packages** wizard. See [Create an app package](../packaging/packaging-uwp-apps.md#create-an-app-package).
 
@@ -155,7 +156,7 @@ To review the list of tests that the Windows App Certification uses to validate 
 
 You can distribute your app by publishing it to one of our Windows Stores or by sideloading it onto other systems.
 
-See [Distribute apps converted with the Desktop Bridge](desktop-to-uwp-distribute.md).
+See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md).
 
 ## Support and feedback
 
@@ -175,14 +176,14 @@ Use the comments section below.
 
 | Topic | Description |
 |-------|-------------|
-| [Prepare to convert an app](desktop-to-uwp-prepare.md) | Provides a list of items to review before you convert your app. |
-| [Convert an app using the Desktop App Converter ](desktop-to-uwp-run-desktop-app-converter.md) | Shows how to run Desktop App Converter. |
-| [Convert an app manually ](desktop-to-uwp-manual-conversion.md) | Learn how to create an app package and manifest to by hand. |
-|[Package a .NET app by using Visual Studio (Desktop to UWP Bridge](desktop-to-uwp-packaging-dot-net.md)| Shows you how to convert your app by using Visual Studio |.
-| [Integrate your app with Windows 10 (Windows Desktop Bridge)](desktop-to-uwp-extensions.md) | Enhance your converted app with extensions to enable features like startup tasks and File Explorer integration. |
-| [UWP APIs available to Window Desktop Bridge apps](desktop-to-uwp-supported-api.md) | See what UWP APIs are available for your converted desktop app to use. |
-| [Debug a Windows Desktop Bridge app](desktop-to-uwp-debug.md) | Explains options for debugging your converted app. |
-| [Distribute a Windows Desktop Bridge app](desktop-to-uwp-distribute.md) | See how you can distribute your converted app to users.  |
-| [Behind the scenes of the Desktop to UWP Bridge](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop to UWP Bridge works under the covers. |
-| [Known Issues (Desktop to UWP Bridge)](desktop-to-uwp-known-issues.md) | Lists known issues with the Desktop to UWP Bridge. |
-| [Desktop to UWP Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Code samples on GitHub demonstrating features of converted apps. |
+| [Prepare to package an app](desktop-to-uwp-prepare.md) | Provides a list of items to review before you package your desktop app. |
+| [Package an app using the Desktop App Converter (Desktop Bridge)](desktop-to-uwp-run-desktop-app-converter.md) | Shows how to run Desktop App Converter. |
+| [Package an app manually (Desktop Bridge)](desktop-to-uwp-manual-conversion.md) | Learn how to create an app package and manifest to by hand. |
+|[Package a .NET app using Visual Studio (Desktop Bridge)](desktop-to-uwp-packaging-dot-net.md)| Shows you how to package your desktop app by using Visual Studio |.
+| [Integrate your app with Windows 10 (Desktop Bridge)](desktop-to-uwp-extensions.md) | Enhance your packaged desktop app with extensions to enable features like startup tasks and File Explorer integration. |
+| [UWP APIs available to a packaged desktop app (Desktop Bridge)](desktop-to-uwp-supported-api.md) | See what UWP APIs are available for your packaged desktop app to use. |
+| [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md) | Explains options for debugging your packaged app. |
+| [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md) | See how you can distribute your converted app to users.  |
+| [Behind the scenes of the Desktop Bridge (Desktop Bridge)](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop to UWP Bridge works under the covers. |
+| [Known Issues (Desktop Bridge)](desktop-to-uwp-known-issues.md) | Lists known issues with the Desktop to UWP Bridge. |
+| [Desktop Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Code samples on GitHub demonstrating features of converted apps. |

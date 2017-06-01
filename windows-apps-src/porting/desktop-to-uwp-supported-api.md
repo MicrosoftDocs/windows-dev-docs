@@ -1,54 +1,54 @@
 ---
 author: normesta
-Description: This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP).
+Description: Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop to UWP Bridge Supported UWP APIs
+title: UWP APIs available to a packaged desktop app (Desktop Bridge)
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ---
-# UWP APIs available to Window Desktop Bridge apps
+# UWP APIs available to a packaged desktop app (Desktop Bridge)
 
-Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your converted app can use.
+Packaged desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the available classes your packaged app can use.
 
-Most UWP APIs work well on converted desktop apps. However, some feature areas are not yet fully tested or currently functioning as intended.
+Most UWP APIs work well on packaged desktop apps. However, some feature areas are not yet fully tested or currently functioning as intended.
 
 <table><tr><th>Feature area</th><th>Details</th><tr>
-<tr><td>Appointments, contacts, and emails</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Authentication and user identity</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Background tasks</td><td>While converted apps can register background tasks, only fully UWP apps can run *as* a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
-<tr><td>Bluetooth</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Chat and phone calls</td><td>Converted apps cannot run on mobile until they are fully ported to UWP.</td></tr>
+<tr><td>Appointments, contacts, and emails</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Authentication and user identity</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Background tasks</td><td>While packaged apps can register background tasks, only fully UWP apps can run *as* a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
+<tr><td>Bluetooth</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Chat and phone calls</td><td>Packaged apps cannot run on mobile until they are fully ported to UWP.</td></tr>
 <tr><td>Contract activation</td><td>Only full UWP apps can be activated by by a contract.</td></tr>
-<tr><td>Cryptography</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Geolocation</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>File and folder pickers</td><td>Converted apps have full file system access and do not need UWP pickers.</td></tr>
-<tr><td>Media</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Point of service</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Smart cards</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>PlayReady</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>VPN</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Wallet</td><td>Converted apps cannot run on mobile until they are fully ported to UWP.</td></tr>
+<tr><td>Cryptography</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Geolocation</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>File and folder pickers</td><td>Packaged apps have full file system access and do not need UWP pickers.</td></tr>
+<tr><td>Media</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Point of service</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Smart cards</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>PlayReady</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>VPN</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
+<tr><td>Wallet</td><td>Packaged apps cannot run on mobile until they are fully ported to UWP.</td></tr>
 <tr><td>XAML UI</td><td>You cannot add XAML UI to a Win32 app process.</td></tr>
 </table>
 
 
 Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become available in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead.
 
-Some UWP APIs available to full desktop applications are not supported for converted apps. If your desktop application used UWP APIs before conversion, you should verify those APIs are still supported. For more information, see [Windows Runtime APIs for desktop apps](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
+Some UWP APIs available to full desktop applications are not supported for packaged apps. If your desktop application used UWP APIs before conversion, you should verify those APIs are still supported. For more information, see [Windows Runtime APIs for desktop apps](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
 
 ## List of APIs
 
-The following is a full list of UWP APIs supported in converted apps. You can view [APIs newly supported in converted apps](#new) or [APIs supported in both converted apps and desktop applications](#both).
+The following is a full list of UWP APIs supported in packaged apps. You can view [APIs newly supported in packaged apps](#new) or [APIs supported in both packaged apps and desktop applications](#both).
 
-For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
+For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <span id="new" />
-### APIs supported in newly converted apps
+### APIs supported in newly packaged apps
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -373,7 +373,7 @@ For examples on how to use WinRT APIs, see the [Desktop app bridge to UWP Sample
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### APIs supported in both converted apps and desktop applications
+### APIs supported in both packaged apps and desktop applications
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)

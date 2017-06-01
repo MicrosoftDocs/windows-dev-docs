@@ -36,7 +36,7 @@ Many of the guidelines and recommendations discussed here, including [focus visu
 
 **NOTE**  While, both hardware and software keyboards are used for text input, the focus of this topic is navigation and interaction.
 
-##Built-in support
+## Built-in support
 
 Along with the mouse, the keyboard is the most widely used peripheral on PCs and, as such, is a fundamental part of the PC experience. PC users expect a comprehensive and consistent experience from both the system and individual apps in response to keyboard input.
 
@@ -46,7 +46,7 @@ All UWP controls include built-in support for rich keyboard experiences and user
 
 ***UWP supports keyboard with any device***
 
-##Basic experiences
+## Basic experiences
 ![Focus based devices](images/keyboard/focus-based-devices.jpg)
 
 As mentioned previously, input devices such as the Xbox gamepad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding. This common experience across input types and tools minimizes additional work from you and contributes to the "build once, run anywhere" goal of the Universal Windows Platform.
@@ -289,7 +289,7 @@ The following table is a small sample of frequently used keyboard commands. For 
 | Close tab                            | Ctrl+F4 or Ctrl+W                                |
 | Semantic zoom                        | Ctrl++ or Ctrl+-                                 |
 
-##Advanced experiences
+## Advanced experiences
 
 In this section, we discuss some of the more complex keyboard interaction experiences supported by UWP apps, along with some of the behaviors you should be aware of when your app is used on different devices and with different tools.
 
@@ -481,7 +481,7 @@ last item in the previous column.
   </tr>
 </table>
 
-####Popup UI <a name="popup-ui">
+#### Popup UI <a name="popup-ui">
 
 As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your app’s UI.
 
@@ -497,7 +497,7 @@ item is selected and the Up arrow key is pressed, focus moves to the last item o
 
 You should try to emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Managing focus navigation](managing-focus-navigation.md#popup-ui-code-sample) documentation.
 
-##Test your app
+## Test your app
 
 Test your app with all supported input devices to ensure UI elements can be navigated to in a coherent and intuitive way and that no unexpected elements interfere with the desired tab order.
 
@@ -507,7 +507,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 * [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-##Appendix
+## Appendix
 
 ### Software keyboard <a name="touch-keyboard">
 
@@ -570,7 +570,7 @@ Successful keyboard interactions enable users to accomplish basic app scenarios 
 
 **NOTE**  The touch keyboard does not support toggle and most system commands.
 
-####On-Screen Keyboard <a name="osk">
+#### On-Screen Keyboard <a name="osk">
 Like software keyboard, the On-Screen Keyboard is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The On-Screen Keyboard is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The On-Screen Keyboard emulates most, if not all, the functionality of a hardware keyboard.
 
 The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; Ease of access.
