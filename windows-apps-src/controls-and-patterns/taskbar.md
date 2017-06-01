@@ -14,12 +14,12 @@ keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary til
 # Taskbar APIs
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-**PRERELEASE FEATURE**: These features are only available in the Insider **Fall Creators Update**.
-
 You can programmatically pin your own app to the taskbar, just like you can [pin yourself to Start](tiles-and-notifications-primary-tile-apis.md). And you can check if it's currently pinned.
 
 > [!IMPORTANT]
-> **PRERELEASE | Requires Fall Creators Update**: You must target Insider SDK 16211 and be running [Insider build 16211](https://blogs.windows.com/windowsexperience/2017/05/17/announcing-windows-10-insider-preview-build-16199-pc-build-15215-mobile/#bDqf2Ah3Gd7FM66g.97) or higher to use the taskbar APIs.
+> **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16211](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16211](https://blogs.windows.com/windowsexperience/2017/05/17/announcing-windows-10-insider-preview-build-16199-pc-build-15215-mobile/#bDqf2Ah3Gd7FM66g.97) or higher to use the taskbar APIs.
+
+![Taskbar](images/taskbar/taskbar.png)
 
 At its core, the APIs let you...
 
@@ -57,7 +57,7 @@ else
 ```
 
 
-## Check if Taskbar is supported
+## Check if taskbar is supported
 
 Depending on the system you're running on, the taskbar may or may not be present. Currently, taskbar is only present on the Desktop device family. Therefore, before making any calls to the API, you should check IsSupported.
 
@@ -70,7 +70,7 @@ bool isSupported = TaskbarManager.GetDefault().IsSupported;
 ```
 
 
-## Check if Taskbar allows pinning
+## Check if taskbar allows pinning
 
 Depending on the current taskbar (or lack thereof), pinning your app might not be supported. Therefore, before showing any pin UI or executing any pin code, you first need to check if pinning to the taskbar is supported. If it's not supported, don't prompt the user to pin the app.
 
@@ -98,6 +98,8 @@ If the user clicks your button to pin the app, you would then call the *RequestP
 
 > [!IMPORTANT]
 > This must be called from a foreground UI thread, otherwise an exception will be thrown.
+
+![Pin dialog](images/taskbar/pin-dialog.png)
 
 This will return a boolean representing whether your app is now pinned to the taskbar. If your app was already pinned, this will immediately return true without showing the dialog to the user. If the user clicks no on the dialog, or pinning your app to the taskbar isn't allowed, this will return false. Otherwise, the user clicked yes and the app was pinned, and the API will return true.
 
