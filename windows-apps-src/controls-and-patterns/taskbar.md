@@ -99,14 +99,14 @@ If the user clicks your button to pin the app, you would then call the *RequestP
 > [!IMPORTANT]
 > This must be called from a foreground UI thread, otherwise an exception will be thrown.
 
-![Pin dialog](images/taskbar/pin-dialog.png)
-
-This will return a boolean representing whether your app is now pinned to the taskbar. If your app was already pinned, this will immediately return true without showing the dialog to the user. If the user clicks no on the dialog, or pinning your app to the taskbar isn't allowed, this will return false. Otherwise, the user clicked yes and the app was pinned, and the API will return true.
-
 ```csharp
 // Request to be pinned to the taskbar
 bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 ```
+
+![Pin dialog](images/taskbar/pin-dialog.png)
+
+This will return a boolean representing whether your app is now pinned to the taskbar. If your app was already pinned, this will immediately return true without showing the dialog to the user. If the user clicks no on the dialog, or pinning your app to the taskbar isn't allowed, this will return false. Otherwise, the user clicked yes and the app was pinned, and the API will return true.
 
 
 ## Resources
