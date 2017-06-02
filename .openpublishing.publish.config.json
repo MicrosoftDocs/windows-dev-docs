@@ -69,4 +69,5 @@
       "branch": "master"
     }    
   ]
+    "resolve_user_profile_using_github": true
 }
