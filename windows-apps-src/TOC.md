@@ -720,6 +720,7 @@
 ##### [Supported markets](monetize/supported-markets-for-microsoft-advertising.md)
 #### [Developer walkthroughs](monetize/developer-walkthroughs.md)
 ##### [Interstitial ads](monetize/interstitial-ads.md)
+##### [Native ads](monetize/native-ads.md)
 ##### [AdControl in XAML and .NET](monetize/adcontrol-in-xaml-and--net.md)
 ##### [AdControl in HTML 5 and JavaScript](monetize/adcontrol-in-html-5-and-javascript.md)
 ##### [AdControl in Windows Phone Silverlight](monetize/adcontrol-in-windows-phone-silverlight.md)

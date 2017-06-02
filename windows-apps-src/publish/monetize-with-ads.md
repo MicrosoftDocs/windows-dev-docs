@@ -4,7 +4,7 @@ Description: If your app uses ad mediation or displays banner or interstitial ad
 title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 05/02/2017
+ms.date: 06/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,6 +26,7 @@ This page enables you to perform the following tasks:
 * Opt in to showing Microsoft affiliate ads in your app.
 * Enter COPPA compliance information for your app.
 
+<span id="create-ad-unit" />
 ## Create ad units
 
 Use this section to create an ad unit. You must create ad units for the following scenarios:
@@ -36,7 +37,7 @@ Use this section to create an ad unit. You must create ad units for the followin
 To create an ad unit for these scenarios:
 
 1.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
-2.  In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control. The available options are: **Banner**, **Banner insterstitial**, and **Video interstitial**.
+2.  In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control. The available options are: **Banner**, **Banner insterstitial**, **Video interstitial**, and **Native**.
 3.  In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used. The available options are: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.
 4.  Click **Create ad unit**.
 
@@ -45,6 +46,7 @@ The new ad unit appears at the top of the list in the **Available ad units** sec
 > [!NOTE]
 > If your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** to show banner ads, you do not need to request ad units here. In this scenario, the ad units are automatically generated for you.
 
+<span id="available-ad-units" />
 ## Available ad units
 
 Your ad units appear in a table at the bottom of this section. For each ad unit you will see an **Application ID** and an **Ad unit ID**. To show ads in your app, you'll need to use these values in your code:
@@ -70,7 +72,7 @@ To configure ad mediation settings for an **AdControl** or **InterstitialAd** co
 
 3. In the **Ad unit** drop-down, select the name of the UWP ad unit that is associated with the control.
     > [!NOTE]
-    > When you enable ad mediation for an **AdControl** or **InterstitialAd** control in your UWP app, you do not need to obtain an ad unit from third-party ad networks. Our ad mediation service automatically creates any necessary third-party ad units. 
+    > When you enable ad mediation for an **AdControl** or **InterstitialAd** control in your UWP app, you do not need to obtain an ad unit from third-party ad networks. Our ad mediation service automatically creates any necessary third-party ad units.
 
 4. By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. We recommend that you use this option. Otherwise, if you want to choose your own ad mediation settings, clear this check box.
     > [!NOTE]

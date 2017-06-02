@@ -113,7 +113,7 @@ The following example shows the complete index.html for a simple UWP app.
 ## Release your app with live ads using Windows Dev Center
 
 
-1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone ad unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create an ad unit](../publish/monetize-with-ads.md#create-ad-unit). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
 2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the **Ad mediation** section on the **Monetize with ads** page for your app in the dashboard. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
 

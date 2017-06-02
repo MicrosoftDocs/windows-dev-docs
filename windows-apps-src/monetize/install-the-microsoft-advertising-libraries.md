@@ -15,8 +15,8 @@ keywords: windows 10, uwp, ads, advertising, install, SDK, advertising library
 
 To display ads in your Windows apps, install one of the following SDKs:
 
-* For UWP apps for Windows 10: Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
-* For XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x: Install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
+* For UWP apps for Windows 10, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
+* For apps for Windows 8.1 and Windows Phone 8.x, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
 
 > [!NOTE]
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
@@ -26,9 +26,9 @@ To display ads in your Windows apps, install one of the following SDKs:
 
 To install the Microsoft Advertising SDK via the MSI installer:
 
-1.  Close all instances of Visual Studio. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+1.  Close all instances of Visual Studio.
 
-2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
+2. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now. Optionally, open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
   ```
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
@@ -41,23 +41,23 @@ To install the Microsoft Advertising SDK via the MSI installer:
 
 5.  If you have an existing project that references advertising libraries from any earlier version of the Microsoft Advertising SDK, Universal Ad Client SDK, or Microsoft Store Engagement and Monetization SDK, we recommend that you open your project in Visual Studio and clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).
 
-  Otherwise, if you are using the Microsoft Advertising SDK for the first time in your project, you are now ready to [add a reference to the advertising library](#reference).
+  Otherwise, if you are using the Microsoft Advertising SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
 <span id="install-nuget" />
 ## Install via NuGet (UWP only)
 
-To install the advertising library in a specific UWP project via NuGet:
+To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
-1.  Close all instances of Visual Studio 2015 (or a later release). If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+1.  Close all instances of Visual Studio 2015 (or a later release).
 
-2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
+2.  If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now. Optionally, open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
   ```
   MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
   MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  Start Visual Studio and open the project in which you want to use the advertising library.
+3.  Start Visual Studio and open the project in which you want to use the Microsoft Advertising SDK.
     > [!NOTE]
     > If your project already includes library references from an earlier MSI installation of the SDK, remove these references from your project. These references will have warning icons next to them because the libraries they reference were removed in the previous steps.
 
@@ -71,16 +71,16 @@ To install the advertising library in a specific UWP project via NuGet:
 
 7.  If your project already references libraries from an earlier version of the Microsoft Advertising SDK that was installed via NuGet and you have updated your project to a newer release of the SDK, we recommend that you clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).
 
-  Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add a reference to the advertising library](#reference).
+  Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
 <span id="reference" />
-## Add a reference to the advertising library
+## Add a reference to the Microsoft Advertising SDK
 
-After you install the Microsoft Advertising SDK, follow these instructions to reference the advertising library in your project so you can use the advertising APIs.
+After you install the Microsoft Advertising SDK, follow these instructions to reference the SDK in your project so you can use the advertising APIs.
 
 1. Open your project in Visual Studio.
     > [!NOTE]
-    > If your project targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**). If your project targets **Any CPU**, you will not be able to successfully add a reference to the Microsoft advertising library in the following steps. For more information, see [Reference errors caused by targeting Any CPU in your project](known-issues-for-the-advertising-libraries.md#reference_errors).
+    > If your project targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**). If your project targets **Any CPU**, you will not be able to successfully add a reference to the Microsoft Advertising SDK in the following steps. For more information, see [Reference errors caused by targeting Any CPU in your project](known-issues-for-the-advertising-libraries.md#reference_errors).
 
 2. In **Solution Explorer**, right click **References** and select **Add Reference…**
 
@@ -96,9 +96,10 @@ After you install the Microsoft Advertising SDK, follow these instructions to re
 
 For walkthroughs that show how to get started using the advertising APIs, see the following articles:
 
+* [Interstitial ads](interstitial-ads.md)
+* [Native ads](native-ads.md)
 * [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
 * [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
-* [Interstitial ads](interstitial-ads.md)
 
 <span id="framework" />
 ## Understanding framework packages in the Microsoft Advertising SDK (UWP only)
