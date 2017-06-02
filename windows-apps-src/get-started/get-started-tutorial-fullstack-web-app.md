@@ -231,7 +231,7 @@ This layer of our program represents the memory cards themselves and provides th
  - This [guess.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/guess.js?token=ACEfkvY69Zr1AZQ4iXgfCgDxeinT21bBks5ZFhYBwA%3D%3D) code to your **data\guess.js** file
  - This [new.js](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/data/new.js?token=ACEfkiqeDN0HjZ4-gIKRh3wfVZPSlEmgks5ZFhYPwA%3D%3D) code to your **data\new.js** file
 
-For simplicity, we're storing our game board in a global variable (`global.board`) on our Node server. But realistically you'd usecloud storage (like Google [Cloud Datastore](https://cloud.google.com/datastore/) or Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) to make this into a viable memory-game API service that concurrently supports multiple games and players.
+For simplicity, we're storing our game board in a global variable (`global.board`) on our Node server. But realistically you'd use cloud storage (like Google [Cloud Datastore](https://cloud.google.com/datastore/) or Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/)) to make this into a viable memory-game API service that concurrently supports multiple games and players.
 
 Make sure you've saved all the changes in VS Code, fire up your server again (F5 in VS Code or `npm start` from shell, and then browse to [http://localhost:8000](http://localhost:8000)) to test out the game API.
 
@@ -472,7 +472,7 @@ This code executes in the following order.
 * A [Bootstrap glyphicon](http://getbootstrap.com/components/) is added to the back of the card whose `id` is `selectedCards[0]`
 * The first card's `value` (from the server) is stored in the `selectedCardsValues[]` array: `selectedCardsValues[0]`. 
 
-The user's second guess follows the same logic. If the cards match, (for example, `selectedCards[0] == selectedCards[1]`), the cards are a match! The CSS class `.matched` is added to the matched cards (turning them green) and the cards remained flipped.
+The user's second guess follows the same logic. If the cards that the user selected have the same IDs, (for example, `selectedCards[0] == selectedCards[1]`), the cards are a match! The CSS class `.matched` is added to the matched cards (turning them green) and the cards remained flipped.
 
 Now we need to add logic to check whether the user matched all of the cards and won the game. Inside of the `flipCard()` function, add the following lines of code under the `//check if the user won the game` comment. 
 
@@ -543,9 +543,9 @@ Bootstrap's [grid system](http://getbootstrap.com/css/#grid) is a fluid grid sys
 * `.row-fluid`: specifies the fluid rows
 * `.col-xs-3`: specifies the number of columns
 
-Bootstrap's grid system allows a grid system to collapse into one vertical column, like you would see on a navigation menu on a mobile device.  However, because we want our game always to have columns, we use the predefined class `.col-xs-`, which keeps the grid horizontal at all times. 
+Bootstrap's grid system allows a grid system to collapse into one vertical column, like you would see on a navigation menu on a mobile device.  However, because we want our game always to have columns, we use the predefined class `.col-xs-3`, which keeps the grid horizontal at all times. 
 
-The grid system allows up to 12 columns. Since we want 4 columns in our game, we use the class `.col-xs-3` (4 columns, each spanning 3 columns). This image shows a 12-column grid and a 4-column grid, like the one used in this game.
+The grid system allows up to 12 columns. Since we only want 4 columns in our game, we use the class `.col-xs-3`. This class specifies that we need each of our columns to span the width of 3 of the 12 available columns mentioned before. This image shows a 12-column grid and a 4-column grid, like the one used in this game.
 
 ![Bootstrap grid with 12 columns and 4 columns](./images/grid.png)
 
