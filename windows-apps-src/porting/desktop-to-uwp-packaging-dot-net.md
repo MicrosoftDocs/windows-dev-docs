@@ -21,7 +21,6 @@ To get started, fill out the form at [Bring your existing apps and games to the 
 > Have feedback our encounter issues as you journey along the Desktop Bridge? The best place to make feature suggestions is on the [Windows Developer UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial). For questions and bug reports, please head over to the [Developing Universal Windows apps forums](https://social.msdn.microsoft.com/Forums/home?forum=wpdevelop).
 
 ## Default Universal Windows Platform packages
-
 Visual Studio allows you to generate the debug and release packages that can be distributed using the Windows Store or app sideloading. To facilitate the package creation, Visual Studio helps you creating an. appxupload file ready to be submitted to the store. For more info, see [Packaging UWP Apps](..\packaging\packaging-uwp-apps.md).
 
 ## Desktop Bridge Packages
