@@ -73,7 +73,7 @@ To create the Desktop Bridge package, add a JavaScript UWP project to the same s
 
 All the Win32 binaries will be stored in your UWP project in a folder called win32 (though this exact name is not required; you can use any name you like).
 
-If you are using Visual Studio, you can automate the project to copy the files after each successful build, improving your development workflow. Edit your project file (.csproj in this example) to include an AfterBuild target that will copy all the Win32 output files to the win32 folder in the UWP project as follows:
+If you are using Visual Studio, you can automate the project to copy the files after each successful build, improving your development workflow. Edit your project file (.csproj in this example) to include an PostBuildEvent target that will copy all the Win32 output files to the win32 folder in the UWP project as follows:
 
 ```xml
   <Target Name="PostBuildEvent">
