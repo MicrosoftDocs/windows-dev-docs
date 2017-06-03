@@ -55,7 +55,7 @@ If you want to debug your app in the context of the Windows app package applicat
 
 Let's start with Step 1 in the journey.
 
-### Step 1: Package
+ ### Step 1: Package
 
 This step shows how to create a Desktop Bridge app from an existing Win32 project. In this example, we'll use a basic WinForms Project that performs read and write operations on the registry.
 
@@ -73,10 +73,10 @@ To create the Desktop Bridge package, add a JavaScript UWP project to the same s
 
 All the Win32 binaries will be stored in your UWP project in a folder called win32 (though this exact name is not required; you can use any name you like).
 
-If you are using Visual Studio, you can automate the project to copy the files after each build, improving your development workflow. Edit your project file (.csproj in this example) to include an AfterBuild target that will copy all the Win32 output files to the win32 folder in the UWP project as follows:
+If you are using Visual Studio, you can automate the project to copy the files after each successful build, improving your development workflow. Edit your project file (.csproj in this example) to include an AfterBuild target that will copy all the Win32 output files to the win32 folder in the UWP project as follows:
 
 ```xml
-  <Target Name="AfterBuild">
+  <Target Name="PostBuildEvent">
     <PropertyGroup>
       <TargetUWP>..\MyDesktopApp.Package\win32\</TargetUWP>
     </PropertyGroup>
