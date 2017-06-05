@@ -1,0 +1,203 @@
+---
+author: adwilso
+Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
+ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
+label: TBD
+template: detail.hbs
+ms.author: adwilso
+ms.date: 06/06/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+---
+
+# Choosing the Correct Push Notification Channel Type
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+This article covers the 3 different types of push notification channels that are available in UWP to deliver content to your app. This includes the alternate channel type that allows apps which aren’t registered in the store or who wish to share their channels with 3rd parties to work on Windows. 
+
+In this guide, we are going to walk through what you can do with each channel and how you can choose the right type of channel for your app. Once you have choosen the correct channel type, take a look at the [overview article](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) for how to set it up. 
+
+## Overview
+
+
+There are three types of push channels that can be used to send notifications to a UWP app. They are: 
+
+[Primary Channel](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#methods_) – the ‘traditional’ push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications (Link to descriptions of toast/tiles/badge)
+
+[Secondary Tile Channel](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#methods_) – used to push tile updates for a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user’s start screen
+
+[Alternate Channel](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#methods_) – A new type of channel added in the Creators Update. IT allows for raw notifications to be sent to any UWP, including those which aren’t registered in the store. 
+
+
+### Note on Local Notifications 
+
+The rest of this article is going to be talking about push notifications. Remember that your app can always publish a local toast, tile, or badge notification either from the foreground app process or from a background task. 
+
+No matter which choice you make for push channels, once your app is running on the device it will always be able to send local notifications
+
+
+## Primary Channels
+
+### What is a Primary Channel
+
+These are the most commonly used channels on Windows right now, and are good for almost any scenario where your app is going to be distributed through the Windows App Store. They allow for you to send all types of notifications to the app 
+
+### What do Primary Channels Enable?
+
+-   Sending tile or badge updates to the primary tile. If the user has chosen to pin your tile to the start screen, this is your chance to show off. Send updates with useful information or reminders of experiences within your app. 
+-   Sending toast notifications. Toast notifications are a chance to get some information in front of the user immediately. They are painted by the shell over top of most apps, and live in the action center so the user can go back and interact with them later. 
+-   Sending raw notifications to trigger a background task. Sometimes you want to do some work on behalf of the user based on a notification. Raw notifications allow your app’s background tasks to run 
+-   Message encryption in transit provided by Windows using TLS. Messages are encrypted on the wire both coming into WNS and going to the user’s device.  
+
+### Limitations of Primary Channels
+
+-   Requires using the WNS REST API to push notifications, which isn’t standard across device vendors. 
+-   Only one channel can be created per app 
+-   Requires your app to be registered in the Windows Store
+
+### Creating A Primary Channel 
+
+```cs
+PushNotificationChannel channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+```
+
+## Secondary Tile Channels
+
+### What is a Secondary Tile Channel
+
+These are channels that can be used to push tile and badge updates to a secondary tile. These are used by apps to notify users of interesting actions or information that they can interact with in the app, such as new messages in a group chat or an updated sports score. 
+
+### What do Secondary Tile Channels Enable?
+
+-   Sending tile or badge notifications to a secondary tiles. Secondary tiles are a great way to pull users back into your app. They are a deep link to information they care about, and putting relevant information on the tiles helps to bring them back again and again
+-   Separation of channels (and expiries) between various tiles. This allows you to separate the logic in the backend between the various types of secondary tiles that a user might pin to their start screen 
+-   Message encryption in transit provided by Windows using TLS. Messages are encrypted on the wire both coming into WNS and going to the user’s device.  
+
+### Limitations of Secondary Tile Channels
+
+-   No toast or raw notifications allowed. Toast or raw notifications sent to a secondary tile are ignored by the system.
+-   Requires your app to be registered in the Windows Store
+
+
+### Creating A Secondary Tile Channel 
+
+```cs
+PushNotificationChannel channel = await PushNotificationChannelManager.CreatePushNotificationChannelForSecondaryTileAsync(tileId);
+```
+
+## Alternate Channels
+
+### What is an Alternate Channel
+
+Alternate channels enable apps send push notifications without having registered in the Windows App Store or for an apps to create push channels outside of the primary one used for the app. 
+ 
+### What do Alternate Channels Enable?
+-   Send raw push notifications to a UWP running on any Windows device. Alternate channels only allow for raw notifications.
+-   Allows apps to create multiple raw push channels for different features within the app. An app can create up to 1000 alternate channel, each with a 30 validity period. Each of these channels can be managed or revoked separately by the app.
+-   Alternate push channels can be created without registering an app with the Windows Store. If you app is going to be installed on devices without registering it in the Windows Store, it will still be able to receive push notifications.
+-   Servers can push notifications using the W3C standard REST APIs and VAPID protocol. Alternate channels use the W3C standard protocol, this allows you to simplify the server logic that needs to be maintained.
+-   Full, end-to-end, message encryption. While the primary channel provides encryption while in transit, if you want be extra secure, alternate channels enable your app to pass through encryption headers to protect a message. 
+
+### Limitations of Alternate Channels
+-   Apps cannot send toast, tile, or badge type notifications. The alternate channel limits your ability to send other notification types. Your app is still able to send local notifications from your background task. 
+-   Requires a different REST API than either primary or secondary tile channels. Using the standard W3C REST API means that your app will need to have different logic for sending push toast or tile updates
+
+### Creating an Alternate Channel 
+
+```cs
+PushNotificationChannel webChannel = await PushNotificationChannelManager.Current.CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
+```
+
+## Channel Type Comparison
+Here is a quick comparison between the different types of channels
+
+<table>
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Type of Channel</th>
+<th align="left">Push Toast Supported?</th>
+<th align="left">Push Tile/Badge Supported?</th>
+<th align="left">Push Raw Notifications Supported?</th>
+<th align="left"> Authenitcation Method</th>
+<th align="left">API to Push Notification</th>
+<th align="left">App store registration required</th>
+<th align="left">Number of Channels</th>
+<th align="left">Encryption</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Primary</td>
+<td align="left">Yes</td>
+<td align="left">Yes - primary tile only</td>
+<td align="left">Yes</td>
+<td align="left">OAuth</td>
+<td align="left">WNS REST API</td>
+<td align="left">Yes</td>
+<td align="left">One per app</td>
+<td align="left">In Transit</td>
+</tr>
+<tr class="even">
+<td align="left">Secondary Tile</td>
+<td align="left">No</td>
+<td align="left">Yes - secondary tile only</td>
+<td align="left">No</td>
+<td align="left">OAuth</td>
+<td align="left">WNS REST API</td>
+<td align="left">Yes</td>
+<td align="left">One per secondary tile</td>
+<td align="left">In Transit</td>
+</tr>
+<tr class="odd">
+<td align="left">Alternate</td>
+<td align="left">No</td>
+<td align="left">No</td>
+<td align="left">Yes</td>
+<td align="left">VAPID</td>
+<td align="left">WebPush W3C Standard</td>
+<td align="left">No</td>
+<td align="left">1,000 per app</td>
+<td align="left">In transit + end to end encryption possible with header pass through (requires app code)</td>
+</tr>
+</tbody>
+</table>
+
+## Choosing the Right Channel
+
+The notifications team recommends that you always choose to use the primary channel in your app, with the exception of a few scenarios: 
+
+1. If you are pushing a tile update to a secondary tile, use the secondary tile push channel.
+2. If you are passing out channels to other services (such as in the case of a browser) use the alternate channel.
+3. If you are creating an app that won’t be listed in the Windows store (such as an LOB app) use an alternate channel.
+4. You have existing web push code on your server you wish to reuse or have a need for multiple channels in your backend service, use alternate channels.
+
+## Related topics
+
+* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761488)
+ 
+
+ 
+
+
+
