@@ -17,7 +17,7 @@ keywords: windows 10, uwp
 
 This article covers the 3 different types of push notification channels that are available in UWP to deliver content to your app. This includes the alternate channel type that allows apps which aren’t registered in the store or who wish to share their channels with 3rd parties to work on Windows. 
 
-In this guide, we are going to walk through what you can do with each channel and how you can choose the right type of channel for your app. Once you have choosen the correct channel type, take a look at the [overview article](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) for how to set it up. 
+Once you have choosen the correct channel type, take a look at the [overview article](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) for how to set it up. 
 
 ## Overview
 
