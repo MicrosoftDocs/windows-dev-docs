@@ -262,7 +262,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </div>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/design/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/design/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -281,7 +281,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/library/windows/hardware/mt269767(v=vs.85).aspx">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -300,7 +300,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/customize/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/customize/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -319,7 +319,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/test/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/test/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -338,7 +338,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/manufacture/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -357,7 +357,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://msdn.microsoft.com/windows/hardware/commercialize/service/index">
+                            <a href="https://docs.microsoft.com/windows-hardware/service/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
