@@ -152,4 +152,4 @@ An easy way to turn your website into a UWP app is to use an **app manifest** an
 - [Cortana interactions](https://developer.microsoft.com/en-us/cortana)
 - [Voice Command Definition (VCD) elements and attributes v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
 - [Web authentication broker considerations for online providers](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
-- [App capability declarations](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)
+- [App capability declarations](/windows/uwp/packaging/app-capability-declarations)
