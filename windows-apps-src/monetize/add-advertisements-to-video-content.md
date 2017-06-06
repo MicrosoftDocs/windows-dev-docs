@@ -16,7 +16,7 @@ keywords: windows 10, uwp, ads, advertising, video, scheduler, javascript
 
 This walkthrough shows how to use the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) class to add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 
->**Note**&nbsp;&nbsp;This feature is currently supported only for UWP apps that was written using JavaScript with HTML.
+>**Note**&nbsp;&nbsp;This feature is currently supported only for UWP apps that are written using JavaScript with HTML.
 
 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) works with both progressive and streaming media, and uses IAB standard Video Ad Serving Template (VAST) 2.0/3.0 and VMAP payload formats. By using standards, [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) is agnostic to the ad service with which it interacts.
 

@@ -3,7 +3,7 @@ author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Use the inclinometer
 description: Learn how to use the inclinometer to determine pitch, roll, and yaw.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

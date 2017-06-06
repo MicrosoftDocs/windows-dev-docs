@@ -64,8 +64,10 @@ To add customize pricing for one market, select it and click **Save**. You’ll 
 
 To add custom pricing for multiple markets, you’ll create a *market group*. To do so, select the markets you wish to include, then enter a name for the group. (This name is for your reference only and won’t be visible to any customers.) When you’re finished, click **Save**. You’ll then see the same **Base price** and **Schedule a price change** options as described above, but the selections you make will be specific to that market group.
 
-To add custom pricing for an additional market, or an additional market group, select **Customize for specific markets** again and repeat these steps. To change the markets included in a market group, select its name. To remove the pricing for a market group (or individual market), click **Remove**.
-
 > [!NOTE]
 > A market can’t belong to more than one of the market groups you use in the Pricing section.
+
+To add custom pricing for an additional market, or an additional market group, select **Customize for specific markets** again and repeat these steps. To change the markets included in a market group, select its name. To remove the pricing for a market group (or individual market), click **Remove**.
+
+
 

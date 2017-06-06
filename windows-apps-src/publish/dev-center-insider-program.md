@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,6 +23,7 @@ Here are some of the features that we’ve made available exclusively to members
 
 | Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
+|**Churn prediction option for customer segments**: Create a segment of your customers based on whether we detect that they’re likely to stop using your app soon.  | In the **Engage** section, select **Customer groups** to create a new segment. In the inclusion conditions section, select **Churn prediction** in the first drop-down, then choose **true** or **false** to define your segment. |May 2017|
 |**New dashboard experience**: A new layout and new features to help you be more productive. | You'll see the new dashboard experience and will have the opportunity to take a quick tour once you sign in to your account. See [below](#dashboard-enhancements-for-dev-center-insiders) for more details. |May 2017|
 |**Email notification for analytic trend changes**: Get notified about significant changes in your apps' acquisitions. | If we detect a significant change in an app's acquisition numbers compared to its historical data, we'll automatically send you an email. |April 2017|
 |**App trends on overview page**: Get a quick look at how your app metrics have changed. | On your Overview page, look for the sparklines and arrows next to the metrics numbers. The sparklines give you a quick visual representation of recent trends. The direction of the arrow lets you know whether the numbers have recently increased or decreased significantly. Note that you may not see arrows next to every sparkline. |February 2017|

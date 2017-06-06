@@ -428,7 +428,7 @@ There are different types of parameters that correlate to the type of the object
 In the example below, we create an Expression Animation that will reference the Offset of two other Composition [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx)s and a basic System.Numerics Vector3 object.  
 ```cs
 var commonOffset = new Vector3(25.0, 17.0, 10.0);
-var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset);
+var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset");
 expression.SetVector3Parameter("SomeOffset", childVisual.Offset);
 expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetVector3Parameter("additionalOffset", commonOffset);
@@ -442,7 +442,7 @@ We can modify the example directly above, such that a property set is used to de
 ```cs
 _sharedProperties = _compositor.CreatePropertySet();
 _sharedProperties.InsertVector3("commonOffset", offset);
-var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + sharedProperties.commonOffset);
+var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + sharedProperties.commonOffset");
 expression.SetVector3Parameter("SomeOffset", childVisual.Offset);
 expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetReferenceParameter("sharedProperties", _sharedProperties);

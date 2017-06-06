@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 06/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -224,8 +224,3 @@ For H.264 Mezzanine files, we recommend the following:
 - No Edit Lists (or you might lose AV sync)
 - moov atom at the front of the file (Fast Start)
 
-### Trailer ratings
-
-If your product is rated through the ESRB (Entertainment Software Ratings Board) or PEGI (Pan European Game Information), it must show age ratings in its trailer. You can do this by displaying the standard 4-second flash of the rating information at the beginning of the trailer. Most often the trailer’s rating will match the game’s, but on very rare occasions it may differ.
-
-The ratings shown in a trailer must be from the proper ratings organization for the market in which the trailer appears. For example, for Store listings in the US, Canada, or Mexico, the ratings information must be from the ESRB. When you complete the questionnaire on the [Age ratings](age-ratings.md) step of your submission, your product receives the appropriate age and content ratings administered by the International Age Ratings Coalition (IARC) rating system. For more information, see [Age ratings](age-ratings.md).

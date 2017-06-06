@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 04/20/2017
+ms.date: 06/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,7 +27,7 @@ This guide provides an end-to-end collection of information and resources that w
 
 To get started, the [Game development resources](#game-development-resources) section provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game.
 
-This guide will be updated as additional Windows 10 game development resources and material become available.
+This guide will be updated as additional Windows 10 game development resources and material become available.  
 
 ## Game development resources
 
@@ -87,7 +87,11 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     <tr>
         <td>Xbox One developer whitepapers (GDN)</td>
         <td>[White Papers](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
-    </tr>     
+    </tr>
+    <tr>
+        <td>Mixer Interactive documentation</td>
+        <td>[Add interactivity to your game](https://dev.mixer.com/reference/interactive/index.html)</td>
+    </tr>        
 </table>
 
 ### Developer programs
@@ -111,7 +115,7 @@ Registering a developer account on the Windows Dev Center is the first step towa
 
 #### ID@Xbox
 
-The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox. Become an ID@Xbox developer to get the tools and support you need to unleash your creativity and maximize your success. Before applying to ID@Xbox, please register a developer account on Windows Dev Center.
+The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox. Become an ID@Xbox developer to get the tools and support you need to unleash your creativity and maximize your success. We recommend that you apply to ID@Xbox first before registering for a developer account on Windows Dev Center.
 
 <table>
     <colgroup>
@@ -296,8 +300,8 @@ Developer blogs are another great resource for the latest information about game
         <td>[Visual C++ team blog](http://blogs.msdn.com/b/vcblog/)</td>
     </tr>
     <tr>
-        <td>ID@Xbox developer blog</td>
-        <td>[ID@XBOX Developer Blog](http://www.idatxbox.com/category/developer-blog/)</td>
+        <td>PIX team blog</td>
+        <td>[Performance tuning and debugging for DirectX 12 games on Windows and Xbox](https://blogs.msdn.microsoft.com/pix/)</td>
     </tr>
 </table>
  
@@ -575,16 +579,8 @@ Depending on the needs of your game, using bridges, game engines, or middleware 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Bridges and game engines for Windows 10 (blog post)</td>
-        <td>[More ways to bring your code to fast-growing Windows 10 Store](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
-    </tr>
-    <tr>
         <td>Game Development with Middleware (video)</td>
         <td>[Accelerating Windows Store Game Development with Middleware](https://channel9.msdn.com/Events/Build/2013/3-187)</td>
-    </tr>
-    <tr>
-        <td>Visual Studio and Unity, Unreal, and Cocos2d (blog post)</td>
-        <td>[Visual Studio for Game Development: New Partnerships with Unity, Unreal Engine and Cocos2d](http://blogs.msdn.com/b/somasegar/archive/2015/04/17/visual-studio-for-game-development-new-partnerships-with-unity-unreal-engine-and-cocos2d.aspx)</td>
     </tr>
     <tr>
         <td>Introduction to game middleware (blog post)</td>
@@ -791,7 +787,7 @@ There are many other middleware and engine partners that can provide solutions d
         <td>[Dev Center Partners](https://developer.microsoft.com/windows/app-middleware-partners)</td>
     </tr>
 </table>
- 
+
 
 ### Porting your game
 
@@ -1319,6 +1315,10 @@ Some portions of DirectX development can be nuanced and complex. When you get to
     <col width="50%" />
     </colgroup>
     <tr>
+        <td>PIX on Windows</td>
+        <td>[Performance tuning and debugging tool for DirectX 12 on Windows](https://blogs.msdn.microsoft.com/pix/2017/01/17/introducing-pix-on-windows-beta/)</td>
+    </tr>
+    <tr>
         <td>Optimizing graphics and performance (video)</td>
         <td>[Advanced DirectX 12 Graphics and Performance](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)</td>
     </tr>
@@ -1379,7 +1379,11 @@ You'll use the new unified Windows Dev Center dashboard to publish and manage yo
     <tr>
         <td>Windows Dev Center advanced publishing (GDN)</td>
         <td>[Windows Dev Center Dashboard advanced publishing guide](https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx)</td>
-    </tr>    
+    </tr>
+    <tr>
+        <td>Use Azure Active Directory (AAD) to add users to your Dev Center account</td>
+        <td>[Manage account users](https://docs.microsoft.com/windows/uwp/publish/manage-account-users)</td>
+    </tr>   
     <tr>
         <td>Rating your game (blog post)</td>
         <td>[Single workflow to assign age ratings using IARC system](https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/)</td>
@@ -1494,6 +1498,40 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
     <tr>
         <td>Enable Application Insights in Windows apps</td>
         <td>[Application Insights for Windows Phone and Store apps](https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/)</td>
+    </tr>
+</table>
+
+
+### Third party solutions for analytics and promotion
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Understand player behavior using GameAnalytics</td>
+        <td>[GameAnalytics](http://www.gameanalytics.com/)</td>
+    </tr>
+    <tr>
+        <td>Connect your UWP game to Google Analytics</td>
+        <td>[Get Windows SDK for Google Analytics](https://github.com/dotnet/windows-sdk-for-google-analytics)</td>
+    </tr>
+    <tr>
+        <td>Learn how to use Windows SDK for Google Analytics (video)</td>
+        <td>[Getting started with Windows SDK for Google Analytics](https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics)</td>
+    </tr>    
+    <tr>
+        <td>Use Facebook App Installs Ads to promote your game to Facebook users</td>
+        <td>[Get Windows SDK for Facebook](https://github.com/Microsoft/winsdkfb)</td>
+    </tr>
+    <tr>
+        <td>Learn how to use Facebook App Installs Ads (video)</td>
+        <td>[Getting started with Windows SDK for Facebook](https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-Facebook-App-Install-Ads)</td>
+    </tr>
+    <tr>
+        <td>Use Vungle to add video ads into your games</td>
+        <td>[Get Windows SDK for Vungle](https://v.vungle.com/sdk)</td>
     </tr>
 </table>
  

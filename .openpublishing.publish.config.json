@@ -68,5 +68,6 @@
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
       "branch": "master"
     }    
-  ]
+  ],
+  "resolve_user_profile_using_github": true
 }

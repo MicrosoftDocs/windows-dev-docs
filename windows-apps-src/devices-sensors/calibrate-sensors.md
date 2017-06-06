@@ -1,9 +1,9 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
 title: Calibrate sensors
 description: Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

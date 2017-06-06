@@ -34,6 +34,7 @@ All of these types of animations are guaranteed to be independent:
 -   Animations to the following [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties when targeting subproperties of these return value types:
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
+    -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
     -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 

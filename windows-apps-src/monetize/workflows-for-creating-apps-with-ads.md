@@ -40,11 +40,12 @@ To set up your account with Windows Dev Center, visit [this page](http://go.micr
 Use the instructions in the following walkthroughs to add an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) to display ads in your app:
 
 -   [Interstitial Ads](interstitial-ads.md)
+-   [Native ads](native-ads.md)
 -   [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)
 -   [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
 -   [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)
 
-When you use an **AdControl** or **InterstitialAd** to display ads in your app, you must specify an application ID and ad unit ID in your code to link your app to your Windows Dev Center account and to serve ads. While you are developing your app, use test application ID and ad unit ID values to see how your app renders ads during testing. This enables you to see how the app is receiving and rendering advertisements during testing. For more information, see [Test mode values](test-mode-values.md).
+When you display ads in your app, you must specify an application ID and ad unit ID in your code to link your app to your Windows Dev Center account and to serve ads. While you are developing your app, use test application ID and ad unit ID values to see how your app renders ads during testing. This enables you to see how the app is receiving and rendering advertisements during testing. For more information, see [Test mode values](test-mode-values.md).
 
 For complete sample projects that demonstrate how to add banner and interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
@@ -52,7 +53,7 @@ For complete sample projects that demonstrate how to add banner and interstitial
 
 After you finish testing your app and you are ready to submit it to Windows Dev Center, you must retrieve application ID and ad unit ID values from the **Monetize with ads** page for your app in the Windows Dev Center dashboard and then update your app code to use these values. If you try to use test values in your live app, your app will not receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md) and [Monetize with ads](../publish/monetize-with-ads.md).
 
-If your app is a UWP app for Windows 10, you can maximize your ad revenue and app promotion capabilities by enabling ad mediation for **AdControl** or **InterstitialAd** controls in your app to display ads from multiple ad networks. To start using ad mediation with one of these controls, go to the **Monetize with ads** page for your app in the dashboard and configure your ad mediation settings. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
+If your app is a UWP app for Windows 10, you can maximize your ad revenue and app promotion capabilities by enabling ad mediation to display ads from multiple ad networks. To start using ad mediation, go to the **Monetize with ads** page for your app in the dashboard and configure the ad mediation settings for the ad units you are using in your app. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
 
 ## Submit your app and review performance
 

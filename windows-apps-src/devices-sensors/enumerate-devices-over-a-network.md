@@ -1,9 +1,9 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: Enumerate devices over a network
 description: In addition to discovering locally connected devices, you can use the Windows.Devices.Enumeration APIs to enumerate devices over wireless and networked protocols.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
