@@ -60,6 +60,7 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 Use the following URIs to open various pages of the Settings app. Note that the Supported SKUs column indicates whether the settings page exists in Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), Windows 10 Mobile, or both.
 
 <table border="1">
+ <tr>
   <th>Category</th>
   <th>Settings page</th>
   <th>Supported SKUs</th>
