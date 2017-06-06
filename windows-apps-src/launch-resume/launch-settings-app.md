@@ -249,7 +249,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>ms-settings:</td>
  </tr>
  <tr>
-  <td rowspan="14">Network & internet</td>
+  <td rowspan="11">Network & internet</td>
   <td>Ethernet</td>
   <td>Both</td>
   <td>ms-settings:network-ethernet</td>
@@ -305,6 +305,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>ms-settings:network-status</td>
  </tr>
  <tr>
+  <td rowspan="3">Network & wireless</td>
   <td>NFC</td>
   <td>Mobile only</td>
   <td>ms-settings:nfctransactions</td>
