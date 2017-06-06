@@ -1,5 +1,5 @@
 ---
-author: payzer, mathy
+author: m-stahl
 title: Device Portal Xbox Developer settings API reference
 description: Learn how to access Xbox developer settings.
 ms.author: wdg-dev-content
