@@ -15,14 +15,14 @@ keywords: windows 10, uwp
 
 Use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads for the following scenarios:
 
-* Your UWP app uses an **AdControl** or **InterstitialAd** control from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
+* Your UWP app uses an **AdControl**, **InterstitialAd**, or **NativeAd** from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** control from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
 
 This page enables you to perform the following tasks:
 
-* Get an ad unit for an **AdControl** or **InterstitialAd** control in your app.
-* Configure ad mediation settings for an **AdControl** or **InterstitialAd** control in your UWP app, or for an **AdMediatorControl** in your Windows 8.x or Windows Phone 8.x app.
+* Get an ad unit for an **AdControl**, **InterstitialAd**, or **NativeAd** in your app.
+* Configure ad mediation settings for an **AdControl**, **InterstitialAd**, or **NativeAd** in your UWP app, or for an **AdMediatorControl** in your Windows 8.x or Windows Phone 8.x app.
 * Opt in to showing Microsoft affiliate ads in your app.
 * Enter COPPA compliance information for your app.
 
@@ -31,13 +31,17 @@ This page enables you to perform the following tasks:
 
 Use this section to create an ad unit. You must create ad units for the following scenarios:
 
--   Your app shows banner ads by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
--   Your app shows interstitial video ads or interstitial banner ads by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
+* Your app shows banner ads by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
+* Your app shows interstitial video ads or interstitial banner ads by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
+* Your app shows native ads by using a **NativeAd**. For more information, see [Native ads](../monetize/native-ads.md).
+
+  > [!NOTE]
+  > The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
 
 To create an ad unit for these scenarios:
 
 1.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
-2.  In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control. The available options are: **Banner**, **Banner insterstitial**, **Video interstitial**, and **Native**.
+2.  In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control. The available options are: **Banner**, **Banner interstitial**, **Video interstitial**, and **Native**.
 3.  In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used. The available options are: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.
 4.  Click **Create ad unit**.
 
@@ -53,26 +57,27 @@ Your ad units appear in a table at the bottom of this section. For each ad unit 
 
 -   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
 -   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
+-   If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the **NativeAdsManager** constructor. For more information, see [Native ads](../monetize/native-ads.md).
 
 <span id="mediation" />
 ## Ad mediation
 
-If your app is a UWP app for Windows 10, you can use the options in this section to enable ad mediation for any **AdControl** or **InterstitialAd** control in your app. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and non-revenue generating ads for Microsoft app promotion campaigns. We take care of mediating banner ad requests from the ad networks you choose.
+If your app is a UWP app for Windows 10, you can use the options in this section to enable ad mediation for a UWP ad unit that is associated with a banner, interstitial, or native ad in your app. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and non-revenue generating ads for Microsoft app promotion campaigns. We take care of mediating banner ad requests from the ad networks you choose.
 
-If you already have an **AdControl** or **InterstitialAd** control in your UWP app and this control is already associated with a UWP ad unit ID, enabling ad mediation requires no code changes in your app.
+If you have a UWP ad unit that is already associated with a banner, interstitial, or native ad in your app, enabling ad mediation requires no code changes in your app.
 
 > [!NOTE]
 > This section describes the **Ad mediation** options for UWP app packages. If your app package targets Windows 8.x or Windows Phone 8.x and uses the **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), the **Ad mediation** section in the dashboard displays a different set of options. For more information about configuring mediation settings for a Windows 8.x or Windows Phone 8.x app package that uses **AdMediatorControl**, see [this article](https://msdn.microsoft.com/library/windows/apps/mt219689).
 
-To configure ad mediation settings for an **AdControl** or **InterstitialAd** control in a UWP app:
+To configure ad mediation settings for a UWP ad unit in your app:
 
-1. In the **Configure mediation for** drop-down, select the UWP app package that contains the **AdControl** or **InterstitialAd** control you want to configure.
+1. In the **Configure mediation for** drop-down, select the UWP app package that contains the banner, interstitial, or native ad unit you want to configure.
 
-2. In the **Ad unit type** drop down, select the type of ad unit that is associated with the control.
+2. In the **Ad unit type** drop down, select the type of ad unit that you want to configure (**Banner**, **Banner interstitial**, **Video interstitial**, or **Native**).
 
-3. In the **Ad unit** drop-down, select the name of the UWP ad unit that is associated with the control.
+3. In the **Ad unit** drop-down, select the name of the UWP ad unit that you want to configure.
     > [!NOTE]
-    > When you enable ad mediation for an **AdControl** or **InterstitialAd** control in your UWP app, you do not need to obtain an ad unit from third-party ad networks. Our ad mediation service automatically creates any necessary third-party ad units.
+    > When you enable ad mediation for a UWP ad unit, you do not need to obtain an ad unit from third-party ad networks. Our ad mediation service automatically creates any necessary third-party ad units.
 
 4. By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. We recommend that you use this option. Otherwise, if you want to choose your own ad mediation settings, clear this check box.
     > [!NOTE]
