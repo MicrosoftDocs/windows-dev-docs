@@ -179,7 +179,6 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>Both<br>Touchpad settings only available on devices that have a touchpad</td>
   <td>ms-settings:mousetouchpad</td>
  </tr>
-
  <tr>
   <td rowspan="7">Ease of Access</td>
   <td>Narrator</td>
@@ -220,8 +219,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>Extras</td>
   <td>Extras</td>
   <td>Both<br>Only if "settings apps" are installed (e.g. by 3rd party)</td>
-  <td>ms-settings:extras
-</td>
+  <td>ms-settings:extras</td>
  </tr>
  <tr>
   <td rowspan="4">Gaming</td>
@@ -388,7 +386,6 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>Both</td>
   <td>ms-settings:privacy-appdiagnostics</td>
  </tr>
- 
  <tr>
   <td>Notifications</td>
   <td>Both</td>
@@ -685,5 +682,6 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>Both<br>Only if enterprise has deployed a provisioning package.</td>
   <td>ms-settings:workplace-provisioning</td>
  </tr>
-</table>
+</table><br/>  
+
 
