@@ -67,7 +67,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <th>URI</th>
  </tr>
  <tr>
-  <td rowspan="7">Accounts</td>
+  <td rowspan="6">Accounts</td>
   <td>Access work or school</td>
   <td>Both</td>
   <td>ms-settings:workplace</td>
@@ -91,11 +91,6 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>Sync your settings</td>
   <td>Both</td>
   <td>ms-settings:sync</td>
- </tr>
- <tr>
-  <td>Other people</td>
-  <td>Both</td>
-  <td>ms-settings:otherusers</td>
  </tr>
  <tr>
   <td>Your info</td>
