@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+author: normesta
 Description: The map control can display road maps and aerial views, directions, search results, and traffic.
 title: Guidelines for maps
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

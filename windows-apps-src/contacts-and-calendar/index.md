@@ -1,9 +1,9 @@
 ---
-author: Xansky
+author: normesta
 description: How to use contacts and calendar info in your UWP app.
 title: Contacts and calendar
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
