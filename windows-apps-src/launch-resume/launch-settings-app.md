@@ -321,7 +321,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>ms-settings:network-airplanemode</td>
  </tr>
  <tr>
-  <td rowspan="12">Personalization</td>
+  <td rowspan="10">Personalization</td>
   <td>Start</td>
   <td>Desktop only</td>
   <td>ms-settings:personalization-start</td>
@@ -365,16 +365,6 @@ Use the following URIs to open various pages of the Settings app. Note that the 
   <td>Lock screen</td>
   <td>Both</td>
   <td>ms-settings:lockscreen</td>
- </tr>
- <tr>
-  <td>Themes</td>
-  <td>Desktop only</td>
-  <td>ms-settings:themes</td>
- </tr>
- <tr>
-  <td>Start</td>
-  <td>Desktop only</td>
-  <td>ms-settings:personalization-start</td>
  </tr>
  <tr>
   <td>Task Bar</td>
