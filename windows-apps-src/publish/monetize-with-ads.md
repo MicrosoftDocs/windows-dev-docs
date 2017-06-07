@@ -4,7 +4,7 @@ Description: If your app uses ad mediation or displays banner or interstitial ad
 title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 06/02/2017
+ms.date: 06/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,10 +33,15 @@ Use this section to create an ad unit. You must create ad units for the followin
 
 * Your app shows banner ads by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
 * Your app shows interstitial video ads or interstitial banner ads by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
-* Your app shows native ads by using a **NativeAd**. For more information, see [Native ads](../monetize/native-ads.md).
+* Your app shows native ads by using a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx). For more information, see [Native ads](../monetize/native-ads.md).
 
-  > [!NOTE]
-  > The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
+For more information about working with ad units in your app, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
+
+> [!IMPORTANT]
+> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
+
+> [!NOTE]
+> The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
 
 To create an ad unit for these scenarios:
 
@@ -57,7 +62,7 @@ Your ad units appear in a table at the bottom of this section. For each ad unit 
 
 -   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
 -   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
--   If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the **NativeAdsManager** constructor. For more information, see [Native ads](../monetize/native-ads.md).
+-   If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor. For more information, see [Native ads](../monetize/native-ads.md).
 
 <span id="mediation" />
 ## Ad mediation
