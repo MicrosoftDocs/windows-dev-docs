@@ -8,7 +8,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, AdControl, javascript, HTML
+keywords: windows 10, uwp, ads, advertising, AdControl, ad control, javascript, HTML
 ---
 
 # AdControl in HTML 5 and JavaScript

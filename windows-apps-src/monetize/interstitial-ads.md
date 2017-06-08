@@ -8,7 +8,7 @@ ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, interstitial
+keywords: windows 10, uwp, ads, advertising, ad control, interstitial
 ---
 
 # Interstitial ads

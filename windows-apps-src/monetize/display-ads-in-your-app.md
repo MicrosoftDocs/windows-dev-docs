@@ -8,7 +8,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, banner, interstitial
+keywords: windows 10, uwp, ads, advertising, banner, ad control, interstitial
 ---
 
 # Display ads in your app
@@ -40,7 +40,7 @@ To get started working with ads in your apps, see the following tasks.
 | Show banner ads in your Windows Phone Silverlight 8.x app.     | [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)        |
 | Enable mediation for an ad unit in your UWP app.     | [Monetize with ads](../publish/monetize-with-ads.md)       |
 | Review performance data for ads in your app.     | [Advertising performance report](../publish/advertising-performance-report.md)       |
-| Add advertisements to video content in a UWP app that was written using JavaScript with HTML.   |  [Add advertisements to video content in HTML 5 and JavaScript](add-advertisements-to-video-content.md)  |
+| Show ads in video content in a UWP app that was written using JavaScript with HTML.   |  [Show ads in video content](add-advertisements-to-video-content.md)  |
 | Download sample projects that demonstrate how to add banner and interstitial ads to apps.     | [Advertising samples on GitHub](http://aka.ms/githubads)       |
 | Report a bug in the Microsoft advertising libraries.     | Visit the [support page](https://go.microsoft.com/fwlink/p/?LinkId=331508)        |
 | Get community support.     | Visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266)       |

@@ -7,7 +7,7 @@ ms.date: 06/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, native ad
+keywords: windows 10, uwp, ads, advertising, ad control, native ad
 ---
 
 # Native ads

@@ -15,35 +15,25 @@ keywords: windows 10, uwp
 
 Use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads for the following scenarios:
 
-* Your UWP app uses an **AdControl**, **InterstitialAd**, or **NativeAd** from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
-* Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** control from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+* Your UWP app uses an [AdControl](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), or [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
+* Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
-
-This page enables you to perform the following tasks:
-
-* Get an ad unit for an **AdControl**, **InterstitialAd**, or **NativeAd** in your app.
-* Configure ad mediation settings for an **AdControl**, **InterstitialAd**, or **NativeAd** in your UWP app, or for an **AdMediatorControl** in your Windows 8.x or Windows Phone 8.x app.
-* Opt in to showing Microsoft affiliate ads in your app.
-* Enter COPPA compliance information for your app.
 
 <span id="create-ad-unit" />
 ## Create ad units
 
-Use this section to create an ad unit. You must create ad units for the following scenarios:
+Use this section to create an ad unit for the following scenarios:
 
-* Your app shows banner ads by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx). For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
-* Your app shows interstitial video ads or interstitial banner ads by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx). For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
-* Your app shows native ads by using a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx). For more information, see [Native ads](../monetize/native-ads.md).
+* Your app shows banner ads by using an **AdControl**. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
+* Your app shows interstitial video ads or interstitial banner ads by using an **InterstitialAd**. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
+* Your app shows native ads by using a **NativeAd**. For more information, see [Native ads](../monetize/native-ads.md).
 
 For more information about working with ad units in your app, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
 
 > [!IMPORTANT]
 > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 
-> [!NOTE]
-> The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
-
-To create an ad unit for these scenarios:
+To create an ad unit:
 
 1.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
 2.  In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control. The available options are: **Banner**, **Banner interstitial**, **Video interstitial**, and **Native**.
@@ -51,6 +41,9 @@ To create an ad unit for these scenarios:
 4.  Click **Create ad unit**.
 
 The new ad unit appears at the top of the list in the **Available ad units** section on this page.
+
+> [!NOTE]
+> The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
 
 > [!NOTE]
 > If your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** to show banner ads, you do not need to request ad units here. In this scenario, the ad units are automatically generated for you.

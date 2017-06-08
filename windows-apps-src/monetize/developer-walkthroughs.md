@@ -26,7 +26,7 @@ For complete sample projects that demonstrate how to add banner and interstitial
 | [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Add a banner ad in your XAML/.NET app.        |
 | [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Add a banner ad in your HTML5/JavaScript app.        |
 | [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)       | Add a banner ad in your Windows Phone 8.x Silverlight app. |
-| [Add advertisements to video content in HTML 5 and JavaScript](add-advertisements-to-video-content.md)     |  Add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML. |
+| [Show ads in video content](add-advertisements-to-video-content.md)     |  Show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML. |
 
 
 
