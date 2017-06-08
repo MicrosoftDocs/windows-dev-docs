@@ -79,7 +79,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
  </tr>
  <tr>
   <td>Family & other people</td>
-  <td>Both</td>
+  <td>Desktop only</td>
   <td>ms-settings:otherusers</td>
  </tr>
  <tr>
@@ -166,7 +166,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
  </tr>
  <tr>
   <td>Connected Devices</td>
-  <td>Desktop only</td>
+  <td>Both</td>
   <td>ms-settings:connecteddevices</td>
  </tr>
  <tr>
@@ -197,12 +197,12 @@ Use the following URIs to open various pages of the Settings app. Note that the 
  </tr>
  <tr>
   <td>Keyboard</td>
-  <td>Both</td>
+  <td>Desktop only</td>
   <td>ms-settings:easeofaccess-keyboard</td>
  </tr>
  <tr>
   <td>Mouse</td>
-  <td>Both</td>
+  <td>Desktop only</td>
   <td>ms-settings:easeofaccess-mouse</td>
  </tr>
  <tr>
@@ -246,7 +246,7 @@ Use the following URIs to open various pages of the Settings app. Note that the 
  <tr>
   <td rowspan="11">Network & internet</td>
   <td>Ethernet</td>
-  <td>Both</td>
+  <td>Desktop only</td>
   <td>ms-settings:network-ethernet</td>
  </tr>
  <tr>
