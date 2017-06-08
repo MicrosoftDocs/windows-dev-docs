@@ -398,6 +398,7 @@
 ##### [Headset](gaming/headset.md)
 ##### [UI navigation controller](gaming/ui-navigation-controller.md)
 ##### [Input practices for games](gaming/input-practices-for-games.md)
+##### [Registry data for game controllers](gaming/registry-data-for-game-controllers.md)
 #### [Networking for games](gaming/work-with-networking-in-your-directx-game.md)
 ### [Game development videos](gaming/game-development-videos.md)
 ## [DirectX programming](gaming/directx-programming.md)
