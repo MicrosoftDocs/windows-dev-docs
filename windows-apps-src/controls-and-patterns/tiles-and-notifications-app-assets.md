@@ -236,7 +236,7 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 |----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
 | Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
 | Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
-| Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
+| Wide                 | Wide310x150Logo   | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
 | Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
 | App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
 | Splash screen        | SplashScreen      | 620x300       | 775x375       | 930x450       | 1240x600      | 2480x1200     |
@@ -249,7 +249,7 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 |----------------------|-------------------|---------------------------------|---------------------------------|---------------------------------|
 | Small                | Square71x71Logo   | Square71x71Logo.scale-100.png   | Square71x71Logo.scale-125.png   | Square71x71Logo.scale-150.png   |
 | Medium               | Square150x150Logo | Square150x150Logo.scale-100.png | Square150x150Logo.scale-125.png | Square150x150Logo.scale-150.png |
-| Wide                 | Square310x150Logo | Square310x150Logo.scale-100.png | Square310x150Logo.scale-125.png | Square310x150Logo.scale-150.png |
+| Wide                 | Wide310x150Logo   | Wide310x150Logo.scale-100.png   | Wide310x150Logo.scale-125.png   | Wide310x150Logo.scale-150.png   |
 | Large (desktop only) | Square310x310Logo | Square310x310Logo.scale-100.png | Square310x310Logo.scale-125.png | Square310x310Logo.scale-150.png |
 | App list (icon)      | Square44x44Logo   | Square44x44Logo.scale-100.png   | Square44x44Logo.scale-125.png   | Square44x44Logo.scale-150.png   |
 | Splash screen        | SplashScreen      | SplashScreen.scale-100.png      | SplashScreen.scale-125.png      | SplashScreen.scale-150.png      |
@@ -260,7 +260,7 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 |----------------------|-------------------|---------------------------------|---------------------------------|
 | Small                | Square71x71Logo   | Square71x71Logo.scale-200.png   | Square71x71Logo.scale-400.png   |
 | Medium               | Square150x150Logo | Square150x150Logo.scale-200.png | Square150x150Logo.scale-400.png |
-| Wide                 | Square310x150Logo | Square310x150Logo.scale-200.png | Square310x150Logo.scale-400.png |
+| Wide                 | Wide310x150Logo   | Wide310x150Logo.scale-200.png   | Wide310x150Logo.scale-400.png   |
 | Large (desktop only) | Square310x310Logo | Square310x310Logo.scale-200.png | Square310x310Logo.scale-400.png |
 | App list (icon)      | Square44x44Logo   | Square44x44Logo.scale-200.png   | Square44x44Logo.scale-400.png   |
 | Splash screen        | SplashScreen      | SplashScreen.scale-200.png      | SplashScreen.scale-400.png      |
