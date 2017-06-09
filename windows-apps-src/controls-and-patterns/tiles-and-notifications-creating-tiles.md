@@ -83,25 +83,6 @@ There are a few items you should update:
 ## Use notifications to customize your tile
 
 
-After your app is installed, you can use notifications to customize your tile. You can do this the first time your app launches or in response to some event, such as a push notification.
+After your app is installed, you can use notifications to customize your tile. You can do this the first time your app launches or in response to an event, such as a push notification.
 
-1.  Create an XML payload (in the form of an [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)) that describes the tile.
-
-    -   Windows 10 introduces a new adaptive tile schema you can use. For instructions, see [Adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md). For the schema, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md). 
-
-    -   You can use the Windows 8.1 tile templates to define your tile. For more info, see [Creating tiles and badges (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260).
-
-2.  Create a tile notification object and pass it the [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) you created. There are several types of notification objects:
-    -   A [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) object for updating the tile immediately.
-    -   A [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) object for updating the tile at some point in the future.
-
-3.  Use the [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) to create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) object.
-4.  Call the [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) method and pass it the tile notification object you created in step 2.
-
- 
-
- 
-
-
-
-
+To learn how to send tile notifications, see [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md).
