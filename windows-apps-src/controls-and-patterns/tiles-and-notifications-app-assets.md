@@ -239,6 +239,7 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 | Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
 | Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
 | App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
+| Splash screen        | SplashScreen      | 620x300       | 775x375       | 930x450       | 1240x600      | 2480x1200     |
 
  
 
@@ -251,6 +252,7 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 | Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
 | Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
 | App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| Splash screen        | SplashScreen      | SplashScreen.scale-100.png     | SplashScreen.scale-125.png     | SplashScreen.scale-150.png     |
 
  
 
@@ -261,6 +263,7 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 | Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
 | Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
 | App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| Splash screen        | SplashScreen      | SplashScreen.scale-200.png     | SplashScreen.scale-400.png     |
 
  
 
