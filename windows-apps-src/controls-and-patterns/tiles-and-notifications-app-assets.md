@@ -120,7 +120,7 @@ For wide tiles, limit the icon width to 66% and height to 50% of tile size. This
 
 ![wide tile sizing ratios](images/assetguidance11.png)
 
-For large tiles, limit the icon width and height to 50% of tile size:
+For large tiles, limit the icon width to 66% and height to 50% of tile size:
 
 ![large tile size ratios](images/assetguidance12.png)
 
