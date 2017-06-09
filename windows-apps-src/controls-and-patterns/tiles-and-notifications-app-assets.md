@@ -212,41 +212,213 @@ If you decide to provide high-contrast assets, you need to include both sets—b
 
 At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
 
-**Scale-based assets**
+<table>
+<thead>
+<tr><th colspan="3">Small tile (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>100% scale</td>
+    <td>71x71</td>
+    <td>Square71x71Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>89x89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>107x107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>142x142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>284x284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Category             | Element name      | At 100% scale | At 125% scale | At 150% scale | At 200% scale | At 400% scale |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
-| Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
-| Wide                 | Wide310x150Logo   | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
-| Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
-| App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
-| Splash screen        | SplashScreen      | 620x300       | 775x375       | 930x450       | 1240x600      | 2480x1200     |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">Medium tile (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>100% scale</td>
+    <td>150x150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>188x188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>225x225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>300x300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>600x600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-**File name examples for scale-based assets**
+<br/>
 
-| Category             | Element name      | At 100% scale                   | At 125% scale                   | At 150% scale                   |
-|----------------------|-------------------|---------------------------------|---------------------------------|---------------------------------|
-| Small                | Square71x71Logo   | Square71x71Logo.scale-100.png   | Square71x71Logo.scale-125.png   | Square71x71Logo.scale-150.png   |
-| Medium               | Square150x150Logo | Square150x150Logo.scale-100.png | Square150x150Logo.scale-125.png | Square150x150Logo.scale-150.png |
-| Wide                 | Wide310x150Logo   | Wide310x150Logo.scale-100.png   | Wide310x150Logo.scale-125.png   | Wide310x150Logo.scale-150.png   |
-| Large (desktop only) | Square310x310Logo | Square310x310Logo.scale-100.png | Square310x310Logo.scale-125.png | Square310x310Logo.scale-150.png |
-| App list (icon)      | Square44x44Logo   | Square44x44Logo.scale-100.png   | Square44x44Logo.scale-125.png   | Square44x44Logo.scale-150.png   |
-| Splash screen        | SplashScreen      | SplashScreen.scale-100.png      | SplashScreen.scale-125.png      | SplashScreen.scale-150.png      |
+<table>
+<thead>
+<tr><th colspan="3">Wide tile (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>100% scale</td>
+    <td>310x150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>388x188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>465x225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>620x300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>1240x600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-| Category             | Element name      | At 200% scale                   | At 400% scale                   |
-|----------------------|-------------------|---------------------------------|---------------------------------|
-| Small                | Square71x71Logo   | Square71x71Logo.scale-200.png   | Square71x71Logo.scale-400.png   |
-| Medium               | Square150x150Logo | Square150x150Logo.scale-200.png | Square150x150Logo.scale-400.png |
-| Wide                 | Wide310x150Logo   | Wide310x150Logo.scale-200.png   | Wide310x150Logo.scale-400.png   |
-| Large (desktop only) | Square310x310Logo | Square310x310Logo.scale-200.png | Square310x310Logo.scale-400.png |
-| App list (icon)      | Square44x44Logo   | Square44x44Logo.scale-200.png   | Square44x44Logo.scale-400.png   |
-| Splash screen        | SplashScreen      | SplashScreen.scale-200.png      | SplashScreen.scale-400.png      |
+<table>
+<thead>
+<tr><th colspan="3">Large tile (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>100% scale</td>
+    <td>310x310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>388x388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>465x465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>620x620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>1240x1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">App list icon (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>100% scale</td>
+    <td>44x44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>55x55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>66x66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>88x88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>176x176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">Splash screen (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>100% scale</td>
+    <td>620x300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>775x375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>930x450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>1240x600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>2480x1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
  
 
 **Target-based assets**
