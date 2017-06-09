@@ -178,24 +178,6 @@ These are size recommendations for target-based assets, at 100% scale:
 
 ![target-based asset sizing at 100% scale](images/assetguidance23.png)
 
-**Iconic template app assets**
-
-The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop. (Learn about creating iconic tiles in the [Special tile templates article](tiles-and-notifications-special-tile-templates-catalog.md).)
-
-Apps that use the iconic template, such as Messaging, Phone, and Store, have target-based assets that can feature a badge (with the live counter). As with other target-based assets, no padding is needed. Iconic assets aren't part of the app manifest, but are part of a live tile payload. Assets are scaled to fit and centered within a 3:2 ratio container:
-
-![sizing for assets with and without badge](images/assetguidance24.png)
-
-For square assets, automatic centering within the container occurs:
-
-![square asset sizing, with and without badge](images/assetguidance25.png)
-
-For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
-
-![non-square asset sizing, with and without badge](images/assetguidance26a.png)
-
-![non-square asset sizing, with and without badge](images/assetguidance26b.png)
-
 ## Splash screen assets
 
 
@@ -366,14 +348,6 @@ Listed here are all asset types, their uses, and recommended file names.
 -   Impacted apps: Every UWP app
 -   Uses:
     -   App's splash screen
-
-**Iconic tile assets**
-
--   These are assets for apps that make use of [the iconic template](tiles-and-notifications-special-tile-templates-catalog.md).
--   File name format: Not applicable
--   Impacted apps: Messaging, Phone, Store, more
--   Uses:
-    -   Iconic tile
 
 
 

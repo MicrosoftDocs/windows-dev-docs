@@ -32,13 +32,25 @@ The following steps cover everything you need to know to create an iconic tile f
 
 **Step 1: Create your image assets in PNG format**
 
-Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. See sizing details in the below image.
+Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. No padding is needed on these assets. See sizing details in the below image.
 
 Save icon assets in PNG format and with transparency. On Windows Phone, every non-transparent pixel is displayed as white (RGB 255, 255, 255). For consistency and simplicity, use white for desktop icons as well.
 
 Windows 10 on tablet, laptop, and desktop only supports square icon assets. Phone supports both square assets and assets that are taller than they are wide, up to a 2:3 width:height ratio, which is useful for images such as a phone icon.
 
 ![icon sizing on small and medium tiles, on phone and desktop](images/iconic-template-sizing-info.png)
+
+![sizing for assets with and without badge](images/assetguidance24.png)
+
+For square assets, automatic centering within the container occurs:
+
+![square asset sizing, with and without badge](images/assetguidance25.png)
+
+For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
+
+![non-square asset sizing, with and without badge](images/assetguidance26a.png)
+
+![non-square asset sizing, with and without badge](images/assetguidance26b.png)
 
 **Step 2: Create your base tile**
 
