@@ -191,7 +191,7 @@ new ToastBindingGeneric()
 ```xml
 <binding template="ToastGeneric">
     ...
-    <image placement="heroImage" src="https://unsplash.it/360/180?image=1043"/>
+    <image placement="hero" src="https://unsplash.it/360/180?image=1043"/>
 </binding>
 ```
 
