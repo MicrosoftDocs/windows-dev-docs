@@ -369,7 +369,7 @@ Listed here are all asset types, their uses, and recommended file names.
 
 **Iconic tile assets**
 
--   These are assets for apps that make use of the iconic template.
+-   These are assets for apps that make use of [the iconic template](tiles-and-notifications-special-tile-templates-catalog.md).
 -   File name format: Not applicable
 -   Impacted apps: Messaging, Phone, Store, more
 -   Uses:
