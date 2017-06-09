@@ -23,6 +23,8 @@ A *tile* is an app's representation on the Start menu. Every app has a tile. Whe
 
 When you create a new project in Visual Studio, it creates a simple default tile that displays your app's name and logo.
 
+To edit your tile, double click the Package.appxmanifest in your main UWP project to open the designer (or right click the file and select View Code).
+
 ```XML
   <Applications>
     <Application Id="App"
