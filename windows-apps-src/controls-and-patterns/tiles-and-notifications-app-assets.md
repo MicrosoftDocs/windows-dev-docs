@@ -462,7 +462,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Tile assets**
 
 -   Centered assets are generally used on the Start to showcase your app.
--   File name format: \*Tile.scale-\*.PNG
+-   File name format: [Square\Wide]\*x\*Logo.scale-\*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Default Start tiles (desktop and mobile)
@@ -475,7 +475,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Scalable list assets with plate**
 
 -   These assets are used on surfaces that request scale factors. Assets either get plated by the system or come with their own background color if the app includes that.
--   File name format: \*AppList.scale-\*.PNG
+-   File name format: Square44x44Logo.scale-\*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Start all apps list (desktop)
@@ -488,7 +488,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Target-size list assets with plate**
 
 -   These are fixed asset sizes that don't scale with plateaus. Mostly used for legacy experiences. Assets are checked by the system.
--   File name format: \*AppList.targetsize-\*.PNG
+-   File name format: Square44x44Logo.targetsize-\*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Start jump list (desktop)
@@ -499,7 +499,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Target-size list assets without plate**
 
 -   These are assets that don't get plated or scaled by the system.
--   File name format: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   File name format: Square44x44Logo.targetsize-\*\_altform-unplated.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Taskbar and taskbar thumbnail (desktop)
@@ -510,7 +510,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **File extension assets**
 
 -   These are assets specific to file extensions. They appear next to Win32-style file association icons in File Explorer and must be theme-agnostic. Sizing is different on desktop and mobile platforms.
--   File name format: \*LogoExtensions.targetsize-\*.PNG
+-   File name format: \*LogoExtensions.targetsize-\*.png
 -   Impacted apps: Music, Video, Photos, Microsoft Edge, Microsoft Office
 -   Uses:
     -   File Explorer
@@ -520,7 +520,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Splash screen**
 
 -   The asset that appears on your app's splash screen. Automatically scales on both desktop and mobile platforms.
--   File name format: \*SplashScreen.screen-100.PNG
+-   File name format: SplashScreen.scale-*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   App's splash screen
