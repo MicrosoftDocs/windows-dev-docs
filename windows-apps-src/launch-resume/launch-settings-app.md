@@ -57,617 +57,658 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 
 ## ms-settings: URI scheme reference
 
-Use the following URIs to open various pages of the Settings app. Note that the Supported SKUs column indicates whether the settings page exists in Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), Windows 10 Mobile, or both.
+Use the following URIs to open various pages of the Settings app.
+
+> Note that whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
 
 <table border="1">
  <tr>
   <th>Category</th>
   <th>Settings page</th>
-  <th>Supported SKUs</th>
   <th>URI</th>
+  <th>Notes</th>
  </tr>
  <tr>
   <td rowspan="6">Accounts</td>
   <td>Access work or school</td>
-  <td>Both</td>
   <td>ms-settings:workplace</td>
+  <td></td>
  </tr>
  <tr>
   <td>Email & app accounts</td>
-  <td>Both</td>
   <td>ms-settings:emailandaccounts</td>
+  <td></td>
  </tr>
  <tr>
   <td>Family & other people</td>
-  <td>Desktop only</td>
   <td>ms-settings:otherusers</td>
+  <td></td>
  </tr>
  <tr>
   <td>Sign-in options</td>
-  <td>Both</td>
   <td>ms-settings:signinoptions</td>
+  <td></td>
  </tr>
  <tr>
   <td>Sync your settings</td>
-  <td>Both</td>
   <td>ms-settings:sync</td>
+  <td></td>
  </tr>
  <tr>
   <td>Your info</td>
-  <td>Both</td>
   <td>ms-settings:yourinfo</td>
+  <td></td>
  </tr>
  <tr>
   <td rowspan="4">Apps</td>
   <td>Apps & Features</td>
-  <td>Both</td>
   <td>ms-settings:appsfeatures</td>
+  <td></td>
  </tr>
  <tr>
   <td>Apps for websites</td>
-  <td>Both</td>
   <td>ms-settings:appsforwebsites</td>
+  <td></td>
  </tr>
  <tr>
   <td>Default apps</td>
-  <td>Desktop only</td>
   <td>ms-settings:defaultapps</td>
+  <td></td>
  </tr>
  <tr>
   <td>Apps & features</td>
-  <td>Desktop only</td>
   <td>ms-settings:optionalfeatures</td>
+  <td></td>
  </tr>
  <tr>
-  <td rowspan="11">Devices</td>
+  <td rowspan="12">Devices</td>
   <td>USB</td>
-  <td>Both</td>
   <td>ms-settings:usb</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>Audio and speech</td>
+  <td>ms-settings:holographic-audio</td>
+  <td>Only available if the Mixed Reality Portal app is installed (available in the Windows Store)</td>
  </tr>
  <tr>
   <td>AutoPlay</td>
-  <td>Desktop only</td>
   <td>ms-settings:autoplay</td>
+  <td></td>
  </tr>
  <tr>
   <td>Touchpad</td>
-  <td>Desktop only<br>Only if touchpad hardware is present</td>
   <td>ms-settings:devices-touchpad</td>
+  <td>Only available if touchpad hardware is present</td>
  </tr>
  <tr>
   <td>Pen & Windows Ink</td>
-  <td>Desktop only</td>
   <td>ms-settings:pen</td>
+  <td></td>
  </tr>
  <tr>
   <td>Printers & scanners</td>
-  <td>Desktop only</td>
   <td>ms-settings:printers</td>
+  <td></td>
  </tr>
  <tr>
   <td>Typing</td>
-  <td>Desktop only</td>
   <td>ms-settings:typing</td>
+  <td></td>
  </tr>
  <tr>
   <td>Wheel</td>
-  <td>Desktop only<br>Only if Dial is paired</td>
   <td>ms-settings:wheel</td>
+  <td>Only available if Dial is paired</td>
  </tr>
  <tr>
   <td>Default camera</td>
-  <td>Mobile only</td>
   <td>ms-settings:camera</td>
+  <td></td>
  </tr>
  <tr>
   <td>Bluetooth</td>
-  <td>Both</td>
   <td>ms-settings:bluetooth</td>
+  <td></td>
  </tr>
  <tr>
   <td>Connected Devices</td>
-  <td>Both</td>
   <td>ms-settings:connecteddevices</td>
+  <td></td>
  </tr>
  <tr>
   <td>Mouse & touchpad</td>
-  <td>Both<br>Touchpad settings only available on devices that have a touchpad</td>
   <td>ms-settings:mousetouchpad</td>
+  <td>Touchpad settings only available on devices that have a touchpad</td>
  </tr>
  <tr>
   <td rowspan="7">Ease of Access</td>
   <td>Narrator</td>
-  <td>Both</td>
   <td>ms-settings:easeofaccess-narrator</td>
+  <td></td>
  </tr>
  <tr>
   <td>Magnifier</td>
-  <td>Both</td>
   <td>ms-settings:easeofaccess-magnifier</td>
+  <td></td>
  </tr>
  <tr>
   <td>High contrast</td>
-  <td>Both</td>
   <td>ms-settings:easeofaccess-highcontrast</td>
+  <td></td>
  </tr>
  <tr>
   <td>Closed captions</td>
-  <td>Both</td>
   <td>ms-settings:easeofaccess-closedcaptioning</td>
+  <td></td>
  </tr>
  <tr>
   <td>Keyboard</td>
-  <td>Desktop only</td>
   <td>ms-settings:easeofaccess-keyboard</td>
+  <td></td>
  </tr>
  <tr>
   <td>Mouse</td>
-  <td>Desktop only</td>
   <td>ms-settings:easeofaccess-mouse</td>
+  <td></td>
  </tr>
  <tr>
   <td>Other options</td>
-  <td>Both</td>
   <td>ms-settings:easeofaccess-otheroptions</td>
  </tr>
  <tr>
   <td>Extras</td>
   <td>Extras</td>
-  <td>Both<br>Only if "settings apps" are installed (e.g. by 3rd party)</td>
   <td>ms-settings:extras</td>
+  <td>Only available if "settings apps" are installed (e.g. by 3rd party)</td>
  </tr>
  <tr>
   <td rowspan="4">Gaming</td>
   <td>Broadcasting</td>
-  <td>Desktop only</td>
   <td>ms-settings:gaming-broadcasting</td>
+  <td></td>
  </tr>
  <tr>
   <td>Game bar</td>
-  <td>Desktop only</td>
   <td>ms-settings:gaming-gamebar</td>
+  <td></td>
  </tr>
  <tr>
   <td>Game DVR</td>
-  <td>Desktop only</td>
   <td>ms-settings:gaming-gamedvr</td>
+  <td></td>
  </tr>
  <tr>
   <td>Game Mode</td>
-  <td>Desktop only</td>
   <td>ms-settings:gaming-gamemode</td>
+  <td></td>
  </tr>
  <tr>
   <td>Home page</td>
   <td>Landing page for Settings</td>
-  <td>Both</td>
   <td>ms-settings:</td>
+  <td></td>
  </tr>
  <tr>
-  <td rowspan="11">Network & internet</td>
+  <td rowspan="10">Network & internet</td>
   <td>Ethernet</td>
-  <td>Desktop only</td>
   <td>ms-settings:network-ethernet</td>
+  <td></td>
  </tr>
  <tr>
   <td>VPN</td>
-  <td>Both</td>
   <td>ms-settings:network-vpn</td>
- </tr>
- <tr>
-  <td>Cellular & SIM</td>
-  <td>Both</td>
-  <td>ms-settings:network-cellular</td>
+  <td></td>
  </tr>
  <tr>
   <td>Dial-up</td>
-  <td>Desktop only</td>
   <td>ms-settings:network-dialup</td>
+  <td></td>
  </tr>
  <tr>
   <td>DirectAccess</td>
-  <td>Desktop only<br>Only if DirectAccess is enabled</td>
   <td>ms-settings:network-directaccess</td>
+  <td>Only available if DirectAccess is enabled</td>
  </tr>
  <tr>
   <td>Wi-Fi Calling</td>
-  <td>Both<br>Only if Wi-Fi calling is enabled</td>
   <td>ms-settings:network-wificalling</td>
+  <td>Only available if Wi-Fi calling is enabled</td>
  </tr>
  <tr>
   <td>Data usage</td>
-  <td>Both</td>
   <td>ms-settings:datausage</td>
+  <td></td>
  </tr>
  <tr>
   <td>Cellular & SIM</td>
-  <td>Both</td>
   <td>ms-settings:network-cellular</td>
+  <td></td>
  </tr>
  <tr>
   <td>Mobile hotspot</td>
-  <td>Both</td>
   <td>ms-settings:network-mobilehotspot</td>
+  <td></td>
  </tr>
  <tr>
   <td>Proxy</td>
-  <td>Desktop only</td>
   <td>ms-settings:network-proxy</td>
+  <td></td>
  </tr>
  <tr>
   <td>Status</td>
-  <td>Desktop only</td>
   <td>ms-settings:network-status</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>Manage known networks</td>
+  <td>ms-settings:network-wifisettings</td>
+  <td></td>
  </tr>
  <tr>
   <td rowspan="3">Network & wireless</td>
   <td>NFC</td>
-  <td>Mobile only</td>
   <td>ms-settings:nfctransactions</td>
+  <td></td>
  </tr>
  <tr>
   <td>Wi-Fi</td>
-  <td>Both</td>
   <td>ms-settings:network-wifi</td>
+  <td>Only available if the device has a wifi adaptor</td>
  </tr>
  <tr>
   <td>Airplane mode</td>
-  <td>Both</td>
   <td>ms-settings:network-airplanemode</td>
+  <td>Use ms-settings:proximity on Windows 8.x</td>
  </tr>
  <tr>
   <td rowspan="10">Personalization</td>
   <td>Start</td>
-  <td>Desktop only</td>
   <td>ms-settings:personalization-start</td>
+  <td></td>
  </tr>
  <tr>
   <td>Themes</td>
-  <td>Desktop only</td>
   <td>ms-settings:themes</td>
+  <td></td>
  </tr>
  <tr>
   <td>Glance</td>
-  <td>Mobile only</td>
   <td>ms-settings:personalization-glance</td>
+  <td></td>
  </tr>
  <tr>
   <td>Navigation bar</td>
-  <td>Mobile only</td>
   <td>ms-settings:personalization-navbar</td>
+  <td></td>
  </tr>
  <tr>
   <td>Personalization (category)</td>
-  <td>Both</td>
-  <td>ms-settings:personalization</td>
+   <td>ms-settings:personalization</td>
+   <td></td>
  </tr>
  <tr>
   <td>Background</td>
-  <td>Desktop only</td>
-  <td>ms-settings:personalization-background</td>
+   <td>ms-settings:personalization-background</td>
+   <td></td>
  </tr>
  <tr>
   <td>Colors</td>
-  <td>Both</td>
-  <td>ms-settings:personalization-colors</td>
+   <td>ms-settings:personalization-colors</td>
+   <td></td>
  </tr>
  <tr>
   <td>Sounds</td>
-  <td>Mobile only</td>
-  <td>ms-settings:sounds</td>
+   <td>ms-settings:sounds</td>
+   <td></td>
  </tr>
  <tr>
   <td>Lock screen</td>
-  <td>Both</td>
-  <td>ms-settings:lockscreen</td>
+   <td>ms-settings:lockscreen</td>
+   <td></td>
  </tr>
  <tr>
   <td>Task Bar</td>
-  <td>Desktop only</td>
-  <td>ms-settings:taskbar</td>
+   <td>ms-settings:taskbar</td>
+   <td></td>
  </tr>
  <tr>
   <td rowspan="22">Privacy</td>
   <td>App diagnostics</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-appdiagnostics</td>
+   <td>ms-settings:privacy-appdiagnostics</td>
+   <td></td>
  </tr>
  <tr>
   <td>Notifications</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-notifications</td>
+   <td>ms-settings:privacy-notifications</td>
+   <td></td>
  </tr>
  <tr>
   <td>Tasks</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-tasks</td>
+   <td>ms-settings:privacy-tasks</td>
+   <td></td>
  </tr>
  <tr>
   <td>General</td>
-  <td>Desktop only</td>
-  <td>ms-settings:privacy-general</td>
+   <td>ms-settings:privacy-general</td>
+   <td></td>
  </tr>
  <tr>
   <td>Accessory apps</td>
-  <td>Mobile only</td>
-  <td>ms-settings:privacy-accessoryapps</td>
+   <td>ms-settings:privacy-accessoryapps</td>
+   <td></td>
  </tr>
  <tr>
   <td>Advertising ID</td>
-  <td>Mobile only</td>
-  <td>ms-settings:privacy-advertisingid</td>
+   <td>ms-settings:privacy-advertisingid</td>
+   <td></td>
  </tr>
  <tr>
   <td>Phone calls</td>
-  <td>Mobile only</td>
-  <td>ms-settings:privacy-phonecall</td>
+   <td>ms-settings:privacy-phonecall</td>
+   <td></td>
  </tr>
  <tr>
   <td>Location</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-location</td>
+   <td>ms-settings:privacy-location</td>
+   <td></td>
  </tr>
  <tr>
   <td>Camera</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-webcam</td>
+   <td>ms-settings:privacy-webcam</td>
+   <td></td>
  </tr>
  <tr>
   <td>Microphone</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-microphone</td>
+   <td>ms-settings:privacy-microphone</td>
+   <td></td>
  </tr>
  <tr>
   <td>Motion</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-motion</td>
+   <td>ms-settings:privacy-motion</td>
+   <td></td>
  </tr>
  <tr>
   <td>Speech, inking & typing</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-speechtyping</td>
+   <td>ms-settings:privacy-speechtyping</td>
+   <td></td>
  </tr>
  <tr>
   <td>Account info</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-accountinfo</td>
+   <td>ms-settings:privacy-accountinfo</td>
+   <td></td>
  </tr>
  <tr>
   <td>Contacts</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-contacts</td>
+   <td>ms-settings:privacy-contacts</td>
+   <td></td>
  </tr>
  <tr>
   <td>Calendar</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-calendar</td>
+   <td>ms-settings:privacy-calendar</td>
+   <td></td>
  </tr>
  <tr>
   <td>Call history</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-callhistory</td>
+   <td>ms-settings:privacy-callhistory</td>
+   <td></td>
  </tr>
  <tr>
   <td>Email</td>
-  <td>Both</td>
   <td>ms-settings:privacy-email</td>
+  <td></td>
  </tr>
  <tr>
   <td>Messaging</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-messaging</td>
+    <td>ms-settings:privacy-messaging</td>
+  <td></td>
  </tr>
  <tr>
   <td>Radios</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-radios</td>
+    <td>ms-settings:privacy-radios</td>
+  <td></td>
  </tr>
  <tr>
   <td>Background Apps</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-backgroundapps</td>
+    <td>ms-settings:privacy-backgroundapps</td>
+  <td></td>
  </tr>
  <tr>
   <td>Other devices</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-customdevices</td>
+    <td>ms-settings:privacy-customdevices</td>
+  <td></td>
  </tr>
  <tr>
   <td>Feedback & diagnostics</td>
-  <td>Both</td>
-  <td>ms-settings:privacy-feedback</td>
+    <td>ms-settings:privacy-feedback</td>
+  <td></td>
  </tr>
  <tr>
-  <td rowspan="19">System</td>
-  <td>Shared experiences</td>
-  <td>Both</td>
-  <td>ms-settings:crossdevice</td>
+  <td rowspan="5">Surface Hub</td>
+  <td>Accounts</td>
+    <td>ms-settings:surfacehub-accounts</td>
+      <td></td>
+  </tr>
+  <tr>
+    <td>Team Conferencing</td>
+      <td>ms-settings:surfacehub-calling</td>
+      <td></td>
+  </tr>
+  <tr>
+    <td>Team device management</td>
+      <td>ms-settings:surfacehub-devicemanagenent</td>
+      <td></td>
+  </tr>
+  <tr>
+    <td>Session cleanup</td>
+      <td>ms-settings:surfacehub-sessioncleanup</td>
+      <td></td>
+  </tr>
+  <tr>
+    <td>Welcome screen</td>
+      <td>ms-settings:surfacehub-welcome</td>
+      <td></td>
+  </tr>
+    <td rowspan="19">System</td>
+    <td>Shared experiences</td>
+      <td>ms-settings:crossdevice</td>
+    <td></td>
  </tr>
  <tr>
   <td>Display</td>
-  <td>Both</td>
-  <td>ms-settings:display</td>
+    <td>ms-settings:display</td>
+  <td></td>
  </tr>
  <tr>
   <td>Multitasking</td>
-  <td>Desktop only</td>
-  <td>ms-settings:multitasking</td>
+    <td>ms-settings:multitasking</td>
+  <td></td>
  </tr>
  <tr>
   <td>Projecting to this PC</td>
-  <td>Desktop only</td>
-  <td>ms-settings:project</td>
+    <td>ms-settings:project</td>
+  <td></td>
  </tr>
  <tr>
   <td>Tablet mode</td>
-  <td>Desktop only</td>
-  <td>ms-settings:tabletmode</td>
+    <td>ms-settings:tabletmode</td>
+  <td></td>
  </tr>
  <tr>
   <td>Taskbar</td>
-  <td>Desktop only</td>
-  <td>ms-settings:taskbar</td>
+    <td>ms-settings:taskbar</td>
+  <td></td>
  </tr>
  <tr>
   <td>Phone</td>
-  <td>Mobile only</td>
-  <td>ms-settings:phone-defaultapps</td>
+    <td>ms-settings:phone-defaultapps</td>
+  <td></td>
  </tr>
  <tr>
   <td>Display</td>
-  <td>Both</td>
-  <td>ms-settings:screenrotation</td>
+    <td>ms-settings:screenrotation</td>
+  <td></td>
  </tr>
  <tr>
   <td>Notifications & actions</td>
-  <td>Both</td>
-  <td>ms-settings:notifications</td>
+    <td>ms-settings:notifications</td>
+  <td></td>
  </tr>
  <tr>
   <td>Phone</td>
-  <td>Mobile only</td>
-  <td>ms-settings:phone</td>
+    <td>ms-settings:phone</td>
+  <td></td>
  </tr>
  <tr>
   <td>Messaging</td>
-  <td>Mobile only</td>
-  <td>ms-settings:messaging</td>
+    <td>ms-settings:messaging</td>
+  <td></td>
  </tr>
  <tr>
   <td>Battery Saver</td>
-  <td>Both<br>Only available on devices that have a battery, such as a tablet</td>
   <td>ms-settings:batterysaver</td>
+  <td>Only available on devices that have a battery, such as a tablet</td>
  </tr>
  <tr>
   <td>Battery use</td>
-  <td>Both<br>Only available on devices that have a battery, such as a tablet</td>
   <td>ms-settings:batterysaver-usagedetails</td>
+  <td>Only available on devices that have a battery, such as a tablet</td>
  </tr>
  <tr>
   <td>Power & sleep</td>
-  <td>Desktop only</td>
   <td>ms-settings:powersleep</td>
+  <td></td>
  </tr>
  <tr>
   <td>About</td>
-  <td>Both</td>
-  <td>ms-settings:about</td>
+    <td>ms-settings:about</td>
+  <td></td>
  </tr>
  <tr>
   <td>Storage</td>
-  <td>Both</td>
-  <td>ms-settings:storagesense</td>
+    <td>ms-settings:storagesense</td>
+  <td></td>
  </tr>
  <tr>
   <td>Storage Sense</td>
-  <td>Desktop only</td>
-  <td>ms-settings:storagepolicies</td>
+    <td>ms-settings:storagepolicies</td>
+  <td></td>
  </tr>
  <tr>
   <td>Encryption</td>
-  <td>Both</td>
-  <td>ms-settings:deviceencryption</td>
+    <td>ms-settings:deviceencryption</td>
+  <td></td>
  </tr>
  <tr>
   <td>Offline Maps</td>
-  <td>Both</td>
-  <td>ms-settings:maps</td>
+    <td>ms-settings:maps</td>
+  <td></td>
  </tr>
  <tr>
-  <td>Time & language</td>
-  <td>Speech</td>
-  <td>Both</td>
-  <td>ms-settings:speech</td>
- </tr>
- <tr>
-  <td rowspan="2">Time and language</td>
+  <td rowspan="5">Time and language</td>
   <td>Date & time</td>
-  <td>Both</td>
-  <td>ms-settings:dateandtime</td>
+    <td>ms-settings:dateandtime</td>
+  <td></td>
  </tr>
  <tr>
   <td>Region & language</td>
-  <td>Desktop only</td>
-  <td>ms-settings:regionlanguage</td>
+    <td>ms-settings:regionlanguage</td>
+  <td></td>
+ </tr>
+ <tr>
+     <td>Speech Language</td>
+     <td>ms-settings:speech</td>
+     <td></td>
+ </tr>
+ <tr>
+     <td>Pinyin keyboard</td>
+     <td>ms-settings:regionlanguage-chsime-pinyin</td>
+     <td>Available if the Microsoft Pinyin input method editor is installed</td>
+ </tr>
+ <tr>
+     <td>Wubi input mode</td>
+     <td>ms-settings:regionlanguage-chsime-wubi</td>
+     <td>Available if the Microsoft Wubi input method editor is installed</td>
  </tr>
  <tr>
   <td rowspan="13">Update & security</td>
-  <td>Backup</td>
-  <td>Both</td>
-  <td>ms-settings:backup</td>
+  <td>Windows Hello setup</td>
+    <td>ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment</td>
+  </tr>
+  <tr>
+    <td>Backup</td>
+      <td>ms-settings:backup</td>
+    <td></td>
  </tr>
  <tr>
   <td>Find My Device</td>
-  <td>Both</td>
-  <td>ms-settings:findmydevice</td>
+    <td>ms-settings:findmydevice</td>
+  <td></td>
  </tr>
  <tr>
-  <td>Windows Insder Program</td>
-  <td>Both<br>Only present if user is enrolled in WIP</td>
+  <td>Windows Insider Program</td>
   <td>ms-settings:windowsinsider</td>
+  <td>Only present if user is enrolled in WIP</td>
  </tr>
  <tr>
   <td>Windows Update</td>
-  <td>Both</td>
   <td>ms-settings:windowsupdate</td>
+  <td></td>
  </tr>
  <tr>
   <td>Windows Update</td>
-  <td>Both</td>
-  <td>ms-settings:windowsupdate-history</td>
+    <td>ms-settings:windowsupdate-history</td>
+  <td></td>
  </tr>
  <tr>
   <td>Windows Update</td>
-  <td>Both</td>
-  <td>ms-settings:windowsupdate-options</td>
+    <td>ms-settings:windowsupdate-options</td>
+  <td></td>
  </tr>
  <tr>
   <td>Windows Update</td>
-  <td>Both</td>
-  <td>ms-settings:windowsupdate-restartoptions</td>
+    <td>ms-settings:windowsupdate-restartoptions</td>
+  <td></td>
  </tr>
  <tr>
   <td>Windows Update</td>
-  <td>Both</td>
-  <td>ms-settings:windowsupdate-action</td>
+    <td>ms-settings:windowsupdate-action</td>
+  <td></td>
  </tr>
  <tr>
   <td>Activation</td>
-  <td>Desktop only</td>
-  <td>ms-settings:activation</td>
+    <td>ms-settings:activation</td>
+  <td></td>
  </tr>
  <tr>
   <td>Recovery</td>
-  <td>Desktop only</td>
-  <td>ms-settings:recovery</td>
+    <td>ms-settings:recovery</td>
+  <td></td>
  </tr>
  <tr>
   <td>Troubleshoot</td>
-  <td>Desktop only</td>
-  <td>ms-settings:troubleshoot</td>
+    <td>ms-settings:troubleshoot</td>
+  <td></td>
  </tr>
  <tr>
   <td>Windows Defender</td>
-  <td>Desktop only</td>
-  <td>ms-settings:windowsdefender</td>
+    <td>ms-settings:windowsdefender</td>
+  <td></td>
  </tr>
  <tr>
   <td>For developers</td>
-  <td>Both</td>
-  <td>ms-settings:developers</td>
+    <td>ms-settings:developers</td>
+  <td></td>
  </tr>
  <tr>
   <td rowspan="2">User  Accounts</td>
   <td>Windows Anywhere</td>
-  <td>Both<br>Device must be Windows Anywhere-capable
-</td>
   <td>ms-settings:windowsanywhere</td>
+  <td>Device must be Windows Anywhere-capable</td>
  </tr>
  <tr>
   <td>Provisioning</td>
-  <td>Both<br>Only if enterprise has deployed a provisioning package.</td>
   <td>ms-settings:workplace-provisioning</td>
+  <td>Only available if enterprise has deployed a provisioning package</td>
  </tr>
 </table><br/>  
-
-
