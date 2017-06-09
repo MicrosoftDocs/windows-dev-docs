@@ -245,25 +245,25 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 
 **File name examples for scale-based assets**
 
-| Category             | Element name      | At 100% scale                  | At 125% scale                  | At 150% scale                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Small                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| Medium               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| App list (icon)      | Square44x44Logo   | AppNameAppList.scale-100.png   | AppNameAppList.scale-125.png   | AppNameAppList.scale-150.png   |
-| Splash screen        | SplashScreen      | SplashScreen.scale-100.png     | SplashScreen.scale-125.png     | SplashScreen.scale-150.png     |
+| Category             | Element name      | At 100% scale                   | At 125% scale                   | At 150% scale                   |
+|----------------------|-------------------|---------------------------------|---------------------------------|---------------------------------|
+| Small                | Square71x71Logo   | Square71x71Logo.scale-100.png   | Square71x71Logo.scale-125.png   | Square71x71Logo.scale-150.png   |
+| Medium               | Square150x150Logo | Square150x150Logo.scale-100.png | Square150x150Logo.scale-125.png | Square150x150Logo.scale-150.png |
+| Wide                 | Square310x150Logo | Square310x150Logo.scale-100.png | Square310x150Logo.scale-125.png | Square310x150Logo.scale-150.png |
+| Large (desktop only) | Square310x310Logo | Square310x310Logo.scale-100.png | Square310x310Logo.scale-125.png | Square310x310Logo.scale-150.png |
+| App list (icon)      | Square44x44Logo   | Square44x44Logo.scale-100.png   | Square44x44Logo.scale-125.png   | Square44x44Logo.scale-150.png   |
+| Splash screen        | SplashScreen      | SplashScreen.scale-100.png      | SplashScreen.scale-125.png      | SplashScreen.scale-150.png      |
 
  
 
-| Category             | Element name      | At 200% scale                  | At 400% scale                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| Small                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| Medium               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| App list (icon)      | Square44x44Logo   | AppNameAppList.scale-200.png   | AppNameAppList.scale-400.png   |
-| Splash screen        | SplashScreen      | SplashScreen.scale-200.png     | SplashScreen.scale-400.png     |
+| Category             | Element name      | At 200% scale                   | At 400% scale                   |
+|----------------------|-------------------|---------------------------------|---------------------------------|
+| Small                | Square71x71Logo   | Square71x71Logo.scale-200.png   | Square71x71Logo.scale-400.png   |
+| Medium               | Square150x150Logo | Square150x150Logo.scale-200.png | Square150x150Logo.scale-400.png |
+| Wide                 | Square310x150Logo | Square310x150Logo.scale-200.png | Square310x150Logo.scale-400.png |
+| Large (desktop only) | Square310x310Logo | Square310x310Logo.scale-200.png | Square310x310Logo.scale-400.png |
+| App list (icon)      | Square44x44Logo   | Square44x44Logo.scale-200.png   | Square44x44Logo.scale-400.png   |
+| Splash screen        | SplashScreen      | SplashScreen.scale-200.png      | SplashScreen.scale-400.png      |
 
  
 
@@ -275,22 +275,22 @@ Target-based assets are used across multiple scale factors. The element name for
 
 The following table lists all target-based asset sizes and corresponding file name examples:
 
-| Asset size | File name example                 |
-|------------|-----------------------------------|
-| 16x16\*    | AppNameAppList.targetsize-16.png  |
-| 24x24\*    | AppNameAppList.targetsize-24.png  |
-| 32x32\*    | AppNameAppList.targetsize-32.png  |
-| 48x48\*    | AppNameAppList.targetsize-48.png  |
-| 256x256\*  | AppNameAppList.targetsize-256.png |
-| 20x20      | AppNameAppList.targetsize-20.png  |
-| 30x30      | AppNameAppList.targetsize-30.png  |
-| 36x36      | AppNameAppList.targetsize-36.png  |
-| 40x40      | AppNameAppList.targetsize-40.png  |
-| 60x60      | AppNameAppList.targetsize-60.png  |
-| 64x64      | AppNameAppList.targetsize-64.png  |
-| 72x72      | AppNameAppList.targetsize-72.png  |
-| 80x80      | AppNameAppList.targetsize-80.png  |
-| 96x96      | AppNameAppList.targetsize-96.png  |
+| Asset size | File name example                  |
+|------------|------------------------------------|
+| 16x16\*    | Square44x44Logo.targetsize-16.png  |
+| 24x24\*    | Square44x44Logo.targetsize-24.png  |
+| 32x32\*    | Square44x44Logo.targetsize-32.png  |
+| 48x48\*    | Square44x44Logo.targetsize-48.png  |
+| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 20x20      | Square44x44Logo.targetsize-20.png  |
+| 30x30      | Square44x44Logo.targetsize-30.png  |
+| 36x36      | Square44x44Logo.targetsize-36.png  |
+| 40x40      | Square44x44Logo.targetsize-40.png  |
+| 60x60      | Square44x44Logo.targetsize-60.png  |
+| 64x64      | Square44x44Logo.targetsize-64.png  |
+| 72x72      | Square44x44Logo.targetsize-72.png  |
+| 80x80      | Square44x44Logo.targetsize-80.png  |
+| 96x96      | Square44x44Logo.targetsize-96.png  |
 
  
 
