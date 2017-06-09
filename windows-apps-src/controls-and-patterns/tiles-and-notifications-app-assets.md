@@ -218,8 +218,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </thead>
 <tbody>
 <tr>
-    <td>100% scale</td>
-    <td>71x71</td>
+    <td width="20%">100% scale</td>
+    <td width="20%">71x71</td>
     <td>Square71x71Logo.scale-100.png</td>
 </tr>
 <tr>
@@ -253,8 +253,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </thead>
 <tbody>
 <tr>
-    <td>100% scale</td>
-    <td>150x150</td>
+    <td width="20%">100% scale</td>
+    <td width="20%">150x150</td>
     <td>Square150x150Logo.scale-100.png</td>
 </tr>
 <tr>
@@ -288,8 +288,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </thead>
 <tbody>
 <tr>
-    <td>100% scale</td>
-    <td>310x150</td>
+    <td width="20%">100% scale</td>
+    <td width="20%">310x150</td>
     <td>Wide310x150Logo.scale-100.png</td>
 </tr>
 <tr>
@@ -323,8 +323,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </thead>
 <tbody>
 <tr>
-    <td>100% scale</td>
-    <td>310x310</td>
+    <td width="20%">100% scale</td>
+    <td width="20%">310x310</td>
     <td>Square310x310Logo.scale-100.png</td>
 </tr>
 <tr>
@@ -358,8 +358,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </thead>
 <tbody>
 <tr>
-    <td>100% scale</td>
-    <td>44x44</td>
+    <td width="20%">100% scale</td>
+    <td width="20%">44x44</td>
     <td>Square44x44Logo.scale-100.png</td>
 </tr>
 <tr>
@@ -393,8 +393,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </thead>
 <tbody>
 <tr>
-    <td>100% scale</td>
-    <td>620x300</td>
+    <td width="20%">100% scale</td>
+    <td width="20%">620x300</td>
     <td>SplashScreen.scale-100.png</td>
 </tr>
 <tr>
