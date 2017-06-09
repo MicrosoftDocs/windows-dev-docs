@@ -212,6 +212,8 @@ If you decide to provide high-contrast assets, you need to include both sets—b
 
 At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
 
+<br/>
+
 <table>
 <thead>
 <tr><th colspan="3">Small tile (Square71x71Logo)</th></tr>
@@ -419,6 +421,8 @@ At a bare minimum, we strongly recommend that you provide assets for the 100, 20
 </tr>
 </tbody>
 </table>
+
+<br/>
  
 
 **Target-based assets**
