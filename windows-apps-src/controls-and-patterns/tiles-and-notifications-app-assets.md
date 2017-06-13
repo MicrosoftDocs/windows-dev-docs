@@ -120,7 +120,7 @@ For wide tiles, limit the icon width to 66% and height to 50% of tile size. This
 
 ![wide tile sizing ratios](images/assetguidance11.png)
 
-For large tiles, limit the icon width and height to 50% of tile size:
+For large tiles, limit the icon width to 66% and height to 50% of tile size:
 
 ![large tile size ratios](images/assetguidance12.png)
 
@@ -178,24 +178,6 @@ These are size recommendations for target-based assets, at 100% scale:
 
 ![target-based asset sizing at 100% scale](images/assetguidance23.png)
 
-**Iconic template app assets**
-
-The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop. (Learn about creating iconic tiles in the [Special tile templates article](tiles-and-notifications-special-tile-templates-catalog.md).)
-
-Apps that use the iconic template, such as Messaging, Phone, and Store, have target-based assets that can feature a badge (with the live counter). As with other target-based assets, no padding is needed. Iconic assets aren't part of the app manifest, but are part of a live tile payload. Assets are scaled to fit and centered within a 3:2 ratio container:
-
-![sizing for assets with and without badge](images/assetguidance24.png)
-
-For square assets, automatic centering within the container occurs:
-
-![square asset sizing, with and without badge](images/assetguidance25.png)
-
-For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
-
-![non-square asset sizing, with and without badge](images/assetguidance26a.png)
-
-![non-square asset sizing, with and without badge](images/assetguidance26b.png)
-
 ## Splash screen assets
 
 
@@ -230,38 +212,217 @@ If you decide to provide high-contrast assets, you need to include both sets—b
 
 At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
 
-**Scale-based assets**
+<br/>
 
-| Category             | Element name      | At 100% scale | At 125% scale | At 150% scale | At 200% scale | At 400% scale |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
-| Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
-| Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
-| Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
-| App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
+<table>
+<thead>
+<tr><th colspan="3">Small tile (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% scale</td>
+    <td width="20%">71x71</td>
+    <td>Square71x71Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>89x89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>107x107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>142x142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>284x284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-**File name examples for scale-based assets**
+<table>
+<thead>
+<tr><th colspan="3">Medium tile (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% scale</td>
+    <td width="20%">150x150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>188x188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>225x225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>300x300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>600x600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Category             | Element name      | At 100% scale                  | At 125% scale                  | At 150% scale                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Small                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| Medium               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">Wide tile (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% scale</td>
+    <td width="20%">310x150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>388x188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>465x225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>620x300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>1240x600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| Category             | Element name      | At 200% scale                  | At 400% scale                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| Small                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| Medium               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+<br/>
 
+<table>
+<thead>
+<tr><th colspan="3">Large tile (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% scale</td>
+    <td width="20%">310x310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>388x388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>465x465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>620x620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>1240x1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">App list icon (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% scale</td>
+    <td width="20%">44x44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>55x55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>66x66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>88x88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>176x176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">Splash screen (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% scale</td>
+    <td width="20%">620x300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% scale</td>
+    <td>775x375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% scale</td>
+    <td>930x450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% scale</td>
+    <td>1240x600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% scale</td>
+    <td>2480x1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
  
 
 **Target-based assets**
@@ -272,22 +433,22 @@ Target-based assets are used across multiple scale factors. The element name for
 
 The following table lists all target-based asset sizes and corresponding file name examples:
 
-| Asset size | File name example                 |
-|------------|-----------------------------------|
-| 16x16\*    | AppNameAppList.targetsize-16.png  |
-| 24x24\*    | AppNameAppList.targetsize-24.png  |
-| 32x32\*    | AppNameAppList.targetsize-32.png  |
-| 48x48\*    | AppNameAppList.targetsize-48.png  |
-| 256x256\*  | AppNameAppList.targetsize-256.png |
-| 20x20      | AppNameAppList.targetsize-20.png  |
-| 30x30      | AppNameAppList.targetsize-30.png  |
-| 36x36      | AppNameAppList.targetsize-36.png  |
-| 40x40      | AppNameAppList.targetsize-40.png  |
-| 60x60      | AppNameAppList.targetsize-60.png  |
-| 64x64      | AppNameAppList.targetsize-64.png  |
-| 72x72      | AppNameAppList.targetsize-72.png  |
-| 80x80      | AppNameAppList.targetsize-80.png  |
-| 96x96      | AppNameAppList.targetsize-96.png  |
+| Asset size | File name example                  |
+|------------|------------------------------------|
+| 16x16\*    | Square44x44Logo.targetsize-16.png  |
+| 24x24\*    | Square44x44Logo.targetsize-24.png  |
+| 32x32\*    | Square44x44Logo.targetsize-32.png  |
+| 48x48\*    | Square44x44Logo.targetsize-48.png  |
+| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 20x20      | Square44x44Logo.targetsize-20.png  |
+| 30x30      | Square44x44Logo.targetsize-30.png  |
+| 36x36      | Square44x44Logo.targetsize-36.png  |
+| 40x40      | Square44x44Logo.targetsize-40.png  |
+| 60x60      | Square44x44Logo.targetsize-60.png  |
+| 64x64      | Square44x44Logo.targetsize-64.png  |
+| 72x72      | Square44x44Logo.targetsize-72.png  |
+| 80x80      | Square44x44Logo.targetsize-80.png  |
+| 96x96      | Square44x44Logo.targetsize-96.png  |
 
  
 
@@ -301,7 +462,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Tile assets**
 
 -   Centered assets are generally used on the Start to showcase your app.
--   File name format: \*Tile.scale-\*.PNG
+-   File name format: [Square\Wide]\*x\*Logo.scale-\*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Default Start tiles (desktop and mobile)
@@ -314,7 +475,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Scalable list assets with plate**
 
 -   These assets are used on surfaces that request scale factors. Assets either get plated by the system or come with their own background color if the app includes that.
--   File name format: \*AppList.scale-\*.PNG
+-   File name format: Square44x44Logo.scale-\*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Start all apps list (desktop)
@@ -327,7 +488,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Target-size list assets with plate**
 
 -   These are fixed asset sizes that don't scale with plateaus. Mostly used for legacy experiences. Assets are checked by the system.
--   File name format: \*AppList.targetsize-\*.PNG
+-   File name format: Square44x44Logo.targetsize-\*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Start jump list (desktop)
@@ -338,7 +499,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Target-size list assets without plate**
 
 -   These are assets that don't get plated or scaled by the system.
--   File name format: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   File name format: Square44x44Logo.targetsize-\*\_altform-unplated.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   Taskbar and taskbar thumbnail (desktop)
@@ -349,7 +510,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **File extension assets**
 
 -   These are assets specific to file extensions. They appear next to Win32-style file association icons in File Explorer and must be theme-agnostic. Sizing is different on desktop and mobile platforms.
--   File name format: \*LogoExtensions.targetsize-\*.PNG
+-   File name format: \*LogoExtensions.targetsize-\*.png
 -   Impacted apps: Music, Video, Photos, Microsoft Edge, Microsoft Office
 -   Uses:
     -   File Explorer
@@ -359,30 +520,7 @@ Listed here are all asset types, their uses, and recommended file names.
 **Splash screen**
 
 -   The asset that appears on your app's splash screen. Automatically scales on both desktop and mobile platforms.
--   File name format: \*SplashScreen.screen-100.PNG
+-   File name format: SplashScreen.scale-*.png
 -   Impacted apps: Every UWP app
 -   Uses:
     -   App's splash screen
-
-**Iconic tile assets**
-
--   These are assets for apps that make use of the iconic template.
--   File name format: Not applicable
--   Impacted apps: Messaging, Phone, Store, more
--   Uses:
-    -   Iconic tile
-
-
-
-## Related topics
-
-
-
-* [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)
- 
-
- 
-
-
-
-
