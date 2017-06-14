@@ -68,7 +68,7 @@ To return to this dialog, you can open project properties and go to the **Debug*
 
 ![Debug tab](images/debug-remote-machine-config.png)
 
-To deploy an app to a remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. For full instructions, see [Remote PC instructions](#remote-pc-instructions).
+To deploy an app to a pre-Creators Update remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. For full instructions, see [Remote PC instructions](#remote-pc-instructions).  However, as of the Creators Update PC also supports remote deployment.  
 
 ### C++ and JavaScript
 
@@ -84,7 +84,10 @@ After the machine is specified, you can select **Remote Machine** in the debug t
 
 ### Remote PC instructions
 
-To deploy to a remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. After you have installed the remote tools, you must launch the remote debugger on the target PC.
+> [!NOTE]
+> These instructions are only required for older versions of Windows 10.  As of the Creators Update, a PC can be treated like an Xbox.  That is, by enabling Device Discovery in the PC's Developer Mode menu and using Universal Authentication to PIN pair and connect with the PC. 
+
+To deploy to a pre-Creators Update remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. After you have installed the remote tools, you must launch the remote debugger on the target PC.
 
 To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
 
@@ -114,9 +117,9 @@ Once you specify the command line arguments, you can access the value of the arg
 
 There are three authentication modes for remote machine deployment:
 
-- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device that is not a Windows PC (desktop or laptop). Currently, this is for IoT devices, Xbox devices, and HoloLens devices. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
-- **Windows**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have access to the credentials of the signed-in user of the target machine. This is the most secure channel for remote deployment.
-- **None**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have a test machine set up in an environment that has a test account signed in and you cannot enter the credentials. Ensure that the remote debugger settings are set to accept no authentication.
+- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device. Currently, this is for IoT devices, Xbox devices, and HoloLens devices, as well as Creators Update or newer PCs. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
+- **Windows**: This authentication mode is only intended to be used for a remote PC (desktop or laptop) running the Visual Studio Remote Tools. Use this authentication mode when you have access to the credentials of the signed-in user of the target machine. This is the most secure channel for remote deployment.
+- **None**: This authentication mode is only intended to be used for a remote PC (desktop or laptop) running the Visual Studio Remote Tools. Use this authentication mode when you have a test machine set up in an environment that has a test account signed in and you cannot enter the credentials. Ensure that the remote debugger settings are set to accept no authentication.
 
 ## Advanced remote deployment options
 With the release of Visual Studio 2015 Update 3, and the Windows 10 Anniversary Update, there are new advanced remote deployment options for certain Windows 10 devices. The advanced remote deployment options can be found on the **Debug** menu for project properties.
@@ -129,7 +132,7 @@ The new properties include:
 ### Requirements
 To utilize the advanced remote deployment options, you must satisfy the following requirements:
 * Have Visual Studio 2015 Update 3 installed with Windows 10 Tools 1.4.1 (which includes the Windows 10 Anniversary Update SDK)
-* Target a Windows 10 Anniversary Update Xbox remote device
+* Target a Windows 10 Anniversary Update Xbox remote device or Windows 10 Creators Update PC 
 * Use Universal Authentication mode
 
 ### Properties pages
@@ -147,10 +150,10 @@ For a C++ UWP app, the properties page will look like the following.
 The **package registration path** specified when you **copy files to device** is the physical location on the remote device where the files are copied. This path can be specified as any relative path. The location where the files are deployed will be relative to a development files root that will vary depending on the target device. Specifying this path is useful for multiple developers sharing the same device and working on packages with some build variance.
 
 > [!NOTE]
-> **Copy files to device** is currently supported on Xbox running Windows 10 Anniversary Update.
+> **Copy files to device** is currently supported on Xbox running Windows 10 Anniversary Update and PCs running Windows 10 Creators Update .
 
-On the remote device, the layout gets copied to the following default location depending on the device family:
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
+On the remote device, the layout gets copied to the following default location:
+  `\\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
 
 ### Register layout from network
 When you choose to register the layout from the network, you can build your package layout to a network share and then register the layout on the remote device directly from the network. This requires that you specify a layout folder path (a network share) that is accessible from the remote device. The **Layout folder path** property is the path set relative to the PC running Visual Studio, while the **Package registration path** property is the same path, but specified relative to the remote device.
@@ -172,10 +175,11 @@ When you first register the layout from the network, your credentials will be ca
 You cannot select **keep all files on device** when you register the layout from the network because no files are physically copied to the remote device.
 
 > [!NOTE]
-> **Register layout from network** is currently supported on Xbox running Windows 10 Anniversary Update.
+> **Register layout from network** is currently supported on Xbox running Windows 10 Anniversary Update and PCs running Windows 10 Creators Update.
 
 On the remote device, the layout gets registered to the following default location depending on the device family:
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
+  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` - this is a symlink to the **package registration path**
+  PC does not use a symlink and instead directly registers the **package registration path**
 
 
 ## Debugging options
