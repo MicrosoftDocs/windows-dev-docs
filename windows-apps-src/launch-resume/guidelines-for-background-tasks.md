@@ -52,7 +52,7 @@ Background tasks that run in the same process as the foreground app do not need 
 
 > **Important**  Starting in Windows 10, apps are no longer required to be on the lock screen as a prerequisite to run background tasks.
 
-Universal Windows Platform (UWP) apps can run all supported task types without being pinned to the lock screen. However, apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any type of background task. This method will return [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439) if the user has explicitly denied background task permissions for your app in the device's settings.
+Universal Windows Platform (UWP) apps can run all supported task types without being pinned to the lock screen. However, apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any type of background task. This method will return [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439) if the user has explicitly denied background task permissions for your app in the device's settings. For more information on user choice around background activity and Battery Saver, see [Optimize Background Activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity). 
 ## Background task checklist
 
 *Applies to both in-process and out-of-process background tasks*
