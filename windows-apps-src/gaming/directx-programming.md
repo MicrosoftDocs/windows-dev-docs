@@ -4,7 +4,7 @@ title: DirectX programming
 description: Programming UWP games using DirectX.
 ms.assetid: ba77b081-b8c0-4674-b8bf-7a94466a67f7
 ms.author: joanlee
-ms.date: 02/08/2017
+ms.date: 06/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -47,13 +47,21 @@ This section provides information about developing UWP games with DirectX.
 <td align="left"><p>[Optimization and advanced topics](directx-optimization-and-advanced-topics.md)</p></td>
 <td align="left"><p>Learn about optimization and other advanced topics.</p></td>
 </tr>
+<tr class="even">
+<td align="left"><p>[Port DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)</p></td>
+<td align="left"><p>Learn how to port your DirectX 9 game to UWP.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Port OpenGL to Direct3D](port-from-opengl-es-2-0-to-directx-11-1.md)</p></td>
+<td align="left"><p>Learn how to port your OpenGL ES 2.0 game to Direct3D 11.</p></td>
+</tr>
 </tbody>
 </table>
  
 
  
 
- 
+
 
 
 
