@@ -19,7 +19,7 @@ You can programmatically pin your own app to the taskbar, just like you can [pin
 ![Taskbar](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16211](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16211](https://blogs.windows.com/windowsexperience/2017/05/17/announcing-windows-10-insider-preview-build-16199-pc-build-15215-mobile/#bDqf2Ah3Gd7FM66g.97) or higher to use the taskbar APIs.
+> **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16215](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16215](https://blogs.windows.com/windowsexperience/2017/06/08/announcing-windows-10-insider-preview-build-16215-pc-build-15222-mobile/) or higher to use the taskbar APIs.
 
 At its core, the APIs let you...
 
