@@ -1,5 +1,5 @@
 ---
-author: Adam Barlow
+author: mijacobs
 Description: Use the ParallaxView control to add depth and movement to your app.
 title: Guidelines for using the ParallaxView control
 ms.assetid: 
