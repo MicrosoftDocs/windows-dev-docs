@@ -72,14 +72,14 @@ Canvas apps with emphasis on continuous, zoomable content should use in-app acry
 
 For apps without a single continuous canvas, we recommend using background acrylic to connect users to their overall desktop environment.
 
-### Prevalent acrylic
+### Acrylic in utility apps
 
-Apps that want to focus on a fluid, continuous experience and avoid creating distinct visual regions can add background acrylic to the full area of the app.
+Widgets or light-weight apps can reinforce their usage as utility apps by drawing acrylic edge-to-edge inside their app window. Apps belonging to this category typically have brief user engagement times and are unlikely to occupy the user's entire desktop screen. Examples include calculator and action center.
 
-![App pattern using a horizontal acrylic pane](images/acrylic_app-pattern_full.png)
+![Calculator utility app with acrylic as its entire background](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> Rendering acrylic surfaces can be GPU intensive, which can increase power consumption and shorten battery life on some devices. Acrylic effects are automatically disabled when devices enter battery saver mode, and users can disable acrylic effects for all apps, if they choose. 
+> Rendering acrylic surfaces is GPU intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter battery saver mode, and users can disable acrylic effects for all apps, if they choose.
 
 
 ## Acrylic blend types
