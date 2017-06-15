@@ -4,11 +4,11 @@ Description: The Windows Store reaches customers in over 200 countries and regio
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 06/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, markets, countries, regions
 ---
 
 # Define market selection
@@ -425,10 +425,9 @@ The Commerce Expansion Adjustment will be applied to all transactions processed 
 
 &nbsp;
 
-| Country/region | Payment method         | Commerce Expansion Adjustment | Effective date |
-|----------------|-------------------------|-------------------------------|----------------|
-| South Africa   | Mobile operator billing | 13.9%                         | March 2014     |
-| Vietnam        | Mobile operator billing | 13.9%                         | October 2014   |
+| Country/region       | Payment method          | Commerce Expansion Adjustment | Effective date |
+|----------------------|-------------------------|-------------------------------|----------------|
+| South Africa         | Mobile operator billing | 13.9%                         | March 2014     |
 | Argentina            | Gift card       | 2.24%                         | March 2016     |
 | Australia            | Gift card       | 2.24%                         | March 2016     |
 | Austria              | Gift card       | 2.24%                         | March 2016     |
