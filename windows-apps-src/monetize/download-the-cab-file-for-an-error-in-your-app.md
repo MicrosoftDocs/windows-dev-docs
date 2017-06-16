@@ -11,8 +11,6 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows Store analytics API, download CAB
 ---
 
-<!-- IMPORTANT!!!: Do not publish this article unless/until amaziak gives the go-ahead to do so. -->
-
 # Download the CAB file for an error in your app
 
 Use this method in the Windows Store analytics API to download the CAB file that is associated with a particular error in your app that was reported to Dev Center. This method can only download the CAB file for an app error that occurred in the last 30 days. CAB file downloads are also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
