@@ -29,7 +29,7 @@ You can install that package by using the Add-AppxPackage PowerShell cmdlet on y
 The converter runs the desktop installer in an isolated Windows environment by using a clean base image provided as part of the converter download. It captures any registry and file system I/O made by the desktop installer and packages it as part of the output.
 
 > [!NOTE]
-> Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/" target="_blank">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.
+> Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through some common ways to use the Desktop App Converter.
 
 ## The DAC does more than just generate a package for you
 
@@ -153,7 +153,7 @@ You can read about each one [here](#command-reference).
 Here's a few common ways to package your app.
 
 * [Package an app that has an installer (.msi) file](#installer-conversion)
-* Package an app that has a setup executable file](#setup-conversion)
+* [Package an app that has a setup executable file](#setup-conversion)
 * [Package an app that doesn't have an installer](#no-installer-conversion)
 * [Package an app, sign the app, and prepare it for store submission](#optional-parameters)
 
