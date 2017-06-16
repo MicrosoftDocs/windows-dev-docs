@@ -534,6 +534,10 @@ Finally, there is one last consideration when using PlayReady on Xbox One: on de
 
 Use the approach that makes the most sense for your company and your product.
 
+**[BLAH](somelinkhere)** = BLAH
+
+[**BLAH**](somelinkhere) = BLAH
+
 ## See also
 - [Media playback](media-playback.md)
 
