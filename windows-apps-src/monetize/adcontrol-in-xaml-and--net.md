@@ -8,7 +8,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, AdControl, XAML, .net, walkthrough
+keywords: windows 10, uwp, ads, advertising, AdControl, ad control, XAML, .net, walkthrough
 ---
 
 # AdControl in XAML and .NET
@@ -80,7 +80,7 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
     </Page>
     ```
 
-5. In the **Grid** tag, add the code for the **AdControl**. Assign the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) properties in the **Page** to the test values provided in [Test mode values](test-mode-values.md). Also adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+5. In the **Grid** tag, add the code for the **AdControl**. Assign the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) properties in the **Page** to the test values provided in [Test mode values](test-mode-values.md) (these values are only used for testing; you must [replace them with live values](#release) from Windows Dev Center before you publish your app). Also adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
     > [!NOTE]
     > You will replace the test application ID and ad unit ID values with live values before submitting your app for submission.
@@ -123,11 +123,12 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
 
 6.  Compile and run the app to see it with an ad.
 
+<span id="release" />
 ## Release your app with live ads using Windows Dev Center
 
-1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create an ad unit](../publish/monetize-with-ads.md#create-ad-unit). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
+1.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](../monetize/set-up-ad-units-in-your-app.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the **Ad mediation** section on the **Monetize with ads** page for your app in the dashboard. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
+2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
 
 3.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Dev Center.
 
@@ -148,3 +149,4 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
 ## Related topics
 
 * [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Set up ad units for your app](../monetize/set-up-ad-units-in-your-app.md)

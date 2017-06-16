@@ -24,9 +24,8 @@ This package gives your app an identity and with that identity, your desktop app
 
 Aside from the code that you use to light up Windows 10 experiences, your app remains unchanged and you can continue to distribute it to your existing Windows 7, Windows Vista, or Windows XP user base. On Windows 10, your app continues to run in full-trust user mode just like it’s doing today.
 
-
 > [!NOTE]
-> Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/" target="_blank">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through the entire process of bringing your desktop app to the Universal Windows Platform (UWP).
+> Checkout <a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">this series</a> of short videos published by the Microsoft Virtual Academy. These videos walk you through the entire process of bringing your desktop app to the Universal Windows Platform (UWP).
 
 ## Benefits
 
@@ -93,30 +92,55 @@ See [Package a .NET app by using Visual Studio (Desktop to UWP Bridge)](desktop-
 
  Here's a few options:
 
- #### Advanced Installer
+#### Advanced Installer
 
- Caphyon, a reliable Microsoft partner for many years, provides innovative solutions that help developers package their Win32/.NET applications by extending the Desktop Bridge support from Microsoft.
- <div style="float: left; padding: 10px; width: 20%">
+Caphyon provides a free, GUI-based, desktop app packaging tool that helps you to generate a Windows app package for your application with only a few clicks. It can use any installer; even ones that run in silent mode, and performs a validation check to determine whether the app is suitable for packaging.
+<div style="float: left; padding: 10px; width: 20%">
      ![desktop to UWP bridge image](images/desktop-to-uwp/Advanced_Installer_Vertical.png)
- </div>
- They provide a free, GUI-based, desktop app packaging tool that helps you to generate a Windows app package for your application with only a few clicks. It can use any installer; even ones that run in silent mode, and performs a validation check to determine whether the app is suitable for packaging.
+</div>
+The Desktop App Converter also integrates with Hyper-V and [VMware](http://www.vmware.com/). This means that you can use your own virtual machines, without having to download a matching [Docker](https://docs.docker.com/) image that can be over 3GB in size.
 
- The Desktop App Converter also integrates with Hyper-V and [VMware](http://www.vmware.com/). This means that you can use your own virtual machines, without having to download a matching [Docker](https://docs.docker.com/) image that can be over 3GB in size.
+You can use [Advanced Installer](http://www.advancedinstaller.com/) to generate MSI and [Windows app packages](http://www.advancedinstaller.com/uwp-app-package.html) from existing projects. You can also use Advanced installer to import Windows app packages that you generate by using the Microsoft Desktop App Converter. Once imported, you can maintain them by using visual tools that are specifically designed for UWP apps.
 
- You can use [Advanced Installer](http://www.advancedinstaller.com/) to generate MSI and [Windows app packages](http://www.advancedinstaller.com/uwp-app-package.html) from existing projects. You can also use Advanced installer to import Windows app packages that you generate by using the Microsoft Desktop App Converter. Once imported, you can maintain them by using visual tools that are specifically designed for UWP apps.
+Advanced Installer also provides an extension for Visual Studio 2017 and 2015 that can use to [build and debug Desktop Bridge apps](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html).
 
- Advanced Installer also provides an extension for Visual Studio 2017 and 2015 that can use to [build and debug Desktop Bridge apps](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html).
+See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) for a quick overview.
 
- See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) for a quick overview.
+#### FireGiant
 
- #### Other third-party Installers
+The [FireGiant Appx extension](https://www.firegiant.com/products/wix-expansion-pack/appx/) lets you create Windows app packages and MSI packages simultaneously from the same WiX source code. Every time you build, you can target Desktop Bridge in Windows 10 with a Windows app package and earlier versions of Windows with MSI.
 
- These tools also offer excellent support for the Desktop Bridge.
+<div style="float: left; padding: 10px; width: 20%">
+    ![desktop to UWP bridge image](images/desktop-to-uwp/FG3rdPartyLogo.png)
+</div>
 
- * [InstallShield by Flexera](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)
- * [WiX by FireGiant](https://www.firegiant.com/r/appx)
- * [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
- * [InstallAware](https://www.installaware.com/appx.htm)
+The FireGiant Appx extension uses static analysis and intelligent emulation of your WiX projects to create Windows app packages without the disk space and runtime overhead of containers or virtual machines.
+
+Because the FireGiant Appx extension doesn't convert your installer by running it, you can maintain your WiX installer without having to repeatedly convert it to Windows app packages. All your users on different versions of Windows get your latest improvements and you don't have to worry about MSI and Windows app packages getting out of sync.
+
+Check out this [video](https://www.youtube.com/watch?v=AFBpdBiAYQE) and see how in a couple lines of code FireGiant CEO Rob Mensching creates an Appx (Windows app package) version of the popular open-source 7-Zip compression tool and then how he improves both Windows app and MSI packages with changes in the same WiX source code.
+
+#### InstallAware
+
+Install**Aware** provides free Install**Aware** extensions for Visual Studio versions 2012-2017. You can use them to create Windows app packages with a single click directly from the [Visual Studio toolbar](https://www.installaware.com/visual-studio-installer-2015.htm).
+
+<div style="float: left; padding: 10px; width: 20%">
+    ![desktop to UWP bridge image](images/desktop-to-uwp/installaware.png)
+</div>
+
+You can also import any setup, even if you don't have the source code for that setup, by using Package**Aware** (snapshot-free setup captures), or the Database Import Wizard (for all MSI installers and MSM merge modules). You can use [GUI tools](https://www.installaware.com/scripting-two-way-integrated-ide.htm) to maintain and enhance your imports, visually or by scripting.
+
+[Advanced APPX creation options](https://www.installaware.com/mhtml5/desktop/appx.htm) help you target Windows Store submissions, or produce signed Windows app package binaries for sideload distribution to end-users. You can even build **WSA**(Windows Server Applications) Installer packages that target deployments to **Nano Server** all from a single source, and with full support for [command line automation](https://www.installaware.com/scripting-automation-interface.htm), in addition to a GUI.
+
+Install**Aware** also [open sourced](https://www.installaware.com/gnu.asp) an **APPX builder library**, together with an example command line applet, under the GNU Affero GPL license. These are designed for use with open source platforms such as WiX.
+
+
+#### Other third-party Installers
+
+These tools also offer excellent support for the Desktop Bridge.
+
+* [InstallShield by Flexera](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer)
+* [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
 ## Enhance
 

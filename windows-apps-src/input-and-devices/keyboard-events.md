@@ -1,6 +1,25 @@
-# Keyboard events
-## Keyboard events and focus
+---
+author: Karl-Bridge-Microsoft
+Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
+title: Keyboard events
+ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
+label: Keyboard events
+template: detail.hbs
+keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down
+ms.author: kbridge
+ms.date: 03/29/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+pm-contact: chigy
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
+---
 
+# Keyboard events
+
+## Keyboard events and focus
 
 The following keyboard events can occur for both hardware and touch keyboards.
 
@@ -9,11 +28,9 @@ The following keyboard events can occur for both hardware and touch keyboards.
 | [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) | Occurs when a key is pressed.  |
 | [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)     | Occurs when a key is released. |
 
-
-**Important**  
-Some Windows Runtime controls handle input events internally. In these cases, it might appear that an input event doesn't occur because your event listener doesn't invoke the associated handler. Typically, this subset of keys is processed by the class handler to provide built in support of basic keyboard accessibility. For example, the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class overrides the [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) events for both the Space key and the Enter key (as well as [**OnPointerPressed**](https://msdn.microsoft.com/library/windows/apps/hh967989)) and routes them to the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the control. When a key press is handled by the control class, the [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) and [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) events are not raised.
-
-This provides a built-in keyboard equivalent for invoking the button, similar to tapping it with a finger or clicking it with a mouse. Keys other than Space or Enter still fire [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) and [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) events. For more info about how class-based handling of events works (specifically, the "Input event handlers in controls" section), see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584).
+> [!IMPORTANT]
+> Some Windows Runtime controls handle input events internally. In these cases, it might appear that an input event doesn't occur because your event listener doesn't invoke the associated handler. Typically, this subset of keys is processed by the class handler to provide built in support of basic keyboard accessibility. For example, the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class overrides the [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) events for both the Space key and the Enter key (as well as [**OnPointerPressed**](https://msdn.microsoft.com/library/windows/apps/hh967989)) and routes them to the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event of the control. When a key press is handled by the control class, the [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) and [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) events are not raised.  
+> This provides a built-in keyboard equivalent for invoking the button, similar to tapping it with a finger or clicking it with a mouse. Keys other than Space or Enter still fire [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) and [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) events. For more info about how class-based handling of events works (specifically, the "Input event handlers in controls" section), see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
 
 Controls in your UI generate keyboard events only when they have input focus. An individual control gains focus when the user clicks or taps directly on that control in the layout, or uses the Tab key to step into a tab sequence within the content area.

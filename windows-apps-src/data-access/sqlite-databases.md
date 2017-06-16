@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: SQLite databases
 description: SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

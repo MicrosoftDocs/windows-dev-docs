@@ -3,7 +3,7 @@ author: QuinnRadich
 title: Choose a UWP version
 description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
 ms.author: quradic
-ms.date: 05/16/2017
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 
 Each version of Windows 10 has brought new and improved features to the UWP platform. When creating a UWP app in Microsoft Visual Studio, you can choose which version to target.
 
-The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have downloaded the appropriate build of the SDK in order to target that version.
+The following table describes the available versions of Windows 10. Please note that this table only applies for building UWP apps, which are only supported on Windows 10. You cannot develop UWP apps for older versions of Windows, and you must have [installed the appropriate build of the SDK](http://go.microsoft.com/fwlink/?LinkId=821431) in order to target that version. 
 
 | Version | Description |
 | --- | --- |

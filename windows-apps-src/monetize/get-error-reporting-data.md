@@ -4,7 +4,7 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Windows Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,7 @@ keywords: windows 10, uwp, Store services, Windows Store analytics API, errors
 
 Use this method in the Windows Store analytics API to get aggregate error reporting data for your app in JSON format for a given date range and other optional filters. This information is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
 
-You can retrieve additional error information by using the [get details for an error in your app](get-details-for-an-error-in-your-app.md) and [get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md) methods.
+You can retrieve additional error information by using the [get error details](get-details-for-an-error-in-your-app.md), [get stack trace](get-the-stack-trace-for-an-error-in-your-app.md), and [download CAB file](download-the-cab-file-for-an-error-in-your-app.md) methods.
 
 ## Prerequisites
 
@@ -166,6 +166,7 @@ The following example demonstrates an example JSON response body for this reques
 * [Health report](../publish/health-report.md)
 * [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
 * [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)
 * [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)

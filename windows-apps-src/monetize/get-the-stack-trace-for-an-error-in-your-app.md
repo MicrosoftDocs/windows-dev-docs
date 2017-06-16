@@ -4,7 +4,7 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: Use this method in the Windows Store analytics API to get the stack trace for an error in your app.
 title: Get the stack trace for an error in your app
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -127,3 +127,4 @@ The following example demonstrates an example JSON response body for this reques
 * [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
 * [Get error reporting data](get-error-reporting-data.md)
 * [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
+* [Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)

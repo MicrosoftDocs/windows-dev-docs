@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
 title: Data access
 description: This section discusses storing data on the device in a private database and using object relational mapping in Universal Windows Platform (UWP) apps.
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

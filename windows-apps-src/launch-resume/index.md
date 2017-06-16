@@ -103,6 +103,8 @@ The [Background tasks](support-your-app-with-background-tasks.md) section shows 
 | [Transfer data in the background](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | Use the background transfer API to copy files in the background. |
 | [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)                   | Use a background task to update your app's live tile with fresh content. |
 | [Use a maintenance trigger](use-a-maintenance-trigger.md)                                                   | Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in. |
+### See also
+* [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) - Learn how to reduce the energy used in the background and interact with user settings for background activity.
 
 ## Remote Systems
 

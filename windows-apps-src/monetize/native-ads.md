@@ -3,11 +3,11 @@ author: mcleanbyron
 description: Learn how to add native ads to your UWP app.
 title: Native ads
 ms.author: mcleans
-ms.date: 06/02/2017
+ms.date: 06/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, native ad
+keywords: windows 10, uwp, ads, advertising, ad control, native ad
 ---
 
 # Native ads
@@ -44,19 +44,19 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-7.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a **NativeAdsManager** object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](test-mode-values.md) for native ads. These values are only used for testing; you must [replace them with live values](#live-ads) from Windows Dev Center before you publish your app.
+7.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](test-mode-values.md) for native ads. These values are only used for testing; you must [replace them with live values](#release) from Windows Dev Center before you publish your app.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-8.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManager** object and wire up event handlers for the **AdReady** and **ErrorOccurred** events of the object.
+8.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManager** object and wire up event handlers for the [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.adready.aspx) and [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.erroroccurred.aspx) events of the object.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
-9.  When you're ready to show a native ad, call the **RequestAd** method to fetch an ad.
+9.  When you're ready to show a native ad, call the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.requestad.aspx) method to fetch an ad.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
-10.  When a native ad is ready for your app, your **AdReady** event handler is called, and a **NativeAd** object that represents the native ad is passed to the *e* parameter. Use the **NativeAd** properties to get each element of the native ad and display these elements on your page. Be sure to also call the **RegisterAdContainer** method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
+10.  When a native ad is ready for your app, your **AdReady** event handler is called, and a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) object that represents the native ad is passed to the *e* parameter. Use the **NativeAd** properties to get each element of the native ad and display these elements on your page. Be sure to also call the [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) method to register the UI element that acts as a container for the native ad; this is required to properly track ad impressions and clicks.
   > [!NOTE]
   > Some elements of the native ad are required and must always be shown in your app. For more information, see the [requirements and guidelines](#requirements-and-guidelines).
 
@@ -98,18 +98,18 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
 12.  Compile and run the app to see it with a test ad.
 
-<span id="live-ads" />
+<span id="release" />
 ## Release your app with live ads
 
 After you confirm that your native ad implementation successfully shows a test ad, follow these instructions to configure your app to show real ads and submit your updated app to the Store.
 
 1.  Make sure that your native ad implementation follows the [requirements and guidelines](#requirements-and-guidelines) for native ads.
 
-2.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create an ad unit](../publish/monetize-with-ads.md#create-ad-unit). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
+2.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](../monetize/set-up-ad-units-in-your-app.md). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
 
-3. You can optionally enable ad mediation for the native ad by configuring the settings in the **Ad mediation** section on the **Monetize with ads** page for your app in the dashboard. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
+3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 
-4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the **NativeAdsManager** constructor) with the live values you generated in Dev Center.
+4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor) with the live values you generated in Dev Center.
 
 5.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 
@@ -122,22 +122,22 @@ Native ads give you have a lot of control over how you present advertising conte
 
 ### Register the container for your native ad
 
-In your code, you must call the **RegisterAdContainer** method of the **NativeAd** object to register the UI element that acts as a container for the native ad and optionally any specific controls that you want to register as clickable targets for the ad. This is required to properly track ad impressions and clicks.
+In your code, you must call the [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) method of the **NativeAd** object to register the UI element that acts as a container for the native ad and optionally any specific controls that you want to register as clickable targets for the ad. This is required to properly track ad impressions and clicks.
 
 There are two overloads for the **RegisterAdContainer** method that you can use:
 
-* If you want the entire container for all the individual native ad elements to be clickable, call the **RegisterAdContainer(FrameworkElement)** method and pass the container control to the method. For example, if you display all of the native ad elements in separate controls that are all hosted in a **StackPanel** and you want the entire **StackPanel** to be clickable, pass the **StackPanel** to this method.
+* If you want the entire container for all the individual native ad elements to be clickable, call the [RegisterAdContainer(FrameworkElement)](https://msdn.microsoft.com/library/windows/apps/mt809188.aspx) method and pass the container control to the method. For example, if you display all of the native ad elements in separate controls that are all hosted in a **StackPanel** and you want the entire **StackPanel** to be clickable, pass the **StackPanel** to this method.
 
-* If you want only certain native ad elements to be clickable, call the **RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))** method. Only the controls that you pass to the second parameter will be clickable.
+* If you want only certain native ad elements to be clickable, call the [RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))](https://msdn.microsoft.com/library/windows/apps/mt809189.aspx) method. Only the controls that you pass to the second parameter will be clickable.
 
 ### Required native ad elements
 
 At a minimum, you must always show the following native ad elements to the user in your native ad design. If you fail to include these elements, you may see poor performance and low yields for your ad unit.
 
-1. Always display the title of the native ad (available in the **Title** property of the **NativeAd** object). Provide enough space to display at least 25 characters. If the title is longer, replace the additional text with an ellipsis.
+1. Always display the title of the native ad (available in the [Title](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.title.aspx) property of the **NativeAd** object). Provide enough space to display at least 25 characters. If the title is longer, replace the additional text with an ellipsis.
 2. Always display least one of the following elements to help differentiate the native ad experience from the rest of your app and clearly call out that the content is provided by an advertiser:
-  * The distinguishable *ad* icon (available in the **AdIcon** property of the **NativeAd** object). This icon is supplied by Microsoft.
-  * The *sponsored by* text (available in the **SponsoredBy** property of the **NativeAd** object). This text is supplied by the advertiser.
+  * The distinguishable *ad* icon (available in the [AdIcon](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.adicon.aspx) property of the **NativeAd** object). This icon is supplied by Microsoft.
+  * The *sponsored by* text (available in the [SponsoredBy](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.sponsoredby.aspx) property of the **NativeAd** object). This text is supplied by the advertiser.
   * As an alternative to the *sponsored by* text, you can choose to display some other text that helps differentiate the native ad experience from the rest of your app, such as "Sponsored content", "Promotional content", "Recommended content", etc.
 
 ### User experience
@@ -146,11 +146,11 @@ Your native ad should be clearly delineated from the rest of your app and have s
 
 ### Description
 
-If you choose to show the description for the ad (available in the **Description** property of the **NativeAd** object), provide enough space to display at least 75 characters. We recommend that you use an animation to show the full content of the ad description.
+If you choose to show the description for the ad (available in the [Description](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.description.aspx) property of the **NativeAd** object), provide enough space to display at least 75 characters. We recommend that you use an animation to show the full content of the ad description.
 
 ### Call to action
 
-The *call to action* text (available in the **CallToAction** property of the **NativeAd** object) is a critical component of the ad. If you choose to show this text, follow these guidelines:
+The *call to action* text (available in the [CallToAction](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.calltoaction.aspx) property of the **NativeAd** object) is a critical component of the ad. If you choose to show this text, follow these guidelines:
 
 * Always display the *call to action* text to the user on a clickable control such as a button or hyperlink.
 * Always display the *call to action* text in its entirety.
@@ -159,3 +159,8 @@ The *call to action* text (available in the **CallToAction** property of the **N
 ### Learn and optimize
 
 We recommend that you create and use different ad units for each different native ad placement in your app. This enables you to get separate reporting data for each native ad placement, and you can use this data to make changes that optimize the performance of each native ad placement.
+
+## Related topics
+
+* [Monetize with ads](../publish/monetize-with-ads.md)
+* [Set up ad units for your app](../monetize/set-up-ad-units-in-your-app.md)
