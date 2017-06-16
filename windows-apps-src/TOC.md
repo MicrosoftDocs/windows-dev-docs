@@ -762,6 +762,7 @@
 ##### [Get error reporting data for your app](monetize/get-error-reporting-data.md)
 ###### [Get details for an error in your app](monetize/get-details-for-an-error-in-your-app.md)
 ###### [Get the stack trace for an error in your app](monetize/get-the-stack-trace-for-an-error-in-your-app.md)
+###### [Download the CAB file for an error in your app](monetize/download-the-cab-file-for-an-error-in-your-app.md)
 ##### [Get error reporting data for Windows 10 drivers](monetize/get-error-reporting-data-for-windows-10-drivers.md)
 ###### [Get details for a Windows 10 driver error](monetize/get-details-for-a-windows-10-driver-error.md)
 ###### [Download the CAB file for a Windows 10 driver error](monetize/download-the-cab-file-for-a-windows-10-driver-error.md)
