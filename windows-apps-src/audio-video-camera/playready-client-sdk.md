@@ -471,7 +471,7 @@ In previous versions of PlayReady DRM, non-persistent licenses could only be acq
 ## Query for protection capabilities
 Starting with Windows 10, version 1703, you can query HW DRM capabilities, such as decode codecs, resolution, and output protections (HDCP). Queries are performed with the [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_) method which takes a string representing the capabilities for which support is queried and a string specifying the key system to which the query applies. For a list of supported string values, see the API reference page for [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_). The following code example illustrates the usage of this method.  
 
-```cs
+    ```cs
     using namespace Windows::Media::Protection;
 
     ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
@@ -494,7 +494,7 @@ Starting with Windows 10, version 1703, you can query HW DRM capabilities, such 
 	    // Do not queue up UHD HW DRM video.
 	    break;
     }
-
+    ```
 ## Add secure stop
 
 This section describes how to add secure stop to your UWP app.
@@ -533,6 +533,7 @@ Finally, there is one last consideration when using PlayReady on Xbox One: on de
 * Implement logic so that only certain authenticated test accounts are able to acquire SL150 licenses for certain content.
 
 Use the approach that makes the most sense for your company and your product.
+
 
 ## See also
 - [Media playback](media-playback.md)
