@@ -15,12 +15,12 @@ keywords: windows 10, uwp, Microsoft Store Services SDK
 
 The Microsoft Store Services SDK provides features that help you make more money and engage with customers in your Universal Windows Platform (UWP) apps, such as sending targeted Dev Center notifications to your apps and running A/B experiments in your apps. This SDK is an extension for Visual Studio 2015 and later versions of Visual Studio.
 
-> [!NOTE]
-> The Microsoft Store Services SDK was previously used to distribute the advertising libraries for UWP apps. These advertising libraries are now available in the standalone [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). In the future, new advertising features and bug fixes will only be available via the standalone Microsoft Advertising SDK, and the advertising libraries in the Microsoft Store Services SDK will no longer be updated. If you have an existing app that already uses the advertising libraries in the Microsoft Store Services SDK, your app will continue to receive ads without any code changes. However, you will need to install the standalone Microsoft Advertising SDK to get new features and bug fixes.
+> [!IMPORTANT]
+> To display ads in UWP apps by using controls such as **AdControl** and **InterstitialAd**, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). The advertising libraries have been moved from the Microsoft Store Services SDK to the Microsoft Advertising SDK, and new advertising features and bug fixes will only be available via the Microsoft Advertising SDK. If you have an existing app that already uses the advertising libraries in the Microsoft Store Services SDK, your app will continue to receive ads without any code changes. However, the advertising libraries in the Microsoft Store Services SDK will no longer be updated, and you will need to install the Microsoft Advertising SDK to get new features and bug fixes. For more information, see [Display ads in your app](display-ads-in-your-app.md).
 
-## Scenarios supported by the SDK
+## Scenarios supported by the Microsoft Store Services SDK
 
-The SDK currently supports the following scenarios for UWP apps. The SDK will evolve over time to support new engagement scenarios. For reference documentation about the APIs in the SDK, see [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx).
+The Microsoft Store Services SDK currently supports the following scenarios for UWP apps. For API reference documentation, see [Microsoft Store Services SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx).
 
 |  Scenario  |  Description   |
 |------------|----------------|
@@ -28,6 +28,9 @@ The SDK currently supports the following scenarios for UWP apps. The SDK will ev
 |  [Launch Feedback Hub from your UWP app](launch-feedback-hub-from-your-app.md)    |  Use the [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) class in your UWP app to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard. |
 |  [Configure your UWP app to receive Dev Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)    |  Use the [StoreServicesEngagementManager](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.aspx) class in your UWP app to register your app to receive targeted push notifications that you send to your customers using the Windows Dev Center dashboard.  |
 |   [Log custom events in your UWP app for the Usage report in Dev Center](log-custom-events-for-dev-center.md)   |  Use the [StoreServicesCustomEventLogger](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) class in your UWP app to log custom events that are associated with your app in Dev Center. Then, review the total occurrences for your custom events in the **Custom events** section of the [Usage report](https://msdn.microsoft.com/windows/uwp/publish/usage-report) in the Dev Center dashboard.  |
+
+> [!NOTE]
+> To display ads in your app, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) instead of the Microsoft Store Services SDK. For more information, see [Display ads in your app](display-ads-in-your-app.md).
 
 <span id="prerequisites" />
 ## Prerequisites
@@ -42,13 +45,16 @@ The Microsoft Store Services SDK requires:
 
 There are two options for installing the Microsoft Store Services SDK for use with Visual Studio 2015 (or a later release) on your development computer:
 
-* **MSI installer**&nbsp;&nbsp;You can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk). With this option, the SDK libraries are installed in a shared location on your development computer so that they can be referenced by any UWP project in Visual Studio.
-* **NuGet package**&nbsp;&nbsp;You can install the SDK libraries for a specific UWP project in Visual Studio using NuGet. With this option, the SDK libraries are installed only for the project in which you installed the NuGet package.
+* **MSI installer**&nbsp;&nbsp;If you are using Visual Studio 2015, you can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk). With this option, the SDK libraries are installed in a shared location on your development computer so that they can be referenced by any UWP project in Visual Studio.
+* **NuGet package**&nbsp;&nbsp;For Visual Studio 2015 or a later release, you can install the SDK libraries for a specific UWP project by using NuGet. With this option, the SDK libraries are installed only for the project in which you installed the NuGet package.
 
 Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features. If you have existing projects that use the SDK and you want to use the latest version, download and install the latest version of the SDK on your development computer.
 
 <span id="install-msi" />
 ### Install via MSI
+
+> [!NOTE]
+> This installation option is only available for Visual Studio 2015. If you are using Visual Studio 2017, you must [install via NuGet](#install-nuget).
 
 To install the Microsoft Store Services SDK via the MSI installer:
 
