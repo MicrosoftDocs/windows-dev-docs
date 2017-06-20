@@ -1,10 +1,11 @@
----
+﻿---
+
 author: jnHs
 Description: If your app uses ad mediation or displays banner or interstitial ads using the Microsoft Store Services SDK, use the Monetize with ads page to manage your use of ads.
 title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 06/07/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +14,7 @@ keywords: windows 10, uwp
 
 # Monetize with ads
 
-Use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads for the following scenarios:
+Each app in your dashboard includes a **Monetization** &gt; **Monetize with ads** page. You can manage your use of ads for the following scenarios on this page:
 
 * Your UWP app uses an [AdControl](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), or [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
@@ -130,7 +131,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 
 ## Microsoft affiliate ads
 
-Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and buys products in the Store within a given attribution window, you will earn a commission on approved purchases.
+Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When customers click the ads and buy products in the Store within a given attribution window, you will earn a commission on approved purchases.
 
 If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
 

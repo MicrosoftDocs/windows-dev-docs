@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store.
+Description: The Reviews report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store.
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,13 +14,55 @@ keywords: windows 10, uwp
 # Reviews report
 
 
-The **Reviews** report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+The **Reviews** report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-> **Note**  You can also [respond to customer reviews](respond-to-customer-reviews.md) from this page.
+> [!NOTE]
+> You can also [respond to customer reviews](respond-to-customer-reviews.md) from this page.
 
-This report shows the number of stars that a customer rated your app when leaving a review, but does not analyze star ratings across your app; for statistics about your ratings, see the [Ratings report](ratings-report.md).
+## Apply filters
 
-Note that customers can leave a rating for your app without adding any comments, so you will typically see fewer reviews than ratings. By default, this page also shows ratings that don't include review content, but you can use the **Page filters** to show only ratings that include reviews, as described below.
+Near the top of the page, you can select the time period for which you want to show data. The default selection is **Lifetime**, but you can choose to show data for 30 days, 3 months, 6 months, or 12 months, or for a custom data range that you specify.
+
+You can also expand **Filters** to filter all of the data on this page by the following options.
+
+-   **Rating**: By default all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings. (Using this filter will not affect the **Ratings breakdown** or **Average rating over time** charts.)
+-   **Review content**: The default setting is **All**, which includes ratings without review text added. You can select **Ratings with review content** to only show ratings that include written review content.
+-   **OS version**: The default setting is **All**. You can choose a specific OS version if you want this page to only show ratings and reviews left by customers on that OS version.
+-   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here to only show reviews left by customers who had that package when they reviewed your app.
+-   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
+-   **Updates**: The default setting is **All**. You can choose to filter the reviews to only show the reviews that have been updated by the customer since you [responded to a review](respond-to-customer-reviews.md), or only those which have not yet been updated by the customer.
+-   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show reviews from customers in that market.
+-   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
+-   **Category name**: The default filter is **All**. You can choose a specific [review insights category](#review-insights-categories) to only show reviews that we’ve associated with that category. 
+
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
+
+> [!TIP]
+> If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
+
+
+## Ratings breakdown
+
+The **Ratings breakdown** chart shows: 
+- The average rating star rating for the app.
+- The total number of ratings of your app over the selected period of time.
+- The total number of ratings for each star rating
+- The number of ratings for each type of rating (new or revised) per star rating over the selected period of time. **New ratings** are ratings that customers have submitted but haven't changed at all. **Revised ratings** are ratings that have been changed by the customer in any way, even just changing the text of the review.
+
+> [!TIP]
+> The average rating that a customer sees in the Store takes into account the customer’s market and device type, and considers ratings over the past year, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type, and to set the date range to **12M**.
+
+
+## Average rating over time
+
+The **Average rating over time** chart shows how the app's average rating has changed over the selected period of time.
+
+Rather than calculating the average of all ratings left during the selected period of time (as in the **Ratings breakdown** chart), the **Average rating over time** chart shows you how customers rated the app on a given day or week (depending on the time period you selected at the top of the page). This can help you identify trends or determine if ratings were affected by updates or other factors.
+
+
+## Reviews
+
+Reviews left by your customers are shown on this page.  
 
 Each customer review contains:
 
@@ -33,41 +75,34 @@ Each customer review contains:
 -   The name of the device which the customer was using when the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
 -   The review's "usefulness count," as rated by other customers when reading that review. These are shown as a series of two numbers: the first number shows how many customers rated it as useful, and the second number is the total number of customers who rated the review. For example, a usefulness count of 4/10 means that out of 10 raters, 4 found the review useful and 6 did not. (If there are no usefulness votes for a review, no usefulness count is displayed.)
 
-> **Note** You may occasionally see reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+Note that customers can leave a rating for your app without adding any comments, so you will typically see fewer reviews than ratings.
 
-## Apply filters
+You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by Date and/or Rating. 
 
+> [!NOTE]
+> You may occasionally notice that reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page.
-
->**Tip**  If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
-
--   **Rating**: By default all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings.
--   **From**: The default value (blank) will show reviews starting from when your app was published. You can choose a different date if you only want to see reviews that were left on or after the date you choose.
--   **To**: The default value (blank) will show reviews up to the current date. You can choose a different date if you only want to see reviews that were left before or on the date you choose.
--   **Review content**: The default setting is **All**, which includes ratings without review text added. You can select **Ratings with review content** to only show ratings that include written review content.
--   **Target OS**: The default setting is **All**. You can choose a specific targeted operating system if you want this page to only show ratings from customers using your package(s) which target that OS.
--   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
--   **Updates**: The default setting is **All**. You can choose to filter the reviews to only show the reviews which have been updated by the customer since you [responded to a review](respond-to-customer-reviews.md), or only those which have not yet been updated by the customer.
--   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show reviews from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
--   **Package version**: The default filter is **All packages**. You can choose a specific package if you want this page to only show reviews left by customers who had that package when they reviewed your app.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-> **Note**  The average rating that a customer sees in the Store takes into account the customer’s market and device type, and considers ratings over the past year, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type, and to set the **Date** to **Last 12 months**.
 
 ## Translating reviews
-
 
 By default, reviews that were not written in your preferred language are translated for you. If you prefer, review translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of reviews.
 
 Please note that reviews are translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
 
-## Sorting reviews
+
+## Review insight categories
+
+You can view **Review insight categories** to view your reviews grouped according to categories that we've determined may be associated with the review.
+
+> [!NOTE]
+> Reviews less than 24 hours old and/or in a language other than English are not included when viewing reviews by categories.
+
+Near the top of the page you will see colored blocks representing reviews by category. Select one of these categories to view only reviews that we've associated with that category. You can also use the [page filters](#apply-filters) to filter by category.
+
+To see a breakdown of the number of reviews per category, select **Show details**. 
 
 
-You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by Date and/or Rating. When you click a radio button in the Date or Rating section, the sorting criteria will be applied and you will see the sorting label shown next to the **Sort by** heading. You can remove the sorting criteria altogether by clicking the **X** that appears on each label.
+
 
 ## Responding to customer reviews
 
@@ -76,7 +111,7 @@ You can use the Windows Store Dev Center dashboard to send responses to many of 
 Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
 
 -   If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's [description](create-app-descriptions.md) to indicate that the issue has been fixed.)
--   If the average rating is high, but your number of downloads is low, you might want to look for ways to [expose your app to more people](app-promotion-and-customer-engagement.md), since it's been well-received by those who have tried it out.
+-   If the average rating is high, but your number of downloads is low, you might want to look for ways to [expose your app to more people](attract-customers-and-promote-your-apps.md), since it's been well-received by those who have tried it out.
 
 
  

@@ -3,7 +3,7 @@ author: jnHs
 Description: See how to publish your Windows apps to the Windows Store.
 title: Publish Windows apps
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,8 @@ ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 
 You can use the Windows Dev Center dashboard to publish your apps to the Windows Store. 
 
-> **Note** You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.
+> [!NOTE]
+> You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.
 
 This section contains info about publishing and managing your apps.
 
@@ -28,9 +29,9 @@ This section contains info about publishing and managing your apps.
 | [Add-on submissions](add-on-submissions.md) | Learn how to publish add-ons (in-app products) through the Windows Dev Center dashboard. |
 | [Monetize with ads](monetize-with-ads.md) | Manage your use of ads, including custom ad mediation configurations and affiliate advertising. |
 | [App management and services](app-management-and-services.md) | Use services like A/B testing (experimentation) and maps, and see how to [view app identity details](view-app-identity-details.md) and [reserve additional app names](manage-app-names.md). |
-| [Analytics](analytics.md) | Get detailed analytic data for your apps to see how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find info on app health, ad usage, and more. |
-| [Create customer groups](create-customer-groups.md) | Create groups that let you target a subset of your app's customer base for promotions, testing, or other purposes. |
-| [App promotion and customer engagement](app-promotion-and-customer-engagement.md) | Promote your app with [ad campaigns](create-an-ad-campaign-for-your-app.md), [promotional codes](generate-promotional-codes.md), [sale pricing](put-apps-and-add-ons-on-sale.md), [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) and more. 
+| [Attract customers and promote your apps](attract-customers-and-promote-your-apps.md) | Promote your products and grow your customer base, including [ad campaigns](create-an-ad-campaign-for-your-app.md), [promo codes](generate-promotional-codes.md), [sale pricing](put-apps-and-add-ons-on-sale.md), and more. |
+| [Engage with your customers](engage-with-your-customers.md) | Drive customer engagement and satisfaction by using features like [notifications](send-push-notifications-to-your-apps-customers.md), [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md), responding to [reviews](respond-to-customer-reviews.md) and [feedback](respond-to-customer-feedback.md), and more. 
+| [Analyze app performance](analytics.md) | Get detailed analytic data for your apps to see how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it.|
 | [Getting paid](getting-paid-apps.md) | Get details about receiving earnings from your apps, add-ons, and advertising. |
 | [Store Policies and Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | This section includes the [Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) and [App Quality](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx) criteria that apply to Windows apps and content, and the [Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx) that developers should follow. |
  

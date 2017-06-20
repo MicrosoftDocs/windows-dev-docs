@@ -4,7 +4,7 @@ Description: You can cross-promote your app with apps published by other develop
 title: About community ads
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,13 +22,13 @@ Here's how this program works:
   * For each country or region where an app that is serving community ads is available, the current market-rate eCPM (effective cost per thousand impressions) value for the country or region is multiplied by the number of requests for community ads made by your app in that country or region. This value is the credits you have earned for your app in that country or region.
   * Your total credits earned for a given time period is equal to the sum of all credits earned in each country or region for each of your apps that is serving community ads.
 * Your credits are divided equally across all active community ad campaigns, and are converted to ad impressions for your app based on the current market-rate eCPM values of the countries your community ad campaigns target.
-* To track the performance of the community ads in your app, refer to the [account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report).
+* To track the performance of the community ads in your app, refer to the [advertising performance report](advertising-performance-report.md).
 
 ## How to opt in to community ads
 
 To opt in to community ads:
 
-1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
+1. Go to the **Monetization** &gt; **Monetize with ads** page for an app in the Windows Dev Center dashboard.
 2. Do one of the following:
   * If your app is a UWP app that targets Windows 10, go to the **Ad mediation** section on the page and check the **Microsoft Community ads** box in the **Other ad networks** list.
   * If your app targets Windows 8.x or Windows Phone 8.x, go to the **Community ads** section on the page and check the **Show community ads in my app** box.

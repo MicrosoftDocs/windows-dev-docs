@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 06/01/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -94,7 +94,9 @@ Here are some tips to keep in mind when designing your promotional artwork:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-The **1920 x 1080 pixel image (16:9)** is used in various promotional layouts in the Store on all Windows 10 device types. We recommend providing this image regardless of which OS versions or device types your app targets. The **2400 x 1200 image size (2:1)** may also be used in some promotional layouts.
+The **1920 x 1080 pixel image (16:9)** is used in various layouts in the Store on all Windows 10 device types. We recommend providing this image regardless of which OS versions or device types your app targets. This image is also required for proper display if your listing includes video [trailers](#trailers).
+
+The **2400 x 1200 image size (2:1)** may also be used in some promotional layouts.
 
 When designing your image, keep in mind that in some layouts, we'll apply a gradient over the bottom third so that we can legibly display marketing text over the image. Because of this, make sure you avoid placing text and key visual elements in the bottom third. Additionally, we may crop your image, so place your app's branding and the most important details in the center.  
 
@@ -139,11 +141,16 @@ You can add up to 15 trailers to your Store listing. Be sure they meet the requi
 
 You must provide a video file (.mp4 or .mov), a thumbnail image, and a title for each trailer.
 
+
+> [!IMPORTANT]
+> When using trailers, you must also provide a **1920 x 1080 pixel image (16:9)** in the [Promotional images](#promotional-images) section in order for your trailers to appear at the top of your Store listing. This image will be displayed after your trailers have finished playing.
+
 Follow these recommendations to make your trailers effective:
 - Trailers should be of good quality and minimal length (2 minutes or less recommended). 
 - Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60. 
 - Use a different thumbnail for each trailer so that customers know they are unique.
 - Because some layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
+
 
 You must also follow the requirements stated below.
 
