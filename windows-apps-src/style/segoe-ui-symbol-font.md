@@ -1427,7 +1427,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
  </tr>
  <tr><td>![GlobalNavButton](images/segoe-mdl/e700.png)</td>
   <td>E700</td>
-  <td>GlobalNavButton</td>
+  <td>GlobalNavigationButton</td>
  </tr>
  <tr><td>![Wifi](images/segoe-mdl/e701.png)</td>
   <td>E701</td>
