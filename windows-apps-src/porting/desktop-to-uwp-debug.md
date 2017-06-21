@@ -4,7 +4,7 @@ Description: Run your packaged app and see how it looks without having to sign i
 Search.Product: eADQiWindows 10XVcnh
 title: Run, debug, and test a packaged desktop app (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 06/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -36,47 +36,29 @@ To start your app, find it in the Windows Start menu.
 
 ## Debug your app
 
-Attach your app to the debugger or install an extension and debug your app without having to attach your app to the debugger.
+Select your package in a dialog box each time that you debug your app or install an extension and debug your app without having to select your package each time that you start the session.
 
-### Debug your app by attaching the debugger
+### Debug your app by selecting the package
 
 This option has the least amount of setup time, but requires you to perform an extra step each time you want to start the debug session.
 
-#### Attach to the debugger with an app that you packaged manually or by using the Desktop App Converter
 
-1. Start your packaged app. See the [Run your app](#run-app) section above.
+1. Make sure that you start your packaged app at least one time so that it's installed on your local machine.
 
-   If you want to debug your app with elevated permissions, start your app by using the **Run as Administrator** option.
+   See the [Run your app](#run-app) section above.
 
 2. Start Visual Studio.
 
-   If you started your app with elevated permission, make sure that you start Visual Studio by using the **Run as Administrator** option.  
-
-3. In Visual Studio, open the desktop application project.
-
-4. In Visual Studio, choose **Debug**->**Attach To Process**.
-
-5. In the list of available processes, choose your desktop application process.
-
-#### Attach the debugger to an app that you packaged by using Visual Studio
-
-1. Start Visual Studio.
-
    If you want to debug your app with elevated permissions, start Visual Studio by using the **Run as Administrator** option.
 
-2. In Visual Studio, open the UWP project that your created to package your app.
+3. In Visual Studio, choose **Debug**->**Other Debug Targets**->**Debug Installed App Package**.
 
-3. In Visual Studio, choose **Debug**->**Start Without Debugging**.
+4. In the **Installed App Packages** list, select your app package, and then choose the **Start** button.
 
-   The packaged app starts.
 
-4. In Visual Studio, choose **Debug**->**Attach To Process**.
+### Debug your app without having to select the package
 
-5. In the list of available processes, choose your desktop application process.
-
-### Debug your app without having to attach to the debugger
-
-This option has the most amount of setup time, but you won't have to attach the debugger every time you start your app. You'll need to install
+This option has the most amount of setup time, but you won't have to select the installed package every time you start your app. You'll need to install
 [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) to use this approach.
 
 1. First, install the [Desktop Bridge Debugging Project](http://go.microsoft.com/fwlink/?LinkId=797871).
