@@ -42,19 +42,21 @@ Select your package in a dialog box each time that you debug your app or install
 
 This option has the least amount of setup time, but requires you to perform an extra step each time you want to start the debug session.
 
+1. Start your packaged app. See the [Run your app](#run-app) section above.
 
-1. Make sure that you start your packaged app at least one time so that it's installed on your local machine.
+   If you want to debug your app with elevated permissions, start your app by using the **Run as Administrator** option.
 
-   See the [Run your app](#run-app) section above.
-
-2. Start Visual Studio.
+2. If you haven't started Visual Studio yet, start Visual Studio, and then open your desktop application project.
 
    If you want to debug your app with elevated permissions, start Visual Studio by using the **Run as Administrator** option.
 
 3. In Visual Studio, choose **Debug**->**Other Debug Targets**->**Debug Installed App Package**.
 
-4. In the **Installed App Packages** list, select your app package, and then choose the **Start** button.
+4. In the **Installed App Packages** list, expand the **Running** group.
 
+   ![Running Group](images/desktop-to-uwp/debug-installed-packages.png)
+
+5. Select your app package, and then choose the **Start** button.
 
 ### Debug your app without having to select the package
 
