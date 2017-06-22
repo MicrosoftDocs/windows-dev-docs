@@ -70,7 +70,7 @@ The table below lists the required and optional subkeys under the **Gamepad** su
     <tr>
         <td>Menu</td>
         <td>Yes</td>
-        <td rowspan="18">See <a href="#button-mapping">Button mapping</a></td>
+        <td rowspan="18" style="vertical-align: middle;">See <a href="#button-mapping">Button mapping</a></td>
     </tr>
     <tr>
         <td>View</td>
@@ -143,7 +143,7 @@ The table below lists the required and optional subkeys under the **Gamepad** su
     <tr>
         <td>LeftTrigger</td>
         <td>Yes</td>
-        <td rowspan="6">See <a href="#axis-mapping">Axis mapping</a></td>
+        <td rowspan="6" style="vertical-align: middle;">See <a href="#axis-mapping">Axis mapping</a></td>
     </tr>
     <tr>
         <td>RightTrigger</td>
@@ -183,7 +183,7 @@ The table below lists the required and optional subkeys under the **RacingWheel*
     <tr>
         <td>PreviousGear</td>
         <td>Yes</td>
-        <td rowspan="30">See <a href="#button-mapping">Button mapping</a></td>
+        <td rowspan="30" style="vertical-align: middle;">See <a href="#button-mapping">Button mapping</a></td>
     </tr>
     <tr>
         <td>NextGear</td>
@@ -304,7 +304,7 @@ The table below lists the required and optional subkeys under the **RacingWheel*
     <tr>
         <td>Wheel</td>
         <td>Yes</td>
-        <td rowspan="5">See <a href="#axis-mapping">Axis mapping</a></td>
+        <td rowspan="5" style="vertical-align: middle;">See <a href="#axis-mapping">Axis mapping</a></td>
     </tr>
     <tr>
         <td>Throttle</td>
@@ -342,7 +342,7 @@ The table below lists the required and optional subkeys under the **ArcadeStick*
     <tr>
         <td>Action 1</td>
         <td>Yes</td>
-        <td rowspan="12">See <a href="#button-mapping">Button mapping</a></td>
+        <td rowspan="12" style="vertical-align: middle;">See <a href="#button-mapping">Button mapping</a></td>
     </tr>
     <tr>
         <td>Action2</td>
@@ -403,7 +403,7 @@ The table below lists the required and optional subkeys under the **FlightStick*
     <tr>
         <td>FirePrimary</td>
         <td>Yes</td>
-        <td rowspan="2">See <a href="#button-mapping">Button mapping</a></td>
+        <td rowspan="2" style="vertical-align: middle;">See <a href="#button-mapping">Button mapping</a></td>
     </tr>
     <tr>
         <td>FireSecondary</td>
@@ -412,7 +412,7 @@ The table below lists the required and optional subkeys under the **FlightStick*
     <tr>
         <td>Roll</td>
         <td>Yes</td>
-        <td rowspan="4">See <a href="#axis-mapping">Axis mapping</a></td>
+        <td rowspan="4" style="vertical-align: middle;">See <a href="#axis-mapping">Axis mapping</a></td>
     </tr>
     <tr>
         <td>Pitch</td>
@@ -446,7 +446,7 @@ The table below lists the required and optional subkeys under **UINavigation** s
     <tr>
         <td>Menu</td>
         <td>Yes</td>
-        <td rowspan="24">See <a href="#button-mapping">Button mapping</a></td>
+        <td rowspan="24" style="vertical-align: middle;">See <a href="#button-mapping">Button mapping</a></td>
     </tr>
     <tr>
         <td>View</td>
@@ -568,7 +568,7 @@ The table below lists the values that are needed to map a button. For example, i
         <td>Index in the <b>RawGameController</b> button array.</td>
     </tr>
     <tr>
-        <td rowspan="4">Axis</td>
+        <td rowspan="4" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
         <td>Yes</td>
@@ -596,7 +596,7 @@ The table below lists the values that are needed to map a button. For example, i
         </td>
     </tr>
     <tr>
-        <td rowspan="3">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Yes</td>
@@ -641,7 +641,7 @@ The table below lists the values that are needed to map an axis:
         <th>Value info</th>
     </tr>
     <tr>
-        <td rowspan="2">Button</td>
+        <td rowspan="2" style="vertical-align: middle;">Button</td>
         <td>MaxValueButtonIndex</td>
         <td>DWORD</td>
         <td>Yes</td>
@@ -699,7 +699,7 @@ The table below lists the values that are needed to map an axis:
         </td>
     </tr>
     <tr>
-        <td rowspan="2">Axis</td>
+        <td rowspan="2" style="vertical-align: middle;">Axis</td>
         <td>AxisIndex</td>
         <td>DWORD</td>
         <td>Yes</td>
@@ -712,7 +712,7 @@ The table below lists the values that are needed to map an axis:
         <td>Indicates that the mapped axis value should be inverted before it's returned.</td>
     </tr>
     <tr>
-        <td rowspan="3">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Yes</td>
@@ -811,7 +811,7 @@ Switch positions can be mapped either from a set of buttons in the buttons array
         <th>Value info</th>
     </tr>
     <tr>
-        <td rowspan="10">Button</td>
+        <td rowspan="10" style="vertical-align: middle;">Button</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2, 4, or 8</td>
@@ -824,7 +824,7 @@ Switch positions can be mapped either from a set of buttons in the buttons array
     <tr>
         <td>UpButtonIndex</td>
         <td>DWORD</td>
-        <td rowspan="8">See <a href="#buttonindex-values">*ButtonIndex values</a></td>
+        <td rowspan="8" style="vertical-align: middle;">See <a href="#buttonindex-values">*ButtonIndex values</a></td>
     </tr>
     <tr>
         <td>DownButtonIndex</td>
@@ -855,7 +855,7 @@ Switch positions can be mapped either from a set of buttons in the buttons array
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="9">Axis</td>
+        <td rowspan="9" style="vertical-align: middle;">Axis</td>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
         <td><b>TwoWay</b>, <b>FourWay</b>, or <b>EightWay</b></td>
@@ -863,7 +863,7 @@ Switch positions can be mapped either from a set of buttons in the buttons array
     <tr>
         <td>XAxisIndex</td>
         <td>DWORD</td>
-        <td rowspan="2"><b>YAxisIndex</b> is always present. <b>XAxisIndex</b> is only present when <b>SwitchKind</b> is <b>FourWay</b> or <b>EightWay</b>.</td>
+        <td rowspan="2" style="vertical-align: middle;"><b>YAxisIndex</b> is always present. <b>XAxisIndex</b> is only present when <b>SwitchKind</b> is <b>FourWay</b> or <b>EightWay</b>.</td>
     </tr>
     <tr>
         <td>YAxisIndex</td>
@@ -872,7 +872,7 @@ Switch positions can be mapped either from a set of buttons in the buttons array
     <tr>
         <td>XDeadZonePercent</td>
         <td>DWORD</td>
-        <td rowspan="2">Indicate the size of the dead zone around the center position of the axes.</td>
+        <td rowspan="2" style="vertical-align: middle;">Indicate the size of the dead zone around the center position of the axes.</td>
     </tr>
     <tr>
         <td>YDeadZonePercent</td>
@@ -881,7 +881,7 @@ Switch positions can be mapped either from a set of buttons in the buttons array
     <tr>
         <td>XDebouncePercent</td>
         <td>DWORD</td>
-        <td rowspan="2">Define the size of the windows around the upper and lower dead zone limits, which are used to de-bounce the reported switch state.</td>
+        <td rowspan="2" style="vertical-align: middle;">Define the size of the windows around the upper and lower dead zone limits, which are used to de-bounce the reported switch state.</td>
     </tr>
     <tr>
         <td>YDebouncePercent</td>
@@ -890,14 +890,14 @@ Switch positions can be mapped either from a set of buttons in the buttons array
     <tr>
         <td>XInvert</td>
         <td>DWORD</td>
-        <td rowspan="2">Indicate that the corresponding axis values should be inverted before the dead zone and debounce window calculations are applied.</td>
+        <td rowspan="2" style="vertical-align: middle;">Indicate that the corresponding axis values should be inverted before the dead zone and debounce window calculations are applied.</td>
     </tr>
     <tr>
         <td>YInvert</td>
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3">Switch</td>
+        <td rowspan="3" style="vertical-align: middle;">Switch</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>Index in the <b>RawGameController</b> switch array.
