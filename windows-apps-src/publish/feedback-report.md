@@ -15,15 +15,18 @@ keywords: windows 10, uwp
 
 The **Feedback report** in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in your dashboard, or export the data to view offline.
 
-Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them. When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review.
-
 > [!NOTE]
-You can also [respond to feedback](respond-to-customer-feedback.md) directly from this report to let your customers know you're listening.
+> You can also [respond to feedback](respond-to-customer-feedback.md) directly from this report to let your customers know you're listening.
+
+Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them. When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review in the Store.
 
 You can use the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report, even if you have not specifically asked for feedback from within your app.
 
+Feedback can also be helpful when using [package flighting](package-flights.md), since the Feedback report shows you the specific package that each customer had installed on their device when they left the feedback.
+
 > [!TIP]
-> Feedback is especially useful when using [package flighting](package-flights.md), since the Feedback report shows you the specific package that each customer had installed on their device when they left the feedback.
+> For a quick look at the reviews, ratings, and user feedback for all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 
+
 
 ## Apply filters
 

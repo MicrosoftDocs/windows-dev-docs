@@ -30,9 +30,6 @@ Apps that target Windows 10, version 1607, or later can offer two types of consu
 
   For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. After the user has consumed all 100 coins, the user can purchase the 100 coin add-on again.
 
-  > [!NOTE]
-  > Store-managed consumables are available starting in Windows 10, version 1607. The ability to create a Store-managed consumable in the Windows Dev Center dashboard is coming soon.
-
 To offer a consumable add-on to a user, follow this general process:
 
 1. Enable users to [purchase the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app.

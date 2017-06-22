@@ -27,7 +27,7 @@ Yes. We call these *house ads*, and you can run them free of charge. Check out [
 
 ### Can I cross-promote my app with apps from other developers in the Store?
 
-Yes. We call these *community ads*, and you can run them free of charge. After you [opt-in to community ads](about-community-ads.md#how-to-opt-in-to-community-ads), you can [create a free community ad campaign](create-an-ad-campaign-for-your-app.md) and your app will share promotional ad space with other developers who also opt in to community ads. Check out [this article](about-community-ads.md) for more information.
+Yes. We call these *community ads*, and you can run them free of charge. After you [opt-in to community ads](about-community-ads.md#opt-in-to-community-ads), you can [create a free community ad campaign](create-an-ad-campaign-for-your-app.md) and your app will share promotional ad space with other developers who also opt in to community ads. Check out [this article](about-community-ads.md) for more information.
 
 ### How can I customize my ad?
 

@@ -30,12 +30,10 @@ When a house ad for App A appears in App B, you will not be charged for the impr
 
  
 
-## Related topics
+### Related topics
 
 
 * [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [App install ads report](app-install-ads-reports.md)
 * [Common questions](common-questions.md)
 
 

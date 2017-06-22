@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: Enter add-on properties
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,14 +20,17 @@ When submitting an add-on, the options on the **Properties** page help determine
 
 Your product type is selected when you first [create the add-on](set-your-add-on-product-id.md). The product type you selected is displayed here, but you can't change it.
 
-> **Note**  If you haven't published the add-on. you can delete the submission and start again if you need to choose a different product type. 
+> [!TIP]
+> If you haven't published the add-on, you can delete the submission and start again if you want to choose a different product type. 
 
-Depending on the product type you selected, you may see one of the following fields:
+Depending on the product type you selected, you may see the **Product lifetime** or **Quantity** fields, along with the other fields described on this page.
 
 ### Product lifetime
+
 If you selected **Durable** for your product type, the **Product lifetime** is shown here. The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. If you prefer, you can set the **Product lifetime** so that the add-on expires after a set duration (with options from 1-365 days). 
 
 ### Quantity
+
 If you selected **Store-managed consumable** for your product type, the **Quantity** is shown here. You'll need to enter a number between 1 and 1000000. This quantity will be granted to the customer when they acquire your add-on, and the Store will track the balance as the app reports the customer’s consumption of the add-on.
 
 ## Content type
@@ -51,7 +54,8 @@ These are the possible options for an add-on's content type:
 
 You have the option to provide up to ten keywords of up to 30 characters each for each add-on you submit. Your app can then query for add-ons that match these words. This feature lets you build screens in your app that can load add-ons without you having to directly specify the product ID in your app's code. You can then change the add-on's keywords anytime, without having to make code changes in your app or submit the app again.
 
-> **Note**  Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
+> [!NOTE] 
+> Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
 
 ## Custom developer data
 
@@ -61,7 +65,8 @@ To query this field, use the [StoreSku.CustomDeveloperData](https://msdn.microso
 
 For example, let’s say you have a game, and you’re selling a bag of gold coins as an add-on. Using the **Custom developer data** field, the app can query for this bag of gold. You can adjust the value at any time (in this case, the number of coins in your bag) by updating the info in the add-on's **Custom developer data** field, without having to make code changes in your app or submit the app again.
 
-> **Note**  The **Custom developer data** field is not available for use in packages targeting Windows 8 and Windows 8.1.
+> [!NOTE]
+> The **Custom developer data** field is not available for use in packages targeting Windows 8 and Windows 8.1.
 
  
 

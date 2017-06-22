@@ -4,7 +4,7 @@ Description: Add-ons are published through the Windows Dev Center dashboard.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,7 +19,8 @@ Add-ons are published through the Windows Dev Center dashboard. You'll also need
 
 The first step in the add-on submission process is to create the add-on in the dashboard by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you can create a submission so that your add-on can be purchased via the Windows Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-publication) to add-ons after the app is in the Store without having to resubmit the app again.
 
-> **Note**&nbsp;&nbsp;This section of the documentation describes how to submit add-ons in the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
+> [!NOTE]
+> This section of the documentation describes how to submit add-ons in the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
 
 ## Checklist for submitting an add-on
 
@@ -68,14 +69,16 @@ One Store listing required. We recommend providing Store listings for every [lan
 
 When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
 
->**Note**&nbsp;&nbsp;The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](../monetize/in-app-purchases-and-trials.md).
+> [!NOTE]
+> The add-on must also be implemented in your app's code. For more info, see [In-app purchases and trials](../monetize/in-app-purchases-and-trials.md).
 
 
 ## Updating an add-on after publication
 
 You can make changes to a published add-on at any time. add-on changes are submitted and published independently of your app, so you generally don't need to update the entire app in order to make changes to an add-on such as updating its price or description.
 
-> **Important**&nbsp;&nbsp;If your app is available to customers on Windows 8.x, you will need to create and publish a new app submission in order to make the add-on updates visible to those customers. Similarly, if you add new add-ons to an app targeting Windows 8.x after the app has been published, you'll need to update your app's code to reference those add-ons, then resubmit the app. Otherwise, the new add-ons won't be visible to customers on Windows 8.x.
+> [!IMPORTANT]
+> If your app is available to customers on Windows 8.x, you will need to create and publish a new app submission in order to make the add-on updates visible to those customers. Similarly, if you add new add-ons to an app targeting Windows 8.x after the app has been published, you'll need to update your app's code to reference those add-ons, then resubmit the app. Otherwise, the new add-ons won't be visible to customers on Windows 8.x.
 
 To submit updates, go to the add-on's page in your dashboard and click **Update**. This will create a new submission for the add-on using the info from your previous submission as a starting point. Change the info you'd like, and then click **Submit to the Store**.
 
