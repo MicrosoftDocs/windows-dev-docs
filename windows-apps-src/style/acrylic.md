@@ -34,7 +34,7 @@ The latest evolution of the Microsoft Design System uses concepts of physical te
 
 ## When to use acrylic
 
-We recommend that you place supporting UI, such as in-app navigation or commanding elements, on an acrylic surface. This material is also helpful for transient UI elements, such as dialogs and flyouts, because it helps maintain a visual relationship with the content that triggered the transient UI. We designed acrylic to be used as a background material and show in visually discreet panes, so don't apply acrylic to detailed foreground elements.
+We recommend that you place supporting UI, such as in-app navigation or commanding elements, on an acrylic surface. This material is also helpful for transient UI elements, such as dialogs and flyouts, because it helps maintain a visual relationship with the content that triggered the transient UI. We designed acrylic to be used as a background material and show in visually discrete panes, so don't apply acrylic to detailed foreground elements.
 
 Surfaces behind primary app content should use solid, opaque backgrounds.
 
