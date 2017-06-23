@@ -58,6 +58,10 @@ Then, restart your system.
 
 ## Next steps
 
+**Review a detailed blog article that was posted by our App Consult Team**
+
+See [Porting and testing your classic desktop applications on Windows 10 S with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
+
 **Find answers to specific questions**
 
 Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
