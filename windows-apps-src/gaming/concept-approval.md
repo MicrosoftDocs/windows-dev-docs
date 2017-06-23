@@ -4,7 +4,7 @@ title: Concept approval
 description: Learn how to submit your product for concept approval, which you will need if your product runs on Xbox or uses Xbox Live.
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
-ms.date: 02/08/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,13 @@ keywords: windows 10, uwp, concept approval
 
 # Concept approval
 
-When you begin creating a game that will run on Xbox, you will need to submit a proposal concerning that game to Microsoft for *concept approval* before you can publish it. This up-front, high-level submission benefits both Microsoft and you by identifying at the very beginning of the process any likely difficulties or drawbacks in the overall plan for the game. Try to make sure that your content isn't overly vulgar, offensive, or objectionable, and that it feels at home on the target platform. Once you submit your proposal, Microsoft will review it and then notify you of the result.
+Concept approval is the process of submitting a proposal for a game to Microsoft. This up-front, high-level submission benefits both Microsoft and you by identifying at the very beginning of the process any likely difficulties or drawbacks in the overall plan for the game. Try to make sure that your content isn't overly vulgar, offensive, or objectionable, and that it feels at home on the target platform. Once you submit your proposal, Microsoft will review it and then notify you of the result.
 
-If you are developing a Universal Windows Platform (UWP) game, you only need concept approval if you want to allow customers to download it on Xbox devices or you want to enable Xbox Live features. If you only want to make your UWP game available to Windows desktop or mobile devices (or if you're publishing a UWP app that's *not* a game, targeting any device), and you won't be using Xbox Live, all you need is a [developer account](https://go.microsoft.com/fwlink/?LinkId=817223), and you can freely configure and submit your app to the Store through the dashboard.
+## Who needs concept approval?
+
+This process is only required if you are publishing a game to Xbox through [ID@Xbox](http://www.xbox.com/Developers/id) or as a managed partner. You don't need to go through this process if you join the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) and make a Universal Windows Platform (UWP) game, which you can then self-publish to Xbox. However, games made through this program will be featured in a separate section of the Store. If you want your game to be featured alongside big AAA games, or if you want to create a more intensive game using the Xbox Development Kit (XDK), you'll need to go through concept approval.
+
+You also don't need concept approval if you are developing a UWP game for Windows desktop or mobile devices (or if you're publishing a UWP app that's *not* a game, targeting any device). All you need is a [developer account](https://go.microsoft.com/fwlink/?LinkId=817223), and you can freely configure and submit your app to the Store through the dashboard.
 
 ## Submit your concept for approval
 
