@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
 title: Test with the Microsoft Emulator for Windows 10 Mobile
 description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

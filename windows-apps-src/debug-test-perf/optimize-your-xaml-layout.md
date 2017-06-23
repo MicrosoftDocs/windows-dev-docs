@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: Optimize your XAML layout
 description: Layout can be an expensive part of a XAML app&\#8212;both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
