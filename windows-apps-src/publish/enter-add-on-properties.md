@@ -46,9 +46,10 @@ These are the possible options for an add-on's content type:
 -   Music download
 -   Music streaming
 -   Online data storage/services
+-   Software as a service
 -   Video download
 -   Video streaming
--   Software as a service
+
 
 ## Keywords
 
@@ -56,6 +57,7 @@ You have the option to provide up to ten keywords of up to 30 characters each fo
 
 > [!NOTE] 
 > Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
+
 
 ## Custom developer data
 
