@@ -4,7 +4,7 @@ Description: The Windows Store reaches customers in over 200 countries and regio
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 06/14/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,6 +20,8 @@ Be sure to consider our [guidelines to help you globalize your app](../globalizi
 
 > [!IMPORTANT]
 > This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
+> 
+> While the content below refers to apps, market selection for add-on submissions uses the same process.
 
 ## Markets
 

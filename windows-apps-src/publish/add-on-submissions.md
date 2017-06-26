@@ -4,7 +4,7 @@ Description: Add-ons are published through the Windows Dev Center dashboard.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 06/22/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -48,16 +48,17 @@ Here's a list of the info that you provide when creating your add-on submission.
 ### Pricing and availability page
 | Field name                    | Notes                                       |
 |-------------------------------|---------------------------------------------|
-| [**Base price**](set-add-on-pricing-and-availability.md#base-price)                | Required                                    |
-| [**Markets and custom pricing**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | Default: available in all possible markets |
+| [**Markets**](set-add-on-pricing-and-availability.md#markets)  | Default: All possible markets |
+| [**Visibility**](set-add-on-pricing-and-availability.md#visibility)   | Default: Available for purchase. May be displayed in your app's listing |
+| [**Schedule**](set-add-on-pricing-and-availability.md#schedule)    | Default: Release as soon as possible
+| [**Pricing**](set-add-on-pricing-and-availability.md#pricing)                | Required                                    |
 | [**Sale pricing**](put-apps-and-add-ons-on-sale.md)               | Optional                             |
-| [**Distribution and visibility**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Default: add-on can be found by customers browsing or searching the Store |
-| [**Publish date**](set-add-on-pricing-and-availability.md#publish-date)                | Default: Publish as soon as the add-on passes certification |
+| [**Publish date**](set-add-on-pricing-and-availability.md#publish-date)                | Default: Publish as soon as possible |
 
 <span/>
 
 ### Store listings
-One Store listing required. We recommend providing Store listings for every [language](create-add-on-store-listings.md#languages) your app supports.
+One Store listing required. We recommend providing Store listings for every [language](create-add-on-store-listings.md#store-listing-languages) your app supports.
 
 | Field name                    | Notes                                       |
 |-------------------------------|---------------------------------------------|

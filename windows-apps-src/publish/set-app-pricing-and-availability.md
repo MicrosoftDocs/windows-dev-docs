@@ -48,7 +48,7 @@ If you want to hide your app in the Store but still make it available to certain
 
 ## Schedule
 
-By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](set-app-pricing-and-availability.md#visibility) section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section. 
+By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the **Visibility** section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section. 
 
 For more info, see [Configure precise release scheduling](configure-precise-release-scheduling.md).
 
