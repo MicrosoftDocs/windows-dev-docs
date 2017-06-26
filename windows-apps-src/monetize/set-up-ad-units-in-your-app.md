@@ -4,7 +4,7 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: Learn how to add application ID and ad unit ID values from the Windows Dev Center dashboard to your app before you submit your app to the Store.
 title: Set up ad units in your app
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,12 +13,9 @@ keywords: windows 10, uwp, ads, advertising, ad units
 
 # Set up ad units in your app
 
-When you display banner ads, interstitial ads, or native ads in your app, you must specify an application ID and ad unit ID. While you are developing your app, use the appropriate [test application ID and ad unit ID values](test-mode-values.md) to see how your app renders ads during testing.
+Every banner ad, interstitial ad, or native ad control in your app has a corresponding *ad unit* that is used by our services to serve ads to the control. Each ad unit consists of an *ad unit ID* and *application ID*. While you are developing your app, assign [test application ID and ad unit ID values](test-mode-values.md) to your control to confirm that your app shows test ads. These test values can only be used in a test version of your app.
 
 After you finish testing your app and you are ready to submit it to Windows Dev Center, you must update your app code to use application ID and ad unit ID values from the [Monetize with ads](../publish/monetize-with-ads.md) page in the Windows Dev Center dashboard. If you try to use test values in your live app, your app will not receive live ads.
-
-> [!IMPORTANT]
-> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 
 To set up the ad units for your live app:
 
@@ -49,6 +46,14 @@ To set up the ad units for your live app:
     -   If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor. For more information, see [Native ads](../monetize/native-ads.md).
 
 7. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns. By default, we automatically choose the ad mediation settings for your app using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports, but you can optionally manually configure your mediation settings.
+
+<span id="manage" />
+## Manage ad units for multiple ad controls in your app
+
+You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+
+> [!IMPORTANT]
+> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 
 ## Related topics
 

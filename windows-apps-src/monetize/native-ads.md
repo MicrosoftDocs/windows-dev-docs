@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Learn how to add native ads to your UWP app.
 title: Native ads
 ms.author: mcleans
-ms.date: 06/09/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,7 +44,10 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-7.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](test-mode-values.md) for native ads. These values are only used for testing; you must [replace them with live values](#release) from Windows Dev Center before you publish your app.
+7.  In an appropriate location in your app (for example, in ```MainPage``` or some other page), declare a [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) object and several string fields that represent the application ID and ad unit ID for your native ad. The following code example assigns the `myAppId` and `myAdUnitId` fields to the [test values](test-mode-values.md) for native ads.
+
+    > [!NOTE]
+    > Every **NativeAdsManager** has a corresponding *ad unit* that is used by our services to serve ads to the native ad control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
@@ -106,6 +109,8 @@ After you confirm that your native ad implementation successfully shows a test a
 1.  Make sure that your native ad implementation follows the [requirements and guidelines](#requirements-and-guidelines) for native ads.
 
 2.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](../monetize/set-up-ad-units-in-your-app.md). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
+    > [!IMPORTANT]
+    > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 
 3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 
