@@ -1,58 +1,35 @@
 ---
 description: Get the latest downloads and tools for UWP apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
-title: Design downloads for UWP apps - Windows app development
+title: Design toolkits and resources for UWP apps
 author: mijacobs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ---
-# Design downloads for UWP apps
+# Design toolkits and resources for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
 
 
-## Design templates
+## Design toolkits
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-    <p><b>PowerPoint</b><br/>
-    This deck has everything you need to quickly mock up wireframes for UWP apps, including controls and layouts.<br/>[Download the design templates for PowerPoint](https://go.microsoft.com/fwlink/p/?LinkId=534632)</p>
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534632"><img src="images/powerpoint.jpg" alt="Download the PowerPoint design templates" /></a>
-  </div>
-</div>
-</div>
+These toolkits provide controls and layout templates for designing UWP apps.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Adobe Illustrator</b><br/>
-            These Adobe Illustrator templates provide controls and layouts for designing UWP apps.<br/>[Download the design templates for Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534634"><img src="images/illustrator.jpg" alt="Download the design templates for Adobe Illustrator" /></a>
-  </div>
-</div>
-</div>
+* [Adobe XD toolkit](http://download.microsoft.com/download/1/3/C/13CE5C92-024E-40C8-A867-83D891CC4D39/Adobe XD design toolkit for UWP apps v1705.3.zip)
+* [Adobe Illustrator toolkit](http://download.microsoft.com/download/C/C/4/CC478BD5-6469-450D-80EF-52D27EEAD4C4/Adobe Illustrator design toolkit for UWP apps v1705.zip)
+* [Adobe Photoshop toolkit](http://download.microsoft.com/download/C/D/A/CDA7FC2B-D5EA-48A4-906D-C6F4A4B311BB/Adobe Photoshop design toolkit for UWP apps v1705.zip)
+* [Framer toolkit (on GitHub)](https://github.com/Microsoft/windows-framer-toolkit)
+* [Sketch toolkit](http://download.microsoft.com/download/B/4/C/B4C6B0B9-C8BC-4CE2-A833-DCE89399060E/Sketch design toolkit for UWP apps v1705.zip)
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Adobe Photoshop</b><br/>
-            Controls and layouts for designing UWP apps in Adobe Photoshop.<br/>[Download the design templates for Adobe Photoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
-  </div>
-  <div class="side-by-side-content-right">
-<a href="http://go.microsoft.com/fwlink/p/?LinkId=626453"><img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" /></a>
-  </div>
-</div>
-</div>
+## Fonts
+
+* [Segoe UI and MDL2 icon fonts](http://download.microsoft.com/download/1/B/C/1BCF071A-78EE-4968-ACBE-15461C274B61/Segoe fonts v1705.2.zip)
+* [Hololens icon font](http://download.microsoft.com/download/3/8/D/38D659E2-4B9C-413A-B2E7-1956181DC427/Hololens-font-v1705.zip)
 
 ## Tools
 

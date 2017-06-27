@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: Best practices for your app's startup performance
 description: Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -105,7 +105,7 @@ The [Visual Studio Live Visual Tree](http://blogs.msdn.com/b/visualstudio/archiv
 
 ![Live visual tree.](images/live-visual-tree.png)
 
-**Use deferral**. Collapsing an element, or setting its opacity to 0, will not prevent the element from being created. Using x;Load or x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible during the startup screen, so that you can load it when needed, or as part of a set of delayed logic. To trigger the loading, you need only call FindName for the element. For an example and more information, see [x:Load attribute](../xaml-platform/x-load-attribute.md) and [x:DeferLoadStrategy attribute](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+**Use deferral**. Collapsing an element, or setting its opacity to 0, will not prevent the element from being created. Using x:Load or x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible during the startup screen, so that you can load it when needed, or as part of a set of delayed logic. To trigger the loading, you need only call FindName for the element. For an example and more information, see [x:Load attribute](../xaml-platform/x-load-attribute.md) and [x:DeferLoadStrategy attribute](https://msdn.microsoft.com/library/windows/apps/Mt204785).
 
 **Virtualization**. If you have list or repeater content in your UI then it’s highly advised that you use UI virtualization. If list UI is not virtualized then you are paying the cost of creating all the elements up front, and that can slow down your startup. See [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
 
@@ -361,4 +361,4 @@ Frame, though, offers an optional page cache that can avoid these instantiations
 
 Page caching can help performance by avoiding instantiations, and therefore improving navigation performance. Page caching can hurt performance by over-caching and therefore impacting working set.
 
-Therefore it’s recommend to use page caching as appropriate for your application. For example, say you have an app that shows a list of items in a Frame, and when you tap on an item, it navigates the frame to a detail page for that item. The list page should probably be set to cache. If the detail page is the same for all items, it should probably be cached as well. But if the detail page is more heterogeneous, it might be better to leave caching off.
+Therefore it’s recommended to use page caching as appropriate for your application. For example, say you have an app that shows a list of items in a Frame, and when you tap on an item, it navigates the frame to a detail page for that item. The list page should probably be set to cache. If the detail page is the same for all items, it should probably be cached as well. But if the detail page is more heterogeneous, it might be better to leave caching off.

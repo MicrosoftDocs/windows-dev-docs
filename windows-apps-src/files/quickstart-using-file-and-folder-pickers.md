@@ -25,7 +25,8 @@ keywords: windows 10, uwp
 
 Access files and folders by letting the user interact with a picker. You can use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) classes to access files, and the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) to access a folder.
 
-**Note**  For a complete sample, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> [!NOTE]
+> For a complete sample, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
 ## Prerequisites
 
@@ -67,11 +68,10 @@ For example, you might call the file picker in your app so that your user can op
 ## Pick a single file: complete code listing
 
 
-```CSharp
+```cs
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
 picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-picker.SuggestedStartLocation =
-    Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
 picker.FileTypeFilter.Add(".jpg");
 picker.FileTypeFilter.Add(".jpeg");
 picker.FileTypeFilter.Add(".png");
@@ -95,17 +95,15 @@ Using a file picker involves creating and customizing a file picker object, and 
 
 1.  **Create and customize a FileOpenPicker**
 
-    ```CSharp
+    ```cs
     var picker = new Windows.Storage.Pickers.FileOpenPicker();
-        picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-        picker.SuggestedStartLocation =
-            Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
-        picker.FileTypeFilter.Add(".jpg");
-        picker.FileTypeFilter.Add(".jpeg");
-        picker.FileTypeFilter.Add(".png");
+    picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+    picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+    picker.FileTypeFilter.Add(".jpg");
+    picker.FileTypeFilter.Add(".jpeg");
+    picker.FileTypeFilter.Add(".png");
     ```
-
-    Set properties on the file picker object relevant to your users and app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182).
+    Set properties on the file picker object relevant to your users and app.
 
     This example creates a rich, visual display of pictures in a convenient location that the user can pick from by setting three properties: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854), and [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
 
@@ -119,44 +117,44 @@ Using a file picker involves creating and customizing a file picker object, and 
 
     - **To pick a single file**
 
-    ```CSharp
+    ```cs
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
-            if (file != null)
-            {
-                // Application now has read/write access to the picked file
-                this.textBlock.Text = "Picked photo: " + file.Name;
-            }
-            else
-            {
-                this.textBlock.Text = "Operation cancelled.";
-            }
+    if (file != null)
+    {
+        // Application now has read/write access to the picked file
+        this.textBlock.Text = "Picked photo: " + file.Name;
+    }
+    else
+    {
+        this.textBlock.Text = "Operation cancelled.";
+    }
     ```
 
     - **To pick multiple files**  
 
-    ```CSharp
+    ```cs
     var files = await picker.PickMultipleFilesAsync();
-            if (files.Count > 0)
-            {
-                StringBuilder output = new StringBuilder("Picked files:\n");
+    if (files.Count > 0)
+    {
+        StringBuilder output = new StringBuilder("Picked files:\n");
 
-                // Application now has read/write access to the picked file(s)
-                foreach (Windows.Storage.StorageFile file in files)
-                {
-                    output.Append(file.Name + "\n");
-                }
-                this.textBlock.Text = output.ToString();
-            }
-            else
-            {
-                this.textBlock.Text = "Operation cancelled.";
-            }
+        // Application now has read/write access to the picked file(s)
+        foreach (Windows.Storage.StorageFile file in files)
+        {
+            output.Append(file.Name + "\n");
+        }
+        this.textBlock.Text = output.ToString();
+    }
+    else
+    {
+        this.textBlock.Text = "Operation cancelled.";
+    }
     ```
 
 ## Pick a folder: complete code listing
 
 
-```CSharp
+```cs
 var folderPicker = new Windows.Storage.Pickers.FolderPicker();
 folderPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.Desktop;
 folderPicker.FileTypeFilter.Add("*");

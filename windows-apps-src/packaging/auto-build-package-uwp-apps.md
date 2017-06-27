@@ -1,8 +1,8 @@
 ---
-author: rmpablos
+author: laurenhughes
 title: Set up automated builds for your UWP app
 description: How to configure your automate builds to produce sideload and/or store packages.
-ms.author: wdg-dev-content
+ms.author: lahugh
 ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
@@ -109,7 +109,7 @@ To view all predefined variables, see [Use build variables.](https://www.visuals
 
 #### Configure the Publish Artifact build task 
 This task stores the generated artifacts in VSTS. You can see them in the Artifacts tab of the build results page. 
-VSTS uses the `$Build.ArtifactStagingDirectory)\AppxPackages` folder that we previously defined.
+VSTS uses the `$(Build.ArtifactStagingDirectory)\AppxPackages` folder that we previously defined.
 
 ![artifacts](images/building-screen6.png)
 

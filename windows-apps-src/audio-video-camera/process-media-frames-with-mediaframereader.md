@@ -154,6 +154,47 @@ The **FrameRenderer** helper class implements the following methods.
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
 
+## Use MultiSourceMediaFrameReader to get time-corellated frames from multiple sources
+Starting with Windows 10, version 1607, you can use [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) to receive time-corellated frames from multiple sources. This API makes it easier to do processing that requires frames from multiple sources that were taken in close temporal proximity, such as using the [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper) class. One limitation of using this new method is that frame-arrived events are only raised at the rate of the slowest capture source. Extra frames from faster sources will be dropped. Also, because the system expects frames to arrive from different sources at different rates, it does not automatically recognize if a source has stopped generating frames altogether. The example code in this section shows how to use an event to create your own timeout logic that gets invoked if correlated frames don't arrive within an app-defined time limit.
+
+The steps for using [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) are similar to the steps for using [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) described previously in this article. This example will use a color source and a depth source. Declare some string variables to store the media frame source IDs that will be used to select frames from each source. Next, declare a [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7), a [**CancellationTokenSource**](https://msdn.microsoft.com/library/system.threading.cancellationtokensource.aspx), and an [**EventHandler**](https://msdn.microsoft.com/library/system.eventhandler.aspx) that will be used to implement timeout logic for the example. 
+
+[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+
+Using the techniques described previously in this article, query for a [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) that includes the color and depth sources required for this example scenario. After selecting the desired frame source group, get the [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) for each frame source.
+
+[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+
+Create and initialize a **MediaCapture** object, passing the selected frame source group in the initialization settings.
+
+[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+
+After initializing the **MediaCapture** object, retrieve [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) objects for the color and depth cameras. Store the ID for each source so that you can select the arriving frame for the corresponding source.
+
+[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+
+Create and initialize the **MultiSourceMediaFrameReader** by calling [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_CreateMultiSourceFrameReaderAsync_Windows_Foundation_Collections_IIterable_Windows_Media_Capture_Frames_MediaFrameSource__) and passing an array of frame sources that the reader will use. Register an event handler for the [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_FrameArrived) event. This example creates an instance the **FrameRenderer** helper class, described previously in this article, to render frames to an **Image** control. Start the frame reader by calling [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_StartAsync).
+
+Register an event handler for the **CorellationFailed** event declared earlier in the example. We will signal this event if one of the media frame sources being used stops producing frames. Finally, call [**Task.Run**](https://msdn.microsoft.com/en-us/library/hh195051.aspx) to call the timeout helper method, **NotifyAboutCorrelationFailure**, on a separate thread. The implementation of this method is shown later in this article.
+
+[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+
+The **FrameArrived** event is raised whenever a new frame is available from all of the media frame sources that are managed by the **MultiSourceMediaFrameReader**. This means that the event will be raised on the cadence of the slowest media source. If one source produces multiple frames in the time that a slower source produces one frame, the extra frames from the fast source will be dropped. 
+
+Get the [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference) associated with the event by calling [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_TryAcquireLatestFrame). Get the **MediaFrameReference** associated with each media frame source by calling [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference#Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId_System_String_), passing in the ID strings stored when the frame reader was initialized.
+
+Call the [**Set**](https://msdn.microsoft.com/library/system.threading.manualreseteventslim.set.aspx) method of the **ManualResetEventSlim** object to signal that frames have arrived. We will check this event in the **NotifyCorrelationFailure** method that is running in a separate thread. 
+
+Finally, perform any processing on the time-correlated media frames. This example simply displays the frame from the depth source.
+
+[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+
+The **NotifyCorrelationFailure** helper method was run on a separate thread after the frame reader was started. In this method, check to see if the frame received event has been signaled. Remember, in the **FrameArrived** handler, we set this event whenever a set of correlated frames arrive. If the event hasn't been signaled for some app-defined period of time - 5 seconds is a reasonable value - and the task wasn't cancelled using the **CancellationToken**, then it's likely that one of the media frame sources has stopped reading frames. In this case you typically want to shut down the frame reader, so raise the app-defined **CorrelationFailed** event. In the handler for this event you can stop the frame reader and clean up it's associated resources as shown previously in this article.
+
+[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+
+[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
+
 ## Related topics
 
 * [Camera](camera.md)

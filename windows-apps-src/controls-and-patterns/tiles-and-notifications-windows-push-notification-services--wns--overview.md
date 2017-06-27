@@ -6,7 +6,7 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -152,7 +152,7 @@ This diagram illustrates the data flow:
 
 By default, tile and badge notifications expire three days after being downloaded. When a notification expires, the content is removed from the tile or queue and is no longer shown to the user. It's a best practice to set an expiration (using a time that makes sense for your app) on all tile and badge notifications so that your tile's content doesn't persist longer than it is relevant. An explicit expiration time is essential for content with a defined lifespan. This also assures the removal of stale content if your cloud service stops sending notifications, or if the user disconnects from the network for an extended period.
 
-Your cloud service can set an expiration for each notification by setting the X-WNS-Expires HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
+Your cloud service can set an expiration for each notification by setting the X-WNS-TTL HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
 
 For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your sending interval (such as one hour after receipt if you are sending notifications every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
 
@@ -198,9 +198,9 @@ async public void CheckForEnergySaving()
       dontAskAgain = Convert.ToBoolean(dontAskSetting);
    }
    
-   // Check if battery saver is on and that it&#39;s okay to raise dialog
+   // Check if battery saver is on and that it's okay to raise dialog
    if ((PowerManager.EnergySaverStatus == EnergySaverStatus.On)
-         &amp;&amp; (dontAskAgain == false))
+         && (dontAskAgain == false))
    {
       // Check dialog results
       ContentDialogResult dialogResult = await saveEnergyDialog.ShowAsync();
@@ -212,7 +212,7 @@ async public void CheckForEnergySaving()
 
       // Save reminder preference
       if (dontAskAgainBox.IsChecked == true)
-      {  // Don&#39;t raise dialog again
+      {  // Don't raise dialog again
          localSettings.Values["dontAskAgainSetting"] = "true";
       }
    }

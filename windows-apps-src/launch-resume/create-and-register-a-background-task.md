@@ -24,7 +24,7 @@ keywords: windows 10, uwp
 Create a background task class and register it to run when your app is not in the foreground. This topic demonstrates how to create and register a background task that runs in a separate process than your app's process. To do background work directly in the foreground application, see [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
 
 > [!Note]
-> If you use a background task to play media in the background, see [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) for information about improvements in Windows 10, version 1607, that make it much easier.
+> If you use a background task to play media in the background, see [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio) for information about improvements in Windows 10, version 1607, that make it much easier.
 
 ## Create the Background Task class
 
@@ -236,7 +236,7 @@ The following steps are completed in one of your app classes (for example, MainP
     > [!div class="tabbedCodeSnippets"]
     > ```cs
     >     BackgroundTaskRegistration task = builder.Register();
-    >     ```
+    > ```
     > ```cpp
     >     BackgroundTaskRegistration^ task = builder->Register();
     > ```

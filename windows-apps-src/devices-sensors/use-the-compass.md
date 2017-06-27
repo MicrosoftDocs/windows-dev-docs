@@ -3,8 +3,8 @@ author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: Use the compass
 description: Learn how to use the compass to determine the current heading.
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,6 +18,10 @@ keywords: windows 10, uwp
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+
+**Sample**
+
+-   For a more complete implementation, see the [compass sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass).
 
 \[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
@@ -169,10 +173,6 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
-
-## Related topics
-
-* [Compass Sample](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  

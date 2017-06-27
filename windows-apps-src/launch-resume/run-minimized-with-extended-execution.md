@@ -1,4 +1,4 @@
- ---
+---
 author: TylerMSFT
 description: Learn how to use extended execution to keep your app running while it is minimized
 title: Run while minimized with extended execution
@@ -7,7 +7,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ---
 
@@ -19,7 +19,7 @@ When the user minimizes or switches away from an app it is put into a suspended 
 
 There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time. The amount of time you may get to perform background execution may be several minutes but you must be prepared to handle the session being revoked at any time.
 
-Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**. Do not use [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) and [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx), they require restricted capabilities and are not available for use in Store applications.
+Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**. Only one **ExtendedExecutionSession** can be requested at any time; attempting to create another session while one is currently active will cause an exception to be thrown from the **ExtendedExecutionSession** constructor. Do not use [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) and [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx); they require restricted capabilities and are not available for use in Store applications.
 
 ## Run while minimized
 
@@ -41,7 +41,7 @@ Specify **ExtendedExecutionReason.SavingData** when you create an **ExtendedExec
 
 Don't use this kind of session to extend the lifetime of an app to upload or download data. If you need to upload data, request a [background transfer](https://msdn.microsoft.com/windows/uwp/networking/background-transfers) or register a **MaintenanceTrigger** to handle the transfer when AC power is available. A **ExtendedExecutionReason.SavingData** extended execution session can be requested either when the app is in the foreground and in the **Running** state, or in the background and in the **Suspending** state.
 
-The **Suspending** state is the last opportunity during the app lifecycle that an app can do work before the app is terminated. Requesting a **ExtendedExecutionReason.SavingData** extended execution session while the app is in the **Suspending** state creates a potential issue that you should be aware of. If an extended execution session is requested while in the **Suspending** state, and the user requests the app be launched again, it may appear to take a long time to launch. This is because the extended execution session time period must complete before the old instance of the app can be closed and a new instance of the app can be launched. Launch performance time is sacrificed in order to guarantee that user state is not lost.
+The **Suspending** state is the last opportunity during the app lifecycle that an app can do work before the app is terminated. **ExtendedExecutionReason.SavingData** is the only type of **ExtendedExecutionSession** that can be requested in the **Suspending** state. Requesting a **ExtendedExecutionReason.SavingData** extended execution session while the app is in the **Suspending** state creates a potential issue that you should be aware of. If an extended execution session is requested while in the **Suspending** state, and the user requests the app be launched again, it may appear to take a long time to launch. This is because the extended execution session time period must complete before the old instance of the app can be closed and a new instance of the app can be launched. Launch performance time is sacrificed in order to guarantee that user state is not lost.
 
 ## Request, disposal, and revocation
 

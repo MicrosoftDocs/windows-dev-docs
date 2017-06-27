@@ -158,6 +158,58 @@ In the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/Window
 
 Note that if the offset value of a player maps to a negative playback position, the clip will remain paused until the offset reaches zero and then playback will begin. Likewise, if the offset value maps to a playback position greater than the duration of the media item, the final frame will be shown, just as it does when a single media player reached the end of its content.
 
+## Play spherical video with MediaPlayer
+Starting with Windows 10, version 1703, **MediaPlayer** supports equirectangular projection for spherical video playback. Spherical video content is no different from regular, flat video in that **MediaPlayer** will render the video as long as the video encoding is supported. For spherical video that contains a metadata tag that specifies that the video uses equirectangular projection, **MediaPlayer** can render the video using a specified field-of-view and view orientation. This enables scenarios such as virtual reality video playback with a head-mounted display or simply allowing the user to pan around within spherical video content using the mouse or keyboard input.
+
+To play back spherical video, use the steps for playing back video content described previously in this article. The one additional step is to register a handler for the [**MediaPlayer.MediaOpened**])https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) event. This event gives you an opportunity to enable and control the spherical video playback parameters.
+
+[!code-cs[OpenSphericalVideo](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetOpenSphericalVideo)]
+
+In the **MediaOpened** handler, first check the frame format of the newly opened media item by checking the [**PlaybackSession.SphericalVideoProjection.FrameFormat**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection#Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_FrameFormat_) property. If this value is [**SphericaVideoFrameFormat.Equirectangular**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat), then the system can automatically project the video content. First, set the [**PlaybackSession.SphericalVideoProjection.IsEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection#Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_IsEnabled_) property to **true**. You can also adjust properties such as the view orientation and field of view that the media player will use to project the video content. In this example, the field of view is set to a wide value of 120 degrees by setting the [**HorizontalFieldOfViewInDegrees**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection#Windows_Media_Playback_MediaPlaybackSphericalVideoProjection_HorizontalFieldOfViewInDegrees_) property.
+
+If the video content is spherical, but is in a format other than equirectangular, you can implement your own projection algorithm using the media player's frame server mode to receive and process individual frames.
+
+[!code-cs[SphericalMediaOpened](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalMediaOpened)]
+
+The following example code illustrates how to adjust the spherical video view orientation using the left and right arrow keys.
+
+[!code-cs[SphericalOnKeyDown](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalOnKeyDown)]
+
+If your app supports playlists of video, you may want to identify playback items that contain spherical video in your UI. Media playlists are discussed in detail in the article, [Media items, playlists, and tracks](media-playback-with-mediasource.md). The following example shows creating a new playlist, adding an item, and registering a handler for the [**MediaPlaybackItem.VideoTracksChanged**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem#Windows_Media_Playback_MediaPlaybackItem_VideoTracksChanged) event, which occurs when the video tracks for a media item are resolved.
+
+[!code-cs[SphericalList](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalList)]
+
+In the **VideoTracksChanged** event handler, get the encoding properties for any added video tracks by calling [**VideoTrack.GetEncodingProperties**](https://docs.microsoft.com/uwp/api/windows.media.core.videotrack#Windows_Media_Core_VideoTrack_GetEncodingProperties_). If the [**SphericalVideoFrameFormat**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.videoencodingproperties#Windows_Media_MediaProperties_VideoEncodingProperties_SphericalVideoFrameFormat_) property of the encoding properties is a value other than [**SphericaVideoFrameFormat.None**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat), then the video track contains spherical video and you can update your UI accordingly if you choose.
+
+[!code-cs[SphericalTracksChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSphericalTracksChanged)]
+
+## Use MediaPlayer in frame server mode
+Starting with Windows 10, version 1703, you can use **MediaPlayer** in frame server mode. In this mode, the **MediaPlayer** does not automatically render frames to an associated **MediaPlayerElement**. Instead, your app copies the current frame from the **MediaPlayer** to an object that implements [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). The primary scenario this feature enables is using pixel shaders to process video frames provided by the **MediaPlayer**. Your app is responsible for displaying each frame after processing, such as by showing the frame in a XAML [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) control.
+
+In the following example, a new **MediaPlayer** is initialized and video content is loaded. Next, a handler for [**VideoFrameAvailable**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_VideoFrameAvailable) is registered. Frame server mode is enabled by setting the **MediaPlayer** object's [**IsVideoFrameServerEnabled**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_IsVideoFrameServerEnabled) property to **true**. Finally, media playback is started with a call to [**Play**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Play).
+
+[!code-cs[FrameServerInit](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetFrameServerInit)]
+
+The next example shows a handler for **VideoFrameAvailable** that uses [Win2D](https://github.com/Microsoft/Win2D) to add a simple blur effect to each frame of a video and then displays the processed frames in a XAML [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) control.
+
+Whenever the **VideoFrameAvailable** handler is called, the [**CopyFrameToVideoSurface**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_CopyFrameToVideoSurface_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_) method is used to copy the contents of the frame to an [**IDirect3DSurface**](https://docs.microsoft.com/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). You can also use [**CopyFrameToStereoscopicVideoSurfaces**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_CopyFrameToStereoscopicVideoSurfaces_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_Windows_Graphics_DirectX_Direct3D11_IDirect3DSurface_) to copy 3D content into two surfaces, for processing the left eye and right eye content separately. To get an object that implements **IDirect3DSurface**  this example creates a [**SoftwareBitmap**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.softwarebitmap) and then uses that object to create a Win2D **CanvasBitmap**, which implements the necessary interface. A **CanvasImageSource** is a Win2D object that can be used as the source for an **Image** control, so a new one is created and set as the source for the **Image** in which the content will be displayed. Next, a **CanvasDrawingSession** is created. This is used by Win2D to render the blur effect.
+
+Once all of the necessary objects have been instantiated, **CopyFrameToVideoSurface** is called, which copies the current frame from the **MediaPlayer** into the **CanvasBitmap**. Next, a Win2D **GaussianBlurEffect** is created, with the **CanvasBitmap** set as the source of the operation. Finally, **CanvasDrawingSession.DrawImage** is called to draw the source image, with the blur effect applied, into the **CanvasImageSource** that has been associated with **Image** control, causing it to be drawn in the UI.
+
+[!code-cs[VideoFrameAvailable](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetVideoFrameAvailable)]
+
+For more information on Win2D, see the [Win2D GitHub repository](https://github.com/Microsoft/Win2D). To try out the sample code shown above, you will need to add the Win2D NuGet package to your project with the following instructions.
+
+**To add the Win2D NuGet package to your effect project**
+
+1.  In **Solution Explorer**, right-click your project and select **Manage NuGet Packages**.
+2.  At the top of the window, select the **Browse** tab.
+3.  In the search box, enter **Win2D**.
+4.  Select **Win2D.uwp**, and then select **Install** in the right pane.
+5.  The **Review Changes** dialog shows you the package to be installed. Click **OK**.
+6.  Accept the package license.
+
+
 ## Related topics
 * [Media playback](media-playback.md)
 * [Media items, playlists, and tracks](media-playback-with-mediasource.md)

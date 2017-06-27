@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,7 @@ keywords: windows 10, uwp
 
 # Enter app properties
 
-The **App properties** page of the [app submission process](app-submissions.md) lets you define your app's category and indicate hardware preferences or other declarations. Here, we'll walk through the options on this page and what you should consider when entering this information.
-
-> **Note**  Age ratings are now a separate page of the submission process. For more info, see [Age ratings](age-ratings.md).
+The **Properties** page of the [app submission process](app-submissions.md) lets you define your app's category and indicate hardware preferences or other declarations. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
 ## Category and subcategory
 
@@ -23,11 +21,20 @@ In this section, you indicate the category (and subcategory, if applicable) whic
 
 For more info, see [Category and subcategory table](category-and-subcategory-table.md).
 
+## Game settings
+
+This section will only appear if you selected **Games** as your product’s category. Here you can specify which features your game supports. All of the information that you provide in this section will be displayed on the product’s Store listing.
+
+If your game supports any of the multiplayer options, be sure to indicate the minimum and maximum number of players for a session. You can't enter more than 1,000 minimum or maximum players.
+
+**Cross-platform multiplayer** means that the game supports multiplayer sessions between players on Windows 10 PCs and Xbox.
+
+
 ## Product declarations
 
 You can check boxes in this section to indicate if any of the declarations apply to your app. This may affect the way your app is displayed, whether it is offered to certain customers, or how customers can use it.
 
-For more info, see [App declarations](app-declarations.md).
+For more info, see [Product declarations](app-declarations.md).
 
 ## System requirements
 

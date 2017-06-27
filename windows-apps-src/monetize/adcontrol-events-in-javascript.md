@@ -19,7 +19,6 @@ In JavaScript, the **AdControl** events must be enclosed by the [MarkSupportedFo
 
 ## Examples
 
-> [!div class="tabbedCodeSnippets"]
 [!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#EventHandlers)]
 
 ## Related topics

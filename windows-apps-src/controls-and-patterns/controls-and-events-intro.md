@@ -6,7 +6,7 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,9 @@ keywords: windows 10, uwp
 
 In UWP app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
 
-A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [Nav pane](nav-pane.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [Pivot](tabs-pivot.md) control to implement the tab pattern.
+> **Important APIs**: [Windows.UI.Xaml.Controls namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+
+A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [Nav pane](navigationview.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [Pivot](tabs-pivot.md) control to implement the tab pattern.
 
 In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](xaml-styles.md) and [control templates](control-templates.md) to modify a control.
 

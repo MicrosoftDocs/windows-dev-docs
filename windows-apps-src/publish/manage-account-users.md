@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Add users to your Dev Center account and assign them roles with specific permissions.
 title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -142,9 +142,9 @@ If you want the new user to have a [Global administrator account](http://go.micr
 
 The users you've invited will get an email with an invitation to access your Dev Center account. Each user will need to accept their invitation before they can access your account. To resend the invitation, find the user on your **Manage users** page and click their email address (or the text that says **Invitation pending**) to edit the account. Then, at the bottom of the page, click **Resend invitation**.
 
-You can make changes to user accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the user's name or group membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a user's role will only affect their Dev Center access.
-
 **Edit a user account**
+
+You can make changes to user accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the user's name or group membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a user's role will only affect their Dev Center access.
 
 1.  From the **Manage users** page, click the name of the user account that you want to edit.
 2.  Make any of the following changes:
@@ -154,9 +154,9 @@ You can make changes to user accounts that you've added to your Dev Center accou
 
 3.  Click **Save**.
 
-If you need to change a password for a user account that you've added to your Dev Center account, you can do so in the **Manage users** section. Note that this will change the user's directory password, not just the password for their Dev Center access.
-
 **Changing a user's directory password**
+
+If you need to change a password for a user account that you've added to your Dev Center account, you can do so in the **Manage users** section. Note that this will change the user's directory password, not just the password for their Dev Center access.
 
 If you've provided a **Password recovery email** when creating the user account, they will be able to reset their own password. You can also update a user's password by following the steps below.
 

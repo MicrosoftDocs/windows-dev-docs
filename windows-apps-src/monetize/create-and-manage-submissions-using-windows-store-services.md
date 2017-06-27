@@ -26,8 +26,6 @@ The following steps describe the end-to-end process of using the Windows Store s
 <span id="not_supported" />
 >**Important notes**
 
-> * This API can only be used for Windows Dev Center accounts that have been given permission to use the API. This permission is being enabled to developer accounts in stages, and not all accounts have this permission enabled at this time. To request earlier access, log on to the Dev Center dashboard, click **Feedback** at the bottom of the dashboard, select **Submission API** for the feedback area, and submit your request. You'll receive an email when this permission is enabled for your account.
-<br/><br/>
 >* If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 <br/><br/>
 > * This API cannot be used with apps or add-ons that use certain features that were introduced to the Dev Center dashboard in August 2016, including (but not limited to) mandatory app updates and Store-managed consumable add-ons. If you use the Windows Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.

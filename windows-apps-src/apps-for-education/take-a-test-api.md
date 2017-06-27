@@ -71,7 +71,7 @@ Windows 10, version 1607
 
 <span id="close"/>
 ### close(boolean restart)
-Closes the browser and unlocks the device.
+Closes the browser and unlocks the device. In Windows 10, version 1607, the device must be locked down initially. In later versions, this method closes the browser regardless of whether the device is locked down.
 
 **Syntax**  
 `browser.security.close(restart);`
@@ -88,7 +88,7 @@ Windows 10, version 1607
 ---
 
 <span id="enableLockDown"/>
-### enableLockdown(boolean lockdown)
+### enableLockDown(boolean lockdown)
 Locks down the device. Also used to unlock the device.
 
 **Syntax**  
@@ -113,7 +113,7 @@ Queries whether a capability is enabled or disabled.
 `browser.security.getCapability(capabilityString)`
 
 **Parameters**  
-`capabilityString` - string to determine which capability to query. Valid capability strings are "screenCapture" and "printing" (case insensitive).
+`capabilityString` - string to determine which capability to query. Valid capability strings are "screenMonitoring", "printing", and "textSuggestions" (case insensitive).
 
 **Return Value**  
 A boolean value: **true** if the queried capability is enabled, **false** if the capability is not enabled or the capability string is invalid.
@@ -206,7 +206,7 @@ Enables or disables the specified capability.
 `browser.security.setCapability(capabilityString,value)`
 
 **Parameters**  
-`capabilityString` - string to determine which capability to set. Valid capability strings are "screenCapture" and "printing" (case insensitive).  
+`capabilityString` - string to determine which capability to set. Valid capability strings are "screenMonitoring", "printing", and "textSuggestions" (case insensitive).  
 `value` - boolean value to enable or disable the specified capability
 
 **Return Value**  

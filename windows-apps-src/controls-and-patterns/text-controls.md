@@ -6,11 +6,14 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
 ---
 # Text controls
 
@@ -21,17 +24,8 @@ Text controls consist of text input boxes, password boxes, auto-suggest boxes, a
 - The controls for displaying read-only text are [TextBlock](text-block.md) and [RichTextBlock](rich-text-block.md).
 - The controls for text entry and editing are: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md), and [RichEditBox](rich-edit-box.md).
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**AutoSuggestBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**RichEditBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**RichTextBlock class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li> [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**TextBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-</ul>
-</div>
+> **Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [PasswordBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx), [RichEditBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx), [RichTextBlock class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx), [TextBlock class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [TextBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+
 
 ## Is this the right control?
 
@@ -70,7 +64,7 @@ There are many ways you can get user input in your app. These questions will hel
 -   **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](checkbox.md), [drop-down list](lists.md), list box, [radio button](radio-button.md), [slider](slider.md), [toggle switch](toggles.md), [date picker](date-and-time.md), or time picker.
 -   **Is there a fairly small set of valid values?** If so, consider a [drop-down list](lists.md) or a list box, especially if the values are more than a few characters long.
 -   **Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?** If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.
--   **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) instead of a text input control to accept a date entry.
+-   **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) instead of a text input control to accept a date entry.
 -   If the data is strictly numeric:
     -   **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](slider.md).
     -   **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](slider.md), possibly with an accompanying control.
@@ -94,18 +88,18 @@ Password box
 
 See these articles for info and examples specific to each text control.
 
--   [**AutoSuggestBox**](auto-suggest-box.md)
--   [**PasswordBox**](password-box.md)
--   [**RichEditBox**](rich-edit-box.md)
--   [**RichTextBlock**](rich-text-block.md)
--   [**TextBlock**](text-block.md)
--   [**TextBox**](text-box.md)
+-   [AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## Font and style guidelines
 See these articles for font guidelines:
 
-- [**Font guidelines**](fonts.md)
-- [**Segoe MDL2 icon list and guidelines**](segoe-ui-symbol-font.md)
+- [Font guidelines](fonts.md)
+- [Segoe MDL2 icon list and guidelines](segoe-ui-symbol-font.md)
 
 
 ## Choose the right keyboard for your text control
@@ -142,7 +136,7 @@ The rendered text looks like this:
 
 ![Text block with color font](images/text-block-color-fonts.png)
 
-For more info, see the [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) property.
+For more info, see the [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) property.
 
 ## Guidelines for line and paragraph separators
 
@@ -185,11 +179,11 @@ For TextBox and RichEditBox controls, spell checking is turned on by default. Yo
 ## Related articles
 
 **For designers**
-- [**Font guidelines**](fonts.md)
-- [**Segoe MDL2 icon list and guidelines**](segoe-ui-symbol-font.md)
+- [Font guidelines](fonts.md)
+- [Segoe MDL2 icon list and guidelines](segoe-ui-symbol-font.md)
 - [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **For developers (XAML)**
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox class](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox class](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)

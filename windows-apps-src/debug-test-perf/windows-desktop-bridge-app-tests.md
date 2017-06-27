@@ -22,7 +22,7 @@ There is a new concept of optional tests for Windows Desktop Bridge apps which a
 
 ### 1. Digitally signed file test 
 **Background**  
-This test verifies that all portable executable (PE) files contain a valid signature. The presence of digitally signed files allows users to know thatthe software is genuine.
+This test verifies that all portable executable (PE) files contain a valid signature. The presence of digitally signed files allows users to know that the software is genuine.
 
 **Test details**  
 The test scans all of the portable executable files in the package and checks their headers for a signature. All the PE files are recommended to be digitally signed. A warning will be generated if any of the PE files is not signed.
@@ -178,10 +178,10 @@ Follow these guidelines to ensure that your app package only contains files supp
 Checks the app for the use of any non-compliant APIs. 
 
 **Background**  
-Desktop Bridge apps can leverage some legacy Win32 APIs along with modern APIs. This test identifies managed binaries which use unsupported APIs.
+Desktop Bridge apps can leverage some legacy Win32 APIs along with modern APIs (UWP components). This test identifies managed binaries that use unsupported APIs.
  
 **Test details**  
-This test checks all modern binaries in the app:
+This test checks all the UWP components in the app:
 * Verifies that each managed binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
 * Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile. 
 

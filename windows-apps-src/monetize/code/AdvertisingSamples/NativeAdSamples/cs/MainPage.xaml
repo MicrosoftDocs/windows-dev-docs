@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="NativeAdSamples.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NativeAdSamples"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <StackPanel x:Name="NativeAdContainer" Background="#555555" Width="Auto" Height="Auto" 
+                    Orientation="Vertical">
+            <Image x:Name="AdIconImage" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   Margin="20,20,20,20"/>
+            <TextBlock x:Name="TitleTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   Text="The ad title will go here" FontSize="24" Foreground="White" Margin="20,0,0,10"/>
+            <TextBlock x:Name="DescriptionTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                       Foreground="White" TextWrapping="Wrap" Text="The ad description will go here" 
+                       Margin="20,0,0,0" Visibility="Collapsed"/>
+            <Image x:Name="MainImageImage" HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" Margin="20,20,20,20" Visibility="Collapsed"/>
+            <Button x:Name="CallToActionButton" Background="Gray" Foreground="White"
+                    HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto" Height="Auto" 
+                    Content="The call to action text will go here" Margin="20,20,20,20"
+                    Visibility="Collapsed"/>
+            <StackPanel x:Name="SponsoredByStackPanel" Orientation="Horizontal" Margin="20,20,20,20">
+                <TextBlock x:Name="SponsoredByTextBlock" Text="The ad sponsored by text will go here"
+                           FontSize="24" Foreground="White" Margin="20,0,0,0" HorizontalAlignment="Left"
+                           VerticalAlignment="Center" Visibility="Collapsed"/>
+                <Image x:Name="IconImageImage" Margin="40,20,20,20" HorizontalAlignment="Left" 
+                       VerticalAlignment="Center" Visibility="Collapsed"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>

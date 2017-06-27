@@ -12,9 +12,10 @@
             <!--<SnippetImageElementXAML>-->
             <Image x:Name="_imageElement" Width="320" Height="240"/>
             <!--</SnippetImageElementXAML>-->
-            <Button x:Name="ActionButton" Click="ActionButton_Click" Content="Action"/>
-            <Button x:Name="ActionButton2" Click="ActionButton2_Click" Content="Action 2"/>
-            
+            <Button x:Name="ActionButton" Click="ActionButton_Click" Content="RGB/Front Panel/1920 (no xbox)"/>
+            <Button x:Name="ActionButton2" Click="ActionButton2_Click" Content="RGB/1920/FrameRenderer (xbox)"/>
+            <Button x:Name="MultiframeButton" Click="MultiFrameButton_Click" Content="MultiFrame"/>
+
         </StackPanel>
         
     </Grid>

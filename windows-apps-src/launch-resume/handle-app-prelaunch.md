@@ -108,7 +108,7 @@ DirectX games should generally not enable prelaunch because many DirectX games d
 
 If your game targets an earlier version of Windows 10, you can handle the prelaunch condition to exit the application:
 
-```cs
+```cpp
 void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^ args)
 {
     if (args->Kind == ActivationKind::Launch)

@@ -6,7 +6,7 @@ ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 The XAML UI framework for Windows provides an extensive library of controls that support UI development. Some of these controls have a visual representation; others function as the containers for other controls or content, such as images and media. 
 
-You can see many of the Windows UI controls in action by downloading the [**XAML UI Basics sample**](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+You can see many of the Windows UI controls in action by downloading the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
 
 Here's a list by function of the common XAML controls you can use in your app. 
 
@@ -137,7 +137,7 @@ Reference: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 Design and how-to: [Flip view control guide](flipview.md) 
 
 ### Grid view
-A control that presents a collection of items in rows and columns that can scroll horizontally.
+A control that presents a collection of items in rows and columns that can scroll vertically.
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -351,7 +351,7 @@ A container control that draws a border, background, or both, around another obj
         Height="108" Width="64" 
         Padding="8" CornerRadius="4">
     <Canvas>
-        <Rectangle Fill="Yellow"/>
+        <Rectangle Fill="Orange"/>
         <Rectangle Fill="Green" Margin="0,44"/>
     </Canvas>
 </Border>
@@ -369,7 +369,7 @@ A layout panel that supports the absolute positioning of child elements relative
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue" Canvas.Left="20" Canvas.Top="20"/>
     <Rectangle Fill="Green" Canvas.Left="40" Canvas.Top="40"/>
-    <Rectangle Fill="Yellow" Canvas.Left="60" Canvas.Top="60"/>
+    <Rectangle Fill="Orange" Canvas.Left="60" Canvas.Top="60"/>
 </Canvas>
 ```
 
@@ -393,7 +393,7 @@ A layout panel that supports the arranging of child elements in rows and columns
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue" Grid.Row="1"/>
     <Rectangle Fill="Green" Grid.Column="1"/>
-    <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
+    <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
 </Grid>
 ```
 
@@ -449,7 +449,7 @@ A layout panel that arranges child elements into a single line that can be orien
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue"/>
     <Rectangle Fill="Green"/>
-    <Rectangle Fill="Yellow"/>
+    <Rectangle Fill="Orange"/>
 </StackPanel>
 ```
 
@@ -467,7 +467,7 @@ A layout panel that supports the arranging of child elements in rows and columns
                VariableSizedWrapGrid.RowSpan="2"/>
     <Rectangle Fill="Green" Width="80" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
-    <Rectangle Fill="Yellow" Height="80" Width="80" 
+    <Rectangle Fill="Orange" Height="80" Width="80" 
                VariableSizedWrapGrid.RowSpan="2" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
 </VariableSizedWrapGrid>
@@ -540,10 +540,10 @@ A container control that lets the user view and navigate to different sections o
 <Hub>
     <HubSection>
         <!--- hub section content -->
-	</HubSection>
+    </HubSection>
     <HubSection>
         <!--- hub section content -->
-	</HubSection>
+    </HubSection>
 </Hub>
 ```
 

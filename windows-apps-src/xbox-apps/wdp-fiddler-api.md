@@ -14,6 +14,42 @@ ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 # Fiddler settings API reference   
 You can enable and disable Fiddler network tracing on your devkit using this REST API.
 
+## Determine if Fiddler tracing is enabled
+
+**Request**
+
+You can check to see if Fiddler tracing is enabled on the device using the following request.
+
+Method      | Request URI
+:------     | :-----
+GET | /ext/fiddler
+<br />
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**   
+
+- None
+
+**Response**   
+
+- JSON bool property IsProxyEnabled which specifiers whether the proxy is enabled or not.
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | Success
+4XX | Error codes
+5XX | Error codes
+
 ## Enable Fiddler tracing
 
 **Request**

@@ -21,9 +21,6 @@ ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 Xbox One has two modes, *Retail* Mode (1) and *Developer* Mode (2). In Retail Mode, the console is in the state that any customer or user of an Xbox One console would use: you can play games and run apps as a user. In Developer Mode, you can develop software for the console, but you cannot play retail games or run retail apps.
 Developer Mode can be enabled on any retail Xbox One console. After Developer Mode is enabled, you can switch back and forth between Retail (2a) and Developer Modes (2b).
 
-> [!NOTE]
-> You cannot activate Developer Mode on Xbox One if you are part of an existing preview program such as the Xbox One Beta program. You can leave an existing preview program by using the Xbox Preview Dashboard app. 
-
 ![Xbox One modes](images/dev-mode-flow.png)
 
 ## Activate Developer Mode on your retail Xbox One console

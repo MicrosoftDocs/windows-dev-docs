@@ -6,7 +6,7 @@ ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -278,12 +278,12 @@ Although many of these fonts provide Latin characters.
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Yu Gothic;">Yu Gothic</td>
-<td align="left">Medium</td>
-<td align="left"></td>
+<td align="left">Light, Regular, Medium, Bold</td>
+<td align="left">Use Yu Gothic Medium for body text and similar content.</td>
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
-<td align="left">Regular</td>
+<td align="left">Light, Semilight, Regular, Semibold, Bold</td>
 <td align="left">User-interface font for Japanese.</td>
 </tr>
 </tbody>

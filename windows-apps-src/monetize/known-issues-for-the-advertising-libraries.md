@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: Learn about known issues for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK.
+description: Learn about known issues for the current release of the Microsoft advertising libraries.
 title: Known issues for the advertising libraries
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -16,11 +16,7 @@ keywords: windows 10, uwp, ads, advertising, known issues
 
 
 
-This topic lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
-
-## Installation of Microsoft Store Services SDK requires Visual Studio Tools for Universal Windows Apps
-
-To install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information, see the Visual Studio [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
+This topic lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
 
 ## Windows Phone 8.x Silverlight projects
 
@@ -62,7 +58,7 @@ You can also post a question in the [forum](http://go.microsoft.com/fwlink/p/?Li
 
 Test ads can be shown, even when you are expecting live ads. This can happen in the following scenarios:
 
-* Microsoft advertising cannot verify or find the live application ID used in the app store. In this case, when an ad unit is created by a user, its status can start as live (non-test) but will move to test status within 6 hours after the first ad request. It will change back to live if there are no requests from test apps for 10 days.
+* Our advertising platform cannot verify or find the live application ID used in the Store. In this case, when an ad unit is created by a user, its status can start as live (non-test) but will move to test status within 6 hours after the first ad request. It will change back to live if there are no requests from test apps for 10 days.
 
 * Side-loaded apps or apps that are running in the emulator will not show live ads.
 

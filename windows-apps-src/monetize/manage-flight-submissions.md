@@ -15,9 +15,6 @@ keywords: windows 10, uwp, Windows Store submission API, flight submissions
 
 The Windows Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
 
-> [!NOTE]
-> These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. This permission is being enabled to developer accounts in stages, and not all accounts have this permission enabled at this time. To request earlier access, log on to the Dev Center dashboard, click **Feedback** at the bottom of the dashboard, select **Submission API** for the feedback area, and submit your request. You'll receive an email when this permission is enabled for your account.
-
 > [!IMPORTANT]
 > If you use the Windows Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
@@ -108,14 +105,14 @@ To create a submission for a package flight, follow this process.
     * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
+  The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
-    ```csharp
-    string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-        new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
-    await blockBob.UploadFromStreamAsync(stream);
-    ```
+  ```csharp
+  string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
+  Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
+      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+  await blockBob.UploadFromStreamAsync(stream);
+  ```
 
 5. [Commit the package flight submission](commit-a-flight-submission.md) by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account.
 

@@ -31,9 +31,8 @@ Access content stored in the user's HomeGroup folder, including pictures, music,
 
     To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
 
-    **Note**  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.
-
-     
+    > [!NOTE] 
+    >  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.     
 
 -   **Understand how to use file pickers**
 
@@ -52,7 +51,7 @@ Follow these steps to open an instance of the file picker that lets the user pic
     Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)
 
     This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:
-    ```csharp
+    ```cs
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
     picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.HomeGroup;
@@ -65,7 +64,7 @@ Follow these steps to open an instance of the file picker that lets the user pic
     After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
 
     This example displays the file picker to let the user pick one file:
-    ```csharp
+    ```cs
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
     if (file != null)
@@ -85,7 +84,7 @@ This section shows how to find HomeGroup items that match a query term provided 
 1.  **Get the query term from the user.**
 
     Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:
-    ```csharp
+    ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
 
@@ -94,7 +93,7 @@ This section shows how to find HomeGroup items that match a query term provided 
     Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.
 
     This example sets query options that sort the search results by relevance and then the date modified. The search filter is the query term that the user entered in the previous step:
-    ```csharp
+    ```cs
     Windows.Storage.Search.QueryOptions queryOptions =
             new Windows.Storage.Search.QueryOptions
                 (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
@@ -106,7 +105,7 @@ This section shows how to find HomeGroup items that match a query term provided 
 3.  **Run the query and process the results.**
 
     The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.
-    ```csharp
+    ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files =
         await queryResults.GetFilesAsync();
 
@@ -128,7 +127,7 @@ This section shows you how to find HomeGroup files that are shared by a particul
 1.  **Get a collection of HomeGroup users.**
 
     Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.
-    ```csharp
+    ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
@@ -136,7 +135,7 @@ This section shows you how to find HomeGroup files that are shared by a particul
 2.  **Find the target user's folder, and then create a file query scoped to that user's folder.**
 
     The following example iterates through the retrieved folders to find the target user's folder. Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified. The example builds a string that reports the number of files found, along with the names of the files.
-    ```csharp
+    ```cs
     bool userFound = false;
     foreach (Windows.Storage.StorageFolder folder in hgFolders)
     {
@@ -182,7 +181,7 @@ Follow these steps to stream video content from the HomeGroup:
 2.  **Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.**
 
     This example includes .mp4 and .wmv files in the file open picker.
-    ```csharp
+    ```cs
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
     picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.HomeGroup;
@@ -193,7 +192,7 @@ Follow these steps to stream video content from the HomeGroup:
     ```
 
 3.  **Open the the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.
-    ```csharp
+    ```cs
     if (file != null)
     {
         var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
@@ -206,7 +205,3 @@ Follow these steps to stream video content from the HomeGroup:
         // No file selected. Handle the error here.
     }    
     ```
-
- 
-
- 

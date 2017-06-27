@@ -128,7 +128,7 @@ This is done by targeting the properties component of the Brush property on Spri
 
 ## Quick Formula: Getting Started with Composition Animations
 Before diving into the details on how to construct and use the different types of animations, below is a quick, high level formula for how to put together Composition Animations.  
-1.	Decide which property, sub channel property or Effect you want to animate - make note of the type.  
+1.	Get the compositor. This can be either from the page or the FrameworkElement you are animating on.  
 2.	Create a new object for your animation – this will either be a KeyFrame or Expression Animation.  
 	*  For KeyFrame animations, make sure you create a KeyFrame Animation type that matches the type of property you want to animate.  
 	*  There is only a single type of Expression Animation.  
@@ -139,12 +139,18 @@ Before diving into the details on how to construct and use the different types o
 
 ```cs
 // KeyFrame Animation Example to target Opacity property
+// Step 1 - Get the compositor
+_compositor = ElementCompositionPreview.GetElementVisual(this).Compositor;
+
 // Step 2 - Create your animation object
 var animation = _compositor.CreateScalarKeyFrameAnimation();
+
 // Step 3 - Define Content
-animation.InsertKeyFrameAnimation(1.0f, 0.2f); 
+animation.Duration = TimeSpan.FromSeconds(1);
+animation.InsertKeyFrame(1f, 0.2f);
+
 // Step 4 - Attach animation to Visual property and start animation
-_targetVisual.StartAnimation("Opacity", animation); 
+_targetVisual.StartAnimation(nameof(Visual.Opacity), animation); 
   
 // Expression Animation Example to target Opacity property
 // Step 2 - Create your animation object
@@ -422,7 +428,7 @@ There are different types of parameters that correlate to the type of the object
 In the example below, we create an Expression Animation that will reference the Offset of two other Composition [Visual](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.aspx)s and a basic System.Numerics Vector3 object.  
 ```cs
 var commonOffset = new Vector3(25.0, 17.0, 10.0);
-var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset);
+var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + additionalOffset");
 expression.SetVector3Parameter("SomeOffset", childVisual.Offset);
 expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetVector3Parameter("additionalOffset", commonOffset);
@@ -436,7 +442,7 @@ We can modify the example directly above, such that a property set is used to de
 ```cs
 _sharedProperties = _compositor.CreatePropertySet();
 _sharedProperties.InsertVector3("commonOffset", offset);
-var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + sharedProperties.commonOffset);
+var expression = _compositor.CreateExpressionAnimation("SomeOffset / ParentOffset + sharedProperties.commonOffset");
 expression.SetVector3Parameter("SomeOffset", childVisual.Offset);
 expression.SetVector3Parameter("ParentOffset", parentVisual.Offset);
 expression.SetReferenceParameter("sharedProperties", _sharedProperties);

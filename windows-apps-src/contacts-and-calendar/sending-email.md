@@ -1,10 +1,10 @@
 ---
-author: Xansky
+author: normesta
 description: Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
 title: Send email
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -29,8 +29,8 @@ Shows how to launch the compose email dialog to allow the user to send an email 
 Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.
 
 ``` cs
-private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
+private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
     StorageFile attachmentFile)
 {
     var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
@@ -55,7 +55,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
     }
 
     await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
-        
+
 }
 ```
 
@@ -70,7 +70,3 @@ This topic has shown you how to launch the compose email dialog. For information
  
 
  
-
-
-
-

@@ -169,7 +169,21 @@ namespace AdaptiveStreaming_RS1
                 args.Result.Buffer = await CreateMyCustomManifest(args.ResourceUri);
                 deferral.Complete();
             }
+
+            if (args.ResourceType == AdaptiveMediaSourceResourceType.MediaSegment)
+            {
+                var resourceUri = args.ResourceUri.ToString() + "?range=" + 
+                    args.ResourceByteRangeOffset + "-" + (args.ResourceByteRangeLength - 1);
+
+                // override the URI by setting a property on the result sub object
+                args.Result.ResourceUri = new Uri(resourceUri);
+
+                // clear the byte range properties on the result sub object
+                args.Result.ResourceByteRangeOffset = null;
+                args.Result.ResourceByteRangeLength = null;
+            }
         }
+    
         //</SnippetAMSDownloadRequested>
 
         private Task<IBuffer> CreateMyCustomManifest(Uri resourceUri)

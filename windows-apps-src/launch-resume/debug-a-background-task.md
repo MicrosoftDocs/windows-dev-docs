@@ -46,9 +46,9 @@ Background tasks can be triggered manually through Microsoft Visual Studio. Then
 > [!Note]
 > Background tasks using the following triggers cannot be activated in this manner:
 > [**Application trigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx), [**MediaProcessing trigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx),  [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032),  [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), and background tasks using a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) with the [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) trigger type.  
-> **Application trigger** and **MediaProcessingTrigger** can be signaled manually in code with `trigger.RequestAsync()`.     
+> **Application trigger** and **MediaProcessingTrigger** can be signaled manually in code with `trigger.RequestAsync()`.
 
-    ![debugging background tasks](images/debugging-activation.png)
+![debugging background tasks](images/debugging-activation.png)
 
 3.  When the background task activates, the debugger will attach to it and display debug output in VS.
 

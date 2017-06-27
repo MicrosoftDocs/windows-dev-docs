@@ -71,7 +71,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
     speechRecognizer.UIOptions.AudiblePrompt = "Say what you want to search for...";
-    speechRecognizer.UIOptions.ExampleText = @"Ex. &#39;weather for London&#39;";
+    speechRecognizer.UIOptions.ExampleText = @"Ex. 'weather for London'";
     speechRecognizer.Constraints.Add(webSearchGrammar);
 
     // Compile the constraint.
@@ -112,7 +112,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
     // Add a list constraint to the recognizer.
     var listConstraint = new Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint(responses, "yesOrNo");
 
-    speechRecognizer.UIOptions.ExampleText = @"Ex. &#39;yes&#39;, &#39;no&#39;";
+    speechRecognizer.UIOptions.ExampleText = @"Ex. 'yes', 'no'";
     speechRecognizer.Constraints.Add(listConstraint);
 
     // Compile the constraint.
@@ -164,7 +164,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
     var storageFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Colors.grxml"));
     var grammarFileConstraint = new Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint(storageFile, "colors");
 
-    speechRecognizer.UIOptions.ExampleText = @"Ex. &#39;blue background&#39;, &#39;green text&#39;";
+    speechRecognizer.UIOptions.ExampleText = @"Ex. 'blue background', 'green text'";
     speechRecognizer.Constraints.Add(grammarFileConstraint);
 
     // Compile the constraint.

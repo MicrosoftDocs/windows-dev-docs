@@ -3,8 +3,8 @@ author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: Use the orientation sensor
 description: Learn how to use the orientation sensors to determine the device orientation.
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,6 +19,11 @@ keywords: windows 10, uwp
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
 -   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+
+**Samples**
+
+-   [Orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
+-   [Simple orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
 
 Learn how to use the orientation sensors to determine the device orientation.
 
@@ -345,9 +350,3 @@ These new values are written to a TextBlock found in the project's XAML.
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
-
-## Related topics
-
-* [OrientationSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [SimpleOrientation Sensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241383)
- 

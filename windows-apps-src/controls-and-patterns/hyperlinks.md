@@ -6,11 +6,15 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
 ---
 # Hyperlinks
 
@@ -18,15 +22,9 @@ keywords: windows 10, uwp
 
 Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the **Hyperlink** text element and **HyperlinkButton** control.
 
-![A hyperlink button](images/controls/hyperlink-button.png)
+> **Important APIs**: [Hyperlink text element](https://msdn.microsoft.com/library/windows/apps/dn279356), [HyperlinkButton control](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Hyperlink text element**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**HyperlinkButton control**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![A hyperlink button](images/controls/hyperlink-button.png)
 
 
 ## Is this the right control?
@@ -38,12 +36,6 @@ Choose the right type of hyperlink based on your needs:
 -   Use an inline **Hyperlink** text element inside of a text control. A Hyperlink element flows with other text elements and you can use it in any InlineCollection. Use a text hyperlink if you want automatic text wrapping and don't necessarily need a large hit target. Hyperlink text can be small and difficult to target, especially for touch.
 -   Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
 -   Use a **HyperlinkButton** with an [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) as its content to make a clickable image.
-
-## Examples
-
-Hyperlinks in the Calculator app.
-
-![Example of a hyperlink in the Calculator app](images/control-examples/hyperlinks-calculator.png)
 
 ## Create a Hyperlink text element
 
@@ -147,7 +139,7 @@ The default color of the hyperlink is the accent color of the system. You can se
 ## Recommendations
 
 -   Only use hyperlinks for navigation; don't use them for other actions.
--   Use the Body style from the type ramp for text-based hyperlinks. Read about [**fonts and the Windows 10 type ramp**](fonts.md).
+-   Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows 10 type ramp](fonts.md).
 -   Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
 -   Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
 
@@ -157,5 +149,5 @@ The default color of the hyperlink is the accent color of the system. You can se
 - [Guidelines for tooltips](tooltips.md)
 
 **For developers (XAML)**
-- [**Windows.UI.Xaml.Documents.Hyperlink class**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Windows.UI.Xaml.Controls.HyperlinkButton class**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Documents.Hyperlink class](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Windows.UI.Xaml.Controls.HyperlinkButton class](https://msdn.microsoft.com/library/windows/apps/br242739)

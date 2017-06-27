@@ -3,8 +3,8 @@ author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: Use the accelerometer
 description: Learn how to use the accelerometer to respond to user movement.
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,6 +18,10 @@ keywords: windows 10, uwp
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+
+**Sample**
+
+-   For a more complete implementation, see the [accelerometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer).
 
 \[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
@@ -170,6 +174,3 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Related topics
-
-* [Accelerometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241377)

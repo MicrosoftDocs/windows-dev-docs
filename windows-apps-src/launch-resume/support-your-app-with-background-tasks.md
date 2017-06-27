@@ -4,7 +4,7 @@ title: Support your app with background tasks
 description: The topics in this section show you how to make lightweight code run in the background in response to triggers.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 04/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,13 +23,18 @@ Starting in Windows 10, version 1607, playing audio in the background is much ea
 
 ## In-process and out-of-process background tasks
 
-There are two approaches to implementing background tasks: in-process, in which the app and its background process run in the same process; and out-of-process, where the app and the background process run in separate processes. In-process background support was introduced in Windows 10, version 1607, to simplify writing background tasks. But you can still write out-of-process background tasks. See [Guidelines for background tasks](guidelines-for-background-tasks.md) for recommendations on when to write an in-process versus out-of-process background task.
+There are two approaches to implementing background tasks:
 
-Out-of-process background tasks are more resilient because your background process can't bring down your app process if something goes wrong. But the resiliency comes at the price of greater complexity to manage the cross-process communication.
+* In-process: the app and its background process run in the same process
+* Out-of-process: the app and the background process run in separate processes.
 
-Out-of-process background tasks are implemented as lightweight classes that the OS runs in a separate process (backgroundtaskhost.exe). Out-of-process background tasks are classes you write that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. You register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
+In-process background support was introduced in Windows 10, version 1607, to simplify writing background tasks. But you can still write out-of-process background tasks. See [Guidelines for background tasks](guidelines-for-background-tasks.md) for recommendations on when to write an in-process versus out-of-process background task.
 
-In Windows 10, version 1607, you can enable background activity without creating a background task. You can instead run your background code directly inside the foreground application.
+Out-of-process background tasks are more resilient because the background process can't bring down your app process if something goes wrong. But the resiliency comes at the price of greater complexity to manage the cross-process communication between the app and the background task.
+
+Out-of-process background tasks are implemented as lightweight classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface that the OS runs in a separate process (backgroundtaskhost.exe). Register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
+
+In Windows 10, version 1607, you can enable background activity without creating a background task. You can instead run your background code directly inside the foreground application's process.
 
 To get started quickly with in-process background tasks, see [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
 
@@ -87,6 +92,8 @@ The following real-time triggers can be used to run lightweight custom code in t
 Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
 To ensure that your Universal Windows app continues to run properly after you release an update, call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+
+**Limits on the number of trigger instances:** There are limits to how many instances of some triggers an app can register. An app can only register   [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger), [MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) and [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) once per instance of the app. If an app goes over this limit, registration will throw an exception.
 
 ## System event triggers
 
@@ -166,21 +173,23 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 
 **Related background task guidance**
 
-* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
-* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
 * [Create and register an in-process background task](create-and-register-an-inproc-background-task.md)
 * [Create and register an out-of-process background task](create-and-register-a-background-task.md)
+* [Convert an out-of-process background task to an in-process background task](convert-out-of-process-background-task.md)
 * [Debug a background task](debug-a-background-task.md)
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Group background task registration](group-background-tasks.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Register a background task](register-a-background-task.md)
 * [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Run a background task when your UWP app is updated](run-a-background-task-during-updatetask.md)
 * [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Trigger a background task from your app](trigger-background-task-from-app.md)
 * [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
 * [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)

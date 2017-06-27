@@ -6,11 +6,15 @@ description: A split view control has an expandable/collapsible pane and a conte
 label: Split view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: tpaine
+doc-status: Published
 ---
 # Split view control
 
@@ -18,12 +22,7 @@ keywords: windows 10, uwp
 
 A split view control has an expandable/collapsible pane and a content area.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**SplitView class**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-</ul>
-</div>
+> **Important APIs**: [SplitView class](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
@@ -50,7 +49,7 @@ Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
 ## Is this the right control?
 
-The split view control can be used to make a [navigation pane](nav-pane.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view representing the nav items.
+The split view control can be used to make a [navigation pane](navigationview.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view representing the nav items.
 
 The split view control can also be used to create any "drawer" experience where users can open and close the supplemental pane.
 
@@ -80,7 +79,7 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 
 
 ## Related topics
-* [Nav pane pattern](nav-pane.md)
+* [Nav pane pattern](navigationview.md)
 * [List view](lists.md)
  
 

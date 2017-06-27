@@ -5,12 +5,16 @@ title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: llongley
+doc-status: Published
 ---
 # Menus and context menus
 
@@ -18,16 +22,9 @@ ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 
 Menus and context menus display a list of commands or options when the user requests them.
 
-![Example of a typical context menu](images/contextmenu_rs2_icons.png)
+> **Important APIs**: [MenuFlyout class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout), [ContextFlyout property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx), [FlyoutBase.AttachedFlyout property](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030)</li>
-<li>[ContextFlyout property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)</li>
-<li>[FlyoutBase.AttachedFlyout property](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)</li>
-</ul>
-</div>
+![Example of a typical context menu](images/contextmenu_rs2_icons.png)
 
 
 ## Is this the right control?
@@ -189,4 +186,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-- [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030)

@@ -58,8 +58,8 @@ If you want to load code from an optional package into the main package, you wil
 
 1. Right click the main package project, select **Add > New Item...**
 2. From the window, search the Installed Templates for ".txt" and add a new text file.
-    > [!IMPORTANT]
-    > The new text file must be named: `Bundle.Mapping.txt`.
+> [!IMPORTANT]
+> The new text file must be named: `Bundle.Mapping.txt`.
 3. In the `Bundle.Mapping.txt` file you'll specify relative paths to any optional package projects or external packages. A sample `Bundle.Mapping.txt` file should look something like this:
 
 ```syntax

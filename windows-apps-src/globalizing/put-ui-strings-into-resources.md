@@ -68,7 +68,7 @@ For the resource name, you give the **Uid** attribute value, plus you specify wh
 Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## Add string resource identifiers to code and markup.
@@ -102,6 +102,7 @@ auto str = loader->GetString("Farewell");
 3.  Create one more folder named "fr-FR", for français (France). Create a new resources file and add the following:
 
     strings/fr-FR/Resources.resw
+    
     ![add resource, french](images/addresource-fr-fr.png)
 
 ## Build and run the app.

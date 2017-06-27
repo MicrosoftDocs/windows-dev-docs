@@ -6,11 +6,15 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: mitra
+doc-status: Published
 ---
 # Sliders
 
@@ -18,16 +22,9 @@ keywords: windows 10, uwp
 
 A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
 
-![A slider control](images/controls/slider.png)
+> **Important APIs**: [Slider class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), [Value property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx), [ValueChanged event](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Slider class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
-<li>[**Value property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
-<li>[**ValueChanged event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
-</ul>
-</div>
+![A slider control](images/controls/slider.png)
 
 
 ## Is this the right control?
@@ -86,7 +83,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-You get and set the value of the slider from the [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) event.
+You get and set the value of the slider from the [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) event.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -174,4 +171,4 @@ When you’re designing a custom slider, consider ways to present all the necess
 
 ## Related topics
 - [Toggle switches](toggles.md)
-- [**Slider class**](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Slider class](https://msdn.microsoft.com/library/windows/apps/br209614)

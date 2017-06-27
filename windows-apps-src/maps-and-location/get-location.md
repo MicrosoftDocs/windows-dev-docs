@@ -27,7 +27,7 @@ Find the user's location and respond to changes in location. Access to the user'
 
 
 1.  In **Solution Explorer**, double-click **package.appxmanifest** and select the **Capabilities** tab.
-2.  In the **Capabilities** list, select the **Capabilities** tab. This adds the `Location` device capability to the package manifest file.
+2.  In the **Capabilities** list, check the box for **Location**. This adds the `location` device capability to the package manifest file.
 
 ```XML
   <Capabilities>

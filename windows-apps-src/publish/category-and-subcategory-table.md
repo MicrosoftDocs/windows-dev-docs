@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 title: Category and subcategory table
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,15 +16,14 @@ keywords: windows 10, uwp
 
 Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 
-Choose the category that best describes your app. Then choose a subcategory, if available.
+You are required to the category that best describes your app. You can optionally choose a subcategory, if available. (If you choose **Games** for your category, a subcategory (genre) is required.)
 
-> **Note**  If you choose **Games** for your category, a subcategory is required.
+An app can only be listed in one category (and one subcategory, if available.) If you're not sure which category or subcategory to use, or you can't find one that seems to be an exact fit, choose the one that you think customers are most likely to look at when trying to find apps like yours.
 
-An app can only be listed in one category (and one subcategory, if available.) If you're not sure which category or subcategory to use, choose the one that you think customers are most likely to look at when trying to find apps like yours.
+To change the category or subcategory of an app that's already in the Store, [create a new submission](app-submissions.md) and select the new category or subcategory.
 
-If you want to change the category or subcategory of an app that's already in the Store, you can do that by [creating a new submission](app-submissions.md) and selecting the new category.
-
-> **Important** If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission. You also can't choose the **Games** category in an update to an app that you previously published in a different category.
+> [!IMPORTANT] 
+> If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission. You also can't choose the **Games** category in an update to an app that you previously published in a different category.
 
 The Windows Store organizes apps into the following categories and subcategories.
 
@@ -53,7 +52,7 @@ Only some categories have subcategories. Keep in mind that you can only use a su
 | Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
 | Photo + video               | (None)                                            |
 | Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security <br>         |
+| Security                    | PC protection <br> Personal security              |
 | Shopping                    | (None)                                            |
 | Social                      | (None)                                            |
 | Sports                      | (None)                                            |
@@ -61,5 +60,6 @@ Only some categories have subcategories. Keep in mind that you can only use a su
 | Utilities + tools           | Backup + manage <br> File managers                |
  
 
-> **Note**  For info on the categories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, and how they relate to the category list above, see [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
+> [!NOTE] 
+> Some of the categories and subcategories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, may appear differently than the categories listed above. 
 

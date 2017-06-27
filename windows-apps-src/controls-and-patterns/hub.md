@@ -11,6 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: yulikl
+design-contact: kimsea
+doc-status: Published
 ---
 # Hub control/pattern
 
@@ -19,18 +22,11 @@ keywords: windows 10, uwp
 
 A hub control lets you organize app content into distinct, yet related, sections or categories. Sections in a hub are meant to be traversed in a preferred order, and can serve as the starting point for more detailed experiences.
 
+> **Important APIs**: [Hub class](https://msdn.microsoft.com/library/windows/apps/dn251843), [HubSection class](https://msdn.microsoft.com/library/windows/apps/dn251845)
+
 ![Example of a hub](images/hub_example_tablet.png)
 
 Content in a hub can be displayed in a panoramic view that allows users to get a glimpse of what's new, what's available, and what's relevant. Hubs typically have a page header, and content sections each get a section header.
-
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Hub class**](https://msdn.microsoft.com/library/windows/apps/dn251843)</li>
-<li>[**HubSection class**](https://msdn.microsoft.com/library/windows/apps/dn251845)</li>
-</ul>
-</div>
 
 
 ## Is this the right control?

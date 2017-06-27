@@ -17,11 +17,11 @@ To get your Universal Windows Platform (UWP) app ready for UWP App Streaming Ins
 
 ## Creating the source content group map
 
-You'll need to create a `SourceAppxContentGroupMap.xml` file, and then either use Visual Studio or the **MakeAppx.exe** tool to convert this file to the final version: `AppxContentGroupMap.xml`. It's possible to skip a step by creating the `AppxContentGroupMap.xml` from scratch, but it's recommended (and generally easier) to create the `SourceAppxContentGroupMap.xml` and convert it since wildcards are not allowed in the `AppxContentGroupMap.xml` (and they're really helpful). 
+You'll need to create a `SourceAppxContentGroupMap.xml` file, and then either use Visual Studio or the **MakeAppx.exe** tool to convert this file to the final version: `AppxContentGroupMap.xml`. It's possible to skip a step by creating the `AppxContentGroupMap.xml` from scratch, but it's recommended (and generally easier) to create the `SourceAppxContentGroupMap.xml` and convert it, since wildcards are not allowed in the `AppxContentGroupMap.xml` (and they're really helpful). 
 
-Let's walk through a simple scenario where utilizing UWP App Streaming Install is beneficial.
+Let's walk through a simple scenario where UWP App Streaming Install is beneficial. 
 
-Say you've created a UWP game, but the size of your final app is over 100 GB. That's going to take a long time to download from the Windows Store, which can be inconvenient. If you choose to use UWP App Streaming Install in your app, you can specify the order in which your app's files are downloaded. By telling the Store to download essential files first, the user will be able to engage with your app sooner while other non-essential files are downloaded in the background.
+Say you've created a UWP game, but the size of your final app is over 100 GB. That's going to take a long time to download from the Windows Store, which can be inconvenient. If you choose to use UWP App Streaming Install, you can specify the order in which your app's files are downloaded. By telling the Store to download essential files first, the user will be able to engage with your app sooner while other non-essential files are downloaded in the background.
 
 > [!NOTE]
 > Using UWP App Streaming Install heavily relies on your app's file organization. It's recommended that you think about your app's content layout with respect to UWP App Streaming Install as soon as possible to make segmenting your app's files simpler.
@@ -32,7 +32,8 @@ Before we get in to the details, here's an example of a simple, complete `Source
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
-<ContentGroupMap xmlns="http://schemas.microsoft.com/appx/2016/sourcecontentgroupmap" xmlns:s="http://schemas.microsoft.com/appx/2016/sourcecontentgroupmap"> 
+<ContentGroupMap xmlns="http://schemas.microsoft.com/appx/2016/sourcecontentgroupmap" 
+                 xmlns:s="http://schemas.microsoft.com/appx/2016/sourcecontentgroupmap"> 
     <Required>
         <ContentGroup Name="Required">
             <File Name="StreamingTestApp.exe"/>
@@ -49,7 +50,7 @@ Before we get in to the details, here's an example of a simple, complete `Source
 </ContentGroupMap>
 ```
 
-There are two main components to a content group map: the required section, which contains the required content group and the automatic section, which can contain multiple automatic content groups.
+There are two main components to a content group map: the **required** section, which contains the required content group, and the **automatic** section, which can contain multiple automatic content groups.
 
 ### Required content group
 
@@ -73,6 +74,9 @@ There are a few important things to notice here:
 - The file in this example is a single `.exe` file. A required content group isn't restricted to one file, there can be several. 
 
 An easy way to get started writing this file is to open up a new page in your favorite text editor, do a quick "Save As" of your file to your app's project folder, and name your newly created file: `SourceAppxContentGroupMap.xml`.
+
+> [!IMPORTANT]
+> If you are developing a C++ UWP app, you will need to adjust the file properties of your `SourceAppxContentGroupMap.xml`. Set the `Content` property to **true** and the `File Type` property to **XML File**. 
 
 When you're creating the `SourceAppxContentGroupMap.xml`, it's helpful to take advantage of using wildcards in file names, for more info, see the [Tips and tricks for using wildcards](#wildcards) section.
 

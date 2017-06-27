@@ -21,7 +21,7 @@ The values are examples. In your code you will set the values of these functions
 ``` xml
 <UI:AdControl Width="300",
     Height="250",
-    AdUnitId="10865270",
+    AdUnitId="test",
     ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1",
     IsAutoRefreshEnabled="false",
     AdRefreshed="OnAdRefresh",

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: Account types, locations, and fees
 description: We offer individual developer accounts and company developer accounts in many countries and regions.
 ms.author: wdg-dev-content
-ms.date: 03/07/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,7 +25,7 @@ Here are the essential differences between the two account types.
 
 | Individual account | Company account |
 |--------------------|-----------------|
-| <ul><li>Restricted from using certain app capabilities</li><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> | <ul><li>Requires verification through Symantec or Dun & Bradstreet</li><li>Greater access to app capabilities</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> |
+| <ul><li>Restricted from using certain app capabilities</li><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> | <ul><li>Requires greater account verification</li><li>Greater access to app capabilities</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li></ul> |
 
 Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company and set up the account. Company accounts also allow you to submit apps that declare additional [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
 
@@ -41,7 +41,7 @@ Having a company account does not guarantee that apps using these capabilities w
 
 ## Account verification
 
-After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, we use Symantec or Dun & Bradstreet to verify that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md), access your Windows Dev Center dashboard, and continue building and testing your app.
+After you've completed the signup process, your account will go through the verification process. For individual accounts, we check to make sure another company isn't already using your publisher display name. For company accounts, our verification partner Dun & Bradstreet will confirm that you’re authorized to create an account for the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](create-your-app-by-reserving-a-name.md), access your Windows Dev Center dashboard, and continue building and testing your app.
 
 You can check your verification status on the **Account settings** page. 
 

@@ -6,11 +6,15 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
 ---
 # Tooltips
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -19,13 +23,8 @@ A tooltip is a short description that is linked to another control or object. To
 
 ![A tooltip](images/controls/tool-tip.png)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
-<li>[**ToolTipService class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
-</ul>
-</div>
+> **Important APIs**: [ToolTip class](https://msdn.microsoft.com/library/windows/apps/br227608), [ToolTipService class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+
 
 ## Is this the right control?
 
@@ -72,4 +71,4 @@ A tooltip in the Bing Maps app.
 
 Related topics
 
-* [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
+* [ToolTip class](https://msdn.microsoft.com/library/windows/apps/br227608)

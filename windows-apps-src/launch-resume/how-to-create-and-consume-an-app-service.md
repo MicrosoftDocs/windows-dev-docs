@@ -5,7 +5,7 @@ description: Learn how to write a Universal Windows Platform (UWP) app that can 
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app
 ms.author: twhitney
-ms.date: 03/31/2017
+ms.date: 05/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -160,13 +160,15 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
     }
 
     await args.Request.SendResponseAsync(returnData); // Return the data to the caller.
-    messageDeferral.Complete(); // Complete the deferral so that the platform knows that we're done responding to the app service call.
+    // Complete the deferral so that the platform knows that we're done responding to the app service call.
+    // Note for error handling: this must be called even if SendResponseAsync() throws an exception.
+    messageDeferral.Complete();
 }
 ```
 
 Note that **OnRequestReceived()** is **async** because we make an awaitable method call to [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) in this example.
 
-A deferral is taken so that the service can use **async** methods in the OnRequestReceived handler. It ensures that the call to OnRequestReceived does not complete until it is done processing the message. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) is used to send a response alongside the completion. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) that OnRequestReceived has completed.
+A deferral is taken so that the service can use **async** methods in the OnRequestReceived handler. It ensures that the call to **OnRequestReceived** does not complete until it is done processing the message. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) is used to send a response alongside the completion. **SendResponseAsync** does not signal the completion of the call. It is the completion of the deferral that signals to [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) that **OnRequestReceived** has completed. You may want to wrap the **SendMessageAsync()** call in a Try/Finally block because you must call Complete() on the deferral even if **SendMessageAsync()** throws an exception.
 
 App services use a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) to exchange information. The size of the data you may pass is only limited by system resources. There are no predefined keys for you to use in your **ValueSet**. You must determine which key values you will use to define the protocol for your app service. The caller must be written with that protocol in mind. In this example, we have chosen a key named "Command" that has a value that indicates whether we want the app service to provide the name of the inventory item or its price. The index of the inventory name is stored under the "ID" key. The return value is stored under the "Result" key.
 
@@ -363,7 +365,9 @@ namespace MyAppService
             }
 
             await args.Request.SendResponseAsync(returnData); // Return the data to the caller.
-            messageDeferral.Complete(); // Complete the deferral so that the platform knows that we're done responding to the app service call.
+            // Complete the deferral so that the platform knows that we're done responding to the app service call.
+            // Note for error handling: this must be called even if SendResponseAsync() throws an exception.
+            messageDeferral.Complete();
         }
 
 

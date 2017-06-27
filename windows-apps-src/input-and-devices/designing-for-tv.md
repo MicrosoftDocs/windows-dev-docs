@@ -12,6 +12,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+pm-contact: chigy
+design-contact: jeffarn
+dev-contact: niallm
+doc-status: Published
 ---
 
 # Designing for Xbox and TV
@@ -20,28 +24,28 @@ Design your Universal Windows Platform (UWP) app so that it looks good and funct
 
 ## Overview
 
-The Universal Windows Platform lets you create delightful experiences across multiple Windows 10 devices. 
-Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work. 
+The Universal Windows Platform lets you create delightful experiences across multiple Windows 10 devices.
+Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work.
 However, tailoring and optimizing your app to work great on Xbox One and TV screens requires special considerations.
 
-The experience of sitting on your couch across the room, using a gamepad or remote to interact with your TV, is called the **10-foot experience**. 
-It is so named because the user is generally sitting approximately 10 feet away from the screen. 
-This provides unique challenges that aren't present in, say, the *2-foot* experience, or interacting with a PC. 
+The experience of sitting on your couch across the room, using a gamepad or remote to interact with your TV, is called the **10-foot experience**.
+It is so named because the user is generally sitting approximately 10 feet away from the screen.
+This provides unique challenges that aren't present in, say, the *2-foot* experience, or interacting with a PC.
 If you are developing an app for Xbox One or any other device that outputs to the TV screen and uses a controller for input, you should always keep this in mind.
 
-Not all of the steps in this article are required to make your app work well for 10-foot experiences, but understanding them and making the appropriate decisions for your app will result in a better 10-foot experience tailored for your app's specific needs. 
+Not all of the steps in this article are required to make your app work well for 10-foot experiences, but understanding them and making the appropriate decisions for your app will result in a better 10-foot experience tailored for your app's specific needs.
 As you bring your app to life in the 10-foot environment, consider the following design principles.
 
 ### Simple
 
-Designing for the 10-foot environment presents a unique set of challenges. Resolution and viewing distance can make it difficult for people to process too much information. 
+Designing for the 10-foot environment presents a unique set of challenges. Resolution and viewing distance can make it difficult for people to process too much information.
 Try to keep your design clean, reduced to the simplest possible components. The amount of information displayed on a TV should be comparable to what you'd see on a mobile phone, rather than on a desktop.
 
 ![Xbox One home screen](images/designing-for-tv/xbox-home-screen.png)
 
 ### Coherent
 
-UWP apps in the 10-foot environment should be intuitive and easy to use. Make the focus clear and unmistakable. 
+UWP apps in the 10-foot environment should be intuitive and easy to use. Make the focus clear and unmistakable.
 Arrange content so that movement across the space is consistent and predictable. Give people the shortest path to what they want to do.
 
 ![Xbox One Movies app](images/designing-for-tv/xbox-movies-app.png)
@@ -77,8 +81,8 @@ Now that you know the principles of good UWP app design for the 10-foot experien
 
 ## Gamepad and remote control
 
-Just like keyboard and mouse are for PC, and touch is for phone and tablet, gamepad and remote control are the main input devices for the 10-foot experience. 
-This section introduces what the hardware buttons are and what they do. 
+Just like keyboard and mouse are for PC, and touch is for phone and tablet, gamepad and remote control are the main input devices for the 10-foot experience.
+This section introduces what the hardware buttons are and what they do.
 In [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) and [Mouse mode](#mouse-mode), you will learn how to optimize your app when using these input devices.
 
 The quality of gamepad and remote behavior that you get out-of-the-box depends on how well keyboard is supported in your app. A good way to ensure that your app will work well with gamepad/remote is to make sure that it works well with keyboard on PC, and then test with gamepad/remote to find weak spots in your UI.
@@ -137,7 +141,7 @@ public MainPage()
 }
 
 private void SystemNavigationManager_BackRequested(
-    object sender, 
+    object sender,
     BackRequestedEventArgs e)
 {
     if (!e.Handled)
@@ -174,19 +178,20 @@ Accelerator buttons are buttons that can be used to speed up navigation through 
 
 The following table lists the accelerator support built into the UWP, as well as that which you can implement on your own. Utilize these behaviors in your custom UI to provide a consistent and friendly user experience.
 
-| Interaction   | Keyboard   | Gamepad      | Built-in for:  | Recommended for: |
+| Interaction   | Keyboard/Mouse   | Gamepad      | Built-in for:  | Recommended for: |
 |---------------|------------|--------------|----------------|------------------|
 | Page up/down  | Page up/down | Left/right triggers | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support vertical scrolling
 | Page left/right | None | Left/right bumpers | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support horizontal scrolling
 | Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
 | Open/close nav pane | None | View | None | Navigation panes |
 | [Search](#search-experience) | None | Y button | None | Shortcut to the main search function in the app |
+| [Open context menu](#commandbar-and-contextflyout) | Right-click | Menu button | [ContextFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout) | Context menus |
 
 ## XY focus navigation and interaction
 
-If your app supports proper focus navigation for keyboard, this will translate well to gamepad and remote control. 
-Navigation with the arrow keys is mapped to the **D-pad** (as well as the **left stick** on gamepad), and interaction with UI elements is mapped to the **Enter/Select** key 
-(see [Gamepad and remote control](#gamepad-and-remote-control)). 
+If your app supports proper focus navigation for keyboard, this will translate well to gamepad and remote control.
+Navigation with the arrow keys is mapped to the **D-pad** (as well as the **left stick** on gamepad), and interaction with UI elements is mapped to the **Enter/Select** key
+(see [Gamepad and remote control](#gamepad-and-remote-control)).
 
 Many events and properties are used by both keyboard and gamepad&mdash;they both fire `KeyDown` and `KeyUp` events, and they both will only navigate to controls that have the properties `IsTabStop="True"` and `Visibility="Visible"`. For keyboard design guidance, see [Keyboard interactions](keyboard-interactions.md).
 
@@ -205,7 +210,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
     FrameworkElement focus = FocusManager.GetFocusedElement() as FrameworkElement;
     if (focus != null)
     {
-        Debug.WriteLine("got focus: " + focus.Name + " (" + 
+        Debug.WriteLine("got focus: " + focus.Name + " (" +
             focus.GetType().ToString() + ")");
     }
 };
@@ -228,8 +233,8 @@ The rest of this section goes into detail about common design challenges when us
 
 ### Inaccessible UI
 
-Because XY focus navigation limits the user to moving up, down, left, and right, you may end up with scenarios where parts of the UI are inaccessible. 
-The following diagram illustrates an example of the kind of UI layout that XY focus navigation doesn't support. 
+Because XY focus navigation limits the user to moving up, down, left, and right, you may end up with scenarios where parts of the UI are inaccessible.
+The following diagram illustrates an example of the kind of UI layout that XY focus navigation doesn't support.
 Note that the element in the middle is not accessible by using gamepad/remote because the vertical and horizontal navigation will be prioritized and the middle element will never be high enough priority to get focus.
 
 ![Elements in four corners with inaccessible element in middle](images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png)
@@ -238,23 +243,23 @@ If for some reason rearranging the UI is not possible, use one of the techniques
 
 ### Overriding the default navigation
 
-While the Universal Windows Platform tries to ensure that D-pad/left stick navigation makes sense to the user, it cannot guarantee behavior that is optimized for your app's intentions. 
+While the Universal Windows Platform tries to ensure that D-pad/left stick navigation makes sense to the user, it cannot guarantee behavior that is optimized for your app's intentions.
 The best way to ensure that navigation is optimized for your app is to test it with a gamepad and confirm that every UI element can be accessed by the user in a manner that makes sense for your app's scenarios. In case your app's scenarios call for a behavior not achieved through the XY focus navigation provided, consider following the recommendations in the following sections and/or overriding the behavior to place the focus on a logical item.
 
 The following code snippet shows how you might override the XY focus navigation behavior:
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft" 
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight" 
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop" 
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown" 
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
     <Button Content="Home"  
-            XYFocusLeft="{x:Bind MyBtnLeft}" 
+            XYFocusLeft="{x:Bind MyBtnLeft}"
             XYFocusRight="{x:Bind MyBtnRight}"
             XYFocusDown="{x:Bind MyBtnDown}"
             XYFocusUp="{x:Bind MyBtnTop}" />
@@ -285,7 +290,7 @@ Using these `XYFocus` properties, a control parent can also force the navigation
         <Button x:Name="ButtonThree" Content="Three"/>
         <Button Content="Four"/>
     </StackPanel>
-</StackPanel> 
+</StackPanel>
 ```
 
 In the sample above, if the focus is on `Button` Two and the user navigates to the right, the best focus candidate is `Button` Four; however, the focus is moved to `Button` Three because the parent `UserControl` forces it to navigate there when it is out of its visual tree.
@@ -296,7 +301,7 @@ Try to allow the user to perform the most common tasks in the least number of cl
 
 ![Navigation best practices provide path with least clicks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-In the following example, the [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) is placed above the **Play** button instead. 
+In the following example, the [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) is placed above the **Play** button instead.
 Simply rearranging the UI so that unnecessary elements are not placed in between priority tasks will greatly improve your app's usability.
 
 ![TextBlock moved above Play button so that it is no longer between priority tasks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
@@ -383,8 +388,8 @@ The [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.c
 
 **UI rearrange <a name="ui-rearrange"></a>**
 
-Unless your initial focus is placed at the bottom of the page, UI elements placed above a long scrolling list are typically more easily accessible than if placed below. 
-If this new layout works for other devices, changing the layout for all device families instead of doing special UI changes just for Xbox One might be a less costly approach. 
+Unless your initial focus is placed at the bottom of the page, UI elements placed above a long scrolling list are typically more easily accessible than if placed below.
+If this new layout works for other devices, changing the layout for all device families instead of doing special UI changes just for Xbox One might be a less costly approach.
 Additionally, placing UI elements against the scrolling direction (that is, horizontally to a vertically scrolling list, or vertically to a horizontally scrolling list) will make for even better accessibility.
 
 ![Real estate app: place buttons above long scrolling list](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
@@ -397,43 +402,43 @@ When engagement is *required*, the entire `ListView` becomes a single focus targ
 
 #### Problem: ScrollViewer without any focusable elements
 
-Because XY focus navigation relies on navigating to one focusable UI element at a time, 
-a [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the `ScrollViewer`. 
+Because XY focus navigation relies on navigating to one focusable UI element at a time,
+a [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the `ScrollViewer`.
 For solutions to this and other related scenarios, see [Focus engagement](#focus-engagement).
 
 ![Real estate app: ScrollViewer with only text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
 #### Problem: Free-scrolling UI
 
-When your app requires a freely scrolling UI, such as a drawing surface or, in this example, a map, XY focus navigation simply doesn't work. 
+When your app requires a freely scrolling UI, such as a drawing surface or, in this example, a map, XY focus navigation simply doesn't work.
 In such cases, you can turn on [mouse mode](#mouse-mode) to allow the user to navigate freely inside a UI element.
 
 ![Map UI element using mouse mode](images/designing-for-tv/map-mouse-mode.png)
 
 ## Mouse mode
 
-As described in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction), on Xbox One the focus is moved by using an XY navigation system, allowing the user to shift the focus from control to control by moving up, down, left, and right. 
-However, some controls, such as [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) and 
-[MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx), 
-require a mouse-like interaction where users can freely move the pointer inside the boundaries of the control. 
+As described in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction), on Xbox One the focus is moved by using an XY navigation system, allowing the user to shift the focus from control to control by moving up, down, left, and right.
+However, some controls, such as [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) and
+[MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx),
+require a mouse-like interaction where users can freely move the pointer inside the boundaries of the control.
 There are also some apps where it makes sense for the user to be able to move the pointer across the entire page, having an experience with gamepad/remote similar to what users can find on a PC with a mouse.
 
-For these scenarios, you should request a pointer (mouse mode) for the entire page, or on a control inside a page. 
-For example, your app could have a page that has a `WebView` control that uses mouse mode only while inside the control, and XY focus navigation everywhere else. 
+For these scenarios, you should request a pointer (mouse mode) for the entire page, or on a control inside a page.
+For example, your app could have a page that has a `WebView` control that uses mouse mode only while inside the control, and XY focus navigation everywhere else.
 To request a pointer, you can specify whether you want it **when a control or page is engaged** or **when a page has focus**.
 
-> [!NOTE] 
+> [!NOTE]
 > Requesting a pointer when a control gets focus is not supported.
 
 For both XAML and hosted web apps running on Xbox One, mouse mode is turned on by default for the entire app. It is highly recommended that you turn this off and optimize your app for XY navigation. To do this, set the `Application.RequiresPointerMode` property to `WhenRequested` so that you only enable mouse mode when a control or page calls for it.
 
-To do this in a XAML app, use the following code in your `App` class: 
+To do this in a XAML app, use the following code in your `App` class:
 
 ```csharp
-public App() 
+public App()
 {
     this.InitializeComponent();
-    this.RequiresPointerMode = 
+    this.RequiresPointerMode =
         Windows.UI.Xaml.ApplicationRequiresPointerMode.WhenRequested;
     this.Suspending += OnSuspending;
 }
@@ -443,7 +448,7 @@ For more information, including sample code for HTML/JavaScript, see [How to dis
 
 The following diagram shows the button mappings for gamepad/remote in mouse mode.
 
-![Button mappings for gamepad/remote in mouse mode](images/designing-for-tv/mouse-mode.png)
+![Button mappings for gamepad/remote in mouse mode](images/designing-for-tv/10ft_infographics_mouse-mode.png)
 
 > [!NOTE]
 > Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.
@@ -451,7 +456,7 @@ The following diagram shows the button mappings for gamepad/remote in mouse mode
 Use the `RequiresPointer` property on a control or page to activate mouse mode on it. `RequiresPointer` has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
 
 > [!NOTE]
-> `RequiresPointer` is a new API and not yet documented. 
+> `RequiresPointer` is a new API and not yet documented.
 
 <!--TODO: Link to doc-->
 
@@ -462,10 +467,10 @@ When the user engages a control with `RequiresPointer="WhenEngaged"`, mouse mode
 ```xml
 <Page>
     <Grid>
-        <MapControl IsEngagementRequired="true" 
+        <MapControl IsEngagementRequired="true"
                     RequiresPointer="WhenEngaged"/>
     </Grid>
-</Page> 
+</Page>
 ```
 
 > [!NOTE]
@@ -482,7 +487,7 @@ When a page has the property `RequiresPointer="WhenFocused"`, mouse mode will be
 ```xml
 <Page RequiresPointer="WhenFocused">
     ...
-</Page> 
+</Page>
 ```
 
 > [!NOTE]
@@ -532,7 +537,7 @@ To call the user's attention to the UI elements that the user is currently manip
 
 ## Focus engagement
 
-Focus engagement is intended to make it easier to use a gamepad or remote to interact with an app. 
+Focus engagement is intended to make it easier to use a gamepad or remote to interact with an app.
 
 > [!NOTE]
 > Setting focus engagement does not impact keyboard or other input devices.
@@ -550,7 +555,7 @@ The following example shows UI that creates focus trapping.
 
 ![Buttons to the left and right of a horizontal slider](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
-If the user wants to navigate from the left button to the right button, it would be logical to assume that all they'd have to do is press right on the D-pad/left stick twice. 
+If the user wants to navigate from the left button to the right button, it would be logical to assume that all they'd have to do is press right on the D-pad/left stick twice.
 However, if the [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) doesn't require engagement, the following behavior would occur: when the user presses right the first time, focus would shift to the `Slider`, and when they press right again, the `Slider`'s handle would move to the right. The user would keep moving the handle to the right and wouldn't be able to get to the button.
 
 There are several approaches to getting around this issue. One is to design a different layout, similar to the real estate app example in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) where we relocated the **Previous** and **Next** buttons above the `ListView`. Stacking the controls vertically instead of horizontally as in the following image would solve the problem.
@@ -578,26 +583,26 @@ Unlike the `Slider` control, these controls don't trap focus within themselves; 
 
 ![ListView with large amount of data and buttons above and below](images/designing-for-tv/focus-engagement-list-and-grid-controls.png)
 
-Similar to the `Slider` example, let's try to navigate from the button at the top to the button at the bottom with a gamepad/remote. 
-Starting with focus on the top button, pressing down on the D-pad/stick will place the focus on the first item in the `ListView` ("Item 1"). 
-When the user presses down again, the next item in the list gets focus, not the button on the bottom. 
-To get to the button, the user must navigate through every item in the `ListView` first. 
+Similar to the `Slider` example, let's try to navigate from the button at the top to the button at the bottom with a gamepad/remote.
+Starting with focus on the top button, pressing down on the D-pad/stick will place the focus on the first item in the `ListView` ("Item 1").
+When the user presses down again, the next item in the list gets focus, not the button on the bottom.
+To get to the button, the user must navigate through every item in the `ListView` first.
 If the `ListView` contains a large amount of data, this could be inconvenient and not an optimal user experience.
 
-To solve this problem, set the property `IsFocusEngagementEnabled="True"` on the `ListView` to require engagement on it. 
-This will allow the user to quickly skip over the `ListView` by simply pressing down. However, 
+To solve this problem, set the property `IsFocusEngagementEnabled="True"` on the `ListView` to require engagement on it.
+This will allow the user to quickly skip over the `ListView` by simply pressing down. However,
 they will not be able to scroll through the list or choose an item from it unless they engage it by pressing the **A/Select** button when it has focus, and then pressing the **B/Back** button to disengage.
 
 ![ListView with engagement required](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
 
 #### ScrollViewer
 
-Slightly different from these controls is the [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), 
-which has its own quirks to consider. If you have a `ScrollViewer` with focusable content, by default navigating to the `ScrollViewer` will allow you to move through its focusable elements. Like in a `ListView`, you must scroll through each item to navigate outside of the `ScrollViewer`. 
+Slightly different from these controls is the [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx),
+which has its own quirks to consider. If you have a `ScrollViewer` with focusable content, by default navigating to the `ScrollViewer` will allow you to move through its focusable elements. Like in a `ListView`, you must scroll through each item to navigate outside of the `ScrollViewer`.
 
 If the `ScrollViewer` has *no* focusable content&mdash;for example, if it only contains text&mdash;you can set `IsFocusEngagementEnabled="True"` so the user can engage the `ScrollViewer` by using the **A/Select** button. After they have engaged, they can scroll through the text by using the **D-pad/left stick**, and then press the **B/Back** button to disengage when they're finished.
 
-Another approach would be to set `IsTabStop="True"` on the `ScrollViewer` so that the user doesn't have to engage the control&mdash;they can simply place 
+Another approach would be to set `IsTabStop="True"` on the `ScrollViewer` so that the user doesn't have to engage the control&mdash;they can simply place
 focus on it and then scroll by using the **D-pad/left stick** when there are no focusable elements within the `ScrollViewer`.
 
 ### Focus engagement defaults
@@ -619,23 +624,23 @@ All other UWP controls will result in no behavioral or visual changes when `IsFo
 
 ## UI element sizing
 
-Because the user of an app in the 10-foot environment is using a remote control or gamepad and is sitting several feet away from the screen, there are some UI considerations that need to be factored into your design. 
+Because the user of an app in the 10-foot environment is using a remote control or gamepad and is sitting several feet away from the screen, there are some UI considerations that need to be factored into your design.
 Make sure that the UI has an appropriate content density and is not too cluttered so that the user can easily navigate and select elements. Remember: simplicity is key.
 
 ### Scale factor and adaptive layout
 
-**Scale factor** helps with ensuring that UI elements are displayed with the right sizing for the device on which the app is running. 
-On desktop, this setting can be found in **Settings > System > Display** as a sliding value. 
+**Scale factor** helps with ensuring that UI elements are displayed with the right sizing for the device on which the app is running.
+On desktop, this setting can be found in **Settings > System > Display** as a sliding value.
 This same setting exists on phone as well if the device supports it.
 
-![Change the size of text, apps, and other items](images/designing-for-tv/ui-scaling.png) 
+![Change the size of text, apps, and other items](images/designing-for-tv/ui-scaling.png)
 
-On Xbox One, there is no such system setting; however, for UWP UI elements to be sized appropriately for TV, they are scaled at a default of **200%** for XAML apps and **150%** for HTML apps. 
-As long as UI elements are appropriately sized for other devices, they will be appropriately sized for TV. 
-Xbox One renders your app at 1080p (1920 x 1080 pixels). Therefore, when bringing an app from other devices such as PC, 
+On Xbox One, there is no such system setting; however, for UWP UI elements to be sized appropriately for TV, they are scaled at a default of **200%** for XAML apps and **150%** for HTML apps.
+As long as UI elements are appropriately sized for other devices, they will be appropriately sized for TV.
+Xbox One renders your app at 1080p (1920 x 1080 pixels). Therefore, when bringing an app from other devices such as PC,
 ensure that the UI looks great at 960 x 540 px at 100% scale (or 1280 x 720 px at 100% scale for HTML apps) utilizing [adaptive techniques](../layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
-Designing for Xbox is a little different from designing for PC because you only need to worry about one resolution, 1920 x 1080. 
+Designing for Xbox is a little different from designing for PC because you only need to worry about one resolution, 1920 x 1080.
 It doesn't matter if the user has a TV that has better resolution&mdash;UWP apps will always scale to 1080p.
 
 Correct asset sizes from the 200% (or 150% for HTML apps) set will also be pulled in for your app when running on Xbox One, regardless of TV resolution.
@@ -646,7 +651,7 @@ When designing your app, remember that the user will be viewing the UI from a di
 
 #### Sizes of UI controls
 
-Interactive UI elements should be sized at a minimum height of 32 epx (effective pixels). This is the default for common UWP controls, and when used at 200% scale, it ensures that UI elements are visible from a distance and helps reduce content density. 
+Interactive UI elements should be sized at a minimum height of 32 epx (effective pixels). This is the default for common UWP controls, and when used at 200% scale, it ensures that UI elements are visible from a distance and helps reduce content density.
 
 ![UWP button at 100% and 200% scale](images/designing-for-tv/button-100-200.png)
 
@@ -667,13 +672,13 @@ When using larger text in your UI, pick a size that does not limit screen real e
 
 ### Opting out of scale factor
 
-We recommend that your app take advantage of scale factor support, which will help it run appropriately on all devices by scaling for each device type. 
+We recommend that your app take advantage of scale factor support, which will help it run appropriately on all devices by scaling for each device type.
 However, it is possible to opt out of this behavior and design all of your UI at 100% scale. Note that you cannot change the scale factor to anything other than 100%.
 
 For XAML apps, you can opt out of scale factor by using the following code snippet:
 
 ```csharp
-bool result = 
+bool result =
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
@@ -715,7 +720,7 @@ This is not optimal because it gives the app a "boxed-in" effect, with parts of 
 
 ### Drawing UI to the edge
 
-We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), [nav panes](../controls-and-patterns/nav-pane.md), and [CommandBars](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx).
+We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), [nav panes](../controls-and-patterns/navigationview.md), and [CommandBars](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx).
 
 On the other hand, it's also important that interactive elements and text always avoid the screen edges to ensure that they won't be cut off on some TVs. We recommend that you draw only non-essential visuals within 5% of the screen edges. As mentioned in [UI element sizing](#ui-element-sizing), a UWP app following the Xbox One console's default scale factor of 200% will utilize an area of 960 x 540 epx, so in your app's UI, you should avoid putting essential UI in the following areas:
 
@@ -739,7 +744,7 @@ With this line of code, the app window will extend to the edges of the screen, s
 
 ![Core window bounds](images/designing-for-tv/core-window-bounds.png)
 
-#### Pane backgrounds 
+#### Pane backgrounds
 
 Navigation panes are typically drawn near the edge of the screen, so the background should extend into the TV-unsafe area so as not to introduce awkward gaps. You can do this by simply changing the color of the nav pane's background to the color of the app's background.
 
@@ -747,7 +752,7 @@ Using the core window bounds as previously described will allow you to draw your
 
 ![Nav pane extended to edges of screen](images/designing-for-tv/tv-safe-areas-2.png)
 
-Here, the nav pane's background has been extended to the edges of the screen, while its navigation items are kept in the TV-safe area. 
+Here, the nav pane's background has been extended to the edges of the screen, while its navigation items are kept in the TV-safe area.
 The content of the `SplitView` (in this case, a grid of items) has been extended to the bottom of the screen so that it looks like it continues and isn't cut off, while the top of the grid is still within the TV-safe area. (Learn more about how to do this in [Scrolling ends of lists and grids](#scrolling-ends-of-lists-and-grids)).
 
 The following code snippet achieves this effect:
@@ -774,7 +779,7 @@ The following code snippet achieves this effect:
 **Option 1**: Change the `CommandBar` background color to either transparent or the same color as the page background:
 
 ```xml
-<CommandBar x:Name="topbar" 
+<CommandBar x:Name="topbar"
             Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
             ...
 </CommandBar>
@@ -785,11 +790,11 @@ Doing this will make the `CommandBar` look like it is on top of the same backgro
 **Option 2**: Add a background rectangle whose fill is the same color as the `CommandBar` background, and have it lie below the `CommandBar` and across the rest of the page:
 
 ```xml
-<Rectangle VerticalAlignment="Top" 
+<Rectangle VerticalAlignment="Top"
             HorizontalAlignment="Stretch"      
             Fill="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
-<CommandBar x:Name="topbar" 
-            VerticalAlignment="Top" 
+<CommandBar x:Name="topbar"
+            VerticalAlignment="Top"
             HorizontalContentAlignment="Stretch">
             ...
 </CommandBar>
@@ -813,13 +818,13 @@ While a list or grid is extended like this, it's important to keep the focus vis
 The UWP has functionality that will keep the focus visual inside the [VisibleBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx), but you need to add padding to ensure that the list/grid items can scroll into view of the safe area. Specifically, you add a positive margin to the [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) or [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)'s [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), as in the following code snippet:
 
 ```xml
-<Style x:Key="TitleSafeListViewStyle" 
+<Style x:Key="TitleSafeListViewStyle"
        TargetType="ListView">
     <Setter Property="Template">
         <Setter.Value>
             <ControlTemplate TargetType="ListView">
-                <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                        Background="{TemplateBinding Background}" 
+                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                        Background="{TemplateBinding Background}"
                         BorderThickness="{TemplateBinding BorderThickness}">
                     <ScrollViewer x:Name="ScrollViewer"
                                   TabNavigation="{TemplateBinding TabNavigation}"
@@ -841,7 +846,7 @@ The UWP has functionality that will keep the focus visual inside the [VisibleBou
                                         Footer="{TemplateBinding Footer}"
                                         FooterTemplate="{TemplateBinding FooterTemplate}"
                                         FooterTransitions="{TemplateBinding FooterTransitions}"
-                                        Padding="{TemplateBinding Padding}" 
+                                        Padding="{TemplateBinding Padding}"
                                         Margin="0,27,0,27"/>
                     </ScrollViewer>
                 </Border>
@@ -871,19 +876,19 @@ By default, the Universal Windows Platform doesn't do anything to alter your app
 
 You can choose an **Application theme** (dark or light) according to what is right for your app, or you can opt out of theming. Read more about general recommendations for themes in [Color themes](../style/color.md).
 
-The UWP also allows apps to dynamically set the theme based on the system settings provided by the devices on which they run. 
-While the UWP always respects the theme settings specified by the user, each device also provides an appropriate default theme. 
-Because of the nature of Xbox One, which is expected to have more *media* experiences than *productivity* experiences, it defaults to a dark system theme. 
+The UWP also allows apps to dynamically set the theme based on the system settings provided by the devices on which they run.
+While the UWP always respects the theme settings specified by the user, each device also provides an appropriate default theme.
+Because of the nature of Xbox One, which is expected to have more *media* experiences than *productivity* experiences, it defaults to a dark system theme.
 If your app's theme is based on the system settings, expect it to default to dark on Xbox One.
 
 ### Accent color
 
 The UWP provides a convenient way to expose the **accent color** that the user has selected from their system settings.
 
-On Xbox One, the user is able to select a user color, just as they can select an accent color on a PC. 
+On Xbox One, the user is able to select a user color, just as they can select an accent color on a PC.
 As long as your app calls these accent colors through brushes or color resources, the color that the user selected in the system settings will be used. Note that accent colors on Xbox One are per user, not per system.
 
-Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices. 
+Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices.
 This is partly due to the fact that these colors are hand-picked to make for the best 10-foot experience on Xbox One, following the same methodologies and strategies explained in this article.
 
 As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API, those colors are replaced with accent colors appropriate for TV. High contrast brush colors are also pulled in from the system the same way as on a PC and phone, but with TV-appropriate colors.
@@ -896,7 +901,7 @@ When designing for TV, note that colors display quite differently depending on t
 
 ### TV-safe colors
 
-A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well; therefore, you should avoid using these colors when designing for the 10-foot experience. They can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors). 
+A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well; therefore, you should avoid using these colors when designing for the 10-foot experience. They can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors).
 
 While there are different schools of thought in what are considered TV-safe colors, colors within the RGB values of 16-235 (or 10-EB in hexadecimal) are generally safe to use for TV.
 
@@ -930,7 +935,7 @@ The following sample code provides a color theme that has been optimized for TV 
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" 
+                <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"
                                  Color="#FF101010"/>
                 <Color x:Key="SystemAltHighColor">#FF101010</Color>
                 <Color x:Key="SystemAltLowColor">#33101010</Color>
@@ -958,7 +963,7 @@ The following sample code provides a color theme that has been optimized for TV 
                 <Color x:Key="SystemListMediumColor">#33EBEBEB</Color>
             </ResourceDictionary>
             <ResourceDictionary x:Key="Light">
-                <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush" 
+                <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"
                                  Color="#FFEBEBEB" /> 
                 <Color x:Key="SystemAltHighColor">#FFEBEBEB</Color>
                 <Color x:Key="SystemAltLowColor">#33EBEBEB</Color>
@@ -991,7 +996,7 @@ The following sample code provides a color theme that has been optimized for TV 
 ```
 
 > [!NOTE]
-> The light theme **SystemChromeMediumLowColor** and **SystemChromeMediumLowColor** are the same color on purpose and not caused as a result of clamping. 
+> The light theme **SystemChromeMediumLowColor** and **SystemChromeMediumLowColor** are the same color on purpose and not caused as a result of clamping.
 
 > [!NOTE]
 > Hexadecimal colors are specified in **ARGB** (Alpha Red Green Blue).
@@ -1001,14 +1006,14 @@ We don't recommend using TV-safe colors on a monitor able to display the full ra
 ```csharp
 if (IsTenFoot)
 { 
-    this.Resources.MergedDictionaries.Add(new ResourceDictionary 
-    { 
-        Source = new Uri("ms-appx:///TenFootStylesheet.xaml") 
+    this.Resources.MergedDictionaries.Add(new ResourceDictionary
+    {
+        Source = new Uri("ms-appx:///TenFootStylesheet.xaml")
     }); 
 }
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > The `IsTenFoot` variable is defined in [Custom visual state trigger for Xbox](#custom-visual-state-trigger-for-xbox).
 
 This will ensure that the correct colors will display on whichever device the app is running, providing the user with a better, more aesthetically pleasing experience.
@@ -1019,7 +1024,7 @@ There are several UI controls that work well across multiple devices, but have c
 
 ### Pivot control
 
-A [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) provides quick navigation of views within an app through selecting different headers or tabs. The control underlines whichever header has focus, making it more obvious which header is currently selected when using gamepad/remote. 
+A [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) provides quick navigation of views within an app through selecting different headers or tabs. The control underlines whichever header has focus, making it more obvious which header is currently selected when using gamepad/remote.
 
 ![Pivot underline](images/designing-for-tv/pivot-underline.png)
 
@@ -1033,11 +1038,11 @@ You can set the [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/
 
 ![Pivot headers carousel disabled](images/designing-for-tv/pivot-headers-carousel.png)-->
 
-### Navigation pane
+### Navigation pane <a name="navigation-pane">
 
-A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button. 
+A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button.
 
-While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](../controls-and-patterns/nav-pane.md).
+While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. Code sample on how to implement this design pattern can be found in [Managing focus navigation](managing-focus-navigation.md#split-view-code-sample) document. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](../controls-and-patterns/navigationview.md).
 
 ### CommandBar labels
 
@@ -1073,7 +1078,7 @@ The [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/win
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
-                    Source="Assets/video.mp4" 
+                    Source="Assets/video.mp4"
                     AreTransportControlsEnabled="True">
     <MediaPlayerElement.TransportControls>
         <MediaTransportControls IsCompact="False"/>
@@ -1111,15 +1116,15 @@ To tailor your UWP app for the 10-foot experience, we recommend that you make la
                 <triggers:DeviceFamilyTrigger DeviceFamily="Windows.Xbox"/>
             </VisualState.StateTriggers>
             <VisualState.Setters>
-                <Setter Target="RootSplitView.OpenPaneLength" 
+                <Setter Target="RootSplitView.OpenPaneLength"
                         Value="368"/>
-                <Setter Target="RootSplitView.CompactPaneLength" 
+                <Setter Target="RootSplitView.CompactPaneLength"
                         Value="96"/>
-                <Setter Target="NavMenuList.Margin" 
+                <Setter Target="NavMenuList.Margin"
                         Value="0,75,0,27"/>
-                <Setter Target="Frame.Margin" 
+                <Setter Target="Frame.Margin"
                         Value="0,27,48,27"/>
-                <Setter Target="NavMenuList.ItemContainerStyle" 
+                <Setter Target="NavMenuList.ItemContainerStyle"
                         Value="{StaticResource NavMenuItemContainerXboxStyle}"/>
             </VisualState.Setters>
         </VisualState>
@@ -1140,7 +1145,7 @@ class DeviceFamilyTrigger : StateTriggerBase
         {
             return _queriedDeviceFamily;
         }
-        
+
         set
         {
             _queriedDeviceFamily = value;
@@ -1156,7 +1161,7 @@ After you've added your custom trigger, your app will automatically make the lay
 Another way you can check whether your app is running on Xbox and then make the appropriate adjustments is through code. You can use the following simple variable to check if your app is running on Xbox:
 
 ```csharp
-bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily == 
+bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily ==
                     "Windows.Xbox");
 ```
 

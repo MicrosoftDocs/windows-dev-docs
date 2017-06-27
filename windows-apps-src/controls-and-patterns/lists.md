@@ -6,11 +6,15 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
 ---
 # Lists
 
@@ -24,16 +28,10 @@ Lists display and enable interactions with collection-based content. The four li
 -   Drop-down lists, which let users choose one item from an expanding list
 -   List boxes, which let users choose one item or multiple items from a box that can be scrolled
 
-Design guidelines, features, and examples are given for each list pattern. At the end of the article are links to related topics and APIs.
+Design guidelines, features, and examples are given for each list pattern.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878), [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
+
 
 ## List views
 
@@ -252,12 +250,12 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 
 - [Hub](hub.md)
 - [Master/details](master-details.md)
-- [Nav pane](nav-pane.md)
+- [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **For developers**
-- [**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox class**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [ListBox class](https://msdn.microsoft.com/library/windows/apps/br242868)

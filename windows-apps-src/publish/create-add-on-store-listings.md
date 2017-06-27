@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
 title: Create add-on Store listings
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,16 +16,21 @@ keywords: windows 10, uwp
 
 When submitting an add-on, the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.
 
-## Languages
+> [!TIP]
+> You can also [import and export Store listings](import-and-export-store-listings.md) for your add-on if you'd like to enter your listing info offline in a .csv file, rather than providing this info directly in the dashboard. This may be especially convenient when creating listings in many languages.
 
 
-Before you can enter Store listing info, you need to specify one or more [languages](supported-languages.md). We recommend providing Store listings for every language your app supports.
+## Store listing languages
 
-Under the **Store listing** section of your add-on's submission, click **Manage Store listing languages**, then click **Manage languages** on the next page. Check the boxes for the languages that you’d like to add, then click **Update**. The languages that you’ve selected will be displayed in the **Store listing languages** section of the page. To remove one or more of these languages, click **Remove** (or click **Manage languages** and uncheck the box for languages you’d like to remove). Click **Save** when you're happy with the list of languages.
+Before you can enter Store listing info, you need to specify one or more [languages](supported-languages.md). You must complete the **Store listing** page for at least one language. We recommend providing Store listings for every language your app supports.
 
-> **Tip** To add and remove additional languages, click **Manage Store listing languages** from the add-on submission overview.
+Under the **Store listing** section of your add-on's submission, click **Add/remove languages**, then click **Manage languages** on the next page. Check the boxes for the languages that you’d like to add, then click **Update**. The languages that you’ve selected will be displayed in the **Store listing languages** section of the page.
 
-To edit a Store listing, click the language name on the add-on submission overview. The info you can enter for each language is described below.
+To remove a language, click **Remove** (or click **Manage languages** and uncheck the box for languages you’d like to remove). 
+
+When you have finished making your selections, click **Save** to return to the submission overview page.
+
+To edit a Store listing, click the language name from the add-on submission overview page. The info you can enter for each language is described below.
 
 ## Title
 

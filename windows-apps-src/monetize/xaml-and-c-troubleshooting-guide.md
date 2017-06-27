@@ -112,7 +112,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     private void adControl_ErrorOccurred(object sender,               
         Microsoft.Advertising.WinRT.UI.AdErrorEventArgs e)
     {
-        TextBlock1.Text = e.Error.Message;
+        TextBlock1.Text = e.ErrorMessage;
     }
     ```
 

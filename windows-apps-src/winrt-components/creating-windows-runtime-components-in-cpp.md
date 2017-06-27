@@ -46,8 +46,7 @@ The .NET languages follow their normal casing rules.
 
 ## Instantiating the object
 
-
-Only Windows Runtime types can be passed across the ABI boundary. The compiler will raise an error if the component has a type like std::wstring as a return type or parameter in a public method. The Visual C++ component extensions (C++/CX) built-in types include the usual scalars such as int and double, and also their typedef equivalents int32, float64, and so on.For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+Only Windows Runtime types can be passed across the ABI boundary. The compiler will raise an error if the component has a type like std::wstring as a return type or parameter in a public method. The Visual C++ component extensions (C++/CX) built-in types include the usual scalars such as int and double, and also their typedef equivalents int32, float64, and so on. For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
 ```cpp
 // ref class definition in C++
@@ -78,7 +77,6 @@ ResultText.Text = num.ToString();
 ```
 
 ## C++ built-in types, library types, and Windows Runtime types
-
 
 An activatable class (also known as a ref class) is one that can be instantiated from another language such as JavaScript, C# or Visual Basic. To be consumable from another language, a component must contain at least one activatable class.
 
@@ -184,7 +182,6 @@ private void GetAndSetPlayerData()
 
 ## Overloaded Methods
 
-
 A C++ public ref class can contain overloaded methods, but JavaScript has limited ability to differentiate overloaded methods. For example, it can tell the difference between these signatures:
 
 ```cpp
@@ -215,7 +212,6 @@ document.getElementById('P4').innerHTML = num;
 ```
 
 ## .NET
-
 
 The .NET languages recognize overloads in a C++ ref class just as in any .NET Framework class.
 
@@ -276,11 +272,9 @@ private void DateTimeExample()
 
 ## Collections and arrays
 
-
 Collections are always passed across the ABI boundary as handles to Windows Runtime types such as Windows::Foundation::Collections::IVector^ and Windows::Foundation::Collections::IMap^. For example, if you return a handle to a Platform::Collections::Map, it implicitly converts to a Windows::Foundation::Collections::IMap^. The collection interfaces are defined in a namespace that's separate from the C++ classes that provide the concrete implementations. JavaScript and .NET languages consume the interfaces. For more information, see [Collections (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) and [Array and WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).
 
 ## Passing IVector
-
 
 ```cpp
 // Windows::Foundation::Collections::IVector across the ABI.
@@ -330,7 +324,6 @@ private void SortListItems()
 
 ## Passing IMap
 
-
 ```cpp
 // #include <map>
 //#include <collection.h>
@@ -367,7 +360,6 @@ private void GetDictionary()
 ```
 
 ## Properties
-
 
 A public ref class in Visual C++ component extensions exposes public data members as properties, by using the property keyword. The concept is identical to .NET Framework properties. A trivial property resembles a data member because its functionality is implicit. A non-trivial property has explicit get and set accessors and a named private variable that's the "backing store" for the value. In this example, the private member variable \_propertyAValue is the backing store for PropertyA. A property can fire an event when its value changes, and a client app can register to receive that event.
 
@@ -438,11 +430,9 @@ private void GetAProperty()
 
 ## Delegates and events
 
-
 A delegate is a Windows Runtime type that represents a function object. You can use delegates in connection with events, callbacks, and asynchronous method calls to specify an action to be performed later. Like a function object, the delegate provides type-safety by enabling the compiler to verify the return type and parameter types of the function. The declaration of a delegate resembles a function signature, the implementation resembles a class definition, and the invocation resembles a function invocation.
 
 ## Adding an event listener
-
 
 You can use the event keyword to declare a public member of a specified delegate type. Client code subscribes to the event by using the standard mechanisms that are provided in the particular language.
 
@@ -493,7 +483,6 @@ private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
 
 ## Adding multiple event listeners for one event
 
-
 JavaScript has an addEventListener method that enables multiple handlers to subscribe to a single event.
 
 ```cpp
@@ -538,7 +527,6 @@ In C#, any number of event handlers can subscribe to the event by using the += o
 
 ## Enums
 
-
 A Windows Runtime enum in C++ is declared by using public class enum; it resembles a scoped enum in standard C++.
 
 ```cpp
@@ -573,18 +561,15 @@ Both C# and Visual Basic have language support for enums. These languages see a 
 
 ## Asynchronous methods
 
-
 To consume asynchronous methods that are exposed by other Windows Runtime objects, use the [task Class (Concurrency Runtime)](https://msdn.microsoft.com/library/hh750113.aspx). For more information, see and [Task Parallelism (Concurrency Runtime)](https://msdn.microsoft.com/library/dd492427.aspx).
 
 To implement asynchronous methods in C++, use the [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) function that's defined in ppltasks.h. For more information, see [Creating Asynchronous Operations in C++ for Windows Store Apps](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). For an example, see [Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). The .NET languages consume C++ asynchronous methods just as they would any asynchronous method that's defined in the .NET Framework.
 
 ## Exceptions
 
-
 You can throw any exception type that's defined by the Windows Runtime. You cannot derive custom types from any Windows Runtime exception type. However, you can throw COMException and provide a custom HRESULT that can be accessed by the code that catches the exception. There's no way to specify a custom Message in a COMException.
 
 ## Debugging tips
-
 
 When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script, or stepping through native code in the component, but not both at the same time. To change the setting, select the JavaScript project node in Solution Explorer and then choose Properties, Debugging, Debugger Type.
 

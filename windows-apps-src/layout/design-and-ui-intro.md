@@ -7,7 +7,7 @@ label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,15 +42,11 @@ Because of how the scaling system works, when you design your UWP app, you're de
 
 -   You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class (for details, see the [Screen sizes and breakpoints article](screen-sizes-and-breakpoints-for-responsive-design.md)).
 
--   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes and positions of UI elements, and the position (but not the size—text can be any size) of text a multiple of 4 effective pixels.
+-   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes, and the positions of UI elements a multiple of 4 effective pixels. Note that text doesn't have this requirement; the text can have any size and position. 
 
 This illustration shows design elements that map to the 4x4 pixel grid. The design element will always have crisp, sharp edges.
 
 ![snapping to the 4x4 pixel grid](images/rsp-design/epx-4pixelgood.png)
-
-The next illustration shows design elements that don't map to the 4x4 grid. These design elements will have blurry, soft edges on some devices.
-
-![design elements that do not align to the 4x4 pixel grid](images/rsp-design/offthegridillustration.png)
 
 > [!TIP]
 > When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. For a list of size classes and effective resolutions, see the [Screen sizes and breakpoints article](screen-sizes-and-breakpoints-for-responsive-design.md).
@@ -110,7 +106,7 @@ To make things simpler, let's define the anatomy of an app from a design perspec
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
 <td align="left"><strong>Navigation elements</strong>
-<p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/nav-pane.md).</p>
+<p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/navigationview.md).</p>
 <p>Navigation elements are covered in detail in the [Navigation design basics](navigation-basics.md) article.</p>
 <strong>Command elements</strong>
 <p>Command elements initiate actions, such as manipulating, saving, or sharing content. Examples of command elements include [button](../controls-and-patterns/buttons.md) and the [command bar](../controls-and-patterns/app-bars.md). Command elements can also include keyboard shortcuts that aren't actually visible on the screen.</p>

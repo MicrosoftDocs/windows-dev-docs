@@ -6,11 +6,15 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
 ---
 # Check boxes
 
@@ -18,16 +22,9 @@ keywords: windows 10, uwp
 
 A check box is used to select or deselect action items. It can be used for a single item or for a list of multiple items that a user can choose from. The control has three selection states: unselected, selected, and indeterminate. Use the indeterminate state when a collection of sub-choices have both unselected and selected states.
 
-![Example of check box states](images/templates-checkbox-states-default.png)
+> **Important APIs**: [CheckBox class](https://msdn.microsoft.com/library/windows/apps/br209316), [Checked event](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [IsChecked property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**CheckBox class**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
+![Example of check box states](images/templates-checkbox-states-default.png)
 
 
 ## Is this the right control?
@@ -36,7 +33,7 @@ Use a **single check box** for a binary yes/no choice, such as with a "Remember 
 
 ![A single check box used for an individual choice](images/checkbox1.png)
 
-For a binary choice, the main difference between a **check box** and a [**toggle switch**](toggles.md) is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.
+For a binary choice, the main difference between a **check box** and a [toggle switch](toggles.md) is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.
 
 Use **multiple check boxes** for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.
 
@@ -50,19 +47,10 @@ When options can be grouped, you can use an indeterminate check box to represent
 
 Both **check box** and **radio button** controls let the user select from a list of options. Check boxes let the user select a combination of options. In contrast, radio buttons let the user make a single choice from mutually exclusive options. When there is more than one option but only one can be selected, use a radio button instead.
 
-## Examples
-
-A check box in a dialog in the Microsoft Edge browser.
-
-![A check box in a dialog in the Microsoft Edge browser](images/control-examples/check-box-edge.png)
-
-Check boxes in the Alarms & Clock app in Windows.
-
-![Check boxes in the Alarms & Clock app in Windows](images/control-examples/check-box-alarm.png)
 
 ## Create a checkbox
 
-To assign a label to the checkbox, set the [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) property. The label displays next to the checkbox.
+To assign a label to the checkbox, set the [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) property. The label displays next to the checkbox.
 
 This XAML creates a single check box that is used to agree to terms of service before a form can be submitted. 
 
@@ -80,9 +68,9 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### Bind to IsChecked
 
-Use the [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) boolean value, you must use a value converter to bind it to a boolean value.
+Use the [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) boolean value, you must use a value converter to bind it to a boolean value.
 
-In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
+In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
 
 > Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding and value converters, see [Data binding overview](../data-binding/data-binding-quickstart.md).
 
@@ -125,7 +113,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### Handle Click and Checked events
 
-To perform an action when the check box state changes, you can handle either the [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event, or the [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) and [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) events. 
+To perform an action when the check box state changes, you can handle either the [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event, or the [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) and [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) events. 
 
 The **Click** event occurs whenever the checked state changes. If you handle the Click event, use the **IsChecked** property to determine the state of the check box.
 
@@ -186,7 +174,7 @@ checked | IsChecked | **true**
 unchecked | IsChecked | **false** 
 indeterminate | IsChecked | **null** 
 
-For the check box to report the indeterminate state, you must set the [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) property to **true**. 
+For the check box to report the indeterminate state, you must set the [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) property to **true**. 
 
 When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.
 
@@ -296,7 +284,7 @@ private void SetCheckedState()
 
 ## Related articles
 
--   [**CheckBox class**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [CheckBox class](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [Radio buttons](radio-button.md)
 -   [Toggle switch](toggles.md)
 

@@ -8,7 +8,7 @@ label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,6 +20,8 @@ keywords: windows 10, uwp
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 On the Web, individual web sites provide their own navigation systems, such as tables of contents, buttons, menus, simple lists of links, and so on. The navigation experience can vary wildly from website to website. However, there is one consistent navigation experience: back. Most browsers provide a back button that behaves the same way regardless of the website.
+
+> **Important APIs**: [SystemNavigationManager class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager), [BackRequested event](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested), [OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/br227508)
 
 For similar reasons, the Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 
@@ -110,7 +112,7 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
-        this, &amp;App::App_BackRequested);
+        this, &App::App_BackRequested);
 ```
 
 Here's the corresponding [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event handler that calls [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) on the root frame of the app.
@@ -128,7 +130,7 @@ This handler is invoked on a global back event. If the in-app back stack is empt
 >
 >    // Navigate back if possible, and if the event has not 
 >    // already been handled .
->    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    if (rootFrame.CanGoBack && e.Handled == false)
 >    {
 >        e.Handled = true;
 >        rootFrame.GoBack();

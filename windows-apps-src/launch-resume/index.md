@@ -22,6 +22,7 @@ This section includes information on the following:
 - How to use App services, which allow your Universal Windows Platform (UWP) app to share data and functionality with other apps.
 - How to use background tasks, which allow a UWP app to do work while the app itself is not in the foreground.
 - How to discover connected devices, launch an app on another device, and communicate with an app service on a remote device so that you can create user experiences that flow across devices.
+- How to choose the right technology to extend and componentize your app.
 - How to add and configure a splash screen for your app.
 
 ## The app lifecycle
@@ -76,6 +77,7 @@ The [App services](app-services.md) section describes how to integrate app servi
 |-------|-------------|
 | [Create and consume an app service](how-to-create-and-consume-an-app-service.md) | Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps and how to consume those services. |
 | [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) | Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider. |
+| [Extend your app with app services, extensions, and packages](extend-your-app-with-services-extensions-packages.md) | There are different technologies in Windows 10 that will help you extend and componentize your app. This topic will help you determine which technology is the right one to use and provides a brief overview of each. |
 
 ## Background tasks
 
@@ -95,11 +97,14 @@ The [Background tasks](support-your-app-with-background-tasks.md) section shows 
 | [Register a background task](register-a-background-task.md)                                                 | Learn how to create a function that can be re-used to safely register most background tasks. |
 | [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)         | Learn how to create a background task that responds to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) events. |
 | [Run a background task on a timer](run-a-background-task-on-a-timer-.md)                                    | Learn how to schedule a one-time background task, or run a periodic background task. |
+| [Trigger a background task from within your app](trigger-background-task-from-app.md) | Learn how to use the [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) to activate a background task from within your app.|
 | [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. |
 | [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)             | Learn how to set conditions that control when your background task will run. |
 | [Transfer data in the background](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | Use the background transfer API to copy files in the background. |
 | [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)                   | Use a background task to update your app's live tile with fresh content. |
 | [Use a maintenance trigger](use-a-maintenance-trigger.md)                                                   | Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in. |
+### See also
+* [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) - Learn how to reduce the energy used in the background and interact with user settings for background activity.
 
 ## Remote Systems
 

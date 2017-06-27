@@ -4,16 +4,17 @@ description:
 title: Connected animation
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: stmoy
+design-contact: conrwi
+doc-status: Published
 ---
 
 # Connected animation for UWP apps
-
-> Note: This article is an early draft for a new feature of Windows 10 RS2. Feature names (such as "material"), terminology, and functionality are not final.
 
 ## What is connected animation?
 
@@ -170,7 +171,7 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 
 A *coordinated animation* is a special type of entrance animation where an element will appear alongside the connected animation target, animating in tandem with the connected animation element as it moves across the screen. Coordinated animations can add more visual interest to a transition and further draw the user’s attention to the context that is shared between the source and destination views. In these images, the caption UI for the item is animating using a coordinated animation.
 
-Use the two-parameter overload of **TryStart** to add coordinated elements to a connected animation. This example demonstrates a coordinated animation of a Grid layout named “DescriptionRoot” that will enter in tandem with a connected animation element named “ColorImage”.
+Use the two-parameter overload of **TryStart** to add coordinated elements to a connected animation. This example demonstrates a coordinated animation of a Grid layout named “DescriptionRoot” that will enter in tandem with a connected animation element named “CoverImage”.
 
 *DestinationPage.xaml*
 

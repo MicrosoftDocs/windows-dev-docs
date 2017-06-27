@@ -5,18 +5,19 @@ title: Primary tile API's
 label: Primary tile API's
 template: detail.hbs
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile
 ---
 # Primary tile APIs
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Primary tile APIs let you check whether Start supports your app, check whether your app is currently pinned, and pin your app's primary tile.
+Primary tile APIs let you check whether your app is currently pinned to Start, and request to pin your app's primary tile.
 
-> **New in Creators Update**: You can programmatically pin your own app's primary tile to Start, just like you can pin secondary tiles. And you can check if it's currently pinned. Note that you must target SDK 15003 or newer and be running the Creators Update to use the Primary Tile APIs.
+> [!IMPORTANT]
+> **Requires Creators Update**: You must target SDK 15063 and be running build 15063 or higher to use the primary tile APIs.
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>

@@ -42,7 +42,7 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
 
 ## Code the experiment in your app
 
-1. In Visual Studio 2015, create a new Universal Windows Platform project using Visual C#. Name the project **SampleExperiment**.
+1. In Visual Studio, create a new Universal Windows Platform project using Visual C#. Name the project **SampleExperiment**.
 2. In Solution Explorer, expand your project node, right-click **References**, and click **Add Reference**.
 3. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
 4. In the list of SDKs, select the check box next to **Microsoft Engagement Framework** and click **OK**.

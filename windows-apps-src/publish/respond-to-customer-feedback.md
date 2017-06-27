@@ -1,9 +1,9 @@
----
+﻿---
 title: Respond to customer feedback
 description: You can respond directly to feedback that your customers leave in Feedback Hub.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,8 @@ ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 
 You can use the [Feedback report](feedback-report.md) to review the feedback that your Windows 10 customers have left about your app in Feedback Hub, and then respond directly to that feedback. You can post your responses in Feedback Hub for everyone to see (either as individual comments, or by updating the status of a piece of feedback and adding a description) to tell customers about new features or bug fixes, or to ask for more specific feedback on how to improve your app. You can also send your response as an email directly to the customer who left the feedback.
 
-> **Tip** You can encourage customers to leave feedback by using the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to add a control that lets customers directly [launch Feedback Hub from your UWP app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it directly through the Feedback Hub app. Because of this, you may see customer feedback in this report, even if you have not specifically requested feedback from within your app.
+> [!TIP]
+> You can encourage customers to leave feedback by using the Feedback API in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) to add a control that lets customers directly [launch Feedback Hub from your UWP app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it directly through the Feedback Hub app. Because of this, you may see customer feedback in this report, even if you have not specifically requested feedback from within your app.
 
 To provide a response to any piece of feedback, click the **Respond to feedback** link that appears by the piece of feedback in your **Feedback report**.
 
@@ -27,11 +28,13 @@ By default, the radio button for **Comment** is selected after you click **Respo
 
 The comment you entered will be displayed as a comment in the Feedback Hub, along with the comments submitted by other customers. Your publisher name and app name will be displayed with your comment to identify you as the developer. There is no limit on the number of comments you can write for a piece of feedback, but note that you can’t edit or delete comments after you submit them. The five most recent comments to a piece of feedback will be shown in your **Feedback report** (as well as in Feedback Hub). When there are more than five comments, you can click **Show all comments** to see all of them in Feedback Hub.
 
+
 ## Private responses via email
 
 If you’d prefer not to post a public response, you can check the **Send comment as email** box to send a private response directly to the customer (if they have provided an email address and haven’t opted out of receiving responses via email). When you do so, Microsoft sends an email to the customer on your behalf. The email will contain their original feedback as well as the response you write.
 
 After you check the **Send comment as email** box, enter your comment and then click **Submit**. Note that you must provide an email address in the **Support contact email** field when using this option. By default, we use the email address that you provided in your account contact info. If you prefer to use a different email address, you can update the **Support contact email** field to use a different one. The customer who receives your response will be able to reply directly to this email address.
+
 
 ## Public status updates and descriptions in Feedback Hub
 
@@ -47,7 +50,9 @@ Along with updating the status, you can enter a comment to provide more info, su
 
 Using the **Update status** option allows you to change the status whenever you want (along with providing updated descriptions for each status change). Whenever you change the status of a piece of feedback, the status will be updated in Feedback Hub so that customers viewing your response will see the latest status.
 
+
 ## Guidelines for responses
+
 No matter which method you use to respond to a customer’s feedback, you must follow these guidelines for all responses.
 - Responses must be no longer than 1000 characters.
 - You may not offer any type of compensation, including digital app items, to users for their public comments.
@@ -56,6 +61,7 @@ No matter which method you use to respond to a customer’s feedback, you must f
 - Your response should be directly related to the specific app and feedback.
 - Don’t include any profane, aggressive, personal, or malicious comments in your response. Always be polite and keep in mind that happy customers will likely be your app’s biggest promoters.
 
-> **Note** Customers can report a developer to Microsoft if they receive an inappropriate feedback response. They can also opt out of receiving feedback responses by email.
+> [!NOTE]
+> Customers can report a developer to Microsoft if they receive an inappropriate feedback response. They can also opt out of receiving feedback responses by email.
 
 Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if you think that the content of a customer’s feedback on your product is inappropriate, please submit a [support ticket](http://go.microsoft.com/fwlink/p/?LinkID=401178).

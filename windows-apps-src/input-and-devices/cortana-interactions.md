@@ -19,11 +19,11 @@ Cortana offers a robust and comprehensive extensibility framework that enables y
 
 ## We've moved
 
-All developer documentation for Cortana features and services is now available through the [Cortana dev center](https://developer.microsoft.com/en-us/cortana).
+All developer documentation for Cortana features and services is now available through the [Cortana dev center](https://developer.microsoft.com/cortana).
 
 To get started, see the [Overview of Cortana extensibility](https://msdn.microsoft.com/cortana/getstarted).
 
-To learn how to extend Cortana with functionality from a UWP app using voice commands, see [Cortana voice commands](https://developer.microsoft.com/en-us/cortana). 
+To learn how to extend Cortana with functionality from a UWP app using voice commands, see [Cortana voice commands](https://developer.microsoft.com/cortana). 
 
 ## Related articles
 
@@ -31,7 +31,7 @@ To learn how to extend Cortana with functionality from a UWP app using voice com
 
 **Designers**
 * [Speech design guidelines](https://msdn.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
-* [Cortana design guidelines for voice commands](https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines)
+* [Cortana design guidelines for voice commands](https://msdn.microsoft.com/cortana/voicecommands/voicecommand-design-guidelines)
 
 **Samples**
 * [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
