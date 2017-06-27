@@ -4,7 +4,7 @@ Description: When you create a new add-on in the Windows Dev Center dashboard, y
 title: Set your add-on product type and product ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
-ms.date: 06/22/2017
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -36,7 +36,7 @@ There are two types of consumable add-ons that you can select:
 
 ## Product ID
 
-Enter a unique product ID for your add-on. This name will be used to identify your add-on in the dashboard, and is the same identifier that you will need to reference in [your app's code to call the add-on](https://msdn.microsoft.com/library/windows/apps/mt219684).
+Enter a unique product ID for your add-on. This name will be used to identify your add-on in the dashboard, and you can use this identifier to [refer to the add-on in your code](../monetize/in-app-purchases-and-trials.md#how-to-use-product-ids-for-add-ons-in-your-code).
 
 Here are a few things to keep in mind when choosing a product ID:
 

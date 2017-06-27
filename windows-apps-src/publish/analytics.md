@@ -4,7 +4,7 @@ Description: Get detailed analytics for your Windows apps, in the dashboard or v
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,20 +32,12 @@ In this section you'll find details about the info presented in each of the foll
 -   [Reviews report](reviews-report.md)
 -   [Feedback report](feedback-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
--   [Affiliates performance report](affiliates-performance-report.md)
+-   [Ad campaign report](promote-your-app-report.md)
 -   [Ad mediation report](ad-mediation-report.md)
--   [Promote your app report](promote-your-app-report.md)
+
 
 > [!NOTE]
 > You may not see data in all of these reports, depending on your app's specific features and implementation.
-
-### Page and section filters
-
-Each report includes filters that you can use to drill down into your data. Near the top of the page you'll see **Filters**. Select this to apply filters that limit or expand the scope of all of the charts and info on the page.
-
-Within each particular chart, you may also see individual section filters. These will limit the data shown only for that particular chart.
-
-The specific filters vary by report. The topics in this section will explain which filters are available and will describe the other data on the page for each report.
 
 <span id="no-dashboard"/>
 ## Access analytics data without using the Dev Center dashboard

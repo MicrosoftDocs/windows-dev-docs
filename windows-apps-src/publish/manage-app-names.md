@@ -4,7 +4,7 @@ Description: View the names that you've reserved for your app, reserve additiona
 title: Manage app names
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ You can view all of the names that you've reserved for your app, reserve additio
 
 ## Reserve additional names for your app
 
-You can reserve multiple app names to use for the same app. This is especially useful if you are offering your app in multiple languages and want to use different names for different languages. You can also reserve a new name in order to change the name of an app which you haven't published yet.
+You can reserve multiple app names to use for the same app. This is especially useful if you are offering your app in multiple languages and want to use different names for different languages. You can also reserve a new name in order to change the name of an app.
 
 In the **Reserve more names** section of the **Manage app names** page, you'll see a text box. Enter the name you'd like to reserve, then click **Check availability**. If the name is available, click **Reserve product name**.
 
@@ -37,9 +37,16 @@ Note that your app needs to have at least one reserved name. To completely remov
 
 ## Rename an app that has already been published
 
-If your app is already in the Windows Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app. Note that you'll have to update your package to include the new name in order for the Store to display the app under the new name. Be sure to use the new name in the [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) element in the app manifest, and update any graphics or text that includes the app's name. You'll also want to review your app's description and change the name if you mention it anywhere there.
+If your app is already in the Store and you want to rename it, you can do so by reserving a new name for it (by following the steps described above) and then creating a new submission for the app.
 
-Once your app has been published with the new name, you can delete the old name that you no longer need to use.
+You must update your app's package(s) to include the new name in order for the Store to display it under the new name. First, update the Package.StoreAssociation.xml file to use the new name, either manually or by using Visual Studio (**Project > Store > Associate App with the Store...**). For more info, see [Packaging UWP apps](../packaging/packaging-uwp-apps.md).
+
+You'll also need to update the [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) element in your app manifest, and update any graphics or text that includes the app's name. 
+
+> [!IMPORTANT]
+> Be sure to update the Package.StoreAssociation.xml file before you change the **Package/Properties/DisplayName** in the app manifest, or you may get an error.
+
+You'll also want to review your app's Store listing, and change the name if you mention it there. Once your app has been published with the new name, you can delete the old name that you no longer need to use.
 
  
 
