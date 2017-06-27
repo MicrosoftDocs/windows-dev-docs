@@ -35,7 +35,7 @@ Here are a few examples of ACURs.
 ```HTML
 <Application
 Id="App"
-StartPage="http://contoso.com/home">
+StartPage="https://contoso.com/home">
 <uap:ApplicationContentUriRules>
     <uap:Rule Type="include" Match="https://contoso.com/" WindowsRuntimeAccess="all" />
     <uap:Rule Type="include" Match="https://*.contoso.com/" WindowsRuntimeAccess="all" />
@@ -61,7 +61,7 @@ Here is an example rule type:
 </uap:ApplicationContentUriRules>
 ```
 
-This gives script running on http://contoso.com/ access to Windows Runtime namespaces and custom packaged components in the package. See the [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) example on GitHub for toast notifications.
+This gives script running on https://contoso.com/ access to Windows Runtime namespaces and custom packaged components in the package. See the [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) example on GitHub for toast notifications.
 
 Here is an example of how to implement a Live Tile and update it from remote JavaScript:
 
@@ -106,7 +106,7 @@ When you add a `<meta>` element tag that lists the location of your VCD file, Wi
 Here is an example of the use of the tag in an html page in a hosted web app:
 
 ```HTML
-<meta name="msapplication-cortanavcd" content="http:// contoso.com/vcd.xml"/>
+<meta name="msapplication-cortanavcd" content="https:// contoso.com/vcd.xml"/>
 ```
 
 For more info on Cortana integration and VCDs, see Cortana interactions and Voice Command Defintion (VCD) elements and attributes v1.2.

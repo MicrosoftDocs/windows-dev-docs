@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Here’s some important info you’ll need to ensure that you receive payment for your apps, in-app products (IAPs), and advertising earnings.
 title: Getting paid
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,8 @@ keywords: windows 10, uwp
 # Getting paid
 Here’s some important info you’ll need to ensure that you receive payment for your apps, add-ons, and advertising earnings.
 
-> **Important**  Before you can receive money from app sales in the Windows Store, you need to [set up your payout account and and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
+> [!IMPORTANT]
+> Before you can receive money from app sales in the Windows Store, you need to [set up your payout account and and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
 ## Store fee
 
@@ -26,11 +27,14 @@ The Windows Store fee is applied to all app sales collected by the Windows Store
 
 ## Price tiers
 
-The price tier sets the sales price in all the countries where you choose to distribute your app. You can offer your app for free, or you can pick a price that customers must pay to acquire your app. Price tiers start at .99 USD, with additional increments (1.29 USD, 1.49 USD, 1.99 USD, and so on). The increments between price tiers increase as the price gets higher.
+The price tier(s) that you select sets the [sales price](set-and-schedule-app-pricing.md#base-price) in all the countries where you choose to distribute your app. You can also use additional pricing features such as  [choosing different prices for different markets](set-and-schedule-app-pricing.md#customize-pricing-for-specific-markets) or [putting your app on sale](put-apps-and-add-ons-on-sale.md).
 
-> **Note**  These price tiers also apply to any add-ons that you offer from within your app.
+You can offer your app for free, or you can pick a price that customers must pay to acquire your app. Price tiers start at .99 USD, with additional increments (1.09 USD, 1.19 USD, and so on). The increments between price tiers increase as the price gets higher.
 
-Each price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another.
+> [!NOTE] 
+> These price tiers also apply to any add-ons that you offer from within your app.
+
+Each price tier has a corresponding value in each of the currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another.
 
 Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. See [Tax details for paid apps](tax-details-for-paid-apps.md) for more info.
 
@@ -50,7 +54,8 @@ To place your payments on hold, go to **Account settings**. Under **Financial de
 
 Once you have set your payout hold status to **On**, all payouts will be on hold until you toggle the slider back to **Off**. When you do so, you’ll be included during the next monthly payout cycle (provided any applicable payment thresholds have been met). For example, if you’ve had your payouts on hold, but would like to have a payout generated in June, then make sure to toggle the payout hold status to **Off** before the end of May.
 
-> **Important** Your **Payout hold status** selection applies to **all** revenue sources that are paid through Windows Dev Center (Windows Store, advertising, Azure Marketplace, etc.). You cannot select different hold statuses for each revenue source.
+> [!NOTE]
+> Your **Payout hold status** selection applies to **all** revenue sources that are paid through Windows Dev Center (Windows Store, advertising, Azure Marketplace, etc.). You cannot select different hold statuses for each revenue source.
 
 
  

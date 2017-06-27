@@ -4,7 +4,7 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 05/25/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,11 +14,12 @@ keywords: windows 10, uwp
 # Mobile operator billing
 
 
-The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability. If a customer’s mobile operator supports this capability, the customer can make Store purchases using their mobile account.
+The Windows Store offers Mobile Operator Billing as a payment method. If a customer’s mobile operator supports this capability, the customer can make Store purchases using their mobile account.
 
-> **Note**  If a customer’s mobile operator offers Mobile Operator Billing, but the customer can't find this option on their device, see these [steps](http://go.microsoft.com/fwlink/p/?LinkId=523993).
+> [!TIP]
+>  If a customer’s mobile operator offers Mobile Operator Billing, but the customer can't find this option on their device, review these [steps](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
-We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest that we support a mobile operator that you don’t see in the lists below, contact the mobile operator.
+We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest a mobile operator that you don’t see listed below, please contact that mobile operator and request that they add this payment method.
 
 ## Mobile Operator Billing for Windows 10 and Xbox One devices
 
@@ -29,16 +30,18 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 | Country/region  | Mobile operators     |
 |-----------------|----------------------|
 | Austria         | Hutchison 3G Austria |
+| Belgium         | Base, Proximus       |
 | Canada          | Telus                |
+| Denmark         | 3                    |
 | Finland         | DNA, Elisa           |
 | France          | Orange               |
 | Germany         | O2                   |
 | Hungary         | Telenor              |
-| Italy           | Wind                 |
+| Italy           | Wind, Tre            |
 | Norway          | Telenor              |
 | Poland          | Orange               |
 | Russia          | Beeline              |
-| Sweden          | Telenor              |
+| Sweden          | Telenor, 3           |
 | Switzerland     | Swisscom             |
 | Turkey          | Turkcell             |
 | United States   | Sprint               |
@@ -56,12 +59,10 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | Country/region       | Mobile operators                                                   |
 |----------------------|--------------------------------------------------------------------|
 | Australia            | Telstra                                                            |
-| Austria              | A1 Telekom, T-Mobile                                               |
-| Belgium              | BASE, Mobistar, Proximus                                           |
-| Canada               | Fido, Rogers                                                       |
+| Austria              | T-Mobile                                                           |
+| Belgium              | Mobistar                                                           |
 | Czech Republic       | T-Mobile, Vodafone                                                 |
-| Finland              | TeliaSonera                                                        |
-| France               | Orange, SFR, Bouygues                                              |
+| France               | Orange, Bouygues                                              |
 | Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Greece               | Vodafone                                                           |
 | Hungary              | T-Mobile                                                           |
@@ -74,9 +75,9 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | Slovakia             | T-Mobile                                                           |
 | South Africa         | Vodacom                                                            |
 | Spain                | Movistar, Vodafone, Orange                                         |
-| United Kingdom       | Everything Everywhere (T-Mobile), Telefonica (O2), Vodafone        |
+| United Kingdom       | Telefonica (O2), Vodafone        |
 | United States        | AT&T, T-Mobile                                                     |
-| Vietnam              | Viettel, Vinaphone, Mobifone                                       |
+
 
  
 

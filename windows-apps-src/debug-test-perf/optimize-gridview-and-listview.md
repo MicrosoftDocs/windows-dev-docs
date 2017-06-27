@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: ListView and GridView UI optimization
 description: Improve ListView and GridView performance and startup time through UI virtualization, element reduction, and progressive updating of items.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

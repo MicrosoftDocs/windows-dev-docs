@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 05/18/2017
+ms.date: 06/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ keywords: windows 10, uwp, games, game development
 
 Welcome to the Windows 10 game development guide!
 
-This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game.
+This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](http://download.microsoft.com/download/3/E/8/3E8F6376-D239-41A3-989C-DA1494C0024D/Windev_Game_Dev_Guide_May_2017.pdf) format.
 
 ## Introduction to game development for the Universal Windows Platform (UWP)
 
@@ -87,6 +87,10 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     <tr>
         <td>Xbox One developer whitepapers (GDN)</td>
         <td>[White Papers](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
+    </tr>
+    <tr>
+        <td>Mixer Interactive documentation</td>
+        <td>[Add interactivity to your game](https://dev.mixer.com/reference/interactive/index.html)</td>
     </tr>        
 </table>
 
@@ -298,6 +302,10 @@ Developer blogs are another great resource for the latest information about game
     <tr>
         <td>PIX team blog</td>
         <td>[Performance tuning and debugging for DirectX 12 games on Windows and Xbox](https://blogs.msdn.microsoft.com/pix/)</td>
+    </tr>
+    <tr>
+        <td>Universal Windows App Deployment team blog</td>
+        <td>[Build and deploy UWP apps team blog](https://blogs.msdn.microsoft.com/appinstaller/)</td>
     </tr>
 </table>
  
@@ -532,7 +540,7 @@ With the Universal Windows Platform, it’s easy to combine components written i
     </colgroup>
     <tr>
         <td>How to create Windows Runtime Components</td>
-        <td>[Creating Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/hh441572.aspx)</td>
+        <td>[Creating Windows Runtime Components](https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)</td>
     </tr>
 </table>
 
@@ -947,6 +955,10 @@ These are some links to help you move your Windows desktop game to UWP.
     <col width="50%" />
     </colgroup>
     <tr>
+        <td>Use existing C++ code for UWP game development</td>
+        <td>[How to: Use existing C++ code in a UWP app](https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app)</td>
+    </tr>
+    <tr>
         <td>UWP APIs for Win32 and COM APIs</td>
         <td>[Win32 and COM APIs for UWP apps](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx)</td>
     </tr>
@@ -1359,7 +1371,7 @@ Develop world-ready games for the Windows platform and learn about the internati
 
 The following guides and information help make the publishing and submission process as smooth as possible.
 
-### Packaging and uploading
+### Publishing
 
 You'll use the new unified Windows Dev Center dashboard to publish and manage your game packages.
 
@@ -1375,14 +1387,43 @@ You'll use the new unified Windows Dev Center dashboard to publish and manage yo
     <tr>
         <td>Windows Dev Center advanced publishing (GDN)</td>
         <td>[Windows Dev Center Dashboard advanced publishing guide](https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx)</td>
-    </tr>    
+    </tr>
+    <tr>
+        <td>Use Azure Active Directory (AAD) to add users to your Dev Center account</td>
+        <td>[Manage account users](https://docs.microsoft.com/windows/uwp/publish/manage-account-users)</td>
+    </tr>   
     <tr>
         <td>Rating your game (blog post)</td>
         <td>[Single workflow to assign age ratings using IARC system](https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/)</td>
     </tr>
+</table>
+
+#### Packaging and uploading
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
     <tr>
-        <td>Packaging your game</td>
-        <td>[Package your UWPDirectX game](package-your-windows-store-directx-game.md)</td>
+        <td>Learn to use streaming install and optional packages (video)</td>
+        <td>[Nextgen UWP app distribution: Building extensible, stream-able, componentized apps](https://channel9.msdn.com/Events/Build/2017/B8093)</td>
+    </tr>
+    <tr>
+        <td>Divide and group content to enable streaming install</td>
+        <td>[UWP App Streaming install](../packaging/streaming-install.md)</td>
+    </tr>
+    <tr>
+        <td>Create optional packages like DLC game content</td>
+        <td>[Optional packages and related set authoring](../packaging/optional-packages.md)</td>
+    </tr>
+    <tr>
+        <td>Package your UWP game</td>
+        <td>[Packaging apps](../packaging/index.md)</td>
+    </tr>
+    <tr>
+        <td>Package your UWP DirectX game</td>
+        <td>[Package your UWP DirectX game](package-your-windows-store-directx-game.md)</td>
     </tr>
     <tr>
         <td>Packaging your game as a 3rd party developer (blog post)</td>
@@ -1390,18 +1431,18 @@ You'll use the new unified Windows Dev Center dashboard to publish and manage yo
     </tr>
     <tr>
         <td>Creating app packages and app package bundles using MakeAppx</td>
-        <td>[Create packages using app packager tool MakeAppx.exe](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+        <td>[Create packages using app packager tool MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)</td>
     </tr>
     <tr>
         <td>Signing your files digitally using SignTool</td>
         <td>[Sign files and verify signatures in files using SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
-    </tr>      
+    </tr>    
     <tr>
         <td>Uploading and versioning your game</td>
         <td>[Upload app packages](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
     </tr>
 </table>
- 
+
 
 ### Policies and certification
 

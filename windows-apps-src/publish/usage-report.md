@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
 title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,40 +14,68 @@ keywords: windows 10, uwp
 # Usage report
 
 
-The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 are using your app and get info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 are using your app and shows info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
-> **Note**  Previously, the **Usage** report only provided data if you activated the Visual Studio Application Insights SDK in your app. With the updated **Usage** report, this is no longer required.
 
 ## Apply filters
 
+Near the top of the page, you can select the time period for which you want to show data. The default selection is **30D** (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify.
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by product group (related OS versions).
+You can also expand **Filters** to filter all of the data on this page by package version, market, and/or device type.
 
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 3 months**.
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
+-   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
 -   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
 
-The info in all of the charts listed below will reflect the period of time selected in **Apply filters**. By default this will include data for all of your package versions and supported device types, unless you've used the **Apply filters** section to filter for only one.
+The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.
 
-> **Note** Only usage data from customers on Windows 10 is included in this report.
+> [!IMPORTANT]
+> This report only includes usage data from customers on Windows 10 who have not opted out of providing telemetry info.
 
-## Total user sessions
 
-The **Total user sessions** chart shows the number of daily user sessions for your app over the selected period of time.
+##Usage
 
-Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day. Note this chart does not track unique users for your app.
+The **Usage** chart shows details about how your customers are using your app over the selected period of time. Note this chart does not track unique users for your app or unique user sessions (that is, a user is represented in this chart whether they used your app just once or multiple times).
 
-## Active users
+This chart has four separate tabs that you can view, showing usage by day or week (depending on the duration you've selected).
 
-The **Active users** chart shows the number of customers who used your app on a specific day during the selected period of time.
+- **Users**: Shows the total number of **user sessions** over the selected period of time. Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day or week. The total number of **Active users** (any customer using the app that day or week) and **New users** (a customer who used your app for the first time that day or week) are also shown. 
+- **Devices**: Shows the number of daily devices used to interact with your app by all users.
+- **Duration**: Shows the total engagement minutes (minutes where a user is actively using your app).
+- **Retention**: Shows the total number of **DAU/MAU** (Daily Active Users/Monthly Active Users) over the selected period of time.
 
-Each active user represents a customer who used your app that day. This chart does not track unique user sessions (that is, a customer is represented in this chart whether they used your app just once or multiple times that day).
+
+## User sessions
+
+The **User sessions** chart shows the total number of user sessions for your app per market, over the selected period of time.
+
+As with the **User sessions** info in the **Usage** chart, a user session represents one distinct period of time when a customer interacted with your app, and this chart does not track unique users for your app.
+
+You can view this data in a visual **Map** form, or toggle the setting to view it in **Table** form. Table form will show five markets at a time, sorted either alphabetically or by highest/lowest number of user sessions. You can also download the data to view info for all markets together.
+
+
+## Package version
+
+The **User sessions** chart shows the total number of daily user sessions for your app per package version over the selected period of time.
+
+As with the **User sessions** chart, a user session represents one distinct period of time when a customer interacted with your app, and this chart does not track unique users for your app.
+
 
 ## Custom events
 
-The **Custom events** chart shows the total occurrences for any custom events that you have defined for your app. This may include multiple occurrences for the same customer.
+The **Custom events** chart shows the total occurrences for custom events that you have defined for your app. This may include multiple occurrences for the same customer. You can use the filters to select the specific custom events for which you want to see this data.
 
 Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
+
+For more info, see [Log custom events for Dev Center](../monetize/log-custom-events-for-dev-center.md).
+
+
+## Custom events breakdown
+
+The **Custom events breakdown** chart shows more details about how often each of your custom events occurred. This can help you determine if events are occurring more often for a particular market, device type, or package versions.
+
+For each event, you will see the event name and an event count that correspond to a specific combination of the user's market, device type, and package version. Typically, you'll see an event listed multiple times along with different combinations of these factors. 
+
 
 
 

@@ -1,9 +1,9 @@
 ﻿---
 author: JnHs
-Description: Learn how to send targeted push notifications from Windows Dev Center to your app to encourage customers to take an action, such as rating an app or buying an add-on.
+Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 05/19/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,14 +11,14 @@ keywords: windows 10, uwp
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ---
 
-# Send targeted push notifications to your app's customers
+# Send notifications to your app's customers
 
-Engaging with your customers at the right time and with the right message is key to your success as an app developer. Windows Dev Center provides a data-driven customer engagement platform you can use to send push notifications to all of your customers or only to a subset of your Windows 10 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md).
+Engaging with your customers at the right time and with the right message is key to your success as an app developer. Windows Dev Center provides a data-driven customer engagement platform you can use to send notifications to all of your customers, or only targeted to a subset of your Windows 10 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md).
 
-You can use targeted push notifications to encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
+You can use notifications to encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
 
 > [!IMPORTANT]
-> Targeted push notifications can only be used with UWP apps.
+> These notifications can only be used with UWP apps.
 
 When considering the content of your notifications, keep in mind:
 - The content in your notifications must comply with the Store [Content Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies).
@@ -27,23 +27,23 @@ When considering the content of your notifications, keep in mind:
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).
 - Be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) later gives their device to someone to use, the other person may see the notification that was targeted at the original customer. For more info, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers).
 
-## Getting started with push notifications
+## Getting started with notifications
 
-At a high-level, you need to do three things to use push notifications to engage with your customers.
-1. **Register your app to receive push notifications.** You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between the Dev Center and your app. We’ll use that channel to deliver your push notifications to your customers. For details, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
-2. **Create one or more customer segments that you want to target.** You can group your customers into segments based on demographic or revenue criteria. For more info, see [Create customer segments](create-customer-segments.md).
+At a high-level, you need to do three things to use notifications to engage with your customers.
+1. **Register your app to receive push notifications.** You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between the Dev Center and your app. We’ll use that channel to deliver your notifications to your customers. For details, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+2. **Create one or more customer segments that you want to target.** You can group your customers into segments based on demographic or revenue criteria. For more info, see [Create customer segments](create-customer-segments.md). You can also send a notification to all of your app's customers, if you prefer.
 3. **Create a push notification and send it to a particular customer segment.** For example, send a notification to encourage new customers to rate your app or send a notification with a special deal to purchase an add-on.
 
-## To create and send a targeted push notification
+## To create and send a notification
 
-Follow these steps to create a push notification in the dashboard and send it to a particular customer segment.
+Follow these steps to create a notification in the dashboard and send it to a particular customer segment.
 
 > [!NOTE]
-> Before your app can receive targeted push notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
+> Before your app can receive notifications from Dev Center, you must first call the [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) method in your app to register your app to receive notifications. This method is available in the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). For more information about how to call this method, including a code example, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
-1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select your app.
-2.	In the left navigation menu, expand **Services**, and select **Push notifications**.
-3.	On the **Targeted push notifications** page, select **New notification**.
+1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), expand the **Engage** section, and then select **Notifications**.
+2.	On the **Notifications** page, select **New notification**.
+3.      From the drop-down menu, select the app for which you want to generate a notification.
 4.	In the **Select a template** section, choose the type of notification you want to send. For details, see [Notification template types](#notification-template-types).
   ![Notification templates](images/push-notifications-template.png)
 5.	In the **Notification settings** section, choose a **Name** for your notification and choose the **Customer group** you want to send the notification to.

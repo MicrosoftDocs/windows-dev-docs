@@ -14,6 +14,8 @@ keywords: windows 10, uwp
 
 > [!IMPORTANT]
 > This topic has been updated to reflect the latest functionality on the **Pricing and availability** page, which we are in the process of rolling out to all developer accounts. Until we complete this rollout, your account may not be able to use the options described here.
+> 
+> While the content below refers to apps, release scheduling for add-on submissions uses the same process.
 
 The **Schedule** section on the [Pricing and availability](set-app-pricing-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 

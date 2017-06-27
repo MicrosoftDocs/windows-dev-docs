@@ -44,6 +44,8 @@ This policy enforces code integrity rules that match Windows 10 S so that you ca
 ### Production mode policy with self-signed apps
 This mode is similar to the Production mode policy, but it also allows things to run that are signed with the test certificate that is included in the zip file. Sign your app by using the the PFX file that is included in the **AppxTestRootAgency** folder of this zip file. That way, you can quickly iterate without requiring Store signing.
 
+Because the publisher name of your certificate must match the publisher name of your app, you'll have to temporarily change the value of the **Identity** element's **Publisher** attribute to "CN=Appx Test Root Agency". You can change that attribute back to it's original value after you've completed your tests.
+
 ## Next, install the policy and restart your system
 
 We recommend that you apply these policies to a virtual machine because these policies might lead to boot failures. That's because these policies block the execution of code that isn't signed by the Windows Store, including drivers.
@@ -55,6 +57,10 @@ When you're ready to apply a policy, find the .P7B file for the policy that you 
 Then, restart your system.
 
 ## Next steps
+
+**Review a detailed blog article that was posted by our App Consult Team**
+
+See [Porting and testing your classic desktop applications on Windows 10 S with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
 
 **Find answers to specific questions**
 

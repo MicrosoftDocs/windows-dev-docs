@@ -5,7 +5,7 @@ description: Learn how to use the Windows.Services.Store namespace to implement 
 title: Implement a trial version of your app
 keywords: windows 10, uwp, trial, in-app purchases, IAPs, Windows.Services.Store
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -59,7 +59,7 @@ Be sure to explain how your app will behave during and after the free trial peri
 
 This example has the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607, or later.
-* You have created an app in the Windows Dev Center dashboard that is configured as a [free trial](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) with no time limit, and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have created an app in the Windows Dev Center dashboard that is configured as a [free trial](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) with no time limit and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
 
 The code in this example assumes:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

@@ -31,7 +31,7 @@ Adaptive tile templates are a new feature in Windows 10, allowing you to design
 
 ## How to send a tile notification
 
-Please read our [Quickstart on sending local tile notifications](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/). The documentation on this page explains all the visual UI possibilities you have with adaptive tiles.
+Please read our [Quickstart on sending local tile notifications](tiles-and-notifications-sending-a-local-tile-notification.md). The documentation on this page explains all the visual UI possibilities you have with adaptive tiles.
 
 
 ## Usage guidance
@@ -1393,7 +1393,7 @@ TileWide = new TileBinding()
 
 
 * [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Quickstart: Send a local tile notification](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)
+* [Quickstart: Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
 * [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [Special tile templates catalog](tiles-and-notifications-special-tile-templates-catalog.md)
  

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Set custom permissions for account users.
 title: Set custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,8 @@ When you add users to your account, you can give them a [standard role](manage-a
 
 To use custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account. 
 
-> **Note** The same permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
+> [!NOTE] 
+> The same permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
 
 To enable a permission for the user, toggle the box to the appropriate setting. 
 
@@ -52,11 +53,11 @@ The permissions in this section cannot be limited to specific products. Granting
     <tbody>
 <tr><td align="left">    **Account settings**                    </td><td align="left">  Can view all pages in the **Account settings** section, including [contact info](managing-your-profile.md).       </td><td align="left">  Can view all pages in the **Account settings** section. Can make changes to [contact info](managing-your-profile.md) and other pages, but can’t make changes to the payout account or tax profile (unless that permission is granted separately).            </td></tr>
 <tr><td align="left">    **Account users**                       </td><td align="left">  Can view users that have been added to the account in the **Manage users** section.          </td><td align="left">  Can add users to the account and make changes to existing users in the **Manage users** section.             </td></tr>
-<tr><td align="left">    **Account-level ad performance report** </td><td align="left">  Can view the account-level [Advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report). (Can’t view advertising performance reports for individual products unless that permission is granted separately.)       </td><td align="left">  N/A   </td></tr>
+<tr><td align="left">    **Account-level ad performance report** </td><td align="left">  Can view the account-level [Advertising performance report](advertising-performance-report.md). (Can’t view advertising performance reports for individual products unless that permission is granted separately.)       </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    **Ad campaigns**                        </td><td align="left">  Can view [ad campaigns](create-an-ad-campaign-for-your-app.md) created in the account.      </td><td align="left">  Can create, manage, and view [ad campaigns](create-an-ad-campaign-for-your-app.md) created in the account.          </td></tr>
 <tr><td align="left">    **Ad mediation**                        </td><td align="left">  Can view [ad mediation configurations](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) for all products in the account.    </td><td align="left">  Can view and change [ad mediation configurations](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) for all products in the account.        </td></tr>
 <tr><td align="left">    **Ad mediation reports**                </td><td align="left">  Can view the [Ad mediation report](ad-mediation-report.md) for all products in the account.    </td><td align="left">  N/A    </td></tr>
-<tr><td align="left">    **Ad performance reports**              </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account. (Can’t view the account-level [Advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report) unless that permission is granted separately.)       </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account. (Can’t view the account-level [Advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report) unless that permission is granted separately.)         </td></tr>
+<tr><td align="left">    **Ad performance reports**              </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account. (Can’t view the account-level [Advertising performance report](advertising-performance-report.md) unless that permission is granted separately.)       </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account. (Can’t view the account-level [Advertising performance report](advertising-performance-report.md) unless that permission is granted separately.)         </td></tr>
 <tr><td align="left">    **Ad units**                            </td><td align="left">  Can view the [ad units](monetize-with-ads.md) that have been created for the account.    </td><td align="left">  Can create, manage, and view [ad units](monetize-with-ads.md) for the account.             </td></tr>
 <tr><td align="left">    **Affiliate ads**                       </td><td align="left">  Can view [affiliate ad](about-affiliate-ads.md) usage in all products in the account.    </td><td align="left">  Can manage and view [affiliate ad](about-affiliate-ads.md) usage for all products in the account.                </td></tr>
 <tr><td align="left">    **Affiliates performance reports**      </td><td align="left">  Can view the [Affiliates performance report](affiliates-performance-report.md) for all products in the account.   </td><td align="left">  N/A   </td></tr>
@@ -86,7 +87,8 @@ The permissions in this section can be granted to all products in the account, o
 
 To grant a permission for all products in the account, make your selections for that permission (by toggling the box to indicate **Read only**, **Read/write**, or **No access**) in the row marked **All products**. 
  
-> **Tip** Selections made for **All products** will apply to every product currently in the account, as well as any future products created in the account.
+> [!TIP]
+> Selections made for **All products** will apply to every product currently in the account, as well as any future products created in the account. To prevent permissions from applying to future products, select all of the products individually rather than choosing **All products**.
 
 Below the **All products** row, you’ll see each product in the account listed on a separate row. To grant a permission for only a specific product, make your selections for that permission in the row for that product.
 

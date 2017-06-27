@@ -41,9 +41,10 @@ To change the Minimum and Target version for a project that has already been cre
 ![Change the target SDK in Visual Studio](images/vs-target-sdk-2.png) 
 
 For reference these are the build numbers for each SDK:
-- Windows 10, version 1506: SDK version 10240
+- Windows 10, version 1507: SDK version 10240 (See important [support](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates) info.)
 - Windows 10, version 1511 (November Update): SDK version 10586
 - Windows 10, version 1607 (Anniversary Update): SDK version 14393.
+- Windows 10, version 1703 (Creators Update): SDK version 15063.
 
 You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/) site.
 

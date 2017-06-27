@@ -3,7 +3,7 @@ author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. 
 title: Import and export Store listings
 ms.author: wdg-dev-content
-ms.date: 05/23/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,8 +17,10 @@ keywords: windows 10, uwp
 
 You can create [Store listings](create-app-store-listings.md) for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch or to update listings you’ve already created. 
 
-> [!NOTE]
-> You can’t use this method to create or update [platform-specific Store listings](create-platform-specific-store-listings.md).
+Note that you can’t use this method to create or update [platform-specific Store listings](create-platform-specific-store-listings.md) for your app.
+
+> [!TIP]
+> You can also use this feature to import and export Store listing details for an add-on. For add-ons, the process works the same except that [only the fields relevant to add-ons](#add-ons) are included.
 
 ## Export listings
 
@@ -96,5 +98,10 @@ None of the info from your .csv file will be saved in Dev Center until all of th
 
 You can continue to make updates to your listings either by  importing another updated .csv file, or by making changes directly in Dev Center.
 
+## Add-ons
+
+For add-ons, importing and exporting Store listings uses the same process described above, except that you'll only see the three fields relevant to [add-on Store listings](create-add-on-store-listings.md): **Description**, **Title**, and **StoreLogo300x300** (referred to as **Icon** in the Store listing page in Dev Center). The **Title** field is required, and the other two fields are optional.
+
+Note that you must import and export Store listings separately for each add-on in your app by navigating to the submission overview page for the add-on.
 
 

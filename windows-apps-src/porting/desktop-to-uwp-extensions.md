@@ -446,7 +446,7 @@ Help users organize your files and interact with them in familiar ways.
 * [Show file contents in a thumbnail image within File Explorer](#show)
 * [Show file contents in a Preview pane of File Explorer](#preview)
 * [Enable users to group files by using the Kind column in File Explorer](#enable)
-* [Make file properties available to search, index, property dialogs, and the details pane](#make)
+* [Make file properties available to search, index, property dialogs, and the details pane](#make-file-properties)
 
 <span id="define" />
 ### Define how your app behaves when users select and open multiple files at the same time
@@ -676,8 +676,6 @@ For more information about the **Kind** field and the values that you can use fo
     </FileTypeAssociation>
 </Extension>
 ```
-**Key element and attribute descriptions**
-
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
@@ -715,7 +713,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
-<span id="make" />
+<span id="make-file-properties" />
 ### Make file properties available to search, index, property dialogs, and the details pane
 
 #### XML namespace
@@ -737,11 +735,6 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </uap:Extension>
 ```
 **Key element and attribute descriptions**
-
-| Element or attribute | Description |
-|-------|-------------|
-| Name | A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associated with your file type association. You can use this Id to manage changes in future versions of your app. |
-| MigrationProgId | The [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) that describes the application, component, and version of the desktop app from which you want to inherit file associations.|
 
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
@@ -882,7 +875,6 @@ Users and other processes can use an alias to start your app without having to s
 ...
 </Package>
 ```
-**Key element and attribute descriptions**
 
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 

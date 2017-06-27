@@ -4,7 +4,7 @@ Description: You can promote your app or add-on in the Windows Store by putting 
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 06/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,7 +21,7 @@ You can promote your app or add-on in the Windows Store by putting it on sale fo
 When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see that the price has been reduced (as opposed to a [scheduled price change](set-and-schedule-app-pricing.md#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). When you put a product on sale, customers will be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
 
 > [!NOTE]
-> Sale pricing is only shown to your customers on Windows 10. On other operating systems, customers will see the regular price for your app or add-on. You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.
+> Sale pricing is only shown to your customers on Windows 10 devices, including Xbox One. On other operating systems, customers will see the regular price for your app or add-on. You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.
 
 ## Scheduling a sale
 

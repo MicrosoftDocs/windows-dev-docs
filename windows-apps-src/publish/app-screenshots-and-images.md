@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,7 +42,7 @@ The size requirements vary depending on the device family:
 - Mobile: either 768 x 1280, 720 x 1280, or 480 x 800 pixels
 - Desktop: 1366 x 768 pixels or larger
 - Holographic: 1268 x 720 pixels or larger
-- Xbox: 1920 x 1280  pixels or smaller
+- Xbox: 3480 x 2160 pixels or smaller
 
 For the best display, keep the following guidelines in mind when creating your screenshots:
 - Keep critical visuals and text in the top 3/4 of the image. Text overlays may appear on the bottom 1/4. 
@@ -61,11 +61,11 @@ Note that if you create Store listings for [multiple languages](supported-langua
 
 Store logos are optional images that you can upload for a more customized display in the Store.
 
-You can provide these images as .png files in three sizes, which should follow the guidelines below:
+You can provide three of these images as .png files, which should follow the guidelines below:
 
-- **720 x 1080 pixels (9:16)**: This is used as the main image on Store listings for customers on Windows 10, and Xbox devices, so we strongly recommend providing this image. The image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). 
-- **1080 x 1080 pixels (1:1)**: This image may appear in some layouts. If you provide it, be sure to include your app’s name.
-- **300 x 300 pixels (1:1)**: This image, sometimes referred to as the **App tile icon**, is used when displaying your app's Store listing to customers on Windows Phone 8.1 and earlier. If you don't provide this image, customers on Windows Phone 8.1 or earlier will see a blank icon with your app's listing. (This also applies to customers on Windows 10, if your app only has packages targeting Windows Phone 8.1 or earlier.) If your submission only includes UWP packages, you don’t need to provide this image. (Note that if your submission includes both Windows Phone 8.x packages and UWP packages, and you provide this image, it may be used on Windows 10 in certain Store layouts. To prevent this, you can create a [platform-specific listing](create-platform-specific-store-listings.md) for the Windows Phone OS versions, and only include the app tile icon there. )
+- **9:16 (720 x 1080 or 1440 x 2160 pixels)**: This is used as the main image on Store listings for customers on Windows 10 and Xbox devices, so we strongly recommend providing this image. The image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). 
+- **1:1 (1080 x 1080 or 2160 x 2160 pixels)**: This image may appear in some layouts. If you provide it, be sure to include your app’s name.
+- **1:1 (300 x 300 pixels)**: This image, sometimes referred to as the **App tile icon**, is used when displaying your app's Store listing to customers on Windows Phone 8.1 and earlier. If you don't provide this image, customers on Windows Phone 8.1 or earlier will see a blank icon with your app's listing. (This also applies to customers on Windows 10, if your app only has packages targeting Windows Phone 8.1 or earlier.) If your submission only includes UWP packages, you don’t need to provide this image. (Note that if your submission includes both Windows Phone 8.x packages and UWP packages, and you provide this image, it may be used on Windows 10 in certain Store layouts. To prevent this, you can create a [platform-specific listing](create-platform-specific-store-listings.md) for the Windows Phone OS versions, and only include the app tile icon there.)
 
 You can also opt to provide only images you upload here in your app’s Store listing for Windows 10 customers, rather than allowing the Store to use logo images from your app’s packages. This gives you more control over your app’s appearance in various displays throughout the Store.
 
@@ -94,11 +94,13 @@ Here are some tips to keep in mind when designing your promotional artwork:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-The **1920 x 1080 pixel image (16:9)** is used in various promotional layouts in the Store on all Windows 10 device types. We recommend providing this image regardless of which OS versions or device types your app targets. The **2400 x 1200 image size (2:1)** may also be used in some promotional layouts.
+The **16:9 "hero" (1920 x 1080 or 3840 x 2160 pixels)** is used in various layouts in the Store on all Windows 10 device types. We recommend providing this image, regardless of which OS versions or device types your app targets. This image is required for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later, it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). 
+
+The **2:1 (2400 x 1200)** image size may also be used in some promotional layouts.
 
 When designing your image, keep in mind that in some layouts, we'll apply a gradient over the bottom third so that we can legibly display marketing text over the image. Because of this, make sure you avoid placing text and key visual elements in the bottom third. Additionally, we may crop your image, so place your app's branding and the most important details in the center.  
 
-<!-- do we  have an update? ![guidelines for spotlight image](images/spotlight1.jpg) 
+<!-- update? ![guidelines for spotlight image](images/spotlight1.jpg) 
 ![well-designed spotlight image](images/spotlight2.jpg)
 
 The image below shows the key proportions to keep in mind. The "safe zone" in the center will be prominent even if we crop the image. The "dynamic text area" is where text and a gradient may appear.  -->
@@ -124,6 +126,7 @@ If your app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x),
 
 **For Windows 8.1 and earlier**, some promotional layouts may use an image in the **414 x 180** pixel size. If your app runs on Windows 8.1 or earlier, we recommend providing an image in this size for promotional consideration.
 
+
 ## Trailers
 
 Trailers are short videos that give customers a way to see your product in action, so they can get a better understanding of what it’s like. They are shown at the top of your app's Store listing. 
@@ -139,11 +142,15 @@ You can add up to 15 trailers to your Store listing. Be sure they meet the requi
 
 You must provide a video file (.mp4 or .mov), a thumbnail image, and a title for each trailer.
 
+> [!IMPORTANT]
+> When using trailers, you must also provide a **1920 x 1080 pixel image (16:9)** in the [Promotional images](#promotional-images) section in order for your trailers to appear at the top of your Store listing. This image will appear after your trailers have finished playing.
+
 Follow these recommendations to make your trailers effective:
 - Trailers should be of good quality and minimal length (2 minutes or less recommended). 
 - Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60. 
 - Use a different thumbnail for each trailer so that customers know they are unique.
 - Because some layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
+
 
 You must also follow the requirements stated below.
 
@@ -224,8 +231,3 @@ For H.264 Mezzanine files, we recommend the following:
 - No Edit Lists (or you might lose AV sync)
 - moov atom at the front of the file (Fast Start)
 
-### Trailer ratings
-
-If your product is rated through the ESRB (Entertainment Software Ratings Board) or PEGI (Pan European Game Information), it must show age ratings in its trailer. You can do this by displaying the standard 4-second flash of the rating information at the beginning of the trailer. Most often the trailer’s rating will match the game’s, but on very rare occasions it may differ.
-
-The ratings shown in a trailer must be from the proper ratings organization for the market in which the trailer appears. For example, for Store listings in the US, Canada, or Mexico, the ratings information must be from the ESRB. When you complete the questionnaire on the [Age ratings](age-ratings.md) step of your submission, your product receives the appropriate age and content ratings administered by the International Age Ratings Coalition (IARC) rating system. For more information, see [Age ratings](age-ratings.md).

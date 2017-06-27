@@ -4,7 +4,7 @@ Description: In order to receive money from app sales in the Windows Store, you 
 title: Setting up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
-ms.date: 05/02/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,10 +16,10 @@ keywords: windows 10, uwp
 
 In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
 
-If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile has been completed.
+If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile have been completed.
 
-> **Note**  In [certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), developers can only submit free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.
-
+> [!NOTE]
+> In [certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), developers can only submit free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.
 
 After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Windows Store:
 
@@ -27,41 +27,42 @@ After you have [set up your developer account](opening-a-developer-account.md), 
 -   [Fill out your tax forms](#tax-forms)
 
 > **Note**  For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
-
  
 
 ## Payout account
 
-
 A payout account is the bank account to which we send the proceeds from your sales. This bank account must be located in the same country where you registered your developer account.
 
-> **Note**  In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal-info) below for more details.
+> [!NOTE]
+> In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal-info) below for more details.
 
  
 **To set up your payout account**
 
-1.  In the Windows Dev Center dashboard, click the **Account settings** icon in the top right corner.
+1.  In the Windows Dev Center dashboard, go to **Account settings** by selecting the icon in the top right corner.
 2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
 
-   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
+   > [!NOTE]
+   > Because this is sensitive info, you may be prompted to sign in again.
 
 3.  On the screen that appears, fill out the info for your account.
 
-   > **Note**  The fields you use to provide your account info accept only alphanumeric characters.
+   > [!NOTE]
+   > The fields you use to provide your account info accept only alphanumeric characters.
 
 4.  Save your info.
 
 If you need to update or change your payout account, follow the same steps above, replacing the current info with the new info.
 
-> **Important**  Changing your payout account can delay your payments by up to one payment cycle. This delay occurs because we need to verify the account change, just as we did when you first set up the payout account. You'll still get paid for the full amount after your account has been verified; any payments due for the current payment cycle will be added to the next one. See [Getting paid](getting-paid-apps.md) for more info.
-
+> [!IMPORTANT]
+> Changing your payout account can delay your payments by up to one payment cycle. This delay occurs because we need to verify the account change, just as we did when you first set up the payout account. You'll still get paid for the full amount after your account has been verified; any payments due for the current payment cycle will be added to the next one. See [Getting paid](getting-paid-apps.md) for more info.
  
 
 ### PayPal info
 
 In select countries and regions, you can create a payment account by entering your PayPal info. However, before choosing PayPal as a payment account option:
 
--   Check [Account types, locations, and fees](account-types-locations-and-fees.md) to see if PayPal is a supported payment method in your country or region.
+-   Check [Account types, locations, and fees](account-types-locations-and-fees.md) to confirm whether PayPal is a supported payment method in your country or region.
 -   Review the following FAQs. Depending on your situation, PayPal may not be the best payment account option for you, and a bank account may be preferred.
 
 Common questions about using PayPal as a payment method:
@@ -72,11 +73,12 @@ Common questions about using PayPal as a payment method:
 -   **Does my PayPal account have to be registered in the same country/region as my Dev Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
 -   **Do I have to accept PayPal payments manually?** No. PayPal accounts are set by default to require users to accept payments manually, which means if you don’t accept the payment within 30 days, it is returned. You can change this setting by turning off “Ask Me” in PayPal’s More Settings page.
 
+
 ### Specific requirements for certain countries/regions
 
 In some countries and regions, additional requirements for payout accounts must be followed. If you are a resident of Pakistan, Russia, or Ukraine, please note the following requirements.
 
-### Pakistan
+#### Pakistan
 
 Form-R is a Pakistan banking regulatory requirement. It is used to indicate the purpose and reason for receipt of funds from abroad. Therefore, anytime that you are eligible for a monthly payout from Microsoft, you will need to submit a Form-R to your bank before the payout can be released to your account. Contact your local bank branch for instructions on how to obtain a copy of Form-R.
 
@@ -84,7 +86,7 @@ You will need to submit a Form-R to your bank each month that you are eligible f
 
 Once the payout has been submitted to your bank, you have 30 days to submit a Form-R. If it is not submitted within 30 days, the funds will be returned to Microsoft.
 
-### Russia
+#### Russia
 
 If you’re a developer who lives in Russia, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
 
@@ -98,7 +100,7 @@ To ensure your payout is successful, please also keep in mind the following:
 -   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
 -   Payouts must be made to a bank account and not to a bank card.
 
-### Ukraine
+#### Ukraine
 
 If you’re a developer who lives in Ukraine, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
 
@@ -114,8 +116,8 @@ To ensure your payout is successful, please also keep in mind the following:
 -   Payouts are transferred directly from Microsoft to your bank account in USD currency.
 -   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
 
-## Tax forms
 
+## Tax forms
 
 After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#payout-account), you can create your *tax profile* for the Windows Store by completing the following steps:
 
@@ -124,7 +126,8 @@ After you have [registered for a developer account](opening-a-developer-account.
 
 You can complete and submit your tax forms electronically in your dashboard; in most cases, you don't need to print and mail any forms.
 
-> **Important**  Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Windows Store developer activities.
+> [!IMPORTANT]
+> Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Windows Store developer activities.
 
  
 **To complete your tax profile**
@@ -132,7 +135,8 @@ You can complete and submit your tax forms electronically in your dashboard; in 
 1.  In the Windows Dev Center dashboard, click the **Account settings** icon in the top right corner.
 2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
 
-   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
+   > [!NOTE]
+   > Because this is sensitive info, you may be prompted to sign in again.
 
 3.  Review your current tax profile status and click **Edit** to complete the required forms.
 4.  Answer the questions about United States citizenship and residency, then click **Next**.

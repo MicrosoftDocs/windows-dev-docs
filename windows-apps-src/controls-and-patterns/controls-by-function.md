@@ -137,7 +137,7 @@ Reference: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 Design and how-to: [Flip view control guide](flipview.md) 
 
 ### Grid view
-A control that presents a collection of items in rows and columns that can scroll horizontally.
+A control that presents a collection of items in rows and columns that can scroll vertically.
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">

@@ -4,11 +4,11 @@ ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: Learn how to use the AdControl class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1.
 title: AdControl in HTML 5 and JavaScript
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, AdControl, javascript, HTML
+keywords: windows 10, uwp, ads, advertising, AdControl, ad control, javascript, HTML
 ---
 
 # AdControl in HTML 5 and JavaScript
@@ -24,7 +24,7 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 * For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
 > [!NOTE]
-> If you have installed Windows 10 Anniversary SDK Preview Build 14295 or later with Visual Studio 2015, you must also install the WinJS library. This library used to be included in previous versions of the Windows SDK for Windows 10, but starting with the Windows 10 Anniversary SDK Preview Build 14295 this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> If you are adding banner ads to a UWP app and you have installed the Windows 10 SDK version 10.0.14393 (Anniversary Update) or a later version of the Windows SDK, you must also install the WinJS library. This library used to be included in previous versions of the Windows SDK for Windows 10, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 ## Code development
 
@@ -43,8 +43,6 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
     -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)**.
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
-        > [!NOTE]
-        > This image is for Visual Studio 2015 building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app or using Visual Studio 2013, your screen will look different.
 
 5.  In **Reference Manager**, click OK.
 
@@ -69,9 +67,10 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
     > [!NOTE]
     > This line must be placed in the **&lt;head&gt;** section after the include of main.js; otherwise, you will encounter an error when you build your project. If your project targets Windows 8.1 or Windows Phone 8.1, the default HTML file in your project is named default.html instead of index.html, and the default JavaScript file in your project is named default.js instead of main.js.
 
-8.  Modify the **&lt;body&gt;** section in the default.html file (or other html file as appropriate for your project) to include the div for the **AdControl**. Assign the **applicationId** and **adUnitId** properties in the **AdControl** to the test values provided in [Test mode values](test-mode-values.md), and adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+8.  Modify the **&lt;body&gt;** section in the default.html file (or other html file as appropriate for your project) to include the div for the **AdControl**. Assign the **applicationId** and **adUnitId** properties in the **AdControl** to the test values provided in [Test mode values](test-mode-values.md). Also adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+
     > [!NOTE]
-    > You will replace the test **applicationId** and **adUnitId** values with live values before submitting your app for submission.
+    > Every **AdControl** has a corresponding *ad unit* that is used by our services to serve ads to the control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
 
     ``` HTML
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -110,12 +109,12 @@ The following example shows the complete index.html for a simple UWP app.
 </html>
 ```
 
+<span id="release" />
 ## Release your app with live ads using Windows Dev Center
 
+1.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](../monetize/set-up-ad-units-in-your-app.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone ad unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
-
-2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the **Ad mediation** section on the **Monetize with ads** page for your app in the dashboard. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
+2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
 
 3.  In your code, replace the test ad unit values (**applicationId** and **adUnitId**) with the live values you generated in Dev Center.
 
@@ -123,6 +122,15 @@ The following example shows the complete index.html for a simple UWP app.
 
 5.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.             
 
+<span id="manage" />
+## Manage ad units for multiple ad controls in your app
+
+You can use multiple **AdControl** objects in a single app (for example, each page in your app might host a different **AdControl** object). In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+
+> [!IMPORTANT]
+> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
+
 ## Related topics
 
 * [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Set up ad units for your app](../monetize/set-up-ad-units-in-your-app.md)

@@ -1,9 +1,9 @@
 ---
-author: mukin
+author: PatrickFarley
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: Print from your app
 description: Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages.
-ms.author: mukin
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

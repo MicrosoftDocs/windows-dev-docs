@@ -4,11 +4,11 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: Learn how to use the AdControl class to display banner ads in a XAML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1.
 title: AdControl in XAML and .NET
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, AdControl, XAML, .net, walkthrough
+keywords: windows 10, uwp, ads, advertising, AdControl, ad control, XAML, .net, walkthrough
 ---
 
 # AdControl in XAML and .NET
@@ -40,8 +40,6 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
     -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
 
     ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
-        > [!NOTE]
-        > This image is for Visual Studio 2015 building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app or using Visual Studio 2013, your screen will look different.
 
 3.  In **Reference Manager**, click OK.
 
@@ -80,10 +78,10 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
     </Page>
     ```
 
-5. In the **Grid** tag, add the code for the **AdControl**. Assign the [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) properties in the **Page** to the test values provided in [Test mode values](test-mode-values.md). Also adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+5. In the **Grid** tag, add the code for the **AdControl**. Assign the  [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) and [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) properties in the **Page** to the test values provided in [Test mode values](test-mode-values.md). Also adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
     > [!NOTE]
-    > You will replace the test application ID and ad unit ID values with live values before submitting your app for submission.
+    > Every **AdControl** has a corresponding *ad unit* that is used by our services to serve ads to the control, and every ad unit consists of an *ad unit ID* and *application ID*. In these steps, you assign test ad unit ID and application ID values to your control. These test values can only be used in a test version of your app. Before you publish your app to the Store, you must [replace these test values with live values](#release) from Windows Dev Center.
 
     The complete **Grid** tag looks like this code.
 
@@ -123,17 +121,26 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
 
 6.  Compile and run the app to see it with an ad.
 
+<span id="release" />
 ## Release your app with live ads using Windows Dev Center
 
-1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone ad unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
+1.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](../monetize/set-up-ad-units-in-your-app.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the **Ad mediation** section on the **Monetize with ads** page for your app in the dashboard. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns. For more information, see [Monetize with ads](../publish/monetize-with-ads.md).
+2. If your app is a UWP app for Windows 10, you can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
 
 3.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Dev Center.
 
 4.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 
 5.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
+
+<span id="manage" />
+## Manage ad units for multiple ad controls in your app
+
+You can use multiple **AdControl** objects in a single app (for example, each page in your app might host a different **AdControl** object). In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+
+> [!IMPORTANT]
+> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
 
 ## Notes
 
@@ -148,3 +155,4 @@ For a complete sample project that demonstrates how to add banner ads to a XAML 
 ## Related topics
 
 * [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Set up ad units for your app](../monetize/set-up-ad-units-in-your-app.md)

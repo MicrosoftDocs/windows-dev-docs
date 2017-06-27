@@ -1,9 +1,9 @@
 ---
-author: mukin
+author: PatrickFarley
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: Epson ESC/POS with formatting
 description: Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
-ms.author: mukin
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
