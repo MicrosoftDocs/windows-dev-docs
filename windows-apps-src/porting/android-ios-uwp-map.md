@@ -168,7 +168,7 @@ Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Voice.</strong> <br><br>Speech recognition for speech input, and additional voice capabilities.</td>
 <td align="left">Speech input can be provided by any app which implements a <strong>RecognizerIntent</strong>, such as <strong>Google Voice Search</strong>. The <strong>SpeechRecognizer</strong> class allows apps to use Google's speech recognition API.</td>
-<td align="left">No built-in speech recognition or speech input APIs exist.</td>
+<td align="left">Apps can use the <strong>SFSpeechRecognizer</strong> class to implement speech input and speech recognition.</td>
 <td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">speech recognition</a></strong> API to interact with your app in the foreground. You can use speech-based <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana interactions</a></strong> to launch apps in the foreground or background, and to ​interact with background apps.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Speech interactions</a></td>
 </tr>
 <tr class="even">
