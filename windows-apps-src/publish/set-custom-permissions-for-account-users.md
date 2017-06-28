@@ -4,7 +4,7 @@ Description: Set custom permissions for account users.
 title: Set custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 06/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,9 @@ keywords: windows 10, uwp
 
 # Set custom permissions for account users
 
-When you add users to your account, you can give them a [standard role](manage-account-users.md#roles-and-permissions), or you can choose to customize their permissions to provide the appropriate level of access to the user. Some of these permissions apply to the entire account, and some can either be granted to all products or limited to specific products. 
+When you add users to your account, you can give them a [standard role](manage-account-users.md#roles-and-permissions), or you can choose to customize their permissions to provide the appropriate level of access to the user. Some of these permissions apply to the entire account, and some can be limited to specific products (or granted to all products if you prefer). 
 
-To use custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account. 
+To assign custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account. 
 
 > [!NOTE] 
 > The same permissions can be applied regardless of whether you are adding a user, a group, or an Azure AD application.
@@ -25,11 +25,11 @@ To enable a permission for the user, toggle the box to the appropriate setting.
 ![Guide to access settings](images/permission_key.png)
 
 - **No access**: The user will not have the indicated permission.
-- **Read only**: The user will have access to view features related to the indicated area, but not to make changes.
+- **Read only**: The user will have access to view features related to the indicated area, but will not be able to make changes. 
 - **Read/write**: The user will have access to make changes associated with the area, as well as viewing it.
 - **Mixed**: You can’t select this option directly, but the **Mixed** indicator will show if you have allowed a combination of access for that permission. For example, if you grant **Read only** access to **Pricing and availability** for **All products**, but then grant **Read/write** access to **Pricing and availability** for one specific product, the **Pricing and availability** indicator for **All products** will show as Mixed. The same applies if some products have **No access** for a permission, but others have **Read/write** and/or **Read only** access.
 
-For some permissions, such as those related to viewing analytic data, only **Read only** access can be granted. Note that in the current implementation, some permissions have no distinction between **Read only** and **Read/write** access. Please review the details for each permission to understand the specific capabilities granted by **Read only** and **Read/write** access.
+For some permissions, such as those related to viewing analytic data, only **Read only** access can be granted. Note that in the current implementation, some permissions have no distinction between **Read only** and **Read/write** access. Please review the details for each permission to understand the specific capabilities granted by **Read only** and/or **Read/write** access.
 
 The specific details about each permission are described in the tables below.
 
@@ -53,15 +53,15 @@ The permissions in this section cannot be limited to specific products. Granting
     <tbody>
 <tr><td align="left">    **Account settings**                    </td><td align="left">  Can view all pages in the **Account settings** section, including [contact info](managing-your-profile.md).       </td><td align="left">  Can view all pages in the **Account settings** section. Can make changes to [contact info](managing-your-profile.md) and other pages, but can’t make changes to the payout account or tax profile (unless that permission is granted separately).            </td></tr>
 <tr><td align="left">    **Account users**                       </td><td align="left">  Can view users that have been added to the account in the **Manage users** section.          </td><td align="left">  Can add users to the account and make changes to existing users in the **Manage users** section.             </td></tr>
-<tr><td align="left">    **Account-level ad performance report** </td><td align="left">  Can view the account-level [Advertising performance report](advertising-performance-report.md). (Can’t view advertising performance reports for individual products unless that permission is granted separately.)       </td><td align="left">  N/A   </td></tr>
+<tr><td align="left">    **Account-level ad performance report** </td><td align="left">  Can view the account-level [Advertising performance report](advertising-performance-report.md).      </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    **Ad campaigns**                        </td><td align="left">  Can view [ad campaigns](create-an-ad-campaign-for-your-app.md) created in the account.      </td><td align="left">  Can create, manage, and view [ad campaigns](create-an-ad-campaign-for-your-app.md) created in the account.          </td></tr>
 <tr><td align="left">    **Ad mediation**                        </td><td align="left">  Can view [ad mediation configurations](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) for all products in the account.    </td><td align="left">  Can view and change [ad mediation configurations](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) for all products in the account.        </td></tr>
 <tr><td align="left">    **Ad mediation reports**                </td><td align="left">  Can view the [Ad mediation report](ad-mediation-report.md) for all products in the account.    </td><td align="left">  N/A    </td></tr>
-<tr><td align="left">    **Ad performance reports**              </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account. (Can’t view the account-level [Advertising performance report](advertising-performance-report.md) unless that permission is granted separately.)       </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account. (Can’t view the account-level [Advertising performance report](advertising-performance-report.md) unless that permission is granted separately.)         </td></tr>
+<tr><td align="left">    **Ad performance reports**              </td><td align="left">  Can view [Advertising performance reports](advertising-performance-report.md) for all products in the account.       </td><td align="left">  N/A         </td></tr>
 <tr><td align="left">    **Ad units**                            </td><td align="left">  Can view the [ad units](monetize-with-ads.md) that have been created for the account.    </td><td align="left">  Can create, manage, and view [ad units](monetize-with-ads.md) for the account.             </td></tr>
 <tr><td align="left">    **Affiliate ads**                       </td><td align="left">  Can view [affiliate ad](about-affiliate-ads.md) usage in all products in the account.    </td><td align="left">  Can manage and view [affiliate ad](about-affiliate-ads.md) usage for all products in the account.                </td></tr>
 <tr><td align="left">    **Affiliates performance reports**      </td><td align="left">  Can view the [Affiliates performance report](affiliates-performance-report.md) for all products in the account.   </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    **App install ads reports**             </td><td align="left">  Can view the [App install ads report](app-install-ads-reports.md) for all products in the account.           </td><td align="left">  N/A   </td></tr>
+<tr><td align="left">    **App install ads reports**             </td><td align="left">  Can view the [Ad campaign report](promote-your-app-report.md).           </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    **Community ads**                       </td><td align="left">  Can view free [community ad](about-community-ads.md) usage for all products in the account.          </td><td align="left">  Can create, manage, and view free [community ad](about-community-ads.md) usage for all products in the account.               </td></tr>
 <tr><td align="left">    **Contact info**                        </td><td align="left">  Can view [contact info](managing-your-profile.md) in the Account settings section.        </td><td align="left">  Can edit and view [contact info](managing-your-profile.md) in the Account settings section.            </td></tr>
 <tr><td align="left">    **COPPA compliance**                    </td><td align="left">  Can view [COPPA compliance](monetize-with-ads.md#coppa-compliance) selections (indicating whether products are targeted at children under the age of 13) for all products in the account.                                            </td><td align="left">  Can edit and view [COPPA compliance](monetize-with-ads.md#coppa-compliance)  selections (indicating whether products are targeted at children under the age of 13) for all products in the account.         </td></tr>
@@ -72,6 +72,7 @@ The permissions in this section cannot be limited to specific products. Granting
 <tr><td align="left">    **Payout account**                      </td><td align="left">  Can view [payout account info](setting-up-your-payout-account-and-tax-forms.md#payout-account) in **Account settings**.     </td><td align="left">  Can edit and view [payout account info](setting-up-your-payout-account-and-tax-forms.md#payout-account) in **Account settings**.       </td></tr>
 <tr><td align="left">    **Payout summary**                      </td><td align="left">  Can view the [Payout summary](payout-summary.md) to access and download payout reporting info.       </td><td align="left">  Can view the [Payout summary](payout-summary.md) to access and download payout reporting info.   </td></tr>
 <tr><td align="left">    **Relying parties**&nbsp;*                   </td><td align="left">  Can view relying parties to retrieve XTokens.    </td><td align="left">  Can manage and view relying parties to retrieve XTokens.     </td></tr>
+<tr><td align="left">    **Request discs**&nbsp;*                   </td><td align="left">  Can view game disc requests.    </td><td align="left">  Can build and view game disc requests.     </td></tr>
 <tr><td align="left">    **Sandboxes**&nbsp;*                         </td><td align="left">  Can access the **Sandboxes** page and view sandboxes in the account and any applicable configurations for those sandboxes. Can’t view the products and submissions for each sandbox unless the appropriate product-level permissions are granted. </td><td align="left">  Can access the **Sandboxes** page and view and manage the sandboxes in the account, including creating and deleting sandboxes and managing their configurations. Can’t view the products and submissions for each sandbox unless the appropriate product-level permissions are granted.    </td></tr>
 <tr><td align="left">    **Tax profile**                         </td><td align="left">  Can view [tax profile info and forms](setting-up-your-payout-account-and-tax-forms.md#tax-forms) in **Account settings**.     </td><td align="left">  Can fill out tax forms and update [tax profile info](setting-up-your-payout-account-and-tax-forms.md#tax-forms) in **Account settings**.     </td></tr>
 <tr><td align="left">    **Test accounts**&nbsp;*                     </td><td align="left">  Can view accounts for testing Xbox Live configuration.      </td><td align="left">  Can create, manage, and view accounts for testing Xbox Live configuration.      </td></tr>
@@ -81,11 +82,14 @@ The permissions in this section cannot be limited to specific products. Granting
 
 \* Permissions marked with an asterisk (*) grant access to features which are not available to all accounts. If your account has not been enabled for these features, your selections for these permissions will not have any effect.   
 
+
 ## Product-level permissions
 
-The permissions in this section can be granted to all products in the account, or can be customized to allow the permission only for one or more specific products. These permissions are grouped into four categories: **Analytics**, **Monetization**, **Publishing**, and **Xbox Live**. You can expand each of these categories to view the individual permissions in each category. 
+The permissions in this section can be granted to all products in the account, or can be customized to allow the permission only for one or more specific products. 
 
-To grant a permission for all products in the account, make your selections for that permission (by toggling the box to indicate **Read only**, **Read/write**, or **No access**) in the row marked **All products**. 
+Product-level permissions are grouped into four categories: **Analytics**, **Monetization**, **Publishing**, and **Xbox Live**. You can expand each of these categories to view the individual permissions in each category. You also have the option to enable **All permissions** for one or more specific products.
+
+To grant a permission for every product in the account, make your selections for that permission (by toggling the box to indicate **Read only** or **Read/write**) in the row marked **All products**. 
  
 > [!TIP]
 > Selections made for **All products** will apply to every product currently in the account, as well as any future products created in the account. To prevent permissions from applying to future products, select all of the products individually rather than choosing **All products**.
@@ -95,6 +99,7 @@ Below the **All products** row, you’ll see each product in the account listed 
 Each add-on is listed in a separate row underneath its parent product, along with an **All add-ons** row. Selections made for **All add-ons** will apply to all current add-ons for that product, as well as any future add-ons created for that product.
 
 Note that some permissions cannot be set for add-ons. This is either because they don’t apply to add-ons (for example, the **Customer feedback** permission) or because the permission granted at the parent product level applies to all add-ons for that product (for example, **Promotional codes**). Note, however, that any permission that is available for add-ons must be set separately; add-ons do not inherit selections made for the parent product. For example, if you wish to allow a user to make pricing and availability selections for an add-on, you would need to enable the **Pricing and availability** permission for the add-on (or for **All add-ons**), whether or not you have granted the **Pricing and availability** permission for the parent product. 
+
 
 ### Analytics
 
@@ -112,9 +117,9 @@ Note that some permissions cannot be set for add-ons. This is either because the
     <tr><td align="left">    **Acquisitions**     </td><td>    Can view the [Acquisitions](acquisitions-report.md) and [Add-on acquisitions](add-on-acquisitions-report.md) reports for the product.        </td><td>    N/A    </td><td>    N/A (settings for parent product include Add-on acquisition reports)        </td><td>    N/A                         </td></tr>
     <tr><td align="left">    **Usage** </td><td>    Can view the [Usage report](usage-report.md) for the product.     </td><td>    N/A       </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    **Health** </td><td>    Can view the [Health report](health-report.md) for the product.    </td><td>    N/A     </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    **Customer feedback**    </td><td>    Can view the [Ratings](ratings-report.md), [Reviews](reviews-report.md), and [Feedback](feedback-report.md) reports for the product.       </td><td>    N/A (to respond to feedback or reviews, the **Contact customer** permission must be granted)   </td><td>    N/A     </td><td>    N/A         </td></tr>
+    <tr><td align="left">    **Customer feedback**    </td><td>    Can view the [Reviews](reviews-report.md) and [Feedback](feedback-report.md) reports for the product.       </td><td>    N/A (to respond to feedback or reviews, the **Contact customer** permission must be granted)   </td><td>    N/A     </td><td>    N/A         </td></tr>
     <tr><td align="left">    **Xbox analytics** </td><td>    Can view the Xbox analytics report for the product. (Note: This report is not yet available.)    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
-    <tr><td align="left">    **Real time**   </td><td>    Can view the Real time report for the product.       </td><td>    N/A   </td><td>    N/A     </td><td>    N/A                 </td></tr>
+    <tr><td align="left">    **Real time**   </td><td>    Can view the Real time report for the product. (Note: This report is currently only available via the [Dev Center Insider Program](dev-center-insider-program.md).)      </td><td>    N/A   </td><td>    N/A     </td><td>    N/A                 </td></tr>
     </tbody>
     </table>
 
@@ -131,9 +136,11 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tr>
     </thead>
     <tbody>
+    <tr><td align="left">    **Promotional codes**     </td><td>    Can view [promotional code](generate-promotional-codes.md) orders and usage info for the product and its add-ons, and can view usage info.         </td><td>    Can view, manage, and create [promotional code](generate-promotional-codes.md) orders for the product and its add-ons, and can view usage info.          </td><td>    N/A (settings for parent product apply to all add-ons)     </td><td>    N/A (settings for parent product apply to all add-ons)     </td></tr>
+    <tr><td align="left">    **Targeted offers**     </td><td>    Can view [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) for the product.         </td><td>    Can view, manage and create [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) for the product.          </td><td>    N/A     </td><td>    N/A      </td></tr>
     <tr><td align="left">    **Contact customer**  </td><td>    Can view [responses to customer feedback](respond-to-customer-feedback.md) and [responses to customer reviews](respond-to-customer-reviews.md), as long as the **Customer feedback** permission has been granted as well. Can also view [targeted notifications](send-push-notifications-to-your-apps-customers.md) that have been created for the product.    </td><td>    Can [respond to customer feedback](respond-to-customer-feedback.md), [respond to customer reviews](respond-to-customer-reviews.md), as long as the **Customer feedback** permission has been granted as well. Can also [create and send targeted notifications](send-push-notifications-to-your-apps-customers.md) for the product.                   </td><td>    N/A         </td><td>    N/A                          </td></tr>
     <tr><td align="left">    **Experimentation**</td><td>    Can view [experiments (A/B testing)](../monetize/run-app-experiments-with-a-b-testing.md) and view experimentation data for the product.   </td><td>    Can create, manage, and view [experiments (A/B testing)](../monetize/run-app-experiments-with-a-b-testing.md) for the product, and view experimentation data.     </td><td>    N/A  </td><td>    N/A                 </td></tr>
-    <tr><td align="left">    **Promotional codes**     </td><td>    Can view [promotional code](generate-promotional-codes.md) orders and usage info for the product and its add-ons, and can view usage info.         </td><td>    Can view, manage, and create [promotional code](generate-promotional-codes.md) orders for the product and its add-ons, and can view usage info.          </td><td>    N/A (settings for parent product apply to all add-ons)     </td><td>    N/A (settings for parent product apply to all add-ons)     </td></tr>
+
     </tbody>
     </table>
 
@@ -175,8 +182,8 @@ Note that some permissions cannot be set for add-ons. This is either because the
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    **Xbox service configuration**&nbsp;\*    </td><td>    Can view settings related to achievements, multiplayer, leaderboards and other Xbox Live configuration for the product.  </td><td>    Can view and edit settings related to achievements, multiplayer, leaderboards and other Xbox Live configuration for the product.  </td><td>    N/A     </td><td>    N/A                      </td></tr>
     <tr><td align="left">    **App channels**&nbsp;\*</td><td>    N/A  </td><td>    Can publish promotional video channels to the Xbox console for viewing through OneGuide.  </td><td>  N/A </td><td> N/A </td></tr>
+    <tr><td align="left">    **Service configuration**&nbsp;\*    </td><td>    Can view settings related to achievements, multiplayer, leaderboards and other Xbox Live configuration for the product.  </td><td>    Can view and edit settings related to achievements, multiplayer, leaderboards and other Xbox Live configuration for the product.  </td><td>    N/A     </td><td>    N/A                      </td></tr>
 </tbody>
 </table>
 

@@ -4,7 +4,7 @@ Description: Add users to your Dev Center account and assign them roles with spe
 title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 04/14/2017
+ms.date: 06/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,10 +13,11 @@ keywords: windows 10, uwp
 
 # Manage account users
 
-
 You can use Azure Active Directory to add users to your Dev Center account. Each user is assigned a role that gives them a specific set of permissions to the account. You can also assign a role to a group of users, or to an Azure AD application.
 
-> **Important**  In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory. This requires you to sign in to Azure AD with a [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) account. Once you establish this association, you won't be able to remove it without contacting support.
+> [!IMPORTANT]
+> In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory. This requires you to sign in to Azure AD with a [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) account. Once you establish this association, you won't be able to remove it without contacting support.
+
 
 ## Associate your Dev Center account with your organization's Azure Active Directory
 
@@ -24,7 +25,9 @@ Windows Dev Center leverages Azure Active Directory for multi-user management an
 
 Note that only one Dev Center account can be associated with an Azure AD. Similarly, only one Azure AD can be associated with a Dev Center account.
 
-> **Note**   If the users you want to add are not part of your organization’s Azure AD, and you don't want to create new Azure AD accounts for them, you can [invite users by email](#add-and-manage-account-users).
+> [!TIP]
+> If the users you want to add are not part of your organization’s Azure AD, and you don't want to create new Azure AD accounts for them, you can [invite users by email](#email).
+
 
 ### Associate your Dev Center account with your organization’s existing Azure AD
 
@@ -35,6 +38,7 @@ If your organization already uses Azure AD, follow these steps to link your Dev 
 3.  Sign in to your Azure AD account. This account must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission in order to set up the association.
 4.  Review the organization and domain name for your Azure AD account. To complete the association, click **Confirm**.
 5.  If the association is successful, you will then be ready to add and manage account users on the **Manage users** page of your account as described in the sections below.
+
 
 ### Create a brand new Azure AD to associate with your Dev Center account
 
@@ -49,23 +53,26 @@ If you need to set up a new Azure AD to link with your Dev Center account, follo
 4.	Click **Create** to confirm the new domain and account info.
 5.	Sign in with your new Azure AD global administrator username and password to begin adding and managing additional account users on the **Manage users** page of your account as described in the sections below.
 
+> [!IMPORTANT]
+> After you associate your Dev Center account with Azure AD, you’ll always need sign in to Dev Center using the Azure AD global administrator account (and not a personal Microsoft account) in order to add and manage account users.
 
-> **Important**  After you associate your Dev Center account with Azure AD, you’ll always need sign in to Dev Center using the Azure AD global administrator account (and not a personal Microsoft account) in order to add and manage account users.
 
 ## Add and manage account users, groups, and Azure AD applications
 
 Once you have established the association, you can add users, groups, and Azure AD applications to your account. You can also change roles, edit account details, or remove users.
 
-> **Note**  If your organization uses [directory integration](http://go.microsoft.com/fwlink/p/?LinkID=724033) to sync the on-premises directory service with your Azure AD, you won't be able to create new users, groups, or Azure AD applications in Dev Center. You (or another admin in your on-premises directory) will need to create them directly in the on-premises directory before you'll be able to see and add them in Dev Center.
+> [!NOTE]
+> If your organization uses [directory integration](http://go.microsoft.com/fwlink/p/?LinkID=724033) to sync the on-premises directory service with your Azure AD, you won't be able to create new users, groups, or Azure AD applications in Dev Center. You (or another admin in your on-premises directory) will need to create them directly in the on-premises directory before you'll be able to see and add them in Dev Center.
 
 When managing users, keep the following in mind:
 
--   All Dev Center users must have an active account in your organization's Azure AD.
--   Creating a **new** user or group in Dev Center will also add them to your organization's Azure AD.
--   Making changes to a user or group's name in Dev Center will make those changes in your organization's Azure AD.
--   Users (including groups and Azure AD applications) will be able to access the entire Dev Center account with the permissions associated with their assigned role. If you [customize permissions](set-custom-permissions-for-account-users.md), you can limit a user's access so that they can only work with specific apps and/or add-ons.
+-   All Dev Center users must have an active account in your organization's Azure AD (unless you [invite them by email](#email).
+-   Creating a **new** user or group in Dev Center will also add that user or group to your organization's Azure AD.
+-   Making changes to a user or group's name in Dev Center will make the same changes in your organization's Azure AD.
+-   Users (including groups and Azure AD applications) will be able to access the entire Dev Center account with the permissions associated with their assigned role, unless you [customize permissions](set-custom-permissions-for-account-users.md) and assign [product-level permissions](set-custom-permissions-for-account-users.md#product-level-permissions) so that they can only work with specific apps and/or add-ons.
 -   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using [custom permissions](set-custom-permissions-for-account-users.md) to grant the access you'd like.
--   A user with a certain role (or set of [custom permissions](set-custom-permissions-for-account-users.md)) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
+-   A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
+
 
 ## Roles and permissions
 
@@ -73,11 +80,13 @@ When adding a user, group, or Azure AD application, you must specify their permi
 
 Unless you use custom permissions, each user, group, or Azure AD application that you add to an account must be assigned at least one of the following standard roles. Each role has a specific set of permissions in order to perform certain functions within the account. 
 
-> **Note**  The owner of the account is the person who first created it with a Microsoft account (rather than any users added through Azure AD). This account owner is the only person with complete access to the account, including the ability to delete apps, create and edit all account users, and change all financial and account settings. 
+> [!NOTE]
+> The owner of the account is the person who first created it with a Microsoft account (and not any user(s) added through Azure AD). This account owner is the only person with complete access to the account, including the ability to delete apps, create and edit all account users, and change all financial and account settings. 
+
 
 | Role                 | Description              |
 |----------------------|--------------------------|
-| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Dev Center, but note that the ability to create and delete users is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have admin permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (but they can change a user's Dev Center role). |
+| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Dev Center, but note that the ability to create and delete users is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have admin permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Dev Center role). |
 | Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](usage-report.md) for telemetry details. Can’t view financial info or account settings.   |
 | Business Contributor | Can view [Health](health-report.md) and [Usage](usage-report.md) reports. Can't create or submit products, change account settings, or view financial info.                                         |
 | Finance Contributor  | Can view [payout reports](payout-summary.md), financial info, and acquisition reports. Can’t make any changes to apps, add-ons, or account settings.                                                                                                                                   |
@@ -97,15 +106,17 @@ The table below shows some of the specific features available to each of these r
 
 If none of the standard roles are appropriate, or you wish to limit access to specific apps and/or add-ons, you can grant custom permissions to the user by clicking **Customize permissions**. For more info, see [Set custom permissions for account users](set-custom-permissions-for-account-users.md).
 
+
 ## Add and manage account users
 
 To identify users that you want to add to your Dev Center account and assign them a role, click **Add users**.
 
-You can add one or more users from your organization's directory to your Dev Center account. Note that when you add more than one user at the same time, you must assign the same role. If you want to add users but assign them different roles, repeat the steps below for each role.
+You can add users from your organization's directory, create new users to add to your Dev Center account and  organization's directory, or invite users to access your Dev Center account without adding them to your organization's directory.
 
-Alternately, you can invite users to access your account without adding them to your organization's directory.
+Note that when you add more than one user at the same time, you must assign the same role. If you want to add multiple users but assign them different roles, repeat the steps below for each role.
 
-**Add users from your organization's directory**
+
+### Add users from your organization's directory
 
 1.  From the **Manage users** page, click **Add users**.
 2.  Select one or more users from the list that appears. You can use the search box to search for specific users.
@@ -113,25 +124,31 @@ Alternately, you can invite users to access your account without adding them to 
 4.  In the **Roles** section, select one or more roles to assign to this set of users.
 5.  Click **Save**.
 
-If you want to grant Dev Center access to a brand new user account, you can create one in the **Manage users** section. 
 
-By default, the **Add to Azure AD** radio button is selected. Leaving this selected will create a new account in your organization's directory and add that user to your Dev Center account. If you don't want to create new accounts in your organization's directory, but wish to let users access your account using their Microsoft accounts to log in, select **Invite users by email** instead.
 
-If you want the new user to have a [Global administrator account](http://go.microsoft.com/fwlink/p/?LinkId=746654) in your organization's directory, check the box labeled **Make this user a Global administrator in your Azure AD, with full control over all directory resources**. This will give the user full access to all administrative features in your company's Azure AD. They'll be able to add and manage users in your organization's directory (but not in Dev Center, unless you grant the account the appropriate [role/permissions](#roles-and-permissions). If you check this box, you'll need to provide a **Password recovery email** for the user.
+### Create a new user account in Dev Center and in your organization's directory
 
-**Create a new user account in Dev Center and in your organization's directory**
+If you want to grant Dev Center access to a brand new user account, you can create one in the **Manage users** section by clicking **New user**.
+
+If you don't want to create new accounts in your organization's directory, but wish to let users access your account using their Microsoft accounts to log in, select **Invite users by email** instead.
+
+If you want the new user to have a [Global administrator account](http://go.microsoft.com/fwlink/p/?LinkId=746654) in your organization's directory, check the box labeled **Make this user a Global administrator in your Azure AD, with full control over all directory resources**. This will give the user full access to all administrative features in your company's Azure AD. They'll be able to add and manage users in your organization's directory (though not in Dev Center, unless you grant the account the appropriate [role/permissions](#roles-and-permissions)). If you check this box, you'll need to provide a **Password recovery email** for the user.
 
 1.  From the **Manage users** page, click **Add users**.
 2.  On the next page, click **New user**.
-3.  Ensure that the **Add to Azure AD** radio button is selected.
+3.  Ensure that the **Add to Azure AD** radio button is selected to create a new account in your organization's directory and add that user to your Dev Center account. 
 4.  Enter the first name, last name, and username for the new user.
 5.  Enter an email that the user can use if they need to recover their password. This is only required if you checked the box to **Make this user a Global administrator in your Azure AD**.
-6.  In the **Roles** section, select one or more roles to assign to the new user, or assign customized permissions.
-7.  In the **Group membership** section, select any groups to which you want the new user to belong.
+6.  In the **Group membership** section, select any groups to which you want the new user to belong.
+7.  In the **Roles** section, select one or more roles to assign to the new user, or assign customized permissions.
 8.  Click **Save**.
 9.  On the confirmation page, you'll see login info for the new user, including a temporary password. Be sure to note this info and provide it to the new user, as you won't be able to access the temporary password after you leave this page.
 
-**Create a new user account in Dev Center without adding the user to your organization's directory**
+
+<span id="email" />
+### Create a new user account in Dev Center without adding the user to your organization's directory
+
+To invite users by email without creating a new user in your organization's directory, follow the steps below. Note that you can't add these users to groups, since those are managed through Azure AD.
 
 1.  From the **Manage users** page, click **Add users**.
 2.  On the next page, click **New user**.
@@ -140,9 +157,12 @@ If you want the new user to have a [Global administrator account](http://go.micr
 4.  In the **Roles** section, select one or more roles to assign to the new user, or assign customized permissions.
 6.  Click **Save**.
 
-The users you've invited will get an email with an invitation to access your Dev Center account. Each user will need to accept their invitation before they can access your account. To resend the invitation, find the user on your **Manage users** page and click their email address (or the text that says **Invitation pending**) to edit the account. Then, at the bottom of the page, click **Resend invitation**.
+The users you've invited will get an email with an invitation to access your Dev Center account. Each user will need to accept their invitation before they can access your account.
 
-**Edit a user account**
+If you need to resend an invitation, find the user on your **Manage users** page and select their email address (or the text that says **Invitation pending**) to edit the account. Then, at the bottom of the page, click **Resend invitation**.
+
+
+### Edit a user account
 
 You can make changes to user accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the user's name or group membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a user's role will only affect their Dev Center access.
 
@@ -154,7 +174,8 @@ You can make changes to user accounts that you've added to your Dev Center accou
 
 3.  Click **Save**.
 
-**Changing a user's directory password**
+
+### Changing a user's directory password
 
 If you need to change a password for a user account that you've added to your Dev Center account, you can do so in the **Manage users** section. Note that this will change the user's directory password, not just the password for their Dev Center access.
 
@@ -164,7 +185,9 @@ If you've provided a **Password recovery email** when creating the user account,
 2.  Click the **Reset password** button at the bottom of the page.
 3.  A confirmation page will appear showing the login info for the user, including a temporary password.
 
-   > **Important**  Be sure to print or copy this info and provide it to the user, as you won't be able to access the temporary password after you leave this page.
+   > [!IMPORTANT]
+   >  Be sure to print or copy this info and provide it to the user, as you won't be able to access the temporary password after you leave this page.
+
 
 ## Add and manage groups
 
@@ -172,7 +195,8 @@ When you add a group from your organization's directory to your Dev Center accou
 
 Note that when you add more than one group at the same time, you must assign the same role. If you want to add groups but assign them different roles, repeat the steps below for each role.
 
-**Add groups from your organization's directory**
+
+### Add groups from your organization's directory
 
 1.  From the **Manage users** page, click **Add groups**.
 2.  Select one or more groups from the list that appears. You can use the search box to search for specific groups.
@@ -180,9 +204,10 @@ Note that when you add more than one group at the same time, you must assign the
 4.  In the **Roles** section, select one or more roles to assign to this set of groups, or assign customized permissions.
 5.  Click **Save**.
 
-If you want to grant Dev Center access to a brand new group, you can create a new group in the **Manage users** section. Note that the new group will be created in your organization's directory, not just in your Dev Center account.
 
-**Create a new group account**
+### Create a new group account
+
+If you want to grant Dev Center access to a brand new group, you can create a new group in the **Manage users** section. Note that the new group will be created in your organization's directory, not just in your Dev Center account.
 
 1.  From the **Manage users** page, click **Add groups**.
 2.  On the next page, click **New group**.
@@ -192,14 +217,16 @@ If you want to grant Dev Center access to a brand new group, you can create a ne
 6.  When you are finished selecting users, click **Add selected**.
 7.  Click **Save**.
 
-You can make changes to group accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the group's name and membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a group's role will only affect that group's Dev Center access.
 
-**Edit a group account**
+### Edit a group account
+
+You can make changes to group accounts that you've added to your Dev Center account in the **Manage users** section. Note that changes to the group's name and membership will be reflected in your organization's directory, not just in your Dev Center account. Changes made to a group's role will only affect that group's Dev Center access.
 
 1.  From the **Manage users** page, click the name of the group account that you want to edit.
 2.  To change group info, make any desired changes to the group's name. Remember, these changes will be made in your organization's directory.
 3.  To change the group role, select or deselect the role(s) that you want to apply to the group, or assign customized permissions.
 4.  Click **Save**.
+
 
 ## Add and manage Azure AD applications
 
@@ -207,7 +234,8 @@ You can allow applications or services that are part of your organization's Azur
 
 Note that when you add more than one Azure AD application at the same time, you must assign the same role. If you want to add groups but assign them different roles, repeat the steps below for each role.
 
-**Add Azure AD applications from your organization's directory**
+
+### Add Azure AD applications from your organization's directory
 
 1.  From the **Manage users** page, click **Add Azure AD applications**.
 2.  Select one or more Azure AD applications from the list that appears. You can use the search box to search for specific Azure AD applications.
@@ -215,11 +243,12 @@ Note that when you add more than one Azure AD application at the same time, you 
 4.  In the **Roles** section, select one or more roles to assign to this set of Azure AD applications, or assign customized permissions.
 5.  Click **Save**.
 
+### Create a new Azure AD application
+
 If you want to grant Dev Center access to a brand new Azure AD application account, you can create one in the **Manage users** section. Note that this will create a new account in your organization's directory, not just in your Dev Center account.
 
-> **Tip** If you are primarily using this Azure AD application for Dev Center authentication, and don't need users to access it directly, you can enter any valid address for the **Reply URL** and **App ID URI**, as long as those values are not used by any other Azure AD application in your directory.
-
-**Create a new Azure AD application**
+> [!TIP]
+> If you are primarily using this Azure AD application for Dev Center authentication, and don't need users to access it directly, you can enter any valid address for the **Reply URL** and **App ID URI**, as long as those values are not used by any other Azure AD application in your directory.
 
 1.  From the **Manage users** page, click **Add Azure AD applications**.
 2.  On the next page, click **New Azure AD application**.
@@ -230,30 +259,35 @@ If you want to grant Dev Center access to a brand new Azure AD application accou
 
 After you add or create an Azure AD application, you can return to the **Manage users** section and click the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
 
-> **Note** If you intend to use the REST APIs provided by the [Windows Store services](../monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
+> [!NOTE]
+> If you intend to use the REST APIs provided by the [Windows Store services](../monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
+
+
+### Edit an Azure AD application
 
 You can make changes to Azure AD applications that you've added to your Dev Center account in the **Manage users** section. Note that changes to the Reply URL and App ID URI will be reflected in your organization's directory, not just in your Dev Center account. Role changes will only affect the Azure AD application's permissions within Dev Center.
-
-**Edit an Azure AD application**
 
 1.  From the **Manage users** page, click the name of the Azure AD application account that you want to edit.
 2.  To change the **Reply URL** or **App ID URI**, enter the new values here. Remember, these changes will be made in your organization's directory.
 3.  To change the Azure AD application's role, select or deselect the role(s) that you want to apply, or assign customized permissions.
 4.  Click **Save**.
 
-If your Azure AD application reads and writes data in Microsoft Azure AD, it will need a key. You can create keys for an Azure AD application by editing its info in Dev Center. You can also remove keys that are no longer needed.
 
-**Manage keys for an Azure AD application**
+### Manage keys for an Azure AD application
+
+If your Azure AD application reads and writes data in Microsoft Azure AD, it will need a key. You can create keys for an Azure AD application by editing its info in Dev Center. You can also remove keys that are no longer needed.
 
 1.  From the **Manage users** page, click the name of the Azure AD application.
 
-    > **Tip**  When you click the name of the Azure AD application, you'll see all of the active keys for the Azure AD application, including the date on which the key was created and when it will expire. To remove a key that is no longer needed, click **Remove**.
+    > [!TIP]
+    > When you click the name of the Azure AD application, you'll see all of the active keys for the Azure AD application, including the date on which the key was created and when it will expire. To remove a key that is no longer needed, click **Remove**.
 
 2.  To add a new key, click **Add new key**.
 
 3.  You will see a screen showing the **Client ID** and **Key** values.
 
-    > **Important**  Be sure to print or copy this info, as you won't be able to access it again after you leave this page.
+    > [!IMPORTANT]
+    > Be sure to print or copy this info, as you won't be able to access it again after you leave this page.
 
 4.  If you want to create more keys, click **Add another key**.
 
@@ -267,7 +301,8 @@ On the **Manage users** page, click the link shown under **Last activity** for t
 
 To remove a user, group, or Azure AD application from your Dev Center account, click the **Remove** link that appears by their name on the **Manage users** page. After confirming that you want to remove it, that user, group, or Azure AD application will no longer be able to access to your Dev Center account (unless you add it again later).
 
-> **Note**  Removing a user, group, or Azure AD application means that it will no longer have access to your Dev Center account. It does not delete the user, group, or Azure AD application from your organization's directory.
+> [!NOTE] 
+> Removing a user, group, or Azure AD application means that it will no longer have access to your Dev Center account. It does not delete the user, group, or Azure AD application from your organization's directory.
 
  
 

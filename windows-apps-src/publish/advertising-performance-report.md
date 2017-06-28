@@ -31,7 +31,7 @@ At the top of the report, you can use the following filters to adjust the scope 
 
 * **Date**: Filter the report to a preset time period or a custom date range. By default, the report shows data for the last 30 days.
 * **Aggregation**: Here you can select how this data is aggregated and how it may be filtered further. By default, the report shows data from all ad units, and you'll see a **Choose ad units** link lower in the section, allowing you to select up to six ad units to compare. You can optionally change the **Aggregation** to **All apps** or **All ad providers**. If you do so, the link in this section will change to either **Choose apps** or **Choose ad providers**, allowing you to choose up to six of each to compare. You can also choose to aggregate by a specific app in which you use ads.
-* **Ad providers**: Filter the report to performance data for certain ad providers. For more information about the available ad providers, see the [Ad mediation](monetize-with-ads.md#mediation) section in [Monetize with ads](monetize-with-ads.md). By default, the report shows data from all ad providers. This option will be disabled if you chose **All ad providers** in the **Aggregation drop-down.
+* **Ad providers**: Filter the report to performance data for certain ad providers. For more information about the available ad providers, see the [Ad mediation](monetize-with-ads.md#mediation) section in [Monetize with ads](monetize-with-ads.md). By default, the report shows data from all ad providers. This option will be disabled if you chose **All ad providers** in the **Aggregation** drop-down.
 * **Device**: Filter the report to performance data for certain device types. By default, the report shows data for all device types.
 
 
@@ -91,10 +91,4 @@ Affiliates performance data is obtained from the following seven performance met
 > After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated earnings (approved)**, **Estimated earnings (pending approval)**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.
 
 
-
-## Related topics
-
-* [Display ads in your app](../monetize/display-ads-in-your-app.md)
-* [Monetize with ads](monetize-with-ads.md)
-* [About affiliate ads](about-affiliate-ads.md)
  

@@ -33,8 +33,6 @@ In this section you'll find details about the info presented in each of the foll
 -   [Feedback report](feedback-report.md)
 -   [Advertising performance report](advertising-performance-report.md)
 -   [Ad campaign report](promote-your-app-report.md)
--   [Ad mediation report](ad-mediation-report.md)
-
 
 > [!NOTE]
 > You may not see data in all of these reports, depending on your app's specific features and implementation.

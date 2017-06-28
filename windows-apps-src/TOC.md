@@ -1119,7 +1119,6 @@
 ### [Feedback report](publish/feedback-report.md)
 ### [Advertising performance report](publish/advertising-performance-report.md)
 ### [Ad campaign report](publish/promote-your-app-report.md)
-### [Ad mediation report](publish/ad-mediation-report.md)
 ### [Download analytics reports](publish/download-analytic-reports.md)
 ## [Getting paid](publish/getting-paid-apps.md)
 ### [Setting up your payout account and tax forms](publish/setting-up-your-payout-account-and-tax-forms.md)
