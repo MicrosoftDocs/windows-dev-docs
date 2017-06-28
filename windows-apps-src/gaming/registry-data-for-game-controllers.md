@@ -1234,10 +1234,10 @@ To show how all of these mappings and values come together, here is an example r
 ```
 Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\GameInput\Devices\1234567800010004]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004]
 "Description" = "Example Wheel Device"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\GameInput\Devices\1234567800010004\Labels\Buttons]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004\Labels\Buttons]
 "Button0" = "LetterA"
 "Button1" = "LetterB"
 "Button2" = "LetterX"
@@ -1247,7 +1247,7 @@ Windows Registry Editor Version 5.00
 "Button8" = "RightStickButton"
 "Button9" = "LeftStickButton"
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\GameInput\Devices\1234567800010004\Labels\Switches]
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GameInput\Devices\1234567800010004\Labels\Switches]
 "Switch0Down" = "Down"
 "Switch0Left" = "Left"
 "Switch0Right" = "Right"
