@@ -1,9 +1,9 @@
 ---
-author: mukin
+author: PatrickFarley
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: Customize the print preview UI
 description: This section describes how to customize the print options and settings in the print preview UI.
-ms.author: mukin
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

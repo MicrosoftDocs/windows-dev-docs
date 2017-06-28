@@ -3,7 +3,7 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Understand IRS tax forms issued by Microsoft
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,7 +24,8 @@ Below, we'll explain more about these forms, including who will receive them and
 |1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
 |1042-S | Related to payments made to you that are subject to United States withholding tax. | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
 
-> **Note** The address listed on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). If your address has changed, please make sure to update the address in your **Tax profile**.
+> [!NOTE]
+> The address listed on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). If your address has changed, please make sure to update the address in your **Tax profile**.
 
 ## For developers located in the United States
 
@@ -121,4 +122,5 @@ EIN: \*\*\*\*\*0505<br>
 </table>
 
 
-> **Note** If you have additional questions or concerns related to **IRS tax forms**, please create a [support ticket](http://aka.ms/storesupport). Microsoft cannot answer questions related to your specific tax circumstances; for those questions, please seek advice from your tax professional.
+> [!NOTE]
+> If you have additional questions or concerns related to **IRS tax forms**, please create a [support ticket](http://aka.ms/storesupport). Microsoft cannot answer questions related to your specific tax circumstances; for those questions, please seek advice from your tax professional.

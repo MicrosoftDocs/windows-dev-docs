@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: If your app uses ad mediation or displays banner or interstitial ads using the Microsoft Store Services SDK, use the Monetize with ads page to manage your use of ads.
 title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 06/07/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 # Monetize with ads
 
-Use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads for the following scenarios:
+Each app in your dashboard includes a **Monetization** &gt; **Monetize with ads** page. You can manage your use of ads for the following scenarios on this page:
 
 * Your UWP app uses an [AdControl](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), or [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
@@ -28,22 +28,17 @@ Use this section to create an ad unit for the following scenarios:
 * Your app shows interstitial video ads or interstitial banner ads by using an **InterstitialAd**. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
 * Your app shows native ads by using a **NativeAd**. For more information, see [Native ads](../monetize/native-ads.md).
 
-For more information about working with ad units in your app, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
-
-> [!IMPORTANT]
-> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
-
 To create an ad unit:
 
 1.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
 2.  In the **Ad unit type** drop-down, select the type of ad unit that corresponds to the ads you are showing in your control. The available options are: **Banner**, **Banner interstitial**, **Video interstitial**, and **Native**.
+    > [!NOTE]
+    > The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
+
 3.  In the **Device family** drop-down, select the device family targeted by the app in which your ad unit will be used. The available options are: **UWP (Windows 10)**, **PC/Tablet (Windows 8.1)**, or **Mobile (Windows Phone 8.x)**.
 4.  Click **Create ad unit**.
 
-The new ad unit appears at the top of the list in the **Available ad units** section on this page.
-
-> [!NOTE]
-> The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
+The new ad unit appears at the top of the list in the **Available ad units** section on this page. For more information about working with ad units in your app, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
 
 > [!NOTE]
 > If your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** to show banner ads, you do not need to request ad units here. In this scenario, the ad units are automatically generated for you.
@@ -56,6 +51,12 @@ Your ad units appear in a table at the bottom of this section. For each ad unit 
 -   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
 -   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
 -   If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor. For more information, see [Native ads](../monetize/native-ads.md).
+
+> [!IMPORTANT]
+> You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
+
+> [!NOTE]
+> You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
 
 <span id="mediation" />
 ## Ad mediation
@@ -130,7 +131,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 
 ## Microsoft affiliate ads
 
-Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and buys products in the Store within a given attribution window, you will earn a commission on approved purchases.
+Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When customers click the ads and buy products in the Store within a given attribution window, you will earn a commission on approved purchases.
 
 If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
 

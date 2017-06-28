@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Ad mediation report lets you see your effective fill rate and the respective fill rates for the ad networks you're using.
 title: Ad mediation report
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 This report shows ad mediation data for Windows 8.x or Windows Phone 8.x apps that use an **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) to mediate banner ads from multiple ad networks. For these apps, this report lets you see your effective fill rate and the respective fill rates for the ad networks you're using. It also shows the adoption rates of each of your mediation configurations and provides visibility into errors reported by ad networks and the mediator. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
 > [!NOTE]
-> The **Ad mediation** report only provides data if you are using an **AdMediatorControl** in your app. For more information, see [this article](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359). For a UWP app that uses [ad mediation](monetize-with-ads.md#mediation) in an **AdControl** or **InterstitialAd** control, use the [Advertising performance report](advertising-performance-report.md) to review performance data for the ad networks.
+> The **Ad mediation** report is only available if you are using an **AdMediatorControl** in your Windows 8.x or Windows Phone 8.x app. For more information, see [this article](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359). For a UWP app that uses [ad mediation](monetize-with-ads.md#mediation) in an **AdControl** or **InterstitialAd** control, use the [Advertising performance report](advertising-performance-report.md) to review performance data for the ad networks.
 
 ## Page filters
 

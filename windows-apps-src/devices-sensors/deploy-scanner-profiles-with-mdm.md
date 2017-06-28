@@ -1,6 +1,6 @@
 ---
 title: Deploy barcode scanner profiles with MDM
-author: mukin
+author: PatrickFarley
 description: Barcode scanner profiles can be deployed with an MDM server.
 ms.assetid: 99ED3BD8-022C-40C2-9C65-F599186548FE
 ---

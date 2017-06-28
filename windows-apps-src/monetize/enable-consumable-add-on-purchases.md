@@ -5,7 +5,7 @@ description: Learn how to use the Windows.Services.Store namespace to work with 
 title: Enable consumable add-on purchases
 keywords: windows 10, uwp, consumable, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -30,9 +30,6 @@ Apps that target Windows 10, version 1607, or later can offer two types of consu
 
   For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. After the user has consumed all 100 coins, the user can purchase the 100 coin add-on again.
 
-  > [!NOTE]
-  > Store-managed consumables are available starting in Windows 10, version 1607. The ability to create a Store-managed consumable in the Windows Dev Center dashboard is coming soon.
-
 To offer a consumable add-on to a user, follow this general process:
 
 1. Enable users to [purchase the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app.
@@ -44,7 +41,8 @@ At any time, you can also [get the remaining balance](enable-consumable-add-on-p
 
 These examples have the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607, or later.
-* You have created an app in the Windows Dev Center dashboard with consumable add-ons (also known as in-app products or IAPs), and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
+* You have [created a consumable add-on for the app](../publish/add-on-submissions.md) in the Dev Center dashboard.
 
 The code in these examples assume:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.

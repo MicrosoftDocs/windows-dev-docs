@@ -4,7 +4,7 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 05/18/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -47,11 +47,11 @@ Be aware of the following policies for promotional codes:
 
 To order promotional codes for an app or add-on that you published to the Windows Store:
 
-1.  On Windows Dev Center dashboard, do one of the following:
-    -   On the **App overview** page for your app, locate the **Promotional codes** section and click **Order codes**.
-    -   On any dashboard page for your app, in the left navigation menu, expand **Monetization** and click **Promotional codes**. On the **Promotional codes** page, click **Order codes**.
+1.  In the left navigation menu of the Windows Dev Center dashboard, expand **Attract** and then select **Promo codes.**
 
-2.  On the **New promotional codes order** page, enter the following:
+2.   On the **Promotional codes** page, click **Order codes**.
+
+3.  On the **New promotional codes order** page, enter the following:
     -   Select the app or add-on for which you want to generate codes.
     -   Specify a name for the order. You can use this name to differentiate between different orders of codes when reviewing your promotional code usage data.
     -   Select the order type. You can choose to generate a set of promo codes that can each be used once, or you can choose to generate one promo code that can be used multiple times. 
@@ -59,16 +59,16 @@ To order promotional codes for an app or add-on that you published to the Window
     -   Specify when the promotional codes should become active. To choose a specific start date and time, clear the **Codes are active immediately** check box. Otherwise, the codes will be active immediately.
     -   Specify when the promotional codes should expire. To choose a specific expire date and time earlier than 6 months, clear the **Codes expire after 6 months** check box.
 
-3.  Click **Order codes**. You'll then be returned to the **Promotional codes** page, where you'll be able to see your new order in the summary table of promotional code orders for that app.
+4.  Click **Order codes**. You'll then be returned to the **Promotional codes** page, where you'll be able to see your new order in the summary table of promotional code orders for that app.
 
 
 ## Download and distribute promotional codes
 
 To download a fulfilled promotional code order and distribute the codes to customers:
 
-1.  On Windows Dev Center dashboard, go to the **Promotional codes** page for your app (expand **Monetization** and click **Promotional codes**).
-2.  Click the **Download** link for your order and save the generated file to your computer. This file contains information about your promotional codes order in tab-separated value (TSV) format.
-3.  Open the TSV file in the editor of your choice. For the best experience, open the TSV file in an application that can display the data in a tabular structure, such as Microsoft Excel. However, you can also open the file in any text editor.
+1.  In the left navigation menu of the Windows Dev Center dashboard, expand **Attract** and then select **Promo codes.**
+2.  Click the **Download** link for the promotional code order, then save the generated file to your computer. This file contains information about your promotional codes order in tab-separated value (.tsv) format.
+3.  Open the .tsv file in the editor of your choice. For the best experience, open the .tsv file in an application that can display the data in a tabular structure, such as Microsoft Excel. However, you can open the file in any text editor.
 
     The file contains the following columns of data for each code:
 
@@ -112,8 +112,7 @@ To review a detailed summary of promotional code orders for an app and its add-o
     -   Available
     -   Redeemed
 
-You can also download an order from this table. This will be a TSV file in the same format as described [above](#download-and-distribute-promotional-codes). The **Available** and **Redeemed** numbers in the file will reflect the current status for your code redemption.
- 
+You can also download an order from this table, as described above. 
 
  
 

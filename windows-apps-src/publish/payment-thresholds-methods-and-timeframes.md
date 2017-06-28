@@ -3,7 +3,7 @@ author: jnHs
 Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
 title: Payment thresholds, methods, and timeframes
 ms.author: wdg-dev-content
-ms.date: 04/13/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,22 +22,24 @@ For any given country/region, we will either use ACH/SEPA or wire transfer to de
 
 We'll typically send any payment due in a given month by the 15th day of that month, but it will take additional time for the payment to reach your account. The amount of days will vary depending on the payment method we use for your account, as described below. 
 
-> **Note** The days shown below are approximate; any given payout may take a longer or shorter amount of time.
+> [!NOTE]
+> The days shown below are approximate; any given payout may take a longer or shorter amount of time.
 
 
-| Payment method | Number of days to reach payout account |
+| Payment method     | Number of days to reach payout account     |
 |--------------------|--------------------------------------------|
-| PayPal | 1 business day |	
-| ACH/SEPA |2-3 business days |
-| Wire Transfer | 7-10 business days |
+| PayPal             | 1 business day                             |	
+| ACH/SEPA           | 2-3 business days                          |
+| Wire Transfer      | 7-10 business days                         |
 
 &nbsp;
 
-To see the countries/regions in which these payment methods are used for each marketplace, see the tables below.
+To see the countries/regions in which these payment methods are used for each marketplace, review the tables below.
 
 ## Payment thresholds and methods
 
-> **Note** Payment thresholds are listed in USD. In some markets, the equivalent in local currency is used. 
+> [!NOTE]
+> Payment thresholds are listed here in USD. In some markets, the equivalent in local currency is used. 
 
 - [Windows Store](#windows-store)
 - [Microsoft Advertising](#microsoft-advertising)

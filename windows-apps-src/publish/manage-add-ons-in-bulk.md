@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually.
 title: Manage add-ons in bulk
@@ -33,7 +33,7 @@ The .csv file contains the following columns.
 | Product lifetime	| For a Durable add-on, this is either **Forever** (for a product that never expires) or a set duration. Acceptable duration values are: **1day, 3days, 5days, 7days, 14days, 30days, 60days, 90days, 180days, 365days**	| Yes (if Product type is Durable) |
 | Content type	| The [content type](enter-add-on-properties.md#content-type) of the add-on. For most add-ons. this should be **ElectronicSoftwareDownload**. Other acceptable values are: **ElectronicBooks, ElectronicMagazineSingleIssue, ElectronicNewspaperSingleIssue, MusicDownload, MusicStreaming, OnlineDataStorageServices, VideoDownload, VideoStreaming, SoftwareAsAService** |	Yes |
 | Tag	| Optional [Tag](enter-add-on-properties.md#custom-developer-data) (also known as **Custom developer data**) info used in your app’s implementation. | No |
-| Base price	| The [price tier](set-add-on-pricing-and-availability.md#base-price) at which you want to offer the add-on. Must either be **Free** or a valid price tier in the format **0.99USD**. |	Yes |
+| Base price	| The price tier at which you want to offer the add-on. Must either be **Free** or a valid price tier in the format **0.99USD**. |	Yes |
 | Release date	| The date at which you want to publish the add-on. Acceptable values are **Immediate**, **Manual**, or a date string that complies with the [ISO 8601 standard](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Yes |
 | Titles	| The name that customers will see for the add-on, preceded by the language code and a semicolon. For example, to use the title “Example Title” in English/United States, you would *enter en-us;Example Title*. Additional titles for other languages can be separated by semicolons. Each title must be 100 characters or fewer. 	| Yes |
 |Descriptions	| Optional additional info to display to customers, preceded by the language-locale code and a semicolon. For example, to use the description “This is an example” in English/United States, you would enter *en-us;This is an example*. Additional titles for other languages can be separated by semicolons. Each description must be 200 characters or fewer.	| No |

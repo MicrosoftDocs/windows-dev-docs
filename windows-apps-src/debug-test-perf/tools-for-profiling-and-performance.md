@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: Tools for profiling and performance
 description: Microsoft provides several tools to help you improve the performance of your Universal Windows Platform (UWP) app.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

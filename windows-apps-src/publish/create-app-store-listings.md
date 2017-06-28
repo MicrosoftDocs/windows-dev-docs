@@ -107,7 +107,7 @@ The items described below help customers discover and understand your product. T
 
 ### Search terms
 
-Search terms (formerly called keywords) are single words or short phrases that are not displayed to customers, but can help your app appear in search results related to the term. You can include up to 7 search terms with a maximum of 30 characters each, and can use no more than 21 separate words across all search temrs.
+Search terms (formerly called keywords) are single words or short phrases that are not displayed to customers, but can help your app appear in search results related to the term. You can include up to 7 search terms with a maximum of 30 characters each, and can use no more than 21 separate words across all search terms.
 
 When adding search terms, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any search terms that are not actually relevant to your app.
 

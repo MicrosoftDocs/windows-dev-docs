@@ -4,7 +4,7 @@ title: DirectX programming
 description: Programming UWP games using DirectX.
 ms.assetid: ba77b081-b8c0-4674-b8bf-7a94466a67f7
 ms.author: joanlee
-ms.date: 06/13/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -58,7 +58,7 @@ This section provides information about developing UWP games with DirectX.
 </tbody>
 </table>
  
-
+For DirectX programming guides, go to [Direct3D 11 Graphics](https://msdn.microsoft.com/library/windows/desktop/ff476080.aspx) and [Direct3D 12 Graphics](https://msdn.microsoft.com/library/windows/desktop/dn903821.aspx).
  
 
 

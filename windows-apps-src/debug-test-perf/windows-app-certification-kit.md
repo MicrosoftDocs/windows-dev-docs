@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows App Certification Kit
 description: To give your app the best chance of being published on the Windows Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -23,7 +23,7 @@ Prerequisites for testing a Universal Windows app:
 
 -   You must install and run Windows 10.
 -   You must install [Windows App Certification Kit version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), which is included in the Windows Software Development Kit (SDK) for Windows 10.
--   You must have a valid developer license for your computer. See [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578) to learn how.
+-   You must [enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 -   You must deploy the Windows app that you want to test to your computer.
 
 **A note about in-place upgrades**

@@ -1,13 +1,13 @@
----
-author: shawjohn
+﻿---
+author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Create customer segments
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, segment, segments, targeted group, customers
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ---
 
@@ -15,21 +15,24 @@ ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 
 There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in Windows Dev Center by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
 
-For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Windows Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
+For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Windows Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. 
 
-> **Tip** Segments can be used to [send targeted push notifications](send-push-notifications-to-your-apps-customers.md) to a group of customers as part of an engagement campaign.
+We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
+
+> [!TIP]
+> Segments can be used to send [targeted notifications](send-push-notifications-to-your-apps-customers.md) or [targeted offers](use-targeted-offers-to-maximize-engagement-and-conversions.md) to a group of customers as part of your engagement campaigns.
 
 ## To create a customer segment
 
-1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select **Customers** in the top menu.
+1.	In the Windows Dev Center dashboard, expand **Engage** in the left navigation menu and then select **Customer groups**.
 2.	On the **Customer groups** page, do one of the following:
- - In the **My customer groups** section, select **Create new group** to define a segment from scratch. Be sure that **Segment** is selected in the **Group type** dropdown list.
+ - In the **My customer groups** section, select **Create new group** to define a segment from scratch. On the next page, select the **Segment** radio button.
  - In the **Segment templates** section, select **Copy to use a predefined segment** that you can use as is or modify to suit your needs.
 3.	In the **Include customers from this app** list, select one of your apps to target.
 4.	In the **Segment name** box, choose a name for your segment.
 5.	In the **Define inclusion conditions** section, choose the filter criteria for the segment.
 
-    You can choose from a variety of filter criteria, including **Acquisition source**, **Acquisitions**, **Demographic**, **Rating**, **Store acquisitions**, **Store purchases**, and **Store spend**.
+    You can choose from a variety of filter criteria, including **Acquisitions**, **Acquisition source**, **Demographic**, **Rating**, **Store acquisitions**, **Store purchases**, and **Store spend**.
 
     For example, if you wanted to create a segment that only included your app customers who are 18- to 24-years old, you’d select the filter criteria [**Demographic**] [**Age group**] [**is**] [**18 to 24**] from the drop-down lists.
 
@@ -40,7 +43,8 @@ For example, you could create a segment that includes only customers who are age
     ![Example of filter criteria for a segment](images/create-segment-inclusions.png)
 6. Select **Save**.
 
-> **Important** You won't be able to use a segment that includes too few customers. If your segment definition does not include enough customers, you can adjust the segment criteria, or try again later, when your app may have acquired more customers that meet your segment criteria.
+> [!IMPORTANT]
+> You won't be able to use a segment that includes too few customers. If your segment definition does not include enough customers, you can adjust the segment criteria, or try again later, when your app may have acquired more customers that meet your segment criteria.
 
 Things to keep in mind about customer segments:
 - After you save a segment, it takes 24 hours before you’ll be able to use it for [targeted push notifications](send-push-notifications-to-your-apps-customers.md).

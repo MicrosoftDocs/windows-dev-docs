@@ -51,7 +51,7 @@ The next table summarizes some of the differences for your app at each of the fo
 
 Visual Studio includes the tools you need to configure your application package, such as the manifest editor and the Package Creation Wizard. To use these tools, you need a UWP project that will act as the Windows app package container for your app. While you can use any UWP project (including C#, VB.NET, C++, or JavaScript), there are some known issues with C#, VB.NET, and C++ projects (see the [Known Issues](#known-issues-anchor) section later in this document), so we will use JavaScript for this example.
 
-If you want to debug your app in the context of the Windows app package application model, you will need to add another project that will enable the F5 Windows app package debugging. For more information see the section [Run, debug, and test a packaged desktop app (Desktop Bridge)](#debugging-anchor).
+If you want to debug your app in the context of the Windows app package application model, you will need to add another project that will enable the F5 Windows app package debugging. For more information see the section [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md).
 
 Let's start with Step 1 in the journey.
 
@@ -235,80 +235,11 @@ You should also build for Release, and in this case, it's mandatory to specify w
 
 ![visual studio appxupload 6](images/desktop-to-uwp/net-6.png)
 
-To create the new appxupload file, we will create a new zip archive to include the generated appxsym and appxbundle from the _Test folder.
+To create the new appxupload file, we will create a new zip archive to include the generated appxsym and appxbundle from the _Test folder_.
 
 Create a new zip file that contains the appxsym and appxbundle files, and then rename the extension to appxupload.
 
 ![file explorer](images/desktop-to-uwp/net-7.png)
-
-<span id="debugging-anchor" />
-## Debugging your Desktop Bridge app
-
-Although you can start your projects from Visual Studio without debugging (Ctrl + F5),there is a known issue where Visual Studio is not able to attach automatically to the running process. However, you can attach later using one of the next attach methods:
-
-### Attach to the running App
-
-#### Attach to an existing process
-
-Once you have successfully launched your app using Ctrl + F5, you can attach to your Win32 process; however, you will not be able to debug .NET Native modules.
-
-![visual studio attach to process](images/desktop-to-uwp/net-8.png)
-
-#### Attach to an installed App
-
-You can also attach to any existing Windows app package, using the option Debug -> Other Debug Targets -> Debug Installed App Package.
-
-![visual studio attach to process](images/desktop-to-uwp/net-9.png)
-
-Where you can select your local machine, or connect to a remote one.
-
-![visual studio attach to process](images/desktop-to-uwp/net-10.png)
-
-Using this option, you should be able to debug .NET Native code.
-
-### Use Visual Studio extension to debug your Desktop Bridge app
-
-If you prefer to run debug your app using F5, you need to install the Visual Studio 2017 extension [Desktop Bridge Debugging Project](https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.DesktoptoUWPPackagingProject) from the Visual Studio gallery.
-
-This project allows you to debug any Win32 app that is being migrated to UWP using Visual Studio (as described in this document) or using the Desktop App Converter.
-
-#### Add the debugging project to your solution
-
-To start, add a new Desktop Bridge Debugging Project to your project to your solution.
-
-![visual studio new project](images/desktop-to-uwp/net-11.png)
-
-To configure this project, you need to define the PackageLayout property in the properties window for each configuration/platform you want to use for debugging.
-To configure for Debug/x86 we will set the package layout property to the folder bin\x86\debug folder of the UWP project using a relative path: `..\MyDesktopApp.Package\bin\x86\Debug`.
-
-![visual studio project config](images/desktop-to-uwp/net-12.png)
-
-And edit the AppXFileLayout.xml file to specify your entry point:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0"
-         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <MyProjectOutputPath>$(PackageLayout)</MyProjectOutputPath>
-  </PropertyGroup>
-  <ItemGroup>
-    <LayoutFile Include="$(MyProjectOutputPath)\win32\MyDesktopApp.exe">
-      <PackagePath>$(PackageLayout)\win32\MyDesktopApp.exe</PackagePath>
-    </LayoutFile>
-  </ItemGroup>
-</Project>
-```
-
-Finally, you should configure your solution dependencies to make sure that the projects are built in the proper order.
-
-As an example, let's review the solution created for Step 3.
-
-![visual studio solution explorer](images/desktop-to-uwp/net-13.png)
-
-To configure the build order, you can use the Project Dependencies configuration. Right-click your solution and select the Project Dependencies option. Once you set the right dependencies, you can validate the build order as shown below (for Step 3):
-
-![visual studio build order](images/desktop-to-uwp/net-14.png)
 
 <span id="known-issues-anchor" />
 ## Known issues with C#/VB.NET and C++ UWP projects
@@ -320,6 +251,14 @@ If you prefer to use a C# project to package your app, you need to be aware of t
 - **Win32 Binaries stored in the root folder of the UWP project are removed in Release**. If you don't use a folder to store your Win32 binaries, the .NET Native compiler will remove those from the final package, resulting in a manifest validation error since the executable entry point can't be found.
 
 ## Next steps
+
+**Run your app / find and fix issues**
+
+See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
+
+**Distribute your app**
+
+See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
 
 **Find answers to specific questions**
 

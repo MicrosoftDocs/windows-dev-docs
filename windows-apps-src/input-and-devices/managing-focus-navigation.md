@@ -40,34 +40,25 @@ remote control.
 
 ### Projection
 
-Projection is the navigation strategy used through Windows 10
-Anniversary Update. with possible values of **Auto** (default),
-**Projection,** **NavigationDirectionDistance, or RectilinearDistance**
+The Projection strategy moves focus to the first element encountered when projecting the edge of the currently focused element in the  direction of navigation.
 
-Basically, it navigates to the element which has the highest surface in
-the projection of edge of the focused element in the direction of
-navigation. However, there are other factors that influence the
-algorithm such as the previously focused element and proximity to the
-axis of the navigation direction.
+> [!NOTE]
+> Other factors, such as the previously focused element and proximity to the axis of the navigation direction, can influence the result.
 
 ![projection](images/keyboard/projection.png)
 
-*When A has focus, the down arrow moves focus to D because the
-heuristic algorithm uses a projection of the focused control*
+*Focus moves from A to D on down navigation based on projection of the bottom edge of A*
 
 ### NavigationDirectionDistance
 
-The NavigationDirectionDistance strategy moves focus to the element
-closest to the primary axis of the navigation direction.
+The NavigationDirectionDistance strategy moves focus to the element closest to the axis of the navigation direction.
 
-Borderline is used as directional Filter. In case of same distance, use
-the Secondary distance. Finally, choose the top/left control if the
-distance is still the same.
+The edge of the bounding rect corresponding to the navigation direction is extended and projected to identify candidate targets. The first element encountered is identified as the target. In the case of multiple candidates, the closest element is identified as the target. If there are still multiple candidates, the topmost/leftmost element is identified as the candidate.
 
 ![navigation direction distance](images/keyboard/navigation-direction-distance.png)
 
-*When A has focus, pressing the down arrow once moves the focus to C;
-pressing down again moves focus from C to B*
+*Focus moves from A to C and then from C to B on down navigation*
+
 
 ### RectilinearDistance
 

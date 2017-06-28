@@ -6,7 +6,7 @@ This page covers the basic steps for contributing to our developer documentation
 
 ## Public and private repos
 
-The driver docs are hosted in two different repos which are then merged and updated to a single site: one repo is for contributions from anyone and the other is only for Microsoft employees.
+The UWP conceptual docs are hosted in two different repos which are then merged and updated to a single site: one repo is for contributions from anyone and the other is only for Microsoft employees.
 
 If you are ***not*** a Microsoft employee, work in the [public content repository](https://github.com/MicrosoftDocs/windows-uwp).
 

@@ -715,8 +715,7 @@ While, the previous two examples require the user to press a button to start rec
 
 For this example, we'll use the same UI and stroke settings as the previous international recognition example.
 
-1. These global objects ([InkAnalyzer](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer), [InkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstroke), [InkAnalysisResult](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult), [DispatcherTimer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer)) are used throughout our app.
-    
+1. These global objects ([InkAnalyzer](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalyzer), [InkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstroke), [InkAnalysisResult](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis.inkanalysisresult), [DispatcherTimer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.dispatchertimer)) are used throughout our app.    
 ```csharp
     // Stroke recognition globals.
     InkAnalyzer inkAnalyzer;
@@ -770,8 +769,7 @@ For this example, we'll use the same UI and stroke settings as the previous inte
     private void inkCanvas_StrokeStarted(InkStrokeInput sender, PointerEventArgs args)
     {
         recoTimer.Stop();
-    }
-
+    }    
     // Handler for the InkPresenter StrokesCollected event.
     // Stop the timer and add the collected strokes to the InkAnalyzer.
     // Start the recognition timer when the user stops inking (by 
@@ -791,14 +789,13 @@ For this example, we'll use the same UI and stroke settings as the previous inte
             inkAnalyzer.SetStrokeDataKind(stroke.Id, InkAnalysisStrokeKind.Writing);
         }
         recoTimer.Start();
-    }
-
+    }    
     // Override the Page OnNavigatingFrom event handler to 
     // stop our timer if user leaves page.
     protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
     {
         recoTimer.Stop();
-    }
+    } 
 ```
 
 4.  Finally, we perform the handwriting recognition. For this example, we use the [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) event handler of a [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) to initiate the handwriting recognition.
