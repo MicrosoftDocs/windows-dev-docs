@@ -51,7 +51,7 @@ Out-of-band pairing allows apps to connect to a Point-of-Service peripheral with
 | *POSPrinter: Bluetooth - Generic (ESC/POS only)* | CCD5B810-95B9-4320-BA7E-78C223CAF418 |
 | *Cash Drawer: Network - APG* | E619E2FE-9489-4C74-BF57-70AED670B9B0 |
 | *Cash Drawer: Bluetooth - APG* | 332E6550-2E01-42EB-9401-C6A112D80185 |
-| *Barcode Scanner: Bluetooth (SPP-SSI) * | 6E7C8178-A006-405E-85C3-084244885AD2 |
+| *Barcode Scanner: Bluetooth (SPP-SSI)* | 6E7C8178-A006-405E-85C3-084244885AD2 |
 
 **providerName** - The name of the provider DLL. The default providers are:
 
