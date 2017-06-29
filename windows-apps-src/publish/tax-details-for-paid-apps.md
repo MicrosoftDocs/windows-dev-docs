@@ -4,7 +4,7 @@ Description: To understand your tax considerations for price selection, payout i
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 07/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -34,7 +34,7 @@ To understand your tax considerations for price selection, payout implications, 
 | Antigua and Barbuda              | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Argentina                        | Price being selected is the final sale price and includes any applicable taxes.  | 70% of selected price  | Developer          |
 | Armenia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Australia                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
+| Australia                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of (selected price minus 10% tax)                 | Microsoft          |
 | Austria                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 20% tax)     | Microsoft          |
 | Azerbaijan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | The Bahamas                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
