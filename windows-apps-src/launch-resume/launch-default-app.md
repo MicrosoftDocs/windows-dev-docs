@@ -75,7 +75,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-In some cases, the operating system will prompt the user to see if the actually want to switch apps.
+In some cases, the operating system will prompt the user to see if they actually want to switch apps.
 
 ![a warning dialog overlayed on a grayed out background of the app. the dialog asks the user if they want to switch apps and has ‘yes’ and ‘no’ buttons in the bottom right. the ‘no’ button is highlighted.](images/warningdialog.png)
 
