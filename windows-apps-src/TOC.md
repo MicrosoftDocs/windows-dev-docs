@@ -114,6 +114,7 @@
 ##### [Special tile templates](controls-and-patterns/tiles-and-notifications-special-tile-templates-catalog.md)
 ##### [Send local tile notfication](controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification.md)
 ##### [Primary tile APIs](controls-and-patterns/tiles-and-notifications-primary-tile-apis.md)
+#### [Pin your app to the taskbar](controls-and-patterns/pin-to-taskbar.md)
 #### [Toast notifications](controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)
 ##### [Toast content](controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)
 ##### [Toast content schema](controls-and-patterns/tiles-and-notifications-toast-schema.md)
