@@ -313,7 +313,6 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 ## Perform setup tasks
 
 * [Create firewall exception for your app](#rules)
-* [Start an executable file when users log into Windows](#executable)
 
 <span id="rules" />
 ### Create firewall exception for your app
@@ -377,67 +376,6 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<span id="executable" />
-### Start an executable file when users log into Windows
-
-Startup tasks allow your app to run an executable automatically whenever a user logs on.
-
-> [!NOTE]
-> The user has to start your app at least one time to register this startup task.
-
-Your app can declare multiple startup tasks. Each task starts independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name that you specify in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks.
-
-Users can manually disable your app's startup task by using Task Manager. If a user disables a task, you can't programmatically re-enable it.
-
-#### XML namespace
-
-http://schemas.microsoft.com/appx/manifest/desktop/windows10
-
-#### Elements and attributes of this extension
-
-```XML
-<Extension
-    Category="windows.startupTask"
-    Executable="[ExecutableName]"
-    EntryPoint="Windows.FullTrustApplication">
-	<StartupTask
-      TaskId="[TaskID]"
-      Enabled="true"
-      DisplayName="[DisplayName]" />
-</Extension>
-```
-
-|Name |Description |
-|-------|-------------|
-|Category |Always ``windows.startupTask``.|
-|Executable |The relative path to the executable file to start. |
-|TaskId |A unique identifier for your task. Using this identifier, your app can call the APIs in the [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task. |
-|Enabled |Indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). |
-|DisplayName |The name of the task that appears in Task Manager. You can localize this string by using ```ms-resource```. |
-
-#### Example
-
-```XML
-<Package
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
-  IgnorableNamespaces="desktop">
-  <Applications>
-    <Application>
-      <Extensions>
-        <desktop:Extension
-          Category="windows.startupTask"
-          Executable="bin\MyStartupTask.exe"
-          EntryPoint="Windows.FullTrustApplication">
-     	  <desktop:StartupTask
-          TaskId="MyStartupTask"
-          Enabled="true"
-          DisplayName="My App Service" />
-        </desktop:Extension>
-      </Extensions>
-    </Application>
-  </Applications>
- </Package>
-```
 ## Integrate with File Explorer
 
 Help users organize your files and interact with them in familiar ways.
@@ -775,6 +713,8 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 * [Start your app by using a protocol](#protocol)
 * [Start your app by using an alias](#alias)
+* [Start an executable file when users log into Windows](#executable)
+* [Restart automatically after receiving an update from the Windows Store](#updates)
 
 <span id="protocol" />
 ### Start your app by using a protocol
@@ -883,6 +823,86 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Category |Always ``windows.fileTypeAssociation``.
 |Name |A unique Id for your app. This Id is used internally to generate a hashed [programmatic identifier (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx) associated with your file type association. You can use this Id to manage changes in future versions of your app.   |
 |FileType |The file extension supported by your app. |
+
+<span id="executable" />
+### Start an executable file when users log into Windows
+
+Startup tasks allow your app to run an executable automatically whenever a user logs on.
+
+> [!NOTE]
+> The user has to start your app at least one time to register this startup task.
+
+Your app can declare multiple startup tasks. Each task starts independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name that you specify in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks.
+
+Users can manually disable your app's startup task by using Task Manager. If a user disables a task, you can't programmatically re-enable it.
+
+#### XML namespace
+
+http://schemas.microsoft.com/appx/manifest/desktop/windows10
+
+#### Elements and attributes of this extension
+
+```XML
+<Extension
+    Category="windows.startupTask"
+    Executable="[ExecutableName]"
+    EntryPoint="Windows.FullTrustApplication">
+	<StartupTask
+      TaskId="[TaskID]"
+      Enabled="true"
+      DisplayName="[DisplayName]" />
+</Extension>
+```
+
+|Name |Description |
+|-------|-------------|
+|Category |Always ``windows.startupTask``.|
+|Executable |The relative path to the executable file to start. |
+|TaskId |A unique identifier for your task. Using this identifier, your app can call the APIs in the [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) class to programmatically enable or disable a startup task. |
+|Enabled |Indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). |
+|DisplayName |The name of the task that appears in Task Manager. You can localize this string by using ```ms-resource```. |
+
+#### Example
+
+```XML
+<Package
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  IgnorableNamespaces="desktop">
+  <Applications>
+    <Application>
+      <Extensions>
+        <desktop:Extension
+          Category="windows.startupTask"
+          Executable="bin\MyStartupTask.exe"
+          EntryPoint="Windows.FullTrustApplication">
+     	  <desktop:StartupTask
+          TaskId="MyStartupTask"
+          Enabled="true"
+          DisplayName="My App Service" />
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+ </Package>
+```
+
+<span id="updates" />
+### Restart automatically after receiving an update from the Windows Store
+
+If your app is open when users install an update to it, the app closes.
+
+If you want that app to restart after the update completes, call the  [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function in every process that you want to restart.
+
+Each active window in your app receives a [WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx) message. At this point, your app can call the [RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx) function again to update the command line if necessary.
+
+When each active window in your app receives the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message, your app should save data and shut down.
+
+>[!NOTE]
+Your active windows also receive the [WM_CLOSE](https://msdn.microsoft.com/library/windows/desktop/ms632617.aspx) message in case the app doesn't handle the [WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx) message.
+
+At this point, your app has 30 seconds to close it's own processes or the platform terminates them forcefully.
+
+After the update is complete, your app restarts.
 
 ## Work with other applications
 
