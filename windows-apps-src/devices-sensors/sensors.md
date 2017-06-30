@@ -1,5 +1,5 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: Sensors
 description: Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device.

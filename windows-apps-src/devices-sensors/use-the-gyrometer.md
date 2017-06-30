@@ -1,5 +1,5 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: Use the gyrometer
 description: Learn how to use the gyrometer to detect changes in user movement.
