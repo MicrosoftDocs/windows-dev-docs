@@ -1,20 +1,18 @@
 ---
-author: anbare
-Description: You can programmatically pin your own app to the taskbar, just like you can pin yourself to Start. And you can check if it's currently pinned.
-title: Taskbar APIs
-label: Taskbar APIs
+author: mijacobs
+Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
+title: Pin your app to the taskbar
 template: detail.hbs
-ms.author: wdg-dev-content
+ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile
 ---
-# Taskbar APIs
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Pin your app to the taskbar
 
-You can programmatically pin your own app to the taskbar, just like you can [pin yourself to Start](tiles-and-notifications-primary-tile-apis.md). And you can check if it's currently pinned.
+You can programmatically pin your own app to the taskbar, just like you can [pin your app to the Start menu](tiles-and-notifications-primary-tile-apis.md). And you can check whether it's currently pinned.
 
 ![Taskbar](images/taskbar/taskbar.png)
 
@@ -112,5 +110,5 @@ This will return a boolean representing whether your app is now pinned to the ta
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
-* [Pin app to Start](tiles-and-notifications-primary-tile-apis.md)
+* [Pin an app to the Start menu](tiles-and-notifications-primary-tile-apis.md)
 * [Tiles, badges, and notifications](tiles-badges-notifications.md)

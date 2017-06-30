@@ -106,6 +106,6 @@ bool isPinned = await StartScreenManager.GetDefault().RequestAddAppListEntryAsyn
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
-* [Pin to taskbar](taskbar.md)
+* [Pin to taskbar](pin-to-taskbar.md)
 * [Tiles, badges, and notifications](tiles-badges-notifications.md)
 * [Adaptive Tile Documentation](tiles-and-notifications-create-adaptive-tiles.md)
