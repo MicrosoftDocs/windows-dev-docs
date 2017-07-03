@@ -32,7 +32,7 @@ In order to understand how Windows 10 allows you to target different classes of 
 
 ![device families](images/device-family-tree.png)
 
-A device family defines a set of APIs and is versioned. A device family is the foundation of an OS. PCs run the desktop OS, which is based on the desktop device family. Phones and tablets run the mobile OS, which is based on the mobile device family.
+A device family defines a set of APIs and is versioned. A device family is the foundation of an OS. PCs and tablets run the desktop OS, which is based on the desktop device family. Phones run the mobile OS, which is based on the mobile device family.
 
 Each child device family adds its own APIs to the ones it inherits. The resulting union of APIs in a child device family is guaranteed to be present in the OS based on that device family, and on every device running that OS.
 
