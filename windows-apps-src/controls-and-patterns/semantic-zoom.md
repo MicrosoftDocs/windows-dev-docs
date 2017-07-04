@@ -81,7 +81,7 @@ Before you use a semantic zoom, you should understand how to use a list view wit
 </SemanticZoom>
  ```
  
-The examples here are taken from the SemanticZoom page of the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992). You can download the sample to see the complete code incuding the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
+The examples here are taken from the SemanticZoom page of the [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992). You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.
   
 **Define the zoomed-in view**
 
@@ -100,7 +100,7 @@ Here's the GridView control for the zoomed-in view. The zoomed-in view should di
 </SemanticZoom.ZoomedInView>
 ```
  
-The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` recsource. The look of the items is defined in the `ZoomedInTemplate` resource. 
+The look of the group headers is defined in the `ZoomedInGroupHeaderTemplate` resource. The look of the items is defined in the `ZoomedInTemplate` resource. 
 
 ```xaml
 <DataTemplate x:Key="" x:DataType="data:ControlInfoDataGroup">
