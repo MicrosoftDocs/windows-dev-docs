@@ -4,7 +4,7 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 06/23/2017
+ms.date: 07/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,7 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 
 | Country/region  | Mobile operators     |
 |-----------------|----------------------|
-| Austria         | Hutchison 3G Austria |
+| Austria         | Hutchison 3G Austria, A1 Telekom |
 | Belgium         | Base, Proximus       |
 | Canada          | Telus                |
 | Denmark         | 3                    |
@@ -40,11 +40,13 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 | Italy           | Wind, Tre            |
 | Norway          | Telenor              |
 | Poland          | Orange               |
+| Romania         | Orange               |
 | Russia          | Beeline              |
+| Spain           | Orange               |
 | Sweden          | Telenor, 3           |
 | Switzerland     | Swisscom             |
 | Turkey          | Turkcell             |
-| United States   | Sprint               |
+| United States   | Sprint, Verizon      |
 | United Kingdom  | O2, 3 UK             |
 
  
