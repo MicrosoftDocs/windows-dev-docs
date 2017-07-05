@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 06/05/2017
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -645,6 +645,18 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
         <td>[Unity Manual / Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
     </tr>
     <tr>
+        <td>How to add interactivity to your game using Mixer Interactive</td>
+        <td>[Getting started guide](https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started)</td>
+    </tr>
+    <tr>
+        <td>Mixer SDK for Unity</td>
+        <td>[Mixer Unity plugin](https://www.assetstore.unity3d.com/en/#!/content/88585)</td>
+    </tr>
+    <tr>
+        <td>Mixer SDK for Unity reference documentation</td>
+        <td>[API reference for Mixer Unity plugin](https://dev.mixer.com/reference/interactive/csharp/index.html)</td>
+    </tr>
+    <tr>
         <td>Publish your Unity game to Windows Store</td>
         <td>[Porting guide](https://unity3d.com/partners/microsoft/porting-guides)</td>
     </tr>
@@ -1067,7 +1079,41 @@ A UI map is a layout of game navigation and menus expressed as a flowchart. The 
         <td>[Best Practices: UI Map](http://go.microsoft.com/fwlink/?LinkId=535008)</td>
     </tr>
 </table>
- 
+
+### Game audio
+
+Guides and references for implementing audio in games using XAudio2, XAPO, and Windows Sonic. XAudio2 is a low-level audio API that provides signal processing and mixing foundation for developing high performance audio engines. XAPO API allows the creation of cross-platform audio processing objects (XAPO) for use in XAudio2 on both Windows and Xbox. Windows Sonic audio support allows you to add Dolby Atmos for Home Theater, Dolby Atmos for Headphones, and Windows HRTF support to your game or streaming media application.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>XAudio2 APIs</td>
+        <td>[Programming guide and API reference for XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx)</td>
+    </tr>
+    <tr>
+        <td>Create cross-platform audio processing objects</td>
+        <td>[XAPO Overview](https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx)</td>
+    </tr>
+    <tr>
+        <td>Intro to audio concepts</td>
+        <td>[Audio for games](working-with-audio-in-your-directx-game.md)</td>
+    </tr>
+    <tr>
+        <td>Windows Sonic overview</td>
+        <td>[Spatial sound](https://msdn.microsoft.com/library/windows/desktop/mt807491.aspx)</td>
+    </tr>
+    <tr>
+        <td>Windows Sonic spatial sound samples</td>
+        <td>[Xbox Advanced Technology Group audio samples](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/Audio)</td>
+    </tr>
+    <tr>
+        <td>Learn how to integrate Windows Sonic into your games (video)</td>
+        <td>[Introducing Spatial Audio Capabilities for Xbox and Windows](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002)</td>
+    </tr>
+</table>
 
 ### DirectX development
 
@@ -1325,6 +1371,10 @@ Some portions of DirectX development can be nuanced and complex. When you get to
     <tr>
         <td>PIX on Windows</td>
         <td>[Performance tuning and debugging tool for DirectX 12 on Windows](https://blogs.msdn.microsoft.com/pix/2017/01/17/introducing-pix-on-windows-beta/)</td>
+    </tr>
+    <tr>
+        <td>Debugging and validation tools for D3D12 development (video)</td>
+        <td>[D3D12 Performance Tuning and Debugging with PIX and GPU Validation](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003)</td>
     </tr>
     <tr>
         <td>Optimizing graphics and performance (video)</td>
