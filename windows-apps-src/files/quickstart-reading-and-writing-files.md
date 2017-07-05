@@ -141,8 +141,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     {
         // Create the buffer
         IBuffer^ buffer = CryptographicBuffer::ConvertStringToBinary
-        ("What fools these mortals be", BinaryStringEncoding::Utf8);
-        
+        ("What fools these mortals be", BinaryStringEncoding::Utf8);      
         // Write bytes to a file using a buffer
         create_task(FileIO::WriteBufferAsync(sampleFile, buffer));
     });
