@@ -4,7 +4,7 @@ Description: You can cross-promote your app with apps published by other develop
 title: About community ads
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 # About community ads
 
-If your app uses an **AdControl** to [display banner ads](../monetize/display-ads-in-your-app.md), you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
+If your app [displays banner or banner interstitial ads](../monetize/display-ads-in-your-app.md), you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
 
 Here's how this program works:
 

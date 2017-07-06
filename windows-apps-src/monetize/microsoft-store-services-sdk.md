@@ -1,17 +1,17 @@
 ---
 author: mcleanbyron
 Description: The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
-title: Microsoft Store Services SDK
+title: Engage customers with the Microsoft Store Services SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK
 ---
 
-# Microsoft Store Services SDK
+# Engage customers with the Microsoft Store Services SDK
 
 The Microsoft Store Services SDK provides features that help you make more money and engage with customers in your Universal Windows Platform (UWP) apps, such as sending targeted Dev Center notifications to your apps and running A/B experiments in your apps. This SDK is an extension for Visual Studio 2015 and later versions of Visual Studio.
 

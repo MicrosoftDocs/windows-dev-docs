@@ -4,7 +4,7 @@ Description: If your app uses ad mediation or displays banner or interstitial ad
 title: Monetize with ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 07/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,11 +13,13 @@ keywords: windows 10, uwp
 
 # Monetize with ads
 
-Each app in your dashboard includes a **Monetization** &gt; **Monetize with ads** page. You can manage your use of ads for the following scenarios on this page:
+Each app in your dashboard includes a **Monetization** &gt; **Monetize with ads** page. Use this page to manage your use of ads for the following development scenarios in your app:
 
 * Your UWP app uses an [AdControl](https://msdn.microsoft.com/en-us/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), or [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) from the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdControl** or **InterstitialAd** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
 * Your Windows 8.x or Windows Phone 8.x app uses an **AdMediatorControl** from the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk).
+
+For more information about these development scenarios, see [Display ads in your app with the Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md).
 
 <span id="create-ad-unit" />
 ## Create ad units
@@ -49,7 +51,7 @@ The new ad unit appears at the top of the list in the **Available ad units** sec
 Your ad units appear in a table at the bottom of this section. For each ad unit you will see an **Application ID** and an **Ad unit ID**. To show ads in your app, you'll need to use these values in your code:
 
 -   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object. For more information, see [AdControl in XAML and .NET](../monetize/adcontrol-in-xaml-and--net.md) and [AdControl in HTML5 and JavaScript](../monetize/adcontrol-in-html-5-and-javascript.md).
--   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
+-   If your app shows interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object. For more information, see [Interstitial ads](../monetize/interstitial-ads.md).
 -   If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor. For more information, see [Native ads](../monetize/native-ads.md).
 
 > [!IMPORTANT]
@@ -90,29 +92,29 @@ To configure ad mediation settings for a UWP ad unit in your app:
 
     The following paid networks are currently supported. Note that some of these networks are [not available in all markets](#network-markets).
 
-    -   **AOL and AppNexus**. This is a Microsoft-managed ad network that serves ads through our partner networks, AOL and AppNexus.
+    -   **AOL and AppNexus**. This is a Microsoft-managed ad network that serves ads through our partner networks, AOL and AppNexus. This network is supported for **Banner** and **Video interstitial** ad units.
         > [!NOTE]
-        > **AOL and AppNexus** is always ranked first in the **Paid ad networks** list for banner ad units, and it cannot be changed to a lower ranking for these types of ads.
+        > **AOL and AppNexus** is always ranked first in the **Paid ad networks** list for **Banner** ad units, and it cannot be changed to a lower ranking for these types of ads.
 
-    -   **Microsoft App install ads**. Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem.  
+    -   **AppNexus (direct)**: Select this option to serve video interstitial ads from [AppNexus](https://www.appnexus.com). This network is supported for **Video interstitial** and **Native** ad units.
 
-    -   **AppNexus (direct)**: Select this option to serve video interstitial ads from [AppNexus](https://www.appnexus.com).
+    -   **Microsoft App install ads**. Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](create-an-ad-campaign-for-your-app.md). This network is supported for **Banner**, **Banner interstitial**, and **Native** ad units.
 
-    -   **Smaato**: Select this option to serve ads from [Smaato](https://www.smaato.com/).
+    -   **Smaato**: Select this option to serve ads from [Smaato](https://www.smaato.com/). This network is supported for **Banner** ad units.
 
-    -   **SpotX**: Select this option to serve ads from [SpotX](https://www.spotx.tv/).
+    -   **smartclip**: Select this option to serve ads from [smartclip](http://www.smartclip.com/). This network is supported for **Video interstitial** ad units.
 
-    -   **smartclip**: Select this option to serve ads from [smartclip](http://www.smartclip.com/).
+    -   **SpotX**: Select this option to serve ads from [SpotX](https://www.spotx.tv/). This network is supported for **Video interstitial** ad units.
 
-    -   **Taboola**: Select this option to serve ads from [Taboola](https://www.taboola.com/).
+    -   **Taboola**: Select this option to serve ads from [Taboola](https://www.taboola.com/). This network is supported for **Banner** ad units.
 
-8. In the **Other ad networks** section, select the check box in the **Active** column for each other network you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control). The networks in this section do not earn you revenue for ad impressions. Instead, these networks show ads from sources such as app promotion campaigns.
+8. If you have selected a **Banner** or **Banner interstitial** ad unit, you will also see a section named **Other ad networks**. The networks in this section do not earn you revenue for ad impressions. Instead, these networks show ads from sources such as app promotion campaigns. 
 
-    The following other networks are currently supported:
+    In the **Other ad networks** section, select the check box in the **Active** column for each other network you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control). The following other networks are currently supported:
+
+    -   **Microsoft Community ads**. If you [create a promotional ad campaign for one of your apps](create-an-ad-campaign-for-your-app.md) and configure this campaign as a [community ad campaign](about-community-ads.md), select this options to show ads from this campaign. 
 
     -   **Microsoft House ads**. If you [create a promotional ad campaign for one of your apps](create-an-ad-campaign-for-your-app.md) and configure this campaign as a [house ad campaign](about-house-ads.md), select this options to show ads from this campaign.
-
-    -   **Microsoft Community ads**. If you [create a promotional ad campaign for one of your apps](create-an-ad-campaign-for-your-app.md) and configure this campaign as a [community ad campaign](about-community-ads.md), select this options to show ads from this campaign.
 
 9. For each market where you want to override the default mediation configuration, select the market in the **Target** drop-down, and update the ad network selections and ranking.
 

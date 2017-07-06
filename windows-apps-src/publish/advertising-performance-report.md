@@ -4,7 +4,7 @@ Description: To view performance data for the ad units in your apps, use the app
 title: Advertising performance report
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,9 +14,7 @@ keywords: windows 10, uwp
 # Advertising performance report
 
 
-The **Advertising performance report** shows how your ad units are performing, including community ads and affiliate ads. 
-
-This report includes data from ad units that are associated with **AdControl** or **InterstitialAd** controls in your apps, including reports from multiple ad providers in UWP apps that use [ad mediation](monetize-with-ads.md#mediation). For more information about these controls, see [Display ads in your app](../monetize/display-ads-in-your-app.md).
+The **Advertising performance report** shows how your [ad units](monetize-with-ads.md#available-ad-units) are performing, including community ads and affiliate ads. This report includes data from multiple ad providers in UWP apps that use [ad mediation](monetize-with-ads.md#mediation). 
 
 To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**. 
 

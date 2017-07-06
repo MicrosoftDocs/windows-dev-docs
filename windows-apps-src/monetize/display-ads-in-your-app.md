@@ -2,16 +2,16 @@
 author: mcleanbyron
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: The Microsoft Advertising SDK gives you several ways to monetize your app with ads.
-title: Display ads in your app
+title: Display ads in your app with the Microsoft Advertising SDK
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, banner, ad control, interstitial
 ---
 
-# Display ads in your app
+# Display ads in your app with the Microsoft Advertising SDK
 
 Increase your revenue opportunities by putting ads in your apps. Our ad monetization platform offers a variety of ad types and supports mediation with a many popular ad networks.
 

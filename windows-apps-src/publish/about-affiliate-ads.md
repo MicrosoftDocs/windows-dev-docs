@@ -1,10 +1,10 @@
 ﻿---
 author: jnHs
-Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
+Description: If your app displays banner ads, you can increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
 title: About affiliate ads
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 07/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 # About affiliate ads
 
-If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you could increase your revenue and ad fill rate by showing Microsoft affiliate ads in your app for products in the Store. When users click the affiliate ads and buy products within a given attribution window, you earn revenue on approved purchases.
+If your app [displays banner ads](../monetize/display-ads-in-your-app.md), you can increase your revenue and ad fill rate by showing Microsoft affiliate ads in your app for products in the Store. When users click the affiliate ads and buy products within a given attribution window, you earn revenue on approved purchases.
 
 Here's how this program works:
 
