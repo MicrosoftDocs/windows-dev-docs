@@ -59,6 +59,7 @@ This section provides an overview of important tasks and concepts for the [Windo
 
 **In this section**
 
+* [Video](#video)
 * [Get started with the StoreContext class](#get-started-storecontext)
 * [Implement in-app purchases](#implement-iap)
 * [Implement trial functionality](#implement-trial)
@@ -67,6 +68,14 @@ This section provides an overview of important tasks and concepts for the [Windo
 * [Using the StoreContext class with the Desktop Bridge](#desktop)
 * [Products, SKUs, and availabilities](#products-skus)
 * [Store IDs](#store_ids)
+
+<span id="video" />
+### Video 
+
+Watch the following video for an overview of how to implement in-app purchases in your app using the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace.
+<br/>
+<br/>
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Adding-In-App-Purchases-to-Your-UWP-App/player]
 
 <span id="get-started-storecontext" />
 ### Get started with the StoreContext class
