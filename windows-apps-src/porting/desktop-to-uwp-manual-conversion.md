@@ -115,7 +115,6 @@ For desktop bridge apps, always set the ``Name`` attribute to ``Windows.Desktop`
 ```
 
 ### Capabilities
-
 For desktop bridge apps, you'll have to add the ``runFullTrust`` capability.
 
 ```XML
@@ -176,7 +175,7 @@ Target-based assets are for icons and tiles that appear on the Windows taskbar, 
 <span id="make-appx" />
 ## Generate a Windows app package
 
-Use **MakeAppx.exe** to generate a Windows app package for your project. It's included with the Windows 10 SDK.
+Use **MakeAppx.exe** to generate a Windows app package for your project. It's included with the Windows 10 SDK, and if you have Visual Studio installed, it can be easily accessed through the Developer Command Prompt for your Visual Studio version.
 
 See [Create an app package with the MakeAppx.exe tool](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
 
