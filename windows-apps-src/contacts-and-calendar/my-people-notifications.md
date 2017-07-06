@@ -40,7 +40,7 @@ As an alternative to generic toast notifications, application developers can now
 ![rainbow spritesheet](images/shoulder-tap-rainbow-spritesheet.png)
 
 ## Notification parameters
-My People notifications use the [toast notification](tiles-and-notifications-adaptive-interactive-toasts.md) framework in Windows 10, and require an additional binding node in the toast payload. This means notifications through My People must have two bindings instead of one. This second binding must include the following parameter:
+My People notifications use the [toast notification](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md) framework in Windows 10, and require an additional binding node in the toast payload. This means notifications through My People must have two bindings instead of one. This second binding must include the following parameter:
 
 ```xml
 experienceType=”shoulderTap”
@@ -82,7 +82,7 @@ In addition, the top-level toast node must include the **hint-people** parameter
 In addition to the second binding and payload, you MUST include another payload in the first binding for the fallback toast (which the notification will use if it is forced to revert to a regular toast). This is explained in more detail in the final section.
 
 ## Creating the notification
-You can create a My People notification template just like you would a [toast notification](tiles-and-notifications-adaptive-interactive-toasts.md).
+You can create a My People notification template just like you would a [toast notification](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md).
 
 Here's an example of how to create a My People notification using a static image:
 
@@ -153,5 +153,5 @@ If a My People notification falls back to toast, the second My-People-specific b
 
 ## See also
 + [Adding My People support](my-people-support.md)
-+ [Adaptive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)
++ [Adaptive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)
 + [ToastNotification Class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)
