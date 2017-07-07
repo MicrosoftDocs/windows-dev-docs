@@ -19,14 +19,14 @@ You can programmatically pin your own app to the taskbar, just like you can [pin
 > [!IMPORTANT]
 > **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16225](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16226](https://blogs.windows.com/windowsexperience/2017/06/21/announcing-windows-10-insider-preview-build-16226-pc/) or higher to use the taskbar APIs.
 
-> **Important APIs**: TaskbarManager class 
+> **Important APIs**: [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## When should you ask the user to pin your app to the taskbar? 
 
-The TaskbarManager class lets you ask the user to pin your app to the taskbar; the user must approve the request. You put a lot of effort into building a stellar app, and now you have the opportunity to ask the user to pin it to taskbar. But before we dive into the code, here are some things to keep in mind as you are designing your experience:
+The [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) lets you ask the user to pin your app to the taskbar; the user must approve the request. You put a lot of effort into building a stellar app, and now you have the opportunity to ask the user to pin it to taskbar. But before we dive into the code, here are some things to keep in mind as you are designing your experience:
 
-* **Do** craft a non-disruptive and easily dismissible UX in your app with a clear "Pin to taskbar" call to action.
+* **Do** craft a non-disruptive and easily dismissible UX in your app with a clear "Pin to taskbar" call to action. Avoid using dialogs and flyouts for this purpose. 
 * **Do** clearly explain the value of your app before asking the user to pin it.
 * **Don't** ask a user to pin your app if the tile is already pinned or the device doesn’t support it. (This article explains how to determine whether pinning is supported.)
 * **Don't** repeatedly ask the user to pin your app (they will probably get annoyed).
@@ -54,7 +54,7 @@ else
 
 UWP apps can run on a wide variety of devices; not all of them support the taskbar. Right now, only Desktop devices support the taskbar. 
 
-Even if the taskbar is available, a group policy on the user's machine might disable taskbar pinning. So, before you attempt to pin your app, you need to check whether pinning to the taskbar is supported. The TaskbarManager.IsPinningAllowed property returns true if the taskbar is present and allows pinning. 
+Even if the taskbar is available, a group policy on the user's machine might disable taskbar pinning. So, before you attempt to pin your app, you need to check whether pinning to the taskbar is supported. The [TaskbarManager.IsPinningAllowed property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_IsPinningAllowed) returns true if the taskbar is present and allows pinning. 
 
 ```csharp
 // Check if taskbar allows pinning (Group Policy can disable it, or some device families don't have taskbar)
@@ -62,15 +62,15 @@ bool isPinningAllowed = TaskbarManager.GetDefault().IsPinningAllowed;
 ```
 
 > [!NOTE]
-> If you don't want to pin your app to the taskbar and just want to find out whether the taskbar is available, use the TaskbarManager.IsSupported property.
+> If you don't want to pin your app to the taskbar and just want to find out whether the taskbar is available, use the [TaskbarManager.IsSupported property](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_IsSupported).
 
 
 ## 3. Check whether your app is currently pinned to the taskbar
 
-Obviously, there's no point in asking the user to let you pin the app to the taskbar if it's already pinned there. You can use the TaskbarManager.IsCurrentAppPinnedAsync method to check whether the app is already pinned before asking the user.
+Obviously, there's no point in asking the user to let you pin the app to the taskbar if it's already pinned there. You can use the [TaskbarManager.IsCurrentAppPinnedAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_IsCurrentAppPinnedAsync) to check whether the app is already pinned before asking the user.
 
 ```csharp
-// Check if your app is currently pinned
+// Check whether your app is currently pinned
 bool isPinned = await TaskbarManager.GetDefault().IsCurrentAppPinnedAsync();
 
 if (isPinned)
@@ -86,9 +86,9 @@ else
 
 ##  4. Pin your app
 
-If the taskbar is present and pinning is allowed and your app currently isn't pinned, you might want to show a tip, in the form of a flyout with a button, to let users know that they can pin your app.
+If the taskbar is present and pinning is allowed and your app currently isn't pinned, you might want to show a subtle tip to let users know that they can pin your app. For example, you might show a pin icon somewhere in your UI that the user can click. 
 
-If the user clicks your button to pin the app, you would then call the TaskbarManager.RequestPinCurrentAppAsync method. This method displays a dialog that asks the user to confirm that they want your app pinned to the taskbar.
+If the user clicks your pin suggestion UI, you would then call the [TaskbarManager.RequestPinCurrentAppAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager#Windows_UI_Shell_TaskbarManager_RequestPinCurrentAppAsync). This method displays a dialog that asks the user to confirm that they want your app pinned to the taskbar.
 
 > [!IMPORTANT]
 > This must be called from a foreground UI thread, otherwise an exception will be thrown.
@@ -106,5 +106,6 @@ This method returns a boolean value that indicates whether your app is now pinne
 ## Resources
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
+* [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
 * [Pin an app to the Start menu](tiles-and-notifications-primary-tile-apis.md)
 * [Tiles, badges, and notifications](tiles-badges-notifications.md)
