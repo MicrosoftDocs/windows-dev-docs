@@ -17,7 +17,7 @@ keywords: windows 10, uwp
 
 My People notifications are a new kind of gesture that put people first. They provide a new way for users to connect with the people they care about through quick, lightweight expressive gestures.
 
-![rainbow notification](images/my-people-notification.png)
+![heart emoji notification](images/heart-emoji-notification-small.gif)
 
 ## Requirements
 
@@ -100,9 +100,9 @@ Here's an example of how to create a My People notification using a static image
 </toast>
 ```
 
-<!-- If you start the notification, it should look like this: -->
+If you start the notification, it should look like this:
 
-<!-- ![static image notification](images/shoulder-tap-static.gif) -->
+![static image notification](images/static-image-notification-small.gif)
 
 Next we'll show how to create a notification using an animated spritesheet. This spritesheet has a frame-height of 80 pixels, which we'll animate at 25 frames per second. We set the starting frame to 15, and provide it with a static fallback image in the “src” parameter. The fallback image is used if the spritesheet animation fails to display.
 
@@ -122,9 +122,9 @@ Next we'll show how to create a notification using an animated spritesheet. This
 </toast>
 ```
 
-<!-- If you start the notification, it should look like this: -->
+If you start the notification, it should look like this:
 
-<!-- ![spritesheet notification](images/shoulder-tap-pizza.gif) -->
+![spritesheet notification](images/pizza-notification-small.gif)
 
 ## Starting the notification
 To start a My People notification, we need to convert the toast template into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. Assuming you defined the toast in an XML file (here named "content.xml"), you can use this code C# to start it:
