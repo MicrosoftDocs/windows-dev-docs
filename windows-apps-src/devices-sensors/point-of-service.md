@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section contains articles on how to use Point Of Service (POS) with Universal Windows Platform (UWP) apps, including how to use Epson ESC/POS command language and out-of-band pairing of a POS peripheral.
+This section contains articles on how to use Point Of Service (POS) with Universal Windows Platform (UWP) apps. To learn more about the POS UWP APIs, see the [Windows.Devices.PointOfService](https://docs.microsoft.com/en-us/uwp/api/windows.devices.pointofservice) namespace documentation.
 
 |Topic|Description|
 |--------|------------------|
