@@ -4,7 +4,7 @@ Description: The Health report in the Windows Dev Center dashboard lets you get 
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # Health report
 
 
-The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces for further debugging.
+The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces and/or CAB files for further debugging.
 
 Alternatively, you can programmatically retrieve the data in this report by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -53,7 +53,10 @@ The **Package version** chart shows the total number of crashes and events over 
 
 The **Failures** chart shows the total number of crashes and events over the selected period of time by failure name. By default, we show you the failure that had the most hits on top and continue downward from there. You can reverse this order by toggling the arrow in the **Hits** column of this chart. For each failure, we also show its percentage of the total number of failures.
 
-To display the **Failure details** report for a particular failure, select the failure name. If you have included PDB symbol files, the **Failure details** report includes the number of failure hits over the last month, as well as a failure log that lists occurrence details (date, package version, device type, device model, OS build) and a link to the stack trace.
+To display the **Failure details** report for a particular failure, select the failure name. If you have included PDB symbol files, the **Failure details** report includes the number of failure hits over the last month, as well as a failure log that lists occurrence details (date, package version, device type, device model, OS build) and a link to the stack trace and/or CAB file, if available.
+
+> [!TIP]
+> CAB files will only be available when the failure occurred on a computer using a Windows Insider build, so not all failures will include the CAB download option. You can click the **Links** header in the **Failure log** to sort the results so that failures which include CAB files appear at the top of the list.
 
  
 
