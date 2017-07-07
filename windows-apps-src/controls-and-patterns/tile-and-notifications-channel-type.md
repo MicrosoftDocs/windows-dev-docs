@@ -1,6 +1,6 @@
 ---
 author: adwilso
-Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
+Description: Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
@@ -13,9 +13,9 @@ keywords: windows 10, uwp
 
 # Choosing the correct push notification channel type
 
-This article covers the 3 different types of push notification channels that are available in UWP to deliver content to your app. This includes the alternate channel type that allows apps which aren’t registered in the Store or who wish to share their channels with 3rd parties to work on Windows. 
+This article covers the three types of UWP push notification channels (primary, secondary, and alternate) that help you deliver content to your app. 
 
-The [overview article](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview) contains details on how to  use different types of push channels. 
+For details on how to create push notifications, see the the [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md). 
 
 ## Types of push channels 
 
