@@ -2,25 +2,23 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: Use the C# code examples in this section to learn more about using the Windows Store submission API.
-title: C# code examples for the submission API
+title: C# sample - submissions for apps, add-ons, and flights
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, code examples
+keywords: windows 10, uwp, Windows Store submission API, code examples, C#
 ---
 
-# C\# code examples for the submission API
+# C\# sample: submissions for apps, add-ons, and flights
 
-This article provides C# code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+This article provides C# code examples that demonstrate how to use the [Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
 
-These code examples demonstrate the following tasks:
-
-* [Update an app submission](#update-app-submission)
-* [Create a new add-on submission](#create-add-on-submission)
+* [Create an app submission](#create-app-submission)
+* [Create an add-on submission](#create-add-on-submission)
 * [Update an add-on submission](#update-add-on-submission)
-* [Update a package flight submission](#update-flight-submission)
+* [Create a package flight submission](#create-flight-submission)
 
 You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application. To build the examples, create a C# console application named **DeveloperApiCSharpSample** in Visual Studio, copy each example to a separate code file in the project, and build the project.
 
@@ -29,7 +27,7 @@ You can review each example to learn more about the task it demonstrates, or you
 These examples use the following libraries:
 
 * Microsoft.WindowsAzure.Storage.dll. This library is available in the [Azure SDK for .NET](https://azure.microsoft.com/downloads/), or you can obtain it by installing the [WindowsAzure.Storage NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage).
-* [Json.NET](http://www.newtonsoft.com/json) from Newtonsoft.
+* [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet package from Newtonsoft.
 
 ## Main program
 
@@ -49,8 +47,8 @@ The sample app uses the ```ClientConfiguration``` helper class to pass Azure Act
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
-<span id="update-app-submission" />
-## Update an app submission
+<span id="create-app-submission" />
+## Create an app submission
 
 The following example implements a class that uses several methods in the Windows Store submission API to update an app submission. The ```RunAppSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunAppSubmissionUpdateSample``` method performs these tasks:
 
@@ -65,7 +63,7 @@ The following example implements a class that uses several methods in the Window
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
-## Create a new add-on submission
+## Create an add-on submission
 
 The following example implements a class that uses several methods in the Windows Store submission API to create a new add-on submission. The ```RunInAppProductSubmissionCreateSample``` method in the class performs these tasks:
 
@@ -92,8 +90,8 @@ The following example implements a class that uses several methods in the Window
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
-<span id="update-flight-submission" />
-## Update a package flight submission
+<span id="create-flight-submission" />
+## Create a package flight submission
 
 The following example implements a class that uses several methods in the Windows Store submission API to update a package flight submission. The ```RunFlightSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunFlightSubmissionUpdateSample``` method performs these tasks:
 

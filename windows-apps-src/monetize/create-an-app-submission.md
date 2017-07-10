@@ -4,7 +4,7 @@ ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: Use this method in the Windows Store submission API to create a new submission for an app that is registered to your Windows Dev Center account.
 title: Create an app submission
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ keywords: windows 10, uwp, Windows Store submission API, create app submission
 ---
 
 # Create an app submission
-
-
-
 
 Use this method in the Windows Store submission API to create a new submission for an app that is registered to your Windows Dev Center account. After you successfully create a new submission by using this method, [update the submission](update-an-app-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-app-submission.md) for ingestion and publishing.
 
@@ -127,6 +124,7 @@ The following example demonstrates the JSON response body for a successful call 
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -178,7 +176,8 @@ The following example demonstrates the JSON response body for a successful call 
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

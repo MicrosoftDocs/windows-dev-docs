@@ -4,7 +4,7 @@ ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: Use these methods in the Windows Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
 title: Get app data
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -84,7 +84,8 @@ This resource represents an app that is registered to your account.
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 
@@ -99,7 +100,8 @@ This resource has the following values.
 | publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in the Windows Dev Center dashboard.       |
 | firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.   |
 | lastPublishedApplicationSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the app.    |
-| pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   |
+| pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   
+| hasAdvancedListingPermission        | object  |  Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app.  |  |
 
 
 <span id="add-on-object" />

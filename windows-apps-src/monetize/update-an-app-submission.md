@@ -4,7 +4,7 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: Use this method in the Windows Store submission API to update an existing app submission.
 title: Update an app submission
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -69,6 +69,7 @@ The request body has the following parameters.
 | automaticBackupEnabled           |  boolean  |   Indicates whether Windows can include your app's data in automatic backups to OneDrive. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  boolean  |   Indicates whether customers can install your app to removable storage. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  boolean |   Indicates whether game DVR is enabled for the app.    |   
+| gamingOptions           |  object |   An array that contains one [gaming options resource](manage-app-submissions.md#gaming-options-object) that defines game-related settings for the app.<br/><br/>**Note:**&nbsp;&nbsp;The ability to configure gaming options using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *gamingOptions* value is null.     |   
 | hasExternalInAppProducts           |     boolean          |   Indicates whether your app allows users to make purchase outside the Windows Store commerce system. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Indicates whether your app has been tested to meet accessibility guidelines. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  string  |   Contains [notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) for your app.    |    
@@ -76,7 +77,8 @@ The request body has the following parameters.
 | packageDeliveryOptions    | object  | Contains gradual package rollout and mandatory update settings for the submission. For more information, see [Package delivery options object](manage-app-submissions.md#package-delivery-options-object).  |
 | enterpriseLicensing           |  string  |  One of the [enterprise licensing values](manage-app-submissions.md#enterprise-licensing) values that indicate the enterprise licensing behavior for the app.  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | boolean   |  Indicates whether your app is allowed to [target future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
+| allowTargetFutureDeviceFamilies           | boolean   |  Indicates whether your app is allowed to [target future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |   
+| trailers           |  array |   An array that contains up to [trailer resources](manage-app-submissions.md#trailer-object) that represent video trailers for the app listing. <br/><br/>**Note:**&nbsp;&nbsp;The ability to submit a trailer for your app submission using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *trailers* value is null.  |   
 
 <span/>
 
@@ -104,16 +106,16 @@ Content-Type: application/json
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
         "keywords": [
-		  "epub"
-		],
+		      "epub"
+		    ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
         "features": [
-		  "Free ebook reader"
-		],
+		      "Free ebook reader"
+		    ],
         "releaseNotes": "",
         "images": [
           {
@@ -139,6 +141,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -168,7 +171,8 @@ Content-Type: application/json
     "Holographic": true,
     "Xbox": false,
     "Team": true
-  }
+  },
+  "trailers": []
 }
 ```
 
@@ -229,6 +233,7 @@ The following example demonstrates the JSON response body for a successful call 
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -280,7 +285,8 @@ The following example demonstrates the JSON response body for a successful call 
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

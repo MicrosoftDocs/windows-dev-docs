@@ -4,7 +4,7 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Use these methods in the Windows Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
 title: Manage add-on submissions
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -85,13 +85,13 @@ To create a submission for an add-on, follow this process.
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
     ```
 
-    The response body contains three items: the ID of the new submission, the data for the new submission (including all the listings and pricing information), and the shared access signature (SAS) URI for uploading any add-on icons for the submission to Azure Blob storage.
+    The response body contains an [add-on submission](#add-on-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any add-on icons for the submission to Azure Blob storage, and all of the data for the new submission (such as the listings and pricing information).
         > [!NOTE]
         > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. If you are adding new icons for the submission, [prepare the icons](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) and add them to a ZIP archive.
 
-5. Update the submission data with any required changes for the new submission, and execute the following method to update the submission. For more information, see [Update an add-on submission](update-an-add-on-submission.md).
+5. Update the [add-on submission](#add-on-submission-object) data with any required changes for the new submission, and execute the following method to update the submission. For more information, see [Update an add-on submission](update-an-add-on-submission.md).
 
     ```
     PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
