@@ -268,7 +268,7 @@ You can make sure that users open your new packaged app by default for specific 
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[AppID]" UseUrl="True" Parameters="%1">
+    <FileTypeAssociation Name="[AppID]" UseUrl="true" Parameters="%1">
         <SupportedFileTypes>
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes> 
@@ -297,7 +297,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
       <Application>
         <Extensions>
           <uap:Extension Category="windows.fileTypeAssociation">
-            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="True" Parameters="%1">
+            <uap3:FileTypeAssociation Name="documenttypes" UseUrl="true" Parameters="%1">
               <uap:SupportedFileTypes>
                 <uap:FileType>.txt</uap:FileType>
                 <uap:FileType>.doc</uap:FileType>
