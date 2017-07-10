@@ -139,7 +139,7 @@ A fast way to apply styles to your controls is to right-click on a control on th
 
 ## Lightweight styling
 
-Overriding the system brushes is general done at the App or Page level, and in either case the color override will affect all controls that reference that brush – and in XAML many controls can reference the same system brush.
+Overriding the system brushes is generally done at the App or Page level, and in either case the color override will affect all controls that reference that brush – and in XAML many controls can reference the same system brush.
 
 ![styled buttons](images/LightweightStyling_ButtonStatesExample.png)
 
