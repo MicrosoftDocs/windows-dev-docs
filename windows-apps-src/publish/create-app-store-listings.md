@@ -32,7 +32,8 @@ By default, we'll use the same Store listing (per language) for all of your targ
 
 You must complete the **Store listing** page for at least one language. We recommend providing a Store listing in each language that your packages support, but you have flexibility to remove languages for which you don’t wish to provide a Store listing. You can also create Store listings in additional languages which aren’t supported by your packages.
 
-> **Note**  If your submission includes packages already, we’ll show the [languages](supported-languages.md) supported in your packages on the submission overview page (unless you remove any of them).
+> [!NOTE]
+> If your submission includes packages already, we’ll show the [languages](supported-languages.md) supported in your packages on the submission overview page (unless you remove any of them).
 
 To add or remove languages for your Store listings, click **Add/remove languages** from the submission overview page. If you‘ve already uploaded packages, you’ll see their languages listed in the **Languages supported by your packages** section. To remove one or more of these languages, click **Remove**. If you later decide to include a language that you previously removed from this section, you can click **Add**.
 
@@ -40,10 +41,10 @@ In the **Additional Store listing languages** section, you can click **Manage ad
 
 When you have finished making your selections, click **Save** to return to the submission overview page.
 
-> **Note** When creating a Store listing in a language that isn't supported by your packages, you'll need to indicate which of your reserved app names should be displayed in that Store listing, since there isn't an associated package in that language from which to pull the name. The name you choose here only applies to the Store listing for this language and does not impact the name displayed when a customer installs the app.
+> [!NOTE]
+> When creating a Store listing in a language that isn't supported by your packages, you'll need to indicate which of your reserved app names should be displayed in that Store listing, since there isn't an associated package in that language from which to pull the name. The name you choose here only applies to the Store listing for this language and does not impact the name displayed when a customer installs the app.
 
 To edit a Store listing, click the language name from the submission overview page.
-
 
 At the top of the **Store listing** page are the fields associated with your default Store listing for the selected language. These fields will be shown to all of your customers, unless you have packages targeting earlier OS versions (Windows 8.x or earlier; Windows Phone 8.x or earlier) and create platform-specific Store listings to include different screenshots or info to display to customers on specified OS versions. For more info, see [Create platform-specific Store listings](create-platform-specific-store-listings.md).
 
@@ -141,5 +142,6 @@ Enter the URL of the web page for your app. This URL must point to a page on you
 
 Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support.
 
-**Important**  Microsoft doesn't provide your customers with support for your app.
+> [!IMPORTANT]
+> Microsoft doesn't provide your customers with support for your app.
 
