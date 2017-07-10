@@ -94,7 +94,7 @@ Here's an example of how to create a My People notification using a static image
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image id="2" src="<https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png>"/>
+            <image id="2" src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -114,8 +114,8 @@ Next we'll show how to create a notification using an animated spritesheet. This
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image src='<https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png>'
-                spritesheet-src='<https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png>'
+            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-static.png"
+                spritesheet-src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-pizza-spritesheet.png"
                 spritesheet-height='80' spritesheet-fps='25' spritesheet-startingFrame='15'/>
         </binding>
     </visual>
