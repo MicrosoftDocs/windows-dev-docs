@@ -23,7 +23,7 @@ For certain types of stats, you will need to configure them on Dev Center.  We w
 
 ### What needs to be configured
 
-In general stats do not need to be configured, but if your stat is a <a href="#FeaturedStats">Featured Stat</a> you will need to define this on Dev Center.  Featured stats will appear on your title's Game Hub.  These will make your Game Hub look more interesting, and generate automatic leaderboards to keep players engaged.  You can also use them to draw attention to certain gameplay mechanics in your title since these are visible to all players on Xbox Live, even if they don't own your title.
+In general stats do not need to be configured, but if your stat is a Featured Stat you will need to define this on Dev Center.  Featured stats will appear on your title's Game Hub.  These will make your Game Hub look more interesting, and generate automatic leaderboards to keep players engaged.  You can also use them to draw attention to certain gameplay mechanics in your title since these are visible to all players on Xbox Live, even if they don't own your title.
 
 Featured stats are automatically given global all-time and monthly leaderboards.  These leaderboards are shown in the GameHub and will show player's progress as compared to their friends.  They can also be shown in your title the same way as regular leaderboards.  For example:
 

@@ -17,13 +17,13 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, web server
 
 A step-by-step guide for setting up a simple web server for Xbox One development.
 
--   [Introduction](#ID4E6)
--   [Server setup](#ID4EFC)
--   [Building the SimpleAuthService sample website for deployment](#ID4E4GAC)
--   [Configuring IIS and running the sample website](#ID4ESKAC)
--   [Verifying Relying Party and XSTS token setup](#ID4EINAC)
--   [Enabling HTTPS for your web service](#ID4EPPAC)
--   [FAQs and troubleshooting](#ID4ELGAE)
+-   [Introduction](#introduction)
+-   [Server setup](#server-setup)
+-   [Building the SimpleAuthService sample website for deployment](#build-sample-website)
+-   [Configuring IIS and running the sample website](#configure-sample-website)
+-   [Verifying Relying Party and XSTS token setup](#verify-tokens)
+-   [Enabling HTTPS for your web service](#enable-https)
+-   [FAQs and troubleshooting](#faqs-and-troubleshooting)
 
 
 ## Introduction
@@ -37,9 +37,9 @@ In this QuickStart guide, you will learn how to set up a working HTTP/HTTPS web 
 
 The Relying Party SDK and samples provided on GDN for running an Xbox One web service will work with Windows Server 2008 R2 or later. The instructions that follow are tailored to setting up a server running Windows Server 2012 R2. The required setup should be essentially the same across versions, but where to access some of the server setup features might be slightly different. You can use a physical machine equipped with Windows Server software as your server, or you can set up a virtual machine with Azure.
 
--   [Azure virtual machine setup](#ID4E4C)
--   [Server roles and features setup](#ID4EPG)
--   [Certificate installation](#ID4EJBAC)
+-   [Azure virtual machine setup](#azure-virtual-machine-setup)
+-   [Server roles and features setup](#server-roles-and-features-setup)
+-   [Certificate installation](#certificate-installation)
 
 
 ### Azure virtual machine setup
@@ -157,7 +157,7 @@ Also, your Relying Party and Business Partner certificates will have private key
 6.  Click **OK**.
 
 
-## Building the SimpleAuthService sample website for deployment
+## Building the SimpleAuthService sample website for deployment <a name="build-sample-website">
 
 After you have configured your server and verified that IIS is set up properly, you can set up the sample and compile it to run on your web server.
 
@@ -182,7 +182,7 @@ After you have configured your server and verified that IIS is set up properly, 
 19. Copy the resulting files in your output folder from Step 16 to the C:\\SampleService\\ folder on your server.
 
 
-## Configuring IIS and running the sample website
+## Configuring IIS and running the sample website <a name="configure-sample-website">
 
 Before the console will be able to talk to your web server, you'll have to configure your service in IIS. For simplicity, first start with running the SimpleAuthService sample. The following steps will help you set up an HTTP/HTTPS web service through IIS for that sample.
 
@@ -211,7 +211,7 @@ Now that you know that IIS is set up, try calling one of the services from the s
       http://localhost/RESTService.svc/messageoftheday
 
 
-## Verifying Relying Party and XSTS token setup
+## Verifying Relying Party and XSTS token setup <a name="verify-tokens">
 
 Now that you are able to run the deployed service through HTTP on your server, the next step is to make a call from an Xbox One console with an XSTS token and verify that your certificates are installed properly.
 
@@ -234,11 +234,11 @@ Press the **Y** button to make a call to the People Service and verify that the 
 Press the **A** and **X** buttons to make calls to your test web service.
 
 
-## Enabling HTTPS for your web service
+## Enabling HTTPS for your web service <a name="enable-https">
 
--   [Export the self-signed certificate's public key](#ID4EJBAE)
--   [Create an HTTPS binding for your web service in IIS](#ID4EZDAE)
--   [Install the self-signed certificate on your Xbox One console](#ID4EOFAE)
+-   [Export the self-signed certificate's public key](#export-key)
+-   [Create an HTTPS binding for your web service in IIS](#create-https-binding)
+-   [Install the self-signed certificate on your Xbox One console](#install-certificate)
 
 After you have verified that the server is set up and working end to end with an Xbox One console over HTTP, update your server setup to accept HTTPS traffic. As previously noted, HTTPS is required for all web-based traffic from the console to any retail environment on Xbox One.
 
@@ -258,7 +258,7 @@ If you are not using Azure or you need to create a certificate for SSL communica
 Make sure when creating your certificate that you use the full DNS name of your server (such as server.contoso.com) for the certificate name. Otherwise, the certificate name and the server name will not match exactly, and the console will not trust the certificate. When the certificate is ready, install it in the machine's Personal certificate store as you did with the other certificates in the server setup.
 
 
-### Export the self-signed certificate's public key
+### Export the self-signed certificate's public key <a name="export-key">
 
 1.  Open mmc.exe from the Start menu.
 2.  From the **File** menu, select **Add/Remove Snap-in**.
@@ -276,7 +276,7 @@ Make sure when creating your certificate that you use the full DNS name of your 
 14. Copy the resulting .cer file to your development computer.
 
 
-### Create an HTTPS binding for your web service in IIS
+### Create an HTTPS binding for your web service in IIS <a name="create-https-binding">
 
 1.  Open your service website in IIS Manager.
 2.  Click **Bindings**.
@@ -297,7 +297,7 @@ If you try to go to https://localhost/RESTService.svc/messageoftheday you will g
 Now that you are able to reach your service over HTTPS through an Internet browser, the last step is getting your devkit to make the service call over HTTPS. If your server is using an SSL certificate that chains up to a trusted CA, then you should be able to just call the HTTPS version of your web service without any additional steps. Alternatively, if you created a self-signed certificate for SSL communication as outlined above, you will need to get the certificate and install it on your console; otherwise the console will not trust the server it is trying to talk to over HTTPS. And because the console wipes all temporary certificates when it is shut down, you'll have to reinstall the certificate every time you restart the console.
 
 
-### Install the self-signed certificate on your Xbox One console
+### Install the self-signed certificate on your Xbox One console <a name="install-certificate">
 
 1.  Open up an Xbox One XDK Command Prompt and navigate to where you saved your server's SSL certificate.
 2.  Run the following commands (using a .bat file is an easy way to quickly reinstall the certificate):

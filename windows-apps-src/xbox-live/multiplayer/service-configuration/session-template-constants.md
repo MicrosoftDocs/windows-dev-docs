@@ -18,7 +18,7 @@ The following tables describe the predefined elements of a multiplayer session t
 ## system
 
 system constant  | Description | valid values | default value
---|--
+--|-- | -- | --
 version | The version of the session template. | 1 - n | none
 maxMembersCount | The number of total session member slots supported for the multiplayer activity. | 1 - 100 for a normal session, 101+ for a large session | 100
 visibility | The visibility state of the session, which indicates if other users can see and/or join the session. | private, visible, open | open
@@ -27,7 +27,7 @@ reservedRemovalTimeout  | The timeout for a member reservation, in milliseconds.
 inactiveRemovalTimeout  | The timeout for a member to be considered inactive, in milliseconds. A value of 0 indicates an immediate timeout. If the timeout is null, it is considered infinite. | 0 - n, null | 0
 readyRemovalTimeout | The timeout for a member to be considered ready, in milliseconds. A value of 0 indicates an immediate timeout. If the timeout is null, it is considered infinite. | 0 - n, null | 180000
 sessionEmptyTimeout | The timeout for an empty session, in milliseconds. A value of 0 indicates an immediate timeout. If the timeout is null, it is considered infinite. | 0 - n, null | 0
-[**capabilities**](#capabilties) | Specifies the capabilities of the session. See the capabilities section below. | n/a | n/a
+[**capabilities**](#capabilities) | Specifies the capabilities of the session. See the capabilities section below. | n/a | n/a
 [**metrics**](#metrics) | Specifies a set of title defined quality of service requirements, such as latency and bandwidth speed, that members in the session must satisfy.  | n/a | n/a
 [**memberInitialization**](#memberInitialization) | Specifies the timeouts and initialization requirements that are enforced when new members join the session. See member initialization section below. | n/a | n/a
 [**peerToPeerRequirements**](#peerToPeerRequirements) | Specifies the network quality of service requirements for peer to peer mesh connections. See the peer to peer requirements section below. |n/a | n/a
@@ -130,10 +130,10 @@ Example:
 
 ## peerToPeerRequirements
 
-peer to peer network requirements | Description | valid values | default value
--- | -- | -- | --
-latencyMaximum | The maximum latency, in milliseconds, between any two clients. | | 250
-bandwidthMinimum | The minimum bandwidth in kilobits per second between any two clients. | | 10000
+peer to peer network requirements | Description | default value
+-- | -- |--
+latencyMaximum | The maximum latency, in milliseconds, between any two clients. | 250
+bandwidthMinimum | The minimum bandwidth in kilobits per second between any two clients. | 10000
 
 Example:
 ```json

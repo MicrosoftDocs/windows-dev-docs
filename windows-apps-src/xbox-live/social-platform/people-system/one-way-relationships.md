@@ -17,10 +17,10 @@ Xbox Live has moved toward a one-way relationship model. A user can follow anyon
 
 This model lets users grow their social graph more quickly and easily, instead of requiring the "other side" to confirm a friend request to establish a connection.
 
--   [People and People List](#ID4EDB)
--   [Tip: Build your Xbox People Graph with Dev Accounts](#ID4EZB)
--   [Following Other Users](#ID4EID)
--   [Privacy](#ID4ETD)
+-   [People and People List](#people-and-people-list)
+-   [Build your Xbox People Graph with Dev Accounts](#build-your-xbox-people-graph-with-dev-accounts)
+-   [Following Other Users](#following-other-users)
+-   [Privacy](#privacy)
 
 
 ## People and People List
@@ -30,7 +30,7 @@ On Xbox One, Xbox Live now has "People" and a "People List". The People system e
 The People system also introduces a 1-way relationship model; a user can add anyone to their People list and that person is instantly added without sending an invite that must be accepted. The core reason for moving to a 1-way model is overall simplicity; friend requests present another layer of things for the user to manage and often resulted in a multi-day lag until the other person sees the friend request and accepts it, then the sender has to realize that this has happened.
 
 
-## Tip: Build your Xbox People Graph with Dev Accounts
+## Build your Xbox People Graph with Dev Accounts
 
 You can use xbox.com to build an Xbox People graph with your development accounts for testing purposes.
 

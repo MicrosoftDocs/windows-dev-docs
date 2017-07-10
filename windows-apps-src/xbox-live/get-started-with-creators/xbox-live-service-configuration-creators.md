@@ -27,11 +27,11 @@ This configuration happens on [Dev Center](http://dev.windows.com) for Xbox Live
 
 To enable Xbox Live services, you will need to obtain several IDs to configure your development kit and your title. These can be obtained by doing Xbox Live service configuration.
 
-If you do not currently have a title in XDP or Dev Center, see the above section [Xbox Live Service Configuration portals](#xbox_live_portals) for guidance.
+If you do not currently have a title in Dev Center, see [Create and test a new Creators title](create-and-test-a-new-creators-title.md) for guidance.
 
 ### Critical IDs
 
-There are three IDs which are critical for development of titles and applications for Xbox One: the sandbox ID, the TitleID, and the SCID.
+There are three IDs which are critical for development of titles and applications for Xbox One: the sandbox ID, the TitleID, and the service configuration ID (SCID).
 
 While it is necessary to have a sandbox ID to use a development kit, the TitleID and SCID are not required for initial development but are required for any use of Xbox Live services. We therefore recommend that you obtain all three at once.
 

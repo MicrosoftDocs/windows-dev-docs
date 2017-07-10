@@ -26,7 +26,7 @@ This is a brief walkthrough on using Game Chat 2 (GC2), containing the following
 10. [Bad reputation auto-mute](#automute)
 11. [Privilege and privacy](#priv)
 12. [Cleanup](#cleanup)
-13. [How to configure popular scenarios](#examples)
+13. [How to configure popular scenarios](#how-to-configure-popular-scenarios)
 
 ## Prerequisites <a name="prereq">
 
