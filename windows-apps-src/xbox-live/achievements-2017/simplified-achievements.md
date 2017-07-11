@@ -53,7 +53,7 @@ The following are the requirements of any title that will use the Simplified Ach
 
 1.  **Must be a new (unreleased) title.** Titles that have already been released and are using the Cloud-Powered Achievements system are ineligible. For more, see [Why can’t existing titles “migrate” onto the new Simplified Achievements system?](#_Why_can’t_existing)
 
-2.  **Must use August XDK or newer.** The API needed to make use of Simplified Achievements system will be released for the first time in the August XDK. Although the services will be in preview, the XDK is approved for shipping.
+2.  **Must use August 2016 XDK or newer.** The Simplified Achievements API was released in the August 2016 XDK.
 
 3.  **Must be an XDK or UWP title.** The Simplified Achievements system is not available for legacy platforms, including Xbox 360, Windows 8.x or older, nor Windows Phone 8 or older.
 
