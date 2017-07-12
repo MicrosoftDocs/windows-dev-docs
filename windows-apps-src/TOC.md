@@ -865,6 +865,7 @@
 #### [Create an app package with the MakeAppx.exe tool](packaging/create-app-package-with-makeappx-tool.md)
 #### [Create a certificate for package signing](packaging/create-certificate-package-signing.md)
 #### [Sign an app package using SignTool](packaging/sign-app-package-using-signtool.md)
+### [App package architectures](packaging/device-architecture.md)
 ### [UWP App Streaming Install](packaging/streaming-install.md)
 #### [Create and convert a source content group map](packaging/create-cgm.md)
 ### [Optional packages and related set authoring](packaging/optional-packages.md)
