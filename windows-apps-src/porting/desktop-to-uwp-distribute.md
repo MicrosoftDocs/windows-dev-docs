@@ -124,6 +124,8 @@ It is better not to uninstall the users desktop app without first asking them fo
 
 Here's an example of how you could do this in a .NET-based desktop bridge app.
 
+To view the complete context of this snippet, see the **MainWindow.cs** file of this sample [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition).
+
 ```csharp
 private void RemoveDesktopApp()
 {              

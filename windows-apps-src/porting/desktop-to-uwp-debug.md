@@ -141,6 +141,7 @@ Here's an example.
 ```
 
 #### Debug UWP enhancements to your app
+
 You might want to enhance your app with modern experiences such as live tiles. If you do, you can use conditional compilation to enable code paths with specific build configurations.
 
 1. First, in Visual Studio, define a build configuration and give it a name like "DesktopUWP".
@@ -194,6 +195,11 @@ You can also sign your app manually. Here's how
 
   > [!IMPORTANT]
   > Make sure that the publisher name on your certificate matches the publisher name of your app.
+
+### Related sample
+
+[SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
+
 
 ### Test your app for Windows 10 S
 
