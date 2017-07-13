@@ -262,6 +262,25 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </div>
                         </li>
                         <li>
+                            <a href="https://docs.microsoft.com/windows-hardware/get-started/index">
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage bgdAccent1">
+                                                    <img data-scaleimage="/media/hubs/windows/win_hardware-dev-get-started.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Get started</h3>
+                                                <p>New to building devices with Windows 10?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
                             <a href="https://docs.microsoft.com/windows-hardware/design/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
