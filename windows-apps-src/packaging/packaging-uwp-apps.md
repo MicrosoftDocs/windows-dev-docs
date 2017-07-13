@@ -104,31 +104,40 @@ To distribute an app through the Store you must create an appxupload package. Yo
 
 ## Sideload your app package
 
-With UWP app packages, you cannot simply install an app to your device like Desktop apps. Typically, you download these apps from the Store and that is how they are installed on your device. But you can sideload apps to your device without submitting them to the Store. This lets you install them and test them out using the app package (.appx) that you have created. If you have an app that you don’t want to sell in the Store, like a line-of-business (LOB) app, you can sideload that app so that other users in your company can use it.
+Introduced in the Windows 10 Anniversary Update, app packages can be installed simply by double clicking the app package file. To use this, simply navigate to your app package (.appx) or app bundle (.appxbundle) file, and double click it. The App Installer launches and provides the basic app information as well as an install button, installation progress bar, and any relevant error messages. 
+
+![App Installer display for installing a sample app called Contoso](images/appinstaller-screen.png)
+
+> [!NOTE]
+> The App Installer assumes that the app is trusted by the device. If you are sideloading a developer or enterprise app, you will need to install the signing certificate to the Trusted Root Certification Authorities store on the device. If you're not sure how to do this, see [Installing Test Certificates](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
+
+### Sideload your app on previous versions of Windows
+With UWP app packages, apps aren't installed to a device as they are with Desktop apps. Typically, you download UWP apps from the Store, which also installs the app to your device for you. Apps can be installed without being submitted to the Store (sideloading). This lets you install and and test apps using the app package (.appx) that you have created. If you have an app that you don’t want to sell in the Store, like a line-of-business (LOB) app, you can sideload that app so that other users in your company can use it.
 
 The following list provides requirements for sideloading your app.
 
 -   You must [enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
--   To sideload your app on a Windows 10 Mobile device, you must use the [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) tool.
+-   To sideload your app on a Windows 10 Mobile device, use the [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) tool.
 
 **Sideload an app to a desktop, laptop, or tablet**
 
-1.  Copy the folders for the version that you want to install to the target device.
+1.  Copy the folders for the app version to install on the target device.
 
-    If you've created an app bundle, then you will have a folder based on the version number and a \_test folder. For example these two folders (where the version to install is 1.0.2):
+    If you've created an app bundle, then you will have a folder based on the version number and a `*\_Test` folder. For example these two folders (where the version to install is 1.0.2.0):
 
-    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0
-    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
+    -   `C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0`
+    -   `C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test`
 
-    If you don't have an app bundle, then you can just copy the folder for the correct architecture and the corresponding test folder. For example these two folders.
+    If you don't have an app bundle, copy the folder for the correct architecture and its corresponding `*\_Test` folder. These two folders are an example of an app package with the x64 architecture and its `*\_Test` folder:
 
-    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64
-    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64\_Test
-2.  On the target device, open the test folder. For example, C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
-3.  Right-click on the **Add-AppDevPackage.ps1** file, then choose **Run with PowerShell** and follow the prompts.<br/>
+    -   `C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64`
+    -   `C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64\_Test`
+
+2.  On the target device, open the `*\_Test` folder.
+3.  Right-click on the **Add-AppDevPackage.ps1** file. Choose **Run with PowerShell** and follow the prompts.<br/>
     ![File explorer navigated to PowerShell script shown](images/packaging-screen7.jpg)
 
-    When the app package has been installed, you will see this message in your PowerShell window: Your app was successfully installed.
+    When the app package has been installed, the PowerShell window displays this message: **Your app was successfully installed.**
 
-    **Note**  To open the shortcut menu on a tablet, touch the screen where you want to right-click, hold until a complete circle appears, then lift your finger. The shortcut menu appears after you lift your finger.
-4.  Click the Start button and then type the name of your app to launch it.
+    **Tip**: To open the shortcut menu on a tablet, touch the screen where you want to right-click, hold until a complete circle appears, then lift your finger. The shortcut menu opens once you lift your finger.
+4.  Click the Start button to search for the app by name, and then launch it.
