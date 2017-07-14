@@ -13,7 +13,7 @@ keywords: windows 10, uwp, Store services, Windows Store targeted offers API, ta
 
 # Manage targeted offers using Store services
 
-If you create a *targeted offer* in the **Monetize > Targeted offers** page for your app in the Windows Dev Center dashboard, use the *Windows Store targeted offers API* in your app's code to implement the in-app experience for the targeted offer. For more information about targeted offers and how to create them in the dashboard, see [Use targeted offers to maximize engagement and conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
+If you create a *targeted offer* in the **Engage > Targeted offers** page for your app in the Windows Dev Center dashboard, use the *Windows Store targeted offers API* in your app's code to implement the in-app experience for the targeted offer. For more information about targeted offers and how to create them in the dashboard, see [Use targeted offers to maximize engagement and conversions](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md).
 
 The targeted offers API is a REST API that you can use to perform these tasks:
 
