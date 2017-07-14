@@ -8,5 +8,156 @@
     items:
       - name: UWP
         tocHref: /windows/uwp/
-        topicHref: "https://developer.microsoft.com/windows/apps"  
-
+        topicHref: "/index"  
+        items:
+              - name: Get started
+                tocHref: /windows/uwp/get-started/
+                topicHref: "/windows/uwp/get-started/whats-a-uwp"  
+              - name: Design and UI
+                tocHref: /windows/uwp/design/
+                topicHref: "/windows/uwp/layout/design-and-ui-intro" 
+                items:
+                    - name: Intro to app UI design
+                      tocHref: /windows/uwp/design/
+                      topicHref: "/windows/uwp/layout/design-and-ui-intro"                 
+                    - name: Layout
+                      tocHref: /windows/uwp/layout/
+                      topicHref: "/windows/uwp/layout/index" 
+                    - name: Style
+                      tocHref: /windows/uwp/style/
+                      topicHref: "/windows/uwp/style/index"                 
+                    - name: Controls and patterns
+                      tocHref: /windows/uwp/controls-and-patterns/
+                      topicHref: "/windows/uwp/controls-and-patterns/index"         
+                    - name: Input and devices
+                      tocHref: /windows/uwp/input-and-devices/
+                      topicHref: "/windows/uwp/input-and-devices/index" 
+                    - name: Usability
+                      tocHref: /windows/uwp/usability/
+                      topicHref: "/windows/uwp/usability/index" 
+                      items:
+                          - name: Accessibility
+                            tocHref: /windows/uwp/accessibility/
+                            topicHref: "/windows/uwp/accessibility/accessibility" 
+                          - name: App settings and data
+                            tocHref: /windows/uwp/app-settings/
+                            topicHref: "/windows/uwp/app-settings/app-settings-and-data" 
+                          - name: Globalization and localization
+                            tocHref: /windows/uwp/globalizing/
+                            topicHref: "/windows/uwp/globalizing/globalizing-portal"     
+                          - name: Guidelines for app help
+                            tocHref: /windows/uwp/guidelines-for-app-help/
+                            topicHref: "/windows/uwp/guidelines-for-app-help/index"                              
+                    - name: Design toolkits
+                      tocHref: /windows/uwp/design-downloads/
+                      topicHref: "/windows/uwp/design-downloads/index"                       
+              - name: Develop
+                tocHref: /windows/uwp/develop/
+                topicHref: "/windows/uwp/whats-new/index" 
+                items:
+                    - name: What's new 
+                      tocHref: /windows/uwp/whats-new/
+                      topicHref: "/windows/uwp/whats-new/windows-10-version-1703"                   
+                    - name: App-to-app communication 
+                      tocHref: /windows/uwp/app-to-app/
+                      topicHref: "/windows/uwp/app-to-app/index"                 
+                    - name: Audio, video, and camera
+                      tocHref: /windows/uwp/audio-video-camera/
+                      topicHref: "/windows/uwp/audio-video-camera/index" 
+                    - name: Contacts, My People, and calendar
+                      tocHref: /windows/uwp/contacts-and-calendar/
+                      topicHref: "/windows/uwp/contacts-and-calendar/index"                 
+                    - name: Data access
+                      tocHref: /windows/uwp/data-access/
+                      topicHref: "/windows/uwp/data-access/index"         
+                    - name: Data binding
+                      tocHref: /windows/uwp/data-binding/
+                      topicHref: "/windows/uwp/data-binding/index" 
+                    - name: Debugging, testing, and performance
+                      tocHref: /windows/uwp/debug-test-perf/
+                      topicHref: "/windows/uwp/debug-test-perf/index" 
+                    - name: Education apps
+                      tocHref: /windows/uwp/apps-for-education/
+                      topicHref: "/windows/uwp/apps-for-education/index"
+                    - name: Devices, sensors, and power 
+                      tocHref: /windows/uwp/devices-sensors/
+                      topicHref: "/windows/uwp/devices-sensors/index"                 
+                    - name: Enterprise
+                      tocHref: /windows/uwp/enterprise/
+                      topicHref: "/windows/uwp/enterprise/index"                      
+                    - name: Files, folders, and libraries 
+                      tocHref: /windows/uwp/files/
+                      topicHref: "/windows/uwp/files/index"                 
+                    - name: Game programming
+                      tocHref: /windows/uwp/gaming/
+                      topicHref: "/windows/uwp/gaming/index" 
+                    - name: DirectX programming
+                      tocHref: /windows/uwp/directx-programming/
+                      topicHref: "/windows/uwp/directx-programming/index"                 
+                    - name: Direct3D graphics learning guide
+                      tocHref: /windows/uwp/graphics-concepts/
+                      topicHref: "/windows/uwp/graphics-concepts/index"         
+                    - name: Graphics
+                      tocHref: /windows/uwp/graphics/
+                      topicHref: "/windows/uwp/graphics/index" 
+                    - name: Hosted web apps
+                      tocHref: /windows/uwp/bridges/
+                      topicHref: "/windows/uwphttps://developer.microsoft.com/en-us/windows/bridges/hosted-web-apps" 
+                    - name: Launching, resuming, and background tasks
+                      tocHref: /windows/uwp/launch-resume/
+                      topicHref: "/windows/uwp/launch-resume/index"
+                    - name: Maps and location 
+                      tocHref: /windows/uwp/maps-and-location/
+                      topicHref: "/windows/uwp/maps-and-location/index"                 
+                    - name: Monetization, engagement, and Store services
+                      tocHref: /windows/uwp/monetize/
+                      topicHref: "/windows/uwp/monetize/index"     
+                    - name: Networking and web services
+                      tocHref: /windows/uwp/networking/
+                      topicHref: "/windows/uwp/networking/index" 
+                    - name: Packaging apps
+                      tocHref: /windows/uwp/packaging/
+                      topicHref: "/windows/uwp/packaging/index"                 
+                    - name: Porting apps to Windows 10
+                      tocHref: /windows/uwp/porting/
+                      topicHref: "/windows/uwp/porting/index"         
+                    - name: Security
+                      tocHref: /windows/uwp/security/
+                      topicHref: "/windows/uwp/security/index" 
+                    - name: Threading and async programming
+                      tocHref: /windows/uwp/threading-async/
+                      topicHref: "/windows/uwp/threading-async/index"  
+                    - name: UWP on Xbox One
+                      tocHref: /windows/uwp/xbox-apps/
+                      topicHref: "/windows/uwp/xbox-apps/index"
+                    - name: Visual layer 
+                      tocHref: /windows/uwp/visual-layer/
+                      topicHref: "/windows/uwp/visual-layer/index"                 
+                    - name: Windows Runtime components
+                      tocHref: /windows/uwp/winrt-components/
+                      topicHref: "/windows/uwp/winrt-components//index"                                            
+                    - name: XAML platform
+                      tocHref: /windows/uwp/xaml-platform/
+                      topicHref: "/windows/uwp/xaml-platform/index"                 
+                    - name: API reference
+                      tocHref: "/windows/uwp/api/"
+                      topicHref: "https://docs.microsoft.com/en-us/uwp/"         
+                    - name: Windows as a service
+                      tocHref: /windows/uwp/application-development-for-windows-as-a-service/
+                      topicHref: "/windows/uwp/application-development-for-windows-as-a-service/index" 
+                    - name: Choose a UWP version
+                      tocHref: /windows/uwp/choose-a-uwp-version/
+                      topicHref: "/windows/uwp/choose-a-uwp-version/index"  
+                    - name: Services
+                      tocHref: /windows/uwp/microsoft-services/
+                      topicHref: "/windows/uwp/microsoft-services/index"
+                    - name: Windows 8.x guides
+                      tocHref: "https://msdn.microsoft.com/library/windows/apps/mt244353.aspx"
+                      topicHref: "https://msdn.microsoft.com/library/windows/apps/mt244353.aspx"                 
+                    - name: Windows Phone Silverlight 8.x guides
+                      tocHref: "https://msdn.microsoft.com/library/windows/apps/ff402535.aspx"
+                      topicHref: "https://msdn.microsoft.com/library/windows/apps/ff402535.aspx"                        
+              - name: Publish windows apps
+                tocHref: /windows/uwp/publish/
+                topicHref: "/windows/uwp/publish/index" 
+                                     

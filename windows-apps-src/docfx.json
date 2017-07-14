@@ -19,7 +19,7 @@
         "uhfHeaderId": "MSDocsHeader-WinUWP",
         "titleSuffix": "UWP app developer",
         "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
-        "extendBreadcrumb": true,
+        "extendBreadcrumb": false,
 		    "htmlDangerZone":  true,
         "searchScope": ["UWP"]
     },

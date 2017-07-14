@@ -1,4 +1,4 @@
-﻿# [Get started with Universal Windows Platform](https://developer.microsoft.com/windows/apps/getstarted)
+﻿# Get started with Universal Windows Platform 
 ## [What's a UWP app?](get-started/whats-a-uwp.md)
 ## [Guide to Universal Windows Platform apps](get-started/universal-application-platform-guide.md)
 ## [Get set up](get-started/get-set-up.md)
@@ -18,9 +18,9 @@
 ### [Plan your app](get-started/plan-your-app.md)
 ### [What's next?](get-started/learn-more.md)
 ## [Get UWP app samples](get-started/get-uwp-app-samples.md)
-# [Design & UI](https://developer.microsoft.com/windows/apps/design)
+# Design & UI 
+## [Intro to app UI design](layout/design-and-ui-intro.md)
 ## [Layout](layout/index.md)
-### [Intro to app UI design](layout/design-and-ui-intro.md)
 ### [Navigation basics](layout/navigation-basics.md)
 #### [Implement basic navigation](layout/navigate-between-two-pages.md)
 #### [Support history and backwards navigation](layout/navigation-history-and-backwards-navigation.md)
@@ -209,7 +209,7 @@
 #### [External help](in-app-help/external-help.md)
 ## [Fluent Design System](http://fluent.microsoft.com/)
 ## [Design toolkits](design-downloads/index.md)
-# [Develop Windows apps](https://developer.microsoft.com/windows/apps/develop)
+# Develop Windows apps 
 ## [What's new in Windows 10 for developers](whats-new/windows-10-version-1703.md)
 ### [API additions in Windows 10, version 1703](whats-new/windows-10-version-1703-api-diff.md)
 ### [Prerelease APIs in Windows 10 SDK Preview Build 16225](whats-new/windows-10-build-16225-api-diff.md)
@@ -1051,7 +1051,8 @@
 ## [Services](https://developer.microsoft.com/windows/develop/microsoft-services)
 ## [Windows 8.x guides](https://msdn.microsoft.com/library/windows/apps/mt244353.aspx)
 ## [Windows Phone Silverlight 8.x guides](https://msdn.microsoft.com/library/windows/apps/ff402535.aspx)
-# [Publish Windows apps](publish/index.md)
+# Publish Windows apps 
+## [Overview](publish/index.md)
 ## [Using the Windows Dev Center dashboard](publish/using-the-windows-dev-center-dashboard.md)
 ### [Account types, locations, and fees](publish/account-types-locations-and-fees.md)
 ### [Opening a developer account](publish/opening-a-developer-account.md)
