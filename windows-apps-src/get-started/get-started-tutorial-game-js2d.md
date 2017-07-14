@@ -143,7 +143,7 @@ JavaScript needs a little help when it comes to loading resources such as images
     loader.loadManifest(manifest, true, "../images/");
 ```    
 
-When the function **loadingComplete()** is called, the images are loaded and ready to use. Uou'll see a commented-out section that creates the clouds, now their bitmap is available. Remove the comments, so it looks like this:
+When the function **loadingComplete()** is called, the images are loaded and ready to use. You'll see a commented-out section that creates the clouds, now their bitmap is available. Remove the comments, so it looks like this:
 
 ```
     // Create some clouds to drift by..
