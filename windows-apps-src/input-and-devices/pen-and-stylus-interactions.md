@@ -432,7 +432,7 @@ For this example, we use the MainPage.xaml and MainPage.xaml.cs files to host al
             stroke.Selected = false;
           }
           ClearDrawnBoundingRect();
-        }
+         }
 
         private void ClearDrawnBoundingRect()
         {
@@ -452,7 +452,7 @@ The ink platform enables you to override this behavior and completely customize 
 
 Custom drying requires an [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) object to manage the ink input and render it to the Direct2D device context of your Universal Windows app, instead of the default [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-By calling [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (before the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) is loaded), an app creates an [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) object to customize how an ink stroke is rendered dry to a [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) or [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). For example, an ink stroke could be rasterized and integrated into application content instead of as a separate **InkCanvas** layer.
+By calling [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (before the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) is loaded), an app creates an [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) object to customize how an ink stroke is rendered dry to a [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) or [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). For example, an ink stroke could be rasterized and integrated into application content instead of as a separate **InkCanvas** layer. This also allows for more performant management of large or complex collections of ink strokes. 
 
 For a full example of this functionality, see the [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314).
 
