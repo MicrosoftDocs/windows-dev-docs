@@ -21,7 +21,7 @@ Every Xbox Live title must be defined on Dev Center before you will be able to s
 ## 2. Follow the appropriate guide to setup your IDE or Game Engine
 You can follow the appropriate Getting Started guide for your platform and engine and learn the basics of Xbox Live as you go along.
 
-* [Devlop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.
+* [Develop a Creators title with Visual Studio](develop-creators-title-with-visual-studio.md) will show you how to link your Visual Studio project with your Xbox Live configuration on Dev Center.
 
 * [Develop a Creators title with Unity](develop-creators-title-with-unity.md) will show you how to create a new Xbox Live enabled Unity title, add features such as Leaderboards to your title, and generate a native Visual Studio project.
 

@@ -148,7 +148,6 @@ The search query syntax is an  [OData](http://docs.oasis-open.org/odata/odata/v4
  Operator | Description
  --- | ---
  eq | equals
- ne | not equals
  gt | greater than
  ge | greater than or equal
  lt | less than
@@ -163,7 +162,12 @@ The Xbox Live service only returns the first 100 results that match the search q
 
 ### Search handle query examples
 
- Filter by | Search query
+In a restful call, "Filter" is where you would specify an OData Filter language string that will be run in your query against all search handles.  
+In the multiplayer 2015 APIs, you can specify the search filter string in the *searchFilter* parameter of the `multiplayer_service.get_search_handles()` method.  
+
+Currently, the following filter scenarios are supported:
+
+ Filter by | Search filter string
  --- | ---
  A single member xuid '1234566’ | "session/memberXuids/any(d:d eq '1234566')"
  A single owner xuid '1234566’ | "session/ownerXuids/any(d:d eq '1234566')"
@@ -173,6 +177,24 @@ The Xbox Live service only returns the first 100 results that match the search q
  A tag 'coolpeopleonly' | "tags/any(d:tolower(d) eq 'coolpeopleonly')"
  A tag 'coolpeopleonly' and a Number 'halokdratio' equal to 7.5 | "tags/any(d:tolower(d) eq 'coolpeopleonly') eq true and numbers/halokdratio eq 7.5"
  A number 'halodkratio' greater than or equal to 1.5, a number 'rank' less than 60, and a number 'customnumbervalue' less than or equal to 5 | "numbers/halokdratio ge 1.5 and numbers/rank lt 60 and numbers/customnumbervalue le 5"
+ An achievement id '123456' | "achievementIds/any(d:d eq '123456')"
+ The language code 'en' | "language eq 'en'"
+ Scheduled time, returns all scheduled times less than or equal to the specified time | "session/scheduledTime le '2009-06-15T13:45:30.0900000Z'"
+ Posted time, returns all posted times less than the specified time | "session/postedTime lt '2009-06-15T13:45:30.0900000Z'"
+ Session registration state | "session/registrationState eq 'registered'"
+ Where the number of session members is equal to 5 | "session/membersCount eq 5"
+ Where the session member target count is greater than 1 | "session/targetMembersCount gt 1"
+ Where the max count of session members is less than 3 | "session/maxMembersCount lt 3"
+ Where the difference between the session member target count and the number of session members is less than or equal to 5 | "session/targetMembersCountRemaining le 5"
+ Where the difference between the max count of session members and the number of session members is greater than 2 | "session/maxMembersCountRemaining gt 2"
+ Where the difference between the session member target count and the number of session members is less than or equal to 15.</br> If the role does not have a target specified, then this query filters against the difference between the max count of session members and the number of session members. | "session/needs le 15"
+ Role "confirmed" of the role type "lfg" where the number of members with that role is equal to 5 | "session/roles/lfg/confirmed/count eq 5"
+ Role "confirmed" of the role type "lfg" where the target of that role is greater than 1.</br> If the role does not have a target specified, then the max of the role is used instead. | "session/roles/lfg/confirmed/target gt 1"
+ Role "confirmed" of the role type "lfg" where the difference between the target of the role and the number of members with that role is less than or equal to 15.</br> If the role does not have a target specified, then this query filters against the difference between the max of the role and the number of members with that role. | "session/roles/lfg/confirmed/needs le 15"
+ All search handles that point to a session containing a particular keyword | "session/keywords/any(d:tolower(d) eq 'level2')"
+ All search handles that point to a session belonging to a particular scid | "session/scid eq '151512315'"
+ All search handles that point to a session that uses a particular template name | "session/templateName eq 'mytemplate1'"
+ All search handles that have the tag 'elite' or have a number 'guns' greater than 15 and string 'clan' equal to 'purple' | "tags/any(a:tolower(a) eq 'elite') or number/guns gt 15 and string/clan eq 'purple'"
 
 ### Refreshing search results
 

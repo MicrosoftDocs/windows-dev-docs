@@ -29,7 +29,7 @@ If you are an ID@Xbox Developer or working with a publisher that is a Microsoft 
 
 ## Choose your development portal
 
-As mentioned above, tere are two different portals that can be used to configure Xbox Live Services.  Windows Dev Center at [http://dev.windows.com](http://dev.windows.com) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](http://xdp.xboxlive.com).
+As mentioned above, there are two different portals that can be used to configure Xbox Live Services.  Windows Dev Center at [http://dev.windows.com](http://dev.windows.com) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](http://xdp.xboxlive.com).
 
 Windows Dev Center is recommended for all titles going forward, but for certain features, you may still want to use XDP.  This section will help advise you where to configure your title.
 

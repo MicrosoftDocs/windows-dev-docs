@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to configure the Xbox Live Multiplayer Service.
 ms.assetid: d042d4d5-1c75-4257-8a6f-07eddd39ca7e
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 07/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -68,3 +68,14 @@ When you create a new custom invite string, you must define the following:
 |---|---|
 | ID | The ID of the custom invite string that will be used to identify the string. "custominvitestrings_" will automatically be appended to the beginning of your ID. Max 100 characters |
 | Value | The text of the custom invite string that will appear in your custom invite toast. Max 100 characters |
+
+## Additional information
+
+For more information about configuring the multiplayer service, see the following articles:
+
+**Article** | **Description**
+--- | ---
+[Configure your AppXManifest for Multiplayer](configure-your-appxmanifest-for-multiplayer.md) | Describes how to configure a UWP  AppXManifest file to work with the Xbox Live multiplayer service.
+[Multiplayer session templates](session-templates.md) | Gives a brief overview of multiplayer session templates and provides several examples of templates that you can copy and modify for your multiplayer sessions.
+[Session template constants](session-template-constants.md) | Describes the predefined elements of a multiplayer session template.
+[Large sessions](large-sessions.md) | Describes when and how to use large sessions.

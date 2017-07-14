@@ -54,7 +54,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 <th>Feature Area</th>
 <th>Feature</th>
 <th>Description</th>
-<th>ID@Xbox</th>
+<th> ID@Xbox </th>
 <th>Xbox Live Creators Program</th>
 </tr>
 

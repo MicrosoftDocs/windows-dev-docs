@@ -22,4 +22,3 @@ SPOP should be handled by the title the same way as any other type of sign out e
 
 * For XDK titles, the `User::UserRemoved` event will trigger when this occurs.
 * For UWP titles, they will be notified of the sign out through the `sign_out_complete` handler from the `xbox_live_user` class. See [Authentication for UWP projects](authentication-for-UWP-projects.md) for more detail
-  * UWP titles must be whitelisted in order to receive instant notification of SPOP occurring. Otherwise, SPOP notification will take place either the next the title makes an Xbox Live call, or up to 5 minutes after the SPOP occurred.
