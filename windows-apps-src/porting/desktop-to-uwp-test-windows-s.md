@@ -29,7 +29,7 @@ Then, choose the one that makes the most sense to you. Here's summary of each po
 |--|--|--|--|
 |Audit mode policy |Logs issues / does not block |Store |SiPolicy_Audit.p7b |
 |Production mode policy |Yes |Store |SiPolicy_Enforced.p7b |
-|Product mode policy with self-signed apps |Yes |AppX Test Cert  |SiPolicy_DevMode_Enforced.p7b |
+|Product mode policy with self-signed apps |Yes |AppX Test Cert  |SiPolicy_DevModeEx_Enforced.p7b |
 
 We recommend that you start with audit mode policy. You can review the Code Integrity Event Logs and use that information to help you make adjustments to your app. Then, apply the Production mode policy when you're ready for final testing.
 
@@ -38,13 +38,24 @@ Here’s a bit more information about each policy.
 ### Audit mode policy
 With this mode, your app runs even if it performs tasks that aren’t supported on Windows 10 S. Windows logs any executables that would have been blocked into the Code Integrity Event Logs.
 
+
+#### (Optional) Find specific failure points in the call stack
+To find specific points in the call stack where blocking issues occur, add this registry key, and then [set up a kernel-mode debugging environment](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
+
+|Key|Name|Type|Value|
+|--|---|--|--|
+|HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
+
+
+![reg-setting](images/desktop-to-uwp/ci-debug-setting.png)
+
 ### Production mode policy
 This policy enforces code integrity rules that match Windows 10 S so that you can simulate running on Windows 10 S. This is the strictest policy, and it is great for final production testing. In this mode, your app is subject to the same restrictions as it would be subject to on a user's device. To use this mode, your app must be signed by the Windows Store.
 
 ### Production mode policy with self-signed apps
 This mode is similar to the Production mode policy, but it also allows things to run that are signed with the test certificate that is included in the zip file. Sign your app by using the the PFX file that is included in the **AppxTestRootAgency** folder of this zip file. That way, you can quickly iterate without requiring Store signing.
 
-Because the publisher name of your certificate must match the publisher name of your app, you'll have to temporarily change the value of the **Identity** element's **Publisher** attribute to "CN=Appx Test Root Agency". You can change that attribute back to it's original value after you've completed your tests.
+Because the publisher name of your certificate must match the publisher name of your app, you'll have to temporarily change the value of the **Identity** element's **Publisher** attribute to "CN=Appx Test Root Agency Ex". You can change that attribute back to it's original value after you've completed your tests.
 
 ## Next, install the policy and restart your system
 

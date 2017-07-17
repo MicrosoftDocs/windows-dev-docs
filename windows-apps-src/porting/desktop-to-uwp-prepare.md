@@ -30,7 +30,11 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app uses a ddeexec registry subkey as a means of launching another app__. Instead, use one of the DelegateExecute verb handlers as configured by the various Activatable* extensions in your [app package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
 
-+ __Your app writes to the AppData folder with the intention of sharing data with another app__. After conversion, AppData is redirected to the local app data store, which is a private store for each UWP app. Use a different means of inter-process data sharing. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
++ __Your app writes to the AppData folder or to the registry with the intention of sharing data with another app__. After conversion, AppData is redirected to the local app data store, which is a private store for each UWP app.
+
+  All entries that your app writes to the HKEY_LOCAL_MACHINE registry hive are redirected to an isolated binary file and any entries that your app writes to the HKEY_CURRENT_USER registry hive are placed into a private per-user, per-app location. For more details about file and registry redirection, see [Behind the scenes of the Desktop Bridge](desktop-to-uwp-behind-the-scenes.md).  
+
+  Use a different means of inter-process data sharing. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
 + __Your app writes to the install directory for your app__. For example, your app writes to a log file that you put in the same directory as your exe. This isn't supported, so you'll need to find another location, like the local app data store.
 
