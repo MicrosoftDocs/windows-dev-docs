@@ -30,6 +30,15 @@ You could also use JSON to remove all labels and points from a map.
     {"version":"1.*", "elements":{"mapElement":{"labelVisible":false},"point":{"visible":false}}}
 ```
 
+Sometimes the value of a property is transformed to produce the final result.  For example, vegetation fillColor has slightly different shades depending on type of the entity being displayed.  This behavior can be turned off, thereby using the precise provided value, by using the ignoreTransform property.
+
+```json
+    {"version":"1.*",
+        "settings":{"shadedReliefVisible":false},
+        "elements":{"vegetation":{"fillColor":{"value":"#999999","ignoreTransform":true}}}
+    }
+```
+
 This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.
 
 <span id="entries" />
