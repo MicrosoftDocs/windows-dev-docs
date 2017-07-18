@@ -2,8 +2,8 @@
 description: This article explains how to receive content in your Universal Windows Platform (UWP) app shared from another app by using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share.
 title: Receive data
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
