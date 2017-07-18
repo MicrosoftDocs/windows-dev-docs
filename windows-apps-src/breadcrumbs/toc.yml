@@ -8,7 +8,7 @@
     items:
       - name: UWP
         tocHref: /windows/uwp/
-        topicHref: "/index"  
+        topicHref: "/windows/uwp/index"  
         items:
               - name: Get started
                 tocHref: /windows/uwp/get-started/
