@@ -191,7 +191,6 @@ After you've added users, groups, and/or Azure AD applications to your Dev Cente
 > [!IMPORTANT]
 > Changes made to roles or permissions will only affect Dev Center access. All other changes (such as changing a user's name or group membership, or the Reply URL and App ID URI for an Azure AD application) will be reflected in your organization's Azure AD tenant as well as in your Dev Center account. 
 
-USER
 1.  From the **Manage users** page, click the name of the user, group, or Azure AD application account that you want to edit.
 2.  Make your desired changes. The items you can edit are as follows:
     -   For a **user**, you can edit the user's first name, last name, or username. You can also select or deselect groups in the **Group membership** section to update their group membership.

@@ -4,7 +4,7 @@ Description: To understand your tax considerations for price selection, payout i
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 07/01/2017
+ms.date: 07/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -244,22 +244,7 @@ In certain countries/regions, Microsoft acts as a reseller, rather than your age
 
  
 
-## Tax reporting for India developers
 
-
-To obtain information relevant to remitting taxes for your Store transactions in India, generate a transaction report. You are responsible for reviewing the reporting and determining and complying with any obligations you have to register, collect, and remit taxes in connection with transactions involving your Application(s) or In-App Product(s).
- 
-**To generate a report:**
-
-1.  Go to [https://commerce.microsoft.com/PaymentHub/TaxReport](http://go.microsoft.com/fwlink/p/?LinkID=264239).
-2.  Log on using the Microsoft account you use to access your Dev Center developer account.
-3.  Select the appropriate date(s).
-4.  In **Sold to Country/Region**, select **India.**
-5.  Click **Search.**
-
-Each row of the report contains the date and time of the transaction and, if available, the India state where the transaction occurred.
-
- 
 
  
 
