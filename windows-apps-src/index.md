@@ -146,7 +146,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                             <a href="whats-new/windows-10-version-1703.md">What's new</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/api/index.md">Windows UWP Namespaces</a>
+                            <a href="//docs.microsoft.com/uwp/api/">Windows UWP Namespaces</a>
                         </p>
                         <!--<p>
                             <a href="//docs.microsoft.com/uwp/api/windows.applicationmodel.md">Windows.ApplicationModel</a>
