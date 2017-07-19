@@ -30,10 +30,12 @@ When you have completed answering the questions, click **Save and generate**. Yo
 
 The next time you update your app, you’ll see all of the app’s assigned ratings on this page. You can also click **Edit** to retake the questionnaire if the content of your app has changed in a way that requires you to adjust any of your answers. IARC may also update the questions from time to time. If this happens, you may be prompted to complete the questionnaire again when you submit an update.
 
+<span id="boards" />
+
 > [!NOTE]
 > South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256). If your app is a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
 
-
+<span id="appeal" />
 ## Appealing ratings or refused classifications
 
 If you have questions about the age rating your app received, or wish to appeal it, you can contact IARC via the link that appears in the rating certificate email that you will receive after your app has been published.
