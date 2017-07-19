@@ -179,7 +179,8 @@ These properties work in much the same way as the properties of the [**Binding**
 | **FallbackValue** | Specifies a value to display when the source or path cannot be resolved. |
 | **Mode** | Specifies the binding mode, as one of these strings: "OneTime", "OneWay", or "TwoWay". The default is "OneTime". Note that this differs from the default for **{Binding}**, which is "OneWay" in most cases. |
 | **TargetNullValue** | Specifies a value to display when the source value resolves but is explicitly **null**. |
-| **BindBack** | Specifies a function to use for the reverse direction of a two-way binding. | 
+| **BindBack** | Specifies a function to use for the reverse direction of a two-way binding. |
+| **UpdateSourceTrigger** | Specifies when to push changes back from the control to the model in TwoWay bindings. The default for all properties except TextBox.Text is PropertyChanged, TextBox.Text is LostFocus.| 
 
 **Note**  If you're converting markup from **{Binding}** to **{x:Bind}**, then be aware of the differences in default values for the **Mode** property.
  
