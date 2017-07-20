@@ -29,6 +29,8 @@ Simply drag the prefab into a scene, and everything will be set up for you.
 
 ![&lt;Gamertag&gt; &lt;Gamerscore&gt;](../images/unity/unity-userprofile-prefab.PNG)
 
+To use any of the Xbox Live prefabs, you'll need to drag an instance of the **XboxLiveServices** prefabs to at least your initial scene. On that prefab, you can turn and turn off logs from the various prefabs in the unity package for debugging purposes.
+
 If you enter play mode, the button will change to show **Sign In**.
 
 ![Sign In](../images/unity/unity-sign-in.PNG)

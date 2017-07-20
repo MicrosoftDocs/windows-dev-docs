@@ -22,3 +22,7 @@ This section covers how to integrate Xbox Live into games developed with the Uni
 [Sign-in to Xbox Live In Unity](sign-in-to-xbox-live-in-unity.md)
 
 [Add player stats and leaderboards to your Unity project](add-stats-and-leaderboards-in-unity.md)
+
+[Add Multi-User Support to your Unity Project](add-multi-user-support.md)
+
+[Add Controller Support to Xbox Live Prefabs](add-controller-support-to-xbox-live-prefabs.md)

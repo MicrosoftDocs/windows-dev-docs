@@ -30,6 +30,8 @@
 ##### [Configure Xbox Live in Unity](get-started-with-creators/configure-xbox-live-in-unity.md)
 ##### [Sign in to Xbox Live in Unity](get-started-with-creators/sign-in-to-xbox-live-in-unity.md)
 ##### [Add player stats and leaderboards to your Unity project](get-started-with-creators/add-stats-and-leaderboards-in-unity.md)
+##### [Add controller support to Xbox Live Prefabs](get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md)
+##### [Add multi-user support to your unity project](get-started-with-creators/add-multi-user-support.md)
 #### [Xbox Live service configuration for the Creators Program](get-started-with-creators/xbox-live-service-configuration-creators.md)
 #### [Xbox Live sandboxes introduction](get-started-with-creators/xbox-live-sandboxes-creators.md)
 #### [Authorize Xbox Live Accounts for Testing in your environment](get-started-with-creators/authorize-xbox-live-accounts.md)
