@@ -141,31 +141,13 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows device�
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>API reference (UWP / WinRT)</h3>
+                        <h3>API reference</h3>
                         <p>
                             <a href="whats-new/windows-10-version-1703.md">What's new</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/uwp/api/">Windows UWP Namespaces</a>
+                            <a href="//docs.microsoft.com/uwp/">Universal Windows Platform APIs</a>
                         </p>
-                        <!--<p>
-                            <a href="//docs.microsoft.com/uwp/api/windows.applicationmodel.md">Windows.ApplicationModel</a>
-                        </p> 
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/api/windows.devices.md">Windows.Devices</a>
-                        </p>
-                        <p>
-                            <a href="://docs.microsoft.com/uwp/api/windows.foundation.md">Windows.Foundation</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/api/windows.gaming.input.md">Windows.​Gaming.​Input</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/api/windows.storage.md">Windows.Storage</a>
-                        </p>
-                        <p>
-                            <a href="//docs.microsoft.com/uwp/api/windows.system.md">Windows.System</a>
-                        </p>                        -->
                     </div>
                 </div>
             </div>
