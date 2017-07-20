@@ -4,7 +4,7 @@ ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Learn about known issues for the current release of the Microsoft advertising libraries.
 title: Known issues for the advertising libraries
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,7 +20,7 @@ This topic lists the known issues with the current release of the Microsoft adve
 
 ## Windows Phone 8.x Silverlight projects
 
-The Microsoft Advertising SDK for Windows and Windows Phone 8.x has limited support for Windows Phone 8.x Silverlight projects. For more information, see [Display ads in your app](display-ads-in-your-app.md#silverlight_support).
+The Microsoft Advertising SDK for Windows and Windows Phone 8.x has limited support for Windows Phone 8.x Silverlight projects. For more information, see [Advertising support for Windows Phone 8.x Silverlight projects](adcontrol-in-windows-phone-silverlight.md#silverlight_support).
 
 To get the Microsoft advertising assemblies for Windows Phone 8.x Silverlight projects, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), open your project in Visual Studio, and then go to **Project** > **Add Connected Service** > **Ad Mediator** to automatically download the assemblies. After doing this, you can remove the ad mediator references from your project if you do not want to use ad mediation. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
 

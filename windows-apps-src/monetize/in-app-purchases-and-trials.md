@@ -20,7 +20,7 @@ The Windows SDK provides APIs you can use to implement the following features to
 * **Trial functionality**&nbsp;&nbsp;If you configure your app as a [free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial), you can entice your customers to purchase the full version of your app by excluding or limiting some features during the trial period. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
 This article provides an overview of how in-app purchases and trials work in UWP apps.
-
+          
 <span id="choose-namespace" />
 ## Choose which namespace to use
 

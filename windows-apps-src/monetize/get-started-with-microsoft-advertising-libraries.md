@@ -4,7 +4,7 @@ ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
 description: Get the information you need to get started using the Microsoft advertising libraries to add banner and interstitial ads to your apps.
 title: Get started with the advertising libraries
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,8 +23,6 @@ For complete sample projects that demonstrate how to add banner and interstitial
 | Topic                                                                                                       | Description                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
 | [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md) |  Provides installation details for the Microsoft Advertising SDK.  |
-| [Workflows for creating apps with ads](workflows-for-creating-apps-with-ads.md)     |  Provides high-level steps that describe the process of developing and publishing an app with ads.   |
 | [Update your app to the latest Microsoft advertising libraries](update-your-app-to-the-latest-advertising-libraries.md)  | If you have an existing app that displays banner ads using **AdControl** or **AdMediatorControl**, follow the instructions in this article to determine whether you need to update your app to use the latest SDK in order for your app to continue to receive banner ads.  |
 | [Release notes](release-notes-for-the-advertising-libraries.md)         |  Provides release notes for the current release of the Microsoft Advertising SDK.   |
 | [Known issues](known-issues-for-the-advertising-libraries.md)      |  Lists the known issues with the current release of the Microsoft Advertising SDK.   |
-| [Additional help](additional-help.md)                                    |   Provides links to more resources about developing apps with ads.  |

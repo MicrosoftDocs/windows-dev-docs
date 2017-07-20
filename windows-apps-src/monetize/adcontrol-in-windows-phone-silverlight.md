@@ -4,7 +4,7 @@ ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
 description: Learn how to use the AdControl class to display banner ads in a Silverlight app for Windows Phone 8.1 or Windows Phone 8.0.
 title: AdControl in Windows Phone Silverlight
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,15 @@ keywords: windows 10, uwp, ads, advertising, AdControl, Silverlight, Windows Pho
 
 This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) class to display banner ads in a Silverlight app for Windows Phone 8.1 or Windows Phone 8.0.
 
-> **Note for Windows Phone Silverlight 8.0**&nbsp;&nbsp;Banner ads are still supported for existing Windows Phone 8.0 Silverlight apps that use an **AdControl** from an earlier release of the Universal Ad Client SDK or Microsoft Advertising SDK and that are already available in the Store. However, banner ads are no longer supported in new Windows Phone 8.0 Silverlight projects. In addition, some debugging and testing scenarios are limited in Windows Phone 8.x Silverlight projects. For more information, see [Display ads in your app](display-ads-in-your-app.md#silverlight_support).
+<span id="silverlight_support"/>
+## Advertising support for Windows Phone 8.x Silverlight projects
+
+Some developer scenarios are no longer supported in Windows Phone 8.x Silverlight projects. For more information, see the following table.
+
+|  Platform version  |  Existing projects    |   New projects  |
+|-----------------|----------------|--------------|
+| Windows Phone 8.0 Silverlight     |  If you have an existing Windows Phone 8.0 Silverlight project that already uses an **AdControl** or **AdMediatorControl** from an earlier release of the Universal Ad Client SDK or Microsoft Advertising SDK and this app is already published in the Windows Store, you can modify and rebuild the project, and you can debug or test your changes on a device. Debugging or testing the project in the emulator is not supported.  |  Not supported.  |
+| Windows Phone 8.1 Silverlight    |  If you have an existing Windows Phone 8.1 Silverlight project that uses an **AdControl** or **AdMediatorControl** from an earlier SDK, you can modify and rebuild the project. However, to debug or test the app, you must run the app in the emulator and use [test mode values](test-mode-values.md) for the application ID and ad unit ID. Debugging or testing the app on a device is not supported.  |   You can add an **AdControl** or **AdMediatorControl** to a new Windows Phone 8.1 Silverlight project. However, to debug or test the app, you must run the app in the emulator and use [test mode values](test-mode-values.md) for the application ID and ad unit ID. Debugging or testing the app on a device is not supported. |
 
 ## Add the advertising assemblies to your project
 
