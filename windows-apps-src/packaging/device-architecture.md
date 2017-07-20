@@ -31,7 +31,7 @@ It is highly recommended that you build your app package to target all architect
 Let’s talk about these architectures in more detail. 
 
 ### x86
-Choosing x86 is generally the safest configuration for an app package since it will run on nearly every device. On some devices, an app package with the x86 configruation won't run, such as the Xbox or some IoT Core devices.
+Choosing x86 is generally the safest configuration for an app package since it will run on nearly every device. On some devices, an app package with the x86 configuration won't run, such as the Xbox or some IoT Core devices.
 
 ### x64
 This configuration is used less frequently than the x86 configuration. It should be noted that this configuation is reserved for desktops using 64-bit versions of Windows 10, [UWP apps on Xbox](https://docs.microsoft.com/windows/uwp/xbox-apps/system-resource-allocation), and Windows 10 IoT Core on the Intel Joule.
