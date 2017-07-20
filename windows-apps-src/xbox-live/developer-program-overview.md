@@ -17,11 +17,14 @@ If you would like to develop Xbox Live enabled titles, there are several options
 
 ## Xbox Live Creators Program
 
+> [!IMPORTANT]
+> The Xbox Live Creators Program is currently in preview. You can apply to join the program [here](https://developer.microsoft.com/en-us/games/xbox/xboxlive/creator).
+
 The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development.  No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements, beyond the usual ones for developing [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) applications (UWP apps) which you can read about at [https://developer.microsoft.com/en-us/store/publish-apps](https://developer.microsoft.com/en-us/store/publish-apps)
 
 Titles enabled under the Xbox Live Creators Program can use Leaderboards, Featured Stats, Cloud Saves, and a restricted set of Social Features.
 
-Achievements, Multiplayer and the full of Social features is **NOT** supported for titles in the Xbox Live Creators Program.
+Achievements, online multiplayer and many social features are **not** supported for titles in the Xbox Live Creators Program.
 
 Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP apps run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWPs on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).
 
@@ -33,7 +36,7 @@ For developers in the Xbox Live Creators Program, you can submit a new idea or v
 
 ## ID@Xbox
 
-The Xbox Live Creators Program is great for lots of games and developers. But if you’d like to access the full Xbox Live stack, including Multiplayer, Achievements and Gamerscore, or you want to access the full power of the Xbox One family of devices using hardware dev kits, the [ID@Xbox](http://www.xbox.com/en-US/developers/id) program is for you.
+The Xbox Live Creators Program is great for lots of games and developers. But if you’d like to access the full Xbox Live stack, including online multiplayer, achievements and Gamerscore, or you want to access the full power of the Xbox One family of devices using hardware dev kits, the [ID@Xbox](http://www.xbox.com/en-US/developers/id) program is for you.
 
 Games in the ID@Xbox program must be concept approved and go through full certification on Xbox One and Windows 10, which is a greater time commitment on your part.
 ID@Xbox titles get placement in the primary section of the Store, versus the Creators Collection, which may allow for greater exposure to customers.
@@ -126,7 +129,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 
 <tr>
 <td>Broadcast</td>
-<td>Players can live broadcast their gameplay via streaming services like Beam and Twitch</td>
+<td>Players can live broadcast their gameplay via streaming services like Mixer and Twitch</td>
 <td class="xbl-features-automatic">Automatic</td>
 <td class="xbl-features-automatic">Automatic</td>
 </tr>
@@ -135,7 +138,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 <td>Rich Presence</td>
 <td>Shows more detailed information about players in your title.  Whereas Basic Presence might show "User is in Car Racing Game", Rich Presence lets you specify a more detailed string like "User is driving SuperCar in RainyForest"</td>
 <td class="xbl-features-required">Required</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
@@ -156,7 +159,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 <td>Reputation</td>
 <td>Players gain or lose reputation through their behavior. Behavior is used in Matchmaking and can be used by your title in custom ways.</td>
 <td class="xbl-features-optional">Optional</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
@@ -193,7 +196,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 <td>Achievements with Gamerscore</td>
 <td>Designate certain stats as "Featured Stats" that will show up in the Game Hub.</td>
 <td class="xbl-features-required">Required</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr class="dev-program-feature-start">
@@ -202,7 +205,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 <td>Contextual Search</td>
 <td>Annotate GameDVR clips with keywords to make it easier for players to find clips corresponding to what they want to watch.</td>
 <td class="xbl-features-optional">Optional</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 
@@ -223,40 +226,40 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 </tr>
 
 <tr class="dev-program-feature-start">
-<td rowspan="6" class="dev-program-feature-name">Multiplayer</td>
+<td rowspan="6" class="dev-program-feature-name">Online Multiplayer</td>
 
 <td>Multiplayer Session Directory (MPSD)</td>
 <td>Stores information about a multiplayer session, such as list of players, state, etc.</td>
 <td class="xbl-features-optional">Required</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Matchmaking</td>
 <td>Xbox Live can match different players together for a multiplayer session.</td>
 <td class="xbl-features-optional">Optional</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Arena</td>
 <td>Players can compete against each other tournament style.</td>
 <td class="xbl-features-optional">Optional</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Game Chat</td>
 <td>Voice chat for players in a multiplayer game</td>
 <td class="xbl-features-optional">Optional</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 <tr>
 <td>Xbox Live Compute</td>
 <td>Deploy executables and assets which your title can communicate with, to offload computation from the client.</td>
 <td class="xbl-features-optional">Optional</td>
-<td class="xbl-features-notavailable">N/A</td>
+<td class="xbl-features-notavailable">Not Supported</td>
 </tr>
 
 </table>

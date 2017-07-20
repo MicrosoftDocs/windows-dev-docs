@@ -1,7 +1,7 @@
 ---
-title: Simplified Achievements
+title: Achievements 2017
 author: KevinAsgari
-description: Simplified Achievements
+description: Achievements 2017
 ms.assetid: d424db04-328d-470c-81d3-5d4b82cb792f
 ms.author: kevinasg
 ms.date: 04-04-2017
@@ -11,9 +11,9 @@ ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 ---
 
-# Simplified Achievements
+# Achievements 2017
 
-The Simplified Achievements system enables game developers to use a direct calling model to unlock achievements for new Xbox Live games on Xbox One, Windows 10, Windows 10 Phone, Android, and iOS.
+The Achievements 2017 system enables game developers to use a direct calling model to unlock achievements for new Xbox Live games on Xbox One, Windows 10, Windows 10 Phone, Android, and iOS.
 
 ## Introduction
 
@@ -33,11 +33,11 @@ It is worth noting that game developers have also repeatedly shared feedback tha
 
 2.  Configuration improvements such as a service config instead of a local config that must be included in the game package (i.e. gameconfig, XLAST, SPA, etc.) and the ability to easily edit achievement strings & images after the game has shipped.
 
-With Simplified Achievements, we are building a replacement of the existing Cloud-Powered Achievements system for future titles to use that makes it even easier for Xbox game developers to configure achievements, integrate achievement unlocks & updates into the game code, and validate that the achievements are working as expected.
+With Achievements 2017, we are building a replacement of the existing Cloud-Powered Achievements system for future titles to use that makes it even easier for Xbox game developers to configure achievements, integrate achievement unlocks & updates into the game code, and validate that the achievements are working as expected.
 
-## What’s Different with Simplified Achievements
+## What’s Different with Achievements 2017
 
-|                          | Simplified Achievements system        | Cloud-Powered Achievements system      |
+|                          | Achievements 2017 system        | Cloud-Powered Achievements system      |
 |--------------------------|---------------------------------------|----------------------------------------|
 | Unlock Trigger           | Directly via API call                 | Indirectly via telemetry events        |
 | Unlock Owner             | Title                                 | Xbox Live                              |
@@ -49,81 +49,17 @@ With Simplified Achievements, we are building a replacement of the existing Clou
 
 ## Title Requirements
 
-The following are the requirements of any title that will use the Simplified Achievements system.
+The following are the requirements of any title that will use the Achievements 2017 system.
 
-1.  **Must be a new (unreleased) title.** Titles that have already been released and are using the Cloud-Powered Achievements system are ineligible. For more, see [Why can’t existing titles “migrate” onto the new Simplified Achievements system?](#_Why_can’t_existing)
+1.  **Must be a new (unreleased) title.** Titles that have already been released and are using the Cloud-Powered Achievements system are ineligible. For more, see [Why can’t existing titles “migrate” onto the new Achievements 2017 system?](#_Why_can’t_existing)
 
 2.  **Must use August 2016 XDK or newer.** The Simplified Achievements API was released in the August 2016 XDK.
 
-3.  **Must be an XDK or UWP title.** The Simplified Achievements system is not available for legacy platforms, including Xbox 360, Windows 8.x or older, nor Windows Phone 8 or older.
-
-## Configuring Achievements in XDP
-
-In the Simplified Achievements system, the only configuration needs for an achievement are its name, locked & unlocked descriptions, display image, and reward information. (Note: Valid achievement rewards still include: Gamerscore, art rewards, and in-game rewards.)
-
-<span id="_Enable_Simplified_Achievements" class="anchor"></span>
-
-### Enable Simplified Achievements
-
-The Achievements system used by your title is managed at the product level.  
-
-Developers may switch their products between Simplified and Cloud-Powered Achievements systems at any time prior to publishing into RETAIL. Upon switching Achievements systems, in either direction, all of your title’s configured & published achievements (and challenges, if applicable) will be deleted from every sandbox. 
-
-Once a title’s service configuration has been published to RETAIL, its Achievements system is permanently set and cannot be changed. **No exceptions can be made. This is required for both technical & policy reasons.**
-
-1.  From your product page in XDP, navigate to **Product Setup**.
-![](../images/omega/simplified-achievements-1.png)
-
-2.  Select **Product Details**.
-![](../images/omega/simplified-achievements-2.png)
-
-1.  Switch the **Achievements configuration system** toggle to *Achievements 2017.*
-![](../images/omega/simplified-achievements-2.png)
-
-1.  You will receive a warning that all of your title’s achievements will be deleted in all sandboxes. If you are OK with the deletion of your existing achievements in all sandboxes, click **Save**.
-![](../images/omega/simplified-achievements-4.png)
-
-### Configure an Achievement
-
-1.  Enable Simplified Achievements for your title.
-
-2.  Navigate to **Service Configuration** and select **Achievements**.
-![](../images/omega/simplified-achievements-5.png)
-
-1.  Enter the achievement display details.
-
-    *Note: These strings are used for display in the XDP UI. The final strings that will be shown to users must be configured in the “Localized Strings” service configuration option (step 5).*<br>
-![](../images/omega/simplified-achievements-6.png)
-
-1.  To add Gamerscore, Artwork, or In-App reward onto the achievement, click **New** under the **Rewards** section.
-![](../images/omega/simplified-achievements-7.png)
-
-1.  If supplying localized strings for your achievement names & descriptions, navigate to **Localized Strings.**
-
-    *Note: Don’t forget to define your English localized strings. Otherwise, your users in non-USA countries who prefer English text may not get the expected result.*<br>
-![](../images/omega/simplified-achievements-8.png)
-
-1.  To compare your recent changes to the currently published service configuration data, navigate to **Compare Data** and select the desired sandboxes for comparison.
-![](../images/omega/simplified-achievements-9.png)
-
-1.  When ready to publish & test in your dev sandbox, return to **Service Configuration** and click the **Publish** button.
-![](../images/omega/simplified-achievements-10.png)
-
-1.  Choose the destination sandbox where you want to test (likely the same sandbox where you drafted the achievements).
-
-    Select the *Events, Stat Rules, Achievements…* checkbox under Service Configuration.
-
-    Click **Submit.**
-
-![](../images/omega/simplified-achievements-11.png)
-
-## Configuration via Universal Developer Center (UDC)
-
-*Coming soon!*
+3.  **Must be an XDK or UWP title.** The Achievements 2017 system is not available for legacy platforms, including Xbox 360, Windows 8.x or older, nor Windows Phone 8 or older.
 
 ## UpdateAchievement API
 
-Once your achievements are configured & published to your dev sandbox, your title can unlock them in the dev sandbox by calling the UpdateAchievement API.
+Once your achievements are configured via [XDP](achievements-in-xdp.md) or [UDC](achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the UpdateAchievement API.
 
 The API is available in both the XDK and the Xbox Live SDK.
 
@@ -174,7 +110,7 @@ If the user is online, the request will be immediately sent to the Xbox Live Ach
 
 -   The unlocked achievement will be added to the user’s activity feed.
 
-> *Note: There will be no visible difference in user experiences for achievements that use the Simplified Achievements system and the Cloud-Powered Achievements.*
+> *Note: There will be no visible difference in user experiences for achievements that use the Achievements 2017 system and the Cloud-Powered Achievements.*
 
 If the user is offline, the unlock request will be queued locally on the user’s device. When the user’s device has reestablished network connectivity, the request will automatically be sent to the Achievements service – note: no action is required from the game to trigger this – and the above user experiences will occur as described.
 
@@ -196,50 +132,50 @@ There are two big asks that we typically hear from developers when it comes to v
 
 2.  I want to add unlocked achievements (and Gamerscore) for a test user.
 
-With the Simplified Achievements system, we are building APIs that will support both of these scenarios and will allow game developers to more easily test their title’s achievements within their dev sandboxes.
+With the Achievements 2017 system, we are building APIs that will support both of these scenarios and will allow game developers to more easily test their title’s achievements within their dev sandboxes.
 
 *More info coming soon!*
 
 ## Frequently Asked Questions
 
-### <span id="_Why_are_Challenges" class="anchor"></span>Can I ship my title using the Simplified Achievements system before the Mandatory date?
+### <span id="_Why_are_Challenges" class="anchor"></span>Can I ship my title using the Achievements 2017 system before the Mandatory date?
 
-Absolutely! Beginning on the First Approved date, all new titles are welcomed and encouraged to make use of the Simplified Achievements system in lieu of the Cloud-Powered Achievements system.
+Absolutely! Beginning on the First Approved date, all new titles are welcomed and encouraged to make use of the Achievements 2017 system in lieu of the Cloud-Powered Achievements system.
 
-### Why are Challenges not supported in the Simplified Achievements system?
+### Why are Challenges not supported in the Achievements 2017 system?
 
 Usage data across Xbox games has shown that the current implementation and presentation of challenges does not fulfill a need for most game developers. We will continue gathering developer input and feedback in this space and endeavor to deliver future features that are more on point with developer needs. The newly released Xbox Arena is an example of a feature that introduces new competitive capabilities for Xbox games a new, but similar, direction.
 
-### Can I still add new achievements every calendar quarter if my title is using the Simplified Achievements system?
+### Can I still add new achievements every calendar quarter if my title is using the Achievements 2017 system?
 
 Yes. The Achievements policy is unchanged.
 
-### <span id="_Why_can’t_existing" class="anchor"></span>Why can’t existing titles “migrate” onto the new Simplified Achievements system?
+### <span id="_Why_can’t_existing" class="anchor"></span>Why can’t existing titles “migrate” onto the new Achievements 2017 system?
 
-For the vast majority of existing titles, a ‘migration’ to the Simplified Achievements system would not be limited to simply updating their service configurations and swapping out event writes for achievement unlock calls – although these changes alone would be very costly and would carry significant risk of error and unintended behavior that could result in the achievements being irreparably broken. Rather, most existing titles also have users with existing data. Attempting to convert a live game that is already using the Cloud-Powered Achievements system would not only be a very costly effort, for both the developer and Xbox, but would significantly jeopardize existing users’ profiles and/or game experiences.
+For the vast majority of existing titles, a ‘migration’ to the Achievements 2017 system would not be limited to simply updating their service configurations and swapping out event writes for achievement unlock calls – although these changes alone would be very costly and would carry significant risk of error and unintended behavior that could result in the achievements being irreparably broken. Rather, most existing titles also have users with existing data. Attempting to convert a live game that is already using the Cloud-Powered Achievements system would not only be a very costly effort, for both the developer and Xbox, but would significantly jeopardize existing users’ profiles and/or game experiences.
 
-### If my title was released using the Cloud-Powered Achievements system, can any future DLC for the title switch to Simplified Achievements?
+### If my title was released using the Cloud-Powered Achievements system, can any future DLC for the title switch to Achievements 2017?
 
 All achievements for a title must use the same Achievements system. Whichever Achievements system is used by the base game’s achievements is the system that must be used for all future achievements for the title.
 
-### While testing achievements in my dev sandbox, can I mix-and-match between using the Simplified Achievements system and the Cloud-Powered Achievements system?
+### While testing achievements in my dev sandbox, can I mix-and-match between using the Achievements 2017 system and the Cloud-Powered Achievements system?
 
 No. All achievements for a title must use the same Achievements system.
 
 ### If I want to try out each Achievements system after the First Approved date, can I use different Achievements systems between different dev sandboxes?
 
-The Achievements system used by your title is set at the product level. If your title’s service configuration has not been published to RETAIL, you can try out each Achievements system in your dev sandboxes. For more information, see [Enable Simplified Achievements (XDP)](#_Enable_Simplified_Achievements). Note that changing your Achievements system will cause the deletion of all of your title’s configured & published achievements in all sandboxes.
+The Achievements system used by your title is set at the product level. If your title’s service configuration has not been published to RETAIL, you can try out each Achievements system in your dev sandboxes. For more information, see [Enable Achievements 2017 (XDP)](#_Enable_Simplified_Achievements). Note that changing your Achievements system will cause the deletion of all of your title’s configured & published achievements in all sandboxes.
 
-### Does Simplified Achievements also include offline unlocks?
+### Does Achievements 2017 also include offline unlocks?
 
 If the title unlocks an achievement whiel the device is offline, the UpdateAchievement API will automatically queue the offline unlock requests and will auto-sync to Xbox Live when the device has reestablished network connectivity, similar to the current Cloud-Powered Achievements system’s offline experience. Achievements unlocks will not occur while the user is offline.
 
-### I see a new “AchievementUpdate” event in XDP. If my title uses that event, does that mean it has simplified achievements?
+### I see a new “AchievementUpdate” event in XDP. If my title uses that event, does that mean it has Achievements 2017?
 
-The *AchievementUpdate* base event is required by Xbox Live for backend purposes. You can safely ignore it. If your title configures an event using this base event type, those event writes will be ignored by Xbox Live. Titles that are built on the Cloud-Powered Achievements system should continue to configure their events by using the other base event types. Titles that are built on the Simplified Achievements system need not configure *any* events for achievement purposes.
+The *AchievementUpdate* base event is required by Xbox Live for backend purposes. You can safely ignore it. If your title configures an event using this base event type, those event writes will be ignored by Xbox Live. Titles that are built on the Cloud-Powered Achievements system should continue to configure their events by using the other base event types. Titles that are built on the Achievements 2017 system need not configure *any* events for achievement purposes.
 
-### How do I disable Simplified Achievements for my title?
+### How do I disable Achievements 2017 for my title?
 
-If your title is set to use the Simplified Achievements system and you wish to use the Cloud-Powered Achievements system instead, follow the [Enable Simplified Achievements (XDP)](#_Enable_Simplified_Achievements) instructions *except* set the **Achievements configuration system** toggle to *Achievements 2013.*
+If your title is set to use the Achievements 2017 system and you wish to use the Cloud-Powered Achievements system instead, follow the [Enable Achievements 2017 (XDP)](#_Enable_Simplified_Achievements) instructions *except* set the **Achievements configuration system** toggle to *Achievements 2013.*
 
-If your title is created after the Mandatory date, you cannot disable the Simplified Achievements system for your title.
+If your title is created after the Mandatory date, you cannot disable the Achievements 2017 system for your title.

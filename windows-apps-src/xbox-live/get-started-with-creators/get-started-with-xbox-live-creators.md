@@ -16,6 +16,9 @@ This section covers getting started with Xbox Live Creators Program.
 
 ## Why should you use the Xbox Live Creators Program?
 
+> [!IMPORTANT]
+> The Xbox Live Creators Program is currently in preview. You can apply to join the program [here](https://developer.microsoft.com/en-us/games/xbox/xboxlive/creator).
+
 Xbox Live Creators Program offers an array of features designed to help promote your game and keep gamers engaged:
 
 - Xbox Live social platform lets gamers connect with friends and talk about your game.
