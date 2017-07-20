@@ -27,11 +27,14 @@ For more app service samples, see [Universal Windows Platform (UWP) app samples]
 
 In this how-to, we'll create everything in one solution for simplicity.
 
--   In Microsoft Visual Studio 2015, create a new UWP app project and name it AppServiceProvider. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that provides the app service.
+-   In Microsoft Visual Studio 2015 or 2017, create a new UWP app project and name it AppServiceProvider. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that provides the app service.
+-   When asked to select a **Target Version** for the project, select at least `10.0.14393`. If you want to use the new `SupportsMultipleInstances` attribute, you must be using Visual Studio 2017 and target `10.0.15063` (**Windows 10 Creator's Update**) or higher.
 
 ## Add an app service extension to package.appxmanifest
 
 In the AppServiceProvider project's Package.appxmanifest file, add the following AppService extension to the **&lt;Application&gt;** element. This example advertises the `com.Microsoft.Inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service app exposes the service to other apps. We recommend using a reverse domain name style for the service name.
+
+Note that the `xmlns:uap4` namespace prefix and the `uap4:SupportsMultipleInstances` attribute are only valid if you are targeting Windows SDK version `10.0.15063` or higher. You can safely remove them if you are targeting older SDK versions.
 
 ``` xml
 <Package
@@ -55,7 +58,7 @@ The **Category** attribute identifies this application as an app service provide
 
 The **EntryPoint** attribute identifies the class that implements the service, which we'll implement next.
 
-The **SupportsMultipleInstances** attribute indicates that each time the app service is called that it should run in a new process that gets its own resource limits (memory and CPU). This is not required but is available to you if you need that functionality.
+The **SupportsMultipleInstances** attribute indicates that each time the app service is called that it should run in a new process that gets its own resource limits (memory and CPU). This is not required but is available to you if you need that functionality and are targeting the `10.0.15063` SDK (**Windows 10 Creator's Update**) or higher.
 
 ## Create the app service
 
