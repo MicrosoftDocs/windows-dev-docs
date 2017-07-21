@@ -34,7 +34,7 @@ In this topic, we focus specifically on UWP app design for keyboard input on PCs
 
 Many of the guidelines and recommendations discussed here, including [focus visuals](#focus-visual), [access keys](#access-keys), and [UI navigation](#navigation), are also applicable to these other scenarios.
 
-**NOTE**  While, both hardware and software keyboards are used for text input, the focus of this topic is navigation and interaction.
+**NOTE**  While both hardware and software keyboards are used for text input, the focus of this topic is navigation and interaction.
 
 ## Built-in support
 
@@ -62,6 +62,16 @@ Here are the devices and tools discussed in this topic:
 For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input.
 For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
+
+## Custom experiences and efficient keyboarding
+As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.
+- Support keyboard navigation and interaction
+	- Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see [Tab stops](#tab-stops))
+	- Set initial focus on the most logical element (see [Initial focus](#initial-focus))
+	- Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
+- Support keyboard shortcuts
+	- Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
+	- Provide access keys to navigate your app's UI (see [Access keys](access-keys.md))
 
 ### Focus visuals <a name="focus-visual">
 
@@ -106,7 +116,7 @@ Try to rank and present the most important commands, controls, and content first
 
 **NOTE** Visual order is also dependent on locale and language.
 
-### Initial focus
+### Initial focus <a name="initial-focus">
 
 Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated. When using a keyboard, it is from this element that a user starts interacting with your app’s UI.
 
