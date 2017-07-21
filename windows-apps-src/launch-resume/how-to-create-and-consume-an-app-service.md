@@ -27,7 +27,7 @@ For more app service samples, see [Universal Windows Platform (UWP) app samples]
 
 In this how-to, we'll create everything in one solution for simplicity.
 
--   In Microsoft Visual Studio 2015 or 2017, create a new UWP app project and name it AppServiceProvider. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that provides the app service.
+-   In Microsoft Visual Studio, create a new UWP app project and name it AppServiceProvider. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that provides the app service.
 -   When asked to select a **Target Version** for the project, select at least `10.0.14393`. If you want to use the new `SupportsMultipleInstances` attribute, you must be using Visual Studio 2017 and target `10.0.15063` (**Windows 10 Creator's Update**) or higher.
 
 ## Add an app service extension to package.appxmanifest
