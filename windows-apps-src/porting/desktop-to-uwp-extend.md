@@ -13,7 +13,9 @@ keywords: windows 10, uwp
 
 # Extend your desktop application with modern UWP components
 
-Some Windows 10 experiences (For example: a touch-enabled UI page or a Windows Hello security verifier) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP component. But first, decide whether your Windows 10 experience requires one. In many cases you can call UWP APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
+Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP component.
+
+In many cases you can call UWP APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
 >[!NOTE]
 >This guide assumes that you've created a Windows app package for your desktop application by using the Desktop Bridge. If you haven't yet done this, see [Desktop Bridge](desktop-to-uwp-root.md).
@@ -24,7 +26,7 @@ If you're ready, let's start.
 
 As part of your application flow, you can incorporate modern XAML-based user interfaces into your desktop application. These user interfaces are naturally adaptive to different screen sizes and resolutions and support modern interactive models such as touch and ink.
 
-For example, to help users visualize a location, you could show a modern map control. With a small amount of XAML markup, you can give users with powerful map-related visualization features.
+For example, with a small amount of XAML markup, you can give users with powerful map-related visualization features.
 
 This image shows a VB6 application that opens a XAML-based modern UI that contains a map control.
 
@@ -48,7 +50,7 @@ To show a XAML-based UI, do these things:
 
 :three: [Start the UWP app from your desktop app](#start)
 
-:four: [Parse those parameters in the UWP project and show the page that you want](#parse)
+:four: [In the UWP project, show the page that you want](#parse)
 
 <span id="project" />
 ### Add a UWP project
@@ -167,7 +169,6 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 }
 ```
 
-
 ### Similar Samples
 
 [Northwind sample: End-to-end example for UWA UI & Win32 legacy code](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
@@ -176,7 +177,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 
 ## Provide services to other apps
 
-You add a service that other apps can consume. For example, you can add a service that gives other apps controlled access to the database behind your app. Apps can reach the service even if your desktop app is not running.
+You add a service that other apps can consume. For example, you can add a service that gives other apps controlled access to the database behind your app. By implementing a background task, apps can reach the service even if your desktop app is not running.
 
 Here's a sample that does this.
 
@@ -307,6 +308,8 @@ Learn more about app services here: [Create and consume an app service](https://
 [App service bridge sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample)
 
 [App service bridge sample with C++ win32 app](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample_C%2B%2B)
+
+[MFC application that receives push notifications](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/MFCwithPush)
 
 
 ## Making your desktop application a share target

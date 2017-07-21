@@ -38,7 +38,9 @@ Then, add a reference to these files.
 |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
 |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
-In **Solution Explorer**, expand the **References** node, choose the Windows file, Windows.Foundation.FoundationContract, and Windows.Foundation.UniversalApiContract files - something here for copy local = false.
+In the **Properties** window, set the **Copy Local** field of the **Windows.winmd** and **Windows.Foundation.FoundationContract.winmd** files to **False**.
+
+![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 
 ### Modify a C++ project to use UWP APIs
 
@@ -72,11 +74,11 @@ Now you're ready to add modern experiences that light up when users run your app
 
 :white_check_mark: **First, decide what experiences you want to add**
 
-There's lots to choose from. For example, simplify your purchase order flow by using monetization APIs, or direct attention to your app when you have something interesting to share, such as a new picture that another user has posted.
+There's lots to choose from. For example, you can simplify your purchase order flow by using monetization APIs, or direct attention to your app when you have something interesting to share, such as a new picture that another user has posted.
 
 ![Toast](images/desktop-to-uwp/toast.png)
 
-Even if users ignore or dismiss your message, they can see it again in the action center. Also, users can click on your message to open your app. This increases engagement with your app and has the added bonus of making your app appear deeply integrated with the operating system. We'll show you the code for that experience a bit later.
+Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your app and has the added bonus of making your app appear deeply integrated with the operating system. We'll show you the code for that experience a bit later.
 
 Visit our [developer center](https://developer.microsoft.com/windows) for ideas.
 
@@ -95,7 +97,7 @@ Beneath the summary of the API, you'll find a table that describes the API contr
 
 ![API contract table](images/desktop-to-uwp/contract-table.png)
 
-If you have a .NET-based desktop app, add a reference to that API contract. If you have a C++-based project, add to your **Additional Include Directories**, a path to the folder that contains this contract.
+If you have a .NET-based desktop app, add a reference to that API contract, and then set the **Copy Local** property of that file to **False**. If you have a C++-based project, add to your **Additional Include Directories**, a path to the folder that contains this contract.
 
 :white_check_mark: **Call the APIs to add your experience**
 
