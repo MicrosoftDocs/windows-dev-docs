@@ -43,7 +43,7 @@ In the AppServiceProvider project's Package.appxmanifest file, add the following
           EntryPoint="AppServiceProvider.App">
           <Extensions>
             <uap:Extension Category="windows.appService" EntryPoint="MyAppService.Inventory">
-              <uap:AppService Name="com.microsoft.inventory" uap4:SupportsMultipleInstances="True"/>
+              <uap:AppService Name="com.microsoft.inventory" uap4:SupportsMultipleInstances="true"/>
             </uap:Extension>
           </Extensions>
           ...
