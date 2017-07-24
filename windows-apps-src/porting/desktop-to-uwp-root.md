@@ -50,7 +50,7 @@ Do you plan to publish your app to the [Windows app store](https://www.microsoft
 Next, review the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you create a Windows app package for it. You might not have to make many changes to your app before you create the package. However, there are a some situations that might require you to tweak your app before you create a package for it.
 
 <span id="convert" />
-## Create a Windows app package
+## Package
 
 Here are some tools that you can use to create a Windows app package for your app.
 
@@ -149,27 +149,27 @@ Learn more in this [eBook](https://na01.safelinks.protection.outlook.com/?url=ht
 
 See [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
-## Enhance
+## Integrate
 
-Once you've packaged your apps, you can light them up with features such as live tiles, and push notifications. Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add. Some enhancements require a bit more code. In all, you'll have access to a wide range of UWP APIs. for a complete list, see [UWP APIs available to Window Desktop Bridge apps](desktop-to-uwp-supported-api.md).
-
-Check out these samples to get ideas.
-* [Desktop app bridge to UWP Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
-* [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples)
-
-If your app needs to integrate with the system (For example: establish firewall rules), you can do a lot of things without having write any code at all. You'll just add some XML to your app package. You can use XML to do things like start a process when the user logs on, integrate your app into File Explorer, and add your app a list of print targets that appear in other apps.
+If your app needs to integrate with the system (For example: establish firewall rules), describe those things in the package manifest of your app and the system will do the rest. For most of these tasks, you won't have to write any code at all. With a bit of XML in the manifest, you can do things like start a process when the user logs on, integrate your app into File Explorer, and add your app a list of print targets that appear in other apps.
 
 See [Integrate your app with Windows 10 (Windows Desktop Bridge)](desktop-to-uwp-extensions.md).
 
+## Enhance
+
+Once you've packaged you app, you can light it up with features such as live tiles, and push notifications. Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add. Some enhancements require a bit more code.
+
+See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md).
+
+## Extend
+
+Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container. In general, you should first determine whether you can add your experience by [Enhancing](desktop-to-uwp-enhance.md) your existing desktop application with UWP APIs. If you have to use a UWP component, to achieve the experience, then you can add a UWP project to your solution and use app services to communicate between your desktop app and the UWP component.
+
+See [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md).
+
 ## Migrate
 
-Using the bridge, you can gradually migrate your older code to UWP while still retaining the ability to run and publish your app on Windows Desktop. Once you’re fully migrated to UWP (and your app no longer contains any WPF/Win32 components), you can reach all Windows devices including phones, Xbox One and HoloLens.
-
-## Debug
-
-You can debug your app by using Visual Studio. See [Debug a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md).
-
-If you're interested in the internals of how the Desktop Bridge works under the covers, see [Behind the scenes of the Desktop Bridge](desktop-to-uwp-behind-the-scenes.md).
+You can gradually migrate your older code to UWP while still retaining the ability to run and publish your app on Windows Desktop. Once you’re fully migrated to UWP (and your app no longer contains any WPF/Win32 components), you can reach all Windows devices including phones, Xbox One and HoloLens.
 
 ## Validate
 
@@ -185,7 +185,7 @@ To review the list of tests that the Windows App Certification uses to validate 
 
 ## Distribute
 
-You can distribute your app by publishing it to one of our Windows Stores or by sideloading it onto other systems.
+You can distribute your app by publishing it the Windows Store or by sideloading it onto other systems.
 
 See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md).
 
@@ -210,9 +210,11 @@ Use the comments section below.
 | [Prepare to package an app](desktop-to-uwp-prepare.md) | Provides a list of items to review before you package your desktop app. |
 | [Package an app using the Desktop App Converter (Desktop Bridge)](desktop-to-uwp-run-desktop-app-converter.md) | Shows how to run Desktop App Converter. |
 | [Package an app manually (Desktop Bridge)](desktop-to-uwp-manual-conversion.md) | Learn how to create an app package and manifest to by hand. |
-|[Package a .NET app using Visual Studio (Desktop Bridge)](desktop-to-uwp-packaging-dot-net.md)| Shows you how to package your desktop app by using Visual Studio |.
-| [Integrate your app with Windows 10 (Desktop Bridge)](desktop-to-uwp-extensions.md) | Enhance your packaged desktop app with extensions to enable features like startup tasks and File Explorer integration. |
+| [Package a .NET app using Visual Studio (Desktop Bridge)](desktop-to-uwp-packaging-dot-net.md)| Shows you how to package your desktop app by using Visual Studio. |
+| [Integrate your app with Windows 10 (Desktop Bridge)](desktop-to-uwp-extensions.md) | Integrate your app with Windows 10 by using by describing tasks in the package manifest file of your packaging project. |
+| [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md)| Use UWP APIs to add modern experiences that light up for Windows 10 users. |
 | [UWP APIs available to a packaged desktop app (Desktop Bridge)](desktop-to-uwp-supported-api.md) | See what UWP APIs are available for your packaged desktop app to use. |
+| [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md)| Add advanced experiences that must run within a UWP app container. Connect your desktop app with the UWP process by using app services.|
 | [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md) | Explains options for debugging your packaged app. |
 | [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md) | See how you can distribute your converted app to users.  |
 | [Behind the scenes of the Desktop Bridge (Desktop Bridge)](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop to UWP Bridge works under the covers. |
