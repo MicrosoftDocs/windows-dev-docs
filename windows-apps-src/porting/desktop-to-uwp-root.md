@@ -157,7 +157,7 @@ See [Integrate your app with Windows 10 (Windows Desktop Bridge)](desktop-to-uwp
 
 ## Enhance
 
-Once you've packaged you app, you can light it up with features such as live tiles, and push notifications. Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add. Some enhancements require a bit more code.
+Once you've packaged your app, you can light it up with features such as live tiles, and push notifications. Some of these capabilities can significantly improve the engagement level of your app and they cost you very little time to add. Some enhancements require a bit more code.
 
 See [Enhance your desktop application for Windows 10](desktop-to-uwp-enhance.md).
 
