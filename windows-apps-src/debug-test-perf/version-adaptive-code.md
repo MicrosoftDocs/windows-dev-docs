@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: Version adaptive code
-description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
+description: Use the ApiInformation class to take advantage of new APIs while maintaining compatibility with previous versions
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,52 +11,17 @@ keywords: windows 10, uwp
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
 ---
 
-# Version adaptive code: Use new APIs while maintaining compatibility with previous versions
-
-Each release of the Windows 10 SDK adds exciting new functionality that you'll want to take advantage of. However, not all your customers will update their devices to the latest version of Windows 10 at the same time, and you want to make sure your app works on the broadest possible range of devices. Here, we show you how to design your app so that it runs on earlier versions of Windows 10, but also takes advantage of new features whenever your app runs on a device with the latest update installed.
-
-There are 2 steps to take to make sure your app supports the broadest range of Windows 10 devices. First, configure your Visual Studio project to target the latest APIs. This affects what happens when you compile your app. Second, perform runtime checks to ensure that you only call APIs that are present on the device your app is running on.
-
-## Configure your Visual Studio project
-
-The first step in supporting multiple Windows 10 versions is to specify the *Target* and *Minimum* supported OS/SDK versions in your Visual Studio project.
-- *Target*: The SDK version that Visual Studio compiles your app code and run all tools against. All APIs and resources in this SDK version are available in your app code at compile time.
-- *Minimum*: The SDK version that supports the earliest OS version that your app can run on (and will be deployed to by the store) and the version that Visual Studio compiles your app markup code against. 
-
-During runtime your app will run against the OS version that it is deployed to, so your app will throw exceptions if you use resources or call APIs that are not available in that version. We show you how to use runtime checks to call the correct APIs later in this article.
-
-The Target and Minimum settings specify the ends of a range of OS/SDK versions. However, if you test your app on the minimum version, you can be sure it will run on any versions between the Minimum and Target.
-
-> [!TIP]
-> Visual Studio does not warn you about API compatibility. It is your responsibility to test and ensure that your app performs as expected on all OS versions between and including the Minimum and Target.
-
-When you create a new project in Visual Studio 2015, Update 2 or later, you are prompted to set the Target and Minimum versions that your app supports. By default, the Target Version is the highest installed SDK version, and the Minimum Version is the lowest installed SDK version. You can choose Target and Minimum only from SDK versions that are installed on your machine. 
-
-![Set the target SDK in Visual Studio](images/vs-target-sdk-1.png)
-
-We typically recommend that you leave the defaults. However, if you have a Preview version of the SDK installed and you are writing production code, you should change the Target Version from the Preview SDK to the latest official SDK version. 
-
-To change the Minimum and Target version for a project that has already been created in Visual Studio, go to Project -> Properties -> Application tab -> Targeting.
-
-![Change the target SDK in Visual Studio](images/vs-target-sdk-2.png) 
-
-For reference these are the build numbers for each SDK:
-- Windows 10, version 1507: SDK version 10240 (See important [support](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates) info.)
-- Windows 10, version 1511 (November Update): SDK version 10586
-- Windows 10, version 1607 (Anniversary Update): SDK version 14393.
-- Windows 10, version 1703 (Creators Update): SDK version 15063.
-
-You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/) site.
-
-## Write adaptive code
+# Version adaptive code
 
 You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.
 
+For important background info about ApiInformation, API contracts, and configuring Visual Studio, see [Version adaptive apps](version-adaptive-apps.md).
+
 ### Runtime API checks
 
-You use the [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you to write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
+You use the [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
 
-Here we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > Numerous runtime API checks can affect the performance of your app. We show the checks inline in these examples. In production code, you should perform the check once and cache the result, then used the cached result throughout your app. 
@@ -476,6 +441,7 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
+
 ## Related articles
 
 - [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
