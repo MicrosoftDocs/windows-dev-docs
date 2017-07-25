@@ -94,7 +94,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 	// Add appId and Share support to the annotation
 	String appId = "MyApp_vqvv5s4y3scbg!App";
-	annotation.ProviderProperties.Insert("ContactShareAppID", appId);
+	annotation.ProviderProperties.Add("ContactShareAppID", appId);
 	annotation.SupportedOperations = ContactAnnotationOperations::Share;
 
 	// Save annotation to contact annotation list
