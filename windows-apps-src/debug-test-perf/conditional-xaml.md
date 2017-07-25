@@ -50,7 +50,8 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 (More on these methods in the sections below.)
 
-> [!NOTE] We recommend you use IsApiContractPresent and IsApiContractNotPresent. Other conditionals are not fully supported in the Visual Studio design experience.
+> [!NOTE] 
+> We recommend you use IsApiContractPresent and IsApiContractNotPresent. Other conditionals are not fully supported in the Visual Studio design experience.
 
 ## Create a namespace and set a property
 
