@@ -53,7 +53,7 @@
                       topicHref: "/windows/uwp/design-downloads/index"                       
               - name: Develop
                 tocHref: /windows/uwp/develop/
-                topicHref: "/windows/uwp/whats-new/index" 
+                topicHref: "/windows/uwp/whats-new/windows-10-version-1703" 
                 items:
                     - name: What's new 
                       tocHref: /windows/uwp/whats-new/
