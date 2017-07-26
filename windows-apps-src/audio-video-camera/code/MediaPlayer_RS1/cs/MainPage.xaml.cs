@@ -521,6 +521,7 @@ namespace MediaPlayer_Win10
             {
                 if(_frameServerDest == null)
                 {
+                    // FrameServerImage in this example is a XAML image control
                     _frameServerDest = new SoftwareBitmap(BitmapPixelFormat.Rgba8, (int)FrameServerImage.Width, (int)FrameServerImage.Height, BitmapAlphaMode.Ignore);
                 }
                 if(_canvasImageSource == null)
