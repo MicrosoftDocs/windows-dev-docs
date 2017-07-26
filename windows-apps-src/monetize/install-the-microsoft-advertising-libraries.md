@@ -48,7 +48,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
 
 To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
-1.  Close all instances of Visual Studio 2015 (or a later release).
+1.  Close all instances of Visual Studio.
 
 2.  If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now. Optionally, open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
   ```
@@ -63,11 +63,11 @@ To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
 4. In Visual Studio, click **Project** and **Manage NuGet Packages**.
 
-5. In the search box, type **Microsoft.Advertising.XAML** (for a XAML project) or **Microsoft.Advertising.JS** (for a JavaScript/HTML project) and install the corresponding package.
+5. In the search box, type **Microsoft.Advertising.XAML** (for a XAML project) or **Microsoft.Advertising.JS** (for a JavaScript/HTML project) and install the corresponding package. When the package is done installing, save your solution.
     > [!NOTE]
     > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
 
-6. Close your project and then reopen it.
+6. Close your solution and then reopen it.
 
 7.  If your project already references libraries from an earlier version of the Microsoft Advertising SDK that was installed via NuGet and you have updated your project to a newer release of the SDK, we recommend that you clean and rebuild your project (in **Solution Explorer**, right-click your project node and choose **Clean**, and then right-click your project node again and choose **Rebuild**).
 

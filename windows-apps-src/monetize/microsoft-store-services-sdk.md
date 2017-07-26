@@ -43,7 +43,7 @@ The Microsoft Store Services SDK requires:
 <span id="install" />
 ## Install the SDK
 
-There are two options for installing the Microsoft Store Services SDK for use with Visual Studio 2015 (or a later release) on your development computer:
+There are two options for installing the Microsoft Store Services SDK on your development computer:
 
 * **MSI installer**&nbsp;&nbsp;If you are using Visual Studio 2015, you can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk). With this option, the SDK libraries are installed in a shared location on your development computer so that they can be referenced by any UWP project in Visual Studio.
 * **NuGet package**&nbsp;&nbsp;For Visual Studio 2015 or a later release, you can install the SDK libraries for a specific UWP project by using NuGet. With this option, the SDK libraries are installed only for the project in which you installed the NuGet package.
@@ -58,7 +58,7 @@ Microsoft periodically releases new versions of the Microsoft Store Services SDK
 
 To install the Microsoft Store Services SDK via the MSI installer:
 
-1.  Close all instances of Visual Studio 2015 (or a later release). If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+1.  Close all instances of Visual Studio 2015. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
 
 2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
   ```
@@ -80,7 +80,7 @@ To install the Microsoft Store Services SDK via the MSI installer:
 
 To install the Microsoft Store Services SDK libraries for a specific project via NuGet:
 
-1.  Close all instances of Visual Studio 2015 (or a later release). If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+1.  Close all instances of Visual Studio. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
 
 2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
   ```
@@ -95,7 +95,7 @@ To install the Microsoft Store Services SDK libraries for a specific project via
 
 4. In Visual Studio, click **Project** and **Manage NuGet Packages**.
 
-5. In the search box, type **Microsoft.Services.Store.SDK** and install the Microsoft.Services.Store.SDK package.
+5. In the search box, type **Microsoft.Services.Store.SDK** and install the Microsoft.Services.Store.SDK package. When the package is done installing, save your solution.
     > [!NOTE]
     > If the **Output** window reports an *Install-Package* error that indicates the specified path is too long, you may need to configure NuGet to extract packages to an alternate location with a shorter path than the default location. To do this, add the ```repositoryPath``` value to a nuget.config file on your computer and assign it to a short folder path where NuGet packages can be extracted. For more information, see [this article](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior) in the NuGet documentation. Alternatively, you can try moving your Visual Studio project to an alternate folder with a shorter path.
 
