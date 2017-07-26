@@ -4,7 +4,7 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 07/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,6 +22,8 @@ In this report, an **acquisition** means a new customer has obtained a license t
 
 > [!IMPORTANT]
 > The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
+> 
+> Except for page view data (as described below), this report does not include data related to customers who acquire an app without being signed in to a Microsoft account.
 
 
 ## Apply filters
@@ -38,7 +40,7 @@ The info in all of the charts listed below will reflect the date range and any f
 
 ## Acquisitions
 
-The **Acquisitions** chart shows the number of daily or weekly acquisitions of your app over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.)
+The **Acquisitions** chart shows the number of daily or weekly acquisitions of your app over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart.
 
 You can also see the lifetime number of acquisitions for your app by selecting **App cumulative**. This shows the cumulative total of all acquisitions, starting from when your app was first published.
 
@@ -104,9 +106,11 @@ In this chart, a *channel* refers to the method in which a customer arrived at y
 -   **Custom campaign:** The customer followed a link that used a [custom campaign ID](create-a-custom-app-promotion-campaign.md).
 -   **Other:** The customer followed an external link (without any custom campaign ID) from a website to your app's listing or the customer followed a link from a search engine to your app's listing.
 
-A *page view* means that a customer viewed your app's Store listing page, either via the web-based Store or from within the Store app on Windows 10.
+A *page view* means that a customer viewed your app's Store listing page, either via the web-based Store or from within the Store app on Windows 10. This includes views by people who aren't signed in with a Microsoft account. Some customers have opted out of providing this information to Microsoft.
 
-A *conversion* means that a customer has newly obtained a license to your app (whether you charged money or you've offered it for free). These page views and conversion numbers are not counts of unique customers. For conversion rate info, see the [Acquisition funnel](#acquisition-funnel) chart.
+A *conversion* means that a customer (signed in with a Microsoft account) has newly obtained a license to your app (whether you charged money or you've offered it for free).
+
+Page view and conversion numbers are not counts of unique customers. For conversion rate info, see the [Acquisition funnel](#acquisition-funnel) chart.
 
 > [!NOTE]
 > Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views. 
