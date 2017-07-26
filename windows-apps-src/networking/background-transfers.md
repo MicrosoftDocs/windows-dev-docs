@@ -37,7 +37,7 @@ When an app uses Background Transfer to initiate a transfer, the request is conf
 
 In addition, Background Transfer uses System Event Broker events. As such, the number of downloads is limited by the number of events available on the system. By default this is 500 events, but those events are shared across all processes. Therefore, a single application should not create more than 100 background transfers at a time.
 
-When an application starts a background transfer, the application must call [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_") on all existing [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) objects. Not doing this may cause a leak of those events, and thus render the Background Transfer feature useless.
+When an application starts a background transfer, the application must call [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_) on all existing [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) objects. Not doing this may cause a leak of those events, and thus render the Background Transfer feature useless.
 
 ### Performing authenticated file requests with Background Transfer
 
