@@ -85,7 +85,8 @@ To control the type of view, use the *ss* (Streetside) and *sty* (style) and par
 | bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle.                                                                                                                               |
 | bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch of 75 degrees, and a heading of 165 degrees.                                                    |
 | bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle.                                                                                                                       |
- 
+
+
 ## Display search results
 
 When searching for places using the *q* parameter, we recommend making the terms as specific as possible and using the *cp*, *bb*, or *where* parameters to specify a search location. If you do not specify a search location and the user's current location is not available, the search may not return meaningful results. Search results are displayed in the most appropriate map view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
