@@ -83,14 +83,15 @@ See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum
 
 ### Failed to locate the package
 
-"Developer Mode package couldn’t be located in Windows Update. Error Code 0x001234 Learn more"   
+"Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005 Learn more"   
 
 This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing. 
 
 To fix this issue:
 
 1. Ensure your computer is connected to the Internet. 
-2. If you are on a domain-joined computer, speak to your network administrator. They are likley blocking the Developer Mode package by default in their WSUS setup. 
+2. If you are on a domain-joined computer, speak to your network administrator. They are likeley blocking the Developer Mode package by default in their WSUS setup. 
+2.1. In order to unblock the Developer Mode package, the following KBs should be allowed: 4016509, 3180030, 3197985  
 3. Check for Windows updates in the Settings > Updates and Security > Windows Updates.
 4. Verify that the Windows Developer Mode package is present in Settings > System > Apps & Features > Manage optional features > Add a feature. If it is missing, Windows cannot find the correct package for your computer. 
 
@@ -99,7 +100,7 @@ After doing any of the above steps, disable and then re-enable Developer Mode to
 
 ### Failed to install the package
 
-"Developer Mode package failed to install. Error code 0x001234  Learn more"
+"Developer Mode package failed to install. Error code 0x80004005  Learn more"
 
 This error may occur due to incompatibilities between your build of Windows and the Developer Mode package. 
 
