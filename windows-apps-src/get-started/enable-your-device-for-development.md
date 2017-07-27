@@ -48,7 +48,7 @@ Here's the settings page on the mobile device family:
 
 ## Which setting should I choose: sideload apps or Developer Mode?
 
-You can enable a device for development, or just for sideloading.
+ You can enable a device for development, or just for sideloading.
 
 -   *Windows Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
 -   *Sideloading* is installing and then running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.
@@ -81,7 +81,7 @@ Device family specific info
 
     Enable Developer Mode to develop and debug apps in Visual Studio. As stated previously, you will be prompted in Visual Studio if Developer Mode is not enabled.
 
-    Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
+    On pre-Fall Creators Update PCs, allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).  Developer Mode is no longer required for WSL, as of the FCU.  
 
 -   On the mobile device family:
 
@@ -96,7 +96,6 @@ For each device family, additional developer features might be available. These 
 When you enable Developer Mode, a package of options is installed that includes:
 - Installs Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
 - Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
-- (Desktop only) Allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).
 
 
 This image shows developer features for the mobile device family on Windows 10:
@@ -114,7 +113,7 @@ For device specific setup instructions, see:
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../debug-test-perf/device-portal-xbox.md)
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues. 
+If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop#failure-to-install-developer-mode-package-or-launch-device-portal) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package. 
 
 ###SSH
 
