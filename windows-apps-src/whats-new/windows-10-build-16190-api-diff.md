@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 6932c7cb-300b-4558-a346-dd6d18a969f6
+redirect_url: windows-10-latest-preview-api-diff
 ---
 
 

@@ -1,21 +1,20 @@
 ---
 author: QuinnRadich
-title: Windows 10 build 16225 API changes
-description: Developers can use the following list to identify new or changed namespaces in Windows 10 SDK Preview Build 16190
-keywords: what's new, whats new, update, flighted, flights, API, 16225
+title: Windows 10 build 16332 API changes
+description: Developers can use the following list to identify new or changed namespaces in the current Windows 10 SDK Preview Build
+keywords: what's new, whats new, update, flighted, flights, API, 16332
 ms.author: quradic
-ms.date: 7/6/2017
+ms.date: 7/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-redirect_url: windows-10-latest-preview-api-diff
 ---
 
-# New APIs in the Windows 10 SDK Preview Build 16225
+# New APIs in the Windows 10 SDK Preview Build 16332
 
-New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16225.
+New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16332.
 
-Below is a full list of prelease documentation published for namespaces added or modified since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). **Please note that prerelease documentation may be incomplete and subject to change, and these APIs may be renamed or removed in subsequent builds.**
+Below is a full list of prelease documentation published for namespaces added since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). **Please note that prerelease documentation may be incomplete and subject to change, and these APIs may be renamed or removed in subsequent builds.** Also attached is a list of API namespaces changed or renamed since the previous SDK preview build.
 
 ## windows.applicationmodel
 
@@ -127,11 +126,37 @@ applistentry.appusermodelid
 
 apprestartfailurereason
 
+#### [coreapplication](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication)
+
+coreapplication.requestrestartasync <br> coreapplication.requestrestartforuserasync
+
+#### [coreapplicationview](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview)
+
+coreapplicationview.dispatcherqueue
+
+### [windows.applicationmodel.datatransfer.sharetarget](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget)
+
+#### [shareoperation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation)
+
+shareoperation.contacts
+
 ### [windows.applicationmodel.datatransfer](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer)
+
+#### [datatransfermanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)
+
+datatransfermanager.showshareui
+
+#### [idatatransfermanagerstatics3](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.idatatransfermanagerstatics3)
+
+idatatransfermanagerstatics3 <br> idatatransfermanagerstatics3.showshareui
 
 #### [shareuioptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.shareuioptions)
 
-shareuioptions.selectionrect <br> shareuioptions.theme
+shareuioptions <br> shareuioptions.selectionrect <br> shareuioptions.shareuioptions <br> shareuioptions.theme
+
+#### [shareuitheme](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.shareuitheme)
+
+shareuitheme
 
 ### [windows.applicationmodel.email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email)
 
@@ -155,6 +180,10 @@ paymentcanmakepaymentresult <br> paymentcanmakepaymentresult.paymentcanmakepayme
 
 paymentcanmakepaymentresultstatus
 
+#### [paymentmediator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments.paymentmediator)
+
+paymentmediator.canmakepaymentasync
+
 #### [paymentrequest](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments.paymentrequest)
 
 paymentrequest.id <br> paymentrequest.paymentrequest
@@ -163,7 +192,11 @@ paymentrequest.id <br> paymentrequest.paymentrequest
 
 #### [coreuseractivitymanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core.coreuseractivitymanager)
 
-coreuseractivitymanager.deleteuseractivitysessionsintimerangeasync
+coreuseractivitymanager <br> coreuseractivitymanager.createuseractivitysessioninbackground <br> coreuseractivitymanager.deleteuseractivitysessionsintimerangeasync
+
+#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.core.windows)
+
+windows.applicationmodel.useractivities.core
 
 ### [windows.applicationmodel.useractivities](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
@@ -173,7 +206,7 @@ iuseractivitycontentinfo <br> iuseractivitycontentinfo.tojson
 
 #### [useractivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity)
 
-useractivity.contentinfo
+useractivity <br> useractivity.activationuri <br> useractivity.activityid <br> useractivity.contentinfo <br> useractivity.contenttype <br> useractivity.contenturi <br> useractivity.createsession <br> useractivity.fallbackuri <br> useractivity.saveasync <br> useractivity.state <br> useractivity.visualelements
 
 #### [useractivityattribution](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityattribution)
 
@@ -181,15 +214,27 @@ useractivityattribution <br> useractivityattribution.addimagequery <br> useracti
 
 #### [useractivitychannel](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel)
 
-useractivitychannel.deleteactivityasync <br> useractivitychannel.deleteallactivitiesasync
+useractivitychannel <br> useractivitychannel.deleteactivityasync <br> useractivitychannel.deleteallactivitiesasync <br> useractivitychannel.getdefault <br> useractivitychannel.getorcreateuseractivityasync
 
 #### [useractivitycontentinfo](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitycontentinfo)
 
 useractivitycontentinfo <br> useractivitycontentinfo.fromjson <br> useractivitycontentinfo.tojson
 
+#### [useractivitysession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession)
+
+useractivitysession <br> useractivitysession.activityid <br> useractivitysession.close
+
+#### [useractivitystate](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitystate)
+
+useractivitystate
+
 #### [useractivityvisualelements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements)
 
-useractivityvisualelements.attribution
+useractivityvisualelements <br> useractivityvisualelements.attribution <br> useractivityvisualelements.backgroundcolor <br> useractivityvisualelements.content <br> useractivityvisualelements.description <br> useractivityvisualelements.displaytext
+
+#### [windows](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.windows)
+
+windows.applicationmodel.useractivities
 
 ### [windows.applicationmodel](https://docs.microsoft.com/uwp/api/windows.applicationmodel)
 
@@ -206,6 +251,26 @@ packagecatalog.removeoptionalpackagesasync
 packagecatalogremoveoptionalpackagesresult <br> packagecatalogremoveoptionalpackagesresult.extendederror <br> packagecatalogremoveoptionalpackagesresult.packagesremoved
 
 ## windows.devices
+
+### [windows.devices.bluetooth.genericattributeprofile](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile)
+
+#### [gattclientnotificationresult](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattclientnotificationresult)
+
+gattclientnotificationresult.bytessent
+
+### [windows.devices.bluetooth](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth)
+
+#### [bluetoothdevice](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothdevice)
+
+bluetoothdevice.bluetoothdeviceid
+
+#### [bluetoothdeviceid](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothdeviceid)
+
+bluetoothdeviceid.fromid
+
+#### [bluetoothledevice](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice)
+
+bluetoothledevice.bluetoothdeviceid
 
 ### [windows.devices.geolocation](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
 
@@ -475,57 +540,169 @@ gameuiprovideractivatedeventargs <br> gameuiprovideractivatedeventargs.gameuiarg
 
 #### [holographiccamera](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamera)
 
-holographiccamera.createlayerconfig <br> holographiccamera.drmmode <br> holographiccamera.getpresentationlayers <br> holographiccamera.setlayerconfig
+holographiccamera.isprimarylayerenabled <br> holographiccamera.maxquadlayercount <br> holographiccamera.quadlayers
 
 #### [holographiccamerarenderingparameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographiccamerarenderingparameters)
 
-holographiccamerarenderingparameters.getpresentationlayerrenderingparameters
+holographiccamerarenderingparameters.iscontentprotectionenabled
 
 #### [holographicdisplay](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicdisplay)
 
 holographicdisplay.refreshrate
 
+#### [holographicframe](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicframe)
+
+holographicframe.getquadlayerupdateparameters
+
+#### [holographicquadlayer](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayer)
+
+holographicquadlayer <br> holographicquadlayer.close <br> holographicquadlayer.holographicquadlayer <br> holographicquadlayer.holographicquadlayer <br> holographicquadlayer.pixelformat <br> holographicquadlayer.size
+
+#### [holographicquadlayerupdateparameters](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters)
+
+holographicquadlayerupdateparameters <br> holographicquadlayerupdateparameters.acquirebuffertoupdatecontent <br> holographicquadlayerupdateparameters.updatecontentprotectionenabled <br> holographicquadlayerupdateparameters.updateextents <br> holographicquadlayerupdateparameters.updatelocationwithdisplayrelativemode <br> holographicquadlayerupdateparameters.updatelocationwithstationarymode <br> holographicquadlayerupdateparameters.updateviewport
+
 #### [holographicspace](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.holographicspace)
 
 holographicspace.isconfigured
 
-#### [presentationlayerconfig](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayerconfig)
+### [windows.graphics.printing.printticket](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket)
 
-presentationlayerconfig <br> presentationlayerconfig.presentationlayersettings
+#### [printticketcapabilities](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketcapabilities)
 
-#### [presentationlayerdrmmode](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayerdrmmode)
+printticketcapabilities <br> printticketcapabilities.documentbindingfeature <br> printticketcapabilities.documentcollatefeature <br> printticketcapabilities.documentduplexfeature <br> printticketcapabilities.documentholepunchfeature <br> printticketcapabilities.documentinputbinfeature <br> printticketcapabilities.documentnupfeature <br> printticketcapabilities.documentstaplefeature <br> printticketcapabilities.getfeature <br> printticketcapabilities.getparameterdefinition <br> printticketcapabilities.jobpasscodefeature <br> printticketcapabilities.name <br> printticketcapabilities.pageborderlessfeature <br> printticketcapabilities.pagemediasizefeature <br> printticketcapabilities.pagemediatypefeature <br> printticketcapabilities.pageorientationfeature <br> printticketcapabilities.pageoutputcolorfeature <br> printticketcapabilities.pageoutputqualityfeature <br> printticketcapabilities.pageresolutionfeature <br> printticketcapabilities.xmlnamespace <br> printticketcapabilities.xmlnode
 
-presentationlayerdrmmode
+#### [printticketfeature](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketfeature)
 
-#### [presentationlayerquad](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayerquad)
+printticketfeature <br> printticketfeature.displayname <br> printticketfeature.getoption <br> printticketfeature.getselectedoption <br> printticketfeature.name <br> printticketfeature.options <br> printticketfeature.selectiontype <br> printticketfeature.setselectedoption <br> printticketfeature.xmlnamespace <br> printticketfeature.xmlnode
 
-presentationlayerquad <br> presentationlayerquad.drmmode <br> presentationlayerquad.reprojectionmode <br> presentationlayerquad.texturedesc
+#### [printticketfeatureselectiontype](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketfeatureselectiontype)
 
-#### [presentationlayerreference](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayerreference)
+printticketfeatureselectiontype
 
-presentationlayerreference <br> presentationlayerreference.quad <br> presentationlayerreference.type
+#### [printticketoption](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketoption)
 
-#### [presentationlayerrenderingparametersquad](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayerrenderingparametersquad)
+printticketoption <br> printticketoption.displayname <br> printticketoption.getpropertynode <br> printticketoption.getpropertyvalue <br> printticketoption.getscoredpropertynode <br> printticketoption.getscoredpropertyvalue <br> printticketoption.name <br> printticketoption.xmlnamespace <br> printticketoption.xmlnode
 
-presentationlayerrenderingparametersquad <br> presentationlayerrenderingparametersquad.direct3d11contentbuffer <br> presentationlayerrenderingparametersquad.drmmode <br> presentationlayerrenderingparametersquad.setquadplaneparameters
+#### [printticketparameterdatatype](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketparameterdatatype)
 
-#### [presentationlayers](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayers)
+printticketparameterdatatype
 
-presentationlayers <br> presentationlayers.layers
+#### [printticketparameterdefinition](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketparameterdefinition)
 
-#### [presentationlayersettings](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayersettings)
+printticketparameterdefinition <br> printticketparameterdefinition.datatype <br> printticketparameterdefinition.name <br> printticketparameterdefinition.rangemax <br> printticketparameterdefinition.rangemin <br> printticketparameterdefinition.unittype <br> printticketparameterdefinition.xmlnamespace <br> printticketparameterdefinition.xmlnode
 
-presentationlayersettings <br> presentationlayersettings.enabled <br> presentationlayersettings.type
+#### [printticketparameterinitializer](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketparameterinitializer)
 
-#### [presentationlayertype](https://docs.microsoft.com/uwp/api/windows.graphics.holographic.presentationlayertype)
+printticketparameterinitializer <br> printticketparameterinitializer.name <br> printticketparameterinitializer.value <br> printticketparameterinitializer.xmlnamespace <br> printticketparameterinitializer.xmlnode
 
-presentationlayertype
+#### [printticketvalue](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketvalue)
+
+printticketvalue <br> printticketvalue.getvalueasinteger <br> printticketvalue.getvalueasstring <br> printticketvalue.type
+
+#### [printticketvaluetype](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.printticketvaluetype)
+
+printticketvaluetype
+
+#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.windows)
+
+windows.graphics.printing.printticket
+
+#### [workflowprintticket](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.workflowprintticket)
+
+workflowprintticket <br> workflowprintticket.documentbindingfeature <br> workflowprintticket.documentcollatefeature <br> workflowprintticket.documentduplexfeature <br> workflowprintticket.documentholepunchfeature <br> workflowprintticket.documentinputbinfeature <br> workflowprintticket.documentnupfeature <br> workflowprintticket.documentstaplefeature <br> workflowprintticket.getcapabilities <br> workflowprintticket.getfeature <br> workflowprintticket.getparameterinitializer <br> workflowprintticket.jobpasscodefeature <br> workflowprintticket.mergeandvalidateticket <br> workflowprintticket.name <br> workflowprintticket.notifyxmlchangedasync <br> workflowprintticket.pageborderlessfeature <br> workflowprintticket.pagemediasizefeature <br> workflowprintticket.pagemediatypefeature <br> workflowprintticket.pageorientationfeature <br> workflowprintticket.pageoutputcolorfeature <br> workflowprintticket.pageoutputqualityfeature <br> workflowprintticket.pageresolutionfeature <br> workflowprintticket.setparameterinitializerasinteger <br> workflowprintticket.setparameterinitializerasstring <br> workflowprintticket.validateasync <br> workflowprintticket.xmlnamespace <br> workflowprintticket.xmlnode
+
+#### [workflowprintticketvalidationresult](https://docs.microsoft.com/uwp/api/windows.graphics.printing.printticket.workflowprintticketvalidationresult)
+
+workflowprintticketvalidationresult <br> workflowprintticketvalidationresult.extendederror <br> workflowprintticketvalidationresult.validated
 
 ### [windows.graphics.printing.workflow](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 
+#### [printworkflowbackgroundsession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsession)
+
+printworkflowbackgroundsession <br> printworkflowbackgroundsession.setuprequested <br> printworkflowbackgroundsession.start <br> printworkflowbackgroundsession.status <br> printworkflowbackgroundsession.submitted
+
+#### [printworkflowbackgroundsetuprequestedeventargs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowbackgroundsetuprequestedeventargs)
+
+printworkflowbackgroundsetuprequestedeventargs <br> printworkflowbackgroundsetuprequestedeventargs.configuration <br> printworkflowbackgroundsetuprequestedeventargs.getdeferral <br> printworkflowbackgroundsetuprequestedeventargs.getuserprintticketasync <br> printworkflowbackgroundsetuprequestedeventargs.setrequiresui
+
 #### [printworkflowconfiguration](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowconfiguration)
 
-printworkflowconfiguration.sessionid <br> printworkflowconfiguration.sourceappdisplayname
+printworkflowconfiguration <br> printworkflowconfiguration.jobtitle <br> printworkflowconfiguration.sessionid <br> printworkflowconfiguration.sourceappdisplayname
+
+#### [printworkflowforegroundsession](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsession)
+
+printworkflowforegroundsession <br> printworkflowforegroundsession.setuprequested <br> printworkflowforegroundsession.start <br> printworkflowforegroundsession.status <br> printworkflowforegroundsession.xpsdataavailable
+
+#### [printworkflowforegroundsetuprequestedeventargs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowforegroundsetuprequestedeventargs)
+
+printworkflowforegroundsetuprequestedeventargs <br> printworkflowforegroundsetuprequestedeventargs.configuration <br> printworkflowforegroundsetuprequestedeventargs.getdeferral <br> printworkflowforegroundsetuprequestedeventargs.getuserprintticketasync
+
+#### [printworkflowobjectmodelsourcefilecontent](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowobjectmodelsourcefilecontent)
+
+printworkflowobjectmodelsourcefilecontent
+
+#### [printworkflowobjectmodeltargetpackage](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowobjectmodeltargetpackage)
+
+printworkflowobjectmodeltargetpackage
+
+#### [printworkflowsessionstatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsessionstatus)
+
+printworkflowsessionstatus
+
+#### [printworkflowsourcecontent](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsourcecontent)
+
+printworkflowsourcecontent <br> printworkflowsourcecontent.getjobprintticketasync <br> printworkflowsourcecontent.getsourcespooldataasstreamcontent <br> printworkflowsourcecontent.getsourcespooldataasxpsobjectmodel
+
+#### [printworkflowspoolstreamcontent](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowspoolstreamcontent)
+
+printworkflowspoolstreamcontent <br> printworkflowspoolstreamcontent.getinputstream
+
+#### [printworkflowstreamtarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowstreamtarget)
+
+printworkflowstreamtarget <br> printworkflowstreamtarget.getoutputstream
+
+#### [printworkflowsubmittedeventargs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedeventargs)
+
+printworkflowsubmittedeventargs <br> printworkflowsubmittedeventargs.getdeferral <br> printworkflowsubmittedeventargs.gettarget <br> printworkflowsubmittedeventargs.operation
+
+#### [printworkflowsubmittedoperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)
+
+printworkflowsubmittedoperation <br> printworkflowsubmittedoperation.complete <br> printworkflowsubmittedoperation.configuration <br> printworkflowsubmittedoperation.xpscontent
+
+#### [printworkflowsubmittedstatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)
+
+printworkflowsubmittedstatus
+
+#### [printworkflowtarget](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtarget)
+
+printworkflowtarget <br> printworkflowtarget.targetasstream <br> printworkflowtarget.targetasxpsobjectmodelpackage
+
+#### [printworkflowtriggerdetails](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowtriggerdetails)
+
+printworkflowtriggerdetails <br> printworkflowtriggerdetails.printworkflowsession
+
+#### [printworkflowuiactivatedeventargs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowuiactivatedeventargs)
+
+printworkflowuiactivatedeventargs <br> printworkflowuiactivatedeventargs.kind <br> printworkflowuiactivatedeventargs.previousexecutionstate <br> printworkflowuiactivatedeventargs.printworkflowsession <br> printworkflowuiactivatedeventargs.splashscreen <br> printworkflowuiactivatedeventargs.user
+
+#### [printworkflowxpsdataavailableeventargs](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowxpsdataavailableeventargs)
+
+printworkflowxpsdataavailableeventargs <br> printworkflowxpsdataavailableeventargs.getdeferral <br> printworkflowxpsdataavailableeventargs.operation
+
+#### [windows](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.windows)
+
+windows.graphics.printing.workflow
+
+### [windows.graphics.printing3d](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d)
+
+#### [printing3d3mfpackage](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3d3mfpackage)
+
+printing3d3mfpackage.compression
+
+#### [printing3dpackagecompression](https://docs.microsoft.com/uwp/api/windows.graphics.printing3d.printing3dpackagecompression)
+
+printing3dpackagecompression
 
 ## windows.management
 
@@ -667,6 +844,14 @@ mediasource.createfrommediaframesource
 
 mediasourceappserviceconnection <br> mediasourceappserviceconnection.initializemediastreamsourcerequested <br> mediasourceappserviceconnection.mediasourceappserviceconnection <br> mediasourceappserviceconnection.start
 
+#### [mediastreamsource](https://docs.microsoft.com/uwp/api/windows.media.core.mediastreamsource)
+
+mediastreamsource.islive
+
+#### [msestreamsource](https://docs.microsoft.com/uwp/api/windows.media.core.msestreamsource)
+
+msestreamsource.liveseekablerange
+
 #### [sceneanalysiseffectframe](https://docs.microsoft.com/uwp/api/windows.media.core.sceneanalysiseffectframe)
 
 sceneanalysiseffectframe.analysisrecommendation
@@ -691,6 +876,22 @@ dialreceiverapp <br> dialreceiverapp.current <br> dialreceiverapp.getadditionald
 
 mediaencodingprofile.getaudiotracks <br> mediaencodingprofile.getvideotracks <br> mediaencodingprofile.setaudiotracks <br> mediaencodingprofile.setvideotracks
 
+### [windows.media.playback](https://docs.microsoft.com/uwp/api/windows.media.playback)
+
+#### [mediaplaybacksessionbufferingstartedeventargs](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs)
+
+mediaplaybacksessionbufferingstartedeventargs <br> mediaplaybacksessionbufferingstartedeventargs.isplaybackinterruption
+
+#### [mediaplayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)
+
+mediaplayer.rendersubtitlestosurface <br> mediaplayer.rendersubtitlestosurface <br> mediaplayer.subtitleframechanged
+
+### [windows.media.speechrecognition](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition)
+
+#### [speechrecognizer](https://docs.microsoft.com/uwp/api/windows.media.speechrecognition.speechrecognizer)
+
+speechrecognizer.trysetsystemspeechlanguageasync
+
 ### [windows.media.speechsynthesis](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)
 
 #### [speechsynthesizer](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis.speechsynthesizer)
@@ -700,6 +901,12 @@ speechsynthesizer.trysetdefaultvoiceasync
 #### [speechsynthesizeroptions](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis.speechsynthesizeroptions)
 
 speechsynthesizeroptions.audiopitch <br> speechsynthesizeroptions.audiovolume <br> speechsynthesizeroptions.speakingrate
+
+### [windows.media.streaming.adaptive](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive)
+
+#### [adaptivemediasourcediagnosticavailableeventargs](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs)
+
+adaptivemediasourcediagnosticavailableeventargs.extendederror
 
 ## windows.networking
 
@@ -861,6 +1068,10 @@ placeinfocreateoptions <br> placeinfocreateoptions.displayaddress <br> placeinfo
 
 ### [windows.storage.provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
 
+#### [hydrationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.hydrationpolicy)
+
+hydrationpolicy
+
 #### [hydrationpolicymodifier](https://docs.microsoft.com/uwp/api/windows.storage.provider.hydrationpolicymodifier)
 
 hydrationpolicymodifier
@@ -876,6 +1087,14 @@ istorageprovideritempropertysource <br> istorageprovideritempropertysource.getit
 #### [istorageproviderpropertycapabilities](https://docs.microsoft.com/uwp/api/windows.storage.provider.istorageproviderpropertycapabilities)
 
 istorageproviderpropertycapabilities <br> istorageproviderpropertycapabilities.ispropertysupported
+
+#### [populationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.populationpolicy)
+
+populationpolicy
+
+#### [protectionmode](https://docs.microsoft.com/uwp/api/windows.storage.provider.protectionmode)
+
+protectionmode
 
 #### [storageprovideritemproperties](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageprovideritemproperties)
 
@@ -909,6 +1128,10 @@ filerandomaccessstream.openasync <br> filerandomaccessstream.openasync <br> file
 
 ### [windows.storage](https://docs.microsoft.com/uwp/api/windows.storage)
 
+#### [storagelibrary](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary)
+
+storagelibrary.arefoldersuggestionsavailableasync
+
 #### [storageprovider](https://docs.microsoft.com/uwp/api/windows.storage.storageprovider)
 
 storageprovider.ispropertysupportedforpartialfileasync
@@ -931,7 +1154,7 @@ diagnosticinvoker <br> diagnosticinvoker.getdefault <br> diagnosticinvoker.getfo
 
 #### [processdiagnosticinfo](https://docs.microsoft.com/uwp/api/windows.system.diagnostics.processdiagnosticinfo)
 
-processdiagnosticinfo.getappdiagnosticinfos
+processdiagnosticinfo.getappdiagnosticinfos <br> processdiagnosticinfo.ispackaged <br> processdiagnosticinfo.trygetforprocessid
 
 ### [windows.system.profile.systemmanufacturers](https://docs.microsoft.com/uwp/api/windows.system.profile.systemmanufacturers)
 
@@ -953,11 +1176,29 @@ remotesystem.manufacturerdisplayname <br> remotesystem.modeldisplayname
 
 remotesystemkinds.iot <br> remotesystemkinds.laptop <br> remotesystemkinds.tablet
 
+### [windows.system.userprofile](https://docs.microsoft.com/uwp/api/windows.system.userprofile)
+
+#### [globalizationpreferences](https://docs.microsoft.com/uwp/api/windows.system.userprofile.globalizationpreferences)
+
+globalizationpreferences.trysethomegeographicregion <br> globalizationpreferences.trysetlanguages
+
 ### [windows.system](https://docs.microsoft.com/uwp/api/windows.system)
 
 #### [appdiagnosticinfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo)
 
-appdiagnosticinfo.requestaccessasync <br> appdiagnosticinfo.requestinfoforappasync
+appdiagnosticinfo.createresourcegroupwatcher <br> appdiagnosticinfo.createwatcher <br> appdiagnosticinfo.getresourcegroups <br> appdiagnosticinfo.requestaccessasync <br> appdiagnosticinfo.requestinfoforappasync <br> appdiagnosticinfo.requestinfoforappasync <br> appdiagnosticinfo.requestinfoforpackageasync
+
+#### [appdiagnosticinfowatcher](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfowatcher)
+
+appdiagnosticinfowatcher <br> appdiagnosticinfowatcher.added <br> appdiagnosticinfowatcher.enumerationcompleted <br> appdiagnosticinfowatcher.removed <br> appdiagnosticinfowatcher.start <br> appdiagnosticinfowatcher.status <br> appdiagnosticinfowatcher.stop <br> appdiagnosticinfowatcher.stopped
+
+#### [appdiagnosticinfowatchereventargs](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfowatchereventargs)
+
+appdiagnosticinfowatchereventargs <br> appdiagnosticinfowatchereventargs.appdiagnosticinfo
+
+#### [appdiagnosticinfowatcherstatus](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfowatcherstatus)
+
+appdiagnosticinfowatcherstatus
 
 #### [appmemoryreport](https://docs.microsoft.com/uwp/api/windows.system.appmemoryreport)
 
@@ -1013,11 +1254,19 @@ diagnosticaccessstatus
 
 #### [dispatcherqueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue)
 
-dispatcherqueue.shutdowncompleted <br> dispatcherqueue.shutdownstarting
+dispatcherqueue <br> dispatcherqueue.createtimer <br> dispatcherqueue.getforcurrentthread <br> dispatcherqueue.shutdowncompleted <br> dispatcherqueue.shutdownstarting <br> dispatcherqueue.tryenqueue <br> dispatcherqueue.tryenqueue
 
 #### [dispatcherqueuecontroller](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuecontroller)
 
-dispatcherqueuecontroller.createondedicatedthread
+dispatcherqueuecontroller <br> dispatcherqueuecontroller.createondedicatedthread <br> dispatcherqueuecontroller.dispatcherqueue <br> dispatcherqueuecontroller.shutdownqueueasync
+
+#### [dispatcherqueuehandler](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuehandler)
+
+dispatcherqueuehandler
+
+#### [dispatcherqueuepriority](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuepriority)
+
+dispatcherqueuepriority
 
 #### [dispatcherqueueshutdownstartingeventargs](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueueshutdownstartingeventargs)
 
@@ -1025,7 +1274,7 @@ dispatcherqueueshutdownstartingeventargs <br> dispatcherqueueshutdownstartingeve
 
 #### [dispatcherqueuetimer](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueuetimer)
 
-dispatcherqueuetimer.isrunning
+dispatcherqueuetimer <br> dispatcherqueuetimer.interval <br> dispatcherqueuetimer.isrepeating <br> dispatcherqueuetimer.isrunning <br> dispatcherqueuetimer.start <br> dispatcherqueuetimer.stop <br> dispatcherqueuetimer.tick
 
 #### [memorymanager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)
 
@@ -1063,6 +1312,10 @@ interactiontrackervector2inertianaturalmotion <br> interactiontrackervector2iner
 
 ### [windows.ui.composition](https://docs.microsoft.com/uwp/api/windows.ui.composition)
 
+#### [ambientlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.ambientlight)
+
+ambientlight.intensity
+
 #### [compositionanimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimation)
 
 compositionanimation.initialvalueexpressions
@@ -1074,6 +1327,10 @@ compositioncolorgradientstop <br> compositioncolorgradientstop.color <br> compos
 #### [compositioncolorgradientstopcollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncolorgradientstopcollection)
 
 compositioncolorgradientstopcollection <br> compositioncolorgradientstopcollection.append <br> compositioncolorgradientstopcollection.clear <br> compositioncolorgradientstopcollection.first <br> compositioncolorgradientstopcollection.getat <br> compositioncolorgradientstopcollection.getmany <br> compositioncolorgradientstopcollection.getview <br> compositioncolorgradientstopcollection.indexof <br> compositioncolorgradientstopcollection.insertat <br> compositioncolorgradientstopcollection.removeat <br> compositioncolorgradientstopcollection.removeatend <br> compositioncolorgradientstopcollection.replaceall <br> compositioncolorgradientstopcollection.setat <br> compositioncolorgradientstopcollection.size
+
+#### [compositiondropshadowsourcepolicy](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)
+
+compositiondropshadowsourcepolicy
 
 #### [compositiongradientbrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositiongradientbrush)
 
@@ -1099,6 +1356,14 @@ compositionobject.dispatcherqueue
 
 compositor.createcolorgradientstop <br> compositor.createcolorgradientstop <br> compositor.createlineargradientbrush <br> compositor.createspringscalaranimation <br> compositor.createspringvector2animation <br> compositor.createspringvector3animation
 
+#### [distantlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.distantlight)
+
+distantlight.intensity
+
+#### [dropshadow](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)
+
+dropshadow.sourcepolicy
+
 #### [initialvalueexpressioncollection](https://docs.microsoft.com/uwp/api/windows.ui.composition.initialvalueexpressioncollection)
 
 initialvalueexpressioncollection <br> initialvalueexpressioncollection.clear <br> initialvalueexpressioncollection.first <br> initialvalueexpressioncollection.getview <br> initialvalueexpressioncollection.haskey <br> initialvalueexpressioncollection.insert <br> initialvalueexpressioncollection.lookup <br> initialvalueexpressioncollection.remove <br> initialvalueexpressioncollection.size
@@ -1111,9 +1376,17 @@ layervisual.shadow
 
 naturalmotionanimation <br> naturalmotionanimation.delaybehavior <br> naturalmotionanimation.delaytime <br> naturalmotionanimation.stopbehavior
 
+#### [pointlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.pointlight)
+
+pointlight.intensity
+
 #### [scalarnaturalmotionanimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.scalarnaturalmotionanimation)
 
 scalarnaturalmotionanimation <br> scalarnaturalmotionanimation.finalvalue <br> scalarnaturalmotionanimation.initialvalue <br> scalarnaturalmotionanimation.initialvelocity
+
+#### [spotlight](https://docs.microsoft.com/uwp/api/windows.ui.composition.spotlight)
+
+spotlight.innerconeintensity <br> spotlight.outerconeintensity
 
 #### [springscalarnaturalmotionanimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.springscalarnaturalmotionanimation)
 
@@ -1139,7 +1412,7 @@ vector3naturalmotionanimation <br> vector3naturalmotionanimation.finalvalue <br>
 
 #### [corewindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)
 
-corewindow.activationmode
+corewindow.activationmode <br> corewindow.dispatcherqueue
 
 #### [corewindowactivationmode](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowactivationmode)
 
@@ -1171,17 +1444,25 @@ inputinjector.initializegamepadinjection <br> inputinjector.injectgamepadinput <
 
 spatialinteractioncontroller.trygetrenderablemodelasync
 
+#### [spatialinteractionsource](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsource)
+
+spatialinteractionsource.handedness
+
+#### [spatialinteractionsourcehandedness](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcehandedness)
+
+spatialinteractionsourcehandedness
+
 #### [spatialinteractionsourcelocation](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcelocation)
 
-spatialinteractionsourcelocation.angularvelocity <br> spatialinteractionsourcelocation.positionquality <br> spatialinteractionsourcelocation.sourcepointerpose
+spatialinteractionsourcelocation.angularvelocity <br> spatialinteractionsourcelocation.positionaccuracy <br> spatialinteractionsourcelocation.sourcepointerpose
 
-#### [spatialinteractionsourcepositionquality](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcepositionquality)
+#### [spatialinteractionsourcepositionaccuracy](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialinteractionsourcepositionaccuracy)
 
-spatialinteractionsourcepositionquality
+spatialinteractionsourcepositionaccuracy
 
 #### [spatialpointerinteractionsourcepose](https://docs.microsoft.com/uwp/api/windows.ui.input.spatial.spatialpointerinteractionsourcepose)
 
-spatialpointerinteractionsourcepose.orientation <br> spatialpointerinteractionsourcepose.positionquality
+spatialpointerinteractionsourcepose.orientation <br> spatialpointerinteractionsourcepose.positionaccuracy
 
 ### [windows.ui.input](https://docs.microsoft.com/uwp/api/windows.ui.input)
 
@@ -1389,9 +1670,25 @@ bitmapiconsource <br> bitmapiconsource.bitmapiconsource <br> bitmapiconsource.sh
 
 charactercasing
 
+#### [colorchangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorchangedeventargs)
+
+colorchangedeventargs <br> colorchangedeventargs.newcolor <br> colorchangedeventargs.oldcolor
+
+#### [colorpicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)
+
+colorpicker <br> colorpicker.color <br> colorpicker.colorchanged <br> colorpicker.colorpicker <br> colorpicker.colorproperty <br> colorpicker.colorspectrumcomponents <br> colorpicker.colorspectrumcomponentsproperty <br> colorpicker.colorspectrumshape <br> colorpicker.colorspectrumshapeproperty <br> colorpicker.isalphaenabled <br> colorpicker.isalphaenabledproperty <br> colorpicker.isalphaslidervisible <br> colorpicker.isalphaslidervisibleproperty <br> colorpicker.isalphatextinputvisible <br> colorpicker.isalphatextinputvisibleproperty <br> colorpicker.iscolorchanneltextinputvisible <br> colorpicker.iscolorchanneltextinputvisibleproperty <br> colorpicker.iscolorpreviewvisible <br> colorpicker.iscolorpreviewvisibleproperty <br> colorpicker.iscolorslidervisible <br> colorpicker.iscolorslidervisibleproperty <br> colorpicker.iscolorspectrumvisible <br> colorpicker.iscolorspectrumvisibleproperty <br> colorpicker.ishexinputvisible <br> colorpicker.ishexinputvisibleproperty <br> colorpicker.ismorebuttonvisible <br> colorpicker.ismorebuttonvisibleproperty <br> colorpicker.maxhue <br> colorpicker.maxhueproperty <br> colorpicker.maxsaturation <br> colorpicker.maxsaturationproperty <br> colorpicker.maxvalue <br> colorpicker.maxvalueproperty <br> colorpicker.minhue <br> colorpicker.minhueproperty <br> colorpicker.minsaturation <br> colorpicker.minsaturationproperty <br> colorpicker.minvalue <br> colorpicker.minvalueproperty <br> colorpicker.previouscolor <br> colorpicker.previouscolorproperty
+
 #### [colorpickerhsvchannel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpickerhsvchannel)
 
 colorpickerhsvchannel
+
+#### [colorspectrumcomponents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorspectrumcomponents)
+
+colorspectrumcomponents
+
+#### [colorspectrumshape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorspectrumshape)
+
+colorspectrumshape
 
 #### [combobox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)
 
@@ -1407,7 +1704,7 @@ contentdialogplacement
 
 #### [control](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control)
 
-control.oncharacterreceived
+control.oncharacterreceived <br> control.onpreviewkeydown <br> control.onpreviewkeyup
 
 #### [disabledformattingaccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.disabledformattingaccelerators)
 
@@ -1435,7 +1732,11 @@ mediatransportcontrols.hide <br> mediatransportcontrols.isrepeatbuttonvisible <b
 
 #### [navigationview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-navigationview.autosuggestbox <br> navigationview.autosuggestboxproperty <br> navigationview.containerfrommenuitem <br> navigationview.iteminvoked <br> navigationview.menuitemcontainerstyle <br> navigationview.menuitemcontainerstyleproperty <br> navigationview.menuitemcontainerstyleselector <br> navigationview.menuitemcontainerstyleselectorproperty <br> navigationview.menuitemfromcontainer <br> navigationview.menuitemssource <br> navigationview.menuitemssourceproperty <br> navigationview.menuitemtemplate <br> navigationview.menuitemtemplateproperty <br> navigationview.menuitemtemplateselector <br> navigationview.menuitemtemplateselectorproperty <br> navigationview.selecteditem <br> navigationview.selecteditemproperty <br> navigationview.selectionchanged <br> navigationview.settingsitem <br> navigationview.settingsitemproperty
+navigationview <br> navigationview.alwaysshowheader <br> navigationview.alwaysshowheaderproperty <br> navigationview.autosuggestbox <br> navigationview.autosuggestboxproperty <br> navigationview.compactmodethresholdwidth <br> navigationview.compactmodethresholdwidthproperty <br> navigationview.compactpanelength <br> navigationview.compactpanelengthproperty <br> navigationview.containerfrommenuitem <br> navigationview.displaymode <br> navigationview.displaymodechanged <br> navigationview.displaymodeproperty <br> navigationview.expandedmodethresholdwidth <br> navigationview.expandedmodethresholdwidthproperty <br> navigationview.header <br> navigationview.headerproperty <br> navigationview.headertemplate <br> navigationview.headertemplateproperty <br> navigationview.ispaneopen <br> navigationview.ispaneopenproperty <br> navigationview.ispanetogglebuttonvisible <br> navigationview.ispanetogglebuttonvisibleproperty <br> navigationview.issettingsvisible <br> navigationview.issettingsvisibleproperty <br> navigationview.iteminvoked <br> navigationview.menuitemcontainerstyle <br> navigationview.menuitemcontainerstyleproperty <br> navigationview.menuitemcontainerstyleselector <br> navigationview.menuitemcontainerstyleselectorproperty <br> navigationview.menuitemfromcontainer <br> navigationview.menuitems <br> navigationview.menuitemsproperty <br> navigationview.menuitemssource <br> navigationview.menuitemssourceproperty <br> navigationview.menuitemtemplate <br> navigationview.menuitemtemplateproperty <br> navigationview.menuitemtemplateselector <br> navigationview.menuitemtemplateselectorproperty <br> navigationview.navigationview <br> navigationview.openpanelength <br> navigationview.openpanelengthproperty <br> navigationview.panefooter <br> navigationview.panefooterproperty <br> navigationview.panetogglebuttonstyle <br> navigationview.panetogglebuttonstyleproperty <br> navigationview.selecteditem <br> navigationview.selecteditemproperty <br> navigationview.selectionchanged <br> navigationview.settingsitem <br> navigationview.settingsitemproperty
+
+#### [navigationviewdisplaymode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
+
+navigationviewdisplaymode
 
 #### [navigationviewdisplaymodechangedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymodechangedeventargs)
 
@@ -1469,6 +1770,14 @@ navigationviewlist <br> navigationviewlist.navigationviewlist
 
 navigationviewselectionchangedeventargs <br> navigationviewselectionchangedeventargs.issettingsselected <br> navigationviewselectionchangedeventargs.selecteditem
 
+#### [parallaxsourceoffsetkind](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.parallaxsourceoffsetkind)
+
+parallaxsourceoffsetkind
+
+#### [parallaxview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.parallaxview)
+
+parallaxview <br> parallaxview.child <br> parallaxview.childproperty <br> parallaxview.horizontalshift <br> parallaxview.horizontalshiftproperty <br> parallaxview.horizontalsourceendoffset <br> parallaxview.horizontalsourceendoffsetproperty <br> parallaxview.horizontalsourceoffsetkind <br> parallaxview.horizontalsourceoffsetkindproperty <br> parallaxview.horizontalsourcestartoffset <br> parallaxview.horizontalsourcestartoffsetproperty <br> parallaxview.ishorizontalshiftclamped <br> parallaxview.ishorizontalshiftclampedproperty <br> parallaxview.isverticalshiftclamped <br> parallaxview.isverticalshiftclampedproperty <br> parallaxview.maxhorizontalshiftratio <br> parallaxview.maxhorizontalshiftratioproperty <br> parallaxview.maxverticalshiftratio <br> parallaxview.maxverticalshiftratioproperty <br> parallaxview.parallaxview <br> parallaxview.refreshautomatichorizontaloffsets <br> parallaxview.refreshautomaticverticaloffsets <br> parallaxview.source <br> parallaxview.sourceproperty <br> parallaxview.verticalshift <br> parallaxview.verticalshiftproperty <br> parallaxview.verticalsourceendoffset <br> parallaxview.verticalsourceendoffsetproperty <br> parallaxview.verticalsourceoffsetkind <br> parallaxview.verticalsourceoffsetkindproperty <br> parallaxview.verticalsourcestartoffset <br> parallaxview.verticalsourcestartoffsetproperty
+
 #### [passwordbox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)
 
 passwordbox.passwordchanging
@@ -1480,6 +1789,10 @@ passwordboxpasswordchangingeventargs <br> passwordboxpasswordchangingeventargs.i
 #### [pathiconsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathiconsource)
 
 pathiconsource <br> pathiconsource.data <br> pathiconsource.dataproperty <br> pathiconsource.pathiconsource
+
+#### [personpicture](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)
+
+personpicture <br> personpicture.badgeglyph <br> personpicture.badgeglyphproperty <br> personpicture.badgeimagesource <br> personpicture.badgeimagesourceproperty <br> personpicture.badgenumber <br> personpicture.badgenumberproperty <br> personpicture.badgetext <br> personpicture.badgetextproperty <br> personpicture.contact <br> personpicture.contactproperty <br> personpicture.displayname <br> personpicture.displaynameproperty <br> personpicture.initials <br> personpicture.initialsproperty <br> personpicture.isgroup <br> personpicture.isgroupproperty <br> personpicture.personpicture <br> personpicture.prefersmallimage <br> personpicture.prefersmallimageproperty <br> personpicture.profilepicture <br> personpicture.profilepictureproperty
 
 #### [ratingcontrol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
@@ -1567,17 +1880,49 @@ textcontrolcuttingtoclipboardeventargs <br> textcontrolcuttingtoclipboardeventar
 
 #### [treeview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
 
-treeview.selectall <br> treeview.selecteditems <br> treeview.selectionmode <br> treeview.selectionmodeproperty
+treeview <br> treeview.collapsenode <br> treeview.expanding <br> treeview.expandnode <br> treeview.itemclicked <br> treeview.listcontrol <br> treeview.rootnode <br> treeview.selectall <br> treeview.selecteditems <br> treeview.selectionmode <br> treeview.selectionmodeproperty <br> treeview.treeview
+
+#### [treeviewexpandingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewexpandingeventargs)
+
+treeviewexpandingeventargs <br> treeviewexpandingeventargs.node
+
+#### [treeviewitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem)
+
+treeviewitem <br> treeviewitem.treeviewitem
+
+#### [treeviewitemclickeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitemclickeventargs)
+
+treeviewitemclickeventargs <br> treeviewitemclickeventargs.clickeditem <br> treeviewitemclickeventargs.ishandled
+
+#### [treeviewlist](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewlist)
+
+treeviewlist <br> treeviewlist.treeviewlist
+
+#### [treeviewnode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode)
+
+treeviewnode <br> treeviewnode.append <br> treeviewnode.clear <br> treeviewnode.data <br> treeviewnode.depth <br> treeviewnode.depthproperty <br> treeviewnode.first <br> treeviewnode.getat <br> treeviewnode.getview <br> treeviewnode.hasitems <br> treeviewnode.hasitemsproperty <br> treeviewnode.hasunrealizeditems <br> treeviewnode.indexof <br> treeviewnode.insertat <br> treeviewnode.isexpanded <br> treeviewnode.isexpandedchanged <br> treeviewnode.isexpandedproperty <br> treeviewnode.parentnode <br> treeviewnode.removeat <br> treeviewnode.removeatend <br> treeviewnode.setat <br> treeviewnode.size <br> treeviewnode.treeviewnode <br> treeviewnode.vectorchanged
 
 #### [treeviewselectionmode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewselectionmode)
 
 treeviewselectionmode
+
+#### [xamlbooleantovisibilityconverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.xamlbooleantovisibilityconverter)
+
+xamlbooleantovisibilityconverter <br> xamlbooleantovisibilityconverter.convert <br> xamlbooleantovisibilityconverter.convertback <br> xamlbooleantovisibilityconverter.xamlbooleantovisibilityconverter
+
+#### [xamlintegertoindentationconverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.xamlintegertoindentationconverter)
+
+xamlintegertoindentationconverter <br> xamlintegertoindentationconverter.convert <br> xamlintegertoindentationconverter.convertback <br> xamlintegertoindentationconverter.xamlintegertoindentationconverter
 
 ### [windows.ui.xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
 
 #### [block](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
 
 block.horizontaltextalignment <br> block.horizontaltextalignmentproperty
+
+#### [hyperlink](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.hyperlink)
+
+hyperlink.istabstop <br> hyperlink.istabstopproperty <br> hyperlink.tabindex <br> hyperlink.tabindexproperty
 
 #### [texthighlighter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.texthighlighter)
 
@@ -1593,9 +1938,13 @@ textrange
 
 ### [windows.ui.xaml.hosting](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting)
 
+#### [designerappexitedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappexitedeventargs)
+
+designerappexitedeventargs <br> designerappexitedeventargs.exitcode
+
 #### [designerappmanager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappmanager)
 
-designerappmanager <br> designerappmanager.appusermodelid <br> designerappmanager.close <br> designerappmanager.createnewviewasync <br> designerappmanager.designerappmanager <br> designerappmanager.duplicatehandleintoapp <br> designerappmanager.loadobjectintoappasync <br> designerappmanager.processexited
+designerappmanager <br> designerappmanager.appusermodelid <br> designerappmanager.close <br> designerappmanager.createnewviewasync <br> designerappmanager.designerappexited <br> designerappmanager.designerappmanager <br> designerappmanager.loadobjectintoappasync
 
 #### [designerappview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappview)
 
@@ -1604,10 +1953,6 @@ designerappview <br> designerappview.applicationviewid <br> designerappview.appu
 #### [designerappviewstate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.designerappviewstate)
 
 designerappviewstate
-
-#### [processexitedeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.processexitedeventargs)
-
-processexitedeventargs <br> processexitedeventargs.exitcode
 
 ### [windows.ui.xaml.input](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input)
 
@@ -1643,13 +1988,25 @@ markupextensionreturntypeattribute <br> markupextensionreturntypeattribute.marku
 
 ### [windows.ui.xaml.media](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media)
 
+#### [acrylicbackgroundsource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbackgroundsource)
+
+acrylicbackgroundsource
+
 #### [acrylicbrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush)
 
-acrylicbrush.alwaysusefallback <br> acrylicbrush.alwaysusefallbackproperty <br> acrylicbrush.tinttransitionduration <br> acrylicbrush.tinttransitiondurationproperty
+acrylicbrush <br> acrylicbrush.acrylicbrush <br> acrylicbrush.alwaysusefallback <br> acrylicbrush.alwaysusefallbackproperty <br> acrylicbrush.backgroundsource <br> acrylicbrush.backgroundsourceproperty <br> acrylicbrush.tintcolor <br> acrylicbrush.tintcolorproperty <br> acrylicbrush.tintopacity <br> acrylicbrush.tintopacityproperty <br> acrylicbrush.tinttransitionduration <br> acrylicbrush.tinttransitiondurationproperty
+
+#### [revealbackgroundbrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)
+
+revealbackgroundbrush <br> revealbackgroundbrush.revealbackgroundbrush
+
+#### [revealborderbrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)
+
+revealborderbrush <br> revealborderbrush.revealborderbrush
 
 #### [revealbrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
 
-revealbrush.alwaysusefallback <br> revealbrush.alwaysusefallbackproperty <br> revealbrush.getstate <br> revealbrush.setstate <br> revealbrush.stateproperty
+revealbrush <br> revealbrush.alwaysusefallback <br> revealbrush.alwaysusefallbackproperty <br> revealbrush.color <br> revealbrush.colorproperty <br> revealbrush.getstate <br> revealbrush.revealbrush <br> revealbrush.setstate <br> revealbrush.stateproperty <br> revealbrush.targettheme <br> revealbrush.targetthemeproperty
 
 #### [revealbrushstate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushstate)
 
@@ -1663,4 +2020,56 @@ frameworkelement.actualtheme <br> frameworkelement.actualthemechanged <br> frame
 
 #### [uielement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)
 
-uielement.characterreceived <br> uielement.characterreceivedevent <br> uielement.getchildrenintabfocusorder <br> uielement.keyboardaccelerators <br> uielement.onprocesskeyboardaccelerators <br> uielement.processkeyboardaccelerators <br> uielement.tryinvokekeyboardaccelerator
+uielement.characterreceived <br> uielement.characterreceivedevent <br> uielement.getchildrenintabfocusorder <br> uielement.keyboardaccelerators <br> uielement.onprocesskeyboardaccelerators <br> uielement.previewkeydown <br> uielement.previewkeydownevent <br> uielement.previewkeyup <br> uielement.previewkeyupevent <br> uielement.processkeyboardaccelerators <br> uielement.tryinvokekeyboardaccelerator
+
+## APIs changed or removed since Build 16225
+
+The following APIs were made available in Build 16225, but are no longer present in this build. They have either been renamed or removed entirely, and documentation is no longer provided for them.
+
+### windows.graphics.holographic
+
+#### holographiccamera
+
+holographiccamera.createlayerconfig <br> holographiccamera.drmmode <br> holographiccamera.getpresentationlayers <br> holographiccamera.setlayerconfig
+
+#### presentationlayerconfig
+
+presentationlayerconfig <br> presentationlayerconfig.presentationlayersettings
+
+#### presentationlayerdrmmode
+
+presentationlayerdrmmode
+
+#### presentationlayerquad
+
+presentationlayerquad <br> presentationlayerquad.drmmode <br> presentationlayerquad.reprojectionmode <br> presentationlayerquad.texturedesc
+
+#### presentationlayerreference
+
+presentationlayerreference <br> presentationlayerreference.quad <br> presentationlayerreference.type
+
+#### presentationlayerrenderingparametersquad
+
+presentationlayerrenderingparametersquad <br> presentationlayerrenderingparametersquad.direct3d11contentbuffer <br> presentationlayerrenderingparametersquad.drmmode <br> presentationlayerrenderingparametersquad.setquadplaneparameters
+
+#### presentationlayers
+
+presentationlayers <br> presentationlayers.layers
+
+#### presentationlayersettings
+
+presentationlayersettings <br> presentationlayersettings.enabled <br> presentationlayersettings.type
+
+#### presentationlayertype
+
+presentationlayertype
+
+### windows.ui.xaml.hosting
+
+#### designerappmanager
+
+designerappmanager.duplicatehandleintoapp <br> designerappmanager.processexited
+
+#### processexitedeventargs
+
+processexitedeventargs <br> processexitedeventargs.exitcode
