@@ -65,7 +65,7 @@ You need to associate every control that needs localized text with the .resw fil
 
 For the resource name, you give the **Uid** attribute value, plus you specify what property is to get the translated string (in this case the Text property). You can specify other properties/values for different languages such as Greeting.Width, but be careful with such layout-related properties. You should strive to allow the controls to lay out dynamically based on the device's screen.
 
-Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
+Note that attached properties are handled differently in resw files such as AutomationProperties.Name. You need to explicitly write out the namespace like this:
 
 ```XML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name

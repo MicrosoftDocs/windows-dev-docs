@@ -35,6 +35,10 @@ If you are downloading small resources that are likely to complete quickly, you 
 
 When an app uses Background Transfer to initiate a transfer, the request is configured and initialized using [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) or [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) class objects. Each transfer operation is handled individually by the system and separate from the calling app. Progress information is available if you want to give status to the user in your app's UI, and your app can pause, resume, cancel, or even read from the data while the transfer is occurring. The way transfers are handled by the system promotes smart power usage and prevents problems that can arise when a connected app encounters events such as app suspension, termination, or sudden network status changes.
 
+In addition, Background Transfer uses System Event Broker events. As such, the number of downloads is limited by the number of events available on the system. By default this is 500 events, but those events are shared across all processes. Therefore, a single application should not create more than 100 background transfers at a time.
+
+When an application starts a background transfer, the application must call [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_) on all existing [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) objects. Not doing this may cause a leak of those events, and thus render the Background Transfer feature useless.
+
 ### Performing authenticated file requests with Background Transfer
 
 Background Transfer provides methods that support basic server and proxy credentials, cookies, and the use of custom HTTP headers (via [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) for each transfer operation.
