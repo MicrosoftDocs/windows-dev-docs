@@ -4,7 +4,7 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: DKnown Issues (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 07/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -78,3 +78,25 @@ For more details, please refer to the [Authenticode Portal Executable specificat
 Note that SignTool.exe can output a list of the corrupted or malformed binaries when attempting to sign an Windows app package. To do this, enable verbose logging by setting the environment variable APPXSIP_LOG to 1 (e.g., ```set APPXSIP_LOG=1``` ) and re-run SignTool.exe.
 
 To fix these malformed binaries, ensure they conform to the requirements above.
+
+<span id="known-issues-anchor" />
+## Known issues with C#/VB.NET and C++ UWP projects
+
+If you prefer to use a C# project to package your app, you need to be aware of the following known issues.
+
+- Building the app in Debug mode results in the error: _Microsoft.Net.CoreRuntime.targets(235,5): error : Applications with custom entry point executables are not supported. Check Executable attribute of the Application element in the package manifest._
+
+  To resolve this issue, use Release mode instead.
+
+- Win32 Binaries stored in the root folder of the UWP project are removed in Release. The .NET Native compiler will remove those from the final package, resulting in a manifest validation error since the executable entry point can't be found.
+
+  To resolve this issue, create a subfolder in your project to store win32 binaries.
+
+
+## You receive the error	MSB4018	The "GenerateResource" task failed unexpectedly
+
+This can happen when trying to convert satellite assemblies to Package Resource Index (PRI) files.
+
+We are aware of this issue and are working on a more long term solution. As a temporary workaround, you can disable the resource generator by adding this line of XML to your package manifest file:
+
+``<AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>``
