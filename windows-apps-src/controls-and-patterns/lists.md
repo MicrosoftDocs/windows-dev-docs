@@ -32,6 +32,11 @@ Design guidelines, features, and examples are given for each list pattern.
 
 > **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878), [GridView class](https://msdn.microsoft.com/library/windows/apps/br242705), [ComboBox class](https://msdn.microsoft.com/library/windows/apps/br209348)
 
+> <div id="main">
+> <strong><span class="uwpd-prelease">Prerelease.</span> Fall Creators Update (Windows 10 Insider Preview Build 16215 and later) - Behavior change</strong>
+> </div>
+> By default, instead of performing selection, an active pen now scrolls/pans a list in UWP apps (like touch, touchpad, and passive pen).
+> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. See the [Scroll​Viewer Class] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) API reference topic for details.
 
 ## List views
 
