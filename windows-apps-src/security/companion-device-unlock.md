@@ -623,15 +623,16 @@ Windows Hello companion device apps can use ShowNotificationMessageAsync to show
 
 There are two types of messages: guidance and errors.
 
-Guidance messages are designed to show the user how to start the unlock process. Those messages are only shown to the user once, upon first device registration, and never shown again.
+Guidance messages are designed to show the user how to start the unlock process. These messages are only shown to the user once on the lock screen, upon first device registration, and never shown there again. These messages will continue to be shown under the lock screen.
 
-Error messages are always shown. Error messages will be shown to the user for 5 seconds and then disappear. Given that an intent signal must be collected before showing messages to the user, and the user will provide that intent only using one of the Windows Hello companion devices, there must not be a situation where multiple Windows Hello companion devices race for showing error messages. As a result, the Windows Hello companion device framework does not maintain any queue. When a caller asks for an error message, it will be shown for 5 seconds and all other requests for showing an error message in that 5 seconds are dropped. Once 5 seconds has passed, then the opportunity arises for another caller to show an error message. We prohibit any caller from jamming the error channel.
+Error messages are always shown and will be shown after an intent signal is provided. Given that an intent signal must be collected before showing messages to the user, and the user will provide that intent only using one of the Windows Hello companion devices, there must not be a situation where multiple Windows Hello companion devices race for showing error messages. As a result, the Windows Hello companion device framework does not maintain any queue. When a caller asks for an error message, it will be shown for 5 seconds and all other requests for showing an error message in that 5 seconds are dropped. Once 5 seconds has passed, then the opportunity arises for another caller to show an error message. We prohibit any caller from jamming the error channel.
 
 Guidance and error messages are as follows. Device name is a parameter passed by the companion device app as part of ShowNotificationMessageAsync.
 
 **Guidance**
 
 - "Swipe up or press space bar to sign in with *device name*."
+- "Setting up your companion device. Please wait or use another sign-in option."
 - "Tap *device name* to the NFC reader to sign in."
 - "Looking for *device name* ..."
 - "Plug *device name* into a USB port to sign in."
