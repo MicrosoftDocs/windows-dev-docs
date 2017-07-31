@@ -1,8 +1,8 @@
 ---
 author: QuinnRadich
-title: Windows 10 build 16332 API changes
+title: Windows 10 build 16232 API changes
 description: Developers can use the following list to identify new or changed namespaces in the current Windows 10 SDK Preview Build
-keywords: what's new, whats new, update, flighted, flights, API, 16332
+keywords: what's new, whats new, update, flighted, flights, API, 16232
 ms.author: quradic
 ms.date: 7/25/2017
 ms.topic: article
@@ -10,9 +10,9 @@ ms.prod: windows
 ms.technology: uwp
 ---
 
-# New APIs in the Windows 10 SDK Preview Build 16332
+# New APIs in the Windows 10 SDK Preview Build 16232
 
-New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16332.
+New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16232.
 
 Below is a full list of prelease documentation published for namespaces added since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). **Please note that prerelease documentation may be incomplete and subject to change, and these APIs may be renamed or removed in subsequent builds.** Also attached is a list of API namespaces changed or renamed since the previous SDK preview build.
 
