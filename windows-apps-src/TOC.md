@@ -339,6 +339,7 @@
 #### [AEP service class IDs](devices-sensors/aep-service-class-ids.md)
 ### [Pair devices](devices-sensors/pair-devices.md)
 ### [Point of service](devices-sensors/point-of-service.md)
+#### [Getting started with POS](devices-sensors/pos-get-started.md)
 #### [POS device support](devices-sensors/pos-device-support.md)
 #### [Out-of-band pairing](devices-sensors/out-of-band-pairing.md)
 #### [Epson ESC/POS with formatting](devices-sensors/epson-esc-pos-with-formatting.md)
