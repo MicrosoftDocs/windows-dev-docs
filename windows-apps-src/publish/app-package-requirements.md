@@ -26,7 +26,7 @@ If you're using Microsoft Visual Studio as your development environment, you alr
 > [!NOTE]
 > Be sure that all your filenames use ANSI. 
 
-When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically.
+When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically. Without the additional information added to the manifest, you may encounter package upload failures. 
 
 When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
