@@ -71,12 +71,7 @@ The app receives activation events only for the URI scheme names listed in the p
 
 ## Step 2: Add the proper icons
 
-
-Apps that become the default for a URI scheme name have their icons displayed in various places throughout the system, for example, in the Default programs control panel.
-
-We recommend that you include the proper icons with your project so that your logo looks great in all of these places. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. For example icons, see the [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-
-![the solution explorer with a view of the files in the images folder. there are 16, 32, 48, and 256 pixel versions of both 'icon.targetsize' and 'smalltile-sdk'](images/seviewofimages.png)
+Apps that become the default for a URI scheme name have their icons displayed in various places throughout the system such as in the Default programs control panel. Include a 44x44 icon with your project for this purpose. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. See [Guidelines for tile and icon assets](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets) for more details about icons.
 
 ## Step 3: Handle the activated event
 
