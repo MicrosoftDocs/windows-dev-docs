@@ -326,7 +326,7 @@ Right now, in the Windows app the text is very small and difficult to read. Let'
      On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) is updated:
 
     ```xaml
-    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
+    <TextBlock Text="What's your name?" Style="{StaticResource BaseTextStyle}"/>
     ```
 
 7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) element.
