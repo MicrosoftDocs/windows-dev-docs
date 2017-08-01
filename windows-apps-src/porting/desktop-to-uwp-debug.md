@@ -20,7 +20,7 @@ Run your packaged app and see how it looks without having to sign it. Then, set 
 
 You can run your app to test it out locally without having to obtain a certificate and sign it.
 
-If you created your package by using a UWP project in Visual Studio, just press CTRL+F5 to start your app.
+If you created your package by using a UWP project in Visual Studio, just set the packaging project as the startup project, and then press CTRL+F5 to start your app.
 
 If you used the Desktop App Converter or you package your app manually, open a Windows PowerShell command prompt, and from the **PacakgeFiles** subfolder of your output folder, run this cmdlet:
 

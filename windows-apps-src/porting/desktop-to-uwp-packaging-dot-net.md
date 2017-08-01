@@ -39,20 +39,28 @@ If you plan to publish your app to the [Windows Store](https://www.microsoft.com
 
 Add the binaries directly to the packaging project.
 
-1. In **Solution Explorer**, create a subfolder and name it whatever you want (For example: **win32**).
+1. In **Solution Explorer**, expand the packaging project folder, create a subfolder, and name it whatever you want (For example: **win32**).
 
 2. Right-click the subfolder, and then choose **Add Existing Item**.
 
-3. In the **Add Existing Item** dialog box, locate and then add the relevant binary executable or dll files from your desktop application project.
+3. In the **Add Existing Item** dialog box, locate and then add the files from your desktop application's output folder. This includes not just the executable files, but any dlls or .config files that are located in that folder.
 
-   ![Reference executable file](images/desktop-to-uwp/exe-reference.png)
+   ![Reference executable file](images/desktop-to-uwp/cpp-exe-reference.png)
 
-   Every time you make a change to your desktop application project, you'll have to copy a new version of your binaries to the packaging project. You can automate this by adding a post-build event to the project file of the packaging project. Here's an example.
+   Every time you make a change to your desktop application project, you'll have to copy a new version of those files to the packaging project. You can automate this by adding a post-build event to the project file of the packaging project. Here's an example.
 
    ```XML
    <Target Name="PostBuildEvent">
      <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyWindowsFormsApplication.exe"
-       DestinationFolder="." />
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyWindowsFormsApplication.exe.config"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyWindowsFormsApplication.pdb"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyBusinessLogicLibrary.dll"
+       DestinationFolder="win32" />
+     <Copy SourceFiles="..\MyWindowsFormsApplication\bin\Debug\MyBusinessLogicLibrary.pdb"
+       DestinationFolder="win32" />
    </Target>
    ```
 
@@ -67,23 +75,36 @@ The packaging project contains a file that describes the settings of your packag
 2. Add this namespace to the top of the file, and add the namespace prefix to the list of ``IgnorableNamespaces``.
 
    ```XML
-   <Package xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-            IgnorableNamespaces="rescap">
-
+   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
    ```
-
-3. Set the ``Name`` attribute of the ``TargetDeviceFamily`` element to **Windows.Desktop**.
+   When you're done, your namespace declarations will look something like this:
 
    ```XML
-   <TargetDeviceFamily Name="Windows.Desktop" />
+   <Package
+     xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+     xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+     xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+     xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+     IgnorableNamespaces="uap mp rescap">
    ```
+
+3. Find the ``TargetDeviceFamily`` element, and set the ``Name`` attribute to **Windows.Desktop**, the ``MinVersion`` attribute to the minimum version of the packaging project, and the ``MaxVersionTested`` to the target version of the packaging project.
+
+   ```XML
+   <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.10586.0" MaxVersionTested="10.0.15063.0" />
+   ```
+
+   You can find the minimum version and target version in the property pages of the packaging project.
+
+   ![Minimum and target version settings](images/desktop-to-uwp/min-target-version-settings.png)
+
 
 4. Remove the ``StartPage`` attribute from the ``Application`` element. Then, add the``Executable`` and ``EntryPoint`` attributes.
 
    The ``Application`` element will look like this.
 
    ```XML
-   <Application Id="App"  StartPage="index.html"  Executable=" " EntryPoint=" ">
+   <Application Id="App"  Executable=" " EntryPoint=" ">
    ```
 
 5. Set the ``Executable`` attribute to the name of your desktop application's executable file. Then, set the ``EntryPoint`` attribute to **Windows.FullTrustApplication**.
@@ -91,13 +112,21 @@ The packaging project contains a file that describes the settings of your packag
    The ``Application`` element will look similar to this.
 
    ```XML
-   <Application Id="App"  StartPage="index.html"  Executable="WindowsFormsApp.exe" EntryPoint="Windows.FullTrustApplication">
+   <Application Id="App"  Executable="win32\MyWindowsFormsApplication.exe" EntryPoint="Windows.FullTrustApplication">
    ```
+6. Add the ``runFullTrust`` capability to the ``Capabilities`` element.
+
+   ```XML
+     <rescap:Capability Name="runFullTrust"/>
+   ```
+   Blue squiggly marks might appear beneath this declaration, but you can safely ignore them.
 
    >[!IMPORTANT]
    If your creating a package for a C++ desktop application, you'll have to make a few extra changes to your manifest file so that you can deploy the Visual C++ runtimes along with your app. See [Using Visual C++ runtimes in a desktop bridge project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
 
-6. If you want to test your package, see [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md).
+7. Build the packaging project to ensure that no errors appear.
+
+8. If you want to test your package, see [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md).
 
    Then, return to this guide, and see the next section to generate your package.
 
