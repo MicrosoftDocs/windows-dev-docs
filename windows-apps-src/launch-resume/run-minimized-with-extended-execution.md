@@ -52,7 +52,6 @@ There are three fundamental interactions with an extended execution session: the
 ```csharp
 var newSession = new ExtendedExecutionSession();
 newSession.Reason = ExtendedExecutionReason.Unspecified;
-newSession.Description = "Raising periodic toasts";
 newSession.Revoked += SessionRevoked;
 ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
 
@@ -161,7 +160,6 @@ static class ExtendedExecutionHelper
 
         var newSession = new ExtendedExecutionSession();
         newSession.Reason = ExtendedExecutionReason.Unspecified;
-        newSession.Description = "Running multiple tasks";
         newSession.Revoked += SessionRevoked;
 
         if(revoked != null)
