@@ -212,7 +212,7 @@
 # Develop Windows apps
 ## [What's new in Windows 10 for developers](whats-new/windows-10-version-1703.md)
 ### [API additions in Windows 10, version 1703](whats-new/windows-10-version-1703-api-diff.md)
-### [Prerelease APIs in Windows 10 SDK Preview Build 16332](whats-new/windows-10-latest-preview-api-diff.md)
+### [Prerelease APIs in Windows 10 SDK Preview Build 16232](whats-new/windows-10-latest-preview-api-diff.md)
 ### [What's new in the Windows 10 Build 2017 Preview](whats-new/windows-10-build-16190.md)
 ### [What's new in Windows 10, version 1607](whats-new/windows-10-version-1607.md)
 #### [API additions in Windows 10, version 1607](whats-new/windows-10-version-1607-api-diff.md)
