@@ -261,7 +261,7 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
         Icon = new SymbolIcon(Symbol.Folder)
     });
 
-    foreach (NavigationViewItem item in NavView.MenuItems)
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
     {
         if (item.Tag?.ToString() == "play")
         {
