@@ -209,6 +209,10 @@ Here's an example of this technique applied to the design for a smart home app.
 
 ![an example of a design that using the re-artchitect responsive design technique](images/rsp-design/rspd-rearchitect-type1.png)
 
+## Fluent Design System
+
+The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. 
+
 
 ## Related articles
 

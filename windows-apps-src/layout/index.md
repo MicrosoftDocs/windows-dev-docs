@@ -24,7 +24,7 @@ App structure, page layout, and navigation are the foundation of your app's user
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
   <p><b>[Intro to app UI design](design-and-ui-intro.md)</b><br />
-   When you design a UWP app, you create a user interface that suits a variety of devices with different display sizes. This article provides an overview of UI-related features and benefits of UWP apps and some tips & tricks for designing a responsive UI. </p>
+   When you design a UWP app, you create a user interface that suits a variety of devices with different display sizes. This article provides an introduction to the Fluent Design System, an overview of UI-related features and benefits of UWP apps and some tips & tricks for designing a responsive UI. </p>
   </div>
   <div class="side-by-side-content-right">
     ![An app running on multiple devices](images/rspd-reposition-type1-sm.png)
