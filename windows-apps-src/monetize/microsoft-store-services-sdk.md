@@ -13,10 +13,10 @@ keywords: windows 10, uwp, Microsoft Store Services SDK
 
 # Engage customers with the Microsoft Store Services SDK
 
-The Microsoft Store Services SDK provides features that help you make more money and engage with customers in your Universal Windows Platform (UWP) apps, such as sending targeted Dev Center notifications to your apps and running A/B experiments in your apps. This SDK is an extension for Visual Studio 2015 and later versions of Visual Studio.
+The Microsoft Store Services SDK provides features that help you engage with customers in your Universal Windows Platform (UWP) apps, such as sending targeted Dev Center notifications to your apps and running A/B experiments in your apps. This SDK is an extension for Visual Studio 2015 and later versions of Visual Studio.
 
-> [!IMPORTANT]
-> To display ads in UWP apps by using controls such as **AdControl** and **InterstitialAd**, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). The advertising libraries have been moved from the Microsoft Store Services SDK to the Microsoft Advertising SDK, and new advertising features and bug fixes will only be available via the Microsoft Advertising SDK. If you have an existing app that already uses the advertising libraries in the Microsoft Store Services SDK, your app will continue to receive ads without any code changes. However, the advertising libraries in the Microsoft Store Services SDK will no longer be updated, and you will need to install the Microsoft Advertising SDK to get new features and bug fixes. For more information, see [Display ads in your app](display-ads-in-your-app.md).
+> [!NOTE]
+> To display ads in your UWP apps, use the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) instead of the Microsoft Store Services SDK. For more information, see [Display ads in your app](display-ads-in-your-app.md).
 
 ## Scenarios supported by the Microsoft Store Services SDK
 
@@ -45,20 +45,17 @@ The Microsoft Store Services SDK requires:
 
 There are two options for installing the Microsoft Store Services SDK on your development computer:
 
-* **MSI installer**&nbsp;&nbsp;If you are using Visual Studio 2015, you can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk). With this option, the SDK libraries are installed in a shared location on your development computer so that they can be referenced by any UWP project in Visual Studio.
-* **NuGet package**&nbsp;&nbsp;For Visual Studio 2015 or a later release, you can install the SDK libraries for a specific UWP project by using NuGet. With this option, the SDK libraries are installed only for the project in which you installed the NuGet package.
+* **MSI installer**&nbsp;&nbsp;You can install the SDK via the MSI installer available [here](http://aka.ms/store-em-sdk). With this option, the SDK libraries are installed in a shared location on your development computer so that they can be referenced by any UWP project in Visual Studio.
+* **NuGet package**&nbsp;&nbsp;You can install the SDK libraries for a specific UWP project by using NuGet. With this option, the SDK libraries are installed only for the project in which you installed the NuGet package.
 
 Microsoft periodically releases new versions of the Microsoft Store Services SDK with performance improvements and new features. If you have existing projects that use the SDK and you want to use the latest version, download and install the latest version of the SDK on your development computer.
 
 <span id="install-msi" />
 ### Install via MSI
 
-> [!NOTE]
-> This installation option is only available for Visual Studio 2015. If you are using Visual Studio 2017, you must [install via NuGet](#install-nuget).
-
 To install the Microsoft Store Services SDK via the MSI installer:
 
-1.  Close all instances of Visual Studio 2015. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
+1.  Close all instances of Visual Studio. If you previously installed any previous version of the Microsoft Advertising SDK, Universal Ad Client SDK, Ad Mediator extension, or Microsoft Store Engagement and Monetization SDK, uninstall these SDK versions now.
 
 2.	Open a **Command Prompt** window and run these commands to clean out any older advertising SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
   ```
