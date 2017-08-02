@@ -263,7 +263,7 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
     foreach (NavigationViewItem item in NavView.MenuItems)
     {
-        if (item.Tag.ToString() == "play")
+        if (item.Tag?.ToString() == "play")
         {
             NavView.SelectedItem = item;
             break;
@@ -279,7 +279,17 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
     }
     else
     {
-        switch ((args.InvokedItem as FrameworkElement).Tag)
+        var Tag = "";
+
+        // new NavigationViewItem() { Content = "tag" };
+        if (args.InvokedItem is String directTag)
+            Tag = directTag;
+
+        // new NavigationViewItem() { Content = new TextBlock() { Tag = "tag" } }
+        if (args.InvokedItem is FrameworkElement el && el.Tag is String contentTag)
+            Tag = contentTag;
+            
+        switch (Tag)
         {
           case "apps":
               ContentFrame.Navigate(typeof(AppsPage));
