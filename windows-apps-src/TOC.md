@@ -1099,7 +1099,6 @@
 ### [Enter add-on properties](publish/enter-add-on-properties.md)
 ### [Set add-on pricing and availability](publish/set-add-on-pricing-and-availability.md)
 ### [Create add-on Store listings](publish/create-add-on-store-listings.md)
-### [Manage add-ons in bulk](publish/manage-add-ons-in-bulk.md)
 ## [Monetize with ads](publish/monetize-with-ads.md)
 ### [About affiliate ads](publish/about-affiliate-ads.md)
 ## [App management and services](publish/app-management-and-services.md)

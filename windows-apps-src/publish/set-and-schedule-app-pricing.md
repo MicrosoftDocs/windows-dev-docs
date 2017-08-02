@@ -3,7 +3,7 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets. 
 title: Set and schedule app pricing
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,10 @@ keywords: windows 10, uwp
 
 # Set and schedule app pricing
 
-> [!IMPORTANT]
-> This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
-> 
-> While the content below refers to apps, price selection for add-on submissions uses the same process.
-
-
 The **Pricing** section of the [Pricing and availability](set-app-pricing-and-availability.md) page lets you select the base price for an app. You can also [schedule price changes](#schedule-price-changes) to indicate the date and time at which your app’s price should change. Additionally, you have the option to [customize these changes for specific markets](#customize-pricing-for-specific-markets). 
+
+> [!NOTE]
+> Although this topic refers to apps, price selection for add-on submissions uses the same process.
 
 ## Base price
 

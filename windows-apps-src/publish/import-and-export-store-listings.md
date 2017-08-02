@@ -3,7 +3,7 @@ author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. 
 title: Import and export Store listings
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,9 +11,6 @@ keywords: windows 10, uwp
 ---
 
 # Import and export Store listings
-
-> [!IMPORTANT]
-> We are in the process of rolling out this feature to all developer accounts. Until we complete this rollout, you may not see these options in your account.
 
 You can create [Store listings](create-app-store-listings.md) for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch or to update listings you’ve already created. 
 

@@ -4,7 +4,7 @@ Description: When submitting an add-on, the options on the Pricing and availabil
 title: Set add-on pricing and availability
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,10 +16,8 @@ keywords: windows 10, uwp
 
 When submitting an add-on, the options on the **Pricing and availability** page determine what to charge for your add-on and how it should be offered to customers.
 
-> [!IMPORTANT]
-> This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
-> 
-> Please be aware that when your account switches over to use the latest functionality, any in-progress submissions will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the new options will become available with the next update after you publish your in-progress submission.
+> [!NOTE]
+> We have recently updated the available options on this page. If you had any in-progress submissions from before these options were available, your submission may still show the older options. You can delete that submission and then create a new one if you want to use the newst options for that app. Otherwise, the newest options will become available with the next update after you publish your in-progress submission.
 
 ## Markets
 

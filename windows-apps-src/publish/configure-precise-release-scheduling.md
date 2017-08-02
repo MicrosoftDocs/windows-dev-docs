@@ -3,7 +3,7 @@ author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configure precise release scheduling
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,12 +12,10 @@ keywords: windows 10, uwp
 
 # Configure precise release scheduling
 
-> [!IMPORTANT]
-> This topic has been updated to reflect the latest functionality on the **Pricing and availability** page, which we are in the process of rolling out to all developer accounts. Until we complete this rollout, your account may not be able to use the options described here.
-> 
-> While the content below refers to apps, release scheduling for add-on submissions uses the same process.
-
 The **Schedule** section on the [Pricing and availability](set-app-pricing-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
+
+> [!NOTE]
+> Although this topic refers to apps, release scheduling for add-on submissions uses the same process.
 
 You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 device.
 

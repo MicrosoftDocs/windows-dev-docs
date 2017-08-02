@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 06/23/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,9 +14,6 @@ keywords: windows 10, uwp
 # App screenshots, images, and trailers
 
 You can select the [screenshots](#screenshots), [logos](#store-logos), and other art assets (such as [trailers](#trailers) and [promotional images](##additional-art-assets) to include in your app's Store listing. Some of these are required, and some are optional. Keep in mind that your images are one of the main ways in which you represent your app. Well-designed images can be a big help in making your app appeal to customers.
-
-> [!IMPORTANT]
-> This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
 
 During the [app submission process](app-submissions.md), you provide your art assets in the [Store listings](create-app-store-listings.md) step. These images are used to help display your app in the Store. Note that the way images are used in the Store, on the customer's Start screen may vary, depending on the customer's operating system and other factors.
 
@@ -129,7 +126,7 @@ If your app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x),
 
 ## Trailers
 
-Trailers are short videos that give customers a way to see your product in action, so they can get a better understanding of what it’s like. They are shown at the top of your app's Store listing. 
+Trailers are short videos that give customers a way to see your product in action, so they can get a better understanding of what it’s like. They are shown at the top of your app's Store listing (as long as you include a **1920 x 1080 pixel image (16:9)** in the [Promotional images](#promotional-images) section). 
 
 Trailers are encoded with [Smooth Streaming](http://www.iis.net/downloads/microsoft/smooth-streaming), which adapts the quality of a video stream delivered to clients in real time based on their available bandwidth and CPU resources.
 

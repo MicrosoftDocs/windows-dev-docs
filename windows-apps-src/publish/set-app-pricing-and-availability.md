@@ -4,7 +4,7 @@ Description: The Pricing and availability page of the app submission process let
 title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,10 +13,8 @@ keywords: windows 10, uwp
 
 # Set app pricing and availability
 
-> [!IMPORTANT]
-> This topic has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
-> 
-> Please be aware that when your account switches over to use the latest functionality, any in-progress submissions will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the new options will become available with the next update after you publish your in-progress submission.
+> [!NOTE]
+> We have recently updated the available options on this page. If you had any in-progress submissions from before these options were available, your submission may still show the older options. You can delete that submission and then create a new one if you want to use the newst options for that app. Otherwise, the newest options will become available with the next update after you publish your in-progress submission.
 
 The **Pricing and availability** page of the [app submission process](app-submissions.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 

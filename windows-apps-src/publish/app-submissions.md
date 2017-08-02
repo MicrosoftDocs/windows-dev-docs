@@ -5,7 +5,7 @@ title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist
 ms.author: wdg-dev-content
-ms.date: 05/15/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,9 +26,6 @@ After your app is published, you can publish an updated version by creating anot
 ## App submission checklist
 
 Here are the details that you can provide when creating your app submission, with links to more info.
-
-> [!IMPORTANT]
-> This section has been updated to reflect the latest functionality, which we are in the process of rolling out to all developer accounts. You may not see all of the options described here until we complete this rollout.
 
 Items that you are required to provide or specify are noted below. Some areas are optional, or have default values provided that you can change as desired.
 
