@@ -3,7 +3,7 @@ author: muhsinking
 title: Getting started with point of service
 description: This article contains information about getting started with the point of service UWP APIs.
 ms.author: mukin
-ms.date: 07/31/2017
+ms.date: 08/2/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -61,10 +61,10 @@ foreach (DeviceInformation devInfo in deviceCollection)
 ```
 
 ### Scoping the device selection
-You may want to access only a certain subset of POS peripherals that your app has access to. To scope the selection to retrieve only devices connected by a certain method (Bluetooth, USB, etc.), use the **PosConnectionTypes** class. You can create a selector that searches for devices over **Bluetooth**, **IP**, **Local**, or **All connection types**. For example, this selector is scoped to find barcode scanners only over Bluetooth. 
+When connecting to a device, you may want to limit your search to a subset of POS peripherals that your app has access to. Using the **GetDeviceSelector** method, you can scope the selection to retrieve devices connected only by a certain method (Bluetooth, USB, etc.). You can create a selector that searches for devices over **Bluetooth**, **IP**, **Local**, or **All connection types**. This can be useful, as wireless device discovery takes a long time compared to local (wired) discovery. You can ensure a deterministic wait time for local device connection by limiting **FindAllAsync** to **Local** connection types. For example, this code retrieves all barcode scanners accessible via a local connection. 
 
 ```Csharp
-string selector = BarcodeScanner.GetDeviceSelector(PosConnectionTypes.Bluetooth);
+string selector = BarcodeScanner.GetDeviceSelector(PosConnectionTypes.Local);
 DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(selector);
 ```
 
@@ -201,6 +201,9 @@ if (claimedBarcodeScanner != null)
     claimedBarcodeScanner = null;
 }
 ```
+
+> [!NOTE]
+> Both the claimed and unclaimed POS device classes implement the [IClosable interface](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.iclosable). If a device is connected to an app via network or bluetooth, both the claimed and unclaimed objects must disposed of before another app can connect.
 
 ## See also
 + [Barcode scanner sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
