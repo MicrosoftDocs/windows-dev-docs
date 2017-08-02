@@ -52,4 +52,6 @@ The following talks on [Channel 9](https://channel9.msdn.com/) are a great sourc
 
 ## See also
 - [UWP on Xbox One](index.md)
+- [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md)
+
 
