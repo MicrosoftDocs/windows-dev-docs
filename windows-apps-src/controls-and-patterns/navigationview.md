@@ -224,14 +224,42 @@ The following is a simple example of how you can incorporate NavigationView into
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Text = "Apps", Icon = new SymbolIcon(Symbol.AllApps), Tag = "apps" });
+    {
+        Content = new TextBlock()
+        {
+            Text = "Apps",
+            Tag = "apps"
+        },
+        Icon = new SymbolIcon(Symbol.AllApps)
+    });
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Text = "Games", Icon = new SymbolIcon(Symbol.Video), Tag = "games" });
+    {
+        Content = new TextBlock()
+        {
+            Text = "Games",
+            Tag = "games"
+        },
+        Icon = new SymbolIcon(Symbol.Video)
+    });
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Text = "Music", Icon = new SymbolIcon(Symbol.Audio), Tag = "music" });
+    {
+        Content = new TextBlock()
+        {
+            Text = "Music",
+            Tag = "music"
+        },
+        Icon = new SymbolIcon(Symbol.Audio)
+    });
     NavView.MenuItems.Add(new NavigationViewItemSeparator());
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Text = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
+    {
+        Content = new TextBlock()
+        {
+            Text = "My content",
+            Tag = "content"
+        },
+        Icon = new SymbolIcon(Symbol.Folder)
+    });
 
     foreach (NavigationViewItem item in NavView.MenuItems)
     {
@@ -251,7 +279,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
     }
     else
     {
-        switch ((args.InvokedItem as NavigationViewItem).Tag)
+        switch ((args.InvokedItem as FrameworkElement).Tag)
         {
           case "apps":
               ContentFrame.Navigate(typeof(AppsPage));
