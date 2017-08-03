@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 07/21/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,7 +33,8 @@ This guide will be updated as additional Windows 10 game development resources a
 
 From documentation to developer programs, forums, blogs, and samples, there are many resources available to help you on your game development journey. Here's a roundup of resources to know about as you begin developing your Windows 10 game.
 
-> **Note**   Some features are managed through various programs. This guide covers a broad range of resources, so you may find that some resources are inaccessible depending on the program you are in or your specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
+> [!Note]
+> Some features are managed through various programs. This guide covers a broad range of resources, so you may find that some resources are inaccessible depending on the program you are in or your specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
 
 
 ### Game development documentation
@@ -114,7 +115,7 @@ Microsoft also offers several developer programs to help you develop and publish
 
 ### Developer programs
 
-Microsoft offers several developer programs to help you develop and publish Windows games. To publish a game in the Windows Store, you'll need to create a developer account on Windows Dev Center. Other programs may be of interest depending on your game and studio needs, and can create opportunities such as Xbox One development and Xbox Live integration.
+Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One or integrate Xbox Live features in your game. To publish a game in the Windows Store, you'll also need to create a developer account on Windows Dev Center. 
 
 #### ID@Xbox
 
@@ -972,6 +973,10 @@ These are some links to help you move your Windows desktop game to UWP.
     <tr>
         <td>Use existing C++ code for UWP game development</td>
         <td>[How to: Use existing C++ code in a UWP app](https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app)</td>
+    </tr>
+    <tr>
+        <td>Graphic APIs supported for developing UWP games</td>
+        <td>[Win32 and COM for UWP apps (graphics)](https://msdn.microsoft.com/library/windows/apps/mt592898.aspx)</td>
     </tr>
     <tr>
         <td>UWP APIs for Win32 and COM APIs</td>
