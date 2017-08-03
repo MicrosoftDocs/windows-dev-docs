@@ -1,7 +1,7 @@
 ﻿---
 author: jnHs
 Description: In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
-title: Setting up your payout account and tax forms
+title: Set up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Setting up your payout account and tax forms
+# Set up your payout account and tax forms
 
 
 In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
@@ -26,7 +26,8 @@ After you have [set up your developer account](opening-a-developer-account.md), 
 -   [Set up your payout account](#payout-account)
 -   [Fill out your tax forms](#tax-forms)
 
-> **Note**  For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
+> [!NOTE]
+> For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
  
 
 ## Payout account
@@ -69,7 +70,6 @@ Common questions about using PayPal as a payment method:
 
 -   **What PayPal settings do I need to have in order to receive payments?** You must ensure that your PayPal account does not block eCheck payments. This setting is managed in PayPal’s Payment Receiving Preferences page. See [PayPal’s account setup page](http://go.microsoft.com/fwlink/p/?linkid=513139) for more info.
 -   **Is my country/region supported?** See [Account types, locations, and fees](account-types-locations-and-fees.md) to find out where PayPal is a supported payment method.
--   **Is there a restriction on the size of payments that I can receive using PayPal?** Yes. PayPal limits the amount of money that users can receive in a single transaction. The limits vary by currency; see [PayPal’s transaction limit page](http://go.microsoft.com/fwlink/p/?linkid=513108) for each currency’s limit. If you anticipate that you will receive a payment greater than your PayPal transaction limit, change your payment method to a bank account.
 -   **Does my PayPal account have to be registered in the same country/region as my Dev Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
 -   **Do I have to accept PayPal payments manually?** No. PayPal accounts are set by default to require users to accept payments manually, which means if you don’t accept the payment within 30 days, it is returned. You can change this setting by turning off “Ask Me” in PayPal’s More Settings page.
 

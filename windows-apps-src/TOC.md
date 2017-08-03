@@ -1137,7 +1137,7 @@
 ### [Ad campaign report](publish/promote-your-app-report.md)
 ### [Download analytics reports](publish/download-analytic-reports.md)
 ## [Getting paid](publish/getting-paid-apps.md)
-### [Setting up your payout account and tax forms](publish/setting-up-your-payout-account-and-tax-forms.md)
+### [Set up your payout account and tax forms](publish/setting-up-your-payout-account-and-tax-forms.md)
 ### [Payout thresholds, methods, and timeframes](publish/payment-thresholds-methods-and-timeframes.md)
 ### [Payout summary](publish/payout-summary.md)
 ### [Tax details for paid apps](publish/tax-details-for-paid-apps.md)

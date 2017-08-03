@@ -4,7 +4,7 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 07/26/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ The **Acquisitions** report in the Windows Dev Center dashboard lets you see who
 
 You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app acquisitions](../monetize/get-app-acquisitions.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app actually being installed on a device.
+In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 device.
 
 > [!IMPORTANT]
 > The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
@@ -40,7 +40,7 @@ The info in all of the charts listed below will reflect the date range and any f
 
 ## Acquisitions
 
-The **Acquisitions** chart shows the number of daily or weekly acquisitions of your app over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart.
+The **Acquisitions** chart shows the number of daily or weekly acquisitions (a new customer obtaining a license for your app) over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart.
 
 You can also see the lifetime number of acquisitions for your app by selecting **App cumulative**. This shows the cumulative total of all acquisitions, starting from when your app was first published.
 
@@ -49,18 +49,18 @@ You can optionally filter the results by whether the acquisition originated from
 
 ## Installs
 
-The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices over the selected period of time. The total number is shown along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
+The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices over the selected period of time. The total number is shown, along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
 
 The install total includes:
--   **Installs on multiple Windows 10 devices.** For example, if a customer installs your app on two Windows 10 PCs and one Windows 10 phone, that counts as three installs.
+-   **Installs on multiple Windows 10 devices.** For example, if the same customer installs your app on two Windows 10 PCs and one Windows 10 phone, that counts as three installs.
 -   **Reinstalls.** For example, if a customer installs your app today, uninstalls your app tomorrow, and then reinstalls your app next month, that counts as two installs.
 
 The install total does not include or reflect:
--   **Installs on non-Windows 10 devices.** For example, if a customer installs your app on a device that isn’t running Windows 10, we don’t count that install.
--   **Uninstalls.** For example, if a customer uninstalls your app, we don’t subtract that from the total number of installs.
--   **Updates.** For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install (not two).
--   **Preinstalls.** For example, if a customer buys a device that has your app preinstalled, we don’t count that as an install.
--   **System-initiated installs.** For example, if Windows installs your app automatically for some reason, we don’t count that as an install.
+-   **Installs on non-Windows 10 devices.** If your app supports earlier OS versions such as Windows 8.x or Windows Phone 8.x, we don't count any installs on those devices.
+-   **Uninstalls.** When a customer uninstalls your app from their device, we don’t subtract that from the total number of installs.
+-   **Updates.** For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install.
+-   **Preinstalls.** If a customer buys a device that has your app preinstalled, we don’t count that as an install.
+-   **System-initiated installs.** If Windows installs your app automatically for some reason, we don’t count that as an install.
 
 
 ## Acquisition funnel

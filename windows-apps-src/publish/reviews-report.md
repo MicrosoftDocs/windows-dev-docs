@@ -4,7 +4,7 @@ Description: The Reviews report in the Windows Dev Center dashboard lets you see
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 
 The **Reviews** report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-You can also respond to customer reviews [directly from this page], (respond-to-customer-reviews.md) from this page, [programmatically via the Windows Store reviews API](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+You can also respond to customer reviews [directly from this page](respond-to-customer-reviews.md), programmatically [via the Windows Store reviews API](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 > [!TIP]
 > For a quick look at the reviews, ratings, and user feedback for all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 
@@ -48,7 +48,9 @@ The **Ratings breakdown** chart shows:
 - The average rating star rating for the app.
 - The total number of ratings of your app over the past 12 months.
 - The total number of ratings for each star rating.
-- The number of ratings for each type of rating (new or revised) per star rating over the past 12 months. **New ratings** are ratings that customers have submitted but haven't changed at all. **Revised ratings** are ratings that have been changed by the customer in any way, even just changing the text of the review.
+- The number of ratings for each type of rating (new or revised) per star rating over the past 12 months.
+ - **New ratings** are ratings that customers have submitted but haven't changed at all.
+ - **Revised ratings** are ratings that have been changed by the customer in any way, even just changing the text of the review.
 
 > [!TIP]
 > The average rating that a customer sees in the Store takes into account the customer’s market and device type, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type.
@@ -105,7 +107,7 @@ To see a breakdown of the number of reviews per category, select **Show details*
 
 ## Responding to customer reviews
 
-You can use the Windows Store Dev Center dashboard, the Windows Store reviews API, or the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
+You can use the Windows Store Dev Center dashboard, the [Windows Store reviews API](../monetize/submit-responses-to-app-reviews.md), or the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
 
 Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
 
