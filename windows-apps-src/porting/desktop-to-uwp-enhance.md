@@ -107,7 +107,7 @@ Here's the code that you'd use to show the notification window that we looked at
 using Windows.Foundation;
 using Windows.System;
 using Windows.UI.Notifications;
-using Windows.Data.Xml::Dom;
+using Windows.Data.Xml.Dom;
 ...
 
 private void ShowToast()
