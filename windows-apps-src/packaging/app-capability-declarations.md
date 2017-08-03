@@ -104,8 +104,8 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
 **Important**  
 Special and restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Follow the steps below to request access to a restricted capability before submitting your app to the store.
 1. Determine if you are eligible to submit your app to the store with a specific restricted capability by looking at the table below. If you are not eligible, any requests you make will be denied.
-2. If you are eligible visit the [Submitting an App](https://go.microsoft.com/fwlink/p/?LinkId=331509) support page.
-3. Set the problem type to **App submission and certification** and the category type to **Submitting an app using a restricted capability.**
+2. If you are eligible visit the [Windows Developer support page](https://developer.microsoft.com/windows/support).
+3. Under Contact Us, select the Issue Type **Applications** and then Subcategory **Other**. 
 4. Include the capability you are requesting access to and include a reason for your request. If you do not provide all the information necessary, your request will be denied. You may also be asked to provide more information.
 
 **Note** We will be reviewing requests on a case-by-case basis, which will take 5 business days or longer to respond. We highly recommend you submit your request well in advance of submitting your app to the store.
