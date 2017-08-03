@@ -4,7 +4,7 @@ ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: Use these methods in the Windows Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
 title: Get app data
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -101,7 +101,7 @@ This resource has the following values.
 | firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.   |
 | lastPublishedApplicationSubmission       | object | A [submission resource](#submission_object) that provides information about the last published submission for the app.    |
 | pendingApplicationSubmission        | object  |  A [submission resource](#submission_object) that provides information about the current pending submission for the app.   |   
-| hasAdvancedListingPermission        | object  |  Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app.  |  |
+| hasAdvancedListingPermission        | object  |  Indicates whether you can configure the [gamingOptions](manage-app-submissions.md#gaming-options-object) or [trailers](manage-app-submissions.md#trailer-object) for submissions for the app. For more information, see [this section](manage-app-submissions.md#advanced-listings). |  |
 
 
 <span id="add-on-object" />
