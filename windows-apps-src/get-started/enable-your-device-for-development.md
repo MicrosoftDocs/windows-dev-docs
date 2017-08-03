@@ -81,7 +81,7 @@ Device family specific info
 
     Enable Developer Mode to develop and debug apps in Visual Studio. As stated previously, you will be prompted in Visual Studio if Developer Mode is not enabled.
 
-    On pre-Fall Creators Update PCs, allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).  Developer Mode is no longer required for WSL, as of the FCU.  
+    On pre-Fall-Creators-Update PCs, this allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).  Developer Mode is no longer required for WSL, as of the Fall Creators Update.  
 
 -   On the mobile device family:
 
