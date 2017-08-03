@@ -94,7 +94,7 @@ Device family specific info
 For each device family, additional developer features might be available. These features are available only when Developer Mode is enabled on the device, and might vary depending on your OS version.
 
 When you enable Developer Mode, a package of options is installed that includes:
-- Installs Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
+- Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
 - Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
 
 
@@ -104,7 +104,7 @@ This image shows developer features for the mobile device family on Windows 10:
 
 ### <span id="device-discovery-and-pairing"></span>Device Portal
 
-To learn more about device discovery and Device Portal, see [Windows Device Portal overview](../debug-test-perf/device-portal.md).
+To learn more about Device Portal, see [Windows Device Portal overview](../debug-test-perf/device-portal.md).
 
 For device specific setup instructions, see:
 - [Device Portal for Desktop](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
@@ -113,7 +113,7 @@ For device specific setup instructions, see:
 - [Device Portal for Mobile](../debug-test-perf/device-portal-mobile.md)
 - [Device Portal for Xbox](../debug-test-perf/device-portal-xbox.md)
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop#failure-to-install-developer-mode-package-or-launch-device-portal) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package. 
+If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package. 
 
 ###SSH
 
@@ -126,7 +126,7 @@ In order to take advantage of the SSH services, you can enable device discovery 
 
 ### Device Discovery
 
-When you enable device discovery, you are allowing your device to be visible to other devices on the network through mDNS.  This feature also allows you to get the SSH pin for pairing to this device.  
+When you enable device discovery, you are allowing your device to be visible to other devices on the network through mDNS.  This feature also allows you to get the SSH PIN for pairing to this device.  
 
 ![Pin pairing](images/devmode-pc-pinpair.PNG)
 
@@ -148,7 +148,41 @@ Collecting crash dumps on your phone gives you instant access to important crash
 There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 mobile device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Either of the ways listed installs only the app package (.appx); they do not install certificates.
 
 -   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   Starting in Windows 10, Version 1511, you can use [Device Portal](#device_portal) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
+-   Starting in Windows 10, Version 1511, you can use [Device Portal](../debug-test-perf/device-portal-desktop.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
+
+## Failure to install Developer Mode package
+Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device. 
+
+See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds to these issues and more. 
+
+### Failed to locate the package
+
+"Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005 Learn more"   
+
+This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing. 
+
+To fix this issue:
+
+1. Ensure your computer is connected to the Internet. 
+2. If you are on a domain-joined computer, speak to your network administrator. The Developer Mode package, like all Features on Demand,  is blocked by default in WSUS. 
+2.1. In order to unblock the Developer Mode package in the current and previous releases, the following KBs should be allowed in WSUS: 4016509, 3180030, 3197985  
+3. Check for Windows updates in the Settings > Updates and Security > Windows Updates.
+4. Verify that the Windows Developer Mode package is present in Settings > System > Apps & Features > Manage optional features > Add a feature. If it is missing, Windows cannot find the correct package for your computer. 
+
+After doing any of the above steps, disable and then re-enable Developer Mode to verify the fix. 
+
+
+### Failed to install the package
+
+"Developer Mode package failed to install. Error code 0x80004005  Learn more"
+
+This error may occur due to incompatibilities between your build of Windows and the Developer Mode package. 
+
+To fix this issue:
+
+1. Check for Windows updates in the Settings > Updates and Security > Windows Updates.
+2. Reboot your computer to ensure all updates are applied.
+
 
 ## Use group policies or registry keys to enable a device
 
