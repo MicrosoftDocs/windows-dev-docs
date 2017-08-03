@@ -42,7 +42,7 @@ Let's start by taking a look at some of the features that you get when you creat
 
 ### Effective pixels and scaling
 
-UWP apps automatically adjust the size of controls, fonts, and other UI elements so that they are legible on all devices.
+UWP apps automatically adjust the size of controls, fonts, and other UI elements so that they are legible and easy to interact with on all devices.
 
 When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5" phone that's a few inches away.
 
