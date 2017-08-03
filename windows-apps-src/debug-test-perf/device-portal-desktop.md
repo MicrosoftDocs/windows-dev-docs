@@ -79,5 +79,5 @@ If you would like to select port numbers for Device Portal (such as 80 and 443),
 ## Failure to install Developer Mode package
 Sometimes, due to network or compatibility issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to the PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio. 
 
-See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum and the [Developer Mode page](https://docs.microsoft.com/en-us/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) to find workarounds to these issues and more. 
+See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum and the [Developer Mode page](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) to find workarounds to these issues and more. 
 
