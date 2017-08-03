@@ -7,7 +7,7 @@ label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 08/1/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,17 +18,27 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-A Universal Windows Platform (UWP) app can run on any Windows-based device, from your phone to your tablet or PC.
+A Universal Windows Platform (UWP) app can run on any Windows-based device, from your phone to your tablet or PC. 
 
+Designing an app that looks good on such a wide variety of devices can be a big challenge. Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you create a UX that works well with a variety of devices, screens, and input methods. This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. 
+
+## Video summary
+
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
+
+
+<!--
 ![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
+-->
 
-Designing an app that looks good on such a wide variety of devices can be a big challenge. So how do you go about designing an app that provides a great UX on devices with dramatically different screen sizes and input methods? Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you do just that.
+<!--
+![A design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
+-->
 
-![a design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
 
-This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. Let's start by taking a look at some of the features that you get when you create a UWP app.
+## UWP features
 
-## UWP app features
+Let's start by taking a look at some of the features that you get when you create a UWP app.
 
 ### Effective pixels and scaling
 
@@ -85,10 +95,22 @@ The UWP also provides some useful building blocks that make it easier to design 
 
     ![a weather app with its own visual style](images/weather/uwp-weather-tab-phone-700.png)
 
-Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI.
+## UWP and the Fluent Design System
+
+ The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. Fluent Design is being applied across Windows 10 devices and apps to create beautiful, engaging, and intuitive experiences. 
+ 
+ How can you incorporate Fluent Design into your app? We're continually adding new controls and features that make it easy. Here's a list of current Fluent Design features for UWP:  
+
+* [Acrylic](../style/acrylic.md) is a type of brush that creates semi-transparent surfaces.
+* [Parallax](../style/parallax.md) adds three-dimensional perspective, depth, and movement to scrolling content, such as lists.
+* [Reveal](../style/reveal.md) uses light to create a hover effect that illuminates interactive UI elements. 
+* [Connected animations](../style/connected-animation.md) provide graceful scene transitions that improve usability by maintaining context and providing continuity. 
+
+We've also updated our [design guidelines](https://developer.microsoft.com/windows/apps/design) (which you're current reading) so they're based on Fluent Design principles.
 
 ## The anatomy of a typical UWP app
 
+Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI.
 
 A modern user interface is a complex thing, made up of text, shapes, colors, and animations which are ultimately made up out of individual pixels of the screen of the device you're using. When you start designing a user interface, the sheer number of choices can be overwhelming.
 
@@ -126,7 +148,6 @@ When deciding on the right UI elements for your app, you might also consider the
 
 ## Tailoring your app for specific devices and screen sizes.
 
-
 UWP apps use effective pixels to guarantee that your design elements will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?
 
 **Note**  
@@ -157,17 +178,17 @@ When you optimize your app's UI for specific screen widths, we say that you're c
 
 You can alter the location and position of app UI elements to get the most out of each device. In this example, the portrait view on phone or phablet necessitates a scrolling UI because only one full frame is visible at a time. When the app translates to a device that allows two full on-screen frames, whether in portrait or landscape orientation, frame B can occupy a dedicated space. If you're using a grid for positioning, you can stick to the same grid when UI elements are repositioned.
 
-![reposition](images/rsp-design/rspd-reposition.png)
+![Reposition](images/rsp-design/rspd-reposition.png)
 
 In this example design for a photo app, the photo app repositions its content on larger screens.
 
-![a design for an app that repositions content on larger screens](images/rsp-design/rspd-reposition-type1.png)
+![A design for an app that repositions content on larger screens](images/rsp-design/rspd-reposition-type1.png)
 
 ### Resize
 
 You can optimize the frame size by adjusting the margins and size of UI elements. This could allow you, as the example here shows, to augment the reading experience on a larger screen by simply growing the content frame.
 
-![resizing design elements](images/rsp-design/rspd-resize.png)
+![Resizing design elements](images/rsp-design/rspd-resize.png)
 
 ### Reflow
 
@@ -175,15 +196,15 @@ By changing the flow of UI elements based on device and orientation, your app ca
 
 This example shows how a single column of vertically scrolling content on phone or phablet can be reflowed on a larger screen to display two columns of text.
 
-![reflowing design elements](images/rsp-design/rspd-reflow.png)
+![Reflowing design elements](images/rsp-design/rspd-reflow.png)
 
-###  Reveal
+### Show/hide
 
-You can reveal UI based on screen real estate, or when the device supports additional functionality, specific situations, or preferred screen orientations.
+You can show or hide UI elements based on screen real estate, or when the device supports additional functionality, specific situations, or preferred screen orientations.
 
 In this example with tabs, the middle tab with the camera icon might be specific to the app on phone or phablet and not be applicable on larger devices, which is why it's revealed in the device on the right. Another common example of revealing or hiding UI applies to media player controls, where the button set is reduced on smaller devices and expanded on larger devices. The media player on PC, for instance, can handle far more on-screen functionality than it can on a phone.
 
-![hiding design elements](images/rsp-design/rspd-revealhide.png)
+![Hiding design elements](images/rsp-design/rspd-revealhide.png)
 
 Part of the reveal-or-hide technique includes choosing when to display more metadata. When real estate is at a premium, such as with a phone or phablet, it's best to show a minimal amount of metadata. With a laptop or desktop PC, a significant amount of metadata can be surfaced. Some examples of how to handle showing or hiding metadata include:
 
@@ -197,7 +218,7 @@ Part of the reveal-or-hide technique includes choosing when to display more meta
 
 This technique lets you switch the user interface for a specific device size-class or orientation. In this example, the nav pane and its compact, transient UI works well for a smaller device, but on a larger device tabs might be a better choice.
 
-![replacing design elements](images/rsp-design/rspd-replace.png)
+![Replacing design elements](images/rsp-design/rspd-replace.png)
 
 ###  Re-architect
 
@@ -209,13 +230,15 @@ Here's an example of this technique applied to the design for a smart home app.
 
 ![an example of a design that using the re-artchitect responsive design technique](images/rsp-design/rspd-rearchitect-type1.png)
 
-## Fluent Design System
+## Tools and design toolkits
 
-The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. 
+We provide a variety of tools to help you design you UWP app. See our [Design toolkits page](../design-downloads/index.md) for XD, Illustrator, Photoshop, Framer, and Sketch toolkits, as well as additional design tools and font downloads. 
 
+To get your machine set up to actually code UWP apps, see our [Get started &gt; Get set up](../get-started/get-set-up.md) article. 
 
 ## Related articles
 
 - [What's a UWP app?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+- [Design toolkits](../design-downloads/index.md)
 
  
