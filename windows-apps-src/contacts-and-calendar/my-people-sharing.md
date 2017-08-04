@@ -59,17 +59,18 @@ To declare support for your application as a share target, first open your appli
 	  Executable="$targetnametoken$.exe"
 	  EntryPoint="My.App">
 		<Extensions>
-			<uap:Extension Category="windows.shareTarget" >
-			<uap:ShareTarget Description="Share with MyApp">
-				<uap:SupportedFileTypes>
-					<uap:SupportsAnyFileType />
-				</uap:SupportedFileTypes>
-				<uap:DataFormat>Text</uap:DataFormat>
-				<uap:DataFormat>Bitmap</uap:DataFormat>
-				<uap:DataFormat>Html</uap:DataFormat>
-				<uap:DataFormat>StorageItems</uap:DataFormat>
-				<uap:DataFormat>URI</uap:DataFormat>
-			</uap:ShareTarget>
+			<uap:Extension Category="windows.shareTarget">
+				<uap:ShareTarget Description="Share with MyApp">
+					<uap:SupportedFileTypes>
+						<uap:SupportsAnyFileType/>
+					</uap:SupportedFileTypes>
+					<uap:DataFormat>Text</uap:DataFormat>
+					<uap:DataFormat>Bitmap</uap:DataFormat>
+					<uap:DataFormat>Html</uap:DataFormat>
+					<uap:DataFormat>StorageItems</uap:DataFormat>
+					<uap:DataFormat>URI</uap:DataFormat>
+				</uap:ShareTarget>
+			</uap:Extension>
 		 </Extensions>
 	</Application>
 </Applications>
