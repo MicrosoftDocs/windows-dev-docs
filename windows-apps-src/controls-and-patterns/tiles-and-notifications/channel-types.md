@@ -159,7 +159,7 @@ In general, we recommend using the primary channel in your app, with a few excep
 1. If you are pushing a tile update to a secondary tile, use the secondary tile push channel.
 2. If you are passing out channels to other services (such as in the case of a browser) use the alternate channel.
 3. If you are creating an app that won't be listed in the Windows store (such as an LOB app) use an alternate channel.
-4. You have existing web push code on your server you wish to reuse or have a need for multiple channels in your backend service, use alternate channels.
+4. If you have existing web push code on your server you wish to reuse or have a need for multiple channels in your backend service, use alternate channels.
 
 ## Related articles
 
