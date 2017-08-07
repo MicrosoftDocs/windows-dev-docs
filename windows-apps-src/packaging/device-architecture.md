@@ -21,6 +21,7 @@ It is **highly** recommended that you build your app package to target all archi
 
 ## Windows 10 devices and architectures
 
+> [!div class="mx-tableFixed"]
 | UWP Architecture | Desktop (x86)      | Desktop (x64)      | Desktop (ARM)      | Mobile             | HoloLens           | Xbox               | IoT Core (Device dependent) | 
 |------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|
 | x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          |
