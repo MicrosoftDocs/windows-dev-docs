@@ -106,6 +106,19 @@ Advanced Installer also provides an extension for Visual Studio 2017 and 2015 th
 
 See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) for a quick overview.
 
+#### Cloudhouse Compatibility Containers
+
+For Enterprise customers who have line of business applications that are incompatible with Windows 10 and Windows 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and Windows 7 apps to be converted to UWP and then delivered through the Windows Store for Business, or Microsoft Intune, without changing the source code.
+<div style="float: left; padding: 10px; width: 20%">
+     ![Cloudhouse-Compatibility-Containers](images/desktop-to-uwp/container.png)
+</div>
+Cloudhouse provides an Auto Packager that takes any application, and creates a Compatibility Container by packaging the app where it runs today e.g. Windows XP. The Container can then be converted to the new UWP format by integrating with the Desktop Bridge Converter tool to create the Windows app package.
+
+The Auto Packager uses install / capture and runtime analysis to create a Container for the application which includes the application files and registry, and the compatibility and redirection engine that enables the application to run on Windows 10. Plus you can include, and isolate, any runtimes or prerequisites required to run the application so that it does not affect or conflict with other applications or runtimes that may already be installed.
+
+
+Check out their [blog](http://www.cloudhouse.com/resources/release-solution-to-get-any-line-of-business-app-to-uwp) announcing support for Universal Windows Apps and the Windows Store for Business.
+
 #### FireGiant
 
 The [FireGiant Appx extension](https://www.firegiant.com/products/wix-expansion-pack/appx) lets you create Windows app packages and MSI packages simultaneously from the same WiX source code. Every time you build, you can target Desktop Bridge in Windows 10 with a Windows app package and earlier versions of Windows with MSI.
