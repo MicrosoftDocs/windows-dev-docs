@@ -1122,6 +1122,7 @@
 ## [Engage with your customers](publish/engage-with-your-customers.md)
 ### [Create customer groups](publish/create-customer-groups.md)
 #### [Create customer segments](publish/create-customer-segments.md)
+#### [Create known user groups](publish/create-known-user-groups.md)
 ### [Respond to customer reviews](publish/respond-to-customer-reviews.md)
 ### [Respond to customer feedback](publish/respond-to-customer-feedback.md)
 ### [Send notifications to your app's customers](publish/send-push-notifications-to-your-apps-customers.md)

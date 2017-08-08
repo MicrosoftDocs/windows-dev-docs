@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 08/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -98,6 +98,12 @@ The info you enter here will be shown to customers viewing your app's Store list
 
 > [!NOTE]
 > Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
+
+### Developed by
+
+Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
+
+This field has a 255 character limit.
 
 
 ## Shared fields
