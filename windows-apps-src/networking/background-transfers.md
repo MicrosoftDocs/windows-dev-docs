@@ -230,7 +230,7 @@ Post-processing uses a new class, [**BackgroundTransferCompletionGroup**](https:
 
 You initiate a background transfer with post-processing as follows.
 
-1.  Create a [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) object. Then, create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Set the **Trigger** property of the builder object to the completion group object, and the **TaskEngtyPoint** property of the builder to the entry point of the background task that should execute on transfer completion. Finally, call the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method to register your background task. Note that many completion groups can share one background task entry point, but you can have only one completion group per background task registration.
+1.  Create a [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) object. Then, create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Set the **Trigger** property of the builder object to the completion group object, and the **TaskEntryPoint** property of the builder to the entry point of the background task that should execute on transfer completion. Finally, call the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method to register your background task. Note that many completion groups can share one background task entry point, but you can have only one completion group per background task registration.
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
