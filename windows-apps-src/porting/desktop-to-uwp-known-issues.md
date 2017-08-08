@@ -97,6 +97,6 @@ If you prefer to use a C# project to package your app, you need to be aware of t
 
 This can happen when trying to convert satellite assemblies to Package Resource Index (PRI) files.
 
-We are aware of this issue and are working on a more long term solution. As a temporary workaround, you can disable the resource generator by adding this line of XML to your package manifest file:
+We are aware of this issue and are working on a more long term solution. As a temporary workaround, you can disable the resource generator by adding this line of XML to the first PropertyGroup element in hosting project file:
 
 ``<AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>``
