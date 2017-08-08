@@ -13,7 +13,7 @@ keywords: windows 10, uwp, Windows Store collection API, Windows Store purchase 
 
 # Manage product entitlements from a service
 
-If you have a catalog of apps and add-ons (also known as in-app products or IAPs), you can use the *Windows Store collection API* and *Windows Store purchase API* to access entitlement information for these products from your services. An *entitlement* represents a customer's right to use an app or add-on that is published through the Windows Store.
+If you have a catalog of apps and add-ons, you can use the *Windows Store collection API* and *Windows Store purchase API* to access entitlement information for these products from your services. An *entitlement* represents a customer's right to use an app or add-on that is published through the Windows Store.
 
 These APIs consist of REST methods that are designed to be used by developers with add-on catalogs that are supported by cross-platform services. These APIs enable you to do the following:
 

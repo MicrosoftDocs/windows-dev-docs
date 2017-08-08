@@ -4,11 +4,11 @@ ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: Learn how to enable in-app purchases and trials in UWP apps.
 title: In-app purchases and trials
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 08/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, trials, consumable, durable
+keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, trials, consumable, durable, subscription
 ---
 
 # In-app purchases and trials
@@ -20,7 +20,7 @@ The Windows SDK provides APIs you can use to implement the following features to
 * **Trial functionality**&nbsp;&nbsp;If you configure your app as a [free trial in the Windows Dev Center dashboard](../publish/set-app-pricing-and-availability.md#free-trial), you can entice your customers to purchase the full version of your app by excluding or limiting some features during the trial period. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.
 
 This article provides an overview of how in-app purchases and trials work in UWP apps.
-          
+
 <span id="choose-namespace" />
 ## Choose which namespace to use
 
@@ -33,7 +33,7 @@ There are two different namespaces you can use to add in-app purchases and trial
 <span id="concepts" />
 ## Basic concepts
 
-Every item that is offered in the Store is generally called a *product*. Most developers only work with the following types of products: *apps* and *add-ons* (also known as in-app products or IAPs).
+Every item that is offered in the Store is generally called a *product*. Most developers only work with the following types of products: *apps* and *add-ons*.
 
 An add-on is a product or feature that you make available to your customers in the context of your app: for example, currency to be used in an app or game, new maps or weapons for a game, the ability to use your app without ads, or digital content such as music or videos for apps that have the ability to offer that type of content. Every app and add-on has an associated license that indicates whether the user is entitled to use the app or add-on. If the user is entitled to use the app or add-on as a trial, the license also provides additional info about the trial.
 
@@ -45,7 +45,8 @@ UWP apps can offer the following types of add-ons.
 |---------|-------------------|
 | Durable  |  An add-on that persists for the lifetime that you specify in the [Windows Dev Center dashboard](../publish/enter-iap-properties.md). <p/><p/>By default, durable add-ons never expire, in which case they can only be purchased once. If you specify a particular duration for the add-on, the user can repurchase the add-on after it expires. |
 | Developer-managed consumable  |  An add-on that can be purchased, used, and purchased again. This type of add-on is often used for in-app currency. <p/><p/>For this type of consumable, you are responsible for keeping track of the user's balance of items that the add-on represents, and for reporting the purchase of the add-on as fulfilled to the Store after the user has consumed all the items. The user cannot purchase the add-on again until your app has reported the previous add-on purchase as fulfilled. <p/><p/>For example, if your add-on represents 100 coins in a game and the user consumes 10 coins, your app or service must maintain the new remaining balance of 90 coins for the user. After the user has consumed all 100 coins, your app must report the add-on as fulfilled, and then the user can purchase the 100 coin add-on again.    |
-| Store-managed consumable  |  An add-on that can be purchased, used, and purchased again. This type of add-on is often used for in-app currency.<p/><p/>For this type of consumable, the Store keeps track of the user's balance of items that the add-on represents. When the user consumes any items, you are responsible for reporting those items as fulfilled to the Store, and the Store updates the user's balance. Your app can query for the current balance for the user at any time. After the user consumes all of the items, the user can purchase the add-on again.  <p/><p/> For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. After the user has consumed all 100 coins, the user can purchase the 100 coin add-on again. <p/><p/>**Note**&nbsp;&nbsp;Store-managed consumables are available starting in Windows 10, version 1607. To use Store-managed consumables, your app must target Windows 10, version 1607, or a later version, and it must use the API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace.  |
+| Store-managed consumable  |  An add-on that can be purchased, used, and purchased again. This type of add-on is often used for in-app currency.<p/><p/>For this type of consumable, the Store keeps track of the user's balance of items that the add-on represents. When the user consumes any items, you are responsible for reporting those items as fulfilled to the Store, and the Store updates the user's balance. Your app can query for the current balance for the user at any time. After the user consumes all of the items, the user can purchase the add-on again.  <p/><p/> For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. After the user has consumed all 100 coins, the user can purchase the 100 coin add-on again. <p/><p/>**Note**&nbsp;&nbsp;To use Store-managed consumables, your app must target Windows 10, version 1607, or a later version, and it must use the API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace.  |
+| Subscription | A durable add-on where the customer continues to be charged at recurring intervals in order to keep using the add-on. The customer can cancel the subscription at any time to avoid further charges. <p/><p/>**Note**&nbsp;&nbsp;Subscription add-ons are currently only available to developer accounts who are participating in an early adoption program. To use subscription add-ons, your app must target Windows 10, version 1607, or a later version, and it must use the API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace.  |
 
 <span />
 
@@ -70,7 +71,7 @@ This section provides an overview of important tasks and concepts for the [Windo
 * [Store IDs](#store_ids)
 
 <span id="video" />
-### Video 
+### Video
 
 Watch the following video for an overview of how to implement in-app purchases in your app using the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace.
 <br/>
@@ -104,6 +105,7 @@ After you have a [StoreContext](https://msdn.microsoft.com/library/windows/apps/
 * [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
 * [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Enable subscription add-ons for your app](enable-subscription-add-ons-for-your-app.md)
 * [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
 
 For a sample app that demonstrates how to use **StoreContext** and other types in the **Windows.Services.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
@@ -121,6 +123,7 @@ To offer an in-app purchase to customers in your app using the **Windows.Service
 
     * If the user is purchasing your app or a durable add-on, follow the instructions in [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md).
     * If the user is purchasing a consumable add-on, follow the instructions in [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md).
+    * If the user is purchasing a subscription add-on, follow the instructions in [Enable subscription add-ons for your app](enable-subscription-add-ons-for-your-app.md).
 
 4. Test your implementation by following the [testing guidance](#testing) in this article.
 
@@ -140,9 +143,7 @@ To exclude or limit features in a trial version of your app using the **Windows.
 <span id="testing" />
 ### Test your in-app purchase or trial implementation
 
-The **Windows.Services.Store** namespace does not provide a class that you can use to simulate license info during testing. Instead, you must publish an app to the Store and download that app to your development device to use its license for testing. This is a different experience from apps that use the **Windows.ApplicationModel.Store** namespace, which can use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) class to simulate license info during testing.
-
-If your app uses APIs in the **Windows.Services.Store** namespace to access info for your app and its add-ons, follow this process to test your code:
+If your app uses APIs in the **Windows.Services.Store** namespace to implement in-app purchases and trials, you must publish your app to the Store and download the app to your development device to use its license for testing. Follow this process to test your code:
 
 1. If your app is not yet published and available in the Store, make sure your app meets the minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements, [submit your app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Windows Dev Center dashboard, and make sure your app passes the certification process so it is available in the Store. You can [configure your app so it is not discoverable in the Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) while you test it.
 
@@ -158,9 +159,13 @@ If your app uses APIs in the **Windows.Services.Store** namespace to access info
 4. If you have not done so already, install the app from the Store that you specified in the previous step, run the app once, and then close this app. This ensures that a valid license for the app is installed to your development device.
 
 5. In Visual Studio, start running or debugging your project. Your code should retrieve app and add-on data from the Store app that you associated with your local project. If you are prompted to reinstall the app, follow the instructions and then run or debug your project.
+    > [!NOTE]
+    > After you complete these steps, you can continue to update your app's code and then debug your updated project on your development computer without submitting new app packages to the Store. You only need to download the Store version of your app to your development computer once to obtain the local license that will be used for testing. You only need to submit new app packages to the Store after you complete your testing and you want to make the in-app purchase or trial-related features in your app available to your customers.
+
+If your app uses the **Windows.ApplicationModel.Store** namespace, you can use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) class in your app to simulate license info during testing before you submit your app to the Store. For more information, see [Get started with the CurrentApp and CurrentAppSimulator classes] (in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes).  
 
 > [!NOTE]
-> After you complete these steps, you can continue to update your app's code and then debug your updated project on your development computer without submitting new app packages to the Store. You only need to download the Store version of your app to your development computer once to obtain the local license that will be used for testing. You only need to submit new app packages to the Store after you complete your testing and you want to make the in-app purchase or trial-related features in your app available to your customers.
+> The **Windows.Services.Store** namespace does not provide a class that you can use to simulate license info during testing. If you use the **Windows.Services.Store** namespace to implement in-app purchases or trials, you must publish your app to the Store and download the app to your development device to use its license for testing as described above.
 
 <span id="receipts" />
 ### Receipts for in-app purchases
@@ -229,14 +234,14 @@ Every app and add-on in the Store has an associated **Store ID**. Many of the AP
 If you want to make an add-on available to your customers in the context of your app, you must [enter a unique product ID](../publish/set-your-add-on-product-id.md#product-id) for your add-on when you [create your add-on submission](../publish/add-on-submissions.md) in the Dev Center dashboard. You can use this product ID to refer to the add-on in your code, although the specific scenarios in which you can use the product ID depend on which namespace you use for in-app purchases in your app.
 
 > [!NOTE]
-> The product ID that you enter in the Dev Center dashboard for an add-on is different than the add-on's [Store ID](#store-ids). The Store ID is generated by Dev Center. 
+> The product ID that you enter in the Dev Center dashboard for an add-on is different than the add-on's [Store ID](#store-ids). The Store ID is generated by Dev Center.
 
 ### Apps that use the Windows.Services.Store namespace
 
-If your app uses the **Windows.Services.Store** namespace, you can use the product ID to easily identify the [StoreProduct](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) that represents your add-on or the [StoreLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense) that represents your add-on's license. The product ID is exposed by the [StoreProduct.InAppOfferToken](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct#Windows_Services_Store_StoreProduct_InAppOfferToken_) and [StoreLicense.InAppOfferToken](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense#Windows_Services_Store_StoreLicense_InAppOfferToken_) properties. 
+If your app uses the **Windows.Services.Store** namespace, you can use the product ID to easily identify the [StoreProduct](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct) that represents your add-on or the [StoreLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense) that represents your add-on's license. The product ID is exposed by the [StoreProduct.InAppOfferToken](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreProduct#Windows_Services_Store_StoreProduct_InAppOfferToken_) and [StoreLicense.InAppOfferToken](https://docs.microsoft.com/uwp/api/windows.services.store.storelicense#Windows_Services_Store_StoreLicense_InAppOfferToken_) properties.
 
 > [!NOTE]
-> Although the product ID is a useful way to identify an add-on in your code, most operations in the **Windows.Services.Store** namespace use the [Store ID](#store-ids) of an add-on instead of the product ID. For example, to programmatically retrieve one or more known add-ons for an app, pass the Store IDs (rather than the product IDs) of the add-ons to the [GetStoreProductsAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext#Windows_Services_Store_StoreContext_GetStoreProductsAsync_Windows_Foundation_Collections_IIterable_System_String__Windows_Foundation_Collections_IIterable_System_String__) method. Similarly, to report a consumable add-on as fulfilled, pass the Store ID of the add-on (rather than the product ID) to the [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext#Windows_Services_Store_StoreContext_ReportConsumableFulfillmentAsync_System_String_System_UInt32_System_Guid_) method. 
+> Although the product ID is a useful way to identify an add-on in your code, most operations in the **Windows.Services.Store** namespace use the [Store ID](#store-ids) of an add-on instead of the product ID. For example, to programmatically retrieve one or more known add-ons for an app, pass the Store IDs (rather than the product IDs) of the add-ons to the [GetStoreProductsAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext#Windows_Services_Store_StoreContext_GetStoreProductsAsync_Windows_Foundation_Collections_IIterable_System_String__Windows_Foundation_Collections_IIterable_System_String__) method. Similarly, to report a consumable add-on as fulfilled, pass the Store ID of the add-on (rather than the product ID) to the [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext#Windows_Services_Store_StoreContext_ReportConsumableFulfillmentAsync_System_String_System_UInt32_System_Guid_) method.
 
 ### Apps that use the Windows.ApplicationModel.Store namespace
 
@@ -254,5 +259,6 @@ If your app uses the **Windows.ApplicationModel.Store** namespace, you'll need t
 * [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
 * [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Enable subscription add-ons for your app](enable-subscription-add-ons-for-your-app.md)
 * [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
 * [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)

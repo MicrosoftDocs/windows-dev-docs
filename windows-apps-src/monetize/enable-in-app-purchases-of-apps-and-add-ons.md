@@ -13,23 +13,23 @@ ms.technology: uwp
 
 # Enable in-app purchases of apps and add-ons
 
-Apps that target Windows 10, version 1607, or later can use members in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to request the purchase the current app or one of its add-ons (also known as in-app products or IAPs) for the user. For example, if the user currently has a trial version of the app, you can use this process to purchase a full license for the user. Alternatively, you can use this process to purchase an add-on, such as a new game level for the user.
+Apps that target Windows 10, version 1607, or later can use members in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to request the purchase the current app or one of its add-ons for the user. For example, if the user currently has a trial version of the app, you can use this process to purchase a full license for the user. Alternatively, you can use this process to purchase an add-on, such as a new game level for the user.
 
 To request the purchase of an app or add-on, the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) provides several different methods:
 * If you know the [Store ID](in-app-purchases-and-trials.md#store_ids) of the app or add-on, you can use the [RequestPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.requestpurchaseasync.aspx) method of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class.
-* If you already have a [**StoreProduct**, **StoreSku**, or **StoreAvailability** object](in-app-purchases-and-trials.md#products-skus) that represents the app or add-on, you can use the **RequestPurchaseAsync** methods of these objects. For examples of different ways to retrieve a **StoreProduct** in your code, see [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md). 
+* If you already have a [**StoreProduct**, **StoreSku**, or **StoreAvailability** object](in-app-purchases-and-trials.md#products-skus) that represents the app or add-on, you can use the **RequestPurchaseAsync** methods of these objects. For examples of different ways to retrieve a **StoreProduct** in your code, see [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md).
 
 Each method presents a standard purchase UI to the user and then completes asynchronously after the transaction is complete. The method returns an object that indicates whether the transaction was successful.
 
 > [!NOTE]
-> This article is applicable to apps that target Windows 10, version 1607, or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+> This article is applicable to apps that target Windows 10, version 1607, or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [this article](enable-in-app-product-purchases.md).
 
 ## Prerequisites
 
 This example has the following prerequisites:
 * A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607, or later.
 * You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
-* If you want to enable in-app purchases for an add-on for the app, you must also [create the add-on in the Dev Center dashboard](../publish/add-on-submissions.md). 
+* If you want to enable in-app purchases for an add-on for the app, you must also [create the add-on in the Dev Center dashboard](../publish/add-on-submissions.md).
 
 The code in this example assumes:
 * The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
@@ -46,7 +46,7 @@ This example demonstrates how to use the [RequestPurchaseAsync](https://msdn.mic
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
 
-## Video 
+## Video
 
 Watch the following video for an overview of how to implement in-app purchases in your app.
 <br/>

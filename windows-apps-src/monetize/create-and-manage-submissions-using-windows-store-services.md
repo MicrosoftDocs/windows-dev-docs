@@ -14,7 +14,7 @@ keywords: windows 10, uwp, Windows Store submission API
 # Create and manage submissions
 
 
-Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons (also known as in-app products or IAPs) and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
 The following steps describe the end-to-end process of using the Windows Store submission API:
 

@@ -705,6 +705,7 @@
 #### [Get license info for apps and add-ons](monetize/get-license-info-for-apps-and-add-ons.md)
 #### [Enable in-app purchases of apps and add-ons](monetize/enable-in-app-purchases-of-apps-and-add-ons.md)
 #### [Enable consumable add-on purchases](monetize/enable-consumable-add-on-purchases.md)
+#### [Enable subscription add-ons for your app](monetize/enable-subscription-add-ons-for-your-app.md)
 #### [Implement a trial version of your app](monetize/implement-a-trial-version-of-your-app.md)
 #### [Data schemas for Store products](monetize/data-schemas-for-store-products.md)
 #### [Using the Windows.ApplicationModel.Store namespace](monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)

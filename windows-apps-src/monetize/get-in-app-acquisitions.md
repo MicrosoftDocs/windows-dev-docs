@@ -16,7 +16,7 @@ keywords: windows 10, uwp, Store services, Windows Store analytics API, add-on a
 
 
 
-Use this method in the Windows Store analytics API to get aggregate acquisition data for add-ons (also known as in-app products or IAPs) for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
+Use this method in the Windows Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 
