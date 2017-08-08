@@ -210,7 +210,7 @@
 ## [Fluent Design System](http://fluent.microsoft.com/)
 ## [Design toolkits](design-downloads/index.md)
 # Develop Windows apps
-## [What's new in Windows 10 for developers](whats-new/windows-10-version-1703.md)
+## [What's new in Windows 10 for developers, version 1703](whats-new/windows-10-version-latest.md)
 ### [API additions in Windows 10, version 1703](whats-new/windows-10-version-1703-api-diff.md)
 ### [Prerelease APIs in Windows 10 SDK Preview Build 16232](whats-new/windows-10-latest-preview-api-diff.md)
 ### [What's new in the Windows 10 Build 2017 Preview](whats-new/windows-10-build-16190.md)
@@ -219,7 +219,7 @@
 ### [What's new in Windows 10, version 1607 Preview](whats-new/windows-10-sdk-preview.md)
 ### [What's new in Windows 10, version 1511](whats-new/windows-10-version-1511.md)
 ### [What's new in Windows 10, version 1507](whats-new/windows-10-version-1507.md)
-## [What's new in the Windows docs, August 2017](whats-new/windows-docs-august-2017.md)
+## [What's new in the Windows docs, August 2017](whats-new/windows-docs-latest.md)
 ### [What's new in the Windows docs, July 2017](whats-new/windows-docs-july-2017.md)
 ## [App-to-app communication](app-to-app/index.md)
 ### [Share data](app-to-app/share-data.md)

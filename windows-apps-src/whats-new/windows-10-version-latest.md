@@ -8,8 +8,6 @@ ms.date: 04/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
-redirect_url: windows-10-version-latest
 ---
 
 # What's New in Windows 10 for developers
