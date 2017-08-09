@@ -1035,9 +1035,13 @@ Separately from UX design, gameplay design such as level design, pacing, world d
         <td>[UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)</td>
     </tr>
     <tr>
+        <td>Design your UWP app for Xbox One and television screens</td>
+        <td>[Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/input-and-devices/designing-for-tv)</td>
+    </tr>
+    <tr>
         <td>Targeting multiple device form factors (video)</td>
         <td>[Designing Games for a Windows Core World](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World)</td>
-    </tr>
+    </tr>   
 </table>
  
 
