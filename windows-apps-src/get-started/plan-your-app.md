@@ -218,7 +218,7 @@ For more details on how to use different surfaces, take a look at <!--[Command d
 
 ![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## Make a good first impression
 
