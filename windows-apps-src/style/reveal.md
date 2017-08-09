@@ -29,6 +29,10 @@ The Reveal behavior does this by revealing pieces of elements around hero (or fo
 
 Through exposing the hidden borders around objects, Reveal gives users a better understanding of the space that they are interacting with, and helps them understand the actions available. This is especially important in list controls and controls with backplates.
 
+## Reveal and the Fluent Design System
+
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. 
+
 ## What is reveal?
 
 There are two main visual components to Reveal: the **Hover Reveal** behavior, and the **Border Reveal** behavior.

@@ -27,6 +27,10 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 > **Important APIs**: [ParallaxView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [VerticalShift property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_VerticalShift), [HorizontalShift property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_HorizontalShift)
 
+## Parallax and the Fluent Design System
+
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. 
+
 ## How it works in a user interface
 
 In a UI, you can create a parallax effect by moving different objects at different rates when the UI scrolls or pans. <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> To demonstrate, let’s look at two layers of content, a list and a background image.  The list is placed on top of the background image which already gives the illusion that the list might be closer to the viewer.  Now, to achieve the parallax effect, we want the object closest to us to travel “faster” than the object that is farther away.  As the user scrolls the interface, the list moves at a faster rate than the background image, which creates the illusion of depth.

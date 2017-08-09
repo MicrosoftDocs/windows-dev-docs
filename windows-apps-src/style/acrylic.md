@@ -25,12 +25,14 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 
 > **Important APIs**: [AcrylicBrush class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush), [Background property](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Background)
 
-The latest evolution of the Microsoft Design System uses concepts of physical textures and spatial depth to differentiate UI elements and place them in a visual hierarchy. The overall effect is to create a more approachable and relatable experience for users.
-
 
 ![Acrylic in light theme](images/Acrylic_DarkTheme_Base.png)
 
 ![Acrylic in dark theme](images/Acrylic_LightTheme_Base.png)
+
+## Acrylic and the Fluent Design System
+
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. 
 
 ## When to use acrylic
 
