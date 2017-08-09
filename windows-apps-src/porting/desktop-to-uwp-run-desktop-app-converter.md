@@ -270,7 +270,7 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-Version &lt;Version&gt; |Required |The version number for your Universal Windows App package |
 |<span id="manifest-params" /><strong>Package manifest parameters</strong>||
 |-AppExecutable &lt;String&gt; |Optional |The name of your application's main executable (eg "MyApp.exe"). This parameter is required for a no-installer conversion. |
-|-AppFileTypes &lt;String&gt;|Optional |A comma-separated list of file types which the application will be associated with (eg. ".txt, .doc", without the quotes).|
+|-AppFileTypes &lt;String&gt;|Optional |A comma-separated list of file types which the application will be associated with (eg. "'.txt', '.doc'").|
 |-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
 |-AppDisplayName &lt;String&gt;  |Optional |Specifies a value to set Application Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
 |-AppDescription &lt;String&gt; |Optional |Specifies a value to set Application Description to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
