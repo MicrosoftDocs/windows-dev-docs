@@ -15,8 +15,7 @@ ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 # Layout for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-App structure, page layout, and navigation are the foundation of your app's user experience. The articles in this section help you create an app that is easy to navigate and looks great on a variety of devices and screen sizes.
+App structure, page layout, and navigation are the foundation of your app's user experience. The articles in this section use the Fluent Design System to help you create an app that is easy to navigate and looks great on a variety of devices and screen sizes.
 
 ## Intro
 
