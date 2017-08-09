@@ -6,7 +6,7 @@ keywords: uwp controls, user interface, app controls
 label: Controls & patterns
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 09/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,7 +15,9 @@ ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 # Controls and patterns for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-In UWP app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view. A <i>pattern</i> is a recipe for combining several controls to make something new.
+In UWP app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
+
+We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes. 
 
 The articles in this section provide design guidance and coding instructions for adding controls & patterns to your UWP app. 
 
