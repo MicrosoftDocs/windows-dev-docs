@@ -1,9 +1,9 @@
 ---
 author: laurenhughes
 title: Set up automated builds for your UWP app
-description: How to configure your automate builds to produce sideload and/or store packages.
+description: How to configure your automate builds to produce sideload and/or Store packages.
 ms.author: lahugh
-ms.date: 02/15/2017
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -113,7 +113,7 @@ VSTS uses the `$(Build.ArtifactStagingDirectory)\AppxPackages` folder that we pr
 
 ![artifacts](images/building-screen6.png)
 
-Because we’ve set the `UapAppxPackageBuildMode` property to `StoreUpload`, the artifacts folder includes the package that you upload to the store (appxupload) as well as the packages that enable side loading (appxbundle).
+Because we’ve set the `UapAppxPackageBuildMode` property to `StoreUpload`, the artifacts folder includes the package that recommended for submission to the Store (.appxupload). Note that you can also submit a regular app pacakge (.appx) or an app bundle (.appxbundle) to the Store. For the purposes of this article, we'll use the .appxupload file.
 
 
 >Note: By default, the VSTS agent maintains the latest appx generated packages. If you want to store only the artifacts of the current build, configure the build to clean the binaries directory. To do that, add a variable named `Build.Clean` and then set it to the value `all`. To learn more, see [Specify the repository.](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
@@ -126,7 +126,7 @@ The following table describes each type of automated build that you can create.
 |-----------------|------------|-------------------------|---------------|
 |Continuous Integration|Build Log, Test Results|Each commit|This type of build is fast and run several times a day.|
 |Continuous Deployment build for sideloading|Deployment Packages|Daily |This type of build can Include unit tests but it takes a bit longer. It allows manual testing and you can integrate it with other tools such as HockeyApp.|
-|Continuous Deployment build that submits a package to the store|Publishing Packages|On demand|This type of build creates a package that you can publish to the store.|
+|Continuous Deployment build that submits a package to the Store|Publishing Packages|On demand|This type of build creates a package that you can publish to the Store.|
 
 Let’s look at how to configure each one.
 
@@ -271,13 +271,13 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 We’ll help you install and run a sideloaded package [later](#sideloading-best-practices) in this guide. 
 
-## Set up a continuous deployment build that submits a package to the store 
+## Set up a continuous deployment build that submits a package to the Store 
 
-To generate store submission packages, associate your app with the store by using the Store Association Wizard in Visual Studio.
+To generate Store submission packages, associate your app with the Store by using the Store Association Wizard in Visual Studio.
 
 ![associate to store](images/building-screen16.png) 
 
->Note: This wizard generates a file named Package.StoreAssociation.xml that contains the store association information. If you store your source code in a public repository such as GitHub, this file will contain all the app reserved names for that account. You can exclude or delete this file before making it public.
+>Note: This wizard generates a file named Package.StoreAssociation.xml that contains the Store association information. If you store your source code in a public repository such as GitHub, this file will contain all the app reserved names for that account. You can exclude or delete this file before making it public.
 
 If you don’t have access to the DevCenter account that was used to publish the app, you can follow the instructions in this document: [Building an app for a 3rd party? How to package their Store app.](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97) 
 
@@ -287,16 +287,16 @@ Then you need to verify that the build step includes the following parameter:
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-This will generate the appxupload file that can be submitted to the store.
+This will generate an .appxupload file that can be submitted to the Store.
 
 
-#### Configure automatic store submission
+#### Configure automatic Store submission
 
-Use the Visual Studio Team Services extension for the Windows Store to integrate with the Store API, and send your appxupload package to the store.
+Use the Visual Studio Team Services extension for the Windows Store to integrate with the Store API, and send your app package to the Store.
 
 You need to connect your Dev Center account with Azure Active Directory (AD), and then create an app in your AD to authenticate the requests. You can follow the guidance in the extension page to accomplish that. 
 
-Once you’ve configured the extension, you can add the build task, and configure it with your app ID and the location of the appxupload file.
+Once you’ve configured the extension, you can add the build task, and configure it with your app ID and the location of the .appxupload file.
 
 ![configure dev center](images/building-screen17.png) 
 
@@ -307,14 +307,14 @@ $(Build.ArtifactStagingDirectory)\
 AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 ```
 
->Note. You have to manually activate this build. You can use it to update existing apps but you can’t use it to for your first submission to the store. For more information, see [Create and manage store submissions by using Windows Store Services.](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)
+>Note. You have to manually activate this build. You can use it to update existing apps but you can’t use it to for your first submission to the Store. For more information, see [Create and manage Store submissions by using Windows Store Services.](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)
 
 ## Best Practices
 
 <span id="sideloading-best-practices"/>
 ### Best Practices for Sideloading apps
 
-If you want to distribute your app without publishing it to the store, you can sideload your app directly to devices as long as those devices trust the certificate that was used to sign the app package. 
+If you want to distribute your app without publishing it to the Store, you can sideload your app directly to devices as long as those devices trust the certificate that was used to sign the app package. 
 
 Use the `Add-AppDevPackage.ps1` PowerShell script to install apps. This script will add the certificate to the Trusted Root Certification section for the local machine, and will then install or update the appx file.
 
@@ -330,7 +330,7 @@ If you want to distribute your appx packages from a website such as VSTS or Hock
 
 <span id="certificates-best-practices"/>
 ### Best Practices for Signing Certificates 
-Visual Studio generates a certificate for each project. This makes it difficult to maintain a curated list of valid certificates. If you plan to create several apps, you can create a single certificate to sign all of your apps. Then, each device that trusts your certificate will be able to sideload any of your apps without installing another certificate. To learn more, see [How to create an app package signing certificate.](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+Visual Studio generates a certificate for each project. This makes it difficult to maintain a curated list of valid certificates. If you plan to create several apps, you can create a single certificate to sign all of your apps. Then, each device that trusts your certificate will be able to sideload any of your apps without installing another certificate. To learn more, see [Create a certificate for package signing](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 
 
 #### Create a Signing Certificate
@@ -374,4 +374,4 @@ The easiest way to register the certificate is to double-click in the .cer file,
 * [Build your .NET app for Windows](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [Packaging UWP apps](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
 * [Sideload LOB apps in Windows 10](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [How to create an app package signing certificate](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [Create a certificate for package signing](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)
