@@ -20,6 +20,8 @@ keywords: windows 10, uwp
 
 This article is an overview of the concepts and technologies related to accessibility scenarios for Universal Windows Platform (UWP) apps.
 
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
