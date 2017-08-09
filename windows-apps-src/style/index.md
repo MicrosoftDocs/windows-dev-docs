@@ -19,23 +19,6 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 <p>The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. The guidelines in this section help you create a Fluent Design through color, typography, and new features such as [acrylic material](../style/acrylic.md) and [Reveal](../style/reveal.md). 
 </p>
 
-<p>Design guidance and code examples that teach you how to define your UWP app’s personality through color, typography, and motion.</p>
-
-## UWP and the Fluent Design System
-
-
- 
- How can you incorporate Fluent Design into your app? We're continually adding new controls and features that make it easy. Here's a list of current Fluent Design features for UWP:  
-
-* [Acrylic](../style/acrylic.md) is a type of brush that creates semi-transparent surfaces.
-* [Parallax](../style/parallax.md) adds three-dimensional perspective, depth, and movement to scrolling content, such as lists.
-* [Reveal](../style/reveal.md) uses light to create a hover effect that illuminates interactive UI elements. 
-* [Connected animations](../style/connected-animation.md) provide graceful scene transitions that improve usability by maintaining context and providing continuity. 
-
-We've also updated our [design guidelines](https://developer.microsoft.com/windows/apps/design) (which you're current reading) so they're based on Fluent Design principles.
-
-
-<p>Learn how to apply Fluent Design to your app through color, typography, depth, light, material, and motion.</p>
 
 <div style="column-count: 2; column-gap: 40px; margin-top: 40px;">
 
