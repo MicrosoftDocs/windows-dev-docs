@@ -138,7 +138,7 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
 
 #### Xbox Live Creators Program
 
-The Xbox Live Creators Program is currently in Preview. This program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. To start developing with the Xbox Live Creators Program, sign up for the Preview today. The sign-ups for the Preview program is currently limited but more spaces will be made available periodically.
+The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. To start developing with the Xbox Live Creators Program, sign up today.
 
 If you want access to even more Xbox Live capabilities, be featured in the main Xbox One store, or receive dedicated marketing and development support, you can apply to the [ID@Xbox](http://www.xbox.com/Developers/id) program.
 
@@ -148,7 +148,7 @@ If you want access to even more Xbox Live capabilities, be featured in the main 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Xbox Live Creators Program Preview</td>
+        <td>Xbox Live Creators Program</td>
         <td>[Integrate Xbox Live into your title](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
     </tr>
 </table>
