@@ -17,15 +17,13 @@ keywords: windows 10, uwp, games, sample, directx, fundamentals
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This document describes the fundamental characteristics of the Marble Maze project, for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built. The document also describes several of the conventions that are used in the code.
+This topic describes the fundamental characteristics of the Marble Maze project&mdash;for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built. The topic also describes several of the conventions that are used in the code.
 
 > **Note**   The sample code that corresponds to this document is found in the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011).
 
- 
-## 
 Here are some of the key points that this document discusses for when you plan and develop your Universal Windows Platform (UWP) game.
 
--   Use the **DirectX 11 App (Universal Windows)** template in a C++ application to create your DirectX UWP game. Use Visual Studio to build a UWP app project as you would build a standard project.
+-   Use the **DirectX 11 App (Universal Windows)** Visual C++ template in Visual Studio to create your DirectX UWP game.
 -   The Windows Runtime provides classes and interfaces so that you can develop UWP apps in a more modern, object-oriented manner.
 -   Use object references with the hat (^) symbol to manage the lifetime of Windows Runtime variables, [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) to manage the lifetime of COM objects, and [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) or [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) to manage the lifetime of all other heap-allocated C++ objects.
 -   In most cases, use exception handling, instead of result codes, to deal with unexpected errors.
@@ -34,26 +32,28 @@ Here are some of the key points that this document discusses for when you plan a
 ## Creating the Visual Studio project
 
 
-If you've downloaded and extracted the sample, you can open the MarbleMaze.sln solution file in Visual Studio, and you'll have the code in front of you. You can also view the source on the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN Samples Gallery page by selecting the **Browse Code** tab.
+If you've downloaded and extracted the sample, you can open the **MarbleMaze.sln** solution file in Visual Studio, and you'll have the code in front of you. You can also view the source on the [DirectX Marble Maze game sample](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN Samples Gallery page by selecting the **Browse Code** tab.
 
-When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows)** template because it provides a basic working 3-D application.
+When we created the Visual Studio project for Marble Maze, we started with an existing project. However, if you do not already have an existing project that provides the basic functionality that your DirectX UWP game requires, we recommend that you create a project based on the Visual Studio **DirectX 11 App (Universal Windows)** template because it provides a basic working 3D application.
 
-One important project setting in the **DirectX 11 App (Universal Windows)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template.
+One important project setting in the **DirectX 11 App (Universal Windows)** template is the **/ZW** option, which enables the program to use the Windows Runtime language extensions. This option is enabled by default when you use the Visual Studio template. See [Setting Compiler Options](https://docs.microsoft.com/cpp/build/reference/setting-compiler-options) for more info about how to set compiler options in Visual Studio.
 
-> **Caution**   The **/ZW** option is not compatible with options such as **/clr**.In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
+> **Caution**   The **/ZW** option is not compatible with options such as **/clr**. In the case of **/clr**, this means that you cannot target both the .NET Framework and the Windows Runtime from the same Visual C++ project.
 
  
 
-Every UWP app that you acquire from the Windows Store comes in the form of an app package. An app package contains a package manifest, which contains information about your app. For example, you can specify the capabilities (that is, the required access to protected system resources or user data) of your app. If you determine that your app requires certain capabilities, use the package manifest to declare the required capabilities. The manifest also lets you specify project properties such as supported device rotations, tile images, and the splash screen. For more info about app packages, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
+Every UWP app that you acquire from the Windows Store comes in the form of an app package. An app package contains a package manifest, which contains information about your app. For example, you can specify the capabilities (that is, the required access to protected system resources or user data) of your app. If you determine that your app requires certain capabilities, use the package manifest to declare the required capabilities. The manifest also lets you specify project properties such as supported device rotations, tile images, and the splash screen. You can edit the manifest by opening **Package.appxmanifest** in your project. For more info about app packages, see [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969).
 
 ##  Building, deploying, and running the game
 
 
-Build a UWP app project as you would build a standard project. (On the menu bar, choose **Build, Build Solution**.) The build step compiles the code and also packages it for use as a UWP app.
+<!--To build the project, on the menu bar, choose **Build > Build Solution**. The build step compiles the code and also packages it for use as a UWP app.
 
-After you build the project, you must deploy it.(On the menu bar, choose **Build, Deploy Solution**.) Visual Studio also deploys the project when you run the game from the debugger.
+After you build the project, you must deploy it. In the dropdown menus at the top, select your deployment configuration, and then on the menu bar, choose **Build > Deploy Solution**.
 
-After you deploy the project, pick the Marble Maze tile to run the game. Alternatively, from Visual Studio, on the menu bar, choose **Debug, Start Debugging**.
+After you deploy the project, pick the Marble Maze tile to run the game. Alternatively, from Visual Studio, on the menu bar, choose **Debug, Start Debugging**.-->
+
+In the dropdown menus at the top of Visual Studio, to the left of the green play button, select your deployment configuration. We recommend setting it as **Debug** targeting your device's architecture (**x86** for 32-bit, **x64** for 64-bit) and to your **Local Machine**. You can also test on a **Remote Machine**, or to a **Device** that's connected via USB. Then click the green play button to build and deploy to your device.
 
 ###  Controlling the game
 
