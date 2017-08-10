@@ -184,7 +184,7 @@ When using Background Transfer, each download exists as a [**DownloadOperation**
 
 If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
 
-If you are downloading multiple files, note that any attempt to download more than 400 files at a time (system-wide) is unsupported. As such, it is recommended that you download no more than 50 files at a time per app instance. If you use Completion Groups and Completion Trigger to schedule the next batch in the background, you should schedule no more than 5. This will allow multiple apps to coexist and still remain within the system limit.
+Due to per-app resource constraints, an app should not have more than 200 transfers (DownloadOperations + UploadOperations) at any given time. Exceeding that limit may leave the app’s transfer queue in an unrecoverable state.
 
 The following examples will walk you through the creation and initialization of a basic download, and how to enumerate and reintroduce operations persisted from a previous app session.
 
