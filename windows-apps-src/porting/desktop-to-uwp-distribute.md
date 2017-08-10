@@ -32,6 +32,9 @@ If you plan to publish to the Windows Store, and you haven't reached out to us y
 
 You don't have to sign your app before you submit it to the store.
 
+>[!IMPORTANT]
+> If you plan to publish your app to the Windows Store, make sure that your app operates correctly on devices that run Windows 10 S. This is a store requirement. See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).
+
 ## Distribute your app without placing it onto the Windows Store
 
 If you'd rather distribute your app without using the store, you can manually distribute apps to one or more devices.
