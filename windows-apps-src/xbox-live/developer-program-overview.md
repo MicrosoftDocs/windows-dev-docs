@@ -13,23 +13,28 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program, 
 
 # Developer program overview
 
-If you would like to develop Xbox Live enabled titles, there are several options available to you.  Each offers varying levels of time investment on your part, features available to you, and support options.
+If you would like to develop Xbox Live enabled titles, there are several options available to you. Each offers varying levels of time investment on your part, features available to you, and support options.
 
 ## Xbox Live Creators Program
 
-> [!IMPORTANT]
-> The Xbox Live Creators Program is currently in preview. You can apply to join the program [here](https://developer.microsoft.com/en-us/games/xbox/xboxlive/creator).
+The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development. No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements. 
 
-The Xbox Live Creators Program is a good starting point for Xbox Live if you are looking to familiarize yourself with Xbox Live development.  No approval process from Microsoft is required to join this program, and there are minimal certification and publishing requirements, beyond the usual ones for developing [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) applications (UWP apps) which you can read about at [https://developer.microsoft.com/en-us/store/publish-apps](https://developer.microsoft.com/en-us/store/publish-apps)
-
-Titles enabled under the Xbox Live Creators Program can use Leaderboards, Featured Stats, Cloud Saves, and a restricted set of Social Features.
-
-Achievements, online multiplayer and many social features are **not** supported for titles in the Xbox Live Creators Program.
-
-Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP apps run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWPs on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).
+The Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP games run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWP games on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).  
 
 On Xbox One, which offers gamers a curated store experience, games published through the Xbox Live Creators Program will be sold in the new Creators Collection section of the Store. This offers a balance between ensuring an open platform where anyone can develop and ship a game, and a curated store experience consoles gamers have come to know and expect. On Windows 10, your title will be published among all of the other Xbox Live games in the Windows Store.
 
+### Publishing and Certification
+You must be enrolled in the [Dev Center developer program](https://developer.microsoft.com/store/register) to release a game as part of the Xbox Live Creators Program. There are two sets of requirements that your game must follow:
+
+1. Integrate Xbox Live Sign-In and display the user identity (Gamertag, Gamerpic, etc.). All other Xbox Live services are optional.
+2. Follow to the standard [Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx).
+
+### Supported Xbox Live Services
+Titles enabled under the Xbox Live Creators Program can use Leaderboards, Featured Stats, Title Storage, Connected Storage, and a restricted set of social features. Achievements, online multiplayer, and many social features are **not** supported for titles in the Xbox Live Creators Program. 
+
+For a full list of supported services, see the [Feature Table](#feature-table).
+
+### Support and Feedback
 Any questions you might have can be answered on the [MSDN Forums](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev).  You can also ask programming related questions to [Stack Overflow](http://stackoverflow.com/questions/tagged/xbox-live) using the "xbox-live" tag.  The Xbox Live team will be engaged with the community and be continually improving our APIs, tools, and documentation based on the feedback received there.
 
 For developers in the Xbox Live Creators Program, you can submit a new idea or vote on existing idea at our [Xbox Live Creators Program User Voice](https://aka.ms/xblcpuv)
