@@ -975,12 +975,8 @@ These are some links to help you move your Windows desktop game to UWP.
         <td>[How to: Use existing C++ code in a UWP app](https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app)</td>
     </tr>
     <tr>
-        <td>Graphic APIs supported for developing UWP games</td>
-        <td>[Win32 and COM for UWP apps (graphics)](https://msdn.microsoft.com/library/windows/apps/mt592898.aspx)</td>
-    </tr>
-    <tr>
         <td>UWP APIs for Win32 and COM APIs</td>
-        <td>[Win32 and COM APIs for UWP apps](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx)</td>
+        <td>[Win32 and COM APIs for UWP apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)</td>
     </tr>
     <tr>
         <td>Unsupported CRT functions in UWP</td>
