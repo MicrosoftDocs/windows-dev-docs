@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+author: jwmsft
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
 title: Optimize background activity
 description: Create UWP apps that work with the system to use background tasks in a battery-efficient way.
-ms.author: pafarley
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+author: jwmsft
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: Optimize your XAML markup
 description: Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
-ms.author: pafarley
+ms.author: jimwalk
 ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows

@@ -1,9 +1,9 @@
 ---
-author: PatrickFarley
+author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: Keep the UI thread responsive
 description: Users expect an app to remain responsive while it does computation, regardless of the type of machine.
-ms.author: pafarley
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
