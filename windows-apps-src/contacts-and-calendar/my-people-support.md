@@ -187,7 +187,7 @@ The [PinnedContactManager](https://docs.microsoft.com/en-us/uwp/api/windows.appl
 You can retrieve the PinnedContactManager object using the **GetDefault** method:
 
 ```Csharp
-PinnedContactManager pinnedContactManager = PinnedContactManger.GetDefault();
+PinnedContactManager pinnedContactManager = PinnedContactManager.GetDefault();
 ```
 
 ## Pinning and unpinning contacts
