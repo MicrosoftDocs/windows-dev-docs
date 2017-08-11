@@ -30,7 +30,7 @@ You can now preview [conditional XAML](../debug-test-perf/conditional-xaml.md) t
 
 ### Game Mode
 
-The [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the <expandedresources.h> header.
+The [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808) APIs for the Universal Windows Platform (UWP) allow you to produce the most optimized gaming experience by taking advantage of Game Mode in Windows 10. These APIs are located in the **&lt;expandedresources.h&gt;** header.
 
 ![Game Mode](images/game-mode.png)
 
