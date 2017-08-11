@@ -22,8 +22,7 @@ and the On-Screen Keyboard (OSK).
 Use the
 **XYFocusKeyboardNavigation** property to support 2D directional inner
 navigation of custom controls and control groups with keyboard (arrow
-keys), Xbox gamepad (D-pad and left stick buttons), and Xbox remote
-control (D-pad).
+keys).
 
 **NOTE** We refer to the inner navigation region of a control or control
 group as the *directional area*.
@@ -39,10 +38,8 @@ elements of a directional area should not be included in tab navigation.
 ### Default behavior
 
 Directional navigation behavior is based on the element’s ancestry, or
-inheritance hierarchy. If all ancestors are in default mode, or set to
-**Auto**, directional navigation behavior is not supported for keyboard
-(gamepad and remote control always support directional navigation unless
-explicitly set to **Disabled**).
+inheritance hierarchy. If all ancestors are in default mode, or set to 
+**Auto**, directional navigation behavior is not supported for keyboard.
 
 ### Custom behavior
 
