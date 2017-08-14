@@ -1,19 +1,19 @@
 ---
 author: TylerMSFT
 description: Learn how to use extended execution to keep your app running while it is minimized
-title: Run while minimized with extended execution
+title: Postpone app suspension with extended execution
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle
+keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ---
 
-# Run while minimized with extended execution
+# Postpone app suspension with extended execution
 
-This article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized.
+This article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized or under the lock screen.
 
 When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md).
 
