@@ -1,5 +1,5 @@
 ﻿---
-author: ptorr
+author: ptorr-msft
 title: Using MRT for Converted Desktop Apps and Games
 description: This whitepaper describes techniques for migrating .NET and Win32 apps from legacy Win32 resources to MRT resources when packaged as AppX packages.
 ms.author: ptorr
