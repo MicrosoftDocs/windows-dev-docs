@@ -27,7 +27,7 @@ What makes a UWP app special? Here are some of the characteristics that make UWP
 
 -   **There's a common API surface across all devices.**
 
-    The Universal Windows Platform (UWP) core APIs are the same for all classes of Windows device. If your app uses only the core APIs, it will run on any Windows 10 device, no matter if you are targetting a desktop PC, an Xbox or a Mixed Reality headset.
+    The Universal Windows Platform (UWP) core APIs are the same for all classes of Windows device. If your app uses only the core APIs, it will run on any Windows 10 device, no matter if you are targeting a desktop PC, an Xbox or a Mixed Reality headset.
 
 -   **Extension SDKs let your app do cool stuff on specific device types.**
 

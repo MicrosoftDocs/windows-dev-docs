@@ -100,7 +100,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 	// Save annotation to contact annotation list
 	// Windows.ApplicationModel.Contacts.ContactAnnotationList 
-	await contactAnnotationList.TrySaveAnnotationAsync(annotation));
+	await contactAnnotationList.TrySaveAnnotationAsync(annotation);
 }
 ```
 
@@ -118,7 +118,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 	{
 		// Make sure the current OS version includes the My People feature before
 		// accessing the ShareOperation.Contacts property
-		isPeopleShare = (args.ShareOperation.Contacts.Size > 0);
+		isPeopleShare = (args.ShareOperation.Contacts.Count > 0);
 	}
 
 	if (isPeopleShare)
