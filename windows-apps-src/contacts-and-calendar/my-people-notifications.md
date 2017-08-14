@@ -26,9 +26,9 @@ My People notifications are a new kind of gesture that put people first. They pr
 
 ## How it works
 
-As an alternative to generic toast notifications, application developers can now send notifications through the My People feature, to provide a more personal experience to users. This is a new kind of toast, sent from a contact pinned to the user's taskbar. When the notification is received, the` sender’s contact picture will animate in the taskbar and a sound will play, signaling that a My People notification is starting. Then the animation or image specified in the payload will be displayed for 6 seconds (if the payload is an animation that lasts less than 6 seconds, it will loop until 6 seconds have passed).
+As an alternative to generic toast notifications, application developers can now send notifications through the My People feature, to provide a more personal experience to users. This is a new kind of toast, sent from a contact pinned to the user's taskbar. When the notification is received, the sender’s contact picture will animate in the taskbar and a sound will play, signaling that a My People notification is starting. Then the animation or image specified in the payload will be displayed for 5 seconds (if the payload is an animation that lasts less than 5 seconds, it will loop until 5 seconds have passed).
 
-## Supported asset types
+## Supported image types
 
 + GIF
 + Static Image (JPEG, PNG)
@@ -40,7 +40,7 @@ As an alternative to generic toast notifications, application developers can now
 ![rainbow spritesheet](images/shoulder-tap-rainbow-spritesheet.png)
 
 ## Notification parameters
-My People notifications use the [toast notification](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md) framework in Windows 10, and require an additional binding node in the toast payload. This means notifications through My People must have two bindings instead of one. This second binding must include the following parameter:
+My People notifications use the [toast notification](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md) framework in Windows 10 and require an additional binding node in the toast payload. This means notifications through My People must have two bindings instead of one. This second binding must include the following parameter:
 
 ```xml
 experienceType=”shoulderTap”
@@ -51,17 +51,17 @@ This indicates that the toast should be treated as a My People notifications.
 The image node inside the binding should include the following parameters:
 
 + **src**
-    + The URI of the asset. This can either be either HTTP/HTTPS web URI, an msappx URI, or a path to a local asset.
+    + The URI of the asset. This can be either HTTP/HTTPS web URI, an msappx URI, or a path to a local file.
 + **spritesheet-src**
-    + The URI of the asset. This can either be either HTTP/HTTPS web URI, an msappx URI, or a path to a local asset. Only required for spritesheet animations.
+    + The URI of the asset. This can be either HTTP/HTTPS web URI, an msappx URI, or a path to a local file. Only required for spritesheet animations.
 + **spritesheet-height**
     + The frame height (in pixels). Only required for spritesheet animations.
 + **spritesheet-fps**
     + Frames per second. Only required for spritesheet animations.
 + **spritesheet-startingFrame**
-    + The frame number to begin the animation. Only used for spritesheet animations, and defaults to 0 if not provided.
+    + The frame number to begin the animation. Only used for spritesheet animations and defaults to 0 if not provided.
 + **alt**
-    + Alt text string used for screen reader narration.
+    + Text string used for screen reader narration.
 
 > [!NOTE]
 > Even if you're using a spritesheet, you should still specify a static image in the "src" parameter as a fall-back in case the animation fails to display.
@@ -76,7 +76,7 @@ In addition, the top-level toast node must include the **hint-people** parameter
     + E.g. remoteid:1234
 
 > [!NOTE]
-> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact#Windows_Phone_PersonalInformation_StoredContact_RemoteId) property to link contacts stored on the phone with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the phone, including contacts that are owned by other apps.
+> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact#Windows_Phone_PersonalInformation_StoredContact_RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
 > If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the RemoteIdHelper class shown later in this topic in order to add a unique tag to all of your remote IDs before you add them to the system. Or you can choose to not use the RemoteId property at all and instead you create a custom extended property in which to store remote IDs for your contacts.
 
 In addition to the second binding and payload, you MUST include another payload in the first binding for the fallback toast (which the notification will use if it is forced to revert to a regular toast). This is explained in more detail in the final section.
@@ -94,7 +94,7 @@ Here's an example of how to create a My People notification using a static image
             <text>Add your fallback toast content here</text>
         </binding>
         <binding template="ToastGeneric" experienceType="shoulderTap">
-            <image id="2" src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
+            <image src="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png"/>
         </binding>
     </visual>
 </toast>
@@ -104,7 +104,7 @@ If you start the notification, it should look like this:
 
 ![static image notification](images/static-image-notification-small.gif)
 
-Next we'll show how to create a notification using an animated spritesheet. This spritesheet has a frame-height of 80 pixels, which we'll animate at 25 frames per second. We set the starting frame to 15, and provide it with a static fallback image in the “src” parameter. The fallback image is used if the spritesheet animation fails to display.
+Next we'll show how to create a notification using an animated spritesheet. This spritesheet has a frame-height of 80 pixels, which we'll animate at 25 frames per second. We set the starting frame to 15 and provide it with a static fallback image in the “src” parameter. The fallback image is used if the spritesheet animation fails to display.
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -127,7 +127,7 @@ If you start the notification, it should look like this:
 ![spritesheet notification](images/pizza-notification-small.gif)
 
 ## Starting the notification
-To start a My People notification, we need to convert the toast template into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. Assuming you defined the toast in an XML file (here named "content.xml"), you can use this code C# to start it:
+To start a My People notification, we need to convert the toast template into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. Assuming you defined the toast in an XML file (here named "content.xml"), you can use this C# code to start it:
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");
