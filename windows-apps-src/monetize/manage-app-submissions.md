@@ -429,7 +429,7 @@ This resource contains base listing info for an app. This resource has the follo
 |  shortTitle               |     string    |  This value only applies to listings for Xbox. This specifies the short version of the product description for contexts where the regular description would be too lengthy. The maximum length is 50 characters for all versions of the short title, including standard, localized, and override. An override version is displayed in a single region where the alternative language is spoken.    |  
 |  sortTitle               |     string    |   This value only applies to listings for Xbox. This specifies the sort title for the listing. Entries are limited to 255 characters.   |  
 |  voiceTitle               |     string    |   This value only applies to listings for Xbox. This specifies the voice title for the listing. Entries are limited to 255 characters.    |  
-|  devStudio               |     string    |   The name of the studio who developed the app (for scenarios where the studio who developed the app is different than the app publisher).    |  
+|  devStudio               |     string    |   Specify this value if you want to include a **Developed by** field in the listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a *devStudio* value.)    |  
 
 <span id="image-object" />
 ### Image resource
