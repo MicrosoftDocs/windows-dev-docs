@@ -4,7 +4,7 @@ Description: The Usage report in the Windows Dev Center dashboard lets you see h
 title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 08/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,13 +21,13 @@ The **Usage** report in the Windows Dev Center dashboard lets you see how custom
 
 Near the top of the page, you can select the time period for which you want to show data. The default selection is **30D** (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify.
 
-You can also expand **Filters** to filter all of the data on this page by package version, market, and/or device type.
+You can also expand **Filters** to filter the data on this page by package version, market, and/or device type.
 
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
 -   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
 -   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
 
-The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.
+The info in all of the charts listed below will reflect the date range and any filters you've selected (with the exception of **New users** in the **Usage** chart, which will not appear if any filters are selected). Some sections also allow you to apply additional filters.
 
 > [!IMPORTANT]
 > This report only includes usage data from customers on Windows 10 who have not opted out of providing telemetry info.
@@ -39,7 +39,7 @@ The **Usage** chart shows details about how your customers are using your app ov
 
 This chart has four separate tabs that you can view, showing usage by day or week (depending on the duration you've selected).
 
-- **Users**: Shows the total number of **user sessions** over the selected period of time. Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day or week. The total number of **Active users** (any customer using the app that day or week) and **New users** (a customer who used your app for the first time that day or week) are also shown. 
+- **Users**: Shows the total number of **user sessions** over the selected period of time. Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day or week. The total number of **Active users** (any customer using the app that day or week) and **New users** (a customer who used your app for the first time that day or week) are also shown. Note that if you have applied any filters to the page, you won't see **New users** in this chart.
 - **Devices**: Shows the number of daily devices used to interact with your app by all users.
 - **Duration**: Shows the total engagement minutes (minutes where a user is actively using your app).
 - **Retention**: Shows the total number of **DAU/MAU** (Daily Active Users/Monthly Active Users) over the selected period of time.
