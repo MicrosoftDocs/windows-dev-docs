@@ -38,34 +38,31 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 
   * [Product type](../publish/set-your-add-on-product-id.md#product-type): Make sure you select **Subscription**.
 
-  * [Subscription period](../publish/enter-add-on-properties.md#subscription-period): Choose the recurring billing period for your subscription. Each subscription add-on supports a single subscription period and trial period. You must create a different subscription add-on for each type of subscription you want to offer in your app.
+  * [Subscription period](../publish/enter-add-on-properties.md#subscription-period): Choose the recurring billing period for your subscription. You cannot change the subscription period after you publish your add-on.
 
-    For example, if you wanted to offer a monthly subscription with no trial, a monthly subscription with a one-month trial, an annual subscription with no trial, and an annual subscription with a one-month trial, you would need to create four subscription add-ons.
-
+    Each subscription add-on supports a single subscription period and trial period. You must create a different subscription add-on for each type of subscription you want to offer in your app. For example, if you wanted to offer a monthly subscription with no trial, a monthly subscription with a one-month trial, an annual subscription with no trial, and an annual subscription with a one-month trial, you would need to create four subscription add-ons.
         > [!NOTE]
-        > If you are in the process of implementing the in-app purchase experience for the submission in your app, we recommend that you choose **For testing only – 6 hours** to help you test the subscription experience. You can choose this test period only if you select one of the **Hidden in the Store** [visibility options](../publish/set-add-on-pricing-and-availability.md#visibility) for the add-on.
+        > If you are in the process of implementing the in-app purchase experience for your subscription, we recommend that you create a test add-on with the **For testing only – 6 hours** subscription period to help you test the experience. You can choose this test period only if you select one of the **Hidden in the Store** [visibility options](../publish/set-add-on-pricing-and-availability.md#visibility) for your test add-on.
 
-  * [Trial period](../publish/enter-add-on-properties.md#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it.
+  * [Trial period](../publish/enter-add-on-properties.md#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it. You cannot change or remove the trial period after you publish your subscription add-on.
 
     To acquire a free trial of your subscription, a user must purchase your subscription through the standard in-app purchase process, including a valid form of payment. They are not charged any money during the trial period. At the end of the trial period, the subscription automatically converts to the full subscription and the user's payment instrument will be charged for the first period of the paid subscription. If the user chooses to cancel their subscription during the trial period, the subscription remains active until the end of the trial period.
         > [!NOTE]
-        > Some trial durations are not available for certain subscription periods. After you configure a trial period for a subscription add-on and publish the add-on, you cannot change or remove the trial period.
+        > Some trial durations are not available for all subscription periods.
 
-  * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): While you are testing your subscription add-on, we recommend that you choose one of the **Hidden in the Store** options. After you are done testing the in-app purchase experience of your subscription in your app, you can change this to **Can be displayed in the parent product’s Store listing**.
+  * [Visibility](../publish/set-add-on-pricing-and-availability.md#visibility): If you creating a test add-on that you will only use to test the in-app purchase experience for your subscription, we recommend that you select one of the **Hidden in the Store** options. Otherwise, you can select the best visibility option for your scenario.
 
-  * [Pricing](../publish/set-add-on-pricing-and-availability.md?#pricing): Choose the price of your subscription in this section. After you publish the add-on, you cannot raise the price of the subscription (however, you can lower the price later).
+  * [Pricing](../publish/set-add-on-pricing-and-availability.md?#pricing): Choose the price of your subscription in this section. You cannot raise the price of the subscription after you publish the add-on (however, you can lower the price later).
       > [!IMPORTANT]
-      > By default, when you create any add-on the price is initially set to **Free**. Because you cannot raise the price of a subscription add-on after you complete the add-on submission in the dashboard, be sure to choose the price of your subscription here.
+      > By default, when you create any add-on the price is initially set to **Free**. Because you cannot raise the price of a subscription add-on after you complete the add-on submission, be sure to choose the price of your subscription here.
 
-2. In your app, use APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to confirm whether the current user has already acquired your subscription add-on and then offer it for sale to the user as an in-app purchase. See the [code examples](#code-examples) section in this article for more details.
+2. In your app, use APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to confirm whether the current user has already acquired your subscription add-on and then offer it for sale to the user as an in-app purchase. See the [code examples](#code-examples) in this article for more details.
 
-3. Test the in-app purchase implementation of your subscription in your app. You'll need to download your app from the Store to your development device to use its license for testing. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing) for in-app purchases.  
+3. Test the in-app purchase implementation of your subscription in your app. You'll need to download your app once from the Store to your development device to use its license for testing. For more information, see our [testing guidance](in-app-purchases-and-trials.md#testing) for in-app purchases.  
     > [!NOTE]
-    > If your app has access to the **For testing only – 6 hours** subscription period, we recommend that you choose this period for your add-on in the dashboard during testing.
+    > If your app has access to the **For testing only – 6 hours** subscription period, we recommend that you create a test add-on with this period to help you test the experience. You can choose this test period only if you select one of the **Hidden in the Store** [visibility options](../publish/set-add-on-pricing-and-availability.md#visibility) for your test add-on.
 
 4. Create and publish an app submission that includes your updated app package, including your tested code. For more information, see [App submissions](../publish/app-submissions.md).
-    > [!IMPORTANT]
-    > If you chose the **For testing only – 6 hours** subscription period for your add-on in the dashboard for testing, make sure that you also update your add-on submission to change your subscription period.
 
 <span id="code-examples"/>
 ## Code examples
@@ -94,7 +91,7 @@ This code example demonstrates how to get info for the subscription add-ons that
 
 ### Purchase a subscription add-on
 
-This example demonstrates how to use the [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_RequestPurchaseAsync_) method of the [**StoreProduct**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) class to purchase a subscription add-on. This example assumes that you already know the [Store ID](in-app-purchases-and-trials.md#store_ids) of the subscription add-on you want to purchase.
+This example demonstrates how to use the [**RequestPurchaseAsync**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_RequestPurchaseAsync_) method of the [**StoreProduct**](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) class to purchase a subscription add-on. This example assumes that you already know the [Store ID](in-app-purchases-and-trials.md#store-ids) of the subscription add-on you want to purchase.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseSubscriptionAddOnPage.xaml.cs#PurchaseSubscription)]
