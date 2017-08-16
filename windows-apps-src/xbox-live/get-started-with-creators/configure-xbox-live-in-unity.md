@@ -45,6 +45,11 @@ To import the plugin into your new or existing Unity project, follow these steps
 
 ![Import Unity Package](../images/unity/unity-import.png)
 
+## Set Visual Studio as Editor in Unity
+
+Set your External Tools in Unity to Visual Studio by going into Unity > Preferences > External Tools and switching to Visual Studio.
+This plugin depends on "Microsoft Visual Studio Tools for Unity" so Visual Studio is required to build.
+
 ## Unity plugin file structure
 
 The Unity plugin's file structure is broken into the following parts:
