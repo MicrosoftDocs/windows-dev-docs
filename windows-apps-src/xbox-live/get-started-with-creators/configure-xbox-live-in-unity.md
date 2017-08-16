@@ -27,10 +27,13 @@ You will need the following to configure Xbox Live in Unity:
 * An [Xbox Live account](https://support.xbox.com/browse/my-account/manage-account/Create%20account)
 * [Windows 10 Anniversary Update](https://microsoft.com/windows)  or later
 * [Unity 5.5](https://store.unity.com/) or later
-  * Make sure to select the **Windows Store .NET scripting backend** when installing.
+  * You need to include the following components when installing.
+    * [Microsoft Visual Studio Tools for Unity](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity)
+    * Windows Store .NET Scripting Backend
 * [Visual Studio 2015](https://www.visualstudio.com/) or later
   * Any version of Visual Studio should work for this including Community Edition.
   * Make sure to select everything under **Universal Windows App Development Tools** when installing.  You can modify the installation to include these features for an existing installation as well.
+* [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk) 
 
 ## Import the Unity plugin
 
