@@ -46,7 +46,7 @@ Consider the following usage patterns to decide how best to incorporate acrylic 
 
 ### Vertical acrylic pane
 
-For apps with vertical navigation, we recommend applying acrylic to the secondary pane containting navigational elements.
+For apps with vertical navigation, we recommend applying acrylic to the secondary pane containing navigation elements.
 
 ![App pattern using a single vertical acrylic pane](images/acrylic_app-pattern_vertical.png)
 
