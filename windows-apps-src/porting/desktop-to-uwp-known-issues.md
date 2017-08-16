@@ -2,7 +2,7 @@
 author: normesta
 Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
-title: DKnown Issues (Desktop Bridge)
+title: Known Issues (Desktop Bridge)
 ms.author: normesta
 ms.date: 07/18/2017
 ms.topic: article
