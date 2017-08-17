@@ -33,16 +33,24 @@ The main features of Xbox Live title storage are explained in more detail in the
 
 <a name="ID4ETB"></a>
 
-## Types of storage
+For managed partners and ID@Xbox members:
 
-| Storage Type       | Quota              | Purpose                                                                                                                                                      | Platforms                                                                                           | Users                                       |
-|--------------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
-| Trusted Platform   | 256 MB per user    | Per-user data such as saved games or game state for play/pause/resume. More secure, but with platform restrictions.                                          | Any platform may read, but only Xbox One, Xbox 360 or Windows Phone may write.                      | Configurable to public or owner only.       |
-| Untrusted Platform | 64 MB per user     | Per-user data such as saved games or game state for play/pause/resume. Less secure, and with platform restrictions.                                          | Any platform may write, but only platforms other than Xbox One, Xbox 360 or Windows Phone may read. | Configurable to public or owner only.       |
+| Storage Type       | Quota (Managed Partners/ID@Xbox) | Quota (Xbox Live Creators Program) |  Purpose                                                                                                                                                      | Platforms                                                                                           | Users                                       |
+|--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
+| Trusted Platform   | 256 MB per user | 64 MB per user    | Per-user data such as saved games or game state for play/pause/resume. More secure, but with platform restrictions. | Any platform may read, but only Xbox One, Xbox 360, or Windows Phone may write.  | Configurable to public or owner only.       |
+| Universal Platform | 64 MB per user | 64 MB per user    | Per-user data such as saved games or game state for play/pause/resume. | Any platform may write, but only platforms other than Xbox One, Xbox 360 or Windows Phone may read. | Configurable to public or owner only.       |
+| Global             | 256 MB | 256 MB            | Data that everyone can read, such as rosters, maps, challenges, or art resources. | Only writeable via the Xbox Developer Portal, any platform may read.                                | All users may read.
+
+### Deprecated storage Types
+
+The following storage types are deprecated. They are supported only for titles that are currently using them. They are not available for new titles.
+
+| Storage Type       | Quota  |   Purpose                                                                                                                                                      | Platforms                                                                                           | Users                                       |
+|--------------------|--------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------|
 | JSON               | 64 MB per user     | Per-user data such as saved games or game state for play/pause/resume. More secure, no platform restrictions, but with data format restrictions (JSON only). | Any platform may read or write.                                                                     | Configurable to public or owner only.       |
-| Global             | 256 MB             | Data everyone can read such as rosters, maps, challenges, or art resources.                                                                                  | Only writeable via the Xbox Developer Portal, any platform may read.                                | All users may read.                         |
 | Device             | 64 MB per device   | Data specific to a device such as settings or device preferences.                                                                                            | Only Xbox One, Xbox 360, or Windows Phone may write. Only the device that wrote the data may read.  | All users may read.                         |
 | Session Storage    | 256 MB per session | Data for anyone joined to a particular multiplayer game session.                                                                                             | Any platform that may join the session.                                                             | All users in the session may read or write. |
+
 
 <a name="ID4ECF"></a>
 

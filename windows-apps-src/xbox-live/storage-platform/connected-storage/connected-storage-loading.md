@@ -32,60 +32,62 @@ Platform::Guid gSecondarySCID;
 Windows::Xbox::Storage::ConnectedStorageSpace^ gConnectedStorageSpaceForMachine;
 enum LoadSaveState { LOADING, LOAD_COMPLETED, LOAD_FAILED, NO_SAVE_MODE, RETRY_LOAD, GETTING_STORAGE_SPACE, DELETE_SAVE_UI, SAVING, SAVE_COMPLETED, NONE };
 LoadSaveState loadSaveState = LoadSaveState::NONE;
-auto gConnectedStorageSpaceForUsers = ref new Platform::Collections::Map<unsigned int, Windows::Xbox::Storage::ConnectedStorageSpace^>;();
+auto gConnectedStorageSpaceForUsers = ref new Platform::Collections::Map<unsigned int, Windows::Xbox::Storage::ConnectedStorageSpace^>();
 
-void SetGameState(LoadSaveState state) {loadSaveState = state;}
-bool GetUserInputYesOrNo() {return true;};
+void SetGameState(LoadSaveState state) { loadSaveState = state; }
+bool GetUserInputYesOrNo() { return true; };
 
 User^ gCurrentUser;
 byte* GetBufferData(Windows::Storage::Streams::IBuffer^ buffer);
-IBuffer^ WrapRawBuffer( void* ptr, size_t size );</code></pre>
-<pre><code>void PrepareConnectedStorage(User^ user)
+IBuffer^ WrapRawBuffer(void* ptr, size_t size);
+
+void PrepareConnectedStorage(User^ user)
 {
-  auto op = ConnectedStorageSpace::GetForUserAsync(user);
-  op->;Completed = ref new AsyncOperationCompletedHandler<;ConnectedStorageSpace^>;(
-    [=](IAsyncOperation<;ConnectedStorageSpace^>;^ operation, Windows::Foundation::AsyncStatus status)
+    auto op = ConnectedStorageSpace::GetForUserAsync(user);
+    op->Completed = ref new AsyncOperationCompletedHandler<ConnectedStorageSpace^>(
+        [=](IAsyncOperation<ConnectedStorageSpace^>^ operation, Windows::Foundation::AsyncStatus status)
     {
-      switch(status)
-      {
+        switch (status)
+        {
         case Windows::Foundation::AsyncStatus::Completed:
-          gConnectedStorageSpaceForUsers->;Insert(user->;Id, operation->;GetResults());
-          break;
+            gConnectedStorageSpaceForUsers->Insert(user->Id, operation->GetResults());
+            break;
         case Windows::Foundation::AsyncStatus::Error:
         case Windows::Foundation::AsyncStatus::Canceled:
-          // Present user option: ?Would you like to continue without saving progress??
-          if( GetUserInputYesOrNo() )
-            SetGameState(LoadSaveState::NO_SAVE_MODE);
-          else
-            SetGameState(LoadSaveState::RETRY_LOAD);
-          break;
-      }
+            // Present user option: ?Would you like to continue without saving progress??
+            if (GetUserInputYesOrNo())
+                SetGameState(LoadSaveState::NO_SAVE_MODE);
+            else
+                SetGameState(LoadSaveState::RETRY_LOAD);
+            break;
+        }
     });
-}</code></pre>
-<pre><code>extern void SetGameState(LoadSaveState state);
+}
+
+extern void SetGameState(LoadSaveState state);
 
 void OnLoadCompleted(IAsyncAction^ action, Windows::Foundation::AsyncStatus status);
 
 // Load data from a fixed container/blob name into an IBuffer
-void Load( Windows::Storage::Streams::IBuffer^ buffer)
+void Load(Windows::Storage::Streams::IBuffer^ buffer)
 {
 
-    auto reads = ref new Platform::Collections::Map<;Platform::String^, Windows::Storage::Streams::IBuffer^>;();
-    reads->;Insert(&quot;data&quot;, buffer);
+    auto reads = ref new Platform::Collections::Map<Platform::String^, Windows::Storage::Streams::IBuffer^>();
+    reads->Insert("data", buffer);
 
-    auto storageSpace = gConnectedStorageSpaceForUsers->;Lookup( gCurrentUser->;Id );
-    auto container = storageSpace->;CreateContainer(&quot;Saves/Checkpoint&quot;);
+    auto storageSpace = gConnectedStorageSpaceForUsers->Lookup(gCurrentUser->Id);
+    auto container = storageSpace->CreateContainer("Saves/Checkpoint");
 
     SetGameState(LoadSaveState::LOADING);
 
-    auto op = container->;ReadAsync(reads->;GetView());
+    auto op = container->ReadAsync(reads->GetView());
 
-    op->;Completed = ref new AsyncActionCompletedHandler(OnLoadCompleted);
+    op->Completed = ref new AsyncActionCompletedHandler(OnLoadCompleted);
 }
 
 void OnLoadCompleted(IAsyncAction^ action, Windows::Foundation::AsyncStatus status)
 {
-    switch (action->;Status)
+    switch (action->Status)
     {
     case Windows::Foundation::AsyncStatus::Completed:
         SetGameState(LoadSaveState::LOAD_COMPLETED);
