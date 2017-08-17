@@ -71,7 +71,7 @@ After you have an Azure AD access token, you are ready to call the Windows Store
 
 | Scenario       | Methods      |
 |---------------|--------------------|
-| Acquisitions and installs |  <ul><li>[Get app acquisitions](get-app-acquisitions.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get app installs](get-app-installs.md)</li></ul> |
+| Acquisitions, conversions, and installs |  <ul><li>[Get app acquisitions](get-app-acquisitions.md)</li><li>[Get app acquisition funnel data](get-acquisition-funnel-data.md)</li><li>[Get app conversions by channel](get-app-conversions-by-channel.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get add-on conversions by channel](get-add-on-conversions-by-channel.md)</li><li>[Get app installs](get-app-installs.md)</li></ul> |
 | App errors | <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
 | Ratings and reviews | <ul><li>[Get app ratings](get-app-ratings.md)</li><li>[Get app reviews](get-app-reviews.md)</li></ul> |
 | In-app ads and ad campaigns | <ul><li>[Get ad performance data](get-ad-performance-data.md)</li><li>[Get ad campaign performance data](get-ad-campaign-performance-data.md)</li></ul> |

@@ -16,13 +16,13 @@ keywords: windows 10, uwp
 
 The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details. It also lets you get info about how customers on Windows 10 have arrived at your app's listing.
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app acquisitions](../monetize/get-app-acquisitions.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 device.
 
 > [!IMPORTANT]
 > The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
-> 
+>
 > Except for page view data (as described below), this report does not include data related to customers who acquire an app without being signed in to a Microsoft account.
 
 
@@ -46,6 +46,8 @@ You can also see the lifetime number of acquisitions for your app by selecting *
 
 You can optionally filter the results by whether the acquisition originated from the client or web-based Store and/or by OS version.
 
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app acquisitions](../monetize/get-app-acquisitions.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## Installs
 
@@ -62,13 +64,15 @@ The install total does not include or reflect:
 -   **Preinstalls.** If a customer buys a device that has your app preinstalled, we don’t count that as an install.
 -   **System-initiated installs.** If Windows installs your app automatically for some reason, we don’t count that as an install.
 
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app installs](../monetize/get-app-installs.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## Acquisition funnel
 
-The **Acquisition funnel** shows you how many customers completed each step of the funnel, from viewing the Store page to using the app, along with the conversion rate. This data can help you identify areas where you might want to invest more to increase your acquisitions, installs, or usage. 
+The **Acquisition funnel** shows you how many customers completed each step of the funnel, from viewing the Store page to using the app, along with the conversion rate. This data can help you identify areas where you might want to invest more to increase your acquisitions, installs, or usage.
 
 > [!IMPORTANT]
-> The **Acquisition funnel** shows data only for customers on Windows 10 over the last 90 days. 
+> The **Acquisition funnel** shows data only for customers on Windows 10 over the last 90 days.
 
 The steps in the funnel are:
 
@@ -79,6 +83,8 @@ The steps in the funnel are:
 
 You can optionally filter the results by gender and/or age group, as well as by custom campaign ID.
 
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app acquisition funnel data](../monetize/get-acquisition-funnel-data.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## Markets
 
@@ -113,7 +119,10 @@ A *conversion* means that a customer (signed in with a Microsoft account) has ne
 Page view and conversion numbers are not counts of unique customers. For conversion rate info, see the [Acquisition funnel](#acquisition-funnel) chart.
 
 > [!NOTE]
-> Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views. 
+> Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views.
+
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app conversions by channel](../monetize/get-app-conversions-by-channel.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## App page views and conversions by campaign ID
 

@@ -171,10 +171,10 @@ The following example demonstrates an example JSON response body for this reques
 
 * [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
 * [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get add-on conversions by channel](get-add-on-conversions-by-channel.md)
 * [Get app acquisitions](get-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
+* [Get app acquisition funnel data](get-acquisition-funnel-data.md)
+* [Get app conversions by channel](get-app-conversions-by-channel.md)
 
  
 
