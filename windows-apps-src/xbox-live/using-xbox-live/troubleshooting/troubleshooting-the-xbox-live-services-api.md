@@ -24,8 +24,9 @@ The following code example enables response logging and sets the debug error lev
 ```cpp
 
 	    // Set up debug tracing to the Output window in Visual Studio.
-	    m_xboxLiveContext->Settings->DiagnosticsTraceLevel = XboxServicesDiagnosticsTraceLevel::Verbose;
-
+			xbox::services::system::xbox_live_services_settings::get_singleton_instance()->set_diagnostics_trace_level(
+			    xbox_services_diagnostics_trace_level::verbose
+			    );
 ```
 
 You can also choose to redirect debug output to your own log file like so:
