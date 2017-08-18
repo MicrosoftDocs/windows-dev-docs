@@ -4,7 +4,7 @@ Description: You can promote your app or add-on in the Windows Store by putting 
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 08/08/2017
+ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -47,7 +47,7 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
   > [!IMPORTANT]
   > If you select **Owners of**, the sale will only be visible to customers on Windows 10, version 1607 or later.
 
-   - **Flight group**: The sale will be offered to the people in the [known user group](create-known-user-groups.md) you select. You must already have created the known user group in order for this option to be available.
+   - **Known user group**: The sale will be offered to the people in the [known user group](create-known-user-groups.md) you select. You must already have created the known user group in order for this option to be available.
    - **Segment**: The sale will be offered to the people in the customer segment you select. You can use a  [segment that you have already created](create-customer-segments.md) here. You can also choose **First time payers** to offer the sale only to customers who have never purchased anything in the Store. We offer this segment here because we've found that after a customer makes their first Store purchase, they often continue to make more purchases, so this can be a great group to entice with sale pricing.
 6. Enter the date and time for the start and end of the sale period. Choose one of the following time zone options:
    - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the sale occurs at the same time everywhere.
