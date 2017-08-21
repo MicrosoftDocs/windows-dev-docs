@@ -123,7 +123,7 @@ Check out their [blog](http://www.cloudhouse.com/resources/release-solution-to-g
 
 The [FireGiant Appx extension](https://www.firegiant.com/products/wix-expansion-pack/appx) lets you create Windows app packages and MSI packages simultaneously from the same WiX source code. Every time you build, you can target Desktop Bridge in Windows 10 with a Windows app package and earlier versions of Windows with MSI.
 <div style="float: left; padding: 10px; width: 20%">
-     ![Advanced Installer logo](images/desktop-to-uwp/FG3rdPartyLogo.png)
+     ![FireGiant logo](images/desktop-to-uwp/FG3rdPartyLogo.png)
 </div>
 The FireGiant Appx extension uses static analysis and intelligent emulation of your WiX projects to create Windows app packages without the disk space and runtime overhead of containers or virtual machines.
 
@@ -133,9 +133,11 @@ Check out this [video](https://www.youtube.com/watch?v=AFBpdBiAYQE) and see how 
 
 #### InstallAware
 
+Install**Aware**, with a [track record](https://www.installaware.com/press-room.htm) of quickly supporting Microsoft's innovations, builds [Windows app packages (Desktop Bridge)](https://www.installaware.com/appx-builder.htm), App-V (Application Virtualization), MSI (Windows Installer), and EXE (Native Code) packages from a single source.
+
 Install**Aware** provides free Install**Aware** extensions for Visual Studio versions 2012-2017. You can use them to create Windows app packages with a single click directly from the [Visual Studio toolbar](https://www.installaware.com/visual-studio-installer-2015.htm).
 <div style="float: left; padding: 10px; width: 20%">
-    ![FireGiant logo](images/desktop-to-uwp/installaware.png)
+    ![InstallAware logo](images/desktop-to-uwp/installaware.png)
 </div>
 You can also import any setup, even if you don't have the source code for that setup, by using Package**Aware** (snapshot-free setup captures), or the Database Import Wizard (for all MSI installers and MSM merge modules). You can use [GUI tools](https://www.installaware.com/scripting-two-way-integrated-ide.htm) to maintain and enhance your imports, visually or by scripting.
 
