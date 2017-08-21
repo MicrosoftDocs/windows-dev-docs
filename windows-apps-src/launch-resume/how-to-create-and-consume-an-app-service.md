@@ -303,9 +303,9 @@ If you encounter a **AppUnavailable** status after trying to connect to an app s
 
 - Ensure that the app service provider project and app service project are deployed. Both need to be deployed before running the client because otherwise the client won't have anything to connect to. You can deploy from Visual Studio by using **Build** > **Deploy Solution**.
 - In the solution explorer, ensure that your app service provider project has a project-to-project reference to the project that implements the app service.
-- Verify that the `<Extensions>` entry, and it's child elements, have been added to the Package.appxmanifest file belonging to the app service provider project as specified above in [Add an app service extension to package.appxmanifest](#add-an-app-service-extension-to-package-appxmanifest).
+- Verify that the `<Extensions>` entry, and it's child elements, have been added to the Package.appxmanifest file belonging to the app service provider project as specified above in [Add an app service extension to package.appxmanifest](#add-an-app-service-extension-to-package.appxmanifest).
 - Ensure that the `AppServiceConnection.AppServiceName` string in your client that calls the app service provider matches the `<uap3:AppService Name="..." />` specified in the app service provider project's Package.appxmanifest file.
-- Ensure that the `AppServiceConnection.PackageFamilyName` matches the package family name of the app service provider component as specified above in [Add an app service extension to package.appxmanifest](#add-an-app-service-extension-to-package-appxmanifest)
+- Ensure that the `AppServiceConnection.PackageFamilyName` matches the package family name of the app service provider component as specified above in [Add an app service extension to package.appxmanifest](#add-an-app-service-extension-to-package.appxmanifest)
 - For out-of-proc app services such as the one in this example, validate that the `EntryPoint` specified in the `<uap:Extension ...>` element of your app service provider project's Package.appxmanifest file matches the namespace and class name of the public class that implements `IBackgroundTask` in your app service project.
 
 ### Troubleshoot debugging
