@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 08/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,6 +24,7 @@ Here are some of the features that we’ve made available exclusively to members
 
 | Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
+|**Improved mobile experience**: Our new mobile view lets you see all of your apps at once and reduces scrolling. Get more details on each app without navigating away from your overview page, including a quick glance at acquisitions, crashes, and reviews. | Sign in to the dashboard on your mobile device (or reduce the size of the window on any screen to try out the mobile experience). | August 2017 |
 |**More flexibility associating Azure AD tenants with your Dev Center account**: Associate multiple Azure AD tenants with a single Dev Center account, or associate a single Azure AD tenant with more than one Dev Center account.  | In **Account settings**, go to **Manage tenants**. You’ll see a **Manage Azure AD tenants** page, where you’ll have the option to add additional Azure AD tenants to your account.  | August 2017|
 |**Cohort active usage analytics**: Track week-by-week usage for cohorts (groups of active users who started using your app in the same week) for insights into usage trends.  | In the **Usage** report, view the **Cohorts by active usage** chart.  |July 2017|
 |**New usage-based options for customer segments**: Create segments of your customers based on how much they’ve been using your app. | In the **Engage** section, select **Customer groups** to create a new segment. In the inclusion conditions section, select **Usage** in the first drop-down, then choose one of the new options: **Engagement minutes**, **User sessions**, **Date first used** or **Date last used**. |July 2017|
