@@ -75,34 +75,14 @@ Call [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br24
 
 What you do with the captured video file depends on the scenario for your app. The rest of this article shows you how to quickly create a media composition from one or more captured videos and show it in your UI.
 
-First, add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) control in which the video composition will be displayed to your XAML page.
+First, add a [**MediaPlayerElement**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control in which the video composition will be displayed to your XAML page.
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-Add the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) and [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) namespaces to your project.
 
+With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromStorageFile_Windows_Storage_IStorageFile_)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
 
-[!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
-
-Declare member variables for a [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) object and a [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) that you want to stay in scope for the lifetime of the page.
-
-[!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
-
-Once, before you capture any videos, you should create a new instance of the **MediaComposition** class.
-
-[!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
-
-With the video file returned from the camera capture UI, create a new [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) by calling [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Add the media clip to the composition's [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) collection.
-
-Call [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) to create the **MediaStreamSource** object from the composition.
-
-[!code-cs[AddToComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
-
-Finally, set the stream source to using the media element's [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) method to show the composition in the UI.
-
-[!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
-
-You can continue to capture video clips and add them to the composition. For more information on media compositions, see [Media compositions and editing](media-compositions-and-editing.md).
+[!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
 
 > [!NOTE] 
 > This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
