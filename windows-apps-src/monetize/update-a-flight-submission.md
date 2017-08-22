@@ -32,7 +32,7 @@ This method has the following syntax. See the following sections for usage examp
 
 | Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
-| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}``` |
+| PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` |
 
 <span/>
  
