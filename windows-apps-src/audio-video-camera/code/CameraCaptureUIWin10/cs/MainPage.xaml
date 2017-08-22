@@ -9,12 +9,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <Button x:Name="launchCameraUIButton" Click="launchCameraUIButton_Click" Content="Launch Camera Capture UI"/>
+            <Button x:Name="launchCameraUIButtonPhoto" Click="launchCameraUIButtonPhoto_Click" Content="Launch Camera Capture UI - Photo"/>
+            <Button x:Name="launchCameraUIButtonVideo" Click="launchCameraUIButtonVideo_Click" Content="Launch Camera Capture UI - Video"/>
             <!-- <SnippetImageControl> -->
             <Image x:Name="imageControl" Width="200" Height="200"/>
             <!-- </SnippetImageControl> -->
             <!-- <SnippetMediaElement> -->
-            <MediaElement x:Name="mediaElement" Width="320" Height="240" AreTransportControlsEnabled="True"/>
+            <MediaPlayerElement x:Name="mediaPlayerElement" Width="320" Height="240" AreTransportControlsEnabled="True"/>
             <!-- </SnippetMediaElement> -->
         </StackPanel>
     </Grid>

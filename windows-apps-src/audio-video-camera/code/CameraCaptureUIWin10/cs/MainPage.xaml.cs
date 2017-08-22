@@ -55,13 +55,20 @@ namespace CameraCaptureUIWin10
             //</SnippetInitComposition>
         }
 
-        private void launchCameraUIButton_Click(object sender, RoutedEventArgs e)
+        private void launchCameraUIButtonPhoto_Click(object sender, RoutedEventArgs e)
         {
             
 
             CapturePhoto();
-            //CaptureVideo();
+
  
+        }
+        private void launchCameraUIButtonVideo_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            CaptureVideo();
+
         }
         private async void CapturePhoto()
         {
@@ -121,19 +128,11 @@ namespace CameraCaptureUIWin10
             }
             //</SnippetCaptureVideo>
 
-            //<SnippetAddToComposition>
-            MediaClip mediaClip = await MediaClip.CreateFromFileAsync(videoFile);
 
-            mediaComposition.Clips.Add(mediaClip);
-            mediaStreamSource = mediaComposition.GeneratePreviewMediaStreamSource(
-                (int)mediaElement.ActualWidth,
-                (int)mediaElement.ActualHeight);
-            //</SnippetAddToComposition>
-
-            //<SnippetSetMediaElementSource>
-            mediaElement.SetMediaStreamSource(mediaStreamSource);
-            //</SnippetSetMediaElementSource>
-
+            //<SnippetPlayVideo>
+            mediaPlayerElement.Source = MediaSource.CreateFromStorageFile(videoFile);
+            mediaPlayerElement.MediaPlayer.Play();
+            //</SnippetPlayVideo>
         }
     }
 }
