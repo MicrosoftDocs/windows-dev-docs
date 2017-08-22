@@ -103,27 +103,32 @@ You can skip ahead to the next section if your app doesn't have an installer.
 
 1. Identify the version number of your operating system.
 
-   You can do that by opening the **System Information app** on your computer and then finding the version number of your operating system.
+   To do that, type **winver** in the **Run** dialog box, and then choose the **OK** button.
 
-    ![operating system version in the System Information app](images/desktop-to-uwp/os-version.png)
+   ![winver](images/desktop-to-uwp/winver.png)
+
+   You'll find the version of your Windows build in the **About Windows** dialog box.
+
+   ![Windows 10 version](images/desktop-to-uwp/win-10-version.png)
 
 2. Download the appropriate [Desktop app Converter base image](https://aka.ms/converterimages).
 
    Make sure that the version number that appears in the name of the file matches the version number of your Windows build.
 
-   ![matching base image version](images/desktop-to-uwp/base-image-version.png)
+   >[!IMPORTANT]
+   > If you're using build number **15063**, and the minor version of that build is equal to or greater than **.483** (For example: **15063.540**), make sure to download the **BaseImage-15063-UPDATE.wim** file. If the minor version of that build is less than **.483**, download the **BaseImage-15063.wim** file. If you've already setup an incompatible version of this base file, you can fix it. This [blog post](https://blogs.msdn.microsoft.com/appconsult/2017/08/04/desktop-app-converter-fails-on-windows-10-15063-483-and-later-how-to-solve-it/) explains how to do that.
 
-   Place the downloaded file anywhere on your computer where you'll be able to find it later.
+3. Place the downloaded file anywhere on your computer where you'll be able to find it later.
 
-3. In the console window that appeared when you started the Desktop App Converter, run this command: ```Set-ExecutionPolicy bypass```.
-4.	Set up the converter by running  this command: ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose```.
-5.	Restart your computer if you're prompted to do so.
+4. In the console window that appeared when you started the Desktop App Converter, run this command: ```Set-ExecutionPolicy bypass```.
+5. Set up the converter by running  this command: ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose```.
+6. Restart your computer if you're prompted to do so.
 
-    Status messages appear in the console window as the converter expands the base image. If you don't see any status messages, press any key. This can cause the contents of the console window to refresh.
+   Status messages appear in the console window as the converter expands the base image. If you don't see any status messages, press any key. This can cause the contents of the console window to refresh.
 
-    ![status messages in the console window](images/desktop-to-uwp/bas-image-setup.png)
+   ![status messages in the console window](images/desktop-to-uwp/bas-image-setup.png)
 
-    When the base image is fully expanded, move to the next section.
+   When the base image is fully expanded, move to the next section.
 
 ## Package an app
 
@@ -328,7 +333,11 @@ Follow these steps to install the generated certificate, and then run your app.
 
 You'll likely make changes to your packaged app to address bugs, add visual assets, or enhance your app with modern experiences such as live tiles.
 
-After you make your changes, you don't need to run the converter again. You can repackage your app by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Generate a Windows app package](desktop-to-uwp-manual-conversion.md#make-appx).
+After you make your changes, you don't need to run the converter again. In most cases, you can just repackage your app by using the MakeAppx tool and the appxmanifest.xml file the DAC generates for your app. See [Generate a Windows app package](desktop-to-uwp-manual-conversion.md#make-appx).
+
+* If you modify any of the visual assets of your app, generate a new Package Resource Index file, and then run the MakeAppx tool to generate a new package. See [Generate a Package Resource Index (PRI) file](desktop-to-uwp-manual-conversion.md#make-pri).
+
+* If you want to add icons or tiles that appear on the Windows taskbar, task view, LT+TAB, snap assist, and the lower right corner of Start tiles, see [(Optional Add Target-based unplated assets](desktop-to-uwp-manual-conversion.md#target-based-assets).
 
 > [!NOTE]
 > If you make changes to registry settings that your installer makes, you will have to run the Desktop App Converter again to pick up those changes.

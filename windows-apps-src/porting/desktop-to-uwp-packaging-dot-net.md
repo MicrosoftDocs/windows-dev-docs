@@ -136,7 +136,7 @@ To generate a package your app, follow the guidance described in this topic: [Pa
 
 When you reach the **Select and Configure Packages** screen, Take a moment to consider what sorts of binaries you're including in your package before you select any of the checkboxes.
 
-* If you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a adding a C#, C++, or VB.NET-based Universal Windows Platform project to your solution, select the **x86** and **x64** checkboxes.  
+* If you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to your solution, select the **x86** and **x64** checkboxes.
 
 * Otherwise, choose the **Neutral** checkbox.
 
@@ -144,6 +144,18 @@ When you reach the **Select and Configure Packages** screen, Take a moment to co
 The reason that you'd have to explicitly choose each supported platform is because an solution that you've extended contains two types of binaries; one for the UWP project and one for the desktop project. Because these are different types of binaries, .NET Native needs to explicitly produce native binaries for each platform.
 
 If you receive errors when you attempt to generate your package, see the [Known Issues](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-known-issues#known-issues-anchor) guide and if your issue does not appear in that list, please share the issue with us [here](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+### Obtaining the appxupload file that you submit to the store
+
+The **Create App Packages** wizard generates an appxupload file that you can submit to the Windows Store but the wizard won't automatically generate one if you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to the packaged solution. In that case, you'll have to manually create the appxupload file. Here's how.
+
+1. Create a new zip archive to include the generated appxsym and appxbundle from the \_Test folder.
+
+2. Create a new zip file that contains the appxsym and appxbundle files, and then rename the extension to appxupload.
+
+   ![file explorer](images/desktop-to-uwp/net-7.png)
+
+
 
 ## Next steps
 
