@@ -29,7 +29,7 @@ This topic assumes that you already have an existing app with a background task 
 
 -   In C# and C++, make sure the main project references the background task project. If this reference is not in place, the background task won't be included in the app package.
 -   In C# and C++, make sure the **Output type** of the background task project is "Windows Runtime Component".
--   The background class and must be declared in the entry point attribute in the package manifest.
+-   The background class must be declared in the entry point attribute in the package manifest.
 
 ## Trigger background tasks manually to debug background task code
 
