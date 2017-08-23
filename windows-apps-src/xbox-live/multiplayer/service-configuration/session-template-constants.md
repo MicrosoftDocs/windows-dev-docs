@@ -45,13 +45,13 @@ Capabilities are boolean values that are optionally set in the session template.
 capability |  description | valid values | default value
 -- | -- | -- | -- |
 connectivity | Indicates if the session supports peer connectivity. If this value is false, then the session can't enable any metrics and the session members can't set their SecureDeviceAddress. Can't be set on large sessions. | true, false | false
-suppressPresenceActivityCheck | ? | true, false | false
+suppressPresenceActivityCheck | If true, turns off presence checks. | true, false | false
 gameplay | Indicates whether the session represents actual gameplay, as opposed to setup/menu time like a lobby or matchmaking. If true, then the session is in gameplay mode. | true, false | false
 large | Indicates if the session is a large session (more than 100 members). Large sessions are not supported for use with multiplayer manager. | true, false | false
 connectionRequiredForActiveMembers | Indicates if a connection is required in order for a member be active. | true, false | false
-cloudCompute | ? | true, false | false
+cloudCompute | Enables clients to request that a cloud compute instance be allocated on behalf of the session. | true, false | false
 autoPopulateServerCandidates | Automatically calculate and set 'serverConnectionStringCandidates' from 'serverMeasurements'. This capability can't be set on large sessions. | true, false | false
-userAuthorizationStyle | Indicates if the session supports calls from platforms without strong title identity. This capability can't be set on large sessions. | true, false | false
+userAuthorizationStyle | Indicates if the session supports calls from platforms without strong title identity. This capability can't be set on large sessions.</br></br>Setting the `userAuthorizationStyle` capability to `true` defaults the `readRestriction` and `joinRestriction`of the session to `local` instead of `none`. This means that titles must use search handles or transfer handles to join a game session.| true, false | false
 crossplay | Indicates that the session supports cross play between PC and Xbox One devices. | true, false | false
 broadcast | Indicates that the session represents a broadcast. The name of the session must be the xuid of the broadcaster. Requires the "large" capability. | true, false | false
 team | Indicates that the session represents a tournament team. This capability can't be set on 'large' or 'gameplay' sessions. | true, false | false

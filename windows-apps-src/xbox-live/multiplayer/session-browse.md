@@ -21,7 +21,7 @@ In a session browse scenario, a player in a game is able to retrieve a list of j
 
 A player can also create a new game session, and use session browse to recruit additional players instead of relying on matchmaking.
 
-Session browse differs from traditional matchmaking scenarios in that the player selfselects which game session they want to join, while in matchmaking, the player typically clicks a "find a game" button that attempts to automatically place the player in an appropriate game session.
+Session browse differs from traditional matchmaking scenarios in that the player self-selects which game session they want to join, while in matchmaking, the player typically clicks a "find a game" button that attempts to automatically place the player in an appropriate game session. While session browse is a manual and slower process that may not always select the objectively best game, it provides more control to the player and can be perceived as the subjectively better game pick.
 
 It is common to include both session browse and matchmaking scenarios in games. Typically matchmaking is used for commonly played game modes, while session browse is used for custom games.
 
@@ -56,9 +56,15 @@ When a session is full, or otherwise cannot be joined, a title can remove the se
 
 In order to use search handles for a session, the session must have the following capabilities set to true:
 
-* `userAuthorizationStyle`
 * `searchable`
+* `userAuthorizationStyle`
 * `hasOwners`
+
+>[!NOTE]
+> The `userAuthorizationStyle` and `hasOwners` capabilities are only required for UWP games, but we recommend implementing them for all Xbox Live games, including XDK games, as it ensures future portability.
+
+>[!NOTE]
+> Setting the `userAuthorizationStyle` capability defaults the `readRestriction` and `joinRestriction` of the session to `local` instead of `none`. This means that titles must use search handles or transfer handles to join a game session.
 
 In addition, since searchable sessions must have owners, the `owernshipPolicy.migration` must be set to either "oldest" or "endsession".
 
@@ -121,7 +127,7 @@ In the Xbox Live APIs, you can use the `multiplayer_service::clear_search_handle
 
 The following code shows how to create a search handle for a session by using the C++ Xbox Live multiplayer APIs.
 
-```C++
+```cpp
 auto searchHandleReq = multiplayer_search_handle_request(sessionBrowseRef);
 
 searchHandleReq.set_tags(std::vector<string_t> val);
@@ -148,17 +154,22 @@ The search query syntax is an  [OData](http://docs.oasis-open.org/odata/odata/v4
  Operator | Description
  --- | ---
  eq | equals
+ ne | not equal to
  gt | greater than
  ge | greater than or equal
  lt | less than
  le | less than or equal
  and | logical AND
+ or | logical OR (see note below)
 
 You can also use lambda expressions and the `tolower` canonical function. No other OData functions are supported currently.
 
 When searching for tags or string values, you must use the 'tolower' function in the search query, as the service only currently supports searching for lower-case strings.
 
 The Xbox Live service only returns the first 100 results that match the search query. Your game should allow players to refine their search query if the results are too broad.
+
+>[!NOTE]
+>  Logical ORs are supported in filter string queries; however only one OR is allowed and it must be at the root of your query. You cannot have multiple ORs in your query, nor can you create a query that would result in OR not being at the top most level of the query structure.
 
 ### Search handle query examples
 
@@ -175,7 +186,10 @@ Currently, the following filter scenarios are supported:
  A number 'forzaskill' equal to 6 | "numbers/forzaskill eq 6"
  A number 'halokdratio' greater than 1.5 | "numbers/halokdratio gt 1.5"
  A tag 'coolpeopleonly' | "tags/any(d:tolower(d) eq 'coolpeopleonly')"
- A tag 'coolpeopleonly' and a Number 'halokdratio' equal to 7.5 | "tags/any(d:tolower(d) eq 'coolpeopleonly') eq true and numbers/halokdratio eq 7.5"
+ Sessions that do not contain the tag 'cursingallowed' | "tags/any(d:tolower(d) ne 'cursingallowed')"
+ Sessions that do not contain a number 'rank' that is equal to 0 | "numbers/rank ne 0"
+ Sessions that do not contain a string 'forzacarclass' that is equal to 'classa' | "tolower(strings/forzacarclass) ne 'classa'"
+ A tag 'coolpeopleonly' and a number 'halokdratio' equal to 7.5 | "tags/any(d:tolower(d) eq 'coolpeopleonly') eq true and numbers/halokdratio eq 7.5"
  A number 'halodkratio' greater than or equal to 1.5, a number 'rank' less than 60, and a number 'customnumbervalue' less than or equal to 5 | "numbers/halokdratio ge 1.5 and numbers/rank lt 60 and numbers/customnumbervalue le 5"
  An achievement id '123456' | "achievementIds/any(d:d eq '123456')"
  The language code 'en' | "language eq 'en'"
@@ -208,7 +222,7 @@ Currently, the following filter scenarios are supported:
 
  The following code shows how to query for search handles. The API returns a collection of `multiplayer_search_handle_details` objects that represent all the search handles that match the query.
 
-```C++
+```cpp
  auto result = multiplayer_service().get_search_handles(scid, template, orderBy, orderAscending, searchFilter)
  .then([](xbox_live_result<std::vector<multiplayer_search_handle_details>> result)
  {
@@ -235,4 +249,49 @@ Currently, the following filter scenarios are supported:
    std::unordered_map<string_t, multiplayer_role_type>& role_types();
  }
  */
+```
+
+## Join a session by using a search handle
+
+Once you have retrieved a search handle for a session that you want to join, the title should use  `MultiplayerService::WriteSessionByHandleAsync()` or `multiplayer_service::write_session_by_handle()` to add themselves to the session.
+
+> [!NOTE]
+> The `WriteSessionAsync()` and `write_session()` methods cannot be used to join a session browse session.
+
+The following code demonstrates how to join a session after retrieving a search handle.
+
+```cpp
+void Sample::BrowseSearchHandles()
+{
+    auto context = m_liveResources->GetLiveContext();
+    context->multiplayer_service().get_search_handles(...)
+    .then([this](xbox_live_result<std::vector<multiplayer_search_handle_details>> searchHandles)
+    {
+        if (searchHandles.err())
+        {
+            LogErrorFormat( L"BrowseSearchHandles failed: %S\n", searchHandles.err_message().c_str() );
+        }
+        else
+        {
+            m_searchHandles = searchHandles.payload();
+
+            // Join the game session
+
+            auto handleId = m_searchHandles.at(0).handle_id();
+            auto sessionRef = multiplayer_session_reference(m_searchHandles.at(0).session_reference());
+            auto gameSession = std::make_shared<multiplayer_session>(m_liveResources->GetLiveContext()->xbox_live_user_id(), sessionRef);
+            gameSession->join(web::json::value::null(), false, false, false);
+
+            context->multiplayer_service().write_session_by_handle(gameSession, multiplayer_session_write_mode::update_existing, handleId)
+            .then([this, sessionRef](xbox_live_result<std::shared_ptr<multiplayer_session>> writeResult)
+            {
+                if (!writeResult.err())
+                {
+                    // Join the game session via MPM
+                    m_multiplayerManager->join_game(sessionRef.session_name(), sessionRef.session_template_name());
+                }
+            });
+        }
+    });
+}
 ```
