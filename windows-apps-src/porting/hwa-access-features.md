@@ -109,7 +109,7 @@ Here is an example of the use of the tag in an html page in a hosted web app:
 <meta name="msapplication-cortanavcd" content="https:// contoso.com/vcd.xml"/>
 ```
 
-For more info on Cortana integration and VCDs, see Cortana interactions and Voice Command Defintion (VCD) elements and attributes v1.2.
+For more info on Cortana integration and VCDs, see [Cortana interactions and Voice Command Definition (VCD) elements and attributes v1.2](https://docs.microsoft.com/en-us/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2).
 
 ## Create Hybrid apps – Packaged web apps vs. Hosted web apps
 

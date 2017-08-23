@@ -38,7 +38,7 @@ For Visual Studio 2015, this can be found at https://marketplace.visualstudio.co
 
 ![](../images/unity/unity-il2cpp-1.png)
 
-**6) Import the latest version of the Xbox Live WinMD Unity asset package**
+**6) Import the latest version of the Xbox Live WinRT Unity asset package**
 This can be found at https://github.com/Microsoft/xbox-live-api/releases
 
 **7) Add and attach a new C\# script to a Unity object.**

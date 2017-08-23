@@ -86,7 +86,7 @@ Indirect input has had the benefit of more than 25 years of refinement. Features
 
 ## Use touch feedback
 
-Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
+Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and the Windows platform. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
 
 Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
 
@@ -254,7 +254,7 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 ```
 Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
 
-```ManagedCPlusPlus
+```cpp
 MainPage::MainPage()
 {
     InitializeComponent();
@@ -266,7 +266,7 @@ MainPage::MainPage()
 }
 ```
 
-```CSharp
+```cs
 public MainPage()
 {
     this.InitializeComponent();
@@ -278,7 +278,7 @@ public MainPage()
 }
 ```
 
-```VisualBasic
+```vb
 Public Sub New()
 
     ' This call is required by the designer.
@@ -294,7 +294,7 @@ End Sub
 
 Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
 
-```ManagedCPlusPlus
+```cpp
 // Handler for pointer exited event.
 void MainPage::touchRectangle_PointerExited(Object^ sender, PointerRoutedEventArgs^ e)
 {
@@ -336,7 +336,7 @@ void MainPage::touchRectangle_PointerPressed(Object^ sender, PointerRoutedEventA
 }
 ```
 
-```CSharp
+```cs
 // Handler for pointer exited event.
 private void touchRectangle_PointerExited(object sender, PointerRoutedEventArgs e)
 {
@@ -377,7 +377,7 @@ private void touchRectangle_PointerPressed(object sender, PointerRoutedEventArgs
 }
 ```
 
-```VisualBasic
+```vb
 ' Handler for pointer exited event.
 Private Sub touchRectangle_PointerExited(sender As Object, e As PointerRoutedEventArgs)
     Dim rect As Rectangle = CType(sender, Rectangle)
@@ -460,25 +460,25 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 
 Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
 
-```ManagedCPlusPlus
+```cpp
 // Global translation transform used for changing the position of 
 // the Rectangle based on input data from the touch contact.
 Windows::UI::Xaml::Media::TranslateTransform^ dragTranslation;
 ```
 
-```CSharp
+```cs
 // Global translation transform used for changing the position of 
 // the Rectangle based on input data from the touch contact.
 private TranslateTransform dragTranslation;
 ```
 
-```VisualBasic
+```vb
 ' Global translation transform used for changing the position of 
 ' the Rectangle based on input data from the touch contact.
 Private dragTranslation As TranslateTransform
 ```
 
-```ManagedCPlusPlus
+```cpp
 MainPage::MainPage()
 {
     InitializeComponent();
@@ -496,7 +496,7 @@ MainPage::MainPage()
 }
 ```
 
-```CSharp
+```cs
 public MainPage()
 {
     this.InitializeComponent();
@@ -511,7 +511,7 @@ public MainPage()
 }
 ```
 
-```VisualBasic
+```vb
 Public Sub New()
 
     ' This call is required by the designer.
@@ -531,7 +531,7 @@ End Sub
 
 Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
 
-```ManagedCPlusPlus
+```cpp
 // Handler for the ManipulationDelta event.
 // ManipulationDelta data is loaded into the
 // translation transform and applied to the Rectangle.
@@ -545,7 +545,7 @@ void MainPage::touchRectangle_ManipulationDelta(Object^ sender,
 }
 ```
 
-```CSharp
+```cs
 // Handler for the ManipulationDelta event.
 // ManipulationDelta data is loaded into the
 // translation transform and applied to the Rectangle.
@@ -558,7 +558,7 @@ void touchRectangle_ManipulationDelta(object sender,
 }
 ```
 
-```VisualBasic
+```vb
 ' Handler for the ManipulationDelta event.
 ' ManipulationDelta data Is loaded into the
 ' translation transform And applied to the Rectangle.
