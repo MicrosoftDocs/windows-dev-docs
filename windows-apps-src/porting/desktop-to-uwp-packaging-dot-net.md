@@ -64,6 +64,37 @@ Add the binaries directly to the packaging project.
    </Target>
    ```
 
+## Add binaries into the Windows app package
+
+Configure each binary so that they get copied into the final output package.
+
+1. In Visual Studio, open the **Properties** window and for each binary, set the **Package Action** property to **Content** and the **Copy to Output Directory** property to **Copy always**.
+
+   ![binary properties](images/desktop-to-uwp/net-3.png)
+
+   If your binary subfolder contains alot of desktop application binary files, you can use wildcard expressions to specify which files you want to include. You'll have to open the .jsproj file in a text editor to do this. Here's an example:
+
+   ```xml
+   <Content Include="win32\*.dll">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   <Content Include="win32\*.exe">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   <Content Include="win32\*.config">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   <Content Include="win32\*.pdb">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   ```
+
+   >[!NOTE]
+   >If you want to avoid committing binary files to your source code repository, you can use the .gitignore file to exclude all of the files in your desktop application binary subfolder.
+
+
+
+
 ## Modify the package manifest
 
 The packaging project contains a file that describes the settings of your package. By default, this file describes a UWP app, so you'll have to modify it so that the system understands that your package includes a desktop application that runs in full trust.  
