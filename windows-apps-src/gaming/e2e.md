@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 08/03/2017
+ms.date: 08/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -258,6 +258,10 @@ Developer forums are a great place to ask and answer game development questions 
     <tr>
         <td>DirectX forums</td>
         <td>[DirectX 12 forum](http://forums.directxtech.com/index.php)</td>
+    </tr>
+    <tr>
+        <td>Azure platform forums</td>
+        <td>[Azure forum](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform)</td>
     </tr>
 </table>
 
@@ -1343,6 +1347,10 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>Performance test your code</td>
+        <td>[Cloud based load testing](https://www.visualstudio.com/team-services/cloud-load-testing/)</td>
+    </tr>
     <tr>
         <td>Improve performance by getting exclusive or priority access to hardware resources using Game Mode APIs</td>
         <td>[Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)</td>
