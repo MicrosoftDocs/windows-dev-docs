@@ -3,14 +3,14 @@ author: KevinAsgari
 title: Xbox Live developer guide
 description: Learn how to use Xbox Live services to connect your game to the Xbox Live gaming network.
 ms.author: kevinasg
-ms.date: 05/30/2017
+ms.date: 08/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, xbox, xbox live
 ---
 
-# Xbox Live developer guide
+# What is Xbox Live?
 
 Xbox Live is a premier gaming network that connects millions of gamers across the world. You can add Xbox Live to your Windows 10 or Xbox One game in order to take advantage of the Xbox Live features and services.
 
@@ -18,13 +18,29 @@ With the Xbox Live Creators Program, anyone with a Windows Dev Center account ca
 
 For game developers that want to take advantage of the full Xbox Live experience, including multiplayer, achievements, and native Xbox console development, there are additional developer programs which are detailed in the [Developer Program Overview](developer-program-overview.md).
 
+Here are some reasons to add Xbox Live to your game:
+
+- Xbox Live unites gamers across Xbox One and Windows 10, so gamers can play with their friends and connect with a massive community of players.
+- Xbox Live lets players build a gaming legacy by unlocking achievements, sharing epic game clips, amassing Gamerscore, and perfecting their avatar.
+- Xbox Live lets gamers play and pick up where they left off on another Xbox One or PC, bringing all their saves from another device.
+- With over 1 billion multiplayer matches played each month, Xbox Live is built for performance, speed and reliability.
+- With cross-device multiplayer, gamers can play with your friends regardless of whether they play on Xbox One or Windows 10 PC.
+
+> [!note]
+> These topics are intended for game developers that want to add support for Xbox Live to their game. If you are looking for consumer Xbox Live information, see [Xbox Live](http://www.xbox.com/en-US/live/).
+
+## How Xbox Live works
+
+On a technical level, Xbox Live is a collection of micro-services that expose Xbox Live features such as profile, friends and presence, stats, leaderboards, achievements, multiplayer, and matchmaking. Xbox Live data is stored in the cloud, and can be accessed by using REST endpoints and secure websockets that are accessible from a set of client-side APIs designed for game developers.
+
+In addition to the REST APIs, there are client side APIs that wrap the REST functionality. For more information, see [Introduction to Xbox Live APIs](introduction-to-xbox-live-apis.md).
+
 ### Get started with Xbox Live
 
 The following guides can help you get started with Xbox Live development, regardless of whether you are a UWP or Xbox console developer.  There are also guides for getting setup with game engines.
 
 | Topic                                                                                                                                             | Description                                                                                                   |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
-| [What is Xbox Live](what-is-xbox-live.md) | Describes the range of gaming services that Xbox Live offers. |
 | [Developer Program Overview](developer-program-overview.md) | Discusses the various developer programs that enable Xbox Live development. |
 | [Get started with Xbox Live Creators Program](get-started-with-creators/get-started-with-xbox-live-creators.md) | How to get started with Xbox Live in the Xbox Live Creators Program. |
 | [Get started with Xbox Live as an ID@Xbox or managed  developer](get-started-with-partner/get-started-with-xbox-live-partner.md) | How to get started with Xbox Live as a developer in the ID@Xbox Program. |

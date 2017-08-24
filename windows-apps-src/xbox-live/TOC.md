@@ -1,6 +1,5 @@
 # [Develop Windows apps](https://developer.microsoft.com/windows/apps/develop)
 ## [Xbox Live](index.md)
-### [What is Xbox Live?](what-is-xbox-live.md)
 ### [Developer program overview](developer-program-overview.md)
 ### [Introduction to Xbox Live APIs](introduction-to-xbox-live-apis.md)
 ### [Xbox Live Sandboxes Intro](xbox-live-sandboxes.md)
