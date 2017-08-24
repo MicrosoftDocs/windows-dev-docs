@@ -4,7 +4,7 @@ ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: Review the release notes for the Microsoft advertising libraries.
 title: Release notes for the advertising libraries
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,11 +21,11 @@ This section provides release notes for the current release of the Microsoft adv
 ## Installation
 
 
-The Microsoft advertising libraries are available as part of the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps). For more information about installing the SDKs and the libraries that are included in them, see [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
+The Microsoft advertising libraries are available as part of the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). For more information about installing the SDK, see [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
 
 ## Uninstall previous versions
 
-Before you install the latest Microsoft Advertising SDK (for UWP apps) or the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps), it is highly recommended that you uninstall all prior instances of the Microsoft Universal Ad Client SDK or the Microsoft Advertising SDK.
+Before you install the latest Microsoft Advertising SDK, it is highly recommended that you uninstall all prior instances of the SDK. For more information, see [Install the Microsoft Advertising SDK](install-the-microsoft-advertising-libraries.md).
 
 ## Target architecture-specific build outputs
 
@@ -37,7 +37,7 @@ The Microsoft advertising libraries (which include the **AdControl** and **Inter
 
 ## No toolbox control
 
-In the current release of the Microsoft advertising libraries in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) or the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), there is no toolbox control for dragging an **AdControl** or **InterstitialAd** to a design surface in your app. For instructions about adding these controls in your markup and code, see the [developer walkthroughs](developer-walkthroughs.md).
+In the current release of the Microsoft advertising libraries in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp), there is no toolbox control for dragging an **AdControl** or **InterstitialAd** to a design surface in your app. For instructions about adding these controls in your markup and code, see the [developer walkthroughs](developer-walkthroughs.md).
 
 ## Latitude and longitude properties no longer available
 

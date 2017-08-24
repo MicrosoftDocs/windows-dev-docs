@@ -4,7 +4,7 @@ ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: Learn about how to install the Microsoft Advertising SDK.
 title: Install the Microsoft Advertising SDK
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,10 +13,7 @@ keywords: windows 10, uwp, ads, advertising, install, SDK, advertising library
 
 # Install the Microsoft Advertising SDK
 
-To display ads in your Windows apps, install one of the following SDKs:
-
-* For UWP apps for Windows 10, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
-* For apps for Windows 8.1 and Windows Phone 8.x, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk). This SDK is an extension to Visual Studio 2015 and Visual Studio 2013.
+To display ads in your UWP apps for Windows 10, install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). This SDK is an extension to Visual Studio 2015 and later versions.
 
 > [!NOTE]
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK (14393) or later, you must also install the WinJS library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK (14393) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
@@ -35,7 +32,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
   MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
   ```
 
-3.  Download and install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps for Windows 10) or [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for XAML and JavaScript/HTML apps for Windows 8.1 and Windows Phone 8.x). It may take a few minutes to install. Be sure and wait until the process has finished.
+3.  Download and install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp). It may take a few minutes to install. Be sure and wait until the process has finished.
 
 4.  Restart Visual Studio.
 
@@ -44,7 +41,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
   Otherwise, if you are using the Microsoft Advertising SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
 <span id="install-nuget" />
-## Install via NuGet (UWP only)
+## Install via NuGet
 
 To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
 
@@ -84,13 +81,7 @@ After you install the Microsoft Advertising SDK, follow these instructions to re
 
 2. In **Solution Explorer**, right click **References** and select **Add Reference…**
 
-3. In **Reference Manager**, select one of the following references depending on your project type:
-
-    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (for XAML apps) or **Microsoft Advertising SDK for JavaScript** (for apps built using JavaScript and HTML).
-
-    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML** (for XAML apps) or **Microsoft Advertising SDK for Windows 8.1 Native (JS)** (for apps built using JavaScript and HTML).
-
-    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML** (for XAML apps) or **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)** (for apps built using JavaScript and HTML).
+3. In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (for XAML apps) or **Microsoft Advertising SDK for JavaScript** (for apps built using JavaScript and HTML).
 
 4.  In **Reference Manager**, click OK.
 
@@ -102,7 +93,7 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 * [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
-## Understanding framework packages in the Microsoft Advertising SDK (UWP only)
+## Understanding framework packages in the Microsoft Advertising SDK
 
 The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) and [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespaces.
 
