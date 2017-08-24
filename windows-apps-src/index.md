@@ -1,4 +1,4 @@
----
+﻿---
 author: mijacobs
 layout: LandingPage
 description: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store.
@@ -180,7 +180,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows device�
                             <a href="//msdn.microsoft.com/library/windows/apps/mt691886.aspx">Microsoft Store Services SDK APIs</a>
                         </p>
                         <p>
-                            <a href="//docs.microsoft.com/en-us/uwp/extension-sdks">Device Family Extension SDKs and API contracts</a>
+                            <a href="//docs.microsoft.com/uwp/extension-sdks">Device Family Extension SDKs and API contracts</a>
                         </p>
                         <p>
                             <a href="//docs.microsoft.com/uwp/schemas/">File and XML schema specifications for UWP apps</a>
