@@ -4,7 +4,7 @@ description: Learn how to use the Windows.Services.Store namespace to implement 
 title: Enable subscription add-ons for your app
 keywords: windows 10, uwp, subscriptions, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.author: mcleans
-ms.date: 08/01/2017
+ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,12 @@ ms.technology: uwp
 # Enable subscription add-ons for your app
 
 > [!IMPORTANT]
-> Currently, the ability to create subscription add-ons is only available to a set of developer accounts who are participating in an early adoption program. We will make subscription add-ons available to all developer accounts in the future, and we are making this preliminary documentation available now to give developers a preview of this feature.
+> Currently, the ability to create subscription add-ons is only available to developers who are participating in an early adoption program. We will make subscription add-ons available to all developer accounts in the future, and we are making this preliminary documentation available now to give developers a preview of this feature.
 
-If your UWP app targets Windows 10, version 1607, or later, you can offer in-app purchases of *subscription* add-ons to your customers. You can use subscriptions to sell digital products in your app (such as app features or digital content) with automated recurring billing periods.
+Your Universal Windows Platform (UWP) app can offer in-app purchases of *subscription* add-ons to your customers. You can use subscriptions to sell digital products in your app (such as app features or digital content) with automated recurring billing periods.
+
+> [!NOTE]
+> To enable the purchase of subscription add-ons in your app, your project must target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (this corresponds to Windows 10, version 1607), and it must use the APIs in the **Windows.Services.Store** namespace to implement the in-app purchase experience instead of the **Windows.ApplicationModel.Store** namespace. For more information about the differences between these namespaces, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
 ## Feature highlights
 
@@ -26,9 +29,6 @@ Subscription add-ons for UWP apps support the following features:
 * The Windows SDK [provides APIs](#code-examples) you can use in your app to get info about available subscription add-ons for the app and enable the purchase of a subscription add-on. We also provide REST APIs you can call from your services to [manage subscriptions for a user](#manage-subscriptions).
 * You can view analytic reports that provide the number of subscription acquisitions, active subscribers, and canceled subscriptions in a given time period.
 * Customers can manage their subscription on the [http://account.microsoft.com/services](http://account.microsoft.com/services) page for their Microsoft account. Customers can use this page to view all of the subscriptions they have acquired, cancel a subscription, and change the form of payment that is associated with their subscription.
-
-> [!NOTE]
-> To enable the purchase of subscription add-ons in your app, your app must target Windows 10, version 1607, or a later version, and it must use the APIs in the **Windows.Services.Store** namespace to implement the in-app purchase experience instead of the **Windows.ApplicationModel.Store** namespace. For more information about the differences between these namespaces, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
 ## Steps to enable a subscription add-on for your app
 
@@ -70,7 +70,7 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 The code examples in this section demonstrate how to use the APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to get info about subscription add-ons for the current app and request the purchase a subscription add-on on behalf of the current user.
 
 These examples have the following prerequisites:
-* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607, or later.
+* A Visual Studio project for a Universal Windows Platform (UWP) app that targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release.
 * You have [created an app submission](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) in the Windows Dev Center dashboard and this app is published in the Store. You can optionally configure the app so it is not discoverable in the Store while you test it. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
 * You have [created a subscription add-on for the app](../publish/add-on-submissions.md) in the Dev Center dashboard.
 

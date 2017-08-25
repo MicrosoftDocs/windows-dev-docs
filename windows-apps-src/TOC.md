@@ -708,6 +708,7 @@
 #### [Enable subscription add-ons for your app](monetize/enable-subscription-add-ons-for-your-app.md)
 #### [Implement a trial version of your app](monetize/implement-a-trial-version-of-your-app.md)
 #### [Data schemas for Store products](monetize/data-schemas-for-store-products.md)
+#### [Error codes for Store operations](monetize/error-codes-for-store-operations.md)
 #### [Using the Windows.ApplicationModel.Store namespace](monetize/in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 ##### [Exclude or limit features in a trial version](monetize/exclude-or-limit-features-in-a-trial-version-of-your-app.md)
 ##### [Enable in-app product purchases](monetize/enable-in-app-product-purchases.md)

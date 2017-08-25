@@ -31,8 +31,6 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>Get started</b><br/><br/>
     <a href="http://aka.ms/ads-sdk-uwp">Install the Microsoft Advertising SDK</a>
-    <br/>
-    <a href="update-your-app-to-the-latest-advertising-libraries.md">Update your app to the latest advertising libraries</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>Developer guides</b><br/><br/>
@@ -46,7 +44,7 @@ Increase your revenue opportunities by putting ads in your Universal Windows Pla
 <td align="left"><b>Other resources</b><br/><br/>
     <a href="set-up-ad-units-in-your-app.md">Set up ad units in your app</a>
     <br/>
-    <a href="ui-and-user-experience-guidelines.md">UI and user experience guidelines</a>
+    <a href="best-practices-for-ads-in-apps.md">Best practices</a>
     <br/>
     <a href="https://msdn.microsoft.com/en-us/library/windows/apps/mt691884.aspx">API reference</a>
     </td>

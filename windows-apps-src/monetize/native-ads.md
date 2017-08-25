@@ -24,7 +24,7 @@ For advertisers, native ads provide high-performing placements, because the ad e
 
 ## Prerequisites
 
-* Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (version 10.0.4 or later) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
+* Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
 
 ## Integrate a native ad into your app
 

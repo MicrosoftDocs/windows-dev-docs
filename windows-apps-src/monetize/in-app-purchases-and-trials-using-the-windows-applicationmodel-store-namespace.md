@@ -4,7 +4,7 @@ ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
 title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,12 +15,10 @@ keywords: uwp, in-app purchases, IAPs, add-ons, trials, Windows.ApplicationModel
 
 You can use members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
 
-The articles in this section provide in-depth guidance and code examples for using the members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of basic concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+> [!IMPORTANT]
+> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
 
-For a complete sample that demonstrates how to implement trials and in-app purchases using the **Windows.ApplicationModel.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
-
-> [!NOTE]
-> If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead of the **Windows.ApplicationModel.Store** namespace. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace is also designed to have better performance. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+The articles in this section provide in-depth guidance and code examples for using the members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of basic concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md). For a complete sample that demonstrates how to implement trials and in-app purchases using the **Windows.ApplicationModel.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 > [!NOTE]
 > The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). These applications must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.

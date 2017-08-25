@@ -4,7 +4,7 @@ ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: Use the Windows Store targeted offers API to claim targeted offers that are available for an app.
 title: Manage targeted offers using Store services
 ms.author: mcleans
-ms.date: 05/11/2017
+ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -59,9 +59,9 @@ The following example demonstrates how to get the targeted offers for the curren
 
 Next, offer one of the targeted offers for purchase to the user. If the user agrees to purchase the targeted offer, use one of the following methods to programmatically purchase the add-on that is associated with the targeted offer. Use the product ID values that you retrieved in the previous step to identify the add-on you want to purchase.
 
-* If your app targets Windows 10, version 1607, or later, we recommend that you use one of the **RequestPurchaseAsync** methods in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) namespace. For more information about using these methods, see [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md).
+* If your app project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (this corresponds to Windows 10, version 1607), we recommend that you use one of the **RequestPurchaseAsync** methods in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) namespace. For more information about using these methods, see [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md).
 
-* If your app targets an earlier version of Windows 10, use the [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_) method in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to purchase the add-on. For more information about using this method, see [Enable in-app product purchases](enable-in-app-product-purchases.md).
+* If your app project targets an earlier version of Windows 10, use the [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp#Windows_ApplicationModel_Store_CurrentApp_RequestProductPurchaseAsync_System_String_) method in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to purchase the add-on. For more information about using this method, see [Enable in-app product purchases](enable-in-app-product-purchases.md).
 
 For code examples that demonstrate each option, see the [code example](#code-example) at the end of this article.
 
