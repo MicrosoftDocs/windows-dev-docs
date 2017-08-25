@@ -178,7 +178,34 @@ The ContactPanel object has two events your application should listen for:
 
 The ContactPanel object also allows you to set the background color of the contact panel header (if not set, it will default to the system theme) and to programmatically close the contact panel.
 
+## Supporting notification badging
 
+If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts) and expressive [My People notifications](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
+
+![People notification badging](images/my-people-badging.png)
+
+To badge a contact, the top-level toast node must include the hint-people parameter to indicate the sending or related contact. This parameter can have any of the following values:
++ **Email address** 
+    + E.g. mailto:johndoe@mydomain.com
++ **Telephone number** 
+    + E.g. tel:888-888-8888
++ **Remote ID** 
+    + E.g. remoteid:1234
+
+Here is an example of how to identify a toast notification is related to a specific person:
+```XML
+<toast hint-people="mailto:johndoe@mydomain.com">
+    <visual lang="en-US">
+        <binding template="ToastText01">
+            <text>John Doe posted a comment.</text>
+        </binding>
+    </visual>
+</toast>
+```
+
+> [!NOTE]
+> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact#Windows_Phone_PersonalInformation_StoredContact_RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
+> If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the RemoteIdHelper class shown later in this topic in order to add a unique tag to all of your remote IDs before you add them to the system. Or you can choose to not use the RemoteId property at all and instead you create a custom extended property in which to store remote IDs for your contacts.
 
 ## The PinnedContactManager class
 
@@ -227,3 +254,4 @@ async Task PinMultipleContacts(Contact[] contacts)
 + [My People notificatons](my-people-notifications.md)
 + [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
++ [Connect your app to actions on a contact card](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
