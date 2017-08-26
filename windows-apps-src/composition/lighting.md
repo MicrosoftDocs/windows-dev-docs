@@ -82,11 +82,12 @@ public sealed class FancyOrangeSpotLight : XamlLight
     protected override void OnConnected(UIElement newElement)
     {
         // OnConnected is called when the first target UIElement is shown on the screen. This enables delaying composition object creation until it's actually necessary.
-        CompositionLight = Window.Current.Compositor.CreateSpotLight();
-        ((SpotLight)CompositionLight).InnerConeColor = Colors.Orange;
-        ((SpotLight)CompositionLight).OuterConeColor = Colors.Yellow;
-        ((SpotLight)CompositionLight).InnerConeAngleInDegrees = 30;
-        ((SpotLight)CompositionLight).OuterConeAngleInDegrees = 45;
+        var spotLight = Window.Current.Compositor.CreateSpotLight();
+        spotLight.InnerConeColor = Colors.Orange;
+        spotLight.OuterConeColor = Colors.Yellow;
+        spotLight.InnerConeAngleInDegrees = 30;
+        spotLight.OuterConeAngleInDegrees = 45;
+        CompositionLight = spotlight;
     }
 
     protected override void OnDisconnected(UIElement oldElement)
