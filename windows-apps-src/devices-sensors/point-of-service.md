@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: Point of service
 description: This section contains articles on how to use various features of the Point of Service namespace.
 ms.author: mukin

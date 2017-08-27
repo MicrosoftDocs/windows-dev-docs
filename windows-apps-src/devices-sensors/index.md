@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: Devices, sensors, and power
 description: In order to provide a rich experience for your users, you may find it necessary to integrate external devices or sensors into your app.

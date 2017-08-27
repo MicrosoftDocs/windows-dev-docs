@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: Cash drawer device support
 description: This article contains information about the Cash Drawer point of service family of devices
 ms.author: mukin

@@ -1,5 +1,5 @@
 ---
-author: jken
+author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.

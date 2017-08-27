@@ -1,7 +1,7 @@
 ---
 title: Get Started Tutorial - A UWP game in MonoGame 2D
 description: A simple UWP game for the Windows Store, written in C# and MonoGame
-author: mukin
+author: muhsinking
 ms.author: mukin
 ms.date: 03/06/2017
 ms.topic: article

@@ -1,5 +1,5 @@
 ---
-author: kbridge
+author: Karl-Bridge-Microsoft
 ms.assetid:
 title: UWP Academy - Input track - Support the Surface Dial (and other wheel devices) in your UWP app
 description: UWP Academy. Input track. A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.

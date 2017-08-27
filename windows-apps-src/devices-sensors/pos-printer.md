@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: POS printer device support
 description: This article contains information about the point of service printer family of devices
 ms.author: mukin

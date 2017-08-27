@@ -1,5 +1,5 @@
 ---
-author: kbridge
+author: Karl-Bridge-Microsoft
 Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 title: Access keys design guidelines
 label: Access keys design guidelines

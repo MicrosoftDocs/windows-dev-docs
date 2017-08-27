@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: Enumerate devices
 description: The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.

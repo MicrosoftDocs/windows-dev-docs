@@ -1,6 +1,6 @@
 
 ---
-author: mukin
+author: muhsinking
 title: Barcode scanner device support
 description: This article contains information about the barcode scanner point of service family of devices
 ms.author: mukin

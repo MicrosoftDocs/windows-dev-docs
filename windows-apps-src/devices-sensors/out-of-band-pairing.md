@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: Out-of-band pairing
 description: Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery.

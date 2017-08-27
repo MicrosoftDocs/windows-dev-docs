@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: Access sensors and devices from a background task
 description: DeviceUseTrigger lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended.
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B

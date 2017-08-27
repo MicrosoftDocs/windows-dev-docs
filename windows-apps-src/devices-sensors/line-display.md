@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: Line display device support
 description: This article contains information about the Line Display point of service family of devices
 ms.author: mukin

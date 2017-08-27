@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Use the inclinometer
 description: Learn how to use the inclinometer to determine pitch, roll, and yaw.

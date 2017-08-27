@@ -1,7 +1,7 @@
 ---
 title: My People sharing
 description: Explains how to add support for My People sharing
-author: mukin
+author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article

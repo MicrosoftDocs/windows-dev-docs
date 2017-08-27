@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: Magnetic stripe reader device support
 description: This article contains information about the magnetic stripe reader point of service family of devices
 ms.author: mukin

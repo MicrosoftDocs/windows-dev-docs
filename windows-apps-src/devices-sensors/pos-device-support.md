@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 title: POS device support
 description: This article contains information about device support for each POS device family
 ms.author: mukin

@@ -1,7 +1,7 @@
 ---
 title: Adding My People support to an application
 description: Explains how to add My People support to an application, and how to pin and unpin contacts
-author: mukin
+author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
