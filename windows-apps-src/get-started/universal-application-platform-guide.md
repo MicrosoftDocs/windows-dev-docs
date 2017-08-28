@@ -36,7 +36,7 @@ A device family defines a set of APIs, is versioned, and is the foundation of an
 
 Each child device family adds its own APIs to the ones it inherits. The resulting union of APIs in a child device family is guaranteed to be present in the OS based on that device family, and on every device running that OS.
 
-One benefit of the universal device family is that your app can run on a variety of devices. From phones, tablets, desktop computers, Surface Hubs, Xbox consoles, to HoloLens; any or all may be chosen as a target platform. Your app can also use adaptive code to dynamically detect and use features of a device that are outside of the universal device family.
+One benefit of the universal device family is that your app can run on a variety of devices; phones, tablets, desktop computers, Surface Hubs, Xbox consoles, and HoloLens, to name a few. Your app can also use adaptive code to dynamically detect and use features of a device that are outside of the universal device family.
 
 The decision about which device family (or families) your app will target is yours to make. And that decision impacts your app in these important ways. It determines:
 
