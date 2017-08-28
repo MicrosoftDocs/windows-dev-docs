@@ -207,6 +207,7 @@
 #### [Instructional UI](in-app-help/instructional-ui.md)
 #### [In-app help](in-app-help/in-app-help.md)
 #### [External help](in-app-help/external-help.md)
+### [Voice and tone](in-app-help/voice-and-tone.md)
 ## [Fluent Design System](http://fluent.microsoft.com/)
 ## [Design toolkits](design-downloads/index.md)
 # Develop Windows apps
