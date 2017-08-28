@@ -117,12 +117,28 @@ If you encounter problems enabling Developer Mode or Device Portal, see the [Kno
 
 ###SSH
 
-SSH services are enabled when you enable Developer Mode on your device.  This is used when your device is a deployment target for UWP applications.   The names of the services are 'SSH Server Broker' and 'SSH Server Proxy'.
+SSH services are enabled when you enable Developer Mode on your device.  This is used when your device is a deployment target for UWP applications.   The names of the services on PC are 'SSH Server Broker' and 'SSH Server Proxy'.
 
 > [!NOTE]
 > This is not Microsoft's OpenSSH implementation, which you can find on [GitHub](https://github.com/PowerShell/Win32-OpenSSH).
 
-In order to take advantage of the SSH services, you can enable device discovery to allow pin pairing. If you intend to run another SSH service, you can set this up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, simply disable Developer Mode.  
+In order to take advantage of the SSH services, you can enable device discovery to allow pin pairing. If you intend to run another SSH service, you can set the server up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, you can do the following:
+1. Turn off Device Discovery
+2. **Either**
+ - Reboot the device so that on next boot the SSH server is not running 
+ - From an admin command prompt, disable the SSH services in this order:
+```
+   sc stop sshproxy
+   sc stop sshbroker
+```
+
+> [!NOTE]
+> In the Creators Update there is a known issue with the SSH service.  Namely, after a reboot it does not turn on again.  To work around this, the first time you install a new build of Windows and each time you enable Device Discovery, run the following from an admin command prompt:
+    ```
+    sc config debugregsvc start=auto
+    ```
+> Alternatively, in the Developer Mode settings you can disable, then re-enable Device Discovery each time you reboot the PC. 
+> This is fixed in the Fall Creators Update. 
 
 ### Device Discovery
 
