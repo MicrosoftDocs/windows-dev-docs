@@ -28,6 +28,7 @@ In this how-to, we'll create everything in one solution for simplicity.
 -   In Microsoft Visual Studio, create a new UWP app project and name it **AppServiceProvider**. (In the **New Project** dialog box, select **Templates &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Blank app (Windows Universal)**). This will be the app that makes the app service available to other UWP apps.
 -   When asked to select a **Target Version** for the project, select at least **10.0.14393**. If you want to use the new `SupportsMultipleInstances` attribute, you must be using Visual Studio 2017 and target **10.0.15063** (**Windows 10 Creator's Update**) or higher.
 
+<span id="appxmanifest"/>
 ## Add an app service extension to package.appxmanifest
 
 In the AppServiceProvider project's Package.appxmanifest file, add the following AppService extension inside the `&lt;Application&gt;` element. This example advertises the `com.Microsoft.Inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service project exposes the service to other apps. We recommend using a reverse domain name style for the service name.
@@ -303,9 +304,9 @@ If you encounter a **AppUnavailable** status after trying to connect to an app s
 
 - Ensure that the app service provider project and app service project are deployed. Both need to be deployed before running the client because otherwise the client won't have anything to connect to. You can deploy from Visual Studio by using **Build** > **Deploy Solution**.
 - In the solution explorer, ensure that your app service provider project has a project-to-project reference to the project that implements the app service.
-- Verify that the `<Extensions>` entry, and it's child elements, have been added to the Package.appxmanifest file belonging to the app service provider project as specified above in [Add an app service extension to package.appxmanifest](#add-an-app-service-extension-to-package.appxmanifest).
+- Verify that the `<Extensions>` entry, and its child elements, have been added to the Package.appxmanifest file belonging to the app service provider project as specified above in [Add an app service extension to package.appxmanifest](#appxmanifest).
 - Ensure that the `AppServiceConnection.AppServiceName` string in your client that calls the app service provider matches the `<uap3:AppService Name="..." />` specified in the app service provider project's Package.appxmanifest file.
-- Ensure that the `AppServiceConnection.PackageFamilyName` matches the package family name of the app service provider component as specified above in [Add an app service extension to package.appxmanifest](#add-an-app-service-extension-to-package.appxmanifest)
+- Ensure that the `AppServiceConnection.PackageFamilyName` matches the package family name of the app service provider component as specified above in [Add an app service extension to package.appxmanifest](#appxmanifest)
 - For out-of-proc app services such as the one in this example, validate that the `EntryPoint` specified in the `<uap:Extension ...>` element of your app service provider project's Package.appxmanifest file matches the namespace and class name of the public class that implements `IBackgroundTask` in your app service project.
 
 ### Troubleshoot debugging
