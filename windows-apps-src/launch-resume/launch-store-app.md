@@ -16,7 +16,13 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the store.
+This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the store by using the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method.
+
+This example shows how to open the games page of the store:
+
+```cs
+bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Apps"));
+```
 
 ## ms-windows-store: URI scheme reference
 
