@@ -1,11 +1,11 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Prepare your app for localization to other markets, languages, or regions.
 title: Prepare your app for localization
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

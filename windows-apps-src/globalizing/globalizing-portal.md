@@ -1,12 +1,12 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Globalization is the process of designing and developing your app to act appropriately for different global markets without any changes or customization.
 Search.SourceType: Video
 title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -1,9 +1,9 @@
 ---
-author: DelfCo
+author: stevewhims
 description: Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground.
 title: Network communications in the background
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 8/25/2017
 ms.topic: article
 ms.prod: windows

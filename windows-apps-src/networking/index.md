@@ -1,9 +1,9 @@
 ---
-author: DelfCo
+author: stevewhims
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: Technologies for accessing the network and web services.
 title: Networking and web services
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

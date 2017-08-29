@@ -1,9 +1,9 @@
 ---
-author: DelfCo
+author: stevewhims
 description: Things you must do for any network-enabled app.
 title: Networking basics
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

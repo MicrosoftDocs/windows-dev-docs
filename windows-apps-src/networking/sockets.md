@@ -1,9 +1,9 @@
 ---
-author: DelfCo
+author: stevewhims
 description: You can use both Windows.Networking.Sockets and Winsock to communicate with other devices as a Universal Windows Platform (UWP) app developer.
 title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
