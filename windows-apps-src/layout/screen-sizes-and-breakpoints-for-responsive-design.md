@@ -7,7 +7,7 @@ label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 08/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,17 +24,13 @@ The number of device targets and screen sizes across the Windows 10 ecosystem i
 > When designing for specific breakpoints, design for the amount of screen space available to your app (the app's window). When the app is running full-screen, the app window is the same size as the screen, but in other cases, it's smaller.
  
 
+## Breakpoints
 This table describes the different size classes and provides general recommendations for tailoring for those size classes.
 
 ![responsive design breakpoints](images/rsp-design/rspd-breakpoints.png)
 
 <table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
+
 <thead>
 <tr class="header">
 <th align="left">Size class</th>
@@ -68,10 +64,10 @@ This table describes the different size classes and provides general recommendat
 <td style="vertical-align:top;">641px to 1007px</td>
 <td style="vertical-align:top;">1008px or greater</td>
 </tr>
+
 <tr class="odd">
 <td style="vertical-align:top;">General recommendations</td>
 <td style="vertical-align:top;"><ul>
-<li>Center tab elements.</li>
 <li>Set left and right window margins to 12px to create a visual separation between the left and right edges of the app window.</li>
 <li>Dock [app bars](../controls-and-patterns/app-bars.md) to the bottom of the window for improved reachability</li>
 <li>Use one column/region at a time</li>
@@ -80,7 +76,6 @@ This table describes the different size classes and provides general recommendat
 <li>If you're using the [master details pattern](../controls-and-patterns/master-details.md), use the stacked presentation mode to save screen space.</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
-<li>Make tab elements left-aligned.</li>
 <li>Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.</li>
 <li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
 <li>Up to two columns/regions</li>
@@ -89,7 +84,6 @@ This table describes the different size classes and provides general recommendat
 <li>Consider further tailoring for [TV experiences](http://go.microsoft.com/fwlink/?LinkId=760736).</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
-<li>Make tab elements left-aligned.</li>
 <li>Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.</li>
 <li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
 <li>Up to three columns/regions</li>
@@ -100,5 +94,11 @@ This table describes the different size classes and provides general recommendat
 </tbody>
 </table>
 
-With [**Continuum for Phones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the small size class.
+With [**Continuum for Phones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), users can connect compatible Windows 10 mobile devices to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the small size class.
+
+## Effective pixels and scale factor
+
+The scale factor determines the size of text and UI elements on the screen. Larger values increase the number of pixels the system uses to draw certain UI elements. Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. Users can override the default value and by going to **Settings** > **Display** > **Scale and layout** settings page. 
+
+
  
