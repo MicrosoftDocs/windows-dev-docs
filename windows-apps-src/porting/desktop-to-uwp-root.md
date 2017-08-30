@@ -18,7 +18,7 @@ Take your existing desktop app and add modern experiences for Windows 10 users. 
 <div style="float: left; padding: 10px">
     ![desktop to UWP bridge image](images/desktop-to-uwp/desktop-bridge-4.png)
 </div>
-The Desktop to UWP bridge is the infrastructure that we’ve built into the platform that lets you distribute your Windows Forms, WPF, or Win32 desktop app or game efficiently by using a modern Windows App package.
+The Desktop Bridge is the infrastructure that we’ve built into the platform that lets you distribute your Windows Forms, WPF, or Win32 desktop app or game efficiently by using a modern Windows App package.
 
 This package gives your app an identity and with that identity, your desktop app has access to Windows Universal Platform (UWP) APIs. You can use them to light up modern and engaging experiences such as live tiles and notifications.  Use simple conditional compilation and runtime checks to run UWP code only when your app runs on Windows 10.
 
@@ -70,7 +70,7 @@ The Desktop App Converter also does a few extra things for you. Here's a few of 
 
 * Validate your app against Desktop Bridge and Windows Store requirements.
 
-See [Package an app using the Desktop App Converter (Desktop to UWP Bridge)](desktop-to-uwp-run-desktop-app-converter.md)
+See [Package an app using the Desktop App Converter (Desktop Bridge)](desktop-to-uwp-run-desktop-app-converter.md)
 
 ### Manual packaging
 
@@ -78,17 +78,17 @@ If you like granular control over your conversion, you can create a manifest fil
 
 This approach might make sense if you're familiar with the changes that your installer makes to the system, or if you don't have an installer and the way that you install your app is by physically copying files to a folder location or by using commands like **xcopy**. Although don't let the absence of an installer move you to manually package your app. You can use the Desktop App Converter to package your app even if you don't have an installer.
 
-See [Package an app manually (Desktop to UWP Bridge)](desktop-to-uwp-manual-conversion.md).
+See [Package an app manually (Desktop to Bridge)](desktop-to-uwp-manual-conversion.md).
 
 ### Visual Studio
 
 This option is similar to the manual option described above except Visual Studio does a few things for you such as generate an app package and the visual assets for your app. Think of Visual Studio as a tool that you can use to manually package your app along with a few extra conveniences.
 
-See [Package a .NET app by using Visual Studio (Desktop to UWP Bridge)](desktop-to-uwp-packaging-dot-net.md)
+See [Package a .NET app by using Visual Studio (Desktop to Bridge)](desktop-to-uwp-packaging-dot-net.md)
 
 ### Third-party installer
 
- Several popular third-party products and installers now support the Desktop to UWP Bridge. You can use them to generate MSI installers or app packages with only a few clicks. While we don't produce documentation on how to use these tools, visit their websites to learn more.
+ Several popular third-party products and installers now support the Desktop Bridge. You can use them to generate MSI installers or app packages with only a few clicks. While we don't produce documentation on how to use these tools, visit their websites to learn more.
 
  Here's a few options:
 
@@ -108,16 +108,17 @@ See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) f
 
 #### Cloudhouse Compatibility Containers
 
-For Enterprise customers who have line of business applications that are incompatible with Windows 10 and Windows 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and Windows 7 apps to be converted to UWP and then delivered through the Windows Store for Business, or Microsoft Intune, without changing the source code.
+For Enterprise customers who have line of business applications that are incompatible with Windows 10 and 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and 7 apps to run on Windows 10 and then converted to UWP apps for delivery through Windows Store for Business, or Microsoft InTune without changing the source code. Register for a [Free Trial](http://www.cloudhouse.com/free-trial).
+
+Cloudhouse provide an Auto Packager for packaging line of business applications into [Compatibility Containers](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications) on the operating system the apps runs on today e.g. Windows XP, and [prepare it for conversion](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905) to UWP. The Container is then converted to the new UWP format by integrating it with Microsoft’s Desktop Bridge Converter tool to create the Windows appx package.
+
 <div style="float: left; padding: 10px; width: 20%">
-     ![Cloudhouse-Compatibility-Containers](images/desktop-to-uwp/container.png)
+     ![Cloudhouse-Container Logo](images/desktop-to-uwp/cloudhouse-container-logo.png)
 </div>
-Cloudhouse provides an Auto Packager that takes any application, and creates a Compatibility Container by packaging the app where it runs today e.g. Windows XP. The Container can then be converted to the new UWP format by integrating with the Desktop Bridge Converter tool to create the Windows app package.
+The Auto Packager uses install / capture and runtime analysis to create a Container for the application which includes the application’s files, registry, runtimes, dependencies, and the compatibility and redirection engine required to enable the application to run on Windows 10. The Container provides isolation for the application and its runtimes, so that that they do not affect or conflict with other applications running on the user’s device.
 
-The Auto Packager uses install / capture and runtime analysis to create a Container for the application which includes the application files and registry, and the compatibility and redirection engine that enables the application to run on Windows 10. Plus you can include, and isolate, any runtimes or prerequisites required to run the application so that it does not affect or conflict with other applications or runtimes that may already be installed.
+Find out more about how you can deliver business applications through the Windows Store for Business Read in our [Release blog](http://www.cloudhouse.com/resources/release-solution-to-get-any-line-of-business-app-to-uwp).
 
-
-Check out their [blog](http://www.cloudhouse.com/resources/release-solution-to-get-any-line-of-business-app-to-uwp) announcing support for Universal Windows Apps and the Windows Store for Business.
 
 #### FireGiant
 
@@ -240,5 +241,5 @@ Use the comments section below.
 | [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md) | Explains options for debugging your packaged app. |
 | [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md) | See how you can distribute your converted app to users.  |
 | [Behind the scenes of the Desktop Bridge (Desktop Bridge)](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop to UWP Bridge works under the covers. |
-| [Known Issues (Desktop Bridge)](desktop-to-uwp-known-issues.md) | Lists known issues with the Desktop to UWP Bridge. |
+| [Known Issues (Desktop Bridge)](desktop-to-uwp-known-issues.md) | Lists known issues with the Desktop Bridge. |
 | [Desktop Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Code samples on GitHub demonstrating features of converted apps. |
