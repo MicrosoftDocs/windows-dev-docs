@@ -4,7 +4,7 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop Bridge
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 08/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -78,13 +78,13 @@ If you like granular control over your conversion, you can create a manifest fil
 
 This approach might make sense if you're familiar with the changes that your installer makes to the system, or if you don't have an installer and the way that you install your app is by physically copying files to a folder location or by using commands like **xcopy**. Although don't let the absence of an installer move you to manually package your app. You can use the Desktop App Converter to package your app even if you don't have an installer.
 
-See [Package an app manually (Desktop to Bridge)](desktop-to-uwp-manual-conversion.md).
+See [Package an app manually (Desktop Bridge)](desktop-to-uwp-manual-conversion.md).
 
 ### Visual Studio
 
 This option is similar to the manual option described above except Visual Studio does a few things for you such as generate an app package and the visual assets for your app. Think of Visual Studio as a tool that you can use to manually package your app along with a few extra conveniences.
 
-See [Package a .NET app by using Visual Studio (Desktop to Bridge)](desktop-to-uwp-packaging-dot-net.md)
+See [Package a .NET app by using Visual Studio (Desktop Bridge)](desktop-to-uwp-packaging-dot-net.md)
 
 ### Third-party installer
 
@@ -240,6 +240,6 @@ Use the comments section below.
 | [Extend your desktop application with modern UWP components](desktop-to-uwp-extend.md)| Add advanced experiences that must run within a UWP app container. Connect your desktop app with the UWP process by using app services.|
 | [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md) | Explains options for debugging your packaged app. |
 | [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md) | See how you can distribute your converted app to users.  |
-| [Behind the scenes of the Desktop Bridge (Desktop Bridge)](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop to UWP Bridge works under the covers. |
+| [Behind the scenes of the Desktop Bridge (Desktop Bridge)](desktop-to-uwp-behind-the-scenes.md) | Take a deeper dive on how the Desktop Bridge works under the covers. |
 | [Known Issues (Desktop Bridge)](desktop-to-uwp-known-issues.md) | Lists known issues with the Desktop Bridge. |
 | [Desktop Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Code samples on GitHub demonstrating features of converted apps. |
