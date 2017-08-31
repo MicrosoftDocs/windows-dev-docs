@@ -108,9 +108,9 @@ See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) f
 
 #### Cloudhouse Compatibility Containers
 
-For Enterprise customers who have line of business applications that are incompatible with Windows 10 and 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and 7 apps to run on Windows 10 and then converted to UWP apps for delivery through Windows Store for Business, or Microsoft InTune without changing the source code. Register for a [Free Trial](http://www.cloudhouse.com/free-trial).
+For Enterprise customers who have line of business applications that are incompatible with Windows 10 and 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and 7 apps to run on Windows 10 and then converted to run on the Universal Windows Platform (UWP) for delivery through Windows Store for Business, or Microsoft InTune without changing the source code. Register for a [Free Trial](http://www.cloudhouse.com/free-trial).
 
-Cloudhouse provide an Auto Packager for packaging line of business applications into [Compatibility Containers](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications) on the operating system the apps runs on today e.g. Windows XP, and [prepare it for conversion](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905) to UWP. The Container is then converted to the new UWP format by integrating it with Microsoft’s Desktop Bridge Converter tool to create the Windows appx package.
+Cloudhouse provide an Auto Packager for packaging line of business applications into [Compatibility Containers](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications) on the operating system the apps runs on today e.g. Windows XP, and [prepare it for conversion](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905) to UWP. The Container is then converted to the new Windows app package format by integrating it with Microsoft’s Desktop App Converter tool.
 
 <div style="float: left; padding: 10px; width: 20%">
      ![Cloudhouse-Container Logo](images/desktop-to-uwp/cloudhouse-container-logo.png)
