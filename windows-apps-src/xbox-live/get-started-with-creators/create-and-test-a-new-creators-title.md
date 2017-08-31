@@ -24,7 +24,8 @@ This article will walk through everything required to get a title configured on 
 3. You are configuring your title on Windows Dev Center at [http://dev.windows.com/](http://dev.windows.com).  If in doubt, you should use Windows Dev Center.
 4. Your development machine is running Windows 10.
 
-> **Note**: If you are part of the Xbox Live Creators Program, the above assumptions apply to you and you should follow along with this article
+> [!NOTE]
+> If you are part of the Xbox Live Creators Program, the above assumptions apply to you and you should follow along with this article
 
 ## Dev Center setup
 
@@ -56,7 +57,8 @@ When you click the **Xbox Live** link under **Services** for the first time for 
 
 On the setup dialog, select the platforms that you would like to enable the Xbox Live Services for (both Xbox One and Windows 10 PC are selected by default).  Click the **Confirm** button to enable Xbox Live Creators Program for your game.
 
-> [!IMPORTANT] Xbox Live is only supported for games. In order to successfully publish your game with Xbox Live, you must set your product type to "Game" in the properties section of the submission. 
+> [!IMPORTANT]
+> Xbox Live is only supported for games. In order to successfully publish your game with Xbox Live, you must set your product type to "Game" in the properties section of the submission.
 
 ![](../images/creators_udc/creators_udc_xboxlive_enable_dialog.png)
 
