@@ -84,6 +84,24 @@ You can use the [SelectedItem](https://msdn.microsoft.com/library/windows/apps/x
 
 You can use the [LeftHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [RightHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header.
 
+For example, you can add a [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars) in the Pivot's RightHeader.
+
+![An example of a command bar in the pivot control's right header](images/PivotHeader.png)
+
+```xaml
+<Pivot>
+    <Pivot.RightHeader>
+        <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
+                <AppBarButton Icon="Add"/>
+                <AppBarSeparator/>
+                <AppBarButton Icon="Edit"/>
+                <AppBarButton Icon="Delete"/>
+                <AppBarSeparator/>
+                <AppBarButton Icon="Save"/>
+        </CommandBar>
+    </Pivot.RightHeader>
+</Pivot>
+```
 
 ### Pivot interaction
 
