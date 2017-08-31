@@ -57,7 +57,7 @@ The image node inside the binding should include the following parameters:
 + **spritesheet-height**
     + The frame height (in pixels). Only required for spritesheet animations.
 + **spritesheet-fps**
-    + Frames per second. Only required for spritesheet animations.
+    + Frames per second (FPS). Only required for spritesheet animations. Only values 1-120 are supported.
 + **spritesheet-startingFrame**
     + The frame number to begin the animation. Only used for spritesheet animations and defaults to 0 if not provided.
 + **alt**
