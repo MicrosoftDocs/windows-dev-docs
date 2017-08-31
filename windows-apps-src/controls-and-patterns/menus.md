@@ -43,7 +43,11 @@ When should you use a menu or a context menu?
 
 For example, use a menu on a button in a navigation pane to provide additional navigation options. In this scenario, the primary purpose of the button control is to provide access to a menu.
 
+![Example of menu in Mail](images/Mail_Menu.png)
+
 If you want to add commands (such as cut, copy, and paste) to a text element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as cut, copy, and paste) are secondary and belong in a context menu.
+
+![Example of context menu in photo gallery](images/ContextMenu_example.png)
 
 <div class="side-by-side">
 <div class="side-by-side-content">
