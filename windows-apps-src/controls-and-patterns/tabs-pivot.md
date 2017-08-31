@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: Tabs and pivots are enable users to navigate between frequently accessed content.
+Description: Tabs and pivots enable users to navigate between frequently accessed content.
 title: Tabs and pivots
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
