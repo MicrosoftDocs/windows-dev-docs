@@ -1,18 +1,18 @@
 ---
 author: QuinnRadich
-title: Windows 10 build 16257 API changes
+title: Windows 10 build 16267 API changes
 description: Developers can use the following list to identify new or changed namespaces in the current Windows 10 SDK Preview Build
-keywords: what's new, whats new, update, flighted, flights, API, 16257
+keywords: what's new, whats new, update, flighted, flights, API, 16267
 ms.author: quradic
-ms.date: 8/17/2017
+ms.date: 8/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ---
 
-# New APIs in the Windows 10 SDK Preview Build 16257
+# New APIs in the Windows 10 SDK Preview Build 16267
 
-New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16257.
+New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16267.
 
 Below is a full list of prelease documentation published for namespaces added since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). **Please note that prerelease documentation may be incomplete and subject to change, and these APIs may be renamed or removed in subsequent builds.** Also attached is a list of API namespaces changed or renamed since the previous SDK preview builds.
 
@@ -511,6 +511,26 @@ gamemodeconfiguration <br> gamemodeconfiguration.affinitizetoexclusivecpus <br> 
 gamemodeuserconfiguration <br> gamemodeuserconfiguration.gamingrelatedprocessnames <br> gamemodeuserconfiguration.getdefault <br> gamemodeuserconfiguration.saveasync
 
 ### [windows.gaming.ui](https://docs.microsoft.com/uwp/api/windows.gaming.ui)
+
+#### [gamechatmessageorigin](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatmessageorigin)
+
+gamechatmessageorigin
+
+#### [gamechatmessagereceivedeventargs](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatmessagereceivedeventargs)
+
+gamechatmessagereceivedeventargs <br> gamechatmessagereceivedeventargs.appdisplayname <br> gamechatmessagereceivedeventargs.appid <br> gamechatmessagereceivedeventargs.message <br> gamechatmessagereceivedeventargs.origin <br> gamechatmessagereceivedeventargs.sendername
+
+#### [gamechatoverlay](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlay)
+
+gamechatoverlay <br> gamechatoverlay.addmessage <br> gamechatoverlay.desiredposition <br> gamechatoverlay.getdefault
+
+#### [gamechatoverlaymessagesource](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlaymessagesource)
+
+gamechatoverlaymessagesource <br> gamechatoverlaymessagesource.gamechatoverlaymessagesource <br> gamechatoverlaymessagesource.messagereceived <br> gamechatoverlaymessagesource.setdelaybeforeclosingaftermessagereceived
+
+#### [gamechatoverlayposition](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlayposition)
+
+gamechatoverlayposition
 
 #### [gamemonitor](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor)
 
@@ -1584,13 +1604,13 @@ mapcontrol.layers <br> mapcontrol.layersproperty <br> mapcontrol.trygetlocationf
 
 mapcontroldatahelper.createmapcontrol
 
-#### [mapelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)
-
-mapelement.mapstylesheetentry <br> mapelement.mapstylesheetentryproperty <br> mapelement.mapstylesheetentrystate <br> mapelement.mapstylesheetentrystateproperty <br> mapelement.tag <br> mapelement.tagproperty
-
 #### [mapelement3d](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement3d)
 
 mapelement3d <br> mapelement3d.heading <br> mapelement3d.headingproperty <br> mapelement3d.location <br> mapelement3d.locationproperty <br> mapelement3d.mapelement3d <br> mapelement3d.model <br> mapelement3d.pitch <br> mapelement3d.pitchproperty <br> mapelement3d.roll <br> mapelement3d.rollproperty <br> mapelement3d.scale <br> mapelement3d.scaleproperty
+
+#### [mapelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)
+
+mapelement.mapstylesheetentry <br> mapelement.mapstylesheetentryproperty <br> mapelement.mapstylesheetentrystate <br> mapelement.mapstylesheetentrystateproperty <br> mapelement.tag <br> mapelement.tagproperty
 
 #### [mapelementslayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer)
 
