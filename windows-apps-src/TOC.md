@@ -18,6 +18,11 @@
 ### [Plan your app](get-started/plan-your-app.md)
 ### [What's next?](get-started/learn-more.md)
 ## [Get UWP app samples](get-started/get-uwp-app-samples.md)
+## [XAML basics tutorials](get-started/xaml-basics-intro.md)
+### [Create a user interface](get-started/xaml-basics-ui.md)
+### [Create custom styles](get-started/xaml-basics-style.md)
+### [Create data bindings](get-started/xaml-basics-data-binding.md)
+### [Create adaptive layouts](get-started/xaml-basics-adaptive-layout.md)
 # Design & UI
 ## [Intro to app UI design](layout/design-and-ui-intro.md)
 ## [Layout](layout/index.md)
