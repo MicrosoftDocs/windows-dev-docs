@@ -4,7 +4,7 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package an app (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,6 +15,9 @@ ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 # Prepare to package an app (Desktop Bridge)
 
 This article lists the things you need to know before you package your desktop app. You might not have to do much to get your app ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
+
+>[!IMPORTANT]
+>The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
 
 + __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You'll have to retarget your app to .NET 4.6.1 before you package it.
 
@@ -52,7 +55,7 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app is linking C runtime libraries (CRT) in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner.
 
-	Visual Studio 2015 supports both dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015.
+	Visual Studio 2015 supports both static and dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015.
 
 	Support in previous versions of Visual Studio varies. See the following table for details:
 
