@@ -30,3 +30,8 @@ Here's a quick summary of each tutorial track.
 + [**Create data bindings**](xaml-basics-data-binding.md) shows how to add data bindings to the photo gallery, populating it with real image data.
 + [**Create custom styles**](xaml-basics-style.md) shows how to add fancy custom styles to the photo editing menu.
 + [**Create adaptive layouts**](xaml-basics-adaptive-layout.md) shows how to make the gallery layout adaptive, so it looks good on every device and screen size.
+
+## See Also
+
+* [UWP Tutorials](create-uwp-apps.md)
+* [Intro to app UI design](../layout/design-and-ui-intro.md)
