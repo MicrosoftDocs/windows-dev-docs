@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 | Connectivity | Support |
 | -------------|-------------|
 | USB          | <p>Windows contains a in-box class driver for USB connected barcode scanners which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](http://www.usb.org/developers/hidpage/). See the table below for a list of known compatible devices.  Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **USB.HID.POS Scanner** mode. </p><p>Windows also supports implementation of vendor specific drivers to support additional barcode scanners that do not support the USB.HID.POS Scanner standard. Please check with your barcode scanner manufacturer for vendor specific driver availability.</p><p>Barcode scanner manufacturers please consult the [Barcode Scanner Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom barcode scanner driver</p> |
-| Bluetooth    | <p>Windows supports Serial Port Protocol - Simple Serial Interface (SPP-SSI) based Bluetooth barcode scanners. See the table below for a list of known compatible devices. Consult the manual for your barcode scanner or contact the manufacturer to determing how to configure your scanner in **SPP-SSI** mode.</p> |
+| Bluetooth    | <p>Windows supports Serial Port Protocol - Simple Serial Interface (SPP-SSI) based Bluetooth barcode scanners. See the table below for a list of known compatible devices. Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **SPP-SSI** mode.</p> |
 
 ### Compatible Barcode Scanners
 | Category | Connectivity | Manufacturer / Model |
@@ -58,7 +58,7 @@ Windows provides support for the following magnetic stripe readers from Magtek a
 ## Receipt Printer (POSPrinter)
 | Connectivity | Support |
 | -------------|-------------|
-| Network and Bluetooth | <p>Windows supports network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language.  The printers listed below are discovered automatically using POSPrinter APIs. Additional receipt printers which provide an ESC/POS emulation may also work, but would need to be assocated using an [out of band pairing](https://aka.ms/pointofservice-oobpairing) process.</p><p>Note: slip station and journal stations are not supported through this method.</p> |
+| Network and Bluetooth | <p>Windows supports network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language.  The printers listed below are discovered automatically using POSPrinter APIs. Additional receipt printers which provide an ESC/POS emulation may also work, but would need to be associated using an [out of band pairing](https://aka.ms/pointofservice-oobpairing) process.</p><p>Note: slip station and journal stations are not supported through this method.</p> |
 | OPOS    | <p> Supports any OPOS compatible receipt printers via OPOS service objects. Install the OPOS drivers as per the particular device manufacturers installation instructions. </p> |
 
 ### Stationary Receipt Printers (Network/Bluetooth)
