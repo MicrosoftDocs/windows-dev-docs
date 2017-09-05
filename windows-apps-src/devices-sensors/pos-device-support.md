@@ -31,14 +31,14 @@ keywords: windows 10, uwp
 | **Windows Mobile Devices**| **Built-in** |Bluebird EF400<br/>Bluebird EF500<br/>Bluebird EF500R<br/>Honeywell CT50<br/>Honeywell D75e<br/>Janam XT2<br/>Panasonic FZ-E1<br/>Panasonic FZ-F1<br/>PointMobile PM80<br/>Zebra TC700j|
 | **Windows Mobile Devices**| **Custom** | HP Elite X3 with Barcode Scanner Jacket |
 
-## Cash drawer
+
+## Cash Drawer
 | Connectivity | Support |
 | -------------|-------------|
 | Network/Bluetooth | <p> Connection directly to the cash drawer can be made over the network or through Bluetooth, depending on the capabilities of the cash drawer unit. </p>|
-| DK port | <p> Cash drawers that don’t have network or Bluetooth capabilities can be connected via the DK port on a supported POS printer, or the Star Micronics DK-AirCash accessory. </p>
-| OPOS    | <p> Supports any Cash Drawer devices that support OPOS drivers and/or provides OPOS service objects. Install the OPOS drivers as per the particular device manufacturers installation instructions. This enables USB and other connectivity based on manufacterer specifications. </p> |
+| DK port | <p> Cash drawers that do not have network or Bluetooth capabilities can be connected via the DK port on a supported Receipt Printer or the Star Micronics DK-AirCash accessory. </p>
+| OPOS    | <p> Supports any OPOS compatible Cash Drawers via OPOS service objects provided by the manufacturer. Install the OPOS drivers as per the particular device manufacturers installation instructions. </p> |
 
-**Note:**  Contact Star Micronics for more information about the DK-AirCash.
 
 ### Network/Bluetooth
 | Manufacturer |	Model(s) |
