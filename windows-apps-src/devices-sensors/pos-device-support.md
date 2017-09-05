@@ -55,22 +55,18 @@ Windows provides support for the following magnetic stripe readers from Magtek a
 
 <p>Windows supports implementation of additional vendor specific drivers to support additional magnetic stripe readers. Please check with your magnetic stripe reader manufacturer for availability.</p><p>Magnetic stripe reader manufacturers please consult the [Magnetic Stripe Reader Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom magnetic stripe reader driver</p>
 
-## POS printer
-Windows supports the ability to print to network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language. For more information on ESC/POS, see [Epson ESC/POS with formatting](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/epson-esc-pos-with-formatting).
-
-While the classes, enumerations, and interfaces exposed in the API support receipt printer, slip printer, and journal printer, the driver interface only supports receipt printer. Attempting to use slip printer or journal printer at this time will return a status of not implemented.
-
+## Receipt Printer (POSPrinter)
 | Connectivity | Support |
 | -------------|-------------|
-| Network/Bluetooth | <p> Connection directly to the POS printer can be made over the network or through Bluetooth, depending on the capabilities of the POS printer unit. </p>|
-| OPOS    | <p> Supports any POS printer devices that support OPOS drivers and/or provides OPOS service objects. Install the OPOS drivers as per the particular device manufacturers installation instructions. This enables USB and other connectivity based on manufacterer specifications. </p> |
+| Network and Bluetooth | <p>Windows supports network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language.  The printers listed below are discovered automatically using POSPrinter APIs. Additional receipt printers which provide an ESC/POS emulation may also work, but would need to be assocated using an [out of band pairing](https://aka.ms/pointofservice-oobpairing) process.</p><p>Note: slip station and journal stations are not supported through this method.</p> |
+| OPOS    | <p> Supports any OPOS compatible receipt printers via OPOS service objects. Install the OPOS drivers as per the particular device manufacturers installation instructions. </p> |
 
-### Stationary POS printers (Network/Bluetooth)
+### Stationary Receipt Printers (Network/Bluetooth)
 | Manufacturer |	Model(s) |
 |--------------|-----------|
 | Epson |	TM-T88V, TM-T70, TM-T20, TM-U220 |
 
-### Mobile POS printers (Bluetooth)
+### Mobile Receipt Printers (Bluetooth)
 | Manufacturer |	Model(s) |
 |--------------|-----------|
 | Epson |	Mobilink P20 (TM-P20), Mobilink P60 (TM-P60), Mobilink P80 (TM-P80) |
