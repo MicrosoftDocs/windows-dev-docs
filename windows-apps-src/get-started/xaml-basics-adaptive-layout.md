@@ -14,14 +14,14 @@ ms.technology: uwp
 
 This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. 
 
-We'll use these tools to optimize the PhotoLab sample app for smaller device screens. This starter version of the PhotoLab sample includes the complete data layer plus a partially complete XAML layout, but leaves out many minor features to make the code easier to browse. This lab doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations.
+We'll use these tools to optimize the PhotoLab sample app for smaller device screens. This starter version of the PhotoLab sample includes the complete data layer plus a partially complete XAML layout, but leaves out many minor features to make the code easier to browse. This lab doesn't build up to the complete app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see features such as custom animations.
 
 ## Prerequisites
 * [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 mobile emulator](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/adaptive-layout/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/xaml-basics-starting-points/adaptive-layout). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/adaptive-layout/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/adaptive-layout). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
 
 ## Part 1: Run the mobile emulator
 
