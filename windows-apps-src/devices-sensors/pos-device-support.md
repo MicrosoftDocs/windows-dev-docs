@@ -10,7 +10,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Point of Service Compatible Peripherals
+# Supported Point of Service Peripherals
 
 ## Barcode Scanner
 | Connectivity | Support |
