@@ -192,7 +192,7 @@ The below table illustrates the features available to the Xbox Live Creators Pro
 
 <tr>
 <td>Leaderboards</td>
-<td>Retrieve and display player stats in a sorted way to encourate competition.</td>
+<td>Retrieve and display player stats in a sorted way to encourage competition.</td>
 <td class="xbl-features-optional">Optional</td>
 <td class="xbl-features-optional">Optional (Data Platform 2017 only)</td>
 </tr>
