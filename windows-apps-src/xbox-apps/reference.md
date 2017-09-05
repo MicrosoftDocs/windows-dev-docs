@@ -23,7 +23,6 @@ This section contains reference topics for the UWP on Xbox One APIs.
 |[/ext/settings](wdp-xboxsettings-api.md)| Accesses Xbox One developer settings. |
 |[/ext/smb/developerfolder](wdp-smb-api.md)| Accesses the developer folder on your console through File Explorer on your development PC. |
 |[/ext/user](wdp-user-management.md)| Manages users on the Xbox One console. |
-|[/ext/update/policy](wdp-updatepolicy-api.md)| Manages which update policy is applied to your console. |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Manages your Xbox Live sandbox. |
 
 ## See also
