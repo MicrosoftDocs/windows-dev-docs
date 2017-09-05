@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# POS device support
+# Point of Service Compatible Peripherals
 
-## Barcode scanner
+## Barcode Scanner
 | Connectivity | Support |
 | -------------|-------------|
-| USB          | <p>Windows contains a in-box class driver for USB connected barcode scanners which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](http://www.usb.org/developers/hidpage/). See the table below for a list of known compatible devices.  Consult the manual for your barcode scanner or contact the manufacturer to determine if it can be configured in USB.HID.POS Scanner mode. </p><p>Windows also supports implementation of vendor specific drivers to support additional barcode scanners that do not support the USB.HID.POS Scanner standard. Please check with your barcode scanner manufacturer for vendor specific driver availability.</p>|
-| Bluetooth    | <p>Windows supports SPP-SSI based Bluetooth barcode scanners. See the table below for a list of known compatible devices.</p> |
+| USB          | <p>Windows contains a in-box class driver for USB connected barcode scanners which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](http://www.usb.org/developers/hidpage/). See the table below for a list of known compatible devices.  Consult the manual for your barcode scanner or contact the manufacturer to determine how to configure your scanner in **USB.HID.POS Scanner** mode. </p><p>Windows also supports implementation of vendor specific drivers to support additional barcode scanners that do not support the USB.HID.POS Scanner standard. Please check with your barcode scanner manufacturer for vendor specific driver availability.</p><p>Barcode scanner manufacturers please consult the [Barcode Scanner Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom barcode scanner driver</p> |
+| Bluetooth    | <p>Windows supports Serial Port Protocol - Simple Serial Interface (SPP-SSI) based Bluetooth barcode scanners. See the table below for a list of known compatible devices. Consult the manual for your barcode scanner or contact the manufacturer to determing how to configure your scanner in **SPP-SSI** mode.</p> |
 
-### Compatible Hardware
+### Compatible Barcode Scanners
 | Category | Connectivity | Manufacturer / Model |
 |--------------|-----------|-----------|
 | **1D Handheld Scanners** | **USB** |Honeywell Voyager 1200g<br/>Honeywell Voyager 1202g<br/>Honeywell Voyager 1202-bf<br/>Honeywell Voyager 145Xg (Upgradable)|
