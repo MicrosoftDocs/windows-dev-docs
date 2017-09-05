@@ -8,13 +8,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.assetid: 0cfa8e22-7345-47b7-b132-880bbc050d44
 ---
 
 # Xbox best practices
 By default, all UWP apps will run on Xbox One without any extra effort on your part. However, if want your app to shine, delight your customers, and compete with the best app experiences on Xbox, you should follow the practices below.
   > [!NOTE]
   > Before you start, take a look at the design guidelines laid out in [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md).   
+
 
 ## To build the best experiences for Xbox One
 
@@ -41,6 +41,13 @@ TVs don't handle extreme color intensities as well as computer monitors do. Avoi
 ### *Remember:* You can disable scaling
 UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices. Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%. If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080). Take a look at [How to turn off scaling](disable-scaling.md) and [Effective pixels and scaling](../layout/design-and-ui-intro.md#effective-pixels-and-scaling) for information about tailoring your app to look great on Xbox.
 
+
+If you want to get a glimpse of these practices applied to a UWP app, check out this video!
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
+
 ## Channel 9
 The following talks on [Channel 9](https://channel9.msdn.com/) are a great source of information for building amazing apps on Xbox:
 
@@ -52,4 +59,6 @@ The following talks on [Channel 9](https://channel9.msdn.com/) are a great sourc
 
 ## See also
 - [UWP on Xbox One](index.md)
+- [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md)
+
 

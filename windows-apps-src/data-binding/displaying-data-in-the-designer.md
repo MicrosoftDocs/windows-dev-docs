@@ -20,6 +20,11 @@ Sample data on the design surface, and for prototyping
 
 It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio. In order to have your controls populated with data (so that you can work on your app's layout, templates, and other visual properties), there are various ways in which you can use design-time sample data. Sample data can also be really useful and time-saving if you're building a sketch (or prototype) app. You can use sample data in your sketch or prototype at run-time to illustrate your ideas without going as far as connecting to real, live data.
 
+**Sample apps that demonstrate {Binding}**
+
+-   Download the [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app.
+-   Download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app.
+
 Setting DataContext in markup
 -----------------------------
 

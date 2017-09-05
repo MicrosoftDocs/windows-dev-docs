@@ -1,9 +1,9 @@
 ---
-author: scottmill
+author: jwmsft
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: Composition native interoperation
 description: The Windows.UI.Composition API provides native interoperation interfaces allowing content to be moved directly into the compositor.
-ms.author: scotmi
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -11,8 +11,6 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 # Composition native interoperation with DirectX and Direct2D
-
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 The Windows.UI.Composition API provides the [**ICompositorInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620068), [**ICompositionDrawingSurfaceInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620058), and [**ICompositionGraphicsDeviceInterop**](https://msdn.microsoft.com/library/windows/apps/Mt620065) native interoperation interfaces allowing content to be moved directly into the compositor.
 

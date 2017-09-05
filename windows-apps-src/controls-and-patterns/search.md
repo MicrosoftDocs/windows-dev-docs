@@ -6,11 +6,14 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
 ---
 # Search and find-in-page
 
@@ -18,12 +21,7 @@ keywords: windows 10, uwp
 
 Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**AutoSuggestBox class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
-</ul>
-</div>
+> **Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
 ## Elements of the search experience
 
@@ -206,23 +204,12 @@ Find-in-page has a match counter:
 
 For more info about adding commands to your command bar, see [Command bar](app-bars.md).
 
-<div class="microsoft-internal-note">
-## Globalization and localization checklist
-
-<table>
-<tr>
-<th>Vertical spacing</th><td>Use non-Latin characters for vertical spacing to ensure non-Latin scripts will display properly, including numbers.</td>
-</tr>
-<tr>
-<th>Bi-directional considerations</th><td>The magnifying glass icon should not be displayed in mirrored form in bidi.</td>
-</tr>
-</table>
-</div>
+ 
 
 
 ## Related articles
 
-* [**Auto-suggest box**](auto-suggest-box.md)
+* [Auto-suggest box](auto-suggest-box.md)
 
 
  

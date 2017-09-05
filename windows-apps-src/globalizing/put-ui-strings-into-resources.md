@@ -1,11 +1,11 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
 title: Put UI strings into resources
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -65,10 +65,10 @@ You need to associate every control that needs localized text with the .resw fil
 
 For the resource name, you give the **Uid** attribute value, plus you specify what property is to get the translated string (in this case the Text property). You can specify other properties/values for different languages such as Greeting.Width, but be careful with such layout-related properties. You should strive to allow the controls to lay out dynamically based on the device's screen.
 
-Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
+Note that attached properties are handled differently in resw files such as AutomationProperties.Name. You need to explicitly write out the namespace like this:
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## Add string resource identifiers to code and markup.
@@ -102,6 +102,7 @@ auto str = loader->GetString("Farewell");
 3.  Create one more folder named "fr-FR", for français (France). Create a new resources file and add the following:
 
     strings/fr-FR/Resources.resw
+    
     ![add resource, french](images/addresource-fr-fr.png)
 
 ## Build and run the app.

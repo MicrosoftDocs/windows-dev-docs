@@ -1,9 +1,9 @@
 ---
-author: mtoepke
+author: joannaleecy
 title: Assemble the rendering framework
 description: Now, it's time to look at how the sample game uses that structure and state to display its graphics.
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
-ms.author: mtoepke
+ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -184,7 +184,7 @@ When the DirectXBase initialization completes, the **GameInfoOverlay** object is
 ## Creating and loading DirectX graphics resources
 
 
-The first order of business in any game is to establish a connection to our graphics interface, create the resources we need to draw the graphics, and then set up a render target into which we can draw those graphics. In the game sample (and in the Microsoft Visual Studio**DirectX 11 App (Universal Windows)** template), this process is implemented with three methods:
+The first order of business in any game is to establish a connection to our graphics interface, create the resources we need to draw the graphics, and then set up a render target into which we can draw those graphics. In the game sample (and in the Microsoft Visual Studio **DirectX 11 App (Universal Windows)** template), this process is implemented with three methods:
 
 -   **CreateDeviceIndependentResources**
 -   **CreateDeviceResources**
@@ -284,7 +284,7 @@ The second method, **CreateDeviceResources**, loads the specific resources for t
 CreateDeviceResources
 
 ```cpp
-oid GameRenderer::CreateDeviceResources()
+void GameRenderer::CreateDeviceResources()
 {
     DirectXBase::CreateDeviceResources();
 
@@ -6317,11 +6317,3 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 
 
 * [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
-
- 
-
-
-
-

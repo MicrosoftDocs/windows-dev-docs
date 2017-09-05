@@ -9,7 +9,7 @@ ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -46,14 +46,14 @@ Follow these guidelines when you define and consume your own custom theme resour
 
 DO:
 
--   Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
+-   Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
 -   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in: Styles, Setters, Control templates, Property setters, and Animations.
 
 DO NOT:
 
--   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Use [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead.
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807). Use [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead.
 
-    EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
+    EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
 
 **Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting-theme-resources) section.
  
@@ -64,7 +64,7 @@ The combined set of colors for "Light", "Dark", and "HighContrast" themes make u
 
 ### Light and Dark theme colors
 
-The XAML framework provides a set of named [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
+The XAML framework provides a set of named [Color](https://msdn.microsoft.com/library/windows/apps/hh673723) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
 
 This table lists the key, simple name, and string representation of the color (using the \#aarrggbb format) for the "Light" and "Dark" resources provided by the XAML framework. The key is used to reference the resource in an app. The "Simple light/dark name" is used as part of the brush naming convention that we explain later.
 
@@ -98,7 +98,7 @@ This table lists the key, simple name, and string representation of the color (u
 
 ### Windows system high-contrast colors
 
-In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
+In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [Brush](https://msdn.microsoft.com/library/windows/apps/br228076) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
 
 This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
 
@@ -128,7 +128,7 @@ In addition to the system high-contrast theme colors, the system accent color is
 
 ### Theme-dependent brushes
 
-The color resources shown in the preceding sections are used to set the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) property of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackroundAltHighBrush`.
+The color resources shown in the preceding sections are used to set the [Color](https://msdn.microsoft.com/library/windows/apps/br242963) property of [SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/br242962) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackroundAltHighBrush`.
 
 Let’s look at how the color value for this brush is determined at run-time. In the "Light" and "Dark" resource dictionaries, this brush is defined like this:
 
@@ -156,19 +156,19 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## The XAML type ramp
 
-The themeresources.xaml file defines several resources that define a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) that you can apply to text containers in your UI, specifically for either [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) or [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565). These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the *Windows type ramp* documented in [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394).
+The themeresources.xaml file defines several resources that define a [Style](https://msdn.microsoft.com/library/windows/apps/br208849) that you can apply to text containers in your UI, specifically for either [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) or [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565). These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the *Windows type ramp* documented in [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394).
 
-These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) in [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) or on a [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) in [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
+These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a [Run](https://msdn.microsoft.com/library/windows/apps/br209959) in [TextBlock.Inlines](https://msdn.microsoft.com/library/windows/apps/br209668) or on a [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503) in [RichTextBlock.Blocks](https://msdn.microsoft.com/library/windows/apps/br244347).
 
-The styles look like this when applied to a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652):
+The styles look like this when applied to a [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652):
 
 ![text block styles](images/text-block-type-ramp.png)
 
 ### BaseTextBlockStyle
 
-**TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-Supplies the common properties for all the other [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) container styles.
+Supplies the common properties for all the other [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) container styles.
 
 ```XAML
 <!-- Usage -->
@@ -276,9 +276,9 @@ Supplies the common properties for all the other [**TextBlock**](https://msdn.mi
 
 ### BaseRichTextBlockStyle
 
-**TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)
 
-Supplies the common properties for all the other [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) container styles.
+Supplies the common properties for all the other [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) container styles.
 
 ```XAML
 <!-- Usage -->
@@ -313,21 +313,21 @@ Supplies the common properties for all the other [**RichTextBlock**](https://msd
 </Style>
 ```
 
-> **Note**&nbsp;&nbsp;  The [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) styles don't have all the text ramp styles that [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) does, mainly because the block-based document object model for **RichTextBlock** makes it easier to set attributes on the individual text elements. Also, setting [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for **RichTextBlock** because its text content always has to be in specific text elements like [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.
+> **Note**&nbsp;&nbsp;  The [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) styles don't have all the text ramp styles that [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) does, mainly because the block-based document object model for **RichTextBlock** makes it easier to set attributes on the individual text elements. Also, setting [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for **RichTextBlock** because its text content always has to be in specific text elements like [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503), which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.
 
 ## Miscellaneous Named styles
 
-There's an additional set of keyed [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definitions you can apply to style a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) differently than its default implicit style.
+There's an additional set of keyed [Style](https://msdn.microsoft.com/library/windows/apps/br208849) definitions you can apply to style a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) differently than its default implicit style.
 
 ### TextBlockButtonStyle
 
-**TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [ButtonBase](https://msdn.microsoft.com/library/windows/apps/br227736)
 
-Apply this style to a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the **TextBlockButtonStyle** does not underline the text.
+Apply this style to a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/br242739), the **TextBlockButtonStyle** does not underline the text.
 
 The template also styles the presented text to use **SystemControlHyperlinkBaseMediumBrush** (for "PointerOver" state), **SystemControlHighlightBaseMediumLowBrush** (for "Pressed" state) and **SystemControlDisabledBaseLowBrush** (for "Disabled" state).
 
-Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **TextBlockButtonStyle** resource applied to it.
+Here's a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) with the **TextBlockButtonStyle** resource applied to it.
 
 ```XAML
 <Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}" 
@@ -340,11 +340,11 @@ It looks like this:
 
 ### NavigationBackButtonNormalStyle
 
-**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
+This [Style](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [Symbol](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [Height](https://msdn.microsoft.com/library/windows/apps/br208718), [Width](https://msdn.microsoft.com/library/windows/apps/br208751), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852).
 
-Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
+Here's a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
@@ -357,11 +357,11 @@ It looks like this:
 
 ### NavigationBackButtonSmallStyle
 
-**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
+This [Style](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
 
-Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
+Here's a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
@@ -393,7 +393,7 @@ For example, consider this theme dictionary definition:
 </ResourceDictionary>
 ```
 
-Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
+Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [FrameworkElement.RequestedTheme](https://msdn.microsoft.com/library/windows/apps/dn298515) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
 
 The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
 
@@ -416,7 +416,7 @@ To fix this, replace the "Default" dictionary with separate theme dictionaries f
 </ResourceDictionary>
 ```
 
-However, problems still occur if any of these resources are referenced in inherited properties like [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
+However, problems still occur if any of these resources are referenced in inherited properties like [Foreground](https://msdn.microsoft.com/library/windows/apps/br209414). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
 
 As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
 

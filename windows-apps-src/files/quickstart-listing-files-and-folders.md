@@ -18,9 +18,10 @@ keywords: windows 10, uwp
 
 Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
 
-For detailed guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class.
+For guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class.
 
-**Note**  Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
+> [!NOTE] 
+> Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
 ## Prerequisites
@@ -35,7 +36,8 @@ For detailed guidance on how to store your Universal Windows Platform app's data
 
 ## Enumerate files and folders in a location
 
-> **Note**  Remember to declare the **picturesLibrary** capability.
+> [!NOTE]
+> Remember to declare the **picturesLibrary** capability.
 
 In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) method to get all the files in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders) and list the name of each file. Next, we use the [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
 
@@ -96,8 +98,7 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 > StringBuilder outputText = new StringBuilder();
 >
-> IReadOnlyList<StorageFile> fileList =
->     await picturesFolder.GetFilesAsync();
+> IReadOnlyList<StorageFile> fileList = await picturesFolder.GetFilesAsync();
 >
 > outputText.AppendLine("Files:");
 > foreach (StorageFile file in fileList)
@@ -105,8 +106,7 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 >     outputText.Append(file.Name + "\n");
 > }
 >
-> IReadOnlyList<StorageFolder> folderList =
->     await picturesFolder.GetFoldersAsync();
+> IReadOnlyList<StorageFolder> folderList = await picturesFolder.GetFoldersAsync();
 >            
 > outputText.AppendLine("Folders:");
 > foreach (StorageFolder folder in folderList)
@@ -140,7 +140,8 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 > ```
 
 
-> **Note**  In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
+> [!NOTE] 
+> In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
  
 
 Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
@@ -173,8 +174,7 @@ Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/li
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 > StringBuilder outputText = new StringBuilder();
 >
-> IReadOnlyList<IStorageItem> itemsList =
->     await picturesFolder.GetItemsAsync();
+> IReadOnlyList<IStorageItem> itemsList = await picturesFolder.GetItemsAsync();
 >
 > foreach (var item in itemsList)
 > {
@@ -186,7 +186,6 @@ Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/li
 >     else
 >     {
 >         outputText.Append(item.Name + "\n");
->
 >     }
 > }
 > ```

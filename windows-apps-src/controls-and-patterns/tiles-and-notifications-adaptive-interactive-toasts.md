@@ -6,7 +6,7 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,15 +16,12 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
+Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.
 
-The adaptive and interactive toast notifications model has these updates over the legacy toast template catalog:
+> **Important APIs**: [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
--   The option to include buttons and inputs on the notifications.
--   Three different activation types for the main toast notification and for each action.
--   The option to create a notification for certain scenarios, including alarms, reminders, and incoming calls.
-
-**Note**   To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+> [!NOTE]
+> To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
 
 
 ## Getting started
@@ -34,558 +31,623 @@ The adaptive and interactive toast notifications model has these updates over th
 **Install Notifications Visualizer.** This free UWP app helps you design interactive toast notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. You can read [this blog post](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) for more information, and you can download Notifications Visualizer [here](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
 
+## Sending a toast notification
+
+To learn how to send a notification, see [Send local toast](tiles-and-notifications-send-local-toast.md). This documentation only covers creating the toast content.
+
+
 ## Toast notification structure
 
+Toast notifications are a combination of some data properties like Tag/Group (which let you identify the notification) and the *toast content*.
 
-Toast notifications are constructed using XML, which would typically contain these key elements:
+The core components of toast content are...
+* **launch**: This defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [Send local toast](tiles-and-notifications-send-local-toast.md).
+* **visual**: The visual portion of the toast, including the generic binding that contains text, images, and app logos.
+* **actions**: The interactive portion of the toast, including inputs and actions.
+* **audio**: Controls the audio played when the toast is shown to the user.
 
--   &lt;visual&gt; covers the content available for the users to visually see, including text and images
--   &lt;actions&gt; contains buttons/inputs the developer wants to add inside the notification
--   &lt;audio&gt; specifies the sound played when the notification pops
+The toast content is defined in raw XML, but you can use our [NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to get a C# (or C++) object model for constructing the toast content. This article documents everything that goes within the toast content.
 
-Here's a code example:
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Sample</text>
-      <text>This is a simple toast notification example</text>
-      <image placement="AppLogoOverride" src="oneAlarm.png" />
-    </binding>
-  </visual>
-  <actions>
-    <action content="check" arguments="check" imageUri="check.png" />
-    <action content="cancel" arguments="cancel" />
-  </actions>
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
-</toast>
-```
-
-```CSharp
+```csharp
 ToastContent content = new ToastContent()
 {
     Launch = "app-defined-string",
  
     Visual = new ToastVisual()
     {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Sample"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "This is a simple toast notification example"
-                }
-            },
- 
-            AppLogoOverride = new ToastGenericAppLogo()
-            {
-                Source = "oneAlarm.png"
-            }
-        }
+        BindingGeneric = new ToastBindingGeneric() { ... }
     },
  
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("check", "check")
-            {
-                ImageUri = "check.png"
-            },
+    Actions = new ToastActionsCustom() { ... },
  
-            new ToastButton("cancel", "cancel")
-            {
-                ImageUri = "cancel.png"
-            }
-        }
-    },
- 
-    Audio = new ToastAudio()
-    {
-        Src = new Uri("ms-winsoundevent:Notification.Reminder")
-    }
+    Audio = new ToastAudio() { ... }
 };
 ```
 
-Next we need to convert the toast into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. If you defined the toast in an XML file (here named "content.xml"), use this code:
+```xml
+<toast launch="app-defined-string">
 
-```CSharp
-string xmlText = File.ReadAllText("content.xml");
-XmlDocument xmlContent = new XmlDocument();
-xmlContent.LoadXml(xmlText);
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
+
+  <actions>
+    ...
+  </actions>
+
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
+
+</toast>
 ```
 
-Or, if you defined the toast template in C#, use this:
-
-```CSharp
-XmlDocument xmlContent = content.GetXml();
-```
-
-Regardless of how you create the XMLDocument, you can then use this code to create and send the toast:
-
-```CSharp
-ToastNotification notification = new ToastNotification(xmlContent);
-ToastNotificationManager.CreateToastNotifier().Show(notification);
-```
-
-To see a complete app that shows toast notifications in action, see the [Quickstart on Sending a local toast notifications](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10).
-
-Here is a visual representation of the structure:
+Here is a visual representation of the toast's content:
 
 ![toast notification structure](images/adaptivetoasts-structure.jpg)
 
-### Visual
 
-Inside the visual element, you must have exactly one binding element that contains the visual content of the toast.
+## Visual
 
-Tile notifications in Universal Windows Platform (UWP) apps support multiple templates that are based on different tile sizes. Toast notifications, however, have only one template name: **ToastGeneric**. Having just the one template name means:
+Each toast must specify a visual, where you must provide a generic toast binding, which can contain text, images, logos, and more. These elements will be rendered on various Windows devices, including desktop, phones, tablets, and Xbox.
 
--   You can change the toast content, such as adding another line of text, adding an inline image, or changing the thumbnail image from displaying the app icon to something else, and do any of these things without worrying about changing the entire template or creating an invalid payload due to a mismatch between the template name and the content.
--   You can use the same code to cons truct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
+For all attributes supported in the visual section and its child elements, [see the schema documentation](tiles-and-notifications-toast-schema.md#toastvisual).
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
-
-Your app's identity is conveyed via your app icon. However, if you use appLogoOverride, we will display your app name beneath your lines of text.
+Your app's identity on the toast notification is conveyed via your app icon. However, if you use the app logo override, we will display your app name beneath your lines of text.
 
 | Normal toast                                                                              | Toast with appLogoOverride                                                          |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | ![notification without appLogoOverride](images/adaptivetoasts-withoutapplogooverride.jpg) | ![notification with appLogoOverride](images/adaptivetoasts-withapplogooverride.jpg) |
 
-### Actions
 
-In UWP apps, you can add buttons and other inputs to your toast notifications, which lets users do more outside of the app. These actions are specified under the &lt;actions&gt; element, of which there are two types that you can specify:
+## Text elements
 
--   &lt;action&gt; This appears as a button on desktop and mobile devices. You can specify up to five custom or system actions inside a toast notification.
--   &lt;input&gt; This allows users to provide input, such as quick replying to a message, or selecting an option from a drop-down menu.
+Each toast must have at least one text element, and can contain two additional text elements, all of type [AdaptiveText](tiles-and-notifications-toast-schema.md#adaptivetext).
 
-Both &lt;action&gt; and &lt;input&gt; are adaptive within the Windows family of devices. For example, on mobile or desktop devices, an &lt;action&gt; to a user is a button on which to tap/click. A text &lt;input&gt; is a box in which users can input text using either a physical keyboard or an on-screen keyboard. These elements will also adapt to future interaction scenarios, such as an action announced by voice or a text input taken by dictation.
+![Toast with title and description](images/toast-title-and-description.jpg)
 
-When an action is taken by the user, you can do one of the following by specifying the [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) attribute inside the &lt;action&gt; element:
+Since the Anniversary Update, you can control how many lines of text are displayed by using the **HintMaxLines** property on the text. By default, the title displays up to 2 lines of text, and the description lines each display up to 4 lines of text.
 
--   Activating the app in the foreground, with an action-specific argument that can be used to navigate to a specific page/context.
--   Activating the app's background task without affecting the user.
--   Activating another app via protocol launch.
--   Specify a system action to perform. The current available system actions are snoozing and dismissing scheduled alarm/reminder, which will be further explained in a section below.
+```csharp
+new ToastBindingGeneric()
+{
+    Children =
+    {
+        new AdaptiveText()
+        {
+            Text = "Adaptive Tiles Meeting",
+            HintMaxLines = 1
+        },
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+        new AdaptiveText()
+        {
+            Text = "Conf Room 2001 / Building 135"
+        },
 
-### Audio
-
-Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or newer. Custom audio can be referenced via the following paths:
-
--   ms-appx:///
--   ms-appdata:///
-
-Alternatively, you can pick from the [list of ms-winsoundevents](https://msdn.microsoft.com/library/windows/apps/br230842), which have always been supported on both platforms.
-
-See the [audio schema page](https://msdn.microsoft.com/library/windows/apps/br230842) for information on audio in toast notifications. To learn how to send a toast using custom audio, [see this blog post](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/06/18/quickstart-sending-a-toast-notification-with-custom-audio/).
-
-## Alarms, reminders, and incoming calls
-
-
-You can use toast notifications for alarms, reminders, and incoming calls. These special toasts have an appearance that's consistent with standard toasts, though special toasts feature some custom, scenario-based UI and patterns:
-
--   A reminder toast notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the reminder toast notifications will also show up pre-expanded.
--   In addition to sharing the above behaviors with reminder notifications, alarm notifications also automatically play looping audio.
--   Incoming call notifications are displayed full screen on Windows Mobile devices. This is done by specifying the scenario attribute inside the root element of a toast notification – &lt;toast&gt;:
-    &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
-
-## XML examples
-
-
-**Note**  The toast notification screenshots for these examples were taken from an app on desktop. On mobile devices, a toast notification may be collapsed when it pops up, with a grabber at the bottom of the toast to expand it.
-
- 
-
-**Notification with rich visual contents**
-
-This example shows how you can have multiple lines of text, an optional small image to override the application logo, and an optional inline image thumbnail.
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Photo Share</text>
-      <text>Andrew sent you a picture</text>
-      <text>See it in full size!</text>
-      <image src="https://unsplash.it/360/180?image=1043" />
-      <image placement="appLogoOverride" src="https://unsplash.it/64?image=883" hint-crop="circle" />
-    </binding>
-  </visual>
-</toast>
+        new AdaptiveText()
+        {
+            Text = "10:00 AM - 10:30 AM"
+        }
+    }
+}
 ```
 
-```CSharp
-ToastContent content = new ToastContent()
+```xml
+<binding template="ToastGeneric">
+    <text hint-maxLines="1">Adaptive Tiles Meeting</text>
+    <text>Conf Room 2001 / Building 135</text>
+    <text>10:00 AM - 10:30 AM</text>
+</binding>
+```
+
+
+## App logo override
+
+By default, your toast will display your app's logo. However, you can override this logo with your own [ToastGenericAppLogo](tiles-and-notifications-toast-schema.md#toastgenericapplogo) image. For example, if this is a notification from a person, we recommend overriding the app logo with a picture of that person.
+
+![Toast with app logo override](images/toast-applogooverride.jpg)
+
+You can use the **HintCrop** property to change the cropping of the image. For example, *circle* results in a circle-cropped image. Otherwise, the image is square. Image dimensions are 64x64 pixels at 100% scaling.
+
+```csharp
+new ToastBindingGeneric()
 {
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Photo Share"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "Andrew sent you a picture"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "See it in full size!"
-                },
- 
-                new AdaptiveImage()
-                {
-                    Source = "https://unsplash.it/360/180?image=1043"
-                }
-            },
- 
-            AppLogoOverride = new ToastGenericAppLogo()
-            {
-                Source = "https://unsplash.it/64?image=883",
-                HintCrop = ToastGenericAppLogoCrop.Circle
-            }
-        }
-    }
+    ...
+
+    AppLogoOverride = new ToastGenericAppLogo()
+    {
+        Source = "https://unsplash.it/64?image=883",
+        HintCrop = ToastGenericAppLogoCrop.Circle
+    }
+}
+```
+
+```xml
+<binding template="ToastGeneric">
+    ...
+    <image placement="appLogoOverride" hint-crop="circle" src="https://unsplash.it/64?image=883"/>
+</binding>
+```
+
+
+## Hero image
+
+**New in Anniversary Update**: Toasts can display a hero image, which is a featured [ToastGenericHeroImage](tiles-and-notifications-toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Action Center. Image dimensions are 360x180 pixels at 100% scaling.
+
+![Toast with hero image](images/toast-heroimage.jpg)
+
+```csharp
+new ToastBindingGeneric()
+{
+    ...
+
+    HeroImage = new ToastHeroImage()
+    {
+        Source = "https://unsplash.it/360/180?image=1043"
+    }
+}
+```
+
+```xml
+<binding template="ToastGeneric">
+    ...
+    <image placement="hero" src="https://unsplash.it/360/180?image=1043"/>
+</binding>
+```
+
+
+## Inline image
+
+You can provide a full-width inline-image that appears when you expand the toast.
+
+![Toast with additional image](images/toast-additionalimage.jpg)
+
+```csharp
+new ToastBindingGeneric()
+{
+    Children =
+    {
+        ...
+
+        new AdaptiveImage()
+        {
+            Source = "https://unsplash.it/360/180?image=1043"
+        }
+    }
+}
+```
+
+```xml
+<binding template="ToastGeneric">
+    ...
+    <image src="https://unsplash.it/360/180?image=1043" />
+</binding>
+```
+
+
+## Attribution text
+
+**New in Anniversary Update**: If you need to reference the source of your content, you can use attribution text. This text is always displayed at the bottom of your notification, along with your app's identity or the notification's timestamp.
+
+On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).
+
+![Toast with attribution text](images/toast-attributiontext.jpg)
+
+```csharp
+new ToastBindingGeneric()
+{
+    ...
+
+    Attribution = new ToastGenericAttributionText()
+    {
+        Text = "Via SMS"
+    }
+}
+```
+
+```xml
+<binding template="ToastGeneric">
+    ...
+    <text placement="attribution">Via SMS</text>
+</binding>
+```
+
+
+## Custom timestamp
+
+**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Action Center.
+
+![Toast with custom timestamp](images/toast-customtimestamp.jpg)
+
+To learn more about using a custom timestamp, please [see this blog post](https://blogs.msdn.microsoft.com/tiles_and_toasts/2017/01/09/custom-timestamp-on-toast-notifications-windows-10-creators-update/).
+
+```csharp
+ToastContent toastContent = new ToastContent()
+{
+    DisplayTimestamp = new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc),
+    ...
 };
 ```
 
-![notification with rich visual contents](images/adaptivetoasts-xmlsample01.jpg)
-
- 
-
-**Notification with actions**
-
-This example creates a notification with two possible response actions.
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Microsoft Company Store</text>
-      <text>New Halo game is back in stock!</text>
-    </binding>
-  </visual>
-  <actions>
-    <action activationType="foreground" content="See more details" arguments="details"/>
-    <action activationType="background" content="Remind me later" arguments="later"/>
-  </actions>
+```xml
+<toast displayTimestamp="2017-04-15T19:45:00Z">
+  ...
 </toast>
 ```
 
-```CSharp
-ToastContent content = new ToastContent()
+
+## Adaptive content
+
+**New in Anniversary Update**: In addition to the content specified above, you can also display additional adaptive content that is visible when the toast is expanded.
+
+This additional content is specified using Adaptive, which you can learn more about by reading the [Adaptive Tiles documentation](tiles-and-notifications-create-adaptive-tiles.md).
+
+Note that any adaptive content must be contained within an AdaptiveGroup. Otherwise it will not be rendered using adaptive.
+
+
+### Columns and text elements
+
+Here's an example where columns and some advanced adaptive text elements are used. Since the text elements are within an AdaptiveGroup, they support all the rich adaptive styling properties.
+
+![Toast with additional text](images/toast-additionaltext.jpg)
+
+```csharp
+new ToastBindingGeneric()
 {
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Microsoft Company Store"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "New Halo game is back in stock!"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("See more details", "details"),
- 
-            new ToastButton("Remind me later", "later")
-            {
-                ActivationType = ToastActivationType.Background
-            }
-        }
-    }
-};
+    Children =
+    {
+        ...
+
+        new AdaptiveGroup()
+        {
+            Children =
+            {
+                new AdaptiveSubgroup()
+                {
+                    Children =
+                    {
+                        new AdaptiveText()
+                        {
+                            Text = "52 attendees",
+                            HintStyle = AdaptiveTextStyle.Base
+                        },
+                        new AdaptiveText()
+                        {
+                            Text = "23 minute drive",
+                            HintStyle = AdaptiveTextStyle.CaptionSubtle
+                        }
+                    }
+                },
+                new AdaptiveSubgroup()
+                {
+                    Children =
+                    {
+                        new AdaptiveText()
+                        {
+                            Text = "1 Microsoft Way",
+                            HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                            HintAlign = AdaptiveTextAlign.Right
+                        },
+                        new AdaptiveText()
+                        {
+                            Text = "Bellevue, WA 98008",
+                            HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                            HintAlign = AdaptiveTextAlign.Right
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 ```
 
-![notification with actions, example 1](images/adaptivetoasts-xmlsample02.jpg)
-
-
-
-**Notification with text input and actions, example 1**
-
-This example creates a notification that accepts text input, along with two resonse actions.
-
-```XML
-<toast launch="developer-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Andrew B.</text>
-      <text>Shall we meet up at 8?</text>
-      <image placement="appLogoOverride" src="https://unsplash.it/64?image=883" hint-crop="circle" />
-    </binding>
-  </visual>
-  <actions>
-    <input id="message" type="text" placeHolderContent="Type a reply" />
-    <action activationType="background" content="Reply" arguments="reply" />
-    <action activationType="foreground" content="Video call" arguments="video" />
-  </actions>
-</toast>
+```xml
+<binding template="ToastGeneric">
+    ...
+    <group>
+        <subgroup>
+            <text hint-style="base">52 attendees</text>
+            <text hint-style="captionSubtle">23 minute drive</text>
+        </subgroup>
+        <subgroup>
+            <text hint-style="captionSubtle" hint-align="right">1 Microsoft Way</text>
+            <text hint-style="captionSubtle" hint-align="right">Bellevue, WA 98008</text>
+        </subgroup>
+    </group>
+</binding>
 ```
 
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Andrew B."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "Shall we meet up at 8?"
-                }
-            },
- 
-            AppLogoOverride = new ToastGenericAppLogo()
-            {
-                Source = "https://unsplash.it/64?image=883",
-                HintCrop = ToastGenericAppLogoCrop.Circle
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastTextBox("message")
-            {
-                PlaceholderContent = "Type a reply"
-            }
-        },
- 
-        Buttons =
-        {
-            new ToastButton("Reply", "reply")
-            {
-                ActivationType = ToastActivationType.Background
-            },
- 
-            new ToastButton("Video call", "video")
-            {
-                ActivationType = ToastActivationType.Foreground
-            }
-        }
-    }
-};
-```
 
-![notification with text and input actions](images/adaptivetoasts-xmlsample04.jpg)
+## Inputs and buttons
 
- 
+Inputs and buttons are specified within the Actions region of the toast region of the toast, meaning they are only visible when the toast is expanded.
 
-**Notification with text input and actions, example 2**
 
-This example creates a notification that accepts text input and a single action.
+### Quick reply text box
 
-```XML
-<toast launch="developer-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Andrew B.</text>
-      <text>Shall we meet up at 8?</text>
-      <image placement="appLogoOverride" src="https://unsplash.it/64?image=883" hint-crop="circle" />
-    </binding>
-  </visual>
-  <actions>
-    <input id="message" type="text" placeHolderContent="Type a reply" />
-    <action activationType="background" content="Reply" arguments="reply" hint-inputId="message" imageUri="Assets/Icons/send.png"/>
-  </actions>
-</toast>
-```
-
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Andrew B."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "Shall we meet up at 8?"
-                }
-            },
- 
-            AppLogoOverride = new ToastGenericAppLogo()
-            {
-                Source = "https://unsplash.it/64?image=883",
-                HintCrop = ToastGenericAppLogoCrop.Circle
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastTextBox("message")
-            {
-                PlaceholderContent = "Type a reply"
-            }
-        },
- 
-        Buttons =
-        {
-            new ToastButton("Reply", "reply")
-            {
-                TextBoxId = "message",
-                ImageUri = "Assets/Icons/send.png",
-                ActivationType = ToastActivationType.Background
-            }
-        }
-    }
-};
-```
+To enable a quick reply text box, like for a messaging scenario, add a text input and a button, and reference the text input's id so that the button is displayed adjacent to the input.
 
 ![notification with text input and actions](images/adaptivetoasts-xmlsample05.jpg)
 
- 
-
-**Notification with selection input and actions**
-
-This example creates a notification with a drop-down selection menu, and two possible actions.
-
-```XML
-<toast launch="developer-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Spicy Heaven</text>
-      <text>When do you plan to come in tomorrow?</text>
-    </binding>
-  </visual>
-  <actions>
-    <input id="time" type="selection" defaultInput="2" >
-      <selection id="1" content="Breakfast" />
-      <selection id="2" content="Lunch" />
-      <selection id="3" content="Dinner" />
-    </input>
-    <action activationType="background" content="Reserve" arguments="reserve" />
-    <action activationType="foreground" content="Call Restaurant" arguments="call" />
-  </actions>
-</toast>
-```
-
-```CSharp
+```csharp
 ToastContent content = new ToastContent()
 {
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Spicy Heaven"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "When do you plan to come in tomorrow?"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastSelectionBox("time")
-            {
-                DefaultSelectionBoxItemId = "2",
-                Items =
-                {
-                    new ToastSelectionBoxItem("1", "Breakfast"),
-                    new ToastSelectionBoxItem("2", "Lunch"),
-                    new ToastSelectionBoxItem("3", "Dinner")
-                }
-            }
-        },
- 
-        Buttons =
-        {
-            new ToastButton("Reserve", "reserve")
-            {
-                ActivationType = ToastActivationType.Background
-            },
- 
-            new ToastButton("Call Restaurant", "call")
-            {
-                ActivationType = ToastActivationType.Foreground
-            }
-        }
-    }
+    ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastTextBox("tbReply")
+            {
+                PlaceholderContent = "Type a reply"
+            }
+        },
+
+        Buttons =
+        {
+            new ToastButton("Reply", "action=reply&convId=9318")
+            {
+                ActivationType = ToastActivationType.Background,
+
+                // To place the button next to the text box,
+                // reference the text box's Id and provide an image
+                TextBoxId = "tbReply",
+                ImageUri = "Assets/Reply.png"
+            }
+        }
+    }
 };
 ```
 
+```xml
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+
+        <input id="textBox" type="text" placeholderContent="Type a reply"/>
+
+        <action
+            content="Send",
+            arguments="action=reply&amp;convId=9318"
+            activationType="background"
+            hint-inputId="textBox"
+            imageUri="Assets/Reply.png"/>
+
+    </actions>
+
+</toast>
+```
+
+
+### Inputs with buttons bar
+
+You also can have one (or many) inputs with normal buttons displayed below the inputs.
+
+![notification with text and input actions](images/adaptivetoasts-xmlsample04.jpg)
+
+```csharp
+ToastContent content = new ToastContent()
+{
+    ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastTextBox("tbReply")
+            {
+                PlaceholderContent = "Type a reply"
+            }
+        },
+
+        Buttons =
+        {
+            new ToastButton("Reply", "action=reply&threadId=9218")
+            {
+                ActivationType = ToastActivationType.Background
+            },
+
+            new ToastButton("Video call", "action=videocall&threadId=9218")
+            {
+                ActivationType = ToastActivationType.Foreground
+            }
+        }
+    }
+};
+```
+
+```xml
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+
+        <input id="textBox" type="text" placeholderContent="Type a reply"/>
+
+        <action
+            content="Reply",
+            arguments="action=reply&amp;threadId=9218"
+            activationType="background"/>
+
+        <action
+            content="Video call",
+            arguments="action=videocall&amp;threadId=9218"
+            activationType="foreground"/>
+
+    </actions>
+
+</toast>
+```
+
+
+### Selection input
+
+In addition to text boxes, you can also use a selection menu.
+
 ![notification with selection input and actions](images/adaptivetoasts-xmlsample06.jpg)
 
+```csharp
+ToastContent content = new ToastContent()
+{
+    ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastSelectionBox("time")
+            {
+                DefaultSelectionBoxItemId = "lunch",
+                Items =
+                {
+                    new ToastSelectionBoxItem("breakfast", "Breakfast"),
+                    new ToastSelectionBoxItem("lunch", "Lunch"),
+                    new ToastSelectionBoxItem("dinner", "Dinner")
+                }
+            }
+        },
+
+        Buttons = { ... }
+};
+```
+
+```xml
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+
+        <input id="time" type="selection" defaultInput="lunch">
+            <selection id="breakfast" content="Breakfast" />
+            <selection id="lunch" content="Lunch" />
+            <selection id="dinner" content="Dinner" />
+        </input>
+
+        ...
+
+    </actions>
+
+</toast>
+```
+
+
+## Buttons
+
+Buttons make your toast interactive, letting the user take quick actions on your toast notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app.
+
+Buttons can perform the following different actions...
+
+-   Activating the app in the foreground, with an argument that can be used to navigate to a specific page/context.
+-   Activating the app's background task, for a quick-reply or similar scenario.
+-   Activating another app via protocol launch.
+-   Performing a system action, like snoozing or dismissing the notification.
+
+Note that you can only have up to 5 buttons (including context menu items which we discuss later).
+
+![notification with actions, example 1](images/adaptivetoasts-xmlsample02.jpg)
+
+```csharp
+ToastContent content = new ToastContent()
+{
+    ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Buttons =
+        {
+            new ToastButton("See more details", "action=viewdetails&contentId=351")
+            {
+                ActivationType = ToastActivationType.Foreground
+            },
+
+            new ToastButton("Remind me later", "action=remindlater&contentId=351")
+            {
+                ActivationType = ToastActivationType.Background
+            }
+        }
+    }
+};
+```
+
+```xml
+<toast launch="app-defined-string">
+
+    ...
+
+    <actions>
+
+        <action
+            content="See more details",
+            arguments="action=viewdetails&amp;contentId=351"
+            activationType="foreground"/>
+
+        <action
+            content="Remind me later",
+            arguments="action=remindlater&amp;contentId=351"
+            activationType="background"/>
+
+    </actions>
+
+</toast>
+```
+
+
+### Snooze/dismiss buttons
+
+Using a selection menu and two buttons, we can create a reminder notification that utilizes the system snooze and dismiss actions. Make sure to set the scenario to Reminder for the notification to behave like a reminder.
+
+![reminder notification](images/adaptivetoasts-xmlsample07.jpg)
+
+We link the Snooze button to the selection menu input using the *SepectionBoxId* property on the toast button.
+
+```csharp
+ToastContent content = new ToastContent()
+{
+    Scenario = ToastScenario.Reminder,
+
+    ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        Inputs =
+        {
+            new ToastSelectionBox("snoozeTime")
+            {
+                DefaultSelectionBoxItemId = "15",
+                Items =
+                {
+                    new ToastSelectionBoxItem("5", "5 minutes"),
+                    new ToastSelectionBoxItem("15", "15 minutes"),
+                    new ToastSelectionBoxItem("60", "1 hour"),
+                    new ToastSelectionBoxItem("240", "4 hours"),
+                    new ToastSelectionBoxItem("1440", "1 day")
+                }
+            }
+        },
+
+        Buttons =
+        {
+            new ToastButtonSnooze()
+            {
+                SelectionBoxId = "snoozeTime"
+            },
  
+            new ToastButtonDismiss()
+        }
+    }
+};
+```
 
-**Reminder notification**
-
-Using a selection menu and two actions as in the previous example, we can create a reminder notification:
-
-```XML
+```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
    
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Adaptive Tiles Meeting</text>
-      <text>Conf Room 2001 / Building 135</text>
-      <text>10:00 AM - 10:30 AM</text>
-    </binding>
-  </visual>
+  ...
  
   <actions>
      
@@ -606,514 +668,86 @@ Using a selection menu and two actions as in the previous example, we can create
 </toast>
 ```
 
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "action=viewEvent&eventId=1983",
-    Scenario = ToastScenario.Reminder,
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Adaptive Tiles Meeting"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "Conf Room 2001 / Building 135"
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "10:00 AM - 10:30 AM"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastSelectionBox("snoozeTime")
-            {
-                DefaultSelectionBoxItemId = "15",
-                Items =
-                {
-                    new ToastSelectionBoxItem("5", "5 minutes"),
-                    new ToastSelectionBoxItem("15", "15 minutes"),
-                    new ToastSelectionBoxItem("60", "1 hour"),
-                    new ToastSelectionBoxItem("240", "4 hours"),
-                    new ToastSelectionBoxItem("1440", "1 day")
-                }
-            }
-        },
- 
-        Buttons =
-        {
-            new ToastButtonSnooze()
-            {
-                SelectionBoxId = "snoozeTime"
-            },
- 
-            new ToastButtonDismiss()
-        }
-    }
-};
-```
-
-![reminder notification](images/adaptivetoasts-xmlsample07.jpg)
-
- 
-
-## Handling activation (foreground and background)
-
-To learn how to handle toast activations (the user clicking on your toast or buttons on the toast), see [Quicstart: Sending a local toast notification and handling activation](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/).
-
-
-## Schemas: &lt;visual&gt; and &lt;audio&gt;
-
-
-In the following XML schemas, a "?" suffix means that an attribute is optional.
-
-```
-<toast launch? duration? activationType? scenario? >
-  <visual lang? baseUri? addImageQuery? >
-    <binding template? lang? baseUri? addImageQuery? >
-      <text lang? hint-maxLines? >content</text>
-      <image src placement? alt? addImageQuery? hint-crop? />
-      <group>
-        <subgroup hint-weight? hint-textStacking? >
-          <text />
-          <image />
-        </subgroup>
-      </group>
-    </binding>
-  </visual>
-  <audio src? loop? silent? />
-</toast>
-```
-
-```
-ToastContent content = new ToastContent()
-{
-    Launch = ?,
-    Duration = ?,
-    ActivationType = ?,
-    Scenario = ?,
- 
-    Visual = new ToastVisual()
-    {
-        Language = ?,
-        BaseUri = ?,
-        AddImageQuery = ?,
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = ?,
-                    Language = ?,
-                    HintMaxLines = ?
-                },
- 
-                new AdaptiveGroup()
-                {
-                    Children =
-                    {
-                        new AdaptiveSubgroup()
-                        {
-                            HintWeight = ?,
-                            HintTextStacking = ?,
-                            Children =
-                            {
-                                new AdaptiveText(),
-                                new AdaptiveImage()
-                            }
-                        }
-                    }
-                },
- 
-                new AdaptiveImage()
-                {
-                    Source = ?,
-                    AddImageQuery = ?,
-                    AlternateText = ?,
-                    HintCrop = ?
-                }
-            }
-        }
-    },
- 
-    Audio = new ToastAudio()
-    {
-        Src = ?,
-        Loop = ?,
-        Silent = ?
-    }
-};
-```
-
-**Attributes in &lt;toast&gt;**
-
-launch?
-
--   launch? = string
--   This is an optional attribute.
--   A string that is passed to the application when it is activated by the toast.
--   Depending on the value of activationType, this value can be received by the app in the foreground, inside the background task, or by another app that's protocol launched from the original app.
--   The format and contents of this string are defined by the app for its own use.
--   When the user taps or clicks the toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the toast content, rather than launching in its default way.
--   If the activation is happened because user clicked on an action, instead of the body of the toast, the developer retrieves back the "arguments" pre-defined in that &lt;action&gt; tag, instead of "launch" pre-defined in the &lt;toast&gt; tag.
-
-duration?
-
--   duration? = "short|long"
--   This is an optional attribute. Default value is "short".
--   This is only here for specific scenarios and appCompat. You don't need this for the alarm scenario anymore.
--   We don't recommend using this property.
-
-activationType?
-
--   activationType? = "foreground | background | protocol | system"
--   This is an optional attribute.
--   The default value is "foreground".
-
-scenario?
-
--   scenario? = "default | alarm | reminder | incomingCall"
--   This is an optional attribute, default value is "default".
--   You do not need this unless your scenario is to pop an alarm, reminder, or incoming call.
--   Do not use this just for keeping your notification persistent on screen.
-
-**Attributes in &lt;visual&gt;**
-
-lang?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-baseUri?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-addImageQuery?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-**Attributes in &lt;binding&gt;**
-
-template?
-
--   \[Important\] template? = "ToastGeneric"
--   If you are using any of the new adaptive and interactive notification features, please make sure you start using "ToastGeneric" template instead of the legacy template.
--   Using the legacy templates with the new actions might work now, but that is not the intended use case, and we cannot guarantee that will continue working.
-
-lang?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-baseUri?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-addImageQuery?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-**Attributes in &lt;text&gt;**
-
-lang?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
-
-**Attributes in &lt;image&gt;**
-
-src
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this required attribute.
-
-placement?
-
--   placement? = "inline" | "appLogoOverride"
--   This attribute is optional.
--   This specifies where this image will be displayed.
--   "inline" means inside the toast body, below the text; "appLogoOverride" means replace the application icon (that shows up on the top left corner of the toast).
--   You can have up to one image for each placement value.
-
-alt?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
-
-addImageQuery?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
-
-hint-crop?
-
--   hint-crop? = "none" | "circle"
--   This attribute is optional.
--   "none" is the default value which means no cropping.
--   "circle" crops the image to a circular shape. Use this for profile images of a contact, images of a person, and so on.
-
-**Attributes in &lt;audio&gt;**
-
-src?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
-
-loop?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
-
-silent?
-
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
-
-## Schemas: &lt;action&gt;
-
-
-In the following XML schemas, a "?" suffix means that an attribute is optional.
-
-```
-<toast>
-  <visual>
-  </visual>
-  <audio />
-  <actions>
-    <input id type title? placeHolderContent? defaultInput? >
-      <selection id content />
-    </input>
-    <action content arguments activationType? imageUri? hint-inputId />
-  </actions>
-</toast>
-```
-
-```
-ToastContent content = new ToastContent()
-{
-    Visual = ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastSelectionBox("id")
-            {
-                Title = ?
-                DefaultSelectionBoxItemId = ?,
-                Items =
-                {
-                    new ToastSelectionBoxItem("id", "content")
-                }
-            },
- 
-            new ToastTextBox("id")
-            {
-                Title = ?,
-                PlaceholderContent = ?,
-                DefaultInput = ?
-            }
-        },
- 
-        Buttons =
-        {
-            new ToastButton("content", "args")
-            {
-                ActivationType = ?,
-                ImageUri = ?,
-                TextBoxId = ?
-            },
- 
-            new ToastButtonSnooze("content")
-            {
-                SelectionBoxId = "snoozeTime"
-            },
- 
-            new ToastButtonDismiss("content")
-        }
-    }
-};
-```
-
-**Attributes in &lt;input&gt;**
-
-id
-
--   id = string
--   This attribute is required.
--   The id attribute is required and is used by developers to retrieve user inputs once the app is activated (in the foreground or background).
-
-type
-
--   type = "text | selection"
--   This attribute is required.
--   It is used to specify a text input or input from a list of pre-defined selections.
--   On mobile and desktop, this is to specify whether you want a textbox input or a listbox input.
-
-title?
-
--   title? = string
--   The title attribute is optional and is for developers to specify a title for the input for shells to render when there is affordance.
--   For mobile and desktop, this title will be displayed above the input.
-
-placeHolderContent?
-
--   placeHolderContent? = string
--   The placeHolderContent attribute is optional and is the grey-out hint text for text input type. This attribute is ignored when the input type is not "text".
-
-defaultInput?
-
--   defaultInput? = string
--   The defaultInput attribute is optional and is used to provide a default input value.
--   If the input type is "text", this will be treated as a string input.
--   If the input type is "selection", this is expected to be the id of one of the available selections inside this input's elements.
-
-**Attributes in &lt;selection&gt;**
-
-id
-
--   This attribute is required. It's used to identify user selections. The id is returned to your app.
-
-content
-
--   This attribute is required. It provides the string to display for this selection element.
-
-**Attributes in &lt;action&gt;**
-
-content
-
--   content = string
--   The content attribute is required. It provides the text string displayed on the button.
-
-arguments
-
--   arguments = string
--   The arguments attribute it required. It describes the app-defined data that the app can later retrieve once it is activated from user taking this action.
-
-activationType?
-
--   activationType? = "foreground | background | protocol | system"
--   The activationType attribute is optional and its default value is "foreground".
--   It describes the kind of activation this action will cause: foreground, background, or launching another app via protocol launch, or invoking a system action.
-
-imageUri?
-
--   imageUri? = string
--   imageUri is optional and is used to provide an image icon for this action to display inside the button alone with the text content.
-
-hint-inputId
-
--   hint-inputId = string
--   The hint-inpudId attribute is required. It's specifically used for the quick reply scenario.
--   The value needs to be the id of the input element desired to be associated with.
--   In mobile and desktop, this will put the button right next to the input box.
-
-## Attributes for system-handled actions
-
-
-The system can handle actions for snoozing and dismissing notifications if you don't want your app to handle the snoozing/rescheduling of notifications as a background task. System-handled actions can be combined (or individually specified), but we don't recommend implementing a snooze action without a dismiss action.
-
-System commands combo: SnoozeAndDismiss
-
-```
-<toast>
-  <visual>
-  </visual>
-  <actions hint-systemCommands="SnoozeAndDismiss" />
-</toast>
-```
-
-```
-ToastContent content = new ToastContent()
-{
-    Visual = ...
- 
-    Actions = new ToastActionsSnoozeAndDismiss()
-};
-```
-
-Individual system-handled actions
-
-```
-<toast>
-  <visual>
-  </visual>
-  <actions>
-  <input id="snoozeTime" type="selection" defaultInput="10">
-    <selection id="5" content="5 minutes" />
-    <selection id="10" content="10 minutes" />
-    <selection id="20" content="20 minutes" />
-    <selection id="30" content="30 minutes" />
-    <selection id="60" content="1 hour" />
-  </input>
-  <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content=""/>
-  <action activationType="system" arguments="dismiss" content=""/>
-  </actions>
-</toast>
-```
-
-```
-ToastContent content = new ToastContent()
-{
-    Visual = ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        Inputs =
-        {
-            new ToastSelectionBox("snoozeTime")
-            {
-                DefaultSelectionBoxItemId = "15",
-                Items =
-                {
-                    new ToastSelectionBoxItem("5", "5 minutes"),
-                    new ToastSelectionBoxItem("10", "10 minutes"),
-                    new ToastSelectionBoxItem("20", "20 minutes"),
-                    new ToastSelectionBoxItem("30", "30 minutes"),
-                    new ToastSelectionBoxItem("60", "1 hour")
-                }
-            }
-        },
- 
-        Buttons =
-        {
-            new ToastButtonSnooze()
-            {
-                SelectionBoxId = "snoozeTime"
-            },
- 
-            new ToastButtonDismiss()
-        }
-    }
-};
-```
-
-To construct individual snooze and dismiss actions, do the following:
-
--   Specify activationType = "system"
--   Specify arguments = "snooze" | "dismiss"
--   Specify content:
-    -   If you want localized strings of "snooze" and "dismiss" to be displayed on the actions, specify content to be an empty string: &lt;action content = ""/&gt;
-    -   If you want a customized string, just provide its value: &lt;action content="Remind me later" /&gt;
--   Specify input:
+To use the system snooze and dismiss actions, do the following:
+
+-   Specify a ToastButtonSnooze or ToastButtonDismiss
+-   Optionally specify a custom content string:
+    -   If you don't provide a string, we'll automatically use localized strings for "Snooze" and "Dismiss".
+-   Optionally specify the *SelectionBoxId*:
     -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
     -   If you want to provide snooze interval selections:
-        -   Specify hint-inputId in the snooze action
-        -   Match the id of the input with the hint-inputId of the snooze action: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   Specify selection id to be a nonNegativeInteger which represents snooze interval in minutes: &lt;selection id="240" /&gt; means snoozing for 4 hours
-        -   Make sure that the value of defaultInput in &lt;input&gt; matches with one of the ids of the &lt;selection&gt; children elements
-        -   Provide up to (but no more than) 5 &lt;selection&gt; values
+        -   Specify *SelectionBoxId* in the snooze action
+        -   Match the id of the input with the *SelectionBoxId* of the snooze action
+        -   Specify *ToastSelectionBoxItem*'s value to be a nonNegativeInteger which represents snooze interval in minutes.
 
- 
+
+
+## Audio
+
+Custom audio has always been supported by Mobile, and is supported in Desktop Version 1511 (build 10586) or newer. Custom audio can be referenced via the following paths:
+
+-   ms-appx:///
+-   ms-appdata:///
+
+Alternatively, you can pick from the [list of ms-winsoundevents](https://msdn.microsoft.com/library/windows/apps/br230842), which have always been supported on both platforms.
+
+```csharp
+ToastContent content = new ToastContent()
+{
+    ...
+
+    Audio = new ToastAudio()
+    {
+        Src = new Uri("ms-appx:///Assets/NewMessage.mp3")
+    }
+}
+```
+
+```xml
+<toast launch="app-defined-string">
+
+    ...
+
+    <audio src="ms-appx:///Assets/NewMessage.mp3"/>
+
+</toast>
+```
+
+See the [audio schema page](https://msdn.microsoft.com/library/windows/apps/br230842) for information on audio in toast notifications. To learn how to send a toast using custom audio, [see this blog post](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/06/18/quickstart-sending-a-toast-notification-with-custom-audio/).
+
+
+## Alarms, reminders, and incoming calls
+
+To create alarms, reminders, and incoming call notifications, you simply use a normal toast notification with a scenario value assigned to it. The scenario adusts a few behaviors to create a consistent and unified user experience.
+
+* **Reminder**: The notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the toast will also show pre-expanded. A reminder sound will be played.
+* **Alarm**: In addition to the reminder behaviors, alarms will additionally loop audio with a default alarm sound.
+* **IncomingCall**: Incoming call notifications are displayed full screen on Windows Mobile devices. Otherwise, they have the same behaviors as alarms except they use ringtone audio.
+
+```csharp
+ToastContent content = new ToastContent()
+{
+    Scenario = ToastScenario.Reminder,
+
+    ...
+}
+```
+
+```xml
+<toast scenario="reminder" launch="app-defined-string">
+
+    ...
+
+</toast>
+```
+
+
+## Handling activation
+To learn how to handle toast activations (the user clicking your toast or buttons on the toast), see [Send local toast](tiles-and-notifications-send-local-toast.md).
+
 
  
 ## Related topics
 
-* [Quickstart: Send a local toast and handle activation](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
+* [Send a local toast and handle activation](tiles-and-notifications-send-local-toast.md)
 * [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)

@@ -1,12 +1,12 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Globalization is the process of designing and developing your app to act appropriately for different global markets without any changes or customization.
 Search.SourceType: Video
 title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -76,6 +76,10 @@ Watch this video for a brief introduction on how to prepare your app for the wor
 <tr class="even">
 <td align="left"><p>[Put UI strings into resources](put-ui-strings-into-resources.md)</p></td>
 <td align="left"><p>Put string resources for your UI into resource files. You can then reference those strings from your code or markup.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Migrate legacy resources to the Windows 10 resource management platform](using-mrt-for-converted-desktop-apps-and-games.md)</p></td>
+<td align="left"><p>Move legacy Win32 resources to Windows 10 resource management platform with minimal code changes.</p></td>
 </tr>
 </tbody>
 </table>

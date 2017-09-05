@@ -187,6 +187,8 @@ In order to debug your background task, you must change the way Visual Studio ru
 ![put plugin in debug mode](images/device-portal/plugin-debug-mode.png)
 1.	Set a breakpoint in your RequestReceived handler function.
 ![break point at requestreceived handler](images/device-portal/plugin-requestreceived-breakpoint.png)
+    > [!NOTE]
+    > Make sure the build architecture matches the architecture of the target exactly.  If you are using a 64-bit PC, you must deploy using an AMD64 build.
 1.	Press F5 to deploy your app
 1.	Turn Device Portal off, then turn it back on so that it finds your app (only needed when you change your app manifest – the rest of the time you can simply re-deploy and skip this step). 
 1.	In your browser, access the provider's namespace, and the breakpoint should be hit.

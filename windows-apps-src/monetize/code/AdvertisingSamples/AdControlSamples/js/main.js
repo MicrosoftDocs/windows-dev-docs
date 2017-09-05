@@ -48,7 +48,7 @@
 		var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
         {
             applicationId: "3f83fe91-d6be-434d-a0ae-7351c5a997f1",
-            adUnitId: "10865270",
+            adUnitId: "test",
         });
 
 		myAdControl.isAutoRefreshEnabled = false;

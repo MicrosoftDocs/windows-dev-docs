@@ -5,7 +5,7 @@ title: Typography
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -36,7 +36,7 @@ We approach typography with an eye to simplicity and efficiency. We choose to us
 
 Line spacing should be calculated at 125% of the font size, rounding to the closest multiple of four when necessary. For example with 15px Segoe UI, 125% of 15px is 18.75px. We recommend rounding up and setting line height to 20px to stay on the 4px grid. This ensures a good reading experience and adequate space for diacritical marks. See the Type ramp section below for specific examples.
 
-When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type's line height.
+When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type’s line height.
 
 ![Shows how large type stacks on small type](images/line-height-stacking.png)
 
@@ -48,7 +48,7 @@ In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsof
          puts the baseline of the body text exactly 24px
          below the baseline of the header. 24px is the
          recommended line height for a 20px font size,
-         which is what's set in SubtitleTextBlockStyle.
+         which is what’s set in SubtitleTextBlockStyle.
          The bottom margin will be different for
          different font size pairings. -->
     <TextBlock
@@ -68,7 +68,7 @@ In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsof
   <div class="side-by-side-content-left">
 <h2>Kerning and tracking</h2>
 
-Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain it’s humanist integrity, the kerning and tracking settings must have specific values.
+Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain its humanist integrity, the kerning and tracking settings must have specific values.
 
 Kerning should be set to “metrics” and tracking should be set to “0”.
   </div>
@@ -148,7 +148,7 @@ Once the height of the text extends beyond the height of the icon, the first lin
 ![Shows several icon and text pairings](images/hanging-text-alignment.png)
 
 >[!NOTE]
->XAML's [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
+>XAML’s [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
 
 ## Clipping and ellipses
 
@@ -170,9 +170,11 @@ The type ramp establishes a crucial design relationship from headlines to body t
 >Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).
 
 
+<!--
 <div class="microsoft-internal-note">
 SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## Primary and secondary text
@@ -199,13 +201,13 @@ However, proper names change their meaning when capitalized in certain languages
 Green shows where all caps should be used. Red shows where it should not.
 -->
 
-## Do's and don'ts
+## Do’s and don’ts
 * Use Body for most text
 * Use Base for titles when space is constrained
 * Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content
-* Don't use Caption for long strings or any primary action
-* Don't use Header or Subheader if text needs to wrap
-* Don't combine Subtitle and SubtitleAlt on the same page
+* Don’t use Caption for long strings or any primary action
+* Don’t use Header or Subheader if text needs to wrap
+* Don’t combine Subtitle and SubtitleAlt on the same page
 
 
 ## Related articles

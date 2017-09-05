@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: Performance
 description: Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

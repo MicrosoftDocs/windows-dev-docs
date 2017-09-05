@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,9 +17,10 @@ The **Age ratings** page of the [app submission process](app-submissions.md) let
 
 ## Answering the age ratings questionnaire
 
-The first time you submit an app (or the first time you update an app that was published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
+The first time you submit an app (or the first time you update an app published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
 
-> **Important**  If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Windows Store.
+> [!IMPORTANT]
+> If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Windows Store.
 
 You are required to answer the questions accurately. As part of this process, we share your publisher display name and email address with IARC. After you complete the questionnaire, the IARC rating system will provide age and content rating information based on your responses. We’ll use this rating information when displaying your app to customers in different markets. You will also receive an email from IARC with a confirmation of the app’s rating when your app has been published.
 
@@ -29,16 +30,20 @@ When you have completed answering the questions, click **Save and generate**. Yo
 
 The next time you update your app, you’ll see all of the app’s assigned ratings on this page. You can also click **Edit** to retake the questionnaire if the content of your app has changed in a way that requires you to adjust any of your answers. IARC may also update the questions from time to time. If this happens, you may be prompted to complete the questionnaire again when you submit an update.
 
-> **Note**  South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256). If your app is a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
+<span id="boards" />
 
+> [!NOTE]
+> South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256). If your app is a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
+
+<span id="appeal" />
 ## Appealing ratings or refused classifications
 
 If you have questions about the age rating your app received, or wish to appeal it, you can contact IARC via the link that appears in the rating certificate email that you will receive after your app has been published.
 
 In some cases, the rating for your app may cause it to be classified as inappropriate for a particular country or region. If this occurs, you will see a message indicating the market(s) to which your app can’t be offered. If you disagree with this classification (or any other for that matter), you can request an appeal using the link that appears in the rating certificate email that you will receive from IARC.
 
-## Previous Windows Store age ratings
 
+## Previous Windows Store age ratings
 
 Previously, developers specified the age rating for their app rather than completing the questionnaire. Below, find the previous Windows Store age ratings breakdown:
 

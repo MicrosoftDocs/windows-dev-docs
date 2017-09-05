@@ -4,7 +4,7 @@ ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows Desktop Bridge app tests
 description: TBD
 ms.author: pafarley
-ms.date: 03/20/2017
+ms.date: 06/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,7 @@ There is a new concept of optional tests for Windows Desktop Bridge apps which a
 
 ### 1. Digitally signed file test 
 **Background**  
-This test verifies that all portable executable (PE) files contain a valid signature. The presence of digitally signed files allows users to know thatthe software is genuine.
+This test verifies that all portable executable (PE) files contain a valid signature. The presence of digitally signed files allows users to know that the software is genuine.
 
 **Test details**  
 The test scans all of the portable executable files in the package and checks their headers for a signature. All the PE files are recommended to be digitally signed. A warning will be generated if any of the PE files is not signed.
@@ -53,6 +53,32 @@ Test the app to make sure it is not a debug build and is not linked to any debug
 * Build the app as a release build before you submit it to the Windows Store.
 * Make sure that you have the correct version of .NET framework installed.
 * Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
+
+### 4. Package sanity test
+#### 4.1 Archive files usage
+
+**Background**  
+This test helps you build better Desktop Bridge Apps to run on [Windows 10 S](https://www.microsoft.com/windows/windows-10-s) machines.
+
+**Test details**  
+This test checks for all executable files inside of archived files or self-extracting content. As executable files contained within this type of content are not signed during onboarding to Windows store, the app might not run as expected on Windows 10 S systems.
+ 
+**Corrective actions**
+* Consider evaluating the files flagged by the test to determine if there is impact to your app running in a Windows 10 S environment.
+* If your app would be affected, remove the executable files from the archived files and do not use self-extracting archives to place executable files on disk. This should prevent the loss of app functionality.
+
+#### 4.2 Blocked executables
+
+**Background**  
+This test helps you build better Desktop Bridge Apps to run on [Windows 10 S](https://www.microsoft.com/windows/windows-10-s) machines. 
+
+**Test details**  
+This test checks whether the app is attempting to launch executable files, which is restricted on Windows 10 S systems. Apps that rely on this capability may not run as expected on Windows 10 S systems. 
+
+**Corrective actions**  
+* Identify which of the flagged entries from the test represent a call to launch an executable file that is not part of your app, and remove those calls. 
+* If the flagged file(s) is part of your application, you may ignore the warning.
+
 
 ## Current required tests
 
@@ -178,10 +204,10 @@ Follow these guidelines to ensure that your app package only contains files supp
 Checks the app for the use of any non-compliant APIs. 
 
 **Background**  
-Desktop Bridge apps can leverage some legacy Win32 APIs along with modern APIs. This test identifies managed binaries which use unsupported APIs.
+Desktop Bridge apps can leverage some legacy Win32 APIs along with modern APIs (UWP components). This test identifies managed binaries that use unsupported APIs.
  
 **Test details**  
-This test checks all modern binaries in the app:
+This test checks all the UWP components in the app:
 * Verifies that each managed binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
 * Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile. 
 

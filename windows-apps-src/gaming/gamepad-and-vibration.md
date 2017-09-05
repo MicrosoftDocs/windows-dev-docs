@@ -186,7 +186,7 @@ auto oppositeSquared = leftStickY * leftStickY;
 auto adjacentSquared = leftStickX * leftStickX;
 
 // accept and process input if true; otherwise, reject and ignore it.
-if((oppositeSquared + adjacentSquared) < deadzoneSquared)
+if((oppositeSquared + adjacentSquared) > deadzoneSquared)
 {
     // input accepted, process it
 }

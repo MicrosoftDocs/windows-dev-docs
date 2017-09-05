@@ -1,11 +1,10 @@
 ---
-author: mtoepke
+author: joannaleecy
 title: Extend the game sample
 description: Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game.
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
-keywords:
-- DirectX, XAML
-ms.author: mtoepke
+keywords: DirectX, XAML
+ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -190,7 +189,7 @@ To attach the configured swap chain to the [**SwapChainBackgroundPanel**](https:
             );
 ```
 
-For more info about this process, see [DirectX and XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871).
+For more info about this process, see [DirectX and XAML interop](directx-and-xaml-interop.md).
 
 ## Complete code for the XAML game sample XAML codebehinds
 
@@ -1510,7 +1509,7 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 //----------------------------------------------------------------------
 ```
 
-To download a version of the sample game that uses XAML for the overlay, go to the [Direct3D shooting game sample (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418).
+To download a version of the sample game that uses XAML for the overlay, go to the [Direct3D shooting game sample (XAML)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameXaml).
 
  
 

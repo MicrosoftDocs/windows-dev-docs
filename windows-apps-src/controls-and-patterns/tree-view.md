@@ -8,10 +8,6 @@ template: detail.hbs
 # Hierarchical layout with TreeView
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<div class="microsoft-internal-note">
-Redlines for the TreeView are in Design Depot : http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
-</div>
-
 A TreeView is a hierarchical list pattern with expanding and collapsing nodes that contain nested items. Nested items can be additional nodes or regular list items. You can use a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) to build a tree view to illustrate a folder structure or nested relationships in your UI.
 
 The [TreeView sample](http://go.microsoft.com/fwlink/?LinkId=785018) is a reference implementation built using **ListView**. It is not a standalone control. The TreeView seen in the Favorites Pane in the Microsoft Edge browser uses this reference implementation.

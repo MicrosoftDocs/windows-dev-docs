@@ -66,39 +66,37 @@ In this example, the [**LauncherOptions**](https://msdn.microsoft.com/library/wi
 
 ## Display known locations
 
-There are several ways to control the map center point and the zoom level. Using *cp* (center point) and *lvl* (zoom level) parameters are the most straightforward methods and they produce predictable results. Using *bb* parameter (specifies an area bounded by latitude and longitude values) is less predictable because it takes into account the screen resolution and determines the map center point and zoom level based on the coordinates provided. The *bb* parameter is ignored when all three parameters (*bb*, *cp*, and *lvl*) are present.
+There are many options to control which part of the map to show. You can use the *cp* (center point) parameter with either the *rad* (radius) or the *lvl* (zoom level) parameters to show a location and choose how close to zoom in to it. When you use the *cp* parameter, you can also specify a *hdg* (heading) and *pit* (pitch) to control what direction to look. Another method is to use the *bb* (bounding box) parameter to provide the maximum south, east, north, and west coordinates of the area you want to show.
 
-To control the type of view, use the *ss* (Streetside) and *sty* (style) and parameters. The *ss* parameter puts the map into a Streetside view. The *sty* parameter lets you switch between road, aerial, and 3D views. When using the 3D style, the *hdg*, *pit*, and *rad* parameters can be used to specify the 3D view. *hdg* specifies the heading of the view, *pit* specifies the pitch of the view, and *rad* specifies the distance from the center point to show in view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
+To control the type of view, use the *sty* (style) and *ss* (Streetside) parameters. The *sty* parameter lets you switch between road and aerial views. The *ss* parameter puts the map into a Streetside view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
 
-| Sample URI                                                                 | Results                                                                                                                                                                                                   |
-|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | Opens the Maps app.                                                                                                                                                                                       |
-| bingmaps:?cp=40.726966~-74.006076                                          | Displays a map centered over New York City.                                                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Displays a map centered over New York City with a zoom level of 10.                                                                                                                                       |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Displays a map of New York City with the size of the screen as the bounding box.                                                                                                                          |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Displays a map of New York City, which is the area specified in the bounding box argument. The center point for Seattle specified in the **cp** argument is ignored.                                      |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122&lvl=8                  | Displays a map of New York, which is the area specified in the **bb** argument. The **cp** argument, which specifies Seattle, is ignored because **cp** and **lvl** are ignored when **bb** is specified. |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16.                                                                                                            |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas).                                                                                                                                          |
-| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Displays a map of NYC with traffic on and aerial map style.                                                                                                                                               |
-| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle.                                                                                                                                                                   |
-| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch or 75 degrees, and a heading of 165 degrees.                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle.                                                                                                                                                           |
+| Sample URI                                                                 | Results                                                                                                                                                                                        |
+|----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bingmaps:?                                                                 | Opens the Maps app.                                                                                                                                                                            |
+| bingmaps:?cp=40.726966~-74.006076                                          | Displays a map centered over New York City.                                                                                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Displays a map centered over New York City with a zoom level of 10.                                                                                                                            |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Displays a map of New York City, which is the area specified in the **bb** argument.                                                                                                           |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Displays a map of New York City, which is the area specified in the bounding box argument. The center point for Seattle specified in the **cp** argument is ignored because *bb* is specified. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16.                                                                                                 |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas).                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Displays a map of New York City with traffic on and aerial map style.                                                                                                                          |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle.                                                                                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch of 75 degrees, and a heading of 165 degrees.                                                                             |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle.                                                                                                                                                |
 
- 
+
 ## Display search results
 
-We recommend when doing a business search using the *q* parameter, make the terms specific as possible and use it in conjunction with either the *cp* or the *where* parameter to specify a location. If the user has not given the Maps app permission to use their location and you do not specify a location for a business search, the search may be performed at the country level and not return meaningful results. Search results are displayed in the most appropriate map view, so unless there is a need to set the *lvl* (zoom level), we recommend to allow the Maps app to decide. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
+When searching for places using the *q* parameter, we recommend making the terms as specific as possible and using the *cp*, *bb*, or *where* parameters to specify a search location. If you do not specify a search location and the user's current location isn't available, the search may not return meaningful results. Search results are displayed in the most appropriate map view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
 
-| Sample URI                                                    | Results                                                                                                                                         |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | Displays a map and searches for the address of the White House in Washington, D.C.                                                              |
-| bingmaps:?cp=40.726966~-74.006076&lvl=10&where=New%20York     | Searches for New York near the specified center point, displays the results on a map, and sets the zoom level to 10.                            |
-| bingmaps:?lvl=10&where=New%20York                             | Searches for New York and shows the result at zoom level 10.                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&lvl=14.5&q=pizza            | Searches for pizza near the specified center point (that is, in New York City), displays the results on a map, and sets the zoom level to 14.5. |
-| bingmaps:?q=coffee&where=Seattle                              | Searches for coffee in Seattle.                                                                                                                 |
+| Sample URI                                                    | Results                                                                            |
+|---------------------------------------------------------------|------------------------------------------------------------------------------------|
+| bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | Displays a map and searches for the address of the White House in Washington, D.C. |
+| bingmaps:?q=coffee&where=Seattle                              | Searches for coffee in Seattle.                                                    |
+| bingmaps:?cp=40.726966~-74.006076&where=New%20York            | Searches for New York near the specified center point.                             |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | Searches for pizza in the specified bounding box (that is, in New York City).      |
 
  
 ## Display multiple points
@@ -119,7 +117,7 @@ Use the *collection* parameter to show a custom set of points on the map. If the
 ## Display directions and traffic
 
 
-You can display directions between two points using the *rtp* parameter; those points can be either an address or latitude and longitude coordinates. Use the *trfc* parameter to show traffic information. To specify the type of directions: driving, walking, or transit, use the *mode* parameter. If *mode* isn't specified, directions will be provided using the user's mode of transportation preference. For more info about these parameters and others, see the [bingmaps: parameter reference](#bingmaps-param-reference).
+You can display directions between two points using the *rtp* parameter; those points can be either addresses or latitude and longitude coordinates. Use the *trfc* parameter to show traffic information. To specify the type of directions: driving, walking, or transit, use the *mode* parameter. If *mode* isn't specified, directions will be provided using the user's preferred mode of transportation. For more info about these parameters and others, see the [bingmaps: parameter reference](#bingmaps-param-reference).
 
 ![an example of directions](images/windowsmapgcdirections.png)
 
@@ -292,7 +290,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>ss=1</p></td>
 <td align="left"><p>Indicates that street-level imagery is shown when <code>ss=1</code>. Omitting the **ss** parameter produces the same result as <code>ss=0</code>. Use in conjunction with the **cp** parameter to specify the location of the street-level view.</p>
 <div class="alert">
-> **Note**  Street-level imagery is not available in all regions.
+**Note**  Street-level imagery is not available in all regions.
 </div>
 <div>
  
@@ -306,7 +304,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>trfc=1</p></td>
 <td align="left"><p>Specifies whether traffic information is included on the map. Omitting the trfc parameter produces the same results as <code>trfc=0</code>.</p>
 <div class="alert">
-> **Note**  Traffic data is not available in all regions.
+**Note**  Traffic data is not available in all regions.
 </div>
 <div>
  
@@ -375,9 +373,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 <p>Separate name and multiple points with tildes (**~**).</p>
 <p>If the item you specify contains a tilde, make sure the tilde is encoded as <code>%7E</code>. If not accompanied by Center point and Zoom Level parameters, the collection will provide the best map view.</p>
 
-<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p>
-
-<p>If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
+<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
 </tr>
 </tbody>
 </table>

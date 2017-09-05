@@ -4,7 +4,7 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: Use the Windows Store submission API to programmatically create and manage submissions for apps that are registered to your Windows Dev Center account.
 title: Create and manage submissions
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ keywords: windows 10, uwp, Windows Store submission API
 # Create and manage submissions
 
 
-Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons (also known as in-app products or IAPs) and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
 The following steps describe the end-to-end process of using the Windows Store submission API:
 
@@ -24,13 +24,11 @@ The following steps describe the end-to-end process of using the Windows Store s
 
 
 <span id="not_supported" />
->**Important notes**
+> [!Important]
+> If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
-> * This API can only be used for Windows Dev Center accounts that have been given permission to use the API. This permission is being enabled to developer accounts in stages, and not all accounts have this permission enabled at this time. To request earlier access, log on to the Dev Center dashboard, click **Feedback** at the bottom of the dashboard, select **Submission API** for the feedback area, and submit your request. You'll receive an email when this permission is enabled for your account.
-<br/><br/>
->* If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
-<br/><br/>
-> * This API cannot be used with apps or add-ons that use certain features that were introduced to the Dev Center dashboard in August 2016, including (but not limited to) mandatory app updates and Store-managed consumable add-ons. If you use the Windows Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.
+> [!NOTE]
+This API cannot be used with apps or add-ons that use certain features that were introduced to the Dev Center dashboard in August 2016, including (but not limited to) mandatory app updates and Store-managed consumable add-ons. If you use the Windows Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.
 
 
 <span id="prerequisites" />
@@ -38,7 +36,7 @@ The following steps describe the end-to-end process of using the Windows Store s
 
 Before you start writing code to call the Windows Store submission API, make sure that you have completed the following prerequisites.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) for no additional charge.
+* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) for no additional charge.
 
 * You must [associate an Azure AD application with your Windows Dev Center account](#associate-an-azure-ad-application-with-your-windows-dev-center-account) and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Windows Store submission API.
 
@@ -59,15 +57,16 @@ Before you start writing code to call the Windows Store submission API, make sur
 
 Before you can use the Windows Store submission API, you must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store submission API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
 
->**Note**&nbsp;&nbsp;You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
+> [!NOTE]
+> You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
 
-1.  In Dev Center, go to your **Account settings**, click **Manage users**, and associate your organization's Dev Center account with your organization's Azure AD directory. For detailed instructions, see [Manage account users](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+1.  In Dev Center, go to your **Account settings**, click **Manage users**, and [associate your organization's Dev Center account with your organization's Azure AD directory](../publish/associate-azure-ad-with-dev-center.md).
 
-2.  In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access submissions for your Dev Center account, and assign it the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+2.  In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access submissions for your Dev Center account, and assign it the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add Azure AD applications to your Dev Center account](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications).
 
 3.  Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
 
-4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see the information about managing keys in [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
 ## Step 2: Obtain an Azure AD access token
@@ -98,7 +97,8 @@ For examples that demonstrate how to obtain an access token by using C#, Java, o
 
 After you have an Azure AD access token, you can call methods in the Windows Store submission API. The API includes many methods that are grouped into scenarios for apps, add-ons, and package flights. To create or update submissions, you typically call multiple methods in the Windows Store submission API in a specific order. For information about each scenario and the syntax of each method, see the articles in the following table.
 
->**Note**&nbsp;&nbsp;After you obtain an access token, you have 60 minutes to call methods in the Windows Store submission API before the token expires.
+> [!NOTE]
+> After you obtain an access token, you have 60 minutes to call methods in the Windows Store submission API before the token expires.
 
 | Scenario       | Description                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -111,11 +111,15 @@ After you have an Azure AD access token, you can call methods in the Windows Sto
 
 The following articles provide detailed code examples that demonstrate how to use the Windows Store submission API in several different programming languages:
 
-* [C# code examples](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [Java code examples](java-code-examples-for-the-windows-store-submission-api.md)
-* [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)
+* [C# sample: submissions for apps, add-ons, and flights](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [C# sample: app submission with game options and trailers](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Java sample: submissions for apps, add-ons, and flights](java-code-examples-for-the-windows-store-submission-api.md)
+* [Java sample: app submission with game options and trailers](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python sample: submissions for apps, add-ons, and flights](python-code-examples-for-the-windows-store-submission-api.md)
+* [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
 
->**Note**&nbsp;&nbsp;In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+> [!NOTE]
+> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 ## Troubleshooting
 

@@ -7,11 +7,15 @@ isNew: true
 label: Date picker
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
 ---
 # Date picker
 
@@ -19,14 +23,7 @@ keywords: windows 10, uwp
 
 The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
-<li>[**Date property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) </li>
-
-</ul>
-</div>
+> **Important APIs**: [DatePicker class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx), [Date property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
 
 
 ## Is this the right control?

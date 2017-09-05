@@ -1,8 +1,8 @@
 ---
 author: mcleanbyron
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: Learn how to use the AdScheduler class to add advertisements to video content.
-title: Add advertisements to video content
+description: Learn how to use the AdScheduler class to show ads in video content.
+title: Show ads in video content
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,12 +11,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, video, scheduler, javascript
 ---
 
-# Add advertisements to video content
+# Show ads in video content
 
 
-This walkthrough shows how to use the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) class to add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
+This walkthrough shows how to use the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 
->**Note**&nbsp;&nbsp;This feature is currently supported only for UWP apps that was written using JavaScript with HTML.
+> [!NOTE]
+> This feature is currently supported only for UWP apps that are written using JavaScript with HTML.
 
 [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) works with both progressive and streaming media, and uses IAB standard Video Ad Serving Template (VAST) 2.0/3.0 and VMAP payload formats. By using standards, [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) is agnostic to the ad service with which it interacts.
 
@@ -24,7 +25,7 @@ Advertising for video content differs based upon whether the program is under te
 
 ## Prerequisites
 
-* Install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release.
 
 * Your project must use the [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview) control to serve the video content in which the ads will be scheduled. This control is available in the [TVHelpers](https://github.com/Microsoft/TVHelpers) collection of libraries available from Microsoft on GitHub.
 

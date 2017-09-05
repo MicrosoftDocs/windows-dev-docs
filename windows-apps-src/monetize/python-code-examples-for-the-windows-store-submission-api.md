@@ -2,20 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: Use the Python code examples in this section to learn more about using the Windows Store submission API.
-title: Python code examples for the submission API
+title: Python sample - submissions for apps, add-ons, and flights
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, code examples
+keywords: windows 10, uwp, Windows Store submission API, code examples, python
 ---
 
-# Python code examples for the submission API
+# Python sample: submissions for apps, add-ons, and flights
 
-This article provides Python code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
-
-These code examples demonstrate the following tasks:
+This article provides Python code examples that demonstrate how to use the [Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
 
 * [Obtain an Azure AD access token](#token)
 * [Create an add-on](#create-add-on)
@@ -34,7 +32,7 @@ The following example demonstrates how to [obtain an Azure AD access token](crea
 <span id="create-add-on" />
 ## Create an add-on
 
-The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on (add-ons are also known as in-app products or IAPs).
+The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: When you are finished creating your app's submission and click Submit to the Store, it enters the certification step.
 title: The app certification process
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,8 +13,7 @@ keywords: windows 10, uwp
 
 # The app certification process
 
-
-When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 16 hours for customers to see the app’s listing (or your updates to a previously published app) in the Store. You'll see a notification when your submission is published and available to customers, and the app's status in the dashboard will be **In the Store**.
+When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 24 hours for customers to see the app’s listing (or your updates to a previously published app) in the Store. You'll see a notification when your submission is published and available to customers, and the app's status in the dashboard will be **In the Store**.
 
 ## Preprocessing
 
@@ -38,11 +37,11 @@ When your app passes certification, it's ready to move to the to the **Publishin
 
 Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.
 
-While your app is in the publishing phase, the **Show details** link in the Status column for your app’s submission will let you know when your new packages and Store listing details become available to customers on each of your supported OS versions. Your app will remain in the publishing phase until the new packages and listing details are available to all of your app’s potential customers, which can take up to 16 hours. 
+While your app is in the publishing phase, the **Show details** link in the Status column for your app’s submission will let you know when your new packages and Store listing details become available to customers on each of your supported OS versions. Your app will remain in the publishing phase until the new packages and listing details are available to all of your app’s potential customers, which can take up to 24 hours. 
 
 ## In the Store 
 
-After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Windows Store for customers to download (unless you have chosen another [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option). 
+After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Windows Store for customers to download (unless you have chosen another [Visibility](set-app-pricing-and-availability.md#visibility) option). 
 
 **Note**  We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
 

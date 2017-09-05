@@ -4,7 +4,7 @@ ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: Use this method in the Windows Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
 title: Get an app
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,8 +12,6 @@ keywords: windows 10, uwp, Windows Store submission API, app
 ---
 
 # Get an app
-
-
 
 
 Use this method in the Windows Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
@@ -24,8 +22,6 @@ To use this method, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
 
 ## Request
 
@@ -88,7 +84,8 @@ The following example demonstrates the JSON response body for a successful call 
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 

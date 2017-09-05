@@ -89,7 +89,7 @@ The following example demonstrates several requests for getting app acquisition 
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=market eq 'US'; and gender eq 'm'  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=market eq 'US' and gender eq 'm'  HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -158,7 +158,6 @@ The following example demonstrates an example JSON response body for this reques
 
 * [Acquisitions report](../publish/acquisitions-report.md)
 * [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Get app acquisition funnel data](get-acquisition-funnel-data.md)
+* [Get app conversions by channel](get-app-conversions-by-channel.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)

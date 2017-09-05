@@ -4,7 +4,7 @@ title: Game development videos
 description: Collection of game development videos from conferences like GDC and //build.
 ms.assetid: 75643d92-293a-4d97-bc5f-2cb4217cb385
 ms.author: joanlee
-ms.date: 02/08/2017
+ms.date: 04/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,7 +23,6 @@ Here's a list of game development videos from major conferences like GDC and //b
 * [Game Mode and the Evolution of Cross-Platform UWP Game Development](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-004) - Eric Walston
 * [Xbox Live for All Game](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005) - Brian Tyler
 * [Meet the Converged Windows Store for Windows and Xbox](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-006) - Krupa Poobala-Chandran
-* [Extending Your Game’s Reach with Interactive Broadcasting on Beam](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-007) - Greg Smith
 * [Windows Holographic Rendering: One SDK to Target VR and AR Ecosystems](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-008) - Alex Pfaffe, Alex Turner
 * [Reaching More Gamers Through Xbox Accessibility Features on Xbox One and PC](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-009) - Evelyn Thomas
 

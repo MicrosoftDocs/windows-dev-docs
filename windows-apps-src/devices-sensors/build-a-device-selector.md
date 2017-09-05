@@ -1,9 +1,9 @@
 ---
-author: DBirtolo
+author: muhsinking
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: Build a device selector
 description: Building a device selector will enable you to limit the devices you are searching through when enumerating devices.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

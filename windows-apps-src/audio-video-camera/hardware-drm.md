@@ -1,9 +1,9 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your Universal Windows Platform (UWP) app.
 title: Hardware DRM
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -16,10 +16,11 @@ keywords: windows 10, uwp
 
 ![Build your app](images/build-your-app.png)
 
-Welcome to the UWP platform! These tutorials will help you create your first UWP app in the language of your choice. You'll learn how to:
+Welcome to the UWP ([what's UWP again?](whats-a-uwp.md)) platform! These tutorials will help you create your first UWP app in the language of your choice. You'll learn how to:
 
 -   Create UWP projects in Microsoft Visual Studio.
 -   Add UI elements and code to your project.
+-   Use Ink and the Dial in your apps.
 -   Use third party libraries to add new functionality.
 -   Build and debug your app on your local machine.
 
@@ -33,9 +34,9 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 If you want to learn the basics, or just refresh your memory, try reading these:
 
-* [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169?l=Lvld4EQIC_2706218949)
-* [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
-* [A Developer's Guide to Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+* [C# Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850801)
+* [VB Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850802)
+* [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
 * [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try this C# and MonoGame tutorial:
@@ -49,6 +50,7 @@ Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScrip
 * [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
 * [A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
 * [A 3D UWP game for the Windows Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
+* [A single-page web app with REST API](get-started-tutorial-fullstack-web-app.md)
 
 Need to brush up on your web skills?
 
@@ -66,6 +68,19 @@ Learn more about C++ here:
 
 * [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 * [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+
+## Using features unique to Windows 10
+
+What makes Windows 10 special? Among other things, Ink and the Surface Dial controller.
+
+* [Using ink in your UWP app](ink-walkthrough.md)
+* [Support the Surface Dial](radialcontroller-walkthrough.md)
+
+## Cutting Edge ideas
+
+Interested in exploring Virtual Reality?
+
+* [Adding WebVR to a Babylon.js game](adding-webvr-to-a-babylonjs-game.md)
 
 ## Objective-C
 

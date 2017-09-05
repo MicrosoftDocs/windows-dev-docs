@@ -6,11 +6,15 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
 ---
 # Calendar view
 
@@ -18,14 +22,7 @@ keywords: windows 10, uwp
 
 A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade. A user can select a single date or a range of dates. It doesn't have a picker surface and the calendar is always visible. 
 
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**CalendarView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**SelectedDatesChanged event**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
-</ul>
-</div>
+> **Important APIs**:  [CalendarView class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx), [SelectedDatesChanged event](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
 
 
 ## Is this the right control?
@@ -37,7 +34,7 @@ For more info about choosing the right control, see the [Date and time controls]
 
 ## Examples
 
-The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open. You can specify a startup view by setting the [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) property.
+The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open. You can specify a startup view by setting the [DisplayMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) property.
 
 ![The 3 views of a calendar view](images/calendar-view-3-views.png)
 
@@ -57,9 +54,9 @@ The resulting calendar view looks like this:
 
 ### Selecting dates
 
-By default, the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) property is set to **Single**. This lets a user pick a single date in the calendar. Set SelectionMode to **None** to disable date selection. 
+By default, the [SelectionMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) property is set to **Single**. This lets a user pick a single date in the calendar. Set SelectionMode to **None** to disable date selection. 
 
-Set SelectionMode to **Multiple** to let a user select multiple dates. You can select multiple dates programmatically by adding [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) objects to the [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) collection, as shown here:
+Set SelectionMode to **Multiple** to let a user select multiple dates. You can select multiple dates programmatically by adding [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) objects to the [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) collection, as shown here:
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -68,7 +65,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 A user can deselect a selected date by clicking or tapping it in the calendar grid.
 
-You can handle the [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) event to be notified when the [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) collection has changed.
+You can handle the [SelectedDatesChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) event to be notified when the [SelectedDates](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) collection has changed.
 
 > [!NOTE]
 > For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
@@ -77,9 +74,9 @@ You can handle the [**SelectedDatesChanged**](https://msdn.microsoft.com/library
 
 The calendar view is composed of both XAML elements defined in the ControlTemplate and visual elements rendered directly by the control. 
 - The XAML elements defined in the control template include the border that encloses the control, the header, previous and next buttons, and DayOfWeek elements. You can style and re-template these elements like any XAML control. 
-- The calendar grid is composed of [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) objects. You can’t style or re-template these elements, but various properties are provided to let you to customize their appearance.
+- The calendar grid is composed of [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) objects. You can’t style or re-template these elements, but various properties are provided to let you to customize their appearance.
 
-This diagram shows the elements that make up the month view of the calendar. For more info, see the Remarks on the [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) class.
+This diagram shows the elements that make up the month view of the calendar. For more info, see the Remarks on the [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) class.
 
 ![The elements of a calendar month view](images/calendar-view-month-elements.png)
 
@@ -97,9 +94,9 @@ Visual State Borders | [FocusBorderBrush](https://msdn.microsoft.com/library/win
 OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx), [OutOfScopeBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx), [OutOfScopeForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
 Today | [IsTodayHighlighted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx), [TodayFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx), [TodayForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
 
- By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the [**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx) property. The minimum number of weeks to show is 2; the maximum is 8.
+ By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the [NumberOfWeeksInView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx) property. The minimum number of weeks to show is 2; the maximum is 8.
 
-By default, the year and decade views show in a 4x4 grid. To change the number of rows or columns, call [**SetYearDecadeDisplayDimensions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) with the your desired number of rows and columns. This will change the grid for both the year and decade views.
+By default, the year and decade views show in a 4x4 grid. To change the number of rows or columns, call [SetYearDecadeDisplayDimensions](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) with the your desired number of rows and columns. This will change the grid for both the year and decade views.
 
 Here, the year and decade views are set to show in a 3x4 grid.
 
@@ -107,7 +104,7 @@ Here, the year and decade views are set to show in a 3x4 grid.
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-By default, the minimum date shown in the calendar view is 100 years prior to the current date, and the maximum date shown is 100 years past the current date. You can change the minimum and maximum dates that the calendar shows by setting the [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) and [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx) properties.
+By default, the minimum date shown in the calendar view is 100 years prior to the current date, and the maximum date shown is 100 years past the current date. You can change the minimum and maximum dates that the calendar shows by setting the [MinDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) and [MaxDate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx) properties.
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -116,11 +113,11 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ### Updating calendar day items
 
-Each day in the calendar is represented by a [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) object. To access an individual day item and use its properties and methods, handle the [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) event and use the Item property of the event args to access the CalendarViewDayItem.
+Each day in the calendar is represented by a [CalendarViewDayItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) object. To access an individual day item and use its properties and methods, handle the [CalendarViewDayItemChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) event and use the Item property of the event args to access the CalendarViewDayItem.
 
-You can make a day not selectable in the calendar view by setting its [**CalendarViewDayItem.IsBlackout**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) property to **true**. 
+You can make a day not selectable in the calendar view by setting its [CalendarViewDayItem.IsBlackout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) property to **true**. 
 
-You can show contextual information about the density of events in a day by calling the [**CalendarViewDayItem.SetDensityColors**](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) method. You can show from 0 to 10 density bars for each day, and set the color of each bar. 
+You can show contextual information about the density of events in a day by calling the [CalendarViewDayItem.SetDensityColors](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) method. You can show from 0 to 10 density bars for each day, and set the color of each bar. 
 
 Here are some day items in a calendar. Days 1 and 2 are blacked out. Days 2, 3, and 4 have various density bars set.
 

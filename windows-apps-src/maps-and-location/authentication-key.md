@@ -1,9 +1,9 @@
 ---
-author: msatranjr
+author: normesta
 title: Request a maps authentication key
 description: Your Universal Windows app must be authenticated before it can use the MapControl and map services in the Windows.Services.Maps namespace.
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -38,9 +38,9 @@ To create a new key
 
 4.  If you don't already have a Bing Maps account, create a new Bing Maps account. Enter the **Account Name**, **Contact Name**, **Company Name**, **Email Address**, and **Phone Number**. After accepting the terms of use, click **Create**.
 
-5.  Under the **My account** menu, click **Create or view keys**.
+5.  Under the **My account** menu, click **My Keys**.
 
-6.  Click on the link **to create a new key**.
+6.  If you have previously created a key, click on the link to create a new key. Otherwise proceed to the Create Key form.
 
 7.  Complete the **Create Key** form and then click **Create**.
 

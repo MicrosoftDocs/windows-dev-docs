@@ -1,10 +1,10 @@
 ---
-author: mtoepke
+author: joannaleecy
 title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: joanlee
+ms.date: 08/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ keywords: windows 10, uwp, games, game development
 
 Welcome to the Windows 10 game development guide!
 
-This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game.
+This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](http://download.microsoft.com/download/3/E/8/3E8F6376-D239-41A3-989C-DA1494C0024D/Windev_Game_Dev_Guide_May_2017.pdf) format.
 
 ## Introduction to game development for the Universal Windows Platform (UWP)
 
@@ -27,13 +27,15 @@ This guide provides an end-to-end collection of information and resources that w
 
 To get started, the [Game development resources](#game-development-resources) section provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game.
 
-This guide will be updated as additional Windows 10 game development resources and material become available.
+This guide will be updated as additional Windows 10 game development resources and material become available.  
 
 ## Game development resources
 
 From documentation to developer programs, forums, blogs, and samples, there are many resources available to help you on your game development journey. Here's a roundup of resources to know about as you begin developing your Windows 10 game.
 
-> **Note**   Xbox One development and select Windows 10 gaming features (Xbox Live Services, for example) are managed through various programs. This guide covers a broad range of resources, so you may find that some resources are inaccessible depending on the program you are in or your specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
+> [!Note]
+> Some features are managed through various programs. This guide covers a broad range of resources, so you may find that some resources are inaccessible depending on the program you are in or your specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
+
 
 ### Game development documentation
 
@@ -78,7 +80,7 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     </tr>
     <tr>
         <td>Xbox Live documentation</td>
-        <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
+        <td>[Xbox Live developer guide](../xbox-live/index.md)</td>
     </tr>
     <tr>
         <td>Xbox One developer documentation (GDN)</td>
@@ -87,16 +89,18 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     <tr>
         <td>Xbox One developer whitepapers (GDN)</td>
         <td>[White Papers](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
-    </tr>     
+    </tr>
+    <tr>
+        <td>Mixer Interactive documentation</td>
+        <td>[Add interactivity to your game](https://dev.mixer.com/reference/interactive/index.html)</td>
+    </tr>        
 </table>
 
-### Developer programs
+### Windows Dev Center
 
-Microsoft offers several developer programs to help you develop and publish Windows games. To publish a game in the Windows Store, you'll need to create a developer account on Windows Dev Center. Other programs may be of interest depending on your game and studio needs, and can create opportunities such as Xbox One development and Xbox Live integration.
+Registering a developer account on the Windows Dev Center is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Windows Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world. 
 
-#### Windows Dev Center
-
-Registering a developer account on the Windows Dev Center is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Windows Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world.
+Microsoft also offers several developer programs to help you develop and publish Windows games. We recommend seeing if any are right for you before registering for a Dev Center account. For more info, go to [Developer programs](#developer-programs)
 
 <table>
     <colgroup>
@@ -109,9 +113,13 @@ Registering a developer account on the Windows Dev Center is the first step towa
     </tr> 
 </table>
 
+### Developer programs
+
+Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Windows Store, you'll also need to create a developer account on Windows Dev Center. 
+
 #### ID@Xbox
 
-The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox. Become an ID@Xbox developer to get the tools and support you need to unleash your creativity and maximize your success. Before applying to ID@Xbox, please register a developer account on Windows Dev Center.
+The ID@Xbox program helps qualified game developers self-publish on Windows and Xbox One. If you want to develop for Xbox One, or add Xbox Live features like Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox. Become an ID@Xbox developer to get the tools and support you need to unleash your creativity and maximize your success. We recommend that you apply to ID@Xbox first before registering for a developer account on Windows Dev Center.
 
 <table>
     <colgroup>
@@ -130,9 +138,9 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
 
 #### Xbox Live Creators Program
 
-The Xbox Live Creators Program is currently in Preview. This program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. To start developing with the Xbox Live Creators Program, sign up for the Preview today. The sign-ups for the Preview program is currently limited but more spaces will be made available periodically.
+The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. To start developing with the Xbox Live Creators Program, sign up today.
 
-If you want access to even more Xbox Live capabilities, be featured in the main Xbox One store, or receive dedicated marketing and development support, you can apply to the [ID@Xbox](http://www.xbox.com/Developers/id) program.
+If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](http://www.xbox.com/Developers/id) program.
 
 <table>
     <colgroup>
@@ -140,7 +148,7 @@ If you want access to even more Xbox Live capabilities, be featured in the main 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Xbox Live Creators Program Preview</td>
+        <td>Xbox Live Creators Program</td>
         <td>[Integrate Xbox Live into your title](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
     </tr>
 </table>
@@ -251,6 +259,10 @@ Developer forums are a great place to ask and answer game development questions 
         <td>DirectX forums</td>
         <td>[DirectX 12 forum](http://forums.directxtech.com/index.php)</td>
     </tr>
+    <tr>
+        <td>Azure platform forums</td>
+        <td>[Azure forum](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform)</td>
+    </tr>
 </table>
 
 
@@ -296,8 +308,12 @@ Developer blogs are another great resource for the latest information about game
         <td>[Visual C++ team blog](http://blogs.msdn.com/b/vcblog/)</td>
     </tr>
     <tr>
-        <td>ID@Xbox developer blog</td>
-        <td>[ID@XBOX Developer Blog](http://www.idatxbox.com/category/developer-blog/)</td>
+        <td>PIX team blog</td>
+        <td>[Performance tuning and debugging for DirectX 12 games on Windows and Xbox](https://blogs.msdn.microsoft.com/pix/)</td>
+    </tr>
+    <tr>
+        <td>Universal Windows App Deployment team blog</td>
+        <td>[Build and deploy UWP apps team blog](https://blogs.msdn.microsoft.com/appinstaller/)</td>
     </tr>
 </table>
  
@@ -532,7 +548,7 @@ With the Universal Windows Platform, it’s easy to combine components written i
     </colgroup>
     <tr>
         <td>How to create Windows Runtime Components</td>
-        <td>[Creating Windows Runtime Components](https://msdn.microsoft.com/library/windows/apps/hh441572.aspx)</td>
+        <td>[Creating Windows Runtime Components](https://docs.microsoft.com/windows/uwp/winrt-components/creating-windows-runtime-components-in-cpp)</td>
     </tr>
 </table>
 
@@ -575,16 +591,8 @@ Depending on the needs of your game, using bridges, game engines, or middleware 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Bridges and game engines for Windows 10 (blog post)</td>
-        <td>[More ways to bring your code to fast-growing Windows 10 Store](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
-    </tr>
-    <tr>
         <td>Game Development with Middleware (video)</td>
         <td>[Accelerating Windows Store Game Development with Middleware](https://channel9.msdn.com/Events/Build/2013/3-187)</td>
-    </tr>
-    <tr>
-        <td>Visual Studio and Unity, Unreal, and Cocos2d (blog post)</td>
-        <td>[Visual Studio for Game Development: New Partnerships with Unity, Unreal Engine and Cocos2d](http://blogs.msdn.com/b/somasegar/archive/2015/04/17/visual-studio-for-game-development-new-partnerships-with-unity-unreal-engine-and-cocos2d.aspx)</td>
     </tr>
     <tr>
         <td>Introduction to game middleware (blog post)</td>
@@ -643,6 +651,18 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     <tr>
         <td>Unity documentation for Windows</td>
         <td>[Unity Manual / Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
+    </tr>
+    <tr>
+        <td>How to add interactivity to your game using Mixer Interactive</td>
+        <td>[Getting started guide](https://github.com/mixer/interactive-unity-plugin/wiki/Getting-started)</td>
+    </tr>
+    <tr>
+        <td>Mixer SDK for Unity</td>
+        <td>[Mixer Unity plugin](https://www.assetstore.unity3d.com/en/#!/content/88585)</td>
+    </tr>
+    <tr>
+        <td>Mixer SDK for Unity reference documentation</td>
+        <td>[API reference for Mixer Unity plugin](https://dev.mixer.com/reference/interactive/csharp/index.html)</td>
     </tr>
     <tr>
         <td>Publish your Unity game to Windows Store</td>
@@ -791,7 +811,7 @@ There are many other middleware and engine partners that can provide solutions d
         <td>[Dev Center Partners](https://developer.microsoft.com/windows/app-middleware-partners)</td>
     </tr>
 </table>
- 
+
 
 ### Porting your game
 
@@ -955,8 +975,12 @@ These are some links to help you move your Windows desktop game to UWP.
     <col width="50%" />
     </colgroup>
     <tr>
+        <td>Use existing C++ code for UWP game development</td>
+        <td>[How to: Use existing C++ code in a UWP app](https://docs.microsoft.com/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app)</td>
+    </tr>
+    <tr>
         <td>UWP APIs for Win32 and COM APIs</td>
-        <td>[Win32 and COM APIs for UWP apps](https://msdn.microsoft.com/library/windows/apps/mt592904.aspx)</td>
+        <td>[Win32 and COM APIs for UWP apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)</td>
     </tr>
     <tr>
         <td>Unsupported CRT functions in UWP</td>
@@ -1011,9 +1035,13 @@ Separately from UX design, gameplay design such as level design, pacing, world d
         <td>[UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)</td>
     </tr>
     <tr>
+        <td>Design your UWP app for Xbox One and television screens</td>
+        <td>[Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/input-and-devices/designing-for-tv)</td>
+    </tr>
+    <tr>
         <td>Targeting multiple device form factors (video)</td>
         <td>[Designing Games for a Windows Core World](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World)</td>
-    </tr>
+    </tr>   
 </table>
  
 
@@ -1063,7 +1091,41 @@ A UI map is a layout of game navigation and menus expressed as a flowchart. The 
         <td>[Best Practices: UI Map](http://go.microsoft.com/fwlink/?LinkId=535008)</td>
     </tr>
 </table>
- 
+
+### Game audio
+
+Guides and references for implementing audio in games using XAudio2, XAPO, and Windows Sonic. XAudio2 is a low-level audio API that provides signal processing and mixing foundation for developing high performance audio engines. XAPO API allows the creation of cross-platform audio processing objects (XAPO) for use in XAudio2 on both Windows and Xbox. Windows Sonic audio support allows you to add Dolby Atmos for Home Theater, Dolby Atmos for Headphones, and Windows HRTF support to your game or streaming media application.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>XAudio2 APIs</td>
+        <td>[Programming guide and API reference for XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049.aspx)</td>
+    </tr>
+    <tr>
+        <td>Create cross-platform audio processing objects</td>
+        <td>[XAPO Overview](https://msdn.microsoft.com/library/windows/desktop/ee415735.aspx)</td>
+    </tr>
+    <tr>
+        <td>Intro to audio concepts</td>
+        <td>[Audio for games](working-with-audio-in-your-directx-game.md)</td>
+    </tr>
+    <tr>
+        <td>Windows Sonic overview</td>
+        <td>[Spatial sound](https://msdn.microsoft.com/library/windows/desktop/mt807491.aspx)</td>
+    </tr>
+    <tr>
+        <td>Windows Sonic spatial sound samples</td>
+        <td>[Xbox Advanced Technology Group audio samples](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/Audio)</td>
+    </tr>
+    <tr>
+        <td>Learn how to integrate Windows Sonic into your games (video)</td>
+        <td>[Introducing Spatial Audio Capabilities for Xbox and Windows](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002)</td>
+    </tr>
+</table>
 
 ### DirectX development
 
@@ -1274,15 +1336,25 @@ An IAP (in-app product) is a supplementary item that players can purchase in-gam
     </tr>
 </table>
  
-### Debugging and performance monitoring tools
+### Debugging, performance optimization, and monitoring
 
-The Windows Performance Toolkit (WPT) consists of performance monitoring tools that produce in-depth performance profiles of Windows operating systems and applications. This is especially useful for monitoring memory usage and improving game performance. The Windows Performance Toolkit is included in the Windows 10 SDK and Windows ADK. This toolkit consists of two independent tools: Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA). Another useful tool for generating dump files to investigate game crashes is ProcDump, which is part of [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default).
+To optimize performance, take advantage of Game Mode in Windows 10 to provide your gamers with the best possible gaming experience by fully utilizing the capacity of their current hardware.
+
+The Windows Performance Toolkit (WPT) consists of performance monitoring tools that produce in-depth performance profiles of Windows operating systems and applications. This is especially useful for monitoring memory usage and improving game performance. The Windows Performance Toolkit is included in the Windows 10 SDK and Windows ADK. This toolkit consists of two independent tools: Windows Performance Recorder (WPR) and Windows Performance Analyzer (WPA). ProcDump, which is part of [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default), is a command-line utility that monitors CPU spikes and generates dump files during game crashes. 
 
 <table>
     <colgroup>
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>Performance test your code</td>
+        <td>[Cloud based load testing](https://www.visualstudio.com/team-services/cloud-load-testing/)</td>
+    </tr>
+    <tr>
+        <td>Improve performance by getting exclusive or priority access to hardware resources using Game Mode APIs</td>
+        <td>[Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)</td>
+    </tr>
     <tr>
         <td>Get Windows Performance Toolkit (WPT) from Windows 10 SDK</td>
         <td>[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
@@ -1318,6 +1390,14 @@ Some portions of DirectX development can be nuanced and complex. When you get to
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>PIX on Windows</td>
+        <td>[Performance tuning and debugging tool for DirectX 12 on Windows](https://blogs.msdn.microsoft.com/pix/2017/01/17/introducing-pix-on-windows-beta/)</td>
+    </tr>
+    <tr>
+        <td>Debugging and validation tools for D3D12 development (video)</td>
+        <td>[D3D12 Performance Tuning and Debugging with PIX and GPU Validation](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003)</td>
+    </tr>
     <tr>
         <td>Optimizing graphics and performance (video)</td>
         <td>[Advanced DirectX 12 Graphics and Performance](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)</td>
@@ -1363,7 +1443,7 @@ Develop world-ready games for the Windows platform and learn about the internati
 
 The following guides and information help make the publishing and submission process as smooth as possible.
 
-### Packaging and uploading
+### Publishing
 
 You'll use the new unified Windows Dev Center dashboard to publish and manage your game packages.
 
@@ -1379,14 +1459,43 @@ You'll use the new unified Windows Dev Center dashboard to publish and manage yo
     <tr>
         <td>Windows Dev Center advanced publishing (GDN)</td>
         <td>[Windows Dev Center Dashboard advanced publishing guide](https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx)</td>
-    </tr>    
+    </tr>
+    <tr>
+        <td>Use Azure Active Directory (AAD) to add users to your Dev Center account</td>
+        <td>[Manage account users](https://docs.microsoft.com/windows/uwp/publish/manage-account-users)</td>
+    </tr>   
     <tr>
         <td>Rating your game (blog post)</td>
         <td>[Single workflow to assign age ratings using IARC system](https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/)</td>
     </tr>
+</table>
+
+#### Packaging and uploading
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
     <tr>
-        <td>Packaging your game</td>
-        <td>[Package your UWPDirectX game](package-your-windows-store-directx-game.md)</td>
+        <td>Learn to use streaming install and optional packages (video)</td>
+        <td>[Nextgen UWP app distribution: Building extensible, stream-able, componentized apps](https://channel9.msdn.com/Events/Build/2017/B8093)</td>
+    </tr>
+    <tr>
+        <td>Divide and group content to enable streaming install</td>
+        <td>[UWP App Streaming install](../packaging/streaming-install.md)</td>
+    </tr>
+    <tr>
+        <td>Create optional packages like DLC game content</td>
+        <td>[Optional packages and related set authoring](../packaging/optional-packages.md)</td>
+    </tr>
+    <tr>
+        <td>Package your UWP game</td>
+        <td>[Packaging apps](../packaging/index.md)</td>
+    </tr>
+    <tr>
+        <td>Package your UWP DirectX game</td>
+        <td>[Package your UWP DirectX game](package-your-windows-store-directx-game.md)</td>
     </tr>
     <tr>
         <td>Packaging your game as a 3rd party developer (blog post)</td>
@@ -1394,18 +1503,18 @@ You'll use the new unified Windows Dev Center dashboard to publish and manage yo
     </tr>
     <tr>
         <td>Creating app packages and app package bundles using MakeAppx</td>
-        <td>[Create packages using app packager tool MakeAppx.exe](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+        <td>[Create packages using app packager tool MakeAppx.exe](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)</td>
     </tr>
     <tr>
         <td>Signing your files digitally using SignTool</td>
         <td>[Sign files and verify signatures in files using SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
-    </tr>      
+    </tr>    
     <tr>
         <td>Uploading and versioning your game</td>
         <td>[Upload app packages](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
     </tr>
 </table>
- 
+
 
 ### Policies and certification
 
@@ -1496,6 +1605,40 @@ Visual Studio Application Insights provides performance, telemetry, and usage an
         <td>[Application Insights for Windows Phone and Store apps](https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/)</td>
     </tr>
 </table>
+
+
+### Third party solutions for analytics and promotion
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Understand player behavior using GameAnalytics</td>
+        <td>[GameAnalytics](http://www.gameanalytics.com/)</td>
+    </tr>
+    <tr>
+        <td>Connect your UWP game to Google Analytics</td>
+        <td>[Get Windows SDK for Google Analytics](https://github.com/dotnet/windows-sdk-for-google-analytics)</td>
+    </tr>
+    <tr>
+        <td>Learn how to use Windows SDK for Google Analytics (video)</td>
+        <td>[Getting started with Windows SDK for Google Analytics](https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics)</td>
+    </tr>    
+    <tr>
+        <td>Use Facebook App Installs Ads to promote your game to Facebook users</td>
+        <td>[Get Windows SDK for Facebook](https://github.com/Microsoft/winsdkfb)</td>
+    </tr>
+    <tr>
+        <td>Learn how to use Facebook App Installs Ads (video)</td>
+        <td>[Getting started with Windows SDK for Facebook](https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-Facebook-App-Install-Ads)</td>
+    </tr>
+    <tr>
+        <td>Use Vungle to add video ads into your games</td>
+        <td>[Get Windows SDK for Vungle](https://v.vungle.com/sdk)</td>
+    </tr>
+</table>
  
 
 ### Creating and managing content updates
@@ -1520,7 +1663,7 @@ To update your published game, submit a new app package with a higher version nu
 
 ## Adding Xbox Live to your game
 
-> **Note**   Xbox Live development is managed through various programs. This guide covers a broad range of resources, and you may find that some resources are inaccessible depending on your program participation or specific development role. Examples are links that resolve to developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com, or the Game Developer Network (GDN). For information about partnering with Microsoft, see [Developer Programs](#developer-programs).
+> **Note**   If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](../xbox-live/developer-program-overview.md).
 
 <table>
     <colgroup>
@@ -1528,15 +1671,66 @@ To update your published game, submit a new app package with a higher version nu
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Download the latest Xbox Live SDK</td>
-        <td>[Xbox Live SDK](http://aka.ms/xsapi2)</td>
+        <td>Xbox Live overview</td>
+        <td>[Xbox Live developer guide](../xbox-live/index.md)</td>
     </tr>
     <tr>
-        <td>Adding Xbox Live to your Universal Windows Platform app</td>
-        <td>[How to - Add Xbox Live SDK to Universal Windows Platform (UWP) Apps](http://aka.ms/xsapi2uwp)</td>
+        <td>Understand which features are available depending on program</td>
+        <td>[Developer program overview: Feature table](../xbox-live/developer-program-overview.md#feature-table)</td>
     </tr>
     <tr>
-        <td>Requirements for games that use Xbox Live</td>
+        <td>Learn how to get info from Xbox Live services</td>
+        <td>[Introduction to Xbox Live APIs](../xbox-live/introduction-to-xbox-live-apis.md)</td>
+    </tr>
+</table>
+
+
+### For developers in the Xbox Live Creators Program
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Overview</td>
+        <td>[Get started with the Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)</td>
+    </tr>
+    <tr>
+        <td>Add Xbox Live to your game</td>
+        <td>[Step by step guide to integrate Xbox Live Creators program](../xbox-live/get-started-with-creators/creators-step-by-step-guide.md)</td>
+    </tr>
+    <tr>
+        <td>Add Xbox Live to your UWP game created using Unity</td>
+        <td>[Get started developing an Xbox Live Creators Program title with the Unity game engine](../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md)</td>
+    </tr>
+    <tr>
+        <td>Learn how to integrate cross-platform Xbox Live experiences in UWP games (video)</td>
+        <td>[Xbox Live Creators Program](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005)</td>
+    </tr>
+</table>
+
+### For managed partners and developers in the ID@Xbox program
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Overview</td>
+        <td>[Get started with Xbox Live as a managed partner or an ID developer](../xbox-live/get-started-with-partner/get-started-with-xbox-live-partner.md)</td>
+    </tr>
+    <tr>
+        <td>Add Xbox Live to your game</td>
+        <td>[Step by step guide to integrate Xbox Live for managed partners and ID members](../xbox-live/get-started-with-partner/partners-step-by-step-guide.md)</td>
+    </tr>
+    <tr>
+        <td>Add Xbox Live to your UWP game created using Unity</td>
+        <td>[Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID and managed partners](../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md)</td>
+    </tr>
+    <tr>
+        <td>Requirements for games that use Xbox Live (GDN)</td>
         <td>[Xbox Requirements for Xbox Live on Windows 10](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
     </tr>
     <tr>
@@ -1556,7 +1750,7 @@ To update your published game, submit a new app package with a higher version nu
         <td>[Best Practices for Leveraging Cloud-Based User Stats and Achievements in Xbox Live](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live)</td>
     </tr>
 </table>
- 
+
 
 ## Additional resources
 
@@ -1565,6 +1759,10 @@ To update your published game, submit a new app package with a higher version nu
     <col width="50%" />
     <col width="50%" />
     </colgroup>
+    <tr>
+        <td>Game development videos</td>
+        <td>[Videos from major conferences like GDC and //build](https://docs.microsoft.com/windows/uwp/gaming/game-development-videos)</td>
+    </tr>
     <tr>
         <td>Indie game development (video)</td>
         <td>[New Opportunities for Independent Developers](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers)</td>

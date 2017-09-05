@@ -2,20 +2,18 @@
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: Use the Java code examples in this section to learn more about using the Windows Store submission API.
-title: Java code examples for the submission API
+title: Java sample - submissions for apps, add-ons, and flights
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, code examples
+keywords: windows 10, uwp, Windows Store submission API, code examples, java
 ---
 
-# Java code examples for the submission API
+# Java sample: submissions for apps, add-ons, and flights
 
-This article provides Java code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
-
-These code examples demonstrate the following tasks:
+This article provides Java code examples that demonstrate how to use the [Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
 
 * [Obtain an Azure AD access token](#token)
 * [Create an add-on](#create-add-on)
@@ -50,7 +48,7 @@ The following example demonstrates how to [obtain an Azure AD access token](crea
 <span id="create-add-on" />
 ## Create an add-on
 
-The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on (add-ons are also known as in-app products or IAPs).
+The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
 

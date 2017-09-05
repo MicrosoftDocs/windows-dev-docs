@@ -24,7 +24,8 @@ Track files that your user accesses frequently by adding them to your app's most
 
 Your app's MRU is represented by the [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) class, which you obtain from the static [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) property. MRU items are stored as [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) objects, so both [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects (which represent files) and [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects (which represent folders) can be added to the MRU.
 
-**Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994) and the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> [!NOTE]
+> Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994) and the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
@@ -46,9 +47,7 @@ Your app's MRU is represented by the [**StorageItemMostRecentlyUsedList**](https
 
 -   The files that your user picks are often files that they return to repeatedly. So consider adding picked files to your app's MRU as soon as they are picked. Here's how.
 
-    ```CSharp
-    ...
-
+    ```cs
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
     var mru = Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList;
@@ -71,13 +70,13 @@ Use the retrieval method most appropriate for the item you want to retrieve.
 
 Here's how to get back the file we just added.
 
-```csharp
+```cs
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
 Here's how to iterate all the entries to get tokens and then items.
 
-```csharp
+```cs
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 {
     string mruToken = entry.Token;
@@ -101,7 +100,3 @@ When a user picks an item, consider adding it to your future-access list as well
 
 -   The [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) can hold up to 1000 items. Remember: it can hold folders as well as files, so that's a lot of folders.
 -   The platform never removes items from the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) for you. When you reach the 1000-item limit, you can't add another until you make room with the [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) method.
-
- 
-
- 

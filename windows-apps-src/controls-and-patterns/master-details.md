@@ -6,7 +6,7 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,6 +17,8 @@ keywords: windows 10, uwp
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+
+> **Important APIs**: [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView), [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
 
@@ -70,17 +72,11 @@ For the master pane, a [list view](lists.md) control works well for presenting l
 
 For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
 
-## Examples
+## Get the code samples
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
+For sample code that shows the master/details pattern, see these samples: 
 
-![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
-
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
-
-![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
-
-For sample code that shows the master/details pattern, see
+- [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [ListView and GridView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -89,4 +85,4 @@ For sample code that shows the master/details pattern, see
 - [Lists](lists.md)
 - [Search](search.md)
 - [App and command bars](app-bars.md)
-- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

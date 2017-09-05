@@ -1,3 +1,14 @@
+---
+author: jwmsft
+title: App analysis
+description: Analyze your app for performance issues.
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+---
 # App Analysis overview
 
 App Analysis  is a tool that provides developers with a heads up notification of performance issues. App Analysis runs your app code against a set of performance guidelines and best practices.

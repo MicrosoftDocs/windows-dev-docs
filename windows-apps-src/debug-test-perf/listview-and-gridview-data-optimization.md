@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: ListView and GridView data virtualization
 description: Improve ListView and GridView performance and startup time through data virtualization.
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

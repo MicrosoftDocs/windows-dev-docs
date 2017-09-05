@@ -1,10 +1,10 @@
 ---
-author: DBirtolo
+author: muhsinking
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: Use the light sensor
 description: Learn how to use the ambient light sensor to detect changes in lighting.
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,6 +18,10 @@ keywords: windows 10, uwp
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
+
+**Sample**
+
+-   For a more complete implementation, see the [light sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor).
 
 Learn how to use the ambient light sensor to detect changes in lighting.
 
@@ -165,8 +169,3 @@ These new values are written to a TextBlock found in the project's XAML.
 <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
-
-## Related topics
-
-* [LightSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241381)
- 

@@ -1,9 +1,9 @@
 ---
-author: DBirtolo
+author: muhsinking
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: Device information properties
 description: Each device has associated DeviceInformation properties that you can use when you need specific information or when you are building a device selector.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -74,7 +74,7 @@ Some properties are common across all [**DeviceInformationKind**](https://msdn.m
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Category**       | String\[\] | A list of descriptions of the categories the device belongs to. This list is provided as singular categories. For example, "Display", "Phone", or "Audio device".  |
 | **System.Devices.CategoryIds**    | String\[\] | Contains a list of categories this device belongs to. For example, **Audio.Headphone**, **Display.Monitor**, or **Input.Gaming**.                                  |
-| **System.Devices.CateogryPlural** | String\[\] | A list of descriptions of the categories the device belongs to. This list is provided as plural categories. For example, "Displays", "Phones", or "Audio devices". |
+| **System.Devices.CategoryPlural** | String\[\] | A list of descriptions of the categories the device belongs to. This list is provided as plural categories. For example, "Displays", "Phones", or "Audio devices". |
 | **System.Devices.CompatibleIds**  | String\[\] | The collection of compatible ids for all the child **DeviceInformationKind.Device** objects.                                                                       |
 | **System.Devices.Connected**      | Boolean    | Indicates whether the device is currently connected to the system or not.                                                                                          |
 | **System.Devices.GlyphIcon**      | String     | Icon path for the glyph.                                                                                                                                           |

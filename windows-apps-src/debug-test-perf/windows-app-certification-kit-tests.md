@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows App Certification Kit tests
 description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -216,7 +216,7 @@ Enable the /DYNAMICBASE option in the linker command when you build your app. Ve
 
 Normally, ASLR doesn't affect performance. But in some scenarios there is a slight performance improvement on 32-bit systems. It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.
 
-This test is performed on only apps written in managed code, such as by using C# or .NET Framework.
+This test is performed only on apps written in unmanaged languages, such as by using C or C++.
 
 ### <span id="binscope-5"></span>Read/Write Shared PE Section
 

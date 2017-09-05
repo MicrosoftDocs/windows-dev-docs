@@ -1,4 +1,4 @@
----
+﻿---
 author: TylerMSFT
 title: Launch the People app
 description: This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
@@ -79,10 +79,25 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </div></td>
 <td align="left">ms-people:savetocontact?PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;</td>
 </tr>
+<tr class="even">
+<td align="left">Launches to the add a new contact page within the People app to save the given contact.
+<div class="alert">
+**Note**  
+<p>Use [LaunchUriForResultsAsync](https://docs.microsoft.com/en-us/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriForResultsAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_Windows_Foundation_Collections_ValueSet_) to open the save new contact page. Using **LaunchUriAsync** will only launch the People app Main page.</p>
+<p>The parameters are case sensitive.</p>
+<p>The order of the parameters doesn’t matter.</p>
+<p>You can use any combination of supported parameters.</p>
+</div>
+<div>
+ 
+</div></td>
+<td align="left">ms-people:savecontacttask?PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;</td>
+</tr>
 </tbody>
 </table>
 
  
+
 
 ## ms-people:search: parameter reference
 
@@ -202,6 +217,196 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </tr>
 </tbody>
 </table>
+
+
+
+## ms-people:savecontacttask: parameter reference
+
+
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Description</th>
+
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">**Company**</td>
+<td align="left"><p>Optional.</p>
+<p>Company name of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**FirstName**</td>
+<td align="left"><p>Optional.</p>
+<p>First name of the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**HomeAddressCity**</td>
+<td align="left"><p>Optional.</p>
+<p>City of the home address.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**HomeAddressCountry**</td>
+<td align="left"><p>Optional.</p>
+<p>Country of the home address.</p></td>
+
+</tr>
+<tr class="odd">
+<td align="left">**HomeAddressState**</td>
+<td align="left"><p>Optional.</p>
+<p>State of the home address.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**HomeAddressStreet**</td>
+<td align="left"><p>Optional.</p>
+<p>Street of the home address.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**HomeAddressZipCode**</td>
+<td align="left"><p>Optional.</p>
+<p>Zip Code of the home address.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**HomePhone**</td>
+<td align="left"><p>Optional.</p>
+<p>Home phone of the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**JobTitle**</td>
+<td align="left"><p>Optional.</p>
+<p>Job title of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**LastName**</td>
+<td align="left"><p>Optional.</p>
+<p>Last name of the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**MiddleName**</td>
+<td align="left"><p>Optional.</p>
+<p>Middle name of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**MobilePhone**</td>
+<td align="left"><p>Optional.</p>
+<p>Mobile phone number of the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**Nickname**</td>
+<td align="left"><p>Optional.</p>
+<p>Nickname of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**Notes**</td>
+<td align="left"><p>Optional.</p>
+<p>Notes about the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**OtherEmail**</td>
+<td align="left"><p>Optional.</p>
+<p>Other Email of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**PersonalEmail**</td>
+<td align="left"><p>Optional.</p>
+<p>Personal Email of the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**Suffix**</td>
+<td align="left"><p>Optional.</p>
+<p>Suffix of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**Title**</td>
+<td align="left"><p>Optional.</p>
+<p>Title of the contact.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**Website**</td>
+<td align="left"><p>Optional.</p>
+<p>Website of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**WorkAddressCity**</td>
+<td align="left"><p>Optional.</p>
+<p>City of the work address.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**WorkAddressCountry**</td>
+<td align="left"><p>Optional.</p>
+<p>Country of the work address.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**WorkAddressState**</td>
+<td align="left"><p>Optional.</p>
+<p>State of the work address.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**WorkAddressStreet**</td>
+<td align="left"><p>Optional.</p>
+<p>Street of work address.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**WorkAddressZipCode**</td>
+<td align="left"><p>Optional.</p>
+<p>Zip Code of the work address.</p></td>
+
+</tr>
+
+<tr class="odd">
+<td align="left">**WorkEmail**</td>
+<td align="left"><p>Optional.</p>
+<p>Work Email of the contact.</p></td>
+
+</tr>
+<tr class="even">
+<td align="left">**WorkPhone**</td>
+<td align="left"><p>Optional.</p>
+<p>Work phone number of the contact.</p></td>
+
+</tr>
+</tbody>
+</table>
+
 
  
 

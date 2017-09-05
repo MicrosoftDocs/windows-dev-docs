@@ -1,5 +1,5 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: 'This topic shows how to create a protected thread context before creating network connections in an Windows Information Protection (WIP) scenario.'
 MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
 MSHAttr: 'PreferredLib:/library/windows/apps'

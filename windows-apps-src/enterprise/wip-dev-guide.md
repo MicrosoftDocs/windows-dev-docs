@@ -5,7 +5,7 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows Information Protection (WIP) developer guide
 ms.author: normesta
-ms.date: 02/24/2017
+ms.date: 06/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,10 +70,9 @@ For more general guidance about how to use this tool, see the Version notes sect
 
     ![Add UWP Extensions](images/extensions.png)
 
-3. Add these capabilities to your package manifest file:
+3. Add this capability to your package manifest file:
 
     ```xml
-       <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
    >*Optional Reading*: The "rescap" prefix means *Restricted Capability*. See [Special and restricted capabilities](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).

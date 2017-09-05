@@ -4,7 +4,7 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,13 +13,14 @@ keywords: windows 10, uwp, ads, advertising, guidelines, best practices
 
 # UI and user experience guidelines for ads
 
-This article provides guidelines for providing great experiences with banner ads and interstitial ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).
+This article provides guidelines for providing great experiences with banner ads, interstitial ads, and native ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).
 
->**Important**&nbsp;&nbsp;Any use of advertising in your app must comply with the Windows Store Policies – including, without limitation, [policy 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (Advertising Conduct and Content). In particular, your app's implementation of banner ads or interstitial ads must meet the requirements in Windows Store policy [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10). This article includes examples of implementations that would violate this policy. These examples are provided for informational purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate the Windows Store Policies that are not listed in this article.
+> [!IMPORTANT]
+> Any use of advertising in your app must comply with the Windows Store Policies – including, without limitation, [policy 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (Advertising Conduct and Content). In particular, your app's implementation of banner ads or interstitial ads must meet the requirements in Windows Store policy [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10). This article includes examples of implementations that would violate this policy. These examples are provided for informational purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate the Windows Store Policies that are not listed in this article.
 
 ## Guidelines for banner ads
 
-The following sections provide recommendations for how to implement banner ads in your app using [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies.
+The following sections provide recommendations for how to implement [banner ads](banner-ads.md) in your app using [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies.
 
 ### Best practices
 
@@ -29,11 +30,11 @@ We recommend that you follow these best practices when you implement banner ads 
 
 * Design advertising into your experience. Give your designers a sample ad to plan how the advertising is going to look. Two examples of well-planned ads in apps are the ads-as-content layout and the split layout.
 
-  To see how different ad sizes will look and function within your app during the development and testing phase, you can utilize our [test mode ad units](test-mode-values.md). When you’re done with testing, remember to [update your app with real ad unit IDs](set-up-ad-units-in-your-app.md) before submitting the app for certification.
+  To see how different ad sizes will look and function within your app during the development and testing phase, you can utilize our [test ad units](set-up-ad-units-in-your-app.md#test-ad-units). When you’re done with testing, remember to [update your app with live ad units](set-up-ad-units-in-your-app.md#live-ad-units) before submitting the app for certification.
 
 * Use [ad sizes](supported-ad-sizes-for-banner-ads.md) that fit well with the layout for the running device.
 
-* Plan for times when no ads are available. There may be times when ads aren't being sent to your app. Lay out your pages in such a way that they look great whether they showcase an ad or not. For more information, see [Error handling](error-handling-with-advertising-libraries.md).
+* Plan for times when no ads are available. There may be times when ads aren't being sent to your app. Lay out your pages in such a way that they look great whether they showcase an ad or not. For more information, see [Handle ad errors](error-handling-with-advertising-libraries.md).
 
 * If you have a scenario for alerting the user that is best handled with an overlay, call [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) while displaying the overlay and then call [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) when the alert scenario is finished.
 
@@ -68,7 +69,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 <span id="interstitialbestpractices10">
 ## Guidelines for interstitial ads
 
-When used elegantly, interstitial ads can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
+When used elegantly, [interstitial ads](interstitial-ads.md) can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
 
 The following sections provide recommendations for how to implement interstitial video ads and interstitial banner ads in your app using [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and examples of implementations that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Windows Store Policies. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
 
@@ -152,6 +153,42 @@ This section provides examples of interstitial ad scenarios that violate [policy
 
 * Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.
 
- 
+## Guidelines for native ads
 
- 
+[Native ads](native-ads.md) give you have a lot of control over how you present advertising content to your users. Follow these requirements and guidelines to help ensure that the advertiser's message reaches your users while also helping to avoid delivering a confusing native ads experience to your users.
+
+### Register the container for your native ad
+
+In your code, you must call the [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) method of the **NativeAd** object to register the UI element that acts as a container for the native ad and optionally any specific controls that you want to register as clickable targets for the ad. This is required to properly track ad impressions and clicks.
+
+There are two overloads for the **RegisterAdContainer** method that you can use:
+
+* If you want the entire container for all the individual native ad elements to be clickable, call the [RegisterAdContainer(FrameworkElement)](https://msdn.microsoft.com/library/windows/apps/mt809188.aspx) method and pass the container control to the method. For example, if you display all of the native ad elements in separate controls that are all hosted in a **StackPanel** and you want the entire **StackPanel** to be clickable, pass the **StackPanel** to this method.
+
+* If you want only certain native ad elements to be clickable, call the [RegisterAdContainer(FrameworkElement, IVector(FrameworkElement))](https://msdn.microsoft.com/library/windows/apps/mt809189.aspx) method. Only the controls that you pass to the second parameter will be clickable.
+
+### Required native ad elements
+
+At a minimum, you must always show the following native ad elements to the user in your native ad design. If you fail to include these elements, you may see poor performance and low yields for your ad unit.
+
+1. Always display the title of the native ad (available in the [Title](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.title.aspx) property of the **NativeAd** object). Provide enough space to display at least 25 characters. If the title is longer, replace the additional text with an ellipsis.
+2. Always display least one of the following elements to help differentiate the native ad experience from the rest of your app and clearly call out that the content is provided by an advertiser:
+  * The distinguishable *ad* icon (available in the [AdIcon](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.adicon.aspx) property of the **NativeAd** object). This icon is supplied by Microsoft.
+  * The *sponsored by* text (available in the [SponsoredBy](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.sponsoredby.aspx) property of the **NativeAd** object). This text is supplied by the advertiser.
+  * As an alternative to the *sponsored by* text, you can choose to display some other text that helps differentiate the native ad experience from the rest of your app, such as "Sponsored content", "Promotional content", "Recommended content", etc.
+
+### User experience
+
+Your native ad should be clearly delineated from the rest of your app and have space around it to prevent accidental clicks. Use borders, different backgrounds, or some other UI to separate the ad content from the rest of your app. Keep in mind that accidental ad clicks are not beneficial for your ad-based revenue or your end user experience in the long term.
+
+### Description
+
+If you choose to show the description for the ad (available in the [Description](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.description.aspx) property of the **NativeAd** object), provide enough space to display at least 75 characters. We recommend that you use an animation to show the full content of the ad description.
+
+### Call to action
+
+The *call to action* text (available in the [CallToAction](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.calltoaction.aspx) property of the **NativeAd** object) is a critical component of the ad. If you choose to show this text, follow these guidelines:
+
+* Always display the *call to action* text to the user on a clickable control such as a button or hyperlink.
+* Always display the *call to action* text in its entirety.
+* Ensure that that the *call to action* text is separated from the rest of the promotional text from the advertiser.

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 05/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -79,17 +79,20 @@ In example app 4, any device that is running Windows 10 can get the app, but it
 
 If you have an app in the Store that targets Windows 8.x and/or Windows Phone 8.x, and you want to update your app for Windows 10, create a new submission and add your UWP .appxupload package(s) during the [Packages](upload-app-packages.md) step. After your app goes through the certification process, customers who already had your app will get your UWP package as an update from the Store. The UWP package will also be available for new acquisitions by customers on Windows 10.
 
-> **Important**  Once a customer on Windows 10 gets your UWP package, you won't be able to roll that customer back to using a package for any previous OS version. Make sure you have thoroughly tested your UWP packages on Windows 10 before adding them to your submission.
+> [!IMPORTANT] 
+> Once a customer on Windows 10 gets your UWP package, you won't be able to roll that customer back to using a package for any previous OS version. Make sure you have thoroughly tested your UWP packages on Windows 10 before adding them to your submission.
 
 You can update any of your other packages at the same time or make other changes to the submission (for example, you may want to [create platform-specific descriptions](create-platform-specific-descriptions.md) to be shown to customers on the earlier OS versions). You can also leave everything else exactly the same, if you prefer.
 
-> **Note**  The version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. For more info, see [Package version numbering](package-version-numbering.md).
+> [!NOTE]  
+> The version number of your Windows 10 packages must be higher than those for any Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. For more info, see [Package version numbering](package-version-numbering.md).
 
 Once the new submission completes the certification process, the UWP packages will be available, along with any other packages you've made available for those customers who aren't on Windows 10 yet.
 
-For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+For more info about packaging UWP apps for the Store, see [Packaging apps](../packaging/index.md).
 
-> **Important**  Keep in mind that if you provide packages that target the Universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.
+> [!IMPORTANT] 
+> Keep in mind that if you provide packages that target the Universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.
 > 
 > This happens even if you have excluded a specific device family in the [Device family availability](upload-app-packages.md#device-family-availability) step of your submission, since the **Device family availability** selection only applies to new acquisitions. If you don't want every previous customer to get your new Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your appx manifest to include only the particular device family you wish to support.
 > 
@@ -110,15 +113,17 @@ Failure to follow these rules may result in package upload errors that will prev
 
 ## Removing an app from the Store
 
-At times, you may want to completely stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method, including promotional codes.
+At times, you may want to completely stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method, including promotional codes.
 
-> **Important**  This will override any [distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) settings that you have selected in your submissions.
+> [!IMPORTANT]
+> This will override any [visibility](set-app-pricing-and-availability.md#visibility) settings that you have selected in your submissions.
 
 Note that any customers who already have the app will still be able to use it (and could even get updates if you submit new packages later).
 
 After making the app unavailable, you'll still see it in your dashboard. If you decide to offer the app to customers again, you can click **Make app available** from the App overview page. After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.
 
-> **Note**  If you want to keep your app available, but don't want to continuing offering it to customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions. For example, if you previously had packages for Windows Phone 8, Windows Phone 8.1, and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8, remove your Windows Phone 8 packages from the submission. After the update is published, no new customers on Windows Phone 8 will be able to acquire the app (though customers who already have it can continue to use it). The app will still be available for new customers on Windows Phone 8.1 and Windows 10.
+> [!NOTE]
+> If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions. For example, if you previously had packages for Windows Phone 8.1 and Windows 10, and you don't want to keep offering the app to new customers on Windows Phone 8.1, remove all of your Windows Phone 8.1 packages from the submission. After the update is published, no new customers on Windows Phone 8.1 will be able to acquire the app (though customers who already have it can continue to use it). The app will still be available for new customers on Windows 10.
 
 ## Removing packages for a previously-supported device family
 

@@ -4,16 +4,17 @@ description:
 title: Connected animation
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: stmoy
+design-contact: conrwi
+doc-status: Published
 ---
 
 # Connected animation for UWP apps
-
-> Note: This article is an early draft for a new feature of Windows 10 RS2. Feature names (such as "material"), terminology, and functionality are not final.
 
 ## What is connected animation?
 
@@ -30,6 +31,9 @@ In this short video, an app uses a connected animation to animate an item image 
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=b2daa5ee%2Dbe15%2D4503%2Db541%2D1328a6587c36&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
+## Connected animation and the Fluent Design System
+
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. 
 
 ## Why connected animation?
 
@@ -170,7 +174,7 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 
 A *coordinated animation* is a special type of entrance animation where an element will appear alongside the connected animation target, animating in tandem with the connected animation element as it moves across the screen. Coordinated animations can add more visual interest to a transition and further draw the user’s attention to the context that is shared between the source and destination views. In these images, the caption UI for the item is animating using a coordinated animation.
 
-Use the two-parameter overload of **TryStart** to add coordinated elements to a connected animation. This example demonstrates a coordinated animation of a Grid layout named “DescriptionRoot” that will enter in tandem with a connected animation element named “ColorImage”.
+Use the two-parameter overload of **TryStart** to add coordinated elements to a connected animation. This example demonstrates a coordinated animation of a Grid layout named “DescriptionRoot” that will enter in tandem with a connected animation element named “CoverImage”.
 
 *DestinationPage.xaml*
 

@@ -11,8 +11,6 @@ ms.technology: uwp
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ---
 
-<!-- DO NOT PUBLISH YET - STILL NO SUPPORTED REQUESTS TO DOCUMENT -->
-
 # Send requests to the Windows Store
 
 Starting in Windows 10, version 1607, the Windows SDK provides APIs for Store-related operations (such as in-app purchases) in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. However, although the services that support the Store are constantly being updated, expanded, and improved between OS releases, new APIs are typically added to the Windows SDK only during major OS releases.

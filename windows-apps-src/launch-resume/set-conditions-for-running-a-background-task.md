@@ -4,7 +4,7 @@ title: Set conditions for running a background task
 description: Learn how to set conditions that control when your background task will run.
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,11 +23,11 @@ keywords: windows 10, uwp
 
 Learn how to set conditions that control when your background task will run.
 
-Sometimes, background tasks require certain conditions to be met, in addition to the event that triggers the task, for the background task to succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired; the background task will be queued, but it will not run until all the required conditions are satisfied.
+Sometimes, background tasks require certain conditions to be met for the background task to succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired. The background task will then be queued, but it will not run until all the required conditions are satisfied.
 
-Putting conditions on background tasks saves battery life and CPU runtime by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by only running the background task when the timer has elapsed *and* the Internet is available.
+Putting conditions on background tasks saves battery life and CPU by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by only running the background task when the timer has elapsed *and* the Internet is available.
 
-It is also possible to combine multiple conditions by calling AddCondition multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
+It is also possible to combine multiple conditions by calling **AddCondition** multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
 
 ## Create a SystemCondition object
 
@@ -35,9 +35,9 @@ This topic assumes that you have a background task already associated with your 
 
 This topic applies to background tasks that run out-of-process as well as those that run in the same process as the foreground app.
 
-Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object representing the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met by providing a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
+Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object to represent the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met with a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
 
-The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object specifying Internet availability as the conditional requirement:
+The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object that specifies the **InternetAvailable** condition:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -49,10 +49,9 @@ The following code creates a [**SystemCondition**](https://msdn.microsoft.com/li
 
 ## Add the SystemCondition object to your background task
 
-
 To add the condition, call the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object, and pass it the [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object.
 
-The following code registers the InternetAvailable background task condition with the TaskBuilder:
+The following code uses **taskBuilder** to add the **InternetAvailable** condition.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -64,8 +63,7 @@ The following code registers the InternetAvailable background task condition wit
 
 ## Register your background task
 
-
-Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the task will not start until the specified condition is met.
+Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the background task will not start until the specified condition is met.
 
 The following code registers the task and stores the resulting BackgroundTaskRegistration object:
 

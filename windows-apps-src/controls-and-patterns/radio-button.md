@@ -6,11 +6,15 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
 ---
 # Radio buttons
 
@@ -18,19 +22,11 @@ keywords: windows 10, uwp
 
 Radio buttons let users select one option from two or more choices. Each option is represented by one radio button; a user can select only one radio button in a radio button group.
 
+> **Important APIs**: [RadioButton class](https://msdn.microsoft.com/library/windows/apps/br227544), [Checked event](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx), [IsChecked property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+
 (If you're curious about the name, radio buttons are named for the channel preset buttons on a radio.)
 
 ![Radio buttons](images/controls/radio-button.png)
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
-<li>[**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
-</ul>
-</div>
-
 
 ## Is this the right control?
 
@@ -65,7 +61,7 @@ Radio buttons in the Microsoft Edge browser settings.
 
 Radio buttons work in groups. There are 2 ways you can group radio button controls:
 - Put them inside the same parent container.
-- Set the [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) property on each radio button to the same value.
+- Set the [GroupName](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) property on each radio button to the same value.
 
 > **Note**&nbsp;&nbsp;A group of radio buttons behaves like a single control when accessed via the keyboard. Only the selected choice is accessible using the Tab key but users can cycle through the group using arrow keys.
 
@@ -155,7 +151,7 @@ The radio button groups look like this.
 
 ![Radio buttons in two groups](images/radio-button-groups.png)
 
-A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**.
+A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**.
 
 ## Recommendations
 
@@ -190,4 +186,4 @@ This illustration shows the proper way to position and space radio buttons.
 
 
 **For developers (XAML)**
-- [**Windows.UI.Xaml.Controls RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544)
+- [Windows.UI.Xaml.Controls RadioButton class](https://msdn.microsoft.com/library/windows/apps/br227544)

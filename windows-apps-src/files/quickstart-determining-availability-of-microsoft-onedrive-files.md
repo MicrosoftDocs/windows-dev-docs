@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
 **Important APIs**
 
 -   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
@@ -57,7 +56,7 @@ The following steps illustrate how to determine if a file is currently available
 
 The following generic method illustrates how to enumerate any folder and return the collection of [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) objects for that folder. The calling method then iterates over the returned collection referencing the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property for each file.
 
-```CSharp
+```cs
 /// <summary>
 /// Generic function that retrieves all files from the specified folder.
 /// </summary>
@@ -68,8 +67,6 @@ async Task<System.Collections.Generic.IReadOnlyList<StorageFile>> GetLibraryFile
     var query = folder.CreateFileQuery();
     return await query.GetFilesAsync();
 }
-
-...
 
 private async void CheckAvailabilityOfFilesInPicturesLibrary()
 {
@@ -87,7 +84,3 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
     }
 }
 ```
-
- 
-
- 

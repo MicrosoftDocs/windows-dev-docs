@@ -6,7 +6,7 @@ ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -108,7 +108,7 @@ By default, local toast notifications expire in three days, and local tile notif
 For more information, see these topics:
 
 -   [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
--   [Send a local toast notification](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
+-   [Send a local toast notification](tiles-and-notifications-send-local-toast.md)
 -   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Scheduled notifications
@@ -158,7 +158,7 @@ For more information, see:
 
 
 * [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [Send a local toast notification](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
+* [Send a local toast notification](tiles-and-notifications-send-local-toast.md)
 * [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [Guidelines for toast notifications](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)

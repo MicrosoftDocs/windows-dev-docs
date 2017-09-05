@@ -10,7 +10,7 @@
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <UI:AdControl Name="myAdControl" ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"
-               AdUnitId="10865270"
+               AdUnitId="test"
                HorizontalAlignment="Left"
                Height="250"
                VerticalAlignment="Top"

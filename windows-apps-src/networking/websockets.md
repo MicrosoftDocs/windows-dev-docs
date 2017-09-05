@@ -1,9 +1,9 @@
 ---
-author: DelfCo
+author: stevewhims
 description: WebSockets provide a mechanism for fast, secure two-way communication between a client and a server over the web using HTTP(S).
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

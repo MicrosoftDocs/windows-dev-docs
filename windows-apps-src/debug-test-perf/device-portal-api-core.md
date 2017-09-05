@@ -1,9 +1,9 @@
 ---
-author: dbirtolo
+author: muhsinking
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: Device Portal core API reference
 description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -1270,6 +1270,69 @@ HTTP status code      | Description
 * IoT
 
 ---
+## User information
+---
+### Get the active user
+
+**Request**
+
+You can get the name of the active user on the device by using the following request format.
+ 
+Method      | Request URI
+:------     | :-----
+GET | /api/users/activeuser
+<br />
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response includes user information in the following format. 
+
+On success: 
+```
+{
+    "UserDisplayName" : string, 
+    "UserSID" : string
+}
+```
+On failure:
+```
+{
+    "Code" : int, 
+    "CodeText" : string, 
+    "Reason" : string, 
+    "Success" : bool
+}
+```
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Desktop
+* HoloLens
+* IoT
+
+---
 ## Performance data
 ---
 ### Get the list of running processes
@@ -2017,6 +2080,52 @@ HTTP status code      | Description
 * Windows Mobile
 * Windows Desktop
 * Xbox
+* HoloLens
+* IoT
+
+---
+### Kill process by PID
+
+**Request**
+
+You can kill a process by using the following request format.
+ 
+Method      | Request URI
+:------     | :-----
+DELETE | /api/taskmanager/process
+<br />
+
+**URI parameters**
+
+You can specify the following additional parameters on the request URI:
+
+URI parameter | Description
+:---          | :---
+pid   | (**required**) The unique process id for the process to stop.
+<br />
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Desktop
 * HoloLens
 * IoT
 

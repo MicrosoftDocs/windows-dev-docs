@@ -1,12 +1,12 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.
 Search.Refinement.TopicID: 180
 title: Guidelines for globalization and localization
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -58,7 +58,7 @@ Prepare your app to easily adapt to different markets by choosing globally appro
 </tr>
 <tr class="odd">
 <td align="left"><p>Support international units of measurement and currencies.</p></td>
-<td align="left"><p>Different units and scales are used in different countries, although the most popular are the metric system and the imperial system. If you deal with measurements, like length, temperature, or area, get the correct system measurement by using the [<strong>CurrenciesInUse</strong>](https://msdn.microsoft.com/library/windows/apps/br206793) property.</p></td>
+<td align="left"><p>Different units and scales are used in different countries, although the most popular are the metric system and the imperial system. Be sure to support the correct system measurement if you deal with measurements, like length, temperature, or area. Use the [<strong>CurrenciesInUse</strong>](https://docs.microsoft.com/en-us/uwp/api/Windows.Globalization.GeographicRegion#Windows_Globalization_GeographicRegion_CurrenciesInUse) property to get the set of currencies in use in a region.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>Display text and fonts correctly.</p></td>

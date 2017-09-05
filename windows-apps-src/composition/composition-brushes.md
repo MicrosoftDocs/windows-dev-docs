@@ -1,9 +1,9 @@
 ---
-author: scottmill
+author: jwmsft
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: Composition brushes
 description: A brush paints the area of a Visual with its output. Different brushes have different types of output.
-ms.author: scotmi
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -21,6 +21,8 @@ A brush paints the area of a [**Visual**](https://msdn.microsoft.com/library/win
 -   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paints a visual with the contents of a composition effect
 
 All brushes inherit from [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398); they are created directly or indirectly by the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) and are device-independent resources. Although brushes are device-independent, [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paint a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) with contents from a composition surface which are device-dependent.
+
+Composition brushes can also be used to paint XAML UIElements using [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 -   [Prerequisites](./composition-brushes.md#prerequisites)
 -   [Color Basics](./composition-brushes.md#color-basics)
@@ -49,23 +51,23 @@ To create a color brush, call the Compositor.[**CreateColorBrush**](https://msdn
 ```cs
 Compositor _compositor;
 ContainerVisual _container;
-SpriteVisual _visual1, _visual2;
+SpriteVisual visual1, visual2;
 CompositionColorBrush _blackBrush, _greenBrush; 
 
 _compositor = new Compositor();
 _container = _compositor.CreateContainerVisual();
 
 _blackBrush = _compositor.CreateColorBrush(Colors.Black);
-_visual1 = _compositor.CreateSpriteVisual();
-_visual1.Brush = _blackBrush;
-_visual1.Size = new Vector2(156, 156);
-_visual1.Offset = new Vector3(0, 0, 0);
+visual1 = _compositor.CreateSpriteVisual();
+visual1.Brush = _blackBrush;
+visual1.Size = new Vector2(156, 156);
+visual1.Offset = new Vector3(0, 0, 0);
 
 _ greenBrush = _compositor.CreateColorBrush(Color.FromArgb(0xff, 0x9A, 0xCD, 0x32));
-_visual2 = _compositor.CreateSpriteVisual();
-_visual2.Brush = _greenBrush;
-_visual2.Size = new Vector2(150, 150);
-_visual2.Offset = new Vector3(3, 3, 0);
+Visual2 = _compositor.CreateSpriteVisual();
+Visual2.Brush = _greenBrush;
+Visual2.Size = new Vector2(150, 150);
+Visual2.Offset = new Vector3(3, 3, 0);
 ```
 
 Unlike other brushes, creating a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) is a relatively inexpensive operation. You may create **CompositionColorBrush** objects each time you render with little to no performance impact.
@@ -114,6 +116,4 @@ Sometimes, the contents of the [**ICompositionSurface**](https://msdn.microsoft.
 ## Related Topics
 [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
 
-
-
-
+[XAML brush interoperation with XamlCompositionBrush](../graphics/using-brushes.md#xamlcompositionbrushbase)

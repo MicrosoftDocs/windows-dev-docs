@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects.
 title: Entity framework Core with SQLite for C# apps
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

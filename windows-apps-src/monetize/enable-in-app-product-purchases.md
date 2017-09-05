@@ -5,7 +5,7 @@ title: Enable in-app product purchases
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: uwp, add-ons, in-app purchases, IAPs, Windows.ApplicationModel.Store
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,10 +13,10 @@ ms.technology: uwp
 
 # Enable in-app product purchases
 
-> [!NOTE]
-> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
-
 Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
+
+> [!IMPORTANT]
+> This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to enable in-app product purchases. This namespace is no longer being updated with new features, and we recommend that you use the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons and subscriptions, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace was introduced in Windows 10, version 1607, and it can only be used in projects that target **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. For more information about enabling in-app product purchases using the **Windows.Services.Store** namespace, see [this article](enable-in-app-purchases-of-apps-and-add-ons.md).
 
 > [!NOTE]
 > In-app products cannot be offered from a trial version of an app. Customers using a trial version of your app can only buy an in-app product if they purchase a full version of your app.
@@ -45,17 +45,18 @@ For each feature that you want to make available through an in-app product, crea
 
     You identify each in-app product in your app by a token. This token is a string that you define and use in your app and in the Store to identify a specific in-app product. Give it a unique (to your app) and meaningful name so that you can quickly identify the correct feature it represents while you are coding. Here are some examples of names:
 
-    -   "SpaceMissionLevel4"
+    * "SpaceMissionLevel4"
+    * "ContosoCloudSave"
+    * "RainbowThemePack"
 
-    -   "ContosoCloudSave"
-
-    -   "RainbowThemePack"
+  > [!NOTE]
+  > The in-app offer token that you use in your code must match the [product ID](../publish/set-your-add-on-product-id.md#product-id) value you specify when you [define the corresponding add-on for your app in the Dev Center dashboard](../publish/add-on-submissions.md).
 
 2.  **Code the feature in a conditional block**
 
     You must put the code for each feature that is associated with an in-app product in a conditional block that tests to see if the customer has a license to use that feature.
 
-    Here's an example that shows how you can code a product feature named **featureName** in a license-specific conditional block. The string, **featureName**, is the token that uniquely identifies this product within the app and is also used to identify it in the Store.
+    Here's an example that shows how you can code a product feature named **featureName** in a license-specific conditional block. The string, **featureName**,is the token that uniquely identifies this product within the app and is also used to identify it in the Store.
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
@@ -75,7 +76,10 @@ This is an easy step: change every reference to [CurrentAppSimulator](https://ms
 
 ## Step 4: Configure the in-app product offer in the Store
 
-In the Dev Center dashboard, define the product ID, type, price, and other properties for your in-app product. Make sure that you configure it identically to the configuration you set in WindowsStoreProxy.xml when testing. For more information, see [IAP submissions](https://msdn.microsoft.com/library/windows/apps/mt148551).
+In the Dev Center dashboard, navigate to your app and [create an add-on](../publish/add-on-submissions.md) that matches your in-app product offer. Define the product ID, type, price, and other properties for your add-on. Make sure that you configure it identically to the configuration you set in WindowsStoreProxy.xml when testing.
+
+  > [!NOTE]
+  > The in-app offer token that you use in your code must match the [product ID](../publish/set-your-add-on-product-id.md#product-id) value you specify for the corresponding add-on in the dashboard.
 
 ## Remarks
 

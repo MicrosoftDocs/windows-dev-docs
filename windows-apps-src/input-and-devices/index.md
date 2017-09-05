@@ -1,7 +1,7 @@
 ---
 description: Customize your UWP app for specific types of inputs and devices. Take advantage of touch and voice commands. Run your apps on Xbox, phone and even TV.
 title: UWP app input and device design - Windows app development
-author: kbridge
+author: Karl-Bridge-Microsoft
 keywords: device primer, app inputs, customize UWP application
 label: Input & devices
 template: detail.hbs

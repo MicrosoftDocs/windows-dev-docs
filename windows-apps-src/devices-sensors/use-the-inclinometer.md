@@ -1,10 +1,10 @@
 ---
-author: DBirtolo
+author: muhsinking
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: Use the inclinometer
 description: Learn how to use the inclinometer to determine pitch, roll, and yaw.
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,6 +18,10 @@ keywords: windows 10, uwp
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+
+**Sample**
+
+-   For a more complete implementation, see the [inclinometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
 
 Learn how to use the inclinometer to determine pitch, roll, and yaw.
 
@@ -172,6 +176,3 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## Related topics
-
-* [Inclinometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241380)

@@ -6,28 +6,27 @@ ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: llongley
+doc-status: Published
 ---
 # Pivot and tabs
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and relies on text headers to articulate the different sections of content.
 
+> **Important APIs**: [Pivot class](https://msdn.microsoft.com/library/windows/apps/dn608241)
+
 ![An examples of tabs](images/pivot_Hero_main.png)
 
-Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content. Tabs are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903) shows how to customize the Pivot control into the tabs pattern.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)</li>
-</ul>
-</div>
+Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content. Tabs are built using the [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903) shows how to customize the Pivot control into the tabs pattern.
 
 
 ## The pivot pattern
@@ -36,7 +35,7 @@ When building an app with pivot, there are a few key design variables to conside
 
 - **Header labels.**  Headers can have an icon with text, icon only, or text only.
 - **Header alignment.**  Headers can be left-justified or centered.
-- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](nav-pane.md) can serve as the primary level with pivot acting as secondary.
+- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](navigationview.md) can serve as the primary level with pivot acting as secondary.
 - **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
     1. Tap on a tab/pivot header to navigate to that category.
     2. Swipe left or right on the content area to navigate to the adjacent category.
@@ -53,7 +52,7 @@ Tabs pattern in the Alarms & Clock app.
 
 ## Create a pivot control
 
-The [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control comes with the basic functionality described in this section.
+The [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control comes with the basic functionality described in this section.
 
 This XAML creates a basic pivot control with 3 sections of content.
 
@@ -76,13 +75,13 @@ This XAML creates a basic pivot control with 3 sections of content.
 
 ### Pivot items
 
-Pivot is an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
+Pivot is an [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [PivotItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [Items](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
 
-You can use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item.
+You can use the [SelectedItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item.
 
 ### Pivot headers
 
-You can use the [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header.
+You can use the [LeftHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [RightHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header.
 
 ### Pivot interaction
 
@@ -100,9 +99,8 @@ The control comes in two modes:
 -   Pivots are stationary when all pivot headers fit within the allowed space.
 -   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
 
-<div class="microsoft-internal-note">
-We especially recommend preventing items from carouselling in a 10ft environment. Set the new `IsHeaderItemsCarouselEnabled` property to False if your app will run on Xbox.
-</div>
+> Note&nbsp;&nbsp; Pivot headers should not carousel in a [10ft environment](../input-and-devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot#Windows_UI_Xaml_Controls_Pivot_IsHeaderItemsCarouselEnabled) property to **false** if your app will run on Xbox.
+
 
 **Carousel**
 
@@ -110,17 +108,15 @@ We especially recommend preventing items from carouselling in a 10ft environment
 -   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
 -   Pivot items in a carousel loop from last to first pivot section.
 
-<div class="microsoft-internal-note">
 ### Pivot focus
 
 By default, keyboard focus on a pivot header is represented with an underline.
 
 ![Default focus underlines selected header](images/pivot_focus_selectedHeader.png)
 
-Apps that have customized Pivot and incorporate the underline into header selection visuals can use the new `HeaderFocusVisualPlacement` property to change the default. When `HeaderFocusVisualPlacement=\"ItemHeaders\"`, focus will be drawn around the entire header panel.
+Apps that have customized Pivot and incorporate the underline into header selection visuals can use the [HeaderFocusVisualPlacement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot#Windows_UI_Xaml_Controls_Pivot_HeaderFocusVisualPlacement) property to change the default. When `HeaderFocusVisualPlacement="ItemHeaders"`, focus will be drawn around the entire header panel.
 
 ![ItemsHeader option draws focus rect around all pivot headers](images/pivot_focus_headers.png)
-</div>
 
 ## Recommendations
 
@@ -137,4 +133,3 @@ Apps that have customized Pivot and incorporate the underline into header select
 
 ## Related topics
 - [Navigation design basics](../layout/navigation-basics.md)
-- [**Pivot sample**](http://go.microsoft.com/fwlink/p/?LinkId=619903)

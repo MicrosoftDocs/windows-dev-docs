@@ -1,10 +1,10 @@
 ---
-author: mukin
+author: muhsinking
 Description: This tutorial-style article walks the reader through the steps to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
 title: Create a simple weather app by using Grid and StackPanel
 template: detail.hbs
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,9 +16,11 @@ ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 
 Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows 10. This tutorial takes 10-20 minutes.
 
+> **Important APIs**: [Grid class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+
 ## Prerequisites
 - Windows 10 and Microsoft Visual Studio 2015. [Click here to learn how to get set up with Visual Studio](../get-started/get-set-up.md).
-- Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hellow World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
+- Knowledge of how to create a basic "Hello World" app by using XAML and C#. If you don't have that yet, [click here to learn how to create a "Hello World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal).
 
 ## Step 1: Create a blank app
 1. In Visual Studio menu, select **File** > **New Project**.
@@ -45,7 +47,7 @@ To start creating a layout, open **MainPage.xaml** by using the **Solution Explo
 </Grid>
 ```
 
-The new **Grid** creates a set of two rows and columns, which defines the layout of the app interface. The first column has a **Width** of "3\*", while the second has "5\*", dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a **Height** of "3\*" and "\*" respectively, so the **Grid** allocates three times as much space for the first row as for the second ("\*" is the same as "1\*"). These ratios are maintained even if the window is resized or the device is changed.
+The new **Grid** creates a set of two rows and columns, which defines the layout of the app interface. The first column has a **Width** of "3\*", while the second has "5\*", dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a **Height** of "2\*" and "\*" respectively, so the **Grid** allocates two times as much space for the first row as for the second ("\*" is the same as "1\*"). These ratios are maintained even if the window is resized or the device is changed.
 
 To learn about other methods of sizing rows and columns, see [Define layouts with XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 

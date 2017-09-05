@@ -1,34 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: Use the walkthroughs in this section to learn how to add banner ads and interstitial ads to apps by using the Microsoft advertising libraries.
-title: Developer walkthroughs
+description: Use the walkthroughs in this section to learn how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK.
+title: Implement ads in your app
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, walkthroughs
 ---
 
-# Developer walkthroughs
+# Implement ads in your app
 
-
-
-
-The walkthroughs in this section show you how to add banner ads and interstitial ads to apps by using the Microsoft advertising libraries.
-
-For complete sample projects that demonstrate how to add banner and interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+The articles in this section show you how to add banner ads, interstitial ads, and native ads to apps by using the Microsoft Advertising SDK. For complete sample projects, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
 ## In this section
 
 |  Topic    | Description |               
 |----------|-------|
-| [Interstitial Ads](interstitial-ads.md)    | Show an interstitial ad in your app.        |
-| [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Add a banner ad in your XAML/.NET app.        |
-| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Add a banner ad in your HTML5/JavaScript app.        |
-| [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)       | Add a banner ad in your Windows Phone 8.x Silverlight app. |
-| [Add advertisements to video content in HTML 5 and JavaScript](add-advertisements-to-video-content.md)     |  Add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML. |
+| [Banner ads](banner-ads.md)     | Provides instructions for adding a banner ad to your UWP app by using the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class in the Microsoft Advertising SDK.        |
+| [Interstitial Ads](interstitial-ads.md)    | Provides instructions for adding an interstitial ad to your UWP app by using the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class in the Microsoft Advertising SDK.       |
+| [Native ads](native-ads.md)       | Provides instructions for adding a native ad to your UWP app by using the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) and [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) classes in the Microsoft Advertising SDK.  |
+| [Show ads in video content](add-advertisements-to-video-content.md)     |  Provides instructions for showing ads during video content in your UWP app (this feature is currently supported only for apps that are written using JavaScript with HTML). |
 
 
 

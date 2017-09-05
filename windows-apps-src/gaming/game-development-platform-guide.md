@@ -31,17 +31,17 @@ In addition, Windows 10 offers many new features that are particularly benefici
 ## UWP Games with C++ and DirectX
 
 
-Real-time games requiring high performance should make use of the DirectX APIs. DirectX is a collection of native APIs for creating games and multimedia applications that require high performance, such as 3D games. Because the DirectX APIs are native, C++ is the only language supported for use with DirectX.
+Real-time games requiring high performance should make use of the DirectX APIs. DirectX is a collection of native APIs for creating games and multimedia applications that require high performance, such as 3D games.
 
 ## Development Environment
 
 
-To create games for UWP, you'll need to set up your development environment by installing a copy of Visual Studio 2015. Visual Studio 2015 allows you to create UWP apps and provides tools for game development:
+To create games for UWP, you'll need to set up your development environment by installing Visual Studio 2015 and later. Visual Studio 2015 allows you to create UWP apps and provides tools for game development:
 
 -   Visual Studio tools for DX game programming - Visual Studio provides tools for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code. For more information, see [Use Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md).
 -   Visual Studio graphics diagnostics features - Graphics diagnostic tools are now available from within Windows as an optional feature. The diagnostic tools allow you to do graphics debugging, graphics frame analysis, and monitor GPU usage in real time. For more information, see [Use the DirectX runtime and Visual Studio graphics diagnostic features](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).
 
-For more information, see Prepare your Universal Windows Platform and DirectX game programming environment.
+For more information, see Prepare your Universal Windows Platform and [DirectX programming](directx-programming.md).
 
 ## Getting Started with DirectX Game Project Templates
 
@@ -320,8 +320,11 @@ There are many APIs related to game development, but not all games need to use a
 
 ## Xbox Live Services
 
+The [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator) allows any developer to integrate Xbox Live into their UWP game and publish to Xbox One and Windows 10. Integrate Xbox Live social experiences such as sign-in, presence, leaderboards, and more into your title, with minimal development time. Xbox Live social features are designed to organically grow your audience, spreading awareness to over 55 million active gamers.
 
-The Xbox Live feature set – cross play with Xbox, Achievements, Gamerscore, and more – is coming to Windows 10. Soon, you'll be able to work with ID@Xbox to include Live in your UWP games! In the future, we’ll also help you ship your universal app platform games on Xbox One. For more information, see the [ID@Xbox](http://www.xbox.com/developers/id) page.
+If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](http://www.xbox.com/developers/id) program. To see which features are available to the Xbox Live Creators Program and ID@Xbox program, see the [Feature table](../xbox-live/developer-program-overview.md#feature-table).
+
+For more info, go to [Adding Xbox Live to your game](e2e.md#adding-xbox-live-to-your-game).
 
 ##  Alternatives to writing games with DirectX and UWP
 
@@ -346,7 +349,7 @@ As an alternative to writing your own game engine using the Windows game develop
 
 Once you’re ready to publish your game, you’ll need to create a developer account and submit your game to the Windows Store.
 
-For information about submitting your game to the Windows Store, see <https://dev.windows.com/publish>.
+For information about submitting your game to the Windows Store, see [Submitting and publishing your game](e2e.md#submitting-and-publishing-your-game).
 
  
 

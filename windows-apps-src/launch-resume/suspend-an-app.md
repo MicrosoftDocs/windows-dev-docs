@@ -21,10 +21,6 @@ keywords: windows 10, uwp
 
 Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event and saves a string to a file.
 
-## Important change introduced in Windows 10, version 1607
-
-Prior to Windows 10, version 1607, you would put the code to save your state in your suspend handler. Now we recommend that you save your state when you enter the background state, as described in [Windows 10 universal Windows platform app lifecycle ](app-lifecycle.md).
-
 ## Register the suspending event handler
 
 Register to handle the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, which indicates that your app should save its application data before the system suspends it.
@@ -119,7 +115,7 @@ The system doesn't notify an app when it's terminated, so your app must save its
 
 If you make an asynchronous call within your handler, control returns immediately from that asynchronous call. That means that execution can then return from your event handler and your app will move to the next state even though the asynchronous call hasn't completed yet. Use the [**GetDeferral**](http://aka.ms/Kt66iv) method on the [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) object that is passed to your event handler to delay suspension until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) method on the returned [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object.
 
-A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*.
+A deferral doesn't increase the amount you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*. To extend time in the Suspending state use [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > **Note**  To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows or between 1 and 10 seconds on Windows Phone. You cannot extend or alter this timeout window.
 
@@ -131,7 +127,7 @@ A deferral doesn't increase the amount you have to run your code before your app
 * [Handle app activation](activate-an-app.md)
 * [Handle app resume](resume-an-app.md)
 * [UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)
-
+* [Extended Execution](run-minimized-with-extended-execution.md)
 
  
 

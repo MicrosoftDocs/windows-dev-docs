@@ -2,8 +2,8 @@
 description: This article explains how to support copy and paste in Universal Windows Platform (UWP) apps using the clipboard.
 title: Copy and paste
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -60,12 +60,15 @@ Clipboard.SetContent(dataPackage);
 To get the contents of the clipboard, call the static [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent) method. This method returns a [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) that contains the content. This object is almost identical to a [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) object, except that its contents are read-only. With that object, you can use either the [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) or the [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) method to identify what formats are available. Then, you can call the corresponding [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) method to get the data.
 
 ```cs
-DataPackageView dataPackageView = Clipboard.GetContent();
-if (dataPackageView.Contains(StandardDataFormats.Text))
+async void OutputClipboardText()
 {
-    string text = await dataPackageView.GetTextAsync();
-    // To output the text from this example, you need a TextBlock control
-    TextOutput.Text = "Clipboard now contains: " + text;
+    DataPackageView dataPackageView = Clipboard.GetContent();
+    if (dataPackageView.Contains(StandardDataFormats.Text))
+    {
+        string text = await dataPackageView.GetTextAsync();
+        // To output the text from this example, you need a TextBlock control
+        TextOutput.Text = "Clipboard now contains: " + text;
+    }
 }
 ```
 
@@ -74,7 +77,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 In addition to copy and paste commands, you may also want to track clipboard changes. Do this by handling the clipboard's [**ContentChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.ContentChanged) event.
 
 ```cs
-Clipboard.ContentChanged += (s, e) => 
+Clipboard.ContentChanged += async (s, e) => 
 {
     DataPackageView dataPackageView = Clipboard.GetContent();
     if (dataPackageView.Contains(StandardDataFormats.Text))

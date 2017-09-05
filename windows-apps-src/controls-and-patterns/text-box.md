@@ -6,11 +6,14 @@ title: Text box
 label: Text box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
 ---
 # Text box
 
@@ -20,26 +23,20 @@ The TextBox control lets a user type text into an app. It's typically used to ca
 
 TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The "clear all" button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**TextBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-<li>[**Text property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
-</ul>
-</div>
+> **Important APIs**: [TextBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx), [Text property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
 ## Is this the right control?
 
 Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get and set the text in a TextBox.
 
-You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [**TextBlock**](text-block.md) instead.
+You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [TextBlock](text-block.md) instead.
 
-Use a [**PasswordBox**](password-box.md) control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.
+Use a [PasswordBox](password-box.md) control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.
 
-Use an [**AutoSuggestBox**](auto-suggest-box.md) control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.
+Use an [AutoSuggestBox](auto-suggest-box.md) control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.
 
-Use a [**RichEditBox**](rich-edit-box.md) to display and edit rich text files.
+Use a [RichEditBox](rich-edit-box.md) to display and edit rich text files.
 
 For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
@@ -101,8 +98,8 @@ IsEnabled
 ### Enable multi-line input
 
 There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.
-- To let the text box allow and display the newline or return characters, set the [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) property to **true**.
-- To enable text wrapping, set the [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
+- To let the text box allow and display the newline or return characters, set the [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) property to **true**.
+- To enable text wrapping, set the [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
 
 > **Note**&nbsp;&nbsp;TextBox and RichEditBox don't support the **WrapWholeWords** value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.
 
@@ -279,6 +276,6 @@ For more info and examples, see [Use input scope to change the touch keyboard](h
 - [Guidelines for spell checking](spell-checking-and-prediction.md)
 - [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [Guidelines for text input](text-controls.md)
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox class](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox class](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

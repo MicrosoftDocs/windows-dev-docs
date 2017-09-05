@@ -75,11 +75,11 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-In some cases, the operating system will prompt the user to see if the actually want to switch apps.
+In some cases, the operating system will prompt the user to see if they actually want to switch apps.
 
 ![a warning dialog overlayed on a grayed out background of the app. the dialog asks the user if they want to switch apps and has ‘yes’ and ‘no’ buttons in the bottom right. the ‘no’ button is highlighted.](images/warningdialog.png)
 
-If you always want this prompt to occur, use the [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) property to indicate that the operating system display a warning.
+If you always want this prompt to occur, use the [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) property to tell the operating system to display a warning.
 
 ```cs
 // The URI to launch

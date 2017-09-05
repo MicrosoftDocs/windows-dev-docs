@@ -14,28 +14,28 @@ keywords: windows 10, uwp, games, monetization
 
 As a game developer, you need to know your monetization options so you can sustain your business and keep doing what you're passionate about: creating great games. This article provides an overview of the monetization methods for a Universal Windows Platform (UWP) game and how to implement them.
 
-In the past, you would simply put a price on your game and then wait for people to purchase it at a store. But today you have options. You can choose to distribute a game to "brick-and-mortar" stores, sell the game online (either physical or soft copies), or let everyone play the game for free but incorporate some sort of ads or in-game items that can be purchased. Games are also no longer just standalone products. They often come with extra content that can be purchased in addition to the main game. 
+In the past, you would simply put a price on your game and then wait for people to purchase it at a store. But today you have options. You can choose to distribute a game to "brick-and-mortar" stores, sell the game online (either physical or soft copies), or let everyone play the game for free but incorporate some sort of ads or in-game items that can be purchased. Games are also no longer just standalone products. They often come with extra content that can be purchased in addition to the main game.
 
 You can promote and monetize a UWP game in one or more of these ways:
 * Put your game in the Windows Store, which is a secured, online store offering [worldwide distribution](#worldwide-distribution-channel). Gamers around the world can buy your game online at the [price you set](#set-a-price-for-your-game).
 * Use APIs in the Windows SDK to create [in-game purchases](#in-game-purchases). Gamers can buy items from within your game, or buy additional content such as extra equipment, skins, maps, or game levels.
-* Use APIs in the [Microsoft Store Services SDK](https://visualstudiogallery.msdn.microsoft.com/229b7858-2c6a-4073-886e-cbb79e851211) to display ads from ad networks. You can [display ads in your game](#display-ads-in-your-game) and offer the option for gamers to watch video ads in exchange for in-game rewards.
+* Use APIs in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) to display ads from ad networks. You can [display ads in your game](#display-ads-in-your-game) and offer the option for gamers to watch video ads in exchange for in-game rewards.
 * [Maximize your game's potential through ad campaigns](#maximize-your-games-potential-through-ad-campaigns). Promote your game using paid, community (free), or house (free) ad campaigns to grow its user base.
- 
+
 ## Worldwide distribution channel
 
 The Windows Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Markets and custom prices](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
 
-## Set a price for your game 
+## Set a price for your game
 
 UWP games published to the Store can be either be _paid_ or _free_. A paid game allows you to charge gamers up front for your game at a price you set, whereas a free game allows users to download and play the game without paying for it.
 
 Here are some important concepts regarding the pricing of your game in the Store.
 
-### Base price 
+### Base price
 
-The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use the [Dev Center dashboard](https://developer.microsoft.com/windows) to configure the base price based on country and region. 
-The process of determining the price may include your [tax responsibilities when selling to different countries](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps) 
+The base price of the game is what determines whether your game is categorized as _paid_ or _free_. You can use the [Dev Center dashboard](https://developer.microsoft.com/windows) to configure the base price based on country and region.
+The process of determining the price may include your [tax responsibilities when selling to different countries](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)
 and [cost considerations for specific markets](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets). You can also [set custom prices for specific markets](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). For more info, see [Define pricing and market selection](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection).
 
 ### Sale price
@@ -74,7 +74,7 @@ This section uses a simplified purchase example to illustrate the use of differe
 Because an add-on must be created in association with a game, your game must be published and available in the Store. The steps in this section show how to create add-ons while your game is still in development.
 (If your finished game is already live in the Store, you can skip the first three steps and go directly to [Create an add-on in the Store](#create-an-add-on-in-the-store).)
 
-To create add-ons while your game is still in development: 
+To create add-ons while your game is still in development:
 1. [Create a package](#create-a-package)
 2. [Publish the game as hidden](#publish-the-game-as-hidden)
 3. [Associate your game solution in Visual Studio with the Store](#associate-your-game-solution-with-the-store)
@@ -82,7 +82,7 @@ To create add-ons while your game is still in development:
 
 #### Create a package
 
-For any game to be published, it must meet the minimum Windows App Certification requirements. You can use the [Windows App Certification Kit](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit), which is part of the Windows 10 SDK, 
+For any game to be published, it must meet the minimum Windows App Certification requirements. You can use the [Windows App Certification Kit](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit), which is part of the Windows 10 SDK,
 to run tests on the game to help ensure that it's ready for publishing to the Store. If you have not already downloaded the Windows 10 SDK that includes the Windows App Certification Kit, go to [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
 To create a package that can be uploaded to the Store:
@@ -100,7 +100,7 @@ To create a package that can be uploaded to the Store:
 1. Go to [Dev Center](https://developer.microsoft.com/store) and sign in.
 2. From the __Dashboard overview__ or __All apps__ page, click the app you want to work with. If you have not yet created an app submission, click on __Create a new app__ and reserve a name.
 3. On the __App Overview__ page, click __Start your submission__.
-4. Configure this new submission. On the submission page: 
+4. Configure this new submission. On the submission page:
     * Click __Pricing and availability__. In the __Visibility__ section, choose '__Hide this app and prevent acquisition...__' to ensure only your development team has access to the game. For more details, go to [Distribution and visibility](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility).
     * Click __Properties__. In the __Category and subcategory__ section, choose __Games__ and then a suitable subcategory for your game.
     * Click __Age ratings__. Fill out the questionnaire accurately.
@@ -141,61 +141,56 @@ If your game has many add-ons, you can create them programmatically by using the
 
 ## Display ads in your game
 
-The libraries and tools in the Microsoft Store Services SDK help you set up a service in your game to receive ads from an ad network. Your gamers will be shown live ads and you'll earn money from the advertisers when your gamers view or interact with the displayed ads. 
-For more info, see [Workflows for creating apps with ads](https://msdn.microsoft.com/windows/uwp/monetize/workflows-for-creating-apps-with-ads).
+The libraries and tools in the Microsoft Advertising SDK help you set up a service in your game to receive ads from an ad network. Your gamers will be shown live ads and you'll earn money from the advertisers when your gamers view or interact with the displayed ads.
+For more info, see [Display ads in your app](../monetize/display-ads-in-your-app.md).
 
 ### Ad formats
 
-Two types of ads can be displayed by using the Microsoft Store Services SDK:
+Several types of ads can be displayed by using the Microsoft Advertising SDK:
 
 * Banner ads &mdash; Ads that take up a part of your gaming screen and are usually placed within a game.
 * Interstitial video ads &mdash; Full-screen ads, which can be very effective when used between levels. If implemented properly, they can be less obtrusive than banner ads.
+* Native ads &mdash; Component-based ads, where each piece of the ad creative (such as the title, image, description, and call-to-action text) is delivered to your app as an individual element that you can integrate into your app.
 
 ### Which ads are displayed?
 
-Ads are currently served through our partner networks when you use the Microsoft Store Services SDK. For more info about current offerings, see [Monetize your apps with ads](https://developer.microsoft.com/store/monetize/ads-in-apps).
-If you use AdControl to display ads, you can opt in to show [affiliate ads](https://msdn.microsoft.com/windows/uwp/publish/about-affiliate-ads) by expanding the product ads that are shown in your game.
+By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks. For more info about current offerings, see our [ad mediation](../publish/monetize-with-ads.md#ad-mediation) guidance.
 
 ### Which markets allow ads to be displayed?
 
-Banner ads and interstitial video ads can be shown to users from selected countries. For the full list of countries and regions that support ads, see [Supported markets for Microsoft Advertising](https://msdn.microsoft.com/windows/uwp/monetize/supported-markets-for-microsoft-advertising).
+For the full list of countries and regions that support ads, see [Supported markets for ad networks](../publish/monetize-with-ads.md#network-markets).
 
 ### APIs for displaying ads
 
-The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)  and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) classes in the Microsoft Store Services SDK, part of the [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespace are used to help display ads in games.
+The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx), [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) classes in the Microsoft Advertising SDK are used to help display ads in games.
 
-To get started, download and install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015. For more info, see [Features available in the SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk#features-available-in-the-sdk).
+To get started, download and install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later version. For more info, see [Install the Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md).
 
 #### Implementation guides
 
-These walkthroughs show how to implement ads by using __AdControl__ and __InterstitialAd__:
+These walkthroughs show how to implement ads by using __AdControl__, __InterstitialAd__, and __NativeAd__:
 
-* [Create banner ads by using the AdControl class in XAML and .NET](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
-* [Create banner ads by using the AdControl class in HTML5 and JavaScript](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
-* [Create interstitial video ads by using the InterstitialAd class](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [Create banner ads in XAML and .NET](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-xaml-and--net)
+* [Create banner ads in HTML5 and JavaScript](https://msdn.microsoft.com/windows/uwp/monetize/adcontrol-in-html-5-and-javascript)
+* [Create interstitial ads](https://msdn.microsoft.com/windows/uwp/monetize/interstitial-ads)
+* [Create native ads](https://msdn.microsoft.com/windows/uwp/monetize/native-ads)
 
-During development, you can make use of these test values to see how the ads are rendered. These same values are also used in the walkthroughs above.
-
-|AdType             | AdUnitId  | AppId                              |
-|-------------------|-----------|------------------------------------|
-|Banner ads         |10865270   |3f83fe91-d6be-434d-a0ae-7351c5a997f1|
-|Interstitial ads	|11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
+During development, you can make use of the [test ad unit values](../monetize/test-mode-values.md) to see how the ads are rendered. These test ad unit values are also used in the walkthroughs above.
 
 Here are some best practices to help you in the design and implementation process.
 
-* [Best practices for banner ads by using the AdControl class](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
-* [Best practices for interstitial ads by using the InterstitialAd class](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
+* [Best practices for banner ads](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines)
+* [Best practices for interstitial ads](https://msdn.microsoft.com/windows/uwp/monetize/ui-and-user-experience-guidelines#interstitialbestpractices10)
 
 For solutions to common development issues, like ads not appearing, black box blinking and disappearing, or ads not refreshing, see [Troubleshooting guides](https://msdn.microsoft.com/windows/uwp/monetize/troubleshooting-guides).
 
 ### Prepare for release by replacing ad unit test values
 
-When you're ready to move to live testing or to receive ads in published games, you must update the test ad unit values to the actual values provided for your game.
-To create ad units for your game, see [Set up ad units in your app](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app).
+When you're ready to move to live testing or to receive ads in published games, you must update the test ad unit values to the actual values provided for your game. To create ad units for your game, see [Set up ad units in your app](https://msdn.microsoft.com/windows/uwp/monetize/set-up-ad-units-in-your-app).
 
 ### Other ad networks
 
-These are other ad networks that support serving ads to UWP apps and games.
+These are other ad networks that provide SDKs for serving ads to UWP apps and games.
 
 #### Vungle
 
@@ -210,14 +205,14 @@ Smaato enables banner ads to be incorporated into UWP apps and games. Download t
 You can use AdDuplex to implement banner or interstitial ads in your game.
 
 To learn more about integrating AdDuplex directly into a Windows 10 XAML project, go to the AdDuplex website:
-* Banner ads: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) 
+* Banner ads: [Windows 10 SDK for XAML](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage)
 * Interstitial ads: [Windows 10 XAML AdDuplex Interstitial Ad Installation and Usage](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage)
 
 For info about integrating the AdDuplex SDK into Windows 10 UWP games created using Unity, see [Windows 10 SDK for Unity apps installation and usage](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage).
 
 ## Maximize your game's potential through ad campaigns
 
-Take the next step in promoting your game using ads. When you [create an ad campaign](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app) for your game, other apps and games will display ads promoting your game. 
+Take the next step in promoting your game using ads. When you [create an ad campaign](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app) for your game, other apps and games will display ads promoting your game.
 
 Choose from several types of campaigns that can help increase your gamer base.
 

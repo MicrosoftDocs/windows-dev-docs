@@ -182,7 +182,7 @@ namespace TranscodeWin10
 
             //<SnippetIsFLACSupported>
             IReadOnlyList<CodecInfo> flacResult = 
-                await codecQuery.FindAllAsync(CodecKind.Video, CodecCategory.Encoder, CodecSubtypes.AudioFormatFlac);
+                await codecQuery.FindAllAsync(CodecKind.Audio, CodecCategory.Encoder, CodecSubtypes.AudioFormatFlac);
 
             if (flacResult.Count > 0)
             {

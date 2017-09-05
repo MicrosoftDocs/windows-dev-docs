@@ -29,7 +29,7 @@ As a completely transparent overlay, the InkCanvas does not provide any built-in
 
   The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in UWP apps](pen-and-stylus-interactions.md).
 
-- Bind an [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) to the InkCanvas. By default, the InkToolbar provides a basic UI for activating ink features and setting ink properties such as stroke size, ink color, and pen tip shape.
+- Bind an [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) to the InkCanvas. By default, the InkToolbar provides a customizable and extensible collection of buttons for activating ink-related features such as stroke size, ink color, and pen tip.
 
   We discuss the InkToolbar in this topic.
 
@@ -45,16 +45,18 @@ As a completely transparent overlay, the InkCanvas does not provide any built-in
 
 ## Default InkToolbar
 
-By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
+By default, the [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) includes buttons for drawing, erasing, highlighting, and displaying a stencil (ruler or protractor). Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
 
 ![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
 *Default Windows Ink toolbar*
 
-To add a basic default InkToolbar:
+To add a default [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) to an inking app, just place it on the same page as your [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and associate the two controls.
+
 1. In MainPage.xaml, declare a container object (for this example, we use a Grid control) for the inking surface.
 2. Declare an InkCanvas object as a child of the container. (The InkCanvas size is inherited from the container.)
 3. Declare an InkToolbar and use the TargetInkCanvas attribute to bind it to the InkCanvas.
-  Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.
+    > [!NOTE]  
+    > Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -806,6 +808,10 @@ For more info on custom drying, see [Pen interactions and Windows Ink in UWP app
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 **Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
+* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
+* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
+

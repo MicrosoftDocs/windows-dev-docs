@@ -36,6 +36,15 @@ keywords: windows 10, uwp, games, mesh, directx
 
 ## Instructions
 
+These steps will show you how to create a basic mesh cube. 
+
+
+If you prefer a talked-through explanation of these concepts, check out this video.
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
+
+
 ### Step 1: Construct the mesh for the model
 
 In most games, the mesh for a game object is loaded from a file that contains the specific vertex data. The ordering of these vertices is app-dependent, but they are usually serialized as strips or fans. Vertex data can come from any software source, or it can be created manually. It's up to your game to interpret the data in a way that the vertex shader can effectively process it.

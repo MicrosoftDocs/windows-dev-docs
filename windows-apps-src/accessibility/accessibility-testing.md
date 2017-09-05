@@ -80,15 +80,18 @@ Use your app while a high-contrast theme is active to verify that all the UI ele
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## Verify your app with display settings  
+
 Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://msdn.microsoft.com/library/windows/apps/Dn611863) and provide additional resources for different scaling factors.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 ## Verify main app scenarios by using Narrator  
-Use Narrator to test the screen reading experience for your app by performing the following steps:
+Use Narrator to test the screen reading experience for your app.
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 **Use these steps to test your app using Narrator with a mouse and keyboard:**
-1.  Start Narrator by pressing _Windows logo key + Enter_.
+1.  Start Narrator by pressing _Windows logo key + Ctrl + Enter_. In versions prior to Windows 10 version 1607, use _Windows logo key + Enter_ to start Narrator.
 2.  Navigate your app with the keyboard by using the _Tab_ key, the arrow keys, and the _Caps Lock + arrow keys_.
 3.  As you navigate your app, listen as Narrator reads the elements of your UI and verify the following:
     * For each control, ensure that Narrator reads all visible content. Also ensure that Narrator reads each control's name, any applicable state (checked, selected, and so on), and the control type (button, check box, list item, and so on).
@@ -143,4 +146,5 @@ One aspect that you can test is whether there are elements appearing in the UI A
 * [Accessibility](accessibility.md)
 * [Practices to avoid](practices-to-avoid.md)
 * [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Accessibility in Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
+* [Accessibility in Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)
