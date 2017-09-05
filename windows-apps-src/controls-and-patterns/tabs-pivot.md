@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: Tabs and pivots are enable users to navigate between frequently accessed content.
+Description: Tabs and pivots enable users to navigate between frequently accessed content.
 title: Tabs and pivots
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
@@ -20,22 +20,23 @@ doc-status: Published
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and relies on text headers to articulate the different sections of content.
+The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and rely on text headers to label the different sections of content.
 
 > **Important APIs**: [Pivot class](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-![An examples of tabs](images/pivot_Hero_main.png)
+![An example of the pivot control](images/pivot_Hero_main.png)
 
 Tabs are a visual variant of Pivot that use a combination of icons and text or just icons to articulate section content. Tabs are built using the [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903) shows how to customize the Pivot control into the tabs pattern.
 
+![An example of the tabs pattern](images/tabs.png)
 
-## The pivot pattern
+## The pivot control
 
 When building an app with pivot, there are a few key design variables to consider.
 
 - **Header labels.**  Headers can have an icon with text, icon only, or text only.
 - **Header alignment.**  Headers can be left-justified or centered.
-- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation pane](navigationview.md) can serve as the primary level with pivot acting as secondary.
+- **Top-level or sub-level navigation.**  Pivots can be used for either level of navigation. Optionally, [navigation view](navigationview.md) can serve as the primary level with pivot acting as secondary.
 - **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
     1. Tap on a tab/pivot header to navigate to that category.
     2. Swipe left or right on the content area to navigate to the adjacent category.
@@ -83,6 +84,25 @@ You can use the [SelectedItem](https://msdn.microsoft.com/library/windows/apps/x
 
 You can use the [LeftHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [RightHeader](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header.
 
+For example, you can add a [CommandBar](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/app-bars) in the Pivot's RightHeader.
+
+![An example of a command bar in the pivot control's right header](images/PivotHeader.png)
+
+```xaml
+<Pivot>
+    <Pivot.RightHeader>
+        <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
+                <AppBarButton Icon="Add"/>
+                <AppBarSeparator/>
+                <AppBarButton Icon="Edit"/>
+                <AppBarButton Icon="Delete"/>
+                <AppBarSeparator/>
+                <AppBarButton Icon="Save"/>
+        </CommandBar>
+    </Pivot.RightHeader>
+</Pivot>
+```
+
 ### Pivot interaction
 
 The control features these touch gesture interactions:
@@ -90,6 +110,7 @@ The control features these touch gesture interactions:
 -   Tapping on a pivot item header navigates to that header's section content.
 -   Swiping left or right on a pivot item header navigates to the adjacent section.
 -   Swiping left or right on section content navigates to the adjacent section.
+
 ![Example swiping left on section content](images/pivot_w_hand.png)
 
 The control comes in two modes:
@@ -99,14 +120,13 @@ The control comes in two modes:
 -   Pivots are stationary when all pivot headers fit within the allowed space.
 -   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
 
-> Note&nbsp;&nbsp; Pivot headers should not carousel in a [10ft environment](../input-and-devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot#Windows_UI_Xaml_Controls_Pivot_IsHeaderItemsCarouselEnabled) property to **false** if your app will run on Xbox.
-
-
 **Carousel**
 
 -   Pivots carousel when all pivot headers don't fit within the allowed space.
 -   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
 -   Pivot items in a carousel loop from last to first pivot section.
+
+> **Note** Pivot headers should not carousel in a [10ft environment](../input-and-devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot#Windows_UI_Xaml_Controls_Pivot_IsHeaderItemsCarouselEnabled) property to **false** if your app will run on Xbox.
 
 ### Pivot focus
 
@@ -123,7 +143,7 @@ Apps that have customized Pivot and incorporate the underline into header select
 -   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
 -   Avoid using more than 5 headers when using carousel (round-trip) mode, as looping more than 5 can become confusing.
 -   Use the tabs pattern only if your pivot items have distinct icons.
--   Include text in pivot item headers to help users understand the meaning of each pivot section. Icons are not necessarily self-explanatory to all users.
+-   When creating a tabs pattern, include text in pivot item headers. Icons are not necessarily self-explanatory to all users.
 
 ## Get the sample code
 - [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903)<br/>
