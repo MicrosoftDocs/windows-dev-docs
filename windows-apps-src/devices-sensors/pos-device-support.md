@@ -43,11 +43,7 @@ keywords: windows 10, uwp
 ## Customer Display (LineDisplay)
 Supports any OPOS compatible line displays via OPOS service objects provided by the manufacturer. Install the OPOS drivers as per the particular device manufacturers installation instructions.
 
-## Magnetic stripe reader
-
-Windows contains a in-box class driver for USB connected Magnetic stripe readers, which is based on the HID POS Scanner Usage Table (8c) specification defined by [USB.org](http://www.usb.org/developers/hidpage/).
-
-### Vendor specific support
+## Magnetic Stripe Reader
 Windows provides support for the following magnetic stripe readers from Magtek and IDTech based on their Vendor ID and Product ID (VID/PID).
 
 | Manufacturer | 	Model(s) |	Part Number |
@@ -57,8 +53,7 @@ Windows provides support for the following magnetic stripe readers from Magtek a
 | Magtek | MagneSafe (VID:0801 PID:0011) |	210730xx |
 | |	Dynamag (VID:0801 PID:0002) |	210401xx |
 
-### Custom vendor specific
-Windows supports implementation of additional vendor specific drivers to support additional magnetic stripe readers. Please check with your magnetic stripe reader manufacturer for availability.
+<p>Windows supports implementation of additional vendor specific drivers to support additional magnetic stripe readers. Please check with your magnetic stripe reader manufacturer for availability.</p><p>Magnetic stripe reader manufacturers please consult the [Magnetic Stripe Reader Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom magnetic stripe reader driver</p>
 
 ## POS printer
 Windows supports the ability to print to network and Bluetooth connected receipt printers using the Epson ESC/POS printer control language. For more information on ESC/POS, see [Epson ESC/POS with formatting](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/epson-esc-pos-with-formatting).
