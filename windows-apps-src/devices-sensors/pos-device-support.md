@@ -45,8 +45,8 @@ keywords: windows 10, uwp
 |--------------|-----------|
 | APG Cash Drawer |	NetPRO, BluePRO |
 
-## Line display
-Supports any line display devices that support OPOS drivers and/or provides OPOS service objects. Install the OPOS drivers as per the particular device manufacturers installation instructions.
+## Customer Display (LineDisplay)
+Supports any OPOS compatible line displays via OPOS service objects provided by the manufacturer. Install the OPOS drivers as per the particular device manufacturers installation instructions.
 
 ## Magnetic stripe reader
 
