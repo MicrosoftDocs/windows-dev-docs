@@ -35,15 +35,10 @@ keywords: windows 10, uwp
 ## Cash Drawer
 | Connectivity | Support |
 | -------------|-------------|
-| Network/Bluetooth | <p> Connection directly to the cash drawer can be made over the network or through Bluetooth, depending on the capabilities of the cash drawer unit. </p>|
+| Network/Bluetooth | <p> Connection directly to the cash drawer can be made over the network or through Bluetooth, depending on the capabilities of the cash drawer unit. </p><p>APG Cash Drawer:  NetPRO, BluePRO</p> |
 | DK port | <p> Cash drawers that do not have network or Bluetooth capabilities can be connected via the DK port on a supported Receipt Printer or the Star Micronics DK-AirCash accessory. </p>
 | OPOS    | <p> Supports any OPOS compatible Cash Drawers via OPOS service objects provided by the manufacturer. Install the OPOS drivers as per the particular device manufacturers installation instructions. </p> |
 
-
-### Network/Bluetooth
-| Manufacturer |	Model(s) |
-|--------------|-----------|
-| APG Cash Drawer |	NetPRO, BluePRO |
 
 ## Customer Display (LineDisplay)
 Supports any OPOS compatible line displays via OPOS service objects provided by the manufacturer. Install the OPOS drivers as per the particular device manufacturers installation instructions.
