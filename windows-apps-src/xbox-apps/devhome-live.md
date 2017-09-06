@@ -1,6 +1,14 @@
 ---
+author: v-angraf
+ms.assetid: "4c03e06b-c12c-f64f-c53f-b38716101822"
 title: "Xbox Live Page (Dev Home)"
-assetID: "4c03e06b-c12c-f64f-c53f-b38716101822"
+description: "Provides information about the Xbox Live page of the Dev Home app for Xbox One."
+ms.author: v-angraf@microsoft.com
+ms.date: 08/09/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 permalink: "en-us/docs/xdk/devhome-live.html"
 ---
 

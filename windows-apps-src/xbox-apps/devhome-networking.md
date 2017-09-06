@@ -1,6 +1,14 @@
 ---
+author: v-angraf
+ms.assetid: "5aeb009c-1f2f-7c04-4477-cbe92c473174"
 title: "Networking Page (Dev Home)"
-assetID: "5aeb009c-1f2f-7c04-4477-cbe92c473174"
+description: "Provides information about the Networking page of the Dev Home app for Xbox One."
+ms.author: v-angraf@microsoft.com
+ms.date: 08/09/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 permalink: "en-us/docs/xdk/devhome-networking.html"
 ---
 
