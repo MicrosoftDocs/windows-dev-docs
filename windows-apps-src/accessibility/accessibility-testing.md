@@ -88,7 +88,7 @@ Use the system display options that adjust the display's dots per inch (dpi) val
 ## Verify main app scenarios by using Narrator  
 Use Narrator to test the screen reading experience for your app.
 
-<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player]
 
 **Use these steps to test your app using Narrator with a mouse and keyboard:**
 1.  Start Narrator by pressing _Windows logo key + Ctrl + Enter_. In versions prior to Windows 10 version 1607, use _Windows logo key + Enter_ to start Narrator.
