@@ -48,7 +48,7 @@ Comparing the two APIs:
 
 - Supports applications written with C++/CX, C#, and JavaScript.
     - C++/CX is a Microsoft C++ extension to make WinRT programming easy for example using ^ as WinRT pointers.
-- Supports applications targeting Xbox One XDK platform, and Universal Windows Platform (UWP)  
+- Supports applications targeting Xbox One XDK platform, and Universal Windows Platform (UWP) x86, x64 and ARM architectures.
 - Errors are handled via exceptions in all languages including C++/CX.
 - C++/WinRT is also supported.  More information about C++/WinRT can be found at [https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/](https://moderncpp.com/2016/10/13/cppwinrt-available-on-github/)
 
@@ -74,7 +74,7 @@ winrt::Microsoft::Xbox::Services::XboxLiveContext xblContext(cppWinrtUser);
 
 - Uses cross platform ISO standard C++11
 - Supports applications written with C++
-- Supports applications targeting Xbox One XDK platform, and Universal Windows Platform (UWP)  
+- Supports applications targeting Xbox One XDK platform, and Universal Windows Platform (UWP) x86, x64 and ARM architectures. 
 - Errors are handled via std::error_code.
 - The C++11 based API is the recommended API to use for C++ game engines for better performance, and better debugging.
 - If you are in the Xbox Live Creators Program, before including the XSAPI header define XBOX_LIVE_CREATORS_SDK. This limits the API surface area to only those that are usable by developers in the Xbox Live Creators Program and changes the sign-in method to work for titles in the Creators program.  For example:
