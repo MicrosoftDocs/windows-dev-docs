@@ -23,6 +23,12 @@ Welcome to the UWP ([what's UWP again?](whats-a-uwp.md)) platform! Whether you'r
 -   Use third party libraries to add new functionality.
 -   Build and debug your app on your local machine.
 
+## Ask a bot!
+
+If you're stuck or need some help finding the right docs, try asking the experimental chat bot below. For example, ask 'Where can I download Visual Studio?' or 'Tell me about Fluent Design". If you don't get a useful answer, try rewording your query slightly.
+
+<iframe src='https://webchat.botframework.com/embed/DocBot4?s=T2nP6qZUXC8.cwA.lvc.AR-ZBwtULpaITu6_dAhMwrmg4R2GSLNzIoiMNFL8M7M' height="400" width="400"></iframe>
+
 ## Write your first UWP app in your favorite programming language
 
 If you're a new developer or if you're familiar with the Windows platform and want to get started with UWP, check out these basic tutorials:
