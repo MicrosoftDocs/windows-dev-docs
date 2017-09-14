@@ -18,19 +18,19 @@ Note, when working with XAML UWP app, you can chose to paint a UIElement with a 
 When working with the Visual layer, a CompositionBrush must be used to paint the area of a [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual).
 
 -   [Prerequisites](./composition-brushes.md#prerequisites)
--   [Painting with CompositionBrush](./composition-brushes.md#Painting-with-a-CompositionBrush)
-	-   [Paint with a solid color](./composition-brushes.md#Painting-with-a-solid-color)
-	-   [Paint with a linear gradient](./composition-brushes.md#Painting-with-a-linear-gradient)
-	-   [Paint with an image](./composition-brushes.md#Painting-with-an-image)
-	-   [Paint with a custom drawing](./composition-brushes.md#Painting-with-a-custom-drawing)
-	-   [Paint with a video](./composition-brushes.md#Painting-with-a-video)
-	-   [Paint with an effect](./composition-brushes.md#Painting-with-an-effect)
-	-   [Paint with a CompsoitionBrush with an opacity mask](./composition-brushes.md#Painting-with-a-CompositionBrush-with-an-opacity-mask)
-	-   [Paint with a CompositinoBrush using nine grid stretch](./composition-brushes.md#Painting-with-a-CompositionBrush-using-nine-grid-stretch)
-	-   [Paint using Background Pixels](./composition-brushes.md#Paint-using-Background-Pixels)
--   [Combining CompositionBrushes](./composition-brushes.md#Combining-CompositionBrushes)
--   [Using a XAML Brush vs. a CompositionBrush](./composition-brushes.md#Using-a-XAML-Brush-vs.-CompositionBrush)
--   [Related Topics](./composition-brushes.md#Related-Topics)
+-   [Painting with CompositionBrush](./composition-brushes.md#painting-with-a-compositionbrush)
+	-   [Paint with a solid color](./composition-brushes.md#painting-with-a-solid-color)
+	-   [Paint with a linear gradient](./composition-brushes.md#painting-with-a-linear-gradient)
+	-   [Paint with an image](./composition-brushes.md#painting-with-an-image)
+	-   [Paint with a custom drawing](./composition-brushes.md#painting-with-a-custom-drawing)
+	-   [Paint with a video](./composition-brushes.md#painting-with-a-video)
+	-   [Paint with an effect](./composition-brushes.md#painting-with-an-effect)
+	-   [Paint with a CompsoitionBrush with an opacity mask](./composition-brushes.md#painting-with-a-compositionbrush-with-an-opacity-mask)
+	-   [Paint with a CompositinoBrush using nine grid stretch](./composition-brushes.md#painting-with-a-compositionbrush-using-nine-grid-stretch)
+	-   [Paint using Background Pixels](./composition-brushes.md#paint-using-background-pixels)
+-   [Combining CompositionBrushes](./composition-brushes.md#combining-compositionbrushes)
+-   [Using a XAML Brush vs. a CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs.-compositionbrush)
+-   [Related Topics](./composition-brushes.md#related-topics)
 
 ## Prerequisites
 This overview assumes that you are familiar with the structure of a basic Composition application, as described in the [Visual layer overview](visual-layer.md).
