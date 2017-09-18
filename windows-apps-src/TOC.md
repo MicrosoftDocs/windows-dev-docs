@@ -318,6 +318,7 @@
 #### [Device Portal for Hololens](debug-test-perf/device-portal-hololens.md)
 #### [Device Portal core APIs](debug-test-perf/device-portal-api-core.md)
 #### [Write a custom plugin for Device Portal](debug-test-perf/device-portal-plugin.md)
+#### [Provision Device Portal with a custom SSL certificate](debug-test-perf/device-portal-ssl.md)
 ### [Windows App Certification Kit](debug-test-perf/windows-app-certification-kit.md)
 #### [Windows App Certification Kit tests](debug-test-perf/windows-app-certification-kit-tests.md)
 ##### [Windows Desktop Bridge app tests](debug-test-perf/windows-desktop-bridge-app-tests.md)
