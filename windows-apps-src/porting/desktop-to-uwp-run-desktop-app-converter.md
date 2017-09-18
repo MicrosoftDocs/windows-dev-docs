@@ -4,7 +4,7 @@ Description: Run the Desktop Converter App to package a Windows desktop applicat
 Search.Product: eADQiWindows 10XVcnh
 title: Package an app using the Desktop App Converter (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 09/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -174,12 +174,14 @@ Point to the installer file by using the ``Installer`` parameter.
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 
-> [!NOTE]
-> Make sure that your installer is located in an independent folder and that only files related to that installer are in the same folder. The converter copies all of the contents of that folder to the isolated Windows environment.
+> [!IMPORTANT]
+> There are two important things to keep in mind here. First, make sure that your installer is located in an independent folder and that only files related to that installer are in the same folder. The converter copies all of the contents of that folder to the isolated Windows environment. <br> Secondly, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.  
 
 **Video**
 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-an-MSI-Installer-Kh1UU2WhD_7106218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+
+If your installer includes installers for dependent libraries or frameworks, you might have to organize things a bit a differently. See [Chaining multiple installers with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
 
 <span id="setup-conversion" />
 #### Package an app that has a setup executable file
@@ -189,6 +191,8 @@ Point to the setup executable by using the ``Installer`` parameter.
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
+>[!IMPORTANT]
+>If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
 The ``InstallerArguments`` parameter is an optional parameter. However, because the Desktop App Converter needs your installer to run in unattended mode, you might have to use it if your app needs silent flags to run silently. The ``/S`` flag is a very common silent flag, but the flag that you use might be different depending on which installer technology you used to create the setup file.
 
@@ -207,6 +211,9 @@ Use the `AppExecutable` parameter to point to your apps executable file.
 DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 
+>[!IMPORTANT]
+>If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
+
 **Video**
 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
@@ -219,6 +226,8 @@ This example is similar to first one except it shows how you can sign your app f
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
+>[!IMPORTANT]
+>If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter.
 
 The ``Sign`` parameter generates a certificate and then signs your app with it. To run your app, you'll have to install that generated certificate. To learn how, see the [Run the packaged app](#run-app) section of this guide.
 
@@ -273,13 +282,13 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-InstallerArguments &lt;String&gt; |Optional |A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path &lt;log_folder&gt;, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE**: The unattended/silent flags and log arguments will vary between installer technologies. <br><br>An example usage for this parameter: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path &lt;log_folder&gt; if you want the converter to capture it and put it in the final log folder.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Optional |A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
 |<span id="identity-params" /><strong>Package identity parameters</strong>||
-|-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package |
+|-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-Publisher &lt;String&gt; |Required |The publisher of your Universal Windows App package |
 |-Version &lt;Version&gt; |Required |The version number for your Universal Windows App package |
 |<span id="manifest-params" /><strong>Package manifest parameters</strong>||
 |-AppExecutable &lt;String&gt; |Optional |The name of your application's main executable (eg "MyApp.exe"). This parameter is required for a no-installer conversion. |
 |-AppFileTypes &lt;String&gt;|Optional |A comma-separated list of file types which the application will be associated with. Example usage: -AppFileTypes "'.md', '.markdown'".|
-|-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
+|-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. In many cases, using the *PackageName* is fine. However, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-AppDisplayName &lt;String&gt;  |Optional |Specifies a value to set Application Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
 |-AppDescription &lt;String&gt; |Optional |Specifies a value to set Application Description to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
 |-PackageDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
