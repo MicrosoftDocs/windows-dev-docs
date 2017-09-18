@@ -173,7 +173,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/microsoft-edge/">
+                            <a href="https://docs.microsoft.com/microsoft-edge/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

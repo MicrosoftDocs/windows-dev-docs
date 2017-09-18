@@ -47,7 +47,7 @@ Xbox Live Creators Program offers an array of features designed to help promote 
 
 It is important to note that the Xbox Live Creators Program does not support online multiplayer, achievements, or gamerscore.
 
-## 5. Release your game
+## 6. Release your game
 
 If you are using the Xbox Live Creators Program, then the process is no different than releasing any other UWP application:
 

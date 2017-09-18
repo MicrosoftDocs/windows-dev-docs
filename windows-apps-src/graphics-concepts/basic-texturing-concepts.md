@@ -4,8 +4,8 @@ description: Early computer-generated 3D images, although generally advanced for
 ms.assetid: 3CA3905D-E837-48EB-A81F-319AA1C6537E
 keywords:
 - Basic texturing concepts
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

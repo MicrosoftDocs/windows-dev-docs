@@ -13,6 +13,7 @@
             <Image x:Name="imageControl"/>
             <!--</SnippetImageControl>-->
             <Button x:Name="OpenButton" Click="OpenButton_Click" Content ="Open" HorizontalAlignment="Right"/>
+            <Button x:Name="OpenCVButton" Click="OpenCVButton_Click" Content="OpenCV"/>
         </StackPanel>
     </Grid>
 </Page>

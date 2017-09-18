@@ -4,8 +4,8 @@ description: Describes the graphics concepts that Microsoft Direct3D is built on
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Direct3D Graphics Learning Guide
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

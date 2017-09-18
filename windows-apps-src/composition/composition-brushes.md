@@ -13,29 +13,29 @@ keywords: windows 10, uwp
 # Composition brushes
 Everything visible on your screen from a UWP application is visible because it was painted by a Brush. Brushes enable you to paint user interface (UI) objects with content ranging from simple, solid colors to images or drawings to complex effects chain. This topic introduces the concepts of painting with CompositionBrush.
 
-Note, when working with XAML UWP app, you can chose to paint a UIElement with a [XAML Brush](https://docs.microsoft.com/windows/uwp/graphics/using-brushes) or a [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). Typically, it is easier and advisable to choose a XAML brush if your scenario is supported by a XAML Brush. For example, animating the color of a button, changing the fill of a text or a shape with an image. On the other hand, if you are trying to do something that is not supported by a Xaml brush like like painting with an animated mask or an animated nine-grid stretch or an effect chain, you can use a CompositionBrush to paint a UIElement through the use of [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Note, when working with XAML UWP app, you can chose to paint a UIElement with a [XAML Brush](https://docs.microsoft.com/windows/uwp/graphics/using-brushes) or a [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush). Typically, it is easier and advisable to choose a XAML brush if your scenario is supported by a XAML Brush. For example, animating the color of a button, changing the fill of a text or a shape with an image. On the other hand, if you are trying to do something that is not supported by a XAML brush like like painting with an animated mask or an animated nine-grid stretch or an effect chain, you can use a CompositionBrush to paint a UIElement through the use of [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 
 When working with the Visual layer, a CompositionBrush must be used to paint the area of a [SpriteVisual](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual).
 
 -   [Prerequisites](./composition-brushes.md#prerequisites)
--   [Painting with CompositionBrush](./composition-brushes.md#Painting-with-a-CompositionBrush)
-	-   [Paint with a solid color](./composition-brushes.md#Painting-with-a-solid-color)
-	-   [Paint with a linear gradient](./composition-brushes.md#Painting-with-a-linear-gradient)
-	-   [Paint with an image](./composition-brushes.md#Painting-with-an-image)
-	-   [Paint with a custom drawing](./composition-brushes.md#Painting-with-a-custom-drawing)
-	-   [Paint with a video](./composition-brushes.md#Painting-with-a-video)
-	-   [Paint with an effect](./composition-brushes.md#Painting-with-an-effect)
-	-   [Paint with a CompsoitionBrush with an opacity mask](./composition-brushes.md#Painting-with-a-CompositionBrush-with-an-opacity-mask)
-	-   [Paint with a CompositinoBrush using nine grid stretch](./composition-brushes.md#Painting-with-a-CompositionBrush-using-nine-grid-stretch)
-	-   [Paint using Background Pixels](./composition-brushes.md#Paint-using-Background-Pixels)
--   [Combining CompositionBrushes](./composition-brushes.md#Combining-CompositionBrushes)
--   [Using a XAML Brush vs. a CompositionBrush](./composition-brushes.md#Using-a-XAML-Brush-vs.-CompositionBrush)
--   [Related Topics](./composition-brushes.md#Related-Topics)
+-   [Paint with CompositionBrush](./composition-brushes.md#paint-with-a-compositionbrush)
+	-   [Paint with a solid color](./composition-brushes.md#paint-with-a-solid-color)
+	-   [Paint with a linear gradient](./composition-brushes.md#paint-with-a-linear-gradient)
+	-   [Paint with an image](./composition-brushes.md#paint-with-an-image)
+	-   [Paint with a custom drawing](./composition-brushes.md#paint-with-a-custom-drawing)
+	-   [Paint with a video](./composition-brushes.md#paint-with-a-video)
+	-   [Paint with a filter effect](./composition-brushes.md#paint-with-a-filter-effect)
+	-   [Paint with a CompositionBrush with an opacity mask](./composition-brushes.md#paint-with-a-compositionbrush-with-opacity-mask-applied)
+	-   [Paint with a CompositionBrush using NineGrid stretch](./composition-brushes.md#paint-with-a-compositionbrush-using-ninegrid-stretch)
+	-   [Paint using Background Pixels](./composition-brushes.md#paint-using-background-pixels)
+-   [Combining CompositionBrushes](./composition-brushes.md#combining-compositionbrushes)
+-   [Using a XAML Brush vs. CompositionBrush](./composition-brushes.md#using-a-xaml-brush-vs-compositionbrush)
+-   [Related Topics](./composition-brushes.md#related-topics)
 
 ## Prerequisites
 This overview assumes that you are familiar with the structure of a basic Composition application, as described in the [Visual layer overview](visual-layer.md).
 
-## Painting with a CompositionBrush
+## Paint with a CompositionBrush
 
 A [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) "paints" an area with its output. Different brushes have different types of output. Some brushes paint an area with a solid color, others with a gradient, image, custom drawing, or effect. There are also specialized brushes that modify the behavior of other brushes. For example, opacity mask can be used to control which area is painted by a CompositionBrush, or a nine-grid can be used to control the stretch applied to a CompositionBrush when painting an area. CompositionBrush can be of one of the following types:
 
@@ -49,7 +49,7 @@ A [CompositionBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.C
 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)|Paints an area with a linear gradient                    |Windows 10 Fall Creators Update (Insider Preview SDK)
 |[CompositionBackdropBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBackdropBrush)     |Paints an area by sampling background pixels from either the application or pixels directly behind the application's window on desktop. Used as an input to another CompositionBrush like a CompositionEffectBrush | Windows 10 Anniversary Update (SDK 14393)
 
-### Painting with a solid color
+### Paint with a solid color
 
 A [CompositionColorBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush) paints an area with a solid color. There are a variety of ways to specify the color of a SolidColorBrush. For example, you can specify its alpha, red, blue, and green (ARGB) channels or use one of the predefined colors provided by the [Colors](https://docs.microsoft.com/uwp/api/windows.ui.colors) class.
 
@@ -81,7 +81,7 @@ _colorVisual2.Offset = new Vector3(3, 3, 0);
 _container.Children.InsertAtBottom(_colorVisual2);
 ```
 
-### Painting with a linear gradient
+### Paint with a linear gradient
 
 A [CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush) paints an area with a linear gradient. A linear gradient blends two or more colors across a line, the gradient axis. You use GradientStop objects to specify the colors in the gradient and their positions.
 
@@ -104,7 +104,7 @@ _gradientVisual.Brush = _redyellowBrush;
 _gradientVisual.Size = new Vector2(156, 156);
 ```
 
-### Painting with an image
+### Paint with an image
 
 A [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) paints an area with pixels rendered onto an ICompositionSurface. For example, a CompositionSurfaceBrush can be used to paint an area with an image rendered onto an ICompositionSurface surface using [LoadedImageSurface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.loadedimagesurface) API.
 
@@ -130,7 +130,7 @@ _imageVisual.Brush = _imageBrush;
 _imageVisual.Size = new Vector2(156, 156);
 ```
 
-### Painting with a custom drawing
+### Paint with a custom drawing
 A [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) can also be used to paint an area with pixels from an ICompositionSurface rendered using [Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm) (or D2D).
 
 The following code shows a SpriteVisual painted with a text run rendered onto an ICompositionSurface using Win2D. Note, in order to use Win2D you need to include the [Win2D NuGet](http://www.nuget.org/packages/Win2D.uwp) package into your project.
@@ -173,7 +173,7 @@ _drawingVisual.Size = new Vector2(156, 156);
 
 Similarly, the CompositionSurfaceBrush can also be used to paint a SpriteVisual with a SwapChain using Win2D interop. [This sample](https://github.com/Microsoft/Win2D-Samples/tree/master/CompositionExample) provides an example of how to use Win2D to paint a SpriteVisual with a swapchain.
 
-### Painting with a video
+### Paint with a video
 A [CompositionSurfaceBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) can also be used to paint an area with pixels from an ICompositionSurface rendered using a video loaded through the [MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) class.
 
 The following code shows a SpriteVisual painted with a video loaded onto an ICompositionSurface.
@@ -202,7 +202,7 @@ _videoVisual.Brush = _videoBrush;
 _videoVisual.Size = new Vector2(156, 156);
 ```
 
-### Painting with a filter effect
+### Paint with a filter effect
 
 A [CompositionEffectBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush) paints an area with output of a CompositionEffect. Effects in the Visual Layer may be thought of as animatable filter effects applied to a collection of source content such as colors, gradients, images, videos, swapchains, regions of your UI, or trees of Visuals. The source content is typically specified using another CompositionBrush.
 
@@ -360,12 +360,67 @@ _containerVisual.Children.InsertAtTop(_backdropVisual);
 ## Combining CompositionBrushes
 A number of CompositionBrushes use other CompositionBrushes as inputs. For example, using the SetSourceParameter method can be used to set another CompositionBrush as an input to a CompositionEffectBrush. The table below outlines the supported combinations of CompositionBrushes. Note, that using an unsupported combination will throw an exception.
 
-|Property                                     |CompositionColorBrush|CompositionLinearGradientBrush|CompositionSurfaceBrush|CompositionEffectBrush|CompositionMaskBrush|CompositionNineGridBrush|CompositionBackdropBrush
-|---------------------------------------------|---------------------|------------------------------|-----------------------|----------------------|--------------------|------------------------|------------------------|
-|SetSourceParameter (String, CompositionBrush)|NO                   |YES                           |YES                    |NO                    |NO                  |YES                     |YES                     |
-|CompositionMaskBrush.Mask                    |YES                  |YES                           |YES                    |NO                    |NO                  |YES                     |NO                      |
-|CompositionMaskBrush.Source                  |YES                  |YES                           |YES                    |YES                   |NO                  |YES                     |NO                      |
-|CompositionNineGridBrush.Source              |YES                  |NO                            |YES                    |NO                    |NO                  |NO                      |NO                      |
+<table>
+<tbody>
+<tr>
+<th>Brush</th>
+<th>EffectBrush.SetSourceParameter()</th>
+<th>MaskBrush.Mask</th>
+<th>MaskBrush.Source</th>
+<th>NineGridBrush.Source</th>
+</tr>
+<tr>
+<td>CompositionColorBrush</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>CompositionLinear<br />GradientBrush</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>CompositionSurfaceBrush</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>CompositionEffectBrush</td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>CompositionMaskBrush</td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>CompositionNineGridBrush</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+<tr>
+<td>CompositionBackdropBrush</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+
 
 ## Using a XAML Brush vs. CompositionBrush
 
@@ -376,13 +431,13 @@ The following table provides a list of scenarios and whether XAML or Composition
 
 |Scenario                                                                   | XAML UIElement                                                                                                |Composition SpriteVisual
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------------------------------
-|Paint an area with Solid Color                                             |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
+|Paint an area with solid color                                             |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
 |Paint an area with animated color                                          |[SolidColorBrush](https://msdn.microsoft.com/library/windows/apps/BR242962)                                |[CompositionColorBrush](https://msdn.microsoft.com/library/windows/apps/Mt589399)
 |Paint an area with a static gradient                                       |[LinearGradientBrush](https://msdn.microsoft.com/library/windows/apps/BR210108)                            |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
 |Paint an area with animated gradient stops                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)                                                                                 |[CompositionLinearGradientBrush](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionlineargradientbrush)
-|Paint an area with an Image                                                |[ImageBrush](https://msdn.microsoft.com/library/windows/apps/BR210101)                                     |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415)
+|Paint an area with an image                                                |[ImageBrush](https://msdn.microsoft.com/library/windows/apps/BR210101)                                     |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415)
 |Paint an area with a webpage                                               |[WebViewBrush](https://msdn.microsoft.com/library/windows/apps/BR227703)                                   |N/A
-|Paint an area with an Image using Ninegrid stretch                         |[Image Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
+|Paint an area with an image using NineGrid stretch                         |[Image Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)                   |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Paint an area with animated NineGrid stretch                               |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)                                                                                       |[CompositionNineGridBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionNineGridBrush)
 |Paint an area with a swapchain                                             |[SwapChainPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)                                                                                                 |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) w/ swapchain interop
 |Paint an area with a video                                                 |[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272.aspx)                                                                                                  |[CompositionSurfaceBrush](https://msdn.microsoft.com/library/windows/apps/Mt589415) w/ media interop

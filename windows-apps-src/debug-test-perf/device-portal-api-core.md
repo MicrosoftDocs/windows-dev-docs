@@ -1062,6 +1062,219 @@ GET | /api/etw/customproviders
 * IoT
 
 ---
+## Location
+---
+
+### Get location override mode
+
+**Request**
+
+You can get the device's location stack override status by using the following request format. Developer mode must be on for this call to succeed.
+ 
+Method      | Request URI
+:------     | :-----
+GET | /ext/location/override
+<br />
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response includes the override state of the device in the following format. 
+
+```
+{"Override" : bool}
+```
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+### Set location override mode
+
+**Request**
+
+You can set the device's location stack override status by using the following request format. When enabled, the location stack allows position injection. Developer mode must be on for this call to succeed.
+
+Method      | Request URI
+:------     | :-----
+PUT | /ext/location/override
+<br />
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+```
+{"Override" : bool}
+```
+
+**Response**
+
+The response includes the override state that the device has been set to in the following format. 
+
+```
+{"Override" : bool}
+```
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+### Get the injected position
+
+**Request**
+
+You can get the device's injected (spoofed) location by using the following request format. An injected location must be set, or an error will be thrown.
+ 
+Method      | Request URI
+:------     | :-----
+GET | /ext/location/position
+<br />
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response includes the current injected latitude and longitude values in the following format. 
+
+```
+{
+    "Latitude" : double,
+    "Longitude : double
+}
+```
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+### Set the injected position
+
+**Request**
+
+You can set the device's injected (spoofed) location by using the following request format. Location override mode must first be enabled on the device, and the set location must be a valid location or an error will be thrown.
+
+Method      | Request URI
+:------     | :-----
+PUT | /ext/location/override
+<br />
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+```
+{
+    "Latitude" : double,
+    "Longitude : double
+}
+```
+
+**Response**
+
+The response includes the location that has been set in the following format. 
+
+```
+{
+    "Latitude" : double,
+    "Longitude : double
+}
+```
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+4XX | Error codes
+5XX | Error codes
+<br />
+**Available device families**
+
+* Windows Mobile
+* Windows Desktop
+* Xbox
+* HoloLens
+* IoT
+
+---
 ## OS information
 ---
 ### Get the machine name
@@ -1365,15 +1578,15 @@ The response includes a list of processes with details for each process. The inf
 ```
 {"Processes": [
     {
-        "CPUUsage": int,
+        "CPUUsage": float,
         "ImageName": string,
-        "PageFileUsage": int,
-        "PrivateWorkingSet": int,
+        "PageFileUsage": long,
+        "PrivateWorkingSet": long,
         "ProcessId": int,
         "SessionId": int,
         "UserName": string,
-        "VirtualSize": int,
-        "WorkingSetSize": int
+        "VirtualSize": long,
+        "WorkingSetSize": long
     },...
 ]}
 ```

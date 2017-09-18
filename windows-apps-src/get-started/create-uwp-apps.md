@@ -44,13 +44,13 @@ If you're still learning or need to refresh your memory, try reading these exter
 * [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
 * [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
 
-## Use XAML to create your app's layout and interface
+## Customize your app's layout and appearance with XAML
 
-Most UWP apps use the XAML markup language to create their UI.
+Most UWP apps use the XAML markup language to create their UI. Learn how you can use its core features to customize your app's visual presentation.
 
 * [Learn the basics of utilizing XAML in your app](xaml-basics-intro.md)
 
-Once you're familiar with XAML, check out this guidance for creating your app's UI.
+Once you're familiar with what XAML can do, check out this guidance for creating a unique look for your app.
 
 * [Intro to app UI design](../layout/design-and-ui-intro.md)
 * [Layout for UWP apps](../layout/index.md)
@@ -66,7 +66,7 @@ What makes Windows 10 special? Learn to use just some of its unique features.
 
 Expand your horizons and your app's features with external tools:
 
-* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
+* [A simple 2D UWP game, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
 
 ## Develop JavaScript and web apps
 

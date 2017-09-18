@@ -1,8 +1,8 @@
 ---
 author: muhsinking
-title: XAML basics tutorials
-description: Introduction to the XAML basics tutorial series
-keywords: XAML, UWP, Getting Started
+title: UI basics tutorials
+description: Introduction to the UI basics tutorial series
+keywords: XAML, UWP, Getting Started, UI
 ms.author: mukin
 ms.date: 08/31/2017
 ms.topic: article
@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 ---
 
-# XAML basics tutorials
+# UI basics tutorials
 
 This tutorial series covers four fundamental aspects of XAML programming: user interfaces, data binding, custom styles, and adaptive layouts. Each tutorial track starts with a partially-complete version of the [PhotoLab Sample](https://github.com/Microsoft/Windows-appsample-photo-lab), and builds one missing component of the final app step-by-step. Note that these tutorials do not build up to the full sample, so be sure to check out the [completed version](https://github.com/Microsoft/Windows-appsample-photo-lab) after you've mastered the basics.
 

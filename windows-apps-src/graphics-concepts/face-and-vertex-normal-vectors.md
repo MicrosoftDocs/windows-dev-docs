@@ -4,8 +4,8 @@ description: Each face in a mesh has a perpendicular unit normal vector. The vec
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
 - Face and vertex normal vectors
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-description: Reveal is a new interaction model that helps add more focus and delight to your application.
-title: Reveal
+description: Reveal is a lighting effect that helps bring depth and focus to your app's interactive elements.
+title: Reveal highlight
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -14,7 +14,7 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ---
-# Reveal
+# Reveal highlight
 
 > [!IMPORTANT]
 > This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.

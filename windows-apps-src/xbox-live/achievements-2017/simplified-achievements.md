@@ -45,7 +45,6 @@ With Achievements 2017, we are building a replacement of the existing Cloud-Powe
 | Progression              | Supported <br>*directly via API call*                | Supported <br> *indirectly via telemetry events*       |
 | Real-Time Activity (RTA) | Supported                             | Supported                              |
 | Challenges               | Not Supported   | Supported                      |
-| Testing APIs             | Supported                             | Not Supported                          |
 
 ## Title Requirements
 
@@ -53,13 +52,13 @@ The following are the requirements of any title that will use the Achievements 2
 
 1.  **Must be a new (unreleased) title.** Titles that have already been released and are using the Cloud-Powered Achievements system are ineligible. For more, see [Why can’t existing titles “migrate” onto the new Achievements 2017 system?](#_Why_can’t_existing)
 
-2.  **Must use August 2016 XDK or newer.** The Simplified Achievements API was released in the August 2016 XDK.
+2.  **Must use August 2016 XDK or newer.** The Update_Achievement API was released in the August 2016 XDK.
 
 3.  **Must be an XDK or UWP title.** The Achievements 2017 system is not available for legacy platforms, including Xbox 360, Windows 8.x or older, nor Windows Phone 8 or older.
 
-## UpdateAchievement API
+## Update_Achievement API
 
-Once your achievements are configured via [XDP](achievements-in-xdp.md) or [UDC](achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the UpdateAchievement API.
+Once your achievements are configured via [XDP](achievements-in-xdp.md) or [UDC](achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the Update_Achievement API.
 
 The API is available in both the XDK and the Xbox Live SDK.
 
@@ -98,7 +97,7 @@ The API signature is as follows:
 For more information, check out the Xfest 2015 talk, “XSAPI: C++, No Exceptions!”<br>
 [video](http://go.microsoft.com/?linkid=9888207) |  [slides](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest_2015/Xbox_Live_Track/XSAPI_Cpp_No_Exceptions.pptx)
 
-### Unlocking via UpdateAchievement API
+### Unlocking via Update_Achievement API
 
 To unlock an achievement, set the *percentComplete* to 100.
 
@@ -114,7 +113,7 @@ If the user is online, the request will be immediately sent to the Xbox Live Ach
 
 If the user is offline, the unlock request will be queued locally on the user’s device. When the user’s device has reestablished network connectivity, the request will automatically be sent to the Achievements service – note: no action is required from the game to trigger this – and the above user experiences will occur as described.
 
-### Updating Completion Progress via UpdateAchievement API
+### Updating Completion Progress via Update_Achievement API
 
 To update a user’s progress toward unlocking an achievement, set the *percentComplete* to the appropriate whole number between 1-100.
 
@@ -124,23 +123,11 @@ If *percentComplete* is set to 100, the achievement will unlock.
 
 If *percentComplete* is set to a number greater than 100, the API will behave as if you set it to exactly 100.
 
-## Testing Achievements
-
-There are two big asks that we typically hear from developers when it comes to validating their achievements during development:
-
-1.  I want to reset achievements for a test user.
-
-2.  I want to add unlocked achievements (and Gamerscore) for a test user.
-
-With the Achievements 2017 system, we are building APIs that will support both of these scenarios and will allow game developers to more easily test their title’s achievements within their dev sandboxes.
-
-*More info coming soon!*
-
 ## Frequently Asked Questions
 
-### <span id="_Why_are_Challenges" class="anchor"></span>Can I ship my title using the Achievements 2017 system before the Mandatory date?
+### <span id="_Why_are_Challenges" class="anchor"></span>Can I ship my title using the Achievements 2017 system yet?
 
-Absolutely! Beginning on the First Approved date, all new titles are welcomed and encouraged to make use of the Achievements 2017 system in lieu of the Cloud-Powered Achievements system.
+Absolutely! All new titles are welcomed and encouraged to make use of the Achievements 2017 system in lieu of the Cloud-Powered Achievements system.
 
 ### Why are Challenges not supported in the Achievements 2017 system?
 
@@ -162,20 +149,10 @@ All achievements for a title must use the same Achievements system. Whichever Ac
 
 No. All achievements for a title must use the same Achievements system.
 
-### If I want to try out each Achievements system after the First Approved date, can I use different Achievements systems between different dev sandboxes?
-
-The Achievements system used by your title is set at the product level. If your title’s service configuration has not been published to RETAIL, you can try out each Achievements system in your dev sandboxes. For more information, see [Enable Achievements 2017 (XDP)](#_Enable_Simplified_Achievements). Note that changing your Achievements system will cause the deletion of all of your title’s configured & published achievements in all sandboxes.
-
 ### Does Achievements 2017 also include offline unlocks?
 
-If the title unlocks an achievement whiel the device is offline, the UpdateAchievement API will automatically queue the offline unlock requests and will auto-sync to Xbox Live when the device has reestablished network connectivity, similar to the current Cloud-Powered Achievements system’s offline experience. Achievements unlocks will not occur while the user is offline.
+If the title unlocks an achievement while the device is offline, the Update_Achievement API will automatically queue the offline unlock requests and will auto-sync to Xbox Live when the device has reestablished network connectivity, similar to the current Cloud-Powered Achievements system’s offline experience. Achievements unlocks will not occur while the user is offline.
 
 ### I see a new “AchievementUpdate” event in XDP. If my title uses that event, does that mean it has Achievements 2017?
 
 The *AchievementUpdate* base event is required by Xbox Live for backend purposes. You can safely ignore it. If your title configures an event using this base event type, those event writes will be ignored by Xbox Live. Titles that are built on the Cloud-Powered Achievements system should continue to configure their events by using the other base event types. Titles that are built on the Achievements 2017 system need not configure *any* events for achievement purposes.
-
-### How do I disable Achievements 2017 for my title?
-
-If your title is set to use the Achievements 2017 system and you wish to use the Cloud-Powered Achievements system instead, follow the [Enable Achievements 2017 (XDP)](#_Enable_Simplified_Achievements) instructions *except* set the **Achievements configuration system** toggle to *Achievements 2013.*
-
-If your title is created after the Mandatory date, you cannot disable the Achievements 2017 system for your title.

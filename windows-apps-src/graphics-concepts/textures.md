@@ -4,8 +4,8 @@ description: Textures are a powerful tool in creating realism in computer-genera
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
 keywords:
 - Textures
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

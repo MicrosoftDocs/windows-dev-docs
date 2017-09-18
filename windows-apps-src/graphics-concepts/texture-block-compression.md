@@ -4,8 +4,8 @@ description: Block Compression (BC) support for textures has been extended in Di
 ms.assetid: 63506C46-BF14-464B-B20C-8B8F359E7AFE
 keywords:
 - Texture block compression
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

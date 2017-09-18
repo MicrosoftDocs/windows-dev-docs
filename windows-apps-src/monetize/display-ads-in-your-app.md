@@ -118,5 +118,5 @@ For Windows 8.1 and Windows Phone 8.x apps, we provide the [Microsoft Advertisin
 ## Related topics
 
 * [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
-* [Monetize your app with ads](http://go.microsoft.com/fwlink/p/?LinkId=699559)
 * [Advertising performance report](../publish/advertising-performance-report.md)
+* [Windows Premium Ads Publishers Program](windows-premium-ads-publishers-program.md)

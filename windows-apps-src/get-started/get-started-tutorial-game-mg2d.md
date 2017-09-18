@@ -1,5 +1,5 @@
 ---
-title: Get Started Tutorial - A UWP game in MonoGame 2D
+title: Create a UWP game in MonoGame 2D
 description: A simple UWP game for the Windows Store, written in C# and MonoGame
 author: muhsinking
 ms.author: mukin
@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ---
 
-# Get Started Tutorial: A UWP game in MonoGame 2D
+# Create a UWP game in MonoGame 2D
 
 ## A simple 2D UWP game for the Windows Store, written in C# and MonoGame
 

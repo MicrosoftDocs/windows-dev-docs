@@ -26,7 +26,7 @@ In order to provide a rich experience for your users, you may find it necessary 
 | [Enable usermode access for Windows IoT](enable-usermode-access.md) | This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10 IoT Core. |
 | [Enumerate devices](enumerate-devices.md) | The enumeration namespace enables you to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. |
 | [Pair devices](pair-devices.md) | Some devices need to be paired before they can be used. The [<strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace supports three different ways to pair devices. |
-| [Out-of-band pairing](out-of-band-pairing.md) | This section describes how out-of-band pairing allows apps to connect to certain devices without requiring discovery. | 
+| [Point of Service](point-of-service.md) | This section describes how to interact with point of service peripherals, such as barcode scanners, receipt printers, cash drawers, etc. | 
 | [Sensors](sensors.md) | Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device. |
 | [Bluetooth](bluetooth.md) | This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements. | 
 | [Printing and scanning](printing-and-scanning.md) | This section describes how to print and scan from your Universal Windows app. | 

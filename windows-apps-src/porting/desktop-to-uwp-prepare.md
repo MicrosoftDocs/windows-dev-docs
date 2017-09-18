@@ -21,7 +21,7 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You'll have to retarget your app to .NET 4.6.1 before you package it.
 
-+ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users.
++ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users. Apps that require elevation for any part of their functionality won't be accepted in the Windows Store.
 
 + __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
@@ -103,6 +103,9 @@ Starting a utility can often provide a convenient way to obtain information from
 + __Your app generates code__. Your app can generate code that it consumes in memory, but avoid writing generated code to disk because the Windows App Certification process can't validate that code prior to app submission. Also, apps that write code to disk won’t run properly on systems running Windows 10 S. This could block your app from submission to the Windows Store because all apps submitted to the Windows Store must be compatible with Windows 10 S.
 
 + __Your app uses the MAPI API__. The [Outlook MAPI API](https://msdn.microsoft.com/library/office/cc765775.aspx(d=robot)) is not currently supported in desktop bridge apps.
+
+>[!IMPORTANT]
+> After you've created your Windows app package, please test your app to ensure that it works correctly on systems that run Windows 10 S. All apps submitted to the Windows Store must be compatible with Windows 10 S. Apps that aren't compatible won't be accepted in the store. See [Test your Windows app for Windows 10 S](desktop-to-uwp-test-windows-s.md).
 
 ## Next steps
 

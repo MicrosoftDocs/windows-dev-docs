@@ -4,8 +4,8 @@ description: Textures are a type of resource used for rendering.
 ms.assetid: 016F6CDA-D361-4E6B-BA99-49E915A19364
 keywords:
 - Texture resources
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

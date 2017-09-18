@@ -1,20 +1,22 @@
 ---
-author: muhsinking
-ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
-title: Out-of-band pairing
-description: Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery.
-ms.author: mukin
-ms.date: 02/08/2017
+author: twarwick
+title: PointOfService Advanced Connectivity
+description: This article contains information about advanced connectivity for PointOfService
+ms.author: twarwick
+ms.date: 09/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
-# Out-of-band pairing
+
+# PointOfService Advanced Connectivity
+
+## Out-of-band pairing
 
 Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery. Apps must use the [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) namespace and pass in a specifically formatted string (out-of-band blob) to the appropriate **FromIdAsync** method for the desired peripheral. When **FromIdAsync** is executed, the host device pairs and connects to the peripheral before the operation returns to the caller.
 
-## Out-of-band blob format
+### Out-of-band blob format
 
 ```json
     "connectionKind":"Network",
@@ -61,7 +63,7 @@ Out-of-band pairing allows apps to connect to a Point-of-Service peripheral with
 | Cash Drawer | CashDrawerProtocolProvider.dll |
 | Barcode Scanner | BarcodeScannerProtocolProvider.dll |
 
-## Usage example: Network POSPrinter
+**Usage example: Network Receipt Printer**
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -75,7 +77,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## Usage example: Bluetooth POSPrinter
+**Usage example: Bluetooth Receipt Printer**
 
 ```csharp
 string oobBlobBTPrinter =

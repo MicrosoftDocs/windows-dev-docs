@@ -32,7 +32,7 @@ The second change is to move the service logic from its separate background task
 Now your application can directly run your App Service.  For example:
 
 > ``` cs
-> private AppServiceConnection appServiceconnection;
+> private AppServiceConnection appServiceConnection;
 > private BackgroundTaskDeferral appServiceDeferral;
 > protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
 > {
@@ -46,7 +46,7 @@ Now your application can directly run your App Service.  For example:
 >     appServiceConnection.ServiceClosed += AppServiceConnection_ServiceClosed;
 > }
 >
-> private async void OnAppServiceRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
+> private void OnAppServiceRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
 > {
 >     AppServiceDeferral messageDeferral = args.GetDeferral();
 >     ValueSet message = args.Request.Message;

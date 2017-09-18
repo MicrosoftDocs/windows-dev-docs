@@ -36,6 +36,7 @@ namespace Frames_Win10
             _imageElement.Source = new SoftwareBitmapSource();
         }
 
+        // Processes a MediaFrameReference and displays it in a XAML image control
         public void ProcessFrame(MediaFrameReference frame)
         {
             var softwareBitmap = FrameRenderer.ConvertToDisplayableImage(frame?.VideoMediaFrame);
@@ -437,6 +438,43 @@ namespace Frames_Win10
                 {
                     outputRow[x] = InfraredColor(inputRow[x] / (float)UInt16.MaxValue);
                 }
+            }
+        }
+
+
+        // Displays the provided softwareBitmap in a XAML image control.
+        public void PresentSoftwareBitmap(SoftwareBitmap softwareBitmap)
+        {
+            if (softwareBitmap != null)
+            {
+                // Swap the processed frame to _backBuffer and trigger UI thread to render it
+                softwareBitmap = Interlocked.Exchange(ref _backBuffer, softwareBitmap);
+
+                // UI thread always reset _backBuffer before using it.  Unused bitmap should be disposed.
+                softwareBitmap?.Dispose();
+
+                // Changes to xaml ImageElement must happen in UI thread through Dispatcher
+                var task = _imageElement.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                    async () =>
+                    {
+                        // Don't let two copies of this task run at the same time.
+                        if (_taskRunning)
+                        {
+                            return;
+                        }
+                        _taskRunning = true;
+
+                        // Keep draining frames from the backbuffer until the backbuffer is empty.
+                        SoftwareBitmap latestBitmap;
+                        while ((latestBitmap = Interlocked.Exchange(ref _backBuffer, null)) != null)
+                        {
+                            var imageSource = (SoftwareBitmapSource)_imageElement.Source;
+                            await imageSource.SetBitmapAsync(latestBitmap);
+                            latestBitmap.Dispose();
+                        }
+
+                        _taskRunning = false;
+                    });
             }
         }
     }

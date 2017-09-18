@@ -4,7 +4,7 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Windows Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
 ms.author: mcleans
-ms.date: 06/16/2017
+ms.date: 09/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -49,14 +49,14 @@ To use this method, you need to first do the following:
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
 | applicationId | string | The Store ID of the app for which you want to retrieve error reporting data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| startDate | date | The start date in the date range of error reporting data to retrieve. The default is the current date. |  No  |
-| endDate | date | The end date in the date range of error reporting data to retrieve. The default is the current date. |  No  |
+| startDate | date | The start date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```.  |  No  |
+| endDate | date | The end date in the date range of error reporting data to retrieve. The default is the current date. If *aggregationLevel* is **day**, **week**, or **month**, this parameter should specify a date in the format ```mm/dd/yyyy```. If *aggregationLevel* is **hour**, this parameter can specify a date in the format ```mm/dd/yyyy``` or a date and time in the format ```yyyy-mm-dd hh:mm:ss```. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
 | skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on. |  No  |
 | filter |string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
-| aggregationLevel | string | Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>. If you specify <strong>week</strong> or <strong>month</strong>, the <em>failureName</em> and <em>failureHash</em> values are limited to 1000 buckets. | No |
-| orderby | string | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>packageName</strong></li><li><strong>packageVersion</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
-| groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields:<ul><li><strong>failureName</strong></li><li><strong>failureHash</strong></li><li><strong>symbol</strong></li><li><strong>osVersion</strong></li><li><strong>eventType</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>packageName</strong></li><li><strong>packageVersion</strong></li></ul><p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>applicationName</strong></li><li><strong>deviceCount</strong></li><li><strong>eventCount</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=failureName,market&amp;aggregationLevel=week</em></p></p> |  No  |
+| aggregationLevel | string | Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: **day**, **week**, **month**, or **hour**. If unspecified, the default is **day**. If you specify **week** or **month**, the *failureName* and *failureHash* values are limited to 1000 buckets. | No |
+| orderby | string | A statement that orders the result data values. The syntax is *orderby=field [order],field [order],...*. The *field* parameter can be one of the following strings:<ul><li>**date**</li><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li><li>**packageName**</li><li>**packageVersion**</li></ul><p>The *order* parameter is optional, and can be **asc** or **desc** to specify ascending or descending order for each field. The default is **asc**.</p><p>Here is an example *orderby* string: *orderby=date,market*</p> |  No  |
+| groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields:<ul><li>**failureName**</li><li>**failureHash**</li><li>**symbol**</li><li>**osVersion**</li><li>**eventType**</li><li>**market**</li><li>**deviceType**</li><li>**packageName**</li><li>**packageVersion**</li></ul><p>The returned data rows will contain the fields specified in the *groupby* parameter as well as the following:</p><ul><li>**date**</li><li>**applicationId**</li><li>**applicationName**</li><li>**deviceCount**</li><li>**eventCount**</li></ul><p>The *groupby* parameter can be used with the *aggregationLevel* parameter. For example: *&amp;groupby=failureName,market&amp;aggregationLevel=week*</p></p> |  No  |
 
 <span/>
  
@@ -74,10 +74,10 @@ For a list of the supported fields, see the following table. String values must 
 | failureName | The name of the error. |
 | failureHash | The unique identifier for the error. |
 | symbol | The symbol assigned to this error. |
-| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
-| eventType | One of the following strings:<ul><li><strong>crash</strong></li><li><strong>hang</strong></li><li><strong>memory</strong></li><li><strong>jse</strong></li></ul> |
+| osVersion | One of the following strings:<ul><li>**Windows Phone 7.5**</li><li>**Windows Phone 8**</li><li>**Windows Phone 8.1**</li><li>**Windows Phone 10**</li><li>**Windows 8**</li><li>**Windows 8.1**</li><li>**Windows 10**</li><li>**Unknown**</li></ul> |
+| eventType | One of the following strings:<ul><li>**crash**</li><li>**hang**</li><li>**memory**</li><li>**jse**</li></ul> |
 | market | A string that contains the ISO 3166 country code of the market where the error occurred. |
-| deviceType | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceType | One of the following strings:<ul><li>**PC**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul> |
 | packageName | The unique name of the app package that is associated with this error. |
 | packageVersion | The version of the app package that is associated with this error. |
 
@@ -114,7 +114,7 @@ Elements in the *Value* array contain the following values.
 
 | Value           | Type    | Description        |
 |-----------------|---------|---------------------|
-| date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
+| date            | string  | The first date in the date range for the error data, in the format ```yyyy-mm-dd```. If the request specifies a single day, this value is that date. If the request specifies a longer date range, this value is the first date in that date range. For requests that specify an *aggregationLevel* value of **hour**, this value also includes a time value in the format ```hh:mm:ss```.  |
 | applicationId   | string  | The Store ID of the app for which you want to retrieve error data.   |
 | applicationName | string  | The display name of the app.   |
 | failureName     | string  | The name of the error.  |

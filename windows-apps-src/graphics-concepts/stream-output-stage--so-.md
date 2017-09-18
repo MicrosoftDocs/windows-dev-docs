@@ -4,8 +4,8 @@ description: The Stream Output (SO) stage continuously outputs (or streams) vert
 ms.assetid: DE89E99F-39BC-4B34-B80F-A7D373AA7C0A
 keywords:
 - Stream Output (SO) stage
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

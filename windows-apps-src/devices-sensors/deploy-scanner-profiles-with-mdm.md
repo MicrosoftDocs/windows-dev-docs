@@ -14,6 +14,5 @@ Barcode scanner profiles can be deployed with an MDM server. To deploy the profi
 Microsoft does not define the specifics of a scanner profile or how to implement them.
 
 ## Related topics
-[Barcode Scanner](barcode-scanner.md)
-
-[EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025)
+- [EnterpriseExtFileSystem CSP](https://msdn.microsoft.com/library/windows/hardware/mt157025)
+- [Barcode scanner device support](https://docs.microsoft.com/en-us/windows/uwp/devices-sensors/pos-device-support#barcode-scanner)

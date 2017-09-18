@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 08/08/2017
+ms.date: 09/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -139,20 +139,20 @@ Trailers are encoded with [Smooth Streaming](http://www.iis.net/downloads/micros
 
 ### Upload trailers
 
-You can add up to 15 trailers to your Store listing. Be sure they meet the requirements listed below for each trailer.
+You can add up to 15 trailers to your Store listing. Be sure they meet all of the [requirements](#trailer-requirements) listed below.
 
-You must provide a video file (.mp4 or .mov), a thumbnail image, and a title for each trailer.
+For each trailer you provide, you must upload a video file (.mp4 or .mov), a thumbnail image, and a title.
 
 > [!IMPORTANT]
 > When using trailers, you must also provide a **1920 x 1080 pixel image (16:9)** in the [Promotional images](#promotional-images) section in order for your trailers to appear at the top of your Store listing. This image will appear after your trailers have finished playing.
 
 Follow these recommendations to make your trailers effective:
-- Trailers should be of good quality and minimal length (2 minutes or less recommended). 
-- Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60. 
+- Trailers should be of good quality and minimal length (60 seconds or less and less than 2 GB recommended). 
 - Use a different thumbnail for each trailer so that customers know they are unique.
-- Because some layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
+- Because some Store layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
+- Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60. 
 
-You must also follow the requirements stated below.
+You must also follow the requirements listed below.
 
 **To add trailers to your listing:**
 1. Upload your trailer **video file** in the indicated box. A drop-down box is also shown in case you want to reuse a trailer you have alread uploaded (perhaps for a Store listing in a different language).
@@ -160,16 +160,21 @@ You must also follow the requirements stated below.
 3. Click the pencil icon to add a **title** for your trailer (255 characters or fewer).
 4. If you want to add more trailers to the listing, click **Add trailer** and repeat the steps listed above.
 
-To remove a trailer, click the **X** next to its file name. You can choose whether to remove it from only the current Store listings, or from all Store listings for your product (that is, for only this language or for all languages).
+> [!TIP]
+> If you have created Store listings in multiple languages, you can select **Choose from existing trailers** to reuse the trailers you've already uploaded. You don't have to upload them individually for each language.
+
+To remove a trailer from a listing, click the **X** next to its file name. You can choose whether to remove it from only the current Store listing in which you are working, or to remove it from from all of your product's Store listings (in every language).
+
 
 ### Trailer requirements
 
 When providing your trailers, be sure to follow these requirements:
 
 - The video format must be MOV or MP4. 
-- The video duration must be less than 30 minutes. 
-- The file size of the trailer can’t exceed 10 GB. 
-- The thumbnail must be a PNG file with a resolution of 1920 x 1080 pixels. 
+- The video duration shouldn't exceed 60 seconds.
+- The file size of the trailer shouldn't exceed 2 GB. 
+- The video resolution must be either 1920 x 1080 pixels or 3840 x 2160 pixels.
+- The thumbnail must be a PNG file with a resolution of either 1920 x 1080 pixels or 3840 x 2160 pixels.
 - The title can’t exceed 255 characters. 
 
 Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Store. Be sure your trailers comply with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).

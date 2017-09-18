@@ -4,7 +4,7 @@ Description: The Pricing and availability page of the app submission process let
 title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 09/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,7 +42,7 @@ If you want to hide your app in the Store but still make it available to certain
 - **Individuals on Windows Phone 8.x only: Only people you specify below can download this product on a Windows Phone 8.x device. Anyone with a direct link and a promotional code may download the product on a Windows 10 device.** This option may not appear for all submissions. It only applies if you have packages that can run on Windows Phone 8.x. Only the customers whose email addresses (associated with their Microsoft accounts) you enter in the box (separated by semicolons) can download your app on Windows Phone 8.x by using the direct link to its listing. You can also generate promotional codes to distribute to specific people on Windows 10 as described above. 
 
 > [!TIP]
-> To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method. This action will override any of the options you have chosen here: it won't be available to new customers at all. To make it available to new customers again, you can click **Make app available** from the App overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+> If you want to stop offering an app to any new customers, you can select **Make app unavailable** from its overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](generate-promotional-codes.md) and are on a Windows 10 device). This action will override the **Visibility** selections in your submission. To make the app available to new customers again (per your **Visibility** selections), you can click **Make app available** from the overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
 ## Schedule
 

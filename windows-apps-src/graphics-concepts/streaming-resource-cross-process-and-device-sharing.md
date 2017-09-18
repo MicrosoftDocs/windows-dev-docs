@@ -4,8 +4,8 @@ description: Tile pools can be shared with other processes just like traditional
 ms.assetid: D035AF4B-D71B-4F20-9A98-7C360BF9B285
 keywords:
 - Streaming resource cross-process and device sharing
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

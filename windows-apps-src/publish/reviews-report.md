@@ -4,7 +4,7 @@ Description: The Reviews report in the Windows Dev Center dashboard lets you see
 title: Reviews report
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 09/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -53,7 +53,7 @@ The **Ratings breakdown** chart shows:
  - **Revised ratings** are ratings that have been changed by the customer in any way, even just changing the text of the review.
 
 > [!TIP]
-> The average rating that a customer sees in the Store takes into account the customer’s market and device type, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type.
+> The average rating that a customer sees in the Store takes into account the customer’s market and device type, so it may differ from what you see in this report.
 
 
 ## Average rating over time

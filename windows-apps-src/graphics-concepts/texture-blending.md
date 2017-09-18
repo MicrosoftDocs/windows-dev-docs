@@ -4,8 +4,8 @@ description: Direct3D can blend as many as eight textures onto primitives in a s
 ms.assetid: 9AD388FA-B2B9-44A9-B73E-EDBD7357ACFB
 keywords:
 - Texture blending
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

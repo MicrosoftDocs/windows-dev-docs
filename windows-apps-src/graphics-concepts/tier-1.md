@@ -4,8 +4,8 @@ description: This section describes tier 1 support.
 ms.assetid: 153DA429-0C99-4691-AEB4-124FD9B17BE2
 keywords:
 - Tier 1
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

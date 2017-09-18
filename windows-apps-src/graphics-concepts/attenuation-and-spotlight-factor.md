@@ -4,8 +4,8 @@ description: The diffuse and specular lighting components of the global illumina
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
 keywords:
 - Attenuation and spotlight factor
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
