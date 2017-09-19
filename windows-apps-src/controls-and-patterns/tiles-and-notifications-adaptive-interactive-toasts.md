@@ -181,7 +181,7 @@ new ToastBindingGeneric()
 {
     ...
 
-    HeroImage = new ToastHeroImage()
+    HeroImage = new ToastGenericHeroImage()
     {
         Source = "https://unsplash.it/360/180?image=1043"
     }
