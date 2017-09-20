@@ -4,7 +4,7 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 09/08/2017
+ms.date: 09/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,27 +27,27 @@ Windows 10 introduced a new implementation of Mobile Operator Billing. This imp
 
 The Windows 10 implementation of Mobile Operator Billing is currently supported by these mobile operators.
 
-| Country/region  | Mobile operators     |
-|-----------------|----------------------|
+| Country/region  | Mobile operators                 |
+|-----------------|----------------------------------|
 | Austria         | Hutchison 3G Austria, A1 Telekom |
-| Belgium         | Base, Proximus       |
-| Canada          | Telus                |
-| Denmark         | 3                    |
-| Finland         | DNA, Elisa           |
-| France          | Orange               |
-| Germany         | O2                   |
-| Hungary         | Telenor              |
-| Italy           | Wind, Tre            |
-| Norway          | Telenor              |
-| Poland          | Orange               |
-| Romania         | Orange               |
-| Russia          | Beeline              |
-| Spain           | Orange               |
-| Sweden          | Telenor, 3           |
-| Switzerland     | Swisscom             |
-| Turkey          | Turkcell             |
-| United States   | Sprint, Verizon      |
-| United Kingdom  | O2, 3 UK, EE         |
+| Belgium         | Base, Proximus                   |
+| Canada          | Telus                            |
+| Denmark         | 3, TDC / YouSee, Telenor         |
+| Finland         | DNA, Elisa                       |
+| France          | Orange                           |
+| Germany         | O2                               |
+| Hungary         | Telenor                          |
+| Italy           | Wind, Tre                        |
+| Norway          | Telenor, Telia                   |
+| Poland          | Orange                           |
+| Romania         | Orange                           |
+| Russia          | Beeline                          |
+| Spain           | Orange                           |
+| Sweden          | Telenor, 3                       |
+| Switzerland     | Swisscom                         |
+| Turkey          | Turkcell                         |
+| United States   | Sprint, Verizon                  |
+| United Kingdom  | O2, 3 UK, EE                     |
 
  
 
