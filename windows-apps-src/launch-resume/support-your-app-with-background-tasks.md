@@ -4,7 +4,7 @@ title: Support your app with background tasks
 description: The topics in this section show you how to make lightweight code run in the background in response to triggers.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ms.author: twhitney
-ms.date: 04/15/2017
+ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,8 +70,11 @@ You can control when the background task runs, even after it is triggered, by ad
 | **UserNotPresent**       | The user must be away.            |
 | **UserPresent**          | The user must be present.         |
 
+Add the **InternetAvailable** condition to your background task [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to delay triggering the background task until the network stack is running. This condition saves power because the background task won't execute until the network is available. This condition does not provide real-time activation.
+
+If your background task requires network connectivity, set [IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to ensure that the network stays up while the background task runs. This tells the background task infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode. If your background task does not set **IsNetworkRequested**, then your background task will not be able to access the network when in Connected Standby mode (for example, when a phone's screen is turned off.)
  
-For more info see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
+For more info about background task conditions, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
 ## Application manifest requirements
 
@@ -124,7 +127,8 @@ Background tasks are limited to 30 seconds of wall-clock usage.
 ### Memory constraints
 
 Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception--which the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately.  
- You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
+
+You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
 
 ### Per-device limit for apps with background tasks for low-memory devices
 

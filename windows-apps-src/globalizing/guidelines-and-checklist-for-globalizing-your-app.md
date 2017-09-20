@@ -1,12 +1,12 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.
 Search.Refinement.TopicID: 180
 title: Guidelines for globalization and localization
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

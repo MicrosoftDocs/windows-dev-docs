@@ -1,11 +1,11 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
 title: Put UI strings into resources
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

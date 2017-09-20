@@ -4,7 +4,7 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 07/06/2017
+ms.date: 09/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -47,7 +47,7 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 | Switzerland     | Swisscom             |
 | Turkey          | Turkcell             |
 | United States   | Sprint, Verizon      |
-| United Kingdom  | O2, 3 UK             |
+| United Kingdom  | O2, 3 UK, EE         |
 
  
 
@@ -62,22 +62,21 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 |----------------------|--------------------------------------------------------------------|
 | Australia            | Telstra                                                            |
 | Austria              | T-Mobile                                                           |
-| Belgium              | Mobistar                                                           |
 | Czech Republic       | T-Mobile, Vodafone                                                 |
-| France               | Orange, Bouygues                                              |
+| France               | Orange, Bouygues                                                   |
 | Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Greece               | Vodafone                                                           |
 | Hungary              | T-Mobile                                                           |
-| Ireland              | O2, Vodafone, Three                                                |
-| Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
+| Ireland              | O2, Vodafone                                                       |
+| Italy                | Telecom Italia, Vodafone                                           |
 | Netherlands          | T-Mobile, Vodafone                                                 |
 | Poland               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
-| Romania              | Orange, Vodafone                                                   |
-| Russia               | Beeline, MTS                                                       |
+| Romania              | Vodafone                                                           |
+| Russia               | MTS                                                                |
 | Slovakia             | T-Mobile                                                           |
 | South Africa         | Vodacom                                                            |
-| Spain                | Movistar, Vodafone, Orange                                         |
-| United Kingdom       | Telefonica (O2), Vodafone        |
+| Spain                | Movistar, Vodafone                                                 |
+| United Kingdom       | Telefonica (O2), Vodafone                                          |
 | United States        | AT&T, T-Mobile                                                     |
 
 

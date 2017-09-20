@@ -1,11 +1,11 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies.
 title: Use global-ready formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

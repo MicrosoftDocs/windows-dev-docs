@@ -2,8 +2,8 @@
 title: Compute pipeline
 description: The Direct3D compute pipeline is designed to handle calculations that can be done mostly in parallel with the graphics pipeline.
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -1,10 +1,10 @@
 ---
 author: mijacobs
-description: Reveal is a new interaction model that helps add more focus and delight to your application.
-title: Reveal
+description: Reveal is a lighting effect that helps bring depth and focus to your app's interactive elements.
+title: Reveal highlight
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ---
-# Reveal
+# Reveal highlight
 
 > [!IMPORTANT]
 > This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
@@ -28,6 +28,10 @@ The Reveal behavior does this by revealing pieces of elements around hero (or fo
 ![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
 Through exposing the hidden borders around objects, Reveal gives users a better understanding of the space that they are interacting with, and helps them understand the actions available. This is especially important in list controls and controls with backplates.
+
+## Reveal and the Fluent Design System
+
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. 
 
 ## What is reveal?
 

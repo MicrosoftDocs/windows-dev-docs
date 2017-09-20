@@ -4,7 +4,7 @@ Description: Add-ons are published through the Windows Dev Center dashboard.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 09/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -83,4 +83,4 @@ You can make changes to a published add-on at any time. add-on changes are submi
 
 To submit updates, go to the add-on's page in your dashboard and click **Update**. This will create a new submission for the add-on using the info from your previous submission as a starting point. Change the info you'd like, and then click **Submit to the Store**.
 
-If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](set-add-on-pricing-and-availability.md) option to **No longer available for purchase. Not displayed in your app's listing**. Be sure to update your app's code as needed to also remove references to the add-on.
+If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](set-add-on-pricing-and-availability.md) option to **Hidden in the Store** with the **Stop acquisition** option. Be sure to update your app's code as needed to also remove references to the add-on (especially if your app supports Windows 8.1 earlier; this visibility setting won't apply to those customers).

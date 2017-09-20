@@ -4,8 +4,8 @@ description: Vertices in the camera space are computed by transforming the objec
 ms.assetid: 86EDEB95-8348-4FAA-897F-25251B32B076
 keywords:
 - Camera space transformations
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

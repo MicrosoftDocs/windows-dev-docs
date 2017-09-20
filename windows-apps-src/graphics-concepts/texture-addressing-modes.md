@@ -8,8 +8,8 @@ keywords:
 - Mirror texture address mode
 - Clamp texture address mode
 - Border Color texture address mode
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

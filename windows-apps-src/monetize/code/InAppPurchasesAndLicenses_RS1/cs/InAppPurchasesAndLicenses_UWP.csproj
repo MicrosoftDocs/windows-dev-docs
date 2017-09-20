@@ -113,6 +113,9 @@
     <Compile Include="GetRemainingAddOnBalancePage.xaml.cs">
       <DependentUpon>GetRemainingAddOnBalancePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GetSubscriptionAddOnsPage.xaml.cs">
+      <DependentUpon>GetSubscriptionAddOnsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GetUserCollectionPage.xaml.cs">
       <DependentUpon>GetUserCollectionPage.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseAddOnPage.xaml.cs">
       <DependentUpon>PurchaseAddOnPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseSubscriptionAddOnPage.xaml.cs">
+      <DependentUpon>PurchaseSubscriptionAddOnPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +178,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GetSubscriptionAddOnsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GetUserCollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -185,6 +195,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PurchaseAddOnPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PurchaseSubscriptionAddOnPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

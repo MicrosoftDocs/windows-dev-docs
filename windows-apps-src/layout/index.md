@@ -6,7 +6,7 @@ keywords: uwp app layout, universal windows platform, app design, interface
 label: Layout
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,8 +15,7 @@ ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
 # Layout for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-App structure, page layout, and navigation are the foundation of your app's user experience. The articles in this section help you create an app that is easy to navigate and looks great on a variety of devices and screen sizes.
+App structure, page layout, and navigation are the foundation of your app's user experience. The articles in this section use the Fluent Design System to help you create an app that is easy to navigate and looks great on a variety of devices and screen sizes.
 
 ## Intro
 
@@ -24,7 +23,7 @@ App structure, page layout, and navigation are the foundation of your app's user
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
   <p><b>[Intro to app UI design](design-and-ui-intro.md)</b><br />
-   When you design a UWP app, you create a user interface that suits a variety of devices with different display sizes. This article provides an overview of UI-related features and benefits of UWP apps and some tips & tricks for designing a responsive UI. </p>
+   When you design a UWP app, you create a user interface that suits a variety of devices with different display sizes. This article provides an introduction to the Fluent Design System, an overview of UI-related features and benefits of UWP apps and some tips & tricks for designing a responsive UI. </p>
   </div>
   <div class="side-by-side-content-right">
     ![An app running on multiple devices](images/rspd-reposition-type1-sm.png)

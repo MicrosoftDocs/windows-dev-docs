@@ -4,8 +4,8 @@ description: The following sections describe how Direct3D handles conversions be
 ms.assetid: B50AB8DE-CAED-465B-B18C-81F3A984B8AC
 keywords:
 - Data type conversion
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

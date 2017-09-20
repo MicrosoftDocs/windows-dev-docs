@@ -13,7 +13,7 @@ keywords: windows 10, uwp, Windows Store collection API, Windows Store purchase 
 
 # Manage product entitlements from a service
 
-If you have a catalog of apps and add-ons (also known as in-app products or IAPs), you can use the *Windows Store collection API* and *Windows Store purchase API* to access entitlement information for these products from your services. An *entitlement* represents a customer's right to use an app or add-on that is published through the Windows Store.
+If you have a catalog of apps and add-ons, you can use the *Windows Store collection API* and *Windows Store purchase API* to access entitlement information for these products from your services. An *entitlement* represents a customer's right to use an app or add-on that is published through the Windows Store.
 
 These APIs consist of REST methods that are designed to be used by developers with add-on catalogs that are supported by cross-platform services. These APIs enable you to do the following:
 
@@ -79,6 +79,9 @@ Before you can use the Windows Store collection API or purchase API to operate o
 
 Before you can retrieve a Windows Store ID key or call the Windows Store collection API or purchase API, your service must create several different Azure AD access tokens that represent your publisher identity. Each token will be used with a different API. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
 
+> [!IMPORTANT]
+> Create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
+
 <span id="access-tokens" />
 ### Understanding the different tokens and audience URIs
 
@@ -115,9 +118,6 @@ For each token, specify the following parameter data:
 * For the *resource* parameter, specify one of the audience URIs listed in the [previous section](#access-tokens), depending on the type of access token you are creating.
 
 After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).
-
-> [!IMPORTANT]
-> You should create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
 
 <span id="step-4"/>
 ## Step 4: Create a Windows Store ID key

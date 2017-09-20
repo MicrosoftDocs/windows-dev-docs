@@ -15,6 +15,9 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 
  Game chat is a technology that you can use to enable voice communications between users of a single title on remote consoles. It does not include wider independent communication among console users.
 
+ > [!Note]
+ > New titles should use [Game Chat 2](game-chat-2-overview.md) instead of Game Chat. The original Game Chat will be deprecated before the end of 2017.
+
  Xbox One has a specialized, hardware-accelerated voice chat codec that is used for encode and decode, and is exposed through the `Microsoft.Xbox.GameChat` Namespace. This codec supports several quality settings for title networking bandwidth flexibility, and its use is required for all voice chat communications transmitted by the console. No other codecs are supported.
 
 > **Note:** A lower-level namespace called `Windows.Xbox.Chat` calls the codec.

@@ -1,5 +1,5 @@
 ---
-author: kbridge
+author: Karl-Bridge-Microsoft
 ms.assetid:
 title: UWP Academy - Input track - Support ink in your UWP app
 description: UWP Academy. Input track. A step by step tutorial for adding ink support to your UWP app.

@@ -50,6 +50,7 @@ For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://
 <span id="new" />
 ### APIs supported in newly packaged apps
 
+* [Windows.ApplicationModel.AppService.AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
 * [Windows.ApplicationModel.DataTransfer.DataRequestDeferral](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequestDeferral)

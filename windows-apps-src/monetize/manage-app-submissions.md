@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Windows Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date:  08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -137,9 +137,11 @@ To create a submission for an app, follow this process.
 <span id="advanced-listings"/>
 ### Game options and trailers
 
-When you create an app submission by using the submission API, there are two sets of listing options that are not yet available to all developer accounts: [game options](#gaming-options-object) and [trailers](#trailer-object). We are in the process of making these listing options available to all developer accounts via the submission API. To determine whether your developer account has access to these listing options when using the submission API, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true. 
+There are two sets of advanced listing options that may not be available in some submissions: [game options](#gaming-options-object) and [trailers](#trailer-object).
 
-If your developer account does not yet have access to these listing options, the *gamingOptions* and *trailers* values in your [app submission resource](#app-submission-object) are null when you [create an app submission](create-an-app-submission.md).
+These listing options were added after the Windows Store submission API was first released to developers. If you created a submission for an app via the submission API before these listing options were introduced and this submission is still in progress, you will not be able to access these listing options until you successfully commit the submission or you delete it.
+
+To determine whether you can access these listing options for a given app when using the submission API, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true. If you cannot access these listing options for an app, the *gamingOptions* and *trailers* values in your [app submission resource](#app-submission-object) are null when you [create an app submission](create-an-app-submission.md).
 
 <span/>
 ### Code examples for managing app submissions
@@ -421,7 +423,13 @@ This resource contains base listing info for an app. This resource has the follo
 |  releaseNotes               |  string       |  The [release notes](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) for your app.    |
 |  images               |   array      |  An array of [image and icon](#image-object) resources for the app listing.  |
 |  recommendedHardware               |   array      |  An array of up to 11 strings that list the [recommended hardware configurations](../publish/create-app-store-listings.md#additional-information) for your app.     |
+|  minimumHardware               |     string    |  An array of up to 11 strings that list the [minimum hardware configurations](../publish/create-app-store-listings.md#additional-information) for your app.    |  
 |  title               |     string    |   The title for the app listing.   |  
+|  shortDescription               |     string    |  This value only applies to listings for Xbox. This specifies the short description for the listing, which helps users understand what your game is about, what type of game it is, and what kind of gamers might enjoy playing it. Entries are limited to 500 characters.   |  
+|  shortTitle               |     string    |  This value only applies to listings for Xbox. This specifies the short version of the product description for contexts where the regular description would be too lengthy. The maximum length is 50 characters for all versions of the short title, including standard, localized, and override. An override version is displayed in a single region where the alternative language is spoken.    |  
+|  sortTitle               |     string    |   This value only applies to listings for Xbox. This specifies the sort title for the listing. Entries are limited to 255 characters.   |  
+|  voiceTitle               |     string    |   This value only applies to listings for Xbox. This specifies the voice title for the listing. Entries are limited to 255 characters.    |  
+|  devStudio               |     string    |   Specify this value if you want to include a **Developed by** field in the listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a *devStudio* value.)    |  
 
 <span id="image-object" />
 ### Image resource
@@ -434,7 +442,7 @@ This resource contains image and icon data for an app listing. For more informat
 |  fileStatus               |   string      |  The status of the image file. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 |  id  |  string  | The ID for the image. This value is supplied by Dev Center.  |
 |  description  |  string  | The description for the image.  |
-|  imageType  |  string  | One of the following strings that indicates the type of the image: <ul><li>Unknown</li><li>Screenshot</li><li>PromotionalArtwork414X180</li><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>PromotionalArtwork2400X1200</li><li>Icon</li><li>WideIcon358X173</li><li>BackgroundImage1000X800</li><li>SquareIcon358X358</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul>      |
+|  imageType  |  string  | Indicates the type of the image. The following strings are currently supported. <p/>[Screenshot images](../publish/app-screenshots-and-images.md#screenshots): <ul><li>Screenshot (use this value for the desktop screenshot)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Store logos](../publish/app-screenshots-and-images.md#store-logos):<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (use this value for the 1:1 300 x 300 pixels logo)</li></ul><p/>[Promotional images](../publish/app-screenshots-and-images.md#promotional-images): <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox images](../publish/app-screenshots-and-images.md#xbox-images): <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[Optional promotional images](../publish/app-screenshots-and-images.md#optional-promotional-images): <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
 
 <span id="gaming-options-object" />
@@ -443,7 +451,9 @@ This resource contains image and icon data for an app listing. For more informat
 This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](../publish/enter-app-properties.md#game-settings) for submissions in the Dev Center dashboard.
 
 > [!NOTE]
-> This resource is currently not available to all developer accounts. If your account does not have access to this resource, the *gamingOptions* value in the [app submission resource](#app-submission-object) is null. To determine whether you can configure the *gamingOptions* for an app submission, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.
+> This resource [may not be available for all submissions](#advanced-listings).
+
+If you created a submission for an app via the submission API before these listing options were introduced and this submission is still in progress, you will not be able to access these listing options for any submissions for the app until you successfully commit the submission or you delete it. To determine whether you can access these listing options for a given app when using the submission API, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.
 
 ```json
 {
@@ -624,7 +634,7 @@ This resource represents a video trailer for the app listing. The values in this
 You can add up to 15 trailer resources to the *trailers* array in an [app submission resource](#app-submission-object). To upload trailer video files and thumbnail images for a submission, add these files to the same ZIP archive that contains the packages and listing images for the submission, and then upload this ZIP archive to the shared access signature (SAS) URI for the submission. For more information uploading the ZIP archive to the SAS URI, see [Create an app submission](#create-an-app-submission).
 
 > [!NOTE]
-> This resource is currently not available to all developer accounts. If your account does not have access to this resource, the *trailers* value in the [app submission resource](#app-submission-object) is null. To determine whether you can configure the *trailers* for an app submission, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.
+> This resource [may not be available for all submissions](#advanced-listings).
 
 ```json
 {

@@ -4,8 +4,8 @@ description: Vertex buffers are memory buffers that contain vertex data; vertice
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
 keywords:
 - Vertex and index buffers
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

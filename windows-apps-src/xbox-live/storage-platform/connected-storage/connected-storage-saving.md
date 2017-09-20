@@ -35,7 +35,6 @@ Data is asynchronously saved by creating a *ConnectedStorageContainer* in a *Con
 Platform::Guid gPrimarySCID;
 Platform::Guid gSecondarySCID;
 Windows::Xbox::Storage::ConnectedStorageSpace^ gConnectedStorageSpaceForMachine;
-
 enum LoadSaveState { LOADING, LOAD_COMPLETED, LOAD_FAILED, NO_SAVE_MODE, RETRY_LOAD, GETTING_STORAGE_SPACE, DELETE_SAVE_UI, SAVING, SAVE_COMPLETED, NONE };
 LoadSaveState loadSaveState = LoadSaveState::NONE;
 auto gConnectedStorageSpaceForUsers = ref new Platform::Collections::Map<unsigned int, Windows::Xbox::Storage::ConnectedStorageSpace^>();
@@ -50,13 +49,13 @@ IBuffer^ WrapRawBuffer( void* ptr, size_t size );
 void PrepareConnectedStorage(User^ user)
 {
   auto op = ConnectedStorageSpace::GetForUserAsync(user);
-  op->;Completed = ref new AsyncOperationCompletedHandler<;ConnectedStorageSpace^>;(
-    [=](IAsyncOperation<;ConnectedStorageSpace^>;^ operation, Windows::Foundation::AsyncStatus status)
+  op->Completed = ref new AsyncOperationCompletedHandler<ConnectedStorageSpace^>(
+    [=](IAsyncOperation<ConnectedStorageSpace^>^ operation, Windows::Foundation::AsyncStatus status)
     {
       switch(status)
       {
         case Windows::Foundation::AsyncStatus::Completed:
-          gConnectedStorageSpaceForUsers->;Insert(user->;Id, operation->;GetResults());
+          gConnectedStorageSpaceForUsers->Insert(user->Id, operation->GetResults());
           break;
         case Windows::Foundation::AsyncStatus::Error:
         case Windows::Foundation::AsyncStatus::Canceled:
@@ -72,6 +71,9 @@ void PrepareConnectedStorage(User^ user)
 
 uint8* GetBufferPointer(IBuffer^ buffer);
 
+
+
+
 enum Color { RED, BLUE };
 enum EngineSize { BIG, SMALL };
 
@@ -82,6 +84,7 @@ struct CarData
     bool hasFancyRims;
     EngineSize engineSize;
 };
+
 
 const int MAX_CARS = 10;
 
@@ -114,25 +117,25 @@ void RenderOneFrame()
 void Update()
 {
     if (ItIsTimeToSaveACheckpoint())
-        SaveCheckpoint(WrapRawBuffer(&amp;gMySaveData,sizeof(SaveData)),gCurrentUser);
+        SaveCheckpoint(WrapRawBuffer(&gMySaveData,sizeof(SaveData)),gCurrentUser);
 }
 
 
 void SaveCheckpoint(Windows::Storage::Streams::IBuffer^ buffer, User^ user)
 {
-     auto storageSpace = gConnectedStorageSpaceForUsers->;Lookup( user->;Id );
+     auto storageSpace = gConnectedStorageSpaceForUsers->Lookup( user->Id );
 
-     auto container = storageSpace->;CreateContainer(&quot;Saves/Checkpoint&quot;);
+     auto container = storageSpace->CreateContainer("Saves/Checkpoint");
 
-     auto updates = ref new Platform::Collections::Map<;Platform::String^, Windows::Storage::Streams::IBuffer^>;();
-     updates->;Insert(&quot;data&quot;, buffer);
+     auto updates = ref new Platform::Collections::Map<Platform::String^, Windows::Storage::Streams::IBuffer^>();
+     updates->Insert("data", buffer);
 
-     auto op = container->;SubmitUpdatesAsync(updates->;GetView(), nullptr);
+     auto op = container->SubmitUpdatesAsync(updates->GetView(), nullptr);
 
      SetGameState(LoadSaveState::SAVING);
      //gSaveInProgress = true;
 
-     op->;Completed = ref new AsyncActionCompletedHandler(
+     op->Completed = ref new AsyncActionCompletedHandler(
                [=](IAsyncAction^ a, Windows::Foundation::AsyncStatus status){
                    SetGameState(LoadSaveState::SAVE_COMPLETED);
      });

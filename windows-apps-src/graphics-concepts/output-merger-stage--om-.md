@@ -4,8 +4,8 @@ description: The Output Merger (OM) stage combines various types of output data 
 ms.assetid: ED2DC4A0-2B92-47AF-884A-BFC2183C78B8
 keywords:
 - Output Merger (OM) stage
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

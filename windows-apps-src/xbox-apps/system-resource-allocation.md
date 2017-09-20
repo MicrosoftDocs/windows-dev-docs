@@ -38,5 +38,11 @@ is a specialized piece of hardware that requires a specific hardware-based devel
 If you are working on a game that requires access to the maximum potential of the Xbox One hardware, 
 you can register with the [ID@Xbox](http://www.xbox.com/Developers/id) program to get access to Xbox One development kits, which include DirectX 12 support.
 
+
+For a little more explanation about the system resources for UWP apps on Xbox One, check out the first bit of this video.
+</br>
+</br>
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+
 ## See also
 - [UWP on Xbox One](index.md)

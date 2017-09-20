@@ -6,7 +6,7 @@ author: mijacobs
 label: Style
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,9 @@ ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<p>Design guidance and code examples that teach you how to define your UWP app’s personality through color, typography, and motion.</p>
+<p>The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. The guidelines in this section help you create a Fluent Design through color, typography, and new features such as [acrylic material](../style/acrylic.md) and [Reveal](../style/reveal.md). 
+</p>
+
 
 <div style="column-count: 2; column-gap: 40px; margin-top: 40px;">
 

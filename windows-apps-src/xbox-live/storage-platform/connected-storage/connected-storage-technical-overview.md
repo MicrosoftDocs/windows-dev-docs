@@ -85,7 +85,10 @@ Connected storage is designed to help apps save Xbox One gameplay data and other
 The Connected Storage API provides the following features:
 
 -   Apps can quickly save up to 16 MB of data at a time into a memory buffer in the system partition, which is then cached locally on the HDD by the system and uploaded to the cloud.
--   256 MB per user/app of cloud storage.
+- For managed partners and ID@Xbox developers:
+  - 256 MB per user/app of cloud storage.
+- For Xbox Live Creators Program developers:
+  - 64 MB per user/app of cloud storage.
 -   Robust response to power failures—apps don't have to deal with partial data being saved.
 -   Data is automatically uploaded to the cloud, even when the app isn't running.
 -   Data is available across Xbox One consoles that are connected to Xbox Live.
@@ -101,8 +104,12 @@ The Title Storage service offers a cross-platform REST API for data storage with
 
 -   Provides data sharing across users, apps, and various platforms
 -   Supports binary, JSON and configuration files
--   250 MB per user/app of cloud storage
--   150 MB of per total global storage
+-   For managed partners and ID@Xbox developers:
+    - 256 MB per user/app of cloud storage
+    - 256 MB of per title global storage
+- For Xbox Live Creators Program developers:
+  -   64 MB per user/app of cloud storage
+  -   256 MB of per title global storage
 
 Requirements for using the service:
 

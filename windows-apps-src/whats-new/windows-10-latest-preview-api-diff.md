@@ -1,20 +1,20 @@
 ---
 author: QuinnRadich
-title: Windows 10 build 16232 API changes
+title: Windows 10 build 16267 API changes
 description: Developers can use the following list to identify new or changed namespaces in the current Windows 10 SDK Preview Build
-keywords: what's new, whats new, update, flighted, flights, API, 16232
+keywords: what's new, whats new, update, flighted, flights, API, 16267
 ms.author: quradic
-ms.date: 7/25/2017
+ms.date: 8/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ---
 
-# New APIs in the Windows 10 SDK Preview Build 16232
+# New APIs in the Windows 10 SDK Preview Build 16267
 
-New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16232.
+New and updated API namespaces have been made available to [Windows Insiders](https://insider.windows.com/) in the Windows 10 SDK Preview Build 16267.
 
-Below is a full list of prelease documentation published for namespaces added since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). **Please note that prerelease documentation may be incomplete and subject to change, and these APIs may be renamed or removed in subsequent builds.** Also attached is a list of API namespaces changed or renamed since the previous SDK preview build.
+Below is a full list of prelease documentation published for namespaces added since the last public Windows 10 release, [Version 1703](windows-10-version-1703-api-diff.md). **Please note that prerelease documentation may be incomplete and subject to change, and these APIs may be renamed or removed in subsequent builds.** Also attached is a list of API namespaces changed or renamed since the previous SDK preview builds.
 
 ## windows.applicationmodel
 
@@ -145,10 +145,6 @@ shareoperation.contacts
 #### [datatransfermanager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)
 
 datatransfermanager.showshareui
-
-#### [idatatransfermanagerstatics3](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.idatatransfermanagerstatics3)
-
-idatatransfermanagerstatics3 <br> idatatransfermanagerstatics3.showshareui
 
 #### [shareuioptions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.shareuioptions)
 
@@ -514,13 +510,27 @@ gamemodeconfiguration <br> gamemodeconfiguration.affinitizetoexclusivecpus <br> 
 
 gamemodeuserconfiguration <br> gamemodeuserconfiguration.gamingrelatedprocessnames <br> gamemodeuserconfiguration.getdefault <br> gamemodeuserconfiguration.saveasync
 
-### [windows.gaming.preview](https://docs.microsoft.com/uwp/api/windows.gaming.preview)
-
-#### [windows](https://docs.microsoft.com/uwp/api/windows.gaming.preview.windows)
-
-windows.gaming.preview
-
 ### [windows.gaming.ui](https://docs.microsoft.com/uwp/api/windows.gaming.ui)
+
+#### [gamechatmessageorigin](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatmessageorigin)
+
+gamechatmessageorigin
+
+#### [gamechatmessagereceivedeventargs](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatmessagereceivedeventargs)
+
+gamechatmessagereceivedeventargs <br> gamechatmessagereceivedeventargs.appdisplayname <br> gamechatmessagereceivedeventargs.appid <br> gamechatmessagereceivedeventargs.message <br> gamechatmessagereceivedeventargs.origin <br> gamechatmessagereceivedeventargs.sendername
+
+#### [gamechatoverlay](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlay)
+
+gamechatoverlay <br> gamechatoverlay.addmessage <br> gamechatoverlay.desiredposition <br> gamechatoverlay.getdefault
+
+#### [gamechatoverlaymessagesource](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlaymessagesource)
+
+gamechatoverlaymessagesource <br> gamechatoverlaymessagesource.gamechatoverlaymessagesource <br> gamechatoverlaymessagesource.messagereceived <br> gamechatoverlaymessagesource.setdelaybeforeclosingaftermessagereceived
+
+#### [gamechatoverlayposition](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamechatoverlayposition)
+
+gamechatoverlayposition
 
 #### [gamemonitor](https://docs.microsoft.com/uwp/api/windows.gaming.ui.gamemonitor)
 
@@ -1128,6 +1138,10 @@ filerandomaccessstream.openasync <br> filerandomaccessstream.openasync <br> file
 
 ### [windows.storage](https://docs.microsoft.com/uwp/api/windows.storage)
 
+#### [appdatapaths](https://docs.microsoft.com/uwp/api/windows.storage.appdatapaths)
+
+appdatapaths <br> appdatapaths.cookies <br> appdatapaths.desktop <br> appdatapaths.documents <br> appdatapaths.favorites <br> appdatapaths.getdefault <br> appdatapaths.getforuser <br> appdatapaths.history <br> appdatapaths.internetcache <br> appdatapaths.localappdata <br> appdatapaths.programdata <br> appdatapaths.roamingappdata
+
 #### [storagelibrary](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary)
 
 storagelibrary.arefoldersuggestionsavailableasync
@@ -1135,6 +1149,14 @@ storagelibrary.arefoldersuggestionsavailableasync
 #### [storageprovider](https://docs.microsoft.com/uwp/api/windows.storage.storageprovider)
 
 storageprovider.ispropertysupportedforpartialfileasync
+
+#### [systemdatapaths](https://docs.microsoft.com/uwp/api/windows.storage.systemdatapaths)
+
+systemdatapaths <br> systemdatapaths.fonts <br> systemdatapaths.getdefault <br> systemdatapaths.programdata <br> systemdatapaths.public <br> systemdatapaths.publicdesktop <br> systemdatapaths.publicdocuments <br> systemdatapaths.publicdownloads <br> systemdatapaths.publicmusic <br> systemdatapaths.publicpictures <br> systemdatapaths.publicvideos <br> systemdatapaths.system <br> systemdatapaths.systemarm <br> systemdatapaths.systemhost <br> systemdatapaths.systemx64 <br> systemdatapaths.systemx86 <br> systemdatapaths.userprofiles <br> systemdatapaths.windows
+
+#### [userdatapaths](https://docs.microsoft.com/uwp/api/windows.storage.userdatapaths)
+
+userdatapaths <br> userdatapaths.cameraroll <br> userdatapaths.cookies <br> userdatapaths.desktop <br> userdatapaths.documents <br> userdatapaths.downloads <br> userdatapaths.favorites <br> userdatapaths.getdefault <br> userdatapaths.getforuser <br> userdatapaths.history <br> userdatapaths.internetcache <br> userdatapaths.localappdata <br> userdatapaths.localappdatalow <br> userdatapaths.music <br> userdatapaths.pictures <br> userdatapaths.profile <br> userdatapaths.recent <br> userdatapaths.roamingappdata <br> userdatapaths.savedpictures <br> userdatapaths.screenshots <br> userdatapaths.templates <br> userdatapaths.videos
 
 ## windows.system
 
@@ -1572,14 +1594,6 @@ personpictureautomationpeer <br> personpictureautomationpeer.personpictureautoma
 
 ratingcontrolautomationpeer <br> ratingcontrolautomationpeer.ratingcontrolautomationpeer
 
-#### [treeviewitemautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.treeviewitemautomationpeer)
-
-treeviewitemautomationpeer <br> treeviewitemautomationpeer.treeviewitemautomationpeer
-
-#### [treeviewlistautomationpeer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.peers.treeviewlistautomationpeer)
-
-treeviewlistautomationpeer <br> treeviewlistautomationpeer.treeviewlistautomationpeer
-
 ### [windows.ui.xaml.controls.maps](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps)
 
 #### [mapcontrol](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol)
@@ -1590,13 +1604,13 @@ mapcontrol.layers <br> mapcontrol.layersproperty <br> mapcontrol.trygetlocationf
 
 mapcontroldatahelper.createmapcontrol
 
-#### [mapelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)
-
-mapelement.mapstylesheetentry <br> mapelement.mapstylesheetentryproperty <br> mapelement.mapstylesheetentrystate <br> mapelement.mapstylesheetentrystateproperty <br> mapelement.tag <br> mapelement.tagproperty
-
 #### [mapelement3d](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement3d)
 
 mapelement3d <br> mapelement3d.heading <br> mapelement3d.headingproperty <br> mapelement3d.location <br> mapelement3d.locationproperty <br> mapelement3d.mapelement3d <br> mapelement3d.model <br> mapelement3d.pitch <br> mapelement3d.pitchproperty <br> mapelement3d.roll <br> mapelement3d.rollproperty <br> mapelement3d.scale <br> mapelement3d.scaleproperty
+
+#### [mapelement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement)
+
+mapelement.mapstylesheetentry <br> mapelement.mapstylesheetentryproperty <br> mapelement.mapstylesheetentrystate <br> mapelement.mapstylesheetentrystateproperty <br> mapelement.tag <br> mapelement.tagproperty
 
 #### [mapelementslayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer)
 
@@ -1878,42 +1892,6 @@ textcontrolcopyingtoclipboardeventargs <br> textcontrolcopyingtoclipboardeventar
 
 textcontrolcuttingtoclipboardeventargs <br> textcontrolcuttingtoclipboardeventargs.handled
 
-#### [treeview](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-
-treeview <br> treeview.collapsenode <br> treeview.expanding <br> treeview.expandnode <br> treeview.itemclicked <br> treeview.listcontrol <br> treeview.rootnode <br> treeview.selectall <br> treeview.selecteditems <br> treeview.selectionmode <br> treeview.selectionmodeproperty <br> treeview.treeview
-
-#### [treeviewexpandingeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewexpandingeventargs)
-
-treeviewexpandingeventargs <br> treeviewexpandingeventargs.node
-
-#### [treeviewitem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem)
-
-treeviewitem <br> treeviewitem.treeviewitem
-
-#### [treeviewitemclickeventargs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitemclickeventargs)
-
-treeviewitemclickeventargs <br> treeviewitemclickeventargs.clickeditem <br> treeviewitemclickeventargs.ishandled
-
-#### [treeviewlist](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewlist)
-
-treeviewlist <br> treeviewlist.treeviewlist
-
-#### [treeviewnode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode)
-
-treeviewnode <br> treeviewnode.append <br> treeviewnode.clear <br> treeviewnode.data <br> treeviewnode.depth <br> treeviewnode.depthproperty <br> treeviewnode.first <br> treeviewnode.getat <br> treeviewnode.getview <br> treeviewnode.hasitems <br> treeviewnode.hasitemsproperty <br> treeviewnode.hasunrealizeditems <br> treeviewnode.indexof <br> treeviewnode.insertat <br> treeviewnode.isexpanded <br> treeviewnode.isexpandedchanged <br> treeviewnode.isexpandedproperty <br> treeviewnode.parentnode <br> treeviewnode.removeat <br> treeviewnode.removeatend <br> treeviewnode.setat <br> treeviewnode.size <br> treeviewnode.treeviewnode <br> treeviewnode.vectorchanged
-
-#### [treeviewselectionmode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewselectionmode)
-
-treeviewselectionmode
-
-#### [xamlbooleantovisibilityconverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.xamlbooleantovisibilityconverter)
-
-xamlbooleantovisibilityconverter <br> xamlbooleantovisibilityconverter.convert <br> xamlbooleantovisibilityconverter.convertback <br> xamlbooleantovisibilityconverter.xamlbooleantovisibilityconverter
-
-#### [xamlintegertoindentationconverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.xamlintegertoindentationconverter)
-
-xamlintegertoindentationconverter <br> xamlintegertoindentationconverter.convert <br> xamlintegertoindentationconverter.convertback <br> xamlintegertoindentationconverter.xamlintegertoindentationconverter
-
 ### [windows.ui.xaml.documents](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents)
 
 #### [block](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.block)
@@ -2022,9 +2000,73 @@ frameworkelement.actualtheme <br> frameworkelement.actualthemechanged <br> frame
 
 uielement.characterreceived <br> uielement.characterreceivedevent <br> uielement.getchildrenintabfocusorder <br> uielement.keyboardaccelerators <br> uielement.onprocesskeyboardaccelerators <br> uielement.previewkeydown <br> uielement.previewkeydownevent <br> uielement.previewkeyup <br> uielement.previewkeyupevent <br> uielement.processkeyboardaccelerators <br> uielement.tryinvokekeyboardaccelerator
 
+## APIs changed or removed since Build 16232
+
+The following APIs were made available in or before Build 16232, but are no longer present in this build. They have either been renamed or removed entirely, and documentation is no longer provided for them.
+
+### windows.applicationmodel.datatransfer
+
+#### idatatransfermanagerstatics3
+
+idatatransfermanagerstatics3 <br> idatatransfermanagerstatics3.showshareui
+
+### windows.gaming.preview
+
+#### windows
+
+windows.gaming.preview
+
+### windows.ui.xaml.automation.peers
+
+#### treeviewitemautomationpeer
+
+treeviewitemautomationpeer <br> treeviewitemautomationpeer.treeviewitemautomationpeer
+
+#### treeviewlistautomationpeer
+
+treeviewlistautomationpeer <br> treeviewlistautomationpeer.treeviewlistautomationpeer
+
+### windows.ui.xaml.controls
+
+#### treeview
+
+treeview <br> treeview.collapsenode <br> treeview.expanding <br> treeview.expandnode <br> treeview.itemclicked <br> treeview.listcontrol <br> treeview.rootnode <br> treeview.selectall <br> treeview.selecteditems <br> treeview.selectionmode <br> treeview.selectionmodeproperty <br> treeview.treeview
+
+#### treeviewexpandingeventargs
+
+treeviewexpandingeventargs <br> treeviewexpandingeventargs.node
+
+#### treeviewitem
+treeviewitem <br> treeviewitem.treeviewitem
+
+#### treeviewitemclickeventargs
+
+treeviewitemclickeventargs <br> treeviewitemclickeventargs.clickeditem <br> treeviewitemclickeventargs.ishandled
+
+#### treeviewlist
+
+treeviewlist <br> treeviewlist.treeviewlist
+
+#### treeviewnode
+
+treeviewnode <br> treeviewnode.append <br> treeviewnode.clear <br> treeviewnode.data <br> treeviewnode.depth <br> treeviewnode.depthproperty <br> treeviewnode.first <br> treeviewnode.getat <br> treeviewnode.getview <br> treeviewnode.hasitems <br> treeviewnode.hasitemsproperty <br> treeviewnode.hasunrealizeditems <br> treeviewnode.indexof <br> treeviewnode.insertat <br> treeviewnode.isexpanded <br> treeviewnode.isexpandedchanged <br> treeviewnode.isexpandedproperty <br> treeviewnode.parentnode <br> treeviewnode.removeat <br> treeviewnode.removeatend <br> treeviewnode.setat <br> treeviewnode.size <br> treeviewnode.treeviewnode <br> treeviewnode.vectorchanged
+
+#### treeviewselectionmode
+
+treeviewselectionmode
+
+#### xamlbooleantovisibilityconverter
+
+xamlbooleantovisibilityconverter <br> xamlbooleantovisibilityconverter.convert <br> xamlbooleantovisibilityconverter.convertback <br> xamlbooleantovisibilityconverter.xamlbooleantovisibilityconverter
+
+#### xamlintegertoindentationconverter
+
+xamlintegertoindentationconverter <br> xamlintegertoindentationconverter.convert <br> xamlintegertoindentationconverter.convertback <br> xamlintegertoindentationconverter.xamlintegertoindentationconverter
+
+
 ## APIs changed or removed since Build 16225
 
-The following APIs were made available in Build 16225, but are no longer present in this build. They have either been renamed or removed entirely, and documentation is no longer provided for them.
+The following APIs were made available in or before Build 16225, but are no longer present in this build. They have either been renamed or removed entirely, and documentation is no longer provided for them.
 
 ### windows.graphics.holographic
 

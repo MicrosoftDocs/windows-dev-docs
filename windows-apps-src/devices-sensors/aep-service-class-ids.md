@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: AEP service class IDs
 description: Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them.

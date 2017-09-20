@@ -4,7 +4,7 @@ ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
 title: HTML and JavaScript troubleshooting guide
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -34,8 +34,6 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 2.  Ensure the JavaScript reference is present. Without the ad.js reference in the &lt;head&gt; section (after the default.js reference) the **AdControl** will be unable to display and an error will occur during build.
 
-    Windows 10:
-
     > [!div class="tabbedCodeSnippets"]
     ``` html
     <head>
@@ -45,18 +43,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-    Windows 8.x:
-
-    > [!div class="tabbedCodeSnippets"]
-    ``` html
-    <head>
-        ...
-        <script src="//Microsoft.Advertising.JavaScript/ads/ad.js"></script>
-        ...
-    </head>
-    ```
-
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -146,7 +133,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 11. Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
 
-12. Live values for [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+12. Live values for [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="html-blackboxblinksdisappears"/>
 ### Black box blinks and disappears
@@ -277,7 +264,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
     > [!div class="tabbedCodeSnippets"]
     ``` javascript
@@ -289,7 +276,7 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 5.  Check the parent element of the **AdControl**. The parent must be active and visible.
 
-6.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+6.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the [test values](set-up-ad-units-in-your-app.md#test-ad-units) for both **ApplicationId** and **AdUnitId**.
 
 <span id="js-blackboxblinksdisappears"/>
 ### Black box blinks and disappears

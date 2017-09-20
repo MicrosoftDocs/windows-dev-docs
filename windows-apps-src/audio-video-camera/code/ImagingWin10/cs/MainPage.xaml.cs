@@ -443,6 +443,8 @@ namespace ImagingWin10
                 }
             }
         }
+
+        
         //</SnippetWriteImageMetadata>
 
     }

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Learn how to promote your apps and content in the Windows Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
 title: Windows Store app marketing guidelines
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,21 +17,25 @@ Learn how to promote your apps and content in the Windows Store. These guideline
 
 ## Store badges
 
-We’ve created special promotional badges to help you drive more customers to your app's listing within the Windows Store. These badges are available in 44 languages. Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.
+We’ve created special promotional badges to help you drive more customers to your app's listing in the Windows Store. These badges are available in 44 languages. Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.
 
-[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows Store Marketing Guidelines (PDF, English)
+[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) **Windows Store Marketing Guidelines (PDF, English)**
+
 
 ## Badge generator and images
 
-You can use our [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing. You can also download the complete set of badge images (in PNG and PDF format) from the link below.
+You can use our [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing.
 
-[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) All badge images
+You can also download the complete set of badge images (in PNG and PDF format) from the link below.
+
+[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) **All badge images**
+
 
 ## Device images
 
-To promote your app, you may want to show how it looks when running on a Windows device. We’ve got a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs. Best practices and technical specifications for how to use these images can be found in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+To promote your app, you may want to show how it looks when running on a Windows device. We have a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs. Best practices and technical specifications for how to use these images can be found in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-[![Download button](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows device art
+[![Download button](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows device art**
 
 ## License to Microsoft Marks
 

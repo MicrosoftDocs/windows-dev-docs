@@ -1,19 +1,19 @@
 ---
 author: TylerMSFT
 description: Learn how to use extended execution to keep your app running while it is minimized
-title: Run while minimized with extended execution
+title: Postpone app suspension with extended execution
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle
+keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ---
 
-# Run while minimized with extended execution
+# Postpone app suspension with extended execution
 
-This article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized.
+This article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized or under the lock screen.
 
 When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md).
 
@@ -25,7 +25,9 @@ Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/
 
 Specify **ExtendedExecutionReason.Unspecified** when you create an **ExtendedExecutionSession** to request additional time before your app moves into the background for scenarios such as media processing, project compilation, or keeping a network connection alive. On desktop devices running Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), this is the approach to use if an app needs to avoid being suspended while it is minimized.
 
-Request the extension when starting a long running operation in order to defer the **Suspending** state transition that otherwise occurs when the app moves into the background. On desktop devices, extended execution sessions created with **ExtendedExecutionReason.Unspecified** have a battery-aware time limit. If the device is connected to wall power, there is no limit to the length of the extended execution time period. If the device is on battery power, the extended execution time period can run up to ten minutes in the background. A tablet or laptop user can get the same long running behavior at the expense of battery life when the **Always Allowed** option is selected in **Battery Usage Settings**.
+Request the extension when starting a long running operation in order to defer the **Suspending** state transition that otherwise occurs when the app moves into the background. On desktop devices, extended execution sessions created with **ExtendedExecutionReason.Unspecified** have a battery-aware time limit. If the device is connected to wall power, there is no limit to the length of the extended execution time period. If the device is on battery power, the extended execution time period can run up to ten minutes in the background.
+
+A tablet or laptop user can get the same long running behavior--at the expense of battery life--when the **Allow the app to run background tasks** option is selected in **Battery usage by app** settings. (To find this option on a laptop, go to **Settings** > **System** > **Battery** > **Battery usage by App** (the link under the percent of battery power remaining) > select an app > turn off **Managed By Windows** > select **Allow app to run background tasks**.  
 
 On all OS editions this kind of extended execution session stops when the device enters Connected Standby. On mobile devices running Windows 10 Mobile, this kind of extended execution session will run as long as the screen is on. When the screen turns off, the device immediately attempts to enter the low-power Connected-Standby mode. On desktop devices, the session will continue running if the lock screen appears. The device does not enter Connected Standby for a period of time after the screen turns off. On the Xbox OS Edition, the device enters Connect Standby after one hour unless the user changes the default.
 
@@ -33,7 +35,7 @@ On all OS editions this kind of extended execution session stops when the device
 
 Specify **ExtendedExecutionReason.LocationTracking** when you create an **ExtendedExecutionSession** if your app needs to regularly log the location from the [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx). Apps for fitness tracking and navigation that need to regularly monitor the user's location and should use this reason.
 
-A location tracking extended execution session can run as long as needed. However, there can only be one such session running per device. A location tracking extended execution session can only be requested in the foreground, and the app must be in the **Running** state. This ensures that the user is aware that the app has initiated an extended location tracking session. It is still possible to use the GeoLocator while the app is in the background by using a background task, or an app service, without requesting a location tracking extended execution session.
+A location tracking extended execution session can run as long as needed, including while the screen is locked on a mobile device. However, there can only be one such session running per device. A location tracking extended execution session can only be requested in the foreground, and the app must be in the **Running** state. This ensures that the user is aware that the app has initiated an extended location tracking session. It is still possible to use the GeoLocator while the app is in the background by using a background task, or an app service, without requesting a location tracking extended execution session.
 
 ## Save Critical Data Locally
 

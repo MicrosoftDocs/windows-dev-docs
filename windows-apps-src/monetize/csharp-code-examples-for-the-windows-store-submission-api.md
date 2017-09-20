@@ -4,7 +4,7 @@ ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: Use the C# code examples in this section to learn more about using the Windows Store submission API.
 title: C# sample - submissions for apps, add-ons, and flights
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,7 +33,7 @@ These examples use the following libraries:
 
 The following example implements a command line program that calls the other example methods in this article to demonstrate different ways to use the Windows Store submission API. To adapt this program for your own use:
 
-* Assign the ```ApplicationId```, ```InAppProductId```, and ```FlightId``` properties to the ID of the app, add-on (add-ons are also known as in-app products or IAPs), and package flight you want to manage. These IDs are available in the Dev Center dashboard.
+* Assign the ```ApplicationId```, ```InAppProductId```, and ```FlightId``` properties to the ID of the app, add-on, and package flight you want to manage.
 * Assign the ```ClientId``` and ```ClientSecret``` properties to the client ID and key for your app, and replace the *tenantid* string in the ```TokenEndpoint``` URL with the tenant ID for your app. For more information, see [How to associate an Azure AD application with your Windows Dev Center account](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)
 
 > [!div class="tabbedCodeSnippets"]

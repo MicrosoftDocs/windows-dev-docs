@@ -4,7 +4,7 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package an app (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,9 +16,12 @@ ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 
 This article lists the things you need to know before you package your desktop app. You might not have to do much to get your app ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
 
+>[!IMPORTANT]
+>The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
+
 + __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You'll have to retarget your app to .NET 4.6.1 before you package it.
 
-+ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users.
++ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users. Apps that require elevation for any part of their functionality won't be accepted in the Windows Store.
 
 + __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
@@ -52,7 +55,7 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app is linking C runtime libraries (CRT) in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner.
 
-	Visual Studio 2015 supports both dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015.
+	Visual Studio 2015 supports both static and dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015.
 
 	Support in previous versions of Visual Studio varies. See the following table for details:
 
@@ -87,7 +90,9 @@ The dependencies will not get installed if the app is installed by sideloading. 
 
 	- __Your app adds a jump list entries that references assets in the app's package by absolute paths__. The installation path of an app may change when its packages are updated, changing the location of assets (such as icons, documents, executable, and so on). If jump list entries reference such assets by absolute paths, then the app should refresh its jump list periodically (such as on app launch) to ensure paths resolve correctly. Alternatively, use the UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) APIs instead, which allow you to reference string and image assets using the package-relative ms-resource URI scheme (which is also language, DPI, and high contrast aware).
 
-+ __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. In fact, if users install your app onto a system that runs the Windows 10 S, then your app won’t be able to start them at all. Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a desktop bridge app, and your app will behave as expected on systems running Windows 10 S.
++ __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. In fact, if users install your app onto a system that runs the Windows 10 S, then your app won’t be able to start them at all. This could block your app from submission to the Windows Store because all apps submitted to the Windows Store must be compatible with Windows 10 S.
+
+Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a desktop bridge app, and your app will behave as expected on systems running Windows 10 S.
 
 + __Your app hosts add-ins, plug-ins, or extensions__.   In many cases, COM-style extensions will likely continue to work as long as the extension has not been packaged, and it installs as full trust. That's because those installers can use their full-trust capabilities to modify the registry and place extension files wherever your host app expects to find them.
 
@@ -95,9 +100,12 @@ The dependencies will not get installed if the app is installed by sideloading. 
 
  All applications and extensions that users install to a system running Windows 10 S must be installed as Windows App packages. So if you intend to package your extensions, or you plan to encourage your contributors to package them, consider how you might facilitate communication between the host app package and any extension packages. One way that you might be able to do this is by using an [app service](../launch-resume/app-services.md).
 
-+ __Your app generates code__. Your app can generate code that it consumes in memory, but avoid writing generated code to disk because the Windows App Certification process can't validate that code prior to app submission. Also, apps that write code to disk won’t run properly on systems running Windows 10 S.
++ __Your app generates code__. Your app can generate code that it consumes in memory, but avoid writing generated code to disk because the Windows App Certification process can't validate that code prior to app submission. Also, apps that write code to disk won’t run properly on systems running Windows 10 S. This could block your app from submission to the Windows Store because all apps submitted to the Windows Store must be compatible with Windows 10 S.
 
 + __Your app uses the MAPI API__. The [Outlook MAPI API](https://msdn.microsoft.com/library/office/cc765775.aspx(d=robot)) is not currently supported in desktop bridge apps.
+
+>[!IMPORTANT]
+> After you've created your Windows app package, please test your app to ensure that it works correctly on systems that run Windows 10 S. All apps submitted to the Windows Store must be compatible with Windows 10 S. Apps that aren't compatible won't be accepted in the store. See [Test your Windows app for Windows 10 S](desktop-to-uwp-test-windows-s.md).
 
 ## Next steps
 

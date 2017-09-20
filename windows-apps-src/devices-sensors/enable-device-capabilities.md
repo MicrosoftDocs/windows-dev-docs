@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: Enable device capabilities
 description: This tutorial describes how to declare device capabilities in Microsoft Visual Studio. This enables your app to use cameras, microphones, location sensors, and other devices.

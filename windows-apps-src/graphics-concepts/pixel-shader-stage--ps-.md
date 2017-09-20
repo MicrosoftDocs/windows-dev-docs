@@ -4,8 +4,8 @@ description: The Pixel Shader (PS) stage receives interpolated data for a primit
 ms.assetid: 0AEBFDFB-0AD8-4633-AE4E-A44004B57745
 keywords:
 - Pixel Shader (PS) stage
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

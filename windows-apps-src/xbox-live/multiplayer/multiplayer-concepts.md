@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about common multiplayer concepts used by Xbox Live multiplayer systems.
 ms.assetid: 1e765f19-1530-4464-b5cf-b00259807fd3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 08-25-2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,6 +19,8 @@ This topic discusses a number of important multiplayer terms and concepts that a
 A multiplayer session represents a group of Xbox Live users and properties associated with them. The session is created and maintained by titles, and is represented as a secure JSON document that resides in the Xbox Live cloud. The session document itself contains information about the Xbox Live users that are connected to the session, how many spots are available, custom metadata (for the session as well as for each session member), and other information related to the game session.
 
 Each session is based on a session template, which are defined by the game developer, and are configured in the Xbox Live service configuration for a title instance.
+
+While a title can create and update a session, it cannot directly delete a session.  Instead, once all players are removed from a session, the Xbox Live multiplayer service will automatically delete the session after a specified timeout. For detailed information about sessions, see [MPSD session details](multiplayer-appendix/mpsd-session-details.md).
 
 Titles can choose to use multiple sessions, but a typical multiplayer implementation will use two sessions:
 * Lobby session - this is a session that represents a group of friends that want to remain together across multiple rounds, levels, maps, etc., of the game.

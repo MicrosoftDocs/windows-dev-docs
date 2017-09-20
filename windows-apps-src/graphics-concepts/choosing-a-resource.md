@@ -4,8 +4,8 @@ description: A resource is a collection of data that is used by the 3D pipeline.
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
 keywords:
 - Choosing a resource
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

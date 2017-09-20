@@ -1,6 +1,6 @@
 ---
 author: GrantMeStrength
-title: Plan your Universal Windows Platform (UWP) app
+title: Building a complex Universal Windows Platform (UWP) app
 description: On Microsoft design teams, our process for creating apps consists of five distinct stages--concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ms.author: jken
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-#  Plan your Universal Windows Platform (UWP) app
+#  Building a complex Universal Windows Platform (UWP) app
 
 On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 
@@ -218,7 +218,7 @@ For more details on how to use different surfaces, take a look at <!--[Command d
 
 ![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+For more info on designing for different screen sizes, see [Screen sizes and break points for responsive design](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
 ## Make a good first impression
 

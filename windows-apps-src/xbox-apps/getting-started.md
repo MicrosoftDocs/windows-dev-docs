@@ -8,7 +8,6 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.assetid: 6e033ffa-502e-4daa-b5b2-6f853f68b66c
 ---
 
 #Getting started with UWP app development on Xbox One
@@ -28,7 +27,14 @@ Before you start you will need to do the following:
 
 3.  Enable Developer Mode for your development PC (Settings / Update & security / For developers / Developer mode).
 
+
+Now that your development PC is ready, you can watch this video or continue reading to see how to set up your Xbox One for development and create and deploy a UWP app to it.
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Events/Xbox/App-Dev-on-Xbox/Get-started-with-App-Dev-on-Xbox/player#time=51s:paused" width="600" height="338"  allowFullScreen frameBorder="0"></iframe>
+
 ## Setting up your Xbox One console
+
 1.	Activate Developer Mode on your Xbox One. Download the app, get the activation code, and then enter it into the xboxactivate page in your Dev Center account. For more information, see [Enabling Developer Mode on Xbox One](devkit-activation.md). 
 
 2.	Go into the Dev Mode Activation app and select **Switch and restart**. Congratulations, you now have an Xbox One in Developer Mode!

@@ -18,6 +18,9 @@ You can use Visual Studio to generate a package for your desktop app. Then, you 
 
 This guide shows you how to set up your solution and then generate a package for your desktop application.
 
+>[!IMPORTANT]
+>The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
+
 ## First, consider how you'll distribute your app
 
 If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
@@ -63,6 +66,37 @@ Add the binaries directly to the packaging project.
        DestinationFolder="win32" />
    </Target>
    ```
+
+## Add binaries into the Windows app package
+
+Configure each binary so that they get copied into the final output package.
+
+1. In Visual Studio, open the **Properties** window and for each binary, set the **Package Action** property to **Content** and the **Copy to Output Directory** property to **Copy always**.
+
+   ![binary properties](images/desktop-to-uwp/net-3.png)
+
+   If your binary subfolder contains alot of desktop application binary files, you can use wildcard expressions to specify which files you want to include. You'll have to open the .jsproj file in a text editor to do this. Here's an example:
+
+   ```xml
+   <Content Include="win32\*.dll">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   <Content Include="win32\*.exe">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   <Content Include="win32\*.config">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   <Content Include="win32\*.pdb">
+     <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+   </Content>
+   ```
+
+   >[!NOTE]
+   >If you want to avoid committing binary files to your source code repository, you can use the .gitignore file to exclude all of the files in your desktop application binary subfolder.
+
+
+
 
 ## Modify the package manifest
 
@@ -136,7 +170,7 @@ To generate a package your app, follow the guidance described in this topic: [Pa
 
 When you reach the **Select and Configure Packages** screen, Take a moment to consider what sorts of binaries you're including in your package before you select any of the checkboxes.
 
-* If you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a adding a C#, C++, or VB.NET-based Universal Windows Platform project to your solution, select the **x86** and **x64** checkboxes.  
+* If you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to your solution, select the **x86** and **x64** checkboxes.
 
 * Otherwise, choose the **Neutral** checkbox.
 
@@ -144,6 +178,18 @@ When you reach the **Select and Configure Packages** screen, Take a moment to co
 The reason that you'd have to explicitly choose each supported platform is because an solution that you've extended contains two types of binaries; one for the UWP project and one for the desktop project. Because these are different types of binaries, .NET Native needs to explicitly produce native binaries for each platform.
 
 If you receive errors when you attempt to generate your package, see the [Known Issues](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-known-issues#known-issues-anchor) guide and if your issue does not appear in that list, please share the issue with us [here](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+### Obtaining the appxupload file that you submit to the store
+
+The **Create App Packages** wizard generates an appxupload file that you can submit to the Windows Store but the wizard won't automatically generate one if you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to the packaged solution. In that case, you'll have to manually create the appxupload file. Here's how.
+
+1. Create a new zip archive to include the generated appxsym and appxbundle from the \_Test folder.
+
+2. Create a new zip file that contains the appxsym and appxbundle files, and then rename the extension to appxupload.
+
+   ![file explorer](images/desktop-to-uwp/net-7.png)
+
+
 
 ## Next steps
 

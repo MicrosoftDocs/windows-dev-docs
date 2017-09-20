@@ -4,7 +4,7 @@ ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: Packaging apps
 description: This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.
 ms.author: lahugh
-ms.date: 04/05/2017
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,7 +20,7 @@ This section contains or links to articles about packaging for Universal Windows
 
 | Topic | Description |
 |-------|-------------|
-| [Package a UWP app with Visual Studio](packaging-uwp-apps.md) | To sell your UWP app or distribute it to other users, you need to create an appxupload package for it. When you create the appxupload, another appx package will be generated to use for testing and sideloading. You can distribute your app directly by sideloading the appx package to a device. This article describes the process of configuring, creating and testing a UWP app package. For more information about sideloading, see [Sideload Apps with DISM](http://go.microsoft.com/fwlink/?LinkID=231020). |
+| [Package a UWP app with Visual Studio](packaging-uwp-apps.md) | To distribute or sell your Universal Windows Platform (UWP) app, you need to create an app package for it. |
 | [Manual app packaging](manual-packaging-root.md) | If you want to create and sign an app package, but you didn't use Visual Studio to develop your app, you'll need to use the manual app packaging tools. |
 | [App package architectures](device-architecture.md) | Learn more about which processor architecture(s) you should use when building your UWP app package. | 
 | [UWP App Streaming Install](streaming-install.md) | Universal Windows Platform (UWP) App Streaming Install enables you to specify which parts of your app you would like the Windows Store to download first. When the essential files of the app are downloaded first, the user can launch and interact with the app while the rest of it finishes downloading in the background. |

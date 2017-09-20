@@ -1,28 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: Learn about known issues for the current release of the Microsoft advertising libraries.
-title: Known issues for the advertising libraries
+description: Learn about known issues for the current release of the Microsoft Advertising SDK.
+title: Known issues and troubleshooting for ads in apps
 ms.author: mcleans
-ms.date: 07/20/2017
+ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, ads, advertising, known issues
+keywords: windows 10, uwp, ads, advertising, known issues, troubleshooting
 ---
 
-# Known issues for the advertising libraries
+# Known issues and troubleshooting for ads in apps
 
+This topic lists the known issues with the current release of the Microsoft Advertising SDK. For additional troubleshooting guidance, see the following topics.
 
-
-
-This topic lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Advertising SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).
-
-## Windows Phone 8.x Silverlight projects
-
-The Microsoft Advertising SDK for Windows and Windows Phone 8.x has limited support for Windows Phone 8.x Silverlight projects. For more information, see [Advertising support for Windows Phone 8.x Silverlight projects](adcontrol-in-windows-phone-silverlight.md#silverlight_support).
-
-To get the Microsoft advertising assemblies for Windows Phone 8.x Silverlight projects, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), open your project in Visual Studio, and then go to **Project** > **Add Connected Service** > **Ad Mediator** to automatically download the assemblies. After doing this, you can remove the ad mediator references from your project if you do not want to use ad mediation. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
+* [HTML and JavaScript troubleshooting guide](html-and-javascript-troubleshooting-guide.md)
+* [XAML and C# troubleshooting guide](xaml-and-c-troubleshooting-guide.md)
 
 ## AdControl interface unknown in XAML
 
@@ -46,7 +40,7 @@ There are many reasons you may see no ads, including network errors. Other reaso
 
 * Selecting an ad unit in Windows Dev Center with a size that is greater or less than the size of the **AdControl** in your app's code.
 
-* Ads will not appear if you're using a [test mode value](test-mode-values.md) for your ad unit ID when running a live app.
+* Ads will not appear if you're using a [test mode value](set-up-ad-units-in-your-app.md#test-ad-units) for your ad unit ID when running a live app.
 
 * If you created a new ad unit ID in the past half-hour, you might not see an ad until the servers propagate new data through the system. Existing IDs that have shown ads before should show ads immediately.
 
@@ -64,21 +58,11 @@ Test ads can be shown, even when you are expecting live ads. This can happen in 
 
 When a live ad unit is serving test ads, the ad unit’s status shows **Active and serving test ads** in Windows Dev Center. This does not currently apply to phone apps.
 
-## Obsolete test values for ad unit ID and application ID no longer working
-
-The following test values for Windows Phone Silverlight apps are obsolete, and will no longer work. If you have an existing project that uses these test values, update your project to use the values provided in [Test mode values](test-mode-values.md).
-
-| Application ID  |  Ad unit ID    |
-|-----------------|----------------|
-| test_client     |  Image320_50   |
-| test_client     |  Image300_50   |
-| test_client     |  TextAd   |
-| test_client     |  Image480_80   |
 
 <span id="reference_errors"/>
 ## Reference errors caused by targeting Any CPU in your project
 
-When using the Microsoft advertising libraries, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning after adding the reference similar to this one.
+When using the Microsoft Advertising SDK, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning after adding the reference similar to this one.
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
@@ -103,13 +87,7 @@ Setting border-related properties inherited by the **AdControl** from its parent
 
 ## More Information
 
-
-For more information about the latest known issues and to post questions related to the Microsoft advertising libraries, visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
-
-## Support
-
-
-To contact product support for issues with the Microsoft advertising libraries, visit the [support page](https://go.microsoft.com/fwlink/p/?LinkId=331508) and choose **In-App Advertising**.
+For more information about the latest known issues and to post questions related to the Microsoft Advertising SDK, visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 
  
 

@@ -16,7 +16,7 @@ keywords: windows 10, uwp, Windows Store submission API, add-ons, in-app product
 
 
 
-Use this method in the Windows Store submission API to retrieve data for all add-ons (also known as in-app products or IAPs) for all the apps that are registered to your Windows Dev Center account.
+Use this method in the Windows Store submission API to retrieve data for all add-ons for all the apps that are registered to your Windows Dev Center account.
 
 ## Prerequisites
 

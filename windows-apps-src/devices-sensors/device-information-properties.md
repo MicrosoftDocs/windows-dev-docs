@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: Device information properties
 description: Each device has associated DeviceInformation properties that you can use when you need specific information or when you are building a device selector.

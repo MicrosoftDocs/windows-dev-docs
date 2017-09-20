@@ -558,7 +558,7 @@ Do this if your app has multiple views where some views consume enterprise data 
 ProtectionPolicyManager.GetForCurrentView().Identity = identity;
 
 // tag as personal data.
-ProtectionPolicyManager.GetForCurrentView().Identity = String.Empty();
+ProtectionPolicyManager.GetForCurrentView().Identity = String.Empty;
 ```
 
 > **APIs** <br>
@@ -580,8 +580,7 @@ bool result =
             ProtectionPolicyManager.TryApplyProcessUIPolicy(identity);
 
 // tag as personal data.
-bool result =
-            ProtectionPolicyManager.TryApplyProcessUIPolicy(String.Empty());
+ProtectionPolicyManager.ClearProcessUIPolicy();
 ```
 
 > **APIs** <br>

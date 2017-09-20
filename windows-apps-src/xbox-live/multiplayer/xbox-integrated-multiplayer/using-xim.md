@@ -182,7 +182,14 @@ The user's Internet connection is also a limited, ever-changing resource. Be sur
  const xim_network_path_information * networkPathInfo = remotePlayer->network_path_information();
 ```
 
-The returned structure includes the estimated round trip latency and how many messages are still queued locally because the connection can't support transmitting more data at the moment. You should reduce the rate at which you're sending data if you see that the queues are backing up.
+The returned structure includes the estimated round trip latency and how many messages are still queued locally because the connection can't support transmitting more data at the moment.
+
+The `xim_network_path_information::round_trip_latency_in_milliseconds` field represents the latency of the underlying network and XIM's estimated latency without queuing. Effective latency increases as `xim_network_path_information::send_queue_size_in_messages` grows and XIM works through the queue.
+
+Choose a reasonable point to start throttling calls to `send_data_to_other_players` based on the game's usage and requirements. Every message in the send queue represents an increase in the effective network latency.
+
+A value close to XIM’s max limit (currently 3500 messages) is far too high for most games and  likely represents several seconds of data waiting to be sent depending on the rate of calling `send_data_to_other_players` and how big each data payload is. Instead, choose a number that takes into account the game's latency requirements along with how jittery the game's `send_data_to_other_players` calling pattern is.
+
 
 ## Basic matchmaking and moving to another XIM network with others <a name="basicmatch">
 

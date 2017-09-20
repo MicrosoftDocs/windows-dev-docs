@@ -32,7 +32,7 @@ The following example demonstrates how to [obtain an Azure AD access token](crea
 <span id="create-add-on" />
 ## Create an add-on
 
-The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on (add-ons are also known as in-app products or IAPs).
+The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 

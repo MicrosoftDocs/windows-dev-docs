@@ -17,7 +17,7 @@ The **Age ratings** page of the [app submission process](app-submissions.md) let
 
 ## Answering the age ratings questionnaire
 
-The first time you submit an app (or the first time you update an app that was published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
+The first time you submit an app (or the first time you update an app published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
 
 > [!IMPORTANT]
 > If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Windows Store.

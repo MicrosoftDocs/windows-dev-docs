@@ -1,7 +1,7 @@
 ---
 title: My People sharing
 description: Explains how to add support for My People sharing
-author: mukin
+author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
@@ -59,17 +59,18 @@ To declare support for your application as a share target, first open your appli
 	  Executable="$targetnametoken$.exe"
 	  EntryPoint="My.App">
 		<Extensions>
-			<uap:Extension Category="windows.shareTarget" >
-			<uap:ShareTarget Description="Share with MyApp">
-				<uap:SupportedFileTypes>
-					<uap:SupportsAnyFileType />
-				</uap:SupportedFileTypes>
-				<uap:DataFormat>Text</uap:DataFormat>
-				<uap:DataFormat>Bitmap</uap:DataFormat>
-				<uap:DataFormat>Html</uap:DataFormat>
-				<uap:DataFormat>StorageItems</uap:DataFormat>
-				<uap:DataFormat>URI</uap:DataFormat>
-			</uap:ShareTarget>
+			<uap:Extension Category="windows.shareTarget">
+				<uap:ShareTarget Description="Share with MyApp">
+					<uap:SupportedFileTypes>
+						<uap:SupportsAnyFileType/>
+					</uap:SupportedFileTypes>
+					<uap:DataFormat>Text</uap:DataFormat>
+					<uap:DataFormat>Bitmap</uap:DataFormat>
+					<uap:DataFormat>Html</uap:DataFormat>
+					<uap:DataFormat>StorageItems</uap:DataFormat>
+					<uap:DataFormat>URI</uap:DataFormat>
+				</uap:ShareTarget>
+			</uap:Extension>
 		 </Extensions>
 	</Application>
 </Applications>
@@ -99,7 +100,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 	// Save annotation to contact annotation list
 	// Windows.ApplicationModel.Contacts.ContactAnnotationList 
-	await contactAnnotationList.TrySaveAnnotationAsync(annotation));
+	await contactAnnotationList.TrySaveAnnotationAsync(annotation);
 }
 ```
 
@@ -117,7 +118,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 	{
 		// Make sure the current OS version includes the My People feature before
 		// accessing the ShareOperation.Contacts property
-		isPeopleShare = (args.ShareOperation.Contacts.Size > 0);
+		isPeopleShare = (args.ShareOperation.Contacts.Count > 0);
 	}
 
 	if (isPeopleShare)

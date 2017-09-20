@@ -1917,6 +1917,9 @@
             "rid": "win8-aot"
           }
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-arm": {
@@ -3692,6 +3695,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
@@ -5430,6 +5436,9 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x64": {
@@ -7212,6 +7221,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
@@ -8950,6 +8962,9 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x86": {
@@ -10732,6 +10747,9 @@
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
@@ -12470,6 +12488,9 @@
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "OpenCVBridge/1.0.0": {
+        "type": "project"
       }
     }
   },
@@ -15762,6 +15783,11 @@
         "runtime.json",
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
+    },
+    "OpenCVBridge/1.0.0": {
+      "type": "project",
+      "path": "../../ImagingWin10/cs/OpenCVBridge/OpenCVBridge.vcxproj",
+      "msbuildProject": "../../ImagingWin10/cs/OpenCVBridge/OpenCVBridge.vcxproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -15782,7 +15808,16 @@
       "projectName": "Frames_Win10",
       "projectPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\Frames_Win10\\Frames_Win10\\Frames_Win10.csproj",
       "projectJsonPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\Frames_Win10\\Frames_Win10\\project.json",
-      "projectStyle": "ProjectJson"
+      "projectStyle": "ProjectJson",
+      "frameworks": {
+        "uap10.0": {
+          "projectReferences": {
+            "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\ImagingWin10\\cs\\OpenCVBridge\\OpenCVBridge.vcxproj": {
+              "projectPath": "C:\\Users\\drewbat.REDMOND\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\ImagingWin10\\cs\\OpenCVBridge\\OpenCVBridge.vcxproj"
+            }
+          }
+        }
+      }
     },
     "dependencies": {
       "Microsoft.ApplicationInsights": "1.0.0",

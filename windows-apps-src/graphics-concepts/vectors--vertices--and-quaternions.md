@@ -4,8 +4,8 @@ description: Throughout Direct3D, vertices describe position and orientation. Ea
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords:
 - Vectors and vertices and quaternions
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

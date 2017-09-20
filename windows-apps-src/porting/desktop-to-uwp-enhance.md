@@ -4,7 +4,7 @@ Description: Enhance your desktop app for Windows 10 users by using Universal Wi
 Search.Product: eADQiWindows 10XVcnh
 title: Enhance your desktop application for Windows 10
 ms.author: normesta
-ms.date: 07/06/2017
+ms.date: 08/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -38,7 +38,7 @@ Then, add a reference to these files.
 |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.UniversalApiContract\<*version*>|
 |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\<*sdk version*>\Windows.Foundation.FoundationContract\<*version*>|
 
-In the **Properties** window, set the **Copy Local** field of the **Windows.winmd** and **Windows.Foundation.FoundationContract.winmd** files to **False**.
+In the **Properties** window, set the **Copy Local** field of each *.winmd* file to **False**.
 
 ![copy-local-field](images/desktop-to-uwp/copy-local-field.png)
 

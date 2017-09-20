@@ -131,7 +131,7 @@ Use [this new guide](../porting/desktop-to-uwp-test-windows-s.md) to learn how.
 
 ### Accessibility
 
-Building accessibility into your apps opens them up to a much wider audience. [Watch the video](https://developer.microsoft.com/en-us/windows/accessible-apps), then learn more about [developing apps for accessibility](https://developer.microsoft.com/en-us/windows/accessible-apps).
+Building accessibility into your apps opens them up to a much wider audience. [Watch the video](https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility), then learn more about [developing apps for accessibility](https://developer.microsoft.com/en-us/windows/accessible-apps).
 
 ### Payments Request API
 

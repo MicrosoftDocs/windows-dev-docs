@@ -4,7 +4,7 @@ Description: You can use package flights to distribute packages that are only gi
 title: Package flights
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 08/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,53 +13,38 @@ keywords: windows 10, uwp, flighting
 
 # Package flights
 
-You can use package flights to distribute packages that are only given to a limited test group. 
+You can use package flights to distribute packages that are only given to a limited test group.
 
 Package flights allow you to provide different packages to designated set of testers without disrupting the experience of your other customers. Only the packages are different; the Store listing details will be the same for all of your customers.
 
 Note that package flights must pass the [certification process](the-app-certification-process.md), just the same as a regular, non-flighted submission. If you later decide that you want to make packages from a package flight available to all your customers, you can pull those packages into your non-flighted submission as described below.
 
-When you set up package flights, you can choose the specific people who should get specific packages by adding them to a **flight group**. Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. (Your package flights can include packages targeting any OS version, including Windows 8.1/Windows Phone 8.1 or earlier.) Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
+When you set up package flights, you can specify the people who should get specific packages by adding them to a **known user group** which will serve as a flight group. Anyone in a flight group who is using a device running a version of Windows 10 that supports package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later; or Xbox One) will get the packages from the package flight(s) that you designate for that particular group. (Your package flights can include packages targeting any OS version, including Windows 8.1/Windows Phone 8.1 or earlier.) Anyone who has not been added to one of your flight groups, or is using a device that doesn’t support package flights, will get packages from the non-flighted submission.
 
 > [!IMPORTANT] 
-> On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your flight group).
+> On desktop and mobile devices, people in your flight groups will get the packages in your flight automatically whenever you provide updates. However, **people in your flight groups who are using Xbox devices will need to check for updates manually** in order to get the latest packages, making sure they are signed into their device using their Microsoft account (with the associated email address that you included in your known user group).
 
-Note that package flights will not be distributed via [Microsoft Store for Business](https://businessstore.microsoft.com/store) and [Microsoft Store for Education](https://educationstore.microsoft.com/store). This is because people in your flight groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via Microsoft Store for Business or Microsoft Store for Education will receive your non-flighted packages.
+Note that package flights will not be distributed via [Microsoft Store for Business](https://businessstore.microsoft.com/store) and [Microsoft Store for Education](https://educationstore.microsoft.com/store). This is because people in your known user groups must be signed in with their Microsoft accounts in order to receive a package flight. All acquisitions made via Microsoft Store for Business or Microsoft Store for Education will receive your non-flighted packages.
 
 > [!TIP]
 > Package flights offer packages only to the selected customers that you specify. To distribute packages to a random selection of customers in a specified percentage, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
 >
 > Unlike package flights, your gradual package rollout selections do apply to customers who acquire your app via Microsoft Store for Business and Microsoft Store for Education. 
 
-After you have published a submission for your app, you'll see a **Package flights** section on the App overview page. Click **New package flight** to get started. If you haven't set up any flight groups yet, you'll be prompted to create one before you can proceed.
-
-
-## Create a new flight group
-
-Flight groups let you specify the people that you'd like to include in the group. In order to get your flighted packages, each person must be authenticated with the Store using the Microsoft account associated with the email address you provide, and must be using a Windows 10 device (as specified above) to download the app.
-
-When you create a flight group, you must give it a name. Each flight group must contain at least one email address, with a maximum of 10,000 email addresses. You can enter email addresses directly into the field (separated by spaces, commas, or semicolons), or you can click the **Import .csv** link to create the flight group from a list of email addresses in a .csv file.
-
-Click **Create group** to save the group and continue setting up the package flight. (You can also create a flight group by expanding the **Engage** menu in the left navigation menu and selecting **Customer groups**.)
-
 > [!TIP]
-> Be sure that you have obtained any necessary consent from people that you add to your flight group, and that they understand that they will be getting packages that are different from your non-flighted submission. 
->
-> You may also want to consider how the people in your package flight can give you their input about the app. We suggest [adding a control into your app to launch Feedback Hub](../monetize/launch-feedback-hub-from-your-app.md) so that customers can provide their input directly; you can then review their feedback in your app's [Feedback report](feedback-report.md)).
-
-To edit your flight group later, click **View and manage existing groups** when creating a new flight and then select the flight group you wish to modify, or click the flight group's name from a package flight's overview page. You can add or remove email addresses directly in the field, or for larger changes, click **Export .csv** to save your flight group membership info to a .csv file. Make your changes in this file, then click **Import .csv** to use the new version to update the group membership. Note that it may take up to 30 minutes for flight group membership changes to be implemented. If you add people to a flight group after you've published an associated package flight, the packages will be delivered to the new people automatically; you don't have to create and publish a new submission for that package flight. 
-
-You can also review and edit your flight groups by expanding the **Engage** menu in the left navigation menu and selecting **Customer groups**.
+> Consider how the people in your package flight will be able to give their input about the app. We suggest [adding a control into your app to launch Feedback Hub](../monetize/launch-feedback-hub-from-your-app.md) so that customers can provide their input directly; you can then review their feedback in your app's [Feedback report](feedback-report.md)).
 
 
 ## Create a new package flight
 
-After you've created your first flight group, you'll see a page where you can add details to complete setting it up. You'll need to give the package flight a name and specify at least one flight group. If you want to set up a new group, you can do that from this page.
+After you have published a submission for your app, you'll see a **Package flights** section on the App overview page. Click **New package flight** to get started.
 
-Click **Create flight** once you've entered the name and selected the flight group(s). You won't be able to change these details later (though you can always delete it and create a new package flight to use instead).
+If you haven't created any known user groups yet, you'll be prompted to create one before you can proceed. For more info, see [Create known user groups](create-known-user-groups.md). You can create a new known user group directly from this page by selecting **Create a flight group**.
+
+On the package flight creation page, you'll need to enter a name for your flight and specify at least one flight group. Once you've done so, select **Create flight**. You won't be able to change these details later (though if you're not happy with what you've entered, you can delete this flight and create a new one to use instead).
 
 > [!NOTE]
-> If you have more than one package flight, you'll need to assign a rank to each one. For more info, see Add and rank additional package flights below.
+> If you have more than one package flight, you'll need to assign a rank to each one. For more info, see [Add and rank additional package flights] below.
 
 
 ## Specify packages to include in your package flight

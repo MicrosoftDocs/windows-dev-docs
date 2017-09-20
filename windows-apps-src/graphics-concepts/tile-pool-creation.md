@@ -4,8 +4,8 @@ description: Applications can create one or more tile pools per Direct3D device.
 ms.assetid: BD51EDD3-4AD3-4733-B014-DD77B9D743BB
 keywords:
 - Tile pool creation
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -26,6 +26,9 @@ Consider manual packaging if you install your app by using the xcopy command, or
 
 If you're uncertain about what changes your installer makes to the system, or if you'd rather use automated tools to generate your package manifest, consider any of [these](desktop-to-uwp-root.md#convert) options.
 
+>[!IMPORTANT]
+>The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
+
 ## First, consider how you'll distribute your app
 If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
@@ -150,7 +153,7 @@ Here is an example [VisualElements](https://docs.microsoft.com/uwp/schemas/appxp
 	Square44x44Logo="images\small_icon.png"
 	Description="A useful description" />
 ```
-
+<span id="target-based-assets" />
 ## (Optional) Add Target-based unplated assets
 
 Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets).
@@ -164,13 +167,24 @@ Target-based assets are for icons and tiles that appear on the Windows taskbar, 
 
 3.	In the Windows app package, set the ``BackgroundColor`` for every icon you are making transparent.
 
-4.	Open CMD, change directory to the package's root folder, and then create a priconfig.xml file by running the command ``makepri createconfig /cf priconfig.xml /dq en-US``.
+4. Continue to the next subsection to generate a new Package Resource Index file.
+
+<span id="make-pri" />
+### Generate a Package Resource Index (PRI) file
+
+If you create target-based assets as described in the section above, or you modify any of the visual assets of your app after you've created the package, you'll have to generate a new PRI file.
+
+1.	Open a **Developer Command Prompt for VS 2017**.
+
+    ![developer command prompt](images/desktop-to-uwp/developer-command-prompt.png)
+
+2.  Change directory to the package's root folder, and then create a priconfig.xml file by running the command ``makepri createconfig /cf priconfig.xml /dq en-US``.
 
 5.	Create the resources.pri file(s) by using the command ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``.
 
     For example, the command for your app might look like this: ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``.
 
-6.	Package your Windows app package by using the instructions in the next step to see the results.
+6.	Package your Windows app package by using the instructions in the next step.
 
 <span id="make-appx" />
 ## Generate a Windows app package

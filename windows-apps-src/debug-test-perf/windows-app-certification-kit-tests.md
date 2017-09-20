@@ -216,7 +216,7 @@ Enable the /DYNAMICBASE option in the linker command when you build your app. Ve
 
 Normally, ASLR doesn't affect performance. But in some scenarios there is a slight performance improvement on 32-bit systems. It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.
 
-This test is performed on only apps written in managed code, such as by using C# or .NET Framework.
+This test is performed only on apps written in unmanaged languages, such as by using C or C++.
 
 ### <span id="binscope-5"></span>Read/Write Shared PE Section
 

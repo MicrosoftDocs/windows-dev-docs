@@ -4,8 +4,8 @@ description: A Direct3D device is the rendering component of Direct3D. A device 
 ms.assetid: BC903462-A32A-46BA-8411-FB294F5D2CD9
 keywords:
 - Devices
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

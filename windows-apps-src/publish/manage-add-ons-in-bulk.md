@@ -3,7 +3,7 @@ author: jnHs
 Description: Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually.
 title: Manage add-ons in bulk
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,8 @@ ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
 
 # Manage add-ons in bulk
 
-> **Important** This feature is currently only available to developer accounts which have joined the [Dev Center Insider Program](dev-center-insider-program.md). The implementation of this feature may change before it becomes available to all developers. This preliminary documentation provides some basic info about how the feature works.
+> [!IMPORTANT]
+> This feature was previously available to developer accounts which joined the [Dev Center Insider Program](dev-center-insider-program.md), and is not currently supported.
 
 Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually. You can access this functionality from your app’s overview page by clicking **Manage add-ons in bulk**.
 

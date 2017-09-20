@@ -1,11 +1,11 @@
 ---
-author: DelfCo
+author: stevewhims
 Description: Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.
 title: Manage language and region
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
-ms.author: bobdel
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

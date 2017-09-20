@@ -55,6 +55,7 @@ The navigation pane can contain:
 - Navigation items, in the form of [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), for navigating to specific pages
 - Separators, in the form of [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator), for grouping navigation items
 - Headers, in the form of [NavigationViewItemHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemheader), for labeling groups of items
+- An optional [AutoSuggestBox](auto-suggest-box.md) to allow for app-level search
 - An optional entry point for [app settings](../app-settings/app-settings-and-data.md). To hide the settings item, use the [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsSettingsVisible) property
 - Free-form content in the pane’s footer, when added to the [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_PaneFooter) property
 
@@ -177,6 +178,10 @@ The following is a simple example of how you can incorporate NavigationView into
                     ItemInvoked="NavView_ItemInvoked"
                     Loaded="NavView_Loaded">
     <!-- Load NavigationViewItems in NavView_Loaded. -->
+
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox x:Name="ASB" QueryIcon="Find"/>
+        </NavigationView.AutoSuggestBox>
 
         <NavigationView.HeaderTemplate>
             <DataTemplate>
@@ -314,6 +319,18 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 ## Navigation
 
 NavigationView does not automatically show the back button in your app’s title bar nor add content to the back stack. The control does not automatically respond to software or hardware back button presses. Please see the [history and backwards navigation](../layout/navigation-history-and-backwards-navigation.md) section for more information about this topic and how to add support for navigation to your app.
+
+
+## Customizing NavigationView's appearance
+
+To change the background of NavigationView's main area, set its `Background` property to your preferred brush.
+
+The Pane's background shows in-app acrylic when NavigationView is in Minimal or Compact mode, and background acrylic in Expanded mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
+
+```xaml
+    <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground" BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
+    <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground" BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
+```  
 
 
 ## Related topics

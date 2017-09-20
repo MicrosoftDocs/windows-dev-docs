@@ -4,7 +4,7 @@ Description: You can respond directly to reviews of your app to let customers kn
 title: Respond to customer reviews
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 09/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,7 @@ You can respond directly to reviews of your app to let customers know you’re l
 To view your app's reviews and provide responses, find the app in your Windows Dev Center dashboard. In the left navigation menu, expand **Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md). Select **Respond to review** to provide your respons.
 
 > [!TIP]
-> In addition to using the dashboard to respond to reviews, you can alternatively respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws). 
+> In addition to using the dashboard to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws). 
 
 When you send a review response, the customer will receive an email from Microsoft that lets them see your response. This email will also include your app’s support email address, which the customer can then use to contact you directly. If you didn’t add a support email address for your app during the submission process, you'll be asked to include one before you can respond.
 
@@ -48,7 +48,7 @@ When responding to a customer's review, you must follow these guidelines. These 
 >
 > Microsoft retains the right to revoke a developer’s permission to send responses for any reason, including if your responses prompt an unusually high number of inappropriate response reports, or if they prompt an unusually high number of customers to opt out of receiving review responses.
 
-Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if a review of your app contains offensive, profane or abusive language, please submit a [support ticket](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if a review of your app contains offensive, profane, or abusive language, please open a [support request](http://go.microsoft.com/fwlink/p/?LinkID=401178).
 
 
 ## Use customer reviews to improve your app

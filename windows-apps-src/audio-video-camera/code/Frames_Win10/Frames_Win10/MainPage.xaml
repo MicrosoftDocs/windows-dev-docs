@@ -15,7 +15,7 @@
             <Button x:Name="ActionButton" Click="ActionButton_Click" Content="RGB/Front Panel/1920 (no xbox)"/>
             <Button x:Name="ActionButton2" Click="ActionButton2_Click" Content="RGB/1920/FrameRenderer (xbox)"/>
             <Button x:Name="MultiframeButton" Click="MultiFrameButton_Click" Content="MultiFrame"/>
-
+            <Button x:Name="OpenCV" Click="OpenCV_Click" Content="OpenCV"/>
         </StackPanel>
         
     </Grid>

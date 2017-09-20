@@ -4,8 +4,8 @@ description: Anisotropy is the distortion visible in the texels of a 3D object w
 ms.assetid: 58923809-EF76-4C16-BCE7-922A66425F83
 keywords:
 - Anisotropic texture filtering
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

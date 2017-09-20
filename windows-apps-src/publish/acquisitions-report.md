@@ -4,7 +4,7 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 07/26/2017
+ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,13 +16,13 @@ keywords: windows 10, uwp
 
 The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details. It also lets you get info about how customers on Windows 10 have arrived at your app's listing.
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app acquisitions](../monetize/get-app-acquisitions.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app actually being installed on a device.
+In this report, an **acquisition** means a new customer has obtained a license to your app (whether you charged money or you've offered it for free). An **install** refers to the app being installed on a Windows 10 device.
 
 > [!IMPORTANT]
 > The **Acquisitions** report does not include data about refunds, reversals, chargebacks, etc. To estimate your app proceeds, visit [Payout summary](payout-summary.md). In the **Reserved** section, click the **Download reserved transactions** link.
-> 
+>
 > Except for page view data (as described below), this report does not include data related to customers who acquire an app without being signed in to a Microsoft account.
 
 
@@ -40,35 +40,39 @@ The info in all of the charts listed below will reflect the date range and any f
 
 ## Acquisitions
 
-The **Acquisitions** chart shows the number of daily or weekly acquisitions of your app over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart.
+The **Acquisitions** chart shows the number of daily or weekly acquisitions (a new customer obtaining a license for your app) over the selected period of time. (When you use **Apply filters** to show data for a longer duration, the acquisition data will be grouped by week.) Only acquisitions made by customers who are signed in with a valid Microsoft account are included in this chart.
 
 You can also see the lifetime number of acquisitions for your app by selecting **App cumulative**. This shows the cumulative total of all acquisitions, starting from when your app was first published.
 
 You can optionally filter the results by whether the acquisition originated from the client or web-based Store and/or by OS version.
 
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app acquisitions](../monetize/get-app-acquisitions.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## Installs
 
-The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices over the selected period of time. The total number is shown along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
+The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices over the selected period of time. The total number is shown, along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
 
 The install total includes:
--   **Installs on multiple Windows 10 devices.** For example, if a customer installs your app on two Windows 10 PCs and one Windows 10 phone, that counts as three installs.
+-   **Installs on multiple Windows 10 devices.** For example, if the same customer installs your app on two Windows 10 PCs and one Windows 10 phone, that counts as three installs.
 -   **Reinstalls.** For example, if a customer installs your app today, uninstalls your app tomorrow, and then reinstalls your app next month, that counts as two installs.
 
 The install total does not include or reflect:
--   **Installs on non-Windows 10 devices.** For example, if a customer installs your app on a device that isn’t running Windows 10, we don’t count that install.
--   **Uninstalls.** For example, if a customer uninstalls your app, we don’t subtract that from the total number of installs.
--   **Updates.** For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install (not two).
--   **Preinstalls.** For example, if a customer buys a device that has your app preinstalled, we don’t count that as an install.
--   **System-initiated installs.** For example, if Windows installs your app automatically for some reason, we don’t count that as an install.
+-   **Installs on non-Windows 10 devices.** If your app supports earlier OS versions such as Windows 8.x or Windows Phone 8.x, we don't count any installs on those devices.
+-   **Uninstalls.** When a customer uninstalls your app from their device, we don’t subtract that from the total number of installs.
+-   **Updates.** For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install.
+-   **Preinstalls.** If a customer buys a device that has your app preinstalled, we don’t count that as an install.
+-   **System-initiated installs.** If Windows installs your app automatically for some reason, we don’t count that as an install.
 
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app installs](../monetize/get-app-installs.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## Acquisition funnel
 
-The **Acquisition funnel** shows you how many customers completed each step of the funnel, from viewing the Store page to using the app, along with the conversion rate. This data can help you identify areas where you might want to invest more to increase your acquisitions, installs, or usage. 
+The **Acquisition funnel** shows you how many customers completed each step of the funnel, from viewing the Store page to using the app, along with the conversion rate. This data can help you identify areas where you might want to invest more to increase your acquisitions, installs, or usage.
 
 > [!IMPORTANT]
-> The **Acquisition funnel** shows data only for customers on Windows 10 over the last 90 days. 
+> The **Acquisition funnel** shows data only for customers on Windows 10 over the last 90 days.
 
 The steps in the funnel are:
 
@@ -79,6 +83,8 @@ The steps in the funnel are:
 
 You can optionally filter the results by gender and/or age group, as well as by custom campaign ID.
 
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app acquisition funnel data](../monetize/get-acquisition-funnel-data.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## Markets
 
@@ -113,7 +119,10 @@ A *conversion* means that a customer (signed in with a Microsoft account) has ne
 Page view and conversion numbers are not counts of unique customers. For conversion rate info, see the [Acquisition funnel](#acquisition-funnel) chart.
 
 > [!NOTE]
-> Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views. 
+> Customers could arrive at your app's listing by clicking on a custom campaign not created by you. We stamp every page view within a session with the campaign ID from which the customer first entered the Store. We then attribute conversions to that campaign ID for all acquisitions within 24 hours. Because of this, you may see a higher number of total conversions than the total conversions for your campaign IDs, and you may have conversions or add-on conversions that have zero page views.
+
+> [!NOTE]
+> You can also programmatically retrieve this data by using the [get app conversions by channel](../monetize/get-app-conversions-by-channel.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 ## App page views and conversions by campaign ID
 

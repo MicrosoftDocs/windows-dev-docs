@@ -4,8 +4,8 @@ description: The BC6H format is a texture compression format designed to support
 ms.assetid: 6781D967-9262-4EE7-B354-7A6D0EA0498E
 keywords:
 - BC6H format
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

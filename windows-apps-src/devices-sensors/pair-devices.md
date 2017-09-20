@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: Pair devices
 description: Some devices need to be paired before they can be used. The Windows.Devices.Enumeration namespace supports three different ways to pair devices.

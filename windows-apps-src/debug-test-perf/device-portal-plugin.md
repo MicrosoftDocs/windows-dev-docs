@@ -183,15 +183,15 @@ Importantly, use of the HttpPost/DeleteExpect200 methods on webbRest will automa
 In order to debug your background task, you must change the way Visual Studio runs your code. Follow the steps below for debugging an app service connection to inspect how your provider is handling the HTTP requests:
 
 1.	From the Debug menu, select DevicePortalProvider Properties. 
-1.	Under the Debugging tab, in the Start action section, select “Do not launch, but debug my code when it starts”.  
+2.	Under the Debugging tab, in the Start action section, select “Do not launch, but debug my code when it starts”.  
 ![put plugin in debug mode](images/device-portal/plugin-debug-mode.png)
-1.	Set a breakpoint in your RequestReceived handler function.
+3.	Set a breakpoint in your RequestReceived handler function.
 ![break point at requestreceived handler](images/device-portal/plugin-requestreceived-breakpoint.png)
-    > [!NOTE]
-    > Make sure the build architecture matches the architecture of the target exactly.  If you are using a 64-bit PC, you must deploy using an AMD64 build.
-1.	Press F5 to deploy your app
-1.	Turn Device Portal off, then turn it back on so that it finds your app (only needed when you change your app manifest – the rest of the time you can simply re-deploy and skip this step). 
-1.	In your browser, access the provider's namespace, and the breakpoint should be hit.
+> [!NOTE] 
+> Make sure the build architecture matches the architecture of the target exactly. If you are using a 64-bit PC, you must deploy using an AMD64 build. 
+4.	Press F5 to deploy your app
+5.	Turn Device Portal off, then turn it back on so that it finds your app (only needed when you change your app manifest – the rest of the time you can simply re-deploy and skip this step). 
+6.	In your browser, access the provider's namespace, and the breakpoint should be hit.
 
 ## Related topics
 * [Windows Device Portal overview](device-portal.md)
