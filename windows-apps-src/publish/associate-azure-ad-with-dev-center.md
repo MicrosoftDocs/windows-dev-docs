@@ -3,7 +3,7 @@ author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
 title: Associate Azure Active Directory with your Dev Center account
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 09/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,33 +14,37 @@ keywords: windows 10, uwp
 
 In order to [add and manage account users](add-users-groups-and-azure-ad-applications.md), you must first associate your Dev Center account with your organization's Azure Active Directory. 
 
-Windows Dev Center leverages Azure AD for multi-user management and roles assignment. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can create a new Azure AD tenant from within Dev Center at no additional charge.
+Windows Dev Center leverages Azure AD for multi-user account access and management. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can create a new Azure AD tenant from within Dev Center at no additional charge.
 
 > [!IMPORTANT]
-> To associate Azure AD with your Dev Center account, you will need to sign in to your Azure AD tenant with a [global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) account.
-> 
-> After you associate your Dev Center account with Azure AD, you’ll always need sign in to Dev Center using the Azure AD global administrator account (and not a personal Microsoft account) in order to add and manage account users.
+> After you associate your Dev Center account with your Azure AD tenant, in order to add and manage account users in that tenant, you’ll need to sign in to Dev Center as a user in the same tenant who has the **Manager** role.
 
-Note that only one Dev Center account can be associated with an Azure AD tenant. Similarly, only one Azure AD tenant can be associated with a Dev Center account. Once you establish the association, you won't be able to remove it without contacting support.
+A single Azure AD tenant can be associated with multiple Dev Center accounts. You only need to have one Azure AD tenant associated with your Dev Center account in order to add multiple account users, but you also have the option to add multiple Azure AD tenants to a single Dev Center account. Any user with the **Manager** role in the Dev Center account will have the option to add and remove Azure AD tenants.
+
+> [!TIP]
+> Associating a tenant and managing users works similarly for accounts in the Windows Hardware Developer Program. In this section, references to the **Manager** role also apply to Hardware accounts with the **Administrator** role. For more about user management in the Hardware Developer Program, see [Dashboard Administration](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration).
 
 
 ## Associate your Dev Center account with your organization’s existing Azure AD tenant
 
 If your organization already uses Azure AD, follow these steps to link your Dev Center account.
 
-1.  Go to your **Account settings** and click **Manage users**.
-2.  Click the **Associate Azure AD with your Dev Center account** button.
-3.  Sign in to your Azure AD account. This account must have [global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission in order to set up the association.
-4.  Review the organization and domain name for your Azure AD tenant. To complete the association, click **Confirm**.
-5.  If the association is successful, you will then be ready to add and manage account users in the **Manage users** section in Dev Center.
+1.  Go to your **Account settings** and click **Tenants**.
+2.  Select **Associate Azure AD with your Dev Center account**.
+3.  Enter your Azure AD credentials for the tenant that you want to associate.
+4.  Review the organization and domain name for your Azure AD tenant. To complete the association, select **Confirm**.
+5.  If the association is successful, you will then be ready to add and manage account users in the **Users** section in Dev Center.
+
+> [!IMPORTANT]
+> In order to create new users, or make other changes to your Azure AD, you’ll need to sign in to that Azure AD tenant using an account which has [global administrator permission](http://go.microsoft.com/fwlink/?LinkId=746654) for that tenant. However, you don’t need global administrator permission in order to associate the tenant, or to add users who already exist in that tenant to your Dev Center account.
 
 
 ## Create a brand new Azure AD to associate with your Dev Center account
 
 If you need to set up a new Azure AD to link with your Dev Center account, follow these steps.
 
-1.  Go to your **Account settings** and click **Manage users**.
-2.  Click the **Create new Azure AD** button.
+1.  Go to your **Account settings** and click **Tenants**.
+2.  Select **Create new Azure AD**.
 3.  Enter the directory information for your new Azure AD:
  - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.
  - **Contact email**: An email address where we can contact you about your account if necessary.
@@ -48,5 +52,26 @@ If you need to set up a new Azure AD to link with your Dev Center account, follo
 4.  Click **Create** to confirm the new domain and account info.
 5.  Sign in with your new Azure AD global administrator username and password to begin [adding and managing additional account users](add-users-groups-and-azure-ad-applications.md).
 
+## Manage Azure AD tenant associations
+
+After you have associated an Azure AD tenant with your Dev Center account, you can add new tenants or remove existing tenants from the **Tenants** page.
+
+### Add multiple Azure AD tenants to your Dev Center account
+
+Any user who has the **Manager** role for a Dev Center account can associate Azure AD tenants with the account.
+
+To associate a new tenant, select **Associate another Azure AD tenant**, then follow the steps indicated above. Note that you will be prompted for your credentials in the Azure AD tenant that you want to associate.
+
+### Remove an Azure AD tenant from your Dev Center account
+
+Any user who has the **Manager** role for a Dev Center account can remove Azure AD tenants from the account.
+
+> [!IMPORTANT]
+> When you remove a tenant, all users that were added to the Dev Center account from that tenant will no longer be able to sign in to the account. 
+
+To remove a tenant, find its name on the **Tenants** page, then select **Remove**. You’ll be prompted to confirm that you want to remove the tenant. Once you do so, no Dev Center users in that tenant will be able to sign into the Dev Center account, and any permissions you have configured for those users will be removed.
+
+> [!TIP]
+> You can’t remove a tenant if you are currently signed into Dev Center using an account in the same tenant. To remove a tenant, you must sign in to Dev Center as an Account Manager for another tenant that is associated with the account. If there is only one tenant associated with the account, that tenant can only be removed after signing in with the Microsoft account that opened the account.
 
 

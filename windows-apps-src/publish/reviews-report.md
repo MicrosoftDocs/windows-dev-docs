@@ -35,7 +35,7 @@ You can expand **Filters** to filter the reviews shown on this page by the follo
 -   **Updates**: The default setting is **All**. You can choose to filter the reviews to only show the reviews that have been updated by the customer since you [responded to a review](respond-to-customer-reviews.md), or only those which have not yet been updated by the customer.
 -   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show reviews from customers in that market.
 -   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
--   **Category name**: The default filter is **All**. You can choose a specific [review insights category](#review-insights-categories) to only show reviews that we’ve associated with that category. 
+-   **Category name**: The default filter is **All**. You can choose a specific [review insights category](#review-insight-categories) to only show reviews that we’ve associated with that category. 
 
 
 > [!TIP]

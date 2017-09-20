@@ -4,7 +4,7 @@ Description: Set custom permissions for account users.
 title: Set custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 09/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,7 +37,7 @@ Unless you opt to define [custom permissions](#custom) by selecting **Customize 
 
 | Role                 | Description              |
 |----------------------|--------------------------|
-| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Dev Center, but note that the ability to create and delete users is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have administrator permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Dev Center role). |
+| Manager              | Has complete access to the account, except for changing tax and payout settings. This includes managing users in Dev Center, but note that the ability to create and delete users in the Azure AD tenant is dependent on the account's permission in Azure AD. That is, if a user is assigned the Manager role, but does not have global administrator permissions in the organization's Azure AD, they will not be able to create new users or delete users from the directory (though they can change a user's Dev Center role). <p> Note that if the Dev Center account is associated with more than one Azure AD tenant, a Manager can’t see complete details for a user (including first name, last name, password recovery email, and whether they are an Azure AD global administrator) unless they are signed in to the same tenant as that user with an account that has global administrator permissions for that tenant. However, they can add and remove users in any tenant that is associated with the Dev Center account. |
 | Developer            | Can upload packages and submit apps and add-ons, and can view the [Usage report](usage-report.md) for telemetry details. Can’t view financial info or account settings.   |
 | Business Contributor | Can view [Health](health-report.md) and [Usage](usage-report.md) reports. Can't create or submit products, change account settings, or view financial info.                                         |
 | Finance Contributor  | Can view [payout reports](payout-summary.md), financial info, and acquisition reports. Can’t make any changes to apps, add-ons, or account settings.                                                                                                                                   |
@@ -95,7 +95,7 @@ The permissions in this section cannot be limited to specific products. Granting
     </thead>
     <tbody>
 <tr><td align="left">    **Account settings**                    </td><td align="left">  Can view all pages in the **Account settings** section, including [contact info](managing-your-profile.md).       </td><td align="left">  Can view all pages in the **Account settings** section. Can make changes to [contact info](managing-your-profile.md) and other pages, but can’t make changes to the payout account or tax profile (unless that permission is granted separately).            </td></tr>
-<tr><td align="left">    **Account users**                       </td><td align="left">  Can view users that have been added to the account in the **Manage users** section.          </td><td align="left">  Can add users to the account and make changes to existing users in the **Manage users** section.             </td></tr>
+<tr><td align="left">    **Account users**                       </td><td align="left">  Can view users that have been added to the account in the **Users** section.          </td><td align="left">  Can add users to the account and make changes to existing users in the **Users** section.             </td></tr>
 <tr><td align="left">    **Account-level ad performance report** </td><td align="left">  Can view the account-level [Advertising performance report](advertising-performance-report.md).      </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    **Ad campaigns**                        </td><td align="left">  Can view [ad campaigns](create-an-ad-campaign-for-your-app.md) created in the account.      </td><td align="left">  Can create, manage, and view [ad campaigns](create-an-ad-campaign-for-your-app.md) created in the account.          </td></tr>
 <tr><td align="left">    **Ad mediation**                        </td><td align="left">  Can view [ad mediation configurations](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) for all products in the account.    </td><td align="left">  Can view and change [ad mediation configurations](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx) for all products in the account.        </td></tr>

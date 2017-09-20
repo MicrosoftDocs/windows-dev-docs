@@ -4,7 +4,7 @@ Description: Get detailed analytics for your Windows apps, in the dashboard or v
 title: Analyze app performance
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 06/28/2017
+ms.date: 09/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,7 +19,7 @@ You can view analytic reports in the dashboard, or [download the reports you nee
 
 ## View key analytics for all your apps
 
-To view key analytics about your most downloaded apps, expand **Analyze** and select **Overview**. By default, the **Analytics overview** page shows info about your five apps that have the most lifetime acquisitions. To choose different published apps to show, select **Filters**.
+To view key analytics about your most downloaded apps, expand **Analyze** and select **Overview**. By default, the overview page shows info about the five apps that have the most lifetime acquisitions. To choose different published apps to show, select **Filters**.
 
 ## View individual reports for each app
 
@@ -40,11 +40,11 @@ In this section you'll find details about the info presented in each of the foll
 <span id="no-dashboard"/>
 ## Access analytics data without using the Dev Center dashboard
 
-In addition to the analytic reports in the dashboard, there are several other ways to access your analytic data.
+In addition to viewing reports in the dashboard, you can access your app analytics in a number of different ways.
 
 ### Windows Store analytics API
 
-Use the [Windows Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) to programmatically retrieve analytics data for your apps. This REST API enables you to retrieve data for app and add-on acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Use the [Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) to programmatically retrieve analytics data for your apps. This REST API enables you to retrieve data for app and add-on acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
 ### Windows Dev Center content pack for Power BI
 
@@ -57,7 +57,7 @@ Use the following resources to get started using Power BI to access your analyti
 * [Learn how to use the Windows Dev Center content pack for Power BI to connect to your analytics data](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Dev Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](http://go.microsoft.com/fwlink/p/?LinkId=703757). For more information about associating your Dev Center account with an Azure AD, see [Manage account users](manage-account-users.md).
+> To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Dev Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](http://go.microsoft.com/fwlink/p/?LinkId=703757). For more information about setting up the association, see [Associate Azure Active Directory with your Dev Center account](associate-azure-ad-with-dev-center.md).
 
 ### Dev Center app
 
