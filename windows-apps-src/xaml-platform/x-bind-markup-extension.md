@@ -45,7 +45,7 @@ At XAML compile time, **{x:Bind}** is converted into code that will get a value 
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | One or more binding properties that are specified using a name/value pair syntax. |
 | _propName_ | The string name of the property to set on the binding object. For example, "Converter". |
-| _value_ | The value to set the property to. The syntax of the argument depends on the property being set. Here's an example of a _propName_=_value_ usage where the value is itself a markup extension: `Converter={StaticResource myConverterClass}`. For more info, see [Properties that you can set with {x:Bind}](#properties-you-can-set) section below. | 
+| _value_ | The value to set the property to. The syntax of the argument depends on the property being set. Here's an example of a _propName_=_value_ usage where the value is itself a markup extension: `Converter={StaticResource myConverterClass}`. For more info, see [Properties that you can set with {x:Bind}](#properties-that-you-can-set-with-xbind) section below. | 
 
 ## Property path
 

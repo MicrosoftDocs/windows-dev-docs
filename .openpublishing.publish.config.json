@@ -2,7 +2,8 @@
   "build_entry_point": "op",
   "need_generate_pdf_url_template": true, 
   "need_generate_intellisense": false,
-  "git_repository_url_open_to_public_contributors": "http://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-uwp",
+"git_repository_branch_open_to_public_contributors": "docs",
   "branch_target_mapping": {
     "live": [
       "Publish",
