@@ -208,7 +208,7 @@
 #### [Format dates and times](globalizing/use-patterns-to-format-dates-and-times.md)
 #### [Manage language and region](globalizing/manage-language-and-region.md)
 #### [Prepare your app for localization](globalizing/prepare-your-app-for-localization.md)
-#### [Put UI strings into resources](globalizing/put-ui-strings-into-resources.md)
+#### [Localize your UI strings](globalizing/put-ui-strings-into-resources.md)
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
 #### [Migrate legacy resources](globalizing/using-mrt-for-converted-desktop-apps-and-games.md)
 ### [Guidelines for app help](in-app-help/guidelines-for-app-help.md)
