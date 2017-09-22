@@ -110,6 +110,9 @@ The Xbox Live SDK needs to know your title ID and SCID, which are no longer incl
 }
 ```
 
+> [!NOTE]
+> All values inside xboxservices.config are case sensitive.
+
 Include this config file as content in your project so that it is available in the build output.
 
 **Note** These values will be available programmatically within your title by using the following API:

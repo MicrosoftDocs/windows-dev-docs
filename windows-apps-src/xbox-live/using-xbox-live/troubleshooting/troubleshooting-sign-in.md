@@ -44,7 +44,7 @@ Some things to watch out for are:
 * Ensure that the "Package Identity" in your appxmanifest is correct.  This is shown in Windows Dev Center as "Package/Identity/Name" on Windows Dev Center in the App Identity section.
 
 ### Title ID or SCID not configured correctly
-- For UWP titles, your title ID and SCID must be set to the correct value in your xboxservices.config file.  Also ensure that this file is properly formatted as UTF8.  You can see more information in [Get started with Visual Studio for UWP games](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md).
+- For UWP titles, your title ID and SCID must be set to the correct value in your xboxservices.config file.  Also ensure that this file is properly formatted as UTF8.  You can see more information in [Get started with Visual Studio for UWP games](../../get-started-with-partner/get-started-with-visual-studio-and-uwp.md). The xboxservices.config file is case sensitive. 
 - For XDK titles, these values are set in your package.appxmanifest.
 - You can see examples for both UWP and XDK title configuration in the Samples directory of the Xbox Live SDK.
 
@@ -56,7 +56,7 @@ If you are developing a UWP application, you can debug some issues using the Xbo
 
 If you are able to successfully sign-in, then this verifies that your development sandbox has been set correctly on your device, and your test account has access to it.
 
-If you are still getting sign-in errors, it is likely that your service configuration is not published to your sandbox, or your xboxservices.config is not setup properly.
+If you are still getting sign-in errors, it is likely that your service configuration is not published to your sandbox, or your xboxservices.config is not setup properly. The xboxservices.config file is case sensitive.
 
 ## Debug based on error code
 This table lists some of the error codes you may see upon sign-in and steps you can take to debug these.  You see the error code as shown in the below screenshot.

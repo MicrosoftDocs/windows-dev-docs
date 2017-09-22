@@ -32,7 +32,7 @@ The inviteProtocol system constant enables the recipient of an invite to receive
 
 ## Runtime Considerations for 2015 Multiplayer
 
-Titles for 2015 Multiplayer must:   Always call the **RealTimeActivityService.EnableMultiplayerSubscriptions Method** prior to entering the multiplayer area of the title code. This call enables both subscriptions to session changes and disconnect detection.
+Titles for 2015 Multiplayer must:   Always call the **MultiplayerService.EnableMultiplayerSubscriptions Method** prior to entering the multiplayer area of the title code. This call enables both subscriptions to session changes and disconnect detection.
 -   Be sure to use the same **XboxLiveContext Class** object for all calls by the same user. The context contains state related to the management of the connection used for multiplayer subscriptions and disconnect detection.
 -   If there are multiple local users, use a separate **XboxLiveContext** object for each user.
 

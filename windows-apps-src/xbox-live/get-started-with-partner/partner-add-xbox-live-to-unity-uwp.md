@@ -153,6 +153,10 @@ If the app crashes immedately at startup or when trying to run this line of code
     Microsoft.Xbox.Services.System.XboxLiveUser m_user = new Microsoft.Xbox.Services.System.XboxLiveUser();
 
 Ensure you have added a xboxservices.config text file to the project and in its properties, set the "Build Action" to "Content", and "Copy to Output Directory" set to "Copy Always".
+
+> [!NOTE]
+> All values inside xboxservices.config are case sensitive.
+
 Also ensure it contains proper JSON formatting with the TitleId in decimal form, such as:
 
 ```json
