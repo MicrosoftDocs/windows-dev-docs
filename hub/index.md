@@ -135,7 +135,7 @@ description: Find developer, hardware, and IT pro docs to help you build and mai
                             </a>
                         </li>
                         <li>
-                            <a href="https://developer.microsoft.com/windows/iot">
+                            <a href="https://docs.microsoft.com/windows/iot-core/">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">

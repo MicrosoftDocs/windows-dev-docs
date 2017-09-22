@@ -4,7 +4,7 @@ Description: You can create an ad campaign using the Dev Center dashboard to hel
 title: Create an ad campaign for your app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 9/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -34,8 +34,8 @@ Here's how to create an ad campaign to promote an app.
 5.  Review the name provided for your campaign in the **Campaign name** field and make changes, if desired.
 6.  Under **Campaign type**, choose one of these options:
         -   **Paid ad**: These ads will run in any app that matches your app’s device and category. For new campaigns created after January 9, 2017, these ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties. App promotion campaigns that target apps and Microsoft premium properties are known as *universal* campaigns.
-        -   **Community ad (free)**: These ads will run in apps published by other developers who also create community ad campaigns. Before you can select this option, you must have opted in to showing community ads  in your app's **Monetize with ads** page. For more information, see [About community ads](about-community-ads.md).
-        -   **House ad (free)**: These ads will only run in your apps (that match the advertised app’s device type). House ads are free of charge. For more information, see [About house ads](about-house-ads.md).
+        -   **Community ad (free)**: These ads will run in apps published by other developers who also create community ad campaigns. Before you can select this option, you must have opted in to showing community ads in your app's **Monetize with ads** page. For more information, see [About community ads](about-community-ads.md).
+        -   **House ad (free)**: These ads will only run in your apps that match the advertised app’s device type. House ads are free of charge. For more information, see [About house ads](about-house-ads.md).
 
 7.  For paid ad campaigns, confirm the **Campaign duration** (the period of time in which your campaign budget will be spent). The default option is **Monthly**, which means that your campaign budget will be spent every month on a recurring basis until you stop the campaign. If you have a premium account, you can optionally choose **Custom** to specify a custom date and time range during which your campaign budget will be spent. For more info about premium accounts, see [Common questions about ad campaigns](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
 

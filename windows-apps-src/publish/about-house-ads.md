@@ -35,5 +35,3 @@ When a house ad for App A appears in App B, you will not be charged for the impr
 
 * [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
 * [Common questions](common-questions.md)
-
-

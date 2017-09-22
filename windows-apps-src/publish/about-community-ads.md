@@ -4,7 +4,7 @@ Description: You can cross-promote your app with apps published by other develop
 title: About community ads
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 07/05/2017
+ms.date: 09/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ If your app [displays banner or banner interstitial ads](../monetize/display-ads
 
 Here's how this program works:
 
-* After you [opt-in to community ads](#how-to-opt-in-to-community-ads) and [create a free community ad campaign](create-an-ad-campaign-for-your-app.md), your app will share promotional ad space with other developers who also opt in to community ads. Your app will show ads for apps published by other developers who participate in community ads, and their apps will show ads for your app.
+* After you [opt-in to community ads](#opt-in-to-community-ads) and [create a free community ad campaign](create-an-ad-campaign-for-your-app.md), your app will share promotional ad space with other developers who also opt in to community ads. Your app will show ads for apps published by other developers who participate in community ads, and their apps will show ads for your app.
 * You earn credits for promotional ad space in other apps by showing community ads in your app. Credits are calculated according to the following process:
   * For each country or region where an app that is serving community ads is available, the current market-rate eCPM (effective cost per thousand impressions) value for the country or region is multiplied by the number of requests for community ads made by your app in that country or region. This value is the credits you have earned for your app in that country or region.
   * Your total credits earned for a given time period is equal to the sum of all credits earned in each country or region for each of your apps that is serving community ads.
@@ -28,9 +28,17 @@ Here's how this program works:
 
 Before you can create a community ad campaign for one of your apps, you must opt in on the **Monetization** &gt; **Monetize with ads** page for the app in the Windows Dev Center dashboard.
 
-To opt in, do one of the following:
-  * If your app is a UWP app that targets Windows 10, go to the **Ad mediation** section on the page and check the **Microsoft Community ads** box in the **Other ad networks** list.
-  * If your app targets Windows 8.x or Windows Phone 8.x, go to the **Community ads** section on the page and check the **Show community ads in my app** box.
+To opt in to community ads for a UWP app:
+
+1. In the **Ad mediation** section on the **Monetize with ads** page, select an ad unit that you are using in the app.
+2. If the **Let Microsoft choose the best mediation settings for your app** option is selected, community ads are enabled for your ad unit automatically. Otherwise, select the baseline configuration or a market-specific configuration in the **Target** drop-down and then check the **Microsoft Community ads** box in the **Other ad networks** list.
+
+    > [!NOTE]
+    > You can use the **Weight** fields to specify the ratio of ads you want to show from paid networks and other ad networks including community ads.
+
+To opt in to community ads for a Windows 8.x or Windows Phone 8.x app:
+
+1. Go to the **Community ads** section on the **Monetize with ads** page and check the **Show community ads in my app** box.
 
 You do not need to republish your app after making your selections. Once you've opted in, you'll be able to select **Community ad (free)** as the campaign type when you [create an ad campaign](create-an-ad-campaign-for-your-app.md).
 
