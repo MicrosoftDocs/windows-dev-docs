@@ -209,6 +209,7 @@
 #### [Manage language and region](globalizing/manage-language-and-region.md)
 #### [Prepare your app for localization](globalizing/prepare-your-app-for-localization.md)
 #### [Localize your UI strings](globalizing/put-ui-strings-into-resources.md)
+#### [How to name resources by using qualifiers](globalizing/how-to-name-resources-by-using-qualifiers.md)
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
 #### [Migrate legacy resources](globalizing/using-mrt-for-converted-desktop-apps-and-games.md)
 ### [Guidelines for app help](in-app-help/guidelines-for-app-help.md)
