@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to load Connected Storage data on demand, instead of all at once.
 ms.assetid: a0797a14-c972-4017-864c-c6ba0d5a3363
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to port Xbox Live code from the Xbox Development Kit (XDK) platform to the Universal Windows Platform (UWP).
 ms.assetid: 69939f95-44ad-4ffd-851f-59b0745907c8
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

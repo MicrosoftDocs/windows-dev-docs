@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Get started developing an Xbox Live Creators Program title by using Unity
 ms.assetid: 656d0da1-0c6d-4719-b2f9-5896aaa240f6
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

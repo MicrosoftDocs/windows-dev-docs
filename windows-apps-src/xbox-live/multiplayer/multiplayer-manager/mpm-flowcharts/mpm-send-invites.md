@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Xbox Live multiplayer manager flowchart - send an invitation to another player.
 ms.assetid: d43b5030-a639-4445-ba33-7bddd35d13e1
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

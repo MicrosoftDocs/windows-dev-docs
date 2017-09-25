@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the privacy model of the Xbox Live social platform service.
 ms.assetid: 9031ca37-bab7-44b1-ae40-fca7459f5f59
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the Xbox Live Multiplayer Session Directory (MPSD).
 ms.assetid: a9b029ea-4cc1-485a-8253-e1c74184f35e
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

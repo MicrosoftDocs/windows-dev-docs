@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the Xbox Live people system.
 ms.assetid: f1881a52-8e65-4364-9937-d2b8b8476cbf
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about reading a binary blob in Xbox Live Title Storage.
 ms.assetid: 9b8e0c35-0cea-4491-bf30-22fad224f11b
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

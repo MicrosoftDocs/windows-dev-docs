@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to implement multiplayer session browse by using Xbox Live multiplayer.
 ms.assetid: b4b3ed67-9e2c-4c14-9b27-083b8bccb3ce
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

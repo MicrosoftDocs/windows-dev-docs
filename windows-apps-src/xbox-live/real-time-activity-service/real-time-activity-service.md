@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the Xbox Live Real-Time Activity service.
 ms.assetid: 50de262f-fc55-4301-83b5-0a8a30bc7852
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to manage local Connected Storage data in a development environment.
 ms.assetid: 630cb5fc-5d48-4026-8d6c-3aa617d75b2e
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

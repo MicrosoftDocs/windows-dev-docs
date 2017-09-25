@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Provides links to learn more about the Xbox Live multiplayer 2015 service.
 ms.assetid: 412ae5f4-6975-4a8b-9cc2-9747e093ec4d
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

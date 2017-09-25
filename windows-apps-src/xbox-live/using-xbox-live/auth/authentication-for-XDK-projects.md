@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to sign in Xbox Live users in an Xbox Development Kit (XDK) title.
 ms.assetid: 713bb2e3-80c5-4ac9-8697-257525f243d3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

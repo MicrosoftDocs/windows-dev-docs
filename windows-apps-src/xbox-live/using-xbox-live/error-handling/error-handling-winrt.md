@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to handle errors when making an Xbox Live service call with the WinRT APIs.
 ms.assetid: b4f04798-df91-430e-90f0-83b5a48b9ab2
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

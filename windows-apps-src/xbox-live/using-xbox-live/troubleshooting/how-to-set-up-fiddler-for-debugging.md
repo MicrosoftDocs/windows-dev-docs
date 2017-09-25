@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to use Fiddler to troubleshoot Xbox Live service calls.
 ms.assetid: 7d76e444-027b-4659-80d5-5b2bf56d199e
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

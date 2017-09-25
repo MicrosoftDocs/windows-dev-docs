@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to create a new title for Xbox Live by using the Windows Universal Dev Center (UDC).
 ms.assetid: b8bd69e6-887a-4b1f-a42d-8affdbec0234
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

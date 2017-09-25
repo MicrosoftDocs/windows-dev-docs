@@ -4,7 +4,7 @@ author: StaceyHaffner
 description: Describes how you can configure achievements in UDC to deliver rewards.
 ms.assetid: 
 ms.author: sthaff
-ms.date: 07-11-2017
+ms.date: 07/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

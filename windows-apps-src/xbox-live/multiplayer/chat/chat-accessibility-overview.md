@@ -4,7 +4,7 @@ title: Accessible in-game chat overview
 description: Learn about Xbox Live Game Chat accessibility features.
 ms.assetid: ecd84fa1-9b28-414b-b5e1-daba68de9472
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

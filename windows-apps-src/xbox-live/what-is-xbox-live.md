@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about what the Xbox Live service can do for your game.
 ms.assetid: 5a402113-b485-46f3-a30e-73f4b71492b6
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

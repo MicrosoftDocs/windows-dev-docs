@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to use Connected Storage to load data.
 ms.assetid: c660a456-fe7d-453a-ae7b-9ecaa2ba0a15
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

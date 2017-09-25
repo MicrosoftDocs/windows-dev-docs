@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Get started developing an Xbox Live Creators Program title by using Visual Studio
 ms.assetid: 6952dac0-66ff-4717-b3c7-8b3792e834e3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

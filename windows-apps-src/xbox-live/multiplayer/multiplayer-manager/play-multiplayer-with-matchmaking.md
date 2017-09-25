@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to use Xbox Live multiplayer manager to let a player find a multiplayer game by using SmartMatch.
 ms.assetid: f9001364-214f-4ba0-a0a6-0f3be0b2f523
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how the Xbox Live social platform provides backwards compatibility with the Xbox 360 Friends system.
 ms.assetid: aeca67b0-2e24-4f3b-b8ff-74823ee0fb36
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
