@@ -231,13 +231,20 @@ This example displays a blue border on the map.
 
 The next examples show how to add XAML UI elements directly in the XAML markup of the page using data binding. As with other XAML elements that display content, [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) is the default content property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and does not have to be specified explicitly in XAML markup.
 
-This example shows how to display two XAML controls as implicit children of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). These controls appear on the map at the data binded locations.
+This example shows how to display two XAML controls as implicit children of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). These controls appear on the map at the data bound locations.
 
 ```xml
 <maps:MapControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{x:Bind SeattleLocation}"/>
     <TextBox Text="Bellevue" maps:MapControl.Location="{x:Bind BellevueLocation}"/>
 </maps:MapControl>
+```
+
+Set these locations by using a properties in your code-behind file.
+
+```csharp
+public Geopoint SeattleLocation { get; set; }
+public Geopoint BellevueLocation { get; set; }
 ```
 
 This example shows how to display two XAML controls contained within a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).These controls appear on the map at the data binded locations.
@@ -255,16 +262,57 @@ This example displays a collection of XAML elements bound to a [**MapItemsContro
 
 ```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
-  <maps:MapItemsControl ItemsSource="{x:Bind StateOverlays}">
-    <maps:MapItemsControl.ItemTemplate>
-      <DataTemplate>
-        <StackPanel Background="Black" Tapped="Overlay_Tapped">
-          <TextBlock maps:MapControl.Location="{x:Bind Location}" Text="{x:Bind Name}" maps:MapControl.NormalizedAnchorPoint="0.5,0.5" FontSize="20" Margin="5"/>
-        </StackPanel>
-      </DataTemplate>
-    </maps:MapItemsControl.ItemTemplate>
+  <maps:MapItemsControl ItemsSource="{x:Bind LandmarkOverlays}">
+      <maps:MapItemsControl.ItemTemplate>
+          <DataTemplate>
+              <StackPanel Background="Black" Tapped ="Overlay_Tapped">
+                  <TextBlock maps:MapControl.Location="{Binding Location}" Text="{Binding Title}"
+                    maps:MapControl.NormalizedAnchorPoint="0.5,0.5" FontSize="20" Margin="5"/>
+              </StackPanel>
+          </DataTemplate>
+      </maps:MapItemsControl.ItemTemplate>
   </maps:MapItemsControl>
 </maps:MapControl>
+```
+
+The ``ItemsSource`` property in the example above is bound to property of type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) in the code-behind file.
+
+```csharp
+public sealed partial class Scenario1 : Page
+{
+    public IList LandmarkOverlays { get; set; }
+
+    public MyClassConstructor()
+    {
+         setLandMarkLocations();
+         this.InitializeComponent();   
+    }
+
+    private void setLandMarkLocations()
+    {
+        LandmarkOverlays = new List<MapElement>();
+
+        var pikePlaceIcon = new MapIcon
+        {
+            Location = new Geopoint(new BasicGeoposition
+            { Latitude = 47.610, Longitude = -122.342 }),
+            Title = "Pike Place Market"
+        };
+
+        LandmarkOverlays.Add(pikePlaceIcon);
+
+        var SeattleSpaceNeedleIcon = new MapIcon
+        {
+            Location = new Geopoint(new BasicGeoposition
+            { Latitude = 47.6205, Longitude = -122.3493 }),
+            Title = "Seattle Space Needle"
+        };
+
+        LandmarkOverlays.Add(SeattleSpaceNeedleIcon);
+    }
+}
+
+
 ```
 
 ## Related topics
