@@ -58,7 +58,7 @@ MPSD enables clients to connect to it using the real-time activity service web s
 
 ### Making User Connections
 
-The XSAPI library manages the connection between the client and MPSD. The title first calls the **RealTimeActivityService.EnableMultiplayerSubscriptions Method**. This method tells XSAPI that the client intends to use a real-time activity connection for multiplayer purposes. Then, when the title makes its first call to the **MultiplayerService.WriteSessionAsync Method** or the **MultiplayerService.WriteSessionByHandleAsync Method**, with the current user set to the Active state, a connection is created and hooked up to MPSD.
+The XSAPI library manages the connection between the client and MPSD. The title first calls the **MultiplayerService.EnableMultiplayerSubscriptions Method**. This method tells XSAPI that the client intends to use a real-time activity connection for multiplayer purposes. Then, when the title makes its first call to the **MultiplayerService.WriteSessionAsync Method** or the **MultiplayerService.WriteSessionByHandleAsync Method**, with the current user set to the Active state, a connection is created and hooked up to MPSD.
 
 | Note                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------|

@@ -45,7 +45,7 @@ You can use numerical statistic values in your Rich Presence strings. For exampl
 
 You can also choose to use statistics that represent actual state values in your Rich Presence strings. For example, in a racing game, you could use a Rich Presence string to show which car the player is currently driving, or which map or track the player is racing on. There are two steps to configuring state information:
 
-1.  For state information, define enumerations for any in-game strings. For example, if you have five maps in your game and want those maps to be part of your Rich Presence strings, then the five maps need to be enumerated into localized strings as well. Until XDP supports configuration of enumerations, these definitions will need to be done manually by specifying the information in the spreadsheet returned to your DAM.
+1.  For state information, define enumerations for any in-game strings. For example, if you have five maps in your game and want those maps to be part of your Rich Presence strings, then the five maps need to be enumerated into localized strings as well.
 2.  Link the enumerations to statistics. Here, again, the service will retrieve the most up-to-date value from the data platform by looking up the value of the statistic. It then determines which enumeration value the statistic translates to.
 
 

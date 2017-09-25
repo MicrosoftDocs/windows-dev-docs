@@ -115,7 +115,26 @@ Microsoft also offers several developer programs to help you develop and publish
 
 ### Developer programs
 
-Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Windows Store, you'll also need to create a developer account on Windows Dev Center. 
+Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Windows Store, you'll also need to create a developer account on Windows Dev Center.
+
+#### Xbox Live Creators Program
+
+The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. There is a simplified certification process and no concept approval is required outside of the standard [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
+
+You can deploy, design, and publish your game in the Creators Program without a dedicated dev kit, using only retail hardware. To get started, download the [Dev Mode Activation app](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) on your Xbox One.
+
+If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](http://www.xbox.com/Developers/id) program.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Xbox Live Creators Program</td>
+        <td>[Learn more about the Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
+    </tr>
+</table>
 
 #### ID@Xbox
 
@@ -133,23 +152,6 @@ The ID@Xbox program helps qualified game developers self-publish on Windows and 
     <tr>
         <td>ID@Xbox consumer site</td>
         <td>[ID@Xbox](http://www.idatxbox.com/)</td>
-    </tr>
-</table>
-
-#### Xbox Live Creators Program
-
-The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. To start developing with the Xbox Live Creators Program, sign up today.
-
-If you want access to even more Xbox Live capabilities, dedicated marketing and development support, and the chance to be featured in the main Xbox One store, apply to the [ID@Xbox](http://www.xbox.com/Developers/id) program.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Xbox Live Creators Program</td>
-        <td>[Integrate Xbox Live into your title](https://developer.microsoft.com/games/xbox/xboxlive/creator)</td>
     </tr>
 </table>
 
@@ -182,10 +184,6 @@ There are many Windows 10 game and app samples available to help you understand 
         <td>Universal Windows Platform app samples</td>
         <td>[Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples)</td>
     </tr>
-	<tr>
-		<td>Xbox Advanced Technology Group public samples</td>
-		<td>[Xbox-ATG-Samples](https://github.com/Microsoft/Xbox-ATG-Samples)</td>
-	</tr>
     <tr>
         <td>Direct3D 12 graphics samples</td>
         <td>[DirectX-Graphics-Samples](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
@@ -211,11 +209,19 @@ There are many Windows 10 game and app samples available to help you understand 
         <td>[D2DPhotoAdjustment](http://go.microsoft.com/fwlink/p/?LinkId=620533)</td>
     </tr>
     <tr>
+		<td>Xbox Advanced Technology Group public samples</td>
+		<td>[Xbox-ATG-Samples](https://github.com/Microsoft/Xbox-ATG-Samples)</td>
+	</tr>
+    <tr>
+        <td>Xbox Live samples</td>
+        <td>[xbox-live-samples](https://github.com/Microsoft/xbox-live-samples)</td>
+    </tr>
+    <tr>
         <td>Xbox One game samples (GDN)</td>
         <td>[Samples](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
-        <td>Windows 8 game samples (MSDN Code Gallery)</td>
+        <td>Windows game samples (MSDN Code Gallery)</td>
         <td>[Windows Store game samples](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft)</td>
     </tr>
     <tr>
@@ -262,6 +268,10 @@ Developer forums are a great place to ask and answer game development questions 
     <tr>
         <td>Azure platform forums</td>
         <td>[Azure forum](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsazureplatform)</td>
+    </tr>
+    <tr>
+        <td>Xbox Live forum</td>
+        <td>[Xbox Live development forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev)</td>
     </tr>
 </table>
 
@@ -627,7 +637,7 @@ Universal Windows Platform Bridges are technologies that bring your existing app
 
 #### Unity
 
-Unity 5 is the next generation of the award-winning development platform for creating 2D and 3D games and interactive experiences. Unity 5 brings new artistic power, enhanced graphics capabilities, and improved efficiency.
+Unity offers a platform for creating beautiful and engaging 2D, 3D, VR, and AR games and apps. It enables you to realize your creative vision fast and delivers your content to virtually any media or device.
 
 Beginning with Unity 5.4, Unity supports Direct3D 12 development.
 
@@ -641,12 +651,12 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
         <td>[Unity - Game Engine](http://unity3d.com/)</td>
     </tr>
     <tr>
-        <td>Get Unity 5</td>
+        <td>Get Unity</td>
         <td>[Get Unity](http://unity3d.com/get-unity)</td>
     </tr>
     <tr>
-        <td>Universal Windows Platform app support in Unity 5.2 (blog post)</td>
-        <td>[Windows 10 Universal Platform apps in Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
+        <td>Universal Windows Platform app support in Unity 5.2 or later (blog post)</td>
+        <td>[Windows 10 UWP apps in Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
     </tr>
     <tr>
         <td>Unity documentation for Windows</td>
@@ -751,10 +761,6 @@ Cocos2d-X is a cross-platform open source game development engine and tools suit
     <tr>
         <td>Cocos2d-x on Windows 10 (blog post)</td>
         <td>[Running Cocos2d-x on Windows 10](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)</td>
-    </tr>
-    <tr>
-        <td>Cocos2d-x Windows Store games (video)</td>
-        <td>[Build a Game with Cocos2d-x for Windows Devices](http://www.microsoftvirtualacademy.com/training-courses/build-a-game-with-cocos2d-x-for-windows-devices)</td>
     </tr>
 </table>
 
@@ -1119,7 +1125,7 @@ Guides and references for implementing audio in games using XAudio2, XAPO, and W
     </tr>
     <tr>
         <td>Windows Sonic spatial sound samples</td>
-        <td>[Xbox Advanced Technology Group audio samples](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/Audio)</td>
+        <td>[Xbox Advanced Technology Group audio samples](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/Audio)</td>
     </tr>
     <tr>
         <td>Learn how to integrate Windows Sonic into your games (video)</td>
@@ -1663,7 +1669,10 @@ To update your published game, submit a new app package with a higher version nu
 
 ## Adding Xbox Live to your game
 
-> **Note**   If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](../xbox-live/developer-program-overview.md).
+Xbox Live is a premier gaming network that connects millions of gamers across the world. Developers gain access to Xbox Live features that can organically grow their game’s audience, including Xbox Live presence, Leaderboards, Cloud Saves, Game Hubs, Clubs, Party Chat, Game DVR, and more.
+
+> [!Note]
+> If you would like to develop Xbox Live enabled titles, there are several options are available to you. For info about the various programs, see [Developer program overview](../xbox-live/developer-program-overview.md).
 
 <table>
     <colgroup>
@@ -1677,6 +1686,10 @@ To update your published game, submit a new app package with a higher version nu
     <tr>
         <td>Understand which features are available depending on program</td>
         <td>[Developer program overview: Feature table](../xbox-live/developer-program-overview.md#feature-table)</td>
+    </tr>
+    <tr>
+        <td>Links to useful resources for developing Xbox Live games</td>
+        <td>[Xbox Live resources](../xbox-live/xbox-live-resources.md)</td>
     </tr>
     <tr>
         <td>Learn how to get info from Xbox Live services</td>
@@ -1698,16 +1711,28 @@ To update your published game, submit a new app package with a higher version nu
     </tr>
     <tr>
         <td>Add Xbox Live to your game</td>
-        <td>[Step by step guide to integrate Xbox Live Creators program](../xbox-live/get-started-with-creators/creators-step-by-step-guide.md)</td>
+        <td>[Step by step guide to integrate Xbox Live Creators Program](../xbox-live/get-started-with-creators/creators-step-by-step-guide.md)</td>
     </tr>
     <tr>
         <td>Add Xbox Live to your UWP game created using Unity</td>
         <td>[Get started developing an Xbox Live Creators Program title with the Unity game engine](../xbox-live/get-started-with-creators/develop-creators-title-with-unity.md)</td>
     </tr>
     <tr>
+        <td>Set up your development sandbox</td>
+        <td>[Xbox Live sandboxes introduction](../xbox-live/get-started-with-creators/xbox-live-sandboxes-creators.md)</td>
+    </tr>
+    <tr>
+        <td>Set up accounts for testing</td>
+        <td>[Authorize Xbox Live accounts in your test environment](../xbox-live/get-started-with-creators/authorize-xbox-live-accounts.md)</td>
+    </tr>
+    <tr>
+        <td>Samples for Xbox Live Creators Program</td>
+        <td>[Code samples for Creators Program developers](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK)</td>
+    </tr>
+    <tr>
         <td>Learn how to integrate cross-platform Xbox Live experiences in UWP games (video)</td>
         <td>[Xbox Live Creators Program](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005)</td>
-    </tr>
+    </tr>  
 </table>
 
 ### For managed partners and developers in the ID@Xbox program
@@ -1730,9 +1755,17 @@ To update your published game, submit a new app package with a higher version nu
         <td>[Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID and managed partners](../xbox-live/get-started-with-partner/partner-unity-uwp-il2cpp.md)</td>
     </tr>
     <tr>
+        <td>Set up your development sandbox</td>
+        <td>[Advanced Xbox Live sandboxes](../xbox-live/get-started-with-partner/advanced-xbox-live-sandboxes.md)</td>
+    </tr>
+    <tr>
         <td>Requirements for games that use Xbox Live (GDN)</td>
         <td>[Xbox Requirements for Xbox Live on Windows 10](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
     </tr>
+    <tr>
+        <td>Samples</td>
+        <td>[Code samples for ID@Xbox developers](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK)</td>
+    </tr>  
     <tr>
         <td>Overview of Xbox Live game development (video)</td>
         <td>[Developing with Xbox Live for Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)</td>

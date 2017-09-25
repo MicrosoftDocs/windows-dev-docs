@@ -43,7 +43,7 @@ To receive MPSD session change notifications, the title can follow the procedure
 1.  Use the same **XboxLiveContext Class** object for all calls by the same user. Subscriptions are tied to the lifetime of this object. If there are multiple local users, use a separate **XboxLiveContext** object for each user.
 2.  Implement event handlers for the **RealTimeActivityService.MultiplayerSessionChanged Event** and the **RealTimeActivityService.MultiplayerSubscriptionsLost Event**.
 3.  If subscribing to changes for more than one user, add code to your **MultiplayerSessionChanged** event handler to avoid unnecessary work. Use the **RealTimeActivityMultiplayerSessionChangeEventArgs.Branch Property** and the **RealTimeActivityMultiplayerSessionChangeEventArgs.ChangeNumber Property**. Use of these properties allows tracking of the last change seen and ignoring of older changes.
-4.  Call the **RealTimeActivityService.EnableMultiplayerSubscriptions Method** to allow subscriptions.
+4.  Call the **MultiplayerService.EnableMultiplayerSubscriptions Method** to allow subscriptions.
 5.  Create a local session object and join that session as active.
 6.  Make calls for each user to the **MultiplayerSession.SetSessionChangeSubscription Method**, passing the session change type for which to be notified.
 7.  Now write the session to MPSD as described in **How to: Update a Multiplayer Session**.
@@ -235,7 +235,7 @@ Here are the steps the title should follow:
         2.  joinerXuid
         3.  joineeXuid
 
-4.  Start the title's multiplayer code, which should include calling the **RealTimeActivityService.EnableMultiplayerSubscriptions Method**.
+4.  Start the title's multiplayer code, which should include calling the **MultiplayerService.EnableMultiplayerSubscriptions Method**.
 5.  Create a local **MultiplayerSession Class** object, using the **MultiplayerSession Constructor (XboxLiveContext)**.
 6.  Call the **MultiplayerSession.Join Method (String, Boolean, Boolean)** to join the session. Use the following parameter settings so that the join is set as active:
     -   *memberCustomConstantsJson* = null

@@ -125,10 +125,14 @@ public class XboxLiveTest : MonoBehaviour
 
 **12) Add Xbox Live configuration to your project**
 
-Add the xboxservices.config file
+Add the xboxservices.config file:
+
 ![](../images/unity/unity-il2cpp-4.png)
 
 Follow the doc page called [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
+
+> [!NOTE]
+> All values inside xboxservices.config are case sensitive.
 
 **13) Compile and run the UWP app from Visual Studio**
 

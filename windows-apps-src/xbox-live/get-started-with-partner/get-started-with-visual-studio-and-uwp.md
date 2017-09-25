@@ -145,7 +145,7 @@ If the **Store** -> **Associate App with the Store…** option is not available 
 
 To do this, you need to add a configuration file for the Xbox Live SDK to read at runtime.
 
-1.  Create a text file and name it **xboxservices.config**.  Note the file extension is .config
+1.  Create a text file and name it **xboxservices.config**.  Note the file extension is .config. All values inside xboxservices.config are case sensitive.
 1.  Add the text file to your primary project (the StartUp Project)
 1.  Right click on the file, select Properties and ensure that either **Content** is **Yes** or **Build Action** is set to **Content** and set **Copy always** for **Copy to Output Directory**.  This will ensure the file is copied correctly in the AppX folder.
 1.  You can leave the Item Type to **Does not participate in build**
