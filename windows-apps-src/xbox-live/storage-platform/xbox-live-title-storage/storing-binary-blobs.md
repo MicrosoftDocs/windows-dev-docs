@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to store a binary blob in Xbox Live Title Storage.
 ms.assetid: a0da36ef-5a5a-466d-80a8-e055ba7e4cdc
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

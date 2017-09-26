@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Add Multi-User Support to your Unity Game using the Xbox Live Unity plug-in
 ms.assetid:
 ms.author: heba
-ms.date: 07-14-2017
+ms.date: 07/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

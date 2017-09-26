@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the various API models that you can use to interact with the Xbox Live service.
 ms.assetid: 5918c3a2-6529-4f07-b44d-51f9861f91ec
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

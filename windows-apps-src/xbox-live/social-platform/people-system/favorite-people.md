@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Describes how the Xbox Live people system tracks favorite people.
 ms.assetid: 46e312f5-6160-46ca-9aa2-25f8744e6513
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

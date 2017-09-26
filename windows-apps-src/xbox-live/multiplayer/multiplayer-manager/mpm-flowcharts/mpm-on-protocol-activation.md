@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Xbox Live multiplayer manager flowchart - handle protocol activation.
 ms.assetid: f375af52-a18d-4845-aae7-0762d8ec0f1e
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

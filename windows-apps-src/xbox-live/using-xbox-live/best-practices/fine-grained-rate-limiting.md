@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how Xbox Live fine grained rate limiting works, and how to prevent your title from being rate limited.
 ms.assetid: ceca4784-9fe3-47c2-94c3-eb582ddf47d6
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

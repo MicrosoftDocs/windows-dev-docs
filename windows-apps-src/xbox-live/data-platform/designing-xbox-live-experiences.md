@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to design great experiences for Xbox Live members by planning out player stats, leaderboards, and achievements for your title.
 ms.assetid: d2a85621-7d02-4b11-a7fa-9ebaee0092d5
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

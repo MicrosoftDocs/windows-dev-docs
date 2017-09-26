@@ -4,7 +4,7 @@ author: KevinAsgari
 description: What's new in Xbox Live APIs - July 2017
 ms.assetid:
 ms.author: kevinasg
-ms.date: 07-16-2017
+ms.date: 07/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

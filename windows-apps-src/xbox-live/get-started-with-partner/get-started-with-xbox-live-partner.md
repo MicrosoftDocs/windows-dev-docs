@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Provides links to help a managed partner or ID@Xbox member get started with Xbox Live development.
 ms.assetid: 69ab75d1-c0e7-4bad-bf8f-5df5cfce13d5
 ms.author: kevinasg
-ms.date: 06-07-2017
+ms.date: 06/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

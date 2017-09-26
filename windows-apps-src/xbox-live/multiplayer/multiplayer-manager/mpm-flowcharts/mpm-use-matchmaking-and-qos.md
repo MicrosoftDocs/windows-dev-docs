@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Xbox Live multiplayer manager flowchart - Use matchmaking and manage Quality of Service
 ms.assetid: 48f32957-1e15-4178-84dc-69af3ea0edb4
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

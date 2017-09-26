@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to use Connected Storage to save data.
 ms.assetid: ccf7488c-5d55-480e-b3aa-412220d03104
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

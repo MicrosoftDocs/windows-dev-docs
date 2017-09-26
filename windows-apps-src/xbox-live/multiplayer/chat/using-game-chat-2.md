@@ -3,7 +3,7 @@ title: Using Game Chat 2
 author: KevinAsgari
 description: Learn how to use Xbox Live Game Chat 2 to add voice communication to your game.
 ms.author: tomco
-ms.date: 06-14-2017
+ms.date: 06/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

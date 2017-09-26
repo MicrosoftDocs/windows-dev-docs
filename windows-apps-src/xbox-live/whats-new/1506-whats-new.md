@@ -4,7 +4,7 @@ author: KevinAsgari
 description: What's new for the Xbox Live SDK - June 2015
 ms.assetid: 354bcd47-2564-4dd5-89e3-242bca462b35
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

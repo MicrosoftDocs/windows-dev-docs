@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to set up an Xbox One Web Server.
 ms.assetid: 2f6831ab-2dea-4f21-bb32-39cb4de4799c
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

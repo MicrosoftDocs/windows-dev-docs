@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Provides a guideline of steps to integrate Xbox Live for the Creators Program.
 ms.assetid: 7f9d093e-479a-4ad4-9965-a4ea6f0b2ac3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

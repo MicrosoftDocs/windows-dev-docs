@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about Xbox Live multiplayer manager, a high level API designed to make it easier to implement multiplayer.
 ms.assetid: f3a6c8bc-4f73-4b99-ac51-aadee73c8cfa
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: What's new for the Xbox Live SDK - March 2017
 ms.assetid: 03180585-6f87-4929-acfc-750bd78988a0
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

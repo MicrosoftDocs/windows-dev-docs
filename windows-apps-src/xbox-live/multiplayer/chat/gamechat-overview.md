@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to add voice communication to your game by using Xbox Live Game Chat.
 ms.assetid: 8ef6a578-e911-4006-ac4e-94d3f2fedb98
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to add Xbox Live to a new or existing Xbox Developer Kit (XDK) project.
 ms.assetid: fc6f987c-1a87-4ff5-b063-891591aa6653
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

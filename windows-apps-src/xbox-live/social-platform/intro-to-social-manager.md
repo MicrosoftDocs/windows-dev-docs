@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the Xbox Live social manager API to keep track of online friends.
 ms.assetid: d4c6d5aa-e18c-4d59-91f8-63077116eda3
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

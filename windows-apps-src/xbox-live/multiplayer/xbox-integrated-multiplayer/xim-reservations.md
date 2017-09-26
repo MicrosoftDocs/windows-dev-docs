@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Describes how to use Xbox Integrated Multiplayer (XIM) as a dedicated chat solution via out-of-band reservations.
 ms.assetid: 0ed26d19-defb-414d-a414-c4877bd0ed37
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

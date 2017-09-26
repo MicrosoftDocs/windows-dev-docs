@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to implement Xbox Integrated Multiplayer (XIM) into your game.
 ms.assetid: f5a2c68b-b1f9-4533-9282-41c31eab2487
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Describes how Xbox Live social platform implements a one way relationship model.
 ms.assetid: d5a1d311-6de3-4ccc-ab72-15b243e8c2ef
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

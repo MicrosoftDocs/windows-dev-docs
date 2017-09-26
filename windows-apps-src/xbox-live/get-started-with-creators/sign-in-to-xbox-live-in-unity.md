@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to use the Xbox Live plugin prefab to sign into an Xbox Live account in a Unity game.
 ms.assetid: f5402d4c-894e-4879-969a-7e68699546c5
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how the Xbox Live service uses real names and gamertags in the people system.
 ms.assetid: 65700c2f-5e3b-4154-a5e8-b9732d6eee29
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

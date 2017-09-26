@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about using Connected Storage to save and load game data across devices.
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

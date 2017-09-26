@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to clear the local storage of Connect Storage data.
 ms.assetid: 0701b03e-88e4-4720-9744-ca174f3c947d
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

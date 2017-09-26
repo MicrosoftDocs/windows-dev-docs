@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn about the details of Xbox Live multiplayer sessions.
 ms.assetid: 5aeae339-4a97-45f4-b0e7-e669c994f249
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

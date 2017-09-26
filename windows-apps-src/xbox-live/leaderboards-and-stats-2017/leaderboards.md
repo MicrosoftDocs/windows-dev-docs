@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to use Xbox Live leaderboards to compare players.
 ms.assetid: 132604f9-6107-4479-9246-f8f497978db7
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to update an Xbox Live Rich Presence string.
 ms.assetid: eb2bb82e-8730-4d74-9b33-95d133360e44
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

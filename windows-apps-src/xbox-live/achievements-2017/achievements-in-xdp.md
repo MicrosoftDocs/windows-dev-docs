@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Achievements 2017
 ms.assetid: d424db04-328d-470c-81d3-5d4b82cb792f
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

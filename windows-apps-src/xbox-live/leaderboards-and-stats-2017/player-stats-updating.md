@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to update Xbox Live player stats by using Stats 2017.
 ms.assetid: 019723e9-4c36-4059-9377-4a191c8b8775
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

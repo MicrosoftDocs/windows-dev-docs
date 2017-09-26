@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Lean how to use the Xbox Live Unity plugin to add player stats and leaderboards to your Unity project.
 ms.assetid: 756b3c31-a459-4ad2-97af-119adcd522b5
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

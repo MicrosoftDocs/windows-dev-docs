@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn abou the code flow to display people by using the Xbox Live people system.
 ms.assetid: c97b699f-ebc2-4f65-8043-e99cca8cbe0c
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

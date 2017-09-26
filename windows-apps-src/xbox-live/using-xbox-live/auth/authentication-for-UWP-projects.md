@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to sign in Xbox Live users in a Universal Windows Platform (UWP) title.
 ms.assetid: e54c98ce-e049-4189-a50d-bb1cb319697c
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

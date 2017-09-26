@@ -4,7 +4,7 @@ author: KevinAsgari
 description: Learn how to create test accounts for testing your Xbox Live enabled game during development.
 ms.assetid: e8076233-c93c-4961-86ac-27ec74917ebc
 ms.author: kevinasg
-ms.date: 04-04-2017
+ms.date: 04/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
