@@ -160,6 +160,8 @@ public void SetLicenseLevel(BrandID brand)
 }
 ```
 
+In this scenario, you would then give your resources names that include the qualifiers `custom-premium`, `custom-standard`, and `custom-trial`.
+
 ## DeviceFamily
 
 It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Writing code](../get-started/universal-application-platform-guide.md#writing-code).
@@ -231,7 +233,7 @@ A `layoutdirection` qualifier corresponds to the layout direction of the display
 
 ## Scale
 
-To load the correct size of image for a given display scale factor, you can use a `scale` qualifier. This is typically used for images viewed on a higher-DPI device or when the app is zoomed. The scale of a resource matches the value of [DisplayInformation.RawPixelsPerViewPixel](/uwp/api/windows.graphics.display.displayinformation?branch=master#Windows_Graphics_Display_DisplayInformation_RawPixelsPerViewPixel) (multiplied by 100), or the next-largest scaled resource. 
+To load the correct size of image for a given display scale factor, you can use a `scale` qualifier. This is typically used for images viewed on a higher-DPI device or when the app is zoomed. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=master#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
 
 Here’s an example of setting the qualifier at the folder level.
 
