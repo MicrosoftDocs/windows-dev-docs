@@ -2,8 +2,6 @@
 author: stevewhims
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
 title: How to name resources by using qualifiers
-ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-label: How to name resources by using qualifiers
 template: detail.hbs
 ms.author: stwhi
 ms.date: 22/10/2017
