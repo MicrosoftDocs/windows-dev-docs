@@ -1,10 +1,10 @@
 ﻿---
 author: JnHs
-Description: In addition to creating an ad campaign for your app that will run in Windows apps, you can also promote your app using other channels.
+Description: In addition to creating an ad campaign for your app that will run in Windows apps, you can promote your app using other channels.
 title: Create a custom app promotion campaign
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ms.author: wdg-dev-content
-ms.date: 06/22/2017
+ms.date: 09/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,24 +15,24 @@ keywords: windows 10, uwp, custom, app, promotion, campaign
 
 In addition to creating an [ad campaign for your app](create-an-ad-campaign-for-your-app.md) that will run in Windows apps, you can also promote your app using other channels. For example, you can promote your app using a third-party app marketing provider, or you might post links to your app on social media sites. These activities are called *custom campaigns*.
 
-If you run custom campaigns for your app, you can track the relative performance of each campaign by creating a different Windows Store app URL for each custom campaign, where each URL contains a different *campaign ID*. When a customer running Windows 10 clicks a URL that contains a campaign ID, Microsoft associates the click with the corresponding custom campaign and makes this data available to you.
+If you run custom campaigns for your app, you can track the relative performance of each campaign by creating a different URL for each custom campaign, where each URL contains a different *campaign ID*. When a customer running Windows 10 clicks a URL that contains a campaign ID, Microsoft associates the click with the corresponding custom campaign and makes this data available to you.
 
-There are two main types of data associated with custom campaigns: *page views* for your app's Store listing, and *conversions*. A conversion is an app acquisition that results from a customer viewing your app's Store listing page from a URL that includes a custom campaign ID. For more details about conversions, see [Understanding how app acquisitions qualify as conversions](#understanding-how-app-acquisitions-qualify-as-conversions) in this topic.
+> [!IMPORTANT]
+> This data is only tracked for customers on Windows 10. Customers using other operating systems can still follow the link to your app's listing, but data about those customers' activities will not be included.
+
+There are two main types of data associated with custom campaigns: *page views* for your app's Store listing, and *conversions*. A conversion is an app acquisition that results from a customer viewing your app's Store listing page from a URL that includes a custom campaign ID. For more details about conversions, see [Understanding how app acquisitions qualify as conversions](#understanding-how-acquisitions-qualify-as-conversions) in this topic.
 
 You can retrieve custom campaign performance data for your app in the following ways:
 
 * You can view data about page views and conversions for your app or add-on from the **App page views and conversions by campaign ID** and **Total campaign conversions** charts in the [Acquisitions report](acquisitions-report.md) in the Dev Center dashboard.
 * If your app is a Universal Windows Platform (UWP) app, you can use APIs in the Windows SDK to programmatically retrieve the custom campaign ID that resulted in a conversion.
 
-> [!IMPORTANT]
-> This data is only tracked for customers on Windows 10. Customers using other operating systems can still follow the link to your app's listing, but data about those customers' activities will not be included.
-
 
 ## Example custom campaign scenario
 
-Consider a game developer who has finished building a new game and would like to promote it to players of her existing games. She posts the announcement of the new game release on her Facebook page, including a link to the Windows Store page for the game. Many of her players also follow her on Twitter, so she also tweets the announcement with the link to the Windows Store page for the game.
+Consider a game developer who has finished building a new game and would like to promote it to players of her existing games. She posts the announcement of the new game release on her Facebook page, including a link to the game's Store listing. Many of her players also follow her on Twitter, so she also tweets an announcement with the link to the game's Store listing.
 
-To track the success of each of these promotion channels, the developer creates two variants of the URL for the Windows Store page for the game:
+To track the success of each of these promotion channels, the developer creates two variants of the URL to the game's Store listing:
 
 * The URL she will post to her Facebook page includes the custom campaign ID `my-facebook-campaign`.
 * The URL she will post to Twitter includes the custom campaign ID `my-twitter-campaign`.
@@ -75,9 +75,9 @@ A custom campaign *conversion* is an acquisition that results from a customer cl
    > [!NOTE]
    > The campaign ID string may be visible to other developers when they view the [Acquisitions report](acquisitions-report.md) for their apps. This can occur when a customer clicks your custom campaign ID to enter the Store and purchases another developer’s app within the same session, thus attributing that conversion to your campaign ID. That developer will see how many conversions of their own app resulted from an initial click on your campaign ID, including the name of the campaign ID, but they will not see any data about how many users purchased your own apps (or apps from any other developers) after clicking your campaign ID.
 
-2.  Get the Windows Store link for your app in HTML or protocol format.
+2.  Get the link for your app's Store listing in HTML or protocol format.
 
-    * Use the HTML URL if you want customers to navigate to your app's web-based Store listing in a browser on any operating system. On Windows devices, the Store app will also launch and display your app's listing. This URL has the format **`https://www.microsoft.com/store/apps/*your app ID*`**. For example, the HTML URL for Skype is `https://www.microsoft.com/store/apps/9wzdncrfj364`. You can find this URL on your [App identity](https://docs.microsoft.com/en-us/windows/uwp/publish/view-app-identity-details.md#link-to-your-apps-listing) page.
+    * Use the HTML URL if you want customers to navigate to your app's web-based Store listing in a browser on any operating system. On Windows devices, the Store app will also launch and display your app's listing. This URL has the format **`https://www.microsoft.com/store/apps/*your app ID*`**. For example, the HTML URL for Skype is `https://www.microsoft.com/store/apps/9wzdncrfj364`. You can find this URL on your [App identity](view-app-identity-details.md#link-to-your-apps-listing) page.
 
     * Use the protocol format if you are promoting your app from within other Windows apps that are running on a device or computer with the Windows Store app installed, or when you know that your customers are on a device which supports the Windows Store. This link will go directly to your app's Store listing without opening a browser. This URL has the format **`ms-windows-store://pdp/?PRODUCTID=*your app id*`**. For example, the protocol URL for Skype is `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364`.
 
