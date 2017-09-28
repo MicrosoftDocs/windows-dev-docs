@@ -8,7 +8,7 @@ template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interaction
 ms.author: elcowle
-ms.date: 02/08/2017
+ms.date: 09/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -453,12 +453,7 @@ The following diagram shows the button mappings for gamepad/remote in mouse mode
 > [!NOTE]
 > Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.
 
-Use the `RequiresPointer` property on a control or page to activate mouse mode on it. `RequiresPointer` has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
-
-> [!NOTE]
-> `RequiresPointer` is a new API and not yet documented.
-
-<!--TODO: Link to doc-->
+Use the [RequiresPointer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.requirespointer) property on a control or page to activate mouse mode on it. This property has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
 
 ### Activating mouse mode on a control
 
