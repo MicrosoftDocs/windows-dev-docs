@@ -93,7 +93,7 @@ using namespace concurrency;
 void App::DeleteWithTasks(String^ fileName)
 {    
     using namespace Windows::Storage;
-    StorageFolder^ localFolder = ApplicationData::Current::LocalFolder;
+    StorageFolder^ localFolder = ApplicationData::Current->LocalFolder;
     auto getFileTask = create_task(localFolder->GetFileAsync(fileName));
 
     getFileTask.then([](StorageFile^ storageFileSample) ->IAsyncAction^ {       
