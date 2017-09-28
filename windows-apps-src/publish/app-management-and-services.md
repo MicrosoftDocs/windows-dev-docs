@@ -1,6 +1,6 @@
 ﻿---
 author: jnHs
-Description: Manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as notifications, A/B testing, and maps.
+Description: Manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as A/B testing and maps.
 title: App management and services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.author: wdg-dev-content
@@ -20,6 +20,12 @@ When working with an app in your dashboard, you'll see sections in the left navi
 ## Services
 
 The **Services** section lets you manage several different services for your apps.
+
+## Xbox Live
+
+If you are publishing a game, you can enable the [Xbox Live Creators Program](http://xbox.com/developers/creators-program) on this page. This lets you start configuring and testing Xbox Live features, and eventually publish your Xbox Live Creators Program game.
+
+For more info, see [Get started with the Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) and [Create a new Xbox Live Creators Program title and publish to the test environment](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md).
 
 ## Experimentation
 

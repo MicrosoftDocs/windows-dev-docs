@@ -3,7 +3,7 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets. 
 title: Set and schedule app pricing
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 09/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,7 +37,7 @@ Keep in mind that the price tier you select may include sales or value-added tax
 You can optionally schedule one or more price changes if you want the base price of your app to change at a specific date and time. 
 
 > [!IMPORTANT]
-> Price changes are only shown to customers on Windows 10. If your app supports earlier OS versions, the price changes will not apply. 
+> Price changes are only shown to customers on Windows 10 devices (including Xbox). If your app supports earlier OS versions, the price changes will not apply. 
 >
 > - For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. 
 > - For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the initial price for the customer's market, even if you schedule additional price changes in that market.
