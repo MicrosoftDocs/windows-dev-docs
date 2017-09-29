@@ -4,11 +4,11 @@ Description: The Windows Store offers Mobile Operator Billing as a payment metho
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 09/21/2017
+ms.date: 10/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, mobile operators, mobile billing, mobile operator billing
 ---
 
 # Mobile operator billing
@@ -32,7 +32,7 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 | Austria         | Hutchison 3G Austria, A1 Telekom |
 | Belgium         | Base, Proximus                   |
 | Canada          | Telus                            |
-| Denmark         | 3, TDC / YouSee, Telenor         |
+| Denmark         | 3, TDC / YouSee, Telenor, Telia  |
 | Finland         | DNA, Elisa                       |
 | France          | Orange                           |
 | Germany         | O2                               |
@@ -67,8 +67,8 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
 | Greece               | Vodafone                                                           |
 | Hungary              | T-Mobile                                                           |
-| Ireland              | O2, Vodafone                                                       |
-| Italy                | Telecom Italia, Vodafone                                           |
+| Ireland              | Vodafone                                                           |
+| Italy                | Vodafone                                                           |
 | Netherlands          | T-Mobile, Vodafone                                                 |
 | Poland               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
 | Romania              | Vodafone                                                           |
