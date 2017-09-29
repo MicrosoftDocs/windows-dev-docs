@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
-title: How to name resources by using qualifiers
+title: Tailor your resources for language, scale, and other qualifiers
 template: detail.hbs
 ms.author: stwhi
 ms.date: 22/10/2017
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# How to name resources by using qualifiers
+# Tailor your resources for language, scale, and other qualifiers
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.

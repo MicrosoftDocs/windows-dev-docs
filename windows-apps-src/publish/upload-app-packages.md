@@ -8,7 +8,7 @@ ms.date: 08/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, packages, upload, device family availability
 ---
 
 # Upload app packages
@@ -49,7 +49,8 @@ You can uncheck the box for any Windows 10 device family if you don’t want to 
 
 If your app supports the mobile and desktop device families, we recommend keeping the boxes for **Windows 10 Mobile** and **Windows 10 Desktop** checked unless you have a specific reason to limit the types of Windows 10 devices which can acquire your app. For example, you may have created Windows Universal packages, but you know that you still need to test some issues with the app on mobile devices. To prevent new customers from downloading the app on Windows 10 mobile devices, you can uncheck the **Windows 10 Mobile** checkbox here. Then if you later decide you're ready to offer it to customers on Windows 10 mobile devices, you can create a new submission with the **Windows 10 Mobile** box checked.
 
-If your app is not a game (or if it is a game and you have gone through the [concept approval](../gaming/concept-approval.md) process), and your submission includes neutral and/or x64 UWP packages compiled using Windows 10 SDK version 14393 or later, you can check the **Windows 10 Xbox** box to offer the app to customers on Xbox. 
+<span id="xbox" />
+If your app is not a game (or if it is a game and you have enabled the [Xbox Live Creators Program](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) or gone through the [concept approval](../gaming/concept-approval.md) process), and your submission includes neutral and/or x64 UWP packages compiled using Windows 10 SDK version 14393 or later, you can check the **Windows 10 Xbox** box to offer the app to customers on Xbox. 
 
 > [!IMPORTANT]
 > In order for your app to launch on Xbox devices, you must include a neutral or x64 package that is compiled with Windows SDK version 14393 or higher. However, if you check **Windows 10 Xbox**, your highest-versioned package that’s applicable to Xbox (that is, a neutral or x64 package that targets the Xbox or Universal device family) will always be offered to customers on Xbox, even if it is compiled with an earlier SDK version. Because of this, it’s critical to ensure that the highest-versioned package applicable to Xbox is compiled with Windows SDK version 14393 or higher. If it is not, you will see an error message indicating that Xbox customers will not be able to launch your app. 
