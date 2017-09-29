@@ -1,14 +1,14 @@
 ---
-author: GrantMeStrength
+author: QuinnRadich
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about the different types of Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
-ms.author: jken
+ms.author: quradic
 ms.date: 03/22/2017
 ms.topic: article
 pms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, what, universal
 ---
 
 # What's a Universal Windows Platform (UWP) app?
