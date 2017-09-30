@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # XAML namespaces and namespace mapping
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic explains the XML/XAML namespace (**xmlns**) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
 

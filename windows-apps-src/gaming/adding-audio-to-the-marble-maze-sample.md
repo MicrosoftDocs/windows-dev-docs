@@ -14,7 +14,6 @@ keywords: windows 10, uwp, audio, games, sample
 # Adding audio to the Marble Maze sample
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This document describes the key practices to consider when you work with audio and shows how Marble Maze applies these practices. Marble Maze uses Microsoft Media Foundation to load audio resources from file, and XAudio2 to mix and play audio and to apply effects to audio.

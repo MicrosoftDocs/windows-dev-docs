@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, swap chain scaling, overlays, directx
 # Swap chain scaling and overlays
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
 

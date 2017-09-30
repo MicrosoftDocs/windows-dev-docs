@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Guidelines for background tasks
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Ensure your app meets the requirements for running background tasks.
 
@@ -78,9 +77,6 @@ Universal Windows Platform (UWP) apps can run all supported task types without b
 - When cancelling a task, ensure that the `BackgroundActivated` event handler exits before the cancellation occurs or the whole process will be terminated.
 -   Write background tasks that are short-lived. Background tasks are limited to 30 seconds of wall-clock usage.
 -   Do not rely on user interaction in background tasks.
-
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Related topics
 

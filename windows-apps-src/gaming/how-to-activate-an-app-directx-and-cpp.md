@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, activation
 # How to activate an app (DirectX and C++)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.
 

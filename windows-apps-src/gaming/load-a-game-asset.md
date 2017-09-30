@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, loading resources
 # Load resources in your DirectX game
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Most games, at some point, load resources and assets (such as shaders, textures, predefined meshes or other graphics data) from local storage or some other data stream. Here, we walk you through a high-level view of what you must consider when loading these files to use in your Universal Windows Platform (UWP) game.
 

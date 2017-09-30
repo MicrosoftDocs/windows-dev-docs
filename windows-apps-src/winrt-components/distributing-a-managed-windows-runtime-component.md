@@ -15,7 +15,6 @@ keywords: windows 10, uwp
 # Distributing a managed Windows Runtime Component
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 You can distribute your Windows Runtime Component by file copy. However, if your component consists of many files, installation can be tedious for your users. Also, errors in placing files or failure to set references might cause problems for them. You can package a complex component as a Visual Studio extension SDK, to make it easy to install and use. Users only need to set one reference for the entire package. They can easily locate and install your component by using the **Extensions and Updates** dialog box, as described in [Finding and Using Visual Studio Extensions](https://msdn.microsoft.com/library/vstudio/dd293638.aspx), in the MSDN Library.
 

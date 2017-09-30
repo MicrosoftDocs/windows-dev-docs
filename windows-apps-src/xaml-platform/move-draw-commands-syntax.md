@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Move and draw commands syntax
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value. Move and draw commands are used by many design and graphics tools that can output a vector graphic or shape, as a serialization and interchange format.
 

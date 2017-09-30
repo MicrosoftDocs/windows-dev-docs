@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx
 #  Define the game's Universal Windows Platform (UWP) app framework
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction.
 

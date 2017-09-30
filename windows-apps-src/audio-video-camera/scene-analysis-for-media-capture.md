@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Effects for analyzing camera frames
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article describes how to use the [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) and the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) to analyze the content of the media capture preview stream.

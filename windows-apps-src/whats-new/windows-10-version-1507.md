@@ -14,7 +14,6 @@ ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 # What's new in Windows 10, Version 1507
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Windows 10 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform (UWP). After [installing the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10, you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 

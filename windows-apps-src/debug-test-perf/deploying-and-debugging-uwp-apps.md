@@ -13,7 +13,6 @@ keywords: windows 10, uwp, debug, test, performance
 
 # Deploying and debugging UWP apps
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This article guides you through the steps to target various deployment and debugging targets.
 

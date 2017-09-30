@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Windows App Certification Kit
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 To give your app the best chance of being [published on the Windows Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), or becoming [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx), validate and test it locally before you submit it for certification. This topic shows you how to install and run the [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666).

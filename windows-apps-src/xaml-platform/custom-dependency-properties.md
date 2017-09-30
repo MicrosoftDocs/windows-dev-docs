@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Custom dependency properties
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Here we explain how to define and implement your own dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
 

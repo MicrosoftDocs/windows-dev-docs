@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Create and register an out-of-process background task
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Important APIs**
 
@@ -323,9 +322,6 @@ You should now understand the basics of how to write a background task class, ho
 > Download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see similar code examples in the context of a complete and robust UWP app that uses background tasks.
 
 See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
-
-> [!NOTE]
-> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Related topics
 

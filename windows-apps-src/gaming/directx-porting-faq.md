@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx 11
 # DirectX 11 porting FAQ
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Answers to frequently-asked questions about porting games to Universal Windows Platform (UWP).

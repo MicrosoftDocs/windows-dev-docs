@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Launch the People app
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This topic describes the **ms-people:** URI scheme. Your app can use this URI scheme to launch the People app for specific actions.

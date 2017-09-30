@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # x:Name attribute
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Uniquely identifies object elements for access to the instantiated object from code-behind or general code. Once applied to a backing programming model, **x:Name** can be considered equivalent to the variable holding an object reference, as returned by a constructor.
 

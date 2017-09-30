@@ -12,7 +12,6 @@ keywords: windows 10, uwp, C#, Visual Basic, asynchronous
 ---
 # Call asynchronous APIs in C# or Visual Basic
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time. This topic discusses how to use asynchronous methods from the UWP in C# or Microsoft Visual Basic.

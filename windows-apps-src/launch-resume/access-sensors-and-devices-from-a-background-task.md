@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Access sensors and devices from a background task
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. For example, depending on where your app is running, it could use a background task to synchronize data with devices or monitor sensors. To help preserve battery life and ensure the appropriate user consent, the use of [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) is subject to policies that are described in this topic.

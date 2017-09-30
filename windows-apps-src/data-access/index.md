@@ -12,7 +12,6 @@ keywords: windows 10, uwp, data, database, relational, tables, sqlite
 ---
 # Data access
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section discusses storing data on the device in a private database and using object relational mapping in Universal Windows Platform (UWP) apps.
 

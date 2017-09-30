@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # {ThemeResource} markup extension
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme. Similar to [{StaticResource} markup extension](staticresource-markup-extension.md), resources are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), and a **ThemeResource** usage references the key of that resource in the **ResourceDictionary**.
 

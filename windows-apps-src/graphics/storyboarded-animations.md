@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Storyboarded animations
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Storyboarded animations are not just animations in the visual sense. A storyboarded animation is a way to change the value of a dependency property as a function of time. One of the main reasons you might need a storyboarded animation that's not from the animation library is to define the visual state for a control, as part of a control template or page definition.

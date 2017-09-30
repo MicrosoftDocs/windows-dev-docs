@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, sample, directx, 3d
 # Developing Marble Maze, a UWP game in C++ and DirectX
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This topic describes how to use DirectX and Visual C++ to create a 3D Universal Windows Platform (UWP) game. The game, called Marble Maze, embraces multiple form factors such as tablets as well as traditional desktop and laptop PCs.

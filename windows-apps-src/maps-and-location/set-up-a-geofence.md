@@ -14,7 +14,6 @@ keywords: windows 10, uwp, map, location, geofence, notifications
 # Set up a geofence
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) in your app, and learn how to handle notifications in the foreground and background.

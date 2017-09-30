@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, depth, effects, primitives, directx
 # Use depth and effects on primitives
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Here, we show you how to use depth, perspective, color, and other effects on primitives.
 

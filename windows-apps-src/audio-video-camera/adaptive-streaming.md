@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Adaptive streaming
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This article describes how to add playback of adaptive streaming multimedia content to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content.
 

@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Troubleshooting porting Windows Runtime 8.x to UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 The previous topic was [Porting the project](w8x-to-uwp-porting-to-a-uwp-project.md).
 

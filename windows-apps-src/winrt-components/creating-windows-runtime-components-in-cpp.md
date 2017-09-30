@@ -15,7 +15,6 @@ keywords: windows 10, uwp
 # Creating Windows Runtime Components in C++
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This article shows how to use C++ to create a Windows Runtime component, which is a DLL that's callable from a Universal Windows app that's built by using JavaScript—or C#, Visual Basic, or C++.
 

@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Networking basics
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Things you must do for any network-enabled app.
 

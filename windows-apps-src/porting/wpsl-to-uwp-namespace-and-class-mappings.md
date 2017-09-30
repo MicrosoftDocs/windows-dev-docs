@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Windows Phone Silverlight to UWP API mappings
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic provides a comprehensive mapping of Windows Phone Silverlight APIs to their Universal Windows Platform (UWP) equivalents. There is generally not a one-to-one mapping of functionality, though: either platform may have more or less functionality than its counterpart in a namespace or class.
 

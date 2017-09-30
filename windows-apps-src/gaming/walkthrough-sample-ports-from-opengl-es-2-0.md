@@ -8,7 +8,6 @@ ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 # Walkthrough sample ports from OpenGL ES 2.0
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
 

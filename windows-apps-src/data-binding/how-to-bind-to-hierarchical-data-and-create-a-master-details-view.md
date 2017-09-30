@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Bind hierarchical data and create a master/details view
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 > **Note**  Also see the [Master/detail sample](http://go.microsoft.com/fwlink/p/?linkid=619991).

@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx 11, device lost
 # <span id="dev_gaming.handling_device-lost_scenarios"></span>Handle device removed scenarios in Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic explains how to recreate the Direct3D and DXGI device interface chain when the graphics adapter is removed or reinitialized.
 

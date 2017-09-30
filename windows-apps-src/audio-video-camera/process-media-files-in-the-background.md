@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Process media files in the background
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article shows you how to use the [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a background task to process media files in the background.

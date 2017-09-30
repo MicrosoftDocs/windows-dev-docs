@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, input latency
 #  Optimize input latency for Universal Windows Platform (UWP) DirectX games
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished. Additionally, proper input event optimization can improve battery life. Learn how to choose the right CoreDispatcher input event processing options to make sure your game handles input as smoothly as possible.
 

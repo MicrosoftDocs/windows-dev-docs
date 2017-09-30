@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # x:Phase attribute
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Use **x:Phase** with the [{x:Bind} markup extension](x-bind-markup-extension.md) to render [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) items incrementally and improve the panning experience. **x:Phase** provides a declarative way of achieving the same effect as using the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event to manually control the rendering of list items. Also see [Update ListView and GridView items incrementally](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 

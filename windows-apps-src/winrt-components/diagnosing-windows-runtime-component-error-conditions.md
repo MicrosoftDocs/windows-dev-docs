@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Diagnosing Windows Runtime Component error conditions
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article provides additional information about restrictions on Windows Runtime Components written with managed code. It expands on the information that is provided in error messages from [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), and complements the information on restrictions that is provided in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).

@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, 2d, graphics
 # 2D graphics for DirectX games
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
 
@@ -58,16 +57,3 @@ Great artwork will be your greatest asset, when it comes to visuals. While your 
 -   [Direct2D overview](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Direct2D quickstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Direct2D and Direct3D interoperability overview](https://msdn.microsoft.com/library/windows/desktop/dd370966)
-
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
- 
-
- 
-
-
-
-

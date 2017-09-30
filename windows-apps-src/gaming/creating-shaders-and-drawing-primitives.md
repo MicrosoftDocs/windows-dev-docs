@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, shaders, primitives, directx
 # Create shaders and drawing primitives
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
 

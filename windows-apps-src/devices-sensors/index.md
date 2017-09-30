@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Devices, sensors, and power
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 In order to provide a rich experience for your users, you may find it necessary to integrate external devices or sensors into your app. Here are some examples of features that you can add to your app using the technology described in this section.
 

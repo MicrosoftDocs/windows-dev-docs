@@ -24,11 +24,6 @@ Universal Windows Platform (UWP) offers new opportunities to create, distribute,
 
 To learn about developing UWP games using DirectX, go to [DirectX programming](directx-programming.md).
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
 To make the best use of the game development overviews and tutorials, you should be familiar with the following subjects:
 
 -   Microsoft C++ with Component Extensions (C++/CX). This is an update to Microsoft C++ that incorporates automatic reference counting, and is the language for developing UWP games with DirectX 11.1 or later versions

@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Windows Runtime components
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Windows Runtime components are self-contained objects that you can instantiate and use from any language, including C#, Visual Basic, JavaScript, and C++.
 

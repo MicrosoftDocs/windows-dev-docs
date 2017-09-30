@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # XAML overview
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
 

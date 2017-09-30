@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Key-frame animations and easing function animations
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Linear key-frame animations, key-frame animations with a **KeySpline** value, or easing functions are three different techniques for approximately the same scenario: creating a storyboarded animation that's a bit more complex, and that uses a nonlinear animation behavior from a starting state to an end state.

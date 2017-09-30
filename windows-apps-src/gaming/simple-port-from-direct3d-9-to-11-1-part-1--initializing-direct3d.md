@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, direct3d 11, initialization, porting, direct3d
 # Initialize Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Summary**
 

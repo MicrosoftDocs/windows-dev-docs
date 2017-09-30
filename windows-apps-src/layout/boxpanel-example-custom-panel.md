@@ -224,9 +224,6 @@ An advanced scenario for extending `BoxPanel` further (not shown here) could bot
 
 You might wonder why the panel wouldn't instead choose 5x2 for 10 items, because that fits the item number neatly. However, in practice, panels are sized as rectangles that seldom have a strongly oriented aspect ratio. The least-squares technique is a way to bias the sizing logic to work well with typical layout shapes and not encourage sizing where the cell shapes get odd aspect ratios.
 
-> [!NOTE]
-> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
 ## Related topics
 
 **Reference**

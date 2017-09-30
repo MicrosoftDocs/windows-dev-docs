@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Install apps with the WinAppDeployCmd.exe tool
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device. You can use this tool to deploy an .appx package when the Windows 10 device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. You can also deploy the app without packaging first to a remote PC or Xbox One. This article describes how to install UWP apps using this tool.
 

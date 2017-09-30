@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, latency, dxgi, swap chains, directx
 # Reduce latency with DXGI 1.3 swap chains
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Use DXGI 1.3 to reduce the effective frame latency by waiting for the swap chain to signal the appropriate time to begin rendering a new frame. Games typically need to provide the lowest amount of latency possible from the time the player input is received, to when the game responds to that input by updating the display. This topic explains a technique available starting in Direct3D 11.2 that you can use to minimize the effective frame latency in your game.
 

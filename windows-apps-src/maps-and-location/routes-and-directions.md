@@ -14,7 +14,6 @@ keywords: windows 10, uwp, route, map, location, directions
 # Display routes and directions on a map
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Request routes and directions, and display them in your app.

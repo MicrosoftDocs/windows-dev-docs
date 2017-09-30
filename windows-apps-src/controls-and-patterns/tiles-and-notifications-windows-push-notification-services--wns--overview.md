@@ -239,11 +239,6 @@ This is the XAML for the [**ContentDialog**](https://msdn.microsoft.com/library/
 </ContentDialog>
 ```
 
-> [!NOTE]
-> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
 ## Related topics
 
 

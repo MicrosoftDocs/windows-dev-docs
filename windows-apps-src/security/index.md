@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Security
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section contains articles on building secure Universal Windows Platform (UWP) apps for Windows 10.
 

@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx 9, directx 11, porting
 # Map DirectX 9 features to DirectX 11 APIs
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Summary**
 

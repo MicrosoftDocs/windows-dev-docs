@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Legacy background media playback
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This article describes the legacy, two-process model for adding background audio support to your UWP app. Starting with Windows 10, version 1607, a single-process model for background audio that is much simpler to implement. For more information on the current recommendations for background audio, see [Play media in the background](background-audio.md). This article is intended to provide support for apps that are have already been developed using the legacy two-process model.
 

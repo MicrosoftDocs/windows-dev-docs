@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Attached properties overview
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 An *attached property* is a XAML concept. Attached properties enable additional property/value pairs to be set on an object, but the properties are not part of the original object definition. Attached properties are typically defined as a specialized form of dependency property that doesn't have a conventional property wrapper in the owner type's object model.
 

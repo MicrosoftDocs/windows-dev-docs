@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # {CustomResource} markup extension
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class implementation.
 

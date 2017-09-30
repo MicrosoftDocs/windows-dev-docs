@@ -12,7 +12,6 @@ keywords: windows 10, uwp, SQLite, database
 ---
 # SQLite databases
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.

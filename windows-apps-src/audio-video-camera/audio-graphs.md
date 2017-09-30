@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Audio graphs
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article shows how to use the APIs in the [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) namespace to create audio graphs for audio routing, mixing, and processing scenarios.

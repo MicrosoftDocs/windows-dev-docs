@@ -13,7 +13,6 @@ ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 
 # Sign an app package using SignTool
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **SignTool** is a command line tool used to digitally sign an app package or bundle with a certificate. The certificate can either be created by the user (for testing purposes) or issued by a company (for distribution). Signing an app package provides the user with verification that the app's data has not been modified after it was signed while also confirming the identity of the user or company that signed it. **SignTool** can sign encrypted or unencrypted app packages and bundles.
 

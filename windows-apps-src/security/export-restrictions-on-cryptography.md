@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Export restrictions on cryptography
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
 

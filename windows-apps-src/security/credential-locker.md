@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Credential locker
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.

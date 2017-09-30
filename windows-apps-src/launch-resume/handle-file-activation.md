@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Handle file activation
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Important APIs**
@@ -121,7 +120,6 @@ When launched via File activation, apps should consider including UI that allows
 
 The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it. For more info on input validation, see [Writing Secure Code](http://go.microsoft.com/fwlink/p/?LinkID=142053)
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

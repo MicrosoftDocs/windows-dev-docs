@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Debugging, testing, and performance
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Windows Store certification process, use the Windows App Certification Kit.
 

@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Audio, video, and camera
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section provides information about creating Universal Windows Platform (UWP) apps that capture, play back, or edit photos, videos, or audio.
  

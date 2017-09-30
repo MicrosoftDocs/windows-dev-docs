@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, multisampling, direct3d
 # <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D. Multisampling, also known as multi-sample antialiasing, is a graphics technique used to reduce the appearance of aliased edges. It works by drawing more pixels than are actually in the final render target, then averaging values to maintain the appearance of a "partial" edge in certain pixels. For a detailed description of how multisampling actually works in Direct3D, see [Multisample Anti-Aliasing Rasterization Rules](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
 

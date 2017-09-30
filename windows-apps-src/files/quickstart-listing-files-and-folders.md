@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 # Enumerate and query files and folders
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.

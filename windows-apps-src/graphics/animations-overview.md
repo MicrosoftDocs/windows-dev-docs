@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Animations overview
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Animations in the Windows Runtime can enhance your app by adding movement and interactivity. By using the animations from the Windows Runtime animation library, you can integrate the Windows look and feel into your app. This topic provides a summary of the animations and examples of typical scenarios where each is used.

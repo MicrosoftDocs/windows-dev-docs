@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Create, edit, and save bitmap images
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article explains how to load and save image files using [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) and [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) and how to use the [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object to represent bitmap images.

@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # XAML intrinsic data types
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 XAML for the Windows Runtime provides language-level support for several data types that are frequently used primitives in the common language runtime (CLR) and in other programming languages such as C++.
 

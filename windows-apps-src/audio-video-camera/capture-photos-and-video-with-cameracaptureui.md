@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Capture photos and video with Windows built-in camera UI
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article describes how to use the CameraCaptureUI class to capture photos or videos using the camera UI built into Windows. This feature is easy to use and allows your app to get a user-captured photo or video with just a few lines of code.
@@ -83,10 +82,6 @@ First, add a [**MediaPlayerElement**](https://docs.microsoft.com/en-us/uwp/api/W
 With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromStorageFile_Windows_Storage_IStorageFile_)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
-
-> [!NOTE] 
-> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
  
 
 ## Related topics

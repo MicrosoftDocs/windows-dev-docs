@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Image Metadata
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article shows how to read and write image metadata properties and how to geotag files using the [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) utility class.

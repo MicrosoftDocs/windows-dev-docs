@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # PlayReady DRM
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.

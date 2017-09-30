@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Share data
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This article explains how to support the Share contract in a Universal Windows Platform (UWP) app. The Share contract is an easy way to quickly share data, such as text, links, photos, and videos, between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later.
 

@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Custom events and event accessors in Windows Runtime Components
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 .NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern. However, when you declare custom event accessors in a Windows Runtime Component, you must follow the pattern used in the UWP.
 

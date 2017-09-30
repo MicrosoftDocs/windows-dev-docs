@@ -12,7 +12,6 @@ ms.assetid: 15a113b5-8231-41c9-b724-ce5add813967
 ---
 # NFC
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section contains articles on how to integrate NFC into Universal Windows Platform (UWP) apps.
 

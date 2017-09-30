@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # XAML platform
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section includes topics that explain programming concepts that are generally applicable to any app that you write, if you are using C#, Microsoft Visual Basic, or Visual C++ component extensions (C++/CX) as your programming language and XAML for your UI definition. This includes basic programming concepts such as using properties and events, and how these apply to Universal Windows Platform (UWP) app programming. The Universal Windows Platform (UWP) extends C#, Visual Basic, or C++/CX concepts of properties and their values by adding the dependency property system. Topics in this section also document the XAML language as it is used by the UWP, and cover basic scenarios and advanced topics explaining how to use XAML to define the UI for your UWP app.
  

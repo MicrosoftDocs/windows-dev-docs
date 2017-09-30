@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Porting Windows Phone Silverlight projects to UWP projects
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 The previous topic was [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md).
 

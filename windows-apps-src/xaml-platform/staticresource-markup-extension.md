@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # {StaticResource} markup extension
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Provides a value for any XAML attribute by evaluating a reference to an already defined resource. Resources are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), and a **StaticResource** usage references the key of that resource in the **ResourceDictionary**.
 
