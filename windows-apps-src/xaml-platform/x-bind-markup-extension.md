@@ -95,7 +95,7 @@ In the following example, the background and foreground of the item are bound to
 
 ``` Xamlmarkup
 <DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind Brushify(Color)}" Width="240">
+    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
         <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
     </Grid>
 </DataTemplate>
@@ -111,7 +111,7 @@ class ColorEntry
         return new SolidColorBrush(c);
     }
 
-    public static SolidColorBrush TextColor(Color c)
+    public SolidColorBrush TextColor(Color c)
     {
         return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
     }
