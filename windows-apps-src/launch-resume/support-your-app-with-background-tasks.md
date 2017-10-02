@@ -137,6 +137,8 @@ On memory-constrained devices, there is a limit to the number of apps that can b
 
 Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
 
+However, for enterprise apps, and apps that will not be published in the Windows Store, see [Run in the background indefinitely](run-in-the-background-indefinetly.md) to learn how to use a capabilities to run a background task or extended execution session in the background indefinitely.
+
 ## Background task resource guarantees for real-time communication
 
 To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
@@ -189,6 +191,7 @@ Check your background task registration during app launch. Ensure that your app'
 * [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
 * [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
 * [Run a background task when your UWP app is updated](run-a-background-task-during-updatetask.md)
+* [Run in the background indefinitely](run-in-the-background-indefinetly.md)
 * [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
 * [Trigger a background task from your app](trigger-background-task-from-app.md)
 * [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
