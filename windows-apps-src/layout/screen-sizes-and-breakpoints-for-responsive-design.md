@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths (also called "breakpoints"): 360, 640, 1024 and 1366 epx.
+The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key width categories (also called "breakpoints"): small (640px and smaller), medium (641px to 1007px), and large (1008px and larger).
 
 > [!TIP]
 > When designing for specific breakpoints, design for the amount of screen space available to your app (the app's window). When the app is running full-screen, the app window is the same size as the screen, but in other cases, it's smaller.
@@ -40,6 +40,12 @@ This table describes the different size classes and provides general recommendat
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td style="vertical-align:top;">Window width breakpoints in effective pixels</td>
+<td style="vertical-align:top;">640px or less</td>
+<td style="vertical-align:top;">641px to 1007px</td>
+<td style="vertical-align:top;">1008px or greater</td>
+</tr>
 <tr class="odd">
 <td style="vertical-align:top;">Typical screen size (diagonal)</td>
 <td style="vertical-align:top;">4&quot; to 6&quot;</td>
@@ -55,15 +61,10 @@ This table describes the different size classes and provides general recommendat
 <tr class="odd">
 <td style="vertical-align:top;">Common window sizes in effective pixels</td>
 <td style="vertical-align:top;">320x569, 360x640, 480x854</td>
-<td style="vertical-align:top;">960x540, 1024x640</td>
-<td style="vertical-align:top;">1366x768, 1920x1080</td>
+<td style="vertical-align:top;">960x540</td>
+<td style="vertical-align:top;">1024x640, 1366x768, 1920x1080</td>
 </tr>
-<tr class="even">
-<td style="vertical-align:top;">Window width breakpoints in effective pixels</td>
-<td style="vertical-align:top;">640px or less</td>
-<td style="vertical-align:top;">641px to 1007px</td>
-<td style="vertical-align:top;">1008px or greater</td>
-</tr>
+
 
 <tr class="odd">
 <td style="vertical-align:top;">General recommendations</td>

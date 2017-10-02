@@ -181,9 +181,6 @@ Special and restricted capabilities are intended for very specific scenarios. Th
 |**App Diagnostics**| The **appDiagnostics** capability allows an app to get diagnostic information, (such as package information, memory usage, and account name) for any other running UWP app. The information returned includes the domain/machine account name under which the app is running; if the calling app is launched with Administrator rights then the app can retrieve a list of all running apps for all accounts on the machine. <br /><br />This capability is required to use the [**Windows.System.AppDiagnosticInfo**](https://docs.microsoft.com/en-us/uwp/api/windows.system.appdiagnosticinfo), **Windows.System.AppDiagnosticInfo.RequestAppDiagnosticInfoAsync**, and [**Windows.ApplicationModel.AppInfo**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.appinfo) classes.<br /><br /> Anyone may request access to this capability for store submission.
 | **Device Portal Providers** | The **devicePortalProvider** restricted capability allows apps to call the **Windows.System.Diagnostics.DevicePortal** APIs, and [serve as a webserver](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-plugin) for diagnostic tooling while in Developer Mode.<br /><br />Only Microsoft partners and those who work with a device vendor may request access to this capability for store submission.
 
-**Note**  
-This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
 ## Related topics
 
 * [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)

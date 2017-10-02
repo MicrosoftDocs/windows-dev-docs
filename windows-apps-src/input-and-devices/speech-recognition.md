@@ -40,7 +40,7 @@ See [App capability declarations](https://msdn.microsoft.com/library/windows/app
 ## Recognize speech input
 
 
-A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app great over the accuracy of speech recognition.
+A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app greater over the accuracy of speech recognition.
 
 You can use various types of constraints when performing speech recognition:
 

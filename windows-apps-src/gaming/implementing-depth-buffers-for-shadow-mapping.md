@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, shadow volumes, depth buffers, direct
 # Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
 ## 

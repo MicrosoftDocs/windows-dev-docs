@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # MVVM and language performance tips
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 

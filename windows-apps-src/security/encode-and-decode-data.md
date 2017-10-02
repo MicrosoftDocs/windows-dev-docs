@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Encode and decode data
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 

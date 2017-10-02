@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, input, sample
 # Adding input and interactivity to the Marble Maze sample
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Universal Windows Platform (UWP) app games run on a wide variety of devices, such as desktop computers, laptops, and tablets. A device can have a wide variety of input and control mechanisms. Support multiple input devices to enable your game to accommodate a wider range of preferences and abilities among your customers. This document describes the key practices to keep in mind when you work with input devices and shows how Marble Maze applies these practices.

@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, touch, controls, directx, input
 # Touch controls for games
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX. We show you how to add touch-based controls to move a fixed-plane camera in a Direct3D environment, where dragging with a finger or stylus shifts the camera perspective.
 
@@ -339,9 +338,6 @@ We can now obtain a scene space coordinate that our camera is focused on, and wh
 ```
 
 Congratulations! You've implemented a simple set of camera panning touch controls in your game.
-
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

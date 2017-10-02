@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Printing and scanning
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section describes how to print and scan from your Universal Windows app.
 

@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Effects for video capture
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic shows you how to apply effects to the camera preview and recording video streams and shows you how to use the video stabilization effect.
 

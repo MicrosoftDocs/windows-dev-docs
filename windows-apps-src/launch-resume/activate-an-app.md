@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Handle app activation
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Learn how to handle app activation by overriding the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method..

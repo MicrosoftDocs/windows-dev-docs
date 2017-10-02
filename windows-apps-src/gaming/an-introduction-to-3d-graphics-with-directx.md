@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, graphics
 # Basic 3D graphics for DirectX games
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 We show how to use DirectX programming to implement the fundamental concepts of 3D graphics.
 
@@ -45,7 +44,6 @@ We show you how to:
 -   Cull the hidden surfaces
 
 > **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

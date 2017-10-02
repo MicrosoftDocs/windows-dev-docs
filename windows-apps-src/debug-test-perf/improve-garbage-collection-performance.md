@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Improve garbage collection performance
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Universal Windows Platform (UWP) apps written in C# and Visual Basic get automatic memory management from the .NET garbage collector. This section summarizes the behavior and performance best practices for the .NET garbage collector in UWP apps. For more info on how the .NET garbage collector works and tools for debugging and analyzing garbage collector performance, see [Garbage collection](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx).
 

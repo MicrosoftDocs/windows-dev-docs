@@ -13,7 +13,6 @@ keywords: windows 10, uwp, SQLite, C#, EF, entity framework
 
 # Entity Framework Core with SQLite for C# apps
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects. This article explains how you can use Entity Framework Core with a SQLite database in a Universal Windows app.
 

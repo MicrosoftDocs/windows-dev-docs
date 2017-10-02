@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Add a splash screen
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Set your app's splash screen image and background color using Microsoft Visual Studio 2015.
@@ -58,10 +57,6 @@ When you use a Visual Studio 2015 template to create your app, a default image 
 
 
 If your app takes a while to load, consider adding an extended splash screen. For step-by-step guidance, seen [Create a customized splash screen](create-a-customized-splash-screen.md).
-
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
  
 
 ## Related topics

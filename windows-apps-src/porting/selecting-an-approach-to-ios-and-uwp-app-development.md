@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Selecting an approach to iOS and UWP app development
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 What are the choices when developing cross-platform apps?
 

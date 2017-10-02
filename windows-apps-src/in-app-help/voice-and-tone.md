@@ -16,7 +16,7 @@ From detailed instructions to simple tooltips, text is a necessary component of 
 
 As in all writing, when creating the text for your app, you should be deliberate about your choice of voice and tone. These two are similar, but distinct — think of voice as your attitude towards the subject, while tone is its implementation. As the text in your app is written for the user, your voice should always be friendly and natural, something that can establish an immediate connection. Your tone can be more flexible, so long as it follows some general guidelines and works well with that voice and the needs of your app. By carefully choosing the right words and phrases, you can enhance the app's user experience, and make bad situations — such as encountering an error — easier and more pleasant for the user.
 
-## Creating a friendly, natual voice
+## Creating a friendly, natural voice
 
 The voice of your app is a natural and intuitive extension of its purpose and design. Pick words that sound comfortable to you — they'll feel comfortable to the user, too.
 

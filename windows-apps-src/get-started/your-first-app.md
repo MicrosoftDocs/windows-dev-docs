@@ -2,13 +2,13 @@
 author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
-description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
+description: Create a Universal Windows Platform (UWP) app for Windows 10 using your favorite programming language.
 ms.author: quradic
 ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, get started, start
 ---
 
 # Create your first app

@@ -11,7 +11,6 @@ keywords: windows 10, uwp
 ---
 # Point of service
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This section contains articles on how to use Point Of Service (POS) peripherals with Universal Windows Platform (UWP) apps. 
 

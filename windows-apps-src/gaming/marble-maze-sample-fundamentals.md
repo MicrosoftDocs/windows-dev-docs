@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, sample, directx, fundamentals
 # Marble Maze sample fundamentals
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This topic describes the fundamental characteristics of the Marble Maze project&mdash;for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built. The topic also describes several of the conventions that are used in the code.

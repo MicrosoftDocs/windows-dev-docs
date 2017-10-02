@@ -13,7 +13,6 @@ ms.technology: uwp
 
 # Create and consume an app service
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn how to write a Universal Windows Platform (UWP) app that can provide a service to other UWP apps, and how to consume that service.
 

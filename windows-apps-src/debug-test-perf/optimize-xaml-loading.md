@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Optimize your XAML markup
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve the parse and load time of your XAML markup and the memory efficiency of your app.
 

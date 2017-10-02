@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Media casting
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 This article shows you how to cast media to remote devices from a Universal Windows app.

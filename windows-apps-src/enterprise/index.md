@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Enterprise
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This roadmap provides an overview of key enterprise features for Windows 10 Universal Windows Platform (UWP) apps. Windows 10 lets you write once and deploy across all devices, creating one app that tailors to any device. This lets you build the great experiences your users expect, while providing control over the security, management, and configuration required by your organization.
 

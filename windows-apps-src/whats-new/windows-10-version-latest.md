@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: What's New in Windows 10 for Developers, Tools & Features
 description: Windows 10 version 1703 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
-keywords: what's new, whats new, update, updates, features, new, Windows 10, 1703, March, newest
+keywords: what's new, whats new, update, updates, features, new, Windows 10, 1703, March, newest, developers
 ms.author: quradic
 ms.date: 04/05/2017
 ms.topic: article

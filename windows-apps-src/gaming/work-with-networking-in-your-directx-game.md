@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, networking, directx
 # Networking for games
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn how to develop and incorporate networking features into your DirectX game.
 

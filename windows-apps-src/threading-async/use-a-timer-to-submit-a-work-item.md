@@ -12,7 +12,6 @@ keywords: windows 10, uwp, timer, threads
 ---
 # Use a timer to submit a work item
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** Important APIs **
 

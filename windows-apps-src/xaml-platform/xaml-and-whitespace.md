@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # XAML and whitespace
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Learn about the whitespace processing rules as used by XAML.
 

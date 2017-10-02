@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, suspend, directx
 # How to suspend an app (DirectX and C++)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic shows how to save important system state and app data when the system suspends your Universal Windows Platform (UWP) DirectX app.
 

@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, port, vertex buffers, data, direct3d
 # Port the vertex buffers and data
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **Important APIs**

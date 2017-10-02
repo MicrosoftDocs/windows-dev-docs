@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Which networking technology?
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
 

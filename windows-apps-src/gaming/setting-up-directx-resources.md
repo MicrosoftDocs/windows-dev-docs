@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, directx, resources, images
 # Set up DirectX resources and display an image
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Here, we show you how to create a Direct3D device, swap chain, and render-target view, and how to present the rendered image to the display.
 

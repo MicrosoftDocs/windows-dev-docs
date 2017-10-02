@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Convert between strings and binary data
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
 

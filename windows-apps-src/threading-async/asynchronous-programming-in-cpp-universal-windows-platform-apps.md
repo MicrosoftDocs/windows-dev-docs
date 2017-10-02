@@ -13,7 +13,6 @@ keywords: windows 10, uwp, threads, asynchronous, C++
 
 # Asynchronous programming in C++
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the `task` class that's defined in the `concurrency` namespace in ppltasks.h.
 
@@ -93,7 +92,7 @@ using namespace concurrency;
 void App::DeleteWithTasks(String^ fileName)
 {    
     using namespace Windows::Storage;
-    StorageFolder^ localFolder = ApplicationData::Current::LocalFolder;
+    StorageFolder^ localFolder = ApplicationData::Current->LocalFolder;
     auto getFileTask = create_task(localFolder->GetFileAsync(fileName));
 
     getFileTask.then([](StorageFile^ storageFileSample) ->IAsyncAction^ {       

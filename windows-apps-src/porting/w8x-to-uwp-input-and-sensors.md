@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 # Porting Windows Runtime 8.x to UWP for I/O, device, and app model
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 The previous topic was [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md).

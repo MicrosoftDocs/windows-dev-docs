@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # File access permissions
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.

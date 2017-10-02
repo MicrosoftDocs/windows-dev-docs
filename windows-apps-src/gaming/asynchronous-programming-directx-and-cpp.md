@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, asynchronous programming, directx
 # Asynchronous programming (DirectX and C++)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This topic covers various points to consider when you are using asynchronous programming and threading with DirectX.
 

@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Getting started with UWP for iOS developers
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 If you're an iOS developer considering developing for Windows 10, these docs are a great place to start. They'll introduce you to some of the concepts you'll need to know as you get started writing apps, and they'll cover how you can publish your work on the Windows Store.
 

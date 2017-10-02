@@ -147,7 +147,7 @@ By default, your toast will display your app's logo. However, you can override t
 
 ![Toast with app logo override](images/toast-applogooverride.jpg)
 
-You can use the **HintCrop** property to change the cropping of the image. For example, *circle* results in a circle-cropped image. Otherwise, the image is square. Image dimensions are 64x64 pixels at 100% scaling.
+You can use the **HintCrop** property to change the cropping of the image. For example, *circle* results in a circle-cropped image. Otherwise, the image is square. Image dimensions are 48x48 pixels at 100% scaling.
 
 ```csharp
 new ToastBindingGeneric()

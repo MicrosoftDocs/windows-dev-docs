@@ -14,7 +14,6 @@ ms.technology: uwp
 # Create a simple UWP game with DirectX
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 This set of tutorials is a code walkthrough of a simple UWP DirectX game sample. In this walkthrough, you'll learn how to create a simple UWP game using DirectX and C++.
 

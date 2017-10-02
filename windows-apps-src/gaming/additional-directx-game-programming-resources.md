@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, programming
 # Game programming resources
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 For more info about game programming on Windows, check out the following resources.

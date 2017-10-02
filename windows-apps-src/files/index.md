@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
  # Files, folders, and libraries
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 You use the APIs in the [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346), [Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791), and [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) namespaces to read and write text and other data formats in files, and to manage files and folders. In this section, you'll also learn about reading and writing app settings, about file and folder pickers, and about special sand-boxed locations such as the Video/Music library.
 

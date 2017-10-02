@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Best practices for your app's startup performance
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Create Universal Windows Platform (UWP) apps with optimal startup times by improving the way you handle launch and activation.
 

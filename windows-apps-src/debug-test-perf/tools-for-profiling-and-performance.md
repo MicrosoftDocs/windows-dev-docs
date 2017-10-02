@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Tools for profiling and performance
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Microsoft provides several tools to help you improve the performance of your Universal Windows Platform (UWP) app. Follow these links to learn how to use these tools.
 

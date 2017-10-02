@@ -13,7 +13,6 @@ keywords: windows 10, uwp
 
 # Manual control of the System Media Transport Controls
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Starting with Windows 10, version 1607, UWP apps that use the [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) class to play media are automatically integrated with the System Media Transport Controls (SMTC) by default. This is the recommended way of interacting with the SMTC for most scenarios. For more information on customizing the SMTC's default integration with **MediaPlayer**, see [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md).
 

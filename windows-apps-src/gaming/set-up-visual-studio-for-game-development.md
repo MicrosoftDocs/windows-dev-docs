@@ -14,7 +14,6 @@ keywords: windows 10, uwp, games, visual studio, tools, directx
 # Visual Studio tools for game programming
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **Summary**
 
@@ -140,7 +139,6 @@ Visual Studio provides graphics-specific debugging tools. Use these tools to deb
 
 For more information, see [Debugging DirectX Graphics](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

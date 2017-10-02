@@ -13,7 +13,6 @@ keywords: windows 10, uwp, contacts, calendar, appointments, email messages
 
 # Contacts and calendar
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 You can let your users access their contacts and appointments so they can share content, email, calendar info, or messages with each other, or whatever functionality you design.
 

@@ -75,10 +75,6 @@ We recommend 12px margins on your content’s sides when NavigationView is in Mi
 
 ## Visual style
 
-<div class="microsoft-internal-note">
-Redlines for this control are available on [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav?t=Fluent%20Design%20System%7CControls%20%26%20Patterns%7CNavigationView).<br/><br/>
-</div>
-
 Navigation items have support for selected, disabled, pointer over, pressed, and focused visual states.
 
 ![NavigationView items states: disabled, pointer over, pressed, focused](images/navview_item-states.png)
@@ -177,7 +173,19 @@ The following is a simple example of how you can incorporate NavigationView into
     <NavigationView x:Name="NavView"
                     ItemInvoked="NavView_ItemInvoked"
                     Loaded="NavView_Loaded">
-    <!-- Load NavigationViewItems in NavView_Loaded. -->
+
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home" Tag="home">
+                <NavigationViewItem.Icon>
+                    <FontIcon Glyph="&#xE10F;"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItemSeparator/>
+            <NavigationViewItemHeader Content="Main pages"/>
+            <NavigationViewItem Icon="AllApps" Content="Apps" Tag="apps"/>
+            <NavigationViewItem Icon="Video" Content="Games" Tag="games"/>
+            <NavigationViewItem Icon="Audio" Content="Music" Tag="music"/>
+        </NavigationView.MenuItems>
 
         <NavigationView.AutoSuggestBox>
             <AutoSuggestBox x:Name="ASB" QueryIcon="Find"/>
@@ -228,19 +236,14 @@ The following is a simple example of how you can incorporate NavigationView into
 ```csharp
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
-    NavView.MenuItems.Add(new NavigationViewItem()
-        { Content = "Apps", Icon = new SymbolIcon(Symbol.AllApps), Tag = "apps" });
-    NavView.MenuItems.Add(new NavigationViewItem()
-        { Content = "Games", Icon = new SymbolIcon(Symbol.Video), Tag = "games" });
-    NavView.MenuItems.Add(new NavigationViewItem()
-        { Content = "Music", Icon = new SymbolIcon(Symbol.Audio), Tag = "music" });
-    NavView.MenuItems.Add(new NavigationViewItemSeparator());
+    // you can also add items in code behind
+    NavView.MenuItems.Add(new NavigationViewItemSeparator()); 
     NavView.MenuItems.Add(new NavigationViewItem()
         { Content = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
 
     foreach (NavigationViewItem item in NavView.MenuItems)
     {
-        if (item.Tag.ToString() == "play")
+        if (item.Tag.ToString() == "apps")
         {
             NavView.SelectedItem = item;
             break;
@@ -250,29 +253,69 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
-    if (args.IsSettingsInvoked == true)
+    if (args.IsSettingsInvoked)
     {
         ContentFrame.Navigate(typeof(SettingsPage));
     }
     else
     {
-        switch ((args.InvokedItem as NavigationViewItem).Tag)
+        switch (args.InvokedItem)
         {
-          case "apps":
+          case "Home":
+              ContentFrame.Navigate(typeof(HomePage));
+              break;
+
+          case "Apps":
               ContentFrame.Navigate(typeof(AppsPage));
               break;
 
-          case "games":
+          case "Games":
               ContentFrame.Navigate(typeof(GamesPage));
               break;
 
-          case "music":
+          case "Music":
               ContentFrame.Navigate(typeof(MusicPage));
               break;
 
-          case "content":
+          case "My content":
               ContentFrame.Navigate(typeof(MyContentPage));
               break;
+        }
+    }
+}
+
+private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+{
+    if (args.IsSettingsSelected)
+    {
+        ContentFrame.Navigate(typeof(SettingsPage));
+    }
+    else
+    {
+
+        NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+
+        switch (item.Tag)
+        {
+          case "home":
+              ContentFrame.Navigate(typeof(HomePage));
+              break;
+
+            case "apps":
+                ContentFrame.Navigate(typeof(AppsPage));
+                break;
+
+            case "games":
+                ContentFrame.Navigate(typeof(GamesPage));
+                break;
+
+            case "music":
+                ContentFrame.Navigate(typeof(MusicPage));
+                break;
+
+            case "content":
+                ContentFrame.Navigate(typeof(MyContentPage));
+                break;
         }
     }
 }
@@ -290,17 +333,52 @@ To change the background of NavigationView's main area, set its `Background` pro
 The Pane's background shows in-app acrylic when NavigationView is in Minimal or Compact mode, and background acrylic in Expanded mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
 
 ```xaml
-    <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground" BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
-    <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground" BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
-```  
+<AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
+              BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
+<AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
+              BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
+```
 
+## Extending your app into the title bar
+
+For a seamless, flowing look within your app's window, we recommend extending NavigationView and its acrylic pane up into your app's title bar area. This avoids the visually unattractive shape created by the title bar, the solid-colored NavigationView Content, and the acrylic of NavigationView's pane.
+
+To do so, add the following code to your App.xaml.cs.
+
+```csharp
+//draw into the title bar
+CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+
+//remove the solid-colored backgrounds behind the caption controls and system back button
+ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+titleBar.ButtonBackgroundColor = Colors.Transparent;
+titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+```
+
+Drawing into the title bar has the side-effect of hiding your app's title. To help users, restore the title by adding your own TextBlock. Add the following markup to the root page containing your NavigationView.
+
+```xaml
+<!-- Page attribute -->
+xmlns:appmodel="using:Windows.ApplicationModel"
+
+<TextBlock x:Name="AppTitle" Style="{StaticResource CaptionTextBlockStyle}" Text="{x:Bind appmodel:Package.Current.DisplayName}" IsHitTestVisible="False"/>
+```
+
+You'll also need to adjust AppTitle's margins depending on back button's visibility.
+
+```csharp
+CoreApplicationViewTitleBar titleBar = CoreApplication.GetCurrentView().TitleBar;
+titleBar.LayoutMetricsChanged += TitleBar_LayoutMetricsChanged;
+
+private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+{
+    AppTitle.Margin = new Thickness(CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset + 12, 8, 0, 0);
+}
+```
 
 ## Related topics
 
-* [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
-* [Master/details](master-details.md)
-* [Pivot control](tabs-pivot.md)
-* [Navigation basics](../layout/navigation-basics.md)
- 
-
- 
+- [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+- [Master/details](master-details.md)
+- [Pivot control](tabs-pivot.md)
+- [Navigation basics](../layout/navigation-basics.md)

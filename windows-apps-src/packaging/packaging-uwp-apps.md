@@ -12,7 +12,6 @@ keywords: windows 10, uwp
 ---
 # Package a UWP app with Visual Studio
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to create a UWP app package for it. If you don't want to distribute your app through the Store, you can sideload the app package directly to a device. This article describes the process of configuring, creating, and testing a UWP app package using Visual Studio. For more information about sideloading enterprise and line-of-business (LOB) apps, see [Sideload LOB Apps in Windows 10](https://docs.microsoft.com/windows/application-management/sideload-apps-in-windows-10).
 
