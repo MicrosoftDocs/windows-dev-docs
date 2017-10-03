@@ -687,6 +687,7 @@
 #### [Respond to system events with background tasks](launch-resume/respond-to-system-events-with-background-tasks.md)
 #### [Run a background task on a timer](launch-resume/run-a-background-task-on-a-timer-.md)
 #### [Run a background task when your UWP app is updated](launch-resume/run-a-background-task-during-updatetask.md)
+#### [Run in the background indefinitely](launch-resume/run-in-the-background-indefinetly.md)
 #### [Set conditions for running a background task](launch-resume/set-conditions-for-running-a-background-task.md)
 #### [Trigger a background task from your app](launch-resume/trigger-background-task-from-app.md)
 #### [Update a live tile from a background task](launch-resume/update-a-live-tile-from-a-background-task.md)
