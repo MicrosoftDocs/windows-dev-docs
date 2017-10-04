@@ -1,50 +1,58 @@
 ---
-author: Mtoepke
+author: eliotcowley
 title: Introduction to Xbox One tools
 description: The Xbox One-specific tool Dev Home, using the Windows Device Portal.
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: elcowle
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, xbox one, tools
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ---
 
 # Introduction to Xbox One tools
 
-This section covers the Xbox One-specific tool _Dev Home_, using the Windows Device Portal.
+This section covers how to access the Xbox Device Portal through the Dev Home app.
 
 ## Dev Home
 
-_Dev Home_ is a tools experience on the Xbox One Development Kit designed to aid developer productivity. Dev Home offers functionality to manage and configure your dev kit.
+Dev Home is a tools experience on the Xbox One Development Kit designed to aid developer productivity. Dev Home offers functionality to manage and configure your dev kit.
 
-For more information about Dev Home, see [Developer Home on the Console](dev-home.md).
+Dev Home is the default app that is opened when your console in Developer Mode boots up. You can also open Dev Home by selecting the **Dev Home** tile on the home screen. If there is no tile present, the console is not in Developer Mode.
 
-## Windows Device Portal
-Windows Device Portal (WDP) is a OneCore device management tool that allows a browser-based device management experience.
+For more information about Dev Home, see [Developer Home on the Console (Dev Home)](dev-home.md).
 
-> [!NOTE]
-> For more information on WDP, see the [Windows Device Portal overview](../debug-test-perf/device-portal.md).
+## Xbox Device Portal
+The Xbox Device Portal is a browser-based device management tool that allows you to add games and apps, add Xbox Live test accounts, change sandboxes, and much more.
 
-To enable WDP on your Xbox One console:
+<!-- > [!NOTE]
+> For more information on the Xbox Device Portal, see the [Windows Device Portal overview](../debug-test-perf/device-portal.md). -->
+<!--TODO: Where is the documentation for the Xbox Device Portal?-->
 
-1. Select the Dev Home tile on the home screen.
+To enable the Xbox Device Portal on your Xbox One console:
 
-  ![Select Dev Home tile](images/windowsdeviceportal_1.png)
+1. Select the **Dev Home** tile on the home screen.
 
-2. Within Dev Home, navigate to the **Remote management** tool.
+  ![Select Dev Home tile](images/introduction-to-xbox-one-tools-1.png)
 
-  ![Remote management tool](images/windowsdeviceportal_2.png)
+2. Within Dev Home, navigate to the **Home** tab, and in the **Remote Access** section, select **Remote Access Settings**.
 
-3. Select __Manage Windows Device Portal__, and then press __A__.
-4. Select the __Enable Windows Device Portal__ check box.
-5. Enter a __Username__ and __Password__, and save them. These are used to authenticate access to your dev kit from a browser.
-6. Close the __Settings__ page, and note the URL listed on the _Remote Management_ tool to connect.
-7. Enter the URL in your browser, and then sign in with the credentials you configured.
-8. You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known trusted publisher. Click **Continue to this website** to access the Windows Device Portal.
+  ![Remote management tool](images/introduction-to-xbox-one-tools-2.png)
 
-  ![Security certificate warning](images/security_cert_warning.jpg)
+3. Select the **Enable Xbox Device Portal** checkbox.
+
+4. Under **Authentication**, select the **Require authentication to remotely access this console from the web or PC tools** checkbox.
+
+5. Enter a **User name** and __Password__, and select **Save**. These credentials are used to authenticate access to your dev kit from a browser.
+
+6. Select **Close**, and on the **Home** tab, note the URL listed in the **Remote Access** tool.
+
+7. Enter the URL in your browser. You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known, trusted publisher. On Edge, click **Details** and then **Go on to the webpage** to access the Xbox Device Portal.
+
+    ![Security certificate warning](images/introduction-to-xbox-one-tools-3.png)
+
+8. Sign in with the credentials you configured.
 
 ## Xbox Dev Mode Companion
 Xbox Dev Mode Companion is a tool that allows you to work on your console without leaving your PC. The app allows you to view the console screen and send input to it. For more information, see [Xbox Dev Mode Companion](xbox-dev-mode-companion.md).
@@ -53,6 +61,3 @@ Xbox Dev Mode Companion is a tool that allows you to work on your console withou
 - [How to use Fiddler with Xbox One when developing for UWP](uwp-fiddler.md)
 - [Windows Device Portal overview](../debug-test-perf/device-portal.md)
 - [UWP on Xbox One](index.md)
-
-
-----
