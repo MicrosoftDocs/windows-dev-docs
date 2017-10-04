@@ -25,10 +25,9 @@ Prepare your app for localization to other markets, languages, or regions. Befor
 
 Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](put-ui-strings-into-resources.md).
 
-Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).
 
 ## Add contextual comments.
-
 
 Add localization comments to your app resource files. The comments are visible to the localizer, and should provide contextual information that helps the localizer to accurately translate the resources. The comments should also provide sufficient constraint information on the resource, so that translation does not break the software. Optionally, the comments can be logged by the Makepri.exe tool.
 
@@ -166,7 +165,7 @@ Sorting follows the **Regional Control Panel** format:
 
 * [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)
 * [Put UI strings into resources](put-ui-strings-into-resources.md)
-* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md)
  
 
  
