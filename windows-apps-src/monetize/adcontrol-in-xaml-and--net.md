@@ -4,7 +4,7 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: Learn how to use the AdControl class to display banner ads in a XAML app for Windows 10 (UWP).
 title: AdControl in XAML and .NET
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -120,11 +120,11 @@ This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/lib
 
 1. Make sure your use of banner ads in your app follows our [guidelines for banner ads](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads).
 
-2.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
+2.  In the Dev Center dashboard, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
     > [!NOTE]
     > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
-3. You can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
+3. You can optionally enable ad mediation for the **AdControl** by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
 
 4.  In your code, replace the test ad unit values (**ApplicationId** and **AdUnitId**) with the live values you generated in Dev Center.
 
@@ -135,7 +135,7 @@ This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/lib
 <span id="manage" />
 ## Manage ad units for multiple ad controls in your app
 
-You can use multiple **AdControl** objects in a single app (for example, each page in your app might host a different **AdControl** object). In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+You can use multiple **AdControl** objects in a single app (for example, each page in your app might host a different **AdControl** object). In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
 
 > [!IMPORTANT]
 > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.

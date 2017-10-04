@@ -4,7 +4,7 @@ ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: Learn how to include interstitial ads in a UWP app for Windows 10 using the Microsoft Advertising SDK.
 title: Interstitial ads
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -207,11 +207,11 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 
 1. Make sure your use of interstitial ads in your app follows our [guidelines for interstitial ads](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
-2.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, choose **Video interstitial** or **Banner interstitial**, depending on what type of interstitial ad you are showing. Make note of both the ad unit ID and the application ID.
+2.  In the Dev Center dashboard, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, choose **Video interstitial** or **Banner interstitial**, depending on what type of interstitial ad you are showing. Make note of both the ad unit ID and the application ID.
     > [!NOTE]
     > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
-3. You can optionally enable ad mediation for the **InterstitialAd** by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
+3. You can optionally enable ad mediation for the **InterstitialAd** by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks such as Taboola and Smaato and ads for Microsoft app promotion campaigns.
 
 4.  In your code, replace the test ad unit values with the live values you generated in Dev Center.
 
@@ -222,7 +222,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 <span id="manage" />
 ## Manage ad units for multiple interstitial ad controls in your app
 
-You can use multiple **InterstitialAd** controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+You can use multiple **InterstitialAd** controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
 
 > [!IMPORTANT]
 > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
