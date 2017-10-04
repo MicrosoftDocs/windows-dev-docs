@@ -102,7 +102,7 @@ You must also add the **xmlns:rescap** namespace declaration in the top of the P
     IgnorableNamespaces="uap mp wincap rescap">
 ```
 **Important**  
-Special and restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Follow the steps below to request access to a restricted capability before submitting your app to the store.
+Special and restricted capabilities are intended for very specific scenarios. The use of these capabilities is highly restricted and subject to additional Store onboarding policy and review. Follow the steps below to request access to a restricted capability before submitting your app to the store. Note that you can sideload apps with restricted capabilities specified in the app package manifest without any restrictions. 
 1. Determine if you are eligible to submit your app to the store with a specific restricted capability by looking at the table below. If you are not eligible, any requests you make will be denied.
 2. If you are eligible visit the [Windows Developer support page](https://developer.microsoft.com/windows/support).
 3. Under Contact Us, select the Issue Type **Applications** and then Subcategory **Other**. 
