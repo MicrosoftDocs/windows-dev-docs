@@ -8,6 +8,7 @@ ms.date: 8/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+redirect_url: windows-10-version-1710-api-diff
 ---
 
 # New APIs in the Windows 10 SDK Preview Build 16267

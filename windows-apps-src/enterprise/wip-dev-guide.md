@@ -151,7 +151,7 @@ Windows Information Protection gives your app permission if your app is on the p
 * [Read data from a file](#read-file)
 * [Read data from a network endpoint](#read-network)
 * [Read data from the clipboard](#read-clipboard)
-* [Read data from a Share contract](#read-contract)
+* [Read data from a Share contract](#read-share)
 
 <span id="read-file" />
 ### Read data from a file

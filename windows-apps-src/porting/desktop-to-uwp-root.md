@@ -32,17 +32,17 @@ Aside from the code that you use to light up Windows 10 experiences, your app re
 
 ## Benefits
 
-Here are some reasons to create a Windows App package for your desktop application:
+Here's some reasons to create a Windows App package for your desktop application:
 
-**Streamlined deployment**. Apps and games that use the bridge have a great deployment experience. This experience ensures that users can confidently install an app and update it. If a user chooses to uninstall the app, it's removed completely with no trace left behind. This reduces time authoring setup experiences and keeping users up-to-date.
+:heavy_check_mark: **Streamlined deployment**. Apps and games that use the bridge have a great deployment experience. This experience ensures that users can confidently install an app and update it. If a user chooses to uninstall the app, it's removed completely with no trace left behind. This reduces time authoring setup experiences and keeping users up-to-date.
 
-**Automatic updates and licensing**. Your app can participate in the Windows Store's built-in licensing and automatic update facilities. Automatic update is a highly reliable and efficient mechanism, because only the changed parts of files are downloaded.
+:heavy_check_mark: **Automatic updates and licensing**. Your app can participate in the Windows Store's built-in licensing and automatic update facilities. Automatic update is a highly reliable and efficient mechanism, because only the changed parts of files are downloaded.
 
-**Increased reach and simplified monetization**. Choosing to distribute through the Windows Store expands your reach to millions of Windows 10 users, who can acquire apps, games and in-app purchases with local payment options.
+:heavy_check_mark: **Increased reach and simplified monetization**. Choosing to distribute through the Windows Store expands your reach to millions of Windows 10 users, who can acquire apps, games and in-app purchases with local payment options.
 
-**Add UWP features**.  At your own pace, you can add UWP features to your app's package, like a XAML user-interface, live tile updates, UWP background tasks, app services, and many more.
+:heavy_check_mark: **Add UWP features**.  At your own pace, you can add UWP features to your app's package, like a XAML user-interface, live tile updates, UWP background tasks, app services, and many more.
 
-**Broadened use-cases across device**. Using the bridge, you can gradually migrate your code to the Universal Windows Platform to reach every Windows 10 device, including phones, Xbox One and HoloLens.
+:heavy_check_mark: **Broadened use-cases across device**. Using the bridge, you can gradually migrate your code to the Universal Windows Platform to reach every Windows 10 device, including phones, Xbox One and HoloLens.
 
 To view a more complete list of benefits, see [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop).
 
@@ -55,45 +55,47 @@ Next, review the article [Prepare to package your desktop app](desktop-to-uwp-pr
 <span id="convert" />
 ## Package
 
-Here are some tools that you can use to create a Windows app package for your app.
+Here's some tools that you can use to create a Windows app package for your app.
 
 ### Desktop App Converter
 
 While the term "Converter" appears in the name of this tool, it doesn't actually convert your app. Your app remains unchanged. However, this tool generates a Windows app package for you. It can be very convenient in cases where your app makes lots of system modifications, or if you have any uncertainty about what your installer does.
 
-The Desktop App Converter also does a few extra things for you. Here's a few of them.
+The Desktop App Converter translates the actions of your installer to the virtual file and registry system that the packaged version of your app will use. The Desktop App Converter also does a few extra things for you. Here's a few of them.
 
-* Automatically register your preview handlers, thumbnail handlers, property handlers, firewall rules, URL flags.
+:heavy_check_mark: Automatically register your preview handlers, thumbnail handlers, property handlers, firewall rules, URL flags.
 
-* Automatically register file type mappings that enable users to group files by using the **Kind** column in File Explorer.
+:heavy_check_mark: Automatically registers file type mappings that enable users to group files by using the **Kind** column in File Explorer.
 
-* Register your public COM servers.
+:heavy_check_mark: Registers your public COM servers.
 
-* Generate a certificate to that you can use to run your app.
+:heavy_check_mark: Generates a certificate to that you can use to run your app.
 
-* Validate your app against Desktop Bridge and Windows Store requirements.
+:heavy_check_mark: Validates your app against Desktop Bridge and Windows Store requirements.
+
+Another great reason to use the Desktop App Converter is if you maintain your app by using a different development environment other than Visual Studio. You can use the Desktop App Converter even if your app doesn't have an installer.
 
 See [Package an app using the Desktop App Converter (Desktop Bridge)](desktop-to-uwp-run-desktop-app-converter.md)
 
-### Manual packaging
-
-If you like granular control over your conversion, you can create a manifest file, and then run the **MakeAppx.exe** tool to create your Windows app package.
-
-This approach might make sense if you're familiar with the changes that your installer makes to the system, or if you don't have an installer and the way that you install your app is by physically copying files to a folder location or by using commands like **xcopy**. Although don't let the absence of an installer move you to manually package your app. You can use the Desktop App Converter to package your app even if you don't have an installer.
-
-See [Package an app manually (Desktop Bridge)](desktop-to-uwp-manual-conversion.md).
-
 ### Visual Studio
 
-This option is similar to the manual option described above except Visual Studio does a few things for you such as generate an app package and the visual assets for your app. Think of Visual Studio as a tool that you can use to manually package your app along with a few extra conveniences.
+If you maintain your application by using Visual Studio, and your application doesn't have an installer or your installer doesn't perform too many complicated tasks, consider using Visual Studio instead.
+
+Visual Studio makes it abundantly easy to create a package. You'll add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio. Here's a few other things you can do with it.
+
+:heavy_check_mark: Automatically generate visual assets.
+
+:heavy_check_mark: Make changes to your manifest by using a visual designer.
+
+:heavy_check_mark: Generate your package by using a wizard.
+
+:heavy_check_mark: Easily assign an identity to your app from a name that you've already reserved in the Windows Dev Center dashboard.
 
 See [Package a .NET app by using Visual Studio (Desktop Bridge)](desktop-to-uwp-packaging-dot-net.md)
 
 ### Third-party installer
 
  Several popular third-party products and installers now support the Desktop Bridge. You can use them to generate MSI installers or app packages with only a few clicks. While we don't produce documentation on how to use these tools, visit their websites to learn more.
-
- Here's a few options:
 
 #### Advanced Installer
 
@@ -111,10 +113,9 @@ See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) f
 
 #### Cloudhouse Compatibility Containers
 
-For Enterprise customers who have line of business applications that are incompatible with Windows 10 and 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and 7 apps to run on Windows 10 and then converted to run on the Universal Windows Platform (UWP) for delivery through Windows Store for Business, or Microsoft InTune without changing the source code. Register for a [Free Trial](http://www.cloudhouse.com/free-trial).
+For Enterprise customers who have line of business applications that are incompatible with Windows 10 and 10 S, Cloudhouse’s Compatibility Containers enable Windows XP and 7 apps to run on Windows 10 and then converts them to run on the Universal Windows Platform (UWP) for delivery through Windows Store for Business, or Microsoft InTune without changing the source code. Register for a [Free Trial](http://www.cloudhouse.com/free-trial).
 
-Cloudhouse provide an Auto Packager for packaging line of business applications into [Compatibility Containers](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications) on the operating system the apps runs on today e.g. Windows XP, and [prepare it for conversion](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905) to UWP. The Container is then converted to the new Windows app package format by integrating it with Microsoft’s Desktop App Converter tool.
-
+Cloudhouse provides an Auto Packager for packaging line of business applications into [Compatibility Containers](https://docs.cloudhouse.com/37613-overview/266723-compatibility-containers-for-applications) on the operating systems that the apps runs on today (For example: Windows XP), and then [prepare it for conversion](https://docs.cloudhouse.com/37613-overview/266725-compatibility-containers-for-desktop-bridge?from_search=17883905) to UWP. The Container is then converted to the new Windows app package format by integrating it with Microsoft’s Desktop App Converter tool.
 <div style="float: left; padding: 10px; width: 20%">
      ![Cloudhouse-Container Logo](images/desktop-to-uwp/cloudhouse-container-logo.png)
 </div>
@@ -168,6 +169,12 @@ Learn more in this [eBook](https://na01.safelinks.protection.outlook.com/?url=ht
 
 See [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
+### Manual packaging
+
+As a final option, you can convert your app without using any of these tools. If you want that granular control over your conversion, you can create a manifest file, and then run the **MakeAppx.exe** tool to create your Windows app package.
+
+See [Package an app manually (Desktop Bridge)](desktop-to-uwp-manual-conversion.md).
+
 ## Integrate
 
 If your app needs to integrate with the system (For example: establish firewall rules), describe those things in the package manifest of your app and the system will do the rest. For most of these tasks, you won't have to write any code at all. With a bit of XML in the manifest, you can do things like start a process when the user logs on, integrate your app into File Explorer, and add your app a list of print targets that appear in other apps.
@@ -188,7 +195,14 @@ See [Extend your desktop application with modern UWP components](desktop-to-uwp-
 
 ## Migrate
 
-You can gradually migrate your older code to UWP while still retaining the ability to run and publish your app on Windows Desktop. Once you’re fully migrated to UWP (and your app no longer contains any WPF/Win32 components), you can reach all Windows devices including phones, Xbox One and HoloLens.
+While there's no tool that can convert a desktop application to a UWP app, you can reuse a lot of your existing code, and that lowers the cost of building one. You can do that by moving as much business logic as you can into .NET Standard 2.0 libraries.
+
+The .NET Standard 2.0 includes a massive increase in the number of .NET APIs along with a compatibility shim for your favorite NuGet packages and third party libraries.
+
+Migrate your code to .NET Standard libraries, and then create a Universal Windows Platform (UWP) app to reach all Windows 10 devices.
+
+See [Share code between a desktop app and a UWP app](desktop-to-uwp-migrate.md)
+
 
 ## Test
 

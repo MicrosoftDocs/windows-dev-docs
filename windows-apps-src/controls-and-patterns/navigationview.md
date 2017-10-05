@@ -172,6 +172,7 @@ The following is a simple example of how you can incorporate NavigationView into
 
     <NavigationView x:Name="NavView"
                     ItemInvoked="NavView_ItemInvoked"
+                    SelectionChanged="NavView_SelectionChanged"
                     Loaded="NavView_Loaded">
 
         <NavigationView.MenuItems>
@@ -261,10 +262,13 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
     {
         switch (args.InvokedItem)
         {
+<<<<<<< HEAD
+=======
           case "Home":
               ContentFrame.Navigate(typeof(HomePage));
               break;
 
+>>>>>>> master
           case "Apps":
               ContentFrame.Navigate(typeof(AppsPage));
               break;
@@ -297,10 +301,13 @@ private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelec
 
         switch (item.Tag)
         {
+<<<<<<< HEAD
+=======
           case "home":
               ContentFrame.Navigate(typeof(HomePage));
               break;
 
+>>>>>>> master
             case "apps":
                 ContentFrame.Navigate(typeof(AppsPage));
                 break;

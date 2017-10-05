@@ -43,6 +43,9 @@
                 <Button Content="add stabilization fx" HorizontalAlignment="Stretch" Click="AddStabilizationEffectButton_Click"/>
                 <Button Content="rmv stabilization fx" HorizontalAlignment="Stretch" Click="RemoveStabilizationEffectButton_Click"/>
             </StackPanel>
+            <StackPanel>
+                <Button Content="multirecord" HorizontalAlignment="Stretch" Click="MultiRecord_Click"/>
+            </StackPanel>
 
         </StackPanel>
 

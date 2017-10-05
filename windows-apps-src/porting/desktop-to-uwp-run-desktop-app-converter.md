@@ -40,37 +40,17 @@ Here's a few extra things it can do for you.
 
 **Windows 10 Creators Update**
 
-<div style="float: left; ">
-    ![Check](images/desktop-to-uwp/check.png)
-</div>
+:heavy_check_mark: Automatically register your preview handlers, thumbnail handlers, property handlers, firewall rules, URL flags.
 
-Automatically register your preview handlers, thumbnail handlers, property handlers, firewall rules, URL flags.
+:heavy_check_mark: Automatically register file type mappings that enable users to group files by using the **Kind** column in File Explorer.
 
-<div style="float: left; ">
-    ![Check](images/desktop-to-uwp/check.png)
-</div>
-
-Automatically register file type mappings that enable users to group files by using the **Kind** column in File Explorer.
-
-<div style="float: left; ">
-    ![Check](images/desktop-to-uwp/check.png)
-</div>
-
-Register your public COM servers.
+:heavy_check_mark: Register your public COM servers.
 
 **Windows 10 Anniversary Update or later**
 
-<div style="float: left; ">
-    ![Check](images/desktop-to-uwp/check.png)
-</div>
+:heavy_check_mark: Automatically sign your package so that you can test your app.
 
-Automatically sign your package so that you can test your app.
-
-<div style="float: left; ">
-    ![Check](images/desktop-to-uwp/check.png)
-</div>
-
-Validate your app against Desktop Bridge and Windows Store requirements.
+:heavy_check_mark: Validate your app against Desktop Bridge and Windows Store requirements.
 
 To find a complete list of options, see the [Parameters](#command-reference) section of this guide.
 
@@ -381,46 +361,7 @@ example2: PEHeaderCertFixTool c:\package.appx /c
 example3: PEHeaderCertFixTool c:\myapp /c /v
 ```
 
-## Known issues and disclosures
-
-### Known issues and workarounds
-
-Here's some known issues and some things you can try to resolve them.
-
-#### E_CREATING_ISOLATED_ENV_FAILED an E_STARTING_ISOLATED_ENV_FAILED errors    
-
-If you receive either of these errors, make sure that you're using a valid base image from the [download center](https://aka.ms/converterimages).
-If you’re using a valid base image, try using ``-Cleanup All`` in your command.
-If that does not work, please send us your logs at converter@microsoft.com to help us investigate.
-
-#### New-ContainerNetwork: The object already exists error
-
-You might receive this error when you setup a new base image. This can happen if you have a Windows Insider flight on a developer machine that previously had the Desktop App Converter installed.
-
-To resolve this issue, try running the command `Netsh int ipv4 reset` from an elevated command prompt, and then reboot your machine.
-
-#### Your .NET app is compiled with the "AnyCPU" build option and fails to install
-
-This can happen if the main executable or any of the dependencies were placed anywhere in the **Program Files** or **Windows\System32** folder hierarchy.
-
-To resolve this issue, try using your architecture-specific desktop installer (32 bit or 64 bit) to generate a Windows app package.
-
-#### Publishing public side-by-side Fusion assemblies won't work
-
- During install, an application can publish public side-by-side Fusion assemblies, accessible to any other process. During process activation context creation, these assemblies are retrieved by a system process named CSRSS.exe. When this is done for a converted process, activation context creation and module loading of these assemblies will fail. The side-by-side Fusion assemblies are registered in the following locations:
-  + Registry: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
-  + File System: %windir%\\SideBySide
-
-This is a known limitation and no workaround currently exists. That said, Inbox assemblies, like ComCtl, are shipped with the OS, so taking a dependency on them is safe.
-
-#### Error found in XML. The 'Executable' attribute is invalid - The value 'MyApp.EXE' is invalid according to its datatype
-
-This can happen if the executables in your application have a capitalized **.EXE** extension. Although, the casing of this extension shouldn't affect whether your app runs, this can cause the DAC to generate this error.
-
-To resolve this issue, try specifying the **-AppExecutable** flag when you package, and use the lower case ".exe" as the extension of your main executable (For example: MYAPP.exe).    Alternately you can change the casing for all executables in your app from lowercase to uppercase (For example: from .EXE to .exe).
-
-
-### Telemetry from Desktop App Converter
+## Telemetry from Desktop App Converter
 
 Desktop App Converter may collect information about you and your use of the software and send this info to Microsoft. You can learn more about Microsoft's data collection and use in the product documentation and in the [Microsoft Privacy Statement](http://go.microsoft.com/fwlink/?LinkId=521839). You agree to comply with all applicable provisions of the Microsoft Privacy Statement.
 
@@ -438,6 +379,12 @@ The Desktop App Converter does not support Unicode; thus, no Chinese characters 
 
 ## Next steps
 
+**Resolve problems and find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+You can also refer to [this](desktop-to-uwp-known-issues.md#app-converter) list of known issues.
+
 **Run your app / find and fix issues**
 
 See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
@@ -445,10 +392,6 @@ See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uw
 **Distribute your app**
 
 See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 **Give feedback about this article**
 

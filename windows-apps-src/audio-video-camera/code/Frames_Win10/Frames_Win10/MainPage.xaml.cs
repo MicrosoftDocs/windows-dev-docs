@@ -24,6 +24,7 @@ using Windows.Graphics.Imaging;
 using System.Threading;
 using Windows.UI.Core;
 using System.Threading.Tasks;
+using Windows.Media.Core;
 //</SnippetFramesUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -37,16 +38,16 @@ namespace Frames_Win10
     {
 
         //<SnippetDeclareMediaCapture>
-        MediaCapture _mediaCapture;
+        MediaCapture mediaCapture;
         //</SnippetDeclareMediaCapture>
 
         //<SnippetDeclareMediaFrameReader>
-        MediaFrameReader _mediaFrameReader;
+        MediaFrameReader mediaFrameReader;
         //</SnippetDeclareMediaFrameReader>
 
         //<SnippetDeclareBackBuffer>
-        private SoftwareBitmap _backBuffer;
-        private bool _taskRunning = false;
+        private SoftwareBitmap backBuffer;
+        private bool taskRunning = false;
         //</SnippetDeclareBackBuffer>
 
         public MainPage()
@@ -57,7 +58,7 @@ namespace Frames_Win10
         private async void ActionButton_Click(object sender, RoutedEventArgs e)
         {
             //<SnippetImageElementSource>
-            _imageElement.Source = new SoftwareBitmapSource();
+            imageElement.Source = new SoftwareBitmapSource();
             //</SnippetImageElementSource>
 
             //<SnippetFindAllAsync>
@@ -93,7 +94,7 @@ namespace Frames_Win10
             //</SnippetSelectColor>
 
             //<SnippetInitMediaCapture>
-            _mediaCapture = new MediaCapture();
+            mediaCapture = new MediaCapture();
 
             var settings = new MediaCaptureInitializationSettings()
             {
@@ -104,7 +105,7 @@ namespace Frames_Win10
             };
             try
             {
-                await _mediaCapture.InitializeAsync(settings);
+                await mediaCapture.InitializeAsync(settings);
             }
             catch (Exception ex)
             {
@@ -114,7 +115,7 @@ namespace Frames_Win10
             //</SnippetInitMediaCapture>
 
 
-            var colorFrameSource = _mediaCapture.FrameSources[colorSourceInfo.Id];
+            var colorFrameSource = mediaCapture.FrameSources[colorSourceInfo.Id];
             var preferredFormat = colorFrameSource.SupportedFormats.Where(format =>
             {
                 return format.VideoFormat.Width == 1920;
@@ -128,9 +129,9 @@ namespace Frames_Win10
             await colorFrameSource.SetFormatAsync(preferredFormat);
 
             //<SnippetCreateFrameReader>
-            _mediaFrameReader = await _mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32);
-            _mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived;
-            await _mediaFrameReader.StartAsync();
+            mediaFrameReader = await mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32);
+            mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived;
+            await mediaFrameReader.StartAsync();
             //</SnippetCreateFrameReader>
         }
         //<SnippetFrameArrived>
@@ -149,30 +150,30 @@ namespace Frames_Win10
                 }
 
                 // Swap the processed frame to _backBuffer and dispose of the unused image.
-                softwareBitmap = Interlocked.Exchange(ref _backBuffer, softwareBitmap);
+                softwareBitmap = Interlocked.Exchange(ref backBuffer, softwareBitmap);
                 softwareBitmap?.Dispose();
 
                 // Changes to XAML ImageElement must happen on UI thread through Dispatcher
-                var task = _imageElement.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                var task = imageElement.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                     async () =>
                     {
                         // Don't let two copies of this task run at the same time.
-                        if (_taskRunning)
+                        if (taskRunning)
                         {
                             return;
                         }
-                        _taskRunning = true;
+                        taskRunning = true;
 
                         // Keep draining frames from the backbuffer until the backbuffer is empty.
                         SoftwareBitmap latestBitmap;
-                        while ((latestBitmap = Interlocked.Exchange(ref _backBuffer, null)) != null)
+                        while ((latestBitmap = Interlocked.Exchange(ref backBuffer, null)) != null)
                         {
-                            var imageSource = (SoftwareBitmapSource)_imageElement.Source;
+                            var imageSource = (SoftwareBitmapSource)imageElement.Source;
                             await imageSource.SetBitmapAsync(latestBitmap);
                             latestBitmap.Dispose();
                         }
 
-                        _taskRunning = false;
+                        taskRunning = false;
                     });
             }
 
@@ -183,10 +184,10 @@ namespace Frames_Win10
         private async Task Cleanup()
         {
             //<SnippetCleanup>
-            await _mediaFrameReader.StopAsync();
-            _mediaFrameReader.FrameArrived -= ColorFrameReader_FrameArrived;
-            _mediaCapture.Dispose();
-            _mediaCapture = null;
+            await mediaFrameReader.StopAsync();
+            mediaFrameReader.FrameArrived -= ColorFrameReader_FrameArrived;
+            mediaCapture.Dispose();
+            mediaCapture = null;
             //</SnippetCleanup>
         }
         private async Task SimpleSelect()
@@ -274,7 +275,7 @@ namespace Frames_Win10
             }
 
             //<SnippetGetPreferredFormat>
-            var colorFrameSource = _mediaCapture.FrameSources[colorSourceInfo.Id];
+            var colorFrameSource = mediaCapture.FrameSources[colorSourceInfo.Id];
             var preferredFormat = colorFrameSource.SupportedFormats.Where(format =>
             {
                 return format.VideoFormat.Width >= 1080
@@ -322,7 +323,7 @@ namespace Frames_Win10
                 return;
             }
 
-            _mediaCapture = new MediaCapture();
+            mediaCapture = new MediaCapture();
 
             var settings = new MediaCaptureInitializationSettings()
             {
@@ -333,7 +334,7 @@ namespace Frames_Win10
             };
             try
             {
-                await _mediaCapture.InitializeAsync(settings);
+                await mediaCapture.InitializeAsync(settings);
             }
             catch (Exception ex)
             {
@@ -341,7 +342,7 @@ namespace Frames_Win10
                 return;
             }
 
-            var colorFrameSource = _mediaCapture.FrameSources[colorSourceInfo.Id];
+            var colorFrameSource = mediaCapture.FrameSources[colorSourceInfo.Id];
             var preferredFormat = colorFrameSource.SupportedFormats.Where(format =>
             {
                 return format.VideoFormat.Width == 1920;
@@ -356,13 +357,13 @@ namespace Frames_Win10
             await colorFrameSource.SetFormatAsync(preferredFormat);
 
 
-            _mediaFrameReader = await _mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32);
-            _mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived_FrameRenderer;
+            mediaFrameReader = await mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32);
+            mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived_FrameRenderer;
 
-            _frameRenderer = new FrameRenderer(_imageElement);
+            _frameRenderer = new FrameRenderer(imageElement);
 
 
-            await _mediaFrameReader.StartAsync();
+            await mediaFrameReader.StartAsync();
         }
         private void ColorFrameReader_FrameArrived_FrameRenderer(MediaFrameReader sender, MediaFrameArrivedEventArgs args)
         {
@@ -418,7 +419,7 @@ namespace Frames_Win10
 
 
             //<SnippetMultiFrameInitMediaCapture>
-            _mediaCapture = new MediaCapture();
+            mediaCapture = new MediaCapture();
 
             var settings = new MediaCaptureInitializationSettings()
             {
@@ -428,17 +429,17 @@ namespace Frames_Win10
                 StreamingCaptureMode = StreamingCaptureMode.Video
             };
 
-            await _mediaCapture.InitializeAsync(settings);
+            await mediaCapture.InitializeAsync(settings);
             //</SnippetMultiFrameInitMediaCapture>
 
 
             //<SnippetGetColorAndDepthSource>
             MediaFrameSource colorSource =
-                _mediaCapture.FrameSources.Values.FirstOrDefault(
+                mediaCapture.FrameSources.Values.FirstOrDefault(
                     s => s.Info.SourceKind == MediaFrameSourceKind.Color);
 
             MediaFrameSource depthSource =
-                _mediaCapture.FrameSources.Values.FirstOrDefault(
+                mediaCapture.FrameSources.Values.FirstOrDefault(
                     s => s.Info.SourceKind == MediaFrameSourceKind.Depth);
 
             if (colorSource == null || depthSource == null)
@@ -452,12 +453,12 @@ namespace Frames_Win10
             //</SnippetGetColorAndDepthSource>
 
             //<SnippetInitMultiFrameReader>
-            _multiFrameReader = await _mediaCapture.CreateMultiSourceFrameReaderAsync(
+            _multiFrameReader = await mediaCapture.CreateMultiSourceFrameReaderAsync(
                 new[] { colorSource, depthSource });
 
             _multiFrameReader.FrameArrived += MultiFrameReader_FrameArrived;
 
-            _frameRenderer = new FrameRenderer(_imageElement);
+            _frameRenderer = new FrameRenderer(imageElement);
 
             MultiSourceMediaFrameReaderStartStatus startStatus =
                 await _multiFrameReader.StartAsync();
@@ -508,9 +509,88 @@ namespace Frames_Win10
         {
             await _multiFrameReader.StopAsync();
             _multiFrameReader.FrameArrived -= MultiFrameReader_FrameArrived;
-            _mediaCapture.Dispose();
-            _mediaCapture = null;
+            mediaCapture.Dispose();
+            mediaCapture = null;
         }
         //</SnippetCorrelationFailure>
+
+        private void SetBufferedFrameAcquisitionMode()
+        {
+            //<SnippetSetBufferedFrameAcquisitionMode>
+            mediaFrameReader.AcquisitionMode = MediaFrameReaderAcquisitionMode.Buffered;
+            //</SnippetSetBufferedFrameAcquisitionMode>
+        }
+
+        private async void MediaSourceFromFrameSource_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+
+
+            //<SnippetMediaSourceSelectGroup>
+            var allGroups = await MediaFrameSourceGroup.FindAllAsync();
+            var eligibleGroups = allGroups.Select(g => new
+            {
+                Group = g,
+
+                // For each source kind, find the source which offers that kind of media frame,
+                // or null if there is no such source.
+                SourceInfos = new MediaFrameSourceInfo[]
+                {
+                    g.SourceInfos.FirstOrDefault(info => info.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front
+                        && info.SourceKind == MediaFrameSourceKind.Color),
+                    g.SourceInfos.FirstOrDefault(info => info.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Back
+                        && info.SourceKind == MediaFrameSourceKind.Color)
+                }
+            }).Where(g => g.SourceInfos.Any(info => info != null)).ToList();
+
+            if (eligibleGroups.Count == 0)
+            {
+                System.Diagnostics.Debug.WriteLine("No source group with front and back-facing camera found.");
+                return;
+            }
+
+            var selectedGroupIndex = 0; // Select the first eligible group
+            MediaFrameSourceGroup selectedGroup = eligibleGroups[selectedGroupIndex].Group;
+            MediaFrameSourceInfo frontSourceInfo = selectedGroup.SourceInfos[0];
+            MediaFrameSourceInfo backSourceInfo = selectedGroup.SourceInfos[1];
+            //</SnippetMediaSourceSelectGroup>
+
+            //<SnippetMediaSourceInitMediaCapture>
+            mediaCapture = new MediaCapture();
+
+            var settings = new MediaCaptureInitializationSettings()
+            {
+                SourceGroup = selectedGroup,
+                SharingMode = MediaCaptureSharingMode.ExclusiveControl,
+                MemoryPreference = MediaCaptureMemoryPreference.Cpu,
+                StreamingCaptureMode = StreamingCaptureMode.Video
+            };
+            try
+            {
+                await mediaCapture.InitializeAsync(settings);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("MediaCapture initialization failed: " + ex.Message);
+                return;
+            }
+            //</SnippetMediaSourceInitMediaCapture>
+
+
+            //<SnippetMediaSourceMediaPlayer>
+            var frameMediaSource1 = MediaSource.CreateFromMediaFrameSource(mediaCapture.FrameSources[frontSourceInfo.Id]);
+            mediaPlayerElement1.SetMediaPlayer(new Windows.Media.Playback.MediaPlayer());
+            mediaPlayerElement1.MediaPlayer.Source = frameMediaSource1;
+            mediaPlayerElement1.AutoPlay = true;
+
+            var frameMediaSource2 = MediaSource.CreateFromMediaFrameSource(mediaCapture.FrameSources[backSourceInfo.Id]);
+            mediaPlayerElement2.SetMediaPlayer(new Windows.Media.Playback.MediaPlayer());
+            mediaPlayerElement2.MediaPlayer.Source = frameMediaSource2;
+            mediaPlayerElement2.AutoPlay = true;
+            //</SnippetMediaSourceMediaPlayer>
+
+        }
     }
 }

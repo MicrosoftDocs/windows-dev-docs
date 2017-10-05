@@ -50,12 +50,12 @@ namespace SimpleCameraPreview_Win10
 
         #region Simple preview access
         //<SnippetDeclareMediaCapture>
-        MediaCapture _mediaCapture;
-        bool _isPreviewing;
+        MediaCapture mediaCapture;
+        bool isPreviewing;
         //</SnippetDeclareMediaCapture>
 
         //<SnippetDeclareDisplayRequest>
-        DisplayRequest _displayRequest = new DisplayRequest();
+        DisplayRequest displayRequest = new DisplayRequest();
         //</SnippetDeclareDisplayRequest>
 
         //<SnippetRegisterSuspending>
@@ -74,10 +74,10 @@ namespace SimpleCameraPreview_Win10
             try
             {
  
-                _mediaCapture = new MediaCapture();
-                await _mediaCapture.InitializeAsync();
+                mediaCapture = new MediaCapture();
+                await mediaCapture.InitializeAsync();
 
-                _displayRequest.RequestActive();
+                displayRequest.RequestActive();
                 DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
             }
             catch (UnauthorizedAccessException)
@@ -89,13 +89,13 @@ namespace SimpleCameraPreview_Win10
 
             try
             {
-                PreviewControl.Source = _mediaCapture;
-                await _mediaCapture.StartPreviewAsync();
-                _isPreviewing = true;
+                PreviewControl.Source = mediaCapture;
+                await mediaCapture.StartPreviewAsync();
+                isPreviewing = true;
             }
             catch (System.IO.FileLoadException)
             {
-                _mediaCapture.CaptureDeviceExclusiveControlStatusChanged += _mediaCapture_CaptureDeviceExclusiveControlStatusChanged;
+                mediaCapture.CaptureDeviceExclusiveControlStatusChanged += _mediaCapture_CaptureDeviceExclusiveControlStatusChanged;
             }
 
         }
@@ -108,7 +108,7 @@ namespace SimpleCameraPreview_Win10
             {
                 ShowMessageToUser("The camera preview can't be displayed because another app has exclusive access");
             }
-            else if (args.Status == MediaCaptureDeviceExclusiveControlStatus.ExclusiveControlAvailable && !_isPreviewing)
+            else if (args.Status == MediaCaptureDeviceExclusiveControlStatus.ExclusiveControlAvailable && !isPreviewing)
             {
                 await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
                 {
@@ -125,23 +125,23 @@ namespace SimpleCameraPreview_Win10
         //<SnippetCleanupCameraAsync>
         private async Task CleanupCameraAsync()
         {
-            if (_mediaCapture != null)
+            if (mediaCapture != null)
             {
-                if (_isPreviewing)
+                if (isPreviewing)
                 {
-                    await _mediaCapture.StopPreviewAsync();
+                    await mediaCapture.StopPreviewAsync();
                 }
 
                 await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                 {
                     PreviewControl.Source = null;
-                    if (_displayRequest != null)
+                    if (displayRequest != null)
                     {
-                        _displayRequest.RequestRelease();
+                        displayRequest.RequestRelease();
                     }
 
-                    _mediaCapture.Dispose();
-                    _mediaCapture = null;
+                    mediaCapture.Dispose();
+                    mediaCapture = null;
                 });
             }
             
@@ -174,9 +174,9 @@ namespace SimpleCameraPreview_Win10
         public async void InitializeMediaCapture()
         {
             //<SnippetInitMediaCapture>
-            _mediaCapture = new MediaCapture();
-            await _mediaCapture.InitializeAsync();
-            _mediaCapture.Failed += MediaCapture_Failed;
+            mediaCapture = new MediaCapture();
+            await mediaCapture.InitializeAsync();
+            mediaCapture.Failed += MediaCapture_Failed;
             //</SnippetInitMediaCapture>
         }
 
@@ -186,7 +186,7 @@ namespace SimpleCameraPreview_Win10
         {
             //<SnippetCaptureToSoftwareBitmap>
             // Prepare and capture photo
-            var lowLagCapture = await _mediaCapture.PrepareLowLagPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Bgra8));
+            var lowLagCapture = await mediaCapture.PrepareLowLagPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Bgra8));
 
             var capturedPhoto = await lowLagCapture.CaptureAsync();
             var softwareBitmap = capturedPhoto.Frame.SoftwareBitmap;
@@ -203,7 +203,7 @@ namespace SimpleCameraPreview_Win10
 
             using (var captureStream = new InMemoryRandomAccessStream())
             {
-                await _mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
+                await mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
 
                 using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
                 {
@@ -230,13 +230,13 @@ namespace SimpleCameraPreview_Win10
         {
 
             //<SnippetRecordLimitationExceeded>
-            _mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
+            mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
             //</SnippetRecordLimitationExceeded>
 
             //<SnippetStartVideoCapture>
             var myVideos = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Videos);
             StorageFile file = await myVideos.SaveFolder.CreateFileAsync("video.mp4", CreationCollisionOption.GenerateUniqueName);
-            _mediaRecording = await _mediaCapture.PrepareLowLagRecordToStorageFileAsync(
+            _mediaRecording = await mediaCapture.PrepareLowLagRecordToStorageFileAsync(
                     MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto), file);
             await _mediaRecording.StartAsync();
             //</SnippetStartVideoCapture>
@@ -311,15 +311,15 @@ namespace SimpleCameraPreview_Win10
         public async Task StartAudioCapture()
         {
 
-            _mediaCapture = new MediaCapture();
-            await _mediaCapture.InitializeAsync();
+            mediaCapture = new MediaCapture();
+            await mediaCapture.InitializeAsync();
 
             //<SnippetStartAudioCapture>
-            _mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
+            mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
 
             var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             StorageFile file = await localFolder.CreateFileAsync("audio.mp3", CreationCollisionOption.GenerateUniqueName);
-            _mediaRecording = await _mediaCapture.PrepareLowLagRecordToStorageFileAsync(
+            _mediaRecording = await mediaCapture.PrepareLowLagRecordToStorageFileAsync(
                     MediaEncodingProfile.CreateMp3(AudioEncodingQuality.High), file);
             await _mediaRecording.StartAsync();
             //</SnippetStartAudioCapture>
@@ -476,13 +476,13 @@ namespace SimpleCameraPreview_Win10
 
             var settings = new MediaCaptureInitializationSettings { VideoDeviceId = _cameraDevice.Id };
 
-            _mediaCapture = new MediaCapture();
-            _mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
-            _mediaCapture.Failed += MediaCapture_Failed;
+            mediaCapture = new MediaCapture();
+            mediaCapture.RecordLimitationExceeded += MediaCapture_RecordLimitationExceeded;
+            mediaCapture.Failed += MediaCapture_Failed;
 
             try
             {
-                await _mediaCapture.InitializeAsync(settings);
+                await mediaCapture.InitializeAsync(settings);
             }
             catch (UnauthorizedAccessException)
             {
@@ -524,10 +524,10 @@ namespace SimpleCameraPreview_Win10
         private async Task StartPreviewWithRotationAsync()
         {
             //<SnippetStartPreviewWithRotationAsync>
-            PreviewControl.Source = _mediaCapture;
+            PreviewControl.Source = mediaCapture;
             PreviewControl.FlowDirection = _mirroringPreview ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
 
-            await _mediaCapture.StartPreviewAsync();
+            await mediaCapture.StartPreviewAsync();
             await SetPreviewRotationAsync();
             //</SnippetStartPreviewWithRotationAsync>
         }
@@ -539,10 +539,10 @@ namespace SimpleCameraPreview_Win10
             {
                 // Add rotation metadata to the preview stream to make sure the aspect ratio / dimensions match when rendering and getting preview frames
                 var rotation = _rotationHelper.GetCameraPreviewOrientation();
-                var props = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview);
+                var props = mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview);
                 Guid RotationKey = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");
                 props.Properties.Add(RotationKey, CameraRotationHelper.ConvertSimpleOrientationToClockwiseDegrees(rotation));
-                await _mediaCapture.SetEncodingPropertiesAsync(MediaStreamType.VideoPreview, props, null);
+                await mediaCapture.SetEncodingPropertiesAsync(MediaStreamType.VideoPreview, props, null);
             }
         }
         //</SnippetSetPreviewRotationAsync>
@@ -573,7 +573,7 @@ namespace SimpleCameraPreview_Win10
 
             try
             {
-                await _mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
+                await mediaCapture.CapturePhotoToStreamAsync(ImageEncodingProperties.CreateJpeg(), captureStream);
             }
             catch (Exception ex)
             {
@@ -612,7 +612,7 @@ namespace SimpleCameraPreview_Win10
                 Guid RotationKey = new Guid("C380465D-2271-428C-9B83-ECEA3B4A85C1");
                 encodingProfile.Video.Properties.Add(RotationKey, PropertyValue.CreateInt32(rotationAngle));
 
-                await _mediaCapture.StartRecordToStorageFileAsync(encodingProfile, videoFile);
+                await mediaCapture.StartRecordToStorageFileAsync(encodingProfile, videoFile);
             }
             catch (Exception ex)
             {
@@ -625,7 +625,7 @@ namespace SimpleCameraPreview_Win10
         {
             try
             {
-                await _mediaCapture.StopRecordAsync();
+                await mediaCapture.StopRecordAsync();
             }
             catch(Exception ex)
             {

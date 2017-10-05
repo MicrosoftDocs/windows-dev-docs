@@ -35,6 +35,7 @@ You don't have to sign your app before you submit it to the store.
 >[!IMPORTANT]
 > If you plan to publish your app to the Windows Store, make sure that your app operates correctly on devices that run Windows 10 S. This is a store requirement. See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).
 
+<span id="side-load" />
 ## Distribute your app without placing it onto the Windows Store
 
 If you'd rather distribute your app without using the store, you can manually distribute apps to one or more devices.
@@ -177,6 +178,8 @@ private void RemoveDesktopApp()
 **Find answers to specific questions**
 
 Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+If you encounter issues publishing your application to the Store, this [blog post](https://blogs.msdn.microsoft.com/appconsult/2017/09/25/preparing-a-desktop-bridge-application-for-the-store-submission/) contains some useful tips.
 
 **Give feedback about this article**
 

@@ -25,11 +25,11 @@ namespace SimpleCameraPreview_Win10
             MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings();
             settings.SharingMode = MediaCaptureSharingMode.ExclusiveControl;
 
-            _mediaCapture = new MediaCapture();
+            mediaCapture = new MediaCapture();
 
             try
             {
-                await _mediaCapture.InitializeAsync(settings);
+                await mediaCapture.InitializeAsync(settings);
             }
             catch (UnauthorizedAccessException)
             {
@@ -42,7 +42,7 @@ namespace SimpleCameraPreview_Win10
 
         private void RegisterForExclusiveControlEvent()
         {
-            _mediaCapture.CaptureDeviceExclusiveControlStatusChanged += MediaCapture_ExclusiveControlStatusChanged;
+            mediaCapture.CaptureDeviceExclusiveControlStatusChanged += MediaCapture_ExclusiveControlStatusChanged;
         }
 
         private void MediaCapture_ExclusiveControlStatusChanged(MediaCapture sender, MediaCaptureDeviceExclusiveControlStatusChangedEventArgs args)

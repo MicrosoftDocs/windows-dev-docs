@@ -13,12 +13,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-        <!--<SnippetMediaPlayerElement>-->
-        <MediaPlayerElement x:Name="mediaPlayerElement"/>
-        <!--</SnippetMediaPlayerElement>-->
+            <!--<SnippetMediaPlayerElement>-->
+            <MediaPlayerElement x:Name="mediaPlayerElement"/>
+            <!--</SnippetMediaPlayerElement>-->
         </Border>
         <StackPanel Grid.Row="1">
-            
+
             <Button x:Name="PlayMediaSourceButton" Content="PlayMediaSource" Click="PlayMediaSourceButton_Click"/>
             <Button x:Name="PlayMediaPlaybackItemButton" Content="PlayMediaPlaybackItem" Click="PlayMediaPlaybackItemButton_Click"/>
             <Button x:Name="PlayMediaPlaybackItemWithCustomTracksButton" Content="PlayMediaPlaybackItemWithCustomTracks" Click="PlayMediaPlaybackItemWithCustomTracks_Click"/>

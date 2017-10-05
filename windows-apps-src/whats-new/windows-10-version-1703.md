@@ -9,14 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
-redirect_url: windows-10-version-latest
 ---
 
 # What's New in Windows 10 for developers
 
 Windows 10 version 1703 and updates to Windows developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
-This is a collection of new and improved features of interest to developers. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 version 1607 API changes](windows-10-version-1703-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
+This is a collection of new and improved features of interest to developers. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 version 1703 API changes](windows-10-version-1703-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
 
 ## Windows 10 version 1703 - March 2017
 

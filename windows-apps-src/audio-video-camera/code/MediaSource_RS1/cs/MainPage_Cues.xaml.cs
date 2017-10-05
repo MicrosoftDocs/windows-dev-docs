@@ -30,121 +30,121 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace MediaSource_RS1
 {
-	/// <summary>
-	/// An empty page that can be used on its own or navigated to within a Frame.
-	/// </summary>
-	public sealed partial class MainPage : Page
-	{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage : Page
+    {
 
 
-		#region SpeechCues
+        #region SpeechCues
 
-		private void SpeechCueButton_Click(object sender, RoutedEventArgs e)
-		{
-			InitSpeechCueScenario();
-		}
-		//<SnippetSpeechInputText>
-		string inputText = "In the lake heading for the mountain, the flea swims";
-		//</SnippetSpeechInputText>
+        private void SpeechCueButton_Click(object sender, RoutedEventArgs e)
+        {
+            InitSpeechCueScenario();
+        }
+        //<SnippetSpeechInputText>
+        string inputText = "In the lake heading for the mountain, the flea swims";
+        //</SnippetSpeechInputText>
 
-		public async void InitSpeechCueScenario()
-		{
-			//<SnippetSynthesizeSpeech>
-			var synthesizer = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+        public async void InitSpeechCueScenario()
+        {
+            //<SnippetSynthesizeSpeech>
+            var synthesizer = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
 
-			// Enable word marker generation (false by default). 
-			synthesizer.Options.IncludeWordBoundaryMetadata = true;
-			synthesizer.Options.IncludeSentenceBoundaryMetadata = true;
+            // Enable word marker generation (false by default). 
+            synthesizer.Options.IncludeWordBoundaryMetadata = true;
+            synthesizer.Options.IncludeSentenceBoundaryMetadata = true;
 
-			var stream = await synthesizer.SynthesizeTextToStreamAsync(inputText);
-			var mediaSource = MediaSource.CreateFromStream(stream, "");
-			var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-			//</SnippetSynthesizeSpeech>
+            var stream = await synthesizer.SynthesizeTextToStreamAsync(inputText);
+            var mediaSource = MediaSource.CreateFromStream(stream, "");
+            var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
+            //</SnippetSynthesizeSpeech>
 
-			//<SnippetSpeechTracksChanged>
-			// Since the tracks are added later we will  
-			// monitor the tracks being added and subscribe to the ones of interest 
-			mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
-			{
-				if (args.CollectionChange == CollectionChange.ItemInserted)
-				{
-					RegisterMetadataHandlerForSpeech(sender, (int)args.Index);
-				}
-				else if (args.CollectionChange == CollectionChange.Reset)
-				{
-					for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
-					{
-						RegisterMetadataHandlerForSpeech(sender, index);
-					}
-				}
-			};
+            //<SnippetSpeechTracksChanged>
+            // Since the tracks are added later we will  
+            // monitor the tracks being added and subscribe to the ones of interest 
+            mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
+            {
+                if (args.CollectionChange == CollectionChange.ItemInserted)
+                {
+                    RegisterMetadataHandlerForSpeech(sender, (int)args.Index);
+                }
+                else if (args.CollectionChange == CollectionChange.Reset)
+                {
+                    for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
+                    {
+                        RegisterMetadataHandlerForSpeech(sender, index);
+                    }
+                }
+            };
 
-			// If tracks were available at source resolution time, itterate through and register: 
-			for (int index = 0; index < mediaPlaybackItem.TimedMetadataTracks.Count; index++)
-			{
-				RegisterMetadataHandlerForSpeech(mediaPlaybackItem, index);
-			}
-			//</SnippetSpeechTracksChanged>
-
-			
-			// Set the source of the MediaElement or MediaPlayerElement to the MediaPlaybackItem 
-			// and start playing the synthesized audio stream. 
-			//<SnippetSpeechPlay>
-			_mediaPlayer = new MediaPlayer();
-			mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
-			_mediaPlayer.Source = mediaPlaybackItem;
-			_mediaPlayer.Play();
-			//</SnippetSpeechPlay>
-		}
+            // If tracks were available at source resolution time, itterate through and register: 
+            for (int index = 0; index < mediaPlaybackItem.TimedMetadataTracks.Count; index++)
+            {
+                RegisterMetadataHandlerForSpeech(mediaPlaybackItem, index);
+            }
+            //</SnippetSpeechTracksChanged>
 
 
+            // Set the source of the MediaElement or MediaPlayerElement to the MediaPlaybackItem 
+            // and start playing the synthesized audio stream. 
+            //<SnippetSpeechPlay>
+            _mediaPlayer = new MediaPlayer();
+            mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
+            _mediaPlayer.Source = mediaPlaybackItem;
+            _mediaPlayer.Play();
+            //</SnippetSpeechPlay>
+        }
 
-		//<SnippetRegisterMetadataHandlerForWords>
-		private void RegisterMetadataHandlerForSpeech(MediaPlaybackItem item, int index)
-		{
-			var timedTrack = item.TimedMetadataTracks[index];
-			timedTrack.CueEntered += metadata_SpeechCueEntered;
-			timedTrack.CueExited += metadata_SpeechCueExited;
-			item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
 
-		}
-		//</SnippetRegisterMetadataHandlerForWords>
 
-		//<SnippetSpeechWordCueEntered>
-		private void metadata_SpeechCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
-		{
-			// Check in case there are different tracks and the handler was used for more tracks 
-			if (timedMetadataTrack.TimedMetadataKind == TimedMetadataKind.Speech)
-			{
-				var cue = args.Cue as SpeechCue;
-				if (cue != null)
-				{
-					if (timedMetadataTrack.Label == "SpeechWord")
-					{
-						// Do something with the cue 
-						System.Diagnostics.Debug.WriteLine($"{cue.StartPositionInInput} - {cue.EndPositionInInput}: {inputText.Substring((int)cue.StartPositionInInput, ((int)cue.EndPositionInInput - (int)cue.StartPositionInInput) + 1)}");
-					}
-				}
-			}
-		}
-		//</SnippetSpeechWordCueEntered>
-		private void metadata_SpeechCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
-		{
-		}
+        //<SnippetRegisterMetadataHandlerForWords>
+        private void RegisterMetadataHandlerForSpeech(MediaPlaybackItem item, int index)
+        {
+            var timedTrack = item.TimedMetadataTracks[index];
+            timedTrack.CueEntered += metadata_SpeechCueEntered;
+            timedTrack.CueExited += metadata_SpeechCueExited;
+            item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
 
-		   #endregion
+        }
+        //</SnippetRegisterMetadataHandlerForWords>
 
-			#region image-based subtitles
+        //<SnippetSpeechWordCueEntered>
+        private void metadata_SpeechCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
+        {
+            // Check in case there are different tracks and the handler was used for more tracks 
+            if (timedMetadataTrack.TimedMetadataKind == TimedMetadataKind.Speech)
+            {
+                var cue = args.Cue as SpeechCue;
+                if (cue != null)
+                {
+                    if (timedMetadataTrack.Label == "SpeechWord")
+                    {
+                        // Do something with the cue 
+                        System.Diagnostics.Debug.WriteLine($"{cue.StartPositionInInput} - {cue.EndPositionInInput}: {inputText.Substring((int)cue.StartPositionInInput, ((int)cue.EndPositionInInput - (int)cue.StartPositionInInput) + 1)}");
+                    }
+                }
+            }
+        }
+        //</SnippetSpeechWordCueEntered>
+        private void metadata_SpeechCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
+        {
+        }
 
-		public void InitImageBasedSubtitleScenario()
-		{
+        #endregion
+
+        #region image-based subtitles
+
+        public void InitImageBasedSubtitleScenario()
+        {
             //<SnippetImageSubtitleLoadContent>
-			var contentUri = new Uri("http://contoso.com/content.mp4");
+            var contentUri = new Uri("http://contoso.com/content.mp4");
             var mediaSource = MediaSource.CreateFromUri(contentUri);
 
-			var subUri = new Uri("http://contoso.com/content.sub");
-			var idxUri = new Uri("http://contoso.com/content.idx");
-			var timedTextSource = TimedTextSource.CreateFromUriWithIndex(subUri, idxUri);
+            var subUri = new Uri("http://contoso.com/content.sub");
+            var idxUri = new Uri("http://contoso.com/content.idx");
+            var timedTextSource = TimedTextSource.CreateFromUriWithIndex(subUri, idxUri);
             mediaSource.ExternalTimedTextSources.Add(timedTextSource);
 
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
@@ -152,25 +152,25 @@ namespace MediaSource_RS1
 
             //<SnippetImageSubtitleTracksChanged>
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
-			{
-				if (args.CollectionChange == CollectionChange.ItemInserted)
-				{
-					RegisterMetadataHandlerForImageSubtitles(sender, (int)args.Index);
-				}
-				else if (args.CollectionChange == CollectionChange.Reset)
-				{
-					for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
-					{
-						if(sender.TimedMetadataTracks[index].TimedMetadataKind == TimedMetadataKind.ImageSubtitle)
-							RegisterMetadataHandlerForImageSubtitles(sender, index);
-					}
-				}
-			};
+            {
+                if (args.CollectionChange == CollectionChange.ItemInserted)
+                {
+                    RegisterMetadataHandlerForImageSubtitles(sender, (int)args.Index);
+                }
+                else if (args.CollectionChange == CollectionChange.Reset)
+                {
+                    for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
+                    {
+                        if (sender.TimedMetadataTracks[index].TimedMetadataKind == TimedMetadataKind.ImageSubtitle)
+                            RegisterMetadataHandlerForImageSubtitles(sender, index);
+                    }
+                }
+            };
 
-			for (int index = 0; index < mediaPlaybackItem.TimedMetadataTracks.Count; index++)
-			{
-				RegisterMetadataHandlerForImageSubtitles(mediaPlaybackItem, index);
-			}
+            for (int index = 0; index < mediaPlaybackItem.TimedMetadataTracks.Count; index++)
+            {
+                RegisterMetadataHandlerForImageSubtitles(mediaPlaybackItem, index);
+            }
             //</SnippetImageSubtitleTracksChanged>
 
             //<SnippetImageSubtitlePlay>
@@ -183,24 +183,24 @@ namespace MediaSource_RS1
 
         //<SnippetRegisterMetadataHandlerForImageSubtitles>
         private void RegisterMetadataHandlerForImageSubtitles(MediaPlaybackItem item, int index)
-		{
-			var timedTrack = item.TimedMetadataTracks[index];
-			timedTrack.CueEntered += metadata_ImageSubtitleCueEntered;
-			timedTrack.CueExited += metadata_ImageSubtitleCueExited;
-			item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
+        {
+            var timedTrack = item.TimedMetadataTracks[index];
+            timedTrack.CueEntered += metadata_ImageSubtitleCueEntered;
+            timedTrack.CueExited += metadata_ImageSubtitleCueExited;
+            item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
 
-		}
+        }
         //</SnippetRegisterMetadataHandlerForImageSubtitles>
 
         //<SnippetImageSubtitleCueEntered>
         private async void metadata_ImageSubtitleCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
-		{
-			// Check in case there are different tracks and the handler was used for more tracks 
-			if (timedMetadataTrack.TimedMetadataKind == TimedMetadataKind.ImageSubtitle)
-			{
-				var cue = args.Cue as ImageCue;
-				if (cue != null)
-				{
+        {
+            // Check in case there are different tracks and the handler was used for more tracks 
+            if (timedMetadataTrack.TimedMetadataKind == TimedMetadataKind.ImageSubtitle)
+            {
+                var cue = args.Cue as ImageCue;
+                if (cue != null)
+                {
                     await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, async () =>
                     {
                         var source = new SoftwareBitmapSource();
@@ -212,12 +212,12 @@ namespace MediaSource_RS1
                         SubtitleImage.SetValue(Canvas.TopProperty, cue.Position.Y);
                     });
                 }
-			}
-		}
+            }
+        }
         //</SnippetImageSubtitleCueEntered>
         private void metadata_ImageSubtitleCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
-		{
-		}
+        {
+        }
         #endregion
 
         #region chapter cues

@@ -84,6 +84,312 @@ To add a default [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.
 
 In this section, we cover some basic Windows Ink toolbar customization scenarios.
 
+### Specify location and orientation
+
+When you add an ink toolbar to your app, you can accept the default location and orientaion of the toolbar or explicitly specify the location and orientation through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3#Windows_UI_Xaml_Controls_InkToolbar_Orientation) properties.
+
+| Default | Explicit |
+| --- | --- |
+| ![Default ink toolbar location and orientation](.\images\ink\location-default-small.png) | ![Explicit ink toolbar location and orientation](.\images\ink\location-explicit-small.png) |
+| *Windows Ink toolbar default location and orientation* | *Windows Ink toolbar explicit location and orientation* |
+
+Here's the code for explicitly setting the location and orientation of the ink toolbar.
+```xaml
+<InkToolbar x:Name="inkToolbar" 
+    VerticalAlignment="Center" 
+    HorizontalAlignment="Right" 
+    Orientation="Vertical" 
+    TargetInkCanvas="{x:Bind inkCanvas}" />
+```
+
+In some cases, you might want to set the location and orientation of the ink toolbar based on user preference or device setting. The following example demonstrates how to set the location and orientation of the ink toolbar based on the left or right-hand writing preferences specified through **Settings > Devices > Pen & Windows Ink > Pen > Choose which hand you write with**.
+
+![Dominant hand setting](.\images\ink\location-handedness-setting.png)  
+*Dominant hand setting*
+
+You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
+
+```csharp
+public MainPage()
+{
+    this.InitializeComponent();
+
+    Windows.UI.ViewManagement.UISettings settings = 
+        new Windows.UI.ViewManagement.UISettings();
+    HorizontalAlignment alignment = 
+        (settings.HandPreference == 
+            Windows.UI.ViewManagement.HandPreference.LeftHanded) ? 
+            HorizontalAlignment.Left : HorizontalAlignment.Right;
+    inkToolbar.HorizontalAlignment = alignment;
+}
+```
+
+You can also use binding to look after UI updates based on changes to user preferences, device settings, or device states. In the following example, we expand on the previous example and show how to dynamically position the ink toolbar based on device orientation using binding, a ViewMOdel object, and the [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface. 
+
+1. First, let's add our ViewModel.
+    1. Add a new folder to your project and call it **ViewModels**.
+    1. Add a new class to the ViewModels folder (for this example, we called it **InkToolbarSnippetHostViewModel.cs**).
+        > [!NOTE] We used the [Singleton pattern](https://msdn.microsoft.com/library/ff650849.aspx) as we only need one object of this type for the life of the application
+
+    1. Add `using System.ComponentModel` namespace to the file.
+    1. Add a static member variable called **instance**, and a static read only property named **Instance**. Make the constructor private to ensure this class can only be accessed via the Instance property.   
+        > [!NOTE] This class inherits from [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface, which is used to notify clients, typically binding clients, that a property value has changed. We'll be using this to handle changes to the device orientation (we'll expand this code and explain further in a later step).  
+
+        ```csharp
+        using System.ComponentModel;
+
+        namespace locationandorientation.ViewModels
+        {
+            public class InkToolbarSnippetHostViewModel : INotifyPropertyChanged
+            {
+                private static InkToolbarSnippetHostViewModel instance;
+                
+                public static InkToolbarSnippetHostViewModel Instance
+                {
+                    get
+                    {
+                        if (null == instance)
+                        {
+                            instance = new InkToolbarSnippetHostViewModel();
+                        }
+                        return instance;
+                    }
+                }
+            }
+
+            private InkToolbarSnippetHostViewModel() { }
+        }
+        ```
+
+    1. Add two bool properties to the InkToolbarSnippetHostViewModel class: **LeftHandedLayout** (same functionality as the previous XAML-only example) and **PortraitLayout** (orientation of the device).
+        >[!NOTE] The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged#Windows_UI_Xaml_Data_INotifyPropertyChanged_PropertyChanged) event.
+
+        ```csharp
+        public bool LeftHandedLayout
+        {
+            get
+            {
+                bool leftHandedLayout = false;
+                Windows.UI.ViewManagement.UISettings settings =
+                    new Windows.UI.ViewManagement.UISettings();
+                leftHandedLayout = (settings.HandPreference ==
+                    Windows.UI.ViewManagement.HandPreference.LeftHanded);
+                return leftHandedLayout;
+            }
+        }
+
+        public bool portraitLayout = false;
+        public bool PortraitLayout
+        {
+            get
+            {
+                Windows.UI.ViewManagement.ApplicationViewOrientation winOrientation = 
+                    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().Orientation;
+                portraitLayout = 
+                    (winOrientation == 
+                        Windows.UI.ViewManagement.ApplicationViewOrientation.Portrait);
+                return portraitLayout;
+            }
+            set
+            {
+                if (value.Equals(portraitLayout)) return;
+                portraitLayout = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PortraitLayout"));
+            }
+        }
+        ```
+
+1. Now, let's add a couple of converter classes to our project. Each class contains a Convert object that returns an alignment value (either [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.horizontalalignment) or [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.verticalalignment)).
+    1. Add a new folder to your project and call it **Converters**.
+    1. Add two new classes to the Converters folder (for this example, we call them **HorizontalAlignmentFromHandednessConverter.cs** and **VerticalAlignmentFromAppViewConverter.cs**).
+    1. Add `using Windows.UI.Xaml` and `using Windows.UI.Xaml.Data` namespaces to each file.
+    1. Change each class to `public` and specify that it implements the [IValueConverter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter) interface.
+    1. Add the [Convert](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter#Windows_UI_Xaml_Data_IValueConverter_Convert_System_Object_Windows_UI_Xaml_Interop_TypeName_System_Object_System_String_) and [ConvertBack](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.ivalueconverter#Windows_UI_Xaml_Data_IValueConverter_ConvertBack_System_Object_Windows_UI_Xaml_Interop_TypeName_System_Object_System_String_) methods to each file, as shown here (we leave the ConvertBack method unimplemented).
+        - HorizontalAlignmentFromHandednessConverter positions the ink toolbar to the right side of the app for right-handed users and to the left side of the app for left-handed users.
+        ```csharp
+        using System;
+
+        using Windows.UI.Xaml;
+        using Windows.UI.Xaml.Data;
+
+        namespace locationandorientation.Converters
+        {
+            public class HorizontalAlignmentFromHandednessConverter : IValueConverter
+            {
+                public object Convert(object value, Type targetType,
+                    object parameter, string language)
+                {
+                    bool leftHanded = (bool)value;
+                    HorizontalAlignment alignment = HorizontalAlignment.Right;
+                    if (leftHanded)
+                    {
+                        alignment = HorizontalAlignment.Left;
+                    }
+                    return alignment;
+                }
+
+                public object ConvertBack(object value, Type targetType,
+                    object parameter, string language)
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+        ```
+
+        - VerticalAlignmentFromAppViewConverter positions the ink toolbar to the center of the app for portrait orientation and to the top of the app for landscape orientation (while intended to improve usability, this is just an arbitrary choice for demonstration purposes).
+        ````csharp
+        using System;
+
+        using Windows.UI.Xaml;
+        using Windows.UI.Xaml.Data;
+
+        namespace locationandorientation.Converters
+        {
+            public class VerticalAlignmentFromAppViewConverter : IValueConverter
+            {
+                public object Convert(object value, Type targetType,
+                    object parameter, string language)
+                {
+                    bool portraitOrientation = (bool)value;
+                    VerticalAlignment alignment = VerticalAlignment.Top;
+                    if (portraitOrientation)
+                    {
+                        alignment = VerticalAlignment.Center;
+                    }
+                    return alignment;
+                }
+
+                public object ConvertBack(object value, Type targetType,
+                    object parameter, string language)
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+        ```
+
+1. Now, open the MainPage.xaml.cs file.
+    1. Add `using using locationandorientation.ViewModels` to the list of namespaces to associate our ViewModel.
+    1. Add `using Windows.UI.ViewManagement` to the list of namespaces to enable listening for changes to the device orientation.
+    1. Add the [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) code.
+    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
+    ```csharp
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+
+    using locationandorientation.ViewModels;
+    using Windows.UI.ViewManagement;
+
+    namespace locationandorientation
+    {
+        public sealed partial class MainPage : Page
+        {
+            public MainPage()
+            {
+                this.InitializeComponent();
+
+                Window.Current.SizeChanged += (sender, args) =>
+                {
+                    ApplicationView currentView = ApplicationView.GetForCurrentView();
+
+                    if (currentView.Orientation == ApplicationViewOrientation.Landscape)
+                    {
+                        InkToolbarSnippetHostViewModel.Instance.PortraitLayout = false;
+                    }
+                    else if (currentView.Orientation == ApplicationViewOrientation.Portrait)
+                    {
+                        InkToolbarSnippetHostViewModel.Instance.PortraitLayout = true;
+                    }
+                };
+
+                DataContext = InkToolbarSnippetHostViewModel.Instance;
+            }
+        }
+    }
+    ```
+
+1. Next, open the MainPage.xaml file.
+    1. Add `xmlns:converters="using:locationandorientation.Converters"` to the `Page` element for binding to our converters.
+        ```xaml
+        <Page
+        x:Class="locationandorientation.MainPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:locationandorientation"
+        xmlns:converters="using:locationandorientation.Converters"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
+        ```
+
+    1. Add a `PageResources` element and specify references to our converters.
+        ```xaml
+        <Page.Resources>
+            <converters:HorizontalAlignmentFromHandednessConverter x:Key="HorizontalAlignmentConverter"/>
+            <converters:VerticalAlignmentFromAppViewConverter x:Key="VerticalAlignmentConverter"/>
+        </Page.Resources>
+        ```
+
+    1. Add the InkCanvas and InkToolbar elements and bind the VerticalAlignment and HorizontalAlignment properties of the InkToolbar.
+        ```xaml
+        <InkCanvas x:Name="inkCanvas" />
+        <InkToolbar x:Name="inkToolbar" 
+                    VerticalAlignment="{Binding PortraitLayout, Converter={StaticResource VerticalAlignmentConverter} }" 
+                    HorizontalAlignment="{Binding LeftHandedLayout, Converter={StaticResource HorizontalAlignmentConverter} }" 
+                    Orientation="Vertical" 
+                    TargetInkCanvas="{x:Bind inkCanvas}" />
+        ```
+
+1. Return to the InkToolbarSnippetHostViewModel.cs file to add our `PortraitLayout` and `LeftHandedLayout` bool properties to the `InkToolbarSnippetHostViewModel` class, along with support for rebinding `PortraitLayout` when that property value changes. 
+    ```csharp
+    public bool LeftHandedLayout
+    {
+        get
+        {
+            bool leftHandedLayout = false;
+            Windows.UI.ViewManagement.UISettings settings =
+                new Windows.UI.ViewManagement.UISettings();
+            leftHandedLayout = (settings.HandPreference ==
+                Windows.UI.ViewManagement.HandPreference.LeftHanded);
+            return leftHandedLayout;
+        }
+    }
+
+    public bool portraitLayout = false;
+    public bool PortraitLayout
+    {
+        get
+        {
+            Windows.UI.ViewManagement.ApplicationViewOrientation winOrientation = 
+                Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().Orientation;
+            portraitLayout = 
+                (winOrientation == 
+                    Windows.UI.ViewManagement.ApplicationViewOrientation.Portrait);
+            return portraitLayout;
+        }
+        set
+        {
+            if (value.Equals(portraitLayout)) return;
+            portraitLayout = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("PortraitLayout"));
+        }
+    }
+
+    #region INotifyPropertyChanged Members
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    protected void OnPropertyChanged(string property)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+    }
+
+    #endregion
+    ```
+
+You should now have an inking app that adapts to both the dominant hand preference of the user and dynamically responds to the orientation of the user's device.
+
 ### Specify the selected button  
 ![Pencil button selected at initialization](.\images\ink\ink-tools-default-toolbar.png)  
 *Windows Ink toolbar with pencil button selected at initialization*

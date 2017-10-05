@@ -1,28 +1,31 @@
 ---
 author: Jwmsft
-Description: Use the tree view example code to create an expandable tree.
+Description: Use the tree view control to create an expandable tree.
 title: Tree view
 label: Tree view
 template: detail.hbs
+pm-contact: predavid
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
 ---
-# Hierarchical layout with TreeView
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Tree view
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-A TreeView is a hierarchical list pattern with expanding and collapsing nodes that contain nested items. Nested items can be additional nodes or regular list items. You can use a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) to build a tree view to illustrate a folder structure or nested relationships in your UI.
+> [!IMPORTANT]
+> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-The [TreeView sample](http://go.microsoft.com/fwlink/?LinkId=785018) is a reference implementation built using **ListView**. It is not a standalone control. The TreeView seen in the Favorites Pane in the Microsoft Edge browser uses this reference implementation.
+The new XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
-The sample supports:
+> **Important APIs**: [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem), [TreeViewList class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewlist), [TreeViewNode class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode)
+
+The TreeView APIs support the following features:
+
 - N-level nesting
 - Expanding/collapsing of nodes
-- Dragging and dropping of nodes within the TreeView
 - Built-in accessibility
 
-![Tree view in the reference sample](images/tree-view-sample.png) | ![Tree view in the Edge browser](images/tree-view-edge.png)
--- | --
-TreeView reference sample | TreeView in Edge browser
-
-## Is this the right pattern?
+## Is this the right control?
 
 - Use a TreeView when items have nested list items, and if it is important to illustrate the hierarchical relationship of items to their peers and nodes.
 
@@ -55,128 +58,60 @@ A combination of a chevron and a folder should be used only if non-node list ite
 
 ![Usage of the Chevron and Folder icons together in a TreeView](images/treeview_chevron_folder.png)
 
-#### Redlines for indentation of folders and non-folder nodes
-
-Use the redlines in the screenshot below for indentation of folder and non-folder nodes.
-
-![Redlines for indentation of folders and non-folder nodes](images/treeview_chevron_folder_indent_rl.png)
-
 ## Building a TreeView
 
-TreeView has the following main classes. All of these are defined and included in the reference implementation.
+TreeView has the following main classes.
 
-> **Note**&nbsp;&nbsp;TreeView is implemented as a [Windows Runtime component](https://msdn.microsoft.com/windows/uwp/winrt-components/index) written in C++, so it can be referenced by a UWP app in any language. In the sample, the TreeView code is located in the *cpp/Control* folder. There is no corresponding *cs/Control* folder for C#.
+- The [TreeViewNode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode) class implements the hierarchical layout for the TreeView. It also holds the data that will be bound to it in the item's template.
+- The [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview) class implements events for ItemClick and expand/collapse of folders.
+- The [TreeViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem) class has the styles, brushes, and glyphs for a folder type TreeViewItem.
 
-- The `TreeNode` class implements the hierarchical layout for the TreeView. It also holds the data that will be bound to it in the items template.
-- The `TreeView` class implements events for ItemClick, expand/collapse of folders, and drag initiation.
-- The `TreeViewItem` class implements the events for the drop operation.
-- The `ViewModel` class flattens the list of TreeViewItems so that operations such as keyboard navigation, and drag-and-drop can be inherited from ListView.
+## Declare a TreeView in XAML
 
-## Create a data template for your TreeViewItem
-
-Here is the section of the XAML that sets up the data template for folder and non-folder type items.
-- To specify a ListViewItem as a folder, you will need to explicitly set the [AllowDrop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.allowdrop.aspx) property to **true** on that ListViewItem. This XAML shows you one way to do so.
-- To specify a ListViewItem as a non-folder, you do not need to specify any property on the ListViewItem itself. Just set the AllowDrop property to True on the ListView.
-- You can use expanded/collapsed folder icons or chevrons to visually indicate if a folder is expanded or collapsed.
-- You can use converters to choose the different icons needed for the expanded versus the collapsed state as seen in this example.
+Here's an example of a TreeView declared in XAML.
 
 ```xaml
-<!-- MainPage.xaml -->
-<DataTemplate x:Key="TreeViewItemDataTemplate">
-    <StackPanel Orientation="Horizontal" Height="40" Margin="{Binding Depth, Converter={StaticResource IntToIndConverter}}" AllowDrop="{Binding Data.IsFolder}">
-        <FontIcon x:Name="expandCollapseChevron"
-                  Glyph="{Binding IsExpanded, Converter={StaticResource expandCollapseGlyphConverter}}"
-                  Visibility="{Binding Data.IsFolder, Converter={StaticResource booleanToVisibilityConverter}}"                           
-                  FontSize="12"
-                  Margin="12,8,12,8"
-                  FontFamily="Segoe MDL2 Assets"                          
-                  />
-        <Grid>
-            <FontIcon x:Name ="expandCollapseFolder"
-                      Glyph="{Binding IsExpanded, Converter={StaticResource folderGlyphConverter}}"
-                      Foreground="#FFFFE793"
-                      FontSize="16"
-                      Margin="0,8,12,8"
-                      FontFamily="Segoe MDL2 Assets"
-                      Visibility="{Binding Data.IsFolder, Converter={StaticResource booleanToVisibilityConverter}}"
-                      />
-
-            <FontIcon x:Name ="nonFolderIcon"
-                      Glyph="&#xE160;"
-                      Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
-                      FontSize="12"
-                      Margin="20,8,12,8"
-                      FontFamily="Segoe MDL2 Assets"
-                      Visibility="{Binding Data.IsFolder, Converter={StaticResource inverseBooleanToVisibilityConverter}}"
-                      />
-
-            <FontIcon x:Name ="expandCollapseFolderOutline"
-                      Glyph="{Binding IsExpanded, Converter={StaticResource folderOutlineGlyphConverter}}"
-                      Foreground="#FFECC849"
-                      FontSize="16"
-                      Margin="0,8,12,8"
-                      FontFamily="Segoe MDL2 Assets"
-                      Visibility="{Binding Data.IsFolder, Converter={StaticResource booleanToVisibilityConverter}}"/>
-        </Grid>
-
-        <TextBlock Text="{Binding Data.Name}"
-                   HorizontalAlignment="Stretch"
-                   VerticalAlignment="Center"  
-                   FontWeight="Medium"
-                   FontFamily="Segoe MDL2 Assests"                           
-                   Style="{ThemeResource BodyTextBlockStyle}"/>
-    </StackPanel>
-</DataTemplate>
+<TreeView x:Name="sampleTreeView"/>
 ```
 
 ## Set up the data in your TreeView
 
-Here is the code that sets up the data in the TreeView sample.
+Here is the code that sets up the data for the TreeView.
 
 ```csharp
- public MainPage()
- {
-     this.InitializeComponent();
+public MainPage()
+{
+    this.InitializeComponent();
 
-     TreeNode workFolder = CreateFolderNode("Work Documents");
-     workFolder.Add(CreateFileNode("Feature Functional Spec"));
-     workFolder.Add(CreateFileNode("Feature Schedule"));
-     workFolder.Add(CreateFileNode("Overall Project Plan"));
-     workFolder.Add(CreateFileNode("Feature Resource allocation"));
-     sampleTreeView.RootNode.Add(workFolder);
+    TreeViewNode workFolder = new TreeViewNode() {Data = "Work Documents" };
+    workFolder.IsExpanded = true;
+    workFolder.Add(new TreeViewNode() { Data = "Feature Schedule" });
+    workFolder.Add(new TreeViewNode() { Data = "Overall Project Plan" });
+    workFolder.Add(new TreeViewNode() { Data = "Feature Rsource Allocation" });
 
-     TreeNode remodelFolder = CreateFolderNode("Home Remodel");
-     remodelFolder.IsExpanded = true;
-     remodelFolder.Add(CreateFileNode("Contactor Contact Information"));
-     remodelFolder.Add(CreateFileNode("Paint Color Scheme"));
-     remodelFolder.Add(CreateFileNode("Flooring woodgrain types"));
-     remodelFolder.Add(CreateFileNode("Kitchen cabinet styles"));
+    TreeViewNode remodelFolder = new TreeViewNode() { Data = "Home Remodel" };
+    remodelFolder.IsExpanded = true;
+    remodelFolder.Add(new TreeViewNode() { Data = "Contractor Contact Info" });
+    remodelFolder.Add(new TreeViewNode() { Data = "Paint Color Scheme" });
+    remodelFolder.Add(new TreeViewNode() { Data = "Flooring woodgrain type" });
+    remodelFolder.Add(new TreeViewNode() { Data = "Kitchen cabinet style" });
 
-     TreeNode personalFolder = CreateFolderNode("Personal Documents");
-     personalFolder.IsExpanded = true;
-     personalFolder.Add(remodelFolder);
+    TreeViewNode personalFolder = new TreeViewNode() { Data = "Personal Documents" };
+    personalFolder.IsExpanded = true;
 
-     sampleTreeView.RootNode.Add(personalFolder);
- }
-
- private static TreeNode CreateFileNode(string name)
- {
-     return new TreeNode() { Data = new FileSystemData(name) };
- }
-
- private static TreeNode CreateFolderNode(string name)
- {
-     return new TreeNode() { Data = new FileSystemData(name) { IsFolder = true } };
- }
+    personalFolder.Add(remodelFolder);
+    workFolder.Add(personalFolder);
+    sampleTreeView.RootNode = workFolder;
+}
 ```
 
-Once you’re done with the above steps, you will have a fully populated TreeView/Hierarchical layout with n-level nesting, support for expand/collapse of folders, dragging and dropping between folders, and accessibility built in.
+Once you’re done with the above steps, you will have a fully populated TreeView/Hierarchical layout with n-level nesting, support for expand/collapse of folders, and accessibility built in.
 
 To provide the user the ability to add/remove items from the TreeView, we recommend you add a context menu to expose those options to the user.
 
 
 ## Related articles
 
-- [TreeView sample](http://go.microsoft.com/fwlink/?LinkId=785018)
-- [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
+- [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
+- [ListView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
 - [ListView and GridView](listview-and-gridview.md)

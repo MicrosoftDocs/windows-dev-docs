@@ -1,0 +1,277 @@
+---
+author: normesta
+Description: Share code between a desktop app and a UWP app
+Search.Product: eADQiWindows 10XVcnh
+title: Share code between a desktop app and a UWP app
+ms.author: normesta
+ms.date: 10/03/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+---
+# Share code between a desktop app and a UWP app
+
+You can move your code into .NET Standard libraries, and then create a Universal Windows Platform (UWP) app to reach all Windows 10 devices. While there's no tool that can convert a desktop application to a UWP app, you can reuse a lot of your existing code and that lowers the cost of building one. This guide shows you how to do that.
+
+![Windows devices](images/desktop-to-uwp/windows-devices.png)
+
+## Share code in a .NET Standard 2.0 library
+
+Place as much code as you can into .NET Standard 2.0 class libraries.  As long as your code uses APIs that are defined in the standard, you can reuse it in a UWP app. It's easier than it's ever been to share code in a .NET Standard library because so many more APIs are included in the .NET Standard 2.0.
+
+Here's a great video that tells you more about it.
+<br><br>
+<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+
+### Add .NET Standard libraries
+
+First, add one or more .NET Standard class libraries to your solution.  
+
+![Add dotnet standard project](images/desktop-to-uwp/dot-net-standard-project-template.png)
+
+The number of libraries that you add to your solution depends on how you plan to organize your code.
+
+Make sure that each class library targets the **.NET Standard 2.0**.
+
+![Target .NET Standard 2.0](images/desktop-to-uwp/target-standard-20.png)
+
+You can find this setting in the property pages of the class library project.
+
+From your desktop application project, add a reference to the class library project.
+
+![Class library reference](images/desktop-to-uwp/class-library-reference.png)
+
+Next, use tools to determine how much of your code conforms to the standard. That way, before you move code into the library, you can decide which parts you can reuse, which parts require minimal modification, and which parts will remain application-specific.
+
+### Check library and code compatibility
+
+We'll start with Nuget Packages and other dll files that you obtained from a third party.
+
+If your application uses any of them, determine if they are compatible with the .NET Standard 2.0. You can use a Visual Studio extension or a command-line utility to do that.
+
+Use these same tools to analyze your code. Download the tools here ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases)) and then watch this video to learn how to use them.
+<br><br>
+<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+
+ If your code isn't compatible with the standard, consider other ways that you could implement that code. Start by opening the [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0). You can use that browser to review the API's that are available in the .NET Standard 2.0. Make sure to scope the list to the .NET Standard 2.0.
+
+![dot net option](images/desktop-to-uwp/dot-net-option.png)
+
+Some of your code will be platform-specific and will need to remain in your desktop application project.
+
+### Example: Migrating data access code to a .NET Standard 2.0 library
+
+Let's assume that we have a very basic Windows Forms app that shows customers from our Northwind sample database.
+
+![Windows Forms App](images/desktop-to-uwp/win-forms-app.png)
+
+The project contains a .NET Standard 2.0 class library with a static class named **Northwind**. If we move this code into the **Northwind** class, it won't compile because it uses the ``SQLConnection``, ``SqlCommand``, and ``SqlDataReader`` classes, and those classes that are not available in the .NET Standard 2.0.
+
+```csharp
+public static ArrayList GetCustomerNames()
+{
+    ArrayList customers = new ArrayList();
+
+    using (SqlConnection conn = new SqlConnection())
+    {
+        conn.ConnectionString =
+            @"Data Source=" +
+            @"<Your Server Name>\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+
+        conn.Open();
+
+        SqlCommand command = new SqlCommand("select ContactName from customers order by ContactName asc", conn);
+
+        using (SqlDataReader reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                customers.Add(reader[0]);
+            }
+        }
+    }
+
+    return customers;
+}
+
+```
+The [.NET API Browser](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0) shows us an alternative though. We can use the ``DbConnection``, ``DbCommand``, and ``DbDataReader`` classes because those classes are available in the .NET Standard 2.0.  
+
+This revised version uses those classes to get a list of customers, but to create a ``DbConnection`` class, we'll need to pass in a factory object that we create in the client application.
+
+```csharp
+public static ArrayList GetCustomerNames(DbProviderFactory factory)
+{
+    ArrayList customers = new ArrayList();
+
+    using (DbConnection conn = factory.CreateConnection())
+    {
+        conn.ConnectionString = @"Data Source=" +
+                        @"<Your Server Name>\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+
+        conn.Open();
+
+        DbCommand command = factory.CreateCommand();
+        command.Connection = conn;
+        command.CommandText = "select ContactName from customers order by ContactName asc";
+
+        using (DbDataReader reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                customers.Add(reader[0]);
+            }
+        }
+    }
+
+    return customers;
+}
+```  
+
+In the code-behind page of the Windows Form, we can just create factory instance and pass it into our method.
+
+```csharp
+public partial class Customers : Form
+{
+    public Customers()
+    {
+        InitializeComponent();
+
+        dataGridView1.Rows.Clear();
+
+        SqlClientFactory factory = SqlClientFactory.Instance;
+
+        foreach (string customer in Northwind.GetCustomerNames(factory))
+        {
+            dataGridView1.Rows.Add(customer);
+        }
+    }
+}
+```
+
+## Reach all Windows devices
+
+Now you're ready to add a UWP app to your solution.
+<div style="float: left; padding: 10px">
+    ![desktop to UWP bridge image](images/desktop-to-uwp/adaptive-ui.png)
+</div>
+You'll still have to design UI pages in XAML and write any device or platform-specific code, but when you are done, you'll be able to reach the full breadth of Windows 10 devices and your app pages will have a modern feel that adapts well to different screen sizes and resolutions.
+
+Your app will respond to input mechanisms other than just a keyboard and mouse, and features and settings will be intuitive across devices. This means that users learn how to do things one time, and then it works in a very familiar way no matter the device.
+
+These are just a few of the goodies that come with UWP. To learn more, see [Build great experiences with Windows](https://developer.microsoft.com/windows/why-build-for-uwp).
+
+### Add a UWP project
+
+First, add a UWP project to your solution.
+
+![UWP Project](images/desktop-to-uwp/new-uwp-app.png)
+
+Then, from your UWP project, add a reference the .NET Standard 2.0 library project.
+
+![Class library reference](images/desktop-to-uwp/class-library-reference2.png)
+
+### Build your pages
+
+Add XAML pages and call the code in your .NET Standard 2.0 library.
+
+![UWP app](images/desktop-to-uwp/uwp-app.png)
+
+```xml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel x:Name="customerStackPanel">
+        <ListView x:Name="customerList"/>
+    </StackPanel>
+</Grid>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        SqlClientFactory factory = SqlClientFactory.Instance;
+
+        customerList.ItemsSource = Northwind.GetCustomerNames(factory);
+    }
+}
+```
+
+
+To get started with UWP, see [Intro to the Universal Windows Platform](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+
+## Reach iOS and Android devices
+
+You can reach Android and iOS devices by adding Xamarin projects.  
+<div style="float: left; padding: 10px">
+    ![Xamarin apps](images/desktop-to-uwp/xamarin-apps.png)
+</div>
+
+These projects let you use C# to build Android and iOS apps with full access to platform-specific and device-specific APIs. These apps leverage platform-specific hardware acceleration, and are compiled for native performance.
+
+They have access to the full spectrum of functionality exposed by the underlying platform and device, including platform-specific capabilities like iBeacons and Android Fragments and you'll use standard native user interface controls to build UIs that look and feel the way that users expect them to.
+
+Just like UWPs, the cost to add an Android or iOS app is lower because you can reuse business logic in a .NET Standard 2.0 class library. You'll have to design your UI pages in XAML and write any device or platform-specific code.
+
+### Add a Xamarin project
+
+First, add an **Android**, **iOS**, or **Cross-Platform** project to your solution.
+
+You can find these templates in the **Add New Project** dialog box under the **Visual C#** group.
+
+![Xamarin apps](images/desktop-to-uwp/xamarin-projects.png)
+
+>[!NOTE]
+>Cross-platform projects are great for apps with little platform-specific functionality. You can use them to build one native XAML-based UI that runs on iOS, Android, and Windows. Learn more [here](https://www.xamarin.com/forms).
+
+Then, from your Android, iOS, or cross-platform project, add a reference the class library project.
+
+![Class library reference](images/desktop-to-uwp/class-library-reference3.png)
+
+### Build your pages
+
+Our example shows a list of customers in an Android app.
+
+![Android app](images/desktop-to-uwp/android-app.png)
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp" android:textSize="16sp"
+    android:id="@android:id/list">
+</TextView>
+```
+
+```csharp
+[Activity(Label = "MyAndroidApp", MainLauncher = true)]
+public class MainActivity : ListActivity
+{
+    protected override void OnCreate(Bundle savedInstanceState)
+    {
+        base.OnCreate(savedInstanceState);
+
+        SqlClientFactory factory = SqlClientFactory.Instance;
+
+        var customers = (string[])Northwind.GetCustomerNames(factory).ToArray(typeof(string));
+
+        ListAdapter = new ArrayAdapter<string>(this, Resource.Layout.list_item, customers);
+    }
+}
+```
+
+To get started with Android, iOS, and cross-platform projects, see the [Xamarin developer portal](https://developer.xamarin.com/).
+
+## Next steps
+
+**Find answers to specific questions**
+
+Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Give feedback about this article**
+
+Use the comments section below.

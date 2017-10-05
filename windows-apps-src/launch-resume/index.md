@@ -4,7 +4,7 @@ title: Launching, resuming, and background tasks
 description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,6 +23,7 @@ This section includes information on the following:
 - How to discover connected devices, launch an app on another device, and communicate with an app service on a remote device so that you can create user experiences that flow across devices.
 - How to choose the right technology to extend and componentize your app.
 - How to add and configure a splash screen for your app.
+- How to write extend your app via packages from that users can install from the Windows Store.
 
 ## The app lifecycle
 
@@ -36,7 +37,7 @@ This section details the lifecycle of a Windows 10 Universal Windows Platform (U
 | [Handle app suspend](suspend-an-app.md)         | Learn how to save important application data when the system suspends your app.                                 |
 | [Handle app resume](resume-an-app.md)           | Learn how to refresh displayed content when the system resumes your app.                                        |
 | [Free memory when your app moves to the background](reduce-memory-usage.md) | Learn how to reduce the amount of memory that your app uses when it is in the background state so that it won't be terminated.|
-| [Run while minimized with extended execution](run-minimized-with-extended-execution.md) | Learn how to use extended execution to keep your app running when it is minimized |
+| [Postpone app suspension with extended execution](run-minimized-with-extended-execution.md) | Learn how to use extended execution to keep your app running when it is minimized |
 
 ## Launch apps
 
@@ -68,15 +69,16 @@ See other topics related to launching an app below.
 | [Reserved file and URI scheme names](reserved-uri-scheme-names.md) | This topic lists the reserved file and URI scheme names that are not available to your app. |
 | [Auto-launching with AutoPlay](auto-launching-with-autoplay.md) | You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. |
 
-## App services
+## App services and extensions
 
-The [App services](app-services.md) section describes how to integrate app services into your UWP app to allow the sharing of data and functionality across apps.
+The [App services and extensions](app-services.md) section describes how to integrate app services into your UWP app to allow the sharing of data and functionality across apps.
 
 | Topic | Description |
 |-------|-------------|
 | [Create and consume an app service](how-to-create-and-consume-an-app-service.md) | Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps and how to consume those services. |
 | [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) | Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider. |
-| [Extend your app with app services, extensions, and packages](extend-your-app-with-services-extensions-packages.md) | There are different technologies in Windows 10 that will help you extend and componentize your app. This topic will help you determine which technology is the right one to use and provides a brief overview of each. |
+| [Extend your app with app services, extensions, and packages](extend-your-app-with-services-extensions-packages.md) | Determine which technology to use to extend and componentize your app and get a brief overview of each. |
+| [Create and consume an app extension](how-to-create-an-extension.md) | Write and host Universal Windows Platform (UWP) app extensions to extend your app via packages that users can install from the Windows Store. |
 
 ## Background tasks
 
@@ -115,6 +117,7 @@ The [Connected apps and devices (Project Rome)](connected-apps-and-devices.md) s
 | [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
 | [Launch an app on a remote device](launch-a-remote-app.md) | Learn how to launch an app on a remote device.  |
 | [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
+| [Connect devices through remote sessions](remote-sessions.md) | Create shared experiences across multiple devices by joining them in a remote session. |
 
 ## Splash screens
 

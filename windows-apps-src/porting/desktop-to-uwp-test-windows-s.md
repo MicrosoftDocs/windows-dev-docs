@@ -9,7 +9,6 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10 S, uwp
-ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ---
 # Test your Windows app for Windows 10 S
 
