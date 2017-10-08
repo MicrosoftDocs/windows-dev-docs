@@ -135,6 +135,11 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
+## Applies to
+
+Windows 10
+Windows 10 Mobile
+
 ## Related topics
 
 
