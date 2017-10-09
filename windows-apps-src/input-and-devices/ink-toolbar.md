@@ -129,11 +129,13 @@ You can also use binding to look after UI updates based on changes to user prefe
 1. First, let's add our ViewModel.
     1. Add a new folder to your project and call it **ViewModels**.
     1. Add a new class to the ViewModels folder (for this example, we called it **InkToolbarSnippetHostViewModel.cs**).
-        > [!NOTE] We used the [Singleton pattern](https://msdn.microsoft.com/library/ff650849.aspx) as we only need one object of this type for the life of the application
+        > [!NOTE] 
+        > We used the [Singleton pattern](https://msdn.microsoft.com/library/ff650849.aspx) as we only need one object of this type for the life of the application
 
     1. Add `using System.ComponentModel` namespace to the file.
     1. Add a static member variable called **instance**, and a static read only property named **Instance**. Make the constructor private to ensure this class can only be accessed via the Instance property.   
-        > [!NOTE] This class inherits from [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface, which is used to notify clients, typically binding clients, that a property value has changed. We'll be using this to handle changes to the device orientation (we'll expand this code and explain further in a later step).  
+        > [!NOTE] 
+        > This class inherits from [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface, which is used to notify clients, typically binding clients, that a property value has changed. We'll be using this to handle changes to the device orientation (we'll expand this code and explain further in a later step).  
 
         ```csharp
         using System.ComponentModel;
@@ -162,7 +164,8 @@ You can also use binding to look after UI updates based on changes to user prefe
         ```
 
     1. Add two bool properties to the InkToolbarSnippetHostViewModel class: **LeftHandedLayout** (same functionality as the previous XAML-only example) and **PortraitLayout** (orientation of the device).
-        >[!NOTE] The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged#Windows_UI_Xaml_Data_INotifyPropertyChanged_PropertyChanged) event.
+        >[!NOTE] 
+        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged#Windows_UI_Xaml_Data_INotifyPropertyChanged_PropertyChanged) event.
 
         ```csharp
         public bool LeftHandedLayout
