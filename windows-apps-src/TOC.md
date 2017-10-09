@@ -27,6 +27,7 @@
 ## [Get UWP app samples](get-started/get-uwp-app-samples.md)
 # Design & UI
 ## [Intro to app UI design](layout/design-and-ui-intro.md)
+## [Fluent Design System](fluent-design-system/index.md)
 ## [Layout](layout/index.md)
 ### [Navigation basics](layout/navigation-basics.md)
 #### [Implement basic navigation](layout/navigate-between-two-pages.md)
@@ -217,7 +218,6 @@
 #### [In-app help](in-app-help/in-app-help.md)
 #### [External help](in-app-help/external-help.md)
 ### [Voice and tone](in-app-help/voice-and-tone.md)
-## [Fluent Design System](http://fluent.microsoft.com/)
 ## [Design toolkits](design-downloads/index.md)
 # Develop Windows apps
 ## [What's new in Windows 10 for developers, version 1710](whats-new/windows-10-version-latest.md)
