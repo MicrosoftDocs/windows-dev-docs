@@ -1066,6 +1066,10 @@ placeinfohelper <br> placeinfohelper.createfromlocallocation
 
 maproute.isscenic
 
+#### [maprouteoptimization](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteoptimization)
+
+maprouteoptimization.scenic
+
 #### [placeinfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo)
 
 placeinfo <br> placeinfo.create <br> placeinfo.create <br> placeinfo.createfromidentifier <br> placeinfo.createfromidentifier <br> placeinfo.createfrommaplocation <br> placeinfo.displayaddress <br> placeinfo.displayname <br> placeinfo.geoshape <br> placeinfo.identifier <br> placeinfo.isshowsupported <br> placeinfo.show <br> placeinfo.show
@@ -1078,17 +1082,17 @@ placeinfocreateoptions <br> placeinfocreateoptions.displayaddress <br> placeinfo
 
 ### [windows.storage.provider](https://docs.microsoft.com/uwp/api/windows.storage.provider)
 
-#### [hydrationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.hydrationpolicy)
+#### [storageproviderhydrationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderhydrationpolicy)
 
-hydrationpolicy
+storageproviderhydrationpolicy
 
-#### [hydrationpolicymodifier](https://docs.microsoft.com/uwp/api/windows.storage.provider.hydrationpolicymodifier)
+#### [storageproviderhydrationpolicymodifier](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderhydrationpolicymodifier)
 
-hydrationpolicymodifier
+storageproviderhydrationpolicymodifier
 
-#### [insyncpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.insyncpolicy)
+#### [insyncpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderinsyncpolicy)
 
-insyncpolicy
+storageproviderinsyncpolicy
 
 #### [istorageprovideritempropertysource](https://docs.microsoft.com/uwp/api/windows.storage.provider.istorageprovideritempropertysource)
 
@@ -1098,13 +1102,13 @@ istorageprovideritempropertysource <br> istorageprovideritempropertysource.getit
 
 istorageproviderpropertycapabilities <br> istorageproviderpropertycapabilities.ispropertysupported
 
-#### [populationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.populationpolicy)
+#### [populationpolicy](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderpopulationpolicy)
 
-populationpolicy
+storageproviderpopulationpolicy
 
-#### [protectionmode](https://docs.microsoft.com/uwp/api/windows.storage.provider.protectionmode)
+#### [protectionmode](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageproviderprotectionmode)
 
-protectionmode
+storageproviderprotectionmode
 
 #### [storageprovideritemproperties](https://docs.microsoft.com/uwp/api/windows.storage.provider.storageprovideritemproperties)
 
