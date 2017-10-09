@@ -58,11 +58,11 @@ You can use the iconic template on both primary and secondary tiles. If you're u
 
 **Step 3: Send a notification to your tile**
 
-Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md).
+Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](tiles-and-notifications-create-adaptive-tiles.md).
 
 Here's sample code for the XML payload:
 
-```XML
+```xml
 <tile>
   <visual>
 
@@ -86,7 +86,7 @@ As with step 3, this step can vary based on whether the notification is sent loc
 
 Here's sample code for the XML payload:
 
-```XML
+```xml
 <badge value="2"/>
 ```
 
@@ -114,7 +114,7 @@ Windows Phone displays up to 9 photos in a slideshow; tablet, laptop, and deskto
 For information about sending the tile notification, see the [Send notifications article](tiles-badges-notifications.md).
 
 
-```XML
+```xml
 <!--
  
 To use the Photos template...
@@ -144,7 +144,7 @@ To use the Photos template...
 </tile>
 ```
 
-```CSharp
+```csharp
 /*
  
 To use the Photos template...
@@ -210,7 +210,7 @@ If you're using raw XML, set the *hint-presentation* to "people" and add your im
 
 The following C# code sample assumes that you're using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
 
-```CSharp
+```csharp
 TileContent content = new TileContent()
 {
     Visual = new TileVisual()
@@ -237,7 +237,7 @@ TileContent content = new TileContent()
 };
 ```
 
-```XML
+```xml
 <tile>
   <visual>
  
@@ -274,7 +274,7 @@ To send the notification, see [Choose a notification delivery method](tiles-and-
 * [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Tiles, badges, and notifications](tiles-badges-notifications.md)
 * [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Tile content schema](tiles-and-notifications/tile-schema.md)
  
 
  

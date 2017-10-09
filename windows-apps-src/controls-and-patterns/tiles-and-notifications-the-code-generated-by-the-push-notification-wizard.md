@@ -32,7 +32,7 @@ The push notification wizard modifies your project in the following ways:
 
 The services.js file contains the following code:
 
-```JavaScript
+```js
 var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
                 "https://<mobile-service-name>.azure-mobile.net/",
                 "<your client secret>");
@@ -45,7 +45,7 @@ In push.register.\*, the UploadChannel method registers the device to receive pu
 
 The client code is similar for both the JavaScript backend and the .NET backend. By default, when you add push notifications for a JavaScript backend service, a sample call to notifyAllUsers custom API is inserted into the UploadChannel method.
 
-```CSharp
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,7 +82,7 @@ namespace App2
 }
 ```
 
-```VisualBasic
+```vb
 Imports Microsoft.WindowsAzure.MobileServices
 Imports Newtonsoft.Json.Linq
 
@@ -105,7 +105,7 @@ Friend Class mymobileservice1234Push
 End Class
 ```
 
-```ManagedCPlusPlus
+```c++
 #include "pch.h"
 #include "services\mobile services\mymobileservice1234\mymobileservice1234Push.h"
 
@@ -143,7 +143,7 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 }
 ```
 
-```JavaScript
+```js
 (function () {
     "use strict";
 
@@ -179,7 +179,7 @@ A variety of functions are available in the server-side script. See [Register ta
 
 The following custom API code in Notifyallusers.js is also created:
 
-```JavaScript
+```js
 exports.post = function(request, response) {
     response.send(statusCodes.OK,{ message : 'Hello World!' })
     

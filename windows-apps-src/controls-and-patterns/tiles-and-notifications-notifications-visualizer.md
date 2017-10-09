@@ -56,5 +56,4 @@ This screenshot from the app shows the tile editor:
 
 * [Get Notifications Visualizer in the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
 * [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
 * [Tiles and toasts (MSDN blog)](http://blogs.msdn.com/b/tiles_and_toasts/)

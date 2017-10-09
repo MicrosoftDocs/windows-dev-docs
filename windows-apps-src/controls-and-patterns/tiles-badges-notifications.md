@@ -37,7 +37,7 @@ A tile is an app's representation on the Start menu. Every UWP app has a tile. Y
 | [App icon assets](tiles-and-notifications-app-assets.md) | App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons. |
 | [Primary tile API's](tiles-and-notifications-primary-tile-apis.md) | Request to pin your app's primary tile, and check if the primary tile is currently pinned. |
 | [Tile content](tiles-and-notifications-create-adaptive-tiles.md) | Tile notification content is specified using adaptive, a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. |
-| [Tile content schema](tiles-and-notifications-adaptive-tiles-schema.md) | Here are the elements and attributes you use to create adaptive tiles. |
+| [Tile content schema](tiles-and-notifications/tile-schema.md) | Here are the elements and attributes you use to create adaptive tiles. |
 | [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md) | Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. |
 | [Send local tile notfication](tiles-and-notifications-sending-a-local-tile-notification.md) | Learn how to send a local tile notification, adding rich dynamic content to your Live Tile. |
 
