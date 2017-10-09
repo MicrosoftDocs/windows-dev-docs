@@ -1067,7 +1067,7 @@
 ### [Custom attached properties](xaml-platform/custom-attached-properties.md)
 ### [Events and routed events overview](xaml-platform/events-and-routed-events-overview.md)
 ## [Xbox Live](xbox-live/index.md)
-## [API reference](https://msdn.microsoft.com/library/windows/apps/bg124285.aspx)
+## [API reference](https://docs.microsoft.com/uwp/)
 ## [App development for Windows as a service](updates-and-versions/application-development-for-windows-as-a-service.md)
 ## [Choose a UWP version](updates-and-versions/choose-a-uwp-version.md)
 ## [Services](https://developer.microsoft.com/windows/develop/microsoft-services)
