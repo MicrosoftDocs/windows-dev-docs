@@ -273,7 +273,8 @@ foreach (uint id in toBeRemoved)
 
 ## Foreground event for notification added/dismissed
 
-> [!IMPORTANT] Known issue: The foreground event does not work (and we don't have immediate plans to fix this). 
+> [!IMPORTANT] 
+> Known issue: The foreground event does not work (and we don't have immediate plans to fix this). 
 
 If you have a scenario that requires the foreground event, please let us know. However, most (if not all) scenarios should actually use the background task anyways, since your app most likely needs to be woken up in the background for notification events. For example, your wearable accessory app is rarely in the foreground, and needs to know about new notifications from the background.
 
