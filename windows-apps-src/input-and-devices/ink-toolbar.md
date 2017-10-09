@@ -86,14 +86,18 @@ In this section, we cover some basic Windows Ink toolbar customization scenarios
 
 ### Specify location and orientation
 
-When you add an ink toolbar to your app, you can accept the default location and orientaion of the toolbar or explicitly specify the location and orientation through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3#Windows_UI_Xaml_Controls_InkToolbar_Orientation) properties.
+When you add an ink toolbar to your app, you can accept the default location and orientaion of the toolbar or set them as required by your app or user.
+
+**XAML**
+
+Explicitly specify the location and orientation of the toolbar through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3#Windows_UI_Xaml_Controls_InkToolbar_Orientation) properties.
 
 | Default | Explicit |
 | --- | --- |
 | ![Default ink toolbar location and orientation](.\images\ink\location-default-small.png) | ![Explicit ink toolbar location and orientation](.\images\ink\location-explicit-small.png) |
 | *Windows Ink toolbar default location and orientation* | *Windows Ink toolbar explicit location and orientation* |
 
-Here's the code for explicitly setting the location and orientation of the ink toolbar.
+Here's the code for explicitly setting the location and orientation of the ink toolbar in XAML.
 ```xaml
 <InkToolbar x:Name="inkToolbar" 
     VerticalAlignment="Center" 
@@ -102,7 +106,9 @@ Here's the code for explicitly setting the location and orientation of the ink t
     TargetInkCanvas="{x:Bind inkCanvas}" />
 ```
 
-In some cases, you might want to set the location and orientation of the ink toolbar based on user preference or device setting. The following example demonstrates how to set the location and orientation of the ink toolbar based on the left or right-hand writing preferences specified through **Settings > Devices > Pen & Windows Ink > Pen > Choose which hand you write with**.
+**Initialize based on user preferences or device state**
+
+In some cases, you might want to set the location and orientation of the ink toolbar based on user preference or device state. The following example demonstrates how to set the location and orientation of the ink toolbar based on the left or right-hand writing preferences specified through **Settings > Devices > Pen & Windows Ink > Pen > Choose which hand you write with**.
 
 ![Dominant hand setting](.\images\ink\location-handedness-setting.png)  
 *Dominant hand setting*
@@ -123,6 +129,8 @@ public MainPage()
     inkToolbar.HorizontalAlignment = alignment;
 }
 ```
+
+**Dynamically adjust to user or device state**
 
 You can also use binding to look after UI updates based on changes to user preferences, device settings, or device states. In the following example, we expand on the previous example and show how to dynamically position the ink toolbar based on device orientation using binding, a ViewMOdel object, and the [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface. 
 
