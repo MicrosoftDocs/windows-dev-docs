@@ -23,17 +23,7 @@ Install Unity 5.3 or higher and during the Unity install process, check the "Win
 
 It can be a 3D or 2D project. Either type will work with the Xbox Live SDK.
 
-**3) Drag and drop the Microsoft.Xbox.Services.winmd file to the Unity Assets folder**
-
-![](../images/unity/unity2-winmd.png)
-
-To do this,
-
-1.  Download the Xbox Live WinMD from [http://aka.ms/xboxlivesdkunity](http://aka.ms/xboxlivesdkunity) and extract it to somewhere on your hard drive.
-
-2.  Drag and drop Microsoft.Xbox.Services.winmd into your open Unity project assets panel
-
-While you cannot run scripts with Xbox Live calls from within the Unity editor, doing this step will enable scripts that have Xbox Live calls to be compiled from within the Unity editor.
+**3) Import the latest version of the Xbox Live WinRT Unity asset package This can be found at https://github.com/Microsoft/xbox-live-api/releases**
 
 **4) Add and attach a new C\# script to a Unity object.**
 
@@ -55,7 +45,6 @@ For example, click on a Unity object such as the "Main Camera", and click "Add C
 
 ![](../images/unity/unity3-buildsettings.png)
 
-  
 
 **6) Open the generated UWP project in Visual Studio**
 
@@ -69,17 +58,12 @@ You'll see 3 projects in this solution.
 
 3.  UWP app based on the name of your project. This is a traditional UWP app that hosts the Unity engine. This is where you'll be setting up some Xbox Live configuration similar to a traditional UWP app.
 
-**7) Add the "Microsoft.Xbox.Live.SDK.WinRT.UWP" NuGet package references**
 
-Follow [Adding Xbox Live APIs binary package to your UWP project](add-xbox-live-apis-binary-to-a-uwp-project.md)
-
-Add the "Microsoft.Xbox.Live.SDK.WinRT.UWP" NuGet package references to the UWP app project
-
-**8) Add Xbox Live configuration to the UWP app**
+**7) Add Xbox Live configuration to the UWP app**
 
 Follow the doc page called [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
 
-**9) Add Xbox Live code to your script**
+**8) Add Xbox Live code to your script**
 
 Copy/paste this example Xbox Live code into script you attached to the game object. This script will appear in the "Assembly-CSharp" project. You can change the code as desired.
 
@@ -130,11 +114,11 @@ public class XboxLiveScript : MonoBehaviour
 #endif
 ```
 
-**10) Compile and run the UWP app from Visual Studio**
+**9) Compile and run the UWP app from Visual Studio**
 
 This will launch the app like a normal UWP app and allow Xbox Live calls to operate as they require a UWP app container to function.
 
-**11) Rebuild if you make changes to anything in Unity**
+**10) ebuild if you make changes to anything in Unity**
   
 If you change anything in Unity, then you must rebuild the UWP project.
 
