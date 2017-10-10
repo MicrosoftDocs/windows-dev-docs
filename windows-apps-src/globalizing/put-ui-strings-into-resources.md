@@ -154,6 +154,79 @@ If you were to move your "AppDisplayName" resource out of `Resources.resw` and i
 
 You only need to add `/<resources-file-name>/` before the resource identifier for Resources Files *other than* `Resources.resw`. That's because "Resources.resw" is the default file name, so that's what's assumed if you omit a file name (as we did in the earlier examples in this topic).
 
+## Load a string for a specific language or other context
+
+The default [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master) (obtained from [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_GetForCurrentView)) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Resources Files (.resw) are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
+
+But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching Resources File to load. For example, you might want your users to be able to select an alternative language for tooltips or error messages.
+
+You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your string lookups.
+
+```csharp
+var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext(); // not using ResourceContext.GetForCurrentView 
+resourceContext.QualifierValues["Language"] = "de-DE";
+var resourceMap = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetSubtree("Resources");
+this.myXAMLTextBlockElement.Text = resourceMap.GetValue("Farewell", resourceContext).ValueAsString;
+```
+
+Using **QualifierValues** as in the code example above works for any qualifier. For the special case of Language, you can alternatively do this instead.
+
+```csharp
+resourceContext.Languages = new string[] { "de-DE" };
+```
+
+For the same effect at a global level, you *can* override the qualifier values in the default **ResourceContext**. But instead we advise you to call [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). You set values one time with a call to **SetGlobalQualifierValue** and then those values are in effect on the default **ResourceContext** each time you use it for lookups.
+
+```csharp
+Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de-DE");
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
+```
+
+Some qualifiers have a system data provider. So, instead of calling **SetGlobalQualifierValue** you could instead adjust the provider through its own API. For example, this code shows how to set [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=master#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride).
+
+```csharp
+Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
+```
+
+## Updating strings in response to qualifier value change events
+
+Your running app can respond to changes in system settings that affect the qualifier values in the default resource context. Any of these system settings invokes the [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_?branch=master#Windows_Foundation_Collections_IObservableMap_2_MapChanged) event on [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
+
+In response to this event, you can reload your strings from the default **ResourceContext**.
+
+```csharp
+public MainPage()
+{
+	this.InitializeComponent();
+
+	...
+
+	// Subscribe to the event that's raised when a qualifier value changes.
+	var qualifierValues = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
+	qualifierValues.MapChanged += new Windows.Foundation.Collections.MapChangedEventHandler<string, string>(QualifierValues_MapChanged);
+}
+
+private async void QualifierValues_MapChanged(IObservableMap<string, string> sender, IMapChangedEventArgs<string> @event)
+{
+	var dispatcher = this.myXAMLTextBlockElement.Dispatcher;
+	if (dispatcher.HasThreadAccess)
+	{
+		this.RefreshUIText();
+	}
+	else
+	{
+		await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => this.RefreshUIText());
+	}
+}
+
+private void RefreshUIText()
+{
+	var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+	this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
+}
+```
+
 ## Related topics
 
 * [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
