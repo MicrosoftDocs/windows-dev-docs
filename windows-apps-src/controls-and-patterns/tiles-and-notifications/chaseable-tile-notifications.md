@@ -21,6 +21,7 @@ For example, a news app could use this feature to determine which news story the
 > [!IMPORTANT]
 > **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use chaseable tile notifications.
 
+
 > **Important APIs**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_), [TileActivatedInfo class](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 

@@ -20,6 +20,7 @@ The notification listener provides access to a user's notifications. Smartwatche
 > [!IMPORTANT]
 > **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use Notification Listener.
 
+
 > **Important APIs**: [UserNotificationListener class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger class](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
