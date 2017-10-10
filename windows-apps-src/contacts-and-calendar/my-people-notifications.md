@@ -12,9 +12,6 @@ keywords: windows 10, uwp
 
 # My People notifications
 
-> [!IMPORTANT]
-> **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16225](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16226](https://blogs.windows.com/windowsexperience/2017/06/21/announcing-windows-10-insider-preview-build-16226-pc/) or higher to use the My People APIs.
-
 My People notifications are a new kind of gesture that put people first. They provide a new way for users to connect with the people they care about through quick, lightweight expressive gestures.
 
 ![heart emoji notification](images/heart-emoji-notification-small.gif)
