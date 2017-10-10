@@ -4,13 +4,13 @@ keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: Design toolkits and resources for UWP apps
 author: mijacobs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 10/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ---
-# Design toolkits and resources for UWP apps
+# Design toolkits and samples for UWP apps
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
@@ -51,24 +51,40 @@ These toolkits provide controls and layout templates for designing UWP apps.
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>Photo sharing app</b> <br/>
-            This sample app demonstrates photo sharing with real-world social media. It demonstrates responsive design, in-app purchase, Azure services, push notifications, and more. <br/>[Download the Photo sharing app sample](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[Read more about PhotoSharingApp](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
+            <p><b>BuildCast</b> <br/>
+            BuildCast is an end-to-end sample built to showcase the Fluent Design System, as well as other capabilities of the Universal Windows Platform. It permits browsing, downloading, and playback of select video podcasts, including a sampling of the most popular ones from Channel 9 and some Windows tech enthusiast feeds. It also features ink notes, bookmarks, and remote playback. This sample was initially shown at the 2017 Build conference during the [Build Amazing Apps with Fluent Design](https://channel9.msdn.com/Events/Build/2017/B8034) talk. <br/>[Download the BuildCast sample](https://github.com/Microsoft/BuildCast/archive/master.zip) <br/>[Check out the BuildCast sample on GitHub](https://github.com/Microsoft/BuildCast)</p>    
   </div>
   <div class="side-by-side-content-right">
-<a href="http://go.microsoft.com/fwlink/p/?LinkId=760402"><img src="images/photo-sharing.png" alt="Download the Photo sharing app sample" /></a>
+<a href="https://github.com/Microsoft/BuildCast"><img src="images/buildcast.png" alt="Check out the BuildCast sample on GitHub" /></a>
   </div>
 </div>
 </div>
+<br/>
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>Hue Lights </b><br/>
-            This sample integrates Windows features with intelligent home automation. Specifically, it shows how you can use Cortana and Bluetooth Low Energy (Bluetooth LE) to create an interactive experience with the Phillips Hue Lights (a Wi-Fi enabled lighting system). <br/>[Download the Hue Lights sample](https://github.com/Microsoft/Windows-appsample-huelightcontroller/archive/master.zip)<br/>[Read more about the Hue Lights sample](https://github.com/Microsoft/Windows-appsample-huelightcontroller)</p>    
+            <p><b>Customers Orders Database</b> <br/>
+            This UWP sample app showcases features useful to enterprise developers, like Azure Active Directory (AAD) authentication, UI controls (including a data grid), and cloud database and API integration using ASP.NET Core and Entity Framework. <br/>[Download the Customers Orders Database sample] (https://github.com/Microsoft/Windows-appsample-customers-orders-database/archive/master.zip) <br/>[Check out the Customers Orders Database sample on GitHub](https://github.com/Microsoft/Windows-appsample-customers-orders-database)</p>   
   </div>
   <div class="side-by-side-content-right">
-<a href="https://github.com/Microsoft/Windows-appsample-huelightcontroller/archive/master.zip"><img src="images/hue-lights.png" alt="Download the Hue Lights sample" /></a>
+<a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database"><img src="images/customers-orders-database.png" alt="Check out the Customers Orders Database sample on GitHub" /></a>
   </div>
 </div>
 </div>
+<br/>
+
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+            <p><b>Lunch Scheduler</b><br/>
+            A UWP sample that schedules lunches with your friends and coworkers. You create a lunch, invite friends to a restaurant of interest, and the app takes care of the lunch management for all involved parties. This app incorporates elements of the Fluent Design System in a UWP app, including acrylic, reveal, and connected animations. <br/>[Download the Lunch Scheduler sample] (https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip) <br/>[Check out the Lunch Scheduler sample on GitHub](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)</p>    
+  </div>
+  <div class="side-by-side-content-right">
+<a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler"><img src="images/lunch-scheduler.png" alt="Check out the Lunch Scheduler sample on GitHub" /></a>
+  </div>
+</div>
+</div>
+<br/>
+
 <b>Want more code?</b> Check out the Windows sample page for complete list of all our UWP app samples. [Go to the samples portal](https://developer.microsoft.com/samples)
