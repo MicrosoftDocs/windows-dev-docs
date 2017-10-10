@@ -16,9 +16,6 @@ keywords: windows 10, uwp
 
 Conditional XAML is available starting with the Creators Update (version 1703, build 15063). To use conditional XAML, the Minimum Version of your Visual Studio project must be set to build 15063 (Creators Update) or later, and the Target Version be set to a later version than the Minimum. See [Version adaptive apps](version-adaptive-apps.md) for more info about configuring your Visual Studio project.
 
-> [!IMPORTANT]
-> **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16225](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16226](https://blogs.windows.com/windowsexperience/2017/06/21/announcing-windows-10-insider-preview-build-16226-pc/) or later to use conditional XAML.
-
 > [!NOTE]
 > To create a version adaptive app with a Minimum Version less than build 15063, you must use [version adaptive code](version-adaptive-code.md), not XAML.
 

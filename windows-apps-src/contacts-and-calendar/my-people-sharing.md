@@ -12,9 +12,6 @@ keywords: windows 10, uwp
 
 # My People sharing
 
-> [!IMPORTANT]
-> **PRERELEASE | Requires Fall Creators Update**: You must target [Insider SDK 16225](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK) and be running [Insider build 16226](https://blogs.windows.com/windowsexperience/2017/06/21/announcing-windows-10-insider-preview-build-16226-pc/) or higher to use the My People APIs.
-
 The My People feature allows users to pin contacts to their taskbar, enabling them to stay in touch easily from anywhere in Windows, no matter what application they are connected by. Now users can share content with their pinned contacts by dragging files from the File Explorer to their My People pin. They can also share to any contacts in the Windows contact store via the standard share charm. Keep reading to learn how to enable your application as a My People sharing target.
 
 ![My people sharing panel](images/my-people-sharing.png)
