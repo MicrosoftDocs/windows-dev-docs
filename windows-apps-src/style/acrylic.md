@@ -28,7 +28,7 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 
 ## Acrylic and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. 
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
 
 ## When to use acrylic
 
