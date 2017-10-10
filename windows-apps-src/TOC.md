@@ -222,8 +222,8 @@
 ### [Voice and tone](in-app-help/voice-and-tone.md)
 ## [Design toolkits](design-downloads/index.md)
 # Develop Windows apps
-## [What's new in Windows 10 for developers, version 1710](whats-new/windows-10-version-latest.md)
-### [API additions in Windows 10, version 1710](whats-new/windows-10-version-1710-api-diff.md)
+## [What's new in Windows 10 for developers, version 1709](whats-new/windows-10-version-latest.md)
+### [API additions in Windows 10, version 1709](whats-new/windows-10-version-1709-api-diff.md)
 ### [What's new in Windows 10, version 1703](whats-new/windows-10-version-1703.md)
 #### [API additions in Windows 10, version 1703](whats-new/windows-10-version-1703-api-diff.md)
 ### [What's new in Windows 10, version 1607](whats-new/windows-10-version-1607.md)

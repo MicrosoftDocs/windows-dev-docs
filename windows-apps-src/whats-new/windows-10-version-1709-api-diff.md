@@ -8,7 +8,6 @@ ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-redirect_url: windows-10-version-1709-api-diff
 ---
 
 # New APIs in Windows 10 version 1709
