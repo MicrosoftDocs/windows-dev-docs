@@ -20,7 +20,7 @@ Primary app tiles in Windows 10 are defined in your app manifest, while seconda
 ![default tile and tile with notification](images/sending-local-tile-01.png)
 
 > [!NOTE] 
->Learn about [creating adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [adaptive tile template schema](tiles-and-notifications-adaptive-tiles-schema.md).
+>Learn about [creating adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [tile content schema](tiles-and-notifications/tile-schema.md).
 
  
 
@@ -36,7 +36,7 @@ The inline code examples in this article are for C# using the Notifications libr
 
 To access the tile APIs, include the [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) namespace. We also recommend including the **NotificationsExtensions.Tiles** namespace so that you can take advantage of our tile helper APIs (you must install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package to access these APIs).
 
-```CSharp
+```csharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
@@ -44,11 +44,11 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## Create the notification content
 
 
-In Windows 10, tile payloads are defined using adaptive tile templates, which allow you to create custom visual layouts for your notifications. (To learn what's possible with adaptive tiles, see the [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [Adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md) articles.)
+In Windows 10, tile payloads are defined using adaptive tile templates, which allow you to create custom visual layouts for your notifications. (To learn what's possible with adaptive tiles, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).)
 
 This code example creates adaptive tile content for medium and wide tiles.
 
-```CSharp
+```csharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -127,7 +127,7 @@ Once you have your notification content, you'll need to create a new [**TileNoti
 
 This code example creates a notification for a new tile.
 
-```CSharp
+```csharp
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
@@ -139,7 +139,7 @@ By default, local tile and badge notifications don't expire, while push, periodi
 
 This code example creates a notification that expires and will be removed from the tile after ten minutes.
 
-```CSharp
+```csharp
 tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 ```
 
@@ -155,7 +155,7 @@ To send a notification to a primary tile, use the [**TileUpdateManager**](https:
 This code example sends a notification to a primary tile.
 
 
-```CSharp
+```csharp
 // Send the notification to the primary tile
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
@@ -166,7 +166,7 @@ To send a notification to a secondary tile, first make sure that the secondary t
 
 This code example sends a notification to a secondary tile.
 
-```CSharp
+```csharp
 // If the secondary tile is pinned
 if (SecondaryTile.Exists("MySecondaryTile"))
 {
@@ -187,7 +187,7 @@ In most cases, you should clear a notification once the user has interacted with
 
 This code example clears the tile notification for the primary tile. You can do the same for secondary tiles by creating a tile updater for the secondary tile.
 
-```CSharp
+```csharp
 TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 ```
 
@@ -213,7 +213,7 @@ This article shows you how to send the tile update as a notification. To explore
 If you're not using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), this notification delivery method is another alternative.
 
 
-```CSharp
+```csharp
 public string XmlEncode(string text)
 {
     StringBuilder builder = new StringBuilder();
@@ -233,14 +233,14 @@ If you prefer to work with raw XML instead of the [Notifications library](https:
 
 Add namespace declarations
 
-```CSharp
+```csharp
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
 Create the notification content
 
-```CSharp
+```csharp
 // In a real app, these would be initialized with actual data
 string from = "Jennifer Parker";
 string subject = "Photos from our trip";
@@ -273,7 +273,7 @@ string content = $@"
 
 Create the notification
 
-```CSharp
+```csharp
 // Load the string into an XmlDocument
 XmlDocument doc = new XmlDocument();
 doc.LoadXml(content);
@@ -285,7 +285,7 @@ var notification = new TileNotification(doc);
 ## Related topics
 
 * [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Tile content schema](tiles-and-notifications/tile-schema.md)
 * [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications namespace**](https://msdn.microsoft.com/library/windows/apps/br208661)

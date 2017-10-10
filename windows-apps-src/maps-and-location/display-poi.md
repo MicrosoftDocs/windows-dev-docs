@@ -4,39 +4,31 @@ title: Display points of interest (POI) on a map
 description: Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ms.author: normesta
-ms.date: 08/02/2017
+ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, map, location, pushpins
 ---
 
-# Display points of interest (POI) on a map
-
+# Display points of interest on a map
 
 
 
 Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements. A POI is a specific point on the map that represents something of interest. For example, the location of a business, city, or friend.
 
-**Tip** To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub: [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977).
 
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+Display pushpins, images, and shapes on the map by adding [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard),  [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103), and [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) objects to a **MapElements** collection of a [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) object. Then, add that layer object to the **Layers** collection of a map control.
 
-Display pushpins, images, and shapes on the map by adding [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103), and [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) objects to the [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) collection of the map control. Use data binding or add items programmatically; you can't bind to the **MapElements** collection declaratively in your XAML markup.
+>[!NOTE]
+> In previous releases, this guide showed you how to add map elements to the [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_MapElements) collection. While you can still use this approach, you'll miss out on some of the advantages of the new map layer model. To learn more, see the [Working with layers](#layers) section of this guide.
 
-Display XAML user interface elements such as a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), or a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) on the map by adding them as [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). You can also add them to the [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094), or bind the **MapItemsControl** to a collection of items.
+You can also display XAML user interface elements such as a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), or a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) on the map by adding them to the [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) or as [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-In summary:
+If you have a large number of elements to place on the map, consider [overlaying tiled images on the map](overlay-tiled-images.md). To display roads on the map, see [Display routes and directions](routes-and-directions.md)
 
--   [Add a MapIcon to the map](#mapicon) to display an image such as a pushpin with optional text.
--   [Add a MapPolygon to the map](#mappolygon) to display a multi-point shape.
--   [Add a MapPolyline to the map](#mappolyline) to display lines on the map.
--   [Add XAML to the map](#mapxaml) to display custom UI elements.
-
-If you have a large number of elements to place on the map, consider [overlaying tiled images on the map](overlay-tiled-images.md). To display roads on the map, see [Display routes and directions](routes-and-directions.md).
-
-## Add a MapIcon
-
+## Add a pushpin
 
 Display an image such a pushpin, with optional text, on the map by using the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) class. You can accept the default image or provide a custom image by using the [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property. The following image displays the default image for a **MapIcon** with no value specified for the [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) property, with a short title, with a long title, and with a very long title.
 
@@ -45,28 +37,35 @@ Display an image such a pushpin, with optional text, on the map by using the [**
 The following example shows a map of the city of Seattle and adds a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) with the default image and an optional title to indicate the location of the Space Needle. It also centers the map over the icon and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
-      private void displayPOIButton_Click(object sender, RoutedEventArgs e)
-      {
-         // Specify a known location.
-         BasicGeoposition snPosition = new BasicGeoposition() { Latitude = 47.620, Longitude = -122.349 };
-         Geopoint snPoint = new Geopoint(snPosition);
+public void AddSpaceNeedleIcon()
+{
+    var MyLandmarks = new List<MapElement>();
 
-         // Create a MapIcon.
-         var mapIcon1 = new MapIcon
-         {
-             Location = snPoint,
-             NormalizedAnchorPoint = new Point(0.5, 1.0),
-             Title = "Space Needle",
-             ZIndex = 0,
-         };
+    BasicGeoposition snPosition = new BasicGeoposition { Latitude = 47.620, Longitude = -122.349 };
+    Geopoint snPoint = new Geopoint(snPosition);
 
-         // Add the MapIcon to the map.
-         myMap.MapElements.Add(mapIcon1);
+    var spaceNeedleIcon = new MapIcon
+    {
+        Location = snPoint,
+        NormalizedAnchorPoint = new Point(0.5, 1.0),
+        ZIndex = 0,
+        Title = "Space Needle"
+    };
 
-         // Center the map over the POI.
-         myMap.Center = snPoint;
-         myMap.ZoomLevel = 14;
-      }
+    MyLandmarks.Add(spaceNeedleIcon);
+
+    var LandmarksLayer = new MapElementsLayer
+    {
+        ZIndex = 1,
+        MapElements = MyLandmarks
+    };
+
+    myMap.Layers.Add(LandmarksLayer);
+
+    myMap.Center = snPoint;
+    myMap.ZoomLevel = 14;
+
+}
 ```
 
 This example displays the following POI on the map (the default image in the center).
@@ -75,7 +74,8 @@ This example displays the following POI on the map (the default image in the cen
 
 The following line of code displays the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) with a custom image saved in the Assets folder of the project. The [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property of the **MapIcon** expects a value of type [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). This type requires a **using** statement for the [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) namespace.
 
-**Tip** If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) at the page or app level for the best performance.
+>[!NOTE]
+>If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) at the page or app level for the best performance.
 
 ```csharp
     MapIcon1.Image =
@@ -89,7 +89,41 @@ Keep these considerations in mind when working with the [**MapIcon**](https://ms
 -   The optional [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) of the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) is not guaranteed to be shown. If you don't see the text, zoom out by decreasing the value of the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 -   When you display a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) image that points to a specific location on the map - for example, a pushpin or an arrow - consider setting the value of the [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) property to the approximate location of the pointer on the image. If you leave the value of **NormalizedAnchorPoint** at its default value of (0, 0), which represents the upper left corner of the image, changes in the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) of the map may leave the image pointing to a different location.
 
-## Add a MapBillboard
+## Add a 3D pushpin
+
+You can add three-dimensional objects to a map. Use the [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) class to import a 3D object from a [3D Manufacturing Format (3MF)](http://3mf.io/specification/) file.
+
+This image uses 3D coffee cups to mark the locations of coffee shops in a neighborhood.
+
+![mugs on maps](images/mugs.png)
+
+The following code adds a coffee cup to the map by using importing a 3MF file. To keep things simple, this code adds the image to the center of the map, but your code would likely add the image to a specific location.
+
+```csharp
+public async void Add3DMapModel()
+{
+    var mugStreamReference = RandomAccessStreamReference.CreateFromUri
+        (new Uri("ms-appx:///Assets/mug.3mf"));
+
+    var myModel = await MapModel3D.CreateFrom3MFAsync(mugStreamReference,
+        MapModel3DShadingOption.Smooth);
+
+    myMap.Layers.Add(new MapElementsLayer
+    {
+       ZIndex = 1,
+       MapElements = new List<MapElement>
+       {
+          new MapElement3D
+          {
+              Location = myMap.Center,
+              Model = myModel,
+          },
+       },
+    });
+}
+```
+
+## Add an image
 
 Display large images that relate to map locations such as a picture of a restaurant or a landmark. As users zoom out, the image will shrink proportionally in size to enable the user to view more of the map. This is a bit different than a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) which marks a specific location, is typically small, and remains the same size as users zoom in and out of a map.
 
@@ -98,21 +132,36 @@ Display large images that relate to map locations such as a picture of a restaur
 The following code shows the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) presented in the image above.
 
 ```csharp
-private void mapBillboardAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+public void AddLandmarkPhoto()
 {
+    // Create MapBillboard.
+
     RandomAccessStreamReference mapBillboardStreamReference =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/billboard.jpg"));
 
-        var mapBillboard = new MapBillboard(myMap.ActualCamera)
-        {
-            Location = myMap.Center,
-            NormalizedAnchorPoint = new Point(0.5, 1.0),
-            Image = mapBillboardStreamReference
-        };
+    var mapBillboard = new MapBillboard(myMap.ActualCamera)
+    {
+        Location = myMap.Center,
+        NormalizedAnchorPoint = new Point(0.5, 1.0),
+        Image = mapBillboardStreamReference
+    };
 
-        myMap.MapElements.Add(mapBillboard);
+    // Add MapBillboard to a layer on the map control.
+
+    var MyLandmarkPhotos = new List<MapElement>();
+
+    MyLandmarkPhotos.Add(mapBillboard);
+
+    var LandmarksPhotoLayer = new MapElementsLayer
+    {
+        ZIndex = 1,
+        MapElements = MyLandmarkPhotos
+    };
+
+    myMap.Layers.Add(LandmarksPhotoLayer);
 }
 ```
+
 There's three parts of this code worth examining a little closer: The image, the reference camera, and the [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) property.
 
 ### Image
@@ -134,24 +183,26 @@ This example shows a custom image saved in the **Assets** folder of the project.
 
 The [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) is the point of the image that is anchored to the [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) property of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard). The point 0.5,1 is the bottom center of the image. Because we've set the [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) property of the [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) to the center of the map's control, the bottom center of the image will be anchored at the center of the maps control.
 
-## Add a MapPolygon
+## Add a shape
 
 Display a multi-point shape on the map by using the [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) class. The following example, from the [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977), displays a red box with blue border on the map.
 
 ```csharp
-private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+public void HighlightArea()
 {
+    // Create MapPolygon.
+
     double centerLatitude = myMap.Center.Position.Latitude;
     double centerLongitude = myMap.Center.Position.Longitude;
 
-    var mapPolygon = new MapPolygon()
+    var mapPolygon = new MapPolygon
     {
-        Path = new Geopath(new List<BasicGeoposition>() {
-        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },
-        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
-        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
-        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
-        }),
+        Path = new Geopath(new List<BasicGeoposition> {
+                    new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },
+                    new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+                    new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
+                    new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+                }),
         ZIndex = 1,
         FillColor = Colors.Red,
         StrokeColor = Colors.Blue,
@@ -159,32 +210,58 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
         StrokeDashed = false,
     };
 
-    myMap.MapElements.Add(mapPolygon);
+    // Add MapPolygon to a layer on the map control.
+    var MyHighlights = new List<MapElement>();
+
+    MyHighlights.Add(mapPolygon);
+
+    var HighlightsLayer = new MapElementsLayer
+    {
+        ZIndex = 1,
+        MapElements = MyHighlights
+    };
+
+    myMap.Layers.Add(HighlightsLayer);
 }
 ```
 
-## Add a MapPolyline
+## Add a line
 
 
 Display a line on the map by using the [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) class. The following example, from the [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977), displays a dashed line on the map.
 
 ```csharp
-private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+public void DrawLineOnMap()
 {
+    // Create Polyline.
+
     double centerLatitude = myMap.Center.Position.Latitude;
     double centerLongitude = myMap.Center.Position.Longitude;
     var mapPolyline = new MapPolyline
     {
-        Path = new Geopath(new List<BasicGeoposition>() {
-            new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
-            new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
-        }),
+        Path = new Geopath(new List<BasicGeoposition> {
+                    new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+                    new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+                }),
         StrokeColor = Colors.Black,
         StrokeThickness = 3,
         StrokeDashed = true,
     };
 
-    myMap.MapElements.Add(mapPolyline);
+   // Add Polyline to a layer on the map control.
+
+   var MyLines = new List<MapElement>();
+
+   MyLines.Add(mapPolyline);
+
+   var LinesLayer = new MapElementsLayer
+   {
+       ZIndex = 1,
+       MapElements = MyLines
+   };
+
+   myMap.Layers.Add(LinesLayer);
+
 }
 ```
 
@@ -201,7 +278,7 @@ The following example shows a map of the city of Seattle and adds a XAML [**Bord
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 {
    // Specify a known location.
-   BasicGeoposition snPosition = new BasicGeoposition() { Latitude = 47.620, Longitude = -122.349 };
+   BasicGeoposition snPosition = new BasicGeoposition { Latitude = 47.620, Longitude = -122.349 };
    Geopoint snPoint = new Geopoint(snPosition);
 
    // Create a XAML border.
@@ -246,7 +323,7 @@ public Geopoint SeattleLocation { get; set; }
 public Geopoint BellevueLocation { get; set; }
 ```
 
-This example shows how to display two XAML controls contained within a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).These controls appear on the map at the data binded locations.
+This example shows how to display two XAML controls contained within a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).These controls appear on the map at the data bound locations.
 
 ```xml
 <maps:MapControl>
@@ -274,7 +351,7 @@ This example displays a collection of XAML elements bound to a [**MapItemsContro
 </maps:MapControl>
 ```
 
-The ``ItemsSource`` property in the example above is bound to property of type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) in the code-behind file.
+The ``ItemsSource`` property in the example above is bound to a property of type [IList](https://docs.microsoft.com/dotnet/api/system.collections.ilist?view=netframework-4.70) in the code-behind file.
 
 ```csharp
 public sealed partial class Scenario1 : Page
@@ -283,11 +360,11 @@ public sealed partial class Scenario1 : Page
 
     public MyClassConstructor()
     {
-         setLandMarkLocations();
+         SetLandMarkLocations();
          this.InitializeComponent();   
     }
 
-    private void setLandMarkLocations()
+    private void SetLandMarkLocations()
     {
         LandmarkOverlays = new List<MapElement>();
 
@@ -310,8 +387,86 @@ public sealed partial class Scenario1 : Page
         LandmarkOverlays.Add(SeattleSpaceNeedleIcon);
     }
 }
+```
 
+<span id="layers" />
+## Working with layers
 
+The examples in this guide add elements to a [MapElementLayers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) collection. Then they show how to add that collection to the **Layers** property of the map control. In previous releases, this guide showed you how to add map elements to the [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_MapElements) collection as follows:
+
+```csharp
+var pikePlaceIcon = new MapIcon
+{
+    Location = new Geopoint(new BasicGeoposition
+    { Latitude = 47.610, Longitude = -122.342 }),
+    NormalizedAnchorPoint = new Point(0.5, 1.0),
+    ZIndex = 0,
+    Title = "Pike Place Market"
+};
+
+myMap.MapElements.Add(pikePlaceIcon);
+```
+
+While you can still use this approach, you'll miss out on some of the advantages of the new map layer model. By grouping your elements into layers, you can manipulate each layer independently from one another. For example, each layer has it's own set of events so you can respond to an event on a specific layer and perform an action specific to that event.
+
+Also, you can bind XAML directly to a [MapLayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maplayer). This is something that you can't do by using the [MapElements](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_MapElements)  collection.
+
+One way you could do this is by using a view model class, code-behind a XAML page, and a XAML page.
+
+### View model class
+
+```csharp
+public class LandmarksViewModel
+{
+    public ObservableCollection<MapLayer> LandmarkLayer
+        { get; } = new ObservableCollection<MapLayer>();
+
+    public LandmarksViewModel()
+    {
+        var MyElements = new List<MapElement>();
+
+        var pikePlaceIcon = new MapIcon
+        {
+            Location = new Geopoint(new BasicGeoposition
+            { Latitude = 47.610, Longitude = -122.342 }),
+            Title = "Pike Place Market"
+        };
+
+        MyElements.Add(pikePlaceIcon);
+
+        var LandmarksLayer = new MapElementsLayer
+        {
+            ZIndex = 1,
+            MapElements = MyElements
+        };
+
+        LandmarkLayer.Add(LandmarksLayer);         
+    }
+
+```
+
+### Code-behind a XAML page
+
+Connect the view model class to your code behind page.
+
+```csharp
+public LandmarksViewModel ViewModel { get; set; }
+
+public myMapPage()
+{
+    this.InitializeComponent();
+    this.ViewModel = new LandmarksViewModel();
+}
+```
+
+### XAML page
+
+In your XAML page, bind to the property in your view model class that returns the layer.
+
+```XML
+<maps:MapControl
+    x:Name="myMap" TransitFeaturesVisible="False" Loaded="MyMap_Loaded" Grid.Row="2"
+    MapServiceToken="Your token" Layers="{x:Bind ViewModel.LandmarkLayer}"/>
 ```
 
 ## Related topics

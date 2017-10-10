@@ -4,7 +4,7 @@ ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: The Microsoft Advertising SDK gives you several ways to monetize your app with ads.
 title: Display ads in your app with the Microsoft Advertising SDK
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -87,11 +87,11 @@ For instructions and code examples, see [this article](native-ads.md).
 <span id="ad-mediation"/>
 ## Step 3: Create an ad unit and configure mediation
 
-After you finish testing your app and you are ready to submit it to the Store, create an ad unit on the [Monetize with ads](../publish/monetize-with-ads.md) page in the Windows Dev Center dashboard. Then, update your app code to use this ad unit so that your app will receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
+After you finish testing your app and you are ready to submit it to the Store, create an ad unit on the [In-app ads](../publish/in-app-ads.md) page in the Windows Dev Center dashboard. Then, update your app code to use this ad unit so that your app will receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
 By default, your app will show ads from Microsoft's network for paid ads. To maximize your ad revenue, you can enable ad mediation for your ad unit to display ads from additional paid ad networks such as Taboola and Smaato. You can also increase your app promotion capabilities by serving ads from Microsoft app promotion campaigns.
 
-To start using ad mediation in your UWP app, [configure ad mediation settings](../publish/monetize-with-ads.md#mediation) for your ad unit. By default, we automatically configure the mediation settings using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports. However, also have the option to manually choose the networks you want to use. Either way, the mediation settings are configured entirely in the service; you do not need to make any code changes in your app.    
+To start using ad mediation in your UWP app, [configure ad mediation settings](../publish/in-app-ads.md#mediation-settings) for your ad unit. By default, we automatically configure the mediation settings using machine-learning algorithms to help you maximize your ad revenue across the markets your app supports. However, you also have the option to manually choose the networks you want to use. Either way, the mediation settings are configured entirely on our servers; you do not need to make any code changes in your app.    
 
 ## Step 4: Submit your app and review performance
 

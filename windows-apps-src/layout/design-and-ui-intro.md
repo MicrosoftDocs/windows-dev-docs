@@ -7,7 +7,7 @@ label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 08/9/2017
+ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -105,6 +105,9 @@ The UWP also provides some useful building blocks that make it easier to design 
 * [Parallax](../style/parallax.md) adds three-dimensional perspective, depth, and movement to scrolling content, such as lists.
 * [Reveal](../style/reveal.md) uses light to create a hover effect that illuminates interactive UI elements. 
 * [Connected animations](../style/connected-animation.md) provide graceful scene transitions that improve usability by maintaining context and providing continuity. 
+
+This video shows some of these features in action:
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Fluent-Design-features-for-Fall-Creators-Update/player]
 
 We've also updated our [design guidelines](https://developer.microsoft.com/windows/apps/design) (which you're current reading) so they're based on Fluent Design principles.
 

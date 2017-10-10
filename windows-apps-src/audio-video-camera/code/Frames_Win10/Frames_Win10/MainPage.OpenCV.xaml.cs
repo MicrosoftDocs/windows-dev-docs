@@ -56,7 +56,7 @@ namespace Frames_Win10
             //</SnippetOpenCVFrameSourceGroups>
 
             //<SnippetOpenCVInitMediaCapture>
-            _mediaCapture = new MediaCapture();
+            mediaCapture = new MediaCapture();
 
             var settings = new MediaCaptureInitializationSettings()
             {
@@ -67,7 +67,7 @@ namespace Frames_Win10
             };
             try
             {
-                await _mediaCapture.InitializeAsync(settings);
+                await mediaCapture.InitializeAsync(settings);
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace Frames_Win10
                 return;
             }
 
-            var colorFrameSource = _mediaCapture.FrameSources[colorSourceInfo.Id];
+            var colorFrameSource = mediaCapture.FrameSources[colorSourceInfo.Id];
             //</SnippetOpenCVInitMediaCapture>
 
             //<SnippetOpenCVFrameReader>
@@ -85,13 +85,13 @@ namespace Frames_Win10
                 Width = 640
             };
 
-            _mediaFrameReader = await _mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32, size);
-            _mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived_OpenCV;
+            mediaFrameReader = await mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32, size);
+            mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived_OpenCV;
 
-            _imageElement.Source = new SoftwareBitmapSource();
-            _frameRenderer = new FrameRenderer(_imageElement);
+            imageElement.Source = new SoftwareBitmapSource();
+            _frameRenderer = new FrameRenderer(imageElement);
 
-            await _mediaFrameReader.StartAsync();
+            await mediaFrameReader.StartAsync();
             //</SnippetOpenCVFrameReader>
         }
         //<SnippetOpenCVFrameArrived>

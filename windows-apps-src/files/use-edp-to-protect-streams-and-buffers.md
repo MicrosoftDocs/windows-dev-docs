@@ -1,10 +1,13 @@
 ---
 author: normesta
-Description: 'This topic shows examples of the coding tasks needed to achieve some of the most common stream- and buffer-related Windows Information Protection (WIP) scenarios.'
-MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-Search.Product: eADQiWindows 10XVcnh
-title: 'Use Windows Information Protection (WIP) to protect streams and buffers'
+title: Use Windows Information Protection (WIP) to protect streams and buffers
+Description: This topic shows examples of the coding tasks needed to achieve some of the most common stream- and buffer-related Windows Information Protection (WIP) scenarios.
+ms.author: normesta
+ms.date: 09/22/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 redirect_url: ../enterprise/wip-dev-guide
 ---
 

@@ -8,15 +8,40 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Orientation="Vertical">
-            <!--<SnippetImageElementXAML>-->
-            <Image x:Name="_imageElement" Width="320" Height="240"/>
-            <!--</SnippetImageElementXAML>-->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical"  Grid.Row="0" Grid.Column="0">
+            
+            
+            
             <Button x:Name="ActionButton" Click="ActionButton_Click" Content="RGB/Front Panel/1920 (no xbox)"/>
             <Button x:Name="ActionButton2" Click="ActionButton2_Click" Content="RGB/1920/FrameRenderer (xbox)"/>
             <Button x:Name="MultiframeButton" Click="MultiFrameButton_Click" Content="MultiFrame"/>
             <Button x:Name="OpenCV" Click="OpenCV_Click" Content="OpenCV"/>
+            <Button x:Name="MediaSourceFromFrameSource" Click="MediaSourceFromFrameSource_Click" Content="MediaSourceFromFrameSource"/>
+            
         </StackPanel>
+        <Border Grid.Row="0" Grid.Column="1">
+        <!--<SnippetImageElementXAML>-->
+        <Image x:Name="imageElement" Width="320" Height="240" />
+        <!--</SnippetImageElementXAML>-->
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0">
+            <!--<SnippetMediaPlayerElement1XAML>-->
+            <MediaPlayerElement x:Name="mediaPlayerElement1" Width="320" Height="240"/>
+            <!--</SnippetMediaPlayerElement1XAML>-->
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1">
+            <!--<SnippetMediaPlayerElement2XAML>-->
+            <MediaPlayerElement x:Name="mediaPlayerElement2" Width="320" Height="240"/>
+            <!--</SnippetMediaPlayerElement2XAML>-->
+        </Border>
         
     </Grid>
 </Page>

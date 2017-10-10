@@ -57,7 +57,7 @@ namespace MediaSource_RS1
         {
             this.InitializeComponent();
 
-            
+
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -261,7 +261,7 @@ namespace MediaSource_RS1
         //<SnippetAudioTracksChanged_CodecCheck>
         private async void SnippetAudioTracksChanged_CodecCheck(MediaPlaybackItem sender, IVectorChangedEventArgs args)
         {
-            if(args.CollectionChange == CollectionChange.ItemInserted)
+            if (args.CollectionChange == CollectionChange.ItemInserted)
             {
                 var insertedTrack = sender.AudioTracks[(int)args.Index];
 
@@ -272,7 +272,8 @@ namespace MediaSource_RS1
                     {
                         ShowMessageToUser(string.Format("Track {0} can play but playback will be degraded. {1}",
                             insertedTrack.Name, insertedTrack.SupportInfo.DegradationReason));
-                    } else
+                    }
+                    else
                     {
                         // status is MediaDecoderStatus.UnsupportedSubtype or MediaDecoderStatus.UnsupportedEncoderProperties
                         ShowMessageToUser(string.Format("Track {0} uses an unsupported media format.", insertedTrack.Name));
@@ -294,8 +295,8 @@ namespace MediaSource_RS1
         private async void InsertedTrack_OpenFailed(AudioTrack sender, AudioTrackOpenFailedEventArgs args)
         {
             LogError(args.ExtendedError.HResult);
-            
-            if(sender.SupportInfo.MediaSourceStatus == MediaSourceStatus.Unknown)
+
+            if (sender.SupportInfo.MediaSourceStatus == MediaSourceStatus.Unknown)
             {
                 await SelectAnotherTrackOrSkipPlayback(sender.PlaybackItem);
             }
@@ -306,10 +307,10 @@ namespace MediaSource_RS1
         public async Task HelpUserInstallCodec(Windows.Media.MediaProperties.AudioEncodingProperties props)
         {
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-                {
-                    // This is fake async so the method can be called async
+            {
+                // This is fake async so the method can be called async
 
-                }  
+            }
             );
         }
         public async Task SelectAnotherTrackOrSkipPlayback(MediaPlaybackItem item)
@@ -330,7 +331,7 @@ namespace MediaSource_RS1
         {
 
         }
-        
+
 
         #endregion
 
@@ -539,7 +540,7 @@ namespace MediaSource_RS1
 
             var files = await filePicker.PickMultipleFilesAsync();
 
-            foreach(var file in files)
+            foreach (var file in files)
             {
                 var mediaPlaybackItem = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(file));
                 _mediaPlaybackList.Items.Add(mediaPlaybackItem);
@@ -620,12 +621,12 @@ namespace MediaSource_RS1
         }
         //</SnippetRepeatButton>
 
-        
+
 
         //<SnippetItemOpened>
         private void MediaPlaybackList_ItemOpened(MediaPlaybackList sender, MediaPlaybackItemOpenedEventArgs args)
         {
-            
+
 
         }
         //</SnippetItemOpened>
@@ -729,7 +730,7 @@ namespace MediaSource_RS1
 
             binderFiles = await filePicker.PickMultipleFilesAsync();
 
-           
+
 
             _mediaPlaybackList = new MediaPlaybackList();
 
@@ -751,7 +752,7 @@ namespace MediaSource_RS1
 
         private void Binder_Binding_StorageFile(MediaBinder sender, MediaBindingEventArgs args)
         {
-            switch(args.MediaBinder.Token)
+            switch (args.MediaBinder.Token)
             {
                 case "MyBindingToken1":
                     args.SetStorageFile(binderFiles[0]);
@@ -783,10 +784,10 @@ namespace MediaSource_RS1
         //<SnippetAMSBindingCurrentItemChanged>
         private void AMSMediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
         {
-            if(args.NewItem != null)
+            if (args.NewItem != null)
             {
                 var ams = args.NewItem.Source.AdaptiveMediaSource;
-                if(ams != null)
+                if (ams != null)
                 {
                     ams.PlaybackBitrateChanged += Ams_PlaybackBitrateChanged;
                 }
@@ -807,12 +808,12 @@ namespace MediaSource_RS1
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if(_mediaPlayer != null)
+            if (_mediaPlayer != null)
             {
                 _mediaPlayer.Play();
             }
         }
 
-        
+
     }
 }

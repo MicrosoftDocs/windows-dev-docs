@@ -1,12 +1,21 @@
 ---
 author: Karl-Bridge-Microsoft
+Description: Learn how to manage focus navigation with keyboard, gamepad, and accessibility tools in a UWP app.
+title: Focus navigation with keyboard, gamepad, and accessibility tools
+label: Manage focus navigation
+keywords: keyboard, gamepad, game controller, remote, accessibility, navigation, focus, input, user interaction
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ---
 
-# Managing focus navigation
+# Focus navigation with keyboard, gamepad, and accessibility tools
 
 Many input namely keyboard, accessibility tools such as Windows
 Narrator, gamepad, and remote control share common underling mechanism

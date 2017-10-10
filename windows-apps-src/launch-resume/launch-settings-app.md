@@ -120,6 +120,22 @@ Use the following URIs to open various pages of the Settings app.
   <td></td>
  </tr>
  <tr>
+   <td rowspan="3">Cortana</td>
+   <td>Talk to Cortana</td>
+   <td>ms-settings:cortana-language</td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>More details</td>
+   <td>ms-settings:cortana-moredetails</td>
+   <td></td>
+ </tr>
+ <tr>
+   <td>Notifications</td>
+   <td>ms-settings:cortana-notifications</td>
+   <td></td>
+ </tr>
+ <tr>
   <td rowspan="12">Devices</td>
   <td>USB</td>
   <td>ms-settings:usb</td>
@@ -222,7 +238,7 @@ Use the following URIs to open various pages of the Settings app.
   <td>Only available if "settings apps" are installed (e.g. by 3rd party)</td>
  </tr>
  <tr>
-  <td rowspan="4">Gaming</td>
+  <td rowspan="6">Gaming</td>
   <td>Broadcasting</td>
   <td>ms-settings:gaming-broadcasting</td>
   <td></td>
@@ -242,6 +258,17 @@ Use the following URIs to open various pages of the Settings app.
   <td>ms-settings:gaming-gamemode</td>
   <td></td>
  </tr>
+ <tr>
+  <td>TruePlay</td>
+  <td>ms-settings:gaming-trueplay</td>
+  <td></td>
+ </tr>
+ <tr>
+   <td>Xbox Networking</td>
+   <td>ms-settings:gaming-xboxnetworking</td>
+   <td></td>
+  </tr>
+ <tr>
  <tr>
   <td>Home page</td>
   <td>Landing page for Settings</td>
@@ -508,7 +535,7 @@ Use the following URIs to open various pages of the Settings app.
       <td>ms-settings:surfacehub-welcome</td>
       <td></td>
   </tr>
-    <td rowspan="19">System</td>
+    <td rowspan="20">System</td>
     <td>Shared experiences</td>
       <td>ms-settings:crossdevice</td>
     <td></td>
@@ -591,6 +618,11 @@ Use the following URIs to open various pages of the Settings app.
  <tr>
   <td>Storage Sense</td>
     <td>ms-settings:storagepolicies</td>
+  <td></td>
+ </tr>
+ <tr>
+  <td>Default Save Locations</td>
+    <td>ms-settings:savelocations</td>
   <td></td>
  </tr>
  <tr>
@@ -700,7 +732,7 @@ Use the following URIs to open various pages of the Settings app.
   <td></td>
  </tr>
  <tr>
-  <td rowspan="2">User  Accounts</td>
+  <td rowspan="3">User  Accounts</td>
   <td>Windows Anywhere</td>
   <td>ms-settings:windowsanywhere</td>
   <td>Device must be Windows Anywhere-capable</td>
@@ -709,5 +741,10 @@ Use the following URIs to open various pages of the Settings app.
   <td>Provisioning</td>
   <td>ms-settings:workplace-provisioning</td>
   <td>Only available if enterprise has deployed a provisioning package</td>
+ </tr>
+ <tr>
+   <td>Provisioning</td>
+   <td>ms-settings:provisioning</td>
+   <td>Only available on mobile and if the enterprise has deployed a provisioning package</td>
  </tr>
 </table><br/>  

@@ -17,11 +17,11 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configurati
 
 You may be familiar with some of the Xbox Live features such as [Achievements](achievements-2017/achievements.md), [Leaderboards](leaderboards-and-stats-2017/leaderboards.md) and [Matchmaking](multiplayer/multiplayer-concepts.md#SmartMatch).
 
-In case you are not, we'll briefly explain Leaderboards as an example.  Leaderboards allow players to see a value representing an accomplishment, in comparison to other players.  For example high scores in an arcade game, lap times in a racing game, or headshots in a first-person shooter.  But unlike an arcade machine which only shows the top scores from the players who have played on that physical machine, with Xbox Live it is possible to display high scores from around the world.
+In case you are not, we'll briefly explain Leaderboards as an example. Leaderboards allow players to see a value representing an accomplishment, in comparison to other players.  For example high scores in an arcade game, lap times in a racing game, or headshots in a first-person shooter. But unlike an arcade machine which only shows the top scores from the players who have played on that physical machine, with Xbox Live it is possible to display high scores from around the world.
 
-But for this to happen, you need to perform some one-time configuration so that Xbox Live knows about your leaderboard.  For example whether the values should be sorted in ascending or descending value, and what piece of data it should be sorting.
+But for this to happen, you need to perform some one-time configuration so that Xbox Live knows about your leaderboard. For example whether the values should be sorted in ascending or descending value, and what piece of data it should be sorting.
 
-This configuration happens on [Dev Center](http://dev.windows.com) most of the time.  But certain developers will use [Xbox Developer Portal (XDP)](http://xdp.xboxlive.com).
+This configuration happens on [Dev Center](http://dev.windows.com) most of the time. But certain developers will use [Xbox Developer Portal (XDP)](http://xdp.xboxlive.com).
 
 If you are a developing your title as part of the Xbox Live Creators Program, you use [Dev Center](http://dev.windows.com), and you can read [Getting Started With Xbox Live](get-started-with-creators/get-started-with-xbox-live-creators.md) to learn how to get set up.
 
@@ -29,28 +29,28 @@ If you are an ID@Xbox Developer or working with a publisher that is a Microsoft 
 
 ## Choose your development portal
 
-As mentioned above, there are two different portals that can be used to configure Xbox Live Services.  Windows Dev Center at [http://dev.windows.com](http://dev.windows.com) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](http://xdp.xboxlive.com).
+As mentioned above, there are two different portals that can be used to configure Xbox Live Services. Windows Dev Center at [http://dev.windows.com](http://dev.windows.com) and the Xbox Development Portal (XDP) at [http://xdp.xboxlive.com](http://xdp.xboxlive.com).
 
-Windows Dev Center is recommended for all titles going forward, but for certain features, you may still want to use XDP.  This section will help advise you where to configure your title.
+Windows Dev Center is recommended for all titles going forward, but for certain features, you may still want to use XDP. This section will help advise you where to configure your title.
 
 If you already have a title configured, you can go to [Get your IDs](#get_ids) to learn how to get the various identifiers required to setup your title.
 
 ### Xbox One XDK only
-If you are developing a game using the Xbox One XDK, then you must use XDP to ingest, configure, and publish your game.  Support for configuring XDK titles on Windows Dev Center will be coming soon.
+If you are developing a game using the Xbox One XDK, then you must use XDP to ingest, configure, and publish your game. Support for configuring XDK titles on Windows Dev Center will be coming soon.
 
 ### PC/Mobile UWP game only
 Windows Dev Center is recommended for configuring and managing UWP games that run only on Windows 10 PCs and/or Windows 10 mobile devices.
 
 #### Using XDP to configure UWP titles
 
-You may want to use XDP to configure UWP titles if you have one of the following requirements.
+You may want to use XDP to configure UWP titles if you have one of the following requirements:
 
-1. You are using Arena
+1. You are using Arena.
 2. You have existing users, groups, and permissions setup on XDP that you want to keep using.
 3. You are using tools which only work on XDP such as the Tournaments Tool or MPSD Session History viewer.
 4. You are developing a title that will have cross-platform play between an Xbox One XDK based game and UWP PC/mobile version of the same game.
 
-If you don't fall into one of those categories, then you should use Windows Dev Center.  Otherwise you can see below for how to use XDP to configure a UWP title.
+If you don't fall into one of those categories, then you should use Windows Dev Center. Otherwise you can see below for how to use XDP to configure a UWP title.
 
 Using XDP to configure Xbox Live Services for UWP applications has a few important caveats:
 
@@ -88,9 +88,9 @@ If you do not currently have a title in XDP or Dev Center, see the above section
 
 ### Critical IDs
 
-There are three IDs which are critical for development of titles and applications for Xbox One: the sandbox ID, the TitleID, and the SCID.
+There are three IDs which are critical for development of titles and applications for Xbox One: the sandbox ID, the Title ID, and the SCID.
 
-While it is necessary to have a sandbox ID to use a development kit, the TitleID and SCID are not required for initial development but are required for any use of Xbox Live services. We therefore recommend that you obtain all three at once.
+While it is necessary to have a sandbox ID to use a development kit, the Title ID and SCID are not required for initial development but are required for any use of Xbox Live services. We therefore recommend that you obtain all three at once.
 
 #### Sandbox IDs
 
@@ -112,25 +112,25 @@ If you are configuring your title on XDP, you get your Sandbox ID on the the ove
 
 #### Service Configuration ID (SCID)
 
-As a part of development, you will create events, achievements, and a host of other online features. These are all part of your Service Configuration, and require the SCID for access. A given title may have multiple Service Configurations; each will have its own SCID.
+As a part of development, you will create events, achievements, and a host of other online features. These are all part of your service configuration, and require the SCID for access.
 
 SCIDs are case sensitive.
 
 **Dev Center**
 
-To retrieve your SCID on Dev Center, navigate to the Xbox Live Services section and go to *Xbox Live Setup* .  Your SCID is displayed in the table shown below:
+To retrieve your SCID on Dev Center, navigate to the Xbox Live Services section and go to *Xbox Live Setup* . Your SCID is displayed in the table shown below:
 
 ![](images/getting_started/devcenter_scid.png)
 
 **XDP**
 
-To retrieve your SCID on XDP, navigate to the "Product Setup" section under your title and you will see both the Title ID and SCID.  Eg:
+To retrieve your SCID on XDP, navigate to the "Product Setup" section under your title and you will see both the Title ID and SCID.
 
 ![](images/getting_started/xdp_scid.png)
 
-#### TitleID
+#### Title ID
 
-The TitleID uniquely identifies your title to Xbox Live services. It is used throughout the services to enable your users to access your title's Live content, their user statistics, achievements, and so forth, and to enable Live multiplayer functionality.
+The Title ID uniquely identifies your title to Xbox Live services. It is used throughout the services to enable your users to access your title's Live content, their user statistics, achievements, and so forth, and to enable Live multiplayer functionality.
 
 Title IDs can be case sensitive, depending on how and where they are used.
 

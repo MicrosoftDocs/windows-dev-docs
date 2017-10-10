@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Learn how to add native ads to your UWP app.
 title: Native ads
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ A native ad is a component-based ad format where each piece of the ad creative (
 For advertisers, native ads provide high-performing placements, because the ad experience is tightly integrated into the app and users therefore tend to interact more with these types of ads.
 
 > [!NOTE]
-> To serve native ads to the public version of your app in the Store, you must create a **Native** ad unit from the **Monetize with ads** page in the Dev Center dashboard. The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make  this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
+> To serve native ads to the public version of your app in the Store, you must create a **Native** ad unit from the **Monetize** &gt; **In-app ads** page in the Dev Center dashboard. The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make  this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
 
 > [!NOTE]
 > Native ads are currently supported only for XAML-based UWP apps for Windows 10. Support for UWP apps written using HTML and JavaScript is planned for a future release of the Microsoft Advertising SDK.
@@ -110,11 +110,11 @@ After you confirm that your native ad implementation successfully shows a test a
 
 1.  Make sure that your native ad implementation follows our [guidelines for native ads](ui-and-user-experience-guidelines.md#guidelines-for-native-ads).
 
-2.  In the Dev Center dashboard, go to the [Monetize with ads](../publish/monetize-with-ads.md) page for your app and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
+2.  In the Dev Center dashboard, go to the [In-app ads](../publish/in-app-ads.md) page and [create an ad unit](set-up-ad-units-in-your-app.md#live-ad-units). For the ad unit type, specify **Native**. Make note of both the ad unit ID and the application ID.
     > [!NOTE]
     > The application ID values for test ad units and live UWP ad units have different formats. Test application ID values are GUIDs. When you create a live UWP ad unit in the dashboard, the application ID value for the ad unit always matches the Store ID for your app (an example Store ID value looks like 9NBLGGH4R315).
 
-3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Ad mediation](../publish/monetize-with-ads.md#mediation) section on the [Monetize with ads](../publish/monetize-with-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
+3. You can optionally enable ad mediation for the native ad by configuring the settings in the [Mediation settings](../publish/in-app-ads.md#mediation) section on the [In-app ads](../publish/in-app-ads.md) page. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks.
 
 4.  In your code, replace the test ad unit values (that is, the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor) with the live values you generated in Dev Center.
 
@@ -124,7 +124,7 @@ After you confirm that your native ad implementation successfully shows a test a
 
 ## Manage ad units for multiple native ads in your app
 
-You can use multiple native ad placements in a single app. In this scenario, we recommend that you assign a different ad unit to each native ad placements. Using different ad units for native ad enables you to separately [configure the mediation settings](../publish/monetize-with-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
+You can use multiple native ad placements in a single app. In this scenario, we recommend that you assign a different ad unit to each native ad placements. Using different ad units for native ad enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.
 
 > [!IMPORTANT]
 > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
@@ -132,5 +132,5 @@ You can use multiple native ad placements in a single app. In this scenario, we 
 ## Related topics
 
 * [Guidelines for native ads](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)
-* [Monetize with ads](../publish/monetize-with-ads.md)
+* [In-app ads](../publish/in-app-ads.md)
 * [Set up ad units for your app](set-up-ad-units-in-your-app.md)

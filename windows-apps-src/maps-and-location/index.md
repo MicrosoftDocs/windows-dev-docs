@@ -18,7 +18,8 @@ keywords: windows 10, uwp, map, location, map services
 
 This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
 
-> **Tip**  To learn more about using maps and location in your app, download the following samples from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
+> [!TIP]
+> To learn more about using maps and location in your app, download the following samples from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub:
 -   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
@@ -40,7 +41,7 @@ Display maps with 2D, 3D, or Streetside views in your app by using APIs from the
 
 ## Access map services
 
-Add routes, directions, and geocoding capabilities to your app by using APIs from the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. You can also help the user manage offline maps by launching the Settings app directly to the appropriate page.
+Add routes, directions, and geocoding capabilities to your app by using APIs from the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace.
 
 | Topic | Description |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +49,7 @@ Add routes, directions, and geocoding capabilities to your app by using APIs fro
 | [Display points of interest (POI) on a map](display-poi.md) | Add points of interest (POI) to a map by using pushpins, images, shapes, and XAML UI elements. |
 | [Display routes and directions](routes-and-directions.md) | Request routes and directions, and display them in your app. |
 | [Perform geocoding and reverse geocoding](geocoding.md) | Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. |
-
+| [Find and download map packages for offline use](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| In the past, your app had to direct users to the Settings app to download offline Maps. Now, you can use classes in the [Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps) namespace to find downloaded packages in a given area (based on a [Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> You can also check and listen for the downloaded status of map packages as well as start a download without requiring the user to leave your app. <br> You'll find examples of how to do this in both the reference content and the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977).
 
 ## Get the user's location
 
@@ -58,8 +59,9 @@ Get the user's current location and be notified when the location changes in you
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Request a maps authentication key](authentication-key.md) | Your app must be authenticated before it can use the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and map services in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace. To authenticate your app, you must specify a maps authentication key. This article describes how to request a maps authentication key from the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and add it to your app. |
 | [Design guidelines for location-aware apps](guidelines-and-checklist-for-detecting-location.md) | Performance guidelines for apps that require access to a user's location. |
-| [Get the user's location](get-location.md) | Get access to the user's location, then retreive it. |
-| [Design guidance for geofencing](guidelines-for-geofencing.md) | Performance guidleines for apps that utilize the geofencing feature. |
+| [Get the user's location](get-location.md) | Get access to the user's location, then retreive it. | 
+| [Guidelines for using Visits tracking](guidelines-for-visits.md) | Learn how to use the powerful Visits Tracking feature for more practical location tracking. |
+| [Design guidance for geofencing](guidelines-for-geofencing.md) | Performance guidelines for apps that utilize the geofencing feature. |
 | [Set up a geofence](set-up-a-geofence.md) | Set up a geofence in your app, and learn how to handle notifications in the foreground and background. |
 
 ## Launch the Windows Maps app

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="2ec49350-29a5-4abb-8e85-1b8c16cc4cc8" Publisher="CN=drewbat" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="2ec49350-29a5-4abb-8e85-1b8c16cc4cc8" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="70bba1dc-55de-4c59-a886-288673f5c18a" Publisher="CN=drewbat" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="70bba1dc-55de-4c59-a886-288673f5c18a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>SimpleCameraPreview_Win10</DisplayName>
     <PublisherDisplayName>drewbat</PublisherDisplayName>
@@ -25,9 +25,8 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <uap:Capability Name="picturesLibrary" />
-    <uap:Capability Name="musicLibrary" />
     <uap:Capability Name="videosLibrary" />
-    <DeviceCapability Name="microphone" />
     <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="microphone" />
   </Capabilities>
 </Package>

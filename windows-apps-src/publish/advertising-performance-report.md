@@ -4,7 +4,7 @@ Description: To view performance data for the ad units in your apps, use the app
 title: Advertising performance report
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 07/05/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,9 +14,9 @@ keywords: windows 10, uwp
 # Advertising performance report
 
 
-The **Advertising performance report** shows how your [ad units](monetize-with-ads.md#available-ad-units) are performing, including community ads and affiliate ads. This report includes data from multiple ad providers in UWP apps that use [ad mediation](monetize-with-ads.md#mediation). 
+The **Advertising performance report** shows how your [ad units](in-app-ads.md) are performing, including community ads. This report includes data from multiple ad providers in UWP apps that use [ad mediation](in-app-ads.md#mediation).
 
-To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**. 
+To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**.
 
 To perform a deeper analysis of your data, we provide a **Download report** link you can use to download CSV (comma-separated values) files that you can open in Microsoft Excel or another program. Alternatively, you can programmatically retrieve this data by using the [get ad performance data](../monetize/get-ad-performance-data.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -29,7 +29,7 @@ At the top of the report, you can use the following filters to adjust the scope 
 
 * **Date**: Filter the report to a preset time period or a custom date range. By default, the report shows data for the last 30 days.
 * **Aggregation**: Here you can select how this data is aggregated and how it may be filtered further. By default, the report shows data from all ad units, and you'll see a **Choose ad units** link lower in the section, allowing you to select up to six ad units to compare. You can optionally change the **Aggregation** to **All apps** or **All ad providers**. If you do so, the link in this section will change to either **Choose apps** or **Choose ad providers**, allowing you to choose up to six of each to compare. You can also choose to aggregate by a specific app in which you use ads.
-* **Ad providers**: Filter the report to performance data for certain ad providers. For more information about the available ad providers, see the [Ad mediation](monetize-with-ads.md#mediation) section in [Monetize with ads](monetize-with-ads.md). By default, the report shows data from all ad providers. This option will be disabled if you chose **All ad providers** in the **Aggregation** drop-down.
+* **Ad providers**: Filter the report to performance data for certain ad providers. For more information about the available ad providers, see the [Ad mediation](in-app-ads.md#mediation) section in [In-app ads](in-app-ads.md). By default, the report shows data from all ad providers. This option will be disabled if you chose **All ad providers** in the **Aggregation** drop-down.
 * **Device**: Filter the report to performance data for certain device types. By default, the report shows data for all device types.
 
 
@@ -62,31 +62,6 @@ This report may include data for the following performance metrics. The metrics 
 | CTR  |  Click-through rate, meaning the number of times an ad was clicked, divided by the number of impressions. |
 | Credits earned  | For [community ads](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), this indicates the number of credits you have earned for promotional ad space by showing community ads in your app.  |
 | Credits spent  | For [community ads](https://docs.microsoft.com/windows/uwp/publish/about-community-ads), this indicates the number of credits you have spent on ads for your app.  |
-
-
-## Affiliates performance
-
-If you have [opted in to the Microsoft affiliate ads program](about-affiliate-ads.md), you can view performance data for the affiliate ads that appear in your app here. This info is updated daily. 
-
-
-At the top of the report, you can use the following filters to adjust the scope of the data shown in the report:
-- **Date**: Filter the report to a preset time period or a custom date range. By default, the report showsdata for the last 30 days.
-- **Device**: Filter the report to performance data for certain device types. By default, the report shows data for all device types.
-
-By default, this report provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program, in graph and table form. You can select **Choose apps** to select up to six apps to compare.
-
-Affiliates performance data is obtained from the following seven performance metrics we track for the affiliate ads in your app:
-
--   **Estimated earnings (approved)**: The estimated amount of money you received as a commission for approved purchases made by users clicking affiliate ads in your app.
--   **Estimated earnings (pending approval)**: The estimated amount of money you could receive as a commission for the purchases that are pending approval.
--   **Impressions**: The number of times an affiliate ad was shown in your app.
--   **Clicks**: The number of times someone clicked on an affiliate ad in your app.
--   **CTR**: Click-through rate, meaning the number of times an affiliate ad was clicked, divided by the number of affiliate ad impressions.
--   **Purchases (approved)**: The number of approved purchases made by users clicking affiliate ads in your app.
--   **Purchases (pending approval)**: The number of purchases pending approval that were made by users clicking affiliate ads in your app.
-
-> [!NOTE]
-> After a user buys a product in the Store, there is a 45 day waiting period before the purchase can be approved for the affiliate ads program. Because of this waiting period, the **Estimated earnings (approved)**, **Estimated earnings (pending approval)**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.
 
 
  

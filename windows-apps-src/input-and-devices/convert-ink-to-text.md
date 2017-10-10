@@ -208,13 +208,8 @@ In this example, recognition is initiated when the user clicks a button to indic
     private void DrawText(string recognizedText, Rect boundingRect)
     {
         TextBlock text = new TextBlock();
-        TranslateTransform translateTransform = new TranslateTransform();
-        TransformGroup transformGroup = new TransformGroup();
-
-        translateTransform.X = boundingRect.Left;
-        translateTransform.Y = boundingRect.Top;
-        transformGroup.Children.Add(translateTransform);
-        text.RenderTransform = transformGroup;
+        Canvas.SetTop(text, boundingRect.Top);
+        Canvas.SetLeft(text, boundingRect.Left);
 
         text.Text = recognizedText;
         text.FontSize = boundingRect.Height;
@@ -229,25 +224,12 @@ In this example, recognition is initiated when the user clicks a button to indic
     {
         var points = shape.Points;
         Ellipse ellipse = new Ellipse();
-        ellipse.Width = Math.Sqrt((points[0].X - points[2].X) * (points[0].X - points[2].X) +
-                (points[0].Y - points[2].Y) * (points[0].Y - points[2].Y));
-        ellipse.Height = Math.Sqrt((points[1].X - points[3].X) * (points[1].X - points[3].X) +
-                (points[1].Y - points[3].Y) * (points[1].Y - points[3].Y));
 
-        var rotAngle = Math.Atan2(points[2].Y - points[0].Y, points[2].X - points[0].X);
-        RotateTransform rotateTransform = new RotateTransform();
-        rotateTransform.Angle = rotAngle * 180 / Math.PI;
-        rotateTransform.CenterX = ellipse.Width / 2.0;
-        rotateTransform.CenterY = ellipse.Height / 2.0;
+        ellipse.Width = shape.BoundingRect.Width;
+        ellipse.Height = shape.BoundingRect.Height;
 
-        TranslateTransform translateTransform = new TranslateTransform();
-        translateTransform.X = shape.Center.X - ellipse.Width / 2.0;
-        translateTransform.Y = shape.Center.Y - ellipse.Height / 2.0;
-
-        TransformGroup transformGroup = new TransformGroup();
-        transformGroup.Children.Add(rotateTransform);
-        transformGroup.Children.Add(translateTransform);
-        ellipse.RenderTransform = transformGroup;
+        Canvas.SetTop(ellipse, shape.BoundingRect.Top);
+        Canvas.SetLeft(ellipse, shape.BoundingRect.Left);
 
         var brush = new SolidColorBrush(Windows.UI.ColorHelper.FromArgb(255, 0, 0, 255));
         ellipse.Stroke = brush;
@@ -258,10 +240,10 @@ In this example, recognition is initiated when the user clicks a button to indic
     // Draw a polygon on the recognitionCanvas.
     private void DrawPolygon(InkAnalysisInkDrawing shape)
     {
-        var points = shape.Points;
+        List<Point> points = new List<Point>(shape.Points);
         Polygon polygon = new Polygon();
 
-        foreach (var point in points)
+        foreach (Point point in points)
         {
             polygon.Points.Add(point);
         }

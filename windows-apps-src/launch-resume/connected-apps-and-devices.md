@@ -31,3 +31,4 @@ See the [Remote Systems sample](https://github.com/Microsoft/Windows-universal-s
 | [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
 | [Launch an app on a remote device](launch-a-remote-app.md) | Learn how to launch an app on a remote device.  |
 | [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
+| [Connect devices through remote sessions](remote-sessions.md) | Create shared experiences across multiple devices by joining them in a remote session. |

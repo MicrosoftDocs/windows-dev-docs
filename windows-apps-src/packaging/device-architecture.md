@@ -22,11 +22,11 @@ It is **highly** recommended that you build your app package to target all archi
 ## Windows 10 devices and architectures
 
 > [!div class="mx-tableFixed"]
-| UWP Architecture | Desktop (x86)      | Desktop (x64)      | Desktop (ARM)      | Mobile             | HoloLens           | Xbox               | IoT Core (Device dependent) | 
-|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|
-| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          |
-| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          |
-| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          |
+| UWP Architecture | Desktop (x86)      | Desktop (x64)      | Desktop (ARM)      | Mobile             | HoloLens           | Xbox               | IoT Core (Device dependent) | Surface Hub        |
+|------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|-----------------------------|--------------------|
+| x86              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x:                | :heavy_check_mark: | :x:                | :heavy_check_mark:          | :heavy_check_mark: |
+| x64              | :x:                | :heavy_check_mark: | :x:                | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark:          | :heavy_check_mark: |
+| ARM              | :x:                | :x:                | :heavy_check_mark: | :heavy_check_mark: | :x:                | :x:                | :heavy_check_mark:          | :x:                |
  
 
 Let’s talk about these architectures in more detail. 

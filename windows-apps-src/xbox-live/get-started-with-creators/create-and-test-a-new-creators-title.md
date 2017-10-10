@@ -71,6 +71,14 @@ When your game is released to the public, the Xbox Live configuration will autom
 
 By default, Xbox One Consoles and Windows 10 PCs are in the RETAIL sandbox.
 
+### Publish Xbox Live Configuration to the test environment
+
+Whenever you enable Xbox Live services and make changes to Xbox Live service configuration, to make the changes effective, you need to publish these changes to your development sandbox.
+
+On the Xbox Live configuration page, click the **Test** button to publish the current Xbox Live configuration to your development sandbox.
+
+![](../images/creators_udc/creators_udc_xboxlive_config_test.png)
+
 ### Authorize devices and users for the development sandbox
 
 Only authorized devices and users can access the Xbox Live configuration for the game in your development sandbox.
@@ -79,14 +87,6 @@ By default, all the Xbox One development consoles you have added to your Dev Cen
 
 You can also authorize normal Xbox Live accounts to have access to your development sandbox.  To authorize Xbox Live accounts access to your development sandbox, go to
 [Manage Accounts](https://developer.microsoft.com/xboxtestaccounts/configurecreators).
-
-### Publish Xbox Live Configuration to the test environment
-
-Whenever you enable Xbox Live services and make changes to Xbox Live service configuration, to make the changes effective, you need to publish these changes to your development sandbox.
-
-On the Xbox Live configuration page, click the **Test** button to publish the current Xbox Live configuration to your development sandbox.
-
-![](../images/creators_udc/creators_udc_xboxlive_config_test.png)
 
 ## Next steps
 Now that you have a new title created, you can now setup an Xbox Live enabled title in your Game Engine, Visual Studio or build environment of choice.

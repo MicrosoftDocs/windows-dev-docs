@@ -4,7 +4,7 @@ Description: Run your packaged app and see how it looks without having to sign i
 Search.Product: eADQiWindows 10XVcnh
 title: Run, debug, and test a packaged desktop app (Desktop Bridge)
 ms.author: normesta
-ms.date: 06/20/2017
+ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,11 +18,15 @@ Run your packaged app and see how it looks without having to sign it. Then, set 
 <span id="run-app" />
 ## Run your app
 
-You can run your app to test it out locally without having to obtain a certificate and sign it.
+You can run your app to test it out locally without having to obtain a certificate and sign it. How you run the app depends on what tool you used to create the package.
 
-If you created your package by using a UWP project in Visual Studio, just set the packaging project as the startup project, and then press CTRL+F5 to start your app.
+### You created the package by using Visual Studio
 
-If you used the Desktop App Converter or you package your app manually, open a Windows PowerShell command prompt, and from the **PacakgeFiles** subfolder of your output folder, run this cmdlet:
+Set the packaging project as the startup project, and then press CTRL+F5 to start your app.
+
+### You created the package manually or by using the Desktop App Converter
+
+Open a Windows PowerShell command prompt, and from the **PackageFiles** subfolder of your output folder, run this cmdlet:
 
 ```
 Add-AppxPackage –Register AppxManifest.xml
@@ -36,12 +40,13 @@ To start your app, find it in the Windows Start menu.
 
 ## Debug your app
 
-Select your package in a dialog box each time that you debug your app or install an extension and debug your app without having to select your package each time that you start the session.
+How you debug the app depends on what tool you used to create the package.
 
-### Debug your app by selecting the package
+### You created the package by using Visual Studio
 
-This option has the least amount of setup time, but requires you to perform an extra step each time you want to start the debug session.
+Set the packaging project as the startup project, and then press F5 to debug your app.
 
+### You created the package manually or by using the Desktop App Converter
 
 1. Make sure that you start your packaged app at least one time so that it's installed on your local machine.
 
@@ -55,114 +60,9 @@ This option has the least amount of setup time, but requires you to perform an e
 
 4. In the **Installed App Packages** list, select your app package, and then choose the **Attach** button.
 
+#### Modify your app in between debug sessions
 
-### Debug your app without having to select the package
-
-This option has the most amount of setup time, but you won't have to select the installed package every time you start your app. You'll need to install
-[Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) to use this approach.
-
-1. First, install the [Desktop Bridge Debugging Project](http://go.microsoft.com/fwlink/?LinkId=797871).
-
-2. Start Visual Studio, and open the desktop application project.
-
-6. Add a **Desktop Bridge Debugging** project to your solution.
-
-   You can find the project template in the **Other Project Types** group of installed templates.
-
-	![alt](images/desktop-to-uwp/debug-2.png)
-
-	The **Desktop Bridge Debugging** project will appear in your solution.
-
-	![alt](images/desktop-to-uwp/debug-3.png)
-
-7. Open the property pages of the **Desktop Bridge Debugging** project.
-
-8. Set the **Package Layout** field to the location of your package manifest file (AppxManifest.xml), and choose your app's executable file from the **Start Up Tile** drop-down list.
-
-	 ![alt](images/desktop-to-uwp/debug-4.png)
-
-8. Open the AppXPackageFileList.xml file in the code editor.
-
-9. Uncomment the block of XML and add values for these elements:
-
-   **MyProjectOutputPath**: The relative path to debug folder of your desktop application.
-
-   **LayoutFile**: The executable that is in the debug folder of your desktop application.
-
-   **PackagePath**: The fully qualified file name of your desktop application's executable that was copied to your Windows app package folder during the conversion process.
-
-	Here's an example:
-
-	```XML
-  <?xml version="1.0" encoding="utf-8"?>
-  <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-     <MyProjectOutputPath>..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
-    </PropertyGroup>
-    <ItemGroup>
-      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.exe">
-        <PackagePath>$(PackageLayout)\MyDesktopApp.exe</PackagePath>
-      </LayoutFile>
-    </ItemGroup>
-  </Project>
-	```
-
-  If your app consumes dll files that are generated from other projects in your solution, and you want to step into the code that is contained in those dlls, include a **LayoutFile** element for each of those dll files.
-
-  ```XML
-  ...
-      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.Models.dll">
-      <PackagePath>$(PackageLayout)\MyDesktopApp.Models.dll</PackagePath>
-      </LayoutFile>
-  ...
-  ```
-
-10. Set the packaging project the start-up project.  
-
-	![alt](images/desktop-to-uwp/debug-5.png)
-
-11.	Set breakpoints in your desktop application code, and then start the debugger.
-
-  ![Debug button](images/desktop-to-uwp/debugger-button.png)
-
-  Visual Studio copies the executables and dll files that you specified in the XML file to your Windows app package and then start the debugger.
-
-#### Handle multiple build configurations
-
-If you've defined multiple build configurations (for example: Release and Debug), you can modify your AppXPackageFileList.xml file to copy only those files that match the build configuration that choose in Visual Studio when you start the debugger.
-
-Here's an example.
-
-```XML
-<PropertyGroup>
-	<MyProjectOutputPath Condition="$(Configuration) == 'Debug'">..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
-	<MyProjectOutputPath Condition="$(Configuration) == 'Release'"> ..\MyDesktopApp\bin\Release</MyProjectOutputPath>
-</PropertyGroup>
-```
-
-#### Debug UWP enhancements to your app
-
-You might want to enhance your app with modern experiences such as live tiles. If you do, you can use conditional compilation to enable code paths with specific build configurations.
-
-1. First, in Visual Studio, define a build configuration and give it a name like "DesktopUWP".
-
-2. In the **Build** tab of the project properties of your project, add that name in the **Conditional compilation symbols** field.
-
-	 ![alt](images/desktop-to-uwp/debug-8.png)
-
-3. Add conditional code blocks. This code compiles only for the **DesktopUWP** build configuration.
-
-	```csharp
-	[Conditional("DesktopUWP")]
-	private void showtile()
-	{
-		XmlDocument tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare150x150Text01);
-		XmlNodeList textNodes = tileXml.GetElementsByTagName("text");
-		textNodes[0].InnerText = string.Format("Welcome to DesktopUWP!");
-		TileNotification tileNotification = new TileNotification(tileXml);
-		TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
-	}
-	```
+If you make your changes to your app to fix bugs, repackage it by using the MakeAppx tool. See [Run the MakeAppx tool](desktop-to-uwp-manual-conversion.md#make-appx).
 
 ### Debug the entire app lifecycle
 
@@ -171,11 +71,6 @@ In some cases, you might want finer-grained control over the debugging process, 
 You can use [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) to get full control over app lifecycle including suspending, resuming, and termination.
 
 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) is included with the Windows SDK.
-
-
-### Modify your app in between debug sessions
-
-If you make your changes to your app to fix bugs, repackage it by using the MakeAppx tool. See [Run the MakeAppx tool](desktop-to-uwp-manual-conversion.md#make-appx).
 
 ## Test your app
 
@@ -203,7 +98,7 @@ You can also sign your app manually. Here's how
 
 ### Test your app for Windows 10 S
 
-Before you publish your app, make sure that it will operate correctly on devices that run Windows 10 S. In fact, if you plan to publish your app to the Windows Store, you must do this because it is a store requirement. Apps that don't operate correctly on devices that run Windows 10 S won't be certified. 
+Before you publish your app, make sure that it will operate correctly on devices that run Windows 10 S. In fact, if you plan to publish your app to the Windows Store, you must do this because it is a store requirement. Apps that don't operate correctly on devices that run Windows 10 S won't be certified.
 
 See [Test your Windows app for Windows 10 S](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s).
 

@@ -65,7 +65,7 @@ Open package.appxmanifest in Visual Studio, go to the **Application** tab, and s
 
 An app uses the default language when it doesn't support any of the languages that the user has chosen. Visual Studio uses the default language to add metadata to assets marked in that language, enabling the appropriate assets to be chosen at runtime.
 
-The default language property must also be set as the first language in the manifest to appropriately set the application language (described in the step "Create the application language list", below). Resources in the default language must still be qualified with their language (for example, en-US/logo.png). The default language does not specify the implicit language of unqualified assets. To learn more, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+The default language property must also be set as the first language in the manifest to appropriately set the application language (described in the step "Create the application language list", below). Resources in the default language must still be qualified with their language (for example, en-US/logo.png). The default language does not specify the implicit language of unqualified assets. To learn more, see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).
 
 ### Qualify resources with their language.
 

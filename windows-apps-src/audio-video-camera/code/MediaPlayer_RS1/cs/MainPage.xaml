@@ -55,7 +55,9 @@
             <ComboBox x:Name="_audioDeviceComboBox" SelectionChanged="_audioDeviceComboBox_SelectionChanged"/>
             <ToggleButton x:Name="_speedToggleButton" Content="2x" IsChecked="False" Checked="_speedToggleButton_Checked" Unchecked="_speedToggleButton_Unchecked"/>
             <Button x:Name="_skipForwardButton" Content="Skip forward" Click="_skipForwardButton_Click"/>
+            <Button x:Name="registerBufferHandlerButton" Content="Register buffering handler" Click="RegisterBufferHandlerButton_Click"/>
             <Button x:Name="FrameServerButton" Content="FrameServer" Click="FrameServerButton_Click"/>
+            <Button x:Name="FrameServerSubtitilesButton" Content="FrameServer Subtitles" Click="FrameServerSubtitlesButton_Click"/>
             <Image x:Name="FrameServerImage" Width="320" Height="240"/>
             <Button x:Name="SphericalVideoButton" Content="SphericalVideo" Click="SphericalVideoButton_Click"/>
             <Button x:Name="SphericalVideoListButton" Content="SphericalVideoList" Click="SphericalVideoListButton_Click"/>

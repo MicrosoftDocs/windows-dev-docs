@@ -399,6 +399,7 @@ Help users organize your files and interact with them in familiar ways.
 * [Show file contents in a Preview pane of File Explorer](#preview)
 * [Enable users to group files by using the Kind column in File Explorer](#enable)
 * [Make file properties available to search, index, property dialogs, and the details pane](#make-file-properties)
+* [Make files from your cloud service appear in File Explorer](#cloud-files)
 
 <span id="define" />
 ### Define how your app behaves when users select and open multiple files at the same time
@@ -682,12 +683,10 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
         <SupportedFileTypes>
             <FileType>.bar</FileType>
         </SupportedFileTypes>
-        <DesktopPropertyHandler Clsid ="[Clsid ]"/>
+        <DesktopPropertyHandler Clsid ="[Clsid]"/>
     </uap:FileTypeAssociation>
 </uap:Extension>
 ```
-**Key element and attribute descriptions**
-
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
 |Name |Description |
@@ -722,12 +721,75 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
+<span id="cloud-files" />
+### Make files from your cloud service appear in File Explorer
+
+Register the handlers that you implement in your application. You can also add context menu options that appear when you users right-click your cloud-based files in File Explorer.
+
+#### XML namespace
+
+* http://schemas.microsoft.com/appx/manifest/desktop/windows10
+
+#### Elements and attributes of this extension
+
+```XML
+<Extension Category="windows.cloudfiles" >
+    <CloudFiles IconResource="[Icon]">
+        <CustomStateHandler Clsid ="[Clsid]"/>
+        <ThumbnailProviderHandler Clsid ="[Clsid]"/>
+        <ExtendedPropertyhandler Clsid ="[Clsid]"/>
+        <CloudFilesContextMenus>
+            <Verb Id ="Command3" Clsid= "[GUID]">[Verb Label]</Verb>
+        </CloudFilesContextMenus>
+    </CloudFiles>
+</Extension>
+
+```
+
+|Name |Description |
+|-------|-------------|
+|Category |Always ``windows.cloudfiles``.
+|iconResource |The icon that represents your cloud file provider service. This icon appears in the Navigation pane of File Explorer.  Users choose this icon to show files from your cloud service. |
+|CustomStateHandler Clsid |The class ID of the app that implements the CustomStateHandler. The system uses this Class ID to request custom states and columns for cloud files. |
+|ThumbnailProviderHandler Clsid |The class ID of the app that implements the ThumbnailProviderHandler. The system uses this Class ID to request thumbnail images for cloud files. |
+|ExtendedPropertyHandler Clsid |The class ID of the app that implements the ExtendedPropertyHandler.  The system uses this Class ID to request extended properties for a cloud file. |
+|Verb |The name that appears in the File Explorer context menu for files provided by your cloud service. |
+|Id |The unique ID of the verb. |
+
+#### Example
+
+```XML
+<Package
+    xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+    IgnorableNamespaces="desktop">
+  <Applications>
+    <Application>
+      <Extensions>
+        <Extension Category="windows.cloudfiles" >
+            <CloudFiles IconResource="images\Wide310x150Logo.png">
+                <CustomStateHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
+                <ThumbnailProviderHandler Clsid ="20000000-0000-0000-0000-000000000001"/>
+                <ExtendedPropertyhandler Clsid ="20000000-0000-0000-0000-000000000001"/>
+                <desktop:CloudFilesContextMenus>
+                    <desktop:Verb Id ="keep" Clsid=     
+                       "20000000-0000-0000-0000-000000000001">
+                       Always keep on this device</desktop:Verb>
+                </desktop:CloudFilesContextMenus>
+            </CloudFiles>
+          </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
 <span id="start" />
 ## Start your app in different ways
 
 * [Start your app by using a protocol](#protocol)
 * [Start your app by using an alias](#alias)
 * [Start an executable file when users log into Windows](#executable)
+* [Enable users to start your app when they connect a device to their PC](#autoplay)
 * [Restart automatically after receiving an update from the Windows Store](#updates)
 
 <span id="protocol" />
@@ -893,7 +955,64 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
  </Package>
 ```
+<span id="autoplay" />
+### Enable users to start your app when they connect a device to their PC
 
+AutoPlay can present your app as an option when a user connects a device to their PC.
+
+#### XML namespace
+
+http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
+
+
+#### Elements and attributes of this extension
+
+```XML
+<Extension Category="windows.autoPlayHandler">
+  <AutoPlayHandler>
+    <InvokeAction ActionDisplayName="[action string]" ProviderDisplayName="[name of your app/service]">
+      <Content ContentEvent="[Content event]" Verb="[any string]" DropTargetHandler="[Clsid]" />
+      <Content ContentEvent="[Content event]" Verb="[any string]" Parameters="[Initialization parameter]"/>
+      <Device DeviceEvent="[Device event]" HWEventHandler="[Clsid]" InitCmdLine="[Initialization parameter]"/>
+    </InvokeAction>
+  </AutoPlayHandler>
+```
+
+|Name |Description |
+|-------|-------------|
+|Category |Always ``windows.autoPlayHandler``.
+|ActionDisplayName |A string that represents the action that users can take with a device that they connect to a PC (For example: "Import files", or "Play video"). |
+|ProviderDisplayName | A string that represents your app or service (For example: "Contoso video player"). |
+|ContentEvent |The name of a content event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A content event is raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. You can find the full list of those events [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference).  |
+|Verb |The Verb setting identifies a value that is passed to your app for the selected option. You can specify multiple launch actions for an AutoPlay event and use the Verb setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the verb property of the startup event arguments passed to your app. You can use any value for the Verb setting except, open, which is reserved. |
+|DropTargetHandler |The class ID of the app that implements the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. Files from the removable media are passed to the [Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__) method of your [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) implementation.  |
+|Parameters |You don't have to implement the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) interface. For those events, AutoPlay will start your app by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation. |
+|DeviceEvent |The name of a device event that causes users to be prompted with your ``ActionDisplayName`` and ``ProviderDisplayName``. A device event is raised when a device is connected to the PC. Device events begin with the string ``WPD`` and you can find them listed [here](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference). |
+|HWEventHandler |The Class ID of the app that implements the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
+|InitCmdLine |The string parameter that you want to pass into the [Initialize](https://msdn.microsoft.com/en-us/library/windows/desktop/bb775495.aspx) method of the [IHWEventHandler](https://msdn.microsoft.com/library/windows/desktop/bb775492.aspx) interface. |
+
+### Example
+
+```XML
+<Package
+  xmlns:desktop3="http://schemas.microsoft.com/appx/manifest/desktop/windows10/3"
+  IgnorableNamespaces="desktop3">
+  <Applications>
+    <Application>
+      <Extensions>
+        <desktop3:Extension Category="windows.autoPlayHandler">
+          <desktop3:AutoPlayHandler>
+            <desktop3:InvokeAction ActionDisplayName="Import my files" ProviderDisplayName="ms-resource:AutoPlayDisplayName">
+              <desktop3:Content ContentEvent="ShowPicturesOnArrival" Verb="show" DropTargetHandler="CD041BAE-0DEA-4472-9B7B-C98043D26EA8"/>
+              <desktop3:Content ContentEvent="PlayVideoFilesOnArrival" Verb="play" Parameters="%1" />
+              <desktop3:Device DeviceEvent="WPD\ImageSource" HWEventHandler="CD041BAE-0DEA-4472-9B7B-C98043D26EA8" InitCmdLine="/autoplay"/>
+            </desktop3:InvokeAction>
+          </desktop3:AutoPlayHandler>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
 <span id="updates" />
 ### Restart automatically after receiving an update from the Windows Store
 

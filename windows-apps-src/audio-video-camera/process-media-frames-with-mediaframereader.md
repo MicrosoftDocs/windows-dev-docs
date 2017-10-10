@@ -195,6 +195,37 @@ The **NotifyCorrelationFailure** helper method was run on a separate thread afte
 
 [!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
+## Use buffered frame acquisition mode to preserve sequential frames
+Starting with Windows 10, version 1709, you can set the **[AcquisitionMode](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader#Windows_Media_Capture_Frames_MediaFrameReader_AcquisitionMode)** property of a **MediaFrameReader** or **MultiSourceMediaFrameReader** to **Buffered** to preserve the sequence of frames passed into your app from the frame source.
+
+[!code-cs[SetBufferedFrameAcquisitionMode](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSetBufferedFrameAcquisitionMode)]
+
+In the default acquisition mode, **Realtime**, if multiple frames are acquired from the source while your app is still handling the **FrameArrived** event for a previous frame, the system will send your app the most recently acquired frame and drop additional frames waiting in the buffer. This provides your app with the most recent available frame at all times. This is typically the most useful mode for realtime computer vision applications. 
+
+In **Buffered** acquisition mode, the system will keep all frames in the buffer and provide them to your app through the **FrameArrived** event in the order received. Note that in this mode, when system's buffer for frames is filled, the system will stop acquiring new frames until your app completes the **FrameArrived** event for previous frames, freeing up more space in the buffer.
+
+## Use MediaSource to display frames in a MediaPlayerElement
+Starting with Windows, version 1709, you can display frames acquired from a **MediaFrameReader** directly in a **[MediaPlayerElement](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.mediaplayerelement)** control in your XAML page. This is achieved by using the **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromMediaFrameSource_Windows_Media_Capture_Frames_MediaFrameSource_)** to create **[MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource)** object that can be used directly by a **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** associated with a **MediaPlayerElement**. For detailed information on working with **MediaPlayer** and **MediaPlayerElement**, see [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md).
+
+The following code examples show you a simple implementation that displays the frames from a front-facing and back-facing camera simultaneously in a XAML page.
+
+First, add two **MediaPlayerElement** controls to your XAML page.
+
+[!code-xml[MediaPlayerElement1XAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetMediaPlayerElement1XAML)]
+
+[!code-xml[MediaPlayerElement2XAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetMediaPlayerElement2XAML)]
+
+Next, using the techniques shown in previous sections in this article, select a **MediaFrameSourceGroup** that contains **MediaFrameSourceInfo** objects for color cameras on the front panel and back panel. Note that the **MediaPlayer** does not automatically convert frames from non-color formats, such as a depth or infrared data, into color data. Using other sensor types may produce unexpected results. 
+
+[!code-cs[MediaSourceSelectGroup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceSelectGroup)]
+
+Initialize the **MediaCapture** object to use the selected **MediaFrameSourceGroup**.
+
+[!code-cs[MediaSourceInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceInitMediaCapture)]
+
+Finally, call **[MediaSource.CreateFromMediaFrameSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromMediaFrameSource_Windows_Media_Capture_Frames_MediaFrameSource_)** to create a **MediaSource** for each frame source by using the **[Id](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourceinfo#Windows_Media_Capture_Frames_MediaFrameSourceInfo_Id)** property of the associated **MediaFrameSourceInfo** object to select one of the frame sources in the **MediaCapture** object's **[FrameSources](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_FrameSources)** collection. Initialize a new **MediaPlayer** object and assign it to a **MediaPlayerElement** by calling **[SetMediaPlayer](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.mediaplayerelement#Windows_UI_Xaml_Controls_MediaPlayerElement_SetMediaPlayer_Windows_Media_Playback_MediaPlayer_)**. Then set the **[Source](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Source)** property to the newly created **MediaSource** object.
+
+[!code-cs[MediaSourceMediaPlayer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceMediaPlayer)]
 ## Related topics
 
 * [Camera](camera.md)

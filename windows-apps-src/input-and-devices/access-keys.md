@@ -85,9 +85,74 @@ Secondary access keys in Microsoft Word
 
 Access keys can be duplicated for elements in different scopes. In the preceding example, “2” is the access key for Undo in the primary scope, and also “Italics” in the secondary scope.
 
-Some controls, such as the CommandBar, don’t support built-in access key scopes yet and, as a consequence, it is needed to implement it by yourself. The following example demonstrates how to support the CommandBar’s SecondaryCommands with access keys available once a parent command is invoked (similar to the Ribbon in Word).
+Here, we show how to define an access key scope.
 
-``` C#
+``` xaml
+<CommandBar x:Name="MainCommandBar" AccessKey="M" >
+    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
+    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
+    <AppBarSeparator/>
+    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+        <AppBarButton.Flyout>
+            <MenuFlyout>
+                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
+                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            </MenuFlyout>
+        </AppBarButton.Flyout>
+    </AppBarButton>
+    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
+    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
+    <AppBarSeparator/>
+    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <CommandBar.SecondaryCommands>
+        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
+        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+    </CommandBar.SecondaryCommands>
+</CommandBar>
+```
+
+![Primary access keys for CommandBar](images/accesskeys/primary-access-keys-commandbar.png)
+
+_CommandBar primary scope and supported access keys_
+
+![Secondary access keys for CommandBar](images/accesskeys/secondary-access-keys-commandbar.png)
+
+_CommandBar secondary scope and supported access keys_
+
+> [!NOTE]
+> Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn’t support built-in access key scopes. In this case, you must implement access key scopes as shown in the following example.   
+>
+> Here, we demonstrate how to support CommandBar SecondaryCommands with access keys, which are available once a parent command is invoked (similar to the Ribbon in Word).
+
+```xaml
+<local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
+    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
+    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
+    <AppBarSeparator/>
+    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+        <AppBarButton.Flyout>
+            <MenuFlyout>
+                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
+                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            </MenuFlyout>
+        </AppBarButton.Flyout>
+    </AppBarButton>
+    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
+    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
+    <AppBarSeparator/>
+    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <CommandBar.SecondaryCommands>
+        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
+        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+    </CommandBar.SecondaryCommands>
+</local:CommandBarHack>
+```
+
+```csharp
 public class CommandBarHack : CommandBar
 {
     CommandBarOverflowPresenter secondaryItemsControl;
@@ -135,41 +200,6 @@ public class CommandBarHack : CommandBar
     }
 }
 ```
-
-
-``` xaml
-<local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
-    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
-    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
-    <AppBarSeparator/>
-    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
-        <AppBarButton.Flyout>
-            <MenuFlyout>
-                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
-                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
-                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
-                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
-            </MenuFlyout>
-        </AppBarButton.Flyout>
-    </AppBarButton>
-    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
-    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
-    <AppBarSeparator/>
-    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
-    <CommandBar.SecondaryCommands>
-        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
-        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
-    </CommandBar.SecondaryCommands>
-</local:CommandBarHack>
-```
-
-![Primary access keys for CommandBar](images/accesskeys/primary-access-keys-commandbar.png)
-
-_CommandBar primary scope and supported access keys_
-
-![Secondary access keys for CommandBar](images/accesskeys/secondary-access-keys-commandbar.png)
-
-_CommandBar secondary scope and supported access keys_
 
 ## Avoid access key collisions
 

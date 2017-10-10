@@ -28,16 +28,16 @@ namespace SimpleCameraPreview_Win10
         private async void BasicAddEffect()
         {
             //<SnippetBasicAddEffect>
-            if (_mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.AllStreamsIdentical ||
-                _mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.PreviewRecordStreamsIdentical)
+            if (mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.AllStreamsIdentical ||
+                mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.PreviewRecordStreamsIdentical)
             {
                 // This effect will modify both the preview and the record streams, because they are the same stream.
-                myRecordEffect = await _mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
+                myRecordEffect = await mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
             }
             else
             {
-                myRecordEffect = await _mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
-                myPreviewEffect = await _mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoPreview);
+                myRecordEffect = await mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
+                myPreviewEffect = await mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoPreview);
             }
             //</SnippetBasicAddEffect>
         }
@@ -46,19 +46,19 @@ namespace SimpleCameraPreview_Win10
             //<SnippetRemoveOneEffect>
             if (myRecordEffect != null)
             {
-                await _mediaCapture.RemoveEffectAsync(myRecordEffect);
+                await mediaCapture.RemoveEffectAsync(myRecordEffect);
             }
             if(myPreviewEffect != null)
             {
-                await _mediaCapture.RemoveEffectAsync(myPreviewEffect);
+                await mediaCapture.RemoveEffectAsync(myPreviewEffect);
             }
             //</SnippetRemoveOneEffect>
         }
         public async void RemoveAllEffects()
         {
             //<SnippetClearAllEffects>
-            await _mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
-            await _mediaCapture.ClearEffectsAsync(MediaStreamType.VideoRecord);
+            await mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
+            await mediaCapture.ClearEffectsAsync(MediaStreamType.VideoRecord);
             //</SnippetClearAllEffects>
         }
 
@@ -92,7 +92,7 @@ namespace SimpleCameraPreview_Win10
 
             // Add the video stabilization effect to media capture
             _videoStabilizationEffect =
-                (VideoStabilizationEffect)await _mediaCapture.AddVideoEffectAsync(stabilizerDefinition, MediaStreamType.VideoRecord);
+                (VideoStabilizationEffect)await mediaCapture.AddVideoEffectAsync(stabilizerDefinition, MediaStreamType.VideoRecord);
 
             _videoStabilizationEffect.EnabledChanged += VideoStabilizationEffect_EnabledChanged;
 
@@ -114,17 +114,17 @@ namespace SimpleCameraPreview_Win10
         {
 
             // Get the recommendation from the effect based on our current input and output configuration
-            var recommendation = _videoStabilizationEffect.GetRecommendedStreamConfiguration(_mediaCapture.VideoDeviceController, _encodingProfile.Video);
+            var recommendation = _videoStabilizationEffect.GetRecommendedStreamConfiguration(mediaCapture.VideoDeviceController, _encodingProfile.Video);
 
             // Handle the recommendation for the input into the effect, which can contain a larger resolution than currently configured, so cropping is minimized
             if (recommendation.InputProperties != null)
             {
                 // Back up the current input properties from before VS was activated
-                _inputPropertiesBackup = _mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoRecord) as VideoEncodingProperties;
+                _inputPropertiesBackup = mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoRecord) as VideoEncodingProperties;
 
                 // Set the recommendation from the effect (a resolution higher than the current one to allow for cropping) on the input
-                await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, recommendation.InputProperties);
-                await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, recommendation.InputProperties);
+                await mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, recommendation.InputProperties);
+                await mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, recommendation.InputProperties);
             }
 
             // Handle the recommendations for the output from the effect
@@ -152,12 +152,12 @@ namespace SimpleCameraPreview_Win10
         {
             //<SnippetCleanUpVisualStabilizationEffect>
             // Clear all effects in the pipeline
-            await _mediaCapture.RemoveEffectAsync(_videoStabilizationEffect);
+            await mediaCapture.RemoveEffectAsync(_videoStabilizationEffect);
 
             // If backed up settings (stream properties and encoding profile) exist, restore them and clear the backups
             if (_inputPropertiesBackup != null)
             {
-                await _mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, _inputPropertiesBackup);
+                await mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, _inputPropertiesBackup);
                 _inputPropertiesBackup = null;
             }
 

@@ -252,7 +252,9 @@ namespace AdaptiveStreaming_RS1
                                     args.DiagnosticType, args.SegmentId,
                                     args.ResourceType, args.ResourceUri,
                                     args.ResourceByteRangeOffset,
-                                    args.ResourceByteRangeLength, args.Bitrate);
+                                    args.ResourceByteRangeLength, 
+                                    args.Bitrate,
+                                    args.ExtendedError);
 
         }
         //</SnippetAMSDiagnosticAvailable>
@@ -265,7 +267,7 @@ namespace AdaptiveStreaming_RS1
         private void MySendTelemetryFunction(int? requestId, TimeSpan? position,
             AdaptiveMediaSourceDiagnosticType? type, ulong? segmentId,
             AdaptiveMediaSourceResourceType? resourceType, Uri resourceUri,
-            ulong? byteRangeOffset, ulong? byteRangeLength, uint? bitrate)
+            ulong? byteRangeOffset, ulong? byteRangeLength, uint? bitrate, Exception extendedError)
         {
 
         }

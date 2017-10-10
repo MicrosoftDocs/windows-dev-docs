@@ -4,7 +4,7 @@ title: Launch the default app for a URI
 description: Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,11 +17,10 @@ keywords: windows 10, uwp
 **Important APIs**
 
 - [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--  [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
+- [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
 - [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
 Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. You can launch custom URIs too. For more info about registering a custom URI scheme and handling URI activation, see [Handle URI activation](handle-uri-activation.md).
-
 
 URI schemes let you open apps by clicking hyperlinks. Just as you can start a new email using **mailto:**, you can open the default web browser using **http:**
 
@@ -35,6 +34,7 @@ This topic describes the following URI schemes built into Windows:
 |[ms-call:](#call-app-uri-scheme) |  Call app |
 |[ms-chat:](#messaging-app-uri-scheme) | Messaging app |
 |[ms-people:](#people-app-uri-scheme) | People app |
+|[ms-photos:](#photos-app-uri-scheme) | Photos app |
 |[ms-settings:](#settings-app-uri-scheme) | Settings app |
 |[ms-store:](#store-app-uri-scheme)  | Store app |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | Tone picker |
@@ -133,7 +133,7 @@ The various URI schemes are described below.
 
 ### Call app URI scheme
 
-Your app can use the **ms-call:** URI scheme to launch the Call app.
+Use the **ms-call:** URI scheme to launch the Call app.
 
 | URI Scheme       | Result                   |
 |------------------|--------------------------|
@@ -141,16 +141,16 @@ Your app can use the **ms-call:** URI scheme to launch the Call app.
 <br>
 ### Email URI scheme
 
-Your app can use the **mailto:** URI scheme to launch the default mail app.
+Use the **mailto:** URI scheme to launch the default mail app.
 
-| URI Scheme               | Results                                                                                                                                                     |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mailto:                  | Launches the default email app.                                                                                                                             |
+| URI Scheme |Results                          |
+|------------|---------------------------------|
+| mailto:    | Launches the default email app. |
 | mailto:\[email address\] | Launches the email app and creates a new message with the specified email address on the To line. Note that the email is not sent until the user taps send. |
 <br>
 ### HTTP URI scheme
 
-Your app can use the **http:** URI scheme to launch the default web browser.
+Use the **http:** URI scheme to launch the default web browser.
 
 | URI Scheme | Results                           |
 |------------|-----------------------------------|
@@ -158,7 +158,7 @@ Your app can use the **http:** URI scheme to launch the default web browser.
 <br>
 ### Maps app URI schemes
 
-Your app can use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [launch the Windows Maps app](launch-maps-app.md) to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
+Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [launch the Windows Maps app](launch-maps-app.md) to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
 `bingmaps:?cp=40.726966~-74.006076`
 
@@ -168,10 +168,10 @@ For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the
 <br>
 ### Messaging app URI scheme
 
-Your app can use the **ms-chat:** URI scheme to launch the Windows Messaging app.
+Use the **ms-chat:** URI scheme to launch the Windows Messaging app.
 
 | URI scheme |Results |
-|-- ---------|--------|
+|------------|--------|
 | ms-chat:   | Launches the Messaging app. |
 | ms-chat:?ContactID={contacted}  |  Allows the messaging application to be launched with a particular contact’s information.   |
 | ms-chat:?Body={body} | Allows the messaging application to be launched with a string to use as the content of the message.|
@@ -180,7 +180,7 @@ Your app can use the **ms-chat:** URI scheme to launch the Windows Messaging app
 <br>
 ### Tone picker URI scheme
 
-Your app can use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system tones. You can also save new ringtones and get the display name of a tone.
+Use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system tones. You can also save new ringtones and get the display name of a tone.
 
 | URI Scheme | Results |
 |------------|---------|
@@ -190,7 +190,7 @@ Parameters are passed via a [ValueSet](https://msdn.microsoft.com/library/window
 
 ### Nearby Numbers app URI scheme
 <br>
-Your app can use the **ms-yellowpage:** URI scheme to launch the Nearby Numbers app.
+Use the **ms-yellowpage:** URI scheme to launch the Nearby Numbers app.
 
 | URI Scheme | Results |
 |------------|---------|
@@ -199,13 +199,29 @@ Your app can use the **ms-yellowpage:** URI scheme to launch the Nearby Numbers 
 <br>
 ### People app URI scheme
 
-Your app can use the **ms-people:** URI scheme to launch the People app.
+Use the **ms-people:** URI scheme to launch the People app.
 For more info, see [Launch the People app](launch-people-apps.md).
 
 <br>
+### Photos app URI scheme
+
+Use the **ms-photos:** URI scheme to launch the Photos app to view an image or edit a video.  
+    For example, to view an image: `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg`  
+    Or to edit a video: `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03`  
+
+> [!NOTE]
+> The URIs to edit a video or display an image are only available on desktop.
+
+| URI scheme |Results |
+|------------|--------|
+| ms-photos:viewer?fileName={filename} | Launches the Photos app to view the specified image where {filename} is a fully-qualified path name. For example: `c:\users\userName\Pictures\ImageToView.jpg` |
+| ms-photos:videoedit?InputToken={input token} | Launches the Photos app in video editing mode for the file represented by the file token. **InputToken** is required. Use the  [SharedStorageAccessManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) to get a token for a file. |
+| ms-photos:videoedit?Action={action} | An optional parameter that opens the Photos app in the specified video editing mode where {action} is one of: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. If not specified, defaults to **View** |
+| ms-photos:videoedit?StartTime={timespan} | An optional parameter that specifies where to start playing the video. `{timespan}` must be in the format `"hh:mm:ss.ffff"`. If not specified, defaults to `00:00:00.0000` |
+
 ### Settings app URI scheme
 
-Your app can use the **ms-settings:** URI scheme to [launch the Windows Settings app](launch-settings-app.md). Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For example, the following URI opens the Settings app and displays the camera privacy settings.
+Use the **ms-settings:** URI scheme to [launch the Windows Settings app](launch-settings-app.md). Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For example, the following URI opens the Settings app and displays the camera privacy settings.
 
 `ms-settings:privacy-webcam`
 
@@ -216,7 +232,7 @@ For more info, see [Launch the Windows Settings app](launch-settings-app.md) and
 <br>
 ### Store app URI scheme
 
-Your app can use the **ms-windows-store:** URI scheme to [Launch the Windows Store app](launch-store-app.md). Open product detail pages, product review pages, and search pages, etc. For example, the following URI opens the Windows Store app and launches the home page of the Store.
+Use the **ms-windows-store:** URI scheme to [Launch the Windows Store app](launch-store-app.md). Open product detail pages, product review pages, and search pages, etc. For example, the following URI opens the Windows Store app and launches the home page of the Store.
 
 `ms-windows-store://home/`
 

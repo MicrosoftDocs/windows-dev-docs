@@ -221,14 +221,10 @@
     <ClCompile Include="OpenCVHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets" Condition="Exists('..\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets')" />
-    <Import Project="..\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets" Condition="Exists('..\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets')" />
     <Import Project="..\..\..\Frames_Win10\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets" Condition="Exists('..\..\..\Frames_Win10\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets')" />
     <Import Project="..\..\..\Frames_Win10\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets" Condition="Exists('..\..\..\Frames_Win10\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets')" />
   </ImportGroup>
@@ -236,8 +232,6 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets'))" />
-    <Error Condition="!Exists('..\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets'))" />
     <Error Condition="!Exists('..\..\..\Frames_Win10\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Frames_Win10\packages\OpenCV.Win.Core.310.6.1\build\native\opencv.win.core.targets'))" />
     <Error Condition="!Exists('..\..\..\Frames_Win10\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Frames_Win10\packages\OpenCV.Win.ImgProc.310.6.1\build\native\opencv.win.imgproc.targets'))" />
   </Target>

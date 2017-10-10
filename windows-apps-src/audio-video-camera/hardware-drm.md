@@ -89,13 +89,25 @@ This section describes how to detect what type of hardware DRM is supported on t
 
 You can use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method to determine whether the system supports a specific hardware DRM feature. For example:
 
-```cpp
-boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
+```csharp
+bool isFeatureSupported = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.HEVC);
 ```
 
 The [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumeration contains the valid list of hardware DRM feature values that can be queried. To determine if hardware DRM is supported, use the **HardwareDRM** member in the query. To determine if the hardware supports the High Efficiency Video Coding (HEVC)/H.265 codec, use the **HEVC** member in the query.
 
 You can also use the [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) property to get the security level of the client certificate to determine if hardware DRM is supported. Unless the returned certificate security level is greater than or equal to 3000, either the client is not individualized or provisioned (in which case this property returns 0) or hardware DRM is not in use (in which case this property returns a value that is less than 3000).
+
+### Detecting support for AES128CBC hardware DRM
+Starting with Windows 10, version 1709, you can detect support for AES128CBC hardware encryption on a device by calling **[PlayReadyStatics.CheckSupportedHardware](https://msdn.microsoft.com/library/windows/apps/dn986441)** and specifying the enumeration value [**PlayReadyHardwareDRMFeatures.Aes128Cbc**](https://msdn.microsoft.com/library/windows/apps/dn986265). On previous versions of Windows 10, specifying this value will cause an exception to be thrown. For this reason, you should check for the presence of the enumeration value by calling **[ApiInformationIsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsApiContractPresent_System_String_System_UInt16_)** and specifying major contract version 5 before calling **CheckSupportedHardware**.
+
+```csharp
+bool supportsAes128Cbc = ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 5);
+
+if (supportsAes128Cbc)
+{
+    supportsAes128Cbc = PlayReadyStatics.CheckSupportedHardware(PlayReadyHardwareDRMFeatures.Aes128Cbc);
+}
+```
 
 ## See also
 - [PlayReady DRM](playready-client-sdk.md)

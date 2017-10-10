@@ -172,6 +172,7 @@ The following is a simple example of how you can incorporate NavigationView into
 
     <NavigationView x:Name="NavView"
                     ItemInvoked="NavView_ItemInvoked"
+                    SelectionChanged="NavView_SelectionChanged"
                     Loaded="NavView_Loaded">
 
         <NavigationView.MenuItems>

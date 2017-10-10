@@ -4,15 +4,14 @@
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  IgnorableNamespaces="uap uap3 mp">
+  IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="1e431f93-0472-4f2e-94ff-5a0a46ac0704"
+    Name="fb6bad03-ae20-417d-a90b-d1c2525cce50"
     Publisher="CN=drewbat"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="1e431f93-0472-4f2e-94ff-5a0a46ac0704" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="fb6bad03-ae20-417d-a90b-d1c2525cce50" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MediaSource_RS1</DisplayName>
@@ -46,6 +45,5 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <uap3:Capability Name="backgroundMediaPlayback"/>
   </Capabilities>
 </Package>

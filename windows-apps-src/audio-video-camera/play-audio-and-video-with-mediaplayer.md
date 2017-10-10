@@ -73,6 +73,18 @@ The next example illustrates using a toggle button to toggle between normal play
 
 [!code-cs[SpeedChecked](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSpeedChecked)]
 
+###Detect expected and unexpected buffering
+The **MediaPlaybackSession** object described in the previous section provides two events for detecting when the currently playing media file begins and ends buffering, **[BufferingStarted](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession#Windows_Media_Playback_MediaPlaybackSession_BufferingStarted)** and **[BufferingEnded](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksession#Windows_Media_Playback_MediaPlaybackSession_BufferingEnded)**. This allows you to update your UI to show the user that buffering is occurring. Initial buffering is expected when a media file is first opened or when the user switches to a new item in a playlist. Unexpected buffering can occur when the network speed degrades or if the content management system providing the content experiences technical issues. Starting with RS3, you can use the **BufferingStarted** event to determine if the buffering event is expected or if it is unexpected and interrupting playback. You can use this information as telemetry data for your app or media delivery service. 
+
+Register handlers for the **BufferingStarted** and **BufferingEnded** events to receive buffering state notifications.
+
+[!code-cs[RegisterBufferingHandlers](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterBufferingHandlers)]
+
+In the **BufferingStarted** event handler, cast the event args passed into the event to a **[MediaPlaybackSessionBufferingStartedEventArgs](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs)** object and check the **[IsPlaybackInterruption](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs#Windows_Media_Playback_MediaPlaybackSessionBufferingStartedEventArgs_IsPlaybackInterruption)** property. If this value is true, the buffering that triggered the event is unexpected and interrupting playback. Otherwise, it is expected initial buffering. 
+
+[!code-cs[BufferingHandlers](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetBufferingHandlers)]
+
+
 ###Pinch and zoom video
 **MediaPlayer** allows you to specify the source rectangle within video content that should be rendered, effectively allowing you to zoom into video. The rectangle you specify is relative to a normalized rectangle (0,0,1,1) where 0,0 is the upper left hand of the frame and 1,1 specifies the full width and height of the frame. So, for example, to set the zoom rectangle so that the top-right quadrant of the video is rendered, you would specify the rectangle (.5,0,.5,.5).  It is important that you check your values to make sure that your source rectangle is within the (0,0,1,1) normalized rectangle. Attempting to set a value outside of this range will cause an exception to be thrown.
 
