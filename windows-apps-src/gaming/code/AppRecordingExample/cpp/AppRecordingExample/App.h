@@ -39,6 +39,7 @@ namespace AppRecordingExample
 		void OnDisplayContentsInvalidated(Windows::Graphics::Display::DisplayInformation^ sender, Platform::Object^ args);
 
 		// AppCapture event handlers
+		void OnRecordingComplete();
 		void OnCapturingChanged(Windows::Media::Capture::AppCapture^ sender, Platform::Object^ args);
 		void OnMetadataPurged(Windows::Media::Capture::AppCaptureMetadataWriter^ sender, Platform::Object^ args);
 
@@ -83,7 +84,7 @@ namespace AppRecordingExample
 		void ComboExecuted(Platform::String^ comboName);
 
 		void UpdateStatusText(Platform::String^ status);
-		
+		void LogTelemetryMessage(Platform::String^ status);
 
 
 

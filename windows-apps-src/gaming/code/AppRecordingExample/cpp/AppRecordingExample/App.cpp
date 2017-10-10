@@ -332,6 +332,29 @@ void App::StartRecordToFile(Windows::Storage::StorageFile^ file)
 	create_task(m_recordOperation).then(
 		[this](AppRecordingResult^ result)
 	{
+		OnRecordingComplete();
+	}).then([this](task<void> t)
+	{
+		try
+		{
+			t.get();
+		}
+		catch (const task_canceled&)
+		{
+			OnRecordingComplete();
+		}
+	});
+}
+//</SnippetStartRecordToFile>
+
+
+//<SnippetOnRecordingComplete>
+void App::OnRecordingComplete()
+{
+	if (m_recordOperation)
+	{
+		auto result = m_recordOperation->GetResults();
+
 		if (result->Succeeded)
 		{
 			Windows::Foundation::TimeSpan duration = result->Duration;
@@ -344,11 +367,13 @@ void App::StartRecordToFile(Windows::Storage::StorageFile^ file)
 			// If the recording failed, ExtendedError 
 			// can be retrieved and used for diagnostic purposes 
 			HResult extendedError = result->ExtendedError;
-			auto temp = extendedError;
+			LogTelemetryMessage("Error during recording: " + extendedError);
 		}
-	});
+
+		m_recordOperation = nullptr;
+	}
 }
-//</SnippetStartRecordToFile>
+//</SnippetOnRecordingComplete>
 
 //<SnippetFinishRecordToFile>
 void App::FinishRecordToFile()
@@ -430,6 +455,7 @@ void App::RecordTimeSpanToFile(Windows::Storage::StorageFile^ file)
 			// If the recording failed, ExtendedError
 			// can be retrieved and used for diagnostic purposes
 			HResult extendedError = result->ExtendedError;
+			LogTelemetryMessage("Error during recording: " + extendedError);
 		}
 	});
 
@@ -486,6 +512,7 @@ void App::SaveScreenShotToFiles(Windows::Storage::StorageFolder^ folder, Platfor
 			// If the recording failed, ExtendedError 
 			// can be retrieved and used for diagnostic purposes 
 			HResult extendedError = result->ExtendedError;
+			LogTelemetryMessage("Error during screenshot: " + extendedError);
 		}
 	});
 }
@@ -609,7 +636,10 @@ void App::UpdateStatusText(Platform::String^ status)
 {
 	OutputDebugString(status->Data());
 }
-
+void App::LogTelementryMessage(Platform::String^ status)
+{
+	OutputDebugString(status->Data());
+}
 void App::OnKeyDown(CoreWindow^ sender, KeyEventArgs^ args)
 {
 	if (args->VirtualKey == Windows::System::VirtualKey::R)
