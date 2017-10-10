@@ -378,3 +378,4 @@ private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, o
 - [Master/details](master-details.md)
 - [Pivot control](tabs-pivot.md)
 - [Navigation basics](../layout/navigation-basics.md)
+- [Fluent Design for UWP overview](../fluent-design-system/index.md)
