@@ -118,7 +118,7 @@ public class XboxLiveScript : MonoBehaviour
 
 This will launch the app like a normal UWP app and allow Xbox Live calls to operate as they require a UWP app container to function.
 
-**10) ebuild if you make changes to anything in Unity**
+**10) Rebuild if you make changes to anything in Unity**
   
 If you change anything in Unity, then you must rebuild the UWP project.
 
