@@ -109,7 +109,7 @@ The UWP also provides some useful building blocks that make it easier to design 
 This video shows some of these features in action:
 > [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Fluent-Design-features-for-Fall-Creators-Update/player]
 
-We've also updated our [design guidelines](https://developer.microsoft.com/windows/apps/design) (which you're current reading) so they're based on Fluent Design principles.
+We've also updated our [design guidelines](https://developer.microsoft.com/windows/apps/design) (which you're currently reading) so they're based on Fluent Design principles.
 
 ## The anatomy of a typical UWP app
 
