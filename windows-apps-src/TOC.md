@@ -1109,6 +1109,7 @@
 #### [Product declarations](publish/app-declarations.md)
 ### [Age ratings](publish/age-ratings.md)
 ### [Upload app packages](publish/upload-app-packages.md)
+#### [Device family availability](publish/device-family-availability.md)
 #### [Guidance for app package management](publish/guidance-for-app-package-management.md)
 #### [App package requirements](publish/app-package-requirements.md)
 #### [Package version numbering](publish/package-version-numbering.md)
