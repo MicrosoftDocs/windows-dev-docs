@@ -1,12 +1,12 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: XAML gives you a flexible layout system to create a responsive UI.
 title: Define layouts with XAML
 ms.assetid: 8D4E4162-1C9C-48F4-8A94-34976FB17079
 label: Page layouts with XAML
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

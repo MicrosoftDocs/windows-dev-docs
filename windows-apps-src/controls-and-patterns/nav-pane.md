@@ -1,12 +1,12 @@
 ---
-author: Jwmsft
+author: serenaz
 redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: Provides top-level navigation while conserving screen real estate.
 title: Guidelines for navigation panes
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

@@ -1,8 +1,9 @@
 ---
-author: mijacobs
+author: serenaz
 description:
 title: Ratings Control
 template: detail.hbs
+ms.author: sezhen
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra

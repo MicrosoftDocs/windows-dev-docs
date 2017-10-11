@@ -1,10 +1,10 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: Use list view or grid view controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
 title: List view and grid view
 label: List view and grid view
 template: detail.hbs
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

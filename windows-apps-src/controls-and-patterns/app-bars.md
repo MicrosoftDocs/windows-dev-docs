@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+author: serenaz
 Description: Command bars give users easy access to your app's most common tasks.
 title: Command bar
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

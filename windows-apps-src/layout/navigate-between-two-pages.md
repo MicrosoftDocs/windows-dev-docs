@@ -1,12 +1,12 @@
 ---
-author: Jwmsft
+author: serenaz
 Description: Learn how to navigate in a basic two page peer-to-peer Universal Windows Platform (UWP) app.
 title: Peer-to-peer navigation between two pages
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

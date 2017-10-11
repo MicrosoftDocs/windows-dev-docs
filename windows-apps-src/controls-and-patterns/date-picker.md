@@ -1,12 +1,12 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.
 title: Date picker
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

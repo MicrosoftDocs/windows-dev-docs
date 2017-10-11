@@ -1,12 +1,12 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: Use alignment, margin, and padding to influence the layout of elements on a page.
 title: Alignment, margin, and padding for Universal Windows Platform (UWP) apps
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
