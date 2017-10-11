@@ -87,4 +87,17 @@ These toolkits provide controls and layout templates for designing UWP apps.
 </div>
 <br/>
 
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+            <p><b>XAML Controls Gallery</b><br/>
+            This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/>[Download the XAML Controls Gallery sample] (https://github.com/Microsoft/Windows-universal-samples/archive/master.zip) <br/>[Check out the XAML Controls Gallery sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)</p>    
+  </div>
+  <div class="side-by-side-content-right">
+<a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><img src="images/xaml-controls-gallery.png" alt="Check out the XAML Controls Gallery sample on GitHub" /></a>
+  </div>
+</div>
+</div>
+<br/>
+
 <b>Want more code?</b> Check out the Windows sample page for complete list of all our UWP app samples. [Go to the samples portal](https://developer.microsoft.com/samples)
