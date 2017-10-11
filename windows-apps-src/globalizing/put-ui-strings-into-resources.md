@@ -6,7 +6,7 @@ ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/21/2017
+ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -59,6 +59,8 @@ You use an [x:Uid directive](../xaml-platform/x-uid-directive.md) to associate a
 
 At run-time, `\Strings\en-US\Resources.resw` is loaded (since right now that's the only resources file in the project). The **x:Uid** directive on the **TextBlock** causes a lookup to take place, to find property identifiers inside `Resources.resw` that contain the resource identifier "Greeting". The "Greeting.Text" and "Greeting.Width" property identifiers are found and their values are applied to the **TextBlock**, overriding any values set locally in the markup. The "Greeting.Foreground" value would be applied, too, if you'd added that. But only property identifiers are used to set properties on XAML markup elements, so setting **x:Uid** to "Farewell" on this TextBlock would have no effect. `Resources.resw` *does* contain the resource identifier "Farewell", but it contains no property identifiers for it.
 
+When assigning a resource identifier to a XAML element, be certain that *all* the property identifiers for that resource identifier are appropriate for the XAML element. For example, if you set `x:Uid="Greeting"` on a **TextBlock** then "Greeting.Text" will resolve because the **TextBlock** type has a Text property. But if you set `x:Uid="Greeting"` on a **Button** then "Greeting.Text" will cause a run-time error because the **Button** type does not have a Text property. One solution for that case is to author a property identifier named "ButtonGreeting.Content", and set `x:Uid="ButtonGreeting"` on the **Button**.
+
 Instead of setting **Width** from a resources file, you'll probably want to allow controls to dynamically size to content.
 
 **Note** For [attached properties](../xaml-platform/attached-properties-overview.md), you need a special syntax in the Name column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties?branch=master#Windows_UI_Xaml_Automation_AutomationProperties_NameProperty) attached property for the "Greeting" identifier, this is what you would enter in the Name column.
@@ -73,15 +75,17 @@ You can explicitly load a resource based on a simple resource identifier.
 
 **C#**
 ```CSharp
-var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-var str = loader.GetString("Farewell");
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
 
 **C++**
 ```cpp
-auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
-auto str = loader->GetString("Farewell");
+auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView();
+this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 ```
+
+You can use this same code from within a Class Library (Universal Windows) or a Windows Runtime Library (Universal Windows) project. At runtime, the resources of the app that's hosting the library are loaded. We recommend that a library loads resources from the app that hosts it, since the app is likely to have a greater degree of localization. If a library does need to provide resources then it should give its hosting app the option to replace those resources as an input.
 
 **Note** You can only load the value for a simple resource identifier this way, not for a property identifier. So we can load the value for "Farewell" using code like this, but we cannot do so for "Greeting.Text". Trying to do so will return an empty string.
 
@@ -140,14 +144,14 @@ The code example below assumes that `ErrorMessages.resw` contains a resource who
 
 **C#**
 ```CSharp
-var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-var str = loader.GetString("/ErrorMessages/MismatchedPasswords");
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ManifestResources");
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString("/ErrorMessages/MismatchedPasswords");
 ```
 
 **C++**
 ```cpp
-auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
-auto str = loader->GetString("/ErrorMessages/MismatchedPasswords");
+auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView("ManifestResources");
+this->myXAMLTextBlockElement->Text = resourceLoader->GetString("/ErrorMessages/MismatchedPasswords");
 ```
 
 If you were to move your "AppDisplayName" resource out of `Resources.resw` and into `ManifestResources.resw` then in your app package manifest you would change `ms-resource:AppDisplayName` to `ms-resource:/ManifestResources/AppDisplayName`.
@@ -162,6 +166,7 @@ But there might be times when you want your app to override the system settings 
 
 You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your string lookups.
 
+**C#**
 ```csharp
 var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext(); // not using ResourceContext.GetForCurrentView 
 resourceContext.QualifierValues["Language"] = "de-DE";
@@ -171,12 +176,14 @@ this.myXAMLTextBlockElement.Text = resourceMap.GetValue("Farewell", resourceCont
 
 Using **QualifierValues** as in the code example above works for any qualifier. For the special case of Language, you can alternatively do this instead.
 
+**C#**
 ```csharp
 resourceContext.Languages = new string[] { "de-DE" };
 ```
 
 For the same effect at a global level, you *can* override the qualifier values in the default **ResourceContext**. But instead we advise you to call [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). You set values one time with a call to **SetGlobalQualifierValue** and then those values are in effect on the default **ResourceContext** each time you use it for lookups.
 
+**C#**
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de-DE");
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -185,6 +192,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 
 Some qualifiers have a system data provider. So, instead of calling **SetGlobalQualifierValue** you could instead adjust the provider through its own API. For example, this code shows how to set [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=master#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride).
 
+**C#**
 ```csharp
 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 ```
@@ -195,6 +203,7 @@ Your running app can respond to changes in system settings that affect the quali
 
 In response to this event, you can reload your strings from the default **ResourceContext**.
 
+**C#**
 ```csharp
 public MainPage()
 {
