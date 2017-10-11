@@ -4,11 +4,11 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 10/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
 ---
 
 # App screenshots, images, and trailers
@@ -32,13 +32,13 @@ Only one screenshot (for any device family) is required for your submission, tho
 > [!NOTE]
 > Microsoft Visual Studio provides a [tool to help you capture screenshots](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
 
-Each screenshot must be a .png file in either landscape or portrait orientation, and the file size can't be larger than 5 MB.
+Each screenshot must be a .png file in either landscape or portrait orientation, and the file size can't be larger than 50 MB.
 
 The size requirements vary depending on the device family:
-- Mobile: either 768 x 1280, 720 x 1280, or 480 x 800 pixels
-- Desktop: 1366 x 768 pixels or larger
-- Holographic: 1268 x 720 pixels or larger
-- Xbox: 3480 x 2160 pixels or smaller
+- Desktop: 1366 x 768 pixels or larger. Supports 4K images (3840 x 2160).
+- Mobile: Images must be one of the following: 1080 x 1920, 1920 x 1080, 768 x 1280, 1280 x 768, 720 x 1280, 1280 x 720, 800 x 480, or 480 x 800 pixels.
+- Xbox: 3480 x 2160 pixels or smaller. Supports 4K images (3840 x 2160).
+- Holographic: 1268 x 720 pixels or larger. Supports 4K images (3840 x 2160).
 
 For the best display, keep the following guidelines in mind when creating your screenshots:
 - Keep critical visuals and text in the top 3/4 of the image. Text overlays may appear on the bottom 1/4. 

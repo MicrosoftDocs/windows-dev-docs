@@ -15,7 +15,7 @@ keywords: windows 10, uwp
 
 The Remote Sessions feature allows an app to connect to other devices through a session, either for explicit app messaging or for brokered exchange of system-managed data, such as the **[SpatialEntityStore](https://docs.microsoft.com/uwp/api/windows.perception.spatial.spatialentitystore)** for holographic sharing between Windows Holographic devices.
 
-Remote sessions can be created by any Windows device, and any Windows device can request to join (although sessions can have invite-only visibility), including devices signed in by other users. This guide provides basic sample code for all of the major scenarios that make use of remote sessions. This code can be incorporated into an existing app project and modified as necessary. For an end-to-end implementation, see the [Lunch Scheduler sample app](https://github.com/Microsoft/Windows-appsample-lunch-scheduler).
+Remote sessions can be created by any Windows device, and any Windows device can request to join (although sessions can have invite-only visibility), including devices signed in by other users. This guide provides basic sample code for all of the major scenarios that make use of remote sessions. This code can be incorporated into an existing app project and modified as necessary. For an end-to-end implementation, see the [Quiz Game sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)).
 
 ## Preliminary setup
 
@@ -196,7 +196,7 @@ A device can be joined to multiple sessions at the same time. For this reason, i
 You can exchange messages and data with other participant devices in the session by using a **[RemoteSystemSessionMessageChannel](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsessionmessagechannel)** instance, which represents a single session-wide communication channel. As soon as it's initialized, it begins listening for incoming messages.
 
 >[!NOTE]
->Messages must be serialized and deserialized from byte arrays upon sending and receiving. This functionality is included in the following examples, but it can be implemented separately for better code modularity. See the [sample app](https://github.com/Microsoft/Windows-appsample-lunch-scheduler) for an example of this.
+>Messages must be serialized and deserialized from byte arrays upon sending and receiving. This functionality is included in the following examples, but it can be implemented separately for better code modularity. See the [sample app](https://github.com/microsoft/Windows-appsample-remote-system-sessions)) for an example of this.
 
 ```csharp
 public async void StartReceivingMessages() {
