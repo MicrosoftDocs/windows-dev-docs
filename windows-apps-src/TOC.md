@@ -858,7 +858,6 @@
 ###### [Python sample: app submission with game options and trailers](monetize/python-code-examples-for-submissions-game-options-and-trailers.md)
 #### [Manage targeted offers](monetize/manage-targeted-offers-using-windows-store-services.md)
 ##### [Get targeted offers](monetize/get-targeted-offers.md)
-##### [Claim a targeted offer](monetize/claim-a-targeted-offer.md)
 #### [Manage product entitlements from a service](monetize/view-and-grant-products-from-a-service.md)
 ##### [Query for products](monetize/query-for-products.md)
 ##### [Report consumable products as fulfilled](monetize/report-consumable-products-as-fulfilled.md)

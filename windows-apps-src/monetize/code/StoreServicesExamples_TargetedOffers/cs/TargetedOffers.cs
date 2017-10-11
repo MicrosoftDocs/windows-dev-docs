@@ -8,7 +8,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Windows.ApplicationModel.Store;
 using Windows.Services.Store;
 using Windows.Security.Authentication.Web.Core;
 
@@ -21,7 +20,7 @@ namespace DocumenationExamples
         private static string[] productKinds = { "Durable", "Consumable", "UnmanagedConsumable" };
         private static StoreContext storeContext = StoreContext.GetDefault();
 
-        public async void GetAndClaimTargetedOffer()
+        public async void DemonstrateTargetedOffers()
         {
             // Get the Microsoft Account token for the current user.
             string msaToken = await GetMicrosoftAccountTokenAsync();
@@ -48,19 +47,7 @@ namespace DocumenationExamples
             TargetedOfferData offerData = availableOfferData[0];
             string productId = offerData.Offers[0];
 
-            // Get and claim a targeted offer for the current user.
-            // If the Windows.Services.Store APIs are available (the app is running
-            // on Windows 10, version 1607, or later), use those APIs.
-            // Otherwise, use the Windows.ApplicationMoel.Store APIs.
-            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent(
-                "Windows.Services.Store.StoreContext"))
-            {
-                await ClaimOfferOnWindows1607AndLaterAsync(productId, offerData, msaToken);
-            }
-            else
-            {
-                await ClaimOfferOnAnyVersionWindows10Async(productId, offerData, msaToken);
-            }
+            await PurchaseOfferAsync(productId);
         }
 
         //<GetMSAToken>
@@ -111,15 +98,11 @@ namespace DocumenationExamples
         }
         //</GetTargetedOffers>
 
-        // This method uses the Windows.Services.Store APIs to purchase and claim a targeted offer.
-        // Only call this method if the app is running on Windows 10, version 1607, or later.
-        //<ClaimOfferOnWindows1607AndLater>
-        private async Task ClaimOfferOnWindows1607AndLaterAsync(
-            string productId, TargetedOfferData offerData, string msaToken)
+        private async Task PurchaseOfferAsync(string productId)
         {
-            if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(msaToken))
+            if (string.IsNullOrEmpty(productId))
             {
-                System.Diagnostics.Debug.WriteLine("Product ID or Microsoft Account token is null or empty.");
+                System.Diagnostics.Debug.WriteLine("Product ID is null or empty.");
                 return;
             }
 
@@ -128,129 +111,53 @@ namespace DocumenationExamples
             // simply purchases the add-on.
             StorePurchaseResult result = await storeContext.RequestPurchaseAsync(productId);
 
-            if (result.Status == StorePurchaseStatus.Succeeded)
+            // Capture the error message for the purchase operation, if any.
+            string extendedError = string.Empty;
+            if (result.ExtendedError != null)
             {
-                // Get the StoreProduct in the user's collection that matches the targeted offer.
-                List<String> filterList = new List<string>(productKinds);
-                StoreProductQueryResult queryResult = await storeContext.GetUserCollectionAsync(filterList);
-                KeyValuePair<string, StoreProduct> offer = 
-                    queryResult.Products.Where(p => p.Key == productId).SingleOrDefault();
-                
-                if (offer == null)
-                {
-                    System.Diagnostics.Debug.WriteLine("No StoreProduct with the specified product ID could be found.");
-                    return;
-                }
+                extendedError = result.ExtendedError.Message;
+            }
 
-                StoreProduct product = offer.Value;
+            switch (result.Status)
+            {
+                case StorePurchaseStatus.AlreadyPurchased:
+                    System.Diagnostics.Debug.WriteLine("The user has already purchased the product.");
+                    break;
 
-                // Parse the JSON string returned by StoreProduct.ExtendedJsonData to get the order ID.
-                string extendedJsonData = product.ExtendedJsonData;
-                string skuAvailability =
-                    JObject.Parse(extendedJsonData)["DisplaySkuAvailabilities"].FirstOrDefault().ToString();
-                string sku = JObject.Parse(skuAvailability)["Sku"].ToString();
-                string collectionData = JObject.Parse(sku)["CollectionData"].ToString();
-                string orderId = JObject.Parse(collectionData)["orderId"].ToString();
+                case StorePurchaseStatus.Succeeded:
+                    System.Diagnostics.Debug.WriteLine("The purchase was successful.");
+                    break;
 
-                var claim = new TargetedOfferClaim
-                {
-                    StoreOffer = offerData,
-                    Receipt = orderId
-                };
+                case StorePurchaseStatus.NotPurchased:
+                    System.Diagnostics.Debug.WriteLine("The purchase did not complete. " +
+                        "The user may have cancelled the purchase. ExtendedError: " + extendedError);
+                    break;
 
-                // Submit a request to claim the offer by sending a POST message to the
-                // Store endpoint for targeted offers.
-                using (var httpClientClaimOffer = new HttpClient())
-                {
-                    var uri = new Uri(storeOffersUri, UriKind.Absolute);
+                case StorePurchaseStatus.NetworkError:
+                    System.Diagnostics.Debug.WriteLine("The purchase was unsuccessful due to a network error. " +
+                        "ExtendedError: " + extendedError);
+                    break;
 
-                    using (var request = new HttpRequestMessage(HttpMethod.Post, uri))
-                    {
-                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", msaToken);
+                case StorePurchaseStatus.ServerError:
+                    System.Diagnostics.Debug.WriteLine("The purchase was unsuccessful due to a server error. " +
+                        "ExtendedError: " + extendedError);
+                    break;
 
-                        request.Content = new StringContent(
-                            JsonConvert.SerializeObject(claim),
-                            Encoding.UTF8,
-                            jsonMediaType);
-
-                        using (var response = await httpClientClaimOffer.SendAsync(request))
-                        {
-                            response.EnsureSuccessStatusCode();
-                        }
-                    }
-                }
+                default:
+                    System.Diagnostics.Debug.WriteLine("The purchase was unsuccessful due to an unknown error. " +
+                        "ExtendedError: " + extendedError);
+                    break;
             }
         }
-        //</ClaimOfferOnWindows1607AndLater>
-
-        // This method uses the Windows.ApplicationModel.Store APIs to purchase and claim a targeted offer.
-        // This method can be used on any version of Windows 10.
-        //<ClaimOfferOnAnyVersionWindows10>
-        private async Task ClaimOfferOnAnyVersionWindows10Async(
-            string productId, TargetedOfferData offerData, string msaToken)
-        {
-            if (string.IsNullOrEmpty(productId) || string.IsNullOrEmpty(msaToken))
-            {
-                System.Diagnostics.Debug.WriteLine("Product ID or Microsoft Account token is null or empty.");
-                return;
-            }
-
-            // Purchase the add-on for the current user and report it to the Store as fulfilled
-            // if the purchase was successful. Typically, a game or app would first show
-            // a UI that prompts the user to buy the add-on; for simplicity, this example
-            // simply purchases the add-on.
-            var purchaseResult = await CurrentApp.RequestProductPurchaseAsync(productId);
-            if (purchaseResult.Status == ProductPurchaseStatus.Succeeded)
-            {
-                CurrentApp.ReportProductFulfillment(productId);
-                var claim = new TargetedOfferClaim
-                {
-                    StoreOffer = offerData,
-                    Receipt = purchaseResult.ReceiptXml
-                };
-
-                // Submit a request to claim the offer by sending a POST message to the
-                // Store endpoint for targeted offers.
-                using (var httpClientClaimOffer = new HttpClient())
-                {
-                    var uri = new Uri(storeOffersUri, UriKind.Absolute);
-
-                    using (var request = new HttpRequestMessage(HttpMethod.Post, uri))
-                    {
-                        request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", msaToken);
-
-                        request.Content = new StringContent(
-                            JsonConvert.SerializeObject(claim),
-                            Encoding.UTF8,
-                            jsonMediaType);
-
-                        using (var response = await httpClientClaimOffer.SendAsync(request))
-                        {
-                            response.EnsureSuccessStatusCode();
-                        }
-                    }
-                }
-            }
-        }
-        //</ClaimOfferOnAnyVersionWindows10>
     }
-}
 
-public class TargetedOfferData
-{
-    [JsonProperty(PropertyName = "offers")]
-    public IList<string> Offers { get; } = new List<string>();
+    public class TargetedOfferData
+    {
+        [JsonProperty(PropertyName = "offers")]
+        public IList<string> Offers { get; } = new List<string>();
 
-    [JsonProperty(PropertyName = "trackingId")]
-    public string TrackingId { get; set; }
-}
-
-public class TargetedOfferClaim
-{
-    [JsonProperty(PropertyName = "receipt")]
-    public string Receipt { get; set; }
-
-    [JsonProperty(PropertyName = "storeOffer")]
-    public TargetedOfferData StoreOffer { get; set; }
+        [JsonProperty(PropertyName = "trackingId")]
+        public string TrackingId { get; set; }
+    }
 }
 //</GetTargetedOffersSample>

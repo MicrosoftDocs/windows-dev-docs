@@ -4,7 +4,7 @@ ms.assetid: A4C6098B-6CB9-4FAF-B2EA-50B03D027FF1
 description: Use this method in the Windows Store targeted offers API to get the targeted offers that are available for the current user in the context of the current app.
 title: Get targeted offers
 ms.author: mcleans
-ms.date: 05/11/2017
+ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ Use this method to get the targeted offers that are available for the current us
 
 ## Prerequisites
 
-To use this method, you need to first [obtain a Microsoft Account token](manage-targeted-offers-using-windows-store-services.md#obtain-a-microsoft-account-token) for the current signed-in user of your app. You must pass this token in the ```Authorization``` request header for this method. This token is used by the Store to claim the targeted offer for the current user.
+To use this method, you need to first [obtain a Microsoft Account token](manage-targeted-offers-using-windows-store-services.md#obtain-a-microsoft-account-token) for the current signed-in user of your app. You must pass this token in the ```Authorization``` request header for this method. This token is used by the Store to get targeted offers for the current user.
 
 ## Request
 
@@ -55,8 +55,8 @@ This method returns a JSON-formatted response body that contains an array of obj
 
 | Field      | Type   | Description         |
 |------------|--------|------------------|
-| offers      | array  | An array of product IDs for the add-ons that that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in the Windows Dev Center dashboard.            |
-| trackingId  | string | The tracking ID to pass to the [claim a targeted offer](claim-a-targeted-offer.md) method if the user successfully purchases the product that is associated with the targeted offer. |
+| offers      | array  | An array of product IDs for the add-ons that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in the Windows Dev Center dashboard.            |
+| trackingId  | string | A GUID that you can optionally use to keep track of the targeted offer in your own code or services. |
 
 <span/> 
 
@@ -79,7 +79,6 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Manage targeted offers using Store services](manage-targeted-offers-using-windows-store-services.md)
-* [Claim a targeted offer](claim-a-targeted-offer.md)
 
  
 
