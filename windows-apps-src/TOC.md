@@ -55,6 +55,7 @@
 ### [Parallax](style/parallax.md)
 ### [Reveal](style/reveal.md)
 ### [Sound](style/sound.md)
+### [Title bar customization](style/title-bar.md)
 ### [Typography](style/typography.md)
 #### [Fonts](style/fonts.md)
 #### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
