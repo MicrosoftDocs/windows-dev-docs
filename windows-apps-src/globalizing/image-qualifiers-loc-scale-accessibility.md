@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 Description: Your app can load images tailored for display language, display scale factor, high contrast, and other runtime contexts.
-title: Localize strings in your UI and app package manifest
+title: Load images and assets tailored for localization, scale, and accessibility
 label: Image qualifiers for localization, scale, and accessibility
 template: detail.hbs
 ms.author: stwhi
@@ -12,14 +12,62 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Image qualifiers for localization, scale, and accessibility
+# Load images and assets tailored for localization, scale, and accessibility
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Your app can load image resource files tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest (the `Package.appxmanifest` file), for example as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for language, display scale, and contrast.
 
-For background on how to use qualifiers in your images' file names, see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).
+An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).
+
+## Reference an image resource by name
+
+The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. Take for example these two equivalent sets of image files.
+
+`\Assets\Images\contrast-standard\logo.png`
+
+`\Assets\Images\contrast-high\logo.png`
+
+`\Assets\Images\contrast-black\logo.png`
+
+`\Assets\Images\contrast-white\logo.png`
+
+<br/>
+
+`\Assets\Images\logo.contrast-standard.png`
+
+`\Assets\Images\logo.contrast-high.png`
+
+`\Assets\Images\logo.contrast-black.png`
+
+`\Assets\Images\logo.contrast-white.png`
+
+If you name folders and/or files as in either of the two examples above, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here’s how you use that name in imperative code. Notice how the `ms-appx` URI (Uniform Resource Identifier) scheme is used.
+
+**C#**
+```csharp
+return new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
+```
+
+And here’s how you refer to that same resource in XAML markup.
+
+**XAML**
+```xml
+<Image Source="ms-appx:///Assets/Images/logo.png"/>
+```
+
+Notice how in this example URI the scheme ("`ms-appx`") is followed by "`://`" which is followed by an absolute path (an absolute path begins with "`/`").
 
 ## Refer to an image file from your app package manifest
+
+Take for example these two app icon image files.
+
+`\Assets\en\Square44x44Logo.scale-200.png`
+
+`\Assets\ja\Square44x44Logo.scale-200.png`
+
+If you name your app icon folders and/or files as in the example above, then you will have a single app icon image resource and its name (as a relative path) is `Assets\Square44x44Logo.png`. In your app package manifest, simply refer to the resource by name without including the `ms-appx` URI scheme.
+
+![add resource, english](images/app-icon.png)
 
 For a list of all items in the app package manifest that you can localize, see [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=master).
 

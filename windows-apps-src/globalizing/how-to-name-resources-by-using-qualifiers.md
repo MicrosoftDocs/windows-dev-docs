@@ -65,19 +65,9 @@ Instead of creating and naming folders, you can use a qualifier to name the reso
 
 The file whose name contains the qualifier most appropriate for the setting is the one that is loaded. This matching logic works the same way for file names as for folder names.
 
-## Reference a resource by name
+## Reference a string or image resource by name
 
-When you refer to a resource by name in your app, any folder and file name qualifiers become invisible. So, the name of the `logo` resource in the examples above is /Assets/Images/logo.png. Here’s how you use that name in imperative code.
-
-```csharp
-return new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
-```
-
-And here’s how you refer to that same resource in markup.
-
-```xml
-<Image Source="ms-appx:///Assets/Images/logo.png"/>
-```
+See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource by name](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-by-name).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
