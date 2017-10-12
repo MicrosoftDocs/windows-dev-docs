@@ -60,7 +60,7 @@ Private Sub showUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEve
 End Sub
 ```
 ```cpp
-void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::Input::RoutedEventArgs^ e) {
+void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) {
     Button^ b = (Button^) sender;
     //more logic to do here...
 }
