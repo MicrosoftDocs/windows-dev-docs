@@ -1169,6 +1169,7 @@
 ### [Feedback report](publish/feedback-report.md)
 ### [Advertising performance report](publish/advertising-performance-report.md)
 ### [Ad campaign report](publish/promote-your-app-report.md)
+### [Xbox analytics report](publish/xbox-analytics-report.md)
 ### [Download analytics reports](publish/download-analytic-reports.md)
 ## [Getting paid](publish/getting-paid-apps.md)
 ### [Set up your payout account and tax forms](publish/setting-up-your-payout-account-and-tax-forms.md)
