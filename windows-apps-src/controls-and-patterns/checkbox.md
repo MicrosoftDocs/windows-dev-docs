@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+author: serenaz
 Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
 title: Check boxes
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

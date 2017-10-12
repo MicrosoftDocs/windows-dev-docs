@@ -1,10 +1,10 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: Use the pull-to-refresh pattern with a list view.
 title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

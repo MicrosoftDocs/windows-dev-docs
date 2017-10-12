@@ -1,12 +1,12 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: Use layout panels to arrange and group UI elements in your app.
 title: Layout panels for Universal Windows Platform (UWP) apps
 ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
 label: Layout panels
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

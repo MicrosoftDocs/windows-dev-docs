@@ -1,10 +1,10 @@
 ---
-author: Jwmsft
+author: muhsinking
 Description: Use templates to modify the look of items in list view or grid view controls.
 title: List view item templates
 label: List view item templates
 template: detail.hbs
-ms.author: jimwalk
+ms.author: mukin
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+author: serenaz
 Description: Control that lays out top-level navigation while conserving screen real estate.
 title: Navigation view
 ms.assetid:
 label: Navigation view
 template: detail.hbs
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+author: serenaz
 title: Split view
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: A split view control has an expandable/collapsible pane and a content area.
 label: Split view
 template: detail.hbs
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows

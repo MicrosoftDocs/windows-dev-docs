@@ -1,11 +1,11 @@
 ---
-author: Jwmsft
+author: serenaz
 Description: The toggle switch represents a physical switch that allows users to turn things on or off.
 title: Guidelines for toggle switch controls
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
-ms.author: jimwalk
+ms.author: sezhen
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
