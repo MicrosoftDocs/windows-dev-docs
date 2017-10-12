@@ -3,7 +3,7 @@ author: jwmsft
 title: Version adaptive apps
 description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
 ms.author: jimwalk
-ms.date: 07/08/2017
+ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,6 +23,7 @@ There are 3 steps to take to make sure your app supports the broadest range of W
 ## Configure your Visual Studio project
 
 The first step in supporting multiple Windows 10 versions is to specify the *Target* and *Minimum* supported OS/SDK versions in your Visual Studio project.
+
 - *Target*: The SDK version that Visual Studio compiles your app code and run all tools against. All APIs and resources in this SDK version are available in your app code at compile time.
 - *Minimum*: The SDK version that supports the earliest OS version that your app can run on (and will be deployed to by the store) and the version that Visual Studio compiles your app markup code against. 
 
@@ -48,10 +49,10 @@ For reference, the following table shows the build numbers for each SDK. For mor
 Friendly name | Version | OS/SDK build | Notes
 ---- | ---- | ---- | ----
 RTM | 1507 | 10240 | See important [support](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates) info.
-November Update | 1511 | 10586 |
+November Update | 1511 | 10586 | See important [support](https://support.microsoft.com/help/4035050/windows-10-version-1511-will-no-longer-receive-security-updates) info.
 Anniversary Update | 1607 | 14393 |
 Creators Update | 1703 | 15063 |
-*Fall Creators Update* |  | *16225* | Insider Preview SDK
+Fall Creators Update | 1709 | 16299 |
 
 You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/Home/BuildWithWindows) site.
 
@@ -82,7 +83,7 @@ The largest and most commonly used API contract is the **Windows.Foundation.Univ
 
 In all versions of Windows 10, you can use the ApiInformation class in a condition in your code to test for the presence of the API you want to call. In your adaptive code, you can use various methods of the class, such as IsTypePresent, IsEventPresent, IsMethodPresent, and IsPropertyPresent, to test for APIs at the granularity you need.
 
-For more info and examples, see **[Version adpative code](version-adaptive-code.md)**.
+For more info and examples, see **[Version adaptive code](version-adaptive-code.md)**.
 
 If your apps Minimum Version is build 15063 (Creators Update) or later, you can use *conditional XAML* to set properties and instantiate objects in markup without needing to use code behind. Conditional XAML provides a way to use the ApiInformation.IsApiContractPresent method in markup.
 
