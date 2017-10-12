@@ -88,7 +88,7 @@ auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetF
 this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 ```
 
-You can use this same code from within a Class Library (Universal Windows) or a Windows Runtime Library (Universal Windows) project. At runtime, the resources of the app that's hosting the library are loaded. We recommend that a library loads resources from the app that hosts it, since the app is likely to have a greater degree of localization. If a library does need to provide resources then it should give its hosting app the option to replace those resources as an input.
+You can use this same code from within a Class Library (Universal Windows) or a [Windows Runtime Library (Universal Windows)](../winrt-components/index.md) project. At runtime, the resources of the app that's hosting the library are loaded. We recommend that a library loads resources from the app that hosts it, since the app is likely to have a greater degree of localization. If a library does need to provide resources then it should give its hosting app the option to replace those resources as an input.
 
 **Note** You can only load the value for a simple string resource identifier this way, not for a property identifier. So we can load the value for "Farewell" using code like this, but we cannot do so for "Greeting.Text". Trying to do so will return an empty string.
 

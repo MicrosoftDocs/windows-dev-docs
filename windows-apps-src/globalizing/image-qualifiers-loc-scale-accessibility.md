@@ -1,8 +1,7 @@
 ---
 author: stevewhims
-Description: Your app can load images tailored for display language, display scale factor, high contrast, and other runtime contexts.
-title: Load images and assets tailored for localization, scale, and accessibility
-label: Image qualifiers for localization, scale, and accessibility
+Description: Your app can load image resource files containing images tailored for display language, display scale factor, high contrast, and other runtime contexts.
+title: Load images and assets tailored for language, scale, and high contrast
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
@@ -12,10 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Load images and assets tailored for localization, scale, and accessibility
+# Load images and assets tailored for language, scale, and high contrast
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Your app can load image resource files tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest (the `Package.appxmanifest` file), for example as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for language, display scale, and contrast.
+Your app can load image resource files containing images tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest (the `Package.appxmanifest` file), for example as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for language, display scale, and contrast.
 
 An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).
 

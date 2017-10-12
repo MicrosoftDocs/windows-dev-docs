@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
-title: Tailor your resources for language, scale, and other qualifiers
+title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
@@ -11,10 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Tailor your resources for language, scale, and other qualifiers
+# Tailor your resources for language, scale, high contrast, and other qualifiers
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
+This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
