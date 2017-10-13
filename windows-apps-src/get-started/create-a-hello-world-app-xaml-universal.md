@@ -186,7 +186,7 @@ It doesn't do much—yet—but congratulations, you've built your first UWP app!
 
    Close the app window.
 
-## Step 3: Event handlers
+## Step 4: Event handlers
 
 An "event handler" sounds complicated, but it's just another name for the code that is called when an event happens (such as the user clicking on your button).
 
