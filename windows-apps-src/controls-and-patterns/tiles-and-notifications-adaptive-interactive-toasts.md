@@ -747,10 +747,10 @@ To learn how to handle toast activations (the user clicking your toast or button
 
 ## Tailoring notifications for display language, display scale factor, and high contrast
 
-Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts. For more info, see [Tile and toast notification support for language, scale, and high contrast](/uwp/globalizing/tile-toast-language-scale-contrast?branch=master).
+Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts. For more info, see [Tile and toast notification support for language, scale, and high contrast](../globalizing/tile-toast-language-scale-contrast.md).
  
 ## Related topics
 
 * [Send a local toast and handle activation](tiles-and-notifications-send-local-toast.md)
 * [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
-* [Tile and toast notification support for language, scale, and high contrast](/uwp/globalizing/tile-toast-language-scale-contrast?branch=master)
+* [Tile and toast notification support for language, scale, and high contrast](../globalizing/tile-toast-language-scale-contrast.md)

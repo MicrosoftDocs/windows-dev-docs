@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # Tailor your resources for language, scale, high contrast, and other qualifiers
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
+This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -67,7 +67,7 @@ The file whose name contains the qualifier most appropriate for the setting is t
 
 ## Reference a string or image resource by name
 
-See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource by name](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-by-name).
+See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
@@ -217,11 +217,11 @@ See [Localize your UI strings](put-ui-strings-into-resources.md) for more inform
 
 ## LayoutDirection
 
-A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=master#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
+A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
 
 ## Scale
 
-To load the correct size of image for a given display scale factor, you can use a `scale` qualifier. This is typically used for images viewed on a higher-DPI device or when the app is zoomed. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=master#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
+To load the correct size of image for a given display scale factor, you can use a `scale` qualifier. This is typically used for images viewed on a higher-DPI device or when the app is zoomed. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
 
 Here’s an example of setting the qualifier at the folder level.
 
@@ -239,7 +239,7 @@ And this example sets it at the file level.
 
 `\Assets\Images\logo.scale-400.png`
 
-Don’t use both a `scale` qualifier and a `targetsize` qualifier on the same resource.
+For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](image-qualifiers-loc-scale-accessibility.md#qualify-an-image-resource-for-targetsize).
 
 ## TargetSize
 
@@ -247,7 +247,7 @@ The `targetsize` qualifier is primarily used to specify [file type association i
 
 You can define assets that represent several sizes of `targetsize` qualifier value for the App Icon (`/Assets/Square44x44Logo.png`) in the Visual Assets tab of the app package manifest designer.
 
-Don’t use both a `targetsize` qualifier and a `scale` qualifier on the same resource.
+For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](image-qualifiers-loc-scale-accessibility.md#qualify-an-image-resource-for-targetsize).
 
 ## Theme
 

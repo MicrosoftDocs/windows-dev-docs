@@ -214,7 +214,7 @@
 #### [Prepare your app for localization](globalizing/prepare-your-app-for-localization.md)
 #### [Tailor resources for language, scale, contrast, others](globalizing/how-to-name-resources-by-using-qualifiers.md)
 #### [Localize UI and manifest strings](globalizing/put-ui-strings-into-resources.md)
-#### [Load images tailored for language, scale, contrast](globalizing/image-qualifiers-loc-scale-accessibility.md)
+#### [Load images tailored for scale, theme, contrast, others](globalizing/image-qualifiers-loc-scale-accessibility.md)
 #### [Tile and toast notification support for language, scale, contrast](globalizing/tile-toast-language-scale-contrast.md)
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
 #### [Migrate legacy resources](globalizing/using-mrt-for-converted-desktop-apps-and-games.md)

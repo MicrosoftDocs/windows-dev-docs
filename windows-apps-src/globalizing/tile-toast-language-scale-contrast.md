@@ -20,7 +20,7 @@ Your tiles and toasts can load strings and images tailored for display language,
 
 In your tile or toast template, you can refer to a string resource using the `ms-resource` URI (Uniform Resource Identifier) scheme followed by a simple string resource identifier. For example, if you have a Resources.resx file that contains a resource entry whose name is "Farewell", then you have a string resource with the identifier "Farewell". For more info on string resource identifiers and Resources Files (.resw), see [Localize strings in your UI and app package manifest](put-ui-strings-into-resources.md).
 
-This is how a reference to the "Farewell" string resource identifier would look in the [text](/uwp/schemas/tiles/tilesschema/element-text?branch=master) body of your template content, using `ms-resource`.
+This is how a reference to the "Farewell" string resource identifier would look in the [text](/uwp/schemas/tiles/tilesschema/element-text?branch=live) body of your template content, using `ms-resource`.
 
 ```xml
 <text id="1">ms-resource:Farewell</text>
@@ -34,7 +34,7 @@ If you omit the `ms-resource` URI scheme, then the text body is just a string li
 
 ## Refer to an image resource from a template
 
-In your tile or toast template, you can refer to an image resource using the `ms-appx` URI (Uniform Resource Identifier) scheme followed by the name of the image resource. This is the same way that you refer to an image resource in XAML markup (for more details, see [Reference an image resource by name](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-by-name)).
+In your tile or toast template, you can refer to an image resource using the `ms-appx` URI (Uniform Resource Identifier) scheme followed by the name of the image resource. This is the same way that you refer to an image resource in XAML markup (for more details, see [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code)).
 
 For example, you might name folders like this.
 
@@ -63,7 +63,7 @@ Instead, append onto your image's URI a query string describing the requested qu
 
 Then, in the app service that provides your images, implement an HTTP handler that inspects and uses the query string to determine which image to return.
 
-You also need to set the [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=master) attribute to `true` in the [tile](/uwp/schemas/tiles/tilesschema/schema-root?branch=master) or [toast](/uwp/schemas/tiles/toastschema/schema-root?branch=master) notification XML payload. The **addImageQuery** attribute appears in the `visual`, `binding`, and `image` elements of both the tile and toast schemas. Explicitly setting **addImageQuery** on an element overrides any value set on an ancestor. For instance, an **addImageQuery** value of `true` in an `image` element overrides an **addImageQuery** of `false` in its parent `binding` element.
+You also need to set the [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) attribute to `true` in the [tile](/uwp/schemas/tiles/tilesschema/schema-root?branch=live) or [toast](/uwp/schemas/tiles/toastschema/schema-root?branch=live) notification XML payload. The **addImageQuery** attribute appears in the `visual`, `binding`, and `image` elements of both the tile and toast schemas. Explicitly setting **addImageQuery** on an element overrides any value set on an ancestor. For instance, an **addImageQuery** value of `true` in an `image` element overrides an **addImageQuery** of `false` in its parent `binding` element.
 
 These are the query strings you can use.
 
@@ -73,14 +73,14 @@ These are the query strings you can use.
 | Language | ms-lang | ?ms-lang=en-US |
 | Contrast | ms-contrast | ?ms-contrast=high |
 
-For a reference table of all the possible qualifier values that you can use in your query strings, see [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
+For a reference table of all the possible qualifier values that you can use in your query strings, see [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
 
 ## Related topics
 
 * [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md)
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
+* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
 * [Localize strings in your UI and app package manifest](put-ui-strings-into-resources.md)
-* [Reference an image resource by name](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-by-name)
-* [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=master)
-* [Tile schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=master)
-* [Toast schema](/uwp/schemas/tiles/toastschema/schema-root?branch=master)
+* [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code)
+* [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
+* [Tile schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
+* [Toast schema](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
