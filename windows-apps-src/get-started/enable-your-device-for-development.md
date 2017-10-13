@@ -50,57 +50,37 @@ Here's the settings page on the mobile device family:
 
  You can enable a device for development, or just for sideloading.
 
--   *Windows Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
--   *Sideloading* is installing and then running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.
+-   *Windows Store apps* allows only apps from the Windows Store to be installed.  If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
+-   *Sideloading* is the default setting installing and and allows running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.  However, the app still needs to be signed by a party your PC trusts. 
 -   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
 
-By default, you can only install Universal Windows Platform (UWP) apps from the Windows Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
+Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
 
 ### Sideload apps
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Windows Store. In this case, it's common for the organization to enforce a policy that disables the *Windows Store apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
-
-Device family specific info
-
--   On the desktop device family: You can install an app package (.appx) and any certificate that is needed to run the app by running the Windows PowerShell script that is created with the package ("Add-AppDevPackage.ps1"). For more info, see [Packaging UWP apps](../packaging/packaging-uwp-apps.md).
-
--   On the mobile device family: If the required certificate is already installed, you can tap the file to install any .appx sent to you via email or on an SD card.
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Windows Store. In this case, it's common for the organization to enforce a policy that disables the *Windows Store apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).  Enterprises interested in providing apps for their users should strongly consider the [Windows Store for Business](https://docs.microsoft.com/microsoft-store/windows-store-for-business-overview) as a more appropriate, fuller-featured way of managing their app deployments. 
 
 **Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
 
 > [!NOTE]
-> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Windows Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Windows Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
+> If you sideload apps, you should still only install apps from sources you trust. When you install a sideloaded app that has not been certified by the Windows Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Windows Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
 
 ### Developer Mode
 
 Developer Mode replaces the Windows 8.1 requirements for a developer license.  In addition to sideloading, the Developer Mode setting enables debugging and additional deployment options. This includes starting an SSH service to allow this device to be deployed to. In order to stop this service, you have to disable Developer Mode.
 
-Device family specific info
+When you enable Developer Mode on desktop, a package of features is installed that includes:
+- Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
+- Installs, and configures firewall rules for SSH services that allow remote installation of apps. Enabling **Device Discovery** will turn on the SSH server.
 
--   On the desktop device family:
-
-    Enable Developer Mode to develop and debug apps in Visual Studio. As stated previously, you will be prompted in Visual Studio if Developer Mode is not enabled.
-
-    On pre-Fall-Creators-Update PCs, this allows enabling of the Windows subsystem for Linux. For more info, see [About Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about).  Developer Mode is no longer required for WSL, as of the Fall Creators Update.  
-
--   On the mobile device family:
-
-    Enable developer mode to deploy apps from Visual Studio and debug them on the device.
-
-    You can tap the file to install any .appx sent to you via email or on an SD card. Do not install apps from unverified sources.
 
 ## Additional Developer Mode features
 
 For each device family, additional developer features might be available. These features are available only when Developer Mode is enabled on the device, and might vary depending on your OS version.
 
-When you enable Developer Mode, a package of options is installed that includes:
-- Windows Device Portal. Device Portal is enabled and firewall rules are configured for it only when the **Enable Device Portal** option is turned on.
-- Installs, enables, and configures firewall rules for SSH services that allow remote installation of apps.
+This image shows developer features for Windows 10:
 
-
-This image shows developer features for the mobile device family on Windows 10:
-
-![Developer mode options for mobile devices](images/devmode-mob-options.png) 
+![Developer mode options](images/devmode-mob-options.png) 
 
 ### <span id="device-discovery-and-pairing"></span>Device Portal
 
@@ -115,40 +95,40 @@ For device specific setup instructions, see:
 
 If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) for additional details and which WSUS KBs to allow in order to unblock the Developer Mode package. 
 
-###SSH
+### SSH
 
-SSH services are enabled when you enable Developer Mode on your device.  This is used when your device is a deployment target for UWP applications.   The names of the services are 'SSH Server Broker' and 'SSH Server Proxy'.
+SSH services are enabled when you enable Device Discovery on your device.  This is used when your device is a remote deployment target for UWP applications.   The names of the services are 'SSH Server Broker' and 'SSH Server Proxy'.
 
 > [!NOTE]
-> This is not Microsoft's OpenSSH implementation, which you can find on [GitHub](https://github.com/PowerShell/Win32-OpenSSH).
+> This is not Microsoft's OpenSSH implementation, which you can find on [GitHub](https://github.com/PowerShell/Win32-OpenSSH).  
 
-In order to take advantage of the SSH services, you can enable device discovery to allow pin pairing. If you intend to run another SSH service, you can set this up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, simply disable Developer Mode.  
+In order to take advantage of the SSH services, you can enable device discovery to allow pin pairing. If you intend to run another SSH service, you can set this up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, turn off Device Discovery.  
+
+SSH login is done via the "DevToolsUser" account, which accepts a password for authentication.  This password is the PIN displayed on the device after pressing the device discovery "Pair" button, and is only valid while the PIN is displayed.  An SFTP subsystem is also enabled, for manual management of the DevelopmentFiles folder where loose file deployments are installed from Visual Studio. 
+
+#### Caveats for SSH usage
+The existing SSH server used in Windows is not yet protocol compliant, so using an SFTP or SSH client may require special configuration.  In particular, the SFTP subsystem runs at version 3 or less, so any connecting client should be configured to expect an old server.  The SSH server on older devices uses `ssh-dss` for public key authentication, which OpenSSH has deprecated.  To connect to such devices the SSH client must be manually configured to accept `ssh-dss`.  
 
 ### Device Discovery
 
-When you enable device discovery, you are allowing your device to be visible to other devices on the network through mDNS.  This feature also allows you to get the SSH PIN for pairing to this device.  
+When you enable device discovery, you are allowing your device to be visible to other devices on the network through mDNS.  This feature also allows you to get the SSH PIN for pairing to this device by pressing the "Pair" button exposed once device discovery is enabled.  This PIN prompt must be displayed on the screen in order to complete your first Visual Studio deployment targeting the device.  
 
 ![Pin pairing](images/devmode-pc-pinpair.PNG)
 
 You should enable device discovery only if you intend to make the device a deployment target. For example, if you use Device Portal to deploy an app to a phone for testing, you need to enable device discovery on the phone, but not on your development PC.
-
-### Error reporting (Mobile only)
-
-Set this value to specify how many crash dumps are saved on your phone.
-
-Collecting crash dumps on your phone gives you instant access to important crash information directly after the crash occurs. Dumps are collected for developer-signed apps only. You can find the dumps in your phone's storage in the Documents\\Debug folder. For more info about dump files, see [Using dump files](https://msdn.microsoft.com/library/d5zhxt22.aspx).
 
 ### Optimizations for Windows Explorer, Remote Desktop, and PowerShell (Desktop only)
 
  On the desktop device family, the **For developers** settings page has shortcuts to settings that you can use to optimize your PC for development tasks. For each setting, you can select the checkbox and click **Apply**, or click the **Show settings** link to open the settings page for that option. 
 
 
+## Notes
+In early versions of Windows 10 Mobile, a Crash Dumps option was present in the Developer Settings menu.  This has been moved to [Device Portal](../debug-test-perf/device-portal.md) so that it can be used remotely rather than just over USB.  
 
-**Tip**  
-There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 mobile device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Either of the ways listed installs only the app package (.appx); they do not install certificates.
+There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Both of the ways listed install only the app package (.appx/.appxbundle); they do not install certificates.
 
 -   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   Starting in Windows 10, Version 1511, you can use [Device Portal](../debug-test-perf/device-portal-desktop.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
+-   You can use [Device Portal](../debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
 
 ## Failure to install Developer Mode package
 Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device. 
@@ -186,9 +166,9 @@ To fix this issue:
 
 ## Use group policies or registry keys to enable a device
 
-For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows 10 desktop device for development.
+For most developers, you want to use the settings app to enable your device for debugging. In certain scenarios, such as automated tests, you can use other ways to enable your Windows 10 desktop device for development.  Note that these steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging. 
 
-You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home. If you do have Windows 10 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
+You can use gpedit.msc to set the group policies to enable your device, unless you have Windows 10 Home. If you do have Windows 10 Home, you need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
 
 **Use gpedit to enable your device**
 
@@ -233,9 +213,9 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
-## Upgrade your device from Windows 8.1 to Windows 10
+## Upgrade your device from Windows 8.1 to Windows 10
 
-When you create or sideload apps on your Windows 8.1 device, you have to install a developer license. If you upgrade your device from Windows 8.1 to Windows 10, this information remains. Run the following command to remove this information from your upgraded Windows 10 device. This step is not required if you upgrade directly from Windows 8.1 to Windows 10, Version 1511 or later.
+When you create or sideload apps on your Windows 8.1 device, you have to install a developer license. If you upgrade your device from Windows 8.1 to Windows 10, this information remains. Run the following command to remove this information from your upgraded Windows 10 device. This step is not required if you upgrade directly from Windows 8.1 to Windows 10, Version 1511 or later.
 
 **To unregister a developer license**
 
