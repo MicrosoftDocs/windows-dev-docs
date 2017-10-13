@@ -31,29 +31,31 @@ Some common qualifiers for images are [scale](how-to-name-resources-by-using-qua
 
 The default value for the `scale` qualifier is `scale-100`. So, these two variants are equivalent (they both provide an image at scale 100, or scale factor 1).
 
-`\Assets\Images\logo.png`
-
-`\Assets\Images\logo.scale-100.png`
+```
+\Assets\Images\logo.png
+\Assets\Images\logo.scale-100.png
+```
 
 You can use qualifiers in folder names instead of file names. That would be a better strategy if you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.
 
-`\Assets\Images\logo.png`
-
-`\Assets\Images\scale-100\logo.png`
+```
+\Assets\Images\logo.png
+\Assets\Images\scale-100\logo.png
+```
 
 Next is an example of how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast. This example uses folder naming.
 
-`\Assets\Images\contrast-standard\theme-dark\scale-100\logo.png`
-
-`\Assets\Images\contrast-standard\theme-dark\scale-200\logo.png`
-
-`\Assets\Images\contrast-standard\theme-light\scale-100\logo.png`
-
-`\Assets\Images\contrast-standard\theme-light\scale-200\logo.png`
-
-`\Assets\Images\contrast-high\scale-100\logo.png`
-
-`\Assets\Images\contrast-high\scale-200\logo.png`
+```
+\Assets\Images\contrast-standard\theme-dark
+	\scale-100\logo.png
+	\scale-200\logo.png
+\Assets\Images\contrast-standard\theme-light
+	\scale-100\logo.png
+	\scale-200\logo.png
+\Assets\Images\contrast-high
+	\scale-100\logo.png
+	\scale-200\logo.png
+```
 
 ## Reference an image resource in XAML markup and code
 
@@ -81,19 +83,23 @@ Also see [Tile and toast support for language, scale, and high contrast](tile-to
 
 You can use the `scale` and `targetsize` qualifiers on different variants of the same image resource; but you can't use them both on a single variant of a resource. Also, you need to define at least one variant without a `TargetSize` qualifier. That variant must either define a value for `scale`, or let it default to `scale-100`. So, these two variants of the `/Assets/Square44x44Logo.png` resource are valid.
 
-`\Assets\Square44x44Logo.scale-200.png`
-
-`\Assets\Square44x44Logo.targetsize-24.png`
+```
+\Assets\Square44x44Logo.scale-200.png
+\Assets\Square44x44Logo.targetsize-24.png
+```
 
 And these two variants are valid. 
 
-`\Assets\Square44x44Logo.png // defaults to scale-100`
-
-`\Assets\Square44x44Logo.targetsize-24.png`
+```
+\Assets\Square44x44Logo.png // defaults to scale-100
+\Assets\Square44x44Logo.targetsize-24.png
+```
 
 But this variant is not valid.
 
-`\Assets\Square44x44Logo.scale-200_targetsize-24.png`
+```
+\Assets\Square44x44Logo.scale-200_targetsize-24.png
+```
 
 ## Refer to an image file from your app package manifest
 

@@ -38,10 +38,10 @@ In your tile or toast template, you can refer to an image resource using the `ms
 
 For example, you might name folders like this.
 
-
-`\Assets\Images\contrast-standard\welcome.png`
-
-`\Assets\Images\contrast-high\welcome.png`
+```
+\Assets\Images\contrast-standard\welcome.png
+\Assets\Images\contrast-high\welcome.png
+```
 
 In that case, you have a single image resource and its name (as an absolute path) is `/Assets/Images/welcome.png`. Here’s how you use that name in your template.
 
