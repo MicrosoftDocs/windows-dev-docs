@@ -26,7 +26,7 @@ App icon assets, which appear in a variety of forms throughout the Windows 10 o
 
 First, a brief overview on adaptive scaling to better understand how scaling works with assets. Windows 10 introduces an evolution of the existing scaling model. In addition to scaling vector content, there is a unified set of scale factors that provides a consistent size for UI elements across a variety of screen sizes and display resolutions. The scale factors are also compatible with the scale factors of other operating systems such as iOS and Android, which makes it easier to share assets between these platforms.
 
-The Store picks the assets to download based in part of the DPI of the device. Only the assets that best match the device are downloaded.
+The Store picks the assets to download based in part on the DPI of the device. Only the assets that best match the device are downloaded.
 
 ## Tile elements
 

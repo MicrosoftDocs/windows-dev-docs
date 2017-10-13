@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 Description: Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts.
-title: Tile and toast support for language, scale, and high contrast
+title: Tile and toast notification support for language, scale, and high contrast
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/12/2017
@@ -11,7 +11,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Tile and toast support for language, scale, and high contrast
+# Tile and toast notification support for language, scale, and high contrast
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).

@@ -745,9 +745,12 @@ ToastContent content = new ToastContent()
 ## Handling activation
 To learn how to handle toast activations (the user clicking your toast or buttons on the toast), see [Send local toast](tiles-and-notifications-send-local-toast.md).
 
+## Tailoring notifications for display language, display scale factor, and high contrast
 
+Your tiles and toasts can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts. For more info, see [Tile and toast notification support for language, scale, and high contrast](/uwp/globalizing/tile-toast-language-scale-contrast?branch=master).
  
 ## Related topics
 
 * [Send a local toast and handle activation](tiles-and-notifications-send-local-toast.md)
 * [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
+* [Tile and toast notification support for language, scale, and high contrast](/uwp/globalizing/tile-toast-language-scale-contrast?branch=master)
