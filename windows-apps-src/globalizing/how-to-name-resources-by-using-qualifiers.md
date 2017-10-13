@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
-title: Tailor your resources for language, scale, and other qualifiers
+title: Tailor your resources for language, scale, high contrast, and other qualifiers
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
@@ -11,10 +11,10 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ---
 
-# Tailor your resources for language, scale, and other qualifiers
+# Tailor your resources for language, scale, high contrast, and other qualifiers
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
+This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -65,19 +65,9 @@ Instead of creating and naming folders, you can use a qualifier to name the reso
 
 The file whose name contains the qualifier most appropriate for the setting is the one that is loaded. This matching logic works the same way for file names as for folder names.
 
-## Reference a resource by name
+## Reference a string or image resource by name
 
-When you refer to a resource by name in your app, any folder and file name qualifiers become invisible. So, the name of the `logo` resource in the examples above is /Assets/Images/logo.png. Here’s how you use that name in imperative code.
-
-```csharp
-return new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
-```
-
-And here’s how you refer to that same resource in markup.
-
-```xml
-<Image Source="ms-appx:///Assets/Images/logo.png"/>
-```
+See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource by name](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-by-name).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.

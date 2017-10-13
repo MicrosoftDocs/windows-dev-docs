@@ -250,6 +250,8 @@ titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 
 In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`.
 
+For more info, see [Title bar customization](title-bar.md).
+
 ## Do's and don'ts
 * Do use acrylic as the background material of non-primary app surfaces like navigation panes.
 * Do extend acrylic to at least one edge of your app to provide a seamless experience by subtly blending with the app’s surroundings.
