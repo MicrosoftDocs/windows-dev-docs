@@ -405,6 +405,7 @@
 ### [Track recently used files and folders](files/how-to-track-recently-used-files-and-folders.md)
 ### [Access the SD card](files/access-the-sd-card.md)
 ### [File access permissions](files/file-access-permissions.md)
+### [Fast access to file properties in UWP](files/fast-file-properties.md)
 ## [Game programming](gaming/index.md)
 ### [Windows 10 game development guide](gaming/e2e.md)
 ### [Planning](gaming/planning.md)
