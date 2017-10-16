@@ -37,6 +37,14 @@ This section provides information about developing UWP games. Note that some of 
 <td align="left"><p>Learn about the different kinds of input devices for UWP games and how to implement them.</p></td>
 </tr>
 <tr class="odd">
+    <td align="left">
+        <p>[Missing .NET APIs in Unity and UWP](missing-dot-net-apis-in-unity-and-uwp.md)</p>
+    </td>
+    <td align="left">
+        <p>Learn about the missing .NET APIs when building UWP games in Unity, and workarounds for common issues.</p>
+    </td>
+</tr>
+<tr class="even">
 <td align="left"><p>[Networking for games](work-with-networking-in-your-directx-game.md)</p></td>
 <td align="left"><p>Explains how to develop and incorporate networking features into a DirectX game.</p></td>
 </tr>

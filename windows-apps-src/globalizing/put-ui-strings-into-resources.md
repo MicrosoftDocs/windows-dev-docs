@@ -66,7 +66,7 @@ When assigning a string resource identifier to a XAML element, be certain that *
 
 Instead of setting **Width** from a Resources File, you'll probably want to allow controls to dynamically size to content.
 
-**Note** For [attached properties](../xaml-platform/attached-properties-overview.md), you need a special syntax in the Name column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties?branch=master#Windows_UI_Xaml_Automation_AutomationProperties_NameProperty) attached property for the "Greeting" identifier, this is what you would enter in the Name column.
+**Note** For [attached properties](../xaml-platform/attached-properties-overview.md), you need a special syntax in the Name column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties?branch=live#Windows_UI_Xaml_Automation_AutomationProperties_NameProperty) attached property for the "Greeting" identifier, this is what you would enter in the Name column.
 
 ```
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -104,7 +104,7 @@ You can use this same code from within a Class Library (Universal Windows) or a 
 
    ![add resource, english](images/display-name-after.png)
 
-4. Repeat this process for each string in your manifest that you want to localize. For example, your app's Short name (which you can configure to appear on your app's tile on Start). For a list of all items in the app package manifest that you can localize, see [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=master).
+4. Repeat this process for each string in your manifest that you want to localize. For example, your app's Short name (which you can configure to appear on your app's tile on Start). For a list of all items in the app package manifest that you can localize, see [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live).
 
 ## Localize the string resources
 
@@ -164,7 +164,7 @@ You only need to add `/<resources-file-name>/` before the string resource identi
 
 ## Load a string for a specific language or other context
 
-The default [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master) (obtained from [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_GetForCurrentView)) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Resources Files (.resw) are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
+The default [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) (obtained from [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_GetForCurrentView)) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Resources Files (.resw) are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
 
 But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching Resources File to load. For example, you might want your users to be able to select an alternative language for tooltips or error messages.
 
@@ -185,7 +185,7 @@ Using **QualifierValues** as in the code example above works for any qualifier. 
 resourceContext.Languages = new string[] { "de-DE" };
 ```
 
-For the same effect at a global level, you *can* override the qualifier values in the default **ResourceContext**. But instead we advise you to call [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). You set values one time with a call to **SetGlobalQualifierValue** and then those values are in effect on the default **ResourceContext** each time you use it for lookups.
+For the same effect at a global level, you *can* override the qualifier values in the default **ResourceContext**. But instead we advise you to call [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). You set values one time with a call to **SetGlobalQualifierValue** and then those values are in effect on the default **ResourceContext** each time you use it for lookups.
 
 **C#**
 ```csharp
@@ -194,7 +194,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
 
-Some qualifiers have a system data provider. So, instead of calling **SetGlobalQualifierValue** you could instead adjust the provider through its own API. For example, this code shows how to set [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=master#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride).
+Some qualifiers have a system data provider. So, instead of calling **SetGlobalQualifierValue** you could instead adjust the provider through its own API. For example, this code shows how to set [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=live#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride).
 
 **C#**
 ```csharp
@@ -203,7 +203,7 @@ Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 
 ## Updating strings in response to qualifier value change events
 
-Your running app can respond to changes in system settings that affect the qualifier values in the default **ResourceContext**. Any of these system settings invokes the [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_?branch=master#Windows_Foundation_Collections_IObservableMap_2_MapChanged) event on [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
+Your running app can respond to changes in system settings that affect the qualifier values in the default **ResourceContext**. Any of these system settings invokes the [**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_?branch=live#Windows_Foundation_Collections_IObservableMap_2_MapChanged) event on [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
 
 In response to this event, you can reload your strings from the default **ResourceContext**.
 
@@ -245,7 +245,7 @@ private void RefreshUIText()
 * [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
 * [x:Uid directive](../xaml-platform/x-uid-directive.md)
 * [attached properties](../xaml-platform/attached-properties-overview.md)
-* [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=master)
+* [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md)
 * [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

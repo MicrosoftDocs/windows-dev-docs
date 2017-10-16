@@ -119,9 +119,7 @@ public class XboxLiveTest : MonoBehaviour
 
 4.  In the UWP build type combo box, choose "D3D", but "XAML" will also work if you prefer.
 
-5.  Click the "Unity C\# Projects" checkbox to generate the Assembly-Csharp.dll projects
-
-6.  Click "Build" for Unity to generate the UWP Visual Studio project that wraps your Unity game in a UWP application. When you get prompted for a location, create a new folder to avoid confusion since a lot of new files will be created. It’s recommended you call the folder "Build", and then select that folder
+5.  Click "Build" for Unity to generate the UWP Visual Studio project that wraps your Unity game in a UWP application. When you get prompted for a location, create a new folder to avoid confusion since a lot of new files will be created. It’s recommended you call the folder "Build", and then select that folder
 
 **12) Add Xbox Live configuration to your project**
 

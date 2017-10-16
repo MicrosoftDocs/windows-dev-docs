@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # Tailor your resources for language, scale, high contrast, and other qualifiers
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=master#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
+This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
 
 <div class="important-apis" >
 <b>Important APIs</b><br/>
@@ -41,13 +41,12 @@ So, for high contrast, the set of qualifiers is `contrast-standard`, `contrast-h
 
 Here is an example of using qualifiers to name folders that contain asset files. Use qualifiers in folder names if you have several asset files per qualifier. That way, you set the qualifier once at the folder level, and the qualifier applies to everything inside the folder.
 
-`\Assets\Images\contrast-standard\`<`logo.png`, and other image files>
-
-`\Assets\Images\contrast-high\`<`logo.png`, and other image files>
-
-`\Assets\Images\contrast-black\`<`logo.png`, and other image files>
-
-`\Assets\Images\contrast-white\`<`logo.png`, and other image files>
+```
+\Assets\Images\contrast-standard\<logo.png, and other image files>
+\Assets\Images\contrast-high\<logo.png, and other image files>
+\Assets\Images\contrast-black\<logo.png, and other image files>
+\Assets\Images\contrast-white\<logo.png, and other image files>
+```
 
 If you name your folders as in the example above, then your app uses the high contrast setting to load resource files from the folder named for the appropriate qualifier. So, if the setting is High Contrast Black, then the resource files in the `\Assets\Images\contrast-black` folder are loaded. If the setting is None (that is, the computer is not in high contrast mode), then the resource files in the `\Assets\Images\standard` folder are loaded.
 
@@ -55,26 +54,26 @@ If you name your folders as in the example above, then your app uses the high co
 
 Instead of creating and naming folders, you can use a qualifier to name the resource files themselves. You might prefer to do this if you only have one resource file per qualifier. Here’s an example.
 
-`\Assets\Images\logo.contrast-standard.png`
-
-`\Assets\Images\logo.contrast-high.png`
-
-`\Assets\Images\logo.contrast-black.png`
-
-`\Assets\Images\logo.contrast-white.png`
+```
+\Assets\Images\logo.contrast-standard.png
+\Assets\Images\logo.contrast-high.png
+\Assets\Images\logo.contrast-black.png
+\Assets\Images\logo.contrast-white.png
+```
 
 The file whose name contains the qualifier most appropriate for the setting is the one that is loaded. This matching logic works the same way for file names as for folder names.
 
 ## Reference a string or image resource by name
 
-See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource by name](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-by-name).
+See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
 
-`\Assets\Images\logo.contrast-high.png`
-
-`\Assets\Images\logo.png`
+```
+\Assets\Images\logo.contrast-high.png
+\Assets\Images\logo.png
+```
 
 The first file name contains the `contrast-high` qualifier. That qualifier is an *actual* match for any high contrast setting when high contrast is *on*. In other words, it's a close match so it’s preferred. An *actual* match can only occur if the qualifier contains an *actual* value, as this one does. In this case, `high` is an *actual* value for `contrast`.
 
@@ -84,9 +83,10 @@ If you were to change the name of `logo.png` to `logo.contrast-standard.png`, th
 
 If you only need one set of assets for high contrast and one set for standard contrast, then you can use folder names instead of file names. In this case, omitting the folder name entirely gives you the neutral match.
 
-`\Assets\Images\contrast-high\<logo.png`, and other images to load when high contrast theme is not None>
-
-`\Assets\Images\<logo.png`, and other images to load when high contrast theme is None>
+```
+\Assets\Images\contrast-high\<logo.png, and other images to load when high contrast theme is not None>
+\Assets\Images\<logo.png, and other images to load when high contrast theme is None>
+```
 
 For more details on how qualifier matching works, see [Resource Management System](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947).
 
@@ -94,19 +94,25 @@ For more details on how qualifier matching works, see [Resource Management Syste
 
 You can combine qualifiers in folder and file names. For example, you may want your app to load image assets when high contrast mode is on *and* the display scale factor is 400. One way to do this is with nested folders.
 
-`\Assets\Images\contrast-high\scale-400\`<`logo.png`, and other image files>
+```
+\Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
+```
 
 For `logo.png` and the other files to be loaded, the settings must match *both* qualifiers.
 
 Another option is to combine multiple qualifiers in one folder name.
 
-`\Assets\Images\contrast-high_scale-400\`<`logo.png`, and other image files>
+```
+\Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
+```
 
 In a folder name, you combine multiple qualifiers separated with an underscore. `<qualifier1>[_<qualifier2>...]` is the format.
 
 You can combine multiple qualifiers in a file name in the same format.
 
-`\Assets\Images\logo.contrast-high_scale-400.png`
+```
+\Assets\Images\logo.contrast-high_scale-400.png
+```
 
 Depending on the tools and workflow you use for asset-creation, or on what you find easiest to read and/or manage, you can either choose a single naming strategy for all qualifiers, or you can combine them for different qualifiers.
 
@@ -156,15 +162,17 @@ It’s unlikely that you’ll need the `devicefamily` qualifier name. You can an
 
 But as a last resort it is possible to use devicefamily qualifiers to name folders that contain your XAML views (a XAML view is a XAML file that contains UI layout and controls).
 
-`\devicefamily-desktop\`<`MainPage.xaml`, and other markup files to load when running on a desktop computer>
-
-`\devicefamily-mobile\`<`MainPage.xaml`, and other markup files to load when running on a phone>
+```
+\devicefamily-desktop\<MainPage.xaml, and other markup files to load when running on a desktop computer>
+\devicefamily-mobile\<MainPage.xaml, and other markup files to load when running on a phone>
+```
 
 Or you can name files.
 
-`\MainPage.devicefamily-desktop.xaml`
-
-`\MainPage.devicefamily-mobile.xaml`
+```
+\MainPage.devicefamily-desktop.xaml
+\MainPage.devicefamily-mobile.xaml
+```
 
 In either case each copy of `MainPage.[<qualifier>].xaml` shares a common `MainPage.xaml.cs`, which remains unchanged in your project in terms of name, location, and contents.
 
@@ -197,49 +205,52 @@ If you want your app to support different display languages, and you have string
 
 You typically use a `language` qualifier to name the folders that contain your Resources Files (`.resw`).
 
-`\Strings\language-en\Resources.resw`
-
-`\Strings\language-ja\Resources.resw`
+```
+\Strings\language-en\Resources.resw
+\Strings\language-ja\Resources.resw
+```
 
 You can omit the `language-` part of a `language` qualifier (that is, the qualifier name). You can’t do this with the other kinds of qualifiers; and you can only do it in a folder name.
 
-`\Strings\en\Resources.resw`
-
-`\Strings\ja\Resources.resw`
+```
+\Strings\en\Resources.resw
+\Strings\ja\Resources.resw
+```
 
 Instead of naming folders, you can use `language` qualifiers to name the Resources Files themselves.
 
-`\Strings\Resources.language-en.resw`
-
-`\Strings\Resources.language-ja.resw`
+```
+\Strings\Resources.language-en.resw
+\Strings\Resources.language-ja.resw
+```
 
 See [Localize your UI strings](put-ui-strings-into-resources.md) for more information on making your app localizable by using string resources, and how to reference a string resource in your app.
 
 ## LayoutDirection
 
-A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=master#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
+A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
 
 ## Scale
 
-To load the correct size of image for a given display scale factor, you can use a `scale` qualifier. This is typically used for images viewed on a higher-DPI device or when the app is zoomed. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=master#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
+To load the correct size of image for a given display scale factor, you can use a `scale` qualifier. This is typically used for images viewed on a higher-DPI device or when the app is zoomed. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
 
 Here’s an example of setting the qualifier at the folder level.
 
-`\Assets\Images\scale-100\`<`logo.png`, and other image files>
-
-`\Assets\Images\scale-200\`<`logo.png`, and other image files>
-
-`\Assets\Images\scale-400\`<`logo.png`, and other image files>
+```
+\Assets\Images\scale-100\<logo.png, and other image files>
+\Assets\Images\scale-200\<logo.png, and other image files>
+\Assets\Images\scale-400\<logo.png, and other image files>
+```
 
 And this example sets it at the file level.
 
-`\Assets\Images\logo.scale-100.png`
+```
+\Assets\Images\logo.scale-100.png
+\Assets\Images\logo.scale-200.png
+\Assets\Images\logo.scale-400.png
+```
 
-`\Assets\Images\logo.scale-200.png`
-
-`\Assets\Images\logo.scale-400.png`
-
-Don’t use both a `scale` qualifier and a `targetsize` qualifier on the same resource.
+For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](image-qualifiers-loc-scale-accessibility.md#qualify-an-image-resource-for-targetsize).
 
 ## TargetSize
 
@@ -247,7 +258,7 @@ The `targetsize` qualifier is primarily used to specify [file type association i
 
 You can define assets that represent several sizes of `targetsize` qualifier value for the App Icon (`/Assets/Square44x44Logo.png`) in the Visual Assets tab of the app package manifest designer.
 
-Don’t use both a `targetsize` qualifier and a `scale` qualifier on the same resource.
+For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](image-qualifiers-loc-scale-accessibility.md#qualify-an-image-resource-for-targetsize).
 
 ## Theme
 

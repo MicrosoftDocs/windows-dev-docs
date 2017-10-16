@@ -4,7 +4,7 @@ keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: Design toolkits and resources for UWP apps
 author: mijacobs
 ms.author: mijacobs
-ms.date: 10/11/2017
+ms.date: 10/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -91,7 +91,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>XAML Controls Gallery</b><br/>
-            This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/>[Download the XAML Controls Gallery sample] (https://github.com/Microsoft/Windows-universal-samples/archive/master.zip) <br/>[Check out the XAML Controls Gallery sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)</p>    
+            This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/>[Download the XAML Controls Gallery sample] (https://github.com/Microsoft/Windows-universal-samples/archive/master.zip) <br/>[Check out the XAML Controls Gallery sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) <br/>[Download the XAML Controls Gallery app from the Store](https://www.microsoft.com/store/apps/9msvh128x2zt)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><img src="images/xaml-controls-gallery.png" alt="Check out the XAML Controls Gallery sample on GitHub" /></a>
