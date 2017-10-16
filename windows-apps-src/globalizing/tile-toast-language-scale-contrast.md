@@ -51,7 +51,7 @@ In that case, you have a single image resource and its name (as an absolute path
 
 Notice how in this example URI the scheme ("`ms-appx`") is followed by "`://`" which is followed by an absolute path (an absolute path begins with "`/`").
 
-## Hosting and loading images in the cloud/Web
+## Hosting and loading images in the cloud
 
 The `ms-resource` and `ms-appx` URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform any such automatic matching.
 

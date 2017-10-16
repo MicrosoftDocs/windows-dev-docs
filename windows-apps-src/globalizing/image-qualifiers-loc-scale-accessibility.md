@@ -64,18 +64,32 @@ The name&mdash;or identifier&mdash;of an image resource is its path and file nam
 **C#**
 ```csharp
 return new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
+
+// or
+
+var uri = new System.Uri("ms-appx:///Assets/anyAsset.ext");
+var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
 ```
 
-And here’s how you refer to that same resource in XAML markup.
+Whether you're loading an image or any other form of asset, use the [Uri constructor](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) overload that infers the [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Specify a valid absolute URI including the scheme and authority, or just let the authority default to the app's package as in the example above.
+
+Here’s how you refer to the same image resource in XAML markup.
 
 **XAML**
 ```xml
 <Image Source="ms-appx:///Assets/Images/logo.png"/>
 ```
 
-Notice how in this example URI the scheme ("`ms-appx`") is followed by "`://`" which is followed by an absolute path (an absolute path begins with "`/`").
+Notice how in these example URIs the scheme ("`ms-appx`") is followed by "`://`" which is followed by an absolute path. In an absolute path, the leading "`/`" causes the path to be interpreted from the root of the package.
 
-**Note** The `ms-resource` (for [string resources](put-ui-strings-into-resources.md)) and `ms-appx` (for image resources) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme&mdash;which is used to load app data&mdash;does not perform any such automatic matching. For more info about app data, see [Store and retrieve settings and other app data](/uwp/app-settings/store-and-retrieve-app-data?branch=live).
+**Note** The `ms-resource` (for [string resources](put-ui-strings-into-resources.md)) and `ms-appx` (for image resources) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) and explicitly load the appropriate assets from app data. For info about app data, see [Store and retrieve settings and other app data](/uwp/app-settings/store-and-retrieve-app-data?branch=live). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+
+Absolute paths are a good choice if your image files remain where they are in the project structure. If you want to be able to move an image file, but you're careful that it remains in the same location relative to its referencing XAML markup file, then instead of an absolute path you might want to use a path that's relative to the containing markup file. If you do that, then you needn't use a URI scheme. You will still benefit from automatic qualifier matching in this case, but only because you are using the relative path in XAML markup.
+
+**XAML**
+```xml
+<Image Source="Assets/Images/logo.png"/>
+```
 
 Also see [Tile and toast support for language, scale, and high contrast](tile-toast-language-scale-contrast.md).
 
