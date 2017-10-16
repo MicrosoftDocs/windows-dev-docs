@@ -321,22 +321,24 @@ UWP controls support arrow key navigation by default. For custom layouts and con
 
 Consider adding support for arrow key navigation when you have for following controls:
 
-<table>
-  <tr>
-    <td>
-      <p>![dialog](images/keyboard/dialog.png)</p>
-      <p>**Buttons**</p>
-      <p>![radiobutton](images/keyboard/radiobutton.png)</p>
-      <p>**RadioButtons**</p>     
-    </td>
-    <td>
-      <p>![appbar](images/keyboard/appbar.png)</p>
-      <p>**AppBarButtons**</p>
-      <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
-      <p>**ListItems and GridItems**</p>
-    </td>    
-  </tr>
-</table>
+<div class="mx-responsive-img">
+ <table>
+   <tr>
+     <td>
+       <p>![dialog](images/keyboard/dialog.png)</p>
+       <p>**Buttons**</p>
+       <p>![radiobutton](images/keyboard/radiobutton.png)</p>
+       <p>**RadioButtons**</p>     
+     </td>
+     <td>
+       <p>![appbar](images/keyboard/appbar.png)</p>
+       <p>**AppBarButtons**</p>
+       <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
+       <p>**ListItems and GridItems**</p>
+     </td>    
+   </tr>
+ </table>
+</div>
 
 #### Tab stops
 
