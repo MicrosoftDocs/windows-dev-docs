@@ -1,4 +1,4 @@
----
+﻿---
 author: TylerMSFT
 title: Handle URI activation
 description: Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
@@ -118,11 +118,11 @@ The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 
 
 > **Note**  When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-To programmatically launch an app via a URI, you can use code like this:
+The following code programmatically launches the app via its URI:
 
 ```cs
    // Launch the URI
-   var uri = new Uri("alsdk");
+   var uri = new Uri("alsdk:");
    var success = await Windows.System.Launcher.LaunchUriAsync(uri)
 ```
 
