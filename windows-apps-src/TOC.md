@@ -218,6 +218,7 @@
 #### [Tile and toast notification support for language, scale, contrast](globalizing/tile-toast-language-scale-contrast.md)
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
 #### [Migrate legacy resources](globalizing/using-mrt-for-converted-desktop-apps-and-games.md)
+#### [URI schemes](uri-schemes.md)
 ### [Guidelines for app help](in-app-help/guidelines-for-app-help.md)
 #### [Instructional UI](in-app-help/instructional-ui.md)
 #### [In-app help](in-app-help/in-app-help.md)

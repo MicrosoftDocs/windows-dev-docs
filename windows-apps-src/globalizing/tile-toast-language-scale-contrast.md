@@ -34,7 +34,7 @@ If you omit the `ms-resource` URI scheme, then the text body is just a string li
 
 ## Refer to an image resource from a template
 
-In your tile or toast template, you can refer to an image resource using the `ms-appx` URI (Uniform Resource Identifier) scheme followed by the name of the image resource. This is the same way that you refer to an image resource in XAML markup (for more details, see [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code)).
+In your tile or toast template, you can refer to an image resource using the `ms-appx` URI (Uniform Resource Identifier) scheme followed by the name of the image resource. This is the same way that you refer to an image resource in XAML markup (for more details, see [Reference an image or other asset from XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)).
 
 For example, you might name folders like this.
 
@@ -80,7 +80,7 @@ For a reference table of all the possible qualifier values that you can use in y
 * [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md)
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
 * [Localize strings in your UI and app package manifest](put-ui-strings-into-resources.md)
-* [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code)
+* [Reference an image or other asset from XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [Tile schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
 * [Toast schema](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

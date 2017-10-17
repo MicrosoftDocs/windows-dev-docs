@@ -57,32 +57,47 @@ Next is an example of how you can provide variants of an image resource&mdash;na
 	\scale-200\logo.png
 ```
 
-## Reference an image resource in XAML markup and code
+## Reference an image or other asset from XAML markup and code
 
-The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here’s how you use that name in imperative code. Notice how the `ms-appx` URI (Uniform Resource Identifier) scheme is used.
+The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here’s how you use that name in XAML markup.
+
+**XAML**
+```xml
+<Image x:Name="myXAMLImageElement" Source="ms-appx:///Assets/Images/logo.png"/>
+```
+
+Notice that you use the `ms-appx` URI scheme because you're referring to a file that comes from your app's package. See [URI schemes](uri-schemes.md). And here’s how you refer to the same image resource in imperative code.
 
 **C#**
 ```csharp
-return new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
+this.myXAMLImageElement.Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
+```
 
-// or
+You can use `ms-appx` to load any arbitrary file from your app package.
 
+**C#**
+```csharp
 var uri = new System.Uri("ms-appx:///Assets/anyAsset.ext");
 var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
 ```
 
-Whether you're loading an image or any other form of asset, use the [Uri constructor](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) overload that infers the [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Specify a valid absolute URI including the scheme and authority, or just let the authority default to the app's package as in the example above.
-
-Here’s how you refer to the same image resource in XAML markup.
+The `ms-appx-web` scheme accesses the same files as `ms-appx`, but in the web compartment.
 
 **XAML**
 ```xml
-<Image Source="ms-appx:///Assets/Images/logo.png"/>
+<WebView x:Name="myXAMLWebViewElement" Source="ms-appx-web:///Pages/default.html"/>
 ```
 
-Notice how in these example URIs the scheme ("`ms-appx`") is followed by "`://`" which is followed by an absolute path. In an absolute path, the leading "`/`" causes the path to be interpreted from the root of the package.
+**C#**
+```csharp
+this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
+```
 
-**Note** The `ms-resource` (for [string resources](put-ui-strings-into-resources.md)) and `ms-appx` (for image resources) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) and explicitly load the appropriate assets from app data. For info about app data, see [Store and retrieve settings and other app data](../app-settings/store-and-retrieve-app-data). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
+For any of the scenarios shown in these examples, use the [Uri constructor](https://docs.microsoft.com/en-us/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_) overload that infers the [UriKind](https://docs.microsoft.com/en-us/dotnet/api/system.urikind). Specify a valid absolute URI including the scheme and authority, or just let the authority default to the app's package as in the example above.
+
+Notice how in these example URIs the scheme ("`ms-appx`" or "`ms-appx-web`") is followed by "`://`" which is followed by an absolute path. In an absolute path, the leading "`/`" causes the path to be interpreted from the root of the package.
+
+**Note** The `ms-resource` (for [string resources](put-ui-strings-into-resources.md)) and `ms-appx(-web)` (for images and other assets) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) and explicitly load the appropriate assets from app data using their full physical file name in the URI. For info about app data, see [Store and retrieve settings and other app data](../app-settings/store-and-retrieve-app-data). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](tile-toast-language-scale-contrast.md#hosting-and-loading-images-in-the-cloud).
 
 Absolute paths are a good choice if your image files remain where they are in the project structure. If you want to be able to move an image file, but you're careful that it remains in the same location relative to its referencing XAML markup file, then instead of an absolute path you might want to use a path that's relative to the containing markup file. If you do that, then you needn't use a URI scheme. You will still benefit from automatic qualifier matching in this case, but only because you are using the relative path in XAML markup.
 
