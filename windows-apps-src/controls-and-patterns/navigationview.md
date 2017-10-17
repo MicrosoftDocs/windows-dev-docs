@@ -36,7 +36,7 @@ NavigationView works well for:
 
 Navigation view is just one of several navigation elements you can use; to learn more about navigation patterns and other navigation elements, see the [Navigation design basics for Universal Windows Platform (UWP) apps](../layout/navigation-basics.md).
 
-For a code sample of how to build the nav pane pattern using SplitView and ListView, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
+Aside from using the NavigationView control, you can build your own nav pane pattern using SplitView and ListView. To see a sample implementation, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
 
 ## NavigationView parts
 The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
@@ -105,7 +105,7 @@ By default, the system automatically selects the optimal display mode based on t
 ![NavigationView in Compact mode, showing closed and open pane](images/navview_compact.png)
 
 -  When closed, a vertical sliver of the pane showing only icons and the nav button is visible.
--  Provides some indication of the selected location while using a small amount of screen real-estate.
+-  Provides some indication of the selected location while using a small amount of screen real estate.
 -  This mode is better suited for medium screens like tablets and [10-foot experiences](../input-and-devices/designing-for-tv.md).
 -  Pressing the nav button opens and closes the pane, which draws as an overlay above the header and content. Content does not reflow.
 -  The Header is not required and can be hidden to give Content more vertical space.
@@ -128,23 +128,26 @@ By default, the system automatically selects the optimal display mode based on t
 ## Overriding the default adaptive behavior
 
 The navigation view automatically changes its display mode based on the amount of screen space available to it.
-[!NOTE] NavigationView should serve as the root container of your app, this control is designed to span the full width and height of the app window.
-You can override the widths at which the navigation view changes display modes by using the [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_CompactModeThresholdWidth) and ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_ExpandedModeThresholdWidth) properties. Consider the following scenarios that illustrate when you might want to customize the display mode behavior.
 
--  **Frequent navigation**
-   If you expect users to navigate between app areas somewhat frequently, consider keeping the pane in view at narrower window widths. A music app with Songs / Albums / Artists navigation areas may opt for a 280px pane width and remain in Expanded mode while the app window is wider than 560px.
+> [!NOTE] 
+NavigationView should serve as the root container of your app, this control is designed to span the full width and height of the app window.
+You can override the widths at which the navigation view changes display modes by using the [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_CompactModeThresholdWidth) and [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_ExpandedModeThresholdWidth) properties. 
+
+Consider the following scenarios that illustrate when you might want to customize the display mode behavior.
+
+- **Frequent navigation** If you expect users to navigate between app areas somewhat frequently, consider keeping the pane in view at narrower window widths. A music app with Songs / Albums / Artists navigation areas may opt for a 280px pane width and remain in Expanded mode while the app window is wider than 560px.
 ```xaml
-<NavigationView OpenPaneLength=”280” CompactModeThresholdWidth="560" ExpandedModeThresholdWidth=”560”/>
+<NavigationView OpenPaneLength="280" CompactModeThresholdWidth="560" ExpandedModeThresholdWidth="560"/>
 ```
--	 **Rare navigation**
-   If you expect users to navigate between app areas very infrequently, consider keeping the pane hidden at wider window widths. A calculator app with multiple layouts may opt to remain in Minimal mode even when the app is maximized on a 1080p display.
+
+- **Rare navigation** If you expect users to navigate between app areas very infrequently, consider keeping the pane hidden at wider window widths. A calculator app with multiple layouts may opt to remain in Minimal mode even when the app is maximized on a 1080p display.
 ```xaml
-<NavigationView CompactModeThresholdWidth=”1920” ExpandedModeThresholdWidth=”1920”/>
+<NavigationView CompactModeThresholdWidth="1920" ExpandedModeThresholdWidth="1920"/>
 ```
--	 **Icon disambiguation**
-   If your app’s navigation areas don’t lend themselves to meaningful icons, avoid using Compact mode. An image viewing app with Collections / Albums / Folders navigation areas may opt for showing NavigationView in Minimal mode at narrow and medium widths, and in Expanded mode at wide width.
+
+- **Icon disambiguation** If your app’s navigation areas don’t lend themselves to meaningful icons, avoid using Compact mode. An image viewing app with Collections / Albums / Folders navigation areas may opt for showing NavigationView in Minimal mode at narrow and medium widths, and in Expanded mode at wide width.
 ```xaml
-<NavigationView CompactModeThresholdWidth=”1008”/>
+<NavigationView CompactModeThresholdWidth="1008"/>
 ```
 
 ## Interaction
