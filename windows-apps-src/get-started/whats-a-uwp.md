@@ -98,6 +98,8 @@ For a more detailed look at the UWP, read the [Guide to Universal Windows Platfo
 Then, check out [Get set up](get-set-up.md) to download the tools you need to start creating apps, and then write [your first app](your-first-app.md)!
 
 
+If you would like to add modern experiences for Windows 10 users to your existing desktop app, check out the [Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root). 
+
 ## More advanced topics
 
 * [.NET Native - What it means for Universal Windows Platform (UWP) developers](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
