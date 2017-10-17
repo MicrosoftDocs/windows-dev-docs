@@ -195,7 +195,7 @@ The **NotifyCorrelationFailure** helper method was run on a separate thread afte
 
 [!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
-## Use buffered frame acquisition mode to preserve sequential frames
+## Use buffered frame acquisition mode to preserve the sequence of acquired frames
 Starting with Windows 10, version 1709, you can set the **[AcquisitionMode](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader#Windows_Media_Capture_Frames_MediaFrameReader_AcquisitionMode)** property of a **MediaFrameReader** or **MultiSourceMediaFrameReader** to **Buffered** to preserve the sequence of frames passed into your app from the frame source.
 
 [!code-cs[SetBufferedFrameAcquisitionMode](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSetBufferedFrameAcquisitionMode)]
