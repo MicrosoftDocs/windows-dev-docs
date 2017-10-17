@@ -319,28 +319,30 @@ Users expect support for arrow key navigation when there is a group of similar, 
 
 UWP controls support arrow key navigation by default. For custom layouts and control groups, use `XYFocusKeyboardNavigation="Enabled"` to provide similar behavior.
 
-Consider adding support for arrow key navigation when you have for following controls:
+Consider adding support for arrow key navigation when using the following controls:
 
-<table>
-  <tr>
-    <td>
-      <p>![dialog](images/keyboard/dialog.png)</p>
-      <p>**Buttons**</p>
-      <p>![radiobutton](images/keyboard/radiobutton.png)</p>
-      <p>**RadioButtons**</p>     
-    </td>
-    <td>
-      <p>![appbar](images/keyboard/appbar.png)</p>
-      <p>**AppBarButtons**</p>
-      <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
-      <p>**ListItems and GridItems**</p>
-    </td>    
-  </tr>
-</table>
+<div class="mx-responsive-img">
+ <table>
+   <tr>
+     <td>
+       <p>![dialog](images/keyboard/dialog.png)</p>
+       <p>**Buttons**</p>
+       <p>![radiobutton](images/keyboard/radiobutton.png)</p>
+       <p>**RadioButtons**</p>     
+     </td>
+     <td>
+       <p>![appbar](images/keyboard/appbar.png)</p>
+       <p>**AppBarButtons**</p>
+       <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
+       <p>**ListItems and GridItems**</p>
+     </td>    
+   </tr>
+ </table>
+</div>
 
 #### Tab stops
 
-Depending on your app’s functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
+Depending on your application’s functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
 
 ##### Use multiple tab stops and arrow keys for buttons
 
