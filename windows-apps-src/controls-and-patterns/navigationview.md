@@ -38,14 +38,14 @@ Navigation view is just one of several navigation elements you can use; to learn
 
 Aside from using the NavigationView control, you can build your own nav pane pattern using SplitView and ListView. To see a sample implementation, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
 
-## NavigationView parts
+## NavigationView sections
 The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
 
 ![NavigationView sections](images/navview_sections.png)
 
 ### Pane
 
-The navigation pane can contain:
+The NavigationView pane can contain:
 
 - Navigation items, in the form of [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), for navigating to specific pages
 - Separators, in the form of [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator), for grouping navigation items
@@ -56,9 +56,17 @@ The navigation pane can contain:
 
 The built-in navigation ("hamburger") button lets users open and close the pane. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsPaneToggleButtonVisible) property.
 
+#### Visual style
+
+NavigationView items have support for selected, disabled, pointer over, pressed, and focused visual states.
+
+![NavigationView items states: disabled, pointer over, pressed, focused](images/navview_item-states.png)
+
+When hardware and software requirements are met, NavigationView automatically uses the new [Acrylic material](../style/acrylic.md) and [Reveal highlight](../style/reveal.md) in its pane.
+
 ### Header
 
-The header area is vertically aligned with the navigation button and has a fixed height. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
+The header area is vertically aligned with the navigation button and has a fixed height of 52 px. Its purpose is to hold the page title of the selected nav category. The header is docked to the top of the page and acts as a scroll clipping point for the content area.
 
 The header must be visible when NavigationView is in Minimal mode. You may choose to hide the header in other modes, which are used on larger window widths. To do so, set the [AlwaysShowHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_AlwaysShowHeader) property to **false**.
 
@@ -67,15 +75,6 @@ The header must be visible when NavigationView is in Minimal mode. You may choos
 The content area is where most of the information for the selected nav category is displayed. It can contain one or more elements and is a good area for additional sub-level navigation such as [Pivot](tabs-pivot.md).
 
 We recommend 12px margins on your content’s sides when NavigationView is in Minimal mode and 24px margins otherwise.
-
-## Visual style
-
-Navigation items have support for selected, disabled, pointer over, pressed, and focused visual states.
-
-![NavigationView items states: disabled, pointer over, pressed, focused](images/navview_item-states.png)
-
-When hardware and software requirements are met, NavigationView automatically uses the new [Acrylic material](../style/acrylic.md) and [Reveal highlight](../style/reveal.md) in its pane.
-
 
 ## NavigationView modes
 The NavigationView pane can be open or closed, and has three display mode options:
@@ -127,7 +126,7 @@ By default, the system automatically selects the optimal display mode based on t
 
 ## Overriding the default adaptive behavior
 
-The navigation view automatically changes its display mode based on the amount of screen space available to it.
+NavigationView automatically changes its display mode based on the amount of screen space available to it.
 
 > [!NOTE] 
 NavigationView should serve as the root container of your app, this control is designed to span the full width and height of the app window.
@@ -152,11 +151,21 @@ Consider the following scenarios that illustrate when you might want to customiz
 
 ## Interaction
 
-When users tap on a navigation category in the Pane, NavigationView will show that item as selected and will raise an [ItemInvoked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_ItemInvoked) event. If the tap results in a new item being selected, NavigationView will also raise a [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_SelectionChanged) event. Your app is responsible for updating the Header and Content with appropriate information in response to this user interaction. In addition, we recommend programmatically moving focus from the navigation item to the content. By setting initial focus on load, you streamline the user flow and minimize the expected number of keyboard focus moves.
+When users tap on a navigation item in the Pane, NavigationView will show that item as selected and will raise an [ItemInvoked](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_ItemInvoked) event. If the tap results in a new item being selected, NavigationView will also raise a [SelectionChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_SelectionChanged) event. 
 
-## How to use NavigationView
+Your app is responsible for updating the Header and Content with appropriate information in response to this user interaction. In addition, we recommend programmatically moving [focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) from the navigation item to the content. By setting initial focus on load, you streamline the user flow and minimize the expected number of keyboard focus moves.
+
+
+## Backwards navigation
+
+NavigationView does not automatically show the back button in your app’s title bar nor add content to the back stack. The control does not automatically respond to software or hardware back button presses. Please see the [history and backwards navigation](../layout/navigation-history-and-backwards-navigation.md) section for more information about this topic and how to add support for navigation to your app.
+
+
+## Code example
 
 The following is a simple example of how you can incorporate NavigationView into your app.
+
+![Screenshot of code example](images/navview-sample.png)
 
 ```xaml
 <Page
@@ -192,7 +201,7 @@ The following is a simple example of how you can incorporate NavigationView into
 
         <NavigationView.HeaderTemplate>
             <DataTemplate>
-                <Grid>
+                <Grid Margin="24,24,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
@@ -200,10 +209,10 @@ The following is a simple example of how you can incorporate NavigationView into
                     <TextBlock Style="{StaticResource TitleTextBlockStyle}"
                            FontSize="28"
                            VerticalAlignment="Center"
-                           Margin="12,0"
                            Text="Welcome"/>
                     <CommandBar Grid.Column="1"
                             HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
                             DefaultLabelPosition="Right"
                             Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
                         <AppBarButton Label="Refresh" Icon="Refresh"/>
@@ -220,7 +229,7 @@ The following is a simple example of how you can incorporate NavigationView into
                              Margin="12,0"/>
         </NavigationView.PaneFooter>
 
-        <Frame x:Name="ContentFrame">
+        <Frame x:Name="ContentFrame" Margin="24">
             <Frame.ContentTransitions>
                 <TransitionCollection>
                     <NavigationThemeTransition/>
@@ -240,9 +249,10 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
     NavView.MenuItems.Add(new NavigationViewItem()
         { Content = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
 
-    foreach (NavigationViewItem item in NavView.MenuItems)
+    // set the initial SelectedItem 
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
     {
-        if (item.Tag.ToString() == "apps")
+        if (item is NavigationViewItem && item.Tag.ToString() == "apps")
         {
             NavView.SelectedItem = item;
             break;
@@ -320,12 +330,7 @@ private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelec
 }
 ```
 
-## Navigation
-
-NavigationView does not automatically show the back button in your app’s title bar nor add content to the back stack. The control does not automatically respond to software or hardware back button presses. Please see the [history and backwards navigation](../layout/navigation-history-and-backwards-navigation.md) section for more information about this topic and how to add support for navigation to your app.
-
-
-## Customizing NavigationView's appearance
+## Customizing backgrounds
 
 To change the background of NavigationView's main area, set its `Background` property to your preferred brush.
 
@@ -374,6 +379,7 @@ private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, o
     AppTitle.Margin = new Thickness(CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset + 12, 8, 0, 0);
 }
 ```
+For more information about customizing title bars, see [title bar customization](../style/title-bar.md).
 
 ## Related topics
 
