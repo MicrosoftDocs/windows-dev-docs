@@ -20,13 +20,7 @@ keywords: windows 10, uwp
 
 This article lists the icons provided by the Segoe MDL2 Assets font. 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Symbol enumeration (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)</li>
-</ul>
-</div>
-
+> **Important APIs**: [**Symbol enumeration (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 ## About Segoe MDL2 Assets
 
@@ -52,11 +46,9 @@ If you are developing an app in C#/VB/C++ and XAML, you can use the [**Symbol en
 ## How do I get this font?
 To obtain Segoe MDL2 Assets, you must install Windows 10. 
 
-<!--
-Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
--->
-
 ## Icon list
+Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
+
 
 <table style="background-color: white; color: black">
 
@@ -64,1366 +56,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
   <td>Symbol</td>
   <td>Unicode point</td>
   <td>Description</td>
- </tr>
- <tr><td>![CheckMarkLegacy](images/segoe-mdl/e001.png)</td>
-  <td>E001</td>
-  <td>CheckMarkLegacy</td>
- </tr>
- <tr><td>![CheckboxFillLegacy](images/segoe-mdl/e002.png)</td>
-  <td>E002</td>
-  <td>CheckboxFillLegacy</td>
- </tr>
- <tr><td>![CheckboxLegacy](images/segoe-mdl/e003.png)</td>
-  <td>E003</td>
-  <td>CheckboxLegacy</td>
- </tr>
- <tr><td>![CheckboxIndeterminateLegacy](images/segoe-mdl/e004.png)</td>
-  <td>E004</td>
-  <td>CheckboxIndeterminateLegacy</td>
- </tr>
- <tr><td>![CheckboxCompositeReversedLegacy](images/segoe-mdl/e005.png)</td>
-  <td>E005</td>
-  <td>CheckboxCompositeReversedLegacy</td>
- </tr>
- <tr><td>![HeartLegacy](images/segoe-mdl/e006.png)</td>
-  <td>E006</td>
-  <td>HeartLegacy</td>
- </tr>
- <tr><td>![HeartBrokenLegacy](images/segoe-mdl/e007.png)</td>
-  <td>E007</td>
-  <td>HeartBrokenLegacy</td>
- </tr>
- <tr><td>![CheckMarkZeroWidthLegacy](images/segoe-mdl/e008.png)</td>
-  <td>E008</td>
-  <td>CheckMarkZeroWidthLegacy</td>
- </tr>
- <tr><td>![CheckboxFillZeroWidthLegacy](images/segoe-mdl/e009.png)</td>
-  <td>E009</td>
-  <td>CheckboxFillZeroWidthLegacy</td>
- </tr>
- <tr><td>![RatingStarFillZeroWidthLegacy](images/segoe-mdl/e00a.png)</td>
-  <td>E00A</td>
-  <td>RatingStarFillZeroWidthLegacy</td>
- </tr>
- <tr><td>![HeartFillZeroWidthLegacy](images/segoe-mdl/e00b.png)</td>
-  <td>E00B</td>
-  <td>HeartFillZeroWidthLegacy</td>
- </tr>
- <tr><td>![HeartBrokenZeroWidthLegacy](images/segoe-mdl/e00c.png)</td>
-  <td>E00C</td>
-  <td>HeartBrokenZeroWidthLegacy</td>
- </tr>
- <tr><td>![ScrollChevronLeftLegacy](images/segoe-mdl/e00e.png)</td>
-  <td>E00E</td>
-  <td>ScrollChevronLeftLegacy</td>
- </tr>
- <tr><td>![ScrollChevronRightLegacy](images/segoe-mdl/e00f.png)</td>
-  <td>E00F</td>
-  <td>ScrollChevronRightLegacy</td>
- </tr>
- <tr><td>![ScrollChevronUpLegacy](images/segoe-mdl/e010.png)</td>
-  <td>E010</td>
-  <td>ScrollChevronUpLegacy</td>
- </tr>
- <tr><td>![ScrollChevronDownLegacy](images/segoe-mdl/e011.png)</td>
-  <td>E011</td>
-  <td>ScrollChevronDownLegacy</td>
- </tr>
- <tr><td>![ChevronLeft3Legacy](images/segoe-mdl/e012.png)</td>
-  <td>E012</td>
-  <td>ChevronLeft3Legacy</td>
- </tr>
- <tr><td>![ChevronRight3Legacy](images/segoe-mdl/e013.png)</td>
-  <td>E013</td>
-  <td>ChevronRight3Legacy</td>
- </tr>
- <tr><td>![ChevronUp3Legacy](images/segoe-mdl/e014.png)</td>
-  <td>E014</td>
-  <td>ChevronUp3Legacy</td>
- </tr>
- <tr><td>![ChevronDown3Legacy](images/segoe-mdl/e015.png)</td>
-  <td>E015</td>
-  <td>ChevronDown3Legacy</td>
- </tr>
- <tr><td>![ScrollChevronLeftBoldLegacy](images/segoe-mdl/e016.png)</td>
-  <td>E016</td>
-  <td>ScrollChevronLeftBoldLegacy</td>
- </tr>
- <tr><td>![ScrollChevronRightBoldLegacy](images/segoe-mdl/e017.png)</td>
-  <td>E017</td>
-  <td>ScrollChevronRightBoldLegacy</td>
- </tr>
- <tr><td>![ScrollChevronUpBoldLegacy](images/segoe-mdl/e018.png)</td>
-  <td>E018</td>
-  <td>ScrollChevronUpBoldLegacy</td>
- </tr>
- <tr><td>![ScrollChevronDownBoldLegacy](images/segoe-mdl/e019.png)</td>
-  <td>E019</td>
-  <td>ScrollChevronDownBoldLegacy</td>
- </tr>
- <tr><td>![RevealPasswordLegacy](images/segoe-mdl/e052.png)</td>
-  <td>E052</td>
-  <td>RevealPasswordLegacy</td>
- </tr>
- <tr><td>![EaseOfAccessLegacy](images/segoe-mdl/e07f.png)</td>
-  <td>E07F</td>
-  <td>EaseOfAccessLegacy</td>
- </tr>
- <tr><td>![CheckmarkListviewLegacy](images/segoe-mdl/e081.png)</td>
-  <td>E081</td>
-  <td>CheckmarkListviewLegacy</td>
- </tr>
- <tr><td>![RatingStarFillReducedPaddingHTMLLegacy](images/segoe-mdl/e082.png)</td>
-  <td>E082</td>
-  <td>RatingStarFillReducedPaddingHTMLLegacy</td>
- </tr>
- <tr><td>![KeyboardStandardLegacy](images/segoe-mdl/e087.png)</td>
-  <td>E087</td>
-  <td>KeyboardStandardLegacy</td>
- </tr>
- <tr><td>![KeyboardSplitLegacy](images/segoe-mdl/e08f.png)</td>
-  <td>E08F</td>
-  <td>KeyboardSplitLegacy</td>
- </tr>
- <tr><td>![SearchboxLegacy](images/segoe-mdl/e094.png)</td>
-  <td>E094</td>
-  <td>SearchboxLegacy</td>
- </tr>
- <tr><td>![ChevronLeft1Legacy](images/segoe-mdl/e096.png)</td>
-  <td>E096</td>
-  <td>ChevronLeft1Legacy</td>
- </tr>
- <tr><td>![ChevronRight1Legacy](images/segoe-mdl/e097.png)</td>
-  <td>E097</td>
-  <td>ChevronRight1Legacy</td>
- </tr>
- <tr><td>![ChevronUp1Legacy](images/segoe-mdl/e098.png)</td>
-  <td>E098</td>
-  <td>ChevronUp1Legacy</td>
- </tr>
- <tr><td>![ChevronDown1Legacy](images/segoe-mdl/e099.png)</td>
-  <td>E099</td>
-  <td>ChevronDown1Legacy</td>
- </tr>
- <tr><td>![ChevronLeft2Legacy](images/segoe-mdl/e09a.png)</td>
-  <td>E09A</td>
-  <td>ChevronLeft2Legacy</td>
- </tr>
- <tr><td>![ChevronRight2Legacy](images/segoe-mdl/e09b.png)</td>
-  <td>E09B</td>
-  <td>ChevronRight2Legacy</td>
- </tr>
- <tr><td>![ChevronUp2Legacy](images/segoe-mdl/e09c.png)</td>
-  <td>E09C</td>
-  <td>ChevronUp2Legacy</td>
- </tr>
- <tr><td>![ChevronDown2Legacy](images/segoe-mdl/e09d.png)</td>
-  <td>E09D</td>
-  <td>ChevronDown2Legacy</td>
- </tr>
- <tr><td>![ChevronLeft4Legacy](images/segoe-mdl/e09e.png)</td>
-  <td>E09E</td>
-  <td>ChevronLeft4Legacy</td>
- </tr>
- <tr><td>![ChevronRight4Legacy](images/segoe-mdl/e09f.png)</td>
-  <td>E09F</td>
-  <td>ChevronRight4Legacy</td>
- </tr>
- <tr><td>![ChevronUp4Legacy](images/segoe-mdl/e0a0.png)</td>
-  <td>E0A0</td>
-  <td>ChevronUp4Legacy</td>
- </tr>
- <tr><td>![ChevronDown4Legacy](images/segoe-mdl/e0a1.png)</td>
-  <td>E0A1</td>
-  <td>ChevronDown4Legacy</td>
- </tr>
- <tr><td>![CheckboxCompositeLegacy](images/segoe-mdl/e0a2.png)</td>
-  <td>E0A2</td>
-  <td>CheckboxCompositeLegacy</td>
- </tr>
- <tr><td>![HeartFillLegacy](images/segoe-mdl/e0a5.png)</td>
-  <td>E0A5</td>
-  <td>HeartFillLegacy</td>
- </tr>
- <tr><td>![BackBttnArrow42Legacy](images/segoe-mdl/e0a6.png)</td>
-  <td>E0A6</td>
-  <td>BackBttnArrow42Legacy</td>
- </tr>
- <tr><td>![BackBttnMirroredArrow42Legacy](images/segoe-mdl/e0ab.png)</td>
-  <td>E0AB</td>
-  <td>BackBttnMirroredArrow42Legacy</td>
- </tr>
- <tr><td>![BackBttnMirroredArrow20Legacy](images/segoe-mdl/e0ad.png)</td>
-  <td>E0AD</td>
-  <td>BackBttnMirroredArrow20Legacy</td>
- </tr>
- <tr><td>![ArrowHTMLLegacyMirrored](images/segoe-mdl/e0ae.png)</td>
-  <td>E0AE</td>
-  <td>ArrowHTMLLegacyMirrored</td>
- </tr>
- <tr><td>![RatingStarFillLegacy](images/segoe-mdl/e0b4.png)</td>
-  <td>E0B4</td>
-  <td>RatingStarFillLegacy</td>
- </tr>
- <tr><td>![RatingStarFillSmallLegacy](images/segoe-mdl/e0b5.png)</td>
-  <td>E0B5</td>
-  <td>RatingStarFillSmallLegacy</td>
- </tr>
- <tr><td>![SemanticZoomLegacy](images/segoe-mdl/e0b8.png)</td>
-  <td>E0B8</td>
-  <td>SemanticZoomLegacy</td>
- </tr>
- <tr><td>![BackBttnArrow20Legacy](images/segoe-mdl/e0c4.png)</td>
-  <td>E0C4</td>
-  <td>BackBttnArrow20Legacy</td>
- </tr>
- <tr><td>![ArrowHTMLLegacy](images/segoe-mdl/e0d5.png)</td>
-  <td>E0D5</td>
-  <td>ArrowHTMLLegacy</td>
- </tr>
- <tr><td>![ChevronFlipLeftLegacy](images/segoe-mdl/e0e2.png)</td>
-  <td>E0E2</td>
-  <td>ChevronFlipLeftLegacy</td>
- </tr>
- <tr><td>![ChevronFlipRightLegacy](images/segoe-mdl/e0e3.png)</td>
-  <td>E0E3</td>
-  <td>ChevronFlipRightLegacy</td>
- </tr>
- <tr><td>![ChevronFlipUpLegacy](images/segoe-mdl/e0e4.png)</td>
-  <td>E0E4</td>
-  <td>ChevronFlipUpLegacy</td>
- </tr>
- <tr><td>![ChevronFlipDownLegacy](images/segoe-mdl/e0e5.png)</td>
-  <td>E0E5</td>
-  <td>ChevronFlipDownLegacy</td>
- </tr>
- <tr><td>![CheckmarkMenuLegacy](images/segoe-mdl/e0e7.png)</td>
-  <td>E0E7</td>
-  <td>CheckmarkMenuLegacy</td>
- </tr>
- <tr><td>![PreviousLegacy](images/segoe-mdl/e100.png)</td>
-  <td>E100</td>
-  <td>PreviousLegacy</td>
- </tr>
- <tr><td>![NextLegacy](images/segoe-mdl/e101.png)</td>
-  <td>E101</td>
-  <td>NextLegacy</td>
- </tr>
- <tr><td>![PlayLegacy](images/segoe-mdl/e102.png)</td>
-  <td>E102</td>
-  <td>PlayLegacy</td>
- </tr>
- <tr><td>![PauseLegacy](images/segoe-mdl/e103.png)</td>
-  <td>E103</td>
-  <td>PauseLegacy</td>
- </tr>
- <tr><td>![EditLegacy](images/segoe-mdl/e104.png)</td>
-  <td>E104</td>
-  <td>EditLegacy</td>
- </tr>
- <tr><td>![SaveLegacy](images/segoe-mdl/e105.png)</td>
-  <td>E105</td>
-  <td>SaveLegacy</td>
- </tr>
- <tr><td>![ClearLegacy](images/segoe-mdl/e106.png)</td>
-  <td>E106</td>
-  <td>ClearLegacy</td>
- </tr>
- <tr><td>![DeleteLegacy](images/segoe-mdl/e107.png)</td>
-  <td>E107</td>
-  <td>DeleteLegacy</td>
- </tr>
- <tr><td>![RemoveLegacy](images/segoe-mdl/e108.png)</td>
-  <td>E108</td>
-  <td>RemoveLegacy</td>
- </tr>
- <tr><td>![AddLegacy](images/segoe-mdl/e109.png)</td>
-  <td>E109</td>
-  <td>AddLegacy</td>
- </tr>
- <tr><td>![CancelLegacy](images/segoe-mdl/e10a.png)</td>
-  <td>E10A</td>
-  <td>CancelLegacy</td>
- </tr>
- <tr><td>![AcceptLegacy](images/segoe-mdl/e10b.png)</td>
-  <td>E10B</td>
-  <td>AcceptLegacy</td>
- </tr>
- <tr><td>![MoreLegacy](images/segoe-mdl/e10c.png)</td>
-  <td>E10C</td>
-  <td>MoreLegacy</td>
- </tr>
- <tr><td>![RedoLegacy](images/segoe-mdl/e10d.png)</td>
-  <td>E10D</td>
-  <td>RedoLegacy</td>
- </tr>
- <tr><td>![UndoLegacy](images/segoe-mdl/e10e.png)</td>
-  <td>E10E</td>
-  <td>UndoLegacy</td>
- </tr>
- <tr><td>![HomeLegacy](images/segoe-mdl/e10f.png)</td>
-  <td>E10F</td>
-  <td>HomeLegacy</td>
- </tr>
- <tr><td>![UpLegacy](images/segoe-mdl/e110.png)</td>
-  <td>E110</td>
-  <td>UpLegacy</td>
- </tr>
- <tr><td>![ForwardLegacy](images/segoe-mdl/e111.png)</td>
-  <td>E111</td>
-  <td>ForwardLegacy</td>
- </tr>
- <tr><td>![BackLegacy](images/segoe-mdl/e112.png)</td>
-  <td>E112</td>
-  <td>BackLegacy</td>
- </tr>
- <tr><td>![FavoriteLegacy](images/segoe-mdl/e113.png)</td>
-  <td>E113</td>
-  <td>FavoriteLegacy</td>
- </tr>
- <tr><td>![CameraLegacy](images/segoe-mdl/e114.png)</td>
-  <td>E114</td>
-  <td>CameraLegacy</td>
- </tr>
- <tr><td>![SettingsLegacy](images/segoe-mdl/e115.png)</td>
-  <td>E115</td>
-  <td>SettingsLegacy</td>
- </tr>
- <tr><td>![VideoLegacy](images/segoe-mdl/e116.png)</td>
-  <td>E116</td>
-  <td>VideoLegacy</td>
- </tr>
- <tr><td>![SyncLegacy](images/segoe-mdl/e117.png)</td>
-  <td>E117</td>
-  <td>SyncLegacy</td>
- </tr>
- <tr><td>![DownloadLegacy](images/segoe-mdl/e118.png)</td>
-  <td>E118</td>
-  <td>DownloadLegacy</td>
- </tr>
- <tr><td>![MailLegacy](images/segoe-mdl/e119.png)</td>
-  <td>E119</td>
-  <td>MailLegacy</td>
- </tr>
- <tr><td>![FindLegacy](images/segoe-mdl/e11a.png)</td>
-  <td>E11A</td>
-  <td>FindLegacy</td>
- </tr>
- <tr><td>![HelpLegacy](images/segoe-mdl/e11b.png)</td>
-  <td>E11B</td>
-  <td>HelpLegacy</td>
- </tr>
- <tr><td>![UploadLegacy](images/segoe-mdl/e11c.png)</td>
-  <td>E11C</td>
-  <td>UploadLegacy</td>
- </tr>
- <tr><td>![EmojiLegacy](images/segoe-mdl/e11d.png)</td>
-  <td>E11D</td>
-  <td>EmojiLegacy</td>
- </tr>
- <tr><td>![TwoPageLegacy](images/segoe-mdl/e11e.png)</td>
-  <td>E11E</td>
-  <td>TwoPageLegacy</td>
- </tr>
- <tr><td>![LeaveChatLegacy](images/segoe-mdl/e11f.png)</td>
-  <td>E11F</td>
-  <td>LeaveChatLegacy</td>
- </tr>
- <tr><td>![MailForwardLegacy](images/segoe-mdl/e120.png)</td>
-  <td>E120</td>
-  <td>MailForwardLegacy</td>
- </tr>
- <tr><td>![ClockLegacy](images/segoe-mdl/e121.png)</td>
-  <td>E121</td>
-  <td>ClockLegacy</td>
- </tr>
- <tr><td>![SendLegacy](images/segoe-mdl/e122.png)</td>
-  <td>E122</td>
-  <td>SendLegacy</td>
- </tr>
- <tr><td>![CropLegacy](images/segoe-mdl/e123.png)</td>
-  <td>E123</td>
-  <td>CropLegacy</td>
- </tr>
- <tr><td>![RotateCameraLegacy](images/segoe-mdl/e124.png)</td>
-  <td>E124</td>
-  <td>RotateCameraLegacy</td>
- </tr>
- <tr><td>![PeopleLegacy](images/segoe-mdl/e125.png)</td>
-  <td>E125</td>
-  <td>PeopleLegacy</td>
- </tr>
- <tr><td>![ClosePaneLegacy](images/segoe-mdl/e126.png)</td>
-  <td>E126</td>
-  <td>ClosePaneLegacy</td>
- </tr>
- <tr><td>![OpenPaneLegacy](images/segoe-mdl/e127.png)</td>
-  <td>E127</td>
-  <td>OpenPaneLegacy</td>
- </tr>
- <tr><td>![WorldLegacy](images/segoe-mdl/e128.png)</td>
-  <td>E128</td>
-  <td>WorldLegacy</td>
- </tr>
- <tr><td>![FlagLegacy](images/segoe-mdl/e129.png)</td>
-  <td>E129</td>
-  <td>FlagLegacy</td>
- </tr>
- <tr><td>![PreviewLinkLegacy](images/segoe-mdl/e12a.png)</td>
-  <td>E12A</td>
-  <td>PreviewLinkLegacy</td>
- </tr>
- <tr><td>![GlobeLegacy](images/segoe-mdl/e12b.png)</td>
-  <td>E12B</td>
-  <td>GlobeLegacy</td>
- </tr>
- <tr><td>![TrimLegacy](images/segoe-mdl/e12c.png)</td>
-  <td>E12C</td>
-  <td>TrimLegacy</td>
- </tr>
- <tr><td>![AttachCameraLegacy](images/segoe-mdl/e12d.png)</td>
-  <td>E12D</td>
-  <td>AttachCameraLegacy</td>
- </tr>
- <tr><td>![ZoomInLegacy](images/segoe-mdl/e12e.png)</td>
-  <td>E12E</td>
-  <td>ZoomInLegacy</td>
- </tr>
- <tr><td>![BookmarksLegacy](images/segoe-mdl/e12f.png)</td>
-  <td>E12F</td>
-  <td>BookmarksLegacy</td>
- </tr>
- <tr><td>![DocumentLegacy](images/segoe-mdl/e130.png)</td>
-  <td>E130</td>
-  <td>DocumentLegacy</td>
- </tr>
- <tr><td>![ProtectedDocumentLegacy](images/segoe-mdl/e131.png)</td>
-  <td>E131</td>
-  <td>ProtectedDocumentLegacy</td>
- </tr>
- <tr><td>![PageFillLegacy](images/segoe-mdl/e132.png)</td>
-  <td>E132</td>
-  <td>PageFillLegacy</td>
- </tr>
- <tr><td>![MultiSelectLegacy](images/segoe-mdl/e133.png)</td>
-  <td>E133</td>
-  <td>MultiSelectLegacy</td>
- </tr>
- <tr><td>![CommentLegacy](images/segoe-mdl/e134.png)</td>
-  <td>E134</td>
-  <td>CommentLegacy</td>
- </tr>
- <tr><td>![MailFillLegacy](images/segoe-mdl/e135.png)</td>
-  <td>E135</td>
-  <td>MailFillLegacy</td>
- </tr>
- <tr><td>![ContactInfoLegacy](images/segoe-mdl/e136.png)</td>
-  <td>E136</td>
-  <td>ContactInfoLegacy</td>
- </tr>
- <tr><td>![HangUpLegacy](images/segoe-mdl/e137.png)</td>
-  <td>E137</td>
-  <td>HangUpLegacy</td>
- </tr>
- <tr><td>![ViewAllLegacy](images/segoe-mdl/e138.png)</td>
-  <td>E138</td>
-  <td>ViewAllLegacy</td>
- </tr>
- <tr><td>![MapPinLegacy](images/segoe-mdl/e139.png)</td>
-  <td>E139</td>
-  <td>MapPinLegacy</td>
- </tr>
- <tr><td>![PhoneLegacy](images/segoe-mdl/e13a.png)</td>
-  <td>E13A</td>
-  <td>PhoneLegacy</td>
- </tr>
- <tr><td>![VideoChatLegacy](images/segoe-mdl/e13b.png)</td>
-  <td>E13B</td>
-  <td>VideoChatLegacy</td>
- </tr>
- <tr><td>![SwitchLegacy](images/segoe-mdl/e13c.png)</td>
-  <td>E13C</td>
-  <td>SwitchLegacy</td>
- </tr>
- <tr><td>![ContactLegacy](images/segoe-mdl/e13d.png)</td>
-  <td>E13D</td>
-  <td>ContactLegacy</td>
- </tr>
- <tr><td>![RenameLegacy](images/segoe-mdl/e13e.png)</td>
-  <td>E13E</td>
-  <td>RenameLegacy</td>
- </tr>
- <tr><td>![ExpandTileLegacy](images/segoe-mdl/e13f.png)</td>
-  <td>E13F</td>
-  <td>ExpandTileLegacy</td>
- </tr>
- <tr><td>![ReduceTileLegacy](images/segoe-mdl/e140.png)</td>
-  <td>E140</td>
-  <td>ReduceTileLegacy</td>
- </tr>
- <tr><td>![PinLegacy](images/segoe-mdl/e141.png)</td>
-  <td>E141</td>
-  <td>PinLegacy</td>
- </tr>
- <tr><td>![MusicInfoLegacy](images/segoe-mdl/e142.png)</td>
-  <td>E142</td>
-  <td>MusicInfoLegacy</td>
- </tr>
- <tr><td>![GoLegacy](images/segoe-mdl/e143.png)</td>
-  <td>E143</td>
-  <td>GoLegacy</td>
- </tr>
- <tr><td>![KeyBoardLegacy](images/segoe-mdl/e144.png)</td>
-  <td>E144</td>
-  <td>KeyBoardLegacy</td>
- </tr>
- <tr><td>![DockLeftLegacy](images/segoe-mdl/e145.png)</td>
-  <td>E145</td>
-  <td>DockLeftLegacy</td>
- </tr>
- <tr><td>![DockRightLegacy](images/segoe-mdl/e146.png)</td>
-  <td>E146</td>
-  <td>DockRightLegacy</td>
- </tr>
- <tr><td>![DockBottomLegacy](images/segoe-mdl/e147.png)</td>
-  <td>E147</td>
-  <td>DockBottomLegacy</td>
- </tr>
- <tr><td>![RemoteLegacy](images/segoe-mdl/e148.png)</td>
-  <td>E148</td>
-  <td>RemoteLegacy</td>
- </tr>
- <tr><td>![RefreshLegacy](images/segoe-mdl/e149.png)</td>
-  <td>E149</td>
-  <td>RefreshLegacy</td>
- </tr>
- <tr><td>![RotateLegacy](images/segoe-mdl/e14a.png)</td>
-  <td>E14A</td>
-  <td>RotateLegacy</td>
- </tr>
- <tr><td>![ShuffleLegacy](images/segoe-mdl/e14b.png)</td>
-  <td>E14B</td>
-  <td>ShuffleLegacy</td>
- </tr>
- <tr><td>![ListLegacy](images/segoe-mdl/e14c.png)</td>
-  <td>E14C</td>
-  <td>ListLegacy</td>
- </tr>
- <tr><td>![ShopLegacy](images/segoe-mdl/e14d.png)</td>
-  <td>E14D</td>
-  <td>ShopLegacy</td>
- </tr>
- <tr><td>![SelectAllLegacy](images/segoe-mdl/e14e.png)</td>
-  <td>E14E</td>
-  <td>SelectAllLegacy</td>
- </tr>
- <tr><td>![OrientationLegacy](images/segoe-mdl/e14f.png)</td>
-  <td>E14F</td>
-  <td>OrientationLegacy</td>
- </tr>
- <tr><td>![ImportLegacy](images/segoe-mdl/e150.png)</td>
-  <td>E150</td>
-  <td>ImportLegacy</td>
- </tr>
- <tr><td>![ImportAllLegacy](images/segoe-mdl/e151.png)</td>
-  <td>E151</td>
-  <td>ImportAllLegacy</td>
- </tr>
- <tr><td>![ShowAllFiles3Legacy](images/segoe-mdl/e152.png)</td>
-  <td>E152</td>
-  <td>ShowAllFiles3Legacy</td>
- </tr>
- <tr><td>![ShowAllFiles1Legacy](images/segoe-mdl/e153.png)</td>
-  <td>E153</td>
-  <td>ShowAllFiles1Legacy</td>
- </tr>
- <tr><td>![ShowAllFilesLegacy](images/segoe-mdl/e154.png)</td>
-  <td>E154</td>
-  <td>ShowAllFilesLegacy</td>
- </tr>
- <tr><td>![BrowsePhotosLegacy](images/segoe-mdl/e155.png)</td>
-  <td>E155</td>
-  <td>BrowsePhotosLegacy</td>
- </tr>
- <tr><td>![WebcamLegacy](images/segoe-mdl/e156.png)</td>
-  <td>E156</td>
-  <td>WebcamLegacy</td>
- </tr>
- <tr><td>![PictureLegacy](images/segoe-mdl/e158.png)</td>
-  <td>E158</td>
-  <td>PictureLegacy</td>
- </tr>
- <tr><td>![SaveLocalLegacy](images/segoe-mdl/e159.png)</td>
-  <td>E159</td>
-  <td>SaveLocalLegacy</td>
- </tr>
- <tr><td>![CaptionLegacy](images/segoe-mdl/e15a.png)</td>
-  <td>E15A</td>
-  <td>CaptionLegacy</td>
- </tr>
- <tr><td>![StopLegacy](images/segoe-mdl/e15b.png)</td>
-  <td>E15B</td>
-  <td>StopLegacy</td>
- </tr>
- <tr><td>![ShowResultsLegacy](images/segoe-mdl/e15c.png)</td>
-  <td>E15C</td>
-  <td>ShowResultsLegacy</td>
- </tr>
- <tr><td>![VolumeLegacy](images/segoe-mdl/e15d.png)</td>
-  <td>E15D</td>
-  <td>VolumeLegacy</td>
- </tr>
- <tr><td>![RepairLegacy](images/segoe-mdl/e15e.png)</td>
-  <td>E15E</td>
-  <td>RepairLegacy</td>
- </tr>
- <tr><td>![MessageLegacy](images/segoe-mdl/e15f.png)</td>
-  <td>E15F</td>
-  <td>MessageLegacy</td>
- </tr>
- <tr><td>![PageLegacy](images/segoe-mdl/e160.png)</td>
-  <td>E160</td>
-  <td>PageLegacy</td>
- </tr>
- <tr><td>![CalendarDayLegacy](images/segoe-mdl/e161.png)</td>
-  <td>E161</td>
-  <td>CalendarDayLegacy</td>
- </tr>
- <tr><td>![CalendarWeekLegacy](images/segoe-mdl/e162.png)</td>
-  <td>E162</td>
-  <td>CalendarWeekLegacy</td>
- </tr>
- <tr><td>![CalendarLegacy](images/segoe-mdl/e163.png)</td>
-  <td>E163</td>
-  <td>CalendarLegacy</td>
- </tr>
- <tr><td>![CharactersLegacy](images/segoe-mdl/e164.png)</td>
-  <td>E164</td>
-  <td>CharactersLegacy</td>
- </tr>
- <tr><td>![MailReplyAllLegacy](images/segoe-mdl/e165.png)</td>
-  <td>E165</td>
-  <td>MailReplyAllLegacy</td>
- </tr>
- <tr><td>![ReadLegacy](images/segoe-mdl/e166.png)</td>
-  <td>E166</td>
-  <td>ReadLegacy</td>
- </tr>
- <tr><td>![LinkLegacy](images/segoe-mdl/e167.png)</td>
-  <td>E167</td>
-  <td>LinkLegacy</td>
- </tr>
- <tr><td>![AccountsLegacy](images/segoe-mdl/e168.png)</td>
-  <td>E168</td>
-  <td>AccountsLegacy</td>
- </tr>
- <tr><td>![ShowBccLegacy](images/segoe-mdl/e169.png)</td>
-  <td>E169</td>
-  <td>ShowBccLegacy</td>
- </tr>
- <tr><td>![HideBccLegacy](images/segoe-mdl/e16a.png)</td>
-  <td>E16A</td>
-  <td>HideBccLegacy</td>
- </tr>
- <tr><td>![CutLegacy](images/segoe-mdl/e16b.png)</td>
-  <td>E16B</td>
-  <td>CutLegacy</td>
- </tr>
- <tr><td>![AttachLegacy](images/segoe-mdl/e16c.png)</td>
-  <td>E16C</td>
-  <td>AttachLegacy</td>
- </tr>
- <tr><td>![PasteLegacy](images/segoe-mdl/e16d.png)</td>
-  <td>E16D</td>
-  <td>PasteLegacy</td>
- </tr>
- <tr><td>![FilterLegacy](images/segoe-mdl/e16e.png)</td>
-  <td>E16E</td>
-  <td>FilterLegacy</td>
- </tr>
- <tr><td>![CopyLegacy](images/segoe-mdl/e16f.png)</td>
-  <td>E16F</td>
-  <td>CopyLegacy</td>
- </tr>
- <tr><td>![Emoji2Legacy](images/segoe-mdl/e170.png)</td>
-  <td>E170</td>
-  <td>Emoji2Legacy</td>
- </tr>
- <tr><td>![ImportantLegacy](images/segoe-mdl/e171.png)</td>
-  <td>E171</td>
-  <td>ImportantLegacy</td>
- </tr>
- <tr><td>![MailReplyLegacy](images/segoe-mdl/e172.png)</td>
-  <td>E172</td>
-  <td>MailReplyLegacy</td>
- </tr>
- <tr><td>![SlideshowLegacy](images/segoe-mdl/e173.png)</td>
-  <td>E173</td>
-  <td>SlideshowLegacy</td>
- </tr>
- <tr><td>![SortLegacy](images/segoe-mdl/e174.png)</td>
-  <td>E174</td>
-  <td>SortLegacy</td>
- </tr>
- <tr><td>![ListLegacyMirrored](images/segoe-mdl/e175.png)</td>
-  <td>E175</td>
-  <td>ListLegacyMirrored</td>
- </tr>
- <tr><td>![ExpandTileLegacyMirrored](images/segoe-mdl/e176.png)</td>
-  <td>E176</td>
-  <td>ExpandTileLegacyMirrored</td>
- </tr>
- <tr><td>![ReduceTileLegacyMirrored](images/segoe-mdl/e177.png)</td>
-  <td>E177</td>
-  <td>ReduceTileLegacyMirrored</td>
- </tr>
- <tr><td>![ManageLegacy](images/segoe-mdl/e178.png)</td>
-  <td>E178</td>
-  <td>ManageLegacy</td>
- </tr>
- <tr><td>![AllAppsLegacy](images/segoe-mdl/e179.png)</td>
-  <td>E179</td>
-  <td>AllAppsLegacy</td>
- </tr>
- <tr><td>![DisconnectDriveLegacy](images/segoe-mdl/e17a.png)</td>
-  <td>E17A</td>
-  <td>DisconnectDriveLegacy</td>
- </tr>
- <tr><td>![MapDriveLegacy](images/segoe-mdl/e17b.png)</td>
-  <td>E17B</td>
-  <td>MapDriveLegacy</td>
- </tr>
- <tr><td>![NewWindowLegacy](images/segoe-mdl/e17c.png)</td>
-  <td>E17C</td>
-  <td>NewWindowLegacy</td>
- </tr>
- <tr><td>![OpenWithLegacy](images/segoe-mdl/e17d.png)</td>
-  <td>E17D</td>
-  <td>OpenWithLegacy</td>
- </tr>
- <tr><td>![ContactPresenceLegacy](images/segoe-mdl/e181.png)</td>
-  <td>E181</td>
-  <td>ContactPresenceLegacy</td>
- </tr>
- <tr><td>![PriorityLegacy](images/segoe-mdl/e182.png)</td>
-  <td>E182</td>
-  <td>PriorityLegacy</td>
- </tr>
- <tr><td>![UploadSkyDriveLegacy](images/segoe-mdl/e183.png)</td>
-  <td>E183</td>
-  <td>UploadSkyDriveLegacy</td>
- </tr>
- <tr><td>![GotoTodayLegacy](images/segoe-mdl/e184.png)</td>
-  <td>E184</td>
-  <td>GotoTodayLegacy</td>
- </tr>
- <tr><td>![FontLegacy](images/segoe-mdl/e185.png)</td>
-  <td>E185</td>
-  <td>FontLegacy</td>
- </tr>
- <tr><td>![FontColorLegacy](images/segoe-mdl/e186.png)</td>
-  <td>E186</td>
-  <td>FontColorLegacy</td>
- </tr>
- <tr><td>![Contact2Legacy](images/segoe-mdl/e187.png)</td>
-  <td>E187</td>
-  <td>Contact2Legacy</td>
- </tr>
- <tr><td>![FolderLegacy](images/segoe-mdl/e188.png)</td>
-  <td>E188</td>
-  <td>FolderLegacy</td>
- </tr>
- <tr><td>![AudioLegacy](images/segoe-mdl/e189.png)</td>
-  <td>E189</td>
-  <td>AudioLegacy</td>
- </tr>
- <tr><td>![PlaceFolderLegacy](images/segoe-mdl/e18a.png)</td>
-  <td>E18A</td>
-  <td>PlaceFolderLegacy</td>
- </tr>
- <tr><td>![ViewLegacy](images/segoe-mdl/e18b.png)</td>
-  <td>E18B</td>
-  <td>ViewLegacy</td>
- </tr>
- <tr><td>![SetlockScreenLegacy](images/segoe-mdl/e18c.png)</td>
-  <td>E18C</td>
-  <td>SetlockScreenLegacy</td>
- </tr>
- <tr><td>![SetTileLegacy](images/segoe-mdl/e18d.png)</td>
-  <td>E18D</td>
-  <td>SetTileLegacy</td>
- </tr>
- <tr><td>![CCJapanLegacy](images/segoe-mdl/e18e.png)</td>
-  <td>E18E</td>
-  <td>CCJapanLegacy</td>
- </tr>
- <tr><td>![CCEuroLegacy](images/segoe-mdl/e18f.png)</td>
-  <td>E18F</td>
-  <td>CCEuroLegacy</td>
- </tr>
- <tr><td>![CCLegacy](images/segoe-mdl/e190.png)</td>
-  <td>E190</td>
-  <td>CCLegacy</td>
- </tr>
- <tr><td>![StopSlideshowLegacy](images/segoe-mdl/e191.png)</td>
-  <td>E191</td>
-  <td>StopSlideshowLegacy</td>
- </tr>
- <tr><td>![PermissionsLegacy](images/segoe-mdl/e192.png)</td>
-  <td>E192</td>
-  <td>PermissionsLegacy</td>
- </tr>
- <tr><td>![HighlightLegacy](images/segoe-mdl/e193.png)</td>
-  <td>E193</td>
-  <td>HighlightLegacy</td>
- </tr>
- <tr><td>![DisableUpdatesLegacy](images/segoe-mdl/e194.png)</td>
-  <td>E194</td>
-  <td>DisableUpdatesLegacy</td>
- </tr>
- <tr><td>![UnfavoriteLegacy](images/segoe-mdl/e195.png)</td>
-  <td>E195</td>
-  <td>UnfavoriteLegacy</td>
- </tr>
- <tr><td>![UnpinLegacy](images/segoe-mdl/e196.png)</td>
-  <td>E196</td>
-  <td>UnpinLegacy</td>
- </tr>
- <tr><td>![OpenLocalLegacy](images/segoe-mdl/e197.png)</td>
-  <td>E197</td>
-  <td>OpenLocalLegacy</td>
- </tr>
- <tr><td>![MuteLegacy](images/segoe-mdl/e198.png)</td>
-  <td>E198</td>
-  <td>MuteLegacy</td>
- </tr>
- <tr><td>![ItalicLegacy](images/segoe-mdl/e199.png)</td>
-  <td>E199</td>
-  <td>ItalicLegacy</td>
- </tr>
- <tr><td>![UnderlineLegacy](images/segoe-mdl/e19a.png)</td>
-  <td>E19A</td>
-  <td>UnderlineLegacy</td>
- </tr>
- <tr><td>![BoldLegacy](images/segoe-mdl/e19b.png)</td>
-  <td>E19B</td>
-  <td>BoldLegacy</td>
- </tr>
- <tr><td>![MoveToFolderLegacy](images/segoe-mdl/e19c.png)</td>
-  <td>E19C</td>
-  <td>MoveToFolderLegacy</td>
- </tr>
- <tr><td>![LikeDislikeLegacy](images/segoe-mdl/e19d.png)</td>
-  <td>E19D</td>
-  <td>LikeDislikeLegacy</td>
- </tr>
- <tr><td>![DislikeLegacy](images/segoe-mdl/e19e.png)</td>
-  <td>E19E</td>
-  <td>DislikeLegacy</td>
- </tr>
- <tr><td>![LikeLegacy](images/segoe-mdl/e19f.png)</td>
-  <td>E19F</td>
-  <td>LikeLegacy</td>
- </tr>
- <tr><td>![AlignRightLegacy](images/segoe-mdl/e1a0.png)</td>
-  <td>E1A0</td>
-  <td>AlignRightLegacy</td>
- </tr>
- <tr><td>![AlignCenterLegacy](images/segoe-mdl/e1a1.png)</td>
-  <td>E1A1</td>
-  <td>AlignCenterLegacy</td>
- </tr>
- <tr><td>![AlignLeftLegacy](images/segoe-mdl/e1a2.png)</td>
-  <td>E1A2</td>
-  <td>AlignLeftLegacy</td>
- </tr>
- <tr><td>![ZoomLegacy](images/segoe-mdl/e1a3.png)</td>
-  <td>E1A3</td>
-  <td>ZoomLegacy</td>
- </tr>
- <tr><td>![ZoomOutLegacy](images/segoe-mdl/e1a4.png)</td>
-  <td>E1A4</td>
-  <td>ZoomOutLegacy</td>
- </tr>
- <tr><td>![OpenFileLegacy](images/segoe-mdl/e1a5.png)</td>
-  <td>E1A5</td>
-  <td>OpenFileLegacy</td>
- </tr>
- <tr><td>![OtherUserLegacy](images/segoe-mdl/e1a6.png)</td>
-  <td>E1A6</td>
-  <td>OtherUserLegacy</td>
- </tr>
- <tr><td>![AdminLegacy](images/segoe-mdl/e1a7.png)</td>
-  <td>E1A7</td>
-  <td>AdminLegacy</td>
- </tr>
- <tr><td>![MailForwardLegacyMirrored](images/segoe-mdl/e1a8.png)</td>
-  <td>E1A8</td>
-  <td>MailForwardLegacyMirrored</td>
- </tr>
- <tr><td>![GoLegacyMirrored](images/segoe-mdl/e1aa.png)</td>
-  <td>E1AA</td>
-  <td>GoLegacyMirrored</td>
- </tr>
- <tr><td>![DockLeftLegacyMirrored](images/segoe-mdl/e1ab.png)</td>
-  <td>E1AB</td>
-  <td>DockLeftLegacyMirrored</td>
- </tr>
- <tr><td>![DockRightLegacyMirrored](images/segoe-mdl/e1ac.png)</td>
-  <td>E1AC</td>
-  <td>DockRightLegacyMirrored</td>
- </tr>
- <tr><td>![ImportLegacyMirrored](images/segoe-mdl/e1ad.png)</td>
-  <td>E1AD</td>
-  <td>ImportLegacyMirrored</td>
- </tr>
- <tr><td>![ImportAllLegacyMirrored](images/segoe-mdl/e1ae.png)</td>
-  <td>E1AE</td>
-  <td>ImportAllLegacyMirrored</td>
- </tr>
- <tr><td>![MailReplyLegacyMirrored](images/segoe-mdl/e1af.png)</td>
-  <td>E1AF</td>
-  <td>MailReplyLegacyMirrored</td>
- </tr>
- <tr><td>![ItalicCLegacy](images/segoe-mdl/e1b0.png)</td>
-  <td>E1B0</td>
-  <td>ItalicCLegacy</td>
- </tr>
- <tr><td>![BoldGLegacy](images/segoe-mdl/e1b1.png)</td>
-  <td>E1B1</td>
-  <td>BoldGLegacy</td>
- </tr>
- <tr><td>![UnderlineSLegacy](images/segoe-mdl/e1b2.png)</td>
-  <td>E1B2</td>
-  <td>UnderlineSLegacy</td>
- </tr>
- <tr><td>![BoldFLegacy](images/segoe-mdl/e1b3.png)</td>
-  <td>E1B3</td>
-  <td>BoldFLegacy</td>
- </tr>
- <tr><td>![ItalicKLegacy](images/segoe-mdl/e1b4.png)</td>
-  <td>E1B4</td>
-  <td>ItalicKLegacy</td>
- </tr>
- <tr><td>![UnderlineULegacy](images/segoe-mdl/e1b5.png)</td>
-  <td>E1B5</td>
-  <td>UnderlineULegacy</td>
- </tr>
- <tr><td>![ItalicILegacy](images/segoe-mdl/e1b6.png)</td>
-  <td>E1B6</td>
-  <td>ItalicILegacy</td>
- </tr>
- <tr><td>![BoldNLegacy](images/segoe-mdl/e1b7.png)</td>
-  <td>E1B7</td>
-  <td>BoldNLegacy</td>
- </tr>
- <tr><td>![UnderlineRussianLegacy](images/segoe-mdl/e1b8.png)</td>
-  <td>E1B8</td>
-  <td>UnderlineRussianLegacy</td>
- </tr>
- <tr><td>![BoldRussionLegacy](images/segoe-mdl/e1b9.png)</td>
-  <td>E1B9</td>
-  <td>BoldRussionLegacy</td>
- </tr>
- <tr><td>![FontStyleKoreanLegacy](images/segoe-mdl/e1ba.png)</td>
-  <td>E1BA</td>
-  <td>FontStyleKoreanLegacy</td>
- </tr>
- <tr><td>![UnderlineLKoreanLegacy](images/segoe-mdl/e1bb.png)</td>
-  <td>E1BB</td>
-  <td>UnderlineLKoreanLegacy</td>
- </tr>
- <tr><td>![ItalicKoreanLegacy](images/segoe-mdl/e1bc.png)</td>
-  <td>E1BC</td>
-  <td>ItalicKoreanLegacy</td>
- </tr>
- <tr><td>![BoldKoreanLegacy](images/segoe-mdl/e1bd.png)</td>
-  <td>E1BD</td>
-  <td>BoldKoreanLegacy</td>
- </tr>
- <tr><td>![FontColorKoreanLegacy](images/segoe-mdl/e1be.png)</td>
-  <td>E1BE</td>
-  <td>FontColorKoreanLegacy</td>
- </tr>
- <tr><td>![ClosePaneLegacyMirrored](images/segoe-mdl/e1bf.png)</td>
-  <td>E1BF</td>
-  <td>ClosePaneLegacyMirrored</td>
- </tr>
- <tr><td>![OpenPaneLegacyMirrored](images/segoe-mdl/e1c0.png)</td>
-  <td>E1C0</td>
-  <td>OpenPaneLegacyMirrored</td>
- </tr>
- <tr><td>![EditLegacyMirrored](images/segoe-mdl/e1c2.png)</td>
-  <td>E1C2</td>
-  <td>EditLegacyMirrored</td>
- </tr>
- <tr><td>![StreetLegacy](images/segoe-mdl/e1c3.png)</td>
-  <td>E1C3</td>
-  <td>StreetLegacy</td>
- </tr>
- <tr><td>![MapLegacy](images/segoe-mdl/e1c4.png)</td>
-  <td>E1C4</td>
-  <td>MapLegacy</td>
- </tr>
- <tr><td>![ClearSelectionLegacy](images/segoe-mdl/e1c5.png)</td>
-  <td>E1C5</td>
-  <td>ClearSelectionLegacy</td>
- </tr>
- <tr><td>![FontDecreaseLegacy](images/segoe-mdl/e1c6.png)</td>
-  <td>E1C6</td>
-  <td>FontDecreaseLegacy</td>
- </tr>
- <tr><td>![FontIncreaseLegacy](images/segoe-mdl/e1c7.png)</td>
-  <td>E1C7</td>
-  <td>FontIncreaseLegacy</td>
- </tr>
- <tr><td>![FontSizeLegacy](images/segoe-mdl/e1c8.png)</td>
-  <td>E1C8</td>
-  <td>FontSizeLegacy</td>
- </tr>
- <tr><td>![CellPhoneLegacy](images/segoe-mdl/e1c9.png)</td>
-  <td>E1C9</td>
-  <td>CellPhoneLegacy</td>
- </tr>
- <tr><td>![ReshareLegacy](images/segoe-mdl/e1ca.png)</td>
-  <td>E1CA</td>
-  <td>ReshareLegacy</td>
- </tr>
- <tr><td>![TagLegacy](images/segoe-mdl/e1cb.png)</td>
-  <td>E1CB</td>
-  <td>TagLegacy</td>
- </tr>
- <tr><td>![RepeatOneLegacy](images/segoe-mdl/e1cc.png)</td>
-  <td>E1CC</td>
-  <td>RepeatOneLegacy</td>
- </tr>
- <tr><td>![RepeatAllLegacy](images/segoe-mdl/e1cd.png)</td>
-  <td>E1CD</td>
-  <td>RepeatAllLegacy</td>
- </tr>
- <tr><td>![OutlineStarLegacy](images/segoe-mdl/e1ce.png)</td>
-  <td>E1CE</td>
-  <td>OutlineStarLegacy</td>
- </tr>
- <tr><td>![SolidStarLegacy](images/segoe-mdl/e1cf.png)</td>
-  <td>E1CF</td>
-  <td>SolidStarLegacy</td>
- </tr>
- <tr><td>![CalculatorLegacy](images/segoe-mdl/e1d0.png)</td>
-  <td>E1D0</td>
-  <td>CalculatorLegacy</td>
- </tr>
- <tr><td>![DirectionsLegacy](images/segoe-mdl/e1d1.png)</td>
-  <td>E1D1</td>
-  <td>DirectionsLegacy</td>
- </tr>
- <tr><td>![LocationLegacy](images/segoe-mdl/e1d2.png)</td>
-  <td>E1D2</td>
-  <td>LocationLegacy</td>
- </tr>
- <tr><td>![LibraryLegacy](images/segoe-mdl/e1d3.png)</td>
-  <td>E1D3</td>
-  <td>LibraryLegacy</td>
- </tr>
- <tr><td>![PhoneBookLegacy](images/segoe-mdl/e1d4.png)</td>
-  <td>E1D4</td>
-  <td>PhoneBookLegacy</td>
- </tr>
- <tr><td>![MemoLegacy](images/segoe-mdl/e1d5.png)</td>
-  <td>E1D5</td>
-  <td>MemoLegacy</td>
- </tr>
- <tr><td>![MicrophoneLegacy](images/segoe-mdl/e1d6.png)</td>
-  <td>E1D6</td>
-  <td>MicrophoneLegacy</td>
- </tr>
- <tr><td>![PostUpdateLegacy](images/segoe-mdl/e1d7.png)</td>
-  <td>E1D7</td>
-  <td>PostUpdateLegacy</td>
- </tr>
- <tr><td>![BackToWindowLegacy](images/segoe-mdl/e1d8.png)</td>
-  <td>E1D8</td>
-  <td>BackToWindowLegacy</td>
- </tr>
- <tr><td>![FullScreenLegacy](images/segoe-mdl/e1d9.png)</td>
-  <td>E1D9</td>
-  <td>FullScreenLegacy</td>
- </tr>
- <tr><td>![NewFolderLegacy](images/segoe-mdl/e1da.png)</td>
-  <td>E1DA</td>
-  <td>NewFolderLegacy</td>
- </tr>
- <tr><td>![CalendarReplyLegacy](images/segoe-mdl/e1db.png)</td>
-  <td>E1DB</td>
-  <td>CalendarReplyLegacy</td>
- </tr>
- <tr><td>![CalendarLegacyMirrored](images/segoe-mdl/e1dc.png)</td>
-  <td>E1DC</td>
-  <td>CalendarLegacyMirrored</td>
- </tr>
- <tr><td>![UnsyncFolderLegacy](images/segoe-mdl/e1dd.png)</td>
-  <td>E1DD</td>
-  <td>UnsyncFolderLegacy</td>
- </tr>
- <tr><td>![ReportHackedLegacy](images/segoe-mdl/e1de.png)</td>
-  <td>E1DE</td>
-  <td>ReportHackedLegacy</td>
- </tr>
- <tr><td>![SyncFolderLegacy](images/segoe-mdl/e1df.png)</td>
-  <td>E1DF</td>
-  <td>SyncFolderLegacy</td>
- </tr>
- <tr><td>![BlockContactLegacy](images/segoe-mdl/e1e0.png)</td>
-  <td>E1E0</td>
-  <td>BlockContactLegacy</td>
- </tr>
- <tr><td>![SwitchAppsLegacy](images/segoe-mdl/e1e1.png)</td>
-  <td>E1E1</td>
-  <td>SwitchAppsLegacy</td>
- </tr>
- <tr><td>![AddFriendLegacy](images/segoe-mdl/e1e2.png)</td>
-  <td>E1E2</td>
-  <td>AddFriendLegacy</td>
- </tr>
- <tr><td>![TouchPointerLegacy](images/segoe-mdl/e1e3.png)</td>
-  <td>E1E3</td>
-  <td>TouchPointerLegacy</td>
- </tr>
- <tr><td>![GoToStartLegacy](images/segoe-mdl/e1e4.png)</td>
-  <td>E1E4</td>
-  <td>GoToStartLegacy</td>
- </tr>
- <tr><td>![ZeroBarsLegacy](images/segoe-mdl/e1e5.png)</td>
-  <td>E1E5</td>
-  <td>ZeroBarsLegacy</td>
- </tr>
- <tr><td>![OneBarLegacy](images/segoe-mdl/e1e6.png)</td>
-  <td>E1E6</td>
-  <td>OneBarLegacy</td>
- </tr>
- <tr><td>![TwoBarsLegacy](images/segoe-mdl/e1e7.png)</td>
-  <td>E1E7</td>
-  <td>TwoBarsLegacy</td>
- </tr>
- <tr><td>![ThreeBarsLegacy](images/segoe-mdl/e1e8.png)</td>
-  <td>E1E8</td>
-  <td>ThreeBarsLegacy</td>
- </tr>
- <tr><td>![FourBarsLegacy](images/segoe-mdl/e1e9.png)</td>
-  <td>E1E9</td>
-  <td>FourBarsLegacy</td>
- </tr>
- <tr><td>![ItalicRussianLegacy](images/segoe-mdl/e1ea.png)</td>
-  <td>E1EA</td>
-  <td>ItalicRussianLegacy</td>
- </tr>
- <tr><td>![AllAppsLegacyMirrored](images/segoe-mdl/e1ec.png)</td>
-  <td>E1EC</td>
-  <td>AllAppsLegacyMirrored</td>
- </tr>
- <tr><td>![OpenWithLegacyMirrored](images/segoe-mdl/e1ed.png)</td>
-  <td>E1ED</td>
-  <td>OpenWithLegacyMirrored</td>
- </tr>
- <tr><td>![BookmarksLegacyMirrored](images/segoe-mdl/e1ee.png)</td>
-  <td>E1EE</td>
-  <td>BookmarksLegacyMirrored</td>
- </tr>
- <tr><td>![MultiSelectLegacyMirrored](images/segoe-mdl/e1ef.png)</td>
-  <td>E1EF</td>
-  <td>MultiSelectLegacyMirrored</td>
- </tr>
- <tr><td>![ShowResultsLegacyMirrored](images/segoe-mdl/e1f1.png)</td>
-  <td>E1F1</td>
-  <td>ShowResultsLegacyMirrored</td>
- </tr>
- <tr><td>![MailReplyAllLegacyMirrored](images/segoe-mdl/e1f2.png)</td>
-  <td>E1F2</td>
-  <td>MailReplyAllLegacyMirrored</td>
- </tr>
- <tr><td>![HelpLegacyMirrored](images/segoe-mdl/e1f3.png)</td>
-  <td>E1F3</td>
-  <td>HelpLegacyMirrored</td>
- </tr>
- <tr><td>![ClearSelectionLegacyMirrored](images/segoe-mdl/e1f4.png)</td>
-  <td>E1F4</td>
-  <td>ClearSelectionLegacyMirrored</td>
- </tr>
- <tr><td>![RecordLegacy](images/segoe-mdl/e1f5.png)</td>
-  <td>E1F5</td>
-  <td>RecordLegacy</td>
- </tr>
- <tr><td>![LockLegacy](images/segoe-mdl/e1f6.png)</td>
-  <td>E1F6</td>
-  <td>LockLegacy</td>
- </tr>
- <tr><td>![UnlockLegacy](images/segoe-mdl/e1f7.png)</td>
-  <td>E1F7</td>
-  <td>UnlockLegacy</td>
- </tr>
- <tr><td>![DownLegacy](images/segoe-mdl/e1fd.png)</td>
-  <td>E1FD</td>
-  <td>DownLegacy</td>
- </tr>
- <tr><td>![CommentInlineLegacy](images/segoe-mdl/e206.png)</td>
-  <td>E206</td>
-  <td>CommentInlineLegacy</td>
- </tr>
- <tr><td>![FavoriteInlineLegacy](images/segoe-mdl/e208.png)</td>
-  <td>E208</td>
-  <td>FavoriteInlineLegacy</td>
- </tr>
- <tr><td>![LikeInlineLegacy](images/segoe-mdl/e209.png)</td>
-  <td>E209</td>
-  <td>LikeInlineLegacy</td>
- </tr>
- <tr><td>![VideoInlineLegacy](images/segoe-mdl/e20a.png)</td>
-  <td>E20A</td>
-  <td>VideoInlineLegacy</td>
- </tr>
- <tr><td>![MailMessageLegacy](images/segoe-mdl/e20b.png)</td>
-  <td>E20B</td>
-  <td>MailMessageLegacy</td>
- </tr>
- <tr><td>![PC1Legacy](images/segoe-mdl/e211.png)</td>
-  <td>E211</td>
-  <td>PC1Legacy</td>
- </tr>
- <tr><td>![DevicesLegacy](images/segoe-mdl/e212.png)</td>
-  <td>E212</td>
-  <td>DevicesLegacy</td>
- </tr>
- <tr><td>![RatingStarLegacy](images/segoe-mdl/e224.png)</td>
-  <td>E224</td>
-  <td>RatingStarLegacy</td>
- </tr>
- <tr><td>![ChevronDownSmLegacy](images/segoe-mdl/e228.png)</td>
-  <td>E228</td>
-  <td>ChevronDownSmLegacy</td>
- </tr>
- <tr><td>![ReplyLegacy](images/segoe-mdl/e248.png)</td>
-  <td>E248</td>
-  <td>ReplyLegacy</td>
- </tr>
- <tr><td>![Favorite2Legacy](images/segoe-mdl/e249.png)</td>
-  <td>E249</td>
-  <td>Favorite2Legacy</td>
- </tr>
- <tr><td>![Unfavorite2Legacy](images/segoe-mdl/e24a.png)</td>
-  <td>E24A</td>
-  <td>Unfavorite2Legacy</td>
- </tr>
- <tr><td>![MobileContactLegacy](images/segoe-mdl/e25a.png)</td>
-  <td>E25A</td>
-  <td>MobileContactLegacy</td>
- </tr>
- <tr><td>![BlockedLegacy](images/segoe-mdl/e25b.png)</td>
-  <td>E25B</td>
-  <td>BlockedLegacy</td>
- </tr>
- <tr><td>![TypingIndicatorLegacy](images/segoe-mdl/e25c.png)</td>
-  <td>E25C</td>
-  <td>TypingIndicatorLegacy</td>
- </tr>
- <tr><td>![PresenceChickletVideoLegacy](images/segoe-mdl/e25d.png)</td>
-  <td>E25D</td>
-  <td>PresenceChickletVideoLegacy</td>
- </tr>
- <tr><td>![PresenceChickletLegacy](images/segoe-mdl/e25e.png)</td>
-  <td>E25E</td>
-  <td>PresenceChickletLegacy</td>
- </tr>
- <tr><td>![ChevronRightSmLegacy](images/segoe-mdl/e26b.png)</td>
-  <td>E26B</td>
-  <td>ChevronRightSmLegacy</td>
- </tr>
- <tr><td>![ChevronLeftSmLegacy](images/segoe-mdl/e26c.png)</td>
-  <td>E26C</td>
-  <td>ChevronLeftSmLegacy</td>
- </tr>
- <tr><td>![SaveAsLegacy](images/segoe-mdl/e28f.png)</td>
-  <td>E28F</td>
-  <td>SaveAsLegacy</td>
- </tr>
- <tr><td>![DecreaseIndentLegacy](images/segoe-mdl/e290.png)</td>
-  <td>E290</td>
-  <td>DecreaseIndentLegacy</td>
- </tr>
- <tr><td>![IncreaseIndentLegacy](images/segoe-mdl/e291.png)</td>
-  <td>E291</td>
-  <td>IncreaseIndentLegacy</td>
- </tr>
- <tr><td>![BulletedListLegacy](images/segoe-mdl/e292.png)</td>
-  <td>E292</td>
-  <td>BulletedListLegacy</td>
- </tr>
- <tr><td>![ScanLegacy](images/segoe-mdl/e294.png)</td>
-  <td>E294</td>
-  <td>ScanLegacy</td>
- </tr>
- <tr><td>![PreviewLegacy](images/segoe-mdl/e295.png)</td>
-  <td>E295</td>
-  <td>PreviewLegacy</td>
- </tr>
- <tr><td>![DecreaseIndentLegacyMirrored](images/segoe-mdl/e297.png)</td>
-  <td>E297</td>
-  <td>DecreaseIndentLegacyMirrored</td>
- </tr>
- <tr><td>![IncreaseIndentLegacyMirrored](images/segoe-mdl/e298.png)</td>
-  <td>E298</td>
-  <td>IncreaseIndentLegacyMirrored</td>
- </tr>
- <tr><td>![BulletedListLegacyMirrored](images/segoe-mdl/e299.png)</td>
-  <td>E299</td>
-  <td>BulletedListLegacyMirrored</td>
- </tr>
- <tr><td>![PlayOnLegacy](images/segoe-mdl/e29b.png)</td>
-  <td>E29B</td>
-  <td>PlayOnLegacy</td>
- </tr>
- <tr><td>![ResolutionLegacy](images/segoe-mdl/e2ac.png)</td>
-  <td>E2AC</td>
-  <td>ResolutionLegacy</td>
- </tr>
- <tr><td>![LengthLegacy](images/segoe-mdl/e2ad.png)</td>
-  <td>E2AD</td>
-  <td>LengthLegacy</td>
- </tr>
- <tr><td>![LayoutLegacy](images/segoe-mdl/e2ae.png)</td>
-  <td>E2AE</td>
-  <td>LayoutLegacy</td>
- </tr>
- <tr><td>![Contact3Legacy](images/segoe-mdl/e2af.png)</td>
-  <td>E2AF</td>
-  <td>Contact3Legacy</td>
- </tr>
- <tr><td>![TypeLegacy](images/segoe-mdl/e2b0.png)</td>
-  <td>E2B0</td>
-  <td>TypeLegacy</td>
- </tr>
- <tr><td>![ColorLegacy](images/segoe-mdl/e2b1.png)</td>
-  <td>E2B1</td>
-  <td>ColorLegacy</td>
- </tr>
- <tr><td>![SizeLegacy](images/segoe-mdl/e2b2.png)</td>
-  <td>E2B2</td>
-  <td>SizeLegacy</td>
- </tr>
- <tr><td>![ReturnToWindowLegacy](images/segoe-mdl/e2b3.png)</td>
-  <td>E2B3</td>
-  <td>ReturnToWindowLegacy</td>
- </tr>
- <tr><td>![OpenInNewWindowLegacy](images/segoe-mdl/e2b4.png)</td>
-  <td>E2B4</td>
-  <td>OpenInNewWindowLegacy</td>
- </tr>
- <tr><td>![PrintLegacy](images/segoe-mdl/e2f6.png)</td>
-  <td>E2F6</td>
-  <td>PrintLegacy</td>
- </tr>
- <tr><td>![Printer3DLegacy](images/segoe-mdl/e2f7.png)</td>
-  <td>E2F7</td>
-  <td>Printer3DLegacy</td>
  </tr>
  <tr><td>![GlobalNavButton](images/segoe-mdl/e700.png)</td>
   <td>E700</td>
@@ -5133,7 +3765,154 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
   <td>EF20</td>
   <td>Marquee</td>
  </tr>
- 
+<tr><td>![Relationship](images/segoe-mdl/f003.png)</td><td>F003</td><td>Relationship</td></tr>
+<tr><td>![DefaultAPN](images/segoe-mdl/f080.png)</td><td>F080</td><td>DefaultAPN</td></tr>
+<tr><td>![UserAPN ](images/segoe-mdl/f081.png)</td><td>F081</td><td>UserAPN </td></tr>
+<tr><td>![DoublePinyin](images/segoe-mdl/f085.png)</td><td>F085</td><td>DoublePinyin</td></tr>
+<tr><td>![BlueLight](images/segoe-mdl/f08c.png)</td><td>F08C</td><td>BlueLight</td></tr>
+<tr><td>![ButtonA](images/segoe-mdl/f093.png)</td><td>F093</td><td>ButtonA</td></tr>
+<tr><td>![ButtonB](images/segoe-mdl/f094.png)</td><td>F094</td><td>ButtonB</td></tr>
+<tr><td>![ButtonY](images/segoe-mdl/f095.png)</td><td>F095</td><td>ButtonY</td></tr>
+<tr><td>![ButtonX](images/segoe-mdl/f096.png)</td><td>F096</td><td>ButtonX</td></tr>
+<tr><td>![ArrowUp8](images/segoe-mdl/f0ad.png)</td><td>F0AD</td><td>ArrowUp8</td></tr>
+<tr><td>![ArrowDown8](images/segoe-mdl/f0ae.png)</td><td>F0AE</td><td>ArrowDown8</td></tr>
+<tr><td>![ArrowRight8](images/segoe-mdl/f0af.png)</td><td>F0AF</td><td>ArrowRight8</td></tr>
+<tr><td>![ArrowLeft8](images/segoe-mdl/f0b0.png)</td><td>F0B0</td><td>ArrowLeft8</td></tr>
+<tr><td>![QuarentinedItems](images/segoe-mdl/f0b2.png)</td><td>F0B2</td><td>QuarentinedItems</td></tr>
+<tr><td>![QuarentinedItemsMirrored](images/segoe-mdl/f0b3.png)</td><td>F0B3</td><td>QuarentinedItemsMirrored</td></tr>
+<tr><td>![Protractor](images/segoe-mdl/f0b4.png)</td><td>F0B4</td><td>Protractor</td></tr>
+<tr><td>![ChecklistMirrored](images/segoe-mdl/f0b5.png)</td><td>F0B5</td><td>ChecklistMirrored</td></tr>
+<tr><td>![StatusCircle7](images/segoe-mdl/f0b6.png)</td><td>F0B6</td><td>StatusCircle7</td></tr>
+<tr><td>![StatusCheckmark7](images/segoe-mdl/f0b7.png)</td><td>F0B7</td><td>StatusCheckmark7</td></tr>
+<tr><td>![StatusErrorCircle7](images/segoe-mdl/f0b8.png)</td><td>F0B8</td><td>StatusErrorCircle7</td></tr>
+<tr><td>![Connected](images/segoe-mdl/f0b9.png)</td><td>F0B9</td><td>Connected</td></tr>
+<tr><td>![PencilFill](images/segoe-mdl/f0c6.png)</td><td>F0C6</td><td>PencilFill</td></tr>
+<tr><td>![CalligraphyFill](images/segoe-mdl/f0c7.png)</td><td>F0C7</td><td>CalligraphyFill</td></tr>
+<tr><td>![QuarterStarLeft](images/segoe-mdl/f0ca.png)</td><td>F0CA</td><td>QuarterStarLeft</td></tr>
+<tr><td>![QuarterStarRight](images/segoe-mdl/f0cb.png)</td><td>F0CB</td><td>QuarterStarRight</td></tr>
+<tr><td>![ThreeQuarterStarLeft](images/segoe-mdl/f0cc.png)</td><td>F0CC</td><td>ThreeQuarterStarLeft</td></tr>
+<tr><td>![ThreeQuarterStarRight](images/segoe-mdl/f0cd.png)</td><td>F0CD</td><td>ThreeQuarterStarRight</td></tr>
+<tr><td>![QuietHoursBadge12](images/segoe-mdl/f0ce.png)</td><td>F0CE</td><td>QuietHoursBadge12</td></tr>
+<tr><td>![BackMirrored](images/segoe-mdl/f0d2.png)</td><td>F0D2</td><td>BackMirrored</td></tr>
+<tr><td>![ForwardMirrored](images/segoe-mdl/f0d3.png)</td><td>F0D3</td><td>ForwardMirrored</td></tr>
+<tr><td>![ChromeBackContrast](images/segoe-mdl/f0d5.png)</td><td>F0D5</td><td>ChromeBackContrast</td></tr>
+<tr><td>![ChromeBackContrastMirrored](images/segoe-mdl/f0d6.png)</td><td>F0D6</td><td>ChromeBackContrastMirrored</td></tr>
+<tr><td>![ChromeBackToWindowContrast](images/segoe-mdl/f0d7.png)</td><td>F0D7</td><td>ChromeBackToWindowContrast</td></tr>
+<tr><td>![ChromeFullScreenContrast](images/segoe-mdl/f0d8.png)</td><td>F0D8</td><td>ChromeFullScreenContrast</td></tr>
+<tr><td>![GridView](images/segoe-mdl/f0e2.png)</td><td>F0E2</td><td>GridView</td></tr>
+<tr><td>![ClipboardList](images/segoe-mdl/f0e3.png)</td><td>F0E3</td><td>ClipboardList</td></tr>
+<tr><td>![ClipboardListMirrored](images/segoe-mdl/f0e4.png)</td><td>F0E4</td><td>ClipboardListMirrored</td></tr>
+<tr><td>![OutlineQuarterStarLeft](images/segoe-mdl/f0e5.png)</td><td>F0E5</td><td>OutlineQuarterStarLeft</td></tr>
+<tr><td>![OutlineQuarterStarRight](images/segoe-mdl/f0e6.png)</td><td>F0E6</td><td>OutlineQuarterStarRight</td></tr>
+<tr><td>![OutlineHalfStarLeft](images/segoe-mdl/f0e7.png)</td><td>F0E7</td><td>OutlineHalfStarLeft</td></tr>
+<tr><td>![OutlineHalfStarRight](images/segoe-mdl/f0e8.png)</td><td>F0E8</td><td>OutlineHalfStarRight</td></tr>
+<tr><td>![OutlineThreeQuarterStarLeft](images/segoe-mdl/f0e9.png)</td><td>F0E9</td><td>OutlineThreeQuarterStarLeft</td></tr>
+<tr><td>![OutlineThreeQuarterStarRight](images/segoe-mdl/f0ea.png)</td><td>F0EA</td><td>OutlineThreeQuarterStarRight</td></tr>
+<tr><td>![SpatialVolume0](images/segoe-mdl/f0eb.png)</td><td>F0EB</td><td>SpatialVolume0</td></tr>
+<tr><td>![SpatialVolume1](images/segoe-mdl/f0ec.png)</td><td>F0EC</td><td>SpatialVolume1</td></tr>
+<tr><td>![SpatialVolume2](images/segoe-mdl/f0ed.png)</td><td>F0ED</td><td>SpatialVolume2</td></tr>
+<tr><td>![SpatialVolume3](images/segoe-mdl/f0ee.png)</td><td>F0EE</td><td>SpatialVolume3</td></tr>
+<tr><td>![OutlineStarLeftHalf](images/segoe-mdl/f0f7.png)</td><td>F0F7</td><td>OutlineStarLeftHalf</td></tr>
+<tr><td>![OutlineStarRightHalf](images/segoe-mdl/f0f8.png)</td><td>F0F8</td><td>OutlineStarRightHalf</td></tr>
+<tr><td>![ChromeAnnotateContrast](images/segoe-mdl/f0f9.png)</td><td>F0F9</td><td>ChromeAnnotateContrast</td></tr>
+<tr><td>![DefenderBadge12](images/segoe-mdl/f0fb.png)</td><td>F0FB</td><td>DefenderBadge12</td></tr>
+<tr><td>![DetachablePC](images/segoe-mdl/f103.png)</td><td>F103</td><td>DetachablePC</td></tr>
+<tr><td>![LeftStick](images/segoe-mdl/f108.png)</td><td>F108</td><td>LeftStick</td></tr>
+<tr><td>![RightStick](images/segoe-mdl/f109.png)</td><td>F109</td><td>RightStick</td></tr>
+<tr><td>![TriggerLeft](images/segoe-mdl/f10a.png)</td><td>F10A</td><td>TriggerLeft</td></tr>
+<tr><td>![TriggerRight](images/segoe-mdl/f10b.png)</td><td>F10B</td><td>TriggerRight</td></tr>
+<tr><td>![BumperLeft](images/segoe-mdl/f10c.png)</td><td>F10C</td><td>BumperLeft</td></tr>
+<tr><td>![BumperRight](images/segoe-mdl/f10d.png)</td><td>F10D</td><td>BumperRight</td></tr>
+<tr><td>![Dpad](images/segoe-mdl/f10e.png)</td><td>F10E</td><td>Dpad</td></tr>
+<tr><td>![EnglishPunctuation](images/segoe-mdl/f110.png)</td><td>F110</td><td>EnglishPunctuation</td></tr>
+<tr><td>![ChinesePunctuation](images/segoe-mdl/f111.png)</td><td>F111</td><td>ChinesePunctuation</td></tr>
+<tr><td>![HMD](images/segoe-mdl/f119.png)</td><td>F119</td><td>HMD</td></tr>
+<tr><td>![PaginationDotOutline10](images/segoe-mdl/f126.png)</td><td>F126</td><td>PaginationDotOutline10</td></tr>
+<tr><td>![PaginationDotSolid10](images/segoe-mdl/f127.png)</td><td>F127</td><td>PaginationDotSolid10</td></tr>
+<tr><td>![StrokeErase2](images/segoe-mdl/f128.png)</td><td>F128</td><td>StrokeErase2</td></tr>
+<tr><td>![SmallErase](images/segoe-mdl/f129.png)</td><td>F129</td><td>SmallErase</td></tr>
+<tr><td>![LargeErase](images/segoe-mdl/f12a.png)</td><td>F12A</td><td>LargeErase</td></tr>
+<tr><td>![FolderHorizontal](images/segoe-mdl/f12b.png)</td><td>F12B</td><td>FolderHorizontal</td></tr>
+<tr><td>![MicrophoneListening](images/segoe-mdl/f12e.png)</td><td>F12E</td><td>MicrophoneListening</td></tr>
+<tr><td>![StatusExclamationCircle7 ](images/segoe-mdl/f12f.png)</td><td>F12F</td><td>StatusExclamationCircle7 </td></tr>
+<tr><td>![StatusCircleOuter](images/segoe-mdl/f136.png)</td><td>F136</td><td>StatusCircleOuter</td></tr>
+<tr><td>![StatusCircleInner](images/segoe-mdl/f137.png)</td><td>F137</td><td>StatusCircleInner</td></tr>
+<tr><td>![StatusCircleRing](images/segoe-mdl/f138.png)</td><td>F138</td><td>StatusCircleRing</td></tr>
+<tr><td>![StatusTriangleOuter](images/segoe-mdl/f139.png)</td><td>F139</td><td>StatusTriangleOuter</td></tr>
+<tr><td>![StatusTriangleInner](images/segoe-mdl/f13a.png)</td><td>F13A</td><td>StatusTriangleInner</td></tr>
+<tr><td>![StatusTriangleExclamation](images/segoe-mdl/f13b.png)</td><td>F13B</td><td>StatusTriangleExclamation</td></tr>
+<tr><td>![StatusCircleExclamation](images/segoe-mdl/f13c.png)</td><td>F13C</td><td>StatusCircleExclamation</td></tr>
+<tr><td>![StatusCircleErrorX](images/segoe-mdl/f13d.png)</td><td>F13D</td><td>StatusCircleErrorX</td></tr>
+<tr><td>![StatusCircleCheckmark](images/segoe-mdl/f13e.png)</td><td>F13E</td><td>StatusCircleCheckmark</td></tr>
+<tr><td>![StatusCircleInfo](images/segoe-mdl/f13f.png)</td><td>F13F</td><td>StatusCircleInfo</td></tr>
+<tr><td>![StatusCircleBlock](images/segoe-mdl/f140.png)</td><td>F140</td><td>StatusCircleBlock</td></tr>
+<tr><td>![StatusCircleBlock2](images/segoe-mdl/f141.png)</td><td>F141</td><td>StatusCircleBlock2</td></tr>
+<tr><td>![StatusCircleQuestionMark](images/segoe-mdl/f142.png)</td><td>F142</td><td>StatusCircleQuestionMark</td></tr>
+<tr><td>![StatusCircleSync](images/segoe-mdl/f143.png)</td><td>F143</td><td>StatusCircleSync</td></tr>
+<tr><td>![Dial1](images/segoe-mdl/f146.png)</td><td>F146</td><td>Dial1</td></tr>
+<tr><td>![Dial2](images/segoe-mdl/f147.png)</td><td>F147</td><td>Dial2</td></tr>
+<tr><td>![Dial3](images/segoe-mdl/f148.png)</td><td>F148</td><td>Dial3</td></tr>
+<tr><td>![Dial4](images/segoe-mdl/f149.png)</td><td>F149</td><td>Dial4</td></tr>
+<tr><td>![Dial5](images/segoe-mdl/f14a.png)</td><td>F14A</td><td>Dial5</td></tr>
+<tr><td>![Dial6](images/segoe-mdl/f14b.png)</td><td>F14B</td><td>Dial6</td></tr>
+<tr><td>![Dial7](images/segoe-mdl/f14c.png)</td><td>F14C</td><td>Dial7</td></tr>
+<tr><td>![Dial8](images/segoe-mdl/f14d.png)</td><td>F14D</td><td>Dial8</td></tr>
+<tr><td>![Dial9](images/segoe-mdl/f14e.png)</td><td>F14E</td><td>Dial9</td></tr>
+<tr><td>![Dial10](images/segoe-mdl/f14f.png)</td><td>F14F</td><td>Dial10</td></tr>
+<tr><td>![Dial11](images/segoe-mdl/f150.png)</td><td>F150</td><td>Dial11</td></tr>
+<tr><td>![Dial12](images/segoe-mdl/f151.png)</td><td>F151</td><td>Dial12</td></tr>
+<tr><td>![Dial13](images/segoe-mdl/f152.png)</td><td>F152</td><td>Dial13</td></tr>
+<tr><td>![Dial14](images/segoe-mdl/f153.png)</td><td>F153</td><td>Dial14</td></tr>
+<tr><td>![Dial15](images/segoe-mdl/f154.png)</td><td>F154</td><td>Dial15</td></tr>
+<tr><td>![Dial16](images/segoe-mdl/f155.png)</td><td>F155</td><td>Dial16</td></tr>
+<tr><td>![DialShape1](images/segoe-mdl/f156.png)</td><td>F156</td><td>DialShape1</td></tr>
+<tr><td>![DialShape2](images/segoe-mdl/f157.png)</td><td>F157</td><td>DialShape2</td></tr>
+<tr><td>![DialShape3](images/segoe-mdl/f158.png)</td><td>F158</td><td>DialShape3</td></tr>
+<tr><td>![DialShape4](images/segoe-mdl/f159.png)</td><td>F159</td><td>DialShape4</td></tr>
+<tr><td>![TollSolid](images/segoe-mdl/f161.png)</td><td>F161</td><td>TollSolid</td></tr>
+<tr><td>![TrafficCongestionSolid](images/segoe-mdl/f163.png)</td><td>F163</td><td>TrafficCongestionSolid</td></tr>
+<tr><td>![ExploreContentSingle](images/segoe-mdl/f164.png)</td><td>F164</td><td>ExploreContentSingle</td></tr>
+<tr><td>![CollapseContent](images/segoe-mdl/f165.png)</td><td>F165</td><td>CollapseContent</td></tr>
+<tr><td>![CollapseContentSingle](images/segoe-mdl/f166.png)</td><td>F166</td><td>CollapseContentSingle</td></tr>
+<tr><td>![InfoSolid](images/segoe-mdl/f167.png)</td><td>F167</td><td>InfoSolid</td></tr>
+<tr><td>![GroupList](images/segoe-mdl/f168.png)</td><td>F168</td><td>GroupList</td></tr>
+<tr><td>![CaretBottomRightSolidCenter8](images/segoe-mdl/f169.png)</td><td>F169</td><td>CaretBottomRightSolidCenter8</td></tr>
+<tr><td>![ProgressRingDots](images/segoe-mdl/f16a.png)</td><td>F16A</td><td>ProgressRingDots</td></tr>
+<tr><td>![Checkbox14](images/segoe-mdl/f16b.png)</td><td>F16B</td><td>Checkbox14</td></tr>
+<tr><td>![CheckboxComposite14](images/segoe-mdl/f16c.png)</td><td>F16C</td><td>CheckboxComposite14</td></tr>
+<tr><td>![CheckboxIndeterminateCombo14](images/segoe-mdl/f16d.png)</td><td>F16D</td><td>CheckboxIndeterminateCombo14</td></tr>
+<tr><td>![CheckboxIndeterminateCombo](images/segoe-mdl/f16e.png)</td><td>F16E</td><td>CheckboxIndeterminateCombo</td></tr>
+<tr><td>![StatusPause7](images/segoe-mdl/f175.png)</td><td>F175</td><td>StatusPause7</td></tr>
+<tr><td>![CharacterAppearance](images/segoe-mdl/f17f.png)</td><td>F17F</td><td>CharacterAppearance</td></tr>
+<tr><td>![Lexicon ](images/segoe-mdl/f180.png)</td><td>F180</td><td>Lexicon </td></tr>
+<tr><td>![ScreenTime](images/segoe-mdl/f182.png)</td><td>F182</td><td>ScreenTime</td></tr>
+<tr><td>![HeadlessDevice](images/segoe-mdl/f191.png)</td><td>F191</td><td>HeadlessDevice</td></tr>
+<tr><td>![NetworkSharing](images/segoe-mdl/f193.png)</td><td>F193</td><td>NetworkSharing</td></tr>
+<tr><td>![WindowsInsider](images/segoe-mdl/f1ad.png)</td><td>F1AD</td><td>WindowsInsider</td></tr>
+<tr><td>![ChromeSwitch](images/segoe-mdl/f1cb.png)</td><td>F1CB</td><td>ChromeSwitch</td></tr>
+<tr><td>![ChromeSwitchContast](images/segoe-mdl/f1cc.png)</td><td>F1CC</td><td>ChromeSwitchContast</td></tr>
+<tr><td>![StatusCheckmark](images/segoe-mdl/f1d8.png)</td><td>F1D8</td><td>StatusCheckmark</td></tr>
+<tr><td>![StatusCheckmarkLeft](images/segoe-mdl/f1d9.png)</td><td>F1D9</td><td>StatusCheckmarkLeft</td></tr>
+<tr><td>![KeyboardLeftAligned](images/segoe-mdl/f20c.png)</td><td>F20C</td><td>KeyboardLeftAligned</td></tr>
+<tr><td>![KeyboardRightAligned](images/segoe-mdl/f20d.png)</td><td>F20D</td><td>KeyboardRightAligned</td></tr>
+<tr><td>![KeyboardSettings](images/segoe-mdl/f210.png)</td><td>F210</td><td>KeyboardSettings</td></tr>
+<tr><td>![IOT](images/segoe-mdl/f22c.png)</td><td>F22C</td><td>IOT</td></tr>
+<tr><td>![ExploitProtectionSettings](images/segoe-mdl/f259.png)</td><td>F259</td><td>ExploitProtectionSettings</td></tr>
+<tr><td>![KeyboardNarrow](images/segoe-mdl/f260.png)</td><td>F260</td><td>KeyboardNarrow</td></tr>
+<tr><td>![Keyboard12Key](images/segoe-mdl/f261.png)</td><td>F261</td><td>Keyboard12Key</td></tr>
+<tr><td>![KeyboardDock](images/segoe-mdl/f26b.png)</td><td>F26B</td><td>KeyboardDock</td></tr>
+<tr><td>![KeyboardUndock](images/segoe-mdl/f26c.png)</td><td>F26C</td><td>KeyboardUndock</td></tr>
+<tr><td>![KeyboardLeftDock](images/segoe-mdl/f26d.png)</td><td>F26D</td><td>KeyboardLeftDock</td></tr>
+<tr><td>![KeyboardRightDock](images/segoe-mdl/f26e.png)</td><td>F26E</td><td>KeyboardRightDock</td></tr>
+<tr><td>![Ear](images/segoe-mdl/f270.png)</td><td>F270</td><td>Ear</td></tr>
+<tr><td>![PointerHand](images/segoe-mdl/f271.png)</td><td>F271</td><td>PointerHand</td></tr>
+<tr><td>![Bullseye](images/segoe-mdl/f272.png)</td><td>F272</td><td>Bullseye</td></tr>
+<tr><td>![PassiveAuthentication](images/segoe-mdl/f32a.png)</td><td>F32A</td><td>PassiveAuthentication</td></tr>
+<tr><td>![NetworkOffline](images/segoe-mdl/f384.png)</td><td>F384</td><td>NetworkOffline</td></tr>
+<tr><td>![NetworkConnected](images/segoe-mdl/f385.png)</td><td>F385</td><td>NetworkConnected</td></tr>
+<tr><td>![NetworkConnectedCheckmark](images/segoe-mdl/f386.png)</td><td>F386</td><td>NetworkConnectedCheckmark</td></tr>
+
+
 </table>
 
 
@@ -5141,11 +3920,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 ## Related articles
 
 * [Guidelines for fonts](fonts.md)
-* [**Symbol enumeration**](https://msdn.microsoft.com/library/windows/apps/dn252842)
-
-
- 
-
-
+* [Symbol enumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 
 

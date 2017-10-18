@@ -65,7 +65,7 @@ The file whose name contains the qualifier most appropriate for the setting is t
 
 ## Reference a string or image resource by name
 
-See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image resource in XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-resource-in-xaml-markup-and-code).
+See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image or other asset from XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
