@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files in your app's package, in your app's data folders, or in the cloud. You can also use a URI scheme to refer to strings in your app's Resources Files (.resw).
+Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
 title: URI schemes
 template: detail.hbs
 ms.author: stwhi
@@ -40,7 +40,7 @@ Comparison occurs byte for byte after normalization of all IRI components.
 
 All the URI schemes described in this topic follow typical URI rules (RFC 3986) for normalization and resource retrieval for schemes. The normalized form of these URIs maintains case and percent-decodes RFC 3986 unreserved characters.
 
-For all the URI schemes described in this topic, *scheme*, *authority*, and *path* are either case-insensitive by standard, or else are processed by the system in a case-insensitive way. **Note** The only exception to that rule is the *authority* of ms-resource, which is case-sensitive.
+For all the URI schemes described in this topic, *scheme*, *authority*, and *path* are either case-insensitive by standard, or else are processed by the system in a case-insensitive way. **Note** The only exception to that rule is the *authority* of `ms-resource`, which is case-sensitive.
 
 ## ms-appx and ms-appx-web
 
