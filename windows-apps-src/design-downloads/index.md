@@ -28,8 +28,8 @@ These toolkits provide controls and layout templates for designing UWP apps.
 
 ## Fonts
 
-* [Segoe UI and MDL2 icon fonts](https://aka.ms/SegoeFonts)
-* [Hololens icon font](https://aka.ms/hololensiconfont)
+* [Segoe UI and MDL2 icon fonts (Mac only)](https://aka.ms/SegoeFonts)
+* [Hololens icon font (Windows only)](https://aka.ms/hololensiconfont)
 
 ## Tools
 
