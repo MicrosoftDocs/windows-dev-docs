@@ -22,7 +22,7 @@ doc-status: Published
 
 Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.  
 
-> **Important APIs**: [ICommand interface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout), [INotifyPropertyChanged interface](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Important APIs**: [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout), [INotifyPropertyChanged interface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Use a variety of inputs to perform the Favorite command](images/ContextualCommand_AddFavorites.png)
 
@@ -91,13 +91,13 @@ public class PodcastObject : INotifyPropertyChanged
 }
 ```
 
-Notice that the PodcastObject implements [INotifyPropertyChanged](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) to respond to property changes when the user toggles the IsFavorite property.
+Notice that the PodcastObject implements [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged) to respond to property changes when the user toggles the IsFavorite property.
 
 ## Defining commands with the ICommand interface
 
-The [ICommand interface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand) helps you to define a command that's  available for multiple input types. For example, instead of writing the same code for a delete command in two different event handlers, one for when the user presses the Delete key and one for when the user right clicks "Delete" in a context menu, you can implement your delete logic once, as an [ICommand](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand),  and then make it available to different input types.
+The [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) helps you to define a command that's  available for multiple input types. For example, instead of writing the same code for a delete command in two different event handlers, one for when the user presses the Delete key and one for when the user right clicks "Delete" in a context menu, you can implement your delete logic once, as an [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand),  and then make it available to different input types.
 
-We need to define the ICommand that represents the "Favorite" action. We will use the command's [Execute](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand#Windows_UI_Xaml_Input_ICommand_Execute_) method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.
+We need to define the ICommand that represents the "Favorite" action. We will use the command's [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand#Windows_UI_Xaml_Input_ICommand_Execute_) method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -124,7 +124,7 @@ To use the same command with multiple collections and elements, you can store th
 </Application.Resources>
 ```
 
-To execute the command, you call its [Execute](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand#Windows_UI_Xaml_Input_ICommand_Execute_) method.
+To execute the command, you call its [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand#Windows_UI_Xaml_Input_ICommand_Execute_) method.
 
 ```csharp
 // Favorite the item using the defined command
@@ -135,7 +135,7 @@ favoriteCommand.Execute(PodcastObject);
 
 ## Creating a UserControl to respond to a variety of inputs
 
-When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a [UserControl](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.UserControl) for the item and using it to define your items' context menu and event handlers. 
+When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) for the item and using it to define your items' context menu and event handlers. 
 
 To create a UserControl in Visual Studio:
 1. In the Solution Explorer, right click the project. A context menu appears.
@@ -148,7 +148,7 @@ In our podcast example, each podcast will be displayed in a list, which will exp
 - Show a hover button
 - Perform a swipe gesture
 
-In order to encapsulate these behaviors and use the FavoriteCommand, let's create a new [UserControl](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.UserControl) named "PodcastUserControl" to represent a podcast in the list.
+In order to encapsulate these behaviors and use the FavoriteCommand, let's create a new [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) named "PodcastUserControl" to represent a podcast in the list.
 
 The PodcastUserControl displays the fields of the PodcastObject as TextBlocks, and responds to various user interactions. We will reference and expand upon the PodcastUserControl throughout this article.
 
@@ -243,7 +243,7 @@ The user can invoke context menus using these "context actions":
 
 ### ContextFlyout
 
-The [ContextFlyout property](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout, and when the user performs a “context action” as defined above, the MenuFlyout corresponding to the item will be displayed.
+The [ContextFlyout property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout, and when the user performs a “context action” as defined above, the MenuFlyout corresponding to the item will be displayed.
 
 We will add a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParamter bound to the PodcastObject.
 
@@ -262,7 +262,7 @@ We will add a ContextFlyout to the PodcastUserControl. The MenuFlyout specified 
 
 ```
 
-Note that you can also use the [ContextRequested event](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextRequested) to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
+Note that you can also use the [ContextRequested event](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextRequested) to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
 
 ## Creating input accelerators
 
@@ -278,7 +278,7 @@ In the podcast app, the frequently performed command is the "Favorite" command.
 
 Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a tooltip to teach the user about the shortcut command.
 
-Your app can respond when the user presses a key using the [KeyDown](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
+Your app can respond when the user presses a key using the [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
 
 This example walks through how to add the KeyDown handler to the PodcastUserControl to favorite a podcast when the user presses Ctrl+S or F. It uses the same command as before.
 
@@ -340,7 +340,7 @@ In this example, the Favorite command is represented by a button defined directl
 </UserControl>
 ```
 
-The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_PointerEnteredEvent) and [PointerExited](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_PointerExitedEvent) events on the PodcastUserControl.
+The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_PointerEnteredEvent) and [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_PointerExitedEvent) events on the PodcastUserControl.
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -371,7 +371,7 @@ The buttons displayed in the hover state will only be accessible via the pointer
 
 ![Swipe an item to reveal the command](images/ContextualCommand_Swipe.png)
 
-Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](http://windowsstyleguide/controls-and-patterns/swipe/) article to learn more.
+Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](swipe.md) article to learn more.
 
 In order to integrate swipe into your collection, you need two components: a SwipeContent which hosts the commands, and a SwipeContainer which wraps the item and allows for swipe interaction.
 
@@ -432,13 +432,13 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 
 #### Pull to refresh
 
-Pull to refresh lets a user pull down on a collection of data using touch in order to retrieve more data. See the [pull to refresh](http://windowsstyleguide/controls-and-patterns/pull-to-refresh-rs3/) article to learn more.
+Pull to refresh lets a user pull down on a collection of data using touch in order to retrieve more data. See the [pull to refresh](pull-to-refresh.md) article to learn more.
 
 ### Pen accelerators
 
 The pen input type provides the precision of pointer input. Users can perform common actions such as opening context menus using pen-based accelerators. To open a context menu, users can tap the screen with the barrel button pressed, or long press on the content. Users can also use the pen to hover over content to get a deeper understanding of the UI like displaying tooltips, or to reveal secondary hover actions, similar to mouse.
 
-To optimize your app for pen input, see the [pen and stylus interaction](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/) article.
+To optimize your app for pen input, see the [pen and stylus interaction](../input-and-devices/pen-and-stylus-interactions.md) article.
 
 
 ## Do's and don'ts
@@ -446,12 +446,12 @@ To optimize your app for pen input, see the [pen and stylus interaction](http://
 * Do make sure that users can access all commands from all types of UWP devices.
 * Do include a context menu that provides access to all the commands available for a collection item. 
 * Do provide input accelerators for frequently-used commands. 
-* Do use the [ICommand interface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands. 
+* Do use the [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) to implement commands. 
 
 ## Related topics
-* [ICommand Interface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand)
-* [Menus and Context Menus](http://windowsstyleguide/controls-and-patterns/menus/)
-* [Swipe](http://windowsstyleguide/controls-and-patterns/swipe/)
-* [Pull to refresh](http://windowsstyleguide/controls-and-patterns/pull-to-refresh)
-* [Pen and stylus interaction](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
-* [Tailor your app for gamepad and Xbox](http://windowsstyleguide/input-and-devices/designing-for-tv)
+* [ICommand Interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)
+* [Menus and Context Menus](menus.md)
+* [Swipe](swipe.md)
+* [Pull to refresh](pull-to-refresh.md)
+* [Pen and stylus interaction](../input-and-devices/pen-and-stylus-interactions.md)
+* [Tailor your app for gamepad and Xbox](../input-and-devices/designing-for-tv.md)

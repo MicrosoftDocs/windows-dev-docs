@@ -219,6 +219,7 @@
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
 #### [Migrate legacy resources](globalizing/using-mrt-for-converted-desktop-apps-and-games.md)
 #### [URI schemes](globalizing/uri-schemes.md)
+#### [MakePri.exe command options](globalizing/makepri-exe-command-options.md)
 ### [Guidelines for app help](in-app-help/guidelines-for-app-help.md)
 #### [Instructional UI](in-app-help/instructional-ui.md)
 #### [In-app help](in-app-help/in-app-help.md)

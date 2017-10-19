@@ -3,7 +3,7 @@ author: jwmsft
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: Shmazlou
-doc-status: RS3
+doc-status: Published
 Description: Touch menu accelerant for any scenario
 title: Swipe
 label: Swipe
@@ -18,8 +18,6 @@ keywords: windows 10, uwp
 # Swipe
 
 Swipe commanding is an accelerator for context menus that enables touch users to easily access common menu actions without needing to change states within the app.
-
->This article describes functionality that hasn’t been released yet: the swipe feature will be available in RS3 and later builds. Feature names (such as "swipe"), terminology, and functionality are not final.
 
 ![Execute and Reveal light theme](images/LightThemeSwipe.png)
 
