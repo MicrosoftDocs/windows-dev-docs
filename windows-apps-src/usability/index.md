@@ -6,7 +6,7 @@ author: mijacobs
 label: Usability
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -103,57 +103,11 @@ Accessibility is about making your app usable by people who have limitations tha
 </div>
 </div>
 
-
-
 ## Globalization and localization
 
-Windows is used worldwide, by audiences that vary in culture, region, and language. A user may speak any language, or even multiple languages. A user may be located anywhere in the world, and may speak any language in any location. You can increase the potential market for your app by designing it to be readily adaptable using globalization and localization.
+Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of language, region, and culture system settings. Increase the potential market for your app by designing it to be readily adaptable, using *globalization* and *localization*.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<p><b>[Do's and don'ts](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.</p>
-  </div>
-  <div class="side-by-side-content-right">
-<p><b>[Use global-ready formats](../globalizing/use-global-ready-formats.md)</b><br/>Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies.</p>
-  </div>
-</div>
-</div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<p><b>[Manage language and region](../globalizing/manage-language-and-region.md)</b><br/>Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.</p>
-  </div>
-  <div class="side-by-side-content-right">
-<p><b>[Use patterns to format dates and times](../globalizing/use-patterns-to-format-dates-and-times.md)</b><br/>Use the [<strong>DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.</p>
-  </div>
-</div>
-</div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<p><b>[Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)</b><br/>Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.</p>
-  </div>
-  <div class="side-by-side-content-right">
-<p><b>[Prepare your app for localization](../globalizing/prepare-your-app-for-localization.md)</b><br/>Prepare your app for localization to other markets, languages, or regions.</p>
-  </div>
-</div>
-</div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<p><b>[Put UI strings into resources](../globalizing/put-ui-strings-into-resources.md)</b><br/>Put string resources for your UI into resource files. You can then reference those strings from your code or markup.</p>
-  </div>
-  <div class="side-by-side-content-right">
-<b></b>   
-<p></p>
-  </div>
-</div>
-</div>
-
+[Globalization and localization portal](../globalizing/globalizing-portal.md)
 
 ## App settings
 

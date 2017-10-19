@@ -1,10 +1,10 @@
 ---
 author: stevewhims
-Description: This topic lists the command options for MakePri.exe; a command-line tool that you can use to create and dump Package Resource Index (PRI) files.
+Description: MakePri.exe is a command-line tool that you can use to create and dump Package Resource Index (PRI) files. A PRI file is an index of app resources, such as strings and image files. This topic lists the command options for MakePri.exe.
 title: MakePri.exe command options
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/17/2017
+ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
