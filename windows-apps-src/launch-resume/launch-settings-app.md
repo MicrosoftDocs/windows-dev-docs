@@ -58,7 +58,7 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 
 Use the following URIs to open various pages of the Settings app.
 
-> Note that a settings page's availability varies by Windows SKU. Not all settings pages available on Windows 10 are available on Windows 10 Mobile, and vice-versa. The notes column lists any additional requirements for page availability. 
+> Note that a settings page's availability varies by Windows SKU. Not all settings pages available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column lists any additional requirements for page availability. 
 
 <table border="1">
  <tr>
