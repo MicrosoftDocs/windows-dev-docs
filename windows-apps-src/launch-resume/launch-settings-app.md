@@ -20,7 +20,7 @@ keywords: windows 10, uwp
 -   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
 -   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
-Learn how to launch the Windows Settings app from your app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+This topic describes the **ms-settings:** URI scheme, which enables you to launch the Windows Settings app to specific settings pages from your app.
 
 Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).
 
@@ -58,7 +58,7 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 
 Use the following URIs to open various pages of the Settings app.
 
-> Note that whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
+> Note that a settings page's availability varies by Windows SKU. Not all settings pages available on Windows 10 are available on Windows 10 Mobile, and vice-versa. The notes column lists any additional requirements for page availability. 
 
 <table border="1">
  <tr>
