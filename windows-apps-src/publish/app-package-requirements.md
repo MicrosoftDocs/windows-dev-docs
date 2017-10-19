@@ -4,11 +4,11 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, package requirements, packages, package format
 ---
 
 # App package requirements
@@ -75,7 +75,16 @@ Your app’s packages must comply with these requirements.
 |----------------------|----------------------------------------------------------------------|
 | Package size         | .appxbundle: 25 GB maximum per bundle <br>.appx packages targeting Windows 10: 25 GB maximum per package<br>.appx packages targeting Windows 8.1: 8 GB maximum per package <br> .appx packages targeting Windows 8: 2 GB maximum per package <br> .appx packages targeting Windows Phone 8.1: 4 GB maximum per package <br> .xap packages: 1 GB maximum per package                                                                           |
 | Block map hashes     | SHA2-256 algorithm                                                   |
- 
+
+
+## Supported versions
+
+For UWP apps, all packages must target a version of Windows 10 supported by the Store. The versions your package supports must be indicated in the **MinVersion** and **MaxVersionTested** attributes of the [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element of the app manifest.
+
+The versions currently supported range from: 
+- Minimum: 10.0.10500.0
+- Maximum: 10.0.16299.0
+
 
 ## StoreManifest XML file
 
