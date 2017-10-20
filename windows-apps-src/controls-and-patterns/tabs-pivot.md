@@ -22,7 +22,7 @@ doc-status: Published
 
 The Pivot control and related tabs pattern are used for navigating frequently accessed, distinct content categories. Pivots allow for navigation between two or more content panes and rely on text headers to label the different sections of content.
 
-> **Important APIs**: [Pivot class](https://msdn.microsoft.com/library/windows/apps/dn608241)
+> **Important APIs**: [Pivot class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 
 ![An example of the pivot control](images/pivot_Hero_main.png)
 
@@ -53,7 +53,7 @@ Tabs pattern in the Alarms & Clock app.
 
 ## Create a pivot control
 
-The [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control comes with the basic functionality described in this section.
+The [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) control comes with the basic functionality described in this section.
 
 This XAML creates a basic pivot control with 3 sections of content.
 
@@ -152,4 +152,5 @@ Apps that have customized Pivot and incorporate the underline into header select
     See all of the XAML controls in an interactive format.
 
 ## Related topics
+- [Pivot class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [Navigation design basics](../layout/navigation-basics.md)
