@@ -13,12 +13,12 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, creators, signin
 
 # Sign in to Xbox Live in Unity
 
-> **Note:**
+> [!NOTE]
 > The Xbox Live Unity plugin is only recommended for [Xbox Live Creators Program](../developer-program-overview.md) members, since currently there is no support for achievements or multiplayer.
 
 With the Xbox Live Unity plugin, you can easily sign in to Xbox Live in your Unity project. You can use the included prefab, or you can attach the included scripts to your own custom objects.
 
-> **Note:**
+> [!NOTE]
 > This topic assumes that you have already set up the Xbox Live plugin in your Unity project. For information about how to do that, see [Configure Xbox Live in Unity](configure-xbox-live-in-unity.md).
 
 ## Using the prefab
