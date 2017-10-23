@@ -13,6 +13,9 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, unity, controller s
 
 # Add controller support to Xbox Live prefabs
 
+> [!IMPORTANT]
+> The Xbox Live Unity plugin does not support achievements or online multiplayer and is only recommended for [Xbox Live Creators Program](../developer-program-overview.md) members.
+
 All of the Xbox Live Unity Plugin Prefabs support specifying controller input in the inspector.
 
 For example, let's say you have a game object called `UserProfile1` which is based on the `UserProfile` prefab. If you would like to tie this game object to Player 1 and have them sign in with the `A` button on their Xbox Controller, simply write `joystick 1 button 0` in the `Input Controller Button` field in the inspector.

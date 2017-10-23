@@ -13,8 +13,8 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, configure
 
 # Configure Xbox Live in Unity
 
-> **Note:**
-> The Xbox Live Unity plugin is only recommended for [Xbox Live Creators Program](../developer-program-overview.md) members, since currently there is no support for achievements or multiplayer.
+> [!IMPORTANT]
+> The Xbox Live Unity plugin does not support achievements or online multiplayer and is only recommended for [Xbox Live Creators Program](../developer-program-overview.md) members.
 
 With the Xbox Live Unity plugin, adding Xbox Live support to a Unity game is easy, giving you more time to focus on using Xbox Live in ways that best suit your title.
 
@@ -33,7 +33,7 @@ You will need the following to configure Xbox Live in Unity:
 * [Visual Studio 2015](https://www.visualstudio.com/) or later
   * Any version of Visual Studio should work for this including Community Edition.
   * Make sure to select everything under **Universal Windows App Development Tools** when installing.  You can modify the installation to include these features for an existing installation as well.
-* [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk) 
+* [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)
 
 ## Import the Unity plugin
 
@@ -75,7 +75,7 @@ To actually enable Xbox Live in your Unity project, you'll need to follow these 
 
     ![Xbox Live: Enable Xbox Live](../images/unity/enable-xbox-live.PNG)
 
-    > **Note:**
+    > [!NOTE]
     > Your device must be in developer mode to call Xbox Live services. After you have enabled Xbox Live, you can switch to developer mode by selecting **Switch to Developer Mode**.
 
 3. In the **Associate Your Game with the Windows Store** dialog, click **Next**, and then sign in with your Dev Center account.

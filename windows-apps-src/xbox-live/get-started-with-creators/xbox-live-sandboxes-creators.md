@@ -123,7 +123,8 @@ Non-sandboxed data is predominantly social information.  So for example if a use
 ### Examples
 Some examples will be provided below to help illustrate some of the benefits of why you might want to use multiple sandboxes.
 
-> **Note**: If you are in the Xbox Creators Program, you may only have one sandbox.  If you have need to create multiple sandboxes, please apply to the ID@Xbox program.
+> [!NOTE] 
+> If you are in the Xbox Creators Program, you may only have one sandbox.  If you have need to create multiple sandboxes, please apply to the ID@Xbox program.
 
 #### Service config isolation
 As mentioned above, service configuration is sandbox specific.  So you might have a *Development* sandbox, and a *Testing* sandbox.  When you give a build of your title to your testers, you would publish your [service configuration](../xbox-live-service-configuration.md) to the *Testing* sandbox.

@@ -30,7 +30,6 @@ A button gives the user a way to trigger an immediate action.
 A button lets the user initiate an immediate action, such as submitting a form.
 
 Don't use a button when the action is to navigate to another page; use a link instead. See [Hyperlinks](hyperlinks.md) for more info.
-
 > Exception: For wizard navigation, use buttons labeled "Back" and "Next". For other types of backwards navigation or navigation to an upper level, use a back button.
 
 ## Example
@@ -85,14 +84,38 @@ When you tap a Button with a finger or stylus, or press a left mouse button whil
 
 You generally can't handle low-level [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events on a Button because it has the Click behavior instead. For more info, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
 
-You can change how a button raises the Click event by changing the [ClickMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) property. The default ClickMode value is **Release**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch.
+You can change how a button raises the Click event by changing the [ClickMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.clickmode) property. The default ClickMode value is **Release**, but you also can set a button's ClickMode to **Hover** or **Press**. If ClickMode is **Hover**, the Click event can't be raised with the keyboard or touch.
 
 
 ### Button content
 
 Button is a [ContentControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Its XAML content property is [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), which enables a syntax like this for XAML: `<Button>A button's content</Button>`. You can set any object as the button's content. If the content is a [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), it is rendered in the button. If the content is another type of object, its string representation is shown in the button.
 
-Here, a **StackPanel** that contains an image of an orange and text is set as the content of a button.
+A button's content is usually text. Here are design recommendations for buttons with text content:
+-   Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text content is a single word, a verb.
+-   Use the default font unless your brand guidelines tell you to use something different.
+-   For shorter text, avoid narrow command buttons by using a minimum button width of 120px.
+- For longer text, avoid wide command buttons by limiting text to a maximum length of 26 characters.
+-   If the button's text content is dynamic (i.e., it is [localized](../globalizing/globalizing-portal.md)), consider how the button will resize and what will happen to controls around it.
+
+<table>
+<tr>
+<td> <b>Need to fix:</b><br> Buttons with overflowing text. </td>
+<td> <img src="images/button-wraptext.png"/> </td>
+</tr>
+<tr>
+<td> <b>Option 1:</b><br> Increase button width, stack buttons, and wrap if text length is greater than 26 characters. </td>
+<td> <img src="images/button-wraptext1.png"> </td>
+</tr>
+<tr>
+<td> <b>Option 2:</b><br> Increase button height, and wrap text. </td>
+<td> <img src="images/button-wraptext2.png"> </td>
+</tr>
+</table>
+
+You can also customize visuals that make up the button's appearance. For example, you could replace the text with an icon, or use an icon plus text.
+
+Here, a **StackPanel** that contains an image and text is set as the content of a button.
 
 ```xaml
 <Button Click="Button_Click"
@@ -143,28 +166,13 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 ```
 
 ## Recommendations
-
 -   Make sure the purpose and state of a button are clear to the user.
--   Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text content is a single word, a verb.
--   When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order:
+-   When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:
 	-   OK/[Do it]/Yes
 	-   [Don't do it]/No
 	-   Cancel
-
-	(where [Do it] and [Don't do it] are specific responses to the main instruction.)
-
--   If the button's text content is dynamic, for example, it is localized, consider how the button will resize and what will happen to controls around it.
--   For command buttons with text content, use a minimum button width.
--   Avoid narrow, short, or tall command buttons with text content.
--   Use the default font unless your brand guidelines tell you to use something different.
--   For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
 -   Expose only one or two buttons to the user at a time, for example, Accept and Cancel. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
--   Use the default command button to indicate the most common or recommended action.
--   Consider customizing your buttons. A button's shape is rectangular by default, but you can customize the visuals that make up the button's appearance. A button's content is usually text—for example, Accept or Cancel—but you could replace the text with an icon, or use an icon plus text.
--   Make sure that as the user interacts with a button, the button changes state and appearance to provide feedback to the user. Normal, pressed, and disabled are examples of button states.
--   Trigger the button's action when the user taps or presses the button. Usually the action is triggered when the user releases the button, but you also can set a button's action to trigger when a finger first presses it.
--   Don't swap the default submit, reset, and button styles.
--   Don't put too much content inside a button. Make the content concise and easy to understand.
+-   For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](app-bars.md).
 
 ### Recommended single button layout
 
@@ -192,8 +200,7 @@ The back button is a system-provided UI element that enables backward navigation
 
 
 ## Related articles
-
-- [Radio buttons](radio-button.md)
-- [Toggle switches](toggles.md)
-- [Check boxes](checkbox.md)
 - [Button class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+- [Radio buttons](radio-button.md)
+- [Check boxes](checkbox.md)
+- [Toggle switches](toggles.md)
