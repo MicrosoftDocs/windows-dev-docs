@@ -18,7 +18,7 @@ MakePri.exe is a command line tool that you can use to create and dump PRI files
 
 ## MakePri.exe command-line options
 
-MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. For details of their use, see [MakePri.exe command-line options](makepri-exe-command-options).
+MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. For details of their use, see [MakePri.exe command-line options](makepri-exe-command-options.md).
 
 ## MakePri.exe configuration
 
@@ -54,7 +54,7 @@ When PRI files are built for other components, class libraries, assemblies, DLLs
 
 ## Related topics
 
-* [MakePri.exe command-line options](makepri-exe-command-options)
+* [MakePri.exe command-line options](makepri-exe-command-options.md)
 * [MakePri.exe configuration](https://msdn.microsoft.com/en-us/library/windows/apps/jj552946)
 * [MakePri.exe format-specific indexers](https://msdn.microsoft.com/en-us/library/windows/apps/jj552944)
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
