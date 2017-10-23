@@ -243,6 +243,7 @@
 ### [URI schemes](app-resources/uri-schemes.md)
 ### [Compile resources manually with MakePri.exe](app-resources/compile-resources-manually-with-makepri.md)
 ### [MakePri.exe command-line options](app-resources/makepri-exe-command-options.md)
+### [MakePri.exe configuration file](app-resources/makepri-exe-configuration.md)
 ## [App-to-app communication](app-to-app/index.md)
 ### [Share data](app-to-app/share-data.md)
 ### [Receive data](app-to-app/receive-data.md)

@@ -28,6 +28,7 @@ This section shows you how to author, package, and consume your app's string, im
 | [URI schemes](uri-schemes.md) | There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw). |
 | [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md) | MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system. |
 | [MakePri.exe command-line options](makepri-exe-command-options.md) | MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. This topic details the command-line options for their use. |
+| [MakePri.exe configuration file](makepri-exe-configuration.md) | This topic describes the schema of the MakePri.exe XML configuration file. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 
