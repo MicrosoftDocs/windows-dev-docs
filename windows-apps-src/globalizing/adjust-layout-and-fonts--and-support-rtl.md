@@ -59,7 +59,7 @@ If your app has images that must be mirrored (that is, the same image can be fli
 ```
 
 
-If your app requires a different image to flip the image correctly, you can use the resource management system with the LayoutDirection qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md)). The system chooses an image named file.layoutdir-rtl.png when the [application language](manage-language-and-region.md) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
+If your app requires a different image to flip the image correctly, you can use the resource management system with the LayoutDirection qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md)). The system chooses an image named file.layoutdir-rtl.png when the [application language](manage-language-and-region.md) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Fonts
 
@@ -111,4 +111,5 @@ C++:
 
 
 ## Related topics
-[FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
+* [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
+* [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md)

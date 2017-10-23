@@ -65,7 +65,7 @@ The file whose name contains the qualifier most appropriate for the setting is t
 
 ## Reference a string or image resource by name
 
-See [Refer to a string resource identifier from XAML markup](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](put-ui-strings-into-resources.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image or other asset from XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+See [Refer to a string resource identifier from XAML markup](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-xaml-markup), [Refer to a string resource identifier from code](localize-strings-ui-manifest.md#refer-to-a-string-resource-identifier-from-code), and [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ## Actual and neutral qualifier matches
 You don’t need to provide a resource file for *every* qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.
@@ -187,7 +187,7 @@ You can also use a devicefamily qualifier to name a Resources File (`.resw`), or
 </data>
 ```
 
-For more on using a Resources File, see [Localize your UI strings](put-ui-strings-into-resources.md).
+For more on using a Resources File, see [Localize your UI strings](localize-strings-ui-manifest.md).
 
 ## DXFeatureLevel
 
@@ -224,11 +224,11 @@ Instead of naming folders, you can use `language` qualifiers to name the Resourc
 \Strings\Resources.language-ja.resw
 ```
 
-See [Localize your UI strings](put-ui-strings-into-resources.md) for more information on making your app localizable by using string resources, and how to reference a string resource in your app.
+See [Localize your UI strings](localize-strings-ui-manifest.md) for more information on making your app localizable by using string resources, and how to reference a string resource in your app.
 
 ## LayoutDirection
 
-A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
+A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
 
 ## Scale
 
@@ -250,7 +250,7 @@ And this example sets it at the file level.
 \Assets\Images\logo.scale-400.png
 ```
 
-For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](image-qualifiers-loc-scale-accessibility.md#qualify-an-image-resource-for-targetsize).
+For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize).
 
 ## TargetSize
 
@@ -258,7 +258,7 @@ The `targetsize` qualifier is primarily used to specify [file type association i
 
 You can define assets that represent several sizes of `targetsize` qualifier value for the App Icon (`/Assets/Square44x44Logo.png`) in the Visual Assets tab of the app package manifest designer.
 
-For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](image-qualifiers-loc-scale-accessibility.md#qualify-an-image-resource-for-targetsize).
+For info about qualifying a resource for both `scale` and `targetsize`, see [Qualify an image resource for targetsize](images-tailored-for-scale-theme-contrast.md#qualify-an-image-resource-for-targetsize).
 
 ## Theme
 
@@ -271,8 +271,8 @@ The `theme` qualifier is used to provide resources that best match the default a
 * [How to prepare for localization](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Writing code](../get-started/universal-application-platform-guide.md#writing-code)
-* [Localize your UI strings](put-ui-strings-into-resources.md)
+* [Localize your UI strings](localize-strings-ui-manifest.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [United Nations Statistic Division M49 composition of region codes](http://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)
+* [Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)
