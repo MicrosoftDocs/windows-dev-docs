@@ -1,20 +1,20 @@
 ---
 author: stevewhims
-Description: MakePri.exe is a command-line tool that you can use to create and dump Package Resource Index (PRI) files. A PRI file is an index of app resources, such as strings and image files. This topic lists the command options for MakePri.exe.
-title: MakePri.exe command options
+Description: MakePri.exe has the set of commands createconfig, dump, new, resourcepack, and versioned. This topic details their use.
+title: MakePri.exe command-line options
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ---
-
-# MakePri.exe command options
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-MakePri.exe is a command-line tool that you can use to create and dump Package Resource Index (PRI) files. A PRI file is an index of app resources, such as strings and image files. This topic lists the command options for MakePri.exe.
+# MakePri.exe command-line options
+
+[MakePri.exe](compile-resources-manually-with-makepri.md) has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. This topic details the command-line options for their use.
 
 ## MakePri commands
 
@@ -356,3 +356,7 @@ Help:
 -----
     /Help(h, ?)        : Display the usage help text
 ```
+
+## Related topics
+
+* [MakePri.exe](compile-resources-manually-with-makepri.md)

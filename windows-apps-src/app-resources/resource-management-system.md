@@ -16,15 +16,6 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 
 The Resource Management System has both build-time and run-time features. At build time, the system creates an index of all the different variants of the resources that are packaged up with your app. This index is the Package Resource Index, or PRI, and it's also included in your app's package. At run-time, the system detects the user and machine settings that are in effect, consults the information in the PRI, and automatically loads the resources that are the best match for those settings.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ResourceLoader**](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)</li>
-<li>[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)</li>
-<li>[**ResourceContext**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext?branch=live)</li>
-</ul>
-</div>
-
 ## Package Resource Index (PRI) file
 
 Every app package should contain a binary index of the resources in the app. This index is created at build time and it is contained in one or more Package Resource Index (PRI) files.
@@ -32,7 +23,7 @@ Every app package should contain a binary index of the resources in the app. Thi
 - A PRI file contains actual string resources, and an indexed set of file paths that refer to various files in the package.
 - A package typically contains a single PRI file per language, named resources.pri.
 - The resources.pri file at the root of each package is automatically loaded when the [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) is instantiated.
-- PRI files can be created and dumped with the tool MakePRI.exe.
+- PRI files can be created and dumped with the tool [MakePRI.exe](compile-resources-manually-with-makepri.md).
 - For typical app development you won't need MakePRI.exe because it's already integrated into the Visual Studio compile workflow. And Visual Studio supports editing PRI files in a dedicated UI. However, your localizers and the tools they use might rely upon MakePRI.exe.
 - Each PRI file contains a named collection of resources, referred to as a resource map. When a PRI file from a package is loaded, the resource map name is verified to match the package identity name.
 - PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only as the resource format for Windows. They replace resources contained within DLLs in the Win32 app model.
@@ -71,6 +62,12 @@ The [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) APIs tra
 ### ResourceContext
 
 Resource candidates are chosen based on a particular [**ResourceContext**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext?branch=live), which is a collection of resource qualifier values (language, scale, contrast, and so on). A default context uses the app's current configuration for each qualifier value, unless overridden. For example, resources such as images can be qualified for scale, which varies from one monitor to another and hence from one application view to another. For this reason, each application view has a distinct default context. The default context for a given view can be obtained using [**ResourceContext.GetForCurrentView**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext.md#Windows_ApplicationModel_Resources_Core_ResourceContext_GetForCurrentView). Whenever you retrieve a resource candidate, you should pass in a **ResourceContext** instance to obtain the most appropriate value for a given view.
+
+## Important APIs
+
+* [ResourceLoader](/uwp/api/windows.applicationmodel.resources.resourceloader?branch=live)
+* [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)
+* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## Related topics
 
