@@ -10,25 +10,17 @@ ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # Localize strings in your UI and app package manifest
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ApplicationModel.Resources.ResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br206014)</li>
-<li>[**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)</li>
-</ul>
-</div>
-
 Hardcoded string literals can appear in imperative code or in XAML markup, for example as the **Text** property of a **TextBlock**. They can also appear in your app package manifest (the `Package.appxmanifest` file), for example as the value for Display name on the Application tab of the Visual Studio Manifest Designer. Move these strings into a Resources File (.resw), and replace the hardcoded string literals in your app and in your manifest with references to resource identifiers.
 
-Unlike image resources, where only one image resource is contained in an image resource file, *multiple* string resources are contained in a string resource file. A string resource file is a Resources File (.resw), and you typically create this kind of resource file in a \Strings folder in your project. For background on how to use qualifiers in the names of your Resources Files (.resw), see [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md).
+Unlike image resources, where only one image resource is contained in an image resource file, *multiple* string resources are contained in a string resource file. A string resource file is a Resources File (.resw), and you typically create this kind of resource file in a \Strings folder in your project. For background on how to use qualifiers in the names of your Resources Files (.resw), see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
 ## Create a Resources File (.resw) and put your strings in it
 
@@ -110,7 +102,7 @@ You can use this same code from within a Class Library (Universal Windows) or a 
 
 1. Make a copy of your Resources File (.resw) for another language.
     1. Under "Strings", create a new sub-folder and name it "de-DE" for Deutsch (Deutschland).
-   <br>**Note** For the folder name, you can use any [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). See [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md) for details on the language qualifier and a list of common language tags.
+   <br>**Note** For the folder name, you can use any [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). See [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md) for details on the language qualifier and a list of common language tags.
    2. Make a copy of `Strings/en-US/Resources.resw` in the `Strings/de-DE` folder.
 2. Translate the strings.
     1. Open `Strings/de-DE/Resources.resw` and translate the values in the Value column. You don't need to translate the comments.
@@ -240,6 +232,10 @@ private void RefreshUIText()
 }
 ```
 
+## Important APIs
+
+* [ApplicationModel.Resources.ResourceLoader](https://msdn.microsoft.com/library/windows/apps/br206014)
+
 ## Related topics
 
 * [Porting XAML and UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)
@@ -247,5 +243,5 @@ private void RefreshUIText()
 * [attached properties](../xaml-platform/attached-properties-overview.md)
 * [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Tailor your resources for language, scale, and other qualifiers](how-to-name-resources-by-using-qualifiers.md)
+* [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
 * [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

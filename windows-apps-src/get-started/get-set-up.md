@@ -50,7 +50,7 @@ If you have already started using Visual Studio, but discover you are missing so
 
 ## 3. Enable your device for development
 
-It’s important to test your UWP apps on a real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
+It’s important to test your UWP apps on real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
 
 -   For detailed instructions, see [Enable your device for development](enable-your-device-for-development.md).
 

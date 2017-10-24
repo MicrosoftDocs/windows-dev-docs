@@ -16,6 +16,9 @@ You can programmatically pin your own app to the taskbar, just like you can [pin
 
 ![Taskbar](images/taskbar/taskbar.png)
 
+> [!IMPORTANT]
+> **Requires Fall Creators Update**: You must target SDK 16299 and be running build 16299 or higher to use the taskbar APIs.
+
 > **Important APIs**: [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
 
 

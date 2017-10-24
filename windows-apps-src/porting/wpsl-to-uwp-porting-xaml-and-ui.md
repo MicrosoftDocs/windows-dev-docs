@@ -241,7 +241,7 @@ The most straightforward way to port this to a UWP app is to use a [**BitmapIcon
 
 Here, winrt\_check.png is an alpha mask in the form of a bitmap just as wpsl\_check.png is, and it could very well be the same file. However, you may want to provide several different sizes of winrt\_check.png to be used for different scaling factors. For more info on that, and for an explanation of the changes to the **Width** and **Height** values, see [View or effective pixels, viewing distance, and scale factors](#view-or-effective-pixels-viewing-distance-and-scale-factors) in this topic.
 
-A more general approach, which is appropriate if there are differences between the light and dark theme form of a bitmap, is to use two image assets—one with a dark foreground (for light theme) and one with a light foreground (for dark theme). For further details about how to name this set of bitmap assets, see [Tailor your resources for language, scale, and other qualifiers](../globalizing/how-to-name-resources-by-using-qualifiers.md). Once a set of image files are correctly named, you can refer to them in the abstract, using their root name, like this:
+A more general approach, which is appropriate if there are differences between the light and dark theme form of a bitmap, is to use two image assets—one with a dark foreground (for light theme) and one with a light foreground (for dark theme). For further details about how to name this set of bitmap assets, see [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md). Once a set of image files are correctly named, you can refer to them in the abstract, using their root name, like this:
 
 ```xml
     <Image Source="Assets/winrt_check.png" Stretch="None"/>

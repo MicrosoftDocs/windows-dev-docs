@@ -222,7 +222,7 @@ namespace ImagingWin10
         private unsafe void CreateNewSoftwareBitmap()
         {
             //<SnippetCreateNewSoftwareBitmap>
-            softwareBitmap = new SoftwareBitmap(BitmapPixelFormat.Bgra8, 100, 100);
+            softwareBitmap = new SoftwareBitmap(BitmapPixelFormat.Bgra8, 100, 100, BitmapAlphaMode.Premultiplied);
 
             using (BitmapBuffer buffer = softwareBitmap.LockBuffer(BitmapBufferAccessMode.Write))
             {

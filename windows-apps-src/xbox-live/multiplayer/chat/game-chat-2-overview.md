@@ -3,7 +3,7 @@ title: Game Chat 2 overview
 author: KevinAsgari
 description: Learn how to add voice communication to your game by using Xbox Live Game Chat 2, an updated version of Game Chat.
 ms.author: tomco
-ms.date: 06/14/2017
+ms.date: 10/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -30,7 +30,7 @@ Game Chat 2 (GC2) allows you to easily add voice and text chat communication to 
 
 - `chat_manager::start/finish_processing_data_frames` - The pair of methods used to plug GC2 into the app's tranposrt layer. These methods are called by the app every network frame to retrieve and distribute `game_chat_data_frame` objects to instances of the app on remote devices, and then to free the associated resources when finished.
 
-- `chat_manager::process_incoming_data` - The method used to give data to GC2 that has been delivered over the app's transport layer frmo a remote instance of GC2.
+- `chat_manager::process_incoming_data` - The method used to give data to GC2 that has been delivered over the app's transport layer from a remote instance of GC2.
 
 The app informs the library of users on the local device and users on remote devices that are expected to chat together. The app then configures the relationships between each user.
 
