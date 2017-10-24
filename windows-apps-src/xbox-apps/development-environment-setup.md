@@ -14,104 +14,116 @@ ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 # Set up your UWP on Xbox development environment
 
 The Universal Windows Platform (UWP) on Xbox development environment consists of a development PC connected to an Xbox One console through a local network.
-The development PC requires Windows 10, Visual Studio 2015 Update 2, Windows 10 SDK preview build 14295, and a range of supporting tools.
+The development PC requires Windows 10, Visual Studio 2017 or Visual Studio 2015 Update 3, the Windows 10 SDK build 14393 or later, and a range of supporting tools.
 
 
 This article covers the steps to set up and test your development environment.
 
 ## Visual Studio setup
 
-1. Install Visual Studio 2015 Update 2 or later. For more information and to install, see [Downloads and tools for Windows 10](https://dev.windows.com/downloads).
+1. Install Visual Studio 2017 or Visual Studio 2015 Update 3. For more information and to install, see [Downloads and tools for Windows 10](https://dev.windows.com/downloads).
 
-1. When installing Visual Studio 2015 Update 2, ensure that the **Universal Windows App Development Tools** check box is selected.
+2. If you're installing Visual Studio 2017, make sure that you choose the **Universal Windows Platform development** workload. If you're a C++ developer, make sure that you also select the **C++ Universal Windows Platform tools** checkbox in the **Summary** pane on the right, under **Universal Windows Platform development**. It's not part of the default installation.
 
-  ![Install Visual Studio 2015 Update 2](images/vs_install_tools.png)
+    ![Install Visual Studio 2017](images/development-environment-setup-1.png)
+
+    If you're installing Visual Studio 2015 Update 3, ensure that the **Universal Windows App Development Tools** check box is selected.
+
+    ![Install Visual Studio 2015 Update 2](images/vs_install_tools.png)
 
 ## Windows 10 SDK setup
 
-Install the latest Windows 10 SDK preview build. For installation information, see [Download Insider Preview updates for developers](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+Install the latest Windows 10 SDK. This comes with your Visual Studio installation, but if you want to download it separately, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
-> [!IMPORTANT]
-> You need to install the latest SDK, but you do _not_ need to install the latest Windows Insider Preview release of the operating system.
+<!-- > [!IMPORTANT]
+> You need to install the latest SDK, but you do _not_ need to install the latest Windows Insider Preview release of the operating system. -->
 
 ## Enabling Developer Mode
 
-Before you can deploy applications from your development PC, you must enable Developer Mode through the Windows menu: Settings / Update & security / For developers / Developer mode.
+Before you can deploy apps from your development PC, you must enable Developer Mode. In the **Settings** app, navigate to **Update & Security** / **For developers**, and under **Use developer features**, select **Developer mode**.
 
 ## Setting up your Xbox One
 
 Before you can deploy an app to your Xbox One, you must have a user signed in on the console. 
 You can either use your existing Xbox Live account or create a new account for your console in Developer Mode. 
 
-## Create your first application
+## Create your first app
 
 1. Make sure your development PC is on the same local network as the target Xbox One console. Typically, this means they should use the same router and be on the same subnet. A wired network connection is recommended.
 
-1. Ensure that your Xbox One console is in Developer Mode.  For more information, see [Enabling Developer Mode on Xbox One](devkit-activation.md).
+2. Ensure that your Xbox One console is in Developer Mode.  For more information, see [Xbox One Developer Mode activation](devkit-activation.md).
 
-1. Decide the programming language that you want to use for your UWP app.
+3. Decide the programming language that you want to use for your UWP app.
 
-1. On your development PC, select **New Project**, and then select **Windows / Universal / Blank App**.
+4. On your development PC, in Visual Studio, select **New / Project**.
+
+5. In the **New Project** window, select **Windows Universal / Blank App (Universal Windows)**.
 
 ### Starting a C# project
 
-  ![New Project dialog](images/vs_universal_blank.jpg)
+  ![New Project dialog](images/development-environment-setup-2.png)
 
-1. Select the default options in the **New Universal Windows Project** dialog. If the **Developer Mode** dialog appears, click **OK**. A new blank app is created.
+1. In the **New Universal Windows Project** dialog, select build 14393 or later in the **Minimum Version** dropdown. Select the latest SDK in the **Target Version** dropdown. If the **Developer Mode** dialog appears, click **OK**. A new blank app is created.
 
-1. Configure your development environment for remote debugging:
+2. Configure your development environment for remote debugging:
 
-  1. Right-click the project, and then select **Properties**.
-  1. On the **Debug** tab, change **Platform** to **Active (x64)**. (x86 is no longer a supported platform on Xbox.)   
-  1. Change **Target device** to **Remote Machine**.
-  1. In **Remote machine**, enter the system IP address or hostname of the Xbox One console. For information about obtaining the IP address or hostname, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
-  1. In the **Authentication Mode** drop-down list, select **Universal (Unencrypted Protocol)**.
+    a. Right-click the project in the **Solution Explorer**, and then select **Properties**.
+
+    b. On the **Debug** tab, change **Platform** to **x64**. (x86 is no longer a supported platform on Xbox.)
+
+    c. Under **Start options**, change **Target device** to **Remote Machine**.
+
+    d. In **Remote machine**, enter the system IP address or hostname of the Xbox One console. For information about obtaining the IP address or hostname, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
+
+    e. In the **Authentication Mode** drop-down list, select **Universal (Unencrypted Protocol)**.
 
     ![C# BlankApp Property Pages](images/vs_remote.jpg)
 
 ### Starting a C++ project
 
-  ![C++ project](images/vs_universal_cpp_blank.jpg)
+  ![C++ project](images/development-environment-setup-3.png)
 
-1. Select the default options in the **New Universal Windows Project** dialog. If the **Developer Mode** dialog appears, click **OK**. A new blank app is created.
+1. In the **New Universal Windows Project** dialog, select build 14393 or later in the **Minimum Version** dropdown. Select the latest SDK in the **Target Version** dropdown. If the **Developer Mode** dialog appears, click **OK**. A new blank app is created.
 
-1. Configure your development environment for remote debugging:
+2. Configure your development environment for remote debugging:
 
-   1. Right-click the project, and then select **Properties**.
-   1. On the **Debugging** tab, change **Debugger to launch** to **Remote Machine**.
-   1. In **Machine Name**, enter the system IP address or hostname of the Xbox One console. For information about obtaining the IP address or hostname, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
-   1. In the **Authentication Type** drop-down list, select **Universal (Unencrypted Protocol)**.
+   a. Right-click the project in the **Solution Explorer**, and then select **Properties**.
 
-    ![C++ BlankApp Property Pages](images/vs_remote_cpp.jpg)
+   b. On the **Debugging** tab, change **Debugger to launch** to **Remote Machine**.
 
-### Pin-pair your device with Visual Studio
+   c. In **Machine Name**, enter the system IP address or hostname of the Xbox One console. For information about obtaining the IP address or hostname, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
+
+   d. In the **Authentication Type** drop-down list, select **Universal (Unencrypted Protocol)**.
+
+   e. In the **Platform** drop-down, select **x64**.
+
+    ![C++ BlankApp Property Pages](images/development-environment-setup-4.png)
+
+### PIN-pair your device with Visual Studio
 
 1. Save your settings, and make sure your Xbox One console is in Developer Mode.
 
-1. Press F5.
+2. With your project open in Visual Studio, press F5.
 
-1. If this is your first deployment, you will get a dialog from Visual Studio asking to PIN-pair your device.
+3. If this is your first deployment, you will get a dialog from Visual Studio asking to PIN-pair your device.
 
-  1. To obtain a PIN, open **Dev Home** from the Home screen on your Xbox One console.
-  1. Select **Pair with Visual Studio**.
+    a. To obtain a PIN, open **Dev Home** from the Home screen on your Xbox One console.
 
-    ![Pair with Visual Studio dialog](images/devhome_visualstudio.png)
+    b. On the **Home** tab, under **Quick actions**, select **Show Visual Studio pin**.
+  
+    ![Pair with Visual Studio dialog](images/development-environment-setup-5.png)
 
-  1. Enter your PIN into the **Pair with Visual Studio** dialog. The following PIN is just an example; yours will differ.
+    c. Enter your PIN into the **Pair with Visual Studio** dialog. The following PIN is just an example; yours will differ.
 
     ![Pair with Visual Studio PIN dialog](images/devhome_pin.png)
 
-  1. Deployment errors, if any, will appear in the **Output** window.
+    d. Deployment errors, if any, will appear in the **Output** window.
 
 Congratulations, you've successfully created and deployed your first UWP app on Xbox!
 
-
-
 ## See also
-- [Enabling Developer Mode on Xbox One](devkit-activation.md)  
+- [Xbox One Developer Mode activation](devkit-activation.md)  
 - [Downloads and tools for Windows 10](https://dev.windows.com/downloads)  
-- [Download Insider Preview updates for developers](http://go.microsoft.com/fwlink/?LinkId=780552)  
+- [Windows Insider Program](http://go.microsoft.com/fwlink/?LinkId=780552)  
 - [Introduction to Xbox One tools](introduction-to-xbox-tools.md) 
 - [UWP on Xbox One](index.md)
-
-----

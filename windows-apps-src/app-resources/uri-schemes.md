@@ -8,11 +8,11 @@ ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # URI schemes
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw). You can use these URI schemes in your code, in your XAML markup, in your app package manifest, or in your tile and toast notification templates.
 
@@ -44,7 +44,7 @@ For all the URI schemes described in this topic, *scheme*, *authority*, and *pat
 
 ## ms-appx and ms-appx-web
 
-Use the `ms-appx` or the `ms-appx-web` URI scheme to refer to a file that comes from your app's package (see [Packaging apps](../packaging/index.md)). Files in your app package are typically static images, data, code, and layout files. The `ms-appx-web` scheme accesses the same files as `ms-appx`, but in the web compartment. For examples and more info, see [Reference an image or other asset from XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
+Use the `ms-appx` or the `ms-appx-web` URI scheme to refer to a file that comes from your app's package (see [Packaging apps](../packaging/index.md)). Files in your app package are typically static images, data, code, and layout files. The `ms-appx-web` scheme accesses the same files as `ms-appx`, but in the web compartment. For examples and more info, see [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code).
 
 ### Scheme name (ms-appx and ms-appx-web)
 
@@ -207,7 +207,7 @@ Query parameters are ignored during retrieval of resources. The normalized form 
 
 ## ms-resource
 
-Use the `ms-resource` URI scheme to refer to to refer to strings loaded from your app's Resources Files (.resw). For examples and more info about Resources Files, see [Localize strings in your UI and app package manifest](put-ui-strings-into-resources.md).
+Use the `ms-resource` URI scheme to refer to to refer to strings loaded from your app's Resources Files (.resw). For examples and more info about Resources Files, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md).
 
 ### Scheme name (ms-resource)
 
@@ -249,7 +249,7 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 The path identifies the hierarchical location of the [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) subtree (see [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947)) and the [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResourcebranch=live) within it. Typically, this corresponds to the filename (excluding extension) of a Resources Files (.resw) and the identifier of a string resource within it.
 
-For examples and more info, see [Localize strings in your UI and app package manifest](put-ui-strings-into-resources.md) and [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md).
+For examples and more info, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md) and [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md).
 
 The path component of `ms-resource` is, like generic URIs, case sensitive. However, when the underlying retrieval.does a [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628) with *ignoreCase* set to `true`.
 
@@ -269,8 +269,8 @@ Developers of particular components layered above this URI parsing may choose to
 
 * [Uniform Resource Identifier (URI): Generic Syntax](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Packaging apps](../packaging/index.md)
-* [Reference an image or other asset from XAML markup and code](image-qualifiers-loc-scale-accessibility.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [Store and retrieve settings and other app data](../app-settings/store-and-retrieve-app-data.md)
-* [Localize strings in your UI and app package manifest](put-ui-strings-into-resources.md)
+* [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
 * [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md)
