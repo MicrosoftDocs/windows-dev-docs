@@ -22,7 +22,7 @@ MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack
 
 ## MakePri.exe configuration
 
-The PRI XML configuration file dictates how and what resources are indexed. The schema of the configuration XML is described in [MakePri.exe configuration](https://msdn.microsoft.com/en-us/library/windows/apps/jj552946).
+The PRI XML configuration file dictates how and what resources are indexed. The schema of the configuration XML is described in [MakePri.exe configuration](makepri-exe-configuration.md).
 
 ## Format-specific indexers
 
@@ -55,6 +55,6 @@ When PRI files are built for other components, class libraries, assemblies, DLLs
 ## Related topics
 
 * [MakePri.exe command-line options](makepri-exe-command-options.md)
-* [MakePri.exe configuration](https://msdn.microsoft.com/en-us/library/windows/apps/jj552946)
+* [MakePri.exe configuration](makepri-exe-configuration.md)
 * [MakePri.exe format-specific indexers](https://msdn.microsoft.com/en-us/library/windows/apps/jj552944)
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
