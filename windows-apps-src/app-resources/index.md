@@ -29,6 +29,7 @@ This section shows you how to author, package, and consume your app's string, im
 | [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md) | MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system. |
 | [MakePri.exe command-line options](makepri-exe-command-options.md) | MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. This topic details the command-line options for their use. |
 | [MakePri.exe configuration file](makepri-exe-configuration.md) | This topic describes the schema of the MakePri.exe XML configuration file. |
+| [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md) | This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 

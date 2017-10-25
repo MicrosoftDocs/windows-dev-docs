@@ -22,11 +22,11 @@ MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack
 
 ## MakePri.exe configuration
 
-The PRI XML configuration file dictates how and what resources are indexed. The schema of the configuration XML is described in [MakePri.exe configuration](https://msdn.microsoft.com/en-us/library/windows/apps/jj552946).
+The PRI XML configuration file dictates how and what resources are indexed. The schema of the configuration XML is described in [MakePri.exe configuration](makepri-exe-configuration.md).
 
 ## Format-specific indexers
 
-MakePri.exe is typically used with the `new`, `versioned`, and `resourcepack` options. In those cases it indexes source files to generate an index of resources. MakePri.exe uses various individual indexers to read different source resource files or containers for resources. The simplest indexer is the folder indexer, which indexes the contents of a folder for resources such as .jpg or .png images. For more info, see [MakePri.exe format-specific indexers](https://msdn.microsoft.com/en-us/library/windows/apps/jj552944).
+MakePri.exe is typically used with the `new`, `versioned`, and `resourcepack` options. In those cases it indexes source files to generate an index of resources. MakePri.exe uses various individual indexers to read different source resource files or containers for resources. The simplest indexer is the folder indexer, which indexes the contents of a folder for resources such as `.jpg` or `.png` images. For more info, see [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md).
 
 ## MakePri.exe warnings and error messages
 
@@ -46,7 +46,7 @@ The warning above is displayed when MakePri.exe or MSBuild discovers files or re
 
 Build systems should use the MakePri.exe `new`, `versioned`, or `resourcepack` command, depending on the type of project being built. Build systems that create a fresh PRI file should use the `new` command. Build systems that must ensure compatibility of internal offsets through iterations can use the `versioned` command. Build systems that must create a PRI file that contains additional variants of resources, with validation to ensure that no new resources are added for that variant, should use the `resourcepack` command.
 
-Build systems that require explicit control over source files that get indexed can use the ResFiles indexer instead of indexing a folder. Build systems can also use multiple index passes with different [format-specific indexers](https://msdn.microsoft.com/en-us/library/windows/apps/jj552944) to generate a single PRI file.
+Build systems that require explicit control over source files that get indexed can use the ResFiles indexer instead of indexing a folder. Build systems can also use multiple index passes with different [format-specific indexers](makepri-exe-format-specific-indexers.md) to generate a single PRI file.
 
 Build systems can also use the PRI format-specific indexer to add pre-built PRI files into the PRI for the package from other components, such as class libraries, assemblies, SDKs, and DLLs.
 
@@ -55,6 +55,6 @@ When PRI files are built for other components, class libraries, assemblies, DLLs
 ## Related topics
 
 * [MakePri.exe command-line options](makepri-exe-command-options.md)
-* [MakePri.exe configuration](https://msdn.microsoft.com/en-us/library/windows/apps/jj552946)
-* [MakePri.exe format-specific indexers](https://msdn.microsoft.com/en-us/library/windows/apps/jj552944)
+* [MakePri.exe configuration](makepri-exe-configuration.md)
+* [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md)
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)

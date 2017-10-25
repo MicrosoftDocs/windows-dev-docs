@@ -244,6 +244,7 @@
 ### [Compile resources manually with MakePri.exe](app-resources/compile-resources-manually-with-makepri.md)
 ### [MakePri.exe command-line options](app-resources/makepri-exe-command-options.md)
 ### [MakePri.exe configuration file](app-resources/makepri-exe-configuration.md)
+### [MakePri.exe format-specific indexers](app-resources/makepri-exe-format-specific-indexers.md)
 ## [App-to-app communication](app-to-app/index.md)
 ### [Share data](app-to-app/share-data.md)
 ### [Receive data](app-to-app/receive-data.md)

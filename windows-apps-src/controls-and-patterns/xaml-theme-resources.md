@@ -342,13 +342,12 @@ It looks like this:
 
 **TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-This [Style](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [Symbol](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [Height](https://msdn.microsoft.com/library/windows/apps/br208718), [Width](https://msdn.microsoft.com/library/windows/apps/br208751), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852).
+This [Style](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [Height](https://msdn.microsoft.com/library/windows/apps/br208718), [Width](https://msdn.microsoft.com/library/windows/apps/br208751), [FontSize](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [BasedOn](https://msdn.microsoft.com/library/windows/apps/br208852).
 
 Here's a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
-        Click="Button_Click"/>
+<Button Style="{StaticResource NavigationBackButtonNormalStyle}" />
 ```
 
 It looks like this:
@@ -359,13 +358,12 @@ It looks like this:
 
 **TargetType**: [Button](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-This [Style](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
+This [Style](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 x 30 pixels.
 
 Here's a [Button](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
-        Click="Button_Click"/>
+<Button Style="{StaticResource NavigationBackButtonSmallStyle}" />
 ```
 
 ## Troubleshooting theme resources
