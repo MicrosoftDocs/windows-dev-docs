@@ -32,6 +32,7 @@ First, in your app's Resources File (.resw), add a property identifier with the 
 
 Then, use an **x:Uid** to associate your main **Page** element with this property identifier.
 
+**XAML**
 ```xml
 <Page x:Uid="MainPage">
 ```
@@ -40,7 +41,8 @@ For more info about Resources Files (.resw), property identifiers, and **x:Uid**
 
 You should avoid setting absolute layout values on any UI element based on language. But if it's absolutely unavoidable, then you can create a property identifier of the form "TitleText.Width".
 
-```XML
+**XAML**
+```xml
 <TextBlock x:Uid="TitleText">
 ```
 
@@ -48,6 +50,7 @@ You should avoid setting absolute layout values on any UI element based on langu
 
 If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, you can use **FlowDirection**.
 
+**XAML**
 ```xml
 <!-- en-US\localized.xaml -->
 <Image ... FlowDirection="LeftToRight" />

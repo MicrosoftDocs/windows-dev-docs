@@ -20,6 +20,8 @@ Control how Windows selects UI resources and formats the UI elements of the app,
 
 ## Introduction
 
+For more info, see [App resources and the Resource Management System](../app-resources/index.md).
+
 For a sample app that demonstrates how to manage language and region settings, see [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
 
 A Windows user doesn't need to choose just one language from a limited set of languages. Instead, the user can tell Windows that they speak any language in the world, even if Windows itself isn't translated into that language. The user can even specify that they can speak multiple languages.
@@ -28,7 +30,7 @@ A Windows user can specify their location, which can be anywhere in the world. A
 
 A Windows user can run apps in a completely different language than Windows. For example, the user can run an app in Spanish while Windows is running in English.
 
-For Windows Store apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the Windows Runtime, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
+For UWP apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the UWP, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
 
 See [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969) for a list of the language tags specifically supported by the Windows Store.
 

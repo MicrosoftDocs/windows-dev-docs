@@ -20,6 +20,8 @@ Prepare your app for localization to other markets, languages, or regions. Befor
 
 ## Use resource files and qualifiers
 
+For more info, see [App resources and the Resource Management System](../app-resources/index.md).
+
 Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](../app-resources/localize-strings-ui-manifest.md).
 
 Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md).

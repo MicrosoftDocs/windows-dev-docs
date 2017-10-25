@@ -58,7 +58,6 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Manage language and region](manage-language-and-region.md) | Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows. |
 | [Prepare your app for localization](prepare-your-app-for-localization.md) | Prepare your app for localization to other markets, languages, or regions. |
 | [Use global-ready formats](use-global-ready-formats.md) | Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. |
-| [Migrating legacy resources to the Windows 10 resource management platform](using-mrt-for-converted-desktop-apps-and-games.md) | This whitepaper describes techniques for migrating .NET and Win32 apps from legacy Win32 resources to MRT resources when packaged as AppX packages. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 

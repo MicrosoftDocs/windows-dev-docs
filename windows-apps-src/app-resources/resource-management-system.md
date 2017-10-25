@@ -46,6 +46,7 @@ Resources available to an app are stored in hierarchical collections, which you 
 
 Here's an example.
 
+**C#**
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
 ResourceMap resourceMap =  ResourceManager.Current.MainResourceMap.GetSubtree("Resources");

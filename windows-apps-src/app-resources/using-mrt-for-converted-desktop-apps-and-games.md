@@ -1,7 +1,7 @@
 ﻿---
 author: ptorr-msft
 title: Using MRT for Converted Desktop Apps and Games
-description: This whitepaper describes techniques for migrating .NET and Win32 apps from legacy Win32 resources to MRT resources when packaged as AppX packages.
+description: By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
@@ -9,12 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# Migrating legacy resources to the Windows 10 resource management platform
+# Use the Windows 10 Resource Management System in a legacy app or game
 
 ## Overview
 
-Win32 applications are often localized into different languages to expand their total addressable market. See [Globalization and localization](globalizing-portal.md).
+.NET and Win32 apps and games are often localized into different languages to expand their total addressable market. For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md). By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques.
 
 There are many ways to localize a traditional Win32 application, 
 but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
@@ -29,7 +30,7 @@ both UWP applications and Win32 applications processed by the Desktop Bridge (ak
 
 In many situations, you can continue to use your existing localization formats and source code whilst integrating with MRT for resolving resources at runtime and minimizing download 
 sizes - it's not an all-or-nothing approach. The following table summarizes the work and estimated cost/benefit of each stage. This table doesn't include non-localization tasks, such as providing high-resolution or high-contrast application icons. For more info about providing multiple 
-assets for tiles, icons, etc., See [Tailor your resources for language, scale, high contrast, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md).
+assets for tiles, icons, etc., See [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
 <table>
 <tr>
@@ -905,3 +906,7 @@ packages. The final step is to sign the file so that Windows will install it:
 
 This will produce a signed `.appxbundle` file that contains the main package plus all the language-specific resource packages. It can be double-clicked just like a package file to 
 install the app plus any appropriate language(s) based on the user's Windows language preferences.
+
+## Related topics
+
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md)
