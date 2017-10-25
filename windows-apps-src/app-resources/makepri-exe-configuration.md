@@ -98,7 +98,7 @@ The PRI config file controls what resources are indexed, and how. The configurat
 ```
 
 - The `default` element specifies the context (language, scale, contrast, etc.) that should be used to resolve resources when the runtime context does not match any resource candidates. Because this context is specified at build time and does not change, resources are resolved to this context as qualifiers are created. The matched score is stored at build time. Every qualifier must have some value specified. See [ResourceContext](resource-management-system.md#resourcecontext) for details on how resources are chosen.
-- The `index` element defines discrete indexing passes that are done over the assets. Each indexing pass determines the format-specific indexers to use, and which resources to index.
+- The `index` element defines discrete indexing passes that are done over the assets. Each indexing pass determines the [format-specific indexers](makepri-exe-format-specific-indexers.md) to use, and which resources to index.
 - The `qualifiers` element sets the initial qualifiers for the first file or folder that other resources inherit. Each qualifier element must have a valid name and value (see [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md)).
 - The `root` attribute is the path root of the physical file for the index pass. It can be relative or absolute. If relative, it is appended to the project root that you provide in the command line. If absolute, it is directly used as the index pass root. Back or forward slashes are acceptable. Trailing slashes are trimmed. The root of the index pass determines the folder to which all resources are considered relative.
 - The `startIndexAt` attribute is the initial seed file or folder used in indexing. It is relative to the index pass root. An empty value assumes the index pass root folder.
@@ -200,9 +200,9 @@ This attribute sets a flag in the PRI file that causes
 - Deployment merge to identify that this PRI file can merge.
 - GetFullyQualifiedReference to return an error in case this flag is set and the resource manager has been initialized with a file.
 
-The default value of this attribute is `true`. MakePri.exe only sets the flag in PRI if you target Windows 10 (or Windows 8.1). If you supply this attribute with a config that targets Windows 8, then MakePri.exe ignores it with no error or warning.
+The default value of this attribute is `true`. MakePri.exe only sets the flag in PRI if you target Windows 10.
 
-We recommend that you omit `isDeploymentMergeable` (or set it explicitly to `true`) for resource pack creation if you target Windows 10 (or Windows 8.1).
+We recommend that you omit `isDeploymentMergeable` (or set it explicitly to `true`) for resource pack creation if you target Windows 10.
 
 MakePri.exe adds the value of `isDeploymentMergeable` to the dump file if `makepri dump` is run with the `/dt detailed` option.
 
