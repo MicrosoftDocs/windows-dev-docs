@@ -51,7 +51,7 @@ Here are the primary form factors with the back button UI:
         <td style="vertical-align:top;">![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
         <td style="vertical-align:top;">
 <ul>
-<li>Always present in Tablet mode. Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
+<li>Always present in Tablet mode. Not available in Desktop mode. Title bar back button can be enabled, instead. 
 Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 <li> A software button in the navigation bar at the bottom of the device.</li>
 <li>Global back navigation within the app and between apps.</li></ul>        
@@ -62,7 +62,7 @@ Users can switch between running in Tablet mode and Desktop mode by going to **S
         <td style="vertical-align:top;">![system back on a pc or laptop](images/back-systemback-pc.png)</td>
         <td style="vertical-align:top;">
 <ul>
-<li>Optional in Desktop mode. Not available in Tablet mode. See [Tablet](#Tablet). 
+<li>Optional in Desktop mode. Not available in Tablet mode.
 Disabled by default. Must opt in to enable it.
 Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 <li>A software button in the title bar of the app.</li>

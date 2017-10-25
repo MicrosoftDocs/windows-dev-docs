@@ -93,7 +93,7 @@ Marker interface for toast child elements that include text, images, groups, and
 | [AdaptiveText](#adaptivetext) |
 | [AdaptiveImage](#adaptiveimage) |
 | [AdaptiveGroup](#adaptivegroup) |
-| [AdaptiveProgressBar](#adaptiveprogressbar) |
+| AdaptiveProgressBar |
 
 
 ## AdaptiveText
