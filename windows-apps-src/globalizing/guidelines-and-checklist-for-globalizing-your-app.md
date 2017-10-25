@@ -13,24 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
-
-# Globalization and localization do's and don'ts
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
+# Globalization and localization do's and don'ts
+
 Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
-<li>[**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
-<li>[**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
-<li>[**Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
-<li>[**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)</li>
-</ul>
-</div>
-
-
 
 ## Globalization
 
@@ -106,8 +93,6 @@ Prepare your app to easily adapt to different markets by choosing globally appro
 </tbody>
 </table>
 
- 
-
 ## Localization
 
 <table>
@@ -178,17 +163,15 @@ Prepare your app to easily adapt to different markets by choosing globally appro
 </tbody>
 </table>
 
+## Important APIs
  
+* [Globalization](https://msdn.microsoft.com/library/windows/apps/br206813)
+* [Globalization.NumberFormatting](https://msdn.microsoft.com/library/windows/apps/br226136)
+* [Globalization.DateTimeFormatting](https://msdn.microsoft.com/library/windows/apps/br206859)
+* [Resources](https://msdn.microsoft.com/library/windows/apps/br206022)
+* [Resources.Core](https://msdn.microsoft.com/library/windows/apps/br225039)
 
-## Related articles
+## Samples
 
-
-**Samples**
 * [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=254478)
 * [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)
- 
-
- 
-
-
-

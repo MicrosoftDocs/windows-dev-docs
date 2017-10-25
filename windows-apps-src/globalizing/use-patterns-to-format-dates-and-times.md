@@ -12,10 +12,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # Use patterns to format dates and times
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.
 
@@ -28,9 +27,7 @@ Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.co
 </ul>
 </div>
 
-
 ## Introduction
-
 
 [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) provides various ways to properly format dates and times for languages and regions around the world. You can use standard formats for year, month, day, and so on, or you can use standard string templates, such as "longdate" or "month day".
 
@@ -38,10 +35,7 @@ But when you want more control over the order and format of the constituents of 
 
 **Note**  This is an overview of format patterns. For a more complete discussion of format templates and format patterns see the Remarks section of the [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) class.
 
- 
-
 ## What you need to know
-
 
 It's important to note that when you use patterns, you are building a custom format that is not guaranteed to be valid across cultures. For example, consider the "month day" template:
 
@@ -117,7 +111,6 @@ To summarize the differences between the standard string templates and non-stand
 
 ## Tasks
 
-
 Suppose you wish to display the current month and day together with the current time, in a specific format. For example, you would like US English users to see something like this:
 
 ``` syntax
@@ -183,13 +176,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 ## Related topics
 
-
 * [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?LinkId=231618)
 * [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 * [**Windows.Foundation.DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
- 
-
- 
-
-
-

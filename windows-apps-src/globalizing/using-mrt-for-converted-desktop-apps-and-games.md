@@ -3,7 +3,7 @@ author: ptorr-msft
 title: Using MRT for Converted Desktop Apps and Games
 description: This whitepaper describes techniques for migrating .NET and Win32 apps from legacy Win32 resources to MRT resources when packaged as AppX packages.
 ms.author: ptorr
-ms.date: 03/09/2017
+ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,16 +12,14 @@ keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app c
 
 # Migrating legacy resources to the Windows 10 resource management platform
 
-## Executive Summary
+## Overview
 
-Win32 applications are often localized into different languages, expanding their total addressable market<a name="footnote1_ref" href="#footnote1"><sup>1</sup></a>. 
-There are many ways to localize traditional Win32 applications, 
-but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) (referred to as "MRT" in this document
-<a name="footnote2_ref" href="#footnote2"><sup>2</sup></a>)
-that works across programming languages, across application types, and provides functionality over and above simple localization. 
+Win32 applications are often localized into different languages to expand their total addressable market. See [Globalization and localization](globalizing-portal.md).
 
-Combined with AppX-based deployment (eg, from the 
-Windows Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
+There are many ways to localize a traditional Win32 application, 
+but Windows 8 introduced a [new resource-management system](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx) that works across programming languages, across application types, and provides functionality over and above simple localization. This system will be referred to as "MRT" in this topic. Historically, that stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) or PRI (Package Resource Index).
+
+Combined with AppX-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
 localized listings in the Windows Shell and the Windows Store, automatic fallback logic when a user's preferred language doesn't match your available resources.
 
@@ -30,8 +28,8 @@ is made, additional benefits (such as the ability to segment resources by scale 
 both UWP applications and Win32 applications processed by the Desktop Bridge (aka "Centennial").
 
 In many situations, you can continue to use your existing localization formats and source code whilst integrating with MRT for resolving resources at runtime and minimizing download 
-sizes - it's not an all-or-nothing approach. The following table summarizes the work and estimated cost / benefit of each stage
-<a name="footnote3_ref" href="#footnote3"><sup>3</sup></a>:
+sizes - it's not an all-or-nothing approach. The following table summarizes the work and estimated cost/benefit of each stage. This table doesn't include non-localization tasks, such as providing high-resolution or high-contrast application icons. For more info about providing multiple 
+assets for tiles, icons, etc., See [Tailor your resources for language, scale, high contrast, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md).
 
 <table>
 <tr>
@@ -78,9 +76,8 @@ file-based resources are implemented as references to the external data (the fil
 ### Example
 
 Here's a simple example of an application that has text labels on two buttons (`openButton` and `saveButton`) and a PNG file used for a logo (`logoImage`). The text labels are 
-localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and hi-resolution phones (300% scale factor)
-<a name="footnote4_ref" href="#footnote4"><sup>4</sup></a>. Note this diagram 
-presents a high-level, conceptual view of the model; it does not map exactly to implementation:
+localized into English and German, and the logo is optimized for normal desktop displays (100% scale factor) and high-resolution phones (300% scale factor). Note that this diagram 
+presents a high-level, conceptual view of the model; it does not map exactly to implementation.
 
 <p><img src="images\conceptual-resource-model.png"/></p>
 
@@ -216,7 +213,9 @@ If you want to create the resources manually:
 0. Create an XML file named `resources.resw` and place it in a `Strings\en-us` subfolder of your project. 
  * Use the appropriate BCP-47 code if your default language is not US English 
 0. In the XML file, add the following content, where the <span style="background-color: yellow">highlighted text</span> is replaced with the appropriate text for your app, in your default
-language<a name="footnote5_ref" href="#footnote5"><sup>5</sup></a>
+language.
+
+**Note** There are restrictions on the lengths of some of these strings. For more info, see [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live).
 
 <blockquote>
 <pre>
@@ -258,7 +257,7 @@ Once you have the values defined in the `.resw` file, the next step is to update
 Visual Studio Manifest Designer.
 
 If you are editing XML directly, open the `AppxManifest.xml` file and make the following changes to the <span style="background-color: lightgreen">highlighted values</span> - use this 
-*exact* text, not text specific to your application<a name="footnote6_ref" href="#footnote6"><sup>6</sup></a>. These names should match the `Names` you created in the `.resw` file, prefixed with the `ms-resource:` scheme and the 
+*exact* text, not text specific to your application. There is no requirement to use these exact resource names&mdash;you can choose your own&mdash;but whatever you choose must exactly match whatever is in the `.resw` file. These names should match the `Names` you created in the `.resw` file, prefixed with the `ms-resource:` scheme and the 
 `Resources/` namespace. 
 
 *Note: many elements of the manifest have been omitted from this snippet - do not delete anything!*
@@ -305,7 +304,7 @@ If you're building manually, follow these steps to create a configuration file f
 0. Open a developer command prompt from the `Visual Studio 2015` folder in the Start menu
 0. Switch to the project root directory (the one that contains the `AppxManifest.xml` file and the `Strings` folder)
 0. Type the following command, replacing "contoso_demo.xml" with a name suitable for your project, and "en-US" with the default language of your app (or keep it en-US if applicable). 
-Note the xml file is created in the parent directory (**not** in the project directory) since it's not part of the application<a name="footnote7_ref" href="#footnote7"><sup>7</sup></a>:
+Note the xml file is created in the parent directory (**not** in the project directory) since it's not part of the application (you can choose any other directory you want, but be sure to substitute that in future commands).
 
 ```CMD
     makepri createconfig /cf ..\contoso_demo.xml /dq en-US /pv 10.0 /o
@@ -582,10 +581,9 @@ in different folders with BCP-47 names (`en-US`, `de-DE`, etc.). It doesn't matt
 are, etc. The only thing that matters is that every *logical* resource has the same filename (but placed in a different *physical* directory). 
 
 As a counter-example, if your application uses a flat file-structure with a single `Resources` directory containing the files `english_strings.dll` and `french_strings.dll`, it 
-**would not** map well to MRT. A better structure would be a `Resources` directory with subdirectories and files `en\strings.dll` and `fr\strings.dll`
-<a name="footnote8_ref" href="#footnote8"><sup>8</sup></a>. Note that it is 
-still possible to use MRT and the benefits of AppX packaging even if you can't follow this filenaming convention; it just requires more work. 
-A future whitepaper will cover this case. 
+would not map well to MRT. A better structure would be a `Resources` directory with subdirectories and files `en\strings.dll` and `fr\strings.dll`. It's also possible to use the same base filename but with embedded qualifiers, such as `strings.lang-en.dll` and `strings.lang-fr.dll`, but using directories with the language codes is conceptually simpler so it's what we'll focus on.
+
+**Note** It is still possible to use MRT and the benefits of AppX packaging even if you can't follow this filenaming convention; it just requires more work.
 
 For example, the application might have a set of custom UI commands (used for button labels etc.) in a simple text file named <span style="background-color: yellow">ui.txt</span>, 
 laid out under a <span style="background-color: yellow">UICommands</span> folder:
@@ -749,8 +747,9 @@ void EnableMrtResourceLookup()
 }
 ```
 
-The .NET runtime will raise the `AssemblyResolve` event whenever it can't find the resource DLLs, at which point the provided event handler will locate the desired file via MRT and 
-return the assembly<a name="footnote9_ref" href="#footnote9"><sup>9</sup></a>.
+The .NET runtime will raise the `AssemblyResolve` event whenever it can't find the resource DLLs, at which point the provided event handler will locate the desired file via MRT and return the assembly.
+
+**Note** If your app already has an `AssemblyResolve` handler for other purposes, you will need to integrate the resource-resolving code with your existing code.
 
 **Loading Win32 MUI resources**
 
@@ -905,30 +904,4 @@ packages. The final step is to sign the file so that Windows will install it:
     signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appxbundle
 
 This will produce a signed `.appxbundle` file that contains the main package plus all the language-specific resource packages. It can be double-clicked just like a package file to 
-install the app plus any appropriate language(s) based on the user's Windows language preferences. 
- 
-## Footnotes
-
-Click on the number to return to the source location in the document.
-
-<a name="footnote1" href="#footnote1_ref">1.</a> This paper provides no further motivation for localization itself; it is assumed the reader already understands this.
-
-<a name="footnote2" href="#footnote2_ref">2.</a> Historically this stood for "Modern Resource Technology" but the term "Modern" has been discontinued. The resource manager might also be known as MRM (Modern Resource Manager) 
-or PRI (Package Resource Index).
-
-<a name="footnote3" href="#footnote3_ref">3.</a> This table doesn't include non-localization tasks, such as providing high-resolution or high-contrast application icons. See MSDN for more information about providing multiple 
-assets for tiles, icons, etc.
-
-<a name="footnote4" href="#footnote4_ref">4.</a> The specifics of scale factor are not covered here
-
-<a name="footnote5" href="#footnote5_ref">5.</a> Note that there are restrictions on the lengths of some of these strings; see [the **VisualElements** topic on MSDN](https://msdn.microsoft.com/en-us/library/windows/apps/br211471.aspx) 
-for more information 
-
-<a name="footnote6" href="#footnote6_ref">6.</a> There is no requirement to use these exact resource names - you can choose your own - but whatever you choose must exactly match whatever is in the `.resw` file.
-
-<a name="footnote7" href="#footnote7_ref">7.</a> You can choose any other directory you want, but be sure to substitute that in future commands
-
-<a name="footnote8" href="#footnote8_ref">8.</a> It's also possible to use the same base filename but with embedded qualifiers, such as `strings.lang-en.dll` and `strings.lang-fr.dll`, but using directories with the language codes 
-is conceptually simpler so it's what we'll focus on.
-
-<a name="footnote9" href="#footnote9_ref">9.</a> Note that if your app already has an `AssemblyResolve` handler for other purposes, you will need to integrate the resource-resolving code with your existing code.
+install the app plus any appropriate language(s) based on the user's Windows language preferences.
