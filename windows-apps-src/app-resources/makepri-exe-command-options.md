@@ -525,7 +525,7 @@ The major version (/vma) option (for the `new` command) is deprecated, and using
 'VersionMajor (vma)' input parameter has been deprecated. Please specify major version in the configuration file using 'majorVersion' attribute on 'resources' node.
 ```
 
-To provide the major version number, use the [resources@majorVersion](https://msdn.microsoft.com/en-us/library/windows/apps/dn263117#majorversion) attribute in your configuration file.
+To provide the major version number, use the [resources@majorVersion](makepri-exe-configuration.md) attribute in your configuration file.
 
 ## Related topics
 
