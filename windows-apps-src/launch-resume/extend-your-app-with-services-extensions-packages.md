@@ -67,7 +67,7 @@ Optional packages are used to either supplement or extend the original functiona
 
 **App Extension**
 
-[App extensions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) enable your Windows Store app to host content provided by other Windows Store apps. Discover, enumerate, and access read-only content from those apps.
+[App extensions](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions) enable your UWP app to host content provided by other UWP apps. Discover, enumerate, and access read-only content from those apps.
 
 If an app supports extensions, any developer can submit an extension for the app. Thus, the host app needs to be robust when it loads an extension that it hasn't been pre-tested with. Extensions should be considered untrusted.
 

@@ -199,9 +199,9 @@ Generally speaking, publishing an XDK+UWP game follows the same process as separ
 
 ### Dev Sandbox Publishing
 
-### No Dev Sandbox Catalog Equivalent for Windows Store
+### No Dev Sandbox Catalog Equivalent for Microsoft Store
 
-While XDP allows you to publish your catalog & binary to the dev sandbox version of the Xbox One catalog, the Windows Store catalog has no sandbox support. As such, testing your UWP in a dev sandbox requires you to sideload that UWP and play it directly. This doesn’t impact Xbox Live testing, but may alter your standard testing processes.
+While XDP allows you to publish your catalog & binary to the dev sandbox version of the Xbox One catalog, the Microsoft Store catalog has no sandbox support. As such, testing your UWP in a dev sandbox requires you to sideload that UWP and play it directly. This doesn’t impact Xbox Live testing, but may alter your standard testing processes.
 
 <table>
   <tr>

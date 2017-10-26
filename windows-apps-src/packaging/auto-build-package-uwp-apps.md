@@ -292,7 +292,7 @@ This will generate an .appxupload file that can be submitted to the Store.
 
 #### Configure automatic Store submission
 
-Use the Visual Studio Team Services extension for the Windows Store to integrate with the Store API, and send your app package to the Store.
+Use the Visual Studio Team Services extension for the Microsoft Store to integrate with the Store API, and send your app package to the Store.
 
 You need to connect your Dev Center account with Azure Active Directory (AD), and then create an app in your AD to authenticate the requests. You can follow the guidance in the extension page to accomplish that. 
 
@@ -307,7 +307,7 @@ $(Build.ArtifactStagingDirectory)\
 AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 ```
 
->Note. You have to manually activate this build. You can use it to update existing apps but you can’t use it to for your first submission to the Store. For more information, see [Create and manage Store submissions by using Windows Store Services.](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)
+>Note. You have to manually activate this build. You can use it to update existing apps but you can’t use it to for your first submission to the Store. For more information, see [Create and manage Store submissions by using Microsoft Store Services.](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)
 
 ## Best Practices
 

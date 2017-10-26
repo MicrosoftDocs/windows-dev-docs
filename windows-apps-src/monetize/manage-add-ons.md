@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
-description: Use these methods in the Windows Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage add-ons for apps that are registered to your Windows Dev Center account.
 title: Manage add-ons
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, add-ons, in-app product, IAP
+keywords: windows 10, uwp, Microsoft Store submission API, add-ons, in-app product, IAP
 ---
 
 # Manage add-ons
 
-Use the following methods in the Windows Store submission API to manage add-ons for your apps. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Use the following methods in the Microsoft Store submission API to manage add-ons for your apps. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 These methods can only be used to get, create, or delete add-ons. To create submissions for add-ons, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).
 
@@ -56,11 +56,11 @@ These methods can only be used to get, create, or delete add-ons. To create subm
 
 ## Prerequisites
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API before trying to use any of these methods.
 
 ## Data resources
 
-The Windows Store submission API methods for managing add-ons use the following JSON data resources.
+The Microsoft Store submission API methods for managing add-ons use the following JSON data resources.
 
 <span id="add-on-object" />
 ### Add-on resource
@@ -153,8 +153,8 @@ This resource has the following values.
 <span/>
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage add-on submissions using the Windows Store submission API](manage-add-on-submissions.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Manage add-on submissions using the Microsoft Store submission API](manage-add-on-submissions.md)
 * [Get all add-ons](get-all-add-ons.md)
 * [Get an add-on](get-an-add-on.md)
 * [Create an add-on](create-an-add-on.md)

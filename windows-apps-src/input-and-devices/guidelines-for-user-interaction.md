@@ -38,7 +38,7 @@ You will find throughout these guidelines that touch input requires a different 
 
 **Compare touch interaction requirements**
 
-The following table shows some of the differences between input devices that you should consider when you design touch-optimized Windows Store apps.
+The following table shows some of the differences between input devices that you should consider when you design touch-optimized UWP apps.
 
 Factor
 Touch interactions
@@ -93,7 +93,7 @@ Visual feedback is critical when the user relies on touch input for activities t
 
 **Create an immersive interaction experience**
 
-The following techniques enhance the immersive experience of Windows Store apps.
+The following techniques enhance the immersive experience of UWP apps.
 
 **Targeting**
 

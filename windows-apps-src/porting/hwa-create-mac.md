@@ -2,13 +2,13 @@
 author: seksenov
 title: Hosted Web Apps - Convert your web application to a Windows app using a Mac
 description: Use a Mac to turn your website in to a Universal Windows Platform (UWP) app for Windows 10.
-kw: Hosted Web Apps with a Mac, Porting to Windows 10 with a Mac, Convert website to Windows with Mac, Packaging web application with ManfoldJS for Windows Store, Add website to Windows Store with App Studio
+kw: Hosted Web Apps with a Mac, Porting to Windows 10 with a Mac, Convert website to Windows with Mac, Packaging web application with ManfoldJS for Microsoft Store, Add website to Microsoft Store with App Studio
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: hosted web apps with a Mac, porting to Windows 10 with a Mac, convert website to Windows with Mac, website to Windows Store, Manifold JS for web apps, App Studio for web apps
+keywords: hosted web apps with a Mac, porting to Windows 10 with a Mac, convert website to Windows with Mac, website to Microsoft Store, Manifold JS for web apps, App Studio for web apps
 ms.assetid: a4cea1e8-4417-4488-b0e7-45c704dc53e9
 ---
 
@@ -40,7 +40,7 @@ npm install -g manifoldjs
 manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 ```
 
-4. Follow the steps in the video below to complete the packaging and publish your Hosted Web App to the Windows Store.
+4. Follow the steps in the video below to complete the packaging and publish your Hosted Web App to the Microsoft Store.
 
 [![Publishing a UWP Web App on a Mac using ManifoldJS](images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "Publishing a UWP Web App on a Mac using ManifoldJS")
 
@@ -54,10 +54,10 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 3. Under **Web app templates**, click **Hosted Web App**.
 
-4. Follow the on-screen instructions to generate a package ready for publishing to the Windows Store.
+4. Follow the on-screen instructions to generate a package ready for publishing to the Microsoft Store.
 
 ## Related topics
 
 - [Enhance your web app by accessing Universal Windows Platform (UWP) features](./hwa-access-features.md)
 - [Guide to Universal Windows Platform (UWP) apps](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-- [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+- [Download design assets for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)

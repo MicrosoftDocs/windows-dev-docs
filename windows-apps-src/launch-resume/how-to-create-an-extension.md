@@ -1,7 +1,7 @@
 ﻿---
 author: TylerMSFT
 title: Create and consume an app extension
-description: Write and host Universal Windows Platform (UWP) app extensions that allow you to extend your app via packages that users can install from the Windows Store.
+description: Write and host Universal Windows Platform (UWP) app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
 keywords: app extension, app service, background
 ms.author: twhitney
 ms.date: 10/05/2017
@@ -129,7 +129,7 @@ The meaning of the `<uap3:AppExtension>` attributes are as follows:
 
 ## Decide how you will implement the extension.
 
-The [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808) demonstrates how to use the public folder that is shared between the host and the extensions. In that example, the extension is implemented by a Javascript file that is stored in the public folder, which the host invokes. That approach has the advantage of being lightweight, does not require compilation, and can support making the default landing page that provides instructions for the extension and a link to the host app's Windows Store page. See the [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample) for details. Specifically, see the **InvertImageExtension** project and `InvokeLoad()` in ExtensionManager.cs in the **ExtensibilitySample** project.
+The [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808) demonstrates how to use the public folder that is shared between the host and the extensions. In that example, the extension is implemented by a Javascript file that is stored in the public folder, which the host invokes. That approach has the advantage of being lightweight, does not require compilation, and can support making the default landing page that provides instructions for the extension and a link to the host app's Microsoft Store page. See the [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample) for details. Specifically, see the **InvertImageExtension** project and `InvokeLoad()` in ExtensionManager.cs in the **ExtensibilitySample** project.
 
 In this example, we'll use an app service to implement the extension. App services have the following advantages:
 
@@ -294,7 +294,7 @@ private async void OnAppServiceRequestReceived(AppServiceConnection sender, AppS
 
 Now that we've seen how to implement the relationship between a host and its extensions, let's see how a host finds  extensions installed on the system and reacts to the addition and removal of packages containing extensions.
 
-The Windows Store delivers extensions as packages. The [AppExtensionCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog) finds installed packages that contain extensions matching the host's extension contract name, and supplies events that fire when an app extension package relevant to the host is installed or removed.
+The Microsoft Store delivers extensions as packages. The [AppExtensionCatalog](https://docs.microsoft.com/uwp/api/windows.applicationmodel.appextensions.appextensioncatalog) finds installed packages that contain extensions matching the host's extension contract name, and supplies events that fire when an app extension package relevant to the host is installed or removed.
 
 In the code sample, the `ExtensionManager` class (defined in **ExtensionManager.cs** in the **MathExtensionHost** project) wraps the logic for loading extensions and responding to extension package installs and uninstalls.
 
@@ -395,7 +395,7 @@ When you build an extension host and are ready to test how well it supports exte
 ## Design considerations
 
 - Provide UI that shows the user which extensions are available and allows them to enable/disable them. You might also consider adding glyphs for extensions that become unavailable because a package goes offline, etc.
-- Direct the user to where they can get extensions. Perhaps your extension page can provide a Windows Store search query that brings up a list of extensions that can be used with your app.
+- Direct the user to where they can get extensions. Perhaps your extension page can provide a Microsoft Store search query that brings up a list of extensions that can be used with your app.
 - Consider how to notify the user of the addition and removal of extensions. You might create a notification for when a new extension is installed and invite the user to enable it. Extensions should be disabled by default so that users are in control.
 
 ## How app extensions differ from optional packages

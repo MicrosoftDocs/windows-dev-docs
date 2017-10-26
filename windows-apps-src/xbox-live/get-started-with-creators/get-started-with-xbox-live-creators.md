@@ -51,5 +51,5 @@ It is important to note that the Xbox Live Creators Program does not support onl
 
 If you are using the Xbox Live Creators Program, then the process is no different than releasing any other UWP application:
 
-- [Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx) including [Gaming and Xbox Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)
+- [Microsoft Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx) including [Gaming and Xbox Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_13)
 - [Publish Windows apps](https://developer.microsoft.com/en-us/store/publish-apps)

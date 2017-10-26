@@ -80,7 +80,7 @@ We are aware of this issue and are working on a more long term solution. As a te
 
 ## Blue screen with error code 0x139 (KERNEL_SECURITY_CHECK_FAILURE)
 
-After installing or launching certain apps from the Windows Store, your machine may unexpectedly reboot with the error: **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)**.
+After installing or launching certain apps from the Microsoft Store, your machine may unexpectedly reboot with the error: **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)**.
 
 Known affected apps include Kodi, JT2Go, Ear Trumpet, Teslagrad, and others.
 

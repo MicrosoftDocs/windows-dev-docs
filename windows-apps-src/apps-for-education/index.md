@@ -35,7 +35,7 @@ The Windows Ink platform can make education apps shine by fitting them with an i
 - [Complex ink sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) demonstrates how to use advanced InkPresenter functionality to interleave ink with other objects, select ink, copy/paste, and handle events. It is built upon the Universal Windows Platform in C++ and can run on Desktop and Mobile Windows 10 SKUs.
 
 
-### Windows Store
+### Microsoft Store
 Education apps are often released under special circumstances to a specific organization. See [Distribute line-of-business apps to enterprises](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises) for information on this.
 
 ## Related Topics

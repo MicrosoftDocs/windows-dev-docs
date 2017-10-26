@@ -1,6 +1,6 @@
 ﻿---
 author: jnHs
-Description: Follow these guidelines to prepare your app's packages for submission to the Windows Store.
+Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
@@ -13,11 +13,11 @@ keywords: windows 10, uwp, package requirements, packages, package format
 
 # App package requirements
 
-Follow these guidelines to prepare your app's packages for submission to the Windows Store.
+Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 
-## Before you build your app's package for the Windows Store
+## Before you build your app's package for the Microsoft Store
 
-Make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Windows Store, it can only be installed and run on computers that have developer licenses.
+Make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md). We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Microsoft Store, it can only be installed and run on computers that have developer licenses.
 
 ## Building the app package using Microsoft Visual Studio
 
@@ -88,7 +88,7 @@ The versions currently supported range from:
 
 ## StoreManifest XML file
 
-StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Windows Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
+StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Microsoft Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see [StoreManifest schema](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal).
 
  
 

@@ -1,14 +1,14 @@
 ---
 author: mcleanbyron
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: Use this method in the Windows Store submission API to commit a new or updated add-on submission to Windows Dev Center.
+description: Use this method in the Microsoft Store submission API to commit a new or updated add-on submission to Windows Dev Center.
 title: Commit an add-on submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, commit add-on submission, in-app product, IAP
+keywords: windows 10, uwp, Microsoft Store submission API, commit add-on submission, in-app product, IAP
 ---
 
 # Commit an add-on submission
@@ -16,15 +16,15 @@ keywords: windows 10, uwp, Windows Store submission API, commit add-on submissio
 
 
 
-Use this method in the Windows Store submission API to commit a new or updated add-on (also known as in-app product or IAP) submission to Windows Dev Center. The commit action alerts Dev Center that the submission data has been uploaded (including any related icons). In response, Dev Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in the Dev Center dashboard.
+Use this method in the Microsoft Store submission API to commit a new or updated add-on (also known as in-app product or IAP) submission to Windows Dev Center. The commit action alerts Dev Center that the submission data has been uploaded (including any related icons). In response, Dev Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in the Dev Center dashboard.
 
-For more information about how the commit operation fits into the process of submitting an add-on by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
+For more information about how the commit operation fits into the process of submitting an add-on by using the Microsoft Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 * [Create an add-on submission](create-an-add-on-submission.md) and then [update the submission](update-an-add-on-submission.md) with any necessary changes to the submission data.
 
@@ -95,14 +95,14 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be committed in its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 409  | The specified submission was found but it could not be committed in its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 <span/>
 
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get an add-on submission](get-an-add-on-submission.md)
 * [Create an add-on submission](create-an-add-on-submission.md)
 * [Update an add-on submission](update-an-add-on-submission.md)

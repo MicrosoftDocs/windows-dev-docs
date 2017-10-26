@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 10/11/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -108,9 +108,9 @@ The image below shows the key proportions to keep in mind. The "safe zone" in th
 These images are recommended for proper display if you publish your app to Xbox. 
 
 There are 3 different sizes that you can upload:
-- **Branded key art, 584 x 800 pixels**: Used in the Xbox.com Store. Must include the product’s title. 
+- **Branded key art, 584 x 800 pixels**: Used on Xbox.com. Must include the product’s title. 
 - **Titled hero, 1920 x 1080 pixels**: Must include the product’s title.
-- **Featured promo, 1080 x 1080 pixels**: Used in the Xbox Store. Must include the product’s title.
+- **Featured promo, 1080 x 1080 pixels**: Used in the Microsoft Store on Xbox One. Must include the product’s title.
 
 > [!NOTE]
 > For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
@@ -177,7 +177,7 @@ When providing your trailers, be sure to follow these requirements:
 - The thumbnail must be a PNG file with a resolution of either 1920 x 1080 pixels or 3840 x 2160 pixels.
 - The title can’t exceed 255 characters. 
 
-Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Store. Be sure your trailers comply with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
+Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
 
 There are additional requirements depending on the type of file.
 

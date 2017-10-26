@@ -74,7 +74,7 @@ Following is an abbreviated version of the accessibility checklist:
 3. Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
 4. Run accessibility tools, address reported issues, and verify the screen reading experience. (See Accessibility testing topic.)
 5. Make sure your app manifest settings follow accessibility guidelines.
-6. Declare your app as accessible in the Windows Store. (See the [Accessibility in the store](accessibility-in-the-store.md) topic.)
+6. Declare your app as accessible in the Microsoft Store. (See the [Accessibility in the store](accessibility-in-the-store.md) topic.)
 
 For more detail, please see the full [Accessibility checklist](accessibility-checklist.md) topic.
 

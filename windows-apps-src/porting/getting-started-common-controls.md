@@ -20,7 +20,7 @@ In the previous section, you worked with only two controls: buttons and textbloc
 
 The rather clever thing about UWP controls is that they can sense the type of device they are running on, and change their appearance and functionality accordingly. For example, if your project uses the [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) control, it is smart enough to optimize itself to look and behave differently on a desktop computer compared to, say, a phone. You don't need to do anything: the controls adjust themselves at run-time.
 
-| iOS control (class/protocol) | Equivalent Windows Store app control |
+| iOS control (class/protocol) | Equivalent UWP control |
 |------------------------------|--------------------------------------|
 | Activity indicator (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> See also [Quickstart: adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | Ad banner view (**ADBannerView**) and ad banner view delegate (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> See also [Display ads in your app](../monetize/display-ads-in-your-app.md) |
@@ -28,7 +28,7 @@ The rather clever thing about UWP controls is that they can sense the type of de
 | Date picker (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | Image view (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> See also [Image and ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | Label (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> See also [Quickstart: displaying text](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Map view (MKMapView) and map view delegate (MKMapViewDelegate) | See [Bing Maps for Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
+| Map view (MKMapView) and map view delegate (MKMapViewDelegate) | See [Bing Maps for UWP apps](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
 | Navigation controller (UINavigationController) and navigation controller delegate (UINavigationControllerDelegate) | [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> See also [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Page control (UIPageControl) | [Page](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> See also [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) |
 | Picker view (UIPickerView) and picker view delegate (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> See also [Adding combo boxes and list boxes](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
@@ -49,7 +49,7 @@ The rather clever thing about UWP controls is that they can sense the type of de
 
 For even more controls, see [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-**Note**  For a list of controls for Windows Store apps using JavaScript and HTML, see [Controls list](https://msdn.microsoft.com/library/windows/apps/hh465453).
+**Note**  For a list of controls for UWP apps using JavaScript and HTML, see [Controls list](https://msdn.microsoft.com/library/windows/apps/hh465453).
 
 ### Next step
 

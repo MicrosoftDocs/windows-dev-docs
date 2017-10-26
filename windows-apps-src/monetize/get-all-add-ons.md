@@ -1,14 +1,14 @@
 ---
 author: mcleanbyron
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: Use this method in the Windows Store submission API to retrieve all add-on data for all the apps that are registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve all add-on data for all the apps that are registered to your Windows Dev Center account.
 title: Get all add-ons
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, add-ons, in-app products, IAPs
+keywords: windows 10, uwp, Microsoft Store submission API, add-ons, in-app products, IAPs
 ---
 
 # Get all add-ons
@@ -16,13 +16,13 @@ keywords: windows 10, uwp, Windows Store submission API, add-ons, in-app product
 
 
 
-Use this method in the Windows Store submission API to retrieve data for all add-ons for all the apps that are registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve data for all add-ons for all the apps that are registered to your Windows Dev Center account.
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -151,13 +151,13 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No add-ons were found. |
-| 409  | The apps or add-ons use Dev Center dashboard features that are [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The apps or add-ons use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Manage add-on submissions](manage-add-on-submissions.md)
 * [Get an add-on](get-an-add-on.md)
 * [Create an add-on](create-an-add-on.md)

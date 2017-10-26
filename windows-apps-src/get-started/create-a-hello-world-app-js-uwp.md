@@ -79,7 +79,7 @@ To view and edit a file in your project, double-click the file in the **Solution
 
 *A set of logo images*
 -   Assets/Square150x150Logo.scale-200.png represents your app in the start menu.
--   Assets/StoreLogo.png represents your app in the Windows Store.
+-   Assets/StoreLogo.png represents your app in the Microsoft Store.
 -   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
 
 ## Step 2: Adding a button
@@ -155,7 +155,7 @@ Now you can run the app by pressing F5. The app will load, the web page will be 
 
 Congratulations, you've created a JavaScript app for Windows 10 and the UWP! This is a ridiculously simple example, however, you can now start adding your favorite JavaScript libraries and frameworks to create your own app. And as it's a UWP app, you can publish it to the Store. For example of how third party frameworks can be added, see these  projects:
 
-* [A simple 2D UWP game for the Windows Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
-* [A 3D UWP game for the Windows Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
+* [A simple 2D UWP game for the Microsoft Store, written in JavaScript and CreateJS](get-started-tutorial-game-js2d.md)
+* [A 3D UWP game for the Microsoft Store, written in JavaScript and threeJS](get-started-tutorial-game-js3d.md)
 
 

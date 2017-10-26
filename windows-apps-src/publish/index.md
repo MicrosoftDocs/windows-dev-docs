@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: See how to publish your Windows apps to the Windows Store.
+Description: See how to publish your Windows apps to the Microsoft Store.
 title: Publish Windows apps
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
@@ -13,7 +13,7 @@ ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 
 # Publish Windows apps
 
-You can use the Windows Dev Center dashboard to publish your apps to the Windows Store. 
+You can use the Windows Dev Center dashboard to publish your apps to the Microsoft Store. 
 
 > [!NOTE]
 > You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.

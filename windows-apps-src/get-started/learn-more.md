@@ -15,7 +15,7 @@ ms.technology: uwp
 
 # What's next?
 
-So you want to write an app and publish it to the Windows Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> and [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming) courses. If you are already familiar with Windows development, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+So you want to write an app and publish it to the Microsoft Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> and [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming) courses. If you are already familiar with Windows development, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 There are many tools and frameworks available to help you write apps, and many support cross-platform development. For example, if you want to write 2D games, you might want to look at <a href="http://www.monogame.net">Monogame</a> or some of the many [JavaScript/HTML frameworks](https://html5gameengine.com/). For 3D games, there's <a href="http://www.unity3d.com">Unity</a>, and don't forget <a href="http://www.xamarin.com">Xamarin</a> if your focus is mobile devices.
 

@@ -29,7 +29,7 @@ Shows how to implement a window for a Universal Windows Platform (UWP) game and 
 
 To set up a desktop window with a Direct3D 9 viewport, we had to implement the traditional windowing framework for desktop apps. We had to create an HWND, set the window size, provide a window processing callback, make it visible, and so on.
 
-The UWP environment has a much simpler system. Instead of setting up a traditional window, a Windows Store game using DirectX implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This interface exists for DirectX apps and games to run directly in a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) inside the app container.
+The UWP environment has a much simpler system. Instead of setting up a traditional window, a Microsoft Store game using DirectX implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This interface exists for DirectX apps and games to run directly in a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) inside the app container.
 
 > **Note**   Windows supplies managed pointers to resources such as the source application object and the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
@@ -105,10 +105,10 @@ The game loop goes in the [**IFrameworkView::Run**](https://msdn.microsoft.com/l
 
 Instead of implementing a message handling framework and calling [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), we can call the [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) method built in to our app window's [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). There's no need for the game loop to branch and handle messages - just call **ProcessEvents** and proceed.
 
-Game loop in Direct3D 11 Windows Store game
+Game loop in Direct3D 11 Microsoft Store game
 
 ```cpp
-// Windows Store apps should not exit. Use app lifecycle events instead.
+// UWP apps should not exit. Use app lifecycle events instead.
 while (true)
 {
     // Process window events.
@@ -129,7 +129,7 @@ Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
 
 The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
 
-Visit the following in-depth Windows Store game game development articles:
+Visit the following in-depth Microsoft Store game game development articles:
 
 -   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
 -   [Audio for games](working-with-audio-in-your-directx-game.md)

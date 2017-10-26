@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # Test Surface Hub apps using Visual Studio
 The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves at the Surface Hub's screen size and resolution.
 
-For more information, see [Run Windows Store apps in the simulator](https://msdn.microsoft.com/library/hh441475.aspx).
+For more information, see [Run UWP apps in the simulator](https://msdn.microsoft.com/library/hh441475.aspx).
 
 ## Add Surface Hub resolutions to the simulator
 To add Surface Hub resolutions to the simulator:
@@ -71,7 +71,7 @@ To add Surface Hub resolutions to the simulator:
 Manually deploying an app is a simple process.
 
 ### Enable developer mode
-By default, Surface Hub only installs apps from the Windows Store. To install apps signed by other sources, you must enable developer mode.
+By default, Surface Hub only installs apps from the Microsoft Store. To install apps signed by other sources, you must enable developer mode.
 
 > **Note**&nbsp;&nbsp;After developer mode has been enabled, you will need to reset the Surface Hub to disable it again. Resetting the device removes all local user files and configurations and then reinstalls Windows.
 

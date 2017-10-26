@@ -2,7 +2,7 @@
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
-description: This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
+description: This overview of how to register for a developer account for the Microsoft Store and other Microsoft programs will help you understand the process of setting up your account.
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ---
 # Opening a developer account
 
-This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
+This overview of how to register for a developer account for the Microsoft Store and other Microsoft programs will help you understand the process of setting up your account.
 
 > [!NOTE]
 > When you sign up for a developer account, we'll use the email address you provide in your contact info to send email communications related to your account. At times, these may include informational emails about our programs. If you choose not to receive these informational emails by [opting out](http://go.microsoft.com/fwlink/p/?LinkId=533280), be aware that we will still send you transactional emails (for example, to let you know that your app has passed certification or that a payment is on the way). These emails are a necessary part of your account, and unless you close your account, you will continue to receive these transactional emails.
@@ -78,7 +78,7 @@ We recommend designating PCs that you use frequently as trusted devices. When yo
 
 Developer accounts don't expire, so there is no need to renew your account in order to keep it open. If you decide to close your account completely, you can do so by contacting support.
 
-When you close your account, it's important to understand what happens to any app that you have published in the Windows Store:
+When you close your account, it's important to understand what happens to any app that you have published in the Microsoft Store:
 
 -   Your app's current customers will still be able to use the app. However, they will not be able to make in-app purchases.
 -   Even though the app is still available to customers who have previously acquired it, your app listing will be removed from the Store. No new customers will be able to acquire your app.

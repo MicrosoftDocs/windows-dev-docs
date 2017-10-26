@@ -22,7 +22,7 @@ Here's a list of game development videos from major conferences like GDC and //b
 * [D3D12 Performance Tuning and Debugging with PIX and GPU Validation](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003) - Shawn Hargreaves, Max McMullen
 * [Game Mode and the Evolution of Cross-Platform UWP Game Development](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-004) - Eric Walston
 * [Xbox Live for All Game](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005) - Brian Tyler
-* [Meet the Converged Windows Store for Windows and Xbox](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-006) - Krupa Poobala-Chandran
+* [Meet the Converged Microsoft Store for Windows and Xbox](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-006) - Krupa Poobala-Chandran
 * [Windows Holographic Rendering: One SDK to Target VR and AR Ecosystems](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-008) - Alex Pfaffe, Alex Turner
 * [Reaching More Gamers Through Xbox Accessibility Features on Xbox One and PC](https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-009) - Evelyn Thomas
 

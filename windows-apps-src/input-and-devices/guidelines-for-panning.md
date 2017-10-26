@@ -70,7 +70,7 @@ Panning or scrolling lets users navigate within a single view, to display the co
 
 **Chaining embedded or nested content**
 
--   Use single-axis panning (typically horizontal) and column layouts for text and grid-based content. In these cases, content typically wraps and flows naturally from column to column and keeps the user experience consistent and discoverable across Windows Store apps.
+-   Use single-axis panning (typically horizontal) and column layouts for text and grid-based content. In these cases, content typically wraps and flows naturally from column to column and keeps the user experience consistent and discoverable across UWP apps.
 
 -   Don't use embedded pannable regions to display text or item lists. Because the panning indicators and scroll bars are displayed only when the input contact is detected within the region, it is not an intuitive or discoverable user experience.
 
@@ -114,7 +114,7 @@ Windows 8 supports three types of panning:
 The interaction experience for panning is unique to the input device while still providing similar functionality.
 
 **Pannable regions**
-Pannable region behaviors are exposed to Windows Store app using JavaScript developers at design time through Cascading Style Sheets (CSS).
+Pannable region behaviors are exposed to UWP app using JavaScript developers at design time through Cascading Style Sheets (CSS).
 
 There are two panning display modes based on the input device detected:
 

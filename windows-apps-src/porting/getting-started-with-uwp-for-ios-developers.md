@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # Getting started with UWP for iOS developers
 
 
-If you're an iOS developer considering developing for Windows 10, these docs are a great place to start. They'll introduce you to some of the concepts you'll need to know as you get started writing apps, and they'll cover how you can publish your work on the Windows Store.
+If you're an iOS developer considering developing for Windows 10, these docs are a great place to start. They'll introduce you to some of the concepts you'll need to know as you get started writing apps, and they'll cover how you can publish your work on the Microsoft Store.
 
 In this section, we'll start gradually, and examine how to use Microsoft Visual Studio and the C# programming language to create a trivial app, and in particular how the process might vary from the tools you currently use. (Not a C# fan? Don't worry, other programming languages and tools are available, and we'll touch on this in [Getting started: Choosing a programming language](getting-started-choosing-a-programming-language.md)).
 
@@ -22,7 +22,7 @@ Windows 10 introduces a new platform for creating engaging apps on desktop, lap
 
 The bottom line is this: don't just port your app, but **reimagine** your app, and take advantage of new features and new devices. Don't settle for the lowest common denominator, but create rich experiences that use unique Windows 10 features, such as live tiles, notifications, and interacting with Cortana.
 
-To get started with these walkthroughs, you'll need a computer with both Windows 10 and Microsoft Visual Studio installed. You can download these from the [Developer downloads for programming Windows Store apps](https://developer.microsoft.com/en-us/windows/downloads). Don't have a PC? Don't worry, you can use your Mac: see [Installing Windows and the dev tools on your Mac](setting-up-your-mac-with-windows-10.md).
+To get started with these walkthroughs, you'll need a computer with both Windows 10 and Microsoft Visual Studio installed. You can download these from the [Developer downloads for programming UWP apps](https://developer.microsoft.com/en-us/windows/downloads). Don't have a PC? Don't worry, you can use your Mac: see [Installing Windows and the dev tools on your Mac](setting-up-your-mac-with-windows-10.md).
 
 | Topic | Description |
 |-------|-------------|

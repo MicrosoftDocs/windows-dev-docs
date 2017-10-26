@@ -162,7 +162,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 For more info about accessibility declarations and publishing your app, see [Accessibility in the Store](accessibility-in-the-store.md).
 
 > [!NOTE]
-> Declaring the app as accessible is only relevant to the Windows Store.
+> Declaring the app as accessible is only relevant to the Microsoft Store.
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>

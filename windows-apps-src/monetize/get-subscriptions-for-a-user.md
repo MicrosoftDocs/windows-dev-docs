@@ -1,19 +1,19 @@
 ﻿---
 author: mcleanbyron
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
-description: Use this method in the Windows Store purchase API to get the subscriptions that a given user has entitlements to use.
+description: Use this method in the Microsoft Store purchase API to get the subscriptions that a given user has entitlements to use.
 title: Get subscriptions for a user
 ms.author: mcleans
 ms.date: 04/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store purchase API, subscriptions
+keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ---
 
 # Get subscriptions for a user
 
-Use this method in the Windows Store purchase API to get the subscription add-ons that a given user has entitlements to use.
+Use this method in the Microsoft Store purchase API to get the subscription add-ons that a given user has entitlements to use.
 
 > [!NOTE]
 > This method can only be used by developer accounts that have been provisioned by Microsoft to be able to create subscription add-ons for Universal Windows Platform (UWP) apps. Subscription add-ons are currently not available to most developer accounts.
@@ -23,7 +23,7 @@ Use this method in the Windows Store purchase API to get the subscription add-on
 To use this method, you will need:
 
 * An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
-* A Windows Store ID key that represents the identity of the user whose subscriptions you want to get.
+* A Microsoft Store ID key that represents the identity of the user whose subscriptions you want to get.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
 
@@ -53,7 +53,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 
 | Parameter      | Type   | Description     | Required |
 |----------------|--------|-----------------|----------|
-| b2bKey         | string | The [Windows Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscriptions you want to get.  | Yes      |
+| b2bKey         | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscriptions you want to get.  | Yes      |
 | continuationToken |  string     |  If the user has entitlements to multiple subscriptions, the response body returns a continuation token when the page limit is reached. Provide that continuation token here in subsequent calls to retrieve remaining products.    | No      |
 | pageSize       | string | The maximum number of subscriptions to return in one response. The default is 25.     |  No      |
 
@@ -61,7 +61,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 
 ### Request example
 
-The following example demonstrates how to use this method to get the subscription add-ons that a given user has entitlements to use. Replace the *b2bKey* value with the [Windows Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscriptions you want to get.
+The following example demonstrates how to use this method to get the subscription add-ons that a given user has entitlements to use. Replace the *b2bKey* value with the [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user whose subscriptions you want to get.
 
 ```json
 POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query HTTP/1.1
@@ -118,8 +118,8 @@ Each object in the *items* array contains the following values.
 | isTrial | Boolean |  Indicates whether the subscription is a trial.     |
 | lastModified | string |  The date and time the subscription was last modified, in ISO 8601 format.      |
 | market | string | The country code (in two-letter ISO 3166-1 alpha-2 format) in which the user acquired the subscription.      |
-| productId | string |  The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) that represents the subscription add-on in the Windows Store catalog. An example Store ID for a product is 9NBLGGH42CFD.     |
-| skuId | string |  The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) that represents the subscription add-on the Windows Store catalog. An example Store ID for a SKU is 0010.    |
+| productId | string |  The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) that represents the subscription add-on in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD.     |
+| skuId | string |  The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) that represents the subscription add-on the Microsoft Store catalog. An example Store ID for a SKU is 0010.    |
 | startTime | string |  The start date and time for the subscription, in ISO 8601 format.     |
 | recurrenceState | string  |  One of the following values:<ul><li>**None**:&nbsp;&nbsp;This indicates a perpetual subscription.</li><li>**Active**:&nbsp;&nbsp;The subscription is active and the user is entitled to use the services.</li><li>**Inactive**:&nbsp;&nbsp;The subscription is past the expiration date, and the user turned off the automatic renew option for the subscription.</li><li>**Canceled**:&nbsp;&nbsp;The subscription has been purposefully terminated before the expiration date, with or without a refund.</li><li>**InDunning**:&nbsp;&nbsp;The subscription is in *dunning* (that is, the subscription is nearing expiration, and Microsoft is trying to acquire funds to automatically renew the subscription).</li><li>**Failed**:&nbsp;&nbsp;The dunning period is over and the subscription failed to renew after several attempts.</li></ul><p>**Note:**</p><ul><li>**Inactive**/**Canceled**/**Failed** are terminal states. When a subscription enters one of these states, the user must repurchase the subscription to activate it again. The user is not entitled to use the services in these states.</li><li>When a subscription is **Canceled**, the expirationTime will be updated with the date and time of the cancellation.</li><li>The ID of the subscription will remain the same during its entire lifetime. It will not change if the auto-renew option is turned on or off. If a user repurchases a subscription after reaching a terminal state, a new subscription ID will be created.</li><li>The ID of a subscription should be used to execute any operatoin on an individual subscription.</li><li>When a user repurchases a subscription after cancelling or discontinuing it, if you query the results for the user you will get two entries: one with the old subscription ID in a terminal state, and one with the new subscription ID in an active state.</li><li>It's always a good practice to check both recurrenceState and expirationTime, since updates to recurrenceState can potentially be delayed by a few minutes (or occasionally hours).       |
 | cancellationDate | string   |  The date and time the user's subscription was cancelled, in ISO 8601 format.     |
@@ -131,4 +131,4 @@ Each object in the *items* array contains the following values.
 * [Change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
-* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
+* [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)

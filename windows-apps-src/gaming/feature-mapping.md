@@ -99,7 +99,7 @@ DirectShow is no longer part of the DirectX API (or the Windows API). [Microsoft
 
 Microsoft DirectPlay has been deprecated. If your game uses network services, you need to provide networking code that complies with UWP requirements. Use the following APIs:
 
--   [Win32 and COM for Windows Store apps (networking) (Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
+-   [Win32 and COM for UWP apps (networking) (Windows)](https://msdn.microsoft.com/library/windows/apps/br205759)
 -   [**Windows.Networking namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207124)
 -   [**Windows.Networking.Sockets namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br226960)
 -   [**Windows.Networking.Connectivity namespace (Windows)**](https://msdn.microsoft.com/library/windows/apps/br207308)
@@ -107,9 +107,9 @@ Microsoft DirectPlay has been deprecated. If your game uses network services, yo
 
 The following articles help you add networking features and declare support for networking in your app's package manifest.
 
--   [Connecting with sockets (Windows Store apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
--   [Connecting with WebSockets (Windows Store apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
--   [Connecting to web services (Windows Store apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+-   [Connecting with sockets (UWP apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+-   [Connecting with WebSockets (UWP apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh994396)
+-   [Connecting to web services (UWP apps using C#/VB/C++ and XAML) (Windows)](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
 -   [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233)
 
 Note that all UWP apps (including games) use specific types of background tasks to maintain connectivity while the app is suspended. If your game needs to maintain connection state while suspended see [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233).

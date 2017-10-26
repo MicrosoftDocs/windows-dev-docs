@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
-description: Use the Python code examples in this section to learn more about using the Windows Store submission API.
+description: Use the Python code examples in this section to learn more about using the Microsoft Store submission API.
 title: Python sample - submissions for apps, add-ons, and flights
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, code examples, python
+keywords: windows 10, uwp, Microsoft Store submission API, code examples, python
 ---
 
 # Python sample: submissions for apps, add-ons, and flights
 
-This article provides Python code examples that demonstrate how to use the [Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
+This article provides Python code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
 
 * [Obtain an Azure AD access token](#token)
 * [Create an add-on](#create-add-on)
@@ -25,7 +25,7 @@ This article provides Python code examples that demonstrate how to use the [Wind
 <span id="token" />
 ## Obtain an Azure AD access token
 
-The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) that you can use to call methods in the Windows Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store submission API before the token expires. After the token expires, you can generate a new token..
+The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) that you can use to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token..
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
@@ -46,7 +46,7 @@ The following example demonstrates how to [create](create-a-flight.md) and then 
 <span id="create-app-submission" />
 ## Create an app submission
 
-The following example shows how to use several methods in the Windows Store submission API to create an app submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
+The following example shows how to use several methods in the Microsoft Store submission API to create an app submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
 
 1. To begin, the example [gets data for the specified app](get-an-app.md).
 2. Next, it [deletes the pending submission for the app](delete-an-app-submission.md), if one exists.
@@ -60,7 +60,7 @@ The following example shows how to use several methods in the Windows Store subm
 <span id="create-add-on-submission" />
 ## Create an add-on submission
 
-The following example shows how to use several methods in the Windows Store submission API to create an add-on submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
+The following example shows how to use several methods in the Microsoft Store submission API to create an add-on submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
 
 1. To begin, the example [gets data for the specified add-on](get-an-add-on.md).
 2. Next, it [deletes the pending submission for the add-on](delete-an-add-on-submission.md), if one exists.
@@ -74,7 +74,7 @@ The following example shows how to use several methods in the Windows Store subm
 <span id="create-flight-submission" />
 ## Create a package flight submission
 
-The following example shows how to use several methods in the Windows Store submission API to create a package flight submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
+The following example shows how to use several methods in the Microsoft Store submission API to create a package flight submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
 
 1. To begin, the example [gets data for the specified package flight](get-a-flight.md).
 2. Next, it [deletes the pending submission for the package flight](delete-a-flight-submission.md), if one exists.
@@ -87,4 +87,4 @@ The following example shows how to use several methods in the Windows Store subm
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)

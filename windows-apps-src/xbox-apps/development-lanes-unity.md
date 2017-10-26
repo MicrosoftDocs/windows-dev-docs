@@ -28,7 +28,7 @@ When installing Unity, these components must be selected:
 
 ## Step 1: Building the UWP solution
 
-In your Unity game project, open the **Build Settings** windows located at **File -> Build Settings**, and go to the Windows Store options menu.
+In your Unity game project, open the **Build Settings** windows located at **File -> Build Settings**, and go to the Microsoft Store options menu.
 
 ![Build Settings Window](images/build-settings.png)
 
