@@ -1,5 +1,5 @@
 ---
-author: mukin
+author: muhsinking
 description: Color provides an intuitive way of communicating information to users. It can be used to signal interactivity, give feedback to user actions, convey state, and give your user interface a sense of visual continuity.
 title: Color
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
@@ -311,7 +311,6 @@ The [color picker](https://docs.microsoft.com/en-us/windows/uwp/controls-and-pat
 
 
 
-<!-- TODO consider renaming to Useability -->
 ## Accessibility
 When considering what colors to use in your application, accessiblity should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.
 
