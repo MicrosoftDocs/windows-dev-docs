@@ -20,16 +20,27 @@ With the introduction of in-process App Services, two running foreground applica
 Turning an out-of-process model App Service into an in-process model requires two changes. The first is a manifest change.
 
 > ```xml
->  <uap:Extension Category="windows.appService">
->          <uap:AppService Name="InProcessAppService" />
->  </uap:Extension>
+> <Package
+>    ...
+>   <Applications>
+>       <Application Id=...
+>           ...
+>           EntryPoint="...">
+>           <Extensions>
+>               <uap:Extension Category="windows.appService">
+>                   <uap:AppService Name="InProcessAppService" />
+>               </uap:Extension>
+>           </Extensions>
+>           ...
+>       </Application>
+>   </Applications>
 > ```
 
-Remove the `EntryPoint` attribute. Now the  [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) callback will be used as the callback method when the app service is invoked.
+Remove the `EntryPoint` attribute from the `<Application>` element because now [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) is the entry point that will be used when the app service is invoked.
 
 The second change is to move the service logic from its separate background task project into methods that can be called from **OnBackgroundActivated()**.
 
-Now your application can directly run your App Service.  For example:
+Now your application can directly run your App Service. For example:
 
 > ``` cs
 > private AppServiceConnection appServiceConnection;
