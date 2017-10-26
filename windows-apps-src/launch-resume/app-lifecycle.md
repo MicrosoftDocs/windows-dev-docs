@@ -20,7 +20,7 @@ This topic describes the lifecycle of a Universal Windows Platform (UWP) app fro
 
 Before Windows 8, apps had a simple lifecycle. Win32 and .NET apps are either running or not running. When a user minimizes them, or switches away from them, they continue to run. This was fine until portable devices and power management became increasingly important.
 
-Windows 8 introduced a new application model with Windows Store apps. At a high level, a new suspended state was added. A Windows Store app is suspended shortly after the user minimizes it or switches to another app. This means that the app's threads are stopped and the app is left in memory unless the operating system needs to reclaim resources. When the user switches back to the app, it can be quickly restored to a running state.
+Windows 8 introduced a new application model with UWP apps. At a high level, a new suspended state was added. A UWP app is suspended shortly after the user minimizes it or switches to another app. This means that the app's threads are stopped and the app is left in memory unless the operating system needs to reclaim resources. When the user switches back to the app, it can be quickly restored to a running state.
 
 There are various ways for apps that need to continue to run when they are in the background such as [background tasks](support-your-app-with-background-tasks.md), [extended execution](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.aspx), and activity sponsored execution (for example, the **BackgroundMediaEnabled** capability which allows an app to continue to [play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)). Also, background transfer operations can continue even if your app is suspended or even terminated. For more info, see [How to download a file](https://msdn.microsoft.com/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer).
 
@@ -32,7 +32,7 @@ Windows 10, version 1607, introduces two more app model states: **Running in for
 
 ## App execution state
 
-This illustration represents the possible app model states starting in Windows 10, version 1607. Let's walk through the typical lifecycle of a Windows Store app.
+This illustration represents the possible app model states starting in Windows 10, version 1607. Let's walk through the typical lifecycle of a UWP app.
 
 ![state diagram showing transitions between app execution states](images/updated-lifecycle.png)
 

@@ -228,7 +228,7 @@ In this loop, we call:
 Because we previously set the maximum frame latency to 1, Windows generally slows down the render loop to the screen refresh rate, typically around 60 Hz. Windows slows down the render loop by making the app sleep when the app calls [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). Windows makes the app sleep until the screen is refreshed.
 
 ```cpp
-        // Enter the render loop.  Note that Windows Store apps should never exit.
+        // Enter the render loop.  Note that UWP apps should never exit.
         while (true)
         {
             // Process events incoming to the window.

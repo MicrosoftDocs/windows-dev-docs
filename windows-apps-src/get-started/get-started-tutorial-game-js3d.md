@@ -1,6 +1,6 @@
 ---
 title: Get Started Tutorial - A 3D UWP game in JavaScript
-description: A UWP game for the Windows Store, written in JavaScript with three.js
+description: A UWP game for the Microsoft Store, written in JavaScript with three.js
 author: abbycar
 ms.author: abigailc
 ms.date: 03/06/2017
@@ -26,7 +26,7 @@ Want to get a glimpse of the app we'll be making before reading further? Check i
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 > [!NOTE] 
-> This is a not a complete game; it is designed to demonstrate using JavaScript and a third-party library to make an app ready to publish to the Windows Store.
+> This is a not a complete game; it is designed to demonstrate using JavaScript and a third-party library to make an app ready to publish to the Microsoft Store.
 
 
 ## Requirements
@@ -1079,12 +1079,12 @@ That's it! It was quite the journey, but we now have a game made with **three.js
 Head back up to the top of the page to see the [final CodePen](#introduction)!
 
 
-## Publishing to the Windows Store
-Now you have a UWP app, it is possible to publish it to the Windows Store (assuming you have improved it first!) 
+## Publishing to the Microsoft Store
+Now you have a UWP app, it is possible to publish it to the Microsoft Store (assuming you have improved it first!) 
 There are a few steps to the process.
 
 1.	You must be [registered](https://developer.microsoft.com/store/register) as a Windows Developer.
 2.	You must use the app submission [checklist](https://msdn.microsoft.com/windows/uwp/publish/app-submissions).
 3.	The app must be submitted for [certification](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process).
-For more details, see [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+For more details, see [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 

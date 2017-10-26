@@ -50,7 +50,7 @@ Accessibility is about making your app usable by people who have limitations tha
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[Accessibility in the Store](../accessibility/accessibility-in-the-store.md)</b><br/>Describes the requirements for declaring your UWP app as accessible in the Windows Store.</p>
+<p><b>[Accessibility in the Store](../accessibility/accessibility-in-the-store.md)</b><br/>Describes the requirements for declaring your UWP app as accessible in the Microsoft Store.</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b>[Accessibility checklist](../accessibility/accessibility-checklist.md)</b><br/>Provides a checklist to help you ensure that your UWP app is accessible.</p>

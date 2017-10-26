@@ -41,12 +41,12 @@ To see the countries/regions in which these payment methods are used for each ma
 > [!NOTE]
 > Payment thresholds are listed here in USD. In some markets, the equivalent in local currency is used. 
 
-- [Windows Store](#windows-store)
+- [Microsoft Store](#microsoft-store)
 - [Microsoft Advertising](#microsoft-advertising)
 - [Azure Marketplace](#azure-marketplace)
 - [Office Store](#office-store)
 
-### Windows Store 
+### Microsoft Store 
 
 <table>
   <tr>

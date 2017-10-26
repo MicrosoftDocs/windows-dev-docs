@@ -16,7 +16,7 @@ keywords: windows 10, uwp
 
 The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces and/or CAB files for further debugging.
 
-Alternatively, you can programmatically retrieve the data in this report by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Alternatively, you can programmatically retrieve the data in this report by using the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 
 ## Apply filters

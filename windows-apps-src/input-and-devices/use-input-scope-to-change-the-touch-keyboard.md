@@ -138,7 +138,7 @@ The [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) and 
 
 These tables show the Soft Input Panel (SIP) layouts on desktop and mobile devices for common input scope values. The effect of the input scope on the features enabled by the **IsSpellCheckEnabled** and **IsTextPredictionEnabled** properties is listed for each input scope. This is not a comprehensive list of available input scopes.
 
-> **Note**&nbsp;&nbsp;The smaller size of the SIP on mobile devices makes it particularly important for mobile apps that you set the correct input scope. As we show here, Windows Phone provides a greater variety of specialized keyboard layouts. A text field that doesn't need to have its input scope set in a Windows Store app might benefit from having it set in a Windows Phone Store app.
+> **Note**&nbsp;&nbsp;The smaller size of the SIP on mobile devices makes it particularly important for mobile apps that you set the correct input scope. As we show here, Windows Phone provides a greater variety of specialized keyboard layouts. A text field that doesn't need to have its input scope set in a UWP app might benefit from having it set in a Windows Phone Store app.
 
 > **Tip**&nbsp;&nbsp;You can toggle most touch keyboards between an alphabetic layout and a numbers-and-symbols layout. On Windows, toggle the **&123** key. On Windows Phone, press the **&123** key to change to the numbers-and-symbols layout, and press the **abcd** key to change to the alphabetic layout.
 

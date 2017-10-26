@@ -50,15 +50,15 @@ Here's the settings page on the mobile device family:
 
  You can enable a device for development, or just for sideloading.
 
--   *Windows Store apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
--   *Sideloading* is installing and then running or testing an app that has not been certified by the Windows Store. For example, an app that is internal to your company only.
+-   *UWP apps* is the default setting. If you aren't developing apps, or using special internal apps issued by your company, keep this setting active.
+-   *Sideloading* is installing and then running or testing an app that has not been certified by the Microsoft Store. For example, an app that is internal to your company only.
 -   *Developer mode* lets you sideload apps, and also run apps from Visual Studio in debug mode. 
 
-By default, you can only install Universal Windows Platform (UWP) apps from the Windows Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
+By default, you can only install Universal Windows Platform (UWP) apps from the Microsoft Store. Changing these settings to use developer features can change the level of security of your device. You should not install apps from unverified sources.
 
 ### Sideload apps
 
-The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Windows Store. In this case, it's common for the organization to enforce a policy that disables the *Windows Store apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
+The Sideload apps setting is typically used by companies or schools that need to install custom apps on managed devices without going through the Microsoft Store. In this case, it's common for the organization to enforce a policy that disables the *UWP apps* setting, as shown previously in the image of the settings page. The organization also provides the required certificate and install location to sideload apps. For more info, see the TechNet articles [Sideload apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx) and [Get started with app deployment in Microsoft Intune](https://technet.microsoft.com/library/dn646955.aspx).
 
 Device family specific info
 
@@ -69,7 +69,7 @@ Device family specific info
 **Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
 
 > [!NOTE]
-> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Windows Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Windows Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
+> If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Microsoft Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Microsoft Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
 
 ### Developer Mode
 
@@ -203,7 +203,7 @@ You can use gpedit.msc to set the group policies to enable your device, unless y
     To enable developer mode, edit the policies to enable both:
 
     -   **Allow all trusted apps to install**
-    -   **Allows development of Windows Store apps and installing them from an integrated development environment (IDE)**
+    -   **Allows development of UWP apps and installing them from an integrated development environment (IDE)**
 
 4.  Reboot your machine.
 
@@ -249,7 +249,7 @@ Error : DEP0700 : Registration of the app failed.
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](whats-a-uwp.md)

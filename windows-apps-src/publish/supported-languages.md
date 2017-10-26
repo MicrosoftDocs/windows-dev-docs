@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: You can submit apps to the Windows Store in over 100 languages.
+Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: Supported languages
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.author: wdg-dev-content
@@ -14,14 +14,14 @@ keywords: windows 10, uwp
 # Supported languages
 
 
-You can submit apps to the Windows Store in over 100 languages.
+You can submit apps to the Microsoft Store in over 100 languages.
 
 To learn more about configuring languages in your apps, see [Globalization and localization](../globalizing/globalizing-portal.md) and [Manage language and region](../globalizing/manage-language-and-region.md). We also have a [Multilingual App Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) to help you write apps that support multiple languages.
 
 ## Supported languages
 
 
-These are the languages that the Windows Store supports. Your app must support at least one of these languages, and it must not specify any language codes that are not included here.
+These are the languages that the Microsoft Store supports. Your app must support at least one of these languages, and it must not specify any language codes that are not included here.
 
 | Language name         | Supported language codes                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

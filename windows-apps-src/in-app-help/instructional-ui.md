@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-Description: Design an instructional user interface (UI) that teaches users how to work with your Windows Store app.
+Description: Design an instructional user interface (UI) that teaches users how to work with your UWP app.
 title: Guidelines for designing instructional UI
 label: Instructional UI
 template: detail.hbs

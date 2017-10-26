@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Windows Store provide many features that enable you to make more money from your apps and gain customers from engaging with your users.
+description: The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Microsoft Store provide many features that enable you to make more money from your apps and gain customers from engaging with your users.
 title: Monetization, engagement, and Store services
 ms.author: mcleans
 ms.date: 07/05/2017
@@ -13,9 +13,9 @@ keywords: windows 10, uwp, monetize, engage, promote, Store services
 
 # Monetization, engagement, and Store services
 
-The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Windows Store provide features that enable you to make more money from your apps and gain customers by engaging with your users. The topics in this section show you how to build these features into your app.
+The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Microsoft Store provide features that enable you to make more money from your apps and gain customers by engaging with your users. The topics in this section show you how to build these features into your app.
 
-For details about the fees charged by the Windows Store and how you get paid for the money your app makes, see [Getting paid](https://msdn.microsoft.com/library/windows/apps/mt148536).
+For details about the fees charged by the Microsoft Store and how you get paid for the money your app makes, see [Getting paid](https://msdn.microsoft.com/library/windows/apps/mt148536).
 
 ## In this section
 
@@ -28,7 +28,7 @@ For details about the fees charged by the Windows Store and how you get paid for
 | [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md)      |   Add code to your UWP apps to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard. This feature requires the Microsoft Store Services SDK.   |
 | [Configure your app to receive Dev Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)  |  Register a notification channel for your UWP app so it can receive [Dev Center push notifications](../publish/send-push-notifications-to-your-apps-customers.md), and track the rate of app launches that resulted from the push notifications. This feature requires the Microsoft Store Services SDK.  |
 | [Log custom events for Dev Center](log-custom-events-for-dev-center.md)  | Log custom events from your UWP app and review the events in the [Usage report](../publish/usage-report.md) in the Dev Center dashboard. This feature requires the Microsoft Store Services SDK. |
-| [Windows Store services](using-windows-store-services.md)    |  Learn how to use RESTful APIs to automate submissions to the Store, access analytics data for your apps, and automate other tasks related to the Store.    |
+| [Microsoft Store services](using-windows-store-services.md)    |  Learn how to use RESTful APIs to automate submissions to the Store, access analytics data for your apps, and automate other tasks related to the Store.    |
 | [Create a Retail Demo Experience (RDX) app](retail-demo-experience.md)        |  Learn how to create a retail demo experience app that can be installed on PCs and mobile demo devices at a retail store.  |
 
 ## Related topics

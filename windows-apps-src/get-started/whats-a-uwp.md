@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: What's a Universal Windows Platform (UWP) app?
-description: Learn about the different types of Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
+description: Learn about the different types of Universal Windows apps--UWP apps, Windows Phone Store apps, and Windows Runtime apps.
 ms.author: quradic
 ms.date: 03/22/2017
 ms.topic: article
@@ -56,7 +56,7 @@ UWP apps use the Windows Runtime, a native API built into the operating system. 
 -   DirectX UI and a C++ backend
 -   JavaScript and HTML
 
-Microsoft Visual Studio 2017 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Windows Store from within Visual Studio to get your app out to customers on any Windows 10 device.
+Microsoft Visual Studio 2017 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Microsoft Store from within Visual Studio to get your app out to customers on any Windows 10 device.
 
 ## UWP apps come to life on Windows
 

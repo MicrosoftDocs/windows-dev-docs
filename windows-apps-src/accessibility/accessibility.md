@@ -19,10 +19,10 @@ keywords: windows 10, uwp
 
 Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
 
-Accessibility is about building experiences that make your application available to people who use technology in a wide range of environments and approach your user interface with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience. There's also a Windows Store declaration regarding accessibility for your app.
+Accessibility is about building experiences that make your application available to people who use technology in a wide range of environments and approach your user interface with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience. There's also a Microsoft Store declaration regarding accessibility for your app.
 
 > [!NOTE]
-> Declaring the app as accessible is only relevant to the Windows Store.
+> Declaring the app as accessible is only relevant to the Microsoft Store.
 
 | Article | Description |
 |---------|-------------|
@@ -30,7 +30,7 @@ Accessibility is about building experiences that make your application available
 | [Designing inclusive software](designing-inclusive-software.md) | Learn about evolving inclusive design with UWP apps for Windows 10.  Design and build inclusive software with accessibility in mind. |
 | [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) | This article is a roadmap for developing accessible UWP apps. |
 | [Accessibility testing](accessibility-testing.md) | Testing procedures to follow to ensure that your UWP app is accessible. |
-| [Accessibility in the Store](accessibility-in-the-store.md) | Describes the requirements for declaring your UWP app as accessible in the Windows Store. |
+| [Accessibility in the Store](accessibility-in-the-store.md) | Describes the requirements for declaring your UWP app as accessible in the Microsoft Store. |
 | [Accessibility checklist](accessibility-checklist.md) | Provides a checklist to help you ensure that your UWP app is accessible. |
 | [Expose basic accessibility information](basic-accessibility-information.md) | Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need. |
 | [Keyboard accessibility](keyboard-accessibility.md) | If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all. |

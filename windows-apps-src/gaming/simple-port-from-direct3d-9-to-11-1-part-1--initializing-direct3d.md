@@ -71,7 +71,7 @@ First we create the device. We get a list of the feature levels the device suppo
 
 After creating the Direct3D 11 device and context, we can take advantage of COM pointer functionality to get the most recent version of the interfaces, which include additional capability and are always recommended.
 
-> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Windows Store game is required to support. (Your game's ARM packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
+> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Microsoft Store game is required to support. (Your game's ARM packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
 
  
 
@@ -104,7 +104,7 @@ D3D11CreateDevice(
     creationFlags,
     featureLevels,
     ARRAYSIZE(featureLevels),
-    D3D11_SDK_VERSION, // Windows Store apps must set this to D3D11_SDK_VERSION.
+    D3D11_SDK_VERSION, // UWP apps must set this to D3D11_SDK_VERSION.
     &device, // Returns the Direct3D device created.
     nullptr,
     &context // Returns the device immediate context.

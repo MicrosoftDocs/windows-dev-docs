@@ -44,7 +44,7 @@ For more info, see [Use map services](use-map-services.md).
 
 ## Product collections and purchases
 
-To use the Windows Store collection API and the Windows Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
+To use the Microsoft Store collection API and the Microsoft Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
 
 For more info, see [Manage product entitlements from a service](../monetize/view-and-grant-products-from-a-service.md).
 

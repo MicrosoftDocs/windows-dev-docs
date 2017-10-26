@@ -28,7 +28,7 @@ You can set the **Base price** to **Free**, or you can choose an available price
 
 Each  price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets.
 
-In the **Pricing** section, click **view table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Windows Store submission API](../monetize/manage-app-submissions.md#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
+In the **Pricing** section, click **view table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](../monetize/manage-app-submissions.md#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
 Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). You should also review the [price considerations for specific markets](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
 

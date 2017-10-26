@@ -9,7 +9,6 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # Use the Windows 10 Resource Management System in a legacy app or game
 
@@ -22,7 +21,7 @@ but Windows 8 introduced a [new resource-management system](https://msdn.microso
 
 Combined with AppX-based deployment (for example, from the Microsoft Store), MRT can automatically deliver the most-applicable resources for a given user / device which minimizes the download and install size of your application. This size
 reduction can be significant for applications with a large amount of localized content, perhaps on the order of several *gigabytes* for AAA games. Additional benefits of MRT include 
-localized listings in the Windows Shell and the Windows Store, automatic fallback logic when a user's preferred language doesn't match your available resources.
+localized listings in the Windows Shell and the Microsoft Store, automatic fallback logic when a user's preferred language doesn't match your available resources.
 
 This document describes the high-level architecture of MRT and provides a porting guide to help move legacy Win32 applications to MRT with minimal code changes. Once the move to MRT 
 is made, additional benefits (such as the ability to segment resources by scale factor or system theme) become available to the developer. Note that MRT-based localization works for 
@@ -40,7 +39,7 @@ assets for tiles, icons, etc., See [Tailor your resources for language, scale, h
 </tr>
 <tr>
 <td>Localize AppX manifest</td>
-<td>Bare minimum work required to have your localized content appear in the Windows Shell and in the Windows Store</td>
+<td>Bare minimum work required to have your localized content appear in the Windows Shell and in the Microsoft Store</td>
 <td>Small</td>
 </tr>
 <tr>
@@ -117,7 +116,7 @@ This section outlines the final changes needed to separate your resources into s
 
 ### Not covered in this document
 
-After completing Phases 0-3 above, you will have an application "bundle" that can be submitted to the Windows Store and that will minimize the download & install size for users by omitting 
+After completing Phases 0-3 above, you will have an application "bundle" that can be submitted to the Microsoft Store and that will minimize the download & install size for users by omitting 
 the resources they don't need (eg, languages they don't speak). Further improvements in application size and functionality can be made by taking one final step. 
 
 **Phase 4: Migrate to MRT resource formats and APIs**

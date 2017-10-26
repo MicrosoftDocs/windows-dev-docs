@@ -21,7 +21,7 @@ You can use Visual Studio to generate a package for your desktop app. Then, you 
 
 ## First, consider how you'll distribute your app
 
-If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
+If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
 ## Use the new packaging project available in the 15.4 release of Visual Studio 2017
 
@@ -215,7 +215,7 @@ If you receive errors when you attempt to generate your package, see the [Known 
 
 #### Obtaining the appxupload file that you submit to the store
 
-The **Create App Packages** wizard generates an appxupload file that you can submit to the Windows Store but the wizard won't automatically generate one if you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to the packaged solution. In that case, you'll have to manually create the appxupload file. Here's how.
+The **Create App Packages** wizard generates an appxupload file that you can submit to the Microsoft Store but the wizard won't automatically generate one if you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to the packaged solution. In that case, you'll have to manually create the appxupload file. Here's how.
 
 1. Create a new zip archive to include the generated appxsym and appxbundle from the \_Test folder.
 

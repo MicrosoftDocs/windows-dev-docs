@@ -95,7 +95,7 @@ void App::Run()
 ## Call Trim()
 
 
-Starting in Windows 8.1, all DirectX Windows Store apps must call [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) when suspending. This call tells the graphics driver to release all temporary buffers allocated for the app, which reduces the chance that the app will be terminated to reclaim memory resources while in the suspend state. This is a certification requirement for Windows 8.1.
+Starting in Windows 8.1, all DirectX UWP apps must call [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) when suspending. This call tells the graphics driver to release all temporary buffers allocated for the app, which reduces the chance that the app will be terminated to reclaim memory resources while in the suspend state. This is a certification requirement for Windows 8.1.
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)

@@ -134,7 +134,7 @@ Tethering is a visual cue (a connector from a contact point to the bounding rect
 -   A touch contact was first detected within some proximity threshold to an object and this object was identified as the most likely target of the contact.
 -   A touch contact was moved off an object but the contact is still within a proximity threshold.
 
-This feature is not exposed to Windows Store app using JavaScript developers.
+This feature is not exposed to UWP app using JavaScript developers.
 
 ## Scrubbing
 

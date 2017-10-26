@@ -790,7 +790,7 @@ Register the handlers that you implement in your application. You can also add c
 * [Start your app by using an alias](#alias)
 * [Start an executable file when users log into Windows](#executable)
 * [Enable users to start your app when they connect a device to their PC](#autoplay)
-* [Restart automatically after receiving an update from the Windows Store](#updates)
+* [Restart automatically after receiving an update from the Microsoft Store](#updates)
 
 <span id="protocol" />
 ### Start your app by using a protocol
@@ -1014,7 +1014,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 </Package>
 ```
 <span id="updates" />
-### Restart automatically after receiving an update from the Windows Store
+### Restart automatically after receiving an update from the Microsoft Store
 
 If your app is open when users install an update to it, the app closes.
 

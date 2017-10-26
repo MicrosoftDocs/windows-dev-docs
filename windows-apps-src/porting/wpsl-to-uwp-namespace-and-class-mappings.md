@@ -207,7 +207,7 @@ Also, in a Windows 10 app, you will benefit from .NET Native, which an ahead-of
 | Reactive Extensions | |
 | **Microsoft.Phone.Reactive** namespace | No direct equivalent | 
 | Reflection | |
-| **System.Type** class | **System.Reflection.TypeInfo** class. See [Reflection in the .NET Framework for Windows Store Apps](https://msdn.microsoft.com/library/hh535795.aspx). |
+| **System.Type** class | **System.Reflection.TypeInfo** class. See [Reflection in the .NET Framework for UWP apps](https://msdn.microsoft.com/library/hh535795.aspx). |
 | Resources | |
 | **System.Resources.ResourceManager** class | (WA = **Windows.ApplicationModel**)<br/>[**WA.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) and [**WA.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) namespaces, [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) class. See [Creating and retrieving resources in Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh694557.aspx). |
 | Secure Element | |

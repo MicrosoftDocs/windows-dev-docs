@@ -1,13 +1,13 @@
 ---
 author: seksenov
 title: Hosted Web Apps - Convert your web application to a Universal Windows Platform (UWP) app and access native Windows 10 features
-description: Find resources to convert your web app to a Universal Windows Platform (UWP) app for the Windows Store.
+description: Find resources to convert your web app to a Universal Windows Platform (UWP) app for the Microsoft Store.
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Hosted Web Apps, convert a website to Windows app, web apps on Windows Store, Chrome apps for Windows
+keywords: Hosted Web Apps, convert a website to Windows app, web apps on Microsoft Store, Chrome apps for Windows
 ---
 
 # Hosted Web Apps - Access Windows 10 features from your web app

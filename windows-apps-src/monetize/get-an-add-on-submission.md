@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: Use this method in the Windows Store submission API to get data for an existing add-on submission.
+description: Use this method in the Microsoft Store submission API to get data for an existing add-on submission.
 title: Get an add-on submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, add-on submission, in-app product, IAP
+keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, in-app product, IAP
 ---
 
 # Get an add-on submission
 
-Use this method in the Windows Store submission API to get data for an existing add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
+Use this method in the Microsoft Store submission API to get data for an existing add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Microsoft Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 * Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
 
@@ -139,14 +139,14 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | The submission could not be found. |
-| 409  | The submission does not belong to the specified add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The submission does not belong to the specified add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Create an add-on submission](create-an-add-on-submission.md)
 * [Commit an add-on submission](commit-an-add-on-submission.md)
 * [Update an add-on submission](update-an-add-on-submission.md)

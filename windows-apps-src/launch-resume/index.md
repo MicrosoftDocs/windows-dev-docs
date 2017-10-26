@@ -23,7 +23,7 @@ This section includes information on the following:
 - How to discover connected devices, launch an app on another device, and communicate with an app service on a remote device so that you can create user experiences that flow across devices.
 - How to choose the right technology to extend and componentize your app.
 - How to add and configure a splash screen for your app.
-- How to write extend your app via packages from that users can install from the Windows Store.
+- How to write extend your app via packages from that users can install from the Microsoft Store.
 
 ## The app lifecycle
 
@@ -50,7 +50,7 @@ the [Launch an app with a URI](launch-app-with-uri.md) section details how to us
 | [Launch an app for results](how-to-launch-an-app-for-results.md) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
 | [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) | This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone. |
 | [Launch the Windows Settings app](launch-settings-app.md) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
-| [Launch the Windows Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the Store. |
+| [Launch the UWP app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
 | [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
 | [Launch the People app](launch-people-apps.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
 | [Support web-to-app linking with app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by using app URI handlers. |
@@ -78,7 +78,7 @@ The [App services and extensions](app-services.md) section describes how to inte
 | [Create and consume an app service](how-to-create-and-consume-an-app-service.md) | Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps and how to consume those services. |
 | [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) | Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider. |
 | [Extend your app with app services, extensions, and packages](extend-your-app-with-services-extensions-packages.md) | Determine which technology to use to extend and componentize your app and get a brief overview of each. |
-| [Create and consume an app extension](how-to-create-an-extension.md) | Write and host Universal Windows Platform (UWP) app extensions to extend your app via packages that users can install from the Windows Store. |
+| [Create and consume an app extension](how-to-create-an-extension.md) | Write and host Universal Windows Platform (UWP) app extensions to extend your app via packages that users can install from the Microsoft Store. |
 
 ## Background tasks
 

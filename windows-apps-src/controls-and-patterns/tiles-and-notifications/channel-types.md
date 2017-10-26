@@ -32,7 +32,7 @@ There are three types of push channels that can be used to send notifications to
 
 ## Primary channels
 
-These are the most commonly used channels on Windows right now, and are good for almost any scenario where your app is going to be distributed through the Windows Store. They allow you to send all types of notifications to the app. 
+These are the most commonly used channels on Windows right now, and are good for almost any scenario where your app is going to be distributed through the Microsoft Store. They allow you to send all types of notifications to the app. 
 
 ### What do primary channels enable?
 
@@ -45,7 +45,7 @@ These are the most commonly used channels on Windows right now, and are good for
 
 -   Requires using the WNS REST API to push notifications, which isn't standard across device vendors. 
 -   Only one channel can be created per app 
--   Requires your app to be registered in the Windows Store
+-   Requires your app to be registered in the Microsoft Store
 
 ### Creating a primary channel 
 
@@ -67,7 +67,7 @@ These are channels that can be used to push tile and badge updates to a secondar
 ### Limitations of secondary tile channels
 
 -   No toast or raw notifications allowed. Toast or raw notifications sent to a secondary tile are ignored by the system.
--   Requires your app to be registered in the Windows Store
+-   Requires your app to be registered in the Microsoft Store
 
 
 ### Creating a secondary tile channel 
@@ -79,12 +79,12 @@ PushNotificationChannel channel =
 
 ## Alternate channels
 
-Alternate channels enable apps to send push notifications without registering to the Windows Store or creating push channels outside of the primary one used for the app. 
+Alternate channels enable apps to send push notifications without registering to the Microsoft Store or creating push channels outside of the primary one used for the app. 
  
 ### What do alternate channels enable?
 -   Send raw push notifications to a UWP running on any Windows device. Alternate channels only allow for raw notifications.
 -   Allows apps to create multiple raw push channels for different features within the app. An app can create up to 1000 alternate channels, and each one is valid for 30 days. Each of these channels can be managed or revoked separately by the app.
--   Alternate push channels can be created without registering an app with the Windows Store. If you app is going to be installed on devices without registering it in the Windows Store, it will still be able to receive push notifications.
+-   Alternate push channels can be created without registering an app with the Microsoft Store. If you app is going to be installed on devices without registering it in the Microsoft Store, it will still be able to receive push notifications.
 -   Servers can push notifications using the W3C standard REST APIs and VAPID protocol. Alternate channels use the W3C standard protocol, this allows you to simplify the server logic that needs to be maintained.
 -   Full, end-to-end, message encryption. While the primary channel provides encryption while in transit, if you want to be extra secure, alternate channels enable your app to pass through encryption headers to protect a message. 
 

@@ -75,7 +75,7 @@ By default, your package flight will be published and made available to your fli
 
 ## Submit your package flight to the Store
 
-When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](the-app-certification-process.md). Note that packages included in your package flight must comply with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx), as with all submissions.
+When you've specified packages and configured any options needed, click **Submit to the Store**. Your package flight will then go through the [app certification process](the-app-certification-process.md). Note that packages included in your package flight must comply with the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx), as with all submissions.
 
 People in your flight group(s) associated with that package flight who already have your app will now get an update using the packages you included in your package flight. If those people don’t have your app yet, they’ll get the packages from your package flight when they install it. 
 

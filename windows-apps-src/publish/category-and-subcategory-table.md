@@ -4,7 +4,7 @@ Description: Listing your app in the right category and subcategory helps custom
 title: Category and subcategory table
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 09/28/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,7 @@ To change the category or subcategory of an app that's already in the Store (exc
 
 ## Categories and subcategories
 
-The Windows Store organizes apps into the following categories and subcategories.
+The Microsoft Store organizes apps into the following categories and subcategories.
 
 
 | Category                    | Subcategory                                       |
@@ -63,5 +63,5 @@ The Windows Store organizes apps into the following categories and subcategories
  
 
 > [!NOTE] 
-> Some of the categories and subcategories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, may appear differently than the categories listed above. 
+> Some of the categories and subcategories used in the Store for customers on Windows 8.x and Windows Phone 8.x and earlier may appear differently than the categories listed above. 
 

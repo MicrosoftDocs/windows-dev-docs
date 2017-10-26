@@ -17,14 +17,14 @@ As a game developer, you need to know your monetization options so you can susta
 In the past, you would simply put a price on your game and then wait for people to purchase it at a store. But today you have options. You can choose to distribute a game to "brick-and-mortar" stores, sell the game online (either physical or soft copies), or let everyone play the game for free but incorporate some sort of ads or in-game items that can be purchased. Games are also no longer just standalone products. They often come with extra content that can be purchased in addition to the main game.
 
 You can promote and monetize a UWP game in one or more of these ways:
-* Put your game in the Windows Store, which is a secured, online store offering [worldwide distribution](#worldwide-distribution-channel). Gamers around the world can buy your game online at the [price you set](#set-a-price-for-your-game).
+* Put your game in the Microsoft Store, which is a secured, online store offering [worldwide distribution](#worldwide-distribution-channel). Gamers around the world can buy your game online at the [price you set](#set-a-price-for-your-game).
 * Use APIs in the Windows SDK to create [in-game purchases](#in-game-purchases). Gamers can buy items from within your game, or buy additional content such as extra equipment, skins, maps, or game levels.
 * Use APIs in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) to display ads from ad networks. You can [display ads in your game](#display-ads-in-your-game) and offer the option for gamers to watch video ads in exchange for in-game rewards.
 * [Maximize your game's potential through ad campaigns](#maximize-your-games-potential-through-ad-campaigns). Promote your game using paid, community (free), or house (free) ad campaigns to grow its user base.
 
 ## Worldwide distribution channel
 
-The Windows Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Markets and custom prices](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
+The Microsoft Store can make your game available for download in more than 200 countries and regions worldwide, with support for billing via various forms of payment including Visa, MasterCard, and PayPal. For a full list of countries and regions, see [Markets and custom prices](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices).
 
 ## Set a price for your game
 
@@ -45,13 +45,13 @@ You can schedule sale campaigns in advance by setting both the starting date and
 
 ## In-game purchases
 
-In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Windows Store, these products are called _add-ons_. [Add-ons are published](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) through the Windows Dev Center dashboard. You'll also need to enable the add-ons in your game's code.
+In-game purchases are products bought within a game. They're also generically known as _in-app purchases_. In the Microsoft Store, these products are called _add-ons_. [Add-ons are published](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions) through the Windows Dev Center dashboard. You'll also need to enable the add-ons in your game's code.
 
 ### Types of add-ons
 
 You can create two types of add-ons in the store: _durables_ or _consumables_. Durables are items that persist over for a specified amount of time and can be purchased only once until they expire. Consumables are items that can be purchased and used again and again.
 
-When creating consumables, decide how you want to keep track of them &mdash; that is whether they're _developer managed_ or _Store managed_ (This feature is available starting in Windows 10, version 1607). With a developer-managed consumable, you are responsible for keeping track of the item's balance for the gamer; with a Store-managed consumable, the Windows Store keeps track of the item's balance for you. For more info, see [Overview of consumable add-ons](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
+When creating consumables, decide how you want to keep track of them &mdash; that is whether they're _developer managed_ or _Store managed_ (This feature is available starting in Windows 10, version 1607). With a developer-managed consumable, you are responsible for keeping track of the item's balance for the gamer; with a Store-managed consumable, the Microsoft Store keeps track of the item's balance for you. For more info, see [Overview of consumable add-ons](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons).
 
 ### Create in-game purchases
 
@@ -89,7 +89,7 @@ To create a package that can be uploaded to the Store:
 
 1. Open your game solution in Visual Studio.
 2. Within Visual Studio, go to __Project__ > __Store__ > __Create App Packages ...__
-3. For the __Do you want to build packages to upload to the Windows Store?__ option, select __Yes__.
+3. For the __Do you want to build packages to upload to the Microsoft Store?__ option, select __Yes__.
 4. Sign in to your Dev Center developer account. Or [register](https://developer.microsoft.com/store/register) for a developer account if you don't have one.
 5. Select an app to create the upload package for. If you have not yet created an app submission, provide a new app name to create a new submission. For more info, see [Create your app by reserving a name](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name).
 6. After the package has been created successfully, click __Launch Windows App Certification Kit__ to start the testing process.
@@ -137,7 +137,7 @@ Other configurations for add-ons include:
 * [Pricing and availability](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [Store listing](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-If your game has many add-ons, you can create them programmatically by using the __Windows Store submission API__. For more info, see [Create and manage submissions using Windows Store services](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
+If your game has many add-ons, you can create them programmatically by using the __Microsoft Store submission API__. For more info, see [Create and manage submissions using Microsoft Store services](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services).
 
 ## Display ads in your game
 

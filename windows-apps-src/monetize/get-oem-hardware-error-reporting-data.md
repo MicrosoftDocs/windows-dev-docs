@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: AE3E003F-BDEC-438B-A80A-3CE1675B369C
-description: Use this method in the Windows Store analytics API to get aggregate hardware error reporting data for a given date range and other optional filters. This method is intended only for OEMs.
+description: Use this method in the Microsoft Store analytics API to get aggregate hardware error reporting data for a given date range and other optional filters. This method is intended only for OEMs.
 title: Get OEM hardware error reporting data
 ms.author: mcleans
 ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, errors
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors
 ---
 
 # Get OEM hardware error reporting data
 
-Use this method in the Windows Store analytics API to get aggregate reporting data for OEM hardware errors for a given date range and other optional filters. You can retrieve additional error information by using the [get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md) method.
+Use this method in the Microsoft Store analytics API to get aggregate reporting data for OEM hardware errors for a given date range and other optional filters. You can retrieve additional error information by using the [get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md) method.
 
 > [!NOTE]
 > This method can only be used by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
@@ -22,7 +22,7 @@ Use this method in the Windows Store analytics API to get aggregate reporting da
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request

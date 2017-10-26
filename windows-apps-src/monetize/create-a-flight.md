@@ -1,14 +1,14 @@
 ---
 author: mcleanbyron
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: Use this method in the Windows Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
 title: Create a package flight
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, create flight
+keywords: windows 10, uwp, Microsoft Store submission API, create flight
 ---
 
 # Create a package flight
@@ -16,7 +16,7 @@ keywords: windows 10, uwp, Windows Store submission API, create flight
 
 
 
-Use this method in the Windows Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
 
 >**Note**&nbsp;&nbsp;This method creates a package flight without any submissions. To create a submission for package flight, see the methods in [Manage package flight submissions](manage-flight-submissions.md).
 
@@ -24,7 +24,7 @@ Use this method in the Windows Store submission API to create a package flight f
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -117,11 +117,11 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 400  | The request is invalid. |
-| 409  | The package flight could not be created because of its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The package flight could not be created because of its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 <span/>
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get a package flight](get-a-flight.md)
 * [Delete a package flight](delete-a-flight.md)

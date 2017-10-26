@@ -18,7 +18,7 @@ You can create an ad campaign using the Dev Center dashboard to help promote you
 You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
 
 > [!NOTE]
-> This section of the documentation describes how to create an ad campaign on the Dev Center dashboard. Alternatively, you can use the [Windows Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
+> This section of the documentation describes how to create an ad campaign on the Dev Center dashboard. Alternatively, you can use the [Microsoft Store promotions API](../monetize/run-ad-campaigns-using-windows-store-services.md) to create and manage ad campaigns programmatically.
 
 ## Instructions
 
@@ -71,7 +71,7 @@ Here's how to create an ad campaign to promote an app.
 
 10.  In the **Ad design** page, choose one of these options:
     -   **Auto-generated**. This is the default option, allowing you to create an ad from our default templates. You can make selections to customize your ad content, and we'll preview what your ad will look like based on your choices (updated automatically as you make selections).
-        -   In the **Language** drop-down, select the language for your ad. The text for the Windows Store badge will appear in the language you select.
+        -   In the **Language** drop-down, select the language for your ad. The text for the Microsoft Store badge will appear in the language you select.
         -   To add an extra line of text to your ad, enter text in the **Custom tagline** field.
             > [!NOTE]
             > The text you enter here must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
@@ -90,7 +90,7 @@ Here's how to create an ad campaign to promote an app.
 
 11.  If you have a [premium account](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), you can use the **Destination URL** box to control what happens when a customer clicks your ad.
     - If you leave the box empty, when a customer clicks your ad, your app's Store listing will be displayed.
-    - If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Windows Store. For more information about install tracking with Kochava and Tune, see the [Kochava](http://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
+    - If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Microsoft Store. For more information about install tracking with Kochava and Tune, see the [Kochava](http://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
     - If you chose **Increase engagement in your app** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
     - If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 

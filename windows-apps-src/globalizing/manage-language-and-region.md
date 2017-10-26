@@ -32,7 +32,7 @@ A Windows user can run apps in a completely different language than Windows. For
 
 For UWP apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the UWP, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
 
-See [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969) for a list of the language tags specifically supported by the Windows Store.
+See [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969) for a list of the language tags specifically supported by the Microsoft Store.
 
 ## Tasks
 
@@ -46,7 +46,7 @@ The user's language preferences list can contain multiple languages and regional
 
 ### Specify the supported languages in the app's manifest
 
-Specify the list of your app's supported languages in the [**Resources element**](https://msdn.microsoft.com/library/windows/apps/dn934770) of the app's manifest file (typically Package.appxmanifest), or Visual Studio automatically generates the list of languages in the manifest file based on the languages found in the project. The manifest should accurately describe the supported languages at the appropriate level of granularity. The languages listed in the manifest are the languages displayed to users in the Windows Store.
+Specify the list of your app's supported languages in the [**Resources element**](https://msdn.microsoft.com/library/windows/apps/dn934770) of the app's manifest file (typically Package.appxmanifest), or Visual Studio automatically generates the list of languages in the manifest file based on the languages found in the project. The manifest should accurately describe the supported languages at the appropriate level of granularity. The languages listed in the manifest are the languages displayed to users in the Microsoft Store.
 
 ### Specify the default language
 
@@ -68,7 +68,7 @@ When you qualify resources with language:
 Mark assets with an accurate representation of the content.
 
 -   Windows does complex matching, including across regional variants (such as en-US to en-GB), so applications are free to mark assets with an accurate representation of the content and let Windows match appropriately for each user.
--   The Windows Store displays what's in the manifest to users looking at the application.
+-   The Microsoft Store displays what's in the manifest to users looking at the application.
 -   Be aware that some tools and other components such as machine translators may find specific language tags, such as regional dialect info, helpful in understanding the data.
 -   Be sure to mark assets with full details, especially when multiple variants are available. For example, mark en-GB and en-US if both are specific to that region.
 -   For languages that have a single standard dialect, there is no need to add region. General tagging is reasonable in some situations, such as marking assets with ja instead of ja-JP.
@@ -117,7 +117,7 @@ See the Remarks section below for examples.
 
 ### Set the HTTP Accept Language header
 
-HTTP requests made from Windows Store apps and Desktop apps in typical web requests and XMLHttpRequest (XHR), use the standard HTTP Accept-Language header. By default, the HTTP header is set to the user's language preferences, in the user's preferred order, as specified in **Settings** &gt; **Time & language** &gt; **Region & language**. Each language in the list is further expanded to include neutrals of the language and a weighting (q). For example, a user's language list of fr-FR and en-US results in an HTTP Accept-Language header of fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3").
+HTTP requests made from UWP apps and Desktop apps in typical web requests and XMLHttpRequest (XHR), use the standard HTTP Accept-Language header. By default, the HTTP header is set to the user's language preferences, in the user's preferred order, as specified in **Settings** &gt; **Time & language** &gt; **Region & language**. Each language in the list is further expanded to include neutrals of the language and a weighting (q). For example, a user's language list of fr-FR and en-US results in an HTTP Accept-Language header of fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3").
 
 ### Use the APIs in the Windows.Globalization namespace
 

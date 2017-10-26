@@ -343,4 +343,4 @@ The complete Run method, and timer callback code, from the [background task samp
 * [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
 * [Use a maintenance trigger](use-a-maintenance-trigger.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
