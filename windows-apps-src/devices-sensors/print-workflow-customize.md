@@ -18,7 +18,7 @@ Developers can customize the printing workflow experience through the use of a p
 
 Just as in the case of WSDAs, when the user of a source application elects to print something and navigates through the print dialog, the system checks whether a workflow app is associated with that printer. If it is, the print workflow app launches (primarily as a background task; more on this below). A workflow app is able to alter both the print ticket (the XML document that configures the printer device settings for the current print task) and the actual XPS content to be printed. It can optionally expose this functionality to the user by launching a UI midway through the process. After doing its work, it passes the print content and print ticket on to the driver.
 
-Because it involves background and foreground components, and because it is functionally coupled with other app(s), a print workflow app can be more complicated to implement than other categories of UWP apps. It is recommended that you inspect the [Workflow app sample (coming soon)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Samples) while reading this guide to better understand how the different features can be implemented. Some features, such as various error checks and UI management, are absent from this guide for the sake of simplicity.
+Because it involves background and foreground components, and because it is functionally coupled with other app(s), a print workflow app can be more complicated to implement than other categories of UWP apps. It is recommended that you inspect the [Workflow app sample](https://github.com/Microsoft/print-oem-samples) while reading this guide to better understand how the different features can be implemented. Some features, such as various error checks and UI management, are absent from this guide for the sake of simplicity.
 
 ## Getting started
 
@@ -248,6 +248,11 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
 ```
 
 A local user can run this policy on a local printer, or, for enterprise implementation, the printer administrator can run this policy on the Print Server. The policy will then be synchronized to all client connections. The printer admin can use this policy whenever a new printer is added.
- 
+
+## See also
+
+[Workflow app sample](https://github.com/Microsoft/print-oem-samples)
+
+[Windows.Graphics.Printing.Workflow namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 
 
