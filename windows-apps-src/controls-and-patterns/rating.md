@@ -1,9 +1,14 @@
 ---
 author: serenaz
-description:
+description: Enables users to rate content with touch, pen, mouse, gamepad and keyboard.
 title: Ratings Control
 template: detail.hbs
 ms.author: sezhen
+ms.date: 10/25/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra

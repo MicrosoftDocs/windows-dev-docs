@@ -3,7 +3,7 @@ author: Mtoepke
 title: UWP on Xbox One
 description: How to build apps for the Universal Windows Platform (UWP) on Xbox One.
 ms.author: mtoepke
-ms.date: 10/20/2017
+ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,20 +23,20 @@ This section includes setup steps, a guide through the authentication process, i
 |------------|-------------|
 |[Getting started](getting-started.md)| Getting started guide for UWP on Xbox One development. |
 |[What's new](whats-new.md)| Highlights new features in UWP on Xbox One. |
-|[Xbox best practices](tailoring-for-xbox.md)| How to turn off mouse mode, draw to the edges of the screen, and disable scaling. |
+|[Xbox One Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox One. |
+|[Disabling Developer Mode on Xbox One](devkit-deactivation.md)| Explains how to disable Developer Mode on Xbox One. |
+|[Set up your UWP on Xbox development environment](development-environment-setup.md)| Describes the steps to set up and test your Xbox One development environment. |
+|[Samples](samples.md)| Pointer to the GitHub location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox. Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies. |
 |[Known issues](known-issues.md)| Known issues with UWP on Xbox One. |
 |[FAQ](frequently-asked-questions.md)| Frequently asked questions related to UWP on Xbox One. |
-|[Xbox One Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox One. |
 |[Tools](introduction-to-xbox-tools.md)| Describes the Xbox One-specific tool _Dev Home_, how to use the Windows Device Portal, and how to set up Visual Studio for development. This section also guides a new developer through their first Xbox UWP application and explains how to use the Fiddler tool to view network traffic. |
-|[Set up your UWP on Xbox development environment](development-environment-setup.md)| Describes the steps to set up and test your Xbox One development environment. |
-|[System resources for UWP apps and games on Xbox One](system-resource-allocation.md)| Describes the resources available to your application when it is running on Xbox One. | 
-|[Designing for Xbox and TV](..\input-and-devices\designing-for-tv.md)| Describes best practices for designing an app that will be viewed on a TV and will use a controller for input. |  
-|[Introduction to multi-user applications](multi-user-applications.md)| Describes multi-user applications (MUAs) on Xbox One. |
-|[Samples](samples.md)| Pointer to the GitHub location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox. Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies. |
 | [App Dev on Xbox event](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | The App Dev on Xbox event is a great starting point for developers new to building apps on Xbox. Watch the recorded sessions and read the blog posts from the event. |
+|[Designing for Xbox and TV](..\input-and-devices\designing-for-tv.md)| Describes best practices for designing an app that will be viewed on a TV and will use a controller for input. |
+|[Xbox best practices](tailoring-for-xbox.md)| How to turn off mouse mode, draw to the edges of the screen, and disable scaling. |
+|[System resources for UWP apps and games on Xbox One](system-resource-allocation.md)| Describes the resources available to your application when it is running on Xbox One. |
+|[Introduction to multi-user applications](multi-user-applications.md)| Describes multi-user applications (MUAs) on Xbox One. |
 | [Automating Xbox One Development tasks](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | The WindowsDevicePortalWrapper project on GitHub provides a library that allows you to automate common development tasks such as deploying or launching an app. The project includes a sample, XboxWdpDriver.exe, that demonstrates how to use the APIs for common tasks. |
 |[Bringing existing games to Xbox](development-lanes-landing.md)|Based on what technology your game is built on top of, we can direct you to step-by-step instructions that can expedite the process of bringing your game to Xbox using the UWP.|
-|[Disabling Developer Mode on Xbox One](devkit-deactivation.md)| Explains how to disable Developer Mode on Xbox One. |
 |[UWP features that aren’t yet supported on Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  Describes UWP feature areas that are not yet fully functional on Xbox One.|
 
 ## Videos

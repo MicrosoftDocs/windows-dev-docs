@@ -16,6 +16,8 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 
 # Localize strings in your UI and app package manifest
 
+For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+
 If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 
 Hardcoded string literals can appear in imperative code or in XAML markup, for example as the **Text** property of a **TextBlock**. They can also appear in your app package manifest (the `Package.appxmanifest` file), for example as the value for Display name on the Application tab of the Visual Studio Manifest Designer. Move these strings into a Resources File (.resw), and replace the hardcoded string literals in your app and in your manifest with references to resource identifiers.
@@ -48,7 +50,7 @@ Unlike image resources, where only one image resource is contained in an image r
 You use an [x:Uid directive](../xaml-platform/x-uid-directive.md) to associate a control or other element in your markup with a string resource identifier.
 
 **XAML**
-```XML
+```xml
 <TextBlock x:Uid="Greeting"/>
 ```
 
@@ -69,7 +71,7 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 You can explicitly load a string resource based on a simple string resource identifier.
 
 **C#**
-```CSharp
+```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
@@ -132,14 +134,14 @@ You can keep all of your strings in a single Resources File (resw), or you can f
 To scope a string resource identifier reference to a particular file, you just add `/<resources-file-name>/` before the identifier. The markup example below assumes that `ErrorMessages.resw` contains a resource whose name is "PasswordTooWeak.Text" and whose value describes the error.
 
 **XAML**
-```XML
+```xml
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
 The code example below assumes that `ErrorMessages.resw` contains a resource whose name is "MismatchedPasswords" and whose value describes the error.
 
 **C#**
-```CSharp
+```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ManifestResources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("/ErrorMessages/MismatchedPasswords");
 ```

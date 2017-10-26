@@ -16,13 +16,6 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 
 Your app can load image resource files (or other asset files) tailored for [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)</li>
-<li>[**MapChanged**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_?branch=live#Windows_Foundation_Collections_IObservableMap_2_MapChanged)</li></ul>
-</div>
-
 An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
 Some common qualifiers for images are [scale](tailor-resources-lang-scale-contrast.md#scale), [theme](tailor-resources-lang-scale-contrast.md#theme), [contrast](tailor-resources-lang-scale-contrast.md#contrast), and [targetsize](tailor-resources-lang-scale-contrast.md#targetsize).
@@ -144,6 +137,8 @@ See [Mirroring images](../globalizing/adjust-layout-and-fonts--and-support-rtl.m
 
 ## Load an image for a specific language or other context
 
+For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+
 The default [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) (obtained from [**ResourceContext.GetForCurrentView**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_GetForCurrentView)) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Image files are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
 
 But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching image to load. For example, you might want to control exactly when and which high contrast images are loaded.
@@ -210,6 +205,11 @@ private void RefreshUIImages()
 }
 ```
 
+## Important APIs
+
+* [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
+* [MapChanged](/uwp/api/windows.foundation.collections.iobservablemap_k_v_?branch=live#Windows_Foundation_Collections_IObservableMap_2_MapChanged)
+
 ## Related topics
 
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
@@ -218,3 +218,4 @@ private void RefreshUIImages()
 * [Tile and toast support for language, scale, and high contrast](tile-toast-language-scale-contrast.md)
 * [Localizable manifest items](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
 * [Mirroring images](../globalizing/adjust-layout-and-fonts--and-support-rtl.md#mirroring-images)
+* [Globalization and localization](../globalizing/globalizing-portal.md)

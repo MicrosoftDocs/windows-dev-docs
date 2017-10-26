@@ -30,6 +30,7 @@ This section shows you how to author, package, and consume your app's string, im
 | [MakePri.exe command-line options](makepri-exe-command-options.md) | MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. This topic details the command-line options for their use. |
 | [MakePri.exe configuration file](makepri-exe-configuration.md) | This topic describes the schema of the MakePri.exe XML configuration file. |
 | [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md) | This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources. |
+| [Use the Windows 10 Resource Management System in a legacy app or game](using-mrt-for-converted-desktop-apps-and-games.md) | By packaging your .NET or Win32 app or game as an AppX package, you can leverage the Resource Management System to load app resources tailored to the run-time context. This in-depth topic describes the techniques. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 

@@ -45,15 +45,19 @@ Here, we cover the three kinds of speech recognition constraints used from withi
 
 Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
 
--   A single-topic constraint, or predefined grammar (dictation or web search). No other constraints are allowed.
--   A combination of list constraints and/or grammar-file constraints.
+- A single-topic constraint (dictation or web search)
+- For Windows 10 Fall Creators Update (10.0.16299.15) and newer, a single topic constraint can be combined with a list constraint
+- A combination of list constraints and/or grammar-file constraints.
 
-**Remember:  **Call the [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) method to compile the constraints before starting the recognition process.
+> [!Important]
+> Call the **[SpeechRecognizer.CompileConstraintsAsync](https://msdn.microsoft.com/library/windows/apps/dn653240)** method to compile the constraints before starting the recognition process.
 
 ## Specify a web-search grammar (SpeechRecognitionTopicConstraint)
 
-
 Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.
+
+> [!NOTE]
+> You can use a [SpeechRecognitionListConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint) in conjunction with a [SpeechRecognitionTopicConstraint](https://docs.microsoft.com/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint) to increase dictation accuracy by providing a set of domain-specific keywords that you think are likely to be used during dictation.
 
 Here, we add a web-search grammar to the constraints collection.
 

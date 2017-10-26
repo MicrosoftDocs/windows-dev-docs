@@ -28,7 +28,7 @@ Typically, qualifiers found on a containing entity&mdash;such as a folder or a `
 
 The folder indexer is identified by a `type` attribute of FOLDER. It indexes the contents of a folder, and determines resource qualifiers from the folder and filenames. Its configuration element conforms to the following schema.
 
-```xsd
+```xml
 <xs:schema attributeFormDefault=\"unqualified\" elementFormDefault=\"qualified\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\">\
     <xs:simpleType name=\"ExclusionTypeList\">\
         <xs:restriction base=\"xs:string\">\
@@ -71,7 +71,7 @@ The PRI indexer is identified by a `type` attribute of PRI. It indexes the conte
 
 All resource names, qualifiers and values contained in the PRI file are directly maintained in the new PRI file. The top level resource map, however is not maintained in the final PRI. Resource Maps are merged.
 
-```xsd
+```xml
 <xs:schema id=\"prifile\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
     <xs:simpleType name=\"IndexerConfigPriType\">\
         <xs:restriction base=\"xs:string\">\
@@ -90,7 +90,7 @@ All resource names, qualifiers and values contained in the PRI file are directly
 
 The PriInfo indexer is identified by a `type` attribute of PRIINFO. It indexes the contents of a detailed dump file. You produce a detailed dump file by running `makepri dump` with the `/dt detailed` option. The configuration element for the indexer conforms to the following schema.
 
-```xsd
+```xml
 <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:simpleType name="IndexerConfigPriInfoType">
     <xs:restriction base="xs:string">
@@ -117,7 +117,7 @@ Here is an example configuration that includes String resource types but skips P
 
 To be indexed, a dump file must end with the extension `.pri.xml`, and must conform to the following schema.
 
-```xsd
+```xml
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >\
   <xs:simpleType name="candidateType">\
     <xs:restriction base="xs:string">\
@@ -262,7 +262,7 @@ This is an example of a valid Path type resource with two candidates from a dump
 
 The ResFiles indexer is identified by a `type` attribute of RESFILES. It indexes the contents of a `.resfiles` file. Its configuration element conforms to the following schema.
 
-```xsd
+```xml
 <xs:schema id=\"resx\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
     <xs:simpleType name=\"IndexerConfigResFilesType\">\
         <xs:restriction base=\"xs:string\">\
@@ -280,7 +280,7 @@ The ResFiles indexer is identified by a `type` attribute of RESFILES. It indexes
 
 A `.resfiles` file is a text file containing a flat list of file paths. A `.resfiles` file can contain "//" comments. Here's an example.
 
-```resfiles
+```
 Strings\component1\fr\elements.resjson
 Images\logo.scale-100.png
 Images\logo.scale-140.png
@@ -291,7 +291,7 @@ Images\logo.scale-180.png
 
 The ResJSON indexer is identified by a `type` attribute of RESJSON. It indexes the contents of a `.resjson` file, which is a string resource file. Its configuration element conforms to the following schema.
 
-```xsd
+```xml
 <xs:schema id=\"resjson\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
     <xs:simpleType name=\"IndexerConfigResJsonType\">\
         <xs:restriction base=\"xs:string\">\
@@ -319,7 +319,7 @@ The `initialPath` attribute places all resources under this initial path by prep
 
 The ResW indexer is identified by a `type` attribute of RESW. It indexes the contents of a `.resw` file, which is a string resource file. Its configuration element conforms to the following schema.
 
-```xsd
+```xml
 <xs:schema id=\"resw\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" elementFormDefault=\"qualified\">\
     <xs:simpleType name=\"IndexerConfigResxType\">\
         <xs:restriction base=\"xs:string\">\
@@ -338,7 +338,7 @@ The ResW indexer is identified by a `type` attribute of RESW. It indexes the con
 
 A `.resw` file is an XML file that conforms to the following schema.
 
-```resw
+```xml
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">

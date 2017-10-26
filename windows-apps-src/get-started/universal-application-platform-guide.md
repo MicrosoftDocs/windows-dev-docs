@@ -1,4 +1,4 @@
----
+﻿---
 author: TylerMSFT
 title: Intro to the Universal Windows Platform
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
@@ -202,7 +202,7 @@ The API documentation also tells you which device family an API is part of. If y
 
 **Calling an API that's NOT implemented by your target device family**
 
-There will be cases when you want to call an API in an extension SDK that you've referenced, but that API is not part of the device family you are targeting. For example, you may be targeting the universal device family, but have a desktop API that you'd like to use if the app happens to be running on a mobile device. In that case, you can opt to write adaptive code in order to call that API.
+There will be cases when you want to call an API in an extension SDK that you've referenced, but that API is not part of the device family you are targeting. For example, you may be targeting the universal device family, but have a desktop API that you'd like to use if the app happens to be running on a desktop device. In that case, you can opt to write adaptive code in order to call that API.
 
 **Writing adaptive code with the ApiInformation class**
 

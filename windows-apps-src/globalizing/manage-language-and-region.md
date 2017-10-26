@@ -12,25 +12,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # Manage language and region
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
-<li>[**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
-<li>[**WinJS.Resources Namespace**](https://msdn.microsoft.com/library/windows/apps/br229779)</li>
-</ul>
-</div>
-
 
 ## Introduction
 
+For more info, see [App resources and the Resource Management System](../app-resources/index.md).
 
 For a sample app that demonstrates how to manage language and region settings, see [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
 
@@ -40,14 +30,13 @@ A Windows user can specify their location, which can be anywhere in the world. A
 
 A Windows user can run apps in a completely different language than Windows. For example, the user can run an app in Spanish while Windows is running in English.
 
-For Windows Store apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the Windows Runtime, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
+For UWP apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the UWP, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
 
 See [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969) for a list of the language tags specifically supported by the Microsoft Store.
 
 ## Tasks
 
-
-### Users can set their language preferences.
+### Users can set their language preferences
 
 The user language preferences list is an ordered list of languages that describe the user's languages in the order that they prefer them.
 
@@ -55,11 +44,11 @@ The user sets the list in **Settings** &gt; **Time & language** &gt; **Region & 
 
 The user's language preferences list can contain multiple languages and regional or otherwise specific variants. For example, the user might prefer fr-CA, but can also understand en-GB.
 
-### Specify the supported languages in the app's manifest.
+### Specify the supported languages in the app's manifest
 
 Specify the list of your app's supported languages in the [**Resources element**](https://msdn.microsoft.com/library/windows/apps/dn934770) of the app's manifest file (typically Package.appxmanifest), or Visual Studio automatically generates the list of languages in the manifest file based on the languages found in the project. The manifest should accurately describe the supported languages at the appropriate level of granularity. The languages listed in the manifest are the languages displayed to users in the Microsoft Store.
 
-### Specify the default language.
+### Specify the default language
 
 Open package.appxmanifest in Visual Studio, go to the **Application** tab, and set your default language to the language you are using to author your application.
 
@@ -67,7 +56,7 @@ An app uses the default language when it doesn't support any of the languages th
 
 The default language property must also be set as the first language in the manifest to appropriately set the application language (described in the step "Create the application language list", below). Resources in the default language must still be qualified with their language (for example, en-US/logo.png). The default language does not specify the implicit language of unqualified assets. To learn more, see [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md).
 
-### Qualify resources with their language.
+### Qualify resources with their language
 
 Consider your audience carefully and the language and location of users you want to target. Many people who live in a region don't prefer the primary language of that region. For example, there are millions of households in the United States in which the primary language is Spanish.
 
@@ -91,7 +80,7 @@ Sometimes there are situations where not all resources need to be localized.
 -   For resources that have specific exceptions in some languages and all other languages map to a common resource, the resource that should be used for all languages should be marked with the undetermined language tag 'und'. Windows interprets the 'und' language tag in a manner similar to '\*', in that it matches the top application language after any other specific match. For example, if a few resources (such as the width of an element) are different for Finnish, but the rest of the resources are the same for all languages, the Finnish resource should be marked with the Finnish language tag, and the rest should be marked with 'und'.
 -   For resources that are based on a language's script instead of the language, such as a font or height of text, use the undetermined language tag with a specified script: 'und-&lt;script&gt;'. For example, for Latin fonts use und-Latn\\fonts.css and for Cyrillic fonts use und-Cryl\\fonts.css.
 
-### Create the application language list.
+### Create the application language list
 
 At runtime, the system determines the user language preferences that the app declares support for in its manifest, and creates an *application language list*. It uses this list to determine the language(s) that the application should be in. The list determines the language(s) that is used for app and system resources, dates, times, and numbers, and other components. For example, the Resource Management System ([**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022), [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) and [**WinJS.Resources Namespace**](https://msdn.microsoft.com/library/windows/apps/br229779)) loads UI resources according to the application language. [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) also chooses formats based on the application language list. The application language list is available using [**Windows.Globalization.ApplicationLanguages.Languages**](https://msdn.microsoft.com/library/windows/apps/hh972396).
 
@@ -126,17 +115,17 @@ The application language list is made up of the following items:
 
 See the Remarks section below for examples.
 
-### Set the HTTP Accept Language header.
+### Set the HTTP Accept Language header
 
 HTTP requests made from UWP apps and Desktop apps in typical web requests and XMLHttpRequest (XHR), use the standard HTTP Accept-Language header. By default, the HTTP header is set to the user's language preferences, in the user's preferred order, as specified in **Settings** &gt; **Time & language** &gt; **Region & language**. Each language in the list is further expanded to include neutrals of the language and a weighting (q). For example, a user's language list of fr-FR and en-US results in an HTTP Accept-Language header of fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3").
 
-### Use the APIs in the Windows.Globalization namespace.
+### Use the APIs in the Windows.Globalization namespace
 
 Typically, the API elements in the [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) namespace use the application language list to determine the language. If none of the languages has a matching format, the user locale is used. This is the same locale that is used for the system clock. The user locale is available from the **Settings** &gt; **Time & language** &gt; **Region & language** &gt; **Additional date, time, & regional settings** &gt; **Region: Change date, time, or number formats**. The **Windows.Globalization** APIs also accept an override to specify a list of languages to use, instead of the application language list.
 
 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) also has a [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) object that is provided as a helper object. It lets apps inspect details about the language, such as the script of the language, the display name, and the native name.
 
-### Use geographic region when appropriate.
+### Use geographic region when appropriate
 
 Instead of language, you can use the user's home geographic region setting for choosing what content to display to the user. For example, a news app might default to displaying content from a user's home location, which is set when Windows is installed and is available in the Windows UI under **Region: Change date, time, or number formats** as described in the previous task. You can retrieve the current user's home region setting by using [**Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion**](https://msdn.microsoft.com/library/windows/apps/br241829).
 
@@ -144,8 +133,7 @@ Instead of language, you can use the user's home geographic region setting for c
 
 ## Remarks
 
-
-The following table contains examples of what the user would see in the app's UI under various language and region settings.
+The following table contains examples of what the user would see in your app's UI under various language and region settings.
 
 <table border="1">
 <colgroup>
@@ -210,10 +198,12 @@ The following table contains examples of what the user would see in the app's UI
 </tbody>
 </table>
 
- 
+## Important APIs
+* [Windows.Globalization](https://msdn.microsoft.com/library/windows/apps/br206813)
+* [Windows.ApplicationModel.Resources](https://msdn.microsoft.com/library/windows/apps/br206022)
+* [WinJS.Resources Namespace](https://msdn.microsoft.com/library/windows/apps/br229779)
 
 ## Related topics
-
 
 * [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303)

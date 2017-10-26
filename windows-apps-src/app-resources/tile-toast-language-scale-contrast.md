@@ -16,6 +16,8 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 
 Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
+For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+
 ## Refer to a string resource from a template
 
 In your tile or toast template, you can refer to a string resource using the `ms-resource` URI (Uniform Resource Identifier) scheme followed by a simple string resource identifier. For example, if you have a Resources.resx file that contains a resource entry whose name is "Farewell", then you have a string resource with the identifier "Farewell". For more info on string resource identifiers and Resources Files (.resw), see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md).
