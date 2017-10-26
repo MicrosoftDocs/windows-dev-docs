@@ -1,4 +1,4 @@
----
+﻿---
 author: TylerMSFT
 title: Intro to the Universal Windows Platform
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
@@ -20,7 +20,7 @@ In this guide, you'll learn about the Universal Windows Platform (UWP) and Windo
 -   New UI controls and panels for adapting your UI to different screen sizes or rotations.
 -   How to understand and control the API surface that is available to your app.
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform available on every device that runs Windows 10. The UWP provides a guaranteed core API across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Windows Store provides a unified distribution channel to reach all the device types your app can run on. Apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the class of device that the app is running on.
+Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform available on every device that runs Windows 10. The UWP provides a guaranteed core API across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Microsoft Store provides a unified distribution channel to reach all the device types your app can run on. Apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the class of device that the app is running on.
 
 ![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, one dev center, and cloud services](images/universalapps-overview.png)
 
@@ -202,7 +202,7 @@ The API documentation also tells you which device family an API is part of. If y
 
 **Calling an API that's NOT implemented by your target device family**
 
-There will be cases when you want to call an API in an extension SDK that you've referenced, but that API is not part of the device family you are targeting. For example, you may be targeting the universal device family, but have a desktop API that you'd like to use if the app happens to be running on a mobile device. In that case, you can opt to write adaptive code in order to call that API.
+There will be cases when you want to call an API in an extension SDK that you've referenced, but that API is not part of the device family you are targeting. For example, you may be targeting the universal device family, but have a desktop API that you'd like to use if the app happens to be running on a desktop device. In that case, you can opt to write adaptive code in order to call that API.
 
 **Writing adaptive code with the ApiInformation class**
 
@@ -273,7 +273,7 @@ In addition to interaction on different devices, [plan your app](https://msdn.mi
 
 The new unified Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place. New features simplify processes while giving you more control. You'll also find detailed [analytic reports](https://msdn.microsoft.com/library/windows/apps/mt148522) combined [payout details](https://msdn.microsoft.com/library/windows/apps/dn986925), ways to [promote your app and engage with your customers](https://msdn.microsoft.com/library/windows/apps/mt148526), and much more.
 
-See [Using the unified Windows Dev Center dashboard](../publish/using-the-windows-dev-center-dashboard.md) to learn how to submit your apps for publication in the Windows Store.
+See [Using the unified Windows Dev Center dashboard](../publish/using-the-windows-dev-center-dashboard.md) to learn how to submit your apps for publication in the Microsoft Store.
 
 ## See Also ##
 For more introductory material, see [Windows 10 - An Introduction to Building Windows Apps for Windows 10 Devices](https://msdn.microsoft.com/magazine/dn973012.aspx)

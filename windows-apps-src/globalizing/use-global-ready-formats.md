@@ -12,10 +12,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # Use global-ready formats
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. This permits you to adapt your app later for additional cultures, regions, and languages in the global market.
 
@@ -28,7 +27,6 @@ Develop a global-ready app by appropriately formatting dates, times, numbers, ph
 <li>[**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)</li>
 </ul>
 </div>
-
 
 ## Introduction
 
@@ -109,6 +107,7 @@ The calendar differs across regions and languages. The Gregorian calendar is not
 Use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls to allow users to choose a date, to ensure that the preferred calendar format is used. For more complex scenarios, where working directly with operations on calendar dates may be required, Windows.Globalization provides a [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) class that gives an appropriate calendar representation for the given culture, region, and calendar type.
 
 ## Format phone numbers appropriately
+
 Phone numbers are formatted differently across regions. The number of digits, how the digits are grouped, and the significance of certain parts of the phone number vary from one country to the next. Starting in Windows 10, version 1607, you can use  [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) to format phone numbers appropriately for the current region.
 
 [**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) parses a string of digits and allows you to determine if the digits are a valid phone number in the current region, compare two numbers for equality, and to extract the different functional parts of the phone number, such as country code or geographical area code.
@@ -148,22 +147,24 @@ The code below shows how to use PhoneNumberFormatter to format a phone number as
     }
 ```    
 
-## Respect the user's Language and Cultural Preferences
+## Respect the user's language and cultural preferences
 
 For scenarios where you provide different functionality based on the user's language, region, or cultural preferences, Windows gives you a way to access those preferences, through [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825). When needed, use the **GlobalizationPreferences** class to get the value of the user's current geographic region, preferred languages, preferred currencies, and so on.
+
+## Important APIs
+
+* [Windows.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/br206724)
+* [Windows.Globalization.DateTimeFormatting](https://msdn.microsoft.com/library/windows/apps/br206859)
+* [Windows.Globalization.NumberFormatting](https://msdn.microsoft.com/library/windows/apps/br226136)
+* [Windows.System.UserProfile.GlobalizationPreferences](https://msdn.microsoft.com/library/windows/apps/br241825)
 
 ## Related topics
 
 * [Plan for a global market](https://msdn.microsoft.com/library/windows/apps/hh465405)
 * [Guidelines for date and time controls](https://msdn.microsoft.com/library/windows/apps/hh465466)
 
-**Reference**
-* [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
-* [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
-* [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
-* [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825)
+## Samples
 
-**Samples**
 * [Calendar details and math sample](http://go.microsoft.com/fwlink/p/?linkid=231636)
 * [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?linkid=231618)
 * [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)

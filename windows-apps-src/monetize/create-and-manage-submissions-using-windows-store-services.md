@@ -1,26 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
-description: Use the Windows Store submission API to programmatically create and manage submissions for apps that are registered to your Windows Dev Center account.
+description: Use the Microsoft Store submission API to programmatically create and manage submissions for apps that are registered to your Windows Dev Center account.
 title: Create and manage submissions
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API
+keywords: windows 10, uwp, Microsoft Store submission API
 ---
 
 # Create and manage submissions
 
 
-Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Use the *Microsoft Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 
-The following steps describe the end-to-end process of using the Windows Store submission API:
+The following steps describe the end-to-end process of using the Microsoft Store submission API:
 
 1.  Make sure that you have completed all the [prerequisites](#prerequisites).
-3.  Before you call a method in the Windows Store submission API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store submission API before the token expires. After the token expires, you can generate a new token.
-4.  [Call the Windows Store submission API](#call-the-windows-store-submission-api).
+3.  Before you call a method in the Microsoft Store submission API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
+4.  [Call the Microsoft Store submission API](#call-the-windows-store-submission-api).
 
 
 <span id="not_supported" />
@@ -28,21 +28,21 @@ The following steps describe the end-to-end process of using the Windows Store s
 > If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 > [!NOTE]
-This API cannot be used with apps or add-ons that use certain features that were introduced to the Dev Center dashboard in August 2016, including (but not limited to) mandatory app updates and Store-managed consumable add-ons. If you use the Windows Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.
+This API cannot be used with apps or add-ons that use certain features that were introduced to the Dev Center dashboard in August 2016, including (but not limited to) mandatory app updates and Store-managed consumable add-ons. If you use the Microsoft Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.
 
 
 <span id="prerequisites" />
-## Step 1: Complete prerequisites for using the Windows Store submission API
+## Step 1: Complete prerequisites for using the Microsoft Store submission API
 
-Before you start writing code to call the Windows Store submission API, make sure that you have completed the following prerequisites.
+Before you start writing code to call the Microsoft Store submission API, make sure that you have completed the following prerequisites.
 
 * You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account) for no additional charge.
 
-* You must [associate an Azure AD application with your Windows Dev Center account](#associate-an-azure-ad-application-with-your-windows-dev-center-account) and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Windows Store submission API.
+* You must [associate an Azure AD application with your Windows Dev Center account](#associate-an-azure-ad-application-with-your-windows-dev-center-account) and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Microsoft Store submission API.
 
-* Prepare your app for use with the Windows Store submission API:
+* Prepare your app for use with the Microsoft Store submission API:
 
-  * If you your app does not yet exist in Dev Center, [create your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). You cannot use the Windows Store submission API to create an app in Dev Center; you must create your app using the dashboard, and then you can use the API to access the app and programmatically create submissions for it. However, you can use the API to programmatically create add-ons and package flights before you create submissions for them.
+  * If you your app does not yet exist in Dev Center, [create your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name). You cannot use the Microsoft Store submission API to create an app in Dev Center; you must create your app using the dashboard, and then you can use the API to access the app and programmatically create submissions for it. However, you can use the API to programmatically create add-ons and package flights before you create submissions for them.
 
   * Before you can create a submission for a given app using this API, you must first [create one submission for the app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/app-submissions), including answering the [age ratings](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) questions. After you do this, you will be able to programmatically create new submissions for this app using the API. You do not need to create an add-on submission or package flight submission before using the API for those types of submissions.
 
@@ -55,7 +55,7 @@ Before you start writing code to call the Windows Store submission API, make sur
 <span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
 ### How to associate an Azure AD application with your Windows Dev Center account
 
-Before you can use the Windows Store submission API, you must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store submission API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
+Before you can use the Microsoft Store submission API, you must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store submission API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
 
 > [!NOTE]
 > You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
@@ -71,7 +71,7 @@ Before you can use the Windows Store submission API, you must associate an Azure
 <span id="obtain-an-azure-ad-access-token" />
 ## Step 2: Obtain an Azure AD access token
 
-Before you call any of the methods in the Windows Store submission API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
+Before you call any of the methods in the Microsoft Store submission API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
 
 To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
 
@@ -90,15 +90,15 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 
 After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
-For examples that demonstrate how to obtain an access token by using C#, Java, or Python code, see the Windows Store submission API [code examples](#code-examples).
+For examples that demonstrate how to obtain an access token by using C#, Java, or Python code, see the Microsoft Store submission API [code examples](#code-examples).
 
 <span id="call-the-windows-store-submission-api">
-## Step 3: Use the Windows Store submission API
+## Step 3: Use the Microsoft Store submission API
 
-After you have an Azure AD access token, you can call methods in the Windows Store submission API. The API includes many methods that are grouped into scenarios for apps, add-ons, and package flights. To create or update submissions, you typically call multiple methods in the Windows Store submission API in a specific order. For information about each scenario and the syntax of each method, see the articles in the following table.
+After you have an Azure AD access token, you can call methods in the Microsoft Store submission API. The API includes many methods that are grouped into scenarios for apps, add-ons, and package flights. To create or update submissions, you typically call multiple methods in the Microsoft Store submission API in a specific order. For information about each scenario and the syntax of each method, see the articles in the following table.
 
 > [!NOTE]
-> After you obtain an access token, you have 60 minutes to call methods in the Windows Store submission API before the token expires.
+> After you obtain an access token, you have 60 minutes to call methods in the Microsoft Store submission API before the token expires.
 
 | Scenario       | Description                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -109,7 +109,7 @@ After you have an Azure AD access token, you can call methods in the Windows Sto
 <span id="code-samples"/>
 ## Code examples
 
-The following articles provide detailed code examples that demonstrate how to use the Windows Store submission API in several different programming languages:
+The following articles provide detailed code examples that demonstrate how to use the Microsoft Store submission API in several different programming languages:
 
 * [C# sample: submissions for apps, add-ons, and flights](csharp-code-examples-for-the-windows-store-submission-api.md)
 * [C# sample: app submission with game options and trailers](csharp-code-examples-for-submissions-game-options-and-trailers.md)
@@ -119,17 +119,17 @@ The following articles provide detailed code examples that demonstrate how to us
 * [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
 
 > [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 ## Troubleshooting
 
 | Issue      | Resolution                                          |
 |---------------|---------------------------------------------|
-| After calling the Windows Store submission API from PowerShell, the response data for the API is corrupted if you convert it from JSON format to a PowerShell object using the [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) cmdlet and then back to JSON format using the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet. |  By default, the *-Depth* parameter for the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet is set to 2 levels of objects, which is too shallow for most of the JSON objects that are returned by the Windows Store submission API. When you call the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet, set the *-Depth* parameter to a larger number, such as 20. |
+| After calling the Microsoft Store submission API from PowerShell, the response data for the API is corrupted if you convert it from JSON format to a PowerShell object using the [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) cmdlet and then back to JSON format using the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet. |  By default, the *-Depth* parameter for the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet is set to 2 levels of objects, which is too shallow for most of the JSON objects that are returned by the Microsoft Store submission API. When you call the [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) cmdlet, set the *-Depth* parameter to a larger number, such as 20. |
 
 ## Additional help
 
-If you have questions about the Windows Store submission API or need assistance managing your submissions with this API, use the following resources:
+If you have questions about the Microsoft Store submission API or need assistance managing your submissions with this API, use the following resources:
 
 * Ask your questions on our [forums](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
 * Visit our [support page](https://developer.microsoft.com/windows/support) and request one of the assisted support options for Dev Center dashboard. If you are prompted to choose a problem type and category, choose **App submission and certification** and **Submitting an app**, respectively.  

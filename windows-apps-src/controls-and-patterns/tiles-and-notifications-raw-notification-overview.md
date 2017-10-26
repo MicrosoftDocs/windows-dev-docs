@@ -3,7 +3,6 @@ author: mijacobs
 Description: Raw notifications are short, general purpose push notifications.
 title: Raw notification overview
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
-label: TBD
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
@@ -61,8 +60,8 @@ For more information on sending push notifications, see [Quickstart: Sending a p
 
 There are two avenues through which your app can be receive raw notifications:
 
--   Through [notification delivery events](#notification_delivery_events) while your application is running.
--   Through [background tasks triggered by the raw notification](#bg_tasks) if your app is enabled to run background tasks.
+-   Through [notification delivery events](#notification-delivery-events) while your application is running.
+-   Through [background tasks triggered by the raw notification](#background-tasks-triggered-by-raw-notifications) if your app is enabled to run background tasks.
 
 An app can use both mechanisms to receive raw notifications. If an app implements both the notification delivery event handler and background tasks that are triggered by raw notifications, the notification delivery event will take priority when the app is running.
 
@@ -73,7 +72,7 @@ An app can use both mechanisms to receive raw notifications. If an app implement
 
 Your app can use a notification delivery event ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) to receive raw notifications while the app is in use. When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.
 
-If your app is not running and does not use [background tasks](#bg_tasks), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.
+If your app is not running and does not use [background tasks](#background-tasks-triggered-by-raw-notifications)), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.
 
 -   **The app notifies the cloud service**: The app can contact its service to let it know that the app is running in the foreground. The disadvantage of this approach is that the app can end up contacting your service very frequently. However, it has the advantage that the service will always know when the app is ready to receive incoming raw notifications. Another advantage is that when the app contacts its service, the service then knows to send raw notifications to the specific instance of that app rather than broadcast.
 -   **The cloud service responds to WNS response messages** : Your app service can use the [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) and [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) information returned by WNS to determine when to stop sending raw notifications to the app. When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:

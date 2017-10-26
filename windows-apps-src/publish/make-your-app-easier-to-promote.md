@@ -1,6 +1,6 @@
 ﻿---
 author: jnHs
-Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Windows Store and other sites to showcase your app and help it get more attention.
+Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
 title: Make your app easier to promote
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.author: wdg-dev-content
@@ -14,16 +14,16 @@ keywords: windows 10, uwp
 # Make your app easier to promote
 
 
-Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Windows Store and other sites to showcase your app and help it get more attention.
+Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
 
 
-## Windows Store requirements for featured apps
+## Microsoft Store requirements for featured apps
 
-The Windows Store showcases different apps grouped by category or theme. There are too many great apps to feature them all, and there is no way to guarantee your app will get selected. However, there are some things you can do to make sure your app is eligible to be considered for promotion in the Store.
+The Microsoft Store showcases different apps grouped by category or theme. There are too many great apps to feature them all, and there is no way to guarantee your app will get selected. However, there are some things you can do to make sure your app is eligible to be considered for promotion in the Store.
 
 -   **Include great screenshots and promo images**
 
-    When featuring apps, the Windows Store may use your [app screenshots and images](app-screenshots-and-images.md) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing. You can provide different sets of screenshots to show how the app looks on each device type that it supports.
+    When featuring apps, the Microsoft Store may use your [app screenshots and images](app-screenshots-and-images.md) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing. You can provide different sets of screenshots to show how the app looks on each device type that it supports.
 
     To maximize your app's chance of getting featured in the Store, you should also include promotional images in your app's submission. For more details and guidelines, see [Promotional images](app-screenshots-and-images.md#promotional-images).
 
@@ -33,7 +33,7 @@ The Windows Store showcases different apps grouped by category or theme. There a
 
 -   **Enable filters for apps containing 16+ and 18+ content**
 
-    In most cases the Windows Store doesn't consider featuring apps with 16+ content, unless the app uses content filtering so that any content that is only appropriate for age 16+ is hidden from users until they explicitly choose to show it. The content filter should be turned on by default, it should be password protected, and it should be available in the app itself (not on a separate website).
+    In most cases the Microsoft Store doesn't consider featuring apps with 16+ content, unless the app uses content filtering so that any content that is only appropriate for age 16+ is hidden from users until they explicitly choose to show it. The content filter should be turned on by default, it should be password protected, and it should be available in the app itself (not on a separate website).
 
 -   **List your app in all relevant markets and languages**
 

@@ -232,8 +232,8 @@ For more info, see [Launch the Windows Settings app](launch-settings-app.md) and
 <br>
 ### Store app URI scheme
 
-Use the **ms-windows-store:** URI scheme to [Launch the Windows Store app](launch-store-app.md). Open product detail pages, product review pages, and search pages, etc. For example, the following URI opens the Windows Store app and launches the home page of the Store.
+Use the **ms-windows-store:** URI scheme to [Launch the UWP app](launch-store-app.md). Open product detail pages, product review pages, and search pages, etc. For example, the following URI opens the UWP app and launches the home page of the Store.
 
 `ms-windows-store://home/`
 
-For more info, see [Launch the Windows Store app](launch-store-app.md).
+For more info, see [Launch the UWP app](launch-store-app.md).

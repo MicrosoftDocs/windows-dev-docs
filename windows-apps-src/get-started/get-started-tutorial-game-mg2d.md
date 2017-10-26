@@ -1,6 +1,6 @@
 ---
 title: Create a UWP game in MonoGame 2D
-description: A simple UWP game for the Windows Store, written in C# and MonoGame
+description: A simple UWP game for the Microsoft Store, written in C# and MonoGame
 author: muhsinking
 ms.author: mukin
 ms.date: 03/06/2017
@@ -13,7 +13,7 @@ ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 
 # Create a UWP game in MonoGame 2D
 
-## A simple 2D UWP game for the Windows Store, written in C# and MonoGame
+## A simple 2D UWP game for the Microsoft Store, written in C# and MonoGame
 
 
 ![Walking Dino sprite sheet](images/JS2D_0.png)
@@ -29,7 +29,7 @@ MonoGame is a lightweight game development framework. This tutorial will teach y
 +	Familiarity with basic computer science concepts like classes, methods, and variables is a plus.
 
 ## Why MonoGame?
-There’s no shortage of options when it comes to game development environments. From full-featured engines like Unity to comprehensive and complex multimedia APIs like DirectX, it can be hard to know where to start. MonoGame is a set of tools, with a level of complexity falling somewhere between a game engine and a grittier API like DirectX. It provides an easy-to-use content pipeline, and all the functionality required to create lightweight games that run on a wide variety of platforms. Best of all, MonoGame apps are written in pure C#, and you can distribute them quickly via the Windows Store or other similar distribution platforms.
+There’s no shortage of options when it comes to game development environments. From full-featured engines like Unity to comprehensive and complex multimedia APIs like DirectX, it can be hard to know where to start. MonoGame is a set of tools, with a level of complexity falling somewhere between a game engine and a grittier API like DirectX. It provides an easy-to-use content pipeline, and all the functionality required to create lightweight games that run on a wide variety of platforms. Best of all, MonoGame apps are written in pure C#, and you can distribute them quickly via the Microsoft Store or other similar distribution platforms.
 
 ## Get the code
 If you don’t feel like working through the tutorial step-by-step and just want to see MonoGame in action, [click here to get the finished app](https://github.com/Microsoft/Windows-appsample-get-started-mg2d).
@@ -680,8 +680,8 @@ And we’re done! Try running the game again. If you followed the steps above, t
 
 ![Game over](images/monogame-tutorial-4.png)
 
-## Publish to the Windows Store
-Because we built this game as a UWP app, it is possible to publish this project to the Windows Store. There are a few steps to the process.
+## Publish to the Microsoft Store
+Because we built this game as a UWP app, it is possible to publish this project to the Microsoft Store. There are a few steps to the process.
 
 You must be [registered](https://developer.microsoft.com/en-us/store/register) as a Windows Developer.
 
@@ -689,4 +689,4 @@ You must use the [app submission checklist](https://docs.microsoft.com/en-us/win
 
 The app must be submitted for [certification](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process).
 
-For more details, see [Publishing your Windows Store app](https://developer.microsoft.com/en-us/store/publish-apps).
+For more details, see [Publishing your UWP app](https://developer.microsoft.com/en-us/store/publish-apps).

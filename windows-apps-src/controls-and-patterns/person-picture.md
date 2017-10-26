@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description:
+description: Displays the avatar image for a person, if one is available; if not, it displays the person's initials or a generic glyph.
 title: Person picture control
 template: detail.hbs
 label: Parallax View

@@ -3,7 +3,6 @@ author: mijacobs
 Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
 title: Periodic notification overview
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
-label: TBD
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
@@ -39,7 +38,7 @@ Note that periodic updates cannot be used with toast notifications. Toast is bes
 
 Any valid HTTP or HTTPS web address can be used as the URI to be polled.
 
-The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](tiles-and-notifications-adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiry) or [tag](#taggo) for the notification.
+The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](tiles-and-notifications-adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiration-of-tile-and-badge-notifications) or tag for the notification.
 
 ## Polling Behavior
 

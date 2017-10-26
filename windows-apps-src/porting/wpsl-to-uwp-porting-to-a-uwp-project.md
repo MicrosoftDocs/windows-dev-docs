@@ -20,7 +20,7 @@ You begin the porting process by creating a new Windows 10 project in Visual St
 
 ## Create the project and copy files to it
 
-1.  Launch Microsoft Visual Studio 2015 and create a new Blank Application (Windows Universal) project. For more info, see [Jumpstart your Windows Store app using templates (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232). Your new project builds an app package (an appx file) that will run on all device families.
+1.  Launch Microsoft Visual Studio 2015 and create a new Blank Application (Windows Universal) project. For more info, see [Jumpstart your Windows Runtime 8.x app using templates (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232). Your new project builds an app package (an appx file) that will run on all device families.
 2.  In your Windows Phone Silverlight app project, identify all the source code files and visual asset files that you want to reuse. Using File Explorer, copy data models, view models, visual assets, Resource Dictionaries, folder structure, and anything else that you wish to re-use, to your new project. Copy or create sub-folders on disk as necessary.
 3.  Copy views (for example, MainPage.xaml and MainPage.xaml.cs) into the new project node, too. Again, create new sub-folders as necessary, and remove the existing views from the project. But, before you over-write or remove a view that Visual Studio generated, keep a copy because it may be useful to refer to it later. The first phase of porting a Windows Phone Silverlight app focuses on getting it to look good and work well on one device family. Later, you'll turn your attention to making sure the views adapt themselves well to all form factors, and optionally to adding any adaptive code to get the most from a particular device family.
 4.  In **Solution Explorer**, make sure **Show All Files** is toggled on. Select the files that you copied, right-click them, and click **Include In Project**. This will automatically include their containing folders. You can then toggle **Show All Files** off if you like. An alternative workflow, if you prefer, is to use the **Add Existing Item** command, having created any necessary sub-folders in the Visual Studio **Solution Explorer**. Double-check that your visual assets have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
@@ -75,11 +75,11 @@ If you want to support both Windows Phone Silverlight and Windows 10 in a sing
 #endif // WINDOWS_UAP
 ```
 
-If you have code that you've been sharing between a Windows Phone Silverlight app and a Windows Store app, then you may already have source code with logic like this:
+If you have code that you've been sharing between a Windows Phone Silverlight app and a Windows Runtime 8.x app, then you may already have source code with logic like this:
 
 ```csharp
 #if NETFX_CORE
-    // Code that you want to compile into the Windows Store app.
+    // Code that you want to compile into the Windows Runtime 8.x app.
 #else
     // Code that you want to compile into the Windows Phone Silverlight app.
 #endif // NETFX_CORE
@@ -92,7 +92,7 @@ If so, and if you now want to support Windows 10 in addition, then you can do t
     // Code that you want to compile into the Windows 10 app.
 #else
 #if NETFX_CORE
-    // Code that you want to compile into the Windows Store app.
+    // Code that you want to compile into the Windows Runtime 8.x app.
 #else
     // Code that you want to compile into the Windows Phone Silverlight app.
 #endif // NETFX_CORE

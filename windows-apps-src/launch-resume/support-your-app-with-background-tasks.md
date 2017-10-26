@@ -137,7 +137,7 @@ On memory-constrained devices, there is a limit to the number of apps that can b
 
 Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
 
-However, for enterprise apps, and apps that will not be published in the Windows Store, see [Run in the background indefinitely](run-in-the-background-indefinetly.md) to learn how to use a capabilities to run a background task or extended execution session in the background indefinitely.
+However, for enterprise apps, and apps that will not be published in the Microsoft Store, see [Run in the background indefinitely](run-in-the-background-indefinetly.md) to learn how to use a capabilities to run a background task or extended execution session in the background indefinitely.
 
 ## Background task resource guarantees for real-time communication
 
@@ -156,7 +156,7 @@ Your app can access sensors and peripheral devices from a background task with t
 > [!IMPORTANT]
 > The **DeviceUseTrigger** and **DeviceServicingTrigger** cannot be used with in-process background tasks.
 
-Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Microsoft Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## Managing background tasks
 
@@ -184,7 +184,7 @@ Check your background task registration during app launch. Ensure that your app'
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Group background task registration](group-background-tasks.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](https://docs.microsoft.com/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 * [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Register a background task](register-a-background-task.md)

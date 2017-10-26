@@ -62,14 +62,14 @@ ms-appx-web://
 
 The authority is the package identity name that is defined in the package manifest. It is therefore limited in both the URI and IRI (Internationalized resource identifier) form to the set of characters allowed in a package identity name. The package name must be the name of one of the packages in the current running app's package dependency graph.
 
-```
+```xml
 ms-appx://Contoso.MyApp/
 ms-appx-web://Contoso.MyApp/
 ```
 
 If any other character appears in the authority, then retrieval and comparison fail. The default value for the authority is the currently running app's package.
 
-```
+```xml
 ms-appx:///
 ms-appx-web:///
 ```
@@ -78,7 +78,7 @@ ms-appx-web:///
 
 The `ms-appx` scheme, unlike other popular schemes, does not define a user info or port component. Since "@" and ":" are not allowed as valid authority values, lookup will fail if they are included. Each of the following fails.
 
-```
+```xml
 ms-appx://john@contoso.myapp/default.html
 ms-appx://john:password@contoso.myapp/default.html
 ms-appx://contoso.myapp:8080/default.html
@@ -91,7 +91,7 @@ The path component matches the generic RFC 3986 syntax and supports non-ASCII ch
 
 If the path refers to a physical path and file name then that physical file asset is retrieved. But if no such physical file is found then the actual resource returned during retrieval is determined by using content negotiation at runtime. This determination is based on app, OS, and user settings such as language, display scale factor, theme, high contrast, and other runtime contexts. For example, a combination of the app's languages, the system's display settings, and the user's high contrast settings may be taken into account when determining the actual resource value to be retrieved.
 
-```
+```xml
 ms-appx:///images/logo.png
 ```
 
@@ -112,7 +112,7 @@ The path component of `ms-appx(-web)` is, like generic URIs, case sensitive. How
 
 The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a file named Hello#World.html, use this URI.
 
-```
+```xml
 ms-appx:///Hello%23World.html
 ```
 
@@ -138,13 +138,13 @@ ms-appdata://
 
 The authority is the package identity name that is defined in the package manifest. It is therefore limited in both the URI and IRI (Internationalized resource identifier) form to the set of characters allowed in a package identity name. The package name must be the name of the current running app's package.
 
-```
+```xml
 ms-appdata://Contoso.MyApp/
 ```
 
 If any other character appears in the authority, then retrieval and comparison fail. The default value for the authority is the currently running app's package.
 
-```
+```xml
 ms-appdata:///
 ```
 
@@ -152,7 +152,7 @@ ms-appdata:///
 
 The `ms-appdata` scheme, unlike other popular schemes, does not define a user info or port component. Since "@" and ":" are not allowed as valid authority values, lookup will fail if they are included. Each of the following fails.
 
-```
+```xml
 ms-appdata://john@contoso.myapp/local/data.xml
 ms-appdata://john:password@contoso.myapp/local/data.xml
 ms-appdata://contoso.myapp:8080/local/data.xml
@@ -165,19 +165,19 @@ The path component matches the generic RFC 3986 syntax and supports non-ASCII ch
 
 Local folder.
 
-```
+```xml
 ms-appdata:///local/
 ```
 
 Temporary folder.
 
-```
+```xml
 ms-appdata:///temp/
 ```
 
 Roaming folder.
 
-```
+```xml
 ms-appdata:///roaming/
 ```
 
@@ -185,19 +185,19 @@ The path component of `ms-appdata` is, like generic URIs, case sensitive. Howeve
 
 The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a local file named Hello#World.html, use this URI.
 
-```
+```xml
 ms-appdata://local/Hello%23World.html
 ```
 
 Retrieval of the resource, and identification of the top level path segment, are handled after normalization of dots (".././b/c"). Therefore, URIs cannot dot themselves out of one of the reserved folders. Thus, the following URI is not allowed.
 
-```
+```xml
 ms-appdata:///local/../hello/logo.png
 ```
 
 But this URI is allowed (albeit redundant).
 
-```
+```xml
 ms-appdata:///local/../roaming/logo.png
 ```
 
@@ -221,14 +221,14 @@ ms-resource://
 
 The authority is the top-level resource map defined in the Package Resource Index (PRI), which typically corresponds to the package identity name that is defined in the package manifest. See [Packaging apps](../packaging/index.md)). It is therefore limited in both the URI and IRI (Internationalized resource identifier) form to the set of characters allowed in a package identity name. The package name must be the name of one of the packages in the current running app's package dependency graph.
 
-```
+```xml
 ms-resource://Contoso.MyApp/
 ms-resource://Microsoft.WinJS.1.0/
 ```
 
 If any other character appears in the authority, then retrieval and comparison fail. The default value for the authority is the case-sensitive package name of the currently running app.
 
-```
+```xml
 ms-resource:///
 ```
 
@@ -238,7 +238,7 @@ The authority is case sensitive, and the normalized form maintains its case. Loo
 
 The `ms-resource` scheme, unlike other popular schemes, does not define a user info or port component. Since "@" and ":" are not allowed as valid authority values, lookup will fail if they are included. Each of the following fails.
 
-```
+```xml
 ms-resource://john@contoso.myapp/Resources/String1
 ms-resource://john:password@contoso.myapp/Resources/String1
 ms-resource://contoso.myapp:8080/Resources/String1
@@ -255,7 +255,7 @@ The path component of `ms-resource` is, like generic URIs, case sensitive. Howev
 
 The normalized form of the URI maintains case, and percent-decodes (a "%" symbol followed by the two-digit hexadecimal representation) RFC 3986 unreserved characters. The characters "?", "#", "/", "*", and '”' (the double-quote character) must be percent-encoded in a path to represent data such as file or folder names. All percent-encoded characters are decoded before retrieval. Thus, to retrieve a string resource from a Resources File named Hello#World.resw, use this URI.
 
-```
+```xml
 ms-resource:///Hello%23World/String1
 ```
 

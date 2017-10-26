@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: 79DC7C99-70F1-499A-856B-D2A83FC6F867
-description: Use this method in the Windows Store analytics API to get detailed data for a Windows 10 driver error. This method is intended only for IHVs.
+description: Use this method in the Microsoft Store analytics API to get detailed data for a Windows 10 driver error. This method is intended only for IHVs.
 title: Get details for a Windows 10 driver error
 ms.author: mcleans
 ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, errors, details
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details
 ---
 
 # Get details for a Windows 10 driver error
 
-Use this method in the Windows Store analytics API to get detailed data for a specific Windows 10 driver error in JSON format. Before you can use this method, you must first use the [get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md) method to retrieve the ID of the error for which you want to get detailed info.
+Use this method in the Microsoft Store analytics API to get detailed data for a specific Windows 10 driver error in JSON format. Before you can use this method, you must first use the [get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md) method to retrieve the ID of the error for which you want to get detailed info.
 
 > [!NOTE]
 > This method can only be used by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
@@ -23,7 +23,7 @@ Use this method in the Windows Store analytics API to get detailed data for a sp
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 * Get the ID of the error for which you want to get detailed info. To get this ID, use the [get error reporting data for Windows 10 drivers](get-error-reporting-data-for-windows-10-drivers.md) method and use the **failureHash** value in the response body of that method.
 

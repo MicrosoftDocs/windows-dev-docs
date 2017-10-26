@@ -1,6 +1,6 @@
 ﻿---
 author: jnHs
-Description: View details related to the unique identity assigned to your app by the Windows Store, and get a link to your app's Store listing.
+Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 # View app identity details
 
 
-When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store. You can also get a link to your app's Store listing.
+When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Microsoft Store. You can also get a link to your app's Store listing.
 
 To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Select **App identity** to view these details.
 

@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description:
+description: A type of brush that creates a partially transparent texture.
 title: Acrylic material
 template: detail.hbs
 ms.author: mijacobs

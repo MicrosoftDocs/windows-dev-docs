@@ -56,9 +56,9 @@ Here we provide a checklist you can use to ensure that your app is accessible.
 
 5.  Make sure your app manifest settings follow accessibility guidelines.
 
-6.  Declare your app as accessible in the Windows Store.
+6.  Declare your app as accessible in the Microsoft Store.
 
-    If you implemented the baseline accessibility support, declaring your app as accessible in the Windows Store can help reach more customers and get some additional good ratings.
+    If you implemented the baseline accessibility support, declaring your app as accessible in the Microsoft Store can help reach more customers and get some additional good ratings.
 
     For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
 

@@ -3,7 +3,6 @@ author: mijacobs
 Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
 title: Special tile templates
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
-label: TBD
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017

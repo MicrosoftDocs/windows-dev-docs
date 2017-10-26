@@ -18,7 +18,7 @@ keywords: windows 10, uwp
 
 You can use **AutoPlay** to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. You can also use **AutoPlay** to offer your app as an option when users share files between two PCs by using proximity (tapping).
 
-> **Note**  If you are a device manufacturer and you want to associate your [Windows Store device app](http://go.microsoft.com/fwlink/p/?LinkID=301381) as an **AutoPlay** handler for your device, you can identify that app in the device metadata. For more info, see [AutoPlay for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **Note**  If you are a device manufacturer and you want to associate your [Microsoft Store device app](http://go.microsoft.com/fwlink/p/?LinkID=301381) as an **AutoPlay** handler for your device, you can identify that app in the device metadata. For more info, see [AutoPlay for Microsoft Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306684).
 
 ## Register for AutoPlay content
 

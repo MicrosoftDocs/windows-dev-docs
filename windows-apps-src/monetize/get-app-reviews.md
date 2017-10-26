@@ -1,28 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: Use this method in the Windows Store analytics API to get review data for a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get review data for a given date range and other optional filters.
 title: Get app reviews
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, reviews
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, reviews
 ---
 
 # Get app reviews
 
 
-Use this method in the Windows Store analytics API to get review data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get review data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in the Windows Dev Center dashboard.
 
-After you retrieve reviews, you can use the [get response info for app reviews](get-response-info-for-app-reviews.md) and [submit responses to app reviews](submit-responses-to-app-reviews.md) methods in the Windows Store reviews API to programmatically respond to reviews.
+After you retrieve reviews, you can use the [get response info for app reviews](get-response-info-for-app-reviews.md) and [submit responses to app reviews](submit-responses-to-app-reviews.md) methods in the Microsoft Store reviews API to programmatically respond to reviews.
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -188,7 +188,7 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Reviews report](../publish/reviews-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get response info for app reviews](get-response-info-for-app-reviews.md)
 * [Submit responses to app reviews](submit-responses-to-app-reviews.md)
 * [Get app acquisitions](get-app-acquisitions.md)

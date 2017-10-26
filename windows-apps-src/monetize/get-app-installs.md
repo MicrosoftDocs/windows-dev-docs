@@ -1,27 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: FAD033C7-F887-4217-A385-089F09242827
-description: Use this method in the Windows Store analytics API to get aggregate install data for an application during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate install data for an application during a given date range and other optional filters.
 title: Get app installs
 ms.author: mcleans
 ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, app installs
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, app installs
 ---
 
 # Get app installs
 
 
-Use this method in the Windows Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Installs report](../publish/installs-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate install data in JSON format for an application during a given date range and other optional filters. This information is also available in the [Installs report](../publish/installs-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -124,4 +124,4 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Installs report](../publish/installs-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

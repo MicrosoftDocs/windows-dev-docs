@@ -124,7 +124,7 @@ If the window for your game isn't closed, this dispatches all events, updates th
 ## 2. Review and update the package.appxmanifest file
 
 
-The code files aren't all there is to the template. The **package.appxmanifest** file contains metadata about your project that are used for packaging and launching your game and for submission to the Windows Store. It also contains important info the player's system uses to provide access to the system resources the game needs to run.
+The code files aren't all there is to the template. The **package.appxmanifest** file contains metadata about your project that are used for packaging and launching your game and for submission to the Microsoft Store. It also contains important info the player's system uses to provide access to the system resources the game needs to run.
 
 Launch the **Manifest Designer** by double-clicking the **package.appxmanifest** file in **Solution Explorer**. You see this view:
 

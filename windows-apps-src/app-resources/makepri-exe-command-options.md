@@ -365,7 +365,7 @@ You use the extension DLL option (/ex) with `createconfig`, `dump`, `new`, `reso
 
 MakePri can include info specific to a resource pack in the indexer metadata file. Here is an example of a log file for `resources.pri` with resource PRI files `german.pri` and `highresolution.pri`.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
   <package filename="resources.pri">
@@ -499,7 +499,7 @@ For `resourcepack` and `versioned`, instead of providing a PRI file as the input
 
 This is an example of a schema file.
 
-```
+```xml
 <PriInfo>
 	<ResourceMap name="IndexName" resourceVersion="1.0"> 
 		<ResourceMapSubtree name="Resources" index="1">

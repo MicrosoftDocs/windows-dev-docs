@@ -64,7 +64,7 @@ The DirectX Universal Windows templates contain the following files:
 ## Next steps
 
 
-Now that you have a starting point, add to it to build your game development knowledge and Windows Store game development skills.
+Now that you have a starting point, add to it to build your game development knowledge and Microsoft Store game development skills.
 
 If you are porting an existing game, see the following topics.
 

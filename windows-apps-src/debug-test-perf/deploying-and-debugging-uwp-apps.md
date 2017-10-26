@@ -191,7 +191,7 @@ You can set the following deployment options on the **Debug** property page of t
 
 - **Allow local network loopback**
 
-  For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Windows Store, you should test your app without the exemption.
+  For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Microsoft Store, you should test your app without the exemption.
 
   To remove the network loopback exemption from the app:
 

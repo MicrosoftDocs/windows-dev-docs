@@ -3,7 +3,6 @@ author: mijacobs
 Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
-label: TBD
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017

@@ -29,7 +29,7 @@ With beta testing, you can:
 -   Test your app on a variety of devices.
 -   Identify performance issues and other bugs that you might not have found otherwise.
 -   Get real-world usage info that can be used improve the user experience.
--   Receive feedback without affecting public ratings in the Windows Store.
+-   Receive feedback without affecting public ratings in the Microsoft Store.
 
 ## When to beta test
 

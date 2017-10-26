@@ -1,27 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Use these methods in the Windows Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
 title: Manage package flight submissions
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, flight submissions
+keywords: windows 10, uwp, Microsoft Store submission API, flight submissions
 ---
 
 # Manage package flight submissions
 
-The Windows Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+The Microsoft Store submission API provides methods you can use to manage package flight submissions for your apps, including gradual package rollouts. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> If you use the Windows Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> If you use the Microsoft Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-package-flight-submissions" />
 ## Methods for managing package flight submissions
 
-Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in your Dev Center account. You can create a package flight by [using the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/package-flights) or by using the Windows Store submission API methods in described in [Manage package flights](manage-flights.md).
+Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in your Dev Center account. You can create a package flight by [using the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/package-flights) or by using the Microsoft Store submission API methods in described in [Manage package flights](manage-flights.md).
 
 <table>
 <colgroup>
@@ -75,11 +75,11 @@ Use the following methods to get, create, update, commit, or delete a package fl
 
 To create a submission for a package flight, follow this process.
 
-1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
+1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
 
-2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Windows Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
-3. [Create a package flight submission](create-a-flight-submission.md) by executing the following method in the Windows Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
+3. [Create a package flight submission](create-a-flight-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
@@ -140,14 +140,14 @@ The following articles provide detailed code examples that demonstrate how to cr
 * [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)
 
 > [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span id="manage-gradual-package-rollout">
 ## Manage a gradual package rollout for a package flight submission
 
 You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in the Dev Center dashboard, see [this article](../publish/gradual-package-rollout.md).
 
-To programmatically enable a gradual package rollout for a package flight submission, follow this process using methods in the Windows Store submission API:
+To programmatically enable a gradual package rollout for a package flight submission, follow this process using methods in the Microsoft Store submission API:
 
   1. [Create a package flight submission](create-a-flight-submission.md) or [get a package flight submission](get-a-flight-submission.md).
   2. In the response data, locate the [packageRollout](#package-rollout-object) resource, set the *isPackageRollout* field to true, and set the *packageRolloutPercentage* field to the percentage of your app's customers who should get the updated packages.
@@ -195,7 +195,7 @@ After a gradual package rollout is enabled for a package flight submission, you 
 <span/>
 ## Data resources
 
-The Windows Store submission API methods for managing package flight submissions use the following JSON data resources.
+The Microsoft Store submission API methods for managing package flight submissions use the following JSON data resources.
 
 <span id="flight-submission-object" />
 ### Flight submission resource
@@ -405,8 +405,8 @@ The following codes represent the status of a submission.
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flights using the Windows Store submission API](manage-flights.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Manage package flights using the Microsoft Store submission API](manage-flights.md)
 * [Get a package flight submission](get-a-flight-submission.md)
 * [Create a package flight submission](create-a-flight-submission.md)
 * [Update a package flight submission](update-a-flight-submission.md)

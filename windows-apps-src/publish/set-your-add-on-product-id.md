@@ -65,5 +65,5 @@ Here are a few things to keep in mind when choosing a product ID:
 -   A product ID can't be more than 100 characters in length.
 -   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
 -   To offer your add-on in all OS versions, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
+-   A product ID doesn't have to be unique within the Microsoft Store, but it must be unique to your developer account.
  

@@ -95,7 +95,7 @@ To view and edit a file in your project, double-click the file in the **Solution
 
 *A set of logo images*
 -   Assets/Square150x150Logo.scale-200.png represents your app in the start menu.
--   Assets/StoreLogo.png represents your app in the Windows Store.
+-   Assets/StoreLogo.png represents your app in the Microsoft Store.
 -   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
 
 ## Step 2: Adding a button
@@ -238,7 +238,7 @@ To learn how to use XAML for laying out the controls your app will use, try the 
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](whats-a-uwp.md)

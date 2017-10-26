@@ -1,26 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
-description: Use this method in the Windows Store analytics API to get aggregate ratings data for a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate ratings data for a given date range and other optional filters.
 title: Get app ratings
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, ratings
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ratings
 ---
 
 # Get app ratings
 
-Use this method in the Windows Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Ratings report](../publish/ratings-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Ratings report](../publish/ratings-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 
@@ -153,7 +153,7 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Ratings report](../publish/ratings-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)
 * [Get error reporting data](get-error-reporting-data.md)

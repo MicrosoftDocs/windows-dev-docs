@@ -51,7 +51,7 @@ The following error codes are related to licensing operations for apps or add-on
 | 0x803F8009<br/>0x803F800A   | The trial period for the app has expired.   |
 | 0x803F8190   |  The license doesn't allow the product to be used in the current country or region of your device.  |
 | 0x803F81F5<br/>0x803F81F6<br/>0x803F81F7<br/>0x803F81F8<br/>0x803F81F9   |  You have reached the maximum number of devices that can be used with games and apps from the Store. To use this game or app on the current device, first remove another device from your account.  |
-| 0x803F9000<br/>0x803F9001    |  The license is expired or corrupt. To help resolve this error, try running the [Windows Store apps troubleshooter](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) to reset the Store cache.     |
+| 0x803F9000<br/>0x803F9001    |  The license is expired or corrupt. To help resolve this error, try running the [troubleshooter for Windows apps](https://support.microsoft.com/help/4027498/windows-run-the-troubleshooter-for-windows-apps) to reset the Store cache.     |
 | 0x803F9006    |  The operation could not be completed because the user who is entitled to this product is not signed in to the device with their Microsoft account.            |
 | 0x803F9008<br/>0x803F9009    |  Your device is offline. Your device needs to be online to use this product.            |
 | 0x803F900A    |  The subscription has expired.            |

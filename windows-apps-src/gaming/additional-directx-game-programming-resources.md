@@ -27,7 +27,7 @@ For more info about game programming on Windows, check out the following resourc
 ## Game design guidance
 
 
--   [Index of UX guidelines for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/hh465424)
+-   [Index of UX guidelines for UWP apps](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
 ## Blogs
 
@@ -43,7 +43,7 @@ For more info about game programming on Windows, check out the following resourc
 -   [DirectXTex texture processing library](  http://go.microsoft.com/fwlink/p/?LinkID=248926)
 -   Microsoft Visual Studio[Graphics Diagnostics](https://msdn.microsoft.com/library/windows/apps/hh873207.aspx)
 -   [Win2D](https://github.com/Microsoft/Win2D) - An easy-to-use Windows Runtime API for immediate mode 2D graphics rendering with GPU acceleration.
--   [ANGLE for Windows Store](http://go.microsoft.com/fwlink/p/?linkid=618387) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+-   [ANGLE for Microsoft Store](http://go.microsoft.com/fwlink/p/?linkid=618387) - Runs OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
 ## GDC 2015 game dev session videos
 

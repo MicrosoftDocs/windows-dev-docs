@@ -130,7 +130,7 @@ When you create a new app, you can access the following file system locations by
 
      
 
-## Locations Windows Store apps can access
+## Locations UWP apps can access
 
 -   **User’s Downloads folder.** The folder where downloaded files are saved by default.
 

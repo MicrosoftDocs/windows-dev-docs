@@ -144,7 +144,7 @@ Use the following URIs to open various pages of the Settings app.
  <tr>
   <td>Audio and speech</td>
   <td>ms-settings:holographic-audio</td>
-  <td>Only available if the Mixed Reality Portal app is installed (available in the Windows Store)</td>
+  <td>Only available if the Mixed Reality Portal app is installed (available in the Microsoft Store)</td>
  </tr>
  <tr>
   <td>AutoPlay</td>

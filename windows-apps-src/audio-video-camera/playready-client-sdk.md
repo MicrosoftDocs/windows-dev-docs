@@ -401,7 +401,7 @@ Before you begin creating your PlayReady-protected UWP app, the following softwa
 <!--This is no longer available-->
 <!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
-## PlayReady Windows Store app migration guide
+## PlayReady UWP app migration guide
 
 This section includes information on how to migrate your existing PlayReady Windows 8.x Store apps to Windows 10.
 

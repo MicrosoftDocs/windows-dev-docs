@@ -86,7 +86,7 @@ If you choose this option, keep the following things in mind:
 -   This option can only be selected if you have never previously published the app with the [Visibility](set-app-pricing-and-availability.md#visibility) option set to **Make this app available in the Store**.
 -   Your app must be priced **Free** in order for your testers to download it at no cost.
 -   Your testers can only download the app on Windows Phone 8.1 and earlier. Testers must have a retail Windows Phone device in order to use the app, but the device doesn’t need to be unlocked or registered.
--   Your testers will need to have a Microsoft account in order to access the Windows Store and download your app. You’ll need to know the email address associated with each tester’s Microsoft account in order to add them to your list. To create a new Microsoft account, testers can go to [Microsoft account setup](http://go.microsoft.com/fwlink/p/?LinkId=618945).
+-   Your testers will need to have a Microsoft account in order to access the Microsoft Store and download your app. You’ll need to know the email address associated with each tester’s Microsoft account in order to add them to your list. To create a new Microsoft account, testers can go to [Microsoft account setup](http://go.microsoft.com/fwlink/p/?LinkId=618945).
 -   You can provide up to 10,000 email addresses in the text box.
 -   Email addresses must be separated with semicolons.
 -   You can add additional addresses later, but will need to create a new submission to do so.

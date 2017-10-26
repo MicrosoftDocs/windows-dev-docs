@@ -12,26 +12,25 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 # Prepare your app for localization
 
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 Prepare your app for localization to other markets, languages, or regions. Before you get started, be sure to read through the [do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md).
 
-## Use resource files and qualifiers.
+## Use resource files and qualifiers
 
+For more info, see [App resources and the Resource Management System](../app-resources/index.md).
 
 Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](../app-resources/localize-strings-ui-manifest.md).
 
 Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md).
 
-## Add contextual comments.
+## Add contextual comments
 
 Add localization comments to your app resource files. The comments are visible to the localizer, and should provide contextual information that helps the localizer to accurately translate the resources. The comments should also provide sufficient constraint information on the resource, so that translation does not break the software. Optionally, the comments can be logged by the Makepri.exe tool.
 
-**XAML:** Resw files (resources created in Visual Studio for apps using XAML) have a comment element. For example:
+**XAML** Resw files (resources created in Visual Studio for apps using XAML) have a comment element. For example:
 
 ```XML
 <data name="String1">
@@ -40,8 +39,7 @@ Add localization comments to your app resource files. The comments are visible t
 </data>
 ```
 
-## Localize sentences instead of words.
-
+## Localize sentences instead of words
 
 Consider the following string: "The {0} could not be synchronized."
 
@@ -53,8 +51,6 @@ A variety of words could replace {0}, such as appointment, task, or document. Wh
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
- 
-
 As another example, consider the sentence "Remind me in {0} minute(s)." While using "minute(s)" works for the English language, other languages might use different terms. For example, the Polish language uses "minuta", "minuty", or "minut" depending on the context.
 
 To solve this problem, localize the entire sentence, rather than a single word. Doing this may seem like extra work and an inelegant solution, but it is the best solution because:
@@ -63,15 +59,13 @@ To solve this problem, localize the entire sentence, rather than a single word. 
 -   Your localizer will not need to ask about what the strings will be replaced with.
 -   You will not need to implement a costly code fix when a problem like this surfaces after your app is completed.
 
-## Ensure the correct parameter order.
-
+## Ensure the correct parameter order
 
 Don't assume that all languages use parameters in the same order. For example, consider the string "Every %s %s", where the first %s is replaced by the name of a month, and the second %s is replaced by the date of a month. This example works for the English language, but will fail when the app is localized into the German language, where the date and month are displayed in the reverse order.
 
 To solve this problem, change the string to "Every %1 %2", so that the order is interchangeable depending on the language.
 
-## Don’t over localize.
-
+## Don’t over-localize
 
 Localize specific strings, not tags. Consider the following examples:
 
@@ -80,12 +74,9 @@ Localize specific strings, not tags. Consider the following examples:
 | &lt;link&gt;terms of use&lt;/link&gt;   | terms of use               |
 | &lt;link&gt;privacy policy&lt;/link&gt; | privacy policy             |
 
- 
-
 Including the above &lt;link&gt; tag in the resources means that it too will be localized. This renders the tag not valid. Only the strings themselves should be localized. Generally, you should think of tags as code that should be kept separate from localizable content. However, some long strings should include markup to keep context and ensure ordering.
 
-## Do not use the same strings in dissimilar contexts.
-
+## Do not use the same strings in dissimilar contexts
 
 Reusing a string may seem like the best solution, but it can cause localization problems if the same word or phrase can have different meanings or contexts.
 
@@ -95,8 +86,7 @@ Another example is the use of the strings "on" and "off". In the English languag
 
 Additionally, a string like "text" or "fax" could be used as both a verb and a noun in the English language, which can confuse the translation process. Instead, create a separate string for both the verb and noun format. When you're not sure whether the contexts are the same, err on the safe side and use a distinct string.
 
-## Identify resources with unique attributes.
-
+## Identify resources with unique attributes
 
 Resource identifiers are case insensitive and must be unique per resource file. When accessing a resource, use the resource identifier, not the actual value of the resource. Resource identifiers don't change, but the actual values of the resources do change depending on the language.
 
@@ -104,32 +94,29 @@ Be sure to use meaningful resource identifiers to provide additional context for
 
 Don't change the resource identifiers after the string resources are sent to translation. Localization teams use the resource identifier to track additions, deletions, and updates in the resources. Changes in resource identifiers—also known as "resource identifiers shift"—require strings to be retranslated, because it will appear as though strings were deleted and others added.
 
-## Choose an appropriate translation approach.
-
+## Choose an appropriate translation approach
 
 After strings are separated into resource files, they can be translated. The ideal time to translate strings is after the strings in your project are finalized, which usually happens toward the end of a project. You can approach the translation process in number of ways. This may depend on the volume of strings to be translated, the number of languages to be translated, and how the translation will be done (such as in-house versus hiring an external vendor).
 
 Consider the following options:
 
--   **The resource files can be translated by opening them directly in the project.** This approach works well for a project that has a small volume of strings and that needs to be translated into two or three languages. It could be suitable for a scenario where a developer speaks more than one language and is willing to handle the translation process. This approach benefits by being quick, requires no tools, and minimizes the risk of mistranslations, but it is not scalable. In particular, the resources in different languages can easily get out of sync, causing bad user experiences and maintenance headaches.
--   **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** This approach carries a risk of translators accidentally editing the XML tags, but it lets translation work take place outside of the Microsoft Visual Studio project. This approach could work well for projects that need to be translated into a small number of languages. The XLIFF format is an XML format specifically designed for use in localization, and should be well supported by some localization vendors or localization tools. You can use the [Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) to generate XLIFF files from other resource files, such as .resw or .resjson.
+- **The resource files can be translated by opening them directly in the project.** This approach works well for a project that has a small volume of strings and that needs to be translated into two or three languages. It could be suitable for a scenario where a developer speaks more than one language and is willing to handle the translation process. This approach benefits by being quick, requires no tools, and minimizes the risk of mistranslations, but it is not scalable. In particular, the resources in different languages can easily get out of sync, causing bad user experiences and maintenance headaches.
+- **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** This approach carries a risk of translators accidentally editing the XML tags, but it lets translation work take place outside of the Microsoft Visual Studio project. This approach could work well for projects that need to be translated into a small number of languages. The XLIFF format is an XML format specifically designed for use in localization, and should be well supported by some localization vendors or localization tools. You can use the [Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) to generate XLIFF files from other resource files, such as .resw or .resjson.
 
 Handoffs to localizers may need to occur for other files, such as images or audio files. Typically, we don't recommend creating culturally dependent files because they can be difficult to localize.
 
 Additionally, consider the following suggestions:
 
--   **Use a localization tool.** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. This approach reduces the risk of a translator accidentally editing the XML tags. But it has the drawback of introducing a new tool and process to the localization process. A localization tool is good for projects with a large volume of strings, but a small number of languages. To learn more, see [How to use the Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
--   **Use a localization vendor.** Consider using a localization vendor if your project contains a large volume of strings and needs to be translated for many languages. A localization vendor can give advice about tools and processes, as well as translating your resource files. This is an ideal solution, but is also the most costly option, and may increase the turnaround time for your translated content.
--   **Keep your localizers informed.** Inform localizers of strings that can be considered a noun or a verb. Explain fabricated words to your localizers by using terminology tools. Keep strings grammatically correct, unambiguous, and as nontechnical as possible to avoid confusion.
+- **Use a localization tool.** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. This approach reduces the risk of a translator accidentally editing the XML tags. But it has the drawback of introducing a new tool and process to the localization process. A localization tool is good for projects with a large volume of strings, but a small number of languages. To learn more, see [How to use the Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
+- **Use a localization vendor.** Consider using a localization vendor if your project contains a large volume of strings and needs to be translated for many languages. A localization vendor can give advice about tools and processes, as well as translating your resource files. This is an ideal solution, but is also the most costly option, and may increase the turnaround time for your translated content.
+- **Keep your localizers informed.** Inform localizers of strings that can be considered a noun or a verb. Explain fabricated words to your localizers by using terminology tools. Keep strings grammatically correct, unambiguous, and as nontechnical as possible to avoid confusion.
 
-## Keep access keys and labels consistent.
-
+## Keep access keys and labels consistent
 
 It is a challenge to "synchronize" the access keys used in accessibility with the display of the localized access keys, because the two string resources are categorized in two separate sections. Be sure to provide comments for the label string such as: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 
-## Support Furigana for Japanese strings that can be sorted.
-
+## Support Furigana for Japanese strings that can be sorted
 
 Japanese Kanji characters have the unique property of having more than one pronunciation depending on the word and context they are used in. This leads to problems when you try to sort Japanese named objects, such as application names, files, songs, and so on. Japanese Kanji have, in the past, usually been sorted in a machine-understandable order called XJIS. Unfortunately, because this sorting order is not phonetic it is not very useful for humans.
 
@@ -162,13 +149,6 @@ Sorting follows the **Regional Control Panel** format:
 
 ## Related topics
 
-
 * [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)
 * [Put UI strings into resources](../app-resources/localize-strings-ui-manifest.md)
 * [Tailor your resources for language, scale, and other qualifiers](../app-resources/tailor-resources-lang-scale-contrast.md)
- 
-
- 
-
-
-

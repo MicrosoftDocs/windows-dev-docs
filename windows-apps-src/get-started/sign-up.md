@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: Ready to sign up?
-description: Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
+description: Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 ---
 # Ready to sign up?
 
-Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
+Register now for a developer account so you can get your apps into the Microsoft Store and participate in other Microsoft programs.
 
 [Sign up now!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
 

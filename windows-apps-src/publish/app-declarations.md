@@ -17,9 +17,9 @@ You can provide additional information about your app in the **Product declarati
 
 The following sections describe each declaration and what you need to consider when determining whether each declaration applies to your app.
 
-## This app allows users to make purchases, but does not use the Windows Store commerce system.
+## This app allows users to make purchases, but does not use the Microsoft Store commerce system.
 
-For nearly every submission, you should leave this box unchecked, since apps which offer opportunities to purchase items which are or can be consumed or used within your app must use the Windows Store in-app purchase API to create and submit the add-ons. Per the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), apps that were created and submitted prior to June 29, 2015, could continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
+For nearly every submission, you should leave this box unchecked, since apps which offer opportunities to purchase items which are or can be consumed or used within your app must use the Microsoft Store in-app purchase API to create and submit the add-ons. Per the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), apps that were created and submitted prior to June 29, 2015, could continue to offer in-app purchasing functionality without using Microsoft's commerce engine, so long as the purchase functionality complies with the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). If this applies to your app, you must check this box. Otherwise, leave it unchecked.
 
 ## This app has been tested to meet accessibility guidelines.
 

@@ -1,6 +1,6 @@
 ﻿---
 author: jnHs
-Description: You can promote your app or add-on in the Windows Store by putting it on sale for a limited time.
+Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
 title: Put apps and add-ons on sale
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 
 # Put apps and add-ons on sale
 
-You can promote your app or add-on in the Windows Store by putting it on sale for a limited time. You can choose to offer the product either at a lower price tier or with a percentage-based discount.
+You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time. You can choose to offer the product either at a lower price tier or with a percentage-based discount.
 
 When you use the **Sale pricing** section of the **Pricing and availability** page of a submission to temporarily lower the price of your app or add-on, customers viewing your Store listing will see strikethrough pricing indicating that the price has been reduced (as opposed to a [scheduled price change](set-and-schedule-app-pricing.md#schedule-price-changes), which can lower or raise the price without displaying it as a change in the Store). 
 

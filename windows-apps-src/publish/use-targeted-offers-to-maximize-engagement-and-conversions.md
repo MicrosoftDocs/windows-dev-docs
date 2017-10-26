@@ -22,7 +22,7 @@ Target specific segments of your customers with attractive, personalized content
 At a high level, you need to do three things to use targeted offers:
 
 1. **Create the offer in your dashboard.** Navigate to the **Engage > Targeted offers** page to create offers. More info about this process is described below.
-2. **Implement the in-app offer experience.** Use the *Windows Store targeted offers API* in your app's code to retrieve the available offers for a given user. You'll also need to create the in-app experience for the targeted offer. For more info, see [Manage targeted offers using Store services](../monetize/manage-targeted-offers-using-windows-store-services.md).
+2. **Implement the in-app offer experience.** Use the *Microsoft Store targeted offers API* in your app's code to retrieve the available offers for a given user. You'll also need to create the in-app experience for the targeted offer. For more info, see [Manage targeted offers using Store services](../monetize/manage-targeted-offers-using-windows-store-services.md).
 3. **Submit your app to the Store.** Your app must be published with the in-app offer experience in place in order for the offer(s) be made available to customers.
 
 After you complete these steps, customers using your app will see the offers that are available to them at that time, based in their membership in the segment(s) associated with your offers. Please note that while we’ll make every effort to show all available offers to your customers, there may occasionally be issues that impact offer availability.

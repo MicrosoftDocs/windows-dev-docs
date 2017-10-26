@@ -104,7 +104,7 @@ Here's a list of the command surfaces that Windows provides and recommendations 
 <td align="left" style="vertical-align: top;">[Dialog controls](../controls-and-patterns/dialogs.md)
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
 <td align="left" style="vertical-align: top;">Dialogs are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user.
-<p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#whentoconfirm) section.</p></td>
+<p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.</p></td>
 </tr>
 
 <tr class="odd">

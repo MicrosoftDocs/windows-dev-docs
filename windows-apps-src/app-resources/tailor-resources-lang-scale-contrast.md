@@ -18,6 +18,8 @@ This topic explains the general concept of resource qualifiers, how to use them,
 
 Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), and many others. The way you do this is to name your resources’ folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
 
+For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+
 ## Qualifier name, qualifier value, and qualifier
 
 A qualifier name is a key that maps to a set of qualifier values. Here are the qualifier name and qualifier values for contrast.
@@ -129,6 +131,7 @@ The `contrast` qualifier is used to provide resources that best match high contr
 
 Your app can set a value for the `custom` qualifier, and then resources are loaded that best match that value. For example, you may want to load resources based on your app’s license. When your app launches, it checks its license and uses that as the value for the `custom` qualifier by calling [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_), as shown in the code example.
 
+**C#**
 ```csharp
 public void SetLicenseLevel(BrandID brand)
 {
@@ -256,7 +259,6 @@ For info about qualifying a resource for both `scale` and `targetsize`, see [Qua
 ## Theme
 
 The `theme` qualifier is used to provide resources that best match the default app mode setting, or your app’s override using [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master#Windows_UI_Xaml_Application_RequestedTheme).
-
 
 ## Important APIs
 

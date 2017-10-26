@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
-description: Use the Java code examples in this section to learn more about using the Windows Store submission API.
+description: Use the Java code examples in this section to learn more about using the Microsoft Store submission API.
 title: Java sample - submissions for apps, add-ons, and flights
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, code examples, java
+keywords: windows 10, uwp, Microsoft Store submission API, code examples, java
 ---
 
 # Java sample: submissions for apps, add-ons, and flights
 
-This article provides Java code examples that demonstrate how to use the [Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
+This article provides Java code examples that demonstrate how to use the [Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md) for these tasks:
 
 * [Obtain an Azure AD access token](#token)
 * [Create an add-on](#create-add-on)
@@ -41,7 +41,7 @@ The following example shows the imports statements used by all of the code examp
 <span id="token" />
 ## Obtain an Azure AD access token
 
-The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) that you can use to call methods in the Windows Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store submission API before the token expires. After the token expires, you can generate a new token.
+The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) that you can use to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L65-L95)]
 
@@ -62,7 +62,7 @@ The following example demonstrates how to [create](create-a-flight.md) and then 
 <span id="create-app-submission" />
 ## Create an app submission
 
-The following example shows how to use several methods in the Windows Store submission API to create an app submission. To do this, the ```SubmitNewApplicationSubmission``` method creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```SubmitNewApplicationSubmission``` method performs these tasks:
+The following example shows how to use several methods in the Microsoft Store submission API to create an app submission. To do this, the ```SubmitNewApplicationSubmission``` method creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```SubmitNewApplicationSubmission``` method performs these tasks:
 
 1. To begin, the method [gets data for the specified app](get-an-app.md).
 2. Next, it [deletes the pending submission for the app](delete-an-app-submission.md), if one exists.
@@ -76,7 +76,7 @@ The following example shows how to use several methods in the Windows Store subm
 <span id="create-add-on-submission" />
 ## Create an add-on submission
 
-The following example shows how to use several methods in the Windows Store submission API to create an add-on submission. To do this, the ```SubmitNewInAppProductSubmission``` method creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the ```SubmitNewInAppProductSubmission``` method performs these tasks:
+The following example shows how to use several methods in the Microsoft Store submission API to create an add-on submission. To do this, the ```SubmitNewInAppProductSubmission``` method creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the ```SubmitNewInAppProductSubmission``` method performs these tasks:
 
 1. To begin, the method [gets data for the specified add-on](get-an-add-on.md).
 2. Next, it [deletes the pending submission for the add-on](delete-an-add-on-submission.md), if one exists.
@@ -90,7 +90,7 @@ The following example shows how to use several methods in the Windows Store subm
 <span id="create-flight-submission" />
 ## Create a package flight submission
 
-The following example shows how to use several methods in the Windows Store submission API to create a package flight submission. To do this, the ```SubmitNewFlightSubmission``` method creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the ```SubmitNewFlightSubmission``` method performs these tasks:
+The following example shows how to use several methods in the Microsoft Store submission API to create a package flight submission. To do this, the ```SubmitNewFlightSubmission``` method creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the ```SubmitNewFlightSubmission``` method performs these tasks:
 
 1. To begin, the method [gets data for the specified package flight](get-a-flight.md).
 2. Next, it [deletes the pending submission for the package flight](delete-a-flight-submission.md), if one exists.
@@ -120,4 +120,4 @@ The following code listing contains all of the previous examples organized into 
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)

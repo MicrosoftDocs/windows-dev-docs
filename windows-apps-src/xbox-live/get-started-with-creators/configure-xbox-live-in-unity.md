@@ -29,7 +29,7 @@ You will need the following to configure Xbox Live in Unity:
 * [Unity 5.5](https://store.unity.com/) or later
   * You need to include the following components when installing.
     * [Microsoft Visual Studio Tools for Unity](https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity)
-    * Windows Store .NET Scripting Backend
+    * **Windows Store .NET Scripting Backend**
 * [Visual Studio 2015](https://www.visualstudio.com/) or later
   * Any version of Visual Studio should work for this including Community Edition.
   * Make sure to select everything under **Universal Windows App Development Tools** when installing.  You can modify the installation to include these features for an existing installation as well.
@@ -78,7 +78,7 @@ To actually enable Xbox Live in your Unity project, you'll need to follow these 
     > [!NOTE]
     > Your device must be in developer mode to call Xbox Live services. After you have enabled Xbox Live, you can switch to developer mode by selecting **Switch to Developer Mode**.
 
-3. In the **Associate Your Game with the Windows Store** dialog, click **Next**, and then sign in with your Dev Center account.
+3. In the **Associate Your Game with the Microsoft Store** dialog, click **Next**, and then sign in with your Dev Center account.
 
     ![Xbox Live: Enable Xbox Live](../images/unity/associate-game-with-store.png)
 
@@ -110,7 +110,7 @@ To sign in with a real profile and test out Xbox Live functionality in your titl
 
 2. Make sure that you have the scene that you want to test included in your build under **Scenes In Build**. If it's not listed, open the scene and select **Add Open Scenes**.
 
-3. Switch to the **Windows Store** platform by selecting **Windows Store** under **Platform** and clicking **Switch Platform**.
+3. Switch to the **Universal Windows Platform** by selecting **Universal Windows Platform** under **Platform** and clicking **Switch Platform**.
 
 4. Next to **SDK**, select **Universal 10**.
 

@@ -95,7 +95,7 @@ To start using ad mediation in your UWP app, [configure ad mediation settings](.
 
 ## Step 4: Submit your app and review performance
 
-After you finish developing your app with ads, you can [submit your updated app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Dev Center dashboard so it is available in the Store. Apps that display ads must meet the additional requirements that are specified in [section 10.10 of the Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) and [Exhibit E of the App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx).
+After you finish developing your app with ads, you can [submit your updated app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Dev Center dashboard so it is available in the Store. Apps that display ads must meet the additional requirements that are specified in [section 10.10 of the Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) and [Exhibit E of the App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx).
 
 After your app is published and available in the Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in the dashboard and continue to make changes to your mediation settings to optimize the performance of your ads. Your advertising revenue is included in your [payout summary](../publish/payout-summary.md).
 

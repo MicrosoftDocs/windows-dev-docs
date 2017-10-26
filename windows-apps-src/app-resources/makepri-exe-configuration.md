@@ -18,7 +18,7 @@ This topic describes the schema of the [MakePri.exe](compile-resources-manually-
 
 The PRI config file controls what resources are indexed, and how. The configuration XML must conform to the following schema.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="resources">
@@ -107,7 +107,7 @@ The PRI config file controls what resources are indexed, and how. The configurat
 
 MakePri.exe generates this new, initialized PRI config file when the [createconfig command](makepri-exe-command-options.md#createconfig-command) is issued.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <resources targetOsVersion="10.0.0" majorVersion="1">
   <packaging>
@@ -148,7 +148,7 @@ The `packaging` element defines PRI split information. The schema for the `packa
 
 This example shows how to use `autoResourcePackage` along a specific dimension.
 
-```
+```xml
 	<packaging>
 		<autoResourcePackage qualifier="Language"/>
 		<autoResourcePackage qualifier="Scale"/>
@@ -158,7 +158,7 @@ This example shows how to use `autoResourcePackage` along a specific dimension.
 
 This example shows how to use manual `resourcePackage`.
 
-```
+```xml
   <packaging>
     <resourcePackage name="Germany">
       <qualifierSet definition="lang-de-de"/>
@@ -180,7 +180,8 @@ MakePri.exe doesn't explicitly block generation of resource PRI files along any 
 
 MakePri.exe parses the `packaging` element after all the `index` nodes to populate all the default qualifiers. MakePri.exe collects parsed info in these data structures.
 
-```
+**C#**
+```csharp
 enum ResourcePackageMode
 {
     None,
@@ -206,7 +207,7 @@ We recommend that you omit `isDeploymentMergeable` (or set it explicitly to `tru
 
 MakePri.exe adds the value of `isDeploymentMergeable` to the dump file if `makepri dump` is run with the `/dt detailed` option.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PriInfo>
 	<PriHeader>
@@ -224,7 +225,7 @@ The default value for this attribute is 1. If you provide an explicit value, and
 
 Here's an example.
 
-```
+```xml
 <resources majorVersion="2">
   <packaging ... />
   <index root="\" startIndexAt="\">
@@ -245,7 +246,7 @@ Indicates the target operating system version. The table below shows the values 
 
 Here's an example.
 
-```
+```xml
 <resources targetOsVersion="10.0.0">
   <packaging ... />
   <index root="\" startIndexAt="\">
@@ -258,7 +259,7 @@ Here's an example.
 
 MakePri.exe adds the value of `targetOsVersion` to the dump file if `makepri dump` is run with the `/dt detailed` option.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PriInfo>
 	<PriHeader>

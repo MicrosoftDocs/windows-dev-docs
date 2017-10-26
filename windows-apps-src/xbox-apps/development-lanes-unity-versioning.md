@@ -44,7 +44,7 @@ We're going to want to select a few different files and folders from within the 
 
 ## Folders  
 
-`Assets` | ***Include*** | Contains Windows Store images  
+`Assets` | ***Include*** | Contains Microsoft Store images  
 `Data`   | ***Ignore*** | Where Unity compiles your project to (Scenes, Shaders, Scripts, Prefabs, etc.)  
 `Dependencies` | ***Include*** | This folder is one I created to keep all UWP dependencies in (for example, XboxLiveSDK.dll)  
 `Properties` | ***Include*** | Contains more advanced settings that can be modified by the developer  

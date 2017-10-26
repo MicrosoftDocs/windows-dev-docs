@@ -113,7 +113,7 @@ For more info on Cortana integration and VCDs, see [Cortana interactions and Voi
 
 ## Create Hybrid apps – Packaged web apps vs. Hosted web apps
 
-You have options for creating your UWP app. The app might be designed to be downloaded from the Windows Store and fully hosted on the local client; often referred to as a **Packaged Web App**. This lets you run your app offline on any compatible platform. Or the app might be a fully hosted web app that runs on a remote web server; typically known as a **Hosted Web App**. But there is also a third option: the app can be hosted partially on the local client and partially on a remote web server. We call this third option a **Hybrid app** and it typically uses the **WebView** component to make remote content look like local content. Hybrid apps can include your HTML5, CSS, and Javascript code running as a package inside the local app client and retain the ability to interact with remote content.
+You have options for creating your UWP app. The app might be designed to be downloaded from the Microsoft Store and fully hosted on the local client; often referred to as a **Packaged Web App**. This lets you run your app offline on any compatible platform. Or the app might be a fully hosted web app that runs on a remote web server; typically known as a **Hosted Web App**. But there is also a third option: the app can be hosted partially on the local client and partially on a remote web server. We call this third option a **Hybrid app** and it typically uses the **WebView** component to make remote content look like local content. Hybrid apps can include your HTML5, CSS, and Javascript code running as a package inside the local app client and retain the ability to interact with remote content.
 
 ## Web authentication broker
 
@@ -136,7 +136,7 @@ If your app needs programmatic access to user resources like pictures or music, 
 For more info about company accounts, see [Account types, locations, and fees](https://docs.microsoft.com/en-us/windows/uwp/publish/account-types-locations-and-fees).
 
 > [!NOTE]
-> It is important to know that when customers get your app from the Windows Store, they are notified of all the capabilities that the app declares. So do not use capabilities that your app does not need.
+> It is important to know that when customers get your app from the Microsoft Store, they are notified of all the capabilities that the app declares. So do not use capabilities that your app does not need.
 
 You request access by declaring capabilities in your app’s [package manifest](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest). For more information, see these articles on [Packaging for Universal Windows Platform (UWP) apps](https://docs.microsoft.com/en-us/windows/uwp/packaging/index).
 
