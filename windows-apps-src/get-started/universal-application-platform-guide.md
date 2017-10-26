@@ -4,7 +4,7 @@ title: Intro to the Universal Windows Platform
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 10/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
