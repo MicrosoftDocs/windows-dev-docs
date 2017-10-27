@@ -37,6 +37,8 @@ A JSON array in the following format:
   * PackageFullName - Name of the package that we are receiving information about.
   * DeployType - The type of deployment.
   * DeployPathOrSpecifiers - A deploy path for loose deployments or installed specifiers for packaged deployments.
+  * DeployDrive - The drive the package is deployed to for applicable deployment types.
+  * DeploySizeInBytes - The size in bytes of the package for applicable deployment types.
 
 **Status code**
 
