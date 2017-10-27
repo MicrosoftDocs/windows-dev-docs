@@ -52,7 +52,7 @@ Do you plan to publish your app to the [Windows app store](https://www.microsoft
 
 Next, review the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you create a Windows app package for it. You might not have to make many changes to your app before you create the package. However, there are a some situations that might require you to tweak your app before you create a package for it.
 
-<span id="convert" />
+<a id="convert" />
 ## Package
 
 Here's some tools that you can use to create a Windows app package for your app.
@@ -231,17 +231,13 @@ See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribu
 
 ## Support and feedback
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 **Give feedback or make feature suggestions**
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
-
-**Give feedback about this article**
-
-Use the comments section below.
 
 ## In this section
 

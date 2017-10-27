@@ -109,14 +109,10 @@ Starting a utility can often provide a convenient way to obtain information from
 
 ## Next steps
 
-**Create a Windows app packge for your desktop app**
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Create a Windows app package for your desktop app**
 
 See [Create a Windows app package](desktop-to-uwp-root.md#convert)
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.

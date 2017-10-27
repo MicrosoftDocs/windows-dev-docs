@@ -23,6 +23,7 @@ You can use Visual Studio to generate a package for your desktop app. Then, you 
 
 If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
+<a id="new-packaging-project"/>
 ## Use the new packaging project available in the 15.4 release of Visual Studio 2017
 
 The 15.4 release of Visual Studio introduces a new packaging project that eliminates all of the manual steps that used to be necessary to package your app. Just add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.
@@ -225,6 +226,10 @@ The **Create App Packages** wizard generates an appxupload file that you can sub
 
 ## Next steps
 
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
 **Run, debug or test your app**
 
 See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
@@ -240,11 +245,3 @@ See [Extend your desktop application with modern UWP components](desktop-to-uwp-
 **Distribute your app**
 
 See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.

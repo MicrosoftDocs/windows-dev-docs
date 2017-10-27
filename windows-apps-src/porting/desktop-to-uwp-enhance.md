@@ -239,14 +239,10 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 
 ## Support and feedback
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 **Give feedback or make feature suggestions**
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
-
-**Give feedback about this article**
-
-Use the comments section below.
