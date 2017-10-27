@@ -4,7 +4,7 @@ title: Intro to the Universal Windows Platform
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 10/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,7 +20,7 @@ In this guide, you'll learn about the Universal Windows Platform (UWP) and Windo
 -   New UI controls and panels for adapting your UI to different screen sizes or rotations.
 -   How to understand and control the API surface that is available to your app.
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform available on every device that runs Windows 10. The UWP provides a guaranteed core API across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Microsoft Store provides a unified distribution channel to reach all the device types your app can run on. Apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the class of device that the app is running on.
+Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows 10. The UWP provides a guaranteed core API across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Microsoft Store provides a unified distribution channel to reach all the device types your app can run on. Apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the class of device that the app is running on.
 
 ![Universal Windows Platform apps run on a variety of devices, support adaptive user interface, natural user input, one store, one dev center, and cloud services](images/universalapps-overview.png)
 
