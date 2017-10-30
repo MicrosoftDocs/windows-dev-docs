@@ -145,7 +145,7 @@ Here's a few common ways to package your app.
 * [Package an app that doesn't have an installer](#no-installer-conversion)
 * [Package an app, sign the app, and prepare it for store submission](#optional-parameters)
 
-<span id="installer-conversion" />
+<a id="installer-conversion" />
 #### Package an app that has an installer (.msi) file
 
 Point to the installer file by using the ``Installer`` parameter.
@@ -163,7 +163,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 
 If your installer includes installers for dependent libraries or frameworks, you might have to organize things a bit a differently. See [Chaining multiple installers with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
 
-<span id="setup-conversion" />
+<a id="setup-conversion" />
 #### Package an app that has a setup executable file
 
 Point to the setup executable by using the ``Installer`` parameter.
@@ -180,7 +180,7 @@ The ``InstallerArguments`` parameter is an optional parameter. However, because 
 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-a-Setup-exe-Installer-amWit2WhD_5306218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
-<span id="no-installer-conversion" />
+<a id="no-installer-conversion" />
 #### Package an app that doesn't have an installer
 
 In this example, use the ``Installer`` parameter to point to the root folder of your app files.
@@ -198,7 +198,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
-<span id="optional-parameters" />
+<a id="optional-parameters" />
 #### Package an app, sign the app, and run validation checks on the package
 
 This example is similar to first one except it shows how you can sign your app for local testing, and then validate your app against Desktop Bridge and Microsoft Store requirements.
@@ -232,7 +232,7 @@ The ``Sign`` and ``Verify`` parameters are optional. There are many more optiona
 ```
 You can read about all of them in the next section.
 
-<span id="command-reference" />
+<a id="command-reference" />
 ### Parameter Reference
 
 Here's the complete list of parameters (organized by category) that you can use when you run the Desktop App Converter.
@@ -249,23 +249,23 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 
 ||||
 |-------------|-----------|-------------|
-|<span id="setup-params" /> <strong>Setup parameters</strong>  ||
+|<a id="setup-params" /> <strong>Setup parameters</strong>  ||
 |-Setup [&lt;SwitchParameter&gt;] |Required |Runs DesktopAppConverter in setup mode. Setup mode supports expanding a provided base image.|
 |-BaseImage &lt;String&gt; | Required |Full path to an unexpanded base image. This parameter is required if -Setup is specified.|
 | -LogFile &lt;String&gt; |Optional |Specifies a log file. If omitted, a log file temporary location will be created.|
 |-NatSubnetPrefix &lt;String&gt; |Optional |Prefix value to be used for the Nat instance. Typically, you would want to change this only if your host machine is attached to the same subnet range as the converter's NetNat. You can query the current converter NetNat config by using the **Get-NetNat** cmdlet. |
 |-NoRestart [&lt;SwitchParameter&gt;] |Required |Don't prompt for reboot when running setup (reboot is required to enable the container feature). |
-|<span id="conversion-params" /> <strong>Conversion parameters</strong>|||
+|<a id="conversion-params" /> <strong>Conversion parameters</strong>|||
 |-AppInstallPath &lt;String&gt;  |Optional |The full path to your application's root folder for the installed files if it were installed (e.g., "C:\Program Files (x86)\MyApp").|
 |-Destination &lt;String&gt; |Required |The desired destination for the converter's appx output - DesktopAppConverter can create this location if it doesn't already exist.|
 |-Installer &lt;String&gt; |Required |The path to the installer for your application - must be able to run unattended/silently. No-installer conversion, this is the path to the root directory of your app files. |
 |-InstallerArguments &lt;String&gt; |Optional |A comma-separated list or string of arguments to force your installer to run unattended/silently. This parameter is optional if your installer is an msi. To get a log from your installer, supply the logging argument for the installer here and use the path &lt;log_folder&gt;, which is a token that the converter replaces with the appropriate path. <br><br>**NOTE**: The unattended/silent flags and log arguments will vary between installer technologies. <br><br>An example usage for this parameter: -InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" Another example that doesn't produce a log file may look like: ```-InstallerArguments "/quiet", "/norestart"``` Again, you must literally direct any logs to the token path &lt;log_folder&gt; if you want the converter to capture it and put it in the final log folder.|
 |-InstallerValidExitCodes &lt;Int32&gt; |Optional |A comma-separated list of exit codes that indicate your installer ran successfully (for example: 0, 1234, 5678).  By default this is 0 for non-msi, and 0, 1641, 3010 for msi.|
-|<span id="identity-params" /><strong>Package identity parameters</strong>||
+|<a id="identity-params" /><strong>Package identity parameters</strong>||
 |-PackageName &lt;String&gt; |Required |The name of your Universal Windows App package. If the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
 |-Publisher &lt;String&gt; |Required |The publisher of your Universal Windows App package |
 |-Version &lt;Version&gt; |Required |The version number for your Universal Windows App package |
-|<span id="manifest-params" /><strong>Package manifest parameters</strong>||
+|<a id="manifest-params" /><strong>Package manifest parameters</strong>||
 |-AppExecutable &lt;String&gt; |Optional |The name of your application's main executable (eg "MyApp.exe"). This parameter is required for a no-installer conversion. |
 |-AppFileTypes &lt;String&gt;|Optional |A comma-separated list of file types which the application will be associated with. Example usage: -AppFileTypes "'.md', '.markdown'".|
 |-AppId &lt;String&gt; |Optional |Specifies a value to set Application Id to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. In many cases, using the *PackageName* is fine. However, if the dev center assigns an identity to your package that begins with a number, make sure that you also pass in the <i>-AppId</i> parameter, and use only the string suffix (after the period separator) as the value of that parameter. |
@@ -273,14 +273,14 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-AppDescription &lt;String&gt; |Optional |Specifies a value to set Application Description to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*.|
 |-PackageDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *PackageName*. |
 |-PackagePublisherDisplayName &lt;String&gt; |Optional |Specifies a value to set Package Publisher Display Name to in the Windows app package manifest. If it is not specified, it will be set to the value passed in for *Publisher*. |
-|<span id="cleanup-params" /><strong>Cleanup parameters</strong>|||
+|<a id="cleanup-params" /><strong>Cleanup parameters</strong>|||
 |-Cleanup [&lt;Option&gt;] |Required |Runs cleanup for the DesktopAppConverter artifacts. There are 3 valid options for the Cleanup mode. |
 |-Cleanup All | |Deletes all expanded base images, removes any temporary converter files, removes the container network, and disables the optional Windows feature, Containers. |
 |-Cleanup WorkDirectory |Required |Removes all the temporary converter files. |
 |-Cleanup ExpandedImage |Required |Deletes all the expanded base images installed on your host machine. |
-|<span id="architecture-params" /><strong>Package architecture parameters</strong>|||
+|<a id="architecture-params" /><strong>Package architecture parameters</strong>|||
 |-PackageArch &lt;String&gt; |Required |Generates a package with the specified architecture. Valid options are 'x86' or 'x64'; for example, -PackageArch x86. This parameter is optional. If unspecified, the DesktopAppConverter will try to auto-detect package architecture. If auto-detection fails, it will default to x64 package. |
-|<span id="other-params" /><strong>Miscellaneous parameters</strong>|||
+|<a id="other-params" /><strong>Miscellaneous parameters</strong>|||
 |-ExpandedBaseImage &lt;String&gt;  |Optional |Full path to an already expanded base image.|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |Optional |A switch that, when present, tells this script to call MakeAppx on the output. |
 |-LogFile &lt;String&gt;  |Optional |Specifies a log file. If omitted, a log file temporary location will be created. |
@@ -289,7 +289,7 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 | -Verify [&lt;SwitchParameter&gt;] |Optional |A switch that, when present, tells the DAC to validate the app package against Desktop Bridge and Microsoft Store requirements. The result is a validation report "VerifyReport.xml", which is best visualized in a browser. This switch should be present alongside the switch `-MakeAppx`. |
 |-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you package your app.
 
-<span id="run-app" />
+<a id="run-app" />
 ## Run the packaged app
 
 There's two ways to run your app.
@@ -379,9 +379,9 @@ The Desktop App Converter does not support Unicode; thus, no Chinese characters 
 
 ## Next steps
 
-**Resolve problems and find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 You can also refer to [this](desktop-to-uwp-known-issues.md#app-converter) list of known issues.
 
@@ -392,7 +392,3 @@ See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uw
 **Distribute your app**
 
 See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
-
-**Give feedback about this article**
-
-Use the comments section below.

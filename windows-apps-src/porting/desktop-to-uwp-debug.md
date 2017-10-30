@@ -15,7 +15,7 @@ ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 
 Run your packaged app and see how it looks without having to sign it. Then, set breakpoints and step through code. When you're ready to test your app in a production environment, sign your app and then install it. This topic shows you how to do each of these things.
 
-<span id="run-app" />
+<a id="run-app" />
 ## Run your app
 
 You can run your app to test it out locally without having to obtain a certificate and sign it. How you run the app depends on what tool you used to create the package.
@@ -42,11 +42,9 @@ To start your app, find it in the Windows Start menu.
 
 How you debug the app depends on what tool you used to create the package.
 
-### You created the package by using Visual Studio
+If you created your package by using the [new packaging project](desktop-to-uwp-packaging-dot-net.md#new-packaging-project) available in the 15.4 release of Visual Studio 2017, Just set the packaging project as the startup project, and then press F5 to debug your app.
 
-Set the packaging project as the startup project, and then press F5 to debug your app.
-
-### You created the package manually or by using the Desktop App Converter
+If you created your package by using any other tool, follow these steps.
 
 1. Make sure that you start your packaged app at least one time so that it's installed on your local machine.
 
@@ -76,9 +74,16 @@ You can use [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680
 
 To test your app in a realistic setting as you prepare for distribution, it's best to sign your app and then install it.
 
-If you packaged you app by using Visual Studio, you can run a script to sign your app and then install it. See [Sideload your package](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
+### Test an app that you packaged by using Visual Studio
+
+Visual Studio signs your app by using a test certificate. You'll find that certificate in the output folder that the **Create App Packages** wizard generates. The certificate file has the *.cer* extension and you'll have to install that certificate into the **Trusted Root Certification Authorities** store on the PC that you want to test your app on. See [Sideload your package](../packaging/packaging-uwp-apps.md#sideload-your-app-package).
+
+### Test an app that you packaged by using the Desktop App Converter (DAC)
 
 If you package your app by using the Desktop App Converter, you can use the ``sign`` parameter to automatically sign your app by using a generated certificate. You'll have to install that certificate, and then install the app. See [Run the packaged app](desktop-to-uwp-run-desktop-app-converter.md#run-app).   
+
+
+### Manually sign apps (Optional)
 
 You can also sign your app manually. Here's how
 
@@ -91,9 +96,9 @@ You can also sign your app manually. Here's how
   > [!IMPORTANT]
   > Make sure that the publisher name on your certificate matches the publisher name of your app.
 
-### Related sample
+    **Related sample**
 
-[SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
+    [SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
 
 
 ### Test your app for Windows 10 S
@@ -113,10 +118,6 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 ## Next steps
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).

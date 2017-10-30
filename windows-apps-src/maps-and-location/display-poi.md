@@ -389,7 +389,7 @@ public sealed partial class Scenario1 : Page
 }
 ```
 
-<span id="layers" />
+<a id="layers" />
 ## Working with layers
 
 The examples in this guide add elements to a [MapElementLayers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) collection. Then they show how to add that collection to the **Layers** property of the map control. In previous releases, this guide showed you how to add map elements to the [**MapElements**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_MapElements) collection as follows:

@@ -38,7 +38,7 @@ If you decide to bail on (or postpone) the Azure part, simply skip the final sec
 
 We'll first build a simple memory game API to power our memory game web app. We'll use [Swagger](http://swagger.io/) to define our API and generate scaffolding code and a web UI for manual testing.
 
-If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-application), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
+If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-appl), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
 
 ### Game overview
 
@@ -272,9 +272,9 @@ With this change, the **GET /game** method will return all the card values (incl
 
 The Azure docs will walk you through:
 
- - [Registering a new *API App* with Azure Portal](https://docs.microsoft.com/en-us/azure/app-service-api/app-service-api-nodejs-api-app#a-idcreateapiappa-create-a-new-api-app)
- - [Setting up Git deployment for your API app](https://docs.microsoft.com/en-us/azure/app-service-api/app-service-api-nodejs-api-app#set-up-your-new-api-app-for-git-deployment), and
- - [Deploying your API app code to Azure](https://docs.microsoft.com/en-us/azure/app-service-api/app-service-api-nodejs-api-app#deploy-your-api-code-to-azure)
+ - [Registering a new *API App* with Azure Portal](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Setting up Git deployment for your API app](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), and
+ - [Deploying your API app code to Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 When registering your app, try to differentiate your *App name* (to avoid naming collisions with others requesting variations on the *http://memorygameapi.azurewebsites.net* URL).
 
@@ -638,7 +638,7 @@ The basic steps for publishing to the Microsoft Store are:
 
 Here are some useful resources for going further:
 
- - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/en-us/azure/documentdb/documentdb-nodejs-application#a-nametoc395783182aPart-7-deploy-your-application-development-project-to-azure-websites)
+ - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
  - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
 

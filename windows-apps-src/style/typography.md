@@ -14,8 +14,6 @@ keywords: windows 10, uwp
 
 # Typography
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
 As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
 
 ## Typeface
@@ -179,7 +177,7 @@ SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create 
 
 ## Primary and secondary text
 
-To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity. In the [theming color palette](color.md#color-theming), you would use BaseMedium. Primary text should always be at 100% opacity, or BaseHigh.
+To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity. In the [theming color palette](color.md#themes), you would use BaseMedium. Primary text should always be at 100% opacity, or BaseHigh.
 
 <!-- Need new images
 ![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)

@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 10/13/2017
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,7 +24,6 @@ Here are some of the features that we’ve made available exclusively to members
 
 | Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
-|**Xbox Live service health tab**: The **Xbox analytics** report contains a new tab to help you quickly understand the impact of your product's Xbox Live client errors so you can more effectively address online issues. | In the **Xbox analytics** report, choose the **Xbox Live service health** tab at the top of the page. | October 2017 |
 |**View more details from your overview page**: Get more details on highlighted apps without leaving your overview page. | On the overview page, look for the boxes highlighting key statistics for your apps. Click any of the boxes to see more details about that app. | September 2017 |
 |**Near real time health data**: The **Health** report now shows data for crashes, hangs, memory failures, and JavaScript exceptions in near real time when using the **72H** page filter option.  | In an app’s Health report, choose the **72H** option at the top of the page. Note that you may see a discrepancy in data for the 72 hour period when comparing the **72H** and **30D** filters. This is a known issue that we’re working to resolve.  | September 2017|
 |**Improved mobile experience**: Our new mobile view lets you see all of your apps at once and reduces scrolling. Get more details on each app without navigating away from your overview page, including a quick glance at acquisitions, crashes, and reviews. | Sign in to the dashboard on your mobile device (or reduce the size of the window on any screen to try out the mobile experience). | August 2017 |

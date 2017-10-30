@@ -17,7 +17,7 @@ You can test your Windows app to ensure that it will operate correctly on device
 > [!IMPORTANT]
 >We recommend that you apply these policies to a virtual machine, but if you want to apply them to your local machine, make sure to review our best practice guidance in the "Next, install the policy and restart your system" section of this topic before you apply a policy.
 
-<span id="choose-policy" />
+<a id="choose-policy" />
 ## First, download the policies and then choose one
 
 Download the Device Guard Code Integrity policies [here](https://go.microsoft.com/fwlink/?linkid=849018).
@@ -72,6 +72,10 @@ Then, restart your system.
 
 ## Next steps
 
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
 **Review a detailed blog article that was posted by our App Consult Team**
 
 See [Porting and testing your classic desktop applications on Windows 10 S with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/).
@@ -79,11 +83,3 @@ See [Porting and testing your classic desktop applications on Windows 10 S with 
 **Learn about tools that make it easier to test for Windows S**
 
 See [Unpackage, modify, repackage, sign an APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/).
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.
