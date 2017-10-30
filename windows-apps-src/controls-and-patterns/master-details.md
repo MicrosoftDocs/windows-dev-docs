@@ -36,8 +36,8 @@ When implementing the master/details pattern, we recommend that you use either t
 
 | Available window width | Recommended style |
 |------------------------|-------------------|
-| 320 epx-719 epx        | Stacked           |
-| 720 epx or wider       | Side-by-side      |
+| 320 epx-640 epx        | Stacked           |
+| 641 epx or wider       | Side-by-side      |
 
  
 ## Stacked style
@@ -50,13 +50,15 @@ The user starts at the master pane and "drills down" to the details pane by sele
 
 ### Create a stacked master/details pattern
 
-One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the list view that provides the master list on one page, and the content element for the details pane on a separate page.
+One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the master view on one page, and the details pane on a separate page.
 
 ![Parts for the stacked-style master detail](images/patterns-md-stacked-parts.png)
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+For the master view page, a [list view](lists.md) control works well for presenting lists that can contain images and text. 
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+For the details view page, use the [content element](../layout/layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
+
+For navigation between pages, see [navigation history and backwards navigation for UWP apps](../layout/navigation-history-and-backwards-navigation.md).
 
 ## Side-by-side style
 
@@ -68,16 +70,30 @@ The list in the master pane has a selection visual to indicate the currently sel
 
 ### Create a side-by-side master/details pattern
 
+One way to create a side-by-side master/details pattern is to use the [split view](split-view.md) control. Place the master view in the split view pane, and the details view in the split view content.
+
+![master detail split view parts](images/patterns_md_splitview_parts.png)
+
 For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+For the details content, use the [content element](../layout/layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
 
-## Get the code samples
+## Adaptive layout
 
-For sample code that shows the master/details pattern, see these samples: 
+To implement a master/details pattern for any screen size, create a responsive UI with an [adaptive layout](../layout/layouts-with-xaml.md).
 
-- [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
-- [ListView and GridView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+![adaptive master detail layout](images/patterns_masterdetail.png)
+
+### Create an adaptive master/details pattern
+To create an adaptive layout, define different [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) for your UI, and declare breakpoints for the different states with [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
+
+## Code Samples
+
+The following samples implement the master/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources: 
+- [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
+- [Master/Details plus Selection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Windows Template Studio Master/Detail sample](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Pages/MasterDetail)
+- [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 
 ## Related articles
@@ -86,3 +102,4 @@ For sample code that shows the master/details pattern, see these samples:
 - [Search](search.md)
 - [App and command bars](app-bars.md)
 - [ListView class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [SplitView class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)

@@ -16,8 +16,6 @@ design-contact: rybick
 
 # Color
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 Color provides an intuitive way of communicating information to users. It can be used to signal interactivity, give feedback to user actions, convey state information, and give your interface a sense of visual continuity.
 
 **Use color carefully.** When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.

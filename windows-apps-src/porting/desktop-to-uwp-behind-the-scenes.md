@@ -92,10 +92,6 @@ When a package is uninstalled by the user, all files and folders located under *
 
 ## Next steps
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).

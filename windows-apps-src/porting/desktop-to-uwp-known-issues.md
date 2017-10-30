@@ -16,7 +16,7 @@ ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 
 This article contains known issues with the Desktop Bridge.
 
-<span id="app-converter" />
+<a id="app-converter" />
 ## Known Issues with the Desktop App Converter
 
 ### E_CREATING_ISOLATED_ENV_FAILED an E_STARTING_ISOLATED_ENV_FAILED errors    
@@ -121,3 +121,9 @@ Run **certutil** from the the command line on the PFX file and copy the *Subject
 ```cmd
 certutil -dump <cert_file.pfx>
 ```
+
+## Next Steps
+
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
