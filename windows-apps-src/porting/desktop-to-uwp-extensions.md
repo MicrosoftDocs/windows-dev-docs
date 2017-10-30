@@ -1148,7 +1148,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 #### Elements and attributes of this extension
 
 ```XML
-<xtension Category="windows.fullTrustProcess" Executable="[executable file]">
+<Extension Category="windows.fullTrustProcess" Executable="[executable file]">
   <FullTrustProcess>
     <ParameterGroup GroupId="[GroupID]" Parameters="[Parameters]"/>
   </FullTrustProcess>
