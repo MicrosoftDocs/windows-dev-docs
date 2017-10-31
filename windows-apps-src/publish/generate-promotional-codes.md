@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: Generate promotional codes
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Generate promotional codes

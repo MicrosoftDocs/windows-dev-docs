@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, input, registry, custom
+localizationpriority: medium
 ---
 
 # Registry data for game controllers

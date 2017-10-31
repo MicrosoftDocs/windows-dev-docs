@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
+localizationpriority: medium
 ---
 
 # Publish Windows apps

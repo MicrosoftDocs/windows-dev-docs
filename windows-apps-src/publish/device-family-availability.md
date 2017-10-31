@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order. 
+Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Device family availability
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, packages, upload, device family availability
+localizationpriority: medium
 ---
 
 # Device family availability

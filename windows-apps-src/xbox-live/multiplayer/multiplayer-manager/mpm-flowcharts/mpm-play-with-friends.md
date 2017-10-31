@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer manager, flowchart
+localizationpriority: medium
 ---
 
 # Flowchart - Play a multiplayer/co-op game with friends

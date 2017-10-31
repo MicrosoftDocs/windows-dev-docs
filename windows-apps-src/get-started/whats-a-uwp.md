@@ -9,6 +9,7 @@ ms.topic: article
 pms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, what, universal
+localizationpriority: medium
 ---
 
 # What's a Universal Windows Platform (UWP) app?

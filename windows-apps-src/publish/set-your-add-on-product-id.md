@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
 title: Set your add-on product type and product ID
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Set your add-on product type and product ID

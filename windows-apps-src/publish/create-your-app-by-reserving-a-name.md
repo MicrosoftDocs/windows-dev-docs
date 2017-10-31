@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Create your app by reserving a name
@@ -9,6 +9,7 @@ ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Create your app by reserving a name

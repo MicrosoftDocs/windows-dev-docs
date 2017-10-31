@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, stats, achievements, leaderboards, data platform
+localizationpriority: medium
 ---
 
 # Xbox Live Data Platform - Stats, Leaderboards, Achievements

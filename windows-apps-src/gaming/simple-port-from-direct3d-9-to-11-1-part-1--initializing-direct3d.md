@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, direct3d 11, initialization, porting, direct3d 9
+localizationpriority: medium
 ---
 
 # Initialize Direct3D 11

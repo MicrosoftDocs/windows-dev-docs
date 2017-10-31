@@ -1,5 +1,4 @@
 ---
-
 title: Get UWP app samples
 description: Learn how to download the UWP code samples from GitHub
 author: JoshuaPartlow
@@ -10,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, sample code, code samples
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
+localizationpriority: medium
 ---
 
 #Get UWP app samples

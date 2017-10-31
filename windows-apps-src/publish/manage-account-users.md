@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Add users to your Dev Center account and assign them roles with specific permissions.
 title: Manage account users
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Manage account users

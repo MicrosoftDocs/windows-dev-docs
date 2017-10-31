@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Here’s some important info you’ll need to ensure that you receive payment for your apps, in-app products (IAPs), and advertising earnings.
 title: Getting paid
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Getting paid

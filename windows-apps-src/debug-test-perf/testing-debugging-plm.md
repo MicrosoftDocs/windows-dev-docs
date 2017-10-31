@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 8ac6d127-3475-4512-896d-80d1e1d66ccd
+localizationpriority: medium
 ---
 
 # Testing and debugging tools for Process Lifetime Management (PLM)

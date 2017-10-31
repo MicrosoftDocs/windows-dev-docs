@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
 title: Create platform-specific Store listings
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Create platform-specific Store listings

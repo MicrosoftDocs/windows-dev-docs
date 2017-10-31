@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, map, location, map services
+localizationpriority: medium
 ---
 
 # Maps and location overview

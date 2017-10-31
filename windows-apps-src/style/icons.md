@@ -13,6 +13,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
+localizationpriority: medium
 ---
 
 # Icons for UWP apps

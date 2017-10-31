@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
+localizationpriority: medium
 ---
 
 # Distribute a packaged desktop app (Desktop Bridge)

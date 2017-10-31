@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, touch, controls, directx, input
+localizationpriority: medium
 ---
 
 # Touch controls for games

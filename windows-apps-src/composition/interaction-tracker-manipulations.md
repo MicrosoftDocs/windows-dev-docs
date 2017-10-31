@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, animation
+localizationpriority: medium
 ---
 # Custom manipulation experiences with InteractionTracker
 

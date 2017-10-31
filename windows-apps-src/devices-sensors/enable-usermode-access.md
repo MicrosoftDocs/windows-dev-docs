@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: acpi
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
+localizationpriority: medium
 ---
 # Enable usermode access to GPIO, I2C, and SPI
 

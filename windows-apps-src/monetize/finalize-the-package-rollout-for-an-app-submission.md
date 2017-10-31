@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, package rollout, app submission, finalize
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
+localizationpriority: medium
 ---
 
 # Finalize the rollout for an app submission

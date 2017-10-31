@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 title: Define market selection
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, markets, countries, regions
+localizationpriority: medium
 ---
 
 # Define market selection

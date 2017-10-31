@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, xbox one, xbox integrated multiplayer
+localizationpriority: medium
 ---
 
 # Using XIM

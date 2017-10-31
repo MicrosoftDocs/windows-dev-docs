@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
 title: Put apps and add-ons on sale
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Put apps and add-ons on sale

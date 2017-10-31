@@ -8,6 +8,7 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Create adaptive layouts

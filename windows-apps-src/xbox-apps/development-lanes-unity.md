@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
+localizationpriority: medium
 ---
 
 # Bringing Unity games to UWP on Xbox

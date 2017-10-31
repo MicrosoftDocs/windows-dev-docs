@@ -15,6 +15,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
+localizationpriority: medium
 ---
 # Time picker
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 

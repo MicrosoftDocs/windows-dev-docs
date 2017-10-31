@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can use package flights to distribute packages that are only given to a limited test group.
 title: Package flights
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, flighting
+localizationpriority: medium
 ---
 
 # Package flights

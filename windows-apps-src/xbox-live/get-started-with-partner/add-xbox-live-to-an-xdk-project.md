@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xdk
+localizationpriority: medium
 ---
 
 # Add Xbox Live to a new or existing XDK project

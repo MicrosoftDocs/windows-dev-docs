@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, audio, games, sample
+localizationpriority: medium
 ---
 
 # Adding audio to the Marble Maze sample

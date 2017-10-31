@@ -15,6 +15,7 @@ pm-contact: predavid
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
+localizationpriority: medium
 ---
 # Pull to refresh
 

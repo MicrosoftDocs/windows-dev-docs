@@ -14,6 +14,7 @@ ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
+localizationpriority: medium
 ---
 # Nested UI in list items
 

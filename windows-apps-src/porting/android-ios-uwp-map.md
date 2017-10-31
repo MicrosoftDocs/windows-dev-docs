@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
+localizationpriority: medium
 ---
 
 #Windows apps concept mapping for Android and iOS developers

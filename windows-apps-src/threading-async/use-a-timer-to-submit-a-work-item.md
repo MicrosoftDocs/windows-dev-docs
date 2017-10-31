@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, timer, threads
+localizationpriority: medium
 ---
 # Use a timer to submit a work item
 

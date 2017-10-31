@@ -8,6 +8,7 @@ ms.date: 10/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Extend the game sample

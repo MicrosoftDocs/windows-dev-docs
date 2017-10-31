@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, flight, package flight
+localizationpriority: medium
 ---
 
 # Get a package flight

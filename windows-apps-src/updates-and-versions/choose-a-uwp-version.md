@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, version, build
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
+localizationpriority: medium
 ---
 
 # Choose a UWP version

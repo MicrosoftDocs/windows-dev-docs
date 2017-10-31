@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: Create known user groups
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, segment, segments, targeted group, customers
+localizationpriority: medium
 ---
 
 # Create known user groups

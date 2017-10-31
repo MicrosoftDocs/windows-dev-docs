@@ -1,4 +1,4 @@
-﻿---
+---
 author: TylerMSFT
 title: Intro to the Universal Windows Platform
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows 10.
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Intro to the Universal Windows Platform

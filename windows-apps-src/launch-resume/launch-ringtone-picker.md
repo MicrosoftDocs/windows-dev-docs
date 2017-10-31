@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
+localizationpriority: medium
 ---
 
 # Choose and save tones using the ms-tonepicker URI scheme

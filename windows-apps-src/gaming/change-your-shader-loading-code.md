@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d, shader pipeline
+localizationpriority: medium
 ---
 
 # Compare the OpenGL ES 2.0 shader pipeline to Direct3D

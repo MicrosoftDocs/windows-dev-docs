@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, contacts, calendar, appointments, email messages
+localizationpriority: medium
 ---
 
 # Contacts and calendar

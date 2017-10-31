@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, technology, directx
+localizationpriority: medium
 ---
 
 # Game technologies for UWP apps

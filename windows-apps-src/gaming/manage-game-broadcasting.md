@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, game, broadcasting
+localizationpriority: medium
 ---
 
 # Manage game broadcasting

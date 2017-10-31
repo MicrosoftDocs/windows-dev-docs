@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, guidelines, best practices
+localizationpriority: medium
 ---
 
 # UI and user experience guidelines for ads

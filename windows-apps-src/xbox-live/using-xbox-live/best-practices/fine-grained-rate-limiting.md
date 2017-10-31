@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, throttling, rate limiting
+localizationpriority: medium
 ---
 
 # Xbox Live fine grained rate limiting

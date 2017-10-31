@@ -3,6 +3,7 @@ author: mijacobs
 description: 
 title: Content as objects
 template: detail.hbs
+localizationpriority: medium
 ---
 
 # Content as objects

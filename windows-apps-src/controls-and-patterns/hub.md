@@ -14,6 +14,7 @@ keywords: windows 10, uwp
 pm-contact: yulikl
 design-contact: kimsea
 doc-status: Published
+localizationpriority: medium
 ---
 # Hub control/pattern
 

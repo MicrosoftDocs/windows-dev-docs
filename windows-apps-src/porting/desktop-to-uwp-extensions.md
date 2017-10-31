@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
+localizationpriority: medium
 ---
 
 # Integrate your app with Windows 10 (Desktop Bridge)

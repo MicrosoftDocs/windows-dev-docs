@@ -15,6 +15,7 @@ pm-contact: yulikl
 design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
+localizationpriority: medium
 ---
 # Menus and context menus
 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Common questions about ad campaigns
 title: Common questions about ad campaigns
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Common questions about ad campaigns

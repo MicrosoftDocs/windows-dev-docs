@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can provide additional information about your app in the Product declarations section of the App properties page during the submission process.
 title: Product declarations
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Product declarations

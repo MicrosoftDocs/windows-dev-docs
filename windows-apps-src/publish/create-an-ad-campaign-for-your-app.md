@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
 title: Create an ad campaign for your app
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ad, campaign, promote
+localizationpriority: medium
 ---
 
 # Create an ad campaign for your app

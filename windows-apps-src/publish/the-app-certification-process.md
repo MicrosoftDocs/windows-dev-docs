@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step.
 title: The app certification process
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # The app certification process

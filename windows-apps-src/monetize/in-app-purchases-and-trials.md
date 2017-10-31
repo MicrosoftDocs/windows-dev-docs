@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, trials, consumable, durable, subscription
+localizationpriority: medium
 ---
 
 # In-app purchases and trials

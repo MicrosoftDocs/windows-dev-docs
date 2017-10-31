@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, sample, directx, fundamentals
+localizationpriority: medium
 ---
 
 # Marble Maze sample fundamentals
