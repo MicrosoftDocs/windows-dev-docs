@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details
+localizationpriority: medium
 ---
 
 # Get details for a Windows 10 driver error

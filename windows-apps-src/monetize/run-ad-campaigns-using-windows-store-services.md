@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
+localizationpriority: medium
 ---
 
 # Run ad campaigns using Store services

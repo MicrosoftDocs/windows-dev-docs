@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 msdn.assetid: 0fdde031-97a5-430c-91af-846c5fbb028f
+localizationpriority: medium
 ---
 
 # What's New in Windows 10 at Microsoft Build 2017

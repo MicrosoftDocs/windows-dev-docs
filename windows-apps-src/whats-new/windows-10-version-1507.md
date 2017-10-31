@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
+localizationpriority: medium
 ---
 
 # What's new in Windows 10, Version 1507

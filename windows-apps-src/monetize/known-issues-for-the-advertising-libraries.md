@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, known issues, troubleshooting
+localizationpriority: medium
 ---
 
 # Known issues and troubleshooting for ads in apps

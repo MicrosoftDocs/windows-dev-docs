@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, package rollout, flight submission, halt
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
+localizationpriority: medium
 ---
 
 # Halt the rollout for a flight

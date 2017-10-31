@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
 title: Create add-on Store listings
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Create add-on Store listings

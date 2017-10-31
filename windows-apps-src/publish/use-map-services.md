@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard.
 title: Use map services
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Use map services

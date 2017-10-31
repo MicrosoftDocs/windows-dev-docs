@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, visual studio, tools, directx
+localizationpriority: medium
 ---
 
 # Visual Studio tools for game programming

@@ -9,6 +9,7 @@ ms.date: 10/3/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Run in the background indefinitely

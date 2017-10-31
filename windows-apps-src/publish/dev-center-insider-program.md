@@ -1,4 +1,4 @@
-﻿---
+---
 title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, insiders, dev center insider, preview features
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
+localizationpriority: medium
 ---
 
 # Dev Center Insider Program

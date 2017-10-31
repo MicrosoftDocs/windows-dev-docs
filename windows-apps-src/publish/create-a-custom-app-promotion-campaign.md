@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, custom, app, promotion, campaign
+localizationpriority: medium
 ---
 
 # Create a custom app promotion campaign

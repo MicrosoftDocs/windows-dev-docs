@@ -15,6 +15,7 @@ pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
+localizationpriority: medium
 ---
 # Dialogs and flyouts
 

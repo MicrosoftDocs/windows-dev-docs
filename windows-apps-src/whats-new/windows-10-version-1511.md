@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
+localizationpriority: medium
 ---
 
 # What's New in Windows

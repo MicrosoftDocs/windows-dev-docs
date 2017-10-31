@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, ad units, testing
+localizationpriority: medium
 ---
 
 # Set up ad units in your app

@@ -12,6 +12,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: rybick
+localizationpriority: medium
 ---
 
 # Color

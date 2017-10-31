@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 15a113b5-8231-41c9-b724-ce5add813967
+localizationpriority: medium
 ---
 # NFC
 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Guidance for app package management

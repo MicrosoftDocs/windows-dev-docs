@@ -4,6 +4,7 @@ Description: Use the tree view example code to create an expandable tree.
 title: Tree view
 label: Tree view
 template: detail.hbs
+localizationpriority: medium
 ---
 # Hierarchical layout with TreeView
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 

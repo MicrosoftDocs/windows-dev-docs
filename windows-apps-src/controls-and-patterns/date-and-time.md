@@ -15,6 +15,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
+localizationpriority: medium
 ---
 # Calendar, date, and time controls
 

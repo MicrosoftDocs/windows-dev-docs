@@ -2,7 +2,7 @@
 author: serenaz
 Description: Control that lays out top-level navigation while conserving screen real estate.
 title: Navigation view
-ms.assetid:
+ms.assetid: 
 label: Navigation view
 template: detail.hbs
 ms.author: sezhen
@@ -15,6 +15,7 @@ pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
+localizationpriority: medium
 ---
 # Navigation view
 

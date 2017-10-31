@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Feedback Hub, launch
+localizationpriority: medium
 ---
 
 # Launch Feedback Hub from your app

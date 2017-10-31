@@ -14,6 +14,7 @@ pm-contact: kevjey
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
+localizationpriority: medium
 ---
 
 # Person picture control

@@ -8,6 +8,7 @@ ms.date: 8/52/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Voice and tone

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, game, directx, load, rasterize, mesh, bitmap, 2D, 3D
+localizationpriority: medium
 ---
 
 # Fundamentals of DirectX programming

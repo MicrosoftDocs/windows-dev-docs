@@ -15,6 +15,7 @@ pm-contact: kisai
 design-contact: mattben
 dev-contact: joyate
 doc-status: Published
+localizationpriority: medium
 ---
 
 # Sound

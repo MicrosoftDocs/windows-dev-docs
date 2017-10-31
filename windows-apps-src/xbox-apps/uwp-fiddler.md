@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
+localizationpriority: medium
 ---
 
 # How to use Fiddler with Xbox One when developing for UWP

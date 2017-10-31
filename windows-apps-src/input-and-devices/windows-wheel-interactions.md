@@ -11,6 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
+localizationpriority: medium
 ---
 
 # Surface Dial interactions

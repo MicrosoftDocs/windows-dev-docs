@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-Description:  You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
+Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
 title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.author: mcleans
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
+localizationpriority: medium
 ---
 
 # Send requests to the Microsoft Store

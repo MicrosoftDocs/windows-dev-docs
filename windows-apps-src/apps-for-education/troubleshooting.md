@@ -2,6 +2,7 @@
 author: TylerMSFT
 Description: Troubleshoot Microsoft Take a Test events and errors with the event viewer.
 title: Troubleshoot Microsoft Take a Test with the event viewer.
+localizationpriority: medium
 ---
 
 # Troubleshoot Microsoft Take a Test with the event viewer

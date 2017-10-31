@@ -14,6 +14,7 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
+localizationpriority: medium
 ---
 
 # Motion for UWP apps

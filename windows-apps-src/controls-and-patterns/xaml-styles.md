@@ -1,13 +1,14 @@
 ---
 author: Jwmsft
 Description: Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
-MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: XAML styles
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
+localizationpriority: medium
 ---
 # XAML styles
 

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, networking, directx
+localizationpriority: medium
 ---
 
 # Networking for games

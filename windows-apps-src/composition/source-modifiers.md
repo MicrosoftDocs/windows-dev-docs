@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, animation
+localizationpriority: medium
 ---
 # Pull-to-refresh with source modifiers
 

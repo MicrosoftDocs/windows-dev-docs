@@ -14,6 +14,7 @@ keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
+localizationpriority: medium
 ---
 # Flip view
 

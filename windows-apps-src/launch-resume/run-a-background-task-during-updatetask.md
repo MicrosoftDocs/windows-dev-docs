@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, update, background task, updatetask
+localizationpriority: medium
 ---
 
 # Run a background task when your UWP app is updated

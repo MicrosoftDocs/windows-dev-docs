@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB
+localizationpriority: medium
 ---
 
 # Download the CAB file for a Windows 7 or Windows 8.x driver error

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, interstitial, c#, sample code
+localizationpriority: medium
 ---
 
 # Interstitial ad sample code in C\# #  

@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
+localizationpriority: medium
 ---
 
 # Known issues with UWP on Xbox Developer Program

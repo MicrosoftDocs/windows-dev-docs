@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, walkthroughs
+localizationpriority: medium
 ---
 
 # Best practices for ads in apps

@@ -15,6 +15,7 @@ pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
+localizationpriority: medium
 ---
 # Buttons
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">

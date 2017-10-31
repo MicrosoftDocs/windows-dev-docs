@@ -9,6 +9,7 @@ ms.date: 09/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Create and consume an app service

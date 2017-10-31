@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
 title: Category and subcategory table
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, category, subcategory, genre, categories, genres
+localizationpriority: medium
 ---
 
 # Category and subcategory table

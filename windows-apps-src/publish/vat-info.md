@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: If you’re required to provide a VAT ID number during the Dev Center registration process, here’s some info to get you started.
 title: VAT info
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # VAT info

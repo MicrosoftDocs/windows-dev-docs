@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx 11
+localizationpriority: medium
 ---
 
 # DirectX 11 porting FAQ

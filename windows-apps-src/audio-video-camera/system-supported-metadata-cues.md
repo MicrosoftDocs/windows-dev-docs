@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, metadata, cue, speech, chapter
+localizationpriority: medium
 ---
 
 # System-supported timed metadata cues

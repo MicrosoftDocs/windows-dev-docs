@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
 title: About house ads
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # About house ads

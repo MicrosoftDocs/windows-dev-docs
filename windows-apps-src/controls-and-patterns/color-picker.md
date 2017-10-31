@@ -14,6 +14,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
+localizationpriority: medium
 ---
 # Color picker
 

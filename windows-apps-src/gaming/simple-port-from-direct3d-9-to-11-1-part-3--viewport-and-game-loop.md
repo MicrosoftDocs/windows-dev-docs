@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, porting, game loop, direct3d 9, directx 11
+localizationpriority: medium
 ---
 
 # Port the game loop

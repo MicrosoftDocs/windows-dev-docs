@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable
+localizationpriority: medium
 ---
 
 # Report consumable products as fulfilled

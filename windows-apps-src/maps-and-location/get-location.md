@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, map, location, location capability
+localizationpriority: medium
 ---
 
 # Get the user's location

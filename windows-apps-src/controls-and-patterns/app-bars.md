@@ -16,6 +16,7 @@ pm-contact: yulikl
 design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
+localizationpriority: medium
 ---
 # Command bar
 

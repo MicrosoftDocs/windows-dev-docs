@@ -2,6 +2,7 @@
 author: JordanEllis6809
 title: Unity - Version control your UWP project
 description: Version your Unity UWP project.
+localizationpriority: medium
 ---
 
 # Unity: Version control your UWP project

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d
+localizationpriority: medium
 ---
 
 # Plan your port from OpenGL ES 2.0 to Direct3D

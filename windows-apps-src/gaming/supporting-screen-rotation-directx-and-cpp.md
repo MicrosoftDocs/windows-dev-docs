@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, screen orientation, directx
+localizationpriority: medium
 ---
 
 # Supporting screen orientation (DirectX and C++)

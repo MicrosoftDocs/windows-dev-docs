@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, system user
+localizationpriority: medium
 ---
 
 # Retrieving the Windows System User in a Universal Windows Platform (UWP) title

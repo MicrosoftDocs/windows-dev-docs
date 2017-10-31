@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: Enter app properties
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Enter app properties
