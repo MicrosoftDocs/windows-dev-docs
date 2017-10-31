@@ -9,7 +9,7 @@ ms.date: 03/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Enable your device for development

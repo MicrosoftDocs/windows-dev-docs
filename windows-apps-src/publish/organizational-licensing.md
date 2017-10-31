@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Organizational licensing options

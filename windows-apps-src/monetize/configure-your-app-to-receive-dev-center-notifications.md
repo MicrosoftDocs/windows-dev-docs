@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, targeted push notifications, Dev Center
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Configure your app for targeted push notifications
