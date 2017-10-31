@@ -4,7 +4,7 @@ Description: Packaged desktop apps can use a wide range of Universal Windows Pla
 Search.Product: eADQiWindows 10XVcnh
 title: UWP APIs available to a packaged desktop app (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 10/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
