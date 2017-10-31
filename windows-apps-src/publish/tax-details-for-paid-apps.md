@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 07/19/2017
+ms.date: 11/1/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, taxes, app taxes, tax requirements, commerce expansion, tax rate
 localizationpriority: high
 ---
 
@@ -18,7 +18,7 @@ localizationpriority: high
 To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
 
 > [!NOTE]
-> The Commerce Expansion Adjustment may have payout implications in a limited set of countries/regions. For further details about the Commerce Expansion Adjustment and the markets where it applies, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the list of [affected countries/regions](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
+> The Commerce Expansion Adjustment may have payout implications in a limited set of countries/regions. For further details about the Commerce Expansion Adjustment and the markets where it applies, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the list of [affected countries/regions](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
 
 > [!IMPORTANT]
 > Tax rates are subject to change at any time. Microsoft cannot guarantee that the rates in the tables below will always be accurate.
@@ -103,7 +103,7 @@ To understand your tax considerations for price selection, payout implications, 
 | Honduras                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Hong Kong SAR                    | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
 | Hungary                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 27% tax) | Microsoft          |
-| Iceland                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
+| Iceland                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of (selected price minus 24% tax)               | Microsoft         |
 | India                            | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
 | Indonesia                        | Price being selected is the final sale price and includes any applicable taxes.  | 70% of selected price                 | Developer          |
 | Iraq                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
@@ -236,7 +236,7 @@ Certain Microsoft billing partners may collect and remit sales, use, goods and s
 ## Reseller countries/regions
 
 
-In certain countries/regions, Microsoft acts as a reseller, rather than your agent, in making your app(s) and in-app product(s) available in the Store. For further details about terms and conditions for reseller countries/regions, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+In certain countries/regions, Microsoft acts as a reseller, rather than your agent, in making your app(s) and in-app product(s) available in the Store. For further details about terms and conditions for reseller countries/regions, see the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement).
 
 |                    Reseller countries/regions                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
