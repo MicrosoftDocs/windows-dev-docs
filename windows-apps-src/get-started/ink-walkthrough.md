@@ -205,7 +205,7 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 > 2. From the Settings screen select **Devices** > **Pen & Windows Ink**.
 > ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-large.png)
 > 3. Select **Get to know my handwriting** to open the **Handwriting Personalization** dialog.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-large.png)
+![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-large.png)
 
 ### In the sample:
 1. Open the MainPage.xaml file.
