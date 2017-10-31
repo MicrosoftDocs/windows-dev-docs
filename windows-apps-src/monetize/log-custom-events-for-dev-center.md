@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, log events
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Log custom events for Dev Center

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Set roles or custom permissions for account users

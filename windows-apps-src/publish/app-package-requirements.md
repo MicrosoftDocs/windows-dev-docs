@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, package requirements, packages, package format
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # App package requirements

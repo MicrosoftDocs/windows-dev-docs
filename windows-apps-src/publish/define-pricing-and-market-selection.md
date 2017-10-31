@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, markets, countries, regions
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Define market selection

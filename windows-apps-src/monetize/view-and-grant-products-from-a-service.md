@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, view products, grant products
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Manage product entitlements from a service

@@ -8,7 +8,7 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # What's New in the Windows Developer Docs in September 2017

@@ -8,7 +8,7 @@ ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # What's New in Windows 10 for developers, version 1709

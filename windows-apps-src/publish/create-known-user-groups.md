@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, segment, segments, targeted group, customers
-localizationpriority: medium
+localizationpriority: high
 ---
 
 # Create known user groups
