@@ -24,7 +24,7 @@ The person picture control displays the avatar image for a person, if one is ava
 
 > **Important APIs**: [PersonPicture class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture), [Contact class](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.Contact), [ContactManager class](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
-This illustration shows two person picture controls. (Text blocks are used to display the contact's full name.) 
+This illustration shows two person picture controls accompanied by two [text block](text-block.md) elements that display the users' names. 
 ![The person picture control](images/person-picture/person-picture_hero.png)
 
 
