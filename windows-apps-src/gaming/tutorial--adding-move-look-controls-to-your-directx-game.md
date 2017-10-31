@@ -575,7 +575,7 @@ myFirstPersonCamera->SetViewParameters(
 
 Congratulations! You've implemented basic move-look controls for both touch screens and keyboard/mouse input touch controls in your game!
 
- 
+
 
  
 
