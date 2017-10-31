@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
 title: Use targeted offers to maximize engagement and conversions
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, targeted offers, offers, notifications
+localizationpriority: high
 ---
 
 # Use targeted offers to maximize engagement and conversions

@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
+localizationpriority: medium
 ---
 
 # Pin secondary tiles from desktop application

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, content group map, streaming install, uwp app streaming install, source content group map
+localizationpriority: medium
 ---
 
 # Create and convert a source content group map

@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, packaging, architecture, package configuration
+localizationpriority: medium
 ---
 
 # App package architectures

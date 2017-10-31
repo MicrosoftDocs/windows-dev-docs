@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 title: Package version numbering
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Package version numbering

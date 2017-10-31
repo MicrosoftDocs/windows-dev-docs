@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, video, scheduler, javascript
+localizationpriority: medium
 ---
 
 # Show ads in video content

@@ -11,6 +11,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
+localizationpriority: medium
 ---
 
 # Guidelines for App Help

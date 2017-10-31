@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, install, SDK, advertising library
+localizationpriority: medium
 ---
 
 # Install the Microsoft Advertising SDK

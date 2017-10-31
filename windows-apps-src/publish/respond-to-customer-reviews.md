@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can respond directly to reviews of your app to let customers know you’re listening to their feedback.
 title: Respond to customer reviews
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Respond to customer reviews

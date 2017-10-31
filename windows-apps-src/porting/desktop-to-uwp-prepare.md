@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
+localizationpriority: medium
 ---
 
 # Prepare to package an app (Desktop Bridge)
@@ -101,8 +102,6 @@ Starting a utility can often provide a convenient way to obtain information from
  All applications and extensions that users install to a system running Windows 10 S must be installed as Windows App packages. So if you intend to package your extensions, or you plan to encourage your contributors to package them, consider how you might facilitate communication between the host app package and any extension packages. One way that you might be able to do this is by using an [app service](../launch-resume/app-services.md).
 
 + __Your app generates code__. Your app can generate code that it consumes in memory, but avoid writing generated code to disk because the Windows App Certification process can't validate that code prior to app submission. Also, apps that write code to disk won’t run properly on systems running Windows 10 S. This could block your app from submission to the Microsoft Store because all apps submitted to the Microsoft Store must be compatible with Windows 10 S.
-
-+ __Your app uses the MAPI API__. The [Outlook MAPI API](https://msdn.microsoft.com/library/office/cc765775.aspx(d=robot)) is not currently supported in desktop bridge apps.
 
 >[!IMPORTANT]
 > After you've created your Windows app package, please test your app to ensure that it works correctly on systems that run Windows 10 S. All apps submitted to the Microsoft Store must be compatible with Windows 10 S. Apps that aren't compatible won't be accepted in the store. See [Test your Windows app for Windows 10 S](desktop-to-uwp-test-windows-s.md).

@@ -2,13 +2,14 @@
 title: What's new in Xbox Live APIs - August 2017
 author: KevinAsgari
 description: What's new in Xbox Live APIs - August 2017
-ms.assetid:
+ms.assetid: 
 ms.author: kevinasg
 ms.date: 08/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, what's new, august 2017
+localizationpriority: medium
 ---
 
 # What's new for the Xbox Live APIs - August 2017

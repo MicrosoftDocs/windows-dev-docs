@@ -8,6 +8,7 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # UI basics tutorials

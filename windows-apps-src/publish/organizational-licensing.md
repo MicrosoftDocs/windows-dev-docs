@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
 title: Organizational licensing options
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing
+localizationpriority: high
 ---
 
 # Organizational licensing options

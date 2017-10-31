@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
+localizationpriority: medium
 ---
 # Windows Unlock with Windows Hello companion (IoT) devices
 

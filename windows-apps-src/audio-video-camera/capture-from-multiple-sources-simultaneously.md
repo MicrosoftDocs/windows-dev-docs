@@ -8,7 +8,8 @@ ms.date: 09/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, capture, video 
+keywords: windows 10, uwp, capture, video
+localizationpriority: medium
 ---
 
 # Capture from multiple sources using MediaFrameSourceGroup

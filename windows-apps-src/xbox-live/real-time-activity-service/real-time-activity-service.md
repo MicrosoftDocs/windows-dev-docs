@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, real time activity service.
+localizationpriority: medium
 ---
 
 # Real-Time Activity Service

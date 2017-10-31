@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
 title: Mobile operator billing
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, mobile operators, mobile billing, mobile operator billing
+localizationpriority: high
 ---
 
 # Mobile operator billing

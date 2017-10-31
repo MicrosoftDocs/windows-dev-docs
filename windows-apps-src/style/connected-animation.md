@@ -12,6 +12,7 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
+localizationpriority: high
 ---
 
 # Connected animation for UWP apps

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, spop, single point of presence
+localizationpriority: medium
 ---
 
 # Single Point of Presence (SPOP)

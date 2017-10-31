@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configure precise release scheduling
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Configure precise release scheduling

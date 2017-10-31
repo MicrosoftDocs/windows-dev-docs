@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
 title: Usage report
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Usage report

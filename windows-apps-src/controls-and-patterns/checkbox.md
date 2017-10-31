@@ -15,6 +15,7 @@ pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
+localizationpriority: medium
 ---
 # Check boxes
 

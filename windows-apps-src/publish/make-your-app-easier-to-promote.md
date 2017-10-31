@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Microsoft Store and other sites to showcase your app and help it get more attention.
 title: Make your app easier to promote
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Make your app easier to promote

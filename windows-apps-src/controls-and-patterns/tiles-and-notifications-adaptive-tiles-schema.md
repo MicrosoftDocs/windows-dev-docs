@@ -11,6 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 # Adaptive tile templates: schema and guidance
 

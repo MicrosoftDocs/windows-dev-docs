@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, map, location, map control, map views
+localizationpriority: medium
 ---
 
 # Display maps with 2D, 3D, and Streetside views

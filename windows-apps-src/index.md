@@ -1,16 +1,15 @@
-﻿---
+---
 author: mijacobs
 layout: LandingPage
 description: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store.
 title: UWP Documentation - UWP app developer | Microsoft Docs
 ms.prod: windows
-ms.topic: uwp
+ms.topic: article
 ms.author: mijacobs
 ms.date: 08/4/2017
-ms.topic: article
-ms.prod: windows
 ms.technology: uwp
-keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp 
+keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
+localizationpriority: medium
 ---
 # Universal Windows Platform documentation
 The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, phones, Xbox One, HoloLens, and more—and publish them to the Store.

@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, code examples, game options, trailers, advanced listings, python
+localizationpriority: medium
 ---
 
 # Python sample: app submission with game options and trailers

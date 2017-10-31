@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript
+localizationpriority: medium
 ---
 
 # Adding WebVR support to a 3D Babylon.js game
@@ -329,4 +330,4 @@ Replace your current `caught()` function with this code.
 
 Congratulations! You now have a complete Babylon.js game with WebVR support. From here you can take what you've learned to build an even better game, or build off this one.
 
-
+`

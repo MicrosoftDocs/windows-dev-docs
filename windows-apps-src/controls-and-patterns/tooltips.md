@@ -15,6 +15,7 @@ pm-contact: yulikl
 design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
+localizationpriority: medium
 ---
 # Tooltips
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: If you encounter errors after submitting your app to the Store, you must resolve them in order to continue the certification process.
 title: Resolve submission errors
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Resolve submission errors

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
+localizationpriority: medium
 ---
 
 # Enable apps for websites using app URI handlers

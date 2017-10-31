@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can help customers discover your app by linking to your app's listing in the Microsoft Store.
 title: Link to your app
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, link, windows store protocol, linking to an app, link to app
+localizationpriority: high
 ---
 
 # Link to your app

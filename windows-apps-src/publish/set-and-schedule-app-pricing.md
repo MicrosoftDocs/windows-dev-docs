@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets. 
+Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
 ms.author: wdg-dev-content
 ms.date: 09/28/2017
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Set and schedule app pricing

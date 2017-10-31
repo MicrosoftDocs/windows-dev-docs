@@ -2,7 +2,7 @@
 author: mijacobs
 description: How to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.
 title: Contextual commanding
-ms.assetid:
+ms.assetid: 
 label: Contextual commanding in collections
 template: detail.hbs
 ms.author: mijacobs
@@ -15,6 +15,7 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
+localizationpriority: medium
 ---
 # Contextual commanding for collections and lists
 

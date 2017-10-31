@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 title: Ad campaign report
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, promote, app, campaign, report, installs
+localizationpriority: high
 ---
 
 # Ad campaign report

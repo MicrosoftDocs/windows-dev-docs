@@ -1,13 +1,14 @@
 ---
 author: laurenhughes
 title: Install UWP apps with App Installer
-description: This section contains or links to articles about App Installer and how to use the features of App Installer. 
+description: This section contains or links to articles about App Installer and how to use the features of App Installer.
 ms.author: lahugh
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
+localizationpriority: medium
 ---
 
 # Install UWP apps with App Installer

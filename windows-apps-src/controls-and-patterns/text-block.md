@@ -14,6 +14,7 @@ keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
+localizationpriority: medium
 ---
 # Text block
 
@@ -57,7 +58,8 @@ The most common way to display text is to set the Text property to a string valu
 
 You can also add content by placing inline flow content elements in the TextBox.Inlines property, like this.
 ```xaml
-<TextBlock><Run>Text can be <Bold>bold</Bold>, <Italic>italic</Italic>, or <Bold><Italic>both</Italic></Bold>.</Run></TextBlock>
+<TextBlock>Text can be <Bold>bold</Bold>, <Underline>underlined</Underline>, 
+    <Italic>italic</Italic>, or a <Bold><Italic>combination</Italic></Bold>.</TextBlock>
 ```
 
 Elements derived from the Inline class, such as Bold, Italic, Run, Span, and LineBreak, enable different formatting for different parts of the text. For more info, see the [Formatting text]() section. The inline Hyperlink element lets you add a hyperlink to your text. However, using Inlines also disables fast path text rendering, which is discussed in the next section.

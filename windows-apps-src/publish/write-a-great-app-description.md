@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: A great description can make your app stand out in the Microsoft Store and help encourage customers to download it.
 title: Write a great app description
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Write a great app description

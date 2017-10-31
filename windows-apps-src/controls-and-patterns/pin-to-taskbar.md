@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile
+localizationpriority: medium
 ---
 # Pin your app to the taskbar
 

@@ -16,6 +16,7 @@ pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
+localizationpriority: medium
 ---
 
 # Designing for Xbox and TV

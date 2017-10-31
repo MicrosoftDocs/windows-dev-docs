@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, partner, ID@Xbox
+localizationpriority: medium
 ---
 
 # Get started with Xbox Live as a managed partner or an ID@Xbox developer

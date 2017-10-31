@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, catalog, Windows.ApplicationModel.Store
+localizationpriority: medium
 ---
 
 # Manage a large catalog of in-app products

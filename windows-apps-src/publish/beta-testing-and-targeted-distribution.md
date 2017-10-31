@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
 title: Beta testing and targeted distribution
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Beta testing and targeted distribution

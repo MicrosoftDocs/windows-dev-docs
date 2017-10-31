@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, SQLite, C#, EF, entity framework
+localizationpriority: medium
 ---
 
 # Entity Framework Core with SQLite for C# apps

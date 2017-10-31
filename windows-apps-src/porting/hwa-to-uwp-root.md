@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Hosted Web Apps, convert a website to Windows app, web apps on Microsoft Store, Chrome apps for Windows
+localizationpriority: medium
 ---
 
 # Hosted Web Apps - Access Windows 10 features from your web app

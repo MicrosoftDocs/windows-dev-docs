@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: View app identity details
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # View app identity details

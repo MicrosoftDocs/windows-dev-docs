@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your app's Store listing.
 title: App screenshots, images, and trailers
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
+localizationpriority: high
 ---
 
 # App screenshots, images, and trailers

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
+localizationpriority: medium
 ---
 
 # What's New in Windows 10 for developers

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Set custom permissions for account users.
 title: Set custom permissions for account users
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Set roles or custom permissions for account users

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: To view performance data for the ad units in your apps, use the app-level and account-level advertising performance reports on the Windows Dev Center dashboard.
 title: Advertising performance report
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Advertising performance report

@@ -2,6 +2,7 @@
 author: mathy
 title: Device Portal Xbox info API reference
 description: Learn how to access Xbox device information.
+localizationpriority: medium
 ---
 
 # Xbox Info API reference   

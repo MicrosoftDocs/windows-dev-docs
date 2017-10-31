@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+localizationpriority: medium
 ---
 
 # Leaderboards
@@ -164,4 +165,4 @@ for (const xbox::services::leaderboard::leaderboard_row& row : leaderboard.rows(
     m_console->Format(L"%18s %8d %14f %10s\n", row.gamertag().c_str(), row.rank(), row.percentile(), colValues.c_str());
 }
 
-```
+````

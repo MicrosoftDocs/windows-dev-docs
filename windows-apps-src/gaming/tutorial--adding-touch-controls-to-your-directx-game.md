@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, touch, controls, directx, input
+localizationpriority: medium
 ---
 
 # Touch controls for games
@@ -338,6 +339,7 @@ We can now obtain a scene space coordinate that our camera is focused on, and wh
 ```
 
 Congratulations! You've implemented a simple set of camera panning touch controls in your game.
+
 
  
 

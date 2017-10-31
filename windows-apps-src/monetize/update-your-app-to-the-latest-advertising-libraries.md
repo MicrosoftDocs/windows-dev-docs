@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, AdControl, AdMediatorControl, migrate
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
+localizationpriority: medium
 ---
 
 # Update your app to the latest advertising libraries for banner ads

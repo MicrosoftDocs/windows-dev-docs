@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, extend, componentize, app service, package, extension
+localizationpriority: medium
 ---
 
 # Extend your app with services, extensions, and packages

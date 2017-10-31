@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, basicloader
+localizationpriority: medium
 ---
 
 # Complete code for BasicLoader

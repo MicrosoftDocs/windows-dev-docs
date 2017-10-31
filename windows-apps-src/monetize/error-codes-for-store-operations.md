@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, error codes
+localizationpriority: medium
 ---
 
 # Error codes for Store operations

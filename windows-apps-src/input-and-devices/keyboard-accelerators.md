@@ -13,6 +13,7 @@ ms.technology: uwp
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
+localizationpriority: medium
 ---
 
 # Keyboard Accelerators

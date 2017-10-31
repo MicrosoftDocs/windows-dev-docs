@@ -13,6 +13,7 @@ pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
+localizationpriority: medium
 ---
 
 # Focus navigation with keyboard, gamepad, and accessibility tools

@@ -1,4 +1,4 @@
-﻿# Get started with the Universal Windows Platform
+# Get started with the Universal Windows Platform
 ## [What's a UWP app?](get-started/whats-a-uwp.md)
 ## [Intro to UWP](get-started/universal-application-platform-guide.md)
 ## [Get set up](get-started/get-set-up.md)
@@ -456,8 +456,10 @@
 #### [Simple UWP game](gaming/tutorial--create-your-first-metro-style-directx-game.md)
 ##### [Set up project](gaming/tutorial--setting-up-the-games-infrastructure.md)
 ##### [UWP framework](gaming/tutorial--building-the-games-metro-style-app-framework.md)
+##### [Game flow management](gaming/tutorial-game-flow-management.md)
 ##### [Main game object](gaming/tutorial--defining-the-main-game-loop.md)
-##### [Rendering framework](gaming/tutorial--assembling-the-rendering-pipeline.md)
+##### [Rendering framework I](gaming/tutorial--assembling-the-rendering-pipeline.md)
+##### [Rendering framework II](gaming/tutorial-game-rendering.md)
 ##### [Add UI](gaming/tutorial--adding-a-user-interface.md)
 ##### [Add controls](gaming/tutorial--adding-controls.md)
 ##### [Add sound](gaming/tutorial--adding-sound.md)

@@ -14,6 +14,7 @@ ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
+localizationpriority: medium
 ---
 # Inverted lists
 

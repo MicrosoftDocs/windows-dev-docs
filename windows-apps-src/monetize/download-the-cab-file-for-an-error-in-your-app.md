@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-ms.assetid:
+ms.assetid: 
 description: Use this method in the Microsoft Store analytics API to download the CAB file for an error in your app.
 title: Download the CAB file for an error in your app
 ms.author: mcleans
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB
+localizationpriority: medium
 ---
 
 # Download the CAB file for an error in your app

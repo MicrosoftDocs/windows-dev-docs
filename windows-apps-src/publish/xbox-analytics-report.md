@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product. 
+Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox analytics report
 ms.author: wdg-dev-content
 ms.date: 10/30/2017
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, xbox analytics, xbox live analytics, xbox statistics
+localizationpriority: high
 ---
 
 # Xbox analytics report

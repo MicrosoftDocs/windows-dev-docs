@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: App package requirements
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, package requirements, packages, package format
+localizationpriority: high
 ---
 
 # App package requirements

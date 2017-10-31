@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, openCV
+localizationpriority: medium
 ---
 
 # Use the Open Source Computer Vision Library (OpenCV) with MediaFrameReader

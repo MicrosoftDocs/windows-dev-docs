@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Packages page is where you upload all of the package files (.appxupload, .appx, .appxbundle, and/or .xap) for the app that you're submitting.
 title: Upload app packages
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, packages, upload, package upload
+localizationpriority: high
 ---
 
 # Upload app packages

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Dev Center account.
 title: Add users, groups, and Azure AD applications to your Dev Center account
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Add users, groups, and Azure AD applications to your Dev Center account
