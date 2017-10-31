@@ -17,6 +17,7 @@
 ##### [Player stats and Leaderboards in Unity](get-started-with-creators/add-stats-and-leaderboards-in-unity.md)
 ##### [Controller support on XBL Prefabs](get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md)
 ##### [Multi-user support in Unity](get-started-with-creators/add-multi-user-support.md)
+##### [Check user privilege settings in Unity](get-started-with-creators/check-user-privileges-in-unity.md)
 #### [XBL service configuration](get-started-with-creators/xbox-live-service-configuration-creators.md)
 #### [XBL sandboxes introduction](get-started-with-creators/xbox-live-sandboxes-creators.md)
 #### [Authorize XBL accounts for testing](get-started-with-creators/authorize-xbox-live-accounts.md)
