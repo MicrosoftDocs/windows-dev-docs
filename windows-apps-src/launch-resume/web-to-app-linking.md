@@ -1,4 +1,4 @@
----
+﻿---
 author: TylerMSFT
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
@@ -22,7 +22,7 @@ To enable web-to-app linking you will need to:
 - Handle the activation in the app.
 
 > [!Note]
-> Starting with the Windows 10 Creators update, supported links clicked in Edge will launch the corresponding app. Supported links clicked in other browsers (e.g. Internet Explorer, etc.), will keep you in the browsing experience.
+> Starting with the Windows 10 Creators update, supported links clicked in Microsoft Edge will launch the corresponding app. Supported links clicked in other browsers (e.g. Internet Explorer, etc.), will keep you in the browsing experience.
 
 ## Register to handle http and https links in the app manifest
 
