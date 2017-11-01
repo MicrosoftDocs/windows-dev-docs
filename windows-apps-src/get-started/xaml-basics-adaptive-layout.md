@@ -22,7 +22,7 @@ We'll use these tools to optimize the PhotoLab sample app for smaller device scr
 * [Windows 10 mobile emulator](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/adaptive-layout/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/adaptive-layout). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/adaptive-layout/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/adaptive-layout) folder. After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
 
 ## Part 1: Run the mobile emulator
 

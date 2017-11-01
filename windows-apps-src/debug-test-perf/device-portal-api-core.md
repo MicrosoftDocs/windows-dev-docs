@@ -427,12 +427,96 @@ This API has the following expected status codes.
 HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Error codes
+4XX | Error codes`
 5XX | Error codes
 <br />
 **Available device families**
 
 * Windows Mobile
+* Windows Desktop
+* IoT
+
+---
+### Get data on connected USB Devices/Hubs
+
+**Request**
+
+You can get a list of USB descriptors for connected USB devices and Hubs by using the following request format.
+
+Method      | Request URI
+:------     | :-----
+GET | /ext/devices/usbdevices
+<br />
+
+**URI parameters**
+
+- None
+
+**Request headers**
+
+- None
+
+**Request body**
+
+- None
+
+**Response**
+
+The response is JSON that includes DeviceID for the USB Device along with the USB Descriptors and port information for hubs.
+``` 
+{
+    "DeviceList": [
+        {
+        "ID": string,
+        "ParentID": string, // Will equal an "ID" within the list, or be blank
+        "Description": string, // optional
+        "Manufacturer": string, // optional
+        "ProblemCode": int, // optional
+        "StatusCode": int // optional
+        },
+        ...
+    ]
+}
+```
+
+**Sample return data**
+```
+{
+    "DeviceList": [{
+        "ID": "System",
+        "ParentID": ""
+    }, {
+        "Class": "USB",
+        "Description": "Texas Instruments USB 3.0 xHCI Host Controller",
+        "ID": "PCI\\VEN_104C&DEV_8241&SUBSYS_1589103C&REV_02\\4&37085792&0&00E7",
+        "Manufacturer": "Texas Instruments",
+        "ParentID": "System",
+        "ProblemCode": 0,
+        "StatusCode": 25174026
+    }, {
+        "Class": "USB",
+        "Description": "USB Composite Device",
+        "DeviceDriverKey": "{36fc9e60-c465-11cf-8056-444553540000}\\0016",
+        "ID": "USB\\VID_045E&PID_00DB\\8&2994096B&0&1",
+        "Manufacturer": "(Standard USB Host Controller)",
+        "ParentID": "USB\\VID_0557&PID_8021\\7&2E9A8711&0&4",
+        "ProblemCode": 0,
+        "StatusCode": 25182218
+    }]
+}
+```
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
+:------     | :-----
+200 | OK
+5XX | Error codes
+<br />
+**Available device families**
+
 * Windows Desktop
 * IoT
 

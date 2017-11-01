@@ -13,15 +13,13 @@ localizationpriority: medium
 ---
 # Draw shapes
 
-
+Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
 
 **Important APIs**
 
--   [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)
--   [**Windows.UI.Xaml.Shapes namespace**](https://msdn.microsoft.com/library/windows/apps/BR243401)
--   [**Windows.UI.Xaml.Media namespace**](https://msdn.microsoft.com/library/windows/apps/BR243045)
-
-Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
+- [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)
+- [**Windows.UI.Xaml.Shapes namespace**](https://msdn.microsoft.com/library/windows/apps/BR243401)
+- [**Windows.UI.Xaml.Media namespace**](https://msdn.microsoft.com/library/windows/apps/BR243045)
 
 ## Introduction
 
@@ -41,7 +39,7 @@ An [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) is a 
 
 The next example creates an [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) with a [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) of 200 and a [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of 200, and uses a [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) colored [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as its [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
-```xml
+```xaml
 <Ellipse Fill="SteelBlue" Height="200" Width="200" />
 ```
 
@@ -51,6 +49,10 @@ ellipse1.Fill = new SolidColorBrush(Windows.UI.Colors.SteelBlue);
 ellipse1.Width = 200;
 ellipse1.Height = 200;
 
+// When you create a XAML element in code, you have to add
+// it to the XAML visual tree. This example assumes you have
+// a panel named 'layoutRoot' in your XAML file, like this:
+// <Grid x:Name="layoutRoot>
 layoutRoot.Children.Add(ellipse1);
 ```
 
@@ -72,7 +74,7 @@ You can round the corners of a [**Rectangle**](https://msdn.microsoft.com/librar
 
 The next example creates a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) with a [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) of 200 and a [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of 100. It uses a [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) value of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for its [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) and a [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) value of **SolidColorBrush** for its [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke). We set the [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) to 3. We set the [**RadiusX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) property to 50 and the [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) property to 10, which gives the **Rectangle** rounded corners.
 
-```xml
+```xaml
 <Rectangle Fill="Blue"
            Width="200"
            Height="100"
@@ -92,8 +94,11 @@ rectangle1.StrokeThickness = 3;
 rectangle1.RadiusX = 50;
 rectangle1.RadiusY = 10;
 
+// When you create a XAML element in code, you have to add
+// it to the XAML visual tree. This example assumes you have
+// a panel named 'layoutRoot' in your XAML file, like this:
+// <Grid x:Name="layoutRoot>
 layoutRoot.Children.Add(rectangle1);
-
 ```
 
 Here's the rendered [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
@@ -101,8 +106,6 @@ Here's the rendered [**Rectangle**](https://msdn.microsoft.com/library/windows/a
 ![A rendered Rectangle.](images/shapes-rectangle.jpg)
 
 **Tip**  There are some scenarios for UI definitions where instead of using a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371), a [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) might be more appropriate. If your intention is to create a rectangle shape around other content, it might be better to use **Border** because it can have child content and will automatically size around that content, rather than using the fixed dimensions for height and width like **Rectangle** does. A **Border** also has the option of having rounded corners if you set the [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) property.
-
- 
 
 On the other hand, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) is probably a better choice for control composition. A **Rectangle** shape is seen in many control templates because it's used as a "FocusVisual" part for focusable controls. Whenever the control is in a "Focused" visual state, this rectangle is made visible, in other states it's hidden.
 
@@ -114,7 +117,7 @@ You don't need to explicitly declare the points such that the start point and en
 
 The next example creates a [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) with 4 points set to `(10,200)`, `(60,140)`, `(130,140)`, and `(180,200)`. It uses a [**LightBlue**](https://msdn.microsoft.com/library/windows/apps/Hh747960) value of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for its [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), and has no value for [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) so it has no perimeter outline.
 
-```xml
+```xaml
 <Polygon Fill="LightBlue"
          Points="10,200,60,140,130,140,180,200" />
 ```
@@ -130,6 +133,10 @@ points.Add(new Windows.Foundation.Point(130, 140));
 points.Add(new Windows.Foundation.Point(180, 200));
 polygon1.Points = points;
 
+// When you create a XAML element in code, you have to add
+// it to the XAML visual tree. This example assumes you have
+// a panel named 'layoutRoot' in your XAML file, like this:
+// <Grid x:Name="layoutRoot>
 layoutRoot.Children.Add(polygon1);
 ```
 
@@ -145,7 +152,7 @@ A [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) is simply
 
 You don't use [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) values to specify a [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) shape, instead you use discrete [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) values for [**X1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx), [**Y1**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx), [**X2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) and [**Y2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx). This enables minimal markup for horizontal or vertical lines. For example, `<Line Stroke="Red" X2="400"/>` defines a horizontal line that is 400 pixels long. The other X,Y properties are 0 by default, so in terms of points this XAML would draw a line from `(0,0)` to `(400,0)`. You could then use a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) to move the entire **Line**, if you wanted it to start at a point other than (0,0).
 
-```xml
+```xaml
 <Line Stroke="Red" X2="400"/>
 ```
 
@@ -154,8 +161,11 @@ var line1 = new Line();
 line1.Stroke = new SolidColorBrush(Windows.UI.Colors.Red);
 line1.X2 = 400;
 
+// When you create a XAML element in code, you have to add
+// it to the XAML visual tree. This example assumes you have
+// a panel named 'layoutRoot' in your XAML file, like this:
+// <Grid x:Name="layoutRoot>
 layoutRoot.Children.Add(line1);
-
 ```
 
 ## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> Polyline
@@ -164,14 +174,13 @@ A [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) is si
 
 **Note**   You could explicitly have an identical start point and end point in the [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) set for the [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365), but in that case you probably could have used a [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) instead.
 
-
 If you specify a [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) of a [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365), the **Fill** paints the interior space of the shape, even if the start point and end point of the [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) set for the **Polyline** do not intersect. If you do not specify a **Fill**, then the **Polyline** is similar to what would have rendered if you had specified several individual [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) elements where the start points and end points of consecutive lines intersected.
 
 As with a [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359), the [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) property defines the collection of points that make up the boundary. In XAML, you define the points with a comma-separated list. In code-behind, you use a [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) to define the points and you add each individual point as a [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) structure to the collection.
 
 This example creates a [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) with four points set to `(10,200)`, `(60,140)`, `(130,140)`, and `(180,200)`. A [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) is defined but not a [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
 
-```xml
+```xaml
 <Polyline Stroke="Black"
         StrokeThickness="4"
         Points="10,200,60,140,130,140,180,200" />
@@ -189,6 +198,10 @@ points.Add(new Windows.Foundation.Point(130, 140));
 points.Add(new Windows.Foundation.Point(180, 200));
 polyline1.Points = points;
 
+// When you create a XAML element in code, you have to add
+// it to the XAML visual tree. This example assumes you have
+// a panel named 'layoutRoot' in your XAML file, like this:
+// <Grid x:Name="layoutRoot>
 layoutRoot.Children.Add(polyline1);
 ```
 
@@ -202,8 +215,8 @@ A [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) is the mo
 
 You define the geometry of a path with the [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) property. There are two techniques for setting **Data**:
 
--   You can set a string value for [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) in XAML. In this form, the **Path.Data** value is consuming a serialization format for graphics. You typically don't text-edit this value in string form after it is first established. Instead, you use design tools that enable you to work in a design or drawing metaphor on a surface. Then you save or export the output, and this gives you a XAML file or XAML string fragment with **Path.Data** information.
--   You can set the [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) property to a single [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) object. This can be done in code or in XAML. That single **Geometry** is typically a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup), which acts as a container that can composite multiple geometry definitions into a single object for purposes of the object model. The most common reason for doing this is because you want to use one or more of the curves and complex shapes that can be defined as [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) values for a [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143), for example [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068).
+- You can set a string value for [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) in XAML. In this form, the **Path.Data** value is consuming a serialization format for graphics. You typically don't text-edit this value in string form after it is first established. Instead, you use design tools that enable you to work in a design or drawing metaphor on a surface. Then you save or export the output, and this gives you a XAML file or XAML string fragment with **Path.Data** information.
+- You can set the [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) property to a single [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) object. This can be done in code or in XAML. That single **Geometry** is typically a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup), which acts as a container that can composite multiple geometry definitions into a single object for purposes of the object model. The most common reason for doing this is because you want to use one or more of the curves and complex shapes that can be defined as [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) values for a [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143), for example [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068).
 
 This example shows a [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) that might have resulted from using Blend for Visual Studio to produce just a few vector shapes and then saving the result as XAML. The total **Path** consists of a Bezier curve segment and a line segment. The example is mainly intended to give you some examples of what elements exist in the [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) serialization format and what the numbers represent.
 
@@ -213,7 +226,7 @@ The first segment is a cubic Bezier curve that begins at `(100,200)` and ends at
 
 The second segment begins with an absolute horizontal line command "H", which specifies a line drawn from the preceding subpath endpoint `(400,175)` to a new endpoint `(280,175)`. Because it's a horizontal line command, the value specified is an x-coordinate.
 
-```xml
+```xaml
 <Path Stroke="DarkGoldenRod" 
       StrokeThickness="3"
       Data="M 100,200 C 100,25 400,350 400,175 H 280" />
@@ -225,7 +238,7 @@ Here's the rendered [**Path**](https://msdn.microsoft.com/library/windows/apps/B
 
 The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) with a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) and the various elements that can be a segment in [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
 
-```xml
+```xaml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
     <Path.Data>
         <GeometryGroup>
@@ -297,8 +310,11 @@ pathFigure1.Segments = pathSegmentCollection1;
 geometryGroup1.Children.Add(pathGeometry1);
 path1.Data = geometryGroup1;
 
+// When you create a XAML element in code, you have to add
+// it to the XAML visual tree. This example assumes you have
+// a panel named 'layoutRoot' in your XAML file, like this:
+// <Grid x:Name="layoutRoot>
 layoutRoot.Children.Add(path1);
-
 ```
 
 Here's the rendered [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355).
@@ -306,11 +322,3 @@ Here's the rendered [**Path**](https://msdn.microsoft.com/library/windows/apps/B
 ![A rendered Path.](images/shapes-path-2.png)
 
 Using [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) may be more readable than populating a [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) string. On the other hand, [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) uses a syntax compatible with Scalable Vector Graphics (SVG) image path definitions so it may be useful for porting graphics from SVG, or as output from a tool like Blend.
-
- 
-
- 
-
-
-
-
