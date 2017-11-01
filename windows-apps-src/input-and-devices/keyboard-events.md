@@ -177,6 +177,12 @@ void KeyboardSupport::MainPage::MediaButton_Click(Platform::Object^ sender, Wind
 }
 
 
+bool KeyboardSupport::MainPage::IsCtrlKeyPressed()
+{
+    var ctrlState = CoreWindow::GetForCurrentThread().GetKeyState(VirtualKey::Control);
+    return (ctrlState & CoreVirtualKeyStates::Down) == CoreVirtualKeyStates::Down;
+}
+
 void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
     if (e->Key == VirtualKey::Control) isCtrlKeyPressed = true;
@@ -185,13 +191,10 @@ void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::
 
 void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = false;
-    else if (isCtrlKeyPressed) {
-        if (e->Key==VirtualKey::P) {
-            DemoMovie->Play();
-        }
-        if (e->Key==VirtualKey::A) {DemoMovie->Pause();}
-        if (e->Key==VirtualKey::S) {DemoMovie->Stop();}
+    if (IsCtrlKeyPressed()) {
+        if (e->Key==VirtualKey::P) { DemoMovie->Play(); }
+        if (e->Key==VirtualKey::A) { DemoMovie->Pause(); }
+        if (e->Key==VirtualKey::S) { DemoMovie->Stop(); }
     }
 }
 ```
@@ -213,15 +216,15 @@ private void MediaButton_Click(object sender, RoutedEventArgs e)
     }
 }
 
-private void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
+private static bool IsCtrlKeyPressed()
 {
-    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = false;
+    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+    return (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
 }
 
 private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
 {
-    if (e.Key == VirtualKey.Control) isCtrlKeyPressed = true;
-    else if (isCtrlKeyPressed)
+    if (IsCtrlKeyPressed())
     {
         switch (e.Key)
         {
@@ -239,15 +242,13 @@ Protected Overrides Sub OnNavigatedTo(e As Navigation.NavigationEventArgs)
 
 End Sub
 
-Private Sub Grid_KeyUp(sender As Object, e As KeyRoutedEventArgs)
-    If e.Key = Windows.System.VirtualKey.Control Then
-        isCtrlKeyPressed = False
-    End If
-End Sub
+Private Function IsCtrlKeyPressed As Boolean
+    Dim ctrlState As CoreVirtualKeyStates = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+    Return (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
+End Function
 
 Private Sub Grid_KeyDown(sender As Object, e As KeyRoutedEventArgs)
-    If e.Key = Windows.System.VirtualKey.Control Then isCtrlKeyPressed = True
-    If isCtrlKeyPressed Then
+    If IsCtrlKeyPressed() Then
         Select Case e.Key
             Case Windows.System.VirtualKey.P
                 DemoMovie.Play()
