@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 08/18/2017
+ms.date: 10/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ localizationpriority: medium
 
 Welcome to the Windows 10 game development guide!
 
-This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](http://download.microsoft.com/download/3/E/8/3E8F6376-D239-41A3-989C-DA1494C0024D/Windev_Game_Dev_Guide_May_2017.pdf) format.
+This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](http://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf) format.
 
 ## Introduction to game development for the Universal Windows Platform (UWP)
 
@@ -678,6 +678,10 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     <tr>
         <td>Publish your Unity game to Microsoft Store</td>
         <td>[Porting guide](https://unity3d.com/partners/microsoft/porting-guides)</td>
+    </tr>
+    <tr>
+        <td>Troubleshooting missing assembly references related to .NET APIs</td>
+        <td>[Missing .NET APIs in Unity and UWP](https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp)</td>
     </tr>
     <tr>
         <td>Publish your Unity game as a Universal Windows Platform app (video)</td>
@@ -1359,6 +1363,10 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
         <td>[Cloud based load testing](https://www.visualstudio.com/team-services/cloud-load-testing/)</td>
     </tr>
     <tr>
+        <td>Get Xbox console type using Gaming Device Information</td>
+        <td>[Gaming Device Information](https://msdn.microsoft.com/library/windows/desktop/mt825235)</td>
+    </tr>
+    <tr>
         <td>Improve performance by getting exclusive or priority access to hardware resources using Game Mode APIs</td>
         <td>[Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)</td>
     </tr>
@@ -1443,6 +1451,21 @@ Develop world-ready games for the Windows platform and learn about the internati
     <tr>
         <td>Bridging languages, cultures, and technology</td>
         <td>[Online resource for language conventions and standard Microsoft terminology](http://www.microsoft.com/Language/Default.aspx)</td>
+    </tr>
+</table>
+
+### Security
+
+Create an environment where your gamers can play and compete fairly. A game enrolled in TruePlay runs in a protected process which mitigates a class of common attacks. The game monitoring system also helps to identify common cheating scenarios. 
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Tools to combat cheating within PC games</td>
+        <td>[TruePlay](https://msdn.microsoft.com/library/windows/desktop/mt808781)</td>
     </tr>
 </table>
 
