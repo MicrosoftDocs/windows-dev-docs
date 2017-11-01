@@ -25,7 +25,7 @@ Color provides an intuitive way of communicating information to users. It can be
 
 **Color is personal.** In Windows users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
 
-**Color is cultural.** Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while to others it represents mourning.
+**Color is cultural.** Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
 
 
 
@@ -258,7 +258,7 @@ To learn more about theme resources and how to use them, see [XAML theme resourc
 
 ## Color APIs
 
-There are several APIs that can be used to add color to your application. First, the [**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors) class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set background and foreground color properties to members of the **Colors** class.
+There are several APIs that can be used to add color to your application. First, the [**Colors**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.colors) class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set the background and foreground color properties to members of the **Colors** class.
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
