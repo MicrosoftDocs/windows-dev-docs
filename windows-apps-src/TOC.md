@@ -293,6 +293,7 @@
 ### [Audio device information properties](audio-video-camera/audio-device-information-properties.md)
 ### [Create, edit, and save bitmap images](audio-video-camera/imaging.md)
 #### [Process bitmaps with OpenCV](audio-video-camera/process-software-bitmaps-with-opencv.md)
+#### [Process bitmaps with the LowLightFusion API](audio-video-camera/process-bitmaps-low-light-fusion.md)
 #### [BitmapEncoder options reference](audio-video-camera/bitmapencoder-options-reference.md)
 #### [Image metadata](audio-video-camera/image-metadata.md)
 ### [Transcode media files](audio-video-camera/transcode-media-files.md)
