@@ -4,7 +4,7 @@ Description: The previous topic (How the Resource Management System matches and 
 title: How the Resource Management System matches language tags
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/102/2017
+ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
