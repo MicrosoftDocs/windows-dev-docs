@@ -235,6 +235,7 @@
 ## [App resources](app-resources/index.md)
 ### [Resource Management System](app-resources/resource-management-system.md)
 ### [How the Resource Management System matches and chooses resources](app-resources/how-rms-matches-and-chooses-resources.md)
+### [How the Resource Management System matches language tags](app-resources/how-rms-matches-lang-tags.md)
 ### [Tailor your resources for language, scale, high contrast, and other qualifiers](app-resources/tailor-resources-lang-scale-contrast.md)
 ### [Localize strings in your UI and app package manifest](app-resources/localize-strings-ui-manifest.md)
 ### [Load images and assets tailored for scale, theme, high contrast, and others](app-resources/images-tailored-for-scale-theme-contrast.md)
