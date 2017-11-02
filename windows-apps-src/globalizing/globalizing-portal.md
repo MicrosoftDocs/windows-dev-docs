@@ -40,7 +40,7 @@ Your code needs to function equally well in any of the cultures that you've dete
 **Localizability** is the process of preparing a globalized app for localization and/or verifying that the app is ready for localization. Correctly making an app localizable means that the later localization process will not uncover any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from the app's localizable resources.
 
 - Strings translated into different languages can vary greatly in length. So, design your UI to accommodate different text lengths and font sizes for labels and text input controls.
-- Don't include text in images.
+- Try to avoid text and/or culturally-sensitive material in images.
 - Don't hard-code strings and culture-dependent images in your app's code and markup. Instead, store them as string and image resources so that they can be adapted to different local markets independently of your app's built binaries.
 - Pseudo-localize your app to disclose any localizability issues.
 
@@ -48,6 +48,7 @@ Your code needs to function equally well in any of the cultures that you've dete
 
 - Translate the string resources and other assets of the app for the new market.
 - Modify any culture-dependent images as necessary.
+- Files can also vary depending on a user's region, separate from their language. For example, a map may have different borders depending on the user's location, but the labels should follow the user's preferred language.
 
 Most localization teams use special tools to aid the process. For example, by recycling translations of recurring text.
 
