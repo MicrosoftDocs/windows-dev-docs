@@ -83,7 +83,7 @@ When you opt-in to full title bar customization, your app’s client area is ext
 
 To hide the default title bar and extend your content into the title bar area, set the [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) property to **true**.
 
-This example shows how to get the CoreApplicationViewTitleBar and set the ExtendViewIntoTitleBar property to **true**. This can be done in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), or in your app's first page
+This example shows how to get the CoreApplicationViewTitleBar and set the ExtendViewIntoTitleBar property to **true**. This can be done in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), or in your app's first page.
 
 ```csharp
 // using Windows.ApplicationModel.Core;

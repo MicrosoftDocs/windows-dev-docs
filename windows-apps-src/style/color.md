@@ -30,7 +30,7 @@ Color provides an intuitive way of communicating information to users. It can be
 
 
 ## Accent color
-Windows and Xbox users can pick a single color called an "accent" from the *Settings > Personalization > Colors* menu. This color is reflected throughout their experience--in the Start menu, the taskbar, and many other places. On Windows, they can choose from a curated set of 48 color swatches. On Xbox, they can choose from a palette of 21 TV-safe colors.
+Windows and Xbox users can pick a single color called an "accent" from the *Settings > Personalization > Colors* menu. This color is reflected throughout their experience--in the Start menu, the taskbar, and many other places. On Windows, they can choose from a curated set of 48 color swatches. On Xbox, they can choose from a palette of 21 colors.
 
 ### Windows accent colors
 <table class="uwpd-color-table" style="border: solid 4px white;">
@@ -331,13 +331,6 @@ Be aware of how colorblindness could affect the useability of your application. 
 
 ### Learn more
 To learn more about accessibility outside the realm of color, see the [Accessibility home page](https://docs.microsoft.com/en-us/windows/uwp/accessibility/accessibility).
-
-
-
-## Colors on Xbox and TV
-By default, your app's color palette won't be altered whether it's running on a TV or a computer monitor. However, there are changes you can make to your app colors to improve the visual experience on Xbox and TV. To learn more about TV safe colors and color variance, see the Colors section of [Designing for Xbox and TV](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv#colors).
-
-
 
 ## Related articles
 

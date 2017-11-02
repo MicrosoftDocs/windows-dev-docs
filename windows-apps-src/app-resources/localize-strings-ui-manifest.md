@@ -6,7 +6,7 @@ ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Localize strings in your UI and app package manifest
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/10/2017
+ms.date: 11/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -234,6 +234,24 @@ private void RefreshUIText()
 	this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 }
 ```
+
+## Loading strings from a Class Library or a Windows Runtime Library
+
+The string resources of a referenced Class Library (Universal Windows) or [Windows Runtime Library (Universal Windows)](../winrt-components/index.md) are typically added into a subfolder of the package in which they're included during the build process. The resource identifier of such a string usually takes the form *LibraryName/ResourcesFileName/ResourceIdentifier*.
+
+A library can get a ResourceLoader for its own resources. For example, the following code illustrates how either a library or an app that references it can can get a ResourceLoader for the library's string resources.
+
+**C#**
+```csharp
+var resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader("ContosoControl/Resources");
+resourceLoader.GetString("string1");
+```
+
+## Loading strings from other packages
+
+The resources for an app package are managed and accessed through the package's own top-level [ResourceMap](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) that's accessible from the current [ResourceManager](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live). Within each package, various components can have their own ResourceMap subtrees, which you can access via [ResourceMap.GetSubtree](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap#Windows_ApplicationModel_Resources_Core_ResourceMap_GetSubtree_System_String_).
+
+A framework package can access its own resources with an absolute resource identifier URI. Also see [URI schemes](uri-schemes.md).
 
 ## Important APIs
 

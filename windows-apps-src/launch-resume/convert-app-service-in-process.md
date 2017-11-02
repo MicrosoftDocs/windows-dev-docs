@@ -3,7 +3,7 @@ author: TylerMSFT
 title: Convert an app service to run in the same process as its host app
 description: Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider.
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -41,48 +41,58 @@ Remove the `EntryPoint` attribute from the `<Application>` element because now [
 
 The second change is to move the service logic from its separate background task project into methods that can be called from **OnBackgroundActivated()**.
 
-Now your application can directly run your App Service. For example:
+Now your application can directly run your App Service. For example, in App.xaml.cs:
 
-> ``` cs
-> private AppServiceConnection appServiceConnection;
-> private BackgroundTaskDeferral appServiceDeferral;
-> protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
-> {
->     base.OnBackgroundActivated(args);
->     IBackgroundTaskInstance taskInstance = args.TaskInstance;
->     AppServiceTriggerDetails appService = taskInstance.TriggerDetails as AppServiceTriggerDetails;
->     appServiceDeferral = taskInstance.GetDeferral();
->     taskInstance.Canceled += OnAppServicesCanceled;
->     appServiceConnection = appService.AppServiceConnection;
->     appServiceConnection.RequestReceived += OnAppServiceRequestReceived;
->     appServiceConnection.ServiceClosed += AppServiceConnection_ServiceClosed;
-> }
->
-> private void OnAppServiceRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
-> {
->     AppServiceDeferral messageDeferral = args.GetDeferral();
->     ValueSet message = args.Request.Message;
->     string text = message["Request"] as string;
->              
->     if ("Value" == text)
->     {
->         ValueSet returnMessage = new ValueSet();
->         returnMessage.Add("Response", "True");
->         await args.Request.SendResponseAsync(returnMessage);
->     }
->     messageDeferral.Complete();
-> }
->
-> private void OnAppServicesCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
-> {
->     appServiceDeferral.Complete();
-> }
->
-> private void AppServiceConnection_ServiceClosed(AppServiceConnection sender, AppServiceClosedEventArgs args)
-> {
->     appServiceDeferral.Complete();
-> }
-> ```
+``` cs
+using Windows.ApplicationModel.AppService;
+using Windows.ApplicationModel.Background;
+...
+
+sealed partial class App : Application
+{
+  private AppServiceConnection _appServiceConnection;
+  private BackgroundTaskDeferral _appServiceDeferral;
+
+  ...
+
+  protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+  {
+      base.OnBackgroundActivated(args);
+      IBackgroundTaskInstance taskInstance = args.TaskInstance;
+      AppServiceTriggerDetails appService = taskInstance.TriggerDetails as AppServiceTriggerDetails;
+      _appServiceDeferral = taskInstance.GetDeferral();
+      taskInstance.Canceled += OnAppServicesCanceled;
+      _appServiceConnection = appService.AppServiceConnection;
+      _appServiceConnection.RequestReceived += OnAppServiceRequestReceived;
+      _appServiceConnection.ServiceClosed += AppServiceConnection_ServiceClosed;
+  }
+
+  private async void OnAppServiceRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
+  {
+      AppServiceDeferral messageDeferral = args.GetDeferral();
+      ValueSet message = args.Request.Message;
+      string text = message["Request"] as string;
+
+      if ("Value" == text)
+      {
+          ValueSet returnMessage = new ValueSet();
+          returnMessage.Add("Response", "True");
+          await args.Request.SendResponseAsync(returnMessage);
+      }
+      messageDeferral.Complete();
+  }
+
+  private void OnAppServicesCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
+  {
+      _appServiceDeferral.Complete();
+  }
+
+  private void AppServiceConnection_ServiceClosed(AppServiceConnection sender, AppServiceClosedEventArgs args)
+  {
+      _appServiceDeferral.Complete();
+  }
+}
+```
 
 In the code above the `OnBackgroundActivated` method handles the app service activation. All of the events required for communication through an [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) are registered, and the task deferral object is stored so that it can be marked as complete when the communication between the applications is done.
 

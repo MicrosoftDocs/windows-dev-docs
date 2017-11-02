@@ -208,7 +208,7 @@ Query parameters are ignored during retrieval of resources. The normalized form 
 
 ## ms-resource
 
-Use the `ms-resource` URI scheme to refer to to refer to strings loaded from your app's Resources Files (.resw). For examples and more info about Resources Files, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md).
+Use the `ms-resource` URI scheme to refer to strings loaded from your app's Resources Files (.resw). For examples and more info about Resources Files, see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md).
 
 ### Scheme name (ms-resource)
 

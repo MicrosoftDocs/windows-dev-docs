@@ -15,7 +15,7 @@ localizationpriority: medium
 
 # Tile and toast notification support for language, scale, and high contrast
 
-Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md).
+Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md) and [Asset size tables](../controls-and-patterns/tiles-and-notifications-app-assets.md#asset-size-tables).
 
 For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
 
@@ -81,6 +81,7 @@ For a reference table of all the possible qualifier values that you can use in y
 ## Related topics
 
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
+* [Guidelines for tile and icon assets](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
 * [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
 * [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)

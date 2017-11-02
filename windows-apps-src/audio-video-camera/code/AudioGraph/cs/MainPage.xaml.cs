@@ -319,9 +319,11 @@ namespace AudioGraphSnippets
 
 
         // NOTE ABOUT COMPILING WITH /unsafe (Use unsafe code in project properties/build)
-        public double theta = 0;
+
 
         //<SnippetGenerateAudioData>
+        private double audioWaveTheta = 0;
+
         unsafe private AudioFrame GenerateAudioData(uint samples)
         {
             // Buffer size is (number of samples) * (size of each sample)
@@ -350,9 +352,9 @@ namespace AudioGraphSnippets
                 // Generate a 1kHz sine wave and populate the values in the memory buffer
                 for (int i = 0; i < samples; i++)
                 {
-                    double sinValue = amplitude * Math.Sin(theta);
+                    double sinValue = amplitude * Math.Sin(audioWaveTheta);
                     dataInFloat[i] = (float)sinValue;
-                    theta += sampleIncrement;
+                    audioWaveTheta += sampleIncrement;
                 }
             }
 

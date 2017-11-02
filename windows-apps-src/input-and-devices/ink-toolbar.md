@@ -56,8 +56,9 @@ To add a default [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.
 1. In MainPage.xaml, declare a container object (for this example, we use a Grid control) for the inking surface.
 2. Declare an InkCanvas object as a child of the container. (The InkCanvas size is inherited from the container.)
 3. Declare an InkToolbar and use the TargetInkCanvas attribute to bind it to the InkCanvas.
-    > [!NOTE]  
-    > Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.
+
+> [!NOTE]
+> Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

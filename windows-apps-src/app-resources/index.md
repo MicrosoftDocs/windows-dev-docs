@@ -18,10 +18,17 @@ localizationpriority: medium
 
 This section shows you how to author, package, and consume your app's string, image, and file resources. For example, you might package a file along with your casual game containing a definition of the game's levels, and load the file at run-time. We also show you how maintaining your resources independently of the app's logic makes it easy to localize and customize your app for different locales, device displays, accessibility settings, and other user and machine contexts. Resources such as strings and images typically need to exist in multiple language, scale, and contrast variants. For resources such as that, you have the support of the [Resource Management System](resource-management-system.md).
 
+There are two types of app resource.
+- A file resource is a resource stored as a file on disk. A file resource can contain a bitmap image, XAML, XML, HTML, or any other kind of data.
+- An embedded resource is a resource that is embedded within some containing resource file. The most common example is a string resource embedded within a Resources File (.resw or .resjson).
+
+For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+
 | Article | Description |
 |---------|-------------|
 | [Resource Management System](resource-management-system.md) | At build time, the Resource Management System creates an index of all the different variants of the resources that are packaged up with your app. At run-time, the system detects the user and machine settings that are in effect and loads the resources that are the best match for those settings. |
 | [How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md) | When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples. |
+| [How the Resource Management System matches language tags](how-rms-matches-lang-tags.md) | The previous topic ([How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md)) looks at qualifier-matching in general. This topic focuses on language-tag-matching in more detail. |
 | [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md) | This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. |
 | [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md) | If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports. |
 | [Load images and assets tailored for scale, theme, high contrast, and others](images-tailored-for-scale-theme-contrast.md) | Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts. |

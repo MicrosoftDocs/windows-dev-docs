@@ -425,4 +425,4 @@ namespace MyAppService
 
 * [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)
+* [App service code sample (C#, C++, and VB)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

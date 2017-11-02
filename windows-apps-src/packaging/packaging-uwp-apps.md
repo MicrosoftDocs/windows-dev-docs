@@ -48,7 +48,7 @@ The Visual Studio manifest designer allows you to update the manifest file witho
 
     Check that you have all the images that are required for a UWP app on the **Visual Assets** tab.
 
-    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. In order to sideload an app package, you need to trust the package. The certificate must be installed on that device to trust the package. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. If you're publishing your app in the Microsoft Store, the Store will sign your app with a trusted certificate for you. If you are not publishing your app and simply want to sideload an app package, you first need to trust the package. The certificate must be installed on that device to trust the package. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
 
 4.  Save your file after you have made the necessary edits for your app.
 

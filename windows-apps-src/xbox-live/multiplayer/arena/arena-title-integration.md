@@ -306,6 +306,8 @@ Set the value for **arbitrationTimeout** to be greater than the maximum length o
 * Limiting tournament play to only modes with fixed, maximum lengths of time.
 * Informing the user of the time limit, and reporting a result before the **arbitrationTimeout** based on an in-match tiebreaker.
 
+Because **arbitrationTimeout** expiration will trigger an automatic result for the match, don't wait the full **arbitrationTimeout** period before reporting a result from the title.  Instead, build in a time buffer (for example, **arbitrationTimeout** - 1000ms), or use a separate value to control the maximum match length.
+
 #### Other cases
 
 For any other failure cases, the general guidance is to inform the user of the error and return the user to the Xbox Arena UI.
@@ -313,6 +315,11 @@ For any other failure cases, the general guidance is to inform the user of the e
 ## Experience requirements and best practices
 
 Because Arena only ever presents your title with individual matches, new formats can be introduced over time without requiring updates to your title. Therefore the baseline user experience for an Arena integrated title must be simple and flexible enough to work with multiple competition formats.
+
+Optionally, you can use data from the Tournament Hub in your title to make tournaments a more integrated part of the in-game experience.  This functionality can be found under 'xbox::services::tournaments'.  Using these APIs you have the ability to:
+* Surface tournament details in your title UI (tournament name, team name, etc.)
+* Provide discovery for tournaments in your title
+* Keep users in your title between Arena matches
 
 ## Configuring a title for Arena
 
