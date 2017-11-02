@@ -40,7 +40,7 @@ Your code needs to function equally well in any of the cultures that you've dete
 **Localizability** is the process of preparing a globalized app for localization and/or verifying that the app is ready for localization. Correctly making an app localizable means that the later localization process will not uncover any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from the app's localizable resources.
 
 - Strings translated into different languages can vary greatly in length. So, design your UI to accommodate different text lengths and font sizes for labels and text input controls.
-- Don't include text in images.
+- Try to avoid text and/or culturally-sensitive material in images.
 - Don't hard-code strings and culture-dependent images in your app's code and markup. Instead, store them as string and image resources so that they can be adapted to different local markets independently of your app's built binaries.
 - Pseudo-localize your app to disclose any localizability issues.
 
@@ -48,6 +48,7 @@ Your code needs to function equally well in any of the cultures that you've dete
 
 - Translate the string resources and other assets of the app for the new market.
 - Modify any culture-dependent images as necessary.
+- Files can also vary depending on a user's region, separate from their language. For example, a map may have different borders depending on the user's location, but the labels should follow the user's preferred language.
 
 Most localization teams use special tools to aid the process. For example, by recycling translations of recurring text.
 
@@ -56,6 +57,7 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md) | Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market. |
 | [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md) | Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. |
 | [Use patterns to format dates and times](use-patterns-to-format-dates-and-times.md) | Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish. |
+| [NumeralSystem values](glob-numeralsystem-values.md) | This topic lists the values available to the **NumeralSystem** property of various classes in the [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) namespace. |
 | [Manage language and region](manage-language-and-region.md) | Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows. |
 | [Prepare your app for localization](prepare-your-app-for-localization.md) | Prepare your app for localization to other markets, languages, or regions. |
 | [Use global-ready formats](use-global-ready-formats.md) | Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. |

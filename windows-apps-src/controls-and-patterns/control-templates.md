@@ -53,6 +53,8 @@ When you create a [**ControlTemplate**](https://msdn.microsoft.com/library/windo
 
 This XAML creates a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) for a [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) that specifies that the content of the control is below the selection box. The root element is a [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250). The example specifies a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) to create an **X** that indicates that a user selected the **CheckBox**, and an [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) that indicates an indeterminate state. Note that the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) is set to 0 on the **Path** and the **Ellipse** so that by default, neither appear.
 
+A [TemplateBinding](../xaml-platform/templatebinding-markup-extension.md) is a special binding that links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML. See [TemplateBinding markup extension](../xaml-platform/templatebinding-markup-extension.md) for more info.
+
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
     <Border BorderBrush="{TemplateBinding BorderBrush}" 

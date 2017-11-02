@@ -40,20 +40,20 @@ GET | /ext/settings
 **Response**   
 The response is a Settings JSON array containing all the settings. Each settings object contains the following fields:
 
-Name - (String) The name of the setting.
-Value - (String) The value of the setting.
-RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
-Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.
-Category - (String) The category of the setting.
-Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.
+* Name - (String) The name of the setting.
+* Value - (String) The value of the setting.
+* RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
+* Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.
+* Category - (String) The category of the setting.
+* Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.
 
 If the setting is a number:
-Min - (Number) This field indicates the minimal numverical value of the setting.
-Max - (Number) This field indicates the maximum numverical value of the setting.
+* Min - (Number) This field indicates the minimal numerical value of the setting.
+* Max - (Number) This field indicates the maximum numerical value of the setting.
 
 If the setting is select:
-OptionsVariable - ("Yes" | "No") This field indicates whether the setitng options are variable, if the valid options can change without a reboot.
-Options - JSON array containing the valid select options as strings.
+* OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.
+* Options - JSON array containing the valid select options as strings.
 
 **Status code**
 
@@ -91,20 +91,20 @@ GET | /ext/settings/\<setting name\>
 **Response**   
 The response is a JSON object with following fields:
 
-Name - (String) The name of the setting.
-Value - (String) The value of the setting.
-RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
-Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.
-Category - (String) The category of the setting.
-Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.
+* Name - (String) The name of the setting.
+* Value - (String) The value of the setting.
+* RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
+* Disabled - ("Yes" | "No") This field indicates whether the setting is disabled and cannot be edited.
+* Category - (String) The category of the setting.
+* Type - ("Text" | "Number" | "Bool" | "Select") This field indicates what type a setting is: text input, a boolean value ("true" or "false"), a number with a min and max or select with a specific list of values.
 
 If the setting is a number:
-Min - (Number) This field indicates the minimal numverical value of the setting.
-Max - (Number) This field indicates the maximum numverical value of the setting.
+* Min - (Number) This field indicates the minimal numerical value of the setting.
+* Max - (Number) This field indicates the maximum numerical value of the setting.
 
 If the setting is select:
-OptionsVariable - ("Yes" | "No") This field indicates whether the setitng options are variable, if the valid options can change without a reboot.
-Options - JSON array containing the valid select options as strings.
+* OptionsVariable - ("Yes" | "No") This field indicates whether the setting options are variable, if the valid options can change without a reboot.
+* Options - JSON array containing the valid select options as strings.
 
 **Status code**
 
