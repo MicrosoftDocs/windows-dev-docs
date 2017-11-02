@@ -36,6 +36,8 @@ Here, we demonstrate how to use the Windows Ink analysis engine ([Windows.UI.Inp
 
 In this example, recognition is initiated when the user clicks a button to indicate they are finished drawing.
 
+**Download this sample from [Ink recognition sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)**
+
 1.  First, we set up the UI.
 
     The UI includes a "Recognize" button, an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and a standard [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). When the "Recognize" button is pressed, all ink strokes on the ink canvas are analyzed and (if recognized) corresponding shapes and text are drawn on the standard canvas. The original ink strokes are then deleted from the ink canvas.
@@ -840,6 +842,7 @@ For this example, we'll use the same UI and stroke settings as the previous inte
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Ink recognition sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)
 * [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
 * [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
 * [Family notes sample](https://aka.ms/cpubsample-familynotessample)
