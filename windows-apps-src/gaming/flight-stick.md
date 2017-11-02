@@ -27,9 +27,9 @@ By reading this page, you'll learn:
 
 Flight sticks are gaming input devices that are valued for reproducing the feel of flight sticks that would be found in a plane or spaceship's cockpit. They're the perfect input device for quick and accurate control of flight. Flight sticks are supported in Windows 10 and Xbox One UWP apps by the [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) namespace.
 
-Xbox One flight sticks are equipped with the following controls: 
+Xbox One flight sticks are equipped with the following controls:
 
-* A twistable analog joystick capable of roll, pitch, and yaw 
+* A twistable analog joystick capable of roll, pitch, and yaw
 * An analog throttle
 * Two fire buttons
 * An 8-way digital hat switch
@@ -40,7 +40,7 @@ Xbox One flight sticks are equipped with the following controls:
 
 ### UI navigation
 
-In order to ease the burden of supporting the different input devices for user interface navigation and to encourage consistency between games and devices, most _physical_ input devices simultaneously act as a separate _logical_ input device called a [UI navigation controller](ui-navigation-controller.md). The UI navigation controller provides a common vocabulary for UI navigation commands across input devices.
+In order to ease the burden of supporting the different input devices for user interface navigation and to encourage consistency between games and devices, most _physical_ input devices simultaneously act as separate _logical_ input devices called [UI navigation controllers](ui-navigation-controller.md). The UI navigation controller provides a common vocabulary for UI navigation commands across input devices.
 
 As a UI navigation controller, a flight stick maps the [required set](ui-navigation-controller.md#required-set) of navigation commands to the joystick and **View**, **Menu**, **FirePrimary**, and **FireSecondary** buttons.
 
@@ -59,7 +59,9 @@ Flight sticks don't map any of the [optional set](ui-navigation-controller.md#op
 
 ## Detect and track flight sticks
 
-Flight sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected flight sticks and events to notify you when a flight stick is added or removed.
+Detecting and tracking flight sticks works in exactly the same way as it does for gamepads, except with the [FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick) class instead of the [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) class. See [Gamepad and vibration](gamepad-and-vibration.md) for more information.
+
+<!-- Flight sticks are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected flight sticks and events to notify you when a flight stick is added or removed.
 
 ### The flight stick list
 
@@ -109,7 +111,7 @@ FlightStick::FlightStickRemoved +=
 
 ### Users and headsets
 
-Each flight stick can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md).
+Each flight stick can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md). -->
 
 ## Reading the flight stick
 
@@ -132,7 +134,7 @@ In addition to the flight stick state, each reading includes a timestamp that in
 
 ### Reading the joystick and throttle input
 
-The joystick provides an analog reading between -1.0 and 1.0 in the X, Y, and Z axes (roll, pitch, and yaw, respectively). For roll, a value of -1.0 corresponds to the left-most joystick position, while a value of 1.0 corresponds to the right-most position. For pitch, a value of -1.0 corresponds to the bottom-most joystick position, while a value of 1.0 corresponds to the top-most position. For yaw, a value of -1.0 corresponds to the most counterclockwise, twisted position, while a value of 1.0 corresponds to the most clockwise position. 
+The joystick provides an analog reading between -1.0 and 1.0 in the X, Y, and Z axes (roll, pitch, and yaw, respectively). For roll, a value of -1.0 corresponds to the left-most joystick position, while a value of 1.0 corresponds to the right-most position. For pitch, a value of -1.0 corresponds to the bottom-most joystick position, while a value of 1.0 corresponds to the top-most position. For yaw, a value of -1.0 corresponds to the most counterclockwise, twisted position, while a value of 1.0 corresponds to the most clockwise position.
 
 In all axes, the value is approximately 0.0 when the joystick is in the center position, but it's normal for the precise value to vary, even between subsequent readings. Strategies for mitigating this variation are discussed later in this section.
 
@@ -145,7 +147,7 @@ float pitch = reading.Pitch;
 float yaw = reading.Yaw;
 ```
 
-When reading the joystick values, you'll notice that they don't reliably produce a neutral reading of 0.0 when the joystick is at rest in the center position; instead, they'll produce different values near 0.0 each time the joystick is moved and returned to the center position. To mitigate these variations, you can implement a small _deadzone_, which is a range of values near the ideal center position that are ignored. 
+When reading the joystick values, you'll notice that they don't reliably produce a neutral reading of 0.0 when the joystick is at rest in the center position; instead, they'll produce different values near 0.0 each time the joystick is moved and returned to the center position. To mitigate these variations, you can implement a small _deadzone_, which is a range of values near the ideal center position that are ignored.
 
 One way to implement a deadzone is to determine how far the joystick has moved from the center, and ignore readings that are nearer than some distance you choose. You can compute the distance roughly&mdash;it's not exact because joystick readings are essentially polar, not planar, values&mdash;just by using the Pythagorean theorem. This produces a radial deadzone.
 
@@ -224,3 +226,4 @@ The [InputInterfacingUWP sample _(github)_](https://github.com/Microsoft/Xbox-AT
 
 * [Windows.Gaming.Input.UINavigationController class](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
 * [Windows.Gaming.Input.IGameController interface](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
+* [Input practices for games](input-practices-for-games.md)
