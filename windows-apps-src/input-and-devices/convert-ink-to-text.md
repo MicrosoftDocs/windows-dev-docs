@@ -38,7 +38,7 @@ In this example, recognition is initiated when the user clicks a button to indic
 
 **Download this sample from [Ink recognition sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)**
 
-1.  First, we set up the UI.
+1.  First, we set up the UI (MainPage.xaml). 
 
     The UI includes a "Recognize" button, an [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas), and a standard [**Canvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas). When the "Recognize" button is pressed, all ink strokes on the ink canvas are analyzed and (if recognized) corresponding shapes and text are drawn on the standard canvas. The original ink strokes are then deleted from the ink canvas.
 ```xaml
@@ -68,11 +68,10 @@ In this example, recognition is initiated when the user clicks a button to indic
         </Grid>
     </Grid>
 ```
-2. For this example, we first add the namespace type references required for our ink and ink analysis functionality to the UI code-behind file:
-    - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)
+2. In the UI code-behind file (MainPage.xaml.cs), add the namespace type references required for our ink and ink analysis functionality:
     - [Windows.UI.Input.Inking](https://docs.microsoft.com/uwp/api/windows.ui.input.inking)
     - [Windows.UI.Input.Inking.Analysis](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.analysis)
-    - [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams)
+    - [Windows.UI.Xaml.Shapes](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes)
 
 3. We then specify our global variables:
 ``` csharp
@@ -85,7 +84,10 @@ In this example, recognition is initiated when the user clicks a button to indic
     - Ink strokes are rendered on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) using the specified [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050). 
     - A listener for the click event on the "Recognize" button is also declared.
 ``` csharp
-    public MainPage()
+/// <summary>
+/// Initialize the UI page.
+/// </summary>
+public MainPage()
     {
         this.InitializeComponent();
 
@@ -115,7 +117,13 @@ In this example, recognition is initiated when the user clicks a button to indic
     - Iterate through both sets of node types and draw the respective text or shape on the recognition canvas (below the ink canvas).
     - Finally, delete the recognized nodes from the InkAnalyzer and the corresponding ink strokes from the ink canvas.
 ``` csharp
-    private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
+/// <summary>
+/// The "Analyze" button click handler.
+/// Ink recognition is performed here.
+/// </summary>
+/// <param name="sender">Source of the click event</param>
+/// <param name="e">Event args for the button click routed event</param>
+private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
     {
         inkStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
         // Ensure an ink stroke is present.
@@ -207,18 +215,22 @@ In this example, recognition is initiated when the user clicks a button to indic
 ```
 6. Here's the function for drawing a TextBlock on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the TextBlock.
 ``` csharp
-    // Draw text on the recognitionCanvas.
-    private void DrawText(string recognizedText, Rect boundingRect)
-    {
-        TextBlock text = new TextBlock();
-        Canvas.SetTop(text, boundingRect.Top);
-        Canvas.SetLeft(text, boundingRect.Left);
+/// <summary>
+/// Draw ink recognition text string on the recognitionCanvas.
+/// </summary>
+/// <param name="recognizedText">The string returned by text recognition.</param>
+/// <param name="boundingRect">The bounding rect of the original ink writing.</param>
+private void DrawText(string recognizedText, Rect boundingRect)
+{
+    TextBlock text = new TextBlock();
+    Canvas.SetTop(text, boundingRect.Top);
+    Canvas.SetLeft(text, boundingRect.Left);
 
-        text.Text = recognizedText;
-        text.FontSize = boundingRect.Height;
+    text.Text = recognizedText;
+    text.FontSize = boundingRect.Height;
 
-        recognitionCanvas.Children.Add(text);
-    }
+    recognitionCanvas.Children.Add(text);
+}
 ```
 7. Here are the functions for drawing ellipses and polygons on our recognition canvas. We use the the bounding rectangle of the associated ink stroke on the ink canvas to set the position and font size of the shapes.
 ``` csharp
