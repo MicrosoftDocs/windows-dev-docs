@@ -57,10 +57,11 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md) | Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market. |
 | [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md) | Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. |
 | [Use patterns to format dates and times](use-patterns-to-format-dates-and-times.md) | Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish. |
+| [Use global-ready formats](use-global-ready-formats.md) | Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. |
 | [NumeralSystem values](glob-numeralsystem-values.md) | This topic lists the values available to the **NumeralSystem** property of various classes in the [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) namespace. |
 | [Manage language and region](manage-language-and-region.md) | Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows. |
 | [Prepare your app for localization](prepare-your-app-for-localization.md) | Prepare your app for localization to other markets, languages, or regions. |
-| [Use global-ready formats](use-global-ready-formats.md) | Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. |
+| [International fonts](loc-international-fonts.md) | This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 

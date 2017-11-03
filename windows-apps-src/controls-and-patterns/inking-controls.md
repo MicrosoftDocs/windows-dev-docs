@@ -51,7 +51,7 @@ Pair the InkCanvas with an InkToolbar to provide a UI for activating ink feature
 
 **Microsoft Edge**
 
-The Edge browser uses the InkCanvas and InkToolbar for **Web Notes**.  
+Microsoft Edge uses the InkCanvas and InkToolbar for **Web Notes**.  
 ![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
 
 **Windows Ink Workspace**
