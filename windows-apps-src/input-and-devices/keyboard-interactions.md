@@ -255,7 +255,7 @@ Accelerators help users perform common actions that exists on application quickl
 
 Examples of Accelerators:
 -   Pressing Ctrl + N key anywhere in Mail app launches a new mail item.
--   Pressing Ctrl + E key anywhere in Edge and Store app lets user quickly enter text in search box.
+-   Pressing Ctrl + E key anywhere in Microsoft Edge and Microsoft Store applications lets users quickly enter text in the search box.
 
 Accelerators have the following characteristics:
 -   They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt+non-alphanumeric keys and the Windows logo key).

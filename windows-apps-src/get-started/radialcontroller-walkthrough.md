@@ -558,7 +558,7 @@ In this step, we show how you can customize haptic feedback by associating our s
             }
         }
         ```
-    - Finally, we get the requested [Waveform](https://docs.microsoft.com/en-us/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback#Windows_Devices_Haptics_Simple​Haptics​Controller​Feedback_Waveform) (if supported) for the haptic feedback. 
+    - Finally, we get the requested **[Waveform](https://docs.microsoft.com/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback#Windows_Devices_Haptics_SimpleHapticsControllerFeedback_Waveform)** (if supported) for the haptic feedback. 
 
         ```csharp
         // Get the requested waveform.
