@@ -1,10 +1,10 @@
 ---
 author: QuinnRadich
-Description: Windows 10, Vesion 1507 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: What's new in Windows 10, Vesion 1507 - July 2015
-keywords: what's new, whats new, update, updates, features, new, Windows 10, 1507
+Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
+title: What's new in Windows 10 build 10240 - July 2015
+keywords: what's new, whats new, update, updates, features, new, Windows 10, 1507, 10240
 ms.author: quradic
-ms.date: 02/08/2017
+ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,11 @@ ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 localizationpriority: medium
 ---
 
-# What's new in Windows 10, Version 1507
+# What's new in Windows 10 for developers, build 10240
 
+Windows 10 build 10240 and the updated SDK provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. After [installing the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10, you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
-
-Windows 10 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform (UWP). After [installing the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10, you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
-
-Here's a feature-by-feature look at what's new for you in Windows 10, Vesion 1507.
+Here's a feature-by-feature look at what's new for you in Windows 10 build 10240 (Also known as Windows 10 version 1507).
 
 ## Adaptive layouts
 
@@ -194,9 +192,3 @@ WebView.PermissionRequested event | The new [WebView.PermissionRequested](https:
 WebView.UnviewableContentIdentified event | The new [WebView.UnviewableContentIdentified](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) event lets you respond when the WebView is navigated to non-web content such as a PDF file or Office document. For the HTML WebView controls, see the [MSWebViewUnviewableContentIdentified](https://msdn.microsoft.com/library/windows/apps/dn609716.aspx) event.
 WebView.AddWebAllowedObject method | You can call the new [WebView.AddWebAllowedObject](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.addweballowedobject.aspx) method to inject a WinRT object into a XAML WebView, and then call its functions from trusted JavaScript hosted in that WebView. For example, web content can show system notifications by requesting that its parent app call the [ToastNotificationManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.toastnotificationmanager.aspx) WinRT API. For the HTML WebView control, see the [addWebAllowedObject](https://msdn.microsoft.com/library/windows/apps/dn926632.aspx) method.
 WebView.ClearTemporaryWebDataAsync method | When a user interacts with web content inside a XAML WebView, the WebView control caches data based on that user's session. You can call the new [ClearTemporaryWebDataAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) method to clear this cache. For example, you can clear the cache when one user logs out of the app so another user can’t access any data from the previous session.
-
-
-
-
-
----
