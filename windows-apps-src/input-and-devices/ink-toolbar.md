@@ -117,6 +117,8 @@ In some cases, you might want to set the location and orientation of the ink too
 
 You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
 
+**Download this sample from [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-toolbar-handedness)**
+
 ```csharp
 public MainPage()
 {
@@ -135,6 +137,8 @@ public MainPage()
 **Dynamically adjust to user or device state**
 
 You can also use binding to look after UI updates based on changes to user preferences, device settings, or device states. In the following example, we expand on the previous example and show how to dynamically position the ink toolbar based on device orientation using binding, a ViewMOdel object, and the [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface. 
+
+**Download this sample from [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-toolbar-handedness-dynamic)**
 
 1. First, let's add our ViewModel.
     1. Add a new folder to your project and call it **ViewModels**.
@@ -1126,7 +1130,11 @@ For more info on custom drying, see [Pen interactions and Windows Ink in UWP app
 
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**Samples**
+**Topic samples**
+* [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-toolbar-handedness)
+* [Ink toolbar location and orientation sample (dynamic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-toolbar-handedness-dynamic)
+
+**Other samples**
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
