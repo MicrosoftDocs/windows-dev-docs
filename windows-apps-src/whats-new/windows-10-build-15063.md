@@ -1,10 +1,10 @@
 ---
 author: QuinnRadich
 title: What's New in Windows 10 for Developers, Tools & Features
-description: Windows 10 version 1703 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
-keywords: what's new, whats new, update, updates, features, new, Windows 10, 1703, March, newest
+description: Windows 10 build 15063 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
+keywords: what's new, whats new, update, updates, features, new, Windows 10, 1703, March, newest, 15063
 ms.author: quradic
-ms.date: 04/05/2017
+ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,13 @@ ms.assetid: ea855480-874d-431f-94bf-13d81eacc010
 localizationpriority: medium
 ---
 
-# What's New in Windows 10 for developers
+# What's New in Windows 10 for developers, build 15063
 
-Windows 10 version 1703 and updates to Windows developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Windows 10 build 15063 (also known as the Creators Update or version 1703), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
-This is a collection of new and improved features of interest to developers. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 version 1703 API changes](windows-10-version-1703-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
+This is a collection of new and improved features of interest to developers. For a full list of new namespaces added to the Windows SDK, see the [Windows 10 build 15063 API changes](windows-10-build-15063-api-diff.md). For more information on the highlighted features of Windows 10, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181). In addition, see [Windows Developer Platform features](https://developer.microsoft.com/windows/platform/features) for a high-level overview of both past and future additions to the Windows platform.
 
-## Windows 10 version 1703 - March 2017
+## Windows 10 build 15063 - March 2017
 
 Feature | Description
  :---- | :----

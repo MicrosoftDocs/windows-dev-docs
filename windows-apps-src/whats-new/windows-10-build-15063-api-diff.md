@@ -1,10 +1,10 @@
 ---
 author: QuinnRadich
 title: Windows 10 Creators Update API changes
-description: Developers can use the following list to identify new or changed namespaces in Windows 10 version 1703
-keywords: what's new, whats new, updates, Windows 10, 1703, creators
+description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 15063
+keywords: what's new, whats new, updates, Windows 10, 1703, creators, 15063
 ms.author: quradic
-ms.date: 4/5/2017
+ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,12 +12,11 @@ ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
 localizationpriority: medium
 ---
 
+# New APIs in Windows 10 build 15063
 
-# New APIs in Windows 10 version 1703
+New and updated API namespaces have been made available to developers in Windows 10 build 15063, also known as the Creators Update or version 1703. Below is a full list of documentation published for namespaces added or modified in this release.
 
-New and updated API namespaces have been made available to developers in Windows 10 version 1703, also known as the Creators Update. Below is a full list of documentation published for namespaces added or modified in this release.
-
-For information on APIs added in the previous public release, see [New APIs in the Windows 10 Anniversary Update](windows-10-version-1607-api-diff.md).
+For information on APIs added in the previous public release, see [New APIs in the Windows 10 Anniversary Update](windows-10-build-14393-api-diff.md).
 
 ## windows.applicationmodel
 
