@@ -28,7 +28,7 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 
 UWP provides an easily accessible sound system that allows you to simply "flip a switch" and get an immersive audio experience across your entire app.
 
-The **ElementSoundPlayer** is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
+The [**ElementSoundPlayer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer) is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -47,7 +47,7 @@ All sounds within the app can be dimmed with the **Volume** control. However, so
 
 To set the app volume level, call:
 ```C#
-ElementSoundPlayer.Volume = 0.5f;
+ElementSoundPlayer.Volume = 0.5;
 ```
 Where maximum volume (relative to system volume) is 1.0, and minimum is 0.0 (essentially silent).
 
@@ -153,3 +153,4 @@ The purpose behind this cycling feature is to keep the focus sounds from becomin
 ## Related articles
 
 * [Designing for Xbox and TV](http://go.microsoft.com/fwlink/?LinkId=760736)
+* [ElementSoundPlayer class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.elementsoundplayer)
