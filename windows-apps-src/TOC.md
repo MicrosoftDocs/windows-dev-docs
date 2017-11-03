@@ -209,7 +209,7 @@
 #### [Guidelines](app-settings/guidelines-for-app-settings.md)
 #### [Store and retrieve app settings and data](app-settings/store-and-retrieve-app-data.md)
 ### [Globalization and localization](globalizing/globalizing-portal.md)
-#### [Do's and don'ts](globalizing/guidelines-and-checklist-for-globalizing-your-app.md)
+#### [Guidelines for globalization and localizability](globalizing/guidelines-and-checklist-for-globalizing-your-app.md)
 #### [Adjust layout and fonts, and support RTL](globalizing/adjust-layout-and-fonts--and-support-rtl.md)
 #### [Use patterns to format dates and times](globalizing/use-patterns-to-format-dates-and-times.md)
 #### [Use global-ready formats](globalizing/use-global-ready-formats.md)
