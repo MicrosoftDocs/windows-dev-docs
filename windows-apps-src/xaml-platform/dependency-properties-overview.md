@@ -175,7 +175,7 @@ To be animated, the animation's target property must be a dependency property. A
 
 When an animation is applied and running, the animated value operates at a higher precedence than any value (such as a local value) that the property otherwise has. Animations also have an optional [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior that can cause animations to apply to property values even if the animation visually appears to be stopped.
 
-The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) or [Control templates](../controls-and-patterns/control-templates.md).
+The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) or [Control templates](../design/controls-and-patterns/control-templates.md).
 
 ### Property-changed behavior
 

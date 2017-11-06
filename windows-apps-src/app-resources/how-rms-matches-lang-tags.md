@@ -36,7 +36,7 @@ Additional subtag elements may be present, but they will have a negligible effec
 
 ## Matching two languages
 
-Whenever Windows compares two languages it is typically done within the context of a larger process. It may be in the context of assessing multiple languages, such as when Windows generates the application language list (see [Manage language and region](../globalizing/manage-language-and-region.md)). Windows does this by matching multiple languages from the user preferences to the languages specified in the app's manifest. The comparison might also be in the context of assessing language along with other qualifiers for a particular resource. One example is when Windows resolves a particular file resource to a particular resource context; with the user's home location or the device's current scale or dpi as other factors (besides language) that are factored into the resource selection.
+Whenever Windows compares two languages it is typically done within the context of a larger process. It may be in the context of assessing multiple languages, such as when Windows generates the application language list (see [Manage language and region](../design/globalizing/manage-language-and-region.md)). Windows does this by matching multiple languages from the user preferences to the languages specified in the app's manifest. The comparison might also be in the context of assessing language along with other qualifiers for a particular resource. One example is when Windows resolves a particular file resource to a particular resource context; with the user's home location or the device's current scale or dpi as other factors (besides language) that are factored into the resource selection.
 
 When two language tags are compared, the comparison is assigned a score based on the nearness of the match.
 
@@ -188,5 +188,5 @@ English needs special consideration. If an app adds localization for two English
 
 * [How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Manage language and region](../globalizing/manage-language-and-region.md)
+* [Manage language and region](../design/globalizing/manage-language-and-region.md)
 * [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](http://go.microsoft.com/fwlink/p/?LinkId=247929)

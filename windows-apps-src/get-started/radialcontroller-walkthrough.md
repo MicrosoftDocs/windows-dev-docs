@@ -26,7 +26,7 @@ We focus on the following:
 * Customizing click interactions
 * Customizing rotation interactions
 
-For more about implementing these and other features, see [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/windows-wheel-interactions).
+For more about implementing these and other features, see [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input/windows-wheel-interactions).
 
 ## Introduction
 

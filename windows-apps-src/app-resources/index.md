@@ -22,7 +22,7 @@ There are two types of app resource.
 - A file resource is a resource stored as a file on disk. A file resource can contain a bitmap image, XAML, XML, HTML, or any other kind of data.
 - An embedded resource is a resource that is embedded within some containing resource file. The most common example is a string resource embedded within a Resources File (.resw or .resjson).
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
 
 | Article | Description |
 |---------|-------------|
