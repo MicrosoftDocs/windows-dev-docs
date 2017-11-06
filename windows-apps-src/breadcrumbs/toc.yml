@@ -18,39 +18,39 @@
                 topicHref: "/windows/uwp/layout/design-and-ui-intro" 
                 items:
                     - name: Intro to app UI design
-                      tocHref: /windows/uwp/design/
-                      topicHref: "/windows/uwp/layout/design-and-ui-intro"                 
+                      tocHref: /windows/uwp/design/basics/
+                      topicHref: "/windows/uwp/basics/design-and-ui-intro"                 
                     - name: Layout
-                      tocHref: /windows/uwp/layout/
-                      topicHref: "/windows/uwp/layout/index" 
+                      tocHref: /windows/uwp/design/layout/
+                      topicHref: "/windows/uwp/design/layout/index" 
                     - name: Style
-                      tocHref: /windows/uwp/style/
-                      topicHref: "/windows/uwp/style/index"                 
+                      tocHref: /windows/uwp/design/style/
+                      topicHref: "/windows/uwp/design/style/index"                 
                     - name: Controls and patterns
-                      tocHref: /windows/uwp/controls-and-patterns/
-                      topicHref: "/windows/uwp/controls-and-patterns/index"         
-                    - name: Input and devices
-                      tocHref: /windows/uwp/input-and-devices/
-                      topicHref: "/windows/uwp/input-and-devices/index" 
+                      tocHref: /windows/uwp/design/controls-and-patterns/
+                      topicHref: "/windows/uwp/design/controls-and-patterns/index"         
+                    - name: Input and interaction
+                      tocHref: /windows/uwp/design/input/
+                      topicHref: "/windows/uwp/design/input/index" 
                     - name: Usability
-                      tocHref: /windows/uwp/usability/
-                      topicHref: "/windows/uwp/usability/index" 
+                      tocHref: /windows/uwp/design/usability/
+                      topicHref: "/windows/uwp/design/usability/index" 
                       items:
                           - name: Accessibility
-                            tocHref: /windows/uwp/accessibility/
-                            topicHref: "/windows/uwp/accessibility/accessibility" 
+                            tocHref: /windows/uwp/design/accessibility/
+                            topicHref: "/windows/uwp/design/accessibility/accessibility" 
                           - name: App settings and data
-                            tocHref: /windows/uwp/app-settings/
-                            topicHref: "/windows/uwp/app-settings/app-settings-and-data" 
+                            tocHref: /windows/uwp/design/app-settings/
+                            topicHref: "/windows/uwp/design/app-settings/app-settings-and-data" 
                           - name: Globalization and localization
-                            tocHref: /windows/uwp/globalizing/
-                            topicHref: "/windows/uwp/globalizing/globalizing-portal"     
+                            tocHref: /windows/uwp/design/globalizing/
+                            topicHref: "/windows/uwp/design/globalizing/globalizing-portal"     
                           - name: Guidelines for app help
-                            tocHref: /windows/uwp/guidelines-for-app-help/
-                            topicHref: "/windows/uwp/guidelines-for-app-help/index"                              
+                            tocHref: /windows/uwp/design/guidelines-for-app-help/
+                            topicHref: "/windows/uwp/design/guidelines-for-app-help/index"                              
                     - name: Design toolkits
-                      tocHref: /windows/uwp/design-downloads/
-                      topicHref: "/windows/uwp/design-downloads/index"                       
+                      tocHref: /windows/uwp/design/downloads/
+                      topicHref: "/windows/uwp/design/downloads/index"                       
               - name: Develop
                 tocHref: /windows/uwp/develop/
                 topicHref: "/windows/uwp/whats-new/windows-10-version-1703" 
