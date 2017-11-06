@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Multiple inputs
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
 

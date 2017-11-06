@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Respond to the presence of the touch keyboard
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 

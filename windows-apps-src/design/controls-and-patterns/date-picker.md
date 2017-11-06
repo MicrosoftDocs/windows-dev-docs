@@ -20,7 +20,7 @@ localizationpriority: medium
 ---
 # Date picker
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
 

@@ -17,7 +17,7 @@ localizationpriority: medium
 
 # Fonts for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 This article lists the recommended fonts for UWP apps. These fonts are guaranteed to be available in all Windows 10 editions that support UWP apps.
 

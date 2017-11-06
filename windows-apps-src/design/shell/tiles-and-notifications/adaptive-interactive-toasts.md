@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 # Adaptive and interactive toast notifications
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Adaptive and interactive toast notifications let you create flexible notifications with text, images, and buttons/inputs.
 

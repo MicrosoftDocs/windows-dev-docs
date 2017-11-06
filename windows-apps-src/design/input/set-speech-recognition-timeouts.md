@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Set speech recognition timeouts
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 

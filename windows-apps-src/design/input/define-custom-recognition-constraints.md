@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Define custom recognition constraints
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Learn how to define and use custom constraints for speech recognition.
 

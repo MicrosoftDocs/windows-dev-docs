@@ -14,7 +14,7 @@ localizationpriority: medium
 ---
 
 # Secondary tile guidance
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 A secondary tile provides a consistent, efficient way for users to directly access specific areas within an app from the Start menu. Although a user chooses whether or not to "pin" a secondary tile to the Start menu, the pinnable areas in an app are determined by the developer. For a more detailed summary, see [Secondary tiles overview](secondary-tiles.md). Consider these guidelines when you enable secondary tiles and design the associated UI in your app.
 

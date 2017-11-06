@@ -18,7 +18,7 @@ doc-status: Published
 localizationpriority: medium
 ---
 # Auto-suggest box
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
 

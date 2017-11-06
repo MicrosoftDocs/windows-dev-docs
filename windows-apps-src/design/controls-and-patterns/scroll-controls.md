@@ -19,7 +19,7 @@ localizationpriority: medium
 ---
 # Scroll viewer controls
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 When there is more UI content to show than you can fit in an area, use the scroll viewer control.
 

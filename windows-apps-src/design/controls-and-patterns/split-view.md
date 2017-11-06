@@ -19,7 +19,7 @@ localizationpriority: medium
 ---
 # Split view control
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 A split view control has an expandable/collapsible pane and a content area.
 

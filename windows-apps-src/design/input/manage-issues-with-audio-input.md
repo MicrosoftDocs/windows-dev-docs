@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Manage issues with audio input
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 

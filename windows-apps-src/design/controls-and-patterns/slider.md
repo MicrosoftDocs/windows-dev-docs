@@ -19,7 +19,7 @@ localizationpriority: medium
 ---
 # Sliders
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
 

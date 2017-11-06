@@ -19,7 +19,7 @@ localizationpriority: medium
 
 # Motion for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Motion helps your users understand context changes and where they are within your app’s navigation hierarchy. It ties experiences together with visual transitions. Motion adds a sense of pacing and dimensionality to the experience.
 

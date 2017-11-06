@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Specify the speech recognizer language
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Learn how to select an installed language to use for speech recognition.
 
