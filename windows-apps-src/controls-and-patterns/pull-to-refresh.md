@@ -245,5 +245,5 @@ In the sample, this work is done primarily in the `CompositionTarget_Rendering` 
 - [Styling controls](styling-controls.md)
 - [Touch interactions](../input-and-devices/touch-interactions.md)
 - [List view and grid view](listview-and-gridview.md)
-- [List view item templates](listview-item-templates.md)
-- [Expression animations](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations)
+- [Item containers and templates](item-containers-templates.md)
+- [Expression animations](../composition/composition-animation.md)

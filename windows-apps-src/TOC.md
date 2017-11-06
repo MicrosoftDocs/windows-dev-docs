@@ -84,7 +84,7 @@
 ### [Inking controls](controls-and-patterns/inking-controls.md)
 ### [Lists](controls-and-patterns/lists.md)
 #### [List view and grid view](controls-and-patterns/listview-and-gridview.md)
-#### [List view item templates](controls-and-patterns/listview-item-templates.md)
+#### [Item containers and templates](controls-and-patterns/item-containers-templates.md)
 #### [Item templates for list view](controls-and-patterns/item-templates-listview.md)
 #### [Item templates for grid view](controls-and-patterns/item-templates-gridview.md)
 #### [Inverted lists](controls-and-patterns/inverted-lists.md)

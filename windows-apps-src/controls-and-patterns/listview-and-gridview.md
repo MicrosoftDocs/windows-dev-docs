@@ -182,7 +182,7 @@ Here's what the data items look like when displayed with this data template.
 
 ![List view items with a data template](images/listview-itemstemplate.png)
 
-Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items. In this article, we use simple string data for most of the examples, and don't specify a data template. For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [List view item templates](listview-item-templates.md). 
+Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items. In this article, we use simple string data for most of the examples, and don't specify a data template. For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](item-containers-templates.md). 
 
 ## Change the layout of items
 
@@ -496,7 +496,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-For info about how to change the look of selected items, see [List view item templates](listview-item-templates.md).
+For info about how to change the look of selected items, see [Item containers and templates](item-containers-templates.md).
 
 ### Drag and drop
 
@@ -504,7 +504,7 @@ ListView and GridView controls support drag and drop of items within themselves,
 
 ## Get the sample code 
 
-*   [XAML ListView and GridView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)<br/>
+*   [XAML ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)<br/>
     This sample shows the usage of ListView and Gridview controls.
 
 *   [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
@@ -513,5 +513,5 @@ ListView and GridView controls support drag and drop of items within themselves,
 ## Related articles
 
 - [Lists](lists.md)
-- [List view item templates](listview-item-templates.md)
+- [Item containers and templates](item-containers-templates.md)
 - [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
