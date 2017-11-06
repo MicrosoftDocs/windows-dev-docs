@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-Description: Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies.
+Description: Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies.
 title: Use global-ready formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
@@ -17,17 +17,7 @@ localizationpriority: medium
 
 # Use global-ready formats
 
-Develop a global-ready app by appropriately formatting dates, times, numbers, phone numbers, and currencies. This permits you to adapt your app later for additional cultures, regions, and languages in the global market.
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)</li>
-<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
-<li>[**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
-<li>[**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)</li>
-</ul>
-</div>
+Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.
 
 ## Introduction
 
@@ -157,6 +147,7 @@ For scenarios where you provide different functionality based on the user's lang
 * [Windows.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/br206724)
 * [Windows.Globalization.DateTimeFormatting](https://msdn.microsoft.com/library/windows/apps/br206859)
 * [Windows.Globalization.NumberFormatting](https://msdn.microsoft.com/library/windows/apps/br226136)
+* [Windows.Globalization.PhoneNumberFormatting](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormattin)
 * [Windows.System.UserProfile.GlobalizationPreferences](https://msdn.microsoft.com/library/windows/apps/br241825)
 
 ## Related topics

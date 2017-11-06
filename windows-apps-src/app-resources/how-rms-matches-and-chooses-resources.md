@@ -19,6 +19,8 @@ When a resource is requested, there may be several candidates that match the cur
 
 In this ranking process, the different qualifiers are given different priorities: language has the greatest impact on the overall ranking, followed by contrast, then scale, and so on. For each qualifier, candidate qualifiers are compared with the context qualifier value to determine a quality of match. How the comparison is done depends upon the qualifier.
 
+For specific details on how language tag matching is done, see [How the Resource Management System matches language tags](how-rms-matches-lang-tags.md).
+
 For some qualifiers, such as scale and contrast, there is always some minimal degree of match. For example, a candidate qualified for "scale-100" matches a context of "scale-400" to some small degree, albeit not as well as a candidate qualified for "scale-200" or (for a perfect match) "scale-400".
 
 For other qualifiers, however, such as language or home region, it is possible to have a non-match comparison (as well as degrees of matching). For example, a candidate qualified for language as "en-US" is a partial match for a context of "en-GB", but a candidate qualified as "fr" is not a match at all. Similarly, a candidate qualified for home region as "155" (Western Europe) matches a context for a user with a home region setting of "FR" somewhat well, but a candidate qualified as "US" does not match at all.

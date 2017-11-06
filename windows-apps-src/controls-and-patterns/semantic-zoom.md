@@ -179,14 +179,14 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 ## Get the sample code
 
-- [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992)
+- [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
 
 
 ## Related articles
 
 - [Navigation design basics](../layout/navigation-basics.md)
 - [List view and grid view](listview-and-gridview.md)
-- [List view item templates](listview-item-templates.md)
+- [Item containers and templates](item-containers-templates.md)
 
 
 
