@@ -32,6 +32,9 @@
                     - name: Input and interaction
                       tocHref: /windows/uwp/design/input/
                       topicHref: "/windows/uwp/design/input/index" 
+                    - name: Devices
+                      tocHref: /windows/uwp/design/devices/
+                      topicHref: "/windows/uwp/design/devices/index"                       
                     - name: Usability
                       tocHref: /windows/uwp/design/usability/
                       topicHref: "/windows/uwp/design/usability/index" 
