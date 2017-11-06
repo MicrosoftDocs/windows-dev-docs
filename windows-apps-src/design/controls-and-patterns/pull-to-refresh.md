@@ -19,7 +19,7 @@ localizationpriority: medium
 ---
 # Pull to refresh
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on mobile apps, but is useful on any device with a touch screen. You can handle [manipulation events](../input/touch-interactions.md#manipulation-events) to implement pull-to-refresh in your app.
 

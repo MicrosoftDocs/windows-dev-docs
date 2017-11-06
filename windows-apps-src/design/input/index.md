@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 # Inputs and devices
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 UWP apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input or make your app run on a phone, for example.
 

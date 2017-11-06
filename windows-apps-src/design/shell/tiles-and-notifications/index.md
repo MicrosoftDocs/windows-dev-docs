@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 # Tiles, badges, and notifications for UWP apps
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
 

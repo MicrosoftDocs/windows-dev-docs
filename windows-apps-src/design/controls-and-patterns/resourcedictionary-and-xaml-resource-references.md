@@ -18,7 +18,7 @@ localizationpriority: medium
 ---
 # ResourceDictionary and XAML resource references
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) element from the Windows Runtime XAML. Then, you can reference your resources by using a [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md) or [ThemeResource markup extension](../../xaml-platform/themeresource-markup-extension.md).
 

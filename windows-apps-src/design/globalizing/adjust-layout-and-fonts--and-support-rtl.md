@@ -13,7 +13,7 @@ ms.technology: uwp
 keywords: windows 10, uwp, localizability, localization, rtl, ltr
 localizationpriority: medium
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 # Adjust layout and fonts, and support RTL
 

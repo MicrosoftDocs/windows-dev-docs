@@ -16,7 +16,7 @@ localizationpriority: medium
 
 #  Device primer for Universal Windows Platform (UWP) apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 ![windows-powered devices](images/device-primer/device-primer-ramp.png)
 

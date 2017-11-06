@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 # Periodic notification overview
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 
 Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service. To use periodic notifications, your client app code needs to provide two pieces of information:

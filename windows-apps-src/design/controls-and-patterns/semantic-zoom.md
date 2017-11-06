@@ -18,7 +18,7 @@ localizationpriority: medium
 ---
 # Semantic zoom
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Semantic zoom lets the user switch between two different views of the same content so that they can quickly navigate through a large set of grouped data.
  

@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Recognize Windows Ink strokes as text and shapes
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
 

@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Add and delete animations
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
 

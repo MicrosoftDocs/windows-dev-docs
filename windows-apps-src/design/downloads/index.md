@@ -12,7 +12,7 @@ ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 localizationpriority: high
 ---
 # Design toolkits and samples for UWP apps
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 This section contains design and UI-related downloads for UWP apps. For additional tools, such as Visual Studio, see [our main downloads page](https://developer.microsoft.com/downloads). 
 

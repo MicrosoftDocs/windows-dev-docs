@@ -18,7 +18,7 @@ localizationpriority: medium
 ---
 # Nested UI in list items
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Nested UI is a user interface (UI) that exposes nested actionable controls enclosed inside a container that also can take independent focus.
 

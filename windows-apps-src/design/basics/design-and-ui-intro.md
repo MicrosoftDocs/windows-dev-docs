@@ -17,7 +17,7 @@ localizationpriority: medium
 
 #  Introduction to UWP app design
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 A Universal Windows Platform (UWP) app can run on any Windows-based device, from your phone to your tablet or PC. 
 

@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Speech recognition
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Use speech recognition to provide input, specify an action or command, and accomplish tasks.
 

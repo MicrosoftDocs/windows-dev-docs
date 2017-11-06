@@ -8,7 +8,7 @@ localizationpriority: medium
 
 # Content as objects
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 You can manipulating the depth, or z-order, of elements to create a visual hierarchy that helps makes your app easier to use.  
 

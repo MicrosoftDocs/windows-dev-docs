@@ -18,7 +18,7 @@ localizationpriority: medium
 ---
 # Labels
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 A label is the name or title of a control or a group of related controls.
 

@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Fade animations
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 

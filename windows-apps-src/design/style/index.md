@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 # UWP style guide
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Style is what makes your app stand out. It's about bold choices aesthetic choices and subtle flourishes. It's about making something beautiful. 
 

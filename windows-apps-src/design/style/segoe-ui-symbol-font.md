@@ -17,7 +17,7 @@ localizationpriority: medium
 
 # Segoe MDL2 icons
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 This article lists the icons provided by the Segoe MDL2 Assets font. 
 

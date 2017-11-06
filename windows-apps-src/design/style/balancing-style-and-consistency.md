@@ -14,7 +14,7 @@ localizationpriority: medium
 
 # Balancing style and consistency
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 > Note: This article is an early draft for Windows 10 RS2. Feature names, terminology, and functionality are not final.
 
