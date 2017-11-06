@@ -238,20 +238,68 @@ else
 }
 ```
 
-## Extending acrylic into your title bar
+## Extend acrylic into the title bar
 
-For a seamless, flowing look within your app's window, we recommend placing acrylic in your app's title bar area. To do so, add the following code to your App.xaml.cs.
+To give your app's window a seamless look, you can use acrylic in the title bar area. This example extends acrylic into the title bar by setting the [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) object's [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar#Windows_UI_ViewManagement_ApplicationViewTitleBar_ButtonBackgroundColor) and [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar#Windows_UI_ViewManagement_ApplicationViewTitleBar_ButtonInactiveBackgroundColor) properties to [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors#Windows_UI_Colors_Transparent). 
 
 ```csharp
-CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
-ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
-titleBar.ButtonBackgroundColor = Colors.Transparent;
-titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+/// Extend acrylic into the title bar. 
+private void extendAcrylicIntoTitleBar()
+{
+    CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+    ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
+    titleBar.ButtonBackgroundColor = Colors.Transparent;
+    titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+}
 ```
 
-In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`.
+This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_Activate), as shown here, or in your app's first page. 
 
-For more info, see [Title bar customization](title-bar.md).
+
+```csharp
+// Call your extend acrylic code in the OnLaunched event, after 
+// calling Window.Current.Activate.
+protected override void OnLaunched(LaunchActivatedEventArgs e)
+{
+    Frame rootFrame = Window.Current.Content as Frame;
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active
+    if (rootFrame == null)
+    {
+        // Create a Frame to act as the navigation context and navigate to the first page
+        rootFrame = new Frame();
+
+        rootFrame.NavigationFailed += OnNavigationFailed;
+
+        if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+        {
+            //TODO: Load state from previously suspended application
+        }
+
+        // Place the frame in the current Window
+        Window.Current.Content = rootFrame;
+    }
+
+    if (e.PrelaunchActivated == false)
+    {
+        if (rootFrame.Content == null)
+        {
+            // When the navigation stack isn't restored navigate to the first page,
+            // configuring the new page by passing required information as a navigation
+            // parameter
+            rootFrame.Navigate(typeof(MainPage), e.Arguments);
+        }
+        // Ensure the current window is active
+        Window.Current.Activate();
+
+        // Extend acrylic
+        extendAcrylicIntoTitleBar();
+    }
+}
+```
+
+In addition, you'll need to draw your app's title, which normally appears automatically in the title bar, with a TextBlock using `CaptionTextBlockStyle`. For more info, see [Title bar customization](title-bar.md).
 
 ## Do's and don'ts
 * Do use acrylic as the background material of non-primary app surfaces like navigation panes.
