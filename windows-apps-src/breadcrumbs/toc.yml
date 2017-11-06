@@ -17,18 +17,24 @@
                 tocHref: /windows/uwp/design/
                 topicHref: "/windows/uwp/layout/design-and-ui-intro" 
                 items:
-                    - name: Intro to app UI design
+                    - name: Design basics
                       tocHref: /windows/uwp/design/basics/
-                      topicHref: "/windows/uwp/basics/design-and-ui-intro"                 
+                      topicHref: "/windows/uwp/basics/design-and-ui-intro"    
+                    - name: Design basics
+                      tocHref: /windows/uwp/design/fluent-design-system/
+                      topicHref: "/windows/uwp/basics/design-and-ui-intro"                                     
                     - name: Layout
                       tocHref: /windows/uwp/design/layout/
                       topicHref: "/windows/uwp/design/layout/index" 
                     - name: Style
                       tocHref: /windows/uwp/design/style/
-                      topicHref: "/windows/uwp/design/style/index"                 
+                      topicHref: "/windows/uwp/design/style/index"    
+                    - name: Motion
+                      tocHref: /windows/uwp/design/motion/
+                      topicHref: "/windows/uwp/design/motion/index"                                      
                     - name: Controls and patterns
                       tocHref: /windows/uwp/design/controls-and-patterns/
-                      topicHref: "/windows/uwp/design/controls-and-patterns/index"         
+                      topicHref: "/windows/uwp/design/controls-and-patterns/index"                              
                     - name: Input and interaction
                       tocHref: /windows/uwp/design/input/
                       topicHref: "/windows/uwp/design/input/index" 
