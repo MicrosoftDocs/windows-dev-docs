@@ -1,10 +1,10 @@
 ---
 author: QuinnRadich
 title: What's New in Windows 10 for Developers, Tools & Features
-description: Windows 10 version 1607 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
-keywords: what's new, whats new, update, updates, features, new, Windows 10, 1607, July, newest
+description: Windows 10 build 14393 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
+keywords: what's new, whats new, update, updates, features, new, Windows 10, 1607, July, newest, 14393
 ms.author: quradic
-ms.date: 02/08/2017
+ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,13 +12,13 @@ ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 localizationpriority: medium
 ---
 
-# What's New in Windows 10 for developers
+# What's new in Windows 10 for developers, build 14393
 
-Windows 10 version 1607 and updates to Windows developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Windows 10 build 14939 (also known as the Anniversary Update or version 1607), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
-This is a list of new and improved features of interest to developers. For a raw list of new namespaces added to the Windows SDK, see the [Windows 10 version 1607 API changes](windows-10-version-1607-api-diff.md). For more information on the highlighted features of this update, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
+This is a list of new and improved features of interest to developers. For a raw list of new namespaces added to the Windows SDK, see the [Windows 10 build 14939 API changes](windows-10-build-14393-api-diff.md). For more information on the highlighted features of this update, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
 
-## Windows 10 version 1607 - July 2016
+## Windows 10 build 14393 - July 2016
 
 Feature | Description
  :---- | :----

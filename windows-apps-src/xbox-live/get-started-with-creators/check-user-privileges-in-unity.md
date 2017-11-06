@@ -8,7 +8,7 @@ ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts, parental controls, user privileges
+keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts, parental controls, user privileges, enforcement bans, upsell
 ---
 # Check user privilege settings in Unity
 On Xbox Live, every authenticated user’s account has associated privileges. Privileges control which features of Xbox Live a user can access at a given point in time. Some of these privileges are for system-controlled features, while others may be associated with specific games or extension subscriptions. In addition, parental controls and bans issued by the Xbox Live enforcement team can restrict the privileges of a user. These privileges cover a number of common scenarios, including multiplayer, accessing user generated content, chatting, or to streaming video. Games use this information to make access control and personalization decisions. 

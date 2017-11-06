@@ -36,7 +36,7 @@ Here, we demonstrate how to use the Windows Ink analysis engine ([Windows.UI.Inp
 
 In this example, recognition is initiated when the user clicks a button to indicate they are finished drawing.
 
-**Download this sample from [Ink recognition sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)**
+**Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)**
 
 1.  First, we set up the UI (MainPage.xaml). 
 
@@ -280,12 +280,14 @@ Here's this sample in action:
 
 In the preceding section ([Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis)), we demonstrated how to use the [ink analysis APIs](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.inking.analysis) to analyze and recognize arbitrary ink strokes within an InkCanvas area.
 
-In this section, we demonstrate how to use the Windows Ink handwriting recognition engine (not ink analysis) to try to convert a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) to text (based on the installed default language pack).
+In this section, we demonstrate how to use the Windows Ink handwriting recognition engine (not ink analysis) to convert a set of strokes on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) to text (based on the installed default language pack).
 
 > [!NOTE]
-> The basic handwriting recognition shown in this section is best suited for straightforward, single-line, plain text scenarios such as form input. For richer recognition scenarios that include analysis and interpretation of document structure, list items, shapes, and drawings (in addition to text recognition), see the previous section: [Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis).
+> The basic handwriting recognition shown in this section is best suited for single-line, text input scenarios such as form input. For richer recognition scenarios that include analysis and interpretation of document structure, list items, shapes, and drawings (in addition to text recognition), see the previous section: [Free-form recognition with ink analysis](#free-form-recognition-with-ink-analysis).
 
 In this example, recognition is initiated when the user clicks a button to indicate they are finished writing.
+
+**Download this sample from [Ink handwriting recognition sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-handwriting-reco/handwriting-reco)**
 
 1.  First, we set up the UI.
 
@@ -850,11 +852,14 @@ For this example, we'll use the same UI and stroke settings as the previous inte
 
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**Samples**
+**Topic samples**
+* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)
+* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-handwriting-reco/handwriting-reco)
+
+**Other samples**
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Ink recognition sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)
 * [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
 * [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
 * [Family notes sample](https://aka.ms/cpubsample-familynotessample)
