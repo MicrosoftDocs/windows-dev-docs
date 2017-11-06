@@ -166,7 +166,7 @@ void UWP::ShowToast()
 	ToastNotificationManager::CreateToastNotifier()->Show(ref new ToastNotification(toastXml));
 }
 ```
-To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts).
+To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 

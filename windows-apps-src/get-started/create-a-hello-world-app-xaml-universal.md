@@ -233,7 +233,7 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 Congratulations, you've created your first app for Windows 10 and the UWP!
 
-To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../layout/grid-tutorial.md), or jump straight to [next steps](learn-more.md)?
+To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../design/layout/grid-tutorial.md), or jump straight to [next steps](learn-more.md)?
 
 
 ## See Also

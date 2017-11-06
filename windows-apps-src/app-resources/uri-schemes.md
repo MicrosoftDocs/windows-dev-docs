@@ -123,7 +123,7 @@ Query parameters are ignored during retrieval of resources. The normalized form 
 
 ## ms-appdata
 
-Use the `ms-appdata` URI scheme to refer to files that come from the app's local, roaming, and temporary data folders. For more info about these app data folders, see [Store and retrieve settings and other app data](../app-settings/store-and-retrieve-app-data.md).
+Use the `ms-appdata` URI scheme to refer to files that come from the app's local, roaming, and temporary data folders. For more info about these app data folders, see [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md).
 
 The `ms-appdata` URI scheme does not perform the runtime content negotiation that [ms-appx and ms-appx-web](#ms-appx-and-ms-appx-web) do. But you can respond to the contents of [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) and load the appropriate assets from app data using their full physical file name in the URI.
 
@@ -271,7 +271,7 @@ Developers of particular components layered above this URI parsing may choose to
 * [Uniform Resource Identifier (URI): Generic Syntax](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [Packaging apps](../packaging/index.md)
 * [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [Store and retrieve settings and other app data](../app-settings/store-and-retrieve-app-data.md)
+* [Store and retrieve settings and other app data](../design/app-settings/store-and-retrieve-app-data.md)
 * [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
 * [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947)
 * [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md)
