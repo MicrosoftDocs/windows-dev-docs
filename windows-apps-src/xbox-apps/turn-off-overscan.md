@@ -13,7 +13,7 @@ localizationpriority: medium
 ---
 
 # How to draw UI to the edge of the screen   
-By default, applications will have borders placed at the edges of the viewport to account for the TV-safe area (for more information, see [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md#tv-safe-area)). 
+By default, applications will have borders placed at the edges of the viewport to account for the TV-safe area (for more information, see [Designing for Xbox and TV](../design/devices/designing-for-tv.md#tv-safe-area)). 
 
 We recommend turning this off and drawing to the edge of the screen. You can draw to the edge of the screen by adding the following code when your application starts:
    

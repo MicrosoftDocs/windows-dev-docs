@@ -97,6 +97,6 @@ Note that this method invalidates the channel that is being used for notificatio
 ## Related topics
 
 * [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md)
-* [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/windows/uwp/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 * [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

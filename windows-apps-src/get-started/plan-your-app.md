@@ -66,7 +66,7 @@ When you're happy with your concept, you're ready for the next stage—creating 
 
 Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
 
-For related guidelines, see [Navigation design basics](../layout/navigation-basics.md).
+For related guidelines, see [Navigation design basics](../design/basics/navigation-basics.md).
 
 ## Dynamics
 
@@ -136,18 +136,18 @@ For more info, see [App contracts and extensions](https://msdn.microsoft.com/lib
 
 For example, semantic zoom is a touch-optimized way to navigate through a large set of content. Users can pan or scroll through categories of content, and then zoom in on those categories to view more and more detailed information. You can use this to present your content in a more tactile, visual, and informative way than with traditional navigation and layout patterns like tabs.
 
-Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../input-and-devices/input-primer.md).
+Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../design/input/input-primer.md).
 
 **Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
 
 -   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../graphics/animations-overview.md).
--   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../controls-and-patterns/tiles-badges-notifications.md).
--   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
+-   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../design/shell/tiles-and-notifications/index.md).
+-   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../design/shell/tiles-and-notifications/creating-tiles.md).
 
 **Personalization**
 
--   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../app-settings/app-settings-and-data.md).
--   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094).
+-   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../design/app-settings/app-settings-and-data.md).
+-   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../design/app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094).
 -   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
 
 **Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
@@ -202,7 +202,7 @@ Let's look at the "Share itineraries for friends and families to follow" flow. W
 
 During this process, you begin to see what UI you need to create and the additional details you need to figure out (like drafting a standard email boilerplate for friends who aren't using your app yet). You also can start eliminating unnecessary steps. Perhaps the user doesn't actually need to see the details of the trip before sharing, for example. The cleaner the flow, the easier to use.
 
-For more details on how to use different surfaces, take a look at <!--[Command design basics](../layout/commanding-basics.md)-->.
+For more details on how to use different surfaces, take a look at <!--[Command design basics](../design/basics/commanding-basics.md)-->.
 
 **What should the flow feel like?** When you have defined the steps your user will take, you can turn that flow into performance goals. For more info, see [Plan for performance](../debug-test-perf/planning-and-measuring-performance.md).
 

@@ -1,0 +1,469 @@
+---
+author: Karl-Bridge-Microsoft
+Description: Learn how accelerator keys can improve the usability and accessibility of UWP apps.
+title: Keyboard accelerators
+label: Keyboard accelerators
+template: detail.hbs
+keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
+ms.author: kbridge
+ms.date: 10/10/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+pm-contact: chigy
+design-contact: miguelrb
+doc-status: Draft
+localizationpriority: medium
+---
+
+# Keyboard Accelerators
+
+![Surface keyboard](images/accelerators/accelerators_hero2.png)
+
+Accelerator keys (or keyboard accelerators) are keyboard shortcuts that improve the usability and accessibility of your Windows applications by providing an intuitive way for users to invoke common actions or commands without navigating the app UI.
+
+See the [Access keys](https://docs.microsoft.com/windows/uwp/input/access-keys) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
+
+> [!NOTE]
+> A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
+
+## Overview
+
+Accelerators typically include the function keys F1 through F12 or some combination of a standard key paired with one or more modifier keys (CTRL, Shift).
+
+> [!NOTE]
+> The UWP platform controls have built-in keyboard accelerators. For example, ListView supports Ctrl+A for selecting all the items in the list, and RichEditBox supports Ctrl+Tab for inserting a Tab in the text box. These built-in keyboard accelerators are referred to as **control accelerators** and are executed only if the focus is on the element or one of its children. Accelerators defined by you using the keyboard accelerator APIs discussed here are referred to as **app accelerators**.
+
+Keyboard accelerators are not available for every action but are often associated with commands exposed in menus (and should be specified with the menu item content). Accelerators can also be associated with actions that do not have equivalent menu items. However, because users rely on an application's menus to discover and learn the available command set, you should try to make discovery of accelerators as easy as possible (using labels or established patterns really helps).
+
+![Keyboard accelerators described in a menu item label](images\accelerators\accelerators_menuitemlabel.png)  
+***Keyboard accelerators described in a menu item label***
+
+## When to use keyboard accelerators
+
+We recommend that you specify keyboard accelerators wherever appropriate in your UI, and support accelerators in all custom controls.
+
+- Keyboard accelerators make your app more accessible for users with motor disabilities, including those users who can press only one key at a time or have difficulty using a mouse.**
+
+  A well-designed keyboard UI is an important aspect of software accessibility. It enables users with vision impairments or who have certain motor disabilities to navigate an app and interact with its features. Such users might not be able to operate a mouse and instead rely on various assistive technologies such as keyboard enhancement tools, on-screen keyboards, screen enlargers, screen readers, and voice input utilities. For these users, comprehensive command coverage is crucial.
+
+- Keyboard accelerators make your app more usable for power users who prefer to interact through the keyboard.
+
+  Experienced users often have a strong preference for using the keyboard because keyboard-based commands can be entered more quickly and don't require them to remove their hands from the keyboard. For these users, efficiency and consistency are crucial; comprehensiveness is important only for the most frequently used commands.
+
+## Specify a keyboard accelerator
+
+Use the [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator#Windows_UI_Xaml_Input_KeyboardAccelerator__ctor) APIs to create keyboard accelerators in UWP apps. With these APIs, you don't have to handle multiple KeyDown events to detect the key combination pressed, and you can localize accelerators in the app resources.
+
+We recommend that you set keyboard accelerators for the most common actions in your app and document them using the menu item label or tooltip. In this example, we declare keyboard accelerators only for the Rename and Copy commands.
+
+``` xaml
+<CommandBar Margin="0,200" AccessKey="M">
+  <AppBarButton 
+    Icon="Share" 
+    Label="Share" 
+    Click="OnShare" 
+    AccessKey="S" />
+  <AppBarButton 
+    Icon="Copy" 
+    Label="Copy" 
+    ToolTipService.ToolTip="Copy (Ctrl+C)" 
+    Click="OnCopy" 
+    AccessKey="C">
+    <AppBarButton.KeyboardAccelerators>
+      <KeyboardAccelerator 
+        Modifiers="Control" 
+        Key="C" />
+    </AppBarButton.KeyboardAccelerators>
+  </AppBarButton>
+
+  <AppBarButton 
+    Icon="Delete" 
+    Label="Delete" 
+    Click="OnDelete" 
+    AccessKey="D" />
+  <AppBarSeparator/>
+  <AppBarButton 
+    Icon="Rename" 
+    Label="Rename" 
+    ToolTipService.ToolTip="Rename (F2)" 
+    Click="OnRename" 
+    AccessKey="R">
+    <AppBarButton.KeyboardAccelerators>
+      <KeyboardAccelerator 
+        Modifiers="None" Key="F2" />
+    </AppBarButton.KeyboardAccelerators>
+  </AppBarButton>
+
+  <AppBarButton 
+    Icon="SelectAll" 
+    Label="Select" 
+    Click="OnSelect" 
+    AccessKey="A" />
+  
+  <CommandBar.SecondaryCommands>
+    <AppBarButton 
+      Icon="OpenWith" 
+      Label="Sources" 
+      AccessKey="S">
+      <AppBarButton.Flyout>
+        <MenuFlyout>
+          <ToggleMenuFlyoutItem Text="OneDrive" />
+          <ToggleMenuFlyoutItem Text="Contacts" />
+          <ToggleMenuFlyoutItem Text="Photos"/>
+          <ToggleMenuFlyoutItem Text="Videos"/>
+        </MenuFlyout>
+      </AppBarButton.Flyout>
+    </AppBarButton>
+    <AppBarToggleButton 
+      Icon="Save" 
+      Label="Auto Save" 
+      IsChecked="True" 
+      AccessKey="A"/>
+  </CommandBar.SecondaryCommands>
+
+</CommandBar>
+```
+
+![Keyboard accelerator described in a tooltip](images/accelerators/accelerators_tooltip.png)  
+***Keyboard accelerator described in a tooltip***
+
+The [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) object has a [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) collection, [KeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_KeyboardAccelerators), where you specify your custom KeyboardAccelerator objects and define the keystrokes for the keyboard accelerator:
+
+-   **[Key](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator#Windows_UI_Xaml_Input_KeyboardAccelerator_Key)** - the [VirtualKey](https://docs.microsoft.com/uwp/api/windows.system.virtualkey) used for the keyboard accelerator.
+
+-   **[Modifiers](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator#Windows_UI_Xaml_Input_KeyboardAccelerator_Modifiers)** – the [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/windows.system.virtualkeymodifiers) used for the keyboard accelerator. If Modifiers is not set, the default value is None.
+
+> [!NOTE]
+> Single key (A, Delete, F2, Spacebar, Esc, Multimedia Key) accelerators and multi-key accelerators (Ctrl+Shift+M) are supported. However, Gamepad virtual keys are not supported.
+
+## Scoped accelerators
+
+Some accelerators work only in specific scopes while others work app-wide.
+
+For example, Microsoft Outlook includes the following accelerators:
+-   Ctrl+B, Ctrl+I and ESC work only on the scope of the send email form
+-   Ctrl+1 and Ctrl+2 work app-wide
+
+### Context menus
+
+Context menu actions affect only specific areas or elements, such as the selected characters in a text editor or a song in a playlist. For this reason, we recommend setting the scope of keyboard accelerators for context menu items to the parent of the context menu.
+
+Use the [ScopeOwner](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator#Windows_UI_Xaml_Input_KeyboardAccelerator_ScopeOwner) property to specify the scope of the keyboard accelerator. This code demonstrates how to implement a context menu on a ListView with scoped keyboard accelerators:
+
+``` xaml
+<ListView x:Name="MyList">
+  <ListView.ContextFlyout>
+    <MenuFlyout>
+      <MenuFlyoutItem Text="Share" Icon="Share"/>
+      <MenuFlyoutItem Text="Copy (Ctrl+C)" Icon="Copy">
+        <MenuFlyoutItem.KeyboardAccelerators>
+          <KeyboardAccelerator 
+            Modifiers="Control" 
+            Key="C" 
+            ScopeOwner="{x:Bind MyList }" />
+        </MenuFlyoutItem.KeyboardAccelerators>
+      </MenuFlyoutItem>
+      
+      <MenuFlyoutItem Text="Delete" Icon="Delete" />
+      <MenuFlyoutSeparator />
+      
+      <MenuFlyoutItem Text="Rename (F2)">
+        <MenuFlyoutItem.KeyboardAccelerators>
+          <KeyboardAccelerator 
+            Modifiers="None" 
+            Key="F2" 
+            ScopeOwner="{x:Bind MyList}" />
+        </MenuFlyoutItem.KeyboardAccelerators>
+      </MenuFlyoutItem>
+      
+      <MenuFlyoutItem Text="Select" />
+    </MenuFlyout>
+    
+  </ListView.ContextFlyout>
+    
+  <ListViewItem>Track 1</ListViewItem>
+  <ListViewItem>Alternative Track 1</ListViewItem>
+
+</ListView>
+```
+
+The ScopeOwner attribute of the MenuFlyoutItem.KeyboardAccelerators element marks the accelerator as scoped instead of global (the default is null, or global). For more detail, see the **Resolving accelerators** section later in this topic.
+
+Use the Text property of the MenuFlyoutItem to indicate the key combination to users.
+
+![Keyboard accelerators described in a menu item label](images\accelerators\accelerators_menuitemlabel2.png)  
+***Keyboard accelerators described in a menu item label***
+
+## Invoke a keyboard accelerator 
+
+The [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) object uses the [UI Automation (UIA) control pattern](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx) to take action when an accelerator is invoked.
+
+The UIA [control patterns] expose common control functionality. For example, the Button control implements the [Invoke](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx) control pattern to support the Click event (typically a control is invoked by clicking, double-clicking, or pressing Enter, a predefined keyboard shortcut, or some alternate combination of keystrokes). When a keyboard accelerator is used to invoke a control, the XAML framework looks up whether the control implements the Invoke control pattern and, if so, activates it (it is not necessary to listen for the KeyboardAcceleratorInvoked event).
+
+In the following example, Control+S triggers the Click event because the button implements the Invoke pattern.
+
+``` xaml 
+<Button Content="Save" Click="OnSave">
+  <Button.KeyboardAccelerators>
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
+  </Button.KeyboardAccelerators>
+</Button>
+```
+
+If an element implements multiple control patterns, only one can be activated through an accelerator. The control patterns are prioritized as follows:
+1.  Invoke (Button)
+2.  Toggle (Checkbox)
+3.  Selection (ListView)
+4.  Expand/Collapse (ComboBox) 
+
+If no match is identified, the accelerator is invalid and a debug message is provided ("No automation patterns for this component found. Implement all desired behavior in the Invoked event. Setting Handled to true in your event handler suppresses this message.")
+
+## Custom keyboard accelerator behavior
+
+The Invoked event of the [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) object is fired when the accelerator is executed. The [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) event object includes the following properties:
+- **Handled** (Boolean): Setting this to true prevents the event triggering the control pattern and stops accelerator event bubbling. The default is false.
+- **Element** (DependencyObject): The object that contains the accelerator.
+
+Here we demonstrate how to define a collection of keyboard accelerators and how to handle the Invoked event.
+
+``` xaml
+<ListView x:Name="MyListView">
+  <ListView.KeyboardAccelerators>
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+  </ListView.KeyboardAccelerators>
+</ListView>   
+```
+
+``` csharp
+void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+{
+  CustomSelectAll(MyListView);
+  args.Handled = true;
+}
+
+void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+{
+  Refresh(MyListView);
+  args.Handled = true;
+}
+```
+
+## Disable a keyboard accelerator 
+
+If a control is disabled, the associated accelerator is also disabled. In the following example, because the IsEnabled property of the ListView is set to false, the associated Control+A accelerator can't be invoked.
+
+``` xaml
+<ListView >
+  <ListView.KeyboardAccelerators>
+    <KeyboardAccelerator Key="A" 
+      Modifiers="Control"
+      Invoked="CustomListViewSelecAllInvoked" />
+  </ListView.KeyboardAccelerators>
+  
+  <TextBox>
+    <TextBox.KeyboardAccelerators>
+      <KeyboardAccelerator 
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
+    </TextBox.KeyboardAccelerators>
+  </TextBox>
+
+<ListView>
+```
+
+Parent and child controls can share the same accelerator. In this case, the parent control can be invoked even if the child has focus and its accelerator is disabled.
+
+## Screen readers and keyboard accelerators 
+
+Screen readers such as Narrator can announce the keyboard accelerator key combination to users. By default, this is each modifier (in the VirtualModifiers enum order) followed by the key (and separated by "+" signs). You can customize this through the [AcceleratorKey](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties#Windows_UI_Xaml_Automation_AutomationProperties_AcceleratorKeyProperty) AutomationProperties attached property. If more than one accelerator is specified, only the first is announced.
+
+In this example, the AutomationProperty.AcceleratorKey returns the string "Control+Shift+A":
+
+``` xaml
+<ListView x:Name="MyListView">
+  <ListView.KeyboardAccelerators>
+
+    <KeyboardAccelerator 
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
+      
+    <KeyboardAccelerator 
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
+
+  </ListView.KeyboardAccelerators>
+
+</ListView>   
+```
+
+> [!NOTE] 
+> Setting AutomationProperties.AcceleratorKey doesn't enable keyboard functionality, it only indicates to the UIA framework which keys are used.
+
+## Frequent Keyboard Accelerators
+
+We recommend that you make keyboard accelerators consistent across UWP applications. Users have to memorize keyboard accelerators and expect the same (or similar) results.
+
+This might not always be possible due to differences in functionality across apps.
+
+| **Editing** | **Frequent Keyboard Accelerator** |
+| ------------- | ----------------------------------- |
+| Begin editing mode | Ctrl + E |
+| Select all items in a focused control or window | Ctrl + A |
+| Search and replace | Ctrl + H |
+| Undo | Ctrl + Z |
+| Redo | Ctrl + Y |
+| Delete selection and copy it to the clipboard | Ctrl + X |
+| Copy selection to the clipboard | Ctrl + C, Ctrl + Insert |
+| Paste the contents of the clipboard | Ctrl + V, Shift + Insert |
+| Paste the contents of the clipboard (with options) | Ctrl + Alt + V |
+| Rename an item | F2 |
+| Add a new item | Ctrl + N |
+| Add a new secondary item | Ctrl + Shift + N |
+| Delete selected item (with undo) | Del, Ctrl+D |
+| Delete selected item (without undo) | Shift + Del |
+| Bold | Ctrl + B |
+| Underline | Ctrl + U |
+| Italic | Ctrl + I |
+
+| **Navigation** | |
+| ------------- | ----------------------------------- |
+| Find content in a focused control or Window | Ctrl + F |
+| Go to the next search result | F3 |
+
+| **Other Actions** | |
+| ------------- | ----------------------------------- |
+| Add favorites | Ctrl + D | 
+| Refresh | F5 or Ctrl + R | 
+| Zoom In | Ctrl + + | 
+| Zoom out | Ctrl + - | 
+| Zoom to default view | Ctrl + 0 | 
+| Save | Ctrl + S | 
+| Close | Ctrl + W | 
+| Print | Ctrl + P | 
+
+Notice that some of the combinations are not valid for localized versions of Windows. For example, in the Spanish version of Windows, Ctrl+N is used for bold instead of Ctrl+B. We recommend providing localized keyboard accelerators if the app is localized.
+
+## Advanced Concepts
+
+Here, we review some low-level aspects of keyboard accelerators.
+
+### When an accelerator is invoked
+
+Accelerators are composed of two types of keys: modifiers and non-modifiers. Modifier keys include Shift, Menu, Control, and the Windows key, which are exposed through [VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers). Non-modifiers are any virtual key, such as Delete, F3, Spacebar, Esc, and all alphanumeric and punctuation keys. A keyboard accelerator is invoked when the user presses a non-modifier key while they press and hold one or more modifier keys. For example, if the user presses Ctrl+Shift+M, when the user presses M, the framework checks the modifiers (Ctrl and Shift) and fires the accelerator, if it exists.
+
+> [!NOTE]
+> By design, the accelerator autorepeats (for example, when the user presses Ctrl+Shift and then holds down M, the accelerator is invoked repeatedly until M is released). This behavior cannot be modified.
+
+### Input event priority
+Input events occur in a specific sequence that you can intercept and handle based on the requirements of your app. 
+
+#### The KeyDown/KeyUp bubbling event 
+
+In XAML, a keystroke is processed as if there is just one input bubbling pipeline. This input pipeline is used by the KeyDown/KeyUp events and character input. For example, if an element has focus and the user presses a key down, a KeyDown event is raised on the element, followed by the parent of the element, and so on up the tree, until the args.Handled property is true.
+
+The KeyDown event is also used by some controls to implement the built-in control accelerators. When a control has a keyboard accelerator, it handles the KeyDown event, which means that there won't be KeyDown event bubbling. For example, the RichEditBox supports copy with Ctrl+C. When Ctrl is pressed, the KeyDown event is fired and bubbles, but when the user presses C at the same time, the KeyDown event is marked Handled and is not raised (unless the handledEventsToo parameter of [UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) is set to true).
+
+#### The CharacterReceived event
+
+As the [CharacterReceived](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_CharacterReceived) event is fired after the [KeyDown](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_KeyDown) event for text controls such as TextBox, you can cancel character input in the KeyDown event handler.
+
+#### The PreviewKeyDown and PreviewKeyUp events
+
+The preview input events are fired before any other events. If you don't handle these events, the accelerator for the element that has the focus is fired, followed by the KeyDown event. Both events bubble until handled.
+
+
+![Key event sequence](images/accelerators/accelerators_keyevents.png)
+***Key event sequence***
+
+Order of events:
+
+Preview KeyDown events
+…
+App accelerator
+OnKeyDown method
+KeyDown event
+App accelerators on the parent
+OnKeyDown method on the parent
+KeyDown event on the parent
+(Bubbles to the root)
+…
+CharacterReceived event
+PreviewKeyUp events
+KeyUpEvents
+
+When the accelerator event is handled, the KeyDown event is also marked as handled. The KeyUp event remains unhandled.
+
+### Resolving accelerators
+
+A keyboard accelerator event bubbles from the element that has focus up to the root. If the event isn't handled, the XAML framework looks for other unscoped app accelerators outside of the bubbling path.
+
+When two keyboard accelerators are defined with the same key combination, the first keyboard accelerator found on the visual tree is invoked.
+
+Scoped keyboard accelerators are invoked only when focus is inside a specific scope. For example, in a Grid that contains dozens of controls, a keyboard accelerator can be invoked for a control only when focus is within the Grid (the scope owner).
+
+### Scoping accelerators programmatically
+
+The [UIElement.TryInvokeKeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TryInvokeKeyboardAccelerator_Windows_UI_Xaml_Input_ProcessKeyboardAcceleratorEventArgs_) method invokes any matching accelerators in the subtree of the element.
+
+The [UIElement.OnProcessKeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_OnProcessKeyboardAccelerators_Windows_UI_Xaml_Input_ProcessKeyboardAcceleratorEventArgs_) method is executed before the keyboard accelerator. This method passes a [ProcessKeyboardAcceleratorArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) object that contains the key, the modifier, and a Boolean indicating whether the keyboard accelerator is handled. If marked as handled, the keyboard accelerator bubbles (so the outside keyboard accelerator is never invoked).
+
+> [!NOTE]
+> OnProcessKeyboardAccelerators always fires, whether handled or not (similar to the OnKeyDown event). You must check whether the event was marked as handled.
+
+In this example, we use OnProcessKeyboardAccelerators and TryInvokeKeyboardAccelerator to scope keyboard accelerators to the Page object:
+
+``` csharp
+protected override void OnProcessKeyboardAccelerators(
+  ProcessKeyboardAcceleratorArgs args)
+{
+  if(args.Handled != true)
+  {
+    this.TryInvokeKeyboardAccelerator(args);
+    args.Handled = true;
+  }
+}
+```
+
+### Localize the accelerators
+
+We recommend localizing all keyboard accelerators. You can do this with the standard UWP resources (.resw) file and the x:Uid attribute in your XAML declarations. In this example, the Windows Runtime automatically loads the resources.
+
+![Keyboard accelerator localization with UWP resources file](images/accelerators/accelerators_localization.png)
+***Keyboard accelerator localization with UWP resources file***
+
+``` xaml
+<Button x:Uid="myButton" Click="OnSave">
+  <Button.KeyboardAccelerators>
+    <KeyboardAccelerator x:Uid="myKeyAccelerator" Modifiers="Control"/>
+  </Button.KeyAccelerators>
+</Button>
+```
+
+### Setup an accelerator programmatically
+
+Here is an example of programmatically defining an accelerator:
+
+``` csharp
+void AddAccelerator(
+  VirtualKeyModifiers keyModifiers, 
+  VirtualKey key, 
+  TypedEventHandler<KeyboardAccelerator, KeyboardAcceleratorInvokedEventArgs> handler )
+  {
+    var accelerator = 
+      new KeyboardAccelerator() 
+      { 
+        Modifiers = keyModifiers, Key = key
+      };
+    accelerator.Invoked = handler;
+    this.KeyAccelerators.Add(accelerator);
+  }
+```
+
+> [!NOTE]
+> KeyboardAccelerator is not shareable, the same KeyboardAccelerator can't be added to multiple elements.

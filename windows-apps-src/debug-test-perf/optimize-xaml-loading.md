@@ -147,7 +147,7 @@ If you reuse the same vector-based element enough times, it becomes more efficie
 
 ## Optimize resources and resource dictionaries
 
-You typically use [resource dictionaries](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) to store, at a somewhat global level, resources that you want to reference in multiple places in your app. For example, styles, brushes, templates, and so on.
+You typically use [resource dictionaries](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) to store, at a somewhat global level, resources that you want to reference in multiple places in your app. For example, styles, brushes, templates, and so on.
 
 In general, we have optimized [ResourceDictionary](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) to not instantiate resources unless they're asked for. But there are situations you should avoid so that resources aren’t instantiated unnecessarily.
 
