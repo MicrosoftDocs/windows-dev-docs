@@ -19,10 +19,10 @@
                 items:
                     - name: Design basics
                       tocHref: /windows/uwp/design/basics/
-                      topicHref: "/windows/uwp/basics/design-and-ui-intro"    
+                      topicHref: "/windows/uwp/design/basics/design-and-ui-intro"    
                     - name: Design basics
                       tocHref: /windows/uwp/design/fluent-design-system/
-                      topicHref: "/windows/uwp/basics/design-and-ui-intro"                                     
+                      topicHref: "/windows/uwp/design/basics/design-and-ui-intro"                                     
                     - name: Layout
                       tocHref: /windows/uwp/design/layout/
                       topicHref: "/windows/uwp/design/layout/index" 
