@@ -14,7 +14,7 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 # Web view
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
 

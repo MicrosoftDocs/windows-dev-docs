@@ -3,7 +3,7 @@ author: laurenhughes
 description: This article explains how to use the LowLightFusion class to process bitmaps.
 title: Process bitmaps with the Low Light Fusion API
 ms.author: lahugh
-ms.date: 11/02/2017
+ms.date: 11/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -49,14 +49,14 @@ Finally, we'll clean up the resulting SoftwareBitmap by encoding and saving it i
 
 ## Before and after
 
-Here's an example of two input images and the resulting output image after applying the Low Light Fusion algorithm.
+Here's an example of an input image and the resulting output image after applying the Low Light Fusion algorithm.
 
 > [!div class="mx-tableFixed"] 
-| Frame 1 | Frame 2 | Low Light Fusion Output | 
-|---------|---------|-------------------------|
-| ![First input frame to the Low Light Fusion algorithm](./images/LLF-Input1.png) | ![Second input frame to the Low Light Fusion algorithm](./images/LLF-Input2.png) | ![Result frame of the Low Light Fusion algorithm](./images/LLF-Output.png) |
+| Input Frame | Low Light Fusion Output | 
+|-------------|-------------------------|
+| ![Input frame to the Low Light Fusion algorithm](./images/LLF-Input.png) | ![Result frame of the Low Light Fusion algorithm](./images/LLF-Output.png) |
 
-You can see from the input frames and the output frame that the lighting and clarity of the cup has been improved, as well as the clarity of the surroundings, such as the molding next to the carpet.
+You can see from the input frame that the lighting and the clarity of the shadows surrounding the banner have been improved.
 
 ## Related topics 
 [LowLightFusion Class](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion)  

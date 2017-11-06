@@ -17,7 +17,7 @@ localizationpriority: medium
 
 # Navigation design basics for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 If you think of an app as a collection of pages, the term *navigation* describes the act of moving between pages and within the page. It's the starting point of the user experience. It's how users find the content and features they're interested in. It's very important, and it can be difficult to get right. 
 

@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Mouse interactions
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Optimize your Universal Windows Platform (UWP) app design for touch input and get basic mouse support by default.
 

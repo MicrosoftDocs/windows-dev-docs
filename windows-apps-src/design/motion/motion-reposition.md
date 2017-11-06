@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Reposition animations
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Use the reposition animation to move an element or elements into a new position.
 

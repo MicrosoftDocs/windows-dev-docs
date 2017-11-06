@@ -17,7 +17,7 @@ localizationpriority: medium
 
 #  Content design basics for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 The main purpose of any app is to provide access to content: in a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on. Navigation elements provide access to content; command elements enable the user to interact with content; content elements display the actual content.
 

@@ -14,7 +14,7 @@ localizationpriority: medium
 ---
 
 # Pin secondary tiles
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 This topic walks you through the steps to create a secondary tile for your UWP app and pin it to the Start menu.
 

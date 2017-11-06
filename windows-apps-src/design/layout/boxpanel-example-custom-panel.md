@@ -20,7 +20,7 @@ localizationpriority: medium
 
 # BoxPanel, an example custom panel
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Learn to write code for a custom [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class, implementing [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) and [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) methods, and using the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property. 
 

@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Pen interactions and Windows Ink in UWP apps
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 <!--
 ![touchpad](images/input-patterns/input-pen.jpg)

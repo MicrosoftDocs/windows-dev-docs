@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Toast content schema
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 The following describes all of the properties and elements within toast content.
 

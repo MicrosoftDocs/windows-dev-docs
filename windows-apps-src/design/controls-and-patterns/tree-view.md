@@ -7,7 +7,7 @@ template: detail.hbs
 localizationpriority: medium
 ---
 # Hierarchical layout with TreeView
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 A TreeView is a hierarchical list pattern with expanding and collapsing nodes that contain nested items. Nested items can be additional nodes or regular list items. You can use a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) to build a tree view to illustrate a folder structure or nested relationships in your UI.
 

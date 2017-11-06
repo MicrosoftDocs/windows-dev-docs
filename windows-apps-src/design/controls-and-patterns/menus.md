@@ -19,7 +19,7 @@ localizationpriority: medium
 ---
 # Menus and context menus
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Menus and context menus display a list of commands or options when the user requests them.
 

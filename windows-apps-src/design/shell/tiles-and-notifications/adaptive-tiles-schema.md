@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 # Adaptive tile templates: schema and guidance
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](create-adaptive-tiles.md).
 

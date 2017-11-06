@@ -19,7 +19,7 @@ localizationpriority: medium
 ---
 # Contextual commanding for collections and lists
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.  
 

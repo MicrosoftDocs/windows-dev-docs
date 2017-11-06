@@ -17,7 +17,7 @@ localizationpriority: medium
 ---
 
 # Use input scope to change the touch keyboard
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
 

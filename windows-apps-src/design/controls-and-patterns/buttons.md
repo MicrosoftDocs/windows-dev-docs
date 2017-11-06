@@ -18,7 +18,7 @@ doc-status: Published
 localizationpriority: medium
 ---
 # Buttons
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 A button gives the user a way to trigger an immediate action.
 

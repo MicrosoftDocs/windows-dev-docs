@@ -15,7 +15,7 @@ localizationpriority: medium
 
 # Title bar customization
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 When your app is running in a desktop window, you can customize the title bars to match the personality of your app. The title bar customization APIs let you specify colors for title bar elements, or extend your app content into the title bar area and take full control of it.
 

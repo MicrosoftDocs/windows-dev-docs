@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Interaction primer
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 ![windows input types](images/input-interactions/icons-inputdevices03.png)
 

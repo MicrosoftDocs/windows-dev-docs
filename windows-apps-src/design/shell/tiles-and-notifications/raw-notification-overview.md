@@ -12,7 +12,7 @@ ms.technology: uwp
 keywords: windows 10, uwp
 localizationpriority: medium
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 # Raw notification overview
 
 

@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 # Badge notifications for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 <div style="float:left; font-size:80%; text-align:left; margin: 0px 15px 15px 0px;">
 <img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>A tile with a numeric badge displaying<br/> the number 63 to indicate 63 unread mails.</div>

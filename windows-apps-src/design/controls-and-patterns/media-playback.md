@@ -16,7 +16,7 @@ localizationpriority: medium
 ---
 # Media player
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 The media player is used to view and listen to video and audio. Media playback can be inline (embedded in a page or with a group of other controls) or in a dedicated full-screen view. You can modify the player's button set, change the background of the control bar, and arrange layouts as you see fit. Just keep in mind that users expect a basic control set (play/pause, skip back, skip forward).
 

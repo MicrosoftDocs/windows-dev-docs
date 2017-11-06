@@ -14,7 +14,7 @@ localizationpriority: medium
 ---
 
 # App resources and the Resource Management System
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 This section shows you how to author, package, and consume your app's string, image, and file resources. For example, you might package a file along with your casual game containing a definition of the game's levels, and load the file at run-time. We also show you how maintaining your resources independently of the app's logic makes it easy to localize and customize your app for different locales, device displays, accessibility settings, and other user and machine contexts. Resources such as strings and images typically need to exist in multiple language, scale, and contrast variants. For resources such as that, you have the support of the [Resource Management System](resource-management-system.md).
 

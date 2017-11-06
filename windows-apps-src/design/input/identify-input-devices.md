@@ -15,7 +15,7 @@ localizationpriority: medium
 ---
 
 # Identify input devices
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
 

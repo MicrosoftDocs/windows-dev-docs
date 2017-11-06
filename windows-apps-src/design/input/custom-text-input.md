@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Custom text input
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 The core text APIs in the [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](https://msdn.microsoft.com/library/windows/desktop/ms629032) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
 

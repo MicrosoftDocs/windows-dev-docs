@@ -16,7 +16,7 @@ localizationpriority: medium
 
 # Continuous dictation
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Learn how to capture and recognize long-form, continuous dictation speech input.
 

@@ -13,7 +13,7 @@ keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile ap
 localizationpriority: medium
 ---
 # Primary tile APIs
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 Primary tile APIs let you check whether your app is currently pinned to Start, and request to pin your app's primary tile.
 

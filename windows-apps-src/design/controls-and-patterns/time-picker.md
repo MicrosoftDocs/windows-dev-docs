@@ -18,7 +18,7 @@ doc-status: Published
 localizationpriority: medium
 ---
 # Time picker
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+ 
 
 The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input. 
 

@@ -17,7 +17,7 @@ localizationpriority: medium
 
 #  Screen sizes and break points for responsive design
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key width categories (also called "breakpoints"): small (640px and smaller), medium (641px to 1007px), and large (1008px and larger).
 

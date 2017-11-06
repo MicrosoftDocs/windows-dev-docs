@@ -17,7 +17,7 @@ localizationpriority: medium
 # Drag animations
 
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
 

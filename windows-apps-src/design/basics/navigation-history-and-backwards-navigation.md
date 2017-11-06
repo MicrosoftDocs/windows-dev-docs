@@ -18,7 +18,7 @@ localizationpriority: medium
 
 #  Navigation history and backwards navigation for UWP apps
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 On the Web, individual web sites provide their own navigation systems, such as tables of contents, buttons, menus, simple lists of links, and so on. The navigation experience can vary wildly from website to website. However, there is one consistent navigation experience: back. Most browsers provide a back button that behaves the same way regardless of the website.
 
