@@ -32,7 +32,7 @@ This section includes setup steps, a guide through the authentication process, i
 |[FAQ](frequently-asked-questions.md)| Frequently asked questions related to UWP on Xbox One. |
 |[Tools](introduction-to-xbox-tools.md)| Describes the Xbox One-specific tool _Dev Home_, how to use the Windows Device Portal, and how to set up Visual Studio for development. This section also guides a new developer through their first Xbox UWP application and explains how to use the Fiddler tool to view network traffic. |
 | [App Dev on Xbox event](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event) | The App Dev on Xbox event is a great starting point for developers new to building apps on Xbox. Watch the recorded sessions and read the blog posts from the event. |
-|[Designing for Xbox and TV](..\input-and-devices\designing-for-tv.md)| Describes best practices for designing an app that will be viewed on a TV and will use a controller for input. |
+|[Designing for Xbox and TV](../design/devices/designing-for-tv.md)| Describes best practices for designing an app that will be viewed on a TV and will use a controller for input. |
 |[Xbox best practices](tailoring-for-xbox.md)| How to turn off mouse mode, draw to the edges of the screen, and disable scaling. |
 |[System resources for UWP apps and games on Xbox One](system-resource-allocation.md)| Describes the resources available to your application when it is running on Xbox One. |
 |[Introduction to multi-user applications](multi-user-applications.md)| Describes multi-user applications (MUAs) on Xbox One. |

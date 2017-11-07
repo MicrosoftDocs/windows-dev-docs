@@ -55,20 +55,23 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                     <div class="cardText">
                         <h3>Design and UI</h3>
                         <p>
-                            <a href="layout/index.md">Layout</a>
+                            <a href="design/layout/index.md">Layout</a>
                         </p>
                         <p>
-                            <a href="style/index.md">Style</a>
+                            <a href="design/style/index.md">Style</a>
                         </p>
                         <p>
-                            <a href="controls-and-patterns/index.md">Controls and patterns</a>
+                            <a href="design/controls-and-patterns/index.md">Controls and patterns</a>
                         </p>
                         <p>
-                            <a href="design-downloads/index.md">Design toolkits</a>
+                            <a href="design/downloads/index.md">Design toolkits</a>
                         </p>
                         <p>
-                            <a href="input-and-devices/index.md">Input and devices</a>
+                            <a href="design/input/index.md">Input</a>
                         </p>
+                        <p>
+                            <a href="design/devices/index.md">Devices</a>
+                        </p>                        
                     </div>
                 </div>
             </div>

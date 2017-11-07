@@ -14,7 +14,7 @@ localizationpriority: medium
 ---
 
 # App resources and the Resource Management System
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 This section shows you how to author, package, and consume your app's string, image, and file resources. For example, you might package a file along with your casual game containing a definition of the game's levels, and load the file at run-time. We also show you how maintaining your resources independently of the app's logic makes it easy to localize and customize your app for different locales, device displays, accessibility settings, and other user and machine contexts. Resources such as strings and images typically need to exist in multiple language, scale, and contrast variants. For resources such as that, you have the support of the [Resource Management System](resource-management-system.md).
 
@@ -22,7 +22,7 @@ There are two types of app resource.
 - A file resource is a resource stored as a file on disk. A file resource can contain a bitmap image, XAML, XML, HTML, or any other kind of data.
 - An embedded resource is a resource that is embedded within some containing resource file. The most common example is a string resource embedded within a Resources File (.resw or .resjson).
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
 
 | Article | Description |
 |---------|-------------|

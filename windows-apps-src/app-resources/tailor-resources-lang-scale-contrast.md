@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 # Tailor your resources for language, scale, high contrast, and other qualifiers
 
 This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) for a reference table of all the possible qualifier values.
 
-Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources’ folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
+Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources’ folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](../globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
 
 ## Qualifier name, qualifier value, and qualifier
 
@@ -225,11 +225,11 @@ See [Localize your UI strings](localize-strings-ui-manifest.md) for more informa
 
 ## LayoutDirection
 
-A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
+A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see [Adjust layout and fonts, and support RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
 
 ## Scale
 
-Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
+Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale), or the next-largest-scaled resource.
 
 Here’s an example of setting the qualifier at the folder level.
 
@@ -267,7 +267,7 @@ The `theme` qualifier is used to provide resources that best match the default a
 
 ## Related topics
 
-* [Effective pixels and scale factor](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 * [Resource Management System](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)
 * [How to prepare for localization](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
@@ -276,4 +276,4 @@ The `theme` qualifier is used to provide resources that best match the default a
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [United Nations Statistic Division M49 composition of region codes](http://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA language subtag registry](http://go.microsoft.com/fwlink/p/?linkid=227303)
-* [Adjust layout and fonts, and support RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)
+* [Adjust layout and fonts, and support RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

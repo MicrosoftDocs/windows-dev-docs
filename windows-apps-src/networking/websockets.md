@@ -24,12 +24,12 @@ WebSockets provide a mechanism for fast, secure two-way communication between a 
 
 Under the [WebSocket Protocol](http://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (game statistics ) need to be secure and use fast data transfer. Universal Windows Platform (UWP) developers can use the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) classes to connect with servers that support the Websocket protocol.
 
-| MessageWebSocket                                                         | StreamWebSocket                                                                               |
+| MessageWebSocket | StreamWebSocket |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Suitable for typical scenarios where messages are not extremely large.   | Suitable for scenarios in which large files (such as photos or videos) are being transferred. |
-| Enables notification that an entire WebSocket message has been received. | Allows sections of a message to be read with each read operation.                             |
-| Supports both UTF-8 and binary messages.                                 | Supports only binary messages.                                                                |
-| Similar to a UDP or datagram socket.                                     | Similar to a TCP or stream socket.                                                            |
+| Suitable for typical scenarios where messages are not extremely large. | Suitable for scenarios in which large files (such as photos or videos) are being transferred. |
+| Enables notification that an entire WebSocket message has been received. | Allows sections of a message to be read with each read operation. |
+| Supports both UTF-8 and binary messages. | Supports only binary messages. |
+| Similar to a UDP or datagram socket (in the sense that it's intended for frequent, small messages), but with TCP's reliability, packet order guarantees, and congestion control. | Similar to a TCP or stream socket. |
 
 In most cases you'll want to use a secure WebSocket connection to encrypt data sent and received. This will also increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections. The WebSocket protocol defines the following two URI schemes.
 
