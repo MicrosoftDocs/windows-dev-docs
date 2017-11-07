@@ -223,6 +223,7 @@ The following function sends the given string to a connected WebSocket, and prin
 >    DataWriter messageWriter = new DataWriter(webSock.OutputStream);
 >    messageWriter.WriteString(message);
 >    await messageWriter.StoreAsync();
+>    messageWriter.DetachStream();
 >}
 >```
 
