@@ -98,8 +98,8 @@ If the communication is successful, process the response string returned by the 
 Sample C# code that for this process is below. For information and a detailed walkthrough, see [WebAuthenticationBroker](web-authentication-broker.md). For a complete code sample, check out the [WebAuthenticationBroker sample on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
 ```cs
-string startURL = "https://<providerendpoint>?client_id=<clientid>;
-string endURL = "http://<appendpoint>";
+string startURL = "https://<providerendpoint>?client_id=<clientid>";
+string endURL = "http://<AppEndPoint>";
 
 var startURI = new System.Uri(startURL);
 var endURI = new System.Uri(endURL);
