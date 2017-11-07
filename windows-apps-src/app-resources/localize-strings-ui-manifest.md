@@ -122,7 +122,7 @@ If you like, you can repeat steps 1 and 2 for a further language.
 
 ## Test your app
 
-Test the app for your default display language. You can then change the display language in **Settings** > **Time & language** > **Region & language** (or **Language**) and re-test your app. Look at strings in your UI and also in the shell (for example, your title bar&mdash;which is your Display name&mdash;and the Short name on your tiles).
+Test the app for your default display language. You can then change the display language in **Settings** > **Time & Language** > **Region & language** > **Languages** and re-test your app. Look at strings in your UI and also in the shell (for example, your title bar&mdash;which is your Display name&mdash;and the Short name on your tiles).
 
 **Note** If a folder name can be found that matches the display language setting, then the Resources File inside that folder is loaded. Otherwise, fallback takes place, ending with the resources for your app's default language.
 
