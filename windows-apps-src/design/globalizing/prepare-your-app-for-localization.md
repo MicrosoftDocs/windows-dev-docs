@@ -1,12 +1,10 @@
----
 author: stevewhims
-Description: Prepare your app for localization to other markets, languages, or regions.
-title: Prepare your app for localization
+Description: A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources.
+title: Make your app localizable
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
-label: Prepare your app for localization
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/08/2017
+ms.date: 11/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,37 +12,25 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 
+# Make your app localizable
 
-# Prepare your app for localization
+A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources.
 
-Prepare your app for localization to other markets, languages, or regions. Before you get started, be sure to read through the [do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md).
+We recommend that you become familiar with the [guidelines for globalization and localizability](guidelines-and-checklist-for-globalizing-your-app.md).
 
-## Use resource files and qualifiers
+## Put your strings into Resources Files (.resw)
 
-For more info, see [App resources and the Resource Management System](../../app-resources/index.md).
+Don't hardcode string literals in your imperative code, XAML markup, nor in your app package manifest. Instead, put your strings into Resources Files (.resw). For details, see [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md).
 
-Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](../../app-resources/localize-strings-ui-manifest.md).
+## Tailor your images and other file resources for language
 
-Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md).
+For any images and other file resources that you can't globalize, create as many different variants of them as you need and put the appropriate language qualifiers into their file or folder names. To learn more, see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md).
 
-## Add contextual comments
-
-Add localization comments to your app resource files. The comments are visible to the localizer, and should provide contextual information that helps the localizer to accurately translate the resources. The comments should also provide sufficient constraint information on the resource, so that translation does not break the software. Optionally, the comments can be logged by the Makepri.exe tool.
-
-**XAML** Resw files (resources created in Visual Studio for apps using XAML) have a comment element. For example:
-
-```XML
-<data name="String1">
-    <value>Hello World</value>
-    <comment>A greeting (This is a comment to the localizer)</comment>
-</data>
-```
-
-## Localize sentences instead of words
+## Consider factoring your strings into sentences
 
 Consider the following string: "The {0} could not be synchronized."
 
-A variety of words could replace {0}, such as appointment, task, or document. While this example would appear to work for the English language, it will not work in all cases for the corresponding sentence in German. Notice that in the following German sentences, some of the words in the template string ("Der", "Die", "Das") need to match the parameterized word:
+A variety of words could replace {0}, such as "appointment", "task", or "document". While this example works for the English language, it will not work in all cases for the corresponding sentence in, for example, German. Notice that in the following German sentences, some of the words in the template string ("Der", "Die", "Das") need to match the parameterized word:
 
 | English                                    | German                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -52,12 +38,12 @@ A variety of words could replace {0}, such as appointment, task, or document. Wh
 | The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
-As another example, consider the sentence "Remind me in {0} minute(s)." While using "minute(s)" works for the English language, other languages might use different terms. For example, the Polish language uses "minuta", "minuty", or "minut" depending on the context.
+As another example, consider the sentence "Remind me in {0} minute(s)." Using "minute(s)" works for the English language, but other languages might use different terms. For example, the Polish language uses "minuta", "minuty", or "minut" depending on the context.
 
 To solve this problem, localize the entire sentence, rather than a single word. Doing this may seem like extra work and an inelegant solution, but it is the best solution because:
 
--   A clean error message will be displayed for all languages.
--   Your localizer will not need to ask about what the strings will be replaced with.
+-   A grammatically correct message will be displayed for all languages.
+-   Your translator will not need to ask about what the strings will be replaced with.
 -   You will not need to implement a costly code fix when a problem like this surfaces after your app is completed.
 
 ## Ensure the correct parameter order
@@ -150,6 +136,6 @@ Sorting follows the **Regional Control Panel** format:
 
 ## Related topics
 
-* [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Put UI strings into resources](../../app-resources/localize-strings-ui-manifest.md)
-* [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Guidelines for globalization and localizability](guidelines-and-checklist-for-globalizing-your-app.md)
+* [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md)
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
