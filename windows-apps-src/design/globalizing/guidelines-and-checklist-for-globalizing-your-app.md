@@ -14,7 +14,6 @@ keywords: windows 10, uwp, globalization, localization
 localizationpriority: medium
 ---
 
-
 # Guidelines for globalization and localizability
 
 Follow these best practices when globalizing your apps for a wider audience, and to make your apps localizable for specific markets.
@@ -27,7 +26,7 @@ Design and develop your app in such a way that it functions appropriately on sys
 | ------------- | ----------- |
 | Take culture into account when manipulating and comparing strings. | For example, don't change the case of strings before comparing them. See [Recommendations for String Usage](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage). |
 | When collating (sorting) strings and other data, don't assume that it's is always done alphabetically. | For languages that don't use Latin script, collation is based on factors such as pronunciation, or number of pen strokes. Even languages that do use Latin script don't always use alphabetic sorting. For example, in some cultures, a phone book might not be sorted alphabetically. Windows can handle sorting for you, but if you create your own sorting algorithm then be sure to take into account the sorting methods used in your target markets. |
-| Appropriately format numbers, dates, times, addresses, and phone numbers. | These formats vary between cultures, regions, languages, and markets. If you're displaying these data then use [**Globalization**](/uwp/api/Windows.Globalization?branch=live) APIs to get the format appropriate for a particular audience. See [Use global-ready formats](use-global-ready-formats.md). The order in which family and given names are displayed, and the format of addresses, can differ as well. Use standard date, time, and number displays. Use standard date and time picker controls. Use standard address information. |
+| Appropriately format numbers, dates, times, addresses, and phone numbers. | These formats vary between cultures, regions, languages, and markets. If you're displaying these data then use [**Globalization**](/uwp/api/Windows.Globalization?branch=live) APIs to get the format appropriate for a particular audience. See [Globalize your date/time/number formats](use-global-ready-formats.md). The order in which family and given names are displayed, and the format of addresses, can differ as well. Use standard date, time, and number displays. Use standard date and time picker controls. Use standard address information. |
 | Support international units of measurement and currency. | Different units and scales are used in different countries, although the most popular are the metric system and the imperial system. Be sure to support the correct system measurement if you deal with measurements such as length, temperature, and area. Use the [**GeographicRegion.CurrenciesInUse**](/uwp/api/windows.globalization.geographicregion?branch=live#windows_globalization_geographicregion_currenciesinuse) property to get the set of currencies in use in a region. |
 | Use Unicode for character encoding. | By default, Microsoft Visual Studio uses Unicode character encoding for all documents. If you're using a different editor, be sure to save source files in the appropriate Unicode character encodings. All UWP APIs return UTF-16 encoded strings. |
 | Support international paper sizes. | The most common paper sizes differ between countries, so if you include features that depend on paper size, such as printing, be sure to support and test common international sizes. |
@@ -57,7 +56,7 @@ It's important to make your app localizable so that the later localization proce
 | Set your default language, and mark all of your resources&mdash;even the ones in your default language. | Set the default language for your app appropriately in your app package manifest (the `Package.appxmanifest` file). The default language determines the language that's used when the user's preferred languages don't match any of the supported languages of your app. Mark default language resources&mdash;for example `\Assets\en-us\Logo.png`&mdash;with their language so that the system can tell which language the resource is in and how it's used in particular situations. |
 | Subscribe to events that are raised when the system's language and region settings change. | Do this so that you can re-load resources, if appropriate. For details, see [Updating strings in response to qualifier value change events](../../app-resources/localize-strings-ui-manifest.md#updating-strings-in-response-to-qualifier-value-change-events) and [Updating images in response to qualifier value change events](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events). |
 | Add comments to your default Resources File (.resw). | Ensure that strings are properly commented, and only the strings that need to be translated are provided to translators. Over-localization is a common source of problems, not to mention expense. If you are adopting an informal voice or tone, be sure to explain this in comments. To learn how to comment your strings, see [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md). |
-| Use appropriately-sized strings. | Short strings are easier to translate, and they enable translation recycling (which saves expense because the same string isn't sent to the localizer more than once). Also, extremely long strings might not be supported by localization tools. In tension with this guideline is the risk of re-using a string in different contexts. Even simple words such as &quot;on&quot; and &quot;off&quot; might be translated differently, depending on the context. So, factor your strings into pieces that work in all contexts. There will be cases where a string will need to be an entire sentence. |
+| Use appropriately-sized strings. | Short strings are easier to translate, and they enable translation recycling (which saves expense because the same string isn't sent to the localizer more than once). Also, extremely long strings might not be supported by localization tools. In tension with this guideline is the risk of re-using a string in different contexts. Even simple words such as &quot;on&quot; and &quot;off&quot; might be translated differently, depending on the context. So, factor your strings into pieces that work in all contexts. There will be cases where a string will need to be an entire sentence. For more details, see [Consider factoring your strings into sentences](prepare-your-app-for-localization.md#consider-factoring-your-strings-into-sentences). |
 
 ## Important APIs
  
@@ -69,7 +68,7 @@ It's important to make your app localizable so that the later localization proce
 ## Related topics
 
 * [Recommendations for String Usage](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
-* [Use global-ready formats](use-global-ready-formats.md)
+* [Globalize your date/time/number formats](use-global-ready-formats.md)
 * [Manage language and region](manage-language-and-region.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [App resources and the Resource Management System](../../app-resources/index.md)
@@ -80,6 +79,7 @@ It's important to make your app localizable so that the later localization proce
 * [International fonts](loc-international-fonts.md)
 * [Updating strings in response to qualifier value change events](../../app-resources/localize-strings-ui-manifest.md#updating-strings-in-response-to-qualifier-value-change-events)
 * [Updating images in response to qualifier value change events](../../app-resources/images-tailored-for-scale-theme-contrast.md#updating-images-in-response-to-qualifier-value-change-events)
+* [Make your app localizable](prepare-your-app-for-localization.md)
 
 ## Samples
 

@@ -14,7 +14,6 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 
-
 # Manage language and region
 
 Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.
@@ -34,6 +33,59 @@ A Windows user can run apps in a completely different language than Windows. For
 For UWP apps, a language is represented as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). Most APIs in the UWP, HTML, and XAML can return or accept string representations of these BCP-47 language tags. See also the [IANA list of languages](http://go.microsoft.com/fwlink/p/?linkid=227303).
 
 See [Supported languages](https://msdn.microsoft.com/library/windows/apps/jj657969) for a list of the language tags specifically supported by the Microsoft Store.
+
+## User profile language list
+
+The user profile language list is set by the user in **Settings** > **Time & Language** > **Region & language** > **Languages**. You can access the user profile language list in code as a read-only list of strings, where each string is a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302) such as "en-US" or "ja-JP".
+
+**C#**
+```csharp
+    IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
+```
+
+## App manifest language list
+
+The app manifest language list is the list of languages for which your app declares (or will declare) support. This list grows as you progress your app through the development lifecycle all the way to localization.
+
+The list is determined at compile time, but you have two options for controlling exactly how that happens. One option is to let Visual Studio determine the list from the files in your project. To do that, first set your app's **Default language** on the **Application** tab in your app package manifest source file (`Package.appxmanifest`). Then, confirm that the same file contains this configuration (which it does by default).
+
+```xml
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+```
+
+Each time Visual Studio builds your app package manifest file (`AppxManifest.xml`), it expands that single `Resource` element into a union of all the language qualifiers that it finds in your project (see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)). For example, if you've begun localizing and you have string, image, and/or file resources whose folder or file names include "en-US", "ja-JP", and "fr-FR", then your built `AppxManifest.xml` file will contain the following (the first entry in the list is the default language that you set).
+
+```xml
+  <Resources>
+    <Resource Language="EN-US" />
+    <Resource Language="JA-JP" />
+    <Resource Language="FR-FR" />
+  </Resources>
+```
+
+The other option is to replace the single "x-generate" `<Resource>` element in your app package manifest source file (`Package.appxmanifest`) with the expanded list of `<Resource>` elements (being careful to list the default language first). That option involves more maintenance work for you, but you may have to resort to it if you have your own custom build system.
+
+To begin with, your app manifest language list will only contain one language. Perhaps that's en-US. But eventually&mdash;as you either manually configure your manifest, or as you add translated resources to your project&mdash;that list will grow.
+
+## Runtime language list
+
+The third language list of interest is the intersection between the two lists that we've just described. At runtime, the list of languages for which your app has declared support is compared with the list of languages for which the user has declared a preference. The runtime language list is set to this intersection (if the intersection is not empty), or to just the app's default language (if the intersection is empty).
+
+You can access the runtime language list in code, either as a string containing a semicolon-delimited list of [BCP-47 language tags](http://go.microsoft.com/fwlink/p/?linkid=227302)
+
+**C#**
+```csharp
+    string runtimeLanguages = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues["Language"];
+```
+
+or as a read-only list of strings each containing a single BCP-47 language tag.
+
+**C#**
+```csharp
+    IReadOnlyList<string> runtimeLanguages = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Languages;
+```
 
 ## Tasks
 
