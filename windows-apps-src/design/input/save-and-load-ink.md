@@ -28,15 +28,13 @@ UWP apps that support Windows Ink can serialize and deserialize ink strokes to a
 <li>[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)</li>
 <li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
 </ul>
-</div>
-
-
- 
+</div> 
 
 ## Save ink strokes to a file
 
-
 Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
+
+**Download this sample from [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
 
 1.  First, we set up the UI.
 
@@ -167,6 +165,8 @@ public MainPage()
 
 Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
+**Download this sample from [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)**
+
 1.  First, we set up the UI.
 
     The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
@@ -275,12 +275,13 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 ## Copy and paste ink strokes with the clipboard
 
-
 Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.
 
 To support clipboard functionality, the built-in [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) cut and copy commands require one or more ink strokes be selected.
 
 For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
+
+**Download this sample from [Save and load ink strokes from the clipboard](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
 1.  First, we set up the UI.
 
@@ -435,7 +436,11 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**Samples**
+**Topic samples**
+* [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)
+* [Save and load ink strokes from the clipboard](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
+
+**Other samples**
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
 * [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
