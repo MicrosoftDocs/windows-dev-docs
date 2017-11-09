@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 10/31/2017
+ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -416,8 +416,12 @@ The extensive features and deep platform integration of DirectX provide the powe
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>How-to guides for DirectX games</td>
-        <td>[Games and DirectX](index.md)</td>
+        <td>DirectX for UWP development</td>
+        <td>[DirectX programming](directx-programming.md)</td>
+    </tr>
+    <tr>
+        <td>Tutorial: How to create a UWP DirectX game</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
     </tr>
     <tr>
         <td>DirectX overviews and reference</td>
@@ -887,15 +891,7 @@ Now that you've decided the type of game you want to create and the tools and gr
 
 ### Introduction to the Universal Windows Platform (UWP)
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common API platform across Windows 10 devices. UWP evolves and expands the Windows Runtime model and hones it into a cohesive, unified core. Games that target the UWP can call WinRT APIs that are common to all devices. Because the UWP provides a guaranteed core API layer, you can choose to create a single app package that will install across Windows 10 devices. And if you want to, your game can still call APIs (including some classic Windows APIs from Win32 and .NET) that are specific to the devices your game runs on.
-
-The goal of the UWP is to have:
-
--   One core operating system
--   One application platform
--   One gaming social network
--   One store
--   One ingestion path
+Windows 10 introduces the Universal Windows Platform (UWP), which provides a common API platform across Windows 10 devices. UWP evolves and expands the Windows Runtime model and hones it into a cohesive, unified core. Games that target the UWP can call WinRT APIs that are common to all devices. Because the UWP provides guaranteed API layers, you can choose to create a single app package that will install across Windows 10 devices. And if you want to, your game can still call APIs (including some classic Windows APIs from Win32 and .NET) that are specific to the devices your game runs on.
 
 The following are excellent guides that discuss the Universal Windows Platform apps in detail, and are recommended reading to help you understand the platform.
 
@@ -1148,8 +1144,12 @@ Guides and references for DirectX game development.
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>DirectX game development on the UWP</td>
-        <td>[Games and DirectX](index.md)</td>
+        <td>DirectX for UWP development</td>
+        <td>[DirectX programming](directx-programming.md)</td>
+    </tr>
+    <tr>
+        <td>Tutorial: How to create a UWP DirectX game</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
     </tr>
     <tr>
         <td>DirectX interaction with the UWP app model</td>
