@@ -71,6 +71,7 @@
 ### [Layout panels](design/layout/layout-panels.md)
 #### [Custom panels](design/layout/custom-panels-overview.md)
 #### [Custom panel example: BoxPanel](design/layout/boxpanel-example-custom-panel.md)
+### [Form layouts](design/layout/forms.md)
 
 ## Controls
 ### [Overview](design/controls-and-patterns/index.md)
