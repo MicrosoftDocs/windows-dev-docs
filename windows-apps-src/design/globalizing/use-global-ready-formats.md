@@ -25,13 +25,13 @@ Different regions and cultures use different date and time formats. These includ
 
 You can preview the formats used for different languages. Go to **Settings** > **Time & Language** > **Region & language**, and click **Additional date, time, & regional settings** > **Change date, time, or number formats**. On the **Formats** tab, select a language from the **Format** drop-down and preview the formats in **Examples**.
 
-This topic uses the terms "user profile language list", "app manifest language list", and "runtime language list". For details on exactly what those terms mean and how to access their values, see [Manage language and region](manage-language-and-region.md).
+This topic uses the terms "user profile language list", "app manifest language list", and "app runtime language list". For details on exactly what those terms mean and how to access their values, see [Understand user profile languages and app manifest languages](manage-language-and-region.md).
 
-## Format dates and times for the runtime language list
+## Format dates and times for the app runtime language list
 
-If you need to allow users to choose a date, or to select a time, then use the standard [calendar, date, and time controls](../controls-and-patterns/date-and-time.md). These automatically use the best date and time format for the runtime language list.
+If you need to allow users to choose a date, or to select a time, then use the standard [calendar, date, and time controls](../controls-and-patterns/date-and-time.md). These automatically use the best date and time format for the app runtime language list.
 
-If you need to display dates or times yourself then you can use the [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) class. By default, **DateTimeFormatter** automatically uses the best date and time format for the runtime language list. So, the code below formats a given **DateTime** in the best way for that list. As an example, assume that your app manifest language list includes English (United States), which is also your default, and German (Germany). If the current date is Nov 6 2017 and the user profile language list contains German (Germany) first, then the formatter gives "06.11.2017". If the user profile language list contains English (United States) first (or if it contains neither English nor German), then the formatter gives "11/6/2017" (since "en-US" matches, or is used as the default).
+If you need to display dates or times yourself then you can use the [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) class. By default, **DateTimeFormatter** automatically uses the best date and time format for the app runtime language list. So, the code below formats a given **DateTime** in the best way for that list. As an example, assume that your app manifest language list includes English (United States), which is also your default, and German (Germany). If the current date is Nov 6 2017 and the user profile language list contains German (Germany) first, then the formatter gives "06.11.2017". If the user profile language list contains English (United States) first (or if it contains neither English nor German), then the formatter gives "11/6/2017" (since "en-US" matches, or is used as the default).
 
 **C#**
 ```csharp
@@ -56,7 +56,7 @@ You can test the code above on your own PC like this.
 
 ## Format dates and times for the user profile language list
 
-Remember that, by default, **DateTimeFormatter** matches the runtime language list. That way, if you display strings such as "The date is &lt;date&gt;", then the language will match the date format.
+Remember that, by default, **DateTimeFormatter** matches the app runtime language list. That way, if you display strings such as "The date is &lt;date&gt;", then the language will match the date format.
 
 If for whatever reason you want to format dates and/or times only according to the user profile language list, then you can do that using code like the example below. But if you do so then understand that the user can choose a language for which your app doesn't have translated strings. For example, if your app is not localized into German (Germany), but the user chooses that as their preferred language, then that could result in the display of arguably odd-looking strings such as "The date is 06.11.2017".
 
@@ -171,7 +171,7 @@ For scenarios where you wish to provide different functionality based solely on 
 ## Related topics
 
 * [Calendar, date, and time controls](../controls-and-patterns/date-and-time.md)
-* [Manage language and region](manage-language-and-region.md)
+* [Understand user profile languages and app manifest languages](manage-language-and-region.md)
 * [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
 
 ## Samples
