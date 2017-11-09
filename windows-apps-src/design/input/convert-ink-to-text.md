@@ -36,7 +36,7 @@ Here, we demonstrate how to use the Windows Ink analysis engine ([Windows.UI.Inp
 
 In this example, recognition is initiated when the user clicks a button to indicate they are finished drawing.
 
-**Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)**
+**Download this sample from [Ink analysis sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)**
 
 1.  First, we set up the UI (MainPage.xaml). 
 
@@ -287,7 +287,7 @@ In this section, we demonstrate how to use the Windows Ink handwriting recogniti
 
 In this example, recognition is initiated when the user clicks a button to indicate they are finished writing.
 
-**Download this sample from [Ink handwriting recognition sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-handwriting-reco/handwriting-reco)**
+**Download this sample from [Ink handwriting recognition sample](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)**
 
 1.  First, we set up the UI.
 
@@ -853,8 +853,8 @@ For this example, we'll use the same UI and stroke settings as the previous inte
 * [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 **Topic samples**
-* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-analysis-basic)
-* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/uwp-ink-handwriting-reco/handwriting-reco)
+* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 **Other samples**
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)

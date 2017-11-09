@@ -1,3 +1,4 @@
+---
 author: stevewhims
 Description: A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources.
 title: Make your app localizable
@@ -8,11 +9,11 @@ ms.date: 11/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, globalization, localization
 localizationpriority: medium
 ---
 
-# Make your app localizable
+# Make your app localizable 
 
 A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources.
 

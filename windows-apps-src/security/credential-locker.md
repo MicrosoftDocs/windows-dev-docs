@@ -21,6 +21,8 @@ This article describes how Universal Windows Platform (UWP) apps can use the Cre
 
 For example, you have an app that connects to a service to access protected resources such as media files, or social networking. Your service requires login information for each user. You’ve built UI into your app that gets the username and password for the user, which is then used to log the user into the service. Using the Credential Locker API, you can store the username and password for your user and easily retrieve them and log the user in automatically the next time they open your app, regardless of what device they're on.
 
+User credentials stored in the CredentialLocker do *not* expire, are *not* affected by the [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625), and will *not* be cleared out due to inactivity like traditional roaming data. However, you can only store up to ten credentials per app in the CredentialLocker.
+
 Credential locker works a little differently for domain accounts. If there are credentials stored with your Microsoft account, and you associate that account with a domain account (such as the account that you use at work), your credentials will roam to that domain account. However, any new credentials added when signed on with the domain account won’t roam. This ensures that private credentials for the domain aren’t exposed outside of the domain.
 
 ## Storing user credentials
