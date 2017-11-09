@@ -60,7 +60,7 @@ If your app has images that must be mirrored (that is, the same image can be fli
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-If your app requires a different image to flip the image correctly, you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the [application language](manage-language-and-region.md) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
+If your app requires a different image to flip the image correctly, you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Fonts
 
@@ -127,4 +127,4 @@ else
 
 * [Localize strings in your UI and app package manifest](../../app-resources/localize-strings-ui-manifest.md)
 * [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Manage language and region](manage-language-and-region.md)
+* [Understand user profile languages and app manifest languages](manage-language-and-region.md)

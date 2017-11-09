@@ -28,6 +28,7 @@ This section contains reference topics for the Xbox Device Portal REST API, used
 |[/ext/settings](wdp-xboxsettings-api.md)| Accesses Xbox One developer settings. |
 |[/ext/smb/developerfolder](wdp-smb-api.md)| Accesses the developer folder on your console through File Explorer on your development PC. |
 |[/ext/user](wdp-user-management.md)| Manages users on the Xbox One console. |
+|[/ext/xbox/info](wdp-xboxinfo-api.md)| Gives information about the Xbox One device. |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| Manages your Xbox Live sandbox. |
 
 ## See also
