@@ -12,14 +12,15 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
 
-
 # How the Resource Management System matches language tags
 
 The previous topic ([How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md)) looks at qualifier-matching in general. This topic focuses on language-tag-matching in more detail.
 
 ## Introduction
 
-Resources with language tag qualifiers are compared and scored based on the end-user's prioritized list of preferred languages. The scoring mechanism uses data that is included in the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) subtag registry, and other data sources. It allows for a scoring gradient with different qualities of match and, when multiple candidates are available, it selects the candidate with the best-matching score.
+Resources with language tag qualifiers are compared and scored based on the app runtime language list. For definitions of the different language lists, see [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md). Matching for the first language in a list occurs before matching of the second language in a list, even for other regional variants. For example, a resource for en-GB is chosen over an fr-CA resource if the app runtime language is en-US. Only if there are no resources for a form of en is a resource for fr-CA chosen (note that the the app's default language could not be set to any form of en in that case).
+
+The scoring mechanism uses data that is included in the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) subtag registry, and other data sources. It allows for a scoring gradient with different qualities of match and, when multiple candidates are available, it selects the candidate with the best-matching score.
 
 So, you can tag language content in generic terms, but you can still specify specific content when needed. For example, your app might have many English strings that are common to both the United States, Britain, and other regions. Tagging these strings as "en" (English) saves space and localization overhead. When distinctions need to be made, such as in a string containing the word "color/colour", the United States and British versions can be tagged separately using both language and region subtags, as "en-US" and "en-GB", respectively.
 
@@ -36,7 +37,7 @@ Additional subtag elements may be present, but they will have a negligible effec
 
 ## Matching two languages
 
-Whenever Windows compares two languages it is typically done within the context of a larger process. It may be in the context of assessing multiple languages, such as when Windows generates the application language list (see [Manage language and region](../design/globalizing/manage-language-and-region.md)). Windows does this by matching multiple languages from the user preferences to the languages specified in the app's manifest. The comparison might also be in the context of assessing language along with other qualifiers for a particular resource. One example is when Windows resolves a particular file resource to a particular resource context; with the user's home location or the device's current scale or dpi as other factors (besides language) that are factored into the resource selection.
+Whenever Windows compares two languages it is typically done within the context of a larger process. It may be in the context of assessing multiple languages, such as when Windows generates the application language list (see [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md)). Windows does this by matching multiple languages from the user preferences to the languages specified in the app's manifest. The comparison might also be in the context of assessing language along with other qualifiers for a particular resource. One example is when Windows resolves a particular file resource to a particular resource context; with the user's home location or the device's current scale or dpi as other factors (besides language) that are factored into the resource selection.
 
 When two language tags are compared, the comparison is assigned a score based on the nearness of the match.
 
@@ -56,7 +57,7 @@ When two language tags are compared, the comparison is assigned a score based on
 
 ### Exact match
 
-The tags are exactly equal (all subtag elements match). A comparison may be promoted to this match type from a variant or region match.
+The tags are exactly equal (all subtag elements match). A comparison may be promoted to this match type from a variant or region match. For example, en-US matches en-US.
 
 ### Variant match
 
@@ -64,11 +65,11 @@ The tags match on the language, script, region, and variant subtags, but they di
 
 ### Region match
 
-The tags match on the language, script, and region subtags, but they differ in some other respect.
+The tags match on the language, script, and region subtags, but they differ in some other respect. For example, de-DE-1996 matches de-DE, and en-US-x-Pirate matches en-US.
 
 ### Partial matches
 
-The tags match on the language and script subtags, but they differ in the region or some other subtag.
+The tags match on the language and script subtags, but they differ in the region or some other subtag. For example, en-US matches en, or en-US matches en-\*.
 
 #### Macro region match
 
@@ -88,7 +89,7 @@ The tags match on language and script subtags, and the region subtags have ortho
 
 #### Preferred region match
 
-The tags match on language and script subtags, and one of the region subtags is the default region subtag for the language. For example, "fr-FR" is the default region for the "fr" subtag. This relies on data maintained in Windows defining a default region for each language in which Windows is localized.
+The tags match on language and script subtags, and one of the region subtags is the default region subtag for the language. For example, "fr-FR" is the default region for the "fr" subtag. So, fr-FR is a better match for fr-BE than is fr-CA. This relies on data maintained in Windows defining a default region for each language in which Windows is localized.
 
 #### Sibling match
 
@@ -104,19 +105,19 @@ When the tags match only on the primary language tag but not the script, the pai
 
 ### No match
 
-Mismatching primary language subtags are scored below the level of a valid match.
+Mismatching primary language subtags are scored below the level of a valid match. For example, zh-Hant does not match zh-Hans.
 
 ## Examples
 
 A user language "zh-Hans-CN" (Chinese Simplified (China)) matches the following resources in the priority order shown. An X indicates no match.
 
-[!Matching for Chinese Simplified (China)](/images/language_matching_1.png)
+![Matching for Chinese Simplified (China)](images/language_matching_1.png)
 
 1. Exact match; 2. & 3. Region match; 4. Parent match; 5. Sibling match.
 
-When a language subtag has a suppress script value defined in the BCP-47 subtag registry, corresponding matching occurs, taking on the value of the suppressed script code. In this next example the user language is "en-AU" (English (Australia)).
+When a language subtag has a Suppress-Script value defined in the BCP-47 subtag registry, corresponding matching occurs, taking on the value of the suppressed script code. For example, en-Latn-US matches en-US. In this next example the user language is "en-AU" (English (Australia)).
 
-[!Matching for English (Australia)](/images/language_matching_2.png)
+![Matching for English (Australia)](images/language_matching_2.png)
 
 1. Exact match; 2. Macro region match; 3. Region-neutral match; 4. Orthographic affinity match; 5. Preferred region match; 6. Sibling match.
 
@@ -188,5 +189,5 @@ English needs special consideration. If an app adds localization for two English
 
 * [How the Resource Management System matches and chooses resources](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [Manage language and region](../design/globalizing/manage-language-and-region.md)
+* [Understand user profile languages and app manifest languages](../design/globalizing/manage-language-and-region.md)
 * [Composition of macro geographic (continental) regions, geographical sub-regions, and selected economic and other groupings](http://go.microsoft.com/fwlink/p/?LinkId=247929)

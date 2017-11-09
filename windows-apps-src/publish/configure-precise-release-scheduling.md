@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configure precise release scheduling
@@ -36,7 +36,7 @@ Selections you make for the Base schedule will apply to all markets in which you
 
 You’ll see two options here: **Release** and **Stop acquisition**. 
 
-### Release
+## Release
 
 In the **Release** drop-down, you can set when you want your app to be available in the Store. This means that the app is discoverable in the Store via searching or browsing, and that customers can view its Store listing and acquire the app.
 
@@ -53,7 +53,7 @@ Here are the options you can configure for a product’s **Release** schedule:
 > [!TIP]
 > You can also optionally [enter a different release date](set-app-pricing-and-availability.md#display-release-date) to appear on your app's Store listing. 
 
-### Stop acquisition
+## Stop acquisition
 
 In the **Stop acquisition** dropdown, you can set a date and time when you want to stop allowing new customers to acquire it from the Store or discover its listing. This can be useful if you want to precisely control when an app will no longer be offered to new customers, such as when you are coordinating availability between more than one of your apps.
 
@@ -64,7 +64,7 @@ It's important to understand that this option has the same impact as selecting *
 > [!TIP]
 > If you select a date to **Stop acquisition**, and later decide you'd like to make the app available again, you can create a new submission and change **Stop acquisition** back to **Never**. The app will become available again after your updated submission is published.
 
-### Customize the schedule for specific markets 
+## Customize the schedule for specific markets 
 
 By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the [Markets]((define-pricing-and-market-selection.md) section, those markets will not be shown. 
 
