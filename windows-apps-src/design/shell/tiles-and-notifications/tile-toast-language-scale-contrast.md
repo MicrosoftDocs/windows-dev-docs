@@ -15,13 +15,13 @@ localizationpriority: medium
 
 # Tile and toast notification support for language, scale, and high contrast
 
-Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md) and [Asset size tables](../design/shell/tiles-and-notifications/app-assets.md#asset-size-tables).
+Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md) and [Asset size tables](app-assets.md#asset-size-tables).
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](../design/globalizing/globalizing-portal.md).
+For more info about the value proposition of localizing your app, see [Globalization and localization](../../globalizing/globalizing-portal.md).
 
 ## Refer to a string resource from a template
 
-In your tile or toast template, you can refer to a string resource using the `ms-resource` URI (Uniform Resource Identifier) scheme followed by a simple string resource identifier. For example, if you have a Resources.resx file that contains a resource entry whose name is "Farewell", then you have a string resource with the identifier "Farewell". For more info on string resource identifiers and Resources Files (.resw), see [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md).
+In your tile or toast template, you can refer to a string resource using the `ms-resource` URI (Uniform Resource Identifier) scheme followed by a simple string resource identifier. For example, if you have a Resources.resx file that contains a resource entry whose name is "Farewell", then you have a string resource with the identifier "Farewell". For more info on string resource identifiers and Resources Files (.resw), see [Localize strings in your UI and app package manifest](../../../app-resources/localize-strings-ui-manifest.md).
 
 This is how a reference to the "Farewell" string resource identifier would look in the [text](/uwp/schemas/tiles/tilesschema/element-text?branch=live) body of your template content, using `ms-resource`.
 
@@ -37,7 +37,7 @@ If you omit the `ms-resource` URI scheme, then the text body is just a string li
 
 ## Refer to an image resource from a template
 
-In your tile or toast template, you can refer to an image resource using the `ms-appx` URI (Uniform Resource Identifier) scheme followed by the name of the image resource. This is the same way that you refer to an image resource in XAML markup (for more details, see [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)).
+In your tile or toast template, you can refer to an image resource using the `ms-appx` URI (Uniform Resource Identifier) scheme followed by the name of the image resource. This is the same way that you refer to an image resource in XAML markup (for more details, see [Reference an image or other asset from XAML markup and code](../../../app-resources/images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)).
 
 For example, you might name folders like this.
 
@@ -80,11 +80,11 @@ For a reference table of all the possible qualifier values that you can use in y
 
 ## Related topics
 
-* [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)
-* [Guidelines for tile and icon assets](../design/shell/tiles-and-notifications/app-assets.md)
+* [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [Guidelines for tile and icon assets](app-assets.md)
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
-* [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
-* [Reference an image or other asset from XAML markup and code](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Localize strings in your UI and app package manifest](../../../app-resources/localize-strings-ui-manifest.md)
+* [Reference an image or other asset from XAML markup and code](../../../app-resources/images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [Tile schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
 * [Toast schema](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
