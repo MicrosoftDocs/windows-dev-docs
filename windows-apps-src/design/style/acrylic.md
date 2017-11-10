@@ -155,17 +155,17 @@ In addition to color-neutral acrylic, we've also added resources that tint acryl
         <th align="center">[Tint and Fallback colors](color.md)</th>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowAccentMediumHighBrush, SystemControlAcrylicElementAccentMediumHighBrush </td>
+        <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
         <td align="center"> 70% </td>
         <td> SystemAccentColor </td>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowAccentDark1Brush, SystemControlAcrylicElementAccentDark1Brush </td>
+        <td> SystemControlAccentDark1AcrylicWindowAccentDark1Brush, SystemControlAccentDark1AcrylicElementAccentDark1Brush  </td>
         <td align="center"> 80% </td>
         <td> SystemAccentColorDark1 </td>
     </tr>
     <tr>
-        <td> SystemControlAcrylicWindowAccentDark2MediumHighBrush, SystemControlAcrylicElementAccentDark2MediumHighBrush </td>
+        <td> SystemControlAccentDark2AcrylicWindowAccentDark2MediumHighBrush, SystemControlAccentDark2AcrylicElementAccentDark2MediumHighBrush  </td>
         <td align="center"> 70% </td>
         <td> SystemAccentColorDark2 </td>
     </tr>
