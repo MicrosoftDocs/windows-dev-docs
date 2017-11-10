@@ -31,7 +31,7 @@ Learn how to tailor the UI of your app when showing or hiding the touch keyboard
 
 ![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)
 
-<sup>The\\ touch\\ keyboard\\ in\\ default\\ layout\\ mode</sup>
+<sup>The touch keyboard in default layout mode</sup>
 
 The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
@@ -39,7 +39,7 @@ To support corresponding touch keyboard behavior in a custom text input control 
 
 Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
-**Prerequisites:  **
+**Prerequisites:**
 
 This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
@@ -50,7 +50,7 @@ If you're new to developing Universal Windows Platform (UWP) apps, have a look t
 -   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**User experience guidelines:  **
+**User experience guidelines:**
 
 For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
 
