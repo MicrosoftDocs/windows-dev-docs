@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Microsoft Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 10/02/2017
+ms.date: 11/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -62,23 +62,19 @@ The legacy implementation of Mobile Operator Billing is currently supported by t
 | Country/region       | Mobile operators                                                   |
 |----------------------|--------------------------------------------------------------------|
 | Australia            | Telstra                                                            |
-| Austria              | T-Mobile                                                           |
-| Czech Republic       | T-Mobile, Vodafone                                                 |
-| France               | Orange, Bouygues                                                   |
-| Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
+| Czech Republic       | Vodafone                                                           |
+| France               | Orange                                                             |
+| Germany              | Telekom Deutschland, Vodafone                                      |
 | Greece               | Vodafone                                                           |
-| Hungary              | T-Mobile                                                           |
 | Ireland              | Vodafone                                                           |
 | Italy                | Vodafone                                                           |
 | Netherlands          | T-Mobile, Vodafone                                                 |
-| Poland               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
+| Poland               | T-Mobile                                                           |
 | Romania              | Vodafone                                                           |
-| Russia               | MTS                                                                |
-| Slovakia             | T-Mobile                                                           |
 | South Africa         | Vodacom                                                            |
 | Spain                | Movistar, Vodafone                                                 |
-| United Kingdom       | Telefonica (O2), Vodafone                                          |
-| United States        | AT&T, T-Mobile                                                     |
+| United Kingdom       | Vodafone                                                           |
+| United States        | AT&T                                                               |
 
 
  

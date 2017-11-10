@@ -17,7 +17,7 @@ localizationpriority: high
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.
 
-Be sure to consider our [guidelines for globalization and localizability](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md).
+Also see [Guidelines for globalization](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
 > Although this topic refers to apps, market selection for add-on submissions uses the same process.

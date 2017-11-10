@@ -53,7 +53,7 @@ Most localization teams use special tools to aid the process. For example, by re
 
 | Article | Description |
 |---------|-------------|
-| [Guidelines for globalization and localizability](guidelines-and-checklist-for-globalizing-your-app.md) | Follow these best practices when globalizing your apps for a wider audience, and to make your apps localizable for specific markets. |
+| [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md) | Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations. |
 | [Understand user profile languages and app manifest languages](manage-language-and-region.md) | This topic defines the terms "user profile language list", "app manifest language list", and "app runtime language list". We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean. |
 | [Globalize your date/time/number formats](use-global-ready-formats.md) | Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market. |
 | [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md) | Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. |
