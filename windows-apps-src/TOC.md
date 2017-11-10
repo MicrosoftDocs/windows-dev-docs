@@ -156,6 +156,7 @@
 #### [Send local tile notfication](design/shell/tiles-and-notifications/sending-a-local-tile-notification.md)
 #### [Chaseable tile notifications](design/shell/tiles-and-notifications/chaseable-tile-notifications.md)
 #### [Primary tile APIs](design/shell/tiles-and-notifications/primary-tile-apis.md)
+#### [Tile, toast notification support for language, scale, contrast](design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 
 ### [Pin your app to the taskbar](design/shell/pin-to-taskbar.md)
 ### [Title bar customization](design/shell/title-bar.md)
@@ -266,7 +267,6 @@
 ### [Tailor your resources for language, scale, contrast, others](app-resources/tailor-resources-lang-scale-contrast.md)
 ### [Localize strings in your UI and app package manifest](app-resources/localize-strings-ui-manifest.md)
 ### [Load images, assets tailored for scale, theme, contrast, others](app-resources/images-tailored-for-scale-theme-contrast.md)
-### [Tile, toast notification support for language, scale, contrast](app-resources/tile-toast-language-scale-contrast.md)
 ### [URI schemes](app-resources/uri-schemes.md)
 ### [Compile resources manually with MakePri.exe](app-resources/compile-resources-manually-with-makepri.md)
 ### [MakePri.exe command-line options](app-resources/makepri-exe-command-options.md)
