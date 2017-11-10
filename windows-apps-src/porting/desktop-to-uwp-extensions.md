@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
+localizationpriority: medium
 ---
 
 # Integrate your app with Windows 10 (Desktop Bridge)
@@ -30,7 +31,7 @@ Help users transition to your packaged app.
 * [Add options to the context menus of files that have a certain file type](#add)
 * [Open certain types of files directly by using a URL](#open)
 
-<span id="point" />
+<a id="point" />
 ### Point existing Start tiles and taskbar buttons to your packaged app
 
 Your users might have pinned your desktop application to the taskbar or the Start menu. You can point those shortcuts to your new packaged app.
@@ -85,7 +86,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<span id="make" />
+<a id="make" />
 ### Make your packaged app open files instead of your desktop app
 
 You can make sure that users open your new packaged app by default for specific types of files instead of opening the desktop version of your app.
@@ -144,7 +145,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<span id="associate" />
+<a id="associate" />
 ### Associate your packaged app with a set of file types
 
 You can associated your packaged app with file type extensions. If a user right-clicks a file and then selects the **Open with** option, your app appears in the list of suggestions.
@@ -202,7 +203,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<span id="add" />
+<a id="add" />
 ### Add options to the context menus of files that have a certain file type
 
 In most cases, users double-click files to open them. If users, right click a file, various options appear.
@@ -268,7 +269,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 [WPF picture viewer with transition/migration/uninstallation](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)
 
-<span id="open" />
+<a id="open" />
 ### Open certain types of files directly by using a URL
 
 You can make sure that users open your new packaged app by default for specific types of files instead of opening the desktop version of your app.
@@ -328,7 +329,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 
 * [Create firewall exception for your app](#rules)
 
-<span id="rules" />
+<a id="rules" />
 ### Create firewall exception for your app
 
 If your app requires communication through a port, you can add your app to the list of firewall exceptions.
@@ -401,7 +402,7 @@ Help users organize your files and interact with them in familiar ways.
 * [Make file properties available to search, index, property dialogs, and the details pane](#make-file-properties)
 * [Make files from your cloud service appear in File Explorer](#cloud-files)
 
-<span id="define" />
+<a id="define" />
 ### Define how your app behaves when users select and open multiple files at the same time
 
 Specify how your app behaves when a user opens multiple files simultaneously.
@@ -473,7 +474,7 @@ packaged desktop apps have the same three options as regular desktop apps.
 
 If the user opens 15 or fewer files, the default choice for the **MultiSelectModel** attribute is *Player*. Otherwise, the default is *Document*. UWP apps are always started as *Player*.
 
-<span id="show" />
+<a id="show" />
 ### Show file contents in a thumbnail image within File Explorer
 
 Enable users to view a thumbnail image of the file's contents when the icon of the file appears in the medium, large, or extra large size.
@@ -541,7 +542,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<span id="preview" />
+<a id="preview" />
 ### Show file contents in the Preview pane of File Explorer
 
 Enable users to preview a file's contents in the Preview pane of File Explorer.
@@ -601,7 +602,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<span id="enable" />
+<a id="enable" />
 ### Enable users to group files by using the Kind column in File Explorer
 
 You can associate one or more predefined values for your file types with the **Kind** field.
@@ -666,7 +667,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
-<span id="make-file-properties" />
+<a id="make-file-properties" />
 ### Make file properties available to search, index, property dialogs, and the details pane
 
 #### XML namespace
@@ -721,7 +722,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 </Package>
 ```
 
-<span id="cloud-files" />
+<a id="cloud-files" />
 ### Make files from your cloud service appear in File Explorer
 
 Register the handlers that you implement in your application. You can also add context menu options that appear when you users right-click your cloud-based files in File Explorer.
@@ -783,16 +784,16 @@ Register the handlers that you implement in your application. You can also add c
 </Package>
 ```
 
-<span id="start" />
+<a id="start" />
 ## Start your app in different ways
 
 * [Start your app by using a protocol](#protocol)
 * [Start your app by using an alias](#alias)
 * [Start an executable file when users log into Windows](#executable)
 * [Enable users to start your app when they connect a device to their PC](#autoplay)
-* [Restart automatically after receiving an update from the Windows Store](#updates)
+* [Restart automatically after receiving an update from the Microsoft Store](#updates)
 
-<span id="protocol" />
+<a id="protocol" />
 ### Start your app by using a protocol
 
 Protocol associations can enable other programs and system components to interoperate with your packaged app. When your packaged app is started by using a protocol, you can specify specific parameters to pass to its activation event arguments so it can behave accordingly. Parameters are supported only for packaged, full-trust apps. UWP apps can't use parameters.  
@@ -841,7 +842,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
   </Applications>
 </Package>
 ```
-<span id="alias" />
+<a id="alias" />
 ### Start your app by using an alias
 
 Users and other processes can use an alias to start your app without having to specify the full path to your app. You can specify that alias name.
@@ -894,7 +895,7 @@ Users and other processes can use an alias to start your app without having to s
 
 Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation).
 
-<span id="executable" />
+<a id="executable" />
 ### Start an executable file when users log into Windows
 
 Startup tasks allow your app to run an executable automatically whenever a user logs on.
@@ -955,7 +956,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
   </Applications>
  </Package>
 ```
-<span id="autoplay" />
+<a id="autoplay" />
 ### Enable users to start your app when they connect a device to their PC
 
 AutoPlay can present your app as an option when a user connects a device to their PC.
@@ -1013,8 +1014,8 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
   </Applications>
 </Package>
 ```
-<span id="updates" />
-### Restart automatically after receiving an update from the Windows Store
+<a id="updates" />
+### Restart automatically after receiving an update from the Microsoft Store
 
 If your app is open when users install an update to it, the app closes.
 
@@ -1039,7 +1040,7 @@ Integrate with other apps, start other processes or share information.
 * [Share fonts with other Windows applications](#fonts)
 * [Start a Win32 process from a Universal Windows Platform (UWP) app](#win32-process)
 
-<span id="printing" />
+<a id="printing" />
 ### Make your app appear as the print target in applications that support printing
 
 When users want to print data from another app such as Notepad, you can make your app appear as a print target in the app's list of available print targets.
@@ -1089,7 +1090,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 ```
 Find a sample that uses this extension [Here](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF)
 
-<span id="fonts" />
+<a id="fonts" />
 ### Share fonts with other Windows applications
 
 Share your custom fonts with other Windows applications.
@@ -1136,7 +1137,7 @@ Find the complete schema reference [here](https://review.docs.microsoft.com/uwp/
   </Applications>
 </Package>
 ```
-<span id="win32-process" />
+<a id="win32-process" />
 ### Start a Win32 process from a Universal Windows Platform (UWP) app
 
 Start a Win32 process that runs in full-trust.
@@ -1148,7 +1149,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 #### Elements and attributes of this extension
 
 ```XML
-<xtension Category="windows.fullTrustProcess" Executable="[executable file]">
+<Extension Category="windows.fullTrustProcess" Executable="[executable file]">
   <FullTrustProcess>
     <ParameterGroup GroupId="[GroupID]" Parameters="[Parameters]"/>
   </FullTrustProcess>
@@ -1193,10 +1194,6 @@ Just create a desktop bridge package for your Win32 app. Then, add this extensio
 
 ## Next steps
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).

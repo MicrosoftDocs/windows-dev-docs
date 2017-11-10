@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Dev Center account.
 title: Add users, groups, and Azure AD applications to your Dev Center account
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Add users, groups, and Azure AD applications to your Dev Center account
@@ -160,7 +161,7 @@ If you want to grant Dev Center access to a brand new Azure AD application accou
 After you add or create an Azure AD application, you can return to the **Users** section and select the application name to review settings for the application, including the Tenant ID, Client ID, Reply URL, and App ID URI.
 
 > [!NOTE]
-> If you intend to use the REST APIs provided by the [Windows Store services](../monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
+> If you intend to use the REST APIs provided by the [Microsoft Store services](../monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
 
 <span id="manage-keys" />
 ### Manage keys for an Azure AD application

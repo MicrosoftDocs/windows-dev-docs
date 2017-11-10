@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
+localizationpriority: medium
 ---
 
 # Bringing Unity games to UWP on Xbox
@@ -28,7 +29,7 @@ When installing Unity, these components must be selected:
 
 ## Step 1: Building the UWP solution
 
-In your Unity game project, open the **Build Settings** windows located at **File -> Build Settings**, and go to the Windows Store options menu.
+In your Unity game project, open the **Build Settings** windows located at **File -> Build Settings**, and go to the Microsoft Store options menu.
 
 ![Build Settings Window](images/build-settings.png)
 

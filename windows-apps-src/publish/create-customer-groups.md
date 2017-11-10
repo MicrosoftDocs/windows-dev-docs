@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Create customer groups that you can use to target a subset of your app's customer base for promotions, testing, or other purposes.
 title: Create customer groups
@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, customer groups, segment, flight group, known user group
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
+localizationpriority: high
 ---
 
 # Create customer groups

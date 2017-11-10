@@ -4,11 +4,12 @@ author: KevinAsgari
 description: Learn how to implement multiplayer session browse by using Xbox Live multiplayer.
 ms.assetid: b4b3ed67-9e2c-4c14-9b27-083b8bccb3ce
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+localizationpriority: medium
 ---
 
 # Multiplayer session browse
@@ -51,6 +52,8 @@ When a title needs to retrieve a list of sessions, the title can send a search q
 
 When a session is full, or otherwise cannot be joined, a title can remove the search handle from MPSD so that the session will no longer show up in session browse queries.
 
+>[!NOTE]
+> Search handles are intended to be used when displaying a list of sessions to be presented to a user. Using search handles for background matchmaking should be avoided if possible, and instead consider using [SmartMatch](../multiplayer/multiplayer-manager/play-multiplayer-with-matchmaking.md)
 
 ## Set up a session for session browse
 
@@ -58,15 +61,12 @@ In order to use search handles for a session, the session must have the followin
 
 * `searchable`
 * `userAuthorizationStyle`
-* `hasOwners`
 
 >[!NOTE]
-> The `userAuthorizationStyle` and `hasOwners` capabilities are only required for UWP games, but we recommend implementing them for all Xbox Live games, including XDK games, as it ensures future portability.
+> The `userAuthorizationStyle` capability is only required for UWP games, but we recommend implementing them for all Xbox Live games, including XDK games, as it ensures future portability.
 
 >[!NOTE]
 > Setting the `userAuthorizationStyle` capability defaults the `readRestriction` and `joinRestriction` of the session to `local` instead of `none`. This means that titles must use search handles or transfer handles to join a game session.
-
-In addition, since searchable sessions must have owners, the `owernshipPolicy.migration` must be set to either "oldest" or "endsession".
 
 You can set these capabilities in the session template when you configure your Xbox Live services.
 
@@ -74,13 +74,19 @@ For session browse, you should only create search handles on sessions that will 
 
 ## What does it mean to be an owner of a session?
 
-While many game session types, such as SmartMatch or a friends only game, do not require an owner, every session browse session must have at least one owner. Only a member that is marked as an owner of a session can create a search handle for that session.
+While many game session types, such as SmartMatch or a friends only game, do not require an owner, for session browse sessions you may wish to have an owner. 
 
-In addition, only owners can remove other members from the session, or change the ownership status of other members.
+Having an owner-managed session has some benefits for the owner. Owners can remove other members from the session, or change the ownership status of other members.
+
+In order to use owners for a session, the session must have the following capabilities set to true:
+
+* `hasOwners`
 
 If an owner of a session has an Xbox Live member blocked, that member cannot join the session.
 
-If all owners leave a session, then the service takes action on the session based the `ownershipPolicy.migration` policy that is defined for the session. If the policy is "oldest", then the player that has been in the session the longest is set to be the new owner. If the policy is "endsession", then the service ends the session and removes all remaining players from the session.
+When using [multiplayer roles](multiplayer-roles.md), you can set it so only owners can assign roles to users.
+
+If all owners leave a session, then the service takes action on the session based the `ownershipPolicy.migration` policy that is defined for the session. If the policy is "oldest", then the player that has been in the session the longest is set to be the new owner. If the policy is "endsession" (the default if not supplied), then the service ends the session and removes all remaining players from the session.
 
 
 ## Search handles

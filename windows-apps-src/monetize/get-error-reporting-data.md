@@ -1,19 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: Use this method in the Windows Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
 ms.author: mcleans
 ms.date: 09/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, errors
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors
+localizationpriority: medium
 ---
 
 # Get error reporting data for your app
 
-Use this method in the Windows Store analytics API to get aggregate error reporting data for your app in JSON format for a given date range and other optional filters. This information is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate error reporting data for your app in JSON format for a given date range and other optional filters. This information is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
 
 You can retrieve additional error information by using the [get error details](get-details-for-an-error-in-your-app.md), [get stack trace](get-the-stack-trace-for-an-error-in-your-app.md), and [download CAB file](download-the-cab-file-for-an-error-in-your-app.md) methods.
 
@@ -22,7 +23,7 @@ You can retrieve additional error information by using the [get error details](g
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -167,7 +168,7 @@ The following example demonstrates an example JSON response body for this reques
 * [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
 * [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
 * [Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)
 * [Get app ratings](get-app-ratings.md)

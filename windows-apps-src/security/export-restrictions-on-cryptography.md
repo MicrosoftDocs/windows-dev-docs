@@ -1,6 +1,6 @@
 ---
 title: Export restrictions on cryptography
-description: Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+description: Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
 ms.author: alkoren
@@ -9,17 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Export restrictions on cryptography
 
 
 
-Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.
 
-The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Windows Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Windows Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
+The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Microsoft Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Microsoft Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
 
-> **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Windows Store to make sure that your app complies with all applicable laws and regulations.
+> **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Microsoft Store to make sure that your app complies with all applicable laws and regulations.
 
  
 

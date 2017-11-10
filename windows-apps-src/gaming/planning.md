@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, game, planning, accessibility, cloud, monetize, package, technology, concept, approval
+localizationpriority: medium
 ---
 
 # Planning for UWP games
@@ -45,7 +46,7 @@ This section provides information about planning for your UWP game.
 </tr>
 <tr class="odd">
 <td align="left"><p>[Package your game](package-your-windows-store-directx-game.md)</p></td>
-<td align="left"><p>Prepare your game package for the Windows Store.</p></td>
+<td align="left"><p>Prepare your game package for the Microsoft Store.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Concept approval](concept-approval.md)</p></td>

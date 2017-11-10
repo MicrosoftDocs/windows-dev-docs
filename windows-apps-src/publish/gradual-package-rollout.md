@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10.
 title: Gradual package rollout
@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
+localizationpriority: high
 ---
 
 # Gradual package rollout

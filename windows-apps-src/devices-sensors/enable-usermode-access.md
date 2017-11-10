@@ -1,27 +1,28 @@
 ---
 author: JordanRh1
-title: Enable usermode access on Windows 10 IoT Core
-description: This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10 IoT Core.
+title: Enable usermode access to GPIO, I2C, and SPI
+description: This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10.
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+ms.technology: acpi
+keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
+localizationpriority: medium
 ---
-# Enable usermode access on Windows 10 IoT Core
+# Enable usermode access to GPIO, I2C, and SPI
 
 
 
-Windows 10 IoT Core contains new APIs for accessing GPIO, I2C, SPI, and UART directly from usermode. Development boards like Raspberry Pi 2 expose a subset of these connections which enable users to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by usermode applications. 
+Windows 10 contains new APIs for accessing GPIO, I2C, SPI, and UART directly from usermode. Development boards like Raspberry Pi 2 expose a subset of these connections which enable users to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by usermode applications. 
 
 This document describes how to specify this configuration in ACPI and provides tools to validate that the configuration was specified correctly. 
 
 > [!IMPORTANT]
 > The audience for this document is UEFI and ACPI developers. Some familiarity with ACPI, ASL authoring, and SpbCx/GpioClx is assumed.
 
-Usermode access to low level buses on Windows is plumbed through the existing `GpioClx` and `SpbCx` frameworks. A new driver called *RhProxy*, only available on Windows 10 IoT Core, exposes `GpioClx` and `SpbCx` resources to usermode. To enable the APIs, a device node for rhproxy must be declared in your ACPI tables with each of the GPIO and SPB resources that should be exposed to usermode. This document walks through authoring and verifying the ASL. 
+Usermode access to low level buses on Windows is plumbed through the existing `GpioClx` and `SpbCx` frameworks. A new driver called *RhProxy*, available on Windows IoT Core and Windows Enterprise, exposes `GpioClx` and `SpbCx` resources to usermode. To enable the APIs, a device node for rhproxy must be declared in your ACPI tables with each of the GPIO and SPB resources that should be exposed to usermode. This document walks through authoring and verifying the ASL. 
 
 
 ## ASL by example

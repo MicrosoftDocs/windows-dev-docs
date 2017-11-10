@@ -1,14 +1,15 @@
 ---
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
-description: Use this method in the Windows Store submission API to delete an existing package flight submission.
+description: Use this method in the Microsoft Store submission API to delete an existing package flight submission.
 title: Delete a package flight submission
 ms.author: mcleans
 ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, flight submission, delete, package flight
+keywords: windows 10, uwp, Microsoft Store submission API, flight submission, delete, package flight
+localizationpriority: medium
 ---
 
 # Delete a package flight submission
@@ -16,13 +17,13 @@ keywords: windows 10, uwp, Windows Store submission API, flight submission, dele
 
 
 
-Use this method in the Windows Store submission API to delete an existing package flight submission.
+Use this method in the Microsoft Store submission API to delete an existing package flight submission.
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -81,13 +82,13 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 409  | The specified submission was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 <span/>
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Manage package flight submissions](manage-flight-submissions.md)
 * [Get a package flight submission](get-a-flight-submission.md)
 * [Create a package flight submission](create-a-flight-submission.md)

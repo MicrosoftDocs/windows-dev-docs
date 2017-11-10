@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, audio, directx
+localizationpriority: medium
 ---
 
 # Audio for games
@@ -255,7 +256,7 @@ Media Foundation (MF) is a media platform for streaming audio and video playback
 
 ### Windows Runtime XAML media types
 
-If you are using [DirectX-XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871), you can incorporate the Windows Runtime XAML media APIs into your Windows Store apps using DirectX with C++ for simpler game scenarios.
+If you are using [DirectX-XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871), you can incorporate the Windows Runtime XAML media APIs into your UWP apps using DirectX with C++ for simpler game scenarios.
 
 <table>
 <colgroup>

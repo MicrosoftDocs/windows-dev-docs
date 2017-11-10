@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 # File access permissions
 
@@ -130,7 +131,7 @@ When you create a new app, you can access the following file system locations by
 
      
 
-## Locations Windows Store apps can access
+## Locations UWP apps can access
 
 -   **User’s Downloads folder.** The folder where downloaded files are saved by default.
 

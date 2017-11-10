@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Getting started: Choosing a programming language
@@ -22,24 +23,22 @@ You can develop using C++, C#, Microsoft Visual Basic, and JavaScript. JavaScrip
 
 Although we're focusing on C# in this article, the other languages offer unique benefits, which you may want to explore. For example, if your app's performance is a primary concern, especially for intensive graphics, then C++ might be the right choice. The Microsoft .NET version of Visual Basic is great for Visual Basic app developers. JavaScript with HTML5 is great for those coming from a web development background. For more info, see one of the following:
 
--   [Create your first Windows Store app using C++](https://msdn.microsoft.com/library/windows/apps/hh974580)
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/br211385)
--   [Create your first Windows Phone Store app using C# or Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
--   [WinJS on Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
+-   [Create your first UWP app using C++](../get-started/create-a-basic-windows-10-app-in-cpp.md)
+-   [Create your first UWP app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [Create your first UWP app using JavaScript](../get-started/create-a-hello-world-app-js-uwp.md)
 
 **Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
 -   [Angle](https://code.google.com/p/angleproject/)
--   [Create your first Windows Store app using DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [Windows Store app samples that use DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [Create your first UWP app using DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [UWP app samples that use DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [Where is the DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## Giving C# a go
 
 As an iOS developer, you're accustomed to Objective-C and Swift. The closest Microsoft programming language to both is C#. For most developers and most apps, we think C# is the easiest and fastest language to learn and use, so this article's info and walkthroughs focus on that language. To learn more about C#, see the following:
 
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Windows Store app samples that use C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Create your first UWP app using C# or Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [UWP app samples that use C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 Following is a class written in Objective-C and C#. The Objective-C version is shown first, followed by the C# version.

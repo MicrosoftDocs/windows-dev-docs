@@ -2,6 +2,7 @@
 author: WilliamsJason
 title: Device Portal network credentials API reference
 description: Learn how to add, remove, or update network credentials programatically.
+localizationpriority: medium
 ---
 
 # Network Credentials API reference

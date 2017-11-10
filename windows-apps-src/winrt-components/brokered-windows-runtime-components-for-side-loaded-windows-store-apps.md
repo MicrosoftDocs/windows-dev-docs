@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-title: Brokered Windows Runtime Components for a side-loaded Windows Store app
+title: Brokered Windows Runtime Components for a side-loaded UWP app
 description: This paper discusses an enterprise-targeted feature supported by Windows 10, which allows touch-friendly .NET apps to use the existing code responsible for key business-critical operations.
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,9 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
+localizationpriority: medium
 ---
 
-#Brokered Windows Runtime Components for a side-loaded Windows Store app
+#Brokered Windows Runtime Components for a side-loaded UWP app
 
 This article discusses an enterprise-targeted feature supported by
 Windows 10, which allows touch-friendly .NET apps to use the existing
@@ -36,7 +37,7 @@ architecture.
 
 Side-loading of the app is a critical component of this feature.
 Enterprise-specific applications have no place in the general consumer
-Windows Store and corporations have very specific requirements around
+Microsoft Store and corporations have very specific requirements around
 security, privacy, distribution, setup, and servicing. As such, the
 side-loading model is both a requirement of those who would use this
 feature and a critical implementation detail.
@@ -50,9 +51,9 @@ for this feature is related to existing data and business logic.
 
 Lastly, given the overwhelming penetration of the .NET runtime and the
 C\# language in enterprise development, this feature was developed with
-an emphasis on using .NET for both the Windows Store app and the desktop
+an emphasis on using .NET for both the UWP app and the desktop
 component sides. While there are other languages and runtimes possible
-for the Windows Store app, the accompanying sample only illustrates C\#,
+for the UWP app, the accompanying sample only illustrates C\#,
 and is restricted to the .NET runtime exclusively.
 
 ##Application components
@@ -100,7 +101,7 @@ between desktop component and side-loaded application at this time.
 **Side-loaded application**
 
 The side-loaded application is a normal UWP app in every respect except
-one: it is side-loaded instead of installed via the Windows Store. Most
+one: it is side-loaded instead of installed via the Microsoft Store. Most
 of the installation mechanisms are identical: the manifest and
 application packaging are similar (one addition to the manifest is
 described in detail later). Once side-loading is enabled, a simple
@@ -535,7 +536,7 @@ add these references as necessary.
 
 Once the references are properly configured, the next task is to
 implement the server's functionality. See the MSDN topic [Best practices
-for interoperability with Windows Runtime Components (Windows Store apps
+for interoperability with Windows Runtime Components (UWP apps
 using C\#/VB/C++ and
 XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
 The task is to create a Windows Runtime component dll that is able to
@@ -653,7 +654,7 @@ stub must be used.
 **Creating the proxy in Visual Studio**
 
 The process for creating and registering proxies and stubs for use
-inside a regular Windows Store app package are described in the
+inside a regular UWP app package are described in the
 topic [Raising Events in Windows Runtime
 Components](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
 The steps described in this article are more complicated than the
@@ -827,7 +828,7 @@ list of loaded modules.
 -   [NorthwindRT Brokered WinRT Component
     Sample](http://go.microsoft.com/fwlink/p/?LinkID=397349)
 
--   [Delivering reliable and trustworthy Windows Store
+-   [Delivering reliable and trustworthy Microsoft Store
     apps](http://go.microsoft.com/fwlink/p/?LinkID=393644)
 
 -   [App contracts and extensions (Windows
@@ -835,6 +836,6 @@ list of loaded modules.
 
 -   [How to sideload apps on Windows 10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
--   [Deploying Windows Store apps to
+-   [Deploying UWP apps to
     businesses](http://go.microsoft.com/fwlink/p/?LinkID=264770)
 

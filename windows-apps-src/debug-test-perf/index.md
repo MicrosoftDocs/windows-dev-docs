@@ -2,18 +2,19 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Debugging, testing, and performance
-description: Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Windows Store certification process, use the Windows App Certification Kit.
+description: Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Microsoft Store certification process, use the Windows App Certification Kit.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 # Debugging, testing, and performance
 
 
-Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Windows Store certification process, use the Windows App Certification Kit.
+Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Microsoft Store certification process, use the Windows App Certification Kit.
 
 | Topic | Description |
 |-------|-------------|
@@ -23,6 +24,6 @@ Use Microsoft Visual Studio to debug and test your app. To prepare your app for 
 | [Test Surface Hub apps using Visual Studio](test-surface-hub-apps-using-visual-studio.md) | The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves at the Surface Hub's screen size and resolution. |
 | [Beta testing](beta-testing.md) | **Beta testing** gives you the chance to improve your app based on feedback from individuals outside of your app-development team who try your unreleased app on their own devices. |
 | [Windows Device Portal](device-portal.md) | The Windows Device Portal lets you configure and manage your device remotely over a network or USB connection. |
-| [Windows App Certification Kit](windows-app-certification-kit.md) | To give your app the best chance of being published on the Windows Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit. |
+| [Windows App Certification Kit](windows-app-certification-kit.md) | To give your app the best chance of being published on the Microsoft Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit. |
 | [Performance](performance-and-xaml-ui.md) | Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals. |
 | [Version adaptive apps](version-adaptive-apps.md) | Take advantage of the latest APIs and features while still reaching the broadest possible audience. Use runtime API checks to adapt your code and XAML at runtime to the features available on the version of Windows 10 where your app is running. |

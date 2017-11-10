@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Share certificates between apps
@@ -65,7 +66,7 @@ This article uses Microsoft Internet Information Services (IIS) for example purp
 
 You can repeat the previous steps to create multiple web services that can be accessed using the same client certificate.
 
-## Create a Windows Store app that uses certificate authentication
+## Create a UWP app that uses certificate authentication
 
 
 Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) object, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Managing your add-ons in bulk allows you to make changes to multiple add-ons at once rather than submitting each update individually.
 title: Manage add-ons in bulk
@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
+localizationpriority: medium
 ---
 
 # Manage add-ons in bulk
@@ -38,7 +39,7 @@ The .csv file contains the following columns.
 | Release date	| The date at which you want to publish the add-on. Acceptable values are **Immediate**, **Manual**, or a date string that complies with the [ISO 8601 standard](http://go.microsoft.com/fwlink/p/?LinkId=817237). | Yes |
 | Titles	| The name that customers will see for the add-on, preceded by the language code and a semicolon. For example, to use the title “Example Title” in English/United States, you would *enter en-us;Example Title*. Additional titles for other languages can be separated by semicolons. Each title must be 100 characters or fewer. 	| Yes |
 |Descriptions	| Optional additional info to display to customers, preceded by the language-locale code and a semicolon. For example, to use the description “This is an example” in English/United States, you would enter *en-us;This is an example*. Additional titles for other languages can be separated by semicolons. Each description must be 200 characters or fewer.	| No |
-| Markets |	One or more [markets](define-pricing-and-market-selection.md#windows-store-consumer-markets) in which you want to offer the add-on. Separate each market by a semicolon. |	Yes |
+| Markets |	One or more [markets](define-pricing-and-market-selection.md#microsoft-store-consumer-markets) in which you want to offer the add-on. Separate each market by a semicolon. |	Yes |
 |Keywords |	Optional [keywords](enter-add-on-properties.md#keywords) used in your app’s implementation. | No |
 
 ## Import add-ons

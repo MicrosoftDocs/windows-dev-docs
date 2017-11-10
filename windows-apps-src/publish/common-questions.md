@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Common questions about ad campaigns
 title: Common questions about ad campaigns
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Common questions about ad campaigns
@@ -35,7 +36,7 @@ If you use one of the default ad templates, you can choose the size, imagery, an
 
 ### Where will my ad appear?
 
-Your ad will appear in apps that share your app's age rating and OS version. You set these properties when you publish your app in the Windows Store. For “Universal” campaigns, your ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties.
+Your ad will appear in apps that share your app's age rating and OS version. You set these properties when you publish your app in the Microsoft Store. For “Universal” campaigns, your ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties.
 
 Ad campaigns are currently supported in these countries and regions:
 

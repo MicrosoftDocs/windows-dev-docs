@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
 title: Using the Windows Dev Center dashboard
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Using the Windows Dev Center dashboard

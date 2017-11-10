@@ -9,6 +9,7 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: high
 ---
 
 # App submissions
@@ -21,7 +22,7 @@ You can start your submission when your app is complete and ready to publish, or
 After your app is published, you can publish an updated version by creating another submission in your dashboard. Creating a new submission lets you make and publish whatever changes are needed, whether you're uploading new packages or just changing details such as price or category. To create a new submission for a published app, click **Update** next to the most recent submission shown on the App overview page.
 
 > [!NOTE]
-> This section of the documentation describes how to create an app submission on the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.
+> This section of the documentation describes how to create an app submission on the Dev Center dashboard. Alternatively, you can use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate app submissions.
 
 ## App submission checklist
 
@@ -89,7 +90,7 @@ You'll need all the required info for at least one of the languages that your ap
 | **App features**              | Optional                                    | [Features](create-app-store-listings.md#app-features)             |
 | **Additional system requirements**      | Optional                                    | [Additional system requirements](create-app-store-listings.md#additional-system-requirements) 
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |
-| **Privacy policy**            | Required for some apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Privacy policy](create-app-store-listings.md#privacy-policy)        |
+| **Privacy policy**            | Required for some apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Privacy policy](create-app-store-listings.md#privacy-policy)        |
 | **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-store-listings.md#copyright-and-trademark-info) |
 | **Additional license terms**  | Optional                                    | [Additional license terms](create-app-store-listings.md#additional-license-terms) |
 | **Website**                   | Optional                                    | [Website](create-app-store-listings.md#website)                   |

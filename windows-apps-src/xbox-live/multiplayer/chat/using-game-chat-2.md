@@ -3,11 +3,12 @@ title: Using Game Chat 2
 author: KevinAsgari
 description: Learn how to use Xbox Live Game Chat 2 to add voice communication to your game.
 ms.author: tomco
-ms.date: 06/14/2017
+ms.date: 10/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat 2, game chat, voice communication
+localizationpriority: medium
 ---
 
 # Using Game Chat 2
@@ -53,9 +54,9 @@ chat_user* chatUserA = chat_manager::add_local_user(<user_a_xuid>);
 You must also add the remote users and identifiers that will be used to represent the remote "Endpoint" that the user is on. An "Endpoint" is an instance of the app running on a remote device. In this example, User B is on Endpoint X, Users C and D are on Endpoint Y. Endpoint X is arbitrarily assigned identifier "1" and Endpoint Y is arbitrarily assigned identifier "2". You inform GC2 of the remote users with these calls:
 
 ```cpp
-chat_user* chatUserB = chat_manager::add_local_user(<user_b_xuid>, 1);
-chat_user* chatUserC = chat_manager::add_local_user(<user_c_xuid>, 2);
-chat_user* chatUserD = chat_manager::add_local_user(<user_d_xuid>, 2);
+chat_user* chatUserB = chat_manager::add_remote_user(<user_b_xuid>, 1);
+chat_user* chatUserC = chat_manager::add_remote_user(<user_c_xuid>, 2);
+chat_user* chatUserD = chat_manager::add_remote_user(<user_d_xuid>, 2);
 ```
 
 Now you configure the communication relationship between each remote user and the local user. In this example, suppose that User A and User B are on the same team and bidirectional communication is allowed. `c_communicationRelationshipSendAndReceiveAll` is a constant defined in GameChat2.h to represent bi-directional communication. Set User A's relationship to User B with:
@@ -64,7 +65,7 @@ Now you configure the communication relationship between each remote user and th
 chatUserA->local()->set_communication_relationship(chatUserB, c_communicationRelationshipSendAndReceiveAll);
 ```
 
-Now supposed that User C and D are 'spectators' and should be allowed to list to User A, but not speak. `c_communicationRelationshipSendAll` is a constant defined in GameChat2.h to represent this unidirectional communication. Set the relationships with:
+Now supposed that User C and D are 'spectators' and should be allowed to listen to User A, but not speak. `c_communicationRelationshipSendAll` is a constant defined in GameChat2.h to represent this unidirectional communication. Set the relationships with:
 
 
 ```cpp
@@ -209,7 +210,7 @@ The `chat_user::chat_user_local::set_remote_user_muted()` method can be used to 
 
 ## Bad reputation auto-mute <a name="automute">
 
-Typically remote users will start off unmuted. GC2 will start the users in a muted state when (1) the remote user isn't friends with the local user, and (2) the remote user has a bad reputation flag. When users are muted due to this operation, `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::reputation_restricted`. This state will be overriden by the first call to `chat_user::chat_user_local::set_remote_user_muted()` that includes the remote user as the target user.
+Typically remote users will start off unmuted. GC2 will start the users in a muted state when (1) the remote user isn't friends with the local user, and (2) the remote user has a bad reputation flag. When users are muted due to this operation, `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::reputation_restricted`. This state will be overridden by the first call to `chat_user::chat_user_local::set_remote_user_muted()` that includes the remote user as the target user.
 
 ## Privilege and privacy <a name="priv">
 

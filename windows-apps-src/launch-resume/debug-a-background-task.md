@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Debug a background task
@@ -100,7 +101,7 @@ If an app that uses background tasks is deployed using Visual Studio, and the ve
 -   If the background task requires lock screen access make sure to put the app on the lock screen before trying to debug the background task. For info on specifying manifest options for lock screen-capable apps, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 -   Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
-For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
 
 ## Related topics
 
@@ -109,8 +110,8 @@ For more info on using VS to debug a background task see [How to trigger suspend
 * [Register a background task](register-a-background-task.md)
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Analyzing the code quality of Windows Store apps with Visual Studio code analysis](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+* [How to trigger suspend, resume, and background events in UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Analyzing the code quality of UWP apps with Visual Studio code analysis](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  
 

@@ -1,14 +1,15 @@
 ---
 author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
-description: Use this method in the Windows Store submission API to delete an existing app submission.
+description: Use this method in the Microsoft Store submission API to delete an existing app submission.
 title: Delete an app submission
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, app submission, delete
+keywords: windows 10, uwp, Microsoft Store submission API, app submission, delete
+localizationpriority: medium
 ---
 
 # Delete an app submission
@@ -16,13 +17,13 @@ keywords: windows 10, uwp, Windows Store submission API, app submission, delete
 
 
 
-Use this method in the Windows Store submission API to delete an existing app submission.
+Use this method in the Microsoft Store submission API to delete an existing app submission.
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -80,14 +81,14 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 409  | The specified submission was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 <span/>
 
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get an app submission](get-an-app-submission.md)
 * [Create an app submission](create-an-app-submission.md)
 * [Commit an app submission](commit-an-app-submission.md)

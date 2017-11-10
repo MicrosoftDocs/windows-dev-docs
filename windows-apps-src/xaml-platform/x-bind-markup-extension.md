@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # {x:Bind} markup extension
@@ -94,7 +95,7 @@ In the following example, the background and foreground of the item are bound to
 
 ``` Xamlmarkup
 <DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind Brushify(Color)}" Width="240">
+    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
         <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
     </Grid>
 </DataTemplate>
@@ -110,7 +111,7 @@ class ColorEntry
         return new SolidColorBrush(c);
     }
 
-    public static SolidColorBrush TextColor(Color c)
+    public SolidColorBrush TextColor(Color c)
     {
         return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
     }
@@ -197,7 +198,7 @@ Pages and user controls that include Compiled bindings will have a "Bindings" pr
 - **StopTracking()** - This will unhook all listeners created for one-way and two-way bindings. They can be re-initialized using the Update() method.
 
 > [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. Note that this is not a feature of function binding, only property binding. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 **Tip**   If you need to specify a single curly brace for a value, such as in [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) or [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
 

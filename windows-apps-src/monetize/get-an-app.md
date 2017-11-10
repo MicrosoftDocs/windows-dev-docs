@@ -1,26 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: Use this method in the Windows Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
 title: Get an app
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, app
+keywords: windows 10, uwp, Microsoft Store submission API, app
+localizationpriority: medium
 ---
 
 # Get an app
 
 
-Use this method in the Windows Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
+Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -96,13 +97,13 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | The specified app could not be found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get all apps](get-all-apps.md)
 * [Get package flights for an app](get-flights-for-an-app.md)
 * [Get add-ons for an app](get-add-ons-for-an-app.md)

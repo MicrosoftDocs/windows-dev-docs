@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Reviews report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store.
 title: Reviews report
@@ -9,14 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Reviews report
 
 
-The **Reviews** report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+The **Reviews** report in the Windows Dev Center dashboard lets you see the ratings and comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get app reviews](../monetize/get-app-reviews.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-You can also respond to customer reviews [directly from this page](respond-to-customer-reviews.md), programmatically [via the Windows Store reviews API](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
+You can also respond to customer reviews [directly from this page](respond-to-customer-reviews.md), programmatically [via the Microsoft Store reviews API](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 > [!TIP]
 > For a quick look at the reviews, ratings, and user feedback for all of your apps in the last 30 days, expand **Engage** in the left navigation menu and select **Reviews and feedback.** 
@@ -71,7 +72,7 @@ Each customer review contains:
 
 -   The title and review text provided by the customer. (Reviews written by customers on Windows Phone 8.1 and earlier will not have a title.)
 -   The date of the review.
--   The name of the reviewer as it appears in the Windows Store.
+-   The name of the reviewer as it appears in the Microsoft Store.
 -   The reviewer's country/region.
 -   The package version of the app on the customer's device at the time the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
 -   The OS version of the device which the customer was using when the review was left.
@@ -107,7 +108,7 @@ To see a breakdown of the number of reviews per category, select **Show details*
 
 ## Responding to customer reviews
 
-You can use the Windows Store Dev Center dashboard, the [Windows Store reviews API](../monetize/submit-responses-to-app-reviews.md), or the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
+You can use the Microsoft Store Dev Center dashboard, the [Microsoft Store reviews API](../monetize/submit-responses-to-app-reviews.md), or the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
 
 Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
 

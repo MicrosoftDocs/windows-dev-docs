@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
 title: Associate Azure Active Directory with your Dev Center account
@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Associate Azure Active Directory with your Dev Center account

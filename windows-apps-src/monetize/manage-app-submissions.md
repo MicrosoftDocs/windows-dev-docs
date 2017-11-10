@@ -1,22 +1,23 @@
 ---
 author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
-description: Use these methods in the Windows Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date:  08/03/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, app submissions
+keywords: windows 10, uwp, Microsoft Store submission API, app submissions
+localizationpriority: medium
 ---
 
 # Manage app submissions
 
-The Windows Store submission API provides methods you can use to manage submissions for your apps, including gradual package rollouts. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+The Microsoft Store submission API provides methods you can use to manage submissions for your apps, including gradual package rollouts. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> If you use the Windows Store submission API to create a submission for an app, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> If you use the Microsoft Store submission API to create a submission for an app, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-app-submissions" />
 ## Methods for managing app submissions
@@ -75,13 +76,13 @@ Use the following methods to get, create, update, commit, or delete an app submi
 
 To create a submission for an app, follow this process.
 
-1. If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+1. If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
     > [!NOTE]
     > Make sure the app already has at least one completed submission with the [age ratings](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) information completed.
 
-2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Windows Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
-3. [Create an app submission](create-an-app-submission.md) by executing the following method in the Windows Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
+3. [Create an app submission](create-an-app-submission.md) by executing the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission.
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
@@ -139,7 +140,7 @@ To create a submission for an app, follow this process.
 
 There are two sets of advanced listing options that may not be available in some submissions: [game options](#gaming-options-object) and [trailers](#trailer-object).
 
-These listing options were added after the Windows Store submission API was first released to developers. If you created a submission for an app via the submission API before these listing options were introduced and this submission is still in progress, you will not be able to access these listing options until you successfully commit the submission or you delete it.
+These listing options were added after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before these listing options were introduced and this submission is still in progress, you will not be able to access these listing options until you successfully commit the submission or you delete it.
 
 To determine whether you can access these listing options for a given app when using the submission API, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true. If you cannot access these listing options for an app, the *gamingOptions* and *trailers* values in your [app submission resource](#app-submission-object) are null when you [create an app submission](create-an-app-submission.md).
 
@@ -156,14 +157,14 @@ The following articles provide detailed code examples that demonstrate how to cr
 * [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
 
 > [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span id="manage-gradual-package-rollout">
 ## Methods for managing a gradual package rollout
 
 You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in the Dev Center dashboard, see [this article](../publish/gradual-package-rollout.md).
 
-To programmatically enable a gradual package rollout for an app submission, follow this process using methods in the Windows Store submission API:
+To programmatically enable a gradual package rollout for an app submission, follow this process using methods in the Microsoft Store submission API:
 
   1. [Create an app submission](create-an-app-submission.md) or [get an existing app submission](get-an-app-submission.md).
   2. In the response data, locate the [packageRollout](#package-rollout-object) resource, set the *isPackageRollout* field to **true**, and set the *packageRolloutPercentage* field to the percentage of your app's customers who should get the updated packages.
@@ -210,7 +211,7 @@ After a gradual package rollout is enabled for an app submission, you can use th
 
 <span/>
 ## Data resources
-The Windows Store submission API methods for managing app submissions use the following JSON data resources.
+The Microsoft Store submission API methods for managing app submissions use the following JSON data resources.
 
 <span id="app-submission-object" />
 ### App submission resource
@@ -345,7 +346,7 @@ This resource has the following values.
 | canInstallOnRemovableMedia           |  boolean  |   Indicates whether customers can install your app to removable storage. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  boolean |   Indicates whether game DVR is enabled for the app.    |   
 | gamingOptions           |  array |   An array that contains one [gaming options resource](#gaming-options-object) that defines game-related settings for the app.<br/><br/>**Note:**&nbsp;&nbsp;The ability to configure game options using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *gamingOptions* value is null. To determine whether you can configure the *gamingOptions* for an app submission, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.      |   
-| hasExternalInAppProducts           |     boolean          |   Indicates whether your app allows users to make purchase outside the Windows Store commerce system. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
+| hasExternalInAppProducts           |     boolean          |   Indicates whether your app allows users to make purchase outside the Microsoft Store commerce system. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Indicates whether your app has been tested to meet accessibility guidelines. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  string  |   Contains [notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) for your app.    |    
 | status           |   string  |  The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
@@ -380,7 +381,7 @@ This resource contains pricing info for the app. This resource has the following
 This resources contains sale info for an app.
 
 > [!IMPORTANT]
-> The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an app submission using the Windows Store submission API. In the future, we will update the Windows Store submission API to introduce a new way to programmatically access sales information for app submissions.
+> The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an app submission using the Microsoft Store submission API. In the future, we will update the Microsoft Store submission API to introduce a new way to programmatically access sales information for app submissions.
 >    * After calling the [GET method to get an app submission](get-an-app-submission.md), the *sales* value will be empty. You can continue to use the Dev Center dashboard to get the sale data for your app submission.
 >    * When calling the [PUT method to update an app submission](update-an-app-submission.md), the information in the *sales* value is ignored. You can continue to use the Dev Center dashboard to change the sale data for your app submission.
 
@@ -749,6 +750,6 @@ The following values represent the status code of a submission.
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Get app data using the Windows Store submission API](get-app-data.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Get app data using the Microsoft Store submission API](get-app-data.md)
 * [App submissions in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)

@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Adding My People support to an application
@@ -177,7 +178,7 @@ The ContactPanel object also allows you to set the background color of the conta
 
 ## Supporting notification badging
 
-If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](https://docs.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts) and expressive [My People notifications](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
+If you want contacts pinned to the taskbar to be badged when new notifications arrive from your app that are related to that person, then you must include the **hint-people** parameter in your [toast notifications](https://docs.microsoft.com/en-us/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts) and expressive [My People notifications](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications).
 
 ![People notification badging](images/my-people-badging.png)
 

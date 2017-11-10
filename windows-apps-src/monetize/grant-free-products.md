@@ -1,19 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: Use this method in the Windows Store purchase API to grant a free app or add-on to a given user.
+description: Use this method in the Microsoft Store purchase API to grant a free app or add-on to a given user.
 title: Grant free products
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store purchase API, grant products
+keywords: windows 10, uwp, Microsoft Store purchase API, grant products
+localizationpriority: medium
 ---
 
 # Grant free products
 
-Use this method in the Windows Store purchase API to grant a free app or add-on (also known as in-app product or IAP) to a given user.
+Use this method in the Microsoft Store purchase API to grant a free app or add-on (also known as in-app product or IAP) to a given user.
 
 Currently, you can only grant free products. If your service attempts to use this method to grant a product that is not free, this method will return an error.
 
@@ -22,7 +23,7 @@ Currently, you can only grant free products. If your service attempts to use thi
 To use this method, you will need:
 
 * An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
-* A Windows Store ID key that represents the identity of the user for whom you want to grant a free product.
+* A Microsoft Store ID key that represents the identity of the user for whom you want to grant a free product.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
 
@@ -52,15 +53,15 @@ For more information, see [Manage product entitlements from a service](view-and-
 
 | Parameter      | Type   | Description        | Required |
 |----------------|--------|---------------------|----------|
-| availabilityId | string | The availability ID of the product to be granted from the Windows Store catalog.         | Yes      |
-| b2bKey         | string | The [Windows Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to grant a product.    | Yes      |
+| availabilityId | string | The availability ID of the product to be granted from the Microsoft Store catalog.         | Yes      |
+| b2bKey         | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to grant a product.    | Yes      |
 | devOfferId     | string | A developer-specified offer ID that will appear in the Collection item after purchase.        |
 | language       | string | The language of the user.  | Yes      |
 | market         | string | The market of the user.       | Yes      |
 | orderId        | guid   | A GUID generated for the order. This value be unique for the user, but it is not required to be unique across all orders.    | Yes      |
-| productId      | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Windows Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
+| productId      | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
 | quantity       | int    | The quantity to purchase. Currently, the only supported value is 1. If not specified, the default is 1.   | No       |
-| skuId          | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Windows Store catalog. An example Store ID for a SKU is 0010.     | Yes      |
+| skuId          | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.     | Yes      |
 
 <span/>
 
@@ -93,7 +94,7 @@ Content-Type: application/json
 | clientContext             | ClientContextV6             | Client contextual information for this order. This will be assigned to the *clientID* value from the Azure AD token.    | Yes      |
 | createdtime               | datetimeoffset              | The time the order was created.         | Yes      |
 | currencyCode              | string                      | Currency code for *totalAmount* and *totalTaxAmount*. N/A for free items.     | Yes      |
-| friendlyName              | string                      | The friendly name for the order. N/A for orders made using the Windows Store purchase API. | Yes      |
+| friendlyName              | string                      | The friendly name for the order. N/A for orders made using the Microsoft Store purchase API. | Yes      |
 | isPIRequired              | boolean                     | Indicates whether a payment instrument (PI) is required as part of the purchase order.  | Yes      |
 | language                  | string                      | The language ID for the order (for example, “en”).       | Yes      |
 | market                    | string                      | The market ID for the order (for example, “US”).  | Yes      |
@@ -123,7 +124,7 @@ The OrderLineItemV6 object contains the following parameters.
 | Parameter               | Type           | Description                                                                                                  | Required |
 |-------------------------|----------------|--------------------------------------------------------------------------------------------------------------|----------|
 | agent                   | IdentityV6     | The agent that last edited the line item. For more information about this object, see the table below.       | No       |
-| availabilityId          | string         | The availability ID of the product to be purchased from the Windows Store catalog.                           | Yes      |
+| availabilityId          | string         | The availability ID of the product to be purchased from the Microsoft Store catalog.                           | Yes      |
 | beneficiary             | IdentityV6     | The identity of the beneficiary of the order.                                                                | No       |
 | billingState            | string         | The billing state of the order. This is set to **Charged** when completed.                                   | No       |
 | campaignId              | string         | The campaign ID for this order.                                                                              | No       |
@@ -137,12 +138,12 @@ The OrderLineItemV6 object contains the following parameters.
 | legacyBillingOrderId    | string         | The legacy billing ID.                                                                                       | No       |
 | lineItemId              | string         | The line item ID for the item in this order.                                                                 | Yes      |
 | listPrice               | decimal        | The list price of the item in this order.                                                                    | Yes      |
-| productId               | string         | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) that represents the line item in the Windows Store catalog. An example Store ID for a product is 9NBLGGH42CFD.   | Yes      |
+| productId               | string         | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) that represents the line item in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD.   | Yes      |
 | productType             | string         | The type of the product. The supported values are **Durable**, **Application**, and **UnmanagedConsumable**. | Yes      |
 | quantity                | int            | The quantity of the item ordered.                                                                            | Yes      |
 | retailPrice             | decimal        | The retail price of the item ordered.                                                                        | Yes      |
 | revenueRecognitionState | string         | The revenue recognition state.                                                                               | Yes      |
-| skuId                   | string         | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) of the line item in the Windows Store catalog. An example Store ID for a SKU is 0010.                                                                   | Yes      |
+| skuId                   | string         | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) of the line item in the Microsoft Store catalog. An example Store ID for a SKU is 0010.                                                                   | Yes      |
 | taxAmount               | decimal        | The tax amount for the line item.                                                                            | Yes      |
 | taxType                 | string         | The tax type for the applicable taxes.                                                                       | Yes      |
 | Title                   | string         | The localized title of the line item.                                                                        | Yes      |
@@ -155,7 +156,7 @@ The IdentityV6 object contains the following parameters.
 | Parameter     | Type   | Description                                                                        | Required |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | string | Contains the value **"pub"**.                                                      | Yes      |
-| identityValue | string | The string value of the *publisherUserId* from the specified Windows Store ID key. | Yes      |
+| identityValue | string | The string value of the *publisherUserId* from the specified Microsoft Store ID key. | Yes      |
 
 <span/> 
 
@@ -227,7 +228,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 |------|--------------|----------------------------|----------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | The Azure AD access token is invalid. In some cases the details of the ServiceError will contain more information, such as when the token is expired or the *appid* claim is missing. |
 | 401  | Unauthorized | PartnerAadTicketRequired   | An Azure AD access token was not passed to the service in the authorization header.   |
-| 401  | Unauthorized | InconsistentClientId       | The *clientId* claim in the Windows Store ID key in the request body and the *appid* claim in the Azure AD access token in the authorization header do not match.       |
+| 401  | Unauthorized | InconsistentClientId       | The *clientId* claim in the Microsoft Store ID key in the request body and the *appid* claim in the Azure AD access token in the authorization header do not match.       |
 | 400  | BadRequest   | InvalidParameter           | The details contain information regarding the request body and which fields have an invalid value.           |
 
 <span/> 
@@ -237,4 +238,4 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 * [Manage product entitlements from a service](view-and-grant-products-from-a-service.md)
 * [Query for products](query-for-products.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
-* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
+* [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)

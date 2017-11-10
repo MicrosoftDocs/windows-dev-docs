@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 # Package a UWP app with Visual Studio
 
@@ -47,7 +48,7 @@ The Visual Studio manifest designer allows you to update the manifest file witho
 
     Check that you have all the images that are required for a UWP app on the **Visual Assets** tab.
 
-    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. In order to sideload an app package, you need to trust the package. The certificate must be installed on that device to trust the package. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. If you're publishing your app in the Microsoft Store, the Store will sign your app with a trusted certificate for you. If you are not publishing your app and simply want to sideload an app package, you first need to trust the package. The certificate must be installed on that device to trust the package. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
 
 4.  Save your file after you have made the necessary edits for your app.
 
@@ -65,7 +66,7 @@ To distribute an app through the Store you must create an app package (.appx), a
 
     The **Create App Packages** wizard appears.
 
-3.  Select Yes in the first dialog asking if you want to build packages to upload to the Windows Store, then click Next.<br/>
+3.  Select Yes in the first dialog asking if you want to build packages to upload to the Microsoft Store, then click Next.<br/>
     ![Create Your Packages dialog window shown](images/packaging-screen3.jpg)
 
     If you choose No here, Visual Studio will not generate the required .appxupload package you need for store submission. If you only want to sideload your app to run it on internal devices, then you can select this option. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
@@ -95,7 +96,7 @@ To distribute an app through the Store you must create an app package (.appx), a
 
 1.  Enable your Windows 10 device for development by following the [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236) instructions.
     **Important**  You cannot validate your app package on a remote ARM device for Windows 10.
-2.  Download and install the remote tools for Visual Studio. These tools are used to run the Windows App Certification Kit remotely. You can get more information about these tools including where to download them by visiting [Run Windows Store apps on a remote machine](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
+2.  Download and install the remote tools for Visual Studio. These tools are used to run the Windows App Certification Kit remotely. You can get more information about these tools including where to download them by visiting [Run UWP apps on a remote machine](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
 3.  Download the required [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666) and then install it on your remote Windows 10 device.
 4.  On the **Package Creation Completed** page of the wizard, choose the **Remote Machine** option button, and then choose the ellipsis button next to the **Test Connection** button.
     **Note**  The **Remote Machine** option button is available only if you selected at least one solution configuration that supports validation. For more information about testing your app with the WACK, see [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/Mt186449).

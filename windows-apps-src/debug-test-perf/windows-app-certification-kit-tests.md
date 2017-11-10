@@ -2,18 +2,19 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows App Certification Kit tests
-description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
+description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Microsoft Store.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 # Windows App Certification Kit tests
 
 
-The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
+The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Microsoft Store.
 
 ## Deployment and launch tests
 
@@ -53,7 +54,7 @@ Checks that the Windows app can run on a future version of the OS. This test has
 
 ### Background
 
-Operating system version info has restricted usage for the Windows Store. This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.
+Operating system version info has restricted usage for the Microsoft Store. This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.
 
 ### Test details
 
@@ -121,7 +122,7 @@ Examines the app manifest to verify the contents are correct as described in the
 
 -   **Inter-process Communication (IPC) verification**
 
-    This test enforces the requirement that Windows Store apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.
+    This test enforces the requirement that UWP apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.
 
 ### Corrective action
 
@@ -241,7 +242,7 @@ The AppContainerCheck verifies that the **appcontainer** bit in the portable exe
 
 If a native executable file fails the test, make sure that you used the latest compiler and linker to build the file and that you use the */appcontainer* flag on the linker.
 
-If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the Windows Store app.
+If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the UWP app.
 
 **Remarks**
 
@@ -301,22 +302,22 @@ Test the app for the use of any non-compliant APIs.
 
 ### Background
 
-Apps must use the APIs for Windows Store apps (Windows Runtime or supported Win32 APIs) to be certified for the Windows Store. This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.
+Apps must use the APIs for UWP apps (Windows Runtime or supported Win32 APIs) to be certified for the Microsoft Store. This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.
 
 ### Test details
 
--   Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
+-   Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for UWP app development by checking the import address table of the binary.
 -   Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile.
 
 ### Corrective actions
 
 Make sure that the app was compiled as a release build and not a debug build.
 
-> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-Review the error messages to identify the API the app uses that is not an [API for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Review the error messages to identify the API the app uses that is not an [API for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps. See, [Alternatives to Windows APIs in Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
+> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See, [Alternatives to Windows APIs in UWP apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
 
 ## Performance tests
 
@@ -426,7 +427,7 @@ Use the following table as guidance.
 <tr><td>
 <p>The "resources.pri" file must not have AutoMerge enabled.</p>
 </td><td>
-<p>MakePRI.exe supports an option called <strong>AutoMerge</strong>. The default value of <strong>AutoMerge</strong> is <strong>off</strong>. When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through  the Windows Store. The resources.pri of an app that is distributed through the  Windows Store must be in  the root of the app's package and contain all the language references that the app supports.</p>
+<p>MakePRI.exe supports an option called <strong>AutoMerge</strong>. The default value of <strong>AutoMerge</strong> is <strong>off</strong>. When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through  the Microsoft Store. The resources.pri of an app that is distributed through the  Microsoft Store must be in  the root of the app's package and contain all the language references that the app supports.</p>
 </td></tr>
 <tr><td>
 <p>The string {string} failed the max length restriction of {number} characters.</p>
@@ -478,7 +479,7 @@ Use the following table as guidance.
 
 ### Branding validation
 
-Windows Store apps are expected to be complete and fully functional. Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.
+UWP apps are expected to be complete and fully functional. Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.
 
 ### Test Details
 
@@ -494,7 +495,7 @@ Test the app to make sure it is not a debug build.
 
 ### Background
 
-To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
+To be certified for the Microsoft Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
 
 ### Test details
 
@@ -502,7 +503,7 @@ Test the app to make sure it is not a debug build and is not linked to any debug
 
 ### Corrective actions
 
--   Build the app as a release build before you submit it to the Windows Store.
+-   Build the app as a release build before you submit it to the Microsoft Store.
 -   Make sure that you have the correct version of .NET framework installed.
 -   Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
 
@@ -530,7 +531,7 @@ Tests Microsoft Direct3D apps to ensure that they won't crash on devices with ol
 
 ### Background
 
-Windows Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.
+Microsoft Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.
 
 Because users can change the graphics hardware in their device after the app is installed, if you choose a minimum feature level higher than 9\-1, your app must detect at launch whether or not the current hardware meets the minimum requirements. If the minimum requirements are not met, the app must display a message to the user detailing the Direct3D requirements. Also, if an app is downloaded on a device with which it is not compatible, it should detect that at launch and display a message to the customer detailing the requirements.
 
@@ -544,7 +545,7 @@ Ensure that your app renders correctly on Direct3D feature level 9\-1, even if y
 
 ### Direct3D Trim after suspend
 
-> **Note**  This test only applies to Windows Store apps developed for Windows 8.1 and later.
+> **Note**  This test only applies to UWP apps developed for Windows 8.1 and later.
 
 ### Background
 
@@ -666,5 +667,5 @@ Update the background JavaScript code to call Close() correctly.
 ## Related topics
 
 * [Windows Desktop Bridge app tests](windows-desktop-bridge-app-tests.md)
-* [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

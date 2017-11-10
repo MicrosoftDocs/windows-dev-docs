@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: You can generate promotional codes for an app or add-on that you have published in the Windows Store.
+Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
@@ -9,14 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Generate promotional codes
 
 
-You can generate promotional codes for an app or add-on that you have published in the Windows Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md) with Windows 10.
+You can generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md) with Windows 10.
 
-Each promotional code has a corresponding unique redeemable URL that you can distribute to a single user or to a group of users. The user can simply click the URL to redeem the code and install your app or add-on from the Windows Store.
+Each promotional code has a corresponding unique redeemable URL that you can distribute to a single user or to a group of users. The user can simply click the URL to redeem the code and install your app or add-on from the Microsoft Store.
 
 > [!TIP] 
 > You can use [targeted push notifications](send-push-notifications-to-your-apps-customers.md) to distribute a promotional code to a segment of your customers. When doing so, be sure to use a promotional code that allows multiple customers to use the same code.
@@ -37,7 +38,7 @@ Note that your app must pass the final publishing phase of the [app certificatio
 
 Be aware of the following policies for promotional codes:
 
--   You can generate promotional codes for any app or add-on that you published to the Windows Store. Customers can redeem the codes on any versions of Windows that are supported by your app or add-on.
+-   You can generate promotional codes for any app or add-on that you published to the Microsoft Store. Customers can redeem the codes on any versions of Windows that are supported by your app or add-on.
 -   Promotional codes expire 6 months after the date you order them (unless you choose an earlier expiration date).
 -   For each of your apps or add-ons, you can generate codes that allow up to 1600 redemptions every 6 months. The 6 month period begins when the first promotional code order is submitted, even if you choose an earlier expiration date. The total of 1600 redemptions per product applies to both single-use codes and codes that can be used multiple times.
 -   You must follow the requirements defined in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), including section **3k. Promotional Codes**.
@@ -45,7 +46,7 @@ Be aware of the following policies for promotional codes:
 ## Order promotional codes
 
 
-To order promotional codes for an app or add-on that you published to the Windows Store:
+To order promotional codes for an app or add-on that you published to the Microsoft Store:
 
 1.  In the left navigation menu of the Windows Dev Center dashboard, expand **Attract** and then select **Promo codes.**
 
@@ -96,7 +97,7 @@ After you distribute a promotional code (or its redeemable URL) to a customer, t
 > [!IMPORTANT]
 > We recommend that you don't distribute promotional codes to your customers until your product has completed the publishing process (even if you have selected **Make this product available but not discoverable in the Store**). Customers will see an error if they try to use a promotional code for a product which hasn't been published yet.
 
-After the customer clicks **Redeem**, the Windows Store will open to the overview page for the app (if they are on a Windows 10 or Windows 8.1 device), where they can click **Install** to download and install the app for free. If the customer is on a computer or device that does not have the Windows Store installed, the link will launch the Windows Store web page for the app. The code will be applied to the customer's Microsoft account, so they can later download the app on a Windows device (that is associated with the same Microsoft account) for free.
+After the customer clicks **Redeem**, the Microsoft Store will open to the overview page for the app (if they are on a Windows 10 or Windows 8.1 device), where they can click **Install** to download and install the app for free. If the customer is on a computer or device that does not have the Microsoft Store installed, the link will launch the Microsoft Store web page for the app. The code will be applied to the customer's Microsoft account, so they can later download the app on a Windows device (that is associated with the same Microsoft account) for free.
 
 > [!NOTE]
 > In some cases the customer may see a **Buy** button instead of **Install**, even though the app was successfully redeemed via the promotional code. The customer can click **Buy** to install the app for no charge.

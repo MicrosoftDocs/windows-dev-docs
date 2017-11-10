@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
+localizationpriority: medium
 ---
 
 # Connected apps and devices (Project Rome)

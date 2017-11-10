@@ -1,25 +1,26 @@
 ---
 author: mcleanbyron
-description: Use this method in the Windows Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters.
 title: Get app acquisition funnel data
 ms.author: mcleans
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, acquisition, funnel
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, acquisition, funnel
+localizationpriority: medium
 ---
 
 # Get app acquisition funnel data
 
-Use this method in the Windows Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#acquisition-funnel) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters. This information is also available in the [Acquisitions report](../publish/acquisitions-report.md#acquisition-funnel) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -140,5 +141,5 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Acquisitions report](../publish/acquisitions-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)

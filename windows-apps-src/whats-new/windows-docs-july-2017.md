@@ -1,4 +1,4 @@
-﻿---
+---
 author: QuinnRadich
 title: What's New in Windows Docs in July 2017 - Develop UWP apps
 description: New features, samples, and developer guidance has been added to the Windows 10 developer documentation for July 2017
@@ -8,6 +8,7 @@ ms.date: 07/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # What's New in the Windows Developer Docs in July 2017
@@ -22,41 +23,41 @@ The Windows Developer Documentation is constantly being updated with information
 
 Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, these new effects use depth, perspective, and movement to help users focus on important UI elements.
 
-[Acrylic material](../style/acrylic.md) is a type of brush that creates transparent textures. 
+[Acrylic material](../design/style/acrylic.md) is a type of brush that creates transparent textures. 
 
-![Acrylic in light theme](../style/images/Acrylic_DarkTheme_Base.png)
+![Acrylic in light theme](../design/style/images/Acrylic_DarkTheme_Base.png)
 
-The [Parallax effect](../style/parallax.md) adds three-dimensional depth and perspective to your app.
+The [Parallax effect](../design/motion/parallax.md) adds three-dimensional depth and perspective to your app.
 
-![An example of parallax with a list and background image](../style/images/_Parallax_v2.gif)
+![An example of parallax with a list and background image](../design/style/images/_Parallax_v2.gif)
 
-[Reveal](../style/reveal.md) highlights important elements of your app. 
+[Reveal](../design/style/reveal.md) highlights important elements of your app. 
 
-![Reveal Visual](../style/images/Nav_Reveal_Animation.gif)
+![Reveal Visual](../design/style/images/Nav_Reveal_Animation.gif)
 
 ### UI Controls
 
 Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, these new controls make it easier to quickly build a great looking UI.
 
-The [color picker control](../controls-and-patterns/color-picker.md) enables users to browse through and select colors.  
+The [color picker control](../design/controls-and-patterns/color-picker.md) enables users to browse through and select colors.  
 
-![A default color picker](../controls-and-patterns/images/color-picker-default.png)
+![A default color picker](../design/controls-and-patterns/images/color-picker-default.png)
 
-The [navigation view control](../controls-and-patterns/navigationview.md) makes it easy to add top-level navigation to your app.
+The [navigation view control](../design/controls-and-patterns/navigationview.md) makes it easy to add top-level navigation to your app.
 
-![NavigationView sections](../controls-and-patterns/images/navview_sections.png)
+![NavigationView sections](../design/controls-and-patterns/images/navview_sections.png)
 
-The [person picture control](../controls-and-patterns/person-picture.md) displays the avatar image for a person.
+The [person picture control](../design/controls-and-patterns/person-picture.md) displays the avatar image for a person.
 
-![The person picture control](../controls-and-patterns/images/person-picture/person-picture_hero.png)
+![The person picture control](../design/controls-and-patterns/images/person-picture/person-picture_hero.png)
 
-The [rating control](../controls-and-patterns/rating.md) enables users to easily view and set ratings that reflect degrees of satisfaction with content and services.
+The [rating control](../design/controls-and-patterns/rating.md) enables users to easily view and set ratings that reflect degrees of satisfaction with content and services.
 
-![Example of Ratings Control](../controls-and-patterns/images/rating_rs2_doc_ratings_intro.png)
+![Example of Ratings Control](../design/controls-and-patterns/images/rating_rs2_doc_ratings_intro.png)
 
 ### Design Toolkits
 
-The [design toolkits and resources for UWP apps](../design-downloads/index.md) have been expanded with the addition of the Sketch and Adobe XD toolkits. The previously-existing toolkits have also been updated and revamped, providing more robust controls and layout templates for your UWP apps.
+The [design toolkits and resources for UWP apps](../design/downloads/index.md) have been expanded with the addition of the Sketch and Adobe XD toolkits. The previously-existing toolkits have also been updated and revamped, providing more robust controls and layout templates for your UWP apps.
 
 ### Dashboard, monetization and Store services
 
@@ -64,7 +65,7 @@ The following new features are now available:
 
 * The Microsoft Advertising SDK now enables you to show [native ads](../monetize/native-ads.md) in your apps. A native ad is a component-based ad format where each piece of the ad creative (such as the title, image, description, and call-to-action text) is delivered to your app as an individual element. Native ads are currently only available to developers who join a pilot program, but we intend to make this feature available to all developers soon.
 
-* The [Windows Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) now provides a method you can use to [download the CAB file for an error in your app](../monetize/download-the-cab-file-for-an-error-in-your-app.md).
+* The [Microsoft Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) now provides a method you can use to [download the CAB file for an error in your app](../monetize/download-the-cab-file-for-an-error-in-your-app.md).
 
 * [Targeted offers](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md) let you target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization. 
 
@@ -90,7 +91,7 @@ Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Bui
 
 ### Pin to Taskbar
 
-Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, the new TaskbarManager class allows you to ask your user to [pin your app to the taskbar](../controls-and-patterns/pin-to-taskbar.md).
+Available to [Windows Insiders](https://insider.windows.com/) in SDK Preview Builds, the new TaskbarManager class allows you to ask your user to [pin your app to the taskbar](../design/shell/pin-to-taskbar.md).
 
 ## Developer Guidance
 

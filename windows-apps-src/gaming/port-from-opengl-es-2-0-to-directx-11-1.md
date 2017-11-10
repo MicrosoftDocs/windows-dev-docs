@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, graphics
+localizationpriority: medium
 ---
 
 # Port from OpenGL ES 2.0 to Direct3D 11
@@ -17,7 +18,7 @@ keywords: windows 10, uwp, games, opengl, direct3d 11, port, graphics
 
 Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
 
-> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Windows Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Windows Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Microsoft Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Microsoft Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
  
 

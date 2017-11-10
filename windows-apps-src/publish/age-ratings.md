@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Age ratings
@@ -20,7 +21,7 @@ The **Age ratings** page of the [app submission process](app-submissions.md) let
 The first time you submit an app (or the first time you update an app published using the older age rating process), you will be prompted to complete a multiple-choice questionnaire to determine your app’s age rating.
 
 > [!IMPORTANT]
-> If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Windows Store.
+> If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Microsoft Store.
 
 You are required to answer the questions accurately. As part of this process, we share your publisher display name and email address with IARC. After you complete the questionnaire, the IARC rating system will provide age and content rating information based on your responses. We’ll use this rating information when displaying your app to customers in different markets. You will also receive an email from IARC with a confirmation of the app’s rating when your app has been published.
 
@@ -43,9 +44,9 @@ If you have questions about the age rating your app received, or wish to appeal 
 In some cases, the rating for your app may cause it to be classified as inappropriate for a particular country or region. If this occurs, you will see a message indicating the market(s) to which your app can’t be offered. If you disagree with this classification (or any other for that matter), you can request an appeal using the link that appears in the rating certificate email that you will receive from IARC.
 
 
-## Previous Windows Store age ratings
+## Previous Microsoft Store age ratings
 
-Previously, developers specified the age rating for their app rather than completing the questionnaire. Below, find the previous Windows Store age ratings breakdown:
+Previously, developers specified the age rating for their app rather than completing the questionnaire. Below, find the previous Microsoft Store age ratings breakdown:
 
 | Age rating                           | Description                            |
 |--------------------------------------|----------------------------------------|

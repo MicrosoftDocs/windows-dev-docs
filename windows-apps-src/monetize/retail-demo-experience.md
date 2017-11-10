@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, retail demo app
+localizationpriority: medium
 ---
 #  Create a Retail Demo Experience (RDX) app
 
@@ -131,7 +132,7 @@ After 60 seconds of idle time, the idle attract app video will start playing on 
 
 #### Step 2: Set up
 * For offline devices: Folders remain empty
-* For online devices: Retail demo assets can be pushed to the device from the Windows Store
+* For online devices: Retail demo assets can be pushed to the device from the Microsoft Store
 
 ### How to store data across user sessions?
 

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity
+localizationpriority: medium
 ---
 
 # Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID@Xbox and managed partners
@@ -25,14 +26,14 @@ For more information on how to get started, see the Unity documentation: https:/
 
 **1) Install Unity**
 
-Install Unity 5.6 or higher, and ensure you have the "Windows Store Il2CPP scripting backend" selected during installation
+Install Unity 5.6 or higher, and ensure you have the **Windows Store Il2CPP scripting backend** selected during installation
 
 **2) Install Visual Studio Tools for Unity version 3.1 and above for IntelliSense support when using WinMDs**
 For Visual Studio 2015, this can be found at https://marketplace.visualstudio.com/items?itemName=SebastienLebreton.VisualStudio2015ToolsforUnity.  For Visual Studio 2017, the component can be added inside the Visual Studio 2017 installer.
 
 **3) Open a new or existing Unity project**
 
-**4) Switch the platform to Windows Store in the Unity Build Settings menu**
+**4) Switch the platform to Universal Windows Platform in the Unity Build Settings menu**
 
 **5) Enable IL2CPP scripting backend in the Unity player settings, and set API compatibility to .NET 4.6**
 
@@ -111,7 +112,7 @@ public class XboxLiveTest : MonoBehaviour
 
 **11) Build the project in Unity.**
 
-1.  Go to File \| Build Settings, click Windows Store and make sure you click “Switch Platform”
+1.  Go to File \| Build Settings, click **Universal Windows Platform** and make sure you click **Switch Platform**
 
 2.  Click "Add Open Scenes" to add the current scene to the build
 
@@ -142,7 +143,7 @@ If you change anything in Unity, then you must rebuild the UWP project.
 
 Note that Unity will replace your pfx file when you recompile which will cause Xbox Live sign-in to fail, so you must update it inside the Unity project to avoid this issue.
 
-To do this, go to File \| Build Settings, click on "Build Settings" on the Windows Store player and click the PFX button to replace the PFX file with the one you got from above. You can alternatively delete the PFX file each time you rebuild the project from within Unity.
+To do this, go to File \| Build Settings, click on "Build Settings" on the **Universal Windows Platform** player and click the PFX button to replace the PFX file with the one you got from above. You can alternatively delete the PFX file each time you rebuild the project from within Unity.
 
 ## Troubleshooting common issues
 
@@ -173,4 +174,4 @@ b) You are signing in with an Xbox Live account that has access to the developer
 
 c) Your package.appxmanfiest in your UWP app is set to the correct Identity.  You can edit this manually, but the easiest way to fix this is to right click on the Project in Visual Studio and choose "Store" \| "Associate App with the Store".
 
-d) The stock .pfx file provided by Unity won't have the correct identity so either delete it from the disk and remove the line in the .csproj that references it, or right click on the Project in Visual Studio and choose "Store" \| "Associate App with the Store" which will place down a proper .pfx file.  Be sure then to go back to Unity, click on "Build Settings" on the Windows Store player and click the PFX button to replace the .pfx file with the one you got from Visual Studio's "Associate App with the Store" action.
+d) The stock .pfx file provided by Unity won't have the correct identity so either delete it from the disk and remove the line in the .csproj that references it, or right click on the Project in Visual Studio and choose "Store" \| "Associate App with the Store" which will place down a proper .pfx file.  Be sure then to go back to Unity, click on "Build Settings" on the **Universal Windows Platform** player and click the PFX button to replace the .pfx file with the one you got from Visual Studio's "Associate App with the Store" action.

@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript
+localizationpriority: medium
 ---
 
 # Adding WebVR support to a 3D Babylon.js game
@@ -48,9 +49,9 @@ The before and after folders contain these files:
 -   css/ - A folder containing the CSS for the game.
 -   js/ - A folder containing the JavaScript files. The main.js file is our game, and the other files are the libraries used.
 -   models/ - A folder containing the 3D models. For this game we have only one model, for the dinosaur.
--   index.html - The webpage that hosts the game's renderer. Opening this page in Edge launches the game.
+-   index.html - The webpage that hosts the game's renderer. Opening this page in Microsoft Edge launches the game.
 
-You can test both versions of the game by opening their respective index.html files in Edge.
+You can test both versions of the game by opening their respective index.html files in Microsoft Edge.
 
 
 
@@ -65,7 +66,7 @@ If you met all the requirements, you can then turn on developer features and sim
 > [!IMPORTANT]
 > The Mixed Reality Portal must be open at all times during this tutorial.
 
-You're now ready to experience WebVR with Edge.
+You're now ready to experience WebVR with Microsoft Edge.
 
 ## 2D UI in a virtual world
 
@@ -157,7 +158,7 @@ function onWindowResize() {
 ```
 
 
-You can load the game by opening the index.html file in Edge. And there you have it: 2D UI in a 3D world!
+You can load the game by opening the index.html file in Microsoft Edge. And there you have it: 2D UI in a 3D world!
 
 ![startUI](images/startUI.png)
 
@@ -245,7 +246,7 @@ For this game, wherever the user looks will be forward. For example, if they loo
 
 If we open index.html with our headset and game controller plugged in, a left click on the blue game window will switch our game to VR mode! Go ahead and put on your headset to check out the results. 
 
-In the next section, we'll cover the unpleasantness that occurs when you exit VR mode while in the Edge browser, and what should happen when a headset isn't plugged in.
+In the next section, we'll cover the unpleasantness that occurs when you exit VR mode while in the Microsoft Edge browser, and what should happen when a headset isn't plugged in.
 
 ![instruction box in vr](images/webvrfreecamera.png)
 
@@ -253,9 +254,9 @@ In the next section, we'll cover the unpleasantness that occurs when you exit VR
 
 ## Swapping between cameras
 
-With only the **WebVRFreeCamera** available, things can go awry in the Edge browser when you try to escape from WebVR (because this camera works only while a headset is displaying content).
+With only the **WebVRFreeCamera** available, things can go awry in the Microsoft Edge browser when you try to escape from WebVR (because this camera works only while a headset is displaying content).
 
-When the scene suddenly loses an active camera, the display in Edge will switch between views, causing a flickering effect. To prevent this, we'll add a backup **UniversalCamera** to display after we've taken our headset off, pressed **ESC**, or switched between tabs in Edge.
+When the scene suddenly loses an active camera, the display in Microsoft Edge will switch between views, causing a flickering effect. To prevent this, we'll add a backup **UniversalCamera** to display after we've taken our headset off, pressed **ESC**, or switched between tabs in Microsoft Edge.
 
 
 A VR headset can be plugged in but not displaying content (presenting). With the `headset` variable available to us, we can now use our `animate()` function to see whether the headset is presenting using the `isPresenting` property. If it is, keep the **WebVRFreeCamera** active; if it isn't, switch to the backup **UniversalCamera**.
@@ -329,4 +330,4 @@ Replace your current `caught()` function with this code.
 
 Congratulations! You now have a complete Babylon.js game with WebVR support. From here you can take what you've learned to build an even better game, or build off this one.
 
-
+`

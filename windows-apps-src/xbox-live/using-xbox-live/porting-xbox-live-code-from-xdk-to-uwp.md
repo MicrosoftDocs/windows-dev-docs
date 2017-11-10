@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xdk, porting
+localizationpriority: medium
 ---
 
 # Porting Xbox Live code from the Xbox Developer Kit (XDK) to Universal Windows Platform (UWP)

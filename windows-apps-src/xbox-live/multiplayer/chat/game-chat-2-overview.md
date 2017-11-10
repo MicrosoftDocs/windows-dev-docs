@@ -3,18 +3,19 @@ title: Game Chat 2 overview
 author: KevinAsgari
 description: Learn how to add voice communication to your game by using Xbox Live Game Chat 2, an updated version of Game Chat.
 ms.author: tomco
-ms.date: 06/14/2017
+ms.date: 10/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat, game chat 2, voice communication
+localizationpriority: medium
 ---
 
 # Game Chat 2 Overview
 
 Game Chat 2 (GC2) allows you to easily add voice and text chat communication to your app while respecting your players' privacy settings and fulfilling the Xbox Requirements for Xbox One Games and Hub Apps relating to voice and text chat. For players that have enabled speech-to-text or text-to-speech conversion via the Ease of Access - Game Chat Transcription settings, GC2 will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
 
-- **Communication Relationships** - GC2 gives you fine-grained control over how your players can communicate with each others. Rather than specifying teams or channels, GC2 requires that explicit relationships between each pair of users be defined. GC2 communication relationships support uni and bi-directional communication between any pair of players. Voice and text communication relatinoships can be set independently of each other.
+- **Communication Relationships** - GC2 gives you fine-grained control over how your players can communicate with each others. Rather than specifying teams or channels, GC2 requires that explicit relationships between each pair of users be defined. GC2 communication relationships support uni and bi-directional communication between any pair of players. Voice and text communication relationships can be set independently of each other.
 
 - **Accessibility** - GC2 supports speech-to-text and text-to-speech. When enabled, GC2 will respect the "Game Chat Transcription" preference of your players and will transparently perform translations to create chat text messages representing incoming speech audio and play synthesized speech audio for outgoing chat text messages, respectively.
 
@@ -28,9 +29,9 @@ Game Chat 2 (GC2) allows you to easily add voice and text chat communication to 
 
 - `chat_manager::start/finish_processing_state_changes` - The pair of methods called by the app every UI frame to perform asynchronous operations, to retrieve results to be handled in the form of `game_chat_state_change` structures, and then to free the associated resources when finished.
 
-- `chat_manager::start/finish_processing_data_frames` - The pair of methods used to plug GC2 into the app's tranposrt layer. These methods are called by the app every network frame to retrieve and distribute `game_chat_data_frame` objects to instances of the app on remote devices, and then to free the associated resources when finished.
+- `chat_manager::start/finish_processing_data_frames` - The pair of methods used to plug GC2 into the app's transport layer. These methods are called by the app every network frame to retrieve and distribute `game_chat_data_frame` objects to instances of the app on remote devices, and then to free the associated resources when finished.
 
-- `chat_manager::process_incoming_data` - The method used to give data to GC2 that has been delivered over the app's transport layer frmo a remote instance of GC2.
+- `chat_manager::process_incoming_data` - The method used to give data to GC2 that has been delivered over the app's transport layer from a remote instance of GC2.
 
 The app informs the library of users on the local device and users on remote devices that are expected to chat together. The app then configures the relationships between each user.
 

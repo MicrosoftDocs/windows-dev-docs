@@ -1,30 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
-description: Use this method in the Windows Store analytics API to get aggregate ad campaign performance data for the specified application during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate ad campaign performance data for the specified application during a given date range and other optional filters.
 title: Get ad campaign performance data
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, ad campaigns
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ad campaigns
+localizationpriority: medium
 ---
 
 # Get ad campaign performance data
 
 
-Use this method in the Windows Store analytics API to get an aggregate summary of promotional ad campaign performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
+Use this method in the Microsoft Store analytics API to get an aggregate summary of promotional ad campaign performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
 
 This method returns the same data that is provided by the [App install ads report](../publish/app-install-ads-reports.md) on the Windows Dev Center dashboard. For more information about ad campaigns, see [Create an ad campaign for your app](../publish/create-an-ad-campaign-for-your-app.md).
 
-To create, update, or retrieve details for ad campaigns, you can use the [Manage ad campaigns](manage-ad-campaigns.md) methods in the [Windows Store promotions API](run-ad-campaigns-using-windows-store-services.md).
+To create, update, or retrieve details for ad campaigns, you can use the [Manage ad campaigns](manage-ad-campaigns.md) methods in the [Microsoft Store promotions API](run-ad-campaigns-using-windows-store-services.md).
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -152,5 +153,5 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Create an ad campaign for your app](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
-* [Run ad campaigns using Windows Store services](run-ad-campaigns-using-windows-store-services.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

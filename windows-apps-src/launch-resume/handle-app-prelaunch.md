@@ -4,11 +4,12 @@ title: Handle app prelaunch
 description: Learn how to handle app prelaunch by overriding the OnLaunched method and calling CoreApplication.EnablePrelaunch(true).
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 11/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Handle app prelaunch
@@ -18,7 +19,7 @@ Learn how to handle app prelaunch by overriding the [**OnLaunched**](https://msd
 
 ## Introduction
 
-When available system resources allow, the startup performance of Windows Store apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state--which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
+When available system resources allow, the startup performance of UWP apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state--which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
 
 Prior to Windows 10, apps did not automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt-in to prelaunch behavior by calling [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx). A good place to put this call is within `OnLaunched()` near the location that the `if (e.PrelaunchActivated == false)` check is made.
 
@@ -34,14 +35,27 @@ After an app is prelaunched, it will enter the suspended state. (see [Handle app
 
 ## Detect and handle prelaunch
 
-Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following excerpt from [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
+Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following modification to [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
+    // CoreApplication.EnablePrelaunch was introduced in Windows 10 version 1607
+    bool canEnablePrelaunch = Windows.Foundation.Metadata.ApiInformation.IsMethodPresent("Windows.ApplicationModel.Core.CoreApplication", "EnablePrelaunch");
+
+    // NOTE: Only enable this code if you are targeting a version of Windows 10 prior to version 1607
+    // and you want to opt-out of prelaunch.
+    // In Windows 10 version 1511, all UWP apps were candidates for prelaunch.
+    // Starting in Windows 10 version 1607, the app must opt-in to be prelaunched.
+    //if ( !canEnablePrelaunch && e.PrelaunchActivated == true)
+    //{
+    //    return;
+    //}
+
     Frame rootFrame = Window.Current.Content as Frame;
 
-    // Do not repeat app initialization when the Window already has content - rather just ensure that the window is active
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active
     if (rootFrame == null)
     {
         // Create a Frame to act as the navigation context and navigate to the first page
@@ -54,30 +68,51 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
             //TODO: Load state from previously suspended application
         }
 
-        if (!e.PrelaunchActivated)
-        {
-            // TODO: This is not a prelaunch activation. Perform operations which
-            // assume that the user explicitly launched the app such as updating
-            // the online presence of the user on a social network, updating a
-            // what's new feed, etc.
-        }
-
         // Place the frame in the current Window
         Window.Current.Content = rootFrame;
     }
 
-    if (rootFrame.Content == null)
+    if (e.PrelaunchActivated == false)
     {
-        // When the navigation stack isn't restored navigate to the first page,
-        // configuring the new page by passing required information as a navigation parameter
-        rootFrame.Navigate(typeof(MainPage), e.Arguments);
+        // On Windows 10 version 1607 or later, this code signals that this app wants to participate in prelaunch
+        if (canEnablePrelaunch)
+        {
+            TryEnablePrelaunch();
+        }
+
+        // TODO: This is not a prelaunch activation. Perform operations which
+        // assume that the user explicitly launched the app such as updating
+        // the online presence of the user on a social network, updating a
+        // what's new feed, etc.
+
+        if (rootFrame.Content == null)
+        {
+            // When the navigation stack isn't restored navigate to the first page,
+            // configuring the new page by passing required information as a navigation
+            // parameter
+            rootFrame.Navigate(typeof(MainPage), e.Arguments);
+        }
+        // Ensure the current window is active
+        Window.Current.Activate();
     }
-    // Ensure the current window is active
-    Window.Current.Activate();
+}
+
+/// <summary>
+/// Encapsulates the call to CoreApplication.EnablePrelaunch() so that the JIT
+/// won't encounter that call (and prevent the app from running when it doesn't
+/// find it), unless this method gets called. This method should only
+/// be called when the caller determines that we are running on a system that
+/// supports CoreApplication.EnablePrelaunch().
+/// </summary>
+private void TryEnablePrelaunch()
+{
+    Windows.ApplicationModel.Core.CoreApplication.EnablePrelaunch(true);
 }
 ```
 
-**Tip**  If you are targeting a version of Windows 10 prior to version 1607, and you wish to opt-out of prelaunch, check the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag. If it is set, return from OnLaunched() before doing any work to create a frame or activate the window.
+Note the `TryEnablePrelaunch()` function, above. The reason the call to `CoreApplication.EnablePrelaunch()` is factored out into this function is because when a method is called, the JIT (just in time compilation) will attempt to compile the entire method. If your app is running on a version of Windows 10 that doesn't support `CoreApplication.EnablePrelaunch()`, then the JIT will fail. By factoring the call into a method that is only called when the app determines that the platform supports `CoreApplication.EnablePrelaunch()`, we avoid that problem.
+
+There is also code in the example above that you can uncomment if your app needs to opt-out of prelaunch when running on Windows 10, version 1511. In version 1511, all UWP apps were automatically opted into prelaunch, which may not be appropriate for your app.
 
 ## Use the VisibilityChanged event
 

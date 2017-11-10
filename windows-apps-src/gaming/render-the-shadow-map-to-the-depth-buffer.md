@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d
+localizationpriority: medium
 ---
 
 # Render the shadow map to the depth buffer

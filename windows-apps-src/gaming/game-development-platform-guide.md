@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, technology, directx
+localizationpriority: medium
 ---
 
 # Game technologies for UWP apps
@@ -20,7 +21,7 @@ In this guide, you'll learn about the technologies available for developing Univ
 ##  Benefits of Windows 10 for game development
 
 
-With the introduction of UWP in Windows 10, your Windows 10 titles will be able to span all of the Microsoft platforms. With free migration from previous versions of Windows, there is a steadily increasing number of Windows 10 clients. The combination of these two things means that your Windows 10 titles will be able to reach a huge number of customers through the Windows Store.
+With the introduction of UWP in Windows 10, your Windows 10 titles will be able to span all of the Microsoft platforms. With free migration from previous versions of Windows, there is a steadily increasing number of Windows 10 clients. The combination of these two things means that your Windows 10 titles will be able to reach a huge number of customers through the Microsoft Store.
 
 In addition, Windows 10 offers many new features that are particularly beneficial to games:
 
@@ -346,9 +347,9 @@ As an alternative to writing your own game engine using the Windows game develop
 ## Submitting a game to the Store
 
 
-Once you’re ready to publish your game, you’ll need to create a developer account and submit your game to the Windows Store.
+Once you’re ready to publish your game, you’ll need to create a developer account and submit your game to the Microsoft Store.
 
-For information about submitting your game to the Windows Store, see [Submitting and publishing your game](e2e.md#submitting-and-publishing-your-game).
+For information about submitting your game to the Microsoft Store, see [Submitting and publishing your game](e2e.md#submitting-and-publishing-your-game).
 
  
 

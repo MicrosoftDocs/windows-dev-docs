@@ -8,6 +8,7 @@ ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # What's New in the Windows Developer Docs in August 2017
@@ -36,7 +37,7 @@ The [Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808) API
 
 ### Submission API supports video trailers and gaming options
 
-The [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) now enables you to include [video trailers](../monetize/manage-app-submissions.md#trailer-object) and [gaming options](../monetize/manage-app-submissions.md#gaming-options-object) with your app submissions.
+The [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) now enables you to include [video trailers](../monetize/manage-app-submissions.md#trailer-object) and [gaming options](../monetize/manage-app-submissions.md#gaming-options-object) with your app submissions.
 
 
 ## Developer Guidance

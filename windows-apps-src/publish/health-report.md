@@ -4,11 +4,12 @@ Description: The Health report in the Windows Dev Center dashboard lets you get 
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 07/10/2017
+ms.date: 11/6/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Health report
@@ -16,7 +17,7 @@ keywords: windows 10, uwp
 
 The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces and/or CAB files for further debugging.
 
-Alternatively, you can programmatically retrieve the data in this report by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Alternatively, you can programmatically retrieve the data in this report by using the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 
 ## Apply filters
@@ -27,7 +28,7 @@ You can also expand **Filters** to filter all of the data on this page by packag
 
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
 -   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
--   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
+-   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type. Note that the **Other** category includes devices where the make/model is recognized but we aren't able to include it into one of the pre-defined categories shown in this filter. For these devices, the device model can be viewed in the **Failure log** section of the **Failure details** report.  
 -   **OS version**: The default is **All OS versions**, but you can choose a specific OS version.
 
 The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.

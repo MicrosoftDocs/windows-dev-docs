@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Move from iOS to UWP
@@ -36,5 +37,5 @@ Today, Windows is running on a huge number of devices. The UWP provides develope
 
 **For designers and developers**
 * [Building Universal Windows apps for all Windows devices](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+* [Download design assets for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
  

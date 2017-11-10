@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+localizationpriority: medium
 ---
 
 # Introduction to Xbox Live APIs
@@ -29,8 +30,8 @@ The advantages of using the Xbox Live Services API (**XSAPI**) include:
 
 The advantages of using the **Xbox Live REST endpoints** directly include:
 
-- Able to call Xbox Live endpoints from a web service
-- Able to call endpoints which aren't included in XSAPI.  XSAPI only includes APIs that we believe games will use, so if there's anything missing you need to call let us know via the forums.
+- The ability to call Xbox Live endpoints from a web service
+- The ability to call endpoints which aren't included in XSAPI.  XSAPI only includes APIs that we believe games will use, so if there's anything missing let us know via the forums.
 - Some functionality available via the REST endpoints may not have a corresponding XSAPI wrapper.
 
 Your games and apps are not limited to using just one of these methods. You can use the XSAPI wrapper and still call the REST endpoints directly if needed.

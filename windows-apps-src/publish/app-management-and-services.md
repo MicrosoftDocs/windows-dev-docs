@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as A/B testing and maps.
 title: App management and services
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # App management and services
@@ -44,7 +45,7 @@ For more info, see [Use map services](use-map-services.md).
 
 ## Product collections and purchases
 
-To use the Windows Store collection API and the Windows Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
+To use the Microsoft Store collection API and the Microsoft Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
 
 For more info, see [Manage product entitlements from a service](../monetize/view-and-grant-products-from-a-service.md).
 
@@ -84,7 +85,7 @@ The **WNS/MPNS** section provides options to help you create and send notificati
 
 Depending on your app's package type and its specific requirements, you can also use one of the following options: 
 
--   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md).
+-   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
 -   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](http://go.microsoft.com/fwlink/p/?LinkId=221116).
 

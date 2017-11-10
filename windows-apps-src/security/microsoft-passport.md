@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Windows Hello
@@ -180,10 +181,10 @@ static async void RegisterUser(string AccountId)
         var keyAttestationResult = await userKey.GetAttestationAsync();
         IBuffer keyAttestation = null;
         IBuffer certificateChain = null;
-        bool keyAttesttionIncluded = false;
-        bool keyAttestationCanBeRetrievedLAter = false;
+        bool keyAttestationIncluded = false;
+        bool keyAttestationCanBeRetrievedLater = false;
 
-        KeyCredentialAttestationResult keyAttestationResult = await userKey.GetAttestationAsync();
+        keyAttestationResult = await userKey.GetAttestationAsync();
         KeyCredentialAttestationStatus keyAttestationRetryType = 0;
 
         if (keyAttestationResult.Status == KeyCredentialAttestationStatus.Success)
@@ -200,7 +201,7 @@ static async void RegisterUser(string AccountId)
         else if (keyAttestationResult.Status == KeyCredentialAttestationStatus.NotSupported)
         {
             keyAttestationRetryType = KeyCredentialAttestationStatus.NotSupported;
-            keyAttestationCanBeRetrievedLAter = true;
+            keyAttestationCanBeRetrievedLater = true;
         }
     }
     else if (keyCreationResult.Status == KeyCredentialStatus.UserCanceled ||

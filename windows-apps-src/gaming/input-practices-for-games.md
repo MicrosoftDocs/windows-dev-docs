@@ -1,14 +1,15 @@
 ---
-author: mithom
+author: eliotcowley
 title: Input practices for games
 description: Learn patterns and techniques for using input devices effectively.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.author: elcowle
+ms.date: 10/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, input
+localizationpriority: medium
 ---
 
 # Input practices for games
@@ -16,6 +17,7 @@ keywords: windows 10, uwp, games, input
 This page describes patterns and techniques for effectively using input devices in Universal Windows Platform (UWP) games.
 
 By reading this page, you'll learn:
+
 * how to track players and which input and navigation devices they're currently using
 * how to detect button transitions (pressed-to-released, released-to-pressed)
 * how to detect complex button arrangements with a single test
@@ -31,6 +33,135 @@ On the other hand, for complex flight and racing simulations, you might want to 
 From there, you can use an input class's **FromGameController** method, such as [Gamepad.FromGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad#Windows_Gaming_Input_Gamepad_FromGameController_Windows_Gaming_Input_IGameController_), to see if each device has a more curated view. For example, if the device is also a **Gamepad**, then you might want to adjust the button mapping UI to reflect that, and provide some sensible default button mappings to choose from. (This is in contrast to requiring the player to manually configure the gamepad inputs if you're only using **RawGameController**.) 
 
 Alternatively, you can look at the vendor ID (VID) and product ID (PID) of a **RawGameController** (using [HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_HardwareVendorId) and [HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_HardwareProductId), respectively) and provide suggested button mappings for popular devices while still remaining compatible with unknown devices that come out in the future via manual mappings by the player.
+
+## Keeping track of connected controllers
+
+While each controller type includes a list of connected controllers (such as [Gamepad.Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad#Windows_Gaming_Input_Gamepad_Gamepads)), it is a good idea to maintain your own list of controllers. See [The gamepads list](gamepad-and-vibration.md#the-gamepads-list) for more information (each controller type has a similarly named section on its own topic).
+
+However, what happens when the player unplugs their controller, or plugs in a new one? You need to handle these events, and update your list accordingly. See [Adding and removing gamepads](gamepad-and-vibration.md#adding-and-removing-gamepads) for more information (again, each controller type has a similarly named section on its own topic).
+
+Because the added and removed events are raised asynchronously, you could get incorrect results when dealing with your list of controllers. Therefore, anytime you access your list of controllers, you should put a lock around it so that only one thread can access it at a time. This can be done with the [Concurrency Runtime](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime), specifically the [critical_section class](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class), in **&lt;ppl.h&gt;**.
+
+Another thing to think about is that the list of connected controllers will initially be empty, and takes a second or two to populate. So if you only assign the current gamepad in the start method, it will be **null**!
+
+To rectify this, you should have a method that "refreshes" the main gamepad (in a single-player game; multiplayer games will require more sophisticated solutions). You should then call this method in both your controller added and controller removed event handlers, or in your update method.
+
+The following method simply returns the first gamepad in the list (or **nullptr** if the list is empty). Then you just need to remember to check for **nullptr** anytime you do anything with the controller. It's up to you whether you want to block gameplay when there's no controller connected (for example, by pausing the game) or simply have gameplay continue, while ignoring input.
+
+```cpp
+#include <ppl.h>
+
+using namespace Platform::Collections;
+using namespace Windows::Gaming::Input;
+using namespace concurrency;
+
+Vector<Gamepad^>^ m_myGamepads = ref new Vector<Gamepad^>();
+
+Gamepad^ GetFirstGamepad()
+{
+    Gamepad^ gamepad = nullptr;
+    critical_section::scoped_lock{ m_lock };
+
+    if (m_myGamepads->Size > 0)
+    {
+        gamepad = m_myGamepads->GetAt(0);
+    }
+
+    return gamepad;
+}
+```
+
+Putting it all together, here is an example of how to handle input from a gamepad:
+
+```cpp
+#include <algorithm>
+#include <ppl.h>
+
+using namespace Platform::Collections;
+using namespace Windows::Foundation;
+using namespace Windows::Gaming::Input;
+using namespace concurrency;
+
+static Vector<Gamepad^>^ m_myGamepads = ref new Vector<Gamepad^>();
+static Gamepad^          m_gamepad = nullptr;
+static critical_section  m_lock{};
+
+void Start()
+{
+    // Register for gamepad added and removed events.
+    Gamepad::GamepadAdded += ref new EventHandler<Gamepad^>(&OnGamepadAdded);
+    Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(&OnGamepadRemoved);
+
+    // Add connected gamepads to m_myGamepads.
+    for (auto gamepad : Gamepad::Gamepads)
+    {
+        OnGamepadAdded(nullptr, gamepad);
+    }
+}
+
+void Update()
+{
+    // Update the current gamepad if necessary.
+    if (m_gamepad == nullptr)
+    {
+        auto gamepad = GetFirstGamepad();
+
+        if (m_gamepad != gamepad)
+        {
+            m_gamepad = gamepad;
+        }
+    }
+
+    if (m_gamepad != nullptr)
+    {
+        // Gather gamepad reading.
+    }
+}
+
+// Get the first gamepad in the list.
+Gamepad^ GetFirstGamepad()
+{
+    Gamepad^ gamepad = nullptr;
+    critical_section::scoped_lock{ m_lock };
+
+    if (m_myGamepads->Size > 0)
+    {
+        gamepad = m_myGamepads->GetAt(0);
+    }
+
+    return gamepad;
+}
+
+void OnGamepadAdded(Platform::Object^ sender, Gamepad^ args)
+{
+    // Check if the just-added gamepad is already in m_myGamepads; if it isn't, 
+    // add it.
+    critical_section::scoped_lock lock{ m_lock };
+    auto it = std::find(begin(m_myGamepads), end(m_myGamepads), args);
+
+    if (it == end(m_myGamepads))
+    {
+        m_myGamepads->Append(args);
+    }
+}
+
+void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
+{
+    // Remove the gamepad that was just disconnected from m_myGamepads.
+    unsigned int indexRemoved;
+    critical_section::scoped_lock lock{ m_lock };
+
+    if (m_myGamepads->IndexOf(args, &indexRemoved))
+    {
+        if (m_gamepad == m_myGamepads->GetAt(indexRemoved))
+        {
+            m_gamepad = nullptr;
+        }
+
+        m_myGamepads->RemoveAt(indexRemoved);
+    }
+}
+```
 
 ## Tracking users and their devices
 
@@ -75,25 +206,27 @@ Before doing anything else, `Game::Loop` moves the existing value of `newReading
 The following example demonstrates a basic approach for detecting button transitions:
 
 ```cpp
-bool buttonJustPressed(const GamepadButtons selection)
+bool ButtonJustPressed(const GamepadButtons selection)
 {
-	bool newSelectionPressed = (selection == (newReading.Buttons & selection));
+    bool newSelectionPressed = (selection == (newReading.Buttons & selection));
     bool oldSelectionPressed = (selection == (oldReading.Buttons & selection));
 
-	return newSelectionPressed && !oldSelectionPressed;
+    return newSelectionPressed && !oldSelectionPressed;
 }
 
-bool buttonJustReleased(gamepadButtons selection)
+bool ButtonJustReleased(GamepadButtons selection)
 {
-	bool newSelectionReleased = (GamepadButtons.None == (newReading.Buttons & selection));
-    bool oldSelectionReleased = (GamepadButtons.None == (oldReading.Buttons & selection));
+    bool newSelectionReleased =
+        (GamepadButtons.None == (newReading.Buttons & selection));
 
-	return newSelectionReleased && !oldSelectionReleased;
+    bool oldSelectionReleased =
+        (GamepadButtons.None == (oldReading.Buttons & selection));
+
+    return newSelectionReleased && !oldSelectionReleased;
 }
 ```
 
 These two functions first derive the Boolean state of the button selection from `newReading` and `oldReading`, then perform Boolean logic to determine whether the target transition has occurred. These functions return **true** only if the new reading contains the target state (pressed or released, respectively) *and* the old reading does not also contain the target state; otherwise, they return **false**.
-
 
 ## Detecting complex button arrangements
 

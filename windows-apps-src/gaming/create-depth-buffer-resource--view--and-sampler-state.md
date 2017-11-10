@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, direct3d, depth buffer
+localizationpriority: medium
 ---
 
 # Create depth buffer device resources

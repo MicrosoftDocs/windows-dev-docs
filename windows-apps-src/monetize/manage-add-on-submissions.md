@@ -1,27 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: Use these methods in the Windows Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
+description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
 title: Manage add-on submissions
 ms.author: mcleans
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, add-on submissions, in-app product, IAP
+keywords: windows 10, uwp, Microsoft Store submission API, add-on submissions, in-app product, IAP
+localizationpriority: medium
 ---
 
 # Manage add-on submissions
 
-The Windows Store submission API provides methods you can use to manage add-on (also known as in-app product or IAP) submissions for your apps. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+The Microsoft Store submission API provides methods you can use to manage add-on (also known as in-app product or IAP) submissions for your apps. For an introduction to the Microsoft Store submission API, including prerequisites for using the API, see [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md).
 
 > [!IMPORTANT]
-> If you use the Windows Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
+> If you use the Microsoft Store submission API to create a submission for an add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-add-on-submissions" />
 ## Methods for managing add-on submissions
 
-Use the following methods to get, create, update, commit, or delete an add-on submission. Before you can use these methods, the add-on must already exist in your Dev Center account. You can create an add-on in the dashboard by [defining its product type and product ID](../publish/set-your-add-on-product-id.md) or by using the Windows Store submission API methods in described in [Manage add-ons](manage-add-ons.md).
+Use the following methods to get, create, update, commit, or delete an add-on submission. Before you can use these methods, the add-on must already exist in your Dev Center account. You can create an add-on in the dashboard by [defining its product type and product ID](../publish/set-your-add-on-product-id.md) or by using the Microsoft Store submission API methods in described in [Manage add-ons](manage-add-ons.md).
 
 <table>
 <colgroup>
@@ -75,11 +76,11 @@ Use the following methods to get, create, update, commit, or delete an add-on su
 
 To create a submission for an add-on, follow this process.
 
-1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
+1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
 
-2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Windows Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Microsoft Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
-3. Execute the following method in the Windows Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission. For more information, see [Create an add-on submission](create-an-add-on-submission.md).
+3. Execute the following method in the Microsoft Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission. For more information, see [Create an add-on submission](create-an-add-on-submission.md).
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
@@ -140,12 +141,12 @@ The following articles provide detailed code examples that demonstrate how to cr
 * [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)
 
 > [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Windows Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Windows Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span/>
 ## Data resources
 
-The Windows Store submission API methods for managing add-on submissions use the following JSON data resources.
+The Microsoft Store submission API methods for managing add-on submissions use the following JSON data resources.
 
 <span id="add-on-submission-object" />
 ### Add-on submission resource
@@ -274,7 +275,7 @@ This resource contains pricing info for the add-on. This resource has the follow
 This resources contains sale info for an add-on.
 
 > [!IMPORTANT]
-> The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an add-on submission using the Windows Store submission API. In the future, we will update the Windows Store submission API to introduce a new way to programmatically access sales information for add-on submissions.
+> The **Sale** resource is no longer supported, and currently you cannot get or modify the sale data for an add-on submission using the Microsoft Store submission API. In the future, we will update the Microsoft Store submission API to introduce a new way to programmatically access sales information for add-on submissions.
 >    * After calling the [GET method to get an add-on submission](get-an-add-on-submission.md), the *sales* value will be empty. You can continue to use the Dev Center dashboard to get the sale data for your add-on submission.
 >    * When calling the [PUT method to update an add-on submission](update-an-add-on-submission.md), the information in the *sales* value is ignored. You can continue to use the Dev Center dashboard to change the sale data for your add-on submission.
 
@@ -361,6 +362,6 @@ The following values represent the status code of a submission.
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage add-ons using the Windows Store submission API](manage-add-ons.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Manage add-ons using the Microsoft Store submission API](manage-add-ons.md)
 * [Add-on submissions in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)

@@ -10,18 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
+localizationpriority: medium
 ---
 
 # Prepare to package an app (Desktop Bridge)
 
-This article lists the things you need to know before you package your desktop app. You might not have to do much to get your app ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
+This article lists the things you need to know before you package your desktop app. You might not have to do much to get your app ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Microsoft Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
 
 >[!IMPORTANT]
 >The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
 
 + __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You'll have to retarget your app to .NET 4.6.1 before you package it.
 
-+ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users. Apps that require elevation for any part of their functionality won't be accepted in the Windows Store.
++ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Microsoft Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users. Apps that require elevation for any part of their functionality won't be accepted in the Microsoft Store.
 
 + __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
@@ -75,9 +76,9 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app uses a dependency in the System32/SysWOW64 folder__. To get these DLLs to work, you must include them in the virtual file system portion of your Windows app package. This ensures that the app behaves as if the DLLs were installed in the **System32**/**SysWOW64** folder. In the root of the package, create a folder called **VFS**. Inside that folder create a **SystemX64** and **SystemX86** folder. Then, place the 32-bit version of your DLL in the **SystemX86** folder, and place the 64-bit version in the **SystemX64** folder.
 
-+ __Your app uses the Dev11 VCLibs framework package__. The VCLibs 11 libraries can be directly installed from the Windows Store if they are defined as a dependency in the Windows app package. To do this, make the following change to your app package manifest: Under the `<Dependencies>` node, add:  
++ __Your app uses the Dev11 VCLibs framework package__. The VCLibs 11 libraries can be directly installed from the Microsoft Store if they are defined as a dependency in the Windows app package. To do this, make the following change to your app package manifest: Under the `<Dependencies>` node, add:  
 `<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
-During installation from the Windows Store, the appropriate version (x86 or x64) of the VCLibs 11 framework will get installed prior to the installation of the app.  
+During installation from the Microsoft Store, the appropriate version (x86 or x64) of the VCLibs 11 framework will get installed prior to the installation of the app.  
 The dependencies will not get installed if the app is installed by sideloading. To install the dependencies manually on your machine, you must download and install the [VC 11.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064). For more information on these scenarios, see [Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
 
 + __Your app contains a custom jump list__. There are several issues and caveats to aware of when using jump lists.
@@ -90,7 +91,7 @@ The dependencies will not get installed if the app is installed by sideloading. 
 
 	- __Your app adds a jump list entries that references assets in the app's package by absolute paths__. The installation path of an app may change when its packages are updated, changing the location of assets (such as icons, documents, executable, and so on). If jump list entries reference such assets by absolute paths, then the app should refresh its jump list periodically (such as on app launch) to ensure paths resolve correctly. Alternatively, use the UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) APIs instead, which allow you to reference string and image assets using the package-relative ms-resource URI scheme (which is also language, DPI, and high contrast aware).
 
-+ __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. In fact, if users install your app onto a system that runs the Windows 10 S, then your app won’t be able to start them at all. This could block your app from submission to the Windows Store because all apps submitted to the Windows Store must be compatible with Windows 10 S.
++ __Your app starts a utility to perform tasks__. Avoid starting command utilities such as PowerShell and Cmd.exe. In fact, if users install your app onto a system that runs the Windows 10 S, then your app won’t be able to start them at all. This could block your app from submission to the Microsoft Store because all apps submitted to the Microsoft Store must be compatible with Windows 10 S.
 
 Starting a utility can often provide a convenient way to obtain information from the operating system, access the registry, or access system capabilities. However, you can use UWP APIs to accomplish these sorts of tasks instead. Those APIs are more performant because they don’t need a separate executable to run, but more importantly, they keep the app from reaching outside of the package. The app’s design stays consistent with the isolation, trust, and security that comes with a desktop bridge app, and your app will behave as expected on systems running Windows 10 S.
 
@@ -100,23 +101,17 @@ Starting a utility can often provide a convenient way to obtain information from
 
  All applications and extensions that users install to a system running Windows 10 S must be installed as Windows App packages. So if you intend to package your extensions, or you plan to encourage your contributors to package them, consider how you might facilitate communication between the host app package and any extension packages. One way that you might be able to do this is by using an [app service](../launch-resume/app-services.md).
 
-+ __Your app generates code__. Your app can generate code that it consumes in memory, but avoid writing generated code to disk because the Windows App Certification process can't validate that code prior to app submission. Also, apps that write code to disk won’t run properly on systems running Windows 10 S. This could block your app from submission to the Windows Store because all apps submitted to the Windows Store must be compatible with Windows 10 S.
-
-+ __Your app uses the MAPI API__. The [Outlook MAPI API](https://msdn.microsoft.com/library/office/cc765775.aspx(d=robot)) is not currently supported in desktop bridge apps.
++ __Your app generates code__. Your app can generate code that it consumes in memory, but avoid writing generated code to disk because the Windows App Certification process can't validate that code prior to app submission. Also, apps that write code to disk won’t run properly on systems running Windows 10 S. This could block your app from submission to the Microsoft Store because all apps submitted to the Microsoft Store must be compatible with Windows 10 S.
 
 >[!IMPORTANT]
-> After you've created your Windows app package, please test your app to ensure that it works correctly on systems that run Windows 10 S. All apps submitted to the Windows Store must be compatible with Windows 10 S. Apps that aren't compatible won't be accepted in the store. See [Test your Windows app for Windows 10 S](desktop-to-uwp-test-windows-s.md).
+> After you've created your Windows app package, please test your app to ensure that it works correctly on systems that run Windows 10 S. All apps submitted to the Microsoft Store must be compatible with Windows 10 S. Apps that aren't compatible won't be accepted in the store. See [Test your Windows app for Windows 10 S](desktop-to-uwp-test-windows-s.md).
 
 ## Next steps
 
-**Create a Windows app packge for your desktop app**
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
+**Create a Windows app package for your desktop app**
 
 See [Create a Windows app package](desktop-to-uwp-root.md#convert)
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.

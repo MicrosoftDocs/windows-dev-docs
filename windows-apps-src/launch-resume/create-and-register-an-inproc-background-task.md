@@ -3,12 +3,13 @@ author: TylerMSFT
 title: Create and register an in-process background task
 description: Create and register an in-process task that runs in the same process as your foreground app.
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
+localizationpriority: medium
 ---
 
 # Create and register an in-process background task
@@ -67,7 +68,27 @@ The following sample code assigns a condition requiring the user to be present:
 
 ## Place your background activity code in OnBackgroundActivated()
 
-Put your background activity code in [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)** to respond to your background trigger when it fires. **OnBackgroundActivated** can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) parameter, which contains everything that the Run method delivers.
+Put your background activity code in [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) to respond to your background trigger when it fires. **OnBackgroundActivated** can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) parameter, which contains everything that the **Run** method delivers. For example, in App.xaml.cs:
+
+``` cs
+using Windows.ApplicationModel.Background;
+
+...
+
+sealed partial class App : Application
+{
+  ...
+
+  protected override void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+  {
+      base.OnBackgroundActivated(args);
+      IBackgroundTaskInstance taskInstance = args.TaskInstance;
+      DoYourBackgroundWork(taskInstance);  
+  }
+}
+```
+
+For a richer **OnBackgroundActivated** example, see [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md).
 
 ## Handle background task progress and completion
 
@@ -106,7 +127,7 @@ See the following related topics for API reference, background task conceptual g
 
 * [Guidelines for background tasks](guidelines-for-background-tasks.md)
 * [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 **Background Task API Reference**
 

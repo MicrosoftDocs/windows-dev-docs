@@ -1,20 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
-description: Use this method in the Windows Store reviews API to submit responses to reviews of your app.
+description: Use this method in the Microsoft Store reviews API to submit responses to reviews of your app.
 title: Submit responses to reviews
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store reviews API, add-on acquisitions
+keywords: windows 10, uwp, Store services, Microsoft Store reviews API, add-on acquisitions
+localizationpriority: medium
 ---
 
 # Submit responses to reviews
 
 
-Use this method in the Windows Store reviews API to programmatically respond to reviews of your app. When you call this method, you must specify the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Windows Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+Use this method in the Microsoft Store reviews API to programmatically respond to reviews of your app. When you call this method, you must specify the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
 
 When a customer submits a review, they can choose not to receive responses to their review. If you try to respond to a review for which the customer chose not to receive responses, the response body of this method will indicate that the response attempt was unsuccessful. Before calling this method, you can optionally determine whether you are allowed to respond to a given review by using the [get response info for app reviews](get-response-info-for-app-reviews.md) method.
 
@@ -24,9 +25,9 @@ When a customer submits a review, they can choose not to receive responses to th
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](respond-to-reviews-using-windows-store-services.md#prerequisites) for the Windows Store reviews API.
+* If you have not done so already, complete all the [prerequisites](respond-to-reviews-using-windows-store-services.md#prerequisites) for the Microsoft Store reviews API.
 * [Obtain an Azure AD access token](respond-to-reviews-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Windows Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
+* Get the IDs of the reviews you want to respond to. Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).
 
 ## Request
 
@@ -65,7 +66,7 @@ Each object in the *Responses* array contains the following values.
 | Value        | Type   | Description           |  Required  |
 |---------------|--------|-----------------------------|-----|
 | ApplicationId | string |  The Store ID of the app with the review you want to respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.   |  Yes  |
-| ReviewId | string |  The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Windows Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).   |  Yes  |
+| ReviewId | string |  The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md).   |  Yes  |
 | ResponseText | string | The response you want to submit. Your response must follow [these guidelines](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Yes  |
 | SupportEmail | string | Your app's support email address, which the customer can use to contact you directly. This must be a valid email address.     |  Yes  |
 | IsPublic | Boolean |  The value **true** indicates that your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. The value **false** indicates that your response will be sent to the customer via email, and will not be visible to other customers in your app's Store listing.     |  Yes  |
@@ -141,6 +142,6 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Respond to customer reviews using the Dev Center dashboard](../publish/respond-to-customer-reviews.md)
-* [Respond to reviews using Windows Store services](respond-to-reviews-using-windows-store-services.md)
+* [Respond to reviews using Microsoft Store services](respond-to-reviews-using-windows-store-services.md)
 * [Get response info for app reviews](get-response-info-for-app-reviews.md)
 * [Get app reviews](get-app-reviews.md)

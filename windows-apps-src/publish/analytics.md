@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, analytics, reports, dashboard, apps
+localizationpriority: high
 ---
 
 # Analyze app performance
@@ -43,7 +44,7 @@ In this section you'll find details about the info presented in each of the foll
 
 In addition to viewing reports in the dashboard, you can access your app analytics in a number of different ways.
 
-### Windows Store analytics API
+### Microsoft Store analytics API
 
 Use the [Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) to programmatically retrieve analytics data for your apps. This REST API enables you to retrieve data for app and add-on acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
 

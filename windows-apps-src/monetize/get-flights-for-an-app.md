@@ -1,14 +1,15 @@
 ---
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Use this method in the Windows Store submission API to retrieve package flight information for an app that is registered to your Windows Dev Center account.
+description: Use this method in the Microsoft Store submission API to retrieve package flight information for an app that is registered to your Windows Dev Center account.
 title: Get package flights for an app
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store submission API, flights, package flights
+keywords: windows 10, uwp, Microsoft Store submission API, flights, package flights
+localizationpriority: medium
 ---
 
 # Get package flights for an app
@@ -16,13 +17,13 @@ keywords: windows 10, uwp, Windows Store submission API, flights, package flight
 
 
 
-Use this method in the Windows Store submission API to list the package flights for an app that is registered to your Windows Dev Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Use this method in the Microsoft Store submission API to list the package flights for an app that is registered to your Windows Dev Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Microsoft Store submission API.
 * [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -118,13 +119,13 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 404  | No package flights were found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
 ## Related topics
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)
 * [Get all apps](get-all-apps.md)
 * [Get an app](get-an-app.md)
 * [Get add-ons for an app](get-add-ons-for-an-app.md)

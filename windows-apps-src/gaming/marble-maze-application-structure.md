@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, sample, directx, structure
+localizationpriority: medium
 ---
 
 # Marble Maze application structure
@@ -127,7 +128,7 @@ The **MarbleMazeMain** class defines the *m\_deferredResourcesReady* flag to ind
 For more information about asynchronous programming for UWP apps, see [Asynchronous programming in C++](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 > [!TIP]
-> If you’re writing game code that is part of a Windows Runtime C++ Library (in other words, a DLL), consider whether to read [Creating Asynchronous Operations in C++ for Windows Store Apps](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) to learn how to create asynchronous operations that can be consumed by apps and other libraries.
+> If you’re writing game code that is part of a Windows Runtime C++ Library (in other words, a DLL), consider whether to read [Creating Asynchronous Operations in C++ for UWP apps](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps) to learn how to create asynchronous operations that can be consumed by apps and other libraries.
 
  
 

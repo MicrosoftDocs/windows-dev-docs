@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: View details related to the unique identity assigned to your app by the Windows Store, and get a link to your app's Store listing.
+Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # View app identity details
 
 
-When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store. You can also get a link to your app's Store listing.
+When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Microsoft Store. You can also get a link to your app's Store listing.
 
 To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Select **App identity** to view these details.
 
@@ -37,7 +38,7 @@ Together, these elements declare the identity of your app, establishing the "pac
 The following values are additional values that refer to your app's package family, but are not included in your manifest.
 
 -   **Package Family Name (PFN)**: This value is used with certain Windows APIs.
--   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md).
+-   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md).
 
 
 ## Link to your app's listing

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Use app services and extensions
@@ -20,7 +21,7 @@ This section describes how to integrate app services into your UWP app to allow 
 | [Create and consume an app service](how-to-create-and-consume-an-app-service.md) | Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps and how to consume those services. |
 | [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md) | Convert app service code that ran in a separate background process into code that runs inside the same process as your app service provider. |
 | [Extend your app with app services, extensions, and packages](extend-your-app-with-services-extensions-packages.md) | Determine which technology to use to extend and componentize your app and get a brief overview of each. |
-| [Create and consume an app extension](how-to-create-an-extension.md) | Write and host Universal Windows Platform (UWP) app extensions to extend your app via packages that users can install from the Windows Store. |
+| [Create and consume an app extension](how-to-create-an-extension.md) | Write and host Universal Windows Platform (UWP) app extensions to extend your app via packages that users can install from the Microsoft Store. |
 
 
 ## Related Topics

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: To view performance data for the ad units in your apps, use the app-level and account-level advertising performance reports on the Windows Dev Center dashboard.
 title: Advertising performance report
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Advertising performance report
@@ -18,7 +19,7 @@ The **Advertising performance report** shows how your [ad units](in-app-ads.md) 
 
 To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**.
 
-To perform a deeper analysis of your data, we provide a **Download report** link you can use to download CSV (comma-separated values) files that you can open in Microsoft Excel or another program. Alternatively, you can programmatically retrieve this data by using the [get ad performance data](../monetize/get-ad-performance-data.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+To perform a deeper analysis of your data, we provide a **Download report** link you can use to download CSV (comma-separated values) files that you can open in Microsoft Excel or another program. Alternatively, you can programmatically retrieve this data by using the [get ad performance data](../monetize/get-ad-performance-data.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 When viewing the advertising performance reports, be aware that reporting data for the last three days might change as we receive and process new data from various sources. Additionally, data restatements can happen up to 90 days in the past.
 

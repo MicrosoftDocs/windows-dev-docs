@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, cross-play, play anywhere
+localizationpriority: medium
 ---
 
 # Get started with cross-play games
@@ -75,7 +76,7 @@ Cross-Play is likely not the right approach for you if:
 
 In general, Cross-Play adds the most value to:
 
--   Free-to-Play / BOPA games, that emphasize continuity between the Xbox One and PC versions of the game
+-   Free-to-Play / Xbox Play Anywhere games, that emphasize continuity between the Xbox One and PC versions of the game
 
 -   Games featuring cross-device multiplayer between Xbox One and PC
 
@@ -89,17 +90,17 @@ Any XDK + UWP Cross-Play game comes with some important restrictions:
 
 1.  **XDK titles must be ingested in XDP**. Both from a service configuration and mainline publishing experience, Dev Center is not equipped to support XDK based titles.
 
-2.  **A single service configuration created in XDP can be used both by the XDK and UWP version of a game**. We’ve added new features to XDP to allow a game to share a single service configuration between their XDK and UWP versions. The UWP will still needed to be published in Dev Center for packages / catalog, but all service configuration publishing can be done in XDP
+2.  **A single service configuration created in XDP can be used both by the XDK and UWP version of a game**. We’ve added new features to XDP to allow a game to share a single service configuration between its XDK and UWP versions. The UWP version will still need to be published in Dev Center for packages / catalog, but all service configuration publishing can be done in XDP.
 
 3.  **Service configuration cannot be split between XDP and Dev Center**. XDP and Dev Center are not aware of one another – publishing in one over-writes any existing publishes from the other. This has the potential to irreparably break service configuration and create terrible user experiences (vanishing achievements, lost game saves, etc.), and as a result we require 100% of service configuration to be done in XDP for XDK+UWP cross-play games.
 
 ### Create your UWP product in the Windows Dev Center
 
-Create a UWP product in Windows Dev Center by following the guide at [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
+Create a UWP product in Windows Dev Center by following the guide: [Adding Xbox Live to a new or existing UWP project](get-started-with-visual-studio-and-uwp.md)
 
 ## Setup your XDK product in XDP
 
-Now that your UWP is created, you are ready to setup your XDK product in XDP. If you do not already have an XDK title, you must have create your XDK title (step 4.2.1 below).
+Now that your UWP is created, you are ready to setup your XDK product in XDP. If you do not already have an XDK title, you must create one.
 
 ### Create your XDP Product
 
@@ -123,11 +124,11 @@ This change will immediately be made live (no need for a service configuration, 
 
 ### Enter your MSA App ID
 
-Once the XDP product is created, go to the Product Setup page for the product to enter the MSA App ID retrieved in step 4.1.2. Product Setup can be reached by clicking on the left-most “status box” in the Tasks bar for the product in XDP, as shown below.
+Once the XDP product is created, go to the Product Setup page for the product to enter the MSA App ID created earlier. Product Setup can be reached by clicking on the left-most “status box” in the Tasks bar for the product in XDP, as shown below.
 
 ![](../images/ingesting_crossplay_games_xdp/image11.png)
 
-Once you make it to the Product Setup page, select the “Application ID Setup” section. In this area, you can enter the MSA App ID you retrieved in step 4.1.2 above in the “Application ID” field, as shown below.
+Once you make it to the Product Setup page, select the “Application ID Setup” section. In this area, you can enter the MSA App ID you retrieved and place it in the “Application ID” field, as shown below.
 
 ![](../images/ingesting_crossplay_games_xdp/image12.png)
 
@@ -199,9 +200,9 @@ Generally speaking, publishing an XDK+UWP game follows the same process as separ
 
 ### Dev Sandbox Publishing
 
-### No Dev Sandbox Catalog Equivalent for Windows Store
+### No Dev Sandbox Catalog Equivalent for Microsoft Store
 
-While XDP allows you to publish your catalog & binary to the dev sandbox version of the Xbox One catalog, the Windows Store catalog has no sandbox support. As such, testing your UWP in a dev sandbox requires you to sideload that UWP and play it directly. This doesn’t impact Xbox Live testing, but may alter your standard testing processes.
+While XDP allows you to publish your catalog & binary to the dev sandbox version of the Xbox One catalog, the Microsoft Store catalog has no sandbox support. As such, testing your UWP in a dev sandbox requires you to sideload that UWP and play it directly. This doesn’t impact Xbox Live testing, but may alter your standard testing processes.
 
 <table>
   <tr>

@@ -10,13 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
+localizationpriority: medium
 ---
 
 # Known Issues (Desktop Bridge)
 
 This article contains known issues with the Desktop Bridge.
 
-<span id="app-converter" />
+<a id="app-converter" />
 ## Known Issues with the Desktop App Converter
 
 ### E_CREATING_ISOLATED_ENV_FAILED an E_STARTING_ISOLATED_ENV_FAILED errors    
@@ -80,7 +81,7 @@ We are aware of this issue and are working on a more long term solution. As a te
 
 ## Blue screen with error code 0x139 (KERNEL_SECURITY_CHECK_FAILURE)
 
-After installing or launching certain apps from the Windows Store, your machine may unexpectedly reboot with the error: **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)**.
+After installing or launching certain apps from the Microsoft Store, your machine may unexpectedly reboot with the error: **0x139 (KERNEL\_SECURITY\_CHECK\_ FAILURE)**.
 
 Known affected apps include Kodi, JT2Go, Ear Trumpet, Teslagrad, and others.
 
@@ -121,3 +122,9 @@ Run **certutil** from the the command line on the PFX file and copy the *Subject
 ```cmd
 certutil -dump <cert_file.pfx>
 ```
+
+## Next Steps
+
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).

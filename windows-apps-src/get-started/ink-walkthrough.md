@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-ms.assetid:
+ms.assetid: 
 title: UWP Academy - Input track - Support ink in your UWP app
 description: UWP Academy. Input track. A step by step tutorial for adding ink support to your UWP app.
 keywords: UWP Academy
@@ -9,6 +9,7 @@ ms.date: 04/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Support ink in your UWP app
@@ -25,7 +26,7 @@ We focus on the following:
 * Supporting basic shape recognition
 * Saving and loading ink
 
-For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions).
+For more detail about implementing these features, see [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions).
 
 ## Introduction
 
@@ -187,7 +188,7 @@ Now run the app again to see the [**InkToolbar**](https://docs.microsoft.com/uwp
 
 ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad.png)
 
-For more details about customizing an [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Universal Windows Platform (UWP) inking app](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/ink-toolbar).
+For more details about customizing an [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Universal Windows Platform (UWP) inking app](https://docs.microsoft.com/en-us/windows/uwp/input/ink-toolbar).
 
 </tr>
 </table>
@@ -276,7 +277,7 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
  <td width=125><img src="images/challenge-icon.png"></td>
     <td width=500><p>Windows Ink supports text recognition for many of the of the languages supported by Windows. Each language pack includes a handwriting recognition engine that can be installed with the language pack.</p>
     <p>Target a specific language by querying the installed handwriting recognition engines.</p>
-    <p>For more details about international handwriting recognition, see <a href="https://docs.microsoft.com/windows/uwp/input-and-devices/convert-ink-to-text">Recognize Windows Ink strokes as text</a>.</p>
+    <p>For more details about international handwriting recognition, see <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Recognize Windows Ink strokes as text</a>.</p>
 </tr>
 </table>
 
@@ -286,7 +287,7 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
  <td width=125><img src="images/challenge-icon.png"></td>
     <td width=500><p>For this tutorial, we require that a button be pressed to initiate recognition. You can also perform dynamic recognition by using a basic timing function.</p>
 
-For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/convert-ink-to-text).
+For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](https://docs.microsoft.com/en-us/windows/uwp/input/convert-ink-to-text).
 </tr>
 </table>
 
@@ -415,7 +416,7 @@ In this step, we hook up the **Save** and **Load** buttons located beside the in
  <td width=125><img src="images/challenge-icon.png"></td>
     <td width=500><p>Windows ink also supports copying and pasting ink strokes to and from the clipboard.
 
-For more details about using the clipboard with ink, see [Store and retrieve Windows Ink stroke data](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/save-and-load-ink).
+For more details about using the clipboard with ink, see [Store and retrieve Windows Ink stroke data](https://docs.microsoft.com/en-us/windows/uwp/input/save-and-load-ink).
 </tr>
 </table>
 
@@ -425,7 +426,7 @@ Congratulations, you've completed the **Input: Support ink in your UWP app** tut
 
 ## Related articles
 
-* [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
+* [Pen interactions and Windows Ink in UWP apps](https://docs.microsoft.com/windows/uwp/input/pen-and-stylus-interactions)
 
 **Samples**
 * [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)

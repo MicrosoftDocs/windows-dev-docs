@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, developer program, creators
+localizationpriority: medium
 ---
 
 # Developer program overview
@@ -21,13 +22,13 @@ The Xbox Live Creators Program is a good starting point for Xbox Live if you are
 
 The Xbox Live Creators Program only supports the creation of titles for the [Universal Windows Platform](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (UWP).  These titles created as UWP games run on Windows 10 PCs and on Xbox One consoles.  For more details about running UWP games on Xbox One, see [UWP on Xbox One](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/index).  
 
-On Xbox One, which offers gamers a curated store experience, games published through the Xbox Live Creators Program will be sold in the new Creators Collection section of the Store. This offers a balance between ensuring an open platform where anyone can develop and ship a game, and a curated store experience consoles gamers have come to know and expect. On Windows 10, your title will be published among all of the other Xbox Live games in the Windows Store.
+On Xbox One, which offers gamers a curated store experience, games published through the Xbox Live Creators Program will be sold in the new Creators Collection section of the Microsoft Store on Xbox. This offers a balance between ensuring an open platform where anyone can develop and ship a game, and a curated store experience console gamers have come to know and expect. On Windows 10, your title will be published among all of the other Xbox Live games in the Microsoft Store.
 
 ### Publishing and Certification
 You must be enrolled in the [Dev Center developer program](https://developer.microsoft.com/store/register) to release a game as part of the Xbox Live Creators Program. There are two sets of requirements that your game must follow:
 
 1. Integrate Xbox Live Sign-In and display the user identity (Gamertag, Gamerpic, etc.). All other Xbox Live services are optional.
-2. Follow to the standard [Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx).
+2. Follow to the standard [Microsoft Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx).
 
 ### Supported Xbox Live Services
 Titles enabled under the Xbox Live Creators Program can use Leaderboards, Featured Stats, Title Storage, Connected Storage, and a restricted set of social features. Achievements, online multiplayer, and many social features are **not** supported for titles in the Xbox Live Creators Program. 

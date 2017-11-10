@@ -9,29 +9,29 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 # What's next?
 
-So you want to write an app and publish it to the Windows Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> and [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming) courses. If you are already familiar with Windows development, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+So you want to write an app and publish it to the Microsoft Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> and [LinkedIn Learning](https://www.linkedin.com/topic/windows-programming) courses. If you are already familiar with Windows development, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
 There are many tools and frameworks available to help you write apps, and many support cross-platform development. For example, if you want to write 2D games, you might want to look at <a href="http://www.monogame.net">Monogame</a> or some of the many [JavaScript/HTML frameworks](https://html5gameengine.com/). For 3D games, there's <a href="http://www.unity3d.com">Unity</a>, and don't forget <a href="http://www.xamarin.com">Xamarin</a> if your focus is mobile devices.
 
 If you want to get started writing something that isn't a game, our recommendation is that you look through the UWP topics to get a feel for the platform, and then investigate creating your user interface by using, and then customizing, XAML controls. 
-You'll use XAML to design your app ([here's a tutorial](../layout/grid-tutorial.md) that will walk you through it), but XAML's main strength is the use of *data binding* which couples the controls to the information your app wants to display: if you are new to the Windows platform, this will be an important concept to understand. 
+You'll use XAML to design your app ([here's a tutorial](../design/layout/grid-tutorial.md) that will walk you through it), but XAML's main strength is the use of *data binding* which couples the controls to the information your app wants to display: if you are new to the Windows platform, this will be an important concept to understand.
+
 <table class="wdg-noborder">
 <tr>
- <td width=60><img src="images/icon3.png" alt="Bullet point" width=64></td>
-    <td><h2>UWP and the UWP app Lifecycle</h2><p>How does an app start, what happens when you start another one? Here’s the story.</p> <ul>
+    <h2>UWP and the UWP app Lifecycle</h2><p>How does an app start, what happens when you start another one? Here’s the story.</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Guide to Universal Windows Platform (UWP) apps</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP app lifecycle</a></li>
-    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">What's cool in Windows 10</a></ul></td>  
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">What's cool in Windows 10</a></ul>  
 </tr>
 <tr>
- <td width=60><img src="images/icon7.png" alt="Bullet point" width=64></td>
-    <td><h2>UX and UI</h2><p>What controls do you have at your disposal, and how can they be used? These topics explain how controls and code work together, and how you can customize them to suit the look of your app.</p> <ul>
+    <h2>UX and UI</h2><p>What controls do you have at your disposal, and how can they be used? These topics explain how controls and code work together, and how you can customize them to suit the look of your app.</p> <ul>
     <li><a href="https://developer.microsoft.com/windows/design">Design and UI</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">Define page layouts with XAML</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">Controls by function</a></li>
@@ -39,38 +39,33 @@ You'll use XAML to design your app ([here's a tutorial](../layout/grid-tutorial.
      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">Styling controls</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Screen sizes and break points for responsive design</a></li>
       <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Use the UWP Community Toolkit for a selection of prebuilt controls and patterns</a></li>
-    </ul></td>  
+    </ul>  
 </tr>
 <tr>
- <td width=60><img src="images/icon6.png" alt="Bullet point" width=64></td>
-    <td><h2>Data and Services</h2><p>Learn about data binding, which lets your code automatically populate lists and grids. Discover how to link to external resources to get data into your apps.</p> <ul>
+    <h2>Data and Services</h2><p>Learn about data binding, which lets your code automatically populate lists and grids. Discover how to link to external resources to get data into your apps.</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">Data binding</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListViews, GridViews and data binding</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">Data access</a></li>
-    </ul></td>  
+    </ul> 
 </tr>
 <tr>
- <td width=60><img src="images/icon4.png" alt="Bullet point" width=64></td>
-    <td><h2>Publishing</h2><p>Share your work with the world, make money. We’ll walk you through the process of getting your app onto the store.</p> <ul>
+    <h2>Publishing</h2><p>Share your work with the world, make money. We’ll walk you through the process of getting your app onto the store.</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">Publish Windows apps</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">Packaging apps</a></li>
-    </ul></td>  
+    </ul>  
 </tr>
 <tr>
- <td width=60><img src="images/icon2.png" alt="Bullet point" width=64></td>
-    <td><h2>Other resources</h2><p>Samples, tutorials, videos, other tools and SDKs. Take it to the next level.</p>
-    <ul>
-    <li><a href="https://developer.microsoft.com/windows/develop">How-to articles</a></li>
-    <li><a href="https://developer.microsoft.com/windows/samples">Code samples</a></li>
-    <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# reference</a></li>
-    <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API Reference</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">Writing apps for Xbox One</a></li>
-     <li><a href="https://www.microsoft.com/microsoft-hololens/developers">Developing for HoloLens</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">Porting apps to Windows 10</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">Writing apps for the Enterprise</a></li>
-      <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">The UWP Community Toolkit</a></li>
-    </ul>
-    </td>  
+<h2>Other resources</h2><p>Samples, tutorials, videos, other tools and SDKs. Take it to the next level.</p>
+<ul>
+<li><a href="https://developer.microsoft.com/windows/develop">How-to articles</a></li>
+<li><a href="https://developer.microsoft.com/windows/samples">Code samples</a></li>
+<li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# reference</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API Reference</a></li>
+<li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">Writing apps for Xbox One</a></li>
+<li><a href="https://www.microsoft.com/microsoft-hololens/developers">Developing for HoloLens</a></li>
+<li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">Porting apps to Windows 10</a></li>
+<li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">Writing apps for the Enterprise</a></li>
+<li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">The UWP Community Toolkit</a></li></ul>  
 </tr>
 </table>
 

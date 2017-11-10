@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Dependency properties overview
@@ -20,7 +21,7 @@ This topic explains the dependency property system that is available when you wr
 
 A dependency property is a specialized type of property. Specifically it's a property where the property's value is tracked and influenced by a dedicated property system that is part of the Windows Runtime.
 
-In order to support a dependency property, the object that defines the property must be a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (in other words a class that has the **DependencyObject** base class somewhere in its inheritance). Many of the types you use for your UI definitions for a Windows Store app with XAML will be a **DependencyObject** subclass, and will support dependency properties. However, any type that comes from a Windows Runtime namespace that doesn't have "XAML" in its name won't support dependency properties; properties of such types are ordinary properties that won't have the property system's dependency behavior.
+In order to support a dependency property, the object that defines the property must be a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (in other words a class that has the **DependencyObject** base class somewhere in its inheritance). Many of the types you use for your UI definitions for a UWP app with XAML will be a **DependencyObject** subclass, and will support dependency properties. However, any type that comes from a Windows Runtime namespace that doesn't have "XAML" in its name won't support dependency properties; properties of such types are ordinary properties that won't have the property system's dependency behavior.
 
 The purpose of dependency properties is to provide a systemic way to compute the value of a property based on other inputs (other properties, events and states that occur within your app while it runs). These other inputs might include:
 
@@ -174,7 +175,7 @@ To be animated, the animation's target property must be a dependency property. A
 
 When an animation is applied and running, the animated value operates at a higher precedence than any value (such as a local value) that the property otherwise has. Animations also have an optional [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior that can cause animations to apply to property values even if the animation visually appears to be stopped.
 
-The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) or [Control templates](../controls-and-patterns/control-templates.md).
+The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) or [Control templates](../design/controls-and-patterns/control-templates.md).
 
 ### Property-changed behavior
 

@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Tutorials
@@ -52,9 +53,9 @@ Most UWP apps use the XAML markup language to create their UI. Learn how you can
 
 Once you're familiar with what XAML can do, check out this guidance for creating a unique look for your app.
 
-* [Intro to app UI design](../layout/design-and-ui-intro.md)
-* [Layout for UWP apps](../layout/index.md)
-* [Controls and patterns for UWP apps](../controls-and-patterns/index.md)
+* [Intro to app UI design](../design/basics/design-and-ui-intro.md)
+* [Layout for UWP apps](../design/layout/index.md)
+* [Controls and patterns for UWP apps](../design/controls-and-patterns/index.md)
 
 ## Use features unique to Windows 10
 
@@ -70,7 +71,7 @@ Expand your horizons and your app's features with external tools:
 
 ## Develop JavaScript and web apps
 
-UWP is an extremely flexible platform that supports a wide variety of languages and frameworks. Build UWP apps with JavaScript, and use your skills to build hosted web apps which can be featured in the Windows Store.
+UWP is an extremely flexible platform that supports a wide variety of languages and frameworks. Build UWP apps with JavaScript, and use your skills to build hosted web apps which can be featured in the Microsoft Store.
 
 * [Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.](create-js-apps.md)
 
@@ -84,7 +85,7 @@ Interested in more information on building web apps?
 
 ## See Also
 
-* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](whats-a-uwp.md)

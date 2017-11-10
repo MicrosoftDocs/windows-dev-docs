@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, get started, start
+localizationpriority: high
 ---
 
 # Create your first app
@@ -33,7 +34,7 @@ If you want to learn the basics, or just refresh your memory, try reading these:
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 
 * [XAML and data binding in UWP](xaml-basics-intro.md)
-* [A simple 2D UWP game for the Windows Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
+* [A simple 2D UWP game for the Microsoft Store, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
 
 
 ## Visual C++ component extensions (C++/CX) and XAML
@@ -61,7 +62,7 @@ Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScrip
 ## See Also
 
 * [UWP Tutorials](create-uwp-apps.md)
-* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](whats-a-uwp.md)

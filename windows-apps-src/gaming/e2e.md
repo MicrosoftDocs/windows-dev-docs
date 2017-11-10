@@ -4,11 +4,12 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 08/18/2017
+ms.date: 11/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, game development
+localizationpriority: medium
 ---
 
 # Windows 10 game development guide
@@ -16,7 +17,7 @@ keywords: windows 10, uwp, games, game development
 
 Welcome to the Windows 10 game development guide!
 
-This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](http://download.microsoft.com/download/3/E/8/3E8F6376-D239-41A3-989C-DA1494C0024D/Windev_Game_Dev_Guide_May_2017.pdf) format.
+This guide provides an end-to-end collection of the resources and information you'll need to develop a Universal Windows Platform (UWP) game. An English (US) version of this guide is available in [PDF](http://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf) format.
 
 ## Introduction to game development for the Universal Windows Platform (UWP)
 
@@ -98,7 +99,7 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
 
 ### Windows Dev Center
 
-Registering a developer account on the Windows Dev Center is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Windows Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world. 
+Registering a developer account on the Windows Dev Center is the first step towards publishing your Windows game. A developer account lets you reserve your game's name and submit free or paid games to the Microsoft Store for all Windows devices. Use your developer account to manage your game and in-game products, get detailed analytics, and enable services that create great experiences for your players around the world. 
 
 Microsoft also offers several developer programs to help you develop and publish Windows games. We recommend seeing if any are right for you before registering for a Dev Center account. For more info, go to [Developer programs](#developer-programs)
 
@@ -115,11 +116,11 @@ Microsoft also offers several developer programs to help you develop and publish
 
 ### Developer programs
 
-Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Windows Store, you'll also need to create a developer account on Windows Dev Center.
+Microsoft offers several developer programs to help you develop and publish Windows games. Consider joining a developer program if you want to develop games for Xbox One and integrate Xbox Live features in your game. To publish a game in the Microsoft Store, you'll also need to create a developer account on Windows Dev Center.
 
 #### Xbox Live Creators Program
 
-The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. There is a simplified certification process and no concept approval is required outside of the standard [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
+The Xbox Live Creators Program allows anyone to integrate Xbox Live into their title and publish to Xbox One and Windows 10. There is a simplified certification process and no concept approval is required outside of the standard [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
 
 You can deploy, design, and publish your game in the Creators Program without a dedicated dev kit, using only retail hardware. To get started, download the [Dev Mode Activation app](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation) on your Xbox One.
 
@@ -222,7 +223,7 @@ There are many Windows 10 game and app samples available to help you understand 
     </tr>
     <tr>
         <td>Windows game samples (MSDN Code Gallery)</td>
-        <td>[Windows Store game samples](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft)</td>
+        <td>[Microsoft Store game samples](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft)</td>
     </tr>
     <tr>
         <td>JavaScript and HTML5 game sample</td>
@@ -254,8 +255,8 @@ Developer forums are a great place to ask and answer game development questions 
         <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
-        <td>DirectX Windows Store games (archived forum posts)</td>
-        <td>[Building Windows Store games with DirectX (archived)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
+        <td>DirectX Microsoft Store games (archived forum posts)</td>
+        <td>[Building Microsoft Store games with DirectX (archived)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
     </tr>
     <tr>
         <td>Windows 10 managed partner developer forums</td>
@@ -415,8 +416,12 @@ The extensive features and deep platform integration of DirectX provide the powe
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>How-to guides for DirectX games</td>
-        <td>[Games and DirectX](index.md)</td>
+        <td>DirectX for UWP development</td>
+        <td>[DirectX programming](directx-programming.md)</td>
+    </tr>
+    <tr>
+        <td>Tutorial: How to create a UWP DirectX game</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
     </tr>
     <tr>
         <td>DirectX overviews and reference</td>
@@ -602,7 +607,7 @@ Depending on the needs of your game, using bridges, game engines, or middleware 
     </colgroup>
     <tr>
         <td>Game Development with Middleware (video)</td>
-        <td>[Accelerating Windows Store Game Development with Middleware](https://channel9.msdn.com/Events/Build/2013/3-187)</td>
+        <td>[Accelerating Microsoft Store Game Development with Middleware](https://channel9.msdn.com/Events/Build/2013/3-187)</td>
     </tr>
     <tr>
         <td>Introduction to game middleware (blog post)</td>
@@ -675,8 +680,12 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
         <td>[API reference for Mixer Unity plugin](https://dev.mixer.com/reference/interactive/csharp/index.html)</td>
     </tr>
     <tr>
-        <td>Publish your Unity game to Windows Store</td>
+        <td>Publish your Unity game to Microsoft Store</td>
         <td>[Porting guide](https://unity3d.com/partners/microsoft/porting-guides)</td>
+    </tr>
+    <tr>
+        <td>Troubleshooting missing assembly references related to .NET APIs</td>
+        <td>[Missing .NET APIs in Unity and UWP](https://docs.microsoft.com/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp)</td>
     </tr>
     <tr>
         <td>Publish your Unity game as a Universal Windows Platform app (video)</td>
@@ -882,15 +891,7 @@ Now that you've decided the type of game you want to create and the tools and gr
 
 ### Introduction to the Universal Windows Platform (UWP)
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common API platform across Windows 10 devices. UWP evolves and expands the Windows Runtime model and hones it into a cohesive, unified core. Games that target the UWP can call WinRT APIs that are common to all devices. Because the UWP provides a guaranteed core API layer, you can choose to create a single app package that will install across Windows 10 devices. And if you want to, your game can still call APIs (including some classic Windows APIs from Win32 and .NET) that are specific to the devices your game runs on.
-
-The goal of the UWP is to have:
-
--   One core operating system
--   One application platform
--   One gaming social network
--   One store
--   One ingestion path
+Windows 10 introduces the Universal Windows Platform (UWP), which provides a common API platform across Windows 10 devices. UWP evolves and expands the Windows Runtime model and hones it into a cohesive, unified core. Games that target the UWP can call WinRT APIs that are common to all devices. Because the UWP provides guaranteed API layers, you can choose to create a single app package that will install across Windows 10 devices. And if you want to, your game can still call APIs (including some classic Windows APIs from Win32 and .NET) that are specific to the devices your game runs on.
 
 The following are excellent guides that discuss the Universal Windows Platform apps in detail, and are recommended reading to help you understand the platform.
 
@@ -1014,7 +1015,7 @@ Process lifetime management, or app lifecyle, describes the various activation s
     </tr>
     <tr>
         <td>Using Microsoft Visual Studio to trigger app transitions</td>
-        <td>[How to trigger suspend, resume, and background events for Windows Store apps in Visual Studio](https://msdn.microsoft.com/library/hh974425.aspx)</td>
+        <td>[How to trigger suspend, resume, and background events for UWP apps in Visual Studio](https://msdn.microsoft.com/library/hh974425.aspx)</td>
     </tr>
 </table>
  
@@ -1042,7 +1043,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </tr>
     <tr>
         <td>Design your UWP app for Xbox One and television screens</td>
-        <td>[Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/input-and-devices/designing-for-tv)</td>
+        <td>[Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/input/designing-for-tv)</td>
     </tr>
     <tr>
         <td>Targeting multiple device form factors (video)</td>
@@ -1143,8 +1144,12 @@ Guides and references for DirectX game development.
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>DirectX game development on the UWP</td>
-        <td>[Games and DirectX](index.md)</td>
+        <td>DirectX for UWP development</td>
+        <td>[DirectX programming](directx-programming.md)</td>
+    </tr>
+    <tr>
+        <td>Tutorial: How to create a UWP DirectX game</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
     </tr>
     <tr>
         <td>DirectX interaction with the UWP app model</td>
@@ -1358,6 +1363,10 @@ The Windows Performance Toolkit (WPT) consists of performance monitoring tools t
         <td>[Cloud based load testing](https://www.visualstudio.com/team-services/cloud-load-testing/)</td>
     </tr>
     <tr>
+        <td>Get Xbox console type using Gaming Device Information</td>
+        <td>[Gaming Device Information](https://msdn.microsoft.com/library/windows/desktop/mt825235)</td>
+    </tr>
+    <tr>
         <td>Improve performance by getting exclusive or priority access to hardware resources using Game Mode APIs</td>
         <td>[Game Mode](https://msdn.microsoft.com/library/windows/desktop/mt808808)</td>
     </tr>
@@ -1442,6 +1451,21 @@ Develop world-ready games for the Windows platform and learn about the internati
     <tr>
         <td>Bridging languages, cultures, and technology</td>
         <td>[Online resource for language conventions and standard Microsoft terminology](http://www.microsoft.com/Language/Default.aspx)</td>
+    </tr>
+</table>
+
+### Security
+
+Create an environment where your gamers can play and compete fairly. A game enrolled in TruePlay runs in a protected process which mitigates a class of common attacks. The game monitoring system also helps to identify common cheating scenarios. 
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Tools to combat cheating within PC games</td>
+        <td>[TruePlay](https://msdn.microsoft.com/library/windows/desktop/mt808781)</td>
     </tr>
 </table>
 
@@ -1532,12 +1556,12 @@ Don't let certification issues delay your game's release. Here are policies and 
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows Store App Developer Agreement</td>
+        <td>Microsoft Store App Developer Agreement</td>
         <td>[App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058)</td>
     </tr>
     <tr>
-        <td>Policies for publishing apps in the Windows Store</td>
-        <td>[Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944)</td>
+        <td>Policies for publishing apps in the Microsoft Store</td>
+        <td>[Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944)</td>
     </tr>
     <tr>
         <td>How to avoid some common app certification issues</td>

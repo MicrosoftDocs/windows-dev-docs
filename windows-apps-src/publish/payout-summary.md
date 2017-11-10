@@ -1,14 +1,15 @@
-﻿---
+---
 author: jnHs
 Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
 title: Payout summary
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Payout summary
@@ -52,7 +53,7 @@ Below the **Total paid to date** section, you will see your last three statement
 
 At the top of each statement, you’ll see the total amount of your monthly payment. Immediately below, in **Payments issued**, you’ll see a summary of how your payment amount was calculated.
 
-Underneath, in the **Proceeds breakdown** section, you can view details on how much money was made per market and per revenue source (such as Windows Phone Store, Windows Store 8, Windows Store, etc.) by app. You’ll also see details on any [adjustments](#proceeds-by-app-and-adjustments) that were made, including the date, amount, and reason for the adjustment.
+Underneath, in the **Proceeds breakdown** section, you can view details on how much money was made per market and per revenue source (such as Microsoft Store, Windows Store 8, Windows Phone Store, etc.) by app. You’ll also see details on any [adjustments](#proceeds-by-app-and-adjustments) that were made, including the date, amount, and reason for the adjustment.
 
 Note that the sections mentioned above only show info on your proceeds (and adjustments) from app sales; if you earned money through advertising, you’ll see a separate Microsoft Advertising section with details about the payouts and currency conversions.
 
@@ -76,7 +77,7 @@ The following table describes the fields that appear in the .csv file. Note that
 
 | Field name              | Description                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Windows Store, Windows Phone Store, Windows Store 8, advertising, etc.) |
+| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Microsoft Store, Windows Phone Store, Windows Store 8, advertising, etc.) |
 | Order ID                |  Unique order identifier. This ID allows you to identify purchase transactions with their respective non-purchase transactions (such as refunds, chargebacks, etc.). Both will have the same Order ID. Also, in the case of a split charge, where multiple payment methods were used for a single purchase, it will allow you to link the purchase transactions.                                                                                                          |
 | Transaction ID          |       Unique transaction identifier.  |
 | Transaction Date Time   | The date and time the transaction occurred (UTC).                                                                                        |
@@ -85,7 +86,7 @@ The following table describes the fields that appear in the .csv file. Note that
 | Parent Product Name     | Name of the parent product. Please note: if there isn’t a parent product for the transaction, then Parent Product Name = Product Name.   |
 | Product Name            | Name of the product.                                                                                                                     |
 | Product Type            | Type of product (such as App, Add-on, Game, etc.)                                                                                        |
-| Quantity                | When the Revenue Source is Windows Store for Business, the Quantity represents the number of licenses purchased. For all other Revenue Sources, the Quantity will always be 1. Note: even when a single transaction is split into two line items because two different payment methods were used, each line item will show a Quantity of 1.    |
+| Quantity                | When the Revenue Source is Microsoft Store for Business, the Quantity represents the number of licenses purchased. For all other Revenue Sources, the Quantity will always be 1. Note: even when a single transaction is split into two line items because two different payment methods were used, each line item will show a Quantity of 1.    |
 | Transaction Type        | Type of transaction (such as purchase, refund, reversal, chargeback, etc.)                                                                |
 | Payment Method          | Customer payment instrument used for the transaction (such as Card, Mobile Carrier Billing, PayPal, etc.)                                 |
 | Country / Region        | Country/region where the transaction occurred.                                                                                            |

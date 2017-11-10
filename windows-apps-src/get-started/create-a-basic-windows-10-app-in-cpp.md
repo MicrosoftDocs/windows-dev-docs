@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Create a "Hello world" app in C++
@@ -40,11 +41,11 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 -   You're still using the Visual Studio debugger, profiler, and other development tools.
 
--   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. Windows Store apps in C++ don't execute in a managed runtime environment.
+-   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. UWP apps in C++ don't execute in a managed runtime environment.
 
 ### What's new?
 
--   The design principles for Windows Store apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
+-   The design principles for UWP apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
 
 -   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a Windows Universal app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
 
@@ -54,7 +55,7 @@ If you're coming from a background in Windows desktop programming in C++, you'll
 
 -   Your app is compiled into a package that also contains metadata about the types that your app contains, the resources that it uses, and the capabilities that it requires (file access, internet access, camera access, and so forth).
 
--   In the Windows Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
+-   In the Microsoft Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
 
 ## Hello World Store app in C++
 
@@ -229,7 +230,7 @@ The default splash screen appears first. It has an image—Assets\\SplashScreen.
 
 When the splash screen disappears, your app appears. It displays the main page of the App.
 
-![Windows Store app screen, with controls](images/xaml-hw-app2.png)
+![UWP app screen, with controls](images/xaml-hw-app2.png)
 
 It doesn't do much—yet—but congratulations, you've built your first Universal Windows Platform app!
 

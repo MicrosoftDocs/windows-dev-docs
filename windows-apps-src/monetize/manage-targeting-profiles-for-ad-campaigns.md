@@ -1,28 +1,29 @@
 ---
 author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
-description: Use this method in the Windows Store promotions API to manage targeting profiles for promotional ad campaigns.
+description: Use this method in the Microsoft Store promotions API to manage targeting profiles for promotional ad campaigns.
 title: Manage targeting profiles
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store promotions API, ad campaigns
+keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
+localizationpriority: medium
 ---
 
 # Manage targeting profiles
 
 
-Use these methods in the Windows Store promotions API to select the users, geographies and inventory types that you want to target for each delivery line in a promotional ad campaign. Targeting profiles can be created and reused across multiple delivery lines.
+Use these methods in the Microsoft Store promotions API to select the users, geographies and inventory types that you want to target for each delivery line in a promotional ad campaign. Targeting profiles can be created and reused across multiple delivery lines.
 
-For more information about the relationship between targeting profiles and ad campaigns, delivery lines, and creatives, see [Run ad campaigns using Windows Store services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
+For more information about the relationship between targeting profiles and ad campaigns, delivery lines, and creatives, see [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
 ## Prerequisites
 
 To use these methods, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Windows Store promotions API.
+* If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Microsoft Store promotions API.
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -610,7 +611,7 @@ The following example shows the response body for this method.
 
 ## Related topics
 
-* [Run ad campaigns using Windows Store Services](run-ad-campaigns-using-windows-store-services.md)
+* [Run ad campaigns using Microsoft Store Services](run-ad-campaigns-using-windows-store-services.md)
 * [Manage ad campaigns](manage-ad-campaigns.md)
 * [Manage delivery lines for ad campaigns](manage-delivery-lines-for-ad-campaigns.md)
 * [Manage creatives for ad campaigns](manage-creatives-for-ad-campaigns.md)

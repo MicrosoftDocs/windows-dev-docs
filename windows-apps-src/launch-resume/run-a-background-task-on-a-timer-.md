@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Run a background task on a timer
@@ -122,7 +123,7 @@ See [Support your app with background tasks](support-your-app-with-background-ta
 * [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
 * [Free memory when your app moves to the background](reduce-memory-usage.md)
 * [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
 * [Postpone app suspension with extended execution](run-minimized-with-extended-execution.md)
 * [Register a background task](register-a-background-task.md)

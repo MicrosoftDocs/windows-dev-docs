@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Get set up
@@ -50,7 +51,7 @@ If you have already started using Visual Studio, but discover you are missing so
 
 ## 3. Enable your device for development
 
-It’s important to test your UWP apps on a real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
+It’s important to test your UWP apps on real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
 
 -   For detailed instructions, see [Enable your device for development](enable-your-device-for-development.md).
 
@@ -78,7 +79,7 @@ For the complete list of tools and downloads, see [Downloads](http://go.microsof
 ## See Also
 
 * [Your first app](your-first-app.md)
-* [Publishing your Windows Store app](https://developer.microsoft.com/store/publish-apps).
+* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
 * [What's a Universal Windows app?](whats-a-uwp.md)

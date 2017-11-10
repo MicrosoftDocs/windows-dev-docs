@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
+localizationpriority: medium
 ---
 
 # Application development for Windows as a service
@@ -100,7 +101,7 @@ Your apps should not call undocumented Windows APIs, or take dependency on speci
 
 ### Develop Universal Windows Platform (UWP) and Centennial apps
 
-We encourage all Win32 app ISVs to develop [Universal Windows Platform (UWP)](http://go.microsoft.com/fwlink/?LinkID=780560) and, specifically, [Centennial](http://go.microsoft.com/fwlink/?LinkID=780562) apps moving forward. There are great benefits to developing these app packages rather than using traditional Win32 installers. UWP apps are also supported in the [Windows Store](http://go.microsoft.com/fwlink/?LinkID=780563), so it’s easier for you to update your users to a consistent version automatically, lowering your support costs.
+We encourage all Win32 app ISVs to develop [Universal Windows Platform (UWP)](http://go.microsoft.com/fwlink/?LinkID=780560) and, specifically, [Centennial](http://go.microsoft.com/fwlink/?LinkID=780562) apps moving forward. There are great benefits to developing these app packages rather than using traditional Win32 installers. UWP apps are also supported in the [Microsoft Store](http://go.microsoft.com/fwlink/?LinkID=780563), so it’s easier for you to update your users to a consistent version automatically, lowering your support costs.
 
 If your Win32 app types do not work with the Centennial model, we highly recommend that you use the right installer and ensure this is fully tested. An installer is your user or customer’s first experience with your app, so ensure that this works well. All too often, this doesn’t work well or it hasn’t been fully tested for all scenarios. The [Windows App Certification Kit](http://go.microsoft.com/fwlink/?LinkID=780565) can help you test the install and uninstall of your Win32 app and help you identify use of undocumented APIs, as well as other basic performance-related best-practice issues, before your users do.
 
@@ -119,7 +120,7 @@ If your app is in the Store, you can flight your app via the Store, which means 
 ### Step 1: Become a Windows Insider and participate in flighting
 As a [Windows Insider,](http://go.microsoft.com/fwlink/p/?LinkId=521639) you can help shape the future of Windows—your feedback will help us improve features and functionality in the platform. This is a vibrant community where you can connect with other enthusiasts, join forums, trade advice, and learn about upcoming Insider-only events.
 
-Since you’ll have access to preview builds of Windows 10, Windows 10 Mobile, and the latest Windows SDK and Emulator, you’ll have all the tools at your disposal to develop great apps and explore what's new in the Universal Windows Platform and the Windows Store.
+Since you’ll have access to preview builds of Windows 10, Windows 10 Mobile, and the latest Windows SDK and Emulator, you’ll have all the tools at your disposal to develop great apps and explore what's new in the Universal Windows Platform and the Microsoft Store.
 
 This is also a great opportunity to build great hardware, with preview builds of the hardware development kits so you can develop universal drivers for Windows. The IoT Core Insider Preview is also available on supported IoT development boards, so you can build amazing connected solutions using the Universal Windows Platform.
 

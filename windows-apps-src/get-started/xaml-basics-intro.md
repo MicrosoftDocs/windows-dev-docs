@@ -8,6 +8,7 @@ ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # UI basics tutorials
@@ -34,4 +35,4 @@ Here's a quick summary of each tutorial track.
 ## See Also
 
 * [UWP Tutorials](create-uwp-apps.md)
-* [Intro to app UI design](../layout/design-and-ui-intro.md)
+* [Intro to app UI design](../design/basics/design-and-ui-intro.md)

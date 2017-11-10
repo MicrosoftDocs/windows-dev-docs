@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, trials, consumable, durable, subscription
+localizationpriority: medium
 ---
 
 # In-app purchases and trials
@@ -28,7 +29,10 @@ There are two different namespaces you can use to add in-app purchases and trial
 
 * **[Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx)**&nbsp;&nbsp;Starting in Windows 10, version 1607, apps can use the API in this namespace to implement in-app purchases and trials. We recommend that you use the members in this namespace if your app project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio. This namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. For more information about this namespace, see the [In-app purchases and trials using the Windows.Services.Store namespace](#api_intro) section in this article.
 
-* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;All versions of Windows 10 also support an older API for in-app purchases and trials in this namespace. Although any UWP app for Windows 10 can use this namespace, this namespace may not be updated to support new types of products and features in Dev Center and the Store in the future. For information about this namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+* **[Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx)**&nbsp;&nbsp;All versions of Windows 10 also support an older API for in-app purchases and trials in this namespace. For information about the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+
+> [!IMPORTANT]
+> The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features, and we recommend that you use the **Windows.Services.Store** namespace instead if possible for your app. The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop) or in apps or games that use a development sandbox in Dev Center (for example, this is the case for any game that integrates with Xbox Live).
 
 <span id="concepts" />
 ## Basic concepts
@@ -83,13 +87,13 @@ Watch the following video for an overview of how to implement in-app purchases i
 
 The main entry point to the **Windows.Services.Store** namespace is the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. This class provides methods you can use to get info for the current app and its available add-ons, get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks. To get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object, do one of the following:
 
-* In a single-user app (that is, an app that runs only in the context of the user that launched the app), use the static [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method to get a **StoreContext** object that you can use to access Windows Store-related data for the user. Most Universal Windows Platform (UWP) apps are single-user apps.
+* In a single-user app (that is, an app that runs only in the context of the user that launched the app), use the static [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method to get a **StoreContext** object that you can use to access Microsoft Store-related data for the user. Most Universal Windows Platform (UWP) apps are single-user apps.
 
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
-* In a [multi-user app](../xbox-apps/multi-user-applications.md), use the static [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a **StoreContext** object that you can use to access Windows Store-related data for a specific user who is signed in with their Microsoft account while using the app. The following example gets a **StoreContext** object for the first available user.
+* In a [multi-user app](../xbox-apps/multi-user-applications.md), use the static [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a **StoreContext** object that you can use to access Microsoft Store-related data for a specific user who is signed in with their Microsoft account while using the app. The following example gets a **StoreContext** object for the first available user.
 
   ```csharp
   var users = await Windows.System.User.FindAllAsync();
@@ -172,7 +176,7 @@ If your app uses the **Windows.ApplicationModel.Store** namespace, you can use t
 
 The **Windows.Services.Store** namespace does not provide an API you can use to obtain a transaction receipt for successful purchases in your app's code. This is a different experience from apps that use the **Windows.ApplicationModel.Store** namespace, which can [use a client-side API to retrieve a transaction receipt](use-receipts-to-verify-product-purchases.md).
 
-If you implement in-app purchases using the **Windows.Services.Store** namespace and you want to validate whether a given customer has purchased an app or add-on, you can use the [query for products method](query-for-products.md) in the [Windows Store collection REST API](view-and-grant-products-from-a-service.md). The return data for this method confirms whether the specified customer has an entitlement for a given product, and provides data for the transaction in which the user acquired the product. The Windows Store collection API uses Azure AD authentication to retrieve this information.
+If you implement in-app purchases using the **Windows.Services.Store** namespace and you want to validate whether a given customer has purchased an app or add-on, you can use the [query for products method](query-for-products.md) in the [Microsoft Store collection REST API](view-and-grant-products-from-a-service.md). The return data for this method confirms whether the specified customer has an entitlement for a given product, and provides data for the transaction in which the user acquired the product. The Microsoft Store collection API uses Azure AD authentication to retrieve this information.
 
 <span id="desktop" />
 ### Using the StoreContext class with the Desktop Bridge

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 # Planning for performance
 
@@ -168,7 +169,7 @@ Use these techniques and tools to test how your app stacks up against your origi
     -   Run the app multiple times to help eliminate random testing variables and help ensure consistent measurements.
 -   Test for reduced power availability. Your users' device might have significantly less power than your development machine. Windows was designed with low-power devices, such as mobile devices, in mind. Apps that run on the platform should ensure they perform well on these devices. As a heuristic, expect that a low power device runs at about a quarter the speed of a desktop computer, and set your goals accordingly.
 -   Use a combination of tools like Microsoft Visual Studio and Windows Performance Analyzer to measure app performance. Visual Studio is designed to provide app-focused analysis, such as source code linking. Windows Performance Analyzer is designed to provide system-focused analysis, such as providing system info, info about touch manipulation events, and info about disk input/output (I/O) and graphics processing unit (GPU) cost. Both tools provide trace capture and export, and can reopen shared and post-mortem traces.
--   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+-   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [UWP app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
 
 For more info, see these resources and profiling tools.
 

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, threads, asynchronous, C++
+localizationpriority: medium
 ---
 
 # Asynchronous programming in C++
@@ -295,7 +296,7 @@ Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.co
 
 ## Related topics
 
-* [Creating Asynchronous Operations in C++ for Windows Store apps][createAsyncCpp]
+* [Creating Asynchronous Operations in C++ for UWP apps][createAsyncCpp]
 * [Visual C++ Language Reference](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [Asynchronous Programming][AsyncProgramming]
 * [Task Parallelism (Concurrency Runtime)][taskParallelism]

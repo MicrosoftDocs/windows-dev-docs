@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
-Description:  You can use the SendRequestAsync method to send requests to the Windows Store for operations that do not yet have an API available in the Windows SDK.
-title: Send requests to the Windows Store
+Description: You can use the SendRequestAsync method to send requests to the Microsoft Store for operations that do not yet have an API available in the Windows SDK.
+title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,9 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
+localizationpriority: medium
 ---
 
-# Send requests to the Windows Store
+# Send requests to the Microsoft Store
 
 Starting in Windows 10, version 1607, the Windows SDK provides APIs for Store-related operations (such as in-app purchases) in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. However, although the services that support the Store are constantly being updated, expanded, and improved between OS releases, new APIs are typically added to the Windows SDK only during major OS releases.
 

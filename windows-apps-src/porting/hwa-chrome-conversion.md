@@ -1,8 +1,8 @@
 ---
 author: seksenov
 title: Hosted Web Apps - Convert your Chrome app to a Universal Windows Platform app
-description: Convert your Chrome App or Chrome Extension in to a Universal Windows Platform (UWP) app for the Windows Store.
-kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
+description: Convert your Chrome App or Chrome Extension in to a Universal Windows Platform (UWP) app for the Microsoft Store.
+kw: Package Chrome Extension for Microsoft Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Microsoft Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Chrome extensions for Windows, Chrome apps for Windows, hwa-cli, convert .crx to .AppX
 ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
+localizationpriority: medium
 ---
 
 # Convert your existing Chrome app to a UWP app
@@ -34,9 +35,9 @@ We have made it easy to convert your existing Chrome hosted app to an app runnin
 
 	**Replace `path/to/chrome/app` with the path information leading to your chrome app.*
     
-5. The generated `.appx` will appear in the same folder as your Chrome package. You are now ready to upload your app to the Windows Store. 
+5. The generated `.appx` will appear in the same folder as your Chrome package. You are now ready to upload your app to the Microsoft Store. 
 
-## Uploading your app to the Windows Store
+## Uploading your app to the Microsoft Store
 
 To upload your app, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows). Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and and reserve your app name.
 ![Windows Dev Center Dashboard Reserve a Name](images/hwa-to-uwp/reserve_a_name.png)
@@ -44,7 +45,7 @@ To upload your app, visit the Dashboard in the [Windows Dev Center](https://deve
 
 Upload your `AppX` package by navigating to the "Packages" page in the Submissions section.
 
-Fill out the Windows Store prompts.
+Fill out the Microsoft Store prompts.
 
 	During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
 	- Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
@@ -59,7 +60,7 @@ Fill out the Windows Store prompts.
 
 ## Guide for migrating your Hosted Web App
 
-After packaging your web app for the Windows Store, customize it so that it works great across all Windows-based devices, including PCs, tablets, phones, HoloLens, Surface Hub, Xbox and Raspberry Pi.
+After packaging your web app for the Microsoft Store, customize it so that it works great across all Windows-based devices, including PCs, tablets, phones, HoloLens, Surface Hub, Xbox and Raspberry Pi.
 
 ### Application Content URI Rules
 
@@ -101,4 +102,4 @@ Chrome provides apps with [special-purpose APIs](https://developer.chrome.com/ap
 
 - [Enhance your web app by accessing Universal Windows Platform (UWP) features](./hwa-access-features.md)
 - [Guide to Universal Windows Platform (UWP) apps](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-- [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+- [Download design assets for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, input, raw game controller
+localizationpriority: medium
 ---
 
 # Raw game controller
@@ -30,7 +31,9 @@ The [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.
 
 ## Detect and track raw game controllers
 
-Raw game controllers are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected raw game controllers and events to notify you when a raw game controller is added or removed.
+Detecting and tracking raw game controllers works in exactly the same way as it does for gamepads, except with the [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) class instead of the [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) class. See [Gamepad and vibration](gamepad-and-vibration.md) for more information.
+
+<!-- Raw game controllers are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected raw game controllers and events to notify you when a raw game controller is added or removed.
 
 ### The raw game controller list
 
@@ -82,7 +85,7 @@ RawGameController::RawGameControllerRemoved +=
 
 ### Users and headsets
 
-Each raw game controller can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md).
+Each raw game controller can be associated with a user account to link their identity to their gameplay, and can have a headset attached to facilitate voice chat or in-game features. To learn more about working with users and headsets, see [Tracking users and their devices](input-practices-for-games.md#tracking-users-and-their-devices) and [Headset](headset.md). -->
 
 ## Get the capabilities of a raw game controller
 
@@ -119,23 +122,23 @@ You poll a raw game controller by calling [RawGameController.GetCurrentReading](
 The following example polls a raw game controller for its current state:
 
 ```cpp
-Platform::Array<bool>^ currentButtonReading = 
+Platform::Array<bool>^ currentButtonReading =
     ref new Platform::Array<bool>(buttonCount);
 
-Platform::Array<GameControllerSwitchPosition>^ currentSwitchReading = 
+Platform::Array<GameControllerSwitchPosition>^ currentSwitchReading =
     ref new Platform::Array<GameControllerSwitchPosition>(switchCount);
 
 Platform::Array<double>^ currentAxisReading = ref new Platform::Array<double>(axisCount);
 
 rawGameController->GetCurrentReading(
-    currentButtonReading, 
-    currentSwitchReading, 
+    currentButtonReading,
+    currentSwitchReading,
     currentAxisReading);
 ```
 
 There is no guarantee of which position in each array will hold which input value among different types of controllers, so you'll need to check which input is which using the methods [RawGameController.GetButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_) and [RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_).
 
-**GetButtonLabel** will tell you the text or symbol that's printed on the physical button, rather than the button's function&mdash;therefore, it's best used as an aid for UI for cases where you want to give the player hints about which buttons perform which functions. **GetSwitchKind** will tell you the type of switch (that is, how many positions it has), but not the name. 
+**GetButtonLabel** will tell you the text or symbol that's printed on the physical button, rather than the button's function&mdash;therefore, it's best used as an aid for UI for cases where you want to give the player hints about which buttons perform which functions. **GetSwitchKind** will tell you the type of switch (that is, how many positions it has), but not the name.
 
 There is no standardized way to get the label of an axis or switch, so you'll need to test these yourself to determine which input is which.
 
@@ -152,7 +155,7 @@ The following example determines whether the **XboxA** button is pressed:
 ```cpp
 for (uint32_t i = 0; i < buttonCount; i++)
 {
-    if (currentButtonReading[i]) 
+    if (currentButtonReading[i])
     {
         GameControllerButtonLabel buttonLabel = rawGameController->GetButtonLabel(i);
 
@@ -173,7 +176,7 @@ The following example determines whether each switch is in the up position:
 ```cpp
 for (uint32_t i = 0; i < switchCount; i++)
 {
-    if (GameControllerSwitchPosition::Up == 
+    if (GameControllerSwitchPosition::Up ==
         (currentSwitchReading[i] & GameControllerSwitchPosition::Up))
     {
         // The switch is in the up position.
@@ -183,9 +186,9 @@ for (uint32_t i = 0; i < switchCount; i++)
 
 ### Reading the analog inputs (sticks, triggers, throttles, and so on)
 
-An analog axis provides a reading between 0.0 and 1.0. This includes each dimension on a stick such as X and Y for standard sticks or even X, Y, and Z axes (roll, pitch, and yaw, respectively) for flight sticks. 
+An analog axis provides a reading between 0.0 and 1.0. This includes each dimension on a stick such as X and Y for standard sticks or even X, Y, and Z axes (roll, pitch, and yaw, respectively) for flight sticks.
 
-The values can represent analog triggers, throttles, or any other type of analog input. These values are not provided with labels, so we suggest that your code is tested with a variety of input devices to ensure that they match correctly with your assumptions. 
+The values can represent analog triggers, throttles, or any other type of analog input. These values are not provided with labels, so we suggest that your code is tested with a variety of input devices to ensure that they match correctly with your assumptions.
 
 In all axes, the value is approximately 0.5 for a stick when it is in the center position, but it's normal for the precise value to vary, even between subsequent readings; strategies for mitigating this variation are discussed later in this section.
 
@@ -201,7 +204,7 @@ float leftTrigger = currentAxisReading[4];
 float rightTrigger = currentAxisReading[5];
 ```
 
-When reading the stick values, you'll notice that they don't reliably produce a neutral reading of 0.5 when at rest in the center position; instead, they'll produce different values near 0.5 each time the stick is moved and returned to the center position. To mitigate these variations, you can implement a small _deadzone_, which is a range of values near the ideal center position that are ignored. 
+When reading the stick values, you'll notice that they don't reliably produce a neutral reading of 0.5 when at rest in the center position; instead, they'll produce different values near 0.5 each time the stick is moved and returned to the center position. To mitigate these variations, you can implement a small _deadzone_, which is a range of values near the ideal center position that are ignored.
 
 One way to implement a deadzone is to determine how far the stick has moved from the center, and ignore readings that are nearer than some distance you choose. You can compute the distance roughly&mdash;it's not exact because stick readings are essentially polar, not planar, values&mdash;just by using the Pythagorean theorem. This produces a radial deadzone.
 
@@ -230,6 +233,7 @@ The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use r
 ## See also
 
 * [Input for games](input-for-games.md)
+* [Input practices for games](input-practices-for-games.md)
 * [Windows.Gaming.Input namespace](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.RawGameController class](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 * [Windows.Gaming.Input.IGameController interface](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)

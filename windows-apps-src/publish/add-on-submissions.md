@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Add-on submissions
@@ -17,10 +18,10 @@ Add-ons (also sometimes referred to as in-app products) are supplementary items 
 
 Add-ons are published through the Windows Dev Center dashboard. You'll also need to [enable the add-ons](../monetize/in-app-purchases-and-trials.md) in your app's code.
 
-The first step in the add-on submission process is to create the add-on in the dashboard by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you can create a submission so that your add-on can be purchased via the Windows Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-publication) to add-ons after the app is in the Store without having to resubmit the app again.
+The first step in the add-on submission process is to create the add-on in the dashboard by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you can create a submission so that your add-on can be purchased via the Microsoft Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-publication) to add-ons after the app is in the Store without having to resubmit the app again.
 
 > [!NOTE]
-> This section of the documentation describes how to submit add-ons in the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
+> This section of the documentation describes how to submit add-ons in the Dev Center dashboard. Alternatively, you can use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
 
 ## Checklist for submitting an add-on
 

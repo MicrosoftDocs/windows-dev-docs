@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
+localizationpriority: medium
 ---
 
 # Create a new title for Xbox Live
@@ -26,7 +27,8 @@ This article will walk you through this process with the following assumptions
 
 Provided that the above are true, the remainder of this article will walk through everything required to get a title configured on Windows Dev Center, a new project created, and Xbox Live sign-in code written and tested.
 
-> **Note**: If you are part of the Xbox Live Creators Program, the above assumptions apply to you and you should follow along with this article
+> [!NOTE]
+> If you are part of the Xbox Live Creators Program, the above assumptions apply to you and you should follow along with this article.
 
 ## Dev Center Setup
 

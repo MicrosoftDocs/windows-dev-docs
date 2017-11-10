@@ -3,11 +3,12 @@ author: JnHs
 Description: Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.
 title: Use targeted offers to maximize engagement and conversions
 ms.author: wdg-dev-content
-ms.date: 10/10/2017
+ms.date: 11/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, targeted offers, offers, notifications
+localizationpriority: high
 ---
 
 # Use targeted offers to maximize engagement and conversions
@@ -22,7 +23,7 @@ Target specific segments of your customers with attractive, personalized content
 At a high level, you need to do three things to use targeted offers:
 
 1. **Create the offer in your dashboard.** Navigate to the **Engage > Targeted offers** page to create offers. More info about this process is described below.
-2. **Implement the in-app offer experience.** Use the *Windows Store targeted offers API* in your app's code to retrieve the available offers for a given user. You'll also need to create the in-app experience for the targeted offer. For more info, see [Manage targeted offers using Store services](../monetize/manage-targeted-offers-using-windows-store-services.md).
+2. **Implement the in-app offer experience.** Use the *Microsoft Store targeted offers API* in your app's code to retrieve the available offers for a given user. You'll also need to create the in-app experience for the targeted offer. For more info, see [Manage targeted offers using Store services](../monetize/manage-targeted-offers-using-windows-store-services.md).
 3. **Submit your app to the Store.** Your app must be published with the in-app offer experience in place in order for the offer(s) be made available to customers.
 
 After you complete these steps, customers using your app will see the offers that are available to them at that time, based in their membership in the segment(s) associated with your offers. Please note that while we’ll make every effort to show all available offers to your customers, there may occasionally be issues that impact offer availability.
@@ -36,7 +37,7 @@ Follow these steps to create a targeted offer in the dashboard.
 2.  On the **Targeted offers** page, review the available offers. Select **Create new offer** for any offer you wish to implement.
 
     > [!NOTE]
-    > The available offers you will see may vary over time and based on account criteria. Initially, you will see one or more offers using predefined segment criteria. Soon, we'll allow you to create targeted offers based on [customer segments that you define](create-customer-segments.md).
+    > The available offers you will see may vary over time and based on account criteria.
 
 3.  In the new row that appears below the available offers, choose the product (app) in which the offer will be available. Then, select the add-on that you want to associate with the offer.
 4.  Repeat steps 2 and 3 if you'd like to create additional offers. You can implement the same offer type more than once for the same app, as long as you select different add-ons for each offer. Additionally, you can associate the same add-on with more than one offer type.

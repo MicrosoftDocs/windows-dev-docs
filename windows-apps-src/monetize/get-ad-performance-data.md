@@ -1,20 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
-description: Use this method in the Windows Store analytics API to get aggregate ad performance data for an application during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate ad performance data for an application during a given date range and other optional filters.
 title: Get ad performance data
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, ads, performance
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, ads, performance
+localizationpriority: medium
 ---
 
 # Get ad performance data
 
 
-Use this method in the Windows Store analytics API to get aggregate ad performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
+Use this method in the Microsoft Store analytics API to get aggregate ad performance data for your applications during a given date range and other optional filters. This method returns the data in JSON format.
 
 This method returns the same data that is provided by the [Advertising performance report](../publish/advertising-performance-report.md) on the Windows Dev Center dashboard.
 
@@ -23,10 +24,10 @@ This method returns the same data that is provided by the [Advertising performan
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
-For more information, see [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md).
+For more information, see [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md).
 
 ## Request
 
@@ -177,4 +178,4 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Advertising performance report](../publish/advertising-performance-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)

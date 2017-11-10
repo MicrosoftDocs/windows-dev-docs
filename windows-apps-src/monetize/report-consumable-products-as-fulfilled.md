@@ -1,19 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: Use this method in the Windows Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
+description: Use this method in the Microsoft Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
 title: Report consumable products as fulfilled
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store collection API, fulfill, consumable
+keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable
+localizationpriority: medium
 ---
 
 # Report consumable products as fulfilled
 
-Use this method in the Windows Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
+Use this method in the Microsoft Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
 
 There are two ways you can use this method to report a consumable product as fulfilled:
 
@@ -26,7 +27,7 @@ There are two ways you can use this method to report a consumable product as ful
 To use this method, you will need:
 
 * An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
-* A Windows Store ID key that represents the identity of the user for whom you want to report a consumable product as fulfilled.
+* A Microsoft Store ID key that represents the identity of the user for whom you want to report a consumable product as fulfilled.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
 
@@ -60,7 +61,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 | itemId        | string       | The *itemId* value returned by a [query for products](query-for-products.md). Use this parameter with *trackingId*      | No       |
 | trackingId    | guid         | A unique tracking ID provided by developer. Use this parameter with *itemId*.         | No       |
 | productId     | string       | The *productId* value returned by a [query for products](query-for-products.md). Use this parameter with *transactionId*   | No       |
-| transactionId | guid         | A transaction ID value that is obtained from one of the following sources. Use this parameter with *productId*.  <br/><br/><ul><li>The [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) property of the [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) class.</li><li>The app or product receipt that is returned by [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813), or [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>The *transactionId* parameter returned by a [query for products](query-for-products.md).</li></ul>   | No       |
+| transactionId | guid         | A transaction ID value that is obtained from one of the following sources. Use this parameter with *productId*.<ul><li>The [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) property of the [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) class.</li><li>The app or product receipt that is returned by [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813), or [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>The *transactionId* parameter returned by a [query for products](query-for-products.md).</li></ul>   | No       |
 
  
 <span/>
@@ -70,8 +71,8 @@ The UserIdentity object contains the following parameters.
 | Parameter            | Type   | Description       | Required |
 |----------------------|--------|-------------------|----------|
 | identityType         | string | Specify the string value **b2b**.    | Yes      |
-| identityValue        | string | The [Windows Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to report a consumable product as fulfilled.      | Yes      |
-| localTicketReference | string | The requested identifier for the returned response. We recommend that you use the same value as the *userId*  [claim](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key) in the Windows Store ID key. | Yes      |
+| identityValue        | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to report a consumable product as fulfilled.      | Yes      |
+| localTicketReference | string | The requested identifier for the returned response. We recommend that you use the same value as the *userId*  [claim](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in the Microsoft Store ID key. | Yes      |
 
 <span/> 
 
@@ -141,7 +142,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 |------|--------------|----------------------------|-----------------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | The Azure AD access token is invalid. In some cases the details of the ServiceError will contain more information, such as when the token is expired or the *appid* claim is missing. |
 | 401  | Unauthorized | PartnerAadTicketRequired   | An Azure AD access token was not passed to the service in the authorization header.                                                                                                   |
-| 401  | Unauthorized | InconsistentClientId       | The *clientId* claim in the Windows Store ID key in the request body and the *appid* claim in the Azure AD access token in the authorization header do not match.                     |
+| 401  | Unauthorized | InconsistentClientId       | The *clientId* claim in the Microsoft Store ID key in the request body and the *appid* claim in the Azure AD access token in the authorization header do not match.                     |
 
 <span/> 
 
@@ -150,4 +151,4 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [Manage product entitlements from a service](view-and-grant-products-from-a-service.md)
 * [Query for products](query-for-products.md)
 * [Grant free products](grant-free-products.md)
-* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
+* [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)

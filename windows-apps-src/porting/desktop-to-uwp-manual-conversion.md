@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
+localizationpriority: medium
 ---
 
 # Package an app manually (Desktop Bridge)
@@ -30,7 +31,7 @@ If you're uncertain about what changes your installer makes to the system, or if
 >The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
 
 ## First, consider how you'll distribute your app
-If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
+If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
 ## Create a package manifest
 
@@ -153,10 +154,10 @@ Here is an example [VisualElements](https://docs.microsoft.com/uwp/schemas/appxp
 	Square44x44Logo="images\small_icon.png"
 	Description="A useful description" />
 ```
-<span id="target-based-assets" />
+<a id="target-based-assets" />
 ## (Optional) Add Target-based unplated assets
 
-Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets).
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets).
 
 1. Obtain the correct 44x44 images and then copy them into the folder that contains your images (i.e., Assets).
 
@@ -169,7 +170,7 @@ Target-based assets are for icons and tiles that appear on the Windows taskbar, 
 
 4. Continue to the next subsection to generate a new Package Resource Index file.
 
-<span id="make-pri" />
+<a id="make-pri" />
 ### Generate a Package Resource Index (PRI) file
 
 If you create target-based assets as described in the section above, or you modify any of the visual assets of your app after you've created the package, you'll have to generate a new PRI file.
@@ -186,7 +187,7 @@ If you create target-based assets as described in the section above, or you modi
 
 6.	Package your Windows app package by using the instructions in the next step.
 
-<span id="make-appx" />
+<a id="make-appx" />
 ## Generate a Windows app package
 
 Use **MakeAppx.exe** to generate a Windows app package for your project. It's included with the Windows 10 SDK, and if you have Visual Studio installed, it can be easily accessed through the Developer Command Prompt for your Visual Studio version.
@@ -206,6 +207,10 @@ To update your app's .exe or .dll files, replace the existing files in your pack
 
 ## Next steps
 
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+
 **Step through code / find and fix issues**
 
 See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uwp-debug.md)
@@ -213,11 +218,3 @@ See [Run, debug, and test a packaged desktop app (Desktop Bridge)](desktop-to-uw
 **Sign your app and then distribute it**
 
 See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.

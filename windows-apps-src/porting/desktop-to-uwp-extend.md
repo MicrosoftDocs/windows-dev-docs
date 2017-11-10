@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Extend your desktop application with modern UWP components
@@ -52,12 +53,12 @@ To show a XAML-based UI, do these things:
 
 :four: [In the UWP project, show the page that you want](#parse)
 
-<span id="project" />
+<a id="project" />
 ### Add a UWP project
 
 Add a **Blank App (Universal Windows)** project to your solution.
 
-<span id="protocol" />
+<a id="protocol" />
 ### Add a protocol extension
 
 In **Solution Explorer**, open the **package.appxmanifest** file of the project and add the extension.
@@ -84,7 +85,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 > [!NOTE]
 > Map controls download data from the internet so if you use one, you'll have to add the "internet client" capability to your manifest as well.
 
-<span id="start" />
+<a id="start" />
 ### Start the UWP app
 
 First, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method.
@@ -146,7 +147,7 @@ DllExport bool __stdcall LaunchMap(double lat, double lon)
 
 ```
 
-<span id="parse" />
+<a id="parse" />
 ### Parse parameters and show a page
 
 In the **App** class of your UWP project, override the **OnActivated** event handler. If the app is activated by your protocol, parse the parameters and then open the page that you want.
@@ -203,7 +204,7 @@ To show provide a service, do these things:
 
 :four: [Test the app service](#test)
 
-<span id="component" />
+<a id="component" />
 
 ### Add a Windows Runtime component
 
@@ -211,7 +212,7 @@ Add a **Windows Runtime Component (Universal Windows)** project to your solution
 
 Then, reference the project of that runtime component from your UWP packaging project.
 
-<span id="extension" />
+<a id="extension" />
 ### Add an app service extension
 
 In **Solution Explorer**, open the **package.appxmanifest** file of your packaging project and add an app service extension.
@@ -228,7 +229,7 @@ In **Solution Explorer**, open the **package.appxmanifest** file of your packagi
 
 Give the app service a name and provide the name of the entry point class. This is the class that you'll use to implement your app service.
 
-<span id="appservice" />
+<a id="appservice" />
 ### Implement the app service
 
 Here's where you'll validate and handle requests from other apps.
@@ -269,7 +270,7 @@ public sealed class AppServiceTask : IBackgroundTask
 }
 ```
 
-<span id="test" />
+<a id="test" />
 ### Test the app service
 
 Test your service by calling it from another app.
@@ -338,12 +339,12 @@ To make your application a share target, do these things:
 
 :three: [Override the OnNavigatedTo event handler](#override)
 
-<span id="project2" />
+<a id="project2" />
 ### Add a UWP project to your solution
 
 Add a **Blank App (Universal Windows)** project to your solution.
 
-<span id="share-extension" />
+<a id="share-extension" />
 ### Add a share target extension
 
 In **Solution Explorer**, open the **package.appxmanifest** file of the project and add the extension.
@@ -366,7 +367,7 @@ In **Solution Explorer**, open the **package.appxmanifest** file of the project 
 
 Provide the name of the executable produced by the UWP project, and the name of the entry point class. You'll also have to specify what types of files can be shared with your app.
 
-<span id="override" />
+<a id="override" />
 ### Override the OnNavigatedTo event handler
 
 Override the **OnNavigatedTo** event handler in the **App** class of your UWP project.
@@ -392,14 +393,10 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 ## Support and feedback
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 **Give feedback or make feature suggestions**
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
-
-**Give feedback about this article**
-
-Use the comments section below.

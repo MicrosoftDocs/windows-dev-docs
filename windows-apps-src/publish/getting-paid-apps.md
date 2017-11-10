@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Here’s some important info you’ll need to ensure that you receive payment for your apps, in-app products (IAPs), and advertising earnings.
 title: Getting paid
@@ -9,21 +9,22 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Getting paid
 Here’s some important info you’ll need to ensure that you receive payment for your apps, add-ons, and advertising earnings.
 
 > [!IMPORTANT]
-> Before you can receive money from app sales in the Windows Store, you need to [set up your payout account and and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
+> Before you can receive money from app sales in the Microsoft Store, you need to [set up your payout account and and fill out the necessary tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
 ## Store fee
 
-When you [sign up for a developer account](http://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Windows Store, including the Store fee that Microsoft charges for every sale made.
+When you [sign up for a developer account](http://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
 
 In most cases, the Store fee is 30%. Fees are officially defined in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). Always review that document if you have any questions.
 
-The Windows Store fee is applied to all app sales collected by the Windows Store, including add-ons.
+The Microsoft Store fee is applied to all app sales collected by the Microsoft Store, including add-ons.
 
 ## Price tiers
 
@@ -55,7 +56,7 @@ To place your payments on hold, go to **Account settings**. Under **Financial de
 Once you have set your payout hold status to **On**, all payouts will be on hold until you toggle the slider back to **Off**. When you do so, you’ll be included during the next monthly payout cycle (provided any applicable payment thresholds have been met). For example, if you’ve had your payouts on hold, but would like to have a payout generated in June, then make sure to toggle the payout hold status to **Off** before the end of May.
 
 > [!NOTE]
-> Your **Payout hold status** selection applies to **all** revenue sources that are paid through Windows Dev Center (Windows Store, advertising, Azure Marketplace, etc.). You cannot select different hold statuses for each revenue source.
+> Your **Payout hold status** selection applies to **all** revenue sources that are paid through Windows Dev Center (Microsoft Store, advertising, Azure Marketplace, etc.). You cannot select different hold statuses for each revenue source.
 
 
  

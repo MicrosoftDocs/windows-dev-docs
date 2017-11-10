@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK
+localizationpriority: medium
 ---
 
 # Engage customers with the Microsoft Store Services SDK

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
 title: Avoid common certification failures
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Avoid common certification failures
@@ -17,7 +18,7 @@ keywords: windows 10, uwp
 Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
 
 > [!NOTE]
-> Be sure to review the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944) to ensure your app meets all of the requirements listed there.
+> Be sure to review the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944) to ensure your app meets all of the requirements listed there.
 
 -   Submit your app only when it's finished. You're welcome to use your app's description to mention upcoming features, but make sure that your app doesn't contain incomplete sections, links to web pages that are under construction, or anything else that would give a customer the impression that your app is incomplete.
 
@@ -29,7 +30,7 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 -   [Provide any necessary info](notes-for-certification.md) required to use your app, such as the user name and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
 
--   Include a [privacy policy](create-app-store-listings.md#privacy-policy) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944).
+-   Include a [privacy policy](create-app-store-listings.md#privacy-policy) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944).
 
 -   Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description](write-a-great-app-description.md).
 

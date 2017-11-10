@@ -9,13 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, creators, test
+localizationpriority: medium
 ---
 
 # Create a new Xbox Live Creators Program title and publish to the test environment
 
 ## Introduction
 
-Before writing any code, you must setup a new title on your service configuration portal.  You can learn more about service configuration in [Xbox Live Service Configuration](../xbox-live-service-configuration.md)
+Before writing any Xbox Live code, you must setup a new title on your service configuration portal.  You can learn more about service configuration in [Xbox Live Service Configuration](../xbox-live-service-configuration.md).
 
 This article will walk through everything required to get a title configured on Windows Dev Center, a new project created, and preparing Xbox Live for testing. This article assumes the following:
 
@@ -29,7 +30,7 @@ This article will walk through everything required to get a title configured on 
 
 ## Dev Center setup
 
-You need an Xbox Live enabled title created on [Windows Dev Center](http://dev.windows.com) as a pre-requisite to any Xbox Live functionality working.
+You need an Xbox Live enabled title created on [Windows Dev Center](http://dev.windows.com) as a pre-requisite to using any Xbox Live functionality.
 
 ### Create a Microsoft account
 If you don't have a Microsoft Account (also known as an MSA), you will need to first create one at [Microsoft Account - Sign In](https://go.microsoft.com/fwlink/p/?LinkID=254486). If you have an Office 365 account, use Outlook.com, or have an Xbox Live account - you probably already have an MSA.

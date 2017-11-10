@@ -1,6 +1,6 @@
 ---
 author: Karl-Bridge-Microsoft
-ms.assetid:
+ms.assetid: 
 title: UWP Academy - Input track - Support the Surface Dial (and other wheel devices) in your UWP app
 description: UWP Academy. Input track. A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
 keywords: UWP Academy
@@ -9,6 +9,7 @@ ms.date: 04/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+localizationpriority: medium
 ---
 
 # Support the Surface Dial (and other wheel devices) in your UWP app
@@ -25,7 +26,7 @@ We focus on the following:
 * Customizing click interactions
 * Customizing rotation interactions
 
-For more about implementing these and other features, see [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input-and-devices/windows-wheel-interactions).
+For more about implementing these and other features, see [Surface Dial interactions in UWP apps](https://docs.microsoft.com/en-us/windows/uwp/input/windows-wheel-interactions).
 
 ## Introduction
 
@@ -557,7 +558,7 @@ In this step, we show how you can customize haptic feedback by associating our s
             }
         }
         ```
-    - Finally, we get the requested [Waveform](https://docs.microsoft.com/en-us/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback#Windows_Devices_Haptics_Simple​Haptics​Controller​Feedback_Waveform) (if supported) for the haptic feedback. 
+    - Finally, we get the requested **[Waveform](https://docs.microsoft.com/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback#Windows_Devices_Haptics_SimpleHapticsControllerFeedback_Waveform)** (if supported) for the haptic feedback. 
 
         ```csharp
         // Get the requested waveform.

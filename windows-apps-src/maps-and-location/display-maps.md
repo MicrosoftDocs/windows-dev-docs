@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, map, location, map control, map views
+localizationpriority: medium
 ---
 
 # Display maps with 2D, 3D, and Streetside views
@@ -17,7 +18,7 @@ You can show a map in light dismissable window called a map *placecard* or in a 
 
 Download the [map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) to try out some the features described in this guide.
 
-<span id="placecard" />
+<a id="placecard" />
 ## Display map in a placecard
 You can show users a map inside of a light-weight pop-up window above, below or to the side of a UI element or an area of an app where the user touches. The map can show a city or address that relates to information in your app.  
 
@@ -78,7 +79,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-<span id="map-control" />
+<a id="map-control" />
 ## Display map in a control
 
 Use a map control to show rich and customizable map data in your app. A map control can display road maps, aerial, 3D, views, directions, search results, and traffic. On a map, you can display the user's location, directions, and points of interest. A map can also show aerial 3D views, Streetside views, traffic, transit, and local businesses.
@@ -351,7 +352,7 @@ private async void showStreetsideView()
 }
 ```
 
-<span id="3Dviews" />
+<a id="3Dviews" />
 ## Display aerial 3D views
 
 

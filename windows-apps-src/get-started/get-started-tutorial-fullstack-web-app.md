@@ -1,22 +1,23 @@
 ---
 author: libbymc
 title: Create a single-page web app with REST API backend
-description: Use popular web technologies to build a Hosted Web App for the Windows Store
+description: Use popular web technologies to build a Hosted Web App for the Microsoft Store
 keywords: hosted web app, HWA, REST API, single-page app, SPA
 ms.author: libbymc
 ms.date: 05/10/2017
 ms.topic: article
 ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
+localizationpriority: medium
 ---
 
 # Create a single-page web app with REST API backend
 
-**Build a Hosted Web App for the Windows Store with popular fullstack web technologies**
+**Build a Hosted Web App for the Microsoft Store with popular fullstack web technologies**
 
 ![Simple memory game as a single-page web app](images/fullstack.png)
 
-This two-part tutorial provides a quick tour of modern fullstack web development as you build a simple memory game that works both in the browser and as a Hosted Web App for the Windows Store. In Part I you'll build a simple REST API service for the game's backend. By hosting the game logic in the cloud as an API service, you preserve the game state so your user can keep playing their same game instance across different devices. In Part II you'll build the front-end UI as a single-page web app with responsive layout.
+This two-part tutorial provides a quick tour of modern fullstack web development as you build a simple memory game that works both in the browser and as a Hosted Web App for the Microsoft Store. In Part I you'll build a simple REST API service for the game's backend. By hosting the game logic in the cloud as an API service, you preserve the game state so your user can keep playing their same game instance across different devices. In Part II you'll build the front-end UI as a single-page web app with responsive layout.
 
 We'll be using some of the most popular web technologies, including the [Node.js](https://nodejs.org/en/) runtime and [Express](http://expressjs.com/) for server-side development, the [Bootstrap](http://getbootstrap.com/) UI framework, the [Pug](https://www.npmjs.com/package/pug) template engine, and [Swagger](http://swagger.io/tools/) for building RESTful APIs. You'll also gain experience with the [Azure Portal](https://ms.portal.azure.com/) for cloud hosting and working with the [Visual Studio Code](https://code.visualstudio.com/) editor.
 
@@ -32,13 +33,13 @@ If you don't already have these resources on your machine, follow these download
 
 If you want to complete the final steps of hosting your API service and memory game app on Microsoft Azure, you'll need to [create a free Azure account](https://azure.microsoft.com/en-us/free/) if you haven't already done so.
 
-If you decide to bail on (or postpone) the Azure part, simply skip the final sections of parts I and II, which cover Azure hosting and packaging your app for the Windows Store. The API service and web app you build will still run locally (from `http://localhost:8000` and `http://localhost:3000`, respectively) on your machine.
+If you decide to bail on (or postpone) the Azure part, simply skip the final sections of parts I and II, which cover Azure hosting and packaging your app for the Microsoft Store. The API service and web app you build will still run locally (from `http://localhost:8000` and `http://localhost:3000`, respectively) on your machine.
 
 ## Part I: Build a REST API backend
 
 We'll first build a simple memory game API to power our memory game web app. We'll use [Swagger](http://swagger.io/) to define our API and generate scaffolding code and a web UI for manual testing.
 
-If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-application), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
+If you'd like to skip this part and move straight to [Part II: Build a single-page web application](#part-ii-build-a-single-page-web-appl), here's the [finished code for Part I](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend). Follow the *README* instructions to get the code up and running locally, or see *5. Host your API service on Azure and enable CORS* to run it from Azure.
 
 ### Game overview
 
@@ -272,9 +273,9 @@ With this change, the **GET /game** method will return all the card values (incl
 
 The Azure docs will walk you through:
 
- - [Registering a new *API App* with Azure Portal](https://docs.microsoft.com/en-us/azure/app-service-api/app-service-api-nodejs-api-app#a-idcreateapiappa-create-a-new-api-app)
- - [Setting up Git deployment for your API app](https://docs.microsoft.com/en-us/azure/app-service-api/app-service-api-nodejs-api-app#set-up-your-new-api-app-for-git-deployment), and
- - [Deploying your API app code to Azure](https://docs.microsoft.com/en-us/azure/app-service-api/app-service-api-nodejs-api-app#deploy-your-api-code-to-azure)
+ - [Registering a new *API App* with Azure Portal](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [Setting up Git deployment for your API app](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git), and
+ - [Deploying your API app code to Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 When registering your app, try to differentiate your *App name* (to avoid naming collisions with others requesting variations on the *http://memorygameapi.azurewebsites.net* URL).
 
@@ -628,9 +629,9 @@ Congratulations! You've finished creating the web app! Let's test it.
 
 ### Going further
 
-You can now deploy your app to Azure (or any other cloud hosting service) for testing across different device form factors, such as mobile, tablet, and desktop. (Don't forgot to test across different browsers too!) Once your app is ready for production, you can easily package it as a *Hosted Web App* (HWA) for the *Universal Windows Platform* (UWP) and distribute it from the Windows Store.
+You can now deploy your app to Azure (or any other cloud hosting service) for testing across different device form factors, such as mobile, tablet, and desktop. (Don't forgot to test across different browsers too!) Once your app is ready for production, you can easily package it as a *Hosted Web App* (HWA) for the *Universal Windows Platform* (UWP) and distribute it from the Microsoft Store.
 
-The basic steps for publishing to the Windows Store are:
+The basic steps for publishing to the Microsoft Store are:
 
  1. Create a [Windows Developer](https://developer.microsoft.com/en-us/store/register) account
  2. Use the app submission [checklist](https://docs.microsoft.com/en-us/windows/uwp/publish/app-submissions)
@@ -638,7 +639,7 @@ The basic steps for publishing to the Windows Store are:
 
 Here are some useful resources for going further:
 
- - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/en-us/azure/documentdb/documentdb-nodejs-application#a-nametoc395783182aPart-7-deploy-your-application-development-project-to-azure-websites)
+ - [Deploy your application development project to Azure Websites](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
  - [Convert your web application to a Universal Windows Platform (UWP) app](https://docs.microsoft.com/en-us/windows/uwp/porting/hwa-create-windows)
 

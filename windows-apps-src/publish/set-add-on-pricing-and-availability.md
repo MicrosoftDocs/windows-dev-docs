@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: Set add-on pricing and availability
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Set add-on pricing and availability
@@ -74,7 +75,7 @@ If you don’t want to set a release date yet, and you prefer your submission to
 Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
  
 > [!NOTE]
-> Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your add-on (or update) will be available on a specific date.  
+> Delays during certification or publishing could cause the actual release date to be later than the date you request. The Microsoft Store cannot guarantee that your add-on (or update) will be available on a specific date.  
 
 
 

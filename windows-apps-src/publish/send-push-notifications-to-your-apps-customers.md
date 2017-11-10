@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
+localizationpriority: high
 ---
 
 # Send notifications to your app's customers
@@ -62,7 +63,7 @@ If you haven’t created a segment yet, select **Create new customer group**. No
    - **Base URI** (interactive toast type). For more details, see [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712).
    - **Add image query** (interactive toast type). For more details, see [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847).
    - **Visual**. An image, video, or sound. For more details, see [visual](https://msdn.microsoft.com/library/windows/apps/br230847).
-   - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md).
+   - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
    - **Binding** (interactive tile type). The toast template. For more details, see [binding](https://msdn.microsoft.com/library/windows/apps/br230843).
 
    > [!TIP]
@@ -130,8 +131,8 @@ Things to keep in mind about translation:
  - If you change the English text after the notification has been translated, we’ll automatically update the translated notifications to match the change. However, this won’t happen if you previously chose to override the initial translation.
 
 ## Related topics
-- [Tiles, badges, and notifications for UWP apps](../controls-and-patterns/tiles-badges-notifications.md)
-- [Windows Push Notification Services (WNS) overview](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+- [Tiles, badges, and notifications for UWP apps](../design/shell/tiles-and-notifications/index.md)
+- [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Notifications Visualizer app](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [Customer segmentation and push notifications: a new Windows Dev Center Insider Program feature (blog post)](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Getting started: Animation
@@ -124,7 +125,7 @@ If you open the MainPage.xaml file, in **XAML** view, you'll see the XAML code t
 
 You can edit this XAML manually, or return to Blend to continue working on it there. Blend makes it fun to create interesting user interfaces, and the ability to animate them using a graphical tool can dramatically speed up development time. For more info about animations, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Note**  For info about animations for Windows Store apps using JavaScript and HTML, see [Animating your UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Note**  For info about animations for <span class="legacy-term">UWP apps using JavaScript and HTML</span>, see [Animating your UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
 ### Next step
 

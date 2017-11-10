@@ -24,9 +24,9 @@ When an app and the framework (or library) it uses registers a background task w
 
 * Groups can be uniquely identified by a GUID. They can also have an associated friendly name string which is easier to read while debugging.
 * Multiple background tasks can be registered in a group.
-* Background tasks registered in a group won't appear in [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration#Windows_ApplicationModel_Background_BackgroundTaskRegistration_AllTasks). Thus apps that currently use **BackgroundTaskRegistration.AllTasks** to unregister their tasks won't inadvertently unregister background tasks registered in a group. See [Unregister background tasks in a group example](#unregister-background-tasks-in-a-group-example) below to see how to unregister all background triggers that have been registered as part of a group.
+* Background tasks registered in a group won't appear in [BackgroundTaskRegistration.AllTasks](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration#Windows_ApplicationModel_Background_BackgroundTaskRegistration_AllTasks). Thus apps that currently use **BackgroundTaskRegistration.AllTasks** to unregister their tasks won't inadvertently unregister background tasks registered in a group. See [Unregister background tasks in a group](#unregister-background-tasks-in-a-group) below to see how to unregister all background triggers that have been registered as part of a group.
 * Each Background Task Registration will have a Group property to determine which group it is associated with.
-* Registering In-Process background tasks with a group will cause the activation to go through [BackgroundTaskRegistrationGroup.BackgroundActivated](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup#Windows_ApplicationModel_Background_BackgroundTaskRegistrationGroup_BackgroundActivated) event instead of the [Application.OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_Ui_Xaml_Application_OnBackgroundActivated).
+* Registering In-Process background tasks with a group will cause the activation to go through [BackgroundTaskRegistrationGroup.BackgroundActivated](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistrationgroup#Windows_ApplicationModel_Background_BackgroundTaskRegistrationGroup_BackgroundActivated) event instead of [Application.OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnBackgroundActivated_Windows_ApplicationModel_Activation_BackgroundActivatedEventArgs_).
 
 ## Register a background task in a group
 
@@ -101,7 +101,7 @@ private static void UnRegisterAllTasks()
 
 ## Register Persistent Events
 
-When using Background Task Registration Groups with in-process background tasks, the background activations are directed towards the group's event instead of the one on the Application or CoreApplication object. This enables multiple components within your app to handle the activation rather than place all activation code paths in the Application object. The following shows how to register for the group's background activated event. First check [BackgroundTaskRegistration.GetTaskGroup](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration#Windows_ApplicationModel_Background_BackgroundTaskRegistration_GetTaskGroup) to determine if the group has already been registered. If not then create a new group with your id and friendly name. Then register an event handler to the BackgroundActivated event on the group.
+When using Background Task Registration Groups with in-process background tasks, the background activations are directed towards the group's event instead of the one on the Application or CoreApplication object. This enables multiple components within your app to handle the activation rather than place all activation code paths in the Application object. The following shows how to register for the group's background activated event. First check [BackgroundTaskRegistration.GetTaskGroup](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration#Windows_ApplicationModel_Background_BackgroundTaskRegistration_GetTaskGroup_System_String_) to determine if the group has already been registered. If not then create a new group with your id and friendly name. Then register an event handler to the BackgroundActivated event on the group.
 
 ```csharp
 void RegisterPersistentEvent()
@@ -111,7 +111,7 @@ void RegisterPersistentEvent()
     {
         group = new BackgroundTaskRegistrationGroup(groupId, groupFriendlyName);
     }
-    
+
     group.BackgroundActivated += MyEventHandler;
 }
 ```

@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Guidance for app package management
@@ -25,7 +26,7 @@ Learn how your app's packages are made available to your customers, and how to m
 
 ## OS versions and package distribution
 
-Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Windows Store will provide the best available match.
+Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.
 
 Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. However, customers will only get those packages if the app doesn't include a package that targets the current OS version.
 

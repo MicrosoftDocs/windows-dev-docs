@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, shadow volumes, depth buffers, directx 11
+localizationpriority: medium
 ---
 
 # Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox live creators, visual studio
+localizationpriority: medium
 ---
 
 # Get started developing an Xbox Live Creators Program title with Visual Studio
@@ -20,8 +21,8 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox live creators,
 - Windows operating system
 	- Windows 10 (as development and/or test machine)
 - Visual Studio
-    - Visual Studio 2015.  See [https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx)
-    - Windows 10 SDK v10.0.14393.0 or later [https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+    - Visual Studio 2015 or later.  See [Visual Studio Downloads](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx)
+    - Windows 10 SDK v10.0.14393.0 or later. See [Windows 10 SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
 
 ### Install the Windows 10 SDK
 
@@ -29,7 +30,7 @@ The Windows 10 SDK provides the latest headers, libraries, metadata and tools fo
 
 This is typically installed and updated by Visual Studio 2015.  If you already have Visual Studio 2015 installed, go to the menu Tools, Extensions and Updates, and check the Updates tab to install the latest Windows SDK.
 
-Otherwise you can install a standalone version at [https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+Otherwise you can install a standalone version at the [Windows 10 SDK download site](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk).
 
 ### Create a new title on Windows Dev Center
 
@@ -59,7 +60,7 @@ To learn more about test accounts, see [Authorize Xbox Live Accounts for Testing
 
 The SDK samples are a good way to see how Xbox Live APIs are used.
 
-The samples found at [https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.  
+The samples found on the [Xbox Live samples Github](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.  
 
 To use the samples, you will need to change your sandbox to XDKS.1
 See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.
@@ -71,7 +72,7 @@ See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandb
 You can skip this step if you already have an existing UWP app.
 
 Start Visual Studio 2015 from the Start Menu or the Taskbar.  
-If you don't have Visual Studio 2015 installed, you can find it at [https://www.visualstudio.com/](https://www.visualstudio.com/)
+If you don't have Visual Studio 2015 installed, you can find it on the [Visual Studio website.](https://www.visualstudio.com/)
 
 ![Visual Studio start](../images/VisualStudioStart.png)
 
@@ -108,8 +109,8 @@ You can enter "Xbox Live" (without quotes) in the search field in NuGet and you 
 
 The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT.  
 
-Choose between `Microsoft.Xbox.Live.SDK.*.UWP` and `Microsoft.Xbox.Live.SDK.*.XboxOneXDK`.  `XboxOneXDK` is for ID@Xbox and Managed developers who are using the Xbox One XDK.  `UWP` is for UWP games which can run on either PC, the Xbox One, or Windows Phone.  You can read more about running UWP on Xbox One at
- [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)
+Choose between `Microsoft.Xbox.Live.SDK.*.UWP` and `Microsoft.Xbox.Live.SDK.*.XboxOneXDK`.  `XboxOneXDK` is for ID@Xbox and Managed developers who are using the Xbox One XDK.  `UWP` is for UWP games which can run on either PC, the Xbox One, or Windows Phone.  You can read more about running UWP on Xbox One in
+ [Getting started with UWP app development on Xbox One.](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)
 
 Choose between `Microsoft.Xbox.Live.SDK.Cpp.*` and `Microsoft.Xbox.Live.SDK.WinRT.*`. `Cpp` is for C++ game engines using the Xbox Live APIs.  `WinRT` is for game engines written with C++, C#, or Javascript using the Xbox Live APIs.  
 
@@ -122,7 +123,8 @@ If you are part of the Xbox Live Creators Program, you can use any of these opti
 
 If you want to use Connected Storage, you will need to download the Xbox Live Platform Extensions SDK zip file from [http://aka.ms/xblextsdk](http://aka.ms/xblextsdk).
 
-> **Note** If you are in the Xbox Live Creators Program, you do not have access to Secure Sockets.  You may use Connected Storage however.
+> [!NOTE] 
+> If you are in the Xbox Live Creators Program, you do not have access to Secure Sockets.  You may use Connected Storage however.
 
 After you download the zip file, extract the contents to a folder of your choice and install the MSI.  
 The package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform.
@@ -200,4 +202,4 @@ See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandb
 
 ### 8. Learn More
 
-The samples found at [https://github.com/Microsoft/xbox-live-samples](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.  To use the samples, you will need to change your sandbox to XDKS.1
+The samples found on the [Xbox Live sample Github](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.  To use the samples, you will need to change your sandbox to XDKS.1

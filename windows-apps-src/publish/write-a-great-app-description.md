@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: A great description can make your app stand out in the Windows Store and help encourage customers to download it.
+Description: A great description can make your app stand out in the Microsoft Store and help encourage customers to download it.
 title: Write a great app description
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ms.author: wdg-dev-content
@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Write a great app description
 
 
-A great description can make your app stand out in the Windows Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-store-listings.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
+A great description can make your app stand out in the Microsoft Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-store-listings.md#description) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
 
 
 Here are some tips for making your app's description the best it can be.

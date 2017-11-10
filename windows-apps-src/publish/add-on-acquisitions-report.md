@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
 title: Add-on acquisitions report
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Add-on acquisitions report
@@ -16,7 +17,7 @@ keywords: windows 10, uwp
 
 The **Add-on acquisitions** report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details. It also lets you get conversion info for customers on Windows 10.
 
-You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get add-on acquisitions](../monetize/get-in-app-acquisitions.md) method in the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get add-on acquisitions](../monetize/get-in-app-acquisitions.md) method in the [Microsoft Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 In this report, an add-on acquisition means a customer has purchased an add-on from you (or acquired it without paying, if you offered it for free). Multiple purchases of the same consumable add-on by the same customer are counted as separate add-on acquisitions.
 

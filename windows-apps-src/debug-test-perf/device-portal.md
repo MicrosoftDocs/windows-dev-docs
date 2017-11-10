@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 # Windows Device Portal overview
 
@@ -35,7 +36,7 @@ Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A
 Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A
 Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
 
-\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device.  To learn more, see the [Port Settings](device-portal-desktop.md#setting-port-numbers) section for desktop.  
+\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Port Settings](device-portal-desktop.md#registry-based-configuration-for-device-portal) section for desktop.  
 
 For device-specific setup instructions, see:
 - [Device Portal for HoloLens](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
@@ -95,7 +96,7 @@ Provides install/uninstall and management functionality for AppX packages and bu
 
 Shows details about currently running processes. This includes both apps and system processes.
 
-Much like the Task Manager on your PC, this page lets you see which processes are currently running as well as their memory usage.  On some platforms (Desktop, IoT, and HoloLens) you can terminate processes.
+Much like the Task Manager on your PC, this page lets you see which processes are currently running as well as their memory usage. On some platforms (Desktop, IoT, and HoloLens) you can terminate processes.
 
 ![Device Portal for mobile](images/device-portal/mob-device-portal-processes.png)
 
@@ -155,7 +156,7 @@ Enumerates all peripherals attached to your device.
 
 ### Networking
 
-Manages network connections on the device.  Unless you are connected to Device Portal via USB, changing these settings will likely disconnect you from Device Portal.
+Manages network connections on the device. Unless you are connected to Device Portal via USB, changing these settings will likely disconnect you from Device Portal.
 - **Profiles**: Select a different WiFi profile to use.  
 - **Available networks**: The WiFi networks available to the device. Clicking or tapping on a network will allow you to connect to it and supply a passkey if needed. Note: Device Portal does not yet support Enterprise Authentication. 
 
@@ -163,7 +164,7 @@ Manages network connections on the device.  Unless you are connected to Device P
 
 ### App File Explorer
 
-Allows you to view and manipulate files stored by your sideloaded apps.  This is a new, cross-platform version of the [Isolated Storage Explorer](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) from Windows Phone 8.1  See [this blog post](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) to learn more about the App File Explorer and how to use it. 
+Allows you to view and manipulate files stored by your sideloaded apps. This is a new, cross-platform version of the [Isolated Storage Explorer](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) from Windows Phone 8.1  See [this blog post](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) to learn more about the App File Explorer and how to use it. 
 
 ![Device Portal for mobile](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -171,13 +172,13 @@ Allows you to view and manipulate files stored by your sideloaded apps.  This is
 
 ### DNS-SD
 
-Device Portal advertises its presence on the local network using DNS-SD.  All Device Portal instances, regardless of their device type, advertise under "WDP._wdp._tcp.local". The TXT records for the service instance provide the following:
+Device Portal advertises its presence on the local network using DNS-SD. All Device Portal instances, regardless of their device type, advertise under "WDP._wdp._tcp.local". The TXT records for the service instance provide the following:
 
 Key | Type | Description 
 ----|------|-------------
-S | int | Secure port for Device Portal.  If 0 (zero), Device Portal is not listening for HTTPS connections. 
-D | string | Type of device.  This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop
-A | string | Device architecture.  This will be ARM, x86, or AMD64.  
+S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections. 
+D | string | Type of device. This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop
+A | string | Device architecture. This will be ARM, x86, or AMD64.  
 T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 
 Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record. 
@@ -198,4 +199,4 @@ In order to protect against [CSRF attacks](https://wikipedia.org/wiki/Cross-site
 
 #### Cross-Site WebSocket Hijacking (CSWSH) protection
 
-To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header.  This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application.  Without the Origin header your request will be rejected. 
+To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header. This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application. Without the Origin header your request will be rejected. 

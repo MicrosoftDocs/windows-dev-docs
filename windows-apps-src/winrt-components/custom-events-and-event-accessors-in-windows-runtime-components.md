@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Custom events and event accessors in Windows Runtime Components
@@ -122,6 +123,6 @@ Visual Basic users: In the .NET Framework, an event is just a multicast delegate
 
 * [Events (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
 * [Events (C# Programming Guide)](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

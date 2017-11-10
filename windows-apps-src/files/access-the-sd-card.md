@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, sd card, storage
+localizationpriority: medium
 ---
 # Access the SD card
 

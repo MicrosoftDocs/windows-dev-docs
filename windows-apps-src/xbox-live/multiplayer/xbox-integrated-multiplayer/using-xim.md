@@ -1,19 +1,22 @@
----
-title: Using XIM
+﻿---
+title: Using XIM (C++)
 author: KevinAsgari
-description: Learn how to implement Xbox Integrated Multiplayer (XIM) into your game.
-ms.assetid: f5a2c68b-b1f9-4533-9282-41c31eab2487
+description: Learn how to use Xbox Integrated Multiplayer (XIM) with C++.
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 09/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, xbox one, xbox integrated multiplayer
+localizationpriority: medium
 ---
+# Using XIM (C++)
 
-# Using XIM
+> [!div class="op_single_selector" title1="Language"]
+> - [C++](using-xim.md)
+> - [C#](using-xim-cs.md)
 
-This is a brief walkthrough on using XIM, containing the following topics:
+This is a brief walkthrough on using XIM's C++ API. Game developers wanting to access XIM through C# should see [Using XIM (C#)](using-xim-cs.md).
 
 1. [Prerequisites](#prereq)
 2. [Initialization and startup](#init)
@@ -63,6 +66,7 @@ In this case there is no XIM network at all yet, so you must begin moving to a X
 ```cpp
 xim::singleton_instance().move_to_new_network(8, xim_players_to_move::bring_only_local_players);
 ```
+
 Now the asynchronous move operation will begin, and you can learn of its eventual results by regularly processing state changes.
 
 ## Asynchronous operations and processing state changes <a name="async">
@@ -102,7 +106,9 @@ for (uint32_t stateChangeIndex = 0; stateChangeIndex < stateChangeCount; stateCh
 
 Now that you have your basic processing loop, you can handle the state changes associated with the initial `xim::move_to_new_network()` operation. Every XIM network move operation will begin with a `xim_move_to_network_starting_state_change`. If the move fails for any reason, then your app will be provided a `xim_network_exited_state_change`, which is the common failure handling mechanism for any asynchronous fatal error that prevents you from moving to a XIM network or disconnects you from the current XIM network. Otherwise, the move will complete with a `xim_move_to_network_succeeded_state_change` after all the state has been finalized and all the players have been successfully added to the XIM network.
 
+
 ## Basic xim_player handling <a name="player">
+
 
 Assuming the example of moving a single local user to a new XIM network succeeded, your app has also been provided a `xim_player_joined_state_change` for a local `xim_player` object. This object pointer will remain valid for as long as the player instance itself is valid, which is up until the corresponding `xim_player_left_state_change` for it has been provided and returned via `xim::finish_processing_state_changes()`. Your app will always be provided a `xim_player_left_state_change` for every `xim_player_joined_state_change`. You can also retrieve an array of all `xim_player` objects in the XIM network at any time by using `xim::get_players()`.
 
@@ -125,7 +131,6 @@ You can change this custom player context pointer at any time.
 With this basic player handling, you're now ready to enable remote users to join this XIM network through existing social relationships with the local users.
 
 ## Enabling friends to join and inviting them<a name="invites">
-
 For privacy and security, all new XIM networks are automatically configured by default to not be joinable by any additional players, and it's up to the app to explicitly allow them once it is ready. The following example shows how to use xim::set_allowed_player_joins() to begin allowing new local users to join as players, as well other users that have been invited or that are being "followed" (an Xbox Live social relationship):
 
 ```cpp
@@ -146,7 +151,6 @@ The system invitation UI will now display, and once the user has sent the invita
 xim_protocol_activation_information activationInfo;
 bool isXimActivation;
 isXimActivation = xim::singleton_instance().extract_protocol_activation_information(uriString, &activationInfo);
-
 ```
 
 If it is a XIM activation, then you will want to ensure the local user identified in the 'local_xbox_user_id' field of the filled-in `xim_protocol_activation_information` structure is signed in and is among the users specified to `xim::set_intended_local_xbox_user_ids()`. Then you can initiate moving to the specified XIM network with a call to `xim::move_to_network_using_protocol_activated_event_args()` using the same URI string. For example:
@@ -164,6 +168,7 @@ At this point, voice and text chat communication is automatically enabled among 
 
 ## Sending and receiving messages <a name="send">
 
+
 XIM and its underlying components do all the tedious work of establishing secure communication channels over the Internet so you don't have to worry about connectivity problems or being able to reach some but not all players. If there are any fundamental peer-to-peer connectivity issues, moving to a XIM network will not succeed. Otherwise you can be sure that all instances of your app any all the devices will be informed of every `xim_player`, and can send messages to any of them. The following example assumes a 'sendingPlayer' variable is a pointer to a valid local player object, and sends a message structure 'msgData' to all players (local or remote) in the XIM network (by not passing an array of specific players), with guaranteed, sequential delivery:
 
 ```cpp
@@ -172,9 +177,11 @@ sendingPlayer->local()->send_data_to_other_players(sizeof(msgData), &msgData, 0,
 
 All recipients of the message will be provided a xim_player_to_player_data_received_state_change that includes a pointer to a copy of the data, as well as pointers to the corresponding xim_player object that sent it and are locally receiving it.
 
+
 Of course, guaranteed, sequential delivery is convenient, but it can also be an inefficient send type, since XIM needs to retransmit or delay it if packets are dropped/misordered by the Internet. Be sure to consider using the other send types for messages that your app can tolerate losing or having arrive out of order.
 
 Since message data comes from a remote machine, the best practice is to clearly defined the data formats, such as packing multi-byte values in a particular byte order ("endianness"), and to validate the data before acting on it. XIM provides network-level security so you should not implement any additional encryption or signature scheme, but it is always wise to be robust for "defense-in-depth", to protect against accidental application bugs, or to handle different versions of your application protocol coexisting gracefully (during development, content updates, etc.).
+
 
 The user's Internet connection is also a limited, ever-changing resource. Be sure to use efficient message data formats and avoid designs that send every UI frame. You can learn more about the current quality of the path between two players by calling the `xim_player::network_path_information()` method. The following example retrieves a pointer to the `xim_network_path_information` structure for a `xim_player` pointer contained in the 'remotePlayer' variable:
 
@@ -191,7 +198,9 @@ Choose a reasonable point to start throttling calls to `send_data_to_other_playe
 A value close to XIM’s max limit (currently 3500 messages) is far too high for most games and  likely represents several seconds of data waiting to be sent depending on the rate of calling `send_data_to_other_players` and how big each data payload is. Instead, choose a number that takes into account the game's latency requirements along with how jittery the game's `send_data_to_other_players` calling pattern is.
 
 
+
 ## Basic matchmaking and moving to another XIM network with others <a name="basicmatch">
+
 
 You can further expand the experience for a group of friends by moving the players to a XIM network that also has strangers-- opponents from around the world who are brought together using the Xbox Live matchmaking service based on similar interests. The most basic form is calling `xim::move_to_network_using_matchmaking()` on one of the devices with a populated `xim_matchmaking_configuration` structure, taking players from the current XIM network along with it. The following example initiates a move using matchmaking configured to find a total of 8 players for a no-teams free-for- all (although if 8 aren't found, 2-7 players are also acceptable), using an app-specific game mode constant uint64_t defined by the value MYGAMEMODE_DEATHMATCH that will only match with other players specifying that same value, and bringing all socially-joined players from the current XIM network:
 
@@ -215,9 +224,10 @@ xim::singleton_instance().move_to_new_network(8, xim_players_to_move::bring_exis
 
 A `xim_move_to_network_starting_state_change` and `xim_move_to_network_succeeded_state_change` will be provided to all participating devices, along with a `xim_player_left_state_change` for the matchmade players staying behind (those devices similarly see a `xim_player_left_state_change` for each player that is moving).
 
+
 You can continue moving from XIM network to XIM network using matchmaking (or not) in this manner as many times as desired.
 
-For performance, the Xbox Live service will not try to match groups of players on devices that are unlikely to be able to establish any direct peer-to-peer connections. If you're developing in a network environment that's not properly configured to support standard Xbox Live multiplayer, the `xim::move_to_network_using_matchmaking()` operation might continue indefinitely without matching even when you're certain you have sufficient players meeting the matchmaking criteria who are all moving and all using devices in the same local environment. Be sure to run the multiplayer connectivity test in the network settings area/Xbox application and follow its recommendations if it reports trouble, particularly regarding a "Strict NAT". However, if your network administrator is unable to make the necessary environment changes, you can unblock your matchmaking testing on Xbox One development kits by configuring XIM to allow matching "Strict NAT" devices without at least one "Open NAT" device. This is done by placing a file called "xim_disable_matchmaking_nat_rule" (contents don't matter) at the root of the "title scratch" drive on all Xbox One consoles. One example way to do that is by executing the following from an XDK command prompt before launching your app, replacing the placeholder "{console_name_or_ip_address}" for each console as appropriate:
+For performance, the Xbox Live service will not try to match groups of players on devices that are unlikely to be able to establish any direct peer-to-peer connections. If you're developing in a network environment that's not properly configured to support standard Xbox Live multiplayer, the move to new network using matchmaking operation might continue indefinitely without matching even when you're certain you have sufficient players meeting the matchmaking criteria who are all moving and all using devices in the same local environment. Be sure to run the multiplayer connectivity test in the network settings area/Xbox application and follow its recommendations if it reports trouble, particularly regarding a "Strict NAT". However, if your network administrator is unable to make the necessary environment changes, you can unblock your matchmaking testing on Xbox One development kits by configuring XIM to allow matching "Strict NAT" devices without at least one "Open NAT" device. This is done by placing a file called "xim_disable_matchmaking_nat_rule" (contents don't matter) at the root of the "title scratch" drive on all Xbox One consoles. One example way to do that is by executing the following from an XDK command prompt before launching your app, replacing the placeholder "{console_name_or_ip_address}" for each console as appropriate:
 
 ```bat
 
@@ -230,7 +240,6 @@ del %TEMP%\emptyfile.txt
 This development workaround is currently only available for Xbox One exclusive resource applications and not for universal Windows applications. Also note that consoles that are using this setting will never match with devices that don't have the file present, regardless of network environment, so be sure to add or remove the file everywhere.
 
 ## Leaving a XIM network and cleaning up <a name="leave">
-
 When the local users are done participating in a XIM network, often they will simply move back to a new XIM network that allows local users, invites, and "followed" users to join it so they can continue coordinating with their friends to find the next activity. But if the user is completely done with all multiplayer experiences, then your app may want to begin leaving the XIM network altogether and return to the state as if only `xim::initialize()` and `xim::set_intended_local_xbox_user_ids()` had been called. This is done using the `xim::leave_network()` method:
 
 ```cpp
@@ -245,8 +254,8 @@ xim::singleton_instance().cleanup();
 
 Invoking `xim::leave_network()` and waiting for the `xim_network_exited_state_change` in order to exit a XIM network gracefully is always highly recommended when a `xim_network_exited_state_change` has not already been provided. Calling `xim::cleanup()` directly may cause communication performance problems for the remaining participants while they're forced to time out messages to the device that simply "disappeared".
 
-## Working with chat <a name="chat">
 
+## Working with chat <a name="chat">
 Voice and text chat communication are automatically enabled among players in a XIM network. XIM handles interacting with all voice headset and microphone hardware for you. Your app doesn't need to do much for chat, but it does have one requirement regarding text chat: supporting input and display. Text input is required because, even on platforms or game genres that historically haven't had widespread physical keyboard use, players may configure the system to use text-to-speech assistive technologies. Similarly, text display is required because players may configure the system to use speech-to-text. These preferences can be detected on local players by calling the `xim_player::xim_local::chat_text_to_speech_conversion_preference_enabled()` and `xim_player::xim_local::chat_speech_to_text_conversion_preference_enabled()` methods respectively, and you may wish to conditionally enable text mechanisms. But consider making text input and display options that are always available.
 
 
@@ -306,7 +315,6 @@ Players typically start in the unmuted state. If your app wants to start a playe
 
 An automatic mute check based on player reputation occurs when a remote player joins the XIM network. If the player has a bad reputation flag, the player is automatically muted. Muting only affects local state and therefore persists if a player moves across networks. The automatic reputation-based mute check is performed once and not re-evaluated again for as long as the `xim_player` remains valid.
 
-
 ## Configuring custom player and network properties <a name="properties">
 
 Most app data exchanges happen with the `xim_player::xim_local::send_data_to_other_players()` method since it allows the most control over who receives it and when, how it should deal with packet loss, and so on. However there are times where it would be nice for players to share basic, rarely changing state about themselves with others with minimal fuss. For example, each player might have a fixed string representing the character model selected before entering multiplayer that all players use to render their in-game representation. XIM provides a "custom player properties" convenience feature for app-defined name and value null terminated string pairs that can be applied to the local player and automatically propagated to all devices whenever they are changed. Their current values are also automatically provided to new participating devices when they join a XIM network and see the player added. These can be configured by calling `xim_player::xim_local::set_player_custom_property()` with the name and value strings, like in the following example that sets a property named "model" to have the value "brute" on a local `xim_player` object pointed to by the variable 'localPlayer':
@@ -314,7 +322,6 @@ Most app data exchanges happen with the `xim_player::xim_local::send_data_to_oth
 ```cpp
 localPlayer->local()->set_player_custom_property(L"model", L"brute");
 ```
-
 Changes to player properties will cause a `xim_player_custom_properties_changed_state_change` to be provided to all devices, alerting them to the names of properties that have changed. The value for a given name can be retrieved on any player, local or remote, with `xim_player::get_player_custom_property()`. The following example retrieves the value for a property named "model" from a `xim_player` pointed to by the variable 'ximPlayer':
 
 ```cpp
@@ -340,12 +347,12 @@ Custom player properties are always reset when moving from one XIM network to an
 
 Custom player and network properties are intended as a convenience for state that doesn't change frequently. They have more internal synchronization overhead than the `xim_player::xim_local::send_data_to_other_players()` method, so you should still use direct sends instead for state like player positions that are rapidly replaced.
 
+
 ## Matchmaking using per-player skill or role <a name="roles">
 
 Matching players by common interest in a particular app-specified game mode is a good base strategy. As the pool of available players grows, you should consider also matching players based on their personal skill or experience with your game so that veteran players can enjoy the challenge of healthy competition with other veterans, while newer players can grow by competing against others with similar abilities. To do this, start by providing the skill level for all local players in their per-player matchmaking configuration structure specified in calls to `xim_player::xim_local::set_matchmaking_configuration()` prior to starting to move to a XIM network using matchmaking. Skill level is an app-specific concept and the number is not interpreted by XIM, except that matchmaking will first try to find players with the same skill value, and then periodically widen its search in increments of +/- 10 to try to find other players declaring skill values within a range around that skill. The following example assumes that the local `xim_player` object, whose pointer is 'localPlayer', has an associated app-specific uint32_t skill value retrieved from local or Xbox Live storage into a variable called 'playerSkillValue':
 
 ```cpp
-
  xim_player_matchmaking_configuration playerMatchmakingConfiguration = { 0 };
  playerMatchmakingConfiguration.skill = playerSkillValue;
 
@@ -410,7 +417,6 @@ When such a XIM network move operation completes, the players will be assigned a
 ```cpp
 uint8_t playerTeamIndex = ximPlayer->team_index();
 ```
-
 For the preferred user experience (not to mention reduced opportunity for negative player behavior), the Xbox Live matchmaking service will never split players who are moving to a XIM network together onto different teams.
 
 The team index value assigned initially by matchmaking is only a recommendation and the app can change it for local players at any time using `xim_player::xim_local::set_team_index()`. This can also be called in XIM networks that don't use matchmaking at all. The following example configures a player pointer 'localPlayer' to have a new team index value of one:
@@ -418,7 +424,6 @@ The team index value assigned initially by matchmaking is only a recommendation 
 ```cpp
 localPlayer->local()->set_team_index(1);
 ```
-
 All devices are informed that the player has a new team index value in effect when they're provided a `xim_player_team_index_changed_state_change` for that player.
 
 When using a `xim_team_matchmaking_mode` with two or more teams, players will never be assigned a team index value of zero by the call to `xim::move_to_network_using_matchmaking()`. This is in contrast to players that are added to the XIM network with any other configuration or type of move operation (such as through a protocol activation resulting from accepting an invitation), who will always have a zero team index. It may be helpful to treat team index 0 as a special "unassigned" team.
@@ -430,7 +435,6 @@ To be conservative and support competitive scenarios, newly created XIM networks
 ```cpp
 xim::singleton_instance().set_chat_targets(xim_chat_targets::all_players);
 ```
-
 All participants are informed that a new target setting is in effect when they're provided a `xim_chat_targets_changed_state_change`.
 
 As noted earlier, most XIM network move types will initially assign all players the team index value of zero. This means a configuration of `xim_chat_targets::same_team_index_only` is likely indistinguishable from `xim_chat_targets::all_players` by default. However, players that move to a XIM network using matchmaking will have differing team index values if the matchmaking configuration's `xim_team_matchmaking_mode` value declared two or more teams. You can also call `xim_player::xim_local::set_team_index()` at any time as shown above. If your app is using non-zero team index values through either of these methods, don't forget to manage the current chat targets setting appropriately.

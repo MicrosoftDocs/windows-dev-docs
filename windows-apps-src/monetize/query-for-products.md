@@ -1,20 +1,21 @@
 ---
 author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
-description: Use this method in the Windows Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
+description: Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 title: Query for products
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Store collection API, view products
+keywords: windows 10, uwp, Microsoft Store collection API, view products
+localizationpriority: medium
 ---
 
 # Query for products
 
 
-Use this method in the Windows Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
+Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 
 This method is designed to be called by your service in response to a message from your app. Your service should not regularly poll for all users on a schedule.
 
@@ -24,7 +25,7 @@ This method is designed to be called by your service in response to a message fr
 To use this method, you will need:
 
 * An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
-* A Windows Store ID key that represents the identity of the user whose products you want to get.
+* A Microsoft Store ID key that represents the identity of the user whose products you want to get.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
 
@@ -69,8 +70,8 @@ The UserIdentity object contains the following parameters.
 | Parameter            | Type   |  Description      | Required |
 |----------------------|--------|----------------|----------|
 | identityType         | string | Specify the string value **b2b**.    | Yes      |
-| identityValue        | string | The [Windows Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to query products.  | Yes      |
-| localTicketReference | string | The requested identifier for the returned products. Returned items in the response body will have a matching *localTicketReference*. We recommend that you use the same value as the *userId* claim in the Windows Store ID key. | Yes      |
+| identityValue        | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to query products.  | Yes      |
+| localTicketReference | string | The requested identifier for the returned products. Returned items in the response body will have a matching *localTicketReference*. We recommend that you use the same value as the *userId* claim in the Microsoft Store ID key. | Yes      |
 
 <span/> 
 
@@ -78,8 +79,8 @@ The ProductSkuId object contains the following parameters.
 
 | Parameter | Type   | Description          | Required |
 |-----------|--------|----------------------|----------|
-| productId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Windows Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
-| skuID     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Windows Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
+| productId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
+| skuID     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
 
 <span/>
 
@@ -143,12 +144,12 @@ The CollectionItemContractV6 object contains the following parameters.
 | orderId              | string             | If present, the order ID of which this item was obtained.              | No       |
 | orderLineItemId      | string             | If present, the line item of the particular order for which this item was obtained.              | No       |
 | ownershipType        | string             | The string *OwnedByBeneficiary*.   | Yes      |
-| productId            | string             | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Windows Store catalog. An example Store ID for a product is 9NBLGGH42CFD.          | Yes      |
+| productId            | string             | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD.          | Yes      |
 | productType          | string             | One of the following product types: **Application**, **Durable**, and **UnmanagedConsumable**.        | Yes      |
 | purchasedCountry     | string             | N/A   | No       |
 | purchaser            | IdentityContractV6 | If present, this represents the identity of the purchaser of the item. See the details for this object below.        | No       |
 | quantity             | number             | The quantity of the item. Currently, this will always be 1.      | No       |
-| skuId                | string             | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Windows Store catalog. An example Store ID for a SKU is 0010.     | Yes      |
+| skuId                | string             | The [Store ID](in-app-purchases-and-trials.md#store-ids) for the product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.     | Yes      |
 | skuType              | string             | Type of the SKU. Possible values include **Trial**, **Full**, and **Rental**.        | Yes      |
 | startDate            | datetime           | The date that the item starts being valid.       | Yes      |
 | status               | string             | The status of the item. Possible values include **Active**, **Expired**, **Revoked**, and **Banned**.    | Yes      |
@@ -162,7 +163,7 @@ The IdentityContractV6 object contains the following parameters.
 | Parameter     | Type   | Description                                                                        | Required |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | string | Contains the value *pub*.                                                      | Yes      |
-| identityValue | string | The string value of the *publisherUserId* from the specified Windows Store ID key. | Yes      |
+| identityValue | string | The string value of the *publisherUserId* from the specified Microsoft Store ID key. | Yes      |
 
 <span/> 
 
@@ -213,4 +214,4 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [Manage product entitlements from a service](view-and-grant-products-from-a-service.md)
 * [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
 * [Grant free products](grant-free-products.md)
-* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
+* [Renew a Microsoft Store ID key](renew-a-windows-store-id-key.md)

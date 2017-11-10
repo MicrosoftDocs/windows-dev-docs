@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Setting up your Mac with Windows 10
@@ -20,7 +21,7 @@ Use your current Mac computer to develop apps for Windows.
 
 Are you ready to start developing Universal Windows apps, but you don't have a PC handy? That's okay — you can use your Mac! With popular third-party solutions like Apple Boot Camp, Oracle VirtualBox, VMware Fusion, and Parallels Desktop, you can install Windows 10 and Microsoft Visual Studio on your Apple computer.
 
-**Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Windows Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
+**Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Microsoft Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
 
 Once you have Windows running, you can then install Visual Studio 2015 from [Developer downloads for Windows 10](https://developer.microsoft.com/en-us/windows/downloads) and start writing apps!
 

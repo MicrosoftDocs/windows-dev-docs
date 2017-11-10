@@ -1,14 +1,15 @@
-﻿---
+---
 author: jnHs
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 10/04/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # In-app ads
@@ -134,7 +135,7 @@ The following table lists the other networks we currently support for each ad ty
 <span id="network-markets" />
 ### Supported markets for ad networks
 
-The available ad networks serve ads in all [supported markets](define-pricing-and-market-selection.md#windows-store-consumer-markets) for UWP apps, with the following exceptions.
+The available ad networks serve ads in all [supported markets](define-pricing-and-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
 
 |  Ad network  |  Supported markets  |
 |--------------|---------------------|

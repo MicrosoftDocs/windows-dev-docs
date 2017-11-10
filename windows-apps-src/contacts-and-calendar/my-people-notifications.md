@@ -1,18 +1,19 @@
 ---
 title: My People notifications
 description: Explains how to create and use My People notifications, a new kind of toast.
-author: mukin
+author: muhsinking
 ms.author: mukin
-ms.date: 06/28/2017
+ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # My People notifications
 
-My People notifications are a new kind of gesture that put people first. They provide a new way for users to connect with the people they care about through quick, lightweight expressive gestures.
+My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 
 ![heart emoji notification](images/heart-emoji-notification-small.gif)
 
@@ -23,7 +24,7 @@ My People notifications are a new kind of gesture that put people first. They pr
 
 ## How it works
 
-As an alternative to generic toast notifications, application developers can now send notifications through the My People feature, to provide a more personal experience to users. This is a new kind of toast, sent from a contact pinned to the user's taskbar. When the notification is received, the sender’s contact picture will animate in the taskbar and a sound will play, signaling that a My People notification is starting. Then the animation or image specified in the payload will be displayed for 5 seconds (if the payload is an animation that lasts less than 5 seconds, it will loop until 5 seconds have passed).
+As an alternative to generic toast notifications, you can now send notifications through the My People feature to provide a more personal experience to users. This is a new kind of toast, sent from a contact pinned on the user's taskbar with the My People feature. When the notification is received, the sender’s contact picture will animate in the taskbar and a sound will play, signaling that the notification is starting. The animation or image specified in the payload will be displayed for 5 seconds (or, if the payload is an animation less than 5 seconds long, it will loop until 5 seconds have passed).
 
 ## Supported image types
 
@@ -32,18 +33,18 @@ As an alternative to generic toast notifications, application developers can now
 + Spritesheet (vertical only)
 
 > [!NOTE]
-> A spritesheet is an animation derived from a static image (JPEG or PNG). Individual frames are arranged vertically, such that the first frame is on top (you can specify a different starting frame in the toast payload). Each frame must have the same height, which the program loops through to create an animated sequence (like a flipbook with all the pages laid out vertically). Shown below is an example of a spritesheet.
+> A spritesheet is an animation derived from a static image (JPEG or PNG). Individual frames are arranged vertically, such that the first frame is on top (though you can specify a different starting frame in the toast payload). Each frame must have the same height, which the program loops through to create an animated sequence (like a flipbook with its pages laid out vertically). An example of a spritesheet is shown below.
 
 ![rainbow spritesheet](images/shoulder-tap-rainbow-spritesheet.png)
 
 ## Notification parameters
-My People notifications use the [toast notification](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md) framework in Windows 10 and require an additional binding node in the toast payload. This means notifications through My People must have two bindings instead of one. This second binding must include the following parameter:
+My People notifications use the [toast notification](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
 
 ```xml
 experienceType=”shoulderTap”
 ```
 
-This indicates that the toast should be treated as a My People notifications.
+This indicates that the toast should be treated as a My People notification.
 
 The image node inside the binding should include the following parameters:
 
@@ -61,9 +62,9 @@ The image node inside the binding should include the following parameters:
     + Text string used for screen reader narration.
 
 > [!NOTE]
-> Even if you're using a spritesheet, you should still specify a static image in the "src" parameter as a fall-back in case the animation fails to display.
+> When making an animated notification, you should still specify a static image in the "src" parameter. It will be used as a fall-back if the animation fails to display.
 
-In addition, the top-level toast node must include the **hint-people** parameter to indicate the sending contact. This parameter can have any the following values:
+In addition, the top-level toast node must include the **hint-people** parameter to specify the sending contact. This parameter can have any the following values:
 
 + **Email address** 
     + E.g. mailto:johndoe@mydomain.com
@@ -73,15 +74,15 @@ In addition, the top-level toast node must include the **hint-people** parameter
     + E.g. remoteid:1234
 
 > [!NOTE]
-> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact#Windows_Phone_PersonalInformation_StoredContact_RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
-> If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the RemoteIdHelper class shown later in this topic in order to add a unique tag to all of your remote IDs before you add them to the system. Or you can choose to not use the RemoteId property at all and instead you create a custom extended property in which to store remote IDs for your contacts.
+> If your app uses the [ContactStore APIs](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](https://docs.microsoft.com/en-us/uwp/api/Windows.Phone.PersonalInformation.StoredContact#Windows_Phone_PersonalInformation_StoredContact_RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account, and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
+> If the remote IDs used by your app are not guaranteed to be stable and unique, you can use the [RemoteIdHelper class](https://msdn.microsoft.com/en-us/library/windows/apps/jj207024(v=vs.105).aspx#BKMK_UsingtheRemoteIdHelperclass) in order to add a unique tag to all of your remote IDs before you add them to the system. Alternatively, you can choose to not use the RemoteId property at all, and instead create a custom extended property in which to store remote IDs for your contacts.
 
-In addition to the second binding and payload, you MUST include another payload in the first binding for the fallback toast (which the notification will use if it is forced to revert to a regular toast). This is explained in more detail in the final section.
+In addition to the second binding and payload, you must include another payload in the first binding for the fallback toast. The notification will use this if it is forced to revert to a regular toast (explained further at the [end of this article](https://review.docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)).
 
 ## Creating the notification
-You can create a My People notification template just like you would a [toast notification](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md).
+You can create a My People notification template just like you would a [toast notification](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
 
-Here's an example of how to create a My People notification using a static image:
+Here's an example of how to create a My People notification with a static image payload:
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -97,11 +98,11 @@ Here's an example of how to create a My People notification using a static image
 </toast>
 ```
 
-If you start the notification, it should look like this:
+When you start the notification, it should look like this:
 
 ![static image notification](images/static-image-notification-small.gif)
 
-Next we'll show how to create a notification using an animated spritesheet. This spritesheet has a frame-height of 80 pixels, which we'll animate at 25 frames per second. We set the starting frame to 15 and provide it with a static fallback image in the “src” parameter. The fallback image is used if the spritesheet animation fails to display.
+Here's an example of how to create a notification with an animated spritesheet payload. This spritesheet has a frame-height of 80 pixels, which we'll animate at 25 frames per second. We set the starting frame to 15 and provide it with a static fallback image in the “src” parameter. The fallback image is used if the spritesheet animation fails to display.
 
 ```xml
 <toast hint-people="mailto:johndoe@mydomain.com">
@@ -119,12 +120,12 @@ Next we'll show how to create a notification using an animated spritesheet. This
 </toast>
 ```
 
-If you start the notification, it should look like this:
+When you start the notification, it should look like this:
 
 ![spritesheet notification](images/pizza-notification-small.gif)
 
 ## Starting the notification
-To start a My People notification, we need to convert the toast template into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. Assuming you defined the toast in an XML file (here named "content.xml"), you can use this C# code to start it:
+To start a My People notification, we need to convert the toast template into an [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) object. When you have defined the toast in an XML file (here named "content.xml"), you can use this code to start it:
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");
@@ -140,15 +141,16 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
 ## Falling back to toast
-There are some cases when a notification coded as a My People notification will instead display as a regular toast. A My People notification will fall back to toast under the following conditions:
+There are some cases when a My People notification will instead display as a regular toast notification. A My People notification will fall back to toast under the following conditions:
 
 + The notification fails to display
 + My People notifications are not enabled by the recipient
 + The sender’s contact is not pinned to the receiver’s taskbar
 
-If a My People notification falls back to toast, the second My-People-specific binding is ignored, and only the first binding is used to display the toast. This means that, as stated before, a fallback payload must be provided in the first toast binding.
+If a My People notification falls back to toast, the second My-People-specific binding is ignored, and only the first binding is used to display the toast. This is why it is critical to provide a fallback payload in the first toast binding.
 
 ## See also
++ [My People Notifications Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [Adding My People support](my-people-support.md)
-+ [Adaptive toast notifications](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)
++ [Adaptive toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 + [ToastNotification Class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification)

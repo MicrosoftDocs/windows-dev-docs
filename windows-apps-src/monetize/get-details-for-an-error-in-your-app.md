@@ -1,19 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
-description: Use this method in the Windows Store analytics API to get detailed data for a specific error for your app.
+description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app.
 title: Get details for an error in your app
 ms.author: mcleans
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, errors, details
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details
+localizationpriority: medium
 ---
 
 # Get details for an error in your app
 
-Use this method in the Windows Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
 
 Before you can use this method, you must first use the [get error reporting data](get-error-reporting-data.md) method to retrieve the ID of the error for which you want to get detailed info.
 
@@ -22,7 +23,7 @@ Before you can use this method, you must first use the [get error reporting data
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 * Get the ID of the error for which you want to get detailed info. To get this ID, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method.
 
@@ -159,7 +160,7 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Health report](../publish/health-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get error reporting data](get-error-reporting-data.md)
 * [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
 * [Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)

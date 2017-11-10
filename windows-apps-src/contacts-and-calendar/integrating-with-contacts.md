@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, contacts, contact card, annotation
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
+localizationpriority: medium
 ---
 
 # Connect your app to actions on a contact card

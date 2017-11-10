@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Windows Desktop Bridge app tests
@@ -16,7 +17,7 @@ keywords: windows 10, uwp
 [Desktop Bridge Apps](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) are Windows desktop applications converted to a Universal Windows Platform (UWP) app using the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop). After conversion, the Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (a .appx or .appxbundle) targeting Windows 10 Desktop.
 
 ## Required versus optional tests
-There is a new concept of optional tests for Windows Desktop Bridge apps which are informational only and will not be used to evaluate your app during Windows Store onboarding. Investigating these test results is recommended to produce better quality apps. The overall pass/fail criteria for store onboarding is determined by the required tests and not by these optional tests.
+There is a new concept of optional tests for Windows Desktop Bridge apps which are informational only and will not be used to evaluate your app during Microsoft Store onboarding. Investigating these test results is recommended to produce better quality apps. The overall pass/fail criteria for store onboarding is determined by the required tests and not by these optional tests.
 
 ## Current optional tests
 
@@ -44,13 +45,13 @@ See [Desktop to UWP Bridge: App extensions](https://docs.microsoft.com/en-us/win
 This test verifies that the appx is not a debug build.
  
 **Background**  
-To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
+To be certified for the Microsoft Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
  
 **Test details**  
 Test the app to make sure it is not a debug build and is not linked to any debug frameworks.
  
 **Corrective actions**  
-* Build the app as a release build before you submit it to the Windows Store.
+* Build the app as a release build before you submit it to the Microsoft Store.
 * Make sure that you have the correct version of .NET framework installed.
 * Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
 
@@ -119,7 +120,7 @@ The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not v
 The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.  | For more info, see the guides on [responsive design](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx) and [app resources](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data). 
 The package is missing a "resources.pri" file.  | If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file. 
 The "resources.pri" file must contain a resource map with a name that matches the package name {package full name}  | You can get this error if the manifest changed and the name of the resource map in resources.pri no longer matches the package name in the manifest. In the actual message, {package full name} contains the package name that resources.pri must contain. To fix this, you need to rebuild resources.pri and the easiest way to do that is by rebuilding the app's package. 
-The "resources.pri" file must not have AutoMerge enabled.  | MakePRI.exe supports an option called AutoMerge. The default value of AutoMerge is off. When enabled, AutoMerge merges an app's language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through the Windows Store. The resources.pri of an app that is distributed through the Windows Store must be in the root of the app's package and contain all the language references that the app supports. 
+The "resources.pri" file must not have AutoMerge enabled.  | MakePRI.exe supports an option called AutoMerge. The default value of AutoMerge is off. When enabled, AutoMerge merges an app's language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through the Microsoft Store. The resources.pri of an app that is distributed through the Microsoft Store must be in the root of the app's package and contain all the language references that the app supports. 
 The string {string} failed the max length restriction of {number} characters.  | Refer to the [App package requirements](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length. 
 The string {string} must not have leading/trailing whitespace.  | The schema for the elements in the app manifest don't allow leading or trailing white space characters. In the actual message, {string} is replaced by the string with the error. Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters. 
 The string must be non-empty (greater than zero in length)  | For more info, see [App package requirements](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements). 
@@ -208,17 +209,17 @@ Desktop Bridge apps can leverage some legacy Win32 APIs along with modern APIs (
  
 **Test details**  
 This test checks all the UWP components in the app:
-* Verifies that each managed binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
+* Verifies that each managed binary within the app package doesn't have a dependency on a Win32 API that is not supported for UWP app development by checking the import address table of the binary.
 * Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile. 
 
 **Corrective actions**  
 This can be corrected by ensuring that the app was compiled as a release build and not as a debug build. 
 
 > [!NOTE]
-> The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Review the error messages to identify the API present that is not an allowed API for Windows Store apps. 
+> The debug build of an app will fail this test even if the app uses only [APIs for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx). Review the error messages to identify the API present that is not an allowed API for UWP apps. 
 
 > [!NOTE]
-> C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps. See [Alternatives to Windows APIs in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) for more information.
+> C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for UWP apps. See [Alternatives to Windows APIs in UWP apps](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx) for more information.
 
 ### 6. User account control (UAC) test  
 
@@ -226,7 +227,7 @@ This can be corrected by ensuring that the app was compiled as a release build a
 Ensures that the app is not requesting user account control at runtime.
 
 **Test details**  
-An app cannot request admin elevation or UIAccess per Windows Store policy. Elevated security permissions are not supported. 
+An app cannot request admin elevation or UIAccess per Microsoft Store policy. Elevated security permissions are not supported. 
 
 **Corrective actions**  
 Apps must run as an interactive user. See [UI Automation Security Overview](https://go.microsoft.com/fwlink/?linkid=839440) for details.
@@ -267,7 +268,7 @@ The Banned File Check in the Windows App Certification Kit currently checks for 
 This check commonly fails when an app is using a "Release Preview" version of the file instead of the latest official release. 
 
 **Corrective actions**  
-To correct this, use the latest version of the [Bing Maps SDK](http://go.microsoft.com/fwlink/p/?linkid=614880) for Windows Store Apps.
+To correct this, use the latest version of the [Bing Maps SDK](http://go.microsoft.com/fwlink/p/?linkid=614880) for UWP apps.
 
 #### 8.2 Private Code Signing
 Tests for the existence of private code signing binaries within the app package. 
@@ -284,4 +285,4 @@ Remove any private code signing keys (such as .pfx and .snk files) from the pack
 
 ## Related topics
 
-* [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)

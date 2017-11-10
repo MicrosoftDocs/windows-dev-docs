@@ -1,14 +1,15 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: Use this method in the Windows Store analytics API to get aggregate acquisition data for an add-on during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate acquisition data for an add-on during a given date range and other optional filters.
 title: Get add-on acquisitions
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, add-on acquisitions
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, add-on acquisitions
+localizationpriority: medium
 ---
 
 # Get add-on acquisitions
@@ -16,14 +17,14 @@ keywords: windows 10, uwp, Store services, Windows Store analytics API, add-on a
 
 
 
-Use this method in the Windows Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -77,7 +78,7 @@ For a list of the supported fields, see the following table. String values must 
 |---------------|-----------------|
 | acquisitionType | One of the following strings:<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>iap</strong></li></ul> |
 | ageGroup | One of the following strings:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
-| storeClient | One of the following strings:<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
+| storeClient | One of the following strings:<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Microsoft Store (client)</strong></li><li><strong>Microsoft Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
 | gender | One of the following strings:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | A string that contains the ISO 3166 country code of the market where the acquisition occurred. |
 | osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
@@ -170,7 +171,7 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get add-on conversions by channel](get-add-on-conversions-by-channel.md)
 * [Get app acquisitions](get-app-acquisitions.md)
 * [Get app acquisition funnel data](get-acquisition-funnel-data.md)

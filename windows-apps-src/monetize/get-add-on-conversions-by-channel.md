@@ -1,18 +1,19 @@
 ---
 author: mcleanbyron
-description: Use this method in the Windows Store analytics API to get aggregate conversions by channel data for an add-on during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get aggregate conversions by channel data for an add-on during a given date range and other optional filters.
 title: Get add-on conversions by channel
 ms.author: mcleans
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, add-on conversions, channel
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, add-on conversions, channel
+localizationpriority: medium
 ---
 
 # Get add-on conversions by channel
 
-Use this method in the Windows Store analytics API to get aggregate conversions by channel for an add-on during a given date range and other optional filters.
+Use this method in the Microsoft Store analytics API to get aggregate conversions by channel for an add-on during a given date range and other optional filters.
 
 * A *conversion* means that a customer (signed in with a Microsoft account) has newly obtained a license to your add-on (whether you charged money or you've offered it for free).
 * The *channel* is the method in which a customer arrived at your app's listing page (for example, via the Store or a [custom app promotion campaign](../publish/create-a-custom-app-promotion-campaign.md)).
@@ -23,7 +24,7 @@ This information is also available in the [Add-on acquisitions report](../publis
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -143,5 +144,5 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)

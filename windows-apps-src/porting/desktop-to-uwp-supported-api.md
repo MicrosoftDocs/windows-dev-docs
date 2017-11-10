@@ -4,12 +4,13 @@ Description: Packaged desktop apps can use a wide range of Universal Windows Pla
 Search.Product: eADQiWindows 10XVcnh
 title: UWP APIs available to a packaged desktop app (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 10/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
+localizationpriority: medium
 ---
 # UWP APIs available to a packaged desktop app (Desktop Bridge)
 
@@ -47,7 +48,7 @@ The following is a full list of UWP APIs supported in packaged apps. You can vie
 
 For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
-<span id="new" />
+<a id="new" />
 ### APIs supported in newly packaged apps
 
 * [Windows.ApplicationModel.AppService.AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)
@@ -373,7 +374,7 @@ For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://
 * [Windows.UI.StartScreen.JumpList](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpList)
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
-<span id="both" />
+<a id="both" />
 ### APIs supported in both packaged apps and desktop applications
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
@@ -1040,3 +1041,9 @@ For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
+
+## Next steps
+
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).

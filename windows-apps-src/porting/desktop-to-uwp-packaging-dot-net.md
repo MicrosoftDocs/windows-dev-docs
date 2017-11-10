@@ -10,6 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
+localizationpriority: medium
 ---
 
 # Package an app by using Visual Studio (Desktop Bridge)
@@ -21,8 +22,9 @@ You can use Visual Studio to generate a package for your desktop app. Then, you 
 
 ## First, consider how you'll distribute your app
 
-If you plan to publish your app to the [Windows Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
+If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
+<a id="new-packaging-project"/>
 ## Use the new packaging project available in the 15.4 release of Visual Studio 2017
 
 The 15.4 release of Visual Studio introduces a new packaging project that eliminates all of the manual steps that used to be necessary to package your app. Just add a packaging project, reference your desktop project, and then press F5 to debug your app. No manual tweaks necessary. This new streamlined experience is a vast improvement over the experience that was available in the previous version of Visual Studio.
@@ -215,7 +217,7 @@ If you receive errors when you attempt to generate your package, see the [Known 
 
 #### Obtaining the appxupload file that you submit to the store
 
-The **Create App Packages** wizard generates an appxupload file that you can submit to the Windows Store but the wizard won't automatically generate one if you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to the packaged solution. In that case, you'll have to manually create the appxupload file. Here's how.
+The **Create App Packages** wizard generates an appxupload file that you can submit to the Microsoft Store but the wizard won't automatically generate one if you've [extended](desktop-to-uwp-extend.md) your desktop application by adding a C#, C++, or VB.NET-based Universal Windows Platform project to the packaged solution. In that case, you'll have to manually create the appxupload file. Here's how.
 
 1. Create a new zip archive to include the generated appxsym and appxbundle from the \_Test folder.
 
@@ -224,6 +226,10 @@ The **Create App Packages** wizard generates an appxupload file that you can sub
    ![file explorer](images/desktop-to-uwp/net-7.png)
 
 ## Next steps
+
+**Find answers to your questions**
+
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 **Run, debug or test your app**
 
@@ -240,11 +246,3 @@ See [Extend your desktop application with modern UWP components](desktop-to-uwp-
 **Distribute your app**
 
 See [Distribute a packaged desktop app (Desktop Bridge)](desktop-to-uwp-distribute.md)
-
-**Find answers to specific questions**
-
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
-
-**Give feedback about this article**
-
-Use the comments section below.

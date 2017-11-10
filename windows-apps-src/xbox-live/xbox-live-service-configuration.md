@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, service configuration
+localizationpriority: medium
 ---
 
 # Xbox Live service configuration
@@ -33,7 +34,7 @@ As mentioned above, there are two different portals that can be used to configur
 
 Windows Dev Center is recommended for all titles going forward, but for certain features, you may still want to use XDP. This section will help advise you where to configure your title.
 
-If you already have a title configured, you can go to [Get your IDs](#get_ids) to learn how to get the various identifiers required to setup your title.
+If you already have a title configured, you can scroll down to [Get your IDs](#get_ids) to learn how to get the various identifiers required to setup your title.
 
 ### Xbox One XDK only
 If you are developing a game using the Xbox One XDK, then you must use XDP to ingest, configure, and publish your game. Support for configuring XDK titles on Windows Dev Center will be coming soon.
@@ -47,7 +48,7 @@ You may want to use XDP to configure UWP titles if you have one of the following
 
 1. You are using Arena.
 2. You have existing users, groups, and permissions setup on XDP that you want to keep using.
-3. You are using tools which only work on XDP such as the Tournaments Tool or MPSD Session History viewer.
+3. You are using tools which only work on XDP such as the Tournaments Tool or Multiplayer Session Directory session history viewer.
 4. You are developing a title that will have cross-platform play between an Xbox One XDK based game and UWP PC/mobile version of the same game.
 
 If you don't fall into one of those categories, then you should use Windows Dev Center. Otherwise you can see below for how to use XDP to configure a UWP title.

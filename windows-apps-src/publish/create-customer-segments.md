@@ -1,4 +1,4 @@
-﻿---
+---
 author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Create customer segments
@@ -9,13 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, segment, segments, targeted group, customers
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
+localizationpriority: high
 ---
 
 # Create customer segments
 
 There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in Windows Dev Center by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
 
-For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Windows Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. 
+For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Microsoft Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. 
 
 We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
 

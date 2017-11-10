@@ -8,6 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages
+localizationpriority: medium
 ---
 
 # Installing UWP apps from a web page
@@ -18,12 +19,14 @@ App Installer can install an app directly from a web server. When the user click
 
 The direct app install is only available in the Windows 10 Fall Creators Update and newer. Previous versions of Windows (going back to the Windows 10 Anniversary Update) will be supported by the [web install experience on previous versions of Windows 10](#web-install-experience). This experience is not as fluid as the direct app install, but it provides significant improvements to the existing app install procedure.
   
+> [!NOTE]
+> App Installer version greater than 1.0.12271.0 is required to support the new features.
 
 ### Protocol Activation Scheme
 In this mechanism, App Installer registers with the operating system for a protocol activation scheme. When user clicks on a web link, the browser checks with the OS for apps that are registered to that web link. If the scheme matches the protocol activation scheme specified by App Installer, then App Installer is invoked. It's important to note that this mechanism is browser independent. This is beneficial to site administrators, for example, who don't need to consider web browser differences while incorporating this into a webpage. 
 
 #### Requirements for protocol activation scheme
-1. Web servers that support byte range requests (HTTP/1.1)
+   - Web servers that support byte range requests (HTTP/1.1)
    - App Packages need to be hosted on servers that support HTTP/1.1 protocol   
 
 #### How to enable this on a webpage 

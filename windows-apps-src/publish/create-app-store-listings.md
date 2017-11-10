@@ -1,20 +1,21 @@
 ﻿---
 author: jnHs
-Description: The Store listings section of the app submission process is where you provide the text and images that customers will see in your app's Store listing.
+Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 08/22/2017
+ms.date: 11/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Create app Store listings
 
 
-The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see in your app's Store listing.
+The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
 
 > [!NOTE]
 > We have recently updated the options on this page. If you had an in-progress submission from before the newer options were available, that submission will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the newer options will become available with the next update after you publish your in-progress submission.
@@ -54,13 +55,14 @@ For some tips on making your description stand out, see [Write a great app descr
 
 ## Release notes
 
-If this is the first time you're submitting your app, you'll probably want to leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit.
+If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit.
 
 ## Screenshots
 
 One screenshot is required in order to submit your app. We recommend providing at least one screenshot for each device type that your app supports.
 
 For more info, see [App screenshots and images](app-screenshots-and-images.md#screenshots).
+
 
 ## Store logos 
 
@@ -71,22 +73,26 @@ Store logos are optional images that you can upload to enhance the way your app 
 
 For more info, see [Store logos](app-screenshots-and-images.md#store-logos).
 
+
 ## Additional art assets
 
 You can submit additional assets for your product, including trailers and promotional images. These are all optional, but we recommend that you consider uploading as many of them as possible. These images can help give customers a better idea of what your product is and make a more enticing listing.
 
 For more info, see [Additional art assets](app-screenshots-and-images.md#additional-art-assets).
 
+
 ## Additional information
 
 The fields in this section are all optional, but can be used to help customers understand more about what your app does and what is required for the best experience. We suggest reviewing the options described below and providing any information that customers might need to know about your app, or that could help entice them to download it.
 
+
 ### App features
 
-These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in your app's Store listing, in addition to the Description. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
+These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in your app's Store listing, in addition to the **Description**. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
 
 > [!NOTE]
 > Your app features will appear bulleted in your Store listing, so don't add your own bullets.
+
 
 ### Additional system requirements
 
@@ -119,14 +125,16 @@ When adding search terms, think about the words that customers might use when se
 
 ### Privacy policy
 
-If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a privacy policy, if required.
+If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a privacy policy if required. If we determine that your app requires a privacy policy, and you have not provided one, your app may fail certification.
 
 > [!IMPORTANT]
-> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. To determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
+> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. To determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
+
 
 ### Copyright and trademark info
 
 If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
+
 
 ### Additional license terms
 
@@ -138,14 +146,17 @@ If you enter a single URL into this field, it will be displayed to customers as 
 
 You can also enter up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
 
+
 ### Website
 
 Enter the URL of the web page for your app. This URL must point to a page on your own website, not your app's web listing in the Store.
 
+
 ### Support contact info
 
-Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support.
+Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support. We recommend including this info for all submissions, so that your customers know how to get support if they need it. Note that Microsoft does not provide your customers with support for your app.
 
 > [!IMPORTANT]
-> Microsoft doesn't provide your customers with support for your app.
+> The **Support contact info** field is required if your app or game is available on Xbox. 
+
 

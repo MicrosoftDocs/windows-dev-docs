@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
 title: Set app pricing and availability
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Set app pricing and availability
@@ -21,7 +22,7 @@ The **Pricing and availability** page of the [app submission process](app-submis
 
 ## Markets
 
-The Windows Store reaches customers in over 200 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app. 
+The Microsoft Store reaches customers in over 200 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app. 
 
 For more info, see [Define market selection](define-pricing-and-market-selection.md).
 
@@ -114,7 +115,7 @@ If you don’t want to set a release date yet, and you prefer your submission to
 Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
  
 > [!NOTE]
-> Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your app (or update) will be available on a specific date.  
+> Delays during certification or publishing could cause the actual release date to be later than the date you request. The Microsoft Store cannot guarantee that your app (or update) will be available on a specific date.  
 
 You can also change the release date after submitting your app, as long as it hasn’t entered the Publish step yet. 
 

@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows
+localizationpriority: medium
 ---
 
 # Render the scene with depth testing

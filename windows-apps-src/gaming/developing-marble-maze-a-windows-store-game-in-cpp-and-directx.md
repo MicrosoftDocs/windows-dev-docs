@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, sample, directx, 3d
+localizationpriority: medium
 ---
 
 # Developing Marble Maze, a UWP game in C++ and DirectX
@@ -73,7 +74,7 @@ This documentation does not cover the following aspects of game development. The
 -   How to design resources such as textures, models, or audio.
 -   How to troubleshoot behavior or performance issues in your game.
 -   How to prepare your game for use in other parts of the world.
--   How to certify and publish your game to the Windows Store.
+-   How to certify and publish your game to the Microsoft Store.
 
 Marble Maze also uses the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) library to work with 3D geometry and perform physics calculations, such as collisions. DirectXMath is not covered in-depth in this section. For details about how Marble Maze uses DirectXMath, refer to the source code.
 

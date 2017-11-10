@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: Launch the Windows Store app
-description: This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the Store.
+title: Launch the Microsoft Store app
+description: This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the Store.
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -9,13 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
-# Launch the Windows Store app
+# Launch the Microsoft Store app
 
 
 
-This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Windows Store app to specific pages in the store by using the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method.
+This topic describes the **ms-windows-store:** URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method.
 
 This example shows how to open the Store to the Games page:
 

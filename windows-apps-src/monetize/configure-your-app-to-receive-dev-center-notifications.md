@@ -9,6 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, targeted push notifications, Dev Center
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
+localizationpriority: high
 ---
 
 # Configure your app for targeted push notifications
@@ -96,6 +97,6 @@ Note that this method invalidates the channel that is being used for notificatio
 ## Related topics
 
 * [Send push notifications to your app's customers](../publish/send-push-notifications-to-your-apps-customers.md)
-* [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)
+* [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/windows/uwp/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)
 * [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/xaml/hh868221)
 * [Microsoft Store Services SDK](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk)

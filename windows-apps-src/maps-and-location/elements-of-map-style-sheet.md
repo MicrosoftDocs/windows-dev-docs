@@ -10,6 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, maps, map style sheet
+localizationpriority: medium
 ---
 # Map style sheet reference
 
@@ -41,7 +42,7 @@ Sometimes the value of a property is transformed to produce the final result.  F
 
 This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.
 
-<span id="entries" />
+<a id="entries" />
 ## Entries
 This table uses ">" characters to represent levels in the entry hierarchy.   
 
@@ -120,19 +121,19 @@ This table uses ">" characters to represent levels in the entry hierarchy.
 | >> userPoint                 | [PointStyle](#pointstyle) | The styling for default user points. |
 | >> userLine                  | [MapElement](#mapelement) | The styling for default user lines. |
 
-<span id="properties" />
+<a id="properties" />
 ## Properties
 
 This section describes the properties that you can use for each entry.
 
-<span id="version" />
+<a id="version" />
 ### Version properties
 
 | Property                     | Type    | Description                                                                                                           |
 |------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------|
 | version                      | String  | Targeted style sheet version. Used for applicability. "1.0" for default, "1.*" for additional minor features updates. |
 
-<span id="settings" />
+<a id="settings" />
 ### Settings properties
 
 | Property                     | Type    | Description                                                                                                                                                                                                                 |
@@ -151,7 +152,7 @@ This section describes the properties that you can use for each entry.
 | spaceColor                   | Color   | The ARGB color value for area around the map.                                                                                                                                                                               |
 | useDefaultImageColors        | Bool    | A flag that indicates whetehr the original colors in the SVG should be used rather than looking up the palette entry for colors in an image.                                                                                |
 
-<span id="mapelement" />
+<a id="mapelement" />
 ### MapElement properties
 
 | Property                     | Type    | Description                                                                                                                 |
@@ -166,7 +167,7 @@ This section describes the properties that you can use for each entry.
 | strokeWidthScale             | Float   | The amount by which the stroke of lines are scaled. For example, use *1* for default and *2* for twice as large.            |
 | visible                      | Bool    |                                                                                                                             |
 
-<span id="borderedmap" />
+<a id="borderedmap" />
 ### BorderedMapElement
 
 This property group inherits from the [MapElement](#mapelement) property group.
@@ -178,7 +179,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 | borderVisible                | Bool    |                                                                       |
 | borderWidthScale             | Float   |                                                                       |
 
-<span id="pointstyle" />
+<a id="pointstyle" />
 ### PointStyle properties
 
 This property group inherits from the [MapElement](#mapelement) property group.
@@ -190,7 +191,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 | stemColor                    | Color   | The color of the stem coming out of the bottom of the icon in 3D mode.                                             |
 | stemOutlineColor             | Color   | The color of the outline around the stem coming out of the bottom of the icon in 3D mode.                          |
 
-<span id="twotonelinestyle" />
+<a id="twotonelinestyle" />
 ### TwoToneLineStyle properties
 
 This property group inherits from the [MapElement](#mapelement) property group.

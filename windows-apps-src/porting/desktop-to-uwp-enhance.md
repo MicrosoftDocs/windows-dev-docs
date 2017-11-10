@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Enhance your desktop application for Windows 10
@@ -165,7 +166,7 @@ void UWP::ShowToast()
 	ToastNotificationManager::CreateToastNotifier()->Show(ref new ToastNotification(toastXml));
 }
 ```
-To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts).
+To learn more about notifications, see [Adaptive and Interactive toast notifications](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/adaptive-interactive-toasts).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 
@@ -239,14 +240,10 @@ The easiest way to add runtime checks to your code is to install this Nuget pack
 
 ## Support and feedback
 
-**Find answers to specific questions**
+**Find answers to your questions**
 
-Our team monitors these [StackOverflow tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
+Have questions? Ask us on Stack Overflow. Our team monitors these [tags](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge).
 
 **Give feedback or make feature suggestions**
 
 See [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)
-
-**Give feedback about this article**
-
-Use the comments section below.

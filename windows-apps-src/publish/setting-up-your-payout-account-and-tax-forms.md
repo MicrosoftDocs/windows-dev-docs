@@ -1,6 +1,6 @@
-﻿---
+---
 author: jnHs
-Description: In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
+Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 title: Set up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
@@ -9,19 +9,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Set up your payout account and tax forms
 
 
-In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
+In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 
 If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile have been completed.
 
 > [!NOTE]
 > In [certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), developers can only submit free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.
 
-After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Windows Store:
+After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Microsoft Store:
 
 -   [Set up your payout account](#payout-account)
 -   [Fill out your tax forms](#tax-forms)
@@ -119,7 +120,7 @@ To ensure your payout is successful, please also keep in mind the following:
 
 ## Tax forms
 
-After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#payout-account), you can create your *tax profile* for the Windows Store by completing the following steps:
+After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#payout-account), you can create your *tax profile* for the Microsoft Store by completing the following steps:
 
 -   Specify your country of residence and citizenship.
 -   Fill out the appropriate tax forms.
@@ -127,7 +128,7 @@ After you have [registered for a developer account](opening-a-developer-account.
 You can complete and submit your tax forms electronically in your dashboard; in most cases, you don't need to print and mail any forms.
 
 > [!IMPORTANT]
-> Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Windows Store developer activities.
+> Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Microsoft Store developer activities.
 
  
 **To complete your tax profile**
@@ -142,7 +143,7 @@ You can complete and submit your tax forms electronically in your dashboard; in 
 4.  Answer the questions about United States citizenship and residency, then click **Next**.
 5.  If your name and address info are displayed, confirm them for the purposes of filing taxes.
 
-Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or add-ons through the Windows Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
+Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or add-ons through the Microsoft Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
 
 A United States Individual Taxpayer Identification Number (or ITIN) is not required to receive payments from Microsoft or to claim tax treaty benefits.
 
@@ -152,7 +153,7 @@ The info you submit in your tax forms determines the appropriate tax withholding
 
 ### Tax treaty benefits
 
-If you are outside the United States, you may be able to take advantage of tax treaty benefits. These benefits vary from country to country, and may allow you to reduce the amount of taxes that the Windows Store withholds. You can claim tax treaty benefits by completing Part II of the W-8BEN form. We recommend that you communicate with the appropriate resources in your country or region to determine whether these benefits apply to you.
+If you are outside the United States, you may be able to take advantage of tax treaty benefits. These benefits vary from country to country, and may allow you to reduce the amount of taxes that the Microsoft Store withholds. You can claim tax treaty benefits by completing Part II of the W-8BEN form. We recommend that you communicate with the appropriate resources in your country or region to determine whether these benefits apply to you.
 
  
 

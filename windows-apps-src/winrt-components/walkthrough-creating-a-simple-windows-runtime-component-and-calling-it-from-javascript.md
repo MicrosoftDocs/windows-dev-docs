@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript
@@ -18,7 +19,7 @@ keywords: windows 10, uwp
 
 This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 
-Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for Windows Store apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime Component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
+Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime Component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
 
 > **Note**  The .NET Framework automatically maps some commonly used .NET Framework types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET Framework types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
@@ -95,7 +96,7 @@ function basics2() {
 
 Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](https://msdn.microsoft.com/library/hh710230.aspx). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
 
-In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for Windows Store Apps and Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
+In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for UWP apps and Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
 ## Create a simple user interface
 
@@ -733,6 +734,6 @@ To run the app, choose the F5 key. To start the asynchronous operation, choose t
 
 ## Related topics
 
-* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

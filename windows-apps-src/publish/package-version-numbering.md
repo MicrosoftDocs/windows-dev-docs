@@ -1,20 +1,21 @@
-﻿---
+---
 author: jnHs
-Description: The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 title: Package version numbering
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Package version numbering
 
 
-Each package you provide must have a version number (provided as a value in the **Version** attribute of the **Package/Identity** element in the app manifest). The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+Each package you provide must have a version number (provided as a value in the **Version** attribute of the **Package/Identity** element in the app manifest). The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 
 > [!NOTE]
 > This topic refers to "packages", but unless noted, the same rules apply to version numbers for both .appx and .appxbundle files.
@@ -27,7 +28,7 @@ The version number of any Windows 10 package must always be higher than any ver
 > [!IMPORTANT]
 > The last (fourth) section of the version number is reserved for Store use and must be left as 0 when you build your package (although the Store may change the value in this section).
 
-When choosing a Windows 10 package from your published submission, the Windows Store will always use the highest-versioned package that is applicable to the customer’s device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.
+When choosing a Windows 10 package from your published submission, the Microsoft Store will always use the highest-versioned package that is applicable to the customer’s device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.
 
 You can even provide multiple Windows 10 packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity).
 
@@ -61,11 +62,12 @@ To do this, create a new submission. Remove the problematic package and upload t
 
 To fix the issues for the customers who have already received the problematic package, you can submit a new Windows 10 package that has a higher version number than the bad package as soon as you can. After that submission goes through the certification process, all customers will be updated to the new package, since it will have a higher version number.
 
+
 ## Version numbering for Windows 8.1 (and earlier) and Windows Phone 8.1 packages
 
 For .appx packages that target Windows Phone 8.1, the version number of the package in a new submission must always be greater than that of the package included in the last submission (or any previous submission).
 
-For .appx packages that target Windows 8 and Windows 8.1, the same rule applies per architecture: the version number of the package in a new submission must always be greater than that of the package last shipped to the Windows Store for the same architecture.
+For .appx packages that target Windows 8 and Windows 8.1, the same rule applies per architecture: the version number of the package in a new submission must always be greater than that of the package last published to the Store for the same architecture.
 
 Additionally, the version number of Windows 8.1 packages must always be greater than the version numbers of any of your Windows 8 packages for the same app. In other words, the version number of any Windows 8 package that you submit must be lower than the version number of any Windows 8.1 package that you've submitted for the same app.
 
@@ -74,7 +76,7 @@ Additionally, the version number of Windows 8.1 packages must always be greater
 
 Here are some examples of what happens in different version number update scenarios for Windows 8 and Windows 8.1.
 
-| With this version of your app in the Store  | And you upload this version | After the new version is in the Windows Store, this will be installed in a new acquisition | After the new version is in the Windows Store, this will be updated if a customer already has the app |
+| With this version of your app in the Store  | And you upload this version | After the new version is in the Store, this will be installed in a new acquisition | After the new version is in the Store, this will be updated if a customer already has the app |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 on both x86 and x64 computers                                                | Nothing. |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 for the customer's architecture                                                   | Nothing. The version numbers are the same. |

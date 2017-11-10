@@ -2,23 +2,24 @@
 author: PatrickFarley
 ms.assetid: 67a46812-881c-404b-9f3b-c6786f39e72b
 title: Customize the print workflow
-description: Create custom print workflow experiences to meet the needs of your organization.  
+description: Create custom print workflow experiences to meet the needs of your organization.
 ms.author: pafarley
 ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: medium
 ---
 
 # Customize the print workflow
 
 ## Overview
-Developers can customize the printing workflow experience through the use of a print workflow app. Print workflow apps are UWP apps that expand on the functionality of [Windows Store devices apps (WSDAs)](https://docs.microsoft.com/windows-hardware/drivers/devapps/), so it will be helpful to have some familiarity with WSDAs before going further. 
+Developers can customize the printing workflow experience through the use of a print workflow app. Print workflow apps are UWP apps that expand on the functionality of [Microsoft Store devices apps (WSDAs)](https://docs.microsoft.com/windows-hardware/drivers/devapps/), so it will be helpful to have some familiarity with WSDAs before going further. 
 
 Just as in the case of WSDAs, when the user of a source application elects to print something and navigates through the print dialog, the system checks whether a workflow app is associated with that printer. If it is, the print workflow app launches (primarily as a background task; more on this below). A workflow app is able to alter both the print ticket (the XML document that configures the printer device settings for the current print task) and the actual XPS content to be printed. It can optionally expose this functionality to the user by launching a UI midway through the process. After doing its work, it passes the print content and print ticket on to the driver.
 
-Because it involves background and foreground components, and because it is functionally coupled with other app(s), a print workflow app can be more complicated to implement than other categories of UWP apps. It is recommended that you inspect the [Workflow app sample (coming soon)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Samples) while reading this guide to better understand how the different features can be implemented. Some features, such as various error checks and UI management, are absent from this guide for the sake of simplicity.
+Because it involves background and foreground components, and because it is functionally coupled with other app(s), a print workflow app can be more complicated to implement than other categories of UWP apps. It is recommended that you inspect the [Workflow app sample](https://github.com/Microsoft/print-oem-samples) while reading this guide to better understand how the different features can be implemented. Some features, such as various error checks and UI management, are absent from this guide for the sake of simplicity.
 
 ## Getting started
 
@@ -248,6 +249,11 @@ Set-Printer –Name "Microsoft XPS Document Writer" -WorkflowPolicy On
 ```
 
 A local user can run this policy on a local printer, or, for enterprise implementation, the printer administrator can run this policy on the Print Server. The policy will then be synchronized to all client connections. The printer admin can use this policy whenever a new printer is added.
- 
+
+## See also
+
+[Workflow app sample](https://github.com/Microsoft/print-oem-samples)
+
+[Windows.Graphics.Printing.Workflow namespace](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow)
 
 

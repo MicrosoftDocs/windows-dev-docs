@@ -1,4 +1,4 @@
-﻿---
+---
 author: jnHs
 Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
 title: Set your add-on product type and product ID
@@ -9,6 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
+localizationpriority: high
 ---
 
 # Set your add-on product type and product ID
@@ -65,5 +66,5 @@ Here are a few things to keep in mind when choosing a product ID:
 -   A product ID can't be more than 100 characters in length.
 -   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
 -   To offer your add-on in all OS versions, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
+-   A product ID doesn't have to be unique within the Microsoft Store, but it must be unique to your developer account.
  

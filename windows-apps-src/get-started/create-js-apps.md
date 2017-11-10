@@ -1,13 +1,14 @@
 ---
 author: QuinnRadich
 title: JavaScript and web apps
-description: Build JavaScript apps in UWP, and Hosted Web Apps for the Windows Store
+description: Build JavaScript apps in UWP, and Hosted Web Apps for the Microsoft Store
 ms.author: quradic
 ms.date: 08/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, web, edge, javascript
+localizationpriority: medium
 ---
 
 # JavaScript and web apps
@@ -43,7 +44,7 @@ Interested in more information on building web apps?
 
 * [Microsoft Edge developer documentation](https://docs.microsoft.com/microsoft-edge/)
 
-Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Windows Store.
+Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
 
 * [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
 * [Convert your web application to a UWP app](../porting/hwa-create-windows.md)
