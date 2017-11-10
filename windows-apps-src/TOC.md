@@ -1,3 +1,16 @@
+# What's new
+## [What's new in Windows 10 for developers, build 16299](whats-new/windows-10-build-16299.md)
+### [API additions in Windows 10, build 16299](whats-new/windows-10-build-16299-api-diff.md)
+### [What's new in Windows 10, build 15063](whats-new/windows-10-build-15063.md)
+#### [API additions in Windows 10, build 15063](whats-new/windows-10-build-15063-api-diff.md)
+### [What's new in Windows 10, build 14393](whats-new/windows-10-build-14393.md)
+#### [API additions in Windows 10, build 14393](whats-new/windows-10-build-14393-api-diff.md)
+### [What's new in Windows 10, build 10586](whats-new/windows-10-build-10586.md)
+### [What's new in Windows 10, build 10240](whats-new/windows-10-build-10240.md)
+## [What's new in the Windows docs, September 2017](whats-new/windows-docs-latest.md)
+### [What's new in the Windows docs, August 2017](whats-new/windows-docs-august-2017.md)
+### [What's new in the Windows docs, July 2017](whats-new/windows-docs-july-2017.md)
+
 # Get started with the Universal Windows Platform
 ## [What's a UWP app?](get-started/whats-a-uwp.md)
 ## [Intro to UWP](get-started/universal-application-platform-guide.md)
@@ -246,17 +259,6 @@
 ## [Design toolkits](design/downloads/index.md)
 
 # Develop Windows apps
-## [What's new in Windows 10 for developers, build 16299](whats-new/windows-10-build-16299.md)
-### [API additions in Windows 10, build 16299](whats-new/windows-10-build-16299-api-diff.md)
-### [What's new in Windows 10, build 15063](whats-new/windows-10-build-15063.md)
-#### [API additions in Windows 10, build 15063](whats-new/windows-10-build-15063-api-diff.md)
-### [What's new in Windows 10, build 14393](whats-new/windows-10-build-14393.md)
-#### [API additions in Windows 10, build 14393](whats-new/windows-10-build-14393-api-diff.md)
-### [What's new in Windows 10, build 10586](whats-new/windows-10-build-10586.md)
-### [What's new in Windows 10, build 10240](whats-new/windows-10-build-10240.md)
-## [What's new in the Windows docs, September 2017](whats-new/windows-docs-latest.md)
-### [What's new in the Windows docs, August 2017](whats-new/windows-docs-august-2017.md)
-### [What's new in the Windows docs, July 2017](whats-new/windows-docs-july-2017.md)
 ## [App resources](app-resources/index.md)
 ### [Resource Management System](app-resources/resource-management-system.md)
 ### [How the RMS matches and chooses resources](app-resources/how-rms-matches-and-chooses-resources.md)
