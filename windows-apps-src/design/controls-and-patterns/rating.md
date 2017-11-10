@@ -20,7 +20,7 @@ localizationpriority: medium
 
 Allowing users to easily view and set ratings that reflect degrees of satisfaction with content and services is a critical app scenario.  The ratings control allows your users to do this with touch, pen, mouse, gamepad and keyboard. Use the ratings control to let your users rate movies, music and books with high quality interaction and animation. The ratings control has several great features that provide flexibility and customization.
 
-> **Important APIs**: [RatingsControl class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingscontrol)
+> **Important APIs**: [RatingControl class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![Example of Ratings Control](images/rating_rs2_doc_ratings_intro.png)
 
