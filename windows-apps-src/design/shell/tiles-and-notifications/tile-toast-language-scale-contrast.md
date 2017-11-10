@@ -12,10 +12,9 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
 
-
 # Tile and toast notification support for language, scale, and high contrast
 
-Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md) and [Asset size tables](app-assets.md#asset-size-tables).
+Your tiles and toasts can load strings and images tailored for display language, [display scale factor](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md), high contrast, and other runtime contexts. For background on how to use qualifiers in the names of your resource files, see [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md) and [Asset size tables](app-assets.md#asset-size-tables).
 
 For more info about the value proposition of localizing your app, see [Globalization and localization](../../globalizing/globalizing-portal.md).
 
@@ -78,13 +77,18 @@ These are the query strings you can use.
 
 For a reference table of all the possible qualifier values that you can use in your query strings, see [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues).
 
+## Important APIs
+
+* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
+
 ## Related topics
 
+* [Screen sizes and break points for responsive design](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 * [Tailor your resources for language, scale, and other qualifiers](../../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [Guidelines for tile and icon assets](app-assets.md)
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
+* [Guidelines for tile and icon assets](app-assets.md).
+* [Globalization and localization](../../globalizing/globalizing-portal.md)
 * [Localize strings in your UI and app package manifest](../../../app-resources/localize-strings-ui-manifest.md)
-* [Reference an image or other asset from XAML markup and code](../../../app-resources/images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [Reference an image or other asset from XAML markup and code](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
 * [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
 * [Tile schema](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
 * [Toast schema](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
