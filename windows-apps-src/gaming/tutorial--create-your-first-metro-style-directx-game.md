@@ -14,8 +14,6 @@ localizationpriority: medium
 
 # Create a simple Universal Windows Platform (UWP) game with DirectX
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++. We cover all the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.
 
 We show you the UWP game development techniques and considerations. We don't provide a complete end-to-end game. Rather, we focus on key UWP DirectX game development concepts, and call out Windows Runtime specific considerations around those concepts.

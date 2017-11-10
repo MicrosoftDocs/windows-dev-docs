@@ -54,7 +54,7 @@ We're going to want to select a few different files and folders from within the 
 ## Files  
 
 `App.cs` | ***Include*** | Entry point for your UWP application; this can be modified and extended with other source files  
-`Package.appxmanifest` | ***Include*** | Package manifest for your AppX  
+`Package.appxmanifest` | ***Include*** | App package manifest source file for your AppX  
 `project.json` | ***Include*** | Describes the NuGet packages your `*.csproj` depends on  
 `ScrapyardPhoenix.csproj` | ***Include*** | Describes your UWP build target; if you add additional dependencies to your UWP project, this `*.csproj` file will contain that information  
 `ScrapyardPhoenix.csproj.user` | ***Ignore*** | This file contains local user information

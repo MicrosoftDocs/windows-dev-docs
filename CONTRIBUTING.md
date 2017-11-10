@@ -10,7 +10,7 @@ The UWP conceptual docs are hosted in two different repos which are then merged 
 
 If you are ***not*** a Microsoft employee, work in the [public content repository](https://github.com/MicrosoftDocs/windows-uwp).
 
-If you ***are*** a Microsoft employee, you can work in either the public repo or the [private content repository](https://cpubwin.visualstudio.com/_git/windows-uwp). Employees can push changes live slightly more quickly by contributing in the private repo, or use a [specific branch](https://review.docs.microsoft.com/en-us/windows-authoring-guide/uwp/conceptual/setup-local-repo-for-large-changes#what-branch-should-i-use-for-my-authoring) for changes that need to stay under wraps until some future date.
+If you ***are*** a Microsoft employee, work in the [private content repository](https://cpubwin.visualstudio.com/_git/windows-uwp). Microsoft employees can find guidance on using this repo in the [Windows Authoring Guide](https://review.docs.microsoft.com/en-us/windows-authoring-guide/uwp/?branch=master).
 
 ## Editing topics on the public repo
 
