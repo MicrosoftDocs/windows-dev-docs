@@ -11,7 +11,7 @@ ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, globalization, localizability, localization
 localizationpriority: medium
 ---
 
@@ -61,6 +61,7 @@ Most localization teams use special tools to aid the process. For example, by re
 | [NumeralSystem values](glob-numeralsystem-values.md) | This topic lists the values available to the **NumeralSystem** property of various classes in the [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) namespace. |
 | [Make your app localizable](prepare-your-app-for-localization.md) | A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources. |
 | [International fonts](loc-international-fonts.md) | This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English. |
+| [Design your app for bidirectional text](design-for-bidi-text.md) | Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 
