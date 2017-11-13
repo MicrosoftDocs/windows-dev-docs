@@ -255,6 +255,8 @@
 #### [Make your app localizable](design/globalizing/prepare-your-app-for-localization.md)
 #### [International fonts](design/globalizing/loc-international-fonts.md)
 #### [Design your app for bidirectional text](design/globalizing/design-for-bidi-text.md)
+#### [Use the Multilingual App Toolkit 4.0](design/globalizing/use-mat.md)
+#### [Multilingual App Toolkit 4.0 FAQ & troubleshooting](design/globalizing/mat-faq-troubleshooting.md)
 ### [Guidelines for app help](design/in-app-help/guidelines-for-app-help.md)
 #### [Instructional UI](design/in-app-help/instructional-ui.md)
 #### [In-app help](design/in-app-help/in-app-help.md)
