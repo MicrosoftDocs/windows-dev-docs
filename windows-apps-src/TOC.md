@@ -1126,9 +1126,8 @@
 ## [API reference](https://docs.microsoft.com/uwp/)
 ## [App development for Windows as a service](updates-and-versions/application-development-for-windows-as-a-service.md)
 ## [Choose a UWP version](updates-and-versions/choose-a-uwp-version.md)
-## [Services](https://developer.microsoft.com/windows/develop/microsoft-services)
-## [Windows 8.x guides](https://msdn.microsoft.com/library/windows/apps/mt244353.aspx)
-## [Windows Phone Silverlight 8.x guides](https://msdn.microsoft.com/library/windows/apps/ff402535.aspx)
+
+
 # Publish Windows apps
 ## [Overview](publish/index.md)
 ## [Using the Windows Dev Center dashboard](publish/using-the-windows-dev-center-dashboard.md)
