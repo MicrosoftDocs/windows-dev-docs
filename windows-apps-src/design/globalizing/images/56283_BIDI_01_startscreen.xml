@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../../BuildX/Script2/preview.xslt"?>
+<art xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../BuildX/Schema/xsd/ArtMetadata.xsd">
+<artMetadata id="m_global_mca.56283_BIDI_01_startscreen" msdnID="08d1b16e-a72f-4295-bedd-156157a904a3">
+  <title>How to support bi-directional UI</title>
+  <author>raymonsh</author>
+  <tech value="m_global_mca"/>
+</artMetadata>
+<!-- For the LocStatus attribute, use one of the following values: ready_to_localize, do_not_localize, localization_completed.For the GeopolStatus attribute, use one of the following values: needs_geopol_review, geopol_review_completed, geopol_review_failed.-->
+<artInfo ArtType="screen_shot" ArtStatus="in_review" SourceLanguage="1033" TextToLoc="false" ColorsImagesToLoc="false" GeopolStatus="needs_geopol_review" LocStatus="do_not_localize">
+  <ReproSteps>
+   <Step>This is the original screen-shot provided from bug 56283 in Windows Client UA ps db.</Step><Step>The resized version, 56283_BIDI_01_startscreen_resized.png, is the actual image included in the topic.</Step><Step>Localization is not required, because the topic is illustrating this specific language.</Step>
+  </ReproSteps>
+</artInfo>
+</art>

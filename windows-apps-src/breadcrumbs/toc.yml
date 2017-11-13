@@ -10,6 +10,9 @@
         tocHref: /windows/uwp/
         topicHref: "/windows/uwp/index"  
         items:
+              - name: What's new 
+                tocHref: /windows/uwp/whats-new/
+                topicHref: "/windows/uwp/whats-new/windows-10-version-latest"         
               - name: Get started
                 tocHref: /windows/uwp/get-started/
                 topicHref: "/windows/uwp/get-started/whats-a-uwp"  
@@ -63,10 +66,7 @@
               - name: Develop
                 tocHref: /windows/uwp/develop/
                 topicHref: "/windows/uwp/whats-new/windows-10-version-1703" 
-                items:
-                    - name: What's new 
-                      tocHref: /windows/uwp/whats-new/
-                      topicHref: "/windows/uwp/whats-new/windows-10-version-latest"                   
+                items:                  
                     - name: App-to-app communication 
                       tocHref: /windows/uwp/app-to-app/
                       topicHref: "/windows/uwp/app-to-app/index"                 

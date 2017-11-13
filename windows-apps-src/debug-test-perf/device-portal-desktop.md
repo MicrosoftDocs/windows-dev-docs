@@ -4,7 +4,7 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
 ms.author: pafarley
-ms.date: 02/08/2017
+ms.date: 11/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,9 +13,10 @@ localizationpriority: medium
 ---
 # Device Portal for Desktop
 
-Starting in Windows 10, Version 1607, additional developer features are available for desktop. These features are available only when Developer Mode is enabled.
+Starting in Windows 10, Version 1607, additional developer features are available for desktop. These features are available only when Developer Mode is enabled. For information about how to enable Developer Mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-For information about how to enable Developer Mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+> [!IMPORTANT]
+> Sometimes, due to network or compatibility issues, Developer Mode won't install correctly on your device. See the [relevant section of Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
 
 Device Portal lets you view diagnostic information and interact with your desktop over HTTP from your browser. You can use Device Portal to do the following:
 - See and manipulate a list of running processes
@@ -58,15 +59,21 @@ If you are using Device Portal in a protected environment, like a test lab, wher
 
 Device Portal on desktop provides the standard set of pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
 
-- Apps
-- Processes
+- Apps manager
+- File explorer
+- Running Processes
 - Performance
-- Debugging
+- Debug
 - Event Tracing for Windows (ETW)
 - Performance tracing
-- Devices
+- Device manager
 - Networking
-- App File Explorer 
+- Crash data
+- Features
+- Mixed Reality
+- Streaming Install Debugger
+- Location
+- Scratch
 
 ## Registry-based configuration for Device Portal
 
@@ -96,9 +103,4 @@ From an administrative prompt, you can enable and configure parts of Device Port
 - `-Debug <various options for authentication, port selection, and tracing level>`
 	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
 	- See the [MSDN Magazine article](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin. 
-
-## Failure to install Developer Mode package
-Sometimes, due to network or compatibility issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to the PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development. Even if you encounter these issues, you can still deploy your app locally using Visual Studio. 
-
-See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum and the [Developer Mode page](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) to find workarounds to these issues and more. 
 

@@ -1,3 +1,16 @@
+﻿# What's new
+## [What's new in Windows 10 for developers, build 16299](whats-new/windows-10-build-16299.md)
+### [API additions in Windows 10, build 16299](whats-new/windows-10-build-16299-api-diff.md)
+### [What's new in Windows 10, build 15063](whats-new/windows-10-build-15063.md)
+#### [API additions in Windows 10, build 15063](whats-new/windows-10-build-15063-api-diff.md)
+### [What's new in Windows 10, build 14393](whats-new/windows-10-build-14393.md)
+#### [API additions in Windows 10, build 14393](whats-new/windows-10-build-14393-api-diff.md)
+### [What's new in Windows 10, build 10586](whats-new/windows-10-build-10586.md)
+### [What's new in Windows 10, build 10240](whats-new/windows-10-build-10240.md)
+## [What's new in the Windows docs, September 2017](whats-new/windows-docs-latest.md)
+### [What's new in the Windows docs, August 2017](whats-new/windows-docs-august-2017.md)
+### [What's new in the Windows docs, July 2017](whats-new/windows-docs-july-2017.md)
+
 # Get started with the Universal Windows Platform
 ## [What's a UWP app?](get-started/whats-a-uwp.md)
 ## [Intro to UWP](get-started/universal-application-platform-guide.md)
@@ -25,6 +38,7 @@
 ### [Building a complex app](get-started/plan-your-app.md)
 ### [What's next?](get-started/learn-more.md)
 ## [Get UWP app samples](get-started/get-uwp-app-samples.md)
+## [Experimental APIs](get-started/experimental-apis.md)
 
 # Design & UI
 ## Design basics
@@ -143,6 +157,7 @@
 #### [Send local tile notfication](design/shell/tiles-and-notifications/sending-a-local-tile-notification.md)
 #### [Chaseable tile notifications](design/shell/tiles-and-notifications/chaseable-tile-notifications.md)
 #### [Primary tile APIs](design/shell/tiles-and-notifications/primary-tile-apis.md)
+#### [Tile, toast notification support for language, scale, contrast](design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 
 ### [Pin your app to the taskbar](design/shell/pin-to-taskbar.md)
 ### [Title bar customization](design/shell/title-bar.md)
@@ -234,11 +249,12 @@
 #### [Guidelines for globalization](design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)
 #### [Understand user profile and app manifest languages](design/globalizing/manage-language-and-region.md)
 #### [Globalize your date/time/number formats](design/globalizing/use-global-ready-formats.md)
+#### [Use templates and patterns to format dates and times](design/globalizing/use-patterns-to-format-dates-and-times.md)
 #### [Adjust layout and fonts, and support RTL](design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)
-#### [Use patterns to format dates and times](design/globalizing/use-patterns-to-format-dates-and-times.md)
 #### [NumeralSystem values](design/globalizing/glob-numeralsystem-values.md)
 #### [Make your app localizable](design/globalizing/prepare-your-app-for-localization.md)
 #### [International fonts](design/globalizing/loc-international-fonts.md)
+#### [Design your app for bidirectional text](design/globalizing/design-for-bidi-text.md)
 ### [Guidelines for app help](design/in-app-help/guidelines-for-app-help.md)
 #### [Instructional UI](design/in-app-help/instructional-ui.md)
 #### [In-app help](design/in-app-help/in-app-help.md)
@@ -246,17 +262,6 @@
 ## [Design toolkits](design/downloads/index.md)
 
 # Develop Windows apps
-## [What's new in Windows 10 for developers, build 16299](whats-new/windows-10-build-16299.md)
-### [API additions in Windows 10, build 16299](whats-new/windows-10-build-16299-api-diff.md)
-### [What's new in Windows 10, build 15063](whats-new/windows-10-build-15063.md)
-#### [API additions in Windows 10, build 15063](whats-new/windows-10-build-15063-api-diff.md)
-### [What's new in Windows 10, build 14393](whats-new/windows-10-build-14393.md)
-#### [API additions in Windows 10, build 14393](whats-new/windows-10-build-14393-api-diff.md)
-### [What's new in Windows 10, build 10586](whats-new/windows-10-build-10586.md)
-### [What's new in Windows 10, build 10240](whats-new/windows-10-build-10240.md)
-## [What's new in the Windows docs, September 2017](whats-new/windows-docs-latest.md)
-### [What's new in the Windows docs, August 2017](whats-new/windows-docs-august-2017.md)
-### [What's new in the Windows docs, July 2017](whats-new/windows-docs-july-2017.md)
 ## [App resources](app-resources/index.md)
 ### [Resource Management System](app-resources/resource-management-system.md)
 ### [How the RMS matches and chooses resources](app-resources/how-rms-matches-and-chooses-resources.md)
@@ -264,7 +269,6 @@
 ### [Tailor your resources for language, scale, contrast, others](app-resources/tailor-resources-lang-scale-contrast.md)
 ### [Localize strings in your UI and app package manifest](app-resources/localize-strings-ui-manifest.md)
 ### [Load images, assets tailored for scale, theme, contrast, others](app-resources/images-tailored-for-scale-theme-contrast.md)
-### [Tile, toast notification support for language, scale, contrast](app-resources/tile-toast-language-scale-contrast.md)
 ### [URI schemes](app-resources/uri-schemes.md)
 ### [Compile resources manually with MakePri.exe](app-resources/compile-resources-manually-with-makepri.md)
 ### [MakePri.exe command-line options](app-resources/makepri-exe-command-options.md)
@@ -340,8 +344,7 @@
 ### [Manage appointments](contacts-and-calendar/managing-appointments.md)
 ### [Connect your app to actions on a contact card](contacts-and-calendar/integrating-with-contacts.md)
 ## [Data access](data-access/index.md)
-### [Entity framework Core with SQLite for C# apps](data-access/entity-framework-7-with-sqlite-for-csharp-apps.md)
-### [SQLite databases](data-access/sqlite-databases.md)
+### [Use a SQLite database](data-access/sqlite-databases.md)
 ## [Data binding](data-binding/index.md)
 ### [Data binding overview](data-binding/data-binding-quickstart.md)
 ### [Data binding in depth](data-binding/data-binding-in-depth.md)
