@@ -1,7 +1,7 @@
 ---
 author: serenaz
-Description: Item templates for GridView
-title: Item templates for GridView
+Description: Item templates for grid view
+title: Item templates for grid view
 template: detail.hbs
 ms.author: sezhen
 ms.date: 11/03/2017
@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, fluent
 ---
-# Item templates for GridView
+# Item templates for grid view
 
 This section contains item templates that you can use with a [**GridView**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.GridView) control. Use these templates to get the look of common app types.
 

@@ -11,7 +11,7 @@ ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, globalization, localizability, localization
 localizationpriority: medium
 ---
 
@@ -56,11 +56,12 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md) | Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations. |
 | [Understand user profile languages and app manifest languages](manage-language-and-region.md) | This topic defines the terms "user profile language list", "app manifest language list", and "app runtime language list". We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean. |
 | [Globalize your date/time/number formats](use-global-ready-formats.md) | Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market. |
-| [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md) | Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. |
-| [Use patterns to format dates and times](use-patterns-to-format-dates-and-times.md) | Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish. |
+| [Use templates and patterns to format dates and times](use-patterns-to-format-dates-and-times.md) | Use classes in the [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) namespace with custom templates and patterns to display dates and times in exactly the format you wish. |
+| [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md) | Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. |
 | [NumeralSystem values](glob-numeralsystem-values.md) | This topic lists the values available to the **NumeralSystem** property of various classes in the [**Windows.Globalization**](/uwp/api/windows.globalization?branch=live) namespace. |
 | [Make your app localizable](prepare-your-app-for-localization.md) | A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources. |
 | [International fonts](loc-international-fonts.md) | This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English. |
+| [Design your app for bidirectional text](design-for-bidi-text.md) | Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems. |
 
 Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
 

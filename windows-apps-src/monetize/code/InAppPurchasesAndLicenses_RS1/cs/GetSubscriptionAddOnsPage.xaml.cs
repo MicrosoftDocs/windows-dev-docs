@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Services.Store;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,7 +32,7 @@ namespace InAppPurchasesAndLicenses_UWP
         //<GetSubscriptions>
         private StoreContext context = null;
 
-        public async void GetSubscriptionsInfo()
+        public async Task GetSubscriptionsInfo()
         {
             if (context == null)
             {
@@ -45,15 +46,13 @@ namespace InAppPurchasesAndLicenses_UWP
             string[] productKinds = { "Durable" };
             List<String> filterList = new List<string>(productKinds);
 
-            workingProgressRing.IsActive = true;
             StoreProductQueryResult queryResult =
                 await context.GetAssociatedStoreProductsAsync(productKinds);
-            workingProgressRing.IsActive = false;
 
             if (queryResult.ExtendedError != null)
             {
                 // The user may be offline or there might be some other server failure.
-                textBlock.Text = $"ExtendedError: {queryResult.ExtendedError.Message}";
+                System.Diagnostics.Debug.WriteLine($"ExtendedError: {queryResult.ExtendedError.Message}");
                 return;
             }
 
@@ -73,7 +72,6 @@ namespace InAppPurchasesAndLicenses_UWP
                         StoreDurationUnit billingPeriodUnit = sku.SubscriptionInfo.BillingPeriodUnit;
                         uint billingPeriod = sku.SubscriptionInfo.BillingPeriod;
                     }
-
                 }
             }
         }

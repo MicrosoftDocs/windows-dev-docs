@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: Debugging, testing, and performance
-description: Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Microsoft Store certification process, use the Windows App Certification Kit.
+description: Use Microsoft Visual Studio and other tools to debug and test your app and prepare it for the Microsoft Store certification process.
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -14,7 +14,7 @@ localizationpriority: medium
 # Debugging, testing, and performance
 
 
-Use Microsoft Visual Studio to debug and test your app. To prepare your app for the Microsoft Store certification process, use the Windows App Certification Kit.
+This section shows you how to use Microsoft Visual Studio to debug, test, and optimize your app. It also includes tools like the Windows Device Portal (for device monitoring and configuration) and the Windows App Certification Kit (to prepare your app for the Microsoft Store).
 
 | Topic | Description |
 |-------|-------------|
