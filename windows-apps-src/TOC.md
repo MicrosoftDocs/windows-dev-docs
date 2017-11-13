@@ -345,6 +345,7 @@
 ### [Connect your app to actions on a contact card](contacts-and-calendar/integrating-with-contacts.md)
 ## [Data access](data-access/index.md)
 ### [Use a SQLite database](data-access/sqlite-databases.md)
+### [Use a SQL Server database](data-access/sql-server-databases.md)
 ## [Data binding](data-binding/index.md)
 ### [Data binding overview](data-binding/data-binding-quickstart.md)
 ### [Data binding in depth](data-binding/data-binding-in-depth.md)

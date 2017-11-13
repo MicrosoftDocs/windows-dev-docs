@@ -33,7 +33,7 @@ We recommend that you use either the Entity Framework Core or the open-source [S
 
 Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can migrate that code to a UWP app and it will work with appropriate changes to the connection string.
 
-To try it out, see [Getting started with EF Core on Universal Windows Platform (UWP) with a New Database](https://docs.microsoft.com/en-us/ef/core/get-started/uwp/getting-started).
+To try it out, see [Getting started with EF Core on Universal Windows Platform (UWP) with a New Database](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started).
 
 ### SQLite library
 
@@ -309,6 +309,10 @@ private void AddData(object sender, RoutedEventArgs e)
 That's it. Explore the [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) to see what other things you can do with your SQLite database. Check out the links below to learn about other ways to use data in your UWP app.
 
 ## Next steps
+
+**Connect your app directly to a SQL Server database**
+
+See [Use a SQL Server database in a UWP app](sql-server-databases.md).
 
 **Share code between different apps across different platforms**
 
