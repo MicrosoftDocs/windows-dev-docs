@@ -1,12 +1,12 @@
 ---
 author: stevewhims
-Description: Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
+Description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
 title: Adjust layout and fonts, and support RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/25/2017
+ms.date: 11/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,14 +14,13 @@ keywords: windows 10, uwp, localizability, localization, rtl, ltr
 localizationpriority: medium
 ---
 
-
 # Adjust layout and fonts, and support RTL
 
-Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction (the direction in which script is written and displayed, and the UI elements on the page are scanned by the eye).
+Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. Flow direction is the direction in which script is written and displayed, and the UI elements on the page are scanned by the eye.
 
 ## Layout guidelines
 
-Languages such as German and Finnish require more space than English for their text. The fonts of languages such as Japanese require more height. And languages such as Arabic and Hebrew require that layout panels and text elements be laid out in right-to-left (RTL) reading order.
+Languages such as German and Finnish typically use more characters than English does. Far Eastern fonts typically require more height. And languages such as Arabic and Hebrew require that layout panels and text elements be laid out in right-to-left (RTL) reading order.
 
 Because of the variable length of translated text, you should use dynamic UI layout mechanisms instead of absolute positioning, fixed widths, or fixed heights. Pseudo-localizing your app will uncover any problematic edge cases where your UI elements don't size to content properly.
 
@@ -47,9 +46,13 @@ You should avoid setting absolute layout values on any UI element based on langu
 <TextBlock x:Uid="TitleText">
 ```
 
+## Fonts
+
+Use the [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live) font-mapping class for programmatic access to the recommended font family, size, weight, and style for a particular language. The **LanguageFont** class provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.
+
 ## Mirroring images
 
-If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, you can use **FlowDirection**.
+If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, then you can use **FlowDirection**.
 
 **XAML**
 ```xml
@@ -60,15 +63,11 @@ If your app has images that must be mirrored (that is, the same image can be fli
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-If your app requires a different image to flip the image correctly, you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
-
-## Fonts
-
-Use the [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live) font-mapping class for programmatic access to the recommended font family, size, weight, and style for a particular language. The **LanguageFont** class provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.
+If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Best practices for handling right-to-left (RTL) languages
 
-When your app is localized for right-to-left (RTL) languages, use APIs to set the default text direction for the root layout panel of your Page. This will cause all of the controls contained within the root panel to respond appropriately to the default text direction. When more than one language is supported, use the `LayoutDirection` for the top preferred language to set the **FlowDirection** property (see code example below). Most controls included in Windows use **FlowDirection** already. If you are implementing custom controls, they should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
+When your app is localized for right-to-left (RTL) languages, use APIs to set the default text direction for the root layout panel of your Page. This causes all of the controls contained within the root panel to respond appropriately to the default text direction. When more than one language is supported, use `LayoutDirection` for the top app runtime language to set the [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see code example below). Most controls included in Windows use **FlowDirection** already. If you are implementing custom controls, they should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
 
 **C#**
 ```csharp    
@@ -121,7 +120,7 @@ else
 ## Important APIs
 
 * [FrameworkElement.FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection)
-* [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
+* [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## Related topics
 

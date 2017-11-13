@@ -1524,6 +1524,16 @@
       "source_path": "windows-apps-src/globalizing/use-patterns-to-format-dates-and-times.md",
       "redirect_url": "/windows/uwp/design/globalizing/use-patterns-to-format-dates-and-times",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/data-access/entity-framework-7-with-sqlite-for-csharp-apps.md",
+      "redirect_url": "https://docs.microsoft.com/ef/core/get-started/uwp/getting-started",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/app-resources/tile-toast-language-scale-contrast.md",
+      "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast",
+      "redirect_document_id": false
     }
   ]
 }

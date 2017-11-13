@@ -42,7 +42,7 @@ Operating system
 
 To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
 
-To check requirements for RAM and operating system, in Control Panel, click **System and Security**, and then click **System**.
+To check requirements for RAM and operating system, in Control Panel, select **System and Security**, and then select **System**.
 
 Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
 
@@ -52,7 +52,7 @@ Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Window
 
 -   **Installing**.
 
-    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio 2015 install. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
     You can also install the Microsoft Emulator for Windows 10 Mobile using the Microsoft Emulator setup. See the [Windows 10 Tools download page](https://go.microsoft.com/fwlink/p/?LinkID=534189).
 
@@ -62,7 +62,7 @@ Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Window
 
     When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
 
-## What’s new in Microsoft Emulator for Windows 10 Mobile
+## What's new in Microsoft Emulator for Windows 10 Mobile
 
 In addition to providing support for Universal Windows Platform (UWP), the emulator has added the following functionality:
 

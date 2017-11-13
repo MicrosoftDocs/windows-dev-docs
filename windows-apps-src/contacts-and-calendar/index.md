@@ -12,7 +12,7 @@ keywords: windows 10, uwp, contacts, calendar, appointments, email messages
 localizationpriority: medium
 ---
 
-# Contacts and calendar
+# Contacts, My People, and calendar
 
 
 You can let your users access their contacts and appointments so they can share content, email, calendar info, or messages with each other, or whatever functionality you design.
@@ -26,7 +26,9 @@ To see a few different ways in which your app can access contacts and appointmen
 | [Send an SMS message](sending-an-sms-message.md) | This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button. |
 | [Manage appointments](managing-appointments.md) | Through the [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) namespace, you can create and manage appointments in a user's calendar app. Here, we'll show you how to create an appointment, add it to a calendar app, replace it in the calendar app, and remove it from the calendar app. We'll also show how to display a time span for a calendar app and create an appointment-recurrence object. |
 | [Connect your app to actions on a contact card](integrating-with-contacts.md) | Shows how to make your app appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message. |
-
+| [Adding My People support to an application](my-people-support.md) | Shows how to add My People support to an application and how to pin and unpin contacts on the taskbar. |
+| [My People sharing](my-people-sharing.md) | Shows how to add support for My People sharing, which lets users share content with their pinned contacts by dragging files from the File Explorer to a My People pin. |
+| [My People notifications](my-people-notifications.md) | Shows how to create and use My People notifications, a new kind of toast notifcation that's sent from a pinned contact. |
  
 
 ## Related topics

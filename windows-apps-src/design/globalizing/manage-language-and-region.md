@@ -9,7 +9,7 @@ ms.date: 11/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, globalization, localizability, localization
 localizationpriority: medium
 ---
 
@@ -119,7 +119,7 @@ There are cases where not all resources need to be localized.
 
 ## Set the HTTP Accept-Language request header
 
-HTTP requests made from UWP apps and Desktop apps in typical web requests, and XMLHttpRequest (XHR), use the standard HTTP Accept-Language request header. By default, the HTTP header is set to the user profile language list. Each language in the list is further expanded to include neutrals of the language and a weighting (q). For example, a user's language list of fr-FR and en-US results in an HTTP Accept-Language request header of fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3").
+Consider whether the web services that you call have the same extent of localization as your app does. HTTP requests made from UWP apps and Desktop apps in typical web requests, and XMLHttpRequest (XHR), use the standard HTTP Accept-Language request header. By default, the HTTP header is set to the user profile language list. Each language in the list is further expanded to include neutrals of the language and a weighting (q). For example, a user's language list of fr-FR and en-US results in an HTTP Accept-Language request header of fr-FR, fr, en-US, en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3"). But if your weather app (for example) is displaying a UI in French (France), but the user's top language in their preference list is German, then you'll need to explicitly request French (France) from the service in order to remain consistent within your app.
 
 ## APIs in the Windows.Globalization namespace
 

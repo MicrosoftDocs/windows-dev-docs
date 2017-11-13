@@ -15,7 +15,7 @@ localizationpriority: medium
 
 Point of service, point of sale, or POS devices are computer peripherals used to facilitate retail transactions. Examples of POS devices include electronic cash registers, barcode scanners, magnetic stripe readers, and receipt printers.
 
-Here you’ll learn the basics of interfacing with POS devices by using the Universal Windows Platform (UWP) POS APIs. We’ll cover device enumeration, checking device capabilities, claiming devices, and device sharing. We use a barcode scanner device as an example, but almost all the guidance here applies to any UWP-compatible POS device. (For a list of supported devices, see [POS Device Support](pos-device-support.md)).
+Here you’ll learn the basics of interfacing with POS devices by using the Universal Windows Platform (UWP) POS APIs. We’ll cover device enumeration, checking device capabilities, claiming devices, and device sharing. We use a barcode scanner device as an example, but almost all the guidance here applies to any UWP-compatible POS device. (For a list of supported devices, see [POS device support](pos-device-support.md)).
 
 ## Finding and connecting to POS peripherals
 

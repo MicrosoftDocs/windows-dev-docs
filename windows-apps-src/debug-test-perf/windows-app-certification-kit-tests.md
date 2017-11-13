@@ -14,7 +14,7 @@ localizationpriority: medium
 # Windows App Certification Kit tests
 
 
-The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Microsoft Store.
+The [Windows App Certification Kit](windows-app-certification-kit.md) contains a number of tests that help ensure your app is ready to be published to the Microsoft Store. The tests are listed below with their criteria, details, and suggested actions in the case of failure.
 
 ## Deployment and launch tests
 
