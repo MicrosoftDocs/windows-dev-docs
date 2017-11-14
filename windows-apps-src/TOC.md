@@ -1049,6 +1049,7 @@
 #### [How to disable mouse mode](xbox-apps/how-to-disable-mouse-mode.md)
 #### [How to turn off scaling](xbox-apps/disable-scaling.md)
 #### [How to turn off overscan](xbox-apps/turn-off-overscan.md)
+### [Using speech to invoke UI elements](xbox-apps/ves-on-xbox.md)
 ### [System resource allocation](xbox-apps/system-resource-allocation.md)
 ### [Introduction to multi-user applications](xbox-apps/multi-user-applications.md)
 ### [Bringing existing games to Xbox](xbox-apps/development-lanes-landing.md)
