@@ -11,7 +11,7 @@
 ### [What's new in the Windows docs, August 2017](whats-new/windows-docs-august-2017.md)
 ### [What's new in the Windows docs, July 2017](whats-new/windows-docs-july-2017.md)
 
-# Get started with the Universal Windows Platform
+# Get started
 ## [What's a UWP app?](get-started/whats-a-uwp.md)
 ## [Intro to UWP](get-started/universal-application-platform-guide.md)
 ## [Get set up](get-started/get-set-up.md)
@@ -263,7 +263,7 @@
 #### [External help](design/in-app-help/external-help.md)
 ## [Design toolkits](design/downloads/index.md)
 
-# Develop Windows apps
+# Develop apps
 ## [App resources](app-resources/index.md)
 ### [Resource Management System](app-resources/resource-management-system.md)
 ### [How the RMS matches and chooses resources](app-resources/how-rms-matches-and-chooses-resources.md)
@@ -1136,7 +1136,7 @@
 #### [/ext/xboxlive/sandbox](xbox-apps/wdp-sandbox-api.md)
 ## [Xbox Live](xbox-live/TOC.md)
 
-# Publish Windows apps
+# Publish
 ## [Overview](publish/index.md)
 ## [Using the Windows Dev Center dashboard](publish/using-the-windows-dev-center-dashboard.md)
 ### [Account types, locations, and fees](publish/account-types-locations-and-fees.md)

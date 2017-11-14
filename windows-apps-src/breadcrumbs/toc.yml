@@ -96,16 +96,7 @@
                       topicHref: "/windows/uwp/enterprise/index"                      
                     - name: Files, folders, and libraries 
                       tocHref: /windows/uwp/files/
-                      topicHref: "/windows/uwp/files/index"                 
-                    - name: Game programming
-                      tocHref: /windows/uwp/gaming/
-                      topicHref: "/windows/uwp/gaming/index" 
-                    - name: DirectX programming
-                      tocHref: /windows/uwp/directx-programming/
-                      topicHref: "/windows/uwp/directx-programming/index"                 
-                    - name: Direct3D graphics learning guide
-                      tocHref: /windows/uwp/graphics-concepts/
-                      topicHref: "/windows/uwp/graphics-concepts/index"         
+                      topicHref: "/windows/uwp/files/index"                       
                     - name: Graphics
                       tocHref: /windows/uwp/graphics/
                       topicHref: "/windows/uwp/graphics/index" 
@@ -136,9 +127,6 @@
                     - name: Threading and async programming
                       tocHref: /windows/uwp/threading-async/
                       topicHref: "/windows/uwp/threading-async/index"  
-                    - name: UWP on Xbox One
-                      tocHref: /windows/uwp/xbox-apps/
-                      topicHref: "/windows/uwp/xbox-apps/index"
                     - name: Visual layer 
                       tocHref: /windows/uwp/visual-layer/
                       topicHref: "/windows/uwp/visual-layer/index"                 
@@ -159,14 +147,27 @@
                       topicHref: "/windows/uwp/choose-a-uwp-version/index"  
                     - name: Services
                       tocHref: /windows/uwp/microsoft-services/
-                      topicHref: "/windows/uwp/microsoft-services/index"
-                    - name: Windows 8.x guides
-                      tocHref: "https://msdn.microsoft.com/library/windows/apps/mt244353.aspx"
-                      topicHref: "https://msdn.microsoft.com/library/windows/apps/mt244353.aspx"                 
-                    - name: Windows Phone Silverlight 8.x guides
-                      tocHref: "https://msdn.microsoft.com/library/windows/apps/ff402535.aspx"
-                      topicHref: "https://msdn.microsoft.com/library/windows/apps/ff402535.aspx"                        
-              - name: Publish windows apps
+                      topicHref: "/windows/uwp/microsoft-services/index" 
+              - name: Develop games
+                tocHref: /windows/uwp/gaming/
+                topicHref: "/windows/uwp/gaming/e2e" 
+                items:   
+                    - name: UWP on Xbox One
+                      tocHref: /windows/uwp/xbox-apps/
+                      topicHref: "/windows/uwp/xbox-apps/index"                 
+                    - name: Game programming
+                      tocHref: /windows/uwp/gaming/
+                      topicHref: "/windows/uwp/gaming/index"                    
+                    - name: DirectX programming
+                      tocHref: /windows/uwp/directx-programming/
+                      topicHref: "/windows/uwp/directx-programming/index"                 
+                    - name: Direct3D graphics learning guide
+                      tocHref: /windows/uwp/graphics-concepts/
+                      topicHref: "/windows/uwp/graphics-concepts/index"   
+                    - name: Xbox Live
+                      tocHref: /windows/uwp/xbox-live/
+                      topicHref: "/windows/uwp/xbox-live/index"                        
+              - name: Publish
                 tocHref: /windows/uwp/publish/
                 topicHref: "/windows/uwp/publish/index" 
                                      
