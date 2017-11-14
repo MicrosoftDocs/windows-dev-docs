@@ -6,7 +6,7 @@ ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 11/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -122,11 +122,11 @@ else
 
 To create and update a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `localFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
 
-```CSharp
+```csharp
 async void WriteTimestamp()
 {
    Windows.Globalization.DateTimeFormatting.DateTimeFormatter formatter = 
-       new Windows.Globalization.DatetimeFormatting.DateTimeFormatter("longtime");
+       new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longtime");
 
    StorageFile sampleFile = await localFolder.CreateFileAsync("dataFile.txt", 
        CreationCollisionOption.ReplaceExisting);
@@ -136,7 +136,7 @@ async void WriteTimestamp()
 
 To open and read a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
 
-```CSharp
+```csharp
 async void ReadTimestamp()
 {
    try
@@ -214,7 +214,7 @@ To use roaming app data, you need to register for roaming data changes and retri
 
     The [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
 
-```    CSharp
+```csharp
 void InitHandlers()
     {
        Windows.Storage.ApplicationData.Current.DataChanged += 
@@ -231,7 +231,7 @@ void InitHandlers()
 
     Use the [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) property to get the settings and the [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) property to get the files.
 
-```    CSharp
+```csharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
         Windows.Storage.ApplicationData.Current.RoamingSettings;
     Windows.Storage.StorageFolder roamingFolder = 
@@ -242,7 +242,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 Use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
 
-```CSharp
+```csharp
 // Simple setting
 
 roamingSettings.Values["exampleSetting"] = "Hello World";
@@ -262,7 +262,7 @@ roamingSettings.Values["exampleCompositeSetting"] = composite;
 
 This example retrieves the settings we just created.
 
-```CSharp
+```csharp
 // Simple setting
 
 Object value = roamingSettings.Values["exampleSetting"];
@@ -286,7 +286,7 @@ else
 
 To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
 
-```CSharp
+```csharp
 async void WriteTimestamp()
 {
    Windows.Globalization.DateTimeFormatting.DateTimeFormatter formatter = 
@@ -300,7 +300,7 @@ async void WriteTimestamp()
 
 To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
 
-```CSharp
+```csharp
 async void ReadTimestamp()
 {
    try
@@ -326,7 +326,7 @@ The temporary app data store works like a cache. Its files do not roam and could
 
 Use the [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property to get the files. The next steps use the `temporaryFolder` variable from this step.
 
-```CSharp
+```csharp
 Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;</code></pre></td>
 </tr>
 </tbody>
@@ -338,7 +338,7 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 To create and update a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `temporaryFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
 
 
-```CSharp
+```csharp
 <colgroup>
 <col width="100%" />
 </colgroup>
@@ -362,7 +362,7 @@ async void WriteTimestamp()
 
 To open and read a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
 
-```CSharp
+```csharp
 async void ReadTimestamp()
 {
    try
@@ -385,7 +385,7 @@ To help you organize your app data settings and files, you create containers (re
 
 To create a settings container, call the [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) method. This example creates a local settings container named `exampleContainer` and adds a setting named `exampleSetting`. The **Always** value from the [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) enumeration indicates that the container is created if it doesn't already exist.
 
-```CSharp
+```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
     Windows.Storage.ApplicationData.Current.LocalSettings;
 Windows.Storage.StorageFolder localFolder = 
@@ -406,7 +406,7 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 
 To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) method. This example deletesthe `exampleSetting` local setting that we created earlier.
 
-```CSharp
+```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
     Windows.Storage.ApplicationData.Current.LocalSettings;
 Windows.Storage.StorageFolder localFolder = 
@@ -419,7 +419,7 @@ localSettings.Values.Remove("exampleSetting");
 
 To delete a composite setting, use the [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) method. This example deletes the local `exampleCompositeSetting` composite setting we created in an earlier example.
 
-```CSharp
+```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
     Windows.Storage.ApplicationData.Current.LocalSettings;
 Windows.Storage.StorageFolder localFolder = 
@@ -432,7 +432,7 @@ localSettings.Values.Remove("exampleCompositeSetting");
 
 To delete a container, call the [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) method. This example deletes the local `exampleContainer` settings container we created earlier.
 
-```CSharp
+```csharp
 Windows.Storage.ApplicationDataContainer localSettings = 
     Windows.Storage.ApplicationData.Current.LocalSettings;
 Windows.Storage.StorageFolder localFolder = 
