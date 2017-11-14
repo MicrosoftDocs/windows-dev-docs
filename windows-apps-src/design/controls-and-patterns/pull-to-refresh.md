@@ -148,7 +148,7 @@ When the list is pulled down, RefreshableListView's `PullProgressChanged` event 
 
 The list view control template includes a built-in [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that lets a user scroll through the list items. To implement pull-to-refresh, you have to handle the manipulation events on the built-in scroll viewer, as well as several related events. For more info about manipulation events, see [Touch interactions](../input/touch-interactions.md).
 
-** OnApplyTemplate**
+**OnApplyTemplate**
 
 To get access to the scroll viewer and other template parts so that you can add event handlers and call them later in your code, you must override the [OnApplyTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) method. In OnApplyTemplate, you call [GetTemplateChild](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) to get a reference to a named part in the control template, which you can save to use later in your code.
 
