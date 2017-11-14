@@ -62,11 +62,5 @@ Most localization teams use special tools to aid the process. For example, by re
 | [Make your app localizable](prepare-your-app-for-localization.md) | A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources. |
 | [International fonts](loc-international-fonts.md) | This topic lists the fonts available for UWP apps that are localized into languages other than U.S. English. |
 | [Design your app for bidirectional text](design-for-bidi-text.md) | Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems. |
-
-Also see the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
-
--   [Globalizing your app](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
--   [Language matching](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
--   [NumeralSystem values](https://msdn.microsoft.com/library/windows/apps/xaml/jj236471.aspx)
--   [International fonts](https://msdn.microsoft.com/library/windows/apps/xaml/dn263115.aspx)
--   [App resources and localization](https://msdn.microsoft.com/library/windows/apps/xaml/hh710212.aspx)
+| [Use the Multilingual App Toolkit 4.0](use-mat.md) | The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. |
+| [Multilingual App Toolkit 4.0 FAQ & troubleshooting](mat-faq-troubleshooting.md) | This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0. |

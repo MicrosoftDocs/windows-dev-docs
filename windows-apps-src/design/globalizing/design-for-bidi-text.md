@@ -2,7 +2,6 @@
 author: stevewhims
 Description: Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.
 title: Design your app for bidirectional text
-label: Use patterns to format dates and times
 template: detail.hbs
 ms.author: stwhi
 ms.date: 11/10/2017
@@ -130,8 +129,8 @@ Manipulating the alignment across the app can look simple, but it often exposes 
 
 | | English String (LTR) | Hebrew String (RTL) |
 | -------------- | ------------------- | ------------------- |
-| **Left-alignment** | Hello World! | בוקר טוב! |
-| **Right-alignment** | !Hello World | !בוקר טוב |
+| **Left-alignment** | Hello, World! | בוקר טוב! |
+| **Right-alignment** | !Hello, World | !בוקר טוב |
 
 To ensure that artist information is properly displayed across the music app, the development team separated text layout properties from alignment. In other words, the artist info might be displayed as right-aligned in many of the cases, but the string layout adjustment is set based on customized background processing. The background processing determines the best directional layout setting based on the content of the string.
 
