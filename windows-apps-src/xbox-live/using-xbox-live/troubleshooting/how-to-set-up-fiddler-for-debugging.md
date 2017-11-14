@@ -16,7 +16,7 @@ localizationpriority: medium
 
 Fiddler is a web debugging proxy which logs all HTTP and HTTPS traffic between your device and the Internet. You will use it to log and inspect traffic to and from the Xbox Live services and relying party web services, to understand and debug web service calls.
 
-## For Windows UWP apps
+## For Windows UWP PC apps
 
 1. Make sure that the current user is in the administrator group on the PC
 1. Download Fiddler from [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
@@ -35,6 +35,10 @@ To undo this, do:
 ```cpp
     netsh winhttp reset proxy
 ```
+
+## For Xbox One UWP based projects
+
+Follow the steps here [https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/uwp-fiddler)
 
 ## For Xbox One XDK based projects
 
