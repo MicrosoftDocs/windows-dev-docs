@@ -15,6 +15,7 @@ localizationpriority: medium
 ---
 # Send a local toast notification
 
+
 A toast notification is a message that an app can construct and deliver to the user while he/she is not currently inside your app. This Quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification with the new adaptive templates and interactive actions. These actions are demonstrated through a local notification, which is the simplest notification to implement. We will go through the following things:
 
 ### Sending a toast
@@ -30,6 +31,8 @@ A toast notification is a message that an app can construct and deliver to the u
 * Handling activation when the body or buttons are clicked
 * Handling foreground activation
 * Handling background activation
+
+> **Important APIs**: [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification), [ToastNotificationActivatedEventArgs Class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 ## Prerequisites
@@ -180,7 +183,7 @@ ToastActionsCustom actions = new ToastActionsCustom()
 
 ### Combining the above to construct the full content
 
-The construction of the content is now complete, and we can use it to instantiate your ToastNotification object.
+The construction of the content is now complete, and we can use it to instantiate your [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification) object.
 
 **Note**: you can also provide an activation type inside the root element, to specify what type of activation needs to happen when the user taps on the body of the toast notification. Normally, tapping the body of the toast should launch your app in the foreground to create a consistent user experience, but you can use other activation types to fit your specific scenario where it makes most sense to the user.
 
@@ -226,7 +229,7 @@ If you ever want to programmatically remove or replace the notification you send
 
 To see more details on replacing/removing already delivered toast notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn631260.aspx).
 
-Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```csharp
 toast.Tag = "18365";
@@ -236,7 +239,7 @@ toast.Group = "wallPosts";
 
 ## Send the notification
 
-Once you have your toast constructed, simply create a ToastNotifier and call Show(), passing in your toast notification.
+Once you have your toast constructed, simply create a [ToastNotifier](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotifier) and call Show(), passing in your toast notification.
 
 ```
 ToastNotificationManager.CreateToastNotifier().Show(toast);
@@ -253,7 +256,7 @@ Here’s an example of what a messaging app should do…
 
 1. User receives multiple toasts about new messages in a conversation
 2. User taps one of those toasts to open the conversation
-3. The app opens the conversation and then clears all toasts for that conversation (by using [RemoveGroup](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) on the app-supplied group for that conversation)
+3. The app opens the conversation and then clears all toasts for that conversation (by using [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) on the app-supplied group for that conversation)
 4. User’s Action Center now properly reflects the notification state, since there are no stale notifications for that conversation left in Action Center.
 
 To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn631260.aspx).
@@ -402,7 +405,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 ## Plain "Vanilla" code snippets
 
-If you're not using the Notifications library from NuGet, you can manually construct your XML as seen below to create a ToastNotification.
+If you're not using the Notifications library from NuGet, you can manually construct your XML as seen below to create a [ToastNotification](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification).
 
 ```csharp
 using Windows.UI.Notifications;
@@ -487,3 +490,5 @@ var toast = new ToastNotification(toastXml);
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-toast)
 * [Toast content documentation](adaptive-interactive-toasts.md)
+* [ToastNotification Class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+* [ToastNotificationActivatedEventArgs Class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)

@@ -40,6 +40,16 @@ For developers in the Xbox Live Creators Program that are using Unity to develop
 
 * [Xbox Live Unity plug-in](https://github.com/Microsoft/xbox-live-unity-plugin)
 
+## Xbox Live Platform Extensions SDK
+
+This package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform. This extension will enable the use of Connected Storage in your UWP titles through use of the Windows.Gaming.XboxLive.Storage namespace.
+
+* [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)
+
+> [!NOTE]
+> - This download is not required if your developer environment is using the Windows 10 Fall Creators Update SDK or later.
+> - Secure Sockets are not available to developers in the Xbox Live Creators Program.
+
 ## Xbox Live tools
 
 There are several useful tools that you can download from GitHub to help you while you are developing your Xbox Live enabled game.

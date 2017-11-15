@@ -320,7 +320,7 @@ Many users will require an extra-high level of contrast to differentiate between
 
 ### Transparency
 
-Adding transparency effects to elements like the new [acrylic](acrylic.md) brush can make your app more exciting and help establish a visual heirarchy, but be aware of how these effects can affect accessibility. A translucent background with low opacity could make foreground text hard to read if an element moves behind it with low contrast to the text. Make sure that foreground elements are still legible, no matter how their background shifts.
+Adding transparency effects to elements like the new [acrylic](acrylic.md) brush can make your app more exciting and help establish a visual hierarchy, but be aware of how these effects can affect accessibility. A translucent background with low opacity could make foreground text hard to read if an element moves behind it with low contrast to the text. Make sure that foreground elements are still legible, no matter how their background shifts.
 
 ### Lighting
 
