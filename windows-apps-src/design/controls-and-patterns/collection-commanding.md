@@ -387,10 +387,10 @@ The SwipeItems can be defined as a Resource in the PodcastUserControl. In this e
 </UserControl.Resources>
 ```
 
-The SwipeContainer wraps the item and allows the user to interact with it using the swipe gesture. Notice that the SwipeContainer contains a reference to the SwipeContent as its RightContent. The Favorite item will show when the user swipes from right to left.
+The SwipeControl wraps the item and allows the user to interact with it using the swipe gesture. Notice that the SwipeControl contains a reference to the SwipeItems as its RightItems. The Favorite item will show when the user swipes from right to left.
 
 ```xaml
-<SwipeControl x:Name="swipeContainer" RightContent="{StaticResource RevealOtherCommands}">
+<SwipeControl x:Name="swipeContainer" RightItems="{StaticResource RevealOtherCommands}">
    <!-- The visual state groups moved from the Grid to the SwipeControl, since the SwipeControl wraps the Grid. -->
    <VisualStateManager.VisualStateGroups>
        <VisualStateGroup x:Name="HoveringStates">
