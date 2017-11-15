@@ -75,6 +75,9 @@
 ### [Fade](design/motion/motion-fade.md)
 ### [Parallax](design/motion/parallax.md)
 ### [Press feedback](design/motion/motion-pointer.md)
+### [Animations in XAML](design/motion/xaml-animation.md)
+#### [Storyboarded animations](design/motion/storyboarded-animations.md)
+#### [Key-frame and easing function animations](design/motion/key-frame-and-easing-function-animations.md)
 
 ## Layout
 ### [Overview](design/layout/index.md)
@@ -452,9 +455,6 @@
 ### [Fast access to file properties in UWP](files/fast-file-properties.md)
 ## [Graphics and animation](graphics/index.md)
 ### [Draw shapes](graphics/drawing-shapes.md)
-### [Animations overview](graphics/animations-overview.md)
-#### [Storyboarded animations](graphics/storyboarded-animations.md)
-#### [Key-frame and easing function animations](graphics/key-frame-and-easing-function-animations.md)
 ### [Transforms overview](graphics/transforms-overview.md)
 #### [3-D perspective effects for XAML UI](graphics/3-d-perspective-effects.md)
 ## [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
