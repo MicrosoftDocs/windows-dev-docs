@@ -12,9 +12,31 @@ keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows
 localizationpriority: medium
 ---
 # Universal Windows Platform documentation
-The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ€”PCs, phones, Xbox One, HoloLens, and moreâ€”and publish them to the Store.
+The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ€”PCs, phones, Xbox One, HoloLens, and moreâ€”and publish them to the Microsoft Store.
 
 <ul class="panelContent cardsF">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_get-started.svg" alt="What's new icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>What's new</h3>
+                        <p>
+                            <a href="whats-new/windows-10-build-16299.md">New APIs and features</a>
+                        </p>
+                        <p>
+                            <a href="whats-new/windows-docs-latest.md">What's new in the docs</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -55,23 +77,17 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                     <div class="cardText">
                         <h3>Design and UI</h3>
                         <p>
-                            <a href="design/layout/index.md">Layout</a>
+                            <a href="design/basics/design-and-ui-intro.md">Design basics</a>
                         </p>
-                        <p>
-                            <a href="design/style/index.md">Style</a>
+                         <p>
+                            <a href="design/fluent-design-system/index.md">Fluent Design System</a>
                         </p>
                         <p>
                             <a href="design/controls-and-patterns/index.md">Controls and patterns</a>
                         </p>
                         <p>
                             <a href="design/downloads/index.md">Design toolkits</a>
-                        </p>
-                        <p>
-                            <a href="design/input/index.md">Input</a>
-                        </p>
-                        <p>
-                            <a href="design/devices/index.md">Devices</a>
-                        </p>                        
+                        </p>                      
                     </div>
                 </div>
             </div>
@@ -87,7 +103,10 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Develop great apps</h3>
+                        <h3>Develop apps</h3>
+                        <p>
+                            <a href="enterprise/index.md">Enterprise apps</a>
+                        </p>
                         <p>
                             <a href="packaging/index.md">Packaging apps</a>
                         </p>
@@ -98,16 +117,44 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                             <a href="winrt-components/index.md">Windows Runtime components</a>
                         </p>
                         <p>
-                            <a href="xbox-apps/index.md">UWP on Xbox One</a>
-                        </p>
-                        <p>
-                            <a href="apps-for-education/index.md">UWP education apps</a>
+                            <a href="apps-for-education/index.md">Education apps</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_code-edit.svg" alt="Develop icon" />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>Develop games</h3>
+                        <p>
+                            <a href="gaming/e2e.md">Windows 10 game development guide</a>
+                        </p>
+                        <p>
+                            <a href="gaming/index.md">Game programming</a>
+                        </p>
+                        <p>
+                            <a href="gaming/directx-programming.md">DirectX programming</a>
+                        </p>
+                        <p>
+                            <a href="xbox-apps/index.md">UWP on Xbox One</a>
+                        </p>
+                        <p>
+                            <a href="xbox-live/TOC.md">Xbox Live</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>    
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -151,11 +198,17 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                     <div class="cardText">
                         <h3>API reference</h3>
                         <p>
-                            <a href="whats-new/windows-10-version-1703.md">What's new</a>
-                        </p>
-                        <p>
                             <a href="//docs.microsoft.com/uwp/">Universal Windows Platform APIs</a>
                         </p>
+                        <p>
+                            <a href="//docs.microsoft.com/uwp/API">Windows UWP namespaces</a>
+                        </p>
+                        <p>
+                            <a href="//docs.microsoft.com/uwp/extension-sdks">Extension SDKs</a>
+                        </p>  
+                        <p>
+                            <a href="//docs.microsoft.com/uwp/schemas">Schemas</a>
+                        </p>                                               
                     </div>
                 </div>
             </div>

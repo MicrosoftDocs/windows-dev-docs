@@ -40,9 +40,10 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 * If you're new to Universal Windows Platform (UWP) app development with Visual Studio, have a look through these topics before you start this tutorial:  
     * [Get set up](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)
     * [Create a "Hello, world" app (XAML)](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
-* **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.  
-   > [!NOTE] 
-   > While Windows Ink can support drawing with a mouse and touch (we show how to do this in Step 3 of this tutorial) for an optimal Windows Ink experience, we recommend that you have a digital pen and a computer with a display that supports input from that digital pen.
+* **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
+
+> [!NOTE] 
+> While Windows Ink can support drawing with a mouse and touch (we show how to do this in Step 3 of this tutorial) for an optimal Windows Ink experience, we recommend that you have a digital pen and a computer with a display that supports input from that digital pen.
 
 ## Sample code
 Throughout this tutorial, we use a sample ink app to demonstrate the concepts and functionality discussed.
@@ -77,11 +78,11 @@ After you've downloaded the RadialController sample app, verify that it runs:
 
    > [!NOTE]
    > Alternatively, you can select **Debug** > **Start debugging** menu item, or select the **Local Machine** Run button shown here.
-   > ![Visual Studio Build project button](images/ink/ink-vsrun.png)
+   > ![Visual Studio Build project button](images/ink/ink-vsrun-small.png)
 
 The app window opens, and after a splash screen appears for a few seconds, you’ll see this initial screen.
 
-![Empty app](images/ink/ink-app-step1-empty.png)
+![Empty app](images/ink/ink-app-step1-empty-small.png)
 
 Okay, we now have the basic UWP app that we’ll use throughout the rest of this tutorial. In the following steps, we add our ink functionality.
 
@@ -120,7 +121,7 @@ That's it!
 
 Now run the app again. Go ahead and scribble, write your name, or (if you're holding a mirror or have a very good memory) draw your self-portrait.
 
-![Basic inking](images/ink/ink-app-step1-name.png)
+![Basic inking](images/ink/ink-app-step1-name-small.png)
 
 ## Step 3: Support inking with touch and mouse
 
@@ -178,18 +179,25 @@ To add a default [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.
 
 Now run the app again to see the [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) and try out some of the tools.
 
-![InkToolbar from Sketchpad ing the Ink Workspace](images/ink/ink-inktoolbar-default.png)
+![InkToolbar from Sketchpad ing the Ink Workspace](images/ink/ink-inktoolbar-default-small.png)
 
 ### Challenge: Add a custom button
 <table class="wdg-noborder">
 <tr>
- <td width=125><img src="images/challenge-icon.png"></td>
-    <td width=500>Here's an example of a custom <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a></strong> (from Sketchpad in the Windows Ink Workspace).
+<td>
 
-![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad.png)
+![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+
+</td>
+<td>
+
+Here's an example of a custom <strong><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a></strong> (from Sketchpad in the Windows Ink Workspace).
+
+![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 For more details about customizing an [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Universal Windows Platform (UWP) inking app](https://docs.microsoft.com/en-us/windows/uwp/input/ink-toolbar).
 
+</td>
 </tr>
 </table>
 
@@ -203,9 +211,9 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 > Handwriting recognition can be improved through the **Pen & Windows Ink** settings:
 > 1. Open the Start menu and select **Settings**.
 > 2. From the Settings screen select **Devices** > **Pen & Windows Ink**.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-large.png)
+> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-small.png)
 > 3. Select **Get to know my handwriting** to open the **Handwriting Personalization** dialog.
-> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-large.png)
+> ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### In the sample:
 1. Open the MainPage.xaml file.
@@ -274,20 +282,38 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 ### Challenge 1: International recognition
 <table class="wdg-noborder">
 <tr>
- <td width=125><img src="images/challenge-icon.png"></td>
-    <td width=500><p>Windows Ink supports text recognition for many of the of the languages supported by Windows. Each language pack includes a handwriting recognition engine that can be installed with the language pack.</p>
-    <p>Target a specific language by querying the installed handwriting recognition engines.</p>
-    <p>For more details about international handwriting recognition, see <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Recognize Windows Ink strokes as text</a>.</p>
+<td>
+
+![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+
+</td>
+<td>
+
+<p>Windows Ink supports text recognition for many of the of the languages supported by Windows. Each language pack includes a handwriting recognition engine that can be installed with the language pack.</p>
+
+<p>Target a specific language by querying the installed handwriting recognition engines.</p>
+
+<p>For more details about international handwriting recognition, see <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Recognize Windows Ink strokes as text</a>.</p>
+
+</td>
 </tr>
 </table>
 
 ### Challenge 2: Dynamic recognition
 <table class="wdg-noborder">
 <tr>
- <td width=125><img src="images/challenge-icon.png"></td>
-    <td width=500><p>For this tutorial, we require that a button be pressed to initiate recognition. You can also perform dynamic recognition by using a basic timing function.</p>
+<td>
 
-For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](https://docs.microsoft.com/en-us/windows/uwp/input/convert-ink-to-text).
+![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+
+</td>
+<td>
+
+<p>For this tutorial, we require that a button be pressed to initiate recognition. You can also perform dynamic recognition by using a basic timing function.</p>
+
+<p>For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](https://docs.microsoft.com/en-us/windows/uwp/input/convert-ink-to-text).</p>
+
+</td>
 </tr>
 </table>
 
@@ -356,11 +382,11 @@ For this example, we don't attempt to redraw ink strokes (although that's possib
 
 Here's an example of a rudimentary flowchart from a digital napkin.
 
-![Original ink flowchart](images/ink/ink-app-step6-shapereco1.png)
+![Original ink flowchart](images/ink/ink-app-step6-shapereco1-small.png)
 
 Here's the same flowchart after shape recognition.
 
-![Original ink flowchart](images/ink/ink-app-step6-shapereco2.png)
+![Original ink flowchart](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## Step 7: Save and load ink
@@ -413,10 +439,19 @@ In this step, we hook up the **Save** and **Load** buttons located beside the in
 ### Challenge: Use the clipboard to copy and paste ink strokes 
 <table class="wdg-noborder">
 <tr>
- <td width=125><img src="images/challenge-icon.png"></td>
-    <td width=500><p>Windows ink also supports copying and pasting ink strokes to and from the clipboard.
+<td>
 
-For more details about using the clipboard with ink, see [Store and retrieve Windows Ink stroke data](https://docs.microsoft.com/en-us/windows/uwp/input/save-and-load-ink).
+![InkToolbar from Sketchpad in the Ink Workspace](images/challenge-icon.png)
+
+</td>
+
+<td>
+
+<p>Windows ink also supports copying and pasting ink strokes to and from the clipboard.</p>
+
+<p>For more details about using the clipboard with ink, see <a href="https://docs.microsoft.com/en-us/windows/uwp/input/save-and-load-ink">Store and retrieve Windows Ink stroke data</a>.</p>
+
+</td>
 </tr>
 </table>
 

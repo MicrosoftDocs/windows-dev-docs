@@ -283,7 +283,7 @@ ToastContent toastContent = new ToastContent()
 
 This additional content is specified using Adaptive, which you can learn more about by reading the [Adaptive Tiles documentation](create-adaptive-tiles.md).
 
-Note that any adaptive content must be contained within an AdaptiveGroup. Otherwise it will not be rendered using adaptive.
+Note that any adaptive content must be contained within an [AdaptiveGroup](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup). Otherwise it will not be rendered using adaptive.
 
 
 ### Columns and text elements
@@ -409,10 +409,10 @@ ToastContent content = new ToastContent()
 
     <actions>
 
-        <input id="textBox" type="text" placeholderContent="Type a reply"/>
+        <input id="textBox" type="text" placeHolderContent="Type a reply"/>
 
         <action
-            content="Send",
+            content="Send"
             arguments="action=reply&amp;convId=9318"
             activationType="background"
             hint-inputId="textBox"
@@ -468,15 +468,15 @@ ToastContent content = new ToastContent()
 
     <actions>
 
-        <input id="textBox" type="text" placeholderContent="Type a reply"/>
+        <input id="textBox" type="text" placeHolderContent="Type a reply"/>
 
         <action
-            content="Reply",
+            content="Reply"
             arguments="action=reply&amp;threadId=9218"
             activationType="background"/>
 
         <action
-            content="Video call",
+            content="Video call"
             arguments="action=videocall&amp;threadId=9218"
             activationType="foreground"/>
 
@@ -584,12 +584,12 @@ ToastContent content = new ToastContent()
     <actions>
 
         <action
-            content="See more details",
+            content="See more details"
             arguments="action=viewdetails&amp;contentId=351"
             activationType="foreground"/>
 
         <action
-            content="Remind me later",
+            content="Remind me later"
             arguments="action=remindlater&amp;contentId=351"
             activationType="background"/>
 

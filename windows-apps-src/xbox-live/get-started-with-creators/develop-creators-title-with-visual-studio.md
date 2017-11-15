@@ -107,31 +107,34 @@ You can enter "Xbox Live" (without quotes) in the search field in NuGet and you 
 
 ![](../images/getting_started/first_vstitle_nuget_xbox.png)
 
-The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT.  
+The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT.
 
 Choose between `Microsoft.Xbox.Live.SDK.*.UWP` and `Microsoft.Xbox.Live.SDK.*.XboxOneXDK`.  `XboxOneXDK` is for ID@Xbox and Managed developers who are using the Xbox One XDK.  `UWP` is for UWP games which can run on either PC, the Xbox One, or Windows Phone.  You can read more about running UWP on Xbox One in
  [Getting started with UWP app development on Xbox One.](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)
 
-Choose between `Microsoft.Xbox.Live.SDK.Cpp.*` and `Microsoft.Xbox.Live.SDK.WinRT.*`. `Cpp` is for C++ game engines using the Xbox Live APIs.  `WinRT` is for game engines written with C++, C#, or Javascript using the Xbox Live APIs.  
+Choose between `Microsoft.Xbox.Live.SDK.Cpp.*` and `Microsoft.Xbox.Live.SDK.WinRT.*`. `Cpp` is for C++ game engines using the Xbox Live APIs.  `WinRT` is for game engines written with C++, C#, or Javascript using the Xbox Live APIs.
 
 If you are part of the Xbox Live Creators Program, you can use any of these options:
 * Microsoft.Xbox.Live.SDK.Cpp.UWP for C++ UWP game engines.
-* Microsoft.Xbox.Live.SDK.WinRT.UWP for C# or JavaScript UWP game engines. When using WinRT with a C++ engine, you can use C++/CX which uses hats (^).  Microsoft.Xbox.Live.SDK.Cpp.UWP is the recommended API to use for C++ game engines.   
+* Microsoft.Xbox.Live.SDK.WinRT.UWP for C# or JavaScript UWP game engines. When using WinRT with a C++ engine, you can use C++/CX which uses hats (^).  Microsoft.Xbox.Live.SDK.Cpp.UWP is the recommended API to use for C++ game engines.
 * Unity.  See the [Develop a Creators title with Unity](develop-creators-title-with-unity.md) article for specifics.
 
 ### (Optional) Install the Xbox Live Platform Extensions SDK
 
-If you want to use Connected Storage, you will need to download the Xbox Live Platform Extensions SDK zip file from [http://aka.ms/xblextsdk](http://aka.ms/xblextsdk).
+> [!NOTE]
+> Downloading the Xbox Live Platform Extensions SDK is unnecessary for development on a build using the Windows 10 Fall Creators Update SDK or later.
 
-> [!NOTE] 
-> If you are in the Xbox Live Creators Program, you do not have access to Secure Sockets.  You may use Connected Storage however.
+If you want to use Connected Storage, you will need to download the [Xbox Live Platform Extensions SDK zip file](http://aka.ms/xblextsdk).
 
-After you download the zip file, extract the contents to a folder of your choice and install the MSI.  
+After you download the zip file, extract the contents to a folder of your choice and install the MSI.
 The package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform.
 
 After you have installed the Xbox Live Platform Extensions SDK, you can use Visual Studio to add a reference to the Extensions SDK and use the following namespaces in your Universal Windows Platform (UWP) game:
 
 - Windows.Gaming.XboxLive.Storage
+
+> [!NOTE]
+> If you are in the Xbox Live Creators Program, you do not have access to Secure Sockets.
 
 ### 3. Associate your Visual Studio project with your UWP app
 
