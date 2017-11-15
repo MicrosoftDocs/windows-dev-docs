@@ -374,25 +374,24 @@ The buttons displayed in the hover state will only be accessible via the pointer
 
 Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](swipe.md) article to learn more.
 
-In order to integrate swipe into your collection, you need two components: a SwipeContent which hosts the commands, and a SwipeContainer which wraps the item and allows for swipe interaction.
+In order to integrate swipe into your collection, you need two components: SwipeItems, which hosts the commands; and a SwipeControl, which wraps the item and allows for swipe interaction.
 
-The SwipeContent can be defined as a Resource in the PodcastUserControl. In this example, the SwipeContent contains a command to Favorite an item.
+The SwipeItems can be defined as a Resource in the PodcastUserControl. In this example, SwipeItems contains a command to Favorite an item.
 
 ```xaml
 <UserControl.Resources>
-    <preview:SwipeContent x:Key="RevealOtherCommands" Mode="Reveal">
-        <preview:SwipeContent.Items>
-            <preview:SwipeItem Icon="&#xE1CE;" Text="Favorite" Background="Yellow" Invoked="SwipeItem_Invoked"/>
-        </preview:SwipeContent.Items>
-    </preview:SwipeContent>
+    <SymbolIconSource x:Key="FavoriteIcon" Symbol="Favorite"/>
+    <SwipeItems x:Key="RevealOtherCommands" Mode="Reveal">
+        <SwipeItem IconSource="{StaticResource FavoriteIcon}" Text="Favorite" Background="Yellow" Invoked="SwipeItem_Invoked"/>
+    </SwipeItems>
 </UserControl.Resources>
 ```
 
 The SwipeContainer wraps the item and allows the user to interact with it using the swipe gesture. Notice that the SwipeContainer contains a reference to the SwipeContent as its RightContent. The Favorite item will show when the user swipes from right to left.
 
 ```xaml
-<preview:SwipeContainer x:Name="swipeContainer" RightContent="{StaticResource RevealOtherCommands}">
-   <!-- The visual state groups moved from the Grid to the SwipeContainer, since the SwipeContainer wraps the Grid. -->
+<SwipeControl x:Name="swipeContainer" RightContent="{StaticResource RevealOtherCommands}">
+   <!-- The visual state groups moved from the Grid to the SwipeControl, since the SwipeControl wraps the Grid. -->
    <VisualStateManager.VisualStateGroups>
        <VisualStateGroup x:Name="HoveringStates">
            <VisualState x:Name="HoverButtonsShown">
@@ -417,7 +416,7 @@ The SwipeContainer wraps the item and allows the user to interact with it using 
            <AppBarButton Icon="OutlineStar" Command="{StaticResource favoriteCommand}" CommandParameter="{x:Bind PodcastObject, Mode=OneWay}" IsTabStop="False" LabelPosition="Collapsed" VerticalAlignment="Stretch"  />
        </Grid>
    </Grid>
-</preview:SwipeContainer>
+</SwipeControl>
 ```
 
 When the user swipes to invoke the Favorite command, the Invoked method is called.
