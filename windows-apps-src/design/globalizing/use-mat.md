@@ -35,12 +35,12 @@ Also see [Guidelines for globalization](guidelines-and-checklist-for-globalizing
 
 ### Step 2. Download and install the Multilingual App Toolkit 4.0
 
-The Multilingual App Toolkit 4.0 (MAT 4.0) comes in two installer variants.
+There are two parts to the Multilingual App Toolkit 4.0 (MAT 4.0), each with its own installer.
 
-- [The .vsix installer](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2017.
-- [The .msi installer](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
+- [Multilingual App Toolkit 4.0 Extension for Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308). This contains the MAT 4.0 extension for Visual Studio 2017, in the form of a .vsix installer.
+- [Multilingual App Toolkit 4.0 Editor](https://developer.microsoft.com/en-us/windows/develop/multilingual-app-toolkit). This contains the MAT 4.0 standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT 4.0 extension for Visual Studio 2015 and for Visual Studio 2013.
 
-If you use Visual Studio 2017, then download and run both the .vsix installer and the .msi installer. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
+If you use Visual Studio 2017, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.
 
 ### Step 3. Enable the Multilingual App Toolkit for your project
 
