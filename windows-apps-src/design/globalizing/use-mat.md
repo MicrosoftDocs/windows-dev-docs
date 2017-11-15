@@ -81,7 +81,7 @@ Pseudo language is an artificial modification of the software product intended t
 Follow these steps to pseudo-localize and test your project.
 
 1. Use the Translation Languages dialog to add Pseudo Language (Pseudo) [qps-ploc] to your project.
-2. Right-click the `<project-name>.qps-ploc.xlf` file in Solution Explorer and click **Multilingual App Toolkit** > **Generate pseudo translations**.
+2. Right-click the `<project-name>.qps-ploc.xlf` file in Solution Explorer and click **Multilingual App Toolkit** > **Generate machine translations**.
 3. In **Settings** > **Time & Language** > **Region & language** > **Languages**, click **Add a language**.
 5. In the search box, type `qps-ploc`.
 6. Click `English (qps-ploc)` to add it.
@@ -128,7 +128,7 @@ Rebuild your project to cause the translated strings to be copied into the Resou
 
 #### Option 3. Use the integrated translation services
 
-Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources.
+Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources. For this service, you'll need an Azure account subscription, as described in [Microsoft Translator Moves to the Azure portal](https://multilingualapptoolkit.uservoice.com/knowledgebase/articles/1167898-microsoft-translator-moves-to-the-azure-portal).
 
 To access the translation services inside Visual Studio, select and right-click one or more .xlf files in Solution Explorer and click **Generate machine translations**.
 
