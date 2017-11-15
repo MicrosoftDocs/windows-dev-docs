@@ -1534,6 +1534,11 @@
       "source_path": "windows-apps-src/app-resources/tile-toast-language-scale-contrast.md",
       "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path": "windows-apps-src/graphics/using-brushes.md",
+      "redirect_url": "/windows/uwp/design/style/brushes",
+      "redirect_document_id": false
+    }    
   ]
 }
