@@ -242,6 +242,7 @@ To get your machine set up to actually code UWP apps, see our [Get started &gt; 
 
 ## Related articles
 
+- [Screen sizes and breakpoints](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 - [What's a UWP app?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 - [Design toolkits](../downloads/index.md)
 
