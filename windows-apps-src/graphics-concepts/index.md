@@ -1,5 +1,5 @@
 ---
-title: Direct3D Graphics Learning Guide
+title: Direct3D graphics concepts
 description: Describes the graphics concepts that Microsoft Direct3D is built on.
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
@@ -13,10 +13,10 @@ ms.technology: uwp
 localizationpriority: medium
 ---
 
-# Direct3D Graphics Learning Guide
+# Direct3D graphics concepts
 
 
-Describes the graphics concepts that Microsoft Direct3D is built on. This documentation set is largely independent of any Direct3D version, and is for the graphics developer who needs more background information than is provided in the version specific API documentation.
+Describes Microsoft Direct3D graphics concepts. This guide explains general 3D computer graphics concepts that are used in Direct3D game and app development.
 
 ## <span id="in-this-section"></span>In this section
 
