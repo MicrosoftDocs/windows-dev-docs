@@ -65,7 +65,7 @@ To confirm that your overridden defaults are being taken into account, look for 
 
 ### How does this work?
 
-Behind the scenes, Visual Studio calls a tool named `MakePri.exe` to generate a file known as a Package Resource Index, which describes all of your app's resources, including indicating which are the default resources. For details about this tool, see [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md). Visual Studio passes a configuration file to `MakePri.exe`. The contents of your `priconfig.default.xml` file are used as the `<default>` element of that configuration file, which is the part that specifies the set of qualifier values that are considered to be default. So, adding and editing `priconfig.default.xml` ultimately influences the contents of the Package Resource Index file that Visual Studio generates for your app and includes in its app package.
+Behind the scenes, Visual Studio launches a tool named `MakePri.exe` to generate a file known as a Package Resource Index, which describes all of your app's resources, including indicating which are the default resources. For details about this tool, see [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md). Visual Studio passes a configuration file to `MakePri.exe`. The contents of your `priconfig.default.xml` file are used as the `<default>` element of that configuration file, which is the part that specifies the set of qualifier values that are considered to be default. So, adding and editing `priconfig.default.xml` ultimately influences the contents of the Package Resource Index file that Visual Studio generates for your app and includes in its app package.
 
 ### Using a different file name than `priconfig.default.xml`
 
@@ -94,8 +94,6 @@ Here's an example of how that might look after you've edited the first three val
 ```
 
 Save and close, and rebuild your project.
-
-## Important APIs
 
 ## Related topics
 

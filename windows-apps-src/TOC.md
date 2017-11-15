@@ -273,6 +273,7 @@
 ### [Load images, assets tailored for scale, theme, contrast, others](app-resources/images-tailored-for-scale-theme-contrast.md)
 ### [URI schemes](app-resources/uri-schemes.md)
 ### [Specify the default resources that your app uses](app-resources/specify-default-resources-installed.md)
+### [Build resources into your app package, instead of into a resource pack](app-resources/build-resources-into-app-package.md)
 ### [Compile resources manually with MakePri.exe](app-resources/compile-resources-manually-with-makepri.md)
 ### [MakePri.exe command-line options](app-resources/makepri-exe-command-options.md)
 ### [MakePri.exe configuration file](app-resources/makepri-exe-configuration.md)
