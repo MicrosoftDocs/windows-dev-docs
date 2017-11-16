@@ -88,7 +88,7 @@ To implement a master/details pattern for any screen size, create a responsive U
 ### Create an adaptive master/details pattern
 To create an adaptive layout, define different [**VisualStates**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.visualstate) for your UI, and declare breakpoints for the different states with [**AdaptiveTriggers**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.AdaptiveTrigger).
 
-## Code Samples
+## Get the sample code
 
 The following samples implement the master/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources: 
 - [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 

@@ -118,6 +118,16 @@ Detailed information about specific controls and patterns. (For a list sorted by
 </ul>
 </div>
 
+## XAML Controls Gallery
+
+Get the _XAML Controls Gallery_ app from the Microsoft Store to see these controls and the Fluent Design System in action. The app is an interactive companion to this website. When you have it installed, you can use links on individual control pages to launch the app and see the control in action.
+
+[Get the XAML Controls Gallery app (Microsoft Store)](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
+
+[Get the source code (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)
+
+![XAML Controls Gallery screen](images/xaml-controls-gallery.png)
+
 ## Additional controls
 
 Additional controls for UWP development are available from companies such as [Telerik](http://www.telerik.com/), [SyncFusion](https://www.syncfusion.com/products/uwp), [DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/),

@@ -35,6 +35,23 @@ This commanding type should be used when you have a potentially large group of i
 
 Remember to keep the menu items you have in your swipe content to short, and concise text labels. These actions should be the primary ones that a user may want to perform multiple times over a short period.
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -6px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/SwipeControl">open the app and see the SwipeControl in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 ## How does Swipe work?
 
 UWP swipe commanding has two modes: Reveal and Execute, and four different swipe directions: up, down, left, and right.
@@ -136,7 +153,7 @@ Like so:
 
 In the common case, Swipe will be in a ListView or list-like scenario. In that case when a Swipe is invoked or executed on, you will want to perform an action on that swiped item. To do so you will want to set the **Invoked();** property on the SwipeItem:
 
-```Xaml
+```XAML
 <SwipeItems x:Key="ExecuteDelete" Mode="Execute">
     <SwipeItem Text="Delete" IconSource="{StaticResource DeleteIcon}" Invoked="delete_Invoked"/>
 </SwipeItems>
@@ -144,7 +161,7 @@ In the common case, Swipe will be in a ListView or list-like scenario. In that c
 
 Then, in you're corresponding cs file, you can grab the index of the item in the list, that that Invoked event was fired on:
 
-```C#
+```csharp
 private void delete_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 {
     int i = sampleList.Items.IndexOf(args.Parent.DataContext);
@@ -164,7 +181,7 @@ In this particular instance, we are removing the item from the list, but in situ
 
 You can also reset the Swipe (essentially collapsing it and returning it to normal) by calling **Reset()** from the SwipeControl in code-behind on an Invoked event:
 
-```C#
+```csharp
 private void reply_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 {
     ((SwipeControl)args.Parent).Reset();
@@ -172,11 +189,17 @@ private void reply_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 ```
 
 ## Dos and don'ts
--	Don’t use Swipe in FlipViews, Hubs or Pivots, the combination may be confusing for the user because of conflicting swipe directions
--	Don’t combine horizontal Swipe with horizontal navigation, or vertical Swipe with vertical navigation
--	Do make sure what the user is swiping is the same action, and is consistent across all related items that can be swiped
--	Do use Swipe on items where the same action is repeated many times
--	Do use horizontal swiping on wider items, and vertical swiping on taller items
+
+- Don’t use Swipe in FlipViews, Hubs or Pivots, the combination may be confusing for the user because of conflicting swipe directions
+- Don’t combine horizontal Swipe with horizontal navigation, or vertical Swipe with vertical navigation
+- Do make sure what the user is swiping is the same action, and is consistent across all related items that can be swiped
+- Do use Swipe on items where the same action is repeated many times
+- Do use horizontal swiping on wider items, and vertical swiping on taller items
+
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related articles
+
 - [**Pull to refresh**](pull-to-refresh.md)
