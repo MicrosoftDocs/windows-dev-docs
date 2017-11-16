@@ -15,9 +15,6 @@ localizationpriority: medium
 ---
 # Create adaptive tiles
 
- 
-
-
 Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](../tiles-and-notifications/tile-schema.md).
 
 (If you'd like, you can still use the preset templates from the [Windows 8 tile template catalog](https://msdn.microsoft.com/library/windows/apps/hh761491) when designing notifications for Windows 10.)
@@ -1391,12 +1388,12 @@ TileWide = new TileBinding()
 ```
 
 ## Related topics
-
-
 * [Tile content schema](../tiles-and-notifications/tile-schema.md)
-* [Quickstart: Send a local tile notification](sending-a-local-tile-notification.md)
-* [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
-* [Special tile templates catalog](special-tile-templates-catalog.md)
+* [Send a local tile notification](sending-a-local-tile-notification.md)
+* [Special tile templates](special-tile-templates-catalog.md)
+* [UWP Community Toolkit - Notifications](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Windows Notifications on GitHub](https://github.com/WindowsNotifications)
+
  
 
  

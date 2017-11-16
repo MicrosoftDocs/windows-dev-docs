@@ -260,12 +260,12 @@ Here's an entire template for what a Reveal Button would look like:
 ```
 
 ## Do's and don'ts
-- Do have Reveal on elements that the user can take actions on - Reveal should not be on static content
-- Do show Reveal in lists or groupings of interactive elements that do not have visual separators by default
-- Do apply Reveal to areas with a high density of buttons
-- Don’t use Reveal on very large (greater than 500epx)
-- Don’t show Reveal on static backgrounds or text
+- Do use Reveal on elements where the user can take action (buttons, selections)
+- Do use Reveal in groupings of interactive elements that do not have visual separators by default (lists, command bars)
+- Do use Reveal in areas with a high density of interactive elements
+- Don’t use Reveal on static content (backgrounds, text)
 - Don’t use Reveal in one-off, isolated situations
+- Don’t use Reveal on very large items (greater than 500epx)
 - Don’t use Reveal in security decisions, as it may draw attention away from the message you need to
   deliver to your user
 
@@ -297,8 +297,8 @@ To create your own Reveal lighting effect for static comps or prototype purposes
 ## Related articles
 
 - [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [**Acrylic**](acrylic.md)
-- [**Composition Effects**](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Acrylic](acrylic.md)
+- [Composition Effects](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Fluent Design for UWP](../fluent-design-system/index.md)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
