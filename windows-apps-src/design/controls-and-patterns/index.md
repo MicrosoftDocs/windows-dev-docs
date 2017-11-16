@@ -6,7 +6,7 @@ keywords: uwp controls, user interface, app controls
 label: Controls & patterns
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 09/09/2017
+ms.date: 11/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -97,6 +97,8 @@ Detailed information about specific controls and patterns. (For a list sorted by
 <li style="list-style-type: none;">[Search](search.md)</li>
 
 <li style="list-style-type: none;">[Semantic zoom](semantic-zoom.md)</li>
+
+<li style="list-style-type: none;">[Shapes](shapes.md)</li>
 
 <li style="list-style-type: none;">[Slider](slider.md)</li>
 

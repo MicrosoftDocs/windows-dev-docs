@@ -22,7 +22,7 @@ Layout is the process of defining the visual structure for your UI. The primary 
 
 ## Reduce layout structure
 
-The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
+The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
 
 Many UIs are implemented by nesting panels which results in deep, complex trees of panels and elements. It is convenient to nest panels, but in many cases the same UI can be achieved with a more complex single panel. Using a single panel provides better performance.
 

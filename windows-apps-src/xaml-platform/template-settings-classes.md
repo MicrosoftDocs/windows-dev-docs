@@ -53,7 +53,7 @@ Here's an example that comes from the starting default XAML control templates. T
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-The full XAML for the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) template is hundreds of lines, so this is just a tiny excerpt. This XAML defines a control part that is one of 6 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) elements that portray the spinning animation for indeterminate progress. As a developer, you might not like the circles and might use a different graphics primitive or a different basic shape for how the animation progresses. For example, you might compose a **ProgressRing** that uses a set of [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) elements arranged in a square instead. If so, each individual **Rectangle** component of your new template might look like this:
+The full XAML for the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) template is hundreds of lines, so this is just a tiny excerpt. This XAML defines a control part that is one of 6 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) elements that portray the spinning animation for indeterminate progress. As a developer, you might not like the circles and might use a different graphics primitive or a different basic shape for how the animation progresses. For example, you might compose a **ProgressRing** that uses a set of [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) elements arranged in a square instead. If so, each individual **Rectangle** component of your new template might look like this:
 
 ```xml
 <Rectangle
