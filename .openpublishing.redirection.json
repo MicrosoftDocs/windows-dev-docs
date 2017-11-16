@@ -1534,6 +1534,26 @@
       "source_path": "windows-apps-src/app-resources/tile-toast-language-scale-contrast.md",
       "redirect_url": "/windows/uwp/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path": "windows-apps-src/graphics/using-brushes.md",
+      "redirect_url": "/windows/uwp/design/style/brushes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/graphics/animations-overview.md",
+      "redirect_url": "/windows/uwp/design/motion/xaml-animation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/graphics/storyboarded-animations.md",
+      "redirect_url": "/windows/uwp/design/motion/storyboarded-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/graphics/key-frame-and-easing-function-animations.md",
+      "redirect_url": "/windows/uwp/design/motion/key-frame-and-easing-function-animations",
+      "redirect_document_id": false
+    }                      
   ]
 }
