@@ -54,7 +54,7 @@ Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Window
 
     Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
-    You can also install the Microsoft Emulator for Windows 10 Mobile using the Microsoft Emulator setup. See the [Windows 10 Tools download page](https://go.microsoft.com/fwlink/p/?LinkID=534189).
+    You can also install the Microsoft Emulator for Windows 10 Mobile using the [Microsoft Emulator setup](https://go.microsoft.com/fwlink/p/?LinkID=615095).
 
 -   **Uninstalling**.
 

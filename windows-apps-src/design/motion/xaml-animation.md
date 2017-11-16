@@ -11,13 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 localizationpriority: medium
 ---
-# Animations overview
+# Animations in XAML
 
+UWP animations can enhance your app by adding movement and interactivity. By using the animations from the Windows Runtime animation library, you can integrate the Windows look and feel into your app. This topic provides a summary of the animations and examples of typical scenarios where each is used.
 
-
-Animations in the Windows Runtime can enhance your app by adding movement and interactivity. By using the animations from the Windows Runtime animation library, you can integrate the Windows look and feel into your app. This topic provides a summary of the animations and examples of typical scenarios where each is used.
-
-**Tip**  The Windows Runtime controls for XAML include certain types of animations as built-in behaviors that come from an animation library. By using these controls in your app, you can get the animated look and feel without having to program it yourself.
+> [!TIP]
+> The Windows Runtime controls for XAML include certain types of animations as built-in behaviors that come from an animation library. By using these controls in your app, you can get the animated look and feel without having to program it yourself.
 
 Animations from the Windows Runtime animation library provide these benefits:
 
@@ -47,15 +46,15 @@ The Windows Runtime animation system and the animation library serve the larger 
 
 The following animations are supplied in the animation library. Click on the name of an animation to learn more about their main usage scenarios, how to define them, and to see an example of the animation.
 
--   [Page transition](./animations-overview.md#page-transition): Animates page transitions in a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
--   [Content and entrance transition](./animations-overview.md#content-transition-and-entrance-transition): Animates one piece or set of content into or out of view.
--   [Fade in/out, and crossfade](./animations-overview.md#fade-in-out-and-crossfade): Shows transient elements or controls, or refreshes a content area.
--   [Pointer up/down](./animations-overview.md#pointer-up-down): Gives visual feedback of a tap or click on a tile.
--   [Reposition](./animations-overview.md#reposition): Moves an element into a new position.
--   [Show/hide popup](./animations-overview.md#show-hide-popup): Displays contextual UI on top of the view.
--   [Show/hide edge UI](./animations-overview.md#show-hide-edge-ui): Slides edge-based UI, including large UI such as a panel, into or out of view.
--   [List item changes](./animations-overview.md#list-item-changes): Adds or deletes an item from a list, or reordering of the items.
--   [Drag/drop](./animations-overview.md#drag-drop): Gives visual feedback during a drag-and-drop operation.
+-   [Page transition](#page-transition): Animates page transitions in a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682).
+-   [Content and entrance transition](#content-transition-and-entrance-transition): Animates one piece or set of content into or out of view.
+-   [Fade in/out, and crossfade](#fade-in-out-and-crossfade): Shows transient elements or controls, or refreshes a content area.
+-   [Pointer up/down](#pointer-up-down): Gives visual feedback of a tap or click on a tile.
+-   [Reposition](#reposition): Moves an element into a new position.
+-   [Show/hide popup](#show-hide-popup): Displays contextual UI on top of the view.
+-   [Show/hide edge UI](#show-hide-edge-ui): Slides edge-based UI, including large UI such as a panel, into or out of view.
+-   [List item changes](#list-item-changes): Adds or deletes an item from a list, or reordering of the items.
+-   [Drag/drop](#drag-drop): Gives visual feedback during a drag-and-drop operation.
 
 ### Page transition
 

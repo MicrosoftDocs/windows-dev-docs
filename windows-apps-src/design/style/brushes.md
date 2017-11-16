@@ -11,21 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp
 localizationpriority: medium
 ---
-# Use brushes
+# Using brushes to paint backgrounds, foregrounds, and outlines
 
+You use [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) objects to paint the interiors or outlines of XAML shapes, text, and parts of controls, so that the object being painted is visible in a UI. Let's look at the available brushes and how to use them.
 
-
-**Important APIs**
-
--   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
-
-[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) objects are used to paint the interiors or outlines of XAML shapes, text, and parts of controls, so that the object being painted is visible in a UI. Let's look at the available brushes and how to use them.
+> **Important APIs**:  [Brush class](/uwp/api/Windows.UI.Xaml.Media.Brush)
 
 ## Introduction to brushes
 
 To paint an object such as a [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. 
 
 The different types of brushes are: 
+-   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
 -   [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)
 -   [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 
 -   [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)
@@ -155,11 +152,11 @@ A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) i
 
 [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionBrush) to paint XAML UI elements.
 
-This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](../composition/visual-layer.md). 
+This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](/windows/uwp/composition/visual-layer). 
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 
-For example, this can be used to apply [**effects**](../composition/composition-effects.md) to XAML UIElements using a [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
+For example, this can be used to apply [**effects**](/windows/uwp/composition/composition-effects) to XAML UIElements using a [**CompositionEffectBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.CompositionEffectBrush), such as a **GaussianBlurEffect** or a [**SceneLightingEffect**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) that controls the reflective properties of a XAML UIElement when being lit by a [**XamlLight**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamllight).
 
 For code examples, see the reference page for [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 

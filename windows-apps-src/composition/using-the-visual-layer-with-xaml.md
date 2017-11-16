@@ -29,7 +29,7 @@ Layout animations, shadows, and blur effects are covered in the Recipes section 
 
 **XamlCompositionBrush** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
 
-See the [**Brushes**](../graphics/using-brushes.md#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
+See the [**Brushes**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
 
 For code examples, see the reference page for [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
 

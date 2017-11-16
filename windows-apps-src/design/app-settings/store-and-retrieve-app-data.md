@@ -355,7 +355,7 @@ async void WriteTimestamp()
        new Windows.Globalization.DatetimeFormatting.DateTimeFormatter("longtime");
 
    StorageFile sampleFile = await temporaryFolder.CreateFileAsync("dataFile.txt", 
-       CreateCollisionOption.ReplaceExisting);
+       CreationCollisionOption.ReplaceExisting);
    await FileIO.WriteTextAsync(sampleFile, formatter.Format(DateTime.Now));
 }
 ```
