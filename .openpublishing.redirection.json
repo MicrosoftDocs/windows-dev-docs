@@ -1554,6 +1554,27 @@
       "source_path": "windows-apps-src/graphics/key-frame-and-easing-function-animations.md",
       "redirect_url": "/windows/uwp/design/motion/key-frame-and-easing-function-animations",
       "redirect_document_id": false
-    }                      
+    },
+    {
+      "source_path": "windows-apps-src/graphics/drawing-shapes.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/shapes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/graphics/transforms-overview.md",
+      "redirect_url": "/windows/uwp/design/layout/transforms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/graphics/3-d-perspective-effects.md",
+      "redirect_url": "/windows/uwp/design/layout/3-d-perspective-effects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/graphics/index.md",
+      "redirect_url": "/windows/uwp/design/style",
+      "redirect_document_id": false
+    }              
+                          
   ]
 }

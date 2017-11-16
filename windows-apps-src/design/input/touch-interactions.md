@@ -243,9 +243,9 @@ Here is a list of pointer events and their related event argument.
 
  
 
-The following example shows how to use the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events to handle a tap interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
+The following example shows how to use the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events to handle a tap interaction on a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
-First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
+First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -293,7 +293,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
+Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
 
 ```cpp
 // Handler for pointer exited event.
@@ -447,9 +447,9 @@ Next, one or more [**ManipulationDelta**](https://msdn.microsoft.com/library/win
 
  
 
-The following example shows how to use the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events to handle a slide interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) and move it across the screen.
+The following example shows how to use the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events to handle a slide interaction on a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) and move it across the screen.
 
-First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in XAML with a [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of 200.
+First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touchRectangle` is created in XAML with a [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of 200.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -459,7 +459,7 @@ First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
+Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
 
 ```cpp
 // Global translation transform used for changing the position of 
@@ -530,7 +530,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
+Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
 
 ```cpp
 // Handler for the ManipulationDelta event.

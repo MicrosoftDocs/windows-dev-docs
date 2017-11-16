@@ -53,7 +53,7 @@ If the object does not contain other objects, you can declare the object element
 
 ### Containers
 
-Many objects used as UI elements, such as [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), can contain other objects. These are sometimes referred to as containers. The following example shows a **Canvas** container that contains one element, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371).
+Many objects used as UI elements, such as [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), can contain other objects. These are sometimes referred to as containers. The following example shows a **Canvas** container that contains one element, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
 ```xml
 <Canvas>
@@ -110,7 +110,7 @@ Collection syntax in XAML gives an appearance that you are setting a read-only p
 
 Setting an attribute value is the typical means by which you set a property value in a markup language, for example in XML or HTML. Setting XAML attributes is similar to how you set attribute values in XML. The attribute name is specified at any point within the tags following the element name, separated from element name by at least one whitespace. The attribute name is followed by an equals sign. The attribute value is contained within a pair of quotes. The quotes can be either double quotes or single quotes so long as they match and enclose the value. The attribute value itself must be expressible as a string. The string often contains numerals, but to XAML, all attribute values are string values until the XAML parser gets involved and does some basic value conversion.
 
-This example uses attribute syntax for four attributes to set the [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), and [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) properties of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
+This example uses attribute syntax for four attributes to set the [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), and [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) properties of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
 ```xml
 <Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" />
@@ -134,7 +134,7 @@ In the following grammar, *property* is the name of the property that you want t
 
 `</`*object*`>`
 
-The following example uses property element syntax to set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) with a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) object element. (Within the **SolidColorBrush**, [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) is set as an attribute.) The parsed result of this XAML is identical to the previous XAML example that set **Fill** using attribute syntax.
+The following example uses property element syntax to set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) with a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) object element. (Within the **SolidColorBrush**, [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) is set as an attribute.) The parsed result of this XAML is identical to the previous XAML example that set **Fill** using attribute syntax.
 
 ```xml
 <Rectangle

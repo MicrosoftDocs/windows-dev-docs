@@ -6,7 +6,7 @@ keywords: uwp app layout, universal windows platform, app design, interface
 label: Layout
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 08/9/2017
+ms.date: 11/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -39,6 +39,10 @@ These articles help you create a flexible UI that looks great on different scree
 <div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
  <p><b>[Create layouts with Grid and StackPanel](grid-tutorial.md)</b> <br />
    Use XAML to create the layout for a simple weather app using the Grid and StackPanel elements. </p> 
+</div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+ <p><b>[Rotate, skew, scale, and other transforms](transforms.md)</b> <br />
+   Use transforms to rotate, skew, and scale elements. You can even use transforms to make 2-D content look like it's 3-D.  </p> 
 </div>
 
 </div>

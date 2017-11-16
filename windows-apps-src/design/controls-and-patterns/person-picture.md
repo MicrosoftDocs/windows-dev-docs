@@ -39,6 +39,23 @@ Use the person picture when you want to represent a person and their contact inf
 The illustration shows person picture control in a list of contacts:
 ![The person picture control](images/person-picture/person-picture-control.png)
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -6px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/PersonPicture">open the app and see the PersonPicture in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 ## How to use the person picture control
 
 To create a person picture, you use the PersonPicture class. This example creates a PersonPicture control and manually provides the person's display name, profile picture, and initials:
@@ -160,19 +177,19 @@ When you provide a [Contact](https://docs.microsoft.com/en-us/uwp/api/Windows.Ap
 
 If an image is available, the control displays the first image it finds, in this order:
 
-1.	LargeDisplayPicture
-2.	SmallDisplayPicture
-3.	Thumbnail
+1. LargeDisplayPicture
+1. SmallDisplayPicture
+1. Thumbnail
 
 You can change which image is chosen by setting the PreferSmallImage property to true; this gives the SmallDisplayPicture a higher priority than LargeDisplayPicture.
 
 If there isn't an image, the control displays the contact's name or initials; if there's isn't any name data, the control displays contact data, such as an email address or phone number. 
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
+
 ## Related articles
 
 * [Contacts and calendar](../../contacts-and-calendar/index.md)
 * [Contact cards sample](http://go.microsoft.com/fwlink/p/?LinkId=624040)
-
-
-
-

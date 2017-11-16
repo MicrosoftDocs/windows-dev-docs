@@ -44,6 +44,21 @@ When building an app with pivot, there are a few key design variables to conside
 
 ## Examples
 
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -6px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Pivot">open the app and see the Pivot in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 Pivot control on phone.
 
 ![An example of Pivot](images/pivot_example.png)
@@ -141,17 +156,17 @@ Apps that have customized Pivot and incorporate the underline into header select
 
 ## Recommendations
 
--   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
--   Avoid using more than 5 headers when using carousel (round-trip) mode, as looping more than 5 can become confusing.
--   Use the tabs pattern only if your pivot items have distinct icons.
--   Include text in pivot item headers to help users understand the meaning of each pivot section. Icons are not necessarily self-explanatory to all users.
+- Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
+- Avoid using more than 5 headers when using carousel (round-trip) mode, as looping more than 5 can become confusing.
+- Use the tabs pattern only if your pivot items have distinct icons.
+- Include text in pivot item headers to help users understand the meaning of each pivot section. Icons are not necessarily self-explanatory to all users.
 
 ## Get the sample code
-- [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903)<br/>
-    See how to customize the Pivot control into the tabs pattern.
-- [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    See all of the XAML controls in an interactive format.
+
+- [Pivot sample](http://go.microsoft.com/fwlink/p/?LinkId=619903) - Demonstrates how to customize the Pivot control into the tabs pattern.
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related topics
+
 - [Pivot class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)
 - [Navigation design basics](../basics/navigation-basics.md)
