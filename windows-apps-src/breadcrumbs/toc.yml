@@ -66,7 +66,10 @@
               - name: Develop
                 tocHref: /windows/uwp/develop/
                 topicHref: "/windows/uwp/whats-new/windows-10-version-1703" 
-                items:                  
+                items: 
+                    - name: App resources 
+                      tocHref: /windows/uwp/app-resources/
+                      topicHref: "/windows/uwp/app-resources/index"                                   
                     - name: App-to-app communication 
                       tocHref: /windows/uwp/app-to-app/
                       topicHref: "/windows/uwp/app-to-app/index"                 
