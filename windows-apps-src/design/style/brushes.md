@@ -19,7 +19,7 @@ You use [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) objects to paint the i
 
 ## Introduction to brushes
 
-To paint an object such as a [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. 
+To paint an object such as a [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. 
 
 The different types of brushes are: 
 -   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
@@ -37,13 +37,13 @@ A [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962
 
 You can use a predefined color name, such as [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) or [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). There are 256 available named colors. The XAML parser converts the color name to a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) structure with the correct color channels. The 256 named colors are based on the *X11* color names from the Cascading Style Sheets, Level 3 (CSS3) specification, so you may already be familiar with this list of named colors if you have previous experience with web development or design.
 
-Here's an example that sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) to the predefined color [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
+Here's an example that sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) to the predefined color [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <Rectangle Width="100" Height="100" Fill="Red" />
 ```
 
-This image shows the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as applied to the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
+This image shows the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as applied to the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
 ![A rendered SolidColorBrush.](images/brushes-solidcolorbrush.jpg)
 
@@ -53,7 +53,7 @@ If you are defining a [**SolidColorBrush**](https://msdn.microsoft.com/library/w
 
 You can use a hexadecimal format string to declare precise 24-bit color values with 8-bit alpha channel for a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Two characters in the range 0 to F define each component value, and the component value order of the hexadecimal string is: alpha channel (opacity), red channel, green channel, and blue channel (**ARGB**). For example, the hexadecimal value "\#FFFF0000" defines fully opaque red (alpha="FF", red="FF", green="00", and blue="00").
 
-This XAML example sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) to the hexadecimal value "\#FFFF0000", and gives an identical result to using the named color [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
+This XAML example sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) to the hexadecimal value "\#FFFF0000", and gives an identical result to using the named color [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <StackPanel>
@@ -65,7 +65,7 @@ This XAML example sets the [**Fill**](https://msdn.microsoft.com/library/windows
 
 You can use property element syntax to define a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). For more info on XAML syntax, including property element syntax, see [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595) and [XAML syntax guide](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
-In the previous examples, you never even saw the string "SolidColorBrush" appear in the syntax. The brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definition simple for the most common cases. The next example creates a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) and explicitly creates the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as an element value for a [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property. The [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) of the **SolidColorBrush** is set to [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx) and the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) is set to 0.5.
+In the previous examples, you never even saw the string "SolidColorBrush" appear in the syntax. The brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definition simple for the most common cases. The next example creates a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) and explicitly creates the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as an element value for a [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property. The [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) of the **SolidColorBrush** is set to [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx) and the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) is set to 0.5.
 
 ```xml
 <Rectangle Width="200" Height="150">
@@ -85,7 +85,7 @@ The gradient stop's [**Color**](https://msdn.microsoft.com/library/windows/apps/
 
 The [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) property of a [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) specifies the position of each **GradientStop** along the gradient axis. The **Offset** is a **double** that ranges from 0 to 1. An **Offset** of 0 places the **GradientStop** at the start of the gradient axis, in other words near its [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx). An **Offset** of 1 places the **GradientStop** at the [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx). At a minimum, a useful [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) should have two **GradientStop** values, where each **GradientStop** should specify a different [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) and have a different **Offset** between 0 and 1.
 
-This example creates a linear gradient with four colors and uses it to paint a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
+This example creates a linear gradient with four colors and uses it to paint a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle).
 
 ```xml
 <!-- This rectangle is painted with a diagonal linear gradient. -->
@@ -122,7 +122,7 @@ An [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) pa
 
 By default, an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) stretches its image to completely fill the painted area, possibly distorting the image if the painted area has a different aspect ratio than the image. You can change this behavior by changing the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) property from its default value of **Fill** and setting it as **None**, **Uniform**, or **UniformToFill**.
 
-The next example creates an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) and sets the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) to an image named licorice.jpg, which you must include as a resource in the app. The **ImageBrush** then paints the area defined by an [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) shape.
+The next example creates an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) and sets the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) to an image named licorice.jpg, which you must include as a resource in the app. The **ImageBrush** then paints the area defined by an [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) shape.
 
 ```xml
 <Ellipse Height="200" Width="300">

@@ -122,7 +122,7 @@ ListView and its children are not loaded into memory.
 
 ### Use layout panel properties
 
-Layout panels have a [Background](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [Rectangle](https://msdn.microsoft.com/library/windows/apps/BR243371) in front of a Panel just to color it.
+Layout panels have a [Background](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) in front of a Panel just to color it.
 
 **Inefficient**
 
@@ -287,7 +287,7 @@ If an element isn't visible because it's transparent or hidden behind other elem
 
 ### Composite elements
 
-Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [Rectangle](https://msdn.microsoft.com/library/windows/apps/BR243371) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
+Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [Grid](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [Rectangle](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
 
 **Inefficient.**
 

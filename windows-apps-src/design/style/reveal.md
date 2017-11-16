@@ -27,6 +27,23 @@ The Reveal behavior does this by revealing the clickable content’s container w
 
 By exposing the hidden borders around objects, Reveal gives users a better understanding of the space that they are interacting with, and helps them understand the actions available. This is especially important in list controls and groupings of buttons.
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -6px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Reveal">open the app and see Reveal in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 ## Reveal and the Fluent Design System
 
  The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
@@ -260,12 +277,12 @@ Here's an entire template for what a Reveal Button would look like:
 ```
 
 ## Do's and don'ts
-- Do have Reveal on elements that the user can take actions on - Reveal should not be on static content
-- Do show Reveal in lists or groupings of interactive elements that do not have visual separators by default
-- Do apply Reveal to areas with a high density of buttons
-- Don’t use Reveal on very large (greater than 500epx)
-- Don’t show Reveal on static backgrounds or text
+- Do use Reveal on elements where the user can take action (buttons, selections)
+- Do use Reveal in groupings of interactive elements that do not have visual separators by default (lists, command bars)
+- Do use Reveal in areas with a high density of interactive elements
+- Don’t use Reveal on static content (backgrounds, text)
 - Don’t use Reveal in one-off, isolated situations
+- Don’t use Reveal on very large items (greater than 500epx)
 - Don’t use Reveal in security decisions, as it may draw attention away from the message you need to
   deliver to your user
 
@@ -293,12 +310,15 @@ To create your own Reveal lighting effect for static comps or prototype purposes
 </div>
 -->  
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
 - [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [**Acrylic**](acrylic.md)
-- [**Composition Effects**](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [Acrylic](acrylic.md)
+- [Composition Effects](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [Fluent Design for UWP](../fluent-design-system/index.md)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [Science in the System: Fluent Design and Light](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

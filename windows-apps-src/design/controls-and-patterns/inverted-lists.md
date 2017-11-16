@@ -54,3 +54,7 @@ This example shows how to align the list view’s items to the bottom and indica
 - Align messages from the sender/receiver on opposite sides to make the flow of conversation clear to users.
 - Animate the existing messages out of the way to display the latest message if the user is already at the end of the conversation awaiting the next message.
 - Don’t disrupt the users focus by moving items if they’re not reading the end of the conversation.
+
+## Get the sample code
+
+- [XAML Bottom-up list sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)
