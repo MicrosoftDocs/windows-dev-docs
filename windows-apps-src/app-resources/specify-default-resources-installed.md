@@ -31,7 +31,7 @@ You can configure what these defaults are in one of two ways. You can either add
 3. Replace the contents of the file with this XML.
    ```xml
    <default>
-      <qualifier name="Language" value="APP'S-DEFAULT-LANGUAGE" />
+      <qualifier name="Language" value="LANGUAGE-TAG(S)" />
       <qualifier name="Contrast" value="standard" />
       <qualifier name="Scale" value="200" />
       <qualifier name="HomeRegion" value="001" />
@@ -43,7 +43,7 @@ You can configure what these defaults are in one of two ways. You can either add
    </default>
    ```
    
-   Replace `<app's-default-language>` with the your app's default language as a [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302). To do this, open `Package.appxmanifest` and on the Application tab set Default language to a value such as "en" or "en-US".
+   **Note** The value `LANGUAGE-TAG(S)` needs to be synchronized with your app's default language. If that's a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302), then your app's default language needs to be the same tag. If it's a comma-separated list of language tags, then your app's default language needs to be the first tag in the list. You set your app's default language in the **Default language** field on the **Application** tab in your app package manifest source file (`Package.appxmanifest`).
 
 4. Each `<qualifier>` element tells Visual Studio what value to use as the default for each qualifier name. With the file contents you have so far, you haven't actually changed Visual Studio's behavior. In other words, Visual Studio *already behaved as if* this file were present with these contents, because these are the default defaults. So to override a default with your own default value, you'll have to change a value in the file. Here's an example of how the file might look if you'd edited the first three values.
    ```xml
@@ -65,7 +65,9 @@ To confirm that your overridden defaults are being taken into account, look for 
 
 ### How does this work?
 
-Behind the scenes, Visual Studio launches a tool named `MakePri.exe` to generate a file known as a Package Resource Index, which describes all of your app's resources, including indicating which are the default resources. For details about this tool, see [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md). Visual Studio passes a configuration file to `MakePri.exe`. The contents of your `priconfig.default.xml` file are used as the `<default>` element of that configuration file, which is the part that specifies the set of qualifier values that are considered to be default. So, adding and editing `priconfig.default.xml` ultimately influences the contents of the Package Resource Index file that Visual Studio generates for your app and includes in its app package.
+Behind the scenes, Visual Studio launches a tool named `MakePri.exe` to generate a file known as a Package Resource Index (PRI), which describes all of your app's resources, including indicating which are the default resources. For details about this tool, see [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md). Visual Studio passes a configuration file to `MakePri.exe`. The contents of your `priconfig.default.xml` file are used as the `<default>` element of that configuration file, which is the part that specifies the set of qualifier values that are considered to be default. So, adding and editing `priconfig.default.xml` ultimately influences the contents of the Package Resource Index file that Visual Studio generates for your app and includes in its app package.
+
+**Note** Any time you change the value of the `<qualifier name="Language" ... />` element, you need to synchronize that change with your app's default language. This is so that the language resources indexed in your app's PRI file match your app's manifest default language. The value in the `<qualifier name="Language" ... />` element overrides the value in the manifest with respect to the contents of `<ProjectFolder>\obj\<ReleaseConfiguration folder>\priconfig.xml`, but that file and your app's manifest should match.
 
 ### Using a different file name than `priconfig.default.xml`
 
@@ -84,7 +86,7 @@ This is an alternative to Option 1. Once you understand how Option 1 works, you 
 In your project file, between the opening and closing tags of the first `<PropertyGroup>` element, add this XML.
 
 ```xml
-<AppxDefaultResourceQualifiers>Language=APP'S-DEFAULT-LANGUAGE|Contrast=standard|Scale=200|HomeRegion=001|TargetSize=256|LayoutDirection=LTR|DXFeatureLevel=DX9|Configuration=|AlternateForm=</AppxDefaultResourceQualifiers>
+<AppxDefaultResourceQualifiers>Language=LANGUAGE-TAG(S)|Contrast=standard|Scale=200|HomeRegion=001|TargetSize=256|LayoutDirection=LTR|DXFeatureLevel=DX9|Configuration=|AlternateForm=</AppxDefaultResourceQualifiers>
 ```
 
 Here's an example of how that might look after you've edited the first three values.
@@ -94,6 +96,8 @@ Here's an example of how that might look after you've edited the first three val
 ```
 
 Save and close, and rebuild your project.
+
+**Note** Any time you change the `Language=` value, you need to synchronize that change with your app's default language in the manifest designer (by opening `Package.appxmanifest`).
 
 ## Related topics
 

@@ -36,7 +36,7 @@ You can configure Visual Studio to build resources into your app package in one 
       <autoResourcePackage qualifier="DXFeatureLevel" />
    </packaging>
    ```
-4. Each `<autoResourcePackage>` element tells Visual Studio to automatically split the resources for the given qualifier name out into separate resource packages. This is called *auto-splitting*. With the file contents you have so far, you haven't actually changed Visual Studio's behavior. In other words, Visual Studio *already behaved as if* this file were present with these contents, because these are the defaults. If you don't want Visual Studio to auto-split on a qualifier name then delete that `<autoResourcePackage>` element from the file. Here's how the file would if you wanted all of your language resources to be built into the app package instead of being auto-split out into separate resource packages.
+4. Each `<autoResourcePackage>` element tells Visual Studio to automatically split the resources for the given qualifier name out into separate resource packages. This is called *auto-splitting*. With the file contents you have so far, you haven't actually changed Visual Studio's behavior. In other words, Visual Studio *already behaved as if* this file were present with these contents, because these are the defaults. If you don't want Visual Studio to auto-split on a qualifier name then delete that `<autoResourcePackage>` element from the file. Here's how the file would look if you wanted all of your language resources to be built into the app package instead of being auto-split out into separate resource packages.
    ```xml
    <packaging>
       <autoResourcePackage qualifier="Scale" />
@@ -70,7 +70,7 @@ If you name your file `priconfig.packaging.xml`, then Visual Studio will recogni
 
 Replace `FILE-PATH-AND-NAME` with the path to, and name of, your file.
 
-## Option 2. Use your project file to specify default qualifier values
+## Option 2. Use your project file to build resources into your app package
 
 This is an alternative to Option 1. Once you understand how Option 1 works, you can choose to do Option 2 instead, if that suits your development and/or build workflow better.
 
