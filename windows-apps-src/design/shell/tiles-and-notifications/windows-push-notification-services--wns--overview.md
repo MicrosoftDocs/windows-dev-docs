@@ -246,7 +246,7 @@ This is the XAML for the [**ContentDialog**](https://msdn.microsoft.com/library/
 * [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
 * [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
 * [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/xaml/jj709907.aspx)
 * [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
 * [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
 * [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
