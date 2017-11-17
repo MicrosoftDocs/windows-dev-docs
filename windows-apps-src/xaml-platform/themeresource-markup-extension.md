@@ -66,7 +66,7 @@ The Windows Runtime provides a set of resources that are specifically intended t
 
 The XAML definitions of visual states in a control template should use **ThemeResource** references whenever there's an underlying resource that might change because of a theme change. A system theme change won't typically also cause a visual state change. The resources need to use **ThemeResource** references in this case so that values can be re-evaluated for the still-active visual state. For example, if you have a visual state that changes a brush color of a particular UI part and one of its properties, and that brush color is different per-theme, you should use a **ThemeResource** reference for providing that property's value in the default template and also any visual state modification to that default template.
 
-**ThemeResource** usages might be seen in a series of dependent values. For example, a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) value used by a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) that is also a keyed resource might use a **ThemeResource** reference. But any UI properties that use the keyed **SolidColorBrush** resource would also use a **ThemeResource** reference, so that it's specifically each [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076)-type property that's enabling a dynamic value change when the theme changes.
+**ThemeResource** usages might be seen in a series of dependent values. For example, a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) value used by a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) that is also a keyed resource might use a **ThemeResource** reference. But any UI properties that use the keyed **SolidColorBrush** resource would also use a **ThemeResource** reference, so that it's specifically each [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-type property that's enabling a dynamic value change when the theme changes.
 
 **Note**  `{ThemeResource}` and run-time resource evaluation on theme switching is supported in Windows 8.1 XAML but not supported in XAML for apps targeting Windows 8.
 
@@ -88,7 +88,7 @@ Here's some example XAML taken from the default generic.xaml and themeresources.
 ...
 ```
 
-Here, the properties take a [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) value, and the reference to [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources named `ButtonBackgroundThemeBrush` and `ButtonForegroundThemeBrush` are made using **ThemeResource**.
+Here, the properties take a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) value, and the reference to [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources named `ButtonBackgroundThemeBrush` and `ButtonForegroundThemeBrush` are made using **ThemeResource**.
 
 These same properties are also adjusted by some of the visual states for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Notably, the background color changes when a button is clicked. Here too, the [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) animations in the visual state storyboard use [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) objects and references to brushes with **ThemeResource** as the key frame value.
 
@@ -135,7 +135,7 @@ Then each of the other theme dictionaries also has these brushes defined, for ex
             <SolidColorBrush x:Key="ButtonPressedForegroundThemeBrush" Color="{ThemeResource SystemColorButtonFaceColor}" />
 ```
 
-Here the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
+Here the [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
 
 ## Windows 8 behavior
 
