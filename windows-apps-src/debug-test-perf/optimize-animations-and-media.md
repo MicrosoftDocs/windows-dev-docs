@@ -29,8 +29,8 @@ All of these types of animations are guaranteed to be independent:
 -   Object animations using key frames
 -   Zero-duration animations
 -   Animations to the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) properties
--   Animations to the [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property
--   Animations to properties of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) when targeting the [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) subproperty
+-   Animations to the [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) property
+-   Animations to properties of type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) when targeting the [**SolidColorBrush.Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) subproperty
 -   Animations to the following [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties when targeting subproperties of these return value types:
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
@@ -38,11 +38,11 @@ All of these types of animations are guaranteed to be independent:
     -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
-Dependent animations affect layout, which therefore cannot be calculated without extra input from the UI thread. Dependent animations include modifications to properties like [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). By default, dependent animations are not run and require an opt-in from the app developer. When enabled, they run smoothly if the UI thread remains unblocked, but they begin to stutter if the framework or app is doing a lot of other work on the UI thread.
+Dependent animations affect layout, which therefore cannot be calculated without extra input from the UI thread. Dependent animations include modifications to properties like [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Width) and [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Height). By default, dependent animations are not run and require an opt-in from the app developer. When enabled, they run smoothly if the UI thread remains unblocked, but they begin to stutter if the framework or app is doing a lot of other work on the UI thread.
 
 Almost all animations in the XAML framework are independent by default, but there are some actions that you can take to disable this optimization. Beware of these scenarios particularly:
 
--   Setting the [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) property to allow a dependent animation to run on the UI thread. Convert these animations into an independent version. For example animate [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) and [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) instead of the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of an object. Don’t be afraid to scale objects like images and text. The framework applies bilinear scaling only while the [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) is being animated. The image/text will be rerasterized at the final size to ensure it’s always clear.
+-   Setting the [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) property to allow a dependent animation to run on the UI thread. Convert these animations into an independent version. For example animate [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) and [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) instead of the [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Width) and [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Height) of an object. Don’t be afraid to scale objects like images and text. The framework applies bilinear scaling only while the [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) is being animated. The image/text will be rerasterized at the final size to ensure it’s always clear.
 -   Making per frame updates, which are effectively dependent animations. An example of this is applying transformations in the handler of the [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) event.
 -   Running any animation considered independent in an element with the [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) property set to **BitmapCache**. This is considered dependent because the cache must be re-rasterized for each frame.
 
@@ -79,7 +79,7 @@ Audio, video, and images are compelling forms of content that the majority of ap
 
 Media files are some of the most common and expensive resources apps typically use. Because media file resources can greatly increase the size of your app's memory footprint, you must remember to release the handle to media as soon as the app is finished using it.
 
-For example, if your app working with a [**RandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/BR241747) or an [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) object, be sure to call the close method on the object when your app has finished using it, to release the underlying object.
+For example, if your app working with a [**RandomAccessStream**](/uwp/api/Windows.Storage.Streams.RandomAccessStream) or an [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) object, be sure to call the close method on the object when your app has finished using it, to release the underlying object.
 
 ### Display full screen video playback when possible
 
@@ -185,7 +185,7 @@ In the event that you don't set an explicit decode size, XAML will make a best e
 
 -   The [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) is connected to the live XAML tree after setting the content with [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) or [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx).
 -   The image is decoded using synchronous decoding such as [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255).
--   The image is hidden via setting [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) to **Collapsed** on the host image element or brush or any parent element.
+-   The image is hidden via setting [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) to **Collapsed** on the host image element or brush or any parent element.
 -   The image control or brush uses a [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) of **None**.
 -   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
 -   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
