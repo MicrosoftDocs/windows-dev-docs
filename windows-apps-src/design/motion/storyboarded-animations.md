@@ -40,7 +40,7 @@ In order to be animated, the property you are targeting with a storyboarded anim
 
 Most of the time, you define a storyboarded animation by writing XAML. If you use a tool such as Microsoft Visual Studio, it will produce the XAML for you. It's possible to define a storyboarded animation using code too, but that's less common.
 
-Let's look at a simple example. In this XAML example, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property is animated on a particular [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
+Let's look at a simple example. In this XAML example, the [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) property is animated on a particular [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
 ```xml
 <!-- Animates the rectangle's opacity. -->
@@ -57,7 +57,7 @@ Let's look at a simple example. In this XAML example, the [**Opacity**](https://
       
 ### Identifying the object to animate
 
-In the previous example, the storyboard was animating the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). You don't declare the animations on the object itself. Instead you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediately vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.
+In the previous example, the storyboard was animating the [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) property of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). You don't declare the animations on the object itself. Instead you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediately vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.
 
 To connect an animation to a target, you reference the target by its identifying programming name. You should always apply the [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/Mt204788) in the XAML UI definition to name the object that you want to animate. You then target the object to animate by setting [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/Hh759823) within the animation definition. For the value of **Storyboard.TargetName**, you use the name string of the target object, which is what you set earlier and elsewhere with x:Name attribute.
 
@@ -67,7 +67,7 @@ You set a value for [**Storyboard.TargetProperty**](https://msdn.microsoft.com/l
 
 Sometimes you need to target a property that's not an immediate property of the target object, but that is nested more deeply in an object-property relationship. You often need to do this in order to drill down into a set of contributing object and property values until you can reference a property type that can be animated ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)). This concept is called *indirect targeting*, and the syntax for targeting a property in this way is known as a *property path*.
 
-Here's an example. One common scenario for a storyboarded animation is to change the color of a part of an app UI or control in order to represent that the control is in a particular state. Say you want to animate the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) of a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), so that it turns from red to green. You'd expect that a [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) is involved, and that's correct. However, none of the properties on UI elements that affect the object's color are actually of type [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Instead, they're of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). So what you actually need to target for animation is the [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) property of the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) class, which is a **Brush**-derived type that's typically used for these color-related UI properties. And here's what that looks like in terms of forming a property path for your animation's property targeting:
+Here's an example. One common scenario for a storyboarded animation is to change the color of a part of an app UI or control in order to represent that the control is in a particular state. Say you want to animate the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) of a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), so that it turns from red to green. You'd expect that a [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) is involved, and that's correct. However, none of the properties on UI elements that affect the object's color are actually of type [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Instead, they're of type [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). So what you actually need to target for animation is the [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) property of the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) class, which is a **Brush**-derived type that's typically used for these color-related UI properties. And here's what that looks like in terms of forming a property path for your animation's property targeting:
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -86,7 +86,7 @@ Here's how to think of this syntax in terms of its parts:
 Here's a list of animation targeting scenarios where you'll probably be using indirect property targeting, and some property path strings that approximate the syntax you'll use:
 
 -   Animating the [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) value of a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), as applied to a [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980): `(UIElement.RenderTransform).(TranslateTransform.X)`
--   Animating a [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) within a [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) of a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), as applied to a [**Fill**](https://msdn.microsoft.com/library/windows/apps/BR243378): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+-   Animating a [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) within a [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) of a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), as applied to a [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape#Windows_UI_Xaml_Shapes_Shape_Fill): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
 -   Animating the [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) value of a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), which is 1 of 4 transforms in a [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022), as applied to a [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
 You'll notice some of these examples use square brackets around numbers. This is an indexer. It indicates that the property name preceding it has a collection as value, and that you want an item (as identified by a zero-based index) from within that collection.
@@ -117,9 +117,9 @@ The animation types we've described are sometimes referred to as **From**/**To**
 -   If you don't specify a **To** value or a **By** value, the ending value is whatever value the animated property has at the time before the animation runs. In this case you'd better have a **From** value because otherwise the animation won't change the value at all; its starting and ending values are both the same.
 -   An animation typically has at least one of **From**, **By** or **To** but never all three.
 
-Let's revisit the earlier XAML example and look again at the **From** and **To** values, and the **Duration**. The example is animating the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property, and the property type of **Opacity** is [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). So the animation to use here is [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136).
+Let's revisit the earlier XAML example and look again at the **From** and **To** values, and the **Duration**. The example is animating the [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) property, and the property type of **Opacity** is [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). So the animation to use here is [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136).
 
-`From="1.0" To="0.0"` specifies that when the animation runs, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property starts at a value of 1 and animates to 0. In other words, in terms of what these [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) values mean to the **Opacity** property, this animation will cause the object to start opaque and then fade to transparent.
+`From="1.0" To="0.0"` specifies that when the animation runs, the [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) property starts at a value of 1 and animates to 0. In other words, in terms of what these [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) values mean to the **Opacity** property, this animation will cause the object to start opaque and then fade to transparent.
 
 ```xml
 ...
@@ -136,7 +136,7 @@ Let's revisit the earlier XAML example and look again at the **From** and **To**
 
 For more info about [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) values and the XAML syntax, see [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377).
 
-**Note**  For the example we showed, if you were sure that the starting state of the object being animated has [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) always equal to 1, either through the default or an explicit set, you could omit the **From** value, the animation would use the implicit starting value, and the result would be the same.
+**Note**  For the example we showed, if you were sure that the starting state of the object being animated has [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity) always equal to 1, either through the default or an explicit set, you could omit the **From** value, the animation would use the implicit starting value, and the result would be the same.
 
  
 
@@ -230,10 +230,10 @@ The variety of animation that is determined to have some risk of slowing down th
 An animation is independent if it has any of these characteristics:
 
 -   The [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) of the animation is 0 seconds (see Caution)
--   The animation targets [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962)
+-   The animation targets [**UIElement.Opacity**](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_Opacity)
 -   The animation targets a sub-property value of these [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties: [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx), [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 -   The animation targets [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) or [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772)
--   The animation targets a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) value and uses a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), animating its [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963)
+-   The animation targets a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) value and uses a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), animating its [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color)
 -   The animation is an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)
 
 **Caution**  In order for your animation to be treated as independent, you must explicitly set `Duration="0"`. For example, if you remove `Duration="0"` from this XAML, the animation is treated as dependent, even though the [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) of the frame is "0:0:0".

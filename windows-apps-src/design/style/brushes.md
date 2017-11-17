@@ -19,7 +19,7 @@ You use [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) objects to paint the i
 
 ## Introduction to brushes
 
-To paint an object such as a [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. 
+To paint an object such as a [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. 
 
 The different types of brushes are: 
 -   [**AcrylicBrush**](/uwp/api/windows.ui.xaml.media.acrylicbrush)
@@ -140,13 +140,13 @@ Here's what the rendered [**ImageBrush**](https://msdn.microsoft.com/library/win
 
 ## Brushes and text
 
-You can also use brushes to apply rendering characteristics to text elements. For example, the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) property of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) takes a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). You can apply any of the brushes described here to text. But be careful with brushes applied to text, because it's possible to make the text unreadable if you use brushes that bleed into whatever background the text is rendered on top of, or that distract from the outlines of text characters. Use [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for readability of text elements in most cases, unless you want the text element to be mostly decorative.
+You can also use brushes to apply rendering characteristics to text elements. For example, the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) property of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) takes a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush). You can apply any of the brushes described here to text. But be careful with brushes applied to text, because it's possible to make the text unreadable if you use brushes that bleed into whatever background the text is rendered on top of, or that distract from the outlines of text characters. Use [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for readability of text elements in most cases, unless you want the text element to be mostly decorative.
 
 Even when you use a solid color, make sure that the text color you choose has enough contrast against the background color of the text's layout container. The level of contrast between text foreground and text container background is an accessibility consideration.
 
 ## WebViewBrush
 
-A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) is a special type of brush that can access the content normally viewed in a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see [**WebViewBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
+A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) is a special type of brush that can access the content normally viewed in a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see [**WebViewBrush**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush).
 
 ## XamlCompositionBrushBase
 
@@ -166,7 +166,7 @@ You can declare any brush to be a keyed XAML resource in a XAML resource diction
 
 ## Brushes in code
 
-It's much more typical to specify brushes using XAML than it is to use code to define brushes. This is because brushes are usually defined as XAML resources, and because brush values are often the output of design tools or otherwise as part of a XAML UI definition. Still, for the occasional case where you might want to define a brush using code, all the [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) types are available for code instantiation.
+It's much more typical to specify brushes using XAML than it is to use code to define brushes. This is because brushes are usually defined as XAML resources, and because brush values are often the output of design tools or otherwise as part of a XAML UI definition. Still, for the occasional case where you might want to define a brush using code, all the [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) types are available for code instantiation.
 
 To create a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) in code, use the constructor that takes a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) parameter. Pass a value that is a static property of the [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) class, like this:
 
