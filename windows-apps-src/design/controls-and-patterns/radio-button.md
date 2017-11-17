@@ -53,7 +53,23 @@ If there are more than 8 options, use a [drop-down list](lists.md), a single-sel
 
 If the available options are based on the app’s current context, or can otherwise vary dynamically, use a single-select [list box](lists.md) instead.
 
-## Example
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RadioButton">open the app and see the RadioButton in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 Radio buttons in the Microsoft Edge browser settings.
 
 ![Radio buttons in the Microsoft Edge browser settings](images/control-examples/radio-buttons-edge.png)
@@ -174,6 +190,11 @@ A radio button has two states: *selected* or *cleared*. When a radio button is s
 This illustration shows the proper way to position and space radio buttons.
 
 ![A set of radio buttons](images/radiobutton_layout1.png)
+
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
+
 ## Related topics
 
 **For designers**

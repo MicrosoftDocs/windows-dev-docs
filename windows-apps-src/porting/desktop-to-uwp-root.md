@@ -227,7 +227,7 @@ To give your app the best chance of being published on the Microsoft Store or be
 
 If you're using the DAC to package your app, you can use the new ``-Verify`` flag to validate your package against the Desktop Bridge and Store requirements. See [Package an app, sign the app, and prepare it for store submission](desktop-to-uwp-run-desktop-app-converter.md#optional-parameters).
 
-If you're using Visual Studio, you can validate your app from the **Create App Packages** wizard. See [Create an app package](../packaging/packaging-uwp-apps.md#create-an-app-package).
+If you're using Visual Studio, you can validate your app from the **Create App Packages** wizard. See [Create an app package upload file](../packaging/packaging-uwp-apps.md#create-an-app-package-upload-file).
 
 To run the tool manually, see [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md).
 

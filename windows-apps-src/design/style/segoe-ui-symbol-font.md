@@ -21,11 +21,11 @@ localizationpriority: medium
 
 This article lists the icons provided by the Segoe MDL2 Assets font. 
 
-> **Important APIs**: [**Symbol enumeration (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
+> **Important APIs**: [**Symbol enum**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol), [**FontIcon class**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## About Segoe MDL2 Assets
 
-With the release of Windows 10, the Segoe MDL2 Assets font replaced the Windows 8/8.1 Segoe UI Symbol icon font. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> ( **Segoe UI Symbol** will still be available as a "legacy" resource, but we recommend updating your app to use the new **Segoe MDL2 Assets**.)
+With the release of Windows 10, the Segoe MDL2 Assets font replaced the Windows 8/8.1 Segoe UI Symbol icon font. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (**Segoe UI Symbol** will still be available as a "legacy" resource, but we recommend updating your app to use the new **Segoe MDL2 Assets**.)
 
 Most of the icons and UI controls included in the **Segoe MDL2 Assets** font are mapped to the Private Use Area of Unicode (PUA). The PUA allows font developers to assign private Unicode values to glyphs that don’t map to existing code points. This is useful when creating a symbol font, but it creates an interoperability problem. If the font is not available, the glyphs won’t show up. Only use these glyphs when you can specify the **Segoe MDL2 Assets** font.
 
@@ -41,14 +41,24 @@ All glyphs in **Segoe MDL2 Assets** have the same fixed width with a consistent 
 
 Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
 
-## Symbol enumeration
-If you are developing an app in C#/VB/C++ and XAML, you can use the [**Symbol enumeration**](https://msdn.microsoft.com/library/windows/apps/dn252842) to use icons from the Segoe MDL2 Assets font. 
+## Using the icons
+If you are developing an app in C#/VB/C++ and XAML, you can use specified glyphs from Seogoe MDL2 Assets with the [Symbol enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol). 
+
+```xaml
+<SymbolIcon Symbol="GlobalNavigationButton"/>
+```
+
+If you would like to use a glyph from the **Segoe MDL2 Assets** font that is not included in the Symbol enum, then use a [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon).
+
+```xaml
+<FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
+```
 
 ## How do I get this font?
 To obtain Segoe MDL2 Assets, you must install Windows 10. 
 
 ## Icon list
-Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
+Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of the icons are intended for specialized purposed and are not typically used anywhere else.
 
 
 <table style="background-color: white; color: black">
@@ -3922,5 +3932,6 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
 
 * [Guidelines for fonts](../style/fonts.md)
 * [Symbol enumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [FontIcon class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 
 

@@ -25,6 +25,23 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 > **Important APIs**: [ParallaxView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview), [VerticalShift property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_VerticalShift), [HorizontalShift property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview#Windows_UI_Xaml_Controls_ParallaxView_HorizontalShift)
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/ParallaxView">open the app and see the ParallaxView in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 ## Parallax and the Fluent Design System
 
  The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
@@ -98,12 +115,17 @@ Larger values create a more dramatic effect.
 For the complete list of ways to customize parallax, see the ParallaxView class. 
 
 ## Do’s and don’ts
+
 - Use parallax in lists with a background image
 - Consider using parallax in ListViewItems when ListViewItems contain an image
 - Don’t use it everywhere, overuse can diminish its impact
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
+
 ## Related articles
+
 - [ParallaxView class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [Fluent Design for UWP](../fluent-design-system/index.md)
 - [Science in the System: Fluent Design and Depth](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-

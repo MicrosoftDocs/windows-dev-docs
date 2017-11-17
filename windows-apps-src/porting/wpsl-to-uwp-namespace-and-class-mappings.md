@@ -92,7 +92,7 @@ Also, in a Windows 10 app, you will benefit from .NET Native, which an ahead-of
 | **System.Windows.Controls.RichTextBox** class | [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) class | 
 | **System.Windows.Controls.WrapPanel** class | No direct equivalent for general layout purposes. [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) and [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) can be used in the items panel template of an items control. | 
 | **System.Windows.Controls.Primitives** namespace | [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace |
-| **System.Windows.Controls.Shapes** namespace | [**Windows.UI.Xaml.Controls.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) namespace | 
+| **System.Windows.Controls.Shapes** namespace | [**Windows.UI.Xaml.Controls.Shapes**](/uwp/api/Windows.UI.Xaml.Shapes) namespace | 
 | **System.Windows.Data** namespace | [**Windows.UI.Xaml.Data**](https://msdn.microsoft.com/library/windows/apps/br209917) namespace | 
 | **System.Windows.Documents** namespace | [**Windows.UI.Xaml.Documents**](https://msdn.microsoft.com/library/windows/apps/br209984) namespace | 
 | **System.Windows.Ink** namespace | No direct equivalent |
@@ -130,13 +130,13 @@ Also, in a Windows 10 app, you will benefit from .NET Native, which an ahead-of
 | (MXFM = **Microsoft.Xna.Framework.Media**) <br/> **MXFM.MediaLibrary**, **MXFM.PhoneExtensions.MediaLibraryExtensions** classes | [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) class |
 | **Microsoft.Xna.Framework.Media.MediaQueue** class | [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) class |
 | **Microsoft.Xna.Framework.Media.Playlist** class | [**BackgroundMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652527) class |
-| **System.Windows.Media** namespace | [**Windows.UI.Xaml.Media**](https://msdn.microsoft.com/library/windows/apps/br243045) namespace |
+| **System.Windows.Media** namespace | [**Windows.UI.Xaml.Media**](/uwp/api/Windows.UI.Xaml.Media) namespace |
 | **System.Windows.Media.RadialGradientBrush** class | No direct equivalent. See [Media and graphics](wpsl-to-uwp-porting-xaml-and-ui.md). |
 | **System.Windows.Media.Animation** namespace | [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/br243232) namespace |
 | **System.Windows.Media.Effects** namespace | No direct equivalent | 
 | **System.Windows.Media.Imaging** namespace | [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) namespace |
 | **System.Windows.Media.Media3D** namespace | [**Windows.UI.Xaml.Media.Media3D**](https://msdn.microsoft.com/library/windows/apps/br243274) namespace |
-| **System.Windows.Shapes** namespace | [**Windows.UI.Xaml.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) namespace |
+| **System.Windows.Shapes** namespace | [**Windows.UI.Xaml.Shapes**](/uwp/api/Windows.UI.Xaml.Shapes) namespace |
 | Launchers and Choosers | |
 | **Microsoft.Phone.Tasks.AddressChooserTask**, **EmailAddressChooserTask**, **PhoneNumberChooserTask** classes | [**ContactPicker**](https://msdn.microsoft.com/library/windows/apps/br224913) class |
 | **Microsoft.Phone.Tasks.AddWalletItemTask**, **AddWalletItemResult** classes | [**Windows.ApplicationModel.Wallet**](https://msdn.microsoft.com/library/windows/apps/dn631399) namespace |

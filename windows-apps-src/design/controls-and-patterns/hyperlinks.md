@@ -38,6 +38,23 @@ Choose the right type of hyperlink based on your needs:
 -   Use a **HyperlinkButton** for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.
 -   Use a **HyperlinkButton** with an [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) as its content to make a clickable image.
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/HyperlinkButton">open the app and see the HyperlinkButton in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 ## Create a Hyperlink text element
 
 This example shows how to use a Hyperlink text element inside of a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx).
@@ -143,6 +160,10 @@ The default color of the hyperlink is the accent color of the system. You can se
 -   Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows 10 type ramp](../style/fonts.md).
 -   Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
 -   Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
+
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

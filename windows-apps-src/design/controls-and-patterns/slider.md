@@ -55,6 +55,21 @@ Use a slider if:
 
 ## Examples
 
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Slider">open the app and see the Slider in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
+
 A slider to control the volume on Windows Phone.
 
 ![A slider to control the volume on Windows Phone](images/control-examples/slider-phone.png)
@@ -169,6 +184,10 @@ A slider is composed of a track and a thumb. The track is a bar (which can optio
 A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.
 
 When you’re designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
+
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related topics
 - [Toggle switches](toggles.md)

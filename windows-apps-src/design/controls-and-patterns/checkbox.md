@@ -48,6 +48,22 @@ When options can be grouped, you can use an indeterminate check box to represent
 
 Both **check box** and **radio button** controls let the user select from a list of options. Check boxes let the user select a combination of options. In contrast, radio buttons let the user make a single choice from mutually exclusive options. When there is more than one option but only one can be selected, use a radio button instead.
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/CheckBox">open the app and see the CheckBox in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
 
 ## Create a checkbox
 
@@ -118,9 +134,9 @@ To perform an action when the check box state changes, you can handle either the
 
 The **Click** event occurs whenever the checked state changes. If you handle the Click event, use the **IsChecked** property to determine the state of the check box.
 
-The **Checked** and **Unchecked** events occur independently. If you handle these events, you should handle both of them to repsond to state changes in the check box.
+The **Checked** and **Unchecked** events occur independently. If you handle these events, you should handle both of them to respond to state changes in the check box.
 
-In the following examples, we show handling the Click event, and the Checked and Unchecked events. 
+In the following examples, we show handling the Click event, and the Checked and Unchecked events.
 
 Multiple checkboxes can share the same event handler. This example creates four checkboxes for selecting pizza toppings. The four checkboxes share the same **Click** event handler to update the list of selected toppings.
 
@@ -282,11 +298,12 @@ private void SetCheckedState()
 
     ![Radio button group with three options: Not spicy, Spicy, and Extra spicy](images/spicyoptions.png)
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
--   [CheckBox class](https://msdn.microsoft.com/library/windows/apps/br209316) 
--   [Radio buttons](radio-button.md)
--   [Toggle switch](toggles.md)
-
-
+- [CheckBox class](https://msdn.microsoft.com/library/windows/apps/br209316) 
+- [Radio buttons](radio-button.md)
+- [Toggle switch](toggles.md)

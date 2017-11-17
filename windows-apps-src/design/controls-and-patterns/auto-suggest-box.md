@@ -18,14 +18,12 @@ doc-status: Published
 localizationpriority: medium
 ---
 # Auto-suggest box
- 
 
 Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
 
 > **Important APIs**: [AutoSuggestBox class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx), [TextChanged event](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx), [SuggestionChose event](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx), [QuerySubmitted event](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
 
 ![An auto suggest box](images/controls/auto-suggest-box-open.png)
-
 
 ## Is this the right control?
 
@@ -34,6 +32,21 @@ If you'd like a simple, customizable control that allows text search with a list
 For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/AutoSuggestBox">open the app and see the AutoSuggestBox in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
 
 An auto suggest box in the Groove Music app.
 
@@ -83,24 +96,6 @@ The QuerySubmitted event occurs when a user commits a query string. The user can
 
 In all cases, the event args [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) property contains the text from the text box.
 
-## Use AutoSuggestBox for search
-
-Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
-
-By default, the text entry box doesn’t have a query button shown. You can set the [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a ‘find’ icon, like this.
-
-```xaml
-<AutoSuggestBox QueryIcon="Find"/>
-```
-
-Here's an AutoSuggestBox with a 'find' icon.
-
-![Example of the entry point for auto-suggest control](images/controls_autosuggest_entrypoint.png)
-
-## Get the sample code 
-
-To see complete working examples of AutoSuggestBox, see the [AutoSuggestBox sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlAutoSuggestBox) and [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?LinkId=619992).
-
 Here is a simple AutoSuggestBox with the required event handlers.
 
 ```xaml
@@ -143,6 +138,20 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
+## Use AutoSuggestBox for search
+
+Use an AutoSuggestBox to provide a list of suggestions for a user to select from as they type.
+
+By default, the text entry box doesn’t have a query button shown. You can set the [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) property to add a button with the specified icon on the right side of the text box. For example, to make the AutoSuggestBox look like a typical search box, add a ‘find’ icon, like this.
+
+```xaml
+<AutoSuggestBox QueryIcon="Find"/>
+```
+
+Here's an AutoSuggestBox with a 'find' icon.
+
+![Example of the entry point for auto-suggest control](images/controls_autosuggest_entrypoint.png)
+
 ## Do's and don'ts
 
 -   When using the auto-suggest box to perform searches and no search results exist for the entered text, display a single-line "No results" message as the result so that users know their search request executed:
@@ -164,6 +173,10 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 </div>
 -->
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
+- [AutoSuggestBox sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ## Related articles
 

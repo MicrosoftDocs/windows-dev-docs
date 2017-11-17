@@ -40,7 +40,7 @@ In order to be animated, the property you are targeting with a storyboarded anim
 
 Most of the time, you define a storyboarded animation by writing XAML. If you use a tool such as Microsoft Visual Studio, it will produce the XAML for you. It's possible to define a storyboarded animation using code too, but that's less common.
 
-Let's look at a simple example. In this XAML example, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property is animated on a particular [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) object.
+Let's look at a simple example. In this XAML example, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property is animated on a particular [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
 ```xml
 <!-- Animates the rectangle's opacity. -->
@@ -57,7 +57,7 @@ Let's look at a simple example. In this XAML example, the [**Opacity**](https://
       
 ### Identifying the object to animate
 
-In the previous example, the storyboard was animating the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). You don't declare the animations on the object itself. Instead you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediately vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.
+In the previous example, the storyboard was animating the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). You don't declare the animations on the object itself. Instead you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediately vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.
 
 To connect an animation to a target, you reference the target by its identifying programming name. You should always apply the [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/Mt204788) in the XAML UI definition to name the object that you want to animate. You then target the object to animate by setting [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/Hh759823) within the animation definition. For the value of **Storyboard.TargetName**, you use the name string of the target object, which is what you set earlier and elsewhere with x:Name attribute.
 

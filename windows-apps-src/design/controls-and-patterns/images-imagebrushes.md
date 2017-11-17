@@ -15,18 +15,31 @@ localizationpriority: medium
 ---
 # Images and image brushes
 
- 
-
 To display an image, you can use either the **Image** object or the **ImageBrush** object. An Image object renders an image, and an ImageBrush object paints another object with an image. 
 
 > **Important APIs**: [Image class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [Source property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx), [ImageBrush class](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx), [ImageSource property](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
-
 
 ## Are these the right elements?
 Use an **Image** element to display a stand-alone image in your app.
 
 Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrush include decorative effects for text, or backgrounds for controls or layout containers.
 
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/Image">open the app and see the Image in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
 
 ## Create an image
 
@@ -145,6 +158,10 @@ If you define an Image or ImageBrush using code, use the default constructors, t
 
 > [!NOTE]
 > If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [ResourceManager](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) and [ResourceMap](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
+
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
