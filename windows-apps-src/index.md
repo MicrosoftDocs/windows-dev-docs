@@ -60,6 +60,9 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                         <p>
                             <a href="get-started/your-first-app.md">Create your first app</a>
                         </p>
+                        <p>
+                            <a href="get-started/experimental-apis.md">Experimental APIs</a>
+                        </p>
                     </div>
                 </div>
             </div>
