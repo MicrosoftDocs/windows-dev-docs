@@ -79,7 +79,7 @@ There are many ways you can get user input in your app. These questions will hel
             <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
         </div>
     </div>
-    <div style="float: left; margin: -6px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
         <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/category/Text">open the app and see the text controls in action</a>.</p>
         <ul>
         <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
@@ -117,30 +117,6 @@ See these articles for font guidelines:
 - [Font guidelines](../style/fonts.md)
 - [Segoe MDL2 icon list and guidelines](../style/segoe-ui-symbol-font.md)
 
-## Pen input
-
-> The pen input feature is currently available only in the Windows Insider Preview. Feature names, terminology, and functionality are not final.
-
-**Applies to:** TextBox, RichEditBox, AutoSuggestBox
-
-Starting with RS4, XAML text input boxes feature embedded support for pen input using [Windows Ink](../input-and-devices/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
-
-![Text box expands when tapped with pen](images/pen-input-expand.gif)
-
-Text is recognized as the user writes anywhere in the text box, and a candidate windows shows the recognition results. The user can tap a result to choose it, or continue writing to accept the proposed candidate. The literal (letter-by-letter) recognition results are included in the candidate window, so recognition is not restricted to words in a dictionary. As the user writes, the accepted text input is converted to a script font that retains the feel of natural writing.
-
-![Text box with pen input](images/pen-input-1.png)
-
-A user can edit their text using standard gestures and actions, like these:
-
-- _strike through_ or _scratch out_ - draw through to delete a word or part of a word
-- _join_ - draw an arc between words to delete the space between them
-- _insert_ - draw a caret symbol to insert a space
-- _overwrite_ - write over existing text to replace it
-
-![Overwrite pen input](images/pen-input-2.png)
-
-Embedded text input is enabled by default when your app targets and is running on RS4 or later. You can opt-out on a per-text box basis to disable the feature and revert to a text input panel.
 
 ## Choose the right keyboard for your text control
 

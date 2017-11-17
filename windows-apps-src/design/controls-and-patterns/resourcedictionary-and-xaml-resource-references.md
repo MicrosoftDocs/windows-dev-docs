@@ -22,7 +22,7 @@ localizationpriority: medium
 
 You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) element from the Windows Runtime XAML. Then, you can reference your resources by using a [StaticResource markup extension](../../xaml-platform/staticresource-markup-extension.md) or [ThemeResource markup extension](../../xaml-platform/themeresource-markup-extension.md).
 
-The XAML elements you might want to declare most often as XAML resources include [Style](https://msdn.microsoft.com/library/windows/apps/br208849), [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391), animation components, and [Brush](https://msdn.microsoft.com/library/windows/apps/br228076) subclasses. Here, we explain how to define a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package. We also explain resource dictionary advanced features such as [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801) and [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807).
+The XAML elements you might want to declare most often as XAML resources include [Style](https://msdn.microsoft.com/library/windows/apps/br208849), [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391), animation components, and [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) subclasses. Here, we explain how to define a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package. We also explain resource dictionary advanced features such as [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801) and [ThemeDictionaries](https://msdn.microsoft.com/library/windows/apps/br208807).
 
 **Prerequisites**
 
@@ -432,7 +432,7 @@ Being shareable is required because, when the object tree of an app is construct
 A [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) and Windows Runtime XAML in general supports these objects for shareable usage:
 
 -   Styles and templates ([Style](https://msdn.microsoft.com/library/windows/apps/br208849) and classes derived from [FrameworkTemplate](https://msdn.microsoft.com/library/windows/apps/br208753))
--   Brushes and colors (classes derived from [Brush](https://msdn.microsoft.com/library/windows/apps/br228076), and [Color](https://msdn.microsoft.com/library/windows/apps/hh673723) values)
+-   Brushes and colors (classes derived from [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush), and [Color](https://msdn.microsoft.com/library/windows/apps/hh673723) values)
 -   Animation types including [Storyboard](https://msdn.microsoft.com/library/windows/apps/br210490)
 -   Transforms (classes derived from [GeneralTransform](https://msdn.microsoft.com/library/windows/apps/br210034))
 -   [Matrix](https://msdn.microsoft.com/library/windows/apps/br210127) and [Matrix3D](https://msdn.microsoft.com/library/windows/apps/br243266)
