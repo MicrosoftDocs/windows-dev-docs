@@ -1574,7 +1574,11 @@
       "source_path": "windows-apps-src/graphics/index.md",
       "redirect_url": "/windows/uwp/design/style",
       "redirect_document_id": false
-    }              
-                          
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
+      "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
+      "redirect_document_id": true
+    }                                    
   ]
 }
