@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 11/9/2017
+ms.date: 11/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -122,15 +122,6 @@ Search terms (formerly called keywords) are single words or short phrases that a
 
 When adding search terms, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any search terms that are not actually relevant to your app.
 
-
-### Privacy policy
-
-If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a privacy policy if required. If we determine that your app requires a privacy policy, and you have not provided one, your app may fail certification.
-
-> [!IMPORTANT]
-> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. To determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1).
-
-
 ### Copyright and trademark info
 
 If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
@@ -159,4 +150,12 @@ Enter the URL of the web page where your customers can go for support on your ap
 > [!IMPORTANT]
 > The **Support contact info** field is required if your app or game is available on Xbox. 
 
+## Privacy policy
+
+You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required. If we determine that your app requires a privacy policy, and you have not provided one, your app will fail certification. For example, if your app accesses, collects, or transmits personal information, or if it allows web browsing, a privacy policy is required. 
+
+To determine if your app requires a privacy policy, review the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information).
+
+> [!IMPORTANT]
+> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. 
 
