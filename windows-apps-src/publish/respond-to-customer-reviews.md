@@ -4,7 +4,7 @@ Description: You can respond directly to reviews of your app to let customers kn
 title: Respond to customer reviews
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
-ms.date: 09/11/2017
+ms.date: 11/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,16 +20,16 @@ You can respond directly to reviews of your app to let customers know you’re l
 > [!IMPORTANT]
 > You won't be able to directly respond to reviews written by customers who have chosen not to receive review responses. Responses also can’t be left for any reviews that were created by customers outside of the U.S. with Windows Phone 8 devices.
 
-To view your app's reviews and provide responses, find the app in your Windows Dev Center dashboard. In the left navigation menu, expand **Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md). Select **Respond to review** to provide your respons.
+To view your app's reviews and provide responses, find the app in your Windows Dev Center dashboard. In the left navigation menu, expand **Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md). Select **Respond to review** to provide your response.
 
 > [!TIP]
-> In addition to using the dashboard to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws). 
+> In addition to using the dashboard to respond to reviews, you can respond to reviews [programmatically](../monetize/submit-responses-to-app-reviews.md), or by using the [Dev Center app](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws).
 
 When you send a review response, the customer will receive an email from Microsoft that lets them see your response. This email will also include your app’s support email address, which the customer can then use to contact you directly. If you didn’t add a support email address for your app during the submission process, you'll be asked to include one before you can respond.
 
 By default, your response will only be seen by the customer to whom you are responding. If you want to let other customers view your response, check the **Make this response public** box to allow us to display your response in your app’s Store listing, directly below the customer’s review. Public responses will be visible to any customer viewing the Store on a Windows 10 devices.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > You won’t be able to change a public response later (unless the customer revises their original review), so review your response carefully before you choose to make it public. If a customer revises the original review, your response will be removed. You can then submit a new response to the revised review by selecting **Update your response** if you wish.
 
 
@@ -45,7 +45,7 @@ When responding to a customer's review, you must follow these guidelines. These 
 -   Don’t include any profane, aggressive, personal, or malicious comments in your response. Always be polite and keep in mind that happy customers will likely be your app’s biggest promoters.
 
 > [!NOTE]
-> Customers can report an inappropriate review response from a developer to Microsoft. They can also opt out of receiving review responses. 
+> Customers can report an inappropriate review response from a developer to Microsoft. They can also opt out of receiving review responses.
 >
 > Microsoft retains the right to revoke a developer’s permission to send responses for any reason, including if your responses prompt an unusually high number of inappropriate response reports, or if they prompt an unusually high number of customers to opt out of receiving review responses.
 
