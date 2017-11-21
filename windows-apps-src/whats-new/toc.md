@@ -9,3 +9,4 @@
 # [What's new in the Windows docs, September 2017](../whats-new/windows-docs-latest.md)
 ## [What's new in the Windows docs, August 2017](../whats-new/windows-docs-august-2017.md)
 ## [What's new in the Windows docs, July 2017](../whats-new/windows-docs-july-2017.md)
+# [Experimental APIs](../whats-new/experimental-apis.md)
