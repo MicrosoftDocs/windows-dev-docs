@@ -325,7 +325,7 @@ The syntax for each parameter in this table is shown by using Augmented Backusâ€
 
 <p>Examples:</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
-<p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
+<p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232_My%20Picnic%20Spot</p></td>
 <td align="left"><p>Defines the start and end of a route to draw on the map, separated by a tilde (**~**). Each of the waypoints is defined by either a position using ltitude, longitude, and optional title or an address identifier.</p>
 <p>A complete route contains exactly two waypoints. For example, a route with two waypoints is defined by <code>rtp="A"~"B"</code>.</p>
 <p>It's also acceptable to specify an incomplete route. For example, you can define only the start of a route with <code>rtp="A"~</code>. In this case, the directions input is displayed with the provided waypoint in the **From** field and the **To** field has focus.</p>
