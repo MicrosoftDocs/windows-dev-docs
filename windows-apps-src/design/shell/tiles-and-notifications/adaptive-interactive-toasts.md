@@ -6,7 +6,7 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 05/19/2017
+ms.date: 11/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -753,5 +753,5 @@ Your tiles and toasts can load strings and images tailored for display language,
 ## Related topics
 
 * [Send a local toast and handle activation](send-local-toast.md)
-* [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
+* [Notifications library on GitHub (part of the UWP Community Toolkit)](https://github.com/Microsoft/UWPCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Tile and toast notification support for language, scale, and high contrast](tile-toast-language-scale-contrast.md)

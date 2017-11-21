@@ -4,7 +4,7 @@ title: Input practices for games
 description: Learn patterns and techniques for using input devices effectively.
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.author: elcowle
-ms.date: 10/27/2017
+ms.date: 11/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -294,6 +294,25 @@ if (buttonArrangement == buttonSelection)
 ```
 
 This formula can be applied to test any number of buttons in any arrangement of their states.
+
+## Get the state of the battery
+
+For any game controller that implements the [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) interface, you can call [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo#Windows_Gaming_Input_IGameControllerBatteryInfo_TryGetBatteryReport) on the controller instance to get a [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) object that provides information about the battery in the controller. You can get properties like the rate that the battery is charging ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport#Windows_Devices_Power_BatteryReport_ChargeRateInMilliwatts)), the estimated energy capacity of a new battery ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport#Windows_Devices_Power_BatteryReport_DesignCapacityInMilliwattHours)), and the fully-charged energy capacity of the current battery ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport#Windows_Devices_Power_BatteryReport_FullChargeCapacityInMilliwattHours)).
+
+For game controllers that support detailed battery reporting, you can get this and more information about the battery, as detailed in [Get battery information](../devices-sensors/get-battery-info.md). However, most game controllers don't support that level of battery reporting, and instead use low-cost hardware. For these controllers, you'll need to keep the following considerations in mind:
+
+* **ChargeRateInMilliwatts** and **DesignCapacityInMilliwattHours** will always be **NULL**.
+
+* You can get the battery percentage by calculating [RemainingCapacityInMilliwattHours](https://docs.microsoft.com/en-us/uwp/api/windows.devices.power.batteryreport#Windows_Devices_Power_BatteryReport_RemainingCapacityInMilliwattHours) / **FullChargeCapacityInMilliwattHours**. You should ignore the values of these properties and only deal with the calculated percentage.
+
+* The percentage from the previous bullet point will always be one of the following:
+
+    * 100% (Full)
+    * 70% (Medium)
+    * 40% (Low)
+    * 10% (Critical)
+
+If your code performs some action (like drawing UI) based on the percentage of battery life remaining, make sure that it conforms to the values above. For example, if you want to warn the player when the controller's battery is low, do so when it reaches 10%.
 
 ## See also
 
