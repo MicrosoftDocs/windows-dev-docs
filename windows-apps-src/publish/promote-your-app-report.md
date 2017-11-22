@@ -4,7 +4,7 @@ title: Ad campaign report
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: The Ad campaign report in the Windows Dev Center dashboard lets you see how your app promotion ad campaigns are performing.
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 11/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,9 +14,7 @@ localizationpriority: high
 
 # Ad campaign report
 
-The **Ad campaign** report in the Windows Dev Center dashboard lets you see how your app promotion ad campaigns are performing.
-
-To see the report, expand **Attract** in the left navigation menu and select **Ad campaigns** (or, from within an app, expand **Monetization** and select **Promote your app**). 
+The **Ad campaign** report in the Windows Dev Center dashboard lets you see how your app promotion [ad campaigns](create-an-ad-campaign-for-your-app.md) are performing. To see the report, expand **Attract** in the left navigation menu and select **Ad campaigns**.
 
 ## Definitions
 
@@ -75,9 +73,13 @@ As a result, it is possible that app install tracking may underreport the actual
 
 To see all of the ad campaign transactions associated with your account, select **Billing history** in the left navigation menu.
 
-For each transaction, we show the **Transaction date**, the appropriate **Campaign name**, the **Payment method** charged, **Payment ID**, **Billing start date**, **Billing end date**, **Total amount** of the charge, and **Payment status**. 
+For each transaction, we show the **Transaction date**, the appropriate **Campaign name**, the **Payment method** charged, **Payment ID**, **Billing start date**, **Billing end date**, **Total amount** of the charge, and **Payment status**.
 
 You can download your account billing history as a Microsoft Word document by clicking the **Download** link.
+
+## Related topics
+
+* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
 
  
 

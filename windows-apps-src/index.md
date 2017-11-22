@@ -32,6 +32,9 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                         <p>
                             <a href="whats-new/windows-docs-latest.md">What's new in the docs</a>
                         </p>
+                        <p>
+                            <a href="whats-new/experimental-apis.md">Experimental APIs</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -59,9 +62,6 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                         </p>
                         <p>
                             <a href="get-started/your-first-app.md">Create your first app</a>
-                        </p>
-                        <p>
-                            <a href="get-started/experimental-apis.md">Experimental APIs</a>
                         </p>
                     </div>
                 </div>
@@ -208,10 +208,10 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                         </p>
                         <p>
                             <a href="//docs.microsoft.com/uwp/extension-sdks">Extension SDKs</a>
-                        </p>  
+                        </p>
                         <p>
                             <a href="//docs.microsoft.com/uwp/schemas">Schemas</a>
-                        </p>                                               
+                        </p>
                     </div>
                 </div>
             </div>
