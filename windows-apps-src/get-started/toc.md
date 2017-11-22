@@ -24,4 +24,3 @@
 ## [Building a complex app](../get-started/plan-your-app.md)
 ## [What's next?](../get-started/learn-more.md)
 # [Get UWP app samples](../get-started/get-uwp-app-samples.md)
-# [Experimental APIs](../get-started/experimental-apis.md)

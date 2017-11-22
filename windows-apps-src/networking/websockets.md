@@ -83,7 +83,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     try
     {
         Task connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
-        connectTask.ContinueWith((antecedent) => this.SendMessageUsingMessageWebSocketAsync("Hello, World!"));
+        connectTask.ContinueWith(_ => this.SendMessageUsingMessageWebSocketAsync("Hello, World!"));
     }
     catch (Exception ex)
     {
@@ -266,7 +266,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         Task connectTask = this.streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
 
-        connectTask.ContinueWith((antecedent) =>
+        connectTask.ContinueWith(_ =>
         {
             Task.Run(() => this.ReceiveMessageUsingStreamWebSocket());
             Task.Run(() => this.SendMessageUsingStreamWebSocket(new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 }));
@@ -396,7 +396,7 @@ Use the [**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/a
 
 Before establishing a connection, you can set advanced options on a socket by setting properties on either [**MessageWebSocketControl**](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live) or [**StreamWebSocketControl**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live). You access an instance of those classes from the socket object itself either via its [**MessageWebSocket.Control**](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live#Windows_Networking_Sockets_MessageWebSocket_Control) property or its [**StreamWebSocket.Control**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live#Windows_Networking_Sockets_StreamWebSocket_Control) property, as appropriate.
 
-Here's an examples using **StreamWebSocket**. The same pattern applies to **MessageWebSocket**.
+Here's an example using **StreamWebSocket**. The same pattern applies to **MessageWebSocket**.
 
 ```csharp
 var streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
@@ -405,6 +405,15 @@ var streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
 streamWebSocket.Control.NoDelay = false;
 
 await streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org"));
+```
+
+```cpp
+auto streamWebSocket = ref new Windows::Networking::Sockets::StreamWebSocket();
+
+// By default, the Nagle algorithm is not used. This overrides that, and causes it to be used.
+streamWebSocket->Control->NoDelay = false;
+
+auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
 **Note** Don't try to change a control property *after* you've called **ConnectAsync**. The only exception to that rule is [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live#Windows_Networking_Sockets_MessageWebSocketControl_MessageType).
@@ -434,6 +443,42 @@ For parameter validation errors, you can use the **HRESULT** from the exception 
 If the name query for an HTTP server name in the URI returns multiple IP addresses for the name, then the internal system service tries up to 5 IP addresses for the site (each with a default timeout of 60 seconds) before it fails. Consequently, your app could wait several minutes trying to connect to multiple IP addresses before it handles an exception. This behavior might appear to the user like the app has stopped working. 
 
 To make your app more responsive and minimize these issues, you can set a shorter timeout on connection requests. You set a timeout in a similar way for both **MessageWebSocket** and **StreamWebSocket**.
+
+```csharp
+private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    this.messageWebSocket = new Windows.Networking.Sockets.MessageWebSocket();
+
+    try
+    {
+        var cancellationTokenSource = new CancellationTokenSource();
+        var connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask(cancellationTokenSource.Token);
+
+        // Cancel connectTask after 5 seconds.
+        cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(5000));
+
+        connectTask.ContinueWith((antecedent) =>
+        {
+            if (antecedent.Status == TaskStatus.RanToCompletion)
+            {
+                // connectTask ran to completion, so we know that the MessageWebSocket is connected.
+                // Add additional code here to use the MessageWebSocket.
+            }
+            else
+            {
+                // connectTask timed out, or faulted.
+            }
+        });
+    }
+    catch (Exception ex)
+    {
+        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+        // Add additional code here to handle exceptions.
+    }
+}
+```
 
 ```cpp
 #include <agents.h>
