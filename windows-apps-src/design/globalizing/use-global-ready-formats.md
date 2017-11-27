@@ -33,7 +33,6 @@ If you need to allow users to choose a date, or to select a time, then use the s
 
 If you need to display dates or times yourself then you can use the [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) class. By default, **DateTimeFormatter** automatically uses the best date and time format for the app runtime language list. So, the code below formats a given **DateTime** in the best way for that list. As an example, assume that your app manifest language list includes English (United States), which is also your default, and German (Germany). If the current date is Nov 6 2017 and the user profile language list contains German (Germany) first, then the formatter gives "06.11.2017". If the user profile language list contains English (United States) first (or if it contains neither English nor German), then the formatter gives "11/6/2017" (since "en-US" matches, or is used as the default).
 
-**C#**
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
 
@@ -60,7 +59,6 @@ Remember that, by default, **DateTimeFormatter** matches the app runtime languag
 
 If for whatever reason you want to format dates and/or times only according to the user profile language list, then you can do that using code like the example below. But if you do so then understand that the user can choose a language for which your app doesn't have translated strings. For example, if your app is not localized into German (Germany), but the user chooses that as their preferred language, then that could result in the display of arguably odd-looking strings such as "The date is 06.11.2017".
 
-**C#**
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
 
@@ -77,7 +75,6 @@ Different cultures format numbers differently. Format differences may include ho
 
 This example shows how to display currencies both per the user profile, and for a specific given currency system.
 
-**C#**
 ```csharp
     // This scenario uses the CurrencyFormatter class to format a number as a currency.
 
@@ -124,7 +121,6 @@ Phone numbers are formatted differently across regions. The number of digits, ho
 
 The example below shows how to use **PhoneNumberFormatter** to format a phone number as it is being entered. Each time text changes in a **TextBox** named phoneNumberInputTextBox, the contents of the text box are formatted using the current default region and displayed in a **TextBlock** named phoneNumberOutputTextBlock. For demonstration purposes, the string is also formatted using the region for New Zealand, and displayed in a TextBlock named phoneNumberOutputTextBlockNZ.
   
-**C#**
 ```csharp
     using Windows.Globalization.PhoneNumberFormatting;
 

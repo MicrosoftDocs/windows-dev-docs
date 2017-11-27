@@ -152,10 +152,10 @@ Enter the URL of the web page where your customers can go for support on your ap
 
 ## Privacy policy
 
-You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required. If we determine that your app requires a privacy policy, and you have not provided one, your app will fail certification. For example, if your app accesses, collects, or transmits personal information, or if it allows web browsing, a privacy policy is required. 
+You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required. If we determine that your app requires a privacy policy, and you have not provided one, your app will fail certification. For example, if your app accesses, collects, or transmits any personal information, or if it allows web browsing, a privacy policy is required. 
 
 To determine if your app requires a privacy policy, review the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information).
 
-> [!IMPORTANT]
+> [!NOTE]
 > Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. 
 

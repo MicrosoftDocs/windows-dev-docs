@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
 title: Define market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ localizationpriority: high
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](set-app-pricing-and-availability.md) features per market or per group of markets.
 
-Also see [Guidelines for globalization](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../design/globalizing/prepare-your-app-for-localization.md).
+For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../design/globalizing/prepare-your-app-for-localization.md).
 
 > [!NOTE]
 > Although this topic refers to apps, market selection for add-on submissions uses the same process.
@@ -46,6 +46,7 @@ You will also see a checkbox that lets you indicate whether to offer your app in
 ## Microsoft Store consumer markets
 
 You can choose to list your app (or add-on) in one or more of the following markets. The markets with an asterisk support the Microsoft Store on Xbox One; you'll see **Xbox** next to their names in the **Market selection** popup window.
+
 
 <table>
   <tr>
@@ -479,6 +480,7 @@ If your app includes packages targeting Windows 8.x, it's important to be aware 
 If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets. However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.
 
 The markets that are included in "Rest of World" for Windows 8.x are the following:
+
 
 <table>
   <tr>

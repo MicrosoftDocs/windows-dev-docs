@@ -51,8 +51,7 @@ Unlike image resources, where only one image resource is contained in an image r
 
 You use an [x:Uid directive](../xaml-platform/x-uid-directive.md) to associate a control or other element in your markup with a string resource identifier.
 
-**XAML**
-```xml
+```xaml
 <TextBlock x:Uid="Greeting"/>
 ```
 
@@ -64,7 +63,7 @@ Instead of setting **Width** from a Resources File, you'll probably want to allo
 
 **Note** For [attached properties](../xaml-platform/attached-properties-overview.md), you need a special syntax in the Name column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties?branch=live#Windows_UI_Xaml_Automation_AutomationProperties_NameProperty) attached property for the "Greeting" identifier, this is what you would enter in the Name column.
 
-```
+```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
@@ -72,13 +71,11 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 
 You can explicitly load a string resource based on a simple string resource identifier.
 
-**C#**
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 ```
 
-**C++**
 ```cpp
 auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView();
 this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
@@ -135,20 +132,17 @@ You can keep all of your strings in a single Resources File (resw), or you can f
 
 To scope a string resource identifier reference to a particular file, you just add `/<resources-file-name>/` before the identifier. The markup example below assumes that `ErrorMessages.resw` contains a resource whose name is "PasswordTooWeak.Text" and whose value describes the error.
 
-**XAML**
-```xml
+```xaml
 <TextBlock x:Uid="/ErrorMessages/PasswordTooWeak"/>
 ```
 
 The code example below assumes that `ErrorMessages.resw` contains a resource whose name is "MismatchedPasswords" and whose value describes the error.
 
-**C#**
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ManifestResources");
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("/ErrorMessages/MismatchedPasswords");
 ```
 
-**C++**
 ```cpp
 auto resourceLoader = Windows::ApplicationModel::Resources::ResourceLoader::GetForCurrentView("ManifestResources");
 this->myXAMLTextBlockElement->Text = resourceLoader->GetString("/ErrorMessages/MismatchedPasswords");
@@ -166,7 +160,6 @@ But there might be times when you want your app to override the system settings 
 
 You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your string lookups.
 
-**C#**
 ```csharp
 var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext(); // not using ResourceContext.GetForCurrentView
 resourceContext.QualifierValues["Language"] = "de-DE";
@@ -176,14 +169,12 @@ this.myXAMLTextBlockElement.Text = resourceMap.GetValue("Farewell", resourceCont
 
 Using **QualifierValues** as in the code example above works for any qualifier. For the special case of Language, you can alternatively do this instead.
 
-**C#**
 ```csharp
 resourceContext.Languages = new string[] { "de-DE" };
 ```
 
 For the same effect at a global level, you *can* override the qualifier values in the default **ResourceContext**. But instead we advise you to call [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). You set values one time with a call to **SetGlobalQualifierValue** and then those values are in effect on the default **ResourceContext** each time you use it for lookups.
 
-**C#**
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Language", "de-DE");
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -192,7 +183,6 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
 
 Some qualifiers have a system data provider. So, instead of calling **SetGlobalQualifierValue** you could instead adjust the provider through its own API. For example, this code shows how to set [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=live#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride).
 
-**C#**
 ```csharp
 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "de-DE";
 ```
@@ -203,7 +193,6 @@ Your running app can respond to changes in system settings that affect the quali
 
 In response to this event, you can reload your strings from the default **ResourceContext**.
 
-**C#**
 ```csharp
 public MainPage()
 {
@@ -242,7 +231,6 @@ The string resources of a referenced Class Library (Universal Windows) or [Windo
 
 A library can get a ResourceLoader for its own resources. For example, the following code illustrates how either a library or an app that references it can can get a ResourceLoader for the library's string resources.
 
-**C#**
 ```csharp
 var resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader("ContosoControl/Resources");
 resourceLoader.GetString("string1");

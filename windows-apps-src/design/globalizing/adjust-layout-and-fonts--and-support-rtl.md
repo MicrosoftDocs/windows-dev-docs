@@ -32,8 +32,7 @@ First, in your app's Resources File (.resw), add a property identifier with the 
 
 Then, use an **x:Uid** to associate your main **Page** element with this property identifier.
 
-**XAML**
-```xml
+```xaml
 <Page x:Uid="MainPage">
 ```
 
@@ -41,8 +40,7 @@ For more info about Resources Files (.resw), property identifiers, and **x:Uid**
 
 You should avoid setting absolute layout values on any UI element based on language. But if it's absolutely unavoidable, then you can create a property identifier of the form "TitleText.Width".
 
-**XAML**
-```xml
+```xaml
 <TextBlock x:Uid="TitleText">
 ```
 
@@ -54,8 +52,7 @@ Use the [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?bra
 
 If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, then you can use **FlowDirection**.
 
-**XAML**
-```xml
+```xaml
 <!-- en-US\localized.xaml -->
 <Image ... FlowDirection="LeftToRight" />
 
@@ -69,7 +66,6 @@ If your app requires a different image to flip the image correctly, then you can
 
 When your app is localized for right-to-left (RTL) languages, use APIs to set the default text direction for the root layout panel of your Page. This causes all of the controls contained within the root panel to respond appropriately to the default text direction. When more than one language is supported, use `LayoutDirection` for the top app runtime language to set the [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see code example below). Most controls included in Windows use **FlowDirection** already. If you are implementing custom controls, they should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
 
-**C#**
 ```csharp    
 this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
 
@@ -86,7 +82,6 @@ else
 }
 ```
 
-**C++**
 ```cpp
 this->languageTag = Windows::Globalization::ApplicationLanguages::Languages->GetAt(0);
 

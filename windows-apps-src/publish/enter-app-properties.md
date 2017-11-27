@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/22/2017
+ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,11 +16,13 @@ localizationpriority: high
 
 The **Properties** page of the [app submission process](app-submissions.md) lets you define your app's category and indicate hardware preferences or other declarations. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
+
 ## Category and subcategory
 
 In this section, you indicate the category (and subcategory, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
 
 For more info, see [Category and subcategory table](category-and-subcategory-table.md).
+
 
 ## Game settings
 
@@ -29,6 +31,15 @@ This section will only appear if you selected **Games** as your product’s cate
 If your game supports any of the multiplayer options, be sure to indicate the minimum and maximum number of players for a session. You can't enter more than 1,000 minimum or maximum players.
 
 **Cross-platform multiplayer** means that the game supports multiplayer sessions between players on Windows 10 PCs and Xbox.
+
+
+## Display mode
+
+This section lets you indicate whether your product is designed for [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) on PC and/or HoloLens devices. If you indicate that it is, you'll also need to indicate whether it's meant to be used in a seated or standing position only, or whether it allows (or requires) the user to move around while using it. 
+
+If you have selected **Games** as your product's category, you'll see additional options in the **Display mode** selection that let you indicate whether your product supports 4K resolution video output, High Dynamic Range (HDR) video output, or variable refresh rate displays.
+
+If your product does not support any of these display mode options, leave all of the boxes unchecked.
 
 
 ## Product declarations

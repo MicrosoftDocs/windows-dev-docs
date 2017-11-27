@@ -5,7 +5,7 @@ title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,15 +42,16 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Organizational licensing**    | Default: Allow volume acquisition by organizations | [Organizational licensing options](organizational-licensing.md)        |
 | **Publish date**                | Default: Publish as soon as possible      | [Publish date](set-app-pricing-and-availability.md#publish-date)          |
 
-<span/>
 
 ### Properties page
 
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Category and subcategory**  | Required                                    | [Category and subcategory table](category-and-subcategory-table.md)       |
-| **System requirements**      | Optional                                    | [System requirements](enter-app-properties.md#system-requirements)      |
+| **Game settings**             | Optional (only applicable to games)         | [Game settings](enter-app-properties.md#game-settings) |
+| **Display mode**             | Optional                   | [Display mode](enter-app-properties.md#display-mode) |
 | **Product declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [Product declarations](app-declarations.md) |
+| **System requirements**      | Optional                                    | [System requirements](enter-app-properties.md#system-requirements)      |
 
 <span/>
 
@@ -67,34 +68,33 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name                    | Notes                                  | For more info                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **Package upload control**    | Required (at least one package)        | [Upload app packages](upload-app-packages.md) |
-| **Device family availability** | Default: based on your packages       | [Device family availability](upload-app-packages.md#device-family-availability) |
+| **Device family availability** | Default: based on your packages       | [Device family availability](device-family-availability.md) |
 | **Gradual package rollout**   | Optional (for updates only)            | [Gradual package rollout](gradual-package-rollout.md) |
 | **Mandatory update**          | Optional (for updates only)            | [Mandatory update](upload-app-packages.md#mandatory-update)
 
-<span/>
 
 ### Store listings
 
-You'll need all the required info for at least one of the languages that your app supports. We recommend providing [Store listings](create-app-store-listings.md) in all of the languages your app supports, and you can also [provide Store listings in additional languages](create-app-store-listings.md#store-listing-languages).
+You'll need all the required info for at least one of the languages that your app supports. We recommend providing [Store listings](create-app-store-listings.md) in all of the languages your app supports, and you can also [provide Store listings in additional languages](create-app-store-listings.md#store-listing-languages). To make it easier to manage multiple listings for the same product, you can [import and export Store listings](import-and-export-store-listings.md).
 
 | Field name                    | Notes                                       | For more info                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Description**               | Required                                    | [Write a great app description](write-a-great-app-description.md) |
 | **Release notes**             | Optional                                    | [Release notes](create-app-store-listings.md#release-notes)       |
 | **Screenshots**               | Required (at least one screenshot)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
-| **Store logos**               | Optional, but highly recommended for Windows Phone 8.1 and earlier | [Store logos](app-screenshots-and-images.md#store-logos)             |
-| **Promotional images**        | Optional                                    | [Promotional images](app-screenshots-and-images.md#promotional-images) |
-| **Xbox images**               | Optional                                    | [Xbox images](app-screenshots-and-images.md#xbox-images)              |
+| **Store logos**               | Optional. App tile icon required for proper display on Windows Phone 8.1 and earlier | [Store logos](app-screenshots-and-images.md#store-logos)             |
+| **Promotional images**        | Recommended                                 | [Promotional images](app-screenshots-and-images.md#promotional-images) |
+| **Xbox images**               | Optional (recommended for proper display on Xbox)                                   | [Xbox images](app-screenshots-and-images.md#xbox-images)              |
 | **Optional promotional images**       | Optional                            | [Optional promotional images](app-screenshots-and-images.md#optional-promotional-images)       |
 | **Trailers**                  | Optional                                    | [Trailers](app-screenshots-and-images.md#trailers)                | 
-| **App features**              | Optional                                    | [Features](create-app-store-listings.md#app-features)             |
+| **App features**              | Optional                                    | [App features](create-app-store-listings.md#app-features)             |
 | **Additional system requirements**      | Optional                                    | [Additional system requirements](create-app-store-listings.md#additional-system-requirements) 
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |
-| **Privacy policy**            | Required for some apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Privacy policy](create-app-store-listings.md#privacy-policy)        |
 | **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-store-listings.md#copyright-and-trademark-info) |
 | **Additional license terms**  | Optional                                    | [Additional license terms](create-app-store-listings.md#additional-license-terms) |
 | **Website**                   | Optional                                    | [Website](create-app-store-listings.md#website)                   |
-| **Support contact info**      | Optional                                    | [Support contact info](create-app-store-listings.md)              |
+| **Support contact info**      | Required if your product is available on Xbox; otherwise optional (but recommended)                                   | [Support contact info](create-app-store-listings.md#support-contact-info)              |
+| **Privacy policy**            | Required for many apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [Privacy policy](create-app-store-listings.md#privacy-policy)        |
 | **Platform-specific Store listings** | Optional                               | [Create platform-specific Store listings](create-platform-specific-store-listings.md)  |
 
 <span/>
@@ -103,8 +103,9 @@ You'll need all the required info for at least one of the languages that your ap
 
 | Field name                    | Notes                                       | For more info                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Notes**                     | Optional                                    | [Notes for certification](notes-for-certification.md)             |
+| **Notes**                     | Recommended                                    | [Notes for certification](notes-for-certification.md)             |
 
 <span/>
 
-**Note**&nbsp;&nbsp;For info about publishing line-of-business (LOB) apps directly to enterprises, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
+> [!NOTE]
+> For info about publishing line-of-business (LOB) apps directly to enterprises, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
