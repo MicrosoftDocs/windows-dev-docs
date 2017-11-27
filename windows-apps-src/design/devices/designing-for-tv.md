@@ -1157,7 +1157,7 @@ After you've added your custom trigger, your app will automatically make the lay
 Another way you can check whether your app is running on Xbox and then make the appropriate adjustments is through code. You can use the following simple variable to check if your app is running on Xbox:
 
 ```csharp
-bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily ==
+bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily ==
                     "Windows.Xbox");
 ```
 
