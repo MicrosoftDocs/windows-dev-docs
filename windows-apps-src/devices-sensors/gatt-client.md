@@ -136,7 +136,7 @@ if(properties.HasFlag(GattCharacteristicProperties.Read))
 }
 if(properties.HasFlag(GattCharacteristicProperties.Write))
 {
-    // This characteristic supports reading from it.
+    // This characteristic supports writing to it.
 }
 if(properties.HasFlag(GattCharacteristicProperties.Notify))
 {
