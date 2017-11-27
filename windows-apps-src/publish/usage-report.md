@@ -25,7 +25,7 @@ Near the top of the page, you can select the time period for which you want to s
 You can also expand **Filters** to filter the data on this page by package version, market, and/or device type.
 
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
--   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
+-   **Market**: The default filter is **All markets**, but you can limit the data to one or more markets.
 -   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
 
 The info in all of the charts listed below will reflect the date range and any filters you've selected (with the exception of **New users** in the **Usage** chart, which will not appear if any filters are selected). Some sections also allow you to apply additional filters.

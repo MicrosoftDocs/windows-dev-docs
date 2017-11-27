@@ -142,7 +142,6 @@ For example, without custom string layout processing, the artist name "The Conto
 
 When the app contacts the server for media metadata, it preprocesses each string prior to displaying it to the user. During this preprocessing, the app also does a transformation to make the text direction consistent. To do this, it checks whether there are neutral characters on the ends of the string. Also, if the text direction of the string is opposite to the app direction set by the Windows language settings, then it appends (and sometimes prepends) Unicode direction markers. The transformation function looks like this.
 
-**C#**
 ```csharp
 string NormalizeTextDirection(string data) 
 {

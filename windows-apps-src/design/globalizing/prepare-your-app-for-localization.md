@@ -91,7 +91,6 @@ Subscribe to events that are raised when the system's language and region settin
 
 Don't assume that all languages express parameters in the same order. For example, consider this format.
 
-**C#**
 ```csharp
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
