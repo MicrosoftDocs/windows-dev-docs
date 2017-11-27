@@ -57,7 +57,7 @@ Users of previous versions of Windows 10 (with App Installer available) can also
 
 Although this flow isn't quite as seamless as the direct install on Windows 10 Fall Creators Update, users can still quickly engage with the app. Additionally, with this flow the user doesn't have to worry about app package files unnecessarily taking up space in drives. App Installer efficiently manages space by downloading the package to its app data folder and clearing packages when they are no longer needed. 
 
-Here's a quick comparison of the Windows 10 Fall Creator's update version of App Installer and the previous version of App Installer:
+Here's a quick comparison of the Windows 10 Fall Creators update version of App Installer and the previous version of App Installer:
 
 | App Installer, Latest Version | App Installer, Previous Version |
 |------------------------------|----------------------------------|
