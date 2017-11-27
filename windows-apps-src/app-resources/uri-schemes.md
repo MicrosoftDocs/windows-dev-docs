@@ -12,7 +12,6 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
 
-
 # URI schemes
 
 There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw). You can use these URI schemes in your code, in your XAML markup, in your app package manifest, or in your tile and toast notification templates.
@@ -23,7 +22,7 @@ All of the schemes described in this topic follow typical URI scheme rules for n
 
 All of the URI schemes define the hierarchical part per [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) as the authority and path components of the URI.
 
-```
+```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 hier-part   = "//" authority path-abempty
             / path-absolute
@@ -104,8 +103,7 @@ The URI above may actually retrieve a file within the current app's package with
 
 You could of course also retrieve that same physical file by referring to it directly by its full name.
 
-**XAML**
-```xml
+```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 

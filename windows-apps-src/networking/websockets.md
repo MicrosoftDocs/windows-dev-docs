@@ -1,10 +1,10 @@
 ---
 author: stevewhims
-description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S).
+description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 title: WebSockets
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 ms.author: stwhi
-ms.date: 11/15/2017
+ms.date: 11/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ localizationpriority: medium
 
 # WebSockets
 
-WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S).
+WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 
 Under the [WebSocket Protocol](http://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in multiplayer gaming (both real-time and turn-based), instant social network notifications, up-to-date displays of stock or weather information, and other apps requiring secure and fast data transfer.
 
@@ -553,33 +553,36 @@ protected:
 
 ## Important APIs
 
-* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
-* [MessageWebSocket](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live)
-* [StreamWebSocket](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live)
-* [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_MessageReceived)
-* [MessageWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Closed)
-* [MessageWebSocketMessageReceivedEventArgs](/uwp/api/Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs?branch=live)
-* [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_OutputStream)
-* [DataWriter](/uwp/api/Windows.Storage.Streams.DataWriter?branch=live)
-* [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter#Windows_Storage_Streams_DataWriter_DetachStream)
-* [StreamWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Closed)
-* [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_OutputStream)
-* [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_InputStream)
 * [DataReader](/uwp/api/Windows.Storage.Streams.DataReader?branch=live)
-* [MessageWebSocketControl](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live)
-* [StreamWebSocketControl](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live)
+* [DataWriter](/uwp/api/Windows.Storage.Streams.DataWriter?branch=live)
+* [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter?branch=live#Windows_Storage_Streams_DataWriter_DetachStream)
+* [MessageWebSocket](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live)
+* [MessageWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Closed)
+* [MessageWebSocket.ConnectAsync](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_ConnectAsync_Windows_Foundation_Uri_)
 * [MessageWebSocket.Control](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live#Windows_Networking_Sockets_MessageWebSocket_Control)
-* [StreamWebSocket.Control](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live#Windows_Networking_Sockets_StreamWebSocket_Control)
+* [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Information)
+* [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_MessageReceived)
+* [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_OutputStream)
+* [MessageWebSocketControl](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live)
 * [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live#Windows_Networking_Sockets_MessageWebSocketControl_MessageType)
 * [MessageWebSocketInformation](/uwp/api/Windows.Networking.Sockets.MessageWebSocketInformation?branch=live)
-* [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Information)
-* [StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live)
+* [MessageWebSocketMessageReceivedEventArgs](/uwp/api/Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs?branch=live)
+* [SocketMessageType](/uwp/api/windows.networking.sockets.socketmessagetype?branch=live)
+* [StreamWebSocket](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live)
+* [StreamWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Closed)
+* [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_EndpointPair_)
+* [StreamWebSocket.Control](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live#Windows_Networking_Sockets_StreamWebSocket_Control)
 * [StreamWebSocket.Information](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Information)
+* [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_InputStream)
+* [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_OutputStream)
+* [StreamWebSocketControl](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live)
+* [StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live)
+* [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus?branch=live) 
 * [WebSocketError.GetStatus](/uwp/api/Windows.Networking.Sockets.WebSocketError?branch=live#Windows_Networking_Sockets_WebSocketError_GetStatus_System_Int32_)
-* [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 
+* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
 
 ## Related topics
 
 * [WebSocket Protocol](http://tools.ietf.org/html/rfc6455)
-* [Basic UDP socket operations](/uwp/networking/sockets?branch=live#basic-udp-socket-operations)
 * [Basic TCP socket operations](/uwp/networking/sockets?branch=live#basic-tcp-socket-operations)
+* [Basic UDP socket operations](/uwp/networking/sockets?branch=live#basic-udp-socket-operations)

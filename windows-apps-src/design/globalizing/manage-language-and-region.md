@@ -29,7 +29,6 @@ The following three sections define the terms "user profile language list", "app
 
 The user profile language list is the name of the list that's configured by the user in **Settings** > **Time & Language** > **Region & language** > **Languages**. In code you can use the [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live#Windows_System_UserProfile_GlobalizationPreferences_Languages) property to access the user profile language list as a read-only list of strings, where each string is a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302) such as "en-US" or "ja-JP".
 
-**C#**
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
 ```
@@ -64,7 +63,6 @@ When your app is in the Microsoft Store, the languages in the app manifest langu
 
 In code you can use the [**ApplicationLanguages.ManifestLanguages**](/uwp/api/windows.globalization.applicationlanguages?branch=live#Windows_Globalization_ApplicationLanguages_ManifestLanguages) property to access the app manifest language list as a read-only list of strings, where each string is a single BCP-47 language tag.
 
-**C#**
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.Globalization.ApplicationLanguages.ManifestLanguages;
 ```
@@ -81,14 +79,12 @@ More specifically, the app runtime language list is made up of these items.
 
 In code you can use the [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) property to access the app runtime language list in the form of a string containing a semicolon-delimited list of BCP-47 language tags.
 
-**C#**
 ```csharp
     string runtimeLanguages = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues["Language"];
 ```
 
 You can also access it as a read-only list of strings, each containing a single BCP-47 language tag. You can use the [**ResourceContext.Languages**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_Languages) property or the [**ApplicationLanguages.Languages**](/uwp/api/windows.globalization.applicationlanguages?branch=live#Windows_Globalization_ApplicationLanguages_Languages) property to do this.
 
-**C#**
 ```csharp
     IReadOnlyList<string> runtimeLanguages = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Languages;
 

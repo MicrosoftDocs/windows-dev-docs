@@ -12,7 +12,6 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
 
-
 # MakePri.exe configuration file
 
 This topic describes the schema of the [MakePri.exe](compile-resources-manually-with-makepri.md) XML configuration file; also known as a PRI config file. The MakePri.exe tool has a [createconfig command](makepri-exe-command-options.md#createconfig-command) that you can use to create a new, initialized PRI config file.
@@ -181,7 +180,6 @@ MakePri.exe doesn't explicitly block generation of resource PRI files along any 
 
 MakePri.exe parses the `packaging` element after all the `index` nodes to populate all the default qualifiers. MakePri.exe collects parsed info in these data structures.
 
-**C#**
 ```csharp
 enum ResourcePackageMode
 {

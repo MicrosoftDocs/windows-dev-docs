@@ -12,7 +12,6 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
 
-
 # Load images and assets tailored for scale, theme, high contrast, and others
 
 Your app can load image resource files (or other asset files) tailored for [display scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md), theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the **Source** property of an **Image**. They can also appear in your app package manifest source file (the `Package.appxmanifest` file)&mdash;for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer&mdash;or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live), you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.
@@ -55,21 +54,18 @@ Next is an example of how you can provide variants of an image resource&mdash;na
 
 The name&mdash;or identifier&mdash;of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is `/Assets/Images/logo.png`. Here’s how you use that name in XAML markup.
 
-**XAML**
-```xml
+```xaml
 <Image x:Name="myXAMLImageElement" Source="ms-appx:///Assets/Images/logo.png"/>
 ```
 
 Notice that you use the `ms-appx` URI scheme because you're referring to a file that comes from your app's package. See [URI schemes](uri-schemes.md). And here’s how you refer to the same image resource in imperative code.
 
-**C#**
 ```csharp
 this.myXAMLImageElement.Source = new BitmapImage(new Uri("ms-appx:///Assets/Images/logo.png"));
 ```
 
 You can use `ms-appx` to load any arbitrary file from your app package.
 
-**C#**
 ```csharp
 var uri = new System.Uri("ms-appx:///Assets/anyAsset.ext");
 var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
@@ -77,12 +73,10 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 
 The `ms-appx-web` scheme accesses the same files as `ms-appx`, but in the web compartment.
 
-**XAML**
-```xml
+```xaml
 <WebView x:Name="myXAMLWebViewElement" Source="ms-appx-web:///Pages/default.html"/>
 ```
 
-**C#**
 ```csharp
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
@@ -95,8 +89,7 @@ Notice how in these example URIs the scheme ("`ms-appx`" or "`ms-appx-web`") is 
 
 Absolute paths are a good choice if your image files remain where they are in the project structure. If you want to be able to move an image file, but you're careful that it remains in the same location relative to its referencing XAML markup file, then instead of an absolute path you might want to use a path that's relative to the containing markup file. If you do that, then you needn't use a URI scheme. You will still benefit from automatic qualifier matching in this case, but only because you are using the relative path in XAML markup.
 
-**XAML**
-```xml
+```xaml
 <Image Source="Assets/Images/logo.png"/>
 ```
 
@@ -146,7 +139,6 @@ But there might be times when you want your app to override the system settings 
 
 You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your image lookups.
 
-**C#**
 ```csharp
 var resourceContext = new Windows.ApplicationModel.Resources.Core.ResourceContext(); // not using ResourceContext.GetForCurrentView 
 resourceContext.QualifierValues["Contrast"] = "high";
@@ -160,7 +152,6 @@ this.myXAMLImageElement.Source = bitmapImage;
 
 For the same effect at a global level, you *can* override the qualifier values in the default **ResourceContext**. But instead we advise you to call [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_). You set values one time with a call to **SetGlobalQualifierValue** and then those values are in effect on the default **ResourceContext** each time you use it for lookups. By default, the [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) class uses the default **ResourceContext**.
 
-**C#**
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Contrast", "high");
 var namedResource = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap[@"Files/Assets/Logo.png"];
@@ -173,7 +164,6 @@ Your running app can respond to changes in system settings that affect the quali
 
 In response to this event, you can reload your images with the help of the default **ResourceContext**, which [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) uses by default.
 
-**C#**
 ```csharp
 public MainPage()
 {

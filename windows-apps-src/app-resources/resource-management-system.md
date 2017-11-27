@@ -12,7 +12,6 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 localizationpriority: medium
 ---
 
-
 # Resource Management System
 
 The Resource Management System has both build-time and run-time features. At build time, the system creates an index of all the different variants of the resources that are packaged up with your app. This index is the Package Resource Index, or PRI, and it's also included in your app's package. At run-time, the system detects the user and machine settings that are in effect, consults the information in the PRI, and automatically loads the resources that are the best match for those settings.
@@ -47,7 +46,6 @@ Resources available to an app are stored in hierarchical collections, which you 
 
 Here's an example.
 
-**C#**
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
 ResourceMap resourceMap =  ResourceManager.Current.MainResourceMap.GetSubtree("Resources");
