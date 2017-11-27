@@ -4,7 +4,7 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package an app (Desktop Bridge)
 ms.author: normesta
-ms.date: 01/27/2017
+ms.date: 11/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
