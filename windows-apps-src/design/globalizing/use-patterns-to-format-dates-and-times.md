@@ -32,7 +32,6 @@ A format template is a culture-agnostic format string. So, if you construct a **
 
 Let's illustrate this distinction with an example. We'll pass a simple format template (not a pattern) to the **DateTimeFormatter** constructor. This is the format template "month day".
 
-**C#**
 ```csharp
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
@@ -41,7 +40,6 @@ This creates a formatter based on the language and region value of the current c
 
 On the other hand, a format pattern is culture-specific. Let's acccess the format pattern for our format template.
 
-**C#**
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;
 ```
@@ -56,7 +54,6 @@ Ja-JP: "{month.integer}月{day.integer}日"
 
 In the example above, we inputted a culture-agnostic format string, and we got back a culture-specific format string (which was a function of the language and region that happened to be in effect when we called `dateFormatter.Patterns`). It follows therefore that if you construct a **DateTimeFormatter** from a culture-specific format pattern, then it will only be valid for specific languages/regions.
 
-**C#**
 ```csharp
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
@@ -102,7 +99,6 @@ June 25 | 1:38 PM
 
 The date part corresponds to the "month day" format template, and the time part corresponds to the "hour minute" format template. So, you can construct formatters for the relevant date and time format templates, and then concatenate their ouput together using a localizable format string.
 
-**C#**
 ```csharp
 var dateToFormat = System.DateTime.Now;
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
@@ -120,7 +116,6 @@ string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatStri
 
 Another way to implement this example is to query the two formatters for their format patterns, concatenate those together, and then construct a third formatter from the resultant format pattern.
 
-**C#**
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
 

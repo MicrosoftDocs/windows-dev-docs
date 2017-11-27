@@ -4,7 +4,7 @@ Description: The Health report in the Windows Dev Center dashboard lets you get 
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 11/6/2017
+ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,9 +27,13 @@ Near the top of the page, you can select the time period for which you want to s
 You can also expand **Filters** to filter all of the data on this page by package version, market, and/or device type.
 
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
--   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
+-   **Market**: The default filter is **All markets**, but you can limit the data to one or more markets.
 -   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type. Note that the **Other** category includes devices where the make/model is recognized but we aren't able to include it into one of the pre-defined categories shown in this filter. For these devices, the device model can be viewed in the **Failure log** section of the **Failure details** report.  
 -   **OS version**: The default is **All OS versions**, but you can choose a specific OS version.
+-   **OS release version**: The default is **All OS release versions**, but you can choose a specific release version of the selected **OS version**.
+-   **Sandbox**: The default is **Retail**, but for products that use multiple development sandboxes (such as games which integrate with Xbox Live), you can choose a specific one here. (If your product doesn't use sandboxes, this filter will show only **Retail** and won't be applicable.)
+-   **Architecture**: The default is **All architectures**, but you can choose a specific system architecture type. This filter is only available when **30D** is selected.
+-   **PRAID**: The default setting is **All**, but if you defined multiple package relative app IDs (PRAIDs) when creating your app package, you can choose to show only data related to one PRAID. This filter will not appear if you have not defined multiple PRAIDs.
 
 The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.
 

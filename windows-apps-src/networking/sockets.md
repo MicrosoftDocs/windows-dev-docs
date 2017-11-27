@@ -1,10 +1,10 @@
 ---
 author: stevewhims
-description: You can use both Windows.Networking.Sockets and Winsock to communicate with other devices as a Universal Windows Platform (UWP) app developer.
+description: Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
-ms.date: 02/08/2017
+ms.date: 11/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,182 +14,360 @@ localizationpriority: medium
 
 # Sockets
 
+Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 
-**Important APIs**
+This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace. But you can also use [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673) in a UWP app.
 
--   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
--   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+> [!NOTE]
+> As a consequence of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address. For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](/windows/uwp/app-to-app/index?branch=live).
 
-You can use both [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) to communicate with other devices as a Universal Windows Platform (UWP) app developer. This topic provides in-depth guidance on using the **Windows.Networking.Sockets** namespace to perform networking operations.
+## Build a basic TCP socket client and server
 
->**Note**
->As part of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), the system forbids establishing socket connections (Sockets or WinSock) between two UWP apps running on the same machine via either the local loopback address (127.0.0.0) or explicitly specifying the local IP address. This means that you cannot use sockets to communicate between two UWP apps. UWP supplies other mechanisms for communicating between apps. See [App-to-app communications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) for details.
+A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) sending and receiving data over TCP to form an echo client and server.
 
-## Basic TCP socket operations
+To begin with as few moving parts as possible&mdash;and to sidestep network isolation issues for the present&mdash;create a new project, and put both the client and the server code below into the same project.
 
-A TCP socket provides low-level network data transfers in either direction for long-lived connections. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. This section shows how to enable a UWP app to send and receive data with a TCP stream socket using the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) classes as part of the [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace. For this section, we will be creating a very simple app that will function as an echo server and client to demonstrate basic TCP operations.
+You'll need to [declare an app capability](../packaging/app-capability-declarations.md) in your project. Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**. This is how that looks in the `Package.appxmanifest` markup.
 
-**Creating a TCP echo server**
+```xml
+<Capability Name="privateNetworkClientServer" />
+```
 
-The following code example demonstrates how to create a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) object and start listening for incoming TCP connections.
+Instead of `privateNetworkClientServer`, you can declare `internetClientServer` if you're connecting over the internet. Both **StreamSocket** and **StreamSocketListener** need one or other of these app capabilities to be declared.
+
+### An echo client and server, using TCP sockets
+
+Construct a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) and begin listening for incoming TCP connections. The [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) event is raised each time a client establishes a connection with the **StreamSocketListener**.
+
+Also construct a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), establish a connection to the server, send a request, and receive a response.
+
+Create a new **Page** named `StreamSocketAndListenerPage`. Put the XAML markup in `StreamSocketAndListenerPage.xaml`, and the put the imperative code inside the `StreamSocketAndListenerPage` class.
+
+```XAML
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+
+	<StackPanel>
+		<TextBlock Margin="9.6,0" Style="{StaticResource TitleTextBlockStyle}" Text="TCP socket example"/>
+		<TextBlock Margin="7.2,0,0,0" Style="{StaticResource HeaderTextBlockStyle}" Text="StreamSocket &amp; StreamSocketListener"/>
+	</StackPanel>
+
+	<Grid Grid.Row="1">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Margin="9.6" Style="{StaticResource SubtitleTextBlockStyle}" Text="client"/>
+		<ListBox x:Name="clientListBox" Grid.Row="1" Margin="9.6"/>
+		<TextBlock Grid.Column="1" Margin="9.6" Style="{StaticResource SubtitleTextBlockStyle}" Text="server"/>
+		<ListBox x:Name="serverListBox" Grid.Column="1" Grid.Row="1" Margin="9.6"/>
+	</Grid>
+</Grid>
+```
 
 ```csharp
-try
+// Every protocol typically has a standard port number. For example, HTTP is typically 80, FTP is 20 and 21, etc.
+// For this example, we'll choose an arbitrary port number.
+static string PortNumber = "1337";
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    //Create a StreamSocketListener to start listening for TCP connections.
-    Windows.Networking.Sockets.StreamSocketListener socketListener = new Windows.Networking.Sockets.StreamSocketListener();
-
-    //Hook up an event handler to call when connections are received.
-    socketListener.ConnectionReceived += SocketListener_ConnectionReceived;
-
-    //Start listening for incoming TCP connections on the specified port. You can specify any port that' s not currently in use.
-    await socketListener.BindServiceNameAsync("1337");
+	this.StartServer();
+	this.StartClient();
 }
-catch (Exception e)
+
+private async void StartServer()
 {
-    //Handle exception.
+	try
+	{
+		var streamSocketListener = new Windows.Networking.Sockets.StreamSocketListener();
+
+		// The ConnectionReceived event is raised when connections are received.
+		streamSocketListener.ConnectionReceived += this.StreamSocketListener_ConnectionReceived;
+
+		// Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+		await streamSocketListener.BindServiceNameAsync(StreamSocketAndListenerPage.PortNumber);
+
+		this.serverListBox.Items.Add("server is listening...");
+	}
+	catch (Exception ex)
+	{
+		Windows.Networking.Sockets.SocketErrorStatus webErrorStatus = Windows.Networking.Sockets.SocketError.GetStatus(ex.GetBaseException().HResult);
+		this.serverListBox.Items.Add(webErrorStatus.ToString() != "Unknown" ? webErrorStatus.ToString() : ex.Message);
+	}
+}
+
+private async void StreamSocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs args)
+{
+	string request;
+	using (var streamReader = new StreamReader(args.Socket.InputStream.AsStreamForRead()))
+	{
+		request = await streamReader.ReadLineAsync();
+	}
+
+	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request));
+	});
+
+	// Echo the request back as the response.
+	using (Stream outputStream = args.Socket.OutputStream.AsStreamForWrite())
+	{
+		using (var streamWriter = new StreamWriter(outputStream))
+		{
+			await streamWriter.WriteLineAsync(request);
+			await streamWriter.FlushAsync();
+		}
+	}
+
+	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request));
+	});
+
+	sender.Dispose();
+
+	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.serverListBox.Items.Add("server closed its socket");
+	});
+}
+
+private async void StartClient()
+{
+	try
+	{
+		// Create the StreamSocket and establish a connection to the echo server.
+		using (var streamSocket = new Windows.Networking.Sockets.StreamSocket())
+		{
+			// The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+			var hostName = new Windows.Networking.HostName("localhost");
+
+			this.clientListBox.Items.Add("client is trying to connect...");
+
+			await streamSocket.ConnectAsync(hostName, StreamSocketAndListenerPage.PortNumber);
+
+			this.clientListBox.Items.Add("client connected");
+
+			// Send a request to the echo server.
+			string request = "Hello, World!";
+			using (Stream outputStream = streamSocket.OutputStream.AsStreamForWrite())
+			{
+				using (var streamWriter = new StreamWriter(outputStream))
+				{
+					await streamWriter.WriteLineAsync(request);
+					await streamWriter.FlushAsync();
+				}
+			}
+
+			this.clientListBox.Items.Add(string.Format("client sent the request: \"{0}\"", request));
+
+			// Read data from the echo server.
+			string response;
+			using (Stream inputStream = streamSocket.InputStream.AsStreamForRead())
+			{
+				using (StreamReader streamReader = new StreamReader(inputStream))
+				{
+					response = await streamReader.ReadLineAsync();
+				}
+			}
+
+			this.clientListBox.Items.Add(string.Format("client received the response: \"{0}\" ", response));
+		}
+
+		this.clientListBox.Items.Add("client closed its socket");
+	}
+	catch (Exception ex)
+	{
+		Windows.Networking.Sockets.SocketErrorStatus webErrorStatus = Windows.Networking.Sockets.SocketError.GetStatus(ex.GetBaseException().HResult);
+		this.clientListBox.Items.Add(webErrorStatus.ToString() != "Unknown" ? webErrorStatus.ToString() : ex.Message);
+	}
 }
 ```
 
-The following code example implements the SocketListener\_ConnectionReceived event handler that was attached to the [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) event in the above example. This event handler is called by the [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) class every time a remote client has established a connection with the echo server.
+## Build a basic UDP socket client and server
 
-```csharp
-private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, 
-    Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs args)
-{
-    //Read line from the remote client.
-    Stream inStream = args.Socket.InputStream.AsStreamForRead();
-    StreamReader reader = new StreamReader(inStream);
-    string request = await reader.ReadLineAsync();
-    
-    //Send the line back to the remote client.
-    Stream outStream = args.Socket.OutputStream.AsStreamForWrite();
-    StreamWriter writer = new StreamWriter(outStream);
-    await writer.WriteLineAsync(request);
-    await writer.FlushAsync();
-}
+A UDP (User Datagram Protocol) socket is similar to a TCP socket in that it also provides low-level network data transfers in either direction. But, while a TCP socket is for long-lived connections, a UDP socket is for applications where an established connection is not required. Because UDP sockets don't maintain connection on both endpoints, they're a fast and simple solution for networking between remote machines. But UDP sockets don't ensure integrity of the network packets nor even whether packets make it to the remote destination at all. So your app will need to be designed to tolerate that. Some examples of applications that use UDP sockets are local network discovery, and local chat clients.
+
+To demonstrate basic UDP operations, the example code below shows the [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) class being used to both send and receive data over UDP to form an echo client and server. Create a new project, and put both the client and the server code below into the same project. Just as for a TCP socket, you'll need to declare the **Private Networks (Client & Server)** app capability.
+
+### An echo client and server, using UDP sockets
+
+Construct a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to play the role of the echo server, bind it to a specific port number, listen for an incoming UDP message, and echo it back. The [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live#Windows_Networking_Sockets_DatagramSocket_MessageReceived) event is raised when a message is receieved on the socket.
+
+Construct another **DatagramSocket** to play the role of the echo client, bind it to a specific port number, send a UDP message, and receive a response.
+
+Put the XAML markup in `MainPage.xaml`, and the put the imperative code inside your `MainPage` class.
+
+Create a new **Page** named `DatagramSocketPage`. Put the XAML markup in `DatagramSocketPage.xaml`, and the put the imperative code inside the `DatagramSocketPage` class.
+
+```XAML
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+
+	<StackPanel>
+		<TextBlock Margin="9.6,0" Style="{StaticResource TitleTextBlockStyle}" Text="UDP socket example"/>
+		<TextBlock Margin="7.2,0,0,0" Style="{StaticResource HeaderTextBlockStyle}" Text="DatagramSocket"/>
+	</StackPanel>
+
+	<Grid Grid.Row="1">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<TextBlock Margin="9.6" Style="{StaticResource SubtitleTextBlockStyle}" Text="client"/>
+		<ListBox x:Name="clientListBox" Grid.Row="1" Margin="9.6"/>
+		<TextBlock Grid.Column="1" Margin="9.6" Style="{StaticResource SubtitleTextBlockStyle}" Text="server"/>
+		<ListBox x:Name="serverListBox" Grid.Column="1" Grid.Row="1" Margin="9.6"/>
+	</Grid>
+</Grid>
 ```
 
-**Creating a TCP echo client**
-
-The following code example demonstrates how to create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object, establish a connection to the remote server, send a request, and receive a response.
-
 ```csharp
-try
+// Every protocol typically has a standard port number. For example, HTTP is typically 80, FTP is 20 and 21, etc.
+// For this example, we'll choose different arbitrary port numbers for client and server, since both will be running on the same machine.
+static string ClientPortNumber = "1336";
+static string ServerPortNumber = "1337";
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    //Create the StreamSocket and establish a connection to the echo server.
-    Windows.Networking.Sockets.StreamSocket socket = new Windows.Networking.Sockets.StreamSocket();
-    
-    //The server hostname that we will be establishing a connection to. We will be running the server and client locally,
-    //so we will use localhost as the hostname.
-    Windows.Networking.HostName serverHost = new Windows.Networking.HostName("localhost");
-    
-    //Every protocol typically has a standard port number. For example HTTP is typically 80, FTP is 20 and 21, etc.
-    //For the echo server/client application we will use a random port 1337.
-    string serverPort = "1337";
-    await socket.ConnectAsync(serverHost, serverPort);
-
-    //Write data to the echo server.
-    Stream streamOut = socket.OutputStream.AsStreamForWrite();
-    StreamWriter writer = new StreamWriter(streamOut);
-    string request = "test";
-    await writer.WriteLineAsync(request);
-    await writer.FlushAsync();
-
-    //Read data from the echo server.
-    Stream streamIn = socket.InputStream.AsStreamForRead();
-    StreamReader reader = new StreamReader(streamIn);
-    string response = await reader.ReadLineAsync();
+	this.StartServer();
+	this.StartClient();
 }
-catch (Exception e)
+
+private async void StartServer()
 {
-    //Handle exception here.            
+	try
+	{
+		var serverDatagramSocket = new Windows.Networking.Sockets.DatagramSocket();
+
+		// The ConnectionReceived event is raised when connections are received.
+		serverDatagramSocket.MessageReceived += ServerDatagramSocket_MessageReceived;
+
+		this.serverListBox.Items.Add("server is about to bind...");
+
+		// Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+		await serverDatagramSocket.BindServiceNameAsync(DatagramSocketPage.ServerPortNumber);
+
+		this.serverListBox.Items.Add(string.Format("server is bound to port number {0}", DatagramSocketPage.ServerPortNumber));
+	}
+	catch (Exception ex)
+	{
+		Windows.Networking.Sockets.SocketErrorStatus webErrorStatus = Windows.Networking.Sockets.SocketError.GetStatus(ex.GetBaseException().HResult);
+		this.serverListBox.Items.Add(webErrorStatus.ToString() != "Unknown" ? webErrorStatus.ToString() : ex.Message);
+	}
 }
-```
 
-## Basic UDP socket operations
-
-A UDP socket provides low-level network data transfers in either direction for network communication that does not require an established connection. Because UDP sockets do not maintain connection on both endpoints they provide fast and simple solution for networking between remote machines. However, UDP sockets do not ensure integrity of the network packets or whether they make it to the remote destination at all. Some examples of applications that use UDP sockets are local network discovery and local chat clients. This section demonstrates the use of the [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class to sending and receiving UDP messages by creating a simple echo server and client.
-
-**Creating a UDP echo server**
-
-The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages.
-
-```csharp
-Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
-
-socket.MessageReceived += Socket_MessageReceived;
-
-//You can use any port that is not currently in use already on the machine.
-string serverPort = "1337";
-
-//Bind the socket to the serverPort so that we can start listening for UDP messages from the UDP echo client.
-await socket.BindServiceNameAsync(serverPort);
-```
-
-The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from a client and send the same message back.
-
-```csharp
-private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
+private async void ServerDatagramSocket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
 {
-    //Read the message that was received from the UDP echo client.
-    Stream streamIn = args.GetDataStream().AsStreamForRead();
-    StreamReader reader = new StreamReader(streamIn);
-    string message = await reader.ReadLineAsync();
+	string request;
+	using (DataReader dataReader = args.GetDataReader())
+	{
+		request = dataReader.ReadString(dataReader.UnconsumedBufferLength).Trim();
+	}
 
-    //Create a new socket to send the same message back to the UDP echo client.
-    Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
-    
-    //Use a separate port number for the UDP echo client because both will be unning on the same machine.
-    string clientPort = "1338"
-    Stream streamOut = (await socket.GetOutputStreamAsync(args.RemoteAddress, clientPort)).AsStreamForWrite();
-    StreamWriter writer = new StreamWriter(streamOut);
-    await writer.WriteLineAsync(message);
-    await writer.FlushAsync();
+	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request));
+	});
+
+	// Echo the request back as the response.
+	using (Stream outputStream = (await sender.GetOutputStreamAsync(args.RemoteAddress, DatagramSocketPage.ClientPortNumber)).AsStreamForWrite())
+	{
+		using (var streamWriter = new StreamWriter(outputStream))
+		{
+			await streamWriter.WriteLineAsync(request);
+			await streamWriter.FlushAsync();
+		}
+	}
+
+	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request));
+	});
+
+	sender.Dispose();
+
+	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.serverListBox.Items.Add("server closed its socket");
+	});
 }
-```
 
-**Creating a UDP echo client**
-
-The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages and send a UDP message to the UDP echo server.
-
-```csharp
-private async void testUdpSocketServer()
+private async void StartClient()
 {
-    Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
-    
-    socket.MessageReceived += Socket_MessageReceived;
-    
-    //You can use any port that is not currently in use already on the machine. We will be using two separate and random 
-    //ports for the client and server because both the will be running on the same machine.
-    string serverPort = "1337";
-    string clientPort = "1338";
-    
-    //Because we will be running the client and server on the same machine, we will use localhost as the hostname.
-    Windows.Networking.HostName serverHost = new Windows.Networking.HostName("localhost");
-    
-    //Bind the socket to the clientPort so that we can start listening for UDP messages from the UDP echo server.
-    await socket.BindServiceNameAsync(clientPort);
-                
-    //Write a message to the UDP echo server.
-    Stream streamOut = (await socket.GetOutputStreamAsync(serverHost, serverPort)).AsStreamForWrite();
-    StreamWriter writer = new StreamWriter(streamOut);
-    string message = "Hello, world!";
-    await writer.WriteLineAsync(message);
-    await writer.FlushAsync();
+	try
+	{
+		// Create the DatagramSocket and establish a connection to the echo server.
+		var clientDatagramSocket = new Windows.Networking.Sockets.DatagramSocket();
+
+		clientDatagramSocket.MessageReceived += ClientDatagramSocket_MessageReceived;
+
+		// The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+		var hostName = new Windows.Networking.HostName("localhost");
+
+		this.clientListBox.Items.Add("client is about to bind...");
+
+		await clientDatagramSocket.BindServiceNameAsync(DatagramSocketPage.ClientPortNumber);
+
+		this.clientListBox.Items.Add(string.Format("client is bound to port number {0}", DatagramSocketPage.ClientPortNumber));
+
+		// Send a request to the echo server.
+		string request = "Hello, World!";
+		using (var serverDatagramSocket = new Windows.Networking.Sockets.DatagramSocket())
+		{
+			using (Stream outputStream = (await serverDatagramSocket.GetOutputStreamAsync(hostName, DatagramSocketPage.ServerPortNumber)).AsStreamForWrite())
+			{
+				using (var streamWriter = new StreamWriter(outputStream))
+				{
+					await streamWriter.WriteLineAsync(request);
+					await streamWriter.FlushAsync();
+				}
+			}
+		}
+
+		this.clientListBox.Items.Add(string.Format("client sent the request: \"{0}\"", request));
+	}
+	catch (Exception ex)
+	{
+		Windows.Networking.Sockets.SocketErrorStatus webErrorStatus = Windows.Networking.Sockets.SocketError.GetStatus(ex.GetBaseException().HResult);
+		this.clientListBox.Items.Add(webErrorStatus.ToString() != "Unknown" ? webErrorStatus.ToString() : ex.Message);
+	}
 }
-```
 
-The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from the UDP echo server.
-
-```csharp
-private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, 
-    Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
+private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
 {
-    //Read the message that was received from the UDP echo server.
-    Stream streamIn = args.GetDataStream().AsStreamForRead();
-    StreamReader reader = new StreamReader(streamIn);
-    string message = await reader.ReadLineAsync();
+	string response;
+	using (DataReader dataReader = args.GetDataReader())
+	{
+		response = dataReader.ReadString(dataReader.UnconsumedBufferLength).Trim();
+	}
+
+	await this.clientListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.clientListBox.Items.Add(string.Format("client received the response: \"{0}\"", response));
+	});
+
+	sender.Dispose();
+
+	await this.clientListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+	{
+		this.clientListBox.Items.Add("client closed its socket");
+	});
 }
 ```
 
@@ -296,8 +474,27 @@ An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/libr
 
 For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
 
-## The Winsock API
+## Important APIs
 
-You can use [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) in your UWP app, as well. The supported Winsock API is based on that of Windows Phone 8.1Microsoft Silverlight and continues to support most of the types, properties and methods (some APIs that are considered obsolete have been removed). You can find more information on Winsock programming [here](https://msdn.microsoft.com/library/windows/desktop/ms740673).
+* [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)
+* [DatagramSocket.BindServiceNameAsync](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_BindServiceNameAsync_System_String_)
+* [DatagramSocket.GetOutputStreamAsync](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_GetOutputStreamAsync_Windows_Networking_HostName_System_String_)
+* [DatagramSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live#Windows_Networking_Sockets_DatagramSocket_MessageReceived)
+* [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
+* [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live#Windows_Networking_Sockets_DatagramSocketMessageReceivedEventArgs_GetDataReader)
+* [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_)
+* [SocketErrorStatus](/uwp/api/windows.networking.sockets.socketerrorstatus?branch=live) 
+* [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)
+* [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_HostName_System_String_)
+* [StreamSocket.InputStream](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_InputStream)
+* [StreamSocket.OutputStream](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_OutputStream)
+* [StreamSocketListener](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live)
+* [StreamSocketListener.BindServiceNameAsync](/uwp/api/windows.networking.sockets.streamsocketlistener?branch=live#Windows_Networking_Sockets_StreamSocketListener_BindServiceNameAsync_System_String_Windows_Networking_Sockets_SocketProtectionLevel_Windows_Networking_Connectivity_NetworkAdapter_)
+* [StreamSocketListener.ConnectionReceived](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived)
+* [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live)* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
 
+## Related topics
 
+* [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [How to set network capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
+* [App-to-app communication](/windows/uwp/app-to-app/index?branch=live)

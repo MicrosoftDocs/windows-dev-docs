@@ -1,14 +1,14 @@
 ---
-author: mijacobs
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+author: serenaz
+Description: The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 title: Navigation history and backwards navigation (Windows apps)
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
-ms.author: mijacobs
-ms.date: 05/19/2017
+ms.author: sezhen
+ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,230 +17,376 @@ localizationpriority: medium
 ---
 
 #  Navigation history and backwards navigation for UWP apps
+> [!WARNING] 
+Back buttons mentioned in this article will be released with RS4. Code examples are not final.
+
+The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+
+To implement backwards navigation in your app, place a [back button](#Back-button) at the top left corner of your app's UI. If your app uses the [NavigationView](../controls-and-patterns/navigationview.md) control, then you can use [NavigationView's built-in back button](#Back-Button-in-NavigationView). 
+
+The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
+
+> **Important APIs**: [SystemNavigationManager class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager), [BackRequested event](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 
+## Back button
+To create a back button, use the [Button](../controls-and-patterns/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI.
 
-On the Web, individual web sites provide their own navigation systems, such as tables of contents, buttons, menus, simple lists of links, and so on. The navigation experience can vary wildly from website to website. However, there is one consistent navigation experience: back. Most browsers provide a back button that behaves the same way regardless of the website.
+![Back button in the top left of the app's UI](images/back-nav/back-placement.png)
+```xaml
+<Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+```
 
-> **Important APIs**: [SystemNavigationManager class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager), [BackRequested event](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested), [OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/br227508)
+If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
 
-For similar reasons, the Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+![Back button on top command bar](images/back-nav/appbar-back.png)
 
-The UI for the system back button is optimized for each form factor and input device type, but the navigation experience is global and consistent across devices and UWP apps.
+```xaml
+<Button VerticalAlignment="Top" HorizontalAlignment="Left" 
+Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+```
 
-Here are the primary form factors with the back button UI:
+In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below).
 
+![Back button states](images/back-nav/back-button.png)
 
-<table>
-    <tr>
-        <td colspan="2">Devices</td>
-        <td style="vertical-align:top;">Back button behavior</td>
-     </tr>
-    <tr>
-        <td style="vertical-align:top;">Phone</td>
-        <td style="vertical-align:top;">![system back on a phone](images/back-systemback-phone.png)</td>
-        <td style="vertical-align:top;">
-        <ul>
-<li>Always present.</li>
-<li>A software or hardware button at the bottom of the device.</li>
-<li>Global back navigation within the app and between apps.</li>
-</ul>
-</td>
-     </tr>
-     <tr>
-        <td style="vertical-align:top;">Tablet</td>
-        <td style="vertical-align:top;">![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
-        <td style="vertical-align:top;">
-<ul>
-<li>Always present in Tablet mode. Not available in Desktop mode. Title bar back button can be enabled, instead. 
-Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
-<li> A software button in the navigation bar at the bottom of the device.</li>
-<li>Global back navigation within the app and between apps.</li></ul>        
-        </td>
-     </tr>
-    <tr>
-        <td style="vertical-align:top;">PC, Laptop, Tablet</td>
-        <td style="vertical-align:top;">![system back on a pc or laptop](images/back-systemback-pc.png)</td>
-        <td style="vertical-align:top;">
-<ul>
-<li>Optional in Desktop mode. Not available in Tablet mode.
-Disabled by default. Must opt in to enable it.
-Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
-<li>A software button in the title bar of the app.</li>
-<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
-        </td>
-     </tr>
-    <tr>
-        <td style="vertical-align:top;">Surface Hub</td>
-        <td style="vertical-align:top;">![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
-        <td style="vertical-align:top;">
-<ul>
-<li>Optional.</li>
-<li>Disabled by default. Must opt in to enable it.</li>
-<li>A software button in the title bar of the app.</li>
-<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
-        </td>
-     </tr>     
-<table>
+### Code example
+The following code example demonstrates how implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase#Windows_UI_Xaml_Controls_Primitives_ButtonBase_Click) event and disables/enables the button visibility in [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame#Windows_UI_Xaml_Controls_Frame_Navigated), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager#Windows_UI_Core_SystemNavigationManager_BackRequested) event.
 
+```xaml
+<Page x:Class="AppName.MainPage">
+...
+<Button x:Name="BackButton" Click="Back_Click" Style="{StaticResource NavigationBackButtonNormalStyle}"/>
+...
+<Page/>
+```
 
-Here are some alternative input types that don't rely on a back button UI, but still provide the exact same functionality.
-
-
-<table>
-<tr><td colspan="3">Input devices</td></tr>
-<tr><td style="vertical-align:top;">Keyboard</td><td style="vertical-align:top;">![keyboard](images/keyboard-wireframe.png)</td><td style="vertical-align:top;">Windows key + Backspace</td></tr>
-<tr><td style="vertical-align:top;">Cortana</td><td style="vertical-align:top;">![speech](images/speech-wireframe.png)</td><td style="vertical-align:top;">Say, "Hey Cortana, go back"</td></tr>
-</table>
- 
-
-When your app runs on a phone, tablet, or on a PC or laptop that has system back enabled, the system notifies your app when the back button is pressed. The user expects the back button to navigate to the previous location in the app's navigation history. It's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
-
-
-## How to enable system back navigation support
-
-
-Apps must enable back navigation for all hardware and software system back buttons. Do this by registering a listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event and defining a corresponding handler.
-
-Here we register a global listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event in the App.xaml code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
-
-> [!div class="tabbedCodeSnippets"]
+Code-behind:
 ```csharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
-    App_BackRequested;
+// Handles system-level BackRequested events and page-level back button Click events
+private bool On_BackRequested()
+{
+    Frame rootFrame = this.Frame;
+    if (rootFrame == null)
+    {
+        return true;
+    }
+    if (rootFrame.CanGoBack)
+    {
+        rootFrame.GoBack();
+        return true;
+    }
+}
+
+private void Back_Click(object sender, RoutedEventArgs e)
+{
+    On_BackRequested();
+}
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    Frame rootFrame = this.Frame;
+    BackButton.isEnabled = rootFrame.CanGoBack;
+}
+
+public MainPage()
+{
+    KeyboardAccelerator GoBack = new KeyboardAccelerator();
+    GoBack.Key = VirtualKey.GoBack;
+    GoBack.Invoked += "BackInvoked";
+    KeyboardAccelerator AltLeft = new KeyboardAccelerator();
+    AltLeft.Key = VirtualKey.Left;
+    AltLeft.Invoked += "BackInvoked";
+    // ALT routes here
+    AltLeft.Modifiers = VirtualKeyModifiers.Menu;
+
+    List<KeyboardAccelerator> AccList = new List< KeyboardAccelerator >(new KeyboardAccelerator [] {GoBack, AltLeft});
+    MainPage.KeyboardAccelerators = AccList;
+}
+
+protected void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+{
+    On_BackRequested();
+    args.Handled = true;
+}
+
+private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.handled = On_BackRequested();
+    }
+}
 ```
-```cpp
-Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
-    BackRequested += ref new Windows::Foundation::EventHandler<
-    Windows::UI::Core::BackRequestedEventArgs^>(
-        this, &App::App_BackRequested);
-```
+Here, we register a global listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager#Windows_UI_Core_SystemNavigationManager_BackRequested) event in the `App.xaml` code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
 
-Here's the corresponding [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event handler that calls [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) on the root frame of the app.
-
-This handler is invoked on a global back event. If the in-app back stack is empty, the system might navigate to the previous app in the app stack or to the Start screen. There is no app back stack in Desktop mode and the user stays in the app even when the in-app back stack is depleted.
-
-> [!div class="tabbedCodeSnippets"]
+App.xaml code-behind:
 ```csharp
->private void App_BackRequested(object sender, 
->    Windows.UI.Core.BackRequestedEventArgs e)
->{
->    Frame rootFrame = Window.Current.Content as Frame;
->    if (rootFrame == null)
->        return;
->
->    // Navigate back if possible, and if the event has not 
->    // already been handled .
->    if (rootFrame.CanGoBack && e.Handled == false)
->    {
->        e.Handled = true;
->        rootFrame.GoBack();
->    }
->}
-```
-```cpp
->void App::App_BackRequested(
->    Platform::Object^ sender, 
->    Windows::UI::Core::BackRequestedEventArgs^ e)
->{
->    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
->    if (rootFrame == nullptr)
->        return;
->
->    // Navigate back if possible, and if the event has not
->    // already been handled.
->    if (rootFrame->CanGoBack && e->Handled == false)
->    {
->        e->Handled = true;
->        rootFrame->GoBack();
->    }
->}
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
+Frame rootFrame = Window.Current.Content;
+rootFrame.PointerPressed += 'On_PointerPressed';
+
+private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+{
+    e.handled = On_BackRequested();
+}
+
+private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.handled = On_BackRequested();
+    }
+}
 ```
 
-## How to enable the title bar back button
+## Back button in NavigationView
+The [NavigationView](../controls-and-patterns/navigationview.md) control has a built-in back button, which can be enabled with the following properties:
 
+- **IsBackButtonVisible** is a NavigationViewBackButtonVisible enum and "Auto" by default. It is used to show/hide the back button. When the button is not visible, the space for drawing the back button will be collapsed.
+- **IsBackEnabled** is false by default and can be used to toggle the back button states.
+- **BackRequested** is fired when a user clicks on the back button.
+    - In Minimal/Compact mode, when the NavigationView.Pane is open as a flyout, clicking the back button will close the Pane and fire **PaneClosing** event instead.
+    - Not fired if IsBackEnabled is false.
 
-Devices that support Desktop mode (typically PCs and laptops, but also some tablets) and have the setting enabled (**Settings &gt; System &gt; Tablet mode**), do not provide a global navigation bar with the system back button.
+> [!NOTE]
+Internal: The plan is that this button will be available for both horizontal and vertical version of NavView control. Unfortunately, horizontal version is not available in RS4, so if your UI uses horizontal version, refer to the back button style above to draw your own button for now.
 
-In Desktop mode, every app runs in a window with a title bar. You can provide an alternative back button for your app that is displayed in this title bar.
+![NavigationView back button](images/back-nav/navview-back.png)
 
-The title bar back button is only available in apps running on devices in Desktop mode, and only supports in-app navigation history—it does not support app-to-app navigation history.
+### Code example
 
-**Important**  The title bar back button is not displayed by default. You must opt in.
+The following code example demonstrates how to implement backwards navigation with NavigationView's back button.
 
- 
+Since there is both a content frame for the NavigationView (the app navigation backstack) and a root frame for the application (the system backstack), pay careful attention to the backstack. Once the app navigation backstack is empty, the system backstack should be utilized.
 
-|                                                             |                                                        |
-|-------------------------------------------------------------|--------------------------------------------------------|
-| ![no system back in desktop mode](images/nav-noback-pc.png) | ![system back in desktop mode](images/nav-back-pc.png) |
-| Desktop mode, no back navigation.                           | Desktop mode, back navigation enabled.                 |
+```xaml
+<Page x:Class="AppName.MainPage">
+    <NavigationView x:Name="NavView" SelectionChanged="NavView_SelectionChanged" BackRequested="NavView_BackRequested">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Icon="Street" Content="Brick House" Tag="house"/> 
+            <NavigationViewItem Icon="Contact2" Content="Sculpture" Tag="sculpture"/> 
+            <NavigationViewItem Icon="Camera" Content="Waterfall" Tag="waterfall"/> 
+            <NavigationViewItem Icon="Pictures" Content="Tree Tops" Tag="trees"/> 
+        </NavigationView.MenuItems> 
 
- 
+        <Frame x:Name="ContentFrame"> 
+            <Frame.ContentTransitions> 
+                <TransitionCollection> 
+                    <NavigationThemeTransition/> 
+                </TransitionCollection> 
+            </Frame.ContentTransitions> 
+        </Frame>
+    </NavigationView> 
+<Page/>
+```
+Code behind:
+```csharp
+bool FromBack = false;
 
-Override the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) event and set [**AppViewBackButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/dn986448) to [**Visible**](https://msdn.microsoft.com/library/windows/apps/dn986276) in the code-behind file for each page that you want to enable the title bar back button.
+private void NavView_Loaded(object sender, RoutedEventArgs e)
+{
+    // set the initial SelectedItem  
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
+    {
+        if (item is NavigationViewItem && item.Tag.ToString() == "house")
+        {
+            NavView.SelectedItem = item;
+            break;
+        }
+    }
 
-For this example, we list each page in the back stack and enable the back button if the [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) property of the frame has a value of **true**.
+    ContentFrame.Navigated += 'On_Navigated';
+}
 
-> [!div class="tabbedCodeSnippets"]
->```csharp
->protected override void OnNavigatedTo(NavigationEventArgs e)
->{
->    Frame rootFrame = Window.Current.Content as Frame;
->
->    string myPages = "";
->    foreach (PageStackEntry page in rootFrame.BackStack)
->    {
->        myPages += page.SourcePageType.ToString() + "\n";
->    }
->    stackCount.Text = myPages;
->
->    if (rootFrame.CanGoBack)
->    {
->        // Show UI in title bar if opted-in and in-app backstack is not empty.
->        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
->            AppViewBackButtonVisibility.Visible;
->    }
->    else
->    {
->        // Remove the UI from the title bar if in-app back stack is empty.
->        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
->            AppViewBackButtonVisibility.Collapsed;
->    }
->}
->```
->```cpp
->void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
->{
->    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
->
->    Platform::String^ myPages = "";
->
->    if (rootFrame == nullptr)
->        return;
->
->    for each (PageStackEntry^ page in rootFrame->BackStack)
->    {
->        myPages += page->SourcePageType.ToString() + "\n";
->    }
->    stackCount->Text = myPages;
->
->    if (rootFrame->CanGoBack)
->    {
->        // If we have pages in our in-app backstack and have opted in to showing back, do so
->        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
->            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
->    }
->    else
->    {
->        // Remove the UI from the title bar if there are no pages in our in-app back stack
->        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
->            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
->    }
->}
->```
+private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args) 
+{ 
+    if (args.IsSettingsSelected) 
+    { 
+        ContentFrame.Navigate(typeof(SettingsPage)); 
+    } 
+    else 
+    { 
+        NavigationViewItem item = args.SelectedItem as NavigationViewItem; 
+        switch (item.Tag.ToString()) 
+        {
+            case "house": 
+                ContentFrame.Navigate(typeof(HousePage)); 
+                break;
+            case "sculpture": 
+                ContentFrame.Navigate(typeof(SculpturePage)); 
+                break; 
+            case "waterfall": 
+                ContentFrame.Navigate(typeof(WaterfallPage)); 
+                break; 
+            case "trees": 
+                ContentFrame.Navigate(typeof(TreesPage)); 
+                break; 
+         } 
+    } 
+    if (!ContentFrame.CanGoBack && FromBack)
+    { 
+        NavView.IsBackEnabled = false; 
+    }
+    else
+    { 
+        NavView.IsBackEnabled = true; 
+    } 
+    FromBack = false; 
+} 
 
+private void NavView_BackRequested(NavigationView sender) 
+{ 
+     On_BackRequested(); 
+} 
 
-### Guidelines for custom back navigation behavior
+private bool On_BackRequested()
+{
+    if ((NavView.DisplayMode == NavigationViewDisplayMode.Compact || NavView.DisplayMode == NavigationViewDisplayMode.Minimal) && NavView.IsPaneOpen = true)
+    {
+        // Do not navigate back and just allow NavView to execute its light
+        // dismiss behavior
+        return true;
+    } else if (ContentFrame.BackStackDepth == 0)
+    {
+        Frame rootFrame = this.Frame;
+        if (rootFrame == null)
+            return true;
+
+        if (rootFrame.CanGoBack)
+        {
+            rootFrame.GoBack();
+            return true;
+        }
+
+    } else {
+
+        if (ContentFrame.CanGoBack)
+        {
+            ContentFrame.GoBack();
+            return true;
+        }
+
+        FromBack = true;
+    }
+}
+
+private void NavView_Loaded(object sender, RoutedEventArgs e)
+{
+    // set the initial SelectedItem  
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
+    {
+        if (item is NavigationViewItem && item.Tag.ToString() == "apps")
+        {
+            NavView.SelectedItem = item;
+            break;
+        }
+    }
+
+    KeyboardAccelerator GoBack = new KeyboardAccelerator();
+    GoBack.Key = VirtualKey.GoBack;
+    GoBack.Invoked += "BackInvoked";
+    KeyboardAccelerator AltLeft = new KeyboardAccelerator();
+    AltLeft.Key = VirtualKey.Left;
+    AltLeft.Invoked += "BackInvoked";
+    // ALT routes here
+    AltLeft.Modifiers = VirtualKeyModifiers.Menu;
+
+    List<KeyboardAccelerator> AccList = new List< KeyboardAccelerator >(new KeyboardAccelerator [] {GoBack, AltLeft});
+    MainPage.KeyboardAccelerators = AccList;
+}
+
+protected void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+{
+    On_BackRequested();
+    args.Handled = true;
+}
+
+private void On_Navigated(object sender, NavigationEventArgs e)
+{
+    String stringTag = "";
+    switch (typeof(ContentFrame.Content))
+    { 
+        case typeof(HousePage): 
+            stringTag = "house"; 
+            break; 
+        case typeof(SculpturePage: 
+            stringTag = "sculpture";
+            break; 
+        case typeof(WaterfallPage):
+            stringTag = "waterfall";
+            break; 
+        case typeof(TreesPage): 
+            stringTag = "trees";
+            break;
+    }
+
+    // set the new SelectedItem  
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
+    {
+        if (item is NavigationViewItem && item.Tag.ToString() == stringTag)
+        {
+            NavView.SelectedItem = item;
+            break;
+        }
+    }
+}
+
+```
+
+App.xaml code behind:
+
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
+Frame rootFrame = Window.Current.Content;
+rootFrame.Navigated += 'On_Navigated';
+rootFrame.PointerPressed += 'On_PointerPressed';
+
+private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+{
+    if (e.handled == False)  
+    {
+        e.handled = On_BackRequested();
+    }
+}
+
+private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.handled = On_BackRequested();
+    }
+}
+```
+
+## Optimizing for different device and form factors
+This backwards navigation design guidance is applicable to all devices, but different device and form factors may benefit from optimization. This also depends on the hardware back button supported by different shells.
+
+- **Phone/Tablet**: Note that a hardware or software back button is always present on mobile and tablet, but we recommend drawing an in-app back button for clarity.
+- **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
+- **Xbox/TV**: For Xbox and TV/10ft design, do not draw a back button, for it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards, as it has been in the past.
+
+If your app will run on multiple devices, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md) to toggle the visibility of button. The NavigationView control will automatically toggle the back button's visibility if your app is running on Xbox. 
+
+We recommend supporting the following inputs for back button:  Windows-Backspace key, Alt+LeftArrow key, Hardware back button, Shell tablet mode back button, VirtualKey.GoBack, VirtualKey.XButton1. Some of these keys are not supported by system back currently, so must be handled uniquely (as in the code examples below).
+
+## Backwards compatibility for title bar back button
+> [!WARNING]
+This section will be re-written soon with POR information.
+
+Previously, UWP apps used the title bar back button with [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. While the API will continue to be supported for backward compatibility, we no longer recommend relying on the title bar back button.
+
+If your app continues to use the title bar back button with [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then your app will receive a system back bar, which goes across the top width of the app with a back button on the left edge.
+
+![System drawn back button bar](images/back-nav/back-bar.png)
+
+## Guidelines for custom back navigation behavior
 
 If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:
 
@@ -294,12 +440,7 @@ If you choose to provide your own back stack navigation, the experience should b
 
 ### Resuming
 
-When the user switches to another app and returns to your app, we recommend returning to the last page in the navigation history.
-
-
-## Get the samples
-*   [Back button sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
-    Shows how to set up an event handler for the back button event and how to enable the title bar back button for when the app is in windowed Desktop mode.
+When the user switches to another app and returns to your app, we recommend returning to the last page in the navigation history
 
 ## Related articles
 * [Navigation basics](navigation-basics.md)
