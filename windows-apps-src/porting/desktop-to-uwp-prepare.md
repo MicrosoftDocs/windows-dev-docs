@@ -4,7 +4,7 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package an app (Desktop Bridge)
 ms.author: normesta
-ms.date: 08/31/2017
+ms.date: 11/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -56,7 +56,7 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app is linking C runtime libraries (CRT) in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner.
 
-	Visual Studio 2015 supports both static and dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015.
+	Visual Studio 2017 supports both static and dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2017.
 
 	Support in previous versions of Visual Studio varies. See the following table for details:
 
@@ -67,7 +67,7 @@ This article lists the things you need to know before you package your desktop a
 	<tr><td>2010 (VC 10)</td><td>Supported</td><td>Supported</td>
 	<tr><td>2012 (VC 11)</td><td>Supported</td><td>Not supported</td>
 	<tr><td>2013 (VC 12)</td><td>Supported</td><td>Not supported</td>
-	<tr><td>2015 (VC 14)</td><td>Supported</td><td>Supported</td>
+	<tr><td>2015 and 2017 (VC 14)</td><td>Supported</td><td>Supported</td>
 	</table>
 
 	Note: In all cases, you must link to the latest publically available CRT.
@@ -76,10 +76,17 @@ This article lists the things you need to know before you package your desktop a
 
 + __Your app uses a dependency in the System32/SysWOW64 folder__. To get these DLLs to work, you must include them in the virtual file system portion of your Windows app package. This ensures that the app behaves as if the DLLs were installed in the **System32**/**SysWOW64** folder. In the root of the package, create a folder called **VFS**. Inside that folder create a **SystemX64** and **SystemX86** folder. Then, place the 32-bit version of your DLL in the **SystemX86** folder, and place the 64-bit version in the **SystemX64** folder.
 
-+ __Your app uses the Dev11 VCLibs framework package__. The VCLibs 11 libraries can be directly installed from the Microsoft Store if they are defined as a dependency in the Windows app package. To do this, make the following change to your app package manifest: Under the `<Dependencies>` node, add:  
++ __Your app uses a VCLibs framework package__. The VCLibs libraries can be directly installed from the Microsoft Store if they are defined as a dependency in the Windows app package. For example, if your app uses Dev11 VCLibs packages, make the following change to your app package manifest: Under the `<Dependencies>` node, add:  
 `<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
-During installation from the Microsoft Store, the appropriate version (x86 or x64) of the VCLibs 11 framework will get installed prior to the installation of the app.  
-The dependencies will not get installed if the app is installed by sideloading. To install the dependencies manually on your machine, you must download and install the [VC 11.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064). For more information on these scenarios, see [Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
+During installation from the Microsoft Store, the appropriate version (x86 or x64) of the VCLibs framework will get installed prior to the installation of the app.  
+The dependencies will not get installed if the app is installed by sideloading. To install the dependencies manually on your machine, you must download and install the appropriate VCLibs framework package for Desktop Bridge. For more information about these scenarios, see [Using Visual C++ Runtime in a Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
+
+  **Framework Packages**:
+
+  * [VC 14.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53175)
+  * [VC 12.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53176)
+  * [VC 11.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53340)
+
 
 + __Your app contains a custom jump list__. There are several issues and caveats to aware of when using jump lists.
 
