@@ -17,6 +17,9 @@ localizationpriority: medium
 
 This article describes the legacy, two-process model for adding background audio support to your UWP app. Starting with Windows 10, version 1607, a single-process model for background audio that is much simpler to implement. For more information on the current recommendations for background audio, see [Play media in the background](background-audio.md). This article is intended to provide support for apps that are have already been developed using the legacy two-process model.
 
+> [!NOTE]
+> *BackgroundMediaPlayer* is deprecated and may not be available in future versions of Windows.
+
 ## Background audio architecture
 
 An app performing background playback consists of two processes. The first process is the main app, which contains the app UI and client logic, running in the foreground. The second process is the background playback task, which implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) like all UWP app background tasks. The background task contains the audio playback logic and background services. The background task communicates with the system through the System Media Transport Controls.
