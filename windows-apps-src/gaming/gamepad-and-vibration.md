@@ -261,7 +261,7 @@ Sometimes you might want to determine when a button transitions from pressed to 
 
 ## Run the gamepad input sample
 
-The [GamepadUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/GamepadUWP) demonstrates how to connect to a gamepad and read its state.
+The [GamepadUWP sample _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadUWP) demonstrates how to connect to a gamepad and read its state.
 
 ## Vibration and impulse triggers overview
 
