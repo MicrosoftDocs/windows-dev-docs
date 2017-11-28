@@ -59,10 +59,11 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;">[Date and time controls](date-and-time.md)</li>
 
-
 <li style="list-style-type: none;">[Dialogs and flyouts](dialogs.md)</li>
 
 <li style="list-style-type: none;">[Flip view](flipview.md)</li>
+
+<li style="list-style-type: none;">[Forms](forms.md)</li>
 
 <li style="list-style-type: none;">[Hub](hub.md)</li>
 
