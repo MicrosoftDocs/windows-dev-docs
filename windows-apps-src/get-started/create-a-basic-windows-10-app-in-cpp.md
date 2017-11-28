@@ -1,7 +1,7 @@
 ---
 author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: Create a Hello World app in C++ (Windows 10)
+title: Create a Universal Windows app in C++ (Windows 10)
 description: With Microsoft Visual Studio 2017, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
 ms.author: jken
 ms.date: 03/26/2017
@@ -12,7 +12,7 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 
-# Create a "Hello world" app in C++
+# Create a Universal Windows app in C++
 
 With Microsoft Visual Studio 2017, you can use C++ to develop an app that runs on Windows 10 with a UI that's defined in Extensible Application Markup Language (XAML).
 
