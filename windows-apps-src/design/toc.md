@@ -46,7 +46,6 @@
 ## [Layout panels](layout/layout-panels.md)
 ### [Custom panels](layout/custom-panels-overview.md)
 ### [Custom panel example: BoxPanel](layout/boxpanel-example-custom-panel.md)
-## [Form layouts](layout/forms.md)
 ## [Transforms](layout/transforms.md)
 ### [3-D perspective effects for XAML UI](layout/3-d-perspective-effects.md)
 
@@ -66,6 +65,7 @@
 ### [Time picker](controls-and-patterns/time-picker.md)
 ## [Dialogs and flyouts](controls-and-patterns/dialogs.md)
 ## [Flip view](controls-and-patterns/flipview.md)
+## [Forms](controls-and-patterns/forms.md)
 ## [Hub](controls-and-patterns/hub.md)
 ## [Hyperlinks](controls-and-patterns/hyperlinks.md)
 ## [Images and image brushes](controls-and-patterns/images-imagebrushes.md)

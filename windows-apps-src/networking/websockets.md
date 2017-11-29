@@ -428,7 +428,7 @@ auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref ne
 
 Note that the properties on these information classes are read-only, but you can use them to retrieve information at any time during the lifetime of a web socket object.
 
-## Handling network exceptions
+## Handling exceptions
 
 An error encountered on a [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live) or [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live) operation is returned as an **HRESULT** value. You can pass that **HRESULT** value to the [**WebSocketError.GetStatus**](/uwp/api/Windows.Networking.Sockets.WebSocketError?branch=live#Windows_Networking_Sockets_WebSocketError_GetStatus_System_Int32_) method to convert it into a [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) enumeration value.
 
