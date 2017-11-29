@@ -21,5 +21,5 @@ An Xbox Live title, regardless of the device it is on, can kick a user who is si
 ## How to handle SPOP
 SPOP should be handled by the title the same way as any other type of sign out event. The user will always be notified via UI when they do an action that would initiate an SPOP to verify that they would like to cause the title to be disconnected on the other device.
 
-* For XDK titles, the `User::UserRemoved` event will trigger when this occurs.
+* For XDK titles, the `User::SignOutCompleted` event will trigger when this occurs.
 * For UWP titles, they will be notified of the sign out through the `sign_out_complete` handler from the `xbox_live_user` class. See [Authentication for UWP projects](authentication-for-UWP-projects.md) for more detail

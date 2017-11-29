@@ -4,7 +4,7 @@ description: Sockets are a low-level data transfer technology on top of which ma
 title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
-ms.date: 11/26/2017
+ms.date: 11/27/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -112,10 +112,7 @@ private async void StreamSocketListener_ConnectionReceived(Windows.Networking.So
 		request = await streamReader.ReadLineAsync();
 	}
 
-	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request));
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request)));
 
 	// Echo the request back as the response.
 	using (Stream outputStream = args.Socket.OutputStream.AsStreamForWrite())
@@ -127,17 +124,11 @@ private async void StreamSocketListener_ConnectionReceived(Windows.Networking.So
 		}
 	}
 
-	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request));
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request)));
 
 	sender.Dispose();
 
-	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.serverListBox.Items.Add("server closed its socket");
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add("server closed its socket"));
 }
 
 private async void StartClient()
@@ -280,10 +271,7 @@ private async void ServerDatagramSocket_MessageReceived(Windows.Networking.Socke
 		request = dataReader.ReadString(dataReader.UnconsumedBufferLength).Trim();
 	}
 
-	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request));
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request)));
 
 	// Echo the request back as the response.
 	using (Stream outputStream = (await sender.GetOutputStreamAsync(args.RemoteAddress, DatagramSocketPage.ClientPortNumber)).AsStreamForWrite())
@@ -295,17 +283,11 @@ private async void ServerDatagramSocket_MessageReceived(Windows.Networking.Socke
 		}
 	}
 
-	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request));
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request)));
 
 	sender.Dispose();
 
-	await this.serverListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.serverListBox.Items.Add("server closed its socket");
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add("server closed its socket"));
 }
 
 private async void StartClient()
@@ -357,141 +339,180 @@ private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Socke
 		response = dataReader.ReadString(dataReader.UnconsumedBufferLength).Trim();
 	}
 
-	await this.clientListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.clientListBox.Items.Add(string.Format("client received the response: \"{0}\"", response));
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.clientListBox.Items.Add(string.Format("client received the response: \"{0}\"", response)));
 
 	sender.Dispose();
 
-	await this.clientListBox.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-	{
-		this.clientListBox.Items.Add("client closed its socket");
-	});
+	await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.clientListBox.Items.Add("client closed its socket"));
 }
 ```
 
 ## Background operations and the socket broker
 
-If your app receives connections or data on sockets, then you must be prepared to perform those operations properly while your app is not in the foreground. To do so, you use the socket broker. For more information on how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
+You can use the socket broker, and control channel triggers, to ensure that your app properly receives connections or data on sockets while it's not in the foreground. For more info, see [Network communications in the background](network-communications-in-the-background.md).
 
 ## Batched sends
 
-Starting with Windows 10, Windows.Networking.Sockets supports batched sends, a way for you to send multiple buffers of data together with much lower context-switching overhead than if you send each of the buffers separately. This is especially useful if your app is doing VoIP, VPN, or other tasks which involve moving a lot of data as efficiently as possible.
+Whenever you write to the stream associated with a socket, a transition happens from user mode (your code) to kernel mode (where the network stack is). If you're writing many buffers at a time then these repeated transitions compound into substantial overhead. Batching your sends is a way to send multiple buffers of data together, and avoid that overhead. It's especially useful if your app is doing VoIP, VPN, or other tasks that involve moving a lot of data as efficiently as possible.
 
-Each call to WriteAsync on a socket triggers a kernel transition to reach the network stack. When an app writes many buffers at a time, each write incurs a separate kernel transition, and this creates substantial overhead. The new batched sends pattern optimizes the frequency of kernel transitions. This functionality is currently limited to [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and connected [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) instances.
+This section demonstrates a couple of batched sends techniques that you can use with a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) or a connected [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live).
 
-Here is an example of how an app would send a large number of buffers in a non-optimal way.
+To get a baseline, let's see how to send a large number of buffers in an inefficient way. Here's a minimal demo, using a **StreamSocket**.
 
 ```csharp
-// Send a set of packets inefficiently, one packet at a time.
-// This is not recommended if you have many packets to send
-IList<IBuffer> packetsToSend = PreparePackets();
-var outputStream = stream.OutputStream;
-
-foreach (IBuffer packet in packetsToSend)
+protected override async void OnNavigatedTo(NavigationEventArgs e)
 {
-    // Incurs kernel transition overhead for each packet
-    await outputStream.WriteAsync(packet);
+	var streamSocketListener = new Windows.Networking.Sockets.StreamSocketListener();
+	streamSocketListener.ConnectionReceived += this.StreamSocketListener_ConnectionReceived;
+	await streamSocketListener.BindServiceNameAsync("1337");
+
+	var streamSocket = new Windows.Networking.Sockets.StreamSocket();
+	await streamSocket.ConnectAsync(new Windows.Networking.HostName("localhost"), "1337");
+	this.SendMultipleBuffersInefficiently(streamSocket, "Hello, World!");
+}
+
+private async void StreamSocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs args)
+{
+	using (var dataReader = new DataReader(args.Socket.InputStream))
+	{
+		dataReader.InputStreamOptions = InputStreamOptions.Partial;
+		while (true)
+		{
+			await dataReader.LoadAsync(256);
+			if (dataReader.UnconsumedBufferLength == 0) break;
+			IBuffer requestBuffer = dataReader.ReadBuffer(dataReader.UnconsumedBufferLength);
+			string request = Windows.Security.Cryptography.CryptographicBuffer.ConvertBinaryToString(Windows.Security.Cryptography.BinaryStringEncoding.Utf8, requestBuffer);
+			Debug.WriteLine(string.Format("server received the request: \"{0}\"", request));
+		}
+	}
+}
+
+// This implementation incurs kernel transition overhead for each packet written.
+private async void SendMultipleBuffersInefficiently(Windows.Networking.Sockets.StreamSocket streamSocket, string message)
+{
+	var packetsToSend = new List<IBuffer>();
+	for (int count = 0; count < 5; ++count) { packetsToSend.Add(Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(message, Windows.Security.Cryptography.BinaryStringEncoding.Utf8)); }
+
+	foreach (IBuffer packet in packetsToSend)
+	{
+		await streamSocket.OutputStream.WriteAsync(packet);
+	}
 }
 ```
 
-This example shows a more efficient way to send a large number of buffers. Because this technique uses features unique to the C# language, it is only available to C# programmers. By sending multiple packets at a time, this example enables the system to batch sends, and thus optimize kernel transitions for improved performance.
+This first example of a more efficient technique is only appropriate if you're using C#. Replace `SendMultipleBuffersInefficiently` with `BatchedSendsCSharpOnly`.
 
 ```csharp
-// More efficient way to send packets.
-// This way enables the system to do batched sends
-IList<IBuffer> packetsToSend = PreparePackets();
-var outputStream = stream.OutputStream;
-
-int i = 0;
-Task[] pendingTasks = new Tast[packetsToSend.Count];
-foreach (IBuffer packet in packetsToSend)
+// A C#-only technique for batched sends.
+private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocket streamSocket, string message)
 {
-    // track all pending writes as tasks, but do not wait on one before peforming the next
-    pendingTasks[i++] = outputStream.WriteAsync(packet).AsTask();
-    // Do not modify any buffer' s contents until the pending writes are complete.
+	var packetsToSend = new List<IBuffer>();
+	for (int count = 0; count < 5; ++count) { packetsToSend.Add(Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(message, Windows.Security.Cryptography.BinaryStringEncoding.Utf8)); }
+
+	var pendingTasks = new System.Threading.Tasks.Task[packetsToSend.Count];
+
+	for (int index = 0; index < packetsToSend.Count; ++index)
+	{
+		// track all pending writes as tasks, but dont wait on one before beginning the next.
+		pendingTasks[index] = streamSocket.OutputStream.WriteAsync(packetsToSend[index]).AsTask();
+		// Don't modify any buffer's contents until the pending writes are complete.
+	}
+
+	// Wait for all of the pending writes to complete.
+	System.Threading.Tasks.Task.WaitAll(pendingTasks);
 }
-// Now, wait for all of the pending writes to complete
-await Task.WaitAll(pendingTasks);
 ```
 
-This example shows another way to send a large number of buffers in a way that's compatible with batched sends. And since it doesn't use any C#-specific features, it is applicable for all languages (though it is demonstrated here in C#). Instead, it uses changed behavior in the **OutputStream** member of the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) classes that is new in Windows 10.
+This next example is appropriate for any UWP language, not just for C# (but demonstrated here in C#). It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_OutputStream) that batches sends together. The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.
 
 ```csharp
-// More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
-int i = 0;
-IList<IBuffer> packetsToSend = PreparePackets();
-var outputStream = socket.OutputStream;
-
-var pendingWrites = new IAsyncOperationWithProgress<uint,uint> [packetsToSend.Count];
-
-foreach (IBuffer packet in packetsToSend)
+// An implementation of batched sends suitable for any UWP language.
+private async void BatchedSendsAnyUWPLanguage(Windows.Networking.Sockets.StreamSocket streamSocket, string message)
 {
-    pendingWrites[i++] = outputStream.WriteAsync(packet);
-    // Do not modify any buffer' s contents until the pending writes are complete.
-}
+	var packetsToSend = new List<IBuffer>();
+	for (int count = 0; count < 5; ++count) { packetsToSend.Add(Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(message, Windows.Security.Cryptography.BinaryStringEncoding.Utf8)); }
 
-// Wait for all pending writes to complete. This step enables batched sends on the output stream.
-await outputStream.FlushAsync();
+	var pendingWrites = new IAsyncOperationWithProgress<uint, uint>[packetsToSend.Count];
+
+	for (int index = 0; index < packetsToSend.Count; ++index)
+	{
+		// track all pending writes as tasks, but don't wait on one before beginning the next.
+		pendingWrites[index] = streamSocket.OutputStream.WriteAsync(packetsToSend[index]);
+		// Don't modify any buffer's contents until the pending writes are complete.
+	}
+
+	// Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
+	await streamSocket.OutputStream.FlushAsync();
+}
 ```
 
-In earlier versions of Windows, **FlushAsync** returned immediately, and did not guarantee that all operations on the stream had completed yet. In Windows 10, the behavior has changed. **FlushAsync** is now guaranteed to return after all operations on the output stream have completed.
-
-There are some important limitations imposed by using batched writes in your code.
+There are some important limitations imposed by using batched sends in your code.
 
 -   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
 -   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
 -   The **FlushAsync** pattern only works in Windows 10 and onward.
--   In other cases, use **Task.WaitAll** instead of the **FlushAsync** pattern.
+-   In other cases, use [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___) instead of the **FlushAsync** pattern.
 
 ## Port sharing for DatagramSocket
 
-Windows 10 introduces a new [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) property, [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), which enables you to specify that the **DatagramSocket** in question is able to coexist with other Win32 or WinRT multicast sockets bound to the same address/port.
+You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to coexist with other Win32 or UWP multicast sockets bound to the same address/port. You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl?branch=live#Windows_Networking_Sockets_DatagramSocketControl_MulticastOnly) to `true` before binding or connecting the socket. You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_Control) property.
 
 ## Providing a client certificate with the StreamSocket class
 
-The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
+[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) supports using SSL/TLS to authenticate the server that the client app is talking to. In some cases, the client app needs to authenticate itself to the server using an SSL/TLS client certificate. You can provide a client certificate with the [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol?branch=live#Windows_Networking_Sockets_StreamSocketControl_ClientCertificate) property before binding or connecting the socket (it must be set before the SSL/TLS handshake is started). You access an instance of **StreamSocketControl** from the **StreamSocket** object itself via its [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_Control) property. If the server requests the client certificate then Windows will respond with the client certificate that you provided.
 
-Here is a code snippet showing how to implement this:
+Use an override of [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_HostName_System_String_Windows_Networking_Sockets_SocketProtectionLevel_) that takes a [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live), as shown in this minimal code example.
 
 ```csharp
-var socket = new StreamSocket();
-Windows.Security.Cryptography.Certificates.Certificate certificate = await GetClientCert();
-socket.Control.ClientCertificate = certificate;
-await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
+// For this code to work, you need at least one certificate to be present in the user MY certificate store.
+// Plugging a smartcard into a smartcard reader connected to your PC will achieve that.
+// Also, your project needs to declare the sharedUserCertificates app capability.
+var certificateQuery = new Windows.Security.Cryptography.Certificates.CertificateQuery();
+certificateQuery.StoreName = "MY";
+IReadOnlyList<Windows.Security.Cryptography.Certificates.Certificate> certificates = await Windows.Security.Cryptography.Certificates.CertificateStores.FindAllAsync(certificateQuery);
+if (certificates.Count > 0)
+{
+	streamSocket.Control.ClientCertificate = certificates[0];
+	await streamSocket.ConnectAsync(hostName, "1337", Windows.Networking.Sockets.SocketProtectionLevel.Tls12);
+}
 ```
 
-## Exceptions in Windows.Networking.Sockets
+## Handling exceptions
 
-The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
+An error encountered on a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) operation is returned as an **HRESULT** value. You can pass that **HRESULT** value to the [**SocketError.GetStatus**](/uwp/api/Windows.Networking.Sockets.SocketError?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_) method to convert it into a [**SocketErrorStatus**](/uwp/api/Windows.Web.SocketErrorStatus) enumeration value.
 
-The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets and WebSockets. This can be useful for handling specific network exceptions differently in your app.
+Most **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. Your app can switch on **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation is returned as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+For parameter validation errors, you can use the **HRESULT** from the exception to learn more detailed information about the error. Possible **HRESULT** values are listed in `Winerror.h`, which can be found in your SDK installation (for example, in the folder `C:\Program Files (x86)\Windows Kits\10\Include\<VERSION>\shared`). For most parameter validation errors, the **HRESULT** returned is **E_INVALIDARG**.
 
-An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
-
-For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
+The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor can throw an exception if the string passed is not a valid host name. For example, it contains characters that are not allowed, which is likely if the host name is typed in to your app by the user. Construct a **HostName** inside a try/catch block. That way, if an exception is thrown, the app can notify the user and request a new host name.
 
 ## Important APIs
 
+* [CertificateQuery](/uwp/api/windows.security.cryptography.certificates.certificatequery?branch=live)
+* [CertificateStores.FindAllAsync](/uwp/api/windows.security.cryptography.certificates.certificatestores?branch=live#Windows_Security_Cryptography_Certificates_CertificateStores_FindAllAsync_Windows_Security_Cryptography_Certificates_CertificateQuery_)
 * [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)
 * [DatagramSocket.BindServiceNameAsync](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_BindServiceNameAsync_System_String_)
+* [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_Control)
 * [DatagramSocket.GetOutputStreamAsync](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_GetOutputStreamAsync_Windows_Networking_HostName_System_String_)
 * [DatagramSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live#Windows_Networking_Sockets_DatagramSocket_MessageReceived)
+* [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl?branch=live#Windows_Networking_Sockets_DatagramSocketControl_MulticastOnly)
 * [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
 * [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live#Windows_Networking_Sockets_DatagramSocketMessageReceivedEventArgs_GetDataReader)
+* [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync)
 * [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_)
-* [SocketErrorStatus](/uwp/api/windows.networking.sockets.socketerrorstatus?branch=live) 
+* [SocketErrorStatus](/uwp/api/windows.networking.sockets.socketerrorstatus?branch=live)
+* [SocketProtectionLevel](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live)
 * [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)
+* [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol?branch=live#Windows_Networking_Sockets_StreamSocketControl_ClientCertificate)
 * [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_HostName_System_String_)
 * [StreamSocket.InputStream](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_InputStream)
 * [StreamSocket.OutputStream](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_OutputStream)
 * [StreamSocketListener](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live)
 * [StreamSocketListener.BindServiceNameAsync](/uwp/api/windows.networking.sockets.streamsocketlistener?branch=live#Windows_Networking_Sockets_StreamSocketListener_BindServiceNameAsync_System_String_Windows_Networking_Sockets_SocketProtectionLevel_Windows_Networking_Connectivity_NetworkAdapter_)
 * [StreamSocketListener.ConnectionReceived](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived)
-* [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live)* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
+* [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live)
+* [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
 
 ## Related topics
 

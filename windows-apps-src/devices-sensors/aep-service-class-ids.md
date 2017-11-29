@@ -80,37 +80,37 @@ Custom profiles are defined with their own defined GUIDs. This custom GUID shoul
 
 ## UPnP services
 
-UPnP services use the following protocol identifier: {0e261de4-12f0-46e6-91ba428607ccef64}
+UPnP services use the following protocol identifier: {0e261de4-12f0-46e6-91ba-428607ccef64}
 
 In general, all UPnP services have their name hashed into a GUID using the algorithm defined in RFC 4122. The following table lists some common UPnP services defined in Windows.
 
-| Service name                       | GUID                                     |
-|------------------------------------|------------------------------------------|
-| Connection manager                 | **ba36014c-b51f-51cc-bf711ad779ced3c6**  |
-| AV transport                       | **deeacb78-707a-52df-b1c66f945e7e25bf**  |
-| Rendering control                  | **cc7fe721-a3c7-5a14-8c494419dc895513**  |
-| Layer 3 forwarding                 | **97d477fa-f403-577b-a714b29a9007797f**  |
-| WAN common interface configuration | **e4c1c624-c3c4-5104-b72eac425d9d157c**  |
-| WAP IP connection                  | **e4ac1c23-b5ac-5c27-88146bd837d8832c**  |
-| WFA WLAN configuration             | **23d5f7db-747f-5099-8f213ddfd0c3c688**  |
-| Printer enhanced                   | **fb9074da-3d9f-5384-922e9978ae51ef0c**  |
-| Printer basic                      | **5d2a7252-d45c-5158-87-a405212da327e1** |
-| Media receiver registrar           | **0b4a2add-d725-5198-b2ba852b8bf8d183**  |
-| Content directory                  | **89e701dd-0597-5279-a31c235991d0db1c**  |
-| DIAL                               | **085dfa4a-3948-53c7-a0d716d8ec26b29b**  |
+| Service name                       | GUID                                      |
+|------------------------------------|-------------------------------------------|
+| Connection manager                 | **ba36014c-b51f-51cc-bf71-1ad779ced3c6**  |
+| AV transport                       | **deeacb78-707a-52df-b1c6-6f945e7e25bf**  |
+| Rendering control                  | **cc7fe721-a3c7-5a14-8c49-4419dc895513**  |
+| Layer 3 forwarding                 | **97d477fa-f403-577b-a714-b29a9007797f**  |
+| WAN common interface configuration | **e4c1c624-c3c4-5104-b72e-ac425d9d157c**  |
+| WAP IP connection                  | **e4ac1c23-b5ac-5c27-8814-6bd837d8832c**  |
+| WFA WLAN configuration             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
+| Printer enhanced                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
+| Printer basic                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
+| Media receiver registrar           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
+| Content directory                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
+| DIAL                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
  
 
 ## WSD services
 
-WSD services use the following protocol identifier: {782232aa-a2f9-4993-971baedc551346b0}
+WSD services use the following protocol identifier: {782232aa-a2f9-4993-971b-aedc551346b0}
 
 In general, all WSD services have their name hashed into a GUID using the algorithm defined in RFC 4122. The following table lists some common WSD services defined in Windows.
 
-| Service name | GUID                                    |
-|--------------|-----------------------------------------|
-| Printer      | **65dca7bd-2611-583e-9a12ad90f47749cf** |
-| Scanner      | **56ec8b9e-0237-5cae-aa3fd322dd2e6c1e** |
+| Service name | GUID                                     |
+|--------------|------------------------------------------|
+| Printer      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
+| Scanner      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
  
 
@@ -120,7 +120,7 @@ This AQS will filter for all UPnP **AssociationEndpointService** objects that su
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
-System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}"
+System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
 
  
