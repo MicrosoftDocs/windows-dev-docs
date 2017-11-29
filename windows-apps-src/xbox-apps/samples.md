@@ -2,7 +2,7 @@
 author: Mtoepke
 title: UWP on Xbox One samples
 description: Samples and libraries to help you build great Xbox One and TV experiences.
-ms.author: mtoepke
+ms.author: scotmi
 ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
