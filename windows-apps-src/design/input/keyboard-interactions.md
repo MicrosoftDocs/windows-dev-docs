@@ -15,11 +15,9 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-localizationpriority: medium
 ---
 
 # Keyboard interactions
-
 
 ![keyboard hero image](images/keyboard/keyboard-hero.jpg)
 
@@ -59,7 +57,7 @@ Here are the devices and tools discussed in this topic:
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
 |Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP apps support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).|
-|Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md).
+|Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](..\devices\designing-for-tv.md).
 For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input.
 For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
@@ -255,7 +253,7 @@ Accelerators help users perform common actions that exists on application quickl
 
 Examples of Accelerators:
 -   Pressing Ctrl + N key anywhere in Mail app launches a new mail item.
--   Pressing Ctrl + E key anywhere in Microsoft Edge and Microsoft Store applications lets users quickly enter text in the search box.
+-   Pressing Ctrl + E key anywhere in Edge and Store app lets user quickly enter text in search box.
 
 Accelerators have the following characteristics:
 -   They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt+non-alphanumeric keys and the Windows logo key).
@@ -320,30 +318,28 @@ Users expect support for arrow key navigation when there is a group of similar, 
 
 UWP controls support arrow key navigation by default. For custom layouts and control groups, use `XYFocusKeyboardNavigation="Enabled"` to provide similar behavior.
 
-Consider adding support for arrow key navigation when using the following controls:
+Consider adding support for arrow key navigation when you have for following controls:
 
-<div class="mx-responsive-img">
- <table>
-   <tr>
-     <td>
-       <p>![dialog](images/keyboard/dialog.png)</p>
-       <p>**Buttons**</p>
-       <p>![radiobutton](images/keyboard/radiobutton.png)</p>
-       <p>**RadioButtons**</p>     
-     </td>
-     <td>
-       <p>![appbar](images/keyboard/appbar.png)</p>
-       <p>**AppBarButtons**</p>
-       <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
-       <p>**ListItems and GridItems**</p>
-     </td>    
-   </tr>
- </table>
-</div>
+<table>
+  <tr>
+    <td>
+      <p>![dialog](images/keyboard/dialog.png)</p>
+      <p>**Buttons**</p>
+      <p>![radiobutton](images/keyboard/radiobutton.png)</p>
+      <p>**RadioButtons**</p>     
+    </td>
+    <td>
+      <p>![appbar](images/keyboard/appbar.png)</p>
+      <p>**AppBarButtons**</p>
+      <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
+      <p>**ListItems and GridItems**</p>
+    </td>    
+  </tr>
+</table>
 
 #### Tab stops
 
-Depending on your application’s functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
+Depending on your app’s functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
 
 ##### Use multiple tab stops and arrow keys for buttons
 
@@ -406,7 +402,7 @@ The search button for the `AutoSuggestBox` is not accessible to standard keyboar
 
 Xbox gamepads and remote controls support many UWP keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, gamepad and remote control lack many keyboard optimizations (remote control is even more limited than gamepad).
 
-See [designing for Xbox and TV](../devices/designing-for-tv.md#gamepad-and-remote-control) for more detail on UWP support for gamepad and remote control input.
+See [designing for Xbox and TV](..\devices\designing-for-tv.md#gamepad-and-remote-control) for more detail on UWP support for gamepad and remote control input.
 
 The following shows some key mappings between keyboard, gamepad, and remote control.
 
@@ -422,7 +418,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 -   Text entry requires the user to press A to activate a text control.
 -   Focus navigation is not limited to control groups, users can navigate freely to any focusable UI element in the app.
 
-    **NOTE** Focus can move to any focusable UI element in the key press direction unless it is in an overlay UI or [focus engagement](../devices/designing-for-tv.md#focus-engagement) is specified, which prevents focus from entering/exiting a region until engaged/disengaged with the A button. For more info, see the [directional navigation](#directional-navigation) section.
+    **NOTE** Focus can move to any focusable UI element in the key press direction unless it is in an overlay UI or [focus engagement](..\devices\designing-for-tv.md#focus-engagement) is specified, which prevents focus from entering/exiting a region until engaged/disengaged with the A button. For more info, see the [directional navigation](#directional-navigation) section.
 -   D-pad and left stick buttons are used to move focus between controls and for inner navigation.
 
     **NOTE** Gamepad and remote control only navigate to items that are in the same visual order as the directional key pressed. Navigation is disabled in that direction when there is no subsequent element that can receive focus. Depending on the situation, keyboard users do not always have that constraint. See the [Built in keyboard optimization](#built-in-keyboard-optimization) section for more info.
@@ -431,7 +427,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 
 Directional navigation is managed by a UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
 
-Unlike the keyboard, when an app opts out of [Mouse Mode](../devices/designing-for-tv.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control . Visit [XY focus navigation and interaction article](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction) for more detail on directional navigation optimizations for gamepad and remote control.
+Unlike the keyboard, when an app opts out of [Mouse Mode](..\devices\designing-for-tv.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control . Visit [XY focus navigation and interaction article](..\devices\designing-for-tv.md#xy-focus-navigation-and-interaction) for more detail on directional navigation optimizations for gamepad and remote control.
 
 **NOTE** Navigation using the keyboard Tab key is not considered directional navigation. For more info, see the [Tab stops](#tab-stops) section.
 
@@ -526,13 +522,9 @@ Test your app with all supported input devices to ensure UI elements can be navi
 
 Software keyboard is a keyboard that is displayed on screen that user can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). On touch screen, these keyboards can be touched directly to enter text as well. On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys using gamepad or remote control.
 
-![Windows 10 touch keyboard](images/keyboard/kbdpcdefault.png)
+![Windows 10 touch keyboard](images/keyboard/default.png)
 
 ***Windows 10 Touch Keyboard***
-
-![Windows 10 phone touch keyboard](images/keyboard/kbdwpdefault.png)
-
-***Windows Phone 10 Touch Keyboard***
 
 ![Xbox one onscreen keyboard](images/keyboard/xbox-onscreen-keyboard.png)
 
@@ -563,21 +555,13 @@ The following is a list of non-edit controls that can receive focus during a tex
 
 Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the thumb layout (which might not be available in all languages).
 
-![the touch keyboard in default layout mode](images/keyboard/touchkeyboard-standard.png)
+![the touch keyboard in default layout mode](images/keyboard/default.png)
 
 ***The touch keyboard in default layout mode***
 
-![the touch keyboard in expanded layout mode](images/keyboard/touchkeyboard-expanded.png)
+![the touch keyboard in expanded layout mode](images/keyboard/extendedview.png)
 
 ***The touch keyboard in expanded layout mode***
-
-![the touch keyboard in thumb layout mode](images/keyboard/touchkeyboard-thumb.png)
-
-***The touch keyboard in default thumb layout mode***
-
-![the touch keyboard in numeric thumb layout mode](images/keyboard/touchkeyboard-numeric-thumb.png)
-
-***The touch keyboard in numeric thumb layout mode***
 
 Successful keyboard interactions enable users to accomplish basic app scenarios using only the keyboard; that is, users can reach all interactive elements and activate default functionality. A number of factors can affect the degree of success, including keyboard navigation, access keys for accessibility, and accelerator (or shortcut) keys for advanced users.
 
