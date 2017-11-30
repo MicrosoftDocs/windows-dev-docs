@@ -2,7 +2,7 @@
 author: Mtoepke
 title: UWP on Xbox One
 description: How to build apps for the Universal Windows Platform (UWP) on Xbox One.
-ms.author: mtoepke
+ms.author: mstahl
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows

@@ -303,6 +303,7 @@
 ### [Launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md)
 ### [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md)
 ### [Log custom events for Dev Center](../monetize/log-custom-events-for-dev-center.md)
+## [Request ratings and reviews](../monetize/request-ratings-and-reviews.md)
 ## [Microsoft Store services](../monetize/using-windows-store-services.md)
 ### [Access analytics data](../monetize/access-analytics-data-using-windows-store-services.md)
 #### [Get app acquisitions](../monetize/get-app-acquisitions.md)

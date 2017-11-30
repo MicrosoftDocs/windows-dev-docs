@@ -2,7 +2,7 @@
 author: Mtoepke
 title: Introduction to multi-user applications
 description: A simple high-level introduction to the Xbox multi-user model.
-ms.author: mtoepke
+ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -4,7 +4,7 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: Use this method in the Microsoft Store analytics API to get aggregate ratings data for a given date range and other optional filters.
 title: Get app ratings
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 11/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ localizationpriority: medium
 
 # Get app ratings
 
-Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Ratings report](../publish/ratings-report.md) in the Windows Dev Center dashboard.
+Use this method in the Microsoft Store analytics API to get aggregate ratings data in JSON format for a given date range and other optional filters. This information is also available in the [Reviews report](../publish/reviews-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
 
@@ -153,7 +153,7 @@ The following example demonstrates an example JSON response body for this reques
 
 ## Related topics
 
-* [Ratings report](../publish/ratings-report.md)
+* [Ratings report](../publish/reviews-report.md)
 * [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 * [Get app acquisitions](get-app-acquisitions.md)
 * [Get add-on acquisitions](get-in-app-acquisitions.md)
