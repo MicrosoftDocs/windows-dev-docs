@@ -4,7 +4,7 @@ Description: You can use the SendRequestAsync method to send requests to the Mic
 title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 11/29/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -45,6 +45,10 @@ public async Task<bool> AddUserToFlightGroup()
 ```
 
 See the following sections for information about the requests that are currently available via the **SendRequestAsync** method. We will update this article when support for new requests are added.
+
+## Request for in-app ratings and reviews
+
+You can programmatically launch a dialog from your app that asks your customer to rate your app and submit a review by passing the request integer 16 to the **SendRequestAsync** method. For more information, see [Show a rating and review dialog in your app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app).
 
 ## Requests for flight group scenarios
 
@@ -151,4 +155,5 @@ If there is an error with the request, the [HttpStatusCode](https://docs.microso
 
 ## Related topics
 
+* [Show a rating and review dialog in your app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
 * [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_)

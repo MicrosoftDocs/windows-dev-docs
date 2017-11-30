@@ -2,7 +2,7 @@
 author: Mtoepke
 title: Xbox One Developer Mode activation
 description: How to activate Developer Mode so you can switch between Retail Mode and Developer Mode.
-ms.author: mtoepke
+ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

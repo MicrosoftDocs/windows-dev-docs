@@ -145,6 +145,11 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 <span id="coppa" />
 ## COPPA compliance
 
-For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must notify Microsoft if your app is directed at children under the age of 13. If you use Dev Center to indicate to Microsoft that your app is directed at children under the age of 13, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app. If your app is directed at children under the age of 13, you have certain obligations under COPPA.
+When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the dashboard page if the selected app for the ad unit has at least one completed or in-progress submission.
 
-For more information on your obligations under COPPA, please see [this page](http://go.microsoft.com/fwlink/p/?linkid=536558).
+For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must select **This application is directed at children under the age of 13** in this section if your app is directed at children under the age of 13. If you select this option, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app.
+
+The **COPPA compliance** setting you choose is automatically applied to all ad units for the selected app.
+
+> [!IMPORTANT]
+> If your app is directed at children under the age of 13, you have certain obligations under COPPA. For more information on your obligations, please see [this page](http://go.microsoft.com/fwlink/p/?linkid=536558).

@@ -18,7 +18,7 @@ localizationpriority: medium
 This article describes the legacy, two-process model for adding background audio support to your UWP app. Starting with Windows 10, version 1607, a single-process model for background audio that is much simpler to implement. For more information on the current recommendations for background audio, see [Play media in the background](background-audio.md). This article is intended to provide support for apps that are have already been developed using the legacy two-process model.
 
 > [!NOTE]
-> *BackgroundMediaPlayer* is deprecated and may not be available in future versions of Windows.
+> Starting with Windows, version 1703, **BackgroundMediaPlayer** is deprecated and may not be available in future versions of Windows.
 
 ## Background audio architecture
 

@@ -519,3 +519,7 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor
 * [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 * [How to set network capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
 * [App-to-app communication](/windows/uwp/app-to-app/index?branch=live)
+
+## Samples
+
+* [StreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620609)
