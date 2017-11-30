@@ -19,7 +19,7 @@ You can generate promotional codes for an app or add-on that you have published 
 
 Each promotional code has a corresponding unique redeemable URL that you can distribute to a single user or to a group of users. The user can simply click the URL to redeem the code and install your app or add-on from the Microsoft Store.
 
-> [!TIP] 
+> [!TIP]
 > You can use [targeted push notifications](send-push-notifications-to-your-apps-customers.md) to distribute a promotional code to a segment of your customers. When doing so, be sure to use a promotional code that allows multiple customers to use the same code.
 
 In the Windows Dev Center dashboard, you can:
@@ -48,14 +48,14 @@ Be aware of the following policies for promotional codes:
 
 To order promotional codes for an app or add-on that you published to the Microsoft Store:
 
-1.  In the left navigation menu of the Windows Dev Center dashboard, expand **Attract** and then select **Promo codes.**
+1.  In the left navigation menu of the Windows Dev Center dashboard, expand **Attract** and then select **Promo codes**.
 
 2.   On the **Promotional codes** page, click **Order codes**.
 
 3.  On the **New promotional codes order** page, enter the following:
     -   Select the app or add-on for which you want to generate codes.
     -   Specify a name for the order. You can use this name to differentiate between different orders of codes when reviewing your promotional code usage data.
-    -   Select the order type. You can choose to generate a set of promo codes that can each be used once, or you can choose to generate one promo code that can be used multiple times. 
+    -   Select the order type. You can choose to generate a set of promo codes that can each be used once, or you can choose to generate one promo code that can be used multiple times.
     -   Specify the number of codes to order (if generating a set of codes) or the number of times the code can be redeemed (if generating one code to be used multiple times).
     -   Specify when the promotional codes should become active. To choose a specific start date and time, clear the **Codes are active immediately** check box. Otherwise, the codes will be active immediately.
     -   Specify when the promotional codes should expire. To choose a specific expire date and time earlier than 6 months, clear the **Codes expire after 6 months** check box.
@@ -105,7 +105,7 @@ After the customer clicks **Redeem**, the Microsoft Store will open to the overv
 
 ## Review your promotional codes
 
-To review a detailed summary of promotional code orders for an app and its add-ons, navigate to the **Promotional codes** page for the app (expand **Monetization** and click **Promotional codes**). You can review the following details for all current and inactive promotional codes for the app:
+To review a detailed summary of promotional code orders for your apps and add-ons, navigate to the **Promotional codes** page (in the left navigation menu of the Dev Center dashboard, expand **Attract** and then select **Promo codes**). You can review the following details for all of your current and inactive promotional codes:
     -   Order name
     -   App or add-on
     -   Start date
@@ -113,10 +113,6 @@ To review a detailed summary of promotional code orders for an app and its add-o
     -   Available
     -   Redeemed
 
-You can also download an order from this table, as described above. 
+You can also [download](#download-and-distribute-promotional-codes) an order from this table.
 
  
-
-
-
-
