@@ -11,11 +11,9 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
 ---
 
 # Respond to the presence of the touch keyboard
-
 
 Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
@@ -27,9 +25,7 @@ Learn how to tailor the UI of your app when showing or hiding the touch keyboard
 </ul>
 </div> 
 
-
-
-![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)
+![the touch keyboard in default layout mode](images/keyboard/default.png)
 
 <sup>The touch keyboard in default layout mode</sup>
 
@@ -39,7 +35,7 @@ To support corresponding touch keyboard behavior in a custom text input control 
 
 Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
-**Prerequisites:**
+**Prerequisites:  **
 
 This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
@@ -50,7 +46,7 @@ If you're new to developing Universal Windows Platform (UWP) apps, have a look t
 -   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**User experience guidelines:**
+**User experience guidelines:  **
 
 For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
 
@@ -89,13 +85,13 @@ public class MyApplication
     {
         // Grab the input pane for the main application window and attach
         // touch keyboard event handlers.
-        Windows.Foundation.Application.InputPane.GetForCurrentView().Showing  
+        Windows.UI.ViewManagement.GetForCurrentView().Showing  
             += new EventHandler(_OnInputPaneShowing);
-        Windows.Foundation.Application.InputPane.GetForCurrentView().Hiding 
+        Windows.UI.ViewManagement.GetForCurrentView().Hiding 
             += new EventHandler(_OnInputPaneHiding);
     }
 
-    private void _OnInputPaneShowing(object sender, IInputPaneVisibilityEventArgs eventArgs)
+    private void _OnInputPaneShowing(object sender, InputPaneVisibilityEventArgs eventArgs)
     {
         // If the size of this window is going to be too small, the app uses 
         // the Showing event to begin some element removal animations.
@@ -109,7 +105,7 @@ public class MyApplication
         }
     }
 
-    private void _OnInputPaneHiding(object sender, IInputPaneVisibilityEventArgs eventArgs)
+    private void _OnInputPaneHiding(object sender, InputPaneVisibilityEventArgs eventArgs)
     {
         if (_ResetToDefaultElements())
         {

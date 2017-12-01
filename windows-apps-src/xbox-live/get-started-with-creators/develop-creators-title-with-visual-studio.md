@@ -1,10 +1,10 @@
 ---
 title: Develop a Creators title with Visual Studio
-author: KevinAsgari
+author: StaceyHaffner
 description: Get started developing an Xbox Live Creators Program title by using Visual Studio
 ms.assetid: 6952dac0-66ff-4717-b3c7-8b3792e834e3
 ms.author: kevinasg
-ms.date: 04/04/2017
+ms.date: 11/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,166 +14,132 @@ localizationpriority: medium
 
 # Get started developing an Xbox Live Creators Program title with Visual Studio
 
-## Setup
+> [!NOTE]
+> There is a plugin available for games that are being developed with Unity. See the [Develop a Creators title with Unity](develop-creators-title-with-unity.md) article for more information.
 
-### Software Requirements
+## Requirements
 
-- Windows operating system
-	- Windows 10 (as development and/or test machine)
-- Visual Studio
-    - Visual Studio 2015 or later.  See [Visual Studio Downloads](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx)
-    - Windows 10 SDK v10.0.14393.0 or later. See [Windows 10 SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)
+1. Enrollment in the **[Dev Center developer program](https://developer.microsoft.com/store/register)**.
+2. **[Windows 10](https://microsoft.com/windows)**.
+3. **[Visual Studio 2015](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
+4. **[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) v10.0.10586.0** or later.
 
-### Install the Windows 10 SDK
+> [!IMPORTANT]
+> Visual Studio 2017 is required if using Windows 10 SDK version 10.0.15063.0 (also known as Creators Update) or later.
 
-The Windows 10 SDK provides the latest headers, libraries, metadata and tools for building Windows 10 apps. By installing this SDK, the latest Visual Studio 2015 release, and your IDE environment you will be able to access the new Windows 10 APIs. The Windows 10 SDK allows you to build Universal Windows apps as well as desktop apps for Windows 10.
+## Create a new product on Microsoft Dev Center
 
-This is typically installed and updated by Visual Studio 2015.  If you already have Visual Studio 2015 installed, go to the menu Tools, Extensions and Updates, and check the Updates tab to install the latest Windows SDK.
+Every Xbox Live title must have a product created on [Microsoft Dev Center](https://developer.microsoft.com/store) before you will be able to sign-in and make Xbox Live Service calls. See [Creating a new Creators title](create-and-test-a-new-creators-title.md) for more information.
 
-Otherwise you can install a standalone version at the [Windows 10 SDK download site](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk).
-
-### Create a new title on Windows Dev Center
-
-You need to create a new UWP title on Dev Center before you can sign-in to Xbox Live.  Your service configuration, such as what Achievements are defined, are associated with a title.
-
-See [Creating a new Creators title](create-and-test-a-new-creators-title.md) to learn how to create a new title.
-
-### Configuring your development device
+## Configuring your development device
 
 The following preliminary setup steps are required on your device, so that you can successfully login with Xbox Live and call the various Xbox Live Services.
 
-#### Set your sandbox
+### Set your sandbox
 
-More detail on Sandboxes is available in the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) article.  Feel free to read that article and come back here after, but a brief summary will be provided below.
+Sandboxes offer a way to keep your [Xbox Live Service Configuration](xbox-live-service-configuration-creators.md) isolated from retail until you are ready to release your title. Some data that you accumulate is specific to a sandbox. For example let's say that your title defines a stat called *Headshots*, and you accumulate some number of Headshots in a user account while testing your title. This value would be specific to your title's development sandbox, and if you switched to playing the retail version of your title, the headshots would not carry over.
 
-Sandboxes offer a way to keep your [Xbox Live Service Configuration](xbox-live-service-configuration-creators.md) isolated from retail until you are ready to release your title.  Some data that you accumulate is specific to a sandbox.  For example let's say that your title defines a stat called *Headshots*, and you accumulate some number of Headshots in a user account while testing your title.  This value would be specific to your title's development sandbox, and if you were playing the retail version of your title, those headshots would not carry over.
+See the [Xbox Live Sandboxes](xbox-live-sandboxes-creators.md) article to learn more and see how to set your sandbox.
 
-See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.
+### Sign-in with an Xbox Live account that has been authorized for testing
 
-#### Sign-in with an Xbox Live account that has been authorized for testing
+To sign-in to your development sandbox, you must provision a regular Microsoft Account (MSA) for access to your sandbox. This provides improved security for your titles in development, as well as some other benefits.
 
-To sign-in to your development sandbox, you must provision a regular Microsoft Account (MSA) for access to your sandbox.  This provides improved security for your titles in development, as well as some other benefits.
-
-To learn more about test accounts, see [Authorize Xbox Live Accounts for Testing in your environment](authorize-xbox-live-accounts.md)
-
-## SDK Samples
-
-The SDK samples are a good way to see how Xbox Live APIs are used.
-
-The samples found on the [Xbox Live samples Github](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.  
-
-To use the samples, you will need to change your sandbox to XDKS.1
-See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.
+To learn more about test accounts and how to create one, see [Authorize Xbox Live Accounts for Testing in your environment](authorize-xbox-live-accounts.md).
 
 ## Visual Studio Project Setup
 
-### 1. Create a blank project
+### 1. Open a UWP project
+If you do not already have an existing UWP project, you can create one by doing the following:
 
-You can skip this step if you already have an existing UWP app.
+1. In Visual Studio, **File** > **New** > **Project**.
+2. In the **New Project** dialog box, select the **Visual C#** > **Windows** > **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane. 
+3. In the lower portion of the dialog, give the project a name and specify the location of the project.
+4. Specify the Target Version and Minimum Version of the Windows 10 SDK. See [Choose a UWP version](https://docs.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version) for more information.
 
-Start Visual Studio 2015 from the Start Menu or the Taskbar.  
-If you don't have Visual Studio 2015 installed, you can find it on the [Visual Studio website.](https://www.visualstudio.com/)
+![create project in VS](../images/getting_started/vs-create-project.gif) 
 
-![Visual Studio start](../images/VisualStudioStart.png)
-
-After Visual Studio starts, select **File** -> **New** -> **Project** as shown.
-
-![](../images/VS_new_project.png)
-
-When the **New Project** dialog box appears, select the **Visual C#**, **Windows**, **Universal** node in the left pane, and click **Blank App (Universal Windows)** from the right pane.  In the lower portion of the dialog, give the project a name.
+> [!NOTE]
+> > Xbox Live API (XSAPI) requires a minimum version 10.0.10586.0 or higher.
 
 ### 2. Add references to the Xbox Live API (XSAPI) in your project
+The Xbox Services API comes in flavors for C++ and WinRT and have their naming structured as **Microsoft.Xbox.Live.SDK.*.UWP**. You can read more about running UWP on Xbox One at [https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started](https://docs.microsoft.com/windows/uwp/xbox-apps/getting-started). The C++ SDK can be used for C++ game engines, where as the  WinRT SDK is for game engines written with C++, C#, or JavaScript. When using WinRT with a C++ engine, you would use C++/CX which uses hats (^). C++ is the recommended API to use for C++ game engines.  
 
-To use the Xbox Live Services API from your project, either:
+To use the Xbox Live API from your project, you can either add references to the binaries by using NuGet packages or adding the API source. Adding NuGet packages makes compilation quicker while adding the source makes debugging easier. This article will walk through using NuGet packages. If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md). You can add the Xbox Live SDK NuGet package by:
 
-* Add references to Xbox Live Services API binaries to your project in the form of NuGet packages.
-<p/>
-or
-<p/>
-* Add references to the Xbox Live Services API source to your project
+1. In Visual Studio go to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution...**.
+2. In the NuGet package manager, click on **Browse** and enter **Xbox.Live.SDK** in the search box. 
+3. Select the version of the Xbox Live SDK that you want to use from the list on the left. In this case, we will use the Microsoft.Xbox.Live.SDK.WinRT.UWP package.
+3. On the right side of the window, check the box next to your project and click **Install**. 
 
-Referencing source makes debugging easier.
-Referencing binaries makes compilation quicker.
+![add XBL via NuGet](../images/getting_started/vs-add-nuget-xbl.gif)
 
-This article will assume you're using NuGet packages.  If you want to use source, then please see [Compiling the Xbox Live APIs Source In Your UWP Project](../get-started-with-partner/add-xbox-live-apis-source-to-a-uwp-project.md)
+#### Optionally include XSAPI header in your project
 
-#### Add references to Xbox Live API binaries to your project
-To add references to Xbox Live API NuGet packages in your project, in Visual Studio go to "Manage Nuget Packages"
+For Microsoft.Xbox.Live.SDK.Cpp.* based projects, you will need to include `xsapi\\services.h` to in your C++ project to bring in the header for the Xbox Live Service API (XSAPI) NuGet package. Before including the XSAPI header, you must define `XBOX_LIVE_CREATORS_SDK`. This limits the API surface area to only those APIs that are usable by developers in the Xbox Live Creators Program. For example:
 
-![](../images/getting_started/first_vstitle_nuget.png)
-
-#### Locate Xbox Live
-You can enter "Xbox Live" (without quotes) in the search field in NuGet and you will find four variants of the Xbox Live SDK shown below.
-
-![](../images/getting_started/first_vstitle_nuget_xbox.png)
-
-The Xbox Services API comes in flavors for both UWP and XDK, and for C++ and WinRT.
-
-Choose between `Microsoft.Xbox.Live.SDK.*.UWP` and `Microsoft.Xbox.Live.SDK.*.XboxOneXDK`.  `XboxOneXDK` is for ID@Xbox and Managed developers who are using the Xbox One XDK.  `UWP` is for UWP games which can run on either PC, the Xbox One, or Windows Phone.  You can read more about running UWP on Xbox One in
- [Getting started with UWP app development on Xbox One.](https://docs.microsoft.com/en-us/windows/uwp/xbox-apps/getting-started)
-
-Choose between `Microsoft.Xbox.Live.SDK.Cpp.*` and `Microsoft.Xbox.Live.SDK.WinRT.*`. `Cpp` is for C++ game engines using the Xbox Live APIs.  `WinRT` is for game engines written with C++, C#, or Javascript using the Xbox Live APIs.
-
-If you are part of the Xbox Live Creators Program, you can use any of these options:
-* Microsoft.Xbox.Live.SDK.Cpp.UWP for C++ UWP game engines.
-* Microsoft.Xbox.Live.SDK.WinRT.UWP for C# or JavaScript UWP game engines. When using WinRT with a C++ engine, you can use C++/CX which uses hats (^).  Microsoft.Xbox.Live.SDK.Cpp.UWP is the recommended API to use for C++ game engines.
-* Unity.  See the [Develop a Creators title with Unity](develop-creators-title-with-unity.md) article for specifics.
-
-### (Optional) Install the Xbox Live Platform Extensions SDK
-
-> [!NOTE]
-> Downloading the Xbox Live Platform Extensions SDK is unnecessary for development on a build using the Windows 10 Fall Creators Update SDK or later.
-
-If you want to use Connected Storage, you will need to download the [Xbox Live Platform Extensions SDK zip file](http://aka.ms/xblextsdk).
-
-After you download the zip file, extract the contents to a folder of your choice and install the MSI.
-The package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform.
-
-After you have installed the Xbox Live Platform Extensions SDK, you can use Visual Studio to add a reference to the Extensions SDK and use the following namespaces in your Universal Windows Platform (UWP) game:
-
-- Windows.Gaming.XboxLive.Storage
-
-> [!NOTE]
-> If you are in the Xbox Live Creators Program, you do not have access to Secure Sockets.
-
-### 3. Associate your Visual Studio project with your UWP app
-
-For your app to be able to sign-in, it must be linked to the UWP app you created on Dev Center earlier.  We will show you how to make this association.
-
-If the **Store** -> **Associate App with the Store…** option is available in Visual Studio follow these steps:
-
-1.  Open your project in Visual Studio 2015
-1.  Right click the primary project (the StartUp Project), click **Store** -> **Associate App with the Store...**
-1.  Sign-in with the **Windows Developer account** used for creating the app if asked
-1.  On the next page, select the app you just created, confirm the information, and click **Associate**
-
-If the **Store** -> **Associate App with the Store…** option is not available in Visual Studio, you can manually update the app's package manifest to use the app’s Store package identity:
-
-1.  Open your Package.appxmanifest file in a text editor and update the Identity node to the **Application Identity** from **Reserving an app name** section.
-1.  Delete (exclusion from project is not enough) the .pfx file from the project
-
-### 4. Associate your Visual Studio project with your Xbox Live enabled title
-
-To do this, you need to add a configuration file for the Xbox Live SDK to read at runtime.
-
-1.  Create a text file and name it **xboxservices.config**. Note the file extension must be .config. All values inside xboxservices.config are case sensitive.
-1.  Add the text file to your primary project (the StartUp Project)
-1.  Right click on the file, select Properties and ensure that either **Content** is **Yes** or **Build Action** is set to **Content** and set **Copy always** for **Copy to Output Directory**.  This will ensure the file is copied correctly in the AppX folder.
-1.  You can leave the Item Type to **Does not participate in build**
-1.  Edit the text file with the following template, and replace the TitleId, and PrimaryServiceConfigId with the values you get from Windows Dev Center.  The PrimaryServiceConfigId appears on Windows Dev Center as "SCID".  
-1.  XboxLiveCreatorsTitle must be set to true for titles in the Xbox Live Creators Program as it changes the sign-in method to work for titles in the Xbox Live Creators Program.
-
+```c++
+#define XBOX_LIVE_CREATORS_SDK
+#include "xsapi\services.h"
 ```
+### 3. (Optional) Using Connected Storage
+If you want to use the [Connected Storage](../storage-platform/connected-storage/connected-storage-technical-overview.md) service, you will need to access the `Windows.Gaming.XboxLive.Storage` namespace. Depending on the version of the Windows SDK that you are using, you may need to install additional content or manually add references to your project to use it. If you've targeted Windows 10 SDK 10.0.16299 or higher, then you will be able to access the Connected Storage namespace without doing any additional work.
+
+#### Windows 10 SDK version 10.0.15063 or lower
+If you want to use Connected Storage, you will need to install the Xbox Live Platforms Extensions SDK before you can add references to your project. You can do this by:
+
+1. Download and extract the [Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk).
+2. Once extracted, run the included MSI file that matches the Windows 10 SDK version that you are using. 
+
+After you have installed the Xbox Live Platform Extensions SDK, you will need to add a reference to it in Visual Studio. You can do this by:
+
+1. In the **Solution Explorer**, right click on the **References** node and pick **Add Reference...** 
+2. On the left side of the **Reference Manager** dialog, select **Universal Windows** > **Extensions**.
+3. In the list that appears, search for **Windows Desktop Extensions for UWP** and select the checkbox next to the version that matches your Windows 10 SDK. 
+4. Click **OK**.
+
+![add new reference in VS](../images/getting_started/get-started-vs-add-ref.png)
+
+### 4. Associate your Visual Studio project with your UWP app
+
+For your game to be able to sign-in, it must be associated with the product you created on Microsoft Dev Center. You can associate your game in Visual Studio by using the Store Association wizard. In Visual Studio, do the following:
+
+1.  Right click the primary project (the StartUp Project), click **Store** > **Associate App with the Store...**
+2.  Sign-in with the **Windows Developer account** used for creating the app if asked and follow the prompts.
+
+> [!TIP]
+> See [Packaging apps](https://docs.microsoft.com/windows/uwp/packaging/) for more information on preparing your game for Windows Store.
+
+### 5. Add Internet capabilities to your Visual Studio Project
+Your UWP project will need to specify internet capabilities to communicate with Xbox Live. You can set these properties by:
+
+1. Double click on the **package.appxmanifest** file in Visual Studio to open the **Manifest Designer**.
+2. Click on the **Capabilities** tab and check **Internet (Client)**.
+
+![add new reference in VS](../images/getting_started/get-started-vs-add-capability.png)
+
+### 6. Associate your Visual Studio project with your Xbox Live enabled title
+
+To talk to the Xbox Live service, you'll need to add a service configuration file to your project. This can be done easily by:
+
+1. On your StartUp project, right click and select **Add** > **New Item**.
+2. Select the **Text File** type and name it **xboxservices.config**.
+3. Right click on the file, select **Properties** and ensure that:
+    1. **Build Action** is set to **Content**, and  
+    2. **Copy to Output Directory** is set to **Copy Always**.
+5.  Edit the configuration file with the following template, replacing the **TitleId** and **PrimaryServiceConfigId** with the values applicable to your title. You can get the correct values from the root Xbox Live page on Microsoft Dev Center. The **PrimaryServiceConfigId** appears on Microsoft Dev Center as **SCID**.
+
+```json
     {
-       "TitleId" : your title ID (JSON number in decimal),
-       "PrimaryServiceConfigId" : "{your primary service config ID}",
+       "TitleId" : "your title ID (JSON number in decimal)",
+       "PrimaryServiceConfigId" : "your primary service config ID",
        "XboxLiveCreatorsTitle" : true
     }
 ```
 
 For example:
 
-```
+```json
     {
         "TitleId" : 1563044810,
         "PrimaryServiceConfigId" : "12200100-88da-4d8b-af88-e38f5d2a2bca",
@@ -181,28 +147,10 @@ For example:
     }
 ```
 
-### 5. Add Internet capabilities to your Visual Studio Project
+> [!TIP]
+> All values inside xboxservices.config are case sensitive. See [Service Configuration](../xbox-live-service-configuration.md) for more information on obtaining the TitleID and PrimaryServiceConfigId.
 
-1. Double click on the **package.appxmanifest** file in Visual Studio 2015 to open the Manifest Designer.
-2. Click on the **Capabilities** tab
-3. Click on **Internet (Client)**
-4. Close the file and save the changes.
+## Learn More
 
-### 6. Optionally include XSAPI header in your project
-
-For Microsoft.Xbox.Live.SDK.WinRT.* based projects, no need to include any headers.
-
-For Microsoft.Xbox.Live.SDK.Cpp.* based projects, include "xsapi\\services.h" to in your C++ project bring in the header for the Xbox Live Service API (XSAPI) NuGet package. Before including the XSAPI header, you must define XBOX_LIVE_CREATORS_SDK. This limits the API surface area to only those APIs that are usable by developers in the Xbox Live Creators Program. For example:
-
-```c++
-#define XBOX_LIVE_CREATORS_SDK
-#include "xsapi\services.h"
-```
-
-### 7. Change your sandbox on the target device
-
-See the [Xbox Live Sandboxes](../xbox-live-sandboxes.md) on how to set the sandbox.
-
-### 8. Learn More
-
-The samples found on the [Xbox Live sample Github](https://github.com/Microsoft/xbox-live-samples) under /Samples/CreatorsSDK/ showcase the APIs available to developers in the Xbox Live Creators program.  To use the samples, you will need to change your sandbox to XDKS.1
+The [Xbox Live SDK samples](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/CreatorsSDK) under showcase the APIs available to developers in the Xbox Live Creators program. To use the samples, you will need to change your sandbox to XDKS.1. 
+  
