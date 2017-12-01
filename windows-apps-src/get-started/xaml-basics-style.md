@@ -19,7 +19,7 @@ This tutorial shows you how to customize the UI of our XAML app. Warning: this t
 * [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2017.
 
 ## Part 1: Create a fancy slider control  
 
@@ -39,7 +39,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 ### Customize a slider control
 
 <!-- TODO: Update folder -->
-1. Open the folder for this tutorial: **UWP Academy\XAML\Styling\Part1\Start**. Double-click the **PhotoLab.sln** file to open it in Visual Studio 2017, and then set your Solution Platform to x86 or x64, not ARM. 
+1. After downloading the repository, open **PhotoLab.sln** in the xaml-basics-starting-points/style/ folder, and set your Solution Platform to x86 or x64 (not ARM). 
 
     Press F5 to compile and run the app. The first screen shows a gallery of images. Click an image to go to the image details page. Once you're there, click the edit button to see the editing controls we'll be working on. Exit the app and return to Visual Studio.  
 
