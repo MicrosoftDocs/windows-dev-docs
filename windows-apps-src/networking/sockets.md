@@ -358,6 +358,55 @@ private:
 	}
 ```
 
+## References to StreamSockets in C++ PPL continuations
+
+A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live#Windows_Networking_Sockets_StreamSocketListenerConnectionReceivedEventArgs_Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the completion handler of the **LoadAsync** is done executing.
+
+But the Parallel Patterns Library (PPL) doesn't schedule task continuations inline by default. In other words, adding a continuation task (with `task::then()`) doesn't guarantee that the continuation task will execute inline as the completion handler.
+
+```cpp
+void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
+{
+	auto dataReader = ref new DataReader(args->Socket->InputStream);
+	Concurrency::create_task(dataReader->LoadAsync(sizeof(unsigned int))).then(
+		[=](unsigned int bytesLoaded)
+	{
+		// Work in here isn't guaranteed to execute inline as the completion handler of the LoadAsync.
+	});
+}
+```
+
+From the perspective of the **StreamSocket**, the completion handler is done executing (and the socket is eligible for disposal) before the continuation body runs. So, to keep your socket from being disposed if you want to use it inside that continuation, you need to either reference the socket directly (via lambda capture) and use it, or indirectly (by continuing to access `args->Socket` inside continuations), or force continuation tasks to be inline. You can see the first technique (lambda capture) in action in the [StreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620609). The C++ code in the [Build a basic TCP socket client and server](#build-a-basic-tcp-socket-client-and-server) section above uses the second technique&mdash;it echoes the request back as a response, and it accesses `args->Socket` from within one of the innermost continuations.
+
+The third technique is appropriate when you're not echoing a response back. You use the `task_continuation_context::use_synchronous_execution()` option to force PPL to execute the continuation body inline. Here's a code example showing how to do it.
+
+```cpp
+void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
+{
+	auto dataReader = ref new DataReader(args->Socket->InputStream);
+
+	Concurrency::create_task(dataReader->LoadAsync(sizeof(unsigned int))).then(
+		[=](unsigned int bytesLoaded)
+	{
+		unsigned int messageLength = dataReader->ReadUInt32();
+		Concurrency::create_task(dataReader->LoadAsync(messageLength)).then(
+			[=](unsigned int bytesLoaded)
+		{
+			Platform::String^ request = dataReader->ReadString(bytesLoaded);
+			this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+				[=]
+			{
+				std::wstringstream wstringstream;
+				wstringstream << L"server received the request: \"" << request->Data() << L"\"";
+				this->serverListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+			}));
+		});
+	}, Concurrency::task_continuation_context::use_synchronous_execution());
+}
+```
+
+This behavior applies to all of the sockets and WebSockets classes in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace. But client-side scenarios usually store sockets in member variables, so the issue is most applicable to the [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) scenario, as illustrated above.
+
 ## Build a basic UDP socket client and server
 
 A UDP (User Datagram Protocol) socket is similar to a TCP socket in that it also provides low-level network data transfers in either direction. But, while a TCP socket is for long-lived connections, a UDP socket is for applications where an established connection is not required. Because UDP sockets don't maintain connection on both endpoints, they're a fast and simple solution for networking between remote machines. But UDP sockets don't ensure integrity of the network packets nor even whether packets make it to the remote destination at all. So your app will need to be designed to tolerate that. Some examples of applications that use UDP sockets are local network discovery, and local chat clients.
@@ -925,6 +974,7 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor
 * [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl?branch=live#Windows_Networking_Sockets_DatagramSocketControl_MulticastOnly)
 * [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
 * [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live#Windows_Networking_Sockets_DatagramSocketMessageReceivedEventArgs_GetDataReader)
+* [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_)
 * [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync)
 * [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_)
 * [SocketErrorStatus](/uwp/api/windows.networking.sockets.socketerrorstatus?branch=live)
