@@ -76,7 +76,7 @@ Calling **RequestExtensionAsync** checks with the operating system to see if the
 
 You can check the [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) beforehand to determine the [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396), which is the user setting that indicates whether your app can run in the background or not. To learn more about these user settings see [Background Activity and Energy Awareness](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97).
 
-The **ExtendedExecutionReason** indicates the operation your app is performing in the background. The **Description** string is a human-readable string that explains why your app needs to perform the operation. The **Revoked** event handler is required so that an extended execution session can halt gracefully if the user, or the system, decides that the app can no longer run in the background.
+The **ExtendedExecutionReason** indicates the operation your app is performing in the background. The **Description** string is a human-readable string that explains why your app needs to perform the operation. This string is not presented to the user, but may be made available in a future release of Windows. The **Revoked** event handler is required so that an extended execution session can halt gracefully if the user, or the system, decides that the app can no longer run in the background.
 
 ### Revoked
 
