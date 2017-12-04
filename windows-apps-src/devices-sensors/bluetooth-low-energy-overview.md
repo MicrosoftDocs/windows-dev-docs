@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, bluetooth, bluetooth LE, low energy, gatt, gap, central, peripheral, client, server, watcher, publisher
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Bluetooth Low Energy

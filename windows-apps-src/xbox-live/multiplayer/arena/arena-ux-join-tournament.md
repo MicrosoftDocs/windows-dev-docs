@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, arena, tournament, ux
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Join a tournament by using the Arena UI

@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Launch an app on a remote device

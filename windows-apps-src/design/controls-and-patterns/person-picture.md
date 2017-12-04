@@ -14,7 +14,7 @@ pm-contact: trestar
 design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 

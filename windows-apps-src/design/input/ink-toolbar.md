@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Add an InkToolbar to a Universal Windows Platform (UWP) app

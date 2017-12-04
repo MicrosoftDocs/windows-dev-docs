@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: webvr, edge, web development, babylon, babylonjs, babylon.js, javascript
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Adding WebVR support to a 3D Babylon.js game

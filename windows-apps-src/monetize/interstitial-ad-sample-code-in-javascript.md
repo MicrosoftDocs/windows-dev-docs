@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, interstitial, javascript, sample code
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Interstitial ad sample code in JavaScript

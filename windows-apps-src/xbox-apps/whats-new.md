@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: fe63c527-8f06-43a5-868f-de909f5664b3
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # What's new for developers in the latest update of UWP on Xbox One

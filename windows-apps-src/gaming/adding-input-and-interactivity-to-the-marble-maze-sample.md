@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, input, sample
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Adding input and interactivity to the Marble Maze sample

@@ -10,7 +10,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # <span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>Rasterizer behavior with non-mapped tiles

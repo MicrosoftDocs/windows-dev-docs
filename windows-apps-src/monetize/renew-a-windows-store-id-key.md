@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Renew a Microsoft Store ID key

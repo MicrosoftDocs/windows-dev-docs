@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, input latency
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 #  Optimize input latency for Universal Windows Platform (UWP) DirectX games

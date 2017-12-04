@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # System resources for UWP apps and games on Xbox One

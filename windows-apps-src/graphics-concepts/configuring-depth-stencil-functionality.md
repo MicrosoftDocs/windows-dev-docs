@@ -10,7 +10,7 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # <span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>Configuring depth-stencil functionality

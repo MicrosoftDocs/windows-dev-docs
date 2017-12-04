@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, advertising network, app metadata
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # App metadata API for advertising networks

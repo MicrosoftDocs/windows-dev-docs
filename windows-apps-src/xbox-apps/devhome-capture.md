@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/devhome-capture.html
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Media Capture Page (Dev Home)

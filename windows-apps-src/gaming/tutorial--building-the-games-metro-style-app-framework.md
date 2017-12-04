@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 #  Define the UWP app framework

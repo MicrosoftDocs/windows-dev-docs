@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6d1ffcc1-b3c6-4e2f-8fbe-d243b20a6272
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Manage add-ons in bulk

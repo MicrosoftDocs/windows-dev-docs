@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, data, database, relational, tables, sqlite
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Data access
 

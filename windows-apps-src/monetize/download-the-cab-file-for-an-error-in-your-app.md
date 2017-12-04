@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Download the CAB file for an error in your app

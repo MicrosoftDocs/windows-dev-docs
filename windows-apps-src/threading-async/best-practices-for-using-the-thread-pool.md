@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, thread, thread pool
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Best practices for using the thread pool
 

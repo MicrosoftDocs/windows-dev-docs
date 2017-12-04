@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Postpone app suspension with extended execution

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, creators
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Step by step guide to integrate Xbox Live Creators Program

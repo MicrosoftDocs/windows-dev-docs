@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, trailer, video, screenshot, image, icon, Store listing, Store listing images
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # App screenshots, images, and trailers

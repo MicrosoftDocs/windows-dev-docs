@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, game, directx, xaml, screen rotation, input
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Add features to DirectX games

@@ -2,7 +2,7 @@
 author: mathy
 title: Device Portal HTTP monitor API reference
 description: Learn how to access HTTP traffic from the focused app on an Xbox.
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # HTTP Monitor API reference   

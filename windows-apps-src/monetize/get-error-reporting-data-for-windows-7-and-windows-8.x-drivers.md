@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get error reporting data for Windows 7 and Windows 8.x drivers

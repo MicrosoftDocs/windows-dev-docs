@@ -9,7 +9,7 @@ ms.technology: uwp
 author: normesta
 ms.author: normesta
 keywords: windows 10, uwp, timer, threads
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Using Windows Runtime objects in a multithreaded environment
 This article discusses the way the .NET Framework handles calls from C# and Visual Basic code to objects that are provided by the Windows Runtime or by Windows Runtime Components.

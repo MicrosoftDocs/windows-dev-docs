@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, taxes, app taxes, tax requirements, commerce expansion, tax rate
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Tax details for paid apps

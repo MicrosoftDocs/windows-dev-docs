@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, ad control, native ad
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Native ads

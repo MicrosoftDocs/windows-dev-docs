@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx 9, directx 11, port
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)

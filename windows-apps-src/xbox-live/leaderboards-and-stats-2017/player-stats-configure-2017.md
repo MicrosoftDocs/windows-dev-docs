@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Configuring Featured Stats or Leaderboards on Universal Dev Center with Data Platform 2017

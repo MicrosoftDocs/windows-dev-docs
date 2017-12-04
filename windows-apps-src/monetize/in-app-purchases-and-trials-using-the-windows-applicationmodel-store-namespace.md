@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: uwp, in-app purchases, IAPs, add-ons, trials, Windows.ApplicationModel.Store
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # In-app purchases and trials using the Windows.ApplicationModel.Store namespace
