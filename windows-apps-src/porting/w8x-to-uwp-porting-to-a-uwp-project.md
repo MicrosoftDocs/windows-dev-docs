@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Porting a Windows Runtime 8.x project to a UWP project

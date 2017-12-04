@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, streaming install, uwp app streaming install
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 

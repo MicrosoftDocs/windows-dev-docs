@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: hosted web apps with a Mac, porting to Windows 10 with a Mac, convert website to Windows with Mac, website to Microsoft Store, Manifold JS for web apps, App Studio for web apps
 ms.assetid: a4cea1e8-4417-4488-b0e7-45c704dc53e9
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Create your Hosted Web App using a Mac

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, route, map, location, directions
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Display routes and directions on a map

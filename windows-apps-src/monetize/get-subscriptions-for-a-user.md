@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get subscriptions for a user

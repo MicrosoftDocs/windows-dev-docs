@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Layout for UWP apps
 

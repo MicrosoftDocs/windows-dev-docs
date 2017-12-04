@@ -12,7 +12,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Windows Information Protection, enterprise data, enterprise data protection, edp, enlightened apps
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Windows Information Protection (WIP)

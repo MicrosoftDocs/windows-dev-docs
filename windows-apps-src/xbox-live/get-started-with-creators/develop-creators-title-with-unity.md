@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, creators
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get started developing an Xbox Live Creators Program title with the Unity game engine

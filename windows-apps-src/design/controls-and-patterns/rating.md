@@ -13,7 +13,7 @@ pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Ratings control

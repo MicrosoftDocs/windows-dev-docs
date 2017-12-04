@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Add Xbox Live support to Unity for UWP with IL2CPP scripting backend for ID@Xbox and managed partners

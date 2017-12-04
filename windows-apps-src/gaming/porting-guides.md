@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, porting, direct3d 11
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Game porting guides

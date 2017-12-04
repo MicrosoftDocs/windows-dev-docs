@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Microsoft Store marketing guidelines for apps

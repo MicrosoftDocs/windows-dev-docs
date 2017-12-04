@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, xbox one, xdk, managed partner, sandbox, content isolation
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Advanced Xbox Live sandboxes

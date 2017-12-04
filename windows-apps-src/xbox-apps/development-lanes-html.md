@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Bringing HTML games to UWP on Xbox

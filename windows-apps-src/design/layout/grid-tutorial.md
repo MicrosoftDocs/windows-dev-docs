@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Create a simple weather app by using Grid and StackPanel

@@ -1,6 +1,6 @@
 ---
 author: Mtoepke
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 #XAML samples for developers
 

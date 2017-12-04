@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, commit flight submission
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Commit a package flight submission

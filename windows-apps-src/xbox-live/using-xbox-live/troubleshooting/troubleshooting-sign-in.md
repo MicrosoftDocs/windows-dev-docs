@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, sign-in, troubleshoot
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Troubleshooting Xbox Live sign-in

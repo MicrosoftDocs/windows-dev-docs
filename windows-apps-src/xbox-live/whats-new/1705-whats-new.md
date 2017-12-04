@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, what's new, may 2017
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # What's new for the Xbox Live APIs - May 2017

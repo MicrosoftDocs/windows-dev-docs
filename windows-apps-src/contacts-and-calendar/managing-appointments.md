@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, appointments, calendar
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Manage appointments

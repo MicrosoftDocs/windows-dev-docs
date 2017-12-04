@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, globalization, localizability, localization
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Multilingual App Toolkit 4.0 FAQ & troubleshooting

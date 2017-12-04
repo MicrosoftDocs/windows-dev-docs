@@ -15,7 +15,7 @@ pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Split view control
 

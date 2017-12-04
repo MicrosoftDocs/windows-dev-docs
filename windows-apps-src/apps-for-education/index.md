@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Develop Universal Windows apps for education

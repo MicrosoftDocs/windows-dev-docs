@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Content transition animations

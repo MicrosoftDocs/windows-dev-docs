@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, maps, map style sheet
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Map style sheet reference
 

@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Usability for UWP apps
 

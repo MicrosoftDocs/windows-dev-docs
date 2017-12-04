@@ -15,7 +15,7 @@ pm-contact: predavid
 design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # List view and grid view
 

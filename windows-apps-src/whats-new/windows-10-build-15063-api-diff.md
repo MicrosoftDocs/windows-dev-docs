@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # New APIs in Windows 10 build 15063

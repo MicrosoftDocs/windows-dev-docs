@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Developer Home on the Console (Dev Home)

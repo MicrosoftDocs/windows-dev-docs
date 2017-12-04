@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, response info
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get response info for reviews

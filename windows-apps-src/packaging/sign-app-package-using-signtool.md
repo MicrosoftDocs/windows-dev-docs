@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Sign an app package using SignTool

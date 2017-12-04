@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # <span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay

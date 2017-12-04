@@ -8,7 +8,7 @@ ms.date: 11/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Enable subscription add-ons for your app

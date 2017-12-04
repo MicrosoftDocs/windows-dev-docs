@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, app submission, update
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Update an app submission

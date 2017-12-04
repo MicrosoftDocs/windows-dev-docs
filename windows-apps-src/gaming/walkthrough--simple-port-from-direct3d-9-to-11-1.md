@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, port, direct3d 9, direct3d 11
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Walkthrough: Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)

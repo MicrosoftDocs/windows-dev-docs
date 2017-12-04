@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, game, directx, optimize, multisampling, swap chains
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Optimization and advanced topics for DirectX games

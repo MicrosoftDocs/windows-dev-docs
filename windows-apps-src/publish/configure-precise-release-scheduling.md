@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Configure precise release scheduling

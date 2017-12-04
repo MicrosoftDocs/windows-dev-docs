@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get OEM hardware error reporting data

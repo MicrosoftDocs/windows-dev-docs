@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # New APIs in Windows 10 build 14393

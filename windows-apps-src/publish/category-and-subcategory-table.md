@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, category, subcategory, genre, categories, genres
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Category and subcategory table

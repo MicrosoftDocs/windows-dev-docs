@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, low light fusion, bitmaps, image processing
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Process bitmaps with the LowLightFusion API

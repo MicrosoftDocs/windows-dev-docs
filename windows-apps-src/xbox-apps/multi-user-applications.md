@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Introduction to multi-user applications

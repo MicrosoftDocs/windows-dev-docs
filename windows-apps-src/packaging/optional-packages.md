@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, optional packages, related set, package extension, visual studio
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Optional packages and related set authoring

@@ -11,7 +11,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Instructional UI guidelines

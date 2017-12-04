@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, resources, images
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Set up DirectX resources and display an image

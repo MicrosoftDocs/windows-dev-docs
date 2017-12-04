@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Controls and patterns for UWP apps
  

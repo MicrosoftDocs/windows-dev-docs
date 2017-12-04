@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 #  Porting Windows Phone Silverlight to UWP for I/O, device, and app model

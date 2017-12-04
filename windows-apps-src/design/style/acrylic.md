@@ -13,7 +13,7 @@ pm-contact: yulikl
 design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Acrylic material

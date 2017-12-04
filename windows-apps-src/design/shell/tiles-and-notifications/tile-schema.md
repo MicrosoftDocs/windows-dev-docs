@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, tile, tile notification, tile content, schema, tile payload
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Tile content schema

@@ -9,7 +9,7 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Exclude or limit features in a trial version

@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Chrome extensions for Windows, Chrome apps for Windows, hwa-cli, convert .crx to .AppX
 ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Convert your existing Chrome app to a UWP app

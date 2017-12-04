@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, web, edge, javascript
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # JavaScript and web apps

@@ -15,7 +15,7 @@ pm-contact: kisai
 design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Progress controls
 

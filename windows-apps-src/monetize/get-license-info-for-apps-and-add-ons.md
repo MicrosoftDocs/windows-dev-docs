@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, licenses, apps, add-ons, in-app purchases, IAPs, Windows.Services.Store
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get license info for apps and add-ons

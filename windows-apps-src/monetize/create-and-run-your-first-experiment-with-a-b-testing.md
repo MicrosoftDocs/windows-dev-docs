@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Create and run your first experiment
