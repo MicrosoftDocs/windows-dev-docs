@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 11/20/2017
+ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,9 +16,6 @@ ms.localizationpriority: high
 
 
 The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
-
-> [!NOTE]
-> We have recently updated the options on this page. If you had an in-progress submission from before the newer options were available, that submission will still show the older options. You can delete that submission and then create a new one if you want to use the new options for that app. Otherwise, the newer options will become available with the next update after you publish your in-progress submission.
 
 Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots).
 
@@ -83,7 +80,26 @@ For more info, see [Additional art assets](app-screenshots-and-images.md#additio
 
 ## Additional information
 
-The fields in this section are all optional, but can be used to help customers understand more about what your app does and what is required for the best experience. We suggest reviewing the options described below and providing any information that customers might need to know about your app, or that could help entice them to download it.
+The fields in this section are all optional. App features and system requirements can help customers understand more about what your app does and what is required for the best experience. Other options help provide an optimal experience for your product in different scenarios. Review the info below to determine if providing this info makes sense for your submission.
+
+### Short title
+
+A shorter version of your product’s name. If provided, this shorter name may appear in various places on Xbox One (during installation, in Achievements, etc.) in place of the full title of your product.
+
+
+### Sort title
+
+If your product could be alphabetized in different ways, you can enter another version here. This may help customers find the product more quickly when searching. 
+
+
+### Voice title
+
+An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset. 
+
+
+### Short description
+
+Only used for games. This description appears in the Information section of the Game Hub on Xbox One, and helps customers understand more about your game.
 
 
 ### App features
@@ -96,14 +112,13 @@ These are short summaries of your app's key features. They are displayed to the 
 
 ### Additional system requirements
 
-If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here.
+If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later, along with the requirements you indicated on the product's properties page. 
 
 You can enter up to 11 items for both **Minimum hardware** and **Recommended hardware**. These are displayed to the customer as a bulleted list in your Store listing. Keep these brief, with just a few words (and no more than 200 characters) per item.
 
-The info you enter here will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later, along with the requirements you indicated on the product's properties page.
-
 > [!NOTE]
 > Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
+
 
 ### Developed by
 

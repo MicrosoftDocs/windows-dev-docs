@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 08/03/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -426,10 +426,10 @@ This resource contains base listing info for an app. This resource has the follo
 |  recommendedHardware               |   array      |  An array of up to 11 strings that list the [recommended hardware configurations](../publish/create-app-store-listings.md#additional-information) for your app.     |
 |  minimumHardware               |     string    |  An array of up to 11 strings that list the [minimum hardware configurations](../publish/create-app-store-listings.md#additional-information) for your app.    |  
 |  title               |     string    |   The title for the app listing.   |  
-|  shortDescription               |     string    |  This value only applies to listings for Xbox. This specifies the short description for the listing, which helps users understand what your game is about, what type of game it is, and what kind of gamers might enjoy playing it. Entries are limited to 500 characters.   |  
-|  shortTitle               |     string    |  This value only applies to listings for Xbox. This specifies the short version of the product description for contexts where the regular description would be too lengthy. The maximum length is 50 characters for all versions of the short title, including standard, localized, and override. An override version is displayed in a single region where the alternative language is spoken.    |  
-|  sortTitle               |     string    |   This value only applies to listings for Xbox. This specifies the sort title for the listing. Entries are limited to 255 characters.   |  
-|  voiceTitle               |     string    |   This value only applies to listings for Xbox. This specifies the voice title for the listing. Entries are limited to 255 characters.    |  
+|  shortDescription               |     string    |  Only used for games. This description appears in the **Information** section of the Game Hub on Xbox One, and helps customers understand more about your game.   |  
+|  shortTitle               |     string    |  A shorter version of your product’s name. If provided, this shorter name may appear in various places on Xbox One (during installation, in Achievements, etc.) in place of the full title of your product.    |  
+|  sortTitle               |     string    |   If your product could be alphabetized in different ways, you can enter another version here. This may help customers find the product more quickly when searching.    |  
+|  voiceTitle               |     string    |   An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset.    |  
 |  devStudio               |     string    |   Specify this value if you want to include a **Developed by** field in the listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a *devStudio* value.)    |  
 
 <span id="image-object" />
