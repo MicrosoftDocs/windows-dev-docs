@@ -50,17 +50,16 @@ All UWP controls include built-in support for rich keyboard experiences and user
 
 As mentioned previously, input devices such as the Xbox gamepad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding. This common experience across input types and tools minimizes additional work from you and contributes to the "build once, run anywhere" goal of the Universal Windows Platform.
 
-Where necessary, we’ll identify key differences you should be aware of and describe any mitigations you should consider.
+Where necessary, we'll identify key differences you should be aware of and describe any mitigations you should consider.
 
 Here are the devices and tools discussed in this topic:
 
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
-|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP apps support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).|
+|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).|
 |Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](..\devices\designing-for-tv.md).
 For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
-|Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input.
-For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
+|Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
 
 ## Custom experiences and efficient keyboarding
 As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.
@@ -70,7 +69,7 @@ As mentioned, keyboard support is integral to ensuring your applications work gr
 	- Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
 - Support keyboard shortcuts
 	- Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
-	- Provide access keys to navigate your app's UI (see [Access keys](access-keys.md))
+	- Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
 
 ### Focus visuals <a name="focus-visual">
 
@@ -87,7 +86,7 @@ A focus visual:
 
 ### Tab stops <a name="tab-stops">
 
-To use a control (including navigation elements) with the keyboard, the control must have focus. One way for a control to receive keyboard focus is to make it accessible through tab navigation by identifying it as a tab stop in your app’s tab order.
+To use a control (including navigation elements) with the keyboard, the control must have focus. One way for a control to receive keyboard focus is to make it accessible through tab navigation by identifying it as a tab stop in your application's tab order.
 
 For a control to be included in the tab order, the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) property must be set to **true** and the [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) property must be set to **true.**
 
@@ -109,7 +108,7 @@ See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) page fo
 
 #### Try to coordinate tab order and visual order
 
-Coordinating tab order and visual order (also referred to as reading order or display order) helps reduce confusion for users as they navigate through your app’s UI.
+Coordinating tab order and visual order (also referred to as reading order or display order) helps reduce confusion for users as they navigate through your application's UI.
 
 Try to rank and present the most important commands, controls, and content first in both the tab order and the visual order. However, the actual display position can depend on the parent layout container and certain properties of the child elements that influence the layout. Specifically, layouts that use a grid metaphor or a table metaphor can have a visual order quite different from the tab order.
 
@@ -117,7 +116,7 @@ Try to rank and present the most important commands, controls, and content first
 
 ### Initial focus <a name="initial-focus">
 
-Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated. When using a keyboard, it is from this element that a user starts interacting with your app’s UI.
+Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated. When using a keyboard, it is from this element that a user starts interacting with your application's UI.
 
 For UWP apps, initial focus is set to the element with the highest [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) that can receive focus. Child elements of container controls are ignored. In a tie, the first element in the visual tree receives focus.
 
@@ -127,9 +126,9 @@ Set initial focus on the UI element for the first, or primary, action that users
 -   A photo app where focus is set to the first item in a gallery
 -   A music app where focus is set to the play button
 
-#### Don’t set initial focus on an element that exposes a potentially negative, or even disastrous, outcome
+#### Don't set initial focus on an element that exposes a potentially negative, or even disastrous, outcome
 
-This level of functionality should be a user’s choice. Setting initial focus to an element with a significant outcome might result in unintended data loss or system access. For example, don’t set focus to the delete button when navigating to an e-mail.
+This level of functionality should be a user's choice. Setting initial focus to an element with a significant outcome might result in unintended data loss or system access. For example, don't set focus to the delete button when navigating to an e-mail.
 
 See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) page for more details about overriding tab order.
 
@@ -148,11 +147,11 @@ By default, UWP controls follow these basic keyboard behaviors:
     -   Move caret inside `TextBox`
     -   Expand/collapse items inside `TreeView`
 
-Use these default behaviors to optimize your app’s keyboard navigation.
+Use these default behaviors to optimize your application's keyboard navigation.
 
 #### Use "inner navigation" with sets of related controls
 
-Providing arrow key navigation into a set of related controls reinforces their relationship within the overall organization of your app’s UI.
+Providing arrow key navigation into a set of related controls reinforces their relationship within the overall organization of your application's UI.
 
 For example, the `ContentDialog` control shown here provides inner navigation by default for a horizontal row of buttons (for custom controls, see the [Control Group](#control-group) section).
 
@@ -237,7 +236,7 @@ For example, for `ListView` and `GridView` controls, the **Page up** key scrolls
 
 Keyboard shortcuts can make your app easier and more efficient to use.
 
-In addition to implementing keyboard navigation and activation for your app, it is a good practice to implement shortcuts for your app's functionality. Tab navigation provides a good, basic level of keyboard support, but with complex forms you may want to add support for shortcut keys as well. This can make your application more efficient to use, even
+In addition to implementing keyboard navigation and activation for your app, it is a good practice to implement shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with complex forms you may want to add support for shortcut keys as well. This can make your application more efficient to use, even
 for people who use both a keyboard and pointing devices.
 
 A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:
@@ -252,8 +251,8 @@ as well as [application specific keyboard shortcuts](https://support.microsoft.c
 Accelerators help users perform common actions that exists on application quickly. Providing a consistent accelerator keys that users can easily remember and use across applications that offer similar tasks is very important for making accelerator useful as well as powerful.
 
 Examples of Accelerators:
--   Pressing Ctrl + N key anywhere in Mail app launches a new mail item.
--   Pressing Ctrl + E key anywhere in Edge and Store app lets user quickly enter text in search box.
+-   Pressing Ctrl + N key anywhere in the **Mail** app launches a new mail item.
+-   Pressing Ctrl + E key anywhere in Microsoft Edge (and many Microsoft Store applications) lets users quickly enter text in a search box.
 
 Accelerators have the following characteristics:
 -   They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt+non-alphanumeric keys and the Windows logo key).
@@ -265,7 +264,7 @@ Accelerators have the following characteristics:
 
 #### Access keys <a name="access-keys">
 
-Access keys provide both users with accessibility requirements and advanced keyboard users with an efficient and effective way to navigate your app’s UI.
+Access keys provide both users with accessibility requirements and advanced keyboard users with an efficient and effective way to navigate your application's UI.
 
 See [Access keys](access-keys.md) page for more in-depth information for supporting access keys with UWP.
 
@@ -318,28 +317,28 @@ Users expect support for arrow key navigation when there is a group of similar, 
 
 UWP controls support arrow key navigation by default. For custom layouts and control groups, use `XYFocusKeyboardNavigation="Enabled"` to provide similar behavior.
 
-Consider adding support for arrow key navigation when you have for following controls:
+Consider adding support for arrow key navigation when using the following controls:
 
 <table>
   <tr>
     <td>
-      <p>![dialog](images/keyboard/dialog.png)</p>
-      <p>**Buttons**</p>
-      <p>![radiobutton](images/keyboard/radiobutton.png)</p>
-      <p>**RadioButtons**</p>     
+      <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"/></p>
+      <p><sup>Dialog buttons</sup></p>
+      <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"/></p>
+      <p><sup>RadioButtons</sup></p>     
     </td>
     <td>
-      <p>![appbar](images/keyboard/appbar.png)</p>
-      <p>**AppBarButtons**</p>
-      <p>![list and grid items](images/keyboard/list-and-grid-items.png)</p>
-      <p>**ListItems and GridItems**</p>
+      <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"/></p>
+      <p><sup>AppBarButtons</sup></p>
+      <p><img src="images/keyboard/list-and-grid-items.png" alt="List and Grid items"/></p>
+      <p><sup>ListItems and GridItems</sup></p>
     </td>    
   </tr>
 </table>
 
 #### Tab stops
 
-Depending on your app’s functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
+Depending on your application's functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.
 
 ##### Use multiple tab stops and arrow keys for buttons
 
@@ -492,7 +491,7 @@ last item in the previous column.
 
 #### Popup UI <a name="popup-ui">
 
-As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your app’s UI.
+As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your application's UI.
 
 Some controls, such as `ContextMenu`, `AppBarOverflowMenu`, and `AutoSuggest`, include a menu popup that is displayed in a location and direction relative to the primary control (based on available screen space). For example, when there is insufficient space for the menu to open downwards (the default direction), it opens upwards. There is no guarantee that the menu opens in the same direction every time.
 

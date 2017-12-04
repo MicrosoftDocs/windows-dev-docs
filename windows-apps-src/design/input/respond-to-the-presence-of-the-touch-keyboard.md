@@ -17,13 +17,9 @@ ms.technology: uwp
 
 Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)</li>
-<li>[**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)</li>
-</ul>
-</div> 
+### Important APIs
+- [AutomationPeer](https://msdn.microsoft.com/library/windows/apps/br209185)
+- [InputPane](https://msdn.microsoft.com/library/windows/apps/br242255)
 
 ![the touch keyboard in default layout mode](images/keyboard/default.png)
 
@@ -35,7 +31,7 @@ To support corresponding touch keyboard behavior in a custom text input control 
 
 Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
-**Prerequisites:  **
+**Prerequisites:**
 
 This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
@@ -46,12 +42,11 @@ If you're new to developing Universal Windows Platform (UWP) apps, have a look t
 -   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**User experience guidelines:  **
+**User experience guidelines:**
 
 For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
 
 ## Touch keyboard and a custom UI
-
 
 Here are a few basic recommendations for custom text input controls.
 
