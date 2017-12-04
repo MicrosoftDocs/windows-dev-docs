@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Create a certificate for package signing

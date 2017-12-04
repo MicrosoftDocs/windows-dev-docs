@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, sample, directx, graphics
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Adding visual content to the Marble Maze sample

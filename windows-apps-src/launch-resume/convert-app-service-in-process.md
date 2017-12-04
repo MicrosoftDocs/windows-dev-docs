@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Convert an app service to run in the same process as its host app

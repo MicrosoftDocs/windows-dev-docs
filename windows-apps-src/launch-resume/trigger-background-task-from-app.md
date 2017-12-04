@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: background task trigger
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Trigger a background task from within your app

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d, porting
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Map OpenGL ES 2.0 to Direct3D 11

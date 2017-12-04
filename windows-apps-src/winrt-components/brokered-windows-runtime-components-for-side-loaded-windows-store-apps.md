@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 #Brokered Windows Runtime Components for a side-loaded UWP app

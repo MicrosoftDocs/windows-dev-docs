@@ -10,7 +10,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Primary tile APIs
  

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer manager, flowchart
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Flowchart - Send an invitation to another player

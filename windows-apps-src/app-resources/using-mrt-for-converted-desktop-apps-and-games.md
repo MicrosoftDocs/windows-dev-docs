@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, mrt, pri. resources, games, centennial, desktop app converter, mui, satellite assembly
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Use the Windows 10 Resource Management System in a legacy app or game

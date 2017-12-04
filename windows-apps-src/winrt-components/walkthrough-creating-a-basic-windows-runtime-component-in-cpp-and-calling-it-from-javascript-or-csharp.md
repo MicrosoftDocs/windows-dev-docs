@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 <h1>Walkthrough: Creating a Windows Runtime component in C++ and calling it from JavaScript or C#</h1>

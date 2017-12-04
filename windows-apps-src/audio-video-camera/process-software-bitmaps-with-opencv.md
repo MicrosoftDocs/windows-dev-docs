@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, opencv, softwarebitmap
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Process bitmaps with OpenCV

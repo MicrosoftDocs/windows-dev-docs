@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, xbox, device portal
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Xbox Info API reference   

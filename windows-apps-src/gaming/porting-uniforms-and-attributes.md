@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D

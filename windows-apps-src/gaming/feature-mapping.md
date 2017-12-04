@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx 9, directx 11, porting
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Map DirectX 9 features to DirectX 11 APIs

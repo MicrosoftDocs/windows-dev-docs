@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, game, directx, input, mouse, touch, control
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Game input for DirectX games

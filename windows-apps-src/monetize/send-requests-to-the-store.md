@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Send requests to the Microsoft Store

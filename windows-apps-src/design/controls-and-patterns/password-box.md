@@ -15,7 +15,7 @@ keywords: windows 10, uwp
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Password box
 

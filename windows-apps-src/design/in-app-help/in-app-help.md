@@ -11,7 +11,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # In-app help pages

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, 2d, graphics
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # 2D graphics for DirectX games

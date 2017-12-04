@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, resuming, directx
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # How to resume an app (DirectX and C++)

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, package
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 #  Package your Universal Windows Platform (UWP) DirectX game

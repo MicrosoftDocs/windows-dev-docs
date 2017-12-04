@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, rendering framework, converting, direct3d 9, direct3d 11
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Convert the rendering framework

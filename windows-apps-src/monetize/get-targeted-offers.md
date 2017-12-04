@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Store services, Microsoft Store targeted offers API, get targeted offers
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get targeted offers

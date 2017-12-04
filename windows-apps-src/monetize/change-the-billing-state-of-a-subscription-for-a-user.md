@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Change the billing state of a subscription for a user

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, directx, port
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Plan your DirectX port

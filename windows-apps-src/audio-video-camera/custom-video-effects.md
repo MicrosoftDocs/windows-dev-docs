@@ -12,7 +12,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Custom video effects

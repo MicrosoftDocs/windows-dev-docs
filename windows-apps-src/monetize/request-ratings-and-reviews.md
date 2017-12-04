@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ratings, reviews
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Request ratings and reviews for your app

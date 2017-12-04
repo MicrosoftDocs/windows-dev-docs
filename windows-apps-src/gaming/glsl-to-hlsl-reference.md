@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, glsl, hlsl, opengl, directx, shaders
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # GLSL-to-HLSL reference

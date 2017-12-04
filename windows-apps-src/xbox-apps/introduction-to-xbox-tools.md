@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, xbox one, tools
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Introduction to Xbox One tools

@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Bringing existing games to Xbox

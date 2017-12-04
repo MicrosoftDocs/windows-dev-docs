@@ -15,7 +15,7 @@ pm-contact: Abarlow, pagildea
 design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Scroll viewer controls
 

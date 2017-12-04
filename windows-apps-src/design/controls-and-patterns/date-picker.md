@@ -16,7 +16,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Date picker
 

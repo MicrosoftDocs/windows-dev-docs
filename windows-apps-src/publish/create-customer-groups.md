@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, customer groups, segment, flight group, known user group
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Create customer groups

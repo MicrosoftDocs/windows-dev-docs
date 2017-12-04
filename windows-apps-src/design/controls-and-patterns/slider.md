@@ -15,7 +15,7 @@ pm-contact: kisai
 design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Sliders
 
