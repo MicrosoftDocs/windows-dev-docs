@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, in-app purchases, IAPs, receipts, Windows.ApplicationModel.Store
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Use receipts to verify product purchases

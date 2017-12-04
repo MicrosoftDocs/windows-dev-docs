@@ -9,7 +9,7 @@ ms.date: 11/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # App submissions

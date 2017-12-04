@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10 S, uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Test your Windows app for Windows 10 S
 

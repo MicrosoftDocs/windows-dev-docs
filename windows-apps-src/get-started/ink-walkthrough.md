@@ -9,7 +9,7 @@ ms.date: 04/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Support ink in your UWP app

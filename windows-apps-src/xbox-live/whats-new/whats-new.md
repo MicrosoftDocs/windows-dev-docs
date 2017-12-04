@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # What's new for Xbox Live

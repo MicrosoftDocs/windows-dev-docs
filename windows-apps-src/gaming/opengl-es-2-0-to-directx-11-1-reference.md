@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d 11
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # OpenGL ES 2.0 to Direct3D 11 reference

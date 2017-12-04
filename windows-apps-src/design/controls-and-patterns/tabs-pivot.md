@@ -15,7 +15,7 @@ pm-contact: yulikl
 design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Pivot and tabs
 

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, threads, thread pool
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Submit a work item to the thread pool
 

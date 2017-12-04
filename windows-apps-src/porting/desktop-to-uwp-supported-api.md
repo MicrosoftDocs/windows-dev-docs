@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # UWP APIs available to a packaged desktop app (Desktop Bridge)
 

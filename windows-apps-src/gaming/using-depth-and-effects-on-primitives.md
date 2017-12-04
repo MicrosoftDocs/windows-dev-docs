@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, depth, effects, primitives, directx
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Use depth and effects on primitives

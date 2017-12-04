@@ -11,7 +11,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Inking controls
 

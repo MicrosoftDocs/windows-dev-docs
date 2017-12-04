@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, notification listener, usernotificationlistener, documentation, access notifications
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Notification listener: Access all notifications

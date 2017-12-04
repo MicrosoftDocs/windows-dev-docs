@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, geocoding, map, location
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Perform geocoding and reverse geocoding

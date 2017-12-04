@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, sizes, banner
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Supported banner ad sizes

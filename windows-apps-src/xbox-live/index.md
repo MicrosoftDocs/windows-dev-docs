@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, xbox, xbox live
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # What is Xbox Live?

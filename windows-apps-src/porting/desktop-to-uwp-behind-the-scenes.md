@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Behind the scenes of the Desktop Bridge

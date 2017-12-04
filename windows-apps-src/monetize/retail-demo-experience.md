@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, retail demo app
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 #  Create a Retail Demo Experience (RDX) app
 

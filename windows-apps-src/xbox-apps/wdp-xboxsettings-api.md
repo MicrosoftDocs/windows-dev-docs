@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Developer settings API reference   

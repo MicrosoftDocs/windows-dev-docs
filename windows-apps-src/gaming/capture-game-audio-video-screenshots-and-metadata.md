@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, game, capture, audio, video, metadata
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Capture game audio, video, screenshots, and metadata

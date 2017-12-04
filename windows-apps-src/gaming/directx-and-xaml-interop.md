@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, xaml interop
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # DirectX and XAML interop

@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Custom audio effects

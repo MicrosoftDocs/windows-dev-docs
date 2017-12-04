@@ -9,7 +9,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Bring custom C++ games to UWP on Xbox
 

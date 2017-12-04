@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store submission API, add-ons, in-app products, IAPs
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Get all add-ons

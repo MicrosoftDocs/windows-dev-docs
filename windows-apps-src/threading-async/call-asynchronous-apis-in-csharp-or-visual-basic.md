@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, C#, Visual Basic, asynchronous
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 # Call asynchronous APIs in C# or Visual Basic
 

@@ -10,7 +10,7 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 f1_keywords: ["vs.packagewizard",  "vs.storeassociationwizard"]
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Package a UWP app with Visual Studio

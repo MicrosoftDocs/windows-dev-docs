@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, accessibility, games
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 #  Making games accessible
 

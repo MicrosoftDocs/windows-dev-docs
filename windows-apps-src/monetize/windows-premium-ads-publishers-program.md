@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Windows Premium Ads Publishers Program

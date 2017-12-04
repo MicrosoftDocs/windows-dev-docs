@@ -11,7 +11,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, chaseable tiles, live tiles, chaseable tile notifications
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Chaseable tile notifications

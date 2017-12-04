@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, mesh, directx
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Create and display a basic mesh

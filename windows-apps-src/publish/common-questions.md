@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: high
+ms.localizationpriority: high
 ---
 
 # Common questions about ad campaigns

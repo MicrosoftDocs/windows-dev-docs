@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, games, directx, direct3d 9, direct3d 11, changes
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Important changes from Direct3D 9 to Direct3D 11

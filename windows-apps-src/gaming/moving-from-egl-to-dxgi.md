@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, egl, dxgi, direct3d
-localizationpriority: medium
+ms.localizationpriority: medium
 ---
 
 # Compare EGL code to DXGI and Direct3D
