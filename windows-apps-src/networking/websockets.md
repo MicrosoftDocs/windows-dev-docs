@@ -59,17 +59,6 @@ The example code below uses the WebSocket.org echo server&mdash;a service that e
 ```csharp
 private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
 
-private async Task SendMessageUsingMessageWebSocketAsync(string message)
-{
-    using (var dataWriter = new DataWriter(this.messageWebSocket.OutputStream))
-    {
-        dataWriter.WriteString(message);
-        await dataWriter.StoreAsync();
-        dataWriter.DetachStream();
-    }
-    Debug.WriteLine("Sending message using MessageWebSocket: " + message);
-}
-
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     this.messageWebSocket = new Windows.Networking.Sockets.MessageWebSocket();
@@ -90,6 +79,17 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
         Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
         // Add additional code here to handle exceptions.
     }
+}
+
+private async Task SendMessageUsingMessageWebSocketAsync(string message)
+{
+	using (var dataWriter = new DataWriter(this.messageWebSocket.OutputStream))
+	{
+		dataWriter.WriteString(message);
+		await dataWriter.StoreAsync();
+		dataWriter.DetachStream();
+	}
+	Debug.WriteLine("Sending message using MessageWebSocket: " + message);
 }
 
 private void WebSocket_MessageReceived(Windows.Networking.Sockets.MessageWebSocket sender, Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs args)
@@ -122,25 +122,16 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 #include <ppltasks.h>
 #include <sstream>
 
-    ...
+	...
+	
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+
+	...
 
 private:
 	Windows::Networking::Sockets::MessageWebSocket^ messageWebSocket;
-
-	void SendMessageUsingMessageWebSocketAsync(Platform::String^ message)
-	{
-		auto dataWriter = ref new DataWriter(this->messageWebSocket->OutputStream);
-		dataWriter->WriteString(message);
-
-		Concurrency::create_task(dataWriter->StoreAsync()).then(
-			[=](unsigned int)
-		{
-			dataWriter->DetachStream();
-			std::wstringstream wstringstream;
-			wstringstream << L"Sending message using MessageWebSocket: " << message->Data() << std::endl;
-			::OutputDebugString(wstringstream.str().c_str());
-		});
-	}
 
 protected:
 	virtual void OnNavigatedTo(NavigationEventArgs^ e) override
@@ -158,14 +149,29 @@ protected:
 			auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 			connectTask.then([this] { this->SendMessageUsingMessageWebSocketAsync(L"Hello, World!"); });
 		}
-		catch (Platform::Exception^ exception)
+		catch (Platform::Exception^ ex)
 		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(exception->HResult);
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
 			// Add additional code here to handle exceptions.
 		}
 	}
 
 private:
+	void SendMessageUsingMessageWebSocketAsync(Platform::String^ message)
+	{
+		auto dataWriter = ref new DataWriter(this->messageWebSocket->OutputStream);
+		dataWriter->WriteString(message);
+
+		Concurrency::create_task(dataWriter->StoreAsync()).then(
+			[=](unsigned int)
+		{
+			dataWriter->DetachStream();
+			std::wstringstream wstringstream;
+			wstringstream << L"Sending message using MessageWebSocket: " << message->Data() << std::endl;
+			::OutputDebugString(wstringstream.str().c_str());
+		});
+	}
+
 	void WebSocket_MessageReceived(Windows::Networking::Sockets::MessageWebSocket^ sender, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs^ args)
 	{
 		try
@@ -179,9 +185,9 @@ private:
 			::OutputDebugString(wstringstream.str().c_str());
 			this->messageWebSocket->Close(1000, L"");
 		}
-		catch (Platform::Exception^ exception)
+		catch (Platform::Exception^ ex)
 		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(exception->HResult);
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
 			// Add additional code here to handle exceptions.
 		}
 	}
@@ -216,73 +222,73 @@ The example code below uses the WebSocket.org echo server&mdash;a service that e
 ```csharp
 private Windows.Networking.Sockets.StreamWebSocket streamWebSocket;
 
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+	this.streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
+
+	this.streamWebSocket.Closed += WebSocket_Closed;
+
+	try
+	{
+		Task connectTask = this.streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
+
+		connectTask.ContinueWith(_ =>
+		{
+			Task.Run(() => this.ReceiveMessageUsingStreamWebSocket());
+			Task.Run(() => this.SendMessageUsingStreamWebSocket(new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 }));
+		});
+	}
+	catch (Exception ex)
+	{
+		Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+		// Add code here to handle exceptions.
+	}
+}
+
 private async void ReceiveMessageUsingStreamWebSocket()
 {
-    try
-    {
-        using (var dataReader = new DataReader(this.streamWebSocket.InputStream))
-        {
-            dataReader.InputStreamOptions = InputStreamOptions.Partial;
-            await dataReader.LoadAsync(256);
-            byte[] message = new byte[dataReader.UnconsumedBufferLength];
-            dataReader.ReadBytes(message);
-            Debug.WriteLine("Data received from StreamWebSocket: " + message.Length + " bytes");
-        }
-        this.streamWebSocket.Dispose();
-    }
-    catch (Exception ex)
-    {
-        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
-        // Add code here to handle exceptions.
-    }
+	try
+	{
+		using (var dataReader = new DataReader(this.streamWebSocket.InputStream))
+		{
+			dataReader.InputStreamOptions = InputStreamOptions.Partial;
+			await dataReader.LoadAsync(256);
+			byte[] message = new byte[dataReader.UnconsumedBufferLength];
+			dataReader.ReadBytes(message);
+			Debug.WriteLine("Data received from StreamWebSocket: " + message.Length + " bytes");
+		}
+		this.streamWebSocket.Dispose();
+	}
+	catch (Exception ex)
+	{
+		Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+		// Add code here to handle exceptions.
+	}
 }
 
 private async void SendMessageUsingStreamWebSocket(byte[] message)
 {
-    try
-    {
-        using (var dataWriter = new DataWriter(this.streamWebSocket.OutputStream))
-        {
-            dataWriter.WriteBytes(message);
-            await dataWriter.StoreAsync();
-            dataWriter.DetachStream();
-        }
-        Debug.WriteLine("Sending data using StreamWebSocket: " + message.Length.ToString() + " bytes");
-    }
-    catch (Exception ex)
-    {
-        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
-        // Add code here to handle exceptions.
-    }
-}
-
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    this.streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
-
-    this.streamWebSocket.Closed += WebSocket_Closed;
-
-    try
-    {
-        Task connectTask = this.streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
-
-        connectTask.ContinueWith(_ =>
-        {
-            Task.Run(() => this.ReceiveMessageUsingStreamWebSocket());
-            Task.Run(() => this.SendMessageUsingStreamWebSocket(new byte[] { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 }));
-        });
-    }
-    catch (Exception ex)
-    {
-        Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
-        // Add code here to handle exceptions.
-    }
+	try
+	{
+		using (var dataWriter = new DataWriter(this.streamWebSocket.OutputStream))
+		{
+			dataWriter.WriteBytes(message);
+			await dataWriter.StoreAsync();
+			dataWriter.DetachStream();
+		}
+		Debug.WriteLine("Sending data using StreamWebSocket: " + message.Length.ToString() + " bytes");
+	}
+	catch (Exception ex)
+	{
+		Windows.Web.WebErrorStatus webErrorStatus = Windows.Networking.Sockets.WebSocketError.GetStatus(ex.GetBaseException().HResult);
+		// Add code here to handle exceptions.
+	}
 }
 
 private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Windows.Networking.Sockets.WebSocketClosedEventArgs args)
 {
-    Debug.WriteLine("WebSocket_Closed; Code: " + args.Code + ", Reason: \"" + args.Reason + "\"");
-    // Add additional code here to handle the WebSocket being closed.
+	Debug.WriteLine("WebSocket_Closed; Code: " + args.Code + ", Reason: \"" + args.Reason + "\"");
+	// Add additional code here to handle the WebSocket being closed.
 }
 ```
 
@@ -290,58 +296,16 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 #include <ppltasks.h>
 #include <sstream>
 
-    ...
+	...
+	
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+
+	...
 
 private:
 	Windows::Networking::Sockets::StreamWebSocket^ streamWebSocket;
-
-	void ReceiveMessageUsingStreamWebSocket()
-	{
-		try
-		{
-			DataReader^ dataReader = ref new DataReader(this->streamWebSocket->InputStream);
-			dataReader->InputStreamOptions = InputStreamOptions::Partial;
-
-			Concurrency::create_task(dataReader->LoadAsync(256)).then(
-				[=](Concurrency::task< unsigned int > bytesLoaded) // task< unsigned int > instead of unsigned int in order to handle any exceptions thrown in LoadAsync().
-			{
-				auto message = ref new Platform::Array< byte >(dataReader->UnconsumedBufferLength);
-				dataReader->ReadBytes(message);
-				std::wstringstream wstringstream;
-				wstringstream << L"Data received from StreamWebSocket: " << message->Length << " bytes" << std::endl;
-				::OutputDebugString(wstringstream.str().c_str());
-				this->streamWebSocket->Close(1000, L"");
-			});
-		}
-		catch (Platform::Exception^ exception)
-		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(exception->HResult);
-			// Add additional code here to handle exceptions.
-		}
-	}
-
-	void SendMessageUsingStreamWebSocket(const Platform::Array< byte >^ message)
-	{
-		try
-		{
-			auto dataWriter = ref new DataWriter(this->streamWebSocket->OutputStream);
-			dataWriter->WriteBytes(message);
-
-			Concurrency::create_task(dataWriter->StoreAsync()).then(
-				[=](Concurrency::task< unsigned int >) // task< unsigned int > instead of unsigned int in order to handle any exceptions thrown in StoreAsync().
-			{
-				dataWriter->DetachStream();
-				std::wstringstream wstringstream;
-				wstringstream << L"Sending data using StreamWebSocket: " << message->Length << L" bytes" << std::endl;
-				::OutputDebugString(wstringstream.str().c_str());
-			});
-		}
-		catch (Platform::Exception^ exception)
-		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(exception->HResult);
-			// Add additional code here to handle exceptions.
-		}
-	}
 
 protected:
 	virtual void OnNavigatedTo(NavigationEventArgs^ e) override
@@ -361,14 +325,62 @@ protected:
 				this->SendMessageUsingStreamWebSocket(ref new Platform::Array< byte >{ 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 });
 			});
 		}
-		catch (Platform::Exception^ exception)
+		catch (Platform::Exception^ ex)
 		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(exception->HResult);
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
 			// Add additional code here to handle exceptions.
 		}
 	}
 
 private:
+	void SendMessageUsingStreamWebSocket(const Platform::Array< byte >^ message)
+	{
+		try
+		{
+			auto dataWriter = ref new DataWriter(this->streamWebSocket->OutputStream);
+			dataWriter->WriteBytes(message);
+
+			Concurrency::create_task(dataWriter->StoreAsync()).then(
+				[=](Concurrency::task< unsigned int >) // task< unsigned int > instead of unsigned int in order to handle any exceptions thrown in StoreAsync().
+			{
+				dataWriter->DetachStream();
+				std::wstringstream wstringstream;
+				wstringstream << L"Sending data using StreamWebSocket: " << message->Length << L" bytes" << std::endl;
+				::OutputDebugString(wstringstream.str().c_str());
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+			// Add additional code here to handle exceptions.
+		}
+	}
+
+	void ReceiveMessageUsingStreamWebSocket()
+	{
+		try
+		{
+			DataReader^ dataReader = ref new DataReader(this->streamWebSocket->InputStream);
+			dataReader->InputStreamOptions = InputStreamOptions::Partial;
+
+			Concurrency::create_task(dataReader->LoadAsync(256)).then(
+				[=](unsigned int bytesLoaded)
+			{
+				auto message = ref new Platform::Array< byte >(bytesLoaded);
+				dataReader->ReadBytes(message);
+				std::wstringstream wstringstream;
+				wstringstream << L"Data received from StreamWebSocket: " << message->Length << " bytes" << std::endl;
+				::OutputDebugString(wstringstream.str().c_str());
+				this->streamWebSocket->Close(1000, L"");
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
+			// Add additional code here to handle exceptions.
+		}
+	}
+
 	void WebSocket_Closed(Windows::Networking::Sockets::IWebSocket^ sender, Windows::Networking::Sockets::WebSocketClosedEventArgs^ args)
 	{
 		std::wstringstream wstringstream;
@@ -485,7 +497,13 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 #include <ppltasks.h>
 #include <sstream>
 
-    ...
+	...
+	
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Navigation;
+
+	...
 
 private:
 	Windows::Networking::Sockets::MessageWebSocket^ messageWebSocket;
@@ -543,9 +561,9 @@ protected:
 				}
 			});
 		}
-		catch (Platform::Exception^ exception)
+		catch (Platform::Exception^ ex)
 		{
-			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(exception->HResult);
+			Windows::Web::WebErrorStatus webErrorStatus = Windows::Networking::Sockets::WebSocketError::GetStatus(ex->HResult);
 			// Add additional code here to handle exceptions.
 		}
 	}

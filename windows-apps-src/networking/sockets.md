@@ -183,6 +183,230 @@ private async void StartClient()
 }
 ```
 
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+
+	...
+	
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+
+	...
+
+private:
+	Windows::Networking::Sockets::StreamSocketListener^ streamSocketListener;
+	Windows::Networking::Sockets::StreamSocket^ streamSocket;
+
+protected:
+	virtual void OnNavigatedTo(NavigationEventArgs^ e) override
+	{
+		this->StartServer();
+		this->StartClient();
+	}
+
+private:
+	void StartServer()
+	{
+		try
+		{
+			this->streamSocketListener = ref new Windows::Networking::Sockets::StreamSocketListener();
+
+			// The ConnectionReceived event is raised when connections are received.
+			streamSocketListener->ConnectionReceived += ref new TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener^, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^>(this, &StreamSocketAndListenerPage::StreamSocketListener_ConnectionReceived);
+
+			// Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+			// Every protocol typically has a standard port number. For example, HTTP is typically 80, FTP is 20 and 21, etc.
+			// For this example, we'll choose an arbitrary port number.
+			Concurrency::create_task(streamSocketListener->BindServiceNameAsync(L"1337")).then(
+				[=]
+			{
+				this->serverListBox->Items->Append(L"server is listening...");
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Networking::Sockets::SocketErrorStatus webErrorStatus = Windows::Networking::Sockets::SocketError::GetStatus(ex->HResult);
+			this->serverListBox->Items->Append(webErrorStatus.ToString() != L"Unknown" ? webErrorStatus.ToString() : ex->Message);
+		}
+	}
+
+	void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
+	{
+		try
+		{
+			auto dataReader = ref new DataReader(args->Socket->InputStream);
+
+			Concurrency::create_task(dataReader->LoadAsync(sizeof(unsigned int))).then(
+				[=](unsigned int bytesLoaded)
+			{
+				unsigned int stringLength = dataReader->ReadUInt32();
+				Concurrency::create_task(dataReader->LoadAsync(stringLength)).then(
+					[=](unsigned int bytesLoaded)
+				{
+					Platform::String^ request = dataReader->ReadString(bytesLoaded);
+					this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+						[=]
+					{
+						std::wstringstream wstringstream;
+						wstringstream << L"server received the request: \"" << request->Data() << L"\"";
+						this->serverListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+					}));
+
+					// Echo the request back as the response.
+					auto dataWriter = ref new DataWriter(args->Socket->OutputStream);
+					dataWriter->WriteUInt32(request->Length());
+					dataWriter->WriteString(request);
+					Concurrency::create_task(dataWriter->StoreAsync()).then(
+						[=](unsigned int)
+					{
+						dataWriter->DetachStream();
+
+						this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+							[=]()
+						{
+							std::wstringstream wstringstream;
+							wstringstream << L"server sent back the response: \"" << request->Data() << L"\"";
+							this->serverListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+						}));
+
+						delete this->streamSocketListener;
+						this->streamSocketListener = nullptr;
+
+						this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([=]() {this->serverListBox->Items->Append(L"server closed its socket"); }));
+					});
+				});
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Networking::Sockets::SocketErrorStatus webErrorStatus = Windows::Networking::Sockets::SocketError::GetStatus(ex->HResult);
+			this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([=]() {this->serverListBox->Items->Append(webErrorStatus.ToString() != L"Unknown" ? webErrorStatus.ToString() : ex->Message); }));
+		}
+	}
+
+	void StartClient()
+	{
+		try
+		{
+			// Create the StreamSocket and establish a connection to the echo server.
+			this->streamSocket = ref new Windows::Networking::Sockets::StreamSocket();
+
+			// The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+			auto hostName = ref new Windows::Networking::HostName(L"localhost");
+
+			this->clientListBox->Items->Append(L"client is trying to connect...");
+
+			Concurrency::create_task(this->streamSocket->ConnectAsync(hostName, L"1337")).then(
+				[=](Concurrency::task< void >)
+			{
+				this->clientListBox->Items->Append(L"client connected");
+
+				// Send a request to the echo server.
+				auto dataWriter = ref new DataWriter(this->streamSocket->OutputStream);
+				auto request = ref new Platform::String(L"Hello, World!");
+				dataWriter->WriteUInt32(request->Length());
+				dataWriter->WriteString(request);
+
+				Concurrency::create_task(dataWriter->StoreAsync()).then(
+					[=](Concurrency::task< unsigned int >)
+				{
+					std::wstringstream wstringstream;
+					wstringstream << L"client sent the request: \"" << request->Data() << L"\"";
+					this->clientListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+
+					Concurrency::create_task(dataWriter->FlushAsync()).then(
+						[=](Concurrency::task< bool >)
+					{
+						dataWriter->DetachStream();
+
+						// Read data from the echo server.
+						auto dataReader = ref new DataReader(this->streamSocket->InputStream);
+						Concurrency::create_task(dataReader->LoadAsync(sizeof(unsigned int))).then(
+							[=](unsigned int bytesLoaded)
+						{
+							unsigned int stringLength = dataReader->ReadUInt32();
+							Concurrency::create_task(dataReader->LoadAsync(stringLength)).then(
+								[=](unsigned int bytesLoaded)
+							{
+								Platform::String^ response = dataReader->ReadString(bytesLoaded);
+								this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+									[=]
+								{
+									std::wstringstream wstringstream;
+									wstringstream << L"client received the response: \"" << response->Data() << L"\"";
+									this->clientListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+
+									delete this->streamSocket;
+									this->streamSocket = nullptr;
+
+									this->clientListBox->Items->Append(L"client closed its socket");
+								}));
+							});
+						});
+					});
+				});
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Networking::Sockets::SocketErrorStatus webErrorStatus = Windows::Networking::Sockets::SocketError::GetStatus(ex->HResult);
+			this->serverListBox->Items->Append(webErrorStatus.ToString() != L"Unknown" ? webErrorStatus.ToString() : ex->Message);
+		}
+	}
+```
+
+## References to StreamSockets in C++ PPL continuations
+
+A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live#Windows_Networking_Sockets_StreamSocketListenerConnectionReceivedEventArgs_Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the completion handler of the **LoadAsync** is done executing.
+
+But the Parallel Patterns Library (PPL) doesn't schedule task continuations inline by default. In other words, adding a continuation task (with `task::then()`) doesn't guarantee that the continuation task will execute inline as the completion handler.
+
+```cpp
+void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
+{
+	auto dataReader = ref new DataReader(args->Socket->InputStream);
+	Concurrency::create_task(dataReader->LoadAsync(sizeof(unsigned int))).then(
+		[=](unsigned int bytesLoaded)
+	{
+		// Work in here isn't guaranteed to execute inline as the completion handler of the LoadAsync.
+	});
+}
+```
+
+From the perspective of the **StreamSocket**, the completion handler is done executing (and the socket is eligible for disposal) before the continuation body runs. So, to keep your socket from being disposed if you want to use it inside that continuation, you need to either reference the socket directly (via lambda capture) and use it, or indirectly (by continuing to access `args->Socket` inside continuations), or force continuation tasks to be inline. You can see the first technique (lambda capture) in action in the [StreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620609). The C++ code in the [Build a basic TCP socket client and server](#build-a-basic-tcp-socket-client-and-server) section above uses the second technique&mdash;it echoes the request back as a response, and it accesses `args->Socket` from within one of the innermost continuations.
+
+The third technique is appropriate when you're not echoing a response back. You use the `task_continuation_context::use_synchronous_execution()` option to force PPL to execute the continuation body inline. Here's a code example showing how to do it.
+
+```cpp
+void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
+{
+	auto dataReader = ref new DataReader(args->Socket->InputStream);
+
+	Concurrency::create_task(dataReader->LoadAsync(sizeof(unsigned int))).then(
+		[=](unsigned int bytesLoaded)
+	{
+		unsigned int messageLength = dataReader->ReadUInt32();
+		Concurrency::create_task(dataReader->LoadAsync(messageLength)).then(
+			[=](unsigned int bytesLoaded)
+		{
+			Platform::String^ request = dataReader->ReadString(bytesLoaded);
+			this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+				[=]
+			{
+				std::wstringstream wstringstream;
+				wstringstream << L"server received the request: \"" << request->Data() << L"\"";
+				this->serverListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+			}));
+		});
+	}, Concurrency::task_continuation_context::use_synchronous_execution());
+}
+```
+
+This behavior applies to all of the sockets and WebSockets classes in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace. But client-side scenarios usually store sockets in member variables, so the issue is most applicable to the [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) scenario, as illustrated above.
+
 ## Build a basic UDP socket client and server
 
 A UDP (User Datagram Protocol) socket is similar to a TCP socket in that it also provides low-level network data transfers in either direction. But, while a TCP socket is for long-lived connections, a UDP socket is for applications where an established connection is not required. Because UDP sockets don't maintain connection on both endpoints, they're a fast and simple solution for networking between remote machines. But UDP sockets don't ensure integrity of the network packets nor even whether packets make it to the remote destination at all. So your app will need to be designed to tolerate that. Some examples of applications that use UDP sockets are local network discovery, and local chat clients.
@@ -347,6 +571,160 @@ private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Socke
 }
 ```
 
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+
+	...
+
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+
+	...
+
+private:
+	Windows::Networking::Sockets::DatagramSocket^ clientDatagramSocket;
+	Windows::Networking::Sockets::DatagramSocket^ serverDatagramSocket;
+
+protected:
+	virtual void OnNavigatedTo(NavigationEventArgs^ e) override
+	{
+		this->StartServer();
+		this->StartClient();
+	}
+
+private:
+	void StartServer()
+	{
+		try
+		{
+			this->serverDatagramSocket = ref new Windows::Networking::Sockets::DatagramSocket();
+
+			// The ConnectionReceived event is raised when connections are received.
+			this->serverDatagramSocket->MessageReceived += ref new TypedEventHandler<Windows::Networking::Sockets::DatagramSocket^, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs^>(this, &DatagramSocketPage::ServerDatagramSocket_MessageReceived);
+
+			this->serverListBox->Items->Append(L"server is about to bind...");
+
+			// Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+			Concurrency::create_task(this->serverDatagramSocket->BindServiceNameAsync("1337")).then(
+				[=]
+			{
+				this->serverListBox->Items->Append(L"server is bound to port number 1337");
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Networking::Sockets::SocketErrorStatus webErrorStatus = Windows::Networking::Sockets::SocketError::GetStatus(ex->HResult);
+			this->serverListBox->Items->Append(webErrorStatus.ToString() != L"Unknown" ? webErrorStatus.ToString() : ex->Message);
+		}
+	}
+
+	void ServerDatagramSocket_MessageReceived(Windows::Networking::Sockets::DatagramSocket^ sender, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs^ args)
+	{
+		DataReader^ dataReader = args->GetDataReader();
+		Platform::String^ request = dataReader->ReadString(dataReader->UnconsumedBufferLength);
+		this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+			[=]
+		{
+			std::wstringstream wstringstream;
+			wstringstream << L"server received the request: \"" << request->Data() << L"\"";
+			this->serverListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+		}));
+
+		// Echo the request back as the response.
+		Concurrency::create_task(sender->GetOutputStreamAsync(args->RemoteAddress, "1336")).then(
+			[=](IOutputStream^ outputStream)
+		{
+			auto dataWriter = ref new DataWriter(outputStream);
+			dataWriter->WriteString(request);
+			Concurrency::create_task(dataWriter->StoreAsync()).then(
+				[=](unsigned int)
+			{
+				dataWriter->DetachStream();
+
+				this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+					[=]()
+				{
+					std::wstringstream wstringstream;
+					wstringstream << L"server sent back the response: \"" << request->Data() << L"\"";
+					this->serverListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+
+					delete this->serverDatagramSocket;
+					this->serverDatagramSocket = nullptr;
+
+					this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([=]() {this->serverListBox->Items->Append(L"server closed its socket"); }));
+				}));
+			});
+		});
+	}
+
+	void StartClient()
+	{
+		try
+		{
+			// Create the DatagramSocket and establish a connection to the echo server.
+			this->clientDatagramSocket = ref new Windows::Networking::Sockets::DatagramSocket();
+
+			this->clientDatagramSocket->MessageReceived += ref new TypedEventHandler<Windows::Networking::Sockets::DatagramSocket^, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs^>(this, &DatagramSocketPage::ClientDatagramSocket_MessageReceived);
+
+			// The server hostname that we will be establishing a connection to. In this example, the server and client are in the same process.
+			auto hostName = ref new Windows::Networking::HostName(L"localhost");
+
+			this->clientListBox->Items->Append(L"client is about to bind...");
+
+			Concurrency::create_task(this->clientDatagramSocket->BindServiceNameAsync("1336")).then(
+				[=]
+			{
+				this->clientListBox->Items->Append(L"client is bound to port number 1336");
+			});
+
+			// Send a request to the echo server.
+			auto serverDatagramSocket = ref new Windows::Networking::Sockets::DatagramSocket();
+			Concurrency::create_task(serverDatagramSocket->GetOutputStreamAsync(hostName, "1337")).then(
+				[=](IOutputStream^ outputStream)
+			{
+				auto request = ref new Platform::String(L"Hello, World!");
+				auto dataWriter = ref new DataWriter(outputStream);
+				dataWriter->WriteString(request);
+				Concurrency::create_task(dataWriter->StoreAsync()).then(
+					[=](unsigned int)
+				{
+					dataWriter->DetachStream();
+					std::wstringstream wstringstream;
+					wstringstream << L"client sent the request: \"" << request->Data() << L"\"";
+					this->clientListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+				});
+
+			});
+		}
+		catch (Platform::Exception^ ex)
+		{
+			Windows::Networking::Sockets::SocketErrorStatus webErrorStatus = Windows::Networking::Sockets::SocketError::GetStatus(ex->HResult);
+			this->serverListBox->Items->Append(webErrorStatus.ToString() != L"Unknown" ? webErrorStatus.ToString() : ex->Message);
+		}
+	}
+
+	void ClientDatagramSocket_MessageReceived(Windows::Networking::Sockets::DatagramSocket^ sender, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs^ args)
+	{
+		DataReader^ dataReader = args->GetDataReader();
+		Platform::String^ response = dataReader->ReadString(dataReader->UnconsumedBufferLength);
+		this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler(
+			[=]
+		{
+			std::wstringstream wstringstream;
+			wstringstream << L"client received the response: \"" << response->Data() << L"\"";
+			this->clientListBox->Items->Append(ref new Platform::String(wstringstream.str().c_str()));
+		}));
+
+		delete this->clientDatagramSocket;
+		this->clientDatagramSocket = nullptr;
+
+		this->Dispatcher->RunAsync(CoreDispatcherPriority::Normal, ref new DispatchedHandler([=]() {this->clientListBox->Items->Append(L"client closed its socket"); }));
+	}
+```
+
 ## Background operations and the socket broker
 
 You can use the socket broker, and control channel triggers, to ensure that your app properly receives connections or data on sockets while it's not in the foreground. For more info, see [Network communications in the background](network-communications-in-the-background.md).
@@ -369,6 +747,8 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 	var streamSocket = new Windows.Networking.Sockets.StreamSocket();
 	await streamSocket.ConnectAsync(new Windows.Networking.HostName("localhost"), "1337");
 	this.SendMultipleBuffersInefficiently(streamSocket, "Hello, World!");
+	//this.BatchedSendsCSharpOnly(streamSocket, "Hello, World!");
+	//this.BatchedSendsAnyUWPLanguage(streamSocket, "Hello, World!");
 }
 
 private async void StreamSocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, Windows.Networking.Sockets.StreamSocketListenerConnectionReceivedEventArgs args)
@@ -400,7 +780,78 @@ private async void SendMultipleBuffersInefficiently(Windows.Networking.Sockets.S
 }
 ```
 
-This first example of a more efficient technique is only appropriate if you're using C#. Replace `SendMultipleBuffersInefficiently` with `BatchedSendsCSharpOnly`.
+```cpp
+#include <ppltasks.h>
+#include <sstream>
+
+	...
+
+using namespace Windows::Foundation;
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Core;
+using namespace Windows::UI::Xaml::Navigation;
+
+	...
+
+private:
+	Windows::Networking::Sockets::StreamSocketListener^ streamSocketListener;
+	Windows::Networking::Sockets::StreamSocket^ streamSocket;
+
+protected:
+	virtual void OnNavigatedTo(NavigationEventArgs^ e) override
+	{
+		this->streamSocketListener = ref new Windows::Networking::Sockets::StreamSocketListener();
+		streamSocketListener->ConnectionReceived += ref new TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener^, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^>(this, &BatchedSendsPage::StreamSocketListener_ConnectionReceived);
+		Concurrency::create_task(this->streamSocketListener->BindServiceNameAsync(L"1337")).then(
+			[=]
+		{
+			this->streamSocket = ref new Windows::Networking::Sockets::StreamSocket();
+			Concurrency::create_task(this->streamSocket->ConnectAsync(ref new Windows::Networking::HostName(L"localhost"), L"1337")).then(
+				[=](Concurrency::task< void >)
+			{
+				this->SendMultipleBuffersInefficiently(L"Hello, World!");
+				// this->BatchedSendsAnyUWPLanguage(L"Hello, World!");
+			}, Concurrency::task_continuation_context::use_synchronous_execution());
+		});
+	}
+
+private:
+	void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::StreamSocketListener^ sender, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs^ args)
+	{
+		auto dataReader = ref new DataReader(args->Socket->InputStream);
+		dataReader->InputStreamOptions = Windows::Storage::Streams::InputStreamOptions::Partial;
+		this->ReceiveStringRecurse(dataReader, args->Socket);
+	}
+
+	void ReceiveStringRecurse(DataReader^ dataReader, Windows::Networking::Sockets::StreamSocket^ streamSocket)
+	{
+		Concurrency::create_task(dataReader->LoadAsync(256)).then(
+			[this, dataReader, streamSocket](unsigned int bytesLoaded)
+		{
+			if (bytesLoaded == 0) return;
+			Platform::String^ message = dataReader->ReadString(bytesLoaded);
+			::OutputDebugString(message->Data());
+			this->ReceiveStringRecurse(dataReader, streamSocket);
+		});
+	}
+
+	// This implementation incurs kernel transition overhead for each packet written.
+	void SendMultipleBuffersInefficiently(Platform::String^ message)
+	{
+		std::vector< IBuffer^ > packetsToSend{};
+		for (unsigned int count = 0; count < 5; ++count)
+		{
+			packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+		}
+
+		for (auto element : packetsToSend)
+		{
+			Concurrency::create_task(this->streamSocket->OutputStream->WriteAsync(element)).wait();
+		}
+	}
+```
+
+This first example of a more efficient technique is only appropriate if you're using C#. Change `OnNavigatedTo` to call `BatchedSendsCSharpOnly` instead of `SendMultipleBuffersInefficiently`.
 
 ```csharp
 // A C#-only technique for batched sends.
@@ -413,7 +864,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 
 	for (int index = 0; index < packetsToSend.Count; ++index)
 	{
-		// track all pending writes as tasks, but dont wait on one before beginning the next.
+		// track all pending writes as tasks, but don't wait on one before beginning the next.
 		pendingTasks[index] = streamSocket.OutputStream.WriteAsync(packetsToSend[index]).AsTask();
 		// Don't modify any buffer's contents until the pending writes are complete.
 	}
@@ -444,6 +895,30 @@ private async void BatchedSendsAnyUWPLanguage(Windows.Networking.Sockets.StreamS
 	// Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
 	await streamSocket.OutputStream.FlushAsync();
 }
+```
+
+```cpp
+private:
+	// An implementation of batched sends suitable for any UWP language.
+	void BatchedSendsAnyUWPLanguage(Platform::String^ message)
+	{
+		std::vector< IBuffer^ > packetsToSend{};
+		std::vector< IAsyncOperationWithProgress< unsigned int, unsigned int >^ >pendingWrites{};
+		for (unsigned int count = 0; count < 5; ++count)
+		{
+			packetsToSend.push_back(Windows::Security::Cryptography::CryptographicBuffer::ConvertStringToBinary(message, Windows::Security::Cryptography::BinaryStringEncoding::Utf8));
+		}
+
+		for (auto element : packetsToSend)
+		{
+			// track all pending writes as tasks, but don't wait on one before beginning the next.
+			pendingWrites.push_back(this->streamSocket->OutputStream->WriteAsync(element));
+			// Don't modify any buffer's contents until the pending writes are complete.
+		}
+
+		// Wait for all of the pending writes to complete. This step enables batched sends on the output stream.
+		Concurrency::create_task(this->streamSocket->OutputStream->FlushAsync());
+	}
 ```
 
 There are some important limitations imposed by using batched sends in your code.
@@ -499,6 +974,7 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor
 * [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl?branch=live#Windows_Networking_Sockets_DatagramSocketControl_MulticastOnly)
 * [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
 * [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live#Windows_Networking_Sockets_DatagramSocketMessageReceivedEventArgs_GetDataReader)
+* [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_)
 * [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync)
 * [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_)
 * [SocketErrorStatus](/uwp/api/windows.networking.sockets.socketerrorstatus?branch=live)
