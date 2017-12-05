@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
@@ -56,7 +56,7 @@ You can click **Schedule a price change again** to schedule as many subsequent c
 
 ## Customize pricing for specific markets
 
-By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, select **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the Markets section, those markets won't be shown here. 
+By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, select **Customize for specific markets**. The **Market selection** pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the **Markets** section, those markets won't be shown here. 
 
 > [!IMPORTANT]
 > Customers on Windows 8 will always see the app at its **Base price**, even if you select a different price for their market.

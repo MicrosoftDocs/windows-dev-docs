@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 
 With Windows 10, the graphics diagnostic tools are now available from within Windows as an optional feature. To use the graphics diagnostic features provided in the runtime and Visual Studio to develop DirectX apps or games, install the optional Graphics Tools feature:
 
-1.  Go to **Settings**, select **System**, select **Apps & Features**, and then click **Manage optional features**.
+1.  Go to **Settings**, select **Apps**, and then click **Manage optional features**.
 2.  Click **Add a feature**   
 3.  In the **Optional features** list, select **Graphics Tools** and then click **Install**.
 
