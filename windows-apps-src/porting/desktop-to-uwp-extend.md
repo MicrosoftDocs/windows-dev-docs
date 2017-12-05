@@ -4,7 +4,7 @@ Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Extend your desktop application with Windows UIs and components
 ms.author: normesta
-ms.date: 07/08/2017
+ms.date: 11/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Extend your desktop application with modern UWP components
 
-Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP component.
+Some Windows 10 experiences (For example: a touch-enabled UI page) must run inside of a modern app container . If you want to add these experiences, extend your desktop application with UWP projects and Windows Runtime Components.
 
 In many cases you can call UWP APIs directly from your desktop application, so before you review this guide, see [Enhance for Windows 10](desktop-to-uwp-enhance.md).
 
@@ -22,6 +22,50 @@ In many cases you can call UWP APIs directly from your desktop application, so b
 >This guide assumes that you've created a Windows app package for your desktop application by using the Desktop Bridge. If you haven't yet done this, see [Desktop Bridge](desktop-to-uwp-root.md).
 
 If you're ready, let's start.
+
+## First, setup your Solution
+
+Add one or more UWP projects and runtime components to your solution.
+
+Start with a solution that contains a **Windows Application Packaging Project** with a reference to your desktop application.
+
+This image shows an example solution.
+
+![Extend start project](images\desktop-to-uwp\extend-start-project.png)
+
+If your solution doesn't contain a packaging project, see [Package your app by using Visual Studio](desktop-to-uwp-packaging-dot-net.md).
+
+### Add a UWP project
+
+Add a **Blank App (Universal Windows)** to your solution.
+
+This is where you'll build a modern XAML UI or use APIs that run only within a UWP process.
+
+![UWP project](images\desktop-to-uwp\add-uwp-project-to-solution.png)
+
+In your packaging project, right-click the **Applications** node, and then click **Add Reference**.
+
+![Reference UWP Project](images\desktop-to-uwp\add-uwp-project-reference.png)
+
+Then, add a reference the UWP project.
+
+![Reference UWP Project](images\desktop-to-uwp\choose-uwp-project.png)
+
+Your solution will look something like this:
+
+![Solution with UWP project](images\desktop-to-uwp\uwp-project-reference.png)
+
+### (Optional) Add a Windows Runtime Component
+
+To accomplish some scenarios, you'll have to add code to a Windows Runtime Component.
+
+![runtime component app service](images\desktop-to-uwp\add-runtime-component.png)
+
+Then, from your UWP project, add a reference to the runtime component. Your solution will look something like this:
+
+![Runtime Component Reference](images\desktop-to-uwp\runtime-component-reference.png)
+
+Let's take a look at a few things you can do with your UWP projects and runtime components.
 
 ## Show a modern XAML UI
 
@@ -45,23 +89,16 @@ This image shows a VB6 application that opens a XAML-based modern UI that contai
 
 To show a XAML-based UI, do these things:
 
-:one: [Add a UWP project to your solution](#project)
+:one: [Add a protocol extension to that project](#protocol)
 
-:two: [Add a protocol extension to that project](#protocol)
+:two: [Start the UWP app from your desktop app](#start)
 
-:three: [Start the UWP app from your desktop app](#start)
-
-:four: [In the UWP project, show the page that you want](#parse)
-
-<a id="project" />
-### Add a UWP project
-
-Add a **Blank App (Universal Windows)** project to your solution.
+:three: [In the UWP project, show the page that you want](#parse)
 
 <a id="protocol" />
 ### Add a protocol extension
 
-In **Solution Explorer**, open the **package.appxmanifest** file of the project and add the extension.
+In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution, and add this extension.
 
 ```xml
 <Extensions>
@@ -88,7 +125,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 <a id="start" />
 ### Start the UWP app
 
-First, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method.
+First, from your desktop application, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method.
 
 Here's a basic example in C#.
 
@@ -196,43 +233,16 @@ Here's a sample that does this.
 
 To show provide a service, do these things:
 
-:one: [Add a Windows Runtime Component](#component)
+:one: [Implement the app service](#appservice)
 
 :two: [Add an app service extension](#extension)
 
-:three: [Implement the app service](#appservice)
-
-:four: [Test the app service](#test)
-
-<a id="component" />
-
-### Add a Windows Runtime component
-
-Add a **Windows Runtime Component (Universal Windows)** project to your solution.
-
-Then, reference the project of that runtime component from your UWP packaging project.
-
-<a id="extension" />
-### Add an app service extension
-
-In **Solution Explorer**, open the **package.appxmanifest** file of your packaging project and add an app service extension.
-
-```xml
-<Extensions>
-      <uap:Extension
-          Category="windows.appService"
-          EntryPoint="MyAppService.AppServiceTask">
-        <uap:AppService Name="com.microsoft.samples.winforms" />
-      </uap:Extension>
-    </Extensions>    
-```
-
-Give the app service a name and provide the name of the entry point class. This is the class that you'll use to implement your app service.
+:three: [Test the app service](#test)
 
 <a id="appservice" />
 ### Implement the app service
 
-Here's where you'll validate and handle requests from other apps.
+Here's where you'll validate and handle requests from other apps. Add this code to a Windows Runtime Component in your solution.
 
 ```csharp
 public sealed class AppServiceTask : IBackgroundTask
@@ -270,10 +280,30 @@ public sealed class AppServiceTask : IBackgroundTask
 }
 ```
 
+<a id="extension" />
+
+### Add an app service extension to the UWP project
+
+Open the **package.appxmanifest** file of the UWP project, and add an app service extension to the ``<Application>`` element.
+
+```xml
+<Extensions>
+      <uap:Extension
+          Category="windows.appService"
+          EntryPoint="AppServiceComponent.AppServiceTask">
+        <uap:AppService Name="com.microsoft.samples.winforms" />
+      </uap:Extension>
+    </Extensions>    
+```
+Give the app service a name and provide the name of the entry point class. This is the class in which you implemented the service.
+
 <a id="test" />
 ### Test the app service
 
-Test your service by calling it from another app.
+Test your service by calling it from another app. This code can be a desktop application such as a Windows forms app or another UWP app.
+
+>[!NOTE]
+> This code only works if you properly set the ``PackageFamilyName`` property of the ``AppServiceConnection`` class. You can get that name by calling ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` in the context of the UWP project. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
 
 ```csharp
 private async void button_Click(object sender, RoutedEventArgs e)
@@ -289,7 +319,6 @@ private async void button_Click(object sender, RoutedEventArgs e)
         var message = new ValueSet();
         message.Add("ID", id);
         AppServiceResponse response = await dataService.SendMessageAsync(message);
-        string result = "";
  
         if (response.Status == AppServiceResponseStatus.Success)
         {
@@ -333,21 +362,14 @@ For example, users could choose your app to share pictures from Microsoft Edge, 
 
 To make your application a share target, do these things:
 
-:one: [Add a UWP project to your solution](#project2)
+:one: [Add a share target extension](#share-extension)
 
-:two: [Add a share target extension](#share-extension)
-
-:three: [Override the OnNavigatedTo event handler](#override)
-
-<a id="project2" />
-### Add a UWP project to your solution
-
-Add a **Blank App (Universal Windows)** project to your solution.
+:two: [Override the OnNavigatedTo event handler](#override)
 
 <a id="share-extension" />
 ### Add a share target extension
 
-In **Solution Explorer**, open the **package.appxmanifest** file of the project and add the extension.
+In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution and add the extension.
 
 ```xml
 <Extensions>
@@ -391,6 +413,113 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
+## Create a background task
+
+You add a background task to run code even when the app is suspended. Background tasks are great for small tasks that don't require the user interaction. For example, your task can download mail, show a toast notification about an incoming chat message, or react to a change in a system condition.
+
+Here's a WPF sample app that registers a background task.
+
+![background task](images\desktop-to-uwp\sample-background-task.png)
+
+The task makes an http request and measures the time that it takes for the request to return a response. Your tasks will likely be much more interesting, but this sample is great for learning the basic mechanics of a background task.
+
+### Have a closer look at this app
+
+:heavy_check_mark: [Browse the code](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)
+
+### The design pattern
+
+To create a background service, do these things:
+
+:one: [Implement the background task](#implement-task)
+
+:two: [Configure the background task](#configure-background-task)
+
+:three: [Register the background task](#register-background-task)
+
+<a id="implement-task" />
+### Implement the background task
+
+Implement the background task by adding code to a Windows Runtime component project.
+
+```csharp
+public sealed class SiteVerifier : IBackgroundTask
+{
+    public async void Run(IBackgroundTaskInstance taskInstance)
+    {
+
+        taskInstance.Canceled += TaskInstance_Canceled;
+        BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
+        var msg = await MeasureRequestTime();
+        ShowToast(msg);
+        deferral.Complete();
+    }
+
+    private async Task<string> MeasureRequestTime()
+    {
+        string msg;
+        try
+        {
+            var url = ApplicationData.Current.LocalSettings.Values["UrlToVerify"] as string;
+            var http = new HttpClient();
+            Stopwatch clock = Stopwatch.StartNew();
+            var response = await http.GetAsync(new Uri(url));
+            response.EnsureSuccessStatusCode();
+            var elapsed = clock.ElapsedMilliseconds;
+            clock.Stop();
+            msg = $"{url} took {elapsed.ToString()} ms";
+        }
+        catch (Exception ex)
+        {
+            msg = ex.Message;
+        }
+        return msg;
+    }
+```
+
+<a id="configure-background-task" />
+### Configure the background task
+
+In the manifest designer, open the **package.appxmanifest** file of the UWP project in your solution.
+
+In the **Declarations** tab, add a **Background Tasks** declaration.
+
+![Background task option](images\desktop-to-uwp\background-task-option.png)
+
+Then, choose the desired properties. Our sample uses the **Timer** property.
+
+![Timer property](images\desktop-to-uwp\timer-property.png)
+
+Provide the fully qualified name of the class in your Windows Runtime Component that implements the background task.
+
+![Timer property](images\desktop-to-uwp\background-task-entry-point.png)
+
+<a id="register-background-task" />
+### Register the background task
+
+Add code to your desktop application project that registers the background task.
+
+```csharp
+public void RegisterBackgroundTask(String triggerName)
+{
+    var current = BackgroundTaskRegistration.AllTasks
+        .Where(b => b.Value.Name == triggerName).FirstOrDefault().Value;
+
+    if (current is null)
+    {
+        BackgroundTaskBuilder builder = new BackgroundTaskBuilder();
+        builder.Name = triggerName;
+        builder.SetTrigger(new MaintenanceTrigger(15, false));
+        builder.TaskEntryPoint = "HttpPing.SiteVerifier";
+        builder.Register();
+        System.Diagnostics.Debug.WriteLine("BGTask registered:" + triggerName);
+    }
+    else
+    {
+        System.Diagnostics.Debug.WriteLine("Task already:" + triggerName);
+    }
+}
+```
 ## Support and feedback
 
 **Find answers to your questions**
