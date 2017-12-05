@@ -4,7 +4,7 @@ Description: If your app displays ads using the Microsoft Advertising SDK, use t
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -145,7 +145,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 <span id="coppa" />
 ## COPPA compliance
 
-When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the dashboard page if the selected app for the ad unit has at least one completed or in-progress submission.
+When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the dashboard page if the selected app for the ad unit has at least one submission that has reached the [in the Store](../publish/the-app-certification-process.md#in-the-store) step in the app certification process.
 
 For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must select **This application is directed at children under the age of 13** in this section if your app is directed at children under the age of 13. If you select this option, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app.
 
