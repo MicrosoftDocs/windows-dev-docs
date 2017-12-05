@@ -16,11 +16,11 @@ ms.localizationpriority: medium
 
 This article shows you how to use extended execution to postpone when your app is suspended so that it can run while minimized or under the lock screen.
 
-When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md).
+When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md). 
 
-There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time. The amount of time you may get to perform background execution may be several minutes but you must be prepared to handle the session being revoked at any time.
-
-Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**. Only one **ExtendedExecutionSession** can be requested at any time; attempting to create another session while one is currently active will cause an exception to be thrown from the **ExtendedExecutionSession** constructor. Do not use [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) and [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx); they require restricted capabilities and are not available for use in Store applications.
+There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time. The amount of time you may get to perform background execution may be several minutes but you must be prepared to handle the session being revoked at any time. These application lifecycle time constraints are disabled while the app is running under a debugger. For this reason it is important to test Extended Execution and other tools for postponing app suspension while not running under a debugger or by using the Lifecycle Events available in Visual Studio. 
+ 
+Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**. Only one **ExtendedExecutionSession** can be requested at any time; attempting to create another session while an approved session request is currently active will cause exception 0x8007139F to be thrown from the **ExtendedExecutionSession** constructor stating that the group or resource is not in the correct state to perform the requested operation. Do not use [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) and [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx); they require restricted capabilities and are not available for use in Store applications.
 
 ## Run while minimized
 
@@ -72,11 +72,11 @@ switch (result)
 ```
 [See code sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
-Calling **RequestExtensionAsync** checks with the operating system to see if the user has approved background activity for the app and whether the system has the available resources to enable background execution.
+Calling **RequestExtensionAsync** checks with the operating system to see if the user has approved background activity for the app and whether the system has the available resources to enable background execution. Only one session will be approved for an app at any time, causing additional calls to **RequestExtensionAsync** to result in the session being denied.
 
 You can check the [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) beforehand to determine the [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396), which is the user setting that indicates whether your app can run in the background or not. To learn more about these user settings see [Background Activity and Energy Awareness](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97).
 
-The **ExtendedExecutionReason** indicates the operation your app is performing in the background. The **Description** string is a human-readable string that explains why your app needs to perform the operation. The **Revoked** event handler is required so that an extended execution session can halt gracefully if the user, or the system, decides that the app can no longer run in the background.
+The **ExtendedExecutionReason** indicates the operation your app is performing in the background. The **Description** string is a human-readable string that explains why your app needs to perform the operation. This string is not presented to the user, but may be made available in a future release of Windows. The **Revoked** event handler is required so that an extended execution session can halt gracefully if the user, or the system, decides that the app can no longer run in the background.
 
 ### Revoked
 
@@ -133,7 +133,7 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
 
 An app can only have one **ExtendedExecutionSession** active at a time. Many apps use asynchronous tasks in order to complete complex operations that require access to resources such as storage, network, or network-based services. If an operation requires multiple asynchronous tasks to complete, then the state of each of these tasks must be accounted for before disposing the **ExtendedExecutionSession** and allowing the app to be suspended. This requires reference counting the number of tasks that are still running, and not disposing of the session until that value reaches zero.
 
-Here is some example code for managing multiple tasks during an extended execution session period:
+Here is some example code for managing multiple tasks during an extended execution session period. For more information on how to use this in your app please see the code sample linked below:
 
 ```cs
 static class ExtendedExecutionHelper
@@ -156,15 +156,17 @@ static class ExtendedExecutionHelper
         }
     }
 
-    public static async Task<ExtendedExecutionResult> RequestSessionAsync(ExtendedExecutionReason reason, TypedEventHandler<object, ExtendedExecutionRevokedEventArgs> revoked)
+    public static async Task<ExtendedExecutionResult> RequestSessionAsync(ExtendedExecutionReason reason, TypedEventHandler<object, ExtendedExecutionRevokedEventArgs> revoked, String description)
     {
         // The previous Extended Execution must be closed before a new one can be requested.       
         ClearSession();
 
         var newSession = new ExtendedExecutionSession();
-        newSession.Reason = ExtendedExecutionReason.Unspecified;
+        newSession.Reason = reason;
+        newSession.Description = description;
         newSession.Revoked += SessionRevoked;
 
+        // Add a revoked handler provided by the app in order to clean up an operation that had to be halted prematurely
         if(revoked != null)
         {
             newSession.Revoked += revoked;
@@ -213,7 +215,9 @@ static class ExtendedExecutionHelper
         {
             taskCount--;
         }
-        else if (taskCount == 0 && session != null)
+        
+        //If there are no more running tasks than end the extended lifetime by clearing the session
+        if (taskCount == 0 && session != null)
         {
             ClearSession();
         }
@@ -221,11 +225,14 @@ static class ExtendedExecutionHelper
 
     private static void SessionRevoked(object sender, ExtendedExecutionRevokedEventArgs args)
     {
+        //The session has been prematurely revoked due to system constraints, ensure the session is disposed
         if (session != null)
         {
             session.Dispose();
             session = null;
         }
+        
+        taskCount = 0;
     }
 }
 ```
