@@ -4,7 +4,7 @@ Description: Product declarations help make sure your app is displayed appropria
 title: Product declarations
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
-ms.date: 11/22/2017
+ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -43,9 +43,9 @@ For more info, see [Accessibility](../design/accessibility/accessibility.md), [A
 
 ## Customers can install this app to alternate drives or removable storage.
 
-This box is checked by default, to allow customers to install your app to removable storage media such as an SD card, or to a non-system volume drive such as an external drive. (For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.)
+This box is checked by default, to allow customers to install your app to external or removable storage media such as an SD card, or to a non-system volume drive such as an external drive. (For Windows Phone 8.1, this was previously indicated via StoreManifest.xml.)
 
-If you want to prevent your app from being installed to alternate drives or removable storage, uncheck this box.
+If you want to prevent your app from being installed to alternate drives or removable storage, and only allow installation to the internal hard drive on their device, uncheck this box.
 
 Note that there is no option to restrict installation so that an app can *only* be installed to removable storage media.
 

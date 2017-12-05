@@ -952,6 +952,27 @@ if (certificates.Count > 0)
 }
 ```
 
+```cpp
+// For this code to work, you need at least one certificate to be present in the user MY certificate store.
+// Plugging a smartcard into a smartcard reader connected to your PC will achieve that.
+// Also, your project needs to declare the sharedUserCertificates app capability.
+auto certificateQuery = ref new Windows::Security::Cryptography::Certificates::CertificateQuery();
+certificateQuery->StoreName = L"MY";
+Concurrency::create_task(Windows::Security::Cryptography::Certificates::CertificateStores::FindAllAsync(certificateQuery)).then(
+	[=](IVectorView< Windows::Security::Cryptography::Certificates::Certificate^ >^ certificates)
+{
+	if (certificates->Size > 0)
+	{
+		this->streamSocket->Control->ClientCertificate = certificates->GetAt(0);
+		Concurrency::create_task(this->streamSocket->ConnectAsync(ref new Windows::Networking::HostName(L"localhost"), L"1337", Windows::Networking::Sockets::SocketProtectionLevel::Tls12)).then(
+			[=]
+		{
+			...
+		});
+	}
+});
+```
+
 ## Handling exceptions
 
 An error encountered on a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) operation is returned as an **HRESULT** value. You can pass that **HRESULT** value to the [**SocketError.GetStatus**](/uwp/api/Windows.Networking.Sockets.SocketError?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_) method to convert it into a [**SocketErrorStatus**](/uwp/api/Windows.Web.SocketErrorStatus) enumeration value.

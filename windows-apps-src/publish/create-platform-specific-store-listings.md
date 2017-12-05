@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
 title: Create platform-specific Store listings
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -43,7 +43,7 @@ After you click **Continue**, your **Store listing** page will now include a sec
 > [!IMPORTANT]
 > The [Shared fields](create-app-store-listings.md#shared-fields) of the Store listing can't be customized for different OS versions.
 > 
-> Additionally, because some of the fields in the default [Store listing] page only apply to customers on Windows 10, you won't see all of the same options when creating a platform-specific Store listing. For example, you can't add trailers to a platform-specific Store listing, because trailers are only shown to customers on Windows 10, version 1607 or later. 
+> Additionally, because some of the fields in the default [Store listing](create-app-store-listings.md) page only apply to customers on Windows 10, you won't see all of the same options when creating a platform-specific Store listing. For example, you can't add trailers to a platform-specific Store listing, because trailers are only shown to customers on Windows 10, version 1607 or later. 
 
 
 ## Removing a platform-specific Store listing
