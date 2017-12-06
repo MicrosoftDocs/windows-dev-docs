@@ -22,7 +22,7 @@ Before you can send targeted push notifications to your customers from Dev Cente
 
 Before you write any code, follow these steps to add a reference to the Microsoft Store Services SDK in your project:
 
-1. If you have not done so already, [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) on your development computer. In addition to the API for registering an app to receive notifications, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads.
+1. If you have not done so already, [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk) on your development computer. 
 2. Open your project in Visual Studio.
 3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
 4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
