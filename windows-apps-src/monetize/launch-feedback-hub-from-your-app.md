@@ -25,7 +25,7 @@ To launch Feedback Hub from your app, use an API that is provided by the [Micros
 
 To launch Feedback Hub from your app:
 
-1. [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). In addition to the API for launching Feedback Hub, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads.
+1. [Install the Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk).
 2. Open your project in Visual Studio.
 3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
 4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.

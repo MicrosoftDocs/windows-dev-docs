@@ -8,7 +8,7 @@ template: detail.hbs
 isNew: true
 keywords: Xbox, TV, 10-foot experience, gamepad, remote control, input, interaction
 ms.author: elcowle
-ms.date: 09/27/2017
+ms.date: 12/5/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -866,7 +866,7 @@ You would put the previous code snippet in either the page or app resources, and
 
 ## Colors
 
-By default, the Universal Windows Platform doesn't do anything to alter your app's colors. That said, there are improvements that you can make to the set of colors your app uses to improve the visual experience on TV.
+By default, the Universal Windows Platform scales your app's colors to the TV-safe range (see [TV-safe colors](#tv-safe-colors) for more information) so that your app looks good on any TV. In addition, there are improvements that you can make to the set of colors your app uses to improve the visual experience on TV.
 
 ### Application theme
 
@@ -885,9 +885,8 @@ On Xbox One, the user is able to select a user color, just as they can select an
 As long as your app calls these accent colors through brushes or color resources, the color that the user selected in the system settings will be used. Note that accent colors on Xbox One are per user, not per system.
 
 Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices.
-This is partly due to the fact that these colors are hand-picked to make for the best 10-foot experience on Xbox One, following the same methodologies and strategies explained in this article.
 
-As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API, those colors are replaced with accent colors appropriate for TV. High contrast brush colors are also pulled in from the system the same way as on a PC and phone, but with TV-appropriate colors.
+As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API, those colors are replaced with accent colors available on Xbox One. High contrast brush colors are also pulled in from the system the same way as on a PC and phone.
 
 To learn more about accent color in general, see [Accent color](../style/color.md#accent-color).
 
@@ -897,122 +896,16 @@ When designing for TV, note that colors display quite differently depending on t
 
 ### TV-safe colors
 
-A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well; therefore, you should avoid using these colors when designing for the 10-foot experience. They can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors).
+A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well&mdash;they can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors). While there are different schools of thought in what are considered TV-safe colors, colors within the RGB values of 16-235 (or 10-EB in hexadecimal) are generally safe to use for TV.
 
-While there are different schools of thought in what are considered TV-safe colors, colors within the RGB values of 16-235 (or 10-EB in hexadecimal) are generally safe to use for TV.
+![TV-safe color range](images/designing-for-tv/tv-safe-colors-2.png)
 
-![TV-safe color range](images/designing-for-tv/tv-safe-colors.png)
+Historically, apps on Xbox had to tailor their colors to fall within this "TV-safe" color range; however, starting with the Fall Creators Update, Xbox One automatically scales full range content into the TV-safe range. This means that most app developers no longer have to worry about TV-safe colors.
 
-### Fixing TV-unsafe colors
+> [!IMPORTANT]
+> Video content that's already in the TV-safe color range doesn't have this color scaling effect applied when played back using [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197).
 
-Fixing TV-unsafe colors individually by adjusting their RGB values to be within the TV-safe range is typically referred to as **color clamping**. This method may be appropriate for an app that doesn't use a rich color palette. However, fixing colors using only this method may cause colors to collide with each other, which doesn't provide for the best 10-foot experience.
-
-To optimize your color palette for TV, we recommend that you first ensure that your colors are TV-safe through a method such as color clamping, then use a method called **scaling**.
-
-This involves scaling all of your colors' RGB values by a certain factor to get them within the TV-safe range. Scaling all of your app's colors helps prevent color collision and makes for a better 10-foot experience.
-
-![Clamping vs. scaling](images/designing-for-tv/clamping-vs-scaling.png)
-
-### Assets
-
-When making changes to colors, make sure to also update assets accordingly. If your app uses a color in XAML that is supposed to look the same as an asset color, but you only update the XAML code, your assets will look off-color.
-
-### UWP color sample
-
-[UWP color themes](../style/color.md) are designed around the app's background being either **black** for the dark theme or **white** for the light theme. Because neither black nor white are TV-safe, these colors needed to be fixed by using *clamping*. After they were fixed, all the other colors needed to be adjusted through *scaling* to retain the necessary contrast.
-
-<!--[v-lcap to eliot]why is the above paragraph in the past tense?-->
-<!--[elcowle] Because this is something that Microsoft had to do to the UWP color themes to accommodate TV-safe colors for Xbox. These themes are then provided in the below code sample.-->
-
-The following sample code provides a color theme that has been optimized for TV use:
-
-```xml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"
-                                 Color="#FF101010"/>
-                <Color x:Key="SystemAltHighColor">#FF101010</Color>
-                <Color x:Key="SystemAltLowColor">#33101010</Color>
-                <Color x:Key="SystemAltMediumColor">#99101010</Color>
-                <Color x:Key="SystemAltMediumHighColor">#CC101010</Color>
-                <Color x:Key="SystemAltMediumLowColor">#66101010</Color>
-                <Color x:Key="SystemBaseHighColor">#FFEBEBEB</Color>
-                <Color x:Key="SystemBaseLowColor">#33EBEBEB</Color>
-                <Color x:Key="SystemBaseMediumColor">#99EBEBEB</Color>
-                <Color x:Key="SystemBaseMediumHighColor">#CCEBEBEB</Color>
-                <Color x:Key="SystemBaseMediumLowColor">#66EBEBEB</Color>
-                <Color x:Key="SystemChromeAltLowColor">#FFDDDDDD</Color>
-                <Color x:Key="SystemChromeBlackHighColor">#FF101010</Color>
-                <Color x:Key="SystemChromeBlackLowColor">#33101010</Color>
-                <Color x:Key="SystemChromeBlackMediumLowColor">#66101010</Color>
-                <Color x:Key="SystemChromeBlackMediumColor">#CC101010</Color>
-                <Color x:Key="SystemChromeDisabledHighColor">#FF333333</Color>
-                <Color x:Key="SystemChromeDisabledLowColor">#FF858585</Color>
-                <Color x:Key="SystemChromeHighColor">#FF767676</Color>
-                <Color x:Key="SystemChromeLowColor">#FF1F1F1F</Color>
-                <Color x:Key="SystemChromeMediumColor">#FF262626</Color>
-                <Color x:Key="SystemChromeMediumLowColor">#FF2B2B2B</Color>
-                <Color x:Key="SystemChromeWhiteColor">#FFEBEBEB</Color>
-                <Color x:Key="SystemListLowColor">#19EBEBEB</Color>
-                <Color x:Key="SystemListMediumColor">#33EBEBEB</Color>
-            </ResourceDictionary>
-            <ResourceDictionary x:Key="Light">
-                <SolidColorBrush x:Key="ApplicationPageBackgroundThemeBrush"
-                                 Color="#FFEBEBEB" /> 
-                <Color x:Key="SystemAltHighColor">#FFEBEBEB</Color>
-                <Color x:Key="SystemAltLowColor">#33EBEBEB</Color>
-                <Color x:Key="SystemAltMediumColor">#99EBEBEB</Color>
-                <Color x:Key="SystemAltMediumHighColor">#CCEBEBEB</Color>
-                <Color x:Key="SystemAltMediumLowColor">#66EBEBEB</Color>
-                <Color x:Key="SystemBaseHighColor">#FF101010</Color>
-                <Color x:Key="SystemBaseLowColor">#33101010</Color>
-                <Color x:Key="SystemBaseMediumColor">#99101010</Color>
-                <Color x:Key="SystemBaseMediumHighColor">#CC101010</Color>
-                <Color x:Key="SystemBaseMediumLowColor">#66101010</Color>
-                <Color x:Key="SystemChromeAltLowColor">#FF1F1F1F</Color>
-                <Color x:Key="SystemChromeBlackHighColor">#FF101010</Color>
-                <Color x:Key="SystemChromeBlackLowColor">#33101010</Color>
-                <Color x:Key="SystemChromeBlackMediumLowColor">#66101010</Color>
-                <Color x:Key="SystemChromeBlackMediumColor">#CC101010</Color>
-                <Color x:Key="SystemChromeDisabledHighColor">#FFCCCCCC</Color>
-                <Color x:Key="SystemChromeDisabledLowColor">#FF7A7A7A</Color>
-		        <Color x:Key="SystemChromeHighColor">#FFB2B2B2</Color>
-                <Color x:Key="SystemChromeLowColor">#FFDDDDDD</Color>
-                <Color x:Key="SystemChromeMediumColor">#FFCCCCCC</Color>
-                <Color x:Key="SystemChromeMediumLowColor">#FFDDDDDD</Color>
-                <Color x:Key="SystemChromeWhiteColor">#FFEBEBEB</Color>
-                <Color x:Key="SystemListLowColor">#19101010</Color>
-                <Color x:Key="SystemListMediumColor">#33101010</Color>
-            </ResourceDictionary> 
-        </ResourceDictionary.ThemeDictionaries>
-    </ResourceDictionary>
-</Application.Resources>
-```
-
-> [!NOTE]
-> The light theme **SystemChromeMediumLowColor** and **SystemChromeMediumLowColor** are the same color on purpose and not caused as a result of clamping.
-
-> [!NOTE]
-> Hexadecimal colors are specified in **ARGB** (Alpha Red Green Blue).
-
-We don't recommend using TV-safe colors on a monitor able to display the full range without clamping because the colors will look washed out. Instead, load the resource dictionary (previous sample) when your app is running on Xbox but *not* other platforms. In the `OnLaunched` method of `App.xaml.cs`, add the following check:
-
-```csharp
-if (IsTenFoot)
-{ 
-    this.Resources.MergedDictionaries.Add(new ResourceDictionary
-    {
-        Source = new Uri("ms-appx:///TenFootStylesheet.xaml")
-    }); 
-}
-```
-
-> [!NOTE]
-> The `IsTenFoot` variable is defined in [Custom visual state trigger for Xbox](#custom-visual-state-trigger-for-xbox).
-
-This will ensure that the correct colors will display on whichever device the app is running, providing the user with a better, more aesthetically pleasing experience.
+If you're developing an app using DirectX 11 or DirectX 12 and creating your own swap chain to render UI or video, you can specify the color space you use by calling [IDXGISwapChain3::SetColorSpace1](https://msdn.microsoft.com/library/windows/desktop/dn903676), which will let the system know if it needs to scale colors or not.
 
 ## Guidelines for UI controls
 
