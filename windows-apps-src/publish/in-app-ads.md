@@ -116,10 +116,13 @@ The following table lists the paid networks we currently support for each ad typ
 | AOL and AppNexus |  This is a Microsoft-managed ad network that serves ads through our partner networks, AOL and AppNexus.<p/>**Note**: AOL and AppNexus is always ranked first in the **Paid ad networks** list for Banner ad units, and it cannot be changed to a lower ranking for these types of ads. | Banner, Video interstitial |
 | AppNexus (direct) | Select this option to serve video interstitial ads from [AppNexus](https://www.appnexus.com). | Video interstitial, Native  |
 | Microsoft App install ads | Select this option to serve app install ads or app re-engagement ads created by other developers in the Windows ecosystem who [create promotional ad campaigns for their apps](create-an-ad-campaign-for-your-app.md).  |  Banner, Banner interstitial, Native  |
+| Outbrain |  Select this option to serve ads from [Outbrain](https://www.outbrain.com/). |  Banner  |
+| Revcontent |  Select this option to serve ads from [Revcontent](http://www.revcontent.com/). |  Banner  |
 | Smaato |  Select this option to serve ads from [Smaato](https://www.smaato.com/). |  Banner  |
 | smartclip |  Select this option to serve ads from [smartclip](http://www.smartclip.com/). |  Video interstitial  |
 | SpotX |  Select this option to serve ads from [SpotX](https://www.spotx.tv/). |  Video interstitial  |
 | Taboola |  Select this option to serve ads from [Taboola](https://www.taboola.com/). |  Banner  |
+
 
 <span id="other-networks" />
 ### Other ad networks
@@ -139,6 +142,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 
 |  Ad network  |  Supported markets  |
 |--------------|---------------------|
+| Revcontent | Brazil, Canada, France, Germany, Italy, Japan, Spain, United Kingdom, United States  |
 | Smaato | Brazil, Canada, France, Germany, Italy, Japan, Spain, United Kingdom, United States |
 | smartclip | Austria, Belgium, Denmark, Finland, Germany, Italy, Netherlands, Norway, Sweden, Switzerland  |
 

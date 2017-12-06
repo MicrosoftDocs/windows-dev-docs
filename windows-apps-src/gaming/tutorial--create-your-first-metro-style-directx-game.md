@@ -5,7 +5,7 @@ description: In this set of tutorials, you learn how to create a basic Universal
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: DirectX game sample, game sample, Universal Windows Platform (UWP), Direct3D 11 game
 ms.author: joanlee
-ms.date: 10/24/2017
+ms.date: 12/01/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,7 +33,7 @@ Before we get started with this tutorial, you need to be familiar with these sub
 -   Basic Windows programming concepts.
 -   Basic familiarity with the [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) and [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) APIs.
 
-##  The Windows Store Direct3D shooting game sample
+##  Direct3D UWP shooting game sample
 
 
 This sample implements a simple first-person shooting gallery, where the player fires balls at moving targets. Hitting each target awards a set number of points, and the player can progress through 6 levels of increasing challenge. At the end of the levels, the points are tallied, and the player is awarded a final score.

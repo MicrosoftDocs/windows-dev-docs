@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 11/03/2017
+ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,7 +26,7 @@ When you create a Windows 10 game, you have the opportunity to reach millions of
 
 This guide provides an end-to-end collection of information and resources that will help you as you develop your game. The sections are organized according to the stages of game development, so you'll know where to look for information when you need it.
 
-To get started, the [Game development resources](#game-development-resources) section provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game.
+To get started, the [Game development resources](#game-development-resources) section provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game. If you want to start by looking at some UWP code, see [Game samples](#game-samples).
 
 This guide will be updated as additional Windows 10 game development resources and material become available.  
 
@@ -1604,7 +1604,11 @@ After you've finished development and shipped your game, it's not "game over". Y
     </tr>  
     <tr>
         <td>Windows Dev Center analytics</td>
-        <td>[Analytics](https://msdn.microsoft.com/library/windows/apps/mt148522)</td>
+        <td>[Analyze app performance](https://msdn.microsoft.com/library/windows/apps/mt148522)</td>
+    </tr>
+    <tr>
+        <td>Learn how your customers are engaging with the Xbox features in your game</td>
+        <td>[Xbox analytics report](../publish/xbox-analytics-report.md)</td>
     </tr>
     <tr>
         <td>Responding to customer reviews</td>
