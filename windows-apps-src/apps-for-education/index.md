@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+author: PatrickFarley
 title: Develop apps for education.
 description: This section describes the Universal Window Apps resources that are available to you to write Education apps for the Windows 10 platform.
-ms.author: twhitney
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
