@@ -487,7 +487,7 @@
 #### [Create a Windows Hello login service](../security/microsoft-passport-login-auth-service.md)
 ### [Smart cards](../security/smart-cards.md)
 ### [Shared certificates](../security/share-certificates.md)
-### [Web account manager](../security/web-account-manager.md)
+### [Web Account Manager](../security/web-account-manager.md)
 ### [Unlock with companion IoT devices](../security/companion-device-unlock.md)
 ### [Web authentication broker](../security/web-authentication-broker.md)
 ## [Cryptography](../security/cryptography.md)
