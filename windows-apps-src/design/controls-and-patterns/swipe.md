@@ -52,6 +52,10 @@ Remember to keep the menu items you have in your swipe content to short, and con
     </div>
 </div>
 
+## Video summary
+
+> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev015/player]
+
 ## How does Swipe work?
 
 UWP swipe commanding has two modes: Reveal and Execute, and four different swipe directions: up, down, left, and right.

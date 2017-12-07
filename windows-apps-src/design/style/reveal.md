@@ -44,6 +44,10 @@ By exposing the hidden borders around objects, Reveal gives users a better under
     </div>
 </div>
 
+## Video summary
+
+> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev013/player]
+
 ## Reveal and the Fluent Design System
 
  The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
