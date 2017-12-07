@@ -4,7 +4,7 @@
       [
         {
           "files": ["**/**.md", "**/**.yml"],
-          "exclude": ["**/obj/**"]
+          "exclude": ["**/obj/**", "whats-new/whats-new-future.md"]
         }
       ],
     "resource": [
