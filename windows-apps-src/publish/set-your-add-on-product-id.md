@@ -4,7 +4,7 @@ Description: When you create a new add-on in the Windows Dev Center dashboard, y
 title: Set your add-on product type and product ID
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
-ms.date: 06/28/2017
+ms.date: 12/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -47,7 +47,7 @@ There are two types of consumable add-ons:
 If your want to charge customers on a recurring basis for your add-on, choose **Subscription**.
 
 > [!NOTE]
-> Currently, the ability to create subscription add-ons is only available to a set of developer accounts who are participating in an early adoption program. We will make subscription add-ons available to all developer accounts in the future, and we are making this preliminary documentation available now to give developers a preview of this feature. For more info, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md).
+> Subscription add-ons are currently available only to developer accounts who are participating in the [Dev Center Insider Program](dev-center-insider-program.md).
 
 After a subscription add-on is initially acquired by a customer, they will continue to be charged at recurring intervals in order to keep using the add-on. The customer can cancel the subscription at any time to avoid further charges. You'll need to specify the subscription period, and whether or not to offer a free trial, in the **Properties** step of your submission.
 

@@ -53,12 +53,12 @@ namespace InAppPurchasesAndLicenses_UWP
 
             // Use members of the appLicense object to access license info...
 
-            // Access the add on licenses for add-ons for this app.
+            // Access the valid licenses for durable add-ons for this app.
             foreach (KeyValuePair<string, StoreLicense> item in appLicense.AddOnLicenses)
             {
                 StoreLicense addOnLicense = item.Value;
                 // Use members of the addOnLicense object to access license info
-                // for the add-on...
+                // for the add-on.
             }
         }
         //</GetLicenseInfo>
