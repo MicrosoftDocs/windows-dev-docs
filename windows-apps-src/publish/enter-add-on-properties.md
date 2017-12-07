@@ -4,7 +4,7 @@ Description: When submitting an add-on, the options on the Properties page help 
 title: Enter add-on properties
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 12/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,8 +42,7 @@ If you selected **Store-managed consumable** for your product type, **Quantity**
 If you selected **Subscription** for your product type, **Subscription period** is shown here. You'll need to choose one of the available options (**Monthly**, **3 months**, **6 months**, **Annually**, or **24 months**) to indicate how frequently a customer will be charged for the subscription. Note that after your add-on is published, you can't change your **Subscription period** selection.
 
 > [!NOTE]
-> Currently, the ability to create subscription add-ons is only available to a set of developer accounts who are participating in an early adoption program. We will make subscription add-ons available to all developer accounts in the future, and we are making this preliminary documentation available now to give developers a preview of this feature. For more info, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md).
-
+> Subscription add-ons are currently available only to developer accounts who are participating in the [Dev Center Insider Program](dev-center-insider-program.md).
 
 ## Free trial
 

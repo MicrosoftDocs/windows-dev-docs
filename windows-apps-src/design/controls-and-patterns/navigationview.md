@@ -56,6 +56,10 @@ Aside from using the NavigationView control, you can build your own nav pane pat
     </div>
 </div>
 
+## Video summary
+
+> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev010/player]
+
 ## NavigationView sections
 The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
 

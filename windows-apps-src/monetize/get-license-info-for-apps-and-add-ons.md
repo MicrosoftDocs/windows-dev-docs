@@ -4,7 +4,7 @@ ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: Learn how to use the Windows.Services.Store namespace to get license info for the current app and its add-ons.
 title: Get license info for your app and add-ons
 ms.author: mcleans
-ms.date: 08/25/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -36,9 +36,9 @@ The code in this example assumes:
 
 ## Code example
 
-To get license info for the current app, use the [GetAppLicenseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getapplicenseasync.aspx) method. This is an asynchronous method that returns a   [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object that provides license info for the app, including properties that indicate whether the user has a license to use the app ([IsActive](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.isactive.aspx)) and whether the license is for a trial version ([IsTrial](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.istrial.aspx)).
+To get license info for the current app, use the [GetAppLicenseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getapplicenseasync.aspx) method. This is an asynchronous method that returns a [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object that provides license info for the app, including properties that indicate whether the user currently has a valid license to use the app ([IsActive](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.isactive.aspx)) and whether the license is for a trial version ([IsTrial](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.istrial.aspx)).
 
-To retrieve the add-on licenses for the app, use the [AddOnLicenses](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.addonlicenses.aspx) property of the [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object. This property returns a collection [StoreLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storelicense.aspx) objects that represent the add-on licenses for the app. To determine whether the user has a license to use an add-on, use the [IsActive](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storelicense.isactive.aspx) property.
+To access the licenses for durable add-ons of the current app for which the user has an entitlement to use, use the [AddOnLicenses](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.addonlicenses.aspx) property of the [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) object. This property returns a collection of [StoreLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storelicense.aspx) objects that represent the add-on licenses.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
