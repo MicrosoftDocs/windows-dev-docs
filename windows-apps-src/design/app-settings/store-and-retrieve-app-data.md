@@ -323,10 +323,7 @@ The temporary app data store works like a cache. Its files do not roam and could
 Use the [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property to get the files. The next steps use the `temporaryFolder` variable from this step.
 
 ```csharp
-Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;</code></pre></td>
-</tr>
-</tbody>
-</table>
+Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
 ```
 
 ### Create and read temporary files
@@ -335,16 +332,6 @@ To create and update a file in the temporary app data store, use the file APIs, 
 
 
 ```csharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 async void WriteTimestamp()
 {
    Windows.Globalization.DateTimeFormatting.DateTimeFormatter formatter = 
