@@ -17,49 +17,138 @@ ms.localizationpriority: medium
 
 #  Command design basics for UWP apps
 
- 
+In a Universal Windows Platform (UWP) app, *command elements* are interactive UI elements that enable users to perform actions, such as sending an email, deleting an item, or submitting a form. 
 
-In a Universal Windows Platform (UWP) app, *command elements* are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes the command elements, such as buttons and check boxes, the interactions they support, and the command surfaces (such as command bars and context menus) for hosting them.
+This article describes common command elements, the interactions they support, and the command surfaces for hosting them.
 
-> **Important APIs**: [ICommand interface](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Input.ICommand), [Button class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Button), [CommandBar class](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.commandbar), [MenuFlyout class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)
+![command elements in Maps app](images/maps.png)
+
+Above, see examples of command elements in the Maps app.
 
 ## Provide the right type of interactions
 
-When designing a command interface, the most important decision is choosing what users should be able to do. For example, if you're creating a photo app, the user will need tools to edit their photos. However, if you're creating a social media app that happens to display photos, image editing might not be a priority and so editing tools can be omitted to save space. Decide what you want users to accomplish and provide the tools to help them do it.
+When designing a command interface, the most important decision is choosing what users should be able to do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
 
-For recommendations about how to plan the right interactions for your app, see [Plan your app](https://msdn.microsoft.com/library/windows/apps/hh465427.aspx).
+Some interactions you might want to provide your app include:
+
+- Sending or submiting information 
+- Selecting settings and choices
+- Searching and filtering content
+- Opening, saving, and deleting files
+- Editing or creating content
 
 ## Use the right command element for the interaction
 
+Using the right elements to enable command interactions can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. The Universal Windows Platform (UWP) provides a large set of command elements that you can use in your app. Here's a list of some of the most common controls and a summary of the interactions they can enable.
 
-Using the right elements for the right interactions can mean the difference between an app that feels intuitive to use and one that seems difficult or confusing. The Universal Windows Platform (UWP) provides a large set of command elements, in the form of controls, that you can use in your app. Here's a list of some of the most common controls and a summary of the interactions they enable.
-
-| Category              | Elements                                                                                                                                                                                                            | Interaction                                                                                                                                        |
-|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Buttons               | [Button](https://msdn.microsoft.com/library/windows/apps/hh465470)                                                                                                                                                     | Triggers an immediate action, such as sending an email, confirming an action in a dialog, submitting form data.                                    |
-| Date and time pickers | [calendar date picker, calendar view, date picker, time picker](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | Enables the user to view and modify date and time info, such as when entering a credit card expiration date or setting an alarm.                   |
-| Lists                 | [drop-down list, list box, list view and grid view](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | Presents items in a interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory. |
-| Predictive text entry | [Auto-suggest box](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | Saves users time when entering data or performing queries by providing suggestions as they type.                                                   |
-| Selection controls    | [check box](https://msdn.microsoft.com/library/windows/apps/hh700393), [radio button](https://msdn.microsoft.com/library/windows/apps/hh700395), [toggle switch](https://msdn.microsoft.com/library/windows/apps/hh465475) | Lets the user choose between different options, such as when completing a survey or configuring app settings.                                      |
-
- 
+<div class="mx-responsive-img">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Category</th>
+<th align="left">Elements</th>
+<th align="left">Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Buttons<br/><br/>
+	<img src="../controls-and-patterns/images/controls/button.png" alt="button" /></td>
+<td align="left">[Button](../controls-and-patterns/buttons.md)</td>
+<td align="left">Triggers an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.</td>
+</tr>
+<tr class="even">
+<td align="left">Lists<br/><br/>
+	<img src="../controls-and-patterns/images/controls/combo-box-open.png" alt="drop down list" /></td>
+<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left">Presents items in a interactive list or a grid. Usually used for many options or display items.</td>
+</tr>
+<tr class="odd">
+<td align="left">Selection controls<br/><br/>
+	<img src="../controls-and-patterns/images/controls/radio-button.png" alt="radio button" /></td>
+<td align="left">[check box](../controls-and-patterns/checkbox.md), [radio button](../controls-and-patterns/radio-button.md), [toggle switch](../controls-and-patterns/toggles.md)</td>
+<td align="left">Lets users choose from a few options, such as when completing a survey or configuring app settings.</td>
+</tr>
+<tr class="even">
+<td align="left">Date and time pickers<br/><br/>
+	<img src="../controls-and-patterns/images/controls/calendar-date-picker-open.png" alt="date picker" /></td>
+<td align="left">[calendar date picker, calendar view, date picker, time picker](../controls-and-patterns/date-and-time.md)</td>
+<td align="left">Enables users to view and modify date and time info, such as when creating an event or setting an alarm.</td>
+</tr>
+<tr class="odd">
+<td align="left">Predictive text entry<br/><br/>
+	<img src="../controls-and-patterns/images/controls/auto-suggest-box.png" alt="autosuggest box" /></td>
+<td align="left">[Auto-suggest box](../controls-and-patterns/auto-suggest-box.md)</td>
+<td align="left">Provides suggestions as users type, such as when entering data or performing queries.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 For a complete list, see [Controls and UI elements](https://dev.windows.com/design/controls-patterns)
 
 ##  Place commands on the right surface
+You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as command bars, menus, dialogs, and flyouts.
 
+Note that, whenever possible, you should allow users to manipulate content directly rather than use commands that act on the content. For example, allow users to rearrange lists by dragging and dropping list items, rather than using up and down command buttons.
+  
+Otherwise, if users can't manipulate content directly, then place command elements on a command surface in your app:
 
-You can place command elements on a number of surfaces in your app, including the app canvas (the content area of your app) or special command elements that can act as command containers, such as command bars, menus, dialogs, and flyouts. Here are some general recommendations for placing commands:
+<div class="mx-responsive-img">
+<table class="uwpd-top-aligned-table">
 
--   Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
--   Otherwise, place commands on one of these UI surfaces if users can't manipulate content directly:
+<tr class="header">
+<th align="left">Surface</th>
+<th align="left">Description</th>
+<th align="left">Example</th>
+</tr>
 
-    -   In the [command bar](https://msdn.microsoft.com/library/windows/apps/hh465302): You should put most commands on the command bar, which helps to organize commands and makes them easy to access.
-    -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
-    -   In a [context menu](https://msdn.microsoft.com/library/windows/apps/hh465308): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
+<tr class="odd">
+<td align="left" style="vertical-align: top">App canvas (content area)
+<p><img src="images/content-area.png" alt="The content area of an app" /></p></td>
 
-Here's a list of the command surfaces that Windows provides and recommendations for when to use them.
+<td align="left" style="vertical-align: top;">If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use.
+<p>However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.</p> 
+</td><td>
+An autosuggest box on the Maps app canvas.
+<br></br>
+  <img src="images/maps-canvas.png" alt="autosuggest box on Maps app canvas"/>
+</td>
+</tr>
 
+<tr class="even">
+<td align="left" style="vertical-align: top;">[Command bar](../controls-and-patterns/app-bars.md)
+<p><img src="../controls-and-patterns/images/controls_appbar_icons.png" alt="Example of a command bar with icons" /></p></td>
+<td align="left" style="vertical-align: top;"> Command bars help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen. 
+</td>
+<td>
+A command bar at the top of the Maps app.
+<br></br>
+<img src="images/maps-commandbar.png" alt="command bar in Maps app"/>
+</td>
+</tr>
+
+<tr class="odd">
+<td align="left" style="vertical-align: top;">[Menus and context menus](../controls-and-patterns/menus.md)
+<p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
+<td align="left" style="vertical-align: top;">Sometimes it is more efficient to group multiple commands into a command menu to save space. Menus and context menus display a list of commands or options when the user requests them.
+<p>Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands. Context menus are usually prompted by a user right-clicking.</p>
+</td><td>
+A context menu appears when users right-click in the Maps app.
+<br></br>
+  <img src="images/maps-contextmenu.png" alt="context menu in Maps app"/>
+</td>
+</tr>
+</table>
+</div>
+
+## Provide feedback for interactions
+
+Feedback communicates the results of commands and allows users to understand what they've done, and what they can do next. Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary. 
+
+Here are some ways to provide feedback in your app.
+
+<div class="mx-responsive-img">
 <table class="uwpd-top-aligned-table">
 
 <tr class="header">
@@ -68,64 +157,44 @@ Here's a list of the command surfaces that Windows provides and recommendations 
 </tr>
 
 <tr class="odd">
-<td align="left" style="vertical-align: top">App canvas (content area)
-<p><img src="images/content-area.png" alt="The content area of an app" /></p></td>
-
-<td align="left" style="vertical-align: top;">If a command is critical and is constantly needed for the user to complete the core scenarios, put it on the canvas (the content area of your app). Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use.
-<p>However, choose the commands you put on the canvas carefully. Too many commands on the app canvas takes up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface, such as menu or the command bar's &quot;More&quot; area.</p></td>
+<td align="left" style="vertical-align: top;"> [Command bar](../controls-and-patterns/app-bars.md)
+<p><img src="../controls-and-patterns/images/controls_appbar_icons.png" alt="Example of a command bar with icons" /></p>
+</td>
+<td align="left" style="vertical-align: top;"> The content area of the command bar is an intuative place to communicate status to users if they'd like to see feedback.
+<p>
+  <img src="images/commandbar_anatomy.png" alt="Command bar content area for feedback"/>
+  </p>
+</td>
 </tr>
 
 <tr class="even">
-<td align="left" style="vertical-align: top;">[Command bar](https://msdn.microsoft.com/library/windows/apps/hh465302)
-<p><img src="images/controls-appbar-icons-200.png" alt="Example of a command bar with icons" /></p></td>
-<td align="left" style="vertical-align: top;">Command bars provide users with easy access to actions. You can use a command bar to show commands or options that are specific to the user's context, such as a photo selection or drawing mode.
-<p>Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen. This design of a photo editing app shows the content area and the command bar:</p>
-<p><img src="images/commands-appcanvas-example.png" alt="A photo app" /></p>
-<p>For more information about command bars, see the [Guidelines for command bar](https://msdn.microsoft.com/library/windows/apps/hh465302) article.</p></td>
+<td align="left" style="vertical-align: top;">[Flyout](../controls-and-patterns/dialogs.md)
+<p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
+<td align="left" style="vertical-align: top;">
+A lightweight contextual popup that can be dismissed by tapping or clicking somewhere outside the flyout.
+<p>
+  <img src="../controls-and-patterns/images/controls/flyout.png" alt="Flyout above button"/>
+  </p>
+</td>
 </tr>
 
 <tr class="odd">
-<td align="left" style="vertical-align: top;">[Menus and context menus](../controls-and-patterns/menus.md)
-<p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
-<td align="left" style="vertical-align: top;">Sometimes it is more efficient to group multiple commands into a command menu. Menus let you present more options with less space. Menus can include interactive controls.
-<p>Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts.</p>
-<p>Context menus are for the following types of commands and command scenarios:</p>
-<ul>
-<li>Contextual actions on text selections, such as Copy, Cut, Paste, Check Spelling, and so on.</li>
-<li>Commands for an object that needs to be acted upon but that can't be selected or otherwise indicated.</li>
-<li>Showing clipboard commands.</li>
-<li>Custom commands.</li>
-</ul>
-<p>This example shows the design for a subway app that uses a context menu to modify the route, bookmark a route, or select another train.</p>
-<p><img src="images/subway/uap-subway-ak-8in-dashboard-200.png" alt="A context menu in an subway app" /></p>
-<p>For more info about context menus, see the [Guidelines for context menu](https://msdn.microsoft.com/library/windows/apps/hh465308) article.</p></td>
-</tr>
-
-<tr class="even">
 <td align="left" style="vertical-align: top;">[Dialog controls](../controls-and-patterns/dialogs.md)
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
 <td align="left" style="vertical-align: top;">Dialogs are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user.
-<p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.</p></td>
+<p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.</p>
+<p>
+  <img src="../controls-and-patterns/images/dialogs/dialog_RS2_delete_file.png" alt="dialog delete file"/></p>
+</td>
 </tr>
 
-<tr class="odd">
-<td align="left" style="vertical-align: top;">[Flyout](../controls-and-patterns/dialogs.md)
-<p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
-<td align="left" style="vertical-align: top;">A lightweight contextual popup that displays UI related to what the user is doing. Use a flyout to:
-<p></p>
-<ul>
-<li>Show a menu.</li>
-<li>Show more detail about an item.</li>
-<li>Ask the user to confirm an action without blocking interaction with the app.</li>
-</ul>
-<p>Flyouts can be dismissed by tapping or clicking somewhere outside the flyout. For more info about flyout controls, see the [Dialogs and flyouts](../controls-and-patterns/dialogs.md) article.</p></td>
-</tr>
 </table>
+</div>
 
- 
+> [!TIP]
+> Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.
 
-## When to confirm or undo actions
-
+### When to confirm or undo actions
 
 No matter how well-designed the user interface is and no matter how careful the user is, at some point, all users will perform an action they wish they hadn't. Your app can help in these situations by requiring the user to confirm an action, or by providing a way of undoing recent actions.
 
@@ -141,23 +210,6 @@ No matter how well-designed the user interface is and no matter how careful the 
     -   Modifying content or editing text
     -   Renaming a file
 
-> [!TIP]
-> Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.
-
- 
-
 ##  Optimize for specific input types
 
-
 See the [Interaction primer](../input/index.md) for more detail on optimizing user experiences around a specific input type or device.
-
-
-
-
- 
-
- 
-
-
-
-

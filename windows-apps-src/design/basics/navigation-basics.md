@@ -36,7 +36,7 @@ Let's start with the basic principles of good navigation design:
 * Clarity: Provide clear paths and options.
 
 ### Consistency
-Navigation should be consistent with user expectations. Using [standard controls](#Use-the-right-controls) that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuative for users.
+Navigation should be consistent with user expectations. Using [standard controls](#use-the-right-controls) that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuative for users.
 
 <figure class="wdg-figure">
 <img src="images/nav/nav-component-layout.png" alt="Preferred location for navigation elements"/>
@@ -66,11 +66,9 @@ Now, let's take our design principles--consistency, simplicity, and clarity--and
 
 1. Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go. 
 
-2. Structure your app's navigation based on the number of navigation elements. If you have five or less navigation items, then use top-level navigation, like [tabs and pivot](../controls-and-patterns/tabs-pivot.md). If you have six or more navigation items, then use left navigation, like [navigation view](../controls-and-patterns/navigationview.md) or [master/details](../controls-and-patterns/master-details.md).
+2. Avoid deep navigational hierarchies. If you go beyond three levels of navigation, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
 
-3. Avoid deep navigational hierarchies. If you go beyond three levels of navigation, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
-
-4. Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
+3. Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
 
 ## Use the right structure 
 Now that you're familiar with general navigation principles, how should you structure your app? There are two general structures: flat and hierarchal. 
@@ -117,6 +115,8 @@ If your navigation structure has multiple levels, we recommend that peer-to-peer
 
 ## Use the right controls
 Once you've decided on a page structure, you need to decide how users navigate through those pages. UWP provides a variety of navigation controls to help ensure a consistent, reliable navigation experience in your app. 
+
+We recommend selecting a navigation control based on the number of navigation elements in your app. If you have five or less navigation items, then use top-level navigation, like [tabs and pivot](../controls-and-patterns/tabs-pivot.md). If you have six or more navigation items, then use left navigation, like [navigation view](../controls-and-patterns/navigationview.md) or [master/details](../controls-and-patterns/master-details.md).
 
 <table>
 <tr>
