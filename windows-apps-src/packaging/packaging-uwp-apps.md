@@ -15,7 +15,7 @@ ms.localizationpriority: high
 
 # Package a UWP app with Visual Studio
 
-To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to package it. If you don't want to distribute your app through the Microsoft Store, you can sideload the app package directly to a device or distribute it via [Web Install](installing-UWP-apps-web.md). This article describes the process of configuring, creating, and testing a UWP app package using Visual Studio. For more information about managing and deploying line-of-business (LOB) apps, see [Enterprise app management](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
+To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to package it. If you don't want to distribute your app through Microsoft Store, you can sideload the app package directly to a device or distribute it via [Web Install](installing-UWP-apps-web.md). This article describes the process of configuring, creating, and testing a UWP app package using Visual Studio. For more information about managing and deploying line-of-business (LOB) apps, see [Enterprise app management](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management).
 
 In Windows 10, you can submit an app package (.appx), app bundle (.appxbundle), or a complete app package upload file (.appxupload) to the Windows Dev Center. Of these options, submitting a package upload file will provide the best experience. 
 
@@ -30,7 +30,7 @@ In Windows 10, you can submit an app package (.appx), app bundle (.appxbundle), 
 - **App Package Upload File (.appxupload)**  
     A single file that can contain multiple app packages or an app bundle to support various processor architectures. The upload file also contains a symbol file to [Analyze app performance](https://docs.microsoft.com/windows/uwp/publish/analytics) after your app has been published in the Microsoft Store. This file will be automatically created for you if you are packaging your app with Visual Studio with the intention of submitting it to Dev Center for publishing. It's important to note that this is the **only** valid app package Dev Center submissions that can be created using Visual Studio.
 
-Here is an overview of the steps prepare and create an app package:
+Here is an overview of the steps to prepare and create an app package:
 
 1.  [Before packaging your app](#before-packaging-your-app). Follow these steps to ensure your app is ready to be packaged for Dev Center submission.
 2.  [Configure an app package](#configure-an-app-package). Use the Visual Studio manifest designer to configure the package. For example, add tile images and choose the orientations your app supports.
@@ -63,17 +63,17 @@ The Visual Studio manifest designer allows you to update the manifest file witho
     From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. 
     
     >[!IMPORTANT]
-    >If you're publishing your app in the Microsoft Store, your app will be signed with a trusted certificate for you. This allows the user to install and run your app without installing the associated app signing certificate. 
+    >If you're publishing your app in Microsoft Store, your app will be signed with a trusted certificate for you. This allows the user to install and run your app without installing the associated app signing certificate. 
     
     If you are not publishing your app and simply want to sideload an app package, you first need to trust the package. To trust the package, the certificate must be installed on the user's device. For more information about sideloading, see [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development).
 
 4.  Save your **Package.appxmanifest** file after you have made the necessary edits for your app.
 
-If you are distributing your app via the Microsoft Store, Visual Studio can associate your package with the Store. When you associate your app, some of the fields in the Packaging tab of the manifest designer are automatically updated.
+If you are distributing your app via Microsoft Store, Visual Studio can associate your package with the Store. When you associate your app, some of the fields in the Packaging tab of the manifest designer are automatically updated.
 
 ## Create an app package upload file
 
-To distribute an app through the Microsoft Store you must create an app package (.appx), app bundle (.appxbundle), or an upload package (.appxupload) and [submit the packaged app to Dev Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions). Although it is possible to submit an app package or app bundle to Dev Center alone, you are encouraged to submit an upload package.
+To distribute an app through Microsoft Store you must create an app package (.appx), app bundle (.appxbundle), or an upload package (.appxupload) and [submit the packaged app to Dev Center](https://docs.microsoft.com/windows/uwp/publish/app-submissions). Although it is possible to submit an app package or app bundle to Dev Center alone, you are encouraged to submit an upload package.
 
 >[!NOTE]
 > The app package upload file (.appxupload) is the **only** type of valid app package for Dev Center that can be created using Visual Studio. Other valid [app packages can be created manually](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool), without Visual Studio. 
@@ -138,7 +138,7 @@ Introduced in the Windows 10 Anniversary Update, app packages can be installed s
 > The App Installer assumes that the app is trusted by the device. If you are sideloading a developer or enterprise app, you will need to install the signing certificate to the Trusted Root Certification Authorities store on the device. If you're not sure how to do this, see [Installing Test Certificates](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates).
 
 ### Sideload your app on previous versions of Windows
-With UWP app packages, apps aren't installed to a device as they are with Desktop apps. Typically, you download UWP apps from the Microsoft Store, which also installs the app to your device for you. Apps can be installed without being published in the Store (sideloading). This lets you install and test apps using the app package (.appx) that you have created. If you have an app that you don’t want to sell in the Store, like a line-of-business (LOB) app, you can sideload that app so that other users in your company can use it.
+With UWP app packages, apps aren't installed to a device as they are with Desktop apps. Typically, you download UWP apps from Microsoft Store, which also installs the app to your device for you. Apps can be installed without being published in the Store (sideloading). This lets you install and test apps using the app package (.appx) that you have created. If you have an app that you don’t want to sell in the Store, like a line-of-business (LOB) app, you can sideload that app so that other users in your company can use it.
 
 The following list provides requirements for sideloading your app.
 
