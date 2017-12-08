@@ -118,6 +118,8 @@ Once you've decided on a page structure, you need to decide how users navigate t
 
 We recommend selecting a navigation control based on the number of navigation elements in your app. If you have five or less navigation items, then use top-level navigation, like [tabs and pivot](../controls-and-patterns/tabs-pivot.md). If you have six or more navigation items, then use left navigation, like [navigation view](../controls-and-patterns/navigationview.md) or [master/details](../controls-and-patterns/master-details.md).
 
+<div class="mx-responsive-img">
+
 <table>
 <tr>
 	<th>Control</th>
@@ -177,6 +179,7 @@ We recommend selecting a navigation control based on the number of navigation el
 <td> Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.</td>
 </tr>
 </table>
+</div>
 
 ## Next: Add navigation code to your app
 The next article, [Implement basic navigation](navigate-between-two-pages.md), shows the code required to use a Frame control to enable basic navigation between two pages in your app. 
