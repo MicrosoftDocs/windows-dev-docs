@@ -22,11 +22,11 @@ Back buttons mentioned in this article will be released with RS4. Code examples 
 
 The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 
+> **Important APIs**: [SystemNavigationManager class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager), [BackRequested event](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+
 To implement backwards navigation in your app, place a [back button](#Back-button) at the top left corner of your app's UI. If your app uses the [NavigationView](../controls-and-patterns/navigationview.md) control, then you can use [NavigationView's built-in back button](#Back-Button-in-NavigationView). 
 
 The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
-
-> **Important APIs**: [SystemNavigationManager class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager), [BackRequested event](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Core.SystemNavigationManager#Windows_UI_Core_SystemNavigationManager_BackRequested), [OnNavigatedTo](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 
 ## Back button
@@ -368,13 +368,27 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 ## Optimizing for different device and form factors
 This backwards navigation design guidance is applicable to all devices, but different device and form factors may benefit from optimization. This also depends on the hardware back button supported by different shells.
 
-- **Phone/Tablet**: Note that a hardware or software back button is always present on mobile and tablet, but we recommend drawing an in-app back button for clarity.
+- **Phone/Tablet**: A hardware or software back button is always present on mobile and tablet, but we recommend drawing an in-app back button for clarity.
 - **Desktop/Hub**: Draw the in-app back button on the top left corner of your app's UI.
-- **Xbox/TV**: For Xbox and TV/10ft design, do not draw a back button, for it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards, as it has been in the past.
+- **Xbox/TV**: Do not draw a back button, for it will add unnecessary UI clutter. Instead, rely on the Gamepad B button to navigate backwards.
 
-If your app will run on multiple devices, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md) to toggle the visibility of button. The NavigationView control will automatically toggle the back button's visibility if your app is running on Xbox. 
+If your app will run on multiple devices, [create a custom visual trigger for Xbox](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox) to toggle the visibility of button. The NavigationView control will automatically toggle the back button's visibility if your app is running on Xbox. 
 
-We recommend supporting the following inputs for back button:  Windows-Backspace key, Alt+LeftArrow key, Hardware back button, Shell tablet mode back button, VirtualKey.GoBack, VirtualKey.XButton1. Some of these keys are not supported by system back currently, so must be handled uniquely (as in the code examples below).
+We recommend supporting the following inputs for back navigation. (Note that some of these inputs are not supported by the system BackRequested and must be handled by separate events.)
+
+<table>
+<tr>
+<th>Input</th><th>Event</th>
+</tr>
+<tr><td>Windows-Backspace key</td><td>BackRequested</td></tr>
+<tr><td>Hardware back button</td><td>BackRequested</td></tr>
+<tr><td>Shell tablet mode back button</td><td>BackRequested</td></tr>
+<tr><td>VirtualKey.XButton1</td><td>PointerPressed</td></tr>
+<tr><td>VirtualKey.GoBack</td><td>KeyboardAccelerator.BackInvoked</td></tr>
+<tr><td>Alt+LeftArrow key</td><td>KeyboardAccelerator.BackInvoked</td></tr>
+</table>
+
+The code examples provided above demonstrate how to handle all of these inputs.
 
 ## Backwards compatibility for title bar back button
 > [!WARNING]
