@@ -1,13 +1,13 @@
 ---
-author: mijacobs
-Description: The main purpose of any app is to provide access to content. In a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on.
+author: serenaz
+Description: An overview of common page patterns and UI elements for displaying content in your UWP app.
 title: Content design basics for Universal Windows Platform (UWP) apps
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: mijacobs
-ms.date: 05/19/2017
+ms.author: sezhen
+ms.date: 12/1/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,70 +15,58 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-#  Content design basics for UWP apps
+# Content design basics for UWP apps
 
- 
+The main purpose of any app is to provide access to content. Since apps exist for many different purposes, content comes in many forms: in a photo-editing app, the photo is the content; in a travel app, maps and information about travel destinations is the content; and so on. 
 
-The main purpose of any app is to provide access to content: in a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on. Navigation elements provide access to content; command elements enable the user to interact with content; content elements display the actual content.
+This article provides an overview of how you can present content in your app. We describe common page patterns and UI elements that you can use to display your content, whatever form it may be in.
 
-This article provides content design recommendations for the three content scenarios.
+## Common page patterns
 
-## Design for the right content scenario
+Many apps use some, or all, of these common page patterns to display different types of content. Likewise, feel free to mix and match these patterns to optimize for your app's content.
 
+### Landing
 
-There are three main content scenarios:
+![landing page](images/content-basics/hero-screen.png)
 
--   **Consumption**: A primarily one-way experience where content is consumed. It includes tasks like reading, listening to music, watching videos, and photo and image viewing.
--   **Creation**: A primarily one-way experience where the focus is creating new content. It can be broken down into making things from scratch, like shooting a photo or video, creating a new image in a painting app, or opening a fresh document.
--   **Interactive**: A two-way content experience that includes consuming, creating, and revising content.
+Landing pages, also known as hero screens, often appear at the top level of an app experience. The large surface area serves as a stage for apps to highlight content that users may want to browse and consume.
 
-## Consumption-focused apps
+### Collections
 
+![gallery](images/content-basics/gridview.png)
 
-Content elements receive the highest priority in a consumption-focused app, followed by the [navigation elements](navigation-basics.md) needed to help users find the content they want. Examples of consumption-focused apps include movie players, reading apps, music apps, and photo viewers.
+Collections allow users to browse groups of content or data. [Grid view](../controls-and-patterns/item-templates-gridview.md) is a good option for photos or media-centric content, and [list view](../controls-and-patterns/item-templates-listview.md) is a good option for text-heavy content or data.
 
-![a newsreader app](images/news-reader/v2/newsreader-v2-tablet-phone.png)
+### Hub
 
-General recommendations for consumption-focused apps:
+![hub](images/content-basics/hub.png)
 
--   Consider creating dedicated [navigation](navigation-basics.md) pages and content-viewing pages, so that when users find the content they are looking for, they can view it on a dedicated page free of distractions.
--   Consider creating a full-screen view option that expands the content to fill the entire screen and hides all other UI elements.
+[Hubs](../controls-and-patterns/hub.md) are designed for window shopping. Users get a good sneak peak at the content that's offered; it's all about showing a great diversity of content while keeping the amount brief. For example, Hub section 1 could contain a hero screen, Hub section 2 could contain a collection, Hub section 3 could contain another collection, and so on.
 
-## Creation-focused apps
+### Master/detail
 
+![master details](images/content-basics/master-detail.png)
 
-Content and [command](commanding-basics.md) elements are the most import UI elements in a creation-focused app: command elements enable the user to create new content. Examples include painting apps, photo editing apps, video editing apps, and word processing apps.
+The [master/details](../controls-and-patterns/master-details.md) model consists of a list view (master) and a content view (detail). Both panes are fixed and have vertical scrolling. There is a clear relationship between the list item and the content view: the item in the master view is selected, and the detail view is correspondingly updated. In addition to providing detail view navigation, items in the master view can be added and removed.
 
-As an example, here's a design for a photo app that uses command bars to provide access to tools and photo manipulation options. Because all the commands are in the command bar, the app can devote most of its screen space to its content, the photo being edited.
+### Details
 
-![example of a photo editing app design that uses active canvas](images/photo-editor/uap-photo-tabletphone-sbs.png)
+![multiple views](images/multi-view.png)
 
-General recommendations for creation-focused apps:
+When users find the content they are looking for, consider creating a dedicated content-viewing page so that users can view the page free of distractions. If possible, [create a full-screen view option](../layout/show-multiple-views.md) that expands the content to fill the entire screen and hides all other UI elements. 
 
--   Minimize the use of [navigation](navigation-basics.md) elements.
--   [Command](commanding-basics.md) elements are especially important in creation-focused apps. Since users will be executing a lot of commands, we recommend providing a command history/undo functionality.
+To adjust for changes in screen size, also consider creating a [responsive design](design-and-ui-intro.md) that hides/shows UI elements as appropriate.
 
-## Apps with interactive content
+### Forms
+![form](images/content-basics/forms.png)
 
+A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
-In an app with interactive content, users create, view, and edit content; many apps fit into this category. Examples of these types of apps include line of business apps, inventory management apps, cooking apps that enable the user to create or modify recipes.
+## Common content elements
 
-![a design for a collaboration tool, an app that has interactive content](images/collaboration-tool/uap-collaboration-tabphone-700.png)
+To create these page patterns, you'll need to use a combination of individual content elements. Here are some UI elements that are commonly used to display content. (For a complete list of UI elements, see [controls and patterns](../controls-and-patterns/index.md).
 
-These sort of apps need to balance all three UI elements:
-
--   [Navigation](navigation-basics.md) elements help users find and view content. If viewing and finding content is the most important scenario, prioritize navigation elements, filtering and sorting, and search.
--   [Command](commanding-basics.md) elements let the user create, edit, and manipulate content.
-
-General recommendations for apps with interactive content:
-
--   It can be difficult to balance navigation, content, and command elements when all three are important. If possible, consider creating separate screens for browsing, creating, and editing content, or providing mode switches.
-
-## Commonly used content elements
-
-
-Here are some UI elements commonly used to display content. (For a complete list of UI elements, see [Controls and UI elements](https://msdn.microsoft.com/library/windows/apps/dn611856).)
-
+<div class="mx-responsive-img">
 <table>
 <colgroup>
 <col width="33%" />
@@ -94,35 +82,43 @@ Here are some UI elements commonly used to display content. (For a complete list
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Audio and video</td>
+<td align="left">Audio and video<br/><br/>
+	<img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
 <td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
 <td align="left">Plays audio and video.</td>
 </tr>
 <tr class="even">
-<td align="left">Image viewers</td>
+<td align="left">Image viewers<br/><br/>
+	<img src="images/content-basics/flipview.jpg" alt="flip view" /></td>
 <td align="left">[Flip view](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
 <td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
 </tr>
 <tr class="odd">
-<td align="left">Lists</td>
-<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left">Collections <br/><br/>
+	<img src="images/content-basics/listview.png" alt="list view" /></td>
+<td align="left">[List view and grid view](../controls-and-patterns/lists.md)</td>
 <td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
 </tr>
 <tr class="even">
-<td align="left">Text and text input</td>
+<td align="left">Text and text input <br/><br/>
+	<img src="images/content-basics/textbox.png" alt="text box" /></td>
 <td align="left"><p>[Text block](../controls-and-patterns/text-block.md), [text box](../controls-and-patterns/text-box.md), [rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
-<td align="left">Displays text. Some elements enable the user to edit text. For more info, see [Text controls](../controls-and-patterns/text-controls.md)</td>
+<td align="left">Displays text. Some elements enable the user to edit text. For more info, see [Text controls](../controls-and-patterns/text-controls.md).
+<p>For guidelines on how to display text, see [Typography](../style/typography.md).</p>
+</td>
+</tr>
+<tr class="odd">
+<td align="left">Maps<br/><br/>
+	<img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
+<td align="left">[MapControl](../../maps-and-location/display-maps.md)</td>
+<td align="left">Displays a symbolic or photorealistic map of the Earth.</td>
+</tr>
+<tr class="even">
+<td align="left">WebView</td>
+<td align="left">[WebView](../controls-and-patterns/web-view.md)</td>
+<td align="left">Renders HTML content.</td>
 </tr>
 </tbody>
 </table>
-
-
-
- 
-
- 
-
-
-
-
+</div>
