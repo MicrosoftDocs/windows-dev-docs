@@ -495,9 +495,7 @@ Enable users to view a thumbnail image of the file's contents when the icon of t
             <FileType>"[FileExtension]"</FileType>
         </SupportedFileTypes>
         <ThumbnailHandler
-            Clsid  ="[Clsid  ]"
-            Cutoff="[Cutoff]"
-            Treatment="[Treatment]" />
+            Clsid  ="[Clsid  ]" />
     </FileTypeAssociation>
 </Extension>
 ```
@@ -510,8 +508,6 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 |Name |A unique Id for your app. |
 |FileType |The relevant file extensions. |
 |Clsid   |The class ID of your app. |
-|Cutoff |The size below which a thumbnail image is not used. See [Thumbnail Cache and Sizing](https://msdn.microsoft.com/library/windows/desktop/cc144118.aspx#cache) |
-|Treatment |The [thumbnail adornment](https://msdn.microsoft.com/library/windows/desktop/cc144118.aspx#adornments) that defines the look of the thumbnail icon. |
 
 #### Example
 
