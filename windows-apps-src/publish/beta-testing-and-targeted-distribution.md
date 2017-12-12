@@ -38,7 +38,7 @@ For more info, see [Package flights](package-flights.md).
 
 If you want to limit distribution of an app to only a certain group of testers, **without** first publishing a submission that's broadly available, you can use the same [app submission process](app-submissions.md) as any app you submit. To allow only certain people to get the app free of charge, and prevent other customers from seeing its listing or downloading it, do the following:
 
--   In your submission, in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page, select **Make this product available but not discoverable in the Store**.  Choose the option for **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device**. This prevents anyone from finding your app in the Store via searching or browsing.
+-   In your submission, in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the **Pricing and availability** page, select **Make this product available but not discoverable in the Store**.  Choose the option for **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device**. This prevents anyone from finding your app in the Store via searching or browsing.
 -   After the app passes certification, [generate promotional codes](generate-promotional-codes.md) for the app and distribute them to your testers. You can generate codes that allow up to 1600 redemptions for a single app in a six month period. These codes will give your testers a direct link to the app’s listing, and will allow them to download it for free, even if you have set a price for it when you created your submission.
 
 After you distribute the promotional code links to your testers, they can try it out and give you feedback to help you improve the app. Then, when you’re ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this app available and discoverable in the Store** (along with any other changes you'd like).
@@ -65,7 +65,7 @@ With this option, only people with a direct link to your app's listing can downl
 > [!NOTE]
 > In order for your testers to download the app at no cost, you must set its price to **Free**.
 
-To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page. Then choose the option for **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.**.  
+To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the **Pricing and availability** page. Then choose the option for **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.**.  
 
 
 ### Targeted distribution to customers with specified email addresses
@@ -80,7 +80,7 @@ You can find your app's direct link on the [App identity](view-app-identity-deta
 > [!NOTE]
 If you use this option, you can still make the app available for testers on Windows 10 devices by [generating promotional codes](generate-promotional-codes.md) as described above. Anyone with one of your app's promotional codes can download it on a Windows 10 device, even if you didn't enter their email here.
 
-To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the the **Pricing and availability** page. Then choose the option for **Individuals on Windows Phone 8.x only: Only people you specify below can download this product on a Windows Phone 8.x device. Anyone with a direct link and a promotional code may download the product on a Windows 10 device.** 
+To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the **Pricing and availability** page. Then choose the option for **Individuals on Windows Phone 8.x only: Only people you specify below can download this product on a Windows Phone 8.x device. Anyone with a direct link and a promotional code may download the product on a Windows 10 device.** 
 
 If you choose this option, keep the following things in mind:
 
