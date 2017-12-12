@@ -4,7 +4,7 @@ Description: To understand your tax considerations for price selection, payout i
 title: Tax details for paid apps
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ms.author: wdg-dev-content
-ms.date: 11/1/2017
+ms.date: 12/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,6 +22,8 @@ To understand your tax considerations for price selection, payout implications, 
 
 > [!IMPORTANT]
 > Tax rates are subject to change at any time. Microsoft cannot guarantee that the rates in the tables below will always be accurate.
+> 
+> Tax responsibility for Reseller countries/regions and circumstances (as described [below](#reseller-countriesregions)) is covered by Exhibit C of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), notwithstanding the information in the table below
 
  
 
@@ -241,7 +243,7 @@ In certain countries/regions, Microsoft acts as a reseller, rather than your age
 |                    Reseller countries/regions                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
 | China (except on mobile communication devices running Windows Phone 7.x and on personal computers running Windows 8.x) |
-| Brazil (only for purchases made via devices running Windows 10 and purchases made through mobile operator billing)     |
+| Brazil (only for purchases made via devices running Windows 10)     |
 
  
 

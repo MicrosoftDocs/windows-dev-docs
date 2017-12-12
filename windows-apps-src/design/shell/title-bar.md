@@ -66,7 +66,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 > This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_Activate), or in your app's first page.
 
 > [!TIP]
-> The UWP Community Toolkit provides extensions that let you set these color properties in XAML. For more info, see the [UWP Community Toolkit documentation](http://www.uwpcommunitytoolkit.com/en/master/extensions/ViewExtensions/).
+> The UWP Community Toolkit provides extensions that let you set these color properties in XAML. For more info, see the [UWP Community Toolkit documentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
 
 There are a few things to be aware of when setting title bar colors:
 

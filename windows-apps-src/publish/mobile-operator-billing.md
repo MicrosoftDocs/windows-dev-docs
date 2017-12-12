@@ -4,7 +4,7 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 11/10/2017
+ms.date: 12/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,18 +15,14 @@ ms.localizationpriority: high
 # Mobile operator billing
 
 
-The Microsoft Store offers Mobile Operator Billing as a payment method. If a customer’s mobile operator supports this capability, the customer can make Store purchases using their mobile account.
+The Microsoft Store offers Mobile Operator Billing as a payment method for devices running Windows 10, phones running Windows 10 Mobile, and Xbox One consoles. If a customer’s mobile operator supports this capability, the customer can add Mobile Operator Billing as a payment method and use it to make Store purchases using their mobile account.
 
 > [!TIP]
 >  If a customer’s mobile operator offers Mobile Operator Billing, but the customer can't find this option on their device, review these [steps](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
 We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest a mobile operator that you don’t see listed below, please contact that mobile operator and request that they add this payment method.
 
-## Mobile Operator Billing for Windows 10 and Xbox One devices
-
-Windows 10 introduced a new implementation of Mobile Operator Billing. This implementation is available for devices running Windows 10, phones running Windows 10 Mobile, and Xbox One consoles. On these devices, customers can add Mobile Operator Billing as a payment method and use it to make purchases. 
-
-The Windows 10 implementation of Mobile Operator Billing is currently supported by these mobile operators.
+Mobile Operator Billing is currently supported by these mobile operators.
 
 | Country/region  | Mobile operators                 |
 |-----------------|----------------------------------|
@@ -52,29 +48,6 @@ The Windows 10 implementation of Mobile Operator Billing is currently supported
 
  
 
-## Mobile Operator Billing for Windows Phone 8.x and Windows 10 Mobile devices
-
-
-A legacy implementation of Mobile Operator Billing is available to Windows Phone 8.x devices. Some mobile operators may choose to include this implementation on phones designed for Windows 10 Mobile. On devices that include this implementation, Mobile Operator Billing is offered automatically as a payment to users.
-
-The legacy implementation of Mobile Operator Billing is currently supported by these mobile operators.
-
-| Country/region       | Mobile operators                                                   |
-|----------------------|--------------------------------------------------------------------|
-| Australia            | Telstra                                                            |
-| Czech Republic       | Vodafone                                                           |
-| France               | Orange                                                             |
-| Germany              | Telekom Deutschland, Vodafone                                      |
-| Greece               | Vodafone                                                           |
-| Ireland              | Vodafone                                                           |
-| Italy                | Vodafone                                                           |
-| Netherlands          | T-Mobile, Vodafone                                                 |
-| Poland               | T-Mobile                                                           |
-| Romania              | Vodafone                                                           |
-| South Africa         | Vodacom                                                            |
-| Spain                | Movistar, Vodafone                                                 |
-| United Kingdom       | Vodafone                                                           |
-| United States        | AT&T                                                               |
 
 
  
