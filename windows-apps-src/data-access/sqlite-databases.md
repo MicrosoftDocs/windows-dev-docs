@@ -317,3 +317,7 @@ See [Use a SQL Server database in a UWP app](sql-server-databases.md).
 **Share code between different apps across different platforms**
 
 See [Share code between desktop and UWP](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate).
+
+**Add master detail pages with Azure SQL back ends**
+
+See [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database).

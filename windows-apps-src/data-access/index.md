@@ -19,3 +19,7 @@ You can store data on the user's device by using a SQLite database. You can also
 |-------|------------|
 | [Use a SQLite database in a UWP app](sqlite-databases.md) | Shows you how to use SQLite to store and retrieve data in a light-weight database on the users device. SQLite is a server-less, embedded database engine. |
 | [Use a SQL server database in a UWP app](sql-server-databases.md) | Shows you how to connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient.aspx) namespace. No service layer required. |
+
+## Related topics
+
+* [Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
