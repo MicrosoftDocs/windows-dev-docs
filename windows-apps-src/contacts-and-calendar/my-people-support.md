@@ -250,6 +250,8 @@ async Task PinMultipleContacts(Contact[] contacts)
 ## See also
 + [My People sharing](my-people-sharing.md)
 + [My People notificatons](my-people-notifications.md)
++ [Channel 9 video on adding My People support to an application](https://channel9.msdn.com/Events/Build/2017/P4056)
++ [My People integration sample](http://aka.ms/mypeoplebuild2017)
 + [Contact Card sample](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)
 + [PinnedContactManager class documentation](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager)
 + [Connect your app to actions on a contact card](https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/integrating-with-contacts)
