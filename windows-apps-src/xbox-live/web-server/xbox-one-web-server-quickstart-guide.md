@@ -14,7 +14,8 @@ ms.localizationpriority: medium
 
 # Xbox One Web Server QuickStart Guide
 
-> **Note** This topic is an advanced topic, and requires access to permission restricted sites which are only available to managed partners and ID@Xbox members.
+> [!NOTE] 
+> This topic is an advanced topic, and requires access to permission restricted sites which are only available to managed partners and ID@Xbox members.
 
 A step-by-step guide for setting up a simple web server for Xbox One development.
 
