@@ -40,6 +40,9 @@ For developers in the Xbox Live Creators Program that are using Unity to develop
 
 * [Xbox Live Unity plug-in](https://github.com/Microsoft/xbox-live-unity-plugin)
 
+> [!WARNING]
+> Because this is an Xbox Live Creators Program tool, the Xbox Live Unity plug-in will not provide the full suite of Xbox Live features. Refer to the [developer program overview feature table](developer-program-overview.md#feature-table) to see what Xbox Live services will be available.
+
 ## Xbox Live Platform Extensions SDK
 
 This package contains winmd files and documentation related to Secure Networking and Connected Storage features for the UWP platform. This extension will enable the use of Connected Storage in your UWP titles through use of the Windows.Gaming.XboxLive.Storage namespace.

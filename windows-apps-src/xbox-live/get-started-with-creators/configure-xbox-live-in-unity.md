@@ -4,12 +4,12 @@ author: StaceyHaffner
 description: Learn how to use the Xbox Live Unity plugin to configure Xbox Live in your Unity game.
 ms.assetid: 55147c41-cc49-47f3-829b-fa7e1a46b2dd
 ms.author: kevinasg
-ms.date: 10/27/2017
+ms.date: 12/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, Unity, configure
-ms.localizationpriority: medium
+localizationpriority: medium
 ---
 
 # Configure Xbox Live in Unity
@@ -41,6 +41,38 @@ To import the plugin into your new or existing Unity project, follow these steps
 3. In Unity, click **Assets** > **Import Package** > **Custom Package** and navigate to **XboxLive.unitypackage**.
 
 ![successful import](../images/unity/get-started-with-creators/importXBL_Small.gif)
+
+### (Optional) Configure the plugin to work in the Unity Editor (.NET 4.6 only)
+
+> [!NOTE]
+> Support for changing the Scripting Runtime Version in Unity requires the Xbox Live Unity Plugin version "1711 Release" or higher.
+
+There are three settings that can be configured in Unity to define how your code is compiled:
+
+1. The **scripting backend** is the compiler that is used. Unity supports two different scripting backends for Universal Windows Platform: .NET and IL2CPP.
+2. The **Scripting Runtime Version** is the version of the scripting runtime that runs the Unity Editor.
+3. The **API Compatibility Level** is the API surface you'll build your game against. 
+
+The following table shows the current scripting support matrix for the Xbox Live Unity Plugin:
+
+| Scripting Backend 	| Scripting Runtime Version	| Supported 	| Minimum Unity Version Required |
+|-------------------	|-------------------	    |-----------	|------------------------------- |
+| IL2CPP            	| .NET 3.5 Equivalent       | No        	| N/A                            |
+| Il2CPP            	| .NET 4.6 Equivalent       | No       	    | N/A                            |
+| .NET              	| .NET 3.5 Equivalent       | Yes       	| Same as prerequisites          |
+| .NET              	| .NET 4.6 Equivalent       | Yes       	| Same as prerequisites          |
+
+We've added additional scripting runtime support to the Xbox Live Unity Plugin, starting with version "1711 Release". By default, the plugin is configured to run in the Unity editor with the .NET scripting backend and scripting runtime version of .NET 3.5. If your project is using the scripting runtime version of .NET 4.6, you will need to configure the plugin to work properly in the editor:
+
+1. In the Unity project explorer, navigate to **Xbox Live\Libs\UnityEditor\NET46** and select all of the DLLs in the folder.
+2. In the Inspector window, check **Editor** under **Include Platforms**.
+3. In the Unity project explorer, navigate to **Xbox Live\Libs\UnityEditor\NET35** and select all of the DLLs in the folder.
+4. In the Inspector window, uncheck **Editor** under **Include Platforms**.
+
+![change scripting runtime](../images/unity/get-started-with-creators/changeScriptingRuntime.gif)
+
+> [!IMPORTANT]
+> These steps will need to be reversed if you change the scripting runtime version in your project back to 3.5.
 
 ## Set Visual Studio as the IDE in Unity
 
