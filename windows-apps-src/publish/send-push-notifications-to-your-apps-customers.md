@@ -1,13 +1,13 @@
----
+﻿---
 author: JnHs
 Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 12/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, targeted notifications, push notifications, toast, tile
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: high
 ---
@@ -44,14 +44,12 @@ Follow these steps to create a notification in the dashboard and send it to a pa
 
 1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), expand the **Engage** section, and then select **Notifications**.
 2.	On the **Notifications** page, select **New notification**.
-3.      From the drop-down menu, select the app for which you want to generate a notification.
-4.	In the **Select a template** section, choose the type of notification you want to send. For details, see [Notification template types](#notification-template-types).
-  ![Notification templates](images/push-notifications-template.png)
-5.	In the **Notification settings** section, choose a **Name** for your notification and choose the **Customer group** you want to send the notification to.
-If you haven’t created a segment yet, select **Create new customer group**. Note that it takes 24 hours for a new segment to be available to use for notifications. For more info, see [Create customer segments](create-customer-segments.md).
-6.	If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time.
-7.	If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time.
-8.	If you want to filter the recipients so that your notification is only delivered to people who use certain languages, or who are in specific time zones, check the **Filters** checkbox. You can then select the languages and/or time zones by which you want to filter your recipients.
+3.	In the **Select a template** section, choose the type of notification you want to send. For details, see [Notification template types](#notification-template-types). <!-- ![Notification templates](images/push-notifications-template.png) -->
+4.      On the next page, use the drop-down menu to select the app for which you want to generate a notification.
+5.	In the **Notification settings** section, choose a **Name** for your notification and choose the **Customer group** to which you want to send the notification. If you haven’t already created the segment you want to use, select **Create new customer group**. Note that it takes 24 hours before you can use a new segment for notifications. For more info, see [Create customer segments](create-customer-segments.md).
+6.	If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time (in UTC for all customers, unless you specify to use each customer's local time zone).
+7.	If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time (in UTC).
+8.	If you want to filter the recipients so that your notification is only delivered to people who use certain languages, or who are in specific time zones, check the **Use filters** checkbox. You can then select the languages and/or time zones by which you want to filter your recipients.
 9.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
 10.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
    The available options vary, depending on which notification type you are using. Some of the options are:
