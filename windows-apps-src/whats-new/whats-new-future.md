@@ -32,7 +32,7 @@ The Microsoft Collaborate portal provides tools and services to streamline engin
 
 ### Windows Mixed Reality: Enthusiast's Guide
 
-Targeting tech enthusiasts diving in to the world of Mixed Reality, the Enthusiast Guide answers the top questions people have about Windows Mixed Reality. 
+Targeting tech enthusiasts diving in to the world of Mixed Reality, the [Enthusiast Guide](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/) answers the top questions people have about Windows Mixed Reality. 
 
 In the guide you will find: 
 - Before you buy FAQs, 
@@ -41,6 +41,7 @@ In the guide you will find:
 - How to use your headset and controllers, 
 - How to download and play immersive games, 360 videos, 2D apps, WebVR, and SteamVR, 
 - How to troubleshoot issues, and more.
+[Learn more](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/).
 
 ![Windows Mixed Reality headset user and motion controllers](images/BeforeYouBegin-tile.jpg)
 
