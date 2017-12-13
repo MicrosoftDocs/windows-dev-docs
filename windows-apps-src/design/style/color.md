@@ -104,33 +104,33 @@ Windows and Xbox users can pick a single color called an "accent" from the *Sett
 ### Xbox accent colors
   <table class="uwpd-color-table" style="border: solid 4px white;">
       <tr >
-          <td class="uwpd-color-table" style="background-color: #FF8C00" >FF8C00</td>
-          <td class="uwpd-color-table" style="background-color: #DE507F" >DE507F</td>
-          <td class="uwpd-color-table" style="background-color: #0F68C2" >0F68C2</td>
-          <td class="uwpd-color-table" style="background-color: #137D7D" >137D7D</td>
+          <td class="uwpd-color-table" style="background-color: #EB8C10" >EB8C10</td>
+          <td class="uwpd-color-table" style="background-color: #ED5588" >ED5588</td>
+          <td class="uwpd-color-table" style="background-color: #1073D6" >1073D6</td>
+          <td class="uwpd-color-table" style="background-color: #148282" >148282</td>
           <td class="uwpd-color-table" style="background-color: #107C10" >107C10</td>
-          <td class="uwpd-color-table" style="background-color: #5D5A58" >5D5A58</td>
+          <td class="uwpd-color-table" style="background-color: #4C4A4B" >4C4A4B</td>
       </tr>
       <tr >
-          <td class="uwpd-color-table" style="background-color: #DE4710" >DE4710</td>
-          <td class="uwpd-color-table" style="background-color: #AB0E6B" >AB0E6B</td>
-          <td class="uwpd-color-table" style="background-color: #1A3999" >1A3999</td>
-          <td class="uwpd-color-table" style="background-color: #4A9418" >4A9418</td>
-          <td class="uwpd-color-table" style="background-color: #767676" >767676</td>
-          <td class="uwpd-color-table" style="background-color: #7D705B" >7D705B</td>
+          <td class="uwpd-color-table" style="background-color: #EB4910" >EB4910</td>
+          <td class="uwpd-color-table" style="background-color: #BF1007" >BF1007</td>
+          <td class="uwpd-color-table" style="background-color: #193E91" >193E91</td>
+          <td class="uwpd-color-table" style="background-color: #54A81B" >54A81B</td>
+          <td class="uwpd-color-table" style="background-color: #737373" >737373</td>
+          <td class="uwpd-color-table" style="background-color: #7E715C" >7E715C</td>
       </tr>
       <tr >
-          <td class="uwpd-color-table" style="background-color: #C20F1E" >C20F1E</td>
-          <td class="uwpd-color-table" style="background-color: #81318C" >81318C</td>
-          <td class="uwpd-color-table" style="background-color: #0F76B8" >0F76B8</td>
+          <td class="uwpd-color-table" style="background-color: #E31123" >E31123</td>
+          <td class="uwpd-color-table" style="background-color: #B144C0" >B144C0</td>
+          <td class="uwpd-color-table" style="background-color: #1081CA" >1081CA</td>
           <td class="uwpd-color-table" style="background-color: #547A72" >547A72</td>
-          <td class="uwpd-color-table" style="background-color: #68768A" >68768A</td>
+          <td class="uwpd-color-table" style="background-color: #677488" >677488</td>
           <td class="uwpd-color-table" style="background-color: #724F2F" >724F2F</td>
       </tr>
       <tr >
-          <td class="uwpd-color-table" style="background-color: #A31127" >A31127</td>
+          <td class="uwpd-color-table" style="background-color: #A21025" >A21025</td>
           <td class="uwpd-color-table" style="background-color: #744DA9" >744DA9</td>
-          <td class="uwpd-color-table" style="background-color: #107D6D" >107D6D</td>
+          <td class="uwpd-color-table" style="background-color: #108272" >108272</td>
           <td class="uwpd-color-table"></td>
           <td class="uwpd-color-table"></td>
           <td class="uwpd-color-table"></td>

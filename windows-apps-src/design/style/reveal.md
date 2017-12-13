@@ -17,11 +17,12 @@ ms.localizationpriority: high
 ---
 # Reveal highlight
 
-Reveal is a lighting effect that helps bring depth and focus to your app's interactive elements.
+Reveal highlight is a lighting effect that highlights interactive elements, such as command bars, when the user moves the pointer near them. 
 
 > **Important APIs**: [RevealBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush), [RevealBackgroundBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush), [RevealBorderBrush class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush), [RevealBrushHelper class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper), [VisualState class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
-The Reveal behavior does this by revealing the clickable content’s container when the pointer is nearby.
+## How it works
+Reveal highlight calls attention to interactive elements by revealing the element's container when the pointer is nearby, as shown in this illustration:
 
 ![Reveal Visual](images/Nav_Reveal_Animation.gif)
 
@@ -48,13 +49,9 @@ By exposing the hidden borders around objects, Reveal gives users a better under
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev013/player]
 
-## Reveal and the Fluent Design System
-
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
-
 ## How to use it
 
-Reveal automatically works for some controls. For other controls, you can enable reveal by assigning a special style to the control.
+Reveal automatically works for some controls. For other controls, you can enable reveal by assigning a special style to the control, as described in the [Enabling Reveal on other controls](#enabling-reveal-on-other-controls) and [Enabling Reveal on custom controls](#enabling-reveal-on-custom-controls) sections of this article.
 
 ## Controls that automatically use Reveal
 
@@ -62,16 +59,15 @@ Reveal automatically works for some controls. For other controls, you can enable
 - [**GridView**](../controls-and-patterns/lists.md)
 - [**TreeView**](../controls-and-patterns/tree-view.md)
 - [**NavigationView**](../controls-and-patterns/navigationview.md)
-- [**AutosuggestBox**](../controls-and-patterns/auto-suggest-box.md)
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
-- [**ComboBox**](../controls-and-patterns/lists.md)
 
 These illustrations show the reveal effect on several different controls:
 
 ![Reveal Examples](images/RevealExamples_Collage.png)
 
-## Enabling Reveal on other common controls
+
+## Enabling Reveal on other controls
 
 If you have a scenario where Reveal should be applied (these controls are main content and/or are used in a list or collection orientation), we've provided opt-in resource styles that allow you to enable Reveal for those types of situations.
 
@@ -83,23 +79,74 @@ These controls do not have Reveal by default as they are smaller controls that a
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
-| SemanticZoom | SemanticZoomRevealStyle |
+| AppBarToggleButton | AppBarToggleButtonRevealStyle |
+| GridViewItem (Reveal overtop of content) | GridViewItemRevealBackgroundShowsAboveContentStyle |
 
-To apply these styles, simply update the Style property like so:
+To apply these styles, simply set the control's [Style](/uwp/api/Windows.UI.Xaml.Style) property:
 
 ```XAML
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
 ```
 
+### Reveal in themes
+
+Reveal changes slightly depending on the requested theme of the control, app or user setting. In Dark theme Reveal's Border and Hover light is white, but in Light theme just the Borders darken to a light gray.
+
+![Dark and Light Reveal](images/Dark_vs_LightReveal.png)
+
+To enabled white borders while in light theme, simply set the requested theme on the control to Dark.
+
+```XAML
+<Grid RequestedTheme="Dark">
+    <Button Content="Button" Click="Button_Click" Style="{ThemeResource ButtonRevealStyle}"/>
+</Grid>
+```
+
+Or change the TargetTheme on the RevealBorderBrush to Dark. Remember! If the TargetTheme is set to Dark, then Reveal will be white, but if it's set to Light, Reveal's borders will be gray.
+
+```XAML
+ <RevealBorderBrush x:Key="MyLightBorderBrush" TargetTheme="Dark" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}" />
+```
+
 ## Enabling Reveal on custom controls
 
-The general rule to think about when deciding whether or not your custom control should get Reveal, is you must have a grouping of interactive elements that all relate to an overarching feature or action you wish to perform in your app.
+You can add Reveal to custom controls. Before you do, it's helpful to know a little more about about how the Reveal effect works. Reveal is made up of two separate effects: **Reveal border** and **Reveal hover**.
 
-For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played.
+- **Border** shows the borders of interactive elements when a pointer is nearby by. This effect shows you that those nearby objects can take actions similar to the one currently focused.
+- **Hover**  applies a gentle halo shape around the hovered or focused item and plays a press animation on click. 
 
-The controls that get Reveal do not have to be related to each other, they just have to be in a high-density area, and serve a greater purpose.
+![Reveal layers](images/RevealLayers.png)
 
-To enable Reveal on custom controls or re-templated controls, you can go into the style for that control in the Visual States of that control's template and specify Reveal on the root grid:
+<!-- The Reveal recipe breakdown is:
+
+- Border reveal will be on top of all content but on the designated edges
+- Text and content will be displayed directly under Border Reveal
+- Hover reveal will be beneath content and text
+- The backplate (that turns on and enables Hover Reveal)
+- The background (background of control) -->
+
+
+These effects are defined by two brushes: 
+* Border reveal is defined by  **RevealBorderBrush**
+* Hover reveal is defined by **RevealBackgroundBrush**
+
+```XAML
+<RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
+<RevealBackgroundBrush x:Key="MyRevealBackgroundBrush" TargetTheme="Light" Color="{StaticResource SystemAccentColor}" FallbackColor="{StaticResource SystemAccentColor}" />
+```
+In most cases we handle the usage of both of them by turning Reveal on automatically for a certain controls. However, other controls will need to be enabled through applying a style, or changing their templates directly.
+
+### When to add Reveal
+You can add Reveal to your custom controls--but before you do, consider the type of control and how it behaves. 
+* If your custom control is a single interactive element and doesn't have similar controls sharing it's space (such as menu items in a menu), it's likely that your custom control doesn't need Reveal.  
+* If you have a grouping of related interactive content or elements, then it's likely that that region of your app does need Reveal - this is commonly referred to as a [Commanding](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding) surface.
+
+For example, a button by itself shouldn't use reveal, but a set of buttons in a command bar should use Reveal.
+
+<!-- For example, NavigationView's items are related to page navigation. CommandBar's buttons relate to menu actions or page feature actions. MediaTransportControl's buttons beneath all relate to the media being played. -->
+
+### Using the control template to add Reveal 
+To enable Reveal on custom controls or re-templated controls, you modify the control's control template. Most control templates have a grid at the root; update the [VisualState](/uwp/api/windows.ui.xaml.visualstate) of that root grid to use Reveal:
 
 ```xaml
 <VisualState x:Name="PointerOver">
@@ -112,90 +159,13 @@ To enable Reveal on custom controls or re-templated controls, you can go into th
 </VisualState>
 ```
 
-It's important to note that Reveal needs both the brush and the setters in it's Visual State in order to work fully. Simply setting a control's brush to one of our Reveal brush resources alone won't enable Reveal for that control. Conversely, having only the targets or settings without the values being Reveal brushes will also not enable Reveal.
+It's important to note that Reveal needs both the brush and the setters in it's Visual State to work correctly. Simply setting a control's brush to one of our Reveal brush resources alone won't enable Reveal for that control. Conversely, having only the targets or settings without the values being Reveal brushes will also not enable Reveal.
 
-We've created a set of system Reveal brushes you can use to customize your UI. For example, you can use the **ButtonRevealBackground** brush to create a custom button background, or the **ListViewItemRevealBackground** brush for custom lists, and so on.
+To learn more about modifying control templates, see the [XAML control templates](../controls-and-patterns/control-templates.md) article.
 
-(To learn about how resources work in XAMl, check out the [Xaml Resource Dictionary](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) article.)
+We've created a set of system Reveal brushes you can use to customize your template. For example, you can use the **ButtonRevealBackground** brush to create a custom button background, or the **ListViewItemRevealBackground** brush for custom lists, and so on. (To learn about how resources work in XAMl, check out the [Xaml Resource Dictionary](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) article.)
 
-### Reveal on ListView controls with nested buttons
-
-If you have a [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) and also have buttons or invokable content nested inside its [ListViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) elements, you should enable Reveal for the nested items.
-
-In the case of Buttons, or button-like controls in a ListViewItem, simply set the control's  [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_Style) property to the **ButtonRevealStyle** static resource. 
-
-![Nested Reveal](images/NestedListContent.png)
-
-This example enables Reveal on several buttons inside a ListViewItem. 
-
-```XAML
-<ListViewItem>
-	<StackPanel Orientation="Horizontal">
-		<TextBlock Margin="5">Test Text: lorem ipsum.</TextBlock>
-        <StackPanel Orientation="Horizontal">
-			<Button Content="&#xE71B;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-			<Button Content="&#xE728;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-			<Button Content="&#xE74D;" FontFamily="Segoe MDL2 Assets" Width="45" Height="45" Margin="5" Style="{StaticResource ButtonRevealStyle}"/>
-         </StackPanel>
-    </StackPanel>
-</ListViewItem>
-```
-
-### ListViewItemPresenter with Reveal
-
-Lists are a bit special in XAML, and for Reveal's case we'll have to define the Visual State Manager for Reveal only inside the ListViewItemPresenter:
-
-```XAML
-<ListViewItemPresenter>
-<!-- ContentTransitions, SelectedForeground, etc. properties -->
-RevealBackground="{ThemeResource ListViewItemRevealBackground}"
-RevealBorderThickness="{ThemeResource ListViewItemRevealBorderThemeThickness}"
-RevealBorderBrush="{ThemeResource ListViewItemRevealBorderBrush}">
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup x:Name="CommonStates">
-        <VisualState x:Name="Normal" />
-        <VisualState x:Name="Selected" />
-        <VisualState x:Name="PointerOver">
-            <VisualState.Setters>
-                <Setter Target="Root.(RevealBrush.State)" Value="PointerOver" />
-            </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PointerOverSelected">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="PointerOver" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PointerOverPressed">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="Pressed">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            <VisualState x:Name="PressedSelected">
-                <VisualState.Setters>
-                    <Setter Target="Root.(RevealBrush.State)" Value="Pressed" />
-                </VisualState.Setters>
-            </VisualState>
-            </VisualStateGroup>
-                <VisualStateGroup x:Name="EnabledGroup">
-                    <VisualState x:Name="Enabled" />
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                             <Setter Target="Root.RevealBorderThickness" Value="0"/>
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-</ListViewItemPresenter>
-```
-
-This means appending to the end of the property collection within the ListViewItemPresenter with the Reveal specific Visual State setters.
-
-### Full Template Example
+### Full template example
 
 Here's an entire template for what a Reveal Button would look like:
 
@@ -281,42 +251,25 @@ Here's an entire template for what a Reveal Button would look like:
 ```
 
 ## Do's and don'ts
-- Do use Reveal on elements where the user can take action (buttons, selections)
-- Do use Reveal in groupings of interactive elements that do not have visual separators by default (lists, command bars)
-- Do use Reveal in areas with a high density of interactive elements
+- Do use Reveal on elements where the user can take many actions (CommandBars, Navigation menus)
+- Do use Reveal in groupings of interactive elements that do not have visual separators by default (lists, ribbons)
+- Do use Reveal in areas with a high density of interactive elements (commanding scenarios)
+- Do put 1px margin spaces between Reveal items
 - Don’t use Reveal on static content (backgrounds, text)
+- Don't use Reveal on popups, flyouts or dropdowns
 - Don’t use Reveal in one-off, isolated situations
 - Don’t use Reveal on very large items (greater than 500epx)
 - Don’t use Reveal in security decisions, as it may draw attention away from the message you need to
   deliver to your user
 
-## How we designed Reveal
-
-There are two main visual components to Reveal: the **Hover Reveal** behavior, and the **Border Reveal** behavior.
-
-![Reveal layers](images/RevealLayers.png)
-
-The Hover Reveal is tied directly to the content being hovered over (via pointer or focus input), and applies a gentle halo shape around the hovered or focused item, letting you know you can interact with it.
-
-The Border Reveal is applied to the focused item and items nearby. This shows you that those nearby objects can take actions similar to the one currently focused.
-
-The Reveal recipe breakdown is:
-
-- Border Reveal will be on top of all content but on the designated edges
-- Text and content will be displayed directly under Border Reveal
-- Hover Reveal will be beneath content and text
-- The backplate (that turns on and enables Hover Reveal)
-- The background (background of control)
-
-<!--
-<div class=”microsoft-internal-note”>
-To create your own Reveal lighting effect for static comps or prototype purposes, see the full [uni design guidance](http://uni/DesignDepot.FrontEnd/#/ProductNav/3020/1/dv/?t=Resources%7CToolkit%7CReveal&f=Neon) for this effect in illustrator.
-</div>
--->  
 
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
+
+## Reveal and the Fluent Design System
+
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Reveal is a Fluent Design System component that adds light to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
 
 ## Related articles
 
