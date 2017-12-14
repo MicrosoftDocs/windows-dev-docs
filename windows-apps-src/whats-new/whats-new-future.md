@@ -24,6 +24,27 @@ Sample feature text. With a sample image below!
 
 ![Screenshot of PhotoLab sample showing photo gallery page](images/PhotoLab-gallery-page.png)
 
+### Microsoft Collaborate: Streamline engineering collaboration within the Microsoft ecosystem
+
+The Microsoft Collaborate portal provides tools and services to streamline engineering collaboration within the Microsoft ecosystem by enabling the sharing of engineering system work items (bugs, feature requests, etc.) and the distribution of content (builds, documents, specs). [Learn more](https://docs.microsoft.com/en-us/collaborate).
+
+![Microsoft Collaborate in Dev Center Dashboard](images/microsoft_collaborate_screenshot.PNG)
+
+### Windows Mixed Reality: Enthusiast's Guide
+
+Targeting tech enthusiasts diving in to the world of Mixed Reality, the [Enthusiast Guide](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/) answers the top questions people have about Windows Mixed Reality. 
+
+In the guide you will find: 
+- Before you buy FAQs, 
+- How-to check your PC's compatibility, 
+- Setup instructions, 
+- How to use your headset and controllers, 
+- How to download and play immersive games, 360 videos, 2D apps, WebVR, and SteamVR, 
+- How to troubleshoot issues, and more.
+[Learn more](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/).
+
+![Windows Mixed Reality headset user and motion controllers](images/BeforeYouBegin-tile.jpg)
+
 ## Developer Guidance
 
 **Data Access Guides**

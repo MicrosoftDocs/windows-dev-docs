@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 title: Set up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 12/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 In order to receive money from app sales in the Microsoft Store, you need to set up your payout account and fill out the necessary tax forms.
 
-If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile have been completed.
+If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or add-ons), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile have been completed.
 
 > [!NOTE]
 > In [certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), developers can only submit free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.

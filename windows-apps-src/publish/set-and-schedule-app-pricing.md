@@ -3,11 +3,11 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
 ms.author: wdg-dev-content
-ms.date: 09/28/2017
+ms.date: 12/14/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, pricing, app pricing, app price, sell apps, price change, custom prices, price, prices, cost
 ms.localizationpriority: high
 ---
 
@@ -22,12 +22,12 @@ The **Pricing** section of the [Pricing and availability](set-app-pricing-and-av
 
 When you select your app's **Base price**, that price will be used in every market where your app is sold, unless you specify a custom price for particular market(s).
 
-You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the sales price in all the countries where you choose to distribute your app. Price tiers start at .99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher. 
+You can set the **Base price** to **Free**, or you can choose an available price tier, which sets the price in all the countries where you choose to distribute your app. Price tiers start at .99 USD, with additional tiers available at increasing increments (1.09 USD, 1.19 USD, and so on). The increments generally increase as the price gets higher. 
 
 > [!NOTE]
 > These price tiers also apply to add-ons. 
 
-Each  price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets.
+Each  price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. You can select your base price in any currency, and we’ll automatically use the corresponding value for different markets. Note that at times we may adjust the corresponding value in a certain market to account for changes in currency conversion rates.
 
 In the **Pricing** section, click **view table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](../monetize/manage-app-submissions.md#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
@@ -41,18 +41,19 @@ You can optionally schedule one or more price changes if you want the base price
 > Price changes are only shown to customers on Windows 10 devices (including Xbox). If your app supports earlier OS versions, the price changes will not apply. 
 >
 > - For customers on Windows 8, the app will always be offered at its **Base price** (and not any market-specific price), even if you schedule additional price changes. 
-> - For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the initial price for the customer's market, even if you schedule additional price changes in that market.
+> - For customers on Windows 8.1, and on Windows Phone 8.1 and earlier, the app will always be offered at the initial price tier for the customer's market, even if you schedule additional price changes in that market.
 > 
-> Keep this in mind when scheduling price changes. For example, if you initially release your app at a lower price and then schedule a date on which the price should increase, you customers on earlier OS versions who purchase the app would pay the lower (original) price.
+> Keep this in mind when scheduling price changes. For example, if you initially release your app at a lower price tier and then schedule a date on which the price should increase, your customers on earlier OS versions who purchase the app would pay the lower (original) price.
 
 Click **Schedule a price change** to see the price change options. Choose the price tier you’d like to use, then select the date, time, and time zone.
 
 You can click **Schedule a price change again** to schedule as many subsequent changes as you’d like.
 
 > [!NOTE]
-> Scheduled price changes work differently from [Sale pricing](put-apps-and-add-ons-on-sale.md). When you put an app on sale, customers viewing your Store listing will see that the price has been reduced, and they'll be able to purchase it at the lower price during the time period that you have selected. After the sale period is up, it will return to the base price.
+> Scheduled price changes work differently from [Sale pricing](put-apps-and-add-ons-on-sale.md). When you put an app on sale, the price shows with a strikethrough in the Store, and customers will be able to purchase the app at the sale price during the time period that you have selected. After the sale period is up, the sale price will no longer apply and the app will be available at its it will return to the base price (or a different price that you have specified for that market, if applicable).
 >
 > With a scheduled price change, you can adjust the price to be either higher or lower. The change will take place on the date you specify, but it won’t be displayed as a sale in the Store; the app will just have a new base price. 
+
 
 ## Customize pricing for specific markets
 

@@ -21,7 +21,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_get-started.svg" alt="What's new icon" />
+                            <img src="/media/common/i_whats-new.svg" alt="What's new icon" />
                         </div>
                     </div>
                     <div class="cardText">
@@ -133,7 +133,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/media/common/i_code-edit.svg" alt="Develop icon" />
+                            <img src="/media/common/i_build.svg" alt="Develop Games icon" />
                         </div>
                     </div>
                     <div class="cardText">
