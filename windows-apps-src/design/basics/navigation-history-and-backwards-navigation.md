@@ -390,15 +390,12 @@ We recommend supporting the following inputs for back navigation. (Note that som
 
 The code examples provided above demonstrate how to handle all of these inputs.
 
-## Backwards compatibility for title bar back button
-> [!WARNING]
-This section will be re-written soon with POR information.
+## System back behavior for backward compatibilities
+Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported for backward compatibility, but we no longer recommend relying on the title bar back button. Instead, your app should draw its own in-app back button.
 
-Previously, UWP apps used the title bar back button with [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. While the API will continue to be supported for backward compatibility, we no longer recommend relying on the title bar back button.
+If your app continues to use [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the back button will be rendered inside the title bar as usual.
 
-If your app continues to use the title bar back button with [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then your app will receive a system back bar, which goes across the top width of the app with a back button on the left edge.
-
-![System drawn back button bar](images/back-nav/back-bar.png)
+![title bar back button](images/nav-back-pc.png)
 
 ## Guidelines for custom back navigation behavior
 
