@@ -57,6 +57,9 @@ Also, we've completely remodeled our [SQLite guide](https://docs.microsoft.com/w
 
 We've added a new article that shows how you can [request ratings and reviews for your app](../monetize/request-ratings-and-reviews.md). You can show a rating and review dialog in the context of your app, or you can open the rating and review page for your app in the Store.
 
+**Color**
+
+We've added some new guidance on how to use color in your apps for the best possible user experience. This includes API usage scenarios as well as general guidance about UI design and accessibility. We've also updated the list of user accent colors available on Xbox. [Check out the updated Color article here.](https://docs.microsoft.com/en-us/windows/uwp/design/style/color)
 
 ## Videos
 
