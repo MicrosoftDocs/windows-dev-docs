@@ -138,7 +138,7 @@ In early versions of Windows 10 Mobile, a Crash Dumps option was present in the 
 There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 device. Both devices must be connected to the same subnet of the network by a wired or wireless connection, or they must be connected by USB. Both of the ways listed install only the app package (.appx/.appxbundle); they do not install certificates.
 
 -   Use the Windows 10 Application Deployment (WinAppDeployCmd) tool. Learn more about [the WinAppDeployCmd tool](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   You can use [Device Portal](../debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps)** page in Device Portal to upload an app package (.appx) and install it on the device.
+-   You can use [Device Portal](../debug-test-perf/device-portal.md) to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the **[Apps](../debug-test-perf/device-portal.md#apps-manager)** page in Device Portal to upload an app package (.appx) and install it on the device.
 
 ## Failure to install Developer Mode package
 Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment to this PC -- using Device Portal from a browser or Device Discovery to enable SSH -- but not for local development.  Even if you encounter these issues, you can still deploy your app locally using Visual Studio, or from this device to another device. 
