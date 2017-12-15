@@ -33,7 +33,10 @@ Color provides an intuitive way of communicating information to users. It can be
 Windows and Xbox users can pick a single color called an "accent" from the *Settings > Personalization > Colors* menu. This color is reflected throughout their experience--in the Start menu, the taskbar, and many other places. On Windows, they can choose from a curated set of 48 color swatches. On Xbox, they can choose from a palette of 21 colors.
 
 ### Windows accent colors
-<table class="uwpd-color-table" style="border: solid 4px white;">
+
+![UWP accent color](images/uwp-color-table.png)
+
+<!-- <table class="uwpd-color-table" style="border: solid 4px white;">
         <tr >
             <td class="uwpd-color-table" style="background-color: #FFB900">FFB900</td>
             <td class="uwpd-color-table" style=" background-color: #E74856">E74856</td>
@@ -99,9 +102,13 @@ Windows and Xbox users can pick a single color called an "accent" from the *Sett
             <td class="uwpd-color-table" style=" background-color: #7E735F" >7E735F</td>
         </tr>
 
-</table>
+</table> -->
 
 ### Xbox accent colors
+
+![Xbox accent color](images/xbox-color-table.png)
+
+<!-- 
   <table class="uwpd-color-table" style="border: solid 4px white;">
       <tr >
           <td class="uwpd-color-table" style="background-color: #EB8C10" >EB8C10</td>
@@ -135,7 +142,7 @@ Windows and Xbox users can pick a single color called an "accent" from the *Sett
           <td class="uwpd-color-table"></td>
           <td class="uwpd-color-table"></td>
       </tr>
-  </table>
+  </table> -->
 
 You can personalize the experience of each user by incorporating their accent color into your application. For example, see how the Settings app highlights interactive elements of its interface using shades of the user accent color.
 ![Mouse settings accent color](images/color/mouse-settings-accent.png)
