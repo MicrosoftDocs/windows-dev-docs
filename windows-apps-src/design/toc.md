@@ -39,6 +39,7 @@
 # Layout
 ## [Overview](layout/index.md)
 ## [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
+## [Responsive design techniques](layout/responsive-design.md)
 ## [Show multiple views](layout/show-multiple-views.md)
 ## [Alignment, margins, and padding](layout/alignment-margin-padding.md)
 ## [Create page layouts with XAML](layout/layouts-with-xaml.md)

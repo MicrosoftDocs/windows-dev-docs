@@ -94,7 +94,7 @@ Creating columns can reduce unnecessary white space in forms, especially with la
 </div>
 
 ### Responsive layout
-Forms should resize as the screen or window size changes, so users don't overlook any input fields. For more information, see [responsive design techniques](../basics/design-and-ui-intro.md#responsive-design-techniques). For example, you might want to keep specific regions of the form always in view, no matter the screen size.
+Forms should resize as the screen or window size changes, so users don't overlook any input fields. For more information, see [responsive design techniques](../layout/responsive-design.md). For example, you might want to keep specific regions of the form always in view, no matter the screen size.
 
 ![forms focus](images/forms-focus2.png)
 
