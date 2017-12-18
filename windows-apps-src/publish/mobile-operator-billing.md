@@ -4,7 +4,7 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 12/12/2017
+ms.date: 12/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,9 +32,11 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Denmark         | 3, TDC / YouSee, Telenor, Telia  |
 | Finland         | DNA, Elisa                       |
 | France          | Orange                           |
-| Germany         | O2                               |
+| Germany         | O2, Telekom Deutschland          |
 | Hungary         | Telenor                          |
 | Italy           | Wind, Tre                        |
+| Malaysia        | Digi                             |
+| Netherlands     | KPN                              |
 | Norway          | Telenor, Telia                   |
 | Poland          | Orange                           |
 | Romania         | Orange                           |
