@@ -580,7 +580,6 @@ If any of these capabilities are declared, the test will display a warning to th
 ### Corrective Actions
 
 Consider removing the special use capability if your app doesn't require it. Additionally, use of these capabilities are subject to additional on-boarding policy review.
-<!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
 ## Windows Runtime metadata validation
 
