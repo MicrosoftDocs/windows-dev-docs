@@ -29,7 +29,6 @@ The Xbox Device Portal is a browser-based device management tool that allows you
 
 <!-- > [!NOTE]
 > For more information on the Xbox Device Portal, see the [Windows Device Portal overview](../debug-test-perf/device-portal.md). -->
-<!--TODO: Where is the documentation for the Xbox Device Portal?-->
 
 To enable the Xbox Device Portal on your Xbox One console:
 
