@@ -14,11 +14,9 @@ ms.localizationpriority: medium
 
 # Background transfers
 
-
-
 **Important APIs**
 
--   [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
+-   [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer?branch=live)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
@@ -30,14 +28,13 @@ If you are downloading small resources that are likely to complete quickly, you 
 
 ## Using Windows.Networking.BackgroundTransfer
 
-
 ### How does the Background Transfer feature work?
 
 When an app uses Background Transfer to initiate a transfer, the request is configured and initialized using [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) or [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) class objects. Each transfer operation is handled individually by the system and separate from the calling app. Progress information is available if you want to give status to the user in your app's UI, and your app can pause, resume, cancel, or even read from the data while the transfer is occurring. The way transfers are handled by the system promotes smart power usage and prevents problems that can arise when a connected app encounters events such as app suspension, termination, or sudden network status changes.
 
 In addition, Background Transfer uses System Event Broker events. As such, the number of downloads is limited by the number of events available on the system. By default this is 500 events, but those events are shared across all processes. Therefore, a single application should not create more than 100 background transfers at a time.
 
-When an application starts a background transfer, the application must call [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_) on all existing [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) objects. Not doing this may cause a leak of those events, and thus render the Background Transfer feature useless.
+When an application starts a background transfer, the application must call [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live#Windows_Networking_BackgroundTransfer_DownloadOperation_AttachAsync) on all existing [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) objects. Not doing this may cause a leak of those events, and thus render the Background Transfer feature useless.
 
 ### Performing authenticated file requests with Background Transfer
 
@@ -63,10 +60,7 @@ The following table indicates when background transfers are allowed on the phone
 | Metered Connection, roaming, under data limit                                                                                     | Deny             | Deny    | Allow  |
 | Metered Connection, over data limit. This state only occurs when the user enables "Restrict background data in the Data Sense UI. | Deny             | Deny    | Deny   |
 
- 
-
 ## Uploading files
-
 
 When using Background Transfer an upload exists as an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) that exposes a number of control methods that are used to restart or cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **UploadOperation**; uploads will continue during app suspension periods or pause and persist beyond app termination. Additionally, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will start uploads while a metered network is being used for Internet connectivity.
 
@@ -321,4 +315,3 @@ The [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/libra
 An error encountered on an asynchronous method in the [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace is returned as an **HRESULT** value. The [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) method is used to convert a network error from a background transfer operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP or FTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
 For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
-
