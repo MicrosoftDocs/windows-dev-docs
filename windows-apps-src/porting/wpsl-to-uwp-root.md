@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: If you’re a developer with a Windows Phone Silverlight app, then you can make great use of your skill set and your source code in the move to Windows 10.
 title: Move from Windows Phone Silverlight to UWP
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
