@@ -19,10 +19,6 @@ Sensors let your app know the relationship between a device and the physical wor
 
 As a general rule, decide from the outset whether your app will depend exclusively on sensors or if sensors will just offer an additional control mechanism. For example, a driving game using a device as a virtual steering wheel could alternatively be controlled through an on-screen GUI – this way, the app works regardless of the sensors available on the system. On the other hand, a marble tilt maze could be coded to only work on systems that have the appropriate sensors. You must make the strategic choice of whether to fully rely on sensors. Note that a mouse/touch control scheme trades immersion for greater control.
 
-The following video demonstrates some of the sensors available to you when you are building your app. This is not an exhaustive list, but goes over some of the more common sensors and demonstrates their purpose.
-
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One dev minute - Sensors Overview</iframe>
-
 | Topic                                                       | Description  |
 |-------------------------------------------------------------|--------------|
 | [Calibrate sensors](calibrate-sensors.md)                   | Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) enumeration can help determine a course of action when your device is in need of calibration. |
