@@ -25,7 +25,7 @@ Your Universal Windows Platform (UWP) app can offer in-app purchases of *subscri
 
 Subscription add-ons for UWP apps support the following features:
 
-* You can choose from subscription periods of 1 month, 3 months, 6 months, 1 year, or 2 years. Some developer accounts that have been granted special permissions can also use a 6-hour subscription period for testing purposes only.
+* You can choose from subscription periods of 1 month, 3 months, 6 months, 1 year, or 2 years.
 * You can add free trial periods of 1 week or 1 month to your subscription.
 * The Windows SDK [provides APIs](#code-examples) you can use in your app to get info about available subscription add-ons for the app and enable the purchase of a subscription add-on. We also provide REST APIs you can call from your services to [manage subscriptions for a user](#manage-subscriptions).
 * You can view analytic reports that provide the number of subscription acquisitions, active subscribers, and canceled subscriptions in a given time period.
@@ -42,8 +42,6 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
   * [Subscription period](../publish/enter-add-on-properties.md#subscription-period): Choose the recurring billing period for your subscription. You cannot change the subscription period after you publish your add-on.
 
     Each subscription add-on supports a single subscription period and trial period. You must create a different subscription add-on for each type of subscription you want to offer in your app. For example, if you wanted to offer a monthly subscription with no trial, a monthly subscription with a one-month trial, an annual subscription with no trial, and an annual subscription with a one-month trial, you would need to create four subscription add-ons.
-        > [!NOTE]
-        > If your developer account has access to the 6-hour subscription period, we recommend that you create a test add-on with the **For testing only – 6 hours** subscription period while you test the subscription purchase experience in your app. You can choose this test period only if you select one of the **Hidden in the Store** [visibility options](../publish/set-add-on-pricing-and-availability.md#visibility) for your test add-on.
 
   * [Trial period](../publish/enter-add-on-properties.md#free-trial): Consider choosing a 1 week or 1 month trial period for your subscription to enable users to try your subscription content before they buy it. You cannot change or remove the trial period after you publish your subscription add-on.
 
