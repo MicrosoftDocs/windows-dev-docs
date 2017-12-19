@@ -975,7 +975,7 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 
 ## Handling exceptions
 
-An error encountered on a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) operation is returned as an **HRESULT** value. You can pass that **HRESULT** value to the [**SocketError.GetStatus**](/uwp/api/Windows.Networking.Sockets.SocketError?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_) method to convert it into a [**SocketErrorStatus**](/uwp/api/Windows.Web.SocketErrorStatus) enumeration value.
+An error encountered on a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) operation is returned as an **HRESULT** value. You can pass that **HRESULT** value to the [**SocketError.GetStatus**](/uwp/api/Windows.Networking.Sockets.SocketError?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_) method to convert it into a [**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live) enumeration value.
 
 Most **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. Your app can switch on **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
@@ -998,7 +998,7 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor
 * [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_)
 * [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync)
 * [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_)
-* [SocketErrorStatus](/uwp/api/windows.networking.sockets.socketerrorstatus?branch=live)
+* [SocketErrorStatus](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live)
 * [SocketProtectionLevel](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live)
 * [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)
 * [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol?branch=live#Windows_Networking_Sockets_StreamSocketControl_ClientCertificate)

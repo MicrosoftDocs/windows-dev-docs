@@ -83,7 +83,7 @@ If you only need one set of assets for high contrast and one set for standard co
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
 
-For more details on how qualifier matching works, see [Resource Management System](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947).
+For more details on how qualifier matching works, see [Resource Management System](resource-management-system.md).
 
 ## Multiple qualifiers
 
@@ -267,7 +267,7 @@ The `theme` qualifier is used to provide resources that best match the default a
 ## Related topics
 
 * [Effective pixels and scale factor](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
-* [Resource Management System](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)
+* [Resource Management System](resource-management-system.md)
 * [How to prepare for localization](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [Writing code](../get-started/universal-application-platform-guide.md#writing-code)

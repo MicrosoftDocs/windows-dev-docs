@@ -1,6 +1,6 @@
 ---
 author: serenaz
-Description: Control that lays out top-level navigation while conserving screen real estate.
+Description: Control that provides top-level app navigation with an automatically adapting, collapsible left navigation menu
 title: Navigation view
 ms.assetid: 
 label: Navigation view
@@ -11,54 +11,36 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-pm-contact: yulikl
+pm-contact: vasriram
 design-contact: kimsea
-dev-contact: tpaine
+dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
 # Navigation view
 
-The navigation view control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu. This control is designed to implement the nav pane, or hamburger menu, pattern and automatically adapts its layout to different window sizes.
+The navigation view control provides a collapsible navigation menu for top-level navigation in your app. This control implements the nav pane, or hamburger menu, pattern and automatically adapts the pane's display mode to different window sizes.
 
 > **Important APIs**: [NavigationView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview), [NavigationViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), [NavigationViewDisplayMode enumeration](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewdisplaymode)
 
 ![Example of NavigationView](images/navview_wireframe.png)
 
+## Video summary
+
+> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev010/player]
 
 ## Is this the right control?
 
 NavigationView works well for:
 
--  Apps with many top-level navigation items that are of similar type. For example, a sports app with categories like Football, Baseball, Basketball, Soccer, and so on.
--  Providing a consistent navigational experience across apps. The pane should include only navigational elements, not actions.
+-  Many top-level navigation items of a similar type. (For example, a sports app with categories like Football, Baseball, Basketball, Soccer, and so on.)
 -  A medium-to-high number (5-10) of top-level navigational categories.
+-  Providing a consistent navigational experience. The pane should include only navigational elements, not actions.
 -  Preserving screen real estate of smaller windows.
 
-Navigation view is just one of several navigation elements you can use; to learn more about navigation patterns and other navigation elements, see the [Navigation design basics for Universal Windows Platform (UWP) apps](../basics/navigation-basics.md).
+NavigationView is just one of several navigation elements you can use. To learn more about other navigation patterns and elements, see [Navigation design basics](../basics/navigation-basics.md).
 
-Aside from using the NavigationView control, you can build your own nav pane pattern using SplitView and ListView. To see a sample implementation, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
-
-## Examples
-
-<div style="overflow: hidden; margin: 0 -8px;">
-    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <div style="height: 133px; width: 100%">
-            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
-        </div>
-    </div>
-    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
-        <ul>
-        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-        </ul>
-    </div>
-</div>
-
-## Video summary
-
-> [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev010/player]
+Rather than use the NavigationView control, you can also build your own nav pane pattern using [SplitView](split-view.md) and [ListView](lists.md). To see a sample implementation, download the [XAML navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
 
 ## NavigationView sections
 The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
@@ -94,11 +76,11 @@ The header must be visible when NavigationView is in Minimal mode. You may choos
 
 ### Content
 
-The content area is where most of the information for the selected nav category is displayed. It can contain one or more elements and is a good area for additional sub-level navigation such as [Pivot](tabs-pivot.md).
+The content area is where most of the information for the selected nav category is displayed. 
 
-We recommend 12px margins on your content’s sides when NavigationView is in Minimal mode and 24px margins otherwise.
+We recommend 12px margins for your content area when NavigationView is in Minimal mode and 24px margins otherwise.
 
-## NavigationView modes
+## NavigationView display modes
 The NavigationView pane can be open or closed, and has three display mode options:
 -  **Minimal**
    Only the hamburger button remains fixed while the pane shows and hides as needed.
@@ -107,7 +89,7 @@ The NavigationView pane can be open or closed, and has three display mode option
 -  **Expanded**
    The pane is open alongside the content. When closed by activating the hamburger button, the pane's width becomes a narrow sliver.
 
-By default, the system automatically selects the optimal display mode based on the amount of screen space available to the control. (You can override this setting — see the next section for details.)
+By default, the system automatically selects the optimal display mode based on the amount of screen space available to the control. (You can [override](#overriding-the-default-adaptive-behavior) this setting.)
 
 ### Minimal
 
@@ -146,12 +128,12 @@ By default, the system automatically selects the optimal display mode based on t
 -  When requirements are met, the pane’s background is painted using [background acrylic](../style/acrylic.md#acrylic-blend-types).
 -  By default, NavigationView is in Expanded mode when its overall width is greater than 1007px.
 
-## Overriding the default adaptive behavior
+### Overriding the default adaptive behavior
 
 NavigationView automatically changes its display mode based on the amount of screen space available to it.
 
 > [!NOTE] 
-NavigationView should serve as the root container of your app, this control is designed to span the full width and height of the app window.
+NavigationView should serve as the root container of your app, as this control is designed to span the full width and height of the app window.
 You can override the widths at which the navigation view changes display modes by using the [CompactModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_CompactModeThresholdWidth) and [ExpandedModeThresholdWidth](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_ExpandedModeThresholdWidth) properties. 
 
 Consider the following scenarios that illustrate when you might want to customize the display mode behavior.
@@ -180,10 +162,27 @@ Your app is responsible for updating the Header and Content with appropriate inf
 
 ## Backwards navigation
 
-NavigationView does not automatically show the back button in your app’s title bar nor add content to the back stack. The control does not automatically respond to software or hardware back button presses. Please see the [history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md) section for more information about this topic and how to add support for navigation to your app.
+NavigationView does not automatically show the back button in your app’s title bar nor add content to the back stack. The control does not automatically respond to software or hardware back button presses. Please see the [history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md) for how to add support for backwards navigation.
+
+## Examples
+
+<div style="overflow: hidden; margin: 0 -8px;">
+    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <div style="height: 133px; width: 100%">
+            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
+        </div>
+    </div>
+    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
+        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
+        <ul>
+        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+        </ul>
+    </div>
+</div>
 
 
-## Code example
+### Code example
 
 The following is a simple example of how you can incorporate NavigationView into your app.
 
@@ -403,10 +402,6 @@ private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 For more information about customizing title bars, see [title bar customization](../shell/title-bar.md).
-
-## Get the sample code
-
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related topics
 
