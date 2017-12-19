@@ -32,14 +32,14 @@ The user expects the back button to navigate to the previous location in the app
 ## Back button
 To create a back button, use the [Button](../controls-and-patterns/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI.
 
-![Back button in the top left of the app's UI](images/back-nav/back-placement.png)
+![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
 ```xaml
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
 If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Button control that is 44px in height will not align with 48px AppBarButtons very nicely. However, to avoid inconsistency, align the top of the Button control inside the 48px bounds.
 
-![Back button on top command bar](images/back-nav/appbar-back.png)
+![Back button on top command bar](images/back-nav/CommandBar.png)
 
 ```xaml
 <Button VerticalAlignment="Top" HorizontalAlignment="Left" 
@@ -48,7 +48,7 @@ Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 
 In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below).
 
-![Back button states](images/back-nav/back-button.png)
+![Back button states](images/back-nav/BackDisabled.png)
 
 ### Code example
 The following code example demonstrates how implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase#Windows_UI_Xaml_Controls_Primitives_ButtonBase_Click) event and disables/enables the button visibility in [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame#Windows_UI_Xaml_Controls_Frame_Navigated), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager#Windows_UI_Core_SystemNavigationManager_BackRequested) event.
@@ -156,7 +156,7 @@ The [NavigationView](../controls-and-patterns/navigationview.md) control has a b
 > [!NOTE]
 Internal: The plan is that this button will be available for both horizontal and vertical version of NavView control. Unfortunately, horizontal version is not available in RS4, so if your UI uses horizontal version, refer to the back button style above to draw your own button for now.
 
-![NavigationView back button](images/back-nav/navview-back.png)
+![NavigationView back button](images/back-nav/NavView.png)
 
 ### Code example
 
@@ -401,6 +401,7 @@ If your app continues to use [AppViewBackButtonVisibility](https://docs.microsof
 
 If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:
 
+<div class="mx-responsive-img">
 <table>
 <thead>
 <tr class="header">
@@ -413,41 +414,41 @@ If you choose to provide your own back stack navigation, the experience should b
 <td style="vertical-align:top;"><strong>Page to page, different peer groups</strong></td>
 <td style="vertical-align:top;"><strong>Yes</strong>
 <p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
-<p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
-<p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, no on-screen navigation element</strong>
 <p>The user navigates from one page to another with the same peer group. There is no navigation element that is always present (such as tabs/pivots or a docked navigation pane) that provides direct navigation to both pages.</p></td>
 <td style="vertical-align:top;"><strong>Yes</strong>
 <p>In the following illustration, the user navigates between two pages in the same peer group. The pages don't use tabs or a docked navigation pane, so the navigation is added to the navigation history.</p>
-<p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
+<p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Page to page, same peer group, with an on-screen navigation element</strong>
 <p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element. For example, both pages use the same tabs/pivots element, or both pages appear in a docked navigation pane.</p></td>
 <td style="vertical-align:top;"><strong>No</strong>
 <p>When the user presses back, go back to the last page before the user navigated to the current peer group.</p>
-<p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
+<p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>Show a transient UI</strong>
 <p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
 <td style="vertical-align:top;"><strong>No</strong>
 <p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
-<p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
+<p><img src="images/back-nav/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>Enumerate items</strong>
 <p>The app displays content for an on-screen item, such as the details for the selected item in master/details list.</p></td>
 <td style="vertical-align:top;"><strong>No</strong>
 <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
-<img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
+<p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>
 </tr>
 </tbody>
 </table>
-
+</div>
 
 ### Resuming
 
