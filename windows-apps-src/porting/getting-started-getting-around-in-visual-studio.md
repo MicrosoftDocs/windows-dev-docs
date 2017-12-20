@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: Getting around in Visual Studio
 title: Getting around in Visual Studio
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

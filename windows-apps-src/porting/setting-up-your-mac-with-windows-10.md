@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: Use your current Mac computer to develop apps for Windows.
 title: Setting up your Mac with Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

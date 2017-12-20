@@ -6,7 +6,7 @@ description: Learn about the different types of Universal Windows apps--UWP apps
 ms.author: quradic
 ms.date: 03/22/2017
 ms.topic: article
-pms.prod: windows
+ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, what, universal
 ms.localizationpriority: high
