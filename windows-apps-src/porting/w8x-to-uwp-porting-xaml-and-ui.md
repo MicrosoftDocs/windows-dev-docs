@@ -1,9 +1,9 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to Universal Windows Platform (UWP) apps.
 title: Porting Windows Runtime 8.x XAML and UI to UWP'
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

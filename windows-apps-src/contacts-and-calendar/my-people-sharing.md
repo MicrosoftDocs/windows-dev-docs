@@ -106,7 +106,7 @@ The “appId” is the Package Family Name, followed by ‘!’ and the Activata
 
 ## Running as a My People share target
 
-Finally, to run the app, override the [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) method in your app’s main class to handle the share target activation. The [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#properties_) property will contain the contact(s) that are being shared to, or will be empty if this is a standard share operation (not a My People share).
+Finally, to run the app, override the [OnShareTargetActivated](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) method in your app’s main class to handle the share target activation. The [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) property will contain the contact(s) that are being shared to, or will be empty if this is a standard share operation (not a My People share).
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
