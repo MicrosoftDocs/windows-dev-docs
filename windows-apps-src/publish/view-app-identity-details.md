@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app's Store listing.
 title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 12/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,7 +28,7 @@ The following values must be included in your .appx package manifest. If you [us
 -   **Package/Identity/Publisher**
 -   **Package/Properties/PublisherDisplayName**
 
-For more info, see [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity) in the [package manifest schema reference](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/schema-root).
+For more info, see [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) in the [package manifest schema reference](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
 
 Together, these elements declare the identity of your app, establishing the "package family" to which all of its packages belong. Individual packages will have additional details, such as architecture and version.
 
