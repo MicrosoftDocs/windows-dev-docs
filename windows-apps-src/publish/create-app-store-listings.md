@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 12/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,12 +17,12 @@ ms.localizationpriority: high
 
 The **Store listings** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
 
-Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots).
+Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md#screenshots). For some submissions, the [Privacy policy](#privacy-policy) and [Support contact info](#support-contact-info) fields are also required. 
 
 > [!TIP]
-> You can also [import and export Store listings](import-and-export-store-listings.md) if you'd like to enter your listing info offline in a .csv file, rather than providing this info directly in the dashboard. This may be especially convenient if you have listings in many languages.
+> You can optionally [import and export Store listings](import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in the dashboard. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once. 
 
-By default, we'll use the same Store listing (per language) for all of your targeted operating systems. If you'd like to use a customized Store listing for a specific operating system, you can [create platform-specific Store listings](create-platform-specific-store-listings.md). Your default listing will always be shown to customers on Windows 10.
+By default, we'll use the same Store listing (per language) for all of your targeted operating systems. If you'd like to use a customized Store listing for a specific operating system that your submission supports, you can [create platform-specific Store listings](create-platform-specific-store-listings.md). Your default listing will always be shown to customers on Windows 10.
 
 ## Store listing languages
 
