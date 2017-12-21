@@ -302,7 +302,7 @@ Part II of this tutorial will give you experience with:
 * [Node.js](https://nodejs.org/en/): to create the server hosting your game
 * [jQuery](http://jquery.com/): a JavaScript library
 * [Express](http://expressjs.com/): for the web application framework
-* [Pug](https://pugjs.org/): (formally Jade) for the templating engine
+* [Pug](https://pugjs.org/): (formerly Jade) for the templating engine
 * [Bootstrap](http://getbootstrap.com/): for the responsive layout
 * [Visual Studio Code](https://code.visualstudio.com/): for code authoring, markdown viewing, and debugging
 
