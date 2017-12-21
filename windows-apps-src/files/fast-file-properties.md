@@ -119,6 +119,7 @@ Apps can request the user to add the location to the index using [StorageLibrary
 ## See also
 [QueryOptions API Reference](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [Enumerate and query files and folders](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
-[File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)   
+[File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
+[Fast Property Access Walkthrough](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  
