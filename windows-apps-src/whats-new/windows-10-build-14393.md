@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 Windows 10 build 14939 (also known as the Anniversary Update or version 1607), in combination with Visual Studio 2017 and the updated SDK, provide the tools, features, and experiences to make remarkable Universal Windows Platform apps. [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
-This is a list of new and improved features of interest to developers. For a raw list of new namespaces added to the Windows SDK, see the [Windows 10 build 14939 API changes](windows-10-build-14393-api-diff.md). For more information on the highlighted features of this update, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
+This is a list of new and improved features of interest to developers. For a raw list of new namespaces added to the Windows SDK, see the [Windows 10 build 14393 API changes](windows-10-build-14393-api-diff.md). For more information on the highlighted features of this update, see [What's cool in Windows 10](http://go.microsoft.com/fwlink/?LinkId=823181).
 
 ## Windows 10 build 14393 - July 2016
 
