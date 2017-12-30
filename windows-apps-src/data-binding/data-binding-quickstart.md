@@ -104,7 +104,7 @@ namespace Quickstart
                     wstringstream << L", released: " << this->ReleaseDateTime->MonthAsNumericString()->Data();
                     wstringstream << L"/" << this->ReleaseDateTime->DayAsString()->Data();
                     wstringstream << L"/" << this->ReleaseDateTime->YearAsString()->Data();
-                    return ref new Platform::String(wstringstream.str().c-str());
+                    return ref new Platform::String(wstringstream.str().c_str());
                 }
             }
         };
