@@ -4,7 +4,7 @@ Description: To view performance data for the ad units in your apps, use the adv
 title: Advertising performance report
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 11/21/2017
+ms.date: 01/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 The **Advertising performance report** shows how your [ad units](in-app-ads.md) are performing, including community ads. This report includes data from multiple ad providers in UWP apps that use [ad mediation](in-app-ads.md#mediation).
 
-To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [get ad performance data](../monetize/get-ad-performance-data.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+To view this report, expand **Analyze** in the left navigation menu and then select **Ad performance**. You can view this data in your dashboard, or download the report data to view offline by clicking the arrow icons on the page. Alternatively, you can programmatically retrieve this data by using the [get ad performance data](../monetize/get-ad-performance-data.md) method in our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
 When viewing the advertising performance reports, be aware that reporting data for the last three days might change as we receive and process new data from various sources. Additionally, data restatements can happen up to 90 days in the past.
 
