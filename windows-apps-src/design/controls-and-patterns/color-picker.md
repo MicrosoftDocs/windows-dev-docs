@@ -29,7 +29,7 @@ A color picker is used to browse through and select colors. By default, it lets 
 
 Use the color picker to let a user select colors in your app. For example, use it to change color settings, such as font colors, background, or app theme colors.
 
-If your app is for drawing or similar tasks using pen, consider using [Inking controls](http://windowsstyleguide/controls-and-patterns/inking-controls/) along with the color picker.
+If your app is for drawing or similar tasks using pen, consider using [Inking controls](inking-controls.md) along with the color picker.
 
 ## Examples
 
