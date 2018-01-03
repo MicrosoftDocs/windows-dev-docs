@@ -55,7 +55,7 @@ In this example:
 
 > **Note**&nbsp;&nbsp;Don't confuse the concepts related to [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) with the **Resource** build action, resource (.resw) files, or other "resources" that are discussed in the context of structuring the code project that produces your app package.
 
-Resources don't have to be strings; they can be any shareable object, such as styles, templates, brushes, and colors. However, controls, shapes, and other [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706)s are not shareable, so they can't be declared as reusable resources. For more info about sharing, see the [XAML resources must be shareable](#xaml-resources-must-be-sharable) section later in this topic.
+Resources don't have to be strings; they can be any shareable object, such as styles, templates, brushes, and colors. However, controls, shapes, and other [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706)s are not shareable, so they can't be declared as reusable resources. For more info about sharing, see the [XAML resources must be shareable](#xaml-resources-must-be-shareable) section later in this topic.
 
 Here, both a brush and a string are declared as resources and used by controls in a page.
 
