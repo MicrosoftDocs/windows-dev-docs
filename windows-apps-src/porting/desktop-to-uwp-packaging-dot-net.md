@@ -59,6 +59,10 @@ If you plan to publish your app to the [Microsoft Store](https://www.microsoft.c
 
    You can upload that file directly to the store.
 
+**Video**
+
+<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+
 ## Next steps
 
 **Find answers to your questions**
