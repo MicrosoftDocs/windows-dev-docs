@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: Use inertia modifiers to create snap points
-description: 
+description: Learn how to use an InteractionTracker’s InertiaModifier feature to create motion experiences that snap to a specified point.
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article

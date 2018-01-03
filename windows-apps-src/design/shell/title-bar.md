@@ -98,7 +98,7 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 ### Draggable regions
 
-The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_SetTitleBar) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
+The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_SetTitleBar_Windows_UI_Xaml_UIElement_) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
 
 Here's how to set a Grid of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page. See the [Full customization example](./title-bar.md#full-customization-example) section for the full code.
 

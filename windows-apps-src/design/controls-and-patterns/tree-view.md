@@ -1,9 +1,10 @@
 ---
 author: Jwmsft
-Description: Use the tree view example code to create an expandable tree.
+description: Use the tree view example code to create an expandable tree.
 title: Tree view
 label: Tree view
 template: detail.hbs
+ms.author: jimwalk
 ms.localizationpriority: medium
 ---
 # Hierarchical layout with TreeView
@@ -19,9 +20,9 @@ The sample supports:
 - Dragging and dropping of nodes within the TreeView
 - Built-in accessibility
 
-![Tree view in the reference sample](images/tree-view-sample.png) | ![Tree view in the Edge browser](images/tree-view-edge.png)
+![Tree view in the reference sample](images/tree-view-sample.png) | ![Tree view in the Microsoft Edge browser](images/tree-view-edge.png)
 -- | --
-TreeView reference sample | TreeView in Edge browser
+TreeView reference sample | TreeView in Microsoft Edge browser
 
 ## Is this the right pattern?
 
