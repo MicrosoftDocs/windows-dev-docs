@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: Input-driven animations
-description: 
+description: Learn how to use input animations in your app UI.
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article

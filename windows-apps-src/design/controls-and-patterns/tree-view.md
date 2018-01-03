@@ -1,9 +1,10 @@
 ---
 author: Jwmsft
-Description: Use the tree view example code to create an expandable tree.
+description: Use the tree view example code to create an expandable tree.
 title: Tree view
 label: Tree view
 template: detail.hbs
+ms.author: jimwalk
 ms.localizationpriority: medium
 pm-contact: predavid
 design-contact: ksulliv

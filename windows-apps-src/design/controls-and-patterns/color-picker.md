@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 
 A color picker is used to browse through and select colors. By default, it lets a user navigate through colors on a color spectrum, or specify a color in either Red-Green-Blue (RGB), Hue-Saturation-Value (HSV), or Hexadecimal textboxes.
 
-> **Important APIs**: [ColorPicker class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_color), [ColorChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_colorchanged)
+> **Important APIs**: [ColorPicker class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker), [Color property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker#Windows_UI_Xaml_Controls_ColorPicker_Color), [ColorChanged event](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker#Windows_UI_Xaml_Controls_ColorPicker_ColorChanged)
 
 ![A default color picker](images/color-picker-default.png)
 
@@ -56,7 +56,7 @@ This example shows how to create a default color picker in XAML.
 <ColorPicker x:Name="myColorPicker"/>
 ```
 
-By default, the color picker shows a preview of the chosen color on the rectangular bar beside the color spectrum. You can use either the [ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_colorchanged) event or the [Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_color) property to access the selected color and use it in your app. See the following examples for detailed code.
+By default, the color picker shows a preview of the chosen color on the rectangular bar beside the color spectrum. You can use either the [ColorChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker#Windows_UI_Xaml_Controls_ColorPicker_ColorChanged) event or the [Color](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker#Windows_UI_Xaml_Controls_ColorPicker_Color) property to access the selected color and use it in your app. See the following examples for detailed code.
 
 ### Bind to the chosen color
 
@@ -147,7 +147,7 @@ When the user does need precise control, like in a graphic design app, you can s
 
 #### Show the circle spectrum
 
-This example shows how to use the [ColorSpectrumShape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker_colorspectrumshape) property to configure the color picker to use a circular spectrum instead of the default square.
+This example shows how to use the [ColorSpectrumShape](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker#Windows_UI_Xaml_Controls_ColorPicker_ColorSpectrumShape) property to configure the color picker to use a circular spectrum instead of the default square.
 
 ```xaml
 <ColorPicker x:Name="myColorPicker"

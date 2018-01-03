@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: Pointer-based animations
-description: 
+description: Learn how to use the position of a pointer to create dynamic "stick to the cursor" experiences.
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
