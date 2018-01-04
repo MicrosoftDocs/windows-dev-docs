@@ -172,7 +172,7 @@ The radio button groups look like this.
 
 ![Radio buttons in two groups](images/radio-button-groups.png)
 
-A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton#Windows_UI_Xaml_Controls_Primitives_ToggleButton_IsChecked) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**.
+A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [IsChecked](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton#Windows_UI_Xaml_Controls_Primitives_ToggleButton_IsChecked) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**. You can actually compare the **IsChecked** property with a bool by getting the **Value** of the **IsChecked** property
 
 ## Recommendations
 
