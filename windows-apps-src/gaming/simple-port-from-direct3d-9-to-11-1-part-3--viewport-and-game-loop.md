@@ -132,7 +132,7 @@ The DirectX UWP templates include a robust Direct3D device infrastructure that's
 
 Visit the following in-depth Microsoft Store game game development articles:
 
--   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Audio for games](working-with-audio-in-your-directx-game.md)
 -   [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md)
 

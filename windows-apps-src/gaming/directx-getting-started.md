@@ -36,7 +36,7 @@ when your game resumes.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[The app object and DirectX](about-the-metro-style-user-interface-and-directx.md)</p></td>
+<td align="left"><p>[The app object and DirectX](about-the-uwp-user-interface-and-directx.md)</p></td>
 <td align="left"><p>Access and interoperate with the app object directly.</p></td>
 </tr>
 <tr class="even">

@@ -53,7 +53,7 @@ The [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) A
 D3DX and DXUT are deprecated and cannot be used by UWP games. These helper libraries provided resources for tasks such as texture loading and mesh loading.
 
 -   The [Simple port from Direct3D 9 to UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough demonstrates how to set up a window, initialize Direct3D, and do basic 3D rendering.
--   The [Simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md) walkthrough demonstrates common game programming tasks including graphics, loading files, UI, controls, and sound.
+-   The [Simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md) walkthrough demonstrates common game programming tasks including graphics, loading files, UI, controls, and sound.
 -   The [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) community project offers helper classes for use with Direct3D 11 and UWP apps.
 
 ## Move shader programs from FX to HLSL

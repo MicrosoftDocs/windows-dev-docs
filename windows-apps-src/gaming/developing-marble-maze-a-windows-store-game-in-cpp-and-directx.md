@@ -52,7 +52,7 @@ Marble Maze offers multiple ways for a user to interact with the game board. If 
 
 If you’re interested in creating 3D games or other graphics-intensive applications for Windows 10, this is for you. We hope you use the principles and practices that this documentation outlines to create your own UWP game. A background or strong interest in C++ and DirectX programming will help you get the most out of this documentation. If you don't have experience with DirectX, you can still benefit if you have experience with similar 3D graphics programming environments.
 
-The document [Walkthrough: create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md) describes another sample that implements a basic 3D shooting game by using DirectX and C++.
+The document [Walkthrough: create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md) describes another sample that implements a basic 3D shooting game by using DirectX and C++.
 
 ## What this documentation covers
 
