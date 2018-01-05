@@ -127,6 +127,8 @@ public class MyApplication
 * [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
 * [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
 
+**Samples**
+* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 
 **Archive samples**
 * [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)

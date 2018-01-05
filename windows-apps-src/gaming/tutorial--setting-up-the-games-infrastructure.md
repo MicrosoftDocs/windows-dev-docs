@@ -117,7 +117,7 @@ void App::Run()
 }
 ```
 
-What this method does: If the window for your game isn't closed, it dispatches all events, updates the timer, then renders and presents the results of your graphics pipeline. We'll talk about this in greater detail in [Define the UWP app framework](tutorial--building-the-games-metro-style-app-framework.md), [Rendering framework I: Intro to rendering](tutorial--assembling-the-rendering-pipeline.md), and  [Rendering framework II: Game rendering](tutorial-game-rendering.md). At this point, you should have a sense of the basic code structure of a UWP DirectX game.
+What this method does: If the window for your game isn't closed, it dispatches all events, updates the timer, then renders and presents the results of your graphics pipeline. We'll talk about this in greater detail in [Define the UWP app framework](tutorial--building-the-games-uwp-app-framework.md), [Rendering framework I: Intro to rendering](tutorial--assembling-the-rendering-pipeline.md), and  [Rendering framework II: Game rendering](tutorial-game-rendering.md). At this point, you should have a sense of the basic code structure of a UWP DirectX game.
 
 ## Review and update the package.appxmanifest file
 
@@ -156,7 +156,7 @@ There are a few files we haven't looked at yet. These files provide additional t
 
 At this point, you've learnt how to create a UWP DirectX game project using the **DirectX 11 App (Universal Windows)** template and have been introduced to a few components and files provided by this project.
 
-The next section is [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md). We'll examine how this game uses and extends many of the concepts and components that the template provides.
+The next section is [Defining the game's UWP framework](tutorial--building-the-games-uwp-app-framework.md). We'll examine how this game uses and extends many of the concepts and components that the template provides.
 
  
 

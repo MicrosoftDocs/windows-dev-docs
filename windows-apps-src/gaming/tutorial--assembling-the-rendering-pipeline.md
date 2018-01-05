@@ -48,7 +48,7 @@ In this part of the tutorial, we'll focus on rendering 3D objects in the game.
 
 ## Establish a connection to the graphics interface
 
-To access to the hardware for rendering, see the UWP framework article under [__App::Initialize__](tutorial--building-the-games-metro-style-app-framework.md#appinitialize-method).
+To access to the hardware for rendering, see the UWP framework article under [__App::Initialize__](tutorial--building-the-games-uwp-app-framework.md#appinitialize-method).
 
 The __make\_shared function__, as shown [below](#appinitialize-method), is used to create a __shared\_ptr__ to [__DX::DeviceResources__](#dxdeviceresources), which also provides access to the device. 
 

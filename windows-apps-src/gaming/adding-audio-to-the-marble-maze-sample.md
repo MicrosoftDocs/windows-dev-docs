@@ -822,7 +822,7 @@ Marble Maze also uses the **m\_engineExperiencedCriticalError** flag to guard ag
 
 That wraps up the Marble Maze game sample! Though it is a relatively simple game, it contains many of the important parts that go into any UWP DirectX game, and is a good example to follow when making your own game.
 
-Now that you've finished following along, try tinkering around with the source code and seeing what happens. Or check out [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md), another UWP DirectX game sample.
+Now that you've finished following along, try tinkering around with the source code and seeing what happens. Or check out [Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md), another UWP DirectX game sample.
 
 Ready to go further with DirectX? Then check out our guides at [DirectX programming](directx-programming.md).
 
