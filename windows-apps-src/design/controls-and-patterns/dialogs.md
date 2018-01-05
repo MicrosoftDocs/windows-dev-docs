@@ -207,15 +207,15 @@ Use the ContentDialog.CloseButton API to create this button. This allows you to 
     <li>The user presses Gamepad B </li>
 </ol>
 
-When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks. Pressing on the CloseButton returns ContentDialogResult.None.
+When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.comlibrary/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks. Pressing on the CloseButton returns ContentDialogResult.None.
 
 #### PrimaryButton and SecondaryButton
 In addition to the CloseButton, you may optionally present the user with one or two action buttons related to the main instruction.
 Leverage PrimaryButton for the first "do it" action, and SecondaryButton for the second "do it" action. In three-button dialogs, the PrimaryButton generally represents the affirmative "do it" action, while the SecondaryButton generally represents a neutral or secondary "do it" action.
 For example, an app may prompt the user to subscribe to a service. The PrimaryButton as the affirmative "do it" action would host the Subscribe text, while the SecondaryButton as the neutral "do it" action would host the Try it text. The CloseButton would allow the user to cancel without performing either action.
 
-When the user clicks on the PrimaryButton, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns ContentDialogResult.Primary.
-When the user clicks on the SecondaryButton, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns ContentDialogResult.Secondary.
+When the user clicks on the PrimaryButton, the [ShowAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns ContentDialogResult.Primary.
+When the user clicks on the SecondaryButton, the [ShowAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns ContentDialogResult.Secondary.
 
 ![A three button dialog](images/dialogs/dialog_RS2_three_button.png)
 
@@ -265,7 +265,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 > Some platforms put the affirmation button on the right instead of the left. So why do we recommend putting it on the left?  If you assume that the majority of users are right-handed and they hold their phone with that hand, it's actually more comfortable to press the affirmation button when it's on the left, because the button is more likely to be within the user's thumb-arc. Buttons on the right-side of the screen require the user to pull their thumb inward into a less-comfortable position.
 
 ### Create a dialog
-To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
+To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -281,9 +281,9 @@ private async void DisplayNoWifiDialog()
 }
 ```
 
-When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks.
+When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks.
 
-The dialog in this example asks a question and uses the returned [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to determine the user's response.
+The dialog in this example asks a question and uses the returned [ContentDialogResult](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to determine the user's response.
 
 ```csharp
 private async void DisplayDeleteFileDialog()
@@ -319,7 +319,7 @@ A flyout is a light dismiss container that can show arbitrary UI as its content.
 
 ![Context menu nested inside a flyout](images/flyout-nested.png)
 
-Flyouts are attached to specific controls. You can use the [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), provide a [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) property that you can use to associate a flyout or [context menu](menus.md).
+Flyouts are attached to specific controls. You can use the [Placement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), provide a [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) property that you can use to associate a flyout or [context menu](menus.md).
 
 This example creates a simple flyout that displays some text when the button is pressed.
 ````xaml
@@ -332,7 +332,7 @@ This example creates a simple flyout that displays some text when the button is 
 </Button>
 ````
 
-If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) method to show the flyout.
+If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) method to show the flyout.
 
 This example adds a simple flyout to an image. When the user taps the image, the app shows the flyout.
 

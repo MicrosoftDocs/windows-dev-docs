@@ -39,7 +39,7 @@ When stacking larger type on top of smaller type, the distance from the last bas
 
 ![Shows how large type stacks on small type](images/line-height-stacking.png)
 
-In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.
+In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.
 
 ```xaml
 <StackPanel Width="200">
@@ -147,7 +147,7 @@ Once the height of the text extends beyond the height of the icon, the first lin
 ![Shows several icon and text pairings](images/hanging-text-alignment.png)
 
 >[!NOTE]
->XAML’s [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
+>XAML’s [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) property provides access to the cap height and baseline font metrics. It can be used to visually vertically center or top-align type.
 
 ## Clipping and ellipses
 
@@ -166,7 +166,7 @@ The type ramp establishes a crucial design relationship from headlines to body t
 </div>
 
 >[!NOTE]
->Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).
+>Most levels of the ramp are available as XAML [static resources](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) that follow the `*TextBlockStyle` naming convention (ex: `HeaderTextBlockStyle`).
 
 
 <!--
