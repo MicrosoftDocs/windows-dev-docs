@@ -238,7 +238,6 @@ Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a S
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607)
-* [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
+* [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 * [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
 

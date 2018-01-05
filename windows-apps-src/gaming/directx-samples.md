@@ -29,7 +29,7 @@ These are some game samples developed with DirectX.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</p></td>
+<td align="left"><p>[Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)</p></td>
 <td align="left"><p>Create a basic Universal Windows Platform (UWP) game with DirectX and C++. This set of tutorials focus on key UWP DirectX game development techniques and considerations.</p></td>
 </tr>
 <tr class="even">

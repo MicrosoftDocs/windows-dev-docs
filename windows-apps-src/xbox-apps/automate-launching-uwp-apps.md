@@ -187,7 +187,7 @@ void OnActivated(IActivatedEventArgs^ args)
 		if (args->Kind == ActivationKind::Launch)
 		{
 			auto launchArgs = static_cast<LaunchActivatedEventArgs^>(args);	
-Platform::String^ argval = launchArgs->Arguments;
+			Platform::String^ argval = launchArgs->Arguments;
 			// Manipulate arguments …
 		}
 
@@ -198,7 +198,7 @@ Platform::String^ argval = launchArgs->Arguments;
 			Platform::String^ argval = protocolArgs->Uri->ToString();
 			// Manipulate arguments …
 		}
-    }
+}
 ```
 
 ## Summary

@@ -74,5 +74,5 @@ If you are porting an existing game, see the following topics.
 
 If you are creating a new DirectX game, see the following topics.
 
--   [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)
 -   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)

@@ -195,7 +195,7 @@ There are many Windows 10 game and app samples available to help you understand 
 	</tr>
     <tr>
         <td>Direct3D 11 first-person game sample</td>
-        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)</td>
     </tr>
     <tr>
         <td>Direct2D custom image effects sample</td>
@@ -421,7 +421,7 @@ The extensive features and deep platform integration of DirectX provide the powe
     </tr>
     <tr>
         <td>Tutorial: How to create a UWP DirectX game</td>
-        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)</td>
     </tr>
     <tr>
         <td>DirectX overviews and reference</td>
@@ -1149,11 +1149,11 @@ Guides and references for DirectX game development.
     </tr>
     <tr>
         <td>Tutorial: How to create a UWP DirectX game</td>
-        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
+        <td>[Create a simple UWP game with DirectX](tutorial--create-your-first-uwp-directx-game.md)</td>
     </tr>
     <tr>
         <td>DirectX interaction with the UWP app model</td>
-        <td>[The app object and DirectX](about-the-metro-style-user-interface-and-directx.md)</td>
+        <td>[The app object and DirectX](about-the-uwp-user-interface-and-directx.md)</td>
     </tr>
     <tr>
         <td>Graphics and DirectX 12 development videos (YouTube channel)</td>
