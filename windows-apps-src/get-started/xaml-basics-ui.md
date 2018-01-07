@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Create a user interface
 
-In this tutorial, you'll learn have to create a basic user interface (UI) with common XAML controls and panels by:
+In this tutorial, you'll learn how to create a basic user interface (UI) with common XAML controls and panels by:
 
 + Using the XAML tools in Visual Studio, such as XAML Designer, Toolbox, XAML editor, Properties panel, and Document Outline to add controls and content to your UI
 + Utilizing some of the most common XAML layout panels, such as RelativePanel, Grid, and StackPanel.
