@@ -21,7 +21,7 @@ The PhotoLab app has two primary pages:
 **MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
 ![MainPage](images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editting menu allows the photo to be altered, renamed, and saved.
+**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
 ![DetailPage](images/xaml-basics/detailpage.png)
 
 ## Tutorial overview

@@ -40,7 +40,7 @@ NavigationView works well for:
 
 NavigationView is just one of several navigation elements you can use. To learn more about other navigation patterns and elements, see [Navigation design basics](../basics/navigation-basics.md).
 
-Rather than use the NavigationView control, you can also build your own nav pane pattern using [SplitView](split-view.md) and [ListView](lists.md). To see a sample implementation, download the [XAML navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
+The NavigationView control has many built-in behaviors that implement the simple nav pane pattern. If your navigation require more complex behavior or if you would like to build your own nav pane pattern, you can use [SplitView](split-view.md) and [ListView](lists.md). To see a sample implementation, download the [XAML navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
 
 ## NavigationView sections
 The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
@@ -166,25 +166,23 @@ NavigationView does not automatically show the back button in your app’s title
 
 ## Examples
 
-<div style="overflow: hidden; margin: 0 -8px;">
-    <div style="float: left; margin: 0 8px 16px; min-width: calc(25% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <div style="height: 133px; width: 100%">
-            <img src="images/xaml-controls-gallery.png" alt="XAML controls gallery"></img>
-        </div>
-    </div>
-    <div style="float: left; margin: -22px 8px 16px; min-width: calc(75% - 16px); max-width: calc(100% - 16px); width: calc((580px - 100%) * 580);">
-        <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
-        <ul>
-        <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-        <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-        </ul>
-    </div>
-</div>
-
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ### Code example
 
-The following is a simple example of how you can incorporate NavigationView into your app.
+The following is a simple example of how you can incorporate NavigationView into your app. We demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
 
 ![Screenshot of code example](images/navview-sample.png)
 
@@ -201,19 +199,20 @@ The following is a simple example of how you can incorporate NavigationView into
     <NavigationView x:Name="NavView"
                     ItemInvoked="NavView_ItemInvoked"
                     SelectionChanged="NavView_SelectionChanged"
-                    Loaded="NavView_Loaded">
+                    Loaded="NavView_Loaded"
+                    Canvas.ZIndex="0">
 
         <NavigationView.MenuItems>
-            <NavigationViewItem Content="Home" Tag="home">
+            <NavigationViewItem x:Uid="HomeNavItem" Content="Home" Tag="home">
                 <NavigationViewItem.Icon>
                     <FontIcon Glyph="&#xE10F;"/>
                 </NavigationViewItem.Icon>
             </NavigationViewItem>
             <NavigationViewItemSeparator/>
             <NavigationViewItemHeader Content="Main pages"/>
-            <NavigationViewItem Icon="AllApps" Content="Apps" Tag="apps"/>
-            <NavigationViewItem Icon="Video" Content="Games" Tag="games"/>
-            <NavigationViewItem Icon="Audio" Content="Music" Tag="music"/>
+            <NavigationViewItem x:Uid="AppsNavItem" Icon="AllApps" Content="Apps" Tag="apps"/>
+            <NavigationViewItem x:Uid="GamesNavItem" Icon="Video" Content="Games" Tag="games"/>
+            <NavigationViewItem x:Uid="MusicNavItem" Icon="Audio" Content="Music" Tag="music"/>
         </NavigationView.MenuItems>
 
         <NavigationView.AutoSuggestBox>
@@ -222,7 +221,7 @@ The following is a simple example of how you can incorporate NavigationView into
 
         <NavigationView.HeaderTemplate>
             <DataTemplate>
-                <Grid Margin="24,24,0,0">
+                <Grid Margin="24,10,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
@@ -233,7 +232,7 @@ The following is a simple example of how you can incorporate NavigationView into
                            Text="Welcome"/>
                     <CommandBar Grid.Column="1"
                             HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
+                            VerticalAlignment="Top"
                             DefaultLabelPosition="Right"
                             Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
                         <AppBarButton Label="Refresh" Icon="Refresh"/>
@@ -265,10 +264,12 @@ The following is a simple example of how you can incorporate NavigationView into
 ```csharp
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
+    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+    
     // you can also add items in code behind
     NavView.MenuItems.Add(new NavigationViewItemSeparator()); 
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Content = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
+        { Content = loader.GetString("ContentNavItem"), Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
 
     // set the initial SelectedItem 
     foreach (NavigationViewItemBase item in NavView.MenuItems)
@@ -283,6 +284,8 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
+    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
     if (args.IsSettingsInvoked)
     {
         ContentFrame.Navigate(typeof(SettingsPage));
@@ -291,23 +294,23 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
     {
         switch (args.InvokedItem)
         {
-          case "Home":
+          case loader.GetString("HomeNavItem.Content"):
               ContentFrame.Navigate(typeof(HomePage));
               break;
 
-          case "Apps":
+          case loader.GetString("AppsNavItem.Content"):
               ContentFrame.Navigate(typeof(AppsPage));
               break;
 
-          case "Games":
+          case loader.GetString("GamesNavItem.Content"):
               ContentFrame.Navigate(typeof(GamesPage));
               break;
 
-          case "Music":
+          case loader.GetString("MusicNavItem.Content"):
               ContentFrame.Navigate(typeof(MusicPage));
               break;
 
-          case "My content":
+          case loader.GetString("ContentNavItem.Content"):
               ContentFrame.Navigate(typeof(MyContentPage));
               break;
         }
@@ -378,6 +381,7 @@ CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
 ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
 titleBar.ButtonBackgroundColor = Colors.Transparent;
 titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+titleBar.ButtonForegroundColor = (Color)this.Resources["SystemBaseHighColor"];
 ```
 
 Drawing into the title bar has the side-effect of hiding your app's title. To help users, restore the title by adding your own TextBlock. Add the following markup to the root page containing your NavigationView.
@@ -385,8 +389,13 @@ Drawing into the title bar has the side-effect of hiding your app's title. To he
 ```xaml
 <!-- Page attribute -->
 xmlns:appmodel="using:Windows.ApplicationModel"
+<Grid>
 
-<TextBlock x:Name="AppTitle" Style="{StaticResource CaptionTextBlockStyle}" Text="{x:Bind appmodel:Package.Current.DisplayName}" IsHitTestVisible="False"/>
+    <TextBlock x:Name="AppTitle" Style="{StaticResource CaptionTextBlockStyle}" Text="{x:Bind appmodel:Package.Current.DisplayName}" IsHitTestVisible="False" Canvas.ZIndex="1"/>
+
+    <NavigationView Canvas.ZIndex="0" ... />
+
+</Grid>
 ```
 
 You'll also need to adjust AppTitle's margins depending on back button's visibility.
