@@ -36,6 +36,19 @@ The **ElementSoundPlayer** has three different states: **On** **Off** and **Auto
 
 If set to **Off**, no matter where your app is run, sound will never play. If set to **On** sounds for your app will play on every platform.
 
+Enabling ElementSoundPlayer will automatically enable spatial audio (3D sound) as well. To disable 3D sound (while still keeping the sound on), disable the **SpatialAudioMode** of the ElementSoundPlayer: 
+
+```C#
+ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
+```
+
+The **SpatialAudioMode** property can takes these values: 
+- **Auto**: Spatial audio will turn on when sound is on. 
+- **Off**: Spatial audio is always off, even if sound is on.
+- **On**: Spatial audio will always play.
+
+To learn more about spatial audio and how XAML handles it see [AudioGraph - Spatial Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
+
 ### Sound for TV and Xbox
 
 Sound is a key part of the 10-foot experience, and by default, the **ElementSoundPlayer**'s state is **Auto**, meaning that you will only get sound when your app is running on Xbox.
