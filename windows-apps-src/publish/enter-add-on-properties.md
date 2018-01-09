@@ -41,8 +41,6 @@ If you selected **Store-managed consumable** for your product type, **Quantity**
 
 If you selected **Subscription** for your product type, **Subscription period** is shown here. You'll need to choose one of the available options (**Monthly**, **3 months**, **6 months**, **Annually**, or **24 months**) to indicate how frequently a customer will be charged for the subscription. Note that after your add-on is published, you can't change your **Subscription period** selection.
 
-> [!NOTE]
-> Subscription add-ons are currently available only to developer accounts who are participating in the [Dev Center Insider Program](dev-center-insider-program.md).
 
 ## Free trial
 
