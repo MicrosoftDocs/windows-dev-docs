@@ -20,7 +20,11 @@ You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from
 
 To deploy to mobile devices, you must first create a package. For more information, see [here](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). First, connect your Windows 10 device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your UWP app:
+The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\<SDK Version>\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). 
+> [!NOTE]
+> In version 15063 and later of the SDK, the SDK is installed side by side within version-specific folders.  Previous SDKs (prior to and including 14393) are written directly to the parent folder.
+
+First, connect your Windows 10 device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your UWP app:
 
 ## WinAppDeployCmd syntax and options
 
