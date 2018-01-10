@@ -46,9 +46,6 @@ There are two types of consumable add-ons:
 
 If your want to charge customers on a recurring basis for your add-on, choose **Subscription**.
 
-> [!NOTE]
-> Subscription add-ons are currently available only to developer accounts who are participating in the [Dev Center Insider Program](dev-center-insider-program.md).
-
 After a subscription add-on is initially acquired by a customer, they will continue to be charged at recurring intervals in order to keep using the add-on. The customer can cancel the subscription at any time to avoid further charges. You'll need to specify the subscription period, and whether or not to offer a free trial, in the **Properties** step of your submission.
 
 Subscription add-ons are only supported for customers running Windows 10, version 1607 or later. The parent app must be compiled using Windows 10 SDK version 14393 or later and it must use the in-app purchase API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace. For more information about the differences between these namespaces, see [In-app purchases and trials](../monetize/in-app-purchases-and-trials.md).

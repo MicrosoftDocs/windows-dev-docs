@@ -1,9 +1,9 @@
 ---
 author: laurenhughes
-title: Fast Access to file properties in UWP
+title: Fast access to file properties in UWP
 description: Efficiently gather a list of files and their properties from a library to use in a UWP app.
 ms.author: lahugh
-ms.date: 10/13/2017
+ms.date: 1/9/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, file, properties
 ms.localizationpriority: medium
 ---
 
-# Fast Access to file properties in UWP 
+# Fast access to file properties in UWP 
 
 Learn how to quickly gather a list of files and their properties from a library and use those properties in an app.  
 
@@ -46,7 +46,7 @@ Users may have thousands or millions of files in their pictures library, so call
 In our example, we do this by using [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](https://docs.microsoft.com/uwp/api/windows.storage.search.storagefilequeryresult#Windows_Storage_Search_StorageFileQueryResult_GetFilesAsync_System_UInt32_System_UInt32_) to only fetch 100 files at a time. The app will then process the files and allow the OS to release that memory afterwards. This technique caps the maximum memory of the app and ensures the system stays responsive. Of course, you will need to adjust the number of files returned for your scenario, but to ensure a responsive experience for all users, it's recommended to not fetch more than 500 files at one time.
 
 
-C# Sample  
+**Example**  
 ```csharp
 StorageFolder folderToEnumerate = KnownFolders.PicturesLibrary; 
 // Check if the folder is indexed before doing anything. 
