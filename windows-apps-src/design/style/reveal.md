@@ -249,6 +249,14 @@ Here's an entire template for what a Reveal Button would look like:
 </Style>
 ```
 
+### Fine-tuning the Reveal effect on a custom control 
+
+After you enable Reveal on your custom or re-templated content, run the app and evaluate the effect. If you're not happy with the effect, try ,making some of these changes:
+ 
+* Remove border approach, and keep it on the hovered item only.
+* If you have a lot of interactive elements that go into and out of disabled states often,  use the border approach behavior on the background as well as boder to help emphasize those dynamic interactions. This helps make it very clear to the user when content is clickable and when it is not.
+* If you have touching elements, provide a 1px margin of separation between them to help indicate exactly what is interactive.
+
 ## Do's and don'ts
 - Do use Reveal on elements where the user can take many actions (CommandBars, Navigation menus)
 - Do use Reveal in groupings of interactive elements that do not have visual separators by default (lists, ribbons)

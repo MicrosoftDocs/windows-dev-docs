@@ -29,7 +29,7 @@ You use the APIs in the [Windows.Storage](https://msdn.microsoft.com/library/win
 | [Track recently used files and folders](how-to-track-recently-used-files-and-folders.md) | Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU. |
 | [Access the SD card](access-the-sd-card.md) | You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage. |
 | [File access permissions](file-access-permissions.md) | Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities. |
-| [Fast Access to file properties in UWP](fast-file-properties.md) | Efficiently gather a list of files and their properties from a library to use in a UWP app. |
+| [Fast access to file properties in UWP](fast-file-properties.md) | Efficiently gather a list of files and their properties from a library to use in a UWP app. |
 
 ## Related samples
 [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993)

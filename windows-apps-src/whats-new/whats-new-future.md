@@ -14,9 +14,9 @@ See [Package an app by using Visual Studio](https://docs.microsoft.com/en-us/win
 
 See [Extend your desktop application with modern UWP components](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend) for guidance about how to add a UWP project to your package.
 
-**Subscription add-ons are now available to developers in the Windows Dev Center Insider program**
+**Subscription add-ons now available to all developers**
 
-All developers who have joined the [Dev Center Insider program](../publish/dev-center-insider-program.md) can now use subscription add-ons to sell digital products in their apps app (such as app features or digital content) with automated recurring billing periods. For more details, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md).
+Create and publish subscription add-ons to sell digital products in your apps and games (such as advanced features or digital content) with automated recurring billing periods. For more details, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md).
 
 ### Sample Feature Entry
 
