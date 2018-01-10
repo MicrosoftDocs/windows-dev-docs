@@ -13,9 +13,6 @@ ms.localizationpriority: medium
 
 # Enable subscription add-ons for your app
 
-> [!IMPORTANT]
-> Subscription add-ons are currently available only to developer accounts who are participating in the [Dev Center Insider Program](../publish/dev-center-insider-program.md).
-
 Your Universal Windows Platform (UWP) app can offer in-app purchases of *subscription* add-ons to your customers. You can use subscriptions to sell digital products in your app (such as app features or digital content) with automated recurring billing periods.
 
 > [!NOTE]
