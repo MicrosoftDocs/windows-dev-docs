@@ -1,3 +1,16 @@
+---
+title: WNS Notification Priorities
+description: Description of the various priorities that you can set on a notification
+author: Adam Wilson
+ms.author: adwilso
+ms.date: 1/10/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp, WinRT API, WNS
+localizationpriority: medium
+---
+
 # WNS Notification Priorities
 ## Power on Windows
 As more users are now working only on battery powered devices, it is now important for all developers on Windows to know the limits of these machines. Minimizing power usage has become a standard requirement for all apps because users will uninstall apps they feel are consuming more energy than the value they are providing. 
