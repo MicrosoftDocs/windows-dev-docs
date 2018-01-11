@@ -36,7 +36,7 @@ It is worth noting that game developers have also repeatedly shared feedback tha
 
 With Achievements 2017, we are building a replacement of the existing Cloud-Powered Achievements system for future titles to use that makes it even easier for Xbox game developers to configure achievements, integrate achievement unlocks & updates into the game code, and validate that the achievements are working as expected.
 
-## What’s Different with Achievements 2017
+## What’s different with Achievements 2017
 
 |                          | Achievements 2017 system        | Cloud-Powered Achievements system      |
 |--------------------------|---------------------------------------|----------------------------------------|
@@ -47,7 +47,7 @@ With Achievements 2017, we are building a replacement of the existing Cloud-Powe
 | Real-Time Activity (RTA) | Supported                             | Supported                              |
 | Challenges               | Not Supported   | Supported                      |
 
-## Title Requirements
+## Title requirements
 
 The following are the requirements of any title that will use the Achievements 2017 system.
 
@@ -59,11 +59,11 @@ The following are the requirements of any title that will use the Achievements 2
 
 ## Update_Achievement API
 
-Once your achievements are configured via [XDP](achievements-in-xdp.md) or [UDC](achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the Update_Achievement API.
+Once your achievements are configured via [XDP](../configure-xbl/xdp/achievements-in-xdp.md) or [UDC](../configure-xbl/dev-center/achievements-in-udc.md) and published to your dev sandbox, your title can unlock them by calling the Update_Achievement API.
 
 The API is available in both the XDK and the Xbox Live SDK.
 
-### API Signature
+### API signature
 
 The API signature is as follows:
 
@@ -114,7 +114,7 @@ If the user is online, the request will be immediately sent to the Xbox Live Ach
 
 If the user is offline, the unlock request will be queued locally on the user’s device. When the user’s device has reestablished network connectivity, the request will automatically be sent to the Achievements service – note: no action is required from the game to trigger this – and the above user experiences will occur as described.
 
-### Updating Completion Progress via Update_Achievement API
+### Updating completion progress via Update_Achievement API
 
 To update a user’s progress toward unlocking an achievement, set the *percentComplete* to the appropriate whole number between 1-100.
 
@@ -124,7 +124,7 @@ If *percentComplete* is set to 100, the achievement will unlock.
 
 If *percentComplete* is set to a number greater than 100, the API will behave as if you set it to exactly 100.
 
-## Frequently Asked Questions
+## Frequently asked questions
 
 ### <span id="_Why_are_Challenges" class="anchor"></span>Can I ship my title using the Achievements 2017 system yet?
 
