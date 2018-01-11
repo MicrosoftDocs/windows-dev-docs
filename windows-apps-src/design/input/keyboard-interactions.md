@@ -234,37 +234,32 @@ For example, for `ListView` and `GridView` controls, the **Page up** key scrolls
 
 ### Keyboard shortcuts
 
-Keyboard shortcuts can make your app easier and more efficient to use.
+Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.
 
-In addition to implementing keyboard navigation and activation for your app, it is a good practice to implement shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with complex forms you may want to add support for shortcut keys as well. This can make your application more efficient to use, even
-for people who use both a keyboard and pointing devices.
+In addition to supporting keyboard navigation and activation in your app, it is also good practice to provide shortcuts for your application's functionality. Tab navigation provides a good, basic level of keyboard support, but with more complex UI you might want to add support for shortcut keys as well. 
 
 A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:
--   An [accelerator key](#accelerators) is a shortcut to an app command. Your app may or may not have UI that corresponds exactly to the command. Accelerator keys consist of the Ctrl key plus a letter key.
--   An [access key](#access-keys) is a shortcut to a piece of UI in your app. Access keys consist of the Alt key plus a letter key.
+-   [Accelerators](#accelerators) are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.
+-   [Access keys](#access-keys) are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.
 
-Visit this page for exhaustive listing of [keyboard shortcuts for Windows](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)
-as well as [application specific keyboard shortcuts](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps) used by applications developed by Microsoft.
+Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.
 
 #### Accelerators <a name="accelerators">
 
-Accelerators help users perform common actions that exists on application quickly. Providing a consistent accelerator keys that users can easily remember and use across applications that offer similar tasks is very important for making accelerator useful as well as powerful.
+Accelerators help users perform common actions in an application much more quickly and efficiently. 
 
 Examples of Accelerators:
 -   Pressing Ctrl + N key anywhere in the **Mail** app launches a new mail item.
--   Pressing Ctrl + E key anywhere in Microsoft Edge (and many Microsoft Store applications) lets users quickly enter text in a search box.
+-   Pressing Ctrl + E key anywhere in Microsoft Edge (and many Microsoft Store applications) launches search.
 
 Accelerators have the following characteristics:
--   They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt+non-alphanumeric keys and the Windows logo key).
--   They are primarily for efficiency for advanced users.
+-   They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt + non-alphanumeric keys and the Windows logo key).
 -   They are assigned only to the most commonly used commands.
 -   They are intended to be memorized, and are documented only in menus, tooltips, and Help.
--   They have effect throughout the entire program, but have no effect if they don't apply.
--   They must be assigned consistently because they are memorized and not directly documented.
+-   They have effect throughout the entire application, when supported.
+-   They should be assigned consistently as they are memorized and not directly documented.
 
 #### Access keys <a name="access-keys">
-
-Access keys provide both users with accessibility requirements and advanced keyboard users with an efficient and effective way to navigate your application's UI.
 
 See [Access keys](access-keys.md) page for more in-depth information for supporting access keys with UWP.
 
@@ -273,14 +268,14 @@ Access keys help users with motor function disabilities an ability to press one 
 Access keys have the following characteristics:
 -   They use the Alt key plus an alphanumeric key.
 -   They are primarily for accessibility.
--   They are documented directly in the UI adjacent to the control by use of [Key Tips](access-keys.md).
+-   They are documented directly in the UI, adjacent to the control, through [Key Tips](access-keys.md).
 -   They have effect only in the current window, and navigate to the corresponding menu item or control.
--   They aren't assigned consistently because they can't always be. However, access keys should be assigned consistently for commonly used commands, especially commit buttons.
+-   Access keys should be assigned consistently to commonly used commands (especially commit buttons), whenever possible.
 -   They are localized.
 
 #### Common keyboard shortcuts
 
-The following table is a small sample of frequently used keyboard commands. For a complete list of keyboard commands, see [Windows Keyboard Shortcut Keys](https://support.microsoft.com/kb/126449).
+The following table is a small sample of frequently used keyboard shortcuts. 
 
 | Action                               | Key command                                      |
 |--------------------------------------|--------------------------------------------------|
@@ -296,6 +291,8 @@ The following table is a small sample of frequently used keyboard commands. For 
 | Next tab                             | Ctrl+Tab                                         |
 | Close tab                            | Ctrl+F4 or Ctrl+W                                |
 | Semantic zoom                        | Ctrl++ or Ctrl+-                                 |
+
+For a comprehensive list of Windows system shortcuts, see [keyboard shortcuts for Windows](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts). For common application shortcuts, see [keyboard shortcuts for Microsoft applications](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps).
 
 ## Advanced experiences
 

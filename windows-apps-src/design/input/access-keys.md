@@ -3,7 +3,7 @@ author: Karl-Bridge-Microsoft
 Description: Learn how to improve both the usability and the accessibility of your UWP app by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 title: Access keys design guidelines
 label: Access keys design guidelines
-keywords: keyboard, access key, keytip, accessibility, navigation, focus, text, input, user interaction
+keywords: keyboard, access key, keytip, key tip, accessibility, navigation, focus, text, input, user interaction
 template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
@@ -30,26 +30,26 @@ See the [Accelerator keys]( https://docs.microsoft.com/windows/uwp/input/acceler
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
-The Universal Windows Platform (UWP) provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called key tips.
+The Universal Windows Platform (UWP) provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called Key Tips.
 
 ## Overview
 
 An access key is a combination of the Alt key and one or more alphanumeric keys—sometimes called a *mnemonic*—typically pressed sequentially, rather than simultaneously.
 
-Key tips are badges displayed next to controls that support access keys when the user presses the Alt key. Each key tip contains the alphanumeric keys that activate the associated control.
+Key tips are badges displayed next to controls that support access keys when the user presses the Alt key. Each Key Tip contains the alphanumeric keys that activate the associated control.
 
 > [!NOTE]
-> Keyboard shortcuts are automatically supported for access keys with a single alphanumeric character. For example, simultaneously pressing Alt+F in Word opens the File menu without displaying key tips.
+> Keyboard shortcuts are automatically supported for access keys with a single alphanumeric character. For example, simultaneously pressing Alt+F in Word opens the File menu without displaying Key Tips.
 
-Pressing the Alt key initializes access key functionality and displays all currently available key combinations in key tips. Subsequent keystrokes are handled by the access key framework, which rejects invalid keys until either a valid access key is pressed, or the Enter, Esc, Tab, or Arrow keys are pressed to deactivate access keys and return keystroke handling to the app.
+Pressing the Alt key initializes access key functionality and displays all currently available key combinations in Key Tips. Subsequent keystrokes are handled by the access key framework, which rejects invalid keys until either a valid access key is pressed, or the Enter, Esc, Tab, or Arrow keys are pressed to deactivate access keys and return keystroke handling to the app.
 
 Microsoft Office apps provide extensive support for access keys. The following image shows the Home tab of Word with access keys activated (note the support for both numbers and multiple keystrokes).
 
-![KeyTip badges for access keys in Microsoft Word](images/accesskeys/keytip-badges-word.png)
+![Key Tip badges for access keys in Microsoft Word](images/accesskeys/keytip-badges-word.png)
 
 _KeyTip badges for access keys in Microsoft Word_
 
-To add an access key to a control, use the **AccessKey property**. The value of this property specifies the access key sequence, the shortcut (if a single alphanumeric), and the key tip.
+To add an access key to a control, use the **AccessKey property**. The value of this property specifies the access key sequence, the shortcut (if a single alphanumeric), and the Key Tip.
 
 ``` xaml
 <Button Content="Accept" AccessKey="A" Click="AcceptButtonClick" />
@@ -249,46 +249,46 @@ _Specify the AccessKey property specified in the resources.resw file_
 
 For more info, see [Translating UI resources ](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
 
-## Position key tips
+## Key Tip positioning
 
-Key tips are displayed as floating badges relative to their corresponding UI element, taking into account the presence of other UI elements, other key tips, and the screen edge.
+Key tips are displayed as floating badges relative to their corresponding UI element, taking into account the presence of other UI elements, other Key Tips, and the screen edge.
 
-Typically, the default key tip location is sufficient and provides built-in support for adaptive UI.
+Typically, the default Key Tip location is sufficient and provides built-in support for adaptive UI.
 
-![Example of automatic key tip placement](images/accesskeys/auto-keytip-position.png)
+![Example of automatic Key Tip placement](images/accesskeys/auto-keytip-position.png)
 
-_Example of automatic key tip placement_
+_Example of automatic Key Tip placement_
 
-However, should you need more control over key tip positioning, we recommend the following:
+However, should you need more control over Key Tip positioning, we recommend the following:
 
-1.  **Obvious association principle**: The user can associate the control with the key tip easily.
+1.  **Obvious association principle**: The user can associate the control with the Key Tip easily.
 
-    a.  The KeyTip should be **close** to the element who have the access key (the owner).  
-    b.  The KeyTip should **avoid covering enabled elements** that have access keys.   
-    c.  If a KeyTip can’t be placed close to its owner, it should overlap the owner. 
+    a.  The Key Tip should be **close** to the element who have the access key (the owner).  
+    b.  The Key Tip should **avoid covering enabled elements** that have access keys.   
+    c.  If a Key Tip can’t be placed close to its owner, it should overlap the owner. 
 
-2.  **Discoverability**: The user can discover the control with the key tip quickly.
+2.  **Discoverability**: The user can discover the control with the Key Tip quickly.
 
-    a.  The KeyTip never **overlaps** other key tips.  
+    a.  The Key Tip never **overlaps** other Key Tips.  
 
-3.  **Easy scanning:** The user can skim the key tips easily.
+3.  **Easy scanning:** The user can skim the Key Tips easily.
 
-    a.  KeyTips should be **aligned** with each other and with the UI Element.
-    b.  KeyTips should be **grouped** as much as possible. 
+    a.  Key Tips should be **aligned** with each other and with the UI Element.
+    b.  Key Tips should be **grouped** as much as possible. 
 
 ### Relative position
 
-Use the **KeyTipPlacementMode** property to customize the placement of the key tip on a per element or per group basis.
+Use the **KeyTipPlacementMode** property to customize the placement of the Key Tip on a per element or per group basis.
 
-The Placement modes are: Top, Bottom, Right, Left, Hidden, Center, and Auto.
+The placement modes are: Top, Bottom, Right, Left, Hidden, Center, and Auto.
 
 ![Key tip placement modes](images/accesskeys/keytip-postion-modes.png)
 
 _Key tip placement modes_
 
-The center line of the control is used to calculate the vertical and horizontal alignment of the KeyTip.
+The center line of the control is used to calculate the vertical and horizontal alignment of the Key Tip.
 
-They following example shows how to set the key tip placement of a group of controls using the KeyTipPlacementMode property of a StackPanel container.
+They following example shows how to set the Key Tip placement of a group of controls using the KeyTipPlacementMode property of a StackPanel container.
 
 ``` xaml
 <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyTipPlacementMode="Top">
@@ -300,16 +300,16 @@ They following example shows how to set the key tip placement of a group of cont
 
 ### Offsets
 
-Use the KeyTipHorizontalOffset and KeyTipVerticalOffset properties of an element for even more granular control of the key tip location.
+Use the KeyTipHorizontalOffset and KeyTipVerticalOffset properties of an element for even more granular control of the Key Tip location.
 
 > [!NOTE]
 > Offsets cannot be set when KeyTipPlacementMode is set to Auto.
 
-The KeyTipHorizontalOffset property indicates how far to move the key tip left or right. example shows how to set the key tip offsets for a button.
+The KeyTipHorizontalOffset property indicates how far to move the Key Tip left or right. example shows how to set the Key Tip offsets for a button.
 
 ![Key tip placement modes](images/accesskeys/keytip-offsets.png)
 
-_Set vertical and horizontal offsets for a key tip_
+_Set vertical and horizontal offsets for a Key Tip_
 
 ``` xaml
 <Button
@@ -322,17 +322,17 @@ _Set vertical and horizontal offsets for a key tip_
 
 ### Screen edge alignment {#screen-edge-alignment .ListParagraph}
 
-The location of a key tip is automatically adjusted based on the screen edge to ensure the key tip is fully visible. When this occurs, the distance between the control and key tip alignment point might differ from the values specified for the horizontal and vertical offsets .
+The location of a Key Tip is automatically adjusted based on the screen edge to ensure the Key Tip is fully visible. When this occurs, the distance between the control and Key Tip alignment point might differ from the values specified for the horizontal and vertical offsets .
 
 ![Key tip placement modes](images/accesskeys/keytips-screen-edge.png)
 
-_The screen edge causes the key tip to automatically reposition itself_
+_The screen edge causes the Key Tip to automatically reposition itself_
 
-## Style key tips
+## Key Tip style
 
-We recommend using the built-in key tip support for platform themes, including high contrast.
+We recommend using the built-in Key Tip support for platform themes, including high contrast.
 
-If you need to specify your own key tip styles, use application resources such as KeyTipFontSize (font size), KeyTipFontFamily (font family), KeyTipBackground (background), KeyTipForeground (foreground), KeyTipPadding (padding), KeyTipBorderBrush(Border color), and KeyTipBorderThemeThickness (border thickness).
+If you need to specify your own Key Tip styles, use application resources such as KeyTipFontSize (font size), KeyTipFontFamily (font family), KeyTipBackground (background), KeyTipForeground (foreground), KeyTipPadding (padding), KeyTipBorderBrush(Border color), and KeyTipBorderThemeThickness (border thickness).
 
 ![Key tip placement modes](images/accesskeys/keytip-customization.png)
 
