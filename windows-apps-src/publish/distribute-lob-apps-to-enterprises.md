@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, lob, line-of-business, enterprise apps, store for business, store for education
+keywords: windows 10, uwp, lob, line-of-business, enterprise apps, store for business, store for education, enterprise
 ms.localizationpriority: high
 ---
 
@@ -18,7 +18,10 @@ ms.localizationpriority: high
 You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
 
 > [!NOTE]
-> At this time, only free apps can be distributed exclusively to enterprises via Microsoft Store for Business or Microsoft Store for Education. If you submit a paid app as LOB, it will not be available to the enterprise at this time. 
+> At this time, only free apps can be distributed exclusively to enterprises via Microsoft Store for Business or Microsoft Store for Education. If you submit a paid app as LOB, it will not be available to the enterprise. 
+
+> [!IMPORTANT]
+> You cannot use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to publish LOB apps directly to enterprises. All submissions for LOB apps must be made by using the Windows Dev Center dashboard.
 
 
 ## Set up the enterprise association
@@ -26,9 +29,9 @@ You can publish line-of-business (LOB) apps directly to enterprises for volume a
 The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
 > [!IMPORTANT]
-> This association process must be initiated by the enterprise, and must use the email address in your account’s **Contact info**. For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846).
+> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846).
 
-When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings**.
+When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings** (as long as you are signed in with the Microsoft account that was used to open the developer account).
 
 To confirm the association, click **Accept**. Your account will then be able to publish apps for that enterprise’s exclusive use.
 

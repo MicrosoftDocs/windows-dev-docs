@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 12/06/2017
+ms.date: 01/10/18
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
