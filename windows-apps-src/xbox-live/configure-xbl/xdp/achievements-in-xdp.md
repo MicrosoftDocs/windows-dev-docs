@@ -27,42 +27,42 @@ Developers may switch their products between Simplified and Cloud-Powered Achiev
 Once a title’s service configuration has been published to RETAIL, its Achievements system is permanently set and cannot be changed. **No exceptions can be made. This is required for both technical & policy reasons.**
 
 1.  From your product page in XDP, navigate to **Product Setup**.
-![](../images/omega/simplified-achievements-1.png)
+![Screenshot of the product page in XDP](../../images/omega/simplified-achievements-1.png)
 
 2.  Select **Product Details**.
-![](../images/omega/simplified-achievements-2.png)
+![Screenshot of the product setup page in XDP](../../images/omega/simplified-achievements-2.png)
 
 1.  Switch the **Achievements configuration system** toggle to *Achievements 2017.*
-![](../images/omega/simplified-achievements-2.png)
+![Screenshot of the product details page showing the toggle between Achievements 2017 and Achievements 2013](../../images/omega/simplified-achievements-3.png)
 
 1.  You will receive a warning that all of your title’s achievements will be deleted in all sandboxes. If you are OK with the deletion of your existing achievements in all sandboxes, click **Save**.
-![](../images/omega/simplified-achievements-4.png)
+![Screenshot showing the warning](../../images/omega/simplified-achievements-4.png)
 
 ## Configure an Achievement
 
 1.  Enable Achievements 2017 for your title.
 
 2.  Navigate to **Service Configuration** and select **Achievements**.
-![](../images/omega/simplified-achievements-5.png)
+![Screenshot of the service configuration tasks page in XDP](../../images/omega/simplified-achievements-5.png)
 
 1.  Enter the achievement display details.
 
     *Note: These strings are used for display in the XDP UI. The final strings that will be shown to users must be configured in the “Localized Strings” service configuration option (step 5).*<br>
-![](../images/omega/simplified-achievements-6.png)
+![Screenshot of the Add New Achievement dialog in XDP](../../images/omega/simplified-achievements-6.png)
 
 1.  To add Gamerscore, Artwork, or In-App reward onto the achievement, click **New** under the **Rewards** section.
-![](../images/omega/simplified-achievements-7.png)
+![Screenshot of the Edit Reward dialog in XDP](../../images/omega/simplified-achievements-7.png)
 
 1.  If supplying localized strings for your achievement names & descriptions, navigate to **Localized Strings.**
 
     *Note: Don’t forget to define your English localized strings. Otherwise, your users in non-USA countries who prefer English text may not get the expected result.*<br>
-![](../images/omega/simplified-achievements-8.png)
+![Screenshot of the Localized Strings page in XDP](../../images/omega/simplified-achievements-8.png)
 
 1.  To compare your recent changes to the currently published service configuration data, navigate to **Compare Data** and select the desired sandboxes for comparison.
-![](../images/omega/simplified-achievements-9.png)
+![Screenshot of Compare Data page on XDP](../../images/omega/simplified-achievements-9.png)
 
 1.  When ready to publish & test in your dev sandbox, return to **Service Configuration** and click the **Publish** button.
-![](../images/omega/simplified-achievements-10.png)
+![Screenshot of the Service Configuration Tasks page on XDP showing the Publish button](../../images/omega/simplified-achievements-10.png)
 
 1.  Choose the destination sandbox where you want to test (likely the same sandbox where you drafted the achievements).
 
@@ -70,4 +70,4 @@ Once a title’s service configuration has been published to RETAIL, its Achieve
 
     Click **Submit.**
 
-![](../images/omega/simplified-achievements-11.png)
+![Screenshot of the Publishing Approval page on XDP](../../images/omega/simplified-achievements-11.png)

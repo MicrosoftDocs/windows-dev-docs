@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: Set custom permissions for account users.
 title: Set custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 09/15/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, user roles, user permission, custom roles, user access, customize permissions, standard roles
 ms.localizationpriority: high
 ---
 
@@ -23,6 +23,9 @@ When determining what role or permissions to apply, keep in mind:
 -   Users (including groups and Azure AD applications) will be able to access the entire Dev Center account with the permissions associated with their assigned role, unless you [customize permissions](#custom) and assign [product-level permissions](#product-level-permissions) so that they can only work with specific apps and/or add-ons.
 -   You can allow a user, group, or Azure AD application to have access to more than one role's functionality by selecting multiple roles, or by using custom permissions to grant the access you'd like.
 -   A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
+
+> [!TIP]
+> This topic is specific to the Windows apps developer program. For information about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles).
 
 
 <span id="roles" />
