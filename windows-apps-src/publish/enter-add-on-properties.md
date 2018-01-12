@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: Enter add-on properties
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 12/06/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, add-on, properties, subscription period, product lifetime, content type, iap, in-app purchase, in-app product
 ms.localizationpriority: high
 ---
 
@@ -26,25 +26,31 @@ Your product type is selected when you first [create the add-on](set-your-add-on
 
 The fields you see on this page will vary, depending on the product type of your add-on.
 
-## Product lifetime
 
+## Product lifetime
 
 If you selected **Durable** for your product type, **Product lifetime** is shown here. The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. If you prefer, you can set the **Product lifetime** so that the add-on expires after a set duration (with options from 1-365 days).
 
-## Quantity
 
+## Quantity
 
 If you selected **Store-managed consumable** for your product type, **Quantity** is shown here. You'll need to enter a number between 1 and 1000000. This quantity will be granted to the customer when they acquire your add-on, and the Store will track the balance as the app reports the customer’s consumption of the add-on.
 
 
 ## Subscription period
 
-If you selected **Subscription** for your product type, **Subscription period** is shown here. You'll need to choose one of the available options (**Monthly**, **3 months**, **6 months**, **Annually**, or **24 months**) to indicate how frequently a customer will be charged for the subscription. Note that after your add-on is published, you can't change your **Subscription period** selection.
+If you selected **Subscription** for your product type, **Subscription period** is shown here. Choose an option to specify how frequently a customer will be charged for the subscription. The default option is **Monthly, but you can also select **3 months**, **6 months**, **Annually**, or **24 months** to 
+
+> [!IMPORTANT]
+> After your add-on is published, you can't change your **Subscription period** selection.
 
 
 ## Free trial
 
-For subscription add-ons, **Free trial** is also shown here. You must select whether to let customers use the add-on for free for a set period of time (either **1 week** or **1 month**), or whether to offer **No free trial**. Note that after your add-on is published, you can't change your **Free trial** selection.
+If you selected **Subscription** for your product type, **Free trial** is also shown here. The default option is **No free trial.** If you prefer, you can let customers use the add-on for free for a set period of time (either **1 week** or **1 month**). 
+
+> [!IMPORTANT]
+> After your add-on is published, you can't change your **Free trial** selection.
 
 
 ## Content type

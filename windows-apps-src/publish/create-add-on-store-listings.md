@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: When submitting an add-on, the info you provide in the Store listings step will be displayed to your customers.
 title: Create add-on Store listings
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,7 +18,7 @@ ms.localizationpriority: high
 When submitting an add-on, the info you provide in the **Store listings** step will be displayed to your customers when they see the option to acquire your add-on. Make sure to consider the Store listing info carefully in order to represent your add-on accurately in a way that makes it appealing to customers. You can provide customized Store listings for different languages.
 
 > [!TIP]
-> You can also [import and export Store listings](import-and-export-store-listings.md) for your add-on if you'd like to enter your listing info offline in a .csv file, rather than providing this info directly in the dashboard. This may be especially convenient when creating listings in many languages.
+> You can also [import and export Store listings](import-and-export-store-listings.md) for your add-on if you'd like to enter your listing info offline in a .csv file, rather than providing this info directly in the dashboard. This may be especially convenient when creating listings in many languages. However, you can always enter your info directly in the dashboard rather than using the import/export feature.
 
 
 ## Store listing languages
