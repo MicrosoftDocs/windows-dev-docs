@@ -7,19 +7,19 @@ ms.date: 12/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, import store listings, export store listings, import export, store listing csv
 ms.localizationpriority: high
 ---
 
 # Import and export Store listings
 Instead of [entering info for your Store listings directly in the dashboard](create-app-store-listings.md), you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.
 
-This option is especially useful if you want to create or update Store listings for your product in multiple languages, since you can copy/paste the same info into multiple fields and easily make any changes that should apply to specific languages. However, note that you can’t use this method to create or update [platform-specific Store listings](create-platform-specific-store-listings.md) for your app. 
+This option is especially useful if you want to create or update Store listings for your product in multiple languages, since you can copy/paste the same info into multiple fields and easily make any changes that should apply to specific languages. However, you can’t use this method to create or update [platform-specific Store listings](create-platform-specific-store-listings.md) for your app. 
 
 > [!TIP]
 > You can also use this feature to import and export Store listing details for an add-on. For add-ons, the process works the same except that [only the fields relevant to add-ons](#add-ons) are included.
 
-Below, we describe the process for importing and exporting your Store listings. Keep in mind that you can always create or update listings directly in the Dev Center dashboard (even if you have previously used the import/export method). Updating directly in the dashboard can be easier when you are just making a simple change, but you can use either method at any time.
+Keep in mind that you can always create or update listings directly in the Dev Center dashboard (even if you have previously used the import/export method). Updating directly in the dashboard can be easier when you are just making a simple change, but you can use either method at any time.
 
 ## Export listings
 

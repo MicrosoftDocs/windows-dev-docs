@@ -4,11 +4,11 @@ Description: Add-ons are published through the Windows Dev Center dashboard.
 title: Add-on submissions
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, iap, in-app purchase, in-app product, iap submission
 ms.localizationpriority: high
 ---
 
@@ -30,7 +30,7 @@ Here's a list of the info that you provide when creating your add-on submission.
 ### Create a new add-on page
 | Field name                    | Notes                            |
 |-------------------------------|----------------------------------|
-| [**Product type**](set-your-add-on-product-id.md#product-type)      | Required. If **Durable**, a **Product lifetime** is required. |  
+| [**Product type**](set-your-add-on-product-id.md#product-type)      | Required |  
 | [**Product ID**](set-your-add-on-product-id.md#product-id)          | Required |        
 
 <span/>
@@ -39,10 +39,12 @@ Here's a list of the info that you provide when creating your add-on submission.
 | Field name                    | Notes                              |   
 |-------------------------------|------------------------------------|
 | [**Product lifetime**](enter-add-on-properties.md#product-lifetime)  | Required if the product type is **Durable**. Not applicable to other product types. |
-| [**Quantity**](enter-add-on-properties.md#quantity)  | Required if the product type is **Store-managed consumable**. Not applicable to other product types.
-| [**Content type**](enter-add-on-properties.md#content-type)          | Required       |               
+| [**Quantity**](enter-add-on-properties.md#quantity)  | Required if the product type is **Store-managed consumable**. Not applicable to other product types. |
+| [**Subscription period**](enter-add-on-properties.md#subscription-period)          | Required if the product type is **Subscription**. Not applicable to other product types.       |  
+| [**Free trial**](enter-add-on-properties.md#free-trial)          | Required if the product type is **Subscription**. Not applicable to other product types.       |
+| [**Content type**](enter-add-on-properties.md#content-type)          | Required    |               
 | [**Keywords**](enter-add-on-properties.md#keywords)                  | Optional (up to 10 keywords, 30 character limit each) |
-| [**Custom developer data**](enter-add-on-properties.md#custom-developer-data)                               | Optional (3000 character limit)             |
+| [**Custom developer data**](enter-add-on-properties.md#custom-developer-data)   | Optional (3000 character limit)            |
 
 <span/>
 
@@ -63,9 +65,9 @@ One Store listing required. We recommend providing Store listings for every [lan
 
 | Field name                    | Notes                                       |
 |-------------------------------|---------------------------------------------|
-| [**Title**](create-add-on-store-listings.md#title)                    | Required (100 character limit)              |
-| [**Description**](create-add-on-store-listings.md#description)       | Optional (200 character limit)              |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (.png, 300x300 pixels)             |
+| [**Title**](create-add-on-store-listings.md#title)                    | Required (100 character limit)           |
+| [**Description**](create-add-on-store-listings.md#description)       | Optional (200 character limit)            |
+| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (.png, 300x300 pixels)            |
 
 <span/>
 

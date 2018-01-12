@@ -1,11 +1,11 @@
----
+﻿---
 author: TylerMSFT
 title: Update a live tile from a background task
 description: Use a background task to update your app's live tile with fresh content.
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 01/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,11 +13,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-
 # Update a live tile from a background task
-
-
-
 
 **Important APIs**
 
@@ -28,7 +24,7 @@ Use a background task to update your app's live tile with fresh content.
 
 Here's a video that shows how to add live tiles to your apps.
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Updating a live tile from a background task</iframe>
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Updating-a-live-tile-from-a-background-task/player" width="720" height="405" allowFullScreen="true" frameBorder="0"></iframe>
 
 ## Create the background task project  
 

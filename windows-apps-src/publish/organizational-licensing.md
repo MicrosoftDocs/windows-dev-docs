@@ -1,15 +1,16 @@
----
+﻿---
 author: jnHs
 Description: You can indicate whether and how your app can be offered for volume purchases through the Microsoft Store for Business and Microsoft Store for Education in the Organizational licensing section of an app submission.
 title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
-ms.date: 06/14/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing
-ms.localizationpriority: high
+keywords: windows 10, uwp, store for business, store for education, organizational, volume licensing, enterprise, education store, business store, volume purchase, bulk
+localizationpriority: high
+
 ---
 
 # Organizational licensing options
@@ -19,10 +20,14 @@ You can indicate whether and how your app can be offered for volume purchases th
 
 Through these settings, you can opt to allow your app to be made available to organizations (business and educational) who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.
 
+You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
+
 > [!NOTE]
 > Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](the-app-certification-process.md).
 
-You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
+> [!IMPORTANT]
+> Submissions that use the [Microsoft Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) won't be made available to Microsoft Store for Business and Microsoft Store for Education. To make your app available for volume purchases by organizations, you must use the Windows Dev Center dashboard to create and submit your submissions.
+
 
 ## Allowing your app to be offered to organizations
 

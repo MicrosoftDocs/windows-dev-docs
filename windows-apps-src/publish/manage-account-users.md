@@ -4,11 +4,11 @@ Description: Add users to your Dev Center account and assign them roles with spe
 title: Manage account users
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 09/20/2017
+ms.date: 01/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, account users, manage users, azure ad, multi-user
 ms.localizationpriority: high
 ---
 
@@ -24,4 +24,5 @@ This section describes how to do the following:
 -   [Add users, groups, and Azure AD applications to your Dev Center account](add-users-groups-and-azure-ad-applications.md)
 -   [Set roles and custom permissions for account users](set-custom-permissions-for-account-users.md)
 
-
+> [!TIP]
+> This section is specific to the Windows apps developer program, but associating a tenant and managing users works similarly for accounts in the Windows Hardware Developer Program. For more about user management in the Hardware Developer Program, see [Dashboard Administration](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration).
