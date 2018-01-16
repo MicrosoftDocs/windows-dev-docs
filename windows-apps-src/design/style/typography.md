@@ -157,8 +157,7 @@ Exceptions—for containers which are not well-defined (e.g. no differentiating 
 
 ![Shows a device frame with some text clipping](images/clipping.png)
 
-## Type ramp
-The type ramp establishes a crucial design relationship from headlines to body text and ensures a clear and understandable hierarchy between the different levels. This hierarchy builds a structure which enables users to easily navigate through written communication.
+## Type rampThe type ramp establishes a crucial design relationship from headlines to body text and ensures a clear and understandable hierarchy between the different levels. This hierarchy builds a structure which enables users to easily navigate through written communication.
 
 <div class="uwpd-image-with-caption">
 	<img src="images/type-ramp.png" alt="Shows the type ramp" />
@@ -200,7 +199,7 @@ However, proper names change their meaning when capitalized in certain languages
 Green shows where all caps should be used. Red shows where it should not.
 -->
 
-## Do’s and don’ts
+## Dos and don’ts
 * Use Body for most text
 * Use Base for titles when space is constrained
 * Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content
