@@ -1,5 +1,5 @@
 ---
-author: mijacobs
+author: anbare
 Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
 title: Special tile templates
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
@@ -58,7 +58,7 @@ You can use the iconic template on both primary and secondary tiles. If you're u
 
 **Step 3: Send a notification to your tile**
 
-Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](create-adaptive-tiles.md).
+Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](create-adaptive-tiles.md).
 
 Here's sample code for the XML payload:
 
@@ -82,7 +82,7 @@ This iconic tile template XML payload uses an image element that points to the i
 
 **Step 4: Send a badge notification to your tile**
 
-As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
+As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.BadgeUpdater) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
 
 Here's sample code for the XML payload:
 

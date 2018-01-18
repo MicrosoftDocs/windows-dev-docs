@@ -23,9 +23,9 @@ Primary tile APIs let you check whether your app is currently pinned to Start, a
 <div class="important-apis" >
 <b>Important APIs</b><br/>
 <ul>
-<li>[**StartScreenManager class**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.startscreen.startscreenmanager)</li>
-<li>[ContainsAppListEntryAsync](https://docs.microsoft.com/en-us/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)</li>
-<li>[RequestAddAppListEntryAsync](https://docs.microsoft.com/en-us/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)</li>
+<li>[**StartScreenManager class**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)</li>
+<li>[ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)</li>
+<li>[RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)</li>
 </ul>
 </div>
 
@@ -73,7 +73,7 @@ bool isSupported = StartScreenManager.GetDefault().SupportsAppListEntry(entry);
 
 ## Check whether you're currently pinned
 
-To find out if your primary tile is currently pinned to Start, use the [ContainsAppListEntryAsync](https://docs.microsoft.com/en-us/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) method.
+To find out if your primary tile is currently pinned to Start, use the [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) method.
 
 ```csharp
 // Get your own app list entry
@@ -91,7 +91,7 @@ If your primary tile currently isn't pinned, and your tile is supported by Start
 > [!NOTE]
 > You must call this API from a UI thread while your app is in the foreground, and you should only call this API after the user has intentionally requested the primary tile be pinned (for example, after the user clicked yes to your tip about pinning the tile).
 
-If the user clicks your button to pin the primary tile, you would then call the [RequestAddAppListEntryAsync](https://docs.microsoft.com/en-us/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) method to request that your tile be pinned to Start. This will display a dialog asking the user to confirm that they want your tile pinned to Start.
+If the user clicks your button to pin the primary tile, you would then call the [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) method to request that your tile be pinned to Start. This will display a dialog asking the user to confirm that they want your tile pinned to Start.
 
 This will return a boolean representing whether your tile is now pinned to Start. If your tile was already pinned, this will immediately return true without showing the dialog to the user. If the user clicks no on the dialog, or pinning your tile to Start isn't supported, this will return false. Otherwise, the user clicked yes and the tile was pinned, and the API will return true.
 

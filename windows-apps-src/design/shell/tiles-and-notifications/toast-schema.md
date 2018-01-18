@@ -94,7 +94,7 @@ Marker interface for toast child elements that include text, images, groups, and
 | [AdaptiveText](#adaptivetext) |
 | [AdaptiveImage](#adaptiveimage) |
 | [AdaptiveGroup](#adaptivegroup) |
-| AdaptiveProgressBar |
+| [AdaptiveProgressBar](#adaptiveprogressbar) |
 
 
 ## AdaptiveText
@@ -102,13 +102,21 @@ An adaptive text element. If placed in the top level ToastBindingGeneric.Childre
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Text** | string or BindableString | false | The text to display. Data binding support added in Creators Update, but only works for top-level text elements. |
+| **Text** | string or [BindableString](#bindablestring) | false | The text to display. Data binding support added in Creators Update, but only works for top-level text elements. |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | The style controls the text's font size, weight, and opacity. Only works for text elements inside a group/subgroup. |
 | **HintWrap** | bool? | false | Set this to true to enable text wrapping. Top-level text elements ignore this property and always wrap (you can use HintMaxLines = 1 to disable wrapping for top-level text elements). Text elements inside groups/subgroups default to false for wrapping. |
 | **HintMaxLines** | int? | false | The maximum number of lines the text element is allowed to display. |
 | **HintMinLines** | int? | false | The minimum number of lines the text element must display. Only works for text elements inside a group/subgroup. |
 | **HintAlign** | [AdaptiveTextAlign](#adaptivetextalign) | false | The horizontal alignment of the text. Only works for text elements inside a group/subgroup. |
 | **Language** | string | false | The target locale of the XML payload, specified as a BCP-47 language tags such as "en-US" or "fr-FR". The locale specified here overrides any other specified locale, such as that in binding or visual. If this value is a literal string, this attribute defaults to the user's UI language. If this value is a string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string. |
+
+
+### BindableString
+A binding value for strings.
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| **BindingName** | string | true | Gets or sets the name that maps to your binding data value. |
 
 
 ### AdaptiveTextStyle
@@ -153,7 +161,7 @@ An inline image.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
+| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB. |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | New in Anniversary Update: Control the desired cropping of the image. |
 | **HintRemoveMargin** | bool? | false | By default, images inside groups/subgroups have an 8px margin around them. You can remove this margin by setting this property to true. |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | The horizontal alignment of the image. Only works for images inside a group/subgroup. |
@@ -219,6 +227,34 @@ TextStacking specifies the vertical alignment of content.
 | **Top** | Vertical align to the top. |
 | **Center** | Vertical align to the center. |
 | **Bottom** | Vertical align to the bottom. |
+
+
+## AdaptiveProgressBar
+New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or newer.
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| **Title** | string or [BindableString](#bindablestring) | false | Gets or sets an optional title string. Supports data binding. |
+| **Value** | double or [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) or [BindableProgressBarValue](#bindableprogressbarvalue) | false | Gets or sets the value of the progress bar. Supports data binding. Defaults to 0. |
+| **ValueStringOverride** | string or [BindableString](#bindablestring) | false | Gets or sets an optional string to be displayed instead of the default percentage string. If this isn't provided, something like "70%" will be displayed. |
+| **Status** | string or [BindableString](#bindablestring) | true | Gets or sets a status string (required), which is displayed underneath the progress bar on the left. This string should reflect the status of the operation, like "Downloading..." or "Installing..." |
+
+
+### AdaptiveProgressBarValue
+A class that represents the progress bar's value.
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| **Value** | double | false | Gets or sets the value (0.0 - 1.0) representing the percent complete. |
+| **IsIndeterminate** | bool | false | Gets or sets a value indicating whether the progress bar is indeterminate. If this is true, **Value** will be ignored. |
+
+
+### BindableProgressBarValue
+A bindable progress bar value.
+
+| Property | Type | Required | Description |
+|---|---|---|---|
+| **BindingName** | string | true | Gets or sets the name that maps to your binding data value. |
 
 
 ## ToastGenericAppLogo
@@ -346,7 +382,7 @@ A button that the user can click.
 | **Content** | string | true | Required. The text to display on the button. |
 | **Arguments** | string | true | Required. App-defined string of arguments that the app will later receive if the user clicks this button. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Controls what type of activation this button will use when clicked. Defaults to Foreground. |
-| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) |
+| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | New in Creators Update: Gets or sets additional options relating to activation of the toast button. |
 
 
 ### ToastActivationType
@@ -364,7 +400,17 @@ New in Creators Update: Additional options relating to activation.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
+| **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | New in Fall Creators Update: Gets or sets the behavior that the toast should use when the user invokes this action. This only works on Desktop, for [ToastButton](#toastbutton) and [ToastContextMenuItem](#toastcontextmenuitem). |
 | **ProtocolActivationTargetApplicationPfn** | string | false | If you are using *ToastActivationType.Protocol*, you can optionally specify the target PFN, so that regardless of whether multiple apps are registered to handle the same protocol uri, your desired app will always be launched. |
+
+
+### ToastAfterActivationBehavior
+Specifies the behavior that the toast should use when the user takes action on the toast.
+
+| Value | Meaning |
+|---|---|
+| **Default** | Default behavior. The toast will be dismissed when the user takes action on the toast. |
+| **PendingUpdate** | After the user clicks a button on your toast, the notification will remain present, in a "pending update" visual state. You should immediately update your toast from a background task so that the user does not see this "pending update" visual state for too long. |
 
 
 ## ToastButtonSnooze
@@ -413,19 +459,21 @@ Specify audio to be played when the Toast notification is received.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **url** | uri | false | The media file to play in place of the default sound. Only ms-appx and ms-appdata are supported. |
-| **loop** | boolean | false | Set to true if the sound should repeat as long as the Toast is shown; false to play only once (default). |
-| **silent** | boolean | false | True to mute the sound; false to allow the toast notification sound to play (default). |
+| **Src** | uri | false | The media file to play in place of the default sound. Only ms-appx and ms-appdata are supported. |
+| **Loop** | boolean | false | Set to true if the sound should repeat as long as the Toast is shown; false to play only once (default). |
+| **Silent** | boolean | false | True to mute the sound; false to allow the toast notification sound to play (default). |
 
 
 ## ToastHeader
-A custom header that groups multiple notifications together within Action Center.
+New in Creators Update: A custom header that groups multiple notifications together within Action Center.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Action Center. |
-| **title** | string | true | A title for the header. |
-| **action**| Action | false | Declares what action to take when the toast is clicked by the user. |
+| **Id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Action Center. |
+| **Title** | string | true | A title for the header. |
+| **Arguments**| string | true | Gets or sets a developer-defined string of arguments that is returned to the app when the user clicks this header. Cannot be null. |
+| **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Gets or sets the type of activation this header will use when clicked. Defaults to Foreground. Note that only Foreground and Protocol are supported. |
+| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Gets or sets additional options relating to activation of the toast header. |
 
 
 ## Related topics

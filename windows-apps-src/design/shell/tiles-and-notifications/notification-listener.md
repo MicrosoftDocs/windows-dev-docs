@@ -1,5 +1,5 @@
 ---
-author: mijacobs
+author: anbare
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: Notification listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -22,7 +22,7 @@ The notification listener provides access to a user's notifications. Smartwatche
 > **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use Notification Listener.
 
 
-> **Important APIs**: [UserNotificationListener class](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger class](https://docs.microsoft.com/en-us/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **Important APIs**: [UserNotificationListener class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger class](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## Enable the listener by adding the User Notification capability 
@@ -135,7 +135,7 @@ RandomAccessStreamReference appLogoStream = notif.AppInfo.DisplayInfo.GetLogo(ne
 await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 ```
 
-The content of the notification itself, such as the notification text, is contained in the [Notification](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.usernotification#Windows_UI_Notifications_UserNotification_Notification_) property. This property contains the visual portion of the notification. (If you are familiar with sending notifications on Windows, you will notice that the [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification#Windows_UI_Notifications_Notification_Visual_) and [Visual.Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual#Windows_UI_Notifications_NotificationVisual_Bindings_) properties in the [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification) object correspond to what developers send when popping a notification.)
+The content of the notification itself, such as the notification text, is contained in the [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification#Windows_UI_Notifications_UserNotification_Notification_) property. This property contains the visual portion of the notification. (If you are familiar with sending notifications on Windows, you will notice that the [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification#Windows_UI_Notifications_Notification_Visual_) and [Visual.Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual#Windows_UI_Notifications_NotificationVisual_Bindings_) properties in the [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification) object correspond to what developers send when popping a notification.)
 
 We want to look for the toast binding (for error-proof code, you should check that the binding isn't null). From the binding, you can obtain the text elements. You can choose to display as many text elements as you would like. (Ideally, you should display them all.) You can choose to treat the text elements differently; for example, treat the first one as title text, and subsequent elements as body text.
 

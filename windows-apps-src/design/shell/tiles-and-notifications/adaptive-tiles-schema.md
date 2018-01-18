@@ -1,5 +1,5 @@
 ---
-author: mijacobs
+author: anbare
 Description: Here are the elements and attributes you use to create adaptive tiles.
 title: Adaptive tile schema and templates
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8

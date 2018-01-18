@@ -1,5 +1,5 @@
 ---
-author: mijacobs
+author: anbare
 Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: Send a local tile notification
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
@@ -34,7 +34,7 @@ The inline code examples in this article are for C# using the Notifications libr
 ## Add namespace declarations
 
 
-To access the tile APIs, include the [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) namespace. We also recommend including the **NotificationsExtensions.Tiles** namespace so that you can take advantage of our tile helper APIs (you must install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package to access these APIs).
+To access the tile APIs, include the [**Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications) namespace. We also recommend including the **Microsoft.Toolkit.Uwp.Notifications** namespace so that you can take advantage of our tile helper APIs (you must install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package to access these APIs).
 
 ```csharp
 using Windows.UI.Notifications;
@@ -123,7 +123,7 @@ The notification content looks like the following when displayed on a medium til
 ## Create the notification
 
 
-Once you have your notification content, you'll need to create a new [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). The **TileNotification** constructor takes a Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) object, which you can obtain from the **TileContent.GetXml** method if you're using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
+Once you have your notification content, you'll need to create a new [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification). The **TileNotification** constructor takes a Windows Runtime [**XmlDocument**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) object, which you can obtain from the **TileContent.GetXml** method if you're using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
 
 This code example creates a notification for a new tile.
 
@@ -150,7 +150,7 @@ Although locally sending a tile notification is simple, sending the notification
 
 **Primary tile**
 
-To send a notification to a primary tile, use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) to create a tile updater for the primary tile, and send the notification by calling "Update". Regardless of whether it's visible, your app's primary tile always exists, so you can send notifications to it even when it's not pinned. If the user pins your primary tile later, the notifications that you sent will appear then.
+To send a notification to a primary tile, use the [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) to create a tile updater for the primary tile, and send the notification by calling "Update". Regardless of whether it's visible, your app's primary tile always exists, so you can send notifications to it even when it's not pinned. If the user pins your primary tile later, the notifications that you sent will appear then.
 
 This code example sends a notification to a primary tile.
 
@@ -162,7 +162,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 **Secondary tile**
 
-To send a notification to a secondary tile, first make sure that the secondary tile exists. If you try to create a tile updater for a secondary tile that doesn't exist (for example, if the user unpinned the secondary tile), an exception will be thrown. You can use [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) to discover if your secondary tile is pinned, and then create a tile updater for the secondary tile and send the notification.
+To send a notification to a secondary tile, first make sure that the secondary tile exists. If you try to create a tile updater for a secondary tile that doesn't exist (for example, if the user unpinned the secondary tile), an exception will be thrown. You can use [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) to discover if your secondary tile is pinned, and then create a tile updater for the secondary tile and send the notification.
 
 This code example sends a notification to a secondary tile.
 
@@ -288,7 +288,7 @@ var notification = new TileNotification(doc);
 * [Tile content schema](../tiles-and-notifications/tile-schema.md)
 * [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications namespace**](https://msdn.microsoft.com/library/windows/apps/br208661)
+* [**Windows.UI.Notifications namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [How to use the notification queue (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [Delivering notifications](choosing-a-notification-delivery-method.md)
  

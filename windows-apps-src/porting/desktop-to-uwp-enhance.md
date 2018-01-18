@@ -115,8 +115,8 @@ private void ShowToast()
 {
     string title = "featured picture of the day";
     string content = "beautiful scenery";
-    string image = "https://unsplash.it/360/180?image=104";
-    string logo = "https://unsplash.it/64?image=883";
+    string image = "https://picsum.photos/360/180?image=104";
+    string logo = "https://picsum.photos/64?image=883";
 
     string xmlString =
     $@"<toast><visual>
@@ -147,8 +147,8 @@ void UWP::ShowToast()
 {
 	Platform::String ^title = "featured picture of the day";
 	Platform::String ^content = "beautiful scenery";
-	Platform::String ^image = "https://unsplash.it/360/180?image=104";
-	Platform::String ^logo = "https://unsplash.it/64?image=883";
+	Platform::String ^image = "https://picsum.photos/360/180?image=104";
+	Platform::String ^logo = "https://picsum.photos/64?image=883";
 
 	Platform::String ^xmlString =
 		L"<toast><visual><binding template='ToastGeneric'>" +
