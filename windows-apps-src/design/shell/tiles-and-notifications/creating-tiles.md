@@ -59,7 +59,7 @@ There are a few items you should update:
 
     When you refer to the image, you refer to it as *&lt;image name&gt;*.*&lt;image file extension&gt;* ("SplashScreen.png" in this example). The system will automatically select the appropriate scaled image for the device from the images you've provided.
 
--   You don't have to, but we highly recommend supplying logos for wide and large tile sizes so that the user can resize your app's tile to those sizes. To provide these additional images, you create a `DefaultTile` element and use the `Wide310x150Logo` and `Square310x310Logo` attributes to specify the additional images:
+-   You don't have to, but we highly recommend supplying logos for wide and large tile sizes so that the user can resize your app's tile to those sizes. To provide these additional images, you create a **DefaultTile** element and use the **Wide310x150Logo** and **Square310x310Logo** attributes to specify the additional images:
 ```    XML
   <Applications>
         <Application Id="App"

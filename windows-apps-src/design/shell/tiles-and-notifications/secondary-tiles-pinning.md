@@ -99,6 +99,11 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
+## Optional: 3D secondary tiles
+You can enhance your secondary tile for Windows Mixed Reality by adding 3D assets. Users can place 3D tiles directly in their Windows Mixed Reality home instead of the Start menu when using your app in a Mixed Reality environment. For example, you can create 360° photospheres that link directly into a 360° photo viewer app, or let users place a 3D model of a chair from a furniture catalog that opens a details page about the pricing and color options for that object when selected. To get started, refer to the [Mixed Reality developer documentation](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home).
+
+
+
 ## Pin the secondary tile
 
 Finally, request to pin the tile. Note that this must be called from a UI thread. On Desktop, a dialog will appear asking the user to confirm whether they would like to pin the tile.

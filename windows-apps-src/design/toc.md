@@ -127,11 +127,18 @@
 ## [Title bar customization](shell/title-bar.md)
 
 ## Notifications
-### [Toast notifications](shell/tiles-and-notifications/adaptive-interactive-toasts.md)
+### Toast notifications
 #### [Toast content](shell/tiles-and-notifications/adaptive-interactive-toasts.md)
 #### [Toast content schema](shell/tiles-and-notifications/toast-schema.md)
 #### [Send local toast](shell/tiles-and-notifications/send-local-toast.md)
+#### [Custom audio](shell/tiles-and-notifications/custom-audio-on-toasts.md)
+#### [Progress bar](shell/tiles-and-notifications/toast-progress-bar.md)
+#### [Pending update](shell/tiles-and-notifications/toast-pending-update.md)
+#### [Custom timestamps](shell/tiles-and-notifications/custom-timestamps-on-toasts.md)
+#### [Headers](shell/tiles-and-notifications/toast-headers.md)
 #### [Notification Listener](shell/tiles-and-notifications/notification-listener.md)
+#### [Notification mirroring](shell/tiles-and-notifications/notification-mirroring.md)
+#### [Universal Dismiss](shell/tiles-and-notifications/universal-dismiss.md)
 ### [Badge notifications](shell/tiles-and-notifications/badges.md)
 ### [Notifications Visualizer](shell/tiles-and-notifications/notifications-visualizer.md)
 ### [Notification delivery methods](shell/tiles-and-notifications/choosing-a-notification-delivery-method.md)

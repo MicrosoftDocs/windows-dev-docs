@@ -153,7 +153,7 @@ An inline image.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
+| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB. |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | Control the desired cropping of the image. |
 | **HintRemoveMargin** | bool? | false | By default, images inside groups/subgroups have an 8px margin around them. You can remove this margin by setting this property to true. |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | The horizontal alignment of the image. |

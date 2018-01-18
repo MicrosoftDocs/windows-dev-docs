@@ -41,7 +41,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## Registration for push notifications
 
 
-In push.register.\*, the UploadChannel method registers the device to receive push notifications. The Store tracks installed instances of your app and provides the push notification channel. See [**PushNotificationChannelManager**](https://msdn.microsoft.com/library/windows/apps/br241284).
+In push.register.\*, the UploadChannel method registers the device to receive push notifications. The Store tracks installed instances of your app and provides the push notification channel. See [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager).
 
 The client code is similar for both the JavaScript backend and the .NET backend. By default, when you add push notifications for a JavaScript backend service, a sample call to notifyAllUsers custom API is inserted into the UploadChannel method.
 
@@ -213,7 +213,7 @@ The sendNotifications function sends a single notification as a toast notificati
 ## Push notification types
 
 
-Windows supports notifications that aren't push notifications. For general information about notifications, see [Delivering scheduled, periodic, and push notifications](https://msdn.microsoft.com/library/windows/apps/hh761484).
+Windows supports notifications that aren't push notifications. For general information about notifications, see [Choosing a notification delivery method](choosing-a-notification-delivery-method.md).
 
 Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
@@ -232,7 +232,7 @@ You can call Windows Push Notification Services (WNS) directly if Mobile Service
 
 You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](http://go.microsoft.com/fwlink/p/?linkid=301694).
 
-**Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. Running the wizard more than once per project generates code that results in overlapping calls to the [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) method, which leads to a runtime exception. If you want to register for push notifications for more than one mobile service, run the wizard once and then rewrite the registration code to ensure that calls to **CreatePushNotificationChannelForApplicationAsync** do not run at the same time. For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
+**Warning**  Once you've run the push notification wizard once, don't run the wizard a second time to add registration code for another mobile service. Running the wizard more than once per project generates code that results in overlapping calls to the [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync) method, which leads to a runtime exception. If you want to register for push notifications for more than one mobile service, run the wizard once and then rewrite the registration code to ensure that calls to **CreatePushNotificationChannelForApplicationAsync** do not run at the same time. For example, you can accomplish this by moving the wizard-generated code in push.register.\* (including the call to **CreatePushNotificationChannelForApplicationAsync**) outside of the OnLaunched event, but the specifics of this will depend on your app's architecture.
 
  
 
