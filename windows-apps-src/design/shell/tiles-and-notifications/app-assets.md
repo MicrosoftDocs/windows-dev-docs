@@ -184,7 +184,7 @@ These are size recommendations for target-based assets, at 100% scale:
 
 The splash screen image can be given either as a direct path to an image file or as a resource. By using a resource reference, you can supply images of different scales so that Windows can choose the best size for the device and screen resolution. You can also supply high contrast images for accessibility and localized images to match different UI languages.
 
-If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) element appears as a child of the [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) element. The default splash screen markup in the manifest file looks like this in a text editor:
+If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-splashscreen) element appears as a child of the [**VisualElements**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) element. The default splash screen markup in the manifest file looks like this in a text editor:
 
 ```XML
 <uap:SplashScreen Image="Assets\SplashScreen.png" /></code></pre></td>

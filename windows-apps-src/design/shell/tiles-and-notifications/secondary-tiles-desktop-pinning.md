@@ -1,5 +1,5 @@
 ---
-author: mijacobs
+author: vladimp
 Description: Windows desktop applications can pin secondary tiles thanks to the Desktop Bridge!
 title: Pin secondary tiles from desktop application
 label: Pin secondary tiles from desktop application
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 # Pin secondary tiles from desktop application
 
 
-Thanks to the [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!
+Thanks to the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), Windows desktop applications (like Win32, Windows Forms, and WPF) can pin secondary tiles!
 
 ![Screenshot of secondary tiles](images/secondarytiles.png)
 
@@ -25,7 +25,7 @@ Adding a secondary tile from your WPF or WinForms application is very similar to
 
 ## Package your app with Desktop Bridge
 
-If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.
+If you have not packaged your app with the Desktop Bridge, [you must do so first](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root) before you can use any UWP APIs.
 
 
 ## Enable access to IInitializeWithWindow interface
@@ -88,5 +88,5 @@ bool isPinned = await tile.RequestCreateAsync();
 * [Full code sample](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample)
 * [Secondary tiles overview](secondary-tiles.md)
 * [Pin secondary tiles (UWP)](secondary-tiles-pinning.md)
-* [Desktop Bridge](https://developer.microsoft.com/en-us/windows/bridges/desktop)
+* [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop)
 * [Desktop Bridge code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)

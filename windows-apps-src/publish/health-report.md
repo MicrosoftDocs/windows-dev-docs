@@ -4,11 +4,11 @@ Description: The Health report in the Windows Dev Center dashboard lets you get 
 title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 11/22/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, health, crashes, unresponsive events, app health, health data, stack trace, cab file, failure, failures, pdb, symbols
 ms.localizationpriority: high
 ---
 
@@ -56,13 +56,16 @@ The **Package version** chart shows the total number of crashes and events over 
 
 ## Failures
 
-The **Failures** chart shows the total number of crashes and events over the selected period of time by failure name. By default, we show you the failure that had the most hits on top and continue downward from there. You can reverse this order by toggling the arrow in the **Hits** column of this chart. For each failure, we also show its percentage of the total number of failures.
+The **Failures** chart shows the total number of crashes and events over the selected period of time by failure name. Each failure name is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image/driver where the failure occurred, and the associated function name. By default, we show you the failure that had the most hits on top and continue downward from there. You can reverse this order by toggling the arrow in the **Hits** column of this chart. For each failure, we also show its percentage of the total number of failures.
 
-To display the **Failure details** report for a particular failure, select the failure name. If you have included PDB symbol files, the **Failure details** report includes the number of failure hits over the last month, as well as a failure log that lists occurrence details (date, package version, device type, device model, OS build) and a link to the stack trace and/or CAB file, if available.
+To display the **Failure details** report for a particular failure, select the failure name. If you have included symbol files, the **Failure details** report includes the number of failure hits over the last month, as well as a failure log that lists occurrence details (date, package version, device type, device model, OS build) and a link to the stack trace and/or CAB file, if available.
 
 > [!TIP]
 > CAB files will only be available when the failure occurred on a computer using a Windows Insider build, so not all failures will include the CAB download option. You can click the **Links** header in the **Failure log** to sort the results so that failures which include CAB files appear at the top of the list.
 
+At times, you may see an entry for **Unknown** in this section. This occurs when despite our best efforts, we are unable to collect full details for one or more failures, which will all be grouped together under **Unknown**. Most often, this occurs because of storage constraints, but it can also be a result of a device's privacy settings, network connection issues, partial/bad crash dumps, and other factors.
+
+If you see **!unknown** as part of a failure name, this means that symbols weren’t present, so we couldn’t identify the failure name. Be sure to include symbols in your package to get accurate failure analysis. In contrast, failure names that include **!unknown_error_in_** and **!unknown_function** mean that we weren’t able to gather complete details for various other reasons.
  
 
  

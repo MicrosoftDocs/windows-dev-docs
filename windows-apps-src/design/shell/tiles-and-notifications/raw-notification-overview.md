@@ -35,7 +35,7 @@ As an illustration of an app that could benefit from raw notifications, let's lo
 All raw notifications are push notifications. Therefore, the setup required to send and receive push notifications applies to raw notifications as well:
 
 -   You must have a valid WNS channel to send raw notifications. For more information about acquiring a push notification channel, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412).
--   You must include the **Internet** capability in your app's manifest. In the Microsoft Visual Studio manifest editor, you will find this option under the **Capabilities** tab as **Internet (Client)**. For more information, see [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422).
+-   You must include the **Internet** capability in your app's manifest. In the Microsoft Visual Studio manifest editor, you will find this option under the **Capabilities** tab as **Internet (Client)**. For more information, see [**Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities).
 
 The body of the notification is in an app-defined format. The client receives the data as a null-terminated string (**HSTRING**) that only needs to be understood by the app.
 
@@ -67,11 +67,11 @@ There are two avenues through which your app can be receive raw notifications:
 An app can use both mechanisms to receive raw notifications. If an app implements both the notification delivery event handler and background tasks that are triggered by raw notifications, the notification delivery event will take priority when the app is running.
 
 -   If the app is running, the notification delivery event will take priority over the background task and the app will have the first opportunity to process the notification.
--   The notification delivery event handler can specify, by setting the event's [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) property to **true**, that the raw notification should not be passed to its background task once the handler exits. If the **Cancel** property is set to **false** or is not set (the default value is **false**), the raw notification will trigger the background task after the notification delivery event handler has done its work.
+-   The notification delivery event handler can specify, by setting the event's [**PushNotificationReceivedEventArgs.Cancel**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs#Windows_Networking_PushNotifications_PushNotificationReceivedEventArgs_Cancel) property to **true**, that the raw notification should not be passed to its background task once the handler exits. If the **Cancel** property is set to **false** or is not set (the default value is **false**), the raw notification will trigger the background task after the notification delivery event handler has done its work.
 
 ### Notification delivery events
 
-Your app can use a notification delivery event ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) to receive raw notifications while the app is in use. When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.
+Your app can use a notification delivery event ([**PushNotificationReceived**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel#Windows_Networking_PushNotifications_PushNotificationChannel_PushNotificationReceived)) to receive raw notifications while the app is in use. When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.
 
 If your app is not running and does not use [background tasks](#background-tasks-triggered-by-raw-notifications)), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.
 
@@ -90,11 +90,11 @@ If your app is not running and does not use [background tasks](#background-tasks
 ### Background tasks triggered by raw notifications
 
 > [!IMPORTANT]
-> Before using raw notification background tasks, an app must be granted background access via [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+> Before using raw notification background tasks, an app must be granted background access via [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_).
 
  
 
-Your background task must be registered with a [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). If it is not registered, the task will not run when a raw notification is received.
+Your background task must be registered with a [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger). If it is not registered, the task will not run when a raw notification is received.
 
 A background task that is triggered by a raw notification enables your app's cloud service to contact your app, even when the app is not running (though it might trigger it to run). This happens without the app having to maintain a continuous connection. Raw notifications are the only notification type that can trigger background tasks. However, while toast, tile, and badge push notifications cannot trigger background tasks, background tasks triggered by raw notifications can update tiles and invoke toast notifications through local API calls.
 
@@ -102,10 +102,10 @@ As an illustration of how background tasks that are triggered by raw notificatio
 
 To use a raw notification to trigger a background task, your app must:
 
-1.  Request permission to run tasks in the background (which the user can revoke at any time) by using [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
-2.  Implement the background task. For more information, see [Supporting your app with background tasks](https://msdn.microsoft.com/library/windows/apps/hh977046)
+1.  Request permission to run tasks in the background (which the user can revoke at any time) by using [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_).
+2.  Implement the background task. For more information, see [Support your app with background tasks](../../../launch-resume/support-your-app-with-background-tasks.md)
 
-Your background task is then invoked in response to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), each time a raw notification is received for your app. Your background task interprets the raw notification's app-specific payload and acts on it.
+Your background task is then invoked in response to the [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger), each time a raw notification is received for your app. Your background task interprets the raw notification's app-specific payload and acts on it.
 
 For each app, only one background task can run at a time. If a background task is triggered for an app for which a background task is already running, the first background task must complete before the new one is run.
 
@@ -119,8 +119,8 @@ You can learn more by downloading the [Raw notifications sample](http://go.micro
 * [Guidelines for raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761463)
 * [Quickstart: Creating and registering a raw notification background task](https://msdn.microsoft.com/library/windows/apps/jj676800)
 * [Quickstart: Intercepting push notifications for running apps](https://msdn.microsoft.com/library/windows/apps/jj709908)
-* [**RawNotification**](https://msdn.microsoft.com/library/windows/apps/br241304)
-* [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)
+* [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
+* [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
  
 
  
