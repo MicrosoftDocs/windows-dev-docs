@@ -21,11 +21,11 @@ This article covers the three types of UWP push notification channels (primary, 
 
 There are three types of push channels that can be used to send notifications to a UWP app. They are: 
 
-[Primary channel](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - the "traditional" push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications (Link to descriptions of toast/tiles/badge)
+[Primary channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - the "traditional" push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications (Link to descriptions of toast/tiles/badge)
 
-[Secondary tile channel](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates for a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
+[Secondary tile channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - used to push tile updates for a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen
 
-[Alternate channel](https://docs.microsoft.com/en-us/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any UWP app, including those which aren't registered in the Store. 
+[Alternate channel](https://docs.microsoft.com/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any UWP app, including those which aren't registered in the Store. 
 
 > [!NOTE]
 > No matter which push channel you use, once your app is running on the device, it will always be able to send local toast, tile, or badge notifications. It can send local notifications from the foreground app processes or from a background task. 
@@ -173,4 +173,4 @@ In general, we recommend using the primary channel in your app, with a few excep
 * [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
 * [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
 * [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761488)
+* [Raw notifications](raw-notification-overview.md)

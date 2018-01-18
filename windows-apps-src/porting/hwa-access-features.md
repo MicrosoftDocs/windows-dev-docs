@@ -79,7 +79,7 @@ function updateTile(message, imgUrl, imgAlt) {
         tileText = tileContent.getElementsByTagName('text'),
         tileImage = tileContent.getElementsByTagName('image');	
         tileText[0].appendChild(tileContent.createTextNode(message || 'Demo Message'));
-        tileImage[0].setAttribute('src', imgUrl || 'https://unsplash.it/150/150/?random');
+        tileImage[0].setAttribute('src', imgUrl || 'https://picsum.photos/150/150/?random');
         tileImage[0].setAttribute('alt', imgAlt || 'Random demo image');	
         var tileNotification = new notifications.TileNotification(tileContent);
         var currentTime = new Date();
