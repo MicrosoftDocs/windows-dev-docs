@@ -4,7 +4,7 @@ ms.assetid: AE3E003F-BDEC-438B-A80A-3CE1675B369C
 description: Use this method in the Microsoft Store analytics API to get aggregate hardware error reporting data for a given date range and other optional filters. This method is intended only for OEMs.
 title: Get OEM hardware error reporting data
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -92,7 +92,7 @@ Elements in the *Value* array contain the following values.
 |-----------------|---------|---------------------|
 | date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | sellerId   | string  | The seller ID value that is associated with the developer account (this matches the **Seller ID** value in the Dev Center account settings). |
-| failureName     | string  | The name of the error.  |
+| failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image/driver where the failure occurred, and the associated function name.  |
 | failureHash     | string  | The unique identifier for the error.   |
 | symbol          | string  | The symbol assigned to this error. |
 | osVersion       | string  | The four-part build version of the OS on which the error occurred.  |
