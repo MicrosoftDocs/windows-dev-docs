@@ -4,7 +4,7 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: Use this method in the Microsoft Store analytics API to get aggregate error reporting data for a given date range and other optional filters.
 title: Get error reporting data for your app
 ms.author: mcleans
-ms.date: 09/15/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -118,7 +118,7 @@ Elements in the *Value* array contain the following values.
 | date            | string  | The first date in the date range for the error data, in the format ```yyyy-mm-dd```. If the request specifies a single day, this value is that date. If the request specifies a longer date range, this value is the first date in that date range. For requests that specify an *aggregationLevel* value of **hour**, this value also includes a time value in the format ```hh:mm:ss```.  |
 | applicationId   | string  | The Store ID of the app for which you want to retrieve error data.   |
 | applicationName | string  | The display name of the app.   |
-| failureName     | string  | The name of the error.  |
+| failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image where the failure occurred, and the associated function name.  |
 | failureHash     | string  | The unique identifier for the error.   |
 | symbol          | string  | The symbol assigned to this error. |
 | osVersion       | string  | The OS version on which the error occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.  |
