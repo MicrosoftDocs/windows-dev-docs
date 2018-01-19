@@ -37,7 +37,7 @@ This illustration represents the possible app model states starting in Windows 1
 
 ![state diagram showing transitions between app execution states](images/updated-lifecycle.png)
 
-Apps enter the running in background state when they are launched or activated. These terms seem similar but they refer to different ways the operating system may start your app. Let's first look at launching an app.
+Apps enter the running in foreground state when they are launched or activated. These terms seem similar but they refer to different ways the operating system may start your app. Let's first look at launching an app.
 
 ## App launch
 
