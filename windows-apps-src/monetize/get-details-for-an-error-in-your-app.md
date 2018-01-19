@@ -4,7 +4,7 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app.
 title: Get details for an error in your app
 ms.author: mcleans
-ms.date: 06/16/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -115,7 +115,7 @@ Elements in the *Value* array contain the following values.
 |-----------------|---------|----------------------------|
 | date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | applicationId   | string  | The Store ID of the app for which you retrieved detailed error data.      |
-| failureName     | string  | The name of the error. This is the same name that appears in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.            |
+| failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image where the failure occurred, and the associated function name.           |
 | failureHash     | string  | The unique identifier for the error.     |
 | osVersion       | string  | The OS version on which the error occurred.    |
 | market          | string  | The ISO 3166 country code of the device market.     |
