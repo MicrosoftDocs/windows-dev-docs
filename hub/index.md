@@ -247,7 +247,7 @@ localizationpriority: medium
                             </a>
                         </li>
                         <li>
-                            <a href="https://docs.microsoft.com/windows-hardware/drivers/develop/">
+                            <a href="https://docs.microsoft.com/windows-hardware/drivers/index">
                                 <div class="cardSize">
                                     <div class="cardPadding">
                                         <div class="card">
@@ -258,7 +258,7 @@ localizationpriority: medium
                                             </div>
                                             <div class="cardText">
                                                 <h3>Develop</h3>
-                                                <p>Develop, test, and deploy drivers.</p>
+                                                <p>Develop, test, and deploy drivers by using the Windows Driver Kit (WDK).</p>
                                             </div>
                                         </div>
                                     </div>

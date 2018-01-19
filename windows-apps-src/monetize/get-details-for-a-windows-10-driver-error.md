@@ -4,7 +4,7 @@ ms.assetid: 79DC7C99-70F1-499A-856B-D2A83FC6F867
 description: Use this method in the Microsoft Store analytics API to get detailed data for a Windows 10 driver error. This method is intended only for IHVs.
 title: Get details for a Windows 10 driver error
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -94,7 +94,7 @@ Elements in the *Value* array contain the following values.
 | date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | applicationId   | string  | The product ID value of the driver for which you retrieved error data. |
 | submissionId   | string  | The submission ID that is associated with the driver. |
-| failureName     | string  | The name of the error.             |
+| failureName     | string  |The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the driver where the failure occurred, and the associated function name.             |
 | failureHash     | string  | The unique identifier for the error.     |
 | symbol     | string  | The symbol assigned to this error.     |
 | osVersion       | string  | The four-part build version of the OS on which the error occurred.    |
