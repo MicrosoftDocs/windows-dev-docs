@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, promo code, promo codes, token, tokens
 ms.localizationpriority: high
 ---
 
@@ -17,7 +17,7 @@ ms.localizationpriority: high
 
 You can generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md) with Windows 10.
 
-Each promotional code has a corresponding unique redeemable URL that you can distribute to a single user or to a group of users. The user can simply click the URL to redeem the code and install your app or add-on from the Microsoft Store.
+Each promotional code has a corresponding unique redeemable URL that you can distribute to a single customer or to a group of customers. A customer can simply click the URL to redeem the code and install your app or add-on from the Microsoft Store.
 
 > [!TIP]
 > You can use [targeted push notifications](send-push-notifications-to-your-apps-customers.md) to distribute a promotional code to a segment of your customers. When doing so, be sure to use a promotional code that allows multiple customers to use the same code.
@@ -33,18 +33,18 @@ In the Windows Dev Center dashboard, you can:
 
 Note that your app must pass the final publishing phase of the [app certification process](the-app-certification-process.md) before customers can redeem a promotional code to install it.
 
-## Promotional code policies
 
+## Promotional code policies
 
 Be aware of the following policies for promotional codes:
 
--   You can generate promotional codes for any app or add-on that you published to the Microsoft Store. Customers can redeem the codes on any versions of Windows that are supported by your app or add-on.
+-   You can generate promotional codes for any app or add-on (with the exception of subscription add-ons) that you published to the Microsoft Store. Customers can redeem the codes on any version of Windows that is supported by your app or add-on.
 -   Promotional codes expire 6 months after the date you order them (unless you choose an earlier expiration date).
 -   For each of your apps or add-ons, you can generate codes that allow up to 1600 redemptions every 6 months. The 6 month period begins when the first promotional code order is submitted, even if you choose an earlier expiration date. The total of 1600 redemptions per product applies to both single-use codes and codes that can be used multiple times.
--   You must follow the requirements defined in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), including section **3k. Promotional Codes**.
+-   You must follow the requirements defined in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement), including section **3k. Promotional Codes**.
+
 
 ## Order promotional codes
-
 
 To order promotional codes for an app or add-on that you published to the Microsoft Store:
 
@@ -53,11 +53,11 @@ To order promotional codes for an app or add-on that you published to the Micros
 2.   On the **Promotional codes** page, click **Order codes**.
 
 3.  On the **New promotional codes order** page, enter the following:
-    -   Select the app or add-on for which you want to generate codes.
+    -   Select the app or add-on for which you want to generate codes. (Note that you can't generate promotional codes for subscription add-ons.)
     -   Specify a name for the order. You can use this name to differentiate between different orders of codes when reviewing your promotional code usage data.
     -   Select the order type. You can choose to generate a set of promo codes that can each be used once, or you can choose to generate one promo code that can be used multiple times.
     -   Specify the number of codes to order (if generating a set of codes) or the number of times the code can be redeemed (if generating one code to be used multiple times).
-    -   Specify when the promotional codes should become active. To choose a specific start date and time, clear the **Codes are active immediately** check box. Otherwise, the codes will be active immediately.
+    -   Specify when the promotional codes should become active. To choose a specific start date and time, clear the **Codes are active immediately** check box. Otherwise, the codes will become active right away.
     -   Specify when the promotional codes should expire. To choose a specific expire date and time earlier than 6 months, clear the **Codes expire after 6 months** check box.
 
 4.  Click **Order codes**. You'll then be returned to the **Promotional codes** page, where you'll be able to see your new order in the summary table of promotional code orders for that app.
@@ -89,6 +89,7 @@ To download a fulfilled promotional code order and distribute the codes to custo
     -   An explanation of which app or add-on the promotional code is for, and optionally a description of why the customer is receiving the code.
     -   The redeemable URL for the code.
     -   Instructions that guide the customer to visit the redeemable URL, log in using their Microsoft account, and follow the instructions to download and install your app.
+
 
 ## Code redemption user experience
 
