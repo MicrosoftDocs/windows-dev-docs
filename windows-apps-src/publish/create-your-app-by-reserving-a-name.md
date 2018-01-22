@@ -2,10 +2,10 @@
 author: jnHs
 Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Create your app by reserving a name
-keywords: windows 10, uwp
+keywords: windows 10, uwp, name reservation, app name, app names, names, product name, naming
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,7 +27,7 @@ Reserving a name is the first step in creating an app in the dashboard. You can 
 2.  In the text box, enter the name that you want to use, and then select **Check availability**. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
 3.  Click **Reserve product name**.
 
-The name is now reserved for you and you can start working on your [submission](app-submissions.md) whenever you're ready.
+The name is now reserved for you, and you can start working on your [submission](app-submissions.md) whenever you're ready.
 
 > [!NOTE]
 > You might find that you can't reserve a name, even though you don't see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but hasn't submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
@@ -50,6 +50,8 @@ Choosing the right name for your app is an important task. Pick a name that will
 -   **Be original.** Make sure your app name is distinctive enough so that it isn't easily confused with an existing app.
 -   **Don't use names trademarked by others.** Make sure that you have the rights to use the name that you reserve. If someone else has trademarked the name, they can report an infringement and you won't be able to keep using that name. If that happens after your app has been published, it will be removed from the Store. You'll then need to change the name of your app, and all instances of the name throughout your app and its content, before you can [submit your app](app-submissions.md) for certification again.
 -   **Avoid adding differentiating info at the end of the name.** If the info that differentiates multiple apps is added to the end of a name, customers might miss it, especially if the name is long; all of the apps could appear to have the same name. If this is unavoidable, use different logos and app images so it's easier to differentiate one app from another.
+-   **Don't include emojis in your name.** You won't be able to reserve a name that includes emojis or other unsupported characters.
+
 
 ## Manage additional app names
 
