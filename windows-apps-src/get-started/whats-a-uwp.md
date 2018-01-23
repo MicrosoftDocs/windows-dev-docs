@@ -18,7 +18,7 @@ The Universal Windows Platform (UWP) is the app platform for Windows 10. You can
 
 UWP is also flexible: you don't have to use C# and XAML if you don't want to. Do you like developing in Unity or MonoGame? Prefer JavaScript? Not a problem, use them all you want. Have a C++ desktop app that you want to extend with UWP features and sell in the store? That's okay, too. 
 
-The bottom line: You can spend your time working with familiar programming languages, frameworks and APIs, all in single project, and have the very same code run on the huge range of Windows hardware that exists today. Once you've written your UWP app, you can then publish it to the store for the world to see.
+The bottom line: You can spend your time working with familiar programming languages, frameworks and APIs, all in a single project, and have the very same code run on the huge range of Windows hardware that exists today. Once you've written your UWP app, you can then publish it to the store for the world to see.
 
 ![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
  

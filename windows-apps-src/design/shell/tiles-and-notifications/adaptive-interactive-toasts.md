@@ -673,8 +673,7 @@ ToastContent content = new ToastContent()
 
 In addition to text boxes, you can also use a selection menu.
 
-<!-- TODO: replace with updated image. -->
-<!-- <img alt="notification with selection input and actions" src="images/adaptivetoasts-xmlsample06.jpg" width="364"/> -->
+<img alt="notification with selection input and actions" src="images/adaptivetoasts-xmlsample06.jpg" width="364"/>
 
 ```csharp
 ToastContent content = new ToastContent()
