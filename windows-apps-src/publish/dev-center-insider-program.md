@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 01/10/18
+ms.date: 01/23/18
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,12 +14,12 @@ ms.localizationpriority: high
 
 # Dev Center Insider Program
 
-As a [registered developer](http://go.microsoft.com/fwlink/?LinkID=615100), you can help influence the functionality we make available in the Dev Center dashboard by joining the Dev Center Insider Program. This program allows you to try out new features before they become available to all developers. We encourage you to give us your feedback on these features by using the Feedback link in the bottom right corner of Dev Center. All of the feedback we receive from Dev Center Insiders will be read closely and given priority consideration.
+As a [registered developer](http://go.microsoft.com/fwlink/?LinkID=615100), you can help influence the functionality we make available in the Dev Center dashboard by joining the Dev Center Insider Program. This program allows you to try out new features before they become available to all developers. We encourage you to give us your feedback on these features by using the Feedback link under the question mark icon in the upper right corner of Dev Center. All of the feedback we receive from Dev Center Insiders will be read closely and given priority consideration.
 
 To join the program, opt in on the **Account settings** page in your Dev Center dashboard. You can opt out at any time.
 
 > [!IMPORTANT]
-> The terms of the [App Developer Agreement](https://msdn.microsoft.com/windows/apps/hh694058.aspx) apply to your participation in the program. Please read them, particularly Exhibit I, before you join the program. Keep in mind that the features made available exclusively to people in the Dev Center Insider Program may include experimental and early prerelease services. This means that these features often don’t have documentation available yet, and you may experience unintended results when using them.
+> The terms of the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) apply to your participation in the program. Please read them, particularly Exhibit I, before you join the program. Keep in mind that the features made available exclusively to people in the Dev Center Insider Program may include experimental and early prerelease services. This means that these features often don’t have documentation available yet, and you may experience unintended results when using them.
 
 Here are some of the features that we’ve made available exclusively to members of the Dev Center Insider Program. This list will change over time as new features are added (and as features introduced to the Insider Program are made available to everyone).
 
