@@ -3,16 +3,21 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Understand IRS tax forms issued by Microsoft
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, taxation, irs, internal revenue service, tax, income tax, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: high
 ---
 
 # Understand IRS tax forms issued by Microsoft
+
+> [!IMPORTANT]
+> Microsoft has learned that our 2017 1099-MISC forms for payments for revenue from Microsoft's marketplaces and/or advertising **contain incorrect amounts, overstating the actual payments**. We sincerely regret this error and are working to produce corrected forms as soon as possible. For more info, view this [forum post](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/3c5b7b70-c80e-47b5-899a-ba1d70badde5/important-information-regarding-2017-1099misc-forms?forum=wppayout).
+> 
+> **Special note**: Due to the error, some developers may receive corrected forms with amounts that are below the thresholds described below. 
 
 Depending on your location and the amount of sales and/or payments you receive, you may receive one or more tax forms from Microsoft each year. Microsoft is required to issue these forms and file them with the Internal Revenue Service (IRS).
 
@@ -23,7 +28,7 @@ Below, we'll explain more about these forms, including who will receive them and
 | IRS tax form | Description | Availability |
 |--------------|-------------|--------------|
 |1099-MISC, 1099-K | Related to sales activity and/or payments made to you for participation in Microsoft's marketplaces | Printed forms will be postmarked on or before **January 31**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
-|1042-S | Related to payments made to you that are subject to United States withholding tax. | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
+|1042-S | Related to payments made to you that are subject to United States withholding tax | Printed forms will be postmarked on or before **March 15**, and .pdf copies will be available in Dev Center (**Dashboard > Account settings > Tax profile**) at the same time |
 
 > [!NOTE]
 > The address listed on IRS tax forms comes from the address in your [Tax profile](setting-up-your-payout-account-and-tax-forms.md#tax-forms). If your address has changed, please make sure to update the address in your **Tax profile**.
@@ -36,7 +41,7 @@ Below, we'll explain more about these forms, including who will receive them and
      <th> I should receive this form</th>
   </tr>
   <tr> 
-     <td valign="top">I had **greater than 200 app sales** with a total purchase amount of these sales **greater than $20,000 USD** in the applicable tax year (**not** counting sales made in Brazil and China through the Windows 10 Store.)</td>
+     <td valign="top">I had **greater than 200 app sales** with a total purchase amount of these sales **greater than $20,000 USD** in the applicable tax year (**not** counting sales made in Brazil and China through the Microsoft Store on Windows 10.)</td>
     <td valign="top">**1099-K** :<br>
 Filer: Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
@@ -44,7 +49,7 @@ EIN: \*\*\*\*\*4442<br>
 **Important:** Form 1099-K contains **gross purchase** amounts, not payments made to you.</td>
   </tr>
   <tr> 
-     <td valign="top">I received **at least $10 in payments** for app sales made in Brazil and China through the Windows 10 Store.<br>
+     <td valign="top">I received **at least $10 in payments** for (i) app sales made in Brazil and China through the Microsoft Store on Windows 10 or (ii) sales in the Minecraft Marketplace.<br>
 <br>
 **OR**<br>
 <br>
