@@ -5,7 +5,7 @@ description: This topic describes the lifecycle of a Windows 10 Universal Window
 keywords: app lifecycle suspended resume launch activate
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 01/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,7 +37,9 @@ This illustration represents the possible app model states starting in Windows 1
 
 ![state diagram showing transitions between app execution states](images/updated-lifecycle.png)
 
-Apps enter the running in background state when they are launched or activated. These terms seem similar but they refer to different ways the operating system may start your app. Let's first look at launching an app.
+Apps enter the running in background state when they are launched or activated. If the app needs to move into the foreground due to a foreground app launch, the app then gets the [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) event.
+
+Although "launched" and "activated" may seem like similar terms, they refer to different ways the operating system may start your app. Let's first look at launching an app.
 
 ## App launch
 
@@ -52,7 +54,6 @@ Get the previous state of your app from [LaunchActivatedEventArgs.PreviousExecut
 | **Terminated** | The app was previously suspended but was then shutdown at some point because the system needed to reclaim memory. | Restore the state that the app was in when the user switched away from it.|
 |**ClosedByUser** | The user closed the app with the close gesture in tablet mode, or with Alt+F4. When the user closes the app, it is first suspended and then terminated. | Because the app has essentially gone through the same steps that lead to the Terminated state, handle this the same way you would the Terminated state.|
 |**Running** | The app was already open when the user tried to launch it again. | Nothing. Note that another instance of your app is not launched. The already running instance is simply activated. |
-
 
 **Note**  *Current user session* is based on Windows logon. As long as the current user hasn't logged off, shut down, or restarted Windows, the current user session persists across events such as lock screen authentication, switch-user, and so on. 
 
