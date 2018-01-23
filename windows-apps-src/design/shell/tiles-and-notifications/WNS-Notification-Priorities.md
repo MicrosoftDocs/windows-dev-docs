@@ -2,7 +2,7 @@
 title: WNS Notification Priorities
 description: Description of the various priorities that you can set on a notification
 author: adwilso
-ms.author: adwilso
+ms.author: sezhen
 ms.date: 1/10/2017
 ms.topic: article
 ms.prod: windows
@@ -19,7 +19,7 @@ As more users are working only on battery powered devices, minimizing power usag
 
 WNS priorities is one way to move non-critical work off the battery. The WNS priorities tell the system which notifications should be delivered instantly and which can wait until the device is plugged into a power source. With these hints, the system can deliver the notifications the exact time they are the most valuable to both the user and the app. 
 
-## Power Modes on the Device
+## Power modes on the device
 Every Windows device operates through a variety of power modes (battery, battery saver, and charge), and users expect different behaviors from apps in different power modes. When the device is on, all notifications should be delivered. In battery saver mode, only the most important notifications should be delivered. While the device is plugged in, sync or non-time critical operations can be completed.
 
 Windows does not know which notifications are important to any user or app, so the system relies totally on apps to set the right priority for their notifications. 
@@ -38,7 +38,7 @@ The priorities are:
 
 Note that many apps will have notifications of different priority throughout their lifecycle. Since the priority is set on a per-notification basis, this isn’t an issue. A VoIP app can send a high priority notification for an incoming call and then follow it up with a low priority one when a contact comes online. 
 
-## Setting the Priority
+## Setting the priority
 
 Setting the priority on the notification request is done through an additional header on the POST request, `X-WNS-PRIORITY`. This is an integer value between 0 and 3 which maps to a priority: 
 
@@ -51,7 +51,7 @@ Setting the priority on the notification request is done through an additional h
 
 To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in in the chart above and match the behavior of existing versions of Windows. The behavior of notifications in the Fall Creators Update will not change, but apps can raise or lower the priorities of their notifications as desired. 
 
-## Detailed Listing of Desktop Behavior 
+## Detailed listing of desktop behavior 
 
 If you are shipping your app across many different SKUs of Windows, it is normally best to follow the chart in the above section. 
 
