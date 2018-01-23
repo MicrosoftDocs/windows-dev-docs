@@ -35,9 +35,8 @@ You can share various types of data, including:
 -   Uniform Resource Identifiers (URIs)
 -   HTML
 -   Formatted text
--   Bitmaps
--   Plain text
--   Files
+-   Bitmaps
+-   Files
 -   Custom developer-defined data
 
 The [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) object can contain one or more of these formats, in any combination. The following example demonstrates sharing text.
