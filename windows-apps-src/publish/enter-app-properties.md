@@ -4,22 +4,22 @@ Description: The App properties page of the app submission process lets you defi
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 11/22/2017
+ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, game settings, display mode, system requirements, hardware requirements, minimum hardware, recommended hardware
 ms.localizationpriority: high
 ---
 
 # Enter app properties
 
-The **Properties** page of the [app submission process](app-submissions.md) lets you define your app's category and indicate hardware preferences or other declarations. Here, we'll walk through the options on this page and what you should consider when entering this information.
+The **Properties** page of the [app submission process](app-submissions.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
 
 
 ## Category and subcategory
 
-In this section, you indicate the category (and subcategory, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
+You must indicate the category (and subcategory/genre, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
 
 For more info, see [Category and subcategory table](category-and-subcategory-table.md).
 
@@ -35,7 +35,9 @@ If your game supports any of the multiplayer options, be sure to indicate the mi
 
 ## Display mode
 
-This section lets you indicate whether your product is designed for [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) on PC and/or HoloLens devices. If you indicate that it is, you'll also need to indicate whether it's meant to be used in a seated or standing position only, or whether it allows (or requires) the user to move around while using it. 
+This section lets you indicate whether your product is designed to run in an immersive (not a 2D) view for [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) on PC and/or HoloLens devices. If you indicate that it is, you'll also need to:
+- Select either **Minimum hardware** or **Recommended hardware** for **Windows Mixed Reality immersive headset** in the [System requirements](#system-requirements) section that appears lower on the **Properties** page.
+- Specify the **Boundary setup** (if PC is selected) so that users know whether it's meant to be used in a seated or standing position only, or whether it allows (or requires) the user to move around while using it. 
 
 If you have selected **Games** as your product's category, you'll see additional options in the **Display mode** selection that let you indicate whether your product supports 4K resolution video output, High Dynamic Range (HDR) video output, or variable refresh rate displays.
 
@@ -67,7 +69,7 @@ The behavior for customers will vary depending on the specific requirements and 
 - **For customers on Windows 8.x and earlier or Windows Phone 8.x and earlier:**
      - If you check the **Minimum hardware** box for **Touch screen**, this requirement will be displayed in your app's Store listing, and customers on devices without a touch screen will see a warning if they try to download the app. No other requirements will be verified or displayed in your Store listing.
 
-We also recommend adding runtime checks for the specified hardware into your app, since the Store may not always be able to detect that a customer's device is missing the selected feature(s) and they could still be able to download your app even if a warning is displayed. If you want to completely prevent your UWP app from being downloaded on a device which doesn't meet minimum requirements for memory or DirectX level, you can designate the minimum requirements in a [StoreManifest XML file](https://msdn.microsoft.com/library/windows/apps/mt617335).
+We also recommend adding runtime checks for the specified hardware into your app, since the Store may not always be able to detect that a customer's device is missing the selected feature(s) and they could still be able to download your app even if a warning is displayed. If you want to completely prevent your UWP app from being downloaded on a device which doesn't meet minimum requirements for memory or DirectX level, you can designate the minimum requirements in a [StoreManifest XML file](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root).
 
 > [!TIP]
 > If your product requires additional items that aren't listed in this section in order to run properly, such as 3D printers or USB devices, you can also enter [additional system requirements](create-app-store-listings.md#additional-system-requirements) when you create your Store listing.
