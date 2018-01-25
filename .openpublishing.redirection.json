@@ -1584,6 +1584,11 @@
       "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
       "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
       "redirect_document_id": true
-    }                                    
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/get-started-with-creators/sign-in-to-xbox-live-in-unity.md",
+      "redirect_url": "/windows/uwp/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in",
+      "redirect_document_id": true
+    }                           
   ]
 }
