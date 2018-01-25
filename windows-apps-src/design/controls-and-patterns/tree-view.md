@@ -17,9 +17,9 @@ doc-status: Published
 > [!IMPORTANT]
 > This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
-The new XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
+The XAML TreeView control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.
 
-> **Important APIs**: [TreeView class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewItem class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem), [TreeViewList class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewlist), [TreeViewNode class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode)
+> **Important APIs**: [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewItem class](/uwp/api/windows.ui.xaml.controls.treeviewitem), [TreeViewList class](/uwp/api/windows.ui.xaml.controls.treeviewlist), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode)
 
 The TreeView APIs support the following features:
 
@@ -64,9 +64,9 @@ A combination of a chevron and a folder should be used only if non-node list ite
 
 TreeView has the following main classes.
 
-- The [TreeViewNode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode) class implements the hierarchical layout for the TreeView. It also holds the data that will be bound to it in the item's template.
-- The [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview) class implements events for ItemClick and expand/collapse of folders.
-- The [TreeViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem) class has the styles, brushes, and glyphs for a folder type TreeViewItem.
+- The [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) class implements the hierarchical layout for the TreeView. It also holds the data that will be bound to it in the item's template.
+- The [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) class implements events for ItemInvoked and expand/collapse of folders.
+- The [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) class has the styles, brushes, and glyphs for a folder type TreeViewItem.
 
 ## Declare a TreeView in XAML
 
@@ -85,25 +85,25 @@ public MainPage()
 {
     this.InitializeComponent();
 
-    TreeViewNode workFolder = new TreeViewNode() {Data = "Work Documents" };
+    TreeViewNode workFolder = new TreeViewNode() { Content = "Work documents" };
     workFolder.IsExpanded = true;
-    workFolder.Add(new TreeViewNode() { Data = "Feature Schedule" });
-    workFolder.Add(new TreeViewNode() { Data = "Overall Project Plan" });
-    workFolder.Add(new TreeViewNode() { Data = "Feature Rsource Allocation" });
+    workFolder.Children.Add(new TreeViewNode() { Content = "Feature schedule" });
+    workFolder.Children.Add(new TreeViewNode() { Content = "Overall project plan" });
+    workFolder.Children.Add(new TreeViewNode() { Content = "Feature resource allocation" });
 
-    TreeViewNode remodelFolder = new TreeViewNode() { Data = "Home Remodel" };
+    TreeViewNode remodelFolder = new TreeViewNode() { Content = "Home remodel" };
     remodelFolder.IsExpanded = true;
-    remodelFolder.Add(new TreeViewNode() { Data = "Contractor Contact Info" });
-    remodelFolder.Add(new TreeViewNode() { Data = "Paint Color Scheme" });
-    remodelFolder.Add(new TreeViewNode() { Data = "Flooring woodgrain type" });
-    remodelFolder.Add(new TreeViewNode() { Data = "Kitchen cabinet style" });
+    remodelFolder.Children.Add(new TreeViewNode() { Content = "Contractor contact info" });
+    remodelFolder.Children.Add(new TreeViewNode() { Content = "Paint color scheme" });
+    remodelFolder.Children.Add(new TreeViewNode() { Content = "Flooring woodgrain type" });
+    remodelFolder.Children.Add(new TreeViewNode() { Content = "Kitchen cabinet style" });
 
-    TreeViewNode personalFolder = new TreeViewNode() { Data = "Personal Documents" };
+    TreeViewNode personalFolder = new TreeViewNode() { Content = "Personal documents" };
     personalFolder.IsExpanded = true;
 
-    personalFolder.Add(remodelFolder);
-    workFolder.Add(personalFolder);
-    sampleTreeView.RootNode = workFolder;
+    personalFolder.Children.Add(remodelFolder);
+    workFolder.Children.Add(personalFolder);
+    sampleTreeView.RootNodes.Add(workFolder);
 }
 ```
 

@@ -203,7 +203,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ## Get the sample code
 
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
-- [XAML Content menu sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
+- [XAML Context menu sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlContextMenu)
 
 ## Related articles
 
