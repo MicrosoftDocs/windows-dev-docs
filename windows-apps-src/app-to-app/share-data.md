@@ -36,7 +36,6 @@ You can share various types of data, including:
 -   HTML
 -   Formatted text
 -   Bitmaps
--   Plain text
 -   Files
 -   Custom developer-defined data
 
