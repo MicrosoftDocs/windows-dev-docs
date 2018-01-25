@@ -1,3 +1,4 @@
+# [Getting started](../gaming/getting-started.md)
 # [Windows 10 game development guide](../gaming/e2e.md)
 # [Game programming](../gaming/index.md)
 ## [Planning](../gaming/planning.md)
