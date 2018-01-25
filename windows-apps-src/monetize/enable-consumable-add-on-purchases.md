@@ -62,7 +62,7 @@ For a complete sample application, see the [Store sample](https://github.com/Mic
 
 After the user [purchases the add-on](enable-in-app-purchases-of-apps-and-add-ons.md) from your app and they consume your add-on, your app must report the add-on as fulfilled by calling the [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) method of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. You must pass the following information to this method:
 
-* The [Store ID](in-app-purchases-and-trials.md#store_ids) of the add-on that you want to report as fulfilled.
+* The [Store ID](in-app-purchases-and-trials.md#store-ids) of the add-on that you want to report as fulfilled.
 * The units of the add-on you want to report as fulfilled.
   * For a developer-managed consumable, specify 1 for the *quantity* parameter. This alerts the Store that the consumable has been fulfilled, and the customer can then purchase the consumable again. The user cannot purchase the consumable again until your app has notified the Store that it was fulfilled.
   * For a Store-managed consumable, specify the actual number of units that have been consumed. The Store will update the remaining balance for the consumable.

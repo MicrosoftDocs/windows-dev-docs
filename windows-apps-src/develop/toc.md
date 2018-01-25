@@ -310,6 +310,7 @@
 #### [Get app acquisition funnel data](../monetize/get-acquisition-funnel-data.md)
 #### [Get app conversions by channel](../monetize/get-app-conversions-by-channel.md)
 #### [Get add-on acquisitions](../monetize/get-in-app-acquisitions.md)
+#### [Get subscription add-on acquisitions](../monetize/get-subscription-acquisitions.md)
 #### [Get add-on conversions by channel](../monetize/get-add-on-conversions-by-channel.md)
 #### [Get app installs](../monetize/get-app-installs.md)
 #### [Get app ratings](../monetize/get-app-ratings.md)
