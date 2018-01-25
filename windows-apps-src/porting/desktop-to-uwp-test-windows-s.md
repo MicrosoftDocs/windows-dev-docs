@@ -76,6 +76,8 @@ When you're ready to apply a policy, find the .P7B file for the policy that you 
 
 Then, restart your system.
 
+To remove a policy from your system, delete the .P7B file and then restart your system.  
+
 ## Next steps
 
 **Find answers to your questions**
