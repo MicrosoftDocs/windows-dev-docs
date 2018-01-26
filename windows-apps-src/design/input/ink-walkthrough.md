@@ -1,18 +1,18 @@
 ---
 author: Karl-Bridge-Microsoft
 ms.assetid: 
-title: UWP Academy - Input track - Support ink in your UWP app
-description: UWP Academy. Input track. A step by step tutorial for adding ink support to your UWP app.
-keywords: UWP Academy
+title: Support ink in your UWP app
+description: A step by step tutorial for adding ink support to your UWP app.
+keywords: ink, inking, tuorial
 ms.author: kbridge
-ms.date: 04/17/2017
+ms.date: 01/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# Support ink in your UWP app
+# Tutorial: Support ink in your UWP app
 
 ![Surface Pen](images/ink/ink-hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacepen)).

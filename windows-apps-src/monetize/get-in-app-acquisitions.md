@@ -14,13 +14,9 @@ ms.localizationpriority: medium
 
 # Get add-on acquisitions
 
-
-
-
 Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-ons for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
 
 ## Prerequisites
-
 
 To use this method, you need to first do the following:
 
@@ -52,8 +48,8 @@ The *applicationId* or *inAppProductId* parameter is required. To retrieve acqui
 
 | Parameter        | Type   |  Description      |  Required  
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to retrieve add-on acquisition data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| inAppProductId | string | The Store ID of the add-on for which you want to retrieve acquisition data. The Store ID is available in the URL of the overview page for the add-on in the Windows Dev Center dashboard. For example, if the URL for the dashboard page for an add-on is ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```, the Store ID for the add-on is the string 9NBLGGH4SCZS. | Yes  |
+| applicationId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to retrieve add-on acquisition data.  |  Yes  |
+| inAppProductId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the add-on for which you want to retrieve acquisition data.  | Yes  |
 | startDate | date | The start date in the date range of add-on acquisition data to retrieve. The default is the current date. |  No  |
 | endDate | date | The end date in the date range of add-on acquisition data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |

@@ -149,7 +149,7 @@ If you decide that you want your apps to use a single XAML [**Frame**](https://m
 
 **Complete example**
 
-* [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 **Concepts**
 

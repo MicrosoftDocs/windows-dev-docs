@@ -10,6 +10,7 @@
 ### [Featured Stats and Leaderboards](configure-xbl/dev-center/featured-stats-and-leaderboards.md)
 ### [Game DVR](configure-xbl/dev-center/game-dvr.md)
 ### [Localized Strings](configure-xbl/dev-center/localized-strings.md)
+### [XboxServices.config](xboxservices-config.md)
 ## XDP
 ### [Achievements 2017](configure-xbl/xdp/achievements-in-xdp.md)
 # [Test accounts](xbox-live-test-accounts.md)

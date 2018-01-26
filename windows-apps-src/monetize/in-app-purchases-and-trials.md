@@ -72,7 +72,7 @@ This section provides an overview of important tasks and concepts for the [Windo
 * [Receipts for in-app purchases](#receipts)
 * [Using the StoreContext class with the Desktop Bridge](#desktop)
 * [Products, SKUs, and availabilities](#products-skus)
-* [Store IDs](#store_ids)
+* [Store IDs](#store-ids)
 
 <span id="video" />
 ### Video

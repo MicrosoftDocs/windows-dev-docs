@@ -4,11 +4,11 @@ ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: Create a Universal Windows Platform (UWP) app for Windows 10 using your favorite programming language.
 ms.author: quradic
-ms.date: 08/31/2017
+ms.date: 1/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, get started, start
+keywords: windows 10, uwp, get started, start, c#, c++, JavaScript
 ms.localizationpriority: high
 ---
 
@@ -57,7 +57,22 @@ If you are ready to attempt something a little more fun than "Hello, World!", tr
 Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.
 
 * [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-uwp.md)
-* [Check out specific tutorials and guidance for web and JavaScript](create-js-apps.md)
+
+Extend your JavaScript and HTML skills beyond UWP to create web apps, or explore Virtual reality on the web with WebVR
+
+* [Microsoft Edge developer documentation](https://docs.microsoft.com/microsoft-edge/)
+* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+
+Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
+
+* [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Convert your web application to a UWP app](../porting/hwa-create-windows.md)
+
+Need to brush up on your web skills?
+
+* [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## See Also
 
