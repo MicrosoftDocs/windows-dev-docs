@@ -21,9 +21,11 @@ In this tutorial, you'll learn how to create a basic UI for an image editing pro
 The image editing program has two pages/screens:
 
 The **main page**, which displays a photo gallery view, along with some information about each image file.
+
 ![MainPage](images/xaml-basics/mainpage.png)
 
 The **details page**, which displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+
 ![DetailPage](images/xaml-basics/detailpage.png)
 
 
@@ -40,7 +42,7 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
 2. Next, you'll need to clone or download the sample. Click the **Clone or download** button. A sub-menu appears.
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
-        <figcaption>The **Clone or download** menu on the Photo lab sample's GitHub page.</figcaption>
+        <figcaption>The <b>Clone or download</b> menu on the Photo lab sample's GitHub page.</figcaption>
     </figure>
 
     **If you're not familiar with GitHub:**
@@ -52,7 +54,7 @@ For this tutorial, you'll start with a simplified version of the PhotoLab sample
     **If you are familiar with GitHub:**
 
     a. Clone the master branch of the repo locally.
-    b. Navigate to the Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface directory.
+    b. Navigate to the `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` directory.
 
 3. Open the project by clicking `Photolab.sln`.
 
@@ -555,5 +557,5 @@ Now that you've created the basic UI, checkout out these other tutorials, also b
 
 ## Get the final version of the PhotoLab sample
 
-This tutorial doesn't build up to the complete photo editing app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and phone support. You can find the final version in the UWP Academy\XAML\Final folder.
+This tutorial doesn't build up to the complete photo editing app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and phone support.
 
