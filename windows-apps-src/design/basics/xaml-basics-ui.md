@@ -27,6 +27,14 @@ We'll start with a simplified version of the PhotoLab sample. This starter versi
 ## Part 0: Get the code
 The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/user-interface/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/user-interface). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
 
+The PhotoLab app has two primary pages:
+
+**MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
+![MainPage](images/xaml-basics/mainpage.png)
+
+**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+![DetailPage](images/xaml-basics/detailpage.png)
+
 ## Part 1: Add a TextBlock using XAML Designer
 
 Visual Studio provides several tools to make creating your XAML UI easier. XAML Designer lets you drag controls onto the design surface and see what they'll look like before you run the app. The Properties panel lets you view and set all the properties of the control that are active in the designer. Document Outline shows the parent-child structure of the XAML visual tree for your UI. The XAML editor lets you directly enter and modify the XAML markup.
@@ -94,7 +102,7 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
 
     Margins provide the most basic positioning of an element on the page. They're useful for fine-tuning your layout, but using large margin values like those added by Visual Studio makes it difficult for your UI to adapt to various screen sizes, and should be avoided.
 
-    For more info, see [Alignment, margins, and padding](https://docs.microsoft.com/windows/uwp/layout/alignment-margin-padding).
+    For more info, see [Alignment, margins, and padding](../layout/alignment-margin-padding.md).
 
 8. In the Properties panel, enter **style** into the search box to find the **Style** property. Click the _property marker_ for the **Style** property to open its menu. (The _property marker_ is the small box symbol to the right of each property value.) On the **Property** menu, select **System Resource > TitleTextBlockStyle**. This applies a system-defined style to your title text.
 
@@ -121,7 +129,7 @@ You might have noticed that in XAML Designer, your app showed white text on a bl
 
 In Part 1, you had a taste of using XAML Designer and some of the other tools provided by Visual Studio. Here, you'll use the XAML editor to work directly with the XAML markup. As you become more familiar with XAML, you might find that this is a more efficient way for you to work.
 
-First, you'll replace the root layout [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) with a [**RelativePanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel). The RelativePanel makes it easier to rearrange chunks of UI relative to the panel or other pieces of UI. You'll see its usefulness in the [XAML Adaptive Layout](xaml-basics-adaptive-layout.md) tutorial. 
+First, you'll replace the root layout [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) with a [**RelativePanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel). The RelativePanel makes it easier to rearrange chunks of UI relative to the panel or other pieces of UI. You'll see its usefulness in the [XAML Adaptive Layout](../layout/xaml-basics-adaptive-layout.md) tutorial. 
 
 Then, you'll add a [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) control to display your data.
 
@@ -199,9 +207,9 @@ You'll notice that the app isn't showing images yet. By default, it shows the To
 
 ## Part 3: Add a DataTemplate to display your data
 
-Now, you'll create a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) that tells the GridView how to display your data. For a full explanation of data templates, see [Item containers and templates](../design/controls-and-patterns/item-containers-templates.md).
+Now, you'll create a [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) that tells the GridView how to display your data. For a full explanation of data templates, see [Item containers and templates](../controls-and-patterns/item-containers-templates.md).
 
-For now, you'll only be adding placeholders to help you create the layout you want. In the [XAML Data Binding](xaml-basics-data-binding.md) tutorial, you'll replace these placeholders with real data from the **ImageFileInfo** class. You can open the ImageFileInfo.cs file now if you want to see what the data object looks like.
+For now, you'll only be adding placeholders to help you create the layout you want. In the [XAML Data Binding](../../data-binding/xaml-basics-data-binding.md) tutorial, you'll replace these placeholders with real data from the **ImageFileInfo** class. You can open the ImageFileInfo.cs file now if you want to see what the data object looks like.
 
 **Add a data template to a grid view**
 
@@ -442,7 +450,7 @@ Run the app and see how it looks now. Resize the app window. The **GridView** ta
 
 To center the images in the page, you need to adjust the alignment of the Grid in the page. Or do you need to adjust the alignment of the Images in the **GridView**? Does it matter? Let's see.
 
-For more info about alignment, see [Alignment, margins, and padding](https://docs.microsoft.com/windows/uwp/layout/alignment-margin-padding).
+For more info about alignment, see [Alignment, margins, and padding](../layout/alignment-margin-padding.md).
 
 (You might try setting the **Background** of the **GridView** to your favorite color for this step. It will let you see more clearly what's happening with the layout.)
 
@@ -518,4 +526,4 @@ Now, the scrollbar is aligned with the edge of the window. Good job! You've crea
 
 ## Going further
 
-Now that you've created the basic UI, see the [XAML Data Binding](xaml-basics-data-binding.md) tutorial to add real images and data. Or go on to the [XAML Adaptive Layout](xaml-basics-adaptive-layout.md) tutorial to see how to adapt the UI to multiple screen sizes.
+Now that you've created the basic UI, see the [XAML Data Binding](../../data-binding/xaml-basics-data-binding.md) tutorial to add real images and data. Or go on to the [XAML Adaptive Layout](../layout/xaml-basics-adaptive-layout.md) tutorial to see how to adapt the UI to multiple screen sizes.

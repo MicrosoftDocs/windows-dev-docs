@@ -24,13 +24,21 @@ We'll use these tools to optimize the PhotoLab sample app for smaller device scr
 ## Part 0: Get the code
 The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/adaptive-layout/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/adaptive-layout) folder. After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
 
+The PhotoLab app has two primary pages:
+
+**MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
+![MainPage](../basics/images/xaml-basics/mainpage.png)
+
+**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+![DetailPage](../basics/images/xaml-basics/detailpage.png)
+
 ## Part 1: Run the mobile emulator
 
 In the Visual Studio toolbar, make sure your Solution Platform is set to x86 or x64, not ARM, and then change your target device from Local Machine to one of the mobile emulators that you've installed (for example, Mobile Emulator 10.0.15063 WVGA 5 inch 1GB). Try running the Photo Gallery app in the mobile emulator you've selected by pressing **F5**.
 
 As soon as the app starts, you'll probably notice that while the app works, it doesn't look great on such a small viewport. The fluid Grid element tries to accommodate for the limited screen real estate by reducing the number of columns displayed, but we are left with a layout that looks uninspired and ill-fitted to such a small viewport.
 
-![Mobile layout: after](images/xaml-basics/adaptive-layout-mobile-before.png)
+![Mobile layout: after](../basics/images/xaml-basics/adaptive-layout-mobile-before.png)
 
 ## Part 2: Build a tailored mobile layout
 To make this app look good on smaller devices, we're going to create a separate set of styles in our XAML page that will only be used if a mobile device is detected.
@@ -178,12 +186,12 @@ These setters set the **ItemTemplate** of the image gallery to the new **DataTem
 ### Run the app
 Now try running the app using a mobile emulator. Does the new layout display successfully? You should see a grid of small thumbnails as below. If you still see the old layout, there may be a typo in your **VisualStateManager** code.
 
-![Mobile layout: after](images/xaml-basics/adaptive-layout-mobile-after.png)
+![Mobile layout: after](../basics/images/xaml-basics/adaptive-layout-mobile-after.png)
 
 ## Part 3: Adapt to multiple window sizes on a single device
 Creating a new tailored layout solves the challenge of responsive design for mobile devices, but what about desktops and tablets? The app may look good at full screen, but if the user shrinks the window, they may end up with an awkward interface. We can ensure that the end-user experience always looks and feels right by using the **VisualStateManager** to adapt to multiple window sizes on a single device.
 
-![Small window: before](images/xaml-basics/adaptive-layout-small-before.png)
+![Small window: before](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
 ### Add window snap points
 The first step is to define the "snap points" at which different **VisualStates** will be triggered. Open App.xaml from the Solution Explorer, and add the following code between the **Application** tags.
@@ -282,15 +290,15 @@ These setters apply the mobile **DataTemplate** and styles to the desktop app, w
 
 In the Visual Studio toolbar set the target device to **Local Machine**, and run the app. When the app loads, try changing the size of the window. When you shrink the window to a small size, you should see the app switch to the mobile layout you created in Part 2.
 
-![Small window: after](images/xaml-basics/adaptive-layout-small-after.png)
+![Small window: after](../basics/images/xaml-basics/adaptive-layout-small-after.png)
 
 ## Going further
 
 Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. Try adding a rating control to the mobile-only tooltip you added earlier. Or, for a bigger challenge, try optimizing the layout for larger screen sizes (think TV screens or a Surface Studio)
 
-If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml).
+If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](layouts-with-xaml.md).
 
 + [Visual states and state triggers](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
 + [Tailored layouts](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
-Alternatively, if you want to learn more about how the initial app was built, check out these tutorials on XAML [user interfaces](xaml-basics-ui.md) and [data binding](xaml-basics-data-binding.md).
+Alternatively, if you want to learn more about how the initial app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
