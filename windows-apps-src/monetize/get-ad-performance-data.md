@@ -54,7 +54,7 @@ To retrieve ad performance data for a specific app, use the *applicationId* para
 
 | Parameter     | Type   | Description     | Required |
 |---------------|--------|-----------------|----------|
-| applicationId   | string    | The Store ID of the app for which you want to retrieve ad performance data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9NBLGGH4R315. |    No      |
+| applicationId   | string    | The [Store ID](in-app-purchases-and-trials.md#store-ids) of the app for which you want to retrieve ad performance data.  |    No      |
 | startDate   | date    | The start date in the date range of ad performance data to retrieve, in the format YYYY/MM/DD. The default is the current date minus 30 days. |    No      |
 | endDate   | date    | The end date in the date range of ad performance data to retrieve, in the format YYYY/MM/DD. The default is the current date minus one day. |    No      |
 | top   | int    | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |    No      |

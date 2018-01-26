@@ -21,6 +21,14 @@ This tutorial shows you how to customize the UI of our XAML app. Warning: this t
 ## Part 0: Get the code
 The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/style/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/style). After you've cloned/downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2017.
 
+The PhotoLab app has two primary pages:
+
+**MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
+![MainPage](../basics/images/xaml-basics/mainpage.png)
+
+**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+![DetailPage](../basics/images/xaml-basics/detailpage.png)
+
 ## Part 1: Create a fancy slider control  
 
 Universal Windows Platform (UWP) provides a number of ways to customize the look of your app. From fonts and typography settings to colors and gradients to blur effects, you have a lot of options. 
@@ -28,7 +36,7 @@ Universal Windows Platform (UWP) provides a number of ways to customize the look
 For the first part of the tutorial, let's jazz up some of our photo editing controls. 
 
 <figure>
-    <img src="images/xaml-basics/slider-start.png" />
+    <img src="../basics/images/xaml-basics/slider-start.png" />
     <figure>*A humble slider with default styling.*</figure>
 </figure>
 
@@ -45,20 +53,20 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 2. In the Solution Explorer panel, double-click **DetailPage.xaml** to open it. 
 
-    ![The DetailPage.xaml file in the Visual Studio 2017 solution explorer.](images/xaml-basics/style-detail-page-explorer.png)
+    ![The DetailPage.xaml file in the Visual Studio 2017 solution explorer.](../basics/images/xaml-basics/style-detail-page-explorer.png)
 
 3. Use a Polygon element to create a background shape for the exposure slider.
 
     The [Windows.XAML.Ui.Shapes namespace](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes) provides seven shapes to choose from. There's an ellipse, a rectangle, and a thing called a Path, which can make any sort of shape--yes, even a unicorn! 
     
     <!-- TODO reduce size -->
-    ![A unicorn](images/xaml-basics/unicorn.png)
+    ![A unicorn](../basics/images/xaml-basics/unicorn.png)
     
     > **Read about it:** The [Draw shapes](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes) article tells you everything you need to know about XAML shapes. 
     
     We want to create a triangle-looking widget--something like the shape you'd see on a stereo's volume control.
     
-    ![A volume slider](images/xaml-basics/style-volume-slider.png)
+    ![A volume slider](../basics/images/xaml-basics/style-volume-slider.png)
     
     Sounds like a job for the Polygon shape! To define a polygon, you specify a set of points and give it a fill. Let's create a polygon that's about 200 pixels wide and 20 pixels tall, with a gradient fill.
     
@@ -107,7 +115,7 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 4. Compile and run the app. Your slider should now look awesome:
 
-    ![A fancy exposure slider](images/xaml-basics/style-exposure-slider-done.png)
+    ![A fancy exposure slider](../basics/images/xaml-basics/style-exposure-slider-done.png)
 
 5. Let's give the next slider, the temperature slider, an upgrade. The temperature slider changes the color temperature of the image; sliding to the left makes the image bluer and sliding to the right makes the image more yellow.
 
@@ -154,13 +162,13 @@ The exposure slider adjusts the exposure of the image: slide it to the left and 
 
 6. Compile and run the app. You should now have two fancy sliders.
 
-    ![Two fancy sliders](images/xaml-basics/style-2sliders-done.png)
+    ![Two fancy sliders](../basics/images/xaml-basics/style-2sliders-done.png)
 
 7. **Extra credit**
 
     Add a background shape for the tint slider that has a gradient from green to red. 
 
-    ![3 fancy sliders](images/xaml-basics/style-3sliders-done.png)
+    ![3 fancy sliders](../basics/images/xaml-basics/style-3sliders-done.png)
 
 
 Congratulations, you've completed part 1! If you got stuck or want to see the final solution, you can find the completed code at **UWP Academy\XAML\Styling\Part1\Finish**.
@@ -847,7 +855,7 @@ Well, we got the job done, but there's a better way to achieve the same effect: 
 
 11. Compile and run the app. 
 
-    ![The best sliders in the world](images/xaml-basics/style-sliders-templates.png)
+    ![The best sliders in the world](../basics/images/xaml-basics/style-sliders-templates.png)
     
     As you can see, our updates improved the positioning of the polygon; now the bottom of the polygon is aligned to the bottom of the slider thumb.
     

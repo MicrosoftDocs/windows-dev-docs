@@ -1,18 +1,18 @@
 ---
 author: Karl-Bridge-Microsoft
 ms.assetid: 
-title: UWP Academy - Input track - Support the Surface Dial (and other wheel devices) in your UWP app
-description: UWP Academy. Input track. A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
-keywords: UWP Academy
+title: Support the Surface Dial (and other wheel devices) in your UWP app
+description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your UWP app.
+keywords: dial, radial, tutorial
 ms.author: kbridge
-ms.date: 04/17/2017
+ms.date: 01/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# Support the Surface Dial (and other wheel devices) in your UWP app
+# Tutorial: Support the Surface Dial (and other wheel devices) in your UWP app
 
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
 *Surface Dial with Surface Studio and Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacedial)).
