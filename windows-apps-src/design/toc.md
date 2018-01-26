@@ -6,6 +6,7 @@
 ## [Navigation basics](basics/navigation-basics.md)
 ### [Implement basic navigation](basics/navigate-between-two-pages.md)
 ### [Support history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
+## [Tutorial: Create a user interface](basics/xaml-basics-ui.md)
 
 # Style
 ## [Overview](style/index.md)
@@ -23,6 +24,7 @@
 ### [XAML Control templates](controls-and-patterns/control-templates.md)
 ### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
 ### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
+### [Tutorial: Create custom styles](controls-and-patterns/xaml-basics-style.md)
 
 # Motion
 ## [Overview](motion/index.md)
@@ -49,6 +51,7 @@
 ### [Custom panel example: BoxPanel](layout/boxpanel-example-custom-panel.md)
 ## [Transforms](layout/transforms.md)
 ### [3-D perspective effects for XAML UI](layout/3-d-perspective-effects.md)
+## [Tutorial: Create adaptive layouts](layout/xaml-basics-adaptive-layout.md)
 
 # Controls
 ## [Overview](controls-and-patterns/index.md)
@@ -154,6 +157,7 @@
 # Input and interactions
 ## [Overview](input/input-primer.md)
 ## [Surface Dial](input/windows-wheel-interactions.md)
+## [Tutorial: Add Surface Dial support to your app](input/radialcontroller-walkthrough.md)
 ## [Cortana](input/cortana-interactions.md)
 ### [Design guidelines](https://docs.microsoft.com/cortana/voice-commands/vcd)
 ### [Launch a foreground app](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)
@@ -175,6 +179,7 @@
 ### [Recognize ink strokes](input/convert-ink-to-text.md)
 ### [Store and retrieve ink strokes](input/save-and-load-ink.md)
 ### [Add an InkToolbar](input/ink-toolbar.md)
+### [Tutorial: Add Inking support to your app](input/ink-walkthrough.md)
 ## [Speech interactions](input/speech-interactions.md)
 ### [Speech recognition](input/speech-recognition.md)
 ### [Specify the speech recognizer language](input/specify-the-speech-recognizer-language.md)

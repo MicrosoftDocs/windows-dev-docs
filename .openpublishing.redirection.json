@@ -66,6 +66,46 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "windows-apps-src/get-started/create-js-apps.md",
+      "redirect_url": "/windows/uwp/get-started/your-first-app#javascript-and-html",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/radialcontroller-walkthrough.md",
+      "redirect_url": "/windows/uwp/design/input/radialcontroller-walkthrough/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/ink-walkthrough.md",
+      "redirect_url": "/windows/uwp/design/input/ink-walthrough/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-intro.md",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-ui.md",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-style.md",
+      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-basics-style",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-adaptive-layout.md",
+      "redirect_url": "/windows/uwp/design/layout/xaml-basics-adaptive-layout",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/get-started/xaml-basics-data-binding.md",
+      "redirect_url": "/windows/uwp/data-binding/xaml-basics-data-binding",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/get-started/choose-a-uwp-version.md",
       "redirect_url": "/windows/uwp/get-started/../updates-and-versions/choose-a-uwp-version/",
       "redirect_document_id": false

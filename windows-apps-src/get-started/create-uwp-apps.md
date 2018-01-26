@@ -34,7 +34,7 @@ If you're stuck or need some help finding the right docs, try asking the experim
 
 If you're a new developer or if you're familiar with the Windows platform and want to get started with UWP, check out these basic tutorials:
 
-* [Create your first UWP app with C# or Visual C++](your-first-app.md)
+* [Create your first UWP app with C#, Visual C++, or JavaScript](your-first-app.md)
 
 Are you an IOS developer?
 
@@ -47,13 +47,10 @@ If you're still learning or need to refresh your memory, try reading these exter
 
 ## Customize your app's layout and appearance with XAML
 
-Most UWP apps use the XAML markup language to create their UI. Learn how you can use its core features to customize your app's visual presentation.
-
-* [Learn the basics of utilizing XAML in your app](xaml-basics-intro.md)
-
-Once you're familiar with what XAML can do, check out this guidance for creating a unique look for your app.
+Most UWP apps use the XAML markup language to create their UI. Learn how you can use its core features to customize your app's visual presentation, and explore this guidance for creating a unique look for your app.
 
 * [Intro to app UI design](../design/basics/design-and-ui-intro.md)
+* [Tutorial: Create a user interface in XAML](../design/basics/xaml-basics-ui.md)
 * [Layout for UWP apps](../design/layout/index.md)
 * [Controls and patterns for UWP apps](../design/controls-and-patterns/index.md)
 
@@ -61,19 +58,20 @@ Once you're familiar with what XAML can do, check out this guidance for creating
 
 What makes Windows 10 special? Learn to use just some of its unique features.
 
-* [Using ink in your UWP app](ink-walkthrough.md)
-* [Support the Surface Dial](radialcontroller-walkthrough.md)
+* [Tutorial: Support ink in your UWP app](../design/input/ink-walkthrough.md)
+* [Tutorial: Support the Surface Dial](../design/input/radialcontroller-walkthrough.md)
 * [Explore what's new in the latest vesion of Windows](../whats-new/windows-10-version-latest.md)
 
-Expand your horizons and your app's features with external tools:
+Explore how-to articles and detailed documentation for Windows 10 development:
 
-* [A simple 2D UWP game, written in C# and MonoGame](get-started-tutorial-game-mg2d.md)
+* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
+* [API reference for UWP apps](https://docs.microsoft.com/en-us/uwp/)
 
 ## Develop JavaScript and web apps
 
 UWP is an extremely flexible platform that supports a wide variety of languages and frameworks. Build UWP apps with JavaScript, and use your skills to build hosted web apps which can be featured in the Microsoft Store.
 
-* [Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.](create-js-apps.md)
+* [Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScript.](your-first-app.md#javascript-and-html)
 
 Interested in more information on building web apps?
 
