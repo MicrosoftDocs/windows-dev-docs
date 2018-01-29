@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-title: Create a user interface
+title: Create a user interface tutorial
 description: This article covers the basics of building user interfaces in XAML
 keywords: XAML, UWP, Getting Started
 ms.author: jimwalk
@@ -11,29 +11,52 @@ ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# Create a user interface
+# Tutorial: Create a user interface
 
-In this tutorial, you'll learn how to create a basic user interface (UI) with common XAML controls and panels by:
+In this tutorial, you'll learn how to create a basic UI for an image editing program by: 
 
 + Using the XAML tools in Visual Studio, such as XAML Designer, Toolbox, XAML editor, Properties panel, and Document Outline to add controls and content to your UI
 + Utilizing some of the most common XAML layout panels, such as RelativePanel, Grid, and StackPanel.
 
-We'll start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML pages, but leaves out many features in order to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and phone support. You can find the final version in the UWP Academy\XAML\Final folder.
+The image editing program has two pages/screens:
+
+The **main page**, which displays a photo gallery view, along with some information about each image file.
+
+![MainPage](images/xaml-basics/mainpage.png)
+
+The **details page**, which displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+
+![DetailPage](images/xaml-basics/detailpage.png)
+
 
 ## Prerequisites
 
-* [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
+* Visual Studio 2017: [Download Visual Studio 2017 Community (free)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
-## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/user-interface/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/user-interface). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
+## Part 0: Get the starter code from github
 
-The PhotoLab app has two primary pages:
+For this tutorial, you'll start with a simplified version of the PhotoLab sample. 
 
-**MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
-![MainPage](images/xaml-basics/mainpage.png)
+1. Go to [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). This takes you to the GitHub page for the sample. 
+2. Next, you'll need to clone or download the sample. Click the **Clone or download** button. A sub-menu appears.
+    <figure>
+        <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
+        <figcaption>The <b>Clone or download</b> menu on the Photo lab sample's GitHub page.</figcaption>
+    </figure>
 
-**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
-![DetailPage](images/xaml-basics/detailpage.png)
+    **If you're not familiar with GitHub:**
+    
+    a. Click **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
+    b. Extract the file. Use the File Explorer to navigate to the .zip file you just downloaded, right-click it, and select **Extract All...**. 
+    c. Navigate to your local copy of the sample and go the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` directory.    
+
+    **If you are familiar with GitHub:**
+
+    a. Clone the master branch of the repo locally.
+    b. Navigate to the `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` directory.
+
+3. Open the project by clicking `Photolab.sln`.
 
 ## Part 1: Add a TextBlock using XAML Designer
 
@@ -526,4 +549,13 @@ Now, the scrollbar is aligned with the edge of the window. Good job! You've crea
 
 ## Going further
 
-Now that you've created the basic UI, see the [XAML Data Binding](../../data-binding/xaml-basics-data-binding.md) tutorial to add real images and data. Or go on to the [XAML Adaptive Layout](../layout/xaml-basics-adaptive-layout.md) tutorial to see how to adapt the UI to multiple screen sizes.
+Now that you've created the basic UI, checkout out these other tutorials, also based on the PhotoLab sample: 
+
+* Add real images and data in the [XAML data binding tutorial](../../data-binding/xaml-basics-data-binding.md).
+* Make the UI adapt to different screen sizes in the [XAML adaptive layout tutorial](../layout/xaml-basics-adaptive-layout.md).
+
+
+## Get the final version of the PhotoLab sample
+
+This tutorial doesn't build up to the complete photo editing app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and phone support.
+
