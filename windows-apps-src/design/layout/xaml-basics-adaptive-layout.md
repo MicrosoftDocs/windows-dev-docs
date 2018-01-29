@@ -1,6 +1,6 @@
 ---
 author: muhsinking
-title: Create adaptive layouts
+title: Create adaptive layouts tutorial
 description: This article covers the basics of adaptive layout in XAML
 keywords: XAML, UWP, Getting Started
 ms.author: mukin
@@ -11,26 +11,49 @@ ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# Create adaptive layouts
+# Tutorial: Create adaptive layouts
 
-This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. 
+This tutorial covers the basics of using XAML's adaptive and tailored layout features, which let you create apps that look at home on any device. You'll learn how to create a new DataTemplate, add window snap points, and tailor your app's layout using the VisualStateManager and AdaptiveTrigger elements. We'll use these tools to optimize an image editing program for smaller device screens. 
 
-We'll use these tools to optimize the PhotoLab sample app for smaller device screens. This starter version of the PhotoLab sample includes the complete data layer plus a partially complete XAML layout, but leaves out many minor features to make the code easier to browse. This lab doesn't build up to the complete app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see features such as custom animations.
+The image editing program you'll be working on has two pages/screens:
 
-## Prerequisites
-* [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 mobile emulator](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+The **main page**, which displays a photo gallery view, along with some information about each image file.
 
-## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/adaptive-layout/](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/adaptive-layout) folder. After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
-
-The PhotoLab app has two primary pages:
-
-**MainPage.xaml:** displays a photo gallery view, along with some information about each image file.
 ![MainPage](../basics/images/xaml-basics/mainpage.png)
 
-**DetailPage.xaml:** displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+The **details page**, which displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+
 ![DetailPage](../basics/images/xaml-basics/detailpage.png)
+
+## Prerequisites
+
+* Visual Studio 2017: [Download Visual Studio 2017 Community (free)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 or later):  [Download the latest Windows SDK (free)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Windows mobile emulator: [Download the Windows 10 mobile emulator (free)](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+
+## Part 0: Get the starter code from github
+
+For this tutorial, you'll start with a simplified version of the PhotoLab sample. 
+
+1. Go to [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab). This takes you to the GitHub page for the sample. 
+2. Next, you'll need to clone or download the sample. Click the **Clone or download** button. A sub-menu appears.
+    <figure>
+        <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
+        <figcaption>The <b>Clone or download</b> menu on the Photo lab sample's GitHub page.</figcaption>
+    </figure>
+
+    **If you're not familiar with GitHub:**
+    
+    a. Click **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
+    b. Extract the file. Use the File Explorer to navigate to the .zip file you just downloaded, right-click it, and select **Extract All...**. 
+    c. Navigate to your local copy of the sample and go the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\adaptive-layout` directory.    
+
+    **If you are familiar with GitHub:**
+
+    a. Clone the master branch of the repo locally.
+    b. Navigate to the `Windows-appsample-photo-lab\xaml-basics-starting-points\adaptive-layout` directory.
+
+3. Open the project by clicking `Photolab.sln`.
 
 ## Part 1: Run the mobile emulator
 
@@ -301,4 +324,8 @@ If you get stuck, you can find more guidance in these sections of [Define page l
 + [Visual states and state triggers](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
 + [Tailored layouts](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
 
-Alternatively, if you want to learn more about how the initial app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
+Alternatively, if you want to learn more about how the initial photo editing app was built, check out these tutorials on XAML [user interfaces](../basics/xaml-basics-ui.md) and [data binding](../../data-binding/xaml-basics-data-binding.md).
+
+## Get the final version of the PhotoLab sample
+
+This tutorial doesn't build up to the complete photo editing app, so be sure to check out the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) to see other features such as custom animations and phone support.

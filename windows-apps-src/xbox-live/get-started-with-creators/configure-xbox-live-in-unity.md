@@ -4,7 +4,7 @@ author: StaceyHaffner
 description: Learn how to use the Xbox Live Unity plugin to configure Xbox Live in your Unity game.
 ms.assetid: 55147c41-cc49-47f3-829b-fa7e1a46b2dd
 ms.author: kevinasg
-ms.date: 12/12/2017
+ms.date: 1/25/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -32,6 +32,11 @@ You will need the following before you can use Xbox Live in Unity:
 4. **[Visual Studio 2015](https://www.visualstudio.com/)** or **[Visual Studio 2017 15.3.3](https://www.visualstudio.com/)** (or newer) with the **Universal Windows App Development Tools**.
 5. **[Xbox Live Platform Extensions SDK](http://aka.ms/xblextsdk)**.
 
+	
+> [!NOTE]
+> If you want to use the IL2CPP scripting backend with Xbox Live, you will need Unity 2017.2.0p2 or newer and the Xbox Live Unity plugin version "1802 Preview Release" or higher.
+
+
 ## Import the Unity plugin
 
 To import the plugin into your new or existing Unity project, follow these steps:
@@ -42,10 +47,10 @@ To import the plugin into your new or existing Unity project, follow these steps
 
 ![successful import](../images/unity/get-started-with-creators/importXBL_Small.gif)
 
-### (Optional) Configure the plugin to work in the Unity Editor (.NET 4.6 only)
+### (Optional) Configure the plugin to work in the Unity Editor (.NET 4.6 or IL2CPP only)
 
 > [!NOTE]
-> Support for changing the Scripting Runtime Version in Unity requires the Xbox Live Unity Plugin version "1711 Release" or higher.
+> Support for changing the Scripting Runtime Version in Unity requires the Xbox Live Unity Plugin version "1711 Release" or higher for .NET 4.6 and version "1802 Preview Release" or higher for IL2CPP.
 
 There are three settings that can be configured in Unity to define how your code is compiled:
 
@@ -58,7 +63,7 @@ The following table shows the current scripting support matrix for the Xbox Live
 | Scripting Backend 	| Scripting Runtime Version	| Supported 	| Minimum Unity Version Required |
 |-------------------	|-------------------	    |-----------	|------------------------------- |
 | IL2CPP            	| .NET 3.5 Equivalent       | No        	| N/A                            |
-| Il2CPP            	| .NET 4.6 Equivalent       | No       	    | N/A                            |
+| Il2CPP            	| .NET 4.6 Equivalent       | Yes       	| 2017.2.0p2                     |
 | .NET              	| .NET 3.5 Equivalent       | Yes       	| Same as prerequisites          |
 | .NET              	| .NET 4.6 Equivalent       | Yes       	| Same as prerequisites          |
 
