@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentsApiSample", "PaymentsApiSample\PaymentsApiSample.csproj", "{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|ARM.Build.0 = Debug|ARM
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|x64.ActiveCfg = Debug|x64
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|x64.Build.0 = Debug|x64
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|x64.Deploy.0 = Debug|x64
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|x86.ActiveCfg = Debug|x86
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|x86.Build.0 = Debug|x86
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Debug|x86.Deploy.0 = Debug|x86
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|ARM.ActiveCfg = Release|ARM
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|ARM.Build.0 = Release|ARM
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|ARM.Deploy.0 = Release|ARM
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|x64.ActiveCfg = Release|x64
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|x64.Build.0 = Release|x64
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|x64.Deploy.0 = Release|x64
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|x86.ActiveCfg = Release|x86
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|x86.Build.0 = Release|x86
+		{23273CF6-BAAB-43DF-987E-DD9C4C278FC9}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3C776A2-2510-4A13-9FC2-3BB5280CD801}
+	EndGlobalSection
+EndGlobal
