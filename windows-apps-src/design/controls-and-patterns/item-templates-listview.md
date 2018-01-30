@@ -132,3 +132,4 @@ Use this template to display a list of items with text in defined columns.
 - [Data binding overview](../../data-binding/data-binding-quickstart.md)
 - [Accessibililty overview](../accessibility/accessibility-overview.md)
 - [ListView and GridView sample (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Thumbnail images](../../files/thumbnails.md)
