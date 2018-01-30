@@ -47,6 +47,7 @@ You can find those logs by opening the **Event Viewer**, and then browsing to th
 
 ![code-integrity-event-logs](images/desktop-to-uwp/code-integrity-logs.png)
 
+This mode is safe and it won't prevent your system from starting.
 
 #### (Optional) Find specific failure points in the call stack
 To find specific points in the call stack where blocking issues occur, add this registry key, and then [set up a kernel-mode debugging environment](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging).
@@ -76,7 +77,8 @@ When you're ready to apply a policy, find the .P7B file for the policy that you 
 
 Then, restart your system.
 
-To remove a policy from your system, delete the .P7B file and then restart your system.  
+>[!NOTE]
+>To remove a policy from your system, delete the .P7B file and then restart your system.
 
 ## Next steps
 
