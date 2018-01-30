@@ -402,6 +402,7 @@
 ### [App metadata API for advertising networks](../monetize/app-metadata-api-for-advertising-networks.md)
 ## [Send requests to the Store](../monetize/send-requests-to-the-store.md)
 ## [Create a Retail Demo Experience (RDX) app](../monetize/retail-demo-experience.md)
+## [Simplify payments with the Payment Request API](../monetize/payment-request.md)
 # [Networking and web services](../networking/index.md)
 ## [Networking basics](../networking/networking-basics.md)
 ## [Which networking technology?](../networking/which-networking-technology.md)
