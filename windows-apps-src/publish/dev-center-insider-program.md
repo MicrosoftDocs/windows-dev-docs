@@ -3,7 +3,7 @@ title: Dev Center Insider Program
 description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 01/23/18
+ms.date: 01/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,6 +25,8 @@ Here are some of the features that we’ve made available exclusively to members
 
 | Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
+|**Churn prediction chart on Usage report**: See how many users we predict are likely to stop using your app soon, based on their recent usage. | In the **Usage** report, view the **Churn prediction** chart to see a prediction of how many users will stop using the app (or use it for less than 10 minutes) in the next 15 days. After each cycle, the chart shows how many users stopped using the app, along with the number we predicted. This info is updated twice per month.  | January 2018 |
+|**Anomaly details at a glance**: Get a quick look at significant changes in your acquisitions, usage, and health data. | On the **Acquisitions**, **Usage**, and **Health** reports, we’ll display a circle marker at the end of a week if we detect anomalies (significant increases or decreases) compared to the week before that. Hover over the circle to see details about what’s changed. | January 2018 |
 |**Customize your notification preferences**: Choose which notifications you receive about your Dev Center account and specify whether to receive them by email, in the dashboard, or both. | Use the icon near the top of your dashboard to go to **Message Center**, then select **Settings**. Make your selections in the Notification preferences section. You can also specify the address to use when we send email notifications.  | November 2017 |
 |**View more details from your overview page**: Get more details on highlighted apps without leaving your overview page. | On the overview page, look for the boxes highlighting key statistics for your apps. Click any of the boxes to see more details about that app. | September 2017 |
 |**Near real time health data**: The **Health** report now shows data for crashes, hangs, memory failures, and JavaScript exceptions in near real time when using the **72H** page filter option.  | In an app’s Health report, choose the **72H** option at the top of the page. Note that you may see a discrepancy in data for the 72 hour period when comparing the **72H** and **30D** filters. This is a known issue that we’re working to resolve.  | September 2017|

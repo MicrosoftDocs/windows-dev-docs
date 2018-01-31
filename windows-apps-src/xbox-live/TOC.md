@@ -172,3 +172,4 @@
 # [Tools](tools/tools.md)
 ## [XBL Trace Analyzer](tools/analyze-service-calls.md)
 ## [XBL Account Tool](tools/xbox-live-account-tool.md)
+# [Xbox Live RESTful reference](xbox-live-rest/TOC.md)
