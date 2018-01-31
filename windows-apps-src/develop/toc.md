@@ -180,6 +180,7 @@
 ## [Accessing HomeGroup content](../files/quickstart-accessing-homegroup-content.md)
 ## [Determining availability of Microsoft OneDrive files](../files/quickstart-determining-availability-of-microsoft-onedrive-files.md)
 ## [Files and folders in the Music, Pictures, and Videos libraries](../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)
+## [Thumbnail images](../files/thumbnails.md)
 ## [Track recently used files and folders](../files/how-to-track-recently-used-files-and-folders.md)
 ## [Access the SD card](../files/access-the-sd-card.md)
 ## [File access permissions](../files/file-access-permissions.md)

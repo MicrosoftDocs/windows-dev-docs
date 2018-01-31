@@ -21,12 +21,10 @@ You can download the API reference documentation at:
 
 * [Xbox Live API reference](https://aka.ms/xboxliveuwpdocs)
 
-You can find the REST API information online at:
+You can find the REST API information at:
 
-* [Xbox Live RESTful reference](https://developer.microsoft.com/en-us/games/xbox/docs/xboxlive/rest/atoc-xboxlivews-reference)
+* [Xbox Live RESTful reference](xbox-live-rest/atoc-xboxlivews-reference.md)
 
->[!NOTE]
-> To access the online RESTful documentation, you will need to sign in with a Microsoft Account (MSA).
 
 ## Xbox Live API source code
 
