@@ -265,6 +265,7 @@ For command bar recommendations, see [guidelines for command bars](app-bars.md).
 - [Nav pane](navigationview.md)
 - [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Thumbnail images](../../files/thumbnails.md)
 
 **For developers**
 - [ListView class](https://msdn.microsoft.com/library/windows/apps/br242878)
