@@ -16,29 +16,20 @@ ms.localizationpriority: medium
 
 # Speech interactions
 
-
 Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.
 
+**Speech recognition**
+Speech recognition converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.
 
-**Other speech components**
+**TTS**
+TTS uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
 
--   See the [Cortana design guidelines](cortana-interactions.md) if you are exposing app functionality in the **Cortana** UI.
-
-
-**Speech recognition:** converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.
-
-**TTS:** uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
-
-> [!NOTE]
-> Using **Cortana** and customized voice commands, your app can be launched in the foreground (the app takes focus, just as if it was launched from the Start menu) or activated as a background service (**Cortana** retains focus but provides results from the app).
-> 
-> Commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
->
-> If you are exposing functionality as a background service through voice commands in the **Cortana** UI, see the [Cortana design guidelines](https://msdn.microsoft.com/cortana/voicecommands/voicecommand-design-guidelines).
-
-Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
+**Other speech-related components:**
+**Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See the [Cortana voice command (VCD) guidelines](https://docs.microsoft.com/en-us/cortana/voice-commands/vcd) if you are exposing app functionality in the **Cortana** UI.
 
 ## Speech interaction design
+
+Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
 
 These guidelines and recommendations describe how to best integrate both speech recognition and TTS into the interaction experience of your app.
 
