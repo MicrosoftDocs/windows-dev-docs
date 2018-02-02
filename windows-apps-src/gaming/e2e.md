@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 12/05/2017
+ms.date: 02/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,9 +26,9 @@ When you create a Windows 10 game, you have the opportunity to reach millions of
 
 This guide provides an end-to-end collection of information and resources that will help you as you develop your game. The sections are organized according to the stages of game development, so you'll know where to look for information when you need it.
 
-To get started, the [Game development resources](#game-development-resources) section provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game. If you want to start by looking at some UWP code, see [Game samples](#game-samples).
+If you're new to developing games on Windows or Xbox, the [Getting Started](getting-started.md) guide may be where you want to start off. The [Game development resources](#game-development-resources) section also provides a high-level survey of documentation, programs, and other resources that are helpful when creating a game. If you want to start by looking at some UWP code instead, see [Game samples](#game-samples).
 
-This guide will be updated as additional Windows 10 game development resources and material become available.  
+This guide will be updated as additional Windows 10 game development resources and material become available.
 
 ## Game development resources
 
@@ -226,8 +226,16 @@ There are many Windows 10 game and app samples available to help you understand 
         <td>[Microsoft Store game samples](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft)</td>
     </tr>
     <tr>
-        <td>JavaScript and HTML5 game sample</td>
-        <td>[JavaScript and HTML5 touch game sample](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)</td>
+        <td>JavaScript 2D game sample</td>
+        <td>[Create a UWP game in JavaScript](../get-started/get-started-tutorial-game-js2d.md)</td>
+    </tr>
+    <tr>
+        <td>JavaScript 3D game sample</td>
+        <td>[Creating a 3D JavaScript game using three.js](../get-started/get-started-tutorial-game-js3d.md)</td>
+    </tr>
+    <tr>
+        <td>MonoGame 2D UWP game sample</td>
+        <td>[Create a UWP game in MonoGame 2D](../get-started/get-started-tutorial-game-mg2d.md)</td>
     </tr>      
 </table>
 
@@ -404,9 +412,11 @@ There are several programming languages and graphics technologies available for 
 
 #### DirectX
 
-Microsoft DirectX is the choice to make for the highest-performance 2D and 3D graphics and multimedia. 
+Microsoft DirectX is the choice to make for the highest-performance 2D and 3D graphics and multimedia.
 
-Direct3D 12, new in Windows 10, brings the power of a console-like API and is faster and more efficient than ever before. Your game can fully utilize modern graphics hardware and feature more objects, richer scenes, and enhanced effects. Direct3D 12 delivers optimized graphics on Windows 10 PCs and Xbox One. If you want to use the familiar graphics pipeline of Direct3D 11, you’ll still benefit from the new rendering and optimization features added to Direct3D 11.3. And, if you’re a tried-and-true desktop Windows API developer with roots in Win32, you’ll still have that option in Windows 10.
+DirectX 12 is faster and more efficient than any previous version. Direct3D 12 enables richer scenes, more objects, more complex effects, and full utilization of modern GPU hardware on Windows 10 PCs and Xbox One.
+
+If you want to use the familiar graphics pipeline of Direct3D 11, you’ll still benefit from the new rendering and optimization features added to Direct3D 11.3. And, if you’re a tried-and-true desktop Windows API developer with roots in Win32, you’ll still have that option in Windows 10.
 
 The extensive features and deep platform integration of DirectX provide the power and performance needed by the most demanding games.
 
@@ -513,7 +523,7 @@ C++/CX is a high-performance, low overhead language that provides the powerful c
     </tr>
     <tr>
         <td>Visual C++ programming guide and reference</td>
-        <td>[Visual C++ in Visual Studio 2015](https://msdn.microsoft.com/library/60k1461a.aspx)</td>
+        <td>[Visual C++ in Visual Studio 2017](https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio)</td>
     </tr>
 </table>
  
@@ -572,7 +582,7 @@ With the Universal Windows Platform, it’s easy to combine components written i
 
 If you are choosing DirectX for your game, you'll need to decide which version to use: Microsoft Direct3D 12 or Microsoft Direct3D 11.
 
-Direct3D 12, new in Windows 10, brings the power of a console-like API and is faster and more efficient than ever before. Your game can fully utilize modern graphics hardware and feature more objects, richer scenes, and enhanced effects. Direct3D 12 delivers optimized graphics on Windows 10 PCs and Xbox One. Since Direct3D 12 works at a very low level, it is able to give an expert graphics development team or an experienced DirectX 11 development team all the control they need to maximize graphics optimization.
+DirectX 12 is faster and more efficient than any previous version. Direct3D 12 enables richer scenes, more objects, more complex effects, and full utilization of modern GPU hardware on Windows 10 PCs and Xbox One. Since Direct3D 12 works at a very low level, it is able to give an expert graphics development team or an experienced DirectX 11 development team all the control they need to maximize graphics optimization.
 
 Direct3D 11.3 is a low level graphics API that uses the familiar Direct3D programming model and handles for you more of the complexity involved in GPU rendering. It is also supported in Windows 10 and Xbox One. If you have an existing engine written in Direct3D 11, and you're not quite ready to make the jump to Direct3D 12, you can use Direct3D 11 on 12 to achieve some performance improvements. Versions 11.3+ contain the new rendering and optimization features enabled also in Direct3D 12.
 
@@ -598,23 +608,7 @@ Direct3D 11.3 is a low level graphics API that uses the familiar Direct3D progra
 
 ### Bridges, game engines, and middleware
 
-Depending on the needs of your game, using bridges, game engines, or middleware can save development and testing time and resources. Here are some overview and resources for bridges, game engines, and middleware to help you decide if any are right for you.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Game Development with Middleware (video)</td>
-        <td>[Accelerating Microsoft Store Game Development with Middleware](https://channel9.msdn.com/Events/Build/2013/3-187)</td>
-    </tr>
-    <tr>
-        <td>Introduction to game middleware (blog post)</td>
-        <td>[Game Development Middleware - What is it? Do I need it?](http://blogs.msdn.com/b/wsdevsol/archive/2014/05/02/game-development-middleware-what-is-it-do-i-need-it.aspx)</td>
-    </tr>
-</table>
- 
+Depending on the needs of your game, using bridges, game engines, or middleware can save development and testing time and resources. Here are some overview and resources for bridges, game engines, and middleware.
 
 #### Universal Windows Platform Bridges
 
@@ -658,10 +652,6 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     <tr>
         <td>Get Unity</td>
         <td>[Get Unity](http://unity3d.com/get-unity)</td>
-    </tr>
-    <tr>
-        <td>Universal Windows Platform app support in Unity 5.2 or later (blog post)</td>
-        <td>[Windows 10 UWP apps in Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
     </tr>
     <tr>
         <td>Unity documentation for Windows</td>
@@ -747,12 +737,16 @@ MonoGame is an open source, cross-platform game development framework originally
         <td>Monogame Downloads</td>
         <td>[Download releases, development builds, and source code](http://www.monogame.net/downloads/) from the MonoGame website, or [get the latest release via NuGet](https://www.nuget.org/profiles/MonoGame).
     </tr>
+    <tr>
+        <td>MonoGame 2D UWP game sample</td>
+        <td>[Create a UWP game in MonoGame 2D](../get-started/get-started-tutorial-game-mg2d.md)</td>
+    </tr>    
 </table>
 
 
 #### Cocos2d
 
-Cocos2d-X is a cross-platform open source game development engine and tools suite that supports building UWP games. Beginning with version 3, 3D features are being added as well.
+Cocos2d-x is a cross-platform open source game development engine and tools suite that supports building UWP games. Beginning with version 3, 3D features are being added as well.
 
 <table>
     <colgroup>
@@ -761,11 +755,11 @@ Cocos2d-X is a cross-platform open source game development engine and tools suit
     </colgroup>
     <tr>
         <td>Cocos2d-x</td>
-        <td>[What is Cocos2d-X?](http://www.cocos2d-x.org/)</td>
+        <td>[What is Cocos2d-x?](http://www.cocos2d-x.org/)</td>
     </tr>
     <tr>
         <td>Cocos2d-x programmer's guide</td>
-        <td>[Cocos2d-x Programmers Guide v3.8](http://www.cocos2d-x.org/programmersguide/)</td>
+        <td>[Cocos2d-x Programmers Guide](http://www.cocos2d-x.org/programmersguide/)</td>
     </tr>
     <tr>
         <td>Cocos2d-x on Windows 10 (blog post)</td>
@@ -791,7 +785,7 @@ Unreal Engine 4 is a complete suite of game development tools for all types of g
 
 #### BabylonJS
 
-BabylonJS is a complete JavaScript framework for building 3D games with HTML5, WebGL, and Web Audio.
+BabylonJS is a complete JavaScript framework for building 3D games with HTML5, WebGL, WebVR, and Web Audio.
 
 <table>
     <colgroup>
@@ -1434,6 +1428,30 @@ Some portions of DirectX development can be nuanced and complex. When you get to
         <td>[DirectX and XAML interop](directx-and-xaml-interop.md)</td>
     </tr>
 </table>
+
+### High dynamic range (HDR) content development
+
+Build game content that uses the full color capabilities of HDR.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Introduction to HDR and color concepts (video)</td>
+        <td>[Lighting up HDR and advanced color in DirectX](https://channel9.msdn.com/Events/Build/2017/P4061)</td>
+    </tr>
+    <tr>
+        <td>Learn how to render HDR content and detect whether the current display supports it</td>
+        <td>[HDR sample](https://github.com/Microsoft/DirectX-Graphics-Samples/tree/master/Samples/UWP/D3D12HDR)</td>
+    </tr>
+    <tr>
+        <td>Create and configure an advanced color using DirectX</td>
+        <td>[Direct2D advanced color image rendering sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DAdvancedColorImages)</td>
+    </tr>   
+</table>
+
 
 ### Globalization and localization
 
