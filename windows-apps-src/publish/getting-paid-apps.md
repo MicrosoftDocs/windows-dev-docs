@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: Here’s some important info you’ll need to ensure that you receive payment for your apps, in-app products (IAPs), and advertising earnings.
 title: Getting paid
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, payments, app sales, app proceeds, payout, store fee, payout hold, percentage
 ms.localizationpriority: high
 ---
 
@@ -20,15 +20,16 @@ Here’s some important info you’ll need to ensure that you receive payment fo
 
 ## Store fee
 
-When you [sign up for a developer account](http://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
+When you [sign up for a developer account](http://go.microsoft.com/fwlink/p/?LinkID=615100), you accept the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). This agreement explains the relationship between you and Microsoft as it pertains to selling apps in the Microsoft Store, including the Store fee that Microsoft charges for every sale made.
 
-In most cases, the Store fee is 30%. Fees are officially defined in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058). Always review that document if you have any questions.
+In most cases, the Store fee is 30%. Fees are officially defined in the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement). Always review that document if you have any questions.
 
-The Microsoft Store fee is applied to all app sales collected by the Microsoft Store, including add-ons.
+The Store fee is applied to all app sales collected by the Microsoft Store, including add-ons.
+
 
 ## Price tiers
 
-The price tier(s) that you select sets the [sales price](set-and-schedule-app-pricing.md#base-price) in all the countries where you choose to distribute your app. You can also use additional pricing features such as  [choosing different prices for different markets](set-and-schedule-app-pricing.md#customize-pricing-for-specific-markets) or [putting your app on sale](put-apps-and-add-ons-on-sale.md).
+The price tier(s) that you select sets the [sales price](set-and-schedule-app-pricing.md#base-price) in all the countries where you choose to distribute your app. You can also use additional pricing features such as  [choosing different prices for different markets](set-and-schedule-app-pricing.md#override-base-price-for-specific-markets) or [putting your app on sale](put-apps-and-add-ons-on-sale.md).
 
 You can offer your app for free, or you can pick a price that customers must pay to acquire your app. Price tiers start at .99 USD, with additional increments (1.09 USD, 1.19 USD, and so on). The increments between price tiers increase as the price gets higher.
 
@@ -37,15 +38,20 @@ You can offer your app for free, or you can pick a price that customers must pay
 
 Each price tier has a corresponding value in each of the currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another.
 
-Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. See [Tax details for paid apps](tax-details-for-paid-apps.md) for more info.
+You also have the option to enter a free-form price of your choosing in a specific market’s local currency. When you do this, the price will not be adjusted (even if conversion rates change) unless you submit an update with a new price. 
+
+Keep in mind that the price you select may include sales or value-added tax that your customers must pay. See [Tax details for paid apps](tax-details-for-paid-apps.md) for more info.
+
 
 ## Payout reporting
 
 You can access details about your payment info and download reports in the **Payout summary** of the Windows Dev Center dashboard. For more about the info shown here, and how we categorize the money you earn, see [Payout summary](payout-summary.md).
 
+
 ## Payout timeframe
 
 Payments are made on a monthly basis (provided the applicable payment threshold has been met and you haven’t placed your payout on hold as described below). We'll typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account. For more info, see [Payment thresholds, methods, and timeframes](payment-thresholds-methods-and-timeframes.md).
+
 
 ##  Payout hold status
 
