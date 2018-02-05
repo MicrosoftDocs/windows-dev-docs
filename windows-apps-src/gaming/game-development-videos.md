@@ -51,4 +51,9 @@ Here's a list of game development videos from major conferences like GDC and //b
 -   [Advanced DirectX12 Graphics and Performance](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
  
 
+## Archive
 
+These are videos that were in the Windows 10 game development guide.
+
+- [Accelerating Microsoft Store Game Development with Middleware](https://channel9.msdn.com/Events/Build/2013/3-187)
+- [Game Development Middleware - What is it? Do I need it?](https://channel9.msdn.com/Series/Windows-Store-Developer-Solutions/Game-Development-Middleware-What-is-it-Do-I-need-it-)
