@@ -1037,7 +1037,7 @@ Separately from UX design, gameplay design such as level design, pacing, world d
     </tr>
     <tr>
         <td>Design your UWP app for Xbox One and television screens</td>
-        <td>[Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/input/designing-for-tv)</td>
+        <td>[Designing for Xbox and TV](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv)</td>
     </tr>
     <tr>
         <td>Targeting multiple device form factors (video)</td>
