@@ -264,12 +264,11 @@ The following is a simple example of how you can incorporate NavigationView into
 ```csharp
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
-    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
     
     // you can also add items in code behind
     NavView.MenuItems.Add(new NavigationViewItemSeparator()); 
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Content = loader.GetString("ContentNavItem"), Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
+        { Content = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
 
     // set the initial SelectedItem 
     foreach (NavigationViewItemBase item in NavView.MenuItems)
@@ -284,7 +283,6 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
 {
-    var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
 
     if (args.IsSettingsInvoked)
     {
@@ -292,28 +290,10 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
     }
     else
     {
-        switch (args.InvokedItem)
-        {
-          case loader.GetString("HomeNavItem.Content"):
-              ContentFrame.Navigate(typeof(HomePage));
-              break;
-
-          case loader.GetString("AppsNavItem.Content"):
-              ContentFrame.Navigate(typeof(AppsPage));
-              break;
-
-          case loader.GetString("GamesNavItem.Content"):
-              ContentFrame.Navigate(typeof(GamesPage));
-              break;
-
-          case loader.GetString("MusicNavItem.Content"):
-              ContentFrame.Navigate(typeof(MusicPage));
-              break;
-
-          case loader.GetString("ContentNavItem.Content"):
-              ContentFrame.Navigate(typeof(MyContentPage));
-              break;
-        }
+        // find NavigationViewItem with Content that equals InvokedItem
+        var item = sender.MenuItems.OfType<NavigationViewItem>().First(x => (string)x.Content == (string)args.InvokedItem);
+        NavView_Navigate(item as NavigationViewItem);
+        
     }
 }
 
@@ -325,31 +305,34 @@ private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelec
     }
     else
     {
-
         NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+        NavView_Navigate(item);
+    }
+}
 
-        switch (item.Tag)
-        {
-          case "home":
-              ContentFrame.Navigate(typeof(HomePage));
-              break;
+private void NavView_Navigate(NavigationViewItem item)
+{
+    switch (item.Tag)
+    {
+        case "home":
+            ContentFrame.Navigate(typeof(HomePage));
+            break;
 
-            case "apps":
-                ContentFrame.Navigate(typeof(AppsPage));
-                break;
+        case "apps":
+            ContentFrame.Navigate(typeof(AppsPage));
+            break;
 
-            case "games":
-                ContentFrame.Navigate(typeof(GamesPage));
-                break;
+        case "games":
+            ContentFrame.Navigate(typeof(GamesPage));
+            break;
 
-            case "music":
-                ContentFrame.Navigate(typeof(MusicPage));
-                break;
+        case "music":
+            ContentFrame.Navigate(typeof(MusicPage));
+            break;
 
-            case "content":
-                ContentFrame.Navigate(typeof(MyContentPage));
-                break;
-        }
+        case "content":
+            ContentFrame.Navigate(typeof(MyContentPage));
+            break;
     }
 }
 ```

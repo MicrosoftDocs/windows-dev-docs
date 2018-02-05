@@ -1127,7 +1127,12 @@
     },
     {
       "source_path": "windows-apps-src/in-app-help/voice-and-tone.md",
-      "redirect_url": "/windows/uwp/design/style/voice-and-tone",
+      "redirect_url": "/windows/uwp/design/style/writing-style",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/design/style/voice-and-tone.md",
+      "redirect_url": "/windows/uwp/design/style/writing-style",
       "redirect_document_id": true
     },
     {

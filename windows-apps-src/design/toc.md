@@ -18,7 +18,7 @@
 ## [Typography](style/typography.md)
 ### [Fonts](style/fonts.md)
 ### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
-## [Voice and tone](style/voice-and-tone.md)
+## [Writing style](style/writing-style.md)
 ## [XAML brushes](style/brushes.md)
 ## [XAML styles](controls-and-patterns/xaml-styles.md)
 ### [XAML Control templates](controls-and-patterns/control-templates.md)
