@@ -350,7 +350,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
                 }
      
                 return true;
-            }<
+            }
     ```
 
 -   The next thing you need to do is handle a sign in request from the user. In Login.xaml.cs create a new private variable that will hold the current account logging in. Then add a new method call SignInPassport. This will validate the account credentials using the AccountHelper.ValidateAccountCredentials method. This method will return a Boolean value if the entered user name is the same as the hard coded string value you set in the previous step. The hard coded value for this sample is "sampleUsername".
@@ -647,7 +647,7 @@ In this exercise, you will continue from the previous exercise. When a person su
 
         <Button x:Name="AddUserButton" Content="+" FontSize="36" Width="60" Click="AddUserButton_Click" HorizontalAlignment="Center"/>
       </StackPanel>
-    </Grid><
+    </Grid>
     ```
 
 -   In UserSelection.xaml.cs implement the loaded method that will navigate to the login page if there are no accounts in the local list. Also implement the SelectionChanged event for the ListView and a click event for the Button.
