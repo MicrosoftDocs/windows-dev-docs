@@ -1,9 +1,9 @@
----
+﻿---
 author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox analytics report
 ms.author: wdg-dev-content
-ms.date: 10/30/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -51,7 +51,6 @@ This section shows the total number of customers who have unlocked each achievem
 This section includes tabs that you can select to show different data for your game's customers. Note that the statistics in this section refer to feature usage in general and not within your specific product.
 
 - The **Social usage** tab shows data related to how your customers interact socially.
-   - **Game hub** shows the percentage of your customers who interact with game hubs. This data is only available for products on Xbox and refers to how many of your customers use game hubs in general, not your product’s game hub specifically.
    - **Game invites** shows the percentage of your customers who have sent out invites (for any game).
    - **Party chat** shows the percentage of your customers who use party chat (for any game).
    - **Text messages** shows the percentage of your customers who send messages through the Xbox shell (for any game).

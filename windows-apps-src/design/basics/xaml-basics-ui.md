@@ -70,7 +70,7 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
 
 **Add a control using XAML Designer:**
 
-1. Open the UWP Academy\XAML\Basic layout\Start folder and load the PhotoLab solution, then double-click **MainPage.xaml** in Solution Explorer to open it. This shows the main page of the app without any UI elements added.
+1. Double-click **MainPage.xaml** in Solution Explorer to open it. This shows the main page of the app without any UI elements added.
 
 2. Before going further, you need to make some adjustments to Visual Studio.
 
@@ -127,7 +127,7 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
 
     For more info, see [Alignment, margins, and padding](../layout/alignment-margin-padding.md).
 
-8. In the Properties panel, enter **style** into the search box to find the **Style** property. Click the _property marker_ for the **Style** property to open its menu. (The _property marker_ is the small box symbol to the right of each property value.) On the **Property** menu, select **System Resource > TitleTextBlockStyle**. This applies a system-defined style to your title text.
+8. In the Document Outline panel, right-click **TitleTextBlock**, then select **Edit Style > Apply Resource > TitleTextBlockStyle**. This applies a system-defined style to your title text.
 
     ```xaml
     <TextBlock x:Name="TitleTextBlock"
@@ -137,7 +137,7 @@ Each of these tools make creating your UI easier, so we'll use all of them in th
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. In the Properties panel, enter **textwrapping** into the search box to find the **TextWrapping** property. Click the _property marker_ for the **TextWrapping** property to open its menu. (The _property marker_ is black to indicate that the property is set to a non-default value.) On the **Property** menu, select **Reset** to reset the TextWrapping property.
+9. In the Properties panel, enter **textwrapping** into the search box to find the **TextWrapping** property. Click the _property marker_ for the **TextWrapping** property to open its menu. (The _property marker_ is the small box symbol to the right of each property value. The _property marker_ is black to indicate that the property is set to a non-default value.) On the **Property** menu, select **Reset** to reset the TextWrapping property.
 
     Visual Studio adds this property, but it's already set in the style you applied, so you don't need it here.
 
