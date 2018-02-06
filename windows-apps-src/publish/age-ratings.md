@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, age rating, game rating, iarc, rating, questionnaire, ratings board, content rating
 ms.localizationpriority: high
 ---
 
@@ -34,7 +34,10 @@ The next time you update your app, you’ll see all of the app’s assigned rati
 <span id="boards" />
 
 > [!NOTE]
-> South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256). If your app is a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
+> South Korean law requires games made available in South Korea to be rated through the South Korea [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256). If you are submitting a game, and if you want to offer it in South Korea, you must fill out this additional section and upload your rating certificate. Note that if your app is not a game, or if you don't want to offer it in South Korea, you can leave this section blank.
+
+> [!NOTE]
+> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://go.microsoft.com/fwlink/?linkid=867281). 
 
 <span id="appeal" />
 ## Appealing ratings or refused classifications
