@@ -3,7 +3,7 @@ author: JnHs
 Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: Send targeted push notifications to your app's customers
 ms.author: wdg-dev-content
-ms.date: 01/30/2018
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ ms.localizationpriority: high
 
 Engaging with your customers at the right time and with the right message is key to your success as an app developer. Notifications can encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
 
-Windows Dev Center provides a data-driven customer engagement platform you can use to send notifications to all of your app's customers, or only targeted to a subset of your app's Windows 10 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). You can also send a single notification to all of the customers for multiple apps.
+Windows Dev Center provides a data-driven customer engagement platform you can use to send notifications to all of your app's customers, or only targeted to a subset of your app's Windows 10 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). <!-- You can also send a single notification to all of the customers for multiple apps. -->
 
 > [!IMPORTANT]
 > These notifications can only be used with UWP apps.
@@ -27,7 +27,7 @@ When considering the content of your notifications, keep in mind:
 - While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.
 - Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).
 - Be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) later gives their device to someone to use, the other person may see the notification that was targeted at the original customer. For more info, see [Configure your app for targeted push notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers).
-- If you send the same notification to customers of multiple apps, you can't target a segment; the notification will be sent to all customers for the apps you select.
+<!-- - If you send the same notification to customers of multiple apps, you can't target a segment; the notification will be sent to all customers for the apps you select. -->
 
 
 ## Getting started with notifications
@@ -49,14 +49,14 @@ Follow these steps to create a notification in the dashboard and send it to a pa
 1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), expand the **Engage** section, and then select **Notifications**.
 2.	On the **Notifications** page, select **New notification**.
 3.	In the **Select a template** section, choose the type of notification you want to send. For details, see [Notification template types](#notification-template-types). <!-- ![Notification templates](images/push-notifications-template.png) -->
-4.      On the next page, use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. Select the app or apps (which must be configured to receive notifications using the Microsoft Store Services SDK).
-5.	In the **Notification settings** section, choose a **Name** for your notification and, if applicable, choose the **Customer group** to which you want to send the notification. (Notifications sent to multiple apps can only be sent to all customers of those apps.) If you wish to use a segment that you haven't created already, select **Create new customer group**. Note that it takes 24 hours before you can use a new segment for notifications. For more info, see [Create customer segments](create-customer-segments.md).
+4.      On the next page, <!-- use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. --> select an app <!-- or apps --> (which must be configured to receive notifications using the Microsoft Store Services SDK).
+5.	In the **Notification settings** section, choose a **Name** for your notification and, if applicable, choose the **Customer group** to which you want to send the notification. <!-- (Notifications sent to multiple apps can only be sent to all customers of those apps.) --> If you wish to use a segment that you haven't created already, select **Create new customer group**. Note that it takes 24 hours before you can use a new segment for notifications. For more info, see [Create customer segments](create-customer-segments.md).
 6.	If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time (in UTC for all customers, unless you specify to use each customer's local time zone).
 7.	If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time (in UTC).
-8.	For notifications to a single app: If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the **Use filters** checkbox. You can then specify the language and/or time zone options you want to use.
-9.      For notifications to multiple apps: Specify whether to send the notification only to the last active app on each device (per customer), or to all apps on each device.
-10.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
-11.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
+8.	<!-- For notifications to a single app: --> If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the **Use filters** checkbox. You can then specify the language and/or time zone options you want to use.
+<!-- and don't forget to update numbers when this comes back... 9.      For notifications to multiple apps: Specify whether to send the notification only to the last active app on each device (per customer), or to all apps on each device. -->
+9.	In the **Notification content** section, in the **Language** menu, choose the languages in which you want your notification to be displayed. For more info, see [Translate your notifications](#translate-your-notifications).
+10.	In the **Options** section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.
    The available options vary, depending on which notification type you are using. Some of the options are:
    - **Activation type** (interactive toast type). You can choose **Foreground**, **Background**, or **Protocol**.
    - **Launch** (interactive toast type). You can choose to have the notification open an app or website.
@@ -72,7 +72,7 @@ Follow these steps to create a notification in the dashboard and send it to a pa
    > [!TIP]
    > Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
 
-12.	Select **Save as draft** to continue working on the notification later, or select **Send** if you’re all done.
+11.	Select **Save as draft** to continue working on the notification later, or select **Send** if you’re all done.
 
 
 ## Notification template types
