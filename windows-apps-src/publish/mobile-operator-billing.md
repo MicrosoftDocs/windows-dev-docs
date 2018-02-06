@@ -4,7 +4,7 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 01/25/2018
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -42,6 +42,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Poland          | Orange                           |
 | Romania         | Orange                           |
 | Russia          | Beeline                          |
+| Slovakia        | Slovak Telekom                   |
 | Spain           | Orange                           |
 | Sweden          | Telenor, 3                       |
 | Switzerland     | Swisscom                         |
