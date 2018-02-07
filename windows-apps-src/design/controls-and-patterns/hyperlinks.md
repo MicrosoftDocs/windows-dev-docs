@@ -90,9 +90,18 @@ Here's how to use a HyperlinkButton, both with text and with an image.
 </StackPanel>
 
 ```
+
 The hyperlink buttons with text content appear as marked-up text. The Contoso logo image is also a clickable hyperlink:
 
 ![Example of a hyperlink as a button control](images/controls_hyperlink-button-image.png)
+
+This example shows how to create a HyperlinkButton in code.
+
+```csharp
+var helpLinkButton = new HyperlinkButton();
+helpLinkButton.Content = "Help";
+helpLinkButton.NavigateUri = new Uri("http://www.contoso.com");
+```
 
 ## Handle navigation
 
@@ -103,9 +112,11 @@ For both kinds of hyperlinks, you handle navigation the same way; you can set th
 To use the hyperlink to navigate to a URI, set the NavigateUri property. When a user clicks or taps the hyperlink, the specified URI opens in the default browser. The default browser runs in a separate process from your app.
 
 > [!NOTE]
-> You don't have to use http: or https: schemes. You can use schemes such as ms-appx:, ms-appdata:, or ms-resources:, if there's resource content at these locations that's appropriate to load in a browser. However, the file: scheme is specifically blocked. For more info, see [URI schemes](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> A URI is represented by the [Windows.Foundation.Uri](uri.md) class. When programming with .NET, this class is hidden and you should use the [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) class. For more info, see the reference pages for these classes.
 
-> When a user clicks the hyperlink, the value of the NavigateUri property is passed to a system handler for URI types and schemes. The system then launches the app that is registered for the scheme of the URI provided for NavigateUri.
+You don't have to use **http:** or **https:** schemes. You can use schemes such as **ms-appx:**, **ms-appdata:**, or **ms-resources:**, if there's resource content at these locations that's appropriate to load in a browser. However, the **file:** scheme is specifically blocked. For more info, see [URI schemes](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+
+When a user clicks the hyperlink, the value of the NavigateUri property is passed to a system handler for URI types and schemes. The system then launches the app that is registered for the scheme of the URI provided for NavigateUri.
 
 If you don't want the hyperlink to load content in a default Web browser (and don't want a browser to appear), then don't set a value for NavigateUri. Instead, handle the Click event, and write code that does what you want.
 
