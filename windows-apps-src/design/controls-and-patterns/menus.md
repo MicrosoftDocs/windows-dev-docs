@@ -128,8 +128,7 @@ This example creates a [MenuFlyout class](https://msdn.microsoft.com/library/win
 
 ````xaml
 <Rectangle
-  Height="100" Width="100"
-  Tapped="Rectangle_Tapped">
+  Height="100" Width="100">
   <Rectangle.ContextFlyout>
     <MenuFlyout>
       <MenuFlyoutItem Text="Change color" Click="ChangeColorItem_Click" />
