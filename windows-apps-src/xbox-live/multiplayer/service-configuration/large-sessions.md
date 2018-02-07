@@ -17,7 +17,7 @@ If you need a multiplayer session that can handle more than 100 members, you'll 
 
 In some circumstances, you may also wish to use large sessions even when dealing with smaller groups of players. If you want multiple players to be in the same session, but not necessarily be aware of each other if they don't encounter each other in game, you can use the "encounters" property of large sessions.
 
-Large sessions are not currently supported by [Xbox Integrated Multiplayer (XIM)](../xbox-integrated-multiplayer-overview.md) or by [Multiplayer Manager (MPM)](../multiplayer-manager.md), so you must use the Multiplayer 2015 APIs to use direct calls to the Multiplayer Service Directory (MPSD).
+Large sessions are not currently supported by [Xbox Integrated Multiplayer (XIM)](../xbox-integrated-multiplayer.md) or by [Multiplayer Manager (MPM)](../multiplayer-manager.md), so you must use the Multiplayer 2015 APIs to use direct calls to the Multiplayer Service Directory (MPSD).
 
 Large sessions are treated slightly differently than regular sessions:
 

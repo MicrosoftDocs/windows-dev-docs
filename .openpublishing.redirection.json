@@ -1634,6 +1634,11 @@
       "source_path": "windows-apps-src/xbox-live/get-started-with-creators/sign-in-to-xbox-live-in-unity.md",
       "redirect_url": "/windows/uwp/xbox-live/get-started-with-creators/unity-prefabs-and-sign-in",
       "redirect_document_id": true
-    }                           
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/multiplayer/xbox-integrated-multiplayer-overview.md",
+      "redirect_url": "/windows/uwp/xbox-live/multiplayer/xbox-integrated-multiplayer",
+      "redirect_document_id": true
+    }
   ]
 }
