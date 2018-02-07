@@ -42,7 +42,7 @@ XIM provides the following functionality:
 - Simple voice and text chat, with facilities for transcribing and narrating communication for a more accessible end-user experience.
 - Aides for detecting and managing network congestion, as well as for migrating game state.
 
-XIM is the simplest multiplayer solution available through the Xbox Live Multiplayer Platform, but also the least customizable and is only suited for P2P games. For more information about XIM, see [Xbox Integrated Multiplayer](xbox-integrated-multiplayer-overview.md).
+XIM is the simplest multiplayer solution available through the Xbox Live Multiplayer Platform, but also the least customizable and is only suited for P2P games. For more information about XIM, see [Xbox Integrated Multiplayer](xbox-integrated-multiplayer.md).
 
 ### Xbox Multiplayer Manager
 Xbox Multiplayer Manager (MPM) is a client API that provides flexible access to Xbox Live’s multiplayer session directory, invitation, and matchmaking services.
