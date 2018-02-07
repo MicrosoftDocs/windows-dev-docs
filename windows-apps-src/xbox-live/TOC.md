@@ -96,7 +96,7 @@
 ## [Concepts](multiplayer/multiplayer-concepts.md)
 ## [Scenarios](multiplayer/multiplayer-scenarios.md)
 ### [Session browse](multiplayer/session-browse.md)
-## [Xbox Integrated Multiplayer (XIM) overview](multiplayer/xbox-integrated-multiplayer-overview.md)
+## [Xbox Integrated Multiplayer (XIM)](multiplayer/xbox-integrated-multiplayer.md)
 ### [Use XIM (C++)](multiplayer/xbox-integrated-multiplayer/using-xim.md)
 ### [Use XIM (C#)](multiplayer/xbox-integrated-multiplayer/using-xim-cs.md)
 ### [XIM as a dedicated chat solution](multiplayer/xbox-integrated-multiplayer/xim-reservations.md)
