@@ -112,7 +112,7 @@ For both kinds of hyperlinks, you handle navigation the same way; you can set th
 To use the hyperlink to navigate to a URI, set the NavigateUri property. When a user clicks or taps the hyperlink, the specified URI opens in the default browser. The default browser runs in a separate process from your app.
 
 > [!NOTE]
-> A URI is represented by the [Windows.Foundation.Uri](uri.md) class. When programming with .NET, this class is hidden and you should use the [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) class. For more info, see the reference pages for these classes.
+> A URI is represented by the [Windows.Foundation.Uri](/uwp/api/windows.foundation.uri) class. When programming with .NET, this class is hidden and you should use the [System.Uri](https://docs.microsoft.com/dotnet/api/system.uri) class. For more info, see the reference pages for these classes.
 
 You don't have to use **http:** or **https:** schemes. You can use schemes such as **ms-appx:**, **ms-appdata:**, or **ms-resources:**, if there's resource content at these locations that's appropriate to load in a browser. However, the **file:** scheme is specifically blocked. For more info, see [URI schemes](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
 
