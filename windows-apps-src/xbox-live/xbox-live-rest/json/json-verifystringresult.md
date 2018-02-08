@@ -37,7 +37,7 @@ The VerifyStringResult object has the following specification.
 {
     "verifyStringResult":
     [
-        {"resultCode": "1", "offendingString": "cock"},
+        {"resultCode": "1", "offendingString": "badword"},
         {"resultCode": "0", "offendingString": ""},
         {"resultCode": "0", "offendingString": ""},
         {"resultCode": "0", "offendingString": ""},
