@@ -381,16 +381,18 @@ xmlns:appmodel="using:Windows.ApplicationModel"
 </Grid>
 ```
 
-You'll also need to adjust AppTitle's margins depending on back button's visibility.
+You'll also need to adjust AppTitle's margins depending on back button's visibility. And, when the app is in FullScreenMode, you'll need to remove the spacing for the back arrow, even if the TitleBar reserves space for it.
 
 ```csharp
-CoreApplicationViewTitleBar titleBar = CoreApplication.GetCurrentView().TitleBar;
-titleBar.LayoutMetricsChanged += TitleBar_LayoutMetricsChanged;
-
-private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+void UpdateAppTitle()
 {
-    AppTitle.Margin = new Thickness(CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset + 12, 8, 0, 0);
+    var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);
+    var left = 12 + (full ? 0 : CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset);
+    AppTitle.Margin = new Thickness(left, 8, 0, 0);
 }
+
+Window.Current.CoreWindow.SizeChanged += (s, e) => UpdateAppTitle();
+coreTitleBar.LayoutMetricsChanged += (s, e) => UpdateAppTitle();
 ```
 
 For more information about customizing title bars, see [title bar customization](../shell/title-bar.md).
