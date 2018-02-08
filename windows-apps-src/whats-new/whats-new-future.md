@@ -12,6 +12,10 @@ Sample feature text. With a sample image below!
 
 ![Screenshot of PhotoLab sample showing photo gallery page](images/PhotoLab-gallery-page.png)
 
+### Enter free-form prices in a specific market's local currency
+
+When you override your app's base price for a specific market, you are no longer limited to choosing one of our standard price tiers; you now have the option to enter a free-form price of your choosing in the market's local currency. For more info, see [Set and schedule app pricing](../publish/set-and-schedule-app-pricing.md)
+
 
 ## Developer Guidance
 
