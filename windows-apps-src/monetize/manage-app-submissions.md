@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 12/04/2017
+ms.date: 02/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -97,8 +97,6 @@ To create a submission for an app, follow this process.
         > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. If you are adding new packages, listing images, or trailer files for the submission, [prepare the app packages](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) and [prepare the app screenshots, images, and trailers](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Add all of these files to a ZIP archive.
-    > [!NOTE]
-    > The ability to submit a trailer for your app submission using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *trailers* array in the [app submission resource](#app-submission-object) is null when you get or create a submission.
 
 5. Revise the [app submission](#app-submission-object) data with any required changes for the new submission, and execute the following method to [update the app submission](update-an-app-submission.md).
 
@@ -362,7 +360,7 @@ This resource has the following values.
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
 | allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 device family](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
 | friendlyName           |   string  |  The friendly name of the submission, as shown in the Dev Center dashboard. This value is generated for you when you create the submission.       |  
-| trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>**Note:**&nbsp;&nbsp;The ability to submit a trailer for your app submission using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *trailers* value is null. To determine whether you can configure the *trailers* for an app submission, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.   |  
+| trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
 
 
 <span id="pricing-object" />
