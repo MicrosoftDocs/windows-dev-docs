@@ -53,13 +53,9 @@ This package contains winmd files and documentation related to Secure Networking
 
 ## Xbox Live tools
 
-There are several useful tools that you can download from GitHub to help you while you are developing your Xbox Live enabled game.
+There are several useful tools that you use to help you develop for Xbox Live. Find more information at:
 
-* [Xbox Live PowerShell module](https://github.com/Microsoft/xbox-live-powershell-module) - contains PowerShell cmdlets to help you switch sandboxes on your development machine.
-
-* [Xbox Live trace analyzer](https://github.com/Microsoft/xbox-live-trace-analyzer) - a tool that helps you analyze your Xbox Live service calls to ensure that you are calling the service in an efficient manner.
-
-* [Xbox Live resiliency Fiddler plug-in](https://github.com/Microsoft/xbox-live-resiliency-fiddler-plugin) - a Fiddler plug-in that helps you simulate loss of Xbox Live connectivity scenarios while testing your game.
+* [Development tools for Xbox Live](tools/tools.md)
 
 ## Xbox Live code samples
 
