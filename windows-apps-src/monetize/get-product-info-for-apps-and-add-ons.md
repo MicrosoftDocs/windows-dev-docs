@@ -4,7 +4,7 @@ ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: Learn how to use the Windows.Services.Store namespace to get Store-related product info for the current app or one of its add-ons.
 title: Get product info for apps and add-ons
 ms.author: mcleans
-ms.date: 11/20/2017
+ms.date: 02/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -68,9 +68,9 @@ The following example retrieves info for all durable add-ons, Store-managed cons
 [!code-cs[GetProductInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetAddOnInfoPage.xaml.cs#GetAddOnInfo)]
 
 
-## Get info for add-ons for the current app that the user is entitled to use
+## Get info for add-ons for the current app that the user has purchased
 
-To get Store product info for add-ons that the current user is entitled to use, use the [GetUserCollectionAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext#Windows_Services_Store_StoreContext_GetUserCollectionAsync_) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the add-ons. You must pass a list of strings to this method that identify the types of add-ons you want to retrieve. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
+To get Store product info for add-ons that the current user has purchased, use the [GetUserCollectionAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreContext#Windows_Services_Store_StoreContext_GetUserCollectionAsync_) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the add-ons. You must pass a list of strings to this method that identify the types of add-ons you want to retrieve. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
 > [!NOTE]
 > If the app has many add-ons, you can alternatively use the [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) method to use paging to return the add-on results.
