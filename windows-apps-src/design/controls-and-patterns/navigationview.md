@@ -358,39 +358,45 @@ To do so, add the following code to your App.xaml.cs.
 
 ```csharp
 //draw into the title bar
-CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+coreTitleBar.ExtendViewIntoTitleBar = true;
 
 //remove the solid-colored backgrounds behind the caption controls and system back button
-ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
-titleBar.ButtonBackgroundColor = Colors.Transparent;
-titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-titleBar.ButtonForegroundColor = (Color)this.Resources["SystemBaseHighColor"];
+var viewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
+viewTitleBar.ButtonBackgroundColor = Colors.Transparent;
+viewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
 ```
 
 Drawing into the title bar has the side-effect of hiding your app's title. To help users, restore the title by adding your own TextBlock. Add the following markup to the root page containing your NavigationView.
 
 ```xaml
-<!-- Page attribute -->
-xmlns:appmodel="using:Windows.ApplicationModel"
 <Grid>
 
-    <TextBlock x:Name="AppTitle" Style="{StaticResource CaptionTextBlockStyle}" Text="{x:Bind appmodel:Package.Current.DisplayName}" IsHitTestVisible="False" Canvas.ZIndex="1"/>
+    <TextBlock x:Name="AppTitle" 
+        xmlns:appmodel="using:Windows.ApplicationModel"
+        Text="{x:Bind appmodel:Package.Current.DisplayName}" 
+        Style="{StaticResource CaptionTextBlockStyle}" 
+        IsHitTestVisible="False" 
+        Canvas.ZIndex="1"/>
 
     <NavigationView Canvas.ZIndex="0" ... />
 
 </Grid>
 ```
 
-You'll also need to adjust AppTitle's margins depending on back button's visibility.
+You'll also need to adjust AppTitle's margins depending on back button's visibility. And, when the app is in FullScreenMode, you'll need to remove the spacing for the back arrow, even if the TitleBar reserves space for it.
 
 ```csharp
-CoreApplicationViewTitleBar titleBar = CoreApplication.GetCurrentView().TitleBar;
-titleBar.LayoutMetricsChanged += TitleBar_LayoutMetricsChanged;
-
-private void TitleBar_LayoutMetricsChanged(CoreApplicationViewTitleBar sender, object args)
+void UpdateAppTitle()
 {
-    AppTitle.Margin = new Thickness(CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset + 12, 8, 0, 0);
+    var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);
+    var left = 12 + (full ? 0 : CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset);
+    AppTitle.Margin = new Thickness(left, 8, 0, 0);
 }
+
+Window.Current.CoreWindow.SizeChanged += (s, e) => UpdateAppTitle();
+coreTitleBar.LayoutMetricsChanged += (s, e) => UpdateAppTitle();
 ```
 
 For more information about customizing title bars, see [title bar customization](../shell/title-bar.md).

@@ -527,9 +527,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
               <uap:FileType>.bar</uap:FileType>
             </uap2:SupportedFileTypes>
             <desktop2:ThumbnailHandler
-              Clsid  ="20000000-0000-0000-0000-000000000001"
-              Cutoff="20x20"
-              Treatment="Video Sprockets" />
+              Clsid  ="20000000-0000-0000-0000-000000000001"  />
             </uap3:FileTypeAssociation>
          </uap::Extension>
       </Extensions>
