@@ -92,7 +92,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 	// Add appId and contact panel support to the annotation
 	String appId = "MyApp_vqvv5s4y3scbg!App";
 	annotation.ProviderProperties.Add("ContactPanelAppID", appId);
-	annotation.SupportedOperations = ContactAnnotationOperations::ContactProfile;
+	annotation.SupportedOperations = ContactAnnotationOperations.ContactProfile;
 
 	// Save annotation to contact annotation list
 	// Windows.ApplicationModel.Contacts.ContactAnnotationList 
