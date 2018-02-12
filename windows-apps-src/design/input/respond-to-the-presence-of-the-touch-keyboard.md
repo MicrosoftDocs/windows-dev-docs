@@ -73,51 +73,97 @@ Here are a few basic recommendations for custom text input controls.
 
 Here's an example of attaching event handlers for the [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events of the touch keyboard.
 
-```CSharp
-public class MyApplication
+```csharp
+using Windows.UI.ViewManagement;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.Foundation;
+using Windows.UI.Xaml.Navigation;
+
+namespace SDKTemplate
 {
-    public MyApplication()
+    /// <summary>
+    /// Sample page to subscribe show/hide event of Touch Keyboard.
+    /// </summary>
+    public sealed partial class Scenario2_ShowHideEvents : Page
     {
-        // Grab the input pane for the main application window and attach
-        // touch keyboard event handlers.
-        Windows.UI.ViewManagement.GetForCurrentView().Showing  
-            += new EventHandler(_OnInputPaneShowing);
-        Windows.UI.ViewManagement.GetForCurrentView().Hiding 
-            += new EventHandler(_OnInputPaneHiding);
-    }
-
-    private void _OnInputPaneShowing(object sender, InputPaneVisibilityEventArgs eventArgs)
-    {
-        // If the size of this window is going to be too small, the app uses 
-        // the Showing event to begin some element removal animations.
-        if (eventArgs.OccludedRect.Top < 400)
+        public Scenario2_ShowHideEvents()
         {
-            _StartElementRemovalAnimations();
+            this.InitializeComponent();
+        }
 
-            // Don't use framework scroll- or visibility-related 
-            // animations that might conflict with the app's logic.
-            eventArgs.EnsuredFocusedElementInView = true; 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            InputPane currentInputPane = InputPane.GetForCurrentView();
+            // Subscribe to Showing/Hiding events
+            currentInputPane.Showing += OnShowing;
+            currentInputPane.Hiding += OnHiding;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            InputPane currentInputPane = InputPane.GetForCurrentView();
+            // Unsubscribe from Showing/Hiding events
+            currentInputPane.Showing -= OnShowing;
+            currentInputPane.Hiding -= OnHiding;
+        }
+
+        void OnShowing(InputPane sender, InputPaneVisibilityEventArgs e)
+        {
+            LastInputPaneEventRun.Text = "Showing";
+        }
+        
+        void OnHiding(InputPane sender, InputPaneVisibilityEventArgs e)
+        {
+            LastInputPaneEventRun.Text = "Hiding";
         }
     }
+}
+```
 
-    private void _OnInputPaneHiding(object sender, InputPaneVisibilityEventArgs eventArgs)
-    {
-        if (_ResetToDefaultElements())
-        {
-            eventArgs.EnsuredFocusedElementInView = true; 
-        }
-    }
+```cpp
+#include "pch.h"
+#include "Scenario2_ShowHideEvents.xaml.h"
 
-    private void _StartElementRemovalAnimations()
-    {
-        // This function starts the process of removing elements 
-        // and starting the animation.
-    }
+using namespace SDKTemplate;
+using namespace Platform;
+using namespace Windows::Foundation;
+using namespace Windows::UI::ViewManagement;
+using namespace Windows::UI::Xaml;
+using namespace Windows::UI::Xaml::Controls;
+using namespace Windows::UI::Xaml::Navigation;
 
-    private void _ResetToDefaultElements()
-    {
-        // This function resets the window's elements to their default state.
-    }
+Scenario2_ShowHideEvents::Scenario2_ShowHideEvents()
+{
+    InitializeComponent();
+}
+
+void Scenario2_ShowHideEvents::OnNavigatedTo(NavigationEventArgs^ e)
+{
+    auto inputPane = InputPane::GetForCurrentView();
+    // Subscribe to Showing/Hiding events
+    showingEventToken = inputPane->Showing +=
+        ref new TypedEventHandler<InputPane^, InputPaneVisibilityEventArgs^>(this, &Scenario2_ShowHideEvents::OnShowing);
+    hidingEventToken = inputPane->Hiding +=
+        ref new TypedEventHandler<InputPane^, InputPaneVisibilityEventArgs^>(this, &Scenario2_ShowHideEvents::OnHiding);
+}
+
+void Scenario2_ShowHideEvents::OnNavigatedFrom(NavigationEventArgs^ e)
+{
+    auto inputPane = Windows::UI::ViewManagement::InputPane::GetForCurrentView();
+    // Unsubscribe from Showing/Hiding events
+    inputPane->Showing -= showingEventToken;
+    inputPane->Hiding -= hidingEventToken;
+}
+
+void Scenario2_ShowHideEvents::OnShowing(InputPane^ /*sender*/, InputPaneVisibilityEventArgs^ /*args*/)
+{
+    LastInputPaneEventRun->Text = L"Showing";
+}
+
+void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibilityEventArgs ^ /*args*/)
+{
+    LastInputPaneEventRun->Text = L"Hiding";
 }
 ```
 
