@@ -28,4 +28,4 @@ x:Bind has a default mode of OneTime, and this was chosen for performance reason
 
 ## Related topics
 
-* [**x:Bind**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)
+* [x:Bind markup extension](x-bind-markup-extension.md)
