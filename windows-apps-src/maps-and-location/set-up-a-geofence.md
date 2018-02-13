@@ -71,6 +71,7 @@ switch (accessStatus)
         GeofenceMonitor.Current.StatusChanged += OnGeofenceStatusChanged;
         break;
 
+
     case GeolocationAccessStatus.Denied:
         _rootPage.NotifyUser("Access denied.", NotifyType.ErrorMessage);
         break;
@@ -113,6 +114,16 @@ Geocircle geocircle = new Geocircle(position, radius);
 
 // Create the geofence.
 Geofence geofence = new Geofence(fenceId, geocircle);
+
+// Register the geofence
+try
+{
+   GeofenceMonitor.Current.Geofences.Add( geofence );
+}
+catch
+{
+   // Handle failed to add geofence
+}
 ```
 
 You can fine-tune your geofence further by using one of the other constructors. In the next example, the geofence constructor specifies these additional parameters:
