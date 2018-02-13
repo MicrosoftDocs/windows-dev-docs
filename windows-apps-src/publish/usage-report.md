@@ -8,14 +8,14 @@ ms.date: 11/6/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, usage, custom event, report, telemetry, user sessions
 ms.localizationpriority: high
 ---
 
 # Usage report
 
 
-The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 are using your app and shows info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 (including Xbox) are using your app, and shows info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
 
 ## Apply filters
@@ -26,12 +26,12 @@ You can also expand **Filters** to filter the data on this page by package versi
 
 -   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
 -   **Market**: The default filter is **All markets**, but you can limit the data to one or more markets.
--   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
+-   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type (PC, console, tablet, etc.).
 
 The info in all of the charts listed below will reflect the date range and any filters you've selected (with the exception of **New users** in the **Usage** chart, which will not appear if any filters are selected). Some sections also allow you to apply additional filters.
 
 > [!IMPORTANT]
-> This report only includes usage data from customers on Windows 10 who have not opted out of providing telemetry info.
+> This report only includes usage data from customers on Windows 10 (including Xbox) who have not opted out of providing telemetry info.
 
 
 ##Usage

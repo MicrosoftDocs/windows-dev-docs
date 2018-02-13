@@ -1,10 +1,9 @@
 ---
-author: tbd
+author: jwmsft
 description: In XAML markup, specifies a default mode for x:Bind
 title: xDefaultBindMode markup extension
-ms.assetid: 
-ms.author: 
-ms.date: 
+ms.author: jimwalk
+ms.date: 02/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,4 +28,4 @@ x:Bind has a default mode of OneTime, and this was chosen for performance reason
 
 ## Related topics
 
-* [**x:Bind**](https://docs.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)
+* [x:Bind markup extension](x-bind-markup-extension.md)

@@ -1,21 +1,21 @@
----
+﻿---
 author: jnHs
 Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
 title: Acquisitions report
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, acquisitions, app sales, app downloads, installs, funnel, acquisition, conversions, channel, app page views
 ms.localizationpriority: high
 ---
 
 # Acquisitions report
 
 
-The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details. It also lets you get info about how customers on Windows 10 have arrived at your app's listing.
+The **Acquisitions** report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details. It also lets you get info about how customers on Windows 10 (including Xbox) have arrived at your app's listing.
 
 You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using our [analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
@@ -34,7 +34,7 @@ Near the top of the page, you can select the time period for which you want to s
 You can also expand **Filters** to filter all of the data on this page by market and/or by device type.
 
 -   **Market**: The default filter is **All markets**, but you can limit the data to acquisitions in one or more markets.
--   **Device type**: The default setting is **All devices**. If you want to show data for acquisitions from a certain device type only, you can choose a specific one here.
+-   **Device type**: The default setting is **All devices**. If you want to show data for acquisitions from a certain device type only (such as PC, console, or tablet), you can choose a specific one here.
 
 The info in all of the charts listed below will reflect the date range and any filters you've selected. Some sections also allow you to apply additional filters.
 
@@ -52,10 +52,10 @@ You can optionally filter the results by whether the acquisition originated from
 
 ## Installs
 
-The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices over the selected period of time. The total number is shown, along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
+The **Installs** chart shows how many times we have detected that customers have successfully installed your app on Windows 10 devices (including Xbox One consoles) over the selected period of time. The total number is shown, along with a chart showing installs by day or week (depending on the duration you've selected). You can optionally filter the results by a specific package version.
 
 The install total includes:
--   **Installs on multiple Windows 10 devices.** For example, if the same customer installs your app on two Windows 10 PCs and one Windows 10 phone, that counts as three installs.
+-   **Installs on multiple Windows 10 devices.** For example, if the same customer installs your app on two Windows 10 PCs and one Xbox One console, that counts as three installs.
 -   **Reinstalls.** For example, if a customer installs your app today, uninstalls your app tomorrow, and then reinstalls your app next month, that counts as two installs.
 
 The install total does not include or reflect:
@@ -73,7 +73,7 @@ The install total does not include or reflect:
 The **Acquisition funnel** shows you how many customers completed each step of the funnel, from viewing the Store page to using the app, along with the conversion rate. This data can help you identify areas where you might want to invest more to increase your acquisitions, installs, or usage.
 
 > [!IMPORTANT]
-> The **Acquisition funnel** shows data only for customers on Windows 10 over the last 90 days.
+> The **Acquisition funnel** shows data only for customers on Windows 10 (including Xbox) over the last 90 days.
 
 The steps in the funnel are:
 
