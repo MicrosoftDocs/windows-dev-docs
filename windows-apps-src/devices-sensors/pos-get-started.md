@@ -151,7 +151,7 @@ catch (Exception ex)
 ```
 
 ### Retaining the device
-When using a POS device over a network or Bluetooth connection, you may wish to share the device with other apps on the network. (For more info about this, see Sharing Devices[link].) In other cases, you may want to hold on to the device for prolonged use. This example shows how to retain a claimed barcode scanner after another app has requested that the device be released.
+When using a POS device over a network or Bluetooth connection, you may wish to share the device with other apps on the network. (For more info about this, see [Sharing Devices](#sharing-a-device-between-apps).) In other cases, you may want to hold on to the device for prolonged use. This example shows how to retain a claimed barcode scanner after another app has requested that the device be released.
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;

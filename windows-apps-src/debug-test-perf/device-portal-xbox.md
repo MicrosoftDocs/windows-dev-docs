@@ -4,7 +4,7 @@ ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Device Portal for Xbox
 description: Learn how to enable the Device Portal for Xbox One.
 ms.author: pafarley
-ms.date: 02/08/2017
+ms.date: 02/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,7 +24,7 @@ The following steps show how to enable the Xbox Device Portal, which gives you r
 
 2. Within Dev Home, on the **Home** tab, under **Remote Access**, select **Remote Access Settings**.
 
-    ![Device Portal RemoteManagement Tool](images/device-portal-xbox-2.png)
+    ![Device Portal RemoteManagement Tool](images/device-portal-xbox-15.png)
 
 3. Check the **Enable Xbox Device Portal** setting.
 
@@ -48,7 +48,7 @@ Similar to the Windows Device Portal's **Apps manager** page, the Xbox Device Po
 
 Under **Xbox Live test accounts**, you can manage the accounts associated with your Xbox. You can add users and guest accounts, create new users, sign users in and out, and remove accounts.
 
-![Home](images/device-portal-xbox-4.png)
+![Home](images/device-portal-xbox-16.png)
 
 ### Xbox Live (Game saves)
 
@@ -56,13 +56,13 @@ Both the Windows Device Portal and the Xbox Device Portal have an **Xbox Live** 
 
 In the **Generate** section, you can generate dummy data and save to the specified input file. Simply enter the **Containers (default 2)**, **Blobs (default 3)**, and **Blob Size (default 1024)**, and select **Generate**.
 
-![Xbox Live](images/device-portal-xbox-5.png)
+![Xbox Live](images/device-portal-xbox-17.png)
 
 ### HTTP monitor
 
 The HTTP Monitor allows you to view decrypted HTTP and HTTPS traffic from your app or game when it's running on your Xbox One.
 
-![HTTP monitor](images/device-portal-xbox-6.png)
+![HTTP monitor](images/device-portal-xbox-18.png)
 
 To enable it, open Dev Home on your Xbox One, go to the **Settings** tab, and in the **HTTP Monitor Settings** box, check **Enable HTTP Monitor**.
 
@@ -74,7 +74,7 @@ Once enabled, in the Xbox Device Portal, you can **Stop**, **Clear**, and **Save
 
 The **Network** page in the Xbox Device Portal is almost identical to the **Networking** page in the Windows Device Portal, with the exception of **Fiddler tracing**, which is unique to the Xbox Device Portal. This allows you to run Fiddler on your PC to log and inspect HTTP and HTTPS traffic between your Xbox One and the internet. See [How to use Fiddler with Xbox One when developing for UWP](../xbox-apps/uwp-fiddler.md) for more information.
 
-![Network](images/device-portal-xbox-8.png)
+![Network](images/device-portal-xbox-19.png)
 
 ### Media capture
 
@@ -88,9 +88,9 @@ On the **Settings** page, you can view and edit several settings for your Xbox O
 
 There are several sections with different settings to view and/or edit, which are explained below.
 
-![Settings](images/device-portal-xbox-10.png)
+![Settings](images/device-portal-xbox-20.png)
 
-![Settings](images/device-portal-xbox-11.png)
+![Settings](images/device-portal-xbox-21.png)
 
 #### Device Information
 
