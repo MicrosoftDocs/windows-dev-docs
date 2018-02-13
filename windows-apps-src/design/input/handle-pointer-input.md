@@ -16,7 +16,6 @@ ms.localizationpriority: medium
 
 # Handle pointer input
 
-
 Receive, process, and manage input data from pointing devices (such as touch, mouse, pen/stylus, and touchpad) in your Universal Windows Platform (UWP) applications.
 
 > [!Important]
@@ -123,13 +122,13 @@ UWP apps can listen for the following pointer events:
 <p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) event.</p></td>
 </tr>
 </tbody>
-</table>
+</table> 
 
- 
-
-## Examples
+## Pointer event example
 
 Here are some code snippets from a basic pointer tracking app that show how to listen for and handle events for multiple pointers, and get various properties for the associated pointers.
+
+![Pointer application UI](images/pointers/pointers1.gif)
 
 **Download this sample from [Pointer input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
 
@@ -138,8 +137,6 @@ Here are some code snippets from a basic pointer tracking app that show how to l
 For this example, we use a [Rectangle](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
 
 Details for each pointer are displayed in a floating [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) to the right of the rectangle.
-
-![Pointer application UI](images/pointers/pointers-basic-ui-small.png)
 
 This is the Extensible Application Markup Language (XAML) for the UI in this example. 
 
@@ -533,7 +530,8 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 
 -   This handler manages the [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
-    **Note**  [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) can occur instead of [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972).     
+    > [!NOTE]
+    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) can occur instead of [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972). Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972).     
 
 ```csharp
 /// <summary>
@@ -680,10 +678,278 @@ String QueryPointer(PointerPoint ptrPt)
 }
 ```
 
+## Primary pointer
+Some input devices, such as a touch digitizer or touchpad, support more than the typical single pointer of a mouse or a pen (in most cases as the Surface Hub supports two pen inputs). 
+
+Use the read-only **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties#Windows_UI_Input_PointerPointProperties_IsPrimary)** property of the **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** class to identify and differentiate a single primary pointer (the primary pointer is always the first pointer detected during an input sequence). 
+
+By identifying the primary pointer, you can use it to emulate mouse or pen input, customize interactions, or provide some other specific functionality or UI.
+
+> [!NOTE] 
+> If the primary pointer is released, canceled, or lost during an input sequence, a primary input pointer is not created until a new input sequence is initiated (an input sequence ends when all pointers have been released, canceled, or lost).
+
+## Primary pointer animation example
+
+These code snippets show how you can provide special visual feedback to help a user differentiate between pointer inputs in your application.
+
+This particular app uses both color and animation to highlight the primary pointer.
+
+![Pointer application with animated visual feedback](images/pointers/pointers-usercontrol-animation.gif)
+
+**Download this sample from [Pointer input sample (UserControl with animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
+
+### Visual feedback
+We define a **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
+
+**Here's the XAML:**
+```xaml
+<UserControl
+    x:Class="UWP_Pointers.PointerEllipse"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_Pointers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="100"
+    d:DesignWidth="100">
+
+    <UserControl.Resources>
+        <Style x:Key="EllipseStyle" TargetType="Ellipse">
+            <Setter Property="Transitions">
+                <Setter.Value>
+                    <TransitionCollection>
+                        <ContentThemeTransition/>
+                    </TransitionCollection>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Storyboard x:Name="myStoryboard">
+            <!-- Animates the value of a Double property between 
+            two target values using linear interpolation over the 
+            specified Duration. -->
+            <DoubleAnimation
+              Storyboard.TargetName="ellipse"
+              Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"  
+              Duration="0:0:1" 
+              AutoReverse="True" 
+              RepeatBehavior="Forever" From="1.0" To="1.4">
+            </DoubleAnimation>
+
+            <!-- Animates the value of a Double property between 
+            two target values using linear interpolation over the 
+            specified Duration. -->
+            <DoubleAnimation
+              Storyboard.TargetName="ellipse"
+              Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"  
+              Duration="0:0:1" 
+              AutoReverse="True" 
+              RepeatBehavior="Forever" From="1.0" To="1.4">
+            </DoubleAnimation>
+
+            <!-- Animates the value of a Color property between 
+            two target values using linear interpolation over the 
+            specified Duration. -->
+            <ColorAnimation 
+                Storyboard.TargetName="ellipse" 
+                EnableDependentAnimation="True" 
+                Storyboard.TargetProperty="(Fill).(SolidColorBrush.Color)" 
+                From="White" To="Red"  Duration="0:0:1" 
+                AutoReverse="True" RepeatBehavior="Forever"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid x:Name="CompositionContainer">
+        <Ellipse Name="ellipse" 
+        StrokeThickness="2" 
+        Width="{x:Bind Diameter}" 
+        Height="{x:Bind Diameter}"  
+        Style="{StaticResource EllipseStyle}" />
+    </Grid>
+</UserControl>
+```
+
+And here's the code-behind:
+```csharp
+using Windows.Foundation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+
+// The User Control item template is documented at 
+// https://go.microsoft.com/fwlink/?LinkId=234236
+
+namespace UWP_Pointers
+{
+    /// <summary>
+    /// Pointer feedback object.
+    /// </summary>
+    public sealed partial class PointerEllipse : UserControl
+    {
+        // Reference to the application canvas.
+        Canvas canvas;
+
+        /// <summary>
+        /// Ellipse UI for pointer feedback.
+        /// </summary>
+        /// <param name="c">The drawing canvas.</param>
+        public PointerEllipse(Canvas c)
+        {
+            this.InitializeComponent();
+            canvas = c;
+        }
+
+        /// <summary>
+        /// Gets or sets the pointer Id to associate with the PointerEllipse object.
+        /// </summary>
+        public uint PointerId
+        {
+            get { return (uint)GetValue(PointerIdProperty); }
+            set { SetValue(PointerIdProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for PointerId.  
+        // This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PointerIdProperty =
+            DependencyProperty.Register("PointerId", typeof(uint), 
+                typeof(PointerEllipse), new PropertyMetadata(null));
+
+
+        /// <summary>
+        /// Gets or sets whether the associated pointer is Primary.
+        /// </summary>
+        public bool PrimaryPointer
+        {
+            get { return (bool)GetValue(PrimaryPointerProperty); }
+            set
+            {
+                SetValue(PrimaryPointerProperty, value);
+            }
+        }
+        // Using a DependencyProperty as the backing store for PrimaryPointer.  
+        // This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PrimaryPointerProperty =
+            DependencyProperty.Register("PrimaryPointer", typeof(bool), 
+                typeof(PointerEllipse), new PropertyMetadata(false));
+
+
+        /// <summary>
+        /// Gets or sets the ellipse style based on whether the pointer is Primary.
+        /// </summary>
+        public bool PrimaryEllipse 
+        {
+            get { return (bool)GetValue(PrimaryEllipseProperty); }
+            set
+            {
+                SetValue(PrimaryEllipseProperty, value);
+                if (value)
+                {
+                    SolidColorBrush fillBrush = 
+                        (SolidColorBrush)Application.Current.Resources["PrimaryFillBrush"];
+                    SolidColorBrush strokeBrush = 
+                        (SolidColorBrush)Application.Current.Resources["PrimaryStrokeBrush"];
+
+                    ellipse.Fill = fillBrush;
+                    ellipse.Stroke = strokeBrush;
+                    ellipse.RenderTransform = new CompositeTransform();
+                    ellipse.RenderTransformOrigin = new Point(.5, .5);
+                    myStoryboard.Begin();
+                }
+                else
+                {
+                    SolidColorBrush fillBrush = 
+                        (SolidColorBrush)Application.Current.Resources["SecondaryFillBrush"];
+                    SolidColorBrush strokeBrush = 
+                        (SolidColorBrush)Application.Current.Resources["SecondaryStrokeBrush"];
+                    ellipse.Fill = fillBrush;
+                    ellipse.Stroke = strokeBrush;
+                }
+            }
+        }
+        // Using a DependencyProperty as the backing store for PrimaryEllipse.  
+        // This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PrimaryEllipseProperty =
+            DependencyProperty.Register("PrimaryEllipse", 
+                typeof(bool), typeof(PointerEllipse), new PropertyMetadata(false));
+
+
+        /// <summary>
+        /// Gets or sets the diameter of the PointerEllipse object.
+        /// </summary>
+        public int Diameter
+        {
+            get { return (int)GetValue(DiameterProperty); }
+            set { SetValue(DiameterProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for Diameter.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DiameterProperty =
+            DependencyProperty.Register("Diameter", typeof(int), 
+                typeof(PointerEllipse), new PropertyMetadata(120));
+    }
+}
+```
+
+### Create the UI
+The UI in this example is limited to the input **[Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** where we track any pointers and render the pointer indicators and primary pointer animation (if applicable), along with a header bar containing a pointer counter and a primary pointer identifier.
+
+Here's the MainPage.xaml:
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackPanel x:Name="HeaderPanel" 
+                Orientation="Horizontal" 
+                Grid.Row="0">
+        <StackPanel.Transitions>
+            <TransitionCollection>
+                <AddDeleteThemeTransition/>
+            </TransitionCollection>
+        </StackPanel.Transitions>
+        <TextBlock x:Name="Header" 
+                    Text="Basic pointer tracking sample - IsPrimary" 
+                    Style="{ThemeResource HeaderTextBlockStyle}" 
+                    Margin="10,0,0,0" />
+        <TextBlock x:Name="PointerCounterLabel"
+                    VerticalAlignment="Center"                 
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    Text="Number of pointers: " 
+                    Margin="50,0,0,0"/>
+        <TextBlock x:Name="PointerCounter"
+                    VerticalAlignment="Center"                 
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    Text="0" 
+                    Margin="10,0,0,0"/>
+        <TextBlock x:Name="PointerPrimaryLabel"
+                    VerticalAlignment="Center"                 
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    Text="Primary: " 
+                    Margin="50,0,0,0"/>
+        <TextBlock x:Name="PointerPrimary"
+                    VerticalAlignment="Center"                 
+                    Style="{ThemeResource BodyTextBlockStyle}"
+                    Text="n/a" 
+                    Margin="10,0,0,0"/>
+    </StackPanel>
+    
+    <Grid Grid.Row="1">
+        <!--The canvas where we render the pointer UI.-->
+        <Canvas x:Name="pointerCanvas"/>
+    </Grid>
+</Grid>
+```
+
+### Handle pointer events
+
+Finally, we define our basic pointer event handlers in the MainPage.xaml.cs code-behind. We won't reproduce the code here as the basics were covered in the previous example, but you can download the working sample from [Pointer input sample (UserControl with animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip).
+
 ## Related articles
 
 **Topic samples**
 * [Pointer input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)
+* [Pointer input sample (UserControl with animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
 **Other samples**
 * [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
