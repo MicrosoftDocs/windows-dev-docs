@@ -4,7 +4,7 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: Prepare to package an app (Desktop Bridge)
 ms.author: normesta
-ms.date: 11/27/2017
+ms.date: 02/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -18,9 +18,9 @@ ms.localizationpriority: medium
 This article lists the things you need to know before you package your desktop app. You might not have to do much to get your app ready for the packaging process, but if any of the items below applies to your application, you need to address it before packaging. Remember that the Microsoft Store handles licensing and automatic updating for you, so you can remove any features that relate to those tasks from your codebase.
 
 >[!IMPORTANT]
->The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Edition (10.0; Build 14393) or a later release in Visual Studio.
+>The Desktop Bridge was introduced in Windows 10, version 1607, and it can only be used in projects that target Windows 10 Anniversary Update (10.0; Build 14393) or a later release in Visual Studio.
 
-+ __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You'll have to retarget your app to .NET 4.6.1 before you package it.
++ __Your app requires a version of .NET earlier than 4.6.2__. You need to make sure your app runs on .NET 4.6.2. You cannot require or redistribute versions earlier than 4.6.2. This is the version of .NET that shipped in the Windows 10 Anniversary Update. Verifying your app works on this version will ensure your app will continue to be compatible with future updates of Windows 10.
 
 + __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Microsoft Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users. Apps that require elevation for any part of their functionality won't be accepted in the Microsoft Store.
 
