@@ -40,7 +40,22 @@ NavigationView works well for:
 
 NavigationView is just one of several navigation elements you can use. To learn more about other navigation patterns and elements, see [Navigation design basics](../basics/navigation-basics.md).
 
-The NavigationView control has many built-in behaviors that implement the simple nav pane pattern. If your navigation require more complex behavior or if you would like to build your own nav pane pattern, you can use [SplitView](split-view.md) and [ListView](lists.md). To see a sample implementation, download the [XAML navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
+The NavigationView control has many built-in behaviors that implement the simple nav pane pattern. If your navigation require more complex behavior or if you would like to build your own nav pane pattern, you can use [SplitView](split-view.md) and [ListView](lists.md). For a sample implementation with SplitView and ListView, see the [XAML navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
+
+## Examples
+<table>
+<th align="left">XAML Controls Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
 
 ## NavigationView sections
 The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
@@ -49,7 +64,11 @@ The control is broadly subdivided into three sections - a pane for navigation on
 
 ### Pane
 
-The NavigationView pane can contain:
+The built-in navigation ("hamburger") button lets users open and close the pane. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsPaneToggleButtonVisible) property. The text label adjacent to the hamburger is the [PaneTitle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_PaneTitle) property.
+
+The built-in back button appears in the top left-hand corner in the pane. The NavigationView control does not automatically add content to the back stack, but to enable backwards navigation, see the [backwards navigation](#backwards-navigation) section.
+
+The NavigationView pane also can contain:
 
 - Navigation items, in the form of [NavigationViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitem), for navigating to specific pages
 - Separators, in the form of [NavigationViewItemSeparator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator), for grouping navigation items
@@ -57,8 +76,6 @@ The NavigationView pane can contain:
 - An optional [AutoSuggestBox](auto-suggest-box.md) to allow for app-level search
 - An optional entry point for [app settings](../app-settings/app-settings-and-data.md). To hide the settings item, use the [IsSettingsVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsSettingsVisible) property
 - Free-form content in the pane’s footer, when added to the [PaneFooter](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_PaneFooter) property
-
-The built-in navigation ("hamburger") button lets users open and close the pane. On larger app windows when the pane is open, you may choose to hide this button using the [IsPaneToggleButtonVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsPaneToggleButtonVisible) property.
 
 #### Visual style
 
@@ -159,32 +176,23 @@ When users tap on a navigation item in the Pane, NavigationView will show that i
 
 Your app is responsible for updating the Header and Content with appropriate information in response to this user interaction. In addition, we recommend programmatically moving [focus](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_) from the navigation item to the content. By setting initial focus on load, you streamline the user flow and minimize the expected number of keyboard focus moves.
 
-
 ## Backwards navigation
+NavigationView has a built-in back button, which can be enabled with the following properties:
+- [**IsBackButtonVisible**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsBackButtonVisible) is a NavigationViewBackButtonVisible enum and "Auto" by default. It is used to show/hide the back button. When the button is not visible, the space for drawing the back button will be collapsed.
+- [**IsBackEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_IsBackEnabled) is false by default and can be used to toggle the back button states.
+- [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview#Windows_UI_Xaml_Controls_NavigationView_BackRequested) is fired when a user clicks on the back button.
+    - In Minimal/Compact mode, when the NavigationView.Pane is open as a flyout, clicking the back button will close the Pane and fire **PaneClosing** event instead.
+    - Not fired if IsBackEnabled is false.
 
-NavigationView does not automatically show the back button in your app’s title bar nor add content to the back stack. The control does not automatically respond to software or hardware back button presses. Please see the [history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md) for how to add support for backwards navigation.
+![NavigationView back button](../basics/images/back-nav/NavView.png)
 
-## Examples
+## Code example
 
-<table>
-<th align="left">XAML Controls Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
-<td>
-    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/NavigationView">open the app and see the NavigationView in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+The following is a simple example of how you can incorporate NavigationView into your app. 
 
-### Code example
+We demonstrate how to implement backwards navigation with NavigationView's back button. Since there is both a content frame for the NavigationView (the app navigation backstack) and a root frame for the application (the system backstack), pay careful attention to the backstack. Once the app navigation backstack is empty, the system backstack should be utilized.
 
-The following is a simple example of how you can incorporate NavigationView into your app. We demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
-
-![Screenshot of code example](images/navview-sample.png)
+We also demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
 
 ```xaml
 <Page
@@ -200,7 +208,7 @@ The following is a simple example of how you can incorporate NavigationView into
                     ItemInvoked="NavView_ItemInvoked"
                     SelectionChanged="NavView_SelectionChanged"
                     Loaded="NavView_Loaded"
-                    Canvas.ZIndex="0">
+                    BackRequested="NavView_BackRequested">
 
         <NavigationView.MenuItems>
             <NavigationViewItem x:Uid="HomeNavItem" Content="Home" Tag="home">
@@ -262,6 +270,8 @@ The following is a simple example of how you can incorporate NavigationView into
 ```
 
 ```csharp
+bool FromBack = false;
+
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
     
@@ -279,6 +289,19 @@ private void NavView_Loaded(object sender, RoutedEventArgs e)
             break;
         }
     }
+    ContentFrame.Navigated += 'On_Navigated';
+
+    KeyboardAccelerator GoBack = new KeyboardAccelerator();
+    GoBack.Key = VirtualKey.GoBack;
+    GoBack.Invoked += "BackInvoked";
+    KeyboardAccelerator AltLeft = new KeyboardAccelerator();
+    AltLeft.Key = VirtualKey.Left;
+    AltLeft.Invoked += "BackInvoked";
+    // ALT routes here
+    AltLeft.Modifiers = VirtualKeyModifiers.Menu;
+
+    List<KeyboardAccelerator> AccList = new List< KeyboardAccelerator >(new KeyboardAccelerator [] {GoBack, AltLeft});
+    MainPage.KeyboardAccelerators = AccList;
 }
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -334,6 +357,116 @@ private void NavView_Navigate(NavigationViewItem item)
             ContentFrame.Navigate(typeof(MyContentPage));
             break;
     }
+    if (!ContentFrame.CanGoBack && FromBack)
+    { 
+        NavView.IsBackEnabled = false; 
+    }
+    else
+    { 
+        NavView.IsBackEnabled = true; 
+    } 
+    FromBack = false;
+}
+private void NavView_BackRequested(NavigationView sender) 
+{ 
+     On_BackRequested(); 
+} 
+
+private bool On_BackRequested()
+{
+    if ((NavView.DisplayMode == NavigationViewDisplayMode.Compact || NavView.DisplayMode == NavigationViewDisplayMode.Minimal) && NavView.IsPaneOpen)
+    {
+        // Do not navigate back and just allow NavView to execute its light
+        // dismiss behavior
+        return true;
+    } else if (ContentFrame.BackStackDepth == 0)
+    {
+        Frame rootFrame = this.Frame;
+        if (rootFrame == null)
+            return true;
+
+        if (rootFrame.CanGoBack)
+        {
+            rootFrame.GoBack();
+            return true;
+        }
+
+    } else {
+
+        if (ContentFrame.CanGoBack)
+        {
+            ContentFrame.GoBack();
+            return true;
+        }
+
+        FromBack = true;
+    }
+}
+
+protected void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+{
+    On_BackRequested();
+    args.Handled = true;
+}
+
+private void On_Navigated(object sender, NavigationEventArgs e)
+{
+    String stringTag = "";
+    switch (typeof(ContentFrame.Content))
+    { 
+        case typeof(HomePage): 
+            stringTag = "home"; 
+            break; 
+        case typeof(AppsPage): 
+            stringTag = "apps";
+            break; 
+        case typeof(GamesPage):
+            stringTag = "games";
+            break; 
+        case typeof(MusicPage): 
+            stringTag = "music";
+            break;
+        case typeof(MyContentPage): 
+            stringTag = "content";
+            break;
+    }
+
+    // set the new SelectedItem  
+    foreach (NavigationViewItemBase item in NavView.MenuItems)
+    {
+        if (item is NavigationViewItem && item.Tag.ToString() == stringTag)
+        {
+            NavView.SelectedItem = item;
+            break;
+        }
+    }
+}
+```
+
+`App.xaml` code behind:
+
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
+Frame rootFrame = Window.Current.Content;
+rootFrame.Navigated += 'On_Navigated';
+rootFrame.PointerPressed += 'On_PointerPressed';
+
+private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
+{
+    if (e.handled == False)  
+    {
+        e.handled = On_BackRequested();
+    }
+}
+
+private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
+
+    if (isXButton1Pressed)
+    {
+        e.handled = On_BackRequested();
+    }
 }
 ```
 
@@ -349,57 +482,6 @@ The Pane's background shows in-app acrylic when NavigationView is in Minimal or 
 <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
               BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
 ```
-
-## Extending your app into the title bar
-
-For a seamless, flowing look within your app's window, we recommend extending NavigationView and its acrylic pane up into your app's title bar area. This avoids the visually unattractive shape created by the title bar, the solid-colored NavigationView Content, and the acrylic of NavigationView's pane.
-
-To do so, add the following code to your App.xaml.cs.
-
-```csharp
-//draw into the title bar
-var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-coreTitleBar.ExtendViewIntoTitleBar = true;
-
-//remove the solid-colored backgrounds behind the caption controls and system back button
-var viewTitleBar = ApplicationView.GetForCurrentView().TitleBar;
-viewTitleBar.ButtonBackgroundColor = Colors.Transparent;
-viewTitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-viewTitleBar.ButtonForegroundColor = (Color)Resources["SystemBaseHighColor"];
-```
-
-Drawing into the title bar has the side-effect of hiding your app's title. To help users, restore the title by adding your own TextBlock. Add the following markup to the root page containing your NavigationView.
-
-```xaml
-<Grid>
-
-    <TextBlock x:Name="AppTitle" 
-        xmlns:appmodel="using:Windows.ApplicationModel"
-        Text="{x:Bind appmodel:Package.Current.DisplayName}" 
-        Style="{StaticResource CaptionTextBlockStyle}" 
-        IsHitTestVisible="False" 
-        Canvas.ZIndex="1"/>
-
-    <NavigationView Canvas.ZIndex="0" ... />
-
-</Grid>
-```
-
-You'll also need to adjust AppTitle's margins depending on back button's visibility. And, when the app is in FullScreenMode, you'll need to remove the spacing for the back arrow, even if the TitleBar reserves space for it.
-
-```csharp
-void UpdateAppTitle()
-{
-    var full = (ApplicationView.GetForCurrentView().IsFullScreenMode);
-    var left = 12 + (full ? 0 : CoreApplication.GetCurrentView().TitleBar.SystemOverlayLeftInset);
-    AppTitle.Margin = new Thickness(left, 8, 0, 0);
-}
-
-Window.Current.CoreWindow.SizeChanged += (s, e) => UpdateAppTitle();
-coreTitleBar.LayoutMetricsChanged += (s, e) => UpdateAppTitle();
-```
-
-For more information about customizing title bars, see [title bar customization](../shell/title-bar.md).
 
 ## Related topics
 
