@@ -71,6 +71,7 @@ switch (accessStatus)
         GeofenceMonitor.Current.StatusChanged += OnGeofenceStatusChanged;
         break;
 
+
     case GeolocationAccessStatus.Denied:
         _rootPage.NotifyUser("Access denied.", NotifyType.ErrorMessage);
         break;
@@ -113,6 +114,7 @@ Geocircle geocircle = new Geocircle(position, radius);
 
 // Create the geofence.
 Geofence geofence = new Geofence(fenceId, geocircle);
+
 ```
 
 You can fine-tune your geofence further by using one of the other constructors. In the next example, the geofence constructor specifies these additional parameters:
@@ -157,6 +159,17 @@ DateTimeOffset startTime = DateTime.Now;
 
 // Create the geofence.
 Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse, dwellTime, startTime, duration);
+```
+
+After creating, remember to register your new [**Geofence**](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) to the monitor.
+
+```csharp
+// Register the geofence
+try {
+   GeofenceMonitor.Current.Geofences.Add(geofence);
+} catch {
+   // Handle failure to add geofence
+}
 ```
 
 ### Step 4: Handle changes in location permissions
