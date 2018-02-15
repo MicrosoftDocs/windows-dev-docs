@@ -166,7 +166,7 @@ After creating, remember to register your new [**Geofence**](https://docs.micros
 ```csharp
 // Register the geofence
 try {
-   GeofenceMonitor.Current.Geofences.Add( geofence );
+   GeofenceMonitor.Current.Geofences.Add(geofence);
 } catch {
    // Handle failure to add geofence
 }
