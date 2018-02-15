@@ -700,7 +700,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.	Download the [WDK](https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk) and find `asl.exe` at `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
+2.	Download the [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) and find `asl.exe` at `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
 3.	Run the following command to generate ACPITABL.dat:
 ```
 asl.exe yourboard.asl
@@ -793,16 +793,16 @@ Use the following samples to validate that devices work from UWP.
 
 ### Run the HLK Tests
 
-Download the [Hardware Lab Kit (HLK)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
- * [GPIO WinRT Functional and Stress Tests](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
- * [I2C WinRT Write Tests (EEPROM Required)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
- * [I2C WinRT Read Tests (EEPROM Required)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
- * [I2C WinRT Nonexistent Slave Address Tests](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
- * [I2C WinRT Advanced Functional Tests (mbed LPC1768 Required)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
- * [SPI WinRT Clock Frequency Verification Tests (mbed LPC1768 Required)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
- * [SPI WinRT IO Transfer Tests (mbed LPC1768 Required)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
- * [SPI WinRT Stride Verification Tests](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
- * [SPI WinRT Transfer Gap Detection Tests (mbed LPC1768 Required)](https://docs.microsoft.com/en-us/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
+Download the [Hardware Lab Kit (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
+ * [GPIO WinRT Functional and Stress Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
+ * [I2C WinRT Write Tests (EEPROM Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
+ * [I2C WinRT Read Tests (EEPROM Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
+ * [I2C WinRT Nonexistent Slave Address Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
+ * [I2C WinRT Advanced Functional Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
+ * [SPI WinRT Clock Frequency Verification Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
+ * [SPI WinRT IO Transfer Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
+ * [SPI WinRT Stride Verification Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
+ * [SPI WinRT Transfer Gap Detection Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
 
 When you select the rhproxy device node in HLK manager, the applicable tests will automatically be selected.
 
