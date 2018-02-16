@@ -35,7 +35,7 @@ namespace DocumenationExamples
             List<TargetedOfferData> availableOfferData =
                 await GetTargetedOffersForUserAsync(msaToken);
 
-            if (availableOfferData == null || availableOfferData.Count != 0)
+            if (availableOfferData == null || availableOfferData.Count == 0)
             {
                 System.Diagnostics.Debug.WriteLine("There was an error retrieving targeted offers," +
                     "or there are no targeted offers available for the current user.");
@@ -47,7 +47,21 @@ namespace DocumenationExamples
             TargetedOfferData offerData = availableOfferData[0];
             string productId = offerData.Offers[0];
 
-            await PurchaseOfferAsync(productId);
+            // Get the Store ID of the add-on that has the matching product ID, and then purchase the add-on.
+            List<String> filterList = new List<string>(productKinds);
+            StoreProductQueryResult queryResult = await storeContext.GetAssociatedStoreProductsAsync(filterList);
+            foreach (KeyValuePair<string, StoreProduct> result in queryResult.Products)
+            {
+                if (result.Value.InAppOfferToken == productId)
+                {
+                    await PurchaseOfferAsync(result.Value.StoreId);
+                    return;
+                }
+            }
+
+            System.Diagnostics.Debug.WriteLine("No add-on with the specified product ID could be found " +
+                "for the current app.");
+            return;
         }
 
         //<GetMSAToken>
@@ -98,18 +112,18 @@ namespace DocumenationExamples
         }
         //</GetTargetedOffers>
 
-        private async Task PurchaseOfferAsync(string productId)
+        private async Task PurchaseOfferAsync(string storeId)
         {
-            if (string.IsNullOrEmpty(productId))
+            if (string.IsNullOrEmpty(storeId))
             {
-                System.Diagnostics.Debug.WriteLine("Product ID is null or empty.");
+                System.Diagnostics.Debug.WriteLine("storeId is null or empty.");
                 return;
             }
 
             // Purchase the add-on for the current user. Typically, a game or app would first show
             // a UI that prompts the user to buy the add-on; for simplicity, this example
             // simply purchases the add-on.
-            StorePurchaseResult result = await storeContext.RequestPurchaseAsync(productId);
+            StorePurchaseResult result = await storeContext.RequestPurchaseAsync(storeId);
 
             // Capture the error message for the purchase operation, if any.
             string extendedError = string.Empty;
