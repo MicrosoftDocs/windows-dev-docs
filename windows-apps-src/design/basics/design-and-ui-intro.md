@@ -74,7 +74,7 @@ While your app's UI will be legible and usable on all Windows-powered devices, y
 
 By default, UWP apps use the **Segoe UI** font, and the UWP type ramp includes seven classes of typography, striving for the most efficient approach across all display sizes. 
 
-![Type ramp](../style/images/type-ramp.png)
+![Type ramp](images/type-ramp.png)
 
 For details on the type ramp, see the [UWP Typography Guide](../style/typography.md). To learn how to use the different levels of the UWP type ramp in your app, see [theme resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp).
 
