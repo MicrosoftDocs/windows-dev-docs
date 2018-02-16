@@ -65,7 +65,7 @@ For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.m
 
 ## Free trial
 
-Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, **No free trial** is selected, and there will be no trial for your app. If you’d like to offer a trial, you can select a value from the the **Free trial** dropdown.
+Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, **No free trial** is selected, and there will be no trial for your app. If you’d like to offer a trial, you can select a value from the **Free trial** dropdown.
 
 There are two types of trial you can choose, and you have the option to configure the date and time when the trial should start and stop being offered.
 
