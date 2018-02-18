@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Dev Center account.
 title: Add users, groups, and Azure AD applications to your Dev Center account
@@ -94,6 +94,7 @@ If one of your users needs to change their password they can do so themselves if
 1.  From the **Users** page, click the name of the user account that you want to edit.
 2.  Click the **Reset password** button at the bottom of the page.
 3.  A confirmation page will appear showing the login info for the user, including a temporary password.
+
     > [!IMPORTANT]
     >  Be sure to print or copy this info and provide it to the user, as you won't be able to access the temporary password after you leave this page.
 

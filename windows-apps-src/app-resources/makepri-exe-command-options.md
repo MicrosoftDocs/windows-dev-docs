@@ -108,6 +108,9 @@ Help:
 
 The `dump` command outputs a dumped xml file containing a list of all resources in a specified PRI file. Run `MakePri.exe dump /?` to see detailed help for this command.
 
+> [!NOTE]
+> A schema-free resource pack is one that was created with the *omitSchemaFromResourcePacks* switch in the PRI config file. To dump a schema-free resource pack, use the switch `/es <main_package_PRI_file>`.
+
 ```
 C:\>makepri dump /?
 

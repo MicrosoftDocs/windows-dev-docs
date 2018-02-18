@@ -1,5 +1,5 @@
 ﻿---
-title: Troubleshooting ARM32 apps on ARM
+title: Troubleshooting ARM32 UWP apps
 author: msatranjr
 description: Common issues with ARM32 apps when running on ARM, and how to fix them. 
 ms.author: misatran
@@ -11,17 +11,17 @@ keywords: windows 10 s, always connected, ARM32 apps on ARM, windows 10 on ARM, 
 ms.localizationpriority: medium
 ---
 
-# Troubleshooting ARM32 apps on ARM
-If your ARM32 app isn't working correctly on ARM, here's some guidance that may help. 
+# Troubleshooting ARM32 UWP apps
+If your ARM32 UWP app isn't working correctly on ARM, here's some guidance that may help. 
 
 ## Common issues
 Here are some common issues to keep in mind when troubleshooting ARM32 apps.
 
 ### Using Windows 10 Mobile-only APIs on ARM-based processors 
-ARM32 apps may run into problems when using mobile-only APIs (for example,  **HardwareButtons**). To mitigate this, you can dynamically detect whether your app is running on Windows 10 Mobile before calling these APIs. Follow the guidance in the blog post, [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+ARM32 apps may run into problems when using mobile-only APIs (for example, **HardwareButtons**). To mitigate this, you can dynamically detect whether your app is running on Windows 10 Mobile before calling these APIs. Follow the guidance in the blog post, [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 ### Including dependencies not supported by UWP apps
-Universal Windows Platform (UWP) apps that aren't property built with Visual Studio and the UWP SDK may have dependencies on OS components that aren't available to ARM32 apps running on an ARM64 system. Examples of these dependencies include:
+Universal Windows Platform (UWP) apps that aren't properly built with Visual Studio and the UWP SDK may have dependencies on OS components that aren't available to ARM32 apps running on an ARM64 system. Examples of these dependencies include:
 
 - Expecting parts of the .NET Framework to be available.
 - Referencing third-party .NET components that aren't compatible with UWP.
