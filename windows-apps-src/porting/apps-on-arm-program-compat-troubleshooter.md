@@ -14,8 +14,6 @@ ms.localizationpriority: medium
 # Program Compatibility Troubleshooter on ARM
 Emulation to support x86 apps is a new feature created for Windows 10 on ARM64. Sometimes the emulation performs optimizations that don't result in the best experience. You can use the Program Compatibility Troubleshooter to toggle emulation settings for your x86 app, reducing the default optimizations and potentially increasing compatibility.
 
-Note that these settings don't bypass the inherent limitations described in [Known issues with apps and experiences on ARM](apps-on-arm-limitations.md).
-
 ## Start the Program Compatibility Troubleshooter
 You start the [Program Compatibility Troubleshooter](https://support.microsoft.com/en-us/help/15078/windows-make-older-programs-compatible) manually in the same way on any Windows 10 PC: right-click an executable (.exe) file and select **Troubleshoot compatibility**. This screen appears.
 
@@ -58,3 +56,4 @@ You can also select multi-core settings, as shown here.
 
 These settings change the number of memory barriers used to synchronize memory accesses between cores in apps during emulation. **Fast** is the default mode, but the **strict** and **very strict** options will increase the number of barriers. This slows down the app, but reduces the risk of app errors. The **single-core** option removes all barriers but forces all app threads to run on a single core.
 
+If changing a specific setting resolves your issue, please email *woafeedback@microsoft.com* with details, so that we may incorporate your feedback.
