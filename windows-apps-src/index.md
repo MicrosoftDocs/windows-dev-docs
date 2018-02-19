@@ -122,6 +122,9 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                         <p>
                             <a href="apps-for-education/index.md">Education apps</a>
                         </p>
+                        <p>
+                            <a href="porting/apps-on-arm.md">Windows 10 on ARM</a>
+                        </p>
                     </div>
                 </div>
             </div>
