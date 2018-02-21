@@ -4,7 +4,7 @@ ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 ms.author: lahugh
-ms.date: 04/14/2017
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,8 +14,7 @@ ms.localizationpriority: medium
 # File access permissions
 
 
-
-Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
+Universal Windows Apps (apps) can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 
 ## The locations that all apps can access
 
@@ -191,10 +190,13 @@ When you create a new app, you can access the following file system locations by
 
 In addition to the default locations, an app can access additional files and folders by declaring capabilities in the app manifest (see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968)), or by calling a file picker to let the user pick files and folders for the app to access (see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md)).
 
+App's that that declare the [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension, have file-system permissions from the directory that they are launched from in the console window, and downwards.
+
 The following table lists additional locations that you can access by declaring a capability (or capabilities) and using the associated [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API:
 
 | Location | Capability | Windows.Storage API |
 |----------|------------|---------------------|
+| All files that the user has access to. For example: documents, pictures, photos, downloads, desktop, OneDrive, etc. | broadFileSystemAccess<br><br>This is a restricted capability. On first use, the system will prompt the user to allow access. Access is configurable in Settings > Privacy > File system. If you submit an app to the Store that declares this capability, you will need to supply additional descriptions of why your app needs this capability, and how it intends to use it. | n/a |
 | Documents | DocumentsLibrary <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user’s OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | Music     | MusicLibrary <br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | Pictures  | PicturesLibrary<br> Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
@@ -203,6 +205,22 @@ The following table lists additional locations that you can access by declaring 
 | Homegroup libraries  | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | Media server devices (DLNA) | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | Universal Naming Convention (UNC) folders | A combination of the following capabilities is needed. <br><br>The home and work networks capability: <br>- PrivateNetworkClientServer <br><br>And at least one internet and public networks capability: <br>- InternetClient <br>- InternetClientServer <br><br>And, if applicable, the domain credentials capability:<br>- EnterpriseAuthentication <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. | Retrieve a folder using: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Retrieve a file using: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+
+**Example**
+
+This example adds the restricted `broadFileSystemAccess` capability. In addition to specifying the capability, the `rescap` namespace must be added, and is also added to `IgnorableNamespaces`:
+
+``` xaml
+<Package
+  ...
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp uap5 rescap">
+
+...
+<Capabilities>
+    <rescap:Capability Name="broadFileSystemAccess" />
+</Capabilities>
+```
 
 > [!NOTE]
 > For a complete list of app capabilities, see [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
