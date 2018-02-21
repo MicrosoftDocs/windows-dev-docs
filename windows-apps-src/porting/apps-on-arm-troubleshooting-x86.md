@@ -41,3 +41,6 @@ The ARM64 Win32 SDK support will be coming soon. Also, see [Building ARM64 Drive
 
 ## Debugging
 To investigate your app's behavior in more depth, see [Debugging on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.
+
+## Virtual Machines
+The current generation of Qualcomm Snapdragon processors do not support the Windows Hypervisor Platform. Hence, running virtual machines using Hyper-V will not work.
