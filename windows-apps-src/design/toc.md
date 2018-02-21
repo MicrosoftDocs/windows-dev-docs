@@ -215,6 +215,7 @@
 ### [Accessibility checklist](accessibility/accessibility-checklist.md)
 ### [Expose basic accessibility information](accessibility/basic-accessibility-information.md)
 ### [Keyboard accessibility](accessibility/keyboard-accessibility.md)
+### [Landmarks and Headings](accessibility/landmarks-and-headings.md)
 ### [High-contrast themes](accessibility/high-contrast-themes.md)
 ### [Accessible text requirements](accessibility/accessible-text-requirements.md)
 ### [Accessibility practices to avoid](accessibility/practices-to-avoid.md)
