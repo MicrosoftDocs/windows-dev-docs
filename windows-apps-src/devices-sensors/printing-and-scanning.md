@@ -18,7 +18,6 @@ This section describes how to print and scan from your Universal Windows app.
 
 | Topic | Description | 
 |-------|-------------|
-| [Epson ESC/POS with formatting](epson-esc-pos-with-formatting.md) | Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer. |
 | [Print from your app](print-from-your-app.md) | Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. |
 | [Customize the print preview UI](customize-the-print-preview-ui.md) | This section describes how to customize the print options and settings in the print preview UI. |
 | [Customize the print workflow](print-workflow-customize.md) | This section describes how to create custom print workflow experiences to meet the needs of your organization.  |
