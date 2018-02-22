@@ -1,701 +1,729 @@
 {
-    "type": "object",
-    "properties": {
-        "ProductId": {
-            "type": "string",
-            "pattern": "^[0-9A-Z]{12}$"
-        },
-        "ProductKind": {
-            "type": "string"
-        },
-        "LocalizedProperties": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 1,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "DeveloperName": {
-                        "type": [ "string", "null" ]
-                    },
-                    "PublisherName": {
-                        "type": [ "string", "null" ]
-                    },
-                    "PublisherWebsiteUri": {
-                        "type": [ "string", "null" ]
-                    },
-                    "SupportUri": {
-                        "type": [ "string", "null" ]
-                    },
-                    "EligibilityProperties": {
-                        "type": [ "object", "null" ],
-                        "properties": {
-                            "Affirmations": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/definitions/affirmationDescription"
-                                }
-                            },
-                            "Remediations": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/definitions/remediationDescription"
-                                }
-                            }
-                        },
-                        "additionalProperties": false
-                    },
-                    "ProductTitle": {
-                        "type": "string"
-                    },
-                    "ProductDescription": {
-                        "type": [ "string", "null" ]
-                    },
-                    "Language": {
-                        "type": "string"
-                    },
-                    "Images": {
-                        "type": [ "array", "null" ],
-                        "items": {
-                            "$ref": "#/definitions/image"
-                        }
-                    },
-                    "Videos": {
-                        "type": [ "array", "null" ],
-                        "items": {
-                            "$ref": "#/definitions/video"
-                        }
-                    },
-                    "SearchTitles": {
-                        "type": [ "array", "null" ],
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "SearchTitleType": {
-                                    "type": "string"
-                                },
-                                "SearchTitleString": {
-                                    "type": "string"
-                                }
-                            },
-                            "required": [
-                                "SearchTitleType",
-                                "SearchTitleString"
-                            ]
-                        }
-                    }
-                },
-                "required": [
-                    "ProductTitle",
-                    "Language"
-                ],
-                "additionalProperties": false
-            }
-        },
-        "MarketProperties": {
-            "type": [ "array", "null" ],
-            "minItems": 0,
-            "maxItems": 1,
-            "items": {
-                "type": "object",
-                "properties": {
-                    "RelatedProducts": {
-                        "type": [ "array", "null" ],
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "RelationshipType": {
-                                    "type": "string"
-                                },
-                                "RelatedProductId": {
-                                    "type": "string",
-                                    "pattern": "^[0-9A-Z]{12}$"
-                                }
-                            },
-                            "required": [
-                                "RelationshipType",
-                                "RelatedProductId"
-                            ]
-                        }
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "Properties": {
+  "type": "object",
+  "properties": {
+    "ProductId": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{12}$"
+    },
+    "ProductKind": {
+      "type": "string"
+    },
+    "LocalizedProperties": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "DeveloperName": {
+            "type": [ "string", "null" ]
+          },
+          "PublisherName": {
+            "type": [ "string", "null" ]
+          },
+          "PublisherWebsiteUri": {
+            "type": [ "string", "null" ]
+          },
+          "SupportUri": {
+            "type": [ "string", "null" ]
+          },
+          "EligibilityProperties": {
             "type": [ "object", "null" ],
             "properties": {
-                "InAppOfferToken": {
-                    "type": "string"
-                },
-                "PackageFamilyName": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+              "Affirmations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/affirmationDescription"
                 }
+              },
+              "Remediations": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/remediationDescription"
+                }
+              }
             },
             "additionalProperties": false
-        },
-        "DisplaySkuAvailabilities": {
-            "type": "array",
-            "minItems": 1,
+          },
+          "ProductTitle": {
+            "type": "string"
+          },
+          "ProductDescription": {
+            "type": [ "string", "null" ]
+          },
+          "Language": {
+            "type": "string"
+          },
+          "Images": {
+            "type": [ "array", "null" ],
             "items": {
-                "$ref": "#/definitions/sku"
+              "$ref": "#/definitions/image"
             }
-        }
-    },
-    "required": [
-        "ProductId",
-        "ProductKind",
-        "LocalizedProperties",
-        "DisplaySkuAvailabilities"
-    ],
-    "format": "Product",
-    "definitions": {
-        "sku": {
-            "properties": {
-                "Sku": {
-                    "type": "object",
-                    "properties": {
-                        "SkuId": {
-                            "type": "string",
-                            "pattern": "^[0-9A-Z]{4}$"
-                        },
-                        "Properties": {
-                            "type": "object",
-                            "properties": {
-                                "FulfillmentType": {
-                                    "type": [ "string", "null" ]
-                                },
-                                "CustomDeveloperData": {
-                                    "type": [ "string", "null" ]
-                                },
-                                "IsTrial": {
-                                    "type": [ "boolean", "null" ]
-                                },
-                                "SkuDisplayRank": {
-                                    "type": [ "integer", "null" ]
-                                },
-                                "BundledSkus": {
-                                    "type": [ "array", "null" ],
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "BigId": {
-                                                "type": "string",
-                                                "pattern": "^[0-9A-Z]{12}(?:/[0-9A-Z]{4})?$"
-                                            }
-                                        },
-                                        "additionalProperties": false
-                                    }
-                                },
-                                "ConsumableQuantity": {
-                                    "type": "integer",
-                                    "minimum": 1,
-                                    "format": "ConsumableQuantity"
-                                },
-                                "IsRepurchasable": {
-                                    "type": "boolean"
-                                }
-                            },
-                            "required": [],
-                            "additionalProperties": false,
-                            "format": "SkuProperties"
-                        },
-                        "LocalizedProperties": {
-                            "type": "array",
-                            "minItems": 0,
-                            "maxItems": 1,
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "SkuTitle": {
-                                        "type": [ "string", "null" ]
-                                    },
-                                    "SkuDescription": {
-                                        "type": [ "string", "null" ]
-                                    },
-                                    "Language": {
-                                        "type": "string"
-                                    },
-                                    "Images": {
-                                        "type": [ "array", "null" ],
-                                        "items": {
-                                            "$ref": "#/definitions/image"
-                                        }
-                                    },
-                                    "Videos": {
-                                        "type": [ "array", "null" ],
-                                        "items": {
-                                            "$ref": "#/definitions/video"
-                                        }
-                                    },
-                                    "LegalText": {
-                                        "type": [ "object", "null" ],
-                                        "properties": {
-                                            "Tou": {
-                                                "type": [ "string", "null" ]
-                                            },
-                                            "TouUri": {
-                                                "type": [ "string", "null" ]
-                                            },
-                                            "Copyright": {
-                                                "type": [ "string", "null" ]
-                                            },
-                                            "CopyrightUri": {
-                                                "type": [ "string", "null" ]
-                                            },
-                                            "PrivacyPolicy": {
-                                                "type": [ "string", "null" ]
-                                            },
-                                            "PrivacyPolicyUri": {
-                                                "type": [ "string", "null" ]
-                                            },
-                                            "AdditionalLicenseTerms": {
-                                                "type": [ "string", "null" ]
-                                            }
-                                        },
-                                        "additionalProperties": false
-                                    },
-                                    "SkuDisplayRank": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "Dimension": {
-                                                    "type": "string"
-                                                },
-                                                "Rank": {
-                                                    "type": "integer"
-                                                }
-                                            },
-                                            "additionalProperties": false
-                                        }
-                                    }
-                                },
-                                "required": [
-                                    "Language"
-                                ],
-                                "additionalProperties": false
-                            }
-                        },
-                        "RecurrencePolicy": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "properties": {
-                                "InitialDuration": {
-                                    "$ref": "#/definitions/duration"
-                                },
-                                "Duration": {
-                                    "$ref": "#/definitions/duration"
-                                },
-                                "IsRecurring": {
-                                    "type": [ "boolean", "null" ]
-                                },
-                                "HasTrial": {
-                                    "type": [ "boolean", "null" ]
-                                }
-                            },
-                            "required": [ "InitialDuration", "Duration" ],
-                            "additionalProperties": false
-                        },
-                        "CollectionData": {
-                            "$ref": "#/definitions/collectionData"
-                        }
-                    },
-                    "required": [
-                        "SkuId",
-                        "Properties",
-                        "LocalizedProperties"
-                    ],
-                    "additionalProperties": false
+          },
+          "Videos": {
+            "type": [ "array", "null" ],
+            "items": {
+              "$ref": "#/definitions/video"
+            }
+          },
+          "SearchTitles": {
+            "type": [ "array", "null" ],
+            "items": {
+              "type": "object",
+              "properties": {
+                "SearchTitleType": {
+                  "type": "string"
                 },
-                "Availabilities": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "$ref": "#/definitions/availability"
-                    }
+                "SearchTitleString": {
+                  "type": "string"
                 }
-            },
-            "format": "SKU",
-            "required": [
-                "Sku",
-                "Availabilities"
-            ],
-            "additionalProperties": false
+              },
+              "required": [
+                "SearchTitleType",
+                "SearchTitleString"
+              ]
+            }
+          }
         },
-        "availability": {
-            "type": "object",
-            "properties": {
-                "Conditions": {
+        "required": [
+          "ProductTitle",
+          "Language"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "MarketProperties": {
+      "type": [ "array", "null" ],
+      "minItems": 0,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "RelatedProducts": {
+            "type": [ "array", "null" ],
+            "items": {
+              "type": "object",
+              "properties": {
+                "RelationshipType": {
+                  "type": "string"
+                },
+                "RelatedProductId": {
+                  "type": "string",
+                  "pattern": "^[0-9A-Z]{12}$"
+                }
+              },
+              "required": [
+                "RelationshipType",
+                "RelatedProductId"
+              ]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "Properties": {
+      "type": [ "object", "null" ],
+      "properties": {
+        "InAppOfferToken": {
+          "type": "string"
+        },
+        "PackageFamilyName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Category": {
+          "type": "string"
+        },
+        "IsAwardable": {
+          "type": "boolean"
+        },
+        "IsColorizable": {
+          "type": "boolean"
+        },
+        "Is3DExportable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "DisplaySkuAvailabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/sku"
+      }
+    }
+  },
+  "required": [
+    "ProductId",
+    "ProductKind",
+    "LocalizedProperties",
+    "DisplaySkuAvailabilities"
+  ],
+  "format": "Product",
+  "definitions": {
+    "sku": {
+      "type": "object",
+      "properties": {
+        "Sku": {
+          "type": "object",
+          "properties": {
+            "SkuId": {
+              "type": "string",
+              "pattern": "^[0-9A-Z]{4}$"
+            },
+            "Properties": {
+              "type": "object",
+              "properties": {
+                "FulfillmentType": {
+                  "type": [ "string", "null" ]
+                },
+                "CustomDeveloperData": {
+                  "type": [ "string", "null" ]
+                },
+                "IsTrial": {
+                  "type": [ "boolean", "null" ]
+                },
+                "SkuDisplayRank": {
+                  "type": [ "integer", "null" ]
+                },
+                "BundledSkus": {
+                  "type": [ "array", "null" ],
+                  "items": {
                     "type": "object",
                     "properties": {
-                        "EndDate": {
-                            "type": "string",
-                            "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
-                        }
+                      "BigId": {
+                        "type": "string",
+                        "pattern": "^[0-9A-Z]{12}(?:/[0-9A-Z]{4})?$"
+                      }
                     },
-                    "required": [ "EndDate" ],
                     "additionalProperties": false
+                  }
                 },
-                "OrderManagementData": {
+                "ConsumableQuantity": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "format": "ConsumableQuantity"
+                },
+                "IsRepurchasable": {
+                  "type": "boolean"
+                },
+                "Packages": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "PackageUri": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [ "PackageUri" ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "format": "SkuProperties"
+            },
+            "LocalizedProperties": {
+              "type": "array",
+              "minItems": 0,
+              "maxItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "SkuTitle": {
+                    "type": [ "string", "null" ]
+                  },
+                  "SkuDescription": {
+                    "type": [ "string", "null" ]
+                  },
+                  "SkuButtonTitle": {
+                    "type": [ "string", "null" ]
+                  },
+                  "Language": {
+                    "type": "string"
+                  },
+                  "Images": {
+                    "type": [ "array", "null" ],
+                    "items": {
+                      "$ref": "#/definitions/image"
+                    }
+                  },
+                  "Videos": {
+                    "type": [ "array", "null" ],
+                    "items": {
+                      "$ref": "#/definitions/video"
+                    }
+                  },
+                  "LegalText": {
                     "type": [ "object", "null" ],
                     "properties": {
-                        "Price": {
-                            "type": "object",
-                            "properties": {
-                                "ListPrice": {
-                                    "type": "number"
-                                },
-                                "CurrencyCode": {
-                                    "enum": [ "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BOV", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "INR", "IQD", "IRR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MXV", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SRD", "SSP", "STD", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "USN", "USS", "UYI", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XFU", "XOF", "XPD", "XPF", "XPT", "XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW" ]
-                                },
-                                "MSRP": {
-                                    "type": "number"
-                                },
-                                "RecurrencePrice": {
-                                    "type": [ "number", "null" ]
-                                }
-                            },
-                            "required": [
-                                "ListPrice",
-                                "CurrencyCode",
-                                "MSRP"
-                            ],
-                            "additionalProperties": false
-                        }
+                      "Tou": {
+                        "type": [ "string", "null" ]
+                      },
+                      "TouUri": {
+                        "type": [ "string", "null" ]
+                      },
+                      "Copyright": {
+                        "type": [ "string", "null" ]
+                      },
+                      "CopyrightUri": {
+                        "type": [ "string", "null" ]
+                      },
+                      "PrivacyPolicy": {
+                        "type": [ "string", "null" ]
+                      },
+                      "PrivacyPolicyUri": {
+                        "type": [ "string", "null" ]
+                      },
+                      "AdditionalLicenseTerms": {
+                        "type": [ "string", "null" ]
+                      }
                     },
-                    "required": [ "Price" ],
                     "additionalProperties": false
-                },
-                "AvailabilityId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Z]{12}$"
-                },
-                "DisplayRank": {
-                    "type": "integer"
-                },
-                "RemediationRequired": {
-                    "type": "boolean"
-                },
-                "Remediations": {
+                  },
+                  "SkuDisplayRank": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/remediation"
+                      "type": "object",
+                      "properties": {
+                        "Dimension": {
+                          "type": "string"
+                        },
+                        "Rank": {
+                          "type": "integer"
+                        }
+                      },
+                      "additionalProperties": false
                     }
+                  }
                 },
-                "AffirmationId": {
-                    "type": "string"
-                },
-                "Actions": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
+                "required": [
+                  "Language"
+                ],
+                "additionalProperties": false
+              }
             },
-            "format": "Availability",
-            "required": [
-                "Conditions",
-                "AvailabilityId",
-                "DisplayRank",
-                "Actions"
-            ],
-            "additionalProperties": false
+            "RecurrencePolicy": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "InitialDuration": {
+                  "$ref": "#/definitions/duration"
+                },
+                "Duration": {
+                  "$ref": "#/definitions/duration"
+                },
+                "IsRecurring": {
+                  "type": [ "boolean", "null" ]
+                },
+                "HasTrial": {
+                  "type": [ "boolean", "null" ]
+                }
+              },
+              "required": [ "InitialDuration", "Duration" ],
+              "additionalProperties": false
+            },
+            "CollectionData": {
+              "$ref": "#/definitions/collectionData"
+            }
+          },
+          "required": [
+            "SkuId",
+            "Properties",
+            "LocalizedProperties"
+          ],
+          "additionalProperties": false
         },
-        "duration": {
-            "type": "object",
-            "properties": {
-                "UnitType": {
-                    "enum": [ "Year", "Month", "Week", "Day", "Hour", "Minute" ]
-                },
-                "Units": {
-                    "type": "integer"
-                }
-            },
-            "format": "Duration",
-            "required": [ "Units" ],
-            "additionalProperties": false
-        },
-        "collectionData": {
-            "type": "object",
-            "properties": {
-                "productId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Z]{12}$"
-                },
-                "skuId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Z]{4}$"
-                },
-                "isTrial": {
-                    "type": [ "boolean", "null" ]
-                },
-                "campaignId": {
-                    "type": [ "string", "null" ]
-                },
-                "devOfferId": {
-                    "type": [ "string", "null" ]
-                },
-                "acquiredDate": {
-                    "type": "string",
-                    "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
-                },
-                "endDate": {
-                    "type": "string",
-                    "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
-                },
-                "startDate": {
-                    "type": "string",
-                    "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
-                },
-                "modifiedDate": {
-                    "type": "string",
-                    "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
-                },
-                "autoRenew": {
-                    "type": "boolean"
-                },
-                "additionalIds": {
-                    "type": "array",
-                    "items": {
-                        "type": "object"
-                    }
-                },
-                "fulfillmentData": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "inAppOfferToken": {
-                    "type": "string"
-                },
-                "isCacheable": {
-                    "type": "boolean"
-                },
-                "itemId": {
-                    "type": "string"
-                },
-                "localTicketReference": {
-                    "type": "string"
-                },
-                "musicTracksInfo": {
-                    "type": "array",
-                    "items": {
-                        "type": "object"
-                    }
-                },
-                "orderId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}?$"
-                },
-                "orderLineItemId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}?$"
-                },
-                "ownershipType": {
-                    "type": "string"
-                },
-                "productFamily": {
-                    "type": "string"
-                },
-                "productKind": {
-                    "type": "string"
-                },
-                "productTitleId": {
-                    "type": "string"
-                },
-                "purchasedCountry": {
-                    "type": "string"
-                },
-                "quantity": {
-                    "type": "integer"
-                },
-                "skuType": {
-                    "type": "string"
-                },
-                "status": {
-                    "type": "string"
-                },
-                "tags": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "transactionId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}?$"
-                }
-            },
-            "required": [
-                "acquiredDate",
-                "autoRenew",
-                "additionalIds",
-                "endDate",
-                "fulfillmentData",
-                "isCacheable",
-                "itemId",
-                "localTicketReference",
-                "modifiedDate",
-                "musicTracksInfo",
-                "orderId",
-                "orderLineItemId",
-                "ownershipType",
-                "productFamily",
-                "productId",
-                "productKind",
-                "productTitleId",
-                "purchasedCountry",
-                "skuId",
-                "skuType",
-                "startDate",
-                "status",
-                "tags",
-                "transactionId"
-            ],
-            "additionalProperties": false
-        },
-        "video": {
-            "properties": {
-                "Uri": {
-                    "type": "string"
-                },
-                "BackgroundColor": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "ForegroundColor": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "Caption": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "Width": {
-                    "type": "integer"
-                },
-                "Height": {
-                    "type": "integer"
-                },
-                "VideoPurpose": {
-                    "type": [ "string", "null" ]
-                },
-                "PreviewImage": {
-                    "$ref": "#/definitions/image"
-                }
-            },
-            "required": [
-                "Uri",
-                "Width",
-                "Height"
-            ],
-            "additionalProperties": false
-        },
-        "image": {
-            "properties": {
-                "Uri": {
-                    "type": "string"
-                },
-                "ImagePurpose": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "BackgroundColor": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "ForegroundColor": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "Caption": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "Width": {
-                    "type": "integer"
-                },
-                "Height": {
-                    "type": "integer"
-                }
-            },
-            "required": [
-                "Uri",
-                "Width",
-                "Height"
-            ],
-            "additionalProperties": false
-        },
-        "remediationDescription": {
-            "type": "object",
-            "properties": {
-                "RemediationId": {
-                    "type": "string"
-                },
-                "Description": {
-                    "type": "string"
-                }
-            },
-            "required": [ "RemediationId", "Description" ],
-            "additionalProperties": false
-        },
-        "remediation": {
-            "type": "object",
-            "properties": {
-                "RemediationId": {
-                    "type": "string"
-                },
-                "Url": {
-                    "type": "string"
-                },
-                "BigId": {
-                    "type": "string",
-                    "pattern": "^[0-9A-Z]{12}(?:/[0-9A-Z]{4})?$"
-                }
-            },
-            "required": [
-                "RemediationId"
-            ],
-            "additionalProperties": false
-        },
-        "affirmationDescription": {
-            "type": "object",
-            "properties": {
-                "AffirmationId": {
-                    "type": "string"
-                },
-                "AffirmationProductId": {
-                    "type": [ "string", "null" ],
-                    "pattern": "^[0-9A-Z]{12}$"
-                },
-                "Description": {
-                    "type": "string"
-                }
-            },
-            "required": [ "AffirmationId", "Description" ],
-            "additionalProperties": false
+        "Availabilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/availability"
+          }
         }
+      },
+      "format": "SKU",
+      "required": [
+        "Sku",
+        "Availabilities"
+      ],
+      "additionalProperties": false
     },
-    "additionalProperties": false
+    "availability": {
+      "type": "object",
+      "properties": {
+        "Conditions": {
+          "type": "object",
+          "properties": {
+            "EndDate": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
+            }
+          },
+          "required": [ "EndDate" ],
+          "additionalProperties": false
+        },
+        "OrderManagementData": {
+          "type": [ "object", "null" ],
+          "properties": {
+            "Price": {
+              "type": "object",
+              "properties": {
+                "ListPrice": {
+                  "type": "number"
+                },
+                "CurrencyCode": {
+                  "enum": [ "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BOV", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLF", "CLP", "CNY", "COP", "COU", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "INR", "IQD", "IRR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MXV", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SRD", "SSP", "STD", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "USN", "USS", "UYI", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XFU", "XOF", "XPD", "XPF", "XPT", "XSU", "XTS", "XUA", "XXX", "YER", "ZAR", "ZMW" ]
+                },
+                "MSRP": {
+                  "type": "number"
+                },
+                "RecurrencePrice": {
+                  "type": [ "number", "null" ]
+                }
+              },
+              "required": [
+                "ListPrice",
+                "CurrencyCode",
+                "MSRP"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [ "Price" ],
+          "additionalProperties": false
+        },
+        "AvailabilityId": {
+          "type": "string",
+          "pattern": "^[0-9A-Z]{12}$"
+        },
+        "DisplayRank": {
+          "type": "integer"
+        },
+        "RemediationRequired": {
+          "type": "boolean"
+        },
+        "Remediations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/remediation"
+          }
+        },
+        "AffirmationId": {
+          "type": "string"
+        },
+        "Actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "format": "Availability",
+      "required": [
+        "Conditions",
+        "AvailabilityId",
+        "DisplayRank",
+        "Actions"
+      ],
+      "additionalProperties": false
+    },
+    "duration": {
+      "type": "object",
+      "properties": {
+        "UnitType": {
+          "enum": [ "Year", "Month", "Week", "Day", "Hour", "Minute" ]
+        },
+        "Units": {
+          "type": "integer"
+        }
+      },
+      "format": "Duration",
+      "required": [ "Units" ],
+      "additionalProperties": false
+    },
+    "collectionData": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string",
+          "pattern": "^[0-9A-Z]{12}$"
+        },
+        "skuId": {
+          "type": "string",
+          "pattern": "^[0-9A-Z]{4}$"
+        },
+        "isTrial": {
+          "type": [ "boolean", "null" ]
+        },
+        "campaignId": {
+          "type": [ "string", "null" ]
+        },
+        "devOfferId": {
+          "type": [ "string", "null" ]
+        },
+        "acquiredDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
+        },
+        "endDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
+        },
+        "startDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
+        },
+        "modifiedDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?$"
+        },
+        "autoRenew": {
+          "type": "boolean"
+        },
+        "additionalIds": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "fulfillmentData": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "inAppOfferToken": {
+          "type": "string"
+        },
+        "isCacheable": {
+          "type": "boolean"
+        },
+        "itemId": {
+          "type": "string"
+        },
+        "localTicketReference": {
+          "type": "string"
+        },
+        "musicTracksInfo": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "orderId": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}?$"
+        },
+        "orderLineItemId": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}?$"
+        },
+        "ownershipType": {
+          "type": "string"
+        },
+        "productFamily": {
+          "type": "string"
+        },
+        "productKind": {
+          "type": "string"
+        },
+        "productTitleId": {
+          "type": "string"
+        },
+        "purchasedCountry": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        },
+        "skuType": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transactionId": {
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}?$"
+        }
+      },
+      "required": [
+        "acquiredDate",
+        "autoRenew",
+        "additionalIds",
+        "endDate",
+        "fulfillmentData",
+        "isCacheable",
+        "itemId",
+        "localTicketReference",
+        "modifiedDate",
+        "musicTracksInfo",
+        "orderId",
+        "orderLineItemId",
+        "ownershipType",
+        "productFamily",
+        "productId",
+        "productKind",
+        "productTitleId",
+        "purchasedCountry",
+        "skuId",
+        "skuType",
+        "startDate",
+        "status",
+        "tags",
+        "transactionId"
+      ],
+      "additionalProperties": false
+    },
+    "video": {
+      "properties": {
+        "Uri": {
+          "type": "string"
+        },
+        "BackgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ForegroundColor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Caption": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Width": {
+          "type": "integer"
+        },
+        "Height": {
+          "type": "integer"
+        },
+        "VideoPurpose": {
+          "type": [ "string", "null" ]
+        },
+        "PreviewImage": {
+          "$ref": "#/definitions/image"
+        }
+      },
+      "required": [
+        "Uri",
+        "Width",
+        "Height"
+      ],
+      "additionalProperties": false
+    },
+    "image": {
+      "properties": {
+        "Uri": {
+          "type": "string"
+        },
+        "ImagePurpose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "BackgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ForegroundColor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Caption": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Width": {
+          "type": "integer"
+        },
+        "Height": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "Uri",
+        "Width",
+        "Height"
+      ],
+      "additionalProperties": false
+    },
+    "remediationDescription": {
+      "type": "object",
+      "properties": {
+        "RemediationId": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        }
+      },
+      "required": [ "RemediationId", "Description" ],
+      "additionalProperties": false
+    },
+    "remediation": {
+      "type": "object",
+      "properties": {
+        "RemediationId": {
+          "type": "string"
+        },
+        "Url": {
+          "type": "string"
+        },
+        "BigId": {
+          "type": "string",
+          "pattern": "^[0-9A-Z]{12}(?:/[0-9A-Z]{4})?$"
+        }
+      },
+      "required": [
+        "RemediationId"
+      ],
+      "additionalProperties": false
+    },
+    "affirmationDescription": {
+      "type": "object",
+      "properties": {
+        "AffirmationId": {
+          "type": "string"
+        },
+        "AffirmationProductId": {
+          "type": [ "string", "null" ],
+          "pattern": "^[0-9A-Z]{12}$"
+        },
+        "Description": {
+          "type": "string"
+        }
+      },
+      "required": [ "AffirmationId", "Description" ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
 }

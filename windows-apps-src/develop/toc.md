@@ -139,6 +139,7 @@
 ## [Pair devices](../devices-sensors/pair-devices.md)
 ## [Point of Service](../devices-sensors/point-of-service.md)
 ### [Getting started](../devices-sensors/pos-get-started.md)
+### [Epson ESC/POS with formatting](../devices-sensors/epson-esc-pos-with-formatting.md)
 ### [Hardware support](../devices-sensors/pos-device-support.md)
 ## [Sensors](../devices-sensors/sensors.md)
 ### [Calibrate sensors](../devices-sensors/calibrate-sensors.md)
