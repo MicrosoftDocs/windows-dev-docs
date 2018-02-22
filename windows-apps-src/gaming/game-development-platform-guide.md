@@ -46,12 +46,12 @@ For more information, see Prepare your Universal Windows Platform and [DirectX p
 ## Getting Started with DirectX Game Project Templates
 
 
-After setting up you development environment, you can use one of the DirectX related project templates to create your UWP DirectX game. Visual Studio 2015 has three templates available for creating new UWP DirectX projects, **DirectX 11 App (Universal Windows)**, **DirectX 12 App (Universal Windows)**, and **DirectX 11 and XAML App (Universal Windows)**. For more information, see [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
+After setting up your development environment, you can use one of the DirectX related project templates to create your UWP DirectX game. Visual Studio 2015 has three templates available for creating new UWP DirectX projects, **DirectX 11 App (Universal Windows)**, **DirectX 12 App (Universal Windows)**, and **DirectX 11 and XAML App (Universal Windows)**. For more information, see [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
 
 ## Windows 10 APIs
 
 
-Windows 10 provides a an extensive collection of APIs that are useful for game development. There are APIs for almost all aspects of games including, 3D Graphics, 2D Graphics, Audio, Input, Text Resources, User Interface, and networking.
+Windows 10 provides an extensive collection of APIs that are useful for game development. There are APIs for almost all aspects of games including, 3D Graphics, 2D Graphics, Audio, Input, Text Resources, User Interface, and networking.
 
 There are many APIs related to game development, but not all games need to use all of the APIs. For example, some games will only use 3D graphics and only make use of Direct3D, some games may only use 2D graphics and only make use of Direct2D, and still other games may make use of both. The following diagram shows the game development related APIs grouped by functionality type.
 
@@ -199,7 +199,7 @@ There are many APIs related to game development, but not all games need to use a
     <li>Lower resource usage</li>
     <li>Lower API call latency for retrieving input</li>
     <li>The ability to work with more than 4 gamepads at once</li>
-    <li>The ability to access addition Xbox One gamepad features, such as the trigger vibration motors</li>
+    <li>The ability to access additional Xbox One gamepad features, such as the trigger vibration motors</li>
     <li>The ability to be notified when controllers connect/disconnect via event instead of polling</li>
     <li>The ability to attribute input to a specific user (Windows.System.User)</li>
     </ul>

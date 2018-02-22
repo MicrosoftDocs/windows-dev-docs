@@ -1,10 +1,10 @@
 ﻿---
 author: jnHs
-Description: Set custom permissions for account users.
-title: Set custom permissions for account users
+Description: Set roles or custom permissions for account users.
+title: Set roles or custom permissions for account users
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 02/08/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,7 +25,7 @@ When determining what role or permissions to apply, keep in mind:
 -   A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
 
 > [!TIP]
-> This topic is specific to the Windows apps developer program. For information about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles).
+> This topic is specific to the Windows apps developer program. For info about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](https://msdn.microsoft.com/en-us/library/windows/desktop/mt826504#users).
 
 
 <span id="roles" />
@@ -76,13 +76,13 @@ To enable a permission for the user, toggle the box to the appropriate setting.
 - **Read/write**: The user will have access to make changes associated with the area, as well as viewing it.
 - **Mixed**: You can’t select this option directly, but the **Mixed** indicator will show if you have allowed a combination of access for that permission. For example, if you grant **Read only** access to **Pricing and availability** for **All products**, but then grant **Read/write** access to **Pricing and availability** for one specific product, the **Pricing and availability** indicator for **All products** will show as Mixed. The same applies if some products have **No access** for a permission, but others have **Read/write** and/or **Read only** access.
 
-For some permissions, such as those related to viewing analytic data, only **Read only** access can be granted. Note that in the current implementation, some permissions have no distinction between **Read only** and **Read/write** access. Please review the details for each permission to understand the specific capabilities granted by **Read only** and/or **Read/write** access.
+For some permissions, such as those related to viewing analytic data, only **Read only** access can be granted. Note that in the current implementation, some permissions have no distinction between **Read only** and **Read/write** access. Review the details for each permission to understand the specific capabilities granted by **Read only** and/or **Read/write** access.
 
 The specific details about each permission are described in the tables below.
 
 ## Account-level permissions
 
-The permissions in this section cannot be limited to specific products. Granting access to these permissions allows the user to have that permission for the entire account.
+The permissions in this section cannot be limited to specific products. Granting access to one of these permissions allows the user to have that permission for the entire account.
 
 <table>
     <colgroup>
