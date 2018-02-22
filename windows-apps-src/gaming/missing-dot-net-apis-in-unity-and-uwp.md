@@ -4,7 +4,7 @@ title: Missing .NET APIs in Unity and UWP
 description: Learn about the missing .NET APIs when building UWP games in Unity, and workarounds for common issues.
 ms.assetid: 28A8B061-5AE8-4CDA-B4AB-2EF0151E57C1
 ms.author: elcowle
-ms.date: 10/13/2017
+ms.date: 2/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -111,6 +111,35 @@ private void UsingThreads()
 #endif
 }
 ```
+
+### Security
+
+Some of the **System.Security.*** namespaces, such as [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0), are not available when you build a Unity game for UWP. In these cases, use the **Windows.Security.*** APIs, which cover much of the same functionality.
+
+The following example simply gets the certificates from a certificate store with the given name:
+
+```cs
+private async void GetCertificatesAsync(string certStoreName)
+    {
+#if NETFX_CORE
+        IReadOnlyList<Certificate> certs = await CertificateStores.FindAllAsync();
+        IEnumerable<Certificate> myCerts = 
+            certs.Where((certificate) => certificate.StoreName == certStoreName);
+#else
+        X509Store store = new X509Store(certStoreName, StoreLocation.CurrentUser);
+        store.Open(OpenFlags.OpenExistingOnly);
+        X509Certificate2Collection certs = store.Certificates;
+#endif
+    }
+```
+
+See [Security](https://docs.microsoft.com/windows/uwp/security/) for more information about using the WinRT security APIs.
+
+### Networking
+
+Some of the **System&period;Net.*** namespaces, such as [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0), are also not available when building a Unity game for UWP. For most of these APIs, use the corresponding **Windows.Networking.*** and **Windows.Web.*** WinRT APIs to get similar functionality. See [Networking and web services](https://docs.microsoft.com/windows/uwp/networking/) for more information.
+
+In the case of **System.Net.Mail**, use the [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) namespace. See [Send email](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email) for more information.
 
 ## See also
 
