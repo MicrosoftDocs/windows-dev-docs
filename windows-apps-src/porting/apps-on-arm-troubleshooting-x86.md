@@ -43,4 +43,4 @@ The ARM64 Win32 SDK support will be coming soon. Also, see [Building ARM64 Drive
 To investigate your app's behavior in more depth, see [Debugging on ARM](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-arm64) to learn more about tools and strategies for debugging on ARM.
 
 ## Virtual Machines
-The current generation of Qualcomm Snapdragon processors do not support the Windows Hypervisor Platform. Hence, running virtual machines using Hyper-V will not work.
+The Windows Hypervisor platform is not supported on the Qualcomm Snapdragon 835 Mobile PC Platform. Hence, running virtual machines using Hyper-V will not work. We continue to make investments in these technologies on future Qualcomm chipsets. 

@@ -16,6 +16,8 @@ Sample feature text. With a sample image below!
 
 When you override your app's base price for a specific market, you are no longer limited to choosing one of the standard price tiers; you now have the option to enter a free-form price in the market's local currency. For more info, see [Set and schedule app pricing](../publish/set-and-schedule-app-pricing.md)
 
+### Landmarks and Headings supported for accessible technology (AT)
+Landmarks and headings define sections of a user interface that aid in efficient navigation for users of assistive technology such as screen readers. For more information see [Landmarks and Headings](../design/accessibility/landmarks-and-headings.md).
 
 ## Developer Guidance
 

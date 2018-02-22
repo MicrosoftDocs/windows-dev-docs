@@ -35,6 +35,7 @@ Accessibility is about building experiences that make your application available
 | [Accessibility checklist](accessibility-checklist.md) | Provides a checklist to help you ensure that your UWP app is accessible. |
 | [Expose basic accessibility information](basic-accessibility-information.md) | Basic accessibility info is often categorized into name, role, and value. This topic describes code to help your app expose the basic information that assistive technologies need. |
 | [Keyboard accessibility](keyboard-accessibility.md) | If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all. |
+| [Landmarks and Headings](landmarks-and-headings.md) | Landmarks and headings define sections of a user interface that aid in efficient navigation for users of assistive technology such as screen readers. |
 | [High-contrast themes](high-contrast-themes.md) | Describes the steps needed to ensure your UWP app is usable when a high-contrast theme is active. |
 | [Accessible text requirements](accessible-text-requirements.md) | This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a UWP app can have, and best practices for text in graphics. |
 | [Accessibility practices to avoid](practices-to-avoid.md) | Lists the practices to avoid if you want to create an accessible UWP app. |
