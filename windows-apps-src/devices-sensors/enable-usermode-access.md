@@ -242,9 +242,7 @@ The following requirements must be observed when declaring GPIO pins:
   * Must be one of PullUp, PullDown, or PullNone. It cannot be PullDefault.
   * The pull configuration must match the power-on state of the pin. Putting the pin in the specified pull mode from power-on state must not change the state of the pin. For example, if the datasheet specifies that the pin comes up with a pull up, specify PinConfig as PullUp.  
 
-Firmware, UEFI, and driver initialization code should not change the state of a pin from its power-on state during boot. Only the user knows what’s attached to a pin and therefore which state transitions are safe. The power-on state of each pin must be documented so that users can design hardware that correctly interfaces with a pin. A pin must not change state unexpectedly during boot. 
-
-If an exposed pin has multiple alternate functions, it is the responsibility of firmware to initialize the pin in the correct mux configuration for subsequent use by the OS. Dynamically changing the function of a pin (“muxing”) is not currently supported on Windows. 
+Firmware, UEFI, and driver initialization code should not change the state of a pin from its power-on state during boot. Only the user knows what’s attached to a pin and therefore which state transitions are safe. The power-on state of each pin must be documented so that users can design hardware that correctly interfaces with a pin. A pin must not change state unexpectedly during boot.  
 
 #### Supported Drive Modes 
 
@@ -271,8 +269,8 @@ If a GPIO signal goes through a level shifter before reaching an exposed header,
 
 Windows supports two pin numbering schemes: 
 
-* Sequential Pin Numbering – Users see numbers like 0, 1, 2 … up to the number of exposed pins. 0 is the first GpioIo resource declared in ASL, 1 is the second GpioIo resource declared in ASL, and so on. 
-* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, … .  
+* Sequential Pin Numbering – Users see numbers like 0, 1, 2... up to the number of exposed pins. 0 is the first GpioIo resource declared in ASL, 1 is the second GpioIo resource declared in ASL, and so on. 
+* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, ... .  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
@@ -298,7 +296,9 @@ Choose the numbering scheme that is most compatible with existing published docu
 
 ### UART 
 
-UART is not supported on Raspberry Pi at the time of writing, so the following UART declaration is from MinnowBoardMax. 
+If your UART driver uses `SerCx` or `SerCx2`, you can use rhproxy to expose the driver to usermode. UART drivers that create a device interface of type `GUID_DEVINTERFACE_COMPORT` do not need to use rhproxy. The inbox `Serial.sys` driver is one of these cases.
+
+To expose a `SerCx`-style UART to usermode, declare a `UARTSerialBus` resource as follows.
 
 ```cpp
 // Index 2 
@@ -650,11 +650,42 @@ The implication of dynamic pin muxing for `SerCx` and `SpbCx` controller drivers
 
 ## Verification 
 
-When you’ve finished authoring your ASL, you should run the [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) tests to verify that all resources are exposed correctly and the underlying busses meet the functional contract of the API. The following sections describe how to load the rhproxy device node for testing without recompiling your firmware and how to run the HLK tests. 
+When you're ready to test rhproxy, it's helpful to use the following step-by-step procedure.
+
+1. Verify that each `SpbCx`, `GpioClx`, and `SerCx` controller driver is loading and operating correctly
+1. Verify that `rhproxy` is present on the system. Some editions and builds of Windows do not have it.
+1. Compile and load your rhproxy node using `ACPITABL.dat`
+1. Verify that the `rhproxy` device node exists
+1. Verify that `rhproxy` is loading and starting
+1. Verify that the expected devices are exposed to usermode
+1. Verify that you can interact with each device from the command line
+1. Verify that you can interact with each device from a UWP app
+1. Run HLK tests
+
+### Verify controller drivers
+
+Since rhproxy exposes other devices on the system to usermode, it only works if those devices are already working. The first step is to verify that those devices - the I2C, SPI, GPIO controllers you wish to expose - are already working.
+
+At the command prompt, run
+```
+devcon status *
+```
+
+Look at the output and verify that all devices of interest are started. If a device has a problem code, you need to troubleshoot why that device is not loading. All devices should have been enabled during initial platform bringup. Troubleshooting `SpbCx`, `GpioClx`, or `SerCx` controller drivers is beyond the scope of this document.
+
+### Verify that rhproxy is present on the system
+
+Verify that the `rhproxy` service is present on the system.
+
+```
+reg query HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\rhproxy
+```
+
+If the reg key is not present, rhproxy doesn't exist on your system. Rhproxy is present on all builds of IoT Core and Windows Enterprise build 15063 and later.
 
 ### Compile and load ASL with ACPITABL.dat 
 
-The first step is to compile and load the ASL file onto your system under test. We recommend using ACPITABL.dat during development and validation as it does not require a full UEFI rebuild to test ASL changes. 
+Now that you've authored an rhproxy ASL node, it's time to compile and load it. You can compile the rhproxy node into a standalone AML file that can be appended to the system ACPI tables. Alternatively, if you have access to your system's ACPI sources, you can insert the rhproxy node directly to your platform's ACPI tables. However, during initial bringup it may be easier to use `ACPITABL.dat`.
 
 1. Create a file named yourboard.asl and put the RHPX device node inside a DefinitionBlock: 
 ```
@@ -669,7 +700,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.	Download the WDK and get asl.exe
+2.	Download the [WDK](https://docs.microsoft.com/windows-hardware/drivers/download-the-wdk) and find `asl.exe` at `C:\Program Files (x86)\Windows Kits\10\Tools\x64\ACPIVerify`
 3.	Run the following command to generate ACPITABL.dat:
 ```
 asl.exe yourboard.asl
@@ -679,14 +710,99 @@ asl.exe yourboard.asl
 ```
 bcdedit /set testsigning on
 ```
-6.	Reboot the system under test. The system will append the ACPI tables defined in ACPITABL.dat to the system firmware tables. 
-7.	Verify that the RHPX device node was added to the system:
+6.	Reboot the system under test. The system will append the ACPI tables defined in ACPITABL.dat to the system firmware tables.
+
+### Verify that the rhproxy device node exists
+
+Run the following command to enumerate the rhproxy device node.
 ```
 devcon status *msft8000
 ```
-The output of devcon should indicate that the device is present, although the driver may have failed to initialize if there are bugs in the ASL that need to be worked out.
+The output of devcon should indicate that the device is present. If the device node is not present, the ACPI tables were not successfully added to the system.
+
+### Verify that rhproxy is loading and starting
+
+Check the status of rhproxy:
+```
+devcon status *msft8000
+```
+If the output indicates that rhproxy is started, rhproxy has loaded and started successfully. If you see a problem code, you need to investigate. Some common problem codes are:
+* Problem 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - The system is not starting rhproxy because one of it's dependencies has failed to load. This means that either the resources passed to rhproxy point to invalid ACPI nodes, or the target devices are not starting. First, double check that all devices are running successfully (see 'Verify controller drivers' above). Then, double check your ASL and ensure that all your resource paths (e.g. `\_SB.I2C1`) are correct and point to valid nodes in your DSDT.
+* Problem 10 - `CM_PROB_FAILED_START` - Rhproxy failed to start, most likely because of a resource parsing issue. Go over your ASL and double check resource indices in the DSD, and verify that GPIO resources are specified in increasing pin number order.
+
+### Verify that the expected devices are exposed to usermode
+
+Now that rhproxy is running, it should have created devices interfaces that can be accessed by usermode. We will use several command line tools to enumerate devices and see that they're present.
+
+Clone the [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) repository and build the `GpioTestTool`, `I2cTestTool`, `SpiTestTool`, and `Mincomm` samples. Copy the tools to your device under test and use the following commands to enumerate devices.
+```
+I2cTestTool.exe -list
+SpiTestTool.exe -list
+GpioTestTool.exe -list
+MinComm.exe -list
+```
+You should see your devices and friendly names listed. If you don't see the right devices and friendly names, double check your ASL.
+
+### Verify each device on the command line
+
+The next step is to use the command line tools to open and interact with the devices.
+
+I2CTestTool example:
+```
+I2cTestTool.exe 0x55 I2C1
+> write {1 2 3}
+> read 3
+> writeread {1 2 3} 3
+```
+
+SpiTestTool example:
+```
+SpiTestTool.exe -n SPI1
+> write {1 2 3}
+> read 3
+```
+
+GpioTestTool example:
+```
+GpioTestTool.exe 12
+> setdrivemode output
+> write 0
+> write 1
+> setdrivemode input
+> read
+> interrupt on
+> interrupt off
+```
+
+MinComm (serial) example. Connect Rx to Tx before running:
+```
+MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\0000000000000006"
+(type characters and see them echoed back)
+```
+
+### Verify each device from a UWP app
+
+Use the following samples to validate that devices work from UWP.
+
+| Sample | Link |
+|------|------|
+| IoT-GPIO | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-GPIO |
+| IoT-I2C | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-I2C | 
+| IoT-SPI |	https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/IoT-SPI |
+| CustomSerialDeviceAccess | https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomSerialDeviceAccess |
 
 ### Run the HLK Tests
+
+Download the [Hardware Lab Kit (HLK)](https://docs.microsoft.com/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
+ * [GPIO WinRT Functional and Stress Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
+ * [I2C WinRT Write Tests (EEPROM Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)
+ * [I2C WinRT Read Tests (EEPROM Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/ca91c2d2-4615-4a1b-928e-587ab2b69b04)
+ * [I2C WinRT Nonexistent Slave Address Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/2746ad72-fe5c-4412-8231-f7ed53d95e71)
+ * [I2C WinRT Advanced Functional Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/a60f5a94-12b2-4905-8416-e9774f539f1d)
+ * [SPI WinRT Clock Frequency Verification Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/50cf9ccc-bbd3-4514-979f-b0499cb18ed8)
+ * [SPI WinRT IO Transfer Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/00c892e8-c226-4c71-9c2a-68349fed7113)
+ * [SPI WinRT Stride Verification Tests](https://docs.microsoft.com/windows-hardware/test/hlk/testref/20c6b079-62f7-4067-953f-e252bd271938)
+ * [SPI WinRT Transfer Gap Detection Tests (mbed LPC1768 Required)](https://docs.microsoft.com/windows-hardware/test/hlk/testref/6da79d04-940b-4c49-8f00-333bf0cfbb19)
 
 When you select the rhproxy device node in HLK manager, the applicable tests will automatically be selected.
 
@@ -699,17 +815,6 @@ Then click the Tests tab, and select I2C WinRT, Gpio WinRT, and Spi WinRT tests.
 ![HLK manager screenshot](images/usermode-hlk-2.png)
 
 Click Run Selected. Further documentation on each test is available by right clicking on the test and clicking “Test Description.”
-
-###	More testing resources
-
-Simple command line tools for Gpio, I2c, Spi, and Serial are available on the ms-iot github samples repository  (https://github.com/ms-iot/samples). These tools can be helpful for manual debugging.
-
-| Tool | Link |
-|------|------|
-| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/gpiotesttool |
-| I2cTestTool	| https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
-| SpiTestTool |	https://developer.microsoft.com/windows/iot/samples/spitesttool |
-| MinComm (Serial) |	https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## Resources
 
