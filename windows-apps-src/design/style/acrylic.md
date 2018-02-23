@@ -264,7 +264,7 @@ To give your app's window a seamless look, you can use acrylic in the title bar 
 
 ```csharp
 /// Extend acrylic into the title bar. 
-private void extendAcrylicIntoTitleBar()
+private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
     ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -314,7 +314,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
         Window.Current.Activate();
 
         // Extend acrylic
-        extendAcrylicIntoTitleBar();
+        ExtendAcrylicIntoTitleBar();
     }
 }
 ```
