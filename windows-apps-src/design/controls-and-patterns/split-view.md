@@ -19,8 +19,6 @@ ms.localizationpriority: medium
 ---
 # Split view control
 
- 
-
 A split view control has an expandable/collapsible pane and a content area.
 
 > **Important APIs**: [SplitView class](https://msdn.microsoft.com/library/windows/apps/dn864360)
@@ -50,9 +48,9 @@ Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
 ## Is this the right control?
 
-The split view control can be used to make a [navigation pane](navigationview.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view representing the nav items.
+The split view control can be used to create any "drawer" experience where users can open and close the supplemental pane. For example, you can use SplitView to build the [master/details](master-details.md) pattern.
 
-The split view control can also be used to create any "drawer" experience where users can open and close the supplemental pane.
+If you'd like to build a navigation menu with an expand/collapse button and a list of navigation items, then use the [NavigationView](navigationview.md) control.
 
 ## Examples
 
@@ -98,6 +96,6 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 - [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
 
 ## Related topics
-
 - [Nav pane pattern](navigationview.md)
 - [List view](lists.md)
+- [Master/details](master-details.md)
