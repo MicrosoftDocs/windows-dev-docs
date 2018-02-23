@@ -214,7 +214,7 @@ namespace MIDIWin10
             outputDeviceWatcher.StopWatcher();
             outputDeviceWatcher = null;
 
-            midiInPort.MessageReceived += MidiInPort_MessageReceived;
+            midiInPort.MessageReceived -= MidiInPort_MessageReceived;
             midiInPort.Dispose();
             midiInPort = null;
 
