@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, reputation, player feedback
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Sending player feedback from your title

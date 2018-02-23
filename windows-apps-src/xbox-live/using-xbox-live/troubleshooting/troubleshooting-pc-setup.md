@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, troubleshoot
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Troubleshooting Xbox Live setup on Windows PC

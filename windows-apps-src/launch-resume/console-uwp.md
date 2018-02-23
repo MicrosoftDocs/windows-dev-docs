@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 This topic describes how to create a C++ /WinRT or /CX Universal Windows Platform (UWP) console app.
 
-Starting with Windows 10, version 1803, you can write C++ /WinRT or /CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output and can use Win32 APIs such as **printf** or **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you typically will launch them from the command-line.
+Starting with Windows 10, version 1803, you can write C++ /WinRT or /CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output and can use Win32 APIs available to UWP apps such as **printf** or **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you typically will launch them from the command-line.
 
 ## Use a UWP Console app template 
 
@@ -53,11 +53,13 @@ int __cdecl main()
 
 ## UWP Console app behavior
 
-A UWP Console app can access the file-system from the directory it is run from, and below. This is possible because the template adds the [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension to your app's Package.appxmanifest file. This extension also makes it possible to type the alias from a console window to launch the app. The app does not need to be in the system path to launch.
+A UWP Console app can access the file-system from the directory it is run from, and below. This is possible because the template adds the [AppExecutionAlias](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) extension to your app's Package.appxmanifest file. This extension also enables the user to type the alias from a console window to launch the app. The app does not need to be in the system path to launch.
 
-You can additionally give broad access to the file system to your UWP console app by adding the restricted capability `broadFileSystemAccess`, as described in [File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
+You can additionally give broad access to the file system to your UWP console app by adding the restricted capability `broadFileSystemAccess` as described in [File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions).
 
-More than one instance of a UWP Console app can run at a time because the template adds the `SupportsMultipleInstances` capability to your app's Package.appxmanifest file:
+More than one instance of a UWP Console app can run at a time because the template adds the [SupportsMultipleInstances](multi-instance-uwp.md) capability to your app's Package.appxmanifest file.
+
+The template also adds the `Subsystem="console"` capability to the Package.appxmanifest file, which denotes that this UWP app is a console app. Note the `desktop4` and iot2 `namespace` prefixes. UWP Console apps are only supported on desktop and Internet of Things (IoT) projects.
 
 ```xml
 <Package
@@ -90,8 +92,6 @@ More than one instance of a UWP Console app can run at a time because the templa
 </Package>
 ```
 
-The template also adds the `Subsystem="console"` capability to the Package.appxmanifest file, which denotes that this UWP app is a console app. Note the `desktop4` and iot2 `namespace` prefixes. UWP Console apps are only supported on desktop and Internet of Things (IoT) projects.
-
 ## Additional considerations for UWP console apps
 
 - Only C++ /WinRT and C++ /CX UWP apps may be console apps.
@@ -100,6 +100,4 @@ The template also adds the `Subsystem="console"` capability to the Package.appxm
 - UWP console apps may not consume background tasks nor serve as a background task.
 - With the exception of [Command-Line activation](https://blogs.windows.com/buildingapps/2017/07/05/command-line-activation-universal-windows-apps/#5YJUzjBoXCL4MhAe.97), UWP console apps do not support activation contracts, including file association, protocol association, etc.
 - Although UWP console apps support multi-instancing, they do not support [Multi-instancing redirection](multi-instance-uwp.md)
-
-## Sample
-See [UWP console app sample](https://aka.ms/Amlsp9) for a UWP console app example.
+- For a list of Win32 APIs that are available to UWP apps, see [Win32 and COM APIs for UWP apps](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps)

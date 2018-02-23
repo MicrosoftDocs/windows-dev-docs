@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat, accessibility, text to speech, speech to text
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 #  Accessible in-game chat overview

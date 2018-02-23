@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xdk
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Get started with using Visual Studio for XDK based games

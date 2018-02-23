@@ -8,6 +8,7 @@ ms.date: 10/30/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.localizationpriority: low
 keywords: Xbox live, Xbox, games, uwp, windows 10, Xbox one, Game DVR, Windows Dev Center
 ---
 

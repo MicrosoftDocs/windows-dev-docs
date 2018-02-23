@@ -40,7 +40,7 @@ NavigationView works well for:
 
 NavigationView is just one of several navigation elements you can use. To learn more about other navigation patterns and elements, see [Navigation design basics](../basics/navigation-basics.md).
 
-The NavigationView control has many built-in behaviors that implement the simple nav pane pattern. If your navigation require more complex behavior or if you would like to build your own nav pane pattern, you can use [SplitView](split-view.md) and [ListView](lists.md). For a sample implementation with SplitView and ListView, see the [XAML navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/XamlNavigation) from GitHub.
+The NavigationView control has many built-in behaviors that implement the simple nav pane pattern. If your navigation requires more complex behavior that is not supported by NavigationView, then you might want to consider the [Master/details](master-details.md) pattern instead.
 
 ## Examples
 <table>
@@ -58,7 +58,6 @@ The NavigationView control has many built-in behaviors that implement the simple
 </table>
 
 ## NavigationView sections
-The control is broadly subdivided into three sections - a pane for navigation on the left, and header and content areas on the right.
 
 ![NavigationView sections](images/navview_sections.png)
 

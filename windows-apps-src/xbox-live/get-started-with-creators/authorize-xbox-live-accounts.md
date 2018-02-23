@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, accounts, test accounts
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Authorize Xbox Live Accounts for Testing in your environment
