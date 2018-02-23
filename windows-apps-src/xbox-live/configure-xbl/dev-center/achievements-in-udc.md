@@ -8,6 +8,7 @@ ms.date: 11/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.localizationpriority: low
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, udc, universal developer center
 ---
 

@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, multiplayer manager, flowchart, smartmatch
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Find a multiplayer game by using SmartMatch

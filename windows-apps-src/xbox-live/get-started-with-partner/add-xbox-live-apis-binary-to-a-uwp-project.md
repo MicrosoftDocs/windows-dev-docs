@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, nuget
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Add Xbox Live APIs binary package to your UWP project

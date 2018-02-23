@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Common issues When adapting your multiplayer 2014 title to multiplayer 2015
