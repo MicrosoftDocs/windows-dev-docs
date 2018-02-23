@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, creators, test
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Create a new Xbox Live Creators Program title and publish to the test environment

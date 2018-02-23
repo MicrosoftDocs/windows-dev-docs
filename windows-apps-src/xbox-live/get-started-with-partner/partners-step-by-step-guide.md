@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Step by step guide to integrate Xbox Live for managed partners and ID@Xbox members

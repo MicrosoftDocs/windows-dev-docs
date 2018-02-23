@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, people system, social platform, gamertag, real name
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Gamertags and Real Names in the People System

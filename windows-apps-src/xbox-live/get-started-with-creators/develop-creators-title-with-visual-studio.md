@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox live creators, visual studio
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Get started developing an Xbox Live Creators Program title with Visual Studio

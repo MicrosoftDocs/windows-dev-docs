@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # What's new for the Xbox Live SDK - June 2016

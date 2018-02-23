@@ -44,7 +44,7 @@ Light has a way of drawing our attention. It’s warm and inviting; it’s fluid
 		
 Use these features to add light to your UWP app:
 		
-* [Reveal](../style/reveal.md) uses light to make interactive elements stand out. Light illuminates the interactive element the user can interact with, revealing hidden borders. The light also gently illuminates other interactive elements that are nearby. 
+* [Reveal](../style/reveal.md) uses light to make interactive elements stand out. Light illuminates the element the user can interact with, revealing hidden borders. The light also gently illuminates other interactive elements that are nearby. 
 
 
 ## Depth 
