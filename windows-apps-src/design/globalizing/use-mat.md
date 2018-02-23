@@ -1,6 +1,6 @@
----
+ ---
 author: stevewhims
-Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools.
+Description: The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. 
 title: Use the Multilingual App Toolkit
 template: detail.hbs
 ms.author: stwhi
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 # Use the Multilingual App Toolkit 4.0
 
-The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.
+The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 to provide UWP apps with translation support, translation file management, and editor tools. (WPF, ASP.NET, WinForms, ... apps are also supported). Here are some of the value propositions of the toolkit.
 
 - Helps you manage resource changes and translation status during development.
 - Provides a UI for choosing languages based on configured translation providers.
@@ -51,6 +51,24 @@ The MAT must be enabled for your project before you can begin to localize the ap
 - On the **Tools** menu, select **Multilingual App Toolkit** > **Enable selection**. 
 
 In the Output window (showing output from Multilingual App Toolkit), watch for the message `Project '<project-name>' was enabled. The project's source culture is '<language-tag>' <language-name>`. If this message appears, then the MAT is ready to use.
+
+When enabling mat on a project does not work, you have to verify that the Assembly's ***Neutral language*** is set.
+This can be done via:
+
+- Right-mouse click on the project solution in Visual Studio.
+- Select Properties.
+- In the Application section, click the Assembly Information... button.
+- Set the Neutral language (e.g. English).
+
+Another way to add the neutral language for an assembly is by navigating to:
+
+- Properties (in the project solution)
+- When expanding the Properties, you will see AssemblyInfo.cs
+- Add this line: 
+```csharp
+[assembly: System.Resources.NeutralResourcesLanguage("EN")] // Neutral language to enable MAT
+```
+
 
 ### Step 4. Add languages to your project
 
