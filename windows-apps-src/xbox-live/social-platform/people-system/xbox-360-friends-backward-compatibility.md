@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, friends, xbox 360, social platform, people system
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Xbox 360 Friends Backward Compatibility

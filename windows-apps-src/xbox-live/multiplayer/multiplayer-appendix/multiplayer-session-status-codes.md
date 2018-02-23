@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer 2015, status codes, session
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Multiplayer Session Status Codes

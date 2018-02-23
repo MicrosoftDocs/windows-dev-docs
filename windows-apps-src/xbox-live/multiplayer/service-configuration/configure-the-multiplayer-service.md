@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, multiplayer, service configuration, session template, custom invite string, smartmatch hopper
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Multiplayer Service Configuration

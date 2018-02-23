@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, stats, achievements, leaderboards, design
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Designing Xbox Live Experiences

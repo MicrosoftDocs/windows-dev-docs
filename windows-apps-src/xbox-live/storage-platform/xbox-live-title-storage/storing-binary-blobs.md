@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, title storage
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Storing a binary blob in Xbox Live Title Storage

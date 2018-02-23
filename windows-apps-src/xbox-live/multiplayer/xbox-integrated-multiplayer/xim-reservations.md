@@ -9,7 +9,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, xbox integrated multiplayer, xim, chat
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 # Using XIM as a dedicated chat solution via out-of-band reservations
 

@@ -8,7 +8,7 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: xbox live, xbox, games, uwp, windows 10, xbox one, game chat, game chat 2, voice communication
-ms.localizationpriority: medium
+ms.localizationpriority: low
 ---
 
 # Game Chat 2 Overview
