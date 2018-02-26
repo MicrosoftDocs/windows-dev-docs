@@ -10,13 +10,18 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough
 ms.localizationpriority: medium
 ---
 # Send a local toast notification
 
 
-A toast notification is a message that an app can construct and deliver to the user while they are not currently inside your app. This Quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification with the new adaptive templates and interactive actions. These actions are demonstrated through a local notification, which is the simplest notification to implement. We will go through the following things:
+A toast notification is a message that an app can construct and deliver to the user while they are not currently inside your app. This Quickstart walks you through the steps to create, deliver, and display a Windows 10 toast notification with the new adaptive templates and interactive actions. These actions are demonstrated through a local notification, which is the simplest notification to implement.
+
+> [!IMPORTANT]
+> Desktop applications (both Desktop Bridge and classic Win32) have different steps for sending notifications and handling activation. Please see the [Desktop C# applications](send-local-toast-desktop.md) documentation to learn how to implement toasts.
+
+We will go through the following things:
 
 ### Sending a toast
 
