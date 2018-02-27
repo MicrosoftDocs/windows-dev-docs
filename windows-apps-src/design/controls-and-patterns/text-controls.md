@@ -122,7 +122,7 @@ See these articles for font guidelines:
 
 **Applies to:** TextBox, RichEditBox, AutoSuggestBox
 
-Starting with RS4, XAML text input boxes feature embedded support for pen input using [Windows Ink](../input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
+Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using [Windows Ink](../input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
 
 ![Text box expands when tapped with pen](images/pen-input-expand.gif)
 
@@ -139,7 +139,7 @@ A user can edit their text using standard gestures and actions, like these:
 
 ![Overwrite pen input](images/pen-input-2.png)
 
-Embedded text input is enabled by default when your app targets and is running on RS4 or later. You can opt-out on a per-text box basis to disable the feature and revert to a text input panel.
+Embedded text input is enabled by default when your app targets and is running on Windows 10, version 1803 or later. You can opt-out on a per-text box basis to disable the feature and revert to a text input panel. To disable embedded text input, set the text control's **IsHandwritingViewEnabled** property to **false**.
 
 ## Choose the right keyboard for your text control
 
