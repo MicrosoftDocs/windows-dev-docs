@@ -36,9 +36,17 @@ The **broadFileSystemAccess** capability grants apps the same access to the file
 
 The [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.appresourcegroupinfo) class has new methods that you can use to initiate the transition to the app suspended, active (resumed), and terminated states.
 
-The [UserActivitySessionHistoryItem]() class has new methods that retrieve recent user activities. See [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel#Windows_ApplicationModel_UserActivities_UserActivityChannel_GetRecentUserActivitiesAsync_System_Int32_), and its overload, for details. 
+The [UserActivitySessionHistoryItem]() class has new methods that retrieve recent user activities. See [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel#Windows_ApplicationModel_UserActivities_UserActivityChannel_GetRecentUserActivitiesAsync_System_Int32_), and its overload, for details.
 
 The [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) allows you to define a system trigger when the OS doesn't provide a system trigger that you need. Such as when a hardware driver and the UWP app both belong to 3rd party, and the hardware driver needs to raise a custom event that its app handles. For example, an audio card that needs to notify a user when an audio jack is plugged in.
+
+The [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class has a new property named **Region** that you can use to show contents in a map control based on the language of a specific region (for example, the state or province).
+
+The [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) class has a new property named **IsEnabled** that you can use to specify whether users can interact with the [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement).
+
+The [MapRouteDrivingOptions](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutedrivingoptions) class contains a new property named **DepartureTime** that you can use to compute a route with the traffic conditions that are typical for the specified day and time.
+
+The [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) class contains a new method **CreateFromAddress** that you can use to create a [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) by using an address and display name.
 
 ## Developer Guidance
 
