@@ -1,10 +1,10 @@
 ---
-title: Connected Storage
-author: KevinAsgari
-description: Learn about using Connected Storage to save and load game data across devices.
+title: Connected Storage technical overview
+author: aablackm
+description: A deep dive on the inner working of Connected Storage.
 ms.assetid: a0bacf59-120a-4ffc-85e1-fbeec5db1308
-ms.author: kevinasg
-ms.date: 04/04/2017
+ms.author: aablackm
+ms.date: 02/27/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,10 +14,8 @@ ms.localizationpriority: low
 
 # Connected Storage
 
-| Note                                                                                |
-|--------------------------------------------------------------------------------------------------|
-| This document was originally written for Xbox One developers.  Some of the Xbox One specific content like Local and Title storage can be ignored for UWP on Windows.  The conceptual content and API in this document are still relevant.  Please contact your DAM with any questions. |
-
+> [!NOTE]
+> This document was originally written for Managed Partner Xbox One developers.  Some of the Xbox One specific content like Local and Title storage can be ignored for UWP on Windows.  The conceptual content and API in this document are still relevant.  Please contact your Microsoft representative (if applicable) with any questions.
 
 The storage and save models on Xbox One are much different from those on Xbox 360; Xbox One has a more flexible application model that supports fast application switching, multiple simultaneous applications, and quick suspend and resume of apps. Data stored by using the Connected Storage API automatically roams for users across multiple Xbox One consoles, and is also available for use offline.
 
@@ -29,9 +27,8 @@ This topic covers:
 -   How the system handles data synchronization and data conflicts from multiple consoles without requiring app UI.
 -   The Connected Storage resiliency model, which is designed so that the app always has a self-consistent view of data stored in individual containers even in the case of interrupted network connectivity or power loss.
 
-| Note                                                                                |
-|--------------------------------------------------------------------------------------------------|
-| The term *app*, as used here, refers to any application running on the console, including games. |
+> [!NOTE]
+> The term *app*, as used here, refers to any application running on the console, including games.
 
 ## Overview
 
@@ -44,9 +41,6 @@ When your app requests a specific user's data from the connected storage system,
 Your app also has a dedicated, but limited, amount of cloud storage space for every user, so users will not have to make hard choices about permanently deleting data from one app to make space for another app's saves. There is, however, a limited amount of storage space on the Xbox One hard drive for caching saves locally, so the system provides a user experience for freeing up local cache space. Users are in control of what is cached locally; they never lose access to data they care about when they're playing offline. The connected storage system also allows a small amount of user-independent data to be stored locally for the app. This per-machine data does not roam and is not uploaded to the cloud.
 
 The Xbox One connected storage system takes care of system power management so that pending writes to the hard disk and uploads to the cloud are handled automatically—there is no need for titles to display UI to say "save in progress, please do not turn off your console."
-
-Finally, your app is responsible for managing all saved data on Xbox One; there is no centralized save management UI, as there is on Xbox 360. Your app must enable users to delete saved data from within the app to free storage space when, for example, the app runs out of dedicated storage space.
-
 
 ### The Xbox One app model and app navigation
 
@@ -68,9 +62,8 @@ For more information about the Xbox One app model, see the following resources:
 -   [The Shell Experience](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=PROD-D_Experience.pptx&folder=platform\xfest2013), a presentation at Xfest 2013
 -   [Process Lifetime Management for Xbox One](https://developer.xboxlive.com/en-us/platform/development/education/Documents/PLM%20for%20Xbox%20One.aspx), a white paper on GDN
 
-| Note                                                                                                                                                                                                                                                                                                                               |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Some presentations at [Xfest 2012](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2012.aspx) and [Xfest 2013](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2013.aspx) contain information that is out of date due to the announcement that Xbox One supports off-line play. |
+> [!NOTE]
+> Some presentations at [Xfest 2012](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2012.aspx) and [Xfest 2013](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Pages/Xfest2013.aspx) contain information that is out of date due to the announcement that Xbox One supports off-line play.
 
 
 ### Storage options on Xbox One
@@ -197,9 +190,8 @@ There is a 16 MB cap on the memory in the shared partition for receiving **Submi
 ![](../../images/connected_storage/submitupdatesasync_behavior.png)
 Uploading to the cloud happens in a similar way: Individual blobs are uploaded to the service, and the update operation is committed by a final update to a container file that references all the other uploaded blobs. In an upload to the cloud, this consolidation into a single and final update ensures that all data referenced in a **SubmitUpdatesAsync** call is either committed in its entirety or the container is left unchanged. In this way, even if a system goes offline or loses power during an upload operation, a user could go to another Xbox One console, download data from the cloud, and continue play with a consistent view of all containers.
 
-| Important                                                                                |
-|--------------------------------------------------------------------------------------------------|
-| Data dependencies across containers are not safe.  The results of individual *SubmitUpdatesAsync* calls are guaranteed to be applied entirely, or not at all. |
+> [!IMPORTANT]
+> Data dependencies across containers are not safe.  The results of individual *SubmitUpdatesAsync* calls are guaranteed to be applied entirely, or not at all.
 
 **SubmitUpdatesAsync** calls must not assume that a future **SubmitUpdatesAsync** call will be completed successfully in order to leave the container in a valid state. In other words, apps cannot rely on more than one **SubmitUpdatesAsync** call to save all required data into a container. Each **SubmitUpdatesAsync** call must leave the contents of the specified container in a valid state for the app to read later.
 
@@ -383,56 +375,6 @@ If the user does not want to wait for the synchronization to complete, and selec
 **Network timeout**  
 If the data download times out due to a problem with network connectivity or service availability, the user is given the option to retry the synchronization. If he or she chooses not to, the user is informed that not all of the saved data will be available. The completion handler of the **GetForUserAsync** call will be invoked at this time, and the app can proceed with loads and saves.
 
-
-## When to acquire a connected storage space
-
-The execution time for acquiring a user's connected storage space can vary. Apps should take this action during main execution, rather than in response to a user's starting to sign out or in response to receiving a suspend notification from the system.
-
-Generally, apps should acquire a connected storage space as a user signs in and indicates desire to play, unless the game is in a mode in which it's certain no save functionality is needed. You should also consider aligning the acquisition of connected storage space with long sequences of data loading, so that the operations can execute in parallel.
-
-Once your app has acquired a connected storage space, it should retain this value for future saves. Retaining a connected storage space over time does not have negative effects on performance or robustness. Because acquiring a connected storage space causes a synchronization check with the cloud if the system is online, releasing and re-acquiring a user's connected storage space during slow or unreliable network conditions might cause the user to see a synchronization UI until the system times out.
-
-Connected storage spaces do not need to be freed explicitly to cause cloud synchronization. Once the completion handler specified in a **SubmitUpdatesAsync** call has returned with **AsyncStatus::Completed**, the system takes care of synchronization with the cloud whether or not the app frees the ConnectedStorageSpace object.
-
-
-## When to save
-
-Whenever an app receives a suspend notification, the app should at least save relevant data, enabling the system to return to a contextually appropriate state for the user.
-
-If your game design uses periodic, automatic, or user-initiated saves, connected storage can be called more often than when receiving a suspend notification; doing so is a good way to reduce the risk of data loss due to power loss or a crash.
-
-When a user signs out, the User object for that user remains valid, and at that time the app may perform final save operations by using connected storage. For more information on this object, see *User Class*.
-
-
-## Robustness
-
-Because saved data is always synchronized to the cloud, a bug in saved data and app code that causes the app to crash could be backed up in the cloud and distributed across devices. To prevent users from having an app that crashes on every launch, design the app to ensure that:
-
--   Users can reach a point in the app at which they can manage saved state, even if some saved data is malformed.
--   The app can handle corrupt data automatically, recovering as much data as it can and reinitializing everything else to a safe state.
-
-
-## Use cases for save-game designs
-
-The design of a game saving system that makes the best use of containers in connected storage space depends on the type of app:
-
-### Single save
-
-For apps that use a single, campaign-style save system, like a first person shooter:
-
--   Put all of the data into a single container and always write to the same container, identified by name.
--   Consider exposing an option to reset all data that will clear all of a user's saved data, in case he or she wants to start playing the app from the beginning, with no previous progress being retained.
-
-### Multiple saves
-
-For apps that have a fixed number of save slots—5, for these examples—there are two ways to use containers to save game data:
-
--   Store all 5 slots within one fixed-name container by using 1 blob for each save slot. This means that all 5 slots are either fully synchronized and available, or none is available, if synchronization failed halfway through and the container was incomplete. If a user plays the app offline on two different consoles, saving progress in slot 1 on the first console and in slot 2 on the second console, the user must choose which data to retain on connecting both consoles to Xbox Live; the merge logic for containers will produce a conflict.
--   Store each slot in a container with its own name. This allows independent progress in each slot, even on multiple machines that might be offline. However, if a user cancels partway through a synchronization, it's possible that only some of the slots will be available during that session; some of the containers might not have completed downloading. In such a case, the user is notified that the synchronization was incomplete, and that some of the cloud data isn't on the local console.
-
-Whichever approach is used, the app should provide the user with UI to delete individual saves from slots.
-
-
 ## Development tools
 
 Two tools will help you with developing your app's use of connected storage: XbStorage and Fiddler.
@@ -454,51 +396,6 @@ For more information about XbStorage, see *Manage Connected Storage (xbstorage.e
 ### Monitoring connected storage network activity using Fiddler
 
 It can be helpful to determine whether your console is interacting with the service when cloud storage operations are performed. Using Fiddler can help determine whether your console is making calls to the service successfully or if it is encountering authorization errors. For information about setting up Fiddler on an Xbox One, see *How to use Fiddler with Xbox One*, in this XDK documentation.
-
-
-## Best practices
-
-Observing the practices described below will help you implement save functionality for your app that is responsive, robust, and understandable for users as they roam across consoles.
-
-### Warning
-
- **Do not store dependent data across containers**
-Do not store data with dependencies across more than one container. Containers can be separated due to incomplete synchronization, power loss, or other error conditions. Data stored in a single container must be self-sufficient and self-consistent.
-
-### Good practices
-
- **Do not discourage users from turning off the console or navigating away**
-Your title should not discourage users from turning off the console or navigating away from your app when saving. On Xbox 360, if a user turns off the system while your title is saving, the user's data is not saved. On Xbox One, your title receives a suspend event and has 1 second to use the **Connected Storage API** to save state. The system ensures that data is properly committed to the hard drive before it shuts down completely or enters its low-power state. The same suspension process occurs if the user ejects your title's disc to play another one.
-
- **Tell the user when the app is trying to load data**
-When your app is waiting for a **GetForUserAsync** call to complete, visually indicate to the user that the app is trying to load data. Though the system provides UI during the synchronization process when your app is running full-screen, this UI is hidden if the user navigates to the Home screen. This situation is likely if the system is synchronizing a lot of data for the requested connected storage space.
-
- **Retain connected storage spaces**
-Retain **ConnectedStorageSpace** objects rather than try to acquire them every time a read or write event occurs. There are no negative effects on performance or robustness caused by retaining a **ConnectedStorageSpace** object for an extended time.
-
- **Keep data sizes small**
-Keep the size of saved data small. All user data in connected storage is uploaded to the cloud when the console is online. Optimize your data formats to ensure minimal delays and bandwidth usage.
-
- **Verify that users don't mind not saving**
-Check for OutOfLocalStorage errors returned from **GetForUserAsync** and **SubmitUpdatesAsync**, and query users to see if they really want to play without saving. If a user indicates wanting to save games, retry the operation.
-
- **Check the user's quota and prompt to clear space**
-Check for a **QuotaExceeded** error returned by **SubmitUpdatesAsync**. If your app receives this message, notify users that they cannot save any more data until they have freed up some space; present them with UI that enables them to do so. Each user gets 256 MB of data per app, and each app gets 64 MB of per-machine storage that is local to the console.
-
- **Save the state of menus for restoration later**
-Save menu state and other app settings in addition to saving core game data. If the user plays another app and then comes back to yours, restore them to a contextually appropriate menu state.
-
- **Respond to signed-in user changes**
-Users can sign out while your app is suspended. When the app is resumed, it should determine if the set of signed-in users has changed. Consider navigating to an appropriate location within the app, such as a menu, when this occurs.
-
-### Important practices
-
- **Provide UI for managing saved data**
-Unlike Xbox 360, Xbox One has no system-hosted UI for managing saved games. Your app should provide UI that allows users to manage their saved data within the app. For apps with an automatic save system, the app should offer an option to reset saved data to enable users to reset to a default play state.
-
- **Ensure that users can always reach UI to manage saved games**
-Ensure that your app can always reach its management UI for saved games, even in the presence of buggy saved data. If a user's saved data becomes unreadable due to an app bug or data corruption, the app should allow users to recover to a state that doesn't crash or prevent them from playing.
-
 
 ## Resources
 
