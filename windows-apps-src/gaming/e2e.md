@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 02/02/2018
+ms.date: 02/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -805,22 +805,6 @@ BabylonJS is a complete JavaScript framework for building 3D games with HTML5, W
         <td>[Use BabylonJS to develop a cross-platform game](https://www.smashingmagazine.com/2016/07/babylon-js-building-sponza-a-cross-platform-webgl-game/)</td>
     </tr>    
 </table>
-
-### Middleware and partners
-
-There are many other middleware and engine partners that can provide solutions depending on your game development needs.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>Windows Dev Center partners</td>
-        <td>[Dev Center Partners](https://developer.microsoft.com/windows/app-middleware-partners)</td>
-    </tr>
-</table>
-
 
 ### Porting your game
 
