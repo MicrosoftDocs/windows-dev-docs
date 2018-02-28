@@ -12,6 +12,10 @@ Sample feature text. With a sample image below!
 
 ![Screenshot of PhotoLab sample showing photo gallery page](images/PhotoLab-gallery-page.png)
 
+### Machine Learning
+
+Windows Machine Learning (WinML) allows you to build apps that evaluate pre-trained machine learning models locally on your Windows 10 devices. To learn more about the platform, see [Windows Machine Learning](../develop/machine-learning/index.md).
+
 ### Enter free-form prices in a specific market's local currency
 
 When you override your app's base price for a specific market, you are no longer limited to choosing one of the standard price tiers; you now have the option to enter a free-form price in the market's local currency. For more info, see [Set and schedule app pricing](../publish/set-and-schedule-app-pricing.md)
@@ -32,6 +36,7 @@ A UWP app can opt-in to support multiple instances. If an instance of an multi-i
 
 The **broadFileSystemAccess** capability grants apps the same access to the file system as the user who is currently running the app without file-picker style prompts. For more info, see [File access permissions](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) and the **broadFileSystemAccess** entry in [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations).
 
+
 ### New APIs
 
 The [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.appresourcegroupinfo) class has new methods that you can use to initiate the transition to the app suspended, active (resumed), and terminated states.
@@ -39,6 +44,8 @@ The [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.app
 The [UserActivitySessionHistoryItem]() class has new methods that retrieve recent user activities. See [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel#Windows_ApplicationModel_UserActivities_UserActivityChannel_GetRecentUserActivitiesAsync_System_Int32_), and its overload, for details.
 
 The [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) allows you to define a system trigger when the OS doesn't provide a system trigger that you need. Such as when a hardware driver and the UWP app both belong to 3rd party, and the hardware driver needs to raise a custom event that its app handles. For example, an audio card that needs to notify a user when an audio jack is plugged in.
+
+The [MachineLearning](https://docs.microsoft.com/en-us/uwp/api/windows.ai.machinelearning.preview) namespace contains classes that enable apps to load machine learning models, bind data as inputs, and evaluate the results.
 
 The [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class has a new property named **Region** that you can use to show contents in a map control based on the language of a specific region (for example, the state or province).
 
