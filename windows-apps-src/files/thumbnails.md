@@ -61,31 +61,31 @@ Recommended [thumbnail modes](https://docs.microsoft.com/uwp/api/windows.storage
 <th> Features of the retrieved thumbnail images </th>
 </tr>
 <tr>
-<td> Pictures<br> Videos </td>
-<td> PicturesView <br>VideosView </td>
-<td> <b>Size</b>: Medium, preferably at least 190 (if the image size is 190x130) <br>
-<b>Aspect ratio</b>: Uniform, wide aspect ratio of about .7 (190x130 if the size is 190) <br>
-Cropped for previews. <br> 
+<td> Pictures<br /> Videos </td>
+<td> PicturesView <br />VideosView </td>
+<td> <b>Size</b>: Medium, preferably at least 190 (if the image size is 190x130) <br />
+<b>Aspect ratio</b>: Uniform, wide aspect ratio of about .7 (190x130 if the size is 190) <br />
+Cropped for previews. <br /> 
 Good for aligning images in a grid because of uniform aspect ratio.  </td>
 </tr>
 <tr>
-<td> Documents<br>Music </td>
-<td> DocumentsView <br>MusicView <br> ListView</td>
-<td> <b>Size</b>: Small, preferably at least 40 x 40 pixels <br>
-<b>Aspect ratio</b>:  Uniform, square aspect ratio  <br>
-Good for previewing album art because of the square aspect ratio. <br> 
+<td> Documents<br />Music </td>
+<td> DocumentsView <br />MusicView <br /> ListView</td>
+<td> <b>Size</b>: Small, preferably at least 40 x 40 pixels <br />
+<b>Aspect ratio</b>:  Uniform, square aspect ratio  <br />
+Good for previewing album art because of the square aspect ratio. <br /> 
 Documents look the same as they look in a file picker window (it uses the same icons). </td>
 </tr>
 </tr>
 <tr>
 <td> Any single item (regardless of file type) </td>
 <td> SingleItem </td>
-<td> <b>Size</b>: Small, preferably at least 40 x 40 pixels <br>
-<b>Aspect ratio</b>:  Uniform, square aspect ratio  <br>
-Good for previewing album art because of the square aspect ratio. <br> 
+<td> <b>Size</b>: Small, preferably at least 40 x 40 pixels <br />
+<b>Aspect ratio</b>:  Uniform, square aspect ratio  <br />
+Good for previewing album art because of the square aspect ratio. <br /> 
 Documents look the same as they look in a file picker window (it uses the same icons). </td>
 </tr>
-<table>
+</table>
 
 Here are examples showing how retrieved thumbnail images differ depending on file type and thumbnail mode:
 <div class="mx-responsive-img">
@@ -98,65 +98,65 @@ Here are examples showing how retrieved thumbnail images differ depending on fil
 <tr>
 <tr>
 <td>Picture</td>
-<td>The thumbnail image uses the original aspect ratio of the file. <br>
+<td>The thumbnail image uses the original aspect ratio of the file. <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
-<td>The thumbnail is cropped to a square aspect ratio. <br>
+<td>The thumbnail is cropped to a square aspect ratio. <br />
 <img src="images/thumbnail-pic-doclistmusic-modes.png" alt="Picture thumbnail in documents, music, or list modes"/></td>
-<td>The thumbnail image uses the original aspect ratio of the file.<br>
+<td>The thumbnail image uses the original aspect ratio of the file.<br />
 <img src="images/thumbnail-pic-single-mode.png" alt="Picture thumbnail in single mode"/> </td>
 </tr>
 <tr>
 <td>Video</td>
-<td>The thumbnail has an icon that differentiates it from pictures. <br>
+<td>The thumbnail has an icon that differentiates it from pictures. <br />
 <img src="images/thumbnail-vid-picvid-modes.png" alt="Video thumbnail in picture or video mode"/></td>
-<td>The thumbnail is cropped to a square aspect ratio. <br>
+<td>The thumbnail is cropped to a square aspect ratio. <br />
 <img src="images/thumbnail-vid-doclistmusic-modes.png" alt="Video thumbnail in documents, music, or list mode"/> </td>
-<td>The thumbnail image uses the original aspect ratio of the file. <br>
+<td>The thumbnail image uses the original aspect ratio of the file. <br />
 <img src="images/thumbnail-vid-single-mode.png" alt="Video thumbnail in single mode"/></td>
 </tr>
 <tr>
 <td>Music</td>
-<td>The thumbnail is an icon on a background of appropriate size. The background color is determined by the app's tile background color. <br>
+<td>The thumbnail is an icon on a background of appropriate size. The background color is determined by the app's tile background color. <br />
 <img src="images/thumbnail-music-picvid-modes.png" alt="Music thumbnail in picture or video mode"/></td>
-<td>If the file has album art, then the thumbnail is the album art.  <br>
-<img src="images/thumbnail-music-doclistmusic-modes.png" alt="Music thumbnail in documents, music, or list mode"/> <br>
+<td>If the file has album art, then the thumbnail is the album art.  <br />
+<img src="images/thumbnail-music-doclistmusic-modes.png" alt="Music thumbnail in documents, music, or list mode"/> <br />
 Otherwise, the thumbnail is an icon on a background of appropriate size.</td>
-<td>If the file has album art, then the thumbnail is the album art with the original aspect ratio of the file.  <br>
-<img src="images/thumbnail-music-single-mode.png" alt="Music thumbnail in single mode"/> <br>
+<td>If the file has album art, then the thumbnail is the album art with the original aspect ratio of the file.  <br />
+<img src="images/thumbnail-music-single-mode.png" alt="Music thumbnail in single mode"/> <br />
 Otherwise, the thumbnail is an icon. </td>
 </tr>
 <tr>
 <td>Document</td>
-<td>The thumbnail is an icon on a background of appropriate size. The background color is determined by the app's tile background color. <br>
+<td>The thumbnail is an icon on a background of appropriate size. The background color is determined by the app's tile background color. <br />
 <img src="images/thumbnail-docs-picvid-modes.png" alt="Document thumbnail in picture or video mode"/></td>
-<td>The thumbnail is an icon on a background of appropriate size. The background color is determined by the app's tile background color. <br>
+<td>The thumbnail is an icon on a background of appropriate size. The background color is determined by the app's tile background color. <br />
 <img src="images/thumbnail-doc-doclistmusic-modes.png" alt="Document thumbnail in documents, music, or list mode"/></td>
-<td>The document thumbnail, if one exists. <br>
-<img src="images/thumbnail-doc1-single-mode.png" alt="Document thumbnail in single mode"/><br>
-Otherwise, the thumbnail is an icon. <br>
+<td>The document thumbnail, if one exists. <br />
+<img src="images/thumbnail-doc1-single-mode.png" alt="Document thumbnail in single mode"/><br />
+Otherwise, the thumbnail is an icon. <br />
 <img src="images/thumbnail-doc2-single-mode.png" alt="Document thumbnail icon in single mode"/></td>
 </tr>
 <tr>
 <td>Folder</td>
-<td>If there is a picture file in the folder, then the picture thumbnail is used.  <br>
-<img src="images/thumbnail-dir-picvid-modes.png" alt="Folder thumbnail in picture or video mode"/> <br>
+<td>If there is a picture file in the folder, then the picture thumbnail is used.  <br />
+<img src="images/thumbnail-dir-picvid-modes.png" alt="Folder thumbnail in picture or video mode"/> <br />
 Otherwise, no thumbnail is retrieved.</td>
 <td>No thumbnail image is retrieved.</td>
-<td>The thumbnail is the folder icon.<br>
+<td>The thumbnail is the folder icon.<br />
 <img src="images/thumbnail-dir-single-mode.png" alt="Folder icon thumbnail in single mode"/></td>
 </tr>
 <tr>
 <td>File group</td>
-<td>If there is a picture file in the folder, then the picture thumbnail is used.<br>
-<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode"/> <br> Otherwise, no thumbnail is retrieved. </td>
-<td>If there is a file that has album art among the files in the group, the thumbnail is the album art. <br>
-<img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br>Otherwise, no thumbnail is retrieved. </td>
-<td>If there is a file that has album art among the files in the group, the thumbnail is the album art and uses the original aspect ratio of the file. <br>
-<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br>Otherwise, the thumbnail is an icon that represents a group of files. <br>
+<td>If there is a picture file in the folder, then the picture thumbnail is used.<br />
+<img src="images/thumbnail-grp-picvid-modes.png" alt="File group thumbnail in picture or video mode"/> <br /> Otherwise, no thumbnail is retrieved. </td>
+<td>If there is a file that has album art among the files in the group, the thumbnail is the album art. <br />
+<img src="images/thumbnail-grp-doclistmusic-modes.png" alt="File group thumbnail in documents, music or list mode"/> <br />Otherwise, no thumbnail is retrieved. </td>
+<td>If there is a file that has album art among the files in the group, the thumbnail is the album art and uses the original aspect ratio of the file. <br />
+<img src="images/thumbnail-grp1-single-mode.png" alt="File group thumbnail in picture or video mode"/> <br />Otherwise, the thumbnail is an icon that represents a group of files. <br />
 <img src="images/thumbnail-grp2-single-mode.png" alt="File group icon in single mode"/> 
 </td>
 </tr>
-<table>
+</table>
 </div>
 
 ## Related topics
