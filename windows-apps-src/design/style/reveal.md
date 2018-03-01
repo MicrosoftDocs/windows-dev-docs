@@ -83,7 +83,7 @@ These controls do not have Reveal by default as they are smaller controls that a
 
 To apply these styles, simply set the control's [Style](/uwp/api/Windows.UI.Xaml.Style) property:
 
-```XAML
+```xaml
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
 ```
 
@@ -95,7 +95,7 @@ Reveal changes slightly depending on the requested theme of the control, app or 
 
 To enabled white borders while in light theme, simply set the requested theme on the control to Dark.
 
-```XAML
+```xaml
 <Grid RequestedTheme="Dark">
     <Button Content="Button" Click="Button_Click" Style="{ThemeResource ButtonRevealStyle}"/>
 </Grid>
@@ -103,7 +103,7 @@ To enabled white borders while in light theme, simply set the requested theme on
 
 Or change the TargetTheme on the RevealBorderBrush to Dark. Remember! If the TargetTheme is set to Dark, then Reveal will be white, but if it's set to Light, Reveal's borders will be gray.
 
-```XAML
+```xaml
  <RevealBorderBrush x:Key="MyLightBorderBrush" TargetTheme="Dark" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}" />
 ```
 
@@ -129,7 +129,7 @@ These effects are defined by two brushes:
 * Border reveal is defined by  **RevealBorderBrush**
 * Hover reveal is defined by **RevealBackgroundBrush**
 
-```XAML
+```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
 <RevealBackgroundBrush x:Key="MyRevealBackgroundBrush" TargetTheme="Light" Color="{StaticResource SystemAccentColor}" FallbackColor="{StaticResource SystemAccentColor}" />
 ```
@@ -168,7 +168,7 @@ We've created a set of system Reveal brushes you can use to customize your templ
 
 Here's an entire template for what a Reveal Button would look like:
 
-```XAML
+```xaml
 <Style TargetType="Button" x:Key="ButtonStyle1">
     <Setter Property="Background" Value="{ThemeResource ButtonRevealBackground}" />
     <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
