@@ -214,7 +214,7 @@ Here's an example of how color logic gets applied to a design spec.
 
 
 
-## Themes
+## Themes (App Modes)
 
 Windows users can choose between a light, dark, or high contrast theme for their operating system. You can choose to alter the look of your application based on the user’s theme preference, or to opt out. For example, see how the Settings app changes to fit the user's chosen theme.
 
