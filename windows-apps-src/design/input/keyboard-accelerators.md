@@ -352,7 +352,9 @@ As keyboard accelerators are not typically described directly in the UI of your 
 
 Starting with Windows 10, version 1803, when KeyboardAccelerators are declared, controls present the corresponding key combinations in a tooltip by default (unless they are associated with [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) objects, see the [Labels]()). If a control has more than one accelerator defined, only the first is presented in the tooltip.
 
-![Accelerator key tooltip](images/accelerators/accelerators_tooltip_savebutton.png)
+![Accelerator key tooltip](images/accelerators/accelerators_tooltip_savebutton_small.png)
+
+*Accelerator key combo in tooltip*
 
 For [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton) and [AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton) objects, the keyboard accelerator is appended to the label.
 
@@ -364,7 +366,9 @@ For [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.a
 </AppBarButton>
 ```
 
-![Accelerator key tooltip](images/accelerators/accelerators-appbarbutton.png)
+![Accelerator key tooltip](images/accelerators/accelerators-appbarbutton-small.png)
+
+*Accelerator key combo appended to control label*
 
 Control the presentation behavior by using the [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_KeyboardAcceleratorPlacementMode) property, which accepts two values: [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) or [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode).    
 
