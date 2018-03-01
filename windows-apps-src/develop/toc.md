@@ -316,6 +316,7 @@
 #### [Get subscription add-on acquisitions](../monetize/get-subscription-acquisitions.md)
 #### [Get add-on conversions by channel](../monetize/get-add-on-conversions-by-channel.md)
 #### [Get app installs](../monetize/get-app-installs.md)
+#### [Get desktop application installs](../monetize/get-desktop-app-installs.md)
 #### [Get app ratings](../monetize/get-app-ratings.md)
 #### [Get app reviews](../monetize/get-app-reviews.md)
 #### [Get ad performance data](../monetize/get-ad-performance-data.md)
