@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 02/08/2018
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -137,30 +137,6 @@ To create a submission for an app, follow this process.
 
 7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
 
-<span id="advanced-listings"/>
-### Game options and trailers
-
-There are two sets of advanced listing options that may not be available in some submissions: [game options](#gaming-options-object) and [trailers](#trailer-object).
-
-These listing options were added after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before these listing options were introduced and this submission is still in progress, you will not be able to access these listing options until you successfully commit the submission or you delete it.
-
-To determine whether you can access these listing options for a given app when using the submission API, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true. If you cannot access these listing options for an app, the *gamingOptions* and *trailers* values in your [app submission resource](#app-submission-object) are null when you [create an app submission](create-an-app-submission.md).
-
-<span/>
-### Code examples for managing app submissions
-
-The following articles provide detailed code examples that demonstrate how to create an app submission in several different programming languages:
-
-* [C# sample: submissions for apps, add-ons, and flights](csharp-code-examples-for-the-windows-store-submission-api.md)
-* [C# sample: app submission with game options and trailers](csharp-code-examples-for-submissions-game-options-and-trailers.md)
-* [Java sample: submissions for apps, add-ons, and flights](java-code-examples-for-the-windows-store-submission-api.md)
-* [Java sample: app submission with game options and trailers](java-code-examples-for-submissions-game-options-and-trailers.md)
-* [Python sample: submissions for apps, add-ons, and flights](python-code-examples-for-the-windows-store-submission-api.md)
-* [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
-
-> [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
-
 <span id="manage-gradual-package-rollout">
 ## Methods for managing a gradual package rollout
 
@@ -210,6 +186,24 @@ After a gradual package rollout is enabled for an app submission, you can use th
 </tr>
 </tbody>
 </table>
+
+<span/>
+## Code examples for managing app submissions
+
+The following articles provide detailed code examples that demonstrate how to create an app submission in several different programming languages:
+
+* [C# sample: submissions for apps, add-ons, and flights](csharp-code-examples-for-the-windows-store-submission-api.md)
+* [C# sample: app submission with game options and trailers](csharp-code-examples-for-submissions-game-options-and-trailers.md)
+* [Java sample: submissions for apps, add-ons, and flights](java-code-examples-for-the-windows-store-submission-api.md)
+* [Java sample: app submission with game options and trailers](java-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python sample: submissions for apps, add-ons, and flights](python-code-examples-for-the-windows-store-submission-api.md)
+* [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
+
+## StoreBroker PowerShell module
+
+As an alternative to calling the Windows Store submission API directly, we also provide an open-source PowerShell module which implements a command-line interface on top of the API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store.
+
+For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span/>
 ## Data resources
@@ -347,7 +341,7 @@ This resource has the following values.
 | automaticBackupEnabled           |  boolean  |   Indicates whether Windows can include your app's data in automatic backups to OneDrive. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  boolean  |   Indicates whether customers can install your app to removable storage. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  boolean |   Indicates whether game DVR is enabled for the app.    |   
-| gamingOptions           |  array |   An array that contains one [gaming options resource](#gaming-options-object) that defines game-related settings for the app.<br/><br/>**Note:**&nbsp;&nbsp;The ability to configure game options using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *gamingOptions* value is null. To determine whether you can configure the *gamingOptions* for an app submission, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.      |   
+| gamingOptions           |  array |   An array that contains one [gaming options resource](#gaming-options-object) that defines game-related settings for the app.     |   
 | hasExternalInAppProducts           |     boolean          |   Indicates whether your app allows users to make purchase outside the Microsoft Store commerce system. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    boolean           |  Indicates whether your app has been tested to meet accessibility guidelines. For more information, see [App declarations](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  string  |   Contains [notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) for your app.    |    
@@ -453,11 +447,6 @@ This resource contains image and icon data for an app listing. For more informat
 
 This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](../publish/enter-app-properties.md#game-settings) for submissions in the Dev Center dashboard.
 
-> [!NOTE]
-> This resource [may not be available for all submissions](#advanced-listings).
-
-If you created a submission for an app via the submission API before these listing options were introduced and this submission is still in progress, you will not be able to access these listing options for any submissions for the app until you successfully commit the submission or you delete it. To determine whether you can access these listing options for a given app when using the submission API, use the [get an app](get-an-app.md) method and check whether the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) is true.
-
 ```json
 {
   "gamingOptions": [
@@ -499,6 +488,8 @@ This resource has the following values.
 |  isCrossPlayEnabled               |   boolean      |   Indicates whether the game supports multiplayer sessions between players on Windows 10 PCs and Xbox.  |     
 |  kinectDataForExternal               |   string      |  One of the following string values that indicates whether the game can collect Kinect data and send it to external services: <ul><li>NotSet</li><li>Unknown</li><li>Enabled</li><li>Disabled</li></ul>   |
 
+> [!NOTE]
+> The *gamingOptions* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *gamingOptions* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
 
 <span id="status-details-object" />
 ### Status details resource
@@ -630,14 +621,11 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 > The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Dev Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
 
 <span id="trailer-object" />
-### Trailer resource
+### Trailers resource
 
 This resource represents a video trailer for the app listing. The values in this resource correspond to the [trailers](../publish/app-screenshots-and-images.md#trailers) options for submissions in the Dev Center dashboard.
 
 You can add up to 15 trailer resources to the *trailers* array in an [app submission resource](#app-submission-object). To upload trailer video files and thumbnail images for a submission, add these files to the same ZIP archive that contains the packages and listing images for the submission, and then upload this ZIP archive to the shared access signature (SAS) URI for the submission. For more information uploading the ZIP archive to the SAS URI, see [Create an app submission](#create-an-app-submission).
-
-> [!NOTE]
-> This resource [may not be available for all submissions](#advanced-listings).
 
 ```json
 {
@@ -672,6 +660,8 @@ This resource has the following values.
 |  videoFileId               |   string      |  The ID for the trailer video file. This value is provided by Dev Center.   |     
 |  trailerAssets               |   object      |  A dictionary of key and value pairs, where each key is a language code and each value is a [trailer assets resource](#trailer-assets-object) that contains additional locale-specific assets for the trailer. For more information about the supported language codes, see [Supported languages](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 
+> [!NOTE]
+> The *trailers* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *trailers* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
 
 <span id="trailer-assets-object" />
 ### Trailer assets resource
