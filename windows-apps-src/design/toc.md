@@ -63,6 +63,7 @@
 ## [Buttons](controls-and-patterns/buttons.md)
 ## [Check box](controls-and-patterns/checkbox.md)
 ## [Color picker](controls-and-patterns/color-picker.md)
+## [Contact card](controls-and-patterns/contact-card.md)
 ## [Date and time](controls-and-patterns/date-and-time.md)
 ### [Calendar date picker](controls-and-patterns/calendar-date-picker.md)
 ### [Calendar view](controls-and-patterns/calendar-view.md)
