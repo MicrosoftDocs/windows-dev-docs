@@ -134,19 +134,25 @@ Setting up Swipe to work in a collection or ListView is exactly the same as defi
 Like so:
 
 ```XAML
-<ListView x:Name="lv" Width="400" Height="300">
+<ListView x:Name="lv" Width="300">
+    <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </ListView.ItemContainerStyle>
     <ListView.ItemTemplate>
         <DataTemplate>
             <SwipeControl x:Name="ListViewSwipeContainer"
-                     LeftItems="{StaticResource RevealOptions}"
-                     RightItems="{StaticResource ExecuteDelete}">
+                 LeftItems="{StaticResource RevealOptions}"
+                 RightItems="{StaticResource ExecuteDelete}"
+                 Height="60">
                 <StackPanel Orientation="Vertical" Margin="5">
                     <TextBlock Text="{x:Bind}" FontSize="18"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..." FontSize="12"/>
                     </StackPanel>
                 </StackPanel>
-           </SwipeControl>
+            </SwipeControl>
         </DataTemplate>
     </ListView.ItemTemplate>
 </ListView>
@@ -167,8 +173,7 @@ Then, in you're corresponding cs file, you can grab the index of the item in the
 ```csharp
 private void delete_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 {
-    int i = sampleList.Items.IndexOf(args.Parent.DataContext);
-    sampleList.Items.RemoveAt(i);
+    sampleList.Items.Remove(args.SwipeControl.DataContext);
 }
 ```
 
