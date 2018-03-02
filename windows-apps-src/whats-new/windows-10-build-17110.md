@@ -68,3 +68,27 @@ Feature | Description
 Enter free-form prices in a specific market's local currency | When you override your app's base price for a specific market, you are no longer limited to choosing one of the standard price tiers; you now have the option to enter a free-form price in the market's local currency. For more info, see [Set and schedule app pricing](../publish/set-and-schedule-app-pricing.md). **This feature is available to all Windows developers and does not require the updated SDK.**
 Store Context | The [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) class has been updated with a selection of new methods. These methods manage the downloading and installation of package updates and add-ons for an app.
 Subscription add-ons are now available to all developers | Create and publish subscription add-ons to sell digital products in your apps and games (such as app features or digital content) with automated recurring billing periods. For more details, see [Enable subscription add-ons for your app](../monetize/enable-subscription-add-ons-for-your-app.md). **This feature is available to all Windows developers and does not require the updated SDK.**
+
+## Videos
+
+The following videos have been published since the Fall Creator's Update, highlighting new and improved features in Windows 10 for developers.
+
+### Package a .NET app in Visual Studio
+
+It's easier than ever to bring your desktop app to the Universal Windows Platform. [Watch the video](https://www.youtube.com/watch?v=fJkbYPyd08w) to learn how to package your .NET app for distribution, then [check out this page](../porting/desktop-to-uwp-packaging-dot-net.md) for more information.
+
+### Xbox Live Creators Program
+
+The Xbox Live Creators Program allows developers to quickly publish their UWP games to Xbox One and Windows 10.[Watch the video](https://www.youtube.com/watch?v=zpFfHHBkVq4) to learn about the program, then [check out this page](https://www.xbox.com/developers/creators-program) to get started.
+
+### Creating 3D app launchers for Windows Mixed Reality
+
+3D launchers provide a unique way for users to place a truly volumetric representation of your app in their Mixed Reality home environment. [Watch the video](https://www.youtube.com/watch?v=TxIslHsEXno) to learn how to prepare your 3D model and assign it as the launcher for your app, then [read the developer docs](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_app_launchers) and [check out our design guidance](https://developer.microsoft.com/windows/mixed-reality/3d_app_launcher_design_guidance) for more information.
+
+### Motion controller tracking
+
+Motion controllers represent a user's hands in Windows Mixed Reality. [Watch the video](https://www.youtube.com/watch?v=rkDpRllbLII) to learn how the motion controllers work when they are both in and out of the field of view of the Mixed Reality headset, and [read more about controller tracking here.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
+
+### Accesibility tools for Windows developers
+
+The Windows 10 SDK includes several tools to help you test for and improve the accessibility of your app. The Inspect and AccEvent tools help you ensure your apps are available to all. [Watch the video](https://www.youtube.com/watch?v=ce0hKQfY9B8&list=PLWs4_NfqMtoycBFndriDmkQlMLwflyoFF&t=0s&index=1) to learn about these tools, then [read more about accessibility testing](../design/accessibility/accessibility-testing.md) for more information.
