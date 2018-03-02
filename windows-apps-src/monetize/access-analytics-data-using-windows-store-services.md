@@ -4,7 +4,7 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Use the Microsoft Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Dev Center account.
 title: Access analytics data using Store services
 ms.author: mcleans
-ms.date: 08/03/2017
+ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -68,16 +68,30 @@ After your access token expires, you can refresh it by following the instruction
 <span id="call-the-windows-store-analytics-api" />
 ## Step 3: Call the Microsoft Store analytics API
 
-After you have an Azure AD access token, you are ready to call the Microsoft Store analytics API. For information about the syntax of each method, see the following articles. You must pass the access token to the **Authorization** header of each method.
+After you have an Azure AD access token, you are ready to call the Microsoft Store analytics API. You must pass the access token to the **Authorization** header of each method.
+
+### Methods for UWP apps
+
+The following analytics methods are available for UWP apps in Dev Center.
 
 | Scenario       | Methods      |
 |---------------|--------------------|
 | Acquisitions, conversions, and installs |  <ul><li>[Get app acquisitions](get-app-acquisitions.md)</li><li>[Get app acquisition funnel data](get-acquisition-funnel-data.md)</li><li>[Get app conversions by channel](get-app-conversions-by-channel.md)</li><li>[Get add-on acquisitions](get-in-app-acquisitions.md)</li><li>[Get subscription add-on acquisitions](get-subscription-acquisitions.md)</li><li>[Get add-on conversions by channel](get-add-on-conversions-by-channel.md)</li><li>[Get app installs](get-app-installs.md)</li></ul> |
-| App errors | <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| App errors | <ul><li>[Get error reporting data](get-error-reporting-data.md)</li><li>[Get details for an error in your app](get-details-for-an-error-in-your-app.md)</li><li>[Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[Download the CAB file for an error in your app](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | Ratings and reviews | <ul><li>[Get app ratings](get-app-ratings.md)</li><li>[Get app reviews](get-app-reviews.md)</li></ul> |
 | In-app ads and ad campaigns | <ul><li>[Get ad performance data](get-ad-performance-data.md)</li><li>[Get ad campaign performance data](get-ad-campaign-performance-data.md)</li></ul> |
 
-The following additional methods are available for use by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
+### Methods for desktop applications
+
+The following analytics methods are available for use by developer accounts that belong to the [Windows Desktop Application program](https://msdn.microsoft.com/library/windows/desktop/mt826504).
+
+| Scenario       | Methods      |
+|---------------|--------------------|
+| Installs |  <ul><li>[Get desktop application installs](get-desktop-app-installs.md)</li></ul> |
+
+### Methods for hardware and drivers
+
+The following analytics methods are available for use by developer accounts that belong to the [Windows Hardware Dev Center program](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard).
 
 | Scenario       | Methods      |
 |---------------|--------------------|
