@@ -102,6 +102,7 @@
 ## [Swipe](controls-and-patterns/swipe.md)
 ## [Tabs and pivot](controls-and-patterns/tabs-pivot.md)
 ## [Text](controls-and-patterns/text-controls.md)
+### [Content links](controls-and-patterns/content-links.md)
 ### [Labels](controls-and-patterns/labels.md)
 ### [Password box](controls-and-patterns/password-box.md)
 ### [Rich edit box](controls-and-patterns/rich-edit-box.md)
