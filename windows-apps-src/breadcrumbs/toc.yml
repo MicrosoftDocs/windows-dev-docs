@@ -109,6 +109,9 @@
                     - name: Launching, resuming, and background tasks
                       tocHref: /windows/uwp/launch-resume/
                       topicHref: "/windows/uwp/launch-resume/index"
+                    - name: Machine Learning
+                      tocHref: /windows/uwp/machine-learning/
+                      topicHref: "/windows/uwp/machine-learning/index"
                     - name: Maps and location 
                       tocHref: /windows/uwp/maps-and-location/
                       topicHref: "/windows/uwp/maps-and-location/index"                 
