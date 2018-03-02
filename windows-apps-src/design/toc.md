@@ -204,6 +204,7 @@
 # Devices
 ## [Overview](devices/index.md)
 ## [Designing for Xbox and TV](devices/designing-for-tv.md)
+## [Mixed Reality](devices/designing-for-MR.md)
 
 # Usability
 ## [Overview](usability/index.md)
