@@ -35,6 +35,7 @@ This section provides information about creating Universal Windows Platform (UWP
 | [Camera-independent Flashlight](camera-independent-flashlight.md) | Shows you how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality. |
 | [Supported codecs](supported-codecs.md) | Lists the audio, video, and image codec and format support for UWP apps. |
 | [Query for installed codecs](codec-query.md) | Shows you how to query for audio and video encoders and decoders that are installed on a device. |
+| [Screen capture](screen-capture.md) | Describes how to use the [Windows.Graphics.Capture namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture) to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences. |
 
 ## See also
 - [Develop UWP apps](https://developer.microsoft.com/windows/develop)

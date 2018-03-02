@@ -72,6 +72,7 @@
 ## [Camera-independent Flashlight](../audio-video-camera/camera-independent-flashlight.md)
 ## [Supported codecs](../audio-video-camera/supported-codecs.md)
 ## [Query for installed codecs](../audio-video-camera/codec-query.md)
+## [Screen capture](../audio-video-camera/screen-capture.md)
 # [Contacts, My People, and calendar](../contacts-and-calendar/index.md)
 ## [My People](../contacts-and-calendar/my-people-support.md)
 ### [My People sharing](../contacts-and-calendar/my-people-sharing.md)
