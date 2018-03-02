@@ -69,6 +69,16 @@ The [StoreServices](https://docs.microsoft.com/uwp/api/windows.services.store.st
 
 * [DownloadAndInstallStorePackagesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_DownloadAndInstallStorePackagesAsync_Windows_Foundation_Collections_IIterable_System_String__), [UninstallStorePackageAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_UninstallStorePackageAsync_Windows_ApplicationModel_Package_) and [UninstallStorePackageByStoreIdAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_UninstallStorePackageByStoreIdAsync_System_String_): Installs or uninstalls downloadable content (DLC) packages for the current app silently without displaying a notification UI to the user (these methods require a restricted capability).
 
+The following DXGI APIs have been added, which are related to graphics adapter preference and removal:
+
+* The [IDXGIFactory6](https://msdn.microsoft.com/library/windows/desktop/mt814823) interface enables a single method that enumerates graphics adapters based on a given GPU preference.
+
+* The [DXGIDeclareAdapterRemovalSupport](https://msdn.microsoft.com/library/windows/desktop/mt814821) function allows a process to indicate that it's resilient to any of its graphics devices being removed.
+
+* The [DXGI_GPU_PREFERENCE](https://msdn.microsoft.com/library/windows/desktop/mt814822) enumeration describes the preference of GPU for the app to run on.
+
+The [Windows.Graphics.Capture namespace](https://docs.microsoft.com/uwp/api/windows.graphics.capture) provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences. See [Screen capture](../gaming/screen-capture.md) for more information.
+
 ## Developer Guidance
 
 ## Videos
