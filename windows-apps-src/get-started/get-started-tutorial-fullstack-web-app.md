@@ -376,24 +376,24 @@ You can find the files you need for this half of the tutorial in the [Start](htt
 
 3. Next, fill in the `restoreGame()` function that restores the last game played. For simplicity's sake, the app always loads the last game played. If there is not a game stored on the server, use the drop-down menu to start a new game. 
 
-Copy and paste this code into `restoreGame()`.
+	Copy and paste this code into `restoreGame()`.
 
-    ``` javascript 
-    // reset the game
-    gameBoardSize = 0;
-    cardsFlipped = 0;
+   ``` javascript 
+   // reset the game
+   gameBoardSize = 0;
+   cardsFlipped = 0;
 
-    // fetch the game state from the server 
-    $.get("http://localhost:8000/game", function (response) {
-        // store game board size
-        gameBoardSize = response.length;
+   // fetch the game state from the server 
+   $.get("http://localhost:8000/game", function (response) {
+       // store game board size
+       gameBoardSize = response.length;
 
-        // draw the game board
-        drawGameBoard(response);
-    });
-    ```
+       // draw the game board
+       drawGameBoard(response);
+   });
+   ```
 
-    The game will now fetch the game state from the server. For more information about the [`/game`](#part-i-build-a-rest-api-backend) method being used in this step, see Part I of this tutorial. If you are using Azure (or another service) to host the backend API, replace the *localhost* address above with your production URL.
+	The game will now fetch the game state from the server. For more information about the [`/game`](#part-i-build-a-rest-api-backend) method being used in this step, see Part I of this tutorial. If you are using Azure (or another service) to host the backend API, replace the *localhost* address above with your production URL.
 
 4. Now we want to create the `drawGameBoard()` function.  This function:
 
