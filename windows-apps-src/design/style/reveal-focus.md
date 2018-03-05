@@ -29,7 +29,7 @@ Reveal focus calls attention to focused elements by adding an animated glow arou
 
 ![Reveal Visual](images/traveling-focus-fullscreen-light-rf.gif)
 
-Reveal focus gives call attention to how focus is moving around the UI and which element currently has focus. This is especially helpful in 10 foot scenarios where the user might not be paying full attention to the entire TV screen. 
+This is especially helpful in 10 foot scenarios where the user might not be paying full attention to the entire TV screen. 
 
 ## Examples
 
