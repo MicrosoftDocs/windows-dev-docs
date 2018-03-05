@@ -80,6 +80,8 @@ Now, these files should be listed as part of your NavApp1 project.
 In Page1.xaml, add the following content:
 
 -   A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 1`.
+
+`xaml`
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
@@ -93,12 +95,14 @@ In Page1.xaml, add the following content:
 
 In the Page1.xaml code-behind file, add the following code to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) you added to navigate to Page2.xaml.
 
+`C#`
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page2));
 }
 ```
+`C++`
 ```cpp
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
@@ -106,14 +110,29 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
+And in the Page1.xaml.h, dont forget to update the file as follows:
+
+````cpp
+public ref class Page1 sealed
+{
+public:
+    Page1();
+private:
+    void HyperlinkButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+};
+````
 In Page2.xaml, add the following content:
 
 -   A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the value of the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 2`.
+
+`xaml`
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
 -   A [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) element as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) and after the `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element.
+
+`xaml`
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -123,18 +142,34 @@ In Page2.xaml, add the following content:
 In the Page2.xaml code-behind file, add the following code to handle the `Click` event of the [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) to navigate to Page1.xaml.
 
 > [!div class="tabbedCodeSnippets"]
+
+`C#`
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page1));
 }
 ```
+`C++`
 ```cpp
 void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
     this->Frame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid));
 }
 ```
+And in the Page2.xaml.h, dont forget to update the file as follows:
+
+`C++`
+````cpp
+public ref class Page2 sealed
+{
+public:
+    Page2();
+private:
+    void HyperlinkButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+};
+````
+
 > [!NOTE]
 > For C++ projects, you must add a `#include` directive in the header file of each page that references another page. For the inter-page navigation example presented here, page1.xaml.h file contains `#include "Page2.xaml.h"`, in turn, page2.xaml.h contains `#include "Page1.xaml.h"`.
 
@@ -144,7 +179,7 @@ Open the App.xaml code-behind file and change the `OnLaunched` handler.
 
 Here, we specify `Page1` in the call to [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) instead of `MainPage`.
 
-
+`C#`
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -178,6 +213,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
     Window.Current.Activate();
 }
 ```
+`C++`
 ```cpp
 void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ e)
 {
@@ -242,6 +278,7 @@ In Page1.xaml, replace the the **HyperlinkButton** you added earlier with the fo
 
 Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) label and a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` for entering a text string.
 
+`xaml`
 ```xaml
 <StackPanel>
     <TextBlock HorizontalAlignment="Center" Text="Enter your name"/>
@@ -255,12 +292,15 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 In the `HyperlinkButton_Click` event handler of the Page1.xaml code-behind file, add a parameter referencing the `Text` property of the `name` **TextBox** to the `Navigate` method.
 
 > [!div class="tabbedCodeSnippets"]
+
+`C#`
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     this.Frame.Navigate(typeof(Page2), name.Text);
 }
 ```
+`C++`
 ```cpp
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 {
@@ -272,6 +312,7 @@ In Page2.xaml, replace the **HyperlinkButton** you added earlier with the follow
 
 Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) for displaying the text string passed from Page1.
 
+`xaml`
 ```xaml
 <StackPanel>
     <TextBlock HorizontalAlignment="Center" Name="greeting"/>
@@ -283,6 +324,7 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 
 In the Page2.xaml code-behind file, override the `OnNavigatedTo` method with the following:
 
+`C#`
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -297,6 +339,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     base.OnNavigatedTo(e);
 }
 ```
+`C++`
 ```cpp
 void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 {
@@ -324,6 +367,7 @@ In our basic peer-to-peer example, there is no back button (we demonstrate back 
 
 In the constructor of `Page1`, you can set **NavigationCacheMode** to **Enabled** to retains all content and state values for the page until the page cache for the frame is exceeded. Set [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) to [**Required**](https://msdn.microsoft.com/library/windows/apps/br243284) if you want to ignore [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) limits, which specify the number of pages in the navigation history that can be cached for the frame. However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.
 
+`C#`
 ```csharp
 public Page1()
 {
@@ -331,6 +375,7 @@ public Page1()
     this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
 }
 ```
+`C++`
 ```cpp
 Page1::Page1()
 {
