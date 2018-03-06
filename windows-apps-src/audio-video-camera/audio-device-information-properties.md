@@ -21,7 +21,7 @@ For general information about enumerating devices on Windows, see [Enumerate dev
 |Name|Type|Description|
 |------------------------------------------------------------|------------|------------------------------------------------------|
 |**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Specifies the microphone sensitivity in decibels relative to full scale (dBFS) units.|
-|**System.Devices.AudioDevice.Microphone.SignalToNoiseRationInDb**|Double|Specifies the microphone signal to noise ratio (SNR) measured in decibel (dB) units.|
+|**System.Devices.AudioDevice.Microphone.SignalToNoiseRatioInDb**|Double|Specifies the microphone signal to noise ratio (SNR) measured in decibel (dB) units.|
 |**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean|Indicates whether the audio device supports speech processing.|
 |**System.Devices.AudioDevice.RawProcessingSupported**|Boolean|Indicates whether the audio device supports raw processing.|
 |**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Geometry data for a microphone array.|
