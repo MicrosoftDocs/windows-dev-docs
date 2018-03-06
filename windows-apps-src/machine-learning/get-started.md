@@ -13,17 +13,18 @@ ms.localizationpriority: medium
 
 # Get started with Windows Machine Learning
 
-In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows Machine Learning (WinML) in your app.
+In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows Machine Learning in your app.
 
 ## Prerequisites
 - [Windows SDK - Build 17110](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/)
 
 ## 1. Download the sample
-First, you'll need to download our [MNIST sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template with implemented XAML controls and events, including:
+First, you'll need to download our [MNIST sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template "MNIST_GetStarted" with implemented XAML controls and events, including:
 - An [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) to draw the digit.
 - [Buttons](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) to interpret the digit and clear the canvas. 
 - Helper routines to convert the InkCanvas output to a [VideoFrame](https://docs.microsoft.com/uwp/api/windows.media.videoframe). 
+
+A completed "MNIST" sample is also available to download from GitHub.
 
 ## 2. Open project in Visual Studio
 Launch Visual Studio 2017, and open the MNIST sample application. Inside the solution explorer, the project has three main code files:
@@ -39,25 +40,32 @@ To run the project, click the **Start Debugging** button on the toolbar, or pres
 ![Application screenshot](images/get-started2.png)  
 
 ## 4. Download a model
-Next, let's get a machine learning model to add to our app. For this tutorial, we'll use a pre-trained **MNIST model** that was trained with the [Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/) and exported to ONNX format. You'll need to download the pre-trained model from the [ONNX Model Zoo](https://github.com/onnx/models) on GitHub.
+Next, let's get a machine learning model to add to our app. For this tutorial, we'll use a pre-trained **MNIST model** that was trained with the [Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/) and exported to ONNX format. 
+
+If you are using the MNIST_GetStarted sample from GitHub, the MNIST model has already been included in your Assets folder, and you will only need to add it to your application.
+You can also download the pre-trained model from the [ONNX Model Zoo](https://github.com/onnx/models) on GitHub.
 
 If you're interested in training your own model, you can follow this [tutorial](train-ai-model.md) that we used to train this MNIST model.
 
 ## 5. Add the model 
-After downloading the MNIST model, right click on the Assets folder in the Solution Explorer, and select "Add > Existing Item". Point the file picker to the location of your ONNX model and click add. 
+Once you have the pre-trained MNIST model, we will use the mlgen command line tool to generate interface code to interact with our model. To learn how to use the tool, please see Automatic Interface Code Generation in [Overview](overview.md).
 
-The project should now contain two new files:
+You should now have two new files:
 - `MNIST.onnx` - your trained model.
 - `MNIST.cs` - the Windows ML generated code. 
 
+Let's add these files to our Visual Studio project.
+
 ![Solution explorer with new files](images/get-started3.png)
 
-What's this new `MNIST.cs` file? Well, with the Visual Studio Windows ML plugin, when you add a pre-trained model to your application, Visual Studio automatically generates code to provide an interface to interact with the model in your app.
+To make sure the model builds when we compile our application, right click on the `mnist.onnx` file, and select **Properties**. For **Build Action**, select **Content**. 
 
-Let's take a look at the generated code in the `MNIST.cs` file. We have three classes:
+Now, let's take a look at the newly generated code in the `MNIST.cs` file. We have three classes:
 - **MNISTModel** creates the machine learning model representation, binds the specific inputs and outputs to model, and evaluates the model asynchronously. 
 - **MNISTModelInput** initializes the input types that the model expects. In this case, the input expects a VideoFrame.
 - **MNISTModelOutput** initializes the types that the model will output. In this case, the output will be a list called "classLabel" of type `<long>` and a Dictionary called "prediction" of type `<long, float>`
+
+We'll now use these classes to load, bind, and evaluate the model in our project. 
 
 ## 6. Load, bind, and evaluate the model
 For Windows ML applications, the pattern we want to follow is: Load > Bind > Evaluate.
@@ -81,11 +89,12 @@ namespace MNIST_Demo
 }
 
 ```
-Then, in recognizeButton_Click(), we'll load the model.
+Then, in LoadModel(), we'll load the model.
 ```csharp
-private async void recognizeButton_Click(object sender, RoutedEventArgs e)
+private async void LoadModel()
 {
-    var modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/MNIST.onnx"));
+    //Load a machine learning model
+    StorageFile modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/MNIST.onnx"));
     ModelGen = await MNISTModel.CreateMNISTModel(modelFile);
 }
 ```
@@ -96,51 +105,37 @@ In this case, our model is expecting an input of type VideoFrame.
 Using our included helper functions in `helper.cs`, we will copy the contents of the InkCanvas, convert it to type VideoFrame, and bind it to our model.
 
 ```csharp
-// instantiate helper class
 private Helper helper = new Helper();
 
 private async void recognizeButton_Click(object sender, RoutedEventArgs e)
 {
-    var modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/MNIST.onnx"));
-    ModelGen = await MNISTModel.CreateMNISTModel(modelFile);
-
-    // copy and convert InkCanvas contents to VideoFrame
-    ModelInput.image = await helper.GetHandWrittenImage(inkGrid);
+     //Bind model input with contents from InkCanvas
+     ModelInput.Input3 = await helper.GetHandWrittenImage(inkGrid);
 }
 ```
 
-For output, we simply call EvaluateAsync with the specified input. Since the model returns a list of digits with a corresponding probability, we need to parse the returned list to determine which digit had the highest probability and display that one.
+For output, we simply call EvaluateAsync() with the specified input. Since the model returns a list of digits with a corresponding probability, we need to parse the returned list to determine which digit had the highest probability and display that one.
 
 ```csharp
-// instantiate helper class
-private Helper helper = new Helper();
-
 private async void recognizeButton_Click(object sender, RoutedEventArgs e)
 {
-    var modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/MNIST.onnx"));
-    ModelGen = await MNISTModel.CreateMNISTModel(modelFile);
-
-    // copy and convert InkCanvas contents to VideoFrame
-    ModelInput.image = await helper.GetHandWrittenImage(inkGrid);
-
-    // evaluate input
+    //Bind model input with contents from InkCanvas
+    ModelInput.Input3 = await helper.GetHandWrittenImage(inkGrid);
+    
+    //Evaluate the model
     ModelOutput = await ModelGen.EvaluateAsync(ModelInput);
-
-    // analyze results
+            
+    //Iterate through evaluation output to determine highest probability digit
     float maxProb = 0;
     int maxIndex = 0;
-    for (int i = 0; i < ModelOutput.prediction.Count(); i++)
+    for (int i = 0; i < 10; i++)
     {
-        // find highest probability
-        if (ModelOutput.prediction[i] > maxProb)
+        if (ModelOutput.Plus214_Output_0[i] > maxProb)
         {
             maxIndex = i;
-            maxProb = ModelOutput.prediction[i];
+            maxProb = ModelOutput.Plus214_Output_0[i];
         }
-        ModelOutput.prediction[i] = 0;
     }
-
-    // display predicted digit
     numberLabel.Text = maxIndex.ToString();
 }
 ```
@@ -160,4 +155,4 @@ Once we build and launch the app, we'll be able to recognize a number drawn on t
 ![complete app](images/get-started4.png)
 
 ## 8. Next steps
-That's it - you made your first Windows Machine Learning app! For more samples to get started with WinML, check out [Sample apps](samples.md), or browse the [WinML APIs](/uwp/api/windows.ai.machinelearning.preview).
+That's it - you've made your first Windows Machine Learning app! For more samples to get started with Windows ML, check out [Sample apps](samples.md).

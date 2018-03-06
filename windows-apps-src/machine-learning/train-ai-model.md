@@ -1,20 +1,20 @@
 ---
 author: serenaz
-title: How to train a model for WinML in Visual Studio
-description: Learn how to train a model for Windows Machine Learning (WinML) using Visual Studio Tools for AI with this step-by-step tutorial.
+title: How to train a model for Windows ML in Visual Studio
+description: Learn how to train a model for Windows Machine Learning using Visual Studio Tools for AI with this step-by-step tutorial.
 ms.author: sezhen
 ms.date: 03/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, winml, Windows machine learning, visual studio
+keywords: windows 10, uwp, Windows machine learning, visual studio
 ms.localizationpriority: medium
 ---
 
-# How to train a model for WinML in Visual Studio
-In this tutorial, we'll use [Visual Studio Tools for AI](http://aka.ms/vstoolsforai), a development extension for building, testing, and deploying Deep Learning / AI solutions, to train a model for the MNIST sample app in [Get Started](get-started.md).
+# How to train a model for Windows ML in Visual Studio
+In this tutorial, we'll use [Visual Studio Tools for AI](http://aka.ms/vstoolsforai), a development extension for building, testing, and deploying Deep Learning & AI solutions, to train a model for the MNIST sample app in [Get Started](get-started.md).
 
-We'll train the model with the [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) framework and the [MNIST dataset](http://yann.lecun.com/exdb/mnist/), which has a training set of 60,000 examples and a test set of 10,000 examples of handwritten digits. We'll then save the model using the [Open Neural Network Exchange (ONNX)](https://onnx.ai/) format to use with WinML. 
+We'll train the model with the [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) framework and the [MNIST dataset](http://yann.lecun.com/exdb/mnist/), which has a training set of 60,000 examples and a test set of 10,000 examples of handwritten digits. We'll then save the model using the [Open Neural Network Exchange (ONNX)](https://onnx.ai/) format to use with Windows ML. 
 
 ## Prerequisites
 ### Install Visual Studio Tools for AI
