@@ -4,7 +4,7 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app.
 title: Get details for an error in your app
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -56,30 +56,8 @@ To use this method, you need to first do the following:
 | endDate | date | The end date in the date range of detailed error data to retrieve. The default is the current date. |  No  |
 | top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
 | skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on. |  No  |
-| filter |string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
-| orderby | string | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
-
-<span/>
- 
-### Filter fields
-
-The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
-
--   *filter=market eq 'US' and osVersion eq 'Windows 10'*
--   *filter=market ne 'US' and osVersion ne 'Windows 8'*
-
-For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
-
-| Fields        |  Description        |
-|---------------|-----------------|
-| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
-| osBuild | The build number of the OS on which the app was running when the error occurred. |
-| market | A string that contains the ISO 3166 country code of the market of the device on which the app was running when the error occurred. |
-| deviceType | One of the following strings that specifies the type of the device on which the app was running when the error occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceModel | A string that specifies the model of the device on which the app was running when the error occurred. |
-| cabId | The unique ID of the CAB file that is associated with this error. |
-| cabExpirationTime | The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format. |
-| packageVersion | The version of the app package that is associated with this error. |
+| filter |string  | One or more statements that filter the rows in the response. Each statement contains a field name from the response body and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. String values must be surrounded by single quotes in the *filter* parameter. You can specify the following fields from the response body:<p/><ul><li><strong>market</strong></li><li><strong>date</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul> | No   |
+| orderby | string | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>market</strong></li><li><strong>date</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
 
 <span/> 
 
@@ -113,18 +91,19 @@ Elements in the *Value* array contain the following values.
 
 | Value           | Type    | Description     |
 |-----------------|---------|----------------------------|
-| date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | applicationId   | string  | The Store ID of the app for which you retrieved detailed error data.      |
-| failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image where the failure occurred, and the associated function name.           |
 | failureHash     | string  | The unique identifier for the error.     |
-| osVersion       | string  | The OS version on which the error occurred.    |
-| market          | string  | The ISO 3166 country code of the device market.     |
-| deviceType      | string  | The type of device that on which the error occurred.     |
-| packageVersion  | string  | The version of the app package that is associated with this error.    |
-| osBuild         | string  | The build number of the OS on which the error occurred.       |
+| failureName     | string  | The name of the failure, which is made up of four parts: one or more problem classes, an exception/bug check code, the name of the image where the failure occurred, and the associated function name.           |
+| date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
 | cabId           | string  | The unique ID of the CAB file that is associated with this error.   |
 | cabExpirationTime  | string  | The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format.   |
+| market          | string  | The ISO 3166 country code of the device market.     |
+| osBuild         | string  | The build number of the OS on which the error occurred.       |
+| packageVersion  | string  | The version of the app package that is associated with this error.    |
 | deviceModel           | string  | A string that specifies the model of the device on which the app was running when the error occurred.   |
+| osVersion       | string  | One of the following strings that indicates the OS version on which the error occurred:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>    |
+| osRelease       | string  |  One of the following strings that specifies the OS release or flighting ring (as a subpopulation within OS version) on which the desktop application is installed.<p/><p>For Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p/><p>For Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>For Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>For Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>For Windows 7:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>If the OS release or flighting ring is unknown, this field has the value <strong>Unknown</strong>.</p>    |
+| deviceType      | string  | One of the following strings that specifies the type of the device on which the app was running when the error occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>     |
 | cabDownloadable           | Boolean  | Indicates whether the CAB file is downloadable for this user.   |
 
 <span/> 
@@ -140,7 +119,7 @@ The following example demonstrates an example JSON response body for this reques
       "applicationId": "9NBLGGGZ5QDR ",
       "failureHash": "012345-5dbc9-b12f-c124-9d9810f05d8b",
       "failureName": "STOWED_EXCEPTION_System.UriFormatException_exe!ContosoGame.GroupedItems+_ItemView_ItemClick_d__9.MoveNext",
-      "date": "2015-02-05 09:11:25",
+      "date": "2018-02-05 09:11:25",
       "cabId": "133637331323",
       "cabExpirationTime": "2016-12-05 09:11:25",
       "market": "US",
@@ -148,7 +127,8 @@ The following example demonstrates an example JSON response body for this reques
       "packageVersion": "1.0.2.6",
       "deviceModel": "Contoso Computer",
       "osVersion": "Windows 10",
-      "deviceType": "Windows.Desktop",
+      "osRelease": "Version 1507",
+      "deviceType": "PC",
       "cabDownloadable": false
     }
   ],
