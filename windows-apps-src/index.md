@@ -27,7 +27,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                     <div class="cardText">
                         <h3>What's new</h3>
                         <p>
-                            <a href="whats-new/windows-10-build-16299.md">New APIs and features</a>
+                            <a href="whats-new/windows-10-version-latest.md">New APIs and features</a>
                         </p>
                         <p>
                             <a href="whats-new/windows-docs-latest.md">What's new in the docs</a>

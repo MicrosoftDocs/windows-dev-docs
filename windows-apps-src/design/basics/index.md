@@ -19,7 +19,7 @@ ms.localizationpriority: medium
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage"  >
+                        <div class="cardImage" style="background-color: #f2f2f2" >
                         <a href="design-and-ui-intro.md">
                             <img src="images/landing-page/reposition-sm.png" alt=" " style="display: block; width: 100%; height: auto;" />
                             </a>
@@ -38,7 +38,7 @@ ms.localizationpriority: medium
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
-                        <div class="cardImage">
+                        <div class="cardImage" style="background-color: #f2f2f2">
                         <a href="../fluent-design-system/index.md">
                             <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
                             </a>
