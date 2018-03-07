@@ -1,4 +1,5 @@
 # Design basics
+## [Overview](basics/index.md)
 ## [Intro to app design](basics/design-and-ui-intro.md)
 ## [Fluent Design system](fluent-design-system/index.md)
 ## [Command basics](basics/commanding-basics.md)
@@ -6,7 +7,10 @@
 ## [Navigation basics](basics/navigation-basics.md)
 ### [Implement basic navigation](basics/navigate-between-two-pages.md)
 ### [Support history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
-## [Tutorial: Create a user interface](basics/xaml-basics-ui.md)
+## Tutorials
+### [Create a user interface](basics/xaml-basics-ui.md)
+### [Create an adaptive layout](basics/xaml-basics-adaptive-layout.md)
+### [Style a control](basics/xaml-basics-style.md)
 
 # Style
 ## [Overview](style/index.md)
@@ -25,7 +29,6 @@
 ### [XAML Control templates](controls-and-patterns/control-templates.md)
 ### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
 ### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
-### [Tutorial: Create custom styles](controls-and-patterns/xaml-basics-style.md)
 
 # Motion
 ## [Overview](motion/index.md)
@@ -52,7 +55,6 @@
 ### [Custom panel example: BoxPanel](layout/boxpanel-example-custom-panel.md)
 ## [Transforms](layout/transforms.md)
 ### [3-D perspective effects for XAML UI](layout/3-d-perspective-effects.md)
-## [Tutorial: Create adaptive layouts](layout/xaml-basics-adaptive-layout.md)
 
 # Controls
 ## [Overview](controls-and-patterns/index.md)

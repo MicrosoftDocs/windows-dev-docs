@@ -18,14 +18,14 @@
                 topicHref: "/windows/uwp/get-started/whats-a-uwp"  
               - name: Design and UI
                 tocHref: /windows/uwp/design/
-                topicHref: "/windows/uwp/layout/design-and-ui-intro" 
+                topicHref: "/windows/uwp/design/basics/index" 
                 items:
                     - name: Design basics
                       tocHref: /windows/uwp/design/basics/
-                      topicHref: "/windows/uwp/design/basics/design-and-ui-intro"    
+                      topicHref: "/windows/uwp/design/basics/index"    
                     - name: Design basics
                       tocHref: /windows/uwp/design/fluent-design-system/
-                      topicHref: "/windows/uwp/design/basics/design-and-ui-intro"                                     
+                      topicHref: "/windows/uwp/design/basics/index"                                     
                     - name: Layout
                       tocHref: /windows/uwp/design/layout/
                       topicHref: "/windows/uwp/design/layout/index" 

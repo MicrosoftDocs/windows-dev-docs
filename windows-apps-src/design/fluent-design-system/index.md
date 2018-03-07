@@ -1,5 +1,5 @@
 ---
-description: Learn Fluent Design and how to incorporate it into your apps.
+description: Learn about Fluent Design and how to incorporate it into your apps.
 title: Fluent Design System for UWP apps
 author: mijacobs
 keywords: uwp app layout, universal windows platform, app design, interface, fluent design system
