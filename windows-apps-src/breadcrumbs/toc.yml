@@ -15,7 +15,7 @@
                 topicHref: "/windows/uwp/whats-new/windows-10-version-latest"         
               - name: Get started
                 tocHref: /windows/uwp/get-started/
-                topicHref: "/windows/uwp/get-started/whats-a-uwp"  
+                topicHref: "/windows/uwp/get-started/"  
               - name: Design and UI
                 tocHref: /windows/uwp/design/
                 topicHref: "/windows/uwp/design/basics/index" 
