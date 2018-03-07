@@ -4,7 +4,7 @@ Description: The Usage report in the Windows Dev Center dashboard lets you see h
 title: Usage report
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 11/6/2017
+ms.date: 3/8/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -31,7 +31,7 @@ You can also expand **Filters** to filter the data on this page by package versi
 The info in all of the charts listed below will reflect the date range and any filters you've selected (with the exception of **New users** in the **Usage** chart, which will not appear if any filters are selected). Some sections also allow you to apply additional filters.
 
 > [!IMPORTANT]
-> This report only includes usage data from customers on Windows 10 (including Xbox) who have not opted out of providing telemetry info.
+> This report only includes usage data from customers on Windows 10 (including Xbox) who have not opted out of providing telemetry info. The usage data for Xbox games is included here regardless of whether the customer was signed into Xbox Live. 
 
 
 ##Usage
@@ -42,7 +42,7 @@ This chart has four separate tabs that you can view, showing usage by day or wee
 
 - **Users**: Shows the total number of **user sessions** over the selected period of time. Each user session represents a distinct period of time, starting when the app launches (process start) and ending when it terminates (process end) or after a period of inactivity. Because of this, a single customer could have multiple user sessions over the same day or week. The total number of **Active users** (any customer using the app that day or week) and **New users** (a customer who used your app for the first time that day or week) are also shown. Note that if you have applied any filters to the page, you won't see **New users** in this chart.
 - **Devices**: Shows the number of daily devices used to interact with your app by all users.
-- **Duration**: Shows the total engagement minutes (minutes where a user is actively using your app).
+- **Duration**: Shows the total engagement hours (hours where a user is actively using your app).
 - **Retention**: Shows the total number of **DAU/MAU** (Daily Active Users/Monthly Active Users) over the selected period of time.
 
 
