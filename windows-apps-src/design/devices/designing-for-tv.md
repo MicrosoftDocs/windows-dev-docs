@@ -171,6 +171,9 @@ private bool BackRequested()
 }
 ```
 
+> [!NOTE]
+> If the B button is used to go back, then don't show a back button in the UI. If you're using a [Navigation view](../controls-and-patterns/navigationview.md), the back button will be hidden automatically. For more information about backwards navigation, see [Navigation history and backwards navigation for UWP apps](../basics/navigation-history-and-backwards-navigation.md).
+
 UWP apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
 
 ### Accelerator support
@@ -520,6 +523,21 @@ Try to put initial focus in the top left region of your app (or top right for a 
 One focus visual should always be visible on the screen so that the user can pick up where they left off without searching for the focus. Similarly, there should be a focusable item onscreen at all times&mdash;for example, don't use pop-ups with only text and no focusable elements.
 
 An exception to this rule would be for full-screen experiences, such as watching videos or viewing images, in which cases it would not be appropriate to show the focus visual.
+
+### Reveal focus
+
+Reveal focus is a lighting effect that animates the border of focusable elements, such as a button, when the user moves gamepad or keyboard focus to them. By animating the glow around the border of the focused elements, Reveal focus gives users a better understanding of where focus is and where focus is going.
+
+Reveal focus is off by default. For 10 foot experiences you should opt-in to reveal focus by setting the [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_FocusVisualKind) in your app constructor.
+
+```csharp
+    if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
+    {
+        this.FocusVisualKind = FocusVisualKind.Reveal;
+    }
+```
+
+For more information see the guidance for [Reveal focus](/windows/uwp/design/style/reveal-focus).
 
 ### Customizing the focus visual
 

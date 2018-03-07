@@ -152,7 +152,7 @@ You might have noticed that in XAML Designer, your app showed white text on a bl
 
 In Part 1, you had a taste of using XAML Designer and some of the other tools provided by Visual Studio. Here, you'll use the XAML editor to work directly with the XAML markup. As you become more familiar with XAML, you might find that this is a more efficient way for you to work.
 
-First, you'll replace the root layout [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) with a [**RelativePanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel). The RelativePanel makes it easier to rearrange chunks of UI relative to the panel or other pieces of UI. You'll see its usefulness in the [XAML Adaptive Layout](../layout/xaml-basics-adaptive-layout.md) tutorial. 
+First, you'll replace the root layout [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid) with a [**RelativePanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel). The RelativePanel makes it easier to rearrange chunks of UI relative to the panel or other pieces of UI. You'll see its usefulness in the [XAML Adaptive Layout](xaml-basics-adaptive-layout.md) tutorial. 
 
 Then, you'll add a [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) control to display your data.
 
@@ -552,7 +552,7 @@ Now, the scrollbar is aligned with the edge of the window. Good job! You've crea
 Now that you've created the basic UI, checkout out these other tutorials, also based on the PhotoLab sample: 
 
 * Add real images and data in the [XAML data binding tutorial](../../data-binding/xaml-basics-data-binding.md).
-* Make the UI adapt to different screen sizes in the [XAML adaptive layout tutorial](../layout/xaml-basics-adaptive-layout.md).
+* Make the UI adapt to different screen sizes in the [XAML adaptive layout tutorial](xaml-basics-adaptive-layout.md).
 
 
 ## Get the final version of the PhotoLab sample

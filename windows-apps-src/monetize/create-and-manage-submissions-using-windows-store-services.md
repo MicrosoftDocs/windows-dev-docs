@@ -4,7 +4,7 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: Use the Microsoft Store submission API to programmatically create and manage submissions for apps that are registered to your Windows Dev Center account.
 title: Create and manage submissions
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -122,8 +122,11 @@ The following articles provide detailed code examples that demonstrate how to us
 * [Python sample: submissions for apps, add-ons, and flights](python-code-examples-for-the-windows-store-submission-api.md)
 * [Python sample: app submission with game options and trailers](python-code-examples-for-submissions-game-options-and-trailers.md)
 
-> [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+## StoreBroker PowerShell module
+
+As an alternative to calling the Windows Store submission API directly, we also provide an open-source PowerShell module which implements a command-line interface on top of the API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store.
+
+For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 ## Troubleshooting
 

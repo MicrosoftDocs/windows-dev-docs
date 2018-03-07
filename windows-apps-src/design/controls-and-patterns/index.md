@@ -57,6 +57,8 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;">[Color picker](color-picker.md)</li>
 
+<li style="list-style-type: none;">[Contact card](contact-card.md)</li>
+
 <li style="list-style-type: none;">[Date and time controls](date-and-time.md)</li>
 
 <li style="list-style-type: none;">[Dialogs and flyouts](dialogs.md)</li>

@@ -25,7 +25,7 @@ When determining what role or permissions to apply, keep in mind:
 -   A user with a certain role (or set of custom permissions) may also be part of a group that has a different role (or set of permissions). In that case, the user will have access to all of the functionality associated with both the group and the individual account.
 
 > [!TIP]
-> This topic is specific to the Windows apps developer program. For info about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](https://msdn.microsoft.com/en-us/library/windows/desktop/mt826504#users).
+> This topic is specific to the Windows apps developer program. For info about user roles in the Hardware Developer Program, see [Managing User Roles](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles). For info about user roles in the Windows Desktop Application Program, see [Windows Desktop Application Program](https://msdn.microsoft.com/library/windows/desktop/mt826504#users).
 
 
 <span id="roles" />

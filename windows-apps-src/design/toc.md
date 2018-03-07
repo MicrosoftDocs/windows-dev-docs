@@ -1,4 +1,5 @@
 # Design basics
+## [Overview](basics/index.md)
 ## [Intro to app design](basics/design-and-ui-intro.md)
 ## [Fluent Design system](fluent-design-system/index.md)
 ## [Command basics](basics/commanding-basics.md)
@@ -6,14 +7,18 @@
 ## [Navigation basics](basics/navigation-basics.md)
 ### [Implement basic navigation](basics/navigate-between-two-pages.md)
 ### [Support history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
-## [Tutorial: Create a user interface](basics/xaml-basics-ui.md)
+## Tutorials
+### [Create a user interface](basics/xaml-basics-ui.md)
+### [Create an adaptive layout](basics/xaml-basics-adaptive-layout.md)
+### [Style a control](basics/xaml-basics-style.md)
 
 # Style
 ## [Overview](style/index.md)
 ## [Acrylic](style/acrylic.md)
 ## [Color](style/color.md)
 ## [Icons](style/icons.md)
-## [Reveal](style/reveal.md)
+## [Reveal highlight](style/reveal.md)
+## [Reveal focus](style/reveal-focus.md)
 ## [Sound](style/sound.md)
 ## [Typography](style/typography.md)
 ### [Fonts](style/fonts.md)
@@ -24,7 +29,6 @@
 ### [XAML Control templates](controls-and-patterns/control-templates.md)
 ### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
 ### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
-### [Tutorial: Create custom styles](controls-and-patterns/xaml-basics-style.md)
 
 # Motion
 ## [Overview](motion/index.md)
@@ -51,7 +55,6 @@
 ### [Custom panel example: BoxPanel](layout/boxpanel-example-custom-panel.md)
 ## [Transforms](layout/transforms.md)
 ### [3-D perspective effects for XAML UI](layout/3-d-perspective-effects.md)
-## [Tutorial: Create adaptive layouts](layout/xaml-basics-adaptive-layout.md)
 
 # Controls
 ## [Overview](controls-and-patterns/index.md)
@@ -62,6 +65,7 @@
 ## [Buttons](controls-and-patterns/buttons.md)
 ## [Check box](controls-and-patterns/checkbox.md)
 ## [Color picker](controls-and-patterns/color-picker.md)
+## [Contact card](controls-and-patterns/contact-card.md)
 ## [Date and time](controls-and-patterns/date-and-time.md)
 ### [Calendar date picker](controls-and-patterns/calendar-date-picker.md)
 ### [Calendar view](controls-and-patterns/calendar-view.md)
@@ -101,6 +105,7 @@
 ## [Swipe](controls-and-patterns/swipe.md)
 ## [Tabs and pivot](controls-and-patterns/tabs-pivot.md)
 ## [Text](controls-and-patterns/text-controls.md)
+### [Content links](controls-and-patterns/content-links.md)
 ### [Labels](controls-and-patterns/labels.md)
 ### [Password box](controls-and-patterns/password-box.md)
 ### [Rich edit box](controls-and-patterns/rich-edit-box.md)
@@ -204,6 +209,7 @@
 # Devices
 ## [Overview](devices/index.md)
 ## [Designing for Xbox and TV](devices/designing-for-tv.md)
+## [Mixed Reality](devices/designing-for-MR.md)
 
 # Usability
 ## [Overview](usability/index.md)
@@ -216,6 +222,7 @@
 ### [Accessibility checklist](accessibility/accessibility-checklist.md)
 ### [Expose basic accessibility information](accessibility/basic-accessibility-information.md)
 ### [Keyboard accessibility](accessibility/keyboard-accessibility.md)
+### [Landmarks and Headings](accessibility/landmarks-and-headings.md)
 ### [High-contrast themes](accessibility/high-contrast-themes.md)
 ### [Accessible text requirements](accessibility/accessible-text-requirements.md)
 ### [Accessibility practices to avoid](accessibility/practices-to-avoid.md)

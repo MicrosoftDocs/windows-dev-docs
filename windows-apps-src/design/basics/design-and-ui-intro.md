@@ -3,9 +3,6 @@ author: serenaz
 Description: An overview of the universal design features that are included in every UWP app to help you build apps that scale beautifully across a range of devices.
 title: Introduction to Universal Windows Platform (UWP) app design (Windows apps)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-label: Intro to UWP app design
-template: detail.hbs
-op-migration-status: ready
 ms.author: sezhen
 ms.date: 12/13/2017
 ms.topic: article
