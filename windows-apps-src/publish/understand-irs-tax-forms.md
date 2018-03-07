@@ -3,7 +3,7 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: Understand IRS tax forms issued by Microsoft
 ms.author: wdg-dev-content
-ms.date: 01/24/2018
+ms.date: 03/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,11 +13,6 @@ ms.localizationpriority: high
 ---
 
 # Understand IRS tax forms issued by Microsoft
-
-> [!IMPORTANT]
-> Microsoft has learned that our 2017 1099-MISC forms for payments for revenue from Microsoft's marketplaces and/or advertising **contain incorrect amounts, overstating the actual payments**. We sincerely regret this error and are working to produce corrected forms as soon as possible. For more info, view this [forum post](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/3c5b7b70-c80e-47b5-899a-ba1d70badde5/important-information-regarding-2017-1099misc-forms?forum=wppayout).
-> 
-> **Special note**: Due to the error, some developers may receive corrected forms with amounts that are below the thresholds described below. 
 
 Depending on your location and the amount of sales and/or payments you receive, you may receive one or more tax forms from Microsoft each year. Microsoft is required to issue these forms and file them with the Internal Revenue Service (IRS).
 
