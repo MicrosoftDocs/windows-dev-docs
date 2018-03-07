@@ -90,6 +90,6 @@ The Xbox Live Creators Program allows developers to quickly publish their UWP ga
 
 Motion controllers represent a user's hands in Windows Mixed Reality. [Watch the video](https://www.youtube.com/watch?v=rkDpRllbLII) to learn how the motion controllers work when they are both in and out of the field of view of the Mixed Reality headset, and [read more about controller tracking here.](https://developer.microsoft.com/windows/mixed-reality/motion_controllers#controller_tracking_state%E2%80%9D)
 
-### Accesibility tools for Windows developers
+### Accessibility tools for Windows developers
 
 The Windows 10 SDK includes several tools to help you test for and improve the accessibility of your app. The Inspect and AccEvent tools help you ensure your apps are available to all. [Watch the video](https://www.youtube.com/watch?v=ce0hKQfY9B8&list=PLWs4_NfqMtoycBFndriDmkQlMLwflyoFF&t=0s&index=1) to learn about these tools, then [read more about accessibility testing](../design/accessibility/accessibility-testing.md) for more information.
