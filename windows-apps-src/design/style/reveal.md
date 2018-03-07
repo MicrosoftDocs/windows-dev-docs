@@ -83,7 +83,7 @@ These controls do not have Reveal by default as they are smaller controls that a
 
 To apply these styles, simply set the control's [Style](/uwp/api/Windows.UI.Xaml.Style) property:
 
-```XAML
+```xaml
 <Button Content="Button Content" Style="{StaticResource ButtonRevealStyle}"/>
 ```
 
@@ -95,7 +95,7 @@ Reveal changes slightly depending on the requested theme of the control, app or 
 
 To enabled white borders while in light theme, simply set the requested theme on the control to Dark.
 
-```XAML
+```xaml
 <Grid RequestedTheme="Dark">
     <Button Content="Button" Click="Button_Click" Style="{ThemeResource ButtonRevealStyle}"/>
 </Grid>
@@ -103,7 +103,7 @@ To enabled white borders while in light theme, simply set the requested theme on
 
 Or change the TargetTheme on the RevealBorderBrush to Dark. Remember! If the TargetTheme is set to Dark, then Reveal will be white, but if it's set to Light, Reveal's borders will be gray.
 
-```XAML
+```xaml
  <RevealBorderBrush x:Key="MyLightBorderBrush" TargetTheme="Dark" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}" />
 ```
 
@@ -129,7 +129,7 @@ These effects are defined by two brushes:
 * Border reveal is defined by  **RevealBorderBrush**
 * Hover reveal is defined by **RevealBackgroundBrush**
 
-```XAML
+```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
 <RevealBackgroundBrush x:Key="MyRevealBackgroundBrush" TargetTheme="Light" Color="{StaticResource SystemAccentColor}" FallbackColor="{StaticResource SystemAccentColor}" />
 ```
@@ -168,7 +168,7 @@ We've created a set of system Reveal brushes you can use to customize your templ
 
 Here's an entire template for what a Reveal Button would look like:
 
-```XAML
+```xaml
 <Style TargetType="Button" x:Key="ButtonStyle1">
     <Setter Property="Background" Value="{ThemeResource ButtonRevealBackground}" />
     <Setter Property="Foreground" Value="{ThemeResource ButtonForeground}" />
@@ -251,11 +251,13 @@ Here's an entire template for what a Reveal Button would look like:
 
 ### Fine-tuning the Reveal effect on a custom control 
 
-After you enable Reveal on your custom or re-templated content, run the app and evaluate the effect. If you're not happy with the effect, try ,making some of these changes:
+When you enable reveal on a custom or re-templated control or a custom commanding surface, these tips can help you optimize the effect:
  
-* Remove border approach, and keep it on the hovered item only.
-* If you have a lot of interactive elements that go into and out of disabled states often,  use the border approach behavior on the background as well as boder to help emphasize those dynamic interactions. This helps make it very clear to the user when content is clickable and when it is not.
-* If you have touching elements, provide a 1px margin of separation between them to help indicate exactly what is interactive.
+* On adjacent items with sizes that do not align either in height or width (particularly in lists): 
+Remove the border approach behavior and keep the borders shown on hover only.
+* For commanding items that frequently go in and out of the disabled state: 
+Place the border approach brush on the elements' backplates as well as their borders to emphasize their state.
+* For adjacent commanding elements that are so close they touch: Add a 1px margin between the two elements. 
 
 ## Do's and don'ts
 - Do use Reveal on elements where the user can take many actions (CommandBars, Navigation menus)

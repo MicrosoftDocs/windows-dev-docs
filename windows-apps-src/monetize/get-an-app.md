@@ -4,7 +4,7 @@ ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: Use this method in the Microsoft Store submission API to retrieve information about a specific app that is registered to your Windows Dev Center account.
 title: Get an app
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 02/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -59,7 +59,7 @@ Do not provide a request body for this method.
 
 ### Request example
 
-The following example demonstrates how to retrieve information about an app with the Store ID value 9WZDNCRD91MD.
+The following example demonstrates how to retrieve information about an app with the Store ID value 9NBLGGH4R315.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTTP/1.1

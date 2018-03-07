@@ -524,6 +524,21 @@ One focus visual should always be visible on the screen so that the user can pic
 
 An exception to this rule would be for full-screen experiences, such as watching videos or viewing images, in which cases it would not be appropriate to show the focus visual.
 
+### Reveal focus
+
+Reveal focus is a lighting effect that animates the border of focusable elements, such as a button, when the user moves gamepad or keyboard focus to them. By animating the glow around the border of the focused elements, Reveal focus gives users a better understanding of where focus is and where focus is going.
+
+Reveal focus is off by default. For 10 foot experiences you should opt-in to reveal focus by setting the [Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_FocusVisualKind) in your app constructor.
+
+```csharp
+    if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
+    {
+        this.FocusVisualKind = FocusVisualKind.Reveal;
+    }
+```
+
+For more information see the guidance for [Reveal focus](/windows/uwp/design/style/reveal-focus).
+
 ### Customizing the focus visual
 
 If you'd like to customize the focus visual, you can do so by modifying the properties related to the focus visual for each control. There are several such properties that you can take advantage of to personalize your app.

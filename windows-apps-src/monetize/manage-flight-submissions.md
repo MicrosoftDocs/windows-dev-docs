@@ -4,7 +4,7 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
 title: Manage package flight submissions
 ms.author: mcleans
-ms.date: 07/10/2017
+ms.date: 02/28/18
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -72,7 +72,7 @@ Use the following methods to get, create, update, commit, or delete a package fl
 </table>
 
 <span id="create-a-package-flight-submission">
-### Create a package flight submission
+## Create a package flight submission
 
 To create a submission for a package flight, follow this process.
 
@@ -132,7 +132,7 @@ To create a submission for a package flight, follow this process.
 7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
 
 <span/>
-### Code examples
+## Code examples
 
 The following articles provide detailed code examples that demonstrate how to create a package flight submission in several different programming languages:
 
@@ -140,8 +140,11 @@ The following articles provide detailed code examples that demonstrate how to cr
 * [Java code examples](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python code examples](python-code-examples-for-the-windows-store-submission-api.md)
 
-> [!NOTE]
-> In addition to the code examples listed above, we also provide an open-source PowerShell module which implements a command-line interface on top of the Microsoft Store submission API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store. For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
+## StoreBroker PowerShell module
+
+As an alternative to calling the Windows Store submission API directly, we also provide an open-source PowerShell module which implements a command-line interface on top of the API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store.
+
+For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span id="manage-gradual-package-rollout">
 ## Manage a gradual package rollout for a package flight submission

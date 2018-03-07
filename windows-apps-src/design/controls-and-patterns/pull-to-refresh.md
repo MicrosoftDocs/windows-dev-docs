@@ -1,11 +1,11 @@
 ---
-author: muhsinking
-Description: Use the pull-to-refresh pattern with a list view.
+author: Jwmsft
+Description: Use the pull-to-refresh control to get new content into a list.
 title: Pull-to-refresh
 label: Pull-to-refresh
 template: detail.hbs
-ms.author: mukin
-ms.date: 05/19/2017
+ms.author: jimwalk
+ms.date: 03/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,230 +19,318 @@ ms.localizationpriority: medium
 ---
 # Pull to refresh
 
- 
+Pull-to-refresh lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on devices with a touch screen. You can use the APIs shown here to implement pull-to-refresh in your app.
 
-The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on mobile apps, but is useful on any device with a touch screen. You can handle [manipulation events](../input/touch-interactions.md#manipulation-events) to implement pull-to-refresh in your app.
+> **Important APIs**: [RefreshContainer](/uwp/api/windows.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)
 
-> **Important APIs**: [ListView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), [GridView class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
+![pull-to-refresh gif](images/Pull-To-Refresh.gif)
 
-The [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635) shows how to extend a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) control to support this pattern. In this article, we use this sample to explain the key points of implementing pull-to-refresh.
+## Is this the right control?
 
-![pull-to-refresh sample](images/ptr-phone-1.png)
+Use pull-to-refresh when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on touch-first devices.
 
-## Is this the right pattern?
+You can also use the [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer) to create a consistent refresh experience that is invoked in other ways, such as by a refresh button.
 
-Use the pull-to-refresh pattern when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on mobile, touch-first devices.
+## Refresh controls
+
+Pull-to-refresh is enabled by 2 controls.
+
+- **RefreshContainer** - a ContentControl that provides a wrapper for the pull-to-refresh experience. It handles the touch interactions and manages the state of its internal refresh visualizer.
+- **RefreshVisualizer** - encapsulates the refresh visualization explained in the next section.
+
+The main control is the **RefreshContainer**, which you place as a wrapper around the content that the user pulls to trigger a refresh. RefreshContainer works only with touch, so we recommend that you also have a refresh button available for users who don't have a touch interface. You can position the refresh button at a suitable location in the app, either on a command bar or at a location close to the surface being refreshed.
+
+## Refresh visualization
+
+The default refresh visualization is a circular progress spinner that is used to communicate when a refresh will happen and the progress of the refresh after it is initiated. The refresh visualizer has 5 states.
+
+ The distance the user needs to pull down on a list to initiate a refresh is called the _threshold_. The visualizer [State](/uwp/api/windows.ui.xaml.controls.refreshvisualizer#Windows_UI_Xaml_Controls_RefreshVisualizer_State) is determined by the pull state as it relates to this threshold. The possible values are contained in the [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate) enumeration.
+
+### Idle
+
+The visualizer's default state is **Idle**. The user is not interacting with the RefreshContainer via touch, and there is not a refresh in progress.
+
+Visually, there is no evidence of the refresh visualizer.
+
+### Interacting
+
+When the user pulls the list in the direction specified by the PullDirection property, and before the threshold is reached, the visualizer is in the **Interacting** state.
+
+- If the user releases the control while in this state, the control returns to **Idle**.
+
+    ![pull-to-refresh pre-threshold](images/ptr-prethreshold.png)
+
+    Visually, the icon is displayed as disabled (60% opacity). In addition, the icon spins one full rotation with the scroll action.
+
+- If the user pulls the list past the threshold, the visualizer transitions from **Interacting** to **Pending**.
+
+    ![pull-to-refresh at threshold](images/ptr-atthreshold.png)
+
+    Visually, the icon switches to 100% opacity and pulses in size up to 150% and then back to 100% size during the transition.
+
+### Pending
+
+When the user has pulled the list past the threshold, the visualizer is in the **Pending** state.
+
+- If the user moves the list back above the threshold without releasing it, it returns to the **Interacting** state.
+- If the user releases the list, a refresh request is initiated and it transitions to the **Refreshing** state.
+
+![pull-to-refresh post-threshold](images/ptr-postthreshold.png)
+
+Visually, the icon is 100% in both size and opacity. In this state, the icon continues to move down with the scroll action but no longer spins.
+
+### Refreshing
+
+When the user releases the visualiser past the threshold, it's in the **Refreshing** state.
+
+When this state is entered, the **RefreshReuested** event is raised. This is the signal to start the app's content refresh. The event args ([RefreshRequestedEventArgs](/uwp/api/windows.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/uwp/api/windows.foundation.deferral) object, which you should take a handle to in the event handler. Then, you should mark the deferral as completed when your code to perform the refresh has completed.
+
+When the refresh is complete, the visualizer returns to the **Idle** state.
+
+Visually, the icon settles back to the threshold location and spins for the duration of the refresh. This spinning is used to show progress of the refresh and is replaced by the animation of the incoming content.
+
+### Peeking
+
+When the user pulls in the refresh direction from a start position where a refresh is not allowed, the visualizer enters the **Peeking** state. This typically happens when the ScrollViewer is not at position 0 when the user starts to pull.
+
+- If the user releases the control while in this state, the control returns to **Idle**.
+
+## Pull direction
+
+By default, the user pulls a list from top to bottom to initiate a refresh. If you have a list or grid with a different orientation, you should change the pull direction of the refresh container to match.
+
+The [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer#Windows_UI_Xaml_Controls_RefreshContainer_PullDirection) property takes one of these [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) values: **BottomToTop**, **TopToBottom**, **RightToLeft**, or **LeftToRight**.
+
+When you change the pull dircetion, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer#Windows_UI_Xaml_Controls_RefreshVisualizer_Orientation) property to override the automatic behavior. In most cases, we recommend leaving the default value of **Auto**.
 
 ## Implement pull-to-refresh
 
-To implement pull-to-refresh, you need to handle manipulation events to detect when a user has pulled the list down, provide visual feedback, and refresh the data. Here, we look at how this is done in the [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635). We don't show all the code here, so you should download the sample or view the code on GitHub.
+To add pull-to-refresh functionality to a list requires just a few steps.
 
-The pull-to-refresh sample creates a custom control called `RefreshableListView` that extends the **ListView** control. This control adds a refresh indicator to provide visual feedback and handles the manipulation events on the list view's internal scroll viewer. It also adds 2 events to notify you when the list is pulled and when the data should be refreshed. RefreshableListView only provides notification that the data should be refreshed. You need to handle the event in your app to update the data, and that code will be different for every app.
+1. Wrap your list in a **RefreshContainer** control.
+1. Handle the **RefreshRequested** event to refresh your content.
+1. Optionally, initiate a refresh by calling **RequestRefresh** (for example, from a button click).
 
-RefreshableListView provides an 'auto refresh' mode that determines when the refresh is requested and how the refresh indicator goes out of view. Auto refresh can be on or off.
-- Off: A refresh is requested only if the list is released while the `PullThreshold` is exceded. The indicator animates out of view when the user releases the scroller. The status bar indicator is shown if it's available (on phone).
-- On: A refresh is requested as soon as the `PullThreshold` is exceded, whether released or not. The indicator remains in view until the new data is retrieved, then animates out of view. A **Deferral** is used to notify the app when fetching the data is complete.
+> [!NOTE]
+> You can instantiate a RefreshVisualizer on its own. However, we recommend that you wrap your content in a RefreshContainer and use the RefreshVisualizer provided by the RefreshContainer.Visualizer property, even for non-touch scenarios. In this article, we assume that the visualizer is always obtained from the refresh container.
 
-> **Note**&nbsp;&nbsp;The code in sample is also applicable to a [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). To modify a GridView, derive the custom class from GridView instead of ListView and modify the default GridView template.
+> In addition, use the refresh container's RequestRefresh and RefreshRequested members for convenience. `refreshContainer.RequestRefresh()` is equivalent to `refreshContainer.Visualizer.RequestRefresh()`, and either will raise both the RefreshContainer.RefreshRequested event and the RefreshVisualizer.RefreshRequested events.
 
-## Add a refresh indicator
+### Request a refresh
 
-It's important to provide visual feedback to the user so they know that your app supports pull-to-refresh. RefreshableListView has a `RefreshIndicatorContent` property that lets you set the indicator visual in your XAML. It also includes a default text indicator that it falls back to if you don't set the `RefreshIndicatorContent`.
+The refresh container handles touch interactions to let a user refresh content via touch. We recommend that you provide other affordances for non-touch interfaces, like a refresh button or voice control.
 
-Here are recommended guidelines for the refresh indicator.
+To initiate a refresh, call the [RequestRefresh](/uwp/api/windows.ui.xaml.controls.refreshcontainer#Windows_UI_Xaml_Controls_RefreshContainer_RequestRefresh) method.
 
-![refresh indicator redlines](images/ptr-redlines-1.png)
-
-**Modify the list view template**
-
-In the pull-to-refresh sample, the `RefreshableListView` control template modifies the standard **ListView** template by adding a refresh indicator. The refresh indicator is placed in a [Grid](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) above the [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), which is the part that shows the list items.
-
-> **Note**&nbsp;&nbsp;The `DefaultRefreshIndicatorContent` text box provides a text fallback indicator that is shown only if the `RefreshIndicatorContent` property is not set.
-
-Here's the part of the control template that's modified from the default ListView template.
-
-**XAML**
-```xaml
-<!-- Styles/Styles.xaml -->
-<Grid x:Name="ScrollerContent" VerticalAlignment="Top">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
-    <Border x:Name="RefreshIndicator" VerticalAlignment="Top" Grid.Row="1">
-        <Grid>
-            <TextBlock x:Name="DefaultRefreshIndicatorContent" HorizontalAlignment="Center" 
-                       Foreground="White" FontSize="20" Margin="20, 35, 20, 20"/>
-            <ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}"></ContentPresenter>
-        </Grid>
-    </Border>
-    <ItemsPresenter FooterTransitions="{TemplateBinding FooterTransitions}" 
-                    FooterTemplate="{TemplateBinding FooterTemplate}" 
-                    Footer="{TemplateBinding Footer}" 
-                    HeaderTemplate="{TemplateBinding HeaderTemplate}" 
-                    Header="{TemplateBinding Header}" 
-                    HeaderTransitions="{TemplateBinding HeaderTransitions}" 
-                    Padding="{TemplateBinding Padding}"
-                    Grid.Row="1"
-                    x:Name="ItemsPresenter"/>
-</Grid>
-```
-
-**Set the content in XAML**
-
-You set the content of the refresh indicator in the XAML for your list view. The XAML content you set is displayed by the refresh indicator's [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`). If you don't set this content, the default text indicator is shown instead.
-
-**XAML**
-```xaml
-<!-- MainPage.xaml -->
-<c:RefreshableListView
-    <!-- ... See sample for removed code. -->
-    AutoRefresh="{x:Bind Path=UseAutoRefresh, Mode=OneWay}"
-    ItemsSource="{x:Bind Items}"
-    PullProgressChanged="listView_PullProgressChanged"
-    RefreshRequested="listView_RefreshRequested">
-
-    <c:RefreshableListView.RefreshIndicatorContent>
-        <Grid Height="100" Background="Transparent">
-            <FontIcon
-                Margin="0,0,0,30"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom"
-                FontFamily="Segoe MDL2 Assets"
-                FontSize="20"
-                Glyph="&#xE72C;"
-                RenderTransformOrigin="0.5,0.5">
-                <FontIcon.RenderTransform>
-                    <RotateTransform x:Name="SpinnerTransform" Angle="0" />
-                </FontIcon.RenderTransform>
-            </FontIcon>
-        </Grid>
-    </c:RefreshableListView.RefreshIndicatorContent>
-    
-    <!-- ... See sample for removed code. -->
-
-</c:RefreshableListView>
-```
-
-**Animate the spinner**
-
-When the list is pulled down, RefreshableListView's `PullProgressChanged` event occurs. You handle this event in your app to control the refresh indicator. In the sample, this storyboard is started to animate the indicator's [RotateTransform](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) and spin the refresh indicator. 
-
-**XAML**
-```xaml
-<!-- MainPage.xaml -->
-<Storyboard x:Name="SpinnerStoryboard">
-    <DoubleAnimation
-        Duration="00:00:00.5"
-        FillBehavior="HoldEnd"
-        From="0"
-        RepeatBehavior="Forever"
-        Storyboard.TargetName="SpinnerTransform"
-        Storyboard.TargetProperty="Angle"
-        To="360" />
-</Storyboard>
-```
-
-## Handle scroll viewer manipulation events
-
-The list view control template includes a built-in [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that lets a user scroll through the list items. To implement pull-to-refresh, you have to handle the manipulation events on the built-in scroll viewer, as well as several related events. For more info about manipulation events, see [Touch interactions](../input/touch-interactions.md).
-
-**OnApplyTemplate**
-
-To get access to the scroll viewer and other template parts so that you can add event handlers and call them later in your code, you must override the [OnApplyTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) method. In OnApplyTemplate, you call [GetTemplateChild](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) to get a reference to a named part in the control template, which you can save to use later in your code.
-
-In the sample, the variables used to store the template parts are declared in the Private Variables region. After they are retrieved in the OnApplyTemplate method, event handlers are added for the [DirectManipulationStarted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [DirectManipulationCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [ViewChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx), and [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events.
-
-**DirectManipulationStarted**
-
-In order to initiate a pull-to-refresh action, the content has to be scrolled to the top of the scroll viewer when the user starts to pull down. Otherwise, it's assumed that the user is pulling in order to pan up in the list. The code in this handler determines whether the manipulation started with the content at the top of the scroll viewer, and can result in the list being refreshed. The control's 'refreshable' status is set accordingly. 
-
-If the control can be refreshed, event handlers for animations are also added.
-
-**DirectManipulationCompleted**
-
-When the user stops pulling the list down, the code in this handler checks whether a refresh was activated during the manipulation. If a refresh was activated, the `RefreshRequested` event is raised and the `RefreshCommand` command is executed.
-
-The event handlers for animations are also removed.
-
-Based on the value of the `AutoRefresh` property, the list can animate back up immediately, or wait until the refresh is complete and then animate back up. A [Deferral](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object is used to to mark the completion of the refresh. At that point the refresh indicator UI is hidden.
-
-This part of the DirectManipulationCompleted event handler raises the `RefreshRequested` event and get's the Deferral if needed.
-
-**C#**
 ```csharp
-if (this.RefreshRequested != null)
+// See the Examples section for the full code.
+private void RefreshButtonClick(object sender, RoutedEventArgs e)
 {
-    RefreshRequestedEventArgs refreshRequestedEventArgs = new RefreshRequestedEventArgs(
-        this.AutoRefresh ? new DeferralCompletedHandler(RefreshCompleted) : null);
-    this.RefreshRequested(this, refreshRequestedEventArgs);
-    if (this.AutoRefresh)
+    RefreshContainer.RequestRefresh();
+}
+```
+
+When you call RequestRefresh, the visualizer state goes directly from **Idle** to **Refreshing**.
+
+### Handle a refresh request
+
+To get fresh content when needed, handle the RefreshRequested event. In the event handler, you'll need code specific to your app to get the fresh content.
+
+The event args ([RefreshRequestedEventArgs](/uwp/api/windows.ui.xaml.controls.refreshrequestedeventargs)) contain a [Deferral](/uwp/api/windows.foundation.deferral) object. Get a handle to the deferral in the event handler. Then, mark the deferral as completed when your code to perform the refresh has completed.
+
+```csharp
+// See the Examples section for the full code.
+private async void RefreshContainer_RefreshRequested(RefreshContainer sender, RefreshRequestedEventArgs args)
+{
+    // Respond to a request by performing a refresh and using the deferral object.
+    using (var RefreshCompletionDeferral = args.GetDeferral())
     {
-        m_scrollerContent.ManipulationMode = ManipulationModes.None;
-        if (!refreshRequestedEventArgs.WasDeferralRetrieved)
-        {
-            // The Deferral object was not retrieved in the event handler.
-            // Animate the content up right away.
-            this.RefreshCompleted();
-        }
+        // Do some async operation to refresh the content
+
+         await FetchAndInsertItemsAsync(3);
+
+        // The 'using' statement ensures the deferral is marked as complete.
+        // Otherwise, you'd call
+        // RefreshCompletionDeferral.Complete();
+        // RefreshCompletionDeferral.Dispose();
     }
 }
 ```
 
-**ViewChanged**
+### Respond to state changes
 
-Two cases are handled in the ViewChanged event handler.
+You can respond to changes in the visualizer's state, if needed. For example, to prevent multiple refresh requests, you can disable a refresh button while the visualizer is refreshing.
 
-First, if the view changed due to the scroll viewer zooming, the control's 'refreshable' status is canceled.
-
-Second, if the content finished animating up at the end of an auto refresh, the padding rectangles are hidden, touch interactions with the scroll viewer are re-anabled, the [VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) is set to 0.
-
-**PointerPressed**
-
-Pull-to-refresh happens only when the list is pulled down by a touch manipulation. In the PointerPressed event handler, the code checks what kind of pointer caused the event and sets a variable (`m_pointerPressed`) to indicate whether it was a touch pointer. This variable is used in the DirectManipulationStarted handler. If the pointer is not a touch pointer, the DirectManipulationStarted handler returns without doing anything.
-
-## Add pull and refresh events
-
-'RefreshableListView' adds 2 events that you can handle in your app to refresh the data and manage the refresh indicator.
-
-For more info about events, see [Events and routed events overview](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
-
-**RefreshRequested**
-
-The 'RefreshRequested' event notifies your app that the user has pulled the list to refresh it. You handle this event to fetch new data and update your list.
-
-Here's the event handler from the sample. The important thing to notice is that it check's the list view's `AutoRefresh` property and get's a Deferral if it's **true**. With a Deferral, the refresh indicator is not stopped and hidden until the refresh is complete.
-
-**C#**
 ```csharp
-private async void listView_RefreshRequested(object sender, RefreshableListView.RefreshRequestedEventArgs e)
+// See the Examples section for the full code.
+private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshStateChangedEventArgs args)
 {
-    using (Deferral deferral = listView.AutoRefresh ? e.GetDeferral() : null)
+    // Respond to visualizer state changes.
+    // Disable the refresh button if the visualizer is refreshing.
+    if (args.NewState == RefreshVisualizerState.Refreshing)
     {
-        await FetchAndInsertItemsAsync(_rand.Next(1, 5));
-
-        if (SpinnerStoryboard.GetCurrentState() != Windows.UI.Xaml.Media.Animation.ClockState.Stopped)
-        {
-            SpinnerStoryboard.Stop();
-        }
+        RefreshButton.IsEnabled = false;
+    }
+    else
+    {
+        RefreshButton.IsEnabled = true;
     }
 }
 ```
 
-**PullProgressChanged**
+## Examples
 
-In the sample, content for the refresh indicator is provided and controlled by the app. The 'PullProgressChanged' event notifies your app when the use is pulling the list so that you can start, stop, and reset the refresh indicator. 
+### Using a ScrollViewer in a RefreshContainer
 
-## Composition animations
+This example shows how to use pull-to-refresh with a scroll viewer.
 
-By default, content in a scroll viewer stops when the scrollbar reaches the top. To let the user continue to pull the list down, you need to access the visual layer and animate the list content. The sample uses [composition animations](https://msdn.microsoft.com/windows/uwp/composition/composition-animation) for this; specifically, [expression animations](https://msdn.microsoft.com/windows/uwp/composition/composition-animation#expression-animations).
+```xaml
+<RefreshContainer>
+    <ScrollViewer VerticalScrollMode="Enabled"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto">
+ 
+        <!-- Scrollviewer content -->
 
-In the sample, this work is done primarily in the `CompositionTarget_Rendering` event handler and the `UpdateCompositionAnimations` method.
+    </ScrollViewer>
+</RefreshContainer>
+```
+
+### Adding pull-to-refresh to a ListView
+
+This example shows how to use pull-to-refresh with a list view.
+
+```xaml
+<StackPanel Margin="0,40" Width="280">
+    <CommandBar OverflowButtonVisibility="Collapsed">
+        <AppBarButton x:Name="RefreshButton" Click="RefreshButtonClick"
+                      Icon="Refresh" Label="Refresh"/>
+        <CommandBar.Content>
+            <TextBlock Text="List of items" 
+                       Style="{StaticResource TitleTextBlockStyle}"
+                       Margin="12,8"/>
+        </CommandBar.Content>
+    </CommandBar>
+
+    <RefreshContainer x:Name="RefreshContainer">
+        <ListView x:Name="ListView1" Height="400">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:ListItemData">
+                    <Grid Height="80">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{x:Bind Path=Header}"
+                                   Style="{StaticResource SubtitleTextBlockStyle}"
+                                   Grid.Row="0"/>
+                        <TextBlock Text="{x:Bind Path=Date}"
+                                   Style="{StaticResource CaptionTextBlockStyle}"
+                                   Grid.Row="1"/>
+                        <TextBlock Text="{x:Bind Path=Body}"
+                                   Style="{StaticResource BodyTextBlockStyle}"
+                                   Grid.Row="2"
+                                   Margin="0,4,0,0" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </RefreshContainer>
+</StackPanel>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    public ObservableCollection<ListItemData> Items { get; set; } 
+        = new ObservableCollection<ListItemData>();
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        Loaded += MainPage_Loaded;
+        ListView1.ItemsSource = Items;
+    }
+
+    private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        Loaded -= MainPage_Loaded;
+        RefreshContainer.RefreshRequested += RefreshContainer_RefreshRequested;
+        RefreshContainer.Visualizer.RefreshStateChanged += Visualizer_RefreshStateChanged;
+
+        // Add some initial content to the list.
+        await FetchAndInsertItemsAsync(2);
+    }
+
+    private void RefreshButtonClick(object sender, RoutedEventArgs e)
+    {
+        RefreshContainer.RequestRefresh();
+    }
+
+    private async void RefreshContainer_RefreshRequested(RefreshContainer sender, RefreshRequestedEventArgs args)
+    {
+        // Respond to a request by performing a refresh and using the deferral object.
+        using (var RefreshCompletionDeferral = args.GetDeferral())
+        {
+            // Do some async operation to refresh the content
+
+            await FetchAndInsertItemsAsync(3);
+
+            // The 'using' statement ensures the deferral is marked as complete.
+            // Otherwise, you'd call
+            // RefreshCompletionDeferral.Complete();
+            // RefreshCompletionDeferral.Dispose();
+        }
+    }
+
+    private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshStateChangedEventArgs args)
+    {
+        // Respond to visualizer state changes.
+        // Disable the refresh button if the visualizer is refreshing.
+        if (args.NewState == RefreshVisualizerState.Refreshing)
+        {
+            RefreshButton.IsEnabled = false;
+        }
+        else
+        {
+            RefreshButton.IsEnabled = true;
+        }
+    }
+
+    // App specific code to get fresh data.
+    private async Task FetchAndInsertItemsAsync(int updateCount)
+    {
+        for (int i = 0; i < updateCount; ++i)
+        {
+            // Simulate delay while we go fetch new items.
+            await Task.Delay(1000);
+            Items.Insert(0, GetNextItem());
+        }
+    }
+
+    private ListItemData GetNextItem()
+    {
+        return new ListItemData()
+        {
+            Header = "Header " + DateTime.Now.Second.ToString(),
+            Date = DateTime.Now.ToLongDateString(),
+            Body = DateTime.Now.ToLongTimeString()
+        };
+    }
+}
+
+public class ListItemData
+{
+    public string Header { get; set; }
+    public string Date { get; set; }
+    public string Body { get; set; }
+}
+```
 
 ## Related articles
 
-- [Styling controls](xaml-styles.md)
 - [Touch interactions](../input/touch-interactions.md)
 - [List view and grid view](listview-and-gridview.md)
 - [Item containers and templates](item-containers-templates.md)

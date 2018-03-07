@@ -11,7 +11,7 @@ ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# Create custom styles
+# Tutorial: Create custom styles
 
 This tutorial shows you how to customize the UI of our XAML app. Warning: this tutorial might or might not involve a unicorn. (It does!)  
 

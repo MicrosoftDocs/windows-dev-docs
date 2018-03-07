@@ -18,8 +18,8 @@ Xbox Live enables publishers to store global title data and player specific data
 
 ## In this section
 
-[Connected Storage](connected-storage/connected-storage-technical-overview.md)  
+[Connected Storage](connected-storage/connected-storage-overview.md)
 Data stored by using the Connected Storage API automatically roams for users across PC and multiple Xbox One consoles, and is also available for use offline.
 
-[Xbox Live Title Storage](xbox-live-title-storage/xbox-live-title-storage.md)  
+[Xbox Live Title Storage](xbox-live-title-storage/xbox-live-title-storage.md)
 The Xbox Live title storage service provides a way to store game information for a title in the cloud. Games running on all platforms can use this service.

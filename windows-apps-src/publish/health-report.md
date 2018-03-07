@@ -65,7 +65,7 @@ To display the **Failure details** report for a particular failure, select the f
 
 At times, you may see an entry for **Unknown** in this section. This occurs when despite our best efforts, we are unable to collect full details for one or more failures, which will all be grouped together under **Unknown**. Most often, this occurs because of storage constraints, but it can also be a result of a device's privacy settings, network connection issues, partial/bad crash dumps, and other factors.
 
-If you see **!unknown** as part of a failure name, this means that symbols weren’t present, so we couldn’t identify the failure name. Be sure to include symbols in your package to get accurate failure analysis. In contrast, failure names that include **!unknown_error_in_** and **!unknown_function** mean that we weren’t able to gather complete details for various other reasons.
+If you see **!unknown** as part of a failure name, this means that symbols weren’t present, so we couldn’t identify the failure name. Be sure to include symbols in your package to get accurate failure analysis. See [Configure an app package](../packaging/packaging-uwp-apps.md#configure-an-app-package). In contrast, failure names that include **!unknown_error_in_** and **!unknown_function** mean that we weren’t able to gather complete details for various other reasons.
  
 
  
