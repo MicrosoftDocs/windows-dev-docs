@@ -17,16 +17,12 @@ The following sample UWP apps demonstrate how to use Windows Machine Learning an
 
 ## MNIST Multilayer Perceptron
 
-This sample uses the CNTK MNIST model to interpret a numeric digit drawn by the user, demonstrating how to use the Visual Studio Tools for AI plugin with Windows ML code generation. You can walk through the sample with a step-by-step tutorial in [Get Started](get-started.md).
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/MNIST) uses the CNTK MNIST model to interpret a numeric digit drawn by the user. You can walk through the sample with a step-by-step tutorial in [Get Started](get-started.md).
 
 ## SqueezeNet Image Classifier
 
-[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/SqueezeNetObjectDetection) classifies an image that the user inputs from a collection, demonstrating the basic usage of Windows ML. 
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/SqueezeNetObjectDetection) detects the predominant object in an image.
 
-## Artistic image style transfer
+## Candy Style Transfer
 
-[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/CandyStyleTransfer) transfers an artistic style called Candy onto an image that the user inputs from a file or a photo captured. 
-
-## Windows Machine Learning Explorer
-
-This sample is a data driven and generic application that serves as a launch pad to bootstrap ML models to be evaluated by Windows ML. It currently includes a scenario of circuit board defect detection model that can detect pictures and a real-time camera feed of a printed circuit board.
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/CandyStyleTransfer) transfers an artistic style called Candy onto an image or video stream. 
