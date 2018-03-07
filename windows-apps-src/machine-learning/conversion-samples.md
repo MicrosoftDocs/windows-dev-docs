@@ -1,17 +1,17 @@
 ---
 author: wschin
 title: Convert existing ML models to ONNX
-description: Code samples demonstrate how to use WinMLTools to convert existing models in scikit-learn and CoreML into ONNX.
+description: Code samples demonstrate how to use WinMLTools to convert existing models in scikit-learn and Core ML into ONNX.
 ms.author: wechi
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: winmltools
-keywords: windows 10, windows machine learning, WinML, WinMLTools, ONNX, ONNXMLTools, scikit-learn, CoreML
+keywords: windows 10, windows machine learning, WinML, WinMLTools, ONNX, ONNXMLTools, scikit-learn, Core ML
 ms.localizationpriority: medium
 ---
 # Convert existing ML models to ONNX
-WinMLTools allows users to convert models trained in other frameworks to ONNX format. Here we demonstrate how to install WinMLTools and how to convert existing models in scikit-learn and CoreML into ONNX.
+[WinMLTools](https://aka.ms/winmltools) allows users to convert models trained in other frameworks to ONNX format. Here we demonstrate how to install WinMLTools and how to convert existing models in scikit-learn and Core ML into ONNX.
 
 ## Install WinMLTools
 WinMLTools is a Python package (winmltools) that supports Python versions 2.7 and 3.6. If you are working on a data science project, we recommend installing a scientific Python distribution such as Anaconda.
@@ -141,8 +141,8 @@ loaded_onnx_model = load_model('another_pipeline.onnx')
 print(another_pipeline_onnx)
 ~~~
 
-## CoreML models
-Here, we assume that the path of an example CoreML model file is *example.mlmodel*. 
+## Core ML models
+Here, we assume that the path of an example Core ML model file is *example.mlmodel*. 
 ~~~python
 from coremltools.models.utils import load_spec
 # Load model file
@@ -161,21 +161,21 @@ from winmltools.utils import save_text
 save_text(model_onnx, 'example.txt')
 ~~~
 
-## CoreML models with image inputs or outputs
+## Core ML models with image inputs or outputs
 
-Because of the lack of image types in ONNX, converting CoreML image models (i.e., models using images as inputs or outputs) requires some pre-processing and post-processing steps.
+Because of the lack of image types in ONNX, converting Core ML image models (i.e., models using images as inputs or outputs) requires some pre-processing and post-processing steps.
 
-The objective of pre-processing is to make sure the input image is properly formatted as an ONNX tensor. Assume *X* is an image input with shape [C, H, W] in CoreML. In ONNX, the variable *X* would be a floating-point tensor with the same shape and *X*[0, :, :]/*X*[1, :, :]/*X*[2, :, :] stores the image's red/green/blue channel. For gray scale images in CoreML, their format are [1, H, W]-tensors in ONNX because we only have one channel.
+The objective of pre-processing is to make sure the input image is properly formatted as an ONNX tensor. Assume *X* is an image input with shape [C, H, W] in Core ML. In ONNX, the variable *X* would be a floating-point tensor with the same shape and *X*[0, :, :]/*X*[1, :, :]/*X*[2, :, :] stores the image's red/green/blue channel. For gray scale images in Core ML, their format are [1, H, W]-tensors in ONNX because we only have one channel.
 
-If the original CoreML outputs an image, we may manually convert ONNX's floating-point output tensors back into images. There are two basic steps. The first step is to shrink values greater than 255 to 255 and change all negative values to 0. The second step is to round all pixel values to integers (by adding 0.5 and then truncating the decimals). The output channel order (e.g., RGB or BGR) is indicated in the CoreML model. To generate proper image output, we may need to transpose or shuffle to recover the desired format.
+If the original Core ML model outputs an image, manually convert ONNX's floating-point output tensors back into images. There are two basic steps. The first step is to truncate values greater than 255 to 255 and change all negative values to 0. The second step is to round all pixel values to integers (by adding 0.5 and then truncating the decimals). The output channel order (e.g., RGB or BGR) is indicated in the Core ML model. To generate proper image output, we may need to transpose or shuffle to recover the desired format.
 
-Here we consider a CoreML model, FNS-Candy, downloaded from a [model zoo](https://github.com/likedan/Awesome-CoreML-Models) as a concrete conversion example to demonstrate the difference between ONNX and CoreML formats. Note that all the subsequent commands are executed in a python enviroment.
+Here we consider a Core ML model, FNS-Candy, downloaded from [GitHub](https://github.com/likedan/Awesome-CoreML-Models), as a concrete conversion example to demonstrate the difference between ONNX and Core ML formats. Note that all the subsequent commands are executed in a python enviroment.
 
-First, we load the CoreML model and show its input and output formats.
+First, we load the Core ML model and examine its input and output formats.
 ~~~python
 from coremltools.models.utils import load_spec
 model_coreml = load_spec('FNS-Candy.mlmodel')
-model_coreml.description # Print the content of CoreML model description
+model_coreml.description # Print the content of Core ML model description
 ~~~
 Screen output:
 ~~~
@@ -199,12 +199,12 @@ output {
 }
 ...
 ~~~
-Obviously, both of input and output are 720x720 BGR-image. Our next step is to convert the CoreML model with WinMLTools.
+In this case, both the input and output are 720x720 BGR-image. Our next step is to convert the Core ML model with WinMLTools.
 ~~~python
 from onnxmltools import convert_coreml
 model_onnx = convert_coreml(model_coreml)
 ~~~
-We can also observe the input and output formats in ONNX.
+An alternative method to view the model input and output formats in ONNX, is to use the following command:
 ~~~python
 model_onnx.graph.input # Print out the ONNX input tensor's information
 ~~~
@@ -230,7 +230,7 @@ Screen output:
   }
 ...
 ~~~
-The produced input (denoted by *X* again) in ONNX is a 4-D tensor. The last 3 axes are C-, H-, and W-axes, respectively. The first dimension is "None" which means that this ONNX model can be applied to any number of images. To apply this model to process a batch of 2 images, the first image may correspond to *X*[0, :, :, :] while *X*[1, :, :, :] is the second image. The blue/green/red channels of the first image is *X*[0, 0, :, :]/*X*[0, 1, :, :]/*X*[0, 2, :, :]. The channel order for the second image is similar.
+The produced input (denoted by *X*) in ONNX is a 4-D tensor. The last 3 axes are C-, H-, and W-axes, respectively. The first dimension is "None" which means that this ONNX model can be applied to any number of images. To apply this model to process a batch of 2 images, the first image corresponds to *X*[0, :, :, :] while *X*[1, :, :, :] corresponds to the second image. The blue/green/red channels of the first image are *X*[0, 0, :, :]/*X*[0, 1, :, :]/*X*[0, 2, :, :], and similar for the second image.
 
 ~~~python
 model_onnx.graph.output # Print out the ONNX output tensor's information
@@ -257,4 +257,4 @@ Screen output:
   }
 ...
 ~~~
-The output format is identical to the input format of the converted ONNX model. However, it's not an image because the pixel values are integers, not floating-point numbers. To convert it back to an image, change values greater than 255 to 255, change negative values to 0, and round off all decimals.
+As you can see, the produced format is identical to the original model input format. However, in this case, it's not an image because the pixel values are integers, not floating-point numbers. To convert back to an image, truncate values greater than 255 to 255, change negative values to 0, and round all decimals to integers.

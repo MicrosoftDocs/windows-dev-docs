@@ -319,7 +319,7 @@ In the Visual Studio toolbar set the target device to **Local Machine**, and run
 
 Now that you've completed this lab, you have enough adaptive layout knowledge to experiment further on your own. Try adding a rating control to the mobile-only tooltip you added earlier. Or, for a bigger challenge, try optimizing the layout for larger screen sizes (think TV screens or a Surface Studio)
 
-If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](layouts-with-xaml.md).
+If you get stuck, you can find more guidance in these sections of [Define page layouts with XAML](../layout/layouts-with-xaml.md).
 
 + [Visual states and state triggers](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#visual-states-and-state-triggers)
 + [Tailored layouts](https://docs.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#tailored-layouts)
