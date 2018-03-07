@@ -21,7 +21,11 @@ This sample uses the CNTK MNIST model to interpret a numeric digit drawn by the 
 
 ## SqueezeNet Image Classifier
 
-This sample classifies an image that the user inputs from a collection, demonstrating the basic usage of Windows ML. 
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/SqueezeNetObjectDetection) classifies an image that the user inputs from a collection, demonstrating the basic usage of Windows ML. 
+
+## Artistic image style transfer
+
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/CandyStyleTransfer) transfers an artistic style called Candy onto an image that the user inputs from a file or a photo captured. 
 
 ## Windows Machine Learning Explorer
 
