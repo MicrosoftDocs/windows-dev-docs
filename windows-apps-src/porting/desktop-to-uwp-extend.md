@@ -79,8 +79,6 @@ This image shows a VB6 application that opens a XAML-based modern UI that contai
 
 ### Have a closer look at this app
 
-:heavy_check_mark: [Watch a video](https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373/Demo-Add-a-XAML-UI-and-Toast-Notification-to-a-VB6-Application-OsJHC7WhD_8006218965)
-
 :heavy_check_mark: [Get the app](https://www.microsoft.com/en-us/store/p/vb6-app-with-xaml-sample/9n191ncxf2f6)
 
 :heavy_check_mark: [Browse the code](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
@@ -223,8 +221,6 @@ Here's a sample that does this.
 
 ### Have a closer look at this app
 
-:heavy_check_mark: [Watch a video](https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373/Demo-Expose-an-AppService-from-a-Windows-Forms-Data-Application-GiqNS7WhD_706218965)
-
 :heavy_check_mark: [Get the app](https://www.microsoft.com/en-us/store/p/winforms-appservice/9p7d9b6nk5tn)
 
 :heavy_check_mark: [Browse the code](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinformsAppService)
@@ -351,8 +347,6 @@ For example, users could choose your app to share pictures from Microsoft Edge, 
 ![share target](images\desktop-to-uwp\share-target.png)
 
 ### Have a closer look at this app
-
-:heavy_check_mark: [Watch a video](https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373/Demo-Make-a-WPF-Application-a-Share-Target-xd6Fu6WhD_8406218965)
 
 :heavy_check_mark: [Get the app](https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
 

@@ -37,6 +37,9 @@ If you plan to publish your app to the [Microsoft Store](https://www.microsoft.c
 
    ![Packaging project](images/desktop-to-uwp/packaging-project.png)
 
+   >[!NOTE]
+   >This project appears only in Visual Studio 2017 version 15.5 or higher.
+
 3. Set the **Target Version** of this project to any version that you want, but make sure to set the **Minimum Version** to **Windows 10 Anniversary Update**.
 
    ![Packaging version selector dialog box](images/desktop-to-uwp/packaging-version.png)

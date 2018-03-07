@@ -13,8 +13,6 @@ ms.localizationpriority: medium
 ---
 # Best practices for using the thread pool
 
-
-
 This topic describes best practices for working with the thread pool.
 
 ## Do's
@@ -36,7 +34,7 @@ This topic describes best practices for working with the thread pool.
 
 -   Use pre-allocated work items when you can't tolerate a resource allocation failure at time of use.
 
-## Dont's
+## Don'ts
 
 
 -   Don't create periodic timers with a *period* value of &lt;1 millisecond (including 0). This will cause the work item to behave as a single-shot timer.
