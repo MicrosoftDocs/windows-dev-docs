@@ -96,7 +96,7 @@ Consider providing menu item icons for:
 <li> Menu items whose icon well illustrates what the command does </li>
 </ul>
 
-Do not feel obligated to provide icons for every menu item, especially if the menu is long, or the command does not have a standard visualization. Cryptic icons aren’t helpful, create visual clutter, and prevent users from focusing on the important menu items.
+Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren’t helpful, create visual clutter, and prevent users from focusing on the important menu items.
 
 ![Example context menu with icons](images/contextmenu_rs2_icons.png)
 
