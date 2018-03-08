@@ -4,7 +4,7 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 02/24/2018
+ms.date: 03/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -46,7 +46,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 | Slovakia        | Slovak Telekom                   |
 | Spain           | Orange                           |
 | Sweden          | Telenor, 3                       |
-| Switzerland     | Swisscom                         |
+| Switzerland     | Swisscom, Sunrise                |
 | Turkey          | Turkcell                         |
 | United States   | Sprint, Verizon                  |
 | United Kingdom  | O2, 3 UK, EE                     |
