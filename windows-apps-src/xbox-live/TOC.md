@@ -9,7 +9,9 @@
 ### [Achievements 2017](configure-xbl/dev-center/achievements-in-udc.md)
 ### [Featured Stats and Leaderboards](configure-xbl/dev-center/featured-stats-and-leaderboards.md)
 ### [Game DVR](configure-xbl/dev-center/game-dvr.md)
-### [Localized Strings](configure-xbl/dev-center/localized-strings.md)
+### [Data sharing](configure-xbl/dev-center/data-sharing-udc.md)
+### [Localized strings](configure-xbl/dev-center/localized-strings.md)
+### [Single sign-on](configure-xbl/dev-center/single-sign-on.md)
 ### [XboxServices.config](xboxservices-config.md)
 ## XDP
 ### [Achievements 2017](configure-xbl/xdp/achievements-in-xdp.md)
