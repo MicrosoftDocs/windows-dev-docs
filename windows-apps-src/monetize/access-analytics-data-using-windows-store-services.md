@@ -4,7 +4,7 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Use the Microsoft Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization''s Windows Dev Center account.
 title: Access analytics data using Store services
 ms.author: mcleans
-ms.date: 03/01/2018
+ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -88,6 +88,7 @@ The following analytics methods are available for use by developer accounts that
 | Scenario       | Methods      |
 |---------------|--------------------|
 | Installs |  <ul><li>[Get desktop application installs](get-desktop-app-installs.md)</li></ul> |
+| Application errors |  <ul><li>[Get error reporting data for your desktop application](get-desktop-application-error-reporting-data.md)</li><li>[Get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md)</li><li>[Get the stack trace for an error in your desktop application](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[Download the CAB file for an error in your desktop application](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
 ### Methods for hardware and drivers
 
