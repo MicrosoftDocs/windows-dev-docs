@@ -158,7 +158,6 @@
 ### [Load Data](storage-platform/connected-storage/connected-storage-loading.md)
 ### [Delete Data](storage-platform/connected-storage/connected-storage-deleting.md)
 ### [Load on Demand](storage-platform/connected-storage/connected-storage-loading-on-demand.md)
-### [Clear local storage](storage-platform/connected-storage/connected-storage-clearing.md)
 ### [Connected Storage buffers](storage-platform/connected-storage/connected-storage-using-buffers.md)
 ### [Manage local Connected Storage](storage-platform/connected-storage/connected-storage-xb-storage.md)
 ### [Connected Storage best practices](storage-platform/connected-storage/connected-storage-best-practices.md)
