@@ -1,7 +1,7 @@
 ---
 author: stevewhims
-description: This topic demonstrates how to author a Windows Runtime Component containing a type that raises events. It also demonstrates an app that consumes the component and handles the events.
-title: Events; how to author and handle
+description: This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events.
+title: Events; how to author and handle them in C++/WinRT
 ms.author: stwhi
 ms.date: 03/01/2018
 ms.topic: article
@@ -11,18 +11,18 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, event, handle,
 ms.localizationpriority: medium
 ---
 
-# Events; how to author and handle
+# Events; how to author and handle them in C++/WinRT
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
-This topic demonstrates how to author a Windows Runtime Component containing a type representing a bank account, which raises an event when its balance goes into debit. It also demonstrates an app that consumes the bank account type, calls a function to adjust the balance, and handles any events that result.
+This topic demonstrates how to author a Windows Runtime Component containing a runtime class representing a bank account, which raises an event when its balance goes into debit. It also demonstrates an app that consumes the bank account runtime class, calls a function to adjust the balance, and handles any events that result.
 
 To follow these steps, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 ## Create a Windows Runtime Component (BankAccountWRC)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
 
-The newly-created project contains a file named `Class.idl`. Rename that file `BankAccountWRC.idl` so that, when you build, your component's metadata file is named for the component itself. In `BankAccountWRC.idl`, define your interface as in the listing below.
+The newly-created project contains a file named `Class.idl`. Rename that file `BankAccountWRC.idl` so that, when you build, your component's Windows Metadata file is named for the component itself. In `BankAccountWRC.idl`, define your interface as in the listing below.
 
 ```idl
 import "Windows.Foundation.idl";
@@ -32,8 +32,8 @@ namespace BankAccountWRC
 	[version(1.0), uuid(07D89D0A-8081-42F6-B899-DF9857037160)]
 	interface IBankAccount : IInspectable
 	{
-		[eventadd] HRESULT AccountIsInDebitEvent([in] Windows.Foundation.EventHandler<float>* handler, [out][retval] EventRegistrationToken* cookie);
-		[eventremove] HRESULT AccountIsInDebitSimpleEvent([in] EventRegistrationToken cookie);
+		[eventadd] HRESULT AccountIsInDebitEvent([in] Windows.Foundation.EventHandler<float>* handler, [out][retval] EventRegistrationToken* token);
+		[eventremove] HRESULT AccountIsInDebitSimpleEvent([in] EventRegistrationToken token);
 
 		HRESULT AdjustBalance([in] float value);
 	};
@@ -46,13 +46,14 @@ namespace BankAccountWRC
 }
 ```
 
-Save the file and build the project. The build won't succeed just yet. But, during the build process, the `midl.exe` tool is run to create your component's metadata file (which is `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Then, the `cppwinrt.exe` tool is run (with the `-component` option) to generate source code files to support you in authoring your component. These files include stubs to get you started implementing the `BankAccount` runtime type that you declared in your IDL. Those stubs are `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` and `BankAccount.cpp`.
+Save the file and build the project. The build won't succeed just yet. But, during the build process, the `midl.exe` tool is run to create your component's Windows Metadata file (which is `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`). Then, the `cppwinrt.exe` tool is run (with the `-component` option) to generate source code files to support you in authoring your component. These files include stubs to get you started implementing the `BankAccount` runtime class that you declared in your IDL. Those stubs are `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` and `BankAccount.cpp`.
 
 Copy the stub files `BankAccount.h` and `BankAccount.cpp` from `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` into the project folder, which is `\BankAccountWRC\BankAccountWRC\`. In **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the stub files that you copied, and click **Include In Project**. Also, right-click `Class.h` and `Class.cpp`, and click **Exclude From Project**.
 
-Now, let's open `BankAccount.h` and `BankAccount.cpp` and implement our type. In `BankAccount.h`, add two private members to the implementation (*not* the factory implementation) of BankAccount.
+Now, let's open `BankAccount.h` and `BankAccount.cpp` and implement our runtime class. In `BankAccount.h`, add two private members to the implementation (*not* the factory implementation) of BankAccount.
 
 ```cppwinrt
+// BankAccount.h
 namespace winrt::BankAccountWRC::implementation
 {
     struct BankAccount : BankAccountT<BankAccount>
@@ -69,6 +70,7 @@ namespace winrt::BankAccountWRC::implementation
 In `BankAccount.cpp`, implement the functions like this.
 
 ```cppwinrt
+// BankAccount.cpp
 namespace winrt::BankAccountWRC::implementation
 {
 	event_token BankAccount::AccountIsInDebitEvent(Windows::Foundation::EventHandler<float> const& handler)
@@ -76,9 +78,9 @@ namespace winrt::BankAccountWRC::implementation
 		return this->accountIsInDebitEvent.add(handler);
 	}
 
-	void BankAccount::AccountIsInDebitEvent(event_token const& cookie)
+	void BankAccount::AccountIsInDebitEvent(event_token const& token)
 	{
-		this->accountIsInDebitEvent.remove(cookie);
+		this->accountIsInDebitEvent.remove(token);
 	}
 
 	void BankAccount::AdjustBalance(float value)
