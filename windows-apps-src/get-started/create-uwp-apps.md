@@ -11,7 +11,7 @@ keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
-# Tutorials
+# Create apps for Windows 10
 
 ![Build your app](images/build-your-app.png)
 
