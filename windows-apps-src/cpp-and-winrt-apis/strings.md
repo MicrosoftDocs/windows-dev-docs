@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the winrt::hstring type.
-title: Strings
+title: String handling in C++/WinRT
 ms.author: stwhi
 ms.date: 03/01/2018
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, string
 ms.localizationpriority: medium
 ---
 
-# Strings
+# String handling in C++/WinRT
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
@@ -115,4 +115,4 @@ A host of constructors, operators, functions, and iterators are implemented for 
 For more examples and info, see the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) API reference topic.
 
 ## Important APIs
-[winrt::hstring (C++/WinRT)](/uwp/cpp-ref-for-winrt/hstring?branch=live)
+* [winrt::hstring (C++/WinRT)](/uwp/cpp-ref-for-winrt/hstring?branch=live)

@@ -22,10 +22,12 @@ C++/WinRT is a standard C++ language projection for Windows Runtime (WinRT) APIs
 | Topic | Description |
 | - | - |
 | [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs. |
-| [Strings](strings.md) | With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) type. |
-| [Standard C++ data types](std-cpp-data-types.md) | With C++/WinRT, you can call WinRT APIs using Standard C++ data types. |
-| [Events; how to author and handle](events-author-handle.md) | This topic demonstrates how to author a Windows Runtime Component containing a type that raises events. It also demonstrates an app that consumes the component and handles the events. |
-| [Runtimeclass instantiation, activation, and construction](ctors-runtimeclass-activation.md) | This topic describes two different ways to instantiate a runtimeclass with C++/WinRT. The way you go depends on whether the runtimeclass is implemented in the same compilation unit as the consuming code, or in a different one. |
+| [String handling in C++/WinRT](strings.md) | With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) type. |
+| [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call WinRT APIs using Standard C++ data types. |
+| [C++/WinRT runtime class instantiation, activation, and construction](ctors-runtimeclass-activation.md) | This topic describes two different ways to instantiate a runtime class with C++/WinRT. The way you go depends on whether the runtime class is implemented in the same compilation unit as the consuming code, or in a different one. |
+| [Events; how to author and handle them in C++/WinRT](events-author-handle.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
+| [XAML; binding a control to C++/WinRT properties and collections](binding-prop-collection.md) | A property or a collection that can be effectively bound to a XAML control is known as an *observable* property or collection. This topic shows how to implement and consume observable properties and collections. |
+| [Troubleshooting C++/WinRT issues](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 
 ## Important APIs
 [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt?branch=live)

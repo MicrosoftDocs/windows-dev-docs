@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs.
-title: Introduction to using C++ with WinRT
+title: Introduction to C++/WinRT
 ms.author: stwhi
 ms.date: 03/01/2018
 ms.topic: article
@@ -101,12 +101,12 @@ Any WinRT API that has the potential to take more than 50 milliseconds to comple
 
 [**SyndicationFeed.Items**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed#Windows_Web_Syndication_SyndicationFeed_Items) is a range, defined by the iterators returned from `begin` and `end` functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the `std::for_each` template function.
 
-The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) object (see [Strings](strings.md)). The **hstring** is then output, via `c_str`, which will look familiar to you if you've used strings from the C++ standard library.
+The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via `c_str`, which will look familiar to you if you've used strings from the C++ standard library.
 
 As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner programming style from traditional COM programming. You don't need to explicitly initialize COM (**init_apartment** does that for you), work with COM pointers, nor handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions for a natural and modern programming style.
 
 ## Custom types in the C++/WinRT projection
-You can use standard C++ language features and [Standard C++ data types](std-cpp-data-types.md)&mdash;including some Standard Template Library (STL) data types&mdash;in your C++/WinRT programming. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we used [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) in the quick start above.
+You can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some Standard Template Library (STL) data types&mdash;in your C++/WinRT programming. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we used [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) in the quick start above.
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array?branch=live) is another type that you're likely to use at some point. But you're less likely to directly use a type such as [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view?branch=live). Or you may choose not to use it so that you won't have any code to change if and when an equivalent type appears in the standard library.
 
@@ -123,4 +123,4 @@ There are also types that you might see if you closely study the C++/WinRT proje
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)
 * [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)
 * [Visual Studio Marketplace](https://marketplace.visualstudio.com/)
-* [Strings](strings.md)
+* [String handling in C++/WinRT](strings.md)

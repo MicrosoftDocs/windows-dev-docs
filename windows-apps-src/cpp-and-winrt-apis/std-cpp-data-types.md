@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: With C++/WinRT, you can call WinRT APIs using Standard C++ data types.
-title: Standard C++ data types
+title: Standard C++ data types and C++/WinRT
 ms.author: stwhi
 ms.date: 03/01/2018
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium
 ---
 
-# Standard C++ data types
+# Standard C++ data types and C++/WinRT
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
