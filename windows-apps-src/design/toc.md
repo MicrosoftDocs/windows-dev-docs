@@ -140,6 +140,7 @@
 #### [Toast content schema](shell/tiles-and-notifications/toast-schema.md)
 #### [Send local toast](shell/tiles-and-notifications/send-local-toast.md)
 ##### [Desktop C# apps](shell/tiles-and-notifications/send-local-toast-desktop.md)
+##### [Desktop C++ WRL apps](shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md)
 #### [Custom audio](shell/tiles-and-notifications/custom-audio-on-toasts.md)
 #### [Progress bar](shell/tiles-and-notifications/toast-progress-bar.md)
 #### [Pending update](shell/tiles-and-notifications/toast-pending-update.md)
