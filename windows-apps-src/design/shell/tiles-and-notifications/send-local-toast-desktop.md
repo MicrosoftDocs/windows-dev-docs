@@ -18,10 +18,13 @@ ms.localizationpriority: medium
 
 Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using the Desktop Bridge.
 
+> [!IMPORTANT]
+> If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C++ WRL](send-local-toast-desktop-cpp-wrl.md).
 
-## Step 1: Enable the Windows UWP SDK
 
-If you haven't enabled the Windows UWP SDK for your Win32 app, you must do that first.
+## Step 1: Enable the Windows 10 SDK
+
+If you haven't enabled the Windows 10 SDK for your Win32 app, you must do that first.
 
 Right click your project and select **Unload Project**.
 
@@ -113,7 +116,7 @@ If you're using Desktop Bridge (or if you support both), in your **Package.appxm
         <!--Register COM CLSID LocalServer32 registry key-->
         <com:Extension Category="windows.comServer">
           <com:ComServer>
-            <com:ExeServer Executable="DesktopToastsApp\DesktopToastsApp.exe" Arguments="-ToastActivated" DisplayName="Toast activator">
+            <com:ExeServer Executable="YourProject\YourProject.exe" Arguments="-ToastActivated" DisplayName="Toast activator">
               <com:Class Id="replaced-with-your-guid-C173E6ADF0C3" DisplayName="Toast activator"/>
             </com:ExeServer>
           </com:ComServer>
@@ -186,7 +189,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## Step 7: Send a notification
 
-Sending a notification is identical to UWP apps, except that you will use the **DesktopNotificationManagerCompat** to create a **ToastNotifier**. The compat library automatically handles the difference between Desktop Bridge and classic Win32 so you do not have to fork your code. For classic Win32, the compat library caches your AUMID you provided when calling **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
+Sending a notification is identical to UWP apps, except that you will use the **DesktopNotificationManagerCompat** class to create a **ToastNotifier**. The compat library automatically handles the difference between Desktop Bridge and classic Win32 so you do not have to fork your code. For classic Win32, the compat library caches your AUMID you provided when calling **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
 
 > [!NOTE]
 > Install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) so that you can construct notifications using C# as seen below, instead of using raw XML.
