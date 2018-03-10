@@ -19,6 +19,9 @@ This topic demonstrates how to author a Windows Runtime Component containing a r
 
 To follow these steps, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
+> [!NOTE]
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
+
 ## Create a Windows Runtime Component (BankAccountWRC)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
 
