@@ -86,26 +86,26 @@ namespace winrt::Bookstore::implementation
 {
     hstring BookSku::Title()
     {
-		return this->title;
+		return title;
     }
 
     void BookSku::Title(hstring const& value)
     {
-		if (this->title != value)
+		if (title != value)
 		{
-			this->title = value;
-			this->propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
+			title = value;
+			propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
 		}
     }
 
     event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
     {
-		return this->propertyChanged.add(handler);
+		return propertyChanged.add(handler);
     }
 
     void BookSku::PropertyChanged(event_token const& token)
     {
-		this->propertyChanged.remove(token);
+		propertyChanged.remove(token);
     }
 }
 ```
@@ -175,13 +175,13 @@ namespace winrt::Bookstore::implementation
 	MainPage::MainPage()
 	{
 		InitializeComponent();
-		this->bookSku = make<BookSku>();
-		this->bookSku.Title(L"Atticus");
+		bookSku = make<BookSku>();
+		bookSku.Title(L"Atticus");
 	}
 
 	Bookstore::BookSku MainPage::ViewModel()
 	{
-		return this->bookSku;
+		return bookSku;
 	}
 
 	void MainPage::ViewModel(Bookstore::BookSku const&)
@@ -191,7 +191,7 @@ namespace winrt::Bookstore::implementation
 
 	void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 	{
-		this->bookSku.Title(L"To Kill a Mockingbird");
+		bookSku.Title(L"To Kill a Mockingbird");
 	}
 }
 ```

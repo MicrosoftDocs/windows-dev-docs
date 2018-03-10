@@ -75,18 +75,18 @@ namespace winrt::BankAccountWRC::implementation
 {
 	event_token BankAccount::AccountIsInDebitEvent(Windows::Foundation::EventHandler<float> const& handler)
 	{
-		return this->accountIsInDebitEvent.add(handler);
+		return accountIsInDebitEvent.add(handler);
 	}
 
 	void BankAccount::AccountIsInDebitEvent(event_token const& token)
 	{
-		this->accountIsInDebitEvent.remove(token);
+		accountIsInDebitEvent.remove(token);
 	}
 
 	void BankAccount::AdjustBalance(float value)
 	{
-		this->balance += value;
-		if (this->balance < 0.f) this->accountIsInDebitEvent(*this, this->balance);
+		balance += value;
+		if (balance < 0.f) accountIsInDebitEvent(*this, balance);
 	}
 }
 ```
@@ -116,7 +116,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 	
 	void Initialize(CoreApplicationView const &)
 	{
-		this->eventToken = this->bankAccount.AccountIsInDebitEvent([](const auto &, float balance)
+		eventToken = bankAccount.AccountIsInDebitEvent([](const auto &, float balance)
 		{
 			assert(balance < 0.f);
 		});
@@ -125,13 +125,13 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 	void Uninitialize()
 	{
-		this->bankAccount.AccountIsInDebitEvent(this->eventToken);
+		bankAccount.AccountIsInDebitEvent(eventToken);
 	}
 	...
 
 	void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
 	{
-		this->bankAccount.AdjustBalance(-1.f);
+		bankAccount.AdjustBalance(-1.f);
 		...
 	}
 	...
