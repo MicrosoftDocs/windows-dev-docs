@@ -19,12 +19,7 @@ ms.localizationpriority: medium
 
 Use speech recognition to provide input, specify an action or command, and accomplish tasks.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)</li>
-</ul>
-</div>
+> **Important APIs**: [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 Speech recognition is made up of a speech runtime, recognition APIs for programming the runtime, ready-to-use grammars for dictation and web search, and a default system UI that helps users discover and use speech recognition features.
 

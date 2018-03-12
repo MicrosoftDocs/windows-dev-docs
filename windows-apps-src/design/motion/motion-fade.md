@@ -20,13 +20,7 @@ ms.localizationpriority: medium
 
 Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)</li>
-<li>[**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)</li>
-</ul>
-</div>
+> **Important APIs**: [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298), [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
 ## Do's and don'ts

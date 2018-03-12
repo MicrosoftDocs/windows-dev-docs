@@ -22,12 +22,7 @@ ms.localizationpriority: medium
 
 Edge-based animations show or hide UI that originates from the edge of the screen. The show and hide actions can be initiated either by the user or by the app. The UI can either overlay the app or be part of the main app surface. If the UI is part of the app surface, the rest of the app might need to be resized to accommodate it.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**EdgeUIThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh702324)</li>
-</ul>
-</div>
+> **Important APIs**: [**EdgeUIThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
 ## Do's and don'ts

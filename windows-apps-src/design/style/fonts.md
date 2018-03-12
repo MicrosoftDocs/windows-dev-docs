@@ -21,12 +21,7 @@ ms.localizationpriority: medium
 
 This article lists the recommended fonts for UWP apps. These fonts are guaranteed to be available in all Windows 10 editions that support UWP apps.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**FontFamily property**](https://msdn.microsoft.com/library/windows/apps/br209655)</li>
-</ul>
-</div>
+> **Important APIs**: [**FontFamily property**](https://msdn.microsoft.com/library/windows/apps/br209655)
 
 The [UWP typography guide](typography.md) recommends that apps use the Segoe UI font, and although Segoe UI is a great choice for most apps, you don't have to use it for everything. You might use other fonts for certain scenarios, such as reading, or when displaying text in certain non-English languages. 
  
