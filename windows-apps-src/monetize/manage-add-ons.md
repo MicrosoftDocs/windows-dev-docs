@@ -64,6 +64,7 @@ If you have not done so already, complete all the [prerequisites](create-and-man
 The Microsoft Store submission API methods for managing add-ons use the following JSON data resources.
 
 <span id="add-on-object" />
+
 ### Add-on resource
 
 This resource describes an add-on.
@@ -105,6 +106,7 @@ This resource has the following values.
 | pendingInAppProductSubmission        | object  |  A [submission resource](#submission-object) that provides information about the current pending submission for the add-on.  |   |
 
 <span id="application-object" />
+
 ### Application resource
 
 This resource descries the app that an add-on is associated with. The following example demonstrates the format of this resource.
@@ -131,6 +133,7 @@ This resource has the following values.
 | totalCount   | int  | The number of app objects in the *applications* array of the response body.                                                                                                                                                 |
 
 <span id="submission-object" />
+
 ### Submission resource
 
 This resource provides information about a submission for an add-on. The following example demonstrates the format of this resource.
@@ -152,6 +155,7 @@ This resource has the following values.
 | resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.     |
  
 <span/>
+
 ## Related topics
 
 * [Create and manage submissions using Microsoft Store services](create-and-manage-submissions-using-windows-store-services.md)

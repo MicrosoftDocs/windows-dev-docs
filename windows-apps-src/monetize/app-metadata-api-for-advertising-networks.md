@@ -30,6 +30,7 @@ Advertising networks can request access to the app metadata API by following the
 After your request is submitted, you will receive an email within approximately 24 hours that notifies you if your request was granted or denied.
 
 <span id="get-key" />
+
 ## Get your subscription key
 
 If you are granted access to the app metadata API, follow these instructions to get your subscription key. You must pass this key in the request header of calls to the API.
@@ -39,6 +40,7 @@ If you are granted access to the app metadata API, follow these instructions to 
 3. In the **Your subscriptions** section of the page, click **Show** next to **Primary key**. This is your subscription key. Copy the key so you can use it later when you call the API.
 
 <span id="call-the-api" />
+
 ## Call the API
 
 After you have your subscription key, you are ready to call the API using HTTP REST syntax from the programming language of your choice. For information about the syntax of the API, see the [API syntax](#syntax) section below. To see code examples in C#, JavaScript, Python, and several other languages, click the **APIs** tab of the app metadata API portal, click **App details**, and then see the **Code samples** section on the bottom of the page.
@@ -50,6 +52,7 @@ Alternatively, you can call the API using the UI provided by the app metadata AP
 
 
 <span id="syntax" />
+
 ## API syntax
 
 This method has the following request syntax.

@@ -158,6 +158,7 @@ Because the CI build won’t be deployed to users, it’s a good idea to maintai
 To do that, double-click the .cer file, choose Local Machine, and then choose the Trusted People Store.
 
 <span id="uwp-unit-tests" />
+
 ### Configure the build definition to run UWP Unit Tests
 To execute a unit test, use the Visual Studio Test build step.
 
@@ -192,6 +193,7 @@ To do that, open the project file, and in the project properties, set the `UseDo
 >Note. Using the .NET native tool chain is still an important part of the workflow so you should still use it to test release builds. 
 
 <span id="bundle-errors" />
+
 #### Address errors that appear when you bundle more than one app in the same solution 
 If you add more than one UWP project to your solution, and then try to create a bundle, you might receive an error like this one: 
 
@@ -313,6 +315,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 ## Best Practices
 
 <span id="sideloading-best-practices"/>
+
 ### Best Practices for Sideloading apps
 
 If you want to distribute your app without publishing it to the Store, you can sideload your app directly to devices as long as those devices trust the certificate that was used to sign the app package. 
@@ -330,6 +333,7 @@ In the Windows 10 Anniversary Update, you can double-click the appxbundle file a
 If you want to distribute your appx packages from a website such as VSTS or HockeyApp, you’ll need to add that site to the list of trusted sites in your browser. Otherwise, Windows marks the file as locked. 
 
 <span id="certificates-best-practices"/>
+
 ### Best Practices for Signing Certificates 
 Visual Studio generates a certificate for each project. This makes it difficult to maintain a curated list of valid certificates. If you plan to create several apps, you can create a single certificate to sign all of your apps. Then, each device that trusts your certificate will be able to sideload any of your apps without installing another certificate. To learn more, see [Create a certificate for package signing](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing).
 

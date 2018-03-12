@@ -22,6 +22,7 @@ This article provides Java code examples that demonstrate how to use the [Micros
 * Commit the app submission.
 
 <span id="create-app-submission" />
+
 ## Create an app submission
 
 The ```CreateAndSubmitSubmissionExample``` class implements a ```main``` program that calls other example methods to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer. To adapt this code for your own use:
@@ -33,6 +34,7 @@ The ```CreateAndSubmitSubmissionExample``` class implements a ```main``` program
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/CreateAndSubmitSubmissionExample.java#L1-L313)]
 
 <span id="token" />
+
 ## Obtain an Azure AD access token
 
 The ```DevCenterAccessTokenClient``` class defines a helper method that uses the your ```tenantId```, ```clientId``` and ```clientSecret``` values to create an Azure AD access token to use with the Microsoft Store submission API.
@@ -41,6 +43,7 @@ The ```DevCenterAccessTokenClient``` class defines a helper method that uses the
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/java/DevCenterAccessTokenClient.java#L1-L69)]
 
 <span id="utilities" />
+
 ## Helper methods to invoke the submission API and upload submission files
 
 The ```DevCenterClient``` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.

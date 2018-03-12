@@ -40,6 +40,7 @@ In this section you'll find details about the info presented in each of the foll
 > You may not see data in all of these reports, depending on your app's specific features and implementation.
 
 <span id="no-dashboard"/>
+
 ## Access analytics data without using the Dev Center dashboard
 
 In addition to viewing reports in the dashboard, you can access your app analytics in a number of different ways.

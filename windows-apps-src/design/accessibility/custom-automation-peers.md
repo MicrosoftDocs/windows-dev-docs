@@ -35,6 +35,7 @@ Typically there are parallel APIs in the UI Automation framework: one API for UI
 <span id="Determining_the_existing_state_of_UI_Automation_support_for_your_custom_UI_class"/>
 <span id="determining_the_existing_state_of_ui_automation_support_for_your_custom_ui_class"/>
 <span id="DETERMINING_THE_EXISTING_STATE_OF_UI_AUTOMATION_SUPPORT_FOR_YOUR_CUSTOM_UI_CLASS"/>
+
 ## Determining the existing state of UI Automation support for your custom UI class  
 Before you attempt to implement an automation peer for a custom control, you should test whether the base class and its automation peer already provides the accessibility or automation support that you need. In many cases, the combination of the [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) implementations, specific peers, and the patterns they implement can provide a basic but satisfactory accessibility experience. Whether this is true depends on how many changes you made to the object model exposure to your control versus its base class. Also, this depends on whether your additions to base class functionality correlate to new UI elements in the template contract or to the visual appearance of the control. In some cases your changes might introduce new aspects of user experience that require additional accessibility support.
 
@@ -43,6 +44,7 @@ Even if using the existing base peer class provides the basic accessibility supp
 <span id="Automation_peer_classes__"/>
 <span id="automation_peer_classes__"/>
 <span id="AUTOMATION_PEER_CLASSES__"/>
+
 ## Automation peer classes  
 The UWP builds on existing UI Automation techniques and conventions used by previous managed-code UI frameworks such as Windows Forms, Windows Presentation Foundation (WPF) and Microsoft Silverlight. Many of the control classes and their function and purpose also have their origin in a previous UI framework.
 
@@ -54,6 +56,7 @@ By convention, peer class names begin with the control class name and end with "
 <span id="Peers__patterns_and_control_types"/>
 <span id="peers__patterns_and_control_types"/>
 <span id="PEERS__PATTERNS_AND_CONTROL_TYPES"/>
+
 ## Peers, patterns and control types  
 A *control pattern* is an interface implementation that exposes a particular aspect of a control's functionality to a UI Automation client. UI Automation clients use the properties and methods exposed through a control pattern to retrieve information about capabilities of the control, or to manipulate the control's behavior at run time.
 
@@ -79,6 +82,7 @@ For a list of control patterns, provider interfaces, and their purpose, see [Con
 <span id="Guidance_for_how_to_implement_control_patterns"/>
 <span id="guidance_for_how_to_implement_control_patterns"/>
 <span id="GUIDANCE_FOR_HOW_TO_IMPLEMENT_CONTROL_PATTERNS"/>
+
 ### Guidance for how to implement control patterns  
 The control patterns and what they're intended for are part of a larger definition of the UI Automation framework, and don't just apply to the accessibility support for a UWP app. When you implement a control pattern you should make sure you're implementing it in a way that matches the guidance as documented on MSDN and also in the UI Automation specification. If you're looking for guidance, you can generally use the MSDN topics and won't need to refer to the specification. Guidance for each pattern is documented here: [Implementing UI Automation Control Patterns](https://msdn.microsoft.com/library/windows/desktop/Ee671292). You'll notice that each topic under this area has an "Implementation Guidelines and Conventions" section and "Required Members" section. The guidance usually refers to specific APIs of the relevant control pattern interface in the [Control Pattern Interfaces for Providers](https://msdn.microsoft.com/library/windows/desktop/Ee671201) reference. Those interfaces are the native/COM interfaces (and their APIs use COM-style syntax). But everything you see there has an equivalent in the [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) namespace.
 
@@ -91,18 +95,21 @@ We recommend that you use the guidance that you see for the patterns under [Impl
 <span id="Built-in_automation_peer_classes"/>
 <span id="built-in_automation_peer_classes"/>
 <span id="BUILT-IN_AUTOMATION_PEER_CLASSES"/>
+
 ## Built-in automation peer classes  
 In general, elements implement an automation peer class if they accept UI activity from the user, or if they contain information needed by users of assistive technologies that represent the interactive or meaningful UI of apps. Not all UWP visual elements have automation peers. Examples of classes that implement automation peers are [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Examples of classes that do not implement automation peers are [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) and classes based on [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511), such as [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) and [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267). A **Panel** has no peer because it is providing a layout behavior that is visual only. There is no accessibility-relevant way for the user to interact with a **Panel**. Whatever child elements a **Panel** contains are instead reported to UI Automation trees as child elements of the next available parent in the tree that has a peer or element representation.
 
 <span id="UI_Automation_and_UWP_process_boundaries"/>
 <span id="ui_automation_and_uwp_process_boundaries"/>
 <span id="UI_AUTOMATION_AND_UWP_PROCESS_BOUNDARIES"/>
+
 ## UI Automation and UWP process boundaries  
 Typically, UI Automation client code that accesses a UWP app runs out-of-process. The UI Automation framework infrastructure enables information to get across the process boundary. This concept is explained in more detail in [UI Automation Fundamentals](https://msdn.microsoft.com/library/windows/desktop/Ee684007).
 
 <span id="OnCreateAutomationPeer"/>
 <span id="oncreateautomationpeer"/>
 <span id="ONCREATEAUTOMATIONPEER"/>
+
 ## OnCreateAutomationPeer  
 All classes that derive from [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) contain the protected virtual method [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer). The object initialization sequence for automation peers calls **OnCreateAutomationPeer** to get the automation peer object for each control and thus to construct a UI Automation tree for run-time use. UI Automation code can use the peer to get information about a control’s characteristics and features and to simulate interactive use by means of its control patterns. A custom control that supports automation must override **OnCreateAutomationPeer** and return an instance of a class that derives from [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185). For example, if a custom control derives from the [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/BR227736) class, the object returned by **OnCreateAutomationPeer** should derive from [**ButtonBaseAutomationPeer**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.automation.peers.buttonbaseautomationpeer).
 
@@ -163,6 +170,7 @@ The actual peer class definition can be done in the same code file as the contro
 <span id="Choosing_the_correct_peer_base_class"/>
 <span id="choosing_the_correct_peer_base_class"/>
 <span id="CHOOSING_THE_CORRECT_PEER_BASE_CLASS"/>
+
 ### Choosing the correct peer base class  
 Make sure that your [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) is derived from a base class that gives you the best match for the existing peer logic of the control class you are deriving from. In the case of the previous example, because `NumericUpDown` derives from [**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863), there is a [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) class available that you should base your peer on. By using the closest matching peer class in parallel to how you derive the control itself, you can avoid overriding at least some of the [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) functionality because the base peer class already implements it.
 
@@ -176,6 +184,7 @@ If you derive from [**ContentControl**](https://msdn.microsoft.com/library/windo
 <span id="Initialization_of_a_custom_peer_class"/>
 <span id="initialization_of_a_custom_peer_class"/>
 <span id="INITIALIZATION_OF_A_CUSTOM_PEER_CLASS"/>
+
 ## Initialization of a custom peer class  
 The automation peer should define a type-safe constructor that uses an instance of the owner control for base initialization. In the next example, the implementation passes the *owner* value on to the [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) base, and ultimately it is the [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) that actually uses *owner* to set [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner).
 
@@ -203,6 +212,7 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 <span id="Core_methods_of_AutomationPeer"/>
 <span id="core_methods_of_automationpeer"/>
 <span id="CORE_METHODS_OF_AUTOMATIONPEER"/>
+
 ## Core methods of AutomationPeer  
 For UWP infrastructure reasons, the overridable methods of an automation peer are part of a pair of methods: the public access method that the UI Automation provider uses as a forwarding point for UI Automation clients, and the protected "Core" customization method that a UWP class can override to influence the behavior. The method pair is wired together by default in such a way that the call to the access method always invokes the parallel "Core" method that has the provider implementation, or as a fallback, invokes a default implementation from the base classes.
 
@@ -243,6 +253,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 <span id="GetPattern_and_GetPatternCore"/>
 <span id="getpattern_and_getpatterncore"/>
 <span id="GETPATTERN_AND_GETPATTERNCORE"/>
+
 ### GetPattern and GetPatternCore  
 A peer's implementation of [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) returns the object that supports the pattern that is requested in the input parameter. Specifically, a UI Automation client calls a method that is forwarded to the provider's [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) method, and specifies a [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) enumeration value that names the requested pattern. Your override of **GetPatternCore** should return the object that implements the specified pattern. That object is the peer itself, because the peer should implement the corresponding pattern interface any time that it reports that it supports a pattern. If your peer does not have a custom implementation of a pattern, but you know that the peer's base does implement the pattern, you can call the base type's implementation of **GetPatternCore** from your **GetPatternCore**. A peer's **GetPatternCore** should return **null** if a pattern is not supported by the peer. However, instead of returning **null** directly from your implementation, you would usually rely on the call to the base implementation to return **null** for any unsupported pattern.
 
@@ -291,6 +302,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Forwarding_patterns_from_sub-elements"/>
 <span id="forwarding_patterns_from_sub-elements"/>
 <span id="FORWARDING_PATTERNS_FROM_sub-elementS"/>
+
 ### Forwarding patterns from sub-elements  
 A [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) method implementation can also specify a sub-element or part as a pattern provider for its host. This example mimics how [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) transfers scroll-pattern handling to the peer of its internal [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) control. To specify a sub-element for pattern handling, this code gets the sub-element object, creates a peer for the sub-element by using the [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) method, and returns the new peer.
 
@@ -328,6 +340,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Other_Core_methods"/>
 <span id="other_core_methods"/>
 <span id="OTHER_CORE_METHODS"/>
+
 ### Other Core methods  
 Your control may need to support keyboard equivalents for primary scenarios; for more info about why this might be necessary, see [Keyboard accessibility](keyboard-accessibility.md). Implementing the key support is necessarily part of the control code and not the peer code because that is part of a control's logic, but your peer class should override the [**GetAcceleratorKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getacceleratorkeycore) and [**GetAccessKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getaccesskeycore) methods to report to UI Automation clients which keys are used. Consider that the strings that report key information might need to be localized, and should therefore come from resources, not hard-coded strings.
 
@@ -346,6 +359,7 @@ You might override [**GetOrientationCore**](https://msdn.microsoft.com/library/w
 <span id="Base_implementation_in_FrameworkElementAutomationPeer"/>
 <span id="base_implementation_in_frameworkelementautomationpeer"/>
 <span id="BASE_IMPLEMENTATION_IN_FRAMEWORKELEMENTAUTOMATIONPEER"/>
+
 ### Base implementation in FrameworkElementAutomationPeer  
 The base implementation of [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) provides some UI Automation information that can be interpreted from various layout and behavior properties that are defined at the framework level.
 
@@ -365,6 +379,7 @@ The base implementation of [**FrameworkElementAutomationPeer**](https://msdn.mic
 <span id="Peers_and_AutomationProperties"/>
 <span id="peers_and_automationproperties"/>
 <span id="PEERS_AND_AUTOMATIONPROPERTIES"/>
+
 ## Peers and AutomationProperties  
 Your automation peer should provide appropriate default values for your control's accessibility-related information. Note that any app code that uses the control can override some of that behavior by including [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) attached-property values on control instances. Callers can do this either for the default controls or for custom controls. For example, the following XAML creates a button that has two customized UI Automation properties: `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
 
@@ -375,6 +390,7 @@ Some of the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps
 <span id="Implementing_patterns"/>
 <span id="implementing_patterns"/>
 <span id="IMPLEMENTING_PATTERNS"/>
+
 ## Implementing patterns  
 Let's look at how to write a peer for a control that implements an expand-collapse behavior by implementing the control pattern interface for expand-collapse. The peer should enable the accessibility for the expand-collapse behavior by returning itself whenever [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) is called with a value of [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496). The peer should then inherit the provider interface for that pattern ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider)) and provide implementations for each of the members of that provider interface. In this case the interface has three members to override: [**Expand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expand), [**Collapse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.collapse), [**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expandcollapsestate).
 
@@ -398,6 +414,7 @@ An alternate implementation is that the control itself can reference its peer. T
 <span id="UI_Automation_events"/>
 <span id="ui_automation_events"/>
 <span id="UI_AUTOMATION_EVENTS"/>
+
 ## UI Automation events  
 
 UI Automation events fall into the following categories.
@@ -412,12 +429,14 @@ UI Automation events fall into the following categories.
 <span id="AutomationEvents_identifiers"/>
 <span id="automationevents_identifiers"/>
 <span id="AUTOMATIONEVENTS_IDENTIFIERS"/>
+
 ### AutomationEvents identifiers  
 UI Automation events are identified by [**AutomationEvents**](https://msdn.microsoft.com/library/windows/apps/BR209183) values. The values of the enumeration uniquely identify the kind of event.
 
 <span id="Raising_events"/>
 <span id="raising_events"/>
 <span id="RAISING_EVENTS"/>
+
 ### Raising events  
 UI Automation clients can subscribe to automation events. In the automation peer model, peers for custom controls must report changes to control state that are relevant to accessibility by calling the [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raiseautomationevent) method. Similarly, when a key UI Automation property value changes, custom control peers should call the [**RaisePropertyChangedEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raisepropertychangedevent) method.
 
@@ -442,12 +461,14 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Peer_navigation"/>
 <span id="peer_navigation"/>
 <span id="PEER_NAVIGATION"/>
+
 ## Peer navigation  
 After locating an automation peer, a UI Automation client can navigate the peer structure of an app by calling the peer object's [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildren) and [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent) methods. Navigation among UI elements within a control is supported by the peer's implementation of the [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore) method. The UI Automation system calls this method to build up a tree of sub-elements contained within a control; for example, list items in a list box. The default **GetChildrenCore** method in [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) traverses the visual tree of elements to build the tree of automation peers. Custom controls can override this method to expose a different representation of child elements to automation clients, returning the automation peers of elements that convey information or allow user interaction.
 
 <span id="Native_automation_support_for_text_patterns"/>
 <span id="native_automation_support_for_text_patterns"/>
 <span id="NATIVE_AUTOMATION_SUPPORT_FOR_TEXT_PATTERNS"/>
+
 ## Native automation support for text patterns  
 Some of the default UWP app automation peers provide control pattern support for the text pattern ([**PatternInterface.Text**](https://msdn.microsoft.com/library/windows/apps/BR242496)). But they provide this support through native methods, and the peers involved won't note the [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) interface in the (managed) inheritance. Still, if a managed or non-managed UI Automation client queries the peer for patterns, it will report support for the text pattern, and provide behavior for parts of the pattern when client APIs are called.
 
@@ -456,6 +477,7 @@ If you intend to derive from one of the UWP app text controls and also create a 
 <span id="AutomationProperties.AccessibilityView"/>
 <span id="automationproperties.accessibilityview"/>
 <span id="AUTOMATIONPROPERTIES.ACCESSIBILITYVIEW"/>
+
 ## AutomationProperties.AccessibilityView  
 In addition to providing a custom peer, you can also adjust the tree view representation for any control instance, by setting [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) in XAML. This isn't implemented as part of a peer class, but we'll mention it here because it's germane to overall accessibility support either for custom controls or for templates you customize.
 
@@ -464,6 +486,7 @@ The main scenario for using **AutomationProperties.AccessibilityView** is to del
 <span id="Throwing_exceptions_from_automation_peers"/>
 <span id="throwing_exceptions_from_automation_peers"/>
 <span id="THROWING_EXCEPTIONS_FROM_AUTOMATION_PEERS"/>
+
 ## Throwing exceptions from automation peers  
 The APIs that you are implementing for your automation peer support are permitted to throw exceptions. It's expected any UI Automation clients that are listening are robust enough to continue on after most exceptions are thrown. In all likelihood that listener is looking at an all-up automation tree that includes apps other than your own, and it's an unacceptable client design to bring down the entire client just because one area of the tree threw a peer-based exception when the client called its APIs.
 
@@ -475,6 +498,7 @@ For parameters that are passed in to your peer, it's acceptable to validate the 
 Beyond this, peers should be relatively conservative regarding exceptions that they throw from their peer support. Most clients won't be able to handle exceptions from peers and turn these into actionable choices that their users can make when interacting with the client. So sometimes a no-op, and catching exceptions without rethrowing within your peer implementations, is a better strategy than is throwing exceptions every time something the peer tries to do doesn't work. Consider also that most UI Automation clients aren't written in managed code. Most are written in COM and are just checking for **S\_OK** in an **HRESULT** whenever they call a UI Automation client method that ends up accessing your peer.
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)

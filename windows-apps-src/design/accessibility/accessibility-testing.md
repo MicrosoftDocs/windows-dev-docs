@@ -20,6 +20,7 @@ Testing procedures to follow to ensure that your Universal Windows Platform (UWP
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
+
 ## Run accessibility testing tools  
 The Windows Software Development Kit (SDK) includes several accessibility testing tools such as [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) and [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). These tools can help you verify the accessibility of your app. Be sure to verify all app scenarios and UI elements.
 
@@ -28,12 +29,14 @@ You can launch the accessibility testing tools either from a Microsoft Visual St
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>
+
 ### **AccScope**  
 
 The [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) tool enables developers and testers to evaluate the accessibility of their app during the app's development and design, potentially in earlier prototype phases, rather than in the late testing phases of an app's development cycle. It's particularly intended for testing Narrator accessibility scenarios with your app.
 
 <span id="inspect"/>
 <span id="INSPECT"/>
+
 ### **Inspect**  
 
 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) enables you to select any UI element and view its accessibility data. You can view Microsoft UI Automation properties and control patterns and test the navigational structure of the automation elements in the UI Automation tree. Use **Inspect** as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) attached properties.
@@ -44,16 +47,19 @@ The following image shows the [**Inspect**](https://msdn.microsoft.com/library/w
 
 <span id="ui_accessibility_checker"/>
 <span id="UI_ACCESSIBILITY_CHECKER"/>
+
 ### **UI Accessibility Checker**  
 **UI Accessibility Checker (AccChecker)** helps you discover accessibility problems at run time. When your UI is complete and functional, use **AccChecker** to test different scenarios, verify the correctness of runtime accessibility information, and discover runtime issues. You can run **AccChecker** in UI or command line mode. To run the UI mode tool, open the **AccChecker** directory in the Windows SDK bin directory, run acccheckui.exe, and click the **Help** menu.
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
+
 ### **UI Automation Verify**  
 **UI Automation Verify (UIA Verify)** is an automated testing and verification framework for UI Automation implementations. **UIA Verify** can integrate into the test code and conduct regular, automated testing or spot checks of UI Automation scenarios. To run **UIA Verify**, run VisualUIAVerifyNative.exe from the UIAVerify subdirectory.
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
+
 ### **Accessible Event Watcher**  
 [**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. Changes in the UI can occur when the focus changes, or when a UI element is invoked, selected, or has a state or property change.
 
@@ -62,11 +68,13 @@ The following image shows the [**Inspect**](https://msdn.microsoft.com/library/w
 
 <span id="test_keyboard_accessibility"/>
 <span id="TEST_KEYBOARD_ACCESSIBILITY"/>
+
 ## Test keyboard accessibility  
 The best way to test your keyboard accessibility is to unplug your mouse or use the On-Screen Keyboard if you are using a tablet device. Test keyboard accessibility navigation by using the _Tab_ key. You should be able to cycle through all interactive UI elements by using _Tab_ key. For composite UI elements, verify that you can navigate among the parts of elements by using the arrow keys. For example, you should be able to navigate lists of items using keyboard keys. Finally, make sure that you can invoke all interactive UI elements with the keyboard once those elements have focus, typically by using the Enter or Spacebar key.
 
 <span id="verify_the_contrast_ratio_of_visible_text"/>
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
+
 ## Verify the contrast ratio of visible text  
 Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn’t convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
 
@@ -75,17 +83,20 @@ Use color contrast tools to verify that the visible text contrast ratio is accep
 
 <span id="verify_your_app_in_high_contrast"/>
 <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"/>
+
 ## Verify your app in high contrast  
 Use your app while a high-contrast theme is active to verify that all the UI elements display correctly. All text should be readable, and all images should be clear. Adjust the XAML theme-dictionary resources or control templates to correct any theme issues that come from controls. In cases where prominent high-contrast issues are not coming from themes or controls (such as from image files), provide separate versions to use when a high-contrast theme is active.
 
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
+
 ## Verify your app with display settings  
 
 Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://msdn.microsoft.com/library/windows/apps/Dn611863) and provide additional resources for different scaling factors.
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
+
 ## Verify main app scenarios by using Narrator  
 Use Narrator to test the screen reading experience for your app.
 
@@ -135,6 +146,7 @@ You should also consider using the [**AccScope**](https://msdn.microsoft.com/lib
 <span id="Examine_the_UI_Automation_representation_for_your_app"/>
 <span id="examine_the_ui_automation_representation_for_your_app"/>
 <span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP"/>
+
 ## Examine the UI Automation representation for your app  
 Several of the UI Automation testing tools mentioned previously provide a way to view your app in a way that deliberately does not consider what the app looks like, and instead represents the app as a structure of UI Automation elements. This is how UI Automation clients, mainly assistive technologies, will be interacting with your app in accessibility scenarios.
 
@@ -143,6 +155,7 @@ The [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) 
 One aspect that you can test is whether there are elements appearing in the UI Automation element view that you don't want to appear there. If you find elements you want to omit from the view, or conversely if there are elements missing, you can use the [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview) XAML attached property to adjust how XAML controls appear in accessibility views. After you've looked at the basic accessibility views, this is also a good opportunity to recheck your tab sequences or spatial navigation as enabled by arrow keys to make sure users can reach each of the parts that are interactive and exposed in the control view.
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Practices to avoid](practices-to-avoid.md)

@@ -39,6 +39,7 @@ These methods have the following URIs.
 >**Note**&nbsp;&nbsp;This API currently does not support a PUT method.
 
 <span/> 
+
 ### Header
 
 | Header        | Type   | Description         |
@@ -48,11 +49,13 @@ These methods have the following URIs.
 
 
 <span/>
+
 ### Request body
 
 The POST method requires a JSON request body with the required fields of a [Creative](#creative) object.
 
 <span/>
+
 ### Request examples
 
 The following example demonstrates how to call the POST method to create a creative. In this example, the *content* value has been shortened for brevity.
@@ -81,6 +84,7 @@ Authorization: Bearer <your access token>
 ```
 
 <span/>
+
 ## Response
 
 These methods return a JSON response body with a [Creative](#creative) object that contains information about the creative that was created or retrieved. The following example demonstrates a response body for these methods. In this example, the *content* value has been shortened for brevity.
@@ -104,6 +108,7 @@ These methods return a JSON response body with a [Creative](#creative) object th
 ```
 
 <span id="creative"/>
+
 ## Creative object
 
 The request and response bodies for these methods contain the following fields. This table shows which fields are read-only (meaning that they cannot be changed in the PUT method) and which fields are required in the request body for the POST method.
@@ -121,6 +126,7 @@ The request and response bodies for these methods contain the following fields. 
 |  storeProductId   |  string   |   The [Store ID](in-app-purchases-and-trials.md#store-ids) for the app that this ad campaign is associated with. An example Store ID for a product is 9nblggh42cfd.    |   No    |    |  No     |   |  
 
 <span id="image-attributes"/>
+
 ## ImageAttributes object
 
 | Field        | Type   |  Description      |  Read-only  | Default value  | Required for POST |  

@@ -66,6 +66,7 @@ If you have not done so already, complete all the [prerequisites](create-and-man
 The Microsoft Store submission API methods for getting app data use the following JSON data resources.
 
 <span id="application_object" />
+
 ### Application resource
 
 This resource represents an app that is registered to your account.
@@ -106,6 +107,7 @@ This resource has the following values.
 
 
 <span id="add-on-object" />
+
 ### Add-on resouce
 
 This resource provides information about an add-on.
@@ -124,6 +126,7 @@ This resource has the following values.
 
 
 <span id="flight-object" />
+
 ### Flight resource
 
 This resource provides information about a package flight for an app.
@@ -160,6 +163,7 @@ This resource has the following values.
 
 
 <span id="submission_object" />
+
 ### Submission resource
 
 This resource provides information about a submission. The following example demonstrates the format of this resource.

@@ -41,6 +41,7 @@ To track the success of each of these promotion channels, the developer creates 
 As her Facebook and Twitter followers click the URLs, Microsoft tracks each click and associates it with the corresponding custom campaign. Subsequent qualifying acquisitions of the game and any add-on purchases are associated with the custom campaign and reported as conversions.
 
 <span id="conversions" />
+
 ## Understanding how acquisitions qualify as conversions
 
 A custom campaign *conversion* is an acquisition that results from a customer clicking a URL that is promoted via a custom campaign. There are different scenarios for qualifying as a conversion for the **App page views and conversions by campaign ID** and **Total campaign conversions** charts in the [Acquisitions report](acquisitions-report.md) in the Dev Center dashboard and for qualifying as a conversion for [programmatically retrieving the campaign ID](#programmatically).
@@ -89,6 +90,7 @@ To create a Microsoft Store page URL for your app with a custom campaign ID:
     * For a protocol format URL, append **`&cid=*my custom campaign ID*`**. For example, if Skype introduces a campaign ID with the value **custom\_campaign**, the new protocol URL including the campaign ID would be: `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign`.
 
 <span id="programmatically" />
+
 ## Programmatically retrieve the custom campaign ID for an app
 
 If your app is a UWP app, you can programmatically retrieve the custom campaign ID associated with an app's acquisition by using APIs in the Windows SDK. These APIs make many analytics and monetization scenarios possible. For example, you can find out if the current user acquired your app after discovering it through your Facebook campaign, and then customize the app experience accordingly. Alternatively, if you are using a third-party app marketing provider, you can send data back to the provider.

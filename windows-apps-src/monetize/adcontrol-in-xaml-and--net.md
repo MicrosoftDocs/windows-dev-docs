@@ -117,6 +117,7 @@ This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/lib
 6.  Compile and run the app to see it with an ad.
 
 <span id="release" />
+
 ## Release your app with live ads
 
 1. Make sure your use of banner ads in your app follows our [guidelines for banner ads](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads).
@@ -134,6 +135,7 @@ This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/lib
 6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
 <span id="manage" />
+
 ## Manage ad units for multiple ad controls in your app
 
 You can use multiple **AdControl** objects in a single app (for example, each page in your app might host a different **AdControl** object). In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.

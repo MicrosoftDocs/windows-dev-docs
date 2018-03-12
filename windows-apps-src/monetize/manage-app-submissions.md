@@ -24,6 +24,7 @@ The Microsoft Store submission API provides methods you can use to manage submis
 
 
 <span id="methods-for-app-submissions" />
+
 ## Methods for managing app submissions
 
 Use the following methods to get, create, update, commit, or delete an app submission. Before you can use these methods, the app must already exist in your Dev Center account and you must first create one submission for the app in the dashboard. For more information, see the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites).
@@ -76,6 +77,7 @@ Use the following methods to get, create, update, commit, or delete an app submi
 </table>
 
 <span id="create-an-app-submission">
+
 ### Create an app submission
 
 To create a submission for an app, follow this process.
@@ -138,6 +140,7 @@ To create a submission for an app, follow this process.
 7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
 
 <span id="manage-gradual-package-rollout">
+
 ## Methods for managing a gradual package rollout
 
 You can gradually roll out the updated packages in an app submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in the Dev Center dashboard, see [this article](../publish/gradual-package-rollout.md).
@@ -188,6 +191,7 @@ After a gradual package rollout is enabled for an app submission, you can use th
 </table>
 
 <span/>
+
 ## Code examples for managing app submissions
 
 The following articles provide detailed code examples that demonstrate how to create an app submission in several different programming languages:
@@ -206,10 +210,12 @@ As an alternative to calling the Windows Store submission API directly, we also 
 For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span/>
+
 ## Data resources
 The Microsoft Store submission API methods for managing app submissions use the following JSON data resources.
 
 <span id="app-submission-object" />
+
 ### App submission resource
 
 This resource describes an app submission.
@@ -358,6 +364,7 @@ This resource has the following values.
 
 
 <span id="pricing-object" />
+
 ### Pricing resource
 
 This resource contains pricing info for the app. This resource has the following values.
@@ -372,6 +379,7 @@ This resource contains pricing info for the app. This resource has the following
 
 
 <span id="sale-object" />
+
 ### Sale resource
 
 This resources contains sale info for an app.
@@ -393,6 +401,7 @@ This resource has the following values.
 
 
 <span id="listing-object" />
+
 ### Listing resource
 
 This resource contains listing info for an app. This resource has the following values.
@@ -403,6 +412,7 @@ This resource contains listing info for an app. This resource has the following 
 |  platformOverrides               | object |   A dictionary of key and value pairs, where each key is string that identifies a platform for which to override the listing info, and each value is a [base listing](#base-listing-object) resource (containing only the values from description to title) that specifies the listing info to override for the specified platform. The keys can have the following values: <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
+
 ### Base listing resource
 
 This resource contains base listing info for an app. This resource has the following values.
@@ -429,6 +439,7 @@ This resource contains base listing info for an app. This resource has the follo
 |  devStudio               |     string    |   Specify this value if you want to include a **Developed by** field in the listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a *devStudio* value.)    |  
 
 <span id="image-object" />
+
 ### Image resource
 
 This resource contains image and icon data for an app listing. For more information about images and icons for listing, see [App screenshots and images](../publish/app-screenshots-and-images.md). This resource has the following values.
@@ -443,6 +454,7 @@ This resource contains image and icon data for an app listing. For more informat
 
 
 <span id="gaming-options-object" />
+
 ### Gaming options resource
 
 This resource contains game-related settings for the app. The values in this resource correspond to the [game settings](../publish/enter-app-properties.md#game-settings) for submissions in the Dev Center dashboard.
@@ -492,6 +504,7 @@ This resource has the following values.
 > The *gamingOptions* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *gamingOptions* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
 
 <span id="status-details-object" />
+
 ### Status details resource
 
 This resource contains additional details about the status of a submission. This resource has the following values.
@@ -504,6 +517,7 @@ This resource contains additional details about the status of a submission. This
 
 
 <span id="status-detail-object" />
+
 ### Status detail resource
 
 This resource contains additional information about any related errors or warnings for a submission. This resource has the following values.
@@ -515,6 +529,7 @@ This resource contains additional information about any related errors or warnin
 
 
 <span id="application-package-object" />
+
 ### Application package resource
 
 This resource contains details about an app package for the submission.
@@ -567,6 +582,7 @@ This resource has the following values.
 <span/>
 
 <span id="certification-report-object" />
+
 ### Certification report resource
 
 This resource provides access to the certification report data for a submission. This resource has the following values.
@@ -578,6 +594,7 @@ This resource provides access to the certification report data for a submission.
 
 
 <span id="package-delivery-options-object" />
+
 ### Package delivery options resource
 
 This resource contains gradual package rollout and mandatory update settings for the submission.
@@ -606,6 +623,7 @@ This resource has the following values.
 | mandatoryUpdateEffectiveDate    |  date   |  The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone.   |        
 
 <span id="package-rollout-object" />
+
 ### Package rollout resource
 
 This resource contains gradual [package rollout settings](#manage-gradual-package-rollout) for the submission. This resource has the following values.
@@ -621,6 +639,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 > The *packageRolloutStatus* and *fallbackSubmissionId* values are assigned by Dev Center, and are not intended to be set by the developer. If you include these values in a request body, these values will be ignored.
 
 <span id="trailer-object" />
+
 ### Trailers resource
 
 This resource represents a video trailer for the app listing. The values in this resource correspond to the [trailers](../publish/app-screenshots-and-images.md#trailers) options for submissions in the Dev Center dashboard.
@@ -664,6 +683,7 @@ This resource has the following values.
 > The *trailers* resource was added in May 2017, after the Microsoft Store submission API was first released to developers. If you created a submission for an app via the submission API before this resource was introduced and this submission is still in progress, this resource will be null for submissions for the app until you successfully commit the submission or you delete it. If the *trailers* resource is not available for submissions for an app, the *hasAdvancedListingPermission* field of the [Application resource](get-app-data.md#application_object) returned by the [get an app](get-an-app.md) method is false.
 
 <span id="trailer-assets-object" />
+
 ### Trailer assets resource
 
 This resource contains additional locale-specific assets for a trailer that is defined in a [trailer resource](#trailer-object). This resource has the following values.
@@ -675,6 +695,7 @@ This resource contains additional locale-specific assets for a trailer that is d
 
 
 <span id="image-for-trailer-object" />
+
 ### Image resource (for a trailer)
 
 This resource describes the thumbnail image for a trailer. This resource has the following values.
@@ -692,6 +713,7 @@ This resource describes the thumbnail image for a trailer. This resource has the
 These methods use the following enums.
 
 <span id="price-tiers" />
+
 ### Price tiers
 
 The following values represent available price tiers in the [pricing resource](#pricing-object) resource for an app submission.
@@ -705,6 +727,7 @@ The following values represent available price tiers in the [pricing resource](#
 
 
 <span id="enterprise-licensing" />
+
 ### Enterprise licensing values
 
 The following values represent the organizational licensing behavior for the app. For more information about these options, see [Organizational licensing options](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing).
@@ -721,6 +744,7 @@ The following values represent the organizational licensing behavior for the app
 
 
 <span id="submission-status-code" />
+
 ### Submission status code
 
 The following values represent the status code of a submission.

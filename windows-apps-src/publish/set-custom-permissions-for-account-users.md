@@ -29,6 +29,7 @@ When determining what role or permissions to apply, keep in mind:
 
 
 <span id="roles" />
+
 ## Assign roles to account users
 
 By default, a set of standard roles is presented for you to choose from when you add a user, group, or Azure AD application to your Dev Center account. Each role has a specific set of permissions in order to perform certain functions within the account. 
@@ -63,6 +64,7 @@ If none of the standard roles are appropriate, or you wish to limit access to sp
 
 
 <span id="custom" />
+
 ## Assign custom permissions to account users
 
 To assign custom permissions rather than standard roles, click **Customize permissions** in the **Roles** section when adding or editing the user account. 

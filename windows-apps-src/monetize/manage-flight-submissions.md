@@ -20,6 +20,7 @@ The Microsoft Store submission API provides methods you can use to manage packag
 > If you use the Microsoft Store submission API to create a submission for a package flight, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 <span id="methods-for-package-flight-submissions" />
+
 ## Methods for managing package flight submissions
 
 Use the following methods to get, create, update, commit, or delete a package flight submission. Before you can use these methods, the package flight must already exist in your Dev Center account. You can create a package flight by [using the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/package-flights) or by using the Microsoft Store submission API methods in described in [Manage package flights](manage-flights.md).
@@ -72,6 +73,7 @@ Use the following methods to get, create, update, commit, or delete a package fl
 </table>
 
 <span id="create-a-package-flight-submission">
+
 ## Create a package flight submission
 
 To create a submission for a package flight, follow this process.
@@ -132,6 +134,7 @@ To create a submission for a package flight, follow this process.
 7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
 
 <span/>
+
 ## Code examples
 
 The following articles provide detailed code examples that demonstrate how to create a package flight submission in several different programming languages:
@@ -147,6 +150,7 @@ As an alternative to calling the Windows Store submission API directly, we also 
 For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 
 <span id="manage-gradual-package-rollout">
+
 ## Manage a gradual package rollout for a package flight submission
 
 You can gradually roll out the updated packages in a package flight submission to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can change the rollout percentage (or halt the update) for a published submission without having to create a new submission. For more details, including instructions for how to enable and manage a gradual package rollout in the Dev Center dashboard, see [this article](../publish/gradual-package-rollout.md).
@@ -197,11 +201,13 @@ After a gradual package rollout is enabled for a package flight submission, you 
 </table>
 
 <span/>
+
 ## Data resources
 
 The Microsoft Store submission API methods for managing package flight submissions use the following JSON data resources.
 
 <span id="flight-submission-object" />
+
 ### Flight submission resource
 
 This resource describes a package flight submission.
@@ -261,6 +267,7 @@ This resource has the following values.
 | notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
+
 ### Status details resource
 
 This resource contains additional details about the status of a submission. This resource has the following values.
@@ -273,6 +280,7 @@ This resource contains additional details about the status of a submission. This
 
 
 <span id="status-detail-object" />
+
 ### Status detail resource
 
 This resource contains additional information about any related errors or warnings for a submission. This resource has the following values.
@@ -284,6 +292,7 @@ This resource contains additional information about any related errors or warnin
 
 
 <span id="certification-report-object" />
+
 ### Certification report resource
 
 This resource provides access to the certification report data for a submission. This resource has the following values.
@@ -295,6 +304,7 @@ This resource provides access to the certification report data for a submission.
 
 
 <span id="flight-package-object" />
+
 ### Flight package resource
 
 This resource provides details about a package in a submission.
@@ -335,6 +345,7 @@ This resource has the following values.
 
 
 <span id="package-delivery-options-object" />
+
 ### Package delivery options resource
 
 This resource contains gradual package rollout and mandatory update settings for the submission.
@@ -363,6 +374,7 @@ This resource has the following values.
 | mandatoryUpdateEffectiveDate    |  date   |  The date and time when the packages in this submission become mandatory, in ISO 8601 format and UTC time zone.   |        
 
 <span id="package-rollout-object" />
+
 ### Package rollout resource
 
 This resource contains gradual [package rollout settings](#manage-gradual-package-rollout) for the submission. This resource has the following values.
@@ -384,6 +396,7 @@ This resource contains gradual [package rollout settings](#manage-gradual-packag
 These methods use the following enums.
 
 <span id="submission-status-code" />
+
 ### Submission status code
 
 The following codes represent the status of a submission.

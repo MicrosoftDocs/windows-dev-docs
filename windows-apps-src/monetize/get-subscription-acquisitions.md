@@ -83,6 +83,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 <span id="subscription-acquisition-values" />
+
 ### Subscription acquisition values
 
 Elements in the *Value* array contain the following values.

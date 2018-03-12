@@ -22,6 +22,7 @@ Basic accessibility info is often categorized into name, role, and value. This t
 
 <span id="accessible_name"/>
 <span id="ACCESSIBLE_NAME"/>
+
 ## Accessible name  
 An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Set the accessible name for UI elements so that have a meaning that is important for understanding the content or interacting with the UI. Such elements typically include images, input fields, buttons, controls, and regions.
 
@@ -38,6 +39,7 @@ Most container elements such as panels do not promote their content as accessibl
 
 <span id="role_value"/>
 <span id="ROLE_VALUE"/>
+
 ## Role and value  
 The controls and other UI elements that are part of the XAML vocabulary implement UI Automation support for reporting role and value as part of their definitions. You can use UI Automation tools to examine the role and value information for the controls, or you can read the documentation for the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) implementations of each control. The available roles in a UI Automation framework are defined in the [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) enumeration. UI Automation clients such as assistive technologies can obtain role information by calling methods that the UI Automation framework exposes by using the control's **AutomationPeer**.
 
@@ -49,6 +51,7 @@ Not all controls have a value. Controls that do have a value report this informa
 <span id="Influencing_the_UI_Automation_tree_views"/>
 <span id="influencing_the_ui_automation_tree_views"/>
 <span id="INFLUENCING_THE_UI_AUTOMATION_TREE_VIEWS"/>
+
 ## Influencing the UI Automation tree views  
 The UI Automation framework has a concept of tree views, where UI Automation clients can retrieve the relationships between elements in a UI using three possible views: raw, control, and content. The control view is the view that's often used by UI Automation clients because it provides a good representation and organization of the elements in a UI that are interactive. Testing tools usually enable you to choose which tree view to use when the tool presents the organization of elements.
 
@@ -56,6 +59,7 @@ By default, any [**Control**](https://msdn.microsoft.com/library/windows/apps/BR
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
+
 ## Name from inner text  
 To make it easier to use strings that already exist in the visible UI for accessible name values, many of the controls and other UI elements provide support for automatically determining a default accessible name based on inner text within the element, or from string values of content properties.
 
@@ -67,6 +71,7 @@ To make it easier to use strings that already exist in the visible UI for access
 
 <span id="images"/>
 <span id="IMAGES"/>
+
 ## Accessible names for images
 To support screen readers and to provide the basic identifying information for each element in the UI, you sometimes must provide text alternatives to non-textual information such as images and charts (excluding any purely decorative or structural elements). These elements don't have inner text so the accessible name won't have a calculated value. You can set the accessible name directly by setting the [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) attached property as shown in this example.
 
@@ -88,6 +93,7 @@ XAML
 
 <span id="labels"/>
 <span id="LABELS"/>
+
 ## Labels and LabeledBy  
 The preferred way to associate a label with a form element is to use a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) with an **x:Name** for label text, and then to set the [**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) attached property on the form element to reference the labeling **TextBlock** by its XAML name. If you use this pattern, when the user clicks the label, the focus moves to the associated control and assistive technologies can use the label text as the accessible name for the form field. Here's an example that shows this technique.
 
@@ -111,6 +117,7 @@ XAML
 
 <span id="accessible_description"/>
 <span id="ACCESSIBLE_DESCRIPTION"/>
+
 ## Accessible description (optional)  
 An accessible description provides additional accessibility information about a particular UI element. You typically provide an accessible description when an accessible name alone does not adequately convey an element's purpose.
 
@@ -121,6 +128,7 @@ The accessible name is meant to identify the control rather than to fully docume
 <span id="Testing_accessibility_early_and_often"/>
 <span id="testing_accessibility_early_and_often"/>
 <span id="TESTING_ACCESSIBILITY_EARLY_AND_OFTEN"/>
+
 ## Testing accessibility early and often  
 Ultimately, the best approach for supporting screen readers is to test your app using a screen reader yourself. That will show you how the screen reader behaves and what basic accessibility information might be missing from the app. Then you can adjust the UI or UI Automation property values accordingly. For more info, see [Accessibility testing](accessibility-testing.md).
 
@@ -129,18 +137,21 @@ One of the tools you can use for testing accessibility is called **AccScope**. T
 <span id="Accessible_names_from_dynamic_data"/>
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
+
 ## Accessible names from dynamic data  
 Windows supports many controls that can be used to display values that come from an associated data source, through a feature known as *data binding*. When you populate lists with data items, you may need to use a technique that sets accessible names for data-bound list items after the initial list is populated. For more info, see "Scenario 4" in the [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570).
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
+
 ## Accessible names and localization  
 To make sure that the accessible name is also an element that is localized, you should use correct techniques for storing localizable strings as resources and then referencing the resource connections with [x:Uid directive](https://msdn.microsoft.com/library/windows/apps/Mt204791) values. If the accessible name is coming from an explicitly set [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) usage, make sure that the string there is also localizable.
 
 Note that attached properties such as the [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) properties use a special qualifying syntax for the resource name, so that the resource references the attached property as applied to a specific element. For example, the resource name for [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) as applied to a UI element named `MediumButton` is: `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`.
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)

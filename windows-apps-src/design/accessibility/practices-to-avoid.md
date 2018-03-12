@@ -32,6 +32,7 @@ If you want to create an accessible Universal Windows Platform (UWP) app, see th
 * **Don’t change user context or activate functionality automatically.** Context or activation changes should occur only when the user takes a direct action on a UI element that has focus. Changes in user context include changing focus, displaying new content, and navigating to a different page. Making context changes without involving the user can be disorienting for users who have disabilities. The exceptions to this requirement include displaying submenus, validating forms, displaying help text in another control, and changing context in response to an asynchronous event.
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Accessibility in the Store](accessibility-in-the-store.md)

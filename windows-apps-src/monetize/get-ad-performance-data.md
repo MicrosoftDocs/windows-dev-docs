@@ -109,6 +109,7 @@ Authorization: Bearer <your access token>
 | TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
 
 <span id="ad-performance-values" />
+
 ### Ad performance values
 
 Elements in the *Value* array contain the following values.

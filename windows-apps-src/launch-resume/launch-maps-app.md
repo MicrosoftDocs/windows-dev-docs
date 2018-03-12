@@ -162,6 +162,7 @@ The **ms-settings:** URI scheme lets you launch directly into a particular page 
  
 
 <span id="bingmaps-param-reference"/>
+
 ## bingmaps: parameter reference
 
 
@@ -380,6 +381,7 @@ The syntax for each parameter in this table is shown by using Augmented Backus�
 
   
 <span id="ms-drive-to-param-reference"/>
+
 ## ms-drive-to: parameter reference
 
 
@@ -397,6 +399,7 @@ The URI to launch a request for turn-by-turn driving directions does not need to
 
  
 <span id="ms-walk-to-param-reference"/>
+
 ## ms-walk-to: parameter reference
 
 

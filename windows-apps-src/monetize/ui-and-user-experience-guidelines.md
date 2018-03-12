@@ -40,6 +40,7 @@ We recommend that you follow these best practices when you implement banner ads 
 * If you have a scenario for alerting the user that is best handled with an overlay, call [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) while displaying the overlay and then call [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) when the alert scenario is finished.
 
 <span />
+
 ### Practices to avoid
 
 We recommend that you avoid these practices when you implement banner ads in your app:
@@ -51,6 +52,7 @@ We recommend that you avoid these practices when you implement banner ads in you
 * Don’t distract user from their core tasks. The primary focus should always be on the app. The ad space should be incorporated so it remains a secondary focus.
 
 <span />
+
 ### Examples of policy violations
 
 This section provides examples of banner ad scenarios that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Microsoft Store Policies. These examples are provided for instructional purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.
@@ -68,6 +70,7 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 * Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.
 
 <span id="interstitialbestpractices10">
+
 ## Guidelines for interstitial ads
 
 When used elegantly, [interstitial ads](interstitial-ads.md) can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
@@ -111,6 +114,7 @@ We recommend that you follow these best practices when you implement interstitia
 * Continuously improve your app after the initial submission. Look at the [ad reports](../publish/advertising-performance-report.md) and make design changes to improve fill and interstitial video completion rates.
 
 <span />
+
 ### Practices to avoid
 
 We recommend that you avoid these practices when you implement interstitial ads in your app:
@@ -134,6 +138,7 @@ We recommend that you avoid these practices when you implement interstitial ads 
 * Don’t use interstitial ads to let a user gain a competitive advantage in a multi-player game. For example, don't entice the user with a better gun in a first-person shooter game if they view an interstitial ad. A custom shirt on the player’s avatar is fine, so long as it doesn’t provide camouflage!
 
 <span />
+
 ### Examples of policy violations
 
 This section provides examples of interstitial ad scenarios that violate [policy 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) of the Microsoft Store Policies. These examples are provided for instructional purposes only, as a way to help you better understand the policy. These examples are not comprehensive, and there may be many other ways to violate policy 10.10.1 that are not listed here.

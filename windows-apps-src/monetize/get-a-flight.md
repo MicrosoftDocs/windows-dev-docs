@@ -105,6 +105,7 @@ The following example demonstrates the JSON response body for a successful call 
 | rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 <span id="submission_object" />
+
 ### Submission object
 
 The *lastPublishedFlightSubmission* and *pendingFlightSubmission* values in the response body contain objects that provide resource information about a submission for the package flight. These objects have the following values.
