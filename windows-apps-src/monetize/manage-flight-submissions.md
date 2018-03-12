@@ -42,32 +42,32 @@ Use the following methods to get, create, update, commit, or delete a package fl
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Get an existing package flight submission](get-a-flight-submission.md)</td>
+<td align="left"><a href="get-a-flight-submission.md">Get an existing package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status```</td>
-<td align="left">[Get the status of an existing package flight submission](get-status-for-a-flight-submission.md)</td>
+<td align="left"><a href="get-status-for-a-flight-submission.md">Get the status of an existing package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions```</td>
-<td align="left">[Create a new package flight submission](create-a-flight-submission.md)</td>
+<td align="left"><a href="create-a-flight-submission.md">Create a new package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">PUT</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Update an existing package flight submission](update-a-flight-submission.md)</td>
+<td align="left"><a href="update-a-flight-submission.md">Update an existing package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit```</td>
-<td align="left">[Commit a new or updated package flight submission](commit-a-flight-submission.md)</td>
+<td align="left"><a href="commit-a-flight-submission.md">Commit a new or updated package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}```</td>
-<td align="left">[Delete a package flight submission](delete-a-flight-submission.md)</td>
+<td align="left"><a href="delete-a-flight-submission.md">Delete a package flight submission</a></td>
 </tr>
 </tbody>
 </table>
@@ -180,22 +180,22 @@ After a gradual package rollout is enabled for a package flight submission, you 
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout```</td>
-<td align="left">[Get the gradual rollout info for a package flight submission](get-package-rollout-info-for-a-flight-submission.md)</td>
+<td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Get the gradual rollout info for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage```</td>
-<td align="left">[Update the gradual rollout percentage for a package flight submission](update-the-package-rollout-percentage-for-a-flight-submission.md)</td>
+<td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Update the gradual rollout percentage for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout```</td>
-<td align="left">[Halt the gradual rollout for a package flight submission](halt-the-package-rollout-for-a-flight-submission.md)</td>
+<td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Halt the gradual rollout for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout```</td>
-<td align="left">[Finalize the gradual rollout for a package flight submission](finalize-the-package-rollout-for-a-flight-submission.md)</td>
+<td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Finalize the gradual rollout for a package flight submission</a></td>
 </tr>
 </tbody>
 </table>

@@ -73,7 +73,7 @@ Sans-serif fonts are a great choice for headings and UI elements.
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">Regular, Semilight, Light, Bold, Semibold</td>
-<td align="left">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI. [Get Selawik on GitHub.](https://github.com/Microsoft/Selawik)</td>
+<td align="left">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI. <a href="https://github.com/Microsoft/Selawik">Get Selawik on GitHub.</a></td>
 </tr>
 
 <tr class="even">
@@ -140,7 +140,7 @@ Serif fonts are good for presenting large amounts of text.
 <tr class="odd">
 <td align="left">Segoe MDL2 Assets</td>
 <td align="left">Regular</td>
-<td align="left">User-interface font for app icons. For more info, see the [Segoe MDL2 assets article](segoe-ui-symbol-font.md).</td>
+<td align="left">User-interface font for app icons. For more info, see the <a href="segoe-ui-symbol-font.md">Segoe MDL2 assets article</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Emoji</td>

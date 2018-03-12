@@ -169,8 +169,8 @@ For example, the following images show two stacked `ListView` controls. The imag
 
 
 <table>
-  <td>![arrow and tab](images/keyboard/arrow-and-tab.png)</td>
-  <td>![arrow only](images/keyboard/arrow-only.png)</td>
+  <td><img src="images/keyboard/arrow-and-tab.png" alt="arrow and tab" /></td>
+  <td><img src="images/keyboard/arrow-only.png" alt="arrow only" /></td>
 </table>
 
 ***Interaction with two stacked ListView controls can be made easier and more efficient by eliminating the tab stop and navigating with just arrow keys.***
@@ -493,8 +493,8 @@ As mentioned, you should try to ensure directional navigation corresponds to the
 Some controls, such as `ContextMenu`, `AppBarOverflowMenu`, and `AutoSuggest`, include a menu popup that is displayed in a location and direction relative to the primary control (based on available screen space). For example, when there is insufficient space for the menu to open downwards (the default direction), it opens upwards. There is no guarantee that the menu opens in the same direction every time.
 
 <table>
-  <td>![command bar opens down with down arrow key](images/keyboard/command-bar-open-down.png)</td>
-  <td>![command bar opens up with down arrow key](images/keyboard/command-bar-open-up.png)</td>
+  <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
+  <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
 For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item and the Up arrow key always sets focus to the last item on the menu. Similarly, when the last item is selected and the Down arrow key is pressed, focus moves to the first item on the menu and when the first

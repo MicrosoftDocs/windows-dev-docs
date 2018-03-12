@@ -29,27 +29,27 @@ This section provides information about planning for your UWP game.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Game technologies](game-development-platform-guide.md)</p></td>
+<td align="left"><p><a href="game-development-platform-guide.md">Game technologies</a></p></td>
 <td align="left"><p>A list of technologies to help you develop games.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Accessibility for games](accessibility-for-games.md)</p></td>
+<td align="left"><p><a href="accessibility-for-games.md">Accessibility for games</a></p></td>
 <td align="left"><p>Learn to make games more accessible.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Cloud for games](cloud-for-games.md)</p></td>
+<td align="left"><p><a href="cloud-for-games.md">Cloud for games</a></p></td>
 <td align="left"><p>Use cloud for games.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Monetization for games](monetization-for-games.md)</p></td>
+<td align="left"><p><a href="monetization-for-games.md">Monetization for games</a></p></td>
 <td align="left"><p>Ways to monetize your game.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Package your game](package-your-windows-store-directx-game.md)</p></td>
+<td align="left"><p><a href="package-your-windows-store-directx-game.md">Package your game</a></p></td>
 <td align="left"><p>Prepare your game package for the Microsoft Store.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Concept approval](concept-approval.md)</p></td>
+<td align="left"><p><a href="concept-approval.md">Concept approval</a></p></td>
 <td align="left"><p>Get your game concept approved.</p></td>
 </tr>
 </tbody>

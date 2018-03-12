@@ -32,10 +32,10 @@ Good icons harmonize with typography and with the rest of the design language. T
         <td>48px x 48px</td>
     </tr>
     <tr> 
-        <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
-        <td>![Icons at 24x24 effective pixels](images/icons-24x24.png)</td>
-        <td>![Icons at 32x32 effective pixels](images/icons-32x32.png)</td>
-        <td>![Icons at 48x48 effective pixels](images/icons-48x48.png)</td>
+        <td><img src="images/icons-16x16.png" alt="Icons at 16x16 effective pixels" /></td>
+        <td><img src="images/icons-24x24.png" alt="Icons at 24x24 effective pixels" /></td>
+        <td><img src="images/icons-32x32.png" alt="Icons at 32x32 effective pixels" /></td>
+        <td><img src="images/icons-48x48.png" alt="Icons at 48x48 effective pixels" /></td>
     </tr>
 </table>
 
@@ -54,17 +54,17 @@ Use the shape that corresponds to the icon's orientation and compose around thes
         <td>Triangle</td>
     </tr>
     <tr>
-        <td>![A circle](images/icons-common-shapes-examples-1.png)<td>
-        <td>![A square](images/icons-common-shapes-examples-2.png)</td>
-        <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
+        <td><img src="images/icons-common-shapes-examples-1.png" alt="A circle" /><td>
+        <td><img src="images/icons-common-shapes-examples-2.png" alt="A square" /></td>
+        <td><img src="images/icons-common-shapes-examples-3.png" alt="A triangle " /></td>
     </tr>
         <tr>
         <td>Horizontal rectangle<td>
         <td colspan="2">Vertical rectangle</td>        
         </tr>
     <tr>
-        <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
-        <td colspan="2">![A vertical rectangle](images/icons-common-shapes-examples-5.png)</td>
+        <td><img src="images/icons-common-shapes-examples-4.png" alt="A horizontal rectangle" /><td>
+        <td colspan="2"><img src="images/icons-common-shapes-examples-5.png" alt="A vertical rectangle" /></td>
          
     </tr>
 
@@ -80,17 +80,17 @@ These lines can be combined, joined, rotated, and reflected in creating icons.
 
 <table>
     <tr>
-        <td>**1:1**<br/>45°</td>
-        <td>**1:2**<br />26.57° (vertical)<br/>63.43° (horizontal)</td>
-        <td>**1:3**<br/>18.43° (vertical)<br/>71.57° (horizontal)</td>
-        <td>**1:4**<br/>14.04° (vertical)<br/>75.96° (horizontal)</td>
+        <td><b>1:1</b><br/>45°</td>
+        <td><b>1:2</b><br />26.57° (vertical)<br/>63.43° (horizontal)</td>
+        <td><b>1:3</b><br/>18.43° (vertical)<br/>71.57° (horizontal)</td>
+        <td><b>1:4</b><br/>14.04° (vertical)<br/>75.96° (horizontal)</td>
     </tr>
     <tr>
         
-        <td>![1:1](images/icons-grid-1-1.png)</td>
-        <td>![1:2](images/icons-grid-1-2.png)</td>
-        <td>![1:3](images/icons-grid-1-3.png)</td>
-        <td>![1:4](images/icons-grid-1-4.png)</td>
+        <td><img src="images/icons-grid-1-1.png" alt="1:1" /></td>
+        <td><img src="images/icons-grid-1-2.png" alt="1:2" /></td>
+        <td><img src="images/icons-grid-1-3.png" alt="1:3" /></td>
+        <td><img src="images/icons-grid-1-4.png" alt="1:4" /></td>
     </tr>  
 </table>
 
@@ -98,10 +98,10 @@ These lines can be combined, joined, rotated, and reflected in creating icons.
 
 <table>
     <tr>
-        <td>![A 1:1 angle example](images/icons-angles-examples-1.png)</td>
-        <td>![A 1:2 angle example](images/icons-angles-examples-2.png)</td>
-        <td>![A 1:3 angle example](images/icons-angles-examples-3.png)</td>
-        <td>![A 1:4 angle example](images/icons-angles-examples-4.png)</td>
+        <td><img src="images/icons-angles-examples-1.png" alt="A 1:1 angle example" /></td>
+        <td><img src="images/icons-angles-examples-2.png" alt="A 1:2 angle example" /></td>
+        <td><img src="images/icons-angles-examples-3.png" alt="A 1:3 angle example" /></td>
+        <td><img src="images/icons-angles-examples-4.png" alt="A 1:4 angle example" /></td>
     </tr>
 </table>
 
@@ -115,12 +115,12 @@ Curved lines are constructed from sections of a whole circle and should not be s
         <td>1/8 circle</td>
     </tr>
     <tr>
-        <td>![1/4 circle](images/icons-curves-14circle.png)</td>
-        <td>![1/8 circle](images/icons-curves-18circle.png)</td>
+        <td><img src="images/icons-curves-14circle.png" alt="1/4 circle" /></td>
+        <td><img src="images/icons-curves-18circle.png" alt="1/8 circle" /></td>
     </tr>
     <tr>
-        <td>![1/4 cirlce example](images/icons-curves-examples-1.png)</td>
-        <td>![1/8 circle example](images/icons-curves-examples-2.png)</td>
+        <td><img src="images/icons-curves-examples-1.png" alt="1/4 cirlce example" /></td>
+        <td><img src="images/icons-curves-examples-2.png" alt="1/8 circle example" /></td>
     </tr>    
 </table>
 
@@ -152,8 +152,8 @@ Status badges utilize a filled, colored object that is on top of the icon, where
 	<td>Common action badges</td>
 </tr>
 <tr>
-	<td>![Status badge ](images/icons-badge-common-states-1.png)</td>
-	<td>![Action badge ](images/icons-badge-common-states-2.png)</td>
+	<td><img src="images/icons-badge-common-states-1.png" alt="Status badge " /></td>
+	<td><img src="images/icons-badge-common-states-2.png" alt="Action badge " /></td>
 </tr>
 </table>
 <p></p>
@@ -167,8 +167,8 @@ Color badging should only be used to convey the state of an icon. The colors use
 <tr><td>Positive: done, 
 completed </td><td>Neutral: help, 
 notification </td><td>Cautionary: alert, warning </td></tr>
-<tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
-<td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
+<tr><td><img src="images/icons-color-inbadging-1.png" alt="Green status" /></td><td><img src="images/icons-color-inbadging-2.png" alt="Blue status" /></td>
+<td><img src="images/icons-color-inbadging-3.png" alt="Yellow status" /></td></tr>
 </table>
 <p></p>
 

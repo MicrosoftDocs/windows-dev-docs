@@ -38,28 +38,28 @@ If all tiles behind a memory access footprint from a shader are mapped to unique
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[SRV behavior with non-mapped tiles](srv-behavior-with-non-mapped-tiles.md)</p></td>
+<td align="left"><p><a href="srv-behavior-with-non-mapped-tiles.md">SRV behavior with non-mapped tiles</a></p></td>
 <td align="left"><p>Behavior of shader resource view (SRV) reads that involve non-mapped tiles depends on the level of hardware support.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[UAV behavior with non-mapped tiles](uav-behavior-with-non-mapped-tiles.md)</p></td>
+<td align="left"><p><a href="uav-behavior-with-non-mapped-tiles.md">UAV behavior with non-mapped tiles</a></p></td>
 <td align="left"><p>Behavior of unordered access view (UAV) reads and writes depends on the level of hardware support.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Rasterizer behavior with non-mapped tiles](rasterizer-behavior-with-non-mapped-tiles.md)</p></td>
+<td align="left"><p><a href="rasterizer-behavior-with-non-mapped-tiles.md">Rasterizer behavior with non-mapped tiles</a></p></td>
 <td align="left"><p>This section describes rasterizer behavior with non-mapped tiles.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Tile access limitations with duplicate mappings](tile-access-limitations-with-duplicate-mappings.md)</p></td>
+<td align="left"><p><a href="tile-access-limitations-with-duplicate-mappings.md">Tile access limitations with duplicate mappings</a></p></td>
 <td align="left"><p>There are limitations on tile access with duplicate mappings, such as when copying streaming resources with overlapping source and destination, or when rendering to tiles shared within the render area.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Streaming resources texture sampling features](streaming-resources-texture-sampling-features.md)</p></td>
+<td align="left"><p><a href="streaming-resources-texture-sampling-features.md">Streaming resources texture sampling features</a></p></td>
 <td align="left"><p>Streaming resources texture sampling features include getting shader status feedback about mapped areas, checking whether all data being accessed was mapped in the resource, clamping to help shaders avoid areas in mipmapped streaming resources that are known to be non-mapped, and discovering what the minimum LOD that is fully mapped for an entire texture filter footprint will be.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[HLSL streaming resources exposure](hlsl-streaming-resources-exposure.md)</p></td>
-<td align="left"><p>A specific Microsoft High Level Shader Language (HLSL) syntax is required to support streaming resources in [Shader Model 5](https://msdn.microsoft.com/library/windows/desktop/ff471356).</p></td>
+<td align="left"><p><a href="hlsl-streaming-resources-exposure.md">HLSL streaming resources exposure</a></p></td>
+<td align="left"><p>A specific Microsoft High Level Shader Language (HLSL) syntax is required to support streaming resources in <a href="https://msdn.microsoft.com/library/windows/desktop/ff471356">Shader Model 5</a>.</p></td>
 </tr>
 </tbody>
 </table>

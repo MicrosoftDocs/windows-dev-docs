@@ -56,27 +56,27 @@ All lighting computations are made in model space by transforming the light sour
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Ambient lighting](ambient-lighting.md)</p></td>
+<td align="left"><p><a href="ambient-lighting.md">Ambient lighting</a></p></td>
 <td align="left"><p>Ambient lighting provides constant lighting for a scene. It lights all object vertices the same because it is not dependent on any other lighting factors such as vertex normals, light direction, light position, range, or attenuation. Ambient lighting is constant in all directions and it colors all pixels of an object the same. It is fast to calculate but leaves objects looking flat and unrealistic.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Diffuse lighting](diffuse-lighting.md)</p></td>
+<td align="left"><p><a href="diffuse-lighting.md">Diffuse lighting</a></p></td>
 <td align="left"><p><em>Diffuse lighting</em> depends on both the light direction and the object surface normal. Diffuse lighting varies across the surface of an object as a result of the changing light direction and the changing surface numeral vector. It takes longer to calculate diffuse lighting because it changes for each object vertex, however the benefit of using it is that it shades objects and gives them three-dimensional (3D) depth.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Specular lighting](specular-lighting.md)</p></td>
+<td align="left"><p><a href="specular-lighting.md">Specular lighting</a></p></td>
 <td align="left"><p><em>Specular lighting</em> identifies the bright specular highlights that occur when light hits an object surface and reflects back toward the camera. Specular lighting is more intense than diffuse light and falls off more rapidly across the object surface. It takes longer to calculate specular lighting than diffuse lighting, however the benefit of using it is that it adds significant detail to a surface.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Emissive lighting](emissive-lighting.md)</p></td>
+<td align="left"><p><a href="emissive-lighting.md">Emissive lighting</a></p></td>
 <td align="left"><p><em>Emissive lighting</em> is light that is emitted by an object; for example, a glow. Emission makes a rendered object appear to be self-luminous. Emission affects an object's color and can, for example, make a dark material brighter and take on part of the emitted color.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Camera space transformations](camera-space-transformations.md)</p></td>
+<td align="left"><p><a href="camera-space-transformations.md">Camera space transformations</a></p></td>
 <td align="left"><p>Vertices in the camera space are computed by transforming the object vertices with the world view matrix.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Attenuation and spotlight factor](attenuation-and-spotlight-factor.md)</p></td>
+<td align="left"><p><a href="attenuation-and-spotlight-factor.md">Attenuation and spotlight factor</a></p></td>
 <td align="left"><p>The diffuse and specular lighting components of the global illumination equation contain terms that describe light attenuation and the spotlight cone.</p></td>
 </tr>
 </tbody>

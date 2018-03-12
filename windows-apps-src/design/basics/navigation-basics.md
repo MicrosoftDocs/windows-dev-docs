@@ -126,12 +126,12 @@ We recommend selecting a navigation control based on the number of navigation el
 	<th>Description</th>
 </tr>
 <tr>
-	<td>[Frame](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame)<br/><br/>
+	<td><a href="https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Frame">Frame</a><br/><br/>
 	<img src="images/frame.png" alt="Frame" /></td>
 	<td>Displays pages. <p>With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.</p></td>
 </tr>
 <tr>
-	<td>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)<br/><br/>
+	<td><a href="../controls-and-patterns/tabs-pivot.md">Tabs and pivot</a><br/><br/>
 	<img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></td>
 	<td>Displays a horizontal list of links to pages at the same level.
 <p>Use when:</p>
@@ -141,7 +141,7 @@ We recommend selecting a navigation control based on the number of navigation el
 </ul></td>
 </tr>
 <tr>
-	<td>[Navigation view](../controls-and-patterns/navigationview.md)<br/><br/>
+	<td><a href="../controls-and-patterns/navigationview.md">Navigation view</a><br/><br/>
 	<img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></td>
 	<td>Displays a vertical list of links to top-level pages.
 <p>Use when:</p>
@@ -153,7 +153,7 @@ We recommend selecting a navigation control based on the number of navigation el
 </ul></td>
 </tr>
 <tr>
-<td>[Master/details](../controls-and-patterns/master-details.md)<br/><br/>
+<td><a href="../controls-and-patterns/master-details.md">Master/details</a><br/><br/>
 <img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></td>
 <td>Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section.
 <p>Use when:</p>
@@ -164,7 +164,7 @@ We recommend selecting a navigation control based on the number of navigation el
 <p>Master/details is well suited for email inboxes, contact lists, and data entry.</p>
 </td>
 <tr>
-<td>[Hub](../controls-and-patterns/hub.md)<br/><br/>
+<td><a href="../controls-and-patterns/hub.md">Hub</a><br/><br/>
 <img src="images/hub.png" alt="Hub" /></td>
 <td> Displays sections of ordered items in grids. 
 <p>Use when:</p>
@@ -175,7 +175,7 @@ We recommend selecting a navigation control based on the number of navigation el
 </td>
 </tr>
 <tr>
-<td>[Hyperlinks](../controls-and-patterns/hyperlinks.md) and [buttons](../controls-and-patterns/buttons.md)</td>
+<td><a href="../controls-and-patterns/hyperlinks.md">Hyperlinks</a> and <a href="../controls-and-patterns/buttons.md">buttons</a></td>
 <td> Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.</td>
 </tr>
 </table>

@@ -42,32 +42,32 @@ Use the following methods to get, create, update, commit, or delete an add-on su
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}```</td>
-<td align="left">[Get an existing add-on submission](get-an-add-on-submission.md)</td>
+<td align="left"><a href="get-an-add-on-submission.md">Get an existing add-on submission</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status```</td>
-<td align="left">[Get the status of an existing add-on submission](get-status-for-an-add-on-submission.md)</td>
+<td align="left"><a href="get-status-for-an-add-on-submission.md">Get the status of an existing add-on submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions```</td>
-<td align="left">[Create a new add-on submission](create-an-add-on-submission.md)</td>
+<td align="left"><a href="create-an-add-on-submission.md">Create a new add-on submission</a></td>
 </tr>
 <tr>
 <td align="left">PUT</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}```</td>
-<td align="left">[Update an existing add-on submission](update-an-add-on-submission.md)</td>
+<td align="left"><a href="update-an-add-on-submission.md">Update an existing add-on submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit```</td>
-<td align="left">[Commit a new or updated add-on submission](commit-an-add-on-submission.md)</td>
+<td align="left"><a href="commit-an-add-on-submission.md">Commit a new or updated add-on submission</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}```</td>
-<td align="left">[Delete an add-on submission](delete-an-add-on-submission.md)</td>
+<td align="left"><a href="delete-an-add-on-submission.md">Delete an add-on submission</a></td>
 </tr>
 </tbody>
 </table>

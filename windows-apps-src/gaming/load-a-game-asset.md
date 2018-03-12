@@ -54,15 +54,15 @@ The complete code for these samples can be found in the following links.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p><a href="complete-code-for-basicloader.md">Complete code for BasicLoader</a></p></td>
 <td align="left"><p>Complete code for a class and methods that convert and load graphics mesh objects into memory.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
-<td align="left"><p>Complete code for a class and methods for reading and writing binary data files in general. Used by the [BasicLoader](complete-code-for-basicloader.md) class.</p></td>
+<td align="left"><p><a href="complete-code-for-basicreaderwriter.md">Complete code for BasicReaderWriter</a></p></td>
+<td align="left"><p>Complete code for a class and methods for reading and writing binary data files in general. Used by the <a href="complete-code-for-basicloader.md">BasicLoader</a> class.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p><a href="complete-code-for-ddstextureloader.md">Complete code for DDSTextureLoader</a></p></td>
 <td align="left"><p>Complete code for a class and method that loads a DDS texture from memory.</p></td>
 </tr>
 </tbody>

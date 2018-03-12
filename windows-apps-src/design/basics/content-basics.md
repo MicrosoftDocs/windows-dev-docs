@@ -84,39 +84,39 @@ To create these page patterns, you'll need to use a combination of individual co
 <tr class="odd">
 <td align="left">Audio and video<br/><br/>
 	<img src="images/content-basics/media-transport.png" alt="media transport control" /></td>
-<td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
+<td align="left"><a href="../controls-and-patterns/media-playback.md">Media playback and transport controls</a></td>
 <td align="left">Plays audio and video.</td>
 </tr>
 <tr class="even">
 <td align="left">Image viewers<br/><br/>
 	<img src="images/content-basics/flipview.jpg" alt="flip view" /></td>
-<td align="left">[Flip view](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left"><a href="../controls-and-patterns/flipview.md">Flip view</a>, <a href="../controls-and-patterns/images-imagebrushes.md">image</a></td>
 <td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
 </tr>
 <tr class="odd">
 <td align="left">Collections <br/><br/>
 	<img src="images/content-basics/listview.png" alt="list view" /></td>
-<td align="left">[List view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left"><a href="../controls-and-patterns/lists.md">List view and grid view</a></td>
 <td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
 </tr>
 <tr class="even">
 <td align="left">Text and text input <br/><br/>
 	<img src="images/content-basics/textbox.png" alt="text box" /></td>
-<td align="left"><p>[Text block](../controls-and-patterns/text-block.md), [text box](../controls-and-patterns/text-box.md), [rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left"><p><a href="../controls-and-patterns/text-block.md">Text block</a>, <a href="../controls-and-patterns/text-box.md">text box</a>, <a href="../controls-and-patterns/rich-edit-box.md">rich edit box</a></p>
 </td>
-<td align="left">Displays text. Some elements enable the user to edit text. For more info, see [Text controls](../controls-and-patterns/text-controls.md).
+<td align="left">Displays text. Some elements enable the user to edit text. For more info, see <a href="../controls-and-patterns/text-controls.md">Text controls</a>.
 <p>For guidelines on how to display text, see [Typography](../style/typography.md).</p>
 </td>
 </tr>
 <tr class="odd">
 <td align="left">Maps<br/><br/>
 	<img src="images/content-basics/mapcontrol.png" alt="map control" /></td>
-<td align="left">[MapControl](../../maps-and-location/display-maps.md)</td>
+<td align="left"><a href="../../maps-and-location/display-maps.md">MapControl</a></td>
 <td align="left">Displays a symbolic or photorealistic map of the Earth.</td>
 </tr>
 <tr class="even">
 <td align="left">WebView</td>
-<td align="left">[WebView](../controls-and-patterns/web-view.md)</td>
+<td align="left"><a href="../controls-and-patterns/web-view.md">WebView</a></td>
 <td align="left">Renders HTML content.</td>
 </tr>
 </tbody>

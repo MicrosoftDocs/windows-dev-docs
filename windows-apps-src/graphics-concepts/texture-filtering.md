@@ -47,19 +47,19 @@ Direct3D supports the following texture filtering approaches.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Nearest-point sampling](nearest-point-sampling.md)</p></td>
+<td align="left"><p><a href="nearest-point-sampling.md">Nearest-point sampling</a></p></td>
 <td align="left"><p>Applications are not required to use texture filtering. Direct3D can be set so that it computes the texel address, which often does not evaluate to integers, and copies the color of the texel with the closest integer address. This process is called <em>nearest-point sampling</em>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Bilinear texture filtering](bilinear-texture-filtering.md)</p></td>
+<td align="left"><p><a href="bilinear-texture-filtering.md">Bilinear texture filtering</a></p></td>
 <td align="left"><p><em>Bilinear filtering</em> calculates the weighted average of the 4 texels closest to the sampling point. This filtering approach is more accurate and common than nearest-point filtering. This approach is efficient because it is implemented in modern graphics hardware.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Anisotropic texture filtering](anisotropic-texture-filtering.md)</p></td>
+<td align="left"><p><a href="anisotropic-texture-filtering.md">Anisotropic texture filtering</a></p></td>
 <td align="left"><p><em>Anisotropy</em> is the distortion visible in the texels of a 3D object whose surface is oriented at an angle with respect to the plane of the screen. When a pixel from an anisotropic primitive is mapped to texels, its shape is distorted.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Texture filtering with mipmaps](texture-filtering-with-mipmaps.md)</p></td>
+<td align="left"><p><a href="texture-filtering-with-mipmaps.md">Texture filtering with mipmaps</a></p></td>
 <td align="left"><p>A <em>mipmap</em> is a sequence of textures, each of which is a progressively lower resolution representation of the same image. The height and width of each image, or level, in the mipmap is a power-of-two smaller than the previous level.</p></td>
 </tr>
 </tbody>

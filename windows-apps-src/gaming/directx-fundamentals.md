@@ -37,19 +37,19 @@ Load resources in your DirectX game topic guides you through the basic steps for
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[2D graphics for DirectX games](working-with-2d-graphics-in-your-directx-game.md)</p></td>
+<td align="left"><p><a href="working-with-2d-graphics-in-your-directx-game.md">2D graphics for DirectX games</a></p></td>
 <td align="left"><p>Create 2D graphics using DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Direct3D graphics learning guide](https://msdn.microsoft.com/windows/uwp/graphics-concepts/index)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D graphics learning guide</a></p></td>
 <td align="left"><p>Understand Direct3D graphics concepts.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Basic 3D graphics for DirectX games](an-introduction-to-3d-graphics-with-directx.md)</p></td>
+<td align="left"><p><a href="an-introduction-to-3d-graphics-with-directx.md">Basic 3D graphics for DirectX games</a></p></td>
 <td align="left"><p>Create basic 3D DirectX graphics.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Load resources in your DirectX game](load-a-game-asset.md)</p></td>
+<td align="left"><p><a href="load-a-game-asset.md">Load resources in your DirectX game</a></p></td>
 <td align="left"><p>Load meshes in your DirectX game.</p></td>
 </tr>
 </tbody>

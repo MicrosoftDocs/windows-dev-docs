@@ -137,7 +137,7 @@ Table 1. Namespace mapping from XDK to UWP.
   <tr>
     <td>Xbox Services API (XSAPI)</td>
     <td>Microsoft::Xbox::Services</td>
-    <td>Microsoft::Xbox::Services (*no change*)</td>
+    <td>Microsoft::Xbox::Services (<i>no change</i>)</td>
     <td>Xbox Live SDK (use NuGet binary or source)</td>
   </tr>
   <tr>

@@ -46,32 +46,32 @@ Use the following methods to get, create, update, commit, or delete an app submi
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}```</td>
-<td align="left">[Get an existing app submission](get-an-app-submission.md)</td>
+<td align="left"><a href="get-an-app-submission.md">Get an existing app submission</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status```</td>
-<td align="left">[Get the status of an existing app submission](get-status-for-an-app-submission.md)</td>
+<td align="left"><a href="get-status-for-an-app-submission.md">Get the status of an existing app submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions```</td>
-<td align="left">[Create a new app submission](create-an-app-submission.md)</td>
+<td align="left"><a href="create-an-app-submission.md">Create a new app submission</a></td>
 </tr>
 <tr>
 <td align="left">PUT</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}```</td>
-<td align="left">[Update an existing app submission](update-an-app-submission.md)</td>
+<td align="left"><a href="update-an-app-submission.md">Update an existing app submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit```</td>
-<td align="left">[Commit a new or updated app submission](commit-an-app-submission.md)</td>
+<td align="left"><a href="commit-an-app-submission.md">Commit a new or updated app submission</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}```</td>
-<td align="left">[Delete an app submission](delete-an-app-submission.md)</td>
+<td align="left"><a href="delete-an-app-submission.md">Delete an app submission</a></td>
 </tr>
 </tbody>
 </table>
@@ -170,22 +170,22 @@ After a gradual package rollout is enabled for an app submission, you can use th
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/packagerollout```</td>
-<td align="left">[Get the gradual rollout info for an app submission](get-package-rollout-info-for-an-app-submission.md)</td>
+<td align="left"><a href="get-package-rollout-info-for-an-app-submission.md">Get the gradual rollout info for an app submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/updatepackagerolloutpercentage```</td>
-<td align="left">[Update the gradual rollout percentage for an app submission](update-the-package-rollout-percentage-for-an-app-submission.md)</td>
+<td align="left"><a href="update-the-package-rollout-percentage-for-an-app-submission.md">Update the gradual rollout percentage for an app submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/haltpackagerollout```</td>
-<td align="left">[Halt the gradual rollout for an app submission](halt-the-package-rollout-for-an-app-submission.md)</td>
+<td align="left"><a href="halt-the-package-rollout-for-an-app-submission.md">Halt the gradual rollout for an app submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout```</td>
-<td align="left">[Finalize the gradual rollout for an app submission](finalize-the-package-rollout-for-an-app-submission.md)</td>
+<td align="left"><a href="finalize-the-package-rollout-for-an-app-submission.md">Finalize the gradual rollout for an app submission</a></td>
 </tr>
 </tbody>
 </table>

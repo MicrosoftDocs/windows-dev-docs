@@ -31,19 +31,19 @@ This walkthrough demonstrates how to render shadow volumes using depth maps, usi
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Create depth buffer device resources](create-depth-buffer-resource--view--and-sampler-state.md)</p></td>
+<td align="left"><p><a href="create-depth-buffer-resource--view--and-sampler-state.md">Create depth buffer device resources</a></p></td>
 <td align="left"><p>Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Render the shadow map to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md)</p></td>
+<td align="left"><p><a href="render-the-shadow-map-to-the-depth-buffer.md">Render the shadow map to the depth buffer</a></p></td>
 <td align="left"><p>Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Render the scene with depth testing](render-the-scene-with-depth-testing.md)</p></td>
+<td align="left"><p><a href="render-the-scene-with-depth-testing.md">Render the scene with depth testing</a></p></td>
 <td align="left"><p>Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Support shadow maps on a range of hardware](target-a-range-of-hardware.md)</p></td>
+<td align="left"><p><a href="target-a-range-of-hardware.md">Support shadow maps on a range of hardware</a></p></td>
 <td align="left"><p>Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.</p></td>
 </tr>
 </tbody>
