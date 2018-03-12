@@ -56,7 +56,7 @@
 ## [Marketplace URIs](uri\marketplace\atoc-reference-marketplace.md)
 ### [/users/me/inventory](uri\marketplace\uri-inventory.md)
 #### [GET (/users/me/inventory)](uri\marketplace\uri-inventoryget.md)
-### [/inventory/consumables/{itemID}](uri\marketplace\uri-inventoryconsumablesitemurl.md)
+### [/users/me/consumables/{itemID}](uri\marketplace\uri-inventoryconsumablesitemurl.md)
 #### [POST ({itemID})](uri\marketplace\uri-inventoryconsumablesitemurlpost.md)
 ### [/inventory/{itemID}](uri\marketplace\uri-inventoryitemurl.md)
 #### [GET (/inventory/{itemID})](uri\marketplace\uri-inventoryitemurlget.md)
