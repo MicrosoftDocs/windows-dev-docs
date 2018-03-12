@@ -23,6 +23,6 @@ The following sample UWP apps demonstrate how to use Windows Machine Learning an
 
 [This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/SqueezeNetObjectDetection) detects the predominant object in an image.
 
-## Candy Style Transfer
+## Windows Machine Learning Explorer
 
-[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/CandyStyleTransfer) transfers an artistic style called Candy onto an image or video stream. 
+[This sample](https://github.com/Microsoft/Windows-Machine-Learning/tree/master/Samples/UWP/WinMLExplorer) is a data driven and generic application that bootstraps ML models, such as circuit board defect detection model, to detect defects with pictures and a real-time camera feed of a printed circuit board. You can learn more with the blog post: [How three lines of code and Windows Machine Learning empower .NET developers to run AI locally on Windows 10 devices](https://aka.ms/winmlfordevsblog).
