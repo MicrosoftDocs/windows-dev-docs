@@ -109,7 +109,7 @@ After you have your Azure virtual machine running or you have installed Windows 
 
 You will need to install the following certificates to enable the Xbox One console to make web service calls to your server with Xbox Secure Token Service (XSTS) tokens:
 
--   [XSTS Signing certificate](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=xsts.auth.xboxlive.com.cer.zip&folder=platform\RelyingParty)
+-   [XSTS Signing certificate](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=xsts.auth.xboxlive.com.cer.zip&folder=platform/RelyingParty)
     -   Download the certificate.
     -   Install the certificate to the "Local Computer/Personal" and "Local Computer/Trusted People" certificate stores.
 

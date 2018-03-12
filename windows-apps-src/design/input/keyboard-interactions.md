@@ -57,7 +57,7 @@ Here are the devices and tools discussed in this topic:
 | Device/tool                       | Description     |
 |-----------------------------------|-----------------|
 |Keyboard (hardware and software)   |In addition to the standard hardware keyboard, UWP applications support two software keyboards: the [touch (or software keyboard)](#touch-keyboard) and the [On-Screen Keyboard](#osk).|
-|Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](..\devices\designing-for-tv.md).
+|Gamepad and remote control         |The Xbox gamepad and remote control are fundamental input devices in the [10-foot experience](../devices/designing-for-tv.md).
 For specific details on UWP support for gamepad and remote control, see [Gamepad and remote control interactions](gamepad-and-remote-interactions.md).|
 |Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-narrator-get-started).|
 
@@ -398,7 +398,7 @@ The search button for the `AutoSuggestBox` is not accessible to standard keyboar
 
 Xbox gamepads and remote controls support many UWP keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, gamepad and remote control lack many keyboard optimizations (remote control is even more limited than gamepad).
 
-See [designing for Xbox and TV](..\devices\designing-for-tv.md#gamepad-and-remote-control) for more detail on UWP support for gamepad and remote control input.
+See [designing for Xbox and TV](../devices/designing-for-tv.md#gamepad-and-remote-control) for more detail on UWP support for gamepad and remote control input.
 
 The following shows some key mappings between keyboard, gamepad, and remote control.
 
@@ -414,7 +414,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 -   Text entry requires the user to press A to activate a text control.
 -   Focus navigation is not limited to control groups, users can navigate freely to any focusable UI element in the app.
 
-    **NOTE** Focus can move to any focusable UI element in the key press direction unless it is in an overlay UI or [focus engagement](..\devices\designing-for-tv.md#focus-engagement) is specified, which prevents focus from entering/exiting a region until engaged/disengaged with the A button. For more info, see the [directional navigation](#directional-navigation) section.
+    **NOTE** Focus can move to any focusable UI element in the key press direction unless it is in an overlay UI or [focus engagement](../devices/designing-for-tv.md#focus-engagement) is specified, which prevents focus from entering/exiting a region until engaged/disengaged with the A button. For more info, see the [directional navigation](#directional-navigation) section.
 -   D-pad and left stick buttons are used to move focus between controls and for inner navigation.
 
     **NOTE** Gamepad and remote control only navigate to items that are in the same visual order as the directional key pressed. Navigation is disabled in that direction when there is no subsequent element that can receive focus. Depending on the situation, keyboard users do not always have that constraint. See the [Built in keyboard optimization](#built-in-keyboard-optimization) section for more info.
@@ -423,7 +423,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 
 Directional navigation is managed by a UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
 
-Unlike the keyboard, when an app opts out of [Mouse Mode](..\devices\designing-for-tv.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control . Visit [XY focus navigation and interaction article](..\devices\designing-for-tv.md#xy-focus-navigation-and-interaction) for more detail on directional navigation optimizations for gamepad and remote control.
+Unlike the keyboard, when an app opts out of [Mouse Mode](../devices/designing-for-tv.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control . Visit [XY focus navigation and interaction article](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction) for more detail on directional navigation optimizations for gamepad and remote control.
 
 **NOTE** Navigation using the keyboard Tab key is not considered directional navigation. For more info, see the [Tab stops](#tab-stops) section.
 

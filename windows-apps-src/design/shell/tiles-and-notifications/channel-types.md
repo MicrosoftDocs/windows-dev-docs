@@ -164,8 +164,8 @@ In general, we recommend using the primary channel in your app, with a few excep
 
 ## Related articles
 
-* [Send a local tile notification](../tiles-and-notifications\sending-a-local-tile-notification.md)
-* [Adaptive and interactive toast notifications](../tiles-and-notifications\adaptive-interactive-toasts.md)
+* [Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Adaptive and interactive toast notifications](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
 * [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
 * [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
