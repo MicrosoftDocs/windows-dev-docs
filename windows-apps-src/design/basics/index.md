@@ -26,7 +26,7 @@ ms.localizationpriority: medium
                         </div>
                     </div> 
                     <div class="cardText">
-                        <h3>[Introduction to UWP app design](design-and-ui-intro.md)</h3>
+                        <h3><a href="design-and-ui-intro.md">Introduction to UWP app design</a></h3>
                         <p>An introduction to the UI features included in every UWP app and an overview of our documentation.</p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>[Fluent Design System overview](../fluent-design-system/index.md)</h3>
+                        <h3><a href="../fluent-design-system/index.md">Fluent Design System overview</a></h3>
                         <p>The Fluent Design System is a set of innovative UWP features combined with best practices for creating apps that perform beautifully on all types of Windows-powered devices.</p>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3>[Navigation basics](navigation-basics.md)</h3>
+                        <h3><a href="navigation-basics.md">Navigation basics</a></h3>
                         <p>Navigation in UWP apps is based on a flexible model of navigation structures, navigation elements, and system-level features. This article introduces you to these components and shows you how to use them together to create a good navigation experience.</p>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3>[Command basics](commanding-basics.md)</h3>
+                        <h3><a href="commanding-basics.md">Command basics</a></h3>
                         <p>Command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes the command elements, such as buttons and check boxes, the interactions they support, and the command surfaces (such as command bars and context menus) for hosting them.</p>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3>[Content basics](content-basics.md)</h3>
+                        <h3><a href="content-basics.md">Content basics</a></h3>
                         <p>The main purpose of any app is to provide access to content: in a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on. This article provides content design recommendations for the three content scenarios: consumption, creation, and interaction.</p>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3>[1. Create a basic UI](xaml-basics-ui.md)</h3>
+                        <h3><a href="xaml-basics-ui.md">1. Create a basic UI</a></h3>
                         <p>Use XAML to create a basic user interface.</p> 
                     </div>
                 </div>
@@ -152,7 +152,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3>[2. Create an adaptive layout](xaml-basics-adaptive-layout.md)</h3>
+                        <h3><a href="xaml-basics-adaptive-layout.md">2. Create an adaptive layout</a></h3>
                         <p>Give the photo-editing application an adaptive layout.</p> 
                     </div>
                 </div>
@@ -171,7 +171,7 @@ ms.localizationpriority: medium
                         </div>
                     </div>  -->
                     <div class="cardText">
-                        <h3>[3. Create custom styles](xaml-basics-style.md)</h3>
+                        <h3><a href="xaml-basics-style.md">3. Create custom styles</a></h3>
                         <p>Give our UWP controls your own look and feel by creating custom styles.</p>  
                     </div>
                 </div>
