@@ -27,7 +27,7 @@ namespace BackgroundAudio_RS1
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
-        //<SnippetRegisterEvents>
+        // <SnippetRegisterEvents>
         public App()
         {
             this.InitializeComponent();
@@ -36,27 +36,27 @@ namespace BackgroundAudio_RS1
             this.EnteredBackground += App_EnteredBackground;
             this.LeavingBackground += App_LeavingBackground;
         }
-        //</SnippetRegisterEvents>
+        // </SnippetRegisterEvents>
 
-        //<SnippetDeclareBackgroundMode>
+        // <SnippetDeclareBackgroundMode>
         bool _isInBackgroundMode = false;
-        //</SnippetDeclareBackgroundMode>
+        // </SnippetDeclareBackgroundMode>
 
-        //<SnippetEnteredBackground>
+        // <SnippetEnteredBackground>
         private void App_EnteredBackground(object sender, EnteredBackgroundEventArgs e)
         {
             _isInBackgroundMode = true;
         }
-        //</SnippetEnteredBackground>
+        // </SnippetEnteredBackground>
 
-        //<SnippetLeavingBackground>
+        // <SnippetLeavingBackground>
         private void App_LeavingBackground(object sender, LeavingBackgroundEventArgs e)
         {
             _isInBackgroundMode = false;
         }
-        //</SnippetLeavingBackground>
+        // </SnippetLeavingBackground>
 
-        //<SnippetMemoryUsageLimitChanging>
+        // <SnippetMemoryUsageLimitChanging>
         private void MemoryManager_AppMemoryUsageLimitChanging(object sender, AppMemoryUsageLimitChangingEventArgs e)
         {
             if (MemoryManager.AppMemoryUsage >= e.NewLimit)
@@ -64,9 +64,9 @@ namespace BackgroundAudio_RS1
                 ReduceMemoryUsage(e.NewLimit);
             }
         }
-        //</SnippetMemoryUsageLimitChanging>
+        // </SnippetMemoryUsageLimitChanging>
 
-        //<SnippetMemoryUsageIncreased>
+        // <SnippetMemoryUsageIncreased>
         private void MemoryManager_AppMemoryUsageIncreased(object sender, object e)
         {
             var level = MemoryManager.AppMemoryUsageLevel;
@@ -76,7 +76,7 @@ namespace BackgroundAudio_RS1
                 ReduceMemoryUsage(MemoryManager.AppMemoryUsageLimit);
             }
         }
-        //</SnippetMemoryUsageIncreased>
+        // </SnippetMemoryUsageIncreased>
 
         
 
@@ -94,7 +94,7 @@ namespace BackgroundAudio_RS1
 
         // Clear the view content and trigger the GC to recover resources.
 
-        //<SnippetUnloadViewContent>
+        // <SnippetUnloadViewContent>
         public void ReduceMemoryUsage(ulong limit)
         {
             if (_isInBackgroundMode && Window.Current.Content != null)
@@ -104,9 +104,9 @@ namespace BackgroundAudio_RS1
                 GC.Collect();
             }
         }
-        //</SnippetUnloadViewContent>
+        // </SnippetUnloadViewContent>
 
-        //<SnippetCreateRootFrame>
+        // <SnippetCreateRootFrame>
         void CreateRootFrame(ApplicationExecutionState previousExecutionState, string arguments)
         {
             Frame rootFrame = Window.Current.Content as Frame;
@@ -142,7 +142,7 @@ namespace BackgroundAudio_RS1
                 rootFrame.Navigate(typeof(MainPage), arguments);
             }
         }
-        //</SnippetCreateRootFrame>
+        // </SnippetCreateRootFrame>
 
 
         /// <summary>

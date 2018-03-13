@@ -41,13 +41,13 @@ namespace BackgroundAudio_RS1
         {
             throw new NotImplementedException();
         }
-        //<SnippetUnloaded>
+        // <SnippetUnloaded>
         private void MainPage_Unloaded(object sender, RoutedEventArgs e)
         {
             Window.Current.Activated -= Current_Activated;
             GC.Collect();
         }
-        //</SnippetUnloaded>
+        // </SnippetUnloaded>
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -72,7 +72,7 @@ namespace BackgroundAudio_RS1
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(file));
             _mediaPlayer.Play();
-            //</SnippetPlayMediaPlaybackItem>
+            // </SnippetPlayMediaPlaybackItem>
 
         }
     }

@@ -24,9 +24,9 @@ using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 using namespace concurrency;
 
-//<Snippet3>
+// <Snippet3>
 using namespace Microsoft::Advertising::WinRT::UI;
-//</Snippet3>
+// </Snippet3>
 
 DirectXPage::DirectXPage():
     m_windowVisible(true),
@@ -87,7 +87,7 @@ DirectXPage::DirectXPage():
     m_main = std::unique_ptr<InterstitialAdSamplesCppMain>(new InterstitialAdSamplesCppMain(m_deviceResources));
     m_main->StartRenderLoop();
 
-    //<Snippet4>
+    // <Snippet4>
     m_interstitialAd = ref new InterstitialAd();         
     m_interstitialAd->AdReady += ref new Windows::Foundation::EventHandler<Platform::Object ^>
         (this, &InterstitialAdSamplesCpp::DirectXPage::OnAdReady);
@@ -98,7 +98,7 @@ DirectXPage::DirectXPage():
     m_interstitialAd->ErrorOccurred += ref new
         Windows::Foundation::EventHandler<Microsoft::Advertising::WinRT::UI::AdErrorEventArgs ^>
         (this, &InterstitialAdSamplesCpp::DirectXPage::OnAdError);
-    //</Snippet4>
+    // </Snippet4>
 }
 
 DirectXPage::~DirectXPage()
@@ -151,23 +151,23 @@ void DirectXPage::OnVisibilityChanged(CoreWindow^ sender, VisibilityChangedEvent
 // with AdType::Display.
 void DirectXPage::RequestAdButton_Click(Object^ sender, RoutedEventArgs^ e)
 {
-    //<Snippet5>
+    // <Snippet5>
     m_interstitialAd->RequestAd(AdType::Video, myAppId, myAdUnitId);
-    //</Snippet5>
+    // </Snippet5>
 }
 
 // This example attempts to show the interstitial ad when the "Show ad" button is clicked.
 void DirectXPage::ShowAdButton_Click(Object^ sender, RoutedEventArgs^ e)
 {
-    //<Snippet6>
+    // <Snippet6>
     if ((InterstitialAdState::Ready == m_interstitialAd->State))
     {
         m_interstitialAd->Show();
     }
-    //</Snippet6>
+    // </Snippet6>
 }
 
-//<Snippet7>
+// <Snippet7>
 void DirectXPage::OnAdReady(Object^ sender, Object^ args)
 {
     // Your code goes here.
@@ -188,7 +188,7 @@ void DirectXPage::OnAdError(Object^ sender, Microsoft::Advertising::WinRT::UI::A
 {
     // Your code goes here.
 }
-//</Snippet7>
+// </Snippet7>
 
 // DisplayInformation event handlers.
 

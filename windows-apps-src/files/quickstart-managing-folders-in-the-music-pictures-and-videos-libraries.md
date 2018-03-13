@@ -40,7 +40,7 @@ A library is a virtual collection of folders, which includes a known folder by d
 
 ## Get a reference to a library
 
-> [!NOTE] 
+> [!NOTE]
 > Remember to declare the appropriate capability. See [App capability declarations](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) for more information.
  
 

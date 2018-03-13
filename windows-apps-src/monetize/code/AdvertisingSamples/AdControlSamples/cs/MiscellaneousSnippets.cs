@@ -1,4 +1,4 @@
-//<Snippet1>
+// <Snippet1>
 using Microsoft.Advertising.WinRT.UI;
 
 namespace AdControlExample
@@ -21,9 +21,9 @@ namespace AdControlExample
         }
     }
 }
-//</Snippet1>
+// </Snippet1>
 
-//<Snippet2>
+// <Snippet2>
 using Microsoft.Advertising.WinRT.UI;
 
 namespace AdControlExample
@@ -49,9 +49,9 @@ namespace AdControlExample
         }
     }
 }
-//</Snippet2>
+// </Snippet2>
 
-//<Snippet3>
+// <Snippet3>
 AdControl myAdControl;
 
 public MainPage()
@@ -71,4 +71,4 @@ public MainPage()
     timer.Tick += (s, e) => myAdControl.Refresh();
     timer.Start();
 }
-//</Snippet3>
+// </Snippet3>

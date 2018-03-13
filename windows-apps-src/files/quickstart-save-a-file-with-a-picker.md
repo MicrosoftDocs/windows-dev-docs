@@ -24,7 +24,7 @@ ms.localizationpriority: medium
 
 Use [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to let users specify the name and location where they want your app to save a file.
 
-> [!NOTE] 
+> [!NOTE]
 > Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
@@ -60,7 +60,7 @@ Set properties on the file picker object that are relevant to your users and you
 
 This example sets three properties: [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880), [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) and [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878).
 
-> [!NOTE] 
+> [!NOTE]
 > [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) objects display the file picker using the [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
 
      
@@ -68,7 +68,7 @@ This example sets three properties: [**SuggestedStartLocation**](https://msdn.mi
 
 - Because we want to make sure our app can open the file after it is saved, we use [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) to specify file types that the sample supports (Microsoft Word documents and text files). Make sure all the file types that you specify are supported by your app. Users will be able to save their file as any of the file types you specify. They can also change the file type by selecting another of the file types that you specified. The first file type choice in the list will be selected by default: to control that, set the [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) property.
 
-> [!NOTE] 
+> [!NOTE]
 > The file picker also uses the currently selected file type to filter which files it displays, so that only file types that match the selected files types are displayed to the user.
 
 - To save the user some typing, the example sets a [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878). Make your suggested file name relevant to the file being saved. For example, like Word, you can suggest the existing file name if there is one, or the first line of a document if the user is saving a file that does not yet have a name.

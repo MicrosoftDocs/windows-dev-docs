@@ -1,7 +1,7 @@
 ---
 description: Get the latest downloads and tools for UWP apps user interface layout and controls designs.
 keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
-title: Design toolkits and resources for UWP apps
+title: Design toolkits and samples for UWP apps
 author: mijacobs
 ms.author: mijacobs
 ms.date: 10/12/2017

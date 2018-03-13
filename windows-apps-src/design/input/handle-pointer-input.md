@@ -241,7 +241,7 @@ Next, we use UI feedback to demonstrate basic pointer event handlers.
 
 -   This handler manages the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event. We add the event to the event log, add the pointer to the active pointer dictionary, and display the pointer details.
 
-    > [!NOTE] 
+    > [!NOTE]
     > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) and [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down (such as [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969), [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964), and [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)).
          
 
@@ -324,7 +324,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 
 -   This handler manages the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) event. We add the event to the event log and update the pointer details.
 
-    > [!Important] 
+    > [!Important]
     > Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event. The [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) event.     
 
 ```csharp
@@ -685,7 +685,7 @@ Use the read-only **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.in
 
 By identifying the primary pointer, you can use it to emulate mouse or pen input, customize interactions, or provide some other specific functionality or UI.
 
-> [!NOTE] 
+> [!NOTE]
 > If the primary pointer is released, canceled, or lost during an input sequence, a primary input pointer is not created until a new input sequence is initiated (an input sequence ends when all pointers have been released, canceled, or lost).
 
 ## Primary pointer animation example

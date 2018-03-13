@@ -8,7 +8,7 @@ using Windows.Media.MediaProperties;
 
 namespace BasicCameraWin10
 {
-    //<SnippetStreamPropertiesHelper>
+    // <SnippetStreamPropertiesHelper>
     class StreamPropertiesHelper
     {
         private IMediaEncodingProperties _properties;
@@ -108,5 +108,5 @@ namespace BasicCameraWin10
         }
         
     }
-    //</SnippetStreamPropertiesHelper>
+    // </SnippetStreamPropertiesHelper>
 }

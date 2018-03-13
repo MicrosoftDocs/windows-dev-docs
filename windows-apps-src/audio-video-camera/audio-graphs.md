@@ -30,7 +30,7 @@ After all of the nodes have been created and the connections between them set up
 
 Additional scenarios are enabled with the addition of audio effects to the audio graph. Every node in an audio graph can be populated with zero or more audio effects that perform audio processing on the audio passing through the node. There are several built-in effects such as echo, equalizer, limiting, and reverb that can be attached to an audio node with just a few lines of code. You can also create your own custom audio effects that work exactly the same as the built-in effects.
 
-> [!NOTE]  
+> [!NOTE]
 > The [AudioGraph UWP sample](http://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
 
 ## Choosing Windows Runtime AudioGraph or XAudio2
@@ -159,7 +159,7 @@ An audio frame output node allows you to receive and process audio data output f
 
 The [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) event is raised when the audio graph has begins processing a quantum of audio data. You can access the audio data from within the handler for this event. 
 
-> [!NOTE]  
+> [!NOTE]
 > If you want to retrieve audio frames on a regular cadence, synchronized with the audio graph, call [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame) from within the synchronous **QuantumStarted** event handler. The **QuantumProcessed** event is raised asynchronously after the audio engine has completed audio processing, which means its cadence may be irregular. Therefore you should not use the **QuantumProcessed** event for synchronized processing of audio frame data.
 
 [!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
@@ -220,7 +220,7 @@ Starting with Windows 10, version 1607, **AudioGraph** supports spatial audio, w
 
 To create an emitter, you can first create a shape in which the sound is projected from the emitter, which can be a cone or omnidirectional. The [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) class provides static methods for creating each of these shapes. Next, create a decay model. This defines how the volume of the audio from the emitter decreases as the distance from the listener increases. The [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) method creates a decay model that emulates the natural decay of sound using a distance squared falloff model. Finally, create an [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings) object. Currently, this object is only used to enable and disable velocity-based Doppler attenuation of the emitter's audio. Call the [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/mt694324.aspx) constructor, passing in the initialization objects you just created. By default, the emitter is placed at the origin, but you can set the position of the emitter with the [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position) property.
 
-> [!NOTE] 
+> [!NOTE]
 > Audio node emitters can only process audio that is formatted in mono with a sample rate of 48kHz. Attempting to use stereo audio or audio with a different sample rate will result in an exception.
 
 You assign the emitter to an audio node when you create it by using the overloaded creation method for the type of node you want. In this example, [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914225) is used to create a file input node from a specified file and the [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter) object you want to associate with the node.

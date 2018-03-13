@@ -77,7 +77,7 @@ Here's an example of this technique applied to the design for a smart home app.
 
 UWP apps use effective pixels to guarantee that your design elements will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?
 
-> [!NOTE] 
+> [!NOTE]
 > Before we go any further, Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window).
 
 -   **To make the most effective use of space and reduce the need to navigate**

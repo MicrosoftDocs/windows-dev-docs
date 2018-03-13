@@ -23,7 +23,7 @@ Each package you provide must have a version number (provided as a value in the 
 
 ## Version numbering for Windows 10 packages
 
-The version number of any Windows 10 package must always be higher than any version number for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. (For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+The version number of any Windows 10 package must always be higher than any version number for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. (For more info, see [Adding packages for Windows 10 to a previously-published app](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app).)
 
 > [!IMPORTANT]
 > The last (fourth) section of the version number is reserved for Store use and must be left as 0 when you build your package (although the Store may change the value in this section).

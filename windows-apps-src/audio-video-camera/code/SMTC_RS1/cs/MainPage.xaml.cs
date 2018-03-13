@@ -50,15 +50,15 @@ namespace SMTC_RS1
 
         private void AddNextHandler()
         {
-            //<SnippetAddNextHandler>
+            // <SnippetAddNextHandler>
             _mediaPlayer.CommandManager.NextReceived += CommandManager_NextReceived;
             _mediaPlayer.CommandManager.NextBehavior.IsEnabledChanged += NextBehavior_IsEnabledChanged;
-            //</SnippetAddNextHandler>
+            // </SnippetAddNextHandler>
         }
 
         
 
-        //<SnippetNextReceived>
+        // <SnippetNextReceived>
         int _nextPressCount = 0;
         private void CommandManager_NextReceived(MediaPlaybackCommandManager sender, MediaPlaybackCommandManagerNextReceivedEventArgs args)
         {
@@ -69,22 +69,22 @@ namespace SMTC_RS1
                 // Perform app tasks while the Next button is disabled
             }
         }
-        //</SnippetNextReceived>
+        // </SnippetNextReceived>
 
         
         private void EnableNextButton()
         {
-            //<SnippetEnableNextButton>
+            // <SnippetEnableNextButton>
             _mediaPlayer.CommandManager.NextBehavior.EnablingRule = MediaCommandEnablingRule.Auto;
             _nextPressCount = 0;
-            //</SnippetEnableNextButton>
+            // </SnippetEnableNextButton>
         }
-        //<SnippetIsEnabledChanged>
+        // <SnippetIsEnabledChanged>
         private void NextBehavior_IsEnabledChanged(MediaPlaybackCommandManagerCommandBehavior sender, object args)
         {
             MyNextButton.IsEnabled = sender.IsEnabled;
         }
-        //</SnippetIsEnabledChanged>
+        // </SnippetIsEnabledChanged>
 
         private void MyNextButton_Click(object sender, RoutedEventArgs e)
         {
@@ -93,11 +93,11 @@ namespace SMTC_RS1
 
         private void AddPreviousHandler()
         {
-            //<SnippetAddPreviousHandler>
+            // <SnippetAddPreviousHandler>
             _mediaPlayer.CommandManager.PreviousReceived += CommandManager_PreviousReceived;
-            //</SnippetAddPreviousHandler>
+            // </SnippetAddPreviousHandler>
         }
-        //<SnippetPreviousReceived>
+        // <SnippetPreviousReceived>
         private async void CommandManager_PreviousReceived(MediaPlaybackCommandManager sender, MediaPlaybackCommandManagerPreviousReceivedEventArgs args)
         {
             var deferral = args.GetDeferral();
@@ -111,7 +111,7 @@ namespace SMTC_RS1
             }
             deferral.Complete();
         }
-        //</SnippetPreviousReceived>
+        // </SnippetPreviousReceived>
 
         private async Task<MediaPlaybackItem> GetPreviousStation()
         {
@@ -143,7 +143,7 @@ namespace SMTC_RS1
             //Set picker start location to the video library
             filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
 
-            //<SnippetPlayMediaPlaybackList>
+            // <SnippetPlayMediaPlaybackList>
             _mediaPlaybackList = new MediaPlaybackList();
 
             var files = await filePicker.PickMultipleFilesAsync();
@@ -161,7 +161,7 @@ namespace SMTC_RS1
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Source = _mediaPlaybackList;
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
-            //</SnippetPlayMediaPlaybackList>
+            // </SnippetPlayMediaPlaybackList>
 
             for (int i = 0; i < _mediaPlaybackList.Items.Count; i++)
             {
