@@ -30,6 +30,8 @@ If you haven't enabled the Windows 10 SDK for your Win32 app, you must do that f
 
 Right click your project and select **Properties**.
 
+In the top **Configuration** menu, select **All Configurations** so that the following change is applied to both Debug and Release.
+
 Under **Linker -> Input**, add `runtimeobject.lib` to the **Additional Dependencies**.
 
 Then under **General**, make sure that the **Windows SDK Version** is set to something 10.0 or higher (not Windows 8.1).
@@ -65,8 +67,8 @@ Implement the **INotificationActivationCallback** interface as seen below, inclu
 
 ```cpp
 // The UUID CLSID must be unique to your app. Create a new GUID if copying this code.
-class DECLSPEC_UUID("replaced-with-your-guid-C173E6ADF0C3") NotificationActivator WrlSealed
-    : public RuntimeClass<RuntimeClassFlags<ClassicCom>, INotificationActivationCallback> WrlFinal
+class DECLSPEC_UUID("replaced-with-your-guid-C173E6ADF0C3") NotificationActivator WrlSealed WrlFinal
+    : public RuntimeClass<RuntimeClassFlags<ClassicCom>, INotificationActivationCallback>
 {
 public:
     virtual HRESULT STDMETHODCALLTYPE Activate(
@@ -236,8 +238,8 @@ Inside the Activate method, you can parse the args that you specified in the toa
 
 ```cpp
 // The GUID must be unique to your app. Create a new GUID if copying this code.
-class DECLSPEC_UUID("replaced-with-your-guid-C173E6ADF0C3") NotificationActivator WrlSealed
-    : public RuntimeClass<RuntimeClassFlags<ClassicCom>, INotificationActivationCallback> WrlFinal
+class DECLSPEC_UUID("replaced-with-your-guid-C173E6ADF0C3") NotificationActivator WrlSealed WrlFinal
+    : public RuntimeClass<RuntimeClassFlags<ClassicCom>, INotificationActivationCallback>
 {
 public: 
     virtual HRESULT STDMETHODCALLTYPE Activate(
@@ -394,11 +396,39 @@ To deploy and debug your classic Win32 app, you must install your app through th
 
 If your notifications simply fail to appear in your classic Win32 app (and no exceptions are thrown), that likely means the Start shortcut isn't present (install your app via the installer), or the AUMID you used in code doesn't match the AUMID in your Start shortcut.
 
+If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.
+
 If you've installed both your Desktop Bridge and classic Win32 app, note that the Desktop Bridge app will supersede the classic Win32 app when handling toast activations. That means that toasts from the classic Win32 app will still launch the Desktop Bridge app when clicked. Uninstalling the Desktop Bridge app will revert activations back to the classic Win32 app.
 
 If you receive `HRESULT 0x800401f0 CoInitialize has not been called.`, be sure to call `CoInitialize(nullptr)` in your app before calling the APIs.
 
 If you receive `HRESULT 0x8000000e A method was called at an unexpected time.` while calling the Compat APIs, that likely means you failed to call the required Register methods (or if a Desktop Bridge app, you're not currently running your app under the Desktop Bridge context).
+
+If you get numerous `unresolved external symbol` compilation errors, you likely forgot to add `runtimeobject.lib` to the **Additional Dependencies** in step #1 (or you only added it to the Debug configuration and not Release configuration).
+
+
+## Handling older versions of Windows
+
+If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows 10 before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
+
+Windows 8 introduced toast notifications, but used the [legacy toast templates](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
+
+| OS | ToastGeneric | COM activator | Legacy toast templates |
+| -- | ------------ | ------------- | ---------------------- |
+| Windows 10 | Supported | Supported | Supported (but won't activate COM server) |
+| Windows 8.1 / 8 | N/A | N/A | Supported |
+| Windows 7 and lower | N/A | N/A | N/A |
+
+To check if you're running on Windows 10, include the `<VersionHelpers.h>` header and check the **IsWindows10OrGreater** method. If this returns true, continue calling all the methods described in this documentation! 
+
+```cpp
+#include <VersionHelpers.h>
+
+if (IsWindows10OrGreater())
+{
+    // Running Windows 10, continue with sending Windows 10 toasts!
+}
+```
 
 
 ## Resources
