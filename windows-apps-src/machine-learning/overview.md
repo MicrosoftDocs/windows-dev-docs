@@ -42,11 +42,15 @@ For computer vision scenarios, Windows ML simplifies and optimizes the use of im
 To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
 
 ### ONNX models
-To use Windows ML, you'll need a pre-trained machine learning model in the [Open Neural Network Exchange (ONNX)](https://onnx.ai) format. Windows ML supports the v1.0 release of the ONNX format, which allows developers to use models produced by different training frameworks. There are converter tools for many frameworks and libraries, and ONNX models are already natively supported in many training frameworks. For a list of publicly available ONNX models, see [ONNX Models](https://github.com/onnx/models) on GitHub. 
+To use Windows ML, you'll need a pre-trained machine learning model in the [Open Neural Network Exchange (ONNX)](https://onnx.ai) format. Windows ML supports the v1.0 release of the ONNX format, which allows developers to use models produced by different training frameworks. 
 
-You can also train your own ONNX models to use with Windows ML. To learn how to train a model with Visual Studio Tools for AI, see [Train a model](train-ai-model.md). 
+To learn how to train an ONNX model with Visual Studio Tools for AI, see [Train a model](train-ai-model.md). 
+
+For a list of publicly available ONNX models, see [ONNX Models](https://github.com/onnx/models) on GitHub. 
 
 ### Convert existing models to ONNX
+ONNX models are already natively supported in many training frameworks, and there are converter tools for many frameworks and libraries. To learn how to export from frameworks such as Caffe 2, PyTorch, CNTK, Chainer, and more, see [ONNX tutorials](https://github.com/onnx/tutorials) on GitHub.
+
 If you already have a pre-trained machine learning model from another framework, then you can use [WinMLTools](https://aka.ms/winmltools) to convert it to the ONNX format accepted by Windows ML. 
 
 WinMLTools supports conversion from these formats:
