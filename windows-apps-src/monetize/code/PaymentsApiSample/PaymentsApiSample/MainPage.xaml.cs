@@ -2,13 +2,13 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-//<SnippetUsing>
+// <SnippetUsing>
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using Windows.ApplicationModel.Payments;
 using Windows.UI.Popups;
-//</SnippetUsing>
+// </SnippetUsing>
 
 namespace PaymentsApiSample
 {
@@ -25,7 +25,7 @@ namespace PaymentsApiSample
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            //<SnippetEnumerate>
+            // <SnippetEnumerate>
             // Enumerate all the payment methods out store accepts.
             string data =
                 "{" +
@@ -42,9 +42,9 @@ namespace PaymentsApiSample
             // Determine which of our accepted payment methods are supported by the customer's payment applications.
             var paymentMediator = new PaymentMediator();
             var supportedPaymentMethods = await paymentMediator.GetSupportedMethodIdsAsync();
-            //</SnippetEnumerate>
+            // </SnippetEnumerate>
 
-            //<SnippetDisplayItems>
+            // <SnippetDisplayItems>
             // Describe the individual items in this purchase.
             var displayItemsInCart = new List<PaymentItem>
             {
@@ -54,9 +54,9 @@ namespace PaymentsApiSample
 
             // Calculate the total value of display items.
             var totalValue = displayItemsInCart.Sum(item => Convert.ToDecimal(item.Amount.Value));
-            //</SnippetDisplayItems>
+            // </SnippetDisplayItems>
 
-            //<SnippetTaxes>
+            // <SnippetTaxes>
             // Add items for any/all applicable taxes.
             decimal salesTax = 0.095241M * totalValue;
             var displayItemsTaxes = new[]
@@ -70,9 +70,9 @@ namespace PaymentsApiSample
             totalValue = displayItems.Sum(item => Convert.ToDecimal(item.Amount.Value));
             var totalItem = new PaymentItem("Total",
                 new PaymentCurrencyAmount(totalValue.ToString(CultureInfo.InvariantCulture), "USD"));
-            //</SnippetTaxes>
+            // </SnippetTaxes>
 
-            //<SnippetDiscountRate>
+            // <SnippetDiscountRate>
             // Create an item to apply a 5% discount if the customer pays with a Contoso credit card.
             var contosoDiscountValue = Convert.ToDecimal(totalItem.Amount.Value) * -0.05M;
             var displayItemsForContosoCard = new[]
@@ -87,9 +87,9 @@ namespace PaymentsApiSample
             totalValue = displayItemsInCart.Sum(item => Convert.ToDecimal(item.Amount.Value));
             var totalItemForContosoCard = new PaymentItem("Total", 
                 new PaymentCurrencyAmount(totalValue.ToString(CultureInfo.InvariantCulture), "USD"));
-            //</SnippetDiscountRate>
+            // </SnippetDiscountRate>
 
-            //<SnippetAggregate>
+            // <SnippetAggregate>
             // Aggregate all of the prepared payment details.
             var details = new PaymentDetails()
             {
@@ -107,9 +107,9 @@ namespace PaymentsApiSample
                     totalItemForContosoCard, displayItemsForContosoCard)
                 },
             };
-            //</SnippetAggregate>
+            // </SnippetAggregate>
 
-            //<SnippetPaymentOptions>
+            // <SnippetPaymentOptions>
             // Describe options for any additional information needed to process the transaction.
             var options = new PaymentOptions()
             {
@@ -119,9 +119,9 @@ namespace PaymentsApiSample
                 RequestShipping = true,
                 ShippingType = PaymentShippingType.Shipping
             };
-            //</SnippetPaymentOptions>
+            // </SnippetPaymentOptions>
 
-            //<SnippetSubmit>
+            // <SnippetSubmit>
             // Create a structure describing our merchant application.
             var merchantInfo = new PaymentMerchantInfo(new Uri("https://store.contoso.com"));
 
@@ -140,11 +140,11 @@ namespace PaymentsApiSample
                 await new MessageDialog($"Payment request rejected by customer {submissionResult.Status}.").ShowAsync();
                 return;
             }
-            //</SnippetSubmit>
+            // </SnippetSubmit>
 
-            //<SnippetComplete>
+            // <SnippetComplete>
             await submissionResult.Response.CompleteAsync(PaymentRequestCompletionStatus.Succeeded);
-            //</SnippetComplete>
+            // </SnippetComplete>
         }
     }
 }

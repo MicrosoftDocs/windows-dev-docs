@@ -18,7 +18,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
 
 ## Style and the Fluent Design system
 
-<p>The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. The style guidelines in this section help you create a Fluent Design through color, typography, and new features such as [acrylic material](../style/acrylic.md) and [reveal](../style/reveal.md). 
+<p>The Fluent Design System helps you create modern, clean UI that incorporates light, depth, motion, material, and scale. The style guidelines in this section help you create a Fluent Design through color, typography, and new features such as <a href="../style/acrylic.md">acrylic material</a> and <a href="../style/reveal.md">reveal</a>. 
 </p>
 
 ## Style articles
@@ -29,7 +29,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Acrylic material](acrylic.md)</h3>
+                        <h3><a href="acrylic.md">Acrylic material</a></h3>
                         <p>Create a sense of depth with acrylic, a brush that creates translucent surfaces.</p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Color](color.md)</h3>
+                        <h3><a href="color.md">Color</a></h3>
                         <p>Color provides intuitive wayfinding through an app and serves as a crucial tool for reinforcing the interaction model.</p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Icons](icons.md)</h3>
+                        <h3><a href="icons.md">Icons</a></h3>
                         <p>Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.</p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Reveal highlight](reveal.md)</h3>
+                        <h3><a href="reveal.md">Reveal highlight</a></h3>
                         <p>Use light to illuminate important elements. </p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Reveal focus](reveal-focus.md)</h3>
+                        <h3><a href="reveal-focus.md">Reveal focus</a></h3>
                         <p>Use light to highlight the currently focused element. </p>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Sound](sound.md)</h3>
+                        <h3><a href="sound.md">Sound</a></h3>
                         <p>Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.</p>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Typography](typography.md)</h3>
+                        <h3><a href="typography.md">Typography</a></h3>
                         <p>As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.</p>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Writing style](writing-style.md)</h3>
+                        <h3><a href="writing-style.md">Writing style</a></h3>
                         <p>The right words can have a big impact on the user experience.</p>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ Style is what makes your app stand out. It's about bold choices aesthetic choice
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>[Styling controls](../controls-and-patterns/xaml-styles.md)</h3>
+                        <h3><a href="../controls-and-patterns/xaml-styles.md">Styling controls</a></h3>
                         <p>You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
                     </div>
                 </div>

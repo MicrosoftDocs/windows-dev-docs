@@ -84,7 +84,7 @@ void App::SetWindow(CoreWindow^ window)
 		ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyDown);
 
 
-	//<SnippetAppBroadcastingRegisterChangedHandler>
+	// <SnippetAppBroadcastingRegisterChangedHandler>
 	if (Windows::Foundation::Metadata::ApiInformation::IsApiContractPresent(
 		"Windows.Media.AppBroadcasting.AppBroadcastingContract", 1, 0))
 	{
@@ -93,7 +93,7 @@ void App::SetWindow(CoreWindow^ window)
 		m_appBroadcastMonitor->IsCurrentAppBroadcastingChanged +=
 			ref new TypedEventHandler<AppBroadcastingMonitor^, Platform::Object^>(this, &App::OnIsCurrentAppBroadcastingChanged);
 	}
-	//</SnippetAppBroadcastingRegisterChangedHandler>
+	// </SnippetAppBroadcastingRegisterChangedHandler>
 
 
 	m_deviceResources->SetWindow(window);
@@ -190,7 +190,7 @@ void App::OnWindowClosed(CoreWindow^ sender, CoreWindowEventArgs^ args)
 {
 	m_windowClosed = true;
 }
-//<SnippetAppBroadcastingChangedHandler>
+// <SnippetAppBroadcastingChangedHandler>
 void App::OnIsCurrentAppBroadcastingChanged(AppBroadcastingMonitor^ sender, Platform::Object^ args)
 {
 	if (sender->IsCurrentAppBroadcasting)
@@ -202,12 +202,12 @@ void App::OnIsCurrentAppBroadcastingChanged(AppBroadcastingMonitor^ sender, Plat
 		UpdateStatusText("App stopped broadcasting.");
 	}
 }
-//</SnippetAppBroadcastingChangedHandler>
+// </SnippetAppBroadcastingChangedHandler>
 //REMEMBER TO ADD DESKTOP EXTENSION
 
 void App::OnKeyDown(CoreWindow^ sender, KeyEventArgs^ args)
 {
-	//<SnippetCanStartBroadcast>
+	// <SnippetCanStartBroadcast>
 	// Verify that the edition supports the AppBroadcasting APIs
 	if (!Windows::Foundation::Metadata::ApiInformation::IsApiContractPresent(
 		"Windows.Media.AppBroadcasting.AppBroadcastingContract", 1, 0))
@@ -275,16 +275,16 @@ void App::OnKeyDown(CoreWindow^ sender, KeyEventArgs^ args)
 		}
 		return;
 	}
-	//</SnippetCanStartBroadcast>
+	// </SnippetCanStartBroadcast>
 
 	// Ask the platform to display the Broadcast UI.  The platform simply signals
 	// the Shell to show the Broadcast Setup System UI.  There is no guarantee
 	// that the UI will actually appear based on app rendering mode and system
 	// conditions.
 
-	//<SnippetLaunchBroadcastUI>
+	// <SnippetLaunchBroadcastUI>
 	broadcastingUI->ShowBroadcastUI();
-	//</SnippetLaunchBroadcastUI>
+	// </SnippetLaunchBroadcastUI>
 }
 
 

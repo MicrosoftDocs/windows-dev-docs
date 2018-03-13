@@ -387,6 +387,8 @@ To deploy and debug your classic Win32 app, you must install your app through th
 
 If your notifications simply fail to appear in your classic Win32 app (and no exceptions are thrown), that likely means the Start shortcut isn't present (install your app via the installer), or the AUMID you used in code doesn't match the AUMID in your Start shortcut.
 
+If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.
+
 If you've installed both your Desktop Bridge and classic Win32 app, note that the Desktop Bridge app will supersede the classic Win32 app when handling toast activations. That means that toasts from the classic Win32 app will still launch the Desktop Bridge app when clicked. Uninstalling the Desktop Bridge app will revert activations back to the classic Win32 app.
 
 

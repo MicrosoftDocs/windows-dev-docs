@@ -1,4 +1,4 @@
-        //<SnippetBackgroundTransferCS_A>
+        // <SnippetBackgroundTransferCS_A>
         private async void StartDownload_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -20,8 +20,8 @@
                 LogException("Download Error", ex);
             }
         }
-		//</SnippetBackgroundTransferCS_A>
-		//<SnippetBackgroundTransferCS_B>
+		// </SnippetBackgroundTransferCS_A>
+		// <SnippetBackgroundTransferCS_B>
         private async void DiscoverActiveDownloads()
         {
             activeDownloads = new List<DownloadOperation>();
@@ -41,4 +41,4 @@
                 LogException("Discovery error", ex);
             }
         }
-		//</SnippetBackgroundTransferCS_B>
+		// </SnippetBackgroundTransferCS_B>

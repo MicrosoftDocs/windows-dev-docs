@@ -3,14 +3,14 @@
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-//<SnippetLightsNamespace>
+// <SnippetLightsNamespace>
 using Windows.Devices.Lights;
-//</SnippetLightsNamespace>
+// </SnippetLightsNamespace>
 
-//<SnippetEnumerationNamespace>
+// <SnippetEnumerationNamespace>
 using Windows.Devices.Enumeration;
 using System.Linq;
-//</SnippetEnumerationNamespace>
+// </SnippetEnumerationNamespace>
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -22,9 +22,9 @@ namespace LampSnippets
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareLamp>
+        // <SnippetDeclareLamp>
         Lamp lamp;
-        //</SnippetDeclareLamp>
+        // </SnippetDeclareLamp>
 
         public MainPage()
         {
@@ -32,7 +32,7 @@ namespace LampSnippets
         }
         public async void GetDefaultLamp()
         {
-            //<SnippetGetDefaultLamp>
+            // <SnippetGetDefaultLamp>
             lamp = await Lamp.GetDefaultAsync();
 
             if (lamp == null)
@@ -40,11 +40,11 @@ namespace LampSnippets
                 ShowErrorMessage("No Lamp device found");
                 return;
             }
-            //</SnippetGetDefaultLamp>
+            // </SnippetGetDefaultLamp>
         }
         public async void GetLampUsingSelectionString()
         {
-            //<SnippetGetLampWithSelectionString>
+            // <SnippetGetLampWithSelectionString>
             string selectorString = Lamp.GetDeviceSelector();
             
 
@@ -60,10 +60,10 @@ namespace LampSnippets
             }
 
             lamp = await Lamp.FromIdAsync(deviceInfo.Id);
-            //</SnippetGetLampWithSelectionString>
+            // </SnippetGetLampWithSelectionString>
 
         }
-        //<SnippetDisposeLamp>
+        // <SnippetDisposeLamp>
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             lamp.AvailabilityChanged -= Lamp_AvailabilityChanged;
@@ -71,32 +71,32 @@ namespace LampSnippets
             lamp.Dispose();
             lamp = null;
         }
-        //</SnippetDisposeLamp>
+        // </SnippetDisposeLamp>
 
         
         public void ChangeLampSettings()
         {
-            //<SnippetLampSettingsOn>
+            // <SnippetLampSettingsOn>
             lamp.IsEnabled = true;
-            //</SnippetLampSettingsOn>
+            // </SnippetLampSettingsOn>
 
-            //<SnippetLampSettingsOff>
+            // <SnippetLampSettingsOff>
             lamp.IsEnabled = false;
-            //</SnippetLampSettingsOff>
+            // </SnippetLampSettingsOff>
 
-            //<SnippetLampSettingsColor>
+            // <SnippetLampSettingsColor>
             if (lamp.IsColorSettable)
             {
                 lamp.Color = Windows.UI.Colors.Blue;
             }
-            //</SnippetLampSettingsColor>
+            // </SnippetLampSettingsColor>
         }
 
 
 
         public async void AvailabilityChanged()
         {
-            //<SnippetAvailabilityChanged>
+            // <SnippetAvailabilityChanged>
             lamp = await Lamp.GetDefaultAsync();
 
             if (lamp == null)
@@ -106,14 +106,14 @@ namespace LampSnippets
             }
 
             lamp.AvailabilityChanged += Lamp_AvailabilityChanged;
-            //</SnippetAvailabilityChanged>
+            // </SnippetAvailabilityChanged>
         }
-        //<SnippetAvailabilityChangedHandler>
+        // <SnippetAvailabilityChangedHandler>
         private void Lamp_AvailabilityChanged(Lamp sender, LampAvailabilityChangedEventArgs args)
         {
             lampToggleSwitch.IsEnabled = args.IsAvailable;
         }
-        //</SnippetAvailabilityChangedHandler>
+        // </SnippetAvailabilityChangedHandler>
 
         
      

@@ -4,11 +4,11 @@
 
     // Assign applicationId and adUnitId to test values. Replace these values with live values 
     // from Dev Center before you submit your app to the Store.
-    //<Snippet1>
+    // <Snippet1>
     var interstitialAd = null;
     var applicationId = "d25517cb-12d4-4699-8bdc-52040c712cab";
     var adUnitId = "test";
-    //</Snippet1>
+    // </Snippet1>
 
     window.startInterstitial = function () {
         writeText("<br>Interstitial ads in JavaScript UWP apps");
@@ -31,11 +31,11 @@
     // To show an interstitial banner ad instead of an interstitial video ad, replace InterstitialAdType.video 
     // with InterstitialAdType.display.
     var requestAdButtonClick = function (evt) {
-        //<Snippet3>
+        // <Snippet3>
         if (interstitialAd) {
             interstitialAd.requestAd(MicrosoftNSJS.Advertising.InterstitialAdType.video, applicationId, adUnitId);
         }
-        //</Snippet3>
+        // </Snippet3>
     }
 
     // This example attempts to show the interstitial ad when the "Show ad" button is clicked.
@@ -64,13 +64,13 @@
 
     var prepareInterstitial = function () {
         if (!interstitialAd) {
-            //<Snippet2>
+            // <Snippet2>
             interstitialAd = new MicrosoftNSJS.Advertising.InterstitialAd();
             interstitialAd.onErrorOccurred = errorOccurredHandler;
             interstitialAd.onAdReady = adReadyHandler;
             interstitialAd.onCancelled = cancelledHandler;
             interstitialAd.onCompleted = completedHandler;
-            //</Snippet2>
+            // </Snippet2>
         }
     };
 

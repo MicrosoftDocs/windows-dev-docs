@@ -29,7 +29,7 @@ namespace AsyncApp
 
         #region Download RSS
 
-        //<SnippetDownloadRSS>
+        // <SnippetDownloadRSS>
         // Put the keyword async on the declaration of the event handler.
         private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -62,7 +62,7 @@ namespace AsyncApp
                     + ex.ToString();
             }
         }
-        //</SnippetDownloadRSS>
+        // </SnippetDownloadRSS>
         #endregion
 
     }

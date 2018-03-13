@@ -34,7 +34,7 @@ namespace LaunchRemoteUri
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetRemoteUriLaunch>
+            // <SnippetRemoteUriLaunch>
             if ( m_deviceList.Count > 0)
             {
                 RemoteSystem SelectedDevice = m_deviceList[0];
@@ -43,10 +43,10 @@ namespace LaunchRemoteUri
                         new RemoteSystemConnectionRequest(SelectedDevice), 
                         new Uri("bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165"));
             }
-            //</SnippetRemoteUriLaunch>
+            // </SnippetRemoteUriLaunch>
         }
 
-        //<SnippetBuildDeviceList>
+        // <SnippetBuildDeviceList>
         private async Task BuildDeviceList()
         {
             RemoteSystemAccessStatus accessStatus = await RemoteSystem.RequestAccessAsync();
@@ -64,9 +64,9 @@ namespace LaunchRemoteUri
                 m_remoteSystemWatcher.Start();
             }
         }
-        //</SnippetBuildDeviceList>
+        // </SnippetBuildDeviceList>
 
-        //<SnippetEventHandlers>
+        // <SnippetEventHandlers>
         private void RemoteSystemWatcher_RemoteSystemRemoved(
             RemoteSystemWatcher sender, RemoteSystemRemovedEventArgs args)
         {
@@ -83,12 +83,12 @@ namespace LaunchRemoteUri
             m_deviceList.Add(args.RemoteSystem);
             m_deviceMap.Add(args.RemoteSystem.Id, args.RemoteSystem);
         }
-        //</SnippetEventHandlers>
+        // </SnippetEventHandlers>
 
-        //<SnippetMembers>
+        // <SnippetMembers>
         private RemoteSystemWatcher m_remoteSystemWatcher;
         private ObservableCollection<RemoteSystem> m_deviceList = new ObservableCollection<RemoteSystem>();
         private Dictionary<string, RemoteSystem> m_deviceMap = new Dictionary<string, RemoteSystem>();
-        //</SnippetMembers>
+        // </SnippetMembers>
     }
 }

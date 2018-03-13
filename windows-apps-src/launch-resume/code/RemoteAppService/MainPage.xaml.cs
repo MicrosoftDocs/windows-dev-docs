@@ -13,10 +13,10 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<SnippetUsings>
+// <SnippetUsings>
 using Windows.ApplicationModel.AppService;
 using Windows.System.RemoteSystems;
-//</SnippetUsings>
+// </SnippetUsings>
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -39,7 +39,7 @@ namespace RemoteAppService
             this.InitializeComponent();
         }
 
-        //<SnippetAppService>
+        // <SnippetAppService>
         // This method returns an open connection to a particular app service on a remote system.
         // param "remotesys" is a RemoteSystem object representing the device to connect to.
         private async void openRemoteConnectionAsync(RemoteSystem remotesys)
@@ -51,9 +51,9 @@ namespace RemoteAppService
                 AppServiceName = "com.microsoft.randomnumbergenerator",
                 PackageFamilyName = "Microsoft.SDKSamples.AppServicesProvider.CS_8wekyb3d8bbwe"
             };
-            //</SnippetAppService>
+            // </SnippetAppService>
 
-            //<SnippetRemoteConnection>
+            // <SnippetRemoteConnection>
             // a valid RemoteSystem object is needed before going any further
             if (remotesys == null)
             {
@@ -71,9 +71,9 @@ namespace RemoteAppService
             {
                 return;
             }
-            //</SnippetRemoteConnection>
+            // </SnippetRemoteConnection>
 
-            //<SnippetSendMessage>
+            // <SnippetSendMessage>
             // create the command input
             ValueSet inputs = new ValueSet();
 
@@ -92,7 +92,7 @@ namespace RemoteAppService
                 result = response.Message["Result"] as string;
             }
         }
-        //</SnippetSendMessage>
+        // </SnippetSendMessage>
     }
 }
 

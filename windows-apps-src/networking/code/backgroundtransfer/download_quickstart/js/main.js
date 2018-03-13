@@ -1,4 +1,4 @@
-//<Snippetdownload_quickstart_A>
+// <Snippetdownload_quickstart_A>
 function DownloadOp() {
     var download = null;
     var promise = null;
@@ -33,8 +33,8 @@ function DownloadOp() {
 		}
     };
 }
-//</Snippetdownload_quickstart_A>
-//<Snippetdownload_quickstart_B>
+// </Snippetdownload_quickstart_A>
+// <Snippetdownload_quickstart_B>
 // Cancel download.
 this.cancel = function () {
 	try {
@@ -53,19 +53,19 @@ this.cancel = function () {
 		displayException(err);
 	}
 };
-//</Snippetdownload_quickstart_B>
-//<Snippetdownload_quickstart_C>
+// </Snippetdownload_quickstart_B>
+// <Snippetdownload_quickstart_C>
 function downloadFile() {
 	var newDownload = new DownloadOp();
 
 	newDownload.start(fileName, fileUri);
 
 }
-//</Snippetdownload_quickstart_C>
-//<Snippetdownload_quickstart_D>
+// </Snippetdownload_quickstart_C>
+// <Snippetdownload_quickstart_D>
 var downloadOps = [];
-//</Snippetdownload_quickstart_D>
-//<Snippetdownload_quickstart_E>
+// </Snippetdownload_quickstart_D>
+// <Snippetdownload_quickstart_E>
 // Enumerate outstanding downloads.
 Windows.Networking.BackgroundTransfer.BackgroundDownloader.getCurrentDownloadsAsync().done(function (downloads) {
 
@@ -75,4 +75,4 @@ Windows.Networking.BackgroundTransfer.BackgroundDownloader.getCurrentDownloadsAs
 		downloadOps.push(download);
 	}
 });
-//</Snippetdownload_quickstart_E>
+// </Snippetdownload_quickstart_E>

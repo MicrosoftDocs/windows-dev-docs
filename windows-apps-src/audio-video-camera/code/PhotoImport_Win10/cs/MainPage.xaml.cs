@@ -15,12 +15,12 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 
-//<SnippetUsing>
+// <SnippetUsing>
 using Windows.Media.Import;
 using System.Threading;
 using Windows.UI.Core;
 using System.Text;
-//</SnippetUsing>
+// </SnippetUsing>
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -37,11 +37,11 @@ namespace PhotoImport_Win10
             this.InitializeComponent();
         }
 
-        //<SnippetDeclareCts>
+        // <SnippetDeclareCts>
         CancellationTokenSource cts;
-        //</SnippetDeclareCts>
+        // </SnippetDeclareCts>
 
-        //<SnippetOnCancel>
+        // <SnippetOnCancel>
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             if (cts != null)
@@ -50,10 +50,10 @@ namespace PhotoImport_Win10
                 System.Diagnostics.Debug.WriteLine("Operation canceled by the Cancel button.");
             }
         }
-        //</SnippetOnCancel>
+        // </SnippetOnCancel>
 
 
-        //<SnippetFindSourcesClick>
+        // <SnippetFindSourcesClick>
         private async void findSourcesButton_Click(object sender, RoutedEventArgs e)
         {
             var sources = await PhotoImportManager.FindAllSourcesAsync();
@@ -65,30 +65,30 @@ namespace PhotoImport_Win10
                 sourcesComboBox.Items.Add(item);
             }
         }
-        //</SnippetFindSourcesClick>
+        // </SnippetFindSourcesClick>
 
-        //<SnippetDeclareImportSource>
+        // <SnippetDeclareImportSource>
         PhotoImportSource importSource;
-        //</SnippetDeclareImportSource>
+        // </SnippetDeclareImportSource>
 
-        //<SnippetSourcesSelectionChanged>
+        // <SnippetSourcesSelectionChanged>
         private void sourcesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.importSource = (PhotoImportSource)((ComboBoxItem)sourcesComboBox.SelectedItem).Tag;
             FindItems();
         }
-        //</SnippetSourcesSelectionChanged>
+        // </SnippetSourcesSelectionChanged>
 
-        //<SnippetDeclareImport>
+        // <SnippetDeclareImport>
         PhotoImportSession importSession;
         PhotoImportFindItemsResult itemsResult;
-        //</SnippetDeclareImport>
+        // </SnippetDeclareImport>
 
-        //<SnippetGeneratorIncrementalLoadingClass>
+        // <SnippetGeneratorIncrementalLoadingClass>
         GeneratorIncrementalLoadingClass<ImportableItemWrapper> itemsToImport = null;
-        //</SnippetGeneratorIncrementalLoadingClass>
+        // </SnippetGeneratorIncrementalLoadingClass>
 
-        //<SnippetFindItems>
+        // <SnippetFindItems>
         private async void FindItems()
         {
             this.cts = new CancellationTokenSource();
@@ -148,13 +148,13 @@ namespace PhotoImport_Win10
 
             this.cts = null;
         }
-        //</SnippetFindItems>
+        // </SnippetFindItems>
 
-        //<SnippetDeclareImportResult>
+        // <SnippetDeclareImportResult>
         private PhotoImportImportItemsResult importedResult;
-        //</SnippetDeclareImportResult>
+        // </SnippetDeclareImportResult>
 
-        //<SnippetImportClick>
+        // <SnippetImportClick>
         private async void importButton_Click(object sender, RoutedEventArgs e)
         {
             cts = new CancellationTokenSource();
@@ -210,9 +210,9 @@ namespace PhotoImport_Win10
 
             cts = null;
         }
-        //</SnippetImportClick>
+        // </SnippetImportClick>
 
-        //<SnippetDeleteClick>
+        // <SnippetDeleteClick>
 
         private async void deleteButton_Click(object sender, RoutedEventArgs e)
         {
@@ -263,7 +263,7 @@ namespace PhotoImport_Win10
 
 
         }
-        //</SnippetDeleteClick>
+        // </SnippetDeleteClick>
     }
 }
 

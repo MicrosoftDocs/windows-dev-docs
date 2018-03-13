@@ -19,7 +19,7 @@ namespace BasicCameraWin10
         #region EV
         private void UpdateEvControlCapabilities()
         {
-            //<SnippetEvControl>
+            // <SnippetEvControl>
             var exposureCompensationControl = _mediaCapture.VideoDeviceController.ExposureCompensationControl;
 
             if (exposureCompensationControl.Supported)
@@ -37,15 +37,15 @@ namespace BasicCameraWin10
             {
                 EvSlider.Visibility = Visibility.Collapsed;
             }
-            //</SnippetEvControl>
+            // </SnippetEvControl>
         }
-        //<SnippetEvValueChanged>
+        // <SnippetEvValueChanged>
         private async void EvSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             var value = (sender as Slider).Value;
             await _mediaCapture.VideoDeviceController.ExposureCompensationControl.SetValueAsync((float)value);
         }
-        //</SnippetEvValueChanged>
+        // </SnippetEvValueChanged>
 
         /// <summary>
         /// Converts the number of steps into a (mixed) fraction based on the step size, when the value used is steps * stepSize
@@ -53,7 +53,7 @@ namespace BasicCameraWin10
         /// <param name="steps">Number of steps</param>
         /// <param name="stepSize">The size of one step</param>
         /// <returns></returns>
-        //<SnippetEvStepCountToString>
+        // <SnippetEvStepCountToString>
         private static string EvStepCountToString(int steps, float stepSize)
         {
             if (stepSize <= 0) throw new ArgumentOutOfRangeException(nameof(stepSize), "Parameter must be a positive value");
@@ -72,7 +72,7 @@ namespace BasicCameraWin10
             if (whole == 0) return sign + fraction;
             return sign + whole.ToString() + " " + fraction;
         }
-        //</SnippetEvStepCountToString>
+        // </SnippetEvStepCountToString>
 
         #endregion
 
@@ -80,7 +80,7 @@ namespace BasicCameraWin10
         
         private void UpdateFlashControlCapabilities()
         {
-            //<SnippetFlashControl>
+            // <SnippetFlashControl>
             var flashControl = _mediaCapture.VideoDeviceController.FlashControl;
 
             if (flashControl.Supported)
@@ -109,9 +109,9 @@ namespace BasicCameraWin10
                 FlashOffRadioButton.Visibility = Visibility.Collapsed;
             }
 
-            //</SnippetFlashControl>
+            // </SnippetFlashControl>
         }
-        //<SnippetFlashRadioButtons>
+        // <SnippetFlashRadioButtons>
         private void FlashOnRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             _mediaCapture.VideoDeviceController.FlashControl.Enabled = true;
@@ -128,16 +128,16 @@ namespace BasicCameraWin10
         {
             _mediaCapture.VideoDeviceController.FlashControl.Enabled = false;
         }
-        //</SnippetFlashRadioButtons>
+        // </SnippetFlashRadioButtons>
 
-        //<SnippetRedEye>
+        // <SnippetRedEye>
         private void RedEyeFlashCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             _mediaCapture.VideoDeviceController.FlashControl.RedEyeReduction = (RedEyeFlashCheckBox.IsChecked == true);
         }
-        //</SnippetRedEye>
+        // </SnippetRedEye>
 
-        //<SnippetTorch>
+        // <SnippetTorch>
         private void TorchCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             _mediaCapture.VideoDeviceController.TorchControl.Enabled = (TorchCheckBox.IsChecked == true);
@@ -147,11 +147,11 @@ namespace BasicCameraWin10
                 System.Diagnostics.Debug.WriteLine("Torch may not emit light if preview and video capture are not running.");
             }
         }
-        //</SnippetTorch>
+        // </SnippetTorch>
         #endregion
 
         #region ISO
-        //<SnippetIsoControl>
+        // <SnippetIsoControl>
         private void UpdateIsoControlCapabilities()
         {
             var isoSpeedControl = _mediaCapture.VideoDeviceController.IsoSpeedControl;
@@ -177,15 +177,15 @@ namespace BasicCameraWin10
                 IsoSlider.Visibility = Visibility.Collapsed;
             }
         }
-        //</SnippetIsoControl>
-        //<SnippetIsoSlider>
+        // </SnippetIsoControl>
+        // <SnippetIsoSlider>
         private async void IsoSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             var value = (sender as Slider).Value;
             await _mediaCapture.VideoDeviceController.IsoSpeedControl.SetValueAsync((uint)value);
         }
-        //</SnippetIsoSlider>
-        //<SnippetIsoCheckBox>
+        // </SnippetIsoSlider>
+        // <SnippetIsoCheckBox>
         private async void IsoAutoCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             var autoIso = (sender as CheckBox).IsChecked == true;
@@ -199,13 +199,13 @@ namespace BasicCameraWin10
                 await _mediaCapture.VideoDeviceController.IsoSpeedControl.SetValueAsync((uint)IsoSlider.Value);
             }
         }
-        //</SnippetIsoCheckBox>
+        // </SnippetIsoCheckBox>
         #endregion
 
         #region Exposure
         private void UpdateExposureControlCapabilities()
         {
-            //<SnippetExposureControl>
+            // <SnippetExposureControl>
             var exposureControl = _mediaCapture.VideoDeviceController.ExposureControl;
 
             if (exposureControl.Supported)
@@ -229,17 +229,17 @@ namespace BasicCameraWin10
                 ExposureAutoCheckBox.Visibility = Visibility.Collapsed;
                 ExposureSlider.Visibility = Visibility.Collapsed;
             }
-            //</SnippetExposureControl>
+            // </SnippetExposureControl>
         }
-        //<SnippetExposureSlider>
+        // <SnippetExposureSlider>
         private async void ExposureSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             var value = TimeSpan.FromTicks((long)(sender as Slider).Value);
             await _mediaCapture.VideoDeviceController.ExposureControl.SetValueAsync(value);
         }
-        //</SnippetExposureSlider>
+        // </SnippetExposureSlider>
 
-        //<SnippetExposureCheckBox>
+        // <SnippetExposureCheckBox>
         private async void ExposureCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             if(! _isPreviewing)
@@ -251,14 +251,14 @@ namespace BasicCameraWin10
             var autoExposure = ((sender as CheckBox).IsChecked == true);
             await _mediaCapture.VideoDeviceController.ExposureControl.SetAutoAsync(autoExposure);
         }
-        //</SnippetExposureCheckBox>
+        // </SnippetExposureCheckBox>
         #endregion
 
         #region whitebalance
 
         private void UpdateWbControlCapabilities()
         {
-            //<SnippetWhiteBalance>
+            // <SnippetWhiteBalance>
             var whiteBalanceControl = _mediaCapture.VideoDeviceController.WhiteBalanceControl;
 
             if (whiteBalanceControl.Supported)
@@ -294,9 +294,9 @@ namespace BasicCameraWin10
                 WbSlider.Visibility = Visibility.Collapsed;
                 WbComboBox.Visibility = Visibility.Collapsed;
             }
-            //</SnippetWhiteBalance>
+            // </SnippetWhiteBalance>
         }
-        //<SnippetWhiteBalanceComboBox>
+        // <SnippetWhiteBalanceComboBox>
         private async void WbComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(!_isPreviewing)
@@ -310,9 +310,9 @@ namespace BasicCameraWin10
             await _mediaCapture.VideoDeviceController.WhiteBalanceControl.SetPresetAsync(selected);
 
         }
-        //</SnippetWhiteBalanceComboBox>
+        // </SnippetWhiteBalanceComboBox>
 
-        //<SnippetWhiteBalanceSlider>
+        // <SnippetWhiteBalanceSlider>
         private async void WbSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             if (!_isPreviewing)
@@ -324,7 +324,7 @@ namespace BasicCameraWin10
             var value = (sender as Slider).Value;
             await _mediaCapture.VideoDeviceController.WhiteBalanceControl.SetValueAsync((uint)value);
         }
-        //</SnippetWhiteBalanceSlider>
+        // </SnippetWhiteBalanceSlider>
         #endregion
 
         #region zoom
@@ -332,7 +332,7 @@ namespace BasicCameraWin10
        
         private void UpdateZoomControlCapabilities()
         {
-            //<SnippetZoomControl>
+            // <SnippetZoomControl>
             var zoomControl = _mediaCapture.VideoDeviceController.ZoomControl;
 
             if (zoomControl.Supported)
@@ -351,9 +351,9 @@ namespace BasicCameraWin10
             {
                 ZoomSlider.Visibility = Visibility.Collapsed;
             }
-            //</SnippetZoomControl>
+            // </SnippetZoomControl>
         }
-        //<SnippetZoomSlider>
+        // <SnippetZoomSlider>
         private void ZoomSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             var level = (float)ZoomSlider.Value;
@@ -371,7 +371,7 @@ namespace BasicCameraWin10
 
             zoomControl.Configure(settings);
         }
-        //</SnippetZoomSlider>
+        // </SnippetZoomSlider>
 
         #endregion
 
@@ -379,7 +379,7 @@ namespace BasicCameraWin10
 
         private void CAF()
         {
-            //<SnippetCAF>
+            // <SnippetCAF>
             var focusControl = _mediaCapture.VideoDeviceController.FocusControl;
 
             if (focusControl.Supported)
@@ -391,10 +391,10 @@ namespace BasicCameraWin10
             {
                 CafFocusRadioButton.Visibility = Visibility.Collapsed;
             }
-            //</SnippetCAF>
+            // </SnippetCAF>
         }
 
-        //<snippetCafFocusRadioButton>
+        // <SnippetCafFocusRadioButton>
         private async void CafFocusRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             if(! _isPreviewing)
@@ -409,12 +409,12 @@ namespace BasicCameraWin10
             focusControl.Configure(settings);
             await focusControl.FocusAsync();
         }
-        //</snippetCafFocusRadioButton>
+        // </SnippetCafFocusRadioButton>
 
 
         private void TapFocus()
         {
-            //<SnippetTapFocus>
+            // <SnippetTapFocus>
             var focusControl = _mediaCapture.VideoDeviceController.FocusControl;
 
             if (focusControl.Supported)
@@ -427,10 +427,10 @@ namespace BasicCameraWin10
             {
                 TapFocusRadioButton.Visibility = Visibility.Collapsed;
             }
-            //</SnippetTapFocus>
+            // </SnippetTapFocus>
         }
 
-        //<snippetTapFocusRadioButton>
+        // <SnippetTapFocusRadioButton>
         private async void TapFocusRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             // Lock focus in case Continuous Autofocus was active when switching to Tap-to-focus
@@ -438,14 +438,14 @@ namespace BasicCameraWin10
             await focusControl.LockAsync();
             // Wait for user tap
         }
-        //</snippetTapFocusRadioButton>
+        // </SnippetTapFocusRadioButton>
 
 
-        //<SnippetIsFocused>
+        // <SnippetIsFocused>
         bool _isFocused = false;
-        //</SnippetIsFocused>
+        // </SnippetIsFocused>
 
-        //<SnippetTapFocusPreviewControl>
+        // <SnippetTapFocusPreviewControl>
         private async void PreviewControl_Tapped(object sender, TappedRoutedEventArgs e)
         {
             if (!_isPreviewing || (TapFocusRadioButton.IsChecked != true)) return;
@@ -466,7 +466,7 @@ namespace BasicCameraWin10
                 await TapUnfocus();
             }
         }
-        //</SnippetTapFocusPreviewControl>
+        // </SnippetTapFocusPreviewControl>
 
 
         /// <summary>
@@ -476,7 +476,7 @@ namespace BasicCameraWin10
         /// <param name="size">the size of the rectangle around the tap</param>
         /// <returns></returns>
         /// 
-        //<snippetTapToFocus>
+        // <SnippetTapToFocus>
         public async Task TapToFocus(Point position, Size size)
         {
             _isFocused = true;
@@ -507,9 +507,9 @@ namespace BasicCameraWin10
 
             await focusControl.FocusAsync();
         }
-        //</snippetTapToFocus>
+        // </SnippetTapToFocus>
 
-        //<snippetTapUnfocus>
+        // <SnippetTapUnfocus>
         private async Task TapUnfocus()
         {
             _isFocused = false;
@@ -520,7 +520,7 @@ namespace BasicCameraWin10
             var focusControl = _mediaCapture.VideoDeviceController.FocusControl;
             await focusControl.FocusAsync();
         }
-        //</snippetTapUnfocus>
+        // </SnippetTapUnfocus>
 
         /// <summary>
         /// Calculates the size and location of the rectangle that contains the preview stream within the preview control, when the scaling mode is Uniform
@@ -530,7 +530,7 @@ namespace BasicCameraWin10
         /// <param name="displayOrientation">The orientation of the display, to account for device rotation and changing of the CaptureElement display ratio compared to the camera stream</param>
         /// <returns></returns>
         /// 
-        //<SnippetGetPreviewStreamRectInControl>
+        // <SnippetGetPreviewStreamRectInControl>
         public Rect GetPreviewStreamRectInControl()
         {
             var result = new Rect();
@@ -578,7 +578,7 @@ namespace BasicCameraWin10
 
             return result;
         }
-        //</SnippetGetPreviewStreamRectInControl>
+        // </SnippetGetPreviewStreamRectInControl>
 
         /// <summary>
         /// Applies the necessary rotation to a tap on a CaptureElement (with Stretch mode set to Uniform) to account for device orientation
@@ -587,7 +587,7 @@ namespace BasicCameraWin10
         /// <param name="size">The size, in UI coordinates, of the desired focus rectangle</param>
         /// <param name="previewRect">The area within the CaptureElement that is actively showing the preview, and is not part of the letterboxed area</param>
         /// <returns>A Rect that can be passed to the MediaCapture Focus and RegionsOfInterest APIs, with normalized bounds in the orientation of the native stream</returns>
-        //<snippetConvertUiTapToPreviewRect>
+        // <SnippetConvertUiTapToPreviewRect>
         private Rect ConvertUiTapToPreviewRect(Point tap, Size size, Rect previewRect)
         {
             // Adjust for the resulting focus rectangle to be centered around the position
@@ -650,11 +650,11 @@ namespace BasicCameraWin10
             // Create and return resulting rectangle
             return new Rect(left, top, width, height);
         }
-        //</snippetConvertUiTapToPreviewRect>
+        // </SnippetConvertUiTapToPreviewRect>
 
         private void UpdateFocusControlCapabilities()
         {
-            //<SnippetFocus>
+            // <SnippetFocus>
             var focusControl = _mediaCapture.VideoDeviceController.FocusControl;
 
             if (focusControl.Supported)
@@ -676,30 +676,30 @@ namespace BasicCameraWin10
                 FocusSlider.Visibility = Visibility.Collapsed;
                 ManualFocusRadioButton.Visibility = Visibility.Collapsed;
             }
-            //</SnippetFocus>
+            // </SnippetFocus>
         }
 
 
-        //<SnippetManualFocusChecked>
+        // <SnippetManualFocusChecked>
         private async void ManualFocusRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             var focusControl = _mediaCapture.VideoDeviceController.FocusControl;
             await focusControl.LockAsync();
         }
-        //</SnippetManualFocusChecked>
+        // </SnippetManualFocusChecked>
 
-        //<snippetFocusSlider>
+        // <SnippetFocusSlider>
         private async void FocusSlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
         {
             var value = (sender as Slider).Value;
             await _mediaCapture.VideoDeviceController.FocusControl.SetValueAsync((uint)value);
         }
-        //</snippetFocusSlider>
+        // </SnippetFocusSlider>
 
 
         private void InitFocusLight()
         {
-            //<SnippetFocusLight>
+            // <SnippetFocusLight>
             var focusControl = _mediaCapture.VideoDeviceController.FocusControl;
 
             if (focusControl.Supported)
@@ -712,17 +712,17 @@ namespace BasicCameraWin10
             {
                 FocusLightCheckBox.Visibility = Visibility.Collapsed;
             }
-            //</SnippetFocusLight>
+            // </SnippetFocusLight>
         }
 
-        //<snippetFocusLightCheckBox>
+        // <SnippetFocusLightCheckBox>
         private void FocusLightCheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
             var flashControl = _mediaCapture.VideoDeviceController.FlashControl;
 
             flashControl.AssistantLightEnabled = (FocusLightCheckBox.IsChecked == true);
         }
-        //</snippetFocusLightCheckBox>
+        // </SnippetFocusLightCheckBox>
 
 
 
@@ -734,7 +734,7 @@ namespace BasicCameraWin10
         #region PowerlineFrequency
         private void SetPowerlineFrequency()
         {
-            //<SnippetPowerlineFrequency>
+            // <SnippetPowerlineFrequency>
             PowerlineFrequency getFrequency;
 
             if (! _mediaCapture.VideoDeviceController.TryGetPowerlineFrequency(out getFrequency))
@@ -753,7 +753,7 @@ namespace BasicCameraWin10
                 }
             }
            
-            //</SnippetPowerlineFrequency>
+            // </SnippetPowerlineFrequency>
         }
         
 

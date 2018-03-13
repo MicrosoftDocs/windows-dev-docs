@@ -125,7 +125,7 @@ When you create a new app, you can access the following file system locations by
 
     Of course, you can also gain access to files and folders on a removable device by calling the file picker (using [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) and letting the user pick files and folders for your app to access. Learn how to use the file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
 
-    > [!NOTE] 
+    > [!NOTE]
     > For more info about accessing an SD card or other removable devices, see [Access the SD card](access-the-sd-card.md).
 
      

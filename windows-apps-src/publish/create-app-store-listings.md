@@ -51,6 +51,7 @@ The description field is where you can tell customers what your app does. This f
 For some tips on making your description stand out, see [Write a great app description](write-a-great-app-description.md).
 
 <span id="release-notes" />
+
 ## What's new in this version
 
 If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
@@ -129,6 +130,7 @@ You can enter up to 11 items for both **Minimum hardware** and **Recommended har
 
 
 <span id="shared-fields" />
+
 ## Additional information
 
 The items described below help customers discover and understand your product. The info you enter here will apply to all of your Store listings in a given language, regardless of operating system, even if you [create platform-specific Store listings](create-platform-specific-store-listings.md). (This section was formerly called **Shared fields**).

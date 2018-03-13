@@ -165,7 +165,7 @@ Here is the basic process for creating and updating a [SurfaceImageSource](https
     brush->ImageSource = surfaceImageSource;
     ```
 
-    > [!NOTE]   
+    > [!NOTE]
     > Calling [SurfaceImageSource::SetSource](https://msdn.microsoft.com/library/windows/apps/br243255) (inherited from **IBitmapSource::SetSource**) currently throws an exception. Do not call it from your [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041) object.
 
     > [!NOTE]

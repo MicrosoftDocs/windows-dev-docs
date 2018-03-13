@@ -20,7 +20,7 @@ Access files and folders in either a folder, library, device, or network locatio
 
 For guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class.
 
-> [!NOTE] 
+> [!NOTE]
 > Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
@@ -140,7 +140,7 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 > ```
 
 
-> [!NOTE] 
+> [!NOTE]
 > In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
  
 

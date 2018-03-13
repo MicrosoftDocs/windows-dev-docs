@@ -22,7 +22,7 @@ The bottom line: You can spend your time working with familiar programming langu
 
 ![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
  
-##So, what *exactly* is a UWP app?
+## So, what *exactly* is a UWP app?
 
 What makes a UWP app special? Here are some of the characteristics that make UWP apps on Windows 10 different.
 
@@ -82,7 +82,7 @@ On Windows, your app can deliver relevant, real-time info to your users and keep
 
 Finally, you can use roaming data and the Windows Credential Locker to enable a consistent roaming experience across all of the Windows screens where users run your app. Roaming data gives you an easy way to store a user’s preferences and settings in the cloud, without having to build your own sync infrastructure. And you can store user credentials in the Credential Locker, where security and reliability are the top priority.
 
-##  Monetize your app
+## Monetize your app
 
 
 On Windows, you can choose how you'll monetize your app—across phones, tablets, PCs, and other devices. We give you a number of ways to make money with your app and the services it delivers. All you need to do is choose the one that works best for you:

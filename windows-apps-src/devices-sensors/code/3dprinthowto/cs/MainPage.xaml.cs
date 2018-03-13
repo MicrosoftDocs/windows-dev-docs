@@ -1,8 +1,8 @@
-﻿//<Snippet3DPrintNamespace>
+﻿// <Snippet3DPrintNamespace>
 using Windows.Graphics.Printing3D;
-//</Snippet3DPrintNamespace>
+// </Snippet3DPrintNamespace>
 
-//<SnippetOtherNamespaces>
+// <SnippetOtherNamespaces>
 using System;
 using Windows.Storage;
 using Windows.Storage.Pickers;
@@ -10,7 +10,7 @@ using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-//</SnippetOtherNamespaces>
+// </SnippetOtherNamespaces>
 
 using System.IO;
 using System.Threading.Tasks;
@@ -30,18 +30,18 @@ namespace _3DPrintHowTo
     public sealed partial class MainPage : Page
     {
 
-        //<SnippetDeclareVars>
+        // <SnippetDeclareVars>
         private Print3DTask printTask;
         private StorageFile file;
         private Printing3D3MFPackage package = new Printing3D3MFPackage();
-        //</SnippetDeclareVars>
+        // </SnippetDeclareVars>
 
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        //<SnippetFileLoad>
+        // <SnippetFileLoad>
         private async void OnLoadClick(object sender, RoutedEventArgs e) {
 
             FileOpenPicker openPicker = new FileOpenPicker();
@@ -57,9 +57,9 @@ namespace _3DPrintHowTo
             if (file == null) {
                 return;
             }
-            //</SnippetFileLoad>
+            // </SnippetFileLoad>
 
-            //<SnippetFileCheck>
+            // <SnippetFileCheck>
             // if user loaded a non-3mf file type
             if (file.FileType != ".3mf") {
 
@@ -82,9 +82,9 @@ namespace _3DPrintHowTo
                 OutputTextBlock.Text = file.Name + " loaded as file";
             }
         }
-        //</SnippetFileCheck>
+        // </SnippetFileCheck>
 
-        //<SnippetRepairModel>
+        // <SnippetRepairModel>
         private async void OnFixClick(object sender, RoutedEventArgs e) {
 
             // read the loaded file's data as a data stream
@@ -96,17 +96,17 @@ namespace _3DPrintHowTo
             // use Printing3DModel's repair function
             OutputTextBlock.Text = "repairing model";
             var data = model.RepairAsync();
-            //</SnippetRepairModel>
+            // </SnippetRepairModel>
 
-            //<SnippetSaveModel>
+            // <SnippetSaveModel>
             // save model to this class' Printing3D3MFPackage
             OutputTextBlock.Text = "saving model to 3MF package";
             await package.SaveModelToPackageAsync(model);
 
         }
-        //</SnippetSaveModel>
+        // </SnippetSaveModel>
 
-        //<SnippetRegisterMyTaskRequested>
+        // <SnippetRegisterMyTaskRequested>
         private async void OnPrintClick(object sender, RoutedEventArgs e) {
 
             // get a reference to this class' Print3DManager
@@ -114,43 +114,43 @@ namespace _3DPrintHowTo
 
             // register the method 'MyTaskRequested' to the Print3DManager's TaskRequested event
             myManager.TaskRequested += MyTaskRequested;
-            //</SnippetRegisterMyTaskRequested>
+            // </SnippetRegisterMyTaskRequested>
 
-            //<SnippetShowDialog>
+            // <SnippetShowDialog>
             // show the 3D print dialog
             OutputTextBlock.Text = "opening print dialog";
             var result = await Print3DManager.ShowPrintUIAsync();
-            //</SnippetShowDialog>
+            // </SnippetShowDialog>
 
-            //<SnippetDeregisterMyTaskRequested>
+            // <SnippetDeregisterMyTaskRequested>
             // remove the print task request after dialog is shown            
             myManager.TaskRequested -= MyTaskRequested;
         }
-        //</SnippetDeregisterMyTaskRequested>
+        // </SnippetDeregisterMyTaskRequested>
         
         // task handling (event response): sets up the class' printTask object.
 
-        //<SnippetMyTaskTitle>
+        // <SnippetMyTaskTitle>
         private void MyTaskRequested(Print3DManager sender, Print3DTaskRequestedEventArgs args) {
-            //</SnippetMyTaskTitle>
+            // </SnippetMyTaskTitle>
 
-            //<SnippetSourceHandler>           
+            // <SnippetSourceHandler>           
             // this delegate handles the API's request for a source package
             Print3DTaskSourceRequestedHandler sourceHandler = delegate (Print3DTaskSourceRequestedArgs sourceRequestedArgs) {
                 sourceRequestedArgs.SetSource(package);
             };
-            //</SnippetSourceHandler>
+            // </SnippetSourceHandler>
 
-            //<SnippetCreateTask>
+            // <SnippetCreateTask>
             // the Print3DTaskRequest ('Request'), a member of 'args', creates a Print3DTask to be sent down the pipeline.
             printTask = args.Request.CreateTask("Print Title", "Default", sourceHandler);
-            //</SnippetCreateTask>
+            // </SnippetCreateTask>
 
-            //<SnippetOptional>
+            // <SnippetOptional>
             // optional events to handle
             printTask.Completed += Task_Completed; 
             printTask.Submitting += Task_Submitting;
-            //</SnippetOptional>
+            // </SnippetOptional>
         }
         
 

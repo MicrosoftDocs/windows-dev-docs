@@ -14,10 +14,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
 
-//<SnippetForegroundUsing>
+// <SnippetForegroundUsing>
 using Windows.ApplicationModel.Background;
 using Windows.Storage;
-//</SnippetForegroundUsing>
+// </SnippetForegroundUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,11 +28,11 @@ namespace MediaProcessingTriggerWin10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetForegroundMembers>
+        // <SnippetForegroundMembers>
         MediaProcessingTrigger mediaProcessingTrigger;
         string backgroundTaskBuilderName = "TranscodingBackgroundTask";
         BackgroundTaskRegistration taskRegistration;
-        //</SnippetForegroundMembers>
+        // </SnippetForegroundMembers>
 
         public MainPage()
         {
@@ -43,7 +43,7 @@ namespace MediaProcessingTriggerWin10
             PickFilesToTranscode();
  
         }
-        //<SnippetPickFilesToTranscode>
+        // <SnippetPickFilesToTranscode>
         private async void PickFilesToTranscode()
         {
             var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -78,9 +78,9 @@ namespace MediaProcessingTriggerWin10
             ApplicationData.Current.LocalSettings.Values["InputFileName"] = source.Path;
             ApplicationData.Current.LocalSettings.Values["OutputFileName"] = destination.Path;
         }
-        //</SnippetPickFilesToTranscode>
+        // </SnippetPickFilesToTranscode>
 
-        //<SnippetRegisterBackgroundTask>
+        // <SnippetRegisterBackgroundTask>
         private void RegisterBackgroundTask()
         {
             // New a MediaProcessingTrigger
@@ -107,11 +107,11 @@ namespace MediaProcessingTriggerWin10
 
             return;
         }
-        //</SnippetRegisterBackgroundTask>
+        // </SnippetRegisterBackgroundTask>
 
         
 
-        //<SnippetLaunchBackgroundTask>
+        // <SnippetLaunchBackgroundTask>
         private async void LaunchBackgroundTask()
         {
             var success = true;
@@ -147,22 +147,22 @@ namespace MediaProcessingTriggerWin10
             }
 
         }
-        //</SnippetLaunchBackgroundTask>
+        // </SnippetLaunchBackgroundTask>
 
-        //<SnippetOnProgress>
+        // <SnippetOnProgress>
         private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
         {
             string progress = "Progress: " + args.Progress + "%";
             Debug.WriteLine(progress);
         }
-        //</SnippetOnProgress>
+        // </SnippetOnProgress>
 
-        //<SnippetOnCompleted>
+        // <SnippetOnCompleted>
         private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
         {
             Debug.WriteLine(" background task complete");
         }
-        //</SnippetOnCompleted>
+        // </SnippetOnCompleted>
 
         private void START_Click(object sender, RoutedEventArgs e)
         {

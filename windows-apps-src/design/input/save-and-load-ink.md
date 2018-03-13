@@ -152,7 +152,7 @@ public MainPage()
     }
 ```
 
-> [!NOTE]  
+> [!NOTE]
 > GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method (demonstrated in the next section) does support additional formats for backward compatibility.
 
 ## Load ink strokes from a file

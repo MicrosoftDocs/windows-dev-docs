@@ -13,24 +13,24 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<SnippetUsingCaptureUI>
+// <SnippetUsingCaptureUI>
 using Windows.Media.Capture;
 using Windows.Storage;
-//</SnippetUsingCaptureUI>
+// </SnippetUsingCaptureUI>
 
-//<SnippetUsingSoftwareBitmap>
+// <SnippetUsingSoftwareBitmap>
 using Windows.Storage.Streams;
 using Windows.Graphics.Imaging;
-//</SnippetUsingSoftwareBitmap>
+// </SnippetUsingSoftwareBitmap>
 
-//<SnippetUsingSoftwareBitmapSource>
+// <SnippetUsingSoftwareBitmapSource>
 using Windows.UI.Xaml.Media.Imaging;
-//</SnippetUsingSoftwareBitmapSource>
+// </SnippetUsingSoftwareBitmapSource>
 
-//<SnippetUsingMediaComposition>
+// <SnippetUsingMediaComposition>
 using Windows.Media.Editing;
 using Windows.Media.Core;
-//</SnippetUsingMediaComposition>
+// </SnippetUsingMediaComposition>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -41,18 +41,18 @@ namespace CameraCaptureUIWin10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareMediaComposition>
+        // <SnippetDeclareMediaComposition>
         MediaComposition mediaComposition;
         MediaStreamSource mediaStreamSource;
-        //</SnippetDeclareMediaComposition>
+        // </SnippetDeclareMediaComposition>
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            //<SnippetInitComposition>
+            // <SnippetInitComposition>
             mediaComposition = new MediaComposition();
-            //</SnippetInitComposition>
+            // </SnippetInitComposition>
         }
 
         private void launchCameraUIButtonPhoto_Click(object sender, RoutedEventArgs e)
@@ -72,7 +72,7 @@ namespace CameraCaptureUIWin10
         }
         private async void CapturePhoto()
         {
-            //<SnippetCapturePhoto>
+            // <SnippetCapturePhoto>
             CameraCaptureUI captureUI = new CameraCaptureUI();
             captureUI.PhotoSettings.Format = CameraCaptureUIPhotoFormat.Jpeg;
             captureUI.PhotoSettings.CroppedSizeInPixels = new Size(200, 200); 
@@ -84,24 +84,24 @@ namespace CameraCaptureUIWin10
                 // User cancelled photo capture
                 return;
             }
-            //</SnippetCapturePhoto>
+            // </SnippetCapturePhoto>
 
-            //<SnippetCopyAndDeletePhoto>
+            // <SnippetCopyAndDeletePhoto>
             StorageFolder destinationFolder = 
                 await ApplicationData.Current.LocalFolder.CreateFolderAsync("ProfilePhotoFolder", 
                     CreationCollisionOption.OpenIfExists);
 
             await photo.CopyAsync(destinationFolder, "ProfilePhoto.jpg", NameCollisionOption.ReplaceExisting);
             await photo.DeleteAsync();
-            //</SnippetCopyAndDeletePhoto>
+            // </SnippetCopyAndDeletePhoto>
 
-            //<SnippetSoftwareBitmap>
+            // <SnippetSoftwareBitmap>
             IRandomAccessStream stream = await photo.OpenAsync(FileAccessMode.Read);
             BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
             SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync();
-            //</SnippetSoftwareBitmap>
+            // </SnippetSoftwareBitmap>
 
-            //<SnippetSetImageSource>
+            // <SnippetSetImageSource>
             SoftwareBitmap softwareBitmapBGR8 = SoftwareBitmap.Convert(softwareBitmap,
                     BitmapPixelFormat.Bgra8, 
                     BitmapAlphaMode.Premultiplied);
@@ -110,12 +110,12 @@ namespace CameraCaptureUIWin10
             await bitmapSource.SetBitmapAsync(softwareBitmapBGR8);
 
             imageControl.Source = bitmapSource;
-            //</SnippetSetImageSource>
+            // </SnippetSetImageSource>
 
         }
         public async void CaptureVideo()
         {
-            //<SnippetCaptureVideo>
+            // <SnippetCaptureVideo>
             CameraCaptureUI captureUI = new CameraCaptureUI();
             captureUI.VideoSettings.Format = CameraCaptureUIVideoFormat.Mp4;
 
@@ -126,13 +126,13 @@ namespace CameraCaptureUIWin10
                 // User cancelled photo capture
                 return;
             }
-            //</SnippetCaptureVideo>
+            // </SnippetCaptureVideo>
 
 
-            //<SnippetPlayVideo>
+            // <SnippetPlayVideo>
             mediaPlayerElement.Source = MediaSource.CreateFromStorageFile(videoFile);
             mediaPlayerElement.MediaPlayer.Play();
-            //</SnippetPlayVideo>
+            // </SnippetPlayVideo>
         }
     }
 }

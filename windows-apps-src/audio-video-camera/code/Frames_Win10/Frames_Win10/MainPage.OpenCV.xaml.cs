@@ -30,7 +30,7 @@ namespace Frames_Win10
         private async void InitOpenCVFrameReader()
         {
 
-            //<SnippetOpenCVFrameSourceGroups>
+            // <SnippetOpenCVFrameSourceGroups>
             var frameSourceGroups = await MediaFrameSourceGroup.FindAllAsync();
             var selectedGroupObjects = frameSourceGroups.Select(group =>
                new
@@ -53,9 +53,9 @@ namespace Frames_Win10
             {
                 return;
             }
-            //</SnippetOpenCVFrameSourceGroups>
+            // </SnippetOpenCVFrameSourceGroups>
 
-            //<SnippetOpenCVInitMediaCapture>
+            // <SnippetOpenCVInitMediaCapture>
             mediaCapture = new MediaCapture();
 
             var settings = new MediaCaptureInitializationSettings()
@@ -76,9 +76,9 @@ namespace Frames_Win10
             }
 
             var colorFrameSource = mediaCapture.FrameSources[colorSourceInfo.Id];
-            //</SnippetOpenCVInitMediaCapture>
+            // </SnippetOpenCVInitMediaCapture>
 
-            //<SnippetOpenCVFrameReader>
+            // <SnippetOpenCVFrameReader>
             BitmapSize size = new BitmapSize() // Choose a lower resolution to make the image processing more performant
             {
                 Height = 480,
@@ -92,9 +92,9 @@ namespace Frames_Win10
             _frameRenderer = new FrameRenderer(imageElement);
 
             await mediaFrameReader.StartAsync();
-            //</SnippetOpenCVFrameReader>
+            // </SnippetOpenCVFrameReader>
         }
-        //<SnippetOpenCVFrameArrived>
+        // <SnippetOpenCVFrameArrived>
         private void ColorFrameReader_FrameArrived_OpenCV(MediaFrameReader sender, MediaFrameArrivedEventArgs args)
         {
 
@@ -126,6 +126,6 @@ namespace Frames_Win10
                 }
             }
         }
-        //</SnippetOpenCVFrameArrived>
+        // </SnippetOpenCVFrameArrived>
     }
 }
