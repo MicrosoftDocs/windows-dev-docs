@@ -20,13 +20,7 @@ ms.localizationpriority: medium
 
 Use pop-up animations to show and hide pop-up UI for flyouts or custom pop-up UI elements. Pop-up elements are containers that appear over the app's content and are dismissed if the user taps or clicks outside of the pop-up element.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383)</li>
-<li>[**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)</li>
-</ul>
-</div>
+> **Important APIs**: [**PopInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210383), [**PopupThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969172)
 
 
 ## Do's and don'ts

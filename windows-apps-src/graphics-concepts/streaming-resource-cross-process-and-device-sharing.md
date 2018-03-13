@@ -36,7 +36,7 @@ Shared tile pools can't be resized.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Stencil formats not supported with streaming resources](stencil-formats-not-supported-with-streaming-resources.md)</p></td>
+<td align="left"><p><a href="stencil-formats-not-supported-with-streaming-resources.md">Stencil formats not supported with streaming resources</a></p></td>
 <td align="left"><p>Formats that contain stencil aren't supported with streaming resources.</p></td>
 </tr>
 </tbody>

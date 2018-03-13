@@ -111,19 +111,19 @@ This structure has one instance and contains all the necessary components for re
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Port the shader objects](port-the-shader-config.md)</p></td>
+<td align="left"><p><a href="port-the-shader-config.md">Port the shader objects</a></p></td>
 <td align="left"><p>When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)</p></td>
+<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">Port the vertex buffers and data</a></p></td>
 <td align="left"><p>In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the GLSL](port-the-glsl.md)</p></td>
+<td align="left"><p><a href="port-the-glsl.md">Port the GLSL</a></p></td>
 <td align="left"><p>Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Draw to the screen](draw-to-the-screen.md)</p></td>
+<td align="left"><p><a href="draw-to-the-screen.md">Draw to the screen</a></p></td>
 <td align="left"><p>Finally, we port the code that draws the spinning cube to the screen.</p></td>
 </tr>
 </tbody>

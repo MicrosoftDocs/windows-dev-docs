@@ -22,6 +22,7 @@ This article provides Python code examples that demonstrate how to use the [Micr
 * Commit the app submission.
 
 <span id="create-app-submission" />
+
 ## Create an app submission
 
 This code calls other example classes and functions to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer. To adapt this code for your own use:
@@ -33,6 +34,7 @@ This code calls other example classes and functions to use the Microsoft Store s
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/CreateAndSubmitAppSubmissionExample.py#L1-L74)]
 
 <span id="token" />
+
 ## Obtain an Azure AD access token and invoke the submission API
 
 The following example defines the following classes:
@@ -44,6 +46,7 @@ The following example defines the following classes:
 [!code[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/python/devcenterclient.py#L1-L126)]
 
 <span id="token" />
+
 ## Get app submission listing data
 
 The following example defines helper functions that return JSON-formatted listing data for a new sample app submission.

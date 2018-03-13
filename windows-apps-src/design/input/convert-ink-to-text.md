@@ -274,7 +274,7 @@ Here's this sample in action:
 
 | Before analysis | After analysis |
 | --- | --- |
-| ![Before analysis](images\ink\ink-analysis-raw2-small.png) | ![After analysis](images\ink\ink-analysis-analyzed2-small.png) |
+| ![Before analysis](images/ink/ink-analysis-raw2-small.png) | ![After analysis](images/ink/ink-analysis-analyzed2-small.png) |
 
 ## Constrained handwriting recognition
 

@@ -42,31 +42,31 @@ Don't confuse this concept with the notion of mapping a Direct3D resource for CP
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Mappings are into a tile pool](mappings-are-into-a-tile-pool.md)</p></td>
+<td align="left"><p><a href="mappings-are-into-a-tile-pool.md">Mappings are into a tile pool</a></p></td>
 <td align="left"><p>When a resource is created as a streaming resource, the tiles that make up the resource come from pointing at locations in a tile pool. A tile pool is a pool of memory (backed by one or more allocations behind the scenes - unseen by the application).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Streaming resource creation parameters](streaming-resource-creation-parameters.md)</p></td>
+<td align="left"><p><a href="streaming-resource-creation-parameters.md">Streaming resource creation parameters</a></p></td>
 <td align="left"><p>There are some constraints on the type of Direct3D resources that you can create as a streaming resource.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Tile pool creation parameters](tile-pool-creation-parameters.md)</p></td>
+<td align="left"><p><a href="tile-pool-creation-parameters.md">Tile pool creation parameters</a></p></td>
 <td align="left"><p>Use the parameters in this section to define tile pools when creating a buffer.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Streaming resource cross-process and device sharing](streaming-resource-cross-process-and-device-sharing.md)</p></td>
+<td align="left"><p><a href="streaming-resource-cross-process-and-device-sharing.md">Streaming resource cross-process and device sharing</a></p></td>
 <td align="left"><p>Tile pools can be shared with other processes just like traditional resources. Streaming resources that reference tile pools can't be shared across devices and processes.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Operations available on streaming resources](operations-available-on-streaming-resources.md)</p></td>
+<td align="left"><p><a href="operations-available-on-streaming-resources.md">Operations available on streaming resources</a></p></td>
 <td align="left"><p>This section lists operations that you can perform on streaming resources.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Operations available on tile pools](operations-available-on-tile-pools.md)</p></td>
+<td align="left"><p><a href="operations-available-on-tile-pools.md">Operations available on tile pools</a></p></td>
 <td align="left"><p>Operations on tile pools include resizing a tile pool, offering resources (yielding memory temporarily to the system for the entire tile pool), and reclaiming resources.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[How a streaming resource's area is tiled](how-a-streaming-resource-s-area-is-tiled.md)</p></td>
+<td align="left"><p><a href="how-a-streaming-resource-s-area-is-tiled.md">How a streaming resource's area is tiled</a></p></td>
 <td align="left"><p>When you create a streaming resource, the dimensions, format element size, and number of mipmaps and/or array slices (if applicable) determine the number of tiles that are required to back the entire surface area.</p></td>
 </tr>
 </tbody>

@@ -61,6 +61,7 @@ When a live ad unit is serving test ads, the ad unit’s status shows **Active a
 
 
 <span id="reference_errors"/>
+
 ## Reference errors caused by targeting Any CPU in your project
 
 When using the Microsoft Advertising SDK, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning after adding the reference similar to this one.
@@ -82,6 +83,7 @@ When you create your app packages for store submission (as shown in the followin
 JavaScript/HTML apps must not place elements into the reserved MAX-10 range of z-order. The sole exception is an interrupt overlay, such as an inbound call notification for a Skype app.
 
 <span id="bkmk-ui"/>
+
 ## Do not use borders
 
 Setting border-related properties inherited by the **AdControl** from its parent class will cause the ad placement to be wrong.

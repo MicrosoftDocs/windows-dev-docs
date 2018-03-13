@@ -21,7 +21,7 @@ Most UWP APIs work well on packaged desktop apps. However, some feature areas ar
 <table><tr><th>Feature area</th><th>Details</th><tr>
 <tr><td>Appointments, contacts, and emails</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
 <tr><td>Authentication and user identity</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
-<tr><td>Background tasks</td><td>While packaged apps can register background tasks, only fully UWP apps can run *as* a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
+<tr><td>Background tasks</td><td>While packaged apps can register background tasks, only fully UWP apps can run <i>as</i> a background task. For more information, see the <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">Background task sample on GitHub</a>.</td></tr>
 <tr><td>Bluetooth</td><td>Not all APIs are currently supported for packaged apps.</td></tr>
 <tr><td>Chat and phone calls</td><td>Packaged apps cannot run on mobile until they are fully ported to UWP.</td></tr>
 <tr><td>Contract activation</td><td>Only full UWP apps can be activated by by a contract.</td></tr>

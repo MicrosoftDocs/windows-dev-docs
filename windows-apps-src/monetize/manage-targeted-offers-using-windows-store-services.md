@@ -25,6 +25,7 @@ The targeted offers API is a simple REST API that you can use to get the targete
 For a complete code example that demonstrates all of these steps, see the [code example](#code-example) at the end of this article. The following sections provide more details about each step.
 
 <span id="obtain-a-microsoft-account-token" />
+
 ## Get a Microsoft Account token for the current user
 
 In your app's code, get a Microsoft Account (MSA) token for the current signed-in user. You must pass this token in the ```Authorization``` request header for the Microsoft Store targeted offers API. This token is used by the Store to retrieve the targeted offers that are available for the current user.
@@ -36,6 +37,7 @@ To get the MSA token, use the [WebAuthenticationCoreManager](https://docs.micros
 For more information about getting MSA tokens, see [Web account manager](../security/web-account-manager.md).
 
 <span id="get-targeted-offers" />
+
 ## Get the targeted offers for the current user
 
 After you have an MSA token for the current user, call the GET method of the ```https://manage.devcenter.microsoft.com/v2.0/my/storeoffers/user``` URI to get the available targeted offers for the current user. For more information about this REST method, see [Get targeted offers](get-targeted-offers.md).
@@ -47,6 +49,7 @@ The following example demonstrates how to get the targeted offers for the curren
 [!code-cs[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
 
 <span id="code-example" />
+
 ## Complete code example
 
 The following code example demonstrates the following tasks:

@@ -107,7 +107,7 @@ You may use any combination of render targets slots (up to 8). However, a resour
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Configuring depth-stencil functionality](configuring-depth-stencil-functionality.md)</p></td>
+<td align="left"><p><a href="configuring-depth-stencil-functionality.md">Configuring depth-stencil functionality</a></p></td>
 <td align="left"><p>This section covers the steps for setting up the depth-stencil buffer, and depth-stencil state for the output-merger stage.</p></td>
 </tr>
 </tbody>

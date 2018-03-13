@@ -17,6 +17,7 @@ ms.localizationpriority: medium
 This walkthrough shows how to include interstitial ads in Universal Windows Platform (UWP) apps and games for Windows 10. For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
+
 ## What are interstitial ads?
 
 Unlike standard banner ads, which are confined to a portion of a UI in an app or game, interstitial ads are shown on the entire screen. Two basic forms are frequently used in games.
@@ -33,6 +34,7 @@ We provide two types of interstitial ads to use in your apps and games: **inters
 > The API for interstitial ads does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
 
 <span/>
+
 ## Prerequisites
 
 * Install the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) with Visual Studio 2015 or a later release of Visual Studio. For installation instructions, see [this article](install-the-microsoft-advertising-libraries.md).
@@ -46,6 +48,7 @@ To show interstitial ads in your app, follow the instructions for project type:
 * [C++ (DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
+
 ### XAML/.NET
 
 This section provides C# examples, but Visual Basic and C++ are also supported for XAML/.NET projects. For a complete C# code example, see [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md).
@@ -98,6 +101,7 @@ This section provides C# examples, but Visual Basic and C++ are also supported f
 8.  Build and test your app to confirm it is showing test ads.
 
 <span id="interstitialadshtml10"/>
+
 ### HTML/JavaScript
 
 The following instructions assume you have created a Universal Windows project for JavaScript in Visual Studio and are targeting a specific CPU. For a complete code sample, see [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md).
@@ -152,6 +156,7 @@ The following instructions assume you have created a Universal Windows project f
 9.  Build and test your app to confirm it is showing test ads.
 
 <span id="interstitialadsdirectx10"/>
+
 ### C++ (DirectX Interop)
 
 This sample assumes you have created a C++ **DirectX and XAML App (Universal Windows)** project in Visual Studio and are targeting a specific CPU architecture.
@@ -204,6 +209,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 9. Build and test your app to confirm it is showing test ads.
 
 <span id="release" />
+
 ## Release your app with live ads
 
 1. Make sure your use of interstitial ads in your app follows our [guidelines for interstitial ads](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
@@ -221,6 +227,7 @@ This sample assumes you have created a C++ **DirectX and XAML App (Universal Win
 6.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
 <span id="manage" />
+
 ## Manage ad units for multiple interstitial ad controls in your app
 
 You can use multiple **InterstitialAd** controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.

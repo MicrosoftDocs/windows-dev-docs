@@ -24,6 +24,7 @@ This article provides Python code examples that demonstrate how to use the [Micr
 * [Create a package flight submission](#create-flight-submission)
 
 <span id="token" />
+
 ## Obtain an Azure AD access token
 
 The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) that you can use to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token..
@@ -31,6 +32,7 @@ The following example demonstrates how to [obtain an Azure AD access token](crea
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L1-L20)]
 
 <span id="create-add-on" />
+
 ## Create an add-on
 
 The following example demonstrates how to [create](create-an-add-on.md) and then [delete](delete-an-add-on.md) an add-on.
@@ -38,6 +40,7 @@ The following example demonstrates how to [create](create-an-add-on.md) and then
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 
 <span id="create-package-flight" />
+
 ## Create a package flight
 
 The following example demonstrates how to [create](create-a-flight.md) and then [delete](delete-a-flight.md) a package flight.
@@ -45,6 +48,7 @@ The following example demonstrates how to [create](create-a-flight.md) and then 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L58-L87)]
 
 <span id="create-app-submission" />
+
 ## Create an app submission
 
 The following example shows how to use several methods in the Microsoft Store submission API to create an app submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
@@ -59,6 +63,7 @@ The following example shows how to use several methods in the Microsoft Store su
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
 
 <span id="create-add-on-submission" />
+
 ## Create an add-on submission
 
 The following example shows how to use several methods in the Microsoft Store submission API to create an add-on submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:
@@ -73,6 +78,7 @@ The following example shows how to use several methods in the Microsoft Store su
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
 
 <span id="create-flight-submission" />
+
 ## Create a package flight submission
 
 The following example shows how to use several methods in the Microsoft Store submission API to create a package flight submission. To do this, the code creates a new submission as a clone of the last published submission, and then updates and commits the cloned submission to Windows Dev Center. Specifically, the example performs these tasks:

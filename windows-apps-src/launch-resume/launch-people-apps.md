@@ -117,7 +117,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">**SearchString**</td>
+<td align="left"><b>SearchString</b></td>
 <td align="left"><p>Optional.</p>
 <p>The search string for the contact search information.</p>
 <p>The phone number or the contact name.</p></td>
@@ -146,31 +146,31 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">**ContactId**</td>
+<td align="left"><b>ContactId</b></td>
 <td align="left"><p>Optional.</p>
 <p>Contact Id of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
-<td align="left">**PhoneNumber**</td>
+<td align="left"><b>PhoneNumber</b></td>
 <td align="left"><p>Optional.</p>
 <p>Phone number of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Email**</td>
+<td align="left"><b>Email</b></td>
 <td align="left"><p>Optional.</p>
 <p>Email of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
-<td align="left">**ContactName**</td>
+<td align="left"><b>ContactName</b></td>
 <td align="left"><p>Optional.</p>
 <p>Name of the contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Contact**</td>
+<td align="left"><b>Contact</b></td>
 <td align="left"><p>Optional.</p>
 <p>Contact object.</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
@@ -198,19 +198,19 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">**PhoneNumber**</td>
+<td align="left"><b>PhoneNumber</b></td>
 <td align="left"><p>Optional.</p>
 <p>Phone number of the contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Email**</td>
+<td align="left"><b>Email</b></td>
 <td align="left"><p>Optional.</p>
 <p>Email of the contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**ContactName**</td>
+<td align="left"><b>ContactName</b></td>
 <td align="left"><p>Optional.</p>
 <p>Name of the contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
@@ -238,168 +238,168 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">**Company**</td>
+<td align="left"><b>Company</b></td>
 <td align="left"><p>Optional.</p>
 <p>Company name of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**FirstName**</td>
+<td align="left"><b>FirstName</b></td>
 <td align="left"><p>Optional.</p>
 <p>First name of the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**HomeAddressCity**</td>
+<td align="left"><b>HomeAddressCity</b></td>
 <td align="left"><p>Optional.</p>
 <p>City of the home address.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**HomeAddressCountry**</td>
+<td align="left"><b>HomeAddressCountry</b></td>
 <td align="left"><p>Optional.</p>
 <p>Country of the home address.</p></td>
 
 </tr>
 <tr class="odd">
-<td align="left">**HomeAddressState**</td>
+<td align="left"><b>HomeAddressState</b></td>
 <td align="left"><p>Optional.</p>
 <p>State of the home address.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**HomeAddressStreet**</td>
+<td align="left"><b>HomeAddressStreet</b></td>
 <td align="left"><p>Optional.</p>
 <p>Street of the home address.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**HomeAddressZipCode**</td>
+<td align="left"><b>HomeAddressZipCode</b></td>
 <td align="left"><p>Optional.</p>
 <p>Zip Code of the home address.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**HomePhone**</td>
+<td align="left"><b>HomePhone</b></td>
 <td align="left"><p>Optional.</p>
 <p>Home phone of the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**JobTitle**</td>
+<td align="left"><b>JobTitle</b></td>
 <td align="left"><p>Optional.</p>
 <p>Job title of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**LastName**</td>
+<td align="left"><b>LastName</b></td>
 <td align="left"><p>Optional.</p>
 <p>Last name of the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**MiddleName**</td>
+<td align="left"><b>MiddleName</b></td>
 <td align="left"><p>Optional.</p>
 <p>Middle name of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**MobilePhone**</td>
+<td align="left"><b>MobilePhone</b></td>
 <td align="left"><p>Optional.</p>
 <p>Mobile phone number of the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**Nickname**</td>
+<td align="left"><b>Nickname</b></td>
 <td align="left"><p>Optional.</p>
 <p>Nickname of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**Notes**</td>
+<td align="left"><b>Notes</b></td>
 <td align="left"><p>Optional.</p>
 <p>Notes about the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**OtherEmail**</td>
+<td align="left"><b>OtherEmail</b></td>
 <td align="left"><p>Optional.</p>
 <p>Other Email of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**PersonalEmail**</td>
+<td align="left"><b>PersonalEmail</b></td>
 <td align="left"><p>Optional.</p>
 <p>Personal Email of the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**Suffix**</td>
+<td align="left"><b>Suffix</b></td>
 <td align="left"><p>Optional.</p>
 <p>Suffix of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**Title**</td>
+<td align="left"><b>Title</b></td>
 <td align="left"><p>Optional.</p>
 <p>Title of the contact.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**Website**</td>
+<td align="left"><b>Website</b></td>
 <td align="left"><p>Optional.</p>
 <p>Website of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**WorkAddressCity**</td>
+<td align="left"><b>WorkAddressCity</b></td>
 <td align="left"><p>Optional.</p>
 <p>City of the work address.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**WorkAddressCountry**</td>
+<td align="left"><b>WorkAddressCountry</b></td>
 <td align="left"><p>Optional.</p>
 <p>Country of the work address.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**WorkAddressState**</td>
+<td align="left"><b>WorkAddressState</b></td>
 <td align="left"><p>Optional.</p>
 <p>State of the work address.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**WorkAddressStreet**</td>
+<td align="left"><b>WorkAddressStreet</b></td>
 <td align="left"><p>Optional.</p>
 <p>Street of work address.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**WorkAddressZipCode**</td>
+<td align="left"><b>WorkAddressZipCode</b></td>
 <td align="left"><p>Optional.</p>
 <p>Zip Code of the work address.</p></td>
 
 </tr>
 
 <tr class="odd">
-<td align="left">**WorkEmail**</td>
+<td align="left"><b>WorkEmail</b></td>
 <td align="left"><p>Optional.</p>
 <p>Work Email of the contact.</p></td>
 
 </tr>
 <tr class="even">
-<td align="left">**WorkPhone**</td>
+<td align="left"><b>WorkPhone</b></td>
 <td align="left"><p>Optional.</p>
 <p>Work phone number of the contact.</p></td>
 

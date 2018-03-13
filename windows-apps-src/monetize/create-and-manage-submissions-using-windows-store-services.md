@@ -36,6 +36,7 @@ This API cannot be used with apps or add-ons that use mandatory app updates and 
 
 
 <span id="prerequisites" />
+
 ## Step 1: Complete prerequisites for using the Microsoft Store submission API
 
 Before you start writing code to call the Microsoft Store submission API, make sure that you have completed the following prerequisites.
@@ -57,6 +58,7 @@ Before you start writing code to call the Microsoft Store submission API, make s
   * If you are creating or updating an add-on submission and you need to include an icon, [prepare the icon](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon).
 
 <span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
+
 ### How to associate an Azure AD application with your Windows Dev Center account
 
 Before you can use the Microsoft Store submission API, you must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store submission API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
@@ -73,6 +75,7 @@ Before you can use the Microsoft Store submission API, you must associate an Azu
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
+
 ## Step 2: Obtain an Azure AD access token
 
 Before you call any of the methods in the Microsoft Store submission API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
@@ -97,6 +100,7 @@ After your access token expires, you can refresh it by following the instruction
 For examples that demonstrate how to obtain an access token by using C#, Java, or Python code, see the Microsoft Store submission API [code examples](#code-examples).
 
 <span id="call-the-windows-store-submission-api">
+
 ## Step 3: Use the Microsoft Store submission API
 
 After you have an Azure AD access token, you can call methods in the Microsoft Store submission API. The API includes many methods that are grouped into scenarios for apps, add-ons, and package flights. To create or update submissions, you typically call multiple methods in the Microsoft Store submission API in a specific order. For information about each scenario and the syntax of each method, see the articles in the following table.
@@ -111,6 +115,7 @@ After you have an Azure AD access token, you can call methods in the Microsoft S
 | Package flights | Get, create, or delete package flights for your apps, and then get, create, or delete submissions for the package flights. For more information about these methods, see the following articles: <ul><li>[Manage package flights](manage-flights.md)</li><li>[Manage package flight submissions](manage-flight-submissions.md)</li></ul> |
 
 <span id="code-samples"/>
+
 ## Code examples
 
 The following articles provide detailed code examples that demonstrate how to use the Microsoft Store submission API in several different programming languages:

@@ -50,19 +50,19 @@ Direct3D provides services to compress surfaces that are used for texturing 3D m
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Opaque and 1-bit alpha textures](opaque-and-1-bit-alpha-textures.md)</p></td>
+<td align="left"><p><a href="opaque-and-1-bit-alpha-textures.md">Opaque and 1-bit alpha textures</a></p></td>
 <td align="left"><p>Texture format BC1 is for textures that are opaque or have a single transparent color.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Textures with alpha channels](textures-with-alpha-channels.md)</p></td>
+<td align="left"><p><a href="textures-with-alpha-channels.md">Textures with alpha channels</a></p></td>
 <td align="left"><p>There are two ways to encode texture maps that exhibit more complex transparency. In each case, a block that describes the transparency precedes the 64-bit block already described. The transparency is either represented as a 4x4 bitmap with 4 bits per pixel (explicit encoding), or with fewer bits and linear interpolation that is analogous to what is used for color encoding.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Block compression](block-compression.md)</p></td>
+<td align="left"><p><a href="block-compression.md">Block compression</a></p></td>
 <td align="left"><p>Block compression is a lossy texture-compression technique for reducing texture size and memory footprint, giving a performance increase. A block-compressed texture can be smaller than a texture with 32-bits per color.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compressed texture formats](compressed-texture-formats.md)</p></td>
+<td align="left"><p><a href="compressed-texture-formats.md">Compressed texture formats</a></p></td>
 <td align="left"><p>This section contains information about the internal organization of compressed texture formats. You do not need these details to use compressed textures, because you can use Direct3D functions for conversion to and from compressed formats. However, this information is useful if you want to operate on compressed surface data directly.</p></td>
 </tr>
 </tbody>

@@ -50,7 +50,7 @@ Learn how other developers have implemented cloud solutions in their games.
         <th>Learn more</th>
     </tr>
     <tr>
-        <td>[Tencent Games](https://www.tencent.com)</td>
+        <td><a href="https://www.tencent.com">Tencent Games</a></td>
         <td>_Tencent Games_ has a developed an innovative solution using Azure Service Fabric enabling traditional PC games to be delivered as a service. Their Cloud Game Solution uses a ‘thin client + rich cloud’ model running workloads as microservices in the backend.</td>
         <td>
             <ul>
@@ -69,8 +69,8 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td>[343 Industries](https://www.halowaypoint.com/)</td>
-        <td>_Halo 5: Guardians_ implemented [Halo: Spartan Companies](https://www.halowaypoint.com/spartan-companies) as its social gameplay platform by using Azure Cosmos DB (via DocumentDB API), which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
+        <td><a href="https://www.halowaypoint.com/">343 Industries</a></td>
+        <td>_Halo 5: Guardians_ implemented <a href="https://www.halowaypoint.com/spartan-companies">Halo: Spartan Companies</a> as its social gameplay platform by using Azure Cosmos DB (via DocumentDB API), which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
         <td>
             <ul>
                 <li>Scalable data-tier to handle groups creation/management for multiplayer gameplay
@@ -86,7 +86,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td>[Illyriad Games](http://web.ageofascent.com/)</td>
+        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games created _Age of Ascent_, a massively multiplayer online (MMO) epic 3D space game that can be played on devices that have modern browsers. So this game can be played on PCs, laptops, mobile phones and other mobile devices without plug-ins. The game uses ASP.NET Core, HTML5, WebGL, and Azure.</td>
         <td>
             <ul>
@@ -105,7 +105,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td>[Next Games](http://www.nextgames.com/)</td>
+        <td><a href="http://www.nextgames.com/">Next Games</a></td>
         <td>Next Games is the creator of _The Walking Dead: No Man's Land_ video game which is based on AMC's original series. The Walking Dead game used Azure as the backend. It had 1,000,000 downloads in the opening weekend and within the first week, the game became #1 iPhone & iPad Free App in the U.S. App Store, #1 Free App in 12 countries, and #1 Free Game in 13 countries.
         </td>
         <td>
@@ -125,7 +125,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
     </tr>
     <tr>
-        <td>[Pixel Squad](http://www.crimecoast.com/)</td>
+        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad developed _Crime Coast_ using Unity game engine and Azure. _Crime Coast_ is a social strategy game available on the Android, iOS and Windows platform. Azure Blob storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
         </td>
         <td>

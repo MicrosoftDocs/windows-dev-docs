@@ -1,11 +1,11 @@
----
+﻿---
 author: jnHs
 Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: Create your app by reserving a name
 keywords: windows 10, uwp, name reservation, app name, app names, names, product name, naming
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 01/22/2018
+ms.date: 3/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,14 +14,15 @@ ms.localizationpriority: high
 
 # Create your app by reserving a name
 
+The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. Each reserved name (sometimes referred to as your app's *title*) must be unique throughout the Microsoft Store.
 
-The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for [choosing a great name for your app](#choosing-your-apps-name). Each reserved name must be unique throughout the Microsoft Store.
+You can reserve a name for your app even if you haven't started to build your app yet. We recommend doing it as soon as possible, so that nobody else can use the name. 
 
 When you [upload your app's packages](upload-app-packages.md), the [**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-1-displayname) value must match the name that you reserved for your app. If you use Microsoft Visual Studio to create your app's package, this attribute will be filled in for you.
 
 ## Create your app by reserving a new name
 
-Reserving a name is the first step in creating an app in the dashboard. You can do this even if you haven't started to build your app yet. We recommend doing it as soon as possible, so that nobody else can use the name.
+Reserving a name is the first step in creating an app in the dashboard. 
 
 1.  From the **Overview** page, click **Create a new app**.
 2.  In the text box, enter the name that you want to use, and then select **Check availability**. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
@@ -32,7 +33,7 @@ The name is now reserved for you, and you can start working on your [submission]
 > [!NOTE]
 > You might find that you can't reserve a name, even though you don't see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but hasn't submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
 
-After you reserve a name, you have one year to submit that app. If you don't submit it within the year, the name reservation will expire, and another developer may be able to use that name for an app. You may encounter an error if you try to submit an app under a name which you have let expire.
+ After you reserve a name, you have one year to submit that app. If you don't submit it within the year, the name reservation will expire, and another developer may be able to use that name for an app. You may encounter an error if you try to submit an app under a name which you have let expire.
 
 > [!NOTE]
 > If you have a Windows Phone app that you created in the older Windows Phone dashboard, and you never reserved a name for it, you will have to do so in order to upload .appx packages for it, or to [view app identity details](view-app-identity-details.md) specific to .appx packages. Reserving a unique name also prevents anyone else from reserving that name for themselves. However, if you don't reserve a name, you can still manage and submit the app for your Windows Phone 8.x customers.

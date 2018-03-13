@@ -41,6 +41,7 @@ These methods have the following URIs.
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Gets the delivery line specified by *lineId*.  |
 
 <span/> 
+
 ### Header
 
 | Header        | Type   | Description         |
@@ -49,11 +50,13 @@ These methods have the following URIs.
 | Tracking ID   | GUID   | Optional. An ID that tracks the call flow.                                  |
 
 <span/>
+
 ### Request body
 
 The POST and PUT methods require a JSON request body with the required fields of a [Delivery line](#line) object and any additional fields you want to set or change.
  
 <span/>
+
 ### Request examples
 
 The following example demonstrates how to call the POST method to create a delivery line.
@@ -90,6 +93,7 @@ Authorization: Bearer <your access token>
 ```
 
 <span/> 
+
 ## Response
 
 These methods return a JSON response body with a [Delivery line](#line) object that contains information about the delivery line that was created, updated, or retrieved. The following example demonstrates a response body for these methods.
@@ -128,6 +132,7 @@ These methods return a JSON response body with a [Delivery line](#line) object t
 ```
 
 <span id="line"/>
+
 ## Delivery line object
 
 The request and response bodies for these methods contain the following fields. This table shows which fields are read-only (meaning that they cannot be changed in the PUT method) and which fields are required in the request body for the POST or PUT methods.

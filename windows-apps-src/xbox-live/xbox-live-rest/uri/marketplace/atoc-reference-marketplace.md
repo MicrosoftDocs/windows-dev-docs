@@ -14,13 +14,13 @@ keywords: xbox live, xbox, games, uwp, windows 10, xbox one
 
 
 # Marketplace URIs
- 
+
 This section provides detail about Universal Resource Identifier (URI) addresses and associated Hypertext Transport Protocol (HTTP) methods from Xbox Live Services for *marketplace* services, also known as Entertainment Discovery Services (EDS).
- 
+
 Only games running on an Xbox 360, on a Windows Phone device, or on Xbox.com can use this service.
- 
+
 The domains for these URIs are eds.xboxlive.com and inventory.xboxlive.com.
- 
+
 <a id="ID4EPB"></a>
 
  
@@ -30,7 +30,7 @@ The domains for these URIs are eds.xboxlive.com and inventory.xboxlive.com.
 
 &nbsp;&nbsp;Accesses the set of inventory currently associated with the provided user.
 
-[/inventory/consumables/{itemID}](uri-inventoryconsumablesitemurl.md)
+[/users/me/consumables/{itemID}](uri-inventoryconsumablesitemurl.md)
 
 &nbsp;&nbsp;Accesses the full set of details for a specific consumable inventory item.
 
@@ -44,7 +44,7 @@ The domains for these URIs are eds.xboxlive.com and inventory.xboxlive.com.
 
 [/media/{marketplaceId}/browse](uri-medialocalebrowse.md)
 
-&nbsp;&nbsp;Allows browsing for items within a single media group. 
+&nbsp;&nbsp;Allows browsing for items within a single media group.
 
 [/media/{marketplaceId}/contentRating](uri-medialocalecontentrating.md)
 
@@ -92,26 +92,24 @@ The domains for these URIs are eds.xboxlive.com and inventory.xboxlive.com.
 
 [/media/{marketplaceId}/singleMediaGroupSearch](uri-medialocalesinglemediagroupsearch.md)
 
-&nbsp;&nbsp;Allows search for items within a single media group. 
- 
+&nbsp;&nbsp;Allows search for items within a single media group.
+
 <a id="ID4EFD"></a>
 
- 
+
 ## See also
- 
+
 <a id="ID4EHD"></a>
 
- 
-##### Parent 
+
+##### Parent
 
 [Universal Resource Identifier (URI) Reference](../atoc-xboxlivews-reference-uris.md)
 
-  
+
 <a id="ID4ERD"></a>
 
- 
-##### Further Information 
+
+##### Further Information
 
 [Additional Reference](../../additional/atoc-xboxlivews-reference-additional.md)
-
-   

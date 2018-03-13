@@ -54,8 +54,9 @@ linear_svc.fit(X, y)
 
 # To convert scikit-learn models, we need to specify the input feature's name and type for our converter. 
 # The following line means we have a 2-D float feature vector, and its name is "input" in ONNX.
+# The automatic code generator (mlgen) uses the name parameter to generate class names.
 from winmltools import convert_sklearn
-linear_svc_onnx = convert_sklearn(linear_svc, input_features=[('input', 'float', 2)])
+linear_svc_onnx = convert_sklearn(linear_svc, name='LinearSVC', input_features=[('input', 'float', 2)])    
 
 # Now, we save the ONNX model into binary format.
 from winmltools.utils import save_model
@@ -74,9 +75,9 @@ save_text(linear_svc_onnx, 'linear_svc.txt')
 from sklearn.svm import LinearSVR
 linear_svr = LinearSVR()
 linear_svr.fit(X, y)
-linear_svr_onnx = convert_sklearn(linear_svr, input_features=[('input', 'float', 2)])
+linear_svr_onnx = convert_sklearn(linear_svr, name='LinearSVR', input_features=[('input', 'float', 2)])   
 ~~~
-Users can replace `LinearSVC` with other scikit-learn models such as `RandomForestClassifier`.
+Users can replace `LinearSVC` with other scikit-learn models such as `RandomForestClassifier`. Please note that the [automatic code generator](overview.md#automatic-interface-code-generation) uses the `name` parameter to generate class names and variables. If `name` is not provided, then a GUID is generated, which will not comply with variable naming conventions for languages like C++/C#. 
 
 ## Scikit-learn pipelines
 Next, we show how scikit-learn pipelines can be converted into ONNX.
@@ -103,8 +104,9 @@ pipeline.fit(X, y)
 
 # Now, we convert the scikit-learn pipeline into ONNX format. 
 # Compared to the previous example, notice that the specified feature dimension becomes 3.
+# The automatic code generator (mlgen) uses the name parameter to generate class names.
 from winmltools import convert_sklearn
-pipeline_onnx = convert_sklearn(linear_svc, name='my model', input_features=[('input', 'float', 3)])
+pipeline_onnx = convert_sklearn(linear_svc, name='NormalizerLinearSVC', input_features=[('input', 'float', 3)])   
 
 # We can print the fresh ONNX model.
 print(pipeline_onnx)
@@ -132,7 +134,8 @@ another_pipeline.fit(X_heter, y)
 
 # Now, we convert, save, and load the converted model. 
 # For heterogeneous feature vectors, we need to seperately specify their types for all homogeneous segments.
-another_pipeline_onnx = convert_sklearn(another_pipeline, name='my model', input_features=[('input', 'float', 2), ('another_input', 'int64', 1)])
+# The automatic code generator (mlgen) uses the name parameter to generate class names.
+another_pipeline_onnx = convert_sklearn(another_pipeline, name='OneHotLinearSVC', input_features=[('input', 'float', 2), ('another_input', 'int64', 1)])
 save_model(another_pipeline_onnx, 'another_pipeline.onnx')
 from winmltools.utils import load_model
 loaded_onnx_model = load_model('another_pipeline.onnx')
@@ -149,7 +152,8 @@ from coremltools.models.utils import load_spec
 model_coreml = load_spec('example.mlmodel')
 from winmltools import convert_coreml
 # Convert it!
-model_onnx = convert_coreml(model_coreml)
+# The automatic code generator (mlgen) uses the name parameter to generate class names.
+model_onnx = convert_coreml(model_coreml, name='ExampleModel')   
 ~~~
 The `model_onnx` is an ONNX [ModelProto](https://github.com/onnx/onnxmltools/blob/0f453c3f375c1ae928b83a4c7909c82c013a5bff/onnxmltools/proto/onnx-ml.proto#L176) object. We can save it in two different formats.
 ~~~python
@@ -201,8 +205,9 @@ output {
 ~~~
 In this case, both the input and output are 720x720 BGR-image. Our next step is to convert the Core ML model with WinMLTools.
 ~~~python
+# The automatic code generator (mlgen) uses the name parameter to generate class names.
 from onnxmltools import convert_coreml
-model_onnx = convert_coreml(model_coreml)
+model_onnx = convert_coreml(model_coreml, name='FNSCandy')    
 ~~~
 An alternative method to view the model input and output formats in ONNX, is to use the following command:
 ~~~python

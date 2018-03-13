@@ -60,7 +60,7 @@ UWP apps can listen for the following pointer events:
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208964"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>Occurs when a pointer is canceled by the platform. This can occur in the following circumstances:</p>
 <ul>
 <li>Touch pointers are canceled when a pen is detected within range of the input surface.</li>
@@ -71,7 +71,7 @@ UWP apps can listen for the following pointer events:
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>Occurs when another UI element captures the pointer, the pointer was released, or another pointer was programmatically captured.</p>
 <div class="alert">
 <strong>Note</strong>  There is no corresponding pointer capture event.
@@ -81,7 +81,7 @@ UWP apps can listen for the following pointer events:
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208968"><strong>PointerEntered</strong></a></p></td>
 <td align="left"><p>Occurs when a pointer enters the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
 <ul>
 <li>Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.</li>
@@ -90,7 +90,7 @@ UWP apps can listen for the following pointer events:
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208969"><strong>PointerExited</strong></a></p></td>
 <td align="left"><p>Occurs when a pointer leaves the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
 <ul>
 <li>Touch requires a finger contact and fires this event when the pointer moves out of the bounding area of the element.</li>
@@ -99,7 +99,7 @@ UWP apps can listen for the following pointer events:
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208970"><strong>PointerMoved</strong></a></p></td>
 <td align="left"><p>Occurs when a pointer changes coordinates, button state, pressure, tilt, or contact geometry (for example, width and height) within the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
 <ul>
 <li>Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.</li>
@@ -108,16 +108,16 @@ UWP apps can listen for the following pointer events:
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208971"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.</p>
 <p>[<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) must be called from the handler for this event.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208972"><strong>PointerReleased</strong></a></p></td>
 <td align="left"><p>Occurs when the pointer indicates a release action (such as a touch up, mouse button up, pen up, or touchpad button up) within the bounding area of an element or, if the pointer is captured, outside the bounding area.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208973"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>Occurs when the mouse wheel is rotated.</p>
 <p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) event.</p></td>
 </tr>

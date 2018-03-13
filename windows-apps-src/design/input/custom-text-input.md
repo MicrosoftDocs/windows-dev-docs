@@ -20,13 +20,7 @@ ms.localizationpriority: medium
 
 The core text APIs in the [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](https://msdn.microsoft.com/library/windows/desktop/ms629032) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)</li>
-<li>[**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)</li>
-</ul>
-</div>
+> **Important APIs**: [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238), [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 ## Why use core text APIs?
 

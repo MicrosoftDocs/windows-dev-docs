@@ -31,20 +31,20 @@ When starting the process of porting your graphics architecture from OpenGL ES 2
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Plan your port from OpenGL ES 2.0 to Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
+<td align="left"><p><a href="compare-opengl-es-2-0-api-design-to-directx.md">Plan your port from OpenGL ES 2.0 to Direct3D</a></p></td>
 <td align="left"><p>If you are porting a game from the iOS or Android platforms, you have probably made a significant investment in OpenGL ES 2.0. When preparing to move your graphics pipeline codebase to Direct3D 11 and the Windows Runtime, there are a few things you should consider before you start.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compare EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md)</p></td>
+<td align="left"><p><a href="moving-from-egl-to-dxgi.md">Compare EGL code to DXGI and Direct3D</a></p></td>
 <td align="left"><p>The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D](porting-uniforms-and-attributes.md)</p></td>
+<td align="left"><p><a href="porting-uniforms-and-attributes.md">Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D</a></p></td>
 <td align="left"><p>During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compare the OpenGL ES 2.0 shader pipeline to Direct3D](change-your-shader-loading-code.md)</p></td>
-<td align="left"><p>Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.</p></td>
+<td align="left"><p><a href="change-your-shader-loading-code.md">Compare the OpenGL ES 2.0 shader pipeline to Direct3D</a></p></td>
+<td align="left"><p>Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, <a href="https://msdn.microsoft.com/library/windows/desktop/hh404575"><strong>ID3D11Device1</strong></a> and <a href="https://msdn.microsoft.com/library/windows/desktop/hh404598"><strong>ID3D11DeviceContext1</strong></a>. This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.</p></td>
 </tr>
 </tbody>
 </table>

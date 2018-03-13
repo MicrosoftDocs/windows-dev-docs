@@ -29,6 +29,7 @@ Keep in mind that all Dev Center users must have an active account in [an Azure 
 
 
 <span id="users" />
+
 ## Add users to your Dev Center account
 
 To add users to your Dev Center account, go to the **Users** page in **Account settings** and select **Add users.** You must be signed in with a Manager account for the Azure AD tenant that you want to work in. 
@@ -57,6 +58,7 @@ If you are signed in with a Manager account which also has [global administrator
 -   **Invite outside users**: Send email invites to users who are not currently in your organization's directory. They will be invited to access your Dev Center account, and a new [guest user](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) account will be created for them in your Azure AD tenant.
 
 <span id="new-user" />
+
 ### Create new users
 
 > [!IMPORTANT]
@@ -73,6 +75,7 @@ If you are signed in with a Manager account which also has [global administrator
 
 
 <span id="email" />
+
 ### Invite outside users
 
 > [!IMPORTANT]
@@ -99,6 +102,7 @@ If one of your users needs to change their password they can do so themselves if
     >  Be sure to print or copy this info and provide it to the user, as you won't be able to access the temporary password after you leave this page.
 
 <span id="groups" />
+
 ## Add groups to your Dev Center account
 
 You can add a group from your organization's directory to your Dev Center account. When you do so, every user who is a member of that group will be able to access it, with the permissions associated with the group's assigned role.
@@ -129,6 +133,7 @@ If you want to grant Dev Center access to a brand new group, you can create a ne
 
 
 <span id="azure-ad-applications" />
+
 ## Add Azure AD applications to your Dev Center account
 
 You can allow applications or services that are part of your organization's Azure AD to access your Dev Center account.
@@ -165,6 +170,7 @@ After you add or create an Azure AD application, you can return to the **Users**
 > If you intend to use the REST APIs provided by the [Microsoft Store services](../monetize/using-windows-store-services.md), you will need the Tenant ID and Client ID values shown on this page to obtain an Azure AD access token that you can use to authenticate the calls to services.   
 
 <span id="manage-keys" />
+
 ### Manage keys for an Azure AD application
 
 If your Azure AD application reads and writes data in Microsoft Azure AD, it will need a key. You can create keys for an Azure AD application by editing its info in Dev Center. You can also remove keys that are no longer needed.
@@ -181,6 +187,7 @@ If your Azure AD application reads and writes data in Microsoft Azure AD, it wil
 4.  If you want to create more keys, click **Add another key**.
 
 <span id="edit" />
+
 ## Edit a user, group, or Azure AD application
 
 After you've added users, groups, and/or Azure AD applications to your Dev Center account, you can make changes to their account info. 
@@ -205,6 +212,7 @@ As an account owner, you can view the detailed browsing history for any addition
 On the **Users** page, click the link shown under **Last activity** for the user whose browsing history you’d like to review. You'll be able to view the URLs for all pages that the user visited in the last 30 days.
 
 <span id="remove" />
+
 ## Remove users, groups, and Azure AD applications
 
 To remove a user, group, or Azure AD application from your Dev Center account, click the **Remove** link that appears by their name on the **Users** page. After confirming that you want to remove it, that user, group, or Azure AD application will no longer be able to access to your Dev Center account (unless you add it again later).

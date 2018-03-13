@@ -28,7 +28,7 @@ This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting sce
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
+<td align="left"><p><a href="port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md">How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1</a></p></td>
 <td align="left"><p>For the first porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.</p></td>
 </tr>
 </tbody>

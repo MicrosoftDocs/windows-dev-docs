@@ -242,15 +242,15 @@ Try:
 
 1. Creating a new `size=2` game.
 
-    ![Start a new memory game from the Swagger UI](images\swagger_new.png)
+    ![Start a new memory game from the Swagger UI](images/swagger_new.png)
 
 2. Guessing a couple of values.
 
-    ![Guess a card from the Swagger UI](images\swagger_guess.png)
+    ![Guess a card from the Swagger UI](images/swagger_guess.png)
 
 3. Checking the game board as the game progresses.
 
-    ![Check the game state from the Swagger UI](images\swagger_game.png)
+    ![Check the game state from the Swagger UI](images/swagger_game.png)
 
 If everything looks good, your API service is ready to host on Azure! If you're running into problems, try commenting out the following lines in \data\game.js.
 

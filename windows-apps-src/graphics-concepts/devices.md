@@ -53,23 +53,23 @@ Because the behavior of the software and reference devices provided with Direct3
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Device types](device-types.md)</p></td>
+<td align="left"><p><a href="device-types.md">Device types</a></p></td>
 <td align="left"><p>Direct3D device types include Hardware Abstraction Layer (hal) devices and the reference rasterizer.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Windowed vs. full-screen mode](windowed-vs--full-screen-mode.md)</p></td>
+<td align="left"><p><a href="windowed-vs--full-screen-mode.md">Windowed vs. full-screen mode</a></p></td>
 <td align="left"><p>Direct3D applications can run in either of two modes: windowed or full-screen. In <em>windowed mode</em>, the application shares the available desktop screen space with all running applications. In <em>full-screen mode</em>, the window that the application runs in covers the entire desktop, hiding all running applications (including your development environment).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Lost devices](lost-devices.md)</p></td>
+<td align="left"><p><a href="lost-devices.md">Lost devices</a></p></td>
 <td align="left"><p>A Direct3D device can be in either an operational state or a lost state. The <em>operational</em> state is the normal state of the device in which the device runs and presents all rendering as expected. The device makes a transition to the <em>lost</em> state when an event, such as the loss of keyboard focus in a full-screen application, causes rendering to become impossible.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Swap chains](swap-chains.md)</p></td>
+<td align="left"><p><a href="swap-chains.md">Swap chains</a></p></td>
 <td align="left"><p>A swap chain is a collection of buffers that are used for displaying frames to the user. Each time an application presents a new frame for display, the first buffer in the swap chain takes the place of the displayed buffer. This process is called <em>swapping</em> or <em>flipping</em>.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Introduction to rasterization rules](introduction-to-rasterization-rules.md)</p></td>
+<td align="left"><p><a href="introduction-to-rasterization-rules.md">Introduction to rasterization rules</a></p></td>
 <td align="left"><p>Often, the points specified for vertices do not precisely match the pixels on the screen. When this happens, Direct3D applies triangle rasterization rules to decide which pixels apply to a given triangle.</p></td>
 </tr>
 </tbody>

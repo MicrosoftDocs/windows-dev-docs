@@ -4,7 +4,7 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: Manage account settings and profile info
 description: You can view and update your developer account settings and profile info in the Account settings section of the unified Windows Dev Center dashboard.
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 03/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,6 +14,9 @@ ms.localizationpriority: high
 # Manage account settings and profile info
 
 You can view and update your developer account settings and profile info in the **Account settings** section of the [Windows Dev Center dashboard](using-the-windows-dev-center-dashboard.md). 
+
+> [!NOTE]
+> Notification preferences (such as which type of notifications to receive and how to receive them) can be managed in **Message Center** (which you can access by selecting the message icon near the top of your dashboard).
 
 ## Account settings
 

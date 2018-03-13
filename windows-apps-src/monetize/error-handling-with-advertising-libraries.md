@@ -17,6 +17,7 @@ ms.localizationpriority: medium
 The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx),  [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.aspx) classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs. Your app code can handle this event and examine the [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) and [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) properties of the event args object to help determine the cause of the error.
 
 <span id="bkmk-dotnet"/>
+
 ## XAML apps
 
 To handle ad-related errors in a XAML app:
@@ -46,6 +47,7 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for a walkthrough that demonstrates **AdControl** error handling in XAML and C#.
 
 <span id="bkmk-javascript"/>
+
 ## JavaScript/HTML apps
 
 To handle **ErrorOccur** errors in a JavaScript app:

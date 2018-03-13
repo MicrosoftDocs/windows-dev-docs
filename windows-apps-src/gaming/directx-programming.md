@@ -29,31 +29,31 @@ This section provides information about developing UWP games with DirectX.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Getting started](directx-getting-started.md)</p></td>
+<td align="left"><p><a href="directx-getting-started.md">Getting started</a></p></td>
 <td align="left"><p>Introduction to DirectX programming.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Samples](directx-samples.md)</p></td>
+<td align="left"><p><a href="directx-samples.md">Samples</a></p></td>
 <td align="left"><p>Learn DirectX through game samples.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Fundamentals](directx-fundamentals.md)</p></td>
+<td align="left"><p><a href="directx-fundamentals.md">Fundamentals</a></p></td>
 <td align="left"><p>Explains DirectX basic programming concepts.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Add features](directx-add-features.md)</p></td>
+<td align="left"><p><a href="directx-add-features.md">Add features</a></p></td>
 <td align="left"><p>Describes how to add various game features into your DirectX game.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Optimization and advanced topics](directx-optimization-and-advanced-topics.md)</p></td>
+<td align="left"><p><a href="directx-optimization-and-advanced-topics.md">Optimization and advanced topics</a></p></td>
 <td align="left"><p>Learn about optimization and other advanced topics.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Port DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)</p></td>
+<td align="left"><p><a href="porting-your-directx-9-game-to-windows-store.md">Port DirectX 9 to UWP</a></p></td>
 <td align="left"><p>Learn how to port your DirectX 9 game to UWP.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port OpenGL to Direct3D](port-from-opengl-es-2-0-to-directx-11-1.md)</p></td>
+<td align="left"><p><a href="port-from-opengl-es-2-0-to-directx-11-1.md">Port OpenGL to Direct3D</a></p></td>
 <td align="left"><p>Learn how to port your OpenGL ES 2.0 game to Direct3D 11.</p></td>
 </tr>
 </tbody>

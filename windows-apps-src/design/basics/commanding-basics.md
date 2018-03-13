@@ -52,33 +52,33 @@ Using the right elements to enable command interactions can make the difference 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Buttons<br/><br/>
+<td align="left"><b>Buttons</b><br/><br/>
 	<img src="../controls-and-patterns/images/controls/button.png" alt="button" /></td>
-<td align="left">[Button](../controls-and-patterns/buttons.md)</td>
+<td align="left"><a href="../controls-and-patterns/buttons.md">Button</a></td>
 <td align="left">Triggers an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.</td>
 </tr>
 <tr class="even">
 <td align="left">Lists<br/><br/>
 	<img src="../controls-and-patterns/images/controls/combo-box-open.png" alt="drop down list" /></td>
-<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left"><a href="../controls-and-patterns/lists.md">drop-down list, list box, list view and grid view</a></td>
 <td align="left">Presents items in a interactive list or a grid. Usually used for many options or display items.</td>
 </tr>
 <tr class="odd">
 <td align="left">Selection controls<br/><br/>
 	<img src="../controls-and-patterns/images/controls/radio-button.png" alt="radio button" /></td>
-<td align="left">[check box](../controls-and-patterns/checkbox.md), [radio button](../controls-and-patterns/radio-button.md), [toggle switch](../controls-and-patterns/toggles.md)</td>
+<td align="left"><a href="../controls-and-patterns/checkbox.md">check box</a>, <a href="../controls-and-patterns/radio-button.md">radio button</a>, <a href="../controls-and-patterns/toggles.md">toggle switch</a></td>
 <td align="left">Lets users choose from a few options, such as when completing a survey or configuring app settings.</td>
 </tr>
 <tr class="even">
 <td align="left">Date and time pickers<br/><br/>
 	<img src="../controls-and-patterns/images/controls/calendar-date-picker-open.png" alt="date picker" /></td>
-<td align="left">[calendar date picker, calendar view, date picker, time picker](../controls-and-patterns/date-and-time.md)</td>
+<td align="left"><a href="../controls-and-patterns/date-and-time.md">calendar date picker, calendar view, date picker, time picker</a></td>
 <td align="left">Enables users to view and modify date and time info, such as when creating an event or setting an alarm.</td>
 </tr>
 <tr class="odd">
 <td align="left">Predictive text entry<br/><br/>
 	<img src="../controls-and-patterns/images/controls/auto-suggest-box.png" alt="autosuggest box" /></td>
-<td align="left">[Auto-suggest box](../controls-and-patterns/auto-suggest-box.md)</td>
+<td align="left"><a href="../controls-and-patterns/auto-suggest-box.md">Auto-suggest box</a></td>
 <td align="left">Provides suggestions as users type, such as when entering data or performing queries.</td>
 </tr>
 </tbody>
@@ -117,7 +117,7 @@ An autosuggest box on the Maps app canvas.
 </tr>
 
 <tr class="even">
-<td align="left" style="vertical-align: top;">[Command bar](../controls-and-patterns/app-bars.md)
+<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/app-bars.md">Command bar</a>
 <p><img src="../controls-and-patterns/images/controls_appbar_icons.png" alt="Example of a command bar with icons" /></p></td>
 <td align="left" style="vertical-align: top;"> Command bars help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen. 
 </td>
@@ -129,7 +129,7 @@ A command bar at the top of the Maps app.
 </tr>
 
 <tr class="odd">
-<td align="left" style="vertical-align: top;">[Menus and context menus](../controls-and-patterns/menus.md)
+<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/menus.md">Menus and context menus</a>
 <p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
 <td align="left" style="vertical-align: top;">Sometimes it is more efficient to group multiple commands into a command menu to save space. Menus and context menus display a list of commands or options when the user requests them.
 <p>Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands. Context menus are usually prompted by a user right-clicking.</p>
@@ -157,7 +157,7 @@ Here are some ways to provide feedback in your app.
 </tr>
 
 <tr class="odd">
-<td align="left" style="vertical-align: top;"> [Command bar](../controls-and-patterns/app-bars.md)
+<td align="left" style="vertical-align: top;"> <a href="../controls-and-patterns/app-bars.md">Command bar</a>
 <p><img src="../controls-and-patterns/images/controls_appbar_icons.png" alt="Example of a command bar with icons" /></p>
 </td>
 <td align="left" style="vertical-align: top;"> The content area of the command bar is an intuative place to communicate status to users if they'd like to see feedback.
@@ -168,7 +168,7 @@ Here are some ways to provide feedback in your app.
 </tr>
 
 <tr class="even">
-<td align="left" style="vertical-align: top;">[Flyout](../controls-and-patterns/dialogs.md)
+<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/dialogs.md">Flyout</a>
 <p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
 <td align="left" style="vertical-align: top;">
 A lightweight contextual popup that can be dismissed by tapping or clicking somewhere outside the flyout.
@@ -179,7 +179,7 @@ A lightweight contextual popup that can be dismissed by tapping or clicking some
 </tr>
 
 <tr class="odd">
-<td align="left" style="vertical-align: top;">[Dialog controls](../controls-and-patterns/dialogs.md)
+<td align="left" style="vertical-align: top;"><a href="../controls-and-patterns/dialogs.md">Dialog controls</a>
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
 <td align="left" style="vertical-align: top;">Dialogs are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user.
 <p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#when-to-confirm-or-undo-actions) section.</p>

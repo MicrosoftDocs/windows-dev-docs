@@ -70,6 +70,7 @@ Use content transition animations ([**ContentThemeTransition**](https://msdn.mic
  
  
 <span id="fade-in-out-and-crossfade"/>
+
 ### Fade in/out, and crossfade
 
 Use fade in and fade out animations to show or hide transient UI or controls. In XAML these are represented as [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302). One example is in an app bar in which new controls can appear due to user interaction. Another example is a transient scroll bar or panning indicator that is faded out after no user input has been detected for some amount of time. Apps should also use the fade in animation when they transition from a placeholder item to the final item as content loads dynamically.
@@ -77,6 +78,7 @@ Use fade in and fade out animations to show or hide transient UI or controls. In
 Use a crossfade animation to smooth the transition when an item's state is changing; for example, when the app refreshes the current contents of a view. The XAML animation library does not supply a dedicated crossfade animation (no equivalent for [**crossFade**](https://msdn.microsoft.com/library/windows/apps/BR212661)), but you can achieve the same result using [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) and [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) with overlapped timing.
 
 <span id="pointer-up-down"/>
+
 ### Pointer up/down
 
 Use the [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) and [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) animations to give the user feedback for a successful tap or click on a tile. For example, when a user clicks or taps down on a tile, the pointer down animation is played. Once the click or tap has been released, the pointer up animation is played.
@@ -86,11 +88,13 @@ Use the [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows
 Use the reposition animations ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) or [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) to move an element into a new position. For example, moving the headers in an items control uses the reposition animation.
 
 <span id="show-hide-popup"/>
+
 ### Show/hide popup
 
 Use the [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) and [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) when you show and hide a [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) or similar contextual UI on top of the current view. [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) is a theme transition that's useful feedback if you want to light dismiss a popup.
 
 <span id="show-hide-edge-ui"/>
+
 ### Show/hide edge UI
 
 Use the [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) animation to slide small, edge-based UI into and out of view. For example, use these animations when you show a custom app bar at the top or bottom of the screen or a UI surface for errors and warnings at the top of the screen.
@@ -106,6 +110,7 @@ There's also a separate [**ReorderThemeTransition**](https://msdn.microsoft.com/
 Note that these animations are included in the default [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) templates so you do not need to manually add these animations if you are already using these controls.
 
 <span id="drag-drop"/>
+
 ### Drag/drop
 
 Use the drag animations ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173), [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) and drop animation ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) to give visual feedback when the user drags or drops an item.

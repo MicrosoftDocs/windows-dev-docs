@@ -84,6 +84,7 @@ Authorization: Bearer <your access token>
 | TotalCount | inumber | The total number of rows in the data result for the query.        |
 
 <span id="error-detail-values"/>
+
 ### Error detail values
 
 Elements in the *Value* array contain the following values.

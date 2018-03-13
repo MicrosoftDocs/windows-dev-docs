@@ -21,6 +21,7 @@ We provide [test ad unit values](#test-ad-units) that you can use during testing
 After you finish testing your UWP app and you are ready to submit it to Windows Dev Center, you must [create a live ad unit](#live-ad-units) from the [In-app ads](../publish/in-app-ads.md) page in the Windows Dev Center dashboard and update your app code to use the application ID and ad unit ID values for this ad unit.
 
 <span id="test-ad-units" />
+
 ## Test ad units
 
 While you are developing your app, use the test application ID and ad unit ID values from this section to see how your app renders ads during testing.
@@ -39,6 +40,7 @@ While you are developing your app, use the test application ID and ad unit ID va
 * Application ID:  ```d25517cb-12d4-4699-8bdc-52040c712cab```
 
 <span id="live-ad-units" />
+
 ## Live ad units
 
 To get a live ad unit from the Dev Center dashboard and use it in your app:
@@ -60,6 +62,7 @@ To get a live ad unit from the Dev Center dashboard and use it in your app:
     * If your app shows native ads, pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor. For more information, see [Native ads](../monetize/native-ads.md).
 
 <span id="manage" />
+
 ## Manage ad units for multiple ad controls in your app
 
 You can use multiple banner, interstitial, and native ad controls in a single app. In this scenario, we recommend that you assign a different ad unit to each control. Using different ad units for each control enables you to separately [configure the mediation settings](../publish/in-app-ads.md#mediation) and get discrete [reporting data](../publish/advertising-performance-report.md) for each control. This also enables our services to better optimize the ads we serve to your app.

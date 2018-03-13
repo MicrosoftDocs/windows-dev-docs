@@ -34,11 +34,11 @@ A *depth buffer* stores depth information to control which areas of polygons are
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Depth buffers](depth-buffers.md)</p></td>
+<td align="left"><p><a href="depth-buffers.md">Depth buffers</a></p></td>
 <td align="left"><p>A <em>depth buffer</em>, or <em>z-buffer</em>, stores depth information to control which areas of polygons are rendered rather than hidden from view.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Stencil buffers](stencil-buffers.md)</p></td>
+<td align="left"><p><a href="stencil-buffers.md">Stencil buffers</a></p></td>
 <td align="left"><p>A <em>stencil buffer</em> is used to mask pixels in an image, to produce special effects. The mask controls whether the pixel is drawn or not. These special effects include compositing; decaling; dissolves, fades, and swipes; outlines and silhouettes; and two-sided stencil.</p></td>
 </tr>
 </tbody>

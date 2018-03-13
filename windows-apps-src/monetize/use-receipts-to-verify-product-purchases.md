@@ -88,6 +88,7 @@ Here's an example of that validation process. This code runs in a .NET Framework
 [!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
+
 ## Element and attribute descriptions for a receipt
 
 This section describes the elements and attributes in a receipt.
@@ -112,6 +113,7 @@ The root element of this file is the **Receipt** element, which contains informa
 |  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |  |
 
 <span id="appreceipt" />
+
 ### AppReceipt element
 
 This element contains purchase information for the current app.
@@ -126,6 +128,7 @@ This element contains purchase information for the current app.
 |  **PurchaseDate**  |    Date when the app was acquired.          |  |
 
 <span id="productreceipt" />
+
 ### ProductReceipt element
 
 This element contains information about an in-app purchase for the current app.

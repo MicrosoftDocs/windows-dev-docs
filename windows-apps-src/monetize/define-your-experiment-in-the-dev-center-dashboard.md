@@ -20,6 +20,7 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
 
 <span id="get-an-api-key" />
 <span id="create-an-experiment" />
+
 ## Create your experiment
 
 1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
@@ -43,6 +44,7 @@ For a walkthrough that demonstrates the end-to-end process of creating and runni
 > Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
+
 ### Define the remote variables and variations for your experiment
 
 Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#terms) and [variations](run-app-experiments-with-a-b-testing.md#terms) for your experiment.
@@ -56,6 +58,7 @@ Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#term
 4. Edit the variable values for each unique variation in the experiment (that is, the variations other than the control variation).
 
 <span id="save-and-activate-your-experiment" />
+
 ### Save and activate your experiment
 
 When you finish entering the required fields for your experiment, click **Save** to save your experiment.
@@ -66,6 +69,7 @@ If you are satisfied with the parameters of your experiment and you are ready to
 > A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
 
 <span id="test_experiments"/>
+
 ## Create an experiment for internal testing
 
 You might want to test your experiment with a controlled audience (for example, a set of internal testers) and confirm that all of the variations are working as expected before you activate the experiment for your customers. You can accomplish this by creating an experiment that has the **Editable experiment** option selected.

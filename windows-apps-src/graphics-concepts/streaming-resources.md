@@ -36,19 +36,19 @@ ms.localizationpriority: medium
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[The need for streaming resources](the-need-for-streaming-resources.md)</p></td>
+<td align="left"><p><a href="the-need-for-streaming-resources.md">The need for streaming resources</a></p></td>
 <td align="left"><p>Streaming resources are needed so GPU memory isn't wasted storing regions of surfaces that won't be accessed, and to tell the hardware how to filter across adjacent tiles.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Creating streaming resources](creating-streaming-resources.md)</p></td>
+<td align="left"><p><a href="creating-streaming-resources.md">Creating streaming resources</a></p></td>
 <td align="left"><p>Streaming resources are created by specifying a flag when you create a resource, indicating that the resource is a streaming resource.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Pipeline access to streaming resources](pipeline-access-to-streaming-resources.md)</p></td>
+<td align="left"><p><a href="pipeline-access-to-streaming-resources.md">Pipeline access to streaming resources</a></p></td>
 <td align="left"><p>Streaming resources can be used in shader resource views (SRV), render target views (RTV), depth stencil views (DSV) and unordered access views (UAV), as well as some bind points where views aren't used, such as vertex buffer bindings.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Streaming resources features tiers](streaming-resources-features-tiers.md)</p></td>
+<td align="left"><p><a href="streaming-resources-features-tiers.md">Streaming resources features tiers</a></p></td>
 <td align="left"><p>Direct3D supports streaming resources in three tiers of capabilities.</p></td>
 </tr>
 </tbody>

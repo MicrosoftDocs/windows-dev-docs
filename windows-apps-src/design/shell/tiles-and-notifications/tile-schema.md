@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 
 The following describes all of the properties and elements within tile content.
 
-If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](../tiles-and-notifications\adaptive-tiles-schema.md).
+If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](../tiles-and-notifications/adaptive-tiles-schema.md).
 
 [TileContent](#tilecontent)
 * [TileVisual](#tilevisual)
@@ -281,7 +281,7 @@ Supported on Small and Medium. Enables an iconic tile template, where you can ha
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Icon** | [TileBasicImage](#tilebasicimage) | true | At minimum, to support both Desktop and Mobile, Small and Medium tiles, provide a square aspect ratio image with a resolution of 200x200, PNG format, with transparency and no color other than white. For more info see: [Special Tile Templates](../tiles-and-notifications\special-tile-templates-catalog.md). |
+| **Icon** | [TileBasicImage](#tilebasicimage) | true | At minimum, to support both Desktop and Mobile, Small and Medium tiles, provide a square aspect ratio image with a resolution of 200x200, PNG format, with transparency and no color other than white. For more info see: [Special Tile Templates](../tiles-and-notifications/special-tile-templates-catalog.md). |
 
 
 ## TileBindingContentContact
@@ -330,5 +330,5 @@ A basic text element used on various special templates.
 
 ## Related topics
 
-* [Quickstart: Send a local tile notification](../tiles-and-notifications\sending-a-local-tile-notification.md)
+* [Quickstart: Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
 * [Notifications library on GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)

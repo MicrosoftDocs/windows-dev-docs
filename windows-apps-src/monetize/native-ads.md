@@ -105,6 +105,7 @@ Follow these instructions to integrate a native ad into your app and confirm tha
 10.  Compile and run the app to see it with a test ad.
 
 <span id="release" />
+
 ## Release your app with live ads
 
 After you confirm that your native ad implementation successfully shows a test ad, follow these instructions to configure your app to show real ads and submit your updated app to the Store.

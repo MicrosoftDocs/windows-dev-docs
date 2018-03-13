@@ -41,6 +41,7 @@ The following example implements a command line program that calls the other exa
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
 
 <span id="clientconfiguration" />
+
 ## ClientConfiguration helper class
 
 The sample app uses the ```ClientConfiguration``` helper class to pass Azure Active Directory data and app data to each of the example methods that use the Microsoft Store submission API.
@@ -49,6 +50,7 @@ The sample app uses the ```ClientConfiguration``` helper class to pass Azure Act
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
 <span id="create-app-submission" />
+
 ## Create an app submission
 
 The following example implements a class that uses several methods in the Microsoft Store submission API to update an app submission. The ```RunAppSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunAppSubmissionUpdateSample``` method performs these tasks:
@@ -64,6 +66,7 @@ The following example implements a class that uses several methods in the Micros
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
+
 ## Create an add-on submission
 
 The following example implements a class that uses several methods in the Microsoft Store submission API to create a new add-on submission. The ```RunInAppProductSubmissionCreateSample``` method in the class performs these tasks:
@@ -78,6 +81,7 @@ The following example implements a class that uses several methods in the Micros
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
 
 <span id="update-add-on-submission" />
+
 ## Update an add-on submission
 
 The following example implements a class that uses several methods in the Microsoft Store submission API to update an existing add-on submission. The ```RunInAppProductSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunInAppProductSubmissionUpdateSample``` method performs these tasks:
@@ -92,6 +96,7 @@ The following example implements a class that uses several methods in the Micros
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
 <span id="create-flight-submission" />
+
 ## Create a package flight submission
 
 The following example implements a class that uses several methods in the Microsoft Store submission API to update a package flight submission. The ```RunFlightSubmissionUpdateSample``` method in the class creates a new submission as a clone of the last published submission, and then it updates and commits the cloned submission to Windows Dev Center. Specifically, the ```RunFlightSubmissionUpdateSample``` method performs these tasks:
@@ -107,6 +112,7 @@ The following example implements a class that uses several methods in the Micros
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
 
 <span id="ingestionclient" />
+
 ## IngestionClient helper class
 
 The ```IngestionClient``` class provides helper methods that are used by other methods in the sample app to perform the following tasks:

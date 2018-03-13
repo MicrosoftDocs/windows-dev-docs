@@ -64,6 +64,7 @@ Here we provide a checklist you can use to ensure that your app is accessible.
     For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
