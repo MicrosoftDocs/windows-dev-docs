@@ -39,7 +39,7 @@ For computer vision scenarios, Windows ML simplifies and optimizes the use of im
 ## How to develop with Windows ML
 
 ### System requirements
-To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
+To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
 
 ### ONNX models
 To use Windows ML, you'll need a pre-trained machine learning model in the [Open Neural Network Exchange (ONNX)](https://onnx.ai) format. Windows ML supports the v1.0 release of the ONNX format, which allows developers to use models produced by different training frameworks. There are converter tools for many frameworks and libraries, and ONNX models are already natively supported in many training frameworks. For a list of publicly available ONNX models, see [ONNX Models](https://github.com/onnx/models) on GitHub. 
