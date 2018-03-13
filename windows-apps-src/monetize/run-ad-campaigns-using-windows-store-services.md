@@ -28,6 +28,7 @@ You can alternatively create and manage ad campaigns using the Windows Dev Cente
 > Any developer with a Windows Dev Center account can use the Microsoft Store promotions API to manage ad campaigns for their apps. Media agencies can also request access to this API to run ad campaigns on behalf of their advertisers. If you are a media agency who wants to know more about this API or request access to it, send your request to storepromotionsapi@microsoft.com.
 
 <span id="prerequisites" />
+
 ## Step 1: Complete prerequisites for using the Microsoft Store promotions API
 
 Before you start writing code to call the Microsoft Store promotions API, make sure that you have completed the following prerequisites.
@@ -51,6 +52,7 @@ To associate an Azure AD application with your Dev Center account and retrieve t
 4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see [Manage keys for an Azure AD application](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys).
 
 <span id="obtain-an-azure-ad-access-token" />
+
 ## Step 2: Obtain an Azure AD access token
 
 Before you call any of the methods in the Microsoft Store promotions API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
@@ -73,6 +75,7 @@ For the *tenant\_id* value in the POST URI and the *client\_id* and *client\_sec
 After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
 <span id="call-the-windows-store-promotions-api" />
+
 ## Step 3: Call the Microsoft Store promotions API
 
 After you have an Azure AD access token, you are ready to call the Microsoft Store promotions API. You must pass the access token to the **Authorization** header of each method.

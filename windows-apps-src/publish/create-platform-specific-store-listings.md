@@ -4,11 +4,11 @@ Description: If you've provided packages targeting different operating systems, 
 title: Create platform-specific Store listings
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 3/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, customize, listing, description, earlier
 ms.localizationpriority: high
 ---
 
@@ -37,11 +37,11 @@ After selecting this option, you'll be prompted to choose from the targeted OS v
 
 You can use your default Store listing as a starting point, which will bring over the applicable text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
 
-After you click **Continue**, your **Store listing** page will now include a section for the platform-specific Store listing you've just created. This section will include its own set of fields for **Description** (required), **Release notes**, **Screenshots**, **App tile icon**, **App features**, and **Additional system requirements**. Make sure to enter info into each field where you want to display info in the custom Store listing, even if it's the same info as in your default Store listing. If you leave any of these fields blank, no info will appear for that field in the custom Store listing.
+After you click **Continue**, your **Store listing** page will now include a section for the platform-specific Store listing you've just created. This section will include its own set of fields for **Description** (required), **What's new in this version**, **Screenshots**, **App tile icon**, **App features**, and **Additional system requirements**. Make sure to enter info into each field where you want to display info in the custom Store listing, even if it's the same info as in your default Store listing. If you leave any of these fields blank, no info will appear for that field in the custom Store listing.
 
 
 > [!IMPORTANT]
-> The [Shared fields](create-app-store-listings.md#shared-fields) of the Store listing can't be customized for different OS versions.
+> The fields in the [Additional information](create-app-store-listings.md#additional-information) section of the Store listing can't be customized for different OS versions.
 > 
 > Additionally, because some of the fields in the default [Store listing](create-app-store-listings.md) page only apply to customers on Windows 10, you won't see all of the same options when creating a platform-specific Store listing. For example, you can't add trailers to a platform-specific Store listing, because trailers are only shown to customers on Windows 10, version 1607 or later. 
 

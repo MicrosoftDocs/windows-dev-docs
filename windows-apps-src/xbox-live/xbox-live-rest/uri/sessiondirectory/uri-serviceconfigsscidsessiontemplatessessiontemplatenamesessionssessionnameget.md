@@ -35,7 +35,7 @@ This HTTP/REST method reads a session document for the specified name and retrie
 The wire format for the GET method is shown below.
 
 ```cpp
-GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/mysess HTTP/1.1
+GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001 HTTP/1.1
       Content-Type: application/json
 
 ```
@@ -51,7 +51,7 @@ GET /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 | --- | --- | --- | --- |
 | scid| GUID| Service configuration identifier (SCID). Part 1 of the session identifier.|
 | sessionTemplateName| string| Name of the current instance of the session template. Part 2 of the session identifier.|
-| sessionName| string| Name of the session. Part 3 of the session identifier.|
+| sessionName| GUID| Unique ID of the session. Part 3 of the session identifier.|
 
 <a id="ID4EZB"></a>
 

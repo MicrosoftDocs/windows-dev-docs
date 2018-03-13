@@ -19,14 +19,7 @@ ms.localizationpriority: medium
 
 Learn how to select an installed language to use for speech recognition.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li> [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)</li>
-<li>[**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)</li>
-<li>[**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)</li>
-</ul>
-</div>
+> **Important APIs**: [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251), [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250), [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
 Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.

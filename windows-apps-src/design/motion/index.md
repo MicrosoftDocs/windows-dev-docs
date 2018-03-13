@@ -72,43 +72,43 @@ Here, a visual parallax effect moves different objects at different rates when t
         <th align="left">Description</th>
     </tr>
     <tr>
-        <td>[Add and delete](motion-list.md)
+        <td><a href="motion-list.md">Add and delete</a>
         </td>
         <td>List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
         </td>
     </tr>
     <tr>
-        <td>[Connected animation](connected-animation.md)
+        <td><a href="connected-animation.md">Connected animation</a>
         </td>
         <td>Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views. This helps the user maintain their context and provides continuity between the views. In a connected animation, an element appears to “continue” between two views during a change in UI content, flying across the screen from its location in the source view to its destination in the new view. This emphasizes the common content in between the views and creates a beautiful and dynamic effect as part of a transition. 
         </td>
     </tr>
     <tr>
-        <td>[Content transition](content-transition-animations.md)
+        <td><a href="content-transition-animations.md">Content transition</a>
         </td>
         <td>Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
         </td>
     </tr>
     <tr>
-        <td>[Drill](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation)
+        <td><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation">Drill</a>
         </td>
         <td>Use a drill-in animation when a user navigates forward in a logical hierarchy, like from a master list to a detail page. Use a drill-out animation when a user navigates backward in a logical hierarchy, like from a detail page to a master page.
         </td>
     </tr>
     <tr>
-        <td>[Fade](motion-fade.md)
+        <td><a href="motion-fade.md">Fade</a>
         </td>
         <td>Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
         </td>
     </tr>
         <tr>
-        <td>[Parallax](parallax.md)
+        <td><a href="parallax.md">Parallax</a>
         </td>
         <td>A visual parallax effect helps create a feeling of depth, perspective, and movement. It achieves this effect by moving different objects at different rates when the UI scrolls or pans.
         </td>
     </tr> 
     <tr>
-        <td>[Press feedback](motion-pointer.md)
+        <td><a href="motion-pointer.md">Press feedback</a>
         </td>
         <td>Pointer press animations provide users with visual feedback when the user taps on an item. The pointer down animation slightly shrinks and tilts the pressed item, and plays when an item is first tapped. The pointer up animation, which restores the item to its original position, is played when the user releases the pointer.
         </td>

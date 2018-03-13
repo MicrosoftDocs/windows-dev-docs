@@ -42,27 +42,27 @@ It also explains how to create overlay swap chains for devices with the hardware
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Asynchronous programming for games](asynchronous-programming-directx-and-cpp.md)</p></td>
+<td align="left"><p><a href="asynchronous-programming-directx-and-cpp.md">Asynchronous programming for games</a></p></td>
 <td align="left"><p>Understand asynchronous programming and threading with DirectX.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Handle device removed scenarios in Direct3D 11](handling-device-lost-scenarios.md)</p></td>
+<td align="left"><p><a href="handling-device-lost-scenarios.md">Handle device removed scenarios in Direct3D 11</a></p></td>
 <td align="left"><p>Recreate the Direct3D and DXGI device interface chain when the graphics adapter is removed or reinitialized.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Multisampling in UWP apps](multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md)</p></td>
+<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">Multisampling in UWP apps</a></p></td>
 <td align="left"><p>Use multisampling in UWP games built using Direct3D.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Optimize input and rendering loop](optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md)</p></td>
+<td align="left"><p><a href="optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md">Optimize input and rendering loop</a></p></td>
 <td align="left"><p>Reduce input latency and optimize the rendering loop.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Reduce latency with DXGI 1.3 swap chains](reduce-latency-with-dxgi-1-3-swap-chains.md)</p></td>
+<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">Reduce latency with DXGI 1.3 swap chains</a></p></td>
 <td align="left"><p>Use DXGI 1.3 to reduce the effective frame latency.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Swap chain scaling and overlays](multisampling--scaling--and-overlay-swap-chains.md)</p></td>
+<td align="left"><p><a href="multisampling--scaling--and-overlay-swap-chains.md">Swap chain scaling and overlays</a></p></td>
 <td align="left"><p>Create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains to increase the visual quality.</p></td>
 </tr>
 </tbody>

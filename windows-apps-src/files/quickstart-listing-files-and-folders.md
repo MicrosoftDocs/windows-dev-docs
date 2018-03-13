@@ -80,7 +80,7 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 >        return picturesFolder->GetFoldersAsync();
 >    })
 >    // Capture "this" to access m_OutputTextBlock from within the lambda.
->    .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
+>    .then([this, outputString](IVectorView/<StorageFolder^>^ folders)
 >    {        
 >        *outputString += L"Folders:\n";
 >

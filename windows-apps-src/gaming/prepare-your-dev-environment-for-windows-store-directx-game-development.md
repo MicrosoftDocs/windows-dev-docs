@@ -39,15 +39,15 @@ First, you need Visual Studio.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[DirectX game project templates](user-interface.md)</p></td>
+<td align="left"><p><a href="user-interface.md">DirectX game project templates</a></p></td>
 <td align="left"><p>Learn about the templates for creating a UWP and DirectX game.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md)</p></td>
+<td align="left"><p><a href="set-up-visual-studio-for-game-development.md">Visual Studio tools for game programming</a></p></td>
 <td align="left"><p>An overview of DirectX specific tools available in Visual Studio.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Graphics diagnostics tools](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)</p></td>
+<td align="left"><p><a href="use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md">Graphics diagnostics tools</a></p></td>
 <td align="left"><p>Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.</p></td>
 </tr>
 </tbody>

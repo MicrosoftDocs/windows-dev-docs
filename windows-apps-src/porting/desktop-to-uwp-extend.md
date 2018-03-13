@@ -31,7 +31,7 @@ Start with a solution that contains a **Windows Application Packaging Project** 
 
 This image shows an example solution.
 
-![Extend start project](images\desktop-to-uwp\extend-start-project.png)
+![Extend start project](images/desktop-to-uwp/extend-start-project.png)
 
 If your solution doesn't contain a packaging project, see [Package your app by using Visual Studio](desktop-to-uwp-packaging-dot-net.md).
 
@@ -41,29 +41,29 @@ Add a **Blank App (Universal Windows)** to your solution.
 
 This is where you'll build a modern XAML UI or use APIs that run only within a UWP process.
 
-![UWP project](images\desktop-to-uwp\add-uwp-project-to-solution.png)
+![UWP project](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
 In your packaging project, right-click the **Applications** node, and then click **Add Reference**.
 
-![Reference UWP Project](images\desktop-to-uwp\add-uwp-project-reference.png)
+![Reference UWP Project](images/desktop-to-uwp/add-uwp-project-reference.png)
 
 Then, add a reference the UWP project.
 
-![Reference UWP Project](images\desktop-to-uwp\choose-uwp-project.png)
+![Reference UWP Project](images/desktop-to-uwp/choose-uwp-project.png)
 
 Your solution will look something like this:
 
-![Solution with UWP project](images\desktop-to-uwp\uwp-project-reference.png)
+![Solution with UWP project](images/desktop-to-uwp/uwp-project-reference.png)
 
 ### (Optional) Add a Windows Runtime Component
 
 To accomplish some scenarios, you'll have to add code to a Windows Runtime Component.
 
-![runtime component app service](images\desktop-to-uwp\add-runtime-component.png)
+![runtime component app service](images/desktop-to-uwp/add-runtime-component.png)
 
 Then, from your UWP project, add a reference to the runtime component. Your solution will look something like this:
 
-![Runtime Component Reference](images\desktop-to-uwp\runtime-component-reference.png)
+![Runtime Component Reference](images/desktop-to-uwp/runtime-component-reference.png)
 
 Let's take a look at a few things you can do with your UWP projects and runtime components.
 
@@ -75,7 +75,7 @@ For example, with a small amount of XAML markup, you can give users with powerfu
 
 This image shows a VB6 application that opens a XAML-based modern UI that contains a map control.
 
-![adaptive-design](images\desktop-to-uwp\extend-xaml-ui.png)
+![adaptive-design](images/desktop-to-uwp/extend-xaml-ui.png)
 
 ### Have a closer look at this app
 
@@ -113,7 +113,7 @@ Give the protocol a name, provide the name of the executable produced by the UWP
 
 You can also open the **package.appxmanifest** in the designer, choose the **Declarations** tab, and then add the extension there.
 
-![declarations-tab](images\desktop-to-uwp\protocol-properties.png)
+![declarations-tab](images/desktop-to-uwp/protocol-properties.png)
 
 
 
@@ -217,7 +217,7 @@ You add a service that other apps can consume. For example, you can add a servic
 
 Here's a sample that does this.
 
-![adaptive-design](images\desktop-to-uwp\winforms-app-service.png)
+![adaptive-design](images/desktop-to-uwp/winforms-app-service.png)
 
 ### Have a closer look at this app
 
@@ -344,7 +344,7 @@ You can make your desktop application a share target so that users can easily sh
 
 For example, users could choose your app to share pictures from Microsoft Edge, the Photos app. Here's a WPF sample app that has that capability.
 
-![share target](images\desktop-to-uwp\share-target.png)
+![share target](images/desktop-to-uwp/share-target.png)
 
 ### Have a closer look at this app
 
@@ -413,7 +413,7 @@ You add a background task to run code even when the app is suspended. Background
 
 Here's a WPF sample app that registers a background task.
 
-![background task](images\desktop-to-uwp\sample-background-task.png)
+![background task](images/desktop-to-uwp/sample-background-task.png)
 
 The task makes an http request and measures the time that it takes for the request to return a response. Your tasks will likely be much more interesting, but this sample is great for learning the basic mechanics of a background task.
 
@@ -478,15 +478,15 @@ In the manifest designer, open the **package.appxmanifest** file of the UWP proj
 
 In the **Declarations** tab, add a **Background Tasks** declaration.
 
-![Background task option](images\desktop-to-uwp\background-task-option.png)
+![Background task option](images/desktop-to-uwp/background-task-option.png)
 
 Then, choose the desired properties. Our sample uses the **Timer** property.
 
-![Timer property](images\desktop-to-uwp\timer-property.png)
+![Timer property](images/desktop-to-uwp/timer-property.png)
 
 Provide the fully qualified name of the class in your Windows Runtime Component that implements the background task.
 
-![Timer property](images\desktop-to-uwp\background-task-entry-point.png)
+![Timer property](images/desktop-to-uwp/background-task-entry-point.png)
 
 <a id="register-background-task" />
 ### Register the background task

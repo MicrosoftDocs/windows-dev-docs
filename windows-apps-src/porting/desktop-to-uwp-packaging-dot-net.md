@@ -58,7 +58,7 @@ If you plan to publish your app to the [Microsoft Store](https://www.microsoft.c
 
 6. Build the packaging project to ensure that no errors appear.
 
-7. Use the [Create App Packages](..\packaging\packaging-uwp-apps.md) wizard to generate an appxupload file.
+7. Use the [Create App Packages](../packaging/packaging-uwp-apps.md) wizard to generate an appxupload file.
 
    You can upload that file directly to the store.
 

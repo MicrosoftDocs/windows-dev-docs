@@ -76,6 +76,7 @@ These are the possible options for an add-on's content type:
 These fields are optional for all types of add-ons.
 
 <span id="keywords" />
+
 ### Keywords
 
 You have the option to provide up to ten keywords of up to 30 characters each for each add-on you submit. Your app can then query for add-ons that match these words. This feature lets you build screens in your app that can load add-ons without you having to directly specify the product ID in your app's code. You can then change the add-on's keywords anytime, without having to make code changes in your app or submit the app again.
@@ -86,6 +87,7 @@ To query this field, use the [StoreProduct.Keywords](https://docs.microsoft.com/
 > Keywords are not available for use in packages targeting Windows 8 and Windows 8.1.
 
 <span id="custom-developer-data" />
+
 ### Custom developer data
 
 You can enter up to 3000 characters into the **Custom developer data** field (formerly called **Tag**) to provide extra context for your in-app product. Most often, this is in the form of an XML string, but you can enter anything you'd like in this field. Your app can then query this field to read its content (although the app can't edit the data and pass the changes back.)

@@ -55,7 +55,7 @@ This is the summary table of HLSL methods that are changed to support feedback a
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">[HLSL objects](https://msdn.microsoft.com/library/windows/desktop/ff471359)</th>
+<th align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471359">HLSL objects</a> </th>
 <th align="left">Intrinsic methods with feedback option (*) - also has clamp option</th>
 </tr>
 </thead>

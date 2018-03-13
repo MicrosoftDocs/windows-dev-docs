@@ -86,6 +86,7 @@ For instructions and code examples, see [this article](native-ads.md).
 ![addreferences](images/native-ad.png)
 
 <span id="ad-mediation"/>
+
 ## Step 3: Create an ad unit and configure mediation
 
 After you finish testing your app and you are ready to submit it to the Store, create an ad unit on the [In-app ads](../publish/in-app-ads.md) page in the Windows Dev Center dashboard. Then, update your app code to use this ad unit so that your app will receive live ads. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
@@ -101,6 +102,7 @@ After you finish developing your app with ads, you can [submit your updated app]
 After your app is published and available in the Store, you can review your [advertising performance reports](../publish/advertising-performance-report.md) in the dashboard and continue to make changes to your mediation settings to optimize the performance of your ads. Your advertising revenue is included in your [payout summary](../publish/payout-summary.md).
 
 <span id="additional-help" />
+
 ## Additional help
 
 For additional help using the Microsoft Advertising SDK, use the following resources.

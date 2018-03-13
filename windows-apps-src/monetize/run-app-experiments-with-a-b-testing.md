@@ -46,6 +46,7 @@ For the most useful results, we recommend that you follow these recommendations 
 * Run experiments for at least 2 – 4 weeks to gather sufficient data that is statistically significant and actionable.
 
 <span id="terms" />
+
 ## Related terms
 
 |  Term  |  Definition  |

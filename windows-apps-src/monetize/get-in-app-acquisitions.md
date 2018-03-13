@@ -112,6 +112,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 <span id="add-on-acquisition-values" />
+
 ### Add-on acquisition values
 
 Elements in the *Value* array contain the following values.

@@ -21,12 +21,7 @@ ms.localizationpriority: medium
 
 This article lists the recommended fonts for UWP apps. These fonts are guaranteed to be available in all Windows 10 editions that support UWP apps.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**FontFamily property**](https://msdn.microsoft.com/library/windows/apps/br209655)</li>
-</ul>
-</div>
+> **Important APIs**: [**FontFamily property**](https://msdn.microsoft.com/library/windows/apps/br209655)
 
 The [UWP typography guide](typography.md) recommends that apps use the Segoe UI font, and although Segoe UI is a great choice for most apps, you don't have to use it for everything. You might use other fonts for certain scenarios, such as reading, or when displaying text in certain non-English languages. 
  
@@ -78,7 +73,7 @@ Sans-serif fonts are a great choice for headings and UI elements.
 <tr class="even">
 <td style="font-family: Selawik;">Selawik</td>
 <td align="left">Regular, Semilight, Light, Bold, Semibold</td>
-<td align="left">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI. [Get Selawik on GitHub.](https://github.com/Microsoft/Selawik)</td>
+<td align="left">An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don’t want to bundle Segoe UI. <a href="https://github.com/Microsoft/Selawik">Get Selawik on GitHub.</a></td>
 </tr>
 
 <tr class="even">
@@ -145,7 +140,7 @@ Serif fonts are good for presenting large amounts of text.
 <tr class="odd">
 <td align="left">Segoe MDL2 Assets</td>
 <td align="left">Regular</td>
-<td align="left">User-interface font for app icons. For more info, see the [Segoe MDL2 assets article](segoe-ui-symbol-font.md).</td>
+<td align="left">User-interface font for app icons. For more info, see the <a href="segoe-ui-symbol-font.md">Segoe MDL2 assets article</a>.</td>
 </tr>
 <tr class="even">
 <td align="left">Segoe UI Emoji</td>

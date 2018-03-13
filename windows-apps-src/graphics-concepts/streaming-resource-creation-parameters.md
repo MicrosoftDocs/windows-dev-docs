@@ -65,7 +65,7 @@ The initial contents of tile pool memory are undefined.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Address space available for streaming resources](address-space-available-for-streaming-resources.md)</p></td>
+<td align="left"><p><a href="address-space-available-for-streaming-resources.md">Address space available for streaming resources</a></p></td>
 <td align="left"><p>This section specifies the virtual address space that is available for streaming resources.</p></td>
 </tr>
 </tbody>

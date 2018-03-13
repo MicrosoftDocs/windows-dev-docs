@@ -35,6 +35,7 @@ To use these methods, you need to first do the following:
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 <span/> 
+
 ## Request
 
 These methods have the following URIs.
@@ -47,6 +48,7 @@ These methods have the following URIs.
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign``` |  Queries for ad campaigns. See the [Parameters](#parameters) section for the supported query parameters.  |
 
 <span/> 
+
 ### Header
 
 | Header        | Type   | Description         |
@@ -55,6 +57,7 @@ These methods have the following URIs.
 | Tracking ID   | GUID   | Optional. An ID that tracks the call flow.                                  |
 
 <span id="parameters"/> 
+
 ### Parameters
 
 The GET method to query for ad campaigns supports the following optional query parameters.
@@ -69,11 +72,13 @@ The GET method to query for ad campaigns supports the following optional query p
 | label  |  string   | Use this value to return only the ad campaigns that include the specified *label* in the [Campaign](#campaign) object.    |       |    
 
 <span/>
+
 ### Request body
 
 The POST and PUT methods require a JSON request body with the required fields of a [Campaign](#campaign) object and any additional fields you want to set or change.
 
 <span/>
+
 ### Request examples
 
 The following example demonstrates how to call the POST method to create an ad campaign.
@@ -106,6 +111,7 @@ Authorization: Bearer <your access token>
 ```
 
 <span/> 
+
 ## Response
 
 These methods return a JSON response body with one or more [Campaign](#campaign) objects, depending on the method you called. The following example demonstrates a response body for the GET method for a specific campaign.
@@ -136,6 +142,7 @@ These methods return a JSON response body with one or more [Campaign](#campaign)
 ```
 
 <span id="campaign"/>
+
 ## Campaign object
 
 The request and response bodies for these methods contain the following fields. This table shows which fields are read-only (meaning that they cannot be changed in the PUT method) and which fields are required in the request body for the POST method.

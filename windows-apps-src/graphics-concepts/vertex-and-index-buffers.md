@@ -38,11 +38,11 @@ The flexibility of vertex buffers make them ideal staging points for reusing tra
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Introduction to buffers](introduction-to-buffers.md)</p></td>
+<td align="left"><p><a href="introduction-to-buffers.md">Introduction to buffers</a></p></td>
 <td align="left"><p>A buffer resource is a collection of fully typed data, grouped into elements. Buffers store data, such as texture coordinates in a <em>vertex buffer</em>, indexes in an <em>index buffer</em>, shader constants data in a <em>constant buffer</em>, position vectors, normal vectors, or device state.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Index buffers](index-buffers.md)</p></td>
+<td align="left"><p><a href="index-buffers.md">Index buffers</a></p></td>
 <td align="left"><p><em>Index buffers</em> are memory buffers that contain index data, which are integer offsets into vertex buffers, used to render primitives.</p></td>
 </tr>
 </tbody>

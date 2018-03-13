@@ -3,9 +3,9 @@ author: jnHs
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-keywords: checklist
+keywords: checklist, windows, uwp, submission, submit, game, app
 ms.author: wdg-dev-content
-ms.date: 11/22/2017
+ms.date: 3/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -80,20 +80,19 @@ You'll need all the required info for at least one of the languages that your ap
 | Field name                    | Notes                                       | For more info                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **Description**               | Required                                    | [Write a great app description](write-a-great-app-description.md) |
-| **Release notes**             | Optional                                    | [Release notes](create-app-store-listings.md#release-notes)       |
-| **Screenshots**               | Required (at least one screenshot)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
-| **Store logos**               | Optional. App tile icon required for proper display on Windows Phone 8.1 and earlier | [Store logos](app-screenshots-and-images.md#store-logos)             |
-| **Promotional images**        | Recommended                                 | [Promotional images](app-screenshots-and-images.md#promotional-images) |
-| **Xbox images**               | Optional (recommended for proper display on Xbox)                                   | [Xbox images](app-screenshots-and-images.md#xbox-images)              |
-| **Optional promotional images**       | Optional                            | [Optional promotional images](app-screenshots-and-images.md#optional-promotional-images)       |
+| **What's new in this version**   | Optional                                 | [Release notes](create-app-store-listings.md#whats-new-in-this-version)       |
+| **App features**              | Optional                                    | [App features](create-app-store-listings.md#app-features)         |
+| **Screenshots**               | Required (at least one screenshot; four or more recommended)          | [Screenshots](app-screenshots-and-images.md#screenshots)          |
+| **Store logos**               | Recommended; required for some OS versions | [Store logos](app-screenshots-and-images.md#store-logos)             |
+| **Additional art assets**     | Recommended (especially for some OS versions)         | [Additional art assets](app-screenshots-and-images.md#additional-art-assets) |
 | **Trailers**                  | Optional                                    | [Trailers](app-screenshots-and-images.md#trailers)                | 
-| **App features**              | Optional                                    | [App features](create-app-store-listings.md#app-features)             |
-| **Additional system requirements**      | Optional                                    | [Additional system requirements](create-app-store-listings.md#additional-system-requirements) 
+| **Supplemental information**  | Optional                                    | [Supplemental information](create-app-store-listings.md#supplemental-information) 
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |
 | **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-store-listings.md#copyright-and-trademark-info) |
 | **Additional license terms**  | Optional                                    | [Additional license terms](create-app-store-listings.md#additional-license-terms) |
 | **Website**                   | Optional                                    | [Website](create-app-store-listings.md#website)                   |
 | **Support contact info**      | Required if your product is available on Xbox; otherwise optional (but recommended)                                   | [Support contact info](create-app-store-listings.md#support-contact-info)              |
+| **Developed by**              | Optional                                    | [Developed by](create-app-store-listings.md#developed-by)                   |
 | **Privacy policy**            | Required for many apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [Privacy policy](create-app-store-listings.md#privacy-policy)        |
 | **Platform-specific Store listings** | Optional                               | [Create platform-specific Store listings](create-platform-specific-store-listings.md)  |
 

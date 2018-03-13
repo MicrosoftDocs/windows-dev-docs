@@ -34,6 +34,7 @@ For more info, see [Package flights](package-flights.md).
 > To distribute specific packages to a random selection of your Windows 10 customers in a set percentage, rather than to a designated group of specific customers, you can use [gradual package rollout](gradual-package-rollout.md). You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
 
 <span id="hide" />
+
 ### Hiding the app in the Store and using promotional codes
 
 If you want to limit distribution of an app to only a certain group of testers, **without** first publishing a submission that's broadly available, you can use the same [app submission process](app-submissions.md) as any app you submit. To allow only certain people to get the app free of charge, and prevent other customers from seeing its listing or downloading it, do the following:

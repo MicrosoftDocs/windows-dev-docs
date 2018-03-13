@@ -44,19 +44,19 @@ The layout of data within a tile doesn't depend on where the tile is mapped in a
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Texture2D and Texture2DArray subresource tiling](texture2d-and-texture2darray-subresource-tiling.md)</p></td>
-<td align="left"><p>These tables show how [<strong>Texture2D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff471525) and [<strong>Texture2DArray</strong>](https://msdn.microsoft.com/library/windows/desktop/ff471526) subresources are tiled.</p></td>
+<td align="left"><p><a href="texture2d-and-texture2darray-subresource-tiling.md">Texture2D and Texture2DArray subresource tiling</a></p></td>
+<td align="left"><p>These tables show how <a href="https://msdn.microsoft.com/library/windows/desktop/ff471525"><strong>Texture2D</strong></a> and <a href="https://msdn.microsoft.com/library/windows/desktop/ff471526"><strong>Texture2DArray</strong></a> subresources are tiled.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Texture3D subresource tiling](texture3d-subresource-tiling.md)</p></td>
-<td align="left"><p>This table shows how [<strong>Texture3D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff471562) subresources are tiled.</p></td>
+<td align="left"><p><a href="texture3d-subresource-tiling.md">Texture3D subresource tiling</a></p></td>
+<td align="left"><p>This table shows how <a href="https://msdn.microsoft.com/library/windows/desktop/ff471562"><strong>Texture3D</strong></a> subresources are tiled.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Buffer tiling](buffer-tiling.md)</p></td>
-<td align="left"><p>A [Buffer](introduction-to-buffers.md) resource is divided into 64KB tiles, with some empty space in the last tile if the size is not a multiple of 64KB.</p></td>
+<td align="left"><p><a href="buffer-tiling.md">Buffer tiling</a></p></td>
+<td align="left"><p>A <a href="introduction-to-buffers.md">Buffer</a> resource is divided into 64KB tiles, with some empty space in the last tile if the size is not a multiple of 64KB.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Mipmap packing](mipmap-packing.md)</p></td>
+<td align="left"><p><a href="mipmap-packing.md">Mipmap packing</a></p></td>
 <td align="left"><p>Some number of mips (per array slice) can be packed into some number of tiles, depending on a streaming resource's dimensions, format, number of mipmaps, and array slices.</p></td>
 </tr>
 </tbody>

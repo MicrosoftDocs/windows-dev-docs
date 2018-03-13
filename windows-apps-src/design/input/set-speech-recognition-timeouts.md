@@ -19,13 +19,7 @@ ms.localizationpriority: medium
 
 Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)</li>
-<li>[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</li>
-</ul>
-</div>
+> **Important APIs**: [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253), [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 ## Set a timeout
 

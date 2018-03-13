@@ -153,8 +153,8 @@ The following table outlines the mappings between various OPLs in the PlayReady 
     </tr>
     <tr>
         <th>270</th>
-        <td>**SWDRM**: Attempts to engage HDCP. If HDCP fails to engage, the PC will constrain the effective resolution to 520,000 pixels per frame and pass the content</td>
-        <td>**HWDRM**: Passes content with HDCP. If HDCP fails to engage, playback to HDMI/DVI ports is blocked</td>
+        <td><b>SWDRM</b>: Attempts to engage HDCP. If HDCP fails to engage, the PC will constrain the effective resolution to 520,000 pixels per frame and pass the content</td>
+        <td><b>HWDRM</b>: Passes content with HDCP. If HDCP fails to engage, playback to HDMI/DVI ports is blocked</td>
     </tr>
     <tr>
         <th>300</th>
@@ -169,7 +169,7 @@ The following table outlines the mappings between various OPLs in the PlayReady 
     </tr>
     <tr>
         <th>400</th>
-        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the [Compliance Rules for PlayReady Products](https://www.microsoft.com/playready/licensing/compliance/).</td>
+        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the <a href="https://www.microsoft.com/playready/licensing/compliance/">Compliance Rules for PlayReady Products</a>.</td>
         <td colspan="2" rowspan="2">N/A\*</td>
     </tr>
     <tr>
@@ -269,7 +269,7 @@ PlayReady DRM allows you to play content over Miracast output as soon as HDCP 2.
     <tr>
         <th>400</th>
         <td rowspan="2" colspan="2">N/A\*</td>
-        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the [Compliance Rules for PlayReady Products](https://www.microsoft.com/playready/licensing/compliance/).</td>
+        <td rowspan="2">Windows 10 never passes compressed digital video content to outputs, regardless of the subsequent OPL value. For more information about compressed digital video content, see the <a href="https://www.microsoft.com/playready/licensing/compliance/">Compliance Rules for PlayReady Products</a>.</td>
         <td rowspan="2">N/A\*</td>
     </tr>
     <tr>
@@ -327,15 +327,15 @@ The following table describes the PlayReady DRM for Windows 10 implementation of
         <th>Analog computer monitor</th>
         <td>D783A191-E083-4BAF-B2DA-E69F910B3772</td>
         <td>Connected output is: VGA, DVI&ndash;analog, etc.</td>
-        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
     <tr>
         <th>Analog component</th>
         <td>811C5110-46C8-4C6E-8163-C0482A15D47E</td>
         <td>Connected output is: component</td>
-        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
     <tr>
         <th rowspan="2">Analog TV outputs</th>
@@ -379,15 +379,15 @@ The following table describes the PlayReady DRM for Windows 10 implementation th
         <th>Unknown output</th>
         <td>786627D8-C2A6-44BE-8F88-08AE255B01A7</td>
         <td>If output can't reasonably be determined, or OPM can't be established with graphics driver</td>
-        <td>**SWDRM:** Passes content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> Passes content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
     <tr>
         <th>Unknown output with constriction</th>
         <td>B621D91F-EDCC-4035-8D4B-DC71760D43E9</td>
         <td>If output can't reasonably be determined, or OPM can't be established with graphics driver</td>
-        <td>**SWDRM:** PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
-        <td>**HWDRM:** Does NOT pass content</td>
+        <td><b>SWDRM:</b> PC will constrain effective resolution to 520,000 epx per frame and pass content</td>
+        <td><b>HWDRM:</b> Does NOT pass content</td>
     </tr>
 </table>
 <br/>

@@ -4,11 +4,11 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 3/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, listing, description, store page, release notes, title
 ms.localizationpriority: high
 ---
 
@@ -50,20 +50,28 @@ The description field is where you can tell customers what your app does. This f
 
 For some tips on making your description stand out, see [Write a great app description](write-a-great-app-description.md).
 
-## Release notes
+<span id="release-notes" />
+## What's new in this version
 
-If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit.
+If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
+
+## App features
+
+These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in the **Features** section of your app's Store listing, in addition to the **Description**. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
+
+> [!NOTE]
+> Your app features will appear bulleted in your Store listing, so don't add your own bullets.
 
 ## Screenshots
 
-One screenshot is required in order to submit your app. We recommend providing at least one screenshot for each device type that your app supports.
+One screenshot is required in order to submit your app. We recommend providing at least four screenshots for each device type that your app supports so that people can see how the app will look on their device type.
 
 For more info, see [App screenshots and images](app-screenshots-and-images.md#screenshots).
 
 
 ## Store logos 
 
-Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for Windows 10 customers, rather than allowing the Store to use logo images from your app’s packages.
+Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for customers on Windows 10 (including Xbox), rather than allowing the Store to use logo images from your app’s packages.
 
 > [!IMPORTANT]
 > If your app supports Xbox, or if it supports Windows Phone 8.1 or earlier, you must provide certain images here in order for the listing to appear properly in the Store. 
@@ -78,7 +86,7 @@ You can submit additional assets for your product, including trailers and promot
 For more info, see [Additional art assets](app-screenshots-and-images.md#additional-art-assets).
 
 
-## Additional information
+## Supplemental information
 
 The fields in this section are all optional. App features and system requirements can help customers understand more about what your app does and what is required for the best experience. Other options help provide an optimal experience for your product in different scenarios. Review the info below to determine if providing this info makes sense for your submission.
 
@@ -86,33 +94,33 @@ The fields in this section are all optional. App features and system requirement
 
 A shorter version of your product’s name. If provided, this shorter name may appear in various places on Xbox One (during installation, in Achievements, etc.) in place of the full title of your product.
 
+The **Short title** has a 50 character limit.
+
 
 ### Sort title
 
-If your product could be alphabetized in different ways, you can enter another version here. This may help customers find the product more quickly when searching. 
+If your product could be alphabetized or spelled in different ways, you can enter another version here. This allows customers to find your product more quickly if they type that version in while searching. 
+
+This field has a 255 character limit.
 
 
 ### Voice title
 
-An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset. 
+An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset.
+
+This field has a 255 character limit.
 
 
 ### Short description
 
 Only used for games. This description appears in the Information section of the Game Hub on Xbox One, and helps customers understand more about your game.
 
-
-### App features
-
-These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in your app's Store listing, in addition to the **Description**. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
-
-> [!NOTE]
-> Your app features will appear bulleted in your Store listing, so don't add your own bullets.
+This field has a 500 character limit.
 
 
 ### Additional system requirements
 
-If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later, along with the requirements you indicated on the product's properties page. 
+If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](enter-app-properties.md#system-requirements). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later (including Xbox), along with the requirements you indicated on the product's properties page. 
 
 You can enter up to 11 items for both **Minimum hardware** and **Recommended hardware**. These are displayed to the customer as a bulleted list in your Store listing. Keep these brief, with just a few words (and no more than 200 characters) per item.
 
@@ -120,20 +128,14 @@ You can enter up to 11 items for both **Minimum hardware** and **Recommended har
 > Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
 
 
-### Developed by
+<span id="shared-fields" />
+## Additional information
 
-Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
-
-This field has a 255 character limit.
-
-
-## Shared fields
-
-The items described below help customers discover and understand your product. The info you enter here will apply to all of your Store listings in a given language, regardless of operating system, even if you [create platform-specific Store listings](create-platform-specific-store-listings.md).
+The items described below help customers discover and understand your product. The info you enter here will apply to all of your Store listings in a given language, regardless of operating system, even if you [create platform-specific Store listings](create-platform-specific-store-listings.md). (This section was formerly called **Shared fields**).
 
 ### Search terms
 
-Search terms (formerly called keywords) are single words or short phrases that are not displayed to customers, but can help your app appear in search results related to the term. You can include up to 7 search terms with a maximum of 30 characters each, and can use no more than 21 separate words across all search terms.
+Search terms (formerly called keywords) are single words or short phrases that are not displayed to customers, but can help your make your app discoverable in the Store when customers search using those terms. You can include up to 7 search terms with a maximum of 30 characters each, and can use no more than 21 separate words across all search terms.
 
 When adding search terms, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any search terms that are not actually relevant to your app.
 
@@ -163,11 +165,18 @@ Enter the URL of the web page for your app. This URL must point to a page on you
 Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support. We recommend including this info for all submissions, so that your customers know how to get support if they need it. Note that Microsoft does not provide your customers with support for your app.
 
 > [!IMPORTANT]
-> The **Support contact info** field is required if your app or game is available on Xbox. 
+> The **Support contact info** field is required if your app or game is available on Xbox.
+
+### Developed by
+
+Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
+
+This field has a 255 character limit.
+ 
 
 ## Privacy policy
 
-You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required. If we determine that your app requires a privacy policy, and you have not provided one, your app will fail certification. For example, if your app accesses, collects, or transmits any personal information, or if it allows web browsing, a privacy policy is required. 
+If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required. If we determine that your app requires a privacy policy, and you have not provided one, your app will fail certification. For example, if your app accesses, collects, or transmits any personal information, or if it allows web browsing, a privacy policy is required. 
 
 To determine if your app requires a privacy policy, review the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information).
 

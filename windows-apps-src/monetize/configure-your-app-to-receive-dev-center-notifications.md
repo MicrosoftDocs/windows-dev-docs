@@ -53,6 +53,7 @@ To register your app to receive targeted push notifications from Dev Center:
 > When you call the **RegisterNotificationChannelAsync** method, a file named MicrosoftStoreEngagementSDKId.txt is created in the local app data store for your app (the folder returned by the [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalFolder) property). This file contains an ID that is used by the targeted push notifications infrastructure. Make sure that your app does not modify or delete this file. Otherwise, your users may receive multiple instances of notifications, or the notifications may not behave properly in other ways.
 
 <span id="notification-customers" />
+
 ### How targeted push notifications are routed to customers
 
 When your app calls **RegisterNotificationChannelAsync**, this method collects the Microsoft account of the customer who is currently signed in to the device. Later, when you send a targeted push notification to a segment that includes this customer, Dev Center sends the notification to devices that are associated with this customer's Microsoft account.
@@ -86,6 +87,7 @@ The way you call this method depends on the activation type of the push notifica
   [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
 
 <span id="unregister" />
+
 ## Unregister for push notifications
 
 If you want your app to stop receiving targeted push notifications from Dev Center, call the [UnregisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) method.

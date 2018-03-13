@@ -31,8 +31,8 @@ Use these reference topics to look up API mapping and short code samples when po
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) to create a game for Universal Windows Platform (UWP).</p></td>
+<td align="left"><p><a href="glsl-to-hlsl-reference.md">GLSL-to-HLSL reference</a></p></td>
+<td align="left"><p>You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you <a href="port-from-opengl-es-2-0-to-directx-11-1.md">port your graphics architecture from OpenGL ES 2.0 to Direct3D 11</a> to create a game for Universal Windows Platform (UWP).</p></td>
 </tr>
 </tbody>
 </table>

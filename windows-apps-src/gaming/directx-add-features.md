@@ -35,15 +35,15 @@ Supporting screen orientation topic discusses the best practices for handling sc
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[DirectX and XAML interop](directx-and-xaml-interop.md)</p></td>
+<td align="left"><p><a href="directx-and-xaml-interop.md">DirectX and XAML interop</a></p></td>
 <td align="left"><p>Enable DirectX and XAML interop.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Game input](directx-game-input.md)</p></td>
+<td align="left"><p><a href="directx-game-input.md">Game input</a></p></td>
 <td align="left"><p>Add input methods to your game.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Supporting screen orientation](supporting-screen-rotation-directx-and-cpp.md)</p></td>
+<td align="left"><p><a href="supporting-screen-rotation-directx-and-cpp.md">Supporting screen orientation</a></p></td>
 <td align="left"><p>Add screen orientation support.</p></td>
 </tr>
 </tbody>

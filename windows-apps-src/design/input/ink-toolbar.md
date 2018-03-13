@@ -34,21 +34,13 @@ As a completely transparent overlay, the InkCanvas does not provide any built-in
 
   We discuss the InkToolbar in this topic.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**InkCanvas class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)</li>
-<li>[**InkToolbar class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)</li>
-<li>[**InkPresenter class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)</li>
-<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
-</ul>
-</div>
+> **Important APIs**: [**InkCanvas class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx), [**InkToolbar class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx), [**InkPresenter class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## Default InkToolbar
 
 By default, the [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) includes buttons for drawing, erasing, highlighting, and displaying a stencil (ruler or protractor). Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
 
-![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
+![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
 *Default Windows Ink toolbar*
 
 To add a default [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) to an inking app, just place it on the same page as your [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) and associate the two controls.
@@ -96,7 +88,7 @@ Explicitly specify the location and orientation of the toolbar through its [Vert
 
 | Default | Explicit |
 | --- | --- |
-| ![Default ink toolbar location and orientation](.\images\ink\location-default-small.png) | ![Explicit ink toolbar location and orientation](.\images\ink\location-explicit-small.png) |
+| ![Default ink toolbar location and orientation](./images/ink/location-default-small.png) | ![Explicit ink toolbar location and orientation](./images/ink/location-explicit-small.png) |
 | *Windows Ink toolbar default location and orientation* | *Windows Ink toolbar explicit location and orientation* |
 
 Here's the code for explicitly setting the location and orientation of the ink toolbar in XAML.
@@ -112,7 +104,7 @@ Here's the code for explicitly setting the location and orientation of the ink t
 
 In some cases, you might want to set the location and orientation of the ink toolbar based on user preference or device state. The following example demonstrates how to set the location and orientation of the ink toolbar based on the left or right-hand writing preferences specified through **Settings > Devices > Pen & Windows Ink > Pen > Choose which hand you write with**.
 
-![Dominant hand setting](.\images\ink\location-handedness-setting.png)  
+![Dominant hand setting](./images/ink/location-handedness-setting.png)  
 *Dominant hand setting*
 
 You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
@@ -408,7 +400,7 @@ You can also use binding to look after UI updates based on changes to user prefe
 You should now have an inking app that adapts to both the dominant hand preference of the user and dynamically responds to the orientation of the user's device.
 
 ### Specify the selected button  
-![Pencil button selected at initialization](.\images\ink\ink-tools-default-toolbar.png)  
+![Pencil button selected at initialization](./images/ink/ink-tools-default-toolbar.png)  
 *Windows Ink toolbar with pencil button selected at initialization*
 
 By default, the first (or leftmost) button is selected when your app is launched and the toolbar is initialized. In the default Windows Ink toolbar, this is the ballpoint pen button.
@@ -459,7 +451,7 @@ private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
 
 ### Specify the built-in buttons
 
-![Specific buttons included at initialization](.\images\ink\ink-tools-specific.png)  
+![Specific buttons included at initialization](./images/ink/ink-tools-specific.png)  
 *Specific buttons included at initialization*
 
 As mentioned, the Windows Ink toolbar includes a collection of default, built-in buttons. These buttons are displayed in the following order (from left to right):
@@ -617,7 +609,7 @@ Depending on your application and the inking functionality required, you can add
 
 You can create a custom pen (activated through a custom pen button) where you define the ink color palette and pen tip properties, such as shape, rotation, and size.
 
-![Custom calligraphic pen button](.\images\ink\ink-tools-custompen.png)  
+![Custom calligraphic pen button](./images/ink/ink-tools-custompen.png)  
 *Custom calligraphic pen button*
 
 For this example, we define a custom pen with a broad tip that enables basic calligraphic ink strokes. We also customize the collection of brushes in the palette displayed on the button flyout.
@@ -741,7 +733,7 @@ Typically, touch input is used for direct manipulation of an object or the app U
 When the app starts, only pen inking is supported and touch is used to pan or zoom the inking surface. When touch inking is enabled, the inking surface cannot be panned or zoomed through touch input.
 
 > [!NOTE]
-> See [Inking controls](..\controls-and-patterns\inking-controls.md) for both [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) UX guidelines. The following recommendations are relevant to this example:
+> See [Inking controls](../controls-and-patterns/inking-controls.md) for both [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) UX guidelines. The following recommendations are relevant to this example:
 > - The [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar), and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app. 
 > - If supporting inking with touch input, we recommend using the "ED5F" icon from the "Segoe MLD2 Assets" font for the toggle button, with a "Touch writing" tooltip. 
 

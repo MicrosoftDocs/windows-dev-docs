@@ -37,6 +37,7 @@ These methods have the following URIs.
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Gets the targeting profile specified by *targetingProfileId*.  |
 
 <span/> 
+
 ### Header
 
 | Header        | Type   | Description         |
@@ -46,11 +47,13 @@ These methods have the following URIs.
 
 
 <span/>
+
 ### Request body
 
 The POST and PUT methods require a JSON request body with the required fields of a [Targeting profile](#targeting-profile) object and any additional fields you want to set or change.
 
 <span/>
+
 ### Request examples
 
 The following example demonstrates how to call the POST method to create a targeting profile.
@@ -92,6 +95,7 @@ Authorization: Bearer <your access token>
 ```
 
 <span/>
+
 ## Response
 
 These methods return a JSON response body with a [Targeting profile](#targeting-profile) object that contains information about the targeting profile that was created, updated, or retrieved. The following example demonstrates a response body for these methods.
@@ -133,6 +137,7 @@ These methods return a JSON response body with a [Targeting profile](#targeting-
 ```
 
 <span id="targeting-profile"/>
+
 ## Targeting profile object
 
 The request and response bodies for these methods contain the following fields. This table shows which fields are read-only (meaning that they cannot be changed in the PUT method) and which fields are required in the request body for the POST method.
@@ -151,6 +156,7 @@ The request and response bodies for these methods contain the following fields. 
 
 
 <span id="age-values"/>
+
 ### Age values
 
 The *age* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the age ranges of the users to target.
@@ -187,6 +193,7 @@ The following example shows the response body for this method.
 ```
 
 <span id="gender-values"/>
+
 ### Gender values
 
 The *gender* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the genders of the users to target.
@@ -218,6 +225,7 @@ The following example shows the response body for this method.
 
 
 <span id="osversion-values"/>
+
 ### OS version values
 
 The *osVersion* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the OS versions of the users to target.
@@ -265,6 +273,7 @@ The following example shows the response body for this method.
 
 
 <span id="devicetype-values"/>
+
 ### Device type values
 
 The *deviceType* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the device types of the users to target.
@@ -296,6 +305,7 @@ The following example shows the response body for this method.
 
 
 <span id="supplytype-values"/>
+
 ### Supply type values
 
 The *supplyType* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the type of inventory where the campaign's ads will be shown.
@@ -326,6 +336,7 @@ The following example shows the response body for this method.
 ```
 
 <span id="country-code-values"/>
+
 ### Country code values
 
 The *country* field in the [TargetingProfile](#targeting-profile) object contains one or more of the following integers that identify the [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes of the users to target.

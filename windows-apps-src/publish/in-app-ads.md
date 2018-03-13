@@ -22,6 +22,7 @@ Use the **Monetize** &gt; **In-app ads** page in the Dev Center dashboard to cre
 For more information about how to integrate these SDKs with your apps to display ads, see [Display ads in your app with the Microsoft Advertising SDK](../monetize/display-ads-in-your-app.md).
 
 <span id="create-ad-unit" />
+
 ## Create ad units
 
 To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial ad](../monetize/interstitial-ads.md), or [native ad](../monetize/native-ads.md) in your app:
@@ -57,6 +58,7 @@ To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial
 After you create the new ad unit, it appears in the table of available ad units in the **Monetize** &gt; **In-app ads** page.
 
 <span id="available-ad-units" />
+
 ## Review and edit ad units
 
 After you create ad units for one or more apps in your account, these ad units appear in a table at the bottom of the **Monetize** &gt; **In-app ads** page. This table displays the **Application ID** and **Ad unit ID** for each ad unit, along with other information. To show ads in your app, you'll need to use these values in your code. For more information, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
@@ -77,6 +79,7 @@ To edit the [mediation settings](#mediation) for a UWP ad unit or the [COPPA com
 Note that if an ad unit has no activity for the past six months, we will label it as **Inactive**, and eventually remove it from your dashboard. You can use filters to show only **Active** or **Inactive** ad units. If you see any ad units that you believe are inaccurately marked as **Inactive**, [contact support](http://aka.ms/storesupport).
 
 <span id="mediation" />
+
 ## Mediation settings
 
 When you [create a new UWP ad unit](#create-ad-unit) or [edit an existing UWP ad unit](#available-ad-units), use the options in this section to configure ad mediation for the ad unit. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and non-revenue generating ads for Microsoft app promotion campaigns. We take care of mediating banner ad requests from the ad networks you choose. If you have a UWP ad unit that is already associated with a banner, interstitial, or native ad in your app, enabling ad mediation requires no code changes in your app.
@@ -109,6 +112,7 @@ To configure ad mediation settings for a UWP ad unit in your app:
 10. Click **Create ad unit** (if you are creating a new ad unit) or **Save** (if you are editing an existing ad unit).
 
 <span id="paid-networks" />
+
 ### Supported paid ad networks
 
 The following table lists the paid networks we currently support for each ad type. Note that some of these networks are [not available in all markets](#network-markets).
@@ -127,6 +131,7 @@ The following table lists the paid networks we currently support for each ad typ
 
 
 <span id="other-networks" />
+
 ### Other ad networks
 
 The following table lists the other networks we currently support for each ad type.
@@ -138,6 +143,7 @@ The following table lists the other networks we currently support for each ad ty
 
 
 <span id="network-markets" />
+
 ### Supported markets for ad networks
 
 The available ad networks serve ads in all [supported markets](define-pricing-and-market-selection.md#microsoft-store-consumer-markets), with the following exceptions.
@@ -149,6 +155,7 @@ The available ad networks serve ads in all [supported markets](define-pricing-an
 | smartclip | Austria, Belgium, Denmark, Finland, Germany, Italy, Netherlands, Norway, Sweden, Switzerland  |
 
 <span id="coppa" />
+
 ## COPPA compliance
 
 When you [create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units), the **COPPA compliance** section appears at the bottom of the dashboard page if the selected app for the ad unit has at least one submission that has reached the [in the Store](../publish/the-app-certification-process.md#in-the-store) step in the app certification process.

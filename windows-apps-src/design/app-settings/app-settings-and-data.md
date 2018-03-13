@@ -38,11 +38,11 @@ App data is data that the app itself creates and manages. It includes runtime st
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Guidelines](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p><a href="guidelines-for-app-settings.md">Guidelines</a></p></td>
 <td align="left"><p>Best practices for creating and displaying app settings.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Store and retrieve app data](store-and-retrieve-app-data.md)</p></td>
+<td align="left"><p><a href="store-and-retrieve-app-data.md">Store and retrieve app data</a></p></td>
 <td align="left"><p>How to store and retrieve local, roaming, and temporary app data.</p></td>
 </tr>
 </tbody>

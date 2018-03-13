@@ -59,6 +59,7 @@ To enable the purchase of subscription add-ons in your app, follow these steps.
 4. Create and publish an app submission that includes your updated app package, including your tested code. For more information, see [App submissions](../publish/app-submissions.md).
 
 <span id="code-examples"/>
+
 ## Code examples
 
 The code examples in this section demonstrate how to use the APIs in the [**Windows.Services.Store**](https://docs.microsoft.com/uwp/api/windows.services.store) namespace to get info about subscription add-ons for the current app and request the purchase a subscription add-on on behalf of the current user.
@@ -95,6 +96,7 @@ This code example demonstrates how to get info for all the subscription add-ons 
 [!code-cs[Subscriptions](./code/InAppPurchasesAndLicenses_RS1/cs/GetSubscriptionAddOnsPage.xaml.cs#GetSubscriptions)]
 
 <span id="manage-subscriptions" />
+
 ## Manage subscriptions from your services
 
 After your updated app is in the Store and customers can buy your subscription add-on, you may have scenarios where you need to manage the subscription for a customer. We provide REST APIs you can call from your services to perform the following subscription management tasks:
