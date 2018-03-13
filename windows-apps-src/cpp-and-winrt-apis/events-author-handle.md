@@ -19,6 +19,9 @@ This topic demonstrates how to author a Windows Runtime Component containing a r
 
 To follow these steps, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
+> [!NOTE]
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
+
 ## Create a Windows Runtime Component (BankAccountWRC)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
 
@@ -75,18 +78,18 @@ namespace winrt::BankAccountWRC::implementation
 {
 	event_token BankAccount::AccountIsInDebitEvent(Windows::Foundation::EventHandler<float> const& handler)
 	{
-		return this->accountIsInDebitEvent.add(handler);
+		return accountIsInDebitEvent.add(handler);
 	}
 
 	void BankAccount::AccountIsInDebitEvent(event_token const& token)
 	{
-		this->accountIsInDebitEvent.remove(token);
+		accountIsInDebitEvent.remove(token);
 	}
 
 	void BankAccount::AdjustBalance(float value)
 	{
-		this->balance += value;
-		if (this->balance < 0.f) this->accountIsInDebitEvent(*this, this->balance);
+		balance += value;
+		if (balance < 0.f) accountIsInDebitEvent(*this, balance);
 	}
 }
 ```
@@ -116,7 +119,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 	
 	void Initialize(CoreApplicationView const &)
 	{
-		this->eventToken = this->bankAccount.AccountIsInDebitEvent([](const auto &, float balance)
+		eventToken = bankAccount.AccountIsInDebitEvent([](const auto &, float balance)
 		{
 			assert(balance < 0.f);
 		});
@@ -125,13 +128,13 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 	void Uninitialize()
 	{
-		this->bankAccount.AccountIsInDebitEvent(this->eventToken);
+		bankAccount.AccountIsInDebitEvent(eventToken);
 	}
 	...
 
 	void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
 	{
-		this->bankAccount.AdjustBalance(-1.f);
+		bankAccount.AdjustBalance(-1.f);
 		...
 	}
 	...

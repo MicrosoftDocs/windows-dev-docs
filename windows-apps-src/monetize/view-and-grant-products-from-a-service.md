@@ -37,6 +37,7 @@ The following steps describe the end-to-end process for using the Microsoft Stor
 The following sections provide more details about each of these steps.
 
 <span id="step-1"/>
+
 ## Step 1: Configure a Web application in Azure AD
 
 Before you can use the Microsoft Store collection API or purchase API, you must create an Azure AD Web application, retrieve the tenant ID and client ID for the application, and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store collection API or purchase API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
@@ -65,6 +66,7 @@ Before you can use the Microsoft Store collection API or purchase API, you must 
 5.  Save your application manifest and upload it to your application in the [Azure Management Portal](http://manage.windowsazure.com/).
 
 <span id="step-2"/>
+
 ## Step 2: Associate your Azure AD client ID with your app in Windows Dev Center
 
 Before you can use the Microsoft Store collection API or purchase API to operate on an app or add-on, you must associate your Azure AD client ID with the app (or the app that contains the add-on) in the Dev Center dashboard.
@@ -76,6 +78,7 @@ Before you can use the Microsoft Store collection API or purchase API to operate
 2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD client ID into one of the available fields.
 
 <span id="step-3"/>
+
 ## Step 3: Create Azure AD access tokens
 
 Before you can retrieve a Microsoft Store ID key or call the Microsoft Store collection API or purchase API, your service must create several different Azure AD access tokens that represent your publisher identity. Each token will be used with a different API. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
@@ -84,6 +87,7 @@ Before you can retrieve a Microsoft Store ID key or call the Microsoft Store col
 > Create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
 
 <span id="access-tokens" />
+
 ### Understanding the different tokens and audience URIs
 
 Depending on which methods you want to call in the Microsoft Store collection API or purchase API, you must create either two or three different tokens. Each access token is associated with a different audience URI (these are the same URIs that you previously added to the `"identifierUris"` section of the Azure AD application manifest).
@@ -97,6 +101,7 @@ Depending on which methods you want to call in the Microsoft Store collection AP
   * If you want to call a method in the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md), you must also create a token with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI. In a later step, you will pass this token to a client method in the Windows SDK to request a Microsoft Store ID key that you can use with the Microsoft Store purchase API.
 
 <span />
+
 ### Create the tokens
 
 To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
@@ -121,6 +126,7 @@ For each token, specify the following parameter data:
 After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).
 
 <span id="step-4"/>
+
 ## Step 4: Create a Microsoft Store ID key
 
 Before you can call any method in the Microsoft Store collection API or purchase API, your app must create a Microsoft Store ID key and send it to your service. This key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. For more information about the claims in this key, see [Claims in a Microsoft Store ID key](#claims-in-a-microsoft-store-id-key).
@@ -131,6 +137,7 @@ Currently, the only way to create a Microsoft Store ID key is by calling a Unive
 > Each Microsoft Store ID key is valid for 90 days. After a key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Microsoft Store ID keys rather than creating new ones.
 
 <span />
+
 ### To create a Microsoft Store ID key for the Microsoft Store collection API
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).
@@ -148,6 +155,7 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 3.  After your app successfully creates a Microsoft Store ID key, pass the key back to your service.
 
 <span />
+
 ### To create a Microsoft Store ID key for the Microsoft Store purchase API
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
@@ -165,6 +173,7 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 3.  After your app successfully creates a Microsoft Store ID key, pass the key back to your service.
 
 <span id="step-5"/>
+
 ## Step 5: Call the Microsoft Store collection API or purchase API from your service
 
 After your service has a Microsoft Store ID key that enables it to access a specific user's product ownership information, your service can call the Microsoft Store collection API or purchase API by following these instructions:

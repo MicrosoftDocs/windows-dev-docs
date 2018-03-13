@@ -20,12 +20,7 @@ ms.localizationpriority: medium
 
 List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)</li>
-</ul>
-</div>
+> **Important APIs**: [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
 ## Do's and don'ts

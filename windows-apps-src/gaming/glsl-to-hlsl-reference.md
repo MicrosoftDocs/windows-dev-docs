@@ -62,7 +62,7 @@ GLSL and HLSL generally differ in these ways:
 </tr>
 <tr class="even">
 <td align="left">Shader compilation integrated into the graphics API</td>
-<td align="left">The HLSL compiler [compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633) to an intermediate binary representation before Direct3D passes it to the driver.
+<td align="left">The HLSL compiler <a href="https://msdn.microsoft.com/library/windows/desktop/bb509633">compiles the shader</a> to an intermediate binary representation before Direct3D passes it to the driver.
 <div class="alert">
 <strong>Note</strong>  This binary representation is hardware independent. It's typically compiled at app build time, rather than at app run time.
 </div>
@@ -71,11 +71,11 @@ GLSL and HLSL generally differ in these ways:
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[Variable](#porting-glsl-variables-to-hlsl) storage modifiers</td>
+<td align="left"><a href="#porting-glsl-variables-to-hlsl">Variable</a> storage modifiers</td>
 <td align="left">Constant buffers and data transfers via input layout declarations</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Types](#porting-glsl-types-to-hlsl)</p>
+<td align="left"><p><a href="#porting-glsl-types-to-hlsl">Types</a></p>
 <p>Typical vector type: vec2/3/4</p>
 <p>lowp, mediump, highp</p></td>
 <td align="left"><p>Typical vector type: float2/3/4</p>
@@ -83,11 +83,11 @@ GLSL and HLSL generally differ in these ways:
 </tr>
 <tr class="odd">
 <td align="left">texture2D [Function]</td>
-<td align="left">[texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509695">texture.Sample</a> [datatype.Function]</td>
 </tr>
 <tr class="even">
 <td align="left">sampler2D [datatype]</td>
-<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a> [datatype]</td>
 </tr>
 <tr class="odd">
 <td align="left">Row-major matrices (default)</td>
@@ -146,7 +146,7 @@ In GLSL, you apply modifiers (qualifiers) to a global shader variable declaratio
 <tr class="odd">
 <td align="left"><p><strong>attribute</strong></p>
 <p>An attribute is a part of the description of a vertex that you pass from the app code to the vertex shader alone. Unlike a uniform, you set each attribute’s value for each vertex, which, in turn, allows each vertex to have a different value. Attribute variables are per-vertex variables.</p></td>
-<td align="left"><p>Define a vertex buffer in your Direct3D app code and match it to the vertex input defined in the vertex shader. Optionally, define an index buffer. See [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) and [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
+<td align="left"><p>Define a vertex buffer in your Direct3D app code and match it to the vertex input defined in the vertex shader. Optionally, define an index buffer. See <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">How to: Create a Vertex Buffer</a> and <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">How to: Create an Index Buffer</a>.</p>
 <p>Create an input layout in your Direct3D app code and match semantic values with those in the vertex input. See [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
 </tr>
 <tr class="even">
@@ -260,11 +260,11 @@ Use this table to port your GLSL types to HLSL.
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
-<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/ff471525">Texture2D</a></td>
 </tr>
 <tr class="even">
 <td align="left">samplerCube</td>
-<td align="left">[TextureCube](https://msdn.microsoft.com/library/windows/desktop/bb509700)</td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/desktop/bb509700">TextureCube</a></td>
 </tr>
 </tbody>
 </table>

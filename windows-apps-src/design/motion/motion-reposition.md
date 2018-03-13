@@ -20,13 +20,7 @@ ms.localizationpriority: medium
 
 Use the reposition animation to move an element or elements into a new position.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)</li>
-<li>[**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)</li>
-</ul>
-</div>
+> **Important APIs**: [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421), [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## Do's and don'ts
 

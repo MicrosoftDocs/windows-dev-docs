@@ -38,12 +38,12 @@ Notification badges appear on your app's taskbar icon and in the lower-right cor
     </tr>
     <tr>
         <td>A number from 1 to 99. A value of 0 is equivalent to the glyph value "none" and will clear the badge.</td>
-        <td>![A numeric badge less than 100.](images/badges/badge-numeric.png)</td>
+        <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
         <td>`<badge value="1"/>`</td>
     </tr>
     <tr>
         <td>Any number greater than 99.</td>
-        <td>![A numeric badge greater than 99.](images/badges/badge-numeric-greater.png)</td></td>
+        <td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td></td>
         <td>`<badge value="100"/>`</td>
     </tr>    
 </table>
@@ -64,62 +64,62 @@ Instead of a number, a badge can display one of a non-extensible set of status g
 </tr>
 <tr>
     <td>activity</td>
-    <td>![Glyph](images/badges/badge-activity.png)</td>
+    <td><img src="images/badges/badge-activity.png" alt="Glyph" /></td>
     <td>`<badge value="activity"/>`</td>
 </tr>
 <tr>
     <td>alarm</td>
-    <td>![Glyph](images/badges/badge-alarm.png)</td>
+    <td><img src="images/badges/badge-alarm.png" alt="Glyph" /></td>
     <td>`<badge value="alarm"/>`</td>
 </tr>
 <tr>
     <td>alert</td>
-    <td>![Glyph](images/badges/badge-alert.png)</td>
+    <td><img src="images/badges/badge-alert.png" alt="Glyph" /></td>
     <td>`<badge value="alert"/>`</td>
 </tr>
 <tr>
     <td>attention</td>
-    <td>![Glyph](images/badges/badge-attention.png)</td>
+    <td><img src="images/badges/badge-attention.png" alt="Glyph" /></td>
     <td>`<badge value="attention"/>`</td>
 </tr>
 <tr>
     <td>available</td>
-    <td>![Glyph](images/badges/badge-available.png)</td>
+    <td><img src="images/badges/badge-available.png" alt="Glyph" /></td>
     <td>`<badge value="available"/>`</td>
 </tr>
 <tr>
     <td>away</td>
-    <td>![Glyph](images/badges/badge-away.png)</td>
+    <td><img src="images/badges/badge-away.png" alt="Glyph" /></td>
     <td>`<badge value="away"/>`</td>
 </tr>
 <tr>
     <td>busy</td>
-    <td>![Glyph](images/badges/badge-busy.png)</td>
+    <td><img src="images/badges/badge-busy.png" alt="Glyph" /></td>
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
     <td>error</td>
-    <td>![Glyph](images/badges/badge-error.png)</td>
+    <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>
 <tr>
     <td>newMessage</td>
-    <td>![Glyph](images/badges/badge-newMessage.png)</td>
+    <td><img src="images/badges/badge-newMessage.png" alt="Glyph" /></td>
     <td>`<badge value="newMessage"/>`</td>
 </tr>
 <tr>
     <td>paused</td>
-    <td>![Glyph](images/badges/badge-paused.png)</td>
+    <td><img src="images/badges/badge-paused.png" alt="Glyph" /></td>
     <td>`<badge value="paused"/>`</td>
 </tr>
 <tr>
     <td>playing</td>
-    <td>![Glyph](images/badges/badge-playing.png)</td>
+    <td><img src="images/badges/badge-playing.png" alt="Glyph" /></td>
     <td>`<badge value="playing"/>`</td>
 </tr>
 <tr>
     <td>unavailable</td>
-    <td>![Glyph](images/badges/badge-unavailable.png)</td>
+    <td><img src="images/badges/badge-unavailable.png" alt="Glyph" /></td>
     <td>`<badge value="unavailable"/>`</td>
 </tr>
 </table>

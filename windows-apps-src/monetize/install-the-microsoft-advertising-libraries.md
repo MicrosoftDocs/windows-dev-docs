@@ -20,6 +20,7 @@ To display ads in your UWP apps for Windows 10, install the [Microsoft Advertisi
 > If you are developing a JavaScript/HTML UWP app and you have installed Windows 10 SDK version 10.0.14393 (Anniversary Update) or later, you must also install the WinJS library. This library used to be included in previous versions of the Windows 10 SDK, but starting with the Windows 10 SDK version 10.0.14393 (Anniversary Update) this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 <span id="install-msi" />
+
 ## Install via MSI
 
 To install the Microsoft Advertising SDK via the MSI installer:
@@ -42,6 +43,7 @@ To install the Microsoft Advertising SDK via the MSI installer:
   Otherwise, if you are using the Microsoft Advertising SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
 <span id="install-nuget" />
+
 ## Install via NuGet
 
 To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
@@ -72,6 +74,7 @@ To install the Microsoft Advertising SDK in a specific UWP project via NuGet:
   Otherwise, if you are using the SDK for the first time in your project, you are now ready to [add a reference to the Microsoft Advertising SDK](#reference).
 
 <span id="reference" />
+
 ## Add a reference to the Microsoft Advertising SDK
 
 After you install the Microsoft Advertising SDK, follow these instructions to reference the SDK in your project so you can use the advertising APIs.
@@ -94,6 +97,7 @@ For walkthroughs that show how to get started using the advertising APIs, see th
 * [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)
 
 <span id="framework" />
+
 ## Understanding framework packages in the Microsoft Advertising SDK
 
 The Microsoft.Advertising.dll library in the [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (for UWP apps) is configured as a *framework package*. This library contains the advertising APIs in the [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) and [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) namespaces.

@@ -50,6 +50,7 @@ Once **Line-of-business (LOB) distribution** is selected, the usual **Visibility
 You must select at least one enterprise in order to publish an app as line-of-business.
 
 <span id="organizational" />
+
 ### Organizational licensing
 
 By default, the box for **Store-managed (online) volume licensing** is checked when you submit an app. When publishing LOB apps, this box must remain checked so that the enterprise can acquire your app in volume. This will not make the app available to anyone outside of the enterprise(s) that you selected in the **Distribution and visibility** section.

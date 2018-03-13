@@ -23,6 +23,7 @@ This topic describes best practices for accessibility of text in an app, by assu
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
+
 ## Contrast ratios  
 Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.
 
@@ -40,6 +41,7 @@ Use color contrast tools to verify that the visible text contrast ratio is accep
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
 <span id="TEXT_ELEMENT_ROLES"/>
+
 ## Text element roles  
 A UWP app can use these default elements (commonly called *text elements* or *textedit controls*):
 
@@ -55,6 +57,7 @@ In the text models for XAML, there are two elements that are primarily used for 
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
+
 ## Auto-suggest accessibility  
 When a user types into an entry field and a list of potential suggestions appears, this type of scenario is called auto-suggest. This is common in the **To:** line of a mail field, the Cortana search box in Windows, the URL entry field in Microsoft Edge, the location entry field in the Weather app, and so on. If you are using a XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) or the HTML intrinsic controls, then this experience is already hooked up for you by default. To make this experience accessible the entry field and the list must be associated. This is explained in the [Implementing auto-suggest](#implementing_auto-suggest) section.
 
@@ -72,6 +75,7 @@ _Example of a suggestion list_
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
+
 ### Implementing auto-suggest  
 To make this experience accessible the entry field and the list must be associated in the UIA tree. This association is done with the [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) property in desktop apps or the [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) property in UWP apps.
 
@@ -108,12 +112,14 @@ If you are using the intrinsic controls in HTML, then the UIA implementation has
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
+
 ## Text in graphics  
 Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) value that you provide as the equivalent of "alt text" includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path), or by using [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921).
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
+
 ## Text font size  
 Many readers have difficulty reading text in an app when that text is using a text font size that's simply too small for them to read. You can prevent this issue by making the text in your app's UI reasonably large in the first place. There are also assistive technologies that are part of Windows, and these enable users to change the view sizes of apps, or the display in general.
 
@@ -123,6 +129,7 @@ Many readers have difficulty reading text in an app when that text is using a te
 <span id="Text_scale_factor"/>
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
+
 ## Text scale factor  
 Various text elements and controls have an [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) property. This property has the value **true** by default. When its value is **true**, the setting called **Text scaling** on the phone (**Settings &gt; Ease of access**), causes the text size of text in that element to be scaled up. The scaling will affect text that has a small **FontSize** to a greater degree than it will affect text that has a large **FontSize**. But you can disable that automatic enlargement by setting an element's **IsTextScaleFactorEnabled** property to **false**. Try this markup, adjust the **Text size** setting on the phone, and see what happens to the **TextBlock**s:
 
@@ -166,6 +173,7 @@ These types have an **IsTextScaleFactorEnabled** property:
 * [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) and derived classes
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Basic accessibility information](basic-accessibility-information.md)

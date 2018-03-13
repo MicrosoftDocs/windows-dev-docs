@@ -59,7 +59,7 @@ Users can leave a game suspended for a very long time. Consider offering a diffe
 For more information about the Xbox One app model, see the following resources:
 
 -   [Modern Application Switching for the Living Room](https://developer.xboxlive.com/en-us/platform/documentlibrary/events/Documents/Xfest%202012/Xfest%202012%20-%20Modern%20Application%20Switching%20for%20the%20Living%20Room.pptx), a presentation at Xfest 2012
--   [The Shell Experience](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=PROD-D_Experience.pptx&folder=platform\xfest2013), a presentation at Xfest 2013
+-   [The Shell Experience](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=PROD-D_Experience.pptx&folder=platform/xfest2013), a presentation at Xfest 2013
 -   [Process Lifetime Management for Xbox One](https://developer.xboxlive.com/en-us/platform/development/education/Documents/PLM%20for%20Xbox%20One.aspx), a white paper on GDN
 
 > [!NOTE]
@@ -402,5 +402,5 @@ It can be helpful to determine whether your console is interacting with the serv
 In addition to resources suggested above, the following may be helpful in developing your app or title:
 
 -   Connected Storage Overview, in the XDK documentation
--   [Process Lifetime Management](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=ProcessLifetimeManagement_08_2013_qfe5.zip&folder=platform\aug2013xdk_qfe5\samples), a sample available from Samples on Game Developer Network (GDN)
+-   [Process Lifetime Management](https://developer.xboxlive.com/_layouts/xna/download.ashx?file=ProcessLifetimeManagement_08_2013_qfe5.zip&folder=platform/aug2013xdk_qfe5/samples), a sample available from Samples on Game Developer Network (GDN)
 -   ["Process Lifetime Management (PLM) for Xbox One"](https://developer.xboxlive.com/en-us/platform/development/education/Documents/PLM%20for%20Xbox%20One.aspx), a white paper available from White Papers on GDN

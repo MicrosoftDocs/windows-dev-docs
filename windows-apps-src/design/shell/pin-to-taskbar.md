@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 ---
 # Pin your app to the taskbar
 
-You can programmatically pin your own app to the taskbar, just like you can [pin your app to the Start menu](tiles-and-notifications\primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning. 
+You can programmatically pin your own app to the taskbar, just like you can [pin your app to the Start menu](tiles-and-notifications/primary-tile-apis.md). And you can check whether your app is currently pinned, and whether the taskbar allows pinning. 
 
 ![Taskbar](images/taskbar/taskbar.png)
 
@@ -108,4 +108,4 @@ This method returns a boolean value that indicates whether your app is now pinne
 
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
 * [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
-* [Pin an app to the Start menu](tiles-and-notifications\primary-tile-apis.md)
+* [Pin an app to the Start menu](tiles-and-notifications/primary-tile-apis.md)

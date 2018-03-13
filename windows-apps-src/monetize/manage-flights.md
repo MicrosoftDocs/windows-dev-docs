@@ -35,17 +35,17 @@ These methods can only be used to get, create, or delete package flights. To cre
 <tr>
 <td align="left">GET</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}```</td>
-<td align="left">[Get a package flight](get-a-flight.md)</td>
+<td align="left"><a href="get-a-flight.md">Get a package flight</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights```</td>
-<td align="left">[Create a package flight](create-a-flight.md)</td>
+<td align="left"><a href="create-a-flight.md">Create a package flight</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
 <td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}```</td>
-<td align="left">[Delete a package flight](delete-a-flight.md)</td>
+<td align="left"><a href="delete-a-flight.md">Delete a package flight</a></td>
 </tr>
 </tbody>
 </table>

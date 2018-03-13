@@ -106,15 +106,15 @@ Here is a quick comparison between the different types of channels:
 <table>
 
 <tr class="header">
-<th align="left">**Type**</th>
-<th align="left">**Push toast?**</th>
-<th align="left">**Push tile/badge?**</th>
-<th align="left">**Push raw notifications?**</th>
-<th align="left">**Authentication**</th>
-<th align="left">**API**</th>
-<th align="left">**Store registration required?**</th>
-<th align="left">**Channels**</th>
-<th align="left">**Encryption**</th>
+<th align="left"><b>Type</b></th>
+<th align="left"><b>Push toast?</b></th>
+<th align="left"><b>Push tile/badge?</b></th>
+<th align="left"><b>Push raw notifications?</b></th>
+<th align="left"><b>Authentication</b></th>
+<th align="left"><b>API</b></th>
+<th align="left"><b>Store registration required?</b></th>
+<th align="left"><b>Channels</b></th>
+<th align="left"><b>Encryption</b></th>
 </tr>
 
 
@@ -164,8 +164,8 @@ In general, we recommend using the primary channel in your app, with a few excep
 
 ## Related articles
 
-* [Send a local tile notification](../tiles-and-notifications\sending-a-local-tile-notification.md)
-* [Adaptive and interactive toast notifications](../tiles-and-notifications\adaptive-interactive-toasts.md)
+* [Send a local tile notification](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [Adaptive and interactive toast notifications](../tiles-and-notifications/adaptive-interactive-toasts.md)
 * [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
 * [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
 * [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)

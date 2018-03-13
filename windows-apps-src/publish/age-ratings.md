@@ -40,6 +40,7 @@ The next time you update your app, you’ll see all of the app’s assigned rati
 > If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://go.microsoft.com/fwlink/?linkid=867281). 
 
 <span id="appeal" />
+
 ## Appealing ratings or refused classifications
 
 If you have questions about the age rating your app received, or wish to appeal it, you can contact IARC via the link that appears in the rating certificate email that you will receive after your app has been published.

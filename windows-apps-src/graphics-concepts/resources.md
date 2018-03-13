@@ -42,20 +42,20 @@ A resource view provides a general model for access to a resource (such as textu
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Resource types](resource-types.md)</p></td>
-<td align="left"><p>Different types of resources have a distinct layout (or memory footprint). All resources used by the Direct3D pipeline derive from two basic resource types: [buffers](resource-types.md#buffer-resources) and [textures](resource-types.md#texture-resources). A buffer is a collection of raw data (elements); a texture is a collection of texels (texture elements).</p></td>
+<td align="left"><p><a href="resource-types.md">Resource types</a></p></td>
+<td align="left"><p>Different types of resources have a distinct layout (or memory footprint). All resources used by the Direct3D pipeline derive from two basic resource types: <a href="resource-types.md#buffer-resources">buffers</a> and <a href="resource-types.md#texture-resources">textures</a>. A buffer is a collection of raw data (elements); a texture is a collection of texels (texture elements).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Choosing a resource](choosing-a-resource.md)</p></td>
+<td align="left"><p><a href="choosing-a-resource.md">Choosing a resource</a></p></td>
 <td align="left"><p>A resource is a collection of data that is used by the 3D pipeline. Creating resources and defining their behavior is the first step toward programming your application. This guide covers basic topics for choosing the resources required by your application.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Copying and accessing resource data](copying-and-accessing-resource-data.md)</p></td>
+<td align="left"><p><a href="copying-and-accessing-resource-data.md">Copying and accessing resource data</a></p></td>
 <td align="left"><p>Usage flags indicate how the application intends to use the resource data, to place resources in the most performant area of memory possible. Resource data is copied across resources so that the CPU or GPU can access it without impacting performance.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Texture views](texture-views.md)</p></td>
-<td align="left"><p>In Direct3D, texture resources are accessed with a view, which is a mechanism for hardware interpretation of a resource in memory. A view allows a particular pipeline stage to access only the [subresources](resource-types.md) it needs, in the representation desired by the application.</p></td>
+<td align="left"><p><a href="texture-views.md">Texture views</a></p></td>
+<td align="left"><p>In Direct3D, texture resources are accessed with a view, which is a mechanism for hardware interpretation of a resource in memory. A view allows a particular pipeline stage to access only the <a href="resource-types.md">subresources</a> it needs, in the representation desired by the application.</p></td>
 </tr>
 </tbody>
 </table>

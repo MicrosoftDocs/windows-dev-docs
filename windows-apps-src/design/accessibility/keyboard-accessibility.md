@@ -23,6 +23,7 @@ If your app does not provide good keyboard access, users who are blind or have m
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
 <span id="KEYBOARD_NAVIGATION_AMONG_UI_ELEMENTS"/>
+
 ## Keyboard navigation among UI elements  
 To use the keyboard with a control, the control must have focus, and to receive focus (without using a pointer) the control must be accessible in a UI design via tab navigation. By default, the tab order of controls is the same as the order in which they are added to a design surface, listed in XAML, or programmatically added to a container.
 
@@ -63,11 +64,13 @@ Whether you adjust [**TabIndex**](https://msdn.microsoft.com/library/windows/app
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
+
 ## Keyboard navigation within a UI element  
 For composite elements, it is important to ensure proper inner navigation among the contained elements. A composite element can manage its current active child to reduce the overhead of having all child elements able to have focus. Such a composite element is included in the tab order, and it handles keyboard navigation events itself. Many of the composite controls already have some inner navigation logic built into the into control's event handling. For example, arrow-key traversal of items is enabled by default on the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878), [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview), [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) and [**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) controls.
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
+
 ## Keyboard alternatives to pointer actions and events for specific control elements  
 Ensure that UI elements that can be clicked can also be invoked by using the keyboard. To use the keyboard with a UI element, the element must have focus. Only classes that derive from [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) support focus and tab navigation.
 
@@ -88,6 +91,7 @@ XAML
 
 <span id="keyboard_shortcuts"/>
 <span id="KEYBOARD_SHORTCUTS"/>
+
 ## Keyboard shortcuts  
 In addition to implementing keyboard navigation and activation for your app, it is a good practice to implement shortcuts for your app's functionality. Tab navigation provides a good, basic level of keyboard support, but with complex forms you may want to add support for shortcut keys as well. This can make your application more efficient to use, even for people who use both a keyboard and pointing devices.
 
@@ -148,6 +152,7 @@ For more guidance about implementing shortcut keys, see [Shortcut keys](http://g
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
+
 ### Implementing a key event handler  
 Input events such as the key events use an event concept called *routed events*. A routed event can bubble up through the child elements of a composited control, such that a common control parent can handle events for multiple child elements. This event model is convenient for defining shortcut key actions for a control that contains several composite parts that by design cannot have focus or be part of the tab order.
 
@@ -156,6 +161,7 @@ For example code that shows how to write a key event handler that includes check
 <span id="Keyboard_navigation_for_custom_controls"/>
 <span id="keyboard_navigation_for_custom_controls"/>
 <span id="KEYBOARD_NAVIGATION_FOR_CUSTOM_CONTROLS"/>
+
 ## Keyboard navigation for custom controls  
 We recommend the use of arrow keys as keyboard shortcuts for navigating among child elements, in cases where the child elements have a spacial relationship to each other. If tree-view nodes have separate sub-elements for handling expand-collapse and node activation, use the left and right arrow keys to provide keyboard expand-collapse functionality. If you have an oriented control that supports directional traversal within the control content, use the appropriate arrow keys.
 
@@ -164,6 +170,7 @@ Generally you implement custom key handling for custom controls by including an 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
+
 ## An example of a visual state for a focus indicator  
 We mentioned earlier that any custom control that enables the user to focus it should have a visual focus indicator. Usually that focus indicator is as simple as drawing a rectangle shape immediately around the control's normal bounding rectangle. The [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) for visual focus is a peer element to the rest of the control's composition in a control template, but is initially set with a [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) value of **Collapsed** because the control isn't focused yet. Then, when the control does get focus, a visual state is invoked that specifically sets the **Visibility** of the focus visual to **Visible**. Once focus is moved elsewhere, another visual state is called, and the **Visibility** becomes **Collapsed**.
 
@@ -229,12 +236,14 @@ Note how only one of the named states adjusts [**Visibility**](https://msdn.micr
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
+
 ## Keyboard accessibility and Windows Phone
 A Windows Phone device typically doesn't have a dedicated, hardware keyboard. However, a Soft Input Panel (SIP) can support several keyboard accessibility scenarios. Screen readers can read text input from the **Text** SIP, including announcing deletions. Users can discover where their fingers are because the screen reader can detect that the user is scanning keys, and it reads the scanned key name aloud. Also, some of the keyboard-oriented accessibility concepts can be mapped to related assistive technology behaviors that don't use a keyboard at all. For example, even though a SIP won't include a Tab key, Narrator supports a touch gesture that's the equivalent of pressing the Tab key, so having a useful tab order through the controls in a UI is still an important accessibility principle. Arrow keys as used for navigating the parts within complex controls are also supported through Narrator touch gestures. Once focus has reached a control that's not for text input, Narrator supports a gesture that invokes that control's action.
 
 Keyboard shortcuts aren't typically relevant for Windows Phone apps, because a SIP won't include Control or Alt keys.
 
 <span id="related_topics"/>
+
 ## Related topics  
 * [Accessibility](accessibility.md)
 * [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607)

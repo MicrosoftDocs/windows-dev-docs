@@ -35,15 +35,15 @@ Touch controls for games topic explains how to add touch-based controls to move 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md)</p></td>
+<td align="left"><p><a href="tutorial--adding-move-look-controls-to-your-directx-game.md">Move-look controls for games</a></p></td>
 <td align="left"><p>Add move-look controls.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Relative mouse movement](relative-mouse-movement.md)</p></td>
+<td align="left"><p><a href="relative-mouse-movement.md">Relative mouse movement</a></p></td>
 <td align="left"><p>Handle relative mouse movement.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Touch controls for games](tutorial--adding-touch-controls-to-your-directx-game.md)</p></td>
+<td align="left"><p><a href="tutorial--adding-touch-controls-to-your-directx-game.md">Touch controls for games</a></p></td>
 <td align="left"><p>Add basic touch controls to your game.</p></td>
 </tr>
 </tbody>

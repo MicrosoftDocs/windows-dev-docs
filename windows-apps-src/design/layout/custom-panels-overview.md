@@ -25,15 +25,7 @@ ms.localizationpriority: medium
 A *panel* is an object that provides a layout behavior for child elements it contains, when the Extensible Application Markup Language (XAML) layout system runs and your app UI is rendered. 
 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)</li>
-<li>[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)</li>
-<li>[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) </li>
-</ul>
-</div>
-</div>
+> **Important APIs**: [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511), [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
 You can define custom panels for XAML layout by deriving a custom class from the [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) class. You provide behavior for your panel by overriding the [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) and [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711), supplying logic that measures and arranges the child elements.
 

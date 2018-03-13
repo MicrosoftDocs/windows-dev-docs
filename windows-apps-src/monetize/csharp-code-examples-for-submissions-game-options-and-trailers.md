@@ -31,6 +31,7 @@ These examples have the following requirements:
 * Install the [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet package from Newtonsoft to your project.
 
 <span id="create-app-submission" />
+
 ## Create an app submission
 
 The ```CreateAndSubmitSubmissionExample``` class defines a public ```Execute``` method that calls other example methods to use the Microsoft Store submission API to create and commit an app submission that contains game options and a trailer. To adapt this code for your own use:
@@ -42,6 +43,7 @@ The ```CreateAndSubmitSubmissionExample``` class defines a public ```Execute``` 
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/CreateAndSubmitSubmissionExample.cs#CreateAndSubmitSubmissionExample)]
 
 <span id="token" />
+
 ## Obtain an Azure AD access token
 
 The ```DevCenterAccessTokenClient``` class defines a helper method that uses the your ```tenantId```, ```clientId``` and ```clientSecret``` values to create an Azure AD access token to use with the Microsoft Store submission API.
@@ -50,6 +52,7 @@ The ```DevCenterAccessTokenClient``` class defines a helper method that uses the
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_SubmissionAdvancedListings/cs/DevCenterAccessTokenClient.cs#DevCenterAccessTokenClient)]
 
 <span id="utilities" />
+
 ## Helper methods to invoke the submission API and upload submission files
 
 The ```DevCenterClient``` class defines helper methods that invoke a variety of methods in the Microsoft Store submission API and upload the ZIP file containing the packages, listing images, and trailer files for the app submission.

@@ -33,7 +33,7 @@ Removes the specified server from a session.
 | --- | --- | --- | --- |
 | scid| GUID| Service configuration identifier (SCID). Part 1 of the session identifier.|
 | sessionTemplateName| string| Name of the current instance of the session template. Part 2 of the session identifier.|
-| sessionName| string| Name of the session. Part 3 of the session identifier.|
+| sessionName| GUID| Unique ID of the session. Part 3 of the session identifier.|
 
 <a id="ID4E5"></a>
 

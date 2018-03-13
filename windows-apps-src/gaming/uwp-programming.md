@@ -30,11 +30,11 @@ This section provides information about developing UWP games. Note that some of 
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Audio for games](working-with-audio-in-your-directx-game.md)</p></td>
+<td align="left"><p><a href="working-with-audio-in-your-directx-game.md">Audio for games</a></p></td>
 <td align="left"><p>Describes the use of XAudio2 and Microsoft Media Foundation to add music and sound effects into a DirectX game.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Input for games](input-for-games.md)</p></td>
+<td align="left"><p><a href="input-for-games.md">Input for games</a></p></td>
 <td align="left"><p>Learn about the different kinds of input devices for UWP games and how to implement them.</p></td>
 </tr>
 <tr class="odd">
@@ -46,7 +46,7 @@ This section provides information about developing UWP games. Note that some of 
     </td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Networking for games](work-with-networking-in-your-directx-game.md)</p></td>
+<td align="left"><p><a href="work-with-networking-in-your-directx-game.md">Networking for games</a></p></td>
 <td align="left"><p>Explains how to develop and incorporate networking features into a DirectX game.</p></td>
 </tr>
 </tbody>

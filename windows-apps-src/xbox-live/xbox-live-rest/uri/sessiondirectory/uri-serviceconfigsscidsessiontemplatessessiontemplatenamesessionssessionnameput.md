@@ -38,13 +38,13 @@ The JSON request body mirrors the session data structure. All fields and sub-fie
 
 The wire format for the PUT method's session creation or joining mode is shown below.
 
-> [!NOTE] 
+> [!NOTE]
 > Take care using this pattern. Upates are applied blindly, no matter the current state of the session.
 
 
 
 ```cpp
-PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/mysess HTTP/1.1
+PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001 HTTP/1.1
          Content-Type: application/json
 
 ```
@@ -54,7 +54,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 The wire format for the PUT method's session update mode is shown below.
 
 ```cpp
-PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/mysess HTTP/1.1
+PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001 HTTP/1.1
          Content-Type: application/json
 
 ```
@@ -64,7 +64,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 The wire format for the PUT method to update session properties is shown below. It is equivalent to a PUT operation to the session URI with a body having nothing but the object below as properties. The difference is that this operation returns error code 404 Not Found if the session does not exist. This operation supports the If-Match header.
 
 ```cpp
-PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/mysess/properties HTTP/1.1
+PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/sessions/00000000-0000-0000-0000-000000000001/properties HTTP/1.1
          Content-Type: application/json
 
          { "system": { }, "custom": { } }
@@ -82,7 +82,7 @@ PUT /serviceconfigs/00000000-0000-0000-0000-000000000000/sessiontemplates/quick/
 | --- | --- | --- | --- | --- |
 | scid| GUID| Service configuration identifier (SCID). Part 1 of the session identifier.|
 | sessionTemplateName| string| Name of the current instance of the session template. Part 2 of the session identifier.|
-| sessionName| string| Name of the session. Part 3 of the session identifier.|
+| sessionName| GUID| Unique ID of the session. Part 3 of the session identifier.|
 
 <a id="ID4EFC"></a>
 

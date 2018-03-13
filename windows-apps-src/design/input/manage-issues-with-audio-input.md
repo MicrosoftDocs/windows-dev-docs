@@ -19,15 +19,7 @@ ms.localizationpriority: medium
 
 Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)</li>
-<li>[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)</li>
-<li>[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)</li>
-
-</ul>
-</div>
+> **Important APIs**: [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243), [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## Assess audio-input quality

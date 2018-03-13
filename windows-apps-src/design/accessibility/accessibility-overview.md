@@ -26,6 +26,7 @@ This article is an overview of the concepts and technologies related to accessib
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
+
 ## Accessibility and your app  
 There are many possible disabilities or impairments, including limitations in mobility, vision, color perception, hearing, speech, cognition, and literacy. However, you can address most requirements by following the guidelines offered here. This means providing:
 
@@ -40,12 +41,14 @@ In addition, data binding, style, and template features make it easy to implemen
 <span id="UI_Automation"/>
 <span id="ui_automation"/>
 <span id="UI_AUTOMATION"/>
+
 ## UI Automation  
 Accessibility support comes primarily from the integrated support for the Microsoft UI Automation framework. That support is provided through base classes and the built-in behavior of the class implementation for control types, and an interface representation of the UI Automation provider API. Each control class uses the UI Automation concepts of automation peers and automation patterns that report the control's role and content to UI Automation clients. The app is treated as a top-level window by UI Automation, and through the UI Automation framework all the accessibility-relevant content within that app window is available to a UI Automation client. For more info about UI Automation, see [UI Automation Overview](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
 <span id="ASSISTIVE_TECHNOLOGY"/>
+
 ## Assistive technology  
 Many user accessibility needs are met by assistive technology products installed by the user or by tools and settings provided by the operating system. This includes functionality such as screen readers, screen magnification, and high-contrast settings.
 
@@ -64,6 +67,7 @@ Some of the options that you can use for testing basic accessibility scenarios w
 <span id="Screen_reader_support_and_basic_accessibility_information"/>
 <span id="screen_reader_support_and_basic_accessibility_information"/>
 <span id="SCREEN_READER_SUPPORT_AND_BASIC_ACCESSIBILITY_INFORMATION"/>
+
 ## Screen reader support and basic accessibility information  
 Screen readers provide access to the text in an app by rendering it in some other format, such as spoken language or Braille output. The exact behavior of a screen reader depends on the software and on the user's configuration of it.
 
@@ -76,6 +80,7 @@ There are several other automation properties available (including the keyboard 
 <span id="Keyboard_support"/>
 <span id="keyboard_support"/>
 <span id="KEYBOARD_SUPPORT"/>
+
 ## Keyboard support  
 To provide good keyboard support, you must ensure that every part of your application can be used with a keyboard. If your app uses mostly the standard controls and doesn't use any custom controls, you are most of the way there already. The basic XAML control model provides built-in keyboard support including tab navigation, text input, and control-specific support. The elements that serve as layout containers (such as panels) use the layout order to establish a default tab order. That order is often the correct tab order to use for an accessible representation of the UI. If you use [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) controls to display data, they provide built-in arrow-key navigation. Or if you use a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) control, it already handles the Spacebar or Enter keys for button activation.
 
@@ -84,12 +89,14 @@ For more info about all the aspects of keyboard support, including tab order and
 <span id="Media_and_captioning"/>
 <span id="media_and_captioning"/>
 <span id="MEDIA_AND_CAPTIONING"/>
+
 ## Media and captioning  
 You typically display audiovisual media through a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) object. You can use **MediaElement** APIs to control the media playback. For accessibility purposes, provide controls that enable users to play, pause, and stop the media as needed. Sometimes, media includes additional components that are intended for accessibility, such as captioning or alternative audio tracks that include narrative descriptions.
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
 <span id="ACCESSIBLE_TEXT"/>
+
 ## Accessible text  
 Three main aspects of text are relevant to accessibility:
 
@@ -100,12 +107,14 @@ Three main aspects of text are relevant to accessibility:
 <span id="Supporting_high-contrast_themes"/>
 <span id="supporting_high-contrast_themes"/>
 <span id="SUPPORTING_HIGH-CONTRAST_THEMES"/>
+
 ## Supporting high-contrast themes  
 UI controls use a visual representation that is defined as part of a XAML resource dictionary of themes. One or more of these themes is specifically used when the system is set for high contrast. When the user switches to high contrast, by looking up the appropriate theme from a resource dictionary dynamically, all your UI controls will use an appropriate high-contrast theme too. Just make sure that you haven't disabled the themes by specifying an explicit style or using another styling technique that prevents the high-contrast themes from loading and overriding your style changes. For more info, see [High-contrast themes](high-contrast-themes.md).
 
 <span id="Design_for_alternative_UI"/>
 <span id="design_for_alternative_ui"/>
 <span id="DESIGN_FOR_ALTERNATIVE_UI"/>
+
 ## Design for alternative UI  
 When you design your apps, consider how they may be used by people with limited mobility, vision, and hearing. Because assistive technology products make extensive use of standard UI, it is particularly important to provide good keyboard and screen-reader support even if you make no other adjustments for accessibility.
 
@@ -159,6 +168,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="Verification_and_publishing"/>
 <span id="verification_and_publishing"/>
 <span id="VERIFICATION_AND_PUBLISHING"/>
+
 ## Verification and publishing  
 For more info about accessibility declarations and publishing your app, see [Accessibility in the Store](accessibility-in-the-store.md).
 
@@ -168,12 +178,14 @@ For more info about accessibility declarations and publishing your app, see [Acc
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_CUSTOM_CONTROLS"/>
+
 ## Assistive technology support in custom controls  
 When you create a custom control, we recommend that you also implement or extend one or more [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) subclasses to provide accessibility support. In some cases, so long as you use the same peer class as was used by the base control class, the automation support for your derived class is adequate at a basic level. However, you should test this, and implementing a peer is still recommended as a best practice so that the peer can correctly report the class name of your new control class. Implementing a custom automation peer has a few steps involved. For more info, see [Custom automation peers](custom-automation-peers.md).
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
+
 ## Assistive technology support in apps that support XAML / Microsoft DirectX interop  
 Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) or [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) is not accessible by default. The [XAML SwapChainPanel DirectX interop sample](http://go.microsoft.com/fwlink/p/?LinkID=309155) shows how to create UI Automation peers for the hosted DirectX content. This technique makes the hosted content accessible through UI Automation.
 

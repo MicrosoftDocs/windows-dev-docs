@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 12/4/2017
+ms.date: 3/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,7 +28,7 @@ Screenshots are images of your app that are displayed to your customers in your 
 
 You have the option to provide screenshots for the different device families that your app supports so that the appropriate screenshots will appear when a customer views your app's Store listing on that type of device. 
 
-Only one screenshot (for any device family) is required for your submission, though you can provide several; up to 9 desktop screenshots and up to 8 screenshots for the other device families. We suggest providing at least four screenshots for each device family that your app supports so that people can see how the app will look on their device type. (Do not include screenshots for device families that your app does not support.)
+Only one screenshot (for any device family) is required for your submission, though you can provide several; up to 9 desktop screenshots and up to 8 screenshots for the other device families. We suggest providing at least four screenshots for each device family that your app supports so that people can see how the app will look on their device type. (Do not include screenshots for device families that your app does not support.) Note that **Desktop** screenshots will also be shown to customers on Surface Hub devices.
 
 > [!NOTE]
 > Microsoft Visual Studio provides a [tool to help you capture screenshots](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator#BKMK_Capture_a_screenshot_of_your_app_for_submission_to_the_Microsoft_Store).
@@ -36,7 +36,7 @@ Only one screenshot (for any device family) is required for your submission, tho
 Each screenshot must be a .png file in either landscape or portrait orientation, and the file size can't be larger than 50 MB.
 
 The size requirements vary depending on the device family:
-- Desktop: 1366 x 768 pixels or larger. Supports 4K images (3840 x 2160).
+- Desktop: 1366 x 768 pixels or larger. Supports 4K images (3840 x 2160). (Will also be shown to customers on Surface Hub devices.)
 - Mobile: Images must be one of the following: 1080 x 1920, 1920 x 1080, 768 x 1280, 1280 x 768, 720 x 1280, 1280 x 720, 800 x 480, or 480 x 800 pixels.
 - Xbox: 3480 x 2160 pixels or smaller. Supports 4K images (3840 x 2160).
 - Holographic: 1268 x 720 pixels or larger. Supports 4K images (3840 x 2160).
@@ -56,73 +56,93 @@ Note that if you create Store listings for [multiple languages](supported-langua
 
 ## Store logos
 
-Store logos are optional images that you can upload for a more customized display in the Store. We recommend that you provide these images for the best Store listing display on all of the devices and OS versions that your app supports.
+You can upload Store logos to create a more customized display in the Store. We recommend that you provide these images so that your Store listing appears optimally on all of the devices and OS versions that your app supports. Note that if your app is available to customers on Xbox, some of these images are required.
 
 You can provide these images as .png files (no greater than 50 MB), each of which should follow the guidelines below.
 
-- **9:16 (720 x 1080 or 1440 x 2160 pixels)**: This image is required for proper display on Xbox, and is used as the main logo on Store listings for customers on Windows 10, so we strongly recommend providing this image; your listing may not look good without it. The image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
+### 9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
-- **1:1 (1080 x 1080 or 2160 x 2160 pixels)**: This image may appear in various Store layouts for Windows 10 (including Xbox), and if you don't provide the 9:16 logo size it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there.
+This is used as the main logo image for customers on Windows 10 and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. Your listing may not look good if you don't include it, and won't be consistent with other listings that customers see while browing the Store. This image may also be used in search results or in editorially-curated collections.
 
-- **1:1 (300 x 300 pixels)**: This image, sometimes referred to as the **App tile icon**, is requied for proper display on Windows Phone 8.1 and earlier. If your app supports Windows Phone 8.1 or earlier and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10, if your app only has packages targeting Windows Phone 8.1 or earlier.) If your submission *only* includes UWP packages, you don’t need to provide this image. (Note that if your submission includes both Windows Phone 8.x packages and UWP packages, and you do provide this image, it may be used on Windows 10 in certain Store layouts. If you want to prevent this, you can create [platform-specific listings](create-platform-specific-store-listings.md) for the Windows Phone versions that your app supports and only include the app tile icon there.)
+This image should include your app’s name, and any text on the image should meet accessible readability requirements (4.51 contrast ratio). Note that text overlays may appear on the bottom quarter of this image, so make sure you don't include text or key imagery there.
 
-By default, the Store may use logo images from your app's packages when displaying your listing to customers on Windows 10 (including Xbox). You can optionally prevent this and instead have the Store use only images that you upload in the **Store logos** section. This gives you more control over your app’s appearance in various displays throughout the Store.
+> [!NOTE]
+> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
 
-To use only uploaded images for display in the Store on Windows 10 (including Xbox), check the box that says **For Windows 10 customers, display uploaded logo images instead of the images from my packages**.
+### 1:1 box art (1080 x 1080 or 2160 x 2160 pixels)
+
+This image may appear in various Store pages for Windows 10 (including Xbox), and if you don't provide the **9:16 Poster art** image it will be used as your main logo. This image should also include your app’s name. Text overlays may appear on the bottom quarter of this image, so don't include text or key imagery there. Be sure to include your app’s name in this image. 
+
+> [!NOTE]
+> If your app is available to customers on Xbox, this image is **required** and must include the product's title. The title must appear in the top three-quarters of the image, since text overlays may appear on the bottom quarter of the image.
+
+### 1:1 App tile icon (300 x 300 pixels)
+
+This image is required for proper display on Windows Phone 8.1 and earlier. If your app supports Windows Phone 8.1 or earlier and you don't provide this image, those customers will see a blank icon with your app's listing. (This also applies to customers on Windows 10, if your app only has packages targeting Windows Phone 8.1 or earlier.) If your submission *only* includes UWP packages, you don’t need to provide this image. (Note that if your submission includes both Windows Phone 8.x packages and UWP packages, and you do provide this image, it may be used on Windows 10 in certain Store layouts. If you want to prevent this, you can create [platform-specific listings](create-platform-specific-store-listings.md) for the Windows Phone versions that your app supports and only include the app tile icon there.)
+
+You also have the option to prevent the Store from using logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store for customers on Windows 10 (including Xbox).
+
+To use only uploaded images for display in the Store on Windows 10 (including Xbox), check the box that says **For Windows 10 customers, display uploaded logo images instead of the images from my packages**. (If you don't check this box, images from your app's packages will be used.)
 
 When you check this box, a new section called **Uploaded Store logos** appears. Here, you can upload 3 images, including the 300 x 300 “app tile icon” size (if you check the box, the field to provide that image will move into this section). We recommend providing all three image sizes if you use this option: 300 x 300, 150 x 150, and 71 x 71 pixels. However, only the 300 x 300 size is required.
 
 
+<span id="promotional-images" />
 ## Additional art assets
 
-This section lets you provide artwork to help display your product more effectively in the Store: promotional images, Xbox images, optional promotional images, and trailers. We recommend providing these images to create a more inviting Store listing. The **16:9 "hero" (1920 x 1080 or 3840 x 2160 pixels)** is especially recommended if you plan to include [video trailers](#trailers) in your Store listing; if you don't include it, your trailers won't appear at the top of your listing.
+This section lets you provide artwork to help display your product more effectively in the Store. We recommend providing these images to create a more inviting Store listing.
+
+> [!TIP]
+> The **16:9 Super hero art** is especially recommended if you plan to include [video trailers](#trailers) in your Store listing; if you don't include it, your trailers won't appear at the top of your listing.
 
 To add these images, select **Show details** in the **Additional art assets** section.
 
 
-## Promotional images
 
-The images in this section can help your app listing look better, and also allow us to consider your app for featured promotional opportunities. Note that providing these images doesn't guarantee that your app will be featured. See [Making your app easy to promote](make-your-app-easier-to-promote.md) for more information.
+### Windows 10 and Xbox image (16:9 Super hero art)
 
-Here are some tips to keep in mind when designing your promotional artwork:
+The **16:9 Super hero art (1920 x 1080 or 3840 x 2160 pixels)** image is used in various layouts in the Microsoft Store on all Windows 10 device types (including Xbox). We recommend providing this image, regardless of which OS versions or device types your app targets.
 
-- Images must be in .png format.
+This image is *required* for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later (which includes Xbox), it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). It may also be used to feature your app in promotional layouts throughout the Store. Note that this image must not include the product's title or other text.
+
+Here are some tips to keep in mind when designing this image:
+
+- The image must be a .png that is either 1920 x 1080 pixels or 3840 x 2160 pixels.
 - Select a dynamic image that relates to the app to drive recognition and differentiation. Avoid stock photography or generic visuals.
 - Don't include text in the image.
+- Avoid placing key visual elements in the bottom third of the image (since in some layouts we may apply a gradient over that portion).
+- Place the most important details in the center of the image (since in some layouts we may crop the image).
 - Minimize empty space.
 - Avoid showing your app's UI, and do not use any device-specific imagery.
 - Avoid political and national themes, flags, or religious symbols.
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-When designing your promotional images, keep in mind that in some layouts, we'll apply a gradient over the bottom third so that we can legibly display marketing text over the image. Because of this, make sure you avoid placing key visual elements in the bottom third. Additionally, we may crop your image, so place the most important details in the center.  
-
-The **16:9 "hero" (1920 x 1080 or 3840 x 2160 pixels)** is used in various layouts in the Microsoft Store on all Windows 10 device types (including Xbox). We recommend providing this image, regardless of which OS versions or device types your app targets. This image is *required* for proper display if your listing includes [video trailers](#trailers). For customers on Windows 10, version 1607 or later (which includes Xbox), it is used as the main image on the top of your Store listing (or appears after any trailers finish playing). It may also be used to feature your app in promotional layouts throughout the Store. Note that this image must not include the product's title or other text.
-
-The **2:1 (2400 x 1200)** image size is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
-
-<!-- update? ![guidelines for spotlight image](images/spotlight1.jpg) 
-![well-designed spotlight image](images/spotlight2.jpg)
-
-The image below shows the key proportions to keep in mind. The "safe zone" in the center will be prominent even if we crop the image. The "dynamic text area" is where text and a gradient may appear.  -->
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](make-your-app-easier-to-promote.md) for more information.
 
 
-## Xbox images
+### Xbox images
 
-These images are recommended for proper display if you publish your app to Xbox. 
+These images are required for proper display if you publish your app to Xbox. 
 
 There are 3 different sizes that you can upload:
-- **Branded key art, 584 x 800 pixels**: Used on Xbox.com. Must include the product’s title. 
-- **Titled hero, 1920 x 1080 pixels**: Must include the product’s title.
-- **Featured promo, 1080 x 1080 pixels**: Used in the Microsoft Store on Xbox One. Must *not* include the product’s title.
+- **Branded key art, 584 x 800 pixels**: Must include the product’s title. A Branding Bar is required on this image. Keep the title and all key imagery in the top three-quarters of the image, as an overlay may appear over the bottom quarter.
+- **Titled hero art, 1920 x 1080 pixels**: Must include the product’s title. Keep the title and all key imagery in the top three-quarters of the image, as an overlay may appear over the bottom quarter.
+- **Featured Promotional Square art, 1080 x 1080 pixels**: Must *not* include the product’s title.
 
 > [!NOTE]
 > For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
 
 
-## Optional promotional images
+### Holographic image
 
-If your app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x), these images must be provided in order for us to consider featuring your app in promotional layouts (though they don't guarantee that your app will be featured). If your app does not support these earlier OS versions, you can skip this section.
+The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
+
+
+<span id="optional-promotional-images" />
+### Images only for Windows 8.x and/or Windows Phone 8.x 
+
+If your app supports earlier OS versions (Windows 8.x and/or Windows Phone 8.x), these images must be provided in order for us to consider featuring your app in promotional layouts (though they don't guarantee that your app will be featured). If your app does not support these earlier OS versions, you can skip this section. (This section was formerly called **Optional promotional images**.)
 
 **For Windows Phone 8.1 and earlier**, two image sizes can be used in promotional layouts: **1000 x 800 pixels (5:4)** and **358 x 358 pixels (1:1)**. If your app runs on Windows Phone 8.1 or earlier, we recommend providing images in both of these sizes for promotional consideration.  
 

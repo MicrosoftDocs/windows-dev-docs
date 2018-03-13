@@ -74,27 +74,27 @@ Here's a simple list view showing grouped data on a phone.
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
+<td align="left"><p><a href="listview-and-gridview.md">List view and grid view</a></p></td>
 <td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Item containers and templates](item-containers-templates.md)</p></td>
+<td align="left"><p><a href="item-containers-templates.md">Item containers and templates</a></p></td>
 <td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Item templates for list view](item-templates-listview.md)</p></td>
+<td align="left"><p><a href="item-templates-listview.md">Item templates for list view</a></p></td>
 <td align="left"><p>Use these example item templates for a ListView to get the look of common app types.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Inverted lists](inverted-lists.md)</p></td>
+<td align="left"><p><a href="inverted-lists.md">Inverted lists</a></p></td>
 <td align="left"><p>Inverted lists have new items added at the bottom, like in a chat app. Follow this guidance to use an inverted list in your app.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Pull-to-refresh](pull-to-refresh.md)</p></td>
+<td align="left"><p><a href="pull-to-refresh.md">Pull-to-refresh</a></p></td>
 <td align="left"><p>The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Use this guidance to implement pull-to-refresh in your list view.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
+<td align="left"><p><a href="nested-ui.md">Nested UI</a></p></td>
 <td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
 </tr>
 </tbody>
@@ -141,19 +141,19 @@ A grid view is an ideal solution for a content library, which is often used to p
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
+<td align="left"><p><a href="listview-and-gridview.md">List view and grid view</a></p></td>
 <td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Item containers and templates](item-containers-templates.md)</p></td>
+<td align="left"><p><a href="item-containers-templates.md">Item containers and templates</a></p></td>
 <td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Item templates for grid view](item-templates-gridview.md)</p></td>
+<td align="left"><p><a href="item-templates-gridview.md">Item templates for grid view</a></p></td>
 <td align="left"><p>Use these example item templates for GridView to get the look of common app types.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
+<td align="left"><p><a href="nested-ui.md">Nested UI</a></p></td>
 <td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
 </tr>
 </tbody>

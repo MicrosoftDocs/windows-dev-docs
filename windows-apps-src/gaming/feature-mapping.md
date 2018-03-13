@@ -133,33 +133,33 @@ Use the following table to help convert code from Direct3D 9 to Direct3D 11. Thi
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174336)</p></td>
-<td align="left"><p>[<strong>ID3D11Device2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280493)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174336"><strong>IDirect3DDevice9</strong></a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/dn280493"><strong>ID3D11Device2</strong></a></p>
 <p>[<strong>ID3D11DeviceContext2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280498)</p>
 <p>The graphics pipeline stages are described in [Graphics Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3D9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174300)</p></td>
-<td align="left"><p>[<strong>IDXGIFactory2</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404556)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174300"><strong>IDirect3D9</strong></a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/hh404556"><strong>IDXGIFactory2</strong></a></p>
 <p>[<strong>IDXGIAdapter2</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404537)</p>
 <p>[<strong>IDXGIDevice3</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280345)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9::Present</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174423)</p></td>
-<td align="left"><p>[<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174423"><strong>IDirect3DDevice9::Present</strong></a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/hh446797"><strong>IDXGISwapChain1::Present1</strong></a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::TestCooperativeLevel</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174472)</p></td>
-<td align="left"><p>Call [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797) with the DXGI_PRESENT_TEST flag set.</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174472"><strong>IDirect3DDevice9::TestCooperativeLevel</strong></a></p></td>
+<td align="left"><p>Call <a href="https://msdn.microsoft.com/library/windows/desktop/hh446797"><strong>IDXGISwapChain1::Present1</strong></a> with the DXGI_PRESENT_TEST flag set.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DBaseTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174322)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174322"><strong>IDirect3DBaseTexture9</strong></a></p>
 <p>[<strong>IDirect3DTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205909)</p>
 <p>[<strong>IDirect3DCubeTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174329)</p>
 <p>[<strong>IDirect3DVolumeTexture9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205941)</p>
 <p>[<strong>IDirect3DIndexBuffer9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205865)</p>
 <p>[<strong>IDirect3DVertexBuffer9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205915)</p></td>
-<td align="left"><p>[<strong>ID3D11Buffer</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476351)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476351"><strong>ID3D11Buffer</strong></a></p>
 <p>[<strong>ID3D11Texture1D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476633)</p>
 <p>[<strong>ID3D11Texture2D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476635)</p>
 <p>[<strong>ID3D11Texture3D</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476637)</p>
@@ -168,27 +168,27 @@ Use the following table to help convert code from Direct3D 9 to Direct3D 11. Thi
 <p>[<strong>ID3D11DepthStencilView</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476377)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DVertexShader9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205922)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb205922"><strong>IDirect3DVertexShader9</strong></a></p>
 <p>[<strong>IDirect3DPixelShader9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205869)</p></td>
-<td align="left"><p>[<strong>ID3D11VertexShader</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476641)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476641"><strong>ID3D11VertexShader</strong></a></p>
 <p>[<strong>ID3D11PixelShader</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476576)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DVertexDeclaration9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205919)</p></td>
-<td align="left"><p>[<strong>ID3D11InputLayout</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476575)</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb205919"><strong>IDirect3DVertexDeclaration9</strong></a></p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476575"><strong>ID3D11InputLayout</strong></a></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::SetRenderState</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205805)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb205805"><strong>IDirect3DDevice9::SetRenderState</strong></a></p>
 <p>[<strong>IDirect3DDevice9::SetSamplerState</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205806)</p></td>
-<td align="left"><p>[<strong>ID3D11BlendState1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404571)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/hh404571"><strong>ID3D11BlendState1</strong></a></p>
 <p>[<strong>ID3D11DepthStencilState</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476375)</p>
 <p>[<strong>ID3D11RasterizerState1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446828)</p>
 <p>[<strong>ID3D11SamplerState</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476588)</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9::DrawIndexedPrimitive</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174369)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174369"><strong>IDirect3DDevice9::DrawIndexedPrimitive</strong></a></p>
 <p>[<strong>IDirect3DDevice9::DrawPrimitive</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174371)</p></td>
-<td align="left"><p>[<strong>ID3D11DeviceContext::Draw</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476407)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/ff476407"><strong>ID3D11DeviceContext::Draw</strong></a></p>
 <p>[<strong>ID3D11DeviceContext::DrawIndexed</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476409)</p>
 <p>[<strong>ID3D11DeviceContext::DrawIndexedInstanced</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173566)</p>
 <p>[<strong>ID3D11DeviceContext::DrawInstanced</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173567)</p>
@@ -196,24 +196,24 @@ Use the following table to help convert code from Direct3D 9 to Direct3D 11. Thi
 <p>[<strong>ID3D11DeviceContext::DrawAuto</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173564)</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::BeginScene</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174350)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174350"><strong>IDirect3DDevice9::BeginScene</strong></a></p>
 <p>[<strong>IDirect3DDevice9::EndScene</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174375)</p>
 <p>[<strong>IDirect3DDevice9::DrawPrimitiveUP</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174372)</p>
 <p>[<strong>IDirect3DDevice9::DrawIndexedPrimitiveUP</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174370)</p></td>
 <td align="left"><p>No direct equivalent</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9::ShowCursor</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174470)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174470"><strong>IDirect3DDevice9::ShowCursor</strong></a></p>
 <p>[<strong>IDirect3DDevice9::SetCursorPosition</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174429)</p>
 <p>[<strong>IDirect3DDevice9::SetCursorProperties</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174430)</p></td>
 <td align="left"><p>Use standard cursor APIs.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9::Reset</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174425)</p></td>
-<td align="left"><p>LOST device and POOL_MANAGED no longer exist. [<strong>IDXGISwapChain1::Present1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh446797) can fail with a [<strong>DXGI_ERROR_DEVICE_REMOVED</strong>](https://msdn.microsoft.com/library/windows/desktop/bb509553) return value.</p></td>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174425"><strong>IDirect3DDevice9::Reset</strong></a></p></td>
+<td align="left"><p>LOST device and POOL_MANAGED no longer exist. <a href="https://msdn.microsoft.com/library/windows/desktop/hh446797"><strong>IDXGISwapChain1::Present1</strong></a> can fail with a <a href="https://msdn.microsoft.com/library/windows/desktop/bb509553"><strong>DXGI_ERROR_DEVICE_REMOVED</strong></a> return value.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[<strong>IDirect3DDevice9:DrawRectPatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174373)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174373"><strong>IDirect3DDevice9:DrawRectPatch</strong></a></p>
 <p>[<strong>IDirect3DDevice9:DrawTriPatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174374)</p>
 <p>[<strong>IDirect3DDevice9:LightEnable</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174421)</p>
 <p>[<strong>IDirect3DDevice9:MultiplyTransform</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174422)</p>
@@ -226,11 +226,11 @@ Use the following table to help convert code from Direct3D 9 to Direct3D 11. Thi
 <td align="left"><p>The fixed-function pipeline has been deprecated.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[<strong>IDirect3DDevice9:CheckDepthStencilMatch</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174308)</p>
+<td align="left"><p><a href="https://msdn.microsoft.com/library/windows/desktop/bb174308"><strong>IDirect3DDevice9:CheckDepthStencilMatch</strong></a></p>
 <p>[<strong>IDirect3DDevice9:CheckDeviceFormat</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174309)</p>
 <p>[<strong>IDirect3DDevice9:GetDeviceCaps</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174320)</p>
 <p>[<strong>IDirect3DDevice9:ValidateDevice</strong>](https://msdn.microsoft.com/library/windows/desktop/bb205859)</p></td>
-<td align="left"><p>Capability bits are replaced with feature levels. Only a few format and feature usage cases are optional for any given feature level. These can be checked with [<strong>ID3D11Device::CheckFeatureSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/ff476497) and [<strong>ID3D11Device::CheckFormatSupport</strong>](https://msdn.microsoft.com/library/windows/desktop/bb173536).</p></td>
+<td align="left"><p>Capability bits are replaced with feature levels. Only a few format and feature usage cases are optional for any given feature level. These can be checked with <a href="https://msdn.microsoft.com/library/windows/desktop/ff476497"><strong>ID3D11Device::CheckFeatureSupport</strong></a> and <a href="https://msdn.microsoft.com/library/windows/desktop/bb173536"><strong>ID3D11Device::CheckFormatSupport</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>

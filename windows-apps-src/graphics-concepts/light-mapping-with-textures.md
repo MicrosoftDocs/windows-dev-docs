@@ -46,19 +46,19 @@ Information on using Direct3D texture blending to perform light mapping is prese
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Monochrome light maps](monochrome-light-maps.md)</p></td>
+<td align="left"><p><a href="monochrome-light-maps.md">Monochrome light maps</a></p></td>
 <td align="left"><p>Monochrome light mapping enables older adapters to perform multipass texture blending, when an older 3D accelerator board doesn't support texture blending using the alpha value of the destination pixel.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Color light maps](color-light-maps.md)</p></td>
+<td align="left"><p><a href="color-light-maps.md">Color light maps</a></p></td>
 <td align="left"><p>A colored light map uses the RGB data in the light map for its lighting information. An application usually renders 3D scenes more realistically if it uses colored light maps.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Specular light maps](specular-light-maps.md)</p></td>
+<td align="left"><p><a href="specular-light-maps.md">Specular light maps</a></p></td>
 <td align="left"><p>When illuminated by a light source, shiny objects that use highly reflective materials receive specular highlights. Sometimes you can get more accurate highlights by applying specular light maps to primitives, rather than using the specular highlights produced by the lighting module.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Diffuse light maps](diffuse-light-maps.md)</p></td>
+<td align="left"><p><a href="diffuse-light-maps.md">Diffuse light maps</a></p></td>
 <td align="left"><p>Matte surfaces have diffuse light reflection. The brightness of diffuse light depends on the distance from the light source and the angle between the surface normal and the light source direction vector. Texture light maps can simulate complex diffuse lighting.</p></td>
 </tr>
 </tbody>
