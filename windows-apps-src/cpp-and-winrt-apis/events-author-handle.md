@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
-This topic demonstrates how to author a Windows Runtime Component containing a runtime class representing a bank account, which raises an event when its balance goes into debit. It also demonstrates an app that consumes the bank account runtime class, calls a function to adjust the balance, and handles any events that result.
+This topic demonstrates how to author a Windows Runtime Component containing a runtime class representing a bank account, which raises an event when its balance goes into debit. It also demonstrates a Core App that consumes the bank account runtime class, calls a function to adjust the balance, and handles any events that result.
 
 To follow these steps, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
@@ -28,23 +28,16 @@ Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C+
 The newly-created project contains a file named `Class.idl`. Rename that file `BankAccountWRC.idl` so that, when you build, your component's Windows Metadata file is named for the component itself. In `BankAccountWRC.idl`, define your interface as in the listing below.
 
 ```idl
+// BankAccountWRC.idl
 import "Windows.Foundation.idl";
 
 namespace BankAccountWRC
 {
-	[version(1.0), uuid(07D89D0A-8081-42F6-B899-DF9857037160)]
-	interface IBankAccount : IInspectable
-	{
-		[eventadd] HRESULT AccountIsInDebitEvent([in] Windows.Foundation.EventHandler<float>* handler, [out][retval] EventRegistrationToken* token);
-		[eventremove] HRESULT AccountIsInDebitSimpleEvent([in] EventRegistrationToken token);
-
-		HRESULT AdjustBalance([in] float value);
-	};
-
-	[version(1.0), activatable(1.0)]
 	runtimeclass BankAccount
 	{
-		[default] interface IBankAccount;
+		BankAccount();
+		event Windows.Foundation.EventHandler<Single> AccountIsInDebit;
+		void AdjustBalance(Single value);
 	};
 }
 ```
@@ -57,6 +50,7 @@ Now, let's open `BankAccount.h` and `BankAccount.cpp` and implement our runtime 
 
 ```cppwinrt
 // BankAccount.h
+...
 namespace winrt::BankAccountWRC::implementation
 {
     struct BankAccount : BankAccountT<BankAccount>
@@ -68,20 +62,22 @@ namespace winrt::BankAccountWRC::implementation
 		float balance{ 0.f };
 	};
 }
+...
 ```
 
 In `BankAccount.cpp`, implement the functions like this.
 
 ```cppwinrt
 // BankAccount.cpp
+...
 namespace winrt::BankAccountWRC::implementation
 {
-	event_token BankAccount::AccountIsInDebitEvent(Windows::Foundation::EventHandler<float> const& handler)
+	event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
 	{
 		return accountIsInDebitEvent.add(handler);
 	}
 
-	void BankAccount::AccountIsInDebitEvent(event_token const& token)
+	void BankAccount::AccountIsInDebit(event_token const& token)
 	{
 		accountIsInDebitEvent.remove(token);
 	}
@@ -93,22 +89,25 @@ namespace winrt::BankAccountWRC::implementation
 	}
 }
 ```
-Build the project again.
+
+The implementation of the **AdjustBalance** function raises the **AccountIsInDebit** event if the balance goes negative.
+
+If any warnings prevent you from building, then set the project property **C/C++** > **General** > **Treat Warnings As Errors** to **No (/WX-)**, and build the project again.
 
 ## Create a Core App (BankAccountCoreApp) to test the Windows Runtime Component
-Now create a new project, either in your `BankAccountWRC` solution or in a new one. Create a **Visual C++ Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
+Now create a new project (either in your `BankAccountWRC` solution, or in a new one). Create a **Visual C++ Core App (C++/WinRT)** project, and name it *BankAccountCoreApp*.
 
 Add a reference, and browse to `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`. Click **Add**, and then **OK**. Now build BankAccountCoreApp. If you see an error that the payload file `readme.txt` doesn't exist, then exclude that file from the Windows Runtime Component project, rebuild it, then rebuild BankAccountCoreApp.
 
-During the build process, the `cppwinrt.exe` tool is run to process the referenced `.winmd` file into source code files to support you in consuming your component. One of these files is the header file for your component&mdash;named `BankAccountWRC.h`. It's generated into the folder `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`.
+During the build process, the `cppwinrt.exe` tool is run to process the referenced `.winmd` file into source code files containing projected types to support you in consuming your component. The header for the projected types for your component's runtime classes&mdash;named `BankAccountWRC.h`&mdash;is generated into the folder `\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`.
 
-Include the header in `App.cpp`.
+Include that header in `App.cpp`.
 
 ```cppwinrt
 #include "winrt/BankAccountWRC.h"
 ```
 
-Also in `App.cpp`, add the following code to instantiate a BankAccount, register an event handler, and then cause the account to go into debit. To demonstrate that the event is being raised, put a breakpoint inside the lambda expression, run the app, and click inside the window.
+Also in `App.cpp`, add the following code to instantiate a BankAccount (using the projected type's default constructor), register an event handler, and then cause the account to go into debit.
 
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
@@ -119,7 +118,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 	
 	void Initialize(CoreApplicationView const &)
 	{
-		eventToken = bankAccount.AccountIsInDebitEvent([](const auto &, float balance)
+		eventToken = bankAccount.AccountIsInDebit([](const auto &, float balance)
 		{
 			assert(balance < 0.f);
 		});
@@ -128,7 +127,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 	void Uninitialize()
 	{
-		bankAccount.AccountIsInDebitEvent(eventToken);
+		bankAccount.AccountIsInDebit(eventToken);
 	}
 	...
 
@@ -140,3 +139,8 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 	...
 };
 ```
+
+ Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression, run the app, and click inside the window.
+
+ ## Related topics
+ * [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md)

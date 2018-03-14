@@ -42,11 +42,15 @@ For computer vision scenarios, Windows ML simplifies and optimizes the use of im
 To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
 
 ### ONNX models
-To use Windows ML, you'll need a pre-trained machine learning model in the [Open Neural Network Exchange (ONNX)](https://onnx.ai) format. Windows ML supports the v1.0 release of the ONNX format, which allows developers to use models produced by different training frameworks. There are converter tools for many frameworks and libraries, and ONNX models are already natively supported in many training frameworks. For a list of publicly available ONNX models, see [ONNX Models](https://github.com/onnx/models) on GitHub. 
+To use Windows ML, you'll need a pre-trained machine learning model in the [Open Neural Network Exchange (ONNX)](https://onnx.ai) format. Windows ML supports the v1.0 release of the ONNX format, which allows developers to use models produced by different training frameworks. 
 
-You can also train your own ONNX models to use with Windows ML. To learn how to train a model with Visual Studio Tools for AI, see [Train a model](train-ai-model.md). 
+To learn how to train an ONNX model with Visual Studio Tools for AI, see [Train a model](train-ai-model.md). 
+
+For a list of publicly available ONNX models, see [ONNX Models](https://github.com/onnx/models) on GitHub. 
 
 ### Convert existing models to ONNX
+ONNX models are already natively supported in many training frameworks, and there are converter tools for many frameworks and libraries. To learn how to export from frameworks such as Caffe 2, PyTorch, CNTK, Chainer, and more, see [ONNX tutorials](https://github.com/onnx/tutorials) on GitHub.
+
 If you already have a pre-trained machine learning model from another framework, then you can use [WinMLTools](https://aka.ms/winmltools) to convert it to the ONNX format accepted by Windows ML. 
 
 WinMLTools supports conversion from these formats:
@@ -84,8 +88,9 @@ Windows ML supports all of the operators defined in the ONNX v1.0 documentation 
 
 With an ONNX model file, Windows ML's code generator can generate wrapper classes that call the [Windows ML API](/uwp/api/windows.ai.machinelearning.preview) for you, providing an interface to interact with the model in your app. The generated classes represent the model, inputs, and outputs, allowing you to easily load, bind, and evaluate the model in your project. 
 
+The code generator currently supports both C# and C++/CX. For UWP developers, Windows ML's automatic code generator is natively integrated with [Visual Studio (version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/) when you install the Windows 10 Insider Preview SDK, Build 17110, as an optional component. Simply add your ONNX file as an exiting item to your project, and VS will generate Windows ML wrapper classes in a new interface file.
 
-The code generator is available as a command line tool `mlgen.exe` as part of the Windows SDK, and it currently supports both C# and C++/CX. The tool is located in `(SDK_root)\bin\<version>\x64` or `(SDK_root)\bin\<version>\x86`, where SDK_root is the SDK installation directory. To run the tool, use the command below.
+You can also use the command line tool `mlgen.exe`, which comes with the Windows SDK, to generate Windows ML wrapper classes. The tool is located in `(SDK_root)\bin\<version>\x64` or `(SDK_root)\bin\<version>\x86`, where SDK_root is the SDK installation directory. To run the tool, use the command below.
 
 ```
 mlgen -i INPUT-FILE -l LANGUAGE -n NAMESPACE [-o OUTPUT-FILE]
@@ -95,8 +100,6 @@ Input parameters definition:
 - `LANGUAGE`: CPPCX or CS
 - `NAMESPACE`: the namespace of the generated code
 - `OUTPUT-FILE`: file path where the generated code will be written to. If OUTPUT-FILE is not specified, the generated code is written to the standard output
-
-For UWP developers, Windows ML's automatic code generator will be natively integrated with [Visual Studio (version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/). Simply add your ONNX file as an exiting item to your project, and VS will generate Windows ML wrapper classes in a new interface file.
 
 ## Next steps
 Try creating your first Windows ML app with a step-by-step tutorial in [Get Started](get-started.md).

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 
 
-//<SnippetEffectUsing>
+// <SnippetEffectUsing>
 using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
 using Windows.Foundation.Collections;
 using System.Runtime.InteropServices;
 using Windows.Media;
 using Windows.Foundation;
-//</SnippetEffectUsing>
+// </SnippetEffectUsing>
 
 namespace AudioEffectComponent
 {
-    //<SnippetComImport>
+    // <SnippetComImport>
     [ComImport]
     [Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
@@ -25,17 +25,17 @@ namespace AudioEffectComponent
     {
         void GetBuffer(out byte* buffer, out uint capacity);
     }
-    //</SnippetComImport>
+    // </SnippetComImport>
 
-    //<SnippetImplementIBasicAudioEffect>
+    // <SnippetImplementIBasicAudioEffect>
     public sealed class ExampleAudioEffect : IBasicAudioEffect
-    //</SnippetImplementIBasicAudioEffect>
+    // </SnippetImplementIBasicAudioEffect>
     {
 
 
         
 
-        //<SnippetSupportedEncodingProperties>
+        // <SnippetSupportedEncodingProperties>
         public IReadOnlyList<AudioEncodingProperties> SupportedEncodingProperties
         {
             get
@@ -53,32 +53,32 @@ namespace AudioEffectComponent
                 
             }
         }
-        //</SnippetSupportedEncodingProperties>
+        // </SnippetSupportedEncodingProperties>
 
-        //<SnippetDeclareEchoBuffer>
+        // <SnippetDeclareEchoBuffer>
         private float[] echoBuffer;
         private int currentActiveSampleIndex;
         private AudioEncodingProperties currentEncodingProperties;
-        //</SnippetDeclareEchoBuffer>
+        // </SnippetDeclareEchoBuffer>
 
-        //<SnippetSetEncodingProperties>
+        // <SnippetSetEncodingProperties>
         public void SetEncodingProperties(AudioEncodingProperties encodingProperties)
         {
             currentEncodingProperties = encodingProperties;
             echoBuffer = new float[encodingProperties.SampleRate]; // exactly one second delay
             currentActiveSampleIndex = 0;
         }
-        //</SnippetSetEncodingProperties>
+        // </SnippetSetEncodingProperties>
 
-        //<SnippetSetProperties>
+        // <SnippetSetProperties>
         IPropertySet configuration;
         public void SetProperties(IPropertySet configuration)
         {
             this.configuration = configuration;
         }
-        //</SnippetSetProperties>
+        // </SnippetSetProperties>
 
-        //<SnippetMixProperty>
+        // <SnippetMixProperty>
         public float Mix
         {
             get
@@ -91,9 +91,9 @@ namespace AudioEffectComponent
                 return .5f;
             }
         }
-        //</SnippetMixProperty>
+        // </SnippetMixProperty>
 
-        //<SnippetProcessFrame>
+        // <SnippetProcessFrame>
         unsafe public void ProcessFrame(ProcessAudioFrameContext context)
         {
             AudioFrame inputFrame = context.InputFrame;
@@ -137,33 +137,33 @@ namespace AudioEffectComponent
                 }
             }
         }
-        //</SnippetProcessFrame>
+        // </SnippetProcessFrame>
 
 
-        //<SnippetClose>
+        // <SnippetClose>
         public void Close(MediaEffectClosedReason reason)
         {
             // Dispose of effect resources
             echoBuffer = null;
         }
-        //</SnippetClose>
+        // </SnippetClose>
 
-        //<SnippetDiscardQueuedFrames>
+        // <SnippetDiscardQueuedFrames>
         public void DiscardQueuedFrames()
         {
             // Reset contents of the samples buffer
             Array.Clear(echoBuffer, 0, echoBuffer.Length - 1);
             currentActiveSampleIndex = 0;
         }
-        //</SnippetDiscardQueuedFrames>
+        // </SnippetDiscardQueuedFrames>
 
-        //<SnippetTimeIndependent>
+        // <SnippetTimeIndependent>
         public bool TimeIndependent { get { return true; } }
-        //</SnippetTimeIndependent>
+        // </SnippetTimeIndependent>
 
-        //<SnippetUseInputFrameForOutput>
+        // <SnippetUseInputFrameForOutput>
         public bool UseInputFrameForOutput { get { return false; } }
-        //</SnippetUseInputFrameForOutput>
+        // </SnippetUseInputFrameForOutput>
 
     }
 

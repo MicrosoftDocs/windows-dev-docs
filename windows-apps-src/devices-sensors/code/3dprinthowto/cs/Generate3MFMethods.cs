@@ -23,13 +23,13 @@ namespace _3DPrintHowTo {
 
         private async Task<bool> CreateData() {
 
-            //<SnippetInitClasses>
+            // <SnippetInitClasses>
             var localPackage = new Printing3D3MFPackage();
             var model = new Printing3DModel();
             // specify scaling units for model data
             model.Unit = Printing3DModelUnit.Millimeter;
 
-            //</SnippetInitClasses>
+            // </SnippetInitClasses>
 
 
 
@@ -42,16 +42,16 @@ namespace _3DPrintHowTo {
             // create triangles on the mesh
             await SetTriangleIndicesAsync(mesh);
 
-            //<SnippetMeshAdd>
+            // <SnippetMeshAdd>
             // add the mesh to the model
             model.Meshes.Add(mesh);
-            //</SnippetMeshAdd>
+            // </SnippetMeshAdd>
 
 
             // create material indices
             await SetMaterialIndicesAsync(mesh);
 
-            //<SnippetBaseMaterialGroup>
+            // <SnippetBaseMaterialGroup>
             // add material group
             // all material indices need to start from 1: 0 is a reserved id
             // create new base materialgroup with id = 1
@@ -94,10 +94,10 @@ namespace _3DPrintHowTo {
 
             // add material group to the basegroups property of the model
             model.Material.BaseGroups.Add(baseMaterialGroup);
-            //</SnippetBaseMaterialGroup>
+            // </SnippetBaseMaterialGroup>
 
 
-            //<SnippetColorMaterialGroup>
+            // <SnippetColorMaterialGroup>
             // add ColorMaterials to the Color Material Group (with id 2)
             var colorGroup = new Printing3DColorMaterialGroup(2);
 
@@ -108,18 +108,18 @@ namespace _3DPrintHowTo {
 
             // add colorGroup to the ColorGroups property on the model
             model.Material.ColorGroups.Add(colorGroup);
-            //</SnippetColorMaterialGroup>
+            // </SnippetColorMaterialGroup>
 
-            //<SnippetMetadata>
+            // <SnippetMetadata>
             model.Metadata.Add("Title", "Cube");
             model.Metadata.Add("Designer", "John Smith");
             model.Metadata.Add("CreationDate", "1/1/2016");
-            //</SnippetMetadata>
+            // </SnippetMetadata>
 
 
 
 
-            //<SnippetCompositeMaterialGroup>
+            // <SnippetCompositeMaterialGroup>
             // CompositeGroups
             // create new composite material group with id = 3
             var compositeGroup = new Printing3DCompositeMaterialGroup(3);
@@ -157,9 +157,9 @@ namespace _3DPrintHowTo {
 
             // add group to model
             model.Material.CompositeGroups.Add(compositeGroup);
-            //</SnippetCompositeMaterialGroup>
+            // </SnippetCompositeMaterialGroup>
 
-            //<SnippetTextureResource>
+            // <SnippetTextureResource>
             // texture resource setup
             Printing3DTextureResource texResource = new Printing3DTextureResource();
             // name conveys the path within the 3MF document
@@ -177,9 +177,9 @@ namespace _3DPrintHowTo {
             // assign this texture resource to a Printing3DModelTexture
             var modelTexture = new Printing3DModelTexture();
             modelTexture.TextureResource = texResource;
-            //</SnippetTextureResource>
+            // </SnippetTextureResource>
 
-            //<SnippetTexture2CoordMaterialGroup>
+            // <SnippetTexture2CoordMaterialGroup>
             // texture2Coord Group
             // create new Texture2CoordMaterialGroup with id = 4
             var tex2CoordGroup = new Printing3DTexture2CoordMaterialGroup(4);
@@ -215,10 +215,10 @@ namespace _3DPrintHowTo {
             model.Metadata.Add("tex4", "/3D/Texture/msLogo.png");
             // add group to groups on the model's material
             model.Material.Texture2CoordGroups.Add(tex2CoordGroup);
-            //</SnippetTexture2CoordMaterialGroup>
+            // </SnippetTexture2CoordMaterialGroup>
 
 
-            //<SnippetComponents>
+            // <SnippetComponents>
             // create new component
             Printing3DComponent component = new Printing3DComponent();
 
@@ -242,10 +242,10 @@ namespace _3DPrintHowTo {
 
             // add component to the build property.
             model.Build.Components.Add(componentWithMatrix);
-            //</SnippetComponents>
+            // </SnippetComponents>
 
             
-            //<SnippetSavePackage>
+            // <SnippetSavePackage>
             // save the model to the package:
             await localPackage.SaveModelToPackageAsync(model);
             // get the model stream
@@ -253,7 +253,7 @@ namespace _3DPrintHowTo {
 
             // fix any textures in the model file
             localPackage.ModelPart = await FixTextureContentType(modelStream);
-            //</SnippetSavePackage>
+            // </SnippetSavePackage>
 
             return true;
         }
@@ -265,7 +265,7 @@ namespace _3DPrintHowTo {
         /// </summary>
         /// <param name="mesh"></param>
         /// <returns></returns>
-        //<SnippetMaterialIndices>
+        // <SnippetMaterialIndices>
         private static async Task SetMaterialIndicesAsync(Printing3DMesh mesh) {
             // declare a description of the material indices
             Printing3DBufferDescription description;
@@ -315,7 +315,7 @@ namespace _3DPrintHowTo {
                 await stream.WriteAsync(vertexData, 0, vertexData.Length);
             }
         }
-        //</SnippetMaterialIndices>
+        // </SnippetMaterialIndices>
 
 
         /// <summary>
@@ -323,7 +323,7 @@ namespace _3DPrintHowTo {
         /// </summary>
         /// <param name="mesh">Printing3DMesh</param>
         /// <returns></returns>
-        //<SnippetTriangleIndices>
+        // <SnippetTriangleIndices>
         private static async Task SetTriangleIndicesAsync(Printing3DMesh mesh) {
 
             Printing3DBufferDescription description;
@@ -367,9 +367,9 @@ namespace _3DPrintHowTo {
             }
 
         }
-        //</SnippetTriangleIndices>
+        // </SnippetTriangleIndices>
 
-        //<SnippetVertices>
+        // <SnippetVertices>
         private async Task GetVerticesAsync(Printing3DMesh mesh) {
             Printing3DBufferDescription description;
 
@@ -405,7 +405,7 @@ namespace _3DPrintHowTo {
             // update vertex count: 8 vertices in the cube
             mesh.VertexCount = 8;
         }
-        //</SnippetVertices>
+        // </SnippetVertices>
 
         /// <summary>
         /// Fixes issue in API where textures are not saved correctly
@@ -433,7 +433,7 @@ namespace _3DPrintHowTo {
             return outputStream;
         }
 
-        //<SnippetSaveTo3mf>
+        // <SnippetSaveTo3mf>
         private async void SaveTo3mf(Printing3D3MFPackage localPackage) {
 
             // prompt the user to choose a location to save the file to
@@ -461,6 +461,6 @@ namespace _3DPrintHowTo {
                 }
             }
         }
-        //</SnippetSaveTo3mf>
+        // </SnippetSaveTo3mf>
     }
 }

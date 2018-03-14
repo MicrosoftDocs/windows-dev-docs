@@ -19,13 +19,8 @@ ms.localizationpriority: medium
 
 Convert ink strokes to text and shapes using the recognition capabilities built into Windows Ink.
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li>[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)</li>
-<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
-</ul>
-</div> 
+> **Important APIs**: [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+
 
 ## Free-form recognition with ink analysis
 
@@ -275,6 +270,8 @@ Here's this sample in action:
 | Before analysis | After analysis |
 | --- | --- |
 | ![Before analysis](images/ink/ink-analysis-raw2-small.png) | ![After analysis](images/ink/ink-analysis-analyzed2-small.png) |
+
+---
 
 ## Constrained handwriting recognition
 

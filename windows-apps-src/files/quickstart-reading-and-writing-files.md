@@ -25,7 +25,7 @@ ms.localizationpriority: medium
 
 Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-> [!NOTE] 
+> [!NOTE]
 > Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
 ## Prerequisites
@@ -392,7 +392,3 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim numBytesLoaded As UInteger = Await dataReader.LoadAsync(CUInt(size))
     Dim text As String = dataReader.ReadString(numBytesLoaded)
     ```
-
- 
-
- 

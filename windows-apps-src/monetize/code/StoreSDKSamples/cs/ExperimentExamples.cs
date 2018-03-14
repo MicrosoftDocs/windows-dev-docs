@@ -14,27 +14,27 @@ namespace StoreSDKSamples
         private Button button = new Button();
 
         //<ExperimentCodeSample>
-        //<Snippet1>
+        // <Snippet1>
         private StoreServicesExperimentVariation variation;
         private StoreServicesCustomEventLogger logger;
-        //</Snippet1>
+        // </Snippet1>
 
         // Assign this variable to the project ID for your experiment from Dev Center.
         // The project ID shown below is for example purposes only.
-        //<Snippet2>
+        // <Snippet2>
         private string projectId = "F48AC670-4472-4387-AB7D-D65B095153FB";
-        //</Snippet2>
+        // </Snippet2>
 
         private async Task InitializeExperiment()
         {
             // Get the current cached variation assignment for the experiment.
-            //<Snippet3>
+            // <Snippet3>
             var result = await StoreServicesExperimentVariation.GetCachedVariationAsync(projectId);
             variation = result.ExperimentVariation;
-            //</Snippet3>
+            // </Snippet3>
 
             // Refresh the cached variation assignment if necessary.
-            //<Snippet4>
+            // <Snippet4>
             if (result.ErrorCode != StoreServicesEngagementErrorCode.None || result.ExperimentVariation.IsStale)
             {
                 result = await StoreServicesExperimentVariation.GetRefreshedVariationAsync(projectId);
@@ -44,35 +44,35 @@ namespace StoreSDKSamples
                     variation = result.ExperimentVariation;
                 }
             }
-            //</Snippet4>
+            // </Snippet4>
 
             // Get the remote variable named "buttonText" and assign the value
             // to the button.
-            //<Snippet5>
+            // <Snippet5>
             var buttonText = variation.GetString("buttonText", "Grey Button");
-            //</Snippet5>
-            //<Snippet6>
+            // </Snippet5>
+            // <Snippet6>
             await button.Dispatcher.RunAsync(
                 Windows.UI.Core.CoreDispatcherPriority.Normal,
                 () =>
                 {
                     button.Content = buttonText;
                 });
-            //</Snippet6>
+            // </Snippet6>
 
             // Log the view event named "userViewedButton" to Dev Center.
-            //<Snippet7>
+            // <Snippet7>
             if (logger == null)
             {
                 logger = StoreServicesCustomEventLogger.GetDefault();
             }
 
             logger.LogForVariation(variation, "userViewedButton");
-            //</Snippet7>
+            // </Snippet7>
         }
         //</ExperimentCodeSample>
 
-        //<Snippet8>
+        // <Snippet8>
         private void button_Click(object sender, RoutedEventArgs e)
         {
             if (logger == null)
@@ -82,6 +82,6 @@ namespace StoreSDKSamples
 
             logger.LogForVariation(variation, "userClickedButton");
         }
-        //</Snippet8>
+        // </Snippet8>
     }
 }

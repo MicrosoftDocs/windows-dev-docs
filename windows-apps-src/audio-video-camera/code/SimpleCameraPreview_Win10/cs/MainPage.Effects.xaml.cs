@@ -8,12 +8,12 @@ using Windows.UI.Core;
 using Windows.Media.Capture;
 using Windows.UI.Xaml;
 
-//<SnippetVideoStabilizationEffectUsing>
+// <SnippetVideoStabilizationEffectUsing>
 using Windows.Media.Core;
 using Windows.Media.MediaProperties;
 using Windows.Media.Effects;
 using Windows.Media;
-//</SnippetVideoStabilizationEffectUsing>
+// </SnippetVideoStabilizationEffectUsing>
 
 namespace SimpleCameraPreview_Win10
 {
@@ -27,7 +27,7 @@ namespace SimpleCameraPreview_Win10
 
         private async void BasicAddEffect()
         {
-            //<SnippetBasicAddEffect>
+            // <SnippetBasicAddEffect>
             if (mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.AllStreamsIdentical ||
                 mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.PreviewRecordStreamsIdentical)
             {
@@ -39,11 +39,11 @@ namespace SimpleCameraPreview_Win10
                 myRecordEffect = await mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
                 myPreviewEffect = await mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoPreview);
             }
-            //</SnippetBasicAddEffect>
+            // </SnippetBasicAddEffect>
         }
         public async void RemoveOneEffect()
         {
-            //<SnippetRemoveOneEffect>
+            // <SnippetRemoveOneEffect>
             if (myRecordEffect != null)
             {
                 await mediaCapture.RemoveEffectAsync(myRecordEffect);
@@ -52,14 +52,14 @@ namespace SimpleCameraPreview_Win10
             {
                 await mediaCapture.RemoveEffectAsync(myPreviewEffect);
             }
-            //</SnippetRemoveOneEffect>
+            // </SnippetRemoveOneEffect>
         }
         public async void RemoveAllEffects()
         {
-            //<SnippetClearAllEffects>
+            // <SnippetClearAllEffects>
             await mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
             await mediaCapture.ClearEffectsAsync(MediaStreamType.VideoRecord);
-            //</SnippetClearAllEffects>
+            // </SnippetClearAllEffects>
         }
 
         #endregion
@@ -76,17 +76,17 @@ namespace SimpleCameraPreview_Win10
             await CleanUpVideoStabilizationEffectAsync();
         }
 
-        //<SnippetDeclareVideoStabilizationEffect>
+        // <SnippetDeclareVideoStabilizationEffect>
         private VideoStabilizationEffect _videoStabilizationEffect;
         private VideoEncodingProperties _inputPropertiesBackup;
         private VideoEncodingProperties _outputPropertiesBackup;
         private MediaEncodingProfile _encodingProfile;
-        //</SnippetDeclareVideoStabilizationEffect>
+        // </SnippetDeclareVideoStabilizationEffect>
 
 
         public async Task CreateVideoStabilizationEffectAsync()
         {
-            //<SnippetCreateVideoStabilizationEffect>
+            // <SnippetCreateVideoStabilizationEffect>
             // Create the effect definition
             VideoStabilizationEffectDefinition stabilizerDefinition = new VideoStabilizationEffectDefinition();
 
@@ -99,17 +99,17 @@ namespace SimpleCameraPreview_Win10
             await SetUpVideoStabilizationRecommendationAsync();
 
             _videoStabilizationEffect.Enabled = true;
-            //</SnippetCreateVideoStabilizationEffect>
+            // </SnippetCreateVideoStabilizationEffect>
 
         }
 
         public void InitEncodingProfileMember()
         {
-            //<SnippetEncodingProfileMember>
+            // <SnippetEncodingProfileMember>
             _encodingProfile = MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto);
-            //</SnippetEncodingProfileMember>
+            // </SnippetEncodingProfileMember>
         }
-        //<SnippetSetUpVideoStabilizationRecommendationAsync>
+        // <SnippetSetUpVideoStabilizationRecommendationAsync>
         private async Task SetUpVideoStabilizationRecommendationAsync()
         {
 
@@ -137,8 +137,8 @@ namespace SimpleCameraPreview_Win10
                 _encodingProfile.Video = recommendation.OutputProperties;
             }
         }
-        //</SnippetSetUpVideoStabilizationRecommendationAsync>
-        //<SnippetVideoStabilizationEnabledChanged>
+        // </SnippetSetUpVideoStabilizationRecommendationAsync>
+        // <SnippetVideoStabilizationEnabledChanged>
         private async void VideoStabilizationEffect_EnabledChanged(VideoStabilizationEffect sender, VideoStabilizationEffectEnabledChangedEventArgs args)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
@@ -147,10 +147,10 @@ namespace SimpleCameraPreview_Win10
                 ShowMessageToUser("video stabilization status: " + sender.Enabled + ". Reason: " + args.Reason);
             });
         }
-        //</SnippetVideoStabilizationEnabledChanged>
+        // </SnippetVideoStabilizationEnabledChanged>
         public async Task CleanUpVideoStabilizationEffectAsync()
         {
-            //<SnippetCleanUpVisualStabilizationEffect>
+            // <SnippetCleanUpVisualStabilizationEffect>
             // Clear all effects in the pipeline
             await mediaCapture.RemoveEffectAsync(_videoStabilizationEffect);
 
@@ -170,7 +170,7 @@ namespace SimpleCameraPreview_Win10
             _videoStabilizationEffect.EnabledChanged -= VideoStabilizationEffect_EnabledChanged;
 
             _videoStabilizationEffect = null;
-            //</SnippetCleanUpVisualStabilizationEffect>
+            // </SnippetCleanUpVisualStabilizationEffect>
         }
 
         #endregion Video stabilization effect

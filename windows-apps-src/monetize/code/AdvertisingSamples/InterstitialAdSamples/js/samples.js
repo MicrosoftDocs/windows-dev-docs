@@ -14,14 +14,14 @@ window.interstitialAd.requestAd(myAdType, myAppId, myAdUnitId);
 
 
 var showInterstitial = function () {
-	//<Snippet4>
+	// <Snippet4>
 	if (interstitialAd && interstitialAd.state === MicrosoftNSJS.Advertising.InterstitialAdState.ready) {
 		interstitialAd.show();
 	}
-	//</Snippet4>
+	// </Snippet4>
 };
 
-//<Snippet5>
+// <Snippet5>
 function adReadyHandler(sender) {
   // Your code goes here.
 }
@@ -37,7 +37,7 @@ function completedHandler(sender) {
 function cancelledHandler(sender) {
   // Your code goes here.
 }
-//</Snippet5>
+// </Snippet5>
 
 
 

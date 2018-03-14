@@ -18,7 +18,7 @@ namespace SimpleCameraPreview_Win10
     {
         private async void MultiRecord_Click(object sender, RoutedEventArgs e)
         {
-            //<SnippetMultiRecordFindSensorGroups>
+            // <SnippetMultiRecordFindSensorGroups>
             var sensorGroups = await MediaFrameSourceGroup.FindAllAsync();
 
             var foundGroup = sensorGroups.Select(g => new
@@ -33,9 +33,9 @@ namespace SimpleCameraPreview_Win10
                 Debug.WriteLine("No groups found.");
                 return;
             }
-            //</SnippetMultiRecordFindSensorGroups>
+            // </SnippetMultiRecordFindSensorGroups>
 
-            //<SnippetMultiRecordInitMediaCapture>
+            // <SnippetMultiRecordInitMediaCapture>
             var settings = new MediaCaptureInitializationSettings()
             {
                 SourceGroup = foundGroup.group
@@ -43,10 +43,10 @@ namespace SimpleCameraPreview_Win10
 
             mediaCapture = new MediaCapture();
             await mediaCapture.InitializeAsync(settings);
-            //</SnippetMultiRecordInitMediaCapture>
+            // </SnippetMultiRecordInitMediaCapture>
 
 
-            //<SnippetMultiRecordMediaEncodingProfile>
+            // <SnippetMultiRecordMediaEncodingProfile>
             var profile = new MediaEncodingProfile();
             profile.Container = new ContainerEncodingProperties();
             profile.Container.Subtype = MediaEncodingSubtypes.Mpeg4;
@@ -67,16 +67,16 @@ namespace SimpleCameraPreview_Win10
 
             profile.SetVideoTracks(streams);
             profile.Audio = null;
-            //</SnippetMultiRecordMediaEncodingProfile>
+            // </SnippetMultiRecordMediaEncodingProfile>
 
 
             Debug.WriteLine("started");
-            //<SnippetMultiRecordToFile>
+            // <SnippetMultiRecordToFile>
             var recordFile = await Windows.Storage.KnownFolders.CameraRoll.CreateFileAsync("record.mp4", Windows.Storage.CreationCollisionOption.GenerateUniqueName);
             await mediaCapture.StartRecordToStorageFileAsync(profile, recordFile);
             await Task.Delay(8000);
             await mediaCapture.StopRecordAsync();
-            //</SnippetMultiRecordToFile>
+            // </SnippetMultiRecordToFile>
             Debug.WriteLine("done");
         }
     }

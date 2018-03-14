@@ -217,7 +217,7 @@ On the **Users** page, click the link shown under **Last activity** for the user
 
 To remove a user, group, or Azure AD application from your Dev Center account, click the **Remove** link that appears by their name on the **Users** page. After confirming that you want to remove it, that user, group, or Azure AD application will no longer be able to access to your Dev Center account (unless you add it again later).
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > Removing a user, group, or Azure AD application means that it will no longer have access to your Dev Center account. It does **not** delete the user, group, or Azure AD application from your organization's directory.
 
  

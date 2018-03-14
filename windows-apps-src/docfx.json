@@ -26,6 +26,7 @@
     "externalReference": [
     ],
     "template": "op.html",
-    "dest": "windows-apps-src"
+    "dest": "windows-apps-src",
+    "markdownEngineName": "markdig"
   }
 }

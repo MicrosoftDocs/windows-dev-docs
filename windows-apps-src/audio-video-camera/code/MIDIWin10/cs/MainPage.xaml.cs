@@ -15,10 +15,10 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
 
-//<SnippetUsing>
+// <SnippetUsing>
 using Windows.Devices.Enumeration;
 using Windows.Devices.Midi;
-//</SnippetUsing>
+// </SnippetUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -29,21 +29,21 @@ namespace MIDIWin10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetDeclareDeviceWatchers>
+        // <SnippetDeclareDeviceWatchers>
         MyMidiDeviceWatcher inputDeviceWatcher;
         MyMidiDeviceWatcher outputDeviceWatcher;
-        //</SnippetDeclareDeviceWatchers>
+        // </SnippetDeclareDeviceWatchers>
 
-        //<SnippetDeclareMidiPorts>
+        // <SnippetDeclareMidiPorts>
         MidiInPort midiInPort;
         IMidiOutPort midiOutPort;
-        //</SnippetDeclareMidiPorts>
+        // </SnippetDeclareMidiPorts>
 
         public MainPage()
         {
             this.InitializeComponent();
         }
-        //<SnippetEnumerateMidiInputDevices>
+        // <SnippetEnumerateMidiInputDevices>
         private async Task EnumerateMidiInputDevices()
         {
             // Find all input MIDI devices
@@ -67,9 +67,9 @@ namespace MIDIWin10
                 this.midiInPortListBox.IsEnabled = true;
             }
         }
-        //</SnippetEnumerateMidiInputDevices>
+        // </SnippetEnumerateMidiInputDevices>
 
-        //<SnippetEnumerateMidiOutputDevices>
+        // <SnippetEnumerateMidiOutputDevices>
         private async Task EnumerateMidiOutputDevices()
         {
 
@@ -94,7 +94,7 @@ namespace MIDIWin10
                 this.midiOutPortListBox.IsEnabled = true;
             }
         }
-        //</SnippetEnumerateMidiOutputDevices>
+        // </SnippetEnumerateMidiOutputDevices>
 
 
 
@@ -104,7 +104,7 @@ namespace MIDIWin10
             //EnumerateMidiOutputDevices();
 
 
-            //<SnippetStartWatchers>
+            // <SnippetStartWatchers>
             inputDeviceWatcher =
                 new MyMidiDeviceWatcher(MidiInPort.GetDeviceSelector(), midiInPortListBox, Dispatcher);
 
@@ -114,10 +114,10 @@ namespace MIDIWin10
                 new MyMidiDeviceWatcher(MidiOutPort.GetDeviceSelector(), midiOutPortListBox, Dispatcher);
 
             outputDeviceWatcher.StartWatcher();
-            //</SnippetStartWatchers>
+            // </SnippetStartWatchers>
         }
 
-        //<SnippetInPortSelectionChanged>
+        // <SnippetInPortSelectionChanged>
         private async void midiInPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var deviceInformationCollection = inputDeviceWatcher.DeviceInformationCollection;
@@ -143,9 +143,9 @@ namespace MIDIWin10
             }
             midiInPort.MessageReceived += MidiInPort_MessageReceived;
         }
-        //</SnippetInPortSelectionChanged>
+        // </SnippetInPortSelectionChanged>
 
-        //<SnippetMessageReceived>
+        // <SnippetMessageReceived>
         private void MidiInPort_MessageReceived(MidiInPort sender, MidiMessageReceivedEventArgs args)
         {
             IMidiMessage receivedMidiMessage = args.Message;
@@ -159,9 +159,9 @@ namespace MIDIWin10
                 System.Diagnostics.Debug.WriteLine(((MidiNoteOnMessage)receivedMidiMessage).Velocity);
             }
         }
-        //</SnippetMessageReceived>
+        // </SnippetMessageReceived>
 
-        //<SnippetOutPortSelectionChanged>
+        // <SnippetOutPortSelectionChanged>
         private async void midiOutPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var deviceInformationCollection = outputDeviceWatcher.DeviceInformationCollection;
@@ -187,17 +187,17 @@ namespace MIDIWin10
             }
 
         }
-        //</SnippetOutPortSelectionChanged>
+        // </SnippetOutPortSelectionChanged>
         private void SendMidiMessage()
         {
-            //<SnippetSendMessage>
+            // <SnippetSendMessage>
             byte channel = 0;
             byte note = 60;
             byte velocity = 127;
             IMidiMessage midiMessageToSend = new MidiNoteOnMessage(channel, note, velocity);
 
             midiOutPort.SendMessage(midiMessageToSend);
-            //</SnippetSendMessage>
+            // </SnippetSendMessage>
         }
 
         private void sendMessageButton_Click(object sender, RoutedEventArgs e)
@@ -207,7 +207,7 @@ namespace MIDIWin10
 
         private void CleanUp()
         {
-            //<SnippetCleanUp>
+            // <SnippetCleanUp>
             inputDeviceWatcher.StopWatcher();
             inputDeviceWatcher = null;
 
@@ -220,7 +220,7 @@ namespace MIDIWin10
 
             midiOutPort.Dispose();
             midiOutPort = null;
-            //</SnippetCleanUp>
+            // </SnippetCleanUp>
         }
     }
 }

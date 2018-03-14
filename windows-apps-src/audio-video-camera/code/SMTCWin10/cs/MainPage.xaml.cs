@@ -13,14 +13,14 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<SnippetNamespace>
+// <SnippetNamespace>
 using Windows.Media;
 using Windows.UI.Xaml.Media;
 using Windows.Storage.Streams;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Media.Playback;
-//</SnippetNamespace>
+// </SnippetNamespace>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -36,39 +36,39 @@ namespace SMTC_Win10
 
         // <SnippetSystemMediaTransportControlsSetup>
 
-        //<SnippetDeclareSMTC>
+        // <SnippetDeclareSMTC>
         SystemMediaTransportControls _systemMediaTransportControls;
-        //</SnippetDeclareSMTC>
+        // </SnippetDeclareSMTC>
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            //<SnippetInitSMTCMediaPlayer>
+            // <SnippetInitSMTCMediaPlayer>
             _mediaPlayer = new MediaPlayer();
             _systemMediaTransportControls = _mediaPlayer.SystemMediaTransportControls;
             _mediaPlayer.CommandManager.IsEnabled = false;
-            //</SnippetInitSMTCMediaPlayer>
+            // </SnippetInitSMTCMediaPlayer>
 
             // Hook up app to system transport controls.
-            //<SnippetInitSMTCMediaElement>
+            // <SnippetInitSMTCMediaElement>
             _systemMediaTransportControls = SystemMediaTransportControls.GetForCurrentView();
-            //</SnippetInitSMTCMediaElement>
+            // </SnippetInitSMTCMediaElement>
 
 
             // Register to handle the following system transpot control buttons.
-            //<SnippetEnableContols>
+            // <SnippetEnableContols>
             _systemMediaTransportControls.IsPlayEnabled = true;
             _systemMediaTransportControls.IsPauseEnabled = true;
-            //</SnippetEnableContols>
+            // </SnippetEnableContols>
 
-            //<SnippetRegisterButtonPressed>
+            // <SnippetRegisterButtonPressed>
             _systemMediaTransportControls.ButtonPressed += SystemControls_ButtonPressed;
-            //</SnippetRegisterButtonPressed>
+            // </SnippetRegisterButtonPressed>
         }
         // </SnippetSystemMediaTransportControlsSetup>
 
-        //<SnippetOpenMediaFile>
+        // <SnippetOpenMediaFile>
         StorageFile currentMediaFile;
         private async void OpenButton_Click(object sender, RoutedEventArgs e)
         {
@@ -88,7 +88,7 @@ namespace SMTC_Win10
                 mediaElement.Play();
             }
         }
-        //</SnippetOpenMediaFile>
+        // </SnippetOpenMediaFile>
 
         // <SnippetSystemMediaTransportControlsStateChange>
         void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
@@ -176,7 +176,7 @@ namespace SMTC_Win10
 
         void UpdateTimelineProperties()
         {
-            //<SnippetUpdateTimelineProperties>
+            // <SnippetUpdateTimelineProperties>
             // Create our timeline properties object 
             var timelineProperties = new SystemMediaTransportControlsTimelineProperties();
 
@@ -189,16 +189,16 @@ namespace SMTC_Win10
 
             // Update the System Media transport Controls 
             _systemMediaTransportControls.UpdateTimelineProperties(timelineProperties);
-            //</SnippetUpdateTimelineProperties>
+            // </SnippetUpdateTimelineProperties>
         }
 
         public void RegisterPlaybackChangedHandler()
         {
-            //<SnippetRegisterPlaybackChangedHandler>
+            // <SnippetRegisterPlaybackChangedHandler>
             _systemMediaTransportControls.PlaybackRateChangeRequested += SystemControls_PlaybackRateChangeRequested;
-            //</SnippetRegisterPlaybackChangedHandler>
+            // </SnippetRegisterPlaybackChangedHandler>
         }
-        //<SnippetPlaybackChangedHandler>
+        // <SnippetPlaybackChangedHandler>
         void SystemControls_PlaybackRateChangeRequested(SystemMediaTransportControls sender, PlaybackRateChangeRequestedEventArgs args)
         {
             // Check the requested value to make sure it is within a valid and expected range
@@ -211,6 +211,6 @@ namespace SMTC_Win10
                 _systemMediaTransportControls.PlaybackRate = mediaElement.PlaybackRate;
             }
         }
-        //</SnippetPlaybackChangedHandler>
+        // </SnippetPlaybackChangedHandler>
     }
 }
