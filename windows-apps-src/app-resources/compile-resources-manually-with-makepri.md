@@ -12,10 +12,16 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
 
-
 # Compile resources manually with MakePri.exe
 
 MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+
+## In this section
+|Topic|Description|
+|-|-|
+| [MakePri.exe command-line options](makepri-exe-command-options.md) | MakePri.exe has the set of commands `createconfig`, `dump`, `new`, `resourcepack`, and `versioned`. This topic details the command-line options for their use. |
+| [MakePri.exe configuration file](makepri-exe-configuration.md) | This topic describes the schema of the MakePri.exe XML configuration file. |
+| [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md) | This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources. |
 
 ## MakePri.exe command-line options
 
@@ -54,7 +60,6 @@ Build systems can also use the PRI format-specific indexer to add pre-built PRI 
 When PRI files are built for other components, class libraries, assemblies, DLLs, and SDKs, the **initialPath** configuration should be used to ensure component resources have their own sub resource maps that don't conflict with the app they're included in.
 
 ## Related topics
-
 * [MakePri.exe command-line options](makepri-exe-command-options.md)
 * [MakePri.exe configuration](makepri-exe-configuration.md)
 * [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md)
