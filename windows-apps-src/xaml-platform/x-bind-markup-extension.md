@@ -185,7 +185,7 @@ These properties work in much the same way as the properties of the [**Binding**
 > [!NOTE]
 > If you're converting markup from **{Binding}** to **{x:Bind}**, then be aware of the differences in default values for the **Mode** property.
  
-> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) can be used to change the default mode for x:Bind for a specific segment of the markup tree. The mode selected will apply any x:Bind expressions on that element and its children, that do not explicitly specify a mode as part of the binding. OneTime is more performant than OneWay as using OneTime will cause more code to be generated to hookup and handle the change detection.
+> [**x:DefaultBindMode**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-defaultbindmode-attribute) can be used to change the default mode for x:Bind for a specific segment of the markup tree. The mode selected will apply any x:Bind expressions on that element and its children, that do not explicitly specify a mode as part of the binding. OneTime is more performant than OneWay as using OneWay will cause more code to be generated to hookup and handle the change detection.
 
 ## Remarks
 

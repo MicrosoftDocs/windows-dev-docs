@@ -43,13 +43,13 @@ namespace DiscoverDevices
 
             if (status == RemoteSystemAccessStatus.Allowed) {
 
-                //<SnippetCreateWatcher>
+                // <SnippetCreateWatcher>
                 // store filter list
                 List<IRemoteSystemFilter> listOfFilters = makeFilterList();
 
                 // construct watcher with the list
                 m_remoteSystemWatcher = RemoteSystem.CreateWatcher(listOfFilters);
-                //</SnippetCreateWatcher>
+                // </SnippetCreateWatcher>
 
                 // assign to event handlers, etc...
 
@@ -58,7 +58,7 @@ namespace DiscoverDevices
             }
         }
 
-        //<SnippetMakeFilterList>
+        // <SnippetMakeFilterList>
         private List<IRemoteSystemFilter> makeFilterList()
         {
             // construct an empty list
@@ -91,9 +91,9 @@ namespace DiscoverDevices
             // return the list
             return localListOfFilters;
         }
-        //</SnippetMakeFilterList>
+        // </SnippetMakeFilterList>
 
-        //<SnippetFindByHostName>
+        // <SnippetFindByHostName>
         private async Task<RemoteSystem> getDeviceByAddressAsync(string IPaddress)
         {
             // construct a HostName object
@@ -104,6 +104,6 @@ namespace DiscoverDevices
 
             return remotesys;
         }
-        //</SnippetFindByHostName>
+        // </SnippetFindByHostName>
     }
 }

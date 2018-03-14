@@ -73,8 +73,8 @@ The [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) p
 > [!TIP]
 > When the [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) property is set to true, the system copies the input frame to the output frame before [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) is called. Setting the **IsReadOnly** property to true does not restrict you from writing to the effect's output frames in **ProcessFrame**.
 
-[!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
+[!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
 
 ### SetEncodingProperties method
 

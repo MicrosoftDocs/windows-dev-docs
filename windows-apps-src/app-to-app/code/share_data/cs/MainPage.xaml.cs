@@ -24,7 +24,7 @@ namespace ShareData
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetRegisterShare>
+        // <SnippetRegisterShare>
         public MainPage()
         {
             this.InitializeComponent();
@@ -32,31 +32,31 @@ namespace ShareData
 
         private void Share_Click(object s, RoutedEventArgs e)
         {
-            //<SnippetPrepareToShare>
+            // <SnippetPrepareToShare>
             DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
             dataTransferManager.DataRequested += DataTransferManager_DataRequested;
-            //</SnippetPrepareToShare>
+            // </SnippetPrepareToShare>
 
 
-            //<SnippetShowUI>
+            // <SnippetShowUI>
             DataTransferManager.ShowShareUI();
-            //</SnippetShowUI>
+            // </SnippetShowUI>
         }
 
         void DataTransferManager_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
-            //<SnippetCreateRequest>
+            // <SnippetCreateRequest>
             DataRequest request = args.Request;
-            //</SnippetCreateRequest>
+            // </SnippetCreateRequest>
 
-            //<SnippetSetContent>
+            // <SnippetSetContent>
             request.Data.SetText("Hello world!");
-            //</SnippetSetContent>
+            // </SnippetSetContent>
 
-            //<SnippetSetProperties>
+            // <SnippetSetProperties>
             request.Data.Properties.Title = "Share Example";
             request.Data.Properties.Description = "A demonstration on how to share";
-            //</SnippetSetProperties>
+            // </SnippetSetProperties>
         }
     }
 }

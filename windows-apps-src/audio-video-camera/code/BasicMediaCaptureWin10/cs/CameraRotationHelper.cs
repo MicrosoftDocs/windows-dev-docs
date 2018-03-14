@@ -13,7 +13,7 @@ using Windows.Storage.FileProperties;
 
 namespace BasicCameraWin10
 {
-    //<SnippetCameraRotationHelperFull>
+    // <SnippetCameraRotationHelperFull>
     class CameraRotationHelper
     {
         private EnclosureLocation _cameraEnclosureLocation;
@@ -257,5 +257,5 @@ namespace BasicCameraWin10
             }
         }
     }
-    //</SnippetCameraRotationHelperFull>
+    // </SnippetCameraRotationHelperFull>
 }

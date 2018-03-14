@@ -59,21 +59,21 @@ void App::Initialize(CoreApplicationView^ applicationView)
 	m_deviceResources = std::make_shared<DX::DeviceResources>();
 
 
-	//<SnippetGetAppRecordingManager>
+	// <SnippetGetAppRecordingManager>
 	if (Windows::Foundation::Metadata::ApiInformation::IsApiContractPresent(
 		"Windows.Media.AppRecording.AppRecordingContract", 1, 0))
 	{
 		m_appRecordingManager = AppRecordingManager::GetDefault();
 	}
-	//</SnippetGetAppRecordingManager>
+	// </SnippetGetAppRecordingManager>
 	
 
-	//<SnippetGetMetadataWriter>
+	// <SnippetGetMetadataWriter>
 	if (Windows::Foundation::Metadata::ApiInformation::IsApiContractPresent("Windows.Media.Capture.AppCaptureMetadataContract", 1, 0))
 	{
 		m_appCaptureMetadataWriter = ref new AppCaptureMetadataWriter();
 	}
-	//</SnippetGetMetadataWriter>
+	// </SnippetGetMetadataWriter>
 
 }
 
@@ -103,20 +103,20 @@ void App::SetWindow(CoreWindow^ window)
 	window->KeyDown +=
 		ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &App::OnKeyDown);
 
-	//<SnippetRegisterCapturingChanged>
+	// <SnippetRegisterCapturingChanged>
 	Windows::Media::Capture::AppCapture^ appCapture = Windows::Media::Capture::AppCapture::GetForCurrentView();
 	appCapture->CapturingChanged +=
 		ref new TypedEventHandler<Windows::Media::Capture::AppCapture^, Platform::Object^>(this, &App::OnCapturingChanged);
-	//</SnippetRegisterCapturingChanged>
+	// </SnippetRegisterCapturingChanged>
 
-	//<SnippetRegisterMetadataPurged>
+	// <SnippetRegisterMetadataPurged>
 	if (m_appCaptureMetadataWriter != nullptr)
 	{
 		m_appCaptureMetadataWriter->MetadataPurged += 
 			ref new TypedEventHandler<AppCaptureMetadataWriter^, Platform::Object^>(this, &App::OnMetadataPurged);
 
 	}
-	//</SnippetRegisterMetadataPurged>
+	// </SnippetRegisterMetadataPurged>
 
 	m_deviceResources->SetWindow(window);
 }
@@ -235,7 +235,7 @@ void App::OnDisplayContentsInvalidated(DisplayInformation^ sender, Object^ args)
 {
 	m_deviceResources->ValidateDevice();
 }
-//<SnippetCanRecord>
+// <SnippetCanRecord>
 bool App::CanRecord()
 {
 
@@ -308,9 +308,9 @@ bool App::CanRecord()
 
 	return true;
 }
-//</SnippetCanRecord>
+// </SnippetCanRecord>
 
-//<SnippetStartRecordToFile>
+// <SnippetStartRecordToFile>
 void App::StartRecordToFile(Windows::Storage::StorageFile^ file)
 {
 
@@ -345,10 +345,10 @@ void App::StartRecordToFile(Windows::Storage::StorageFile^ file)
 		}
 	});
 }
-//</SnippetStartRecordToFile>
+// </SnippetStartRecordToFile>
 
 
-//<SnippetOnRecordingComplete>
+// <SnippetOnRecordingComplete>
 void App::OnRecordingComplete()
 {
 	if (m_recordOperation)
@@ -373,16 +373,16 @@ void App::OnRecordingComplete()
 		m_recordOperation = nullptr;
 	}
 }
-//</SnippetOnRecordingComplete>
+// </SnippetOnRecordingComplete>
 
-//<SnippetFinishRecordToFile>
+// <SnippetFinishRecordToFile>
 void App::FinishRecordToFile()
 {
 	m_recordOperation->Cancel();
 }
-//</SnippetFinishRecordToFile>
+// </SnippetFinishRecordToFile>
 
-//<SnippetCanRecordTimeSpan>
+// <SnippetCanRecordTimeSpan>
 bool App::CanRecordTimeSpan(TimeSpan &historicalDurationBuffer)
 {
 
@@ -402,8 +402,8 @@ bool App::CanRecordTimeSpan(TimeSpan &historicalDurationBuffer)
 
 	return true;
 }
-//</SnippetCanRecordTimeSpan>
-//<SnippetRecordTimeSpanToFile>
+// </SnippetCanRecordTimeSpan>
+// <SnippetRecordTimeSpanToFile>
 void App::RecordTimeSpanToFile(Windows::Storage::StorageFile^ file)
 {
 
@@ -460,10 +460,10 @@ void App::RecordTimeSpanToFile(Windows::Storage::StorageFile^ file)
 	});
 
 }
-//</SnippetRecordTimeSpanToFile>
+// </SnippetRecordTimeSpanToFile>
 
 
-//<SnippetSaveScreenShotToFiles>
+// <SnippetSaveScreenShotToFiles>
 void App::SaveScreenShotToFiles(Windows::Storage::StorageFolder^ folder, Platform::String^ filenamePrefix)
 {
 
@@ -516,17 +516,17 @@ void App::SaveScreenShotToFiles(Windows::Storage::StorageFolder^ folder, Platfor
 		}
 	});
 }
-//</SnippetSaveScreenShotToFiles>
+// </SnippetSaveScreenShotToFiles>
 
 
 void App::SetAppCaptureAllowed(bool allowed)
 {
-	//<SnippetSetAppCaptureAllowed>
+	// <SnippetSetAppCaptureAllowed>
 	Windows::Media::Capture::AppCapture::SetAllowedAsync(allowed);
-	//</SnippetSetAppCaptureAllowed>
+	// </SnippetSetAppCaptureAllowed>
 }
 
-//<SnippetOnCapturingChanged>
+// <SnippetOnCapturingChanged>
 void App::OnCapturingChanged(Windows::Media::Capture::AppCapture^ sender, Platform::Object^ args)
 {
 	Platform::String^ captureStatusText = "";
@@ -540,10 +540,10 @@ void App::OnCapturingChanged(Windows::Media::Capture::AppCapture^ sender, Platfo
 	}
 	UpdateStatusText(captureStatusText);
 }
-//</SnippetOnCapturingChanged>
+// </SnippetOnCapturingChanged>
 
 
-//<SnippetStartSession>
+// <SnippetStartSession>
 void App::StartSession(Platform::String^ sessionId, double averageFps, int resolutionWidth, int resolutionHeight)
 {
 	if (m_appCaptureMetadataWriter != nullptr)
@@ -554,45 +554,45 @@ void App::StartSession(Platform::String^ sessionId, double averageFps, int resol
 		m_appCaptureMetadataWriter->AddInt32Event("resolutionHeight", resolutionHeight, AppCaptureMetadataPriority::Informational);
 	}
 }
-//</SnippetStartSession>
+// </SnippetStartSession>
 
-//<SnippetStartMap>
+// <SnippetStartMap>
 void App::StartMap(Platform::String^ mapName)
 {
 	m_appCaptureMetadataWriter->StartStringState("map", mapName, AppCaptureMetadataPriority::Important);
 }
-//</SnippetStartMap>
+// </SnippetStartMap>
 
-//<SnippetEndMap>
+// <SnippetEndMap>
 void App::EndMap(Platform::String^ mapName)
 {
 	m_appCaptureMetadataWriter->StopState("map");
 }
-//</SnippetEndMap>
+// </SnippetEndMap>
 
 
-//<SnippetLevelUp>
+// <SnippetLevelUp>
 void App::LevelUp(int newLevel)
 {
 	m_appCaptureMetadataWriter->StartInt32State("currentLevel", newLevel, AppCaptureMetadataPriority::Important);
 }
-//</SnippetLevelUp>
+// </SnippetLevelUp>
 
-//<SnippetLapComplete>
+// <SnippetLapComplete>
 void App::LapComplete(double lapTimeSeconds)
 {
 	m_appCaptureMetadataWriter->AddDoubleEvent("lapComplete", lapTimeSeconds, AppCaptureMetadataPriority::Important);
 }
-//</SnippetLapComplete>
+// </SnippetLapComplete>
 
-//<SnippetRaceComplete>
+// <SnippetRaceComplete>
 void App::RaceComplete()
 {
 	m_appCaptureMetadataWriter->StopAllStates();
 }
-//</SnippetRaceComplete>
+// </SnippetRaceComplete>
 
-//<SnippetCheckMetadataStorage>
+// <SnippetCheckMetadataStorage>
 void App::CheckMetadataStorage()
 {
 	INT64 storageRemaining = m_appCaptureMetadataWriter->RemainingStorageBytesAvailable;
@@ -602,9 +602,9 @@ void App::CheckMetadataStorage()
 		m_writeLowPriorityMetadata = false;
 	}
 }
-//</SnippetCheckMetadataStorage>
+// </SnippetCheckMetadataStorage>
 
-//<SnippetComboExecuted>
+// <SnippetComboExecuted>
 void App::ComboExecuted(Platform::String^ comboName)
 {
 	if (m_writeLowPriorityMetadata)
@@ -612,9 +612,9 @@ void App::ComboExecuted(Platform::String^ comboName)
 		m_appCaptureMetadataWriter->AddStringEvent("combo", comboName, AppCaptureMetadataPriority::Informational);
 	}
 }
-//</SnippetComboExecuted>
+// </SnippetComboExecuted>
 
-//<SnippetOnMetadataPurged>
+// <SnippetOnMetadataPurged>
 void App::OnMetadataPurged(Windows::Media::Capture::AppCaptureMetadataWriter^ sender, Platform::Object^ args)
 {
 	// Reduce metadata by stopping a low-priority state.
@@ -630,7 +630,7 @@ void App::OnMetadataPurged(Windows::Media::Capture::AppCaptureMetadataWriter^ se
 	OutputDebugString(TEXT("Low-priority metadata purged."));
 
 }
-//</SnippetOnMetadataPurged>
+// </SnippetOnMetadataPurged>
 
 void App::UpdateStatusText(Platform::String^ status)
 {
@@ -648,14 +648,14 @@ void App::OnKeyDown(CoreWindow^ sender, KeyEventArgs^ args)
 		if (m_recordOperation == nullptr)
 		{
 
-			//<SnippetCallStartRecordToFile>
+			// <SnippetCallStartRecordToFile>
 			StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 			concurrency::create_task(storageFolder->CreateFileAsync("recordtofile_example.mp4", CreationCollisionOption::ReplaceExisting)).then(
 				[this](StorageFile^ file)
 			{
 				StartRecordToFile(file);
 			});
-			//</SnippetCallStartRecordToFile>
+			// </SnippetCallStartRecordToFile>
 		}
 		else
 		{
@@ -665,23 +665,23 @@ void App::OnKeyDown(CoreWindow^ sender, KeyEventArgs^ args)
 	if (args->VirtualKey == Windows::System::VirtualKey::T)
 	{
 
-		//<SnippetCallRecordTimeSpanToFile>
+		// <SnippetCallRecordTimeSpanToFile>
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 		concurrency::create_task(storageFolder->CreateFileAsync("recordtimespantofile_example.mp4", CreationCollisionOption::ReplaceExisting)).then(
 			[this](StorageFile^ file)
 		{
 			RecordTimeSpanToFile(file);
 		});
-		//</SnippetCallRecordTimeSpanToFile>
+		// </SnippetCallRecordTimeSpanToFile>
 	}
 
 	if (args->VirtualKey == Windows::System::VirtualKey::S)
 	{
 
-		//<SnippetCallSaveScreenShotToFiles>
+		// <SnippetCallSaveScreenShotToFiles>
 		StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
 		SaveScreenShotToFiles(storageFolder, "screen_capture");
-		//</SnippetCallSaveScreenShotToFiles>
+		// </SnippetCallSaveScreenShotToFiles>
 	}
 	if (args->VirtualKey == Windows::System::VirtualKey::C)
 	{

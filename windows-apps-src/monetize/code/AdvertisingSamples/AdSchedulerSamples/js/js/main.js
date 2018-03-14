@@ -1,7 +1,7 @@
 ﻿(function () {
 
     function snippet1() {
-        //<Snippet1>
+        // <Snippet1>
         var mediaPlayerDiv = document.createElement("div");
         document.body.appendChild(mediaPlayerDiv);
 
@@ -10,15 +10,15 @@
         mediaPlayerDiv.appendChild(videoElement);
 
         var mediaPlayer = new TVJS.MediaPlayer(mediaPlayerDiv);
-        //</Snippet1>
+        // </Snippet1>
     }
 
-    //<Snippet2>
+    // <Snippet2>
     var myMediaPlayer = document.getElementById("MediaPlayerDiv");
     var myAdScheduler = new MicrosoftNSJS.Advertising.AdScheduler(myMediaPlayer);
-    //</Snippet2>
+    // </Snippet2>
 
-    //<Snippet3>
+    // <Snippet3>
     myAdScheduler.requestSchedule("your application ID", "your ad unit ID").then(
       function promiseSuccessHandler(schedule) {
           // Success: play the video content with the scheduled ads.
@@ -28,9 +28,9 @@
           // Error: play the video content without the ads.
           myMediaPlayer.tvControl.play();
       });
-    //</Snippet3>
+    // </Snippet3>
 
-    //<Snippet4>
+    // <Snippet4>
     myAdScheduler.requestScheduleByUrl("your URL").then(
       function promiseSuccessHandler(schedule) {
           // Success: play the video content with the scheduled ads.
@@ -40,9 +40,9 @@
           // Error: play the video content without the ads.
           myMediaPlayer.winControl.play();
       });
-    //</Snippet4>
+    // </Snippet4>
 
-    //<Snippet5>
+    // <Snippet5>
     // Raised when an ad pod starts. Make the countdown timer visible.
     myAdScheduler.onPodStart = function (sender, data) {
         myCounterDiv.style.visibility = "visible";
@@ -72,6 +72,6 @@
     // Raised when an error occurs during playback after successfully scheduling.
     myAdScheduler.onErrorOccurred = function (sender, data) {
     }
-    //</Snippet5>
+    // </Snippet5>
 
 }());

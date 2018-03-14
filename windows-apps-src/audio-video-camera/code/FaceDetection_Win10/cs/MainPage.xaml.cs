@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
 
-//<SnippetFaceDetectionUsing>
+// <SnippetFaceDetectionUsing>
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
@@ -22,13 +22,13 @@ using Windows.Graphics.Imaging;
 using Windows.Media.FaceAnalysis;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Shapes;
-//</SnippetFaceDetectionUsing>
+// </SnippetFaceDetectionUsing>
 
-//<SnippetFaceTrackingUsing>
+// <SnippetFaceTrackingUsing>
 using Windows.Media;
 using System.Threading;
 using Windows.System.Threading;
-//</SnippetFaceTrackingUsing>
+// </SnippetFaceTrackingUsing>
 
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
@@ -43,16 +43,16 @@ namespace FaceDetection_Win10
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //<SnippetClassVariables1>
+        // <SnippetClassVariables1>
         FaceDetector faceDetector;
         IList<DetectedFace> detectedFaces;
-        //</SnippetClassVariables1>
+        // </SnippetClassVariables1>
 
-        //<SnippetClassVariables2>
+        // <SnippetClassVariables2>
         private readonly SolidColorBrush lineBrush = new SolidColorBrush(Windows.UI.Colors.Yellow);
         private readonly double lineThickness = 2.0;
         private readonly SolidColorBrush fillBrush = new SolidColorBrush(Windows.UI.Colors.Transparent);
-        //</SnippetClassVariables2>
+        // </SnippetClassVariables2>
 
         bool isPreviewStreaming = false;
         MediaCapture mediaCapture;
@@ -67,7 +67,7 @@ namespace FaceDetection_Win10
 
         public async void DetectFaces()
         {
-            //<SnippetPicker>
+            // <SnippetPicker>
             FileOpenPicker photoPicker = new FileOpenPicker();
             photoPicker.ViewMode = PickerViewMode.Thumbnail;
             photoPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
@@ -81,9 +81,9 @@ namespace FaceDetection_Win10
             {
                 return;
             }
-            //</SnippetPicker>
+            // </SnippetPicker>
 
-            //<SnippetDecode>
+            // <SnippetDecode>
             IRandomAccessStream fileStream = await photoFile.OpenAsync(FileAccessMode.Read);
             BitmapDecoder decoder = await BitmapDecoder.CreateAsync(fileStream);
 
@@ -98,10 +98,10 @@ namespace FaceDetection_Win10
             }
 
             SoftwareBitmap sourceBitmap = await decoder.GetSoftwareBitmapAsync(decoder.BitmapPixelFormat, BitmapAlphaMode.Premultiplied, transform, ExifOrientationMode.IgnoreExifOrientation, ColorManagementMode.DoNotColorManage);
-            //</SnippetDecode>
+            // </SnippetDecode>
 
 
-            //<SnippetFormat>
+            // <SnippetFormat>
             // Use FaceDetector.GetSupportedBitmapPixelFormats and IsBitmapPixelFormatSupported to dynamically
             // determine supported formats
             const BitmapPixelFormat faceDetectionPixelFormat = BitmapPixelFormat.Gray8;
@@ -116,9 +116,9 @@ namespace FaceDetection_Win10
             {
                 convertedBitmap = sourceBitmap;
             }
-            //</SnippetFormat>
+            // </SnippetFormat>
 
-            //<SnippetDetect>
+            // <SnippetDetect>
             if (faceDetector == null)
             {
                 faceDetector = await FaceDetector.CreateAsync();
@@ -126,15 +126,15 @@ namespace FaceDetection_Win10
 
             detectedFaces = await faceDetector.DetectFacesAsync(convertedBitmap);
             ShowDetectedFaces(sourceBitmap, detectedFaces);
-            //</SnippetDetect>
+            // </SnippetDetect>
 
-            //<SnippetDispose>
+            // <SnippetDispose>
             sourceBitmap.Dispose();
             fileStream.Dispose();
             convertedBitmap.Dispose();
-            //</SnippetDispose>
+            // </SnippetDispose>
         }
-        //<SnippetShowDetectedFaces>
+        // <SnippetShowDetectedFaces>
         private async void ShowDetectedFaces(SoftwareBitmap sourceBitmap, IList<DetectedFace> faces)
         {
             ImageBrush brush = new ImageBrush();
@@ -168,26 +168,26 @@ namespace FaceDetection_Win10
                 }
             }
         }
-        //</SnippetShowDetectedFaces>
+        // </SnippetShowDetectedFaces>
 
 
-        //<SnippetClassVariables3>
+        // <SnippetClassVariables3>
         private FaceTracker faceTracker;
         private ThreadPoolTimer frameProcessingTimer;
         private SemaphoreSlim frameProcessingSemaphore = new SemaphoreSlim(1);
-        //</SnippetClassVariables3>
+        // </SnippetClassVariables3>
 
 
         public async void TrackFaces()
         {
-            //<SnippetTrackingInit>
+            // <SnippetTrackingInit>
             this.faceTracker = await FaceTracker.CreateAsync();
             TimeSpan timerInterval = TimeSpan.FromMilliseconds(66); // 15 fps
             this.frameProcessingTimer = Windows.System.Threading.ThreadPoolTimer.CreatePeriodicTimer(new Windows.System.Threading.TimerElapsedHandler(ProcessCurrentVideoFrame), timerInterval);
-            //</SnippetTrackingInit>
+            // </SnippetTrackingInit>
         }
 
-        //<SnippetProcessCurrentVideoFrame>
+        // <SnippetProcessCurrentVideoFrame>
         public async void ProcessCurrentVideoFrame(ThreadPoolTimer timer)
         {
             if (!frameProcessingSemaphore.Wait(0))
@@ -227,7 +227,7 @@ namespace FaceDetection_Win10
 
             currentFrame.Dispose();
         }
-        //</SnippetProcessCurrentVideoFrame>
+        // </SnippetProcessCurrentVideoFrame>
 
         private void SetupVisualization(Windows.Foundation.Size framePixelSize, IList<DetectedFace> faces)
         {

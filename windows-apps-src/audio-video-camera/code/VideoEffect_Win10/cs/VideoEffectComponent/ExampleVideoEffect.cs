@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 
 
-//<SnippetEffectUsing>
+// <SnippetEffectUsing>
 using Windows.Media.Effects;
 using Windows.Media.MediaProperties;
 using Windows.Foundation.Collections;
 using Windows.Graphics.DirectX.Direct3D11;
 using Windows.Graphics.Imaging;
-//</SnippetEffectUsing>
+// </SnippetEffectUsing>
 
-//<SnippetCOMUsing>
+// <SnippetCOMUsing>
 using System.Runtime.InteropServices;
 
-//</SnippetCOMUsing>
+// </SnippetCOMUsing>
 
 namespace VideoEffectComponent
 {
@@ -32,41 +32,41 @@ namespace VideoEffectComponent
     {
         void GetBuffer(out byte* buffer, out uint capacity);
     }
-    //</SnippetCOMImport>
+    // </SnippetCOMImport>
 
-    //<SnippetImplementIBasicVideoEffect>
+    // <SnippetImplementIBasicVideoEffect>
     public sealed class ExampleVideoEffect : IBasicVideoEffect
-    //</SnippetImplementIBasicVideoEffect>
+    // </SnippetImplementIBasicVideoEffect>
     {
 
-        //<SnippetClose>
+        // <SnippetClose>
         public void Close(MediaEffectClosedReason reason)
         {
             // Dispose of effect resources
         }
-        //</SnippetClose>
+        // </SnippetClose>
 
-        //<SnippetDiscardQueuedFrames>
+        // <SnippetDiscardQueuedFrames>
         private int frameCount;
         public void DiscardQueuedFrames()
         {
             frameCount = 0;
         }
-        //</SnippetDiscardQueuedFrames>
+        // </SnippetDiscardQueuedFrames>
 
-        //<SnippetIsReadOnly>
+        // <SnippetIsReadOnly>
         public bool IsReadOnly { get { return false; } }
-        //</SnippetIsReadOnly>
+        // </SnippetIsReadOnly>
 
-        //<SnippetSetEncodingProperties>
+        // <SnippetSetEncodingProperties>
         private VideoEncodingProperties encodingProperties;
         public void SetEncodingProperties(VideoEncodingProperties encodingProperties, IDirect3DDevice device)
         {
             this.encodingProperties = encodingProperties;
         }
-        //</SnippetSetEncodingProperties>
+        // </SnippetSetEncodingProperties>
 
-        //<SnippetSupportedEncodingProperties>
+        // <SnippetSupportedEncodingProperties>
         public IReadOnlyList<VideoEncodingProperties> SupportedEncodingProperties
         {            
             get
@@ -79,26 +79,26 @@ namespace VideoEffectComponent
                 // return new List<VideoEncodingProperties>();
             }
         }
-        //</SnippetSupportedEncodingProperties>
+        // </SnippetSupportedEncodingProperties>
 
-        //<SnippetSupportedMemoryTypes>
+        // <SnippetSupportedMemoryTypes>
         public MediaMemoryTypes SupportedMemoryTypes { get { return MediaMemoryTypes.Cpu; } }
-        //</SnippetSupportedMemoryTypes>
+        // </SnippetSupportedMemoryTypes>
 
-        //<SnippetTimeIndependent>
+        // <SnippetTimeIndependent>
         public bool TimeIndependent { get { return true; } }
-        //</SnippetTimeIndependent>
+        // </SnippetTimeIndependent>
 
 
-        //<SnippetSetProperties>
+        // <SnippetSetProperties>
         private IPropertySet configuration;
         public void SetProperties(IPropertySet configuration)
         {
             this.configuration = configuration;
         }
-        //</SnippetSetProperties>
+        // </SnippetSetProperties>
 
-        //<SnippetFadeValue>
+        // <SnippetFadeValue>
         public double FadeValue
         {
             get
@@ -111,9 +111,9 @@ namespace VideoEffectComponent
                 return .5;
             }
         }
-        //</SnippetFadeValue>
+        // </SnippetFadeValue>
 
-        //<SnippetProcessFrameSoftwareBitmap>
+        // <SnippetProcessFrameSoftwareBitmap>
         public unsafe void ProcessFrame(ProcessVideoFrameContext context)
         {
             using (BitmapBuffer buffer = context.InputFrame.SoftwareBitmap.LockBuffer(BitmapBufferAccessMode.Read))
@@ -159,6 +159,6 @@ namespace VideoEffectComponent
                 }
             }
         }
-        //</SnippetProcessFrameSoftwareBitmap>
+        // </SnippetProcessFrameSoftwareBitmap>
     }
 }

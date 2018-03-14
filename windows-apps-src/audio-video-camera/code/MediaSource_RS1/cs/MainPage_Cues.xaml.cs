@@ -17,11 +17,11 @@ using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
 
-//<SnippetUsing>
+// <SnippetUsing>
 using Windows.Media.Core;
 using Windows.Media.Playback;
 
-//</SnippetUsing>
+// </SnippetUsing>
 
 using Windows.Media.Streaming.Adaptive;
 using Windows.UI.Xaml.Media.Imaging;
@@ -43,13 +43,13 @@ namespace MediaSource_RS1
         {
             InitSpeechCueScenario();
         }
-        //<SnippetSpeechInputText>
+        // <SnippetSpeechInputText>
         string inputText = "In the lake heading for the mountain, the flea swims";
-        //</SnippetSpeechInputText>
+        // </SnippetSpeechInputText>
 
         public async void InitSpeechCueScenario()
         {
-            //<SnippetSynthesizeSpeech>
+            // <SnippetSynthesizeSpeech>
             var synthesizer = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
 
             // Enable word marker generation (false by default). 
@@ -59,9 +59,9 @@ namespace MediaSource_RS1
             var stream = await synthesizer.SynthesizeTextToStreamAsync(inputText);
             var mediaSource = MediaSource.CreateFromStream(stream, "");
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-            //</SnippetSynthesizeSpeech>
+            // </SnippetSynthesizeSpeech>
 
-            //<SnippetSpeechTracksChanged>
+            // <SnippetSpeechTracksChanged>
             // Since the tracks are added later we will  
             // monitor the tracks being added and subscribe to the ones of interest 
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
@@ -84,22 +84,22 @@ namespace MediaSource_RS1
             {
                 RegisterMetadataHandlerForSpeech(mediaPlaybackItem, index);
             }
-            //</SnippetSpeechTracksChanged>
+            // </SnippetSpeechTracksChanged>
 
 
             // Set the source of the MediaElement or MediaPlayerElement to the MediaPlaybackItem 
             // and start playing the synthesized audio stream. 
-            //<SnippetSpeechPlay>
+            // <SnippetSpeechPlay>
             _mediaPlayer = new MediaPlayer();
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             _mediaPlayer.Source = mediaPlaybackItem;
             _mediaPlayer.Play();
-            //</SnippetSpeechPlay>
+            // </SnippetSpeechPlay>
         }
 
 
 
-        //<SnippetRegisterMetadataHandlerForWords>
+        // <SnippetRegisterMetadataHandlerForWords>
         private void RegisterMetadataHandlerForSpeech(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
@@ -108,9 +108,9 @@ namespace MediaSource_RS1
             item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
 
         }
-        //</SnippetRegisterMetadataHandlerForWords>
+        // </SnippetRegisterMetadataHandlerForWords>
 
-        //<SnippetSpeechWordCueEntered>
+        // <SnippetSpeechWordCueEntered>
         private void metadata_SpeechCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
             // Check in case there are different tracks and the handler was used for more tracks 
@@ -127,7 +127,7 @@ namespace MediaSource_RS1
                 }
             }
         }
-        //</SnippetSpeechWordCueEntered>
+        // </SnippetSpeechWordCueEntered>
         private void metadata_SpeechCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
         }
@@ -138,7 +138,7 @@ namespace MediaSource_RS1
 
         public void InitImageBasedSubtitleScenario()
         {
-            //<SnippetImageSubtitleLoadContent>
+            // <SnippetImageSubtitleLoadContent>
             var contentUri = new Uri("http://contoso.com/content.mp4");
             var mediaSource = MediaSource.CreateFromUri(contentUri);
 
@@ -148,9 +148,9 @@ namespace MediaSource_RS1
             mediaSource.ExternalTimedTextSources.Add(timedTextSource);
 
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-            //</SnippetImageSubtitleLoadContent>
+            // </SnippetImageSubtitleLoadContent>
 
-            //<SnippetImageSubtitleTracksChanged>
+            // <SnippetImageSubtitleTracksChanged>
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
             {
                 if (args.CollectionChange == CollectionChange.ItemInserted)
@@ -171,17 +171,17 @@ namespace MediaSource_RS1
             {
                 RegisterMetadataHandlerForImageSubtitles(mediaPlaybackItem, index);
             }
-            //</SnippetImageSubtitleTracksChanged>
+            // </SnippetImageSubtitleTracksChanged>
 
-            //<SnippetImageSubtitlePlay>
+            // <SnippetImageSubtitlePlay>
             _mediaPlayer = new MediaPlayer();
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             _mediaPlayer.Source = mediaPlaybackItem;
             _mediaPlayer.Play();
-            //</SnippetImageSubtitlePlay>
+            // </SnippetImageSubtitlePlay>
         }
 
-        //<SnippetRegisterMetadataHandlerForImageSubtitles>
+        // <SnippetRegisterMetadataHandlerForImageSubtitles>
         private void RegisterMetadataHandlerForImageSubtitles(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
@@ -190,9 +190,9 @@ namespace MediaSource_RS1
             item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
 
         }
-        //</SnippetRegisterMetadataHandlerForImageSubtitles>
+        // </SnippetRegisterMetadataHandlerForImageSubtitles>
 
-        //<SnippetImageSubtitleCueEntered>
+        // <SnippetImageSubtitleCueEntered>
         private async void metadata_ImageSubtitleCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
             // Check in case there are different tracks and the handler was used for more tracks 
@@ -214,7 +214,7 @@ namespace MediaSource_RS1
                 }
             }
         }
-        //</SnippetImageSubtitleCueEntered>
+        // </SnippetImageSubtitleCueEntered>
         private void metadata_ImageSubtitleCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
         }
@@ -224,13 +224,13 @@ namespace MediaSource_RS1
 
         public void InitChapterCueScenario()
         {
-            //<SnippetChapterCueLoadContent>
+            // <SnippetChapterCueLoadContent>
             var contentUri = new Uri("http://contoso.com/content.mp4");
             var mediaSource = MediaSource.CreateFromUri(contentUri);
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-            //</SnippetChapterCueLoadContent>
+            // </SnippetChapterCueLoadContent>
 
-            //<SnippetChapterCueTracksChanged>
+            // <SnippetChapterCueTracksChanged>
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
             {
                 if (args.CollectionChange == CollectionChange.ItemInserted)
@@ -251,17 +251,17 @@ namespace MediaSource_RS1
             {
                 RegisterMetadataHandlerForChapterCues(mediaPlaybackItem, index);
             }
-            //</SnippetChapterCueTracksChanged>
+            // </SnippetChapterCueTracksChanged>
 
-            //<SnippetChapterCuePlay>
+            // <SnippetChapterCuePlay>
             _mediaPlayer = new MediaPlayer();
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             _mediaPlayer.Source = mediaPlaybackItem;
             _mediaPlayer.Play();
-            //</SnippetChapterCuePlay>
+            // </SnippetChapterCuePlay>
         }
 
-        //<SnippetRegisterMetadataHandlerForChapterCues>
+        // <SnippetRegisterMetadataHandlerForChapterCues>
         private void RegisterMetadataHandlerForChapterCues(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
@@ -269,9 +269,9 @@ namespace MediaSource_RS1
             timedTrack.CueExited += metadata_ChapterCueExited;
             item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
         }
-        //</SnippetRegisterMetadataHandlerForChapterCues>
+        // </SnippetRegisterMetadataHandlerForChapterCues>
 
-        //<SnippetChapterCueEntered>
+        // <SnippetChapterCueEntered>
         private async void metadata_ChapterCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
             // Check in case there are different tracks and the handler was used for more tracks 
@@ -287,11 +287,11 @@ namespace MediaSource_RS1
                 }
             }
         }
-        //</SnippetChapterCueEntered>
+        // </SnippetChapterCueEntered>
         private void metadata_ChapterCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
         }
-        //<SnippetGoToNextChapter>
+        // <SnippetGoToNextChapter>
         private void GoToNextChapter(MediaPlayer player, MediaPlaybackItem item)
         {
             // Find the chapters track if one exists
@@ -316,7 +316,7 @@ namespace MediaSource_RS1
                 }
             }
         }
-        //</SnippetGoToNextChapter>
+        // </SnippetGoToNextChapter>
         private void DisplayChapter(String title)
         {
             // Display chapter name
@@ -331,7 +331,7 @@ namespace MediaSource_RS1
 
         public async void InitEXTM3UCueScenario()
         {
-            //<SnippetEXTM3ULoadContent>
+            // <SnippetEXTM3ULoadContent>
             AdaptiveMediaSourceCreationResult result =
                 await AdaptiveMediaSource.CreateFromUriAsync(new Uri("http://contoso.com/playlist.m3u"));
 
@@ -342,9 +342,9 @@ namespace MediaSource_RS1
             }
             var mediaSource = MediaSource.CreateFromAdaptiveMediaSource(result.MediaSource);
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-            //</SnippetEXTM3ULoadContent>
+            // </SnippetEXTM3ULoadContent>
 
-            //<SnippetEXTM3UCueTracksChanged>
+            // <SnippetEXTM3UCueTracksChanged>
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
             {
                 if (args.CollectionChange == CollectionChange.ItemInserted)
@@ -365,17 +365,17 @@ namespace MediaSource_RS1
             {
                 RegisterMetadataHandlerForEXTM3UCues(mediaPlaybackItem, index);
             }
-            //</SnippetEXTM3UCueTracksChanged>
+            // </SnippetEXTM3UCueTracksChanged>
 
-            //<SnippetEXTM3UCuePlay>
+            // <SnippetEXTM3UCuePlay>
             _mediaPlayer = new MediaPlayer();
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             _mediaPlayer.Source = mediaPlaybackItem;
             _mediaPlayer.Play();
-            //</SnippetEXTM3UCuePlay>
+            // </SnippetEXTM3UCuePlay>
         }
 
-        //<SnippetRegisterMetadataHandlerForEXTM3UCues>
+        // <SnippetRegisterMetadataHandlerForEXTM3UCues>
         private void RegisterMetadataHandlerForEXTM3UCues(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
@@ -389,9 +389,9 @@ namespace MediaSource_RS1
                 item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
             }
         }
-        //</SnippetRegisterMetadataHandlerForEXTM3UCues>
+        // </SnippetRegisterMetadataHandlerForEXTM3UCues>
 
-        //<SnippetEXTM3UCueEntered>
+        // <SnippetEXTM3UCueEntered>
         private void metadata_EXTM3UCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
             var dataCue = args.Cue as DataCue;
@@ -405,7 +405,7 @@ namespace MediaSource_RS1
                 System.Diagnostics.Debug.WriteLine(m3uComment);
             }
         }
-        //</SnippetEXTM3UCueEntered>
+        // </SnippetEXTM3UCueEntered>
         private void metadata_EXTM3UCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
         }
@@ -416,7 +416,7 @@ namespace MediaSource_RS1
 
         public async void InitID3CueScenario()
         {
-            //<SnippetID3LoadContent>
+            // <SnippetID3LoadContent>
             AdaptiveMediaSourceCreationResult result =
                 await AdaptiveMediaSource.CreateFromUriAsync(new Uri("http://contoso.com/playlist.m3u"));
 
@@ -427,9 +427,9 @@ namespace MediaSource_RS1
             }
             var mediaSource = MediaSource.CreateFromAdaptiveMediaSource(result.MediaSource);
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-            //</SnippetID3LoadContent>
+            // </SnippetID3LoadContent>
 
-            //<SnippetID3CueTracksChanged>
+            // <SnippetID3CueTracksChanged>
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
             {
                 if (args.CollectionChange == CollectionChange.ItemInserted)
@@ -450,17 +450,17 @@ namespace MediaSource_RS1
             {
                 RegisterMetadataHandlerForID3Cues(mediaPlaybackItem, index);
             }
-            //</SnippetID3CueTracksChanged>
+            // </SnippetID3CueTracksChanged>
 
-            //<SnippetID3CuePlay>
+            // <SnippetID3CuePlay>
             _mediaPlayer = new MediaPlayer();
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             _mediaPlayer.Source = mediaPlaybackItem;
             _mediaPlayer.Play();
-            //</SnippetID3CuePlay>
+            // </SnippetID3CuePlay>
         }
 
-        //<SnippetRegisterMetadataHandlerForID3Cues>
+        // <SnippetRegisterMetadataHandlerForID3Cues>
         private void RegisterMetadataHandlerForID3Cues(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
@@ -474,9 +474,9 @@ namespace MediaSource_RS1
                 item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
             }
         }
-        //</SnippetRegisterMetadataHandlerForID3Cues>
+        // </SnippetRegisterMetadataHandlerForID3Cues>
 
-        //<SnippetID3CueEntered>
+        // <SnippetID3CueEntered>
         private void metadata_ID3CueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
             var dataCue = args.Cue as DataCue;
@@ -494,7 +494,7 @@ namespace MediaSource_RS1
                 System.Diagnostics.Debug.WriteLine($"ID3 tag data: major {header_version_major}, minor: {header_version_minor}");
             }
         }
-        //</SnippetID3CueEntered>
+        // </SnippetID3CueEntered>
         private void metadata_ID3CueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
         }
@@ -505,7 +505,7 @@ namespace MediaSource_RS1
 
         public async void InitEmsgCueScenario()
         {
-            //<SnippetEmsgLoadContent>
+            // <SnippetEmsgLoadContent>
             AdaptiveMediaSourceCreationResult result =
                 await AdaptiveMediaSource.CreateFromUriAsync(new Uri("http://contoso.com/playlist.m3u"));
 
@@ -516,9 +516,9 @@ namespace MediaSource_RS1
             }
             var mediaSource = MediaSource.CreateFromAdaptiveMediaSource(result.MediaSource);
             var mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
-            //</SnippetEmsgLoadContent>
+            // </SnippetEmsgLoadContent>
 
-            //<SnippetEmsgCueTracksChanged>
+            // <SnippetEmsgCueTracksChanged>
             mediaPlaybackItem.TimedMetadataTracksChanged += (MediaPlaybackItem sender, IVectorChangedEventArgs args) =>
             {
                 if (args.CollectionChange == CollectionChange.ItemInserted)
@@ -539,17 +539,17 @@ namespace MediaSource_RS1
             {
                 RegisterMetadataHandlerForEmsgCues(mediaPlaybackItem, index);
             }
-            //</SnippetEmsgCueTracksChanged>
+            // </SnippetEmsgCueTracksChanged>
 
-            //<SnippetEmsgCuePlay>
+            // <SnippetEmsgCuePlay>
             _mediaPlayer = new MediaPlayer();
             mediaPlayerElement.SetMediaPlayer(_mediaPlayer);
             _mediaPlayer.Source = mediaPlaybackItem;
             _mediaPlayer.Play();
-            //</SnippetEmsgCuePlay>
+            // </SnippetEmsgCuePlay>
         }
 
-        //<SnippetRegisterMetadataHandlerForEmsgCues>
+        // <SnippetRegisterMetadataHandlerForEmsgCues>
         private void RegisterMetadataHandlerForEmsgCues(MediaPlaybackItem item, int index)
         {
             var timedTrack = item.TimedMetadataTracks[index];
@@ -563,13 +563,13 @@ namespace MediaSource_RS1
                 item.TimedMetadataTracks.SetPresentationMode((uint)index, TimedMetadataTrackPresentationMode.ApplicationPresented);
             }
         }
-        //</SnippetRegisterMetadataHandlerForEmsgCues>
+        // </SnippetRegisterMetadataHandlerForEmsgCues>
 
-        //<SnippetLastProcessedAdId>
+        // <SnippetLastProcessedAdId>
         List<uint> processedAdIds = new List<uint>();
-        //<SnippetLastProcessedAdId>
+        // <SnippetLastProcessedAdId>
 
-        //<SnippetEmsgCueEntered>
+        // <SnippetEmsgCueEntered>
         private void metadata_EmsgCueEntered(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
             var dataCue = args.Cue as DataCue;
@@ -648,7 +648,7 @@ namespace MediaSource_RS1
                 }
             }
         }
-        //</SnippetEmsgCueEntered>
+        // </SnippetEmsgCueEntered>
         private void metadata_EmsgCueExited(TimedMetadataTrack timedMetadataTrack, MediaCueEventArgs args)
         {
         }

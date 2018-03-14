@@ -1,4 +1,4 @@
-//<Snippetdownload_quickstartcs_A>
+// <Snippetdownload_quickstartcs_A>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,8 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Networking.BackgroundTransfer;
 using Windows.Storage;
-//</Snippetdownload_quickstartcs_A>
-//<Snippetdownload_quickstartcs_B>
+// </Snippetdownload_quickstartcs_A>
+// <Snippetdownload_quickstartcs_B>
 private async void StartDownload_Click(object sender, RoutedEventArgs e)
 {
 	try
@@ -31,8 +31,8 @@ private async void StartDownload_Click(object sender, RoutedEventArgs e)
 		LogException("Download Error", ex);
 	}
 }
-//</Snippetdownload_quickstartcs_B>
-//<Snippetdownload_quickstartcs_C>
+// </Snippetdownload_quickstartcs_B>
+// <Snippetdownload_quickstartcs_C>
 private async void DiscoverActiveDownloads()
 {
 	activeDownloads = new List<DownloadOperation>();
@@ -52,4 +52,4 @@ private async void DiscoverActiveDownloads()
 		LogException("Discovery error", ex);
 	}
 }
-//</Snippetdownloadquickstartcs_C>
+// </Snippetdownloadquickstartcs_C>

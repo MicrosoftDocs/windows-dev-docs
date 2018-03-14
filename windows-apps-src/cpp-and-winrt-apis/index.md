@@ -26,7 +26,8 @@ C++/WinRT is a standard C++ language projection for Windows Runtime (WinRT) APIs
 | [String handling in C++/WinRT](strings.md) | With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) type. |
 | [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call WinRT APIs using Standard C++ data types. |
 | [Events; how to author and handle them in C++/WinRT](events-author-handle.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
-| [XAML; binding a control to C++/WinRT properties and collections](binding-prop-collection.md) | A property or a collection that can be effectively bound to a XAML control is known as an *observable* property or collection. This topic shows how to implement and consume observable properties and collections. |
+| [XAML controls; binding to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
+| [XAML items controls; binding to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [Troubleshooting C++/WinRT issues](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 
 ## Important APIs

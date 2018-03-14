@@ -1,19 +1,19 @@
-﻿//<SnippetOpenCVHelperInclude>
+﻿// <SnippetOpenCVHelperInclude>
 #include "pch.h"
 #include "OpenCVHelper.h"
 #include "MemoryBuffer.h"
-//</SnippetOpenCVHelperInclude>
+// </SnippetOpenCVHelperInclude>
 
-//<SnippetOpenCVHelperUsing>
+// <SnippetOpenCVHelperUsing>
 using namespace OpenCVBridge;
 using namespace Platform;
 using namespace Windows::Graphics::Imaging;
 using namespace Windows::Foundation;
 using namespace Microsoft::WRL;
 using namespace cv;
-//</SnippetOpenCVHelperUsing>
+// </SnippetOpenCVHelperUsing>
 
-//<SnippetOpenCVHelperTryConvert>
+// <SnippetOpenCVHelperTryConvert>
 bool OpenCVHelper::TryConvert(SoftwareBitmap^ from, Mat& convertedMat)
 {
 	unsigned char* pPixels = nullptr;
@@ -33,9 +33,9 @@ bool OpenCVHelper::TryConvert(SoftwareBitmap^ from, Mat& convertedMat)
 	convertedMat = mat;
 	return true;
 }
-//</SnippetOpenCVHelperTryConvert>
+// </SnippetOpenCVHelperTryConvert>
 
-//<SnippetOpenCVHelperGetPointerToPixelData>
+// <SnippetOpenCVHelperGetPointerToPixelData>
 bool OpenCVHelper::GetPointerToPixelData(SoftwareBitmap^ bitmap, unsigned char** pPixelData, unsigned int* capacity)
 {
 	BitmapBuffer^ bmpBuffer = bitmap->LockBuffer(BitmapBufferAccessMode::ReadWrite);
@@ -53,9 +53,9 @@ bool OpenCVHelper::GetPointerToPixelData(SoftwareBitmap^ bitmap, unsigned char**
 	}
 	return true;
 }
-//</SnippetOpenCVHelperGetPointerToPixelData>
+// </SnippetOpenCVHelperGetPointerToPixelData>
 
-//<SnippetOpenCVHelperBlur>
+// <SnippetOpenCVHelperBlur>
 void OpenCVHelper::Blur(SoftwareBitmap^ input, SoftwareBitmap^ output)
 {
 	Mat inputMat, outputMat;
@@ -65,6 +65,6 @@ void OpenCVHelper::Blur(SoftwareBitmap^ input, SoftwareBitmap^ output)
 	}
 	blur(inputMat, outputMat, cv::Size(15, 15));
 }
-//</SnippetOpenCVHelperBlur>
+// </SnippetOpenCVHelperBlur>
 
 

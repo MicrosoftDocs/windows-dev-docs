@@ -15,11 +15,11 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Core;
 
-//<SnippetAdaptiveStreamingUsing>
+// <SnippetAdaptiveStreamingUsing>
 using Windows.Media.Streaming.Adaptive;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
-//</SnippetAdaptiveStreamingUsing>
+// </SnippetAdaptiveStreamingUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -43,17 +43,17 @@ namespace AdaptiveStreaming_Win10
 
         public void ManifestSource()
         {
-            //<SnippetManifestSource>
+            // <SnippetManifestSource>
             System.Uri manifestUri = new Uri("http://amssamples.streaming.mediaservices.windows.net/49b57c87-f5f3-48b3-ba22-c55cfdffa9cb/Sintel.ism/manifest(format=m3u8-aapl)");
             mediaElement.Source = manifestUri;
-            //</SnippetManifestSource>
+            // </SnippetManifestSource>
         }
 
-        //<SnippetDeclareAMS>
+        // <SnippetDeclareAMS>
         AdaptiveMediaSource ams;
-        //</SnippetDeclareAMS>
+        // </SnippetDeclareAMS>
 
-        //<SnippetInitializeAMS>
+        // <SnippetInitializeAMS>
         async private void InitializeAdaptiveMediaSource(System.Uri uri)
         {
             AdaptiveMediaSourceCreationResult result = await AdaptiveMediaSource.CreateFromUriAsync(uri);
@@ -78,22 +78,22 @@ namespace AdaptiveStreaming_Win10
                 // Handle failure to create the adaptive media source
             }
         }
-        //</SnippetInitializeAMS>
+        // </SnippetInitializeAMS>
 
 
-        //<SnippetDeclareHttpClient>
+        // <SnippetDeclareHttpClient>
         Windows.Web.Http.HttpClient httpClient;
-        //</SnippetDeclareHttpClient>
+        // </SnippetDeclareHttpClient>
 
         async private void InitializeAdaptiveMediaSourceWithCustomHeaders(System.Uri uri)
         {
             System.Uri manifestUri = new Uri("http://amssamples.streaming.mediaservices.windows.net/49b57c87-f5f3-48b3-ba22-c55cfdffa9cb/Sintel.ism/manifest(format=m3u8-aapl)");
 
-            //<SnippetInitializeAMSWithHttpClient>
+            // <SnippetInitializeAMSWithHttpClient>
             httpClient = new Windows.Web.Http.HttpClient();
             httpClient.DefaultRequestHeaders.TryAppendWithoutValidation("X-CustomHeader", "This is a custom header");
             AdaptiveMediaSourceCreationResult result = await AdaptiveMediaSource.CreateFromUriAsync(manifestUri, httpClient);
-            //</SnippetInitializeAMSWithHttpClient>
+            // </SnippetInitializeAMSWithHttpClient>
 
             if (result.Status == AdaptiveMediaSourceCreationStatus.Success)
             {
@@ -116,7 +116,7 @@ namespace AdaptiveStreaming_Win10
             }
         }
 
-        //<SnippetAMSDownloadRequested>
+        // <SnippetAMSDownloadRequested>
         private async void DownloadRequested(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadRequestedEventArgs args)
         {
 
@@ -137,7 +137,7 @@ namespace AdaptiveStreaming_Win10
                 deferral.Complete();
             }
         }
-        //</SnippetAMSDownloadRequested>
+        // </SnippetAMSDownloadRequested>
 
         private Task<IBuffer> CreateMyCustomManifest(Uri resourceUri)
         {
@@ -145,7 +145,7 @@ namespace AdaptiveStreaming_Win10
             return httpClient.GetBufferAsync(resourceUri).AsTask<IBuffer, Windows.Web.Http.HttpProgress>();
         }
 
-        //<SnippetAMSBitrateEvents>
+        // <SnippetAMSBitrateEvents>
         private async void DownloadBitrateChanged(AdaptiveMediaSource sender, AdaptiveMediaSourceDownloadBitrateChangedEventArgs args)
         {
             await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, new DispatchedHandler(() =>
@@ -161,6 +161,6 @@ namespace AdaptiveStreaming_Win10
                 txtPlaybackBitrate.Text = args.NewValue.ToString();
             }));
         }
-        //</SnippetAMSBitrateEvents>
+        // </SnippetAMSBitrateEvents>
     }
 }

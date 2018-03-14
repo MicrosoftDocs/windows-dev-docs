@@ -1,4 +1,4 @@
-//<Snippetupload_quickstart_A>
+// <Snippetupload_quickstart_A>
 function UploadOp() {
 	var upload = null;
 	var promise = null;
@@ -32,9 +32,9 @@ function UploadOp() {
 		}
 	};
 }
-//</Snippetupload_quickstart_A>
+// </Snippetupload_quickstart_A>
 
-//<Snippetupload_quickstart_B>
+// <Snippetupload_quickstart_B>
 function uploadFile() {
 	var filePicker = new Windows.Storage.Pickers.FileOpenPicker();
 	filePicker.fileTypeFilter.replaceAll(["*"]);
@@ -53,12 +53,12 @@ function uploadFile() {
 		uploadOperations.push(upload);
 	});
 }
-//</Snippetupload_quickstart_B>
-//<Snippetupload_quickstart_C>
+// </Snippetupload_quickstart_B>
+// <Snippetupload_quickstart_C>
 var uploadOperations = [];
-//</Snippetupload_quickstart_C>
+// </Snippetupload_quickstart_C>
  
-//<Snippetupload_quickstart_D> 
+// <Snippetupload_quickstart_D> 
 function Windows.Networking.BackgroundTransfer.BackgroundUploader.getCurrentUploadsAsync() {
 	.then(function (uploads) {
 		for (var i = 0; i < uploads.size; i++) {
@@ -68,4 +68,4 @@ function Windows.Networking.BackgroundTransfer.BackgroundUploader.getCurrentUplo
 		}
 	}
 };
-//</Snippetupload_quickstart_D>
+// </Snippetupload_quickstart_D>

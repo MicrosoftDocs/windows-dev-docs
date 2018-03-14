@@ -13,11 +13,11 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-//<Snippet1>
+// <Snippet1>
 using Windows.System.UserProfile;
 using Microsoft.Advertising.WinRT.UI;
 using Windows.System.Profile;
-//</Snippet1>
+// </Snippet1>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,7 +28,7 @@ namespace MigrateToAdControl
     /// </summary>
     public sealed partial class ExamplePage1 : Page
     {
-        //<Snippet2>
+        // <Snippet2>
         private const int AD_WIDTH = 320;
         private const int AD_HEIGHT = 50;
         private const int HOUSE_AD_WEIGHT = 0;
@@ -42,9 +42,9 @@ namespace MigrateToAdControl
         private const string MADUNITID_HOUSE = "";
         private const string ADDUPLEX_APPKEY = "";
         private const string ADDUPLEX_ADUNIT = "";
-        //</Snippet2>
+        // </Snippet2>
 
-        //<Snippet3>
+        // <Snippet3>
         // Dispatch timer to fire at each ad refresh interval.
         private DispatcherTimer myAdRefreshTimer = new DispatcherTimer();
 
@@ -62,13 +62,13 @@ namespace MigrateToAdControl
         private string myMicrosoftAppId = WAPPLICATIONID;
         private string myMicrosoftPaidUnitId = WADUNITID_PAID;
         private string myMicrosoftHouseUnitId = WADUNITID_HOUSE;
-        //</Snippet3>
+        // </Snippet3>
 
         public ExamplePage1()
         {
             this.InitializeComponent();
 
-            //<Snippet4>
+            // <Snippet4>
             myAdGrid.Width = AD_WIDTH;
             myAdGrid.Height = AD_HEIGHT;
             adDuplexWeight = GetAdDuplexWeight();
@@ -86,10 +86,10 @@ namespace MigrateToAdControl
                 myMicrosoftPaidUnitId = MADUNITID_PAID;
                 myMicrosoftHouseUnitId = MADUNITID_HOUSE;
             }
-            //</Snippet4>
+            // </Snippet4>
         }
 
-        //<Snippet5>
+        // <Snippet5>
         private int GetAdDuplexWeight()
         {
             // TODO: Change this logic to fit your needs.
@@ -262,6 +262,6 @@ namespace MigrateToAdControl
             errorCountCurrentRefresh++;
             ActivateMicrosoftBanner();
         }
-        //</Snippet5>
+        // </Snippet5>
     }
 }
