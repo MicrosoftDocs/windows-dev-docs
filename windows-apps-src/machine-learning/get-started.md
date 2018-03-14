@@ -17,6 +17,7 @@ In this tutorial, we'll build a simple UWP app that uses a trained machine learn
 
 ## Prerequisites
 - [Windows SDK - Build 17110](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)
+- [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/)
 
 ## 1. Download the sample
 First, you'll need to download our [MNIST sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template "MNIST_GetStarted" with implemented XAML controls and events, including:
@@ -40,21 +41,18 @@ To run the project, click the **Start Debugging** button on the toolbar, or pres
 ![Application screenshot](images/get-started2.png)  
 
 ## 4. Download a model
-Next, let's get a machine learning model to add to our app. For this tutorial, we'll use a pre-trained **MNIST model** that was trained with the [Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/) and exported to ONNX format. 
+Next, let's get a machine learning model to add to our app. For this tutorial, we'll use a pre-trained **MNIST model** that was trained with the [Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/) and [exported to ONNX format](https://github.com/onnx/tutorials/blob/master/tutorials/CntkOnnxExport.ipynb). 
 
-If you are using the MNIST_GetStarted sample from GitHub, the MNIST model has already been included in your Assets folder, and you will only need to add it to your application.
-You can also download the pre-trained model from the [ONNX Model Zoo](https://github.com/onnx/models) on GitHub.
+If you are using the MNIST_GetStarted sample from GitHub, the MNIST model has already been included in your Assets folder, and you will only need to add it to your application. You can also download the pre-trained model from the [ONNX Model Zoo](https://github.com/onnx/models) on GitHub.
 
 If you're interested in training your own model, you can follow this [tutorial](train-ai-model.md) that we used to train this MNIST model.
 
 ## 5. Add the model 
-Once you have the pre-trained MNIST model, we will use the mlgen command line tool to generate interface code to interact with our model. To learn how to use the tool, please see Automatic Interface Code Generation in [Overview](overview.md).
+After downloading the MNIST model, right click on the Assets folder in the Solution Explorer, and select "**Add** > **Existing Item**". Point the file picker to the location of your ONNX model, and click add. 
 
-You should now have two new files:
+The project should now have two new files:
 - `MNIST.onnx` - your trained model.
 - `MNIST.cs` - the Windows ML generated code. 
-
-Let's add these files to our Visual Studio project.
 
 ![Solution explorer with new files](images/get-started3.png)
 
