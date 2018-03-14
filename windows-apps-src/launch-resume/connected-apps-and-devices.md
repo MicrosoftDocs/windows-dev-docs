@@ -1,8 +1,8 @@
 ---
-author: TylerMSFT
+author: PatrickFarley
 title: Connected apps and devices (Project Rome)
 description: This section describes how to use the Remote Systems platform to discover remote devices, launch an app on a remote device, and communicate with an app service on a remote device.
-ms.author: twhitney
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -29,7 +29,7 @@ See the [Remote Systems sample](https://github.com/Microsoft/Windows-universal-s
 
 | Topic | Description |
 |-------|-------------|
-| [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
 | [Launch an app on a remote device](launch-a-remote-app.md) | Learn how to launch an app on a remote device.  |
+| [Discover remote devices](discover-remote-devices.md)  | Learn how to discover devices that you can connect to. |
 | [Communicate with a remote app service](communicate-with-a-remote-app-service.md) | Learn how to interact with an app on a remote device. |
 | [Connect devices through remote sessions](remote-sessions.md) | Create shared experiences across multiple devices by joining them in a remote session. |
