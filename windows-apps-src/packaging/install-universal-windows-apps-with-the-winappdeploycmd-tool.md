@@ -74,21 +74,22 @@ The following table describes the commands for **WinAppDeployCmd.exe**.
  
 The following table describes the options for **WinAppDeployCmd.exe**
 
-| **Command**  | **Description**                                                     |
-|--------------|---------------------------------------------------------------------|
-| -h (-help)       | Show the commands, options and arguments.|
-| -ip              | IP address of the target device.|
+
+| **Command**  | **Description**  | 
+|--------------|------------------| 
+| -h (-help)       | Show the commands, options and arguments. |
+| -ip              | IP address of the target device. |
 | -g (-guid)       | Unique identifier of the target device.|
-| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. <br />If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories.|
+| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories.|
 | -f (-file)       | File path for the app package to install, update or uninstall.|
-| -p (-package)    | The full package name for the app package to uninstall. <br />(You can use the list command to find the full names for packages already installed on the device.)|
-| -pin             | A pin if it is required to establish a connection with the target device. <br />(You will be prompted to retry with the -pin option if authentication is required.)|
-| -credserver      | The server name of the network credentials for use by the target.|
-| -credusername    | The user name of the network credentials for use by the target.|
-| -credpassword    | The password of the network credentials for use by the target.|
-| -connecttimeout  | The timeout in seconds used when connecting to the device.|
-| -remotedeploydir | Relative directory path/name to copy files over to on the remote device; <br />This will be a well-known, automatically determined remote deployment folder.|
-| -deleteextrafile | Switch to indicate whether existing files in the remote directory should be purged to match the source directory.|
+| -p (-package)    | The full package name for the app package to uninstall.(You can use the list command to find the full names for packages already installed on the device.) |
+| -pin             | A pin if it is required to establish a connection with the target device. (You will be prompted to retry with the -pin option if authentication is required.) |
+| -credserver      | The server name of the network credentials for use by the target. |
+| -credusername    | The user name of the network credentials for use by the target. |
+| -credpassword    | The password of the network credentials for use by the target. |
+| -connecttimeout  | The timeout in seconds used when connecting to the device. |
+| -remotedeploydir | Relative directory path/name to copy files over to on the remote device; This will be a well-known, automatically determined remote deployment folder. |
+| -deleteextrafile | Switch to indicate whether existing files in the remote directory should be purged to match the source directory. |
  
 
 The following table describes the options for **WinAppDeployCmd.exe**.

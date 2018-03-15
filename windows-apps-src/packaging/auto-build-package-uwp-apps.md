@@ -21,15 +21,15 @@ In this article, we’ll look at different ways to do that.  We’ll also show y
 Choose the type of build agent that you want VSTS to use when it executes the build process. 
 A hosted build agent is deployed with the most common tools and sdks, and it will work for most scenarios, see the [Software on the hosted build server](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software) article. However, you can create a custom build agent if you need more control over the build steps. You can use the following table to help you make that decision.
 
-|**Scenario**|**Custom Agent**|**Hosted Build Agent**|
--------------|----------------|----------------------|
-|Basic UWP build (including .NET native)|:white_check_mark:|:white_check_mark:|
-|Generate packages for Sideloading|:white_check_mark:|:white_check_mark:|
-|Generate packages for Store submission|:white_check_mark:|:white_check_mark:|
-|Use custom certificates|:white_check_mark:||
-|Build targeting a custom Windows SDK|:white_check_mark:||
-|Run unit tests|:white_check_mark:||
-|Use incremental builds|:white_check_mark:||
+| **Scenario** | **Custom Agent** | **Hosted Build Agent** |
+|-------------|----------------|----------------------|
+| Basic UWP build (including .NET native)| :white_check_mark: |:white_check_mark:|
+| Generate packages for Sideloading| :white_check_mark:|:white_check_mark:|
+| Generate packages for Store submission| :white_check_mark:|:white_check_mark:|
+| Use custom certificates| :white_check_mark: | |
+| Build targeting a custom Windows SDK| :white_check_mark: |  |
+| Run unit tests| :white_check_mark: |  |
+| Use incremental builds| :white_check_mark: |  |
 
 >Note: If you plan to target the Windows Anniversary Update SDK (Build 14393) you will need to set up your custom build agent, since the hosted build pool only supports SDK 10586 and 10240. More information to [choose a UWP version](https://msdn.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)
 
