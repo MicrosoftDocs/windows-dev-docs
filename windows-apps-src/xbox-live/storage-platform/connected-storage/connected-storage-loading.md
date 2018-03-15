@@ -98,7 +98,11 @@ void OnLoadCompleted(IAsyncAction^ action, Windows::Foundation::AsyncStatus stat
 }
 ```
 
-Connected Storage APIs for the XDK are detailed in the XDK .chm file.
+You can find the XDK Connected Storage APIs documented in the XDK .chm file under the path:
+**Xbox ONE XDK >> API Reference >> Platform API Reference >> System API Reference >> Windows.Xbox.Storage**.
+The XDK APIs are also documented on the [developer.microsoft.com site](https://developer.microsoft.com/en-us/games/xbox/docs/xdk/storage-xbox-microsoft-n).
+The link to XDK APIs requires that you have a Microsoft Account(MSA) that has been enabled for Xbox Developer Kit(XDK) access.
+Windows.Xbox.Storage is the name of the Connected Storage namespace for Xbox One consoles.
 
 ## C# UWP sample
 
@@ -168,6 +172,5 @@ if(result.Status == GameSaveErrorStatus.Ok)
 }
 ```
 
-Connected Storage APIs for UWP apps are documented in the [Xbox Live API reference](https://aka.ms/xboxliveuwpdocs).
-Look for them in Xbox Live APIs >> Xbox Live reference for UWP >> Xbox Live Platform Extensions SDK API Reference >> Windows.Gaming.XboxLive.Storage.
+Connected Storage APIs for UWP apps are documented in the [Xbox Live API reference](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage).
 To see another sample that uses Connected Storage check out the [Xbox Live API Samples Game Save project](https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK/GameSave).
