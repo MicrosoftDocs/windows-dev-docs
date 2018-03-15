@@ -1,9 +1,9 @@
 ---
-author: TylerMSFT
+author: PatrickFarley
 title: Launch an app on a remote device
 description: Learn how to launch an app on a remote device using Project Rome.
-ms.author: twhitney
-ms.date: 02/08/2017
+ms.author: pafarley
+ms.date: 02/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,24 +16,33 @@ ms.localizationpriority: medium
 
 This article explains how to launch a Windows app on a remote device.
 
-Starting in Windows 10, version 1607, a UWP app can launch a UWP app or Windows desktop application remotely on another device that is also running Windows 10, version 1607 or later, provided that both devices are signed on with the same Microsoft Account (MSA).
+Starting in Windows 10, version 1607, a UWP app can launch a UWP app or Windows desktop application remotely on another device that is also running Windows 10, version 1607 or later, provided that both devices are signed on with the same Microsoft Account (MSA). This is the simplest use case of Project Rome.
 
-The remote launch feature enables task-oriented user experiences, where a user can start a task on one device and finish it on another. For example, if the user is listening to music on their phone in the car, they could then hand playback over to their Xbox One when they arrive at home. Remote launch allows you to pass contextual data to the remote app being launched, in order to pick up where the task was left off.
+The remote launch feature enables task-oriented user experiences; a user can start a task on one device and finish it on another. For example, if the user is listening to music on their phone in their car, they could then hand playback functionality over to their Xbox One when they arrive at home. Remote launch allows apps to pass contextual data to the remote app being launched, in order to pick up where the task was left off.
 
-## Add the remoteSystem capability
+## Preliminary setup
 
-In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest. You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's Package.appxmanifest file.
+### Add the remoteSystem capability
+
+In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest. You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's _Package.appxmanifest_ file.
 
 ``` xml
 <Capabilities>
    <uap3:Capability Name="remoteSystem"/>
- </Capabilities>
+</Capabilities>
 ```
+
+### Enable cross-device sharing
+
+Additionally, the client device must be set to allow cross-device sharing. This setting, which is accessed in **Settings**: **System** > **Shared experiences** > **Share across devices**, is enabled by default. 
+
+![shared experiences settings page](images/shared-experiences-settings.png)
+
 ## Find a remote device
 
 You must first find the device that you want to connect with. [Discover remote devices](discover-remote-devices.md) discusses how to do this in detail. We'll use a simple approach here that forgoes filtering by device or connectivity type. We will create a remote system watcher that looks for remote devices, and write handlers for the events that are raised when devices are discovered or removed. This will provide us with a collection of remote devices.
 
-The code in these examples assumes that you have a `using Windows.System.RemoteSystems` statement in your file.
+The code in these examples requires that you have a `using Windows.System.RemoteSystems` statement in your class file(s).
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
 
@@ -42,6 +51,7 @@ The first thing you must do before making a remote launch is call `RemoteSystem.
 The system watcher event handlers are called when a device that we can connect with is discovered or is no longer available. We will use these event handlers to keep an updated list of devices that we can connect to.
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+
 
 We will track the devices by remote system ID using a **Dictionary**. An **ObservableCollection** is used to hold the list of devices that we can enumerate. An **ObservableCollection** also makes it easy to bind the list of devices to UI, though we won't do that in this example.
 

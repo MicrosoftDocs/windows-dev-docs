@@ -273,7 +273,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-The `Append` function illustrates how to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector_t_?branch=live#Windows_Foundation_Collections_IObservableVector_1_VectorChanged) event.
+The **Append** function illustrates how to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector_t_?branch=live#Windows_Foundation_Collections_IObservableVector_1_VectorChanged) event.
 
 ```cppwinrt
 m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
@@ -358,7 +358,7 @@ In `MainPage.cpp`, add a line of code to the **Click** event handler to append a
 ...
 ```
 
-Now build and run the project. Click the button to execute the **Click** event handler. We saw that the implementation of `Append` raises an event to let the UI know that the collection has changed; and the **ListBox** re-queries the collection to update its own **Items** value. Just as before, the title of one of the books changes; and that title change is reflected both on the button and in the list box.
+Now build and run the project. Click the button to execute the **Click** event handler. We saw that the implementation of **Append** raises an event to let the UI know that the collection has changed; and the **ListBox** re-queries the collection to update its own **Items** value. Just as before, the title of one of the books changes; and that title change is reflected both on the button and in the list box.
 
 ## Important APIs
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector_t_?branch=live#Windows_Foundation_Collections_IObservableVector_1_VectorChanged)
