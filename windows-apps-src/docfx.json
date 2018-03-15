@@ -19,6 +19,9 @@
         "uhfHeaderId": "MSDocsHeader-WinUWP",
         "titleSuffix": "UWP app developer",
         "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+        "feedback_system": "GitHub",
+        "feedback_github_repo": "MicrosoftDocs/windows-uwp",
+        "feedback_product_url": "https://wpdev.uservoice.com/",
         "extendBreadcrumb": false,
 		    "htmlDangerZone":  true,
         "searchScope": ["UWP"]

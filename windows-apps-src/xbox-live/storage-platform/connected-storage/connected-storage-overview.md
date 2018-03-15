@@ -67,6 +67,7 @@ Windows.Xbox.Storage is the name of the Connected Storage namespace for Xbox One
 
 You can find the UWP Connected Storage APIs documented in the Xbox Live SDK .chm file under the path:
 **Xbox Live APIs >> Xbox Live Platform Extensions SDK API Reference >> Windows.Gaming.XboxLive.Storage**.
+The UWP Connected Storage APIs are also documented online under the [Windows.Gaming.XboxLive.Storage namespace reference](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.xboxlive.storage).
 Windows.Gaming.XboxLive.Storage is the name of the Connected Storage namespace for UWP apps.
 
 To begin using Connected Storage you will need to acquire a Connected Storage *space*. A Connected Storage space is associated with a user or machine and holds all of the Connected Storage data associated with that user or machine in the form of *containers* and *blobs*. Acquiring a Connected Storage space for a machine or user will give you access to read and write to that entities stored data. To acquire a Connected Storage space, both XDK and UWP titles will call the `GetForUserAsync` method, XDK titles may also call the `GetForMachineAsync` method, UWP titles will be unable to call `GetForMachineAsync`. `GetForUserAsync` and `GetForMachineAsync` are contained in the `ConnectedStorageSpace` class in the XDK. `GetForUserAsync` is contained in the `GameSaveProvider` class in the UWP API. These methods are potentially long-running operations, especially if the user has saved data on one device and is resuming gameplay for the first time on another device. `GetForUserAsync` retrieves a Connected Storage Space for a user which you can then use to create, access, and delete containers.
@@ -81,7 +82,8 @@ To see examples of the Connected Storage APIs in use read the following Connecte
 [Delete Data](connected-storage-deleting.md)
 
 > [!NOTE]
-> A Note on Security
+> A Note on Security:
+>
 > Universal Windows Platform (UWP) apps running on PCs save local data in a location that is accessible to the local user, and is not inherently protected from user tampering.
 >You should consider applying your own encryption and validity checks to game save data in order to help prevent users from modifying the game saves outside of the game.
 >For this same reason you should decide if you want to allow PC and Xbox versions of your game to share saves or keep them separated.
