@@ -60,19 +60,23 @@ The following code example demonstrates how to implement backwards navigation be
 
 Code-behind:
 ```csharp
-// Handles system-level BackRequested events and page-level back button Click events
-private bool On_BackRequested()
+public MainPage()
 {
-    Frame rootFrame = this.Frame;
-    if (rootFrame == null)
-    {
-        return true;
-    }
-    if (rootFrame.CanGoBack)
-    {
-        rootFrame.GoBack();
-        return true;
-    }
+    KeyboardAccelerator GoBack = new KeyboardAccelerator();
+    GoBack.Key = VirtualKey.GoBack;
+    GoBack.Invoked += BackInvoked;
+    KeyboardAccelerator AltLeft = new KeyboardAccelerator();
+    AltLeft.Key = VirtualKey.Left;
+    AltLeft.Invoked += BackInvoked;
+    this.KeyboardAccelerators.Add(GoBack);
+    this.KeyboardAccelerators.Add(AltLeft);
+    // ALT routes here
+    AltLeft.Modifiers = VirtualKeyModifiers.Menu;
+}
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    BackButton.IsEnabled = thisFrame.CanGoBack;
 }
 
 private void Back_Click(object sender, RoutedEventArgs e)
@@ -80,41 +84,21 @@ private void Back_Click(object sender, RoutedEventArgs e)
     On_BackRequested();
 }
 
-protected override void OnNavigatedTo(NavigationEventArgs e)
+// Handles system-level BackRequested events and page-level back button Click events
+private bool On_BackRequested()
 {
-    Frame rootFrame = this.Frame;
-    BackButton.isEnabled = rootFrame.CanGoBack;
+    if (this.Frame.CanGoBack)
+    {
+        this.Frame.GoBack();
+        return true;
+    }
+    return false;
 }
 
-public MainPage()
-{
-    KeyboardAccelerator GoBack = new KeyboardAccelerator();
-    GoBack.Key = VirtualKey.GoBack;
-    GoBack.Invoked += "BackInvoked";
-    KeyboardAccelerator AltLeft = new KeyboardAccelerator();
-    AltLeft.Key = VirtualKey.Left;
-    AltLeft.Invoked += "BackInvoked";
-    // ALT routes here
-    AltLeft.Modifiers = VirtualKeyModifiers.Menu;
-
-    List<KeyboardAccelerator> AccList = new List< KeyboardAccelerator >(new KeyboardAccelerator [] {GoBack, AltLeft});
-    MainPage.KeyboardAccelerators = AccList;
-}
-
-protected void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
     On_BackRequested();
     args.Handled = true;
-}
-
-private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
-{
-    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
-
-    if (isXButton1Pressed)
-    {
-        e.handled = On_BackRequested();
-    }
 }
 ```
 Here, we register a global listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager#Windows_UI_Core_SystemNavigationManager_BackRequested) event in the `App.xaml` code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
@@ -123,11 +107,11 @@ App.xaml code-behind:
 ```csharp
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
 Frame rootFrame = Window.Current.Content;
-rootFrame.PointerPressed += 'On_PointerPressed';
+rootFrame.PointerPressed += On_PointerPressed;
 
 private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
 {
-    e.handled = On_BackRequested();
+    e.Handled = On_BackRequested();
 }
 
 private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
@@ -136,7 +120,7 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 
     if (isXButton1Pressed)
     {
-        e.handled = On_BackRequested();
+        e.Handled = On_BackRequested();
     }
 }
 ```
