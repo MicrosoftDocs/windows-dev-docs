@@ -17,6 +17,7 @@ ms.localizationpriority: medium
 Run your packaged app and see how it looks without having to sign it. Then, set breakpoints and step through code. When you're ready to test your app in a production environment, sign your app and then install it. This topic shows you how to do each of these things.
 
 <a id="run-app" />
+
 ## Run your app
 
 You can run your app to test it out locally without having to obtain a certificate and sign it. How you run the app depends on what tool you used to create the package.

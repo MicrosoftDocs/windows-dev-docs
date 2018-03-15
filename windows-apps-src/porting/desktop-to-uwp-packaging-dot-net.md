@@ -27,6 +27,7 @@ The latest version of Visual Studio provides a new version of the packaging proj
 If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
 <a id="new-packaging-project"/>
+
 ## Create a package
 
 1. In Visual Studio, open the solution that contains your desktop application project.

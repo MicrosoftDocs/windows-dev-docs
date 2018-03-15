@@ -15,8 +15,8 @@ ms.localizationpriority: medium
 
 You can test your Windows app to ensure that it will operate correctly on devices that run Windows 10 S. In fact, if you plan to publish your app to the Microsoft Store, you must do this because it is a store requirement. To test your app, you can apply a Device Guard Code Integrity policy on a device that is running Windows 10 Pro.
 
->[!NOTE]
->The device on which you apply the Device Guard Code Integrity policy must be running Windows 10 Creators Edition (10.0; Build 15063) or later.
+> [!NOTE]
+> The device on which you apply the Device Guard Code Integrity policy must be running Windows 10 Creators Edition (10.0; Build 15063) or later.
 
 The Device Guard Code Integrity policy enforces the rules that apps must conform to in order to run on Windows 10 S.
 
@@ -24,6 +24,7 @@ The Device Guard Code Integrity policy enforces the rules that apps must conform
 >We recommend that you apply these policies to a virtual machine, but if you want to apply them to your local machine, make sure to review our best practice guidance in the "Next, install the policy and restart your system" section of this topic before you apply a policy.
 
 <a id="choose-policy" />
+
 ## First, download the policies and then choose one
 
 Download the Device Guard Code Integrity policies [here](https://go.microsoft.com/fwlink/?linkid=849018).
