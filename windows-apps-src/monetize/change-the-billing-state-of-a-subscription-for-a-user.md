@@ -37,7 +37,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 |--------|--------------------------------------------------------|
 | POST   | ```https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/{recurrenceId}/change``` |
 
-<span/> 
 
 ### Request header
 
@@ -48,7 +47,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Content-Length | number | The length of the request body.                                                                       |
 | Content-Type   | string | Specifies the request and response type. Currently, the only supported value is **application/json**. |
 
-<span/>
 
 ### Request parameters
 
@@ -56,7 +54,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 |----------------|--------|-------------|-----------|
 | recurrenceId | string | The ID of the subscription you want to change. To get this ID, call the [get subscriptions for a user](get-subscriptions-for-a-user.md) method, identify the response body entry that represents the subscription add-on you want to change, and use the value of the **Id** field for the entry.     | Yes      |
 
-<span/>
 
 ### Request body
 
@@ -66,7 +63,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | changeType     | string |  One of the following strings that identifies the type of change you want to make:<ul><li>**Cancel**: Cancels the subscription.</li><li>**Extend**: Extends the subscription. If you specify this value, you must also include the *extensionTimeInDays* parameter.</li><li>**Refund**: Refunds the subscription to the customer.</li><li>**ToggleAutoRenew**: Disables automatic renewal for the subscription. If automatic renewal is currently disabled for the subscription, this value does nothing.</li></ul>   | Yes      |
 | extensionTimeInDays  | string  | If the *changeType* parameter has the value **Extend**, this parameter specifies the number of days to extend the subscription. |  Yes, if *changeType* has the value **Extend**; otherwise, no.  ||
 
-<span/>
 
 ### Request example
 
@@ -128,7 +124,6 @@ The response body contains the following data.
 | startTime | string |  The start date and time for the subscription, in ISO 8601 format.     |
 | recurrenceState | string  |  One of the following values:<ul><li>**None**:&nbsp;&nbsp;This indicates a perpetual subscription.</li><li>**Active**:&nbsp;&nbsp;The subscription is active and the user is entitled to use the services.</li><li>**Inactive**:&nbsp;&nbsp;The subscription is past the expiration date, and the user turned off the automatic renew option for the subscription.</li><li>**Canceled**:&nbsp;&nbsp;The subscription has been purposefully terminated before the expiration date, with or without a refund.</li><li>**InDunning**:&nbsp;&nbsp;The subscription is in *dunning* (that is, the subscription is nearing expiration, and Microsoft is trying to acquire funds to automatically renew the subscription).</li><li>**Failed**:&nbsp;&nbsp;The dunning period is over and the subscription failed to renew after several attempts.</li></ul><p>**Note:**</p><ul><li>**Inactive**/**Canceled**/**Failed** are terminal states. When a subscription enters one of these states, the user must repurchase the subscription to activate it again. The user is not entitled to use the services in these states.</li><li>When a subscription is **Canceled**, the expirationTime will be updated with the date and time of the cancellation.</li><li>The ID of the subscription will remain the same during its entire lifetime. It will not change if the auto-renew option is turned on or off. If a user repurchases a subscription after reaching a terminal state, a new subscription ID will be created.</li><li>The ID of a subscription should be used to execute any operation on an individual subscription.</li><li>When a user repurchases a subscription after cancelling or discontinuing it, if you query the results for the user you will get two entries: one with the old subscription ID in a terminal state, and one with the new subscription ID in an active state.</li><li>It's always a good practice to check both recurrenceState and expirationTime, since updates to recurrenceState can potentially be delayed by a few minutes (or occasionally hours).       |
 | cancellationDate | string   |  The date and time the user's subscription was cancelled, in ISO 8601 format.     |
-
 
 
 ## Related topics

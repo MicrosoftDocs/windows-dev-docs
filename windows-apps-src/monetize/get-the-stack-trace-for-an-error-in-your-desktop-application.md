@@ -35,15 +35,13 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace``` |
 
-<span/> 
 
 ### Request header
 
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
-
-<span/> 
+ 
 
 ### Request parameters
 
@@ -52,7 +50,6 @@ To use this method, you need to first do the following:
 | applicationId | string | The product ID of the desktop application for which you want to get a stack trace. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
 | cabIdHash | string | The unique ID hash of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this value, use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve details for a specific error in your application, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
-<span/>
  
 ### Request example
 
@@ -74,7 +71,6 @@ Authorization: Bearer <your access token>
 | @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
 | TotalCount | inumber | The total number of rows in the data result for the query.          |
 
-<span/>
 
 ### Stack trace values
 
@@ -87,7 +83,6 @@ Elements in the *Value* array contain the following values.
 | function | string  |  The name of the function that is called in this stack frame. This is available only if your app includes symbols for the executable or library.              |
 | offset     | string  |  The byte offset of the current instruction relative to the start of the function.      |
 
-<span/> 
 
 ### Response example
 

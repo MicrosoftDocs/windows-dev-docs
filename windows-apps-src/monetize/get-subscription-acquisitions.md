@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
-description: Use this method in the Windows Store analytics API to get acquisition data for an add-on subscription during a given date range and other optional filters.
+description: Use this method in the Microsoft Store analytics API to get acquisition data for an add-on subscription during a given date range and other optional filters.
 title: Get subscription add-on acquisitions
 ms.author: mcleans
 ms.date: 01/25/18
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Store services, Windows Store analytics API, subscriptions
+keywords: windows 10, uwp, Store services, Microsoft Store analytics API, subscriptions
 ---
 
 # Get subscription add-on acquisitions
 
-Use this method in the Windows Store analytics API to get aggregate acquisition data for add-on subscriptions for your app during a given date range and other optional filters.
-
-> [!IMPORTANT]
-> This method can only be used by developer accounts that have been provisioned by Microsoft to be able to create subscription add-ons for Universal Windows Platform (UWP) apps. Currently, this ability is only available to a set of developer accounts who are participating in an early adoption program. 
+Use this method in the Microsoft Store analytics API to get aggregate acquisition data for add-on subscriptions for your app during a given date range and other optional filters.
 
 ## Prerequisites
 
 To use this method, you need to first do the following:
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
+* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Microsoft Store analytics API.
 * [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
 ## Request
@@ -33,7 +30,6 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/subscriptions``` |
 
-<span/> 
 
 ### Request header
 
@@ -41,7 +37,6 @@ To use this method, you need to first do the following:
 |---------------|--------|--------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -58,7 +53,6 @@ To use this method, you need to first do the following:
 | orderby | string | A statement that orders the result data values for each subscription add-on acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>applicationName</strong></li><li><strong>skuId</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
 | groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields:<ul><li><strong>date</strong></li><li><strong>subscriptionProductName</strong></li><li><strong>applicationName</strong></li><li><strong>skuId</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>groupby=market&amp;aggregationLevel=week</em></p> |  No  |
 
-<span/> 
 
 ### Request example
 
@@ -80,7 +74,6 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 100 but there are more than 100 rows of subscription add-on acquisition data for the query. |
 | TotalCount | int    | The total number of rows in the data result for the query.       |
 
-<span/>
 
 <span id="subscription-acquisition-values" />
 
@@ -115,7 +108,6 @@ Elements in the *Value* array contain the following values.
 | earlyChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period while they were in good standing.        |
 | otherChurnCount | inumber | The number of subscriptions that were deactivated during the specified time period for other reasons.        |
 
-<span/> 
 
 ### Response example
 
@@ -185,7 +177,7 @@ The following example demonstrates an example JSON response body for this reques
 ## Related topics
 
 * [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
+* [Access analytics data using Microsoft Store services](access-analytics-data-using-windows-store-services.md)
 
  
 

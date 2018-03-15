@@ -23,17 +23,16 @@ The following steps describe the end-to-end process of using the Microsoft Store
 3.  Before you call a method in the Microsoft Store submission API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 4.  [Call the Microsoft Store submission API](#call-the-windows-store-submission-api).
 
-
 <span id="not_supported" />
-> [!Important]
+
+> [!IMPORTANT]
 > If you use this API to create a submission for an app, package flight, or add-on, be sure to make further changes to the submission only by using the API, rather than the Dev Center dashboard. If you use the dashboard to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 > [!IMPORTANT]
 > You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](../publish/organizational-licensing.md) or to publish submissions for [LOB apps](../publish/distribute-lob-apps-to-enterprises.md) directly to enterprises. For both of these scenarios, you must use the Windows Dev Center dashboard publish the submission.
 
 > [!NOTE]
-This API cannot be used with apps or add-ons that use mandatory app updates and Store-managed consumable add-ons. If you use the Microsoft Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.
-
+> This API cannot be used with apps or add-ons that use mandatory app updates and Store-managed consumable add-ons. If you use the Microsoft Store submission API with an app or add-on that uses one of these features, the API will return a 409 error code. In this case, you must use the dashboard to manage the submissions for the app or add-on.
 
 <span id="prerequisites" />
 
@@ -129,7 +128,7 @@ The following articles provide detailed code examples that demonstrate how to us
 
 ## StoreBroker PowerShell module
 
-As an alternative to calling the Windows Store submission API directly, we also provide an open-source PowerShell module which implements a command-line interface on top of the API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store.
+As an alternative to calling the Microsoft Store submission API directly, we also provide an open-source PowerShell module which implements a command-line interface on top of the API. This module is called [StoreBroker](https://aka.ms/storebroker). You can use this module to manage your app, flight, and add-on submissions from the command line instead of calling the Microsoft Store submission API directly, or you can simply browse the source to see more examples for how to call this API. The StoreBroker module is actively used within Microsoft as the primary way that many first-party applications are submitted to the Store.
 
 For more information, see our [StoreBroker page on GitHub](https://aka.ms/storebroker).
 

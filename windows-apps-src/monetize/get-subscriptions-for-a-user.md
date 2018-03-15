@@ -37,7 +37,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 |--------|--------------------------------------------------------|
 | POST   | ```https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query``` |
 
-<span/> 
 
 ### Request header
 
@@ -48,7 +47,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Content-Length | number | The length of the request body.                                                                       |
 | Content-Type   | string | Specifies the request and response type. Currently, the only supported value is **application/json**. |
 
-<span/>
 
 ### Request body
 
@@ -58,7 +56,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | continuationToken |  string     |  If the user has entitlements to multiple subscriptions, the response body returns a continuation token when the page limit is reached. Provide that continuation token here in subsequent calls to retrieve remaining products.    | No      |
 | pageSize       | string | The maximum number of subscriptions to return in one response. The default is 25.     |  No      |
 
-<span/>
 
 ### Request example
 
@@ -107,6 +104,7 @@ The response body contains the following data.
 | Value        | Type   | Description            |
 |---------------|--------|---------------------|
 | items | array | An array of objects that contain data about each subscription add-on that the specified user has an entitlement to use. For more information about the data in each object, see the following table.  |
+
 
 Each object in the *items* array contains the following values.
 

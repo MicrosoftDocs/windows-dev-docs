@@ -35,7 +35,6 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/cabdownload``` |
 
-<span/> 
 
 ### Request header
 
@@ -43,7 +42,6 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -52,8 +50,7 @@ To use this method, you need to first do the following:
 | applicationId | string | The product ID of the desktop application for which you want to download a CAB file. To get the product ID of a desktop application, open any [Dev Center analytics report for your desktop application](https://msdn.microsoft.com/library/windows/desktop/mt826504) (such as the **Health report**) and retrieve the product ID from the URL. |  Yes  |
 | cabIdHash | string | The unique ID hash of the CAB file you want to download. To get this value, use the [get details for an error in your desktop application](get-details-for-an-error-in-your-desktop-application.md) method to retrieve details for a specific error in your application, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
-<span/>
- 
+
 ### Request example
 
 The following example demonstrates how to download a CAB file using this method. Replace the *applicationId* and *cabIdHash* parameters with the appropriate values for your desktop application.

@@ -18,7 +18,8 @@ Use this method in the Microsoft Store submission API to create a new submission
 
 For more information about how this method fits into the process of creating a package flight submission by using the Microsoft Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
 
->**Note**&nbsp;&nbsp;This method creates a submission for an existing package flight. To create a package flight, use the [create a package flight](create-a-flight.md) method.
+> [!NOTE]
+> This method creates a submission for an existing package flight. To create a package flight, use the [create a package flight](create-a-flight.md) method.
 
 ## Prerequisites
 
@@ -36,8 +37,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -45,7 +44,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -54,7 +52,6 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app for which you want to create a package flight submission. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | flightId | string | Required. The ID of the package flight for which you want to add the submission. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
 
-<span/>
 
 ### Request body
 
@@ -121,7 +118,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 400  | The package flight submission could not be created because the request is invalid. |
 | 409  | The package flight submission could not be created because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
-<span/>
 
 ## Related topics
 
