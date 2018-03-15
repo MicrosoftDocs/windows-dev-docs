@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
 title: Put apps and add-ons on sale
@@ -57,7 +57,7 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
 
 > [!NOTE]
 > It's possible to select a price tier that is higher than your app's base price. However, sale pricing will only be shown to customers if the sale price is lower than the regular price of the app in that market.
-
+>
 > Selecting a price that is higher than your app's base price might be appropriate for your sale if you've already set custom prices in certain markets that are higher than your app's base price, and you want to temporarily lower the price in those markets (but the sale price is still higher than the app's base price). If your selections would result in the price of the app being raised in a certain market, we won't show that (higher) price to customers in that market; they will continue to see the app at its previous (lower) price. We'll also show customers the lowest price available if you schedule separate overlapping sales with different prices.
 
 ## Changing or canceling a scheduled sale

@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
 title: Beta testing and targeted distribution
@@ -8,7 +8,7 @@ ms.date: 08/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, beta test, limited distribution, beta, betas, testing, testers
 ms.localizationpriority: high
 ---
 
@@ -79,7 +79,7 @@ For testing **on Windows Phone 8.1 and earlier only**, this option provides a wa
 You can find your app's direct link on the [App identity](view-app-identity-details.md) page in the dashboard. No customers will be able to find the app by searching or browsing the Store, and even if they have the link to your app's listing, they won't be able to download the app unless they are using a Microsoft account associated with an email address that you provided when submitting this app.
 
 > [!NOTE]
-If you use this option, you can still make the app available for testers on Windows 10 devices by [generating promotional codes](generate-promotional-codes.md) as described above. Anyone with one of your app's promotional codes can download it on a Windows 10 device, even if you didn't enter their email here.
+> If you use this option, you can still make the app available for testers on Windows 10 devices by [generating promotional codes](generate-promotional-codes.md) as described above. Anyone with one of your app's promotional codes can download it on a Windows 10 device, even if you didn't enter their email here.
 
 To use this option, select **Make this product available but not discoverable in the Store** in the [Visibility](set-app-pricing-and-availability.md#visibility) section of the **Pricing and availability** page. Then choose the option for **Individuals on Windows Phone 8.x only: Only people you specify below can download this product on a Windows Phone 8.x device. Anyone with a direct link and a promotional code may download the product on a Windows 10 device.** 
 
