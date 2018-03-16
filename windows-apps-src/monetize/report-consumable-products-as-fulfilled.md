@@ -4,7 +4,7 @@ ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Use this method in the Microsoft Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
 title: Report consumable products as fulfilled
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,7 +26,7 @@ There are two ways you can use this method to report a consumable product as ful
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * A Microsoft Store ID key that represents the identity of the user for whom you want to report a consumable product as fulfilled.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
