@@ -132,16 +132,12 @@ You can display directions between two points using the *rtp* parameter; those p
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=w                      | Displays walking directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
 | bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=t                      | Displays transit directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
 
- 
-
 ## Display turn-by-turn directions
 
 
 The **ms-drive-to:** and **ms-walk-to:** URI schemes let you launch directly into a turn-by-turn view of a route. These URI schemes can only provide directions from the user's current location. If you must provide directions between points that do not include the user's current location, use the **bingmaps:** URI scheme as described in the previous section. For more info about these URI schemes, see the [ms-drive-to:](#ms-drive-to-param-reference) and [ms-walk-to:](#ms-walk-to-param-reference) parameter reference.
 
 > **Important**  When the **ms-drive-to:** or **ms-walk-to:** URI schemes are launched, the Maps app will check to see if the device has ever had a GPS location fix. If it has, then the Maps app will proceed to turn-by-turn directions. If it hasn't, the app will display the route overview, as described in [Display directions and traffic](#display-directions-and-traffic).
-
- 
 
 ![an example of turn-by-turn directions](images/windowsmapsappdirections.png)
 
@@ -153,18 +149,15 @@ The **ms-drive-to:** and **ms-walk-to:** URI schemes let you launch directly int
 
 ## Download offline maps
 
-
 The **ms-settings:** URI scheme lets you launch directly into a particular page in the Settings app. While the **ms-settings:** URI scheme doesn't launch into the Maps app, it does allow you to launch directly to the Offline Maps page in the Settings app and displays a confirmation dialog to download the offline maps used by the Maps app. The URI scheme accepts a point specified by a latitude and longitude and automatically determines if there are offline maps available for a region containing that point.  If the latitude and longitude passed happen to fall within multiple download regions, the confirmation dialog will let the user pick which of those regions to download. If offline maps are not available for a region containing that point, the offline Maps page in the Settings app is displayed with an error dialog.
 
-| Sample URI                                                                                                | Results                                                                                       |
-|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Sample URI  | Results |
+|-------------|---------|
 | ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | Opens the Settings app to the Offline Maps page with a confirmation dialog displayed to download maps for the region containing the specified latitude-longitude point. |
- 
 
 <span id="bingmaps-param-reference"/>
 
 ## bingmaps: parameter reference
-
 
 The syntax for each parameter in this table is shown by using Augmented Backus–Naur Form (ABNF).
 
