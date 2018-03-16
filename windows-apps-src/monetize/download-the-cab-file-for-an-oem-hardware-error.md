@@ -38,7 +38,6 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/hardware/cabdownload``` |
 
-<span/> 
 
 ### Request header
 
@@ -46,7 +45,6 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -54,7 +52,6 @@ To use this method, you need to first do the following:
 |---------------|--------|---------------|------|
 | cabIdHash | string | The unique ID of the CAB file you want to download. To get this ID, use the [get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md) method to retrieve details for a specific error in your app, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
-<span/>
  
 ### Request example
 

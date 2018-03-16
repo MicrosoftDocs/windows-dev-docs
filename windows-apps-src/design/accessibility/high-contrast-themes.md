@@ -94,17 +94,17 @@ On the *Settings > Ease of access > High contrast* page, there are 4 high contra
 
 Each **SystemColor*Color** resource is a variable that automatically updates color when the user switches high contrast themes. Following are guidelines for where and when to use each resource.
 
-Resource | Usage
--------- | -----
-**SystemColorWindowTextColor** | Body copy, headings, lists; any text that can't be interacted with
-**SystemColorHotlightColor** | Hyperlinks
-**SystemColorGrayTextColor** | Disabled UI
-**SystemColorHighlightTextColor** | Foreground color for text or UI that's in progress, selected, or currently being interacted with
-**SystemColorHighlightColor** | Background color for text or UI that's in progress, selected, or currently being interacted with
-**SystemColorButtonTextColor** | Foreground color for buttons; any UI that can be interacted with
-**SystemColorButtonFaceColor** | Background color for buttons; any UI that can be interacted with
-**SystemColorWindowColor** | Background of pages, panes, popups, and bars
-<br/>
+Resource | Usage |
+|--------|-------|
+**SystemColorWindowTextColor** | Body copy, headings, lists; any text that can't be interacted with |
+| **SystemColorHotlightColor** | Hyperlinks |
+| **SystemColorGrayTextColor** | Disabled UI |
+| **SystemColorHighlightTextColor** | Foreground color for text or UI that's in progress, selected, or currently being interacted with |
+| **SystemColorHighlightColor** | Background color for text or UI that's in progress, selected, or currently being interacted with |
+| **SystemColorButtonTextColor** | Foreground color for buttons; any UI that can be interacted with |
+| **SystemColorButtonFaceColor** | Background color for buttons; any UI that can be interacted with |
+| **SystemColorWindowColor** | Background of pages, panes, popups, and bars |
+
 It's often helpful to look to existing apps, Start, or the common controls to see how others have solved high contrast design problems that are similar to your own.
 
 **Do**

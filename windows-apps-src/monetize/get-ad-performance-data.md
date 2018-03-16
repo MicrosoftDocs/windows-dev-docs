@@ -38,7 +38,6 @@ For more information, see [Access analytics data using Microsoft Store services]
 |--------|--------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/adsperformance``` |
 
-<span />
 
 ### Request header
 
@@ -46,7 +45,6 @@ For more information, see [Access analytics data using Microsoft Store services]
 |---------------|--------|--------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span />
 
 ### Request parameters
 
@@ -64,8 +62,7 @@ To retrieve ad performance data for a specific app, use the *applicationId* para
 | orderby   | string    | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitId</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |    No      |
 | groupby   | string    | A statement that applies data aggregation only to the specified fields. You can specify the following fields:</p><ul><li><strong>applicationId</strong></li><li><strong>applicationName</strong></li><li><strong>date</strong></li><li><strong>accountCurrencyCode</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>adUnitName</strong></li><li><strong>adUnitId</strong></li><li><strong>pubCenterAppName</strong></li><li><strong>adProvider</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=applicationId&amp;aggregationLevel=week</em></p> |    No      |
 
-<span />
- 
+
 ### Filter fields
 
 The *filter* parameter of the request body contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here is an example *filter* parameter:
@@ -83,7 +80,6 @@ For a list of the supported fields, see the following table. String values must 
 | adProvider    | A string that specifies an ad provider name to apply to the filter. |
 | date    | A string that specifies a date in YYYY/MM/DD format to apply to the filter. |
 
-<span /> 
 
 ### Request example
 
@@ -106,9 +102,8 @@ Authorization: Bearer <your access token>
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Value      | array  | An array of objects that contain aggregate ad performance data. For more information about the data in each object, see the [ad performance values](#ad-performance-values) section below.                                                                                                                      |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 5 but there are more than 5 items of data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
+| TotalCount | int    | The total number of rows in the data result for the query.                          |
 
-<span id="ad-performance-values" />
 
 ### Ad performance values
 
@@ -132,7 +127,6 @@ Elements in the *Value* array contain the following values.
 | revenueInAccountCurrency       | number | The revenue, in the currency for the country/region of the account.       |
 | requests              | int | The number of ad requests.                 |
 
-<span />
 
 ### Response example
 

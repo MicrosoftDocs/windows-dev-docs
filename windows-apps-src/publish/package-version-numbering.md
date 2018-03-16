@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 title: Package version numbering
@@ -85,6 +85,6 @@ Here are some examples of what happens in different version number update scenar
 | neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 for the architecture of the customer's computer.          | Nothing. Those who have the neutral, v1.0.0.1 version of the app will continue to use it. |
 | neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 for the architecture of the customer's computer. | Nothing for customers running the neutral, v1.0.0.1 version app. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running v1.0.0.0 of the app built for their computer's specific architecture. |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 for the architecture of the customer's computer.  | v1.0.0.1 will be updated to v1.0.0.2 for customers running either v1.0.0.1 of the app built for their computer's specific architecture. |
- 
+
 > [!NOTE]
 > Unlike .appx packages, the version numbers in any .xap packages are not considered when determining which package to provide a given customer. To update a customer from one .xap package to a newer one, make sure to remove the older .xap in the new submission.

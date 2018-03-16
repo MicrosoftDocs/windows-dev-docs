@@ -32,7 +32,6 @@ To use this method, you need to first do the following:
 |--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/funnel``` |
 
-<span/>
 
 ### Request header
 
@@ -40,7 +39,6 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -51,7 +49,6 @@ To use this method, you need to first do the following:
 | endDate | date | The end date in the date range of acquisition funnel data to retrieve. The default is the current date. |  No  |
 | filter | string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
 
-<span/>
  
 ### Filter fields
 
@@ -67,14 +64,6 @@ The following filter fields are supported. String values must be surrounded by s
 | ageGroup | One of the following strings that specifies the age group of the user who completed the acquisition:<ul><li><strong>0 – 17</strong></li><li><strong>18 – 24</strong></li><li><strong>25 – 34</strong></li><li><strong>35 – 49</strong></li><li><strong>50 or over</strong></li><li><strong>Unknown</strong></li></ul> |
 | gender | One of the following strings that specifies the gender of the user who completed the acquisition:<ul><li><strong>M</strong></li><li><strong>F</strong></li><li><strong>Unknown</strong></li></ul> |
 
-
-Here are some example *filter* parameters.
-
-```filter=market eq 'US' and gender eq 'M'```
-
-```filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'M') and (market ne 'NO') and (ageGroup ne '50 or over' or ageGroup ne ‘0 - 17’)```
-
-<span/> 
 
 ### Request example
 
@@ -95,10 +84,10 @@ Authorization: Bearer <your access token>
 
 | Value      | Type   | Description                  |
 |------------|--------|-------------------------------------------------------|
-| Value      | array  | An array of objects that contain acquisition funnel data for the app. For more information about the data in each object, see the [funnel values](#funnel-values) section below.                                                                                                                      |
-| TotalCount | int    | The total number of objects in the *Value* array.                         |
-<span/>
- 
+| Value      | array  | An array of objects that contain acquisition funnel data for the app. For more information about the data in each object, see the [funnel values](#funnel-values) section below.                  |
+| TotalCount | int    | The total number of objects in the *Value* array.        |
+
+
 ### Funnel values
 
 Objects in the *Value* array contain the following values.
@@ -108,7 +97,6 @@ Objects in the *Value* array contain the following values.
 | MetricType                | string | One of the following strings that specifies the [type of funnel data](../publish/acquisitions-report.md#acquisition-funnel) that is included in this object:<ul><li><strong>PageView</strong></li><li><strong>Acquisition</strong></li><li><strong>Install</strong></li><li><strong>Usage</strong></li></ul> |
 | UserCount       | string | The number of users who performed the funnel step specified by the *MetricType* value.             |
 
-<span/> 
 
 ### Response example
 

@@ -54,6 +54,7 @@ Do you plan to publish your app to the [Windows app store](https://www.microsoft
 Next, review the article [Prepare to package your desktop app](desktop-to-uwp-prepare.md) and address any of the issues that apply to your app before you create a Windows app package for it. You might not have to make many changes to your app before you create the package. However, there are a some situations that might require you to tweak your app before you create a package for it.
 
 <a id="convert" />
+
 ## Package
 
 Here's some tools that you can use to create a Windows app package for your app.

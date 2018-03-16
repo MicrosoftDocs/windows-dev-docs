@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # Get all add-ons
 
-
-
-
 Use this method in the Microsoft Store submission API to retrieve data for all add-ons for all the apps that are registered to your Windows Dev Center account.
 
 ## Prerequisites
@@ -34,8 +31,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -43,18 +38,16 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
 All request parameters are optional for this method. If you call this method without parameters, the response contains data for all add-ons for all apps that are registered to your account.
- 
+
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  top  |  int  |  The number of items to return in the request (that is, the number of add-ons to return). If your account has more add-ons than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |
 |  skip  |  int  |  The number of items to bypass in the query before returning the remaining items. Use this parameter to page through data sets. For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.  |  No  |
 
-<span/>
 
 ### Request body
 
@@ -141,8 +134,7 @@ The following example demonstrates the JSON response body returned by a successf
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 10 but there are 100 add-ons registered to your account, the response body will include a @nextLink value of ```inappproducts?skip=10&top=10```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` to request the next 10 add-ons. |
 | value            | array  |  An array that contains objects that provide information about each add-on. For more information, see [add-on resource](manage-add-ons.md#add-on-object).   |
-| totalCount   | int  | The number of app objects in the *value* array of the response body.                                                                                                                                                 |
-
+| totalCount   | int  | The number of app objects in the *value* array of the response body.     |
 
 
 ## Error codes
@@ -154,7 +146,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 404  | No add-ons were found. |
 | 409  | The apps or add-ons use Dev Center dashboard features that are [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
-<span/>
 
 ## Related topics
 

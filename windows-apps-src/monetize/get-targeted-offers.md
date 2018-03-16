@@ -29,7 +29,6 @@ To use this method, you need to first [obtain a Microsoft Account token](manage-
 |--------|----------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v2.0/my/storeoffers/user``` |
 
-<span/> 
 
 ### Request header
 
@@ -37,7 +36,6 @@ To use this method, you need to first [obtain a Microsoft Account token](manage-
 |---------------|--------|--------------|
 | Authorization | string | Required. The Microsoft Account token for the current signed-in user of your app in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -59,7 +57,6 @@ This method returns a JSON-formatted response body that contains an array of obj
 | offers      | array  | An array of product IDs for the add-ons that are associated with the targeted offers that are available for the current user. These product IDs are specified in the **Targeted offers** page for your app in the Windows Dev Center dashboard.            |
 | trackingId  | string | A GUID that you can optionally use to keep track of the targeted offer in your own code or services. |
 
-<span/> 
 
 ### Example
 

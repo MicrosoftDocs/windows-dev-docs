@@ -34,7 +34,7 @@ The info in all of the charts listed below will reflect the date range and any f
 > This report only includes usage data from customers on Windows 10 (including Xbox) who have not opted out of providing telemetry info. The usage data for Xbox games is included here regardless of whether the customer was signed into Xbox Live. 
 
 
-##Usage
+## Usage
 
 The **Usage** chart shows details about how your customers are using your app over the selected period of time. Note this chart does not track unique users for your app or unique user sessions (that is, a user is represented in this chart whether they used your app just once or multiple times).
 

@@ -18,7 +18,8 @@ Use these methods in the Microsoft Store promotions API to upload your own custo
 
 For more information about the relationship between creatives and ad campaigns, delivery lines, and targeting profiles, see [Run ad campaigns using Microsoft Store services](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api).
 
->**Note**&nbsp;&nbsp;When using this API to upload your own creative, the maximum allowed size for your creative is 40 KB. If you submit a creative file larger than this, this API will not return an error, but the campaign will not successfully be created.
+> [!NOTE]
+> When using this API to upload your own creative, the maximum allowed size for your creative is 40 KB. If you submit a creative file larger than this, this API will not return an error, but the campaign will not successfully be created.
 
 ## Prerequisites
 
@@ -26,6 +27,7 @@ To use these methods, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Microsoft Store promotions API.
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+
 
 ## Request
 
@@ -36,9 +38,9 @@ These methods have the following URIs.
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative``` |  Creates a new creative.  |
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative/{creativeId}``` |  Gets the creative specified by *creativeId*.  |
 
->**Note**&nbsp;&nbsp;This API currently does not support a PUT method.
+> [!NOTE]
+> This API currently does not support a PUT method.
 
-<span/> 
 
 ### Header
 
@@ -48,13 +50,10 @@ These methods have the following URIs.
 | Tracking ID   | GUID   | Optional. An ID that tracks the call flow.                                  |
 
 
-<span/>
-
 ### Request body
 
 The POST method requires a JSON request body with the required fields of a [Creative](#creative) object.
 
-<span/>
 
 ### Request examples
 
@@ -83,7 +82,6 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative/106851  HT
 Authorization: Bearer <your access token>
 ```
 
-<span/>
 
 ## Response
 
@@ -107,6 +105,7 @@ These methods return a JSON response body with a [Creative](#creative) object th
 }
 ```
 
+
 <span id="creative"/>
 
 ## Creative object
@@ -124,6 +123,7 @@ The request and response bodies for these methods contain the following fields. 
 |  format   |  string   |   The ad format. Currently, the only supported value is **Banner**.    |   No    |  Banner   |  No     |       
 |  imageAttributes   | [ImageAttributes](#image-attributes)    |   Provides attributes for the creative.     |   No    |      |   Yes    |       
 |  storeProductId   |  string   |   The [Store ID](in-app-purchases-and-trials.md#store-ids) for the app that this ad campaign is associated with. An example Store ID for a product is 9nblggh42cfd.    |   No    |    |  No     |   |  
+
 
 <span id="image-attributes"/>
 

@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # Save a file with a picker
 
-
-
-
 **Important APIs**
 
 -   [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)
@@ -62,7 +59,6 @@ This example sets three properties: [**SuggestedStartLocation**](https://msdn.mi
 
 > [!NOTE]
 > [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) objects display the file picker using the [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
-
      
 - Because our user is saving a document or text file, the sample sets [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) to the app's local folder by using [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621). Set [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to a location appropriate for the type of file being saved, for example Music, Pictures, Videos, or Documents. From the start location, the user can navigate to other locations.
 

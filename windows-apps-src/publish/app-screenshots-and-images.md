@@ -212,14 +212,18 @@ There are additional requirements depending on the type of file.
 <table>
 <tr>
 <td>
+
 **Video:**
+
 <ul>
 <li>1080p ProRes (HQ where appropriate)</li>
 <li>Native framerate; 29.97 FPS preferred</li>
 </ul>
 </td>
 <td>
+
 **Audio:**
+
 <ul>
 <li>Stereo required</li>
 <li>Recommended Audio Level: -16 LKFS/LUFS</li>
@@ -233,7 +237,9 @@ There are additional requirements depending on the type of file.
 <table>
 <tr>
 <td>
+
 **Video:**
+
 <ul>
 <li>Codec: H.264</li>
 <li>Progressive scan (no interlacing)</li>
@@ -246,7 +252,9 @@ There are additional requirements depending on the type of file.
 </ul>
 </td>
 <td>
+
 **Audio:**
+
 <ul>
 <li>Codec: AAC-LC</li>
 <li>Channels: Stereo or surround sound</li>

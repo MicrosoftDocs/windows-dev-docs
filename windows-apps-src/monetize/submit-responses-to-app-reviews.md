@@ -19,7 +19,8 @@ Use this method in the Microsoft Store reviews API to programmatically respond t
 
 When a customer submits a review, they can choose not to receive responses to their review. If you try to respond to a review for which the customer chose not to receive responses, the response body of this method will indicate that the response attempt was unsuccessful. Before calling this method, you can optionally determine whether you are allowed to respond to a given review by using the [get response info for app reviews](get-response-info-for-app-reviews.md) method.
 
->**Note**&nbsp;&nbsp;In addition to using this method to programmatically respond to reviews, you can alternatively respond to reviews [using the Windows Dev Center dashboard](../publish/respond-to-customer-reviews.md).
+> [!NOTE]
+> In addition to using this method to programmatically respond to reviews, you can alternatively respond to reviews [using the Windows Dev Center dashboard](../publish/respond-to-customer-reviews.md).
 
 ## Prerequisites
 
@@ -37,7 +38,6 @@ To use this method, you need to first do the following:
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/reviews/responses``` |
 
-<span/> 
 
 ### Request header
 
@@ -45,13 +45,11 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
 This method has no request parameters.
 
-<span/> 
 
 ### Request body
 
@@ -60,6 +58,7 @@ The request body has the following values.
 | Value        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------|
 | Responses | array | An array of objects that contain the response data you want to submit. For more information about the data in each object, see the following table. |
+
 
 Each object in the *Responses* array contains the following values.
 
@@ -70,6 +69,7 @@ Each object in the *Responses* array contains the following values.
 | ResponseText | string | The response you want to submit. Your response must follow [these guidelines](../publish/respond-to-customer-reviews.md#guidelines-for-responses).   |  Yes  |
 | SupportEmail | string | Your app's support email address, which the customer can use to contact you directly. This must be a valid email address.     |  Yes  |
 | IsPublic | Boolean |  The value **true** indicates that your response will be displayed in your app's Store listing, directly below the customer's review, and will be visible to all customers. The value **false** indicates that your response will be sent to the customer via email, and will not be visible to other customers in your app's Store listing.     |  Yes  |
+
 
 ### Request example
 
@@ -107,6 +107,7 @@ Content-Type: application/json
 |---------------|--------|---------------------|
 | Result | array | An array of objects that contain data about each response you submitted. For more information about the data in each object, see the following table.  |
 
+
 Each object in the *Result* array contains the following values.
 
 | Value        | Type   | Description                                                                 |
@@ -115,6 +116,7 @@ Each object in the *Result* array contains the following values.
 | ReviewId | string |  The ID of the review you responded to. This is a GUID.   |
 | Successful | string | The value **true** indicates that your response was sent successfully. The value **false** indicates that your response was unsuccessful.    |
 | FailureReason | string | If **Successful** is **false**, this value contains a reason for the failure. If **Successful** is **true**, this value is empty.      |
+
 
 ### Response example
 

@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # Get a package flight
 
-
-
-
 Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Windows Dev Center account.
 
 ## Prerequisites
@@ -34,8 +31,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -43,23 +38,18 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
-
 
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Required. The Store ID of the app that contains the package flight you want to get. The Store ID for the app is available on the Dev Center dashboard.  |
 | flightId | string | Required. The ID of the package flight to get. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
 
-<span/>
 
 ### Request body
 
 Do not provide a request body for this method.
-
-<span/>
 
 ### Request example
 
@@ -104,6 +94,7 @@ The following example demonstrates the JSON response body for a successful call 
 | groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
 | rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
+
 <span id="submission_object" />
 
 ### Submission object
@@ -113,9 +104,8 @@ The *lastPublishedFlightSubmission* and *pendingFlightSubmission* values in the 
 | Value           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.                                                                                                                                               |
- 
-<span/>
+| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.               |
+
 
 ## Error codes
 
@@ -127,7 +117,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 404  | The specified package flight could not be found.   |   
 | 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |                                                                                                 
 
-<span/>
 
 ## Related topics
 

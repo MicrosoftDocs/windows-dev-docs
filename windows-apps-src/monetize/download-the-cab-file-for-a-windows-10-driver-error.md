@@ -38,7 +38,6 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/driver/cabdownload``` |
 
-<span/> 
 
 ### Request header
 
@@ -46,7 +45,6 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -55,7 +53,6 @@ To use this method, you need to first do the following:
 | applicationId | string | The product ID value of the driver for which you want to retrieve error data. |  Yes  |
 | cabIdHash | string | The unique ID of the CAB file you want to download. To get this ID, use the [get details for a Windows 10 driver error](get-details-for-a-windows-10-driver-error.md) method to retrieve details for a specific error in your app, and use the **cabIdHash** value in the response body of that method. |  Yes  |
 
-<span/>
  
 ### Request example
 

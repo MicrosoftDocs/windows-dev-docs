@@ -414,17 +414,10 @@ The URI to launch a request for turn-by-turn walking directions does not need to
 | **destination.longitude** | Destination longitude | Example: destination.longitude=-122.141964733601 | The longitude of the destination. Valid longitude values are between -180 and +180 inclusive. |
 | **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
- 
 ## ms-settings: parameter reference
 
-
-The syntax for maps app specific parameters for the **ms-settings:** URI scheme is defined below. **maps-downloadmaps** is specified along with the **ms-settings:** URI in the form of **ms-settings:maps-downloadmaps?** to indicate the offline maps settings page.
-
- 
+The syntax for maps app specific parameters for the **ms-settings:** URI scheme is defined below. **maps-downloadmaps** is specified along with the **ms-settings:** URI in the form of **ms-settings:maps-downloadmaps?** to indicate the offline maps settings page. 
 
 | Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
 | **latlong** | Point defining offline map region. | Example: latlong=47.6,-122.3 | The geopoint is specified by a comma separated latitude and longitude. Valid latitude values are between -90 and +90 inclusive. Valid longitude values are between -180 and +180 inclusive. |
- 
-
- 

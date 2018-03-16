@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # Get the status of an add-on submission
 
-
-
-
 Use this method in the Microsoft Store submission API to get the status of an add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Microsoft Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
 ## Prerequisites
@@ -35,8 +32,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId}/status``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,7 +39,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -53,7 +47,6 @@ This method has the following syntax. See the following sections for usage examp
 | inAppProductId | string | Required. The Store ID of the add-on that contains the submission for which you want to get the status. The Store ID is available on the Dev Center dashboard.  |
 | submissionId | string | Required. The ID of the submission for which you want to get the status. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -90,7 +83,6 @@ The following example demonstrates the JSON response body for a successful call 
 | status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | object  |  Contains additional details about the status of the submission, including information about any errors. For more information, see [Status details resource](manage-add-on-submissions.md#status-details-object). |
 
-<span/>
 
 ## Error codes
 
@@ -100,8 +92,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 404  | The submission could not be found. |
 | 409  | The add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
-
-<span/>
 
 
 ## Related topics

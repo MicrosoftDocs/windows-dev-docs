@@ -4,7 +4,7 @@ title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.author: normesta
-ms.date: 09/22/2017
+ms.date: 03/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -19,6 +19,7 @@ You can show a map in light dismissable window called a map *placecard* or in a 
 Download the [map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) to try out some the features described in this guide.
 
 <a id="placecard" />
+
 ## Display map in a placecard
 You can show users a map inside of a light-weight pop-up window above, below or to the side of a UI element or an area of an app where the user touches. The map can show a city or address that relates to information in your app.  
 
@@ -80,6 +81,7 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 ```
 
 <a id="map-control" />
+
 ## Display map in a control
 
 Use a map control to show rich and customizable map data in your app. A map control can display road maps, aerial, 3D, views, directions, search results, and traffic. On a map, you can display the user's location, directions, and points of interest. A map can also show aerial 3D views, Streetside views, traffic, transit, and local businesses.
@@ -289,8 +291,10 @@ Zoom in, zoom out, rotate, and tilt the map's camera to get just the right angle
 Show or hide map features such as roads and landmarks by setting the values of the following properties of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
 * Display **buildings and landmarks** on the map by enabling or disabling the [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023) property.
-  >[!NOTE]
-  You can show or hide buildings, but you can't prevent them from appearing 3 dimensions.  
+
+  > [!NOTE]
+  > You can show or hide buildings, but you can't prevent them from appearing 3 dimensions.  
+
 * Display **pedestrian features** such as public stairs on the map by enabling or disabling the [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042) property.
 * Display **traffic** on the map by enabling or disabling the [**TrafficFlowVisible**](https://msdn.microsoft.com/library/windows/apps/dn637055) property.
 * Specify whether the **watermark** is displayed on the map by setting the [**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) property to one of the [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749) constants.

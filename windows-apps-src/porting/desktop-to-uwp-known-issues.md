@@ -18,6 +18,7 @@ ms.localizationpriority: medium
 This article contains known issues with the Desktop Bridge.
 
 <a id="app-converter" />
+
 ## Known Issues with the Desktop App Converter
 
 ### E_CREATING_ISOLATED_ENV_FAILED an E_STARTING_ISOLATED_ENV_FAILED errors    

@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-ms.assetid: 
+ms.assetid:
 description: Use this method in the Microsoft Store analytics API to download the CAB file for an error in your app.
 title: Download the CAB file for an error in your app
 ms.author: mcleans
@@ -36,7 +36,6 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/cabdownload``` |
 
-<span/> 
 
 ### Request header
 
@@ -44,7 +43,6 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -53,7 +51,6 @@ To use this method, you need to first do the following:
 | applicationId | string | The Store ID of the app for which you want to download a CAB file. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | cabId | string | The unique ID of the CAB file you want to download. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method. |  Yes  |
 
-<span/>
  
 ### Request example
 

@@ -23,7 +23,8 @@ ms.localizationpriority: medium
 
 Get properties—top-level, basic, and extended—for a file represented by a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-**Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> [!NOTE]
+> Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
