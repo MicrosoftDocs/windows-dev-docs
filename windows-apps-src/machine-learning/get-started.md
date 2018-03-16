@@ -17,7 +17,7 @@ In this tutorial, we'll build a simple UWP app that uses a trained machine learn
 
 ## Prerequisites
 - [Windows SDK - Build 17110](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/)
+- [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/): Note that you'll need to check off the optional Windows 10 Preview SDK (10.0.17110.0) inside Visual Studio Installer.
 
 ## 1. Download the sample
 First, you'll need to download our [MNIST sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template "MNIST_GetStarted" with implemented XAML controls and events, including:
