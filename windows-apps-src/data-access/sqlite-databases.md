@@ -118,6 +118,7 @@ You don't have to do this. But if you have a reason to include a specific versio
 ![SQLite package](images/sqlite-package-v2.png)
 
 <a id="use-data" />
+
 ## Add and retrieve data in a SQLite database
 
 We'll do these things:
@@ -167,6 +168,7 @@ using Microsoft.Data.Sqlite;
 ```
 
 <a id="initialize" />
+
 ### Initialize the SQLite database
 
 Add a method to the **DataAccess** class that initializes the SQLite database.
@@ -208,6 +210,7 @@ public App()
 ```
 
 <a id="insert" />
+
 ### Insert data into the SQLite database
 
 Add a method to the **DataAccess** class that inserts data into the SQLite database. This code uses parameters in the query to prevent SQL injection attacks.
@@ -236,6 +239,7 @@ public static void AddData(string inputText)
 ```
 
 <a id="retrieve" />
+
 ### Retrieve data from the SQLite database
 
 Add a method that gets rows of data from a SQLite database.

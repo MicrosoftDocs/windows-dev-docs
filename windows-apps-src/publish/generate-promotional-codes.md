@@ -107,12 +107,12 @@ After the customer clicks **Redeem**, the Microsoft Store will open to the overv
 ## Review your promotional codes
 
 To review a detailed summary of promotional code orders for your apps and add-ons, navigate to the **Promotional codes** page (in the left navigation menu of the Dev Center dashboard, expand **Attract** and then select **Promo codes**). You can review the following details for all of your current and inactive promotional codes:
-    -   Order name
-    -   App or add-on
-    -   Start date
-    -   Expire date
-    -   Available
-    -   Redeemed
+-   Order name
+-   App or add-on
+-   Start date
+-   Expire date
+-   Available
+-   Redeemed
 
 You can also [download](#download-and-distribute-promotional-codes) an order from this table.
 

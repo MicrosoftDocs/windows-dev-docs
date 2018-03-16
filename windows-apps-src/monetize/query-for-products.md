@@ -37,8 +37,7 @@ For more information, see [Manage product entitlements from a service](view-and-
 |--------|-------------------------------------------------------------|
 | POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
-<span/>
- 
+
 ### Request header
 
 | Header         | Type   | Description                                                                                           |
@@ -48,7 +47,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Content-Length | number | The length of the request body.                                                                       |
 | Content-Type   | string | Specifies the request and response type. Currently, the only supported value is **application/json**. |
 
-<span/>
 
 ### Request body
 
@@ -63,7 +61,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | productTypes      | string       | If specified, the service only returns products that match the specified product types. Supported product types are **Application**, **Durable**, and **UnmanagedConsumable**.     | No       |
 | validityType      | string       | When set to **All**, all products for a user will be returned, including expired items. When set to **Valid**, only products that are valid at this point in time are returned (that is, they have an active status, start date &lt; now, and end date is &gt; now). | No       |
 
-<span/>
 
 The UserIdentity object contains the following parameters.
 
@@ -73,7 +70,6 @@ The UserIdentity object contains the following parameters.
 | identityValue        | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to query products.  | Yes      |
 | localTicketReference | string | The requested identifier for the returned products. Returned items in the response body will have a matching *localTicketReference*. We recommend that you use the same value as the *userId* claim in the Microsoft Store ID key. | Yes      |
 
-<span/> 
 
 The ProductSkuId object contains the following parameters.
 
@@ -82,7 +78,6 @@ The ProductSkuId object contains the following parameters.
 | productId | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a [product](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a product is 9NBLGGH42CFD. | Yes      |
 | skuID     | string | The [Store ID](in-app-purchases-and-trials.md#store-ids) for a product's [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) in the Microsoft Store catalog. An example Store ID for a SKU is 0010.       | Yes      |
 
-<span/>
 
 ### Request example
 
@@ -126,7 +121,6 @@ Content-Type: application/json
 | continuationToken | string                   | If there are multiple sets of products, this token is returned when the page limit is reached. You can specify this continuation token in subsequent calls to retrieve remaining products. | No       |
 | items             | CollectionItemContractV6 | An array of products for the specified user. For more information, see the table below.        | No       |
 
-<span/> 
 
 The CollectionItemContractV6 object contains the following parameters.
 
@@ -156,7 +150,6 @@ The CollectionItemContractV6 object contains the following parameters.
 | tags                 | string             | N/A    | Yes      |
 | transactionId        | guid               | The transaction ID as a result of the purchase of this item. Can be used for reporting an item as fulfilled.      | Yes      |
 
-<span/> 
 
 The IdentityContractV6 object contains the following parameters.
 
@@ -165,7 +158,6 @@ The IdentityContractV6 object contains the following parameters.
 | identityType  | string | Contains the value *pub*.                                                      | Yes      |
 | identityValue | string | The string value of the *publisherUserId* from the specified Microsoft Store ID key. | Yes      |
 
-<span/> 
 
 ### Response example
 

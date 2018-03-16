@@ -34,22 +34,22 @@ Before you can use these methods, the app must already exist in your Dev Center 
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications</td>
 <td align="left"><a href="get-all-apps.md">Get data for all your apps</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}</td>
 <td align="left"><a href="get-an-app.md">Get data for a specific app</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts</td>
 <td align="left"><a href="get-add-ons-for-an-app.md">Get add-ons for an app</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights</td>
 <td align="left"><a href="get-flights-for-an-app.md">Get package flights for an app</a></td>
 </tr>
 </tbody>

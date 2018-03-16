@@ -40,7 +40,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 |--------|---------------------------------------------------------------|
 | POST   | ```https://collections.mp.microsoft.com/v6.0/collections/consume``` |
 
-<span/> 
 
 ### Request header
 
@@ -51,7 +50,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | Content-Length | number | The length of the request body.                                                                       |
 | Content-Type   | string | Specifies the request and response type. Currently, the only supported value is **application/json**. |
 
-<span/>
 
 ### Request body
 
@@ -63,8 +61,6 @@ For more information, see [Manage product entitlements from a service](view-and-
 | productId     | string       | The *productId* value returned by a [query for products](query-for-products.md). Use this parameter with *transactionId*   | No       |
 | transactionId | guid         | A transaction ID value that is obtained from one of the following sources. Use this parameter with *productId*.<ul><li>The [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) property of the [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) class.</li><li>The app or product receipt that is returned by [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381), [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813), or [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811).</li><li>The *transactionId* parameter returned by a [query for products](query-for-products.md).</li></ul>   | No       |
 
- 
-<span/>
 
 The UserIdentity object contains the following parameters.
 
@@ -74,7 +70,6 @@ The UserIdentity object contains the following parameters.
 | identityValue        | string | The [Microsoft Store ID key](view-and-grant-products-from-a-service.md#step-4) that represents the identity of the user for whom you want to report a consumable product as fulfilled.      | Yes      |
 | localTicketReference | string | The requested identifier for the returned response. We recommend that you use the same value as the *userId*  [claim](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key) in the Microsoft Store ID key. | Yes      |
 
-<span/> 
 
 ### Request examples
 
@@ -118,8 +113,8 @@ Host: collections.md.mp.microsoft.com
 }
 ```
 
-## Response
 
+## Response
 
 No content will be returned if the consumption was executed successfully.
 

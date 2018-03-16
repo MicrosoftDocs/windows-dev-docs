@@ -33,7 +33,6 @@ To use this method, you need to first do the following:
 |--------|----------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/installbasedaily```|
 
-<span/>
 
 ### Request header
 
@@ -41,7 +40,6 @@ To use this method, you need to first do the following:
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -56,7 +54,6 @@ To use this method, you need to first do the following:
 | orderby | string | A statement that orders the result data values for each install. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following fields from the response body:<p/><ul><li><strong>productName</strong></li><li><strong>date</strong><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li><li><strong>installBase</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
 | groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields from the response body:<p/><ul><li><strong>applicationVersion</strong></li><li><strong>deviceType</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>osRelease</strong></li></ul><p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p><ul><li><strong>applicationId</strong></li><li><strong>date</strong></li><li><strong>productName</strong></li><li><strong>installBase</strong></li></ul></p> |  No  |
 
-<span/>
 
 ### Request example
 
@@ -79,8 +76,8 @@ Authorization: Bearer <your access token>
 |------------|--------|-------------------------------------------------------|
 | Value      | array  | An array of objects that contain aggregate install data. For more information about the data in each object, see the following table. |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of install data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             
-<span/>
+| TotalCount | int    | The total number of rows in the data result for the query. |
+
 
 Elements in the *Value* array contain the following values.
 
@@ -96,7 +93,6 @@ Elements in the *Value* array contain the following values.
 | osRelease           | string | One of the following strings that specifies the OS release or flighting ring (as a subpopulation within OS version) on which the desktop application is installed.<p/><p>For Windows 10:</p><ul><li><strong>Version 1507</strong></li><li><strong>Version 1511</strong></li><li><strong>Version 1607</strong></li><li><strong>Version 1703</strong></li><li><strong>Version 1709</strong></li><li><strong>Release Preview</strong></li><li><strong>Insider Fast</strong></li><li><strong>Insider Slow</strong></li></ul><p/><p>For Windows Server 1709:</p><ul><li><strong>RTM</strong></li></ul><p>For Windows Server 2016:</p><ul><li><strong>Version 1607</strong></li></ul><p>For Windows 8.1:</p><ul><li><strong>Update 1</strong></li></ul><p>For Windows 7:</p><ul><li><strong>Service Pack 1</strong></li></ul><p>If the OS release or flighting ring is unknown, this field has the value <strong>Unknown</strong>.</p> |
 | installBase         | number | The number of distinct devices that had the product installed at the specified aggregation level. |
 
-<span/> 
 
 ### Response example
 

@@ -147,6 +147,7 @@ Here's a few common ways to package your app.
 * [Package an app, sign the app, and prepare it for store submission](#optional-parameters)
 
 <a id="installer-conversion" />
+
 #### Package an app that has an installer (.msi) file
 
 Point to the installer file by using the ``Installer`` parameter.
@@ -165,6 +166,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 If your installer includes installers for dependent libraries or frameworks, you might have to organize things a bit a differently. See [Chaining multiple installers with the Desktop Bridge](https://blogs.msdn.microsoft.com/appconsult/2017/09/11/chaining-multiple-installers-with-the-desktop-app-converter/).
 
 <a id="setup-conversion" />
+
 #### Package an app that has a setup executable file
 
 Point to the setup executable by using the ``Installer`` parameter.
@@ -182,6 +184,7 @@ The ``InstallerArguments`` parameter is an optional parameter. However, because 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-an-Application-That-Has-a-Setup-exe-Installer-amWit2WhD_5306218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="no-installer-conversion" />
+
 #### Package an app that doesn't have an installer
 
 In this example, use the ``Installer`` parameter to point to the root folder of your app files.
@@ -200,6 +203,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Convert-a-No-Installer-Application-agAXF2WhD_3506218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 <a id="optional-parameters" />
+
 #### Package an app, sign the app, and run validation checks on the package
 
 This example is similar to first one except it shows how you can sign your app for local testing, and then validate your app against Desktop Bridge and Microsoft Store requirements.
@@ -234,6 +238,7 @@ The ``Sign`` and ``Verify`` parameters are optional. There are many more optiona
 You can read about all of them in the next section.
 
 <a id="command-reference" />
+
 ### Parameter Reference
 
 Here's the complete list of parameters (organized by category) that you can use when you run the Desktop App Converter.
@@ -291,6 +296,7 @@ You can also view the entire list by running the ``Get-Help`` command in the app
 |-PublishComRegistrations| Optional| Scans all public COM registrations made by your installer and publishes the valid ones in your manifest. Use this flag only if you want to make these registrations available to other applications. You don't need to use this flag if these registrations will be used only by your application. <br><br>Review [this article](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97) to make sure that your COM registrations behave as you expect after you package your app.
 
 <a id="run-app" />
+
 ## Run the packaged app
 
 There's two ways to run your app.

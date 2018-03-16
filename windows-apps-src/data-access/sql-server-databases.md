@@ -32,6 +32,7 @@ In the **Capabilities** tab, select the **Enterprise Authentication** checkbox.
 ![Enterprise Authentication Capability](images/enterprise-authentication.png)
 
 <a id="use-data" />
+
 ## Add and retrieve data in a SQL Server database
 
 In this section,  we'll do these things:

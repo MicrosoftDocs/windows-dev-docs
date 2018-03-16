@@ -26,7 +26,8 @@ To use these methods, you need to first do the following:
 
 * If you have not done so already, complete all the [prerequisites](run-ad-campaigns-using-windows-store-services.md#prerequisites) for the Microsoft Store promotions API.
 
-  >**Note**&nbsp;&nbsp;As part of the prerequisites, be sure that you [create at least one paid ad campaign in the Dev Center dashboard](../publish/create-an-ad-campaign-for-your-app.md) and that you add at least one payment instrument for the ad campaign in the dashboard. Delivery lines you create using this API will automatically bill the default payment instrument chosen on the **Promote your app** page in the dashboard.
+  > [!NOTE]
+  > As part of the prerequisites, be sure that you [create at least one paid ad campaign in the Dev Center dashboard](../publish/create-an-ad-campaign-for-your-app.md) and that you add at least one payment instrument for the ad campaign in the dashboard. Delivery lines you create using this API will automatically bill the default payment instrument chosen on the **Promote your app** page in the dashboard.
 
 * [Obtain an Azure AD access token](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for these methods. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
 
@@ -40,7 +41,6 @@ These methods have the following URIs.
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Edits the delivery line specified by *lineId*.  |
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/{lineId}``` |  Gets the delivery line specified by *lineId*.  |
 
-<span/> 
 
 ### Header
 
@@ -49,13 +49,11 @@ These methods have the following URIs.
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 | Tracking ID   | GUID   | Optional. An ID that tracks the call flow.                                  |
 
-<span/>
 
 ### Request body
 
 The POST and PUT methods require a JSON request body with the required fields of a [Delivery line](#line) object and any additional fields you want to set or change.
- 
-<span/>
+
 
 ### Request examples
 
@@ -91,8 +89,6 @@ The following example demonstrates how to call the GET method to retrieve a deli
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/line/31019990  HTTP/1.1
 Authorization: Bearer <your access token>
 ```
-
-<span/> 
 
 ## Response
 
@@ -130,6 +126,7 @@ These methods return a JSON response body with a [Delivery line](#line) object t
 }
 
 ```
+
 
 <span id="line"/>
 

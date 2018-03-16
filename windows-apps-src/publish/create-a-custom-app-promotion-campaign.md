@@ -1,4 +1,4 @@
----
+﻿---
 author: JnHs
 description: In addition to creating an ad campaign for your app that will run in Windows apps, you can promote your app using other channels.
 title: Create a custom app promotion campaign
@@ -34,9 +34,9 @@ Consider a game developer who has finished building a new game and would like to
 
 To track the success of each of these promotion channels, the developer creates two variants of the URL to the game's Store listing:
 
-* The URL she will post to her Facebook page includes the custom campaign ID `my-facebook-campaign`.
+* The URL she will post to her Facebook page includes the custom campaign ID `my-facebook-campaign`
 
-* The URL she will post to Twitter includes the custom campaign ID `my-twitter-campaign`.
+* The URL she will post to Twitter includes the custom campaign ID `my-twitter-campaign`
 
 As her Facebook and Twitter followers click the URLs, Microsoft tracks each click and associates it with the corresponding custom campaign. Subsequent qualifying acquisitions of the game and any add-on purchases are associated with the custom campaign and reported as conversions.
 

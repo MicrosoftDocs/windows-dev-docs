@@ -37,6 +37,7 @@ You don't have to sign your app before you submit it to the store.
 > If you plan to publish your app to the Microsoft Store, make sure that your app operates correctly on devices that run Windows 10 S. This is a store requirement. See [Test your Windows app for Windows 10  S](desktop-to-uwp-test-windows-s.md).
 
 <a id="side-load" />
+
 ## Distribute your app without placing it onto the Microsoft Store
 
 If you'd rather distribute your app without using the store, you can manually distribute apps to one or more devices.
@@ -65,6 +66,7 @@ To sideload your app onto other devices, see [Sideload LOB apps in Windows 10](h
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 <a id="transition-users" />
+
 ## Transition users to your desktop bridge app
 
 Before you distribute your app, consider adding a few extensions to your package manifest to help users get into the habit of using your desktop bridge app. Here's a few things you can do.

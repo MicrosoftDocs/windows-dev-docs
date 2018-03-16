@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # Delete a package flight
 
-
-
-
 Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Windows Dev Center account.
 
 
@@ -35,8 +32,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,7 +39,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -53,13 +47,11 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app that contains the package flight you want to delete. The Store ID for the app is available on the Dev Center dashboard.  |
 | flightId | string | Required. The ID of the package flight to delete. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
 
-<span/>
 
 ### Request body
 
 Do not provide a request body for this method.
 
-<span/>
 
 ### Request example
 
@@ -84,7 +76,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 404  | The specified package flight could not be found.  |
 | 409  | The specified package flight was found but it could not be deleted in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
-<span/>
 
 ## Related topics
 

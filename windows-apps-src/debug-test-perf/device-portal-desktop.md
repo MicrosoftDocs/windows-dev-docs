@@ -4,7 +4,7 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
 ms.author: pafarley
-ms.date: 11/10/2017
+ms.date: 03/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,12 +13,9 @@ ms.localizationpriority: medium
 ---
 # Device Portal for Desktop
 
-Starting in Windows 10, Version 1607, additional developer features are available for desktop. These features are available only when Developer Mode is enabled. For information about how to enable Developer Mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-> [!IMPORTANT]
-> Sometimes, due to network or compatibility issues, Developer Mode won't install correctly on your device. See the [relevant section of Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
 
-Device Portal lets you view diagnostic information and interact with your desktop over HTTP from your browser. You can use Device Portal to do the following:
+Device Portal lets you view diagnostic information and interact with your desktop over HTTP from a browser window. You can use Device Portal to do the following:
 - See and manipulate a list of running processes
 - Install, delete, launch, and terminate apps
 - Change Wi-Fi profiles, view signal strength, and see ipconfig
@@ -29,35 +26,37 @@ Device Portal lets you view diagnostic information and interact with your deskto
 
 ## Set up device portal on Windows Desktop
 
+### Turn on developer mode
+
+Starting in Windows 10, Version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+
+> [!IMPORTANT]
+> Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
+
 ### Turn on device portal
 
-In the **Developer Settings** menu, with Developer Mode enabled, you can enable Device Portal.  
+Enable Device Portal in the **For developers** section of **Settings**. When you enable it, you must also create a corresponding username and password. Do not use your Microsoft account or other Windows credentials. 
 
-When you enable Device Portal, you must also create a username and password for Device Portal. Do not use your Microsoft account or other Windows credentials.  
+![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png) 
 
-After Device Portal is enabled, you will see links to it at the bottom of the **Settings** section. Take note of the port number applied to the end of the URL: this port number is randomly generated when Device Portal is enabled, but should remain consistent between reboots of the desktop. If you'd like to set the port numbers manually so they remain permanent, see [Setting port numbers](device-portal-desktop.md#setting-port-numbers).
+Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. If you'd like to set the port numbers manually so that they remain permanent, see [Setting port numbers](device-portal-desktop.md#setting-port-numbers).
 
-You can choose from two ways to connect to Device Portal: local host and over the local network (including VPN).
+These links offer two ways to connect to Device Portal: over the local network (including VPN) or through the local host.
 
-**To connect to Device Portal**
+### Connect to Device Portal
 
-1. In your browser, enter the address shown here for the connection type you're using.
+To connet through local host, open a browser window and enter the address shown here for the connection type you're using.
 
-    - Localhost: `http://127.0.0.1:PORT` or `http://localhost:PORT`
-
-    Use this address to view Device Portal locally.
-    
-    - Local Network: `https://<The IP address of the desktop>:PORT`
-
-    Use this address to connect over a local network.
+* Localhost: `http://127.0.0.1:<PORT>` or `http://localhost:<PORT>`
+* Local Network: `https://<IP address of the desktop>:<PORT>`
 
 HTTPS is required for authentication and secure communication.
 
-If you are using Device Portal in a protected environment, like a test lab, where you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable authentication. This enables unencrypted communication, and allows anyone with the IP address of your computer to control it.
+If you are using Device Portal in a protected environment, like a test lab, in which you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable the Authentication option. This enables unencrypted communication, and allows anyone with the IP address of your computer to connect to and control it.
 
-## Device Portal pages
+## Device Portal content on desktop
 
-Device Portal on desktop provides the standard set of pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
+Device Portal on desktop provides the standard set of pages. For detailed descriptions of these, see [Windows Device Portal overview](device-portal.md).
 
 - Apps manager
 - File explorer
@@ -75,7 +74,8 @@ Device Portal on desktop provides the standard set of pages. For detailed descri
 - Location
 - Scratch
 
-## Registry-based configuration for Device Portal
+## More Device Portal options
+### Registry-based configuration for Device Portal
 
 If you would like to select port numbers for Device Portal (such as 80 and 443), you can set the following regkeys:
 
@@ -88,11 +88,11 @@ Under the same regkey path, you can also turn off the authentication requirement
 - `UseDefaultAuthorizer` - `0` for disabled, `1` for enabled.  
 	- This controls both the basic auth requirement for each connection and the redirect from HTTP to HTTPS.  
 	
-## Command line options for Device Portal
-From an administrative prompt, you can enable and configure parts of Device Portal. To see the latest set of commands supported on your build, you can run `webmanagement /?`
+### Command line options for Device Portal
+From an administrative command prompt, you can enable and configure parts of Device Portal. To see the latest set of commands supported on your build, you can run `webmanagement /?`
 
 - `sc start webmanagement` or `sc stop webmanagement` 
-	- Turn the service on or off. This still requires Developer Mode to be enabled. 
+	- Turn the service on or off. This still requires developer mode to be enabled. 
 - `-Credentials <username> <password>` 
 	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters e.g. [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
 - `-DeleteSSL` 

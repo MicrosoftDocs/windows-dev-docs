@@ -35,8 +35,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,7 +42,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -53,7 +50,6 @@ This method has the following syntax. See the following sections for usage examp
 | inAppProductId | string | Required. The Store ID of the add-on for which you want to update a submission. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
 | submissionId | string | Required. The ID of the submission to update. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -71,7 +67,6 @@ The request body has the following parameters.
 | tag           | string  |  The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) for the add-on (this information was previously called the *tag*).   |
 | visibility  | string  |  The visibility of the add-on. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
-<span/>
 
 ### Request example
 
@@ -194,8 +189,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The submission could not be updated because the request is invalid. |
 | 409  | The submission could not be updated because of the current state of the add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
-<span/>
 
 
 ## Related topics

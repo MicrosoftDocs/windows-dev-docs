@@ -36,7 +36,6 @@ These methods have the following URIs.
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Edits the targeting profile specified by *targetingProfileId*.  |
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  Gets the targeting profile specified by *targetingProfileId*.  |
 
-<span/> 
 
 ### Header
 
@@ -46,13 +45,10 @@ These methods have the following URIs.
 | Tracking ID   | GUID   | Optional. An ID that tracks the call flow.                                  |
 
 
-<span/>
-
 ### Request body
 
 The POST and PUT methods require a JSON request body with the required fields of a [Targeting profile](#targeting-profile) object and any additional fields you want to set or change.
 
-<span/>
 
 ### Request examples
 

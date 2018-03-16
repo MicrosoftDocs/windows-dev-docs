@@ -34,8 +34,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | PUT   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}  ``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -43,7 +41,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -52,7 +49,6 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app for which you want to update a submission. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | string | Required. The ID of the submission to update. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create an app submission](create-an-app-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -81,7 +77,6 @@ The request body has the following parameters.
 | allowTargetFutureDeviceFamilies           | boolean   |  Indicates whether your app is allowed to [target future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |   
 | trailers           |  array |   An array that contains up to [trailer resources](manage-app-submissions.md#trailer-object) that represent video trailers for the app listing. <br/><br/>**Note:**&nbsp;&nbsp;The ability to submit a trailer for your app submission using this API is currently not available to all developer accounts. If your account does not have access to this resource, the *trailers* value is null.  |   
 
-<span/>
 
 ### Request example
 
@@ -299,8 +294,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The submission could not be updated because the request is invalid. |
 | 409  | The submission could not be updated because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
-<span/>
 
 
 ## Related topics

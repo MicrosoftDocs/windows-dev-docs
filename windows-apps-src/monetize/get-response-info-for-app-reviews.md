@@ -34,15 +34,13 @@ To use this method, you need to first do the following:
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/reviews/{reviewId}/apps/{applicationId}/responses/info``` |
 
-<span/> 
 
 ### Request header
 
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
-
-<span/> 
+ 
 
 ### Request parameters
 
@@ -51,7 +49,6 @@ To use this method, you need to first do the following:
 | applicationId | string | The Store ID of the app that contains the review for which you want to determine whether you can respond to. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
 | reviewId | string | The ID of the review you want to respond to (this is a GUID). Review IDs are available in the response data of the [get app reviews](get-app-reviews.md) method in the Microsoft Store analytics API and in the [offline download](../publish/download-analytic-reports.md) of the [Reviews report](../publish/reviews-report.md). <br/>If you omit this parameter, the response body for this method will indicate whether you have permissions to respond to any reviews for the specified app. |  No  |
 
-<span/>
 
 ### Request example
 
@@ -72,7 +69,6 @@ Authorization: Bearer <your access token>
 | CanRespond      | Boolean  | The value **true** indicates that you can respond to the specified review, or that you have permissions to respond to any review for the specified app. Otherwise, this value is **false**.       |
 | DefaultSupportEmail  | string |  Your app's [support email address](../publish/create-app-store-listings.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
 
-<span/>
  
 ### Response example
 

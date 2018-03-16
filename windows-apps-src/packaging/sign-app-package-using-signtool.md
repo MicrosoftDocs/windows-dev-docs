@@ -48,13 +48,16 @@ HashMethod="http://www.w3.org/2001/04/xmlenc#sha256">
 ```
 
 This table shows each HashMethod value and its corresponding hash algorithm:
+
+
 | HashMethod value                              | Hash Algorithm |
 |-----------------------------------------------|----------------|
 | http://www.w3.org/2001/04/xmlenc#sha256       | SHA256         |
 | http://www.w3.org/2001/04/xmldsig-more#sha384 | SHA384         |
 | http://www.w3.org/2001/04/xmlenc#sha512       | SHA512         |
 
-> **Note** Since **SignTool**'s default algorithm is SHA1 (not available in **MakeAppx.exe**), you must always specify a hash algorithm when using **SignTool**.
+> [!NOTE]
+> Since **SignTool**'s default algorithm is SHA1 (not available in **MakeAppx.exe**), you must always specify a hash algorithm when using **SignTool**.
 
 ### Sign the app package
 

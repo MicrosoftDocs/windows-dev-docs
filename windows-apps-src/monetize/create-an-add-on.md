@@ -14,12 +14,10 @@ ms.localizationpriority: medium
 
 # Create an add-on
 
-
-
-
 Use this method in the Microsoft Store submission API to create an add-on (also known as in-app product or IAP) for an app that is registered to your Windows Dev Center account.
 
->**Note**&nbsp;&nbsp;This method creates an add-on without any submissions. To create a submission for an add-on, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).
+> [!NOTE]
+> This method creates an add-on without any submissions. To create a submission for an add-on, see the methods in [Manage add-on submissions](manage-add-on-submissions.md).
 
 ## Prerequisites
 
@@ -36,8 +34,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -45,19 +41,17 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request body
 
 The request body has the following parameters.
- 
+
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  applicationIds  |  array  |  An array that contains the Store ID of the app that this add-on is associated with. Only one item is supported in this array.   |  Yes  |
 |  productId  |  string  |  The product ID of the add-on. This is an identifier that can use in code to refer to the add-on. For more information, see [Set your product type and product ID](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id).  |  Yes  |
 |  productType  |  string  |  The product type of the add-on. The following values are supported: **Durable** and **Consumable**.  |  Yes  |
 
-<span/>
 
 ### Request example
 
@@ -104,7 +98,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 400  | The request is invalid. |
 | 409  | The add-on could not be created because of its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
-<span/>
 
 ## Related topics
 

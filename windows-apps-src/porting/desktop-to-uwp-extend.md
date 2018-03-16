@@ -94,6 +94,7 @@ To show a XAML-based UI, do these things:
 :three: [In the UWP project, show the page that you want](#parse)
 
 <a id="protocol" />
+
 ### Add a protocol extension
 
 In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution, and add this extension.
@@ -121,6 +122,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 > Map controls download data from the internet so if you use one, you'll have to add the "internet client" capability to your manifest as well.
 
 <a id="start" />
+
 ### Start the UWP app
 
 First, from your desktop application, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method.
@@ -236,6 +238,7 @@ To show provide a service, do these things:
 :three: [Test the app service](#test)
 
 <a id="appservice" />
+
 ### Implement the app service
 
 Here's where you'll validate and handle requests from other apps. Add this code to a Windows Runtime Component in your solution.
@@ -294,11 +297,12 @@ Open the **package.appxmanifest** file of the UWP project, and add an app servic
 Give the app service a name and provide the name of the entry point class. This is the class in which you implemented the service.
 
 <a id="test" />
+
 ### Test the app service
 
 Test your service by calling it from another app. This code can be a desktop application such as a Windows forms app or another UWP app.
 
->[!NOTE]
+> [!NOTE]
 > This code only works if you properly set the ``PackageFamilyName`` property of the ``AppServiceConnection`` class. You can get that name by calling ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` in the context of the UWP project. See [Create and consume an app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service).
 
 ```csharp
@@ -361,6 +365,7 @@ To make your application a share target, do these things:
 :two: [Override the OnNavigatedTo event handler](#override)
 
 <a id="share-extension" />
+
 ### Add a share target extension
 
 In **Solution Explorer**, open the **package.appxmanifest** file of the UWP project in your solution and add the extension.
@@ -384,6 +389,7 @@ In **Solution Explorer**, open the **package.appxmanifest** file of the UWP proj
 Provide the name of the executable produced by the UWP project, and the name of the entry point class. You'll also have to specify what types of files can be shared with your app.
 
 <a id="override" />
+
 ### Override the OnNavigatedTo event handler
 
 Override the **OnNavigatedTo** event handler in the **App** class of your UWP project.
@@ -432,6 +438,7 @@ To create a background service, do these things:
 :three: [Register the background task](#register-background-task)
 
 <a id="implement-task" />
+
 ### Implement the background task
 
 Implement the background task by adding code to a Windows Runtime component project.
@@ -472,6 +479,7 @@ public sealed class SiteVerifier : IBackgroundTask
 ```
 
 <a id="configure-background-task" />
+
 ### Configure the background task
 
 In the manifest designer, open the **package.appxmanifest** file of the UWP project in your solution.
@@ -489,6 +497,7 @@ Provide the fully qualified name of the class in your Windows Runtime Component 
 ![Timer property](images/desktop-to-uwp/background-task-entry-point.png)
 
 <a id="register-background-task" />
+
 ### Register the background task
 
 Add code to your desktop application project that registers the background task.

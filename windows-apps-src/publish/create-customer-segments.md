@@ -1,4 +1,4 @@
----
+﻿---
 author: JnHs
 Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
 title: Create customer segments
@@ -36,8 +36,8 @@ Things to keep in mind about customer segments:
 2.	On the **Customer groups** page, do one of the following:
  - In the **My customer groups** section, select **Create new group** to define a segment from scratch. On the next page, select the **Segment** radio button.
  - In the **Segment templates** section, select **Copy** next to one of the predefined segments (that you can use as is or modify to suit your needs).
-4.	In the **Group name** box, enter a name for your segment.
-3.	In the **Include customers from this app** list, select one of your apps to target.
+3.	In the **Group name** box, enter a name for your segment.
+4.	In the **Include customers from this app** list, select one of your apps to target.
 5.	In the **Define inclusion conditions** section, specify the filter criteria for the segment.
 
     You can choose from a variety of filter criteria, including **Acquisitions**, **Acquisition source**, **Usage**, **Demographic**, **Rating**, **Churn prediction**, **Store purchases**, **Store acquisitions**, and **Store spend**.
