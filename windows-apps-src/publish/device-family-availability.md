@@ -3,7 +3,7 @@ author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: Device family availability
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,6 +44,8 @@ The only Windows 10 device family that is not checked by default for Windows.Uni
 > -	Uncheck the box for **Windows 10 Xbox**.
 > 	
 > If you are still unable to resolve the issue, contact support.
+
+If you're submitting a UWP app for Windows 10 IoT Core, you should not make changes to the default selections after uploading your packages; there is no separate checkbox for Windows 10 IoT. For more about publishing IoT Core UWP apps, see [Microsoft Store support for IoT Core UWP apps](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing).
 
 If your submission includes packages that can run on **Windows 8/8.1** and **Windows Phone 8.x and earlier**, those packages will be made available to customers, as shown in the table. There are no checkboxes for these OS versions. To stop offering your app to these customers, remove the corresponding packages from your submission.
 
