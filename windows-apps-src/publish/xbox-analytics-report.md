@@ -127,7 +127,7 @@ The **Client errors by endpoint** table shows the number of daily client (4xx) e
 You can also view only rate limiting errors by selecting **Rate limiting**. This shows the number of daily rate limiting (429) and rate limiting exempt (429E) errors across each Xbox Live service, endpoint, and status code over the selected period of time.
 
 > [!NOTE]
-A 429E status code was actually successfully returned as a 200 status code, but would have been rate-limited if the service was experiencing high volume at the time, so we recommend you treat it exactly the same as if it were enforced (429).
+> A 429E status code was actually successfully returned as a 200 status code, but would have been rate-limited if the service was experiencing high volume at the time, so we recommend you treat it exactly the same as if it were enforced (429).
 
 
 

@@ -32,8 +32,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -41,7 +39,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -50,7 +47,6 @@ This method has the following syntax. See the following sections for usage examp
 | inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to get. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
 | submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -133,6 +129,7 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
+
 ## Error codes
 
 If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
@@ -141,8 +138,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 404  | The submission could not be found. |
 | 409  | The submission does not belong to the specified add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
-<span/>
 
 
 ## Related topics

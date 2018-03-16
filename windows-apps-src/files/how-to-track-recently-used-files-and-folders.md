@@ -13,8 +13,6 @@ ms.localizationpriority: medium
 ---
 # Track recently used files and folders
 
-
-
 **Important APIs**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
@@ -56,9 +54,8 @@ Your app's MRU is represented by the [**StorageItemMostRecentlyUsedList**](https
 
     [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) is overloaded. In the example, we use [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) so that we can associate metadata with the file. Setting metadata lets you record the item's purpose, for example "profile pic". You can also add the file to the MRU without metadata by calling [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). When you add an item to the MRU, the method returns a uniquely identifying string, called a token, which is used to retrieve the item.
 
-    **Tip**   You'll need the token to retrieve an item from the MRU, so persist it somewhere. For more info about app data, see [Managing application data](https://msdn.microsoft.com/library/windows/apps/hh465109).
-
-     
+> [!TIP]
+> You'll need the token to retrieve an item from the MRU, so persist it somewhere. For more info about app data, see [Managing application data](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
 ## Use a token to retrieve an item from the MRU
 

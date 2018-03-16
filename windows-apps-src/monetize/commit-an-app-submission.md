@@ -35,8 +35,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,7 +42,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -53,7 +50,6 @@ This method has the following syntax. See the following sections for usage examp
 | applicationId | string | Required. The Store ID of the app that contains the submission you want to commit. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | string | Required. The ID of the submission you want to commit. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create an app submission](create-an-app-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -84,7 +80,6 @@ The following example demonstrates the JSON response body for a successful call 
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
-<span/>
 
 ## Error codes
 
@@ -95,8 +90,6 @@ If the request cannot be successfully completed, the response will contain one o
 | 400  | The request parameters are invalid. |
 | 404  | The specified submission could not be found. |
 | 409  | The specified submission was found but it could not be committed in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
-
-<span/>
 
 
 ## Related topics

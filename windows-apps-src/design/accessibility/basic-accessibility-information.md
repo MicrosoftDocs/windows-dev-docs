@@ -28,13 +28,13 @@ An accessible name is a short, descriptive text string that a screen reader uses
 
 This table describes how to define or obtain an accessible name for various types of elements in a XAML UI.
 
-| Element type      | Description |
-|-------------------|-------------|
-| Static text       | For [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) elements, an accessible name is automatically determined from the visible (inner) text. All of the text in that element is used as the name. See [Name from inner text](#name_from_inner_text). |
-| Images            | The XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element does not have a direct analog to the HTML **alt** attribute of **img** and similar elements. Either use [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) to provide a name, or use the captioning technique. See [Accessible names for images](#images). |
-| Form elements     | The accessible name for a form element should be the same as the label that is displayed for that element. See [Labels and LabeledBy](#labels). |
+| Element type | Description |
+|--------------|-------------|
+| Static text | For [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) elements, an accessible name is automatically determined from the visible (inner) text. All of the text in that element is used as the name. See [Name from inner text](#name_from_inner_text). |
+| Images | The XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element does not have a direct analog to the HTML **alt** attribute of **img** and similar elements. Either use [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) to provide a name, or use the captioning technique. See [Accessible names for images](#images). |
+| Form elements | The accessible name for a form element should be the same as the label that is displayed for that element. See [Labels and LabeledBy](#labels). |
 | Buttons and links | By default, the accessible name of a button or link is based on the visible text, using the same rules as described in [Name from inner text](#name_from_inner_text). In cases where a button contains only an image, use [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) to provide a text-only equivalent of the button's intended action. |
-<br/>
+
 Most container elements such as panels do not promote their content as accessible name. This is because it is the item content that should report a name and corresponding role, not its container. The container element might report that it is an element that has children in a Microsoft UI Automation representation, such that the assistive technology logic can traverse it. But users of assistive technologies don't generally need to know about the containers and thus most containers aren't named.
 
 <span id="role_value"/>

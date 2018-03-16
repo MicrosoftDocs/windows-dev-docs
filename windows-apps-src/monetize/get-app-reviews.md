@@ -34,7 +34,6 @@ To use this method, you need to first do the following:
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
-<span/> 
 
 ### Request header
 
@@ -42,7 +41,6 @@ To use this method, you need to first do the following:
 |---------------|--------|---------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -56,8 +54,7 @@ To use this method, you need to first do the following:
 | filter |string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
 | orderby | string | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>osVersion</strong></li><li><strong>market</strong></li><li><strong>deviceType</strong></li><li><strong>isRevised</strong></li><li><strong>packageVersion</strong></li><li><strong>deviceModel</strong></li><li><strong>productFamily</strong></li><li><strong>deviceScreenResolution</strong></li><li><strong>isTouchEnabled</strong></li><li><strong>reviewerName</strong></li><li><strong>reviewTitle</strong></li><li><strong>reviewText</strong></li><li><strong>helpfulCount</strong></li><li><strong>notHelpfulCount</strong></li><li><strong>responseDate</strong></li><li><strong>responseText</strong></li><li><strong>deviceRAM</strong></li><li><strong>deviceStorageCapacity</strong></li><li><strong>rating</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
 
-<span/>
- 
+
 ### Filter fields
 
 The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and some fields also support the **contains**, **gt**, **lt**, **ge**, and **le** operators. Statements can be combined using **and** or **or**.
@@ -89,7 +86,6 @@ For a list of the supported fields and support operators for each field, see the
 | responseText  | eq, ne, contains  | The text contents of the response.  |
 | id  | eq, ne  | The ID of the review (this is a GUID).        |
 
-<span/> 
 
 ### Request example
 
@@ -112,9 +108,8 @@ Authorization: Bearer <your access token>
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Value      | array  | An array of objects that contain review data. For more information about the data in each object, see the [review values](#review-values) section below.                                                                                                                                      |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of reviews data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
+| TotalCount | int    | The total number of rows in the data result for the query.                                    |
 
-<span/>
  
 ### Review values
 
@@ -145,8 +140,7 @@ Elements in the *Value* array contain the following values.
 | responseDate           | string  | The date a response was submitted.                 |
 | responseText           | string  | The text contents of the response.        |
 | id                     | string  | The ID of the review (this is a GUID). You can use this ID in the [get response info for app reviews](get-response-info-for-app-reviews.md) and [submit responses to app reviews](submit-responses-to-app-reviews.md) methods.       |
-
-<span/> 
+ 
 
 ### Response example
 

@@ -17,6 +17,7 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Navigation view
 
 The navigation view control provides a collapsible navigation menu for top-level navigation in your app. This control implements the nav pane, or hamburger menu, pattern and automatically adapts the pane's display mode to different window sizes.
@@ -189,9 +190,7 @@ NavigationView has a built-in back button, which can be enabled with the followi
 
 The following is a simple example of how you can incorporate NavigationView into your app. 
 
-We demonstrate how to implement backwards navigation with NavigationView's back button. Since there is both a content frame for the NavigationView (the app navigation backstack) and a root frame for the application (the system backstack), pay careful attention to the backstack. Once the app navigation backstack is empty, the system backstack should be utilized.
-
-We also demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
+We demonstrate how to implement backwards navigation with NavigationView's back button. We also demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
 
 ```xaml
 <Page
@@ -205,7 +204,6 @@ We also demonstrate localization of nav item content strings with `x:Uid`. For m
 
     <NavigationView x:Name="NavView"
                     ItemInvoked="NavView_ItemInvoked"
-                    SelectionChanged="NavView_SelectionChanged"
                     Loaded="NavView_Loaded"
                     BackRequested="NavView_BackRequested">
 
@@ -269,43 +267,41 @@ We also demonstrate localization of nav item content strings with `x:Uid`. For m
 ```
 
 ```csharp
-bool FromBack = false;
-
 private void NavView_Loaded(object sender, RoutedEventArgs e)
 {
-    
     // you can also add items in code behind
-    NavView.MenuItems.Add(new NavigationViewItemSeparator()); 
+    NavView.MenuItems.Add(new NavigationViewItemSeparator());
     NavView.MenuItems.Add(new NavigationViewItem()
-        { Content = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
+    { Content = "My content", Icon = new SymbolIcon(Symbol.Folder), Tag = "content" });
 
     // set the initial SelectedItem 
     foreach (NavigationViewItemBase item in NavView.MenuItems)
     {
-        if (item is NavigationViewItem && item.Tag.ToString() == "apps")
+        if (item is NavigationViewItem && item.Tag.ToString() == "home")
         {
             NavView.SelectedItem = item;
             break;
         }
     }
-    ContentFrame.Navigated += 'On_Navigated';
+            
+    ContentFrame.Navigated += On_Navigated;
 
+    // add keyboard accelerators for backwards navigation
     KeyboardAccelerator GoBack = new KeyboardAccelerator();
     GoBack.Key = VirtualKey.GoBack;
-    GoBack.Invoked += "BackInvoked";
+    GoBack.Invoked += BackInvoked;
     KeyboardAccelerator AltLeft = new KeyboardAccelerator();
     AltLeft.Key = VirtualKey.Left;
-    AltLeft.Invoked += "BackInvoked";
+    AltLeft.Invoked += BackInvoked;
+    this.KeyboardAccelerators.Add(GoBack);
+    this.KeyboardAccelerators.Add(AltLeft);
     // ALT routes here
     AltLeft.Modifiers = VirtualKeyModifiers.Menu;
-
-    List<KeyboardAccelerator> AccList = new List< KeyboardAccelerator >(new KeyboardAccelerator [] {GoBack, AltLeft});
-    MainPage.KeyboardAccelerators = AccList;
+    
 }
 
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
-{
-
+{  
     if (args.IsSettingsInvoked)
     {
         ContentFrame.Navigate(typeof(SettingsPage));
@@ -315,20 +311,6 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
         // find NavigationViewItem with Content that equals InvokedItem
         var item = sender.MenuItems.OfType<NavigationViewItem>().First(x => (string)x.Content == (string)args.InvokedItem);
         NavView_Navigate(item as NavigationViewItem);
-        
-    }
-}
-
-private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
-{
-    if (args.IsSettingsSelected)
-    {
-        ContentFrame.Navigate(typeof(SettingsPage));
-    }
-    else
-    {
-        NavigationViewItem item = args.SelectedItem as NavigationViewItem;
-        NavView_Navigate(item);
     }
 }
 
@@ -355,117 +337,65 @@ private void NavView_Navigate(NavigationViewItem item)
         case "content":
             ContentFrame.Navigate(typeof(MyContentPage));
             break;
-    }
-    if (!ContentFrame.CanGoBack && FromBack)
-    { 
-        NavView.IsBackEnabled = false; 
-    }
-    else
-    { 
-        NavView.IsBackEnabled = true; 
-    } 
-    FromBack = false;
+    }           
 }
-private void NavView_BackRequested(NavigationView sender) 
-{ 
-     On_BackRequested(); 
-} 
 
-private bool On_BackRequested()
+private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
 {
-    if ((NavView.DisplayMode == NavigationViewDisplayMode.Compact || NavView.DisplayMode == NavigationViewDisplayMode.Minimal) && NavView.IsPaneOpen)
-    {
-        // Do not navigate back and just allow NavView to execute its light
-        // dismiss behavior
-        return true;
-    } else if (ContentFrame.BackStackDepth == 0)
-    {
-        Frame rootFrame = this.Frame;
-        if (rootFrame == null)
-            return true;
-
-        if (rootFrame.CanGoBack)
-        {
-            rootFrame.GoBack();
-            return true;
-        }
-
-    } else {
-
-        if (ContentFrame.CanGoBack)
-        {
-            ContentFrame.GoBack();
-            return true;
-        }
-
-        FromBack = true;
-    }
+    On_BackRequested();
 }
 
-protected void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+private void BackInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
     On_BackRequested();
     args.Handled = true;
 }
 
+private bool On_BackRequested()
+{
+    bool navigated = false;
+
+    // don't go back if the nav pane is overlayed
+    if (NavView.IsPaneOpen && (NavView.DisplayMode == NavigationViewDisplayMode.Compact || NavView.DisplayMode == NavigationViewDisplayMode.Minimal))
+    {
+        return false;
+    }
+    else
+    {
+        if (ContentFrame.CanGoBack)
+        {
+            ContentFrame.GoBack();
+            navigated = true;
+        }
+    }
+    return navigated;
+}
+
 private void On_Navigated(object sender, NavigationEventArgs e)
 {
-    String stringTag = "";
-    switch (typeof(ContentFrame.Content))
-    { 
-        case typeof(HomePage): 
-            stringTag = "home"; 
-            break; 
-        case typeof(AppsPage): 
-            stringTag = "apps";
-            break; 
-        case typeof(GamesPage):
-            stringTag = "games";
-            break; 
-        case typeof(MusicPage): 
-            stringTag = "music";
-            break;
-        case typeof(MyContentPage): 
-            stringTag = "content";
-            break;
-    }
+    NavView.IsBackEnabled = ContentFrame.CanGoBack;
+
+    Dictionary<Type, string> lookup = new Dictionary<Type, string>()
+    {
+        {typeof(HomePage), "home"},
+        {typeof(AppsPage), "apps"},
+        {typeof(GamesPage), "games"},
+        {typeof(MusicPage), "music"},
+        {typeof(MyContentPage), "content"}    
+    };
+
+    String stringTag = lookup[ContentFrame.SourcePageType];
 
     // set the new SelectedItem  
     foreach (NavigationViewItemBase item in NavView.MenuItems)
     {
-        if (item is NavigationViewItem && item.Tag.ToString() == stringTag)
+        if (item is NavigationViewItem && item.Tag.Equals(stringTag))
         {
             NavView.SelectedItem = item;
+            item.IsSelected = true;
             break;
         }
-    }
-}
-```
-
-`App.xaml` code behind:
-
-```csharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
-Frame rootFrame = Window.Current.Content;
-rootFrame.Navigated += 'On_Navigated';
-rootFrame.PointerPressed += 'On_PointerPressed';
-
-private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
-{
-    if (e.handled == False)  
-    {
-        e.handled = On_BackRequested();
-    }
-}
-
-private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
-{
-    bool isXButton1Pressed = e.GetCurrentPoint(sender as UIElement).Properties.PointerUpdateKind == PointerUpdateKind.XButton1Pressed;
-
-    if (isXButton1Pressed)
-    {
-        e.handled = On_BackRequested();
-    }
+    }        
 }
 ```
 

@@ -35,8 +35,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,7 +42,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -54,7 +51,6 @@ This method has the following syntax. See the following sections for usage examp
 | flightId | string | Required. The ID of the package flight for which you want to update a submission. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
 | submissionId | string | Required. The ID of the submission to update. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -68,7 +64,6 @@ The request body has the following parameters.
 | targetPublishDate           | string  | The publish date for the submission in in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
 | notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
-<span/>
 
 ### Request example
 
@@ -154,8 +149,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The package flight submission could not be updated because the request is invalid. |
 | 409  | The package flight submission could not be updated because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
-<span/>
 
 
 ## Related topics

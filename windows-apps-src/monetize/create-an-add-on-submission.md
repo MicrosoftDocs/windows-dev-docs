@@ -15,13 +15,12 @@ ms.localizationpriority: medium
 # Create an add-on submission
 
 
-
-
 Use this method in the Microsoft Store submission API to create a new add-on (also known as in-app product or IAP) submission for an app that is registered to your Windows Dev Center account. After you successfully create a new submission by using this method, [update the submission](update-an-add-on-submission.md) to make any necessary changes to the submission data, and then [commit the submission](commit-an-add-on-submission.md) for ingestion and publishing.
 
 For more information about how this method fits into the process of creating an add-on submission by using the Microsoft Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
->**Note**&nbsp;&nbsp;This method creates a submission for an existing add-on. To create an add-on, use the [Create an add-on](create-an-add-on.md) method.
+> [!NOTE]
+> This method creates a submission for an existing add-on. To create an add-on, use the [Create an add-on](create-an-add-on.md) method.
 
 ## Prerequisites
 
@@ -39,8 +38,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -48,7 +45,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -56,7 +52,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | string | Required. The Store ID of the add-on for which you want to create a submission. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
 
-<span/>
 
 ### Request body
 
@@ -156,8 +151,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 400  | The submission could not be created because the request is invalid. |
 | 409  | The submission could not be created because of the current state of the app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
-
-<span/>
 
 
 ## Related topics

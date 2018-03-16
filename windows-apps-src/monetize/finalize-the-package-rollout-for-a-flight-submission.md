@@ -35,8 +35,6 @@ This method has the following syntax. See the following sections for usage examp
 |--------|------------------------------------------------------------------|
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout``` |
 
-<span/>
- 
 
 ### Request header
 
@@ -44,7 +42,6 @@ This method has the following syntax. See the following sections for usage examp
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/>
 
 ### Request parameters
 
@@ -54,7 +51,6 @@ This method has the following syntax. See the following sections for usage examp
 | flightId | string | Required. The ID of the package flight that contains the submission with the package rollout you want to finalize. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
 | submissionId | string | Required. The ID of the submission with the package rollout you want to finalize. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
 
-<span/>
 
 ### Request body
 
@@ -90,8 +86,6 @@ If the request cannot be successfully completed, the response will contain one o
 |--------|------------------|
 | 404  | The package flight submission could not be found. |
 | 409  | This code indicates one of the following errors:<br/><br/><ul><li>The submission is not in a valid state for the gradual rollout operation (before calling this method, the submission must be published and the [packageRolloutStatus](manage-flight-submissions.md#package-rollout-object) value must be set to **PackageRolloutInProgress**).</li><li>The submission does not belong to the specified app.</li><li>The app uses a Dev Center dashboard feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).</li></ul> |   
-
-<span/>
 
 
 ## Related topics

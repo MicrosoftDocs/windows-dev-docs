@@ -1,4 +1,4 @@
----
+﻿---
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: Opening a developer account
@@ -31,7 +31,8 @@ This overview of how to register for a developer account for the Microsoft Store
 
   > [!NOTE]
   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
-6.  Enter the contact info you want to use for your developer account.
+
+  6.  Enter the contact info you want to use for your developer account.
 
   > [!NOTE]
   > We'll use this info to contact you about account-related matters. For example, you'll receive an email confirmation message after you complete your registration. After that, we'll send messages when we pay you, or if you need to fix something with your account. We may also send informational emails as described above, unless you opt out of receiving non-transactional emails.

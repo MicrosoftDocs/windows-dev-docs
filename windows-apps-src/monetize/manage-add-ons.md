@@ -34,22 +34,22 @@ These methods can only be used to get, create, or delete add-ons. To create subm
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
 <td align="left"><a href="get-all-add-ons.md">Get all add-ons for your apps</a></td>
 </tr>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="get-an-add-on.md">Get a specific add-on</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts</td>
 <td align="left"><a href="create-an-add-on.md">Create an add-on</a></td>
 </tr>
 <tr>
 <td align="left">DELETE</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">Delete an add-on</a></td>
 </tr>
 </tbody>

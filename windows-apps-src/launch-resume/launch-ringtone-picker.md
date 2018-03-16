@@ -48,14 +48,15 @@ The arguments you can pass to display the tone picker are as follows:
 | CurrentToneFilePath | string | no | An existing tone token. | The tone to show as the current tone in the tone picker. If this value is not set, the first tone on the list is selected by default.<br>This is not, strictly speaking, a file path. You can get a suitable value for `CurrenttoneFilePath` from the `ToneToken` value returned from the tone picker.  |
 | TypeFilter | string | no | "Ringtones", "Notifications", "Alarms", "None" | Selects which tones to add to the picker. If no filter is specified then all tones are displayed. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
+The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
 | Return values | Type | Possible values | Description |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success. <br> 1-cancelled. <br> 7-invalid parameters. <br> 8 - no tones match the filter criteria. <br> 255 - specified action is not implemented. | The result of the picker operation. |
-| ToneToken | string | The selected tone's token. <br> The string is empty if the user selects **default** in the picker. | This token can be used in a toast notification payload, or can be assigned as a contact’s ringtone or text tone. The parameter is returned in the ValueSet only if **Result** is 0. |
+| Result | Int32 | 0-success. <br>1-cancelled. <br>7-invalid parameters. <br>8 - no tones match the filter criteria. <br>255 - specified action is not implemented. | The result of the picker operation. |
+| ToneToken | string | The selected tone's token. <br>The string is empty if the user selects **default** in the picker. | This token can be used in a toast notification payload, or can be assigned as a contact’s ringtone or text tone. The parameter is returned in the ValueSet only if **Result** is 0. |
 | DisplayName | string | The specified tone’s friendly name. | A string that can be shown to the user to represent the selected tone. The parameter is returned in the ValueSet only if **Result** is 0. |
-<br>
+
+
 **Example: Open the tone picker so that the user can select a tone**
 
 ``` cs
@@ -94,12 +95,12 @@ The arguments you can pass to display the tone saver are as follows:
 | ToneFileSharingToken | string | yes | [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) file sharing token for the ringtone file to save. | Saves a specific sound file as a ringtone. The supported content types for the file are mpeg audio and x-ms-wma audio. |
 | DisplayName | string | no | The specified tone’s friendly name. | Sets the display name to use when saving the specified ringtone. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
+The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
 | Return values | Type | Possible values | Description |
 |--------------|------|-------|-------------|
 | Result | Int32 | 0-success.<br>1-cancelled by user.<br>2-Invalid file.<br>3-Invalid file content type.<br>4-file exceeds maximum ringtone size (1MB in Windows 10).<br>5-File exceeds 40 second length limit.<br>6-File is protected by digital rights management.<br>7-invalid  parameters. | The result of the picker operation. |
-<br>
+
 **Example: Save a local music file as a ringtone**
 
 ``` cs
@@ -157,13 +158,13 @@ The arguments you can pass to get the friendly name of a tone are as follows:
 | Action | string | yes | "GetToneName" | Indicates that you want to get the friendly name of a tone. |
 | ToneToken | string | yes | The tone token | The tone token from which to obtain a display name. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
+The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
 | Return value | Type | Possible values | Description |
 |--------------|------|-------|-------------|
 | Result | Int32 | 0-The picker operation succeeded.<br>7-Incorrect parameter (for example, no ToneToken provided).<br>9-Error reading the name for the specified token.<br>10-Unable to find specified tone token. | The result of the picker operation.
 | DisplayName | string | The tone's friendly name. | Returns the selected tone's display name. This parameter is only returned in the ValueSet if **Result** is 0. |
-<br>
+
 **Example: Retrieve a tone token from Contact.RingToneToken and display its friendly name in the contact card.**
 
 ```cs

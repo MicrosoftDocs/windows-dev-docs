@@ -32,7 +32,6 @@ To use this method, you need to first do the following:
 |--------|----------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions``` |
 
-<span/> 
 
 ### Request header
 
@@ -40,7 +39,6 @@ To use this method, you need to first do the following:
 |---------------|--------|--------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
-<span/> 
 
 ### Request parameters
 
@@ -59,7 +57,6 @@ The *applicationId* or *inAppProductId* parameter is required. To retrieve acqui
 | orderby | string | A statement that orders the result data values for each add-on acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
 | groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  No  |
 
-<span/>
 
 ### Filter fields
 
@@ -81,7 +78,6 @@ For a list of the supported fields, see the following table. String values must 
 | deviceType | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | orderName | A string that specifies the name of the order for the promotional code that was used to acquire the add-on (this only applies if the user acquired the add-on by redeeming a promotional code). |
 
-<span/> 
 
 ### Request example
 
@@ -107,9 +103,8 @@ Authorization: Bearer <your access token>
 |------------|--------|------------------|
 | Value      | array  | An array of objects that contain aggregate add-on acquisition data. For more information about the data in each object, see the [add-on acquisition values](#add-on-acquisition-values) section below.                                                                                                              |
 | @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of add-on acquisition data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                                 |
+| TotalCount | int    | The total number of rows in the data result for the query.    |
 
-<span/>
 
 <span id="add-on-acquisition-values" />
 
@@ -132,9 +127,8 @@ Elements in the *Value* array contain the following values.
 | gender              | string  | The gender of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
 | ageGroup            | string  | The age group of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                 |
 | acquisitionType     | string  | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
-| acquisitionQuantity | inumber | The number of acquisitions that occurred.                                                                                                                                                                                                |
+| acquisitionQuantity | inumber | The number of acquisitions that occurred.                        |
 
-<span/> 
 
 ### Response example
 

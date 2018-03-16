@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # Open files and folders with a picker
 
-
-
-
 **Important APIs**
 
 -   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
@@ -174,4 +171,5 @@ else
 }
 ```
 
-**Tip**  Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) or [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
+> [!TIP]
+> Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) or [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
