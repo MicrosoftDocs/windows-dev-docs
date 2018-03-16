@@ -14,9 +14,6 @@ ms.localizationpriority: medium
 
 # <span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay
 
-
-
-
 You can use **AutoPlay** to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. You can also use **AutoPlay** to offer your app as an option when users share files between two PCs by using proximity (tapping).
 
 > **Note**  If you are a device manufacturer and you want to associate your [Microsoft Store device app](http://go.microsoft.com/fwlink/p/?LinkID=301381) as an **AutoPlay** handler for your device, you can identify that app in the device metadata. For more info, see [AutoPlay for Microsoft Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306684).
@@ -47,7 +44,6 @@ When files are shared by using proximity, the **Files** property of the **FileAc
 6.  In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **AutoPlay Copy or Show Images** and the **Name** field to **image\_association1**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.jpg**. In the **Supported File Types** section, set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
 7.  Save and close the manifest file.
 
-
 **Table 1**
 
 | Setting             | Value                 |
@@ -61,7 +57,7 @@ The **Action Display Name** setting identifies the string that AutoPlay displays
 **Table 2**  
 
 | Setting             | Value                      |
-|---------------------|----------------------------|
+|--------------------:|----------------------------|
 | Verb                | copy                       |
 | Action Display Name | Copy Pictures Into Library |
 | Content Event       | ShowPicturesOnArrival      |
@@ -369,8 +365,6 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 
 > **Note**  The `GetImageList` and `GetThumbnail` methods are added in the following step.
 
- 
-
 ### Step 6: Add code to display images
 
 The code in this step displays thumbnails of the images stored on the camera. The code makes asynchronous calls to the camera to get the thumbnail image. However, the next asynchronous call doesn't occur until the previous asynchronous call completes. This ensures that only one request is made to the camera at a time.
@@ -414,10 +408,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 2.  To run your app, connect a camera to your machine. Then select the app from the AutoPlay list of options.
     **Note**  Not all cameras advertise for the **WPD\\ImageSource** AutoPlay device event.
 
-     
-
 ## Configure removable storage
-
 
 You can identify a volume device such as a memory card or thumb drive as an **AutoPlay** device when the volume device is connected to a PC. This is especially useful when you want to associate a specific app for **AutoPlay** to present to the user for your volume device.
 
