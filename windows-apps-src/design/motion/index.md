@@ -117,4 +117,4 @@ Here, a visual parallax effect moves different objects at different rates when t
 
 ## Animations in XAML
 
-To learn more about how to use built-in animations in XAML or create your own, check out [Animations in XAML](xaml-animation.md). L
+To learn more about how to use built-in animations in XAML or create your own, check out [Animations in XAML](xaml-animation.md). 
