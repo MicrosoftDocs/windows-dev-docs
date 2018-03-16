@@ -27,8 +27,8 @@ An app developer should use advanced query syntax (AQS) filters based on the cla
 
 Bluetooth services fall under one of two protocols, either the Bluetooth protocol or the Bluetooth LE protocol. The identifiers for these protocols are:
 
--   Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}
--   Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc76eaa7084d49}
+-   Bluetooth protocol ID: {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
+-   Bluetooth LE protocol ID: {bb7bb05e-5972-42b5-94fc-76eaa7084d49}
 
 The Bluetooth protocol supports several services, all following the same basic format. The first four digits of the GUID vary based upon the service, but all Bluetooth GUIDs end with **0000-0000-1000-8000-00805F9B34FB**. For example, the RFCOMM service has the precursor of 0x0003, so the full ID would be **00030000-0000-1000-8000-00805F9B34FB**. The following table lists some common Bluetooth services.
 
