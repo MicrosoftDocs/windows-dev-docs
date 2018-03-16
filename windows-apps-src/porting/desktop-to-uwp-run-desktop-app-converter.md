@@ -19,9 +19,7 @@ ms.localizationpriority: medium
 
 You can use the Desktop App Converter (DAC) to bring your desktop apps to the Universal Windows Platform (UWP). This includes Win32 apps and apps that you've created by using .NET 4.6.1.
 
-<div style="float: left; padding: 10px">
-    ![DAC Icon](images/desktop-to-uwp/dac.png)
-</div>
+![DAC Icon](images/desktop-to-uwp/dac.png)
 
 While the term "Converter" appears in the name of this tool, it doesn't actually convert your app. Your app remains unchanged. However, this tool generates a Windows app package with a package identity and the ability to call a vast range of WinRT APIs.
 
