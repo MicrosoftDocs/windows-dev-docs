@@ -31,7 +31,7 @@ These steps show how to register for a custom URI scheme name, `alsdk://`, and h
 
 The app receives activation events only for the URI scheme names listed in the package manifest. Here's how you indicate that your app handles the `alsdk` URI scheme name.
 
-1.  In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **Protocol** and then click **Add**.
+1. In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **Protocol** and then click **Add**.
 
     Here is a brief description of each of the fields that you may fill in the manifest designer for the Protocol (see [**AppX Package Manifest**](https://msdn.microsoft.com/library/windows/apps/dn934791) for details):
 
@@ -46,11 +46,12 @@ The app receives activation events only for the URI scheme names listed in the p
 | **Entry point** | Specifies the task that handles the protocol extension. This is normally the fully namespace-qualified name of a Windows Runtime type. If not specified, the entry point for the app is used. |
 | **Start page** | The web page that handles the extensibility point. |
 | **Resource group** | A tag that you can use to group extension activations together for resource management purposes. |
-| **Desired View** (Windows-only) | Specify the **Desired View** field to indicate the amount of space the app's window needs when it is launched for the URI scheme name. The possible values for **Desired View** are **Default**, **UseLess**, **UseHalf**, **UseMore**, or **UseMinimum**. <br/>**Note**  Windows takes into account multiple different factors when determining the target app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. Setting **Desired View** doesn't guarantee a specific windowing behavior for the target app.<br/> **Mobile device family:  Desired View** isn't supported on the mobile device family. |
-2.  Enter `images\Icon.png` as the **Logo**.
-3.  Enter `SDK Sample URI Scheme` as the **Display name**
-4.  Enter `alsdk` as the **Name**.
-5.  Press Ctrl+S to save the change to package.appxmanifest.
+| **Desired View** (Windows-only) | Specify the **Desired View** field to indicate the amount of space the app's window needs when it is launched for the URI scheme name. The possible values for **Desired View** are **Default**, **UseLess**, **UseHalf**, **UseMore**, or **UseMinimum**.<br/>**Note**  Windows takes into account multiple different factors when determining the target app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. Setting **Desired View** doesn't guarantee a specific windowing behavior for the target app.<br/>**Mobile device family: Desired View** isn't supported on the mobile device family. |
+
+2. Enter `images\Icon.png` as the **Logo**.
+3. Enter `SDK Sample URI Scheme` as the **Display name**
+4. Enter `alsdk` as the **Name**.
+5. Press Ctrl+S to save the change to package.appxmanifest.
 
     This adds an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element like this one to the package manifest. The **windows.protocol** category indicates that the app handles the `alsdk` URI scheme name.
 
@@ -138,7 +139,6 @@ When launched via Protocol activation, apps should consider including UI that al
 Any app or website can use your URI scheme name, including malicious ones. So any data that you get in the URI could come from an untrusted source. We recommend that you never perform a permanent action based on the parameters that you receive in the URI. For example, URI parameters could be used to launch the app to a user's account page, but we recommend that you never use them to directly modify the user's account.
 
 > **Note**  If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550). This ensures that your name meets the standards for URI schemes.
-
 > **Note**  When launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
 We recommend that apps create a new XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
@@ -149,28 +149,24 @@ If you decide that you want your apps to use a single XAML [**Frame**](https://m
 
 **Complete example**
 
-* [Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 **Concepts**
 
-* [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [File Type and URI Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+- [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+- [File Type and URI Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
 **Tasks**
 
-* [Launch the default app for a URI](launch-default-app.md)
-* [Handle file activation](handle-file-activation.md)
+- [Launch the default app for a URI](launch-default-app.md)
+- [Handle file activation](handle-file-activation.md)
 
 **Guidelines**
 
-* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+- [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
 **Reference**
 
-* [AppX Package Manifest](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)~~
-
- 
-
- 
+- [AppX Package Manifest](https://msdn.microsoft.com/library/windows/apps/dn934791)
+- [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
+- [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)
