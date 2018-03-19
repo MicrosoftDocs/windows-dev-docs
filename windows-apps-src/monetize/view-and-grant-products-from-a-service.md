@@ -4,7 +4,7 @@ ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: If you have a catalog of apps and add-ons, you can use the Microsoft Store collection API and Microsoft Store purchase API to access ownership information for these products from your services.
 title: Manage product entitlements from a service
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -142,7 +142,7 @@ Currently, the only way to create a Microsoft Store ID key is by calling a Unive
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store collection API to [query for products owned by a user](query-for-products.md) or [report a consumable product as fulfilled](report-consumable-products-as-fulfilled.md).
 
-1.  Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI from your service to your client app.
+1.  Pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/collections` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
 
 2.  In your app code, call one of these methods to retrieve a Microsoft Store ID key:
 
@@ -160,7 +160,7 @@ Follow these steps to create a Microsoft Store ID key that you can use with the 
 
 Follow these steps to create a Microsoft Store ID key that you can use with the Microsoft Store purchase API to [grant a free product to a user](grant-free-products.md), [get subscriptions for a user](get-subscriptions-for-a-user.md), or [change the billing state of a subscription for a user](change-the-billing-state-of-a-subscription-for-a-user.md).
 
-1.  Pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI from your service to your client app.
+1.  Pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com/b2b/keys/create/purchase` from your service to your client app. This is one of the tokens you created [earlier in step 3](#step-3).
 
 2.  In your app code, call one of these methods to retrieve a Microsoft Store ID key:
 
@@ -186,8 +186,8 @@ After your service has a Microsoft Store ID key that enables it to access a spec
 
 For each scenario, pass the following information to the API:
 
--   The Azure AD access token that you created earlier with the `https://onestore.microsoft.com` audience URI. This token represents your publisher identity. Pass this token in the request header.
--   The Microsoft Store ID key you retrieved from client-side code in your app. This key represents the identity of the user whose product ownership information you want to access.
+-   In the request header, pass the Azure AD access token that has the audience URI value `https://onestore.microsoft.com`. This is one of the tokens you created [earlier in step 3](#step-3). This token represents your publisher identity.
+-   In the request body, pass the Microsoft Store ID key you retrieved [earlier in step 4](#step-4) from client-side code in your app. This key represents the identity of the user whose product ownership information you want to access.
 
 ## Claims in a Microsoft Store ID key
 

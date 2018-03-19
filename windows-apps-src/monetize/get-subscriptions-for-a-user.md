@@ -4,7 +4,7 @@ ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: Use this method in the Microsoft Store purchase API to get the subscriptions that a given user has entitlements to use.
 title: Get subscriptions for a user
 ms.author: mcleans
-ms.date: 04/11/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,7 +23,7 @@ Use this method in the Microsoft Store purchase API to get the subscription add-
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * A Microsoft Store ID key that represents the identity of the user whose subscriptions you want to get.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
