@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows Machine Learning in your app.
 
 ## Prerequisites
-- [Windows SDK - Build 17110](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)
+- [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
 - [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/): Note that you'll need to check off the optional Windows 10 Preview SDK (10.0.17110.0) inside Visual Studio Installer.
 
 ## 1. Download the sample
