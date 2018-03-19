@@ -4,7 +4,7 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
 title: Manage add-on submissions
 ms.author: mcleans
-ms.date: 02/28/18
+ms.date: 03/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -248,7 +248,7 @@ This resource has the following values.
 
 ### Listing resource
 
-This resource contains listing info for an add-on. This resource has the following values.
+This resource contains [listing info for an add-on](../publish/create-add-on-store-listings.md). This resource has the following values.
 
 | Value           | Type    | Description       |
 |-----------------|---------|------|
@@ -264,7 +264,7 @@ This resource contains icon data for an add-on listing. This resource has the fo
 
 | Value           | Type    | Description     |
 |-----------------|---------|------|
-|  fileName               |    string     |   The name of the icon file in the ZIP archive that you uploaded for the submission.    |     
+|  fileName               |    string     |   The name of the icon file in the ZIP archive that you uploaded for the submission. The icon must be a .png file that measures exactly 300 x 300 pixels.   |     
 |  fileStatus               |   string      |  The status of the icon file. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />

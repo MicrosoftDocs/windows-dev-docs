@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 02/28/2018
+ms.date: 03/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -442,7 +442,7 @@ This resource contains base listing info for an app. This resource has the follo
 
 ### Image resource
 
-This resource contains image and icon data for an app listing. For more information about images and icons for listing, see [App screenshots and images](../publish/app-screenshots-and-images.md). This resource has the following values.
+This resource contains image and icon data for an app listing. For more information about images and icons for an app listing, see [App screenshots and images](../publish/app-screenshots-and-images.md). This resource has the following values.
 
 | Value           | Type    | Description           |
 |-----------------|---------|------|
