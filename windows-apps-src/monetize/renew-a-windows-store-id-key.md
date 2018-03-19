@@ -4,7 +4,7 @@ ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: Use this method to renew a Microsoft Store key.
 title: Renew a Microsoft Store ID key
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,7 @@ Use this method to renew a Microsoft Store key. When you [generate a Microsoft S
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * An expired Microsoft Store ID key that was [generated from client-side code in your app](view-and-grant-products-from-a-service.md#step-4).
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).

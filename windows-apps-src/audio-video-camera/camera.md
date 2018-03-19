@@ -16,18 +16,21 @@ ms.localizationpriority: medium
 
 This section provides guidance for creating Universal Windows Platform (UWP) apps that use the camera or microphone to capture photos, video, or audio.
 
-##Use the Windows built-in camera UI
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+## Use the Windows built-in camera UI
+
+| Topic | Description |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Capture photos and video with Windows built-in camera UI](capture-photos-and-video-with-cameracaptureui.md) | Shows how to use the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) class to capture photos or videos using the camera UI built into Windows. If you simply want to enable the user to capture a photo or video and return the result to your app, this is the quickest and easiest way to do it.  |
-##Basic MediaCapture tasks
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+
+## Basic MediaCapture tasks
+
+| Topic | Description |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Display the camera preview](simple-camera-preview-access.md) | Shows how to quickly display the camera preview stream within a XAML page in a UWP app. |
 | [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) | Shows the simplest way to capture photos and video using the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. |
 | [Camera UI features for mobile devices](camera-ui-features-for-mobile-devices.md) | Shows you how to take advantage of special camera UI features that are only present on mobile devices.  |
                                                                                                                
-##Advanced MediaCapture tasks   
+## Advanced MediaCapture tasks   
                                                                                                                
 | Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

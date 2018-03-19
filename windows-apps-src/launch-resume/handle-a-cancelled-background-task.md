@@ -25,7 +25,7 @@ Learn how to make a background task that recognizes a cancellation request, stop
 
 This topic assumes you have already created a background task class, including the Run method that is used as the background task entry point. To get started quickly building a background task, see [Create and register an out-of-process background task](create-and-register-a-background-task.md) or [Create and register an in-process background task](create-and-register-an-inproc-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
 
-This topic is also applicable to in-process background tasks. But instead of the Run() method, substitute OnBackgroundActivated(). In-process background tasks do not require you to use persistent storage to signal the cancellation because you can communicate the cancellation using app state since the background task is running in the same process as your foreground app.
+This topic is also applicable to in-process background tasks. But instead of the **Run()** method, substitute **OnBackgroundActivated()**. In-process background tasks do not require you to use persistent storage to signal the cancellation because you can communicate the cancellation using app state since the background task is running in the same process as your foreground app.
 
 ## Use the OnCanceled method to recognize cancellation requests
 
@@ -33,7 +33,7 @@ Write a method to handle the cancellation event.
 
 > **Note**  For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
 
-Create a method named OnCanceled as follows. This method is the entry point called by the Windows Runtime when a cancellation request is made against your background task.
+Create a method named **OnCanceled** as follows. This method is the entry point called by the Windows Runtime when a cancellation request is made against your background task.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -88,7 +88,7 @@ The full [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=2275
 >     }
 > ```
 
-In the background task's Run method, register the OnCanceled event handler method before starting work. In an in-process background task, you might do this registration as part of your application initialization. For example, use the following line of code:
+In the background task's Run method, register the **OnCanceled** event handler method before starting work. In an in-process background task, you might do this registration as part of your application initialization. For example, use the following line of code:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -100,7 +100,7 @@ In the background task's Run method, register the OnCanceled event handler metho
 
 ## Handle cancellation by exiting your background task
 
-When a cancellation request is received, your method that does background work needs to stop work and exit by recognizing when **\_cancelRequested** is set to **true**. For in-process background tasks, this means returning from the `OnBackgroundActivated()` method. For out-of-process background tasks, this means returning from the `Run()` method.
+When a cancellation request is received, your method that does background work needs to stop work and exit by recognizing when **\_cancelRequested** is set to **true**. For in-process background tasks, this means returning from the **OnBackgroundActivated()** method. For out-of-process background tasks, this means returning from the **Run()** method.
 
 Modify the code of your background task class to check the flag variable while it's working. If **\_cancelRequested** set to true, stop work from continuing.
 
@@ -329,19 +329,18 @@ The complete Run method, and timer callback code, from the [background task samp
 > }
 > ```
 
-
 ## Related topics
 
-* [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
-* [Create and register an out-of-process background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+- [Create and register an in-process background task](create-and-register-an-inproc-background-task.md).
+- [Create and register an out-of-process background task](create-and-register-a-background-task.md)
+- [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+- [Guidelines for background tasks](guidelines-for-background-tasks.md)
+- [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+- [Register a background task](register-a-background-task.md)
+- [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+- [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+- [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+- [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+- [Use a maintenance trigger](use-a-maintenance-trigger.md)
+- [Debug a background task](debug-a-background-task.md)
+- [How to trigger suspend, resume, and background events in UWP apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)

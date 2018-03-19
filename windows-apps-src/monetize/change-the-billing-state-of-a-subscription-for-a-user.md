@@ -4,7 +4,7 @@ ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: Use this method in the Microsoft Store purchase API to change the billing state of a subscription for a user.
 title: Change the billing state of a subscription for a user
 ms.author: mcleans
-ms.date: 04/11/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,7 +23,7 @@ Use this method in the Microsoft Store purchase API to change the billing state 
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * A Microsoft Store ID key that represents the identity of the user who has an entitlement to the subscription you want to change.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).

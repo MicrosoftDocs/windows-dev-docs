@@ -4,7 +4,7 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 title: Query for products
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,7 +24,7 @@ This method is designed to be called by your service in response to a message fr
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * A Microsoft Store ID key that represents the identity of the user whose products you want to get.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
