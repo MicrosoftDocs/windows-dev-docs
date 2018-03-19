@@ -15,13 +15,13 @@ You can use SQLite to store and retrieve data in a light-weight database on the 
 
 ## Some benefits of using SQLite for local storage
 
-:heavy_check_mark: SQLite is light-weight and self-contained. It's a code library without any other dependencies. There's nothing to configure.
+- SQLite is light-weight and self-contained. It's a code library without any other dependencies. There's nothing to configure.
 
-:heavy_check_mark: There's no database server. The client and the server run in the same process.
+- There's no database server. The client and the server run in the same process.
 
-:heavy_check_mark: SQLite is in the public domain so you can freely use and distribute it with your app.
+- SQLite is in the public domain so you can freely use and distribute it with your app.
 
-:heavy_check_mark: SQLite works across platforms and architectures.
+- SQLite works across platforms and architectures.
 
 You can read more about SQLite [here](https://sqlite.org/about.html).
 
@@ -83,11 +83,11 @@ First off, you can use .NET Standard 2.0 libraries instead of regular class libr
 
 Secondly, your app does not have package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
-:heavy_check_mark: Reduces the size of your application because you don't have to download the SQLite binary, and then package it as part of your application.
+- Reduces the size of your application because you don't have to download the SQLite binary, and then package it as part of your application.
 
-:heavy_check_mark: Prevents you from having to push a new version of your app to users in the event that SQLite publishes critical fixes to bugs and security vulnerabilities in SQLite. The Windows version of SQLite is maintained by Microsoft in coordination with SQLite.org.
+- Prevents you from having to push a new version of your app to users in the event that SQLite publishes critical fixes to bugs and security vulnerabilities in SQLite. The Windows version of SQLite is maintained by Microsoft in coordination with SQLite.org.
 
-:heavy_check_mark: App load time has the potential to be faster because most likely, the SDK version of SQLite will already be loaded into memory.
+- App load time has the potential to be faster because most likely, the SDK version of SQLite will already be loaded into memory.
 
 Lets start by adding a .NET Standard 2.0 class library to your solution. It's not necessary that you use a class library to contain your data access code, but we'll use one our example. We'll name the library **DataAccessLibrary** and we'll name the class in the library to **DataAccess**.
 
@@ -123,15 +123,15 @@ You don't have to do this. But if you have a reason to include a specific versio
 
 We'll do these things:
 
-:one: Prepare the data access class.
+1. Prepare the data access class.
 
-:two: Initialize the SQLite database.
+1. Initialize the SQLite database.
 
-:three: Insert data into the SQLite database.
+1. Insert data into the SQLite database.
 
-:four: Retrieve data from the SQLite database.
+1. Retrieve data from the SQLite database.
 
-:five: Add a basic user interface.
+1. Add a basic user interface.
 
 ### Prepare the data access class
 
