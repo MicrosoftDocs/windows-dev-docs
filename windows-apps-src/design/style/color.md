@@ -150,7 +150,7 @@ You can personalize the experience of each user by incorporating their accent co
 In XAML, the primary accent color is exposed as a [theme resource](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) named `SystemAccentColor`
 
 ```xaml
-<SolidColorBrush x:Key"UserAccentColor" Color="{ThemeResource SystemAccentColor}" />
+<SolidColorBrush x:Key="UserAccentColor" Color="{ThemeResource SystemAccentColor}" />
 ```
 Avoid using the user's accent color as a background, especially for text and icons. Because the accent color can change, if you must use it as a background, additional work must be done to ensure that foreground text is easy to read. For example, if your text is white and the accent color is light gray, your text will be difficult to see because the contrast ratio between white and light gray is small. You can work around the issue by testing the accent color to determine whether it’s a dark color.
 
