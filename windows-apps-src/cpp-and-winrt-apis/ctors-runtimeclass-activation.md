@@ -113,5 +113,8 @@ For details, code, and a walkthrough of authoring a third-party runtime class in
 
 For details, code, and a walkthrough of authoring a third-party runtime class in an app project, see [XAML controls; binding to a C++/WinRT property](binding-property.md).
 
+If you're authoring a runtime class then, from within the same compilation unit, you can use the [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self?branch=live) function  to construct an instance of the implementation type for the runtime class.
+
 ## Important APIs
 * [winrt::make](/uwp/cpp-ref-for-winrt/make?branch=live)
+* [winrt::make_self](/uwp/cpp-ref-for-winrt/make-self?branch=live)

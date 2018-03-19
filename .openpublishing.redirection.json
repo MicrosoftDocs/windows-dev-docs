@@ -97,7 +97,7 @@
     },
     {
       "source_path": "windows-apps-src/get-started/xaml-basics-adaptive-layout.md",
-      "redirect_url": "/windows/uwp/design/layout/xaml-basics-adaptive-layout",
+      "redirect_url": "/windows/uwp/design/basics/xaml-basics-adaptive-layout",
       "redirect_document_id": false
     },
     {

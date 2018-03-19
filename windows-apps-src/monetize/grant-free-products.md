@@ -4,7 +4,7 @@ ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Use this method in the Microsoft Store purchase API to grant a free app or add-on to a given user.
 title: Grant free products
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,7 @@ Currently, you can only grant free products. If your service attempts to use thi
 
 To use this method, you will need:
 
-* An Azure AD access token that was created with the `https://onestore.microsoft.com` audience URI.
+* An Azure AD access token that has the audience URI value `https://onestore.microsoft.com`.
 * A Microsoft Store ID key that represents the identity of the user for whom you want to grant a free product.
 
 For more information, see [Manage product entitlements from a service](view-and-grant-products-from-a-service.md).
