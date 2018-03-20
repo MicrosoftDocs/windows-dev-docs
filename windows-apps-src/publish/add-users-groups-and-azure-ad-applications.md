@@ -3,11 +3,11 @@ author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Dev Center account.
 title: Add users, groups, and Azure AD applications to your Dev Center account
 ms.author: wdg-dev-content
-ms.date: 09/20/2017
+ms.date: 03/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, azure ad application, aad, user, group
 ms.localizationpriority: high
 ---
 
@@ -39,11 +39,11 @@ To add users to your Dev Center account, go to the **Users** page in **Account s
 You can select users who already exist in your organization's tenant and give them access to your Dev Center account. 
 
 <span id="from-directory" />
+
 1.  From the **Users** page, select **Add users**. 
 2.  Select one or more users from the list that appears. You can use the search box to search for specific users.
     > [!TIP]
     > If you select more than one user to add to your Dev Center account, you must assign them the same role or set of custom permissions. To add multiple users with different roles/permissions, repeat the steps below for each role or set of custom permissions.
-
 3.  When you are finished selecting users, click **Add selected**.
 4.  In the **Roles** section, specify the [role(s) or customized permissions](set-custom-permissions-for-account-users.md) for the selected user(s).
 5.  Click **Save**.
@@ -88,6 +88,9 @@ If you are signed in with a Manager account which also has [global administrator
 The users you invited will get an email invitation to join your account, and a new [guest user](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b) account will be created for them in your Azure AD tenant. Each user will need to accept their invitation before they can access your account.
 
 If you need to resend an invitation, find the user on your **Users** page and select their email address (or the text that says **Invitation pending**). Then, at the bottom of the page, click **Resend invitation**.
+
+> [!IMPORTANT]
+> Outside users that you invite to join your Dev Center account can be assigned the same roles and permissions as other users. However, outside users will not be able to perform certain tasks in Visual Studio, such as associating an app with the Store, or creating packages to upload to the Store. If a user needs to perform those tasks, choose **Create new users** instead of **Invite outside users**. (If you don’t want to add these users to your existing Azure AD tenant, you can [create a new tenant](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account), then create new user accounts for them in that tenant.) 
 
 
 ### Changing a user's directory password

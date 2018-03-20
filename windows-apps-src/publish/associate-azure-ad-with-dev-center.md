@@ -47,9 +47,9 @@ If you need to set up a new Azure AD to link with your Dev Center account, follo
 1.  Go to your **Account settings** and click **Tenants**.
 2.  Select **Create new Azure AD**.
 3.  Enter the directory information for your new Azure AD:
- - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.
- - **Contact email**: An email address where we can contact you about your account if necessary.
- - **Global administrator user account info**: The first name, last name, username, and password that you want to use for the new global administrator account.
+    - **Domain name**: The unique name that we’ll use for your Azure AD domain, along with “.onmicrosoft.com”. For example, if you entered “example”, your Azure AD domain would be “example.onmicrosoft.com”.
+    - **Contact email**: An email address where we can contact you about your account if necessary.
+    - **Global administrator user account info**: The first name, last name, username, and password that you want to use for the new global administrator account.
 4.  Click **Create** to confirm the new domain and account info.
 5.  Sign in with your new Azure AD global administrator username and password to begin [adding and managing additional account users](add-users-groups-and-azure-ad-applications.md).
 
