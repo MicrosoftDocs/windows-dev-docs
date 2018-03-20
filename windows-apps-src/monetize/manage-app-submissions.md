@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 02/28/2018
+ms.date: 03/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -95,8 +95,9 @@ To create a submission for an app, follow this process.
     ```
 
     The response body contains an [app submission](#app-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any related files for the submission to Azure Blob storage (such as app packages, listing images, and trailer files), and all of the data for the new submission (such as the listings and pricing information).
-        > [!NOTE]
-        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+
+    > [!NOTE]
+    > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. If you are adding new packages, listing images, or trailer files for the submission, [prepare the app packages](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) and [prepare the app screenshots, images, and trailers](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Add all of these files to a ZIP archive.
 
@@ -114,14 +115,14 @@ To create a submission for an app, follow this process.
     * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-  The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
+    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
-  ```csharp
-  string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-  Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
-  await blockBob.UploadFromStreamAsync(stream);
-  ```
+    ```csharp
+    string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
+    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
+        new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+    await blockBob.UploadFromStreamAsync(stream);
+    ```
 
 5. [Commit the app submission](commit-an-app-submission.md) by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account.
 
@@ -441,7 +442,7 @@ This resource contains base listing info for an app. This resource has the follo
 
 ### Image resource
 
-This resource contains image and icon data for an app listing. For more information about images and icons for listing, see [App screenshots and images](../publish/app-screenshots-and-images.md). This resource has the following values.
+This resource contains image and icon data for an app listing. For more information about images and icons for an app listing, see [App screenshots and images](../publish/app-screenshots-and-images.md). This resource has the following values.
 
 | Value           | Type    | Description           |
 |-----------------|---------|------|

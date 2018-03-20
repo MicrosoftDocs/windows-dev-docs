@@ -4,7 +4,7 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
 title: Manage add-on submissions
 ms.author: mcleans
-ms.date: 02/28/18
+ms.date: 03/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -89,8 +89,9 @@ To create a submission for an add-on, follow this process.
     ```
 
     The response body contains an [add-on submission](#add-on-submission-object) resource that includes the ID of the new submission, the shared access signature (SAS) URI for uploading any add-on icons for the submission to Azure Blob storage, and all of the data for the new submission (such as the listings and pricing information).
-        > [!NOTE]
-        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+
+    > [!NOTE]
+    > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. If you are adding new icons for the submission, [prepare the icons](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) and add them to a ZIP archive.
 
@@ -108,14 +109,14 @@ To create a submission for an add-on, follow this process.
     * [Azure Storage SDK for Java](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
     * [Azure Storage SDK for Python](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
-  The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
+    The following C# code example demonstrates how to upload a ZIP archive to Azure Blob storage using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET. This example assumes that the ZIP archive has already been written to a stream object.
 
-  ```csharp
-  string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
-  Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-    new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
-  await blockBob.UploadFromStreamAsync(stream);
-  ```
+    ```csharp
+    string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
+    Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
+      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+    await blockBob.UploadFromStreamAsync(stream);
+    ```
 
 5. Commit the submission by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account. For more information, see [Commit an add-on submission](commit-an-add-on-submission.md).
 
@@ -247,7 +248,7 @@ This resource has the following values.
 
 ### Listing resource
 
-This resource contains listing info for an add-on. This resource has the following values.
+This resource contains [listing info for an add-on](../publish/create-add-on-store-listings.md). This resource has the following values.
 
 | Value           | Type    | Description       |
 |-----------------|---------|------|
@@ -263,7 +264,7 @@ This resource contains icon data for an add-on listing. This resource has the fo
 
 | Value           | Type    | Description     |
 |-----------------|---------|------|
-|  fileName               |    string     |   The name of the icon file in the ZIP archive that you uploaded for the submission.    |     
+|  fileName               |    string     |   The name of the icon file in the ZIP archive that you uploaded for the submission. The icon must be a .png file that measures exactly 300 x 300 pixels.   |     
 |  fileStatus               |   string      |  The status of the icon file. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />

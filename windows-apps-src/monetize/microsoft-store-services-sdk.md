@@ -61,11 +61,11 @@ To install the Microsoft Store Services SDK via the MSI installer:
 1.  Close all instances of Visual Studio.
 
 2. If you previously installed the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, or Ad Mediator extension, uninstall these SDKs now. Optionally, open a **Command Prompt** window and run these commands to clean out any older SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  Download and install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). It may take a few minutes to install. Be sure and wait until the process has finished.
 
@@ -84,11 +84,11 @@ To install the Microsoft Store Services SDK libraries via NuGet:
 1.  Close all instances of Visual Studio.
 
 2. If you previously installed the Microsoft Store Engagement and Monetization SDK, Universal Ad Client SDK, or Ad Mediator extension, uninstall these SDKs now. Optionally, open a **Command Prompt** window and run these commands to clean out any older SDK versions that may have been installed with Visual Studio, but which may not appear in the list of installed programs on your computer:
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  Start Visual Studio and open the project in which you want to use the Microsoft Store Services SDK.
     > [!NOTE]
