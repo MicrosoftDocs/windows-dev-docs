@@ -32,7 +32,7 @@ Learn how to use a frame and pages to enable basic peer-to-peer navigation in yo
     The solution is created, and the project files appear in **Solution Explorer**.
 5.  To run the program, choose **Debug** > **Start Debugging** from the menu, or press F5.
     A blank page is displayed.
-6.  Press Shift+F5 to stop debugging and return to Visual Studio.
+6.  To stop debugging and return to Visual Studio, exit the app, or click **Stop Debugging** from the menu.
 
 ## 2. Add basic pages
 
@@ -281,7 +281,7 @@ Here, we add a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/b
 </StackPanel>
 ```
 
-In the Page2.xaml code-behind file, override the `OnNavigatedTo` method with the following:
+In the Page2.xaml code-behind file, add the following to override the `OnNavigatedTo` method:
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)

@@ -417,14 +417,14 @@ Regarding the media protection manager, make sure your code has the following se
 ```cs
 var mediaProtectionManager = new Windows.Media.Protection.MediaProtectionManager();
 
-mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionSystemId"] = 
+mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionSystemId"] = 
              '{F4637010-03C3-42CD-B932-B48ADF3A6A54}'
 var cpsystems = new Windows.Foundation.Collections.PropertySet();
 cpsystems["{F4637010-03C3-42CD-B932-B48ADF3A6A54}"] = 
                 "Windows.Media.Protection.PlayReady.PlayReadyWinRTTrustedInput";
-mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionSystemIdMapping"] = cpsystems;
+mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionSystemIdMapping"] = cpsystems;
 
-mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionContainerGuid"] = 
+mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionContainerGuid"] = 
                 "{9A04F079-9840-4286-AB92-E65BE0885F95}";
 ```
 

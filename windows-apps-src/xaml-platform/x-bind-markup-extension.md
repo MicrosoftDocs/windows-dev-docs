@@ -14,12 +14,16 @@ ms.localizationpriority: medium
 
 # {x:Bind} markup extension
 
-
 **Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 The **{x:Bind}** markup extension—new for Windows 10—is an alternative to **{Binding}**. **{x:Bind}** lacks some of the features of **{Binding}**, but it runs in less time and less memory than **{Binding}** and supports better debugging.
 
-At XAML compile time, **{x:Bind}** is converted into code that will get a value from a property on a data source, and set it on the property specified in markup. The binding object can optionally be configured to observe changes in the value of the data source property and refresh itself based on those changes. It can also optionally be configured to push changes in its own value back to the source property. The binding objects created by **{x:Bind}** and **{Binding}** are largely functionally equivalent. But **{x:Bind}** executes special-purpose code, which it generates at compile-time, and **{Binding}** uses general-purpose runtime object inspection. Consequently, **{x:Bind}** bindings (often referred-to as compiled bindings) have great performance, provide compile-time validation of your binding expressions, and support debugging by enabling you to set breakpoints in the code files that are generated as the partial class for your page. These files can be found in your `obj` folder, with names like (for C#) `<view name>.g.cs`.
+At XAML compile time, **{x:Bind}** is converted into code that will get a value from a property on a data source, and set it on the property specified in markup. The binding object can optionally be configured to observe changes in the value of the data source property and refresh itself based on those changes (`Mode="OneWay"`). It can also optionally be configured to push changes in its own value back to the source property (`Mode="TwoWay"`).
+
+The binding objects created by **{x:Bind}** and **{Binding}** are largely functionally equivalent. But **{x:Bind}** executes special-purpose code, which it generates at compile-time, and **{Binding}** uses general-purpose runtime object inspection. Consequently, **{x:Bind}** bindings (often referred-to as compiled bindings) have great performance, provide compile-time validation of your binding expressions, and support debugging by enabling you to set breakpoints in the code files that are generated as the partial class for your page. These files can be found in your `obj` folder, with names like (for C#) `<view name>.g.cs`.
+
+> [!TIP]
+> **{x:Bind}** has a default mode of **OneTime**, unlike **{Binding}**, which has a default mode of **OneWay**. This was chosen for performance reasons, as using **OneWay** causes more code to be generated to hookup and handle change detection. You can explicitly specify a mode to use OneWay or TwoWay binding. You can also use [x:DefaultBindMode](x-defaultbindmode-attribute.md) to change the default mode for **{x:Bind}** for a specific segment of the markup tree. The specified mode applies to any **{x:Bind}** expressions on that element and its children, that do not explicitly specify a mode as part of the binding.
 
 **Sample apps that demonstrate {x:Bind}**
 
@@ -45,7 +49,7 @@ At XAML compile time, **{x:Bind}** is converted into code that will get a value 
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | One or more binding properties that are specified using a name/value pair syntax. |
 | _propName_ | The string name of the property to set on the binding object. For example, "Converter". |
-| _value_ | The value to set the property to. The syntax of the argument depends on the property being set. Here's an example of a _propName_=_value_ usage where the value is itself a markup extension: `Converter={StaticResource myConverterClass}`. For more info, see [Properties that you can set with {x:Bind}](#properties-that-you-can-set-with-xbind) section below. | 
+| _value_ | The value to set the property to. The syntax of the argument depends on the property being set. Here's an example of a _propName_=_value_ usage where the value is itself a markup extension: `Converter={StaticResource myConverterClass}`. For more info, see [Properties that you can set with {x:Bind}](#properties-you-can-set) section below. |
 
 ## Property path
 
@@ -85,6 +89,7 @@ _Note: The C#-style cast syntax is more flexible than the attached property synt
 ## Functions in binding paths
 
 Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables
+
 - A simpler way to achieve value conversion
 - A way for bindings to depend on more than one parameter
 
@@ -93,14 +98,15 @@ Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as 
 
 In the following example, the background and foreground of the item are bound to functions to do conversion based on the color parameter
 
-``` Xamlmarkup
+```xaml
 <DataTemplate x:DataType="local:ColorEntry">
     <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
         <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
     </Grid>
 </DataTemplate>
 ```
-``` C#
+
+```csharp
 class ColorEntry
 {
     public string ColorName { get; set; }
@@ -118,13 +124,16 @@ class ColorEntry
 }
 
 ```
+
 ### Function Syntax
+
 ``` Syntax
 Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
              |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
 ```
 
 ### Path to the function
+
 The path to the function is specified like other property paths and can include dots (.), indexers or casts to locate the function.
 
 Static functions can be specified using XMLNamespace:ClassName.MethodName syntax. For example **&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** will map to the DateTime.Parse function, assuming that **xmlns:sys="using:System"** is specified on the top of the page.
@@ -132,14 +141,16 @@ Static functions can be specified using XMLNamespace:ClassName.MethodName syntax
 If the mode is OneWay/TwoWay, then the function path will have change detection performed on it, and the binding will be re-evaluated if there are changes to those objects.
 
 The function being bound to needs to:
+
 - Be accessible to the code and metadata – so internal / private work in C#, but C++/CX will need methods to be public WinRT methods
 - Overloading is based on the number of arguments, not type, and it will try to match to the first overload with that many arguments
 - The argument types need to match the data being passed in – we don’t do narrowing conversions
 - The return type of the function needs to match the type of the property that is using the binding
 
-
 ### Function arguments
+
 Multiple function arguments can be specified, separated by comma's (,)
+
 - Binding Path – Same syntax as if you were binding directly to that object.
   - If the mode is OneWay/TwoWay then change detection will be performed and the binding re-evaluated upon object changes
 - Constant string enclosed in quotes – quotes are needed to designate it as a string. Hat (^) can be used to escape quotes in strings
@@ -147,6 +158,7 @@ Multiple function arguments can be specified, separated by comma's (,)
 - Boolean – specified as "x:True" or "x:False"
 
 ### Two way function bindings
+
 In a two-way binding scenario, a second function must be specified for the reverse direction of the binding. This is done using the **BindBack** binding property, for example **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**. The function should take one argument which is the value that needs to be pushed back to the model.
 
 ## Event Binding
@@ -155,16 +167,15 @@ Event binding is a unique feature for compiled binding. It enables you to specif
 
 For events, the target method must not be overloaded and must also:
 
--   Match the signature of the event.
--   OR have no parameters.
--   OR have the same number of parameters of types that are assignable from the types of the event parameters.
+- Match the signature of the event.
+- OR have no parameters.
+- OR have the same number of parameters of types that are assignable from the types of the event parameters.
 
 In generated code-behind, compiled binding handles the event and routes it to the method on the model, evaluating the path of the binding expression when the event occurs. This means that, unlike property bindings, it doesn’t track changes to the model.
 
 For more info about the string syntax for a property path, see [Property-path syntax](property-path-syntax.md), keeping in mind the differences described here for **{x:Bind}**.
 
-##  Properties that you can set with {x:Bind}
-
+## Properties that you can set with {x:Bind}
 
 **{x:Bind}** is illustrated with the *bindingProperties* placeholder syntax because there are multiple read/write properties that can be set in the markup extension. The properties can be set in any order with comma-separated *propName*=*value* pairs. Note that you cannot include line breaks in the binding expression. Some of the properties require types that don't have a type conversion, so these require markup extensions of their own nested within the **{x:Bind}**.
 
@@ -180,7 +191,7 @@ These properties work in much the same way as the properties of the [**Binding**
 | **Mode** | Specifies the binding mode, as one of these strings: "OneTime", "OneWay", or "TwoWay". The default is "OneTime". Note that this differs from the default for **{Binding}**, which is "OneWay" in most cases. |
 | **TargetNullValue** | Specifies a value to display when the source value resolves but is explicitly **null**. |
 | **BindBack** | Specifies a function to use for the reverse direction of a two-way binding. |
-| **UpdateSourceTrigger** | Specifies when to push changes back from the control to the model in TwoWay bindings. The default for all properties except TextBox.Text is PropertyChanged, TextBox.Text is LostFocus.| 
+| **UpdateSourceTrigger** | Specifies when to push changes back from the control to the model in TwoWay bindings. The default for all properties except TextBox.Text is PropertyChanged, TextBox.Text is LostFocus.|
 
 > [!NOTE]
 > If you're converting markup from **{Binding}** to **{x:Bind}**, then be aware of the differences in default values for the **Mode** property.
@@ -196,6 +207,7 @@ When using **{x:Bind}** with data templates, you must indicate the type being bo
 Compiled bindings depend on code generation. So if you use **{x:Bind}** in a resource dictionary then the resource dictionary needs to have a code-behind class. See [Resource dictionaries with {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) for a code example.
 
 Pages and user controls that include Compiled bindings will have a "Bindings" property in the generated code. This includes the following methods:
+
 - **Update()** - This will update the values of all compiled bindings. Any one-way/Two-Way bindings will have the listeners hooked up to detect changes.
 - **Initialize()** - If the bindings have not already been initialized, then it will call Update() to initialize the bindings
 - **StopTracking()** - This will unhook all listeners created for one-way and two-way bindings. They can be re-initialized using the Update() method.

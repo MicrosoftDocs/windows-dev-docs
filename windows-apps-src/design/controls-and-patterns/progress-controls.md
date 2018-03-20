@@ -144,7 +144,7 @@ Both progress controls are rather simple; but some visual features of the contro
 **Sizing the ProgressRing**
 
 The ProgressRing can be sized as large as you want, but can only be as small as 20x20epx. In order to resize a ProgressRing, you must set its height and width. If only height or width are set, the control will assume minimum sizing (20x20epx) – conversely if the height and width are set to two different sizes, the smaller of the sizes will be assumed.
-To ensure your ProgressRing is correct for your needs, set bother the height and the width to the same value:
+To ensure your ProgressRing is correct for your needs, set both the height and the width to the same value:
 
 ```XAML
 <ProgressRing Height="100" Width="100"/>

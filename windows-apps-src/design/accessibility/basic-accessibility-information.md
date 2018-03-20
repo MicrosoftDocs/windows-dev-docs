@@ -77,6 +77,7 @@ To support screen readers and to provide the basic identifying information for e
 
 XAML
 ```xml
+<!-- Comment -->
 <Image Source="product.png"
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
