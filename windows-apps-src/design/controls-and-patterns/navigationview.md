@@ -190,7 +190,9 @@ NavigationView has a built-in back button, which can be enabled with the followi
 
 The following is a simple example of how you can incorporate NavigationView into your app. 
 
-We demonstrate how to implement backwards navigation with NavigationView's back button. We also demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
+We demonstrate how to implement backwards navigation with NavigationView's back button. Note that to use NavigationView's back navigation properties, you'll need the [Windows 10 Insider Preview (introduced v10.0.17110.0)](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
+
+We also demonstrate localization of nav item content strings with `x:Uid`. For more information on localization, see [Localize strings in your UI](../../app-resources/localize-strings-ui-manifest.md).
 
 ```xaml
 <Page
@@ -375,27 +377,33 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 {
     NavView.IsBackEnabled = ContentFrame.CanGoBack;
 
-    Dictionary<Type, string> lookup = new Dictionary<Type, string>()
+    if (ContentFrame.SourcePageType == typeof(SettingsPage))
     {
-        {typeof(HomePage), "home"},
-        {typeof(AppsPage), "apps"},
-        {typeof(GamesPage), "games"},
-        {typeof(MusicPage), "music"},
-        {typeof(MyContentPage), "content"}    
-    };
-
-    String stringTag = lookup[ContentFrame.SourcePageType];
-
-    // set the new SelectedItem  
-    foreach (NavigationViewItemBase item in NavView.MenuItems)
+        NavView.SelectedItem = NavView.SettingsItem as NavigationViewItem;
+    }
+    else 
     {
-        if (item is NavigationViewItem && item.Tag.Equals(stringTag))
+        Dictionary<Type, string> lookup = new Dictionary<Type, string>()
         {
-            NavView.SelectedItem = item;
-            item.IsSelected = true;
-            break;
-        }
-    }        
+            {typeof(HomePage), "home"},
+            {typeof(AppsPage), "apps"},
+            {typeof(GamesPage), "games"},
+            {typeof(MusicPage), "music"},
+            {typeof(MyContentPage), "content"}    
+        };
+
+        String stringTag = lookup[ContentFrame.SourcePageType];
+
+        // set the new SelectedItem  
+        foreach (NavigationViewItemBase item in NavView.MenuItems)
+        {
+            if (item is NavigationViewItem && item.Tag.Equals(stringTag))
+            {
+                item.IsSelected = true;
+                break;
+            }
+        }        
+    }
 }
 ```
 
