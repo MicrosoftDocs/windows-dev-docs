@@ -414,10 +414,14 @@ To change the background of NavigationView's main area, set its `Background` pro
 The Pane's background shows in-app acrylic when NavigationView is in Minimal or Compact mode, and background acrylic in Expanded mode. To update this behavior or customize the appearance of your Pane's acrylic, modify the two theme resources by overwriting them in your App.xaml.
 
 ```xaml
-<AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
-              BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
-<AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
-              BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
+<Application.Resources>
+    <ResourceDictionary>
+        <AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
+        BackgroundSource="Backdrop" TintColor="Yellow" TintOpacity=".6"/>
+        <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
+        BackgroundSource="HostBackdrop" TintColor="Orange" TintOpacity=".8"/>
+    </ResourceDictionary>
+</Application.Resources>
 ```
 
 ## Extending your app into the title bar

@@ -81,9 +81,6 @@ Radio buttons work in groups. There are 2 ways you can group radio button contro
 - Put them inside the same parent container.
 - Set the [GroupName](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton#Windows_UI_Xaml_Controls_RadioButton_GroupName) property on each radio button to the same value.
 
-> [!Note]
-A group of radio buttons behaves like a single control when accessed via the keyboard. Only the selected choice is accessible using the Tab key but users can cycle through the group using arrow keys.
-
 In this example, the first group of radio buttons is implicitly grouped by being in the same stack panel. The second group is divided between 2 stack panels, so they're explicitly grouped by GroupName.
 
 ```xaml
