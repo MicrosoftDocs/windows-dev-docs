@@ -169,7 +169,7 @@ Here is the basic process for creating and updating a [SurfaceImageSource](https
     > Calling [SurfaceImageSource::SetSource](https://msdn.microsoft.com/library/windows/apps/br243255) (inherited from **IBitmapSource::SetSource**) currently throws an exception. Do not call it from your [SurfaceImageSource](https://msdn.microsoft.com/library/windows/apps/hh702041) object.
 
     > [!NOTE]
-    > Applications must avoid drawing to **SurfaceImageSource** while their associated [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) is hidden, otherwise **ISurfaceImageSourceNativeWithD2D** APIs will fail. To accomplish this, register as an event listener for the [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window#Windows_UI_Xaml_Window_VisibilityChanged) event to track visibility changes.
+    > Applications must avoid drawing to **SurfaceImageSource** while their associated [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) is hidden, otherwise **ISurfaceImageSourceNativeWithD2D** APIs will fail. To accomplish this, register as an event listener for the [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) event to track visibility changes.
 
 ## VirtualSurfaceImageSource
 
@@ -358,7 +358,7 @@ Here is the basic process for creating and updating a [VirtualSurfaceImageSource
     3.  Call **ISurfaceImageSourceNativeWithD2D::EndDraw**. The result is a bitmap.
 
 > [!NOTE]
-> Applications must avoid drawing to **SurfaceImageSource** while their associated [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) is hidden, otherwise **ISurfaceImageSourceNativeWithD2D** APIs will fail. To accomplish this, register as an event listener for the [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window#Windows_UI_Xaml_Window_VisibilityChanged) event to track visibility changes.
+> Applications must avoid drawing to **SurfaceImageSource** while their associated [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) is hidden, otherwise **ISurfaceImageSourceNativeWithD2D** APIs will fail. To accomplish this, register as an event listener for the [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) event to track visibility changes.
 
 ## SwapChainPanel and gaming
 

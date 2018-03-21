@@ -24,7 +24,7 @@ Languages such as German and Finnish typically use more characters than English 
 
 Because of the variable length of translated text, you should use dynamic UI layout mechanisms instead of absolute positioning, fixed widths, or fixed heights. Pseudo-localizing your app will uncover any problematic edge cases where your UI elements don't size to content properly.
 
-For RTL languages, use the [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) scale and flip automatically with the value of **FlowDirection** that you set.
+For RTL languages, use the [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) scale and flip automatically with the value of **FlowDirection** that you set.
 
 Here's an example of how you can expose a FlowDirection property in your app as a resource that localizers can set appropriately.
 
@@ -64,7 +64,7 @@ If your app requires a different image to flip the image correctly, then you can
 
 ## Best practices for handling right-to-left (RTL) languages
 
-When your app is localized for right-to-left (RTL) languages, use APIs to set the default text direction for the root layout panel of your Page. This causes all of the controls contained within the root panel to respond appropriately to the default text direction. When more than one language is supported, use `LayoutDirection` for the top app runtime language to set the [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) property (see code example below). Most controls included in Windows use **FlowDirection** already. If you are implementing custom controls, they should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
+When your app is localized for right-to-left (RTL) languages, use APIs to set the default text direction for the root layout panel of your Page. This causes all of the controls contained within the root panel to respond appropriately to the default text direction. When more than one language is supported, use `LayoutDirection` for the top app runtime language to set the [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property (see code example below). Most controls included in Windows use **FlowDirection** already. If you are implementing custom controls, they should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
 
 ```csharp    
 this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
@@ -114,7 +114,7 @@ else
 
 ## Important APIs
 
-* [FrameworkElement.FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection)
+* [FrameworkElement.FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## Related topics

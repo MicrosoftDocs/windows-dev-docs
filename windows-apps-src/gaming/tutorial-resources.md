@@ -63,7 +63,7 @@ The following snippet show how to declare XAML for the **SwapChainPanel** in the
 </Page>
 ```
 
-The **SwapChainPanel** object is set as the [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window#Windows_UI_Xaml_Window_Content) property of the current window object created [at launch](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp#L45-L51) by the app singleton.
+The **SwapChainPanel** object is set as the [**Content**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Content) property of the current window object created [at launch](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp#L45-L51) by the app singleton.
 
 ```cpp
 void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)

@@ -52,7 +52,7 @@ The **SendRequestAsync** method uses a simple integer-based request system and J
 
 ### Response data for the rating and review request
 
-After you submit the request to display the rating and review dialog, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult#Windows_Services_Store_StoreSendRequestResult_Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string that indicates whether the request was successful.
+After you submit the request to display the rating and review dialog, the [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) property of the [StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string that indicates whether the request was successful.
 
 The following example demonstrates the return value for this request after the customer successfully submits a rating or review.
 

@@ -29,7 +29,7 @@ This porting guide explains the differences between your current app's technolog
 | [Move from iOS to UWP](ios-to-uwp-root.md) | Are you an iOS developer, wondering how to make the move to Windows 10 and the UWP? It needn't be as scary as you think. We've got the tools, techniques, and info you need to make great apps that work as well on Windows as they do on your iOS devices: maybe better! |
 | [Move from desktop to UWP](desktop-to-uwp-root.md) | Convert your Win32 and .NET 4.6.1 desktop applications to Universal Windows Platform (UWP) apps. |
 | [Move a web app to UWP](hwa-to-uwp-root.md) | Convert your web application to Universal Windows Platform (UWP) apps. *Includes instructions for using either Windows or Mac as your development platform, as well as instruction for converting a Chrome app to work with UWP. |
- 
+
 ## Related topics
 
 * [Move from WPF and Silverlight to WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)

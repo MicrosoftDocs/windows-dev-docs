@@ -59,7 +59,7 @@ The content link can be saved with the rich text content, and you can extract it
 
 ### Content link providers
 
-You enable content links in a RichEditBox by adding one or more content link providers to the [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox#Windows_UI_Xaml_Controls_RichEditBox_ContentLinkProviders) collection. There are 2 content link providers built into the XAML framework.
+You enable content links in a RichEditBox by adding one or more content link providers to the [RichEditBox.ContentLinkProviders](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders) collection. There are 2 content link providers built into the XAML framework.
 
 - [ContactContentLinkProvider](/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider) – looks up contacts using the **People** app.
 - [PlaceContentLinkProvider](/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider) – looks up places using the **Maps** app.
@@ -113,7 +113,7 @@ editor.ContentLinkProviders = new ContentLinkProviderCollection
 
 ### Content link colors
 
-The appearance of a content link is determined by its foreground, background, and icon. In a RichEditBox, you can set the [ContentLinkForegroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox#Windows_UI_Xaml_Controls_RichEditBox_ContentLinkForegroundColor) and [ContentLinkBackgroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox#Windows_UI_Xaml_Controls_RichEditBox_ContentLinkBackgroundColor) properties to change the default colors. 
+The appearance of a content link is determined by its foreground, background, and icon. In a RichEditBox, you can set the [ContentLinkForegroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkForegroundColor) and [ContentLinkBackgroundColor](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkBackgroundColor) properties to change the default colors. 
 
 You can't set the cursor. The cursor is rendered by the RichEditbox based on the type of content link - a [Person](/uwp/api/windows.ui.core.corecursortype) cursor for a person link, or a [Pin](/uwp/api/windows.ui.core.corecursortype) cursor for a place link.
 
@@ -135,7 +135,7 @@ The ContentLinkInfo object contains the information used to display, invoke, and
 There are several situations where the LinkContentKind is important.
 
 - When a user copies a content link from a RichEditBox and pastes it into another RichEditBox, both controls must have a ContentLinkProvider for that content type. If not, the link is pasted as text.
-- You can use LinkContentKind in a [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox#Windows_UI_Xaml_Controls_RichEditBox_ContentLinkChanged) event handler to determine what to do with a content link when you use it in other parts of your app. See the Example section for more info.
+- You can use LinkContentKind in a [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged) event handler to determine what to do with a content link when you use it in other parts of your app. See the Example section for more info.
 - The LinkContentKind influences how the system opens the Uri when the link is invoked. We’ll see this in the discussion of Uri launching next.
 
 #### Uri launching
@@ -164,7 +164,7 @@ The People picker creates a ContentLinkInfo with a Uri that uses the **ms-people
 
 #### Invoked
 
-When the user invokes a content link, the [ContentLinkInvoked](/uwp/api/windows.ui.xaml.controls.richeditbox#Windows_UI_Xaml_Controls_RichEditBox_ContentLinkInvoked) event is raised before the default behavior of launching the Uri happens. You can handle this event to override or cancel the default behavior.
+When the user invokes a content link, the [ContentLinkInvoked](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkInvoked) event is raised before the default behavior of launching the Uri happens. You can handle this event to override or cancel the default behavior.
 
 This example shows how you can override the default launching behavior for a Place content link. Instead of opening the map in a Place info card, Maps app, or default web browser, you mark the event as Handled and open the map in an in-app [WebView](/uwp/api/windows.ui.xaml.controls.webview) control.
 
@@ -194,7 +194,7 @@ private void editor_ContentLinkInvoked(RichEditBox sender, ContentLinkInvokedEve
 
 #### ContentLinkChanged
 
-You can use the [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox#Windows_UI_Xaml_Controls_RichEditBox_ContentLinkChanged) event to be notified when a content link is added, modified, or removed. This lets you extract the content link from the text and use it in other places in your app. This is shown later in the Examples section.
+You can use the [ContentLinkChanged](/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged) event to be notified when a content link is added, modified, or removed. This lets you extract the content link from the text and use it in other places in your app. This is shown later in the Examples section.
 
 The properties of the [ContentLinkChangedEventArgs](/uwp/api/windows.ui.xaml.controls.contentlinkchangedeventargs) are:
 
@@ -271,7 +271,7 @@ For other situations, a Hyperlink text element is usually appropriate.
 
 The appearance of a content link is determined by its foreground, background, and cursor. In a text block, you can set the ForegroundColor (from TextElement) and [BackgroundColor](/uwp/api/windows.ui.xaml.documents.contentlink#Windows_UI_Xaml_Documents_ContentLink_BackgroundColor) properties to change the default colors.
 
-By default, the [Hand](/uwp/api/windows.ui.core.corecursortype) cursor is shown when the user hovers over the content link. Unlike RichEditBlock, text block controls don't change the cursor automatically based on the link type. You can set the [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink#Windows_UI_Xaml_Documents_ContentLink_Cursor) property to change the cursor based on link type or other factors.
+By default, the [Hand](/uwp/api/windows.ui.core.corecursortype) cursor is shown when the user hovers over the content link. Unlike RichEditBlock, text block controls don't change the cursor automatically based on the link type. You can set the [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink.Cursor) property to change the cursor based on link type or other factors.
 
 Here's an example of a ContentLink used in a TextBlock. The ContentLinkInfo is created in code and assigned to the Info property of the ContentLink text element that's created in XAML.
 

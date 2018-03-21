@@ -99,7 +99,7 @@ All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++
 
 Any WinRT API that has the potential to take more than 50 milliseconds to complete is implemented as an asynchronous function with a name ending in "Async". An example is [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient#Windows_Web_Syndication_SyndicationClient_RetrieveFeedAsync_Windows_Foundation_Uri_). The code example calls `get` on the asych operation to wait for the results.
 
-[**SyndicationFeed.Items**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed#Windows_Web_Syndication_SyndicationFeed_Items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
+[**SyndicationFeed.Items**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed.Items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
 
 The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via **c_str**, which will look familiar to you if you've used strings from the C++ Standard Library.
 
@@ -115,7 +115,7 @@ There are also types that you might see if you closely study the C++/WinRT proje
 ## Important APIs
 * [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt?branch=live)
 * [SyndicationClient::RetrieveFeedAsync](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient#Windows_Web_Syndication_SyndicationClient_RetrieveFeedAsync_Windows_Foundation_Uri_)
-* [SyndicationFeed.Items](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed#Windows_Web_Syndication_SyndicationFeed_Items)
+* [SyndicationFeed.Items](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed.Items)
 * [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring?branch=live)
 
 ## Related topics
