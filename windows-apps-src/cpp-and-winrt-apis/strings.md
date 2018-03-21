@@ -55,7 +55,7 @@ int main()
 }
 ```
 
-The property accessor [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windows.foundation.uri#Windows_Foundation_Uri_Domain) is of type **hstring**.
+The property accessor [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windows.foundation.uri.Domain) is of type **hstring**.
 
 ```cppwinrt
 public:

@@ -188,7 +188,7 @@ Now let's add the code required to enable **RadialController** access to our con
         { InitializeSample(sender, args); };
         ``` 
 
-    - Next, we initialize our [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) object and set up handlers for the [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_RotationChanged) and [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_ButtonClicked) events.
+    - Next, we initialize our [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) object and set up handlers for the [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) and [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) events.
 
         ```csharp
         // Set up the app UI and RadialController.
@@ -206,7 +206,7 @@ Now let's add the code required to enable **RadialController** access to our con
         }
         ```
 
-    - Here, we initialize our custom RadialController menu item. We use [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_CreateForCurrentView) to get a reference to our [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) object, we set the rotation sensitivity to "1" by using the [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_RotationResolutionInDegrees) property, we then create our [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem) by using [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem#Windows_UI_Input_RadialControllerMenuItem_CreateFromFontGlyph), we add the menu item to the **RadialController** menu item collection, and finally, we use [SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration#Windows_UI_Input_RadialControllerConfiguration_SetDefaultMenuItems_Windows_Foundation_Collections_IIterable_Windows_UI_Input_RadialControllerSystemMenuItemKind__) to clear the default menu items and leave only our custom tool. 
+    - Here, we initialize our custom RadialController menu item. We use [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) to get a reference to our [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) object, we set the rotation sensitivity to "1" by using the [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) property, we then create our [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem) by using [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), we add the menu item to the **RadialController** menu item collection, and finally, we use [SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration#Windows_UI_Input_RadialControllerConfiguration_SetDefaultMenuItems_Windows_Foundation_Collections_IIterable_Windows_UI_Input_RadialControllerSystemMenuItemKind__) to clear the default menu items and leave only our custom tool. 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -439,14 +439,14 @@ In this step, we show how you can customize haptic feedback by associating our s
         using Windows.Devices.Haptics;
         ```
 
-    - Here, we specify the handler for the [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_ControlAcquired) event that is triggered when our custom **RadialController** menu item is selected.
+    - Here, we specify the handler for the [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) event that is triggered when our custom **RadialController** menu item is selected.
 
         ```csharp
         radialController.ControlAcquired += (rc_sender, args) =>
         { RadialController_ControlAcquired(rc_sender, args); };
         ``` 
 
-    - Next, we define the [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_ControlAcquired) handler, where we disable default haptic feedback and initialize our haptics UI.
+    - Next, we define the [ControlAcquired](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ControlAcquired) handler, where we disable default haptic feedback and initialize our haptics UI.
 
         ```csharp
         private void RadialController_ControlAcquired(
@@ -515,7 +515,7 @@ In this step, we show how you can customize haptic feedback by associating our s
         }
         ```
 
-    - In our [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_RotationChanged) and [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller#Windows_UI_Input_RadialController_ButtonClicked) event handlers, we connect the corresponding slider and toggle button controls to our custom haptics. 
+    - In our [RotationChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.RotationChanged) and [ButtonClicked](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontroller.ButtonClicked) event handlers, we connect the corresponding slider and toggle button controls to our custom haptics. 
 
         ```csharp
         // Connect wheel device rotation to slider control.
@@ -558,7 +558,7 @@ In this step, we show how you can customize haptic feedback by associating our s
             }
         }
         ```
-    - Finally, we get the requested **[Waveform](https://docs.microsoft.com/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback#Windows_Devices_Haptics_SimpleHapticsControllerFeedback_Waveform)** (if supported) for the haptic feedback. 
+    - Finally, we get the requested **[Waveform](https://docs.microsoft.com/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback.Waveform)** (if supported) for the haptic feedback. 
 
         ```csharp
         // Get the requested waveform.

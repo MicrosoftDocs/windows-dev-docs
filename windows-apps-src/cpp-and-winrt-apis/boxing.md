@@ -22,7 +22,7 @@ In other words, a function that expects **IInspectable** can be passed an instan
 C++/WinRT provides the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value?branch=live) function, which takes a scalar value and returns the value boxed into an **IInspectable**. For unboxing an **IInspectable** back into a scalar value, there are the [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value?branch=live) and  [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or?branch=live) functions.
 
 ## Examples of boxing a value
-The [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs?branch=live#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_Arguments) accessor function returns a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live), which is a scalar value. We can box that **hstring** value and pass it to a function that expects **IInspectable** like this.
+The [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) accessor function returns a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live), which is a scalar value. We can box that **hstring** value and pass it to a function that expects **IInspectable** like this.
 
 ```cppwinrt
 void App::OnLaunched(LaunchActivatedEventArgs const& e)

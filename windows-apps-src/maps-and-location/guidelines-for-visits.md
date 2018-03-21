@@ -18,7 +18,7 @@ The Visits feature streamlines the process of location tracking to make it more 
 
 ## Preliminary setup
 
-Before going further, make sure your app is capable of accessing the device's location. You will need to declare the `Location` capability in the manifest and call the **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator#Windows_Devices_Geolocation_Geolocator_RequestAccessAsync)** method to ensure that users give the app location permissions. See [Get the user's location](get-location.md) for more information on how to do this. 
+Before going further, make sure your app is capable of accessing the device's location. You will need to declare the `Location` capability in the manifest and call the **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** method to ensure that users give the app location permissions. See [Get the user's location](get-location.md) for more information on how to do this. 
 
 Remember to add the `Geolocation` namespace to your class. This will be needed for all of the code snippets in this guide to work.
 

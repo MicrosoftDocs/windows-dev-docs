@@ -114,7 +114,7 @@ while (images.Count != 0 || index < 10000) 
 The resulting StorageFile files only contain the properties requested, but are returned 10 times faster compared to the other IndexerOptions. The app can still request access to properties not already included in the query, but there is a performance penalty to open the file and retrieve those properties.  
 
 ## Adding folders to Libraries 
-Apps can request the user to add the location to the index using [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary#Windows_Storage_StorageLibrary_RequestAddFolderAsync). Once the location is included, it will be automatically indexed and apps can use this technique to enumerate the files.
+Apps can request the user to add the location to the index using [StorageLibrary.RequestAddFolderAsync](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageLibrary.RequestAddFolderAsync). Once the location is included, it will be automatically indexed and apps can use this technique to enumerate the files.
  
 ## See also
 [QueryOptions API Reference](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  

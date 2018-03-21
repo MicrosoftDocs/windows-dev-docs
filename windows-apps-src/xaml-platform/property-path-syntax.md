@@ -75,7 +75,7 @@ For more info on the how to define animations in XAML, see [Storyboarded animati
 
 ## Simple targeting
 
-If you are animating a property that exists on the targeted object itself, and that property's type can have an animation applied directly to it (rather than to a sub-property of a property's value) then you can simply name the property being animated without any further qualification. For example, if you are targeting a [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) subclass such as [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), and you are applying an animated [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) to the [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape#Windows_UI_Xaml_Shapes_Shape_Fill) property, your property path can be "Fill".
+If you are animating a property that exists on the targeted object itself, and that property's type can have an animation applied directly to it (rather than to a sub-property of a property's value) then you can simply name the property being animated without any further qualification. For example, if you are targeting a [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) subclass such as [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), and you are applying an animated [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) to the [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) property, your property path can be "Fill".
 
 ## Indirect property targeting
 

@@ -133,7 +133,7 @@ Then each of the other theme dictionaries also has these brushes defined, for ex
             <SolidColorBrush x:Key="ButtonPressedForegroundThemeBrush" Color="{ThemeResource SystemColorButtonFaceColor}" />
 ```
 
-Here the [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
+Here the [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
 
 ## Windows 8 behavior
 

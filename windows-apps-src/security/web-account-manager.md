@@ -332,7 +332,7 @@ Because obtaining a token silently is very simple, you should use this process t
 
 ## Remove a stored account
 
-If you persist a web account, you may want to give your users the ability to disassociate their account with your app. This way, they can can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. To do this, first remove any saved account and provider information from storage. Then call **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount#Windows_Security_Credentials_WebAccount_SignOutAsync)** to clear the cache and invalidate any existing tokens your app may have. 
+If you persist a web account, you may want to give your users the ability to disassociate their account with your app. This way, they can can effectively "log out" of the app: their account information will no longer be loaded automatically upon launch. To do this, first remove any saved account and provider information from storage. Then call **[SignOutAsync](https://docs.microsoft.com/uwp/api/windows.security.credentials.webaccount.SignOutAsync)** to clear the cache and invalidate any existing tokens your app may have. 
 
 ```csharp
 private async Task SignOutAccountAsync(WebAccount account)

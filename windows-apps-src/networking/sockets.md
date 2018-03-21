@@ -37,7 +37,7 @@ Instead of `privateNetworkClientServer`, you can declare `internetClientServer` 
 
 ### An echo client and server, using TCP sockets
 
-Construct a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) and begin listening for incoming TCP connections. The [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) event is raised each time a client establishes a connection with the **StreamSocketListener**.
+Construct a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live) and begin listening for incoming TCP connections. The [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event is raised each time a client establishes a connection with the **StreamSocketListener**.
 
 Also construct a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live), establish a connection to the server, send a request, and receive a response.
 
@@ -360,7 +360,7 @@ private:
 
 ## References to StreamSockets in C++ PPL continuations
 
-A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live#Windows_Networking_Sockets_StreamSocketListenerConnectionReceivedEventArgs_Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the completion handler of the **LoadAsync** is done executing.
+A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the completion handler of the **LoadAsync** is done executing.
 
 But the Parallel Patterns Library (PPL) doesn't schedule task continuations inline by default. In other words, adding a continuation task (with `task::then()`) doesn't guarantee that the continuation task will execute inline as the completion handler.
 
@@ -405,7 +405,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-This behavior applies to all of the sockets and WebSockets classes in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace. But client-side scenarios usually store sockets in member variables, so the issue is most applicable to the [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived) scenario, as illustrated above.
+This behavior applies to all of the sockets and WebSockets classes in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets?branch=live) namespace. But client-side scenarios usually store sockets in member variables, so the issue is most applicable to the [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) scenario, as illustrated above.
 
 ## Build a basic UDP socket client and server
 
@@ -415,7 +415,7 @@ To demonstrate basic UDP operations, the example code below shows the [**Datagra
 
 ### An echo client and server, using UDP sockets
 
-Construct a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to play the role of the echo server, bind it to a specific port number, listen for an incoming UDP message, and echo it back. The [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live#Windows_Networking_Sockets_DatagramSocket_MessageReceived) event is raised when a message is receieved on the socket.
+Construct a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to play the role of the echo server, bind it to a specific port number, listen for an incoming UDP message, and echo it back. The [**DatagramSocket.MessageReceived**](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived) event is raised when a message is receieved on the socket.
 
 Construct another **DatagramSocket** to play the role of the echo client, bind it to a specific port number, send a UDP message, and receive a response.
 
@@ -874,7 +874,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-This next example is appropriate for any UWP language, not just for C# (but demonstrated here in C#). It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_OutputStream) that batches sends together. The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.
+This next example is appropriate for any UWP language, not just for C# (but demonstrated here in C#). It relies on the behavior in [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream) and [**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream) that batches sends together. The technique calls [**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) on that output stream which, as of Windows 10, is guaranteed to return only after all operations on the output stream have completed.
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -930,11 +930,11 @@ There are some important limitations imposed by using batched sends in your code
 
 ## Port sharing for DatagramSocket
 
-You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to coexist with other Win32 or UWP multicast sockets bound to the same address/port. You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl?branch=live#Windows_Networking_Sockets_DatagramSocketControl_MulticastOnly) to `true` before binding or connecting the socket. You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_Control) property.
+You can configure a [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live) to coexist with other Win32 or UWP multicast sockets bound to the same address/port. You do this by setting the [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) to `true` before binding or connecting the socket. You access an instance of **DatagramSocketControl** from the **DatagramSocket** object itself via its [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) property.
 
 ## Providing a client certificate with the StreamSocket class
 
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) supports using SSL/TLS to authenticate the server that the client app is talking to. In some cases, the client app needs to authenticate itself to the server using an SSL/TLS client certificate. You can provide a client certificate with the [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol?branch=live#Windows_Networking_Sockets_StreamSocketControl_ClientCertificate) property before binding or connecting the socket (it must be set before the SSL/TLS handshake is started). You access an instance of **StreamSocketControl** from the **StreamSocket** object itself via its [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_Control) property. If the server requests the client certificate then Windows will respond with the client certificate that you provided.
+[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) supports using SSL/TLS to authenticate the server that the client app is talking to. In some cases, the client app needs to authenticate itself to the server using an SSL/TLS client certificate. You can provide a client certificate with the [**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate) property before binding or connecting the socket (it must be set before the SSL/TLS handshake is started). You access an instance of **StreamSocketControl** from the **StreamSocket** object itself via its [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control) property. If the server requests the client certificate then Windows will respond with the client certificate that you provided.
 
 Use an override of [**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_HostName_System_String_Windows_Networking_Sockets_SocketProtectionLevel_) that takes a [**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live), as shown in this minimal code example.
 
@@ -989,25 +989,25 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName?branch=live) constructor
 * [CertificateStores.FindAllAsync](/uwp/api/windows.security.cryptography.certificates.certificatestores?branch=live#Windows_Security_Cryptography_Certificates_CertificateStores_FindAllAsync_Windows_Security_Cryptography_Certificates_CertificateQuery_)
 * [DatagramSocket](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live)
 * [DatagramSocket.BindServiceNameAsync](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_BindServiceNameAsync_System_String_)
-* [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_Control)
+* [DatagramSocket.Control](/uwp/api/windows.networking.sockets.datagramsocket.Control)
 * [DatagramSocket.GetOutputStreamAsync](/uwp/api/windows.networking.sockets.datagramsocket?branch=live#Windows_Networking_Sockets_DatagramSocket_GetOutputStreamAsync_Windows_Networking_HostName_System_String_)
-* [DatagramSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.DatagramSocket?branch=live#Windows_Networking_Sockets_DatagramSocket_MessageReceived)
-* [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl?branch=live#Windows_Networking_Sockets_DatagramSocketControl_MulticastOnly)
+* [DatagramSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.DatagramSocket.MessageReceived)
+* [DatagramSocketControl.MulticastOnly](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly)
 * [DatagramSocketMessageReceivedEventArgs](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live)
-* [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs?branch=live#Windows_Networking_Sockets_DatagramSocketMessageReceivedEventArgs_GetDataReader)
+* [DatagramSocketMessageReceivedEventArgs.GetDataReader](/uwp/api/windows.networking.sockets.datagramsocketmessagereceivedeventargs.GetDataReader)
 * [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader?branch=live#Windows_Storage_Streams_DataReader_LoadAsync_System_UInt32_)
-* [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream?branch=live#Windows_Storage_Streams_IOutputStream_FlushAsync)
+* [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)
 * [SocketError.GetStatus](/uwp/api/windows.networking.sockets.socketerror?branch=live#Windows_Networking_Sockets_SocketError_GetStatus_System_Int32_)
 * [SocketErrorStatus](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus?branch=live)
 * [SocketProtectionLevel](/uwp/api/windows.networking.sockets.socketprotectionlevel?branch=live)
 * [StreamSocket](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live)
-* [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol?branch=live#Windows_Networking_Sockets_StreamSocketControl_ClientCertificate)
+* [StreamSocketControl.ClientCertificate](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)
 * [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_HostName_System_String_)
-* [StreamSocket.InputStream](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_InputStream)
-* [StreamSocket.OutputStream](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_OutputStream)
+* [StreamSocket.InputStream](/uwp/api/windows.networking.sockets.streamsocket.InputStream)
+* [StreamSocket.OutputStream](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)
 * [StreamSocketListener](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live)
 * [StreamSocketListener.BindServiceNameAsync](/uwp/api/windows.networking.sockets.streamsocketlistener?branch=live#Windows_Networking_Sockets_StreamSocketListener_BindServiceNameAsync_System_String_Windows_Networking_Sockets_SocketProtectionLevel_Windows_Networking_Connectivity_NetworkAdapter_)
-* [StreamSocketListener.ConnectionReceived](/uwp/api/Windows.Networking.Sockets.StreamSocketListener?branch=live#Windows_Networking_Sockets_StreamSocketListener_ConnectionReceived)
+* [StreamSocketListener.ConnectionReceived](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)
 * [StreamSocketListenerConnectionReceivedEventArgs](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs?branch=live)
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets?branch=live)
 
