@@ -71,7 +71,7 @@ As mentioned, keyboard support is integral to ensuring your applications work gr
 	- Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
 	- Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
 
-### Focus visuals <a name="focus-visual">
+### Focus visuals
 
 The UWP supports a single focus visual design that works well for all input types and experiences.
 ![Focus visual](images/keyboard/focus-visual.png)
@@ -84,27 +84,27 @@ A focus visual:
 
 **NOTE** The UWP focus visual is not the same as the Narrator focus rectangle.
 
-### Tab stops <a name="tab-stops">
+### Tab stops
 
 To use a control (including navigation elements) with the keyboard, the control must have focus. One way for a control to receive keyboard focus is to make it accessible through tab navigation by identifying it as a tab stop in your application's tab order.
 
-For a control to be included in the tab order, the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) property must be set to **true** and the [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) property must be set to **true.**
+For a control to be included in the tab order, the [IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) property must be set to **true** and the [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property must be set to **true**.
 
-To specifically exclude a control from the tab order, set the [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) property to **false.**
+To specifically exclude a control from the tab order, set the [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property to **false**.
 
 By default, tab order reflects the order in which UI elements are created. For example, if a `StackPanel` contains a `Button`, a `Checkbox`, and a `TextBox`, tab order is `Button`, `Checkbox`, and `TextBox`.
 
-You can override the default tab order by setting the [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) property.
+You can override the default tab order by setting the [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) property.
 
 #### Tab order should be logical and predictable
 
 A well-designed keyboard navigation model, using a logical and predictable tab order, makes your app more intuitive and helps users explore, discover, and access functionality more efficiently and effectively.
 
-All interactive controls should have tab stops (unless they are in a [group](#control-group)), while non-interactive controls, such as `labels`, should not.
+All interactive controls should have tab stops (unless they are in a [group](#control-group)), while non-interactive controls, such as labels, should not.
 
-Avoid tab order that make the focus jump around in your application. For example, a list of controls in a form-like UI should have a tab order that flows top to bottom and left to right.
+Avoid a custom tab order that makes the focus jump around in your application. For example, a list of controls in a form should have a tab order that flows from top to bottom and left to right (depending on locale).
 
-See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) page for more details about customizing tab stops.
+See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) for more details about customizing tab stops.
 
 #### Try to coordinate tab order and visual order
 
@@ -114,11 +114,11 @@ Try to rank and present the most important commands, controls, and content first
 
 **NOTE** Visual order is also dependent on locale and language.
 
-### Initial focus <a name="initial-focus">
+### Initial focus
 
 Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated. When using a keyboard, it is from this element that a user starts interacting with your application's UI.
 
-For UWP apps, initial focus is set to the element with the highest [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) that can receive focus. Child elements of container controls are ignored. In a tie, the first element in the visual tree receives focus.
+For UWP apps, initial focus is set to the element with the highest [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) that can receive focus. Child elements of container controls are ignored. In a tie, the first element in the visual tree receives focus.
 
 #### Set initial focus on the most logical element
 
@@ -130,9 +130,9 @@ Set initial focus on the UI element for the first, or primary, action that users
 
 This level of functionality should be a user's choice. Setting initial focus to an element with a significant outcome might result in unintended data loss or system access. For example, don't set focus to the delete button when navigating to an e-mail.
 
-See [Keyboard accessibility](../accessibility/keyboard-accessibility.md) page for more details about overriding tab order.
+See [Focus navigation](focus-navigation.md) for more details about overriding tab order.
 
-### Navigation <a name="navigation">
+### Navigation
 
 Keyboard navigation is typically supported through the Tab keys and the Arrow keys.
 
@@ -244,7 +244,7 @@ A shortcut is a keyboard combination that enhances productivity by providing an 
 
 Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.
 
-#### Accelerators <a name="accelerators">
+#### Accelerators
 
 Accelerators help users perform common actions in an application much more quickly and efficiently. 
 
@@ -259,7 +259,7 @@ Accelerators have the following characteristics:
 -   They have effect throughout the entire application, when supported.
 -   They should be assigned consistently as they are memorized and not directly documented.
 
-#### Access keys <a name="access-keys">
+#### Access keys
 
 See [Access keys](access-keys.md) page for more in-depth information for supporting access keys with UWP.
 
@@ -298,7 +298,7 @@ For a comprehensive list of Windows system shortcuts, see [keyboard shortcuts fo
 
 In this section, we discuss some of the more complex keyboard interaction experiences supported by UWP apps, along with some of the behaviors you should be aware of when your app is used on different devices and with different tools.
 
-### Control group <a name="control-group">
+### Control group
 
 You can group a set of related, or complementary, controls in a "control
 group" (or directional area), which enables "inner navigation" using the
@@ -356,9 +356,9 @@ Examples include:
 
 Use the following APIs to support custom control group behavior (all are discussed in more detail later in this topic):
 
--   [XYFocusKeyboardNavigation](custom-keyboard-interactions.md#xyfocuskeyboardnavigation) enables arrow key navigation between controls
--   [TabFocusNavigation](custom-keyboard-interactions.md#tab-navigation) indicates whether there are multiple tab stops or single tab stop
--   [FindFirstFocusableElement and FindLastFocusableElement](managing-focus-navigation.md#findfirstfocusableelement) sets focus on the first item with **Home** key and the last item with **End** key
+-   [XYFocusKeyboardNavigation](focus-navigation.md#2d-directional-navigation-for-keyboard) enables arrow key navigation between controls
+-   [TabFocusNavigation](focus-navigation.md#tab-navigation) indicates whether there are multiple tab stops or single tab stop
+-   [FindFirstFocusableElement and FindLastFocusableElement](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) sets focus on the first item with **Home** key and the last item with **End** key
 
 The following image shows an intuitive keyboard navigation behavior for a control group of associated radio buttons. In this case, we recommend a single tab stop for the control group, inner navigation between the radio buttons using the arrow keys, **Home** key bound to the first radio button, and **End** key bound to the last radio button.
 
@@ -419,7 +419,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 
     **NOTE** Gamepad and remote control only navigate to items that are in the same visual order as the directional key pressed. Navigation is disabled in that direction when there is no subsequent element that can receive focus. Depending on the situation, keyboard users do not always have that constraint. See the [Built in keyboard optimization](#built-in-keyboard-optimization) section for more info.
 
-#### Directional navigation <a name="directional-navigation">
+#### Directional navigation
 
 Directional navigation is managed by a UWP [Focus Manager](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
 
@@ -440,7 +440,7 @@ Unlike the keyboard, when an app opts out of [Mouse Mode](../devices/designing-f
   </tr>
 </table>
 
-### Built in keyboard optimization <a name="built-in-keyboard-optimization">
+### Built in keyboard optimization
 
 Depending on the layout and controls used, UWP apps can be optimized specifically for keyboard input.
 
@@ -486,11 +486,11 @@ last item in the previous column.
   </tr>
 </table>
 
-#### Popup UI <a name="popup-ui">
+#### Popup UI
 
 As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your application's UI.
 
-Some controls, such as `ContextMenu`, `AppBarOverflowMenu`, and `AutoSuggest`, include a menu popup that is displayed in a location and direction relative to the primary control (based on available screen space). For example, when there is insufficient space for the menu to open downwards (the default direction), it opens upwards. There is no guarantee that the menu opens in the same direction every time.
+Some controls, such as ContextMenu, AppBarOverflowMenu, and AutoSuggest, include a menu popup that is displayed in a location and direction relative to the primary control (based on available screen space). For example, when there is insufficient space for the menu to open downwards (the default direction), it opens upwards. There is no guarantee that the menu opens in the same direction every time.
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
@@ -500,7 +500,7 @@ Some controls, such as `ContextMenu`, `AppBarOverflowMenu`, and `AutoSuggest`, i
 For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item and the Up arrow key always sets focus to the last item on the menu. Similarly, when the last item is selected and the Down arrow key is pressed, focus moves to the first item on the menu and when the first
 item is selected and the Up arrow key is pressed, focus moves to the last item on the menu.
 
-You should try to emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Managing focus navigation](managing-focus-navigation.md#popup-ui-code-sample) documentation.
+You should try to emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in [Programmatic focus navigation](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) documentation.
 
 ## Test your app
 
@@ -514,7 +514,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 
 ## Appendix
 
-### Software keyboard <a name="touch-keyboard">
+### Software keyboard
 
 Software keyboard is a keyboard that is displayed on screen that user can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). On touch screen, these keyboards can be touched directly to enter text as well. On Xbox One devices, individual keys need to be selected by moving focus visual or using shortcut keys using gamepad or remote control.
 
@@ -563,7 +563,7 @@ Successful keyboard interactions enable users to accomplish basic app scenarios 
 
 **NOTE**  The touch keyboard does not support toggle and most system commands.
 
-#### On-Screen Keyboard <a name="osk">
+#### On-Screen Keyboard
 Like software keyboard, the On-Screen Keyboard is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The On-Screen Keyboard is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The On-Screen Keyboard emulates most, if not all, the functionality of a hardware keyboard.
 
 The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; Ease of access.
@@ -575,3 +575,23 @@ The On-Screen Keyboard can be turned on from the Keyboard page in Settings &gt; 
 ***On-Screen Keyboard***
 
 Visit [On-Screen keyboard page](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard) for more details about On-Screen Keyboard.
+
+## Related articles
+
+- [Keyboard accessibility](../accessibility/keyboard-accessibility.md) 
+
+<!--
+**Topic samples**
+* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
+* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
+
+**Other samples**
+* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
+* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
+* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
+
+-->
+

@@ -1644,6 +1644,16 @@
       "source_path": "windows-apps-src/xbox-live/storage-platform/connected-storage/connected-storage-clearing.md",
       "redirect_url": "/windows/uwp/xbox-live/storage-platform/connected-storage/connected-storage-xb-storage",
       "redirect_document_id": true
-    }
+    },
+    {
+      "source_path": "windows-apps-src/design/input/custom-keyboard-interactions.md",
+      "redirect_url": "/windows/uwp/design/input/focus-navigation",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/design/input/managing-focus-navigation.md",
+      "redirect_url": "/windows/uwp/design/input/focus-navigation-programmatic",
+      "redirect_document_id": true
+    }    
   ]
 }
