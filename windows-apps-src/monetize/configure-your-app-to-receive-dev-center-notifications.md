@@ -50,7 +50,7 @@ To register your app to receive targeted push notifications from Dev Center:
       [!code-cs[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
 
 > [!NOTE]
-> When you call the **RegisterNotificationChannelAsync** method, a file named MicrosoftStoreEngagementSDKId.txt is created in the local app data store for your app (the folder returned by the [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalFolder) property). This file contains an ID that is used by the targeted push notifications infrastructure. Make sure that your app does not modify or delete this file. Otherwise, your users may receive multiple instances of notifications, or the notifications may not behave properly in other ways.
+> When you call the **RegisterNotificationChannelAsync** method, a file named MicrosoftStoreEngagementSDKId.txt is created in the local app data store for your app (the folder returned by the [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalFolder) property). This file contains an ID that is used by the targeted push notifications infrastructure. Make sure that your app does not modify or delete this file. Otherwise, your users may receive multiple instances of notifications, or the notifications may not behave properly in other ways.
 
 <span id="notification-customers" />
 

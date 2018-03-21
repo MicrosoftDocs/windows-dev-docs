@@ -44,7 +44,7 @@ The main control is the **RefreshContainer**, which you place as a wrapper aroun
 
 The default refresh visualization is a circular progress spinner that is used to communicate when a refresh will happen and the progress of the refresh after it is initiated. The refresh visualizer has 5 states.
 
- The distance the user needs to pull down on a list to initiate a refresh is called the _threshold_. The visualizer [State](/uwp/api/windows.ui.xaml.controls.refreshvisualizer#Windows_UI_Xaml_Controls_RefreshVisualizer_State) is determined by the pull state as it relates to this threshold. The possible values are contained in the [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate) enumeration.
+ The distance the user needs to pull down on a list to initiate a refresh is called the _threshold_. The visualizer [State](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.State) is determined by the pull state as it relates to this threshold. The possible values are contained in the [RefreshVisualizerState](/uwp/api/windows.ui.xaml.controls.refreshvisualizerstate) enumeration.
 
 ### Idle
 
@@ -99,9 +99,9 @@ When the user pulls in the refresh direction from a start position where a refre
 
 By default, the user pulls a list from top to bottom to initiate a refresh. If you have a list or grid with a different orientation, you should change the pull direction of the refresh container to match.
 
-The [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer#Windows_UI_Xaml_Controls_RefreshContainer_PullDirection) property takes one of these [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) values: **BottomToTop**, **TopToBottom**, **RightToLeft**, or **LeftToRight**.
+The [PullDirection](/uwp/api/windows.ui.xaml.controls.refreshcontainer.PullDirection) property takes one of these [RefreshPullDirection](/uwp/api/windows.ui.xaml.controls.refreshpulldirection) values: **BottomToTop**, **TopToBottom**, **RightToLeft**, or **LeftToRight**.
 
-When you change the pull dircetion, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer#Windows_UI_Xaml_Controls_RefreshVisualizer_Orientation) property to override the automatic behavior. In most cases, we recommend leaving the default value of **Auto**.
+When you change the pull dircetion, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the [RefreshVisualizer.Orientation](/uwp/api/windows.ui.xaml.controls.refreshvisualizer.Orientation) property to override the automatic behavior. In most cases, we recommend leaving the default value of **Auto**.
 
 ## Implement pull-to-refresh
 
@@ -120,7 +120,7 @@ To add pull-to-refresh functionality to a list requires just a few steps.
 
 The refresh container handles touch interactions to let a user refresh content via touch. We recommend that you provide other affordances for non-touch interfaces, like a refresh button or voice control.
 
-To initiate a refresh, call the [RequestRefresh](/uwp/api/windows.ui.xaml.controls.refreshcontainer#Windows_UI_Xaml_Controls_RefreshContainer_RequestRefresh) method.
+To initiate a refresh, call the [RequestRefresh](/uwp/api/windows.ui.xaml.controls.refreshcontainer.RequestRefresh) method.
 
 ```csharp
 // See the Examples section for the full code.

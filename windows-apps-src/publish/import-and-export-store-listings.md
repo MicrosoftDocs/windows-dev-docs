@@ -3,7 +3,7 @@ author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
 title: Import and export Store listings
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,6 +12,7 @@ ms.localizationpriority: high
 ---
 
 # Import and export Store listings
+
 Instead of [entering info for your Store listings directly in the dashboard](create-app-store-listings.md), you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.
 
 This option is especially useful if you want to create or update Store listings for your product in multiple languages, since you can copy/paste the same info into multiple fields and easily make any changes that should apply to specific languages. However, you can’t use this method to create or update [platform-specific Store listings](create-platform-specific-store-listings.md) for your app. 
@@ -25,7 +26,7 @@ Keep in mind that you can always create or update listings directly in the Dev C
 
 On the submission overview page for an app, click **Export listing** (in the **Store listings** section) to generate a .csv file encoded in UTF-8. Save this file to a location on your computer.
 
-You can use Microsoft Excel or another editor to edit this file. note that Office 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (*.csv)**, but other versions may not support this. You can find details about which versions of Excel support this feature at the [Excel 2016 New features bulletin](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73), and more info about encoding as UTF-8 in various editors [here](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
+You can use Microsoft Excel or another editor to edit this file. Note that Office 365 versions of Excel will let you save a .csv file as **CSV UTF-8 (Comma-delimited) (*.csv)**, but other versions may not support this. You can find details about which versions of Excel support this feature at the [Excel 2016 New features bulletin](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73), and more info about encoding as UTF-8 in various editors [here](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16).
       
 If you haven’t created any listings for your product yet, the .csv file you exported will not contain any custom data. You’ll see columns for **Field**, **ID**, **Type**, and **default**, and rows which correspond to every item that can appear in a Store listing.
 

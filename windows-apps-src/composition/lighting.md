@@ -88,7 +88,7 @@ public sealed class FancyOrangeSpotLight : XamlLight
         spotLight.OuterConeColor = Colors.Yellow;
         spotLight.InnerConeAngleInDegrees = 30;
         spotLight.OuterConeAngleInDegrees = 45;
-        CompositionLight = spotlight;
+        CompositionLight = spotLight;
     }
 
     protected override void OnDisconnected(UIElement oldElement)

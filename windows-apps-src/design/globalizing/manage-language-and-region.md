@@ -27,7 +27,7 @@ The following three sections define the terms "user profile language list", "app
 
 ## User profile language list
 
-The user profile language list is the name of the list that's configured by the user in **Settings** > **Time & Language** > **Region & language** > **Languages**. In code you can use the [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live#Windows_System_UserProfile_GlobalizationPreferences_Languages) property to access the user profile language list as a read-only list of strings, where each string is a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302) such as "en-US" or "ja-JP".
+The user profile language list is the name of the list that's configured by the user in **Settings** > **Time & Language** > **Region & language** > **Languages**. In code you can use the [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) property to access the user profile language list as a read-only list of strings, where each string is a single [BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302) such as "en-US" or "ja-JP".
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
@@ -61,7 +61,7 @@ To begin with, your app manifest language list will only contain one language. P
 
 When your app is in the Microsoft Store, the languages in the app manifest language list are the ones that are displayed to customers. For a list of BCP-47 language tags specifically supported by the Microsoft Store, see [Supported languages](../../publish/supported-languages.md).
 
-In code you can use the [**ApplicationLanguages.ManifestLanguages**](/uwp/api/windows.globalization.applicationlanguages?branch=live#Windows_Globalization_ApplicationLanguages_ManifestLanguages) property to access the app manifest language list as a read-only list of strings, where each string is a single BCP-47 language tag.
+In code you can use the [**ApplicationLanguages.ManifestLanguages**](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages) property to access the app manifest language list as a read-only list of strings, where each string is a single BCP-47 language tag.
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.Globalization.ApplicationLanguages.ManifestLanguages;
@@ -73,17 +73,17 @@ The third language list of interest is the intersection between the two lists th
 
 More specifically, the app runtime language list is made up of these items.
 
-1.  **(Optional) Primary Language Override**. The [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=live#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride) is a simple override setting for apps that give users their own independent language choice, or apps that have some strong reason to override the default language choices. To learn more, see the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
+1.  **(Optional) Primary Language Override**. The [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) is a simple override setting for apps that give users their own independent language choice, or apps that have some strong reason to override the default language choices. To learn more, see the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=231501).
 2.  **The user's languages that are supported by the app**. This is the user profile language list filtered by the app manifest language list. Filtering the user's languages by those supported by the app maintains consistency among software development kits (SDKs), class libraries, dependent framework packages, and the app.
 3.  **If 1 and 2 are empty, then the default or first language supported by the app**. If the user profile language list doesn't contain any languages that the app supports, then the app runtime language is the first language supported by the app.
 
-In code you can use the [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) property to access the app runtime language list in the form of a string containing a semicolon-delimited list of BCP-47 language tags.
+In code you can use the [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) property to access the app runtime language list in the form of a string containing a semicolon-delimited list of BCP-47 language tags.
 
 ```csharp
     string runtimeLanguages = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues["Language"];
 ```
 
-You can also access it as a read-only list of strings, each containing a single BCP-47 language tag. You can use the [**ResourceContext.Languages**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_Languages) property or the [**ApplicationLanguages.Languages**](/uwp/api/windows.globalization.applicationlanguages?branch=live#Windows_Globalization_ApplicationLanguages_Languages) property to do this.
+You can also access it as a read-only list of strings, each containing a single BCP-47 language tag. You can use the [**ResourceContext.Languages**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages) property or the [**ApplicationLanguages.Languages**](/uwp/api/windows.globalization.applicationlanguages.Languages) property to do this.
 
 ```csharp
     IReadOnlyList<string> runtimeLanguages = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Languages;
@@ -127,7 +127,7 @@ Using the [**Language**](/uwp/api/windows.globalization.language?branch=live) cl
 
 In **Settings** > **Time & Language** > **Region & language** > **Country or region**, the user can specify their location in the world. You can use this settings, instead of language, for choosing what content to display to the user. For example, a news app might default to displaying content from this region.
 
-In code, you can access this setting by using the [**GlobalizationPreferences.HomeGeographicRegion**](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live#Windows_System_UserProfile_GlobalizationPreferences_HomeGeographicRegion) property.
+In code, you can access this setting by using the [**GlobalizationPreferences.HomeGeographicRegion**](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion) property.
 
 Using the [**GeographicRegion**](/uwp/api/windows.globalization.geographicregion?branch=live#Windows_Globalization_GeographicRegion__ctor) class, you can inspect details about a particular region, such as its display name, native name, and currencies in use.
 
@@ -200,15 +200,15 @@ The following table contains examples of what the user would see in your app's U
 
 ## Important APIs
 
-* [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live#Windows_System_UserProfile_GlobalizationPreferences_Languages)
-* [ApplicationLanguages.ManifestLanguages](/uwp/api/windows.globalization.applicationlanguages?branch=live#Windows_Globalization_ApplicationLanguages_ManifestLanguages)
-* [PrimaryLanguageOverride](/uwp/api/Windows.Globalization.ApplicationLanguages?branch=live#Windows_Globalization_ApplicationLanguages_PrimaryLanguageOverride)
-* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)
-* [ResourceContext.Languages](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_Languages)
-* [ApplicationLanguages.Languages](/uwp/api/windows.globalization.applicationlanguages?branch=live#Windows_Globalization_ApplicationLanguages_Languages)
+* [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
+* [ApplicationLanguages.ManifestLanguages](/uwp/api/windows.globalization.applicationlanguages.ManifestLanguages)
+* [PrimaryLanguageOverride](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride)
+* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
+* [ResourceContext.Languages](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.Languages)
+* [ApplicationLanguages.Languages](/uwp/api/windows.globalization.applicationlanguages.Languages)
 * [Windows.Globalization](/uwp/api/windows.globalization?branch=live)
 * [Language](/uwp/api/windows.globalization.language?branch=live)
-* [GlobalizationPreferences.HomeGeographicRegion](/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live#Windows_System_UserProfile_GlobalizationPreferences_HomeGeographicRegion)
+* [GlobalizationPreferences.HomeGeographicRegion](/uwp/api/windows.system.userprofile.globalizationpreferences.HomeGeographicRegion)
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live#Windows_Globalization_GeographicRegion__ctor)
 
 ## Related topics

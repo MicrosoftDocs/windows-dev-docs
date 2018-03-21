@@ -63,7 +63,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 ```
 
 > [!NOTE]
-> This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_Activate), or in your app's first page.
+> This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), or in your app's first page.
 
 > [!TIP]
 > The UWP Community Toolkit provides extensions that let you set these color properties in XAML. For more info, see the [UWP Community Toolkit documentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
@@ -159,11 +159,11 @@ If you do define a draggable region, the system shrinks the default draggable re
 
 The system reserves the upper-left or upper-right corner of the app window for the system caption buttons (Back, Minimize, Maximize, Close). The system retains control of the caption control area to guarantee that minimum functionality is provided for dragging, minimizing, maximizing, and closing the window. The system draws the Close button in the upper-right for left-to-right languages and the upper-left for right-to-left languages.
 
-The dimensions and position of the caption control area is communicated by the CoreApplicationViewTitleBar class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar#Windows_ApplicationModel_Core_CoreApplicationViewTitleBar_SystemOverlayLeftInset) or [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar#Windows_ApplicationModel_Core_CoreApplicationViewTitleBar_SystemOverlayRightInset) properties, and its height is given by the [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar#Windows_ApplicationModel_Core_CoreApplicationViewTitleBar_Height) property.
+The dimensions and position of the caption control area is communicated by the CoreApplicationViewTitleBar class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the [SystemOverlayLeftInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayLeftInset) or [SystemOverlayRightInset](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.SystemOverlayRightInset) properties, and its height is given by the [Height](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.Height) property.
 
 You can draw content underneath the caption control area defined by these properties, such as your app background, but you should not put any UI that you expect the user to be able to interact with. It does not receive any input because input for the caption controls is handled by the system.
 
-You can handle the [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar#Windows_ApplicationModel_Core_CoreApplicationViewTitleBar_LayoutMetricsChanged) event to respond to changes in the size of the caption buttons. For example, this can happen when the system back button is shown or hidden. Handle this event to verify and update the positioning of UI elements that depend on the title bar's size.
+You can handle the [LayoutMetricsChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.LayoutMetricsChanged) event to respond to changes in the size of the caption buttons. For example, this can happen when the system back button is shown or hidden. Handle this event to verify and update the positioning of UI elements that depend on the title bar's size.
 
 This example shows how to adjust the layout of your title bar to account for changes like the system back button being shown or hidden. `AppTitleBar`, `LeftPaddingColumn`, and `RightPaddingColumn` are declared in the XAML shown previously.
 
@@ -228,7 +228,7 @@ Here, the `TitleBarButton` element has a higher z-order than `AppTitleBar`, so i
 
 ### Transparency in caption buttons
 
-When you set ExtendViewIntoTitleBar to **true**, you can make the background of the caption buttons transparent to let your app background show through. You typically set the background to [Colors.Transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors#Windows_UI_Colors_Transparent) for full transparency. For partial transparency, set the alpha channel for the [Color](https://docs.microsoft.com/uwp/api/windows.ui.color) you set the property to.
+When you set ExtendViewIntoTitleBar to **true**, you can make the background of the caption buttons transparent to let your app background show through. You typically set the background to [Colors.Transparent](https://docs.microsoft.com/uwp/api/windows.ui.colors.Transparent) for full transparency. For partial transparency, set the alpha channel for the [Color](https://docs.microsoft.com/uwp/api/windows.ui.color) you set the property to.
 
 These ApplicationViewTitleBar properties can be transparent:
 
@@ -244,7 +244,7 @@ All other color properties will continue to ignore the alpha channel. If ExtendV
 ### Full screen and tablet mode
 
 When your app runs in _full screen_ or _tablet mode_, the system hides the title bar and caption control buttons. However, the user can invoke the title bar to have it shown as an overlay on top of the app’s UI.
-You can handle the [CoreApplicationViewTitleBar.IsVisibleChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar#Windows_ApplicationModel_Core_CoreApplicationViewTitleBar_IsVisibleChanged) event to be notified when the title bar is hidden or invoked, and show or hide your custom title bar content as needed.
+You can handle the [CoreApplicationViewTitleBar.IsVisibleChanged](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) event to be notified when the title bar is hidden or invoked, and show or hide your custom title bar content as needed.
 
 This example shows how to handle IsVisibleChanged to show and hide the `AppTitleBar` element shown previously.
 
@@ -274,7 +274,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->_Full screen_ mode can be entered only if supported by your app. See [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview#Windows_UI_ViewManagement_ApplicationView_IsFullScreenMode) for more info. [_Tablet mode_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) is a user option on supported hardware, so a user can choose to run any app in tablet mode.
+>_Full screen_ mode can be entered only if supported by your app. See [ApplicationView.IsFullScreenMode](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode) for more info. [_Tablet mode_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet) is a user option on supported hardware, so a user can choose to run any app in tablet mode.
 
 ## Full customization example
 

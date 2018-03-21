@@ -32,14 +32,14 @@ and the On-Screen Keyboard (OSK).
 ## Provide 2D directional inner navigation <a name="xyfocuskeyboardnavigation">
 
 Use the
-**[XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation)** property to support 2D directional inner
+**[XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.XYFocusKeyboardNavigation)** property to support 2D directional inner
 navigation of custom controls and control groups with keyboard (arrow
 keys).
 
 **NOTE** We refer to the inner navigation region of a control or control
 group as the *directional area*.
 
-**[XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation)** has a value of type
+**[XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.XYFocusKeyboardNavigation)** has a value of type
 **[XYFocusKeyboardNavigationMode](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)** with possible values of **Auto**
 (default), **Enabled**, or **Disabled**.
 

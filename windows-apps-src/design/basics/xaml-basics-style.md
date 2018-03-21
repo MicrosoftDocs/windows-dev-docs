@@ -179,7 +179,7 @@ Congratulations, you've completed part 1! If you got stuck or want to see the fi
 
 One of the advantages of XAML styles is that it can dramatically cut down the amount of code you have to write, and it can make it much, much easier to update the look of your app.
 
-To define a style, you add a [Style](https://msdn.microsoft.com/library/windows/apps/br208849) element to the [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
+To define a style, you add a [Style](https://msdn.microsoft.com/library/windows/apps/br208849) element to the [Resources](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.Resources) property of an element that contains the control you want to style.  If you add your style to the **Page.Resources** property, your styles will be accessible to the entire page. If you add your style to the **Application.Resources** property in your App.xaml file, the style will be accessible to the entire app.
 
 You can create named styles and general styles. A named style must be explicitly applied to specific controls; a general style is applied to any control that matches the specified **TargetType**. 
 

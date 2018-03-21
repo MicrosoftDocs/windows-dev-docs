@@ -519,7 +519,7 @@ If the game is **Active** and the **PointerDeviceType** isn't **Touch**, we assu
         }
 ```
 
-When the player stops pressing one of the mouse buttons, the [CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow#Windows_UI_Core_CoreWindow_PointerReleased) mouse event is raised, calling the [MoveLookController::OnPointerReleased](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) method, and the input is complete. At this point, spheres will stop firing if the left mouse button was being pressed and is now released. Because look is always enabled, the game continues to use the same mouse pointer to track the ongoing look events.
+When the player stops pressing one of the mouse buttons, the [CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow.PointerReleased) mouse event is raised, calling the [MoveLookController::OnPointerReleased](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L441-L500) method, and the input is complete. At this point, spheres will stop firing if the left mouse button was being pressed and is now released. Because look is always enabled, the game continues to use the same mouse pointer to track the ongoing look events.
 
 ```cpp
     case MoveLookControllerState::Active:
@@ -591,7 +591,7 @@ In the [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/b
 
 ### The UpdatePollingDevices method
 
-The [**UpdatePollingDevices**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782) method of the **MoveLookController** instance immediately checks to see if a gamepad is connected. If one is, we'll start reading its state with [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad#Windows_Gaming_Input_Gamepad_GetCurrentReading). This returns the [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) struct, allowing us to check what buttons have been clicked or thumbsticks moved.
+The [**UpdatePollingDevices**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L654-L782) method of the **MoveLookController** instance immediately checks to see if a gamepad is connected. If one is, we'll start reading its state with [**Gamepad.GetCurrentReading**](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading). This returns the [**GamepadReading**](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.GamepadReading) struct, allowing us to check what buttons have been clicked or thumbsticks moved.
 
 
 If the state of the game is **WaitForInput**, we only listen for the Start/Menu button of the controller so that the game can be resumed.

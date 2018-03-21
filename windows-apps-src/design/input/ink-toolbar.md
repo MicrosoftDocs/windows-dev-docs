@@ -84,7 +84,7 @@ When you add an ink toolbar to your app, you can accept the default location and
 
 **XAML**
 
-Explicitly specify the location and orientation of the toolbar through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3#Windows_UI_Xaml_Controls_InkToolbar_Orientation) properties.
+Explicitly specify the location and orientation of the toolbar through its [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment), [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment), and [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) properties.
 
 | Default | Explicit |
 | --- | --- |
@@ -107,7 +107,7 @@ In some cases, you might want to set the location and orientation of the ink too
 ![Dominant hand setting](./images/ink/location-handedness-setting.png)  
 *Dominant hand setting*
 
-You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
+You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.
 
 **Download this sample from [Ink toolbar location and orientation sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
@@ -171,7 +171,7 @@ You can also use binding to look after UI updates based on changes to user prefe
 
     1. Add two bool properties to the InkToolbarSnippetHostViewModel class: **LeftHandedLayout** (same functionality as the previous XAML-only example) and **PortraitLayout** (orientation of the device).
         >[!NOTE] 
-        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged#Windows_UI_Xaml_Data_INotifyPropertyChanged_PropertyChanged) event.
+        > The PortraitLayout property is settable and includes the defintion for the [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event.
 
         ```csharp
         public bool LeftHandedLayout
@@ -282,7 +282,7 @@ You can also use binding to look after UI updates based on changes to user prefe
     1. Add `using using locationandorientation.ViewModels` to the list of namespaces to associate our ViewModel.
     1. Add `using Windows.UI.ViewManagement` to the list of namespaces to enable listening for changes to the device orientation.
     1. Add the [WindowSizeChangedEventHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.windowsizechangedeventhandler) code.
-    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
+    1. Set the [DataContext](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext) for the view to the singleton instance of the InkToolbarSnippetHostViewModel class. 
     ```csharp
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;

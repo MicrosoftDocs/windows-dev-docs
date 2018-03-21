@@ -58,7 +58,7 @@ We discuss these methods further in later sections of this article.
 
 In this example, you display, "Hello, Conditional XAML", as the content of a text block if the app runs on the Fall Creators Update or later, and default to no content if it's on a previous version.
 
-First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (http://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock#Windows_UI_Xaml_Controls_TextBlock_Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
+First, define a custom namespace with the prefix 'contract5Present' and use the default XAML namespace (http://schemas.microsoft.com/winfx/2006/xaml/presentation) as the schema containing the [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) property. To make this a conditional namespace, add the ‘?’ delimiter after the schema.
 
 You then define a conditional that returns **true** on devices that are running the Fall Creators Update or later. You use the ApiInformation method **IsApiContractPresent** to check for the 5th version of the UniversalApiContract. Version 5 of the UniversalApiContract was released with the Fall Creators Update (SDK 16299).
 
