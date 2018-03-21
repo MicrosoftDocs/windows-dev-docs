@@ -44,7 +44,7 @@ The other type of form allows the user to choose when to submit data with a clic
 This type of form gives the user flexibility in responding. Typically, this type of form contains more free form input fields, and thus recieves a greater variety of responses. To ensure valid user input and properly formatted data upon submission, consider the following recommendations:
 
 - Make it impossible to submit invalid information by using the correct control (i.e., use a CalendarDatePicker rather than a TextBox for calendar dates). See more on selecting the appropriate input controls in your form in the Input Controls section later.
-- When using TextBox controls, provide users a hint of the desired input format with the [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox#Windows_UI_Xaml_Controls_TextBox_PlaceholderText) property.
+- When using TextBox controls, provide users a hint of the desired input format with the [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) property.
 - Provide users with the appropriate on-screen keyboard by stating the expected input of a control with the [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) property.
 - Mark required input with an asterisk * on the label.
 - Disable the submit button until all required information is filled in.

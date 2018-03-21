@@ -23,7 +23,7 @@ ms.localizationpriority: medium
 
 Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.  
 
-> **Important APIs**: [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout), [INotifyPropertyChanged interface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **Important APIs**: [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand), [UIElement.ContextFlyout property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), [INotifyPropertyChanged interface](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![Use a variety of inputs to perform the Favorite command](images/ContextualCommand_AddFavorites.png)
 
@@ -98,7 +98,7 @@ Notice that the PodcastObject implements [INotifyPropertyChanged](https://docs.m
 
 The [ICommand interface](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) helps you to define a command that's  available for multiple input types. For example, instead of writing the same code for a delete command in two different event handlers, one for when the user presses the Delete key and one for when the user right clicks "Delete" in a context menu, you can implement your delete logic once, as an [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand),  and then make it available to different input types.
 
-We need to define the ICommand that represents the "Favorite" action. We will use the command's [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand#Windows_UI_Xaml_Input_ICommand_Execute_) method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.
+We need to define the ICommand that represents the "Favorite" action. We will use the command's [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -125,7 +125,7 @@ To use the same command with multiple collections and elements, you can store th
 </Application.Resources>
 ```
 
-To execute the command, you call its [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand#Windows_UI_Xaml_Input_ICommand_Execute_) method.
+To execute the command, you call its [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) method.
 
 ```csharp
 // Favorite the item using the defined command
@@ -244,7 +244,7 @@ The user can invoke context menus using these "context actions":
 
 ### ContextFlyout
 
-The [ContextFlyout property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout, and when the user performs a “context action” as defined above, the MenuFlyout corresponding to the item will be displayed.
+The [ContextFlyout property](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout, and when the user performs a “context action” as defined above, the MenuFlyout corresponding to the item will be displayed.
 
 We will add a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParamter bound to the PodcastObject.
 
@@ -263,7 +263,7 @@ We will add a ContextFlyout to the PodcastUserControl. The MenuFlyout specified 
 
 ```
 
-Note that you can also use the [ContextRequested event](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_ContextRequested) to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
+Note that you can also use the [ContextRequested event](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested) to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.
 
 ## Creating input accelerators
 
@@ -279,7 +279,7 @@ In the podcast app, the frequently performed command is the "Favorite" command.
 
 Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a tooltip to teach the user about the shortcut command.
 
-Your app can respond when the user presses a key using the [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
+Your app can respond when the user presses a key using the [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
 
 This example walks through how to add the KeyDown handler to the PodcastUserControl to favorite a podcast when the user presses Ctrl+S or F. It uses the same command as before.
 
@@ -341,7 +341,7 @@ In this example, the Favorite command is represented by a button defined directl
 </UserControl>
 ```
 
-The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_PointerEnteredEvent) and [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_PointerExitedEvent) events on the PodcastUserControl.
+The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) and [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) events on the PodcastUserControl.
 
 **PodcastUserControl.xaml.cs**
 ```csharp

@@ -22,7 +22,7 @@ Using a progress bar inside your toast notification allows you to convey the sta
 
 A progress bar inside a toast can either be "indetermindate" (no specific value, animated dots indicate an operation is occurring) or "determinate" (a specific percent of the bar is filled, like 60%).
 
-> **Important APIs**: [NotificationData class](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update method](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier#Windows_UI_Notifications_ToastNotifier_Update_), [ToastNotification class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **Important APIs**: [NotificationData class](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update method](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification class](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > Only Desktop supports progress bars in toast notifications. On other devices, the progress bar will be dropped from your notification.
@@ -156,7 +156,7 @@ public void SendUpdatableToastWithProgress()
 }
 ```
 
-Then, when you want to change your **Data** values, use the [**Update**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier#Windows_UI_Notifications_ToastNotifier_Update_) method to provide the new data without re-constructing the entire toast payload.
+Then, when you want to change your **Data** values, use the [**Update**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update) method to provide the new data without re-constructing the entire toast payload.
 
 ```csharp
 using Windows.UI.Notifications;

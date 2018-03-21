@@ -121,7 +121,7 @@ After you identify the flight stick that you're interested in, you're ready to g
 
 Polling captures a snapshot of the flight stick at a precise point in time. This approach to input gathering is a good fit for most games because their logic typically runs in a deterministic loop rather than being event-driven. It's also typically simpler to interpret game commands from input gathered all at once than it is from many single inputs gathered over time.
 
-You poll a flight stick by calling [FlightStick.GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick#Windows_Gaming_Input_FlightStick_GetCurrentReading). This function returns a [FlightStickReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading) that contains the state of the flight stick.
+You poll a flight stick by calling [FlightStick.GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick.GetCurrentReading). This function returns a [FlightStickReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading) that contains the state of the flight stick.
 
 The following example polls a flight stick for its current state:
 
@@ -138,7 +138,7 @@ The joystick provides an analog reading between -1.0 and 1.0 in the X, Y, and Z 
 
 In all axes, the value is approximately 0.0 when the joystick is in the center position, but it's normal for the precise value to vary, even between subsequent readings. Strategies for mitigating this variation are discussed later in this section.
 
-The value of the joystick's roll is read from the [FlightStickReading.Roll](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading#Windows_Gaming_Input_FlightStickReading_Roll) property, the value of the pitch is read from the [FlightStickReading.Pitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading#Windows_Gaming_Input_FlightStickReading_Pitch) property, and the value of the yaw is read from the [FlightStickReading.Yaw](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading#Windows_Gaming_Input_FlightStickReading_Yaw) property:
+The value of the joystick's roll is read from the [FlightStickReading.Roll](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Roll) property, the value of the pitch is read from the [FlightStickReading.Pitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Pitch) property, and the value of the yaw is read from the [FlightStickReading.Yaw](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Yaw) property:
 
 ```cpp
 // Each variable will contain a value between -1.0 and 1.0.
@@ -176,7 +176,7 @@ Each of the flight stick's two fire buttons provides a digital reading that indi
 > [!NOTE]
 > Flight sticks are equipped with additional buttons used for UI navigation such as the **View** and **Menu** buttons. These buttons are not part of the `FlightStickButtons` enumeration and can only be read by accessing the flight stick as a UI navigation device. For more information, see [UI navigation controller](ui-navigation-controller.md).
 
-The button values are read from the [FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading#Windows_Gaming_Input_FlightStickReading_Buttons) property. Because this property is a bitfield, bitwise masking is used to isolate the value of the button that you're interested in. The button is pressed (down) when the corresponding bit is set; otherwise, it's released (up).
+The button values are read from the [FlightStickReading.Buttons](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.Buttons) property. Because this property is a bitfield, bitwise masking is used to isolate the value of the button that you're interested in. The button is pressed (down) when the corresponding bit is set; otherwise, it's released (up).
 
 The following example determines whether the **FirePrimary** button is pressed:
 
@@ -198,7 +198,7 @@ if (FlightStickButtons::None == (reading.Buttons & FlightStickButtons::FirePrima
 
 Sometimes you might want to determine when a button transitions from pressed to released or released to pressed, whether multiple buttons are pressed or released, or if a set of buttons are arranged in a particular way&mdash;some pressed, some not. For information on how to detect each of these conditions, see [Detecting button transitions](input-practices-for-games.md#detecting-button-transitions) and [Detecting complex button arrangements](input-practices-for-games.md#detecting-complex-button-arrangements).
 
-The hat switch value is read from the [FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading#Windows_Gaming_Input_FlightStickReading_HatSwitch) property. Because this property is also a bitfield, bitwise masking is again used to isolate the position of the hat switch.
+The hat switch value is read from the [FlightStickReading.HatSwitch](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstickreading.HatSwitch) property. Because this property is also a bitfield, bitwise masking is again used to isolate the position of the hat switch.
 
 The following example determines whether the hat switch is in the up position:
 

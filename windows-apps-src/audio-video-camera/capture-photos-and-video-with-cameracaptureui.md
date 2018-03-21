@@ -80,7 +80,7 @@ First, add a [**MediaPlayerElement**](https://docs.microsoft.com/en-us/uwp/api/W
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 
-With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromStorageFile_Windows_Storage_IStorageFile_)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer#Windows_Media_Playback_MediaPlayer_Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
+With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromStorageFile_Windows_Storage_IStorageFile_)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  

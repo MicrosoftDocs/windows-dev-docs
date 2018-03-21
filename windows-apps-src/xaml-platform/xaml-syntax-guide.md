@@ -110,7 +110,7 @@ Collection syntax in XAML gives an appearance that you are setting a read-only p
 
 Setting an attribute value is the typical means by which you set a property value in a markup language, for example in XML or HTML. Setting XAML attributes is similar to how you set attribute values in XML. The attribute name is specified at any point within the tags following the element name, separated from element name by at least one whitespace. The attribute name is followed by an equals sign. The attribute value is contained within a pair of quotes. The quotes can be either double quotes or single quotes so long as they match and enclose the value. The attribute value itself must be expressible as a string. The string often contains numerals, but to XAML, all attribute values are string values until the XAML parser gets involved and does some basic value conversion.
 
-This example uses attribute syntax for four attributes to set the [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Width), [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement#Windows_UI_Xaml_FrameworkElement_Height), and [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape#Windows_UI_Xaml_Shapes_Shape_Fill) properties of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
+This example uses attribute syntax for four attributes to set the [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width), [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), and [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) properties of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
 
 ```xml
 <Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" />
@@ -134,7 +134,7 @@ In the following grammar, *property* is the name of the property that you want t
 
 `</`*object*`>`
 
-The following example uses property element syntax to set the [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape#Windows_UI_Xaml_Shapes_Shape_Fill) of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) with a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) object element. (Within the **SolidColorBrush**, [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush#Windows_UI_Xaml_Media_SolidColorBrush_Color) is set as an attribute.) The parsed result of this XAML is identical to the previous XAML example that set **Fill** using attribute syntax.
+The following example uses property element syntax to set the [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill) of a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) with a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) object element. (Within the **SolidColorBrush**, [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) is set as an attribute.) The parsed result of this XAML is identical to the previous XAML example that set **Fill** using attribute syntax.
 
 ```xml
 <Rectangle

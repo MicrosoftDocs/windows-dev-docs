@@ -203,15 +203,15 @@ private:
 
 ### Handle the MessageWebSocket.MessageReceived and MessageWebSocket.Closed events
 
-As shown in the example above, before establishing a connection and sending data with a **MessageWebSocket**, you should subscribe to the [**MessageWebSocket.MessageReceived**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_MessageReceived) and  [**MessageWebSocket.Closed**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Closed) events.
+As shown in the example above, before establishing a connection and sending data with a **MessageWebSocket**, you should subscribe to the [**MessageWebSocket.MessageReceived**](/uwp/api/windows.networking.sockets.messagewebsocket.MessageReceived) and  [**MessageWebSocket.Closed**](/uwp/api/windows.networking.sockets.messagewebsocket.Closed) events.
  
 **MessageReceived** is raised when data is received. The data can be accessed via [**MessageWebSocketMessageReceivedEventArgs**](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs?branch=live). **Closed** is raised when the client or the server closes the socket.
  
 ### Send data on a MessageWebSocket
 
-Once a connection is established, you can send data to the server. You do this by using the [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live), to write the data. 
+Once a connection is established, you can send data to the server. You do this by using the [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live), to write the data. 
 
-**Note** The **DataWriter** takes ownership of the output stream. When the **DataWriter** goes out of scope, if the output stream is attached to it, the **DataWriter** deallocates the output stream. After that, subsequent attempts to use the output stream fail with an HRESULT value of 0x80000013. But you can call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter#Windows_Storage_Streams_DataWriter_DetachStream) to detach the output stream from the **DataWriter** and return ownership of the stream to the **MessageWebSocket**.
+**Note** The **DataWriter** takes ownership of the output stream. When the **DataWriter** goes out of scope, if the output stream is attached to it, the **DataWriter** deallocates the output stream. After that, subsequent attempts to use the output stream fail with an HRESULT value of 0x80000013. But you can call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) to detach the output stream from the **DataWriter** and return ownership of the stream to the **MessageWebSocket**.
 
 ## Use StreamWebSocket to connect
 
@@ -392,17 +392,17 @@ private:
 
 ### Handle the StreamWebSocket.Closed event
 
-Before establishing a connection and sending data with a **StreamWebSocket**, you should subscribe to the [**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Closed) event. **Closed** is raised when the client or the server closes the socket.
+Before establishing a connection and sending data with a **StreamWebSocket**, you should subscribe to the [**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) event. **Closed** is raised when the client or the server closes the socket.
  
 ### Send data on a StreamWebSocket
 
-Once a connection is established, you can send data to the server. You do this by using the [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live), to write the data.
+Once a connection is established, you can send data to the server. You do this by using the [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter?branch=live), to write the data.
 
-**Note** If you want to write more data on the same socket, then be sure to call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter?branch=live#Windows_Storage_Streams_DataWriter_DetachStream) to detach the output stream from the **DataWriter** before the **DataWriter** goes out of scope. This returns ownership of the stream to the **MessageWebSocket**.
+**Note** If you want to write more data on the same socket, then be sure to call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) to detach the output stream from the **DataWriter** before the **DataWriter** goes out of scope. This returns ownership of the stream to the **MessageWebSocket**.
 
 ### Receive data on a StreamWebSocket
 
-Use the [**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_InputStream) property, and a [**DataReader**](/uwp/api/windows.storage.streams.datareader?branch=live), to read the data.
+Use the [**StreamWebSocket.InputStream**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) property, and a [**DataReader**](/uwp/api/windows.storage.streams.datareader?branch=live), to read the data.
 
 ## Advanced options for MessageWebSocket and StreamWebSocket
 
@@ -428,15 +428,15 @@ streamWebSocket->Control->NoDelay = false;
 auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
 ```
 
-**Note** Don't try to change a control property *after* you've called **ConnectAsync**. The only exception to that rule is [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol?branch=live#Windows_Networking_Sockets_MessageWebSocketControl_MessageType).
+**Note** Don't try to change a control property *after* you've called **ConnectAsync**. The only exception to that rule is [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType).
 
 ## WebSocket information classes
 
 [**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live) and [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live) each have a corresponding class that provides additional information about the object.
 
-[**MessageWebSocketInformation**](/uwp/api/windows.networking.sockets.messagewebsocketinformation?branch=live) provides information about a **MessageWebSocket**, and you retrieve an instance of it using the [**MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Information) property.
+[**MessageWebSocketInformation**](/uwp/api/windows.networking.sockets.messagewebsocketinformation?branch=live) provides information about a **MessageWebSocket**, and you retrieve an instance of it using the [**MessageWebSocket.Information**](/uwp/api/windows.networking.sockets.messagewebsocket.Information) property.
 
-[**StreamWebSocketInformation**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live) provides information about a **StreamWebSocket**, and you retrieve an instance of it using the [**StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Information) property.
+[**StreamWebSocketInformation**](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live) provides information about a **StreamWebSocket**, and you retrieve an instance of it using the [**StreamWebSocket.Information**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Information) property.
 
 Note that the properties on these information classes are read-only, but you can use them to retrieve information at any time during the lifetime of a web socket object.
 
@@ -573,26 +573,26 @@ protected:
 
 * [DataReader](/uwp/api/Windows.Storage.Streams.DataReader?branch=live)
 * [DataWriter](/uwp/api/Windows.Storage.Streams.DataWriter?branch=live)
-* [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter?branch=live#Windows_Storage_Streams_DataWriter_DetachStream)
+* [DataWriter.DetachStream](/uwp/api/windows.storage.streams.datawriter.DetachStream)
 * [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live)
-* [MessageWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Closed)
+* [MessageWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Closed)
 * [MessageWebSocket.ConnectAsync](/uwp/api/windows.networking.sockets.messagewebsocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_ConnectAsync_Windows_Foundation_Uri_)
 * [MessageWebSocket.Control](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live#Windows_Networking_Sockets_MessageWebSocket_Control)
-* [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_Information)
-* [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_MessageReceived)
-* [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket?branch=live#Windows_Networking_Sockets_MessageWebSocket_OutputStream)
+* [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Information)
+* [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.MessageReceived)
+* [MessageWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
 * [MessageWebSocketControl](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live)
-* [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl?branch=live#Windows_Networking_Sockets_MessageWebSocketControl_MessageType)
+* [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl.MessageType)
 * [MessageWebSocketInformation](/uwp/api/Windows.Networking.Sockets.MessageWebSocketInformation?branch=live)
 * [MessageWebSocketMessageReceivedEventArgs](/uwp/api/Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs?branch=live)
 * [SocketMessageType](/uwp/api/windows.networking.sockets.socketmessagetype?branch=live)
 * [StreamWebSocket](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live)
-* [StreamWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Closed)
+* [StreamWebSocket.Closed](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.Closed)
 * [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket?branch=live#Windows_Networking_Sockets_StreamSocket_ConnectAsync_Windows_Networking_EndpointPair_)
 * [StreamWebSocket.Control](/uwp/api/windows.networking.sockets.streamwebsocketcontrol?branch=live#Windows_Networking_Sockets_StreamWebSocket_Control)
-* [StreamWebSocket.Information](/uwp/api/windows.networking.sockets.streamwebsocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_Information)
-* [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_InputStream)
-* [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket?branch=live#Windows_Networking_Sockets_StreamWebSocket_OutputStream)
+* [StreamWebSocket.Information](/uwp/api/windows.networking.sockets.streamwebsocket.Information)
+* [StreamWebSocket.InputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
+* [StreamWebSocket.OutputStream](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
 * [StreamWebSocketControl](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl?branch=live)
 * [StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation?branch=live)
 * [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus?branch=live) 

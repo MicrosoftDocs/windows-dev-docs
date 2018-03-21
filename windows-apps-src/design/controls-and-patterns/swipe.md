@@ -87,14 +87,14 @@ It may also be used for more destructive actions like deleting an item. However,
 
 Swipe works in all cardinal directions: up, down, left, and right. Each swipe direction can hold its own swipe items or content, but only one instance of a direction can be set at a time on a single swipe-able element.
 
-For example, you cannot have two [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol#Windows_UI_Xaml_Controls_SwipeControl_LeftItems) definitions on the same SwipeControl.
+For example, you cannot have two [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems) definitions on the same SwipeControl.
 
 ## How to create a Swipe command
 
 Swipe commands have two components that you need to define:
 
 - The [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), which wraps around your content. In a collection, such as a ListView, this sits within your DataTemplate.
-- The swipe menu items, which is one or more [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) objects placed in the swipe control's directional containers: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol#Windows_UI_Xaml_Controls_SwipeControl_LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol#Windows_UI_Xaml_Controls_SwipeControl_RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol#Windows_UI_Xaml_Controls_SwipeControl_TopItems), or [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol#Windows_UI_Xaml_Controls_SwipeControl_BottomItems)
+- The swipe menu items, which is one or more [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem) objects placed in the swipe control's directional containers: [LeftItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.LeftItems), [RightItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.RightItems), [TopItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.TopItems), or [BottomItems](/uwp/api/windows.ui.xaml.controls.swipecontrol.BottomItems)
 
 Swipe content can be placed inline, or defined in the Resources section of your page or app.
 
@@ -179,7 +179,7 @@ Here's a ListView with the SwipeControl applied in its item DataTemplate. The Le
 
 ## Handle an invoked swipe command
 
-To act on a swipe command, you handle its [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem#Windows_UI_Xaml_Controls_SwipeItem_Invoked) event. (For more info about a how a user can invoke a command, review the _How does swipe work?_ section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.
+To act on a swipe command, you handle its [Invoked](/uwp/api/windows.ui.xaml.controls.swipeitem.Invoked) event. (For more info about a how a user can invoke a command, review the _How does swipe work?_ section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.
 
 Here's how to handle the Invoked event on the _delete_ swipe item you created previously.
 
@@ -202,7 +202,7 @@ The data item is the DataContext of the SwipeControl. In your code, you can acce
 > [!NOTE]
 > Here, the items were added directly to the ListView.Items collection for simplicity, so the item is also deleted the same way. If you instead set the ListView.ItemsSource to a collection, which is more typical, you need to delete the item from the source collection.
 
-In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem#Windows_UI_Xaml_Controls_SwipeItem_BehaviorOnInvoked) property one of the 
+In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the [BehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipeitem.BehaviorOnInvoked) property one of the 
 [SwipeBehaviorOnInvoked](/uwp/api/windows.ui.xaml.controls.swipebehavioroninvoked) enum values.
 
 - **Auto**
