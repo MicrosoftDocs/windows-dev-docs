@@ -3,7 +3,7 @@ author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Dev Center account.
 title: Add users, groups, and Azure AD applications to your Dev Center account
 ms.author: wdg-dev-content
-ms.date: 03/19/2018
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -20,9 +20,9 @@ After users have been added to the account, you can [edit account details](#edit
 > [!IMPORTANT]
 > In order to add users to your account, you must first [associate your Dev Center account with your organization's Azure Active Directory tenant](associate-azure-ad-with-dev-center.md). 
 
-When adding users, you will need to specify their access to your Dev Center account by assigning them a [role or set of custom permissions](set-custom-permissions-for-account-users.md).keep the following considerations in mind. (These apply to groups and Azure AD applications as well as individual users.)
+When adding users, you will need to specify their access to your Dev Center account by assigning them a [role or set of custom permissions](set-custom-permissions-for-account-users.md). 
 
-Keep in mind that all Dev Center users must have an active account in [an Azure AD tenant that is associated with your Dev Center account](associate-azure-ad-with-dev-center.md). User management is done in one tenant at a time; you must sign in with a Manager account for the tenant in which you want to add or edit users. Creating a new user in Dev Center will also create an account for that user in the Azure AD tenant to which you are signed in, and making changes to a user's name in Dev Center will make the same changes in your organization's Azure AD tenant.
+Keep in mind that all Dev Center users (including groups and Azure AD applications) must have an active account in [an Azure AD tenant that is associated with your Dev Center account](associate-azure-ad-with-dev-center.md). User management is done in one tenant at a time; you must sign in with a Manager account for the tenant in which you want to add or edit users. Creating a new user in Dev Center will also create an account for that user in the Azure AD tenant to which you are signed in, and making changes to a user's name in Dev Center will make the same changes in your organization's Azure AD tenant.
 
 > [!NOTE]
 > If your organization uses [directory integration](http://go.microsoft.com/fwlink/p/?LinkID=724033) to sync the on-premises directory service with your Azure AD, you won't be able to create new users, groups, or Azure AD applications in Dev Center. You (or another admin in your on-premises directory) will need to create them directly in the on-premises directory before you'll be able to see and add them in Dev Center.
@@ -139,7 +139,8 @@ If you want to grant Dev Center access to a brand new group, you can create a ne
 
 ## Add Azure AD applications to your Dev Center account
 
-You can allow applications or services that are part of your organization's Azure AD to access your Dev Center account.
+You can allow applications or services that are part of your organization's Azure AD to access your Dev Center account. These Azure AD application user accounts can be used to call the REST APIs provided by the [Microsoft Store services](../monetize/using-windows-store-services.md).
+
 
 ### Add Azure AD applications from your organization's directory
 
@@ -162,8 +163,8 @@ If you want to grant Dev Center access to a brand new Azure AD application accou
 
 1.  From the **Users** page, select **Add Azure AD applications**.
 2.  On the next page, click **New Azure AD application**.
-3.  Enter the **Reply URL** for the new Azure AD application. This is the URL where users can sign in and use your Azure AD application (sometimes also known as the App URL or Sign-On URL). The **Reply URL** can't be longer than 256 characters.
-4.  Enter the **App ID URI** for the new Azure AD application. This is a logical identifier for the Azure AD application that is presented when it sends a single sign-on request to Azure AD. Note that the **App ID URI** must be unique for each Azure AD application in your directory, and it can't be longer than 256 characters.
+3.  Enter the **Reply URL** for the new Azure AD application. This is the URL where users can sign in and use your Azure AD application (sometimes also known as the App URL or Sign-On URL). The **Reply URL** can't be longer than 256 characters and must be unique within your directory.
+4.  Enter the **App ID URI** for the new Azure AD application. This is a logical identifier for the Azure AD application that is presented when it sends a single sign-on request to Azure AD. Note that the **App ID URI** must be unique for each Azure AD application in your directory, and it can't be longer than 256 characters. For more info about the **App ID URI**, see [Integrating applications with Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant).
 5.  In the **Roles** section, specify the [role(s) or customized permissions](set-custom-permissions-for-account-users.md) for the Azure AD application.
 6.  Click **Save**.
 
