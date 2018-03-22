@@ -97,9 +97,9 @@ The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndica
 
 All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
 
-Any WinRT API that has the potential to take more than 50 milliseconds to complete is implemented as an asynchronous function with a name ending in "Async". An example is [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient#Windows_Web_Syndication_SyndicationClient_RetrieveFeedAsync_Windows_Foundation_Uri_). The code example calls `get` on the asych operation to wait for the results.
+[**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync?branch=live) is an example of an asynchronous WinRT function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
-[**SyndicationFeed.Items**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed.Items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items?branch=live) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
 
 The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via **c_str**, which will look familiar to you if you've used strings from the C++ Standard Library.
 
@@ -114,8 +114,8 @@ There are also types that you might see if you closely study the C++/WinRT proje
 
 ## Important APIs
 * [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt?branch=live)
-* [SyndicationClient::RetrieveFeedAsync](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient#Windows_Web_Syndication_SyndicationClient_RetrieveFeedAsync_Windows_Foundation_Uri_)
-* [SyndicationFeed.Items](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationfeed.Items)
+* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync?branch=live)
+* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items?branch=live)
 * [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring?branch=live)
 
 ## Related topics

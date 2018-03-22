@@ -38,6 +38,8 @@ For computer vision scenarios, Windows ML simplifies and optimizes the use of im
 
 ## How to develop with Windows ML
 
+> [!VIDEO https://www.youtube.com/embed/8MCDSlm326U]
+
 ### System requirements
 To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
 
