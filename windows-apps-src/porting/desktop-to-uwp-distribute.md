@@ -24,10 +24,9 @@ Publish your packaged desktop app to a Windows store or sideload it onto one or 
 
 The [Microsoft Store](https://www.microsoft.com/store/apps) is a convenient way for customers to get your app.
 
-<div style="float: left; padding: 10px">
-    ![Store icon](images/desktop-to-uwp/store.png)
-</div>
- Publish your app to that store to reach the broadest audience. Also, Also, organizational customers can acquire your app to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
+![Store icon](images/desktop-to-uwp/store.png)
+
+Publish your app to that store to reach the broadest audience. Also, Also, organizational customers can acquire your app to distribute internally to their organizations through the [Microsoft Store for Business](https://www.microsoft.com/business-store).
 
 If you plan to publish to the Microsoft Store, and you haven't reached out to us yet, please fill out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge), and Microsoft will contact you to start the onboarding process.
 
