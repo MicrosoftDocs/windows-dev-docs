@@ -49,6 +49,7 @@ The following is a full list of UWP APIs supported in packaged apps. You can vie
 For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) and [Universal Windows Platform (UWP) app samples](https://github.com/Microsoft/Windows-universal-samples) on GitHub. You can also consult the Building App for Windows blog post [Calling Windows 10 APIs From a Desktop Application](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application).
 
 <a id="new" />
+
 ### APIs supported in newly packaged apps
 
 * [Windows.ApplicationModel.AppService.AppServiceConnection](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection)
@@ -375,6 +376,7 @@ For examples on how to use WinRT APIs, see the [Desktop Bridge Samples](https://
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <a id="both" />
+
 ### APIs supported in both packaged apps and desktop applications
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
