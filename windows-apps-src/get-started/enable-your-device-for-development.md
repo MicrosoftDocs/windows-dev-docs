@@ -71,7 +71,6 @@ Device family specific info
 **Sideload apps** is a more secure option than Developer Mode because you cannot install apps on the device without a trusted certificate.
 
 > [!NOTE]
-
 > If you sideload apps, you should still only install apps from trusted sources. When you install a sideloaded app that has not been certified by the Microsoft Store, you are agreeing that you have obtained all rights necessary to sideload the app and that you are solely responsible for any harm that results from installing and running the app. See the Windows &gt; Microsoft Store section of this [privacy statement](http://go.microsoft.com/fwlink/?LinkId=521839).
 
 
