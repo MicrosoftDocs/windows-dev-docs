@@ -12,7 +12,7 @@ ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ---
 
-#Get UWP app samples
+# Get UWP app samples
 
 The Universal Windows Platform (UWP) app samples are available through repositories on GitHub. See [Samples](https://developer.microsoft.com/windows/samples "Dev Center samples") for a searchable, categorized list, or browse the
 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository")
@@ -20,7 +20,7 @@ repository, which contains samples that demonstrate all of the UWP features
 and their API usage patterns.  
 ![GitHub UWP sample repo](images/GitHubUWPSamplesPage.png)
 
-##Download the code
+## Download the code
 
 To download the samples, go to the
 [repository](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") and
