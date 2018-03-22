@@ -92,6 +92,7 @@
 ## [Standard C++ data types and C++/WinRT](../cpp-and-winrt-apis/std-cpp-data-types.md)
 ## [Boxing and unboxing scalar values to IInspectable with C++/WinRT](../cpp-and-winrt-apis/boxing.md)
 ## [Events; how to author and handle them in C++/WinRT](../cpp-and-winrt-apis/events-author-handle.md)
+## [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md)
 ## [XAML controls; binding to a C++/WinRT property](../cpp-and-winrt-apis/binding-property.md)
 ## [XAML items controls; binding to a C++/WinRT collection](../cpp-and-winrt-apis/binding-collection.md)
 ## [Troubleshooting C++/WinRT issues](../cpp-and-winrt-apis/troubleshooting.md)

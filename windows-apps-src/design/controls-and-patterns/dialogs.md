@@ -25,25 +25,26 @@ Dialogs and flyouts are transient UI elements that appear when something happens
 
 > **Important APIs**: [ContentDialog class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentDialog), [Flyout class](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Flyout)
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b>Dialogs</b> <br/><br/>
-    ![Example of a dialog](images/dialogs/dialog_RS2_delete_file.png)</p>
-<p>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.   
-</p><br/>
 
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b>Flyouts</b> <br/><br/>
-   ![Example of a flyout](images/flyout-example2.png)</p>
-<p>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
-</p><p>Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
-</p><br/>
+:::row:::
+    :::column:::
+        **Dialogs**
+        
+        ![Example of a dialog](images/dialogs/dialog_RS2_delete_file.png)
 
-  </div>
-</div>
-</div>
+        Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.
+    :::column-end:::
+    :::column::: 
+        **Flyouts**
+
+        ![Example of a flyout](images/flyout-example2.png)
+
+        A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.
+
+        Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+    :::column-end:::
+:::row-end:::
+
 
 ## Is this the right control?
 
@@ -79,12 +80,11 @@ Once you've determined that you want to use a dialog or flyout, you need to choo
 
 Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it.
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
+:::row:::
+    :::column:::
    <p><b>Use a dialog for...</b> <br/>
 <ul>
-<li>Expressing important information that the user **must** read and acknowledge before proceeding. Examples include:
+<li>Expressing important information that the user <b>must</b> read and acknowledge before proceeding. Examples include:
 <ul>
   <li>When the user's security might be compromised</li>
   <li>When the user is about to permanently alter a valuable asset</li>
@@ -97,17 +97,18 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 <li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
 </ul>
 </p>
-  </div>
-  <div class="side-by-side-content-right">
+    :::column-end:::
+    :::column:::
    <p><b>Use a flyout for...</b> <br/>
 <ul>
 <li>Collecting additional information needed before an action can be completed.</li>
 <li>Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
 <li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
 </ul></p>
-  </div>
-</div>
-</div>
+    :::column-end:::
+:::row-end:::
+
+
 
 ## Dialogs
 ### General guidelines
