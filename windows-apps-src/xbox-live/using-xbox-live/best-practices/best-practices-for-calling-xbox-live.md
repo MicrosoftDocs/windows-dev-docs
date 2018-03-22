@@ -164,7 +164,7 @@ but note that this API will not prevent your title from being throttled. Your ti
 
 ### Xbox Live Trace Analyzer tool
 
-Another option is to record a trace of the Xbox Live calls and then analyze that trace using the Xbox Live Trace Analyzer tool.
+Another option is to record a trace of the Xbox Live calls and then analyze that trace using the [*Xbox Live Trace Analyzer tool.*](https://docs.microsoft.com/en-us/windows/uwp/xbox-live/tools/analyze-service-calls)
 
 To record a trace, you can either use Fiddler to record a .SAZ file, or by using the built-in trace logging of XSAPI. For more information, how to use turn on traces in XSAPI see the Xbox Live documentation page "Analyze calls to Xbox Live Services". Once you have a trace, the Xbox Live Trace Analyzer tool will warn upon detecting throttled calls.
 
