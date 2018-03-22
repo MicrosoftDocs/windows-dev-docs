@@ -1,7 +1,7 @@
 ---
 author: serenaz
-title: Windows Machine Learning samples
-description: Sample UWP apps demonstrate how to use Windows Machine Learning.
+title: Windows ML samples
+description: Sample UWP apps demonstrate how to use Windows ML.
 ms.author: sezhen
 ms.date: 03/07/2018
 ms.topic: article
@@ -11,9 +11,9 @@ keywords: windows 10, uwp, windows machine learning
 ms.localizationpriority: medium
 ---
 
-# Windows Machine Learning samples
+# Windows ML samples
 
-The following sample UWP apps demonstrate how to use Windows Machine Learning and are available to download from the [Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) repo on GitHub.
+The following sample UWP apps demonstrate how to use Windows ML and are available to download from the [Windows-Machine-Learning](https://github.com/Microsoft/Windows-Machine-Learning) repo on GitHub.
 
 ## MNIST Multilayer Perceptron
 

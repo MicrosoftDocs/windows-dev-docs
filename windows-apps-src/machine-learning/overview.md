@@ -1,6 +1,6 @@
 ---
 author: serenaz
-title: Windows Machine Learning overview
+title: Windows ML overview
 description: Learn about Windows Machine Learning and how to develop with Windows ML.
 ms.author: sezhen
 ms.date: 03/07/2018
@@ -11,7 +11,7 @@ keywords: windows 10, uwp, windows machine learning
 ms.localizationpriority: medium
 ---
 
-# Windows Machine Learning overview
+# Windows ML overview
 
 ## What is machine learning?
 Machine learning (ML) allows computers to use existing data to predict expected outcomes and behaviors. By processing previously collected data, ML algorithms build models that can predict the correct output when presented with a new input. For example, a model can be trained to evaluate email messages (input) as spam or not spam (output).
@@ -41,7 +41,7 @@ For computer vision scenarios, Windows ML simplifies and optimizes the use of im
 > [!VIDEO https://www.youtube.com/embed/8MCDSlm326U]
 
 ### System requirements
-To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
+To build applications that use Windows ML, you'll need the [Windows SDK - Build 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK).
 
 ### ONNX models
 To use Windows ML, you'll need a pre-trained machine learning model in the [Open Neural Network Exchange (ONNX)](https://onnx.ai) format. Windows ML supports the v1.0 release of the ONNX format, which allows developers to use models produced by different training frameworks. 
