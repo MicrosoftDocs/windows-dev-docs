@@ -336,6 +336,7 @@
 #### [Get add-on acquisitions](../monetize/get-in-app-acquisitions.md)
 #### [Get subscription add-on acquisitions](../monetize/get-subscription-acquisitions.md)
 #### [Get add-on conversions by channel](../monetize/get-add-on-conversions-by-channel.md)
+#### [Get Xbox One game acquisitions](../monetize/get-xbox-one-game-acquisitions.md)
 #### [Get app installs](../monetize/get-app-installs.md)
 #### [Get desktop application installs](../monetize/get-desktop-app-installs.md)
 #### [Get app ratings](../monetize/get-app-ratings.md)
