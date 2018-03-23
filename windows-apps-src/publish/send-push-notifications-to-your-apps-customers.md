@@ -62,11 +62,11 @@ Follow these steps to create a notification in the dashboard and send it to a pa
    - **Track app launch rate** (interactive toast type). If you want to measure how well you’re engaging with your customers through each notification, select this checkbox. For more details, see [Measure notification performance](#measure-notification-performance).
    - **Duration** (interactive toast type). You can choose **Short** or **Long**.
    - **Scenario** (interactive toast type). You can choose **Default**, **Alarm**, **Reminder**, or **Incoming call**.
-   - **Base URI** (interactive toast type). For more details, see [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712).
-   - **Add image query** (interactive toast type). For more details, see [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847).
-   - **Visual**. An image, video, or sound. For more details, see [visual](https://msdn.microsoft.com/library/windows/apps/br230847).
+   - **Base URI** (interactive toast type). For more details, see [BaseUri](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri).
+   - **Add image query** (interactive toast type). For more details, see [addImageQuery](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
+   - **Visual**. An image, video, or sound. For more details, see [visual](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual).
    - **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md).
-   - **Binding** (interactive tile type). The toast template. For more details, see [binding](https://msdn.microsoft.com/library/windows/apps/br230843).
+   - **Binding** (interactive tile type). The toast template. For more details, see [binding](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-binding).
 
    > [!TIP]
    > Try using the [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1) app to design and test your adaptive tiles and interactive toast notifications.
@@ -107,11 +107,11 @@ You can measure how well you’re engaging with your customers through each noti
 2.	In your app, call the [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) method to notify Dev Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see [Configure your app to receive Dev Center notifications](../monetize/configure-your-app-to-receive-dev-center-notifications.md).
 
 
-###To view notification performance
+### To view notification performance
 
 When you’ve configured the notification and your app to measure notification performance as described above, you can use the dashboard to see how well your notifications are performing.
 
-1.	In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), expand the **Engage** section, and then select **Notifications**.
+1.	In the Windows Dev Center dashboard, expand the **Engage** section and select **Notifications**.
 2.	On the **Targeted push notifications** page, select **In progress** or **Completed**, and then look at the **Delivery rate** and **App launch rate** columns to see the high-level performance of each notification.
 3.  To see more granular performance details, select a notification name. In the **Delivery statistics** section, you can view **Count** and **Percentage** info for the following notification **Status** types:
  - **Failed**: The notification was not delivered for some reason. This can happen, for example, if an issue occurs in the Windows Notification Service.
@@ -124,7 +124,7 @@ When you’ve configured the notification and your app to measure notification p
 
 ## Translate your notifications
 
-To maximize the impact of your notifications, consider translating them into the languages that your customers prefer. Dev Center makes it easy for you to translate your notifications automatically by leveraging the power of the [Microsoft Translator](https://msdn.microsoft.com/library/dd576287.aspx) service.
+To maximize the impact of your notifications, consider translating them into the languages that your customers prefer. Dev Center makes it easy for you to translate your notifications automatically by leveraging the power of the [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) service.
 
 1.	After you’ve written your notification in your default language, select **Add languages** (beneath the **Languages** menu in the **Notification content** section).
 2.	In the **Add languages** window, select the additional languages that you want your notifications to appear in, and then select **Update**.
@@ -141,4 +141,3 @@ Things to keep in mind about translation:
 - [Windows Push Notification Services (WNS) overview](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [Notifications Visualizer app](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
-- [Customer segmentation and push notifications: a new Windows Dev Center Insider Program feature (blog post)](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)
