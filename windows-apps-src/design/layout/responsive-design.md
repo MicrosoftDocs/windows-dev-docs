@@ -13,7 +13,7 @@ keywords: windows 10, uwp
 localizationpriority: medium
 ---
 
-# Responsive design techniquess
+# Responsive design techniques
 
 When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are six responsive design techniques you can use to customize your app's UI.
 

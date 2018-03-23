@@ -2,8 +2,8 @@
 title: Security
 description: This section contains articles on building secure Universal Windows Platform (UWP) apps for Windows 10.
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

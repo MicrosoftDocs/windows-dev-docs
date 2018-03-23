@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Conditional XAML
 
-*Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsApiContractPresent_System_String_System_UInt16_) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
+*Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method in XAML markup. This lets you set properties and instantiate objects in markup based on the presence of an API without needing to use code behind. It selectively parses elements or attributes to determine whether they will be available at runtime. Conditional statements are evaluated at runtime, and elements qualified with a conditional XAML tag are parsed if they evaluate to **true**; otherwise, they are ignored.
 
 Conditional XAML is available starting with the Creators Update (version 1703, build 15063). To use conditional XAML, the Minimum Version of your Visual Studio project must be set to build 15063 (Creators Update) or later, and the Target Version be set to a later version than the Minimum. See [Version adaptive apps](version-adaptive-apps.md) for more info about configuring your Visual Studio project.
 

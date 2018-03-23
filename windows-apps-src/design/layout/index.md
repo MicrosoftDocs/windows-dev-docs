@@ -33,7 +33,7 @@ These articles help you create a flexible UI that looks great on different scree
                     </div> 
                     <div class="cardText">
                         <h3><a href="screen-sizes-and-breakpoints-for-responsive-design.md">Screen sizes and breakpoints</a></h3>
-                        <p>The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths (also called "breakpoints"): 360, 640, 1024 and 1366 epx.</p>
+                        <p>The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths called breakpoints.</p>
                     </div>
                 </div>
             </div>

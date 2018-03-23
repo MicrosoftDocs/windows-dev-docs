@@ -2,8 +2,8 @@
 title: Cryptographic keys
 description: This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -633,7 +633,7 @@ When you install the emulator, a Windows 10 for Mobile VHD image is installed, w
 
 In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
 
-###How to disable hardware accelerated graphics
+### How to disable hardware accelerated graphics
 
 By default, Windows 10 Mobile Emulator uses hardware accelerated graphics. If you are having trouble launching the emulator with hardware acceleration enabled, you can turn it off by setting a registry value.
 

@@ -1,7 +1,7 @@
 ---
 author: serenaz
-title: Windows Machine Learning
-description: Windows Machine Learning evaluates trained machine learning models locally on Windows 10 devices, allowing developers to use pre-trained models within their applications.
+title: Windows ML
+description: Windows ML evaluates trained machine learning models locally on Windows 10 devices, allowing developers to use pre-trained models within their applications.
 ms.author: sezhen
 ms.date: 03/07/2018
 ms.topic: article

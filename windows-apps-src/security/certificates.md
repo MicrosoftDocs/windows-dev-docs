@@ -2,8 +2,8 @@
 title: Intro to certificates
 description: This article discusses the use of certificates in Universal Windows Platform (UWP) apps.
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -56,46 +56,43 @@ Some of these fields and extensions can be specified directly when you use the [
 
 ### Version 1 fields
 
-| Field               | Description                                                                                                                                                                                                                                                                 |
-|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Version             | Specifies the version number of the encoded certificate. Currently, the possible values of this field are 0, 1, or 2.                                                                                                                                                       |
-| Serial Number       | Contains a positive, unique integer assigned by the certification authority (CA) to the certificate.                                                                                                                                                                        |
-| Signature Algorithm | Contains an object identifier (OID) that specifies the algorithm used by the CA to sign the certificate. For example, 1.2.840.113549.1.1.5 specifies a SHA-1 hashing algorithm combined with the RSA encryption algorithm from RSA Laboratories.                            |
-| Issuer              | Contains the X.500 distinguished name (DN) of the CA that created and signed the certificate.                                                                                                                                                                               |
-| Validity            | Specifies the time interval during which the certificate is valid. Dates through the end of 2049 use the Coordinated Universal Time (Greenwich Mean Time) format (yymmddhhmmssz). Dates beginning with January 1st, 2050 use the generalized time format (yyyymmddhhmmssz). |
-| Subject             | Contains an X.500 distinguished name of the entity associated with the public key contained in the certificate.                                                                                                                                                             |
-| Public Key          | Contains the public key and associated algorithm information.                                                                                                                                                                                                               |
-
- 
+| Field | Description |
+|-------|-------------|
+| Version | Specifies the version number of the encoded certificate. Currently, the possible values of this field are 0, 1, or 2. |
+| Serial Number | Contains a positive, unique integer assigned by the certification authority (CA) to the certificate. |
+| Signature Algorithm | Contains an object identifier (OID) that specifies the algorithm used by the CA to sign the certificate. For example, 1.2.840.113549.1.1.5 specifies a SHA-1 hashing algorithm combined with the RSA encryption algorithm from RSA Laboratories. |
+| Issuer | Contains the X.500 distinguished name (DN) of the CA that created and signed the certificate. |
+| Validity | Specifies the time interval during which the certificate is valid. Dates through the end of 2049 use the Coordinated Universal Time (Greenwich Mean Time) format (yymmddhhmmssz). Dates beginning with January 1st, 2050 use the generalized time format (yyyymmddhhmmssz). |
+| Subject | Contains an X.500 distinguished name of the entity associated with the public key contained in the certificate. |
+| Public Key | Contains the public key and associated algorithm information. |
 
 ### Version 2 fields
 
 An X.509 version 2 certificate contains the basic fields defined in version 1 and adds the following fields.
 
-| Field                     | Description                                                                                                                                         |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Issuer Unique Identifier  | Contains a unique value that can be used to make the X.500 name of the CA unambiguous when reused by different entities over time.                  |
+| Field | Description |
+|-------|-------------|
+| Issuer Unique Identifier | Contains a unique value that can be used to make the X.500 name of the CA unambiguous when reused by different entities over time. |
 | Subject Unique Identifier | Contains a unique value that can be used to make the X.500 name of the certificate subject unambiguous when reused by different entities over time. |
- 
 
 ### Version 3 extensions
 
 An X.509 version 3 certificate contains the fields defined in version 1 and version 2 and adds certificate extensions.
 
-| Field                        | Description                                                                                                                                                                                              |
-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authority Key Identifier     | Identifies the certification authority (CA) public key that corresponds to the CA private key used to sign the certificate.                                                                              |
-| Basic Constraints            | Specifies whether the entity can be used as a CA and, if so, the number of subordinate CAs that can exist beneath it in the certificate chain.                                                           |
-| Certificate Policies         | Specifies the policies under which the certificate has been issued and the purposes for which it can be used.                                                                                            |
-| CRL Distribution Points      | Contains the URI of the base certificate revocation list (CRL).                                                                                                                                          |
-| Enhanced Key Usage           | Specifies the manner in which the public key contained in the certificate can be used.                                                                                                                   |
-| Issuer Alternative Name      | Specifies one or more alternative name forms for the issuer of the certificate request.                                                                                                                  |
-| Key Usage                    | Specifies restrictions on the operations that can be performed by the public key contained in the certificate.                                                                                           |
-| Name Constraints             | Specifies the namespace within which all subject names in a certificate hierarchy must be located. The extension is used only in a CA certificate.                                                       |
-| Policy Constraints           | Constrains path validation by prohibiting policy mapping or by requiring that each certificate in the hierarchy contain an acceptable policy identifier. The extension is used only in a CA certificate. |
-| Policy Mappings              | Specifies the policies in a subordinate CA that correspond to policies in the issuing CA.                                                                                                                |
-| Private Key Usage Period     | Specifies a different validity period for the private key than for the certificate with which the private key is associated.                                                                             |
-| Subject Alternative Name     | Specifies one or more alternative name forms for the subject of the certificate request. Example alternative forms include email addresses, DNS names, IP addresses, and URIs.                           |
-| Subject Directory Attributes | Conveys identification attributes such as the nationality of the certificate subject. The extension value is a sequence of OID-value pairs.                                                              |
-| Subject Key Identifier       | Differentiates between multiple public keys held by the certificate subject. The extension value is typically a SHA-1 hash of the key.                                                                   |
+| Field  | Description |
+|--------|-------------|
+| Authority Key Identifier | Identifies the certification authority (CA) public key that corresponds to the CA private key used to sign the certificate. |
+| Basic Constraints | Specifies whether the entity can be used as a CA and, if so, the number of subordinate CAs that can exist beneath it in the certificate chain. |
+| Certificate Policies | Specifies the policies under which the certificate has been issued and the purposes for which it can be used. |
+| CRL Distribution Points | Contains the URI of the base certificate revocation list (CRL). |
+| Enhanced Key Usage | Specifies the manner in which the public key contained in the certificate can be used. |
+| Issuer Alternative Name | Specifies one or more alternative name forms for the issuer of the certificate request. |
+| Key Usage | Specifies restrictions on the operations that can be performed by the public key contained in the certificate.|
+| Name Constraints  | Specifies the namespace within which all subject names in a certificate hierarchy must be located. The extension is used only in a CA certificate. |
+| Policy Constraints | Constrains path validation by prohibiting policy mapping or by requiring that each certificate in the hierarchy contain an acceptable policy identifier. The extension is used only in a CA certificate. |
+| Policy Mappings | Specifies the policies in a subordinate CA that correspond to policies in the issuing CA. |
+| Private Key Usage Period | Specifies a different validity period for the private key than for the certificate with which the private key is associated. |
+| Subject Alternative Name | Specifies one or more alternative name forms for the subject of the certificate request. Example alternative forms include email addresses, DNS names, IP addresses, and URIs. |
+| Subject Directory Attributes | Conveys identification attributes such as the nationality of the certificate subject. The extension value is a sequence of OID-value pairs. |
+| Subject Key Identifier | Differentiates between multiple public keys held by the certificate subject. The extension value is typically a SHA-1 hash of the key. |
 

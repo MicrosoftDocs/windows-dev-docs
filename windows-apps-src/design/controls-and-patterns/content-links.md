@@ -269,7 +269,7 @@ For other situations, a Hyperlink text element is usually appropriate.
 
 ### ContentLink appearance
 
-The appearance of a content link is determined by its foreground, background, and cursor. In a text block, you can set the ForegroundColor (from TextElement) and [BackgroundColor](/uwp/api/windows.ui.xaml.documents.contentlink#Windows_UI_Xaml_Documents_ContentLink_BackgroundColor) properties to change the default colors.
+The appearance of a content link is determined by its foreground, background, and cursor. In a text block, you can set the Foreground (from TextElement) and [Background](/uwp/api/windows.ui.xaml.documents.contentlink.background) properties to change the default colors.
 
 By default, the [Hand](/uwp/api/windows.ui.core.corecursortype) cursor is shown when the user hovers over the content link. Unlike RichEditBlock, text block controls don't change the cursor automatically based on the link type. You can set the [Cursor](/uwp/api/windows.ui.xaml.documents.contentlink.Cursor) property to change the cursor based on link type or other factors.
 

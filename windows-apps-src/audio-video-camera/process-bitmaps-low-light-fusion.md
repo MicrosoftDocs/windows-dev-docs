@@ -3,7 +3,7 @@ author: laurenhughes
 description: This article explains how to use the LowLightFusion class to process bitmaps.
 title: Process bitmaps with the Low Light Fusion API
 ms.author: lahugh
-ms.date: 11/06/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -38,7 +38,7 @@ Now that we have the correct number of frames selected, we need to decode the fr
 
 ## Fuse the bitmaps into a single bitmap
 
-Now that we have a correct number of frames in an acceptable format, we can use the **[FuseAsync](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion#Windows_Media_Core_LowLightFusion_FuseAsync_Windows_Foundation_Collections_IIterable_Windows_Graphics_Imaging_SoftwareBitmap__)** method to apply the Low Light Fusion algorithm. Our result will be the processed image, with improved clarity, in the form of a SoftwareBitmap. 
+Now that we have a correct number of frames in an acceptable format, we can use the **[FuseAsync](https://docs.microsoft.com/uwp/api/windows.media.core.lowlightfusion.fuseasync)** method to apply the Low Light Fusion algorithm. Our result will be the processed image, with improved clarity, in the form of a SoftwareBitmap. 
 
 [!code-cs[SnippetFuseFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetFuseFrames)]
 
