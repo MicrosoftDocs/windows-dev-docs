@@ -3,7 +3,7 @@ title: Intro to certificates
 description: This article discusses the use of certificates in Universal Windows Platform (UWP) apps.
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: msatranjr
-ms.author: alkoren
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

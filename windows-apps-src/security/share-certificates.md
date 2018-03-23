@@ -3,7 +3,7 @@ title: Share certificates between apps
 description: Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication.
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: msatranjr
-ms.author: alkoren
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

@@ -3,7 +3,7 @@ title: Convert between strings and binary data
 description: This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: msatranjr
-ms.author: alkoren
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

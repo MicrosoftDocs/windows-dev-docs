@@ -3,7 +3,7 @@ title: Web authentication broker
 description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on.
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: msatranjr
-ms.author: alkoren
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
