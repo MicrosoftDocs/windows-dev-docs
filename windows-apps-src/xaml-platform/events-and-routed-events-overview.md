@@ -146,7 +146,7 @@ In C++, you also use the **+=** syntax, but there are differences from the basic
 
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
+ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
 ```
 
 ### Removing event handlers in code
