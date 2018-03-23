@@ -15,20 +15,20 @@ ms.localizationpriority: medium
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
-With C++/WinRT, you can call Windows Runtime (WinRT) APIs using C++ Standard Library wide string types. C++/WinRT does have a custom string type called [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) (defined in `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). And that's the string type that WinRT constructors, functions, and properties actually take and return. But in many cases&mdash;thanks to **hstring**'s conversion constructors and conversion operators&mdash;you can choose whether or not to be aware of **hstring** in your programming.
+With C++/WinRT, you can call Windows Runtime (WinRT) APIs using C++ Standard Library wide string types. C++/WinRT does have a custom string type called [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (defined in `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). And that's the string type that WinRT constructors, functions, and properties actually take and return. But in many cases&mdash;thanks to **hstring**'s conversion constructors and conversion operators&mdash;you can choose whether or not to be aware of **hstring** in your programming.
 
 There are many string types in C++. Variants exist in many libraries in addition to **std::basic_string** from the C++ Standard Library. C++17 has string conversion utilities, and **std::basic_string_view**, to bridge the gaps between all of the string types. **hstring** provides convertibility with **std::wstring_view** to provide the interoperability that **std::basic_string_view** was designed for.
 
-## Using **std::wstring** (and optionally [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live)) with [**Uri**](/uwp/api/windows.foundation.uri?branch=live)
+## Using **std::wstring** (and optionally [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)) with [**Uri**](/uwp/api/windows.foundation.uri)
 
-[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri?branch=live) is constructed from a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live).
+[**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is constructed from a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring).
 
 ```cppwinrt
 public:
 	Uri(winrt::hstring uri) const;
 ```
 
-But **hstring** has [conversion constructors](/uwp/api/windows.foundation.uri?branch=live#hstringhstring-constructor) that let you work with it without needing to be aware of it. Here's a code example showing how to make a **Uri** from a wide string literal, from a wide string view, and from a **std::wstring**.
+But **hstring** has [conversion constructors](/uwp/api/windows.foundation.uri#hstringhstring-constructor) that let you work with it without needing to be aware of it. Here's a code example showing how to make a **Uri** from a wide string literal, from a wide string view, and from a **std::wstring**.
 
 ```cppwinrt
 #include "winrt/Windows.Foundation.h"
@@ -62,7 +62,7 @@ public:
 	winrt::hstring Domain();
 ```
 
-But, again, being aware of that detail is optional thanks to **hstring**'s [conversion operator to **std::wstring_view**](/uwp/api/windows.foundation.uri?branch=live#hstringoperator-stdwstringview).
+But, again, being aware of that detail is optional thanks to **hstring**'s [conversion operator to **std::wstring_view**](/uwp/api/windows.foundation.uri#hstringoperator-stdwstringview).
 
 ```cppwinrt
 // Access a property of type hstring, via a conversion operator to a standard type.
@@ -93,7 +93,7 @@ hstring tostringHstring{ contosoUri.ToString() }; // L"http://www.contoso.com/"
 tostringHstring = awUri.ToString(); // L"http://www.adventure-works.com/"
 ```
 
-You can use the [hstring::c_str function](/uwp/api/windows.foundation.uri?branch=live#hstringcstr-function) to get a standard wide string from an **hstring** (just as you can from a **std::wstring**).
+You can use the [hstring::c_str function](/uwp/api/windows.foundation.uri#hstringcstr-function) to get a standard wide string from an **hstring** (just as you can from a **std::wstring**).
 
 ```cppwinrt
 #include <iostream>
@@ -147,7 +147,7 @@ w = to_hstring(c);
 assert(w == L"hello world");
 ```
 
-For more examples and info about **hstring** functions and operators, see the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) API reference topic.
+For more examples and info about **hstring** functions and operators, see the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) API reference topic.
 
 ## The rationale for **winrt::hstring** and **winrt::param::hstring**
 The Windows Runtime is implemented in terms of **wchar_t** characters, but WinRT's Application Binary Interface (ABI) is not a subset of what either **std::wstring** or **std::wstring_view** provide. Using those would lead to significant inefficiency. Instead, C++/WinRT provides **winrt::hstring**, which represents an immutable string consistent with the underlying [HSTRING](https://msdn.microsoft.com/library/windows/desktop/br205775), and implemented behind an interface similar to that of **std::wstring**. 
@@ -157,4 +157,4 @@ You may notice that C++/WinRT input parameters that should logically accept **wi
 The upshot is that you can largely ignore the specifics of WinRT string management, and just work with efficiency with what you know. And that's important, given how heavily strings are used in WinRT.
 
 ## Important APIs
-* [winrt::hstring (C++/WinRT)](/uwp/cpp-ref-for-winrt/hstring?branch=live)
+* [winrt::hstring (C++/WinRT)](/uwp/cpp-ref-for-winrt/hstring)

@@ -23,14 +23,14 @@ This walkthrough builds on the project created in [XAML controls; binding to a C
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
 
 ## What does *observable* mean for a collection?
-If a runtime class that represents a collection chooses to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged?branch=live) event whenever an element is added to it or removed from it, then the runtime class is an observable collection.
+If a runtime class that represents a collection chooses to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event whenever an element is added to it or removed from it, then the runtime class is an observable collection.
 
 A XAML items control can bind to, and handle, these events by retrieving the updated collection and then updating itself to show the current elements.
 
 To follow the steps below, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
 ## Implement **single_threaded_observable_vector&lt;T&gt;**
-It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_?branch=live). Here's a listing of a class called **single_threaded_observable_vector&lt;T&gt;**. In future, if this becomes a C++/WinRT type, it will be easy to switch over to using the official version of it.
+It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Here's a listing of a class called **single_threaded_observable_vector&lt;T&gt;**. In future, if this becomes a C++/WinRT type, it will be easy to switch over to using the official version of it.
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -273,7 +273,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-The **Append** function illustrates how to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged?branch=live) event.
+The **Append** function illustrates how to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event.
 
 ```cppwinrt
 m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
@@ -361,5 +361,5 @@ In `MainPage.cpp`, add a line of code to the **Click** event handler to append a
 Now build and run the project. Click the button to execute the **Click** event handler. We saw that the implementation of **Append** raises an event to let the UI know that the collection has changed; and the **ListBox** re-queries the collection to update its own **Items** value. Just as before, the title of one of the books changes; and that title change is reflected both on the button and in the list box.
 
 ## Important APIs
-* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged?branch=live)
-* [winrt::make](/uwp/cpp-ref-for-winrt/make?branch=live)
+* [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+* [winrt::make](/uwp/cpp-ref-for-winrt/make)
