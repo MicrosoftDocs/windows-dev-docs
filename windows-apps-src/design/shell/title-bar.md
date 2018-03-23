@@ -63,7 +63,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 ```
 
 > [!NOTE]
-> This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), or in your app's first page.
+> This code can be placed in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method (_App.xaml.cs_), after the call to [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate), or in your app's first page.
 
 > [!TIP]
 > The UWP Community Toolkit provides extensions that let you set these color properties in XAML. For more info, see the [UWP Community Toolkit documentation](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions).
@@ -83,7 +83,7 @@ When you opt-in to full title bar customization, your app’s client area is ext
 
 To hide the default title bar and extend your content into the title bar area, set the [CoreApplicationViewTitleBar.ExtendViewIntoTitleBar](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) property to **true**.
 
-This example shows how to get the CoreApplicationViewTitleBar and set the ExtendViewIntoTitleBar property to **true**. This can be done in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) method (_App.xaml.cs_), or in your app's first page.
+This example shows how to get the CoreApplicationViewTitleBar and set the ExtendViewIntoTitleBar property to **true**. This can be done in your app's [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) method (_App.xaml.cs_), or in your app's first page.
 
 ```csharp
 // using Windows.ApplicationModel.Core;
@@ -98,7 +98,7 @@ coreTitleBar.ExtendViewIntoTitleBar = true;
 
 ### Draggable regions
 
-The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_SetTitleBar_Windows_UI_Xaml_UIElement_) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
+The draggable region of the title bar defines where the user can click and drag to move the window around (as opposed to simply dragging content within the app’s canvas). You specify the draggable region by calling the [Window.SetTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.settitlebar) method and passing in a UIElement that defines the draggable region. (The UIElement is often a panel that contains other elements.)
 
 Here's how to set a Grid of content as the draggable title bar region. This code goes in the XAML and code-behind for your app's first page. See the [Full customization example](./title-bar.md#full-customization-example) section for the full code.
 
@@ -141,7 +141,7 @@ The UIElement (`AppTitleBar`) is part of the XAML for your app. You can either d
 You can call SetTitleBar to switch to a new title bar element while your app is running. You can also pass **null** as the parameter to SetTitleBar to revert to the default dragging behavior. (See "Default draggable region" for more info.)
 
 > [!IMPORTANT]
-> The draggable region you specify needs to be hit testable, which means, for some elements, you might need to set a transparent background brush. See the remarks on [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper#Windows_UI_Xaml_Media_VisualTreeHelper_FindElementsInHostCoordinates_Windows_Foundation_Point_Windows_UI_Xaml_UIElement_) for more info.
+> The draggable region you specify needs to be hit testable, which means, for some elements, you might need to set a transparent background brush. See the remarks on [VisualTreeHelper.FindElementsInHostCoordinates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates) for more info.
 >
 >For example, if you define a Grid as your draggable region, set `Background="Transparent"` to make it draggable.
 >

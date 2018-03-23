@@ -119,7 +119,7 @@ if (signInSilentlyTask.Result.Status != SignInStatus.Success)
     signInStatus = signInTask.Result.Status;
 }
 ```
-In this example the results of the sign-in calls are stored in the variable `signInStatus`. This allows us to check whether or not the sign-in was succesful and act accordingly. In this example the function first attempts to sign-in silently, then if the silent sign in fails the function calls the normal sign in function. Once you have a succesful call to one of the sign-in functions you will have signed in the user. You can now use the `XboxLiveUser.User` to obtain and display details about the signed in user. Take a look at the `LoadProfileInfo()` function in **UserProfile.cs** for an example of how to use the `XboxLiveUser.User` to display information about a signed in user.
+In this example the results of the sign-in calls are stored in the variable `signInStatus`. This allows us to check whether or not the sign-in was succesful and act accordingly. In this example the function first attempts to sign-in silently, then if the silent sign in fails the function calls the normal sign in function. Once you have a successful call to one of the sign-in functions you will have signed in the user. You can now use the `XboxLiveUser.User` to obtain and display details about the signed in user. Take a look at the `LoadProfileInfo()` function in **UserProfile.cs** for an example of how to use the `XboxLiveUser.User` to display information about a signed in user.
 
 ##Troubleshooting
 If you're having issues signing in to Xbox Live try reading [Troubleshooting Xbox Live sign-in](../using-xbox-live/troubleshooting/troubleshooting-sign-in.md).

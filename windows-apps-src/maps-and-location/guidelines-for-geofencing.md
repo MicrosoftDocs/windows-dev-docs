@@ -128,7 +128,6 @@ If your app needs to use a geofence with a small radius, advise users to use you
 
 * [Set up a geofence](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698)
-<!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 

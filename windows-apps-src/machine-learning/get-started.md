@@ -1,13 +1,13 @@
 ---
 author: serenaz
-title: Get started with Windows Machine Learning
-description: Create your first WinML app with this step-by-step tutorial.
+title: Get started with Windows ML
+description: Create your first Windows ML app with this step-by-step tutorial.
 ms.author: sezhen
 ms.date: 03/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Machine Learning, winml
+keywords: windows 10, uwp, Windows Machine Learning, winml, Windows ML
 ms.localizationpriority: medium
 ---
 
@@ -16,19 +16,21 @@ ms.localizationpriority: medium
 In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows Machine Learning in your app.
 
 ## Prerequisites
-- [Windows SDK - Build 17110](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
+- [Windows SDK - Build 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
 - [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/): Note that you'll need to check off the optional Windows 10 Preview SDK (10.0.17110.0) inside Visual Studio Installer.
 
 ## 1. Download the sample
-First, you'll need to download our [MNIST sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template "MNIST_GetStarted" with implemented XAML controls and events, including:
+First, you'll need to download our [MNIST_GetStarted sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template with implemented XAML controls and events, including:
 - An [InkCanvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) to draw the digit.
 - [Buttons](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button) to interpret the digit and clear the canvas. 
 - Helper routines to convert the InkCanvas output to a [VideoFrame](https://docs.microsoft.com/uwp/api/windows.media.videoframe). 
 
-A completed "MNIST" sample is also available to download from GitHub.
+A completed MNIST sample is also available to download from GitHub.
 
-## 2. Open project in Visual Studio
-Launch Visual Studio 2017, and open the MNIST sample application. Inside the solution explorer, the project has three main code files:
+## 2. Open project in Visual Studio Preview
+Launch Visual Studio Preview, and open the MNIST sample application. Note that if the solution is shown as unavailable, you'll need to right-click and select "Reload Project."
+
+Inside the solution explorer, the project has three main code files:
 - `MainPage.xaml` - All of our XAML code to create the UI for the InkCanvas, buttons, and labels.
 - `MainPage.xaml.cs` - Where our application code lives.
 - `Helper.cs` - Helper routines to crop and convert image formats. 
@@ -36,6 +38,8 @@ Launch Visual Studio 2017, and open the MNIST sample application. Inside the sol
 ![Visual Studio solution explorer with project files](images/get-started1.png)
 
 ## 3. Build and run project
+In the Visual Studio toolbar, change the Solution Platform from "ARM" to "x64" to run the project on your local machine.
+
 To run the project, click the **Start Debugging** button on the toolbar, or press F5. The application should show an InkCanvas where users can write a digit, a "Recognize" button to interpret the number, an empty label field where the interpreted digit will be displayed as text, and a "Clear Digit" button to clear the InkCanvas.
 
 ![Application screenshot](images/get-started2.png)  
@@ -43,7 +47,7 @@ To run the project, click the **Start Debugging** button on the toolbar, or pres
 ## 4. Download a model
 Next, let's get a machine learning model to add to our app. For this tutorial, we'll use a pre-trained **MNIST model** that was trained with the [Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/) and [exported to ONNX format](https://github.com/onnx/tutorials/blob/master/tutorials/CntkOnnxExport.ipynb). 
 
-If you are using the MNIST_GetStarted sample from GitHub, the MNIST model has already been included in your Assets folder, and you will only need to add it to your application. You can also download the pre-trained model from the [ONNX Model Zoo](https://github.com/onnx/models) on GitHub.
+If you are using the MNIST_GetStarted sample from GitHub, the MNIST model has already been included in your Assets folder, and you will need to add it to your application as an existing item. You can also download the pre-trained model from the [ONNX Model Zoo](https://github.com/onnx/models) on GitHub.
 
 If you're interested in training your own model, you can follow this [tutorial](train-ai-model.md) that we used to train this MNIST model.
 
@@ -103,8 +107,6 @@ In this case, our model is expecting an input of type VideoFrame.
 Using our included helper functions in `helper.cs`, we will copy the contents of the InkCanvas, convert it to type VideoFrame, and bind it to our model.
 
 ```csharp
-private Helper helper = new Helper();
-
 private async void recognizeButton_Click(object sender, RoutedEventArgs e)
 {
      //Bind model input with contents from InkCanvas
@@ -153,4 +155,4 @@ Once we build and launch the app, we'll be able to recognize a number drawn on t
 ![complete app](images/get-started4.png)
 
 ## 8. Next steps
-That's it - you've made your first Windows Machine Learning app! For more samples to get started with Windows ML, check out [Sample apps](samples.md).
+That's it - you've made your first Windows ML app! For more samples to get started with Windows ML, check out [Sample apps](samples.md).

@@ -170,7 +170,7 @@ Use the following URIs to open various pages of the Settings app.
 | Proxy | ms-settings:network-proxy |
 | Status | ms-settings:network-status |
 | VPN | ms-settings:network-vpn |
-| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adaptor) |
+| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
 | Wi-Fi Calling | ms-settings:network-wificalling (only available if Wi-Fi calling is enabled) |
 
 ## Personalization
@@ -278,6 +278,7 @@ Use the following URIs to open various pages of the Settings app.
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
 | Region & language | ms-settings:regionlanguage |
 | Speech Language | ms-settings:speech |
+| Traditional Chinese Quick IME settings | ms-settings:regionlanguage-quickime (available if the Microsoft Traditional Chinese Quick input method editor is installed) |
 | Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
 
 ## Update & security

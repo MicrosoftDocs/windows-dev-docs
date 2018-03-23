@@ -17,10 +17,6 @@ ms.localizationpriority: medium
 
 This topic shows you how to package your app without using tools such as Visual Studio or the Desktop App Converter (DAC).
 
-<div style="float: left; padding: 10px">
-    ![manual flow](images/desktop-to-uwp/manual-flow.png)
-</div>
-
 To manually package your app, create a package manifest file, and then run a command line tool to generate a Windows app package.
 
 Consider manual packaging if you install your app by using the xcopy command, or you're familiar with the changes that your app's installer makes to the system and want more granular control over the process.
@@ -155,6 +151,7 @@ Here is an example [VisualElements](https://docs.microsoft.com/uwp/schemas/appxp
 	Description="A useful description" />
 ```
 <a id="target-based-assets" />
+
 ## (Optional) Add Target-based unplated assets
 
 Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You can read more about them [here](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets).
@@ -171,6 +168,7 @@ Target-based assets are for icons and tiles that appear on the Windows taskbar, 
 4. Continue to the next subsection to generate a new Package Resource Index file.
 
 <a id="make-pri" />
+
 ### Generate a Package Resource Index (PRI) file
 
 If you create target-based assets as described in the section above, or you modify any of the visual assets of your app after you've created the package, you'll have to generate a new PRI file.
@@ -188,6 +186,7 @@ If you create target-based assets as described in the section above, or you modi
 6.	Package your Windows app package by using the instructions in the next step.
 
 <a id="make-appx" />
+
 ## Generate a Windows app package
 
 Use **MakeAppx.exe** to generate a Windows app package for your project. It's included with the Windows 10 SDK, and if you have Visual Studio installed, it can be easily accessed through the Developer Command Prompt for your Visual Studio version.

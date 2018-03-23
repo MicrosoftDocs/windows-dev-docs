@@ -10,7 +10,6 @@ ms.technology: uwp
 keywords: windows 10, uwp, extend, componentize, app service, package, extension
 ms.localizationpriority: medium
 ---
-
 # Extend your app with services, extensions, and packages
 
 There are different technologies in Windows 10 that will help you extend and componentize your app. This table should help you determine which technology you should use for your scenario. It is followed by a brief description of the scenarios and technologies.
@@ -18,13 +17,13 @@ There are different technologies in Windows 10 that will help you extend and com
 
 | Scenario                           | Resource package | Optional package | App Extension    | App service      | Streaming Install |
 |------------------------------------|:----------------:|:----------------:|:----------------:|:----------------:|:-----------------:|
-| 3rd party code plug-ins            |                  |                  |:heavy_check_mark:|                  |                   |
-| In-proc code plug-ins              |                  |:heavy_check_mark:|                  |                  |                   |
-| UX Assets (strings/images)         |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |:heavy_check_mark: |
-| On demand content <br/> (e.g. additional Levels) |    |:heavy_check_mark:|:heavy_check_mark:|                  |:heavy_check_mark: |
-| Separate licensing and acquisition |                  |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                   |
-| In-app acquisition                 |                  |:heavy_check_mark:|:heavy_check_mark:|                  |                   |
-| Optimize install time              |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |:heavy_check_mark: |  
+| 3rd party code plug-ins            |                  |                  | :heavy_check_mark: |                  |                   |
+| In-proc code plug-ins              |                  | :heavy_check_mark: |                  |                  |                   |
+| UX Assets (strings/images)         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                  | :heavy_check_mark: |
+| On demand content <br/> (e.g. additional Levels) |    | :heavy_check_mark: | :heavy_check_mark: |                  | :heavy_check_mark: |
+| Separate licensing and acquisition |                  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                   |
+| In-app acquisition                 |                  | :heavy_check_mark: | :heavy_check_mark: |                  |                   |
+| Optimize install time              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                  | :heavy_check_mark: |
 
 ## Scenario descriptions (rows in the table)
 
