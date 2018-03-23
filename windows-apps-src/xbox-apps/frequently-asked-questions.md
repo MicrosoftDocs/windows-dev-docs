@@ -120,26 +120,6 @@ If Visual Studio cannot connect to your Xbox One:
 
 5. Make sure that you are using the Universal (Unencrypted Protocol) in the Authentication drop-down list on the **Debug** tab. For more details, see [Development environment setup](development-environment-setup.md).
 
-<!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
-
-<!--
-If Visual Studio can connect, but deployment is failing (for example you get this error message: "DEP0700 : Registration of the app failed.(0x80073cf9)"):
-
-1. Make sure that your app is not installed by uninstalling it from the Collections app in the Xbox One shell. 
-
-> **Note**&nbsp;&nbsp;Uninstalling your app from Windows Device Portal (WDP) will not resolve the issue.
-
-2. If your issues persist, uninstall your app or game in the Collections app, leave Developer Mode, restart to Retail Mode, and then switch back to Developer Mode. 
-This will clear Dev Storage.
-
-3. If your issues persist, follow the steps above and then use **Reset and keep my games & apps** to delete any stored state on your Xbox One. 
-Go to Settings > System > Console info & updates > Reset console, and select the **Reset and keep my games & apps** button.
-
-> **Caution**&nbsp;&nbsp;Doing this will delete all saved settings on your Xbox One including wireless settings, user accounts and any game progress that has not been saved to cloud storage.
-
-> **Caution**&nbsp;&nbsp;DO NOT select the **Reset and remove everything** button.
-This will delete all of your games, apps, settings and content and deactivate Developer Mode.
--->
 
 ### If I'm building an app using HTML/JavaScript, how do I enable Gamepad navigation?
 
