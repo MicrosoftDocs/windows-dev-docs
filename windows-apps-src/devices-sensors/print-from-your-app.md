@@ -165,7 +165,7 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 
 After the print task is created, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) requests a collection of print pages to show in the print preview UI by raising the [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) event. This corresponds with the **Paginate** method of the **IPrintPreviewPageCollection** interface. The event handler you created during registration will be called at this time.
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > If the user changes print settings, the paginate event handler will be called again to allow you to reflow the content. For the best user experience, we recommend checking the settings before you reflow the content and avoid reinitializing the paginated content when it's not necessary.
 
 In the [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) event handler (the `CreatePrintPreviewPages` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), create the pages to show in the print preview UI and to send to the printer. The code you use to prepare your app's content for printing is specific to your app and the content you print. Refer to the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) source code to see how it formats its content for printing.
@@ -252,10 +252,10 @@ This step creates a new print option, defines a list of values that the option s
 
 | Option name          | Action |
 |----------------------|--------|
-| **Print all**        | Print all pages in the document. |
-| **Print Selection**  | Print only the content the user selected. |
-| **Print Range**      | Display an edit control into which the user can enter the pages to print. |
- 
+| **Print all**        | Print all pages in the document.|
+| **Print Selection**  | Print only the content the user selected.|
+| **Print Range**      | Display an edit control into which the user can enter the pages to print.|
+
 First, modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to add the code to get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object.
 
 ```csharp

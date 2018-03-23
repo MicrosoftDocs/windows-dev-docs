@@ -4,7 +4,7 @@ Description: You can use the SendRequestAsync method to send requests to the Mic
 title: Send requests to the Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.author: mcleans
-ms.date: 11/29/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 Starting in Windows 10, version 1607, the Windows SDK provides APIs for Store-related operations (such as in-app purchases) in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. However, although the services that support the Store are constantly being updated, expanded, and improved between OS releases, new APIs are typically added to the Windows SDK only during major OS releases.
 
-We provide the [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_) method as a flexible way to make new Store operations available to Universal Windows Platform (UWP) apps before a new version of the Windows SDK is released. You can use this method to send requests to the Store for new operations that do not yet have a corresponding API available in the latest release of the Windows SDK.
+We provide the [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) method as a flexible way to make new Store operations available to Universal Windows Platform (UWP) apps before a new version of the Windows SDK is released. You can use this method to send requests to the Store for new operations that do not yet have a corresponding API available in the latest release of the Windows SDK.
 
 > [!NOTE]
 > The **SendRequestAsync** method is available only to apps that target Windows 10, version 1607, or later. Some of the requests supported by this method are only supported in releases after Windows 10, version 1607.
@@ -156,4 +156,4 @@ If there is an error with the request, the [HttpStatusCode](https://docs.microso
 ## Related topics
 
 * [Show a rating and review dialog in your app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_)
+* [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

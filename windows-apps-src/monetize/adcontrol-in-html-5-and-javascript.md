@@ -4,7 +4,7 @@ ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: Learn how to use the AdControl class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP).
 title: AdControl in HTML 5 and JavaScript
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,6 +28,7 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 ## Integrate a banner ad into your app
 
 1. In Visual Studio, open your project or create a new project.
+
     > [!NOTE]
     > If you're using an existing project, open the Package.appxmanifest file in your project and ensure that the **Internet (Client)** capability is selected. Your app needs this capability to receive test ads and live ads.
 
@@ -35,9 +36,9 @@ For a complete sample project that demonstrates how to add banner ads to a JavaS
 
 3. Add a reference to the Microsoft Advertising SDK in your project:
 
-  1. From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
-  2.  In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
-  3.  In **Reference Manager**, click OK.
+    1. From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
+    2.  In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
+    3.  In **Reference Manager**, click OK.
 
 6.  Open the index.html file (or other html file as appropriate for your project).
 

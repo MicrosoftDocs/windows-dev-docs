@@ -64,7 +64,7 @@ Next, add the  *backgroundMediaPlayback* capability to the **Capabilities** elem
 </Capabilities>
 ```
 
-##Handle transitioning between foreground and background
+## Handle transitioning between foreground and background
 When your app moves from the foreground to the background, the [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) event is raised. And when your app returns to the foreground, the [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) event is raised. Because these are app lifecycle events, you should register handlers for these events when your app is created. In the default project template, this means adding it to the **App** class constructor in App.xaml.cs. 
 
 [!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]

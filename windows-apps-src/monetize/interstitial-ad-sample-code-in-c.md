@@ -4,7 +4,7 @@ ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: Learn how to launch an interstitial ad using C#.
 title: Interstitial ad sample code in C#
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -22,7 +22,8 @@ This section shows the contents of the MainPage.xaml and MainPage.xaml.cs files 
 
 This sample app uses two buttons to request and then launch an interstitial ad. Replace the values of the ```myAppId``` and ```myAdUnitId``` fields with live values from Windows Dev Center before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
->**Note**&nbsp;&nbsp;To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **AdType.Display** to the first parameter of the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method instead of **AdType.Video**. For more information, see [Interstitial ads](interstitial-ads.md).
+> [!NOTE]
+> To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **AdType.Display** to the first parameter of the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method instead of **AdType.Video**. For more information, see [Interstitial ads](interstitial-ads.md).
 
 ### MainPage.xaml
 

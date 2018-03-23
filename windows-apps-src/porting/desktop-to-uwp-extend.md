@@ -4,7 +4,7 @@ Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: Extend your desktop application with Windows UIs and components
 ms.author: normesta
-ms.date: 11/28/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -125,7 +125,7 @@ You can also open the **package.appxmanifest** in the designer, choose the **Dec
 
 ### Start the UWP app
 
-First, from your desktop application, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method.
+First, from your desktop application, create a [Uri](https://msdn.microsoft.com/library/system.uri.aspx) that includes the protocol name and any parameters you want to pass into the UWP app. Then, call the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method.
 
 Here's a basic example in C#.
 
@@ -185,6 +185,7 @@ DllExport bool __stdcall LaunchMap(double lat, double lon)
 ```
 
 <a id="parse" />
+
 ### Parse parameters and show a page
 
 In the **App** class of your UWP project, override the **OnActivated** event handler. If the app is activated by your protocol, parse the parameters and then open the page that you want.

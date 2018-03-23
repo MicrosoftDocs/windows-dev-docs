@@ -35,7 +35,6 @@ With single-mode interactions, multiple input types are supported, but only one 
 
 ## Multimodal interactions
 
-
 With multimodal interactions, multiple input methods in sequence are used to complete a single action.
 
 Speech + gesture  
