@@ -263,6 +263,7 @@
 ## [Get started](../machine-learning/get-started.md)
 ## [Train a model](../machine-learning/train-ai-model.md)
 ## [Convert a model](../machine-learning/conversion-samples.md)
+## [Integrate a model](../machine-learning/integrate-model.md)
 ## [Sample apps](../machine-learning/samples.md)
 # [Maps and location](../maps-and-location/index.md)
 ## [Request authentication key](../maps-and-location/authentication-key.md)

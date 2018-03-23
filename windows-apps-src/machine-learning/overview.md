@@ -103,5 +103,7 @@ Input parameters definition:
 - `NAMESPACE`: the namespace of the generated code
 - `OUTPUT-FILE`: file path where the generated code will be written to. If OUTPUT-FILE is not specified, the generated code is written to the standard output
 
+To learn how to use the generated code in your app, see [Integrate a model into your app with Windows ML](integrate-model.md).
+
 ## Next steps
 Try creating your first Windows ML app with a step-by-step tutorial in [Get Started](get-started.md).
