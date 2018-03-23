@@ -4,7 +4,7 @@ ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: Learn how to launch an interstitial ad using JavaScript/HTML.
 title: Interstitial ad sample code in JavaScript
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -24,7 +24,8 @@ This sample app uses two buttons to request and then launch an interstitial ad. 
 
 Replace the values of the ```applicationId``` and ```adUnitId``` variables with live values from Windows Dev Center before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md#live-ad-units).
 
->**Note**&nbsp;&nbsp;To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method instead of **InterstitialAdType.video**. For more information, see [Interstitial ads](interstitial-ads.md).
+> [!NOTE]
+> To alter this example to show an interstitial banner ad instead of an interstitial video ad, pass the value **InterstitialAdType.display** to the first parameter of the [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) method instead of **InterstitialAdType.video**. For more information, see [Interstitial ads](interstitial-ads.md).
 
 ### index.html
 

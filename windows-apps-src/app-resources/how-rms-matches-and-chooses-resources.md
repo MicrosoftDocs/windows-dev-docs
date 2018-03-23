@@ -12,9 +12,7 @@ keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---
 
-
 # How the Resource Management System matches and chooses resources
-
 When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This is done by taking all qualifiers into consideration to rank all of the candidates.
 
 In this ranking process, the different qualifiers are given different priorities: language has the greatest impact on the overall ranking, followed by contrast, then scale, and so on. For each qualifier, candidate qualifiers are compared with the context qualifier value to determine a quality of match. How the comparison is done depends upon the qualifier.
@@ -38,7 +36,6 @@ For all the resource candidates still in consideration, the resource loader look
 If there is a tie, the next-highest priority context qualifier value is inspected and the process continues, until a best match is found.
 
 ## Example of choosing a resource candidate
-
 Consider these files.
 
 ```
@@ -82,7 +79,7 @@ Next, the Resource Management System uses the next-highest priority context qual
 en/images/logo.scale-400.jpg
 ```
 
-You can use the advanced [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) method to retrieve all of the candidates in the order that they match the context settings. For the example we just walked through, **ResolveAll** returns candidates in this order.
+You can use the advanced [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) method to retrieve all of the candidates in the order that they match the context settings. For the example we just walked through, **ResolveAll** returns candidates in this order.
 
 ```
 en/images/logo.scale-400.jpg
@@ -92,7 +89,6 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## Example of producing a fallback choice
-
 Consider these files.
 
 ```
@@ -135,9 +131,7 @@ de/images/contrast-standard/logo.jpg
 ```
 
 ## Important APIs
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## Related topics
-
 * [Compile resources manually with MakePri.exe](compile-resources-manually-with-makepri.md)

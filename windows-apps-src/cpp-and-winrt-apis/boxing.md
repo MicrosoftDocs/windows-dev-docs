@@ -33,7 +33,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
 }
 ```
 
-To set the content property of a XAML [**Button**](/uwp/api/windows.ui.xaml.controls.button?branch=live), you call the [**Button::Content**](/uwp/api/windows.ui.xaml.controls.button?branch=live#Windows_UI_Xaml_Controls_ContentControl_Content) mutator function. To set the content property to a string value, you can use this code.
+To set the content property of a XAML [**Button**](/uwp/api/windows.ui.xaml.controls.button?branch=live), you call the [**Button::Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content?) mutator function. To set the content property to a string value, you can use this code.
 
 ```cppwinrt
 Button().Content(winrt::box_value(L"Clicked"));

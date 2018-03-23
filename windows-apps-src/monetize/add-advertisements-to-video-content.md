@@ -4,7 +4,7 @@ ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: Learn how to use the AdScheduler class to show ads in video content.
 title: Show ads in video content
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,15 +14,14 @@ ms.localizationpriority: medium
 
 # Show ads in video content
 
-
-This walkthrough shows how to use the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
+This walkthrough shows how to use the **AdScheduler** class to show ads in video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML.
 
 > [!NOTE]
 > This feature is currently supported only for UWP apps that are written using JavaScript with HTML.
 
-[AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) works with both progressive and streaming media, and uses IAB standard Video Ad Serving Template (VAST) 2.0/3.0 and VMAP payload formats. By using standards, [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) is agnostic to the ad service with which it interacts.
+**AdScheduler** works with both progressive and streaming media, and uses IAB standard Video Ad Serving Template (VAST) 2.0/3.0 and VMAP payload formats. By using standards, **AdScheduler** is agnostic to the ad service with which it interacts.
 
-Advertising for video content differs based upon whether the program is under ten minutes (short form), or over ten minutes (long form). Although the latter is more complicated to set up on the service, there is actually no difference in how one writes the client side code. If the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) receives a VAST payload with a single ad instead of a manifest, it is treated as if the manifest called for a single pre-roll ad (one break at time 00:00).
+Advertising for video content differs based upon whether the program is under ten minutes (short form), or over ten minutes (long form). Although the latter is more complicated to set up on the service, there is actually no difference in how one writes the client side code. If the **AdScheduler** receives a VAST payload with a single ad instead of a manifest, it is treated as if the manifest called for a single pre-roll ad (one break at time 00:00).
 
 ## Prerequisites
 
@@ -51,45 +50,139 @@ Advertising for video content differs based upon whether the program is under te
 
 3. Add a reference to the **Microsoft Advertising SDK for JavaScript** library to your project.
 
-  a. From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
-
-  b. In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
-
-  c. In **Reference Manager**, click OK.
+    1. From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
+    2. In **Reference Manager**, expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
+    3. In **Reference Manager**, click OK.
 
 4.  Add the AdScheduler.js file to your project:
 
-  a.  In Visual Studio, click **Project** and **Manage NuGet Packages**.
-
-  b.  In the search box, type **Microsoft.StoreServices.VideoAdScheduler** and install the Microsoft.StoreServices.VideoAdScheduler package. The AdScheduler.js file is added to the ../js subdirectory in your project.
+    1. In Visual Studio, click **Project** and **Manage NuGet Packages**.
+    2. In the search box, type **Microsoft.StoreServices.VideoAdScheduler** and install the Microsoft.StoreServices.VideoAdScheduler package. The AdScheduler.js file is added to the ../js subdirectory in your project.
 
 5.  Open the index.html file (or other html file as appropriate for your project). In the `<head>` section, after the project’s JavaScript references of default.css and main.js, add the reference to ad.js and adscheduler.js.
 
-  ``` html
-  <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
-  <script src="/js/adscheduler.js"></script>
-  ```
+    ``` html
+    <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
+    <script src="/js/adscheduler.js"></script>
+    ```
 
-  <span/>
-  > **Note**&nbsp;&nbsp;This line must be placed in the `<head>` section after the include of main.js; otherwise, you will encounter an error when you build your project.
+    > [!NOTE]
+    > This line must be placed in the `<head>` section after the include of main.js; otherwise, you will encounter an error when   you build your project.
 
-6.  In the main.js file in your project, add code that creates a new [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/hh440975.aspx).
+6.  In the main.js file in your project, add code that creates a new **AdScheduler** object. Pass in the **MediaPlayer** that hosts your video content. The code must be placed so that it runs after [WinJS.UI.processAll](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh440975).
 
-  [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
+    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
-7.  Use the [requestSchedule](https://msdn.microsoft.com/library/windows/apps/mt732208.aspx) or [requestScheduleByUrl](https://msdn.microsoft.com/library/windows/apps/mt732210.aspx) methods to request an ad schedule from the server and insert it into the **MediaPlayer** timeline, and then play the video media.
+7.  Use the **requestSchedule** or **requestScheduleByUrl** methods of the **AdScheduler** object to request an ad schedule from the server and insert it into the **MediaPlayer** timeline, and then play the video media.
 
-  * If you are a Microsoft partner who has received permission to request an ad schedule from the Microsoft ad server, use [requestSchedule](https://msdn.microsoft.com/library/windows/apps/mt732208.aspx) and specify the application ID and ad unit ID that were provided to you by your Microsoft representative. This method takes the form of a **Promise**, which is an asynchronous construct where two function pointers are passed to handle the success and failure cases, respectively. For more information, see [Asynchronous patterns in UWP using JavaScript](https://msdn.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript).
+    * If you are a Microsoft partner who has received permission to request an ad schedule from the Microsoft ad server, use **requestSchedule** and specify the application ID and ad unit ID that were provided to you by your Microsoft representative.
 
-      [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
+        This method takes the form of a [Promise](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript), which is an asynchronous construct where two function pointers are passed: a pointer for the **onComplete** function to call when the promise completes successfully and a pointer for the **onError** function to call if an error is encountered. In the **onComplete** function, start playback of your video content. The ad will start playing at the scheduled time. In your **onError** function, handle the error and then start playback of your video. Your video content will play without an ad. The argument of the **onError** function is an object that contains the following members.
 
-  * To request an ad schedule from a non-Microsoft ad server, use [requestScheduleByUrl](https://msdn.microsoft.com/library/windows/apps/mt732210.aspx), and pass in the server URL. This method also takes the form of a **Promise**.
+        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
-      [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
+    * To request an ad schedule from a non-Microsoft ad server, use **requestScheduleByUrl**, and pass in the server URI. This method also takes the form of a **Promise** that accepts pointers for the **onComplete** and **onError** functions. The ad payload that is returned from the server must conform to the Video Ad Serving Template (VAST) or Video Multiple Ad Playlist (VMAP) payload formats.
 
-    <span/>
-    >**Note**&nbsp;&nbsp;You must call **play** even if the function fails, because the [AdScheduler](https://msdn.microsoft.com/library/windows/apps/mt732197.aspx) will tell the **MediaPlayer** to skip the ad(s) and move straight to the content. You may have a different business requirement, such as inserting a built-in ad if an ad can't be successfully fetched remotely.
+        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
 
-8.  During playback, you can handle additional events that let your app track progress and/or errors which may occur after the initial ad matching process. The following code shows some of these events, including [onPodStart](https://msdn.microsoft.com/library/windows/apps/mt732206.aspx), [onPodEnd](https://msdn.microsoft.com/library/windows/apps/mt732205.aspx), [onPodCountdown](https://msdn.microsoft.com/library/windows/apps/mt732204.aspx), [onAdProgress](https://msdn.microsoft.com/library/windows/apps/mt732201.aspx), [onAllComplete](https://msdn.microsoft.com/library/windows/apps/mt732202.aspx), and [onErrorOccurred](https://msdn.microsoft.com/library/windows/apps/mt732203.aspx).
+    > [!NOTE]
+    > You should wait for **requestSchedule** or **requestScheduleByUrl** to return before starting to play the primary video content in the **MediaPlayer**. Starting to play media before **requestSchedule** returns (in the case of a pre-roll advertisement) will result in the pre-roll interrupting the primary video content. You must call **play** even if the function fails, because the **AdScheduler** will tell the **MediaPlayer** to skip the ad(s) and move straight to the content. You may have a different business requirement, such as inserting a built-in ad if an ad can't be successfully fetched remotely.
 
-  [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
+8.  During playback, you can handle additional events that let your app track progress and/or errors which may occur after the initial ad matching process. The following code shows some of these events, including **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete**, and **onErrorOccurred**.
+
+    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
+
+## AdScheduler members
+
+This section provides some details about the members of the **AdScheduler** object. For more information about these members, see the comments and definitions in the AdScheduler.js file in your project.
+
+### requestSchedule
+
+This method requests an ad schedule from the Microsoft ad server and inserts it into the timeline of the **MediaPlayer** that was passed to the **AdScheduler** constructor.
+
+The optional third paramter (*adTags*) is a JSON collection of name/value pairs that can be used for apps that have advanced targeting. For example, an app that plays a variety of auto-related videos might supplement the ad unit ID with the make and model of the car being shown. This parameter is intended to be used only by partners who receive approval from Microsoft to use ad tags.
+
+The following items should be noted when referring to *adTags*:
+
+* This parameter is a very rarely used option. The publisher must work closely with Microsoft before using adTags.
+* Both the names and the values must be predetermined on the ad service. Ad tags are not open ended search terms or keywords.
+* The maximum supported number of tags is 10.
+* Tag names are restricted to 16 characters.
+* Tag values have a maximum of 128 characters.
+
+### requestScheduleByUri
+
+This method requests an ad schedule from the non-Microsoft ad server specified in the URI and inserts it into the timeline of the **MediaPlayer** that was passed to the **AdScheduler** constructor. The ad payload that is returned by the ad server must conform to the Video Ad Serving Template (VAST) or Video Multiple Ad Playlist (VMAP) payload formats.
+
+### mediaTimeout
+
+This property gets or sets the number of milliseconds that the media must be playable. A value of 0 informs the system to never timeout. The default is 30000 ms (30 seconds).
+
+### playSkippedMedia
+
+This property gets or sets a **Boolean** value that indicates whether scheduled media will play if user skips ahead to a point past a scheduled start time.
+
+The ad client and media player will enforce rules in terms what happens to advertisements during fast forwarding and rewinding of the primary video content. In most cases, app developers do not allow advertisements to be entirely skipped over but do want to provide a reasonable experience for the user. The following two options fall within the needs of most developers:
+
+1. Allow end-users to skip over advertisement pods at will.
+2. Allow users to skip over advertisement pods but play the most recent pod when playback resumes.
+
+The **playSkippedMedia** property has the following conditions:
+
+* Advertisements cannot be skipped or fast forwarded once the advertisement begins.
+* All advertisements in an advertisement pod will play once the pod has started.
+* Once played, an advertisement will not play again during the primary content (movie, episode, etc.); advertisement markers will be marked as played or removed.
+* Pre-rollout advertisements cannot be skipped.
+
+When resuming content that contains advertising, set **playSkippedMedia** to **false** to skip pre-rolls and prevent the most recent ad break from playing. Then, after the content starts, set **playSkippedMedia** to **true** to ensure that users cannot fast-forward through subsequent ads.
+
+> [!NOTE]
+> A pod is a group of ads that play in a sequence, such as a group of ads that play during a commercial break. For more details, see the IAB Digital Video Ad Serving Template (VAST) specification.
+
+### requestTimeout
+
+This property gets or sets the number of milliseconds to wait for an ad request response before timing out. A value of 0 informs the system to never timeout. The default is 30000 ms (30 seconds).
+
+### schedule
+
+This property gets the schedule data that was retrieved from the ad server. This object includes the full hierarchy of data that corresponds to the structure of the Video Ad Serving Template (VAST) or Video Multiple Ad Playlist (VMAP) payload.
+
+### onAdProgress  
+
+This event is raised when ad playback reaches quartile checkpoints. The second parameter of the event handler (*eventInfo*) is a JSON object with the following members:
+
+* **progress**: The ad playback status (one of the **MediaProgress** enum values defined in AdScheduler.js).
+* **clip**: The video clip that is being played. This object is not intended to be used in your code.
+* **adPackage**: An object that represents the part of the ad payload that corresponds to the ad that is playing. This object is not intended to be used in your code.
+
+### onAllComplete  
+
+This event is raised when the main content reaches the end and any scheduled post-roll ads are also ended.
+
+### onErrorOccurred  
+
+This event is raised when the **AdScheduler** encounters an error. For more information about the error code values, see [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.errorcode.aspx).
+
+### onPodCountdown
+
+This event is raised when an ad is playing and indicates how much time remains in the current pod. The second parameter of the event handler (*eventData*) is a JSON object with the following members:
+
+* **remainingAdTime**: The number of seconds left for the current ad.
+* **remainingPodTime**: The number of seconds left for the current pod.
+
+> [!NOTE]
+> A pod is a group of ads that play in a sequence, such as a group of ads that play during a commercial break. For more details, see the IAB Digital Video Ad Serving Template (VAST) specification.
+
+### onPodEnd  
+
+This event is raised when an ad pod ends. The second parameter of the event handler (*eventData*) is a JSON object with the following members:
+
+* **startTime**: The pod's start time, in seconds.
+* **pod**: An object that represents the pod. This object is not intended to be used in your code.
+
+### onPodStart
+
+This event is raised when an ad pod starts. The second parameter of the event handler (*eventData*) is a JSON object with the following members:
+
+* **startTime**: The pod's start time, in seconds.
+* **pod**: An object that represents the pod. This object is not intended to be used in your code.

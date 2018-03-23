@@ -3,7 +3,7 @@ author: mcleanbyron
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: Request ratings and reviews for your app
 ms.author: mcleans
-ms.date: 11/29/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,7 +21,7 @@ When you are ready to analyze your ratings and reviews data, you can view the da
 
 ## Show a rating and review dialog in your app
 
-To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [SendRequestAsync](https://docs.microsoft.com/uwp/api/Windows.Services.Store.StoreRequestHelper#Windows_Services_Store_StoreRequestHelper_SendRequestAsync_Windows_Services_Store_StoreContext_System_UInt32_System_String_) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. Pass the integer 16 to the *requestKind* parameter and an empty string to the *parametersAsJson* parameter as shown in this code example. This example requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft, and it requires using statements for the **Windows.Services.Store**, **System.Threading.Tasks**, and **Newtonsoft.Json.Linq** namespaces.
+To programmatically show a dialog from your app that asks your customer to rate your app and submit a review, call the [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) method in the [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) namespace. Pass the integer 16 to the *requestKind* parameter and an empty string to the *parametersAsJson* parameter as shown in this code example. This example requires the [Json.NET](http://www.newtonsoft.com/json) library from Newtonsoft, and it requires using statements for the **Windows.Services.Store**, **System.Threading.Tasks**, and **Newtonsoft.Json.Linq** namespaces.
 
 > [!IMPORTANT]
 > The request to show the rating and review dialog must be called on the UI thread in your app.
@@ -85,7 +85,7 @@ The following table describes the fields in the JSON-formatted data string.
 
 ## Launch the rating and review page for your app in the Store
 
-If you want to programmatically open the rating and review page for your app in the Store, you can use the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/Windows.System.Launcher#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_) method with the ```ms-windows-store://review``` URI scheme as demonstrated in this code example.
+If you want to programmatically open the rating and review page for your app in the Store, you can use the [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) method with the ```ms-windows-store://review``` URI scheme as demonstrated in this code example.
 
 ```csharp
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://review/?ProductId=9WZDNCRFHVJL"));

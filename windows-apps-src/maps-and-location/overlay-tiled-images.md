@@ -19,6 +19,7 @@ Overlay third-party or custom tiled images on a map by using tile sources. Use t
 **Tip** To learn more about using maps in your app, download the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) on Github.
 
 <a id="tileintro" />
+
 ## Tiled image overview
 
 Map services such as Nokia Maps and Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
@@ -193,6 +194,7 @@ The following example loads tiles that are stored as files in the app's installa
 ```
 
 <a id="customuri" />
+
 ## Provide a custom URI
 
 

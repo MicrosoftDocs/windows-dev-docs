@@ -112,8 +112,8 @@ Advanced Installer also provides an extension for Visual Studio 2017 and 2015 th
 
 See this [video](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be) for a quick overview.
 
->[!TIP]
-Be sure to checkout the recently released [Advanced Installer Express Edition](https://www.advancedinstaller.com/express-edition.html).
+> [!TIP]
+> Be sure to checkout the recently released [Advanced Installer Express Edition](https://www.advancedinstaller.com/express-edition.html).
 
 #### Cloudhouse Compatibility Containers
 

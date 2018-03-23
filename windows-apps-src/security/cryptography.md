@@ -2,8 +2,8 @@
 title: Cryptography
 description: The article provides an overview of the cryptography features available to Universal Windows Platform (UWP) apps. For detailed information on particular tasks, see the table at the end of this article.
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
