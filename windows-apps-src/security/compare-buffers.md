@@ -2,7 +2,7 @@
 title: Compare buffers
 description: This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
-author: awkoren
+author: msatranjr
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article

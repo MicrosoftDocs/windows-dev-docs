@@ -2,7 +2,7 @@
 title: Create a Windows Hello login service
 description: This is Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps.
 ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
-author: awkoren
+author: msatranjr
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article

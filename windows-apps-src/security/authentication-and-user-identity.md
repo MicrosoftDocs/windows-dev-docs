@@ -2,7 +2,7 @@
 title: Authentication and user identity
 description: Universal Windows Platform (UWP) apps have several options for user authentication, ranging from simple single sign-on (SSO) using Web authentication broker to highly secure two-factor authentication.
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
-author: awkoren
+author: msatranjr
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article

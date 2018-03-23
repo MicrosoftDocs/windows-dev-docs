@@ -2,7 +2,7 @@
 title: Data protection
 description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a UWP app.
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
-author: awkoren
+author: msatranjr
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article

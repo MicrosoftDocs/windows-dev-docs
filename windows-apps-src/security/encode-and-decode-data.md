@@ -2,7 +2,7 @@
 title: Encode and decode data
 description: This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
-author: awkoren
+author: msatranjr
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article

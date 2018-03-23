@@ -2,7 +2,7 @@
 title: Export restrictions on cryptography
 description: Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
-author: awkoren
+author: msatranjr
 ms.author: alkoren
 ms.date: 02/08/2017
 ms.topic: article
