@@ -106,6 +106,18 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
+And in the Page1.xaml.h, dont forget to update the file as follows:
+
+```cpp
+public ref class Page1 sealed
+{
+public:
+    Page1();
+private:
+    void HyperlinkButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+};
+```
+
 In Page2.xaml, add the following content:
 
 -   A [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element named `pageTitle` as a child element of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). Change the value of the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property to `Page 2`.
@@ -135,6 +147,18 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
     this->Frame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid));
 }
 ```
+
+And in the Page2.xaml.h, dont forget to update the file as follows:
+```cpp
+public ref class Page2 sealed
+{
+public:
+    Page2();
+private:
+    void HyperlinkButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+};
+```
+
 > [!NOTE]
 > For C++ projects, you must add a `#include` directive in the header file of each page that references another page. For the inter-page navigation example presented here, page1.xaml.h file contains `#include "Page2.xaml.h"`, in turn, page2.xaml.h contains `#include "Page1.xaml.h"`.
 
