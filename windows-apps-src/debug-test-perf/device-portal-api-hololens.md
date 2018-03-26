@@ -4,7 +4,7 @@ ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: Device Portal API reference for HoloLens
 description: Learn about the Windows Device Portal for HoloLens REST API's that you can use to access the data and control your device programmatically.
 ms.author: pafarley
-ms.date: 09/26/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -25,9 +25,9 @@ Everything in the Windows Device Portal is built on top of REST API's that you c
 
 You can get the HTTPS requirements for the Device Portal by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/os/webmanagement/settings/https
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/os/webmanagement/settings/https |
 
 
 **URI parameters**
@@ -57,9 +57,9 @@ GET | /api/holographic/os/webmanagement/settings/https
 
 You can get the stored IPD value by using the following request format. The value is returned in millimeters.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/os/settings/ipd
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/os/settings/ipd |
 
 
 **URI parameters**
@@ -89,9 +89,9 @@ GET | /api/holographic/os/settings/ipd
 
 You can get a list of HoloLens specific ETW providers that are not registered with the system by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/os/etw/customproviders
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/os/etw/customproviders |
 
 
 **URI parameters**
@@ -121,9 +121,9 @@ GET | /api/holographic/os/etw/customproviders
 
 You can get the state of all services that are currently running by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/os/services
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/os/services |
 
 
 **URI parameters**
@@ -153,18 +153,18 @@ GET | /api/holographic/os/services
 
 You can set the HTTPS requirements for the Device Portal by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/management/settings/https
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/management/settings/https |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-required   | (**required**) Determines whether or not HTTPS is required for the Device Portal. Possible values are **yes**, **no**, and **default**.
+| URI parameter | Description |
+| :---          | :--- |
+| required   | (**required**) Determines whether or not HTTPS is required for the Device Portal. Possible values are **yes**, **no**, and **default**. |
 
 **Request headers**
 
@@ -189,18 +189,18 @@ required   | (**required**) Determines whether or not HTTPS is required for the 
 
 You can set the stored IPD by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/os/settings/ipd
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/os/settings/ipd |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-ipd   | (**required**) The new IPD value to be stored. This value should be in millimeters.
+| URI parameter | Description |
+| :---          | :--- |
+| ipd   | (**required**) The new IPD value to be stored. This value should be in millimeters. |
 
 **Request headers**
 
@@ -227,18 +227,18 @@ ipd   | (**required**) The new IPD value to be stored. This value should be in m
 
 You can accept websocket upgrades and run a mirage client that sends updates at 30 fps by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET/WebSocket | /api/holographic/perception/client
+| Method      | Request URI |
+| :------     | :----- |
+| GET/WebSocket | /api/holographic/perception/client |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-clientmode   | (**required**) Determines the tracking mode. A value of **active** forces visual tracking mode when it can't be established passively.
+| URI parameter | Description |
+| :---          | :--- |
+| clientmode   | (**required**) Determines the tracking mode. A value of **active** forces visual tracking mode when it can't be established passively. |
 
 **Request headers**
 
@@ -265,9 +265,9 @@ clientmode   | (**required**) Determines the tracking mode. A value of **active*
 
 You can get the thermal stage of the device by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/ |
 
 **URI parameters**
 
@@ -285,11 +285,11 @@ GET | /api/holographic/
 
 The possible values are indicated by the following table.
 
-Value | Description
---- | ---
-1 | Normal
-2 | Warm
-3 | Critical
+| Value | Description |
+| --- | --- |
+| 1 | Normal |
+| 2 | Warm |
+| 3 | Critical |
 
 **Status code**
 
@@ -304,19 +304,19 @@ Value | Description
 
 You can create a control stream or post data to a created stream by using the following request format. The posted data is expected to be of type **application/octet-stream**.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/control/stream
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/control/stream |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-priority   | (**required if creating a control stream**) Indicates the priority of the stream.
-streamid   | (**required if posting to a created stream**) The identifier for the stream to post to.
+| URI parameter | Description |
+| :---          | :--- |
+| priority   | (**required if creating a control stream**) Indicates the priority of the stream. |
+| streamid   | (**required if posting to a created stream**) The identifier for the stream to post to. |
 
 **Request headers**
 
@@ -341,9 +341,9 @@ streamid   | (**required if posting to a created stream**) The identifier for th
 
 You can delete a control stream by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-DELETE | /api/holographic/simulation/control/stream
+| Method      | Request URI |
+| :------     | :----- |
+| DELETE | /api/holographic/simulation/control/stream |
 
 
 **URI parameters**
@@ -373,9 +373,9 @@ DELETE | /api/holographic/simulation/control/stream
 
 You can open a web socket connection for a control stream by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET/WebSocket | /api/holographic/simulation/control/stream
+| Method      | Request URI |
+| :------     | :----- |
+| GET/WebSocket | /api/holographic/simulation/control/stream |
 
 
 **URI parameters**
@@ -405,9 +405,9 @@ GET/WebSocket | /api/holographic/simulation/control/stream
 
 You can get the simluation mode by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/simulation/control/mode
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/simulation/control/mode |
 
 
 **URI parameters**
@@ -437,18 +437,18 @@ GET | /api/holographic/simulation/control/mode
 
 You can set the simulation mode by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simluation/control/mode
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simluation/control/mode |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-mode   | (**required**) Indicates the simulation mode. Possible values include **default**, **simulation**, **remote**, and **legacy**.
+| URI parameter | Description |
+| :---          | :--- |
+| mode   | (**required**) Indicates the simulation mode. Possible values include **default**, **simulation**, **remote**, and **legacy**. |
 
 **Request headers**
 
@@ -475,18 +475,18 @@ mode   | (**required**) Indicates the simulation mode. Possible values include *
 
 You can delete a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-DELETE | /api/holographic/simulation/playback/file
+| Method      | Request URI |
+| :------     | :----- |
+| DELETE | /api/holographic/simulation/playback/file |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording to delete.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording to delete. |
 
 **Request headers**
 
@@ -511,9 +511,9 @@ recording   | (**required**) The name of the recording to delete.
 
 You can get all the available recordings by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/simulation/playback/files
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/simulation/playback/files |
 
 
 **URI parameters**
@@ -543,18 +543,18 @@ GET | /api/holographic/simulation/playback/files
 
 You can get the types of data in a loaded recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/simulation/playback/session/types
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/simulation/playback/session/types |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording you are interested in.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording you are interested in. |
 
 **Request headers**
 
@@ -579,9 +579,9 @@ recording   | (**required**) The name of the recording you are interested in.
 
 You can get all the loaded recordings by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/simulation/playback/session/files
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/simulation/playback/session/files |
 
 
 **URI parameters**
@@ -611,18 +611,18 @@ GET | /api/holographic/simulation/playback/session/files
 
 You can get the current playback state of a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/simulation/playback/session
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/simulation/playback/session |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording that you are interested in.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording that you are interested in. |
 
 **Request headers**
 
@@ -647,18 +647,18 @@ recording   | (**required**) The name of the recording that you are interested i
 
 You can load a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/playback/session/file
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/playback/session/file |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording to load.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording to load. |
 
 **Request headers**
 
@@ -683,18 +683,18 @@ recording   | (**required**) The name of the recording to load.
 
 You can pause a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/playback/session/pause
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/playback/session/pause |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording to pause.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording to pause. |
 
 **Request headers**
 
@@ -719,18 +719,18 @@ recording   | (**required**) The name of the recording to pause.
 
 You can play a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/playback/session/play
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/playback/session/play |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording to play.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording to play. |
 
 **Request headers**
 
@@ -755,18 +755,18 @@ recording   | (**required**) The name of the recording to play.
 
 You can stop a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/playback/session/stop
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/playback/session/stop |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording to stop.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording to stop. |
 
 **Request headers**
 
@@ -791,18 +791,18 @@ recording   | (**required**) The name of the recording to stop.
 
 You can unload a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-DELETE | /api/holographic/simulation/playback/session/file
+| Method      | Request URI |
+| :------     | :----- |
+| DELETE | /api/holographic/simulation/playback/session/file |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-recording   | (**required**) The name of the recording to unload.
+| URI parameter | Description |
+| :---          | :--- |
+| recording   | (**required**) The name of the recording to unload. |
 
 **Request headers**
 
@@ -827,9 +827,9 @@ recording   | (**required**) The name of the recording to unload.
 
 You can upload a recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/playback/file
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/playback/file |
 
 
 **URI parameters**
@@ -861,9 +861,9 @@ POST | /api/holographic/simulation/playback/file
 
 You can get the current recording state by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/simulation/recording/status
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/simulation/recording/status |
 
 
 **URI parameters**
@@ -893,23 +893,23 @@ GET | /api/holographic/simulation/recording/status
 
 You can start a recording by using the following request format. There can only be one active recording at a time. 
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/recording/start
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/recording/start |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-head   | (**see below**) Set this value to 1 to indicate the system should record head data.
-hands   | (**see below**) Set this value to 1 to indicate the system should record hands data.
-spatialMapping   | (**see below**) Set this value to 1 to indicate the system should record spatial mapping data.
-environment   | (**see below**) Set this value to 1 to indicate the system should record environment data.
-name   | (**required**) The name of the recording.
-singleSpatialMappingFrame   | (**optional**) Set this value to 1 to indicate that only a single sptial mapping frame should be recorded.
+| URI parameter | Description |
+| :---          | :--- |
+| head   | (**see below**) Set this value to 1 to indicate the system should record head data. |
+| hands   | (**see below**) Set this value to 1 to indicate the system should record hands data. |
+| spatialMapping   | (**see below**) Set this value to 1 to indicate the system should record spatial mapping data. |
+| environment   | (**see below**) Set this value to 1 to indicate the system should record environment data. |
+| name   | (**required**) The name of the recording. |
+| singleSpatialMappingFrame   | (**optional**) Set this value to 1 to indicate that only a single sptial mapping frame should be recorded. |
 
 For these parameters, exactly one of the following parameters must be set to 1: *head*, *hands*, *spatialMapping*, or *environment*.
 
@@ -936,9 +936,9 @@ For these parameters, exactly one of the following parameters must be set to 1: 
 
 You can stop the current recording by using the following request format. The recording will be returned as a file.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/simulation/recording/stop
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/simulation/recording/stop |
 
 
 **URI parameters**
@@ -970,18 +970,18 @@ POST | /api/holographic/simulation/recording/stop
 
 You can delete an MRC recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-DELETE | /api/holographic/mrc/file
+| Method      | Request URI |
+| :------     | :----- |
+DELETE | /api/holographic/mrc/file |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-filename   | (**required**) The name of the video file to delete. The name should be hex64 encoded.
+| URI parameter | Description |
+| :---          | :--- |
+| filename   | (**required**) The name of the video file to delete. The name should be hex64 encoded. |
 
 **Request headers**
 
@@ -1006,19 +1006,19 @@ filename   | (**required**) The name of the video file to delete. The name shoul
 
 You can download an MRC file from the device by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/mrc/file
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/mrc/file |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-filename   | (**required**) The name of the video file you want to get. The name should be hex64 encoded.
-op   | (**optional**) Set this value to **stream** if you want to download a stream.
+| URI parameter | Description |
+| :---          | :--- |
+| filename   | (**required**) The name of the video file you want to get. The name should be hex64 encoded. |
+| op   | (**optional**) Set this value to **stream** if you want to download a stream. |
 
 **Request headers**
 
@@ -1043,9 +1043,9 @@ op   | (**optional**) Set this value to **stream** if you want to download a str
 
 You can get the MRC settings by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/mrc/settings
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/mrc/settings |
 
 
 **URI parameters**
@@ -1075,9 +1075,9 @@ GET | /api/holographic/mrc/settings
 
 You can get the MRC recording status by using the following request format. The possible values include **running** and **stopped**.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/mrc/status
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/mrc/status |
 
 
 **URI parameters**
@@ -1107,9 +1107,9 @@ GET | /api/holographic/mrc/status
 
 You can get the MRC files stored on the device by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/mrc/files
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/mrc/files |
 
 
 **URI parameters**
@@ -1139,9 +1139,9 @@ GET | /api/holographic/mrc/files
 
 You can set the MRC settings by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/mrc/settings
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/mrc/settings |
 
 
 **URI parameters**
@@ -1171,9 +1171,9 @@ POST | /api/holographic/mrc/settings
 
 You can start an MRC recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/mrc/video/control/start
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/mrc/video/control/start |
 
 
 **URI parameters**
@@ -1203,9 +1203,9 @@ POST | /api/holographic/mrc/video/control/start
 
 You can stop the current MRC recording by using the following request format.
  
-Method      | Request URI
-:------     | :-----
-POST | /api/holographic/mrc/video/control/stop
+| Method      | Request URI |
+| :------     | :----- |
+| POST | /api/holographic/mrc/video/control/stop |
 
 
 **URI parameters**
@@ -1235,9 +1235,9 @@ POST | /api/holographic/mrc/video/control/stop
 
 You can take an MRC photo by using the following request format. The photo is returned in JPEG format.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/mrc/photo
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/mrc/photo |
 
 
 **URI parameters**
@@ -1269,21 +1269,21 @@ GET | /api/holographic/mrc/photo
 
 You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the default quality.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/stream/live.mp4
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/stream/live.mp4 |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+| URI parameter | Description |
+| :---          | :--- |
+| pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**. |
+| holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**. |
+| mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**. |
+| loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**. |
 
 **Request headers**
 
@@ -1308,21 +1308,21 @@ loopback   | (**optional**) Indiates whether to capture the application audio. S
 
 You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the high quality.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/stream/live_high.mp4
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/stream/live_high.mp4 |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+| URI parameter | Description |
+| :---          | :--- |
+| pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**. |
+| holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**. |
+| mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**. |
+| loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**. |
 
 **Request headers**
 
@@ -1347,21 +1347,21 @@ loopback   | (**optional**) Indiates whether to capture the application audio. S
 
 You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the low quality.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/stream/live_low.mp4
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/stream/live_low.mp4 |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+| URI parameter | Description |
+| :---          | :--- |
+| pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**. |
+| holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**. |
+| mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**. |
+| loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**. |
 
 **Request headers**
 
@@ -1386,21 +1386,21 @@ loopback   | (**optional**) Indiates whether to capture the application audio. S
 
 You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the medium quality.
  
-Method      | Request URI
-:------     | :-----
-GET | /api/holographic/stream/live_med.mp4
+| Method      | Request URI |
+| :------     | :----- |
+| GET | /api/holographic/stream/live_med.mp4 |
 
 
 **URI parameters**
 
 You can specify the following additional parameters on the request URI:
 
-URI parameter | Description
-:---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+| URI parameter | Description |
+| :---          | :--- |
+| pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**. |
+| holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**. |
+| mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**. |
+| loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**. |
 
 **Request headers**
 

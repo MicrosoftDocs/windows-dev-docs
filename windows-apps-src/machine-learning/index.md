@@ -24,6 +24,7 @@ Topic | Description
 [Get started](get-started.md) | Create your first Windows ML app with this step-by-step tutorial.
 [Train a model](train-ai-model.md) | Train a model for Windows ML using Visual Studio Tools for AI.
 [Convert a model](conversion-samples.md) | Convert existing models to ONNX format to use with Windows ML.
+[Integrate a model](integrate-model.md) | Integrate a model into your app by following the load, bind, and evaluate pattern.
 [Sample apps](samples.md) | See sample UWP apps that demonstrate how to use Windows ML.
 
 ## Related topics

@@ -22,7 +22,7 @@ C++/WinRT is an entirely standard modern C++17 language projection for Windows R
 ## Language projections
 WinRT is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
 
-The C++/WinRT projection is newer than the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). It's also newer than [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) (which does not use standard C++). C++/WinRT performs better and produces smaller binaries than any other language option for WinRT.
+The C++/WinRT projection is newer than the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl). It's also newer than [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) (which does not use standard C++). C++/WinRT performs better and produces smaller binaries than any other language option for WinRT.
 
 You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have.C++/WinRT makes it extremely easy to call WinRT APIs in any C++ application, from WinForms to UWP.
 
@@ -95,32 +95,32 @@ int main()
 
 The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndication.h` are in the SDK, inside the folder `%ProgramFiles(x86)%\Windows Kits\10\Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\`. Visual Studio includes that path in its *IncludePath* macro. The headers contain Windows APIs projected into C++/WinRT. Whenever you want to use types from the Windows namespaces, include the corresponding C++/WinRT projection Windows namespace headers like this. The `using namespace` directives are optional, but convenient.
 
-All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
+All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
 
-[**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync?branch=live) is an example of an asynchronous WinRT function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+[**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) is an example of an asynchronous WinRT function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items?branch=live) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
 
-The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via **c_str**, which will look familiar to you if you've used strings from the C++ Standard Library.
+The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via **c_str**, which will look familiar to you if you've used strings from the C++ Standard Library.
 
 As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner programming style from traditional COM programming. You don't need to explicitly initialize COM (**init_apartment** does that for you), work with COM pointers, nor handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions for a natural and modern programming style.
 
 ## Custom types in the C++/WinRT projection
-You can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types&mdash;in your C++/WinRT programming. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we used [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring?branch=live) in the quick start above.
+You can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types&mdash;in your C++/WinRT programming. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we used [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick start above.
 
-[**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array?branch=live) is another type that you're likely to use at some point. But you're less likely to directly use a type such as [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view?branch=live). Or you may choose not to use it so that you won't have any code to change if and when an equivalent type appears in the C++ Standard Library.
+[**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) is another type that you're likely to use at some point. But you're less likely to directly use a type such as [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view). Or you may choose not to use it so that you won't have any code to change if and when an equivalent type appears in the C++ Standard Library.
 
 There are also types that you might see if you closely study the C++/WinRT projection Windows namespace headers. An example is **winrt::param::hstring**. These exist only for efficiency reasons, and you should not use them in your code.
 
 ## Important APIs
-* [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt?branch=live)
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync?branch=live)
-* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items?branch=live)
-* [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring?branch=live)
+* [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt)
+* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 
 ## Related topics
-* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)
-* [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)
+* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
+* [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)
 * [Visual Studio Marketplace](https://marketplace.visualstudio.com/)
 * [String handling in C++/WinRT](strings.md)
