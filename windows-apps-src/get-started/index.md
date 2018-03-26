@@ -1,13 +1,13 @@
 ---
 layout: LandingPage
-description: Build UWP apps that work on all Windows 10 devices—PCs, tablets, phones, and more.
-title: Get-started with UWP
+description: Get started with the Universal Windows Platform (UWP) and app development for Windows 10.
+title: Get started with the Universal Windows Platform (UWP)
 author: QuinnRadich
 ms.author: quradic
 ms.date: 03/07/2018
 ms.prod: windows
 ms.topic: article
-keywords: Get-started UWP, windows app development, make a windows app, UWP tutorials
+keywords: get started, windows 10, uwp, xaml, c#
 ms.technology: uwp
 ms.localizationpriority: high
 ---
