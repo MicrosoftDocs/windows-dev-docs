@@ -26,6 +26,7 @@
 ## [Develop in Unity](get-started-with-creators/develop-creators-title-with-unity.md)
 ### [Configure XBL in Unity](get-started-with-creators/configure-xbox-live-in-unity.md)
 ### [Unity Prefabs and sign-in](get-started-with-creators/unity-prefabs-and-sign-in.md)
+### [Test Visual Studio build](get-started-with-creators/test-visual-studio-build.md)
 ### [Player stats and Leaderboards in Unity](get-started-with-creators/add-stats-and-leaderboards-in-unity.md)
 ### [Controller support on XBL Prefabs](get-started-with-creators/add-controller-support-to-xbox-live-prefabs.md)
 ### [Multi-user support in Unity](get-started-with-creators/add-multi-user-support.md)

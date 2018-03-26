@@ -141,7 +141,7 @@ If you enabled **script debugging** when you built the UWP solution from Unity, 
 ![Fake User: 123456789](../images/unity/get-started-with-creators/visualStudio.PNG)
 
 > [!NOTE]
-> Make sure that you are signing into Xbox Live with an [authorized test account](authorize-xbox-live-accounts.md).
+> Before using your Visual Studio build to test your game with real data, follow [this checklist](test-visual-studio-build.md) to help ensure your title will be able to access the Xbox Live service.
 
 ## Try out the examples
 
@@ -153,4 +153,3 @@ Try the **SignInAndProfile** scene for signing into your Microsoft Account, the 
 
 * [Sign in to Xbox Live in Unity](sign-in-to-xbox-live-in-unity.md)
 * [Authorize Xbox Live accounts](authorize-xbox-live-accounts.md)
- 

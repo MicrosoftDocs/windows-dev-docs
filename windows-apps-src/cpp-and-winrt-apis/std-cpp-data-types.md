@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 With C++/WinRT, you can call WinRT APIs using Standard C++ data types, including some C++ Standard Library data types.
 
 ## Standard initializer lists
-An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain WinRT constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes?branch=live) with one.
+An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain WinRT constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
 
 ```cppwinrt
 #include "winrt/Windows.Storage.Streams.h"
@@ -35,7 +35,7 @@ int main()
 }
 ```
 
-There are two pieces involved in making this work. First, the **DataWriter::WriteBytes** method takes a parameter of type [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view?branch=live).
+There are two pieces involved in making this work. First, the **DataWriter::WriteBytes** method takes a parameter of type [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view).
 
 ```cppwinrt
 void WriteBytes(array_view<uint8_t const> value) const
@@ -92,7 +92,7 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 ## winrt::array_view functions and operators
 A host of constructors, operators, functions, and iterators are implemented for **array_view**. An **array_view** is a range, so you can use it with range-based `for`, or with **std::for_each**.
 
-For more examples and info, see the [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view?branch=live) API reference topic.
+For more examples and info, see the [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API reference topic.
 
 ## Important APIs
-* [winrt::array_view (C++/WinRT)](/uwp/cpp-ref-for-winrt/array-view?branch=live)
+* [winrt::array_view (C++/WinRT)](/uwp/cpp-ref-for-winrt/array-view)

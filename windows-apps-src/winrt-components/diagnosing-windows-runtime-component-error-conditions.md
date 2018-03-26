@@ -26,11 +26,9 @@ This article doesn’t cover all errors. The errors discussed here are grouped b
 
 Managed Windows Runtime Components cannot implement the Universal Windows Platform (UWP) interfaces that represent asynchronous actions or operations ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx), or [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Instead, the .NET Framework provides the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class for generating async operations in Windows Runtime Components. The error message that Winmdexp.exe displays when you try to implement an async interface incorrectly refers to this class by its former name, AsyncInfoFactory. The .NET Framework no longer includes the AsyncInfoFactory class.
 
-| Error number | Message Text                                                                                                                                                                                                                                                          |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Error number | Message Text|       
+|--------------|-------------|
 | WME1084      | Type '{0}' implements Windows Runtime async interface '{1}'. Windows Runtime types cannot implement async interfaces. Please use the System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory class to generate async operations for export to Windows Runtime. |
-
- 
 
 > **Note** The error messages that refer to the Windows Runtime use an old terminology. This is now referred to as the Universal Windows Platform (UWP). For example, Windows Runtime types are now called UWP types.
 
@@ -242,10 +240,12 @@ In the UWP, return values are considered to be output parameters, and the names 
 JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) attribute.
 
 | Error number | Message Text |
-|---------------|------------|
+|--------------|--------------|
 | WME1091 | The method '\{0}' has the return value named '\{1}' which is the same as a parameter name. Windows Runtime method parameters and return value must have unique names. |
-| WME1092 | The method '\{0}' has a parameter named '\{1}' which is the same as the default return value name. Consider using another name for the parameter or use the System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute to explicitly specify the name of the return value.<br/>**Note**  The default name is "returnValue" for property accessors and "value" for all other methods. |
- 
+| WME1092 | The method '\{0}' has a parameter named '\{1}' which is the same as the default return value name. Consider using another name for the parameter or use the System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute to explicitly specify the name of the return value. |
+
+**Note**  The default name is "returnValue" for property accessors and "value" for all other methods.
+
 
 ## Related topics
 
