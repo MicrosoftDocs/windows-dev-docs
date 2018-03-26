@@ -16,14 +16,14 @@ Unity is a popular game engine for 2D and 3D games. You can learn more about Uni
 ## Before you begin
 
 Before you start adding Xbox Live social services to your Unity game there are a few steps you'll need to complete before diving in. First, make sure that you have downloaded and integrated the [Xbox Live Unity plugin](https://github.com/Microsoft/xbox-live-unity-plugin). Second, you'll want to have your title reserved and published through the [Microsoft Development Center](https://developer.microsoft.com/en-us/games/uwp). Read [Create a new Xbox Live Creators Program title](../get-started-with-creators/create-and-test-a-new-creators-title.md) for instructions on publishing your title.
-Finally,  read [Configure Xbox Live In Unity](../get-started-with-creators/configure-xbox-live-in-unity.md) to setup your Unity environment properly and configure your title to use Xbox Live services. Once your Unity project is set up properly, it's time to learn about the social tools you can use in your Xbox Live enabled title, as well as the two main ways you can implement Xbox Live in Unity: prefabs and scripts.
+Finally,  read [Configure Xbox Live In Unity](../get-started-with-creators/configure-xbox-live-in-unity.md) to setup your Unity environment properly and configure your title to use Xbox Live services. Once your Unity project is set up properly, it's time to learn about the tools you can use in your Xbox Live enabled title, as well as the two main ways you can implement Xbox Live in Unity: prefabs and scripts.
 
 ## Prefabs
 
 Unity has a prefab asset type that allows you to store a GameObject complete with components and properties. The prefab acts as a template from which you can create new object instances in your Unity scene.
 [Learn more about prefabs from the Unity website](https://unity3d.com/learn/tutorials/topics/interface-essentials/prefabs-concept-usage).
 
-The Xbox Live Unity plugin provides a few prefabs that you can use in your project to utilize Xbox Live social features. The following prefabs will allow you to sign in, [add multi-user support](../get-started-with-creators/add-multi-user-support.md) to your title, or display the friends list of a signed in Xbox Live profile. You can find the prefabs under the **Project** tab by following the path: **Assets > Xbox Live > Prefabs**.
+The Xbox Live Unity plugin provides a few prefabs that you can use in your project to utilize Xbox Live features. The prefabs described in this article will allow you to sign in, [add multi-user support](../get-started-with-creators/add-multi-user-support.md) to your title, or display the friends list of a signed in Xbox Live profile. You can find these and other prefabs under the **Project** tab by following the path: **Assets > Xbox Live > Prefabs**.
 
 ### The UserProfile prefab
 
@@ -131,6 +131,27 @@ if (signInSilentlyTask.Result.Status != SignInStatus.Success)
 ```
 
 In this example the results of the sign-in calls are stored in the variable `signInStatus`. This allows us to check whether or not the sign-in was successful and act accordingly. In this example the function first attempts to sign-in silently, then if the silent sign in fails the function calls the normal sign in function. Once you have a successful call to one of the sign-in functions you will have signed in the user. You can now use the `XboxLiveUser.User` to obtain and display details about the signed in user. Take a look at the `LoadProfileInfo()` function in **UserProfile.cs** for an example of how to use the `XboxLiveUser.User` to display information about a signed in user.
+
+## Build and test sign-in
+
+When running your title in the editor, you will see fake data when you try to use Xbox Live functionality. To sign in with a real profile and test out Xbox Live functionality in your title, you'll need to build a UWP solution and run it in Visual Studio.  You can build the UWP project in Unity by following these steps:
+
+1. Open the **Build Settings** window by selecting **File** > **Build Settings**.
+2. Add all of the scenes that you want to include in your build under the **Scenes In Build** section.
+3. Switch to the **Universal Windows Platform** by selecting **Universal Windows Platform** under **Platform** and clicking **Switch Platform**.
+4. Set **SDK** to **10.0.15063.0** or greater.
+5. To enable script debugging check **Unity C# Projects**.
+6. Click **Build** and specify the location of the project.
+
+Once the build has finished, Unity will have generated a new UWP solution file which you will need to run in Visual Studio:
+
+1. In the folder that you specified, open **&lt;ProjectName&gt;.sln** in Visual Studio.
+2. In the toolbar at the top, select **x64** and deploy to the **Local Machine**.
+
+If you enabled **script debugging** when you built the UWP solution from Unity, then your scripts will be located under the **Assembly-CSharp (Universal Windows)** project.
+
+> [!NOTE]
+> Before using your Visual Studio build to test your game with real data, follow [this checklist](test-visual-studio-build.md) to help ensure your title will be able to access the Xbox Live service.
 
 ## Troubleshooting
 
