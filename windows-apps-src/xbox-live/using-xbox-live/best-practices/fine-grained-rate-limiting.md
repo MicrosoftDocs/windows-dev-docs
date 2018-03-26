@@ -64,7 +64,7 @@ This approach works for most API’s however it was not resilient enough for gam
 
 Choosing just one limit in this case would require compromising on both ends of the call pattern spectrum. The Xbox Live solution uses two periods and limits. The smaller period is called the Burst period while the bigger longer one is known as the Sustain period. The burst time period for FGRL is always 15 seconds whereas the sustain is always 300 seconds (5 minutes) So during a 5 minute sustain period there are 20 burst periods. Both burst and sustain limits are tracking at the same time and as such count requests at the same time. Both the burst and the sustain limit are set on the service meaning each service has its own burst and sustain count. To help you understand how these two limits work together the table below shows a user playing a title which is making a number of requests of a service that has implemented FGRL. In this case the burst limit is 30 requests in 15 seconds and the sustain limit is 100 requests over 5 minutes.
 
-| Time Period (seconds)  | Requests per  burst period  | Requests per sustain period  | \# of throttled Requests within the 15 sec interval | Which Limit?                                                                                                                (burst, sustain, or both)  |
+| Time Period (seconds)  | Requests per  burst period  | Requests per sustain period  | \# of throttled Requests within the 15 sec interval | Which Limit? (burst, sustain, or both)  |
 |-------------|--------------|----------------|-----------------------------------------------------|---------------------------|
 | 0-15        | 35           | 35             | 5                                                   | Burst                     |
 | 15-30       | 28           | 63             | 0                                                   | N/A                       |
@@ -80,13 +80,13 @@ The table shows that in the first 15 seconds the user trips the burst limit by m
 
 When the associated user and title count is at or above either the burst or sustain limit the service will not handle the request and will instead return a HTTP 429 response. The HTTP 429 code stands for “too many requests” will be accompanied by a header containing a “retry after X seconds” value. FGRL 429’s contains a retry after header that specifies the amount of time the calling entities should wait before trying again. Developers that use XSAPI will not have to worry as XSAPI honors and handles the Retry-After header. The actual response will contain the following fields:
 
-| Field Name      | Value Type | Example              | Definition                       |
-|-----------------|------------|----------------------|----------------------------------|
-| Version         | Integer    | ```“version”:1```    |                                  |
-| currentRequests | Integer    | ```“currentRequests”:13``` | Total number of requests sent    |
-| maxRequests     | Integer    | ```“maxRequests”:10```     | Total number of requests allowed |
-| periodInSeconds | Integer    | ```“periodInSeconds”:15`` | Time window                      |
-| Type            | String     | ```“type”:”burst”```       | Throttle limit type              |
+| Field Name      | Value Type | Example                | Definition                       |
+|-----------------|------------|------------------------|----------------------------------|
+| Version         | Integer    | `"version":1`          |                                  |
+| currentRequests | Integer    | `"currentRequests":13` | Total number of requests sent    |
+| maxRequests     | Integer    | `"maxRequests":10`     | Total number of requests allowed |
+| periodInSeconds | Integer    | `“periodInSeconds”:15` | Time window                      |
+| Type            | String     | `“type”:”burst”`       | Throttle limit type              |
 
 ## Implemented limits
 

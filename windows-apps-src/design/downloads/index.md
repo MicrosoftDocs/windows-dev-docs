@@ -66,7 +66,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Customers Orders Database</b> <br/>
-            This UWP sample app showcases features useful to enterprise developers, like Azure Active Directory (AAD) authentication, UI controls (including a data grid), and cloud database and API integration using ASP.NET Core and Entity Framework. <br/>[Download the Customers Orders Database sample] (https://github.com/Microsoft/Windows-appsample-customers-orders-database/archive/master.zip) <br/><a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Check out the Customers Orders Database sample on GitHub</a></p>   
+            This UWP sample app showcases features useful to enterprise developers, like Azure Active Directory (AAD) authentication, UI controls (including a data grid), and cloud database and API integration using ASP.NET Core and Entity Framework. <br/><a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database/archive/master.zip">Download the Customers Orders Database sample</a><br/><a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Check out the Customers Orders Database sample on GitHub</a></p>   
   </div>
   <div class="side-by-side-content-right">
 <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database"><img src="images/customers-orders-database.png" alt="Check out the Customers Orders Database sample on GitHub" /></a>
@@ -79,7 +79,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Lunch Scheduler</b><br/>
-            A UWP sample that schedules lunches with your friends and coworkers. You create a lunch, invite friends to a restaurant of interest, and the app takes care of the lunch management for all involved parties. This app incorporates elements of the Fluent Design System in a UWP app, including acrylic, reveal, and connected animations. <br/>[Download the Lunch Scheduler sample] (https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip) <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">Check out the Lunch Scheduler sample on GitHub</a></p>    
+            A UWP sample that schedules lunches with your friends and coworkers. You create a lunch, invite friends to a restaurant of interest, and the app takes care of the lunch management for all involved parties. This app incorporates elements of the Fluent Design System in a UWP app, including acrylic, reveal, and connected animations. <br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler/archive/master.zip">Download the Lunch Scheduler sample</a><br/><a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler">Check out the Lunch Scheduler sample on GitHub</a></p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="https://github.com/Microsoft/Windows-appsample-lunch-scheduler"><img src="images/lunch-scheduler.png" alt="Check out the Lunch Scheduler sample on GitHub" /></a>
@@ -92,7 +92,7 @@ These toolkits provide controls and layout templates for designing UWP apps.
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>XAML Controls Gallery</b><br/>
-            This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/>[Download the XAML Controls Gallery sample] (https://github.com/Microsoft/Windows-universal-samples/archive/master.zip) <br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>    
+            This sample provides an interactive demo of all of the XAML controls. It shows a variety of layouts from basic to adaptive, and displays markup that you can copy into your own project. Note: The download file and the GitHub repository currently refer to this sample app as "UI Basics (XAML)." <br/><a href="https://github.com/Microsoft/Windows-universal-samples/archive/master.zip">Download the XAML Controls Gallery sample</a><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Check out the XAML Controls Gallery sample on GitHub</a> <br/><a href="https://www.microsoft.com/store/apps/9msvh128x2zt">Download the XAML Controls Gallery app from the Store</a></p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics"><img src="images/xaml-controls-gallery.png" alt="Check out the XAML Controls Gallery sample on GitHub" /></a>

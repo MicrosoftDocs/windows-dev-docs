@@ -14,11 +14,6 @@ ms.localizationpriority: medium
 
 # Xbox One Developer Mode deactivation
 
-<!-- * [Switch to Retail Mode](#switch-to-retail-mode)
-* [Deactivate your console using the Dev Mode Activation app](#deactivate-your-console-using-the-dev-mode-activation-app)  
-* [Reset your console](#reset-your-console)
-* [Deactivate your console using Windows Dev Center](#deactivate-your-console-using-windows-dev-center) -->
-
 If you decide you no longer want to use your console for development, use the following steps to deactivate Developer Mode.
 
 ## Switch to Retail Mode

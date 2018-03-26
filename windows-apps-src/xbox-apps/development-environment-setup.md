@@ -36,8 +36,6 @@ This article covers the steps to set up and test your development environment.
 
 Install the latest Windows 10 SDK. This comes with your Visual Studio installation, but if you want to download it separately, see [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 
-<!-- > [!IMPORTANT]
-> You need to install the latest SDK, but you do _not_ need to install the latest Windows Insider Preview release of the operating system. -->
 
 ## Enabling Developer Mode
 

@@ -93,7 +93,7 @@ GLSL and HLSL generally differ in these ways:
 <td align="left">Row-major matrices (default)</td>
 <td align="left">Column-major matrices (default)
 <div class="alert">
-<strong>Note</strong>   Use the <strong>row_major</strong> type-modifier to change the layout for one variable. For more info, see [Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706). You can also specify a compiler flag or a pragma to change the global default.
+<strong>Note</strong>   Use the <strong>row_major</strong> type-modifier to change the layout for one variable. For more info, see <a href="https://msdn.microsoft.com/library/windows/desktop/bb509706">Variable Syntax</a>. You can also specify a compiler flag or a pragma to change the global default.
 </div>
 <div>
  
@@ -136,7 +136,7 @@ In GLSL, you apply modifiers (qualifiers) to a global shader variable declaratio
 <p>You pass a uniform variable from the app code into either or both vertex and fragment shaders. You must set the values of all uniforms before you draw any triangles with those shaders so their values stay the same throughout the drawing of a triangle mesh. These values are uniform. Some uniforms are set for the entire frame and others uniquely to one particular vertex-pixel shader pair.</p>
 <p>Uniform variables are per-polygon variables.</p></td>
 <td align="left"><p>Use constant buffer.</p>
-<p>See [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) and [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
+<p>See <a href="https://msdn.microsoft.com/library/windows/desktop/ff476896">How to: Create a Constant Buffer</a> and <a href="https://msdn.microsoft.com/library/windows/desktop/bb509581">Shader Constants</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>varying</strong></p>
@@ -147,7 +147,7 @@ In GLSL, you apply modifiers (qualifiers) to a global shader variable declaratio
 <td align="left"><p><strong>attribute</strong></p>
 <p>An attribute is a part of the description of a vertex that you pass from the app code to the vertex shader alone. Unlike a uniform, you set each attribute’s value for each vertex, which, in turn, allows each vertex to have a different value. Attribute variables are per-vertex variables.</p></td>
 <td align="left"><p>Define a vertex buffer in your Direct3D app code and match it to the vertex input defined in the vertex shader. Optionally, define an index buffer. See <a href="https://msdn.microsoft.com/library/windows/desktop/ff476899">How to: Create a Vertex Buffer</a> and <a href="https://msdn.microsoft.com/library/windows/desktop/ff476897">How to: Create an Index Buffer</a>.</p>
-<p>Create an input layout in your Direct3D app code and match semantic values with those in the vertex input. See [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
+<p>Create an input layout in your Direct3D app code and match semantic values with those in the vertex input. See <a href="https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout">Create the input layout</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -184,7 +184,7 @@ Use this table to port your GLSL types to HLSL.
 <td align="left">scalar types: float, int, bool</td>
 <td align="left"><p>scalar types: float, int, bool</p>
 <p>also, uint, double</p>
-<p>For more info, see [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
+<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">Scalar Types</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>vector type</p>
@@ -206,8 +206,8 @@ Use this table to port your GLSL types to HLSL.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>For more info, see [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) and [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
-<p>vector is also type defined as float4 (typedef vector &lt;float, 4&gt; vector;). For more info, see [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/desktop/bb509707">Vector Type</a> and <a href="https://msdn.microsoft.com/library/windows/desktop/bb509568">Keywords</a>.</p>
+<p>vector is also type defined as float4 (typedef vector &lt;float, 4&gt; vector;). For more info, see <a href="https://msdn.microsoft.com/library/windows/desktop/bb509702">User-Defined Type</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>matrix type</p>
@@ -230,9 +230,9 @@ Use this table to port your GLSL types to HLSL.
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>You can also use the [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623) to define a matrix.</p>
+<p>You can also use the <a href="https://msdn.microsoft.com/library/windows/desktop/bb509623">matrix type</a> to define a matrix.</p>
 <p>For example: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>matrix is also type defined as float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). For more info, see [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>matrix is also type defined as float4x4 (typedef matrix &lt;float, 4, 4&gt; matrix;). For more info, see <a href="https://msdn.microsoft.com/library/windows/desktop/bb509702">User-Defined Type</a>.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>precision qualifiers for float, int, sampler</p>
@@ -253,10 +253,10 @@ Use this table to port your GLSL types to HLSL.
 <p>Minimum fixed-point signed 2.8 bit value (2 bits of whole number and 8 bits fractional component). The 8-bit fractional component can be inclusive of 1 instead of exclusive to give it the full inclusive range of -2 to 2.</p></li>
 <li>min16int: minimum 16-bit signed integer</li>
 <li><p>min12int: minimum 12-bit signed integer</p>
-<p>This type is for 10Level9 ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)) in which integers are represented by floating point numbers. This is the precision you can get when you emulate an integer with a 16-bit floating point number.</p></li>
+<p>This type is for 10Level9 (<a href="https://msdn.microsoft.com/library/windows/desktop/ff476876">9_x feature levels</a>) in which integers are represented by floating point numbers. This is the precision you can get when you emulate an integer with a 16-bit floating point number.</p></li>
 <li>min16uint: minimum 16-bit unsigned integer</li>
 </ul>
-<p>For more info, see [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) and [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
+<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/desktop/bb509646">Scalar Types</a> and <a href="https://msdn.microsoft.com/library/windows/desktop/hh968108">Using HLSL minimum precision</a>.</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>

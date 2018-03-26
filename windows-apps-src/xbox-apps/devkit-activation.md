@@ -14,10 +14,6 @@ ms.localizationpriority: medium
 
 # Xbox One Developer Mode activation
 
-<!-- * [How Developer Mode works](#how-developer-mode-works)
-* [Activate Developer Mode on your retail Xbox One console](#activate-developer-mode-on-your-retail-xbox-one-console)  
-* [Switch between Retail and Developer Mode](#switch-between-retail-and-developer-mode) -->
-
 ## How Developer Mode works
 Xbox One has two modes, *Retail* Mode (**1**) and *Developer* Mode (**2**). In Retail Mode, the console is in the state that any customer or user of an Xbox One console would use: you can play games and run apps as a user. In Developer Mode, you can develop software for the console, but you cannot play retail games or run retail apps.
 

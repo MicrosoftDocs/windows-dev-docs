@@ -2,8 +2,8 @@
 title: Using Game Chat 2
 author: KevinAsgari
 description: Learn how to use Xbox Live Game Chat 2 to add voice communication to your game.
-ms.author: tomco
-ms.date: 10/20/2017
+ms.author: kevinasg
+ms.date: 3/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -27,17 +27,31 @@ This is a brief walkthrough on using Game Chat 2 (GC2), containing the following
 10. [Bad reputation auto-mute](#automute)
 11. [Privilege and privacy](#priv)
 12. [Cleanup](#cleanup)
-13. [How to configure popular scenarios](#how-to-configure-popular-scenarios)
+13. [Failure model](#failure)
+14. [How to configure popular scenarios](#how-to-configure-popular-scenarios)
 
 ## Prerequisites <a name="prereq">
 
+Before you get started coding with GC2, you must have configured your app's AppXManifest to declare the "microphone" device capability. AppXManifest capabilities are described in more detail in their respective sections of the platform documentation; the following snippet shows the "microphone" device capability node that should exist under the Package/Capabilities node or else chat will be blocked:
+
+```xml
+ <?xml version="1.0" encoding="utf-8"?>
+ <Package ...>
+   <Identity ... />
+   ...
+   <Capabilities>
+     <DeviceCapability Name="microphone" />
+   </Capabilities>
+ </Package>
+```
+
 Compiling GC2 requires including the primary GameChat2.h header. In order to link properly, your project must also include GameChat2Impl.h in at least one compilation unit (a common precompiled header is recommended since these stub function implementations are small and easy for the compiler to generate as "inline").
 
-The GC2 interface does not require a project to choose between compiling with C++/CX versus traditional C++; it can be used with either. The implementation also doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred.
+The GC2 interface does not require a project to choose between compiling with C++/CX versus traditional C++; it can be used with either. The implementation also doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred. The implementation does, however, throw exceptions as a means of fatal error reporting (see [Failure model](#failure) for more detail).
 
 ## Initialization <a name="init">
 
-You begin interacting with the library by initializing the GC2 object singleton with parameters that apply the lifetime of the singleton's initialization.
+You begin interacting with the library by initializing the GC2 singleton instance with parameters that apply to the lifetime of the singleton's initialization.
 
 ```cpp
 chat_manager::singleton_instance().initialize(...);
@@ -48,15 +62,15 @@ chat_manager::singleton_instance().initialize(...);
 Once the instance is initialized, you must add the local users to the Game Chat instance. In this example, User A will represent a local user.
 
 ```cpp
-chat_user* chatUserA = chat_manager::add_local_user(<user_a_xuid>);
+chat_user* chatUserA = chat_manager::singleton_instance().add_local_user(<user_a_xuid>);
 ```
 
 You must also add the remote users and identifiers that will be used to represent the remote "Endpoint" that the user is on. An "Endpoint" is an instance of the app running on a remote device. In this example, User B is on Endpoint X, Users C and D are on Endpoint Y. Endpoint X is arbitrarily assigned identifier "1" and Endpoint Y is arbitrarily assigned identifier "2". You inform GC2 of the remote users with these calls:
 
 ```cpp
-chat_user* chatUserB = chat_manager::add_remote_user(<user_b_xuid>, 1);
-chat_user* chatUserC = chat_manager::add_remote_user(<user_c_xuid>, 2);
-chat_user* chatUserD = chat_manager::add_remote_user(<user_d_xuid>, 2);
+chat_user* chatUserB = chat_manager::singleton_instance().add_remote_user(<user_b_xuid>, 1);
+chat_user* chatUserC = chat_manager::singleton_instance().add_remote_user(<user_c_xuid>, 2);
+chat_user* chatUserD = chat_manager::singleton_instance().add_remote_user(<user_d_xuid>, 2);
 ```
 
 Now you configure the communication relationship between each remote user and the local user. In this example, suppose that User A and User B are on the same team and bidirectional communication is allowed. `c_communicationRelationshipSendAndReceiveAll` is a constant defined in GameChat2.h to represent bi-directional communication. Set User A's relationship to User B with:
@@ -65,15 +79,22 @@ Now you configure the communication relationship between each remote user and th
 chatUserA->local()->set_communication_relationship(chatUserB, c_communicationRelationshipSendAndReceiveAll);
 ```
 
-Now supposed that User C and D are 'spectators' and should be allowed to listen to User A, but not speak. `c_communicationRelationshipSendAll` is a constant defined in GameChat2.h to represent this unidirectional communication. Set the relationships with:
-
+Now suppose that Users C and D are 'spectators' and should be allowed to listen to User A, but not speak. `c_communicationRelationshipSendAll` is a constant defined in GameChat2.h to represent this unidirectional communication. Set the relationships with:
 
 ```cpp
 chatUserA->local()->set_communication_relationship(chatUserC, c_communicationRelationshipSendAll);
 chatUserA->local()->set_communication_relationship(chatUserD, c_communicationRelationshipSendAll);
 ```
 
-If there are any remote users that can't communicate with any local users - that's okay! This may be expected in scenarios where users are determining teams or can change speaking channels arbitrarily. GC2 will only cache information (e.g. privacy relationships and reputation) for users that have been added, so it's useful to inform GC2 of all possible users even if they can't speak to any local users at a particular instance.
+If at any point there are remote users that have been added to the singleton instance but haven't been configured to communicate with any local users - that's okay! This may be expected in scenarios where users are determining teams or can change speaking channels arbitrarily. GC2 will only cache information (e.g. privacy relationships and reputation) for users that have been added to the instance, so it's useful to inform GC2 of all possible users even if they can't speak to any local users at a particular point in time.
+
+Finally, suppose that User D has left the game and should be removed from the local Game Chat instance. That can be done with the following call:
+
+```cpp
+chat_manager::singleton_instance().remove_user(chatUserD);
+```
+
+The user object is invalidated immediately when `chat_manager::remove_user()` is called. A subtle restriction on when users can be removed is detailed in [Processing state changes](#state).
 
 ## Processing data frames <a name="data">
 
@@ -103,9 +124,9 @@ The more frequently the data frames are processed, the lower the audio latency a
 
 ## Processing state changes <a name="state">
 
-GC2 provides updates to the app, such as received text messages, through the app's regular, frequent calls to the `chat_manager::start_processing_data_frames()` and `chat_manager::finish_processing_data_frames()` pair of methods. They're designed to operate quickly such that they can be called every graphics frame in your UI rendering loop. This provides a convenient place to retrieve all queued changes without worrying about the unpredictability of network timing or multi-threaded callback complexity.
+GC2 provides updates to the app, such as received text messages, through the app's regular, frequent calls to the `chat_manager::start_processing_state_changes()` and `chat_manager::finish_processing_state_changes()` pair of methods. They're designed to operate quickly such that they can be called every graphics frame in your UI rendering loop. This provides a convenient place to retrieve all queued changes without worrying about the unpredictability of network timing or multi-threaded callback complexity.
 
-When `chat_manager::start_processing_data_frames()` is called, all queued updates are reported in an array of `game_chat_state_change` structure pointers. Apps should iterate over the array, inspect the base structure for its more specific type, cast the base structure to the corresponding more detailed type, and then handle that update as appropriate. Once finished with all `game_chat_state_change` objects currently available, that array should be passed back to GC2 to release the resources by calling `chat_manager::finish_processing_state_changes()`. For example:
+When `chat_manager::start_processing_state_changes()` is called, all queued updates are reported in an array of `game_chat_state_change` structure pointers. Apps should iterate over the array, inspect the base structure for its more specific type, cast the base structure to the corresponding more detailed type, and then handle that update as appropriate. Once finished with all `game_chat_state_change` objects currently available, that array should be passed back to GC2 to release the resources by calling `chat_manager::finish_processing_state_changes()`. For example:
 
 ```cpp
 uint32_t stateChangeCount;
@@ -133,6 +154,8 @@ for (uint32_t stateChangeIndex = 0; stateChangeIndex < stateChangeCount; ++state
 }
 chat_manager::singleton_instance().finish_processing_state_changes(gameChatStateChanges);
 ```
+
+Because `chat_manager::remove_user()` immediately invalidates the memory associated with a user object, and state changes may contain pointers to user objects, `chat_manager::remove_user()` must not be called while processing state changes.
 
 ## Text chat <a name="text">
 
@@ -162,7 +185,7 @@ The audio synthesized as part of this operation will be transported to all users
 
 ### Speech-to-text
 
-When a user has speech-to-text enabled, `chat_user::chat_user_local::speech_to_text_conversion_preference_enabled()` will return true. When this state is detected, the app must be prepared to provide UI associated with transcribed chat messages. GC will automatically transcribe each remote user's audio and expose it via a `game_chat_transcribed_chat_received_state_change`.
+When a user has speech-to-text enabled, `chat_user::chat_user_local::speech_to_text_conversion_preference_enabled()` will return true. When this state is detected, the app must be prepared to provide UI associated with transcribed chat messages. Game Chat 2 will automatically transcribe each remote user's audio and expose it via a `game_chat_transcribed_chat_received_state_change`.
 
 > `Windows::Xbox::UI::Accessibility` is an Xbox One class specifically designed to provide simple rendering of in-game text chat with a focus on speech-to-text assistive technologies.
 
@@ -206,6 +229,8 @@ The value reported by `xim_player::chat_indicator()` is expected to change frequ
 
 The `chat_user::chat_user_local::set_microphone_muted()` method can be used to toggle the mute state of a local user's microphone. When the microphone is muted, no audio from that microphone will be captured. If the user is on a shared device, such as Kinect, the mute state applies to all users.
 
+The `chat_user::chat_user_local::microphone_muted()` method can be used to retrieve the mute state of a local user's microphone. This method only reflects whether the local user's microphone has been muted in software via a call to `chat_user::chat_user_local::set_microphone_muted()`; this method does not reflect a hardware mute controlled, for instance, via a button on the user's headset. There is no method for retrieving the hardware mute state of a user's audio device through GC2.
+
 The `chat_user::chat_user_local::set_remote_user_muted()` method can be used to toggle the mute state of a remote user in relation to a particular local user. When the remote user is muted, the local user won't hear any audio or receive any text messages from the remote user.
 
 ## Bad reputation auto-mute <a name="automute">
@@ -214,13 +239,17 @@ Typically remote users will start off unmuted. GC2 will start the users in a mut
 
 ## Privilege and privacy <a name="priv">
 
-On top of the communication relationship configured by the game, GC2 enforces privilege and privacy restrictions. GC2 performs privilege and privacy restriction lookups when a user is first added; the user's `chat_user::chat_indicator()` will always return `game_chat_user_chat_indicator::silent` until those operations complete. If communication with a user is affected by a privilege or privacy restriciton, the user's `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::platform_restricted`.
+On top of the communication relationship configured by the game, GC2 enforces privilege and privacy restrictions. GC2 performs privilege and privacy restriction lookups when a user is first added; the user's `chat_user::chat_indicator()` will always return `game_chat_user_chat_indicator::silent` until those operations complete. If communication with a user is affected by a privilege or privacy restriction, the user's `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::platform_restricted`. Platform communication restrictions apply to both voice and text chat; there will never be an instance where text chat is blocked by a platform restriction but voice chat is not, or vice versa.
 
-`chat_user::chat_user_local::get_effective_communication_relationship()` can be used to help distinguish when users can't commnicate due to incomplete privilege and privacy operations. It returns the communication relationship enforced by GC2 in the form of `game_chat_communication_relationship_flags` and the reason the relationship may not be equal to the configured relationship in the form of `game_chat_communication_relationship_adjuster`. For example, if the lookup operations are still in progress, the `game_chat_communication_relationship_adjuster` will be `game_chat_communication_relationship_adjuster::intializing`. This method is expected to be used in development and debugging scenarios; it should not be used to influence UI (see [UI](#UI)).
+`chat_user::chat_user_local::get_effective_communication_relationship()` can be used to help distinguish when users can't communicate due to incomplete privilege and privacy operations. It returns the communication relationship enforced by GC2 in the form of `game_chat_communication_relationship_flags` and the reason the relationship may not be equal to the configured relationship in the form of `game_chat_communication_relationship_adjuster`. For example, if the lookup operations are still in progress, the `game_chat_communication_relationship_adjuster` will be `game_chat_communication_relationship_adjuster::intializing`. This method is expected to be used in development and debugging scenarios; it should not be used to influence UI (see [UI](#UI)).
 
 ## Cleanup <a name="cleanup">
 
 When the app no longer needs communications via GC2, you should call `chat_manager::cleanup()`. This allows GC2 to reclaim resources that were allocated to manage the communications.
+
+## Failure model <a name="failure">
+
+The GC2 implementation doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred. Game Chat 2 does, however, throw exceptions to inform about fatal errors. These errors are a result of API misuse, such as adding a user to the Game Chat instance before initializing the instance or accessing a user object after it has been removed from the Game Chat instance. These errors are expected to be caught early in development and can be corrected by modifying the pattern used to interact with GC2. When such an error occurs, a hint as to what caused the error is printed to the debugger before the exception is raised.
 
 ## How to configure popular scenarios
 
@@ -264,8 +293,6 @@ chatUserD->local()->set_communication_relationship(chatUserB, game_chat_communic
 chatUserD->local()->set_communication_relationship(chatUserC, c_communicationRelationshipSendAndReceiveAll);
 ```
 
-<!--TODO: Include table?-->
-
 ### Broadcast
 
 Suppose that User A is the leader giving orders and Users B, C, and D can only listen. Each player is on a unique device.
@@ -301,5 +328,3 @@ chatUserD->local()->set_communication_relationship(chatUserA, c_communicationRel
 chatUserD->local()->set_communication_relationship(chatUserB, game_chat_communication_relationship_flags::none);
 chatUserD->local()->set_communication_relationship(chatUserC, game_chat_communication_relationship_flags::none);
 ```
-
-<!--TODO: Include table?-->
