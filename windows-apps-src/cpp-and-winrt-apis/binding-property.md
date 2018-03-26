@@ -40,7 +40,6 @@ namespace Bookstore
 {
 	runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
 	{
-		BookSku(String title);
 		String Title;
 	}
 }
@@ -51,7 +50,7 @@ Save the file and build the project. During the build process, the `midl.exe` to
 Copy the stub files `BookSku.h` and `BookSku.cpp` from `\Bookstore\Bookstore\Generated Files\sources\` into the project folder, which is `\Bookstore\Bookstore\`. In **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the stub files that you copied, and click **Include In Project**.
 
 ## Implement **BookSku**
-Now, let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement our runtime class. In `BookSku.h`, add a private member to store the title data, and another for the event that we'll raise when the title changes.
+Now, let's open `\Bookstore\Bookstore\BookSku.h` and `BookSku.cpp` and implement our runtime class. In `BookSku.h`, add a constructor that takes a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring), a private member to store the title string, and another for the event that we'll raise when the title changes. After adding those, your `BookSku.h` will look like this.
 
 ```cppwinrt
 // BookSku.h
@@ -78,10 +77,10 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-In `BankAccount.cpp`, implement the functions like this.
+In `BookSku.cpp`, implement the functions like this.
 
 ```cppwinrt
-// BankAccount.cpp
+// BookSku.cpp
 #include "pch.h"
 #include "BookSku.h"
 
@@ -228,7 +227,7 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-In `\Bookstore\Bookstore\MainPage.cpp`, include `BookstoreViewModel.h`, which declares the implementation type. Call [**winrt::make**](/uwp/cpp-ref-for-winrt/make?branch=live) (with the implementation type) to assign a new instance of the projected type to m_mainViewModel. Assign an initial value for the book's title. Implement the accessor for the MainViewModel property. And finally, update the book's title in the button's event handler.
+In `\Bookstore\Bookstore\MainPage.cpp`, include `BookstoreViewModel.h`, which declares the implementation type. Call [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (with the implementation type) to assign a new instance of the projected type to m_mainViewModel. Assign an initial value for the book's title. Implement the accessor for the MainViewModel property. And finally, update the book's title in the button's event handler.
 
 ```cppwinrt
 // MainPage.cpp
@@ -270,4 +269,4 @@ Now build and run the project. Click the button to execute the **Click** event h
 
 ## Important APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [winrt::make](/uwp/cpp-ref-for-winrt/make?branch=live)
+* [winrt::make](/uwp/cpp-ref-for-winrt/make)

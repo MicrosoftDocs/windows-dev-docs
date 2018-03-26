@@ -31,6 +31,7 @@ You can use [Windows Dev Center](https://developer.microsoft.com/dashboard) to c
 ![Image of the button to upload the localization.xml file](../../images/dev-center/localized-strings/localized-strings-2.png)
 
 Please note the following errors might appear when you upload the localization.xml file:
+
 | Error | Reason |
 |---------------------------|-------------|
 | Failed XSD Validation: The element 'LocalizedString' in namespace 'http://config.mgt.xboxlive.com/schema/localization/1' cannot contain text. List of possible elements expected: 'Value' in namespace 'http://config.mgt.xboxlive.com/schema/localization/1' | This occurs when the XML document is malformed |

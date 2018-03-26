@@ -104,7 +104,6 @@ Use the following URIs to open various pages of the Settings app.
 | Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
 | Pen & Windows Ink | ms-settings:pen |
 | Printers & scanners | ms-settings:printers |
-| Region & language | ms-settings:keyboard |
 | Touchpad | ms-settings:devices-touchpad (only available if touchpad hardware is present) |
 | Typing | ms-settings:typing |
 | USB | ms-settings:usb |
@@ -271,14 +270,13 @@ Use the following URIs to open various pages of the Settings app.
 
 |Settings Page| URI |
 |-------------|-----|
-| Bopomofo IME settings | ms-settings:regionlanguage-bpmfime (available if the Microsoft Bopomofo input method editor is installed) |
-| Cangjie IME settings | ms-settings:regionlanguage-cangjieime (available if the Microsoft Cangjie input method editor is installed) |
+| Chinese (traditional) IME settings | ms-settings:regionlanguage-chtime (available if the Microsoft Chinese (traditional) input method editor is installed) |
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
+| Korean IME settings | ms-settings:regionlanguage-korime (available if the Microsoft Japan input method editor is installed) |
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
 | Region & language | ms-settings:regionlanguage |
 | Speech Language | ms-settings:speech |
-| Traditional Chinese Quick IME settings | ms-settings:regionlanguage-quickime (available if the Microsoft Traditional Chinese Quick input method editor is installed) |
 | Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
 
 ## Update & security

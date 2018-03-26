@@ -40,10 +40,6 @@ The Microsoft Store organizes apps into the following categories and subcategori
     </tr>
     </thead>
     <tbody>
-  <tr>
-    <th>Category</th>
-    <th>Subcategory</th>
-  </tr>
 <tr>
     <td>Books + reference</td>
     <td>E-reader <br> Fiction <br> Nonfiction <br> Reference</td>
@@ -82,7 +78,7 @@ The Microsoft Store organizes apps into the following categories and subcategori
   </tr>
   <tr>
     <td>Kids + family</td>
-    <td>Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |</td>
+    <td>Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel</td>
   </tr>
   <tr>
     <td>Lifestyle</td>
