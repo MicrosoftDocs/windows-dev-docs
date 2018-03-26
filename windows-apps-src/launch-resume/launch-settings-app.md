@@ -270,10 +270,8 @@ Use the following URIs to open various pages of the Settings app.
 
 |Settings Page| URI |
 |-------------|-----|
-| Chinese (traditional) IME settings | ms-settings:regionlanguage-chtime (available if the Microsoft Chinese (traditional) input method editor is installed) |
 | Date & time | ms-settings:dateandtime |
 | Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
-| Korean IME settings | ms-settings:regionlanguage-korime (available if the Microsoft Japan input method editor is installed) |
 | Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
 | Region & language | ms-settings:regionlanguage |
 | Speech Language | ms-settings:speech |
