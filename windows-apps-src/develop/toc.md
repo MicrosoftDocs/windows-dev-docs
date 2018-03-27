@@ -87,6 +87,7 @@
 # [C++/WinRT](../cpp-and-winrt-apis/index.md)
 ## [Introduction to C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
 ## [Frequently-asked questions about C++/WinRT](../cpp-and-winrt-apis/faq.md)
+## [Interfaces; how to implement them in C++/WinRT](../cpp-and-winrt-apis/implement-an-interface.md)
 ## [Implementation and projected types for a C++/WinRT runtime class](../cpp-and-winrt-apis/ctors-runtimeclass-activation.md)
 ## [String handling in C++/WinRT](../cpp-and-winrt-apis/strings.md)
 ## [Standard C++ data types and C++/WinRT](../cpp-and-winrt-apis/std-cpp-data-types.md)

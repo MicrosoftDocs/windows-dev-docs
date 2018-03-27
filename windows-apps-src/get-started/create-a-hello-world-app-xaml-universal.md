@@ -8,7 +8,7 @@ ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, get started, xaml
+keywords: windows 10, uwp, first app, hello world
 ms.localizationpriority: high
 ---
 
@@ -27,7 +27,7 @@ Here you'll learn how to:
 ## Before you start...
 
 -   [What's a Universal Windows app](whats-a-uwp.md)?
--   To complete this tutorial, you need Windows 10 and Visual Studio 2017. [Get set up](get-set-up.md).
+-   [Download Visual Studio 2017 (and Windows 10)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](get-set-up.md).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
 > [!NOTE]
