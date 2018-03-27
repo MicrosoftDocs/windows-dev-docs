@@ -200,7 +200,7 @@ public sealed partial class MainPage : Page
 ```
 
 
-To get started with UWP, see [Intro to the Universal Windows Platform](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+To get started with UWP, see [What's a UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
 
 ## Reach iOS and Android devices
 

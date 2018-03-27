@@ -27,7 +27,7 @@ Here you'll learn how to:
 
 ## Before you start...
 
--   [What's a Universal Windows app](whats-a-uwp.md)?
+-   [What's a UWP app?](universal-application-platform-guide.md).
 -   To complete this tutorial, you need Windows 10 and Visual Studio 2017. [Get set up](get-set-up.md).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 

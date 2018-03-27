@@ -95,7 +95,7 @@ For more info about packaging UWP apps for the Store, see [Packaging apps](../pa
 > 
 > For example, say you only want your Windows 8 and Windows 8.1 customers who have upgraded to Windows 10 to get your UWP app, and you want customers on Windows Phone 8.1 and earlier to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to make sure to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default. Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 Mobile customers will not get any of your UWP packages.
 > 
-> For more info about device families, see [Guide to Universal Windows Platform (UWP) apps](../get-started/universal-application-platform-guide.md).
+> For more info about device families, see [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 
 
 ## Removing an app from the Store

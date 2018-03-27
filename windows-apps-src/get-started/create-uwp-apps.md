@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 ![Build your app](images/build-your-app.png)
 
-Welcome to the UWP ([what's UWP again?](whats-a-uwp.md)) platform! Whether you're looking to get started with your first UWP app or are looking to use more advanced features, these tutorials will put you on the right track. You'll learn how to:
+Welcome to the [UWP platform](universal-application-platform-guide.md)! Whether you're looking to get started with your first UWP app or are looking to use more advanced features, these tutorials will put you on the right track. You'll learn how to:
 
 -   Create UWP projects in Microsoft Visual Studio.
 -   Add UI elements and code to your project.
@@ -86,7 +86,6 @@ Interested in more information on building web apps?
 * [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a Universal Windows app?](whats-a-uwp.md)
+* [What's a UWP app?](universal-application-platform-guide.md)
 * [Get set up](get-set-up.md)
 * [Sign up for Windows account](sign-up.md)
-
