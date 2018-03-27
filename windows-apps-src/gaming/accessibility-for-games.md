@@ -194,7 +194,7 @@ If your title allows gamers to communicate using voice and send text messages to
 
 People who do not have microphones attached to their gaming device can still have a voice conversation with someone who is speaking. They are able to type text into the chat window and have those messages converted into voice. It also allows someone who can't hear very well to read the transcribed text messages from the person they're having a voice chat with.
 
-For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](../xbox-live/multiplayer/chat/using-game-chat-2.md#access) in the Xbox Live service. For more information, see [Game Chat 2 Overview](../xbox-live/multiplayer/chat/game-chat-2-overview.md).
+For developers in the ID@Xbox and managed partners program, Text-to-Speech and Speech-to-Text features are available as part of the [Game Chat 2 accessibility features](../xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility) in the Xbox Live service. For more information, see [Game Chat 2 Overview](../xbox-live/multiplayer/chat/game-chat-2-overview.md).
 
 ### Sound feedback
 
