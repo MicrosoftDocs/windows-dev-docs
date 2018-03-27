@@ -205,9 +205,9 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 
 ##  Startup and developer resources
 
-* [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
+* [Microsoft for Startups](https://startups.microsoft.com)
 
-    Eligible startups may qualify for up to $120k of free Azure cloud credits. Join BizSpark to receive free software, services, technical support, and Azure cloud.
+    Eligible startups may qualify for benefits available as part of Microsoft for Startups - up to $120k of free Azure cloud credits, free software, services, technical support and go-to-market benefits.
     
 * [Developer programs](e2e.md#developer-programs)
 
@@ -242,7 +242,7 @@ These are some companies that offer cloud backend for games based on major cloud
 
 * [Windows 10 game development guide](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
 * [Azure for gaming](https://azure.microsoft.com/solutions/gaming/)
-* [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
+* [Microsoft for Startups](https://startups.microsoft.com/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
 
