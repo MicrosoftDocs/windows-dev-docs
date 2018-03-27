@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Microsoft Store provide features that enable you to make more money from your apps and gain customers by engaging with your users. The topics in this section show you how to build these features into your app.
 
-For details about the fees charged by the Microsoft Store and how you get paid for the money your app makes, see [Getting paid](https://msdn.microsoft.com/library/windows/apps/mt148536).
+For details about the fees charged by the Microsoft Store and how you get paid for the money your app makes, see [Getting paid](../publish/getting-paid-apps.md).
 
 ## In this section
 

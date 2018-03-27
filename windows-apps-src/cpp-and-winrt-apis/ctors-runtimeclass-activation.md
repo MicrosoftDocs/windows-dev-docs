@@ -126,6 +126,63 @@ For details, code, and a walkthrough of authoring a third-party runtime class in
 
 If you're authoring a runtime class then, from within the same compilation unit, you can use the [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self) function  to construct an instance of the implementation type for the runtime class.
 
+### Deriving from a type that has a non-trivial constructor
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) is an example of a non-trivial constructor. There's no default constructor so, to construct a **ToggleButtonAutomationPeer**, you need to pass an *owner*. Consequently, if you derive from **ToggleButtonAutomationPeer**, then you need to provide a constructor that takes an *owner* and passes it to the base. Let's see what that looks like in practice.
+
+```idl
+// MySpecializedToggleButton.idl
+import "Windows.UI.Xaml.Controls.Primitives.idl";
+
+namespace MyNamespace
+{
+	runtimeclass MySpecializedToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton
+	{
+		...
+	};
+}
+```
+
+```idl
+// MySpecializedToggleButtonAutomationPeer.idl
+import "Windows.UI.Xaml.Automation.Peers.idl";
+
+namespace MyNamespace
+{
+	runtimeclass MySpecializedToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
+	{
+		MySpecializedToggleButtonAutomationPeer(MySpecializedToggleButton owner);
+	};
+}
+```
+
+The generated constructor for your implementation type looks like this.
+
+```cppwinrt
+// MySpecializedToggleButtonAutomationPeer.cpp
+...
+MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer(MyNamespace::MySpecializedToggleButton const& owner)
+    {
+        ...
+    }
+...
+```
+
+The only piece missing is that you need to pass that constructor parameter on to the base class. Remember the F-bound polymorphism pattern that we mentioned above? Once you're familiar with the details of that pattern as used by C++/WinRT, you can figure out what your base class is called (or you can just look in your implementation class's header file). This is how to call the base class constructor in this case.
+
+```cppwinrt
+// MySpecializedToggleButtonAutomationPeer.cpp
+...
+MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer(MyNamespace::MySpecializedToggleButton const& owner) : MySpecializedToggleButtonAutomationPeerT<MySpecializedToggleButtonAutomationPeer>(owner)
+    {
+        ...
+    }
+...
+```
+
+The base class constructor expects a **ToggleButton**. And **MySpecializedToggleButton** *is a* **ToggleButton**.
+
+Until you make the edit described above (to pass that constructor parameter on to the base class), the compiler will flag your constructor and point out that there's no appropriate default constructor available on a type called (in this case) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. That's actually the base class of the bass class of your implementation type.
+
 ## Important APIs
 * [winrt::make](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)

@@ -94,7 +94,7 @@ The code in this example defines a function to get the expiration date of the ap
 
 Now, test your app using simulated data. **CurrentAppSimulator** gets test-specific licensing info from an XML file called WindowsStoreProxy.xml, located in %UserProfile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. You can edit WindowsStoreProxy.xml to change the simulated expiration dates for your app and for its features. Test all your possible expiration and licensing configurations to make sure everything works as intended. For more info, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
 
-If this path and file don't exist, you must create them, either during installation or at run-time. If you try to access the [CurrentAppSimulator.LicenseInformation](https://msdn.microsoft.com/library/windows/apps/hh779768) property without WindowsStoreProxy.xml present in that specific location, you will get an error.
+If this path and file don't exist, you must create them, either during installation or at run-time. If you try to access the [CurrentAppSimulator.LicenseInformation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.licenseinformation) property without WindowsStoreProxy.xml present in that specific location, you will get an error.
 
 ## Step 6: Replace the simulated License API methods with the actual API
 
