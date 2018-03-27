@@ -25,12 +25,15 @@ Let's say that a runtime class named **BookSku** has a property named **Title**.
 
 A XAML text element, or control, can bind to, and handle, these events by retrieving the updated value(s) and then updating itself to show the new value.
 
-To follow the steps below, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+> [!NOTE]
+> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 ## Create a Blank App (Bookstore)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Blank App (C++/WinRT)** project, and name it *Bookstore*.
 
-We're going to author a new runtime class, and the first step in doing that is to add a new **Midl File (.idl)** item to the project. Name it `BookSku.idl`. Delete the default contents of `BookSku.idl`, and paste in this runtime class declaration.
+We're going to author a new class to represent a book that has an observable title property. We're authoring and consuming the class within the same compilation unit. But we want to be able to bind to this class from XAML, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
+
+The first step in authoring a new runtime class is to add a new **Midl File (.idl)** item to the project. Name it `BookSku.idl`. Delete the default contents of `BookSku.idl`, and paste in this runtime class declaration.
 
 ```idl
 // BookSku.idl

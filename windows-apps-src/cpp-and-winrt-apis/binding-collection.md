@@ -27,7 +27,8 @@ If a runtime class that represents a collection chooses to raise the [**IObserva
 
 A XAML items control can bind to, and handle, these events by retrieving the updated collection and then updating itself to show the current elements.
 
-To follow the steps below, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+> [!NOTE]
+> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 ## Implement **single_threaded_observable_vector&lt;T&gt;**
 It will be good to have an observable vector template to serve as a useful, general-purpose implementation of  [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_). Here's a listing of a class called **single_threaded_observable_vector&lt;T&gt;**. In future, if this becomes a C++/WinRT type, it will be easy to switch over to using the official version of it.

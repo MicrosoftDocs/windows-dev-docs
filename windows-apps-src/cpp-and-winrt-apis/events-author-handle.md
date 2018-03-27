@@ -17,7 +17,8 @@ ms.localizationpriority: medium
 
 This topic demonstrates how to author a Windows Runtime Component containing a runtime class representing a bank account, which raises an event when its balance goes into debit. It also demonstrates a Core App that consumes the bank account runtime class, calls a function to adjust the balance, and handles any events that result.
 
-To follow these steps, you'll need to download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
+> [!NOTE]
+> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 > [!NOTE]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
@@ -140,7 +141,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
- Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression, run the app, and click inside the window.
+Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression, run the app, and click inside the window.
 
- ## Related topics
- * [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md)
+## Related topics
+* [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md)

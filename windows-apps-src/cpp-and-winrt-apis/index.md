@@ -23,6 +23,7 @@ C++/WinRT is an entirely standard modern C++17 language projection for Windows R
 | - | - |
 | [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs. |
 | [Frequently-asked questions about C++/WinRT](faq.md) | Answers to questions that you're likely to have about authoring and consuming WinRT APIs with C++/WinRT. |
+| [Interfaces; how to implement them in C++/WinRT](implement-an-interface.md) | This topic shows how to implement a Windows Runtime interface in C++/WinRT. |
 | [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md) | This topic describes essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT. |
 | [String handling in C++/WinRT](strings.md) | With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
 | [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call WinRT APIs using Standard C++ data types. |
