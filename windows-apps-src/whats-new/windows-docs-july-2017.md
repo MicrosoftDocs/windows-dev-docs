@@ -105,7 +105,7 @@ The article [Process media frames with MediaFrameReader](../audio-video-camera/p
 
 ### Scoped Search
 
-A "UWP" scope has been added to the [UWP conceptual](../get-started/whats-a-uwp.md) and [API reference](https://docs.microsoft.com/en-us/uwp/api/) documentation on docs.microsoft.com. Unless this scope is deactivated, searches made from within these areas will return UWP docs only.
+A "UWP" scope has been added to the [UWP conceptual](../get-started/universal-application-platform-guide.md) and [API reference](https://docs.microsoft.com/en-us/uwp/api/) documentation on docs.microsoft.com. Unless this scope is deactivated, searches made from within these areas will return UWP docs only.
 
 ![Scoped Search](images/scoped-search.png)
 

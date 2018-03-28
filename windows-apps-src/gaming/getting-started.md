@@ -71,6 +71,6 @@ For more information, see [Windows Dev Center dashboard](../publish/using-the-wi
 ## Useful links
 
 * [Windows 10 game development guide](e2e.md)
-* [Intro to the Universal Windows Platform](../get-started/universal-application-platform-guide.md)
+* [What's a UWP app?](../get-started/universal-application-platform-guide.md)
 * [Using cloud services for UWP games](cloud-for-games.md)
 * [Making games accessible](accessibility-for-games.md)

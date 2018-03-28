@@ -90,7 +90,7 @@ namespace MIDIWin10
                 deviceListBox.Items.Add("No MIDI devices found!");
             }
 
-            foreach(var deviceInformation in this.DeviceInformationCollection)
+            foreach (var deviceInformation in this.DeviceInformationCollection)
             {
                 deviceListBox.Items.Add(deviceInformation.Name);
             }

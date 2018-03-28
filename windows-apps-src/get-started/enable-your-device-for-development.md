@@ -241,5 +241,5 @@ Error : DEP0700 : Registration of the app failed.
 * [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a Universal Windows app?](whats-a-uwp.md)
+* [What's a UWP app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

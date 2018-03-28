@@ -1,7 +1,7 @@
 ---
 author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Device Portal for Desktop
+title: Device Portal for Windows Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
 ms.author: pafarley
 ms.date: 03/15/2018
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Device Portal for Desktop
+# Device Portal for Windows Desktop
 
 
 
-Device Portal lets you view diagnostic information and interact with your desktop over HTTP from a browser window. You can use Device Portal to do the following:
+Windows Device Portal lets you view diagnostic information and interact with your desktop over HTTP from a browser window. You can use Device Portal to do the following:
 - See and manipulate a list of running processes
 - Install, delete, launch, and terminate apps
 - Change Wi-Fi profiles, view signal strength, and see ipconfig
@@ -24,18 +24,18 @@ Device Portal lets you view diagnostic information and interact with your deskto
 - Collect ETW traces 
 - Manipulate the isolated storage of sideloaded apps
 
-## Set up device portal on Windows Desktop
+## Set up Device Portal on Windows Desktop
 
 ### Turn on developer mode
 
-Starting in Windows 10, Version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
+Starting in Windows 10, version 1607, some of the newer features for desktop are only available when developer mode is enabled. For information about how to enable developer mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
 > [!IMPORTANT]
 > Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
 
-### Turn on device portal
+### Turn on Device Portal
 
-Enable Device Portal in the **For developers** section of **Settings**. When you enable it, you must also create a corresponding username and password. Do not use your Microsoft account or other Windows credentials. 
+You can enable Device Portal in the **For developers** section of **Settings**. When you enable it, you must also create a corresponding username and password. Do not use your Microsoft account or other Windows credentials. 
 
 ![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png) 
 
@@ -54,9 +54,9 @@ HTTPS is required for authentication and secure communication.
 
 If you are using Device Portal in a protected environment, like a test lab, in which you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable the Authentication option. This enables unencrypted communication, and allows anyone with the IP address of your computer to connect to and control it.
 
-## Device Portal content on desktop
+## Device Portal content on Windows Desktop
 
-Device Portal on desktop provides the standard set of pages. For detailed descriptions of these, see [Windows Device Portal overview](device-portal.md).
+Device Portal on Windows Desktop provides the standard set of pages. For detailed descriptions of these, see [Windows Device Portal overview](device-portal.md).
 
 - Apps manager
 - File explorer

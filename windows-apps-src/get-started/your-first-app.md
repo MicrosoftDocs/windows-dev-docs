@@ -14,7 +14,7 @@ ms.localizationpriority: high
 
 # Create your first app
 
-Welcome to the UWP ([what's UWP again?](whats-a-uwp.md)) platform! These tutorials will help you create your first UWP app in the language of your choice.
+Welcome to the [UWP platform](universal-application-platform-guide.md)! These tutorials will help you create your first UWP app in the language of your choice.
 
 To get started, choose your favorite language!
 
@@ -80,6 +80,6 @@ Need to brush up on your web skills?
 * [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a Universal Windows app?](whats-a-uwp.md)
+* [What's a UWP app?](universal-application-platform-guide.md)
 * [Get set up](get-set-up.md)
 * [Sign up for Windows account](sign-up.md)

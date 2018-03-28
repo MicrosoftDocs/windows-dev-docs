@@ -132,6 +132,7 @@
 ### [UX - Arena user scenarios](multiplayer/arena/arena-user-scenarios.md)
 ## [Game Chat 2](multiplayer/chat/game-chat-2-overview.md)
 ### [Use Game Chat 2](multiplayer/chat/using-game-chat-2.md)
+### [Real-time audio manipulation](multiplayer/chat/real-time-audio-manipulation.md)
 ## [Game Chat](multiplayer/chat/gamechat-overview.md)
 ### [Accessibility features](multiplayer/chat/chat-accessibility-overview.md)
 ## [Multiplayer Service Configuration](multiplayer/service-configuration/configure-the-multiplayer-service.md)
