@@ -4,7 +4,7 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 01/22/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -29,7 +29,7 @@ In the Windows Dev Center dashboard, you can:
 -   Review promotional code usage.
 
 > [!NOTE]
-> You can generate promotional codes even if you have selected the [Visibility](set-app-pricing-and-availability.md#visibility) option **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device.**
+> You can generate promotional codes even if you have selected **Make this product available but not discoverable in the Store** with the **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device** option in your submission's [Discoverability](choose-visibility-options.md#discoverability) section.
 
 Note that your app must pass the final publishing phase of the [app certification process](the-app-certification-process.md) before customers can redeem a promotional code to install it.
 

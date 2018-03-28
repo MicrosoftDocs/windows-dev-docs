@@ -3,7 +3,7 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: Set and schedule app pricing
 ms.author: wdg-dev-content
-ms.date: 02/05/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -33,6 +33,8 @@ In the **Pricing** section, click **view conversion table** to see the correspon
 
 Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). You should also review the [price considerations for specific markets](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
 
+> [!NOTE]
+> If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](choose-visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they have sing a promotional code to get the app for free).
 
 ## Schedule price changes
 
