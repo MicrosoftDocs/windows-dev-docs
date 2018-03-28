@@ -40,7 +40,7 @@ To use this method, you need to first do the following:
 | Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
- 
+
 
 ### Request parameters
 
