@@ -232,7 +232,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 
 [Playfab](https://playfab.com/) currently powers more than 1,200 live games with 80 million monthly active players. It is a complete backend platform that includes full stack LiveOps with real-time control. 
 
-You can integrate this solution into your mobile, PC, or console games using SDKs. There are SDKS available for all popular game engines and platforms, including Android, iOS, Unreal, Unity,  and Windows. To get started, see [Documentation](https://api.playfab.com/).
+You can integrate this solution into your mobile, PC, or console games using SDKs. There are SDKs available for all popular game engines and platforms, including Android, iOS, Unreal, Unity,  and Windows. To get started, see [Documentation](https://api.playfab.com/).
 
 It offers game services like authentication, player data management, multiplayer, and real-time analytics to help your game grow its user base. Harness the power of real-time data pipeline and LiveOps to engage your users with customized in-game items, events, and promotions. You also have the ability to conduct A/B testing, generate reports, send push notifications, and more. 
 
