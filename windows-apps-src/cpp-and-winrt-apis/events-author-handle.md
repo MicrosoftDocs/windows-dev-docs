@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 This topic demonstrates how to author a Windows Runtime Component containing a runtime class representing a bank account, which raises an event when its balance goes into debit. It also demonstrates a Core App that consumes the bank account runtime class, calls a function to adjust the balance, and handles any events that result.
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
+> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 > [!NOTE]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
