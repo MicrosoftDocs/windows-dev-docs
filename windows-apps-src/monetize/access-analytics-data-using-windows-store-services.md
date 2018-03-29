@@ -105,7 +105,7 @@ The following analytics methods are available for use by developer accounts that
 
 ### Methods for Xbox One games
 
-The following additional methods are available for use by developer accounts with Xbox One games.
+The following additional methods are available for use by developer accounts with Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Dev Center dashboard.
 
 | Scenario       | Methods      |
 |---------------|--------------------|
