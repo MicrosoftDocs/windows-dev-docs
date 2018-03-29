@@ -22,7 +22,7 @@ For important background info about ApiInformation, API contracts, and configuri
 
 You use the [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
 
-Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Here, we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Device families overview](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
 > Numerous runtime API checks can affect the performance of your app. We show the checks inline in these examples. In production code, you should perform the check once and cache the result, then used the cached result throughout your app. 
@@ -445,5 +445,5 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 ## Related articles
 
-- [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
