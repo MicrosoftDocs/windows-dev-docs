@@ -3,7 +3,7 @@ author: stevewhims
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs.
 title: Introduction to C++/WinRT
 ms.author: stwhi
-ms.date: 03/01/2018
+ms.date: 03/27/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,10 +21,6 @@ C++/WinRT is an entirely standard modern C++17 language projection for Windows R
 
 ## Language projections
 WinRT is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
-
-The C++/WinRT projection is newer than the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl). It's also newer than [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) (which does not use standard C++). C++/WinRT performs better and produces smaller binaries than any other language option for WinRT.
-
-You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have.C++/WinRT makes it extremely easy to call WinRT APIs in any C++ application, from WinForms to UWP.
 
 ### The C++/WinRT language projection in the Windows UWP API reference content
 When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
@@ -123,7 +119,6 @@ There are also types that you might see if you closely study the C++/WinRT proje
 * [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
 
 ## Related topics
-* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)
 * [Visual Studio Marketplace](https://marketplace.visualstudio.com/)

@@ -75,12 +75,12 @@ Call [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br24
 
 What you do with the captured video file depends on the scenario for your app. The rest of this article shows you how to quickly create a media composition from one or more captured videos and show it in your UI.
 
-First, add a [**MediaPlayerElement**](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control in which the video composition will be displayed to your XAML page.
+First, add a [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control in which the video composition will be displayed to your XAML page.
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 
-With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/en-us/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource#Windows_Media_Core_MediaSource_CreateFromStorageFile_Windows_Storage_IStorageFile_)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/en-us/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
+With the video file returned from the camera capture UI, create a new [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) by calling **[CreateFromStorageFile](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)**. Call the **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** method of the default **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** associated with the **MediaPlayerElement** to play the video.
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  

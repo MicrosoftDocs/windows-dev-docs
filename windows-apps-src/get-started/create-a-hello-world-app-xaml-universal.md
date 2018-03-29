@@ -26,7 +26,7 @@ Here you'll learn how to:
 
 ## Before you start...
 
--   [What's a Universal Windows app](whats-a-uwp.md)?
+-   [What's a Universal Windows app?](universal-application-platform-guide.md)
 -   [Download Visual Studio 2017 (and Windows 10)](https://developer.microsoft.com/windows/downloads). If you need a hand, learn how to [get set up](get-set-up.md).
 -   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
@@ -230,11 +230,9 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 ## Summary
 
-
 Congratulations, you've created your first app for Windows 10 and the UWP!
 
 To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](../design/layout/grid-tutorial.md), or jump straight to [next steps](learn-more.md)?
-
 
 ## See Also
 
@@ -242,5 +240,5 @@ To learn how to use XAML for laying out the controls your app will use, try the 
 * [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
-* [What's a Universal Windows app?](whats-a-uwp.md)
+* [What's a Universal Windows app?](universal-application-platform-guide.md)
 * [Sign up for Windows account](sign-up.md)

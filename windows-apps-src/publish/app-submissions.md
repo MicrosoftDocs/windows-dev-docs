@@ -3,9 +3,9 @@ author: jnHs
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-keywords: checklist, windows, uwp, submission, submit, game, app
+keywords: checklist, windows, uwp, submission, submit, game, app, submitting
 ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 3/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -34,7 +34,8 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Markets**                   | Default: All possible markets,  | [Define pricing and market selection](define-pricing-and-market-selection.md)         |
-| **Visibility**                | Default: Make this app available and discoverable in the Store | [Visibility](set-app-pricing-and-availability.md#visibility) |
+| **Audience**                | Default: Public audience | [Audience](choose-visibility-options.md#audience) |
+| **Discoverability**                | Default: Make this app available and discoverable in the Store | [Discoverability](choose-visibility-options.md#discoverability) |
 | **Schedule**                  | Default: Release as soon as possible        | [Configure precise release scheduling](configure-precise-release-scheduling.md) |
 | **Base price**                | Required                                    | [Set and schedule app pricing](set-and-schedule-app-pricing.md)              |
 | **Free trial**                | Default: No free trial                      | [Free trial](set-app-pricing-and-availability.md#free-trial)              |

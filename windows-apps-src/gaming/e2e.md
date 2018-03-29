@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 02/23/2018
+ms.date: 03/27/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -1186,6 +1186,7 @@ Learn what changed in Direct3D 12 and how to start programming using Direct3D 12
     </tr>
 </table>
  
+
 #### DirectX Tool Kit and libraries
 
 The DirectX Tool Kit, DirectX texture processing library, DirectXMesh geometry processing library, UVAtlas library, and DirectXMath library provide texture, mesh, sprite, and other utility functionality and helper classes for DirectX development. These libraries can help you save development time and effort.
@@ -1325,6 +1326,7 @@ An IAP (in-app product) is a supplementary item that players can purchase in-gam
     </tr>
 </table>
  
+
 ### Debugging, performance optimization, and monitoring
 
 To optimize performance, take advantage of Game Mode in Windows 10 to provide your gamers with the best possible gaming experience by fully utilizing the capacity of their current hardware.

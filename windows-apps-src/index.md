@@ -52,7 +52,7 @@ The Universal Windows Platform (UWP) lets you build apps for any Windows deviceâ
                     <div class="cardText">
                         <h3>Get started</h3>
                         <p>
-                            <a href="get-started/whats-a-uwp.md">What's a UWP app?</a>
+                            <a href="get-started/universal-application-platform-guide.md">What's a UWP app?</a>
                         </p>
                         <p>
                             <a href="get-started/sign-up.md">Sign up for a developer account</a>
