@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="766edaca-961c-4d49-9b7e-fc34afedafdc"
+    Name="d7a1ff7a-cdc6-4799-b47f-023109a9400a"
     Publisher="CN=drewbat"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="766edaca-961c-4d49-9b7e-fc34afedafdc" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="d7a1ff7a-cdc6-4799-b47f-023109a9400a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>MIDIWin10</DisplayName>

@@ -56,7 +56,7 @@ It's important to be aware that selections you make in the **Device family avail
 
 For example, if you have a published app with Windows Phone 8.1 packages, and you later add a Windows 10 (UWP) package to the same app that targets the universal device family, Windows 10 mobile customers who had your Windows Phone 8.1 package will be offered an update to this Windows 10 (UWP) package, even if you've unchecked the box for **Windows 10 Mobile** (since this is not a new acquisition, but an update). However, if you don't provide any Windows 10 (UWP) package that targets the universal or mobile device family, your Windows 10 mobile customers will remain on the Windows Phone 8.1 package.
 
-For more info about device families, see [Intro to the Universal Windows Platform](../get-started/universal-application-platform-guide.md) and [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
+For more info about device families, see [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily).
 
 
 ## Understanding ranking

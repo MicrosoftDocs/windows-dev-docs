@@ -33,6 +33,8 @@ Game Chat 2 (GC2) allows you to easily add voice and text chat communication to 
 
 - `chat_manager::process_incoming_data` - The method used to give data to GC2 that has been delivered over the app's transport layer from a remote instance of GC2.
 
+- **Real-time Audio Manipulation** - GC2 allows the app to insert itself in the chat audio pipeline, so that it may inspect or manipulate chat audio data. See [Real-time audio manipulation](real-time-audio-manipulation.md) for more information.
+
 The app informs the library of users on the local device and users on remote devices that are expected to chat together. The app then configures the relationships between each user.
 
 Once configured, GC2 polls audio from the local users' microphone(s), performs automatic gain control and voice activity detection, encodes the data, then exposes the audio data to be delivered to remote instances of GC2 via `chat_manager::start/finish_processing_data_frames`. The app must deliver the data contained in the `game_chat_state_change` object to the remote instances of GC2 specified in the same object. Upon receiving the data, remote instances of the app must submit the data to their own instance of GC2 via `chat_manager::process_incoming_data`. GC2 decodes the incoming data and then renders it to the local user's audio device.

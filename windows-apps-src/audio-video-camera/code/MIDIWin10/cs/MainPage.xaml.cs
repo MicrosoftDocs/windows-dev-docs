@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -13,14 +12,15 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using System.Threading.Tasks;
+
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 // <SnippetUsing>
 using Windows.Devices.Enumeration;
 using Windows.Devices.Midi;
+using System.Threading.Tasks;
 // </SnippetUsing>
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MIDIWin10
 {
@@ -127,7 +127,7 @@ namespace MIDIWin10
                 return;
             }
 
-            DeviceInformation devInfo = deviceInformationCollection[midiOutPortListBox.SelectedIndex];
+            DeviceInformation devInfo = deviceInformationCollection[midiInPortListBox.SelectedIndex];
 
             if (devInfo == null)
             {
@@ -136,7 +136,7 @@ namespace MIDIWin10
 
             midiInPort = await MidiInPort.FromIdAsync(devInfo.Id);
 
-            if(midiInPort == null)
+            if (midiInPort == null)
             {
                 System.Diagnostics.Debug.WriteLine("Unable to create MidiInPort from input device");
                 return;
@@ -166,14 +166,14 @@ namespace MIDIWin10
         {
             var deviceInformationCollection = outputDeviceWatcher.DeviceInformationCollection;
 
-            if(deviceInformationCollection == null)
+            if (deviceInformationCollection == null)
             {
                 return;
             }
 
             DeviceInformation devInfo = deviceInformationCollection[midiOutPortListBox.SelectedIndex];
 
-            if(devInfo == null)
+            if (devInfo == null)
             {
                 return;
             }

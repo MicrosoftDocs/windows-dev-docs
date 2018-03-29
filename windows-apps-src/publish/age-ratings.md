@@ -4,7 +4,7 @@ Description: The Age ratings page of the app submission process lets you provide
 title: Age ratings
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 02/06/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,7 +23,7 @@ The first time you submit an app (or the first time you update an app published 
 > [!IMPORTANT]
 > If you have already completed the questionnaire for your app in another storefront and have an IARC rating ID, you can select the option to provide us with your rating ID. We'll use your ID to associate the existing ratings with your app in the Microsoft Store.
 
-You are required to answer the questions accurately. As part of this process, we share your publisher display name and email address with IARC. After you complete the questionnaire, the IARC rating system will provide age and content rating information based on your responses. We’ll use this rating information when displaying your app to customers in different markets. You will also receive an email from IARC with a confirmation of the app’s rating when your app has been published.
+You are required to answer the questions accurately. For more info about any question, click the info icon that appears next to it. As part of this process, we share your publisher display name and email address with IARC. After you complete the questionnaire, the IARC rating system will provide age and content rating information based on your responses. We’ll use this rating information when displaying your app to customers in different markets. You will also receive an email from IARC with a confirmation of the app’s rating when your app has been published.
 
 The first question asks you to choose the category that best describes your app (and its metadata). Once you make a selection, you will see additional questions. The specific questions you see will vary based on your previous answers. If you make a mistake, you can go back or start the questionnaire again to provide the right answers.
 

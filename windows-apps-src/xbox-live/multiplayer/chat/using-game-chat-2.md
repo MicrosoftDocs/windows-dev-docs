@@ -15,22 +15,22 @@ ms.localizationpriority: low
 
 This is a brief walkthrough on using Game Chat 2 (GC2), containing the following topics:
 
-1. [Prerequisites](#prereq)
-2. [Initialization](#init)
-3. [Configuring users](#config)
-4. [Processing data frames](#data)
-5. [Processing state changes](#state)
-6. [Text chat](#text)
-7. [Accessibility](#access)
-8. [UI](#UI)
-9. [Muting](#mute)
-10. [Bad reputation auto-mute](#automute)
-11. [Privilege and privacy](#priv)
+1. [Prerequisites](#prerequisites)
+2. [Initialization](#initialization)
+3. [Configuring users](#configuring-users)
+4. [Processing data frames](#processing-data-frames)
+5. [Processing state changes](#processing-state-changes)
+6. [Text chat](#text-chat)
+7. [Accessibility](#accessibility)
+8. [UI](#ui)
+9. [Muting](#muting)
+10. [Bad reputation auto-mute](#bad-reputation-auto-mute)
+11. [Privilege and privacy](#privilege-and-privacy)
 12. [Cleanup](#cleanup)
-13. [Failure model](#failure)
+13. [Failure model](#failure-model)
 14. [How to configure popular scenarios](#how-to-configure-popular-scenarios)
 
-## Prerequisites <a name="prereq">
+## Prerequisites
 
 Before you get started coding with GC2, you must have configured your app's AppXManifest to declare the "microphone" device capability. AppXManifest capabilities are described in more detail in their respective sections of the platform documentation; the following snippet shows the "microphone" device capability node that should exist under the Package/Capabilities node or else chat will be blocked:
 
@@ -49,7 +49,7 @@ Compiling GC2 requires including the primary GameChat2.h header. In order to lin
 
 The GC2 interface does not require a project to choose between compiling with C++/CX versus traditional C++; it can be used with either. The implementation also doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred. The implementation does, however, throw exceptions as a means of fatal error reporting (see [Failure model](#failure) for more detail).
 
-## Initialization <a name="init">
+## Initialization
 
 You begin interacting with the library by initializing the GC2 singleton instance with parameters that apply to the lifetime of the singleton's initialization.
 
@@ -57,7 +57,7 @@ You begin interacting with the library by initializing the GC2 singleton instanc
 chat_manager::singleton_instance().initialize(...);
 ```
 
-## Configuring users <a name="config">
+## Configuring users
 
 Once the instance is initialized, you must add the local users to the Game Chat instance. In this example, User A will represent a local user.
 
@@ -94,9 +94,9 @@ Finally, suppose that User D has left the game and should be removed from the lo
 chat_manager::singleton_instance().remove_user(chatUserD);
 ```
 
-The user object is invalidated immediately when `chat_manager::remove_user()` is called. A subtle restriction on when users can be removed is detailed in [Processing state changes](#state).
+Calling `chat_manager::remove_user()` may invalidate the user object. If you are using [real-time audio manipulation](real-time-audio-manipulation.md), please refer to the [Chat user lifetimes](real-time-audio-manipulation.md#chat-user-lifetimes) documentation for further information. Otherwise, the user object is invalidated immediately when `chat_manager::remove_user()` is called. A subtle restriction on when users can be removed is detailed in [Processing state changes](#state).
 
-## Processing data frames <a name="data">
+## Processing data frames
 
 GC2 does not have its own transport layer; this must be provided by the app. This plugin is managed by the app's regular, frequent calls to the `chat_manager::start_processing_data_frames()` and `chat_manager::finish_processing_data_frames()` pair of methods. These methods are how GC2 provides outgoing data to the app. They're designed to operate quickly such that they can be polled frequently on a dedicated networking thread. This provides a convenient place to retrieve all queued data without worrying about the unpredictability of network timing or multi-threaded callback complexity.
 
@@ -122,7 +122,7 @@ chat_manager::singleton_instance().finish_processing_data_frames(dataFrames);
 
 The more frequently the data frames are processed, the lower the audio latency apparent to the end user will be. The audio is coalesced into 40 ms data frames; this is the suggested polling period.
 
-## Processing state changes <a name="state">
+## Processing state changes
 
 GC2 provides updates to the app, such as received text messages, through the app's regular, frequent calls to the `chat_manager::start_processing_state_changes()` and `chat_manager::finish_processing_state_changes()` pair of methods. They're designed to operate quickly such that they can be called every graphics frame in your UI rendering loop. This provides a convenient place to retrieve all queued changes without worrying about the unpredictability of network timing or multi-threaded callback complexity.
 
@@ -157,7 +157,7 @@ chat_manager::singleton_instance().finish_processing_state_changes(gameChatState
 
 Because `chat_manager::remove_user()` immediately invalidates the memory associated with a user object, and state changes may contain pointers to user objects, `chat_manager::remove_user()` must not be called while processing state changes.
 
-## Text chat <a name="text">
+## Text chat
 
 To send text chat, use `chat_user::chat_user_local::send_chat_text()`. For example:
 
@@ -169,7 +169,7 @@ GC2 will generate a data frame containing this message; the target endpoints for
 
 Supporting text chat input and display is required for accessibility (see [Accessibility](#access) for more details).
 
-## Accessibility <a name="access">
+## Accessibility
 
 Supporting text chat input and display is required. Text input is required because, even on platforms or game genres that historically haven't had widespread physical keyboard use, users may configure the system to use text-to-speech assistive technologies. Similarly, text display is required because users may configure the system to use speech-to-text. These preferences can be detected on local users by calling the `chat_user::chat_user_local::text_to_speech_conversion_preference_enabled()` and `chat_user::chat_user_local::speech_to_text_conversion_preference_enabled()` methods respectively, and you may wish to conditionally enable text mechanisms.
 
@@ -195,7 +195,7 @@ When speech-to-text is enabled, the GC2 instance on each remote device initiates
 
 Therefore, the primary performance cost of speech-to-text is network usage. Most of the network traffic is the upload of encoded audio. The websocket uploads audio that has already been encoded by GC2 in the “normal” voice chat path; the app has control over the bitrate via `chat_manager::set_audio_encoding_type_and_bitrate`.
 
-## UI <a name="UI">
+## UI
 
 It's recommended that anywhere players are shown, particularly in a list of gamertags such as a scoreboard, that you also display muted/speaking icons as feedback for the user. This is done by calling `chat_user::chat_indicator()` to retrieve a `game_chat_user_chat_indicator` representing the current, instantaneous status of chat for that player. The following example demonstrates retrieving the indicator value for a `chat_user` object pointed to by the variable 'chatUserA' to determine a particular icon constant value to assign to an 'iconToShow' variable:
 
@@ -225,7 +225,7 @@ switch (chatUserA->chat_indicator())
 
 The value reported by `xim_player::chat_indicator()` is expected to change frequently as players start and stop talking, for example. It is designed to support apps polling it every UI frame as a result.
 
-## Muting <a name="mute">
+## Muting
 
 The `chat_user::chat_user_local::set_microphone_muted()` method can be used to toggle the mute state of a local user's microphone. When the microphone is muted, no audio from that microphone will be captured. If the user is on a shared device, such as Kinect, the mute state applies to all users.
 
@@ -233,21 +233,21 @@ The `chat_user::chat_user_local::microphone_muted()` method can be used to retri
 
 The `chat_user::chat_user_local::set_remote_user_muted()` method can be used to toggle the mute state of a remote user in relation to a particular local user. When the remote user is muted, the local user won't hear any audio or receive any text messages from the remote user.
 
-## Bad reputation auto-mute <a name="automute">
+## Bad reputation auto-mute
 
 Typically remote users will start off unmuted. GC2 will start the users in a muted state when (1) the remote user isn't friends with the local user, and (2) the remote user has a bad reputation flag. When users are muted due to this operation, `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::reputation_restricted`. This state will be overridden by the first call to `chat_user::chat_user_local::set_remote_user_muted()` that includes the remote user as the target user.
 
-## Privilege and privacy <a name="priv">
+## Privilege and privacy
 
 On top of the communication relationship configured by the game, GC2 enforces privilege and privacy restrictions. GC2 performs privilege and privacy restriction lookups when a user is first added; the user's `chat_user::chat_indicator()` will always return `game_chat_user_chat_indicator::silent` until those operations complete. If communication with a user is affected by a privilege or privacy restriction, the user's `chat_user::chat_indicator()` will return `game_chat_user_chat_indicator::platform_restricted`. Platform communication restrictions apply to both voice and text chat; there will never be an instance where text chat is blocked by a platform restriction but voice chat is not, or vice versa.
 
 `chat_user::chat_user_local::get_effective_communication_relationship()` can be used to help distinguish when users can't communicate due to incomplete privilege and privacy operations. It returns the communication relationship enforced by GC2 in the form of `game_chat_communication_relationship_flags` and the reason the relationship may not be equal to the configured relationship in the form of `game_chat_communication_relationship_adjuster`. For example, if the lookup operations are still in progress, the `game_chat_communication_relationship_adjuster` will be `game_chat_communication_relationship_adjuster::intializing`. This method is expected to be used in development and debugging scenarios; it should not be used to influence UI (see [UI](#UI)).
 
-## Cleanup <a name="cleanup">
+## Cleanup
 
 When the app no longer needs communications via GC2, you should call `chat_manager::cleanup()`. This allows GC2 to reclaim resources that were allocated to manage the communications.
 
-## Failure model <a name="failure">
+## Failure model
 
 The GC2 implementation doesn't throw exceptions as a means of non-fatal error reporting so you can consume it easily from exception-free projects if preferred. Game Chat 2 does, however, throw exceptions to inform about fatal errors. These errors are a result of API misuse, such as adding a user to the Game Chat instance before initializing the instance or accessing a user object after it has been removed from the Game Chat instance. These errors are expected to be caught early in development and can be corrected by modifying the pattern used to interact with GC2. When such an error occurs, a hint as to what caused the error is printed to the debugger before the exception is raised.
 

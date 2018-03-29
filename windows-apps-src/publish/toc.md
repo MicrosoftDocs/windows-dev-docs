@@ -13,6 +13,7 @@
 # [App submissions](../publish/app-submissions.md)
 ## [Set app pricing and availability](../publish/set-app-pricing-and-availability.md)
 ### [Define market selection](../publish/define-pricing-and-market-selection.md)
+### [Choose visibility options](../publish/choose-visibility-options.md)
 ### [Configure precise release scheduling](../publish/configure-precise-release-scheduling.md)
 ### [Set and schedule app pricing](../publish/set-and-schedule-app-pricing.md)
 ### [Organizational licensing options](../publish/organizational-licensing.md)

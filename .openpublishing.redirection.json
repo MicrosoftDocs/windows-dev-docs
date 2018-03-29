@@ -1654,6 +1654,11 @@
       "source_path": "windows-apps-src/design/input/managing-focus-navigation.md",
       "redirect_url": "/windows/uwp/design/input/focus-navigation-programmatic",
       "redirect_document_id": true
-    }    
+    },
+    {
+      "source_path": "windows-apps-src/get-started/whats-a-uwp.md",
+      "redirect_url": "windows-apps-src/get-started/universal-application-platform-guide.md",
+      "redirect_document_id": true
+    }
   ]
 }
