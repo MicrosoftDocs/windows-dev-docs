@@ -2,8 +2,8 @@
 author: muhsinking
 title: POS device support
 description: This article contains information about device support for each POS device family
-ms.author: mukin
-ms.date: 05/17/2017
+ms.author: jken
+ms.date: 03/22/201
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -54,7 +54,7 @@ Windows provides support for the following magnetic stripe readers from Magtek a
 | Magtek | MagneSafe (VID:0801 PID:0011) |	210730xx |
 | |	Dynamag (VID:0801 PID:0002) |	210401xx |
 
-<p>Windows supports implementation of additional vendor specific drivers to support additional magnetic stripe readers. Please check with your magnetic stripe reader manufacturer for availability.</p><p>Magnetic stripe reader manufacturers please consult the [Magnetic Stripe Reader Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom magnetic stripe reader driver</p>
+ Windows supports implementation of additional vendor specific drivers to support additional magnetic stripe readers. Please check with your magnetic stripe reader manufacturer for availability. Magnetic stripe reader manufacturers please consult the [Magnetic Stripe Reader Driver Design Guide](https://aka.ms/pointofservice-drv) for information on creating a custom magnetic stripe reader driver.
 
 ## Receipt Printer (POSPrinter)
 | Connectivity | Support |

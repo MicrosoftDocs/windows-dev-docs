@@ -20,7 +20,7 @@ Chaseable tile notifications let you determine which tile notifications your app
 For example, a news app could use this feature to determine which news story the its Live Tile was displaying when the user launched it; it could that ensure that the story is prominently displayed so that the user can find it. 
 
 > [!IMPORTANT]
-> **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or higher to use chaseable tile notifications.
+> **Requires Anniversary Update**: To use chaseable tile notifications with C# and VB-based UWP apps, you must target SDK 14393 and be running build 14393 or higher. For JavaScript-based UWP apps, you must target SDK 17133 and be running build 17133 or higher. 
 
 
 > **Important APIs**: [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo), [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
@@ -171,8 +171,11 @@ If you're using raw XML instead of the Notifications library, here's the XML.
  
   </visual>
 </tile>
+```
+
+
 
 ## Related articles
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo class](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

@@ -4,7 +4,7 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: App capability declarations
 description: Capabilities must be declared in your Universal Windows Platform (UWP) app's package manifest to access certain API or resources like pictures, music, or devices like the camera or the microphone.
 ms.author: misatran
-ms.date: 10/26/2017
+ms.date: 3/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -185,7 +185,7 @@ Special and restricted capabilities are intended for very specific scenarios. Th
 | **Enterprise Cloud Single Sign On** | The **enterpriseCloudSSO** capability allows apps to use single sign on with Azure Active Director (AAD) resources inside a hosted web view control.
 | **Automatically Accept VoIP Calls** | The **backgroundVoIP** capability allows developers to automatically receive and accept incoming VoIP calls without requiring the user to accept the call explicitly. Apps utilizing this capability are granted full control of camera and microphone and can use these resources in the background.
 | **Development Mode Network** | The **developmentModeNetwork** capability allows apps to access network paths using the credentials from the signed-in user when calling the OpenFile Win32 API in a C++/CX UWP app or C++ Windows Runtime Component. No one may request access to this capability for store submission.
-| **Broad Filesystem Access** | The **broadFileSystemAccess** capability allows apps to get the same access to the file system as the user who is currently running the app without any additional file-picker style prompts during runtime. <br/><br/>It is important to note that the first use of any [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) APIs with this capability declared in your app package manifest will trigger a user-consent prompt where the user can grant or deny the permission. Users can also grant or deny the permission at any point by toggling Settings. It is also important that you do not declare any special folder capabilities such as **Documents**, **Pictures**, or **Videos** with this capability.
+| **Broad Filesystem Access** | The **broadFileSystemAccess** capability allows apps to get the same access to the file system as the user who is currently running the app without any additional file-picker style prompts during runtime.<br/><br/>This capability works for the [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) APIs. It is important to note that the first use of any **Windows.Storage** APIs with this capability declared in your app package manifest will trigger a user-consent prompt where the user can grant or deny the permission. Users can also grant or deny the permission at any point by toggling Settings. It is also important that you do not declare any special folder capabilities such as **Documents**, **Pictures**, or **Videos** with this capability.
 
 ## Related topics
 

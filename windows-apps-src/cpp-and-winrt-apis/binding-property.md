@@ -26,7 +26,7 @@ Let's say that a runtime class named **BookSku** has a property named **Title**.
 A XAML text element, or control, can bind to, and handle, these events by retrieving the updated value(s) and then updating itself to show the new value.
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
+> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 ## Create a Blank App (Bookstore)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Blank App (C++/WinRT)** project, and name it *Bookstore*.
@@ -37,8 +37,6 @@ The first step in authoring a new runtime class is to add a new **Midl File (.id
 
 ```idl
 // BookSku.idl
-import "Windows.UI.Xaml.Data.idl";
-
 namespace Bookstore
 {
 	runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
@@ -129,7 +127,6 @@ Add a new **Midl File (.idl)** item named `BookstoreViewModel.idl`.
 
 ```idl
 // BookstoreViewModel.idl
-import "Windows.Foundation.idl";
 import "BookSku.idl";
 
 namespace Bookstore
@@ -190,8 +187,6 @@ Open `MainPage.idl`, which declares the runtime class that represents our main U
 
 ```idl
 // MainPage.idl
-import "Windows.UI.Xaml.Controls.idl";
-import "Windows.UI.Xaml.Markup.idl";
 import "BookstoreViewModel.idl";
 
 namespace BookstoreCPPWinRT

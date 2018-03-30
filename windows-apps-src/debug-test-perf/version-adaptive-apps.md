@@ -99,6 +99,6 @@ For more info about remote debugging, see [Deploying and debugging UWP apps](dep
 
 ## Related articles
 
-- [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [What's a UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
 - [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API Contracts](https://channel9.msdn.com/Events/Build/2015/3-733) (Build 2015 video)

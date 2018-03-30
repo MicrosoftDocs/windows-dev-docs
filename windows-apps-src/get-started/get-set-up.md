@@ -67,10 +67,6 @@ After you've installed the tools and enabled your device for development, use ou
 
 -   [Create your first app](your-first-app.md) tutorials
 
-Not sure what to look for? Ask our bot! For example, ask 'Where can I download Visual Studio?' or 'Tell me about Fluent Design". If you don't get a useful answer, try rewording your query slightly.
-
-<iframe src='https://webchat.botframework.com/embed/DocBot4?s=T2nP6qZUXC8.cwA.lvc.AR-ZBwtULpaITu6_dAhMwrmg4R2GSLNzIoiMNFL8M7M' height="400" width="400"></iframe>
-
 ## Want more tools and downloads?
 
 For the complete list of tools and downloads, see [Downloads](http://go.microsoft.com/fwlink/p/?linkid=285935).

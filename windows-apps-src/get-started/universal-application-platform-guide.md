@@ -29,17 +29,17 @@ Here are some of the characteristics that make UWP apps on Windows 10 different
 
     The Universal Windows Platform (UWP) core APIs are the same for all Windows devices. If your app only uses the core APIs, it will run on any Windows 10 device no matter whether you are targeting a desktop PC, Xbox, Mixed Reality headset, and so on.
 
+    A UWP app written in C++ /WinRT or C++ CX has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows 10 devices.
+
 - **Extension SDKs expose the unique capabilities of specific device types**
 
     If you target the universal APIs, your app can run on all devices that run Windows 10. But if you want your UWP app to take advantage of device specific APIs, you can.
 
     An extension SDK lets you call specialized APIs for a device. For example, if your UWP app targets an IoT device, you can add the IoT extension SDK to your project to target features specific to IoT devices.
 
-    You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly.
+    You can write your app so that you expect it to run only on a particular type of device, and then limit its distribution from the Microsoft Store to just that type of device. Or, you can conditionally test for the presence of an API at runtime and adapt your app's behavior accordingly. For more information, see [Device families overview](https://docs.microsoft.com/en-us/uwp/extension-sdks/device-families-overview#writing-code).<br>
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
-
-    A UWP app written in C++ /WinRT or C++ CX has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows 10 devices.
 
 - **There's one store for all devices.**
 
