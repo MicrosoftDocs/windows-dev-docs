@@ -322,49 +322,6 @@ While you can't stack a `CommandBar`'s items vertically, placing them against th
 
 If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) and is the [context menu](../controls-and-patterns/dialogs.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
 
-<!--The following XAML code demonstrates a simple `ContextFlyout`:
-
-```xml
-<Button HorizontalAlignment="Center"
-        Content="Context Flyout">
-    <Button.ContextFlyout>
-        <MenuFlyout>
-            <MenuFlyoutItem Text="Item 1"/>
-        </MenuFlyout>
-    </Button.ContextFlyout>
-</Button>
-```
-
-In the above example, when you press the **Menu** button while the [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) has focus, the context menu appears with the menu item labeled **Item 1**.
-
-`ContextFlyout` takes any element of type [FlyoutBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.aspx); however, most of the time you will likely use [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) or [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx).
-
-Alternatively, you can listen for the [ContextRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextrequested.aspx) event, which occurs when the user has completed a context input gesture (pressing the **Menu** button). In this case you can, in the code-behind, create the context menu, attach it to the **UIElement**, and show the flyout when the event is raised.
-
-The following C# code demonstrates a simple example of this:
-
-```csharp
-MenuFlyout myFlyout = new MenuFlyout();
-MenuFlyoutItem item1 = new MenuFlyoutItem();
-item1.Text = "Item 1";
-myFlyout.Items.Add(item1);
-MyButton.ContextFlyout = myFlyout;
-
-private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventArgs args)
-{
-    Point point = new Point(0, 0);
-    if (args.TryGetPosition(sender, out point)
-    {
-        myFlyout.ShowAt(sender, point);
-    }
-    else
-    {
-        myFlyout.ShowAt(sender as FrameworkElement);
-    }
-}
-```
-> **Note** Don't use both of these options, as `ContextFlyout` already handles the `ContextRequested` event.-->
-
 ### UI layout challenges
 
 Some UI layouts are more challenging due to the nature of XY focus navigation, and should be evaluated on a case-by-case basis. While there is no single "right" way, and which solution you choose is up to your app's specific needs, there are some techniques that you can employ to make a great TV experience.
@@ -935,15 +892,7 @@ A [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.contro
 
 ![Pivot underline](images/designing-for-tv/pivot-underline.png)
 
-<!--By default, when you navigate to a `Pivot`, one of the [PivotItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivotitem.aspx)s will get focus. However, you can show focus around all the headers by setting `Pivot.HeaderFocusVisualPlacement="ItemHeaders"`.
-
-![Pivot focus around headers](images/designing-for-tv/pivot-headers-focus.png)-->
-
 You can set the [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](../controls-and-patterns/tabs-pivot.md).
-
-<!--If you find it necessary to wrap headers, you can set it so that it doesn't show the selected header in the left-most position, like it does by default. When you set `Pivot.IsHeaderItemsCarouselEnabled="False"`, the selected header will move left by the minimal amount required to become fully visible. This is the recommended approach for 10-foot design.
-
-![Pivot headers carousel disabled](images/designing-for-tv/pivot-headers-carousel.png)-->
 
 ### Navigation pane <a name="navigation-pane">
 
@@ -958,10 +907,6 @@ It is a good idea to have the labels placed to the right of the icons on a [Comm
 ![CommandBar with labels to the right of icons](images/designing-for-tv/commandbar.png)
 
 Setting this property will also cause the labels to always be displayed, which works well for the 10-foot experience because it minimizes the number of clicks for the user. This is also a great model for other device types to follow.
-
-<!--When there isn't enough space in the window to fit all of the `AppBarButton`s, buttons move into an overflow menu, which is accessed by selecting the "..." button. This happens dynamically as the screen resizes. This generally shouldn't be a problem for TV because the screen size is so large, but if you find that you have overflow buttons, you can specify which appear first using the `AppBarButton.DynamicOverflowOrder` property.
-
-![CommandBar with overflow commands](images/designing-for-tv/commandbar-overflow.png)-->
 
 ### Tooltip
 

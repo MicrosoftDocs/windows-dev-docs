@@ -51,6 +51,23 @@ template <typename T> array_view(std::initializer_list<T> value) noexcept
 
 In many cases, you can choose whether or not to be aware of **array_view** in your programming. If you choose *not* to be aware of it then you won't have any code to change if and when an equivalent type appears in the C++ Standard Library.
 
+You can pass an initializer list to a Windows Runtime API that expects a collection parameter. Take **StorageItemContentProperties::RetrievePropertiesAsync** for example.
+
+```cppwinrt
+IAsyncOperation<IMap<winrt::hstring, IInspectable>> StorageItemContentProperties::RetrievePropertiesAsync(IIterable<winrt::hstring> propertiesToRetrieve) const;
+```
+
+You can call that API with an initializer list like this.
+
+```cppwinrt
+IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
+{
+	auto properties = co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" });
+}
+```
+
+Two factors are at work here. First, the callee constructs a **std::vector** from the initializer list (this callee is async, so it's able to own that object, which it must). Second, C++/WinRT transparently (and without introducing copies) binds **std::vector** as a Windows Runtime collection parameter.
+
 ## Standard arrays and vectors
 **array_view** also has conversion constructors from **std::array** and **std::vector**.
 
@@ -71,6 +88,24 @@ Or with a **std::vector**.
 ```cppwinrt
 std::vector<byte> theVector{ 99, 98, 97 };
 dataWriter.WriteBytes(theVector); // theVector is converted to an array_view before being passed to WriteBytes.
+```
+
+We bind **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**. If the callee is async then you must either copy or move the vector. In the code example below, we move ownership of the vector to the async callee.
+
+```cppwinrt
+IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<winrt::hstring> const& vecH)
+{
+	auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH));
+}
+```
+
+But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime collection is expected. The following code example won't compile.
+
+```cppwinrt
+IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
+{
+	auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)); // error! Can't convert from vector of wstring to async_iterable of hstring.
+}
 ```
 
 ## Raw arrays, and pointer ranges

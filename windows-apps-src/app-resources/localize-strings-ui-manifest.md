@@ -67,6 +67,9 @@ Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ## Refer to a string resource identifier from code
 You can explicitly load a string resource based on a simple string resource identifier.
 
+> [!NOTE]
+> If you have a call to any **GetForCurrentView** method that *might* be executed on a background/worker thread, then guard that call with an `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` test. Calling **GetForCurrentView** from a background/worker thread results in the exception "*&lt;typename&gt; may not be created on threads that do not have a CoreWindow.*"
+
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Farewell");
@@ -129,6 +132,9 @@ To scope a string resource identifier reference to a particular file, you just a
 ```
 
 The code example below assumes that `ErrorMessages.resw` contains a resource whose name is "MismatchedPasswords" and whose value describes the error.
+
+> [!NOTE]
+> If you have a call to any **GetForCurrentView** method that *might* be executed on a background/worker thread, then guard that call with an `if (Windows.UI.Core.CoreWindow.GetForCurrentThread() != null)` test. Calling **GetForCurrentView** from a background/worker thread results in the exception "*&lt;typename&gt; may not be created on threads that do not have a CoreWindow.*"
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ManifestResources");
