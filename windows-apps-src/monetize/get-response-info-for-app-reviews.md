@@ -1,4 +1,4 @@
----
+﻿---
 author: mcleanbyron
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: Use this method in the Microsoft Store reviews API to determine whether you can respond to a particular review, or whether you can respond to any review for a given app.
@@ -67,7 +67,7 @@ Authorization: Bearer <your access token>
 | Value      | Type   | Description    |  
 |------------|--------|-----------------------|
 | CanRespond      | Boolean  | The value **true** indicates that you can respond to the specified review, or that you have permissions to respond to any review for the specified app. Otherwise, this value is **false**.       |
-| DefaultSupportEmail  | string |  Your app's [support email address](../publish/create-app-store-listings.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
+| DefaultSupportEmail  | string |  Your app's [support email address](../publish/enter-app-properties.md#support-contact-info) as specified in your app's Store listing. If you did not specify a support email address, this field is empty.    |
 
  
 ### Response example
