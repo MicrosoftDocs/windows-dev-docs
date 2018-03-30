@@ -17,11 +17,13 @@ ms.localizationpriority: medium
 UWP apps running on Xbox One share resources with the system and other apps. 
 The resources available to a UWP on Xbox One app depend on whether you submit as an app or as an Xbox Live Creators Program game.
 
-* Maximum available memory (while running in the foreground)
+* Maximum available memory while running in the foreground:
     * Apps: 1 GB
     * Games: 5 GB
-    * The maximum memory available to an app running in the background is 128 MB.
-    * Exceeding these limitations will cause memory allocation failures. For more information about monitoring memory use, see the [MemoryManager class](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) reference.
+
+The maximum memory available to an app running in the background is 128 MB. Background mode only applies to concurrent applications, like background music players.  Games will be suspended and terminated in the background.
+
+Exceeding these limitations will cause memory allocation failures. For more information about monitoring memory use, see the [MemoryManager class](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) reference.
     
     > [!NOTE]
     > When running your app or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.

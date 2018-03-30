@@ -21,7 +21,7 @@ This topic shows how to implement a Windows Runtime interface in C++/WinRT.
 The simplest scenario is where you're implementing a Windows Runtime interface on an ordinary C++ class. A good example is when you're writing an app based around [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication).
 
 > [!NOTE]
-> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
+> For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 In Visual Studio, the **Visual C++ Core App (C++/WinRT)** project template illustrates the **CoreApplication** pattern. The pattern begins with passing an implementation of [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) to [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run).
 
@@ -119,10 +119,11 @@ There are two scenarios in which your type (the type that's implementing a Windo
 - Your type is packaged in a Windows Runtime Component for consumption from apps, or
 - Your type is referenced by your XAML user interface (UI).
 
-For info about authoring a runtime class, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
+You define a runtime class in Interface Definition Language (IDL). From your IDL, the C++/WinRT tooling generates source code stubs in which you implement your type. For background info about authoring (and consuming) runtime classes, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md). For an example walkthrough of implementing the **INotifyPropertyChanged** interface on a runtime class, see [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## Important APIs
 * [winrt::implements (C++/WinRT)](/uwp/cpp-ref-for-winrt/implements)
 
 ## Related topics
 * [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md)
+* [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

@@ -27,9 +27,6 @@ For more information about Dev Home, see [Developer Home on the Console (Dev Hom
 ## Xbox Device Portal
 The Xbox Device Portal is a browser-based device management tool that allows you to add games and apps, add Xbox Live test accounts, change sandboxes, and much more.
 
-<!-- > [!NOTE]
-> For more information on the Xbox Device Portal, see the [Windows Device Portal overview](../debug-test-perf/device-portal.md). -->
-
 To enable the Xbox Device Portal on your Xbox One console:
 
 1. Select the **Dev Home** tile on the home screen.
