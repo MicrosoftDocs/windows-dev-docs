@@ -1627,6 +1627,7 @@
     },
     {
       "source_path": "windows-apps-src/xbox-live/social-platform/social-overview.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/xbox-360-friends-backward-compatibility.md",
       "redirect_url": "/windows/uwp/xbox-live/social-platform/social-platform",
       "redirect_document_id": true
     },
@@ -1653,6 +1654,14 @@
     {
       "source_path": "windows-apps-src/design/input/managing-focus-navigation.md",
       "redirect_url": "/windows/uwp/design/input/focus-navigation-programmatic",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/favorite-people.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/gamertags-and-real-names.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/one-way-relationships.md",
+      "source_path": "windows-apps-src/xbox-live/social-platform/people-system/privacy-and-people-i-know.md",
+      "redirect_url": "/windows/uwp/xbox-live/social-platform/people-system/xbox-live-people-system",
       "redirect_document_id": true
     },
     {
