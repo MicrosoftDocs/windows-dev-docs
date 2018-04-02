@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -157,18 +157,6 @@ If you enter a single URL into this field, it will be displayed to customers as 
 You can also enter up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
 
 
-### Website
-
-Enter the URL of the web page for your app. This URL must point to a page on your own website, not your app's web listing in the Store.
-
-
-### Support contact info
-
-Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support. We recommend including this info for all submissions, so that your customers know how to get support if they need it. Note that Microsoft does not provide your customers with support for your app.
-
-> [!IMPORTANT]
-> The **Support contact info** field is required if your app or game is available on Xbox.
-
 ### Developed by
 
 Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
@@ -176,12 +164,8 @@ Enter text here if you want to include a **Developed by** field in your app's St
 This field has a 255 character limit.
  
 
-## Privacy policy
-
-If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required. If we determine that your app requires a privacy policy, and you have not provided one, your app will fail certification. For example, if your app accesses, collects, or transmits any personal information, or if it allows web browsing, a privacy policy is required. 
-
-To determine if your app requires a privacy policy, review the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information).
+<span id="privacy-policy" />
 
 > [!NOTE]
-> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. 
+> The **Privacy policy**, **Website**, and **Support contact info** fields are now located on the [Properties](enter-app-properties.md) page.
 
