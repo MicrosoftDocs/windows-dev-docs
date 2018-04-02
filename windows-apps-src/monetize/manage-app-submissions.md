@@ -1,10 +1,10 @@
----
+﻿---
 author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 03/19/2018
+ms.date: 03/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -357,7 +357,7 @@ This resource has the following values.
 | applicationPackages           |   array  | An array of [application package resources](#application-package-object) that provide details about each package in the submission. |    
 | packageDeliveryOptions    | object  | A [package delivery options resource](#package-delivery-options-object) that contains gradual package rollout and mandatory update settings for the submission.  |
 | enterpriseLicensing           |  string  |  One of the [enterprise licensing values](#enterprise-licensing) values that indicate the enterprise licensing behavior for the app.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
+| allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  boolean   |  Indicates whether Microsoft is allowed to [make the app available to future Windows 10 device families](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
 | allowTargetFutureDeviceFamilies           | object   |  A dictionary of key and value pairs, where each key is a [Windows 10 device family](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) and each value is a boolean that indicates whether your app is allowed to target the specified device family.     |    
 | friendlyName           |   string  |  The friendly name of the submission, as shown in the Dev Center dashboard. This value is generated for you when you create the submission.       |  
 | trailers           |  array |   An array that contains up to 15 [trailer resources](#trailer-object) that represent video trailers for the app listing.<br/><br/>   |  
@@ -422,8 +422,8 @@ This resource contains base listing info for an app. This resource has the follo
 |  copyrightAndTrademarkInfo                |   string      |  Optional [copyright and/or trademark info](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
 |  keywords                |  array       |  An array of [keyword](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords) to help your app appear in search results.    |
 |  licenseTerms                |    string     | The optional [license terms](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) for your app.     |
-|  privacyPolicy                |   string      |   The URL for the [privacy policy](../publish/create-app-store-listings.md#privacy-policy) for your app.    |
-|  supportContact                |   string      |  The URL or email address for the [support contact info](../publish/create-app-store-listings.md#support-contact-info) for your app.     |
+|  privacyPolicy                |   string      |   The URL for the [privacy policy](../publish/enter-app-properties.md#privacy-policy-url) for your app.    |
+|  supportContact                |   string      |  The URL or email address for the [support contact info](../publish/enter-app-properties.md#support-contact-info) for your app.     |
 |  websiteUrl                |   string      |  The URL of the [web page](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website) for your app.    |    
 |  description               |    string     |   The [description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) for the app listing.   |     
 |  features               |    array     |  An array of up to 20 strings that list the [features](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) for your app.     |
