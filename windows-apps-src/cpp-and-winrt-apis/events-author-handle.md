@@ -30,8 +30,6 @@ The newly-created project contains a file named `Class.idl`. Rename that file `B
 
 ```idl
 // BankAccountWRC.idl
-import "Windows.Foundation.idl";
-
 namespace BankAccountWRC
 {
 	runtimeclass BankAccount
