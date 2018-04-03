@@ -1,11 +1,7 @@
 ---
 author: Jwmsft
-Description: Help your users be more productive by letting them view multiple independent parts of your app in separate windows.
+Description: View multiple parts of your app in separate windows.
 title: Show multiple views for an app
-ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
-label: Show multiple views for an app
-template: detail.hbs
-op-migration-status: ready
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
@@ -16,8 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Show multiple views for an app
-
-
 
 Help your users be more productive by letting them view independent parts of your app in separate windows. When you create multiple windows for an app, each window behaves independently. The taskbar shows each window separately. Users can move, resize, show, and hide app windows independently and can switch between app windows as if they were separate apps. Each window operates in its own thread.
 
@@ -32,6 +26,8 @@ There's a variety of scenarios that can benefit from multiple views. Here are a 
  - A music player app that lets users see what's playing while browsing through a list of other available music
  - A note-taking app that lets users copy information from one page of notes to another
  - A reading app that lets users open several articles for reading later, after an opportunity to peruse all high-level headlines
+
+To create separate instances of your app, see [Create a multi-instance UWP app](../../launch-resume/multi-instance-uwp.md).
 
 ## What is a view?
 
@@ -151,5 +147,4 @@ When you use [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/d
 
 * [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
 * [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
-
  

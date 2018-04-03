@@ -46,15 +46,17 @@
 ## [Overview](layout/index.md)
 ## [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 ## [Responsive design techniques](layout/responsive-design.md)
+## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
 ## [Show multiple views](layout/show-multiple-views.md)
 ## [Alignment, margins, and padding](layout/alignment-margin-padding.md)
-## [Create page layouts with XAML](layout/layouts-with-xaml.md)
-## [Create app layouts with Grid and StackPanel](layout/grid-tutorial.md)
-## [Layout panels](layout/layout-panels.md)
+## Layout panels
+### [Overview](layout/layout-panels.md)
+### [Tutorial: Use layout panels](layout/grid-tutorial.md)
 ### [Custom panels](layout/custom-panels-overview.md)
 ### [Custom panel example: BoxPanel](layout/boxpanel-example-custom-panel.md)
-## [Transforms](layout/transforms.md)
-### [3-D perspective effects for XAML UI](layout/3-d-perspective-effects.md)
+## Transforms
+### [Overview](layout/transforms.md)
+### [3-D perspective effects](layout/3-d-perspective-effects.md)
 
 # Controls
 ## [Overview](controls-and-patterns/index.md)
