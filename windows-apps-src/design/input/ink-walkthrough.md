@@ -195,7 +195,7 @@ Here's an example of a custom <strong><a href="https://docs.microsoft.com/uwp/ap
 
 ![InkToolbar from Sketchpad in the Ink Workspace](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-For more details about customizing an [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Universal Windows Platform (UWP) inking app](https://docs.microsoft.com/en-us/windows/uwp/input/ink-toolbar).
+For more details about customizing an [InkToolbar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Universal Windows Platform (UWP) inking app](https://docs.microsoft.com/en-us/windows/uwp/input/ink-toolbar).
 
 </td>
 </tr>
@@ -311,7 +311,7 @@ In this step, we use the handwriting recognition features of Windows Ink to try 
 
 <p>For this tutorial, we require that a button be pressed to initiate recognition. You can also perform dynamic recognition by using a basic timing function.</p>
 
-<p>For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](https://docs.microsoft.com/en-us/windows/uwp/input/convert-ink-to-text).</p>
+<p>For more details about dynamic recognition, see <a href="https://docs.microsoft.com/windows/uwp/input/convert-ink-to-text">Recognize Windows Ink strokes as text</a>.</p>
 
 </td>
 </tr>
