@@ -20,7 +20,7 @@ Introduced in Windows 10, version 1803, the Windows SDK now includes C++/WinRT. 
 C++/WinRT is for any developer interested in writing beautiful and fast code for Windows. Here's why.
 
 ## The case for C++/WinRT
-The C++ programming language is used both in the enterprise/commercial *and* independent software vendor (ISV) segments for applications where high levels of correctness, quality, and performance are valued. For example: systems programming; resource-constrained embedded and mobile systems; games and graphics; device drivers; and industrial, scientific, and medical applications, to name but some.
+The C++ programming language is used both in the enterprise *and* independent software vendor (ISV) segments for applications where high levels of correctness, quality, and performance are valued. For example: systems programming; resource-constrained embedded and mobile systems; games and graphics; device drivers; and industrial, scientific, and medical applications, to name but some.
 
 From a language point of view, C++ has always been about authoring and consuming abstractions that are both type-rich and lightweight. But the language has changed radically since the raw pointers, raw loops, and painstaking memory allocation and releasing of C++98. Modern C++ (from C++11 onward) is about clear expression of ideas, simplicity, readability, and a much lower likelihood of introducing bugs.
 
@@ -34,6 +34,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | - | - |
 | [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs. |
 | [Frequently-asked questions about C++/WinRT](faq.md) | Answers to questions that you're likely to have about authoring and consuming WinRT APIs with C++/WinRT. |
+| [Troubleshooting C++/WinRT issues](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 | [String handling in C++/WinRT](strings.md) | With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
 | [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call WinRT APIs using Standard C++ data types. |
 | [Boxing and unboxing scalar values to IInspectable with C++/WinRT](boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
@@ -43,7 +44,7 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Concurrency and asynchronous operations with C++/WinRT](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
 | [XAML controls; binding to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; binding to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
-| [Troubleshooting C++/WinRT issues](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
+| [Move from C++/CX to C++/WinRT](cx-to-winrt.md) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. |
 
 ## Important APIs
 [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt)

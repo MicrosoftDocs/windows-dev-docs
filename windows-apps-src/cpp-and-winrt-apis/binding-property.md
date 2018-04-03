@@ -183,7 +183,7 @@ namespace winrt::Bookstore::implementation
 > The type of `m_bookSku` is the projected type (**winrt::Bookstore::BookSku**), and the template parameter that you use with **make** is the implementation type (**winrt::Bookstore::implementation::BookSku**). Even so, **make** returns an instance of the projected type.
 
 ## Add a property of type **BookstoreViewModel** to **MainPage**
-Open `MainPage.idl`, which declares the runtime class that represents our main UI page. Add an additional import statement to import `BookstoreViewModel.idl`, and add a read-only property named MainViewModel of type **BookstoreViewModel**.
+Open `MainPage.idl`, which declares the runtime class that represents our main UI page. Add an import statement to import `BookstoreViewModel.idl`, and add a read-only property named MainViewModel of type **BookstoreViewModel**.
 
 ```idl
 // MainPage.idl
