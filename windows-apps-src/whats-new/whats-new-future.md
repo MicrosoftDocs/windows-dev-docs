@@ -16,6 +16,9 @@ With the [package resource indexing (PRI) APIs](https://docs.microsoft.com/windo
 
 ## Developer Guidance
 
+### Download and install package updates from the Store
+
+We've updated [Download and install package updates from the Store](../packaging/self-install-package-updates.md) with new guidance and examples about how to download and install package updates without displaying a notification UI to the user, uninstall an optional package, and get info about packages in the download and install queue for your app. These tasks require APIs that were introduced in Windows 10, version 1803.
 
 ## Videos
 
