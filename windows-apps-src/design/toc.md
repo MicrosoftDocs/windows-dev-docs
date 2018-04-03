@@ -44,6 +44,7 @@
 
 # Layout
 ## [Overview](layout/index.md)
+## [Page layout](layout/page-layout.md)
 ## [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 ## [Responsive design techniques](layout/responsive-design.md)
 ## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
