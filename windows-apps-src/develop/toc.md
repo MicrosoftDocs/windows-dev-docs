@@ -460,7 +460,7 @@
 ## [Install apps with the WinAppDeployCmd.exe tool](../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
 ## [App capability declarations](../packaging/app-capability-declarations.md)
 ## [Set up automated builds for your UWP app](../packaging/auto-build-package-uwp-apps.md)
-## [Download and install package updates for your app](../packaging/self-install-package-updates.md)
+## [Download and install package updates from the Store](../packaging/self-install-package-updates.md)
 # [Porting apps to Windows 10](../porting/index.md)
 ## [Move from Windows Phone Silverlight to UWP](../porting/wpsl-to-uwp-root.md)
 ### [Namespace and class mappings](../porting/wpsl-to-uwp-namespace-and-class-mappings.md)
