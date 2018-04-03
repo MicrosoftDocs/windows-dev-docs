@@ -96,19 +96,6 @@ For more info, see [Organizational licensing options](organizational-licensing.m
 
 ## Publish date
 
-By default, your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the [**Schedule** section](#schedule) described above. 
-
-To control when your app should be published to the Store, use the **Schedule** section. For most submissions, you should use that section to schedule your app’s release, and leave the **Publish date** section set to the default option, **Publish this submission as soon as it passes certification**. This will not cause the submission to be published earlier than the date(s) that you set in the **Schedule** section. The dates you selected in the **Schedule** section will determine when your app becomes available to customers in the Store.
-
-If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose **Publish this submission manually.** Choosing this option means that your selection won’t be published until you indicate that it should be. After your app passes certification, you can publish it by selecting **Publish now** on the certification status page, or by selecting a specific date as described below.
-
-Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
- 
-> [!NOTE]
-> Delays during certification or publishing could cause the actual release date to be later than the date you request. The Microsoft Store cannot guarantee that your app (or update) will be available on a specific date.  
-
-You can also change the release date after submitting your app, as long as it hasn’t entered the Publish step yet. 
-
-
+Previously, the **Publish date** section appeared on this page. This functionality can now be found on the [Submission options](manage-submission-options.md) page, in the **Publishing hold options** section. (Note that to control when your app should be published to the Store, we recommend using the [Schedule](configure-precise-release-scheduling.md) section of the **Pricing and availability** page.)
 
 

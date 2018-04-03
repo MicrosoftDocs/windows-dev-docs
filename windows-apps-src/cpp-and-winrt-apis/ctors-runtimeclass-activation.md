@@ -22,8 +22,6 @@ Let's introduce an example project so that we have a context in which to put the
 
 ```idl
 // MyRuntimeClass.idl
-import "Windows.Foundation.idl";
-
 namespace MyProject
 {
 	runtimeclass MyRuntimeClass
@@ -73,9 +71,9 @@ So much for the implementation type; let's now turn to the projected type. Here 
 ```cppwinrt
 // MyProject.2.h
 ...
-namespace winrt::MyProject {
-	struct MyRuntimeClass :
-		MyProject::IMyRuntimeClass
+namespace winrt::MyProject
+{
+	struct MyRuntimeClass : MyProject::IMyRuntimeClass
 	{
 		MyRuntimeClass(std::nullptr_t) noexcept {}
 		MyRuntimeClass();
@@ -138,8 +136,6 @@ If you're authoring a runtime class then, from within the same compilation unit,
 
 ```idl
 // MySpecializedToggleButton.idl
-import "Windows.UI.Xaml.Controls.Primitives.idl";
-
 namespace MyNamespace
 {
 	runtimeclass MySpecializedToggleButton : Windows.UI.Xaml.Controls.Primitives.ToggleButton
@@ -151,8 +147,6 @@ namespace MyNamespace
 
 ```idl
 // MySpecializedToggleButtonAutomationPeer.idl
-import "Windows.UI.Xaml.Automation.Peers.idl";
-
 namespace MyNamespace
 {
 	runtimeclass MySpecializedToggleButtonAutomationPeer : Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
@@ -168,9 +162,9 @@ The generated constructor for your implementation type looks like this.
 // MySpecializedToggleButtonAutomationPeer.cpp
 ...
 MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer(MyNamespace::MySpecializedToggleButton const& owner)
-    {
-        ...
-    }
+{
+	...
+}
 ...
 ```
 
@@ -180,9 +174,9 @@ The only piece missing is that you need to pass that constructor parameter on to
 // MySpecializedToggleButtonAutomationPeer.cpp
 ...
 MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer(MyNamespace::MySpecializedToggleButton const& owner) : MySpecializedToggleButtonAutomationPeerT<MySpecializedToggleButtonAutomationPeer>(owner)
-    {
-        ...
-    }
+{
+	...
+}
 ...
 ```
 
