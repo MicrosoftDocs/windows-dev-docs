@@ -5,7 +5,7 @@ title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: checklist, windows, uwp, submission, submit, game, app, submitting
 ms.author: wdg-dev-content
-ms.date: 04/02/2018
+ms.date: 04/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -41,7 +41,7 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Free trial**                | Default: No free trial                      | [Free trial](set-app-pricing-and-availability.md#free-trial)              |
 | **Sale pricing**              | Optional                                    | [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md)           |
 | **Organizational licensing**    | Default: Allow volume acquisition by organizations | [Organizational licensing options](organizational-licensing.md)        |
-| **Publish date**                | Default: Publish as soon as possible      | [Publish date](set-app-pricing-and-availability.md#publish-date)          |
+      |
 
 
 ### Properties page
@@ -99,11 +99,12 @@ You'll need all the required info for at least one of the languages that your ap
 
 <span/>
 
-### Notes for certification page
+### Submission options page
 
 | Field name                    | Notes                                       | For more info                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Notes**                     | Recommended                                    | [Notes for certification](notes-for-certification.md)             |
+| **Publishing hold options**                | Default: Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)      | [Publishing hold options](manage-submission-options.md#publishing-hold-options)    
+| **Notes for certification**                     | Recommended                                    | [Notes for certification](notes-for-certification.md)             |
 
 <span/>
 
