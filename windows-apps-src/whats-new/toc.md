@@ -1,5 +1,5 @@
-# [What's new in Windows 10 for developers, SDK preview build 17110](../whats-new/windows-10-build-17110.md)
-## [API additions in Windows 10, SDK preview build 17110](../whats-new/windows-10-build-17110-api-diff.md)
+# [What's new in Windows 10 for developers, build 17133](../whats-new/windows-10-build-17133.md)
+## [API additions in Windows 10, build 17133](../whats-new/windows-10-build-17133-api-diff.md)
 ## [What's new in Windows 10 for developers, build 16299](../whats-new/windows-10-build-16299.md)
 ### [API additions in Windows 10, build 16299](../whats-new/windows-10-build-16299-api-diff.md)
 ## [What's new in Windows 10, build 15063](../whats-new/windows-10-build-15063.md)
