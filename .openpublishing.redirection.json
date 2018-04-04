@@ -1668,6 +1668,15 @@
       "source_path": "windows-apps-src/get-started/whats-a-uwp.md",
       "redirect_url": "windows-apps-src/get-started/universal-application-platform-guide.md",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-to-uwp-root.md",
+      "source_path": "windows-apps-src/porting/hwa-access-features.md",
+      "source_path": "windows-apps-src/porting/hwa-chrome-conversion.md",
+      "source_path": "windows-apps-src/porting/hwa-create-mac.md",
+      "source_path": "windows-apps-src/porting/hwa-create-windows.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
     }
   ]
 }
