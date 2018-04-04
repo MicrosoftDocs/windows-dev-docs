@@ -19,7 +19,6 @@
 ## [Share data](../app-to-app/share-data.md)
 ## [Receive data](../app-to-app/receive-data.md)
 ## [Copy and paste](../app-to-app/copy-and-paste.md)
-## [Drag and drop](../app-to-app/drag-and-drop.md)
 # [Audio, video, and camera](../audio-video-camera/index.md)
 ## [Camera](../audio-video-camera/camera.md)
 ### [Capture photos and video with Windows built-in camera UI](../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md)

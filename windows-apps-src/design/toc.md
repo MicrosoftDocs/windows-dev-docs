@@ -186,6 +186,7 @@
 ## [Touchpad](input/touchpad-interactions.md)
 ## [Surface Dial](input/windows-wheel-interactions.md)
 ### [Tutorial: Add Surface Dial support to your app](input/radialcontroller-walkthrough.md)
+## [Drag and drop](input/drag-and-drop.md)
 ## [Speech interactions](input/speech-interactions.md)
 ### [Speech recognition](input/speech-recognition.md)
 ### [Specify the speech recognizer language](input/specify-the-speech-recognizer-language.md)

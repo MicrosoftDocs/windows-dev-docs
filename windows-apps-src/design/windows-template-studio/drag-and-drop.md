@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Drag & Drop service
 
-In Windows Template Studio, the drag & drop feature is a wrapper over the [standard UWP drag and drop functionallity](../../app-to-app/drag-and-drop.md). This service simplifies the required code to create drag-and-drop-ready apps, and aligns to the framework pattern used by your app.
+In Windows Template Studio, the drag & drop feature is a wrapper over the [standard UWP drag and drop functionallity](../input/drag-and-drop.md). This service simplifies the required code to create drag-and-drop-ready apps, and aligns to the framework pattern used by your app.
 
 While using Code-Behind framework, the events will be handled by using actions. When using frameworks based on MVVM pattern (MVVM Light, Calliburn.Micro or MVVM Basic) the events will be handled by using commands.
 
@@ -51,7 +51,7 @@ The feature provides three configuration types to set up the Drag & Drop service
 
 To use the service, you need to follow these steps:
 
-1. Define your valid drag and drop areas: Use the elements AllowDrop and CanDrag properties to designate the elements of your app valid for [dragging and dropping](../../app-to-app/drag-and-drop.md). In the ListView element, you can use CanDragItems property.
+1. Define your valid drag and drop areas: Use the elements AllowDrop and CanDrag properties to designate the elements of your app valid for [dragging and dropping](../input/drag-and-drop.md). In the ListView element, you can use CanDragItems property.
 
 2. Include the service reference within the page by adding the required namespace: `xmlns:dd="using:AppNameSpace.Services.DragAndDrop"`
 
