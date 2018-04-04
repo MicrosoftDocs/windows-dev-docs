@@ -34,7 +34,8 @@ Contact visualizations are especially critical for touch interactions that requi
 
 Using the default XAML platform controls available ensures that your app works correctly on all devices and in all input situations. If your app features custom interactions that require customized feedback, you should ensure the feedback is appropriate, spans input devices, and doesn't distract a user from their task. This can be a particular issue in game or drawing apps, where the visual feedback might conflict with or obscure critical UI.
 
-[!IMPORTANT] We don't recommend changing the interaction behavior of the built-in gestures. 
+> [!Important] 
+> We don't recommend changing the interaction behavior of the built-in gestures. 
 
 **Feedback Across Devices**
 

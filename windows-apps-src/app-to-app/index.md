@@ -32,7 +32,7 @@ In addition to the Share contract, apps can also integrate classic techniques fo
 | [Share data](share-data.md) | This article explains how to support the Share contract in a UWP app. The Share contract is an easy way to quickly share data, such as text, links, photos, and videos, between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later. |
 | [Receive data](receive-data.md) | This article explains how to receive content in your UWP app shared from another app using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share. |
 | [Copy and paste](copy-and-paste.md) | This article explains how to support copy and paste in UWP apps using the clipboard. Copy and paste is the classic way to exchange data either between apps, or within an app, and almost every app can support clipboard operations to some degree. |
-| [Drag and drop](drag-and-drop.md) | This article explains how to add dragging and dropping in your UWP app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app. |
+| [Drag and drop](../design/input/drag-and-drop.md) | This article explains how to add dragging and dropping in your UWP app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app. |
 
 ## See also
 - [Develop UWP apps](https://developer.microsoft.com/windows/develop)

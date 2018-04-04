@@ -16,6 +16,8 @@ ms.localizationpriority: medium
 
 MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
 
+The size limit on a PRI file is 64 kilobytes.
+
 ## In this section
 |Topic|Description|
 |-|-|

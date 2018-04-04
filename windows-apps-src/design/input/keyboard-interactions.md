@@ -379,17 +379,17 @@ The search button for the `AutoSuggestBox` is not accessible to standard keyboar
 
 ![autosuggest keyboard focus](images/keyboard/auto-suggest-keyboard.png)
 
-***With keyboard***, *users use* ***Enter*** *key to submit search query*
+*With keyboard, users press the* ***Enter*** *key to submit search query*
 
 <table>
   <tr>
     <td>
-      <p>![autosuggest narrator focus](images/keyboard/auto-suggest-narrator-1.png)</p>
-      <p>**With Narrator,** *users can use Enter key to submit search query*</P>
+      <p><img src="images/keyboard/auto-suggest-narrator-1.png" alt="autosuggest narrator focus"/></p>
+      <p><em>With Narrator, users press the <strong>Enter</strong> key to submit search query</em></p>
     </td>
     <td>
-      <p>![autosuggest narrator focus on search](images/keyboard/auto-suggest-narrator-2.png)</p>
-      <p>*User is also able to access the search button by Caps Lock + Right arrow key, then press Space key*</p>
+      <p><img src="images/keyboard/auto-suggest-narrator-2.png" alt="autosuggest narrator focus on search"/></p>
+      <p><em>With Narrator, users are also able to access the search button using the <strong>Caps Lock + Right arrow key</strong>, then pressing <strong>Space</strong> key</em></p>
     </td>
   </tr>
 </table>
@@ -430,12 +430,12 @@ Unlike the keyboard, when an app opts out of [Mouse Mode](../devices/designing-f
 <table>
   <tr>
     <td>
-      <p>![directional navigation](images/keyboard/directional-navigation.png)</p>
-      <p>***Directional navigation supported*** </br>*Using directional keys (keyboard arrows, gamepad and remote control D-pad), user can navigate between different controls.*</p>
+      <p><img src="images/keyboard/directional-navigation.png" alt="directional navigation"/></p>
+      <p><em><strong>Directional navigation supported</strong></br>Using directional keys (keyboard arrows, gamepad and remote control D-pad), user can navigate between different controls.</em></p>
     </td>
     <td>
-      <p>![no directional navigation](images/keyboard/no-directional-navigation.png)</p>
-      <p>***Directional navigation not supported*** </br>*User cannot navigate between different controls using directional keys. Other methods of navigating between controls (tab key) are not impacted.*</p>
+      <p><img src="images/keyboard/no-directional-navigation.png" alt="no directional navigation"/></p>
+      <p><em><strong>Directional navigation not supported</strong> </br>User cannot navigate between different controls using directional keys. Other methods of navigating between controls (tab key) are not impacted.</em></p>
     </td>
   </tr>
 </table>
@@ -476,12 +476,12 @@ last item in the previous column.
 <table>
   <tr>
     <td>
-      <p>![row major keyboard navigation](images/keyboard/row-major-keyboard.png)</p>
-      <p>***Row major keyboard navigation***</p>
+      <p><img src="images/keyboard/row-major-keyboard.png" alt="row major keyboard navigation"/></p>
+      <p><em>Row major keyboard navigation</em></p>
     </td>
     <td>
-      <p>![column major keyboard navigation](images/keyboard/column-major-keyboard.png)</p>
-      <p>***Column major keyboard navigation***</p>
+      <p><img src="images/keyboard/column-major-keyboard.png" alt="column major keyboard navigation"/></p>
+      <p><em>Column major keyboard navigation</em></p>
     </td>
   </tr>
 </table>
@@ -578,20 +578,4 @@ Visit [On-Screen keyboard page](https://support.microsoft.com/help/10762/windows
 
 ## Related articles
 
-- [Keyboard accessibility](../accessibility/keyboard-accessibility.md) 
-
-<!--
-**Topic samples**
-* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
-
-**Other samples**
-* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
-* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
-* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
-
--->
-
+- [Keyboard accessibility](../accessibility/keyboard-accessibility.md)

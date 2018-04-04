@@ -22,7 +22,7 @@ ms.localizationpriority: medium
 
 Accelerator keys (or keyboard accelerators) are keyboard shortcuts that improve the usability and accessibility of your Windows applications by providing an intuitive way for users to invoke common actions or commands without navigating the app UI.
 
-See the [Access keys](https://docs.microsoft.com/windows/uwp/input/access-keys) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
+See the [Access keys](access-keys.md) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
 
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
@@ -53,7 +53,7 @@ We recommend that you specify keyboard accelerators wherever appropriate in your
 
 ## Specify a keyboard accelerator
 
-Use the [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator#Windows_UI_Xaml_Input_KeyboardAccelerator__ctor) APIs to create keyboard accelerators in UWP apps. With these APIs, you don't have to handle multiple KeyDown events to detect the key combination pressed, and you can localize accelerators in the app resources.
+Use the [KeyboardAccelerator](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.keyboardaccelerator.-ctor) APIs to create keyboard accelerators in UWP apps. With these APIs, you don't have to handle multiple KeyDown events to detect the key combination pressed, and you can localize accelerators in the app resources.
 
 We recommend that you set keyboard accelerators for the most common actions in your app and document them using the menu item label or tooltip. In this example, we declare keyboard accelerators only for the Rename and Copy commands.
 
@@ -471,9 +471,9 @@ Scoped keyboard accelerators are invoked only when focus is inside a specific sc
 
 ### Scoping accelerators programmatically
 
-The [UIElement.TryInvokeKeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TryInvokeKeyboardAccelerator_Windows_UI_Xaml_Input_ProcessKeyboardAcceleratorEventArgs_) method invokes any matching accelerators in the subtree of the element.
+The [UIElement.TryInvokeKeyboardAccelerator](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement.tryinvokekeyboardaccelerator) method invokes any matching accelerators in the subtree of the element.
 
-The [UIElement.OnProcessKeyboardAccelerators](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_OnProcessKeyboardAccelerators_Windows_UI_Xaml_Input_ProcessKeyboardAcceleratorEventArgs_) method is executed before the keyboard accelerator. This method passes a [ProcessKeyboardAcceleratorArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) object that contains the key, the modifier, and a Boolean indicating whether the keyboard accelerator is handled. If marked as handled, the keyboard accelerator bubbles (so the outside keyboard accelerator is never invoked).
+The [UIElement.OnProcessKeyboardAccelerators](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.uielement.onprocesskeyboardaccelerators) method is executed before the keyboard accelerator. This method passes a [ProcessKeyboardAcceleratorArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.processkeyboardacceleratoreventargs) object that contains the key, the modifier, and a Boolean indicating whether the keyboard accelerator is handled. If marked as handled, the keyboard accelerator bubbles (so the outside keyboard accelerator is never invoked).
 
 > [!NOTE]
 > OnProcessKeyboardAccelerators always fires, whether handled or not (similar to the OnKeyDown event). You must check whether the event was marked as handled.

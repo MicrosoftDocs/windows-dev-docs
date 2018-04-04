@@ -148,6 +148,8 @@ In the example above, **RetrieveBlogFeedAsync** returns an **IAsyncOperationWith
 
 If you're asynchronously returning a Windows Runtime type (whether that's a first-party or a third-party type), then you should return an [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation_tresult_) or an [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_).
 
+The compiler will help you with a "*must be WinRT type*" error if you try to use one of these asychronous operation types with a non-Windows Runtime type.
+
 ## Asychronously return a non-Windows-Runtime type
 If you're asynchronously returning a type that's *not* a Windows Runtime type, then you should return a Parallel Patterns Library (PPL) [**task**](https://msdn.microsoft.com/library/hh750113). We recommend **task** because it gives you better performance (and better compatibility going forward) than **std::future** does.
 

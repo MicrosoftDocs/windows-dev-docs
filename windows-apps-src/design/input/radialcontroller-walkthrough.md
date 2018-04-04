@@ -206,7 +206,7 @@ Now let's add the code required to enable **RadialController** access to our con
         }
         ```
 
-    - Here, we initialize our custom RadialController menu item. We use [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) to get a reference to our [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) object, we set the rotation sensitivity to "1" by using the [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) property, we then create our [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem) by using [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), we add the menu item to the **RadialController** menu item collection, and finally, we use [SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration#Windows_UI_Input_RadialControllerConfiguration_SetDefaultMenuItems_Windows_Foundation_Collections_IIterable_Windows_UI_Input_RadialControllerSystemMenuItemKind__) to clear the default menu items and leave only our custom tool. 
+    - Here, we initialize our custom RadialController menu item. We use [CreateForCurrentView](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView) to get a reference to our [RadialController](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) object, we set the rotation sensitivity to "1" by using the [RotationResolutionInDegrees](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees) property, we then create our [RadialControllerMenuItem](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem) by using [CreateFromFontGlyph](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph), we add the menu item to the **RadialController** menu item collection, and finally, we use [SetDefaultMenuItems](https://docs.microsoft.com/en-us/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems) to clear the default menu items and leave only our custom tool. 
 
         ```csharp
         // Configure RadialController menu and custom tool.
@@ -270,9 +270,10 @@ Now let's add the code required to enable **RadialController** access to our con
         ```
 4. Now, run the app again.
 5. Select the **Initialize radial controller** button.  
-6. With the app in the foreground, press and hold the Surface Dial to display the menu. Notice that all default tools have been removed (by using the **RadialControllerConfiguration.SetDefaultMenuItems** method), leaving only the custom tool. Here’s the menu with our custom tool.    
+6. With the app in the foreground, press and hold the Surface Dial to display the menu. Notice that all default tools have been removed (by using the **RadialControllerConfiguration.SetDefaultMenuItems** method), leaving only the custom tool. Here’s the menu with our custom tool. 
+
 | RadialController menu (custom)  | 
-|---|---|
+|---|
 | ![Custom RadialController menu](images/radialcontroller/wheel-app-step3-custom.png) |
 
 7. Select the custom tool and try out the interactions now supported through the Surface Dial:

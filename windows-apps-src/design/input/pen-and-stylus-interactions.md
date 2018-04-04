@@ -16,16 +16,6 @@ ms.localizationpriority: medium
 
 # Pen interactions and Windows Ink in UWP apps
 
-
-<!--
-![touchpad](images/input-patterns/input-pen.jpg)
--->
-
-<!--
-![Surface Pen](images/ink/hero2-small.png)  
-*Surface Studio with Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacepen)).
--->
-
 ![Surface Pen](images/ink/hero-small.png)  
 *Surface Pen* (available for purchase at the [Microsoft Store](https://aka.ms/purchasesurfacepen)).
 

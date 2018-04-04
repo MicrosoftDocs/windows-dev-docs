@@ -22,6 +22,8 @@ The PRI APIs were introduced in the Windows SDK for Windows 10, version 1803. Th
 
 The scenarios in this topic demonstrate calling PRI APIs from a Win32 Visual C++ Windows Console Application project. For background info, see [Resource Management System](resource-management-system.md).
 
+The size limit on a PRI file is 64 kilobytes.
+
 > [!NOTE]
 > This caveat is unlikely to be an issue, since you probably won't want to submit your custom build system app to the Microsoft Store. But, if you choose the option to develop your custom build system in the form of a UWP app, then it will be an unusual UWP app in that you won't be able to submit it to the Microsoft Store. That's because a UWP app that uses platform invoke fails Microsoft Store certification. Note that, in this case, platform invoke calls *will exist only in your custom build system*; *not* in your shipping UWP app (the one you're building PRI files for).
 
