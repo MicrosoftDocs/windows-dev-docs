@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
 ms.author: stwhi
-ms.date: 03/20/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Concurrency and asynchronous operations with C++/WinRT
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 
 ## Asynchronous operations and Windows Runtime "Async" functions

@@ -3,7 +3,7 @@ author: stevewhims
 description: A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value.
 title: Boxing and unboxing scalar values to IInspectable with C++/WinRT
 ms.author: stwhi
-ms.date: 03/13/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Boxing and unboxing scalar values to IInspectable with C++/WinRT 
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 The [**IInspectable interface**](https://msdn.microsoft.com/library/windows/desktop/br205821) is the root interface of every runtime class in the Windows Runtime (WinRT). This is an analogous idea to [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) being at the root of every COM interface and class; and **System.Object** being at the root of every [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) class.
 
 In other words, a function that expects **IInspectable** can be passed an instance of any runtime class. But you can't directly pass a scalar value, such as a numeric or text value, to such a function. Instead, a scalar value needs to be wrapped inside a reference class object. That wrapping process is known as *boxing* the value.
