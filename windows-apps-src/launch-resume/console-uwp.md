@@ -17,6 +17,8 @@ This topic describes how to create a C++ /WinRT or /CX Universal Windows Platfor
 
 Starting with Windows 10, version 1803, you can write C++ /WinRT or /CX UWP console apps that run in a console window, such as a DOS or PowerShell console window. Console apps use the console window for input and output and can use Win32 APIs available to UWP apps such as **printf** or **getchar**. UWP console apps can be published to the Microsoft Store. They have an entry in the app list, and a primary tile that can be pinned to the Start menu. UWP console apps can be launched from the Start menu, though you typically will launch them from the command-line.
 
+To see it in action, watch this video about [Creating a UWP Console App](https://www.youtube.com/watch?v=bwvfrguY20s&t=0s&list=PLWs4_NfqMtoycBFndriDmkQlMLwflyoFF&index=1).
+
 ## Use a UWP Console app template 
 
 To create a UWP console app, first install the **Console App (Universal) Project Templates**, available from the [Visual Studio Marketplace](https://aka.ms/E2nzbv). The installed templates will then be available under **New Project** > **Installed** > **Other Languages** > **Visual C++** > **Windows Universal** as **Console App C++/CX (Universal Windows)** and **Console App C++/WinRT (Universal Windows)**.
