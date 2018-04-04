@@ -4,7 +4,7 @@ Description: As you submit your app, you have the option to use the Notes for ce
 title: Notes for certification
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ms.author: wdg-dev-content
-ms.date: 11/9/2017
+ms.date: 04/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

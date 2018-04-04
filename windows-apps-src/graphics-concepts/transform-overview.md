@@ -15,8 +15,6 @@ ms.localizationpriority: medium
 # Transform overview
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
-
 Matrix transformations handle a lot of the low level math of 3D graphics.
 
 The geometry pipeline takes vertices as input. The transform engine applies the world, view, and projection transforms to the vertices, clips the result, and passes everything to the rasterizer.

@@ -1,10 +1,10 @@
----
+﻿---
 author: jnHs
 Description: Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 title: Guidance for app package management
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,7 +13,6 @@ ms.localizationpriority: high
 ---
 
 # Guidance for app package management
-
 
 Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.
 
@@ -91,21 +90,20 @@ For more info about packaging UWP apps for the Store, see [Packaging apps](../pa
 > [!IMPORTANT]
 > Keep in mind that if you provide packages that target the universal device family, every customer who already had your app on any earlier operating system (Windows Phone 8, Windows 8.1, etc.) and then upgrades to Windows 10 will be updated to get your Windows 10 package.
 > 
-> This happens even if you have excluded a specific device family in the [Device family availability](upload-app-packages.md#device-family-availability) step of your submission, since the **Device family availability** selection only applies to new acquisitions. If you don't want every previous customer to get your universal Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your appx manifest to include only the particular device family you wish to support.
+> This happens even if you have excluded a specific device family in the [Device family availability](upload-app-packages.md#device-family-availability) step of your submission, since the **Device family availability** selection only applies to new acquisitions. If you don't want every previous customer to get your universal Windows 10 package, be sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element in your appx manifest to include only the particular device family you wish to support.
 > 
-> For example, say you only want your Windows 8 and Windows 8.1 customers who have upgraded to Windows 10 to get your UWP app, and you want customers on Windows Phone 8.1 and earlier to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to make sure to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default. Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 Mobile customers will not get any of your UWP packages.
+> For example, say you only want your Windows 8 and Windows 8.1 customers who have upgraded to Windows 10 to get your UWP app, and you want customers on Windows Phone 8.1 and earlier to keep the packages you'd previously made available (targeting Windows Phone 8 or Windows Phone 8.1). To do this, you'll need to make sure to update the [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) in your appx manifest to include only **Windows.Desktop** (for the desktop device family), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default. Do not submit any UWP packages that target either the Universal or Mobile device families (**Windows.Universal** or **Windows.Universal**). This way, your Windows 10 Mobile customers will not get any of your UWP packages.
 > 
-> For more info about device families, see [Guide to Universal Windows Platform (UWP) apps](../get-started/universal-application-platform-guide.md).
-
+> For more info about device families, see [**Device families overview**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview).
 
 ## Removing an app from the Store
 
 At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, click **Make app unavailable** from the **App overview** page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](generate-promotional-codes.md) and are using a Windows 10 device).
 
 > [!IMPORTANT]
-> This option will override any [visibility](set-app-pricing-and-availability.md#visibility) settings that you have selected in your submissions. 
+> This option will override any [visibility](choose-visibility-options.md#discoverability) settings that you have selected in your submissions. 
 
-This option has the same effect as if you created a submission and chose **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 device.** However, it does not require you to create a new submission.
+This option has the same effect as if you created a submission and chose **Make this product available but not discoverable in the Store** with the **Stop acquisition** option. However, it does not require you to create a new submission.
 
 Note that any customers who already have the app will still be able to use it and can download it again (and could even get updates if you submit new packages later).
 
@@ -134,11 +132,3 @@ Certain requirements for package types apply when updating apps that were previo
 -   After an app has a published Windows Phone 8.1 .appxbundle, subsequent updates must have a Windows Phone 8.1 .appxbundle. In other words, a Windows Phone 8.1 XAP or Windows Phone 8.1 .appx is not allowed. This applies to an .appxupload that contains a Windows Phone 8.1 .appxbundle as well.
 
 Failure to follow these rules may result in package upload errors that will prevent you from completing your submission.
-
- 
-
- 
-
-
-
-

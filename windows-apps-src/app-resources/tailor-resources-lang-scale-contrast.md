@@ -153,7 +153,7 @@ In this scenario, you would then give your resources names that include the qual
 
 ## DeviceFamily
 
-It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Writing code](../get-started/universal-application-platform-guide.md#writing-code).
+It’s unlikely that you’ll need the `devicefamily` qualifier name. You can and should avoid using it whenever possible because there are techniques that you can use instead that are much more convenient and robust. Those techniques are described in [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on) and [Version adaptive code](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
 
 But as a last resort it is possible to use devicefamily qualifiers to name folders that contain your XAML views (a XAML view is a XAML file that contains UI layout and controls).
 
@@ -270,7 +270,7 @@ The `theme` qualifier is used to provide resources that best match the default a
 * [Resource Management System](resource-management-system.md)
 * [How to prepare for localization](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
 * [Detecting the platform your app is running on](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [Writing code](../get-started/universal-application-platform-guide.md#writing-code)
+* [Device families overview](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [Localize your UI strings](localize-strings-ui-manifest.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [United Nations Statistic Division M49 composition of region codes](http://go.microsoft.com/fwlink/p/?linkid=247929)

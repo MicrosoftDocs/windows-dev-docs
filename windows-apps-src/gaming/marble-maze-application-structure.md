@@ -120,7 +120,6 @@ Asynchronous asset loading begins with the **App::Load** method. This method use
     {
         m_main->LoadDeferredResources(true, false);
     });
-
 ```
 
 The **MarbleMazeMain** class defines the *m\_deferredResourcesReady* flag to indicate that asynchronous loading is complete. The **MarbleMazeMain::LoadDeferredResources** method loads the game resources and then sets this flag. The update (**MarbleMazeMain::Update**) and render (**MarbleMazeMain::Render**) phases of the app check this flag. When this flag is set, the game continues as normal. If the flag is not yet set, the game shows the loading screen.

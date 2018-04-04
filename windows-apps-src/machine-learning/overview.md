@@ -31,7 +31,7 @@ Here are some highlights of Windows ML:
 On DirectX12 capable devices, Windows ML accelerates the evaluation of Deep Learning models using the GPU. CPU optimizations additionally enable high-performance evaluation of both classical ML and Deep Learning algorithms.
 
 ### Local evaluation
-Windows ML evaluates on local hardware, removing concerns of connectivity, bandwith, and data privacy. Local evaluation also enables low latency and high performance for quick evaluation results.
+Windows ML evaluates on local hardware, removing concerns of connectivity, bandwidth, and data privacy. Local evaluation also enables low latency and high performance for quick evaluation results.
 
 ### Image processing
 For computer vision scenarios, Windows ML simplifies and optimizes the use of image, video, and camera data by handling frame pre-processing and providing camera pipeline setup for model input.

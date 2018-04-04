@@ -42,7 +42,7 @@ While your app is in the publishing phase, the **Show details** link in the Stat
 
 ## In the Store 
 
-After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Visibility](set-app-pricing-and-availability.md#visibility) option). 
+After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Discoverability](choose-visibility-options.md#discoverability) option). 
 
 > [!NOTE]
 > We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.

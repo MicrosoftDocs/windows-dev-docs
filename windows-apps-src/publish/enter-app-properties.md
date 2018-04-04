@@ -4,11 +4,11 @@ Description: The App properties page of the app submission process lets you defi
 title: Enter app properties
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 01/24/2018
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, game settings, display mode, system requirements, hardware requirements, minimum hardware, recommended hardware
+keywords: windows 10, uwp, game settings, display mode, system requirements, hardware requirements, minimum hardware, recommended hardware, privacy policy, support contact info, app website, support info
 ms.localizationpriority: high
 ---
 
@@ -22,6 +22,37 @@ The **Properties** page of the [app submission process](app-submissions.md) is w
 You must indicate the category (and subcategory/genre, if applicable) which the Store should use to categorize your app. Specifying a category is required in order to submit your app.
 
 For more info, see [Category and subcategory table](category-and-subcategory-table.md).
+
+
+## Support info
+
+This section lets you provide info to help customers understand more about your app and how to get support.
+
+### Privacy policy URL
+
+You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required.
+
+In this section, you must indicate whether or not your app accesses, collects, or transmits any [personal information](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information). If you answer **Yes**, a privacy policy URL is required. Otherwise, it is optional (though if we determine that your app requires a privacy policy, and you have not provided one, your submission may fail certification).
+
+> [!NOTE]
+> If we detect that your packages declare [capabilities](../packaging/app-capability-declarations.md) that could allow personal information to be accessed, transmitted, or collected, we will mark this question as **Yes**, and you will be required to enter a privacy policy URL.
+
+To help you determine if your app requires a privacy policy, review the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information). 
+
+> [!NOTE]
+> Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. 
+
+
+### Website
+
+Enter the URL of the web page for your app. This URL must point to a page on your own website, not your app's web listing in the Store. This field is optional, but recommended.
+
+### Support contact info
+
+Enter the URL of the web page where your customers can go for support with your app, or an email address that customers can contact for support. We recommend including this info for all submissions, so that your customers know how to get support if they need it. Note that Microsoft does not provide your customers with support for your app.
+
+> [!IMPORTANT]
+> The **Support contact info** field is required if your app or game is available on Xbox. Otherwise, it is optional (but recommended).
 
 
 ## Game settings

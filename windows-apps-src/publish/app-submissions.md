@@ -3,9 +3,9 @@ author: jnHs
 Description: Once you've created your app by reserving a name, you can start working on getting it published. The first step is to create a submission.
 title: App submissions
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-keywords: checklist, windows, uwp, submission, submit, game, app
+keywords: checklist, windows, uwp, submission, submit, game, app, submitting
 ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 04/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -34,13 +34,14 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Markets**                   | Default: All possible markets,  | [Define pricing and market selection](define-pricing-and-market-selection.md)         |
-| **Visibility**                | Default: Make this app available and discoverable in the Store | [Visibility](set-app-pricing-and-availability.md#visibility) |
+| **Audience**                | Default: Public audience | [Audience](choose-visibility-options.md#audience) |
+| **Discoverability**                | Default: Make this app available and discoverable in the Store | [Discoverability](choose-visibility-options.md#discoverability) |
 | **Schedule**                  | Default: Release as soon as possible        | [Configure precise release scheduling](configure-precise-release-scheduling.md) |
 | **Base price**                | Required                                    | [Set and schedule app pricing](set-and-schedule-app-pricing.md)              |
 | **Free trial**                | Default: No free trial                      | [Free trial](set-app-pricing-and-availability.md#free-trial)              |
 | **Sale pricing**              | Optional                                    | [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md)           |
 | **Organizational licensing**    | Default: Allow volume acquisition by organizations | [Organizational licensing options](organizational-licensing.md)        |
-| **Publish date**                | Default: Publish as soon as possible      | [Publish date](set-app-pricing-and-availability.md#publish-date)          |
+      |
 
 
 ### Properties page
@@ -48,6 +49,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name                    | Notes                                       | For more info                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **Category and subcategory**  | Required                                    | [Category and subcategory table](category-and-subcategory-table.md)       |
+| **Privacy policy URL**            | Required for many apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [Privacy policy URL](enter-app-properties.md#privacy-policy-url)        |
+| **Website**                   | Optional                                    | [Website](enter-app-properties.md#website)                   |
+| **Support contact info**      | Required if your product is available on Xbox; otherwise optional (but recommended)                                   | [Support contact info](enter-app-properties.md#support-contact-info)              |
 | **Game settings**             | Optional (only applicable to games)         | [Game settings](enter-app-properties.md#game-settings) |
 | **Display mode**             | Optional                   | [Display mode](enter-app-properties.md#display-mode) |
 | **Product declarations**          | Default: Customers can install this app to alternate drives or removable storage; Windows can include this app's data in automatic backups to OneDrive | [Product declarations](app-declarations.md) |
@@ -90,19 +94,17 @@ You'll need all the required info for at least one of the languages that your ap
 | **Search terms**              | Optional                                    | [Search terms](create-app-store-listings.md#search-terms)         |
 | **Copyright and trademark info** | Optional                                 | [Copyright and trademark info](create-app-store-listings.md#copyright-and-trademark-info) |
 | **Additional license terms**  | Optional                                    | [Additional license terms](create-app-store-listings.md#additional-license-terms) |
-| **Website**                   | Optional                                    | [Website](create-app-store-listings.md#website)                   |
-| **Support contact info**      | Required if your product is available on Xbox; otherwise optional (but recommended)                                   | [Support contact info](create-app-store-listings.md#support-contact-info)              |
 | **Developed by**              | Optional                                    | [Developed by](create-app-store-listings.md#developed-by)                   |
-| **Privacy policy**            | Required for many apps. See the [App Developer Agreement](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [Privacy policy](create-app-store-listings.md#privacy-policy)        |
 | **Platform-specific Store listings** | Optional                               | [Create platform-specific Store listings](create-platform-specific-store-listings.md)  |
 
 <span/>
 
-### Notes for certification page
+### Submission options page
 
 | Field name                    | Notes                                       | For more info                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **Notes**                     | Recommended                                    | [Notes for certification](notes-for-certification.md)             |
+| **Publishing hold options**                | Default: Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)      | [Publishing hold options](manage-submission-options.md#publishing-hold-options)    
+| **Notes for certification**                     | Recommended                                    | [Notes for certification](notes-for-certification.md)             |
 
 <span/>
 
