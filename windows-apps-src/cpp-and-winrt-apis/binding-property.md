@@ -39,12 +39,17 @@ The first step in authoring a new runtime class is to add a new **Midl File (.id
 // BookSku.idl
 namespace Bookstore
 {
-	runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
+	runtimeclass BookSku : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.INotifyPropertyChanged
 	{
 		String Title;
 	}
 }
 ```
+
+> [!NOTE]
+> For an application to pass [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests, and to be successfully ingested into the Microsoft Store, the ultimate base class of each runtime class *declared in the application* must be a type originating in a Windows.* namespace.
+
+To fulfil that requirement, derive your view model classes from [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject). Alternatively, declare a bindable base class derived from **DependencyObject**, and derive your view models from that. You can declare your data models as C++ structs; they don't need to be declared in MIDL (as long as you're consuming them only from your view models and not binding XAML directly to them; in which case they'd arguably be view models by definition, anyway).
 
 Save the file and build the project. During the build process, the `midl.exe` tool is run to create a Windows Metadata file (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`) describing the runtime class. Then, the `cppwinrt.exe` tool is run to generate source code files to support you in authoring and consuming your runtime class. These files include stubs to get you started implementing the **BookSku** runtime class that you declared in your IDL. Those stubs are `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` and `BookSku.cpp`.
 
@@ -131,7 +136,7 @@ import "BookSku.idl";
 
 namespace Bookstore
 {
-	runtimeclass BookstoreViewModel
+	runtimeclass BookstoreViewModel : Windows.UI.Xaml.DependencyObject
 	{
 		BookSku BookSku{ get; };
 	}

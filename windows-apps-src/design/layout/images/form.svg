@@ -1,0 +1,187 @@
+<svg width="1152" height="648" viewBox="0 0 1152 648" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>form</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(14836 6589)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -14836 -6589L -13684 -6589L -13684 -5941L -14836 -5941L -14836 -6589Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="form" clip-path="url(#clip-0)">
+<path d="M -14836 -6589L -13684 -6589L -13684 -5941L -14836 -5941L -14836 -6589Z" fill="#243A5E"/>
+<g id="app-bg" filter="url(#filter0_d)">
+<use xlink:href="#path0_fill" transform="translate(-14772 -6533)" fill="#FFFFFF"/>
+<use xlink:href="#path0_fill" transform="translate(-14772 -6533)" fill="#FFFFFF"/>
+</g>
+<g id="titlebar-controls" opacity="0.75">
+<g id="minimize">
+<use xlink:href="#path1_fill" transform="matrix(1 -2.44929e-16 2.44929e-16 1 -13834 -6517.94)" fill="#243A5E"/>
+</g>
+<g id="expand">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path2_fill" fill="white" transform="translate(-13802 -6522.94)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path3_stroke_2x" transform="translate(-13802 -6522.94)" fill="#243A5E"/>
+</g>
+</g>
+<g id="close">
+<g id="Line 3 (Stroke)">
+<use xlink:href="#path4_fill" transform="matrix(0.707107 -0.707107 0.707107 0.707107 -13770.4 -6511.99)" fill="#243A5E"/>
+</g>
+<g id="Line 3.1 (Stroke)">
+<use xlink:href="#path4_fill" transform="matrix(-0.707107 -0.707107 0.707107 -0.707107 -13759.1 -6510.57)" fill="#243A5E"/>
+</g>
+</g>
+</g>
+<g id="form-field">
+<g id="Rectangle 41.18">
+<use xlink:href="#path5_fill" transform="translate(-14668 -6418)" fill="#EBF3F7"/>
+<mask id="mask1_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="translate(-14668 -6418)"/>
+</mask>
+<g mask="url(#mask1_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="translate(-14668 -6418)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 43.16">
+<use xlink:href="#path7_fill" transform="translate(-14668 -6442)" fill="#DAE4EB"/>
+</g>
+<g id="Rectangle 41.35">
+<use xlink:href="#path5_fill" transform="translate(-14236 -6418)" fill="#EBF3F7"/>
+<mask id="mask2_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="translate(-14236 -6418)"/>
+</mask>
+<g mask="url(#mask2_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="translate(-14236 -6418)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 43.19">
+<use xlink:href="#path7_fill" transform="translate(-14236 -6442)" fill="#DAE4EB"/>
+</g>
+<g id="Rectangle 41.36">
+<use xlink:href="#path5_fill" transform="translate(-14236 -6314)" fill="#EBF3F7"/>
+<mask id="mask3_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="translate(-14236 -6314)"/>
+</mask>
+<g mask="url(#mask3_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="translate(-14236 -6314)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 43.20">
+<use xlink:href="#path7_fill" transform="translate(-14236 -6338)" fill="#DAE4EB"/>
+</g>
+<g id="Rectangle 41.37">
+<use xlink:href="#path8_fill" transform="translate(-14236 -6210)" fill="#EBF3F7"/>
+<mask id="mask4_outline_ins">
+<use xlink:href="#path8_fill" fill="white" transform="translate(-14236 -6210)"/>
+</mask>
+<g mask="url(#mask4_outline_ins)">
+<use xlink:href="#path9_stroke_2x" transform="translate(-14236 -6210)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 43.21">
+<use xlink:href="#path7_fill" transform="translate(-14236 -6234)" fill="#DAE4EB"/>
+</g>
+<g id="Rectangle 41.29">
+<use xlink:href="#path5_fill" transform="translate(-14668 -6314)" fill="#EBF3F7"/>
+<mask id="mask5_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="translate(-14668 -6314)"/>
+</mask>
+<g mask="url(#mask5_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="translate(-14668 -6314)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 41.30">
+<use xlink:href="#path5_fill" transform="translate(-14668 -6210)" fill="#EBF3F7"/>
+<mask id="mask6_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="translate(-14668 -6210)"/>
+</mask>
+<g mask="url(#mask6_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="translate(-14668 -6210)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 41.31">
+<use xlink:href="#path5_fill" transform="translate(-14668 -6162)" fill="#EBF3F7"/>
+<mask id="mask7_outline_ins">
+<use xlink:href="#path5_fill" fill="white" transform="translate(-14668 -6162)"/>
+</mask>
+<g mask="url(#mask7_outline_ins)">
+<use xlink:href="#path6_stroke_2x" transform="translate(-14668 -6162)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 41.33">
+<use xlink:href="#path10_fill" transform="translate(-14668 -6114)" fill="#EBF3F7"/>
+<mask id="mask8_outline_ins">
+<use xlink:href="#path10_fill" fill="white" transform="translate(-14668 -6114)"/>
+</mask>
+<g mask="url(#mask8_outline_ins)">
+<use xlink:href="#path11_stroke_2x" transform="translate(-14668 -6114)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 41.34">
+<use xlink:href="#path12_fill" transform="translate(-14460 -6114)" fill="#EBF3F7"/>
+<mask id="mask9_outline_ins">
+<use xlink:href="#path12_fill" fill="white" transform="translate(-14460 -6114)"/>
+</mask>
+<g mask="url(#mask9_outline_ins)">
+<use xlink:href="#path13_stroke_2x" transform="translate(-14460 -6114)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="Rectangle 43.17">
+<use xlink:href="#path7_fill" transform="translate(-14668 -6338)" fill="#DAE4EB"/>
+</g>
+<g id="Rectangle 43.18">
+<use xlink:href="#path7_fill" transform="translate(-14668 -6234)" fill="#DAE4EB"/>
+</g>
+</g>
+<g id="app-title">
+<use xlink:href="#path14_fill" transform="translate(-14756 -6517)" fill="#DAE4EB"/>
+</g>
+<g id="type-cursor">
+<use xlink:href="#path15_stroke" transform="matrix(6.12605e-17 1 -1 6.12042e-17 -14659.7 -6409.98)" fill="#50E6FF"/>
+</g>
+<g id="Action">
+<g id="Icon">
+<use xlink:href="#path16_fill" transform="translate(-14377.9 -6097.07)" fill="#000000" fill-opacity="0.8"/>
+</g>
+</g>
+<g id="Actions / Button / Pressed">
+<g id="Background">
+<use xlink:href="#path17_fill" transform="translate(-14236 -6142)" fill="#50E6FF"/>
+</g>
+<g id="Button">
+<use xlink:href="#path18_fill" transform="translate(-14216 -6132)" fill="#243A5E"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-14792" y="-6553" width="1064" height="576" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="0"/>
+<feGaussianBlur stdDeviation="10"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.095 0 0 0 0 0.153793 0 0 0 0 0.25 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 1024 0L 1024 536L 0 536L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 12 1C 12 1.55228 11.5523 2 11 2L 1 2C 0.447715 2 0 1.55228 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447715 12 1Z"/>
+<path id="path2_fill" d="M 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447715 12 1L 12 11C 12 11.5523 11.5523 12 11 12L 1 12C 0.447715 12 0 11.5523 0 11L 0 1Z"/>
+<path id="path3_stroke_2x" d="M 1 2L 11 2L 11 -2L 1 -2L 1 2ZM 10 1L 10 11L 14 11L 14 1L 10 1ZM 11 10L 1 10L 1 14L 11 14L 11 10ZM 2 11L 2 1L -2 1L -2 11L 2 11ZM 1 10C 1.55228 10 2 10.4477 2 11L -2 11C -2 12.6569 -0.656854 14 1 14L 1 10ZM 10 11C 10 10.4477 10.4477 10 11 10L 11 14C 12.6569 14 14 12.6569 14 11L 10 11ZM 11 2C 10.4477 2 10 1.55228 10 1L 14 1C 14 -0.656854 12.6569 -2 11 -2L 11 2ZM 1 -2C -0.656854 -2 -2 -0.656854 -2 1L 2 1C 2 1.55228 1.55228 2 1 2L 1 -2Z"/>
+<path id="path4_fill" fill-rule="evenodd" d="M 16 1C 16 1.55228 15.5523 2 15 2L 1 2C 0.447715 2 0 1.55228 0 1C 0 0.447715 0.447715 0 1 0L 15 0C 15.5523 0 16 0.447715 16 1Z"/>
+<path id="path5_fill" d="M 0 0L 384 0L 384 40L 0 40L 0 0Z"/>
+<path id="path6_stroke_2x" d="M 0 0L 0 -1L -1 -1L -1 0L 0 0ZM 384 0L 385 0L 385 -1L 384 -1L 384 0ZM 384 40L 384 41L 385 41L 385 40L 384 40ZM 0 40L -1 40L -1 41L 0 41L 0 40ZM 0 1L 384 1L 384 -1L 0 -1L 0 1ZM 383 0L 383 40L 385 40L 385 0L 383 0ZM 384 39L 0 39L 0 41L 384 41L 384 39ZM 1 40L 1 0L -1 0L -1 40L 1 40Z"/>
+<path id="path7_fill" d="M 0 0L 96 0L 96 16L 0 16L 0 0Z"/>
+<path id="path8_fill" d="M 0 0L 233.333 0L 233.333 40L 0 40L 0 0Z"/>
+<path id="path9_stroke_2x" d="M 0 0L 0 -1L -1 -1L -1 0L 0 0ZM 233.333 0L 234.333 0L 234.333 -1L 233.333 -1L 233.333 0ZM 233.333 40L 233.333 41L 234.333 41L 234.333 40L 233.333 40ZM 0 40L -1 40L -1 41L 0 41L 0 40ZM 0 1L 233.333 1L 233.333 -1L 0 -1L 0 1ZM 232.333 0L 232.333 40L 234.333 40L 234.333 0L 232.333 0ZM 233.333 39L 0 39L 0 41L 233.333 41L 233.333 39ZM 1 40L 1 0L -1 0L -1 40L 1 40Z"/>
+<path id="path10_fill" d="M 0 0L 200 0L 200 40L 0 40L 0 0Z"/>
+<path id="path11_stroke_2x" d="M 0 0L 0 -1L -1 -1L -1 0L 0 0ZM 200 0L 201 0L 201 -1L 200 -1L 200 0ZM 200 40L 200 41L 201 41L 201 40L 200 40ZM 0 40L -1 40L -1 41L 0 41L 0 40ZM 0 1L 200 1L 200 -1L 0 -1L 0 1ZM 199 0L 199 40L 201 40L 201 0L 199 0ZM 200 39L 0 39L 0 41L 200 41L 200 39ZM 1 40L 1 0L -1 0L -1 40L 1 40Z"/>
+<path id="path12_fill" d="M 0 0L 112 0L 112 40L 0 40L 0 0Z"/>
+<path id="path13_stroke_2x" d="M 0 0L 0 -1L -1 -1L -1 0L 0 0ZM 112 0L 113 0L 113 -1L 112 -1L 112 0ZM 112 40L 112 41L 113 41L 113 40L 112 40ZM 0 40L -1 40L -1 41L 0 41L 0 40ZM 0 1L 112 1L 112 -1L 0 -1L 0 1ZM 111 0L 111 40L 113 40L 113 0L 111 0ZM 112 39L 0 39L 0 41L 112 41L 112 39ZM 1 40L 1 0L -1 0L -1 40L 1 40Z"/>
+<path id="path14_fill" d="M 0 0L 65 0L 65 8L 0 8L 0 0Z"/>
+<path id="path15_stroke" d="M 0 0L 24 0L 24 -2L 0 -2L 0 0Z"/>
+<path id="path16_fill" fill-rule="evenodd" d="M 8.44043 7.2762L 16.125 0L 16.8809 0.715692L 8.44043 8.70759L 0 0.715692L 0.755859 0L 8.44043 7.2762Z"/>
+<path id="path17_fill" fill-rule="evenodd" d="M 0 0L 150.698 0L 150.698 40L 0 40L 0 0Z"/>
+<path id="path18_fill" d="M 33.1445 16L 33.1445 5.49707L 36.4771 5.49707C 37.4927 5.49707 38.2959 5.71924 38.8867 6.16357C 39.4824 6.60791 39.7803 7.18652 39.7803 7.89941C 39.7803 8.49512 39.6118 9.0127 39.2749 9.45215C 38.938 9.8916 38.4717 10.2041 37.876 10.3896L 37.876 10.4189C 38.5986 10.502 39.1748 10.7705 39.6045 11.2246C 40.0391 11.6738 40.2563 12.2598 40.2563 12.9824C 40.2563 13.8809 39.9023 14.6084 39.1943 15.165C 38.4863 15.7217 37.5928 16 36.5137 16L 33.1445 16ZM 34.8804 6.896L 34.8804 9.88428L 36.0083 9.88428C 36.6138 9.88428 37.0874 9.74268 37.4292 9.45947C 37.7759 9.17139 37.9492 8.76611 37.9492 8.24365C 37.9492 7.34521 37.3486 6.896 36.1475 6.896L 34.8804 6.896ZM 34.8804 11.2832L 34.8804 14.6084L 36.3672 14.6084C 37.0166 14.6084 37.5171 14.4595 37.8687 14.1616C 38.2251 13.8589 38.4033 13.4438 38.4033 12.9165C 38.4033 11.8276 37.6489 11.2832 36.1401 11.2832L 34.8804 11.2832ZM 48.562 16L 46.8628 16L 46.8628 14.8135L 46.8335 14.8135C 46.3403 15.7217 45.5737 16.1758 44.5337 16.1758C 42.7612 16.1758 41.875 15.1113 41.875 12.9824L 41.875 8.5L 43.5742 8.5L 43.5742 12.8066C 43.5742 14.1543 44.0942 14.8281 45.1343 14.8281C 45.6372 14.8281 46.0498 14.6426 46.3721 14.2715C 46.6992 13.9004 46.8628 13.4146 46.8628 12.814L 46.8628 8.5L 48.562 8.5L 48.562 16ZM 54.7363 15.9194C 54.4043 16.0854 53.9673 16.1685 53.4253 16.1685C 51.9702 16.1685 51.2427 15.4702 51.2427 14.0737L 51.2427 9.83301L 49.9902 9.83301L 49.9902 8.5L 51.2427 8.5L 51.2427 6.76416L 52.9419 6.28076L 52.9419 8.5L 54.7363 8.5L 54.7363 9.83301L 52.9419 9.83301L 52.9419 13.583C 52.9419 14.0273 53.0225 14.3447 53.1836 14.5352C 53.3447 14.7256 53.6133 14.8208 53.9893 14.8208C 54.2773 14.8208 54.5264 14.7378 54.7363 14.5718L 54.7363 15.9194ZM 60.1562 15.9194C 59.8242 16.0854 59.3872 16.1685 58.8452 16.1685C 57.3901 16.1685 56.6626 15.4702 56.6626 14.0737L 56.6626 9.83301L 55.4102 9.83301L 55.4102 8.5L 56.6626 8.5L 56.6626 6.76416L 58.3618 6.28076L 58.3618 8.5L 60.1562 8.5L 60.1562 9.83301L 58.3618 9.83301L 58.3618 13.583C 58.3618 14.0273 58.4424 14.3447 58.6035 14.5352C 58.7646 14.7256 59.0332 14.8208 59.4092 14.8208C 59.6973 14.8208 59.9463 14.7378 60.1562 14.5718L 60.1562 15.9194ZM 64.8584 16.1758C 63.7012 16.1758 62.7759 15.8267 62.0825 15.1284C 61.394 14.4253 61.0498 13.4951 61.0498 12.3379C 61.0498 11.0781 61.4087 10.0942 62.1265 9.38623C 62.8491 8.67822 63.8208 8.32422 65.0415 8.32422C 66.2134 8.32422 67.1265 8.66846 67.7808 9.35693C 68.4351 10.0454 68.7622 11 68.7622 12.2207C 68.7622 13.417 68.4082 14.3765 67.7002 15.0991C 66.9971 15.8169 66.0498 16.1758 64.8584 16.1758ZM 64.939 9.6792C 64.2749 9.6792 63.75 9.91113 63.3643 10.375C 62.9785 10.8389 62.7856 11.4785 62.7856 12.2939C 62.7856 13.0801 62.981 13.7002 63.3716 14.1543C 63.7622 14.6035 64.2847 14.8281 64.939 14.8281C 65.6079 14.8281 66.1206 14.606 66.4771 14.1616C 66.8384 13.7173 67.019 13.085 67.019 12.2646C 67.019 11.4395 66.8384 10.8022 66.4771 10.353C 66.1206 9.90381 65.6079 9.6792 64.939 9.6792ZM 77.1777 16L 75.4785 16L 75.4785 11.7739C 75.4785 10.3726 74.9829 9.67188 73.9917 9.67188C 73.4741 9.67188 73.0469 9.86719 72.71 10.2578C 72.373 10.6436 72.2046 11.1318 72.2046 11.7227L 72.2046 16L 70.498 16L 70.498 8.5L 72.2046 8.5L 72.2046 9.74512L 72.2339 9.74512C 72.7954 8.79785 73.606 8.32422 74.6655 8.32422C 75.481 8.32422 76.1035 8.59033 76.5332 9.12256C 76.9629 9.6499 77.1777 10.4141 77.1777 11.415L 77.1777 16Z"/>
+</defs>
+</svg>
