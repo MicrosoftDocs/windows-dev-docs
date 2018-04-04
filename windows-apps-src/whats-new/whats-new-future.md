@@ -18,6 +18,11 @@ If you want your app’s Store listing to be visible only to selected people tha
 ### Package resource indexing (PRI) APIs and custom build systems
 With the [package resource indexing (PRI) APIs](https://docs.microsoft.com/windows/uwp/app-resources/pri-apis-custom-build-systems), you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump package resource index (PRI) files to whatever level of complexity your UWP app needs. If you have a custom build system that currently uses the MakePri.exe command-line tool then, for increased performance and control, we recommend that you switch over to calling the PRI APIs instead of calling MakePri.exe.
 
+### Expanded app manifest capabilities
+Several features have been added to the App Package Manifest schema, including: broad file system access, enabling barcode scanners for point-of-service devices, defining a UWP console app, and more. 
+
+See [What's different in Windows 10](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10) for more details.
+
 ## Developer Guidance
 
 ### Download and install package updates from the Store
