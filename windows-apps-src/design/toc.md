@@ -252,4 +252,21 @@
 ### [Instructional UI](in-app-help/instructional-ui.md)
 ### [In-app help](in-app-help/in-app-help.md)
 ### [External help](in-app-help/external-help.md)
+
+# Windows Template Studio
+## [Overview](windows-template-studio/index.md)
+## [Understanding your generated code](windows-template-studio/understanding-generated-code.md)
+### [Application activation](windows-template-studio/application-activation.md)
+### [Navigation](windows-template-studio/navigation-between-pages.md)
+### [Notifications](windows-template-studio/notifications.md)
+## [Features and Pages](windows-template-studio/features-and-pages.md)
+### [Navigation pane](windows-template-studio/navigation-pane.md)
+### [Drag and drop](windows-template-studio/drag-and-drop.md)
+### [Settings configuration](windows-template-studio/settings-configuration.md)
+### [Suspend and resume](windows-template-studio/suspend-and-resume.md)
+### [URI scheme activation](windows-template-studio/uri-scheme-activation.md)
+### [What's new prompt](windows-template-studio/whats-new-prompt.md)
+## [Adding new pages](windows-template-studio/adding-new-pages.md)
+## [Telemetry](windows-template-studio/telemetry.md)
+
 # [Design toolkits](downloads/index.md)
