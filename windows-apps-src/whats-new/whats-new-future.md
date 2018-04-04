@@ -8,6 +8,10 @@ We've updated our [XAML page layout](../design/layout/layouts-with-xaml.md) docs
 
 ![Margins and padding for XAML page layouts](../design/layout/images/xaml-layout-margins-padding.png)
 
+### Private audience
+
+If you want your app’s Store listing to be visible only to selected people that you specify, use the new **Private audience** option. The app will not be discoverable or available to anyone other than people in the group(s) you specify. This option is useful for beta testing, as it lets you distribute your app to testers without anyone else being able to get the app, or even see its Store listing. For more info, see [Choose visibility options](../publish/choose-visibility-options.md).
+
 ### C++/WinRT
 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) is a new, entirely standard, modern C++17 language projection for Windows Runtime (WinRT) APIs. It's implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume WinRT APIs using any standards-compliant C++17 compiler. For your C++ applications&mdash;from Win32 to UWP&mdash;use C++/WinRT to keep your code standard, modern, and clean, and your application lightweight and fast.
 
