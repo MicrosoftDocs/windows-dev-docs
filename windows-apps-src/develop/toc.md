@@ -60,6 +60,7 @@
 ## [Custom audio effects](../audio-video-camera/custom-audio-effects.md)
 ## [Media compositions and editing](../audio-video-camera/media-compositions-and-editing.md)
 ## [Audio device information properties](../audio-video-camera/audio-device-information-properties.md)
+## [Detect and respond to audio state changes](../audio-video-camera/detect-and-respond-to-audio-state-changes.md)
 ## [Create, edit, and save bitmap images](../audio-video-camera/imaging.md)
 ### [Process bitmaps with OpenCV](../audio-video-camera/process-software-bitmaps-with-opencv.md)
 ### [Process bitmaps with the LowLightFusion API](../audio-video-camera/process-bitmaps-low-light-fusion.md)

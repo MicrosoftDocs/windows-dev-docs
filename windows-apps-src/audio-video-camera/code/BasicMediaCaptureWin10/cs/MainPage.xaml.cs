@@ -194,6 +194,8 @@ namespace BasicCameraWin10
             await InitializeCameraAsync();
 
             SetPowerlineFrequency();
+
+            ConfigureAdditionalSettings();
         }
         // </SnippetOnNavigatedTo>
         // <SnippetOnNavigatingFrom>
@@ -2115,5 +2117,9 @@ namespace BasicCameraWin10
 
         }
 
+        private void ConfigureAdditionalSettings()
+        {
+            UpdateDenoiseCapabilities();
+        }
     }
 }

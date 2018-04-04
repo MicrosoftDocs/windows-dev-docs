@@ -222,6 +222,24 @@ For more information on Win2D, see the [Win2D GitHub repository](https://github.
 5.  The **Review Changes** dialog shows you the package to be installed. Click **OK**.
 6.  Accept the package license.
 
+## Detect and respond to audio level changes by the system
+Starting with Windows 10, version 1803, your app can detect when the system lowers or mutes the audio level of a currently playing **MediaPlayer**. For example, the system may lower, or "duck", the audio playback level when an alarm is ringing. The system will mute your app when it goes into the background if your app has not declared the *backgroundMediaPlayback* capability in the app manifest. The [**AudioStateMonitor**](https://docs.microsoft.comuwp/api/windows.media.audio.audiostatemonitor) class allows you to register to receive an event when the system modifies the volume of an audio stream. Access the **AudioStateMonitor** property of a **MediaPlayer** and register a handler for the [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) event to be notified when the audio level for that **MediaPlayer** is changed by the system.
+
+[!code-cs[RegisterAudioStateMonitor](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
+
+When handling the **SoundLevelChanged** event, you may take different actions depending on the type of content being played. If you are currently playing music, then you may want to let the music continue to play while the volume is ducked. If you are playing a podcast, however, you likely want to pause playback while the audio is ducked so the user doesn't miss any of the content.
+
+This example declares a variable to track whether the currently playing content is a podcast, it is assumed that you set this to the appropriate value when selecting the content for the **MediaPlayer**. We also create a class variable to track when we pause playback programmatically when the audio level changes.
+
+[!code-cs[AudioStateVars](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
+
+In the **SoundLevelChanged** event handler, check the [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) property of the **AudioStateMonitor** sender to determine the new sound level. This example checks to see if the new sound level is full volume, meaning the system has stopped muting or ducking the volume, or if the sound level has been lowered but is playing non-podcast content. If either of these are true and the content was previously paused programmatically, playback is resumed. If the new sound level is muted or if the current content is a podcast and the sound level is low, playback is paused, and the variable is set to track that the pause was initiated programatically.
+
+[!code-cs[SoundLevelChanged](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetSoundLevelChanged)]
+
+The user may decide that they want to pause or continue playback, even if the audio is ducked by the system. This example shows event handlers for a play and a pause button. In the pause button click handler is paused, if playback had already been paused programmatically, then we update the variable to indicate that the user has paused the content. In the play button click handler, we resume playback and clear our tracking variable.
+
+[!code-cs[ButtonUserClick](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetButtonUserClick)]
 
 ## Related topics
 * [Media playback](media-playback.md)
