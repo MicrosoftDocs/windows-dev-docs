@@ -221,7 +221,7 @@ In this section we describe how this tab order can be fully customized to suit y
 The [TabFocusNavigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation)
 property of [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) specifies the tab navigation behavior for its entire object tree (or directional area).
 
-> [!NOTE}
+> [!NOTE]
 > Use this property instead of the [Control.TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) property for objects that do not use a [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate) to define their appearance.
 
 As we mentioned in the previous section, to avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) and the [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.   
@@ -483,26 +483,9 @@ This image shows how, when B1 has focus and down is the requested direction, B3 
 
 
 ## Related articles
-
 - [Programmatic focus navigation](focus-navigation-programmatic.md)
 - [Keyboard interactions](keyboard-interactions.md)
 - [Keyboard accessibility](../accessibility/keyboard-accessibility.md) 
-
-<!--
-**Topic samples**
-* [Ink analysis sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-analysis-basic.zip)
-* [Ink handwriting recognition sample (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
-
-**Other samples**
-* [Simple ink sample (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Ink sample (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Get Started Tutorial: Support ink in your UWP app](https://aka.ms/appsample-ink)
-* [Coloring book sample](https://aka.ms/cpubsample-coloringbook)
-* [Family notes sample](https://aka.ms/cpubsample-familynotessample)
-
--->
-
 
 
 

@@ -103,6 +103,16 @@ The following analytics methods are available for use by developer accounts that
 | Errors in Windows 7/Windows 8.x drivers (for IHVs) |  <ul><li>[Get error reporting data for Windows 7 and Windows 8.x drivers](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[Get details for a Windows 7 or Windows 8.x driver error](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[Download the CAB file for a Windows 7 or Windows 8.x driver error](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
 | Hardware errors (for OEMs) |  <ul><li>[Get OEM hardware error reporting data](get-oem-hardware-error-reporting-data.md)</li><li>[Get details for an OEM hardware error](get-details-for-an-oem-hardware-error.md)</li><li>[Download the CAB file for an OEM hardware error](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
+### Methods for Xbox Live services
+
+The following additional methods are available for use by developer accounts with games that use [Xbox Live services](../xbox-live/developer-program-overview.md).
+
+| Scenario       | Methods      |
+|---------------|--------------------|
+| General analytics |  <ul><li>[Get Xbox Live analytics data](get-xbox-live-analytics.md)</li><li>[Get Xbox Live achievements data](get-xbox-live-achievements-data.md)</li><li>[Get Xbox Live concurrent usage data](get-xbox-live-concurrent-usage-data.md)</li></ul> |
+| Health analytics |  <ul><li>[Get Xbox Live health data](get-xbox-live-health-data.md)</li></ul> |
+| Community analytics |  <ul><li>[Get Xbox Live Game Hub data](get-xbox-live-game-hub-data.md)</li><li>[Get Xbox Live club data](get-xbox-live-club-data.md)</li><li>[Get Xbox Live multiplayer data](get-xbox-live-multiplayer-data.md)</li></ul>  |
+
 ### Methods for Xbox One games
 
 The following additional methods are available for use by developer accounts with Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Dev Center dashboard.

@@ -23,6 +23,14 @@ This topic demonstrates how to author a Windows Runtime Component containing a r
 > [!NOTE]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
 
+## Windows::Foundation::EventHandler&lt;T&gt; and TypedEventHandler&lt;T&gt;
+If you want to raise an event from a runtime class implemented in a Windows Runtime Component, then you should use [**Windows::Foundation::EventHandler**](/uwp/api/windows.foundation.eventhandler) or [**TypedEventHandler**](/uwp/api/windows.foundation.eventhandler) for your event's delegate type. The type parameters must be Windows Runtime types, so primitive types are allowed as well as third-party runtime classes.
+
+The compiler will help you with a "*must be WinRT type*" error if you forget this constraint.
+
+## winrt::delegate&lt;...T&gt;
+If you want to raise an event from a C++ type (authored and consumed within the same project), then you can use C++/WinRT's **winrt::delegate&lt;...T&gt;** for your event's delegate type. In that case, the type parameter needn't be a Windows Runtime type.
+
 ## Create a Windows Runtime Component (BankAccountWRC)
 Begin by creating a new project in Microsoft Visual Studio. Create a **Visual C++ Windows Runtime Component (C++/WinRT)** project, and name it *BankAccountWRC* (for "bank account Windows Runtime Component").
 

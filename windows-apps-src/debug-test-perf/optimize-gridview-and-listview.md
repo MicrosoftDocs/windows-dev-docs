@@ -87,7 +87,7 @@ Here's how to use the [x:Phase attribute](https://msdn.microsoft.com/library/win
 1.  Here's what the binding source looks like (this is the data source that we'll bind to).
 
     ```csharp
-namespace LotsOfItems
+    namespace LotsOfItems
     {
         public class ExampleItem
         {

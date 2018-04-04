@@ -75,7 +75,7 @@ These articles help you create a flexible UI that looks great on different scree
                         </div>
                     </div> -->
                     <div class="cardText">
-                        <h3><a href="layouts-with-xaml.md">Create layouts with XAML</a></h3>
+                        <h3><a href="layouts-with-xaml.md">Create responsive layouts with XAML</a></h3>
                         <p>Learn how to use XAML layout panels to make your app responsive and adaptive.</p>
                     </div>
                 </div>

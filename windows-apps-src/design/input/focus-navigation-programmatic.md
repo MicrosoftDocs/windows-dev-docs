@@ -124,7 +124,8 @@ Use [FindNextElementOptions](https://docs.microsoft.com/en-us/uwp/api/windows.ui
 
 - [SearchRoot](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot) - Scope the search for focus navigation candidates to the children of this DependencyObject. Null indicates to start the search from the root of the visual tree.
 
-   ![Important] If one or more transforms are applied to the descendants of **SearchRoot**
+> [!Important] 
+> If one or more transforms are applied to the descendants of **SearchRoot**
 that place them outside of the directional area, these elements are still considered candidates.
 
 - [ExclusionRect](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect) - Focus navigation candidates are identified using a "fictitious" bounding rectangle where all overlapping objects are excluded from navigation focus. This rectangle is used only for calculations and is never added to the visual tree.

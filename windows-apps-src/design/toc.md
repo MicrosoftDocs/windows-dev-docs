@@ -44,17 +44,20 @@
 
 # Layout
 ## [Overview](layout/index.md)
+## [Page layout](layout/page-layout.md)
 ## [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 ## [Responsive design techniques](layout/responsive-design.md)
+## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
 ## [Show multiple views](layout/show-multiple-views.md)
 ## [Alignment, margins, and padding](layout/alignment-margin-padding.md)
-## [Create page layouts with XAML](layout/layouts-with-xaml.md)
-## [Create app layouts with Grid and StackPanel](layout/grid-tutorial.md)
-## [Layout panels](layout/layout-panels.md)
+## Layout panels
+### [Overview](layout/layout-panels.md)
+### [Tutorial: Use layout panels](layout/grid-tutorial.md)
 ### [Custom panels](layout/custom-panels-overview.md)
 ### [Custom panel example: BoxPanel](layout/boxpanel-example-custom-panel.md)
-## [Transforms](layout/transforms.md)
-### [3-D perspective effects for XAML UI](layout/3-d-perspective-effects.md)
+## Transforms
+### [Overview](layout/transforms.md)
+### [3-D perspective effects](layout/3-d-perspective-effects.md)
 
 # Controls
 ## [Overview](controls-and-patterns/index.md)
@@ -183,6 +186,7 @@
 ## [Touchpad](input/touchpad-interactions.md)
 ## [Surface Dial](input/windows-wheel-interactions.md)
 ### [Tutorial: Add Surface Dial support to your app](input/radialcontroller-walkthrough.md)
+## [Drag and drop](input/drag-and-drop.md)
 ## [Speech interactions](input/speech-interactions.md)
 ### [Speech recognition](input/speech-recognition.md)
 ### [Specify the speech recognizer language](input/specify-the-speech-recognizer-language.md)
@@ -249,4 +253,21 @@
 ### [Instructional UI](in-app-help/instructional-ui.md)
 ### [In-app help](in-app-help/in-app-help.md)
 ### [External help](in-app-help/external-help.md)
+
+# Windows Template Studio
+## [Overview](windows-template-studio/index.md)
+## [Understanding your generated code](windows-template-studio/understanding-generated-code.md)
+### [Application activation](windows-template-studio/application-activation.md)
+### [Navigation](windows-template-studio/navigation-between-pages.md)
+### [Notifications](windows-template-studio/notifications.md)
+## [Features and Pages](windows-template-studio/features-and-pages.md)
+### [Navigation pane](windows-template-studio/navigation-pane.md)
+### [Drag and drop](windows-template-studio/drag-and-drop.md)
+### [Settings configuration](windows-template-studio/settings-configuration.md)
+### [Suspend and resume](windows-template-studio/suspend-and-resume.md)
+### [URI scheme activation](windows-template-studio/uri-scheme-activation.md)
+### [What's new prompt](windows-template-studio/whats-new-prompt.md)
+## [Adding new pages](windows-template-studio/adding-new-pages.md)
+## [Telemetry](windows-template-studio/telemetry.md)
+
 # [Design toolkits](downloads/index.md)

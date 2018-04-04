@@ -86,7 +86,7 @@ UWP apps can listen for the following pointer events:
 <ul>
 <li>Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.</li>
 <li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
-<li>Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) that, when true, fires this event.</li>
+<li>Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state ([IsInRange](https://msdn.microsoft.com/library/windows/apps/br227977)) that, when true, fires this event.</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -95,7 +95,7 @@ UWP apps can listen for the following pointer events:
 <ul>
 <li>Touch requires a finger contact and fires this event when the pointer moves out of the bounding area of the element.</li>
 <li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
-<li>Like touch, pen fires this event when moving out of the bounding area of the element. However, pen also has a hover state ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) that fires this event when the state changes from true to false.</li>
+<li>Like touch, pen fires this event when moving out of the bounding area of the element. However, pen also has a hover state ([IsInRange](https://msdn.microsoft.com/library/windows/apps/br227977)) that fires this event when the state changes from true to false.</li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -104,13 +104,13 @@ UWP apps can listen for the following pointer events:
 <ul>
 <li>Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.</li>
 <li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
-<li>Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) that, when true and within the bounding area of the element, fires this event.</li>
+<li>Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state ([IsInRange](https://msdn.microsoft.com/library/windows/apps/br227977)) that, when true and within the bounding area of the element, fires this event.</li>
 </ul></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208971"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.</p>
-<p>[<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) must be called from the handler for this event.</p></td>
+<p>[CapturePointer](https://msdn.microsoft.com/library/windows/apps/br208918) must be called from the handler for this event.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208972"><strong>PointerReleased</strong></a></p></td>
@@ -119,7 +119,7 @@ UWP apps can listen for the following pointer events:
 <tr class="even">
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208973"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>Occurs when the mouse wheel is rotated.</p>
-<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) event.</p></td>
+<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [PointerMoved](https://msdn.microsoft.com/library/windows/apps/br208970) event.</p></td>
 </tr>
 </tbody>
 </table> 

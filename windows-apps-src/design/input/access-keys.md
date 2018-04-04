@@ -21,11 +21,7 @@ ms.localizationpriority: medium
 
 Access keys are keyboard shortcuts that improve the usability and the accessibility of your Windows applications by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).
 
-<!--
-
-See the [Accelerator keys]( https://docs.microsoft.com/windows/uwp/input/accelerator-keys) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
-
--->
+See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
 
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
