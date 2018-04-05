@@ -35,8 +35,15 @@ using Windows.UI.Xaml.Media.Imaging;
 // <SnippetOrientationUsing>
 using Windows.Devices.Enumeration;
 using Windows.UI.Core;
-
 // </SnippetOrientationUsing>
+
+//<SnippetAudioStateMonitorUsing>
+// Namespaces for monitoring audio state
+using Windows.Media;
+using Windows.Media.Audio;
+//</SnippetAudioStateMonitorUsing>
+
+using System.Diagnostics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -323,6 +330,10 @@ namespace SimpleCameraPreview_Win10
                     MediaEncodingProfile.CreateMp3(AudioEncodingQuality.High), file);
             await _mediaRecording.StartAsync();
             // </SnippetStartAudioCapture>
+        }
+        public async Task StopAudioCapture()
+        {
+            await _mediaRecording.StopAsync();
         }
         // <SnippetRecordLimitationExceededHandler>
         private async void MediaCapture_RecordLimitationExceeded(MediaCapture sender)
@@ -634,7 +645,108 @@ namespace SimpleCameraPreview_Win10
         }
         #endregion
 
+        #region audio state monitor
+        //<SnippetAudioStateVars>
+        AudioStateMonitor captureAudioStateMonitor;
+        AudioStateMonitor renderAudioStateMonitor;
+        //</SnippetAudioStateVars>
 
+        
+        void RegisterAudioPolicyHandlers()
+        {
+            //<SnippetRegisterAudioStateMonitor>
+            captureAudioStateMonitor = AudioStateMonitor.CreateForCaptureMonitoring();
+            captureAudioStateMonitor.SoundLevelChanged += CaptureAudioStateMonitor_SoundLevelChanged; ;
+
+            renderAudioStateMonitor = AudioStateMonitor.CreateForRenderMonitoring();
+            renderAudioStateMonitor.SoundLevelChanged += RenderAudioStateMonitor_SoundLevelChanged; ;
+            //</SnippetRegisterAudioStateMonitor>
+        }
+
+
+
+        //<SnippetCaptureSoundLevelChanged>
+        bool isCapturingAudio = false;
+        bool capturingStoppedForAudioState = false;
+        private void CaptureAudioStateMonitor_SoundLevelChanged(AudioStateMonitor sender, object args)
+        {
+            switch (sender.SoundLevel)
+            {
+                case SoundLevel.Full:
+                    if(capturingStoppedForAudioState)
+                    {
+                        StartAudioCapture();
+                        capturingStoppedForAudioState = false;
+                    }  
+                    break;
+                case SoundLevel.Muted:
+                    if(isCapturingAudio)
+                    {
+                        StopAudioCapture();
+                        capturingStoppedForAudioState = true;
+                    }
+                    break;
+                case SoundLevel.Low:
+                    // This should never happen for capture
+                    Debug.WriteLine("Unexpected audio state.");
+                    break;
+            }
+        }
+        //</SnippetCaptureSoundLevelChanged>
+
+        Windows.Media.Playback.MediaPlayer mediaPlayer;
+        bool isPodcast;
+
+
+        //<SnippetRenderSoundLevelChanged>
+        private void RenderAudioStateMonitor_SoundLevelChanged(AudioStateMonitor sender, object args)
+        {
+            if ((sender.SoundLevel == SoundLevel.Full) ||
+          (sender.SoundLevel == SoundLevel.Low && !isPodcast))
+            {
+                mediaPlayer.Play();
+            }
+            else if ((sender.SoundLevel == SoundLevel.Muted) ||
+                 (sender.SoundLevel == SoundLevel.Low && isPodcast))
+            {
+                // Pause playback if we’re muted or if we’re playing a podcast and are ducked
+                mediaPlayer.Pause();
+            }
+        }
+        //</SnippetRenderSoundLevelChanged>
+
+        //This snippet supports the general AudioStateMonitor article
+
+        //<SnippetDeviceIdCategoryVars>
+        AudioStateMonitor gameChatAudioStateMonitor;
+        //</SnippetDeviceIdCategoryVars>
+        private void RegisterAudioStateMonitorDeviceIdCategory()
+        {
+            //<SnippetSoundLevelDeviceIdCategory>
+            string deviceId = Windows.Media.Devices.MediaDevice.GetDefaultAudioCaptureId(Windows.Media.Devices.AudioDeviceRole.Communications);
+            gameChatAudioStateMonitor = AudioStateMonitor.CreateForCaptureMonitoringWithCategoryAndDeviceId(MediaCategory.GameChat, deviceId);
+            gameChatAudioStateMonitor.SoundLevelChanged += GameChatSoundLevelChanged;
+            //</SnippetSoundLevelDeviceIdCategory>
+        }
+        //<SnippetGameChatSoundLevelChanged>
+        private void GameChatSoundLevelChanged(AudioStateMonitor sender, object args)
+        {
+            switch (sender.SoundLevel)
+            {
+                case SoundLevel.Full:
+                    StartAudioCapture();
+                    break;
+                case SoundLevel.Muted:
+                    StopAudioCapture();
+                    break;
+                case SoundLevel.Low:
+                    // Audio capture should never be "ducked", only muted or full volume.
+                    Debug.WriteLine("Unexpected audio state change.");
+                    break;
+            }
+        }
+        //</SnippetGameChatSoundLevelChanged>
+        #endregion
     }
 
 

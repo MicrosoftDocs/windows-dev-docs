@@ -62,7 +62,13 @@
             <Button x:Name="SphericalVideoButton" Content="SphericalVideo" Click="SphericalVideoButton_Click"/>
             <Button x:Name="SphericalVideoListButton" Content="SphericalVideoList" Click="SphericalVideoListButton_Click"/>
             <Canvas x:Name="_compositionCanvas" Width="200" Height="200" Background="LimeGreen"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="RegisterAudioMonitor" Content="RegAudioMonitor" Click="RegisterAudioMonitor_Click"/>
+                <Button x:Name="PlayButton_User" Content="AudioMonitorPlay" Click="PauseButton_User_Click"/>
+                <Button x:Name="PauseButton_User" Content="AudioMonitorPause" Click="PauseButton_User_Click"/>
             </StackPanel>
+            </StackPanel>
+        
         <ProgressRing HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
     </Grid>

@@ -3,7 +3,7 @@ author: stevewhims
 description: With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the winrt::hstring type.
 title: String handling in C++/WinRT
 ms.author: stwhi
-ms.date: 03/01/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # String handling in C++/WinRT
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 With C++/WinRT, you can call Windows Runtime (WinRT) APIs using C++ Standard Library wide string types. C++/WinRT does have a custom string type called [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) (defined in `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`). And that's the string type that WinRT constructors, functions, and properties actually take and return. But in many cases&mdash;thanks to **hstring**'s conversion constructors and conversion operators&mdash;you can choose whether or not to be aware of **hstring** in your programming.
 
 There are many string types in C++. Variants exist in many libraries in addition to **std::basic_string** from the C++ Standard Library. C++17 has string conversion utilities, and **std::basic_string_view**, to bridge the gaps between all of the string types. **hstring** provides convertibility with **std::wstring_view** to provide the interoperability that **std::basic_string_view** was designed for.

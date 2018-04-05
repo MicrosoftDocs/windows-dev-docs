@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows two helper functions that can be used to convert between C++/CX and C++/WinRT objects.
 title: Move from C++/CX to C++/WinRT
 ms.author: stwhi
-ms.date: 03/31/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 ---
 
 # Move from C++/CX to C++/WinRT
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
 This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. You can use them to interop between code that uses the two language projections, or you can use the functions as you gradually move your code from C++/CX to C++/WinRT.
 
 ## from_cx and to_cx functions

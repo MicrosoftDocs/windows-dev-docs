@@ -17,14 +17,14 @@ Suppose you've designed and implemented a nice looking UI filled with placeholde
 
 In this tutorial, you'll learn how to replace your boilerplate with data bindings and create other direct links between your UI and your data. You'll also learn how to format or convert your data for display, and keep your UI and data in sync. When you complete this tutorial, you'll be able to improve the simplicity and organization of the XAML and C# code, making it easier to maintain and extend.
 
-You'll start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML page layouts, and leaves out many features to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations and phone support. You can find the [final version](https://github.com/Microsoft/Windows-appsample-photo-lab) in the UWP Academy\XAML\Final** folder. 
+You'll start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML page layouts, and leaves out many features to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations and phone support. You can find the final version in the root folder of the [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) repo. 
 
 ## Prerequisites
 
-* [Visual Studio 2017 and the Windows 10 SDK (10.0.15063.468 or later)](https://developer.microsoft.com/windows/downloads)
+* [Visual Studio 2017 and the latest version of the Windows 10 SDK](https://developer.microsoft.com/windows/downloads).
 
 ## Part 0: Get the code
-The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-tutorials/data-binding/ folder](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding). After you've cloned/downloaded the repo, you can edit the project by openning PhotoLab.sln with Visual Studio 2017.
+The starting point for this lab is located in the PhotoLab sample repository, in the [xaml-basics-starting-points/data-binding](https://github.com/Microsoft/Windows-appsample-photo-lab/tree/master/xaml-basics-starting-points/data-binding) folder. After you've cloned or downloaded the repo, you can edit the project by opening PhotoLab.sln with Visual Studio 2017.
 
 The PhotoLab app has two primary pages:
 
@@ -42,7 +42,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
 
 **Replace the placeholders with one-time bindings**
 
-1. Open the UWP Academy\XAML\Binding\Start folder and load the PhotoLab solution. 
+1. Open the xaml-basics-starting-points\data-binding folder and launch the PhotoLab.sln file. 
 
 2. Make sure your Solution Platform is set to x86 or x64, not ARM, and then run the app. This shows the state of the app with UI placeholders, before bindings have been added. 
 
@@ -166,14 +166,15 @@ All the bindings we've looked at so far are one-time, read-only bindings, which 
 Even the **ItemsSource** binding you just added is a one-time, read-only binding to an unchanging property value, but there's an important distinction to make here. The unchanging value of the **Images** property is a single, specific instance of a collection, initialized once as shown here.
 
 ```Csharp
-private ObservableCollection<ImageFileInfo> Images { get; } = new ObservableCollection<ImageFileInfo>();
+private ObservableCollection<ImageFileInfo> Images { get; }
+    = new ObservableCollection<ImageFileInfo>();
 ```
 
 The **Images** property value never changes, but because the property is of type **ObservableCollection\<T\>**, the *contents* of the collection can change, and the binding will automatically notice the changes and update the UI. 
 
 To test this, we're going to temporarily add a button that deletes the currently-selected image. This button isn't in the final version because selecting an image will take you to a detail page. However, the behavior of **ObservableCollection\<T\>** is still important in the final PhotoLab sample because the XAML is initialized in the page constructor (through the **InitializeComponent** method call), but the **Images** collection is populated later in the **OnNavigatedTo** method. 
 
-**To add a delete button:**
+**Add a delete button**
 
 1. In MainPage.xaml, find the **CommandBar** named **MainCommandBar** and add a new button before the zoom button. (The zoom controls don't work yet. You'll hook those up in the next part of the tutorial.)
 
@@ -190,7 +191,8 @@ To test this, we're going to temporarily add a button that deletes the currently
 2. In MainPage.xaml.cs, add the **DeleteSelectedImage** method.
 
     ```c#
-    private void DeleteSelectedImage() => Images.Remove(ImageGridView.SelectedItem as ImageFileInfo);
+    private void DeleteSelectedImage() =>
+	    Images.Remove(ImageGridView.SelectedItem as ImageFileInfo);
     ```
 
     This method simply deletes the selected image from the **Images** collection. 
@@ -204,7 +206,7 @@ Now run the app and use the button to delete a few images. As you can see, the U
 
 In this part, you'll create one-way bindings from a control in the data template to the zoom slider, which is outside the template. You'll also learn that you can use data binding with many control properties, not just the most obvious ones like **TextBlock.Text** and **Image.Source**. 
 
-*Bind the image data template to the zoom slider**
+**Bind the image data template to the zoom slider**
 
 * Find the **DataTemplate** named **ImageGridView_DefaultItemTemplate** and replace the **Height** and **Width** values of the **Grid** control at the top of the template.
 
@@ -337,13 +339,16 @@ Now that the UI can respond to **ItemSize** changes, you need to actually make s
             // the ItemContainerStyle * (Right + Left). If those values change, 
             // this value needs to be updated to match.
             int margins = (int)this.Resources["LargeItemMarginValue"] * 4;
-            double gridWidth = ImageGridView.ActualWidth - (int)this.Resources["DesktopWindowSidePaddingValue"];
+            double gridWidth = ImageGridView.ActualWidth -
+			    (int)this.Resources["DesktopWindowSidePaddingValue"];
     
             if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile" &&
-                UIViewSettings.GetForCurrentView().UserInteractionMode == UserInteractionMode.Touch)
+                UIViewSettings.GetForCurrentView().UserInteractionMode ==
+				    UserInteractionMode.Touch)
             {
                 margins = (int)this.Resources["SmallItemMarginValue"] * 4;
-                gridWidth = ImageGridView.ActualWidth - (int)this.Resources["MobileWindowSidePaddingValue"];
+                gridWidth = ImageGridView.ActualWidth -
+				    (int)this.Resources["MobileWindowSidePaddingValue"];
             }
     
             double ItemWidth = ZoomSlider.Value + margins;

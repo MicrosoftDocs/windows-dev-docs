@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "UAP,Version=v10.0.15063": {
+    "UAP,Version=v10.0.17133": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -1885,7 +1885,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.15063/win10-arm": {
+    "UAP,Version=v10.0.17133/win10-arm": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -3635,7 +3635,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.15063/win10-arm-aot": {
+    "UAP,Version=v10.0.17133/win10-arm-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -5342,7 +5342,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.15063/win10-x64": {
+    "UAP,Version=v10.0.17133/win10-x64": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -7101,7 +7101,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.15063/win10-x64-aot": {
+    "UAP,Version=v10.0.17133/win10-x64-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -8808,7 +8808,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.15063/win10-x86": {
+    "UAP,Version=v10.0.17133/win10-x86": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -10567,7 +10567,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.15063/win10-x86-aot": {
+    "UAP,Version=v10.0.17133/win10-x86-aot": {
       "Microsoft.CSharp/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -15661,7 +15661,7 @@
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.1.0"
     ],
-    "UAP,Version=v10.0.15063": []
+    "UAP,Version=v10.0.17133": []
   },
   "packageFolders": {
     "C:\\Users\\drewbat\\.nuget\\packages\\": {}
@@ -15684,7 +15684,7 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "uap10.0.15063": {
+        "uap10.0.17133": {
           "projectReferences": {
             "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\AudioGraph\\AudioEffectComponent\\AudioEffectComponent.csproj": {
               "projectPath": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\AudioGraph\\AudioEffectComponent\\AudioEffectComponent.csproj"
@@ -15697,7 +15697,7 @@
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0"
     },
     "frameworks": {
-      "uap10.0.15063": {}
+      "uap10.0.17133": {}
     },
     "runtimes": {
       "win10-arm": {
