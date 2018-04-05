@@ -4,7 +4,7 @@ title: Launch the Windows Settings app
 description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.author: twhitney
-ms.date: 06/12/2017
+ms.date: 03/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -21,7 +21,7 @@ ms.localizationpriority: medium
 -   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
 -   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
-Learn how to launch the Windows Settings app from your app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+Learn how to launch the Windows Settings app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
 
 Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).
 
@@ -32,7 +32,7 @@ To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in th
 In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the `ms-settings:privacy-microphone` URI.
 
 ```xml
-<!--Set Visibility to Visible when access to the microphone is denied -->  
+<!--Set Visibility to Visible when access to the microphone is denied -->
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
@@ -43,7 +43,7 @@ In this example, a Hyperlink XAML control is used to launch the privacy settings
 </TextBlock>
 ```
 
-Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
+Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -61,691 +61,250 @@ Use the following URIs to open various pages of the Settings app.
 
 > Note that whether a settings page is available varies by Windows SKU. Not all settings page available on Windows 10 for desktop are available on Windows 10 Mobile, and vice-versa. The notes column also captures additional requirements that must be met for a page to be available.
 
-<table border="1">
- <tr>
-  <th>Category</th>
-  <th>Settings page</th>
-  <th>URI</th>
-  <th>Notes</th>
- </tr>
- <tr>
-  <td rowspan="6">Accounts</td>
-  <td>Access work or school</td>
-  <td>ms-settings:workplace</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Email & app accounts</td>
-  <td>ms-settings:emailandaccounts</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Family & other people</td>
-  <td>ms-settings:otherusers</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Sign-in options</td>
-  <td>ms-settings:signinoptions</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Sync your settings</td>
-  <td>ms-settings:sync</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Your info</td>
-  <td>ms-settings:yourinfo</td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="4">Apps</td>
-  <td>Apps & Features</td>
-  <td>ms-settings:appsfeatures</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Apps for websites</td>
-  <td>ms-settings:appsforwebsites</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Default apps</td>
-  <td>ms-settings:defaultapps</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Apps & features</td>
-  <td>ms-settings:optionalfeatures</td>
-  <td></td>
- </tr>
- <tr>
-   <td rowspan="3">Cortana</td>
-   <td>Talk to Cortana</td>
-   <td>ms-settings:cortana-language</td>
-   <td></td>
- </tr>
- <tr>
-   <td>More details</td>
-   <td>ms-settings:cortana-moredetails</td>
-   <td></td>
- </tr>
- <tr>
-   <td>Notifications</td>
-   <td>ms-settings:cortana-notifications</td>
-   <td></td>
- </tr>
- <tr>
-  <td rowspan="12">Devices</td>
-  <td>USB</td>
-  <td>ms-settings:usb</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Audio and speech</td>
-  <td>ms-settings:holographic-audio</td>
-  <td>Only available if the Mixed Reality Portal app is installed (available in the Microsoft Store)</td>
- </tr>
- <tr>
-  <td>AutoPlay</td>
-  <td>ms-settings:autoplay</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Touchpad</td>
-  <td>ms-settings:devices-touchpad</td>
-  <td>Only available if touchpad hardware is present</td>
- </tr>
- <tr>
-  <td>Pen & Windows Ink</td>
-  <td>ms-settings:pen</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Printers & scanners</td>
-  <td>ms-settings:printers</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Typing</td>
-  <td>ms-settings:typing</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Wheel</td>
-  <td>ms-settings:wheel</td>
-  <td>Only available if Dial is paired</td>
- </tr>
- <tr>
-  <td>Default camera</td>
-  <td>ms-settings:camera</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Bluetooth</td>
-  <td>ms-settings:bluetooth</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Connected Devices</td>
-  <td>ms-settings:connecteddevices</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Mouse & touchpad</td>
-  <td>ms-settings:mousetouchpad</td>
-  <td>Touchpad settings only available on devices that have a touchpad</td>
- </tr>
- <tr>
-  <td rowspan="7">Ease of Access</td>
-  <td>Narrator</td>
-  <td>ms-settings:easeofaccess-narrator</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Magnifier</td>
-  <td>ms-settings:easeofaccess-magnifier</td>
-  <td></td>
- </tr>
- <tr>
-  <td>High contrast</td>
-  <td>ms-settings:easeofaccess-highcontrast</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Closed captions</td>
-  <td>ms-settings:easeofaccess-closedcaptioning</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Keyboard</td>
-  <td>ms-settings:easeofaccess-keyboard</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Mouse</td>
-  <td>ms-settings:easeofaccess-mouse</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Other options</td>
-  <td>ms-settings:easeofaccess-otheroptions</td>
- </tr>
- <tr>
-  <td>Extras</td>
-  <td>Extras</td>
-  <td>ms-settings:extras</td>
-  <td>Only available if "settings apps" are installed (e.g. by 3rd party)</td>
- </tr>
- <tr>
-  <td rowspan="6">Gaming</td>
-  <td>Broadcasting</td>
-  <td>ms-settings:gaming-broadcasting</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Game bar</td>
-  <td>ms-settings:gaming-gamebar</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Game DVR</td>
-  <td>ms-settings:gaming-gamedvr</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Game Mode</td>
-  <td>ms-settings:gaming-gamemode</td>
-  <td></td>
- </tr>
- <tr>
-  <td>TruePlay</td>
-  <td>ms-settings:gaming-trueplay</td>
-  <td></td>
- </tr>
- <tr>
-   <td>Xbox Networking</td>
-   <td>ms-settings:gaming-xboxnetworking</td>
-   <td></td>
-  </tr>
- <tr>
- <tr>
-  <td>Home page</td>
-  <td>Landing page for Settings</td>
-  <td>ms-settings:</td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="10">Network & internet</td>
-  <td>Ethernet</td>
-  <td>ms-settings:network-ethernet</td>
-  <td></td>
- </tr>
- <tr>
-  <td>VPN</td>
-  <td>ms-settings:network-vpn</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Dial-up</td>
-  <td>ms-settings:network-dialup</td>
-  <td></td>
- </tr>
- <tr>
-  <td>DirectAccess</td>
-  <td>ms-settings:network-directaccess</td>
-  <td>Only available if DirectAccess is enabled</td>
- </tr>
- <tr>
-  <td>Wi-Fi Calling</td>
-  <td>ms-settings:network-wificalling</td>
-  <td>Only available if Wi-Fi calling is enabled</td>
- </tr>
- <tr>
-  <td>Data usage</td>
-  <td>ms-settings:datausage</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Cellular & SIM</td>
-  <td>ms-settings:network-cellular</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Mobile hotspot</td>
-  <td>ms-settings:network-mobilehotspot</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Proxy</td>
-  <td>ms-settings:network-proxy</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Status</td>
-  <td>ms-settings:network-status</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Manage known networks</td>
-  <td>ms-settings:network-wifisettings</td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="3">Network & wireless</td>
-  <td>NFC</td>
-  <td>ms-settings:nfctransactions</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Wi-Fi</td>
-  <td>ms-settings:network-wifi</td>
-  <td>Only available if the device has a wifi adaptor</td>
- </tr>
- <tr>
-  <td>Airplane mode</td>
-  <td>ms-settings:network-airplanemode</td>
-  <td>Use ms-settings:proximity on Windows 8.x</td>
- </tr>
- <tr>
-  <td rowspan="10">Personalization</td>
-  <td>Start</td>
-  <td>ms-settings:personalization-start</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Themes</td>
-  <td>ms-settings:themes</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Glance</td>
-  <td>ms-settings:personalization-glance</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Navigation bar</td>
-  <td>ms-settings:personalization-navbar</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Personalization (category)</td>
-   <td>ms-settings:personalization</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Background</td>
-   <td>ms-settings:personalization-background</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Colors</td>
-   <td>ms-settings:personalization-colors</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Sounds</td>
-   <td>ms-settings:sounds</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Lock screen</td>
-   <td>ms-settings:lockscreen</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Task Bar</td>
-   <td>ms-settings:taskbar</td>
-   <td></td>
- </tr>
- <tr>
-  <td rowspan="22">Privacy</td>
-  <td>App diagnostics</td>
-   <td>ms-settings:privacy-appdiagnostics</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Notifications</td>
-   <td>ms-settings:privacy-notifications</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Tasks</td>
-   <td>ms-settings:privacy-tasks</td>
-   <td></td>
- </tr>
- <tr>
-  <td>General</td>
-   <td>ms-settings:privacy-general</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Accessory apps</td>
-   <td>ms-settings:privacy-accessoryapps</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Advertising ID</td>
-   <td>ms-settings:privacy-advertisingid</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Phone calls</td>
-   <td>ms-settings:privacy-phonecall</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Location</td>
-   <td>ms-settings:privacy-location</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Camera</td>
-   <td>ms-settings:privacy-webcam</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Microphone</td>
-   <td>ms-settings:privacy-microphone</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Motion</td>
-   <td>ms-settings:privacy-motion</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Speech, inking & typing</td>
-   <td>ms-settings:privacy-speechtyping</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Account info</td>
-   <td>ms-settings:privacy-accountinfo</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Contacts</td>
-   <td>ms-settings:privacy-contacts</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Calendar</td>
-   <td>ms-settings:privacy-calendar</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Call history</td>
-   <td>ms-settings:privacy-callhistory</td>
-   <td></td>
- </tr>
- <tr>
-  <td>Email</td>
-  <td>ms-settings:privacy-email</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Messaging</td>
-    <td>ms-settings:privacy-messaging</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Radios</td>
-    <td>ms-settings:privacy-radios</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Background Apps</td>
-    <td>ms-settings:privacy-backgroundapps</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Other devices</td>
-    <td>ms-settings:privacy-customdevices</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Feedback & diagnostics</td>
-    <td>ms-settings:privacy-feedback</td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="5">Surface Hub</td>
-  <td>Accounts</td>
-    <td>ms-settings:surfacehub-accounts</td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Team Conferencing</td>
-      <td>ms-settings:surfacehub-calling</td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Team device management</td>
-      <td>ms-settings:surfacehub-devicemanagenent</td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Session cleanup</td>
-      <td>ms-settings:surfacehub-sessioncleanup</td>
-      <td></td>
-  </tr>
-  <tr>
-    <td>Welcome screen</td>
-      <td>ms-settings:surfacehub-welcome</td>
-      <td></td>
-  </tr>
-    <td rowspan="20">System</td>
-    <td>Shared experiences</td>
-      <td>ms-settings:crossdevice</td>
-    <td></td>
- </tr>
- <tr>
-  <td>Display</td>
-    <td>ms-settings:display</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Multitasking</td>
-    <td>ms-settings:multitasking</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Projecting to this PC</td>
-    <td>ms-settings:project</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Tablet mode</td>
-    <td>ms-settings:tabletmode</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Taskbar</td>
-    <td>ms-settings:taskbar</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Phone</td>
-    <td>ms-settings:phone-defaultapps</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Display</td>
-    <td>ms-settings:screenrotation</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Notifications & actions</td>
-    <td>ms-settings:notifications</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Phone</td>
-    <td>ms-settings:phone</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Messaging</td>
-    <td>ms-settings:messaging</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Battery Saver</td>
-  <td>ms-settings:batterysaver</td>
-  <td>Only available on devices that have a battery, such as a tablet</td>
- </tr>
- <tr>
-  <td>Battery use</td>
-  <td>ms-settings:batterysaver-usagedetails</td>
-  <td>Only available on devices that have a battery, such as a tablet</td>
- </tr>
- <tr>
-  <td>Power & sleep</td>
-  <td>ms-settings:powersleep</td>
-  <td></td>
- </tr>
- <tr>
-  <td>About</td>
-    <td>ms-settings:about</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Storage</td>
-    <td>ms-settings:storagesense</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Storage Sense</td>
-    <td>ms-settings:storagepolicies</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Default Save Locations</td>
-    <td>ms-settings:savelocations</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Encryption</td>
-    <td>ms-settings:deviceencryption</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Offline Maps</td>
-    <td>ms-settings:maps</td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="5">Time and language</td>
-  <td>Date & time</td>
-    <td>ms-settings:dateandtime</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Region & language</td>
-    <td>ms-settings:regionlanguage</td>
-  <td></td>
- </tr>
- <tr>
-     <td>Speech Language</td>
-     <td>ms-settings:speech</td>
-     <td></td>
- </tr>
- <tr>
-     <td>Pinyin keyboard</td>
-     <td>ms-settings:regionlanguage-chsime-pinyin</td>
-     <td>Available if the Microsoft Pinyin input method editor is installed</td>
- </tr>
- <tr>
-     <td>Wubi input mode</td>
-     <td>ms-settings:regionlanguage-chsime-wubi</td>
-     <td>Available if the Microsoft Wubi input method editor is installed</td>
- </tr>
- <tr>
-  <td rowspan="13">Update & security</td>
-  <td>Windows Hello setup</td>
-    <td>ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment</td>
-  </tr>
-  <tr>
-    <td>Backup</td>
-      <td>ms-settings:backup</td>
-    <td></td>
- </tr>
- <tr>
-  <td>Find My Device</td>
-    <td>ms-settings:findmydevice</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Windows Insider Program</td>
-  <td>ms-settings:windowsinsider</td>
-  <td>Only present if user is enrolled in WIP</td>
- </tr>
- <tr>
-  <td>Windows Update</td>
-  <td>ms-settings:windowsupdate</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Windows Update</td>
-    <td>ms-settings:windowsupdate-history</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Windows Update</td>
-    <td>ms-settings:windowsupdate-options</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Windows Update</td>
-    <td>ms-settings:windowsupdate-restartoptions</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Windows Update</td>
-    <td>ms-settings:windowsupdate-action</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Activation</td>
-    <td>ms-settings:activation</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Recovery</td>
-    <td>ms-settings:recovery</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Troubleshoot</td>
-    <td>ms-settings:troubleshoot</td>
-  <td></td>
- </tr>
- <tr>
-  <td>Windows Defender</td>
-    <td>ms-settings:windowsdefender</td>
-  <td></td>
- </tr>
- <tr>
-  <td>For developers</td>
-    <td>ms-settings:developers</td>
-  <td></td>
- </tr>
- <tr>
-  <td rowspan="3">User  Accounts</td>
-  <td>Windows Anywhere</td>
-  <td>ms-settings:windowsanywhere</td>
-  <td>Device must be Windows Anywhere-capable</td>
- </tr>
- <tr>
-  <td>Provisioning</td>
-  <td>ms-settings:workplace-provisioning</td>
-  <td>Only available if enterprise has deployed a provisioning package</td>
- </tr>
- <tr>
-   <td>Provisioning</td>
-   <td>ms-settings:provisioning</td>
-   <td>Only available on mobile and if the enterprise has deployed a provisioning package</td>
- </tr>
-</table><br/>  
+## Accounts
+
+|Settings Page| URI |
+|-------------|-----|
+|Access work or school | ms-settings:workplace |
+|Email & app accounts  | ms-settings:emailandaccounts |
+|Family & other people | ms-settings:otherusers |
+|Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+|Sync your settings | ms-settings:sync |
+|Your info | ms-settings:yourinfo |
+
+## Apps
+
+|Settings Page| URI |
+|-------------|-----|
+| Apps & Features | ms-settings:appsfeatures |
+| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app)|
+| Apps for websites | ms-settings:appsforwebsites |
+| Default apps | ms-settings:defaultapps |
+| Manage optional features | ms-settings:optionalfeatures |
+| Startup apps | ms-settings:startupapps |
+
+## Cortana
+
+|Settings Page| URI |
+|-------------|-----|
+| Cortana Permissions & History | ms-settings:cortana-permissions |
+| More details | ms-settings:cortana-moredetails |
+| Notifications | ms-settings:cortana-notifications |
+| Talk to Cortana | ms-settings:cortana-language |
+
+## Devices
+
+|Settings Page| URI |
+|-------------|-----|
+| Audio and speech | ms-settings:holographic-audio (only available if the Mixed Reality Portal app is installed--available in the Microsoft Store) |
+| AutoPlay | ms-settings:autoplay |
+| Bluetooth | ms-settings:bluetooth |
+| Connected Devices | ms-settings:connecteddevices |
+| Default camera | ms-settings:camera |
+| Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
+| Pen & Windows Ink | ms-settings:pen |
+| Printers & scanners | ms-settings:printers |
+| Touchpad | ms-settings:devices-touchpad (only available if touchpad hardware is present) |
+| Typing | ms-settings:typing |
+| USB | ms-settings:usb |
+| Wheel | ms-settings:wheel (only available if Dial is paired) |
+| Your phone | ms-settings:mobile-devices  |
+
+## Ease of Access
+
+|Settings Page| URI |
+|-------------|-----|
+| Audio | ms-settings:easeofaccess-audio |
+| Closed captions | ms-settings:easeofaccess-closedcaptioning |
+| Display | ms-settings:easeofaccess-display |
+| Eye control | ms-settings:easeofaccess-eyecontrol |
+| Fonts | ms-settings:fonts |
+| High contrast | ms-settings:easeofaccess-highcontrast |
+| Holographic headset | ms-settings:holographic-headset (requires holographic hardware) |
+| Keyboard | ms-settings:easeofaccess-keyboard |
+| Magnifier | ms-settings:easeofaccess-magnifier |
+| Mouse | ms-settings:easeofaccess-mouse |
+| Narrator | ms-settings:easeofaccess-narrator |
+| Other options | ms-settings:easeofaccess-otheroptions |
+| Speech | ms-settings:easeofaccess-speechrecognition |
+
+## Extras
+
+|Settings Page| URI |
+|-------------|-----|
+| Extras | ms-settings:extras (only available if "settings apps" are installed, e.g. by a 3rd party) |
+
+## Gaming
+
+|Settings Page| URI |
+|-------------|-----|
+| Broadcasting | ms-settings:gaming-broadcasting |
+| Game bar | ms-settings:gaming-gamebar |
+| Game DVR | ms-settings:gaming-gamedvr |
+| Game Mode | ms-settings:gaming-gamemode |
+| Playing a game full screen | ms-settings:quietmomentsgame |
+| TruePlay | ms-settings:gaming-trueplay |
+| Xbox Networking | ms-settings:gaming-xboxnetworking |
+
+## Home page
+
+|Settings Page| URI |
+|-------------|-----|
+| Settings home page | ms-settings: |
+
+
+## Network, wireless & internet
+
+|Settings Page| URI |
+|-------------|-----|
+| Airplane mode | ms-settings:network-airplanemode (use ms-settings:proximity on Windows 8.x) |
+| Cellular & SIM | ms-settings:network-cellular |
+| Data usage | ms-settings:datausage |
+| Dial-up | ms-settings:network-dialup |
+| DirectAccess | ms-settings:network-directaccess (only available if DirectAccess is enabled) |
+| Ethernet | ms-settings:network-ethernet |
+| Manage known networks | ms-settings:network-wifisettings |
+| Mobile hotspot | ms-settings:network-mobilehotspot |
+| NFC | ms-settings:nfctransactions |
+| Proxy | ms-settings:network-proxy |
+| Status | ms-settings:network-status |
+| VPN | ms-settings:network-vpn |
+| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
+| Wi-Fi Calling | ms-settings:network-wificalling (only available if Wi-Fi calling is enabled) |
+
+## Personalization
+
+|Settings Page| URI |
+|-------------|-----|
+| Background | ms-settings:personalization-background |
+| Choose which folders appear on Start | ms-settings:personalization-start-places |
+| Colors | ms-settings:personalization-colors |
+| Glance | ms-settings:personalization-glance |
+| Lock screen | ms-settings:lockscreen |
+| Navigation bar | ms-settings:personalization-navbar |
+| Personalization (category) | ms-settings:personalization |
+| Start | ms-settings:personalization-start |
+| Sounds | ms-settings:sounds |
+| Task Bar | ms-settings:taskbar |
+| Themes | ms-settings:themes |
+
+## Privacy
+
+|Settings Page| URI |
+|-------------|-----|
+| Accessory apps | ms-settings:privacy-accessoryapps |
+| Account info | ms-settings:privacy-accountinfo |
+| Activity history | ms-settings:privacy-activityhistory |
+| Advertising ID | ms-settings:privacy-advertisingid |
+| App diagnostics | ms-settings:privacy-appdiagnostics |
+| Automatic file downloads | ms-settings:privacy-automaticfiledownloads |
+| Background Apps | ms-settings:privacy-backgroundapps |
+| Calendar | ms-settings:privacy-calendar |
+| Call history | ms-settings:privacy-callhistory |
+| Camera | ms-settings:privacy-webcam |
+| Contacts | ms-settings:privacy-contacts |
+| Documents | ms-settings:privacy-documents |
+| Email | ms-settings:privacy-email |
+| Eye tracker | ms-settings:privacy-eyetracker (requires eyetracker hardware) |
+| Feedback & diagnostics | ms-settings:privacy-feedback |
+| File system | ms-settings:privacy-broadfilesystemaccess |
+| General | ms-settings:privacy-general |
+| Location | ms-settings:privacy-location |
+| Messaging | ms-settings:privacy-messaging |
+| Microphone | ms-settings:privacy-microphone |
+| Motion | ms-settings:privacy-motion |
+| Notifications | ms-settings:privacy-notifications |
+| Other devices | ms-settings:privacy-customdevices |
+| Pictures | ms-settings:privacy-pictures |
+| Phone calls | ms-settings:privacy-phonecall |
+| Radios | ms-settings:privacy-radios |
+| Speech, inking & typing |ms-settings:privacy-speechtyping |
+| Tasks | ms-settings:privacy-tasks |
+| Videos | ms-settings:privacy-videos |
+
+## Surface Hub
+
+|Settings Page| URI |
+|-------------|-----|
+| Accounts | ms-settings:surfacehub-accounts |
+| Session cleanup | ms-settings:surfacehub-sessioncleanup |
+| Team Conferencing | ms-settings:surfacehub-calling |
+| Team device management | ms-settings:surfacehub-devicemanagenent |
+| Welcome screen | ms-settings:surfacehub-welcome |
+
+## System
+
+|Settings Page| URI |
+|-------------|-----|
+| About | ms-settings:about |
+| Advanced display settings | ms-settings:display-advanced (only available on devices that support advanced display options) |
+| Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
+| Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
+| Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
+| Display | ms-settings:display |
+| Default Save Locations | ms-settings:savelocations |
+| Display | ms-settings:screenrotation |
+| Duplicating my display | ms-settings:quietmomentspresentation |
+| During these hours | ms-settings:quietmomentsscheduled |
+| Encryption | ms-settings:deviceencryption |
+| Focus assist | ms-settings:quiethours <br> ms-settings:quietmomentshome |
+| Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
+| Messaging | ms-settings:messaging |
+| Multitasking | ms-settings:multitasking |
+| Night light settings | ms-settings:nightlight |
+| Offline Maps | ms-settings:maps |
+| Phone | ms-settings:phone-defaultapps |
+| Projecting to this PC | ms-settings:project |
+| Shared experiences | ms-settings:crossdevice |
+| Tablet mode | ms-settings:tabletmode |
+| Taskbar | ms-settings:taskbar |
+| Notifications & actions | ms-settings:notifications |
+| Remote Desktop | ms-settings:remotedesktop |
+| Phone | ms-settings:phone |
+| Power & sleep | ms-settings:powersleep |
+| Storage | ms-settings:storagesense |
+| Storage Sense | ms-settings:storagepolicies |
+| Video playback | ms-settings:videoplayback |
+
+## Time and language
+
+|Settings Page| URI |
+|-------------|-----|
+| Date & time | ms-settings:dateandtime |
+| Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
+| Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed) |
+| Region & language | ms-settings:regionlanguage |
+| Speech Language | ms-settings:speech |
+| Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
+
+## Update & security
+
+|Settings Page| URI |
+|-------------|-----|
+| Activation | ms-settings:activation |
+| Backup | ms-settings:backup |
+| Delivery Optimization | ms-settings:delivery-optimization |
+| Find My Device | ms-settings:findmydevice |
+| Recovery | ms-settings:recovery |
+| Troubleshoot | ms-settings:troubleshoot |
+| Windows Defender | ms-settings:windowsdefender |
+| Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Windows Insider Program | ms-settings:windowsinsider (only present if user is enrolled in WIP) |
+| Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
+| Windows Update-Advanced options | ms-settings:windowsupdate-options |
+| Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
+| Windows Update-View update history | ms-settings:windowsupdate-history |
+
+## Developers
+
+|Settings Page| URI |
+|-------------|-----|
+| For developers | ms-settings:developers |
+
+## User  Accounts
+
+|Settings Page| URI |
+|-------------|-----|
+| Provisioning | ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package) |
+| Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package) |
+| Windows Anywhere | ms-settings:windowsanywhere (device must be Windows Anywhere-capable) |

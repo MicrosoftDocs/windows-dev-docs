@@ -9,6 +9,7 @@ using Windows.Foundation;
 using Windows.Media.MediaProperties;
 using Windows.Graphics.Display;
 using Windows.Media.Capture;
+using System.Collections.Generic;
 
 namespace BasicCameraWin10
 {
@@ -761,6 +762,111 @@ namespace BasicCameraWin10
         {
             return PowerlineFrequency.FiftyHertz;
         }
+        #endregion
+
+        #region Denoise
+        //<SnippetUpdateDenoiseCapabilities>
+        private void UpdateDenoiseCapabilities()
+        {
+            if (_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Supported)
+            {
+                 IReadOnlyList<VideoTemporalDenoisingMode> modes = _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes;
+                if(modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Off) &&
+                   (modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.On) || 
+                   modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Auto)))
+                {
+                    denoiseControls.Visibility = Visibility.Visible;
+
+                    if (modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.On))
+                    {
+                        denoiseOnButton.Visibility = Visibility.Visible;
+                    }
+                    if (modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Auto))
+                    {
+                        denoiseAutoButton.Visibility = Visibility.Visible;
+                    }
+                }
+            }
+        }
+        //</SnippetUpdateDenoiseCapabilities>
+
+        //<SnippetDenoiseButtonChecked>
+        private void denoiseButton_Checked(object sender, RoutedEventArgs e)
+        {
+            var button = sender as RadioButton;
+            if(button.Name == "denoiseOffButton")
+            {
+                _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.Off;
+            }
+            else if (button.Name == "denoiseOnButton")
+            {
+                _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.On;
+            }
+            else if (button.Name == "denoiseAutoButton")
+            {
+                _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.Auto;
+            }
+        }
+        //</SnippetDenoiseButtonChecked>
+
+
+        //<SnippetDenoiseFrameReaderVars>
+        private bool _isVideoTemporalDenoisingOffSupported = false;
+        private bool _isProcessing = false;
+        private Windows.Media.Devices.VideoTemporalDenoisingMode? _videoDenoisingEnabledMode = null;
+        //</SnippetDenoiseFrameReaderVars>
+
+
+        //<SnippetDenoiseCapabilitiesForFrameProcessing>
+        private void ConfigureDenoiseForFrameProcessing()
+        {
+            if (_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Supported)
+            {
+                // Query support for the VideoTemporalDenoising control Off mode
+                _isVideoTemporalDenoisingOffSupported = _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Off);
+
+                // Query support for a mode that would enable VideoTemporalDenoising (On or Auto) and toggle it if supported
+                if (_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.On))
+                {
+                    _videoDenoisingEnabledMode = Windows.Media.Devices.VideoTemporalDenoisingMode.On;
+                    _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = (Windows.Media.Devices.VideoTemporalDenoisingMode)_videoDenoisingEnabledMode;
+                }
+                else if (_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Auto))
+                {
+                    _videoDenoisingEnabledMode = Windows.Media.Devices.VideoTemporalDenoisingMode.Auto;
+                    _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = (Windows.Media.Devices.VideoTemporalDenoisingMode)_videoDenoisingEnabledMode;
+                }
+            }
+
+        }
+        //</SnippetDenoiseCapabilitiesForFrameProcessing>
+
+        //<SnippetEnableFrameProcessing>
+        public void EnableFrameProcessing()
+        {
+            // Toggle Off VideoTemporalDenoising
+            if (_isVideoTemporalDenoisingOffSupported)
+            {
+                _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.Off;
+            }
+
+            _isProcessing = true;
+        }
+        //</SnippetEnableFrameProcessing>
+
+        //<SnippetDisableFrameProcessing>
+        public void DisableFrameProcessing()
+        {
+            _isProcessing = false;
+
+            // If a VideoTemporalDenoising mode to enable VideoTemporalDenoising is supported, toggle it
+            if (_videoDenoisingEnabledMode != null)
+            {
+                _mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = (Windows.Media.Devices.VideoTemporalDenoisingMode)_videoDenoisingEnabledMode;
+            }
+        }
+        //</SnippetDisableFrameProcessing>
+
         #endregion
     }
 }

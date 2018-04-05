@@ -3,7 +3,7 @@ author: stevewhims
 description: The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app.
 title: Troubleshooting C++/WinRT issues
 ms.author: stwhi
-ms.date: 03/31/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp

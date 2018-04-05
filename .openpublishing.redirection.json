@@ -512,7 +512,7 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-latest-preview-api-diff.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17110-api-diff",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17133-api-diff",
       "redirect_document_id": false
     },
     {
@@ -557,12 +557,22 @@
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-build-16190.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17110",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17133",
       "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/whats-new/windows-10-version-latest.md",
-      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17110",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17133",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/whats-new/windows-10-build-17110.md",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17133",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "windows-apps-src/whats-new/windows-10-build-17110-api-diff.md",
+      "redirect_url": "/windows/uwp/whats-new/windows-10-build-17133-api-diff",
       "redirect_document_id": false
     },
     {
@@ -1668,6 +1678,15 @@
       "source_path": "windows-apps-src/get-started/whats-a-uwp.md",
       "redirect_url": "windows-apps-src/get-started/universal-application-platform-guide.md",
       "redirect_document_id": true
+    },
+    {
+      "source_path": "windows-apps-src/porting/hwa-to-uwp-root.md",
+      "source_path": "windows-apps-src/porting/hwa-access-features.md",
+      "source_path": "windows-apps-src/porting/hwa-chrome-conversion.md",
+      "source_path": "windows-apps-src/porting/hwa-create-mac.md",
+      "source_path": "windows-apps-src/porting/hwa-create-windows.md",
+      "redirect_url": "https://docs.microsoft.com/microsoft-edge/progressive-web-apps",
+      "redirect_document_id": false
     }
   ]
 }

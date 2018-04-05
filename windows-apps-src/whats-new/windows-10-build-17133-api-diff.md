@@ -1,19 +1,19 @@
 ---
 author: QuinnRadich
-title: Windows 10 SDK Preview Build 17110 API changes
-description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 17110
-keywords: what's new, whats new, updates, Windows 10, newest, apis, 17110
+title: Windows 10 Build 17133 API changes
+description: Developers can use the following list to identify new or changed namespaces in Windows 10 build 17133
+keywords: what's new, whats new, updates, Windows 10, newest, apis, 17133
 ms.author: quradic
-ms.date: 3/07/2018
+ms.date: 4/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ---
 
-# New APIs in Windows 10 SDK preview build 17110
+# New APIs in Windows 10 build 17133
 
-New and updated API namespaces have been made available to developers in Windows 10 SDK preview build 17110. Below is a full list of documentation published for namespaces added or modified in this release.
+New and updated API namespaces have been made available to developers in Windows 10 build 17133. Below is a full list of documentation published for namespaces added or modified in this release.
 
 For information on APIs added in the previous public release, see [New APIs in the Windows 10 Fall Creators Update](windows-10-build-16299-api-diff.md).
 

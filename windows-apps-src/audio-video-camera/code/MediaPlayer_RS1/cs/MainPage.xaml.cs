@@ -619,26 +619,28 @@ namespace MediaPlayer_Win10
                 }
 
                 using (CanvasBitmap inputBitmap = CanvasBitmap.CreateFromSoftwareBitmap(canvasDevice, frameServerDest))
-                using (CanvasDrawingSession ds = canvasImageSource.CreateDrawingSession(Windows.UI.Colors.Black))
                 {
+                    using (CanvasDrawingSession ds = canvasImageSource.CreateDrawingSession(Windows.UI.Colors.Black))
+                    {
 
-                    mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
+                        mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
 
-                    //Rect subtitleTargetRect = new Rect(0, 0, inputBitmap.Bounds.Width, inputBitmap.Bounds.Bottom * .1);
-                    Rect subtitleTargetRect = new Rect(0, 0, 100, 100);
+                        //Rect subtitleTargetRect = new Rect(0, 0, inputBitmap.Bounds.Width, inputBitmap.Bounds.Bottom * .1);
+                        Rect subtitleTargetRect = new Rect(0, 0, 100, 100);
 
-                    mediaPlayer.RenderSubtitlesToSurface(inputBitmap);//, subtitleTargetRect);
+                        mediaPlayer.RenderSubtitlesToSurface(inputBitmap);//, subtitleTargetRect);
 
-                    //var gaussianBlurEffect = new GaussianBlurEffect
-                    //{
-                    //    Source = inputBitmap,
-                    //    BlurAmount = 5f,
-                    //    Optimization = EffectOptimization.Speed
-                    //};
+                        //var gaussianBlurEffect = new GaussianBlurEffect
+                        //{
+                        //    Source = inputBitmap,
+                        //    BlurAmount = 5f,
+                        //    Optimization = EffectOptimization.Speed
+                        //};
 
-                    //ds.DrawImage(gaussianBlurEffect);
+                        //ds.DrawImage(gaussianBlurEffect);
 
-                    ds.DrawImage(inputBitmap);
+                        ds.DrawImage(inputBitmap);
+                    }
                 }
             });
         }
@@ -726,9 +728,72 @@ namespace MediaPlayer_Win10
             }
         }
         // </SnippetSphericalTracksChanged>
+        #endregion
+        #region audio state monitor
+
+        private void RegisterAudioMonitor_Click(object sender, RoutedEventArgs e)
+        {
+            //<SnippetRegisterAudioStateMonitor>
+            mediaPlayer.AudioStateMonitor.SoundLevelChanged += AudioStateMonitor_SoundLevelChanged;
+            //</SnippetRegisterAudioStateMonitor>
+        }
+        //<SnippetAudioStateVars>
+        bool isPodcast;
+        bool isPausedDueToAudioStateMonitor;
+        //</SnippetAudioStateVars>
+
+        //<SnippetSoundLevelChanged>
+        private void AudioStateMonitor_SoundLevelChanged(Windows.Media.Audio.AudioStateMonitor sender, object args)
+        {
+            if ((sender.SoundLevel == SoundLevel.Full) || (sender.SoundLevel == SoundLevel.Low && !isPodcast))
+            {
+                if (isPausedDueToAudioStateMonitor)
+                {
+                    mediaPlayer.Play();
+                    isPausedDueToAudioStateMonitor = false;
+                }
+            }
+            else if ((sender.SoundLevel == SoundLevel.Muted) ||
+                 (sender.SoundLevel == SoundLevel.Low && isPodcast))
+            {
+                if (mediaPlayer.PlaybackSession.PlaybackState == MediaPlaybackState.Playing)
+                {
+                    mediaPlayer.Pause();
+                    isPausedDueToAudioStateMonitor = true;
+                }
+            }
+
+        }
+        //</SnippetSoundLevelChanged>
+
+        //<SnippetButtonUserClick>
+        private void PauseButton_User_Click(object sender, RoutedEventArgs e)
+        {
+            if (isPausedDueToAudioStateMonitor)
+            {
+                isPausedDueToAudioStateMonitor = false;
+            }
+            else
+            {
+                mediaPlayer.Pause();
+            }
+        }
+
+        public void PlayButton_User_Click()
+        {
+            isPausedDueToAudioStateMonitor = false;
+            mediaPlayer.Play();
+        }
+        //</SnippetButtonUserClick>
+        #endregion
+
+
     }
 
-    #endregion
+
+
+
+
 
 }
 

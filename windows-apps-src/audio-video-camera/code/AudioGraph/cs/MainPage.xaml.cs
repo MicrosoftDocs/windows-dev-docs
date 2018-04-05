@@ -528,6 +528,8 @@ namespace AudioGraphSnippets
             // </SnippetUpdateListener>
         }
 
+
+
         public void ShowErrorMessage(string message)
         {
             MessageTextBlock.Text = message;
