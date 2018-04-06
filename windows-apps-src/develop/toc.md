@@ -205,6 +205,8 @@
 ## [Fast access to file properties in UWP](../files/fast-file-properties.md)
 # [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
 # [Launching, resuming, and background tasks](../launch-resume/index.md)
+## [Create a Universal Windows Platform console app](../launch-resume/console-uwp.md)
+## [Create a Multi-instance UWP app](../launch-resume/multi-instance-uwp.md)
 ## [App lifecycle](../launch-resume/app-lifecycle.md)
 ### [Handle app prelaunch](../launch-resume/handle-app-prelaunch.md)
 ### [Handle app activation](../launch-resume/activate-an-app.md)

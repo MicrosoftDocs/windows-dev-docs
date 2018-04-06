@@ -42,7 +42,7 @@ This section details the lifecycle of a Windows 10 Universal Windows Platform (U
 
 ## Launch apps
 
-the [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch one app from another app.
+The [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch one app from another app.
 
 | Topic | Description |
 |-------|-------------|
