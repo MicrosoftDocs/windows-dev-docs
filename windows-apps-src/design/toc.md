@@ -49,7 +49,7 @@
 ## [Responsive design techniques](layout/responsive-design.md)
 ## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
 ## [Show multiple views](layout/show-multiple-views.md)
-## [Alignment, margins, and padding](layout/alignment-margin-padding.md)
+## [Alignment, margin, and padding](layout/alignment-margin-padding.md)
 ## Layout panels
 ### [Overview](layout/layout-panels.md)
 ### [Tutorial: Use layout panels](layout/grid-tutorial.md)
