@@ -42,12 +42,15 @@ This section details the lifecycle of a Windows 10 Universal Windows Platform (U
 
 ## Launch apps
 
-The [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch one app from another app.
-
 | Topic | Description |
 |-------|-------------|
 | [Create a Universal Windows Platform console app](console-uwp.md) | Learn how to write a Universal Windows Platform app that runs in a console window. |
 | [Create a Multi-instance UWP app](multi-instance-uwp.md) | Learn how to write a multi-instance Universal Windows Platform app. |
+
+The [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch one app from another app.
+
+| Topic | Description |
+|-------|-------------|
 | [Launch the default app for a URI](launch-default-app.md) | Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. |
 | [Handle URI activation](handle-uri-activation.md) | Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. |
 | [Launch an app for results](how-to-launch-an-app-for-results.md) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
