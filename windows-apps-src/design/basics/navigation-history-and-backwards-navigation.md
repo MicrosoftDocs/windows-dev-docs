@@ -2,11 +2,7 @@
 author: serenaz
 Description: The Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 title: Navigation history and backwards navigation (Windows apps)
-ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
-label: History and backwards navigation
 template: detail.hbs
-op-migration-status: ready
 ms.author: sezhen
 ms.date: 11/22/2017
 ms.topic: article
@@ -43,7 +39,7 @@ If your app has a top [CommandBar](../controls-and-patterns/app-bars.md), the Bu
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
-In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below).
+In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (see code example below). However, if you expect your app will never have a backstack, you don’t need to display the back button at all.
 
 ![Back button states](images/back-nav/BackDisabled.png)
 
