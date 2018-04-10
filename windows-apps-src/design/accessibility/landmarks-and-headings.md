@@ -36,5 +36,5 @@ Use [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/a
 
 Use [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) to specifically name the landmark. If you select a predefined landmark type such as main or navigational, these names will be used for the landmark name. However, if you set the landmark type to custom you must specifically name the landmark through this property. You can also use this property to override the default names from the non-custom landmark types. 
 
-Use **AutomationProperties.HeadingLevel** to set the UI element as a heading of a specific level from *Level1* through *Level9*.
+Use [AutomationProperties.HeadingLevel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) to set the UI element as a heading of a specific level from *Level1* through *Level9*.
 
