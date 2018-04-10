@@ -67,7 +67,7 @@ The MNISTModel class represents the MNIST model, and to load the model, we call 
 ```csharp
 // Load the model
 StorageFile modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/MNIST.onnx"));
-MNISTModel model = MISTModel.CreateMNISTModel(modelFile);
+MNISTModel model = MNISTModel.CreateMNISTModel(modelFile);
 ```
 
 ## Bind

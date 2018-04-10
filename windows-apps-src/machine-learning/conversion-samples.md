@@ -2,7 +2,7 @@
 author: wschin
 title: Convert existing ML models to ONNX
 description: Code samples demonstrate how to use WinMLTools to convert existing models in scikit-learn and Core ML into ONNX format.
-ms.author: wechi
+ms.author: sezhen
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: windows
