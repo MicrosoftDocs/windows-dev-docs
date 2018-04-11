@@ -29,11 +29,11 @@ Let's look at these in more detail.
 
 ## Secure
 
-UWP apps declare in their manifest the device capabilities they need such as access to the microphone, location, Webcam, USB devices, files, and so on. The user must acknowledge and authorize that access before the the app is granted the capability.
+UWP apps declare in their manifest the device capabilities they need such as access to the microphone, location, Webcam, USB devices, files, and so on. The user must acknowledge and authorize that access before the app is granted the capability.
 
 ## A common API surface across all devices
 
-Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows 10. The UWP core APIs are the same for all Windows devices. If your app only uses the core APIs, it will run on any Windows 10 device no matter whether you are targeting a desktop PC, Xbox, Mixed Reality headset, and so on.
+Windows 10 introduces the Universal Windows Platform (UWP), which provides a common app platform on every device that runs Windows 10. The UWP core APIs are the same on all Windows devices. If your app only uses the core APIs, it will run on any Windows 10 device no matter whether you are targeting a desktop PC, Xbox, Mixed-reality headset, and so on.
 
 A UWP app written in C++ /WinRT or C++ /CX has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows 10 devices.
 
@@ -50,7 +50,7 @@ The following video provides a brief overview of device families and adaptive co
 
 ## Adaptive controls and input
 
-UI elements respond to the size and DPI of the screen the app is running on by adjusting their layout and scale. And UWP apps work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you design UI that can adapt to the devices your app may run on.
+UI elements respond to the size and DPI of the screen the app is running on by adjusting their layout and scale. UWP apps work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you design UI that can adapt to the different devices and form factors that your app may run on.
 
 ![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
@@ -70,22 +70,23 @@ UWP apps integrate with [Application Insights](http://azure.microsoft.com/en-us/
 
 ### Monetize your app
 
-You can choose how you'll monetize your app across tablets, PCs, and other devices. There are a number of ways to make money with your app. All you need to do is choose the one that works best for you, for example:
+You can choose how you'll monetize your app. There are a number of ways to make money with your app. All you need to do is choose the one that works best for you, for example:
 
-- A paid download is the simplest option. Just name your price.
+- A paid download is the simplest option. Just name the price.
 - Trials let users try your app before buying it, providing easier discoverability and conversion than the more traditional "freemium" options.
 - Sale prices to incentivize users.
 - In-app purchases and ads are also available.
 
 ### Apps from the Microsoft Store provide a seamless install, uninstall, and upgrade experience
 
-All UWP apps are distributed using a packaging system that protects the user, device, and system. Users never need to regret installing an app. UWP apps can be uninstalled without leaving anything behind except the documents created with the app.
+All UWP apps are distributed using a packaging system that protects the user, device, and system. Users never need regret installing an app because UWP apps can be uninstalled without leaving anything behind except the documents created with the app.
 
 Apps can be deployed and updated seamlessly. App packaging can be modularized so that you can download content and extensions on demand.
 
 ## Deliver relevant, real-time info to your users to keep them coming back
 
 There are a variety of ways to keep users engaged with your UWP app:
+
 - Live tiles and lock screen tiles that show contextually relevant and timely info from your app at a glance.
 - Push notifications that bring real-time alerts to your user’s attention.
 - User Activities allow users to pick up where they left off in your app, even across devices.
