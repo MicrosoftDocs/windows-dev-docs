@@ -2,8 +2,8 @@
 title: Create a Windows Hello login app
 description: This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Windows Hello as an alternative to traditional username and password authentication systems.
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
-author: msatranjr
-ms.author: misatran
+author: PatrickFarley
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
