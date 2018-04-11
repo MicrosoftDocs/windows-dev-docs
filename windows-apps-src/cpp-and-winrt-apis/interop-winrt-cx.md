@@ -107,8 +107,8 @@ MainPage::MainPage()
 ## Important APIs
 * [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
 * [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::get_abi (C++/WinRT)](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::put_abi (C++/WinRT)](/uwp/cpp-ref-for-winrt/put-abi)
+* [winrt::get_abi function template](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::put_abi function template](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

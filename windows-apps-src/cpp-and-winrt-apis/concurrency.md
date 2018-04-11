@@ -185,10 +185,10 @@ int main()
 ```
 
 ## Important APIs
+* [concurrency::task](https://msdn.microsoft.com/library/hh750113)
 * [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
 * [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
 * [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation_tresult_)
 * [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
 * [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
-* [task](https://msdn.microsoft.com/library/hh750113)

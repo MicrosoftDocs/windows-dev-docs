@@ -52,6 +52,6 @@ void Unbox(Windows::Foundation::IInspectable const& object)
 
 ## Important APIs
 * [IInspectable interface](https://msdn.microsoft.com/library/windows/desktop/br205821)
-* [winrt::box_value](/uwp/cpp-ref-for-winrt/box-value)
-* [winrt::unbox_value](/uwp/cpp-ref-for-winrt/unbox-value)
-* [winrt::unbox_value_or](/uwp/cpp-ref-for-winrt/unbox-value-or)
+* [winrt::box_value function template](/uwp/cpp-ref-for-winrt/box-value)
+* [winrt::unbox_value function template](/uwp/cpp-ref-for-winrt/unbox-value)
+* [winrt::unbox_value_or function template](/uwp/cpp-ref-for-winrt/unbox-value-or)

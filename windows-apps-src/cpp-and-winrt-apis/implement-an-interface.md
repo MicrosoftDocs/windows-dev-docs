@@ -122,7 +122,7 @@ There are two scenarios in which your type (the type that's implementing a Windo
 You define a runtime class in Interface Definition Language (IDL). From your IDL, the C++/WinRT tooling generates source code stubs in which you implement your type. For background info about authoring (and consuming) runtime classes, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md). For an example walkthrough of implementing the **INotifyPropertyChanged** interface on a runtime class, see [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## Important APIs
-* [winrt::implements (C++/WinRT)](/uwp/cpp-ref-for-winrt/implements)
+* [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 
 ## Related topics
 * [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md)

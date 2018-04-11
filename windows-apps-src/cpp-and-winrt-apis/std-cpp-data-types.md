@@ -66,28 +66,28 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 Two factors are at work here. First, the callee constructs a **std::vector** from the initializer list (this callee is async, so it's able to own that object, which it must). Second, C++/WinRT transparently (and without introducing copies) binds **std::vector** as a Windows Runtime collection parameter.
 
 ## Standard arrays and vectors
-**array_view** also has conversion constructors from **std::array** and **std::vector**.
+**array_view** also has conversion constructors from **std::vector** and **std::array**.
 
 ```cppwinrt
 template <typename C, size_type N> array_view(std::array<C, N>& value) noexcept
 template <typename C> array_view(std::vector<C>& vectorValue) noexcept
 ```
 
-So, you could instead call **DataWriter::WriteBytes** with a **std::array**.
-
-```cppwinrt
-std::array<byte, 3> theArray{ 99, 98, 97 };
-dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
-```
-
-Or with a **std::vector**.
+So, you could instead call **DataWriter::WriteBytes** with a **std::vector**.
 
 ```cppwinrt
 std::vector<byte> theVector{ 99, 98, 97 };
 dataWriter.WriteBytes(theVector); // theVector is converted to an array_view before being passed to WriteBytes.
 ```
 
-We bind **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**. If the callee is async then you must either copy or move the vector. In the code example below, we move ownership of the vector to the async callee.
+Or with a **std::array**.
+
+```cppwinrt
+std::array<byte, 3> theArray{ 99, 98, 97 };
+dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
+```
+
+C++/WinRT binds **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**, and it will be converted to the appropriate Windows Runtime collection of **winrt::hstring**. If the callee is async then you must either copy or move the vector. In the code example below, we move ownership of the vector to the async callee.
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<winrt::hstring> const& vecH)
@@ -96,7 +96,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 }
 ```
 
-But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime collection is expected. The following code example won't compile.
+But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime collection is expected. This is because, having converted to the appropriate Windows Runtime collection of **std::wstring**, the C++ language won't then coerce that collection's type parameter(s). Consequently, the following code example won't compile.
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
@@ -127,4 +127,4 @@ A host of constructors, operators, functions, and iterators are implemented for 
 For more examples and info, see the [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API reference topic.
 
 ## Important APIs
-* [winrt::array_view (C++/WinRT)](/uwp/cpp-ref-for-winrt/array-view)
+* [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)

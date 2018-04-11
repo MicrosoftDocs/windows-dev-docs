@@ -46,8 +46,8 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [Weak references](weak-references.md) | C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/en-us/library/br224609). |
 
 ## Important APIs
-* [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt)
+* [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
 
 ## Related topics
-* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
+* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

@@ -272,4 +272,4 @@ Now build and run the project. Click the button to execute the **Click** event h
 
 ## Important APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
-* [winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make function template](/uwp/cpp-ref-for-winrt/make)

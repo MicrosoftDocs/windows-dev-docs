@@ -113,13 +113,13 @@ You can use standard C++ language features and [Standard C++ data types and C++/
 There are also types that you might see if you closely study the C++/WinRT projection Windows namespace headers. An example is **winrt::param::hstring**. These exist only for efficiency reasons, and you should not use them in your code.
 
 ## Important APIs
-* [winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt)
 * [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
 * [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
-* [winrt::hstring](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt::hstring struct](/uwp/cpp-ref-for-winrt/hstring)
+* [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)
-* [Visual Studio Marketplace](https://marketplace.visualstudio.com/)
 * [String handling in C++/WinRT](strings.md)
+* [Visual Studio Marketplace](https://marketplace.visualstudio.com/)
+* [Windows UWP APIs](https://docs.microsoft.com/uwp/api/)

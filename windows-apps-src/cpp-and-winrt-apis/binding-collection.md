@@ -363,4 +363,4 @@ Now build and run the project. Click the button to execute the **Click** event h
 
 ## Important APIs
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
-* [winrt::make](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make function template](/uwp/cpp-ref-for-winrt/make)

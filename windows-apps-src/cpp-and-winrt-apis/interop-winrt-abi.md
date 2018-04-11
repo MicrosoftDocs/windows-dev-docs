@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 # Interop between C++/WinRT and the ABI
 This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. You can use it to interop between code that uses these two ways of programming with the Windows Runtime, or you can use the function as you gradually move your code from the ABI to C++/WinRT.
 
-## What is the Windows Runtime ABI?
+## What are Windows Runtime ABI types?
 The Windows SDK headers in the folder "%WindowsSdkDir%Include\10.0.17133.0\winrt" (adjust the SDK version number for your case, if necessary), are the Windows Runtime ABI header files. They were produced by the MIDL compiler. Here's an example of including one of these headers.
 
 ```
@@ -140,4 +140,4 @@ int main()
 
 ## Important APIs
 * [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::com_ptr struct template](/uwp/cpp-ref-for-winrt/com-ptr)

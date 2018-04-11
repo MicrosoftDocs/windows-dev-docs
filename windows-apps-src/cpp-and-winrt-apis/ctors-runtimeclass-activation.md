@@ -185,5 +185,5 @@ The base class constructor expects a **ToggleButton**. And **MySpecializedToggle
 Until you make the edit described above (to pass that constructor parameter on to the base class), the compiler will flag your constructor and point out that there's no appropriate default constructor available on a type called (in this case) **MySpecializedToggleButtonAutomationPeer_base&lt;MySpecializedToggleButtonAutomationPeer&gt;**. That's actually the base class of the bass class of your implementation type.
 
 ## Important APIs
-* [winrt::make](/uwp/cpp-ref-for-winrt/make)
-* [winrt::make_self](/uwp/cpp-ref-for-winrt/make-self)
+* [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
+* [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
