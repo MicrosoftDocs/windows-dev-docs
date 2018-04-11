@@ -1666,7 +1666,7 @@
     },
     {
       "source_path": "windows-apps-src/get-started/whats-a-uwp.md",
-      "redirect_url": "windows-apps-src/get-started/universal-application-platform-guide.md",
+      "redirect_url": "/windows/uwp/get-started/universal-application-platform-guide",
       "redirect_document_id": true
     }
   ]
