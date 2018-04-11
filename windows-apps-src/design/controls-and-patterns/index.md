@@ -75,6 +75,8 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="inking-controls.md">Inking controls</a></li>
 
+<li style="list-style-type: none;"><a href="input-validation.md">Input validation</a></li>
+
 <li style="list-style-type: none;"><a href="lists.md">Lists</a></li>
 
 <li style="list-style-type: none;"><a href="../../maps-and-location/controls-map.md">Map control</a></li>
