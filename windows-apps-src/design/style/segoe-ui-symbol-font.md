@@ -3930,7 +3930,7 @@ Please keep in mind that the **Segoe MDL2 Assets** font includes many more icons
 
 ## Related articles
 
-* [Guidelines for fonts](../style/fonts.md)
+* [Guidelines for icons](../style/icons.md)
 * [Symbol enumeration](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
 

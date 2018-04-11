@@ -49,7 +49,7 @@ When the system scales your app's UI, it does so by multiples of 4.
 
 As a result, the sizes, margins, and positions of **UI elements should always be in multiples of 4 epx**. This results in the best rendering by aligning with whole pixels. It also ensures that UI elements have crisp, sharp edges. 
 
-Note that text doesn't have this requirement; text can have any size and position. For guidance on how to align text with other UI elements, see the [UWP Typography Guide](../style/typography.md#hanging-text-alignment).
+Note that text doesn't have this requirement; text can have any size and position. For guidance on how to align text with other UI elements, see the [UWP Typography Guide](../style/typography.md).
 
 ![scaling on the grid](images/epx-4pixelgood.png)
 
