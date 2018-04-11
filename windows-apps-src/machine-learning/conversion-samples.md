@@ -156,12 +156,6 @@ from winmltools import convert_coreml
 model_onnx = convert_coreml(model_coreml, name='ExampleModel')   
 ~~~
 
-CoreMLTools is a Python package provided by Apple, but is not available on Windows. If you need to install the package on Windows, install the package directly from the repo:
-
-```
-pip install git+https://github.com/apple/coremltools
-```
-
 The `model_onnx` is an ONNX [ModelProto](https://github.com/onnx/onnxmltools/blob/0f453c3f375c1ae928b83a4c7909c82c013a5bff/onnxmltools/proto/onnx-ml.proto#L176) object. We can save it in two different formats.
 ~~~python
 from winmltools.utils import save_model
@@ -171,6 +165,12 @@ save_model(model_onnx, 'example.onnx')
 from winmltools.utils import save_text
 save_text(model_onnx, 'example.txt')
 ~~~
+
+**Note**: CoreMLTools is a Python package provided by Apple, but is not available on Windows. If you need to install the package on Windows, install the package directly from the repo:
+
+```
+pip install git+https://github.com/apple/coremltools
+```
 
 ## Core ML models with image inputs or outputs
 
