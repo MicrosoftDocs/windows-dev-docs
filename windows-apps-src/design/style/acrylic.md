@@ -51,56 +51,6 @@ Acrylic is a type of [Brush](https://docs.microsoft.com/en-us/uwp/api/Windows.UI
 
  The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see the [Fluent Design for UWP overview](../fluent-design-system/index.md).
 
-## When to use acrylic
-
-We recommend that you place supporting UI, such as in-app navigation or commanding elements, on an acrylic surface. This material is also helpful for transient UI elements, such as dialogs and flyouts, because it helps maintain a visual relationship with the content that triggered the transient UI. We designed acrylic to be used as a background material and show in visually discrete panes, so don't apply acrylic to detailed foreground elements.
-
-Surfaces behind primary app content should use solid, opaque backgrounds.
-
-Consider having acrylic extend to one or more edges of your app, including the window title bar, to improve visual flow. Avoid creating a striping effect by stacking acrylics of different blend types adjacent to each other. Acrylic is a tool to bring visual harmony to your designs but, when used incorrectly, can result in visual noise.
-
-Consider the following usage patterns to decide how best to incorporate acrylic into your app.
-
-### Vertical acrylic pane
-
-For apps with vertical navigation, we recommend applying acrylic to the secondary pane containing navigation elements.
-
-![App pattern using a single vertical acrylic pane](images/acrylic_app-pattern_vertical.png)
-
-[NavigationView](../controls-and-patterns/navigationview.md) is a new common control for adding navigation to your app and includes acrylic in its visual design. NavigationView’s pane shows background acrylic when the pane is open side-by-side with primary content, and automatically transitions to in-app acrylic when the pane is open as an overlay.
-
-If your app is not able to leverage NavigationView and you plan on adding acrylic on your own, we recommend using relatively transparent acrylic with 60% tint opacity.
- - When the pane opens as an overlay above other app content, this should be [60% in-app acrylic](#acrylic-theme-resources)
- - When the pane opens side-by-side with main app content, this should be [60% background acrylic](#acrylic-theme-resources)
-
-### Multiple acrylic panes
-
-For apps with three distinct vertical panes, we recommend adding acrylic to non-primary content.
- - For the secondary pane closest to primary content, use [80% background acrylic](#acrylic-theme-resources)
- - For the tertiary pane further away from primary content, use [60% background acrylic](#acrylic-theme-resources)
-
-![App pattern using a two vertical acrylic panes](images/acrylic_app-pattern_double-vertical.png)
-
-### Horizontal acrylic pane
-
-For apps with horizontal navigation, commanding, or other strong horizontal elements across the top of the app, we recommend applying [70% acrylic](#acrylic-theme-resources) to this visual element.
-
-![App pattern using a horizontal acrylic pane](images/acrylic_app-pattern_horizontal.png)
-
-Canvas apps with emphasis on continuous, zoomable content should use in-app acrylic in the top bar to let users connect with this content. Examples of canvas apps include maps, painting and drawing.
-
-For apps without a single continuous canvas, we recommend using background acrylic to connect users to their overall desktop environment.
-
-### Acrylic in utility apps
-
-Widgets or light-weight apps can reinforce their usage as utility apps by drawing acrylic edge-to-edge inside their app window. Apps belonging to this category typically have brief user engagement times and are unlikely to occupy the user's entire desktop screen. Examples include calculator and action center.
-
-![Calculator utility app with acrylic as its entire background](images/acrylic_app-pattern_full.png)
-
-> [!Note]
-> Rendering acrylic surfaces is GPU intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter battery saver mode, and users can disable acrylic effects for all apps, if they choose.
-
-
 ## Acrylic blend types
 Acrylic's most noticeable characteristic is its transparency. There are two acrylic blend types that change what’s visible through the material:
  - **Background acrylic** reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user’s personalization preferences.
@@ -110,8 +60,39 @@ Acrylic's most noticeable characteristic is its transparency. There are two acry
 
  ![In-app acrylic](images/AppAcrylic_DarkTheme.png)
 
- Layer multiple acrylic surfaces with caution. Background acrylic, as its name implies, should not be closest to the user in z-order. Multiple layers of background acrylic tend to result in unexpected optical illusions and should also be avoided. If you choose to layer acrylics, do so with in-app acrylic and consider making acrylic’s tint lighter in value to help visually bring the layers forward to the viewer.
+ Layer multiple acrylic surfaces with caution: multiple layers of background acrylic can create distracting optical illusions.
 
+## When to use acrylic
+
+* Use in-app acrylic for supporting UI, such as in-app navigation or in-line commanding elements. 
+* Use background acrylic for transient UI elements, such as context menus, flyouts, and light-dimsissable UI.<br />Using Acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.
+
+Surfaces behind primary app content should use opaque backgrounds.
+
+Consider extending content to scroll under non-transient panes that are acrylic to help improve the flow on your app. However, to avoid creating a striping effect, don't stack or place strips of acrylic next to each other. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly, can result in visual noise.
+
+Consider the following usage patterns to decide how best to incorporate acrylic into your app.
+
+### Horizontal navigation or commanding
+
+For apps that have horizontal navigation, a custom top bar for navigation, or in-line commanding, we recommend applying in-app acrylic to those surfaces.
+
+![Maps app using in-app horizontal commanding](images/Maps_In_App_Acrylic_1.png =802x451)
+
+In addition, having your content extend or scroll under the acrylic at the top will give your app a more immersive and seamless experience.
+
+### Vertical Panes
+
+For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background. If your vertical panes open on top of content, like in NavigationView's **Collapsed** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
+
+### Transient surfaces
+
+For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic.
+
+![Maill app pattern using an informational flyout](images/Mail_TransientContextMenu.png =802x451)
+
+> [!Note]
+> Rendering acrylic surfaces is GPU intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter battery saver mode, and users can disable acrylic effects for all apps, if they choose.
 
 ## Usability and adaptability
 Acrylic automatically adapts its appearance for a wide variety of devices and contexts.
