@@ -1,0 +1,123 @@
+<svg width="1152" height="647" viewBox="0 0 1152 647" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>brand-color</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(19456 2107)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -19456 -2107L -18304 -2107L -18304 -1460L -19456 -1460L -19456 -2107Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="brand-color" clip-path="url(#clip-0)">
+<path d="M -19456 -2107L -18304 -2107L -18304 -1460L -19456 -1460L -19456 -2107Z" fill="#243A5E"/>
+<g id="Group 24">
+<g id="Rectangle 36.1">
+<use xlink:href="#path0_fill" transform="translate(-19454.5 -1497.64)" fill="#0062AD"/>
+</g>
+<g id="Group 18.1">
+<g id="Rectangle 37">
+<use xlink:href="#path1_fill" transform="translate(-18889.7 -2026.74)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 38">
+<use xlink:href="#path2_fill" transform="translate(-18889.7 -2026.74)" fill="#CF90FF"/>
+</g>
+</g>
+<g id="Rectangle 37.1">
+<use xlink:href="#path3_fill" transform="translate(-18869.8 -2011.42)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 35">
+<use xlink:href="#path4_fill" transform="translate(-19454.5 -1818.67)" fill="#00508E"/>
+</g>
+<g id="Rectangle 31">
+<use xlink:href="#path5_fill" transform="translate(-19307.4 -1753.28)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.1">
+<use xlink:href="#path6_fill" transform="translate(-19158.7 -1753.28)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.2">
+<use xlink:href="#path6_fill" transform="translate(-19158.7 -1677.48)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.4">
+<use xlink:href="#path7_fill" transform="translate(-19270.2 -1601.68)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.5">
+<use xlink:href="#path7_fill" transform="translate(-19307.4 -1601.68)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.10">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1756.25)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.11">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1723.55)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.12">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1690.85)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.13">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1658.16)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.14">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1625.46)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.15">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1592.76)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.16">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1560.06)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.17">
+<use xlink:href="#path8_fill" transform="translate(-19411.4 -1527.37)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.6">
+<use xlink:href="#path7_fill" transform="translate(-19270.2 -1563.04)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.7">
+<use xlink:href="#path7_fill" transform="translate(-19307.4 -1563.04)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.8">
+<use xlink:href="#path9_fill" transform="translate(-19307.4 -1524.39)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.9">
+<use xlink:href="#path10_fill" transform="translate(-19158.7 -1524.39)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.3">
+<use xlink:href="#path11_fill" transform="translate(-19233 -1601.68)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 42">
+<use xlink:href="#path12_fill" transform="translate(-18870 -1652.21)" fill="#CF90FF"/>
+</g>
+<g id="Toggles / Toggle Switch">
+<g id="Toggle On / Rest">
+<g id="Toggle">
+<use xlink:href="#path13_fill" transform="translate(-18447.1 -1962.89)" fill="#CF90FF"/>
+</g>
+<g id="Position">
+<use xlink:href="#path14_fill" transform="translate(-18418.1 -1957.89)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<g id="Rectangle 37.3">
+<use xlink:href="#path15_fill" transform="translate(-18869 -1932)" fill="#F4F4F4"/>
+</g>
+<g id="Rectangle 43.1">
+<use xlink:href="#path16_fill" transform="translate(-18870 -1910)" fill="#F4F4F4"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 1150.51 0L 1150.51 38.6422L 0 38.6422L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 515.799 0L 515.799 447.358L 0 447.358L 0 0Z"/>
+<path id="path2_fill" d="M 0 0L 515.799 0L 515.799 40L 0 40L 0 0Z"/>
+<path id="path3_fill" d="M 0 0L 73.6106 0L 73.6106 8L 0 8L 0 0Z"/>
+<path id="path4_fill" d="M 0 0L 410.261 0L 410.261 321.028L 0 321.028L 0 0Z"/>
+<path id="path5_fill" d="M 0 0L 145.672 0L 145.672 148.624L 0 148.624L 0 0Z"/>
+<path id="path6_fill" d="M 0 0L 71.3497 0L 71.3497 72.8257L 0 72.8257L 0 0Z"/>
+<path id="path7_fill" d="M 0 0L 34.1884 0L 34.1884 35.6697L 0 35.6697L 0 0Z"/>
+<path id="path8_fill" d="M 0 0L 29.729 0L 29.729 29.7248L 0 29.7248L 0 0Z"/>
+<path id="path9_fill" d="M 0 0L 145.672 0L 145.672 26.7523L 0 26.7523L 0 0Z"/>
+<path id="path10_fill" d="M 0 0L 71.3497 0L 71.3497 26.7523L 0 26.7523L 0 0Z"/>
+<path id="path11_fill" d="M 0 0L 145.672 0L 145.672 74.3119L 0 74.3119L 0 0Z"/>
+<path id="path12_fill" d="M 0 0L 147.164 0L 147.164 40L 0 40L 0 0Z"/>
+<path id="path13_fill" fill-rule="evenodd" d="M 0 10C 0 4.47715 4.47715 0 10 0L 34 0C 39.5228 0 44 4.47715 44 10C 44 15.5228 39.5228 20 34 20L 10 20C 4.47715 20 0 15.5228 0 10Z"/>
+<path id="path14_fill" fill-rule="evenodd" d="M 5 10C 7.76142 10 10 7.76142 10 5C 10 2.23858 7.76142 0 5 0C 2.23858 0 0 2.23858 0 5C 0 7.76142 2.23858 10 5 10Z"/>
+<path id="path15_fill" d="M 0 0L 110.416 0L 110.416 12L 0 12L 0 0Z"/>
+<path id="path16_fill" d="M 0 0L 476 0L 476 238L 0 238L 0 0Z"/>
+</defs>
+</svg>

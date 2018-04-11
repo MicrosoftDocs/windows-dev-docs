@@ -1,0 +1,128 @@
+<svg width="1152" height="647" viewBox="0 0 1152 647" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>user-selected-accent</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(19456 2844)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -19456 -2844L -18304 -2844L -18304 -2197L -19456 -2197L -19456 -2844Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="user-selected-accent" clip-path="url(#clip-0)">
+<path d="M -19456 -2844L -18304 -2844L -18304 -2197L -19456 -2197L -19456 -2844Z" fill="#243A5E"/>
+<g id="Rectangle 36">
+<use xlink:href="#path0_fill" transform="translate(-19456 -2235.67)" fill="#0062AD"/>
+</g>
+<g id="Group 18">
+<g id="Rectangle 37">
+<use xlink:href="#path1_fill" transform="translate(-18890.4 -2765.17)" fill="#FFFFFF"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path1_fill" fill="white" transform="translate(-18890.4 -2765.17)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path2_stroke_2x" transform="translate(-18890.4 -2765.17)" fill="#0078D7"/>
+</g>
+</g>
+<g id="Rectangle 38">
+<use xlink:href="#path3_fill" transform="translate(-18890.4 -2765.17)" fill="#0078D7"/>
+</g>
+<g id="Toggles / Toggle Switch">
+<g id="Toggle On / Rest">
+<g id="Toggle">
+<use xlink:href="#path4_fill" transform="translate(-18448.3 -2701.24)" fill="#0078D7"/>
+</g>
+<g id="Position">
+<use xlink:href="#path5_fill" transform="translate(-18419.3 -2696.24)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 37">
+<use xlink:href="#path6_fill" transform="translate(-18870 -2750)" fill="#FFFFFF"/>
+</g>
+<g id="Rectangle 35.1">
+<use xlink:href="#path7_fill" transform="translate(-19456 -2556.94)" fill="#00508E"/>
+</g>
+<g id="Rectangle 31.18">
+<use xlink:href="#path8_fill" transform="translate(-19308.7 -2491.5)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.19">
+<use xlink:href="#path9_fill" transform="translate(-19159.8 -2491.5)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.20">
+<use xlink:href="#path9_fill" transform="translate(-19159.8 -2415.64)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.21">
+<use xlink:href="#path10_fill" transform="translate(-19271.4 -2339.79)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.22">
+<use xlink:href="#path10_fill" transform="translate(-19308.7 -2339.79)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.23">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2494.47)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.24">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2461.75)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.25">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2429.03)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.26">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2396.31)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.27">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2363.58)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.28">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2330.86)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.29">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2298.14)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.30">
+<use xlink:href="#path11_fill" transform="translate(-19412.8 -2265.42)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.31">
+<use xlink:href="#path10_fill" transform="translate(-19271.4 -2301.11)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.32">
+<use xlink:href="#path10_fill" transform="translate(-19308.7 -2301.11)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.33">
+<use xlink:href="#path12_fill" transform="translate(-19308.7 -2262.44)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.34">
+<use xlink:href="#path13_fill" transform="translate(-19159.8 -2262.44)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 31.35">
+<use xlink:href="#path14_fill" transform="translate(-19234.2 -2339.79)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 42">
+<use xlink:href="#path15_fill" transform="translate(-18870 -2389.21)" fill="#0078D7"/>
+</g>
+<g id="Rectangle 37.3">
+<use xlink:href="#path16_fill" transform="translate(-18869 -2669)" fill="#F4F4F4"/>
+</g>
+<g id="Rectangle 43.1">
+<use xlink:href="#path17_fill" transform="translate(-18870 -2647)" fill="#F4F4F4"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 1152 0L 1152 38.6713L 0 38.6713L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 516.465 0L 516.465 447.694L 0 447.694L 0 0Z"/>
+<path id="path2_stroke_2x" d="M 0 0L 0 -2L -2 -2L -2 0L 0 0ZM 516.465 0L 518.465 0L 518.465 -2L 516.465 -2L 516.465 0ZM 516.465 447.694L 516.465 449.694L 518.465 449.694L 518.465 447.694L 516.465 447.694ZM 0 447.694L -2 447.694L -2 449.694L 0 449.694L 0 447.694ZM 0 2L 516.465 2L 516.465 -2L 0 -2L 0 2ZM 514.465 0L 514.465 447.694L 518.465 447.694L 518.465 0L 514.465 0ZM 516.465 445.694L 0 445.694L 0 449.694L 516.465 449.694L 516.465 445.694ZM 2 447.694L 2 0L -2 0L -2 447.694L 2 447.694Z"/>
+<path id="path3_fill" d="M 0 0L 516.465 0L 516.465 40L 0 40L 0 0Z"/>
+<path id="path4_fill" fill-rule="evenodd" d="M 0 10C 0 4.47715 4.47715 0 10 0L 34 0C 39.5228 0 44 4.47715 44 10C 44 15.5228 39.5228 20 34 20L 10 20C 4.47715 20 0 15.5228 0 10Z"/>
+<path id="path5_fill" fill-rule="evenodd" d="M 5 10C 7.76142 10 10 7.76142 10 5C 10 2.23858 7.76142 0 5 0C 2.23858 0 0 2.23858 0 5C 0 7.76142 2.23858 10 5 10Z"/>
+<path id="path6_fill" d="M 0 0L 73.6503 0L 73.6503 8L 0 8L 0 0Z"/>
+<path id="path7_fill" d="M 0 0L 410.791 0L 410.791 321.269L 0 321.269L 0 0Z"/>
+<path id="path8_fill" d="M 0 0L 145.86 0L 145.86 148.736L 0 148.736L 0 0Z"/>
+<path id="path9_fill" d="M 0 0L 71.4419 0L 71.4419 72.8805L 0 72.8805L 0 0Z"/>
+<path id="path10_fill" d="M 0 0L 34.2326 0L 34.2326 35.6966L 0 35.6966L 0 0Z"/>
+<path id="path11_fill" d="M 0 0L 29.7674 0L 29.7674 29.7471L 0 29.7471L 0 0Z"/>
+<path id="path12_fill" d="M 0 0L 145.86 0L 145.86 26.7724L 0 26.7724L 0 0Z"/>
+<path id="path13_fill" d="M 0 0L 71.4419 0L 71.4419 26.7724L 0 26.7724L 0 0Z"/>
+<path id="path14_fill" d="M 0 0L 145.86 0L 145.86 74.3678L 0 74.3678L 0 0Z"/>
+<path id="path15_fill" d="M 0 0L 147.164 0L 147.164 40L 0 40L 0 0Z"/>
+<path id="path16_fill" d="M 0 0L 110.416 0L 110.416 12L 0 12L 0 0Z"/>
+<path id="path17_fill" d="M 0 0L 476 0L 476 238L 0 238L 0 0Z"/>
+</defs>
+</svg>
