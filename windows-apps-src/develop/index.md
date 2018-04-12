@@ -227,7 +227,7 @@ ms.localizationpriority: high
 
  <ul class="panelContent cardsH" style="margin-left: 1px">
     <li>
-        <a href="/windows/samples">
+        <a href="https://developer.microsoft.com/windows/samples">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
