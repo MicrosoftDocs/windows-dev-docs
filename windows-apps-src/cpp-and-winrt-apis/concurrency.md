@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ---
 
-# Concurrency and asynchronous operations with C++/WinRT
+# Concurrency and asynchronous operations with [C++/WinRT](intro-to-using-cpp-with-winrt.md)
 This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 
 ## Asynchronous operations and Windows Runtime "Async" functions
@@ -57,7 +57,7 @@ int main()
 Calling **get** makes for convenient coding, but it's not what you'd call cooperative. It's not concurrent nor asynchronous. To avoid holding up OS threads from doing other useful work, we need a different technique.
 
 ## Write a coroutine
-C++/WinRT integrates C++ coroutines into the programming model to provide a natural way to cooperatively wait for a result. You can produce your own WinRT asynchronous operation by writing a coroutine. In the code example below, **ProcessFeedAsync** is the coroutine.
+C++/WinRT integrates C++ coroutines into the programming model to provide a natural way to cooperatively wait for a result. You can produce your own Windows Runtime asynchronous operation by writing a coroutine. In the code example below, **ProcessFeedAsync** is the coroutine.
 
 ```cppwinrt
 // main.cpp
@@ -99,7 +99,7 @@ int main()
 
 A coroutine is a function that can be suspended and resumed. In the **ProcessFeedAsync** coroutine above, when the **co_await** statement is reached, the coroutine asynchronously initiates the **RetrieveFeedAsync** call and then it immediately suspends itself and returns control back to the caller (which is **main** in the example above). **main** can then continue to do work while the feed is being retrieved and printed. When that's done (when the **RetrieveFeedAsync** call completes), the **ProcessFeedAsync** coroutine resumes at the next statement.
 
-You can aggregate a couroutine into other coroutines. Or you can call **get** to block and wait for it to complete (and get the result if there is one). Or you can pass it to another programming language that supports WinRT.
+You can aggregate a couroutine into other coroutines. Or you can call **get** to block and wait for it to complete (and get the result if there is one). Or you can pass it to another programming language that supports the Windows Runtime.
 
 ## Asychronously return a Windows Runtime type
 In this next example we wrap a call to **RetrieveFeedAsync**, for a specific URI, to give us a **RetrieveBlogFeedAsync** function that asynchronously returns a [**SyndicationFeed**](/uwp/api/windows.web.syndication.syndicationfeed).

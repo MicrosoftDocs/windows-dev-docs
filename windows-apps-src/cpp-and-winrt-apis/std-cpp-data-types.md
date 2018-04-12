@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: With C++/WinRT, you can call WinRT APIs using Standard C++ data types.
+description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
 ms.author: stwhi
 ms.date: 04/10/2018
@@ -11,11 +11,11 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium
 ---
 
-# Standard C++ data types and C++/WinRT
-With C++/WinRT, you can call WinRT APIs using Standard C++ data types, including some C++ Standard Library data types.
+# Standard C++ data types and [C++/WinRT](intro-to-using-cpp-with-winrt.md)
+With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types.
 
 ## Standard initializer lists
-An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain WinRT constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
+An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain Windows Runtime constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
 
 ```cppwinrt
 #include "winrt/Windows.Storage.Streams.h"

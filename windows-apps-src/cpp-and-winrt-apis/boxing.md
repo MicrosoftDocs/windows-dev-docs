@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control,
 ms.localizationpriority: medium
 ---
 
-# Boxing and unboxing scalar values to IInspectable with C++/WinRT 
+# Boxing and unboxing scalar values to IInspectable with [C++/WinRT](intro-to-using-cpp-with-winrt.md) 
 The [**IInspectable interface**](https://msdn.microsoft.com/library/windows/desktop/br205821) is the root interface of every runtime class in the Windows Runtime (WinRT). This is an analogous idea to [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) being at the root of every COM interface and class; and **System.Object** being at the root of every [Common Type System](https://docs.microsoft.com/dotnet/standard/base-types/common-type-system) class.
 
 In other words, a function that expects **IInspectable** can be passed an instance of any runtime class. But you can't directly pass a scalar value, such as a numeric or text value, to such a function. Instead, a scalar value needs to be wrapped inside a reference class object. That wrapping process is known as *boxing* the value.

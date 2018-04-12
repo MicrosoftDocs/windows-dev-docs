@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs.
+description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
 ms.author: stwhi
 ms.date: 03/27/2018
@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Introduced in version 10.0.17133.0 (Windows 10, version 1803), the Windows SDK now includes C++/WinRT.
 
-C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume WinRT APIs using any standards-compliant C++17 compiler.
+C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
 
 ## Language projections
 WinRT is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
@@ -26,7 +26,7 @@ WinRT is based on Component Object Model (COM) APIs, and it's designed to be acc
 When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## SDK support for C++/WinRT
-As of version 10.0.17133.0 (Windows 10, version 1803), the Windows SDK contains the C++/WinRT projection Windows namespace headers and tools. One important tool is `cppwinrt.exe` which, from a `.winmd`, generates source code files that project the metadata into C++/WinRT. Windows Metadata (`.winmd`) files provide a canonical way of describing a WinRT API surface. From Windows Metadata, `cppwinrt.exe` generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface; whether they're Windows APIs, or third-party Windows Runtime Component APIs. `Cppwinrt.exe` plays an important role in your development workflow for both consuming first- and third-party APIs and also for authoring your own APIs in components.
+As of version 10.0.17133.0 (Windows 10, version 1803), the Windows SDK contains the C++/WinRT projection Windows namespace headers and tools. One important tool is `cppwinrt.exe` which, from a `.winmd`, generates source code files that project the metadata into C++/WinRT. Windows Metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. From Windows Metadata, `cppwinrt.exe` generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface; whether they're Windows APIs, or third-party Windows Runtime Component APIs. `Cppwinrt.exe` plays an important role in your development workflow for both consuming first- and third-party APIs and also for authoring your own APIs in components.
 
 ## Visual Studio support for C++/WinRT
 Because C++/WinRT uses features from the C++17 standard, it needs project property **C/C++** > **Language** > **ISO C++17 Standard (/std:c++17)**. You might also want to set **Conformance mode: Yes (/permissive-)**, which further constrains your code to be standards-compliant.
@@ -97,7 +97,7 @@ The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndica
 
 All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
 
-[**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) is an example of an asynchronous WinRT function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+[**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) is an example of an asynchronous Windows Runtime function. The code example receives an asynchronous operation object from **RetrieveFeedAsync**, and it calls **get** on that object to block the calling thread and wait for the results. For more about concurrency, and for non-blocking techniques, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
 
 [**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) is a range, defined by the iterators returned from **begin** and **end** functions (or their constant, reverse, and constant-reverse variants). Because of this, you can enumerate **Items** with either a range-based `for` statement, or with the **std::for_each** template function.
 

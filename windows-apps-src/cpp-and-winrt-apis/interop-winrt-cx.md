@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate,
 ms.localizationpriority: medium
 ---
 
-# Interop between C++/WinRT and C++/CX
+# Interop between [C++/WinRT](intro-to-using-cpp-with-winrt.md) and C++/CX
 This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. You can use them to interop between code that uses the two language projections, or you can use the functions as you gradually move your code from C++/CX to C++/WinRT.
 
 ## from_cx and to_cx functions
@@ -107,8 +107,8 @@ MainPage::MainPage()
 ## Important APIs
 * [IUnknown interface](https://msdn.microsoft.com/library/windows/desktop/ms680509)
 * [QueryInterface](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::get_abi function template](/uwp/cpp-ref-for-winrt/get-abi)
-* [winrt::put_abi function template](/uwp/cpp-ref-for-winrt/put-abi)
+* [winrt::get_abi function](/uwp/cpp-ref-for-winrt/get-abi)
+* [winrt::put_abi function](/uwp/cpp-ref-for-winrt/put-abi)
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
