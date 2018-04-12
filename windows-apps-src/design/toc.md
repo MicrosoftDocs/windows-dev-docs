@@ -1,7 +1,7 @@
 # Design basics
 ## [Overview](basics/index.md)
 ## [Intro to app design](basics/design-and-ui-intro.md)
-## [Fluent Design system](fluent-design-system/index.md)
+## [Fluent Design System](fluent-design-system/index.md)
 ## [Command basics](basics/commanding-basics.md)
 ## [Content basics](basics/content-basics.md)
 ## [Navigation basics](basics/navigation-basics.md)
