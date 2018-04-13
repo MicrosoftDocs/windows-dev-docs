@@ -115,7 +115,7 @@ ms.localizationpriority: high
                 <div style="display:block" class="card">
                     <div style="display:block" class="cardText">
                         <h3>App UI</h3>
-                        <p><a href="/windows/apps/design">For controls, layout, typography, animation, usability, and UI design, see the Design and UI section.</a></p>
+                        <p><a href="https://developer.microsoft.com/windows/apps/design">For controls, layout, typography, animation, usability, and UI design, see the Design and UI section.</a></p>
                     </div>
                 </div>
             </div>
