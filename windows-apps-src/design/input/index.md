@@ -1,9 +1,10 @@
 ---
-description: Customize your UWP app for specific types of inputs and devices. Take advantage of touch and voice commands. Run your apps on Xbox, phone and even TV.
-title: UWP app input and device design - Windows app development
+description: Optimize your app for pen, Surface dial, and other types of input. 
+title: Input and interactions
 author: Karl-Bridge-Microsoft
-keywords: device primer, app inputs, customize UWP application
-label: Input & devices
+keywords: app inputs, customize UWP application
+label: Input and interactions
+layout: LandingPage
 template: detail.hbs
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
@@ -13,23 +14,120 @@ ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
 ---
-# Inputs and devices
+# Input and interactions
 
+<!-- <div>
+  <img src="images/keyboard/keyboard-hero.jpg" alt="" />
+  <img src="images/input-interactions/icons-inputdevices03.png" />
+</div> -->
 
+UWP apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input, for example. But there are times when you might want to optimize your app for certain types of input or devices. For example, if you’re creating a painting app, you might want to customize the way you handle pen input.
 
-UWP apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input or make your app run on a phone, for example.
+The design and coding instructions in this section help you customize your UWP app for specific types of inputs.
 
-But there are times when you might want to optimize your app for certain types of input or devices. For example, if you’re creating a painting app, you might want to customize the way you handle pen input.
+<ul class="panelContent cardsH" style="margin-left: 1px">
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <!-- <div class="cardImageOuter">
+                        <div class="cardImage" style="background-color: #f2f2f2" >
+                        <a href="input-primer.md">
+                            <img src="images/input-interactions/icons-inputdevices03.png" alt=" " style="display: block; width: 100%; height: auto;" />
+                            </a>
+                        </div>
+                    </div>  -->
+                    <div class="cardText">
+                        <h3><a href="input-primer.md">Input primer</a></h3>
+                        <p>Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <!-- <div class="cardImageOuter">
+                        <div class="cardImage" style="background-color: #f2f2f2">
+                        <a href="identify-input-devices.md">
+                            <img src="images/landing-page/fluentdesign-app-sm.png" alt=" " style="display: block; width: 100%; height: auto;"/>
+                            </a>
+                        </div>
+                    </div> -->
+                    <div class="cardText">
+                        <h3><a href="identify-input-devices.md">Identify input devices</a></h3>
+                        <p>Identify the input devices connected to a UWP device and identify their capabilities and attributes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
 
-The design and coding instructions in this section help you customize your UWP app for specific types of inputs and devices.
-
+<!-- 
 ## Input primer
 
-See our <b>[Input primer](index.md)</b> to familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors.
+See our <b>[Input primer](index.md)</b> to familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. -->
 
-## Inputs and interactions
 
-<div class="side-by-side">
+<ul class="panelContent cardsL" style="margin-left: 1px">
+    <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Input</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/handle-pointer-input">Pointer</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/pen-and-stylus-interactions">Pen and Windows Ink</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/touch-interactions">Touch</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/mouse-interactions">Mouse</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/keyboard-interactions">Keyboard</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/gamepad-and-remote-interactions">Gamepad and remote control</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/touchpad-interactions">Touchpad</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/windows-wheel-interactions">Surface Dial</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/multiple-input-design-guidelines">Multiple inputs</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/custom-text-input">Custom text input</a></p>                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>  
+    <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Interactions</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/drag-and-drop">Drag and drop</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-panning">Panning</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-rotation">Rotation</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-textselection">Selecting text and images</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-targeting">Targeting</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/guidelines-for-visualfeedback">Visual feedback</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>
+    <li>              
+        <div style="display:block" class="cardSize">
+            <div style="display:block" class="cardPadding">
+                <div style="display:block" class="card">
+                    <div style="display:block" class="cardText">
+                        <h3>Speech and AI</h3>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/speech-interactions">Speech</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/design/input/cortana-interactions">Cortana</a></p>  
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </li>            
+       
+</ul>
+
+<!-- <div class="side-by-side">
 <div class="side-by-side-content">
 <p>
 <b>[Surface Dial](windows-wheel-interactions.md)</b><br/>
@@ -188,21 +286,6 @@ Use visual feedback to show users when their interactions are detected, interpre
 </p>
 </div>
 </div>
-</div>
+</div> -->
 
-## Devices
 
-Getting to know the devices that support UWP apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-<p><b>[Device primer](../devices/index.md)</b><br/>Getting to know the devices that support UWP apps will help you offer the best user experience for each form factor.
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-<p><b>[Designing for Xbox and TV](../devices/designing-for-tv.md)</b><br/>Design your Universal Windows Platform (UWP) app so that it looks good and functions well on Xbox One and television screens.
-</p>
-  </div>
-</div>
-</div>

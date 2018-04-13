@@ -165,7 +165,8 @@
 
 
 # Input and interactions
-## [Overview](input/input-primer.md)
+## [Overview](input/index.md)
+## [Input primer](input/input-primer.md)
 ## [Pointer input](input/handle-pointer-input.md)
 ## [Pen and Windows Ink](input/pen-and-stylus-interactions.md)
 ### [Tutorial: Add Inking support to your app](input/ink-walkthrough.md)
