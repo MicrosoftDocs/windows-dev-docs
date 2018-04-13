@@ -387,7 +387,7 @@ The input mechanism can vary from one input device to another. For example, poin
 
 ###  Processing pointer input
 
-When you work with pointer input, call the [Windows::UI::Core::CoreDispatcher::ProcessEvents](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher#Windows_UI_Core_CoreDispatcher_ProcessEvents_Windows_UI_Core_CoreProcessEventsOption_) method to process window events. Call this method in your game loop before you update or render the scene. Marble Maze calls this in the **App::Run** method: 
+When you work with pointer input, call the [Windows::UI::Core::CoreDispatcher::ProcessEvents](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) method to process window events. Call this method in your game loop before you update or render the scene. Marble Maze calls this in the **App::Run** method: 
 
 ```cpp
 while (!m_windowClosed)
