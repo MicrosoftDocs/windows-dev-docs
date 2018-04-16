@@ -76,7 +76,7 @@ Extend the **NotificationActivator** class and then add the three attributes lis
 [Guid("replaced-with-your-guid-C173E6ADF0C3"), ComVisible(true)]
 public class MyNotificationActivator : NotificationActivator
 {
-    public void OnActivated(string invokedArgs, NotificationUserInput userInput, string appUserModelId)
+    public override void OnActivated(string invokedArgs, NotificationUserInput userInput, string appUserModelId)
     {
         // TODO: Handle activation
     }
@@ -158,7 +158,8 @@ If you're using WiX for your installer, edit the **Product.wxs** file to add the
 </Shortcut>
 ```
 
-In order to actually use notifications, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
+> [!IMPORTANT]
+> In order to actually use notifications, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
 
 #### Step 5.2: Register AUMID and COM server
@@ -222,7 +223,7 @@ ToastContent toastContent = new ToastContent()
 };
 
 // Create the XML document (BE SURE TO REFERENCE WINDOWS.DATA.XML.DOM)
-var doc = new XmlDocument(toastContent.GetContent());
+var doc = new XmlDocument();
 doc.LoadXml(toastContent.GetContent());
 
 // And create the toast notification
@@ -390,6 +391,11 @@ If your notifications simply fail to appear in your classic Win32 app (and no ex
 If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.
 
 If you've installed both your Desktop Bridge and classic Win32 app, note that the Desktop Bridge app will supersede the classic Win32 app when handling toast activations. That means that toasts from the classic Win32 app will still launch the Desktop Bridge app when clicked. Uninstalling the Desktop Bridge app will revert activations back to the classic Win32 app.
+
+
+## Known issues
+
+**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 and higher.
 
 
 ## Resources
