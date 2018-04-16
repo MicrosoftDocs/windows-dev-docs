@@ -12,35 +12,6 @@
 ### [Create an adaptive layout](basics/xaml-basics-adaptive-layout.md)
 ### [Style a control](basics/xaml-basics-style.md)
 
-# Style
-## [Overview](style/index.md)
-## [Acrylic](style/acrylic.md)
-## [Color](style/color.md)
-## [Icons](style/icons.md)
-### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
-## [Reveal highlight](style/reveal.md)
-## [Reveal focus](style/reveal-focus.md)
-## [Sound](style/sound.md)
-## [Typography](style/typography.md)
-## [Writing style](style/writing-style.md)
-## [XAML brushes](style/brushes.md)
-## [XAML styles](controls-and-patterns/xaml-styles.md)
-### [XAML Control templates](controls-and-patterns/control-templates.md)
-### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
-### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
-
-# Motion
-## [Overview](motion/index.md)
-## [Connected animation](motion/connected-animation.md)
-## [Content transition](motion/content-transition-animations.md)
-## [Add and delete](motion/motion-list.md)
-## [Fade](motion/motion-fade.md)
-## [Parallax](motion/parallax.md)
-## [Press feedback](motion/motion-pointer.md)
-## [Animations in XAML](motion/xaml-animation.md)
-### [Storyboarded animations](motion/storyboarded-animations.md)
-### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
-
 # Layout
 ## [Overview](layout/index.md)
 ## [Page layout](layout/page-layout.md)
@@ -118,6 +89,35 @@
 ## [Tooltip](controls-and-patterns/tooltips.md)
 ## [Tree view ](controls-and-patterns/tree-view.md)
 ## [Web view](controls-and-patterns/web-view.md)
+
+# Style
+## [Overview](style/index.md)
+## [Acrylic](style/acrylic.md)
+## [Color](style/color.md)
+## [Icons](style/icons.md)
+### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
+## [Reveal highlight](style/reveal.md)
+## [Reveal focus](style/reveal-focus.md)
+## [Sound](style/sound.md)
+## [Typography](style/typography.md)
+## [Writing style](style/writing-style.md)
+## [XAML brushes](style/brushes.md)
+## [XAML styles](controls-and-patterns/xaml-styles.md)
+### [XAML Control templates](controls-and-patterns/control-templates.md)
+### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
+
+# Motion
+## [Overview](motion/index.md)
+## [Connected animation](motion/connected-animation.md)
+## [Content transition](motion/content-transition-animations.md)
+## [Add and delete](motion/motion-list.md)
+## [Fade](motion/motion-fade.md)
+## [Parallax](motion/parallax.md)
+## [Press feedback](motion/motion-pointer.md)
+## [Animations in XAML](motion/xaml-animation.md)
+### [Storyboarded animations](motion/storyboarded-animations.md)
+### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
 
 # Shell
 ## [Tiles](shell/tiles-and-notifications/creating-tiles.md)
