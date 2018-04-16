@@ -162,7 +162,7 @@ It's important to note that Reveal needs both the brush and the setters in it's 
 
 To learn more about modifying control templates, see the [XAML control templates](../controls-and-patterns/control-templates.md) article.
 
-We've created a set of system Reveal brushes you can use to customize your template. For example, you can use the **ButtonRevealBackground** brush to create a custom button background, or the **ListViewItemRevealBackground** brush for custom lists, and so on. (To learn about how resources work in XAMl, check out the [Xaml Resource Dictionary](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) article.)
+We've created a set of system Reveal brushes you can use to customize your template. For example, you can use the **ButtonRevealBackground** brush to create a custom button background, or the **ListViewItemRevealBackground** brush for custom lists, and so on. (To learn about how resources work in XAML, check out the [Xaml Resource Dictionary](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md) article.)
 
 ### Full template example
 
