@@ -4,7 +4,7 @@ ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: Use this method in the Microsoft Store submission API to get data for a package flight for an app that is registered to your Windows Dev Center account.
 title: Get a package flight
 ms.author: mcleans
-ms.date: 08/03/2017
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,7 +44,7 @@ This method has the following syntax. See the following sections for usage examp
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Required. The Store ID of the app that contains the package flight you want to get. The Store ID for the app is available on the Dev Center dashboard.  |
-| flightId | string | Required. The ID of the package flight to get. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
+| flightId | string | Required. The ID of the package flight to get. For a flight that was created in the Dev Center dashboard, this ID is available in the URL for the flight page in the dashboard. This ID is also available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
 
 
 ### Request body
