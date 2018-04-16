@@ -4,7 +4,7 @@ ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: The Microsoft Advertising SDK gives you several ways to monetize your app with ads.
 title: Display ads in your app with the Microsoft Advertising SDK
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -109,7 +109,7 @@ For additional help using the Microsoft Advertising SDK, use the following resou
 
 |  Task    | Resource |               
 |----------|-------|
-| Report a bug or get assisted support for advertising     | Visit the [support page](https://go.microsoft.com/fwlink/p/?LinkId=331508) and choose **In-App Advertising**.        |
+| Report a bug or get assisted support for advertising     | Visit the [support page](https://developer.microsoft.com/en-us/windows/support) and choose **Ads-In-Apps**.        |
 | Get community support     | Visit the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).       |
 | Download sample projects that demonstrate how to add banner and interstitial ads to apps.     | See the [Advertising samples on GitHub](http://aka.ms/githubads).       |
 | Learn about the latest monetization opportunities for Windows apps     | Visit [Monetize your apps](https://developer.microsoft.com/store/monetize).        |

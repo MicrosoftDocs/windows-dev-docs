@@ -4,7 +4,7 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: Each Microsoft Store transaction that results in a successful product purchase can optionally return a transaction receipt.
 title: Use receipts to verify product purchases
 ms.author: mcleans
-ms.date: 08/25/2017
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -31,6 +31,9 @@ The **Windows.ApplicationModel.Store** namespace supports several ways to get a 
 
 An app receipt looks something like this.
 
+> [!NOTE]
+> This example is formatted to help make the XML readable. Real app receipts do not include whitespace between elements.
+
 > [!div class="tabbedCodeSnippets"]
 ```xml
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -54,6 +57,9 @@ An app receipt looks something like this.
 ```
 
 A product receipt looks like this.
+
+> [!NOTE]
+> This example is formatted to help make the XML readable. Real product receipts do not include whitespace between elements.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml

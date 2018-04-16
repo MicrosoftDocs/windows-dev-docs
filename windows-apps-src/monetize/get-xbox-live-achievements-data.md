@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Use this method in the Microsoft Store analytics API to get Xbox Live achievements data.
 title: Get Xbox Live achievements data
 ms.author: mcleans
-ms.date: 04/04/2018
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 Use this method in the Microsoft Store analytics API to get the number of customers who have unlocked each achievement for your [Xbox Live-enabled game](../xbox-live/index.md) during the most recent day for which achievements data is available, the previous 30 days leading up to that day, and the total lifetime of your game up to that day. This information is also available in the [Xbox analytics report](../publish/xbox-analytics-report.md) in the Windows Dev Center dashboard.
 
 > [!IMPORTANT]
-> This method currently only supports Xbox Live-enabled games that are published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) or that are submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#idxbox). It does not return data for games that were submitted via the [Xbox Live Creators Program](../xbox-live/developer-program-overview.md#xbox-live-creators-program).
+> This method currently only supports Xbox Live-enabled games that are published by [Microsoft partners](../xbox-live/developer-program-overview.md#microsoft-partners) or that are submitted via the [ID@Xbox program](../xbox-live/developer-program-overview.md#id). It does not return data for games that were submitted via the [Xbox Live Creators Program](../xbox-live/developer-program-overview.md#xbox-live-creators-program).
 
 ## Prerequisites
 
