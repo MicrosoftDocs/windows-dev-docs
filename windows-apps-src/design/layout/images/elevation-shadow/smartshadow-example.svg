@@ -1,0 +1,14 @@
+<svg width="1152" height="378" viewBox="0 0 1152 378" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>smartshadow-example</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-17743 10358)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 17743 -10358L 18895 -10358L 18895 -9980L 17743 -9980L 17743 -10358Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="smartshadow-example" clip-path="url(#clip-0)">
+<path d="M 17743 -10358L 18895 -10358L 18895 -9980L 17743 -9980L 17743 -10358Z" fill="#F2F2F2"/>
+</g>
+</g>
+<defs>
+</defs>
+</svg>

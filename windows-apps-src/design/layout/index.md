@@ -14,8 +14,7 @@ ms.localizationpriority: medium
 ---
 # Layout for UWP apps
 
-These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations. 
-
+These articles help you create a flexible UI that looks great on different screen sizes, window sizes, resolutions, and orientations.
 
 ## Responsive layouts
 

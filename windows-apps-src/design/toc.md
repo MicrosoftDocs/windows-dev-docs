@@ -58,6 +58,7 @@
 ## Transforms
 ### [Overview](layout/transforms.md)
 ### [3-D perspective effects](layout/3-d-perspective-effects.md)
+## [Elevation and shadow](layout/elevation-shadow.md)
 
 # Controls
 ## [Overview](controls-and-patterns/index.md)
