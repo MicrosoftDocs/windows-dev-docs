@@ -77,7 +77,7 @@ Consider the following usage patterns to decide how best to incorporate acrylic 
 
 For apps that have horizontal navigation, a custom top bar for navigation, or in-line commanding, we recommend applying in-app acrylic to those surfaces.
 
-![Maps app using in-app horizontal commanding](images/Maps_In_App_Acrylic_1.png =802x451)
+![Maps app using in-app horizontal commanding](images/Maps_In_App_Acrylic_1.png)
 
 In addition, having your content extend or scroll under the acrylic at the top will give your app a more immersive and seamless experience.
 
@@ -89,7 +89,7 @@ For vertical panes or surfaces that help section off content of your app, we rec
 
 For apps with menu flyouts, non-modal popups, or light-dismiss panes, it is recommended to use background acrylic.
 
-![Maill app pattern using an informational flyout](images/Mail_TransientContextMenu.png =802x451)
+![Maill app pattern using an informational flyout](images/Mail_TransientContextMenu.png)
 
 > [!Note]
 > Rendering acrylic surfaces is GPU intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when devices enter battery saver mode, and users can disable acrylic effects for all apps, if they choose.
