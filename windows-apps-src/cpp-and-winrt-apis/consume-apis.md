@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, imp
 ms.localizationpriority: medium
 ---
 
-# Consume APIs with C++/WinRT
+# Consume APIs with [C++/WinRT](intro-to-using-cpp-with-winrt.md)
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 

@@ -3,7 +3,7 @@ author: stevewhims
 description: C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for IWeakReferenceSource.
 title: Weak references in C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -44,42 +44,13 @@ Provided that some other strong reference still exists, the [**weak_ref::get**](
 ## A weak reference to the *this* pointer
 A C++/WinRT object directly or indirectly derives from the struct template [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements). The [**implements::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function) protected member function returns a weak reference to a C++/WinRT object's *this* pointer. [**implements.get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function) gets a strong reference.
 
-## Events raised after object destruction
-In rare cases with XAML UI framework objects, an event is raised on an object that has been finalized. If you encounter this situation, then register your event handler using a lambda that captures a weak reference to the object's *this* pointer. This code example uses the [**SwapChainPanel.CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) event as an illustration.
-
-```cppwinrt
-winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
-winrt::event_token m_compositionScaleChangedEventToken;
-
-void RegisterEventHandler()
-{
-	m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
-		(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-		Windows::Foundation::IInspectable const& object)
-	{
-		if (auto strongReferenceToThis = weakReferenceToThis.get())
-		{
-			strongReferenceToThis->OnCompositionScaleChanged(sender, object);
-		}
-	});
-}
-
-void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-	Windows::Foundation::IInspectable const& object)
-{
-	// Here, we know that the this pointer is valid to use.
-}
-```
-
-In the lamba capture clause, a temporary variable is created, representing a weak reference to *this*. In the body of the lambda, if a strong reference to *this* can be obtained, then the event handler function is called. In the handler, *this* can safely be used.
-
 ## Opting out of weak reference support
-Weak reference support is automatic. But you can choose explicitly to opt out of that support by passing the **winrt::no_weak_ref** marker struct as a template argument to your base class.
+Weak reference support is automatic. But you can choose explicitly to opt out of that support by passing the [**winrt::no_weak_ref**](/uwp/cpp-ref-for-winrt/no-weak-ref) marker struct as a template argument to your base class.
 
 If you derive directly from **winrt::implements**.
 
 ```cppwinrt
-struct MyImplementation: implements<MyImplementation, IFrameworkViewSource, no_weak_ref>
+struct MyImplementation: implements<MyImplementation, IStringable, no_weak_ref>
 {
 	...
 }
@@ -88,15 +59,16 @@ struct MyImplementation: implements<MyImplementation, IFrameworkViewSource, no_w
 If you're authoring a runtime class.
 
 ```cppwinrt
-struct BookSku : BookSkuT<BookSku, no_weak_ref>
+struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 {
 	...
 }
 ```
 
-If you request a weak reference for an opted-out type, then the compiler will help you out with "*This is only for weak ref support*".
+It doesn't matter where in the variadic parameter pack the marker struct appears. If you request a weak reference for an opted-out type, then the compiler will help you out with "*This is only for weak ref support*".
 
 ## Important APIs
 * [implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::make_weak function template](/uwp/cpp-ref-for-winrt/make-weak)
+* [winrt::no_weak_ref marker struct](/uwp/cpp-ref-for-winrt/no-weak-ref)
 * [winrt::weak_ref struct template](/uwp/cpp-ref-for-winrt/weak-ref)

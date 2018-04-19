@@ -101,6 +101,7 @@
 ## [Interop between C++/WinRT and C++/CX](../cpp-and-winrt-apis/interop-winrt-cx.md)
 ## [Interop between C++/WinRT and the ABI](../cpp-and-winrt-apis/interop-winrt-abi.md)
 ## [Weak references](../cpp-and-winrt-apis/weak-references.md)
+## [Agile objects](../cpp-and-winrt-apis/agile-objects.md)
 # [Data access](../data-access/index.md)
 ## [Use a SQLite database](../data-access/sqlite-databases.md)
 ## [Use a SQL Server database](../data-access/sql-server-databases.md)

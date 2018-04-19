@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events.
 title: Events; how to author and handle them in C++/WinRT
 ms.author: stwhi
-ms.date: 03/01/2018
+ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -148,6 +148,37 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 ```
 
 Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression, run the app, and click inside the window.
+
+## Events raised after object destruction
+In rare cases with XAML UI framework objects, an event is raised on an object that has been finalized. If you encounter this situation, then register your event handler using a lambda that captures a weak reference to the object's *this* pointer. For more info about weak references, see [Weak references in C++/WinRT](weak-references.md).
+
+This code example uses the [**SwapChainPanel.CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) event as an illustration.
+
+```cppwinrt
+winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
+winrt::event_token m_compositionScaleChangedEventToken;
+
+void RegisterEventHandler()
+{
+	m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
+		(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
+		Windows::Foundation::IInspectable const& object)
+	{
+		if (auto strongReferenceToThis = weakReferenceToThis.get())
+		{
+			strongReferenceToThis->OnCompositionScaleChanged(sender, object);
+		}
+	});
+}
+
+void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
+	Windows::Foundation::IInspectable const& object)
+{
+	// Here, we know that the this pointer is valid to use.
+}
+```
+
+In the lamba capture clause, a temporary variable is created, representing a weak reference to *this*. In the body of the lambda, if a strong reference to *this* can be obtained, then the event handler function is called. In the handler, *this* can safely be used.
 
 ## Related topics
 * [Consume APIs with C++/WinRT](consume-apis.md)
