@@ -3,7 +3,7 @@ author: stevewhims
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
 ms.author: stwhi
-ms.date: 04/17/2018
+ms.date: 04/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -138,7 +138,7 @@ namespace MyProject
 }
 ```
 
-This IDL declares a Windows Runtime (runtime) class. A runtime class is a type that can be activated across executable boundaries, and consumed via modern COM interfaces. When you add an IDL file to your project, and build, the C++/WinRT toolchain (`midl.exe` and `cppwinrt.exe`) generate an implementation type for you. Using the example IDL above, the implementation type is a C++ struct stub named **winrt::MyProject::implementation::MyRuntimeClass** in source code files named `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` and `MyRuntimeClass.cpp`.
+This IDL declares a Windows Runtime (runtime) class. A runtime class is a type that can be activated and consumed via modern COM interfaces, typically across executable boundaries. When you add an IDL file to your project, and build, the C++/WinRT toolchain (`midl.exe` and `cppwinrt.exe`) generate an implementation type for you. Using the example IDL above, the implementation type is a C++ struct stub named **winrt::MyProject::implementation::MyRuntimeClass** in source code files named `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` and `MyRuntimeClass.cpp`.
 
 The implementation type looks like this.
 
@@ -171,14 +171,46 @@ So, in this scenario, at the root of the inheritance hierarchy is the [**winrt::
 For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Events; how to author and handle them in C++/WinRT](events-author-handle.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
 
 ## If you're authoring a runtime class to be referenced in your XAML UI
-If your type is referenced by your XAML UI, then it needs to be a runtime class, even though it's in the same project as the XAML. As well as being activatable across executable boundaries, a runtime class can be used within the compilation unit that implements it.
+If your type is referenced by your XAML UI, then it needs to be a runtime class, even though it's in the same project as the XAML. Although they are typically activated across executable boundaries, a runtime class can instead be used within the compilation unit that implements it.
 
-In this scenario, you're both authoring *and* consuming the APIs.
+In this scenario, you're both authoring *and* consuming the APIs. The procedure for implementing your runtime class is essentially the same as that for a Windows Runtime Component. So, see the previous section&mdash;[If you're authoring a runtime class in a Windows Runtime Component](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component). The only detail that differs is that, from the IDL, the C++/WinRT toolchain generates not only an implementation type but also a projected type. It's important to appreciate that saying only "**MyRuntimeClass**" in this scenario may be ambiguous; there are several entities with that name, of different kinds.
 
-- The procedure for implementing your runtime class is the same as that for a Windows Runtime Component. So, see the previous section&mdash;[If you're authoring a runtime class in a Windows Runtime Component](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component).
-- The procedure for consuming your runtime class is described in [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+- **MyRuntimeClass** is the name of a runtime class; declared in IDL, and implemented in some programming language.
+- **MyRuntimeClass** is the name of the C++ struct **winrt::MyProject::implementation::MyRuntimeClass**, which is the C++/WinRT implementation of the runtime class. As we've seen, if there are separate implementing and consuming projects, then this struct exists only in the implementing project. This is *the implementation type*, or *the implementation*. This type is generated (by the `cppwinrt.exe` tool) in the files `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` and `MyRuntimeClass.cpp`.
+- **MyRuntimeClass** is the name of the projected type in the form of the C++ struct **winrt::MyProject::MyRuntimeClass**. If there are separate implementing and consuming projects, then this struct exists only in the consuming project. This is *the projected type*, or *the projection*. This type is generated (by `cppwinrt.exe`) in the file `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h`.
+
+Here are the parts of the projected type that are relevant to this topic.
+
+```cppwinrt
+// MyProject.2.h
+...
+namespace winrt::MyProject
+{
+	struct MyRuntimeClass : MyProject::IMyRuntimeClass
+	{
+		MyRuntimeClass(std::nullptr_t) noexcept {}
+		MyRuntimeClass();
+	};
+}
+```
 
 For an example walkthrough of implementing the **INotifyPropertyChanged** interface on a runtime class, see [XAML controls; binding to a C++/WinRT property](binding-property.md).
+
+The procedure for consuming your runtime class in this scenario is described in [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+
+## Runtime class constructors
+Here are some points to take away from the listings we've seen above.
+
+- Each constructor you declare in your IDL causes a constructor to be generated on both your implementation type and on your projected type. IDL-declared constructors are used to consume the runtime class from *a different* compilation unit.
+- Whether you have IDL-declared constructor(s) or not, a constructor overload that takes `nullptr` is generated on your projected type. Calling the `nullptr` constructor is *the first of two steps* in consuming the runtime class from *the same* compilation unit. For more details, and a code example, see [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
+- If you're consuming the runtime class from *the same* compilation unit, then you can also implement non-default constructors directly on the implementation type (which, remember, is in `MyRuntimeClass.h`).
+
+> [!NOTE]
+> If you expect your runtime class to be consumed from a different compilation unit (which is common), then include constructor(s) in your IDL (at least a default constructor). By doing that, you'll also get a factory implementation alongside your implementation type.
+> 
+> If you want to author and consume your runtime class only within the same compilation unit, then don't declare any constructor(s) in your IDL. You don't need a factory implementation, and one won't be generated. Your implementation type's default constructor will be deleted, but you can easily edit it and default it instead.
+> 
+> If you want to author and consume your runtime class only within the same compilation unit, and you need constructor parameters, then author the constructor(s) that you need directly on your implementation type.
 
 ## Instantiating and returning implementation types and interfaces
 For this section, let's take as an example an implementation type named **MyType**, which implements the [**IStringable**](/uwp/api/windows.foundation.istringable) and [**IClosable**](/uwp/api/windows.foundation.iclosable) interfaces.
@@ -338,3 +370,4 @@ Until you make the edit described above (to pass that constructor parameter on t
 ## Related topics
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+
