@@ -35,15 +35,15 @@ C++/WinRT performs better and produces smaller binaries than any other language 
 | [String handling](strings.md) | With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
 | [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types. |
 | [Boxing and unboxing scalar values to IInspectable](boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
-| [Interfaces; how to implement them](implement-an-interface.md) | This topic shows how to implement a Windows Runtime interface in C++/WinRT. |
-| [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md) | This topic describes essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT. |
+| [Consume APIs with C++/WinRT](consume-apis.md) | This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself. |
+| [Author APIs with C++/WinRT](author-apis.md) | This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly. |
 | [Events; how to author and handle them](events-author-handle.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
 | [Concurrency and asynchronous operations](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
 | [XAML controls; binding to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
 | [XAML items controls; binding to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. |
 | [Interop between C++/WinRT and the ABI](interop-winrt-abi.md) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |
-| [Weak references](weak-references.md) | C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/en-us/library/br224609). |
+| [Weak references](weak-references.md) | C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609). |
 
 ## Important APIs
 * [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)

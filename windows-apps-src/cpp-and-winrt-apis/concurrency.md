@@ -49,7 +49,7 @@ void ProcessFeed()
 
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 	ProcessFeed();
 }
 ```
@@ -89,7 +89,7 @@ IAsyncAction ProcessFeedAsync()
 
 int main()
 {
-	init_apartment();
+	winrt::init_apartment();
 
 	auto processOp = ProcessFeedAsync();
 	// do other work while the feed is being printed.
@@ -133,7 +133,7 @@ IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> RetrieveBlogFeed
 
 int main()
 {
-	init_apartment();
+	winrt::init_apartment();
 
 	auto feedOp = RetrieveBlogFeedAsync();
 	// do other work.
@@ -176,7 +176,7 @@ concurrency::task<std::wstring> RetrieveFirstTitleAsync()
 
 int main()
 {
-	init_apartment();
+	winrt::init_apartment();
 
 	auto firstTitleOp = RetrieveFirstTitleAsync();
 	// do other work.

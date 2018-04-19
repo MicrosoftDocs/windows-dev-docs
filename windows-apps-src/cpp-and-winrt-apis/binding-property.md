@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in C++/WinRT, and how to bind XAML controls to them.
 
 > [!NOTE]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## What does *observable* mean for a property?
 Let's say that a runtime class named **BookSku** has a property named **Title**. If **BookSku** chooses to raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event whenever the value of **Title** changes, then **Title** is an observable property. It's the behavior of **BookSku** (raising or not raising the event) that determines which, if any, of its properties are observable.
@@ -273,3 +273,7 @@ Now build and run the project. Click the button to execute the **Click** event h
 ## Important APIs
 * [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
+
+## Related topics
+* [Consume APIs with C++/WinRT](consume-apis.md)
+* [Author APIs with C++/WinRT](author-apis.md)

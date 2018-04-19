@@ -20,13 +20,13 @@ Introduced in version 10.0.17133.0 (Windows 10, version 1803), the Windows SDK n
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
 
 ## Language projections
-WinRT is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
+The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
 
 ### The C++/WinRT language projection in the Windows UWP API reference content
 When you're browsing [Windows UWP APIs](https://docs.microsoft.com/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## SDK support for C++/WinRT
-As of version 10.0.17133.0 (Windows 10, version 1803), the Windows SDK contains the C++/WinRT projection Windows namespace headers and tools. One important tool is `cppwinrt.exe` which, from a `.winmd`, generates source code files that project the metadata into C++/WinRT. Windows Metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. From Windows Metadata, `cppwinrt.exe` generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface; whether they're Windows APIs, or third-party Windows Runtime Component APIs. `Cppwinrt.exe` plays an important role in your development workflow for both consuming first- and third-party APIs and also for authoring your own APIs in components.
+As of version 10.0.17133.0 (Windows 10, version 1803), the Windows SDK contains the C++/WinRT projection Windows namespace headers and tools. One important tool is `cppwinrt.exe` which, from a `.winmd`, generates source code files that project the metadata into C++/WinRT. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. From Windows Runtime metadata, `cppwinrt.exe` generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface; whether they're Windows APIs, or third-party Windows Runtime Component APIs. `Cppwinrt.exe` plays an important role in your development workflow for both consuming first- and third-party APIs and also for authoring your own APIs in components.
 
 ## Visual Studio support for C++/WinRT
 Because C++/WinRT uses features from the C++17 standard, it needs project property **C/C++** > **Language** > **ISO C++17 Standard (/std:c++17)**. You might also want to set **Conformance mode: Yes (/permissive-)**, which further constrains your code to be standards-compliant.
@@ -57,7 +57,7 @@ Instead, it uses the C++/WinRT projection Windows namespace header for the Windo
 ### Windows Runtime Component (C++/WinRT)
 A project template for a component; typically for consumption from a Universal Windows Platform (UWP).
 
-This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Windows Metadata (`.winmd`) is generated from IDL, and then implementation and header stubs are generated from the Windows Metadata.
+This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Windows Runtime metadata (`.winmd`) is generated from IDL, and then implementation and header stubs are generated from the Windows Runtime metadata.
 
 In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. We recommend that you declare each runtime class in its own IDL file.
 
@@ -80,7 +80,7 @@ using namespace Windows::Web::Syndication;
 
 int main()
 {
-	init_apartment();
+	winrt::init_apartment();
 
 	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
 	SyndicationClient syndicationClient;
@@ -93,7 +93,7 @@ int main()
 }
 ```
 
-The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndication.h` are in the SDK, inside the folder `%ProgramFiles(x86)%\Windows Kits\10\Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\`. Visual Studio includes that path in its *IncludePath* macro. The headers contain Windows APIs projected into C++/WinRT. Whenever you want to use types from the Windows namespaces, include the corresponding C++/WinRT projection Windows namespace headers like this. The `using namespace` directives are optional, but convenient.
+The included headers `winrt/Windows.Foundation.h` and `winrt/Windows.Web.Syndication.h` are in the SDK, inside the folder `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\`. Visual Studio includes that path in its *IncludePath* macro. The headers contain Windows APIs projected into C++/WinRT. Whenever you want to use types from the Windows namespaces, include the corresponding C++/WinRT projection Windows namespace headers like this. The `using namespace` directives are optional, but convenient.
 
 All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and the Windows SDK declare types in the root namespace **Windows**. These distinct namespaces let you migrate from C++/CX to C++/WinRT at your own pace.
 
@@ -103,7 +103,7 @@ All the projected types are in the C++/WinRT root namespace **winrt**. Both [C++
 
 The code then gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) object (see [String handling in C++/WinRT](strings.md)). The **hstring** is then output, via **c_str**, which will look familiar to you if you've used strings from the C++ Standard Library.
 
-As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner programming style from traditional COM programming. You don't need to explicitly initialize COM (**init_apartment** does that for you), work with COM pointers, nor handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions for a natural and modern programming style.
+As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner programming style from traditional COM programming. You don't need to explicitly initialize COM (**winrt::init_apartment** does that for you), work with COM pointers, nor handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions for a natural and modern programming style.
 
 ## Custom types in the C++/WinRT projection
 You can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types&mdash;in your C++/WinRT programming. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we used [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick start above.

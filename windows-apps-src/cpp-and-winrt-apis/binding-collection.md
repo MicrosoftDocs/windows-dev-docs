@@ -20,7 +20,7 @@ A collection that can be effectively bound to a XAML items control is known as a
 This walkthrough builds on the project created in [XAML controls; binding to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.
 
 > [!NOTE]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## What does *observable* mean for a collection?
 If a runtime class that represents a collection chooses to raise the [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) event whenever an element is added to it or removed from it, then the runtime class is an observable collection.
@@ -364,3 +364,7 @@ Now build and run the project. Click the button to execute the **Click** event h
 ## Important APIs
 * [IObservableVector&lt;T&gt;::VectorChanged](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
+
+## Related topics
+* [Consume APIs with C++/WinRT](consume-apis.md)
+* [Author APIs with C++/WinRT](author-apis.md)

@@ -21,7 +21,7 @@ This topic demonstrates how to author a Windows Runtime Component containing a r
 > For info about the current availability of the C++/WinRT Visual Studio Extension (VSIX) (which provides project template support, as well as C++/WinRT MSBuild properties and targets) see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt).
 
 > [!NOTE]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## Windows::Foundation::EventHandler&lt;T&gt; and TypedEventHandler&lt;T&gt;
 If you want to raise an event from a runtime class implemented in a Windows Runtime Component, then you should use [**Windows::Foundation::EventHandler**](/uwp/api/windows.foundation.eventhandler) or [**TypedEventHandler**](/uwp/api/windows.foundation.eventhandler) for your event's delegate type. The type parameters must be Windows Runtime types, so primitive types are allowed as well as third-party runtime classes.
@@ -150,4 +150,5 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 Each time you click the window, you subtract 1 from the bank account's balance. To demonstrate that the event is being raised as expected, put a breakpoint inside the lambda expression, run the app, and click inside the window.
 
 ## Related topics
-* [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md)
+* [Consume APIs with C++/WinRT](consume-apis.md)
+* [Author APIs with C++/WinRT](author-apis.md)
