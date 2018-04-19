@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -336,7 +336,7 @@ This resource has the following values.
 
 | Value      | Type   | Description      |
 |------------|--------|-------------------|
-| id            | string  | The ID of the submission.  |
+| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md), [get all apps](get-all-apps.md), and [get an app](get-an-app.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
 | applicationCategory           | string  |   A string that specifies the [category and/or subcategory](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) for your app. Categories and subcategories are combined into a single string with the underscore '_' character, such as **BooksAndReference_EReader**.      |  
 | pricing           |  object  | A [pricing resource](#pricing-object) that contains pricing info for the app.        |   
 | visibility           |  string  |  The visibility of the app. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   

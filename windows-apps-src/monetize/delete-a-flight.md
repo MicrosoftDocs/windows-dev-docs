@@ -4,7 +4,7 @@ ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
 description: Use this method in the Microsoft Store submission API to delete a package flight for an app that is registered to your Windows Dev Center account.
 title: Delete a package flight
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -45,7 +45,7 @@ This method has the following syntax. See the following sections for usage examp
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Required. The Store ID of the app that contains the package flight you want to delete. The Store ID for the app is available on the Dev Center dashboard.  |
-| flightId | string | Required. The ID of the package flight to delete.  For a flight that was created in the Dev Center dashboard, this ID is available in the URL for the flight page in the dashboard. This ID is also available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
+| flightId | string | Required. The ID of the package flight to delete. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in the Dev Center dashboard, this ID is also available in the URL for the flight page in the dashboard.  |
 
 
 ### Request body
