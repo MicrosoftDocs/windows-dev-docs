@@ -4,7 +4,7 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 04/10/2018
+ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -84,7 +84,7 @@ For UWP apps, all packages must target a version of Windows 10 supported by the 
 
 The versions currently supported range from: 
 - Minimum: 10.0.10500.0
-- Maximum: 10.0.17133.0
+- Maximum: 10.0.17134.0
 
 
 ## StoreManifest XML file
