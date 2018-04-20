@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, weak, referenc
 ms.localizationpriority: medium
 ---
 
-# Weak references in [C++/WinRT](intro-to-using-cpp-with-winrt.md)
+# Weak references in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
 You should be able, more often than not, to design your own C++/WinRT APIs in such a way as to avoid the need for cyclic references and weak references. However, when it comes to the native implementation of the XAML-based UI frameworkL&mdash;because of the historic design of the framework&mdash;the weak reference mechanism in C++/WinRT is necessary to handle cyclic references. Outside of XAML, it's unlikely you'll need to use weak references (although, there’s nothing XAML-specific about them in theory).
 
 For any given type that you declare, it's not immediately obvious to C++/WinRT whether or when weak references are needed. So, C++/WinRT provides weak reference support automatically on the struct template [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements), from which your own C++/WinRT types directly or indirectly derive. It's pay-for-play, in that it doesn't cost you anything unless your object is actually queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609). And you can choose explicitly to [opt out of that support](#opting-out-of-weak-reference-support).

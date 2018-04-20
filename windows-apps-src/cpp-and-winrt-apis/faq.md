@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, as
 ms.localizationpriority: medium
 ---
 
-# Frequently-asked questions about [C++/WinRT](intro-to-using-cpp-with-winrt.md)
+# Frequently-asked questions about [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
 Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT.
 
 ## What's a *runtime class*?

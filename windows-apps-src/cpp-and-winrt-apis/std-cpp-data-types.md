@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium
 ---
 
-# Standard C++ data types and [C++/WinRT](intro-to-using-cpp-with-winrt.md)
+# Standard C++ data types and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
 With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types.
 
 ## Standard initializer lists

@@ -11,14 +11,15 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, agile, object,
 ms.localizationpriority: medium
 ---
 
-# Agile objects in [C++/WinRT](intro-to-using-cpp-with-winrt.md)
-In the vast majority of cases, an instance of a Windows Runtime classes&mdash;like a standard C++ object&mdash;can be accessed from any thread. Such a class is *agile*. Only a small number of Windows Runtime classes that ship with Windows are non-agile, but when you consume them you need to take in to consideration their threading model and marshaling behavior (marshaling is passing data across a thread or process boundary). It's a good default for every Windows Runtime object to be agile, so your own C++/WinRT types are agile by default.
+# Agile objects in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+In the vast majority of cases, an instance of a Windows Runtime class&mdash;like a standard C++ object&mdash;can be accessed from any thread. Such a class is *agile*. Only a small number of Windows Runtime classes that ship with Windows are non-agile, but when you consume them you need to take into consideration their threading model and marshaling behavior (marshaling is passing data across a thread or process boundary). It's a good default for every Windows Runtime object to be agile, so your own C++/WinRT types are agile by default.
 
 But you can opt out. You might have a compelling reason to require an object of your type to reside, for example, in a given single-threaded apartment. This typically has to do with reentrancy requirements. But increasingly, even user interface (UI) APIs offer agile objects. In general, agility is the simplest and most performant option. Also, when you implement an activation factory, it must be agile even if your corresponding runtime class isn't.
 
 > [!NOTE]
-> The Windows Runtime is based on COM. In COM terms an agile class is registered with `ThreadingModel` == *Both*. For more info about COM threading models, see [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).
+> The Windows Runtime is based on COM. In COM terms, an agile class is registered with `ThreadingModel` = *Both*. For more info about COM threading models, see [Understanding and Using COM Threading Models](https://msdn.microsoft.com/library/ms809971).
 
+## Code examples
 Let's use an example implementation to illustrate how C++/WinRT supports agility.
 
 ```cppwinrt
