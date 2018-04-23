@@ -12,6 +12,7 @@
 ### [Localized Strings](configure-xbl/dev-center/localized-strings.md)
 ### [Privileges](configure-xbl/dev-center/privileges.md)
 ### [Rich Presence strings](configure-xbl/dev-center/rich-presence-configuration.md)
+### [Title Storage](configure-xbl/dev-center/title-storage.md)
 ### [Data sharing](configure-xbl/dev-center/data-sharing-udc.md)
 ### [Localized strings](configure-xbl/dev-center/localized-strings.md)
 ### [Single sign-on](configure-xbl/dev-center/single-sign-on.md)
