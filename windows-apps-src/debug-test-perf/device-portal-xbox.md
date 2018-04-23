@@ -195,3 +195,4 @@ This is a blank workspace, which you can customize to your liking. You can use t
 ## See also
 
 * [Windows Device Portal overview](device-portal.md)
+* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

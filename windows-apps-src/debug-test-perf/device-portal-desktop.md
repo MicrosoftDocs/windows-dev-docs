@@ -102,5 +102,9 @@ From an administrative command prompt, you can enable and configure parts of Dev
 	- This allows you to install your own SSL certificate to fix the SSL warning page that is typically seen in Device Portal. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
 	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-	- See the [MSDN Magazine article](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin. 
+	- See the [MSDN Magazine article](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
 
+## See also
+
+* [Windows Device Portal overview](device-portal.md)
+* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

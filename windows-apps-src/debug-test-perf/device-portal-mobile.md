@@ -78,3 +78,8 @@ Device Portal on mobile devices provides the standard set of pages. For detailed
 - Performance tracing (WPR) 
 - Devices
 - Networking
+
+## See also
+
+* [Windows Device Portal overview](device-portal.md)
+* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)

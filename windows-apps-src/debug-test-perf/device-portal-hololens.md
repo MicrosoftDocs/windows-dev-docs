@@ -161,7 +161,7 @@ Note that the app will run at startup even if kiosk mode is not enabled. Select 
 
 Allows you to record and play back input data for testing.
 - **Capture room**: Used to download a simulated room file that contains the spatial mapping mesh for the user's surroundings. Name the room and then click Capture to save the data as a .xef file on your PC. This room file can be loaded into the HoloLens emulator.
-- **Recording**: Check the streams to record, name the recording, and click or tap Record to start recoding. Perform actions with your HoloLens and then click Stop to save the data as a .xef file on your PC. This file can be loaded on the HoloLens emulator or device.
+- **Recording**: Check the streams to record, name the recording, and click or tap Record to start recording. Perform actions with your HoloLens and then click Stop to save the data as a .xef file on your PC. This file can be loaded on the HoloLens emulator or device.
 - **Playback**: Click or tap Upload recording to select a xef file from your PC and send the data to the HoloLens.
 - **Control mode**: Select Default or Simulation from the dropdown, and click or tap the Set button to select the mode on the HoloLens. Choosing "Simulation" disables the real sensors on your HoloLens and uses uploaded simulated data instead. If you switch to "Simulation", your HoloLens will not respond to the real user until you switch back to "Default".
 
@@ -171,3 +171,9 @@ Allows you to record and play back input data for testing.
 Sends keyboard input from the remote machine to the HoloLens.
 
 Click or tap the region under Virtual keyboard to enable sending keystrokes to the HoloLens. Type in the Input text textbox and click or tap Send to send the keystrokes to the active app.
+
+## See also
+
+* [Windows Device Portal overview](device-portal.md)
+* [Device Portal core API reference](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (APIs common to all Windows 10 devices)
+* [Device Portal mixed reality API reference](https://docs.microsoft.com/windows/mixed-reality/device-portal-api-reference) (an extended list of all REST APIs available for HoloLens)
