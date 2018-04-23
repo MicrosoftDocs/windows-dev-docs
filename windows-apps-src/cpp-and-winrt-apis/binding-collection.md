@@ -19,7 +19,7 @@ A collection that can be effectively bound to a XAML items control is known as a
 
 This walkthrough builds on the project created in [XAML controls; binding to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.
 
-> [!NOTE]
+> [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## What does *observable* mean for a collection?

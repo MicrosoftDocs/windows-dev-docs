@@ -168,7 +168,7 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 So, in this scenario, at the root of the inheritance hierarchy is the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct template once again.
 
-For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Events; how to author and handle them in C++/WinRT](events-author-handle.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
+For more details, code, and a walkthrough of authoring APIs in a Windows Runtime component, see [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
 
 ## If you're authoring a runtime class to be referenced in your XAML UI
 If your type is referenced by your XAML UI, then it needs to be a runtime class, even though it's in the same project as the XAML. Although they are typically activated across executable boundaries, a runtime class can instead be used within the compilation unit that implements it.

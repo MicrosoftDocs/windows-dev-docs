@@ -62,7 +62,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Events; how to author and handle them in C++/WinRT](events-author-handle.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
+For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component).
 
 ## If the API is implemented in the consuming project
 A type that's consumed from XAML UI must be a runtime class, even if it's in the same project as the XAML.
@@ -133,5 +133,5 @@ void f(MyProject::MyRuntimeClass const& myrc)
 * [winrt::Windows::Foundation::IUnknown::as](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 
 ## Related topics
-* [Events; how to author and handle them in C++/WinRT](events-author-handle.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
 * [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
