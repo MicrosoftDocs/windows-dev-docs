@@ -4,7 +4,7 @@ Description: You can use extensions to integrate your packaged desktop app with 
 Search.Product: eADQiWindows 10XVcnh
 title: Integrate your app with Windows 10 (Desktop Bridge)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 04/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -333,6 +333,7 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
 ## Perform setup tasks
 
 * [Create firewall exception for your app](#rules)
+* [Place your DLL files into any folder of the package](#load-paths)
 
 <a id="rules" />
 
@@ -394,6 +395,57 @@ Find the complete schema reference [here](https://docs.microsoft.com/uwp/schemas
       </desktop2:FirewallRules>  
   </desktop2:Extension>
 </Extensions>
+</Package>
+```
+
+<a id="load-paths" />
+
+### Place your DLL files into any folder of the package
+
+Use an extension to identify those folders. That way, the system can find and load the files that you place in them. Think of this extension as a replacement of the _%PATH%_ environment variable.
+
+If you don't use this extension, the system searches the package dependency graph of the process, the package root folder, and then the system directory (_%SystemRoot%\system32_) in that order. To learn more, see [Search order of Windows apps](https://msdn.microsoft.com/library/windows/desktop/ms682586.aspx#_search_order_for_windows_store_apps).
+
+Each package can contain only one of these extensions. That means that you can add one of them to your main package, and then add one to each of your [optional packages, and related sets](https://docs.microsoft.com/windows/uwp/packaging/optional-packages).
+
+#### XML namespace
+
+http://schemas.microsoft.com/appx/manifest/uap/windows10/6
+
+#### Elements and attributes of this extension
+Declare this extension at the package-level of your app manifest.
+
+```XML
+<Extension Category="windows.loaderSearchPathOverride">
+  <LoaderSearchPathOverride>
+    <LoaderSearchPathEntry FolderPath="[path]"/>
+  </LoaderSearchPathOverride>
+</Extension>
+
+```
+
+|Name | Description |
+|-------|-------------|
+|Category |Always ``windows.loaderSearchPathOverride``.
+|FolderPath | The path of the folder that contains your dll files. Specify a path that is relative to the root folder of the package. You can specify up to five paths in one extension. If you want the system to search for files in the root folder of the package, use an empty string for one of these paths. Don't included duplicate paths and make sure that your paths don't contain leading and trailing slashes or backslashes. <br><br> The system won't search subfolders, so make sure to explicitly list each folder that contains DLL files that you want the system to load.|
+
+#### Example
+
+```XML
+<Package
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+  IgnorableNamespaces="uap6">
+  ...
+    <Extensions>
+      <uap6:Extension Category="windows.loaderSearchPathOverride">
+        <uap6:LoaderSearchPathOverride>
+          <uap6:LoaderSearchPathEntry FolderPath=""/>
+          <uap6:LoaderSearchPathEntry FolderPath="folder1/subfolder1"/>
+          <uap6:LoaderSearchPathEntry FolderPath="folder2/subfolder2"/>
+        </uap6:LoaderSearchPathOverride>
+      </uap6:Extension>
+    </Extensions>
+...
 </Package>
 ```
 
