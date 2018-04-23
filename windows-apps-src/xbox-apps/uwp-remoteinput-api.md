@@ -29,17 +29,19 @@ The websocket a series of byte array messages. For each message the format is as
 
 The first byte indicates the input type. The following input types are supported:
 
-:------     | :-----
-KeyboardKeyCodes 0x01
-KeyboardScanCodes 0x02
+| Input Type        | Byte Value |
+|------------|-------------|
+Keyboard KeyCodes 0x01
+Keyboard ScanCodes 0x02
 Mouse 0x03
-ClearAll 0x04
+Clear All 0x04
 
-For KeyboardKeyCodes and KeyboardScanCodes, the second byte is the value of the keycode or scancode and the third byte is 1 for a down press and 0 for a release.
+For KeyboardKeyCodes and KeyboardScanCodes, the second byte is the value of the keycode or scancode and the third byte is 0x01 for a down press and 0x00 for a release.
 
 For a Mouse message, the next value is a UINT16 in network order (2 bytes) indicating the type of mouse event:
 
-:------     | :-----
+| Action Type        | UINT16 Value |
+|------------|-------------|
 Move 0x0001
 LeftDown 0x0002
 LeftUp 0x0004
@@ -60,7 +62,8 @@ ClearAll indicates any currently held down keys should be released. No other byt
 
 For sending Gamepad input, the keycode values which represent Gamepad button presses can be used with KeyboardKeyCodes. Those values are as follows:
 
-:------     | :-----
+| Gamepad Type        | Byte Value |
+|------------|-------------|
 VK_GAMEPAD_A                         0xC3
 VK_GAMEPAD_B                         0xC4
 VK_GAMEPAD_X                         0xC5
