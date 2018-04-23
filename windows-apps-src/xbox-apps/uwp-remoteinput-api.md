@@ -29,28 +29,30 @@ The websocket a series of byte array messages. For each message the format is as
 
 The first byte indicates the input type. The following input types are supported:
 
-KeyboardKeyCodes = 0x01
-KeyboardScanCodes = 0x02
-Mouse = 0x03
-ClearAll = 0x04
+:------     | :-----
+KeyboardKeyCodes 0x01
+KeyboardScanCodes 0x02
+Mouse 0x03
+ClearAll 0x04
 
 For KeyboardKeyCodes and KeyboardScanCodes, the second byte is the value of the keycode or scancode and the third byte is 1 for a down press and 0 for a release.
 
 For a Mouse message, the next value is a UINT16 in network order (2 bytes) indicating the type of mouse event:
 
-Move = 0x0001
-LeftDown = 0x0002
-LeftUp = 0x0004
-RightDown = 0x0008
-RightUp = 0x0010
-MiddleDown = 0x0020
-MiddleUp = 0x0040
-X1Down = 0x0080
-X1Up = 0x0100
-X2Down = 0x0200
-X2Up = 0x0400
-VerticalWheelMoved = 0x0800
-HorizontalWheelMoved = 0x1000
+:------     | :-----
+Move 0x0001
+LeftDown 0x0002
+LeftUp 0x0004
+RightDown 0x0008
+RightUp 0x0010
+MiddleDown 0x0020
+MiddleUp 0x0040
+X1Down 0x0080
+X1Up 0x0100
+X2Down 0x0200
+X2Up 0x0400
+VerticalWheelMoved 0x0800
+HorizontalWheelMoved 0x1000
 
 This byte is followed by two UINT32 values in network order, and an optional third UINT32 for wheel actions. The first two values are the X and Y coordinate and the third is the wheel delta. The X and Y coordinates are expected to be a value between 0 and 65535 indicating the relative position of the mouse in the horizontal and vertical planes.
 
@@ -58,6 +60,7 @@ ClearAll indicates any currently held down keys should be released. No other byt
 
 For sending Gamepad input, the keycode values which represent Gamepad button presses can be used with KeyboardKeyCodes. Those values are as follows:
 
+:------     | :-----
 VK_GAMEPAD_A                         0xC3
 VK_GAMEPAD_B                         0xC4
 VK_GAMEPAD_X                         0xC5
