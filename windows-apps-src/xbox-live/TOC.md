@@ -10,6 +10,7 @@
 ### [Featured Stats and Leaderboards](configure-xbl/dev-center/featured-stats-and-leaderboards.md)
 ### [Game DVR](configure-xbl/dev-center/game-dvr.md)
 ### [Localized Strings](configure-xbl/dev-center/localized-strings.md)
+### [Privileges](configure-xbl/dev-center/privileges.md)
 ### [Rich Presence strings](configure-xbl/dev-center/rich-presence-configuration.md)
 ### [Data sharing](configure-xbl/dev-center/data-sharing-udc.md)
 ### [Localized strings](configure-xbl/dev-center/localized-strings.md)
