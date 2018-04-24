@@ -4,7 +4,7 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: Mobile operator billing
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 03/09/2018
+ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -26,6 +26,7 @@ Mobile Operator Billing is currently supported by these mobile operators.
 
 | Country/region  | Mobile operators                 |
 |-----------------|----------------------------------|
+| Australia       | Optus                            |
 | Austria         | Hutchison 3G Austria, A1 Telekom, T-Mobile / tele.ring  |
 | Belgium         | Base, Proximus                   |
 | Canada          | Telus                            |
