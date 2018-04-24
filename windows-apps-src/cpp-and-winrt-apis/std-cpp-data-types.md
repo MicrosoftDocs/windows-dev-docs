@@ -18,7 +18,7 @@ With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types,
 An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain Windows Runtime constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
 
 ```cppwinrt
-#include "winrt/Windows.Storage.Streams.h"
+#include <winrt/Windows.Storage.Streams.h>
 
 using namespace winrt::Windows::Storage::Streams;
 

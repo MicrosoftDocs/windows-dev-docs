@@ -49,7 +49,7 @@ Here's a code example (based on the C++/CX **Blank App** project template) showi
 
 #include "pch.h"
 #include "MainPage.xaml.h"
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 #include <sstream>
 
 using namespace InteropExample;

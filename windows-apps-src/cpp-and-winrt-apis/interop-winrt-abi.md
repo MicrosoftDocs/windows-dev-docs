@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. You can use it to interop between code that uses these two ways of programming with the Windows Runtime, or you can use the function as you gradually move your code from the ABI to C++/WinRT.
 
 ## What are Windows Runtime ABI types?
-The Windows SDK headers in the folder "%WindowsSdkDir%Include\10.0.17133.0\winrt" (adjust the SDK version number for your case, if necessary), are the Windows Runtime ABI header files. They were produced by the MIDL compiler. Here's an example of including one of these headers.
+The Windows SDK headers in the folder "%WindowsSdkDir%Include\10.0.17134.0\winrt" (adjust the SDK version number for your case, if necessary), are the Windows Runtime ABI header files. They were produced by the MIDL compiler. Here's an example of including one of these headers.
 
 ```
 #include <windows.foundation.h>
@@ -39,7 +39,7 @@ IUriRuntimeClass is a COM interface. But more than that&mdash;since its base is 
 
 The Windows Runtime is based on Component Object Model (COM) APIs. You can access the Windows Runtime that way, or you can access it through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
 
-For example, if you look in the folder "%WindowsSdkDir%Include\10.0.17133.0\cppwinrt\winrt" (again, adjust the SDK version number for your case, if necessary), then you'll find the C++/WinRT language projection headers. There's a header for each Windows namespace, just like there's one ABI header per Windows namespace. Here's an example of including one of the C++/WinRT headers.
+For example, if you look in the folder "%WindowsSdkDir%Include\10.0.17134.0\cppwinrt\winrt" (again, adjust the SDK version number for your case, if necessary), then you'll find the C++/WinRT language projection headers. There's a header for each Windows namespace, just like there's one ABI header per Windows namespace. Here's an example of including one of the C++/WinRT headers.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>

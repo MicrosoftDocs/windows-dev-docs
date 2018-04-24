@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it.
-title: XAML items controls; binding to a C++/WinRT collection
+title: XAML items controls; bind to a C++/WinRT collection
 ms.author: stwhi
 ms.date: 03/07/2018
 ms.topic: article
@@ -11,13 +11,13 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control,
 ms.localizationpriority: medium
 ---
 
-# XAML items controls; binding to a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) collection
+# XAML items controls; bind to a [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) collection
 > [!NOTE]
 > **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
 A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable collections in C++/WinRT, and how to bind XAML items controls to them.
 
-This walkthrough builds on the project created in [XAML controls; binding to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.
+This walkthrough builds on the project created in [XAML controls; bind to a C++/WinRT property](binding-property.md), and it adds to the concepts explained in that topic.
 
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
@@ -283,7 +283,7 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 The event arguments indicate both that an element was inserted, and also what its index is (the last element, in this case). These arguments enable a XAML items control to respond to the event and to refresh itself in the optimal way.
 
 ## Add a **BookSkus** collection to **BookstoreViewModel**
-In [XAML controls; binding to a C++/WinRT property](binding-property.md), we added a property of type **BookSku** to our main view model. In this step, we'll use **single_threaded_observable_vector&lt;T&gt;** to help us implement an observable collection of **BookSku** on the same view model.
+In [XAML controls; bind to a C++/WinRT property](binding-property.md), we added a property of type **BookSku** to our main view model. In this step, we'll use **single_threaded_observable_vector&lt;T&gt;** to help us implement an observable collection of **BookSku** on the same view model.
 
 Declare a new property in `BookstoreViewModel.idl`.
 

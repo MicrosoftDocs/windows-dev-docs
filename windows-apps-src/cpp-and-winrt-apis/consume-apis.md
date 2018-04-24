@@ -21,7 +21,7 @@ This topic shows how to consume C++/WinRT APIs, whether they're part of Windows,
 This is the most common case in which you'll consume a Windows Runtime API. Here's a simple code example.
 
 ```cppwinrt
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -53,7 +53,7 @@ In your application project, reference the Windows Runtime component's Windows R
 Then, just as for a Windows namespace type, you include a header and construct the projected type via one of its constructors. Your application project's startup code registers the runtime class, and the projected type's constructor calls [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) to activate the runtime class from the referenced component.
 
 ```cppwinrt
-#include "winrt/BankAccountWRC.h"
+#include <winrt/BankAccountWRC.h>
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
@@ -92,7 +92,7 @@ MainPage::MainPage()
 }
 ```
 
-For more details, code, and a walkthrough of consuming a runtime class implemented in the consuming project, see [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+For more details, code, and a walkthrough of consuming a runtime class implemented in the consuming project, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 ## Instantiating and returning projected types and interfaces
 Here's an example of what projected types and interfaces might look like in your consuming project.
@@ -134,4 +134,4 @@ void f(MyProject::MyRuntimeClass const& myrc)
 
 ## Related topics
 * [Author events in C++/WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

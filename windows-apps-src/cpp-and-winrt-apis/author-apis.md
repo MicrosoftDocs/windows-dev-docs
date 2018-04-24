@@ -22,7 +22,7 @@ This topic shows how to author C++/WinRT APIs by using the [**winrt::implements*
 
 In both cases, the type that implements your C++/WinRT APIs is called the *implementation type*.
 
-> [!NOTE]
+> [!IMPORTANT]
 > It's important to distinguish the concept of an implementation type from that of a projected type. The projected type is described in [Consume APIs with C++/WinRT](consume-apis.md).
 
 ## If you're *not* authoring a runtime class
@@ -194,7 +194,7 @@ namespace winrt::MyProject
 }
 ```
 
-For an example walkthrough of implementing the **INotifyPropertyChanged** interface on a runtime class, see [XAML controls; binding to a C++/WinRT property](binding-property.md).
+For an example walkthrough of implementing the **INotifyPropertyChanged** interface on a runtime class, see [XAML controls; bind to a C++/WinRT property](binding-property.md).
 
 The procedure for consuming your runtime class in this scenario is described in [Consume APIs with C++/WinRT](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project).
 
@@ -215,10 +215,10 @@ Here are some points to take away from the listings we've seen above.
 ## Instantiating and returning implementation types and interfaces
 For this section, let's take as an example an implementation type named **MyType**, which implements the [**IStringable**](/uwp/api/windows.foundation.istringable) and [**IClosable**](/uwp/api/windows.foundation.iclosable) interfaces.
 
-You can derive **MyType** directly from **implements** (it's not a runtime class).
+You can derive **MyType** directly from [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) (it's not a runtime class).
 
 ```cppwinrt
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -250,7 +250,7 @@ IStringable istringable = winrt::make<MyType>();
 ```
 
 > [!NOTE]
-> However, if you're referencing your type from your XAML UI, then there will be both an implementation type and a projected type in the same project. In that case, [**make**] returns an instance of the projected type. For a code example of that scenario, see [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
+> However, if you're referencing your type from your XAML UI, then there will be both an implementation type and a projected type in the same project. In that case, [**make**] returns an instance of the projected type. For a code example of that scenario, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
 We can only use `istringable` (in the code example above) to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) on it to query for other interfaces, which you can also either use or return.
 
@@ -260,7 +260,7 @@ IClosable iclosable = istringable.as<IClosable>();
 iclosable.Close();
 ```
 
-If you need to access all of the implementation's members, and then later return an interface to a caller, then use the [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self) function template. [**make_self**] returns a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) wrapping the implementation type. You can access the members of all of its interfaces (using the arrow operator), you can return it to a caller as-is, or you can call **as** on it and return the resulting interface object to a caller.
+If you need to access all of the implementation's members, and then later return an interface to a caller, then use the [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self) function template. **make_self** returns a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) wrapping the implementation type. You can access the members of all of its interfaces (using the arrow operator), you can return it to a caller as-is, or you can call **as** on it and return the resulting interface object to a caller.
 
 ```cppwinrt
 winrt::com_ptr<MyType> myimpl = winrt::make_self<MyType>();
@@ -369,5 +369,5 @@ Until you make the edit described above (to pass that constructor parameter on t
 
 ## Related topics
 * [Consume APIs with C++/WinRT](consume-apis.md)
-* [XAML controls; binding to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
 

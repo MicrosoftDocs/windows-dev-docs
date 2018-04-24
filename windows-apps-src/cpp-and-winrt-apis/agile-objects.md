@@ -23,7 +23,7 @@ But you can opt out. You might have a compelling reason to require an object of 
 Let's use an example implementation to illustrate how C++/WinRT supports agility.
 
 ```cppwinrt
-#include "winrt/Windows.Foundation.h"
+#include <winrt/Windows.Foundation.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;

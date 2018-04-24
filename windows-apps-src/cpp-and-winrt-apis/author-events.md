@@ -111,7 +111,7 @@ During the build process, the `cppwinrt.exe` tool is run to process the referenc
 Include that header in `App.cpp`.
 
 ```cppwinrt
-#include "winrt/BankAccountWRC.h"
+#include <winrt/BankAccountWRC.h>
 ```
 
 Also in `App.cpp`, add the following code to instantiate a BankAccount (using the projected type's default constructor), register an event handler, and then cause the account to go into debit.

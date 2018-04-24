@@ -33,8 +33,8 @@ The code example below receives an asynchronous operation object from **Retrieve
 // main.cpp
 
 #include "pch.h"
-#include "winrt/Windows.Foundation.h"
-#include "winrt/Windows.Web.Syndication.h"
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Web.Syndication.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -64,8 +64,8 @@ C++/WinRT integrates C++ coroutines into the programming model to provide a natu
 // main.cpp
 
 #include "pch.h"
-#include "winrt/Windows.Foundation.h"
-#include "winrt/Windows.Web.Syndication.h"
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
 
 using namespace winrt;
@@ -111,8 +111,8 @@ In this next example we wrap a call to **RetrieveFeedAsync**, for a specific URI
 // main.cpp
 
 #include "pch.h"
-#include "winrt/Windows.Foundation.h"
-#include "winrt/Windows.Web.Syndication.h"
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
 
 using namespace winrt;
@@ -157,8 +157,8 @@ If you're asynchronously returning a type that's *not* a Windows Runtime type, t
 // main.cpp
 
 #include "pch.h"
-#include "winrt/Windows.Foundation.h"
-#include "winrt/Windows.Web.Syndication.h"
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Web.Syndication.h>
 #include <iostream>
 #include <ppltasks.h>
 
