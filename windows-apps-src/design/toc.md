@@ -113,6 +113,7 @@
 ## [Content transition](motion/content-transition-animations.md)
 ## [Add and delete](motion/motion-list.md)
 ## [Fade](motion/motion-fade.md)
+## [Page transitions](motion/page-transitions.md)
 ## [Parallax](motion/parallax.md)
 ## [Press feedback](motion/motion-pointer.md)
 ## [Animations in XAML](motion/xaml-animation.md)
