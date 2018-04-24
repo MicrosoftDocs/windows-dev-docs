@@ -118,7 +118,7 @@ private:
 };
 ```
 
-Alternatively, when you register a delegate, you can specify **winrt::auto_revoke** to request an event revoker. When that revoker goes out of scope, it automatically revokes your delegate. In this example, there's no need to store the event source, and no need for a destructor.
+Alternatively, when you register a delegate, you can specify **winrt::auto_revoke** (which is a value of type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) to request an event revoker. When that revoker goes out of scope, it automatically revokes your delegate. In this example, there's no need to store the event source, and no need for a destructor.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -250,6 +250,7 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 In the lamba capture clause, a temporary variable is created, representing a weak reference to *this*. In the body of the lambda, if a strong reference to *this* can be obtained, then the **OnCompositionScaleChanged** function is called. That way, inside **OnCompositionScaleChanged**, *this* can safely be used.
 
 ## Important APIs
+* [winrt::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 

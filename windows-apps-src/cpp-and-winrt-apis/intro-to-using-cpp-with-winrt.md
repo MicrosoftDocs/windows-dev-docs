@@ -37,7 +37,7 @@ Another project property to be aware of is **C/C++** > **General** > **Treat War
 > 
 > **The C++/WinRT Visual Studio Extension (VSIX) is not yet released.**
 > 
-> For C++/WinRT project templates, as well as C++/WinRT MSBuild properties and targets, download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/). You'll need Visual Studio 2017 Version 15.6, or later. You can then create a new project in Visual Studio, or you can convert an existing project by adding the `<CppWinRTProject>true</CppWinRTProject>` property to its `.vcxproj` file, inside Project > PropertyGroup. Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
+> For C++/WinRT project templates, as well as C++/WinRT MSBuild properties and targets, download and install the C++/WinRT Visual Studio Extension (VSIX) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/). You'll need Visual Studio 2017 Version 15.6, or later, and Windows SDK version 10.0.17134.0 (Windows 10, version 1803). You can then create a new project in Visual Studio, or you can convert an existing project by adding the `<CppWinRTProject>true</CppWinRTProject>` property to its `.vcxproj` file, inside Project > PropertyGroup. Once you've added that property, you'll get C++/WinRT MSBuild support for the project, including invoking the `cppwinrt.exe` tool.
 
 These are the Visual Studio project templates for C++/WinRT.
 
