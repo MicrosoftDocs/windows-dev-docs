@@ -38,7 +38,7 @@ There are two pieces involved in making this work. First, the **DataWriter::Writ
 void WriteBytes(array_view<uint8_t const> value) const
 ```
 
- **array_view** is a custom C++/WinRT type that safely represents a contiguous series of values (it is defined in `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`).
+ **array_view** is a custom C++/WinRT type that safely represents a contiguous series of values (it is defined in the C++/WinRT base library, which is `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`).
 
 Second, **array_view** has an initializer-list constructor.
 

@@ -370,4 +370,3 @@ Until you make the edit described above (to pass that constructor parameter on t
 ## Related topics
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
-
