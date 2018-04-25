@@ -78,11 +78,7 @@ T convert_from_abi(::IUnknown* from)
 
 This function simply calls [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) to query for the default interface of the requested C++/WinRT type.
 
-A helper function is not required to convert from a C++/WinRT object to the
-ABI equivalent interface pointer. Simply use the **as** member function to query for the
-requested interface. **as** returns a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) object wrapping the requested ABI type.
-
-A helper function is not required to convert from a C++/WinRT object to the ABI equivalent interface pointer. Simply use the [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) member function to query for the requested interface. **as** returns a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) object wrapping the requested ABI type.
+A helper function is not required to convert from a C++/WinRT object to the equivalent ABI interface pointer. Simply use the [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)) member function to query for the requested interface. **as** returns a [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) object wrapping the requested ABI type.
 
 ## Code example
 Here's a code example (based on the **Console App** project template) showing this helper in practice. It also illustrates how you can deal with namespace collisions between the ABI and the projection.
