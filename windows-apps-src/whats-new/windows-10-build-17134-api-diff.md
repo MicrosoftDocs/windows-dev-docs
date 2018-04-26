@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # New APIs in Windows 10 build 17134
 
-New and updated API namespaces have been made available to developers in Windows 10 build 17134. Below is a full list of documentation published for namespaces added or modified in this release.
+New and updated API namespaces have been made available to developers in Windows 10 build 17134 (Also known as the April Update or version 1803). Below is a full list of documentation published for namespaces added or modified in this release.
 
 For information on APIs added in the previous public release, see [New APIs in the Windows 10 Fall Creators Update](windows-10-build-16299-api-diff.md).
 
