@@ -101,6 +101,6 @@ public class StartViewModel : Observable
 }
 ```
 
-The three pages in this sample and the order in which they can be navigated to are shown below.
+You can find implementations of the other two navigation patterns, here:
 
-![Mixed navigation sample](https://github.com/Microsoft/WindowsTemplateStudio/tree/dev/samples/navigation)
+[Mixed navigation samples](https://github.com/Microsoft/WindowsTemplateStudio/tree/dev/samples/navigation)
