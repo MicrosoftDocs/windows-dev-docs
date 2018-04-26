@@ -1672,6 +1672,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "windows-apps-src/devices-sensors/pos-advanced-connectivity.md",
+      "redirect_url": "/windows/uwp/devices-sensors/point-of-service",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "windows-apps-src/porting/hwa-to-uwp-root.md",
       "source_path": "windows-apps-src/porting/hwa-access-features.md",
       "source_path": "windows-apps-src/porting/hwa-chrome-conversion.md",
