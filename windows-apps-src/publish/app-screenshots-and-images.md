@@ -4,7 +4,7 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: App screenshots, images, and trailers
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 4/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -202,6 +202,7 @@ When providing your trailers, be sure to follow these requirements:
 - The video resolution must be either 1920 x 1080 pixels or 3840 x 2160 pixels.
 - The thumbnail must be a PNG file with a resolution of either 1920 x 1080 pixels or 3840 x 2160 pixels.
 - The title can’t exceed 255 characters. 
+- Do not include age ratings in your trailers.
 
 Like the other fields on the Store listing page, trailers must pass certification before you can publish them to the Microsoft Store. Be sure your trailers comply with the [Microsoft Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx).
 
