@@ -7,19 +7,21 @@ ms.date: 03/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, Windows Machine Learning, winml, Windows ML
+keywords: windows 10, uwp, windows machine learning, winml, windows ML
 ms.localizationpriority: medium
 ---
 
 # Get started with Windows ML
 
-In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows Machine Learning in your app.
+In this tutorial, we'll build a simple UWP app that uses a trained machine learning model to recognize a numeric digit drawn by the user. This tutorial primarily focuses on how to load and use Windows ML in your app.
 
 ## Prerequisites
 
 - [Windows SDK - Build 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/) **Note**: Inside the Visual Studio Installer, you'll need to check off the optional Windows 10 Preview SDK (10.0.17110.0).
- 
+- [Visual Studio (Version 15.7 - Preview 1)](https://www.visualstudio.com/vs/preview/) 
+
+    **Note**: Inside the Visual Studio Installer, you'll need to check off the optional Windows 10 Preview SDK (10.0.17110.0).
+
 ## 1. Download the sample
 
 First, you'll need to download our [MNIST_GetStarted sample](https://github.com/Microsoft/Windows-Machine-Learning) from GitHub. We've provided a template with implemented XAML controls and events, including:
@@ -32,7 +34,7 @@ A completed MNIST sample is also available to download from GitHub.
 
 ## 2. Open project in Visual Studio Preview
 
-Launch Visual Studio Preview, and open the MNIST sample application. Note that if the solution is shown as unavailable, you'll need to right-click and select "Reload Project."
+Launch Visual Studio Preview, and open the MNIST sample application. (If the solution is shown as unavailable, you'll need to right-click and select "Reload Project.")
 
 Inside the solution explorer, the project has three main code files:
 

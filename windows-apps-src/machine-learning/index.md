@@ -1,7 +1,7 @@
 ---
 author: serenaz
 title: Windows ML
-description: Integrate machine learning models into your apps with Windows ML. The platform provides local, hardware-accelerated evaluation on Windows 10 devices. 
+description: Integrate machine learning models into your Windows apps with Windows ML. The platform provides local, hardware-accelerated evaluation on Windows 10 devices. 
 ms.author: sezhen
 ms.date: 03/07/2018
 ms.topic: article
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 # Windows ML
 
-Windows Machine Learning (ML) evaluates trained machine learning models locally on Windows 10 devices, allowing developers to use pre-trained models within their applications. The platform provides hardware-accelerated performance by leveraging the device's CPU or GPU to compute evaluations for both classical Machine Learning algorithms and Deep Learning.
+Windows Machine Learning (ML) allows you to use trained machine learning models in your applications. The platform evaluates trained models locally on Windows 10 devices, providing hardware-accelerated performance by leveraging the device's CPU or GPU, and computes evaluations for both classical ML algorithms and Deep Learning.
 
 ![Windows machine learning](images/winml-graphic.png)
 
@@ -21,7 +21,7 @@ Windows Machine Learning (ML) evaluates trained machine learning models locally 
 
 | Topic | Description |
 | - | - |
-| [Overview](overview.md) | Learn about the Windows ML platform and how to use Windows ML in your app. |
+| [Overview](overview.md) | Learn about Windows ML and how to use trained models in your app. |
 | [Get started](get-started.md) | Create your first Windows ML app with this step-by-step tutorial. |
 | [Train a model](train-ai-model.md) | Train a model for Windows ML using Visual Studio Tools for AI. |
 | [Convert a model](conversion-samples.md) | Convert existing models to ONNX format to use with Windows ML. |
