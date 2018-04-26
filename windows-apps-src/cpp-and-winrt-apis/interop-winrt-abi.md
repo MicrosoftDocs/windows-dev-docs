@@ -52,7 +52,7 @@ namespace winrt::Windows::Foundation
 {
 	struct Uri : IUriRuntimeClass, ...
 	{
-		hstring AbsoluteUri() const { ... }
+		winrt::hstring AbsoluteUri() const { ... }
 		...
 	};
 }
