@@ -102,7 +102,7 @@ protected override async void OnFileActivated(FileActivatedEventArgs args)
 
 ### Add a FileAssociationService
 
-Then we need a service that handles this new type of activation. We'll call it FileAssociationService, it derives from `ApplicationHandler<T>`. 
+Then we need a service that handles this new type of activation. We'll call it FileAssociationService, it derives from `ActivationHandler<T>`. 
 As it manages activation by File​Activated​Event​Args the signature would be: 
 
 ```csharp
