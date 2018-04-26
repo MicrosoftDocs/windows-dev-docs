@@ -53,6 +53,7 @@ The following table describes the commands for **MakeAppx.exe**.
 | unbundle      | Unpacks all packages to a subdirectory under the specified output path named after the bundle full name. |
 | encrypt       | Creates an encrypted app package or bundle from the input package/bundle at the specified output package/bundle. |
 | decrypt       | Creates an decrypted app package or bundle from the input app package/bundle at the specified output package/bundle. |
+| build         |  |
 
 
 This list of options applies to all commands:
@@ -223,6 +224,22 @@ MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFil
 MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
 MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
 ```
+
+### Build an app package 
+
+**MakeAppx.exe** can build an app based on it's app package layout file. To learn how to create a package layout file and how to use **MakeAppx.exe** to build it, see [Package creation with the packaging layout](packaging-layout.md).  
+
+Options specific to the **build** command:
+
+| **Option**    | **Description**                       |
+|---------------|---------------------------------------|
+| /bc           | Specifies the sub-packages in a package family to be built.  |
+| /id           | Used to select packages to be built based on the package **ID** attribute. |
+| /ip           | Indicates the location of previous versions of an app package. |
+| /iv           | Automatically increments the version of the packages being built. |
+| /f            | Specifies the packaging layout file. |
+| /nbp          | Indicates that an app package should not be built. |
+| /op           | The output package destination. |
 
 ## Key files
 
