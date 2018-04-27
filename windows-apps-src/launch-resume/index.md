@@ -47,7 +47,7 @@ This section details the lifecycle of a Windows 10 Universal Windows Platform (U
 | [Create a Universal Windows Platform console app](console-uwp.md) | Learn how to write a Universal Windows Platform app that runs in a console window. |
 | [Create a Multi-instance UWP app](multi-instance-uwp.md) | Learn how to write a multi-instance Universal Windows Platform app. |
 
-The [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch one app from another app.
+The [Launch an app with a URI](launch-app-with-uri.md) section details how to use a Uniform Resource Identifier (URI) to launch an app.
 
 | Topic | Description |
 |-------|-------------|
@@ -56,7 +56,7 @@ The [Launch an app with a URI](launch-app-with-uri.md) section details how to us
 | [Launch an app for results](how-to-launch-an-app-for-results.md) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
 | [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) | This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone. |
 | [Launch the Windows Settings app](launch-settings-app.md) | Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages. |
-| [Launch the UWP app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
+| [Launch the Microsoft Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the UWP app to specific pages in the Store. |
 | [Launch the Windows Maps app](launch-maps-app.md) | Learn how to launch the Windows Maps app from your app. |
 | [Launch the People app](launch-people-apps.md) | This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions. |
 | [Support web-to-app linking with app URI handlers](web-to-app-linking.md) | Drive user engagement with your app by using app URI handlers. |
@@ -72,8 +72,9 @@ See other topics related to launching an app below.
 
 | Topic | Description |
 |-------|-------------|
-| [Reserved file and URI scheme names](reserved-uri-scheme-names.md) | This topic lists the reserved file and URI scheme names that are not available to your app. |
+| [Continue user activity, even across devices](useractivities.md) | Reengage users with your app, even across devices, by launching your app where the user left off. |
 | [Auto-launching with AutoPlay](auto-launching-with-autoplay.md) | You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. |
+| [Reserved file and URI scheme names](reserved-uri-scheme-names.md) | This topic lists the reserved file and URI scheme names that are not available to your app. |
 
 ## App services and extensions
 
@@ -102,6 +103,7 @@ The [Background tasks](support-your-app-with-background-tasks.md) section shows 
 | [Group background task registration](group-background-tasks.md)                                             | Isolate background task registration with groups. |
 | [Handle a cancelled background task](handle-a-cancelled-background-task.md)                                 | Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage. |
 | [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)       | Learn how your app can recognize background task progress and completion. |
+| [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) |Learn how to reduce the energy used in the background and interact with user settings for background activity. |
 | [Register a background task](register-a-background-task.md)                                                 | Learn how to create a function that can be re-used to safely register most background tasks. |
 | [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)         | Learn how to create a background task that responds to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) events. |
 | [Run a background task on a timer](run-a-background-task-on-a-timer-.md)                                    | Learn how to schedule a one-time background task, or run a periodic background task. |
@@ -111,8 +113,6 @@ The [Background tasks](support-your-app-with-background-tasks.md) section shows 
 | [Transfer data in the background](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | Use the background transfer API to copy files in the background. |
 | [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)                   | Use a background task to update your app's live tile with fresh content. |
 | [Use a maintenance trigger](use-a-maintenance-trigger.md)                                                   | Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in. |
-### See also
-* [Optimize background activity](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity) - Learn how to reduce the energy used in the background and interact with user settings for background activity.
 
 ## Remote Systems
 
