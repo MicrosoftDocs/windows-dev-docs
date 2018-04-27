@@ -21,11 +21,11 @@ Our time each day is spread across multiple devices. We might use our phone whil
 
 ![Windows timeline image](images/timeline.png)
 
-Likewise, Cortana can help you continue what you were doing previously on another Windows, iOS, or Android device.
+Likewise, linking your phone to your Windows PC allows you to continue what you were doing previously on your iOS or Android device.
 
-Think of a **UserActivity** as something specific the user was working on within your app. For example, if you are using a RSS reader, a **UserActivity** could be the feed that you are reading. If you are playing a game, the **UserActivity** could be the level that you are playing. If you are listening to a music app, the **UserActivity** could be the song that you are listening to. If you are working on a document, the **UserActivity** could be where you left off working on it, and so on.  In short, a **UserActivity** represents a destination within your app so that enables the user to resume what they were doing.
+Think of a **UserActivity** as something specific the user was working on within your app. For example, if you are using a RSS reader, a **UserActivity** could be the feed that you are reading. If you are playing a game, the **UserActivity** could be the level that you are playing. If you are listening to a music app, the **UserActivity** could be the playlist that you are listening to. If you are working on a document, the **UserActivity** could be where you left off working on it, and so on.  In short, a **UserActivity** represents a destination within your app so that enables the user to resume what they were doing.
 
-When you engage with a **UserActivity** by calling [UserActivity.UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession), the system creates a history record indicating the start and end time for that **UserActivity**. As you re-engage with that **UserActivity** over time, multiple history records are recorded for it.
+When you engage with a **UserActivity** by calling [UserActivity.CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), the system creates a history record indicating the start and end time for that **UserActivity**. As you re-engage with that **UserActivity** over time, multiple history records are recorded for it.
 
 ## Add User Activities to your app
 
@@ -72,7 +72,7 @@ The first line in the `GenerateActivityAsync()` method above gets a user’s [Us
 
 After getting or creating the **UserActivity**, specify the other two required fields:  `UserActivity.VisualElements.DisplayText`and `UserActivity.ActivationUri`.
 
-Next, save the **UserActivity** metadata by calling [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), and finally [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), which returns a [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). The **UserActivitySession** object that we can use to manage when the user is actually engaged with the **UserActivity**. For example, we should call `Dispose()` on the **UserActivitySession** when the user leaves the page. In the example above, we also call `Dispose()` on `_currentActivity` before calling `CreateSession()`. This is because we made `_currentActivity` a member field of our page, and we want to stop any existing activity before we start the new one (note: the `?` is an inline null-check).
+Next, save the **UserActivity** metadata by calling [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), and finally [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), which returns a [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). The **UserActivitySession** is the object that we can use to manage when the user is actually engaged with the **UserActivity**. For example, we should call `Dispose()` on the **UserActivitySession** when the user leaves the page. In the example above, we also call `Dispose()` on `_currentActivity` before calling `CreateSession()`. This is because we made `_currentActivity` a member field of our page, and we want to stop any existing activity before we start the new one (note: the `?` is the [null-conditional operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators) which tests for null before performing the member access).
 
 Since, in this case, the `ActivationUri` is a custom scheme, we also need to register the protocol in the application manifest. This is done in the Package.appmanifest XML file, or by using the designer.
 
@@ -112,6 +112,7 @@ Example adaptive card payload JSON string:
 { 
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json", 
   "type": "AdaptiveCard", 
+  "version": "1.0",
   "backgroundImage": "https://winblogs.azureedge.net/win/2017/11/eb5d872c743f8f54b957ff3f5ef3066b.jpg", 
   "body": [ 
     { 
