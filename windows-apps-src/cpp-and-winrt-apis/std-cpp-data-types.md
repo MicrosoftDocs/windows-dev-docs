@@ -1,9 +1,9 @@
 ---
 author: stevewhims
-description: With C++/WinRT, you can call WinRT APIs using Standard C++ data types.
+description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
 ms.author: stwhi
-ms.date: 03/01/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,23 +11,20 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
 ms.localizationpriority: medium
 ---
 
-# Standard C++ data types and C++/WinRT
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-With C++/WinRT, you can call WinRT APIs using Standard C++ data types, including some C++ Standard Library data types.
+# Standard C++ data types and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
+With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types.
 
 ## Standard initializer lists
-An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain WinRT constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
+An initializer list (**std::initializer_list**) is a C++ Standard Library construct. You can use initializer lists when you call certain Windows Runtime constructors and methods. For example, you can call [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes) with one.
 
 ```cppwinrt
-#include "winrt/Windows.Storage.Streams.h"
+#include <winrt/Windows.Storage.Streams.h>
 
 using namespace winrt::Windows::Storage::Streams;
 
 int main()
 {
-	init_apartment();
+	winrt::init_apartment();
 
 	InMemoryRandomAccessStream stream;
 	DataWriter dataWriter{stream};
@@ -41,7 +38,7 @@ There are two pieces involved in making this work. First, the **DataWriter::Writ
 void WriteBytes(array_view<uint8_t const> value) const
 ```
 
- **array_view** is a custom C++/WinRT type that safely represents a contiguous series of values (it is defined in `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`).
+ **array_view** is a custom C++/WinRT type that safely represents a contiguous series of values (it is defined in the C++/WinRT base library, which is `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`).
 
 Second, **array_view** has an initializer-list constructor.
 
@@ -69,28 +66,28 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 Two factors are at work here. First, the callee constructs a **std::vector** from the initializer list (this callee is async, so it's able to own that object, which it must). Second, C++/WinRT transparently (and without introducing copies) binds **std::vector** as a Windows Runtime collection parameter.
 
 ## Standard arrays and vectors
-**array_view** also has conversion constructors from **std::array** and **std::vector**.
+**array_view** also has conversion constructors from **std::vector** and **std::array**.
 
 ```cppwinrt
 template <typename C, size_type N> array_view(std::array<C, N>& value) noexcept
 template <typename C> array_view(std::vector<C>& vectorValue) noexcept
 ```
 
-So, you could instead call **DataWriter::WriteBytes** with a **std::array**.
-
-```cppwinrt
-std::array<byte, 3> theArray{ 99, 98, 97 };
-dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
-```
-
-Or with a **std::vector**.
+So, you could instead call **DataWriter::WriteBytes** with a **std::vector**.
 
 ```cppwinrt
 std::vector<byte> theVector{ 99, 98, 97 };
 dataWriter.WriteBytes(theVector); // theVector is converted to an array_view before being passed to WriteBytes.
 ```
 
-We bind **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**. If the callee is async then you must either copy or move the vector. In the code example below, we move ownership of the vector to the async callee.
+Or with a **std::array**.
+
+```cppwinrt
+std::array<byte, 3> theArray{ 99, 98, 97 };
+dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
+```
+
+C++/WinRT binds **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**, and it will be converted to the appropriate Windows Runtime collection of **winrt::hstring**. If the callee is async then you must either copy or move the vector. In the code example below, we move ownership of the vector to the async callee.
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<winrt::hstring> const& vecH)
@@ -99,7 +96,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 }
 ```
 
-But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime collection is expected. The following code example won't compile.
+But you can't pass a **std::vector&lt;std::wstring&gt;** where a Windows Runtime collection is expected. This is because, having converted to the appropriate Windows Runtime collection of **std::wstring**, the C++ language won't then coerce that collection's type parameter(s). Consequently, the following code example won't compile.
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
@@ -130,4 +127,4 @@ A host of constructors, operators, functions, and iterators are implemented for 
 For more examples and info, see the [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API reference topic.
 
 ## Important APIs
-* [winrt::array_view (C++/WinRT)](/uwp/cpp-ref-for-winrt/array-view)
+* [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)

@@ -47,6 +47,9 @@ Both templates add `SupportsMultipleInstances` to the package.appxmanifest file.
 
  Multi-instancing support for UWP apps goes beyond simply making it possible to launch multiple instances of the app. It allows for customization in cases where you want to select whether a new instance of your app is launched or an instance that is already running is activated. For example, if the app is launched to edit a file that is already being edited in another instance, you may want to redirect the activation to that instance instead of opening up another instance that  that is already editing the file.
 
+To see it in action, watch this video about Creating multi-instance UWP apps:
+> [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
+
 The **Multi-Instance Redirection UWP app** template adds `SupportsMultipleInstances` to the package.appxmanifest file as shown above, and also adds a **Program.cs** (or **Program.cpp**, if you are using the C++ version of the template) to your project that contains a `Main()` function. The logic for redirecting activation goes in the `Main` function. The template for **Program.cs** looks like this:
 
 ``` csharp

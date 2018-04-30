@@ -4,7 +4,7 @@ title: Windows 10 game development guide
 description: An end-to-end guide to resources and information for developing Universal Windows Platform (UWP) games.
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
-ms.date: 03/27/2018
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -70,6 +70,10 @@ Throughout this guide, you'll find deep links to relevant documentation—organi
     <tr>
         <td>Azure for gaming</td>
         <td><a href="https://azure.microsoft.com/solutions/gaming/">Build and scale your games using Azure</a></td>
+    </tr>
+    <tr>
+        <td>PlayFab</td>
+        <td><a href="https://api.playfab.com/">Complete backend solution for live games</a></td>
     </tr>
     <tr>
         <td>UWP on Xbox One</td>
@@ -257,7 +261,6 @@ Developer forums are a great place to ask and answer game development questions 
         <td>UWP apps developer forum</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">Developing Universal Windows Platform apps</a></td>
     </tr>
-
     <tr>
         <td>Desktop applications developer forums</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Windows desktop applications forums</a></td>
@@ -281,6 +284,10 @@ Developer forums are a great place to ask and answer game development questions 
     <tr>
         <td>Xbox Live forum</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=xboxlivedev">Xbox Live development forum</a></td>
+    </tr>
+    <tr>
+        <td>PlayFab forums</td>
+        <td><a href="https://community.playfab.com/index.html">PlayFab forums</a></td>
     </tr>
 </table>
 
@@ -632,6 +639,49 @@ Universal Windows Platform Bridges are technologies that bring your existing app
         <td><a href="https://developer.microsoft.com/windows/bridges/desktop">Convert your desktop application to a UWP app</a></td>
     </tr>
 </table>
+
+#### PlayFab
+
+Now part of the Microsoft family, PlayFab is a complete back-end platform for live games and a powerful way for independent studios to get started. Boost revenue, engagement, and retention—while cutting costs—with game services, real-time analytics, and LiveOps.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>PlayFab</td>
+        <td><a href="https://playfab.com/">Overview of tools and services</a></td>
+    </tr>
+    <tr>
+        <td>Getting started</td>
+        <td><a href="https://api.playfab.com/docs/general-getting-started">General getting started guide</a></td>
+    </tr>
+    <tr>
+        <td>Video tutorial series</td>
+        <td><a href="https://www.youtube.com/watch?v=fGNpiqVi5xU&list=PLHCfyL7JpoPbLpA_oh_T5PKrfzPgCpPT5">Series of demo videos about PlayFab's core systems</a></td>
+    </tr>
+    <tr>
+        <td>Recipes</td>
+        <td><a href="https://api.playfab.com/docs/tutorials/recipes-index">Popular game mechanics and design pattern samples</a></td>
+    </tr>
+    <tr>
+        <td>Platforms</td>
+        <td><a href="https://api.playfab.com/platforms">Specific documentation for various platforms and game engines</a></td>
+    </tr>
+    <tr>
+        <td>GitHub repo</td>
+        <td><a href="https://github.com/PlayFab">Get scripts and SDKs for various platforms including Android, iOS, Windows, Unity, and Unreal.</a></td>
+    </tr>
+    <tr>
+        <td>API documentation</td>
+        <td><a href="https://api.playfab.com/documentation/">Access PlayFab service directly via REST-like Web APIs</a></td>
+    </tr>
+    <tr>
+        <td>Forums</td>
+        <td><a href="https://community.playfab.com/index.html">PlayFab forums</a></td>
+    </tr>
+</table>
  
 
 #### Unity
@@ -656,6 +706,10 @@ Beginning with Unity 5.4, Unity supports Direct3D 12 development.
     <tr>
         <td>Unity documentation for Windows</td>
         <td><a href="http://docs.unity3d.com/Manual/Windows.html">Unity Manual / Windows</a></td>
+    </tr>
+    <tr>
+        <td>Add LiveOps using PlayFab</td>
+        <td><a href="https://api.playfab.com/docs/getting-started/unity-getting-started">Getting started - Make your first PlayFab API call from your Unity game</a></td>
     </tr>
     <tr>
         <td>How to add interactivity to your game using Mixer Interactive</td>
@@ -765,6 +819,10 @@ Cocos2d-x is a cross-platform open source game development engine and tools suit
         <td>Cocos2d-x on Windows 10 (blog post)</td>
         <td><a href="https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/">Running Cocos2d-x on Windows 10</a></td>
     </tr>
+    <tr>
+        <td>Add LiveOps using PlayFab</td>
+        <td><a href="https://api.playfab.com/docs/getting-started/cocos2d-x-getting-started-guide">Getting started - Make your first PlayFab API call from your Cocos2d game</a></td>
+    </tr>
 </table>
 
 
@@ -780,6 +838,14 @@ Unreal Engine 4 is a complete suite of game development tools for all types of g
     <tr>
         <td>Unreal Engine overview</td>
         <td><a href="https://www.unrealengine.com/what-is-unreal-engine-4">Unreal Engine 4</a></td>
+    </tr>
+    <tr>
+        <td>Add LiveOps using PlayFab - C++</td>
+        <td><a href="https://api.playfab.com/docs/getting-started/unreal-cpp-getting-started">Getting started - Make your first PlayFab API call from your Unreal game</a></td>
+    </tr>
+    <tr>
+        <td>Add LiveOps using PlayFab - Blueprints</td>
+        <td><a href="https://api.playfab.com/docs/getting-started/unreal-blueprints-getting-started">Getting started - Make your first PlayFab API call from your Unreal game</a></td>
     </tr>
 </table>
 

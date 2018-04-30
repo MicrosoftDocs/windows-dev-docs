@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 03/30/2018
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -336,7 +336,7 @@ This resource has the following values.
 
 | Value      | Type   | Description      |
 |------------|--------|-------------------|
-| id            | string  | The ID of the submission.  |
+| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md), [get all apps](get-all-apps.md), and [get an app](get-an-app.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
 | applicationCategory           | string  |   A string that specifies the [category and/or subcategory](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) for your app. Categories and subcategories are combined into a single string with the underscore '_' character, such as **BooksAndReference_EReader**.      |  
 | pricing           |  object  | A [pricing resource](#pricing-object) that contains pricing info for the app.        |   
 | visibility           |  string  |  The visibility of the app. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -575,8 +575,8 @@ This resource has the following values.
 | architecture    |  string   |  The architecture of the package (for example, ARM).   |     
 | languages    | array    |  An array of language codes for the languages the app supports. For more information, see [Supported languages](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 | capabilities    |  array   |  An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul>   |       
+| minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x. For apps that target other OS versions, this value must be present when calling the [update an app submission](update-an-app-submission.md) method but the value you specify is ignored. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | string    |  The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x. For apps that target other OS versions, this value must be present when calling the [update an app submission](update-an-app-submission.md) method but the value you specify is ignored. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul>   |       
 | targetDeviceFamilies    | array    |  An array of strings that represent the device families that the package targets. This value is used only for packages that target Windows 10; for packages that target earlier releases, this value has the value **None**. The following device family strings are currently supported for Windows 10 packages, where *{0}* is a Windows 10 version string such as 10.0.10240.0, 10.0.10586.0 or 10.0.14393.0: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
 
 <span/>

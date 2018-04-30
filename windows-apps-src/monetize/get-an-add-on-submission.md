@@ -4,7 +4,7 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: Use this method in the Microsoft Store submission API to get data for an existing add-on submission.
 title: Get an add-on submission
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -45,7 +45,7 @@ This method has the following syntax. See the following sections for usage examp
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to get. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
+| submissionId | string | Required. The ID of the submission to get. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
 
 
 ### Request body

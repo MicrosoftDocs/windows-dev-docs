@@ -1,14 +1,14 @@
----
+﻿---
 author: jnHs
 Description: Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.
 title: App package requirements
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 10/20/2017
+ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, package requirements, packages, package format
+keywords: windows 10, uwp, package requirements, packages, package format, supported version, submit
 ms.localizationpriority: high
 ---
 
@@ -29,7 +29,7 @@ If you're using Microsoft Visual Studio as your development environment, you alr
 
 When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically. Without the additional information added to the manifest, you may encounter package upload failures. 
 
-When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+When you build your app's packages, Visual Studio can create an .appx file or an .appxupload file (or a .xap file for Windows Phone 8.1 and earlier). For apps that target Windows 10, always upload the .appxupload file in the [Packages](upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Package a UWP app with Visual Studio](../packaging/packaging-uwp-apps.md).
 
 Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.
 
@@ -46,9 +46,9 @@ With an app bundle, a user will only download the relevant files, rather than al
 
 ## Building the app package manually
 
-If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://msdn.microsoft.com/library/windows/apps/br211476).
+If you don't use Visual Studio to create your package, you must [create your package manifest manually](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually).
 
-Be sure to review the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
+Be sure to review the [App package manifest](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest) documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.
 
 Your manifest must include some specific info about your account and your app. You can find this info by looking at [View app identity details](view-app-identity-details.md) in the **App management** section of your app's overview page in the dashboard.
 
@@ -63,9 +63,9 @@ App bundles use a different manifest. Review the [Bundle manifest](https://docs.
 
 If your app has more than one package, these app manifest elements must be the same in each package (per targeted OS):
 
--   [**Package/Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)
--   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
--   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
+-   [**Package/Capabilities**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)
+-   [**Package/Dependencies**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-dependencies)
+-   [**Package/Resources**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources)
 
 
 ## Package format requirements
@@ -84,7 +84,7 @@ For UWP apps, all packages must target a version of Windows 10 supported by the 
 
 The versions currently supported range from: 
 - Minimum: 10.0.10500.0
-- Maximum: 10.0.16299.0
+- Maximum: 10.0.17134.0
 
 
 ## StoreManifest XML file

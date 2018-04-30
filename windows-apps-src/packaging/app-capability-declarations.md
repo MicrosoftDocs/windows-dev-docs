@@ -59,6 +59,7 @@ General-use capabilities apply to the most common app scenarios.
 | **Remote System** | The **remoteSystem** capability allows apps to have access to a list of devices associated with the user's Microsoft Account. Access to the device list is necessary to perform any operations that persist across devices. This capability is required to access to all members of the following.<br /><br />Windows.System.RemoteSystems namespace<br />Windows.System.RemoteLauncher namespace<br />AppServiceConnection.OpenRemoteAsync method |
 | **Spatial Perception** | The **spatialPerception** capability provides programmatic access to spatial mapping data, giving mixed reality apps information about surfaces in application-specified regions of space near the user.  Declare the spatialPerception capability only when your app will explicitly use these surface meshes, as the capability is not required for mixed reality apps to perform holographic rendering based on the user’s head pose. |
 
+
 ## Device capabilities
 
 Device capabilities allow your app to access peripheral and internal devices. Device capabilities are specified by using the **DeviceCapability** element in your app package manifest. This element may require additional child elements and some device capabilities need to be added to the package manifest manually. For more info, see [How to specify device capabilities in a package manifest](https://msdn.microsoft.com/library/windows/apps/Dn263092) and [**DeviceCapability Schema reference**](https://msdn.microsoft.com/library/windows/apps/BR211430).
@@ -78,6 +79,7 @@ Device capabilities allow your app to access peripheral and internal devices. De
 | **Optical disc** | The **optical** device capability allows apps to access functions on optical disk drives such as CD, DVD, and Blu-ray.<br/>This capability is required to use some APIs in the [**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) namespace. |
 | **Motion activity** | The **activity** device capability allows apps to detect the current motion of the device.<br/>This capability is required to use some APIs in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace. |
 | **Serial communication** | The **serialcommunication** device capability provides access to APIs in the Windows.Devices.SerialCommunication namespace, which allows a Windows app to communicate with a device that exposes a serial port or some abstraction of a serial port. This capability is required to use the APIs in the [**Windows.Devices.SerialCommnication**](https://docs.microsoft.com/uwp/api/windows.devices.serialcommunication) namespace. |
+| **Eye Tracker** | The **gazeInput** capability allows apps to detect where the user is looking within the application bounds when a compatible eye tracking device is connected. This capability is required to use some APIs in the [Windows.Devices.Input.Preview](https://docs.microsoft.com/en-us/uwp/api/windows.devices.input.preview) namespace. |
 
 ## Special and restricted capabilities
 
@@ -186,6 +188,7 @@ Special and restricted capabilities are intended for very specific scenarios. Th
 | **Automatically Accept VoIP Calls** | The **backgroundVoIP** capability allows developers to automatically receive and accept incoming VoIP calls without requiring the user to accept the call explicitly. Apps utilizing this capability are granted full control of camera and microphone and can use these resources in the background.
 | **Development Mode Network** | The **developmentModeNetwork** capability allows apps to access network paths using the credentials from the signed-in user when calling the OpenFile Win32 API in a C++/CX UWP app or C++ Windows Runtime Component. No one may request access to this capability for store submission.
 | **Broad Filesystem Access** | The **broadFileSystemAccess** capability allows apps to get the same access to the file system as the user who is currently running the app without any additional file-picker style prompts during runtime.<br/><br/>This capability works for the [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) APIs. It is important to note that the first use of any **Windows.Storage** APIs with this capability declared in your app package manifest will trigger a user-consent prompt where the user can grant or deny the permission. Users can also grant or deny the permission at any point by toggling Settings. It is also important that you do not declare any special folder capabilities such as **Documents**, **Pictures**, or **Videos** with this capability.
+| **System Firmware and BIOS** | The **smbios** capability allows apps to access bios data and system firmware data. |
 
 ## Related topics
 

@@ -19,8 +19,6 @@ ms.localizationpriority: medium
 
 # Motion for UWP apps
 
-
-
 Purposeful, well-designed motion brings your app to life and makes the experience feel crafted and polished. Motion helps your users understand context changes and where they are within your app’s navigation hierarchy. It ties experiences together with visual transitions. Motion adds a sense of pacing and dimensionality to the experience.
 
 ## Benefits of motion
@@ -90,18 +88,18 @@ Here, a visual parallax effect moves different objects at different rates when t
         </td>
     </tr>
     <tr>
-        <td><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation">Drill</a>
-        </td>
-        <td>Use a drill-in animation when a user navigates forward in a logical hierarchy, like from a master list to a detail page. Use a drill-out animation when a user navigates backward in a logical hierarchy, like from a detail page to a master page.
-        </td>
-    </tr>
-    <tr>
         <td><a href="motion-fade.md">Fade</a>
         </td>
         <td>Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
         </td>
     </tr>
-        <tr>
+    <tr>
+        <td><a href="page-transitions.md">Page transitions</a>
+        </td>
+        <td>Page transitions navigate users between pages in an app, providing feedback as the relationship between pages.
+        </td>
+    </tr>
+    <tr>
         <td><a href="parallax.md">Parallax</a>
         </td>
         <td>A visual parallax effect helps create a feeling of depth, perspective, and movement. It achieves this effect by moving different objects at different rates when the UI scrolls or pans.

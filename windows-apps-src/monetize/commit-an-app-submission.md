@@ -4,7 +4,7 @@ ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: Use this method in the Microsoft Store submission API to commit a new or updated app submission to Windows Dev Center.
 title: Commit an app submission
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -48,7 +48,7 @@ This method has the following syntax. See the following sections for usage examp
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Required. The Store ID of the app that contains the submission you want to commit. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | string | Required. The ID of the submission you want to commit. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create an app submission](create-an-app-submission.md).  |
+| submissionId | string | Required. The ID of the submission you want to commit. This ID is available in the response data for requests to [create an app submission](create-an-app-submission.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
 
 
 ### Request body

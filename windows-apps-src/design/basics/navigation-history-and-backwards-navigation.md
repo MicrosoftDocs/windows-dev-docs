@@ -27,9 +27,11 @@ To implement backwards navigation in your app, place a [back button](#Back-butto
 The user expects the back button to navigate to the previous location in the app's navigation history. Note that it's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
 
 ## Back button
+
 To create a back button, use the [Button](../controls-and-patterns/buttons.md) control with the `NavigationBackButtonNormalStyle` style, and place the button at the top left hand corner of your app's UI.
 
 ![Back button in the top left of the app's UI](images/back-nav/BackEnabled.png)
+
 ```xaml
 <Button Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
@@ -48,6 +50,7 @@ In order to minimize UI elements moving around in your app, show a disabled back
 ![Back button states](images/back-nav/BackDisabled.png)
 
 ## Code example
+
 The following code example demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) event and disables/enables the button visibility in [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_), which is called when navigating to a new page. The code example also handles inputs from hardware and software system back keys by registering a listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event.
 
 ```xaml
@@ -59,6 +62,7 @@ The following code example demonstrates how to implement backwards navigation be
 ```
 
 Code-behind:
+
 ```csharp
 public MainPage()
 {
@@ -101,9 +105,11 @@ private void BackInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvoked
     args.Handled = true;
 }
 ```
+
 Here, we register a global listener for the [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) event in the `App.xaml` code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
 
 App.xaml code-behind:
+
 ```csharp
 Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += App_BackRequested;
 Frame rootFrame = Window.Current.Content;
@@ -126,6 +132,7 @@ private void On_PointerPressed(object sender, PointerRoutedEventArgs e)
 ```
 
 ## Optimizing for different device and form factors
+
 This backwards navigation design guidance is applicable to all devices, but different device and form factors may benefit from optimization. This also depends on the hardware back button supported by different shells.
 
 - **Phone/Tablet**: A hardware or software back button is always present on mobile and tablet, but we recommend drawing an in-app back button for clarity.
@@ -136,21 +143,19 @@ If your app will run on multiple devices, [create a custom visual trigger for Xb
 
 We recommend supporting the following inputs for back navigation. (Note that some of these inputs are not supported by the system BackRequested and must be handled by separate events.)
 
-<table>
-<tr>
-<th>Input</th><th>Event</th>
-</tr>
-<tr><td>Windows-Backspace key</td><td>BackRequested</td></tr>
-<tr><td>Hardware back button</td><td>BackRequested</td></tr>
-<tr><td>Shell tablet mode back button</td><td>BackRequested</td></tr>
-<tr><td>VirtualKey.XButton1</td><td>PointerPressed</td></tr>
-<tr><td>VirtualKey.GoBack</td><td>KeyboardAccelerator.BackInvoked</td></tr>
-<tr><td>Alt+LeftArrow key</td><td>KeyboardAccelerator.BackInvoked</td></tr>
-</table>
+| Input | Event |
+| --- | --- |
+| Windows-Backspace key | BackRequested |
+| Hardware back button | BackRequested |
+| Shell tablet mode back button | BackRequested |
+| VirtualKey.XButton1 | PointerPressed |
+| VirtualKey.GoBack | KeyboardAccelerator.BackInvoked |
+| Alt+LeftArrow key | KeyboardAccelerator.BackInvoked |
 
 The code examples provided above demonstrate how to handle all of these inputs.
 
 ## System back behavior for backward compatibilities
+
 Previously, UWP apps used [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) for backwards navigation. The API will continue to be supported for backward compatibility, but we no longer recommend relying on the title bar back button. Instead, your app should draw its own in-app back button.
 
 If your app continues to use [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility), then the back button will be rendered inside the title bar as usual.
@@ -215,10 +220,5 @@ If you choose to provide your own back stack navigation, the experience should b
 When the user switches to another app and returns to your app, we recommend returning to the last page in the navigation history
 
 ## Related articles
-* [Navigation basics](navigation-basics.md)
 
- 
-
-
-
-
+- [Navigation basics](navigation-basics.md)

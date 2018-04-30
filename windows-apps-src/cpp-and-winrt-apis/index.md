@@ -1,9 +1,9 @@
 ---
 author: stevewhims
-description: The Windows SDK includes C++/WinRT. This is a standard C++ language projection for WinRT APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume WinRT APIs using any standards-compliant C++ compiler.
+description: The Windows SDK includes C++/WinRT. This is a standard C++ language projection for Windows Runtime APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++ compiler.
 title: C++/WinRT
 ms.author: stwhi
-ms.date: 03/27/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -11,11 +11,8 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection
 ms.localizationpriority: medium
 ---
 
-# C++/WinRT
-> [!NOTE]
-> **Some information relates to pre-released product which may be substantially modified before it’s commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-
-Introduced in Windows 10, version 1803, the Windows SDK now includes C++/WinRT. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume WinRT APIs using any standards-compliant C++17 compiler.
+# [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
+Introduced in version 10.0.17134.0 (Windows 10, version 1803), the Windows SDK now includes C++/WinRT. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler.
 
 C++/WinRT is for any developer interested in writing beautiful and fast code for Windows. Here's why.
 
@@ -26,29 +23,33 @@ From a language point of view, C++ has always been about authoring and consuming
 
 For authoring and consuming Windows Runtime APIs using C++, there is C++/WinRT. This is Microsoft's recommended replacement for the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live).
 
-You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have. C++/WinRT makes it extremely easy to call WinRT APIs in any C++ application, from WinForms to UWP.
+You use standard C++ data types, algorithms, and keywords when you use C++/WinRT. The projection does have its own custom data types, but in most cases you don't need to learn them because they provide appropriate conversions to and from standard types. That way, you can continue to use the standard C++ language features that you're accustomed to using, and the source code that you already have. C++/WinRT makes it extremely easy to call Windows Runtime APIs in any C++ application, from Win32 to UWP.
 
-C++/WinRT performs better and produces smaller binaries than any other language option for WinRT. It even outperforms handwritten code using the ABI interfaces directly. That's because the abstractions use modern C++ idioms that the Visual C++ compiler is designed to optimize. This includes magic statics, empty base classes, **strlen** elision, as well as many newer optimizations in the latest version of Visual C++ targeted specifically at improving the performance of C++/WinRT.
+C++/WinRT performs better and produces smaller binaries than any other language option for the Windows Runtime. It even outperforms handwritten code using the ABI interfaces directly. That's because the abstractions use modern C++ idioms that the Visual C++ compiler is designed to optimize. This includes magic statics, empty base classes, **strlen** elision, as well as many newer optimizations in the latest version of Visual C++ targeted specifically at improving the performance of C++/WinRT.
 
 | Topic | Description |
 | - | - |
-| [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for WinRT APIs. |
-| [Frequently-asked questions about C++/WinRT](faq.md) | Answers to questions that you're likely to have about authoring and consuming WinRT APIs with C++/WinRT. |
-| [Troubleshooting C++/WinRT issues](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
-| [String handling in C++/WinRT](strings.md) | With C++/WinRT, you can call WinRT APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
-| [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call WinRT APIs using Standard C++ data types. |
-| [Boxing and unboxing scalar values to IInspectable with C++/WinRT](boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
-| [Interfaces; how to implement them in C++/WinRT](implement-an-interface.md) | This topic shows how to implement a Windows Runtime interface in C++/WinRT. |
-| [Implementation and projected types for a C++/WinRT runtime class](ctors-runtimeclass-activation.md) | This topic describes essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT. |
-| [Events; how to author and handle them in C++/WinRT](events-author-handle.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
-| [Concurrency and asynchronous operations with C++/WinRT](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
-| [XAML controls; binding to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
-| [XAML items controls; binding to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
-| [Move from C++/CX to C++/WinRT](cx-to-winrt.md) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. |
+| [Introduction to C++/WinRT](intro-to-using-cpp-with-winrt.md) | An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs. |
+| [Frequently-asked questions](faq.md) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
+| [Troubleshooting](troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
+| [String handling](strings.md) | With C++/WinRT, you can call Windows Runtime APIs using standard C++ wide string types, or you can use the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. |
+| [Standard C++ data types and C++/WinRT](std-cpp-data-types.md) | With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types. |
+| [Boxing and unboxing scalar values to IInspectable](boxing.md) | A scalar value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value. |
+| [Consume APIs with C++/WinRT](consume-apis.md) | This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself. |
+| [Author APIs with C++/WinRT](author-apis.md) | This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly. |
+| [Handle events by using delegates](handle-events.md) | This topic shows how to register and revoke event-handling delegates using C++/WinRT. |
+| [Author events](author-events.md) | This topic demonstrates how to author a Windows Runtime Component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
+| [Concurrency and asynchronous operations](concurrency.md) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
+| [XAML controls; bind to a C++/WinRT property](binding-property.md) | A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it. |
+| [XAML items controls; bind to a C++/WinRT collection](binding-collection.md) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
+| [Interop between C++/WinRT and C++/CX](interop-winrt-cx.md) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) and C++/WinRT objects. |
+| [Interop between C++/WinRT and the ABI](interop-winrt-abi.md) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |
+| [Weak references](weak-references.md) | C++/WinRT weak reference support is pay-for-play, in that it doesn't cost you anything unless your object is queried for [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609). |
+| [Agile objects](agile-objects.md) | An agile object is one that can be accessed from any thread. Your C++/WinRT types are agile by default, but you can opt out. |
 
 ## Important APIs
-[winrt namespace (C++/WinRT)](/uwp/cpp-ref-for-winrt/winrt)
+* [winrt namespace](/uwp/cpp-ref-for-winrt/winrt)
 
 ## Related topics
-* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
+* [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)

@@ -57,7 +57,7 @@ Marble Maze supports the Xbox controller, mouse, and touch to select menu items,
 
 The Xbox controller does not require initialization. To initialize touch, you must register for windowing events such as when the pointer is activated (for example, the player presses the mouse button or touches the screen), released, and moved. To initialize the accelerometer, you have to create a [Windows::Devices::Sensors::Accelerometer](https://msdn.microsoft.com/library/windows/apps/br225687) object when you initialize the application.
 
-The following example shows how the **App::SetWindow** method registers for the [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_PointerReleased), and [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow#Windows_UI_Core_CoreWindow_PointerMoved) pointer events. These events are registered during application initialization and before the game loop.
+The following example shows how the **App::SetWindow** method registers for the [Windows::UI::Core::CoreWindow::PointerPressed](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerPressed), [Windows::UI::Core::CoreWindow::PointerReleased](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerReleased), and [Windows::UI::Core::CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.PointerMoved) pointer events. These events are registered during application initialization and before the game loop.
 
 These events are handled in a separate thread that invokes the event handlers.
 
@@ -90,7 +90,7 @@ The **MarbleMazeMain** class also holds an [Accelerometer](https://docs.microsof
 Windows::Devices::Sensors::Accelerometer^           m_accelerometer;
 ```
 
-The **Accelerometer** object is initialized in the **MarbleMazeMain** constructor, as shown in the following example. The [Windows::Devices::Sensors::Accelerometer::GetDefault](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer#Windows_Devices_Sensors_Accelerometer_GetDefault) method returns an instance of the default accelerometer. If there is no default accelerometer, **Accelerometer::GetDefault** returns **nullptr**.
+The **Accelerometer** object is initialized in the **MarbleMazeMain** constructor, as shown in the following example. The [Windows::Devices::Sensors::Accelerometer::GetDefault](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer.GetDefault) method returns an instance of the default accelerometer. If there is no default accelerometer, **Accelerometer::GetDefault** returns **nullptr**.
 
 ```cpp
 // Returns accelerometer ref if there is one; nullptr otherwise.
@@ -197,7 +197,7 @@ if (m_gamepad != nullptr)
 }
 ```
 
-We keep track of the input reading we got in the last frame with **m_oldReading**, and the latest input reading with **m_newReading**, which we get by calling [Gamepad::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad#Windows_Gaming_Input_Gamepad_GetCurrentReading). This returns a [GamepadReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadreading) object, which contains information about the current state of the gamepad.
+We keep track of the input reading we got in the last frame with **m_oldReading**, and the latest input reading with **m_newReading**, which we get by calling [Gamepad::GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.GetCurrentReading). This returns a [GamepadReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadreading) object, which contains information about the current state of the gamepad.
 
 To check if a button was just pressed or released, we define **MarbleMazeMain::ButtonJustPressed** and **MarbleMazeMain::ButtonJustReleased**, which compare button readings from this frame and the last frame. This way, we can perform an action only at the time when a button is initially pressed or released, and not when it's held:
 
@@ -387,7 +387,7 @@ The input mechanism can vary from one input device to another. For example, poin
 
 ###  Processing pointer input
 
-When you work with pointer input, call the [Windows::UI::Core::CoreDispatcher::ProcessEvents](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher#Windows_UI_Core_CoreDispatcher_ProcessEvents_Windows_UI_Core_CoreProcessEventsOption_) method to process window events. Call this method in your game loop before you update or render the scene. Marble Maze calls this in the **App::Run** method: 
+When you work with pointer input, call the [Windows::UI::Core::CoreDispatcher::ProcessEvents](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.processevents) method to process window events. Call this method in your game loop before you update or render the scene. Marble Maze calls this in the **App::Run** method: 
 
 ```cpp
 while (!m_windowClosed)

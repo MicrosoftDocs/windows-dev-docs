@@ -2,8 +2,8 @@
 title: Smart cards
 description: This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
-author: msatranjr
-ms.author: misatran
+author: PatrickFarley
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows

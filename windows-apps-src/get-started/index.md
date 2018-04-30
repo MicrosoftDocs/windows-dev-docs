@@ -50,8 +50,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                     <h3>Get set up</h3>
                     <p>Visual Studio Community and the Windows 10 SDK give you everything you need to build great apps – and they’re free!</p>
                     <ul>
-                        <li><a href="//developer.microsoft.com/windows/downloads">Download the tools and SDK</a></li>
-                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Need a hand?</a></li>
+                        <li><a href="//docs.microsoft.com/windows/uwp/get-started/get-set-up">Download the tools and SDK</a></li>
                     </ul>
                   </div>
                 </div>
@@ -217,7 +216,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                         <h3>Developer tools</h3>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">UWP Community Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtual machines</a></p>
-                        <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubunutu on Windows</a></p>
+                        <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
                         </div>
                     </div>
                 </div>

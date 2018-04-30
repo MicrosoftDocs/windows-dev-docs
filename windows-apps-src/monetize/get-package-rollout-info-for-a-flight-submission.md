@@ -3,7 +3,7 @@ author: mcleanbyron
 description: Use this method in the Microsoft Store submission API to get package rollout info for a package flight submission.
 title: Get rollout info for a flight submission
 ms.author: mcleans
-ms.date: 08/03/2017
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -46,8 +46,8 @@ This method has the following syntax. See the following sections for usage examp
 | Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | string | Required. The Store ID of the app that contains the package flight submission with the package rollout info you want to get. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Required. The ID of the package flight that contains the submission with the package rollout info you want to get. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission with the package rollout info to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| flightId | string | Required. The ID of the package flight that contains the submission with the package rollout info you want to get. This ID is available in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md). For a flight that was created in the Dev Center dashboard, this ID is also available in the URL for the flight page in the dashboard.    |
+| submissionId | string | Required. The ID of the submission with the package rollout info to get. This ID is available in the response data for requests to [create a package flight submission](create-a-flight-submission.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.   |
 
 
 ### Request body

@@ -2,7 +2,7 @@
 # [What's a UWP app?](../get-started/universal-application-platform-guide.md)
 # [Get set up](../get-started/get-set-up.md)
 ## [Enable your device for development](../get-started/enable-your-device-for-development.md)
-# [Sign up](../get-started/sign-up.md)
+## [Create a developer account](../get-started/sign-up.md)
 # [Tutorials](../get-started/create-uwp-apps.md)
 ## [Your first app](../get-started/your-first-app.md)
 ### [Create "Hello, world" app (C#)](../get-started/create-a-hello-world-app-xaml-universal.md)

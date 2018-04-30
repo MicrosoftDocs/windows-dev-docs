@@ -19,13 +19,11 @@ ms.localizationpriority: medium
 ---
 # Toggle switches
 
-
-The [toggle switch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx) represents a physical switch that allows users to turn things on or off, like a light switch. Use toggle switch controls to present users with two mutually exclusive options (such as on/off), where choosing an option provides immediate results. 
+The [toggle switch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx) represents a physical switch that allows users to turn things on or off, like a light switch. Use toggle switch controls to present users with two mutually exclusive options (such as on/off), where choosing an option provides immediate results.
 
 To create a toggle switch control, you use the  [ToggleSwitch class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx).
 
 > **Important APIs**: [ToggleSwitch class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx), [IsOn property](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx), [Toggled event](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
-
 
 ## Is this the right control?
 
@@ -35,7 +33,7 @@ Use a toggle switch for binary operations that take effect right after the user 
 
 Think of the toggle switch as a physical power switch for a device: you flip it on or off when you want to enable or disable the action performed by the device.
 
-To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights."  
+To make the toggle switch easy to understand, label it with one or two words, preferably nouns, that describe the functionality it controls. For example, "WiFi" or "Kitchen lights." 
 
 ## Examples
 
@@ -53,19 +51,19 @@ To make the toggle switch easy to understand, label it with one or two words, pr
 </tr>
 </table>
 
-### Choosing between toggle switch and check box
+## Choosing between toggle switch and check box
 
 For some actions, either a toggle switch or a check box might work. To decide which control would work better, follow these tips:
 
--   Use a toggle switch for binary settings when changes become effective immediately after the user changes them.
+- Use a toggle switch for binary settings when changes become effective immediately after the user changes them.
 
     ![Toggle switch versus check box](images/toggleswitches02.png)
 
-    In this example, it's clear with the toggle switch that the wireless is set to "On." But with the checkbox, the user needs to think about whether the wireless is on now or whether they need to check the box to turn wireless on.
+    In this example, it's clear with the toggle switch that the kitchen lights are set to "On." But with the checkbox, the user needs to think about whether the lights are on now or whether they need to check the box to turn the lights on.
 
--   Use check boxes for optional ("nice to have") items. 
--   Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
--   Use check boxes when the user can select multiple items that are related to a single setting or feature. 
+- Use check boxes for optional ("nice to have") items.
+- Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
+- Use check boxes when the user can select multiple items that are related to a single setting or feature.
 
 ## Toggle switches in the the Windows UI
 
@@ -79,26 +77,27 @@ This example is from the Night Light Settings page:
 
 ## Create a toggle switch
 
-Here's how to create a simple toggle switch. This XAML creates the WiFi toggle switch shown previously.
+Here's how to create a simple toggle switch. This XAML creates the toggle switch shown previously.
 
 ```xaml
-<ToggleSwitch x:Name="wiFiToggle" Header="Wifi"/>
+<ToggleSwitch x:Name="lightToggle" Header="Kitchen Lights"/>
 ```
+
 Here's how to create the same toggle switch in code.
 
 ```csharp
-ToggleSwitch wiFiToggle = new ToggleSwitch();
-wiFiToggle.Header = "WiFi";
+ToggleSwitch lightToggle = new ToggleSwitch();
+lightToggle.Header = "Kitchen Lights";
 
 // Add the toggle switch to a parent container in the visual tree.
-stackPanel1.Children.Add(wiFiToggle);
+stackPanel1.Children.Add(lightToggle);
 ```
 
 ### IsOn
 
 The switch can be either on or off. Use the [IsOn](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
 
-```
+```xaml
 <StackPanel Orientation="Horizontal">
     <ToggleSwitch x:Name="ToggleSwitch1" IsOn="True"/>
     <ProgressRing IsActive="{x:Bind ToggleSwitch1.IsOn, Mode=OneWay}" Width="130"/>
@@ -153,7 +152,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [OnContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx), and [OffContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) properties.
 
-This example replaces the On/Off labels with Show/Hide labels.  
+This example replaces the On/Off labels with Show/Hide labels.
 
 ```xaml
 <ToggleSwitch x:Name="imageToggle" Header="Show images"

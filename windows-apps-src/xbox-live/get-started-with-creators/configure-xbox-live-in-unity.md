@@ -124,12 +124,12 @@ When running your title in the editor, you will see fake data when you try to us
 
 1. Open the **Build Settings** window by selecting **File** > **Build Settings**.
 2. Add all of the scenes that you want to include in your build under the **Scenes In Build** section.
-3. Switch to the **Windows Store** platform by selecting **Windows Store** under **Platform** and clicking **Switch Platform**.
-4. Set **SDK** to **Universal 10**.
+3. Switch to the **Universal Windows Platform** by selecting **Universal Windows Platform** under **Platform** and clicking **Switch Platform**.
+4. Set **SDK** to **10.0.15063.0** or greater.
 5. To enable script debugging check **Unity C# Projects**.
-6. Click **Build** and specify the location of the project. 
+6. Click **Build** and specify the location of the project.
 
-![build in unity](../images/unity/get-started-with-creators/buildInUnity.gif)
+![build settings](../images/unity/build_settings.JPG)
 
 Once the build has finished, Unity will have generated a new UWP solution file which you will need to run in Visual Studio:
 

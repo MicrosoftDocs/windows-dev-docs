@@ -4,7 +4,7 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: Use these methods in the Microsoft Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
 title: Manage package flight submissions
 ms.author: mcleans
-ms.date: 02/28/18
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -180,22 +180,22 @@ After a gradual package rollout is enabled for a package flight submission, you 
 <tbody>
 <tr>
 <td align="left">GET</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/packagerollout</td>
 <td align="left"><a href="get-package-rollout-info-for-a-flight-submission.md">Get the gradual rollout info for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/updatepackagerolloutpercentage</td>
 <td align="left"><a href="update-the-package-rollout-percentage-for-a-flight-submission.md">Update the gradual rollout percentage for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/haltpackagerollout</td>
 <td align="left"><a href="halt-the-package-rollout-for-a-flight-submission.md">Halt the gradual rollout for a package flight submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
-<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout```</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/finalizepackagerollout</td>
 <td align="left"><a href="finalize-the-package-rollout-for-a-flight-submission.md">Finalize the gradual rollout for a package flight submission</a></td>
 </tr>
 </tbody>

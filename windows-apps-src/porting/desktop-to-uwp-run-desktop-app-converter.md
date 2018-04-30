@@ -58,6 +58,8 @@ If you're ready to create your package, let's start.
 ## First, consider how you'll distribute your app
 If you plan to publish your app to the [Microsoft Store](https://www.microsoft.com/store/apps), start by filling out [this form](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge). Microsoft will contact you to start the onboarding process. As part of this process, you'll reserve a name in the store, and obtain information that you'll need to package your app.
 
+Also, make sure to review this guide before you begin creating a package for your application: [Prepare to package an app (Desktop Bridge)](desktop-to-uwp-prepare.md).
+
 ## Make sure that your system can run the converter
 
 Make sure that your system meets the following requirements:

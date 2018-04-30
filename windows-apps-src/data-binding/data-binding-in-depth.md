@@ -1,4 +1,4 @@
----
+﻿---
 author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: Data binding in depth
@@ -642,7 +642,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | Path property | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | In x:Bind, Path is rooted at the Page by default, not the DataContext. | 
 | Indexer | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Binds to the specified item in the collection. Only integer-based indexes are supported. | 
 | Attached properties | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Attached properties are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
-| Casting | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Not needed< | Casts are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
+| Casting | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Not needed. | Casts are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
 | Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Converters must be declared at the root of the Page/ResourceDictionary, or in App.xaml. | 
 | ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Converters must be declared at the root of the Page/ResourceDictionary, or in App.xaml. | 
 | TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Used when the leaf of the binding expression is null. Use single quotes for a string value. | 
@@ -652,6 +652,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | RelativeSource: TemplatedParent | Not supported | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Regular template binding can be used in control templates for most uses. But use TemplatedParent where you need to use a converter, or a two-way binding.< | 
 | Source | Not supported | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} use a property or a static path instead. | 
 | Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode can be OneTime, OneWay, or TwoWay. {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
-| UpdateSourceTrigger | Not supported | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} uses PropertyChanged behavior for all cases except TextBox.Text where it waits for lost focus to update the source. | 
+| UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger can be Default, LostFocus, or PropertyChanged. {x:Bind} does not support UpdateSourceTrigger=Explicit. {x:Bind} uses PropertyChanged behavior for all cases except TextBox.Text, where it uses LostFocus behavior. | 
 
 

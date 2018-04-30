@@ -153,6 +153,9 @@ namespace MediaCasting_RS1
             deviceWatcher.Removed += DeviceWatcher_Removed;
             deviceWatcher.EnumerationCompleted += DeviceWatcher_EnumerationCompleted;
             deviceWatcher.Stopped += DeviceWatcher_Stopped;
+
+            //Start the watcher
+            deviceWatcher.Start();
         }
         // </SnippetStartWatcherButtonClick>
 
