@@ -4,7 +4,7 @@ ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: Use this method in the Microsoft Store submission API to create a package flight for an app that is registered to your Windows Dev Center account.
 title: Create a package flight
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -52,7 +52,7 @@ This method has the following syntax. See the following sections for usage examp
 ### Request body
 
 The request body has the following parameters.
- 
+
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  friendlyName  |  string  |  The name of the package flight, as specified by the developer.  |  No  |

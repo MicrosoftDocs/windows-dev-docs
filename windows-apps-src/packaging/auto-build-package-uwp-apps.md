@@ -3,7 +3,7 @@ author: laurenhughes
 title: Set up automated builds for your UWP app
 description: How to configure your automate builds to produce sideload and/or Store packages.
 ms.author: lahugh
-ms.date: 08/09/2017
+ms.date: 03/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -23,28 +23,24 @@ A hosted build agent is deployed with the most common tools and sdks, and it wil
 
 | **Scenario** | **Custom Agent** | **Hosted Build Agent** |
 |-------------|----------------|----------------------|
-| Basic UWP build (including .NET native)| :white_check_mark: |:white_check_mark:|
-| Generate packages for Sideloading| :white_check_mark:|:white_check_mark:|
-| Generate packages for Store submission| :white_check_mark:|:white_check_mark:|
+| Basic UWP build (including .NET native)| :white_check_mark: | :white_check_mark: |
+| Generate packages for Sideloading| :white_check_mark: | :white_check_mark: |
+| Generate packages for Store submission| :white_check_mark: | :white_check_mark: |
 | Use custom certificates| :white_check_mark: | |
 | Build targeting a custom Windows SDK| :white_check_mark: |  |
 | Run unit tests| :white_check_mark: |  |
 | Use incremental builds| :white_check_mark: |  |
 
->Note: If you plan to target the Windows Anniversary Update SDK (Build 14393) you will need to set up your custom build agent, since the hosted build pool only supports SDK 10586 and 10240. More information to [choose a UWP version](https://msdn.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)
-
 #### Create a custom build agent (optional)
 
 If you choose to create a custom build agent, you’ll need the Universal Windows Platform tools. These tools are part of Visual Studio. You can use the community edition of Visual Studio.
 
-To learn more, see [Deploy an agent on Windows.](https://www.visualstudio.com/docs/build/admin/agents/v2-windows) 
+To learn more, see [Deploy an agent on Windows](https://www.visualstudio.com/docs/build/admin/agents/v2-windows). 
 
-To run UWP unit tests, you’ll have to do these things:
-•	Deploy and start your app. 
-•	Run the VSTS agent in interactive mode. 
-•	Configure your agent to auto-logon after a reboot.
-
-Now we’ll talk about how to set up an automated build.
+To run UWP unit tests, you’ll have to do these things: 
+- Deploy and start your app 
+- Run the VSTS agent in interactive mode 
+- Configure your agent to auto-logon after a reboot 
 
 ## Set up an automated build
 We’ll start with the default UWP build definition that’s available in VSTS and then show you how to configure that definition so that you can accomplish more advanced build tasks.
@@ -52,7 +48,7 @@ We’ll start with the default UWP build definition that’s available in VSTS a
 **Add the certificate of your project to a source code repository**
 
 VSTS works with both TFS and GIT based code repositories.  
-If you use a Git repository, add the certificate file of your project to the repository so that the build agent can sign the appx package. If you don’t do this, the Git repository will ignore the certificate file. 
+If you use a Git repository, add the certificate file of your project to the repository so that the build agent can sign the app package. If you don’t do this, the Git repository will ignore the certificate file. 
 To add the certificate file to your repository, right-click the certificate file in Solution Explorer, and then in the shortcut menu, choose the Add Ignored File to Source Control command. 
 
 ![how to include a certificate](images/building-screen1.png)
@@ -90,7 +86,7 @@ This task uses MSbuild arguments.  You’ll have to specify the value of those a
 |AppxPackageDir|$(Build.ArtifactStagingDirectory)\AppxPackages|Defines the folder to store the generated artifacts.|
 |AppxBundlePlatforms|$(Build.BuildPlatform)|Allows you to define the platforms to include in the bundle.|
 |AppxBundle|Always|Creates an appxbundle with the appx files for the platform specified.|
-|**UapAppxPackageBuildMode**|StoreUpload|Defines the kind of appx package to generate. (Not included by default)|
+|**UapAppxPackageBuildMode**|StoreUpload|Defines the kind of app package to generate. (Not included by default)|
 
 
 If you want to build your solution by using the command line, or by using any other build system, run msbuild with these arguments.
@@ -117,11 +113,11 @@ VSTS uses the `$(Build.ArtifactStagingDirectory)\AppxPackages` folder that we pr
 Because we’ve set the `UapAppxPackageBuildMode` property to `StoreUpload`, the artifacts folder includes the package that recommended for submission to the Store (.appxupload). Note that you can also submit a regular app pacakge (.appx) or an app bundle (.appxbundle) to the Store. For the purposes of this article, we'll use the .appxupload file.
 
 
->Note: By default, the VSTS agent maintains the latest appx generated packages. If you want to store only the artifacts of the current build, configure the build to clean the binaries directory. To do that, add a variable named `Build.Clean` and then set it to the value `all`. To learn more, see [Specify the repository.](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)
+>[!NOTE]
+> By default, the VSTS agent maintains the latest generated app packages. If you want to store only the artifacts of the current build, configure the build to clean the binaries directory. To do that, add a variable named `Build.Clean` and then set it to the value `all`. To learn more, see [Specify the repository](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way).
 
 #### The types of automated builds
-Next, you’ll use your build definition to create an automated build. 
-The following table describes each type of automated build that you can create. 
+Next, you’ll use your build definition to create an automated build. The following table describes each type of automated build that you can create. 
 
 |**Type of Build**|**Artifact**|**Recommended Frequency**|**Description**|
 |-----------------|------------|-------------------------|---------------|
@@ -137,7 +133,8 @@ This type of a build helps you to diagnose code related problems quickly. They�
 
 If you want to run UWP unit tests as part of your CI build you’ll need to use a custom build agent instead of the hosted build agent.
 
->Note: If you bundle more than one app in the same solution, you might receive an error. See the following topic for help resolving that error: [Address errors that appear when you bundle more than one app in the same solution.](#bundle-errors) 
+>[!NOTE]
+> If you bundle more than one app in the same solution, you might receive an error. See the following topic for help resolving that error: [Address errors that appear when you bundle more than one app in the same solution.](#bundle-errors) 
 
 
 ### Configure a CI build definition
@@ -146,16 +143,16 @@ Use the default UWP template to create a build definition. Then, configure the T
 ![ci trigger](images/building-screen7.png)
 
 Because the CI build won’t be deployed to users, it’s a good idea to maintain different versioning numbers to avoid confusion with the CD builds. For example: 
-`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`.
+`$(BuildDefinitionName)_0.0.$(DayOfYear)$(Rev:.r)`
 
 
 #### Configure a custom build agent for unit testing
 
-1.First, enable Developer Mode on your PC. See Enable your device for development. 
-2.Enable the service to run as an interactive process. See Deploy an agent on Windows. 
-3.Deploy the signing certificate to the agent.
+1. Enable Developer Mode on your PC. See [Enable your device for development](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development) for more information. 
+2. Enable the service to run as an interactive process. To learn more, see [Deploy an agent on Windows](https://docs.microsoft.com/vsts/build-release/actions/agents/v2-windows). 
+3. Deploy the signing certificate to the agent.
 
-To do that, double-click the .cer file, choose Local Machine, and then choose the Trusted People Store.
+To deploy a signing certificate, double-click the `.cer` file, choose **Local Machine**, and then choose **Trusted People Store**.
 
 <span id="uwp-unit-tests" />
 
@@ -165,17 +162,24 @@ To execute a unit test, use the Visual Studio Test build step.
 
 ![add unit tests](images/building-screen8.png)
 
-UWP unit tests are executed in the context of a given appx file so you can’t use the generated bundle. Also, you’ll have to specify the path to a concrete platform appx file. For example:
+UWP unit tests are executed in the context of a given appxrecipe file so you can’t use the generated bundle. Also, you’ll have to specify the path to a concrete platform appxrecipe file. For example:
 
 ```
-$(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appx
+$(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appxrecipe
 ```
 
->Note: Use the following command to execute the unit tests locally from the command line:
+In order for the tests to run a console parameter will have to be added to vstest.console.exe. This parameter can be provide through: **Execution Options => Other console options**. Please add following parameter: 
+
+```
+/framework:FrameworkUap10
+```
+
+>[!NOTE]
+> Use the following command to execute the unit tests locally from the command line:
 `"%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"`
 
 #### Access test results
-In VSTS, the build summary page shows the test results for each build that executes unit tests.  From there, you can open the Test Results page to see more detail about the test results. 
+In VSTS, the build summary page shows the test results for each build that executes unit tests. From there, you can open the **Test Results** page to see more detail about the test results. 
 
 ![test results](images/building-screen9.png)
 
@@ -190,7 +194,7 @@ If you want to use your CI build only to monitor the quality of your check-ins, 
 
 To do that, open the project file, and in the project properties, set the `UseDotNetNativeToolchain` property to `false`.
 
->Note. Using the .NET native tool chain is still an important part of the workflow so you should still use it to test release builds. 
+Using the .NET native tool chain is an important part of the workflow and should still be used to test release builds. 
 
 <span id="bundle-errors" />
 
@@ -212,9 +216,8 @@ To resolve this issue, open each project file and add the following properties a
 Then, remove the `AppxBundle` msbuild argument from the build step.
 
 ## Set up a continuous deployment build for sideloading
-When this type of build completes, users can download the appxbundle file from the artifacts section of the build results page. 
+When this type of build completes, users can download the .appxbundle file from the artifacts section of the build results page. 
 If you want to beta test the app by creating a more complete distribution, you can use the HockeyApp service. This service offers advanced capabilities for beta testing, user analytics and crash diagnostics.
-
 
 ### Applying version numbers to your builds
 
@@ -223,11 +226,11 @@ Another way to update the version number of your app is to use the build number 
 
 You’ll have to define your versioning build number format in the build definition, and then use the resulting version number to update the AppxManifest and optionally, the AssemblyInfo.cs files, before you compile.
 
-Define the build number format in the *General* Tab of your build definition.:
+Define the build number format in the *General* tab of your build definition.
 
 ![build version](images/building-screen12.png) 
 
-For example, if you set the build number format to the following value:  
+For example, if you set the build number format to the following value:
 ``` 
 $(BuildDefinitionName)_1.1.$(DayOfYear)$(Rev:r).0 
 ```
@@ -237,7 +240,8 @@ VSTS generates a version number like:
 CI_MyUWPApp_1.1.2501.0
 ```
 
->Note: The Store will require that the last number in the version to be 0.
+>[!NOTE]
+>The Store will require that the last number in the version to be 0.
 
 So that you can extract the version number and apply it to the manifest and/or `AssemblyInfo` files, use a custom PowerShell script (available [here](https://go.microsoft.com/fwlink/?prd=12560&pver=14&plcid=0x409&clcid=0x9&ar=DevCenter&sar=docs)). That script reads the version number from the environment variable `BUILD_BUILDNUMBER`, and then modifies the AssemblyInfo and AppxManifest files. Make sure to add this script to your source repository, and then configure a PowerShell build task as shown here:
 
@@ -248,17 +252,14 @@ The `$(AppxVersion)` variable contains the version number. You can use that numb
 
 
 #### Optional: Integrate with HockeyApp
-First, install the [HockeyApp](https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp) Visual Studio extension. 
-
->Note: You’ll have to install this extension as a VSTS administrator. 
-
+First, install the [HockeyApp](https://marketplace.visualstudio.com/items?itemName=ms.hockeyapp) Visual Studio extension. You will need to install this extension as a VSTS administrator. 
 
 ![hockey app](images/building-screen14.png) 
 
 Next, configure the HockeyApp connection by using this guide: [How to use HockeyApp with Visual Studio Team Services (VSTS) or Team Foundation Server (TFS).](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs) 
 You can use your Microsoft account, social media account or just an email address to set up your HockeyApp account. The free plan comes with two apps, one owner, and no data restrictions.
 
-Then, you can create a HockeyApp app manually, or by uploading an existing appx package file. To learn more, see [How to create a new app.](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)  
+Then, you can create a HockeyApp app manually, or by uploading an existing appx package file. To learn more, see [How to create a new app](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app).  
 
 To use an existing appx package file, add a build step, and set the Binary File Path parameter of the build step. 
 
@@ -270,9 +271,7 @@ To set this parameter, combine the app name, the AppxVersion variable and the su
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
->Note: Although the HockeyApp task allows you to specify the path to the symbols file, it’s a best practice to include the symbols (appxsym files) with the bundle.
-
-We’ll help you install and run a sideloaded package [later](#sideloading-best-practices) in this guide. 
+Although the HockeyApp task allows you to specify the path to the symbols file, it’s a best practice to include the symbols (appxsym files) with the bundle.
 
 ## Set up a continuous deployment build that submits a package to the Store 
 
@@ -280,9 +279,9 @@ To generate Store submission packages, associate your app with the Store by usin
 
 ![associate to store](images/building-screen16.png) 
 
->Note: This wizard generates a file named Package.StoreAssociation.xml that contains the Store association information. If you store your source code in a public repository such as GitHub, this file will contain all the app reserved names for that account. You can exclude or delete this file before making it public.
+The Store Association Wizard generates a file named Package.StoreAssociation.xml that contains the Store association information. If you store your source code in a public repository such as GitHub, this file will contain all the app reserved names for that account. You can exclude or delete this file before making it public.
 
-If you don’t have access to the DevCenter account that was used to publish the app, you can follow the instructions in this document: [Building an app for a 3rd party? How to package their Store app.](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97) 
+If you don’t have access to the Dev Center account that was used to publish the app, you can follow the instructions in this document: [Building an app for a 3rd party? How to package their Store app](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97). 
 
 Then you need to verify that the build step includes the following parameter:
 
@@ -303,14 +302,14 @@ Once you’ve configured the extension, you can add the build task, and configur
 
 ![configure dev center](images/building-screen17.png) 
 
-Where the value of the `Package File` paramter will be:
+Where the value of the `Package File` parameter will be:
 
 ```
 $(Build.ArtifactStagingDirectory)\
 AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 ```
 
->Note. You have to manually activate this build. You can use it to update existing apps but you can’t use it to for your first submission to the Store. For more information, see [Create and manage Store submissions by using Microsoft Store Services.](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)
+You have to manually activate this build. You can use it to update existing apps but you can’t use it to for your first submission to the Store. For more information, see [Create and manage Store submissions by using Microsoft Store Services.](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)
 
 ## Best Practices
 
@@ -325,10 +324,10 @@ Use the `Add-AppDevPackage.ps1` PowerShell script to install apps. This script w
 #### Sideloading your app with the Windows 10 Anniversary Update
 In the Windows 10 Anniversary Update, you can double-click the appxbundle file and install your app by choosing the Install button in a dialog box. 
 
-
 ![sideload in rs1](images/building-screen18.png) 
 
->Note: This method doesn’t install the certificate or the associated dependencies.
+>[!NOTE]
+> This method doesn’t install the certificate or the associated dependencies.
 
 If you want to distribute your appx packages from a website such as VSTS or HockeyApp, you’ll need to add that site to the list of trusted sites in your browser. Otherwise, Windows marks the file as locked. 
 
@@ -339,8 +338,9 @@ Visual Studio generates a certificate for each project. This makes it difficult 
 
 
 #### Create a Signing Certificate
-Use the [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/ff548309.aspx)  tool to create a certificate. 
-The following example, creates a certificate by using the MakeCert.exe tool.
+Use the [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/ff548309.aspx) tool to create a certificate.
+
+The following example creates a certificate by using the MakeCert.exe tool.
 
 ```
 MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e expirationDate /sv MyKey.pvk MyKey.cer
@@ -373,7 +373,7 @@ A target device has to trust the certificate before the app can be installed on 
 
 Register the public key of the certificate in the Trusted People or Trust Root location in the Local Machine certificate store.
 
-The easiest way to register the certificate is to double-click in the .cer file, and then follow the steps in the wizard to save the certificate in the Local Machine and Trusted People store.
+The quickest way to register the certificate is to double-click in the .cer file, and then follow the steps in the wizard to save the certificate in the **Local Machine** and **Trusted People** store.
 
 ## Related Topics
 * [Build your .NET app for Windows](https://www.visualstudio.com/docs/build/get-started/dot-net) 

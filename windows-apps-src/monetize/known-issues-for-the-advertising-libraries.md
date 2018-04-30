@@ -4,7 +4,7 @@ ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: Learn about known issues for the current release of the Microsoft Advertising SDK.
 title: Known issues and troubleshooting for ads in apps
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -45,7 +45,7 @@ There are many reasons you may see no ads, including network errors. Other reaso
 
 * If you created a new ad unit ID in the past half-hour, you might not see an ad until the servers propagate new data through the system. Existing IDs that have shown ads before should show ads immediately.
 
-If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://go.microsoft.com/fwlink/p/?LinkId=331508). On that page, choose **In-App Advertising**.
+If you can see test ads in the app, your code is working and is able to display ads. If you encounter issues, contact [product support](https://developer.microsoft.com/en-us/windows/support). On that page, choose **Ads-In-Apps**.
 
 You can also post a question in the [forum](http://go.microsoft.com/fwlink/p/?LinkId=401266).
 

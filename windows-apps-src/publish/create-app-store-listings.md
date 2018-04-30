@@ -4,7 +4,7 @@ Description: The Store listings section of the app submission process is where y
 title: Create app Store listings
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 04/02/2018
+ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -89,13 +89,13 @@ For more info, see [Additional art assets](app-screenshots-and-images.md#additio
 
 ## Supplemental information
 
-The fields in this section are all optional. App features and system requirements can help customers understand more about what your app does and what is required for the best experience. Other options help provide an optimal experience for your product in different scenarios. Review the info below to determine if providing this info makes sense for your submission.
+The fields in this section are all optional. Review the info below to determine if providing this info makes sense for your submission. In particular, the **Short description** is recommended for most submissions. The other fields may help provide an optimal experience for your product in different scenarios.
 
 ### Short title
 
 A shorter version of your product’s name. If provided, this shorter name may appear in various places on Xbox One (during installation, in Achievements, etc.) in place of the full title of your product.
 
-The **Short title** has a 50 character limit.
+This field has a 50 character limit.
 
 
 ### Sort title
@@ -114,7 +114,9 @@ This field has a 255 character limit.
 
 ### Short description
 
-Only used for games. This description appears in the Information section of the Game Hub on Xbox One, and helps customers understand more about your game.
+A shorter, catchy description that may be used in the top of your product’s Store listing. If not provided, the first paragraph (up to 500 characters) of your longer [description](#description) will be used instead. Because your description also appears below this text, we recommend providing a short description with different text so that your Store listing isn’t repetitive.
+
+For games, the short description may also appear in the Information section of the Game Hub on Xbox One.
 
 This field has a 500 character limit.
 

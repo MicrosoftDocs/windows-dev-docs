@@ -30,7 +30,7 @@ For most submissions, we recommend leaving the **Publishing hold options** secti
 
 ### Publish your submission manually
 
-If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose **Don't publish this submission until I select Publish now**. Choosing this option means that your selection won’t be published until you indicate that it should be. After your app passes certification, you can publish it by selecting **Publish now** on the certification status page, or by selecting a specific date in the same manner as described below.
+If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose **Don't publish this submission until I select Publish now**. Choosing this option means that your submission won’t be published until you indicate that it should be. After your app passes certification, you can publish it by selecting **Publish now** on the certification status page, or by selecting a specific date in the same manner as described below.
 
 
 ### Start publishing your submission on a certain date
@@ -44,7 +44,7 @@ As noted earlier, if you want to specify certain dates for your submission to be
 
 ## Notes for certification
 
-As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly. 
+As you submit your app, you have the option to use the **Notes for certification** section to provide additional info to the certification testers. This info can help ensure that your app is tested correctly. 
 
 For more info, see [Notes for certification](notes-for-certification.md).
 

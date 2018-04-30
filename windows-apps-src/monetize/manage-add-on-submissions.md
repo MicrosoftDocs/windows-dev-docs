@@ -4,7 +4,7 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Windows Dev Center account.
 title: Manage add-on submissions
 ms.author: mcleans
-ms.date: 03/19/2018
+ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -229,7 +229,7 @@ This resource has the following values.
 
 | Value      | Type   | Description        |
 |------------|--------|----------------------|
-| id            | string  | The ID of the submission.  |
+| id            | string  | The ID of the submission. This ID is available in the response data for requests to [create an add-on submission](create-an-add-on-submission.md), [get all add-ons](get-all-add-ons.md), and [get an add-on](get-an-add-on.md). For a submission that was created in the Dev Center dashboard, this ID is also available in the URL for the submission page in the dashboard.  |
 | contentType           | string  |  The [type of content](../publish/enter-add-on-properties.md#content-type) that is provided in the add-on. This can be one of the following values: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | An array of strings that contain up to 10 [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on. Your app can query for add-ons using these keywords.   |
 | lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |

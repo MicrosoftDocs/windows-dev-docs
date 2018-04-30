@@ -113,7 +113,7 @@ See these articles for info and examples specific to each text control.
 ## Font and style guidelines
 See these articles for font guidelines:
 
-- [Font guidelines](../style/fonts.md)
+- [Typography guidelines](../style/typography.md)
 - [Segoe MDL2 icon list and guidelines](../style/segoe-ui-symbol-font.md)
 
 ## Pen input
@@ -218,7 +218,7 @@ For TextBox and RichEditBox controls, spell checking is turned on by default. Yo
 ## Related articles
 
 **For designers**
-- [Font guidelines](../style/fonts.md)
+- [Typography guidelines](../style/typography.md)
 - [Segoe MDL2 icon list and guidelines](../style/segoe-ui-symbol-font.md)
 - [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
 

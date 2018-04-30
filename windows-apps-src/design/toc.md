@@ -1,7 +1,7 @@
 # Design basics
 ## [Overview](basics/index.md)
 ## [Intro to app design](basics/design-and-ui-intro.md)
-## [Fluent Design system](fluent-design-system/index.md)
+## [Fluent Design System](fluent-design-system/index.md)
 ## [Command basics](basics/commanding-basics.md)
 ## [Content basics](basics/content-basics.md)
 ## [Navigation basics](basics/navigation-basics.md)
@@ -12,36 +12,6 @@
 ### [Create an adaptive layout](basics/xaml-basics-adaptive-layout.md)
 ### [Style a control](basics/xaml-basics-style.md)
 
-# Style
-## [Overview](style/index.md)
-## [Acrylic](style/acrylic.md)
-## [Color](style/color.md)
-## [Icons](style/icons.md)
-## [Reveal highlight](style/reveal.md)
-## [Reveal focus](style/reveal-focus.md)
-## [Sound](style/sound.md)
-## [Typography](style/typography.md)
-### [Fonts](style/fonts.md)
-### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
-## [Writing style](style/writing-style.md)
-## [XAML brushes](style/brushes.md)
-## [XAML styles](controls-and-patterns/xaml-styles.md)
-### [XAML Control templates](controls-and-patterns/control-templates.md)
-### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
-### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
-
-# Motion
-## [Overview](motion/index.md)
-## [Connected animation](motion/connected-animation.md)
-## [Content transition](motion/content-transition-animations.md)
-## [Add and delete](motion/motion-list.md)
-## [Fade](motion/motion-fade.md)
-## [Parallax](motion/parallax.md)
-## [Press feedback](motion/motion-pointer.md)
-## [Animations in XAML](motion/xaml-animation.md)
-### [Storyboarded animations](motion/storyboarded-animations.md)
-### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
-
 # Layout
 ## [Overview](layout/index.md)
 ## [Page layout](layout/page-layout.md)
@@ -49,7 +19,7 @@
 ## [Responsive design techniques](layout/responsive-design.md)
 ## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
 ## [Show multiple views](layout/show-multiple-views.md)
-## [Alignment, margins, and padding](layout/alignment-margin-padding.md)
+## [Alignment, margin, and padding](layout/alignment-margin-padding.md)
 ## Layout panels
 ### [Overview](layout/layout-panels.md)
 ### [Tutorial: Use layout panels](layout/grid-tutorial.md)
@@ -122,6 +92,36 @@
 ## [Tree view ](controls-and-patterns/tree-view.md)
 ## [Web view](controls-and-patterns/web-view.md)
 
+# Style
+## [Overview](style/index.md)
+## [Acrylic](style/acrylic.md)
+## [Color](style/color.md)
+## [Icons](style/icons.md)
+### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
+## [Reveal highlight](style/reveal.md)
+## [Reveal focus](style/reveal-focus.md)
+## [Sound](style/sound.md)
+## [Typography](style/typography.md)
+## [Writing style](style/writing-style.md)
+## [XAML brushes](style/brushes.md)
+## [XAML styles](controls-and-patterns/xaml-styles.md)
+### [XAML Control templates](controls-and-patterns/control-templates.md)
+### [ResourceDictionary and XAML resource references](controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+### [XAML theme resources](controls-and-patterns/xaml-theme-resources.md)
+
+# Motion
+## [Overview](motion/index.md)
+## [Connected animation](motion/connected-animation.md)
+## [Content transition](motion/content-transition-animations.md)
+## [Add and delete](motion/motion-list.md)
+## [Fade](motion/motion-fade.md)
+## [Page transitions](motion/page-transitions.md)
+## [Parallax](motion/parallax.md)
+## [Press feedback](motion/motion-pointer.md)
+## [Animations in XAML](motion/xaml-animation.md)
+### [Storyboarded animations](motion/storyboarded-animations.md)
+### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
+
 # Shell
 ## [Tiles](shell/tiles-and-notifications/creating-tiles.md)
 ### [Tile and icon asset guidelines](shell/tiles-and-notifications/app-assets.md)
@@ -167,7 +167,8 @@
 
 
 # Input and interactions
-## [Overview](input/input-primer.md)
+## [Overview](input/index.md)
+## [Input primer](input/input-primer.md)
 ## [Pointer input](input/handle-pointer-input.md)
 ## [Pen and Windows Ink](input/pen-and-stylus-interactions.md)
 ### [Tutorial: Add Inking support to your app](input/ink-walkthrough.md)
@@ -197,12 +198,12 @@
 ### [Audio input issues](input/manage-issues-with-audio-input.md)
 ### [Speech recognition timeouts](input/set-speech-recognition-timeouts.md)
 ## [Cortana](input/cortana-interactions.md)
-### [Design guidelines](https://docs.microsoft.com/cortana/voice-commands/vcd)
-### [Launch a foreground app](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)
+### [Design guidelines](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
+### [Activate a foreground app](https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)
 ### [Modify VCD phrase lists](https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists)
 ### [Launch a background app](https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana)
 ### [Interact with a background app](https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana)
-### [Deep link to a background app](https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana)
+### [Deep link from a background app](https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana)
 ### [Support natural-language voice commands](https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana)
 ## [Multiple inputs](input/multiple-input-design-guidelines.md)
 ## [Identify input devices](input/identify-input-devices.md)

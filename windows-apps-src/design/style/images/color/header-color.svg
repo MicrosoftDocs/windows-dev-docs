@@ -1,0 +1,42 @@
+<svg width="1152" height="551" viewBox="0 0 1152 551" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>header-color</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(19456 5488)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -19456 -5488L -18304 -5488L -18304 -4937L -19456 -4937L -19456 -5488Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="header-color" clip-path="url(#clip-0)">
+<path d="M -19456 -5488L -18304 -5488L -18304 -4937L -19456 -4937L -19456 -5488Z" fill="#3A2E56"/>
+<g id="Group 27">
+<g id="Rectangle 32">
+<use xlink:href="#path0_fill" transform="matrix(5.4533e-17 1 -1 6.87548e-17 -18304 -5488)" fill="#ADD8FF"/>
+</g>
+<g id="Rectangle 32.1">
+<use xlink:href="#path1_fill" transform="matrix(5.4533e-17 1 -1 6.87548e-17 -18467.2 -5488)" fill="#80B9EE"/>
+</g>
+<g id="Rectangle 32.2">
+<use xlink:href="#path2_fill" transform="matrix(5.4533e-17 1 -1 6.87548e-17 -18631 -5488)" fill="#559CE4"/>
+</g>
+<g id="Rectangle 32.3">
+<use xlink:href="#path0_fill" transform="matrix(5.4533e-17 1 -1 6.87548e-17 -18796 -5488)" fill="#0078D4"/>
+</g>
+<g id="Rectangle 32.4">
+<use xlink:href="#path0_fill" transform="matrix(5.4533e-17 1 -1 6.87548e-17 -18960 -5488)" fill="#235A9F"/>
+</g>
+<g id="Rectangle 32.5">
+<use xlink:href="#path3_fill" transform="matrix(5.45949e-17 1 -1 6.86767e-17 -19124 -5488)" fill="#174276"/>
+</g>
+<g id="Rectangle 32.6">
+<use xlink:href="#path4_fill" transform="matrix(5.45949e-17 1 -1 6.86767e-17 -19288 -5488)" fill="#092642"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 551 0L 551 164L 0 164L 0 0Z"/>
+<path id="path1_fill" d="M 0 0L 550.515 0L 550.515 164.2L 0 164.2L 0 0Z"/>
+<path id="path2_fill" d="M 0 0L 551 0L 551 165L 0 165L 0 0Z"/>
+<path id="path3_fill" d="M 0 0L 551 0L 551 164.531L 0 164.531L 0 0Z"/>
+<path id="path4_fill" d="M 0 0L 551 0L 551 168L 0 168L 0 0Z"/>
+</defs>
+</svg>

@@ -16,21 +16,9 @@ ms.localizationpriority: high
 
 ![Get ready to use Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-
 It's easier than you think to get going. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
 
-## 1. Get Windows 10
-
-To develop UWP apps, you need the latest version of Windows.
-
--   [Get Windows 10 online](http://go.microsoft.com/fwlink/p/?LinkId=619312)
-
-Are you an MSDN subscriber? You can get ISO downloads here:
-
--   Get Windows 10 from [MSDN Subscriber Downloads](http://go.microsoft.com/fwlink/p/?LinkId=266384)
-
-
-## 2. Download or update Visual Studio
+## 1. Download or update Visual Studio
 
 Microsoft Visual Studio 2017 helps you design, code, test, and debug your apps.
 
@@ -49,13 +37,13 @@ If you have already started using Visual Studio, but discover you are missing so
    ![How to repeat the installation process](images/win10-cs-install.png)
 
 
-## 3. Enable your device for development
+## 2. Enable your device for development
 
 It’s important to test your UWP apps on real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
 
 -   For detailed instructions, see [Enable your device for development](enable-your-device-for-development.md).
 
-## 4. Register as an app developer
+## 3. Register as an app developer
 
 You can start developing apps now, but before you can submit them to the store, you need a developer account.
 
@@ -74,7 +62,7 @@ For the complete list of tools and downloads, see [Downloads](http://go.microsof
 
 ## See Also
 
-* [Your first app](your-first-app.md)
+* [Create UWP apps](create-uwp-apps.md)
 * [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
 * [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
 * [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)

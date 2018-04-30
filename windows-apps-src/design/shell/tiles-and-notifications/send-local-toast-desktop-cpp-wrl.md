@@ -160,7 +160,8 @@ If you're using WiX for your installer, edit the **Product.wxs** file to add the
 </Shortcut>
 ```
 
-In order to actually use notifications, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
+> [!IMPORTANT]
+> In order to actually use notifications, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
 
 #### Step 5.2: Register AUMID and COM server
@@ -429,6 +430,11 @@ if (IsWindows10OrGreater())
     // Running Windows 10, continue with sending Windows 10 toasts!
 }
 ```
+
+
+## Known issues
+
+**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 and higher.
 
 
 ## Resources

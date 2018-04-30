@@ -75,7 +75,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 In some cases, it can take time for your app to process the data it wants to share. Examples include users sharing collections of files or images. These items are larger than a simple text string, so they take longer to process.
 
 ```cs
-shareOperation.ReportDataRetreived(); 
+shareOperation.ReportStarted(); 
 ```
 
 After calling [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted), don't expect any more user interaction with your app. As a result, you shouldn't call it unless your app is at a point where it can be dismissed by the user.

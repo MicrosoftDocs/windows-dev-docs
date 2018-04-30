@@ -43,7 +43,7 @@ This method has the following syntax. See the following sections for usage examp
 ### Request parameters
 
 All request parameters are optional for this method. If you call this method without parameters, the response contains data for all apps that are registered to your account.
- 
+
 |  Parameter  |  Type  |  Description  |  Required  |
 |------|------|------|------|
 |  top  |  int  |  The number of items to return in the request (that is, the number of apps to return). If your account has more apps than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |

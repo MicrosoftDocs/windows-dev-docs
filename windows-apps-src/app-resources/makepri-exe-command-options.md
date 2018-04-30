@@ -4,7 +4,7 @@ Description: MakePri.exe has the set of commands createconfig, dump, new, resour
 title: MakePri.exe command-line options
 template: detail.hbs
 ms.author: stwhi
-ms.date: 10/18/2017
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -109,7 +109,7 @@ Help:
 The `dump` command outputs a dumped xml file containing a list of all resources in a specified PRI file. Run `MakePri.exe dump /?` to see detailed help for this command.
 
 > [!NOTE]
-> A schema-free resource pack is one that was created with the *omitSchemaFromResourcePacks* switch in the PRI config file. To dump a schema-free resource pack, use the switch `/es <main_package_PRI_file>`.
+> A schema-free resource pack is one that was created with the *omitSchemaFromResourcePacks* switch in the PRI config file. To dump a schema-free resource pack, use the switch `/es <main_package_PRI_file>`. If you don't specify the main file then you'll see the error message "*The resources.pri in the package was corrupted so encryption failed (error PRI222: 0xdef0000f - Unspecified error occurred)*".
 
 ```
 C:\>makepri dump /?

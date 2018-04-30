@@ -2,7 +2,7 @@
 author: wschin
 title: Convert existing ML models to ONNX
 description: Code samples demonstrate how to use WinMLTools to convert existing models in scikit-learn and Core ML into ONNX format.
-ms.author: wechi
+ms.author: sezhen
 ms.date: 3/7/2018
 ms.topic: article
 ms.prod: windows
@@ -11,9 +11,11 @@ keywords: windows 10, windows machine learning, WinML, WinMLTools, ONNX, ONNXMLT
 ms.localizationpriority: medium
 ---
 # Convert existing ML models to ONNX
-[WinMLTools](https://aka.ms/winmltools) allows users to convert models trained in other frameworks to ONNX format. Here we demonstrate how to install WinMLTools and how to convert existing models in scikit-learn and Core ML into ONNX.
+
+[WinMLTools](https://aka.ms/winmltools) allows users to convert models trained in other frameworks to ONNX format. Here we demonstrate how to install the WinMLTools package and how to convert existing models in scikit-learn and Core ML into ONNX via Python code.
 
 ## Install WinMLTools
+
 WinMLTools is a Python package (winmltools) that supports Python versions 2.7 and 3.6. If you are working on a data science project, we recommend installing a scientific Python distribution such as Anaconda.
 
 WinMLTools follows the [standard python package installation process](https://packaging.python.org/installing/). From your python environment, run:
@@ -21,25 +23,31 @@ WinMLTools follows the [standard python package installation process](https://pa
 ```
 pip install winmltools
 ```
-WinMLTools has the following dependencies
--	numpy v1.10.0+
--	onnxmltools 0.1.0.0+
--	protobuf v.3.1.0+
+
+WinMLTools has the following dependencies:
+
+- numpy v1.10.0+
+- onnxmltools 0.1.0.0+
+- protobuf v.3.1.0+
 
 To update the dependent packages, please run the pip command with ‘-U’ argument.
 
 ```
 pip install -U winmltools
 ```
+
 Please follow [onnxmltools](https://github.com/onnx/onnxmltools) on GitHub for further information on onnxmltools dependencies.
 
 Additional details on how to use WinMLTools can be found on the package specific documentation with the help function.
+
 ```
 help(winmltools)
 ```
 
 ## Scikit-learn models
+
 The following code snippet trains a linear support vector machine in scikit-learn and converts the model into ONNX.
+
 ~~~python
 # First, we create a toy data set.
 # The training matrix X contains three examples, with two features each.
@@ -77,10 +85,13 @@ linear_svr = LinearSVR()
 linear_svr.fit(X, y)
 linear_svr_onnx = convert_sklearn(linear_svr, name='LinearSVR', input_features=[('input', 'float', 2)])   
 ~~~
+
 Users can replace `LinearSVC` with other scikit-learn models such as `RandomForestClassifier`. Please note that the [automatic code generator](overview.md#automatic-interface-code-generation) uses the `name` parameter to generate class names and variables. If `name` is not provided, then a GUID is generated, which will not comply with variable naming conventions for languages like C++/C#. 
 
 ## Scikit-learn pipelines
+
 Next, we show how scikit-learn pipelines can be converted into ONNX.
+
 ~~~python
 # First, we create a toy data set.
 # Notice that the first example's last feature value, 300, is large.
@@ -145,7 +156,9 @@ print(another_pipeline_onnx)
 ~~~
 
 ## Core ML models
-Here, we assume that the path of an example Core ML model file is *example.mlmodel*. 
+
+Here, we assume that the path of an example Core ML model file is *example.mlmodel*.
+
 ~~~python
 from coremltools.models.utils import load_spec
 # Load model file
@@ -155,7 +168,9 @@ from winmltools import convert_coreml
 # The automatic code generator (mlgen) uses the name parameter to generate class names.
 model_onnx = convert_coreml(model_coreml, name='ExampleModel')   
 ~~~
+
 The `model_onnx` is an ONNX [ModelProto](https://github.com/onnx/onnxmltools/blob/0f453c3f375c1ae928b83a4c7909c82c013a5bff/onnxmltools/proto/onnx-ml.proto#L176) object. We can save it in two different formats.
+
 ~~~python
 from winmltools.utils import save_model
 # Save the produced ONNX model in binary format
@@ -164,6 +179,12 @@ save_model(model_onnx, 'example.onnx')
 from winmltools.utils import save_text
 save_text(model_onnx, 'example.txt')
 ~~~
+
+**Note**: CoreMLTools is a Python package provided by Apple, but is not available on Windows. If you need to install the package on Windows, install the package directly from the repo:
+
+```
+pip install git+https://github.com/apple/coremltools
+```
 
 ## Core ML models with image inputs or outputs
 
@@ -176,16 +197,19 @@ If the original Core ML model outputs an image, manually convert ONNX's floating
 Here we consider a Core ML model, FNS-Candy, downloaded from [GitHub](https://github.com/likedan/Awesome-CoreML-Models), as a concrete conversion example to demonstrate the difference between ONNX and Core ML formats. Note that all the subsequent commands are executed in a python enviroment.
 
 First, we load the Core ML model and examine its input and output formats.
+
 ~~~python
 from coremltools.models.utils import load_spec
 model_coreml = load_spec('FNS-Candy.mlmodel')
 model_coreml.description # Print the content of Core ML model description
 ~~~
+
 Screen output:
+
 ~~~
 ...
 input {
-    ... 
+    ...
       imageType {
       width: 720
       height: 720
@@ -203,17 +227,23 @@ output {
 }
 ...
 ~~~
+
 In this case, both the input and output are 720x720 BGR-image. Our next step is to convert the Core ML model with WinMLTools.
+
 ~~~python
 # The automatic code generator (mlgen) uses the name parameter to generate class names.
 from onnxmltools import convert_coreml
 model_onnx = convert_coreml(model_coreml, name='FNSCandy')    
 ~~~
+
 An alternative method to view the model input and output formats in ONNX, is to use the following command:
+
 ~~~python
 model_onnx.graph.input # Print out the ONNX input tensor's information
 ~~~
+
 Screen output:
+
 ~~~
 ...
   tensor_type {
@@ -235,12 +265,15 @@ Screen output:
   }
 ...
 ~~~
+
 The produced input (denoted by *X*) in ONNX is a 4-D tensor. The last 3 axes are C-, H-, and W-axes, respectively. The first dimension is "None" which means that this ONNX model can be applied to any number of images. To apply this model to process a batch of 2 images, the first image corresponds to *X*[0, :, :, :] while *X*[1, :, :, :] corresponds to the second image. The blue/green/red channels of the first image are *X*[0, 0, :, :]/*X*[0, 1, :, :]/*X*[0, 2, :, :], and similar for the second image.
 
 ~~~python
 model_onnx.graph.output # Print out the ONNX output tensor's information
 ~~~
+
 Screen output:
+
 ~~~
 ...
   tensor_type {
@@ -262,4 +295,5 @@ Screen output:
   }
 ...
 ~~~
+
 As you can see, the produced format is identical to the original model input format. However, in this case, it's not an image because the pixel values are integers, not floating-point numbers. To convert back to an image, truncate values greater than 255 to 255, change negative values to 0, and round all decimals to integers.

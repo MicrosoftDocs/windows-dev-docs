@@ -65,7 +65,7 @@
                       topicHref: "/windows/uwp/design/downloads/index"                       
               - name: Develop
                 tocHref: /windows/uwp/develop/
-                topicHref: "/windows/uwp/whats-new/windows-10-version-1703" 
+                topicHref: "/windows/uwp/develop/index" 
                 items: 
                     - name: App resources 
                       tocHref: /windows/uwp/app-resources/
