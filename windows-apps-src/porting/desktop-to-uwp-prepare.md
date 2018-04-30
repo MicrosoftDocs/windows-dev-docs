@@ -88,7 +88,7 @@ The dependencies will not get installed if the app is installed by sideloading. 
   * [VC 11.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53340)
 
 
-+ __Your app contains a custom jump list__. There are several issues and caveats to aware of when using jump lists.
++ __Your app contains a custom jump list__. There are several issues and caveats to be aware of when using jump lists.
 
 	- __Your app's architecture does not match the OS.__  Jump lists currently do not function correctly if the app and OS architectures do not match (e.g., an x86 app running on x64 Windows). At this time, there is no workaround other than to recompile your app to the matching architecture.
 
