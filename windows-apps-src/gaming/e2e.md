@@ -257,7 +257,6 @@ Developer forums are a great place to ask and answer game development questions 
         <td>UWP apps developer forum</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?forum=wpdevelop">Developing Universal Windows Platform apps</a></td>
     </tr>
-
     <tr>
         <td>Desktop applications developer forums</td>
         <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsdesktopdev">Windows desktop applications forums</a></td>
