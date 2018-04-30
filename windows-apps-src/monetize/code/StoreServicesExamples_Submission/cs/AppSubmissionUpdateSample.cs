@@ -133,6 +133,8 @@ namespace DeveloperApiCSharpSample
                 {
                     fileStatus = "PendingUpload",
                     fileName = "package.appx",
+                    minimumDirectXVersion = "None",
+                    minimumSystemRam = "None"
                 });
 
             clonedSubmission.applicationPackages = JToken.FromObject(packages.ToArray());

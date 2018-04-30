@@ -20,10 +20,8 @@ code responsible for key business-critical operations.
 
 ## Introduction
 
->**Note**  The sample code that accompanies this paper may be [downloaded from this
-location](http://go.microsoft.com/fwlink/p/?LinkID=393655), and
-Microsoft Visual Studio template to build Brokered Windows Runtime
-Component can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows
+>**Note**  The sample code that accompanies this paper may be downloaded for [Visual Studio 2015 & 2017](https://aka.ms/brokeredsample). The Microsoft Visual Studio template to build Brokered Windows Runtime
+Components can be downloaded here: [Visual Studio 2015 template targeting Universal Windows Apps for Windows
 10](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
 Windows includes a new feature called *Brokered Windows Runtime
@@ -195,7 +193,7 @@ and select “Unload Project”, then right click again and select “Edit
 EnterpriseServer.csproj” to open the project file, an XML file, for
 editing.
 
-In the opened file, search for the <OutputType> tag and change its
+In the opened file, search for the \<OutputType\> tag and change its
 value to “winmdobj”.
 
 **Step 3:** Create a build rule that creates a "reference" Windows metadata file (.winmd file). i.e. has no implementation.
@@ -208,26 +206,49 @@ Post-build event command line, in project **Properties** > **Build Events**.
 > **Note** the script is different based on the version of Windows you
 are targeting (Windows 10) and the version of Visual Studio in use.
 
+**Visual Studio 2015**
 ```cmd
-call "$(DevEnvDir)..\..\vc\vcvarsall.bat" x86 10.0.10240.0
+    call "$(DevEnvDir)..\..\vc\vcvarsall.bat" x86 10.0.14393.0
 
-md "$(TargetDir)"\impl
-md "$(TargetDir)"\reference
+    md "$(TargetDir)"\impl    md "$(TargetDir)"\reference
 
-erase "$(TargetDir)\impl\*.winmd"
-erase "$(TargetDir)\impl\*.pdb"
-erase "$(TargetDir)\reference\*.winmd"
+    erase "$(TargetDir)\impl\*.winmd"
+    erase "$(TargetDir)\impl\*.pdb"
+    rem erase "$(TargetDir)\reference\*.winmd"
 
-xcopy /y "$(TargetPath)" "$(TargetDir)impl"
-xcopy /y "$(TargetDir)*.pdb" "$(TargetDir)impl"
+    xcopy /y "$(TargetPath)" "$(TargetDir)impl"
+    xcopy /y "$(TargetDir)*.pdb" "$(TargetDir)impl"
 
-cd "$(TargetDir)impl"
+    winmdidl /nosystemdeclares /metadata_dir:C:\Windows\System32\Winmetadata "$(TargetPath)"
 
-winmdidl /nosystemdeclares /metadata_dir:"%WindowsSdkDir%UnionMetadata" "$(TargetName).winmd"
+    midl /metadata_dir "%WindowsSdkDir%UnionMetadata" /iid "$(SolutionDir)BrokeredProxyStub\$(TargetName)_i.c" /env win32 /x86 /h   "$(SolutionDir)BrokeredProxyStub\$(TargetName).h" /winmd "$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(SolutionDir)BrokeredProxyStub\dlldata.c" /proxy "$(SolutionDir)BrokeredProxyStub\$(TargetName)_p.c"  "$(TargetName).idl"
+    mdmerge -n 1 -i "$(ProjectDir)bin\$(ConfigurationName)" -o "$(TargetDir)reference" -metadata_dir "%WindowsSdkDir%UnionMetadata" -partial
 
-midl /metadata_dir "%WindowsSdkDir%UnionMetadata" /iid "$(SolutionDir)SampleProxy\$(TargetName)_i.c" /env win32 /h "$(SolutionDir)SampleProxy\$(TargetName).h" /winmd "$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(SolutionDir)SampleProxy\dlldata.c" /proxy "$(SolutionDir)SampleProxy\$(TargetName)_p.c"  "$(TargetName).idl"
+    rem erase "$(TargetPath)"
 
-mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%WindowsSdkDir%UnionMetadata" -partial
+```
+
+
+**Visual Studio 2017**
+```cmd
+    call "$(DevEnvDir)..\..\vc\auxiliary\build\vcvarsall.bat" x86 10.0.16299.0
+
+    md "$(TargetDir)"\impl
+    md "$(TargetDir)"\reference
+
+    erase "$(TargetDir)\impl\*.winmd"
+    erase "$(TargetDir)\impl\*.pdb"
+    rem erase "$(TargetDir)\reference\*.winmd"
+
+    xcopy /y "$(TargetPath)" "$(TargetDir)impl"
+    xcopy /y "$(TargetDir)*.pdb" "$(TargetDir)impl"
+
+    winmdidl /nosystemdeclares /metadata_dir:C:\Windows\System32\Winmetadata "$(TargetPath)"
+
+    midl /metadata_dir "%WindowsSdkDir%UnionMetadata" /iid "$(SolutionDir)BrokeredProxyStub\$(TargetName)_i.c" /env win32 /x86 /h "$(SolutionDir)BrokeredProxyStub\$(TargetName).h" /winmd "$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(SolutionDir)BrokeredProxyStub\dlldata.c" /proxy "$(SolutionDir)BrokeredProxyStub\$(TargetName)_p.c"  "$(TargetName).idl"
+    mdmerge -n 1 -i "$(ProjectDir)bin\$(ConfigurationName)" -o "$(TargetDir)reference" -metadata_dir "%WindowsSdkDir%UnionMetadata" -partial
+
+    rem erase "$(TargetPath)"
 ```
 
 Once the reference **winmd** is created (in folder “reference” under the
@@ -526,7 +547,7 @@ as shown below.
       <HintPath>$(MsBuildProgramFiles32)\Windows Kits\10\References\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract\1.0.0.0\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd</HintPath>
       <Private>False</Private>
     </Reference>
-
+</ItemGroup>
 ```
 
 The references above are a careful mix of eferences that are critical to

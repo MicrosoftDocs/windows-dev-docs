@@ -162,10 +162,16 @@ To execute a unit test, use the Visual Studio Test build step.
 
 ![add unit tests](images/building-screen8.png)
 
-UWP unit tests are executed in the context of a given app package file so you can’t use the generated bundle. Also, you’ll have to specify the path to a concrete platform app package file. For example:
+UWP unit tests are executed in the context of a given appxrecipe file so you can’t use the generated bundle. Also, you’ll have to specify the path to a concrete platform appxrecipe file. For example:
 
 ```
-$(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appx
+$(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.UnitTest_$(AppxVersion)_x86.appxrecipe
+```
+
+In order for the tests to run a console parameter will have to be added to vstest.console.exe. This parameter can be provide through: **Execution Options => Other console options**. Please add following parameter: 
+
+```
+/framework:FrameworkUap10
 ```
 
 >[!NOTE]

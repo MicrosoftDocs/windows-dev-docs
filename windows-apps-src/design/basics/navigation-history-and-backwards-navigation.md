@@ -80,7 +80,7 @@ public MainPage()
 
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    BackButton.IsEnabled = thisFrame.CanGoBack;
+    BackButton.IsEnabled = this.Frame.CanGoBack;
 }
 
 private void Back_Click(object sender, RoutedEventArgs e)
