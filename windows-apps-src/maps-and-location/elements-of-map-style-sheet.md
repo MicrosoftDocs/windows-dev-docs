@@ -43,6 +43,7 @@ Sometimes the value of a property is transformed to produce the final result.  F
 This topic shows the JSON entries and [properties](#properties) that you can use to customize the look and feel of your maps.
 
 <a id="entries" />
+
 ## Entries
 This table uses ">" characters to represent levels in the entry hierarchy.   
 
@@ -122,11 +123,13 @@ This table uses ">" characters to represent levels in the entry hierarchy.
 | >> userLine                  | [MapElement](#mapelement) | The styling for default user lines. |
 
 <a id="properties" />
+
 ## Properties
 
 This section describes the properties that you can use for each entry.
 
 <a id="version" />
+
 ### Version properties
 
 | Property                     | Type    | Description                                                                                                           |
@@ -134,6 +137,7 @@ This section describes the properties that you can use for each entry.
 | version                      | String  | Targeted style sheet version. Used for applicability. "1.0" for default, "1.*" for additional minor features updates. |
 
 <a id="settings" />
+
 ### Settings properties
 
 | Property                     | Type    | Description                                                                                                                                                                                                                 |
@@ -153,6 +157,7 @@ This section describes the properties that you can use for each entry.
 | useDefaultImageColors        | Bool    | A flag that indicates whetehr the original colors in the SVG should be used rather than looking up the palette entry for colors in an image.                                                                                |
 
 <a id="mapelement" />
+
 ### MapElement properties
 
 | Property                     | Type    | Description                                                                                                                 |
@@ -168,6 +173,7 @@ This section describes the properties that you can use for each entry.
 | visible                      | Bool    |                                                                                                                             |
 
 <a id="borderedmap" />
+
 ### BorderedMapElement
 
 This property group inherits from the [MapElement](#mapelement) property group.
@@ -192,6 +198,7 @@ This property group inherits from the [MapElement](#mapelement) property group.
 | stemOutlineColor             | Color   | The color of the outline around the stem coming out of the bottom of the icon in 3D mode.                          |
 
 <a id="twotonelinestyle" />
+
 ### TwoToneLineStyle properties
 
 This property group inherits from the [MapElement](#mapelement) property group.
