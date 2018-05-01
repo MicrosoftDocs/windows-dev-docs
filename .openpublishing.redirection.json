@@ -21,7 +21,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "/landing/arm-docs/index.md",
+      "source_path": "landing/arm-docs/index.md",
       "redirect_url": "https://docs.microsoft.com",
       "redirect_document_id": false
     },
