@@ -20,6 +20,8 @@ App Installer allows for UWP apps to be installed by double clicking the app pac
 
 | Topic | Description |
 |-------|-------------|
+| [Create App Installer file with Visual Studio](create-appinstallerfile-vs.md)| Learn how to use Visual Studio to enable automatic updates using the .appinstaller file. |
 | [Install UWP apps from a web page](installing-UWP-apps-web.md) | In this section, we will review the steps you need to take to allow users to install your apps directly from the web page. |
 | [Install a related set using an App Installer file](install-related-set.md) | In this section, learn how to allow the installation of a related set via App Installer. We will also go through the steps to construct an App Installer file that will define your related set. |
+| [Troubleshoot installation issues with the App Installer file](troubleshoot-appinstaller-issues.md) | Common issues and solutions when sideloading applications with the App Installer file. |
 | [App Installer file (.appinstaller) reference](https://docs.microsoft.com/uwp/schemas/appinstallerschema/app-installer-file) | View the full XML schema for the App Installer file. |
