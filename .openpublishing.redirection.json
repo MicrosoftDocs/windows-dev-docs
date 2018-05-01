@@ -21,11 +21,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "landing/arm-docs/index.md",
-      "redirect_url": "https://docs.microsoft.com",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/controls-and-patterns/dialogs-popups-menus.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/controls-and-patterns/dialogs",
       "redirect_document_id": false
