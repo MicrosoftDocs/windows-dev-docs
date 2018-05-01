@@ -83,7 +83,7 @@ Your app’s packages must comply with these requirements.
 For UWP apps, all packages must target a version of Windows 10 supported by the Store. The versions your package supports must be indicated in the **MinVersion** and **MaxVersionTested** attributes of the [TargetDeviceFamily](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element of the app manifest.
 
 The versions currently supported range from: 
-- Minimum: 10.0.10500.0
+- Minimum: 10.0.10240.0
 - Maximum: 10.0.17134.0
 
 

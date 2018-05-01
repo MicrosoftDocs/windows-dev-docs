@@ -4,7 +4,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Windows Dev Center account.
 title: Manage app submissions
 ms.author: mcleans
-ms.date: 04/17/2018
+ms.date: 04/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -422,9 +422,9 @@ This resource contains base listing info for an app. This resource has the follo
 |  copyrightAndTrademarkInfo                |   string      |  Optional [copyright and/or trademark info](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info).  |
 |  keywords                |  array       |  An array of [keyword](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords) to help your app appear in search results.    |
 |  licenseTerms                |    string     | The optional [license terms](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms) for your app.     |
-|  privacyPolicy                |   string      |   The URL for the [privacy policy](../publish/enter-app-properties.md#privacy-policy-url) for your app.    |
-|  supportContact                |   string      |  The URL or email address for the [support contact info](../publish/enter-app-properties.md#support-contact-info) for your app.     |
-|  websiteUrl                |   string      |  The URL of the [web page](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website) for your app.    |    
+|  privacyPolicy                |   string      |   This value is obsolete. To set or change the privacy policy URL for your app, you must do this on the [Properties](../publish/enter-app-properties.md#privacy-policy-url) page in the Dev Center dashboard. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.       |
+|  supportContact                |   string      |  This value is obsolete. To set or change the support contact URL or email address for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#support-contact-info) page in the Dev Center dashboard. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.        |
+|  websiteUrl                |   string      |  This value is obsolete. To set or change the URL of the web page for your app, you must do this on the  [Properties](../publish/enter-app-properties.md#website) page in the Dev Center dashboard. You can omit this value from your calls to the submission API. If you set this value, it will be ignored.      |    
 |  description               |    string     |   The [description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) for the app listing.   |     
 |  features               |    array     |  An array of up to 20 strings that list the [features](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) for your app.     |
 |  releaseNotes               |  string       |  The [release notes](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) for your app.    |
