@@ -83,6 +83,18 @@ private void InitializeTreeView()
 }
 ```
 
+```vb
+Private Sub InitializeTreeView()
+    Dim rootNode As New TreeViewNode With {.Content = "Flavors", .IsExpanded = True}
+    With rootNode.Children
+        .Add(New TreeViewNode With {.Content = "Vanilla"})
+        .Add(New TreeViewNode With {.Content = "Strawberry"})
+        .Add(New TreeViewNode With {.Content = "Chocolate"})
+    End With
+    sampleTreeView.RootNodes.Add(rootNode)
+End Sub
+```
+
 These APIs are available for managing the data hierarchy of your tree view.
 
 | **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
@@ -109,6 +121,11 @@ In the previous examples, the content was a simple string value. Here, a tree vi
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 TreeViewNode pictureNode = new TreeViewNode();
 pictureNode.Content = picturesFolder;
+```
+
+```vb
+Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 ```
 
 You can provide a [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
@@ -154,6 +171,14 @@ private void SampleTreeView_Expanding(TreeView sender, TreeViewExpandingEventArg
 }
 ```
 
+```vb
+Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandingEventArgs)
+    If args.Node.HasUnrealizedChildren Then
+        FillTreeNode(args.Node)
+    End If
+End Sub
+```
+
 It's not required, but you might want to also handle the [Collapsed](/uwp/api/windows.ui.xaml.controls.treeview.collapsed) event and remove the child nodes when the parent node is closed. This can be important if your tree view has many nodes, or if the node data uses a lot of resources. You should consider the performance impact of filling a node each time it's opened versus leaving the children on a closed node. The best option will depend on your app.
 
 Here's an example of a handler for the Collapsed event.
@@ -164,6 +189,13 @@ private void SampleTreeView_Collapsed(TreeView sender, TreeViewCollapsedEventArg
     args.Node.Children.Clear();
     args.Node.HasUnrealizedChildren = true;
 }
+```
+
+```vb
+Private Sub SampleTreeView_Collapsed(sender As TreeView, args As TreeViewCollapsedEventArgs)
+    args.Node.Children.Clear()
+    args.Node.HasUnrealizedChildren = True
+End Sub
 ```
 
 ### Invoking an item
@@ -195,6 +227,21 @@ private void SampleTreeView_ItemInvoked(TreeView sender, TreeViewItemInvokedEven
         }
     }
 }
+```
+
+```vb
+Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemInvokedEventArgs)
+    Dim node = TryCast(args.InvokedItem, TreeViewNode)
+    Dim item = TryCast(node.Content, IStorageItem)
+    If item IsNot Nothing Then
+        FileNameTextBlock.Text = item.Name
+        FilePathTextBlock.Text = item.Path
+        TreeDepthTextBlock.Text = node.Depth.ToString()
+        If TypeOf node.Content Is StorageFolder Then
+            node.IsExpanded = Not node.IsExpanded
+        End If
+    End If
+End Sub
 ```
 
 ### Item selection
@@ -305,6 +352,26 @@ private void SelectAllButton_Click(object sender, RoutedEventArgs e)
         DessertTree.SelectAll();
     }
 }
+```
+
+```vb
+Private Sub OrderButton_Click(sender As Object, e As RoutedEventArgs)
+    FlavorList.Text = String.Empty
+    ToppingList.Text = String.Empty
+    For Each node As TreeViewNode In DessertTree.SelectedNodes
+        If node.Parent.Content?.ToString() = "Flavors" Then
+            FlavorList.Text += node.Content & "; "
+        ElseIf node.HasChildren = False Then
+            ToppingList.Text += node.Content & "; "
+        End If
+    Next
+End Sub
+
+Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
+    If DessertTree.SelectionMode = TreeViewSelectionMode.Multiple Then
+        DessertTree.SelectAll()
+    End If
+End Sub
 ```
 
 ### Pictures and Music Library tree view
@@ -506,6 +573,104 @@ private void RefreshButton_Click(object sender, RoutedEventArgs e)
     sampleTreeView.RootNodes.Clear();
     InitializeTreeView();
 }
+```
+
+```vb
+Public Sub New()
+    InitializeComponent()
+    InitializeTreeView()
+End Sub
+
+Private Sub InitializeTreeView()
+    ' A TreeView can have more than 1 root node. The Pictures library
+    ' and the Music library will each be a root node in the tree.
+    ' Get Pictures library.
+    Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+    Dim pictureNode As New TreeViewNode With {
+        .Content = picturesFolder,
+        .IsExpanded = True,
+        .HasUnrealizedChildren = True
+    }
+    sampleTreeView.RootNodes.Add(pictureNode)
+    FillTreeNode(pictureNode)
+
+    ' Get Music library.
+    Dim musicFolder As StorageFolder = KnownFolders.MusicLibrary
+    Dim musicNode As New TreeViewNode With {
+        .Content = musicFolder,
+        .IsExpanded = True,
+        .HasUnrealizedChildren = True
+    }
+    sampleTreeView.RootNodes.Add(musicNode)
+    FillTreeNode(musicNode)
+End Sub
+
+Private Async Sub FillTreeNode(node As TreeViewNode)
+    ' Get the contents of the folder represented by the current tree node.
+    ' Add each item as a new child node of the node that's being expanded.
+
+    ' Only process the node if it's a folder and has unrealized children.
+    Dim folder As StorageFolder = Nothing
+    If TypeOf node.Content Is StorageFolder AndAlso node.HasUnrealizedChildren Then
+        folder = TryCast(node.Content, StorageFolder)
+    Else
+        ' The node isn't a folder, or it's already been filled.
+        Return
+    End If
+
+    Dim itemsList As IReadOnlyList(Of IStorageItem) = Await folder.GetItemsAsync()
+    If itemsList.Count = 0 Then
+        ' The item is a folder, but it's empty. Leave HasUnrealizedChildren = true so
+        ' that the chevron appears, but don't try to process children that aren't there.
+        Return
+    End If
+
+    For Each item In itemsList
+        Dim newNode As New TreeViewNode With {
+            .Content = item
+        }
+        If TypeOf item Is StorageFolder Then
+            ' If the item is a folder, set HasUnrealizedChildren to True.
+            ' This makes the collapsed chevron show up.
+            newNode.HasUnrealizedChildren = True
+        Else
+            ' Item is StorageFile. No processing needed for this scenario.
+        End If
+        node.Children.Add(newNode)
+    Next
+
+    ' Children were just added to this node, so set HasUnrealizedChildren to False.
+    node.HasUnrealizedChildren = False
+End Sub
+
+Private Sub SampleTreeView_Expanding(sender As TreeView, args As TreeViewExpandingEventArgs)
+    If args.Node.HasUnrealizedChildren Then
+        FillTreeNode(args.Node)
+    End If
+End Sub
+
+Private Sub SampleTreeView_Collapsed(sender As TreeView, args As TreeViewCollapsedEventArgs)
+    args.Node.Children.Clear()
+    args.Node.HasUnrealizedChildren = True
+End Sub
+
+Private Sub SampleTreeView_ItemInvoked(sender As TreeView, args As TreeViewItemInvokedEventArgs)
+    Dim node = TryCast(args.InvokedItem, TreeViewNode)
+    Dim item = TryCast(node.Content, IStorageItem)
+    If item IsNot Nothing Then
+        FileNameTextBlock.Text = item.Name
+        FilePathTextBlock.Text = item.Path
+        TreeDepthTextBlock.Text = node.Depth.ToString()
+        If TypeOf node.Content Is StorageFolder Then
+            node.IsExpanded = Not node.IsExpanded
+        End If
+    End If
+End Sub
+
+Private Sub RefreshButton_Click(sender As Object, e As RoutedEventArgs)
+    sampleTreeView.RootNodes.Clear()
+    InitializeTreeView()
+End Sub
 ```
 
 ## Related articles
