@@ -3,7 +3,7 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: Choose visibility options
 ms.author: wdg-dev-content
-ms.date: 04/16/2018
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -58,7 +58,7 @@ Here are some important things to keep in mind when choosing to distribute your 
 - While the Store will ensure that your app is only visible and available to people signed in with a Microsoft account that you’ve added to your private audience, we can’t prevent those people from sharing info or screenshots outside of your private audience. When confidentiality is critical, be sure that your private audience only includes people whom you trust not to share details about your app with others.
 - Make sure to let your testers know how to give you their feedback. You probably won’t want them to leave feedback in Feedback Hub, because any other customer could see that feedback. Consider including a link for them to send email or provide feedback in some other way.
 - Any reviews written by people in your private audience will be available for you to view. However, these reviews won’t be published in your app’s Store listing, even after your submission is moved to **Public audience**. You can read reviews written by your private audience by viewing the [Reviews report](reviews-report.md) in Dev Center, but you can't download this data or use the [Microsoft Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) to programmatically access these reviews.
-- When you move an app from **Private audience** to **Public audience**, the **Release date** shown on the Store listing will be the date it was first published to the public audience (unless you have specified a different [display release date](set-app-pricing-and-availability.md#display-release-date)).
+- When you move an app from **Private audience** to **Public audience**, the **Release date** shown on the Store listing will be the date it was first published to the public audience.
 
 ## Discoverability
 

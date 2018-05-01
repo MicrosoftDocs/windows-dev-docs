@@ -3,7 +3,7 @@ author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: Configure precise release scheduling
 ms.author: wdg-dev-content
-ms.date: 03/28/2017
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -50,8 +50,6 @@ Here are the options you can configure for a product’s **Release** schedule:
    - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.)
 - **not scheduled**: The app will not be available in the Store. If you choose this option, you can make the app available in the Store later by creating a new submission and choosing one of the other options.
 
-> [!TIP]
-> You can also optionally [enter a different release date](set-app-pricing-and-availability.md#display-release-date) to appear on your app's Store listing. 
 
 ## Stop acquisition
 

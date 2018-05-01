@@ -4,7 +4,7 @@ Description: The Pricing and availability page of the app submission process let
 title: Set app pricing and availability
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -37,11 +37,6 @@ For more info, see [Choose visibility options](choose-visibility-options.md).
 By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the [Visibility](choose-visibility-options.md#discoverability) section) section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section. 
 
 For more info, see [Configure precise release scheduling](configure-precise-release-scheduling.md).
-
-
-## Display release date
-
-By default, the release date for your app will be the date when it appears in the Store. If you'd like to override this and provide a custom release date, you can check the box in this section, and then enter the release date. Note that the release date is not always displayed in Store listings.
 
 
 ## Pricing
