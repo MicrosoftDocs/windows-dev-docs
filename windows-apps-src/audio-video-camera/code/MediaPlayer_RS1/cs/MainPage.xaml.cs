@@ -36,6 +36,7 @@ using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.UI.Xaml;
 using Windows.Graphics.Display;
+using Windows.Media.Streaming.Adaptive;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -728,6 +729,28 @@ namespace MediaPlayer_Win10
             }
         }
         // </SnippetSphericalTracksChanged>
+
+        #endregion
+
+        #region degradation reason
+        AdaptiveMediaSource adaptiveMediaSource;
+        //<SnippetPolicyDegradation>
+        private void MediaPlayer_MediaOpened(MediaPlayer sender, object args)
+        {
+            MediaPlaybackSessionOutputDegradationPolicyState info = sender.PlaybackSession.GetOutputDegradationPolicyState();
+
+            if (info.VideoConstrictionReason != MediaPlaybackSessionVideoConstrictionReason.None)
+            {
+                // Switch to lowest bitrate to save bandwidth
+                adaptiveMediaSource.DesiredMaxBitrate = adaptiveMediaSource.AvailableBitrates[0];
+
+                // Log the degradation reason or show a message to the user
+                System.Diagnostics.Debug.WriteLine("Logging constriction reason: " + info.VideoConstrictionReason);
+            }
+        }
+        //</SnippetPolicyDegradation>
+        #endregion
+    }
         #endregion
         #region audio state monitor
 

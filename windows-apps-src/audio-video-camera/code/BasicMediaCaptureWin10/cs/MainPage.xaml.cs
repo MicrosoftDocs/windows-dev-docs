@@ -89,6 +89,7 @@ using Windows.Media;
 
 // <SnippetMediaEncodingPropertiesUsing>
 using Windows.Media.MediaProperties;
+using Windows.Media.Capture.Frames;
 // </SnippetMediaEncodingPropertiesUsing>
 
 
@@ -1694,6 +1695,10 @@ namespace BasicCameraWin10
 
         }
 
+
+
+        // These concurrency APIs were never implemented by hardware vendors and are de facto deprecated.
+        /*
         private async void GetConcurrentProfile()
         {
             // Initialize our concurrency support flag.
@@ -1759,7 +1764,9 @@ namespace BasicCameraWin10
             }
             // </SnippetInitConcurrentMediaCaptures>
         }
+        */
 
+    
         private async void GetHdrProfile()
         {
             // <SnippetGetHdrProfileSetup>
@@ -1808,7 +1815,36 @@ namespace BasicCameraWin10
             }
             // </SnippetFindHDRProfile>
         }
-        
+
+        //<SnippetFindKnownVideoProfile>
+        private async Task<MediaCaptureInitializationSettings> GetKnownVideoProfile(KnownVideoProfile knownVideoProfile)
+        {
+            IReadOnlyList<MediaFrameSourceGroup> sourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+            MediaCaptureInitializationSettings settings = null;
+
+            foreach (MediaFrameSourceGroup sg in sourceGroups)
+            {
+                // Find a device that support VariablePhotoSequence
+                IReadOnlyList<MediaCaptureVideoProfile> profileList = MediaCapture.FindKnownVideoProfiles(
+                                              sg.Id,
+                                              knownVideoProfile); // e.g. KnownVideoProfile.HdrWithWcgVideo
+
+                if (profileList.Count > 0)
+                {
+                    settings = new MediaCaptureInitializationSettings();
+                    settings.VideoProfile = profileList[0];
+                    settings.VideoDeviceId = sg.Id;
+                    break;
+                }
+            }
+            return settings;
+
+            
+        }
+        // </SnippetFindKnownVideoProfile>
+
+
+
         private async void GetPhotoAndVideoSupport()
         {
             string videoDeviceId = string.Empty;

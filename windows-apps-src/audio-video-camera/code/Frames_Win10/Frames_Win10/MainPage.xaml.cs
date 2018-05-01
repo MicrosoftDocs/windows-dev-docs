@@ -25,6 +25,10 @@ using System.Threading;
 using Windows.UI.Core;
 using System.Threading.Tasks;
 using Windows.Media.Core;
+using System.Diagnostics;
+using Windows.Media;
+using Windows.Media.Devices;
+using Windows.Media.Audio;
 // </SnippetFramesUsing>
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -592,5 +596,162 @@ namespace Frames_Win10
             // </SnippetMediaSourceMediaPlayer>
 
         }
+        #region Audio frames
+        AudioDeviceController audioDeviceController;
+
+        private void AudioFrame1Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            InitAudioFrameReader();
+        }
+        private async void InitAudioFrameReader()
+        {
+            //<SnippetInitAudioFrameSource>
+            mediaCapture = new MediaCapture();
+            MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings()
+            {
+                StreamingCaptureMode = StreamingCaptureMode.Audio,
+            };
+            await mediaCapture.InitializeAsync(settings);
+
+            var audioFrameSources = mediaCapture.FrameSources.Where(x => x.Value.Info.MediaStreamType == MediaStreamType.Audio);
+
+            if (audioFrameSources.Count() == 0)
+            {
+                Debug.WriteLine("No audio frame source was found.");
+                return;
+            }
+
+            MediaFrameSource frameSource = audioFrameSources.FirstOrDefault().Value;
+            
+            MediaFrameFormat format = frameSource.CurrentFormat;
+            if (format.Subtype != MediaEncodingSubtypes.Float)
+            {
+                return;
+            }
+
+            if (format.AudioEncodingProperties.ChannelCount != 1
+                || format.AudioEncodingProperties.SampleRate != 48000)
+            {
+                return;
+            }
+            //</SnippetInitAudioFrameSource>
+
+            //<SnippetCreateAudioFrameReader>
+            mediaFrameReader = await mediaCapture.CreateFrameReaderAsync(frameSource);
+
+            // Optionally set acquisition mode. Buffered is the default mode for audio.
+            mediaFrameReader.AcquisitionMode = MediaFrameReaderAcquisitionMode.Buffered;
+
+            mediaFrameReader.FrameArrived += MediaFrameReader_AudioFrameArrived;
+
+            var status = await mediaFrameReader.StartAsync();
+
+            if (status != MediaFrameReaderStartStatus.Success)
+            {
+                Debug.WriteLine("The MediaFrameReader couldn't start.");
+            }
+            //</SnippetCreateAudioFrameReader>
+        }
+
+
+
+        //<SnippetProcessAudioFrame>
+        private void MediaFrameReader_AudioFrameArrived(MediaFrameReader sender, MediaFrameArrivedEventArgs args)
+        {
+            using (MediaFrameReference reference = sender.TryAcquireLatestFrame())
+            {
+                if (reference != null)
+                {
+                    ProcessAudioFrame(reference.AudioMediaFrame);
+                }
+            }
+        }
+        unsafe private void ProcessAudioFrame(AudioMediaFrame audioMediaFrame)
+        {
+
+            using (AudioFrame audioFrame = audioMediaFrame.GetAudioFrame())
+            using (AudioBuffer buffer = audioFrame.LockBuffer(AudioBufferAccessMode.Read))
+            using (IMemoryBufferReference reference = buffer.CreateReference())
+            {
+                byte* dataInBytes;
+                uint capacityInBytes;
+                float* dataInFloat;
+
+
+                ((IMemoryBufferByteAccess)reference).GetBuffer(out dataInBytes, out capacityInBytes);
+                
+                // The requested format was float
+                dataInFloat = (float*)dataInBytes;
+
+                // Get the number of samples by multiplying the duration by sampling rate: 
+                // duration [s] x sampling rate [samples/s] = # samples 
+
+                // Duration can be gotten off the frame reference OR the audioFrame
+                TimeSpan duration = audioMediaFrame.FrameReference.Duration;
+
+                // frameDurMs is in milliseconds, while SampleRate is given per second.
+                uint frameDurMs = (uint)duration.TotalMilliseconds;
+                uint sampleRate = audioMediaFrame.AudioEncodingProperties.SampleRate;
+                uint sampleCount = (frameDurMs * sampleRate) / 1000;
+
+            }
+        }
+        //</SnippetProcessAudioFrame>
+
+        private void MuteAudioDeviceController(MediaFrameSource frameSource)
+        {
+            //<SnippetAudioDeviceController>
+            audioDeviceController = frameSource.Controller.AudioDeviceController;
+            //</SnippetAudioDeviceController>
+
+            //<SnippetAudioDeviceControllerMute>
+            audioDeviceController.Muted = true;
+            //</SnippetAudioDeviceControllerMute>
+        }
+
+        AudioGraph audioGraph;
+        AudioFrameInputNode audioFrameInputNode;
+        private async void MockAudioGraph(AudioFrame audioFrame)
+        {
+            AudioGraphSettings settings = new AudioGraphSettings(Windows.Media.Render.AudioRenderCategory.Media);
+            var result = await AudioGraph.CreateAsync(settings);
+            var graph = result.Graph;
+
+            audioFrameInputNode = graph.CreateFrameInputNode();
+
+            //<SnippetAudioFrameInputNode>
+            audioFrameInputNode.AddFrame(audioFrame);
+            //</SnippetAudioFrameInputNode>
+        }
+        #endregion
+
+        //<SnippetGetSettingsWithProfile>
+        public async Task<MediaCaptureInitializationSettings> FindHdrWithWcgPhotoProfile()
+        {
+            IReadOnlyList<MediaFrameSourceGroup> sourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+            MediaCaptureInitializationSettings settings = null;
+
+            foreach (MediaFrameSourceGroup sourceGroup in sourceGroups)
+            {
+                // Find a device that support AdvancedColorPhoto
+                IReadOnlyList<MediaCaptureVideoProfile> profileList = MediaCapture.FindKnownVideoProfiles(
+                                              sourceGroup.Id,
+                                              KnownVideoProfile.HdrWithWcgPhoto);
+
+                if (profileList.Count > 0)
+                {
+                    settings = new MediaCaptureInitializationSettings();
+                    settings.VideoProfile = profileList[0];
+                    settings.VideoDeviceId = sourceGroup.Id;
+                    break;
+                }
+            }
+            return settings;
+        }
+
+        //</SnippetGetSettingsWithProfile>
+
+
     }
 }

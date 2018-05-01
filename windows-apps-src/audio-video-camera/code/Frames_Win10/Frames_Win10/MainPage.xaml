@@ -25,7 +25,7 @@
             <Button x:Name="MultiframeButton" Click="MultiFrameButton_Click" Content="MultiFrame"/>
             <Button x:Name="OpenCV" Click="OpenCV_Click" Content="OpenCV"/>
             <Button x:Name="MediaSourceFromFrameSource" Click="MediaSourceFromFrameSource_Click" Content="MediaSourceFromFrameSource"/>
-            
+            <Button x:Name="AudioFrame1Button" Click="AudioFrame1Button_Click" Content="AudioFrame1"/>
         </StackPanel>
         <Border Grid.Row="0" Grid.Column="1">
         <!--<SnippetImageElementXAML>-->
