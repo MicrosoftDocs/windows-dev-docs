@@ -474,6 +474,7 @@
 ## [UWP App Streaming Install](../packaging/streaming-install.md)
 ### [Create and convert a source content group map](../packaging/create-cgm.md)
 ## [Optional packages and related set authoring](../packaging/optional-packages.md)
+### [Optional packages with executable code](../packaging/optional-packages-with-executable-code.md)
 ## [Install UWP apps with App Installer](../packaging/appinstaller-root.md)
 ### [Create an App Installer file with Visual Studio](../packaging/create-appinstallerfile-vs.md)
 ### [Install UWP apps from a web page](../packaging/installing-UWP-apps-web.md)
