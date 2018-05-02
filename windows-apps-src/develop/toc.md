@@ -219,7 +219,7 @@
 ## [Access the SD card](../files/access-the-sd-card.md)
 ## [File access permissions](../files/file-access-permissions.md)
 ## [Fast access to file properties in UWP](../files/fast-file-properties.md)
-# [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+# [Progressive Web Apps](/microsoft-edge/progressive-web-apps)
 # [Launching, resuming, and background tasks](../launch-resume/index.md)
 ## [Create a Universal Windows Platform console app](../launch-resume/console-uwp.md)
 ## [Create a Multi-instance UWP app](../launch-resume/multi-instance-uwp.md)
