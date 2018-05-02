@@ -40,12 +40,12 @@ The newly-created project contains a file named `Class.idl`. Rename that file `B
 // BankAccountWRC.idl
 namespace BankAccountWRC
 {
-	runtimeclass BankAccount
-	{
-		BankAccount();
-		event Windows.Foundation.EventHandler<Single> AccountIsInDebit;
-		void AdjustBalance(Single value);
-	};
+    runtimeclass BankAccount
+    {
+        BankAccount();
+        event Windows.Foundation.EventHandler<Single> AccountIsInDebit;
+        void AdjustBalance(Single value);
+    };
 }
 ```
 
@@ -64,10 +64,10 @@ namespace winrt::BankAccountWRC::implementation
     {
         ...
 
-	private:
-		event<Windows::Foundation::EventHandler<float>> accountIsInDebitEvent;
-		float balance{ 0.f };
-	};
+    private:
+        event<Windows::Foundation::EventHandler<float>> accountIsInDebitEvent;
+        float balance{ 0.f };
+    };
 }
 ...
 ```
@@ -79,21 +79,21 @@ In `BankAccount.cpp`, implement the functions like this.
 ...
 namespace winrt::BankAccountWRC::implementation
 {
-	event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
-	{
-		return accountIsInDebitEvent.add(handler);
-	}
+    event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
+    {
+        return accountIsInDebitEvent.add(handler);
+    }
 
-	void BankAccount::AccountIsInDebit(event_token const& token)
-	{
-		accountIsInDebitEvent.remove(token);
-	}
+    void BankAccount::AccountIsInDebit(event_token const& token)
+    {
+        accountIsInDebitEvent.remove(token);
+    }
 
-	void BankAccount::AdjustBalance(float value)
-	{
-		balance += value;
-		if (balance < 0.f) accountIsInDebitEvent(*this, balance);
-	}
+    void BankAccount::AdjustBalance(float value)
+    {
+        balance += value;
+        if (balance < 0.f) accountIsInDebitEvent(*this, balance);
+    }
 }
 ```
 
@@ -119,31 +119,31 @@ Also in `App.cpp`, add the following code to instantiate a BankAccount (using th
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-	BankAccountWRC::BankAccount bankAccount;
-	event_token eventToken;
-	...
-	
-	void Initialize(CoreApplicationView const &)
-	{
-		eventToken = bankAccount.AccountIsInDebit([](const auto &, float balance)
-		{
-			assert(balance < 0.f);
-		});
-	}
-	...
+    BankAccountWRC::BankAccount bankAccount;
+    event_token eventToken;
+    ...
+    
+    void Initialize(CoreApplicationView const &)
+    {
+        eventToken = bankAccount.AccountIsInDebit([](const auto &, float balance)
+        {
+            assert(balance < 0.f);
+        });
+    }
+    ...
 
-	void Uninitialize()
-	{
-		bankAccount.AccountIsInDebit(eventToken);
-	}
-	...
+    void Uninitialize()
+    {
+        bankAccount.AccountIsInDebit(eventToken);
+    }
+    ...
 
-	void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
-	{
-		bankAccount.AdjustBalance(-1.f);
-		...
-	}
-	...
+    void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
+    {
+        bankAccount.AdjustBalance(-1.f);
+        ...
+    }
+    ...
 };
 ```
 

@@ -81,16 +81,16 @@ using namespace Windows::Web::Syndication;
 
 int main()
 {
-	winrt::init_apartment();
+    winrt::init_apartment();
 
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
-	SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
-	for (const SyndicationItem syndicationItem : syndicationFeed.Items())
-	{
-		hstring titleAsHstring = syndicationItem.Title().Text();
-		std::wcout << titleAsHstring.c_str() << std::endl;
-	}
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
+    SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+    for (const SyndicationItem syndicationItem : syndicationFeed.Items())
+    {
+        hstring titleAsHstring = syndicationItem.Title().Text();
+        std::wcout << titleAsHstring.c_str() << std::endl;
+    }
 }
 ```
 

@@ -22,7 +22,7 @@ There are many string types in C++. Variants exist in many libraries in addition
 
 ```cppwinrt
 public:
-	Uri(winrt::hstring uri) const;
+    Uri(winrt::hstring uri) const;
 ```
 
 But **hstring** has [conversion constructors](/uwp/api/windows.foundation.uri#hstringhstring-constructor) that let you work with it without needing to be aware of it. Here's a code example showing how to make a **Uri** from a wide string literal, from a wide string view, and from a **std::wstring**.
@@ -36,19 +36,19 @@ using namespace Windows::Foundation;
 
 int main()
 {
-	using namespace std::literals;
+    using namespace std::literals;
 
-	winrt::init_apartment();
+    winrt::init_apartment();
 
-	// You can make a Uri from a wide string literal.
-	Uri contosoUri{ L"http://www.contoso.com" };
+    // You can make a Uri from a wide string literal.
+    Uri contosoUri{ L"http://www.contoso.com" };
 
-	// Or from a wide string view.
-	Uri contosoSVUri{ L"http://www.contoso.com"sv };
+    // Or from a wide string view.
+    Uri contosoSVUri{ L"http://www.contoso.com"sv };
 
-	// Or from a std::wstring.
-	std::wstring wideString{ L"http://www.adventure-works.com" };
-	Uri awUri{ wideString };
+    // Or from a std::wstring.
+    std::wstring wideString{ L"http://www.adventure-works.com" };
+    Uri awUri{ wideString };
 }
 ```
 
@@ -56,7 +56,7 @@ The property accessor [**Uri::Domain**](https://docs.microsoft.com/uwp/api/windo
 
 ```cppwinrt
 public:
-	winrt::hstring Domain();
+    winrt::hstring Domain();
 ```
 
 But, again, being aware of that detail is optional thanks to **hstring**'s [conversion operator to **std::wstring_view**](/uwp/api/windows.foundation.uri#hstringoperator-stdwstringview).
@@ -75,7 +75,7 @@ Similarly, [**IStringable::ToString**](https://msdn.microsoft.com/library/window
 
 ```cppwinrt
 public:
-	hstring ToString() const;
+    hstring ToString() const;
 ```
 
 **Uri** implements the [**IStringable**](https://msdn.microsoft.com/library/windows/desktop/dn302135) interface.
@@ -106,7 +106,7 @@ Consider a method that takes an **hstring**.
 
 ```cppwinrt
 public:
-	Uri CombineUri(winrt::hstring relativeUri) const;
+    Uri CombineUri(winrt::hstring relativeUri) const;
 ```
 
 All of the options you've just seen also apply in such cases.
@@ -114,7 +114,7 @@ All of the options you've just seen also apply in such cases.
 ```cppwinrt
 std::wstring contact{ L"contact" };
 contosoUri = contosoUri.CombineUri(contact);
-	
+    
 std::wcout << contosoUri.ToString().c_str() << std::endl;
 ```
 
@@ -125,7 +125,7 @@ void legacy_print(std::wstring_view view);
 
 void Print(winrt::hstring const& hstring)
 {
-	legacy_print(hstring);
+    legacy_print(hstring);
 }
 ```
 

@@ -28,8 +28,8 @@ using namespace Windows::Foundation;
 
 int main()
 {
-	winrt::init_apartment();
-	Uri contosoUri{ L"http://www.contoso.com" };
+    winrt::init_apartment();
+    Uri contosoUri{ L"http://www.contoso.com" };
 }
 ```
 
@@ -57,8 +57,8 @@ Then, just as for a Windows namespace type, you include a header and construct t
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-	BankAccountWRC::BankAccount bankAccount;
-	...
+    BankAccountWRC::BankAccount bankAccount;
+    ...
 };
 ```
 
@@ -74,10 +74,10 @@ For this scenario, you generate a projected type from the runtime class's Window
 ...
 struct MainPage : MainPageT<MainPage>
 {
-	...
-	private:
-		Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-		...
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
+        ...
     };
 }
 ...
@@ -87,8 +87,8 @@ struct MainPage : MainPageT<MainPage>
 
 MainPage::MainPage()
 {
-	m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
-	...
+    m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+    ...
 }
 ```
 
@@ -99,7 +99,7 @@ Here's an example of what projected types and interfaces might look like in your
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
-	Windows::Foundation::IStringable, Windows::Foundation::IClosable>
+    Windows::Foundation::IStringable, Windows::Foundation::IClosable>
 ```
 
 **MyRuntimeClass** is a projected type; projected interfaces include **IMyRuntimeClass**, **IStringable**, and **IClosable**. This topic has shown the different ways in which you can instantiate a projected type. Here's a reminder and summary, using **MyRuntimeClass** as an example.
@@ -121,10 +121,10 @@ myrc2 = winrt::make<MyProject::implementation::MyRuntimeClass>();
 ```cppwinrt
 void f(MyProject::MyRuntimeClass const& myrc)
 {
-	myrc.ToString();
-	myrc.Close();
-	IClosable iclosable = myrc.as<IClosable>();
-	iclosable.Close();
+    myrc.ToString();
+    myrc.Close();
+    IClosable iclosable = myrc.as<IClosable>();
+    iclosable.Close();
 }
 ```
 

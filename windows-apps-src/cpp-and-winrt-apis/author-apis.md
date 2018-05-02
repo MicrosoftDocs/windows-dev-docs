@@ -128,13 +128,13 @@ If your type is packaged in a Windows Runtime Component for consumption from an 
 // MyRuntimeClass.idl
 namespace MyProject
 {
-	runtimeclass MyRuntimeClass
-	{
-		// Declaring a constructor (or constructors) in the IDL causes the runtime class to be
-		// activatable from outside the compilation unit.
-		MyRuntimeClass();
-		String Name;
-	}
+    runtimeclass MyRuntimeClass
+    {
+        // Declaring a constructor (or constructors) in the IDL causes the runtime class to be
+        // activatable from outside the compilation unit.
+        MyRuntimeClass();
+        String Name;
+    }
 }
 ```
 
@@ -147,13 +147,13 @@ The implementation type looks like this.
 ...
 namespace winrt::MyProject::implementation
 {
-	struct MyRuntimeClass : MyRuntimeClassT<MyRuntimeClass>
-	{
-		MyRuntimeClass() = default;
+    struct MyRuntimeClass : MyRuntimeClassT<MyRuntimeClass>
+    {
+        MyRuntimeClass() = default;
 
-		hstring Name();
-		void Name(hstring const& value);
-	};
+        hstring Name();
+        void Name(hstring const& value);
+    };
 }
 
 // winrt::MyProject::factory_implementation::MyRuntimeClass is here, too.
@@ -186,11 +186,11 @@ Here are the parts of the projected type that are relevant to this topic.
 ...
 namespace winrt::MyProject
 {
-	struct MyRuntimeClass : MyProject::IMyRuntimeClass
-	{
-		MyRuntimeClass(std::nullptr_t) noexcept {}
-		MyRuntimeClass();
-	};
+    struct MyRuntimeClass : MyProject::IMyRuntimeClass
+    {
+        MyRuntimeClass(std::nullptr_t) noexcept {}
+        MyRuntimeClass();
+    };
 }
 ```
 
@@ -225,8 +225,8 @@ using namespace Windows::Foundation;
 
 struct MyType : implements<MyType, IStringable, IClosable>
 {
-	winrt::hstring ToString(){ ... }
-	void Close(){}
+    winrt::hstring ToString(){ ... }
+    void Close(){}
 };
 ```
 
@@ -236,10 +236,10 @@ Or you can generate it from IDL (it's a runtime class).
 // MyType.idl
 namespace MyProject
 {
-	runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
-	{
-		MyType();
-	}	
+    runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
+    {
+        MyType();
+    }    
 }
 ```
 
@@ -277,9 +277,9 @@ In the case where you have an interface object, and you happen to know that it's
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
 {
-	MyType* myimpl = winrt::from_abi<MyType>(from);
-	myimpl->ToString();
-	myimpl->Close();
+    MyType* myimpl = winrt::from_abi<MyType>(from);
+    myimpl->ToString();
+    myimpl->Close();
 }
 ```
 
@@ -309,11 +309,11 @@ If you have an instance of your implementation type, and you need to pass it to 
 // MySpecializedToggleButton.idl
 namespace MyNamespace
 {
-	runtimeclass MySpecializedToggleButton :
-		Windows.UI.Xaml.Controls.Primitives.ToggleButton
-	{
-		...
-	};
+    runtimeclass MySpecializedToggleButton :
+        Windows.UI.Xaml.Controls.Primitives.ToggleButton
+    {
+        ...
+    };
 }
 ```
 
@@ -321,11 +321,11 @@ namespace MyNamespace
 // MySpecializedToggleButtonAutomationPeer.idl
 namespace MyNamespace
 {
-	runtimeclass MySpecializedToggleButtonAutomationPeer :
-		Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
-	{
-		MySpecializedToggleButtonAutomationPeer(MySpecializedToggleButton owner);
-	};
+    runtimeclass MySpecializedToggleButtonAutomationPeer :
+        Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer
+    {
+        MySpecializedToggleButtonAutomationPeer(MySpecializedToggleButton owner);
+    };
 }
 ```
 
@@ -335,9 +335,9 @@ The generated constructor for your implementation type looks like this.
 // MySpecializedToggleButtonAutomationPeer.cpp
 ...
 MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
-	(MyNamespace::MySpecializedToggleButton const& owner)
+    (MyNamespace::MySpecializedToggleButton const& owner)
 {
-	...
+    ...
 }
 ...
 ```
@@ -348,10 +348,10 @@ The only piece missing is that you need to pass that constructor parameter on to
 // MySpecializedToggleButtonAutomationPeer.cpp
 ...
 MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
-	(MyNamespace::MySpecializedToggleButton const& owner) : 
-	MySpecializedToggleButtonAutomationPeerT<MySpecializedToggleButtonAutomationPeer>(owner)
+    (MyNamespace::MySpecializedToggleButton const& owner) : 
+    MySpecializedToggleButtonAutomationPeerT<MySpecializedToggleButtonAutomationPeer>(owner)
 {
-	...
+    ...
 }
 ...
 ```

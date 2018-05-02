@@ -39,10 +39,10 @@ The first step in authoring a new runtime class is to add a new **Midl File (.id
 // BookSku.idl
 namespace Bookstore
 {
-	runtimeclass BookSku : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.INotifyPropertyChanged
-	{
-		String Title;
-	}
+    runtimeclass BookSku : Windows.UI.Xaml.DependencyObject, Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        String Title;
+    }
 }
 ```
 
@@ -69,17 +69,17 @@ namespace winrt::Bookstore::implementation
     struct BookSku : BookSkuT<BookSku>
     {
         BookSku() = delete;
-		BookSku(hstring const& title);
+        BookSku(hstring const& title);
 
         hstring Title();
         void Title(hstring const& value);
         event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value);
         void PropertyChanged(event_token const& token);
-	
-	private:
-		hstring title;
-		event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> propertyChanged;
-	};
+    
+    private:
+        hstring title;
+        event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> propertyChanged;
+    };
 }
 ```
 
@@ -92,33 +92,33 @@ In `BookSku.cpp`, implement the functions like this.
 
 namespace winrt::Bookstore::implementation
 {
-	BookSku::BookSku(hstring const& title)
-	{
-		Title(title);
-	}
+    BookSku::BookSku(hstring const& title)
+    {
+        Title(title);
+    }
 
     hstring BookSku::Title()
     {
-		return title;
+        return title;
     }
 
     void BookSku::Title(hstring const& value)
     {
-		if (title != value)
-		{
-			title = value;
-			propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
-		}
+        if (title != value)
+        {
+            title = value;
+            propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
+        }
     }
 
     event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
     {
-		return propertyChanged.add(handler);
+        return propertyChanged.add(handler);
     }
 
     void BookSku::PropertyChanged(event_token const& token)
     {
-		propertyChanged.remove(token);
+        propertyChanged.remove(token);
     }
 }
 ```
@@ -136,10 +136,10 @@ import "BookSku.idl";
 
 namespace Bookstore
 {
-	runtimeclass BookstoreViewModel : Windows.UI.Xaml.DependencyObject
-	{
-		BookSku BookSku{ get; };
-	}
+    runtimeclass BookstoreViewModel : Windows.UI.Xaml.DependencyObject
+    {
+        BookSku BookSku{ get; };
+    }
 }
 ```
 
@@ -154,14 +154,14 @@ Save and build. Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from th
 
 namespace winrt::Bookstore::implementation
 {
-	struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
-	{
-		BookstoreViewModel();
-		Bookstore::BookSku BookSku();
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
+    {
+        BookstoreViewModel();
+        Bookstore::BookSku BookSku();
 
-	private:
-		Bookstore::BookSku m_bookSku{ nullptr };
-	};
+    private:
+        Bookstore::BookSku m_bookSku{ nullptr };
+    };
 }
 ```
 
@@ -172,15 +172,15 @@ namespace winrt::Bookstore::implementation
 
 namespace winrt::Bookstore::implementation
 {
-	BookstoreViewModel::BookstoreViewModel()
-	{
-		m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
-	}
+    BookstoreViewModel::BookstoreViewModel()
+    {
+        m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+    }
 
-	Bookstore::BookSku BookstoreViewModel::BookSku()
-	{
-		return m_bookSku;
-	}
+    Bookstore::BookSku BookstoreViewModel::BookSku()
+    {
+        return m_bookSku;
+    }
 }
 ```
 
@@ -196,11 +196,11 @@ import "BookstoreViewModel.idl";
 
 namespace BookstoreCPPWinRT
 {
-	runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
-	{
-		MainPage();
-		BookstoreViewModel MainViewModel{ get; };
-	}
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
 }
 ```
 
@@ -217,7 +217,7 @@ namespace winrt::Bookstore::implementation
     {
         MainPage();
 
-		Bookstore::BookstoreViewModel MainViewModel();
+        Bookstore::BookstoreViewModel MainViewModel();
 
     private:
         void ClickHandler(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& args);
@@ -243,21 +243,21 @@ using namespace Windows::UI::Xaml;
 
 namespace winrt::Bookstore::implementation
 {
-	MainPage::MainPage()
-	{
-		m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
-		InitializeComponent();
-	}
+    MainPage::MainPage()
+    {
+        m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+        InitializeComponent();
+    }
 
-	Bookstore::BookstoreViewModel MainPage::MainViewModel()
-	{
-		return m_mainViewModel;
-	}
+    Bookstore::BookstoreViewModel MainPage::MainViewModel()
+    {
+        return m_mainViewModel;
+    }
 
-	void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
-	{
-		MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
-	}
+    void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+    {
+        MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
+    }
 }
 ```
 

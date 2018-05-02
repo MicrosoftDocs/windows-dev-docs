@@ -42,16 +42,16 @@ using namespace Windows::Web::Syndication;
 
 void ProcessFeed()
 {
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
-	SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
-	// use syndicationFeed.
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
+    SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+    // use syndicationFeed.
 }
 
 int main()
 {
     winrt::init_apartment();
-	ProcessFeed();
+    ProcessFeed();
 }
 ```
 
@@ -74,27 +74,27 @@ using namespace Windows::Web::Syndication;
 
 void PrintFeed(SyndicationFeed syndicationFeed)
 {
-	for (SyndicationItem syndicationItem : syndicationFeed.Items())
-	{
-		std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
-	}
+    for (SyndicationItem syndicationItem : syndicationFeed.Items())
+    {
+        std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
+    }
 }
 
 IAsyncAction ProcessFeedAsync()
 {
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
-	SyndicationFeed syndicationFeed = co_await syndicationClient.RetrieveFeedAsync(rssFeedUri);
-	PrintFeed(syndicationFeed);
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
+    SyndicationFeed syndicationFeed = co_await syndicationClient.RetrieveFeedAsync(rssFeedUri);
+    PrintFeed(syndicationFeed);
 }
 
 int main()
 {
-	winrt::init_apartment();
+    winrt::init_apartment();
 
-	auto processOp = ProcessFeedAsync();
-	// do other work while the feed is being printed.
-	processOp.get(); // no more work to do; call get() so that we see the printout before the application exits.
+    auto processOp = ProcessFeedAsync();
+    // do other work while the feed is being printed.
+    processOp.get(); // no more work to do; call get() so that we see the printout before the application exits.
 }
 ```
 
@@ -121,26 +121,26 @@ using namespace Windows::Web::Syndication;
 
 void PrintFeed(SyndicationFeed syndicationFeed)
 {
-	for (SyndicationItem syndicationItem : syndicationFeed.Items())
-	{
-		std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
-	}
+    for (SyndicationItem syndicationItem : syndicationFeed.Items())
+    {
+        std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
+    }
 }
 
 IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> RetrieveBlogFeedAsync()
 {
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
-	return syndicationClient.RetrieveFeedAsync(rssFeedUri);
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
+    return syndicationClient.RetrieveFeedAsync(rssFeedUri);
 }
 
 int main()
 {
-	winrt::init_apartment();
+    winrt::init_apartment();
 
-	auto feedOp = RetrieveBlogFeedAsync();
-	// do other work.
-	PrintFeed(feedOp.get());
+    auto feedOp = RetrieveBlogFeedAsync();
+    // do other work.
+    PrintFeed(feedOp.get());
 }
 ```
 
@@ -168,22 +168,22 @@ using namespace Windows::Web::Syndication;
 
 concurrency::task<std::wstring> RetrieveFirstTitleAsync()
 {
-	return concurrency::create_task([]
-	{
-		Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-		SyndicationClient syndicationClient;
-		SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
-		return std::wstring{ syndicationFeed.Items().GetAt(0).Title().Text() };
-	});
+    return concurrency::create_task([]
+    {
+        Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+        SyndicationClient syndicationClient;
+        SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
+        return std::wstring{ syndicationFeed.Items().GetAt(0).Title().Text() };
+    });
 }
 
 int main()
 {
-	winrt::init_apartment();
+    winrt::init_apartment();
 
-	auto firstTitleOp = RetrieveFirstTitleAsync();
-	// do other work.
-	std::wcout << firstTitleOp.get() << std::endl;
+    auto firstTitleOp = RetrieveFirstTitleAsync();
+    // do other work.
+    std::wcout << firstTitleOp.get() << std::endl;
 }
 ```
 
