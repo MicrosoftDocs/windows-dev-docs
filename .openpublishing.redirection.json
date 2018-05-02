@@ -1527,8 +1527,8 @@
     },
     {
       "source_path": "windows-apps-src/style/typography.md",
-      "source_path": "windows-apps-src/controls-and-patterns/fonts.md",
-      "source_path": "windows-apps-src/style/fonts.md",
+      "source_path": "windows-apps-src/design/controls-and-patterns/fonts.md",
+      "source_path": "windows-apps-src/design/style/fonts.md",
       "redirect_url": "/windows/uwp/design/style/typography",
       "redirect_document_id": true
     },
