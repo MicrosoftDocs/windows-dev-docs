@@ -11,7 +11,7 @@ keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, a
 ms.localizationpriority: medium
 ---
 
-# Concurrency and asynchronous operations with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
+# Concurrency and asynchronous operations with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 
 ## Asynchronous operations and Windows Runtime "Async" functions
