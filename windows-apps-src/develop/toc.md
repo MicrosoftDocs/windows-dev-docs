@@ -195,6 +195,8 @@
 ## [Windows Information Protection (WIP)](../enterprise/wip-hub.md)
 ### [WIP developer guide](../enterprise/wip-dev-guide.md)
 ## [Enterprise shared storage](../enterprise/enterprise-shared-storage.md)
+## [Tutorial: Create a customer database application](../enterprise/customer-database-tutorial.md)
+### [Customer database tutorial app structure](../enterprise/customer-database-app-structure.md)
 # [Files, folders, and libraries](../files/index.md)
 ## [Enumerate and query files and folders](../files/quickstart-listing-files-and-folders.md)
 ## [Create, write, and read a file](../files/quickstart-reading-and-writing-files.md)
