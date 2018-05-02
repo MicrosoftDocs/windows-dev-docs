@@ -56,7 +56,7 @@ Starting with Windows, version 1803, you can access the [**BitmapProperties**](h
 
 For information about using **BitmapEncoder** and about working with the **SoftwareBitmap** object, including how to display one in a XAML page, see [**Create, edit, and save bitmap images**](imaging.md). 
 
-For more information on setting capture device control values, see [Capture device controls for photo and video](capture-device-controls-for-photo-and-video.md).
+For more information on setting capture device control values, see [Capture device controls for photo and video](capture-device-controls-for-photo-and-video-capture.md).
 
 Starting with Windows 10, version 1803, you can get the metadata, such as EXIF information, for photos captured in uncompressed format by accessing the [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) property of the **CapturedFrame** returned by **MediaCapture**. In previous releases this data was only accessible in the header of photos captured to a compressed file format. You can provide this data to a [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder) when manually writing an image file. For more information on encoding bitmaps, see [Create, edit, and save bitmap images](imaging.md).  You can also access the 
 frame control values, such as exposure and flash settings, used when the image was captured by accessing the [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) property. For more information, see [Capture device controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md).
