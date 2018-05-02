@@ -33,7 +33,7 @@ The priorities are:
 |----------------|---------------------|-------------------|---------------|
 |    High    |    Yes – user can block all notifications from an app   OR can prevent an app from being throttled in battery saver mode.    |    The most important notifications that must be delivered right away in any circumstance when the device can receive notifications. Things like VoIP calls or critical alerts that should wake the device fall into this category.    |    VoIP calls, time- critical alerts    |
 |    Medium    |    Yes – user can block all notifications from an app   OR can prevent an app from being throttled in battery saver mode.    |    These are things that are not as important, things that don’t need to happen right away, but users would be annoyed if they are not running in the background.    |    Secondary Email account sync, live tile updates.    |
-|    Low    |    Yes – user can block all notifications from an app   OR can prevent an app from being throttled in battery saver mode.    |    Notifications that only make sense when the user is using the device or when background activity makes sense. These are cached and not processed until the user gets back to their device.    |    Contact status (online/offline)    |
+|    Low    |    Yes – user can block all notifications from an app   OR can prevent an app from being throttled in battery saver mode.    |    Notifications that only make sense when the user is using the device or when background activity makes sense. These are cached and not processed until the user signs in or plugs in their device.    |    Contact status (online/offline)    |
 |    Very Low     |    No – It cannot prevent very low priority notifications from being throttled in battery saver mode.    |    This is almost the same as low priority except users cannot override the battery saver policy. These notifications will never   be delivered in battery saver.    |    Syncing files for a sync service.    |
 
 Note that many apps will have notifications of different priority throughout their lifecycle. Since the priority is set on a per-notification basis, this isn’t an issue. A VoIP app can send a high priority notification for an incoming call and then follow it up with a low priority one when a contact comes online. 
@@ -49,7 +49,7 @@ Setting the priority on the notification request is done through an additional h
 | Low | 2 | Raw |
 | Very Low | 3 |  |
 
-To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in in the chart above and match the behavior of existing versions of Windows. The behavior of notifications in the Fall Creators Update will not change, but apps can raise or lower the priorities of their notifications as desired. 
+To be backward compatible, setting a priority is not required. In case an app doesn’t set the priority of their notifications, the system will provide a default priority. The defaults are shown in in the chart above and match the behavior of existing versions of Windows. 
 
 ## Detailed listing of desktop behavior 
 
