@@ -59,21 +59,18 @@ After you populate the **MediaCaptureInitializationSettings** with your desired 
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## Select a profile that supports concurrence
+## Use media frame source groups to get profiles
 
-You can use camera profiles to determine if a device supports video capture from multiple cameras concurrently. For this scenario, you will need to create two sets of capture objects, one for the front camera and one for the back. For each camera, create a **MediaCapture**, a **MediaCaptureInitializationSettings**, and a string to hold the capture device ID. Also, add a boolean variable that will track whether concurrence is supported.
+Starting with Windows 10, version 1803, you can use the [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup) class to get camera profiles with specific capabilities before initializing the **MediaCapture** object. Frame source groups allow device manufacturers to represent groups of sensors or capture capabilities as a single virtual device. This enables computational photography scenarios such as using depth and color cameras together, but can also be used to select camera profiles for simple capture scenarios. For more information on using **MediaFrameSourceGroup**, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md).
 
-[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+The example method below shows how to use **MediaFrameSourceGroup** objects to find a camera profile that supports a known video profile, such as one that supports HDR or variable photo sequence. First, call [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) to get a list of all media frame source groups available on the current device. Loop through each source group and call [**MediaCapture.FindKnownVideoProfiles**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) to get a list of all of the video profiles for the current source group that support the specified profile, in this case HDR with WCG photo. If a profile that meets the criteria is found, create a new **MediaCaptureInitializationSettings** object and set the **VideoProfile** to the select profile and the **VideoDeviceId** to the **Id** property of the current media frame source group. So, for example, you could pass the value **KnownVideoProfile.HdrWithWcgVideo** into this method to get media capture settings that support HDR video. Pass **KnownVideoProfile.VariablePhotoSequence** to get settings that support variable photo sequence.
 
-The static method [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) returns a list of the camera profiles that are supported by the specified capture device that can also supports concurrence. Use a Linq query to find a profile that supports concurrence and that is supported by both the front and back camera. If a profile that meets theses requirements is found, set the profile on each of the **MediaCaptureInitializationSettings** objects and set the boolean concurrence tracking variable to true.
+ [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
 
-[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+## Use known profiles to find a profile that supports HDR video (legacy technique)
 
-Call **MediaCapture.InitializeAsync** for the primary camera for your app scenario. If concurrence is supported, initialize the second camera as well.
-
-[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
-
-## Use known profiles to find a profile that supports HDR video
+> [!NOTE] 
+> The APIs described in this section are deprecated starting with Windows 10, version 1803. See the previous section, **Use media frame source groups to get profiles**.
 
 Selecting a profile that supports HDR begins like the other scenarios. Create a a **MediaCaptureInitializationSettings** and a string to hold the capture device ID. Add a boolean variable that will track whether HDR video is supported.
 

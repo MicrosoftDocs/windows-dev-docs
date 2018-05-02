@@ -79,5 +79,64 @@ namespace SimpleCameraPreview_Win10
             // </SnippetMultiRecordToFile>
             Debug.WriteLine("done");
         }
+
+        public TimedMetadataStreamDescriptor CreateStreamDescriptorForGpmdEncodingSubtype()
+        {
+            //<SnippetGetStreamDescriptor>
+            TimedMetadataEncodingProperties encodingProperties = new TimedMetadataEncodingProperties
+            {
+                Subtype = "{67706D64-BF10-48B4-BC18-593DC1DB950F}"
+            };
+ 
+            byte[] streamDescriptionData = GetStreamDescriptionDataForGpmdEncodingSubtype();
+            encodingProperties.SetFormatUserData(streamDescriptionData);
+
+            TimedMetadataStreamDescriptor descriptor = new TimedMetadataStreamDescriptor(encodingProperties)
+            {
+                Name = "GPS Info",
+                Label = "GPS Info"
+            };
+            //</SnippetGetStreamDescriptor>
+            return descriptor;
+        }
+
+        private byte[] GetStreamDescriptionDataForGpmdEncodingSubtype()
+        {
+            return new byte[1];
+        }
+        //<SnippetGetMediaEncodingProfile>
+        public MediaEncodingProfile CreateProfileForTranscoder(VideoStreamDescriptor videoStream1, VideoStreamDescriptor videoStream2, AudioStreamDescriptor audioStream, TimedMetadataStreamDescriptor timedMetadataStream)
+        {
+            ContainerEncodingProperties container = new ContainerEncodingProperties()
+            {
+                Subtype = MediaEncodingSubtypes.Mpeg4
+            };
+
+            MediaEncodingProfile profile = new MediaEncodingProfile()
+            {
+                Container = container
+            };
+
+
+            VideoStreamDescriptor encodingVideoStream1 = videoStream1.Copy();
+            encodingVideoStream1.EncodingProperties.Subtype = MediaEncodingSubtypes.H264;
+            encodingVideoStream1.Label = videoStream1.Name;
+
+            VideoStreamDescriptor encodingVideoStream2 = videoStream2.Copy();
+            encodingVideoStream2.EncodingProperties.Subtype = MediaEncodingSubtypes.H264;
+            encodingVideoStream2.Label = videoStream2.Name;
+
+            AudioStreamDescriptor encodingAudioStream = audioStream.Copy();
+            encodingAudioStream.EncodingProperties.Subtype = MediaEncodingSubtypes.Ac3;
+            encodingAudioStream.Label = audioStream.Name;
+
+            TimedMetadataStreamDescriptor encodingTimedMetadataStream = timedMetadataStream.Copy();
+
+            profile.SetTimedMetadataTracks(new TimedMetadataStreamDescriptor[] { encodingTimedMetadataStream });
+            profile.SetVideoTracks(new VideoStreamDescriptor[] { encodingVideoStream1, encodingVideoStream2 });
+            profile.SetAudioTracks(new AudioStreamDescriptor[] { encodingAudioStream });
+            return profile;
+        }
+        //</SnippetGetMediaEncodingProfile>
     }
 }
