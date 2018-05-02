@@ -109,13 +109,12 @@
 
 # Motion
 ## [Overview](motion/index.md)
-## [Connected animation](motion/connected-animation.md)
-## [Content transition](motion/content-transition-animations.md)
-## [Add and delete](motion/motion-list.md)
-## [Fade](motion/motion-fade.md)
+## [Timing and easing](motion/timing-and-easing.md)
+## [Directionality and gravity](motion/directionality-and-gravity.md)
+## [Motion in practice](motion/motion-in-practice.md)
 ## [Page transitions](motion/page-transitions.md)
+## [Connected animation](motion/connected-animation.md)
 ## [Parallax](motion/parallax.md)
-## [Press feedback](motion/motion-pointer.md)
 ## [Animations in XAML](motion/xaml-animation.md)
 ### [Storyboarded animations](motion/storyboarded-animations.md)
 ### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
