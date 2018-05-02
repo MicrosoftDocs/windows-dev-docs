@@ -26,6 +26,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "landing/arm-docs/index.md",
+      "redirect_url": "https://docs.microsoft.com",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "windows-apps-src/controls-and-patterns/nav-pane.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview",
       "redirect_document_id": false
@@ -1522,8 +1527,8 @@
     },
     {
       "source_path": "windows-apps-src/style/typography.md",
-      "source_path": "windows-apps-src/controls-and-patterns/fonts.md",
-      "source_path": "windows-apps-src/style/fonts.md",
+      "source_path": "windows-apps-src/design/controls-and-patterns/fonts.md",
+      "source_path": "windows-apps-src/design/style/fonts.md",
       "redirect_url": "/windows/uwp/design/style/typography",
       "redirect_document_id": true
     },

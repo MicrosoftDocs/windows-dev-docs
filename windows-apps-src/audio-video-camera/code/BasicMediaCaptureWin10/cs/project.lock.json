@@ -12507,18 +12507,18 @@
       ]
     },
     "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
-      "sha512": "fNCAjIwvbTV+G0dT14bgM5tptsqeSaKQaCrlq7QknOq1Xdm8ZmgsDYddMgXkvykyKLjWyU6fKuOpj6fsQJy+wQ==",
+      "sha512": "NvBQnFeiFd0O1QdBz06UGApD7zn7ztVi7qO18IsM3EjiXRNgfrEBXB+azNm8XqLY8xGFAqh3HAuSd/wHZMe0XA==",
       "type": "package",
       "path": "microsoft.applicationinsights.windowsapps/1.0.0",
       "files": [
-        "Microsoft.ApplicationInsights.WindowsApps.1.0.0.nupkg.sha512",
-        "Microsoft.ApplicationInsights.WindowsApps.nuspec",
         "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
         "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
         "lib/wp8/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
         "lib/wp8/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
         "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.XML",
-        "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.dll"
+        "lib/wpa81/Microsoft.ApplicationInsights.Extensibility.Windows.dll",
+        "microsoft.applicationinsights.windowsapps.1.0.0.nupkg.sha512",
+        "microsoft.applicationinsights.windowsapps.nuspec"
       ]
     },
     "Microsoft.CSharp/4.0.0": {
@@ -15778,12 +15778,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\BasicCameraWin10.csproj",
+      "projectUniqueName": "C:\\Users\\drewbat\\source\\repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\BasicCameraWin10.csproj",
       "projectName": "BasicCameraWin10",
-      "projectPath": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\BasicCameraWin10.csproj",
-      "projectJsonPath": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\project.json",
+      "projectPath": "C:\\Users\\drewbat\\source\\repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\BasicCameraWin10.csproj",
+      "projectJsonPath": "C:\\Users\\drewbat\\source\\repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\project.json",
       "packagesPath": "C:\\Users\\drewbat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\drewbat\\Source\\Repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\obj\\",
+      "outputPath": "C:\\Users\\drewbat\\source\\repos\\windows-uwp\\windows-apps-src\\audio-video-camera\\code\\BasicMediaCaptureWin10\\cs\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\drewbat\\AppData\\Roaming\\NuGet\\NuGet.Config",

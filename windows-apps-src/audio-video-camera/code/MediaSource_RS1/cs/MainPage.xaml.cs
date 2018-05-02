@@ -24,6 +24,7 @@ using Windows.Media.Playback;
 // </SnippetUsing>
 
 using Windows.Media.Streaming.Adaptive;
+using Windows.Networking.BackgroundTransfer;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -801,7 +802,28 @@ namespace MediaSource_RS1
         }
         #endregion
 
+        #region DownloadOperation
 
+
+        private async void MediaSourceDownloadOperation()
+        {
+            //<SnippetCreateMediaSourceFromDownload>
+            StorageFile destinationFile = await KnownFolders.VideosLibrary.CreateFileAsync("file.mp4", CreationCollisionOption.GenerateUniqueName);
+
+            var downloader = new BackgroundDownloader();
+            var downloadOperation = downloader.CreateDownload(new Uri("http://server.com/file.mp4"), destinationFile);
+            MediaSource mediaSource =
+                  MediaSource.CreateFromDownloadOperation(downloadOperation);
+            //</SnippetCreateMediaSourceFromDownload>
+            //<SnippetStartDownload>
+            downloadOperation.IsRandomAccessRequired = true;
+            var startAsyncTask = downloadOperation.StartAsync().AsTask();
+            mediaPlayerElement.Source = mediaSource;
+            //</SnippetStartDownload>
+
+        }
+
+        #endregion
 
         private void ShowMessageToUser(string s) { }
         private void LogTelemetryData(string s) { }

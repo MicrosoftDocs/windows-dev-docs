@@ -30,6 +30,7 @@ Create a new instance of **MediaSource** by calling one of the factory methods e
 -   [**CreateFromStream**](https://msdn.microsoft.com/library/windows/apps/dn930910)
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
+-   [**CreateFromDownloadOperation**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromdownloadoperation)
 
 After creating a **MediaSource** you can play it with a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) property. Starting with Windows 10, version 1607, you can assign a **MediaPlayer** to a [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) by calling [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) in order to render the media player content in a XAML page. This is the preferred method over using **MediaElement**. For more information on using **MediaPlayer**, see [**Play audio and video with MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
 
@@ -60,6 +61,16 @@ By default, the **MediaPlayer** does not begin playing automatically when the me
 You can also set the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) property of the **MediaPlayer** to true to tell the player to begin playing as soon as the media source is set.
 
 [!code-cs[AutoPlay](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
+
+### Create a MediaSource from a DownloadOperation
+Starting with Windows, version 1803, you can create a **MediaSource** object from a **DownloadOperation**.
+
+[!code-cs[CreateMediaSourceFromDownload](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetCreateMediaSourceFromDownload)]
+
+Note that while you can create a **MediaSource** from a download without starting it or setting its **IsRandomAccessRequired** property to true, you must do both of these things before attempting to attach the **MediaSource** to a **MediaPlayer** or **MediaPlayerElement** for playback.
+
+[!code-cs[StartDownload](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetStartDownload)]
+
 
 ## Handle multiple audio, video, and metadata tracks with MediaPlaybackItem
 
