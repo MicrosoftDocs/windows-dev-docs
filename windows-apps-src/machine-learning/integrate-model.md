@@ -10,7 +10,6 @@ ms.technology: uwp
 keywords: windows 10, uwp, winml, Windows machine learning
 ms.localizationpriority: medium
 ---
-
 # Integrate a model into your app with Windows ML
 
 Windows ML's [automatic code generation](overview.md#automatic-interface-code-generation) creates an interface that calls the [Windows ML APIs](/uwp/api/windows.ai.machinelearning.preview) for you, allowing you to easily interact with your model. Using the interface's generated wrapper classes, you'll follow the load, bind, and evaluate pattern to integrate your ML model into your app.
