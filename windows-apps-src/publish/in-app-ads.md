@@ -4,7 +4,7 @@ Description: If your app displays ads using the Microsoft Advertising SDK, use t
 title: In-app ads
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 2/24/2018
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -28,17 +28,12 @@ For more information about how to integrate these SDKs with your apps to display
 To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial ad](../monetize/interstitial-ads.md), or [native ad](../monetize/native-ads.md) in your app:
 
 1.  Go to the **Monetize** &gt; **In-app ads** page in the dashboard and click **Create ad unit**.
-
 2.  In the **App name** drop-down, select the app in which your ad unit will be used.
-
 3.  In the **Ad unit name** field, enter a name for the ad unit. This can be any descriptive string that you want to use to identify the ad unit for reporting purposes.
-
 4.  In the **Ad unit type** drop-down, select the ad type.
 
     * If you are using an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) in your app to show banner ads, select **Banner**.
-
     * If you are using an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) in your app to show interstitial video ads or interstitial banner ads, select **Video interstitial** or **Banner interstitial** (be sure to select the appropriate option for the type of interstitial ad you want to show).
-
     * If you are using a [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) in your app to show native ads, select **Native**.
       > [!NOTE]
       > The ability to create **Native** ad units is currently available only to select developers who are participating in a pilot program, but we intend to make this feature available to all developers soon. If you are interested in joining our pilot program, reach out to us at aiacare@microsoft.com.
@@ -48,11 +43,9 @@ To create an ad unit for a [banner ad](../monetize/banner-ads.md), [interstitial
 6. Configure the following additional settings as desired:
 
     * If you select the **UWP (Windows 10)** device family for the ad unit, you can optionally configure [mediation settings](#mediation) for the ad unit.
-
     * If you select the **PC/Tablet (Windows 8.1)** or **Mobile (Windows Phone 8.x)** device family for a banner ad unit, you can optionally select **Show community ads in your app** to opt in to [community ads](about-community-ads.md).
 
 7.  If you haven't yet set the COPPA compliance for the selected app, choose an option in the [COPPA compliance](#coppa) section.
-
 8.  Click **Create ad unit**.
 
 After you create the new ad unit, it appears in the table of available ad units in the **Monetize** &gt; **In-app ads** page.
@@ -64,9 +57,7 @@ After you create the new ad unit, it appears in the table of available ad units 
 After you create ad units for one or more apps in your account, these ad units appear in a table at the bottom of the **Monetize** &gt; **In-app ads** page. This table displays the **Application ID** and **Ad unit ID** for each ad unit, along with other information. To show ads in your app, you'll need to use these values in your code. For more information, see [Set up ad units in your app](../monetize/set-up-ad-units-in-your-app.md).
 
 * If your app shows [banner ads](../monetize/banner-ads.md), assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
-
 * If your app shows [interstitial ads](../monetize/interstitial-ads.md), pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
-
 * If your app shows [native ads](../monetize/native-ads.md), pass these values to the *applicationId* and *adUnitId* parameters of the [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) constructor.
   > [!IMPORTANT]
   > You can use each ad unit in only one app. If you use an ad unit in more than one app, ads will not be served for that ad unit.
@@ -82,7 +73,7 @@ Note that if an ad unit has no activity for the past six months, we will label i
 
 ## Mediation settings
 
-When you [create a new UWP ad unit](#create-ad-unit) or [edit an existing UWP ad unit](#available-ad-units), use the options in this section to configure ad mediation for the ad unit. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and non-revenue generating ads for Microsoft app promotion campaigns. We take care of mediating banner ad requests from the ad networks you choose. If you have a UWP ad unit that is already associated with a banner, interstitial, or native ad in your app, enabling ad mediation requires no code changes in your app.
+When you [create a new UWP ad unit](#create-ad-unit) or [edit an existing UWP ad unit](#available-ad-units), use the options in this section to configure [ad mediation](../monetize/ad-mediation-service.md) for the ad unit. Ad mediation enables you to maximize your ad revenue and app promotion capabilities by displaying ads from multiple ad networks, including ads from other paid ad networks and non-revenue generating ads for Microsoft app promotion campaigns. We take care of mediating banner ad requests from the ad networks you choose. If you have a UWP ad unit that is already associated with a banner, interstitial, or native ad in your app, enabling ad mediation requires no code changes in your app.
 
 > [!NOTE]
 > When you enable ad mediation for a UWP ad unit, you do not need to obtain an ad unit from third-party ad networks. Our ad mediation service automatically creates any necessary third-party ad units.
@@ -90,25 +81,19 @@ When you [create a new UWP ad unit](#create-ad-unit) or [edit an existing UWP ad
 To configure ad mediation settings for a UWP ad unit in your app:
 
 1. [Create an ad unit](#create-ad-unit) or [select an existing ad unit](#available-ad-units).
-
 2. On the **In-app ads** page, go to the **Mediation settings** section.
-
 3. By default, the **Let Microsoft choose the best mediation settings for your app** check box is selected. This option uses machine-learning algorithms to automatically choose the ad mediation settings for your app to help you maximize your ad revenue across the markets your app supports. We recommend that you use this option. Otherwise, if you want to choose your own ad mediation settings, clear this check box.
     > [!NOTE]
     > The remaining steps in this section are only applicable if you clear this check box and choose your own ad mediation settings.
 
 4. In the **Target** drop-down, choose **Baseline** to configure the default configuration for your ad mediation settings. This default configuration will be applied to all markets, except for markets where you define market-specific configurations.
-
 6. Next, specify the ratio of ads you want to show in your control from paid networks (which pay you revenue for impressions) and other ad networks (which do not pay you revenue for impressions). To do this, enter a value between 0 and 100 in the **Weight** fields for **Paid ad networks** and **Other ad networks**.  
-
 7. In the **Paid ad networks** section, select the check box in the **Active** column for each [paid network](#paid-networks) you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control).
-
 8. If you have selected a **Banner** or **Banner interstitial** ad unit, you will also see a section named **Other ad networks**. The networks in this section do not earn you revenue for ad impressions. Instead, these networks show ads from sources such as app promotion campaigns.
 
     In the **Other ad networks** section, select the check box in the **Active** column for each [other network](#other-networks) you want to use, and then use the arrows in the **Rank** column to order the networks by rank (this specifies how often each network should be used by your control). The following other networks are currently supported:
 
 9. For each market where you want to override the default mediation configuration, select the market in the **Target** drop-down, and update the ad network selections and ranking.
-
 10. Click **Create ad unit** (if you are creating a new ad unit) or **Save** (if you are editing an existing ad unit).
 
 <span id="paid-networks" />
