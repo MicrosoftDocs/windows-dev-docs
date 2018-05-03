@@ -100,7 +100,7 @@ Abbreviations can be useful when you need to refer to products, places, or techn
 
 * Don't use abbreviations that are too similar to one another.
 
-> The Universal Windows Playform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+> The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
 
 ### Contractions
 
