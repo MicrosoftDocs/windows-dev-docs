@@ -59,7 +59,8 @@ Part of the reveal-or-hide technique includes choosing when to display more meta
 
 ## Replace
 
-This technique lets you switch the user interface for a specific device size-class or orientation. In this example, the nav pane and its compact, transient UI works well for a smaller device, but on a larger device tabs might be a better choice.
+This technique lets you switch the user interface for a specific device size-class or orientation. In this example, the nav pane and its compact, transient UI works well for a smaller device, but on a larger device, a top nav bar might be a better choice. 
+The [NavigationView](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/navigationview) control supports this responsive technique, by letting users set the pane position to either top or left.
 
 ![Replacing design elements](images/rsp-design/rspd-replace.png)
 
