@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 
 Page transitions are animations that play when users navigate between pages in an app, providing feedback as the relationship between pages. Page transitions help users understand if they are at the top of a navigation hierarchy, moving between sibling pages, or navigating deeper into the page hierarchy.
 
-Two different animations are provided for navigation between pages in an app, *page refresh* and *drill*, and are represented by subclasses of [NavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+Three different animations are provided for navigation between pages in an app, *page refresh*, *drill*, and *slide*. The animations are represented by subclasses of [NavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
 
 ## Page refresh
 
@@ -47,6 +47,20 @@ The drill animation is represented by the [DrillInNavigationTransitionInfo](/uwp
 ```csharp
 // Play the drill in animation
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
+```
+
+## Horizontal slide
+
+Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../controls-and-patterns/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizonal slide with SlideNavigationTransitionInfo.
+
+The desired feeling is that the user is navigating between pages that are next to each other. 
+
+```csharp
+// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## Suppress
