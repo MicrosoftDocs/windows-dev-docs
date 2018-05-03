@@ -70,7 +70,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                         <h3>Start coding</h3>
                         <p>Whether you’re an experienced dev or just building your first app, get hands-on experience with the Windows 10 platform and docs.</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Create apps for Windows</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">Start coding</a></li>
                         </ul>
                     </div>
                 </div>
