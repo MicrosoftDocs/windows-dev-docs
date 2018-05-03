@@ -111,13 +111,12 @@
 
 # Motion
 ## [Overview](motion/index.md)
-## [Connected animation](motion/connected-animation.md)
-## [Content transition](motion/content-transition-animations.md)
-## [Add and delete](motion/motion-list.md)
-## [Fade](motion/motion-fade.md)
+## [Timing and easing](motion/timing-and-easing.md)
+## [Directionality and gravity](motion/directionality-and-gravity.md)
+## [Motion in practice](motion/motion-in-practice.md)
 ## [Page transitions](motion/page-transitions.md)
+## [Connected animation](motion/connected-animation.md)
 ## [Parallax](motion/parallax.md)
-## [Press feedback](motion/motion-pointer.md)
 ## [Animations in XAML](motion/xaml-animation.md)
 ### [Storyboarded animations](motion/storyboarded-animations.md)
 ### [Key-frame and easing function animations](motion/key-frame-and-easing-function-animations.md)
@@ -138,6 +137,7 @@
 ### [Tile, toast notification support for language, scale, contrast](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [Pin your app to the taskbar](shell/pin-to-taskbar.md)
 ## [Title bar customization](shell/title-bar.md)
+## [Designing for Sets](shell/design-for-sets.md)
 
 ## Notifications
 ### Toast notifications
@@ -170,6 +170,7 @@
 ## [Overview](input/index.md)
 ## [Input primer](input/input-primer.md)
 ## [Pointer input](input/handle-pointer-input.md)
+## [Gaze](input/gaze-interactions.md)
 ## [Pen and Windows Ink](input/pen-and-stylus-interactions.md)
 ### [Tutorial: Add Inking support to your app](input/ink-walkthrough.md)
 ### [Recognize ink strokes](input/convert-ink-to-text.md)

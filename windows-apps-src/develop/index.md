@@ -103,7 +103,7 @@ ms.localizationpriority: high
                         <p style="display: block;"><a  href="/windows/uwp/apps-for-education/">Education apps</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/enterprise/">Enterprise apps</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/gaming/">Games and DirectX apps</a></p>
-                        <p style="display: block;"><a  href="/windows/bridges/hosted-web-apps">Hosted Web Apps</a></p>
+                        <p style="display: block;"><a  href="/microsoft-edge/progressive-web-apps">Progressive Web Apps</a></p>
                     </div>
                 </div>
             </div>

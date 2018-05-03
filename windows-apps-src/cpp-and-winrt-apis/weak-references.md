@@ -52,7 +52,7 @@ If you derive directly from **winrt::implements**.
 ```cppwinrt
 struct MyImplementation: implements<MyImplementation, IStringable, no_weak_ref>
 {
-	...
+    ...
 }
 ```
 
@@ -61,7 +61,7 @@ If you're authoring a runtime class.
 ```cppwinrt
 struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, no_weak_ref>
 {
-	...
+    ...
 }
 ```
 

@@ -76,10 +76,7 @@ Need to brush up on your web skills?
 
 ## See Also
 
-* [UWP Tutorials](create-uwp-apps.md)
-* [Publishing your UWP app](https://developer.microsoft.com/store/publish-apps).
-* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/apps/develop)
-* [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
+* [Start coding](create-uwp-apps.md)
 * [What's a UWP app?](universal-application-platform-guide.md)
 * [Get set up](get-set-up.md)
 * [Sign up for Windows account](sign-up.md)

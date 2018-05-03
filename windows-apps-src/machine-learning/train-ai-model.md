@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Windows machine learning, visual studio
 ms.localizationpriority: medium
 ---
-
 # How to train a model for Windows ML in Visual Studio
+
 In this tutorial, we'll use [Visual Studio Tools for AI](http://aka.ms/vstoolsforai), a development extension for building, testing, and deploying Deep Learning & AI solutions, to train a model for the MNIST sample app in [Get Started](get-started.md).
 
-We'll train the model with the [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) framework and the [MNIST dataset](http://yann.lecun.com/exdb/mnist/), which has a training set of 60,000 examples and a test set of 10,000 examples of handwritten digits. We'll then save the model using the [Open Neural Network Exchange (ONNX)](https://onnx.ai/) format to use with Windows ML. 
+We'll train the model with the [Microsoft Cognitive Toolkit (CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit) framework and the [MNIST dataset](http://yann.lecun.com/exdb/mnist/), which has a training set of 60,000 examples and a test set of 10,000 examples of handwritten digits. We'll then save the model using the [Open Neural Network Exchange (ONNX)](https://onnx.ai/) format to use with Windows ML.
 
 ## Prerequisites
 ### Install Visual Studio Tools for AI
@@ -48,15 +48,11 @@ To set the MNIST project as the startup project, right-click on the python proje
 
 ![Open solution](images/mnist-startup.png)
 
-Next, open the ConvNet_MNIST.py file and **Run** the project by pressing F5 or the green Run button.
+Next, open the train_mnist_onnx.py file and **Run** the project by pressing F5 or the green Run button.
 
 ## 3. View the model and add it to your app
 
-Open the **output/Models** folder in the Samples for AI repository. There will be one trained DNN model file for each epoch of the training experiment, and the final step will write the **MNIST.onnx** model file. 
-
-![Open solution](images/onnx-model-output.png)
-
-Now, you can use this trained **MNIST.onnx** model file to build the MNIST sample app in [Get Started](get-started.md)! 
+Now, the trained **mnist.onnx** model file should be in the samples-for-ai/examples/cntk/python/MNIST folder. You can use this trained **mnist.onnx** model file to build the MNIST sample app in [Get Started](get-started.md)! 
 
 ## 4. Learn more
 To learn how to speed up training deep learning models by using [Azure GPU Virtual Machines](https://docs.microsoft.com/en-us/visualstudio/ai/tensorflow-vm) and more, visit [Artificial Intelligence at Microsoft](https://www.microsoft.com/ai) and [Microsoft Machine Learning Technologies](https://docs.microsoft.com/en-us/azure/machine-learning/#More-Microsoft-Machine-Learning-Technologies).

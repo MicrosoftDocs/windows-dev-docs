@@ -36,3 +36,37 @@ If you have a runtime class that frees resources in its destructor, and that run
 
 ## Do I need to declare a constructor in my runtime class's IDL?
 Only if the runtime class is designed to be consumed from outside its implementing compilation unit (it's a Windows Runtime component intended for general consumption by Windows Runtime client apps). For full details on the purpose and consequences of declaring constructor(s) in IDL, see [Runtime class constructors](author-apis.md#runtime-class-constructors).
+
+## Can I use LLVM/Clang to compile with C++/WinRT?
+We don't support the LLVM and Clang toolchain for C++/WinRT, but we do make use of it internally to validate C++/WinRT's standards conformance. For example, if you wanted to emulate what we do internally, then you could try an experiment such as the one described below.
+
+Go to the [LLVM Download Page](https://releases.llvm.org/download.html), look for **Download LLVM 6.0.0** > **Pre-Built Binaries**, and download **Clang for Windows (64-bit)**. During installation, opt to add LLVM to the PATH system variable so that you'll be able to invoke it from a command prompt. For the purposes of this experiment, you can ignore any "Failed to find MSBuild toolsets directory" and/or "MSVC integration install failed" errors, if you see them. There are a variety of ways to invoke LLVM/Clang; the example below shows just one way.
+
+```
+C:\ExperimentWithLLVMClang>type main.cpp
+// main.cpp
+#pragma comment(lib, "windowsapp")
+#pragma comment(lib, "ole32")
+
+#include "winrt/Windows.Foundation.h"
+#include <stdio.h>
+#include <iostream>
+
+using namespace winrt;
+
+int main()
+{
+    winrt::init_apartment();
+    Windows::Foundation::Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    std::wcout << rssFeedUri.Domain().c_str() << std::endl;
+}
+
+C:\ExperimentWithLLVMClang>clang-cl main.cpp /EHsc /I ..\.. -Xclang -std=c++17 -Xclang -Wno-delete-non-virtual-dtor -o app.exe
+
+C:\ExperimentWithLLVMClang>app
+windows.com
+```
+
+Because C++/WinRT uses features from the C++17 standard, you'll need to use whatever compiler flags are necessary to get that support; such flags differ from one compiler to another.
+
+Visual Studio is the development tool that we support and recommend for C++/WinRT. See [Visual Studio support for C++/WinRT, and the VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix).
