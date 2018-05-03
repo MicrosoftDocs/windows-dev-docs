@@ -32,7 +32,7 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 // MainPage.cpp
 void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 {
-	Button().Content(box_value(L"Clicked"));
+    Button().Content(box_value(L"Clicked"));
 }
 ```
 
@@ -42,9 +42,9 @@ Instead of doing it declaratively in markup, you can imperatively register a mem
 // MainPage.cpp
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	Button().Click({ this, &MainPage::ClickHandler });
+    Button().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
@@ -53,12 +53,12 @@ There are other ways to construct a **RoutedEventHandler**. Below is the syntax 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 {
-	RoutedEventHandler(std::nullptr_t = nullptr) noexcept;
-	template <typename L> RoutedEventHandler(L lambda);
-	template <typename F> RoutedEventHandler(F* function);
-	template <typename O, typename M> RoutedEventHandler(O* object, M method);
-	void operator()(winrt::Windows::Foundation::IInspectable const& sender,
-		winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
+    RoutedEventHandler(std::nullptr_t = nullptr) noexcept;
+    template <typename L> RoutedEventHandler(L lambda);
+    template <typename F> RoutedEventHandler(F* function);
+    template <typename O, typename M> RoutedEventHandler(O* object, M method);
+    void operator()(winrt::Windows::Foundation::IInspectable const& sender,
+        winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
 };
 ```
 
@@ -69,12 +69,12 @@ If you're not doing much work in your event handler, then you can use a lambda f
 ```cppwinrt
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	Button().Click([this](IInspectable const&, RoutedEventArgs const&)
-	{
-		Button().Content(box_value(L"Clicked"));
-	});
+    Button().Click([this](IInspectable const&, RoutedEventArgs const&)
+    {
+        Button().Content(box_value(L"Clicked"));
+    });
 }
 ```
 
@@ -83,14 +83,14 @@ You can choose to be a little more explicit when you construct your delegate. Fo
 ```cppwinrt
 MainPage::MainPage()
 {
-	InitializeComponent();
+    InitializeComponent();
 
-	auto click_handler = [](IInspectable const& sender, RoutedEventArgs const&)
-	{
-		sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
-	};
-	Button().Click(click_handler);
-	AnotherButton().Click(click_handler);
+    auto click_handler = [](IInspectable const& sender, RoutedEventArgs const&)
+    {
+        sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
+    };
+    Button().Click(click_handler);
+    AnotherButton().Click(click_handler);
 }
 ```
 
@@ -100,21 +100,21 @@ When you register a delegate, typically a token is returned to you. You can subs
 ```cppwinrt
 struct Example : ExampleT<Example>
 {
-	Example(winrt::Windows::UI::Xaml::Controls::Button const& button) : m_button(button)
-	{
-		m_token = m_button.Click([this](IInspectable const&, RoutedEventArgs const&)
-		{
-			...
-		});
-	}
-	~Example()
-	{
-		m_button.Click(m_token);
-	}
+    Example(winrt::Windows::UI::Xaml::Controls::Button const& button) : m_button(button)
+    {
+        m_token = m_button.Click([this](IInspectable const&, RoutedEventArgs const&)
+        {
+            ...
+        });
+    }
+    ~Example()
+    {
+        m_button.Click(m_token);
+    }
 
 private:
-	winrt::Windows::UI::Xaml::Controls::Button m_button;
-	winrt::event_token m_token;
+    winrt::Windows::UI::Xaml::Controls::Button m_button;
+    winrt::event_token m_token;
 };
 ```
 
@@ -123,16 +123,16 @@ Alternatively, when you register a delegate, you can specify **winrt::auto_revok
 ```cppwinrt
 struct Example : ExampleT<Example>
 {
-	Example(winrt::Windows::UI::Xaml::Controls::Button button)
-	{
-		m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const&, RoutedEventArgs const&)
-		{
-			...
-		});
-	}
+    Example(winrt::Windows::UI::Xaml::Controls::Button button)
+    {
+        m_event_revoker = button.Click(winrt::auto_revoke, [this](IInspectable const&, RoutedEventArgs const&)
+        {
+            ...
+        });
+    }
 
 private:
-	winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
+    winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
 };
 ```
 
@@ -147,7 +147,7 @@ void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
 event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
-	winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
 A similar pattern applies to all C++/WinRT events.
@@ -164,27 +164,27 @@ using namespace Windows::Web::Syndication;
 
 void ProcessFeedAsync()
 {
-	Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
-	SyndicationClient syndicationClient;
+    Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
+    SyndicationClient syndicationClient;
 
-	auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
+    auto async_op_with_progress = syndicationClient.RetrieveFeedAsync(rssFeedUri);
 
-	async_op_with_progress.Progress(
-		[](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const&, RetrievalProgress const& args)
-	{
-		uint32_t bytes_retrieved = args.BytesRetrieved;
-		// use bytes_retrieved;
-	});
+    async_op_with_progress.Progress(
+        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const&, RetrievalProgress const& args)
+    {
+        uint32_t bytes_retrieved = args.BytesRetrieved;
+        // use bytes_retrieved;
+    });
 
-	async_op_with_progress.Completed(
-		[](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const)
-	{
-		SyndicationFeed syndicationFeed = sender.GetResults();
-		// use syndicationFeed;
-	});
-	
-	// or (but this function must then return IAsyncAction)
-	// SyndicationFeed syndicationFeed = co_await async_op_with_progress;
+    async_op_with_progress.Completed(
+        [](IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress> const& sender, AsyncStatus const)
+    {
+        SyndicationFeed syndicationFeed = sender.GetResults();
+        // use syndicationFeed;
+    });
+    
+    // or (but this function must then return IAsyncAction)
+    // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
 }
 ```
 
@@ -198,10 +198,10 @@ using namespace winrt::Windows::UI::Xaml::Controls;
 
 winrt::hstring f(ListView listview)
 {
-	return ListViewPersistenceHelper::GetRelativeScrollPosition(listview, [](IInspectable const& item)
-	{
-		return L"key for item goes here";
-	});
+    return ListViewPersistenceHelper::GetRelativeScrollPosition(listview, [](IInspectable const& item)
+    {
+        return L"key for item goes here";
+    });
 }
 ```
 
@@ -229,21 +229,21 @@ winrt::event_token m_compositionScaleChangedEventToken;
 
 void RegisterEventHandler()
 {
-	m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
-		(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-		Windows::Foundation::IInspectable const& object)
-	{
-		if (auto strongReferenceToThis = weakReferenceToThis.get())
-		{
-			strongReferenceToThis->OnCompositionScaleChanged(sender, object);
-		}
-	});
+    m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weakReferenceToThis{ get_weak() }]
+        (Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
+        Windows::Foundation::IInspectable const& object)
+    {
+        if (auto strongReferenceToThis = weakReferenceToThis.get())
+        {
+            strongReferenceToThis->OnCompositionScaleChanged(sender, object);
+        }
+    });
 }
 
 void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
-	Windows::Foundation::IInspectable const& object)
+    Windows::Foundation::IInspectable const& object)
 {
-	// Here, we know that the "this" object is valid.
+    // Here, we know that the "this" object is valid.
 }
 ```
 
