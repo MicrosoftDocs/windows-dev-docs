@@ -135,6 +135,7 @@
 ### [Tile, toast notification support for language, scale, contrast](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [Pin your app to the taskbar](shell/pin-to-taskbar.md)
 ## [Title bar customization](shell/title-bar.md)
+## [Designing for Sets](shell/design-for-sets.md)
 
 ## Notifications
 ### Toast notifications
