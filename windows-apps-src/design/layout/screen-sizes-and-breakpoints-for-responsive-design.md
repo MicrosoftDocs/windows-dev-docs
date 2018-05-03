@@ -24,14 +24,14 @@ UWP apps can run on any device running Windows 10, which includes phones, tablet
 ## Breakpoints
 This table describes the different size classes and breakpoints.
 
-![responsive design breakpoints](images/rsp-design/rspd-breakpoints.png)
+![Responsive design breakpoints](images/breakpoints/size-classes.svg)
 
 <table>
 <thead>
 <tr class="header">
 <th align="left">Size class</th>
 <th align="left">Breakpoints</th>
-<th align="left">Screen size (diagonal)</th>
+<th align="left">Typical screen size (diagonal)</th>
 <th align="left">Devices</th>
 <th align="left">Window sizes</th>
 </tr>
@@ -40,15 +40,15 @@ This table describes the different size classes and breakpoints.
 <tr class="even">
 <td style="vertical-align:top;">Small</td>
 <td style="vertical-align:top;">640px or less</td>
-<td style="vertical-align:top;">4&quot; to 6&quot;</td>
-<td style="vertical-align:top;">Phones</td>
+<td style="vertical-align:top;">4&quot; to 6&quot;; 20&quot; to 65&quot;</td>
+<td style="vertical-align:top;">Phones, TVs</td>
 <td style="vertical-align:top;">320x569, 360x640, 480x854</td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;">Medium</td>
 <td style="vertical-align:top;">641px to 1007px</td>
 <td style="vertical-align:top;">7&quot; to 12&quot;</td>
-<td style="vertical-align:top;">Phablets, tablets, TVs</td>
+<td style="vertical-align:top;">Phablets, tablets</td>
 <td style="vertical-align:top;">960x540</td>
 </tr>
 <tr class="even">
@@ -60,6 +60,17 @@ This table describes the different size classes and breakpoints.
 </tr>
 </tbody>
 </table>
+
+## Why are TVs considered "small"? 
+
+While most TVs are physically quite large (40 to 65 inches is common) and have high resolutions (HD or 4k), designing for a 1080P TV that you view from 10 feet away is different from designing for a 1080p monitor sitting a foot away on your desk. When you account for distance, the TV's 1080 pixels are more like a 540-pixel monitor that's much closer.
+
+UWP's effective pixel system automatically takes viewing distance in account for you. When you specify a size for a control or a breakpoint range, you're actually using "effective" pixels. For example, if you create responsive code for 1080 pixels and higher, a 1080 monitor will use that code, but a 1080p TV will not--because although a 1080p TV has 1080 physical pixels, it only has 540 effective pixels. Which makes designing for a TV similar to designing for a phone.
+
+## Effective pixels and scale factor
+
+UWP apps automatically scale your UI to guarantee that your app will be legible on all Windows 10 devices. Windows automatically scales for each display based on its DPI (dots-per-inch) and the viewing distance of the device. Users can override the default value and by going to **Settings** > **Display** > **Scale and layout** settings page. 
+
 
 ## General recommendations
 
@@ -89,6 +100,4 @@ This table describes the different size classes and breakpoints.
 >[!TIP] 
 > With [**Continuum for Phones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), users can connect compatible Windows 10 mobile devices to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the size class.
 
-## Effective pixels and scale factor
 
-UWP apps automatically scale your UI to guarantee that your app will be legible on all Windows 10 devices. Windows automatically scales for each display based on its DPI (dots-per-inch) and the viewing distance of the device. Users can override the default value and by going to **Settings** > **Display** > **Scale and layout** settings page. 
