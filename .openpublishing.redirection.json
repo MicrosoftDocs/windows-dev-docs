@@ -26,11 +26,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "landing/arm-docs/index.md",
-      "redirect_url": "https://docs.microsoft.com",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/controls-and-patterns/nav-pane.md",
       "redirect_url": "https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview",
       "redirect_document_id": false
