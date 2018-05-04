@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 
 # Sound
 
- 
+![hero image](images/header-sound.svg)
 
 There are many ways to use sound to enhance your app. You can use to sound to supplement other UI elements, enabling users to recognize events audibly. Sound can be an effective user interface element for people with visual disabilities. You can use sound to create an atmosphere that immerses the user; for example, you might play a whimsical soundtrack in the background of puzzle game, or use ominous sound effects for a horror/survival game.
 

@@ -2,11 +2,12 @@
 ## [Overview](basics/index.md)
 ## [Intro to app design](basics/design-and-ui-intro.md)
 ## [Fluent Design System](fluent-design-system/index.md)
-## [Command basics](basics/commanding-basics.md)
-## [Content basics](basics/content-basics.md)
-## [Navigation basics](basics/navigation-basics.md)
+## Navigation basics
+### [Overview](basics/navigation-basics.md)
 ### [Implement basic navigation](basics/navigate-between-two-pages.md)
 ### [Support history and backwards navigation](basics/navigation-history-and-backwards-navigation.md)
+## [Command basics](basics/commanding-basics.md)
+## [Content basics](basics/content-basics.md)
 ## Tutorials
 ### [Create a user interface](basics/xaml-basics-ui.md)
 ### [Create an adaptive layout](basics/xaml-basics-adaptive-layout.md)
@@ -17,7 +18,7 @@
 ## [Page layout](layout/page-layout.md)
 ## [Screen sizes and breakpoints](layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 ## [Responsive design techniques](layout/responsive-design.md)
-## [Responsive layouts with XAML](layout/layouts-with-xaml.md)
+## [Layouts with XAML](layout/layouts-with-xaml.md)
 ## [Show multiple views](layout/show-multiple-views.md)
 ## [Alignment, margin, and padding](layout/alignment-margin-padding.md)
 ## Layout panels
@@ -92,15 +93,15 @@
 
 # Style
 ## [Overview](style/index.md)
-## [Acrylic](style/acrylic.md)
 ## [Color](style/color.md)
+## [Typography](style/typography.md)
 ## Icons
 ### [Overview](style/icons.md)
 ### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
+## [Acrylic](style/acrylic.md)
 ## [Reveal highlight](style/reveal.md)
 ## [Reveal focus](style/reveal-focus.md)
 ## [Sound](style/sound.md)
-## [Typography](style/typography.md)
 ## [Writing style](style/writing-style.md)
 ## [XAML brushes](style/brushes.md)
 ## [XAML styles](controls-and-patterns/xaml-styles.md)

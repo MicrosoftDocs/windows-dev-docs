@@ -1,0 +1,30 @@
+<svg width="612" height="400" viewBox="0 0 612 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-tabs-pivot" clip-path="url(#clip0)">
+<rect width="612" height="400" fill="#243A5E"/>
+<g id="Rectangle">
+<rect width="482" height="281" transform="translate(67 65)" fill="white"/>
+</g>
+<g id="Rectangle 4">
+<rect width="72.7994" height="10" transform="translate(84 95)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle 4.1">
+<rect width="72.7994" height="10" transform="translate(178.567 95)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 4.2">
+<rect width="72.7994" height="10" transform="translate(272.778 95)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 5">
+<rect width="450" height="224" transform="translate(84 122)" fill="#50E6FF"/>
+</g>
+</g>
+</g>
+<defs>
+
+<clipPath id="clip0">
+<rect width="612" height="400" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

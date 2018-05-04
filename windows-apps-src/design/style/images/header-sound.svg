@@ -1,0 +1,168 @@
+<svg width="1920" height="919" viewBox="0 0 1920 919" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none">
+<g clip-path="url(#clip0)">
+<rect width="1920" height="918.333" fill="#243A5E"/>
+<rect width="32" height="842" transform="translate(552 38)" fill="#50E6FF"/>
+<rect width="32" height="842" transform="translate(552 38)" fill="url(#paint0_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="702" transform="translate(623 108)" fill="#50E6FF"/>
+<rect width="32" height="702" transform="translate(623 108)" fill="url(#paint1_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="494" transform="translate(694 212)" fill="#50E6FF"/>
+<rect width="32" height="494" transform="translate(694 212)" fill="url(#paint2_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="494" transform="translate(409 212)" fill="#50E6FF"/>
+<rect width="32" height="494" transform="translate(409 212)" fill="url(#paint3_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="438" transform="translate(480 240)" fill="#50E6FF"/>
+<rect width="32" height="438" transform="translate(480 240)" fill="url(#paint4_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="298" transform="translate(766 310)" fill="#50E6FF"/>
+<rect width="32" height="298" transform="translate(766 310)" fill="url(#paint5_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="298" transform="translate(337 310)" fill="#50E6FF"/>
+<rect width="32" height="298" transform="translate(337 310)" fill="url(#paint6_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="170" transform="translate(837 374)" fill="#50E6FF"/>
+<rect width="32" height="170" transform="translate(837 374)" fill="url(#paint7_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="170" transform="translate(908 374)" fill="#50E6FF"/>
+<rect width="32" height="170" transform="translate(908 374)" fill="url(#paint8_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="230" transform="translate(980 344)" fill="#50E6FF"/>
+<rect width="32" height="230" transform="translate(980 344)" fill="url(#paint9_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="126" transform="translate(1051 396)" fill="#50E6FF"/>
+<rect width="32" height="126" transform="translate(1051 396)" fill="url(#paint10_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="126" transform="translate(1693 396)" fill="#50E6FF"/>
+<rect width="32" height="126" transform="translate(1693 396)" fill="url(#paint11_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="126" transform="translate(266 396)" fill="#50E6FF"/>
+<rect width="32" height="126" transform="translate(266 396)" fill="url(#paint12_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="86" transform="translate(1122 416)" fill="#50E6FF"/>
+<rect width="32" height="86" transform="translate(1122 416)" fill="url(#paint13_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="86" transform="translate(1551 416)" fill="#50E6FF"/>
+<rect width="32" height="86" transform="translate(1551 416)" fill="url(#paint14_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="86" transform="translate(1765 416)" fill="#50E6FF"/>
+<rect width="32" height="86" transform="translate(1765 416)" fill="url(#paint15_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="86" transform="translate(195 416)" fill="#50E6FF"/>
+<rect width="32" height="86" transform="translate(195 416)" fill="url(#paint16_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="50" transform="translate(1194 434)" fill="#50E6FF"/>
+<rect width="32" height="50" transform="translate(1194 434)" fill="url(#paint17_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="55" transform="translate(1265 431)" fill="#50E6FF"/>
+<rect width="32" height="55" transform="translate(1265 431)" fill="url(#paint18_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="55" transform="translate(123 431)" fill="#50E6FF"/>
+<rect width="32" height="55" transform="translate(123 431)" fill="url(#paint19_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="55" transform="translate(1408 431)" fill="#50E6FF"/>
+<rect width="32" height="55" transform="translate(1408 431)" fill="url(#paint20_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="55" transform="translate(1622 431)" fill="#50E6FF"/>
+<rect width="32" height="55" transform="translate(1622 431)" fill="url(#paint21_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="44" transform="translate(1336 435)" fill="#50E6FF"/>
+<rect width="32" height="44" transform="translate(1336 435)" fill="url(#paint22_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="44" transform="translate(1479 435)" fill="#50E6FF"/>
+<rect width="32" height="44" transform="translate(1479 435)" fill="url(#paint23_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="44" transform="translate(1836 435)" fill="#50E6FF"/>
+<rect width="32" height="44" transform="translate(1836 435)" fill="url(#paint24_linear)" style="mix-blend-mode:overlay"/>
+<rect width="32" height="44" transform="translate(52 435)" fill="#50E6FF"/>
+<rect width="32" height="44" transform="translate(52 435)" fill="url(#paint25_linear)" style="mix-blend-mode:overlay"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 842 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 702 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint2_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 494 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 494 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint4_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 438 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint5_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 298 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint6_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 298 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint7_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 170 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint8_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 170 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint9_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 230 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint10_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 126 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint11_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 126 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint12_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 126 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint13_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 86 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint14_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 86 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint15_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 86 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint16_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 86 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint17_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 50 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint18_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 55 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint19_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 55 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint20_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 55 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint21_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 55 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint22_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 44 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint23_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 44 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint24_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 44 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint25_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 44 -32 0 32 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0">
+<rect width="1920" height="918.333" fill="white"/>
+</clipPath>
+</defs>
+</svg>
