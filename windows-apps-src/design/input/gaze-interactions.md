@@ -66,7 +66,9 @@ In this example, we demonstrate how to track the user's gaze within a UWP applic
 
 A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/RadialProgressBar) from the [Windows Community Toolkit](https://github.com/Microsoft/WindowsCommunityToolkit) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
 
-![Gaze tracking with timer sample](images/gaze/gaze-input-timed.gif)
+![Gaze tracking with timer sample](images/gaze/gaze-input-timed2.gif)
+
+*Gaze tracking with timer sample*
 
 **Download this sample from [Gaze input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
