@@ -334,6 +334,7 @@
 ### [Microsoft ad mediation service](../monetize/ad-mediation-service.md)
 ### [Best practices](../monetize/best-practices-for-ads-in-apps.md)
 #### [UI and user experience guidelines](../monetize/ui-and-user-experience-guidelines.md)
+#### [Optimize the viewability of your ad units](../monetize/optimize-ad-unit-viewability.md)
 #### [Handle ad errors](../monetize/error-handling-with-advertising-libraries.md)
 ##### [Error handling in XAML/C# walkthrough](../monetize/error-handling-in-xamlc-walkthrough.md)
 ##### [Error handling in JavaScript walkthrough](../monetize/error-handling-in-javascript-walkthrough.md)
