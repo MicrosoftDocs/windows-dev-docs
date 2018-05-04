@@ -650,6 +650,7 @@
 ## [Attached properties overview](../xaml-platform/attached-properties-overview.md)
 ## [Custom attached properties](../xaml-platform/custom-attached-properties.md)
 ## [Events and routed events overview](../xaml-platform/events-and-routed-events-overview.md)
+## [UWP controls in WPF and Windows Forms applications](../xaml-platform/xaml-host-controls.md)
 # [API reference](https://docs.microsoft.com/uwp/)
 # [App development for Windows as a service](../updates-and-versions/application-development-for-windows-as-a-service.md)
 # [Choose a UWP version](../updates-and-versions/choose-a-uwp-version.md)
