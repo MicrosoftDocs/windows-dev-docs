@@ -26,12 +26,12 @@ The starting point for this tutorial is a single-page app with minimal UI and fu
 ### Prerequisites
 
 * [Ensure you have the latest version of Visual Studio and the Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* [Clone or download the Customer Database Tutorial sample](https://github.com/microsoft/windows-tutorials-customer-database)
+* [Clone or download the Customer Database Tutorial sample](https://aka.ms/customer-database-tutorial)
 
 After you've cloned/downloaded the repo, you can edit the project by opening **CustomerDatabaseTutorial.sln** with Visual Studio.
 
 > [!NOTE]
-> If you want to cross-reference your work with the completed state of this tutorial, you can find it [here](https://github.com/Microsoft/windows-tutorials-customer-database/tree/end-point-for-reference). Alternatively, you can check out the [full Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) to see the app this tutorial was based on.
+> Check out the [full Customer Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) to see the app this tutorial was based on.
 
 ## Part 1: Code of Interest
 
