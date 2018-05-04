@@ -66,6 +66,10 @@ In this example, we demonstrate how to track the user's gaze within a UWP applic
 
 A small ellipse is used to show where the gaze point is within the application viewport, while a [RadialProgressBar](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.UI.Controls/RadialProgressBar) from the [Windows Community Toolkit](https://github.com/Microsoft/WindowsCommunityToolkit) is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.
 
+![Gaze tracking with timer sample](images/gaze/gaze-input-timed.gif)
+
+**Download this sample from [Gaze input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
+
 1. First, we set up the UI (MainPage.xaml).
 
     ```xaml
@@ -119,17 +123,11 @@ A small ellipse is used to show where the gaze point is within the application v
                            Margin="10,0,0,0"/>
                 </StackPanel>
                 <Canvas x:Name="gazePositionCanvas" Grid.Row="1">
-                    <Ellipse 
-                        x:Name="eyeGazePositionEllipse"  
-                        Width="20" Height="20" 
-                        Fill="Blue" 
-                        Opacity="0.5" 
-                        Visibility="Collapsed">
-                    </Ellipse>
                     <controls:RadialProgressBar
-                        x:Name="GazeRadialProgressBar"
+                        x:Name="GazeRadialProgressBar" 
                         Value="0"
                         Foreground="Blue" 
+                        Background="White"
                         Thickness="4"
                         Minimum="0"
                         Maximum="100"
@@ -137,6 +135,13 @@ A small ellipse is used to show where the gaze point is within the application v
                         Height="100"
                         Outline="Gray"
                         Visibility="Collapsed"/>
+                    <Ellipse 
+                        x:Name="eyeGazePositionEllipse"
+                        Width="20" Height="20"
+                        Fill="Blue" 
+                        Opacity="0.5" 
+                        Visibility="Collapsed">
+                    </Ellipse>
                 </Canvas>
             </Grid>
         </Grid>
@@ -251,8 +256,6 @@ A small ellipse is used to show where the gaze point is within the application v
     /// <summary>
     /// Shut down gaze watcher and stop listening for events.
     /// </summary>
-    /// <param name="gazeDevice">Reference to eye-tracking device.</param>
-    /// <returns>True, if device is viable; otherwise, false.</returns>
     private void StopGazeDeviceWatcher()
     {
         if (gazeDeviceWatcher != null)
@@ -337,7 +340,7 @@ A small ellipse is used to show where the gaze point is within the application v
         if (IsSupportedDevice(gazeDevice))
         {
             timerGaze.Interval = new TimeSpan(0, 0, 0, 0, 20);
-            timerGaze.Tick += timerGaze_Tick;
+            timerGaze.Tick += TimerGaze_Tick;
 
             SetGazeTargetLocation();
 
@@ -446,14 +449,22 @@ A small ellipse is used to show where the gaze point is within the application v
             double gazePointX = args.CurrentPoint.EyeGazePosition.Value.X;
             double gazePointY = args.CurrentPoint.EyeGazePosition.Value.Y;
 
-            double ellipseLeft = gazePointX - (eyeGazePositionEllipse.Width / 2.0f);
-            double ellipseTop = gazePointY - (eyeGazePositionEllipse.Height / 2.0f);
-            Canvas.SetLeft(
-                eyeGazePositionEllipse, ellipseLeft
-                );
-            Canvas.SetTop(
-                eyeGazePositionEllipse, ellipseTop
-                );
+            double ellipseLeft = 
+                gazePointX - 
+                (eyeGazePositionEllipse.Width / 2.0f);
+            double ellipseTop = 
+                gazePointY - 
+                (eyeGazePositionEllipse.Height / 2.0f) - 
+                (int)Header.ActualHeight;
+
+            // Translate transform for moving gaze ellipse.
+            TranslateTransform translateEllipse = new TranslateTransform
+            {
+                X = ellipseLeft,
+                Y = ellipseTop
+            };
+
+            eyeGazePositionEllipse.RenderTransform = translateEllipse;
 
             // The gaze point screen location.
             Point gazePoint = new Point(gazePointX, gazePointY);
@@ -502,17 +513,16 @@ A small ellipse is used to show where the gaze point is within the application v
             VisualTreeHelper.FindElementsInHostCoordinates(gazePoint, uiElement, true);
         foreach (UIElement item in elementStack)
         {
-            FrameworkElement feItem = item as FrameworkElement;
             //Cast to FrameworkElement and get element name.
-            if (feItem != null)
+            if (item is FrameworkElement feItem)
             {
                 if (feItem.Name.Equals(elementName))
                 {
-                    if (!timersStarted)
+                    if (!timerStarted)
                     {
                         // Start gaze timer if gaze over element.
                         timerGaze.Start();
-                        timersStarted = true;
+                        timerStarted = true;
                     }
                     return true;
                 }
@@ -522,7 +532,7 @@ A small ellipse is used to show where the gaze point is within the application v
         // Stop gaze timer and reset progress bar if gaze leaves element.
         timerGaze.Stop();
         GazeRadialProgressBar.Value = 0;
-        timersStarted = false;
+        timerStarted = false;
         return false;
     }
 
@@ -531,7 +541,7 @@ A small ellipse is used to show where the gaze point is within the application v
     /// </summary>
     /// <param name="sender">Source of the gaze entered event</param>
     /// <param name="e">Event args for the gaze entered event</param>
-    private void timerGaze_Tick(object sender, object e)
+    private void TimerGaze_Tick(object sender, object e)
     {
         // Increment progress bar.
         GazeRadialProgressBar.Value += 1;
@@ -588,5 +598,4 @@ A small ellipse is used to show where the gaze point is within the application v
 
 ### Topic samples
 
-- [Gaze sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/xxx.zip)
-- [Gaze sample (complex) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/xxx.zip)
+- [Gaze sample (basic) (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)
