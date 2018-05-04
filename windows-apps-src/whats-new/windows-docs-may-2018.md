@@ -13,7 +13,7 @@ ms.localizationpriority: high
 
 # What's New in the Windows Developer Docs in May 2018
 
-The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, and videos have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build) developer conference.
+The Windows Developer Documentation is constantly being updated with information on new features available to developers across the Windows platform. The following feature overviews, developer guidance, videos, and samples have been made available in the month of May to coincide with the [Microsoft Build 2018](https://www.microsoft.com/build) developer conference.
 
 [Install the tools and SDK](http://go.microsoft.com/fwlink/?LinkId=821431) on Windows 10 and you’re ready to either [create a new Universal Windows app](../get-started/create-uwp-apps.md) or explore how you can use your [existing app code on Windows](../porting/index.md).
 
@@ -126,3 +126,9 @@ C++/WinRT is a new way of authoring and consuming Windows Runtime APIs. It's imp
 ### Multi-instance UWP apps
 
 Windows now allows you to run multiple instances of your UWP app, with each in its own separate process. [Watch the video](https://www.youtube.com/watch?v=clnnf4cigd0&feature=youtu.be) to learn how to create a new app that supports this feature, then [read the developer docs](../launch-resume/multi-instance-uwp.md) for more guidance on how and why to use this feature.
+
+## Samples
+
+### Customer database tutorial
+
+This tutorial creates a basic UWP app for managing a list of customers, and introduces concepts and practices useful in enterprise development. It walks you through implementing UI elements and adding operations against a local SQLite database, and provides loose guidance for connecting to a remote REST database if you wish to go further. [Check out the tutorial here](../enterprise/customer-database-tutorial.md)
