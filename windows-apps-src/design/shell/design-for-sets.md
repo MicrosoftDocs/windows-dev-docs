@@ -95,11 +95,11 @@ titleBar.ForegroundColor = Windows.UI.Colors.White;
 titleBar.BackgroundColor = Windows.UI.Colors.Green;
 ```
 
-For more info, see the _Simple color customization_ section of the [Title bar customization](title-bar#simple-color-customization) article and the [Title bar customization sample](http://go.microsoft.com/fwlink/p/?LinkId=620613).
+For more info, see the _Simple color customization_ section of the [Title bar customization](title-bar.md#simple-color-customization) article and the [Title bar customization sample](http://go.microsoft.com/fwlink/p/?LinkId=620613).
 
 #### Full title bar customization
 
-You can also fully customize your app's title bar, as described in the _Full customization_ section of the [Title bar customization](title-bar#full-customization) article. You typically do this to [extend Acrylic into the title bar](../style/acrylic#extend-acrylic-into-the-title-bar), or to place custom content in the title bar. If you do this, be sure to follow the guidance for full-screen and tablet mode, and only show your custom title bar content when [CoreApplicationViewTitleBar.IsVisible](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.isvisible) is **true**.
+You can also fully customize your app's title bar, as described in the _Full customization_ section of the [Title bar customization](title-bar.md#full-customization) article. You typically do this to [extend Acrylic into the title bar](../style/acrylic.md#extend-acrylic-into-the-title-bar), or to place custom content in the title bar. If you do this, be sure to follow the guidance for full-screen and tablet mode, and only show your custom title bar content when [CoreApplicationViewTitleBar.IsVisible](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.isvisible) is **true**.
 
 When your app runs in a Set, CoreApplicationViewTitleBar.IsVisible is **false**, and the title bar content should not be shown. However, if you don't follow this guidance to hide your custom title bar content, it's shown below your app's tab, and not in the title bar area.
 
@@ -109,7 +109,7 @@ If you've placed content or functionality in your custom title bar UI, consider 
 
 To make sure your app icon looks its best in a Set, you should provide an alternate, unplated icon for your app. The purpose of the alternate icon is to look good against any background color. The alternate icon will be used if available.
 
-In you app manifest, specify an alternate-form unplated icon in addition to your regular icon. For more information, see [Tile and icon asset guidelines](./tiles-and-notifications/app-assets). The icon to specify is documented as "Target-size list assets without plate" in the [Asset types](./tiles-and-notifications/app-assets#asset-types) section of the article.
+In you app manifest, specify an alternate-form unplated icon in addition to your regular icon. For more information, see [Tile and icon asset guidelines](./tiles-and-notifications/app-assets.md). The icon to specify is documented as "Target-size list assets without plate" in the [Asset types](./tiles-and-notifications/app-assets.md#asset-types) section of the article.
 
 If you don't specify an alternate icon in the app manifest, the system will re-plate your the tile icon with the tab color and use that.
 
@@ -121,7 +121,7 @@ To use a system theme means you have specified a RequestedTheme for your app, bu
 
 If you use custom light or dark theme resources, you should specify a tab color to match your theme color.
 
-For more info about theme resources, see [XAML theme resources](../controls-and-patterns/xaml-theme-resources).
+For more info about theme resources, see [XAML theme resources](../controls-and-patterns/xaml-theme-resources.md).
 
 ## Enable Previous Sets with User Activities
 
@@ -139,11 +139,11 @@ For more info about how to enable multi-instance for your UWP app, see [Create a
 
 ## Use an in-app back button
 
-To implement backwards navigation in your app, we recommend that you place a back button in your app's UI according to the [back button guidance](../basics/navigation-history-and-backwards-navigation). If your app uses the NavigationView control, then you should use NavigationView's built-in back button.
+To implement backwards navigation in your app, we recommend that you place a back button in your app's UI according to the [back button guidance](../basics/navigation-history-and-backwards-navigation.md). If your app uses the NavigationView control, then you should use NavigationView's built-in back button.
 
 If your app uses the system back button, you should replace it with an in-app back button instead. This ensures that users have a consistent back button experience whether or not the app runs in a Set, and also ensures that back button visuals remain consistent across apps.
 
-For detailed guidance about integrating an in-app back button, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation).
+For detailed guidance about integrating an in-app back button, see [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md).
 
 ### Support for the system back button in Sets
 
@@ -163,5 +163,5 @@ Title bar customizations carry over to both the app tab and the system back bar.
 ## Related articles
 
 - [Title bar customization](title-bar.md)
-- [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation)
+- [Navigation history and backwards navigation](../basics/navigation-history-and-backwards-navigation.md)
 - [Color](../style/color.md)
