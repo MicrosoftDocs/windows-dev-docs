@@ -48,12 +48,12 @@ If you run your app immediately after opening it, you'll see a few buttons at th
 
 **ViewModels\CustomerListPageViewModel.cs** is where the fundamental logic of the app is located. Every user action taken in the view will be passed into this file for processing. In this tutorial, you'll add some new code, and implement the following methods:
 
-* **CreateNewCustomer**, which initializes a new CustomerViewModel object.
+* **CreateNewCustomerAsync**, which initializes a new CustomerViewModel object.
 * **DeleteCustomerAsync**, which removes a single customer from the database.
-* **DeleteAndUpdate**, which handles the delete button's logic.
+* **DeleteAndUpdateAsync**, which handles the delete button's logic.
 * **GetCustomerListAsync**, which retrieves a list of customers from the database.
-* **SaveInitialChanges**, which adds a new customer's information to the database.
-* **UpdateCustomers**, which refreshes the UI to reflect any customers added or deleted.
+* **SaveInitialChangesAsync**, which adds a new customer's information to the database.
+* **UpdateCustomersAsync**, which refreshes the UI to reflect any customers added or deleted.
 
 **CustomerViewModel** is a wrapper for a customer's information, which tracks whether or not it's been recently modified. You won't need to add anything to this class, but some of the code you'll add elsewhere will reference it.
 
@@ -138,7 +138,7 @@ When it's initialized, **ViewModels\CustomerListPageViewModel.cs** calls the **G
 
 ## Part 4: Edit customers
 
-You can edit the entries in the data grid, but you need to ensure that any changes you make in the UI are also made to your collection of customers in the code-behind. This means you'll have to implement two-way data binding. If you want more information about this, check out our [introduction to data binding](../get-started/display-customers-in-list-learning-track.md).
+You can edit the entries in the data grid by double-clicking them, but you need to ensure that any changes you make in the UI are also made to your collection of customers in the code-behind. This means you'll have to implement two-way data binding. If you want more information about this, check out our [introduction to data binding](../get-started/display-customers-in-list-learning-track.md).
 
 1. First, declare that **ViewModels\CustomerListPageViewModel.cs** implements the **INotifyPropertyChanged** interface:
 
@@ -190,10 +190,10 @@ You can edit the entries in the data grid, but you need to ensure that any chang
 
 Now that you can see and edit your customers, you'll need to be able to push your changes to the database, and to pull any updates that have been made by others.
 
-1. Return to **ViewModels\CustomerListPageViewModel.cs**, and navigate to the **UpdateCustomers** method. Update it with this code, to push changes to the database and to retrieve any new information:
+1. Return to **ViewModels\CustomerListPageViewModel.cs**, and navigate to the **UpdateCustomersAsync** method. Update it with this code, to push changes to the database and to retrieve any new information:
 
     ```csharp
-    public async Task UpdateCustomers()
+    public async Task UpdateCustomersAsync()
     {
 	    foreach (var modifiedCustomer in Customers
 	        .Where(x => x.IsModified).Select(x => x.Model))
@@ -231,10 +231,10 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
     ```
     You'll now need a way to display the collapsible panel, and to create a customer to edit within it.
 
-2.  Update your **CreateNewCustomer** method to create a new customer, add it to the repository, and set it as the selected customer:
+2.  Update your **CreateNewCustomerAsync** method to create a new customer, add it to the repository, and set it as the selected customer:
 
     ```csharp
-    public async Task CreateNewCustomer()
+    public async Task CreateNewCustomerAsync()
     {
         CustomerViewModel newCustomer = new CustomerViewModel(new Models.Customer());
         SelectedCustomer = newCustomer;
@@ -243,17 +243,17 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
     }
     ```
 
-3. Update the **SaveInitialChanges** method to add a newly-created customer to the repository, update the UI, and close the panel.
+3. Update the **SaveInitialChangesAsync** method to add a newly-created customer to the repository, update the UI, and close the panel.
 
     ```csharp
-    public async Task SaveInitialChanges()
+    public async Task SaveInitialChangesAsync()
     {
         await App.Repository.Customers.UpsertAsync(SelectedCustomer.Model);
         await GetCustomerListAsync();
         AddingNewCustomer = false;
     }
     ```
-4. Add the following line of code as the final line in the setter for **SelectedCustomer** and for the **UpdateCustomers** method:
+4. Add the following line of code as the final line in the setter for **SelectedCustomer** and for the **UpdateCustomersAsync** method:
 
     ```csharp
     AddingNewCustomer = false;
@@ -323,7 +323,7 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
         <!--Text boxes from step 3-->
         <AppBarButton
             x:Name="SaveNewCustomer"
-            Click="{x:Bind ViewModel.SaveInitialChanges}"
+            Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
             Icon="Save"/>
     </StackPanel>
     ```
@@ -334,15 +334,15 @@ Adding a new customer presents a challenge, as the customer will appear as a bla
 
 ## Part 7: Delete a customer
 
-Deleting a customer is the final basic operation that you need to implement. When you delete a customer you've selected within the data grid, you'll want to immediately call **UpdateCustomers** in order to update the UI. However, you don't need to call that method if you're deleting a customer you've just created.
+Deleting a customer is the final basic operation that you need to implement. When you delete a customer you've selected within the data grid, you'll want to immediately call **UpdateCustomersAsync** in order to update the UI. However, you don't need to call that method if you're deleting a customer you've just created.
 
-1. Navigate to **ViewModels\CustomerListPageViewModel.cs**, and update the **DeleteAndUpdate** method:
+1. Navigate to **ViewModels\CustomerListPageViewModel.cs**, and update the **DeleteAndUpdateAsync** method:
 
     ```csharp
-    public async void DeleteAndUpdate()
+    public async void DeleteAndUpdateAsync()
     {
         await DeleteCustomerAsync();
-        await UpdateCustomers();
+        await UpdateCustomersAsync();
     }
     ```
 
@@ -357,7 +357,7 @@ Deleting a customer is the final basic operation that you need to implement. Whe
 	        Icon="Cancel"/>
 	    <AppBarButton
 	        x:Name="SaveNewCustomer"
-	        Click="{x:Bind ViewModel.SaveInitialChanges}"
+	        Click="{x:Bind ViewModel.SaveInitialChangesAsync}"
 	        Icon="Save"/>
 	</StackPanel>
 	```

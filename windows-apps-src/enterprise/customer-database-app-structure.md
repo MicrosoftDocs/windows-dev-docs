@@ -42,7 +42,7 @@ Though this app only has one View, is has two ViewModels. Why is this?
 
 **CustomerListPageViewModel.cs** is a standard ViewModel in the MVVM pattern. It's where the fundamental logic of the app's page is located, and the page you'll be working with the most in this tutorial. Every UI action taken by the user is passed through the View to this ViewModel for processing.
 
-**CustomerViewModel.cs**, however, isn't associated with any specific View. Instead, it associates a programatic concept (which properties have been edited) with the data contained in an individual customer's Model.
+**CustomerViewModel.cs**, however, isn't associated with any specific View. Instead, it associates a programmatic concept (which properties have been edited) with the data contained in an individual customer's Model.
 
 ### Models
 
@@ -55,7 +55,9 @@ Most important is **Customer.cs**, which describes the Customer data structure w
 
 ### Repository
 
-The Respository folder contains that classes that construct and interact with the local SQLite database. For this tutorial, the SQLite database is presented as-is. While you'll be adding in code to **CustomerListPageViewMode.cs** to call methods defined by these classes, you won't need to make any changes in order to set them up.
+The Repository folder contains classes that construct and interact with the local SQLite database. For this tutorial, the SQLite database is presented as-is. While you'll be adding in code to **CustomerListPageViewModel.cs** to call methods defined by these classes, you won't need to make any changes in order to set them up.
+
+For more information on SQLite in UWP, [see this article](../data-access/sqlite-databases.md).
 
 If you try the "Going further" section of the tutorial, this is where you'll create a class to connect to the remote REST database. It will also implement the **ICustomerRepository** interface defined in the Models section, but it will look very different than its SQLite counterpart.
 
@@ -67,7 +69,7 @@ As is usual for UWP apps, the application launch behavior is defined in the **Ap
 * We've created a Repository object, which will hold the data source we're using.
 * We've added an *SQLiteDatabase()* method, which initializes the local database and sets it as the specified Repository.
 
-If you try the "Going further" section, you'll add a similar method to initialize a REST Respository object. Because we've separated our concerns and are using the same defined interface for both SQLite and REST opterations, this will be the only existing code you'll need to change to use REST instead of SQLite in your app.
+If you try the "Going further" section, you'll add a similar method to initialize a REST Respository object. Because we've separated our concerns and are using the same defined interface for both SQLite and REST operations, this will be the only existing code you'll need to change to use REST instead of SQLite in your app.
 
 ## Next steps
 
