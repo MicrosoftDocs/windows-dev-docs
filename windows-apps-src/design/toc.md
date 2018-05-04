@@ -94,7 +94,8 @@
 ## [Overview](style/index.md)
 ## [Acrylic](style/acrylic.md)
 ## [Color](style/color.md)
-## [Icons](style/icons.md)
+## Icons
+### [Overview](style/icons.md)
 ### [Segoe MDL2 icons](style/segoe-ui-symbol-font.md)
 ## [Reveal highlight](style/reveal.md)
 ## [Reveal focus](style/reveal-focus.md)
