@@ -1,0 +1,79 @@
+<svg width="574" height="336" viewBox="0 0 574 336" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-commanding" clip-path="url(#clip0)">
+<rect width="573.896" height="335.995" fill="#243A5E"/>
+<g id="Group 2">
+<g id="Group">
+<g id="BG">
+<g id="app-bg" filter="url(#filter0_dd)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 1278 0L 1278 669L 0 669L 0 0Z" transform="translate(-738 35)" fill="white"/>
+</g>
+</g>
+<g id="Rectangle">
+<rect width="1238.06" height="509.239" transform="translate(-718.031 174.791)" fill="#F4F4F4"/>
+</g>
+</g>
+<g id="Navigation / Command bar / Label on right">
+<g id="Navigation">
+<g id="Item">
+<g id="Icon">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 3.52857 0C 4.02478 0 4.48423 0.091796 4.90692 0.275391C 5.32962 0.458985 5.70177 0.711424 6.02339 1.03271C 6.345 1.35401 6.5977 1.72578 6.78148 2.14805C 6.96526 2.57031 7.05715 3.02929 7.05715 3.525C 7.05715 4.02071 6.96526 4.47969 6.78148 4.90195C 6.5977 5.32422 6.345 5.69599 6.02339 6.01729C 5.70177 6.33858 5.32962 6.59101 4.90692 6.77461C 4.48423 6.9582 4.02478 7.05 3.52857 7.05C 3.03237 7.05 2.57292 6.9582 2.15022 6.77461C 1.72753 6.59101 1.35538 6.33858 1.03376 6.01729C 0.712145 5.69599 0.459451 5.32422 0.27567 4.90195C 0.091889 4.47969 0 4.02071 0 3.525C 0 3.02929 0.091889 2.57031 0.27567 2.14805C 0.459451 1.72578 0.712145 1.35401 1.03376 1.03271C 1.35538 0.711424 1.72753 0.458985 2.15022 0.275391C 2.57292 0.091796 3.03237 0 3.52857 0ZM 18.6666 0C 19.1628 0 19.6223 0.091796 20.045 0.275391C 20.4677 0.458985 20.8398 0.711424 21.1614 1.03271C 21.4831 1.35401 21.7358 1.72578 21.9195 2.14805C 22.1033 2.57031 22.1952 3.02929 22.1952 3.525C 22.1952 4.02071 22.1033 4.47969 21.9195 4.90195C 21.7358 5.32422 21.4831 5.69599 21.1614 6.01729C 20.8398 6.33858 20.4677 6.59101 20.045 6.77461C 19.6223 6.9582 19.1628 7.05 18.6666 7.05C 18.1704 7.05 17.711 6.9582 17.2883 6.77461C 16.8656 6.59101 16.4934 6.33858 16.1718 6.01729C 15.8502 5.69599 15.5975 5.32422 15.4137 4.90195C 15.23 4.47969 15.1381 4.02071 15.1381 3.525C 15.1381 3.02929 15.23 2.57031 15.4137 2.14805C 15.5975 1.72578 15.8502 1.35401 16.1718 1.03271C 16.4934 0.711424 16.8656 0.458985 17.2883 0.275391C 17.711 0.091796 18.1704 0 18.6666 0ZM 33.8047 0C 34.3009 0 34.7604 0.091796 35.183 0.275391C 35.6057 0.458985 35.9779 0.711424 36.2995 1.03271C 36.6211 1.35401 36.8738 1.72578 37.0576 2.14805C 37.2414 2.57031 37.3333 3.02929 37.3333 3.525C 37.3333 4.02071 37.2414 4.47969 37.0576 4.90195C 36.8738 5.32422 36.6211 5.69599 36.2995 6.01729C 35.9779 6.33858 35.6057 6.59101 35.183 6.77461C 34.7604 6.9582 34.3009 7.05 33.8047 7.05C 33.3085 7.05 32.849 6.9582 32.4263 6.77461C 32.0037 6.59101 31.6315 6.33858 31.3099 6.01729C 30.9883 5.69599 30.7356 5.32422 30.5518 4.90195C 30.368 4.47969 30.2761 4.02071 30.2761 3.525C 30.2761 3.02929 30.368 2.57031 30.5518 2.14805C 30.7356 1.72578 30.9883 1.35401 31.3099 1.03271C 31.6315 0.711424 32.0037 0.458985 32.4263 0.275391C 32.849 0.091796 33.3085 0 33.8047 0Z" transform="translate(468.667 120.999)" fill="#243A5E"/>
+</g>
+</g>
+</g>
+<g id="Rectangle_2">
+<rect width="46.832" height="47" transform="translate(397.744 101)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle_3">
+<rect width="46.832" height="47" transform="translate(327.496 101)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle_4">
+<rect width="46.832" height="47" transform="translate(257.248 101)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle_5">
+<rect width="46.832" height="47" transform="translate(187 101)" fill="#50E6FF"/>
+</g>
+</g>
+</g>
+<g id="titlebar-controls" opacity="0.75">
+<g id="minimize">
+<g id="minimize_2">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 15.881 2.64702L 0 2.64702L 0 0L 15.881 0L 15.881 2.64702Z" transform="translate(427.235 54.1482)" fill="black"/>
+</g>
+</g>
+<g id="expand">
+<g id="expand_2">
+<rect x="1.25" y="1.25" width="13.381" height="13.3821" stroke-width="2.5" transform="translate(469.585 47.5305)" stroke="black"/>
+</g>
+</g>
+<g id="close">
+<g id="Union">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 10.2938 8.42285L 16.8445 1.87183L 14.9729 0L 8.42212 6.55127L 1.87158 0.000244141L 0 1.87183L 6.55066 8.42285L 0.00012207 14.9739L 1.8717 16.8457L 8.42224 10.2947L 14.9728 16.8457L 16.8444 14.9739L 10.2938 8.42285Z" transform="translate(511.452 47.0493)" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_dd" x="-758" y="15" width="1318" height="709" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="5" dy="5"/>
+<feGaussianBlur stdDeviation="7.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.350796 0 0 0 0 0.63 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="10"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.095 0 0 0 0 0.153793 0 0 0 0 0.25 0 0 0 1 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow" result="shape"/>
+</filter>
+
+<clipPath id="clip0">
+<rect width="573.896" height="335.995" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+
