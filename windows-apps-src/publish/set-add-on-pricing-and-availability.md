@@ -4,7 +4,7 @@ Description: When submitting an add-on, the options on the Pricing and availabil
 title: Set add-on pricing and availability
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -49,9 +49,12 @@ For more info, see [Configure precise release scheduling](configure-precise-rele
 
 ## Pricing
 
-You must select a base price for your add-on (unless you have selected the **Stop acquisition** option in the **Visibility** section), choosing either **Free** or one of the available price tiers (starting at .99 USD).
+You must select a base price for your add-on (unless you have selected the **Stop acquisition** option in the **Visibility** section). The default selection is **Free**, so if you want to charge money for the add-on, be sure to choose one of the available price tiers (starting at .99 USD).
 
 You can also schedule price changes to indicate the date and time at which the add-on’s price should change. Additionally, you have the option to customize these changes for specific markets. 
+
+> [!TIP]
+> For subscription add-ons, you can't raise the price after you publish the add-on, either by selecting a higher base price in a later submission or by scheduling a price change that increases the price. You can select a lower price using either of these methods, but once the price is lowered you won't be able to raise it higher than that new price. Because of this, it's especially important to be sure you select the appropriate price tier for subscription add-ons. 
 
 For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.md).
 
@@ -59,25 +62,6 @@ For more info, see [Set and schedule app pricing](set-and-schedule-app-pricing.m
 ## Sale pricing
 
 If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
-
-
-## Publish date
-
-By default, your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the [**Schedule** section](#schedule) described above. 
-
-To control when your add-on should be published to the Store, use the **Schedule** section. For most submissions, you should use that section to schedule your release, and leave the **Publish date** section set to the default option, **Publish this submission as soon as it passes certification**. This will not cause the submission to be published earlier than the date(s) that you set in the **Schedule** section. The dates you selected in the **Schedule** section will determine when your add-on becomes available to customers in the Store.
-
-If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose **Publish this submission manually.** Choosing this option means that your selection won’t be published until you indicate that it should be. After your add-on passes certification, you can publish it by selecting **Publish now** on the certification status page, or by selecting a specific date as described below.
-
-Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
- 
-> [!NOTE]
-> Delays during certification or publishing could cause the actual release date to be later than the date you request. The Microsoft Store cannot guarantee that your add-on (or update) will be available on a specific date.  
-
-
-
- 
-
 
 
 
