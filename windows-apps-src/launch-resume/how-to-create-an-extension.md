@@ -22,7 +22,7 @@ This article is accompanied by a code sample:
 
 ## Introduction to app extensions
 
-Plugins, add-ins, and add-ons are different names you may be familiar with for what we call app extensions in the Universal Windows Platform (UWP). Microsoft Edge extensions are UWP app extensions. UWP app extensions were introduced in the Windows 10 Anniversary edition (version 1607, build 10.0.14393).
+In the Universal Windows Platform (UWP), app extensions provide functionality similar to what plug-ins, add-ins, and add-ons do on other platforms. Microsoft Edge extensions are UWP app extensions, for example. UWP app extensions were introduced in the Windows 10 Anniversary edition (version 1607, build 10.0.14393).
 
 UWP app extensions are UWP apps that have an extension declaration that allows them to share content and deployment events with a host app. An extension app can provide multiple extensions.
 
@@ -418,6 +418,7 @@ This topic provides an introduction to app extensions. The key things to note ar
 
 ## Related topics
 
+* [Introduction to App Extensions](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [Build 2016 session about app extensions](https://channel9.msdn.com/Events/Build/2016/B808)
 * [Build 2016 app extension code sample](https://github.com/Microsoft/App-Extensibility-Sample)
 * [Support your app with background tasks](support-your-app-with-background-tasks.md)

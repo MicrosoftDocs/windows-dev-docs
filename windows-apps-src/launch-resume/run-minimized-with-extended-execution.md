@@ -18,13 +18,23 @@ This article shows you how to use extended execution to postpone when your app i
 
 When the user minimizes or switches away from an app it is put into a suspended state.  Its memory is maintained, but its code does not run. This is true across all OS Editions with a visual user interface. For more details about when your app is suspended, see [Application Lifecycle](app-lifecycle.md). 
 
-There are cases where an app may need to keep running, rather than be suspended, while it is minimized. If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time. The amount of time you may get to perform background execution may be several minutes but you must be prepared to handle the session being revoked at any time. These application lifecycle time constraints are disabled while the app is running under a debugger. For this reason it is important to test Extended Execution and other tools for postponing app suspension while not running under a debugger or by using the Lifecycle Events available in Visual Studio. 
+There are cases where an app may need to keep running, rather than be suspended, when the user navigates away from the app, or while it is minimized. For example, a step counting app needs to keep running and tracking steps even when the user navigates away to use other apps. 
+
+If an app needs to keep running, either the OS can keep it running, or it can request to keep running. For example, when playing audio in the background, the OS can keep an app running longer if you follow these steps for [Background Media Playback](../audio-video-camera/background-audio.md). Otherwise, you must manually request more time. The amount of time you may get to perform background execution may be several minutes but you must be prepared to handle the session being revoked at any time. These application lifecycle time constraints are disabled while the app is running under a debugger. For this reason it is important to test Extended Execution and other tools for postponing app suspension while not running under a debugger or by using the Lifecycle Events available in Visual Studio. 
  
 Create an [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) to request more time to complete an operation in the background. The kind of **ExtendedExecutionSession** you create is determined by the  [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) that you provide when you create it. There are three **ExtendedExecutionReason** enum values: **Unspecified, LocationTracking** and **SavingData**. Only one **ExtendedExecutionSession** can be requested at any time; attempting to create another session while an approved session request is currently active will cause exception 0x8007139F to be thrown from the **ExtendedExecutionSession** constructor stating that the group or resource is not in the correct state to perform the requested operation. Do not use [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) and [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx); they require restricted capabilities and are not available for use in Store applications.
 
 ## Run while minimized
 
-Specify **ExtendedExecutionReason.Unspecified** when you create an **ExtendedExecutionSession** to request additional time before your app moves into the background for scenarios such as media processing, project compilation, or keeping a network connection alive. On desktop devices running Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), this is the approach to use if an app needs to avoid being suspended while it is minimized.
+There are two cases where extended execution can be used:
+- At any point during regular foreground execution, while the application is in the running state.
+- After the application has received a suspending event (the OS is about to move the app to the suspended state) in the application’s suspending event handler.
+
+The code for these two cases is the same, but the application behaves a little differently in each. In the first case, the application stays in the running state, even if an event that normally would trigger suspension occurs (for example, the user navigating away from the application). The application will never receive a suspending event while the execution extension is in effect. When the extension is disposed, the application becomes eligible for suspension again.
+
+In the second case, if the application is transitioning to the suspended state, it will stay in a suspending state for the period of the extension. Once the extension expires, the application enters the suspended state without further notification.
+
+Use **ExtendedExecutionReason.Unspecified** when you create an **ExtendedExecutionSession** to request additional time before your app moves into the background for scenarios such as media processing, project compilation, or keeping a network connection alive. On desktop devices running Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), this is the approach to use if an app needs to avoid being suspended while it is minimized.
 
 Request the extension when starting a long running operation in order to defer the **Suspending** state transition that otherwise occurs when the app moves into the background. On desktop devices, extended execution sessions created with **ExtendedExecutionReason.Unspecified** have a battery-aware time limit. If the device is connected to wall power, there is no limit to the length of the extended execution time period. If the device is on battery power, the extended execution time period can run up to ten minutes in the background.
 
@@ -80,7 +90,7 @@ The **ExtendedExecutionReason** indicates the operation your app is performing i
 
 ### Revoked
 
-If an app has an active extended execution session and the system requires background activity to halt, then the session is revoked. An extended execution session time period is never terminated without first firing the **Revoked** event handler.
+If an app has an active extended execution session and the system requires background activity to halt because a foreground application requires the resources, then the session is revoked. An extended execution session time period is never terminated without first firing the **Revoked** event handler.
 
 When the **Revoked** event is fired for an **ExtendedExecutionReason.SavingData** extended execution session, the app has one second to complete the operation it was performing and finish **Suspending**.
 
@@ -248,6 +258,7 @@ Use [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/l
 
 [Extended Execution Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [Application Lifecycle](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
+[App Lifecycle - Keep Apps Alive with Background Tasks and Extended Execution](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
 [Background Memory Management](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
 [Background Transfers](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
 [Battery Awareness and Background Activity](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
